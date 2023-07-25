@@ -5,7 +5,7 @@ import Search from '../screens/Search';
 import Listen from '../screens/Listen';
 import Saved from '../screens/Saved';
 import Profile from '../screens/Profile';
-import { HomeButton, ListenButton, ProfileButton, SavedButton, SearchButton } from '../UI/TabIcons';
+import { HomeIcon, ListenIcon, ProfileIcon, SavedIcon, SearchIcon } from '../UI/TabIcons';
 
 const Tab = createBottomTabNavigator();
 
@@ -45,35 +45,35 @@ const TabNavigation = () => {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: () => <HomeButton />,
+          tabBarIcon: () => <HomeIcon />,
         }}
       />
       <Tab.Screen
         name="Search"
         component={Search}
         options={{
-          tabBarIcon: () => <SearchButton />,
+          tabBarIcon: () => <SearchIcon />,
         }}
       />
       <Tab.Screen
         name="Listen"
         component={Listen}
         options={{
-          tabBarIcon: () => <ListenButton />,
+          tabBarIcon: () => <ListenIcon />,
         }}
       />
       <Tab.Screen
         name="Saved"
         component={Saved}
         options={{
-          tabBarIcon: () => <SavedButton />,
+          tabBarIcon: () => <SavedIcon />,
         }}
       />
       <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
-          tabBarIcon: () => <ProfileButton />,
+          tabBarIcon: () => <ProfileIcon />,
         }}
       />
     </Tab.Navigator>
