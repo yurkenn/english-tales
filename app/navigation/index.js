@@ -21,8 +21,8 @@ const Navigation = () => {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Tab" component={TabNavigation} />
         <Stack.Screen name="Auth" component={AuthNavigation} />
+        <Stack.Screen name="Tab" component={TabNavigation} />
       </Stack.Navigator>
     </NavigationContainer>
   );
