@@ -1,59 +1,74 @@
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  KeyboardAvoidingView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { Formik } from 'formik';
 import { loginValidationSchema } from '../../components/Auth/Validation';
+import { AuthContext } from '../../store/auth-context';
+import { useContext } from 'react';
 
 const Login = ({ navigation }) => {
+  const authContext = useContext(AuthContext);
+
+  const handleSubmit = async (values) => {
+    authContext.handleLogin(values);
+  };
+
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image source={require('../../../assets/images/login.png')} style={styles.image} />
-        <Text style={styles.title}>English Tales</Text>
-      </View>
-      <View style={styles.formContainer}>
-        <Text style={styles.subtitle}>Email</Text>
-        <Formik
-          initialValues={{ email: '', password: '' }}
-          onSubmit={(values) => console.log(values)}
-          validationSchema={loginValidationSchema}
-        >
-          {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <Image source={require('../../../assets/images/login.png')} style={styles.image} />
+      <Text style={styles.title}>English Tales</Text>
+
+      <Formik
+        initialValues={{ email: '', password: '' }}
+        onSubmit={handleSubmit}
+        validationSchema={loginValidationSchema}
+      >
+        {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+          <View style={styles.inner_container}>
+            <Text style={styles.subtitle}>Email</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your email"
+              placeholderTextColor="#fff"
+              onChangeText={handleChange('email')}
+              onBlur={handleBlur('email')}
+              value={values.email}
+            />
+            {errors.email && <Text style={styles.errors}>{errors.email}</Text>}
+            <Text style={styles.subtitle}>Password</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your password"
+              placeholderTextColor="#fff"
+              onChangeText={handleChange('password')}
+              onBlur={handleBlur('password')}
+              value={values.password}
+              secureTextEntry
+            />
+            {errors.password && <Text style={styles.errors}>{errors.password}</Text>}
+            <TouchableOpacity onPress={handleSubmit} style={styles.button}>
+              <Text style={styles.buttonText}>Log In</Text>
+            </TouchableOpacity>
             <View>
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your email"
-                placeholderTextColor="#fff"
-                onChangeText={handleChange('email')}
-                onBlur={handleBlur('email')}
-                value={values.email}
-              />
-              {errors.email && <Text style={styles.errors}>{errors.email}</Text>}
-              <Text style={styles.subtitle}>Password</Text>
-              <TextInput
-                style={styles.input}
-                placeholder="Enter your password"
-                placeholderTextColor="#fff"
-                onChangeText={handleChange('password')}
-                onBlur={handleBlur('password')}
-                value={values.password}
-              />
-              {errors.password && <Text style={styles.errors}>{errors.password}</Text>}
-              <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Log In</Text>
+              <Text style={styles.infoText}>Forgot password?</Text>
+            </View>
+
+            <View style={styles.signupContainer}>
+              <Text style={styles.signupInfo}>Don't have an account?</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+                <Text style={styles.signupText}>Sign up</Text>
               </TouchableOpacity>
             </View>
-          )}
-        </Formik>
-        <View>
-          <Text style={styles.infoText}>Forgot password?</Text>
-        </View>
-      </View>
-      <View style={styles.signupContainer}>
-        <Text style={styles.signupInfo}>Don't have an account?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-          <Text style={styles.signupText}>Sign up</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+          </View>
+        )}
+      </Formik>
+    </KeyboardAvoidingView>
   );
 };
 
@@ -64,10 +79,10 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 20,
     padding: 5,
-  },
-  imageContainer: {
+    justifyContent: 'center',
     alignItems: 'center',
   },
+
   image: {
     width: 290,
     height: 290,
@@ -81,9 +96,8 @@ const styles = StyleSheet.create({
     lineHeight: 52,
     textAlign: 'center',
   },
-  formContainer: {
-    marginHorizontal: 20,
-    padding: 20,
+  inner_container: {
+    flex: 1,
   },
   subtitle: {
     color: '#fff',
@@ -131,8 +145,8 @@ const styles = StyleSheet.create({
   signupContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 50,
+    marginTop: 30,
+    marginBottom: 20,
   },
   signupInfo: {
     color: '#fff',
