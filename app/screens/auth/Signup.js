@@ -1,87 +1,101 @@
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Formik } from 'formik';
 import { signupValidationSchema } from '../../components/Auth/Validation';
+import SignupAnimation from '../../components/Animations/SignupAnimation';
+import { useContext } from 'react';
+import { AuthContext } from '../../store/auth-context';
 
-const Login = ({ navigation }) => {
+const SignUp = ({ navigation }) => {
+  const authContext = useContext(AuthContext);
+
+  const handleSignUp = async (values) => {
+    authContext.createUser(values);
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Create Your Account</Text>
-      <View style={styles.formContainer}>
-        <Formik
-          initialValues={{ firstName: '', lastName: '', email: '', password: '' }}
-          onSubmit={(values) => console.log(values)}
-          validationSchema={signupValidationSchema}
-        >
-          {({ handleChange, handleBlur, handleSubmit, values }) => (
-            <View>
-              <View style={styles.nameContainer}>
-                <TextInput
-                  style={styles.firstNameInput}
-                  placeholder="First name*"
-                  placeholderTextColor="#fff"
-                  onChangeText={handleChange('firstName')}
-                  onBlur={handleBlur('firstName')}
-                  value={values.firstName}
-                />
-                <TextInput
-                  style={styles.lastNameInput}
-                  placeholder="Last name*"
-                  placeholderTextColor="#fff"
-                  onChangeText={handleChange('lastName')}
-                  onBlur={handleBlur('lastName')}
-                  value={values.lastName}
-                />
-              </View>
+      <View style={styles.animation}>
+        <SignupAnimation />
+      </View>
+
+      <Formik
+        initialValues={{ firstName: '', lastName: '', email: '', password: '' }}
+        onSubmit={handleSignUp}
+        validationSchema={signupValidationSchema}
+      >
+        {({ handleChange, handleBlur, handleSubmit, values }) => (
+          <View style={styles.inner_container}>
+            <Text style={styles.title}>Sign Up</Text>
+            <View style={styles.nameContainer}>
               <TextInput
-                style={styles.input}
-                placeholder="Email address*"
+                style={styles.firstNameInput}
+                placeholder="First name*"
                 placeholderTextColor="#fff"
-                onChangeText={handleChange('email')}
-                onBlur={handleBlur('email')}
-                value={values.email}
+                onChangeText={handleChange('firstName')}
+                onBlur={handleBlur('firstName')}
+                value={values.firstName}
               />
               <TextInput
-                style={styles.input}
-                placeholder="Password*"
+                style={styles.lastNameInput}
+                placeholder="Last name*"
                 placeholderTextColor="#fff"
-                onChangeText={handleChange('password')}
-                onBlur={handleBlur('password')}
-                value={values.password}
+                onChangeText={handleChange('lastName')}
+                onBlur={handleBlur('lastName')}
+                value={values.lastName}
               />
-              <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Sign Up</Text>
+            </View>
+            <TextInput
+              style={styles.input}
+              placeholder="Email address*"
+              placeholderTextColor="#fff"
+              onChangeText={handleChange('email')}
+              onBlur={handleBlur('email')}
+              value={values.email}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Password*"
+              placeholderTextColor="#fff"
+              onChangeText={handleChange('password')}
+              onBlur={handleBlur('password')}
+              value={values.password}
+              secureTextEntry
+            />
+            <TouchableOpacity onPress={handleSubmit} style={styles.button}>
+              <Text style={styles.buttonText}>Sign Up</Text>
+            </TouchableOpacity>
+            <View style={styles.signupContainer}>
+              <Text style={styles.signupInfo}>Do you have an account?</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                <Text style={styles.signupText}>Log In</Text>
               </TouchableOpacity>
             </View>
-          )}
-        </Formik>
-      </View>
-      <View style={styles.signupContainer}>
-        <Text style={styles.signupInfo}>Do you have an account?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.signupText}>Log In</Text>
-        </TouchableOpacity>
-      </View>
+          </View>
+        )}
+      </Formik>
     </View>
   );
 };
 
-export default Login;
+export default SignUp;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
-    padding: 5,
     justifyContent: 'center',
-  },
-  imageContainer: {
     alignItems: 'center',
   },
-  image: {
-    width: 290,
-    height: 290,
-    borderRadius: 6,
-    resizeMode: 'cover',
+  animation: {
+    position: 'absolute',
+    top: 20,
+    left: 0,
+    right: 0,
+    bottom: 550,
+  },
+  inner_container: {
+    flex: 1,
+    justifyContent: 'center',
+    marginTop: 50,
   },
   title: {
     fontSize: 40,
@@ -89,10 +103,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     lineHeight: 52,
     textAlign: 'center',
-  },
-  formContainer: {
-    marginHorizontal: 20,
-    padding: 20,
   },
   subtitle: {
     color: '#fff',
