@@ -15,6 +15,21 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   console.log('THIS IS USER', user);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+        console.log('User Logged in!', user);
+      } else {
+        setUser(null);
+        console.log('User Logged out!');
+      }
+      setLoading(false);
+    });
+
+    return unsubscribe;
+  }, []);
+
   const handleLogin = async (values) => {
     try {
       const login = await signInWithEmailAndPassword(auth, values.email, values.password);
@@ -49,27 +64,12 @@ const AuthProvider = ({ children }) => {
 
   const handleLogout = async () => {
     try {
-      await signOut();
+      await signOut(auth);
     } catch (error) {
       console.log('Logout Error', error);
       throw error;
     }
   };
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-        console.log('User Logged in!', user);
-      } else {
-        setUser(null);
-        console.log('User Logged out!');
-      }
-      setLoading(false);
-    });
-
-    return unsubscribe;
-  }, []);
 
   const values = {
     user,
