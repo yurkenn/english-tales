@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Search from '../screens/Search';
 import Listen from '../screens/Listen';
 import Saved from '../screens/Saved';
 import Profile from '../screens/Profile';
-import { HomeIcon, ListenIcon, ProfileIcon, SavedIcon, SearchIcon } from '../UI/TabIcons';
+import {
+  HomeIcon,
+  ListenIcon,
+  LogoutIcon,
+  ProfileIcon,
+  SavedIcon,
+  SearchIcon,
+} from '../UI/TabIcons';
+import { TouchableOpacity } from 'react-native';
+import { AuthContext } from '../store/auth-context';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
+  const authContext = useContext(AuthContext);
+  const handleLogout = () => {
+    authContext.handleLogout();
+  };
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -74,6 +88,11 @@ const TabNavigation = () => {
         component={Profile}
         options={{
           tabBarIcon: () => <ProfileIcon />,
+          headerRight: () => (
+            <TouchableOpacity onPress={handleLogout}>
+              <LogoutIcon />
+            </TouchableOpacity>
+          ),
         }}
       />
     </Tab.Navigator>
