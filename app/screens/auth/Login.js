@@ -1,6 +1,8 @@
 import {
   Image,
   KeyboardAvoidingView,
+  Platform,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -20,54 +22,60 @@ const Login = ({ navigation }) => {
   };
 
   return (
-    <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <Image source={require('../../../assets/images/login.png')} style={styles.image} />
-      <Text style={styles.title}>English Tales</Text>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : null}
+      style={styles.container}
+    >
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Image source={require('../../../assets/images/login.png')} style={styles.image} />
+        <Text style={styles.title}>English Tales</Text>
 
-      <Formik
-        initialValues={{ email: '', password: '' }}
-        onSubmit={handleSubmit}
-        validationSchema={loginValidationSchema}
-      >
-        {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-          <View style={styles.inner_container}>
-            <Text style={styles.subtitle}>Email</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your email"
-              placeholderTextColor="#fff"
-              onChangeText={handleChange('email')}
-              onBlur={handleBlur('email')}
-              value={values.email}
-            />
-            {errors.email && <Text style={styles.errors}>{errors.email}</Text>}
-            <Text style={styles.subtitle}>Password</Text>
-            <TextInput
-              style={styles.input}
-              placeholder="Enter your password"
-              placeholderTextColor="#fff"
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
-              value={values.password}
-              secureTextEntry
-            />
-            {errors.password && <Text style={styles.errors}>{errors.password}</Text>}
-            <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-              <Text style={styles.buttonText}>Log In</Text>
-            </TouchableOpacity>
-            <View>
-              <Text style={styles.infoText}>Forgot password?</Text>
-            </View>
-
-            <View style={styles.signupContainer}>
-              <Text style={styles.signupInfo}>Don't have an account?</Text>
-              <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-                <Text style={styles.signupText}>Sign up</Text>
+        <Formik
+          initialValues={{ email: '', password: '' }}
+          onSubmit={handleSubmit}
+          validationSchema={loginValidationSchema}
+        >
+          {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+            <View style={styles.inner_container}>
+              <Text style={styles.subtitle}>Email</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Enter your email"
+                placeholderTextColor="#fff"
+                onChangeText={handleChange('email')}
+                onBlur={handleBlur('email')}
+                value={values.email}
+                autoCapitalize="none"
+              />
+              {errors.email && <Text style={styles.errors}>{errors.email}</Text>}
+              <Text style={styles.subtitle}>Password</Text>
+              <TextInput
+                style={styles.input}
+                placeholder="Enter your password"
+                placeholderTextColor="#fff"
+                onChangeText={handleChange('password')}
+                onBlur={handleBlur('password')}
+                value={values.password}
+                secureTextEntry
+              />
+              {errors.password && <Text style={styles.errors}>{errors.password}</Text>}
+              <TouchableOpacity onPress={handleSubmit} style={styles.button}>
+                <Text style={styles.buttonText}>Log In</Text>
               </TouchableOpacity>
+              <View>
+                <Text style={styles.infoText}>Forgot password?</Text>
+              </View>
+
+              <View style={styles.signupContainer}>
+                <Text style={styles.signupInfo}>Don't have an account?</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+                  <Text style={styles.signupText}>Sign up</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
-        )}
-      </Formik>
+          )}
+        </Formik>
+      </ScrollView>
     </KeyboardAvoidingView>
   );
 };
