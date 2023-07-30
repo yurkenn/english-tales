@@ -22,3 +22,7 @@ export const SavedIcon = () => {
 export const ProfileIcon = () => {
   return <Ionicons name="person" size={23} color="white" />;
 };
+
+export const LogoutIcon = () => {
+  return <Ionicons name="log-out-outline" size={23} color="white" />;
+};
