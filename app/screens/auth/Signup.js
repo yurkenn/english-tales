@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import { Formik } from 'formik';
-import { loginValidationSchema } from '../../components/Auth/Validation';
+import { signupValidationSchema } from '../../components/Auth/Validation';
 import { AuthContext } from '../../store/auth-context';
 import { useContext } from 'react';
 import SignupAnimation from '../../components/Animations/SignupAnimation';
@@ -38,7 +38,7 @@ const Signup = ({ navigation }) => {
         <Formik
           initialValues={{ email: '', password: '', firstName: '', lastName: '' }}
           onSubmit={handleSubmit}
-          validationSchema={loginValidationSchema}
+          validationSchema={signupValidationSchema}
         >
           {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
             <View style={styles.inner_container}>
@@ -52,7 +52,6 @@ const Signup = ({ navigation }) => {
                   value={values.firstName}
                   autoCapitalize="none"
                 />
-                {errors.firstName && <Text style={styles.errors}>{errors.firstName}</Text>}
 
                 <TextInput
                   style={styles.lastNameInput}
@@ -63,9 +62,31 @@ const Signup = ({ navigation }) => {
                   value={values.lastName}
                   autoCapitalize="none"
                 />
-                {errors.lastName && <Text style={styles.errors}>{errors.lastName}</Text>}
               </View>
-
+              <View
+                style={{
+                  flex: 1,
+                  flexDirection: 'row',
+                  padding: 5,
+                }}
+              >
+                <View
+                  style={{
+                    flex: 1,
+                    paddingLeft: 25,
+                  }}
+                >
+                  {errors.firstName && <Text style={styles.errors}>{errors.firstName}</Text>}
+                </View>
+                <View
+                  style={{
+                    flex: 1,
+                    paddingRight: 5,
+                  }}
+                >
+                  {errors.lastName && <Text style={styles.errors}>{errors.lastName}</Text>}
+                </View>
+              </View>
               <TextInput
                 style={styles.input}
                 placeholder="Enter your email"
@@ -94,7 +115,7 @@ const Signup = ({ navigation }) => {
               <View style={styles.signupContainer}>
                 <Text style={styles.signupInfo}>Do you have already an account?</Text>
                 <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                  <Text style={styles.signupText}>Sign up</Text>
+                  <Text style={styles.signupText}>Log In</Text>
                 </TouchableOpacity>
               </View>
             </View>
