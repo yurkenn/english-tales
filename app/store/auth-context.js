@@ -1,39 +1,76 @@
+import { createContext, useEffect, useState } from 'react';
+import { auth, firestore } from '../../firebaseConfig';
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithCredential,
   signOut,
 } from 'firebase/auth';
-import { createContext, useEffect, useState } from 'react';
-import { auth, firestore } from '../../firebaseConfig';
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import * as Google from 'expo-auth-session/providers/google';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Config from 'react-native-config';
 
-const AuthContext = createContext();
+const AuthContext = createContext({
+  userInfo: null,
+  loading: false,
+  handleLogin: () => {},
+  handleSignup: () => {},
+  handleLogout: () => {},
+  promptAsync: () => {},
+});
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  console.log('THIS IS USER', user);
+  const [userInfo, setUserInfo] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [request, response, promptAsync] = Google.useAuthRequest({
+    iosClientId: Config.IOS_CLIENT_ID,
+    androidClientId: Config.ANDROID_CLIENT_ID,
+  });
+
+  const checkLocalUser = async () => {
+    try {
+      setLoading(true);
+      const userJSON = await AsyncStorage.getItem('@user');
+      const userDATA = userJSON ? JSON.parse(userJSON) : null;
+      console.log('LOCAL STORAGE: USER DATA =>', userDATA);
+      setUserInfo(userDATA);
+    } catch (error) {
+      console.log('Error getting user from local storage', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    checkLocalUser();
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        setUser(user);
-        console.log('User Logged in!', user);
+        console.log(JSON.stringify(user, null, 2));
+        setUserInfo(user);
+        await AsyncStorage.setItem('@user', JSON.stringify(user));
       } else {
-        setUser(null);
-        console.log('User Logged out!');
+        setUserInfo(null);
+        console.log('User is not authenticated!');
       }
-      setLoading(false);
     });
 
-    return unsubscribe;
+    return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (response?.type === 'success') {
+      const { id_token } = response.params;
+      const credential = GoogleAuthProvider.credential(id_token);
+      signInWithCredential(auth, credential);
+    }
+  }, [response]);
 
   const handleLogin = async (values) => {
     try {
       const login = await signInWithEmailAndPassword(auth, values.email, values.password);
-      console.log('Login', login);
+      console.log('User Logged In!', login);
     } catch (error) {
       console.log('Login Error', error);
       throw error;
@@ -65,6 +102,8 @@ const AuthProvider = ({ children }) => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      console.log('User Logged Out!');
+      await AsyncStorage.removeItem('@user');
     } catch (error) {
       console.log('Logout Error', error);
       throw error;
@@ -72,13 +111,14 @@ const AuthProvider = ({ children }) => {
   };
 
   const values = {
-    user,
-    setUser,
+    userInfo,
     loading,
-    setLoading,
     handleLogin,
     createUser,
     handleLogout,
+    request,
+    response,
+    promptAsync,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
