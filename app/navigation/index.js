@@ -6,11 +6,21 @@ import AuthNavigation from './AuthNavigation';
 import TabNavigation from './TabNavigation';
 import { AuthContext } from '../store/auth-context';
 import { Colors } from '../constants/colors';
+import { ActivityIndicator, View } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   const authContext = useContext(AuthContext);
+
+  if (authContext.loading) {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <ActivityIndicator size={'large'} />
+      </View>
+    );
+  }
+
   return (
     <NavigationContainer
       theme={{
@@ -24,7 +34,7 @@ const Navigation = () => {
           headerShown: false,
         }}
       >
-        {authContext.user ? (
+        {authContext.userInfo ? (
           <Stack.Screen name="Tab" component={TabNavigation} />
         ) : (
           <Stack.Screen name="Auth" component={AuthNavigation} />
