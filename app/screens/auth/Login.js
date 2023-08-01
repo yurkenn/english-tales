@@ -13,9 +13,13 @@ import { Formik } from 'formik';
 import { loginValidationSchema } from '../../components/Auth/Validation';
 import { AuthContext } from '../../store/auth-context';
 import { useContext } from 'react';
+import * as WebBrowser from 'expo-web-browser';
+
+WebBrowser.maybeCompleteAuthSession();
 
 const Login = ({ navigation }) => {
   const authContext = useContext(AuthContext);
+  const promptAsync = authContext.promptAsync;
 
   const handleSubmit = async (values) => {
     authContext.handleLogin(values);
@@ -65,9 +69,21 @@ const Login = ({ navigation }) => {
               <View>
                 <Text style={styles.infoText}>Forgot password?</Text>
               </View>
+              <View style={styles.orContainer}>
+                <View style={styles.line} />
+                <Text style={styles.orText}>or</Text>
+                <View style={styles.line} />
+              </View>
+              <TouchableOpacity onPress={() => promptAsync()} style={styles.googleButton}>
+                <Image
+                  source={require('../../../assets/images/google.png')}
+                  style={styles.googleIcon}
+                />
+                <Text style={styles.buttonText}>Continue with Google</Text>
+              </TouchableOpacity>
 
               <View style={styles.signupContainer}>
-                <Text style={styles.signupInfo}>Don't have an account?</Text>
+                <Text style={styles.signupInfo}>Don't you have an account?</Text>
                 <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
                   <Text style={styles.signupText}>Sign up</Text>
                 </TouchableOpacity>
@@ -85,15 +101,16 @@ export default Login;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
     padding: 5,
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   image: {
-    width: 290,
-    height: 290,
+    flex: 1,
+    alignSelf: 'center',
+    marginTop: 30,
+    width: 250,
+    height: 250,
     borderRadius: 6,
     resizeMode: 'cover',
   },
@@ -150,6 +167,41 @@ const styles = StyleSheet.create({
     fontWeight: '300',
     marginTop: 10,
   },
+
+  orContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  line: {
+    width: 135,
+    borderWidth: 0.5,
+    borderColor: '#fff',
+  },
+  orText: {
+    color: '#fff',
+    fontSize: 14,
+    lineHeight: 18,
+    fontWeight: 'bold',
+    marginHorizontal: 10,
+  },
+
+  googleButton: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
+    backgroundColor: '#000',
+    borderRadius: 6,
+    padding: 8,
+  },
+  googleIcon: {
+    width: 24,
+    height: 24,
+    marginRight: 10,
+  },
+
   signupContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
