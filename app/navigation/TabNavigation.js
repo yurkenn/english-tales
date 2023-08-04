@@ -5,14 +5,7 @@ import Search from '../screens/Search';
 import Listen from '../screens/Listen';
 import Saved from '../screens/Saved';
 import Profile from '../screens/Profile';
-import {
-  HomeIcon,
-  ListenIcon,
-  LogoutIcon,
-  ProfileIcon,
-  SavedIcon,
-  SearchIcon,
-} from '../UI/TabIcons';
+import { HomeIcon, ListenIcon, LogoutIcon, ProfileIcon, SavedIcon, SearchIcon } from '../UI/Icons';
 import { TouchableOpacity } from 'react-native';
 import { AuthContext } from '../store/auth-context';
 
