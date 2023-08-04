@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { firestore } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 
 const useFetchTales = () => {
-  const [tales, setTales] = useState([]);
-  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [fetchedTales, setFetchedTales] = useState([]);
+  const [fetchedCategories, setFetchedCategories] = useState([]);
 
   useEffect(() => {
     const fetchTalesAndCategories = async () => {
@@ -15,21 +16,21 @@ const useFetchTales = () => {
       try {
         const querySnapshot = await getDocs(talesCollectionRef);
 
-        const fetchedTales = [];
-        const fetchedCategories = [];
+        const talesArray = [];
+        const categoriesArray = [];
         querySnapshot.forEach((doc) => {
           const tale = {
             id: doc.id,
             ...doc.data(),
           };
-          fetchedTales.push(tale);
-          if (!fetchedCategories.includes(tale.category)) {
-            fetchedCategories.push(tale.category);
+          talesArray.push(tale);
+          if (!categoriesArray.includes(tale.category)) {
+            categoriesArray.push(tale.category);
           }
         });
 
-        setTales(fetchedTales);
-        setCategories(fetchedCategories);
+        setFetchedTales(talesArray);
+        setFetchedCategories(categoriesArray);
         setLoading(false);
       } catch (error) {
         console.log('Error fetching tales and categories: ', error);
@@ -40,6 +41,9 @@ const useFetchTales = () => {
 
     fetchTalesAndCategories();
   }, []);
+
+  const tales = useMemo(() => fetchedTales, [fetchedTales]);
+  const categories = useMemo(() => fetchedCategories, [fetchedCategories]);
 
   return { tales, categories, loading, error };
 };
