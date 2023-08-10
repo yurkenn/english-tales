@@ -10,7 +10,7 @@ const FeaturedStories = ({ data }) => {
   const navigation = useNavigation();
 
   const handleReadButton = () => {
-    navigation.navigate('Content', { slug: data.tales[0].slug.current });
+    navigation.navigate('Content', { data });
   };
 
   const dateString = data.tales[0].publishedAt;
