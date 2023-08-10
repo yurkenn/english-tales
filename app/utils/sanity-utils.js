@@ -13,7 +13,9 @@ export const getFeatured = async () => {
         "author": author->name,
         "imageURL": imageURL.asset->url,
         "likes": likes,
-        "publishedAt": publishedAt
+        "publishedAt": publishedAt,
+        content
+
       }
     }`);
     return featured;
@@ -47,7 +49,7 @@ export const getTaleBySlug = async (slug) => {
         "author": author->name,
         "authorImage": author->image,
         "category": categories[0]->title,
-        "body": body
+        content,
       }`,
       { slug }
     );
