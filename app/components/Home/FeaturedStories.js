@@ -2,46 +2,51 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { Colors } from '../../constants/colors';
 import { BookmarkOutlineIcon, LikeIcon } from '../../UI/Icons';
-import { BookmarkIcon } from '../../UI/SvgIcons';
 import { useNavigation } from '@react-navigation/native';
 import BookmarkButton from '../../UI/BookmarkButton';
+import { urlFor } from '../../../sanity';
 
 const FeaturedStories = ({ data }) => {
   const navigation = useNavigation();
-  const { title, author, bookmarks, category, content, imageUrl, likes, timestamp } = data;
 
   const handleReadButton = () => {
-    navigation.navigate('Content', { data });
+    navigation.navigate('Content', { slug: data.tales[0].slug.current });
   };
 
+  const dateString = data.tales[0].publishedAt;
+  const formattedDate = new Date(dateString).toLocaleDateString();
+
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <BookmarkButton />
-        <Image source={{ uri: imageUrl }} style={styles.image} />
-        <View style={styles.authorContainer}>
-          <Text style={styles.author}>{author}</Text>
+    <View>
+      {data && (
+        <View style={styles.container}>
+          <View style={styles.imageContainer}>
+            <BookmarkButton />
+            <Image source={{ uri: urlFor(data.imageURL).url() }} style={styles.image} />
+            <View style={styles.authorContainer}>
+              <Text style={styles.author}>{data.tales[0].author}</Text>
+            </View>
+          </View>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{data.title}</Text>
+            <Text style={styles.category}>{data.tales[0].category}</Text>
+          </View>
+          <View style={styles.infoContainer}>
+            <View style={styles.likeContainer}>
+              <LikeIcon />
+              <Text style={styles.likes}>{data.tales[0].likes}</Text>
+            </View>
+            <View style={styles.bookmarkContainer}>
+              <Text style={styles.bookmarks}>{formattedDate}</Text>
+            </View>
+            <View style={styles.readButtonContainer}>
+              <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
+                <Text style={styles.readButtonText}>Read</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
-      </View>
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.category}>{category}</Text>
-      </View>
-      <View style={styles.infoContainer}>
-        <View style={styles.likeContainer}>
-          <LikeIcon />
-          <Text style={styles.likes}>{likes}</Text>
-        </View>
-        <View style={styles.bookmarkContainer}>
-          <BookmarkOutlineIcon />
-          <Text style={styles.bookmarks}>{bookmarks}</Text>
-        </View>
-        <View style={styles.readButtonContainer}>
-          <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
-            <Text style={styles.readButtonText}>Read</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      )}
     </View>
   );
 };
@@ -63,7 +68,8 @@ const styles = StyleSheet.create({
   image: {
     borderRadius: 10,
     height: 150,
-    width: '100%',
+    width: 250,
+    resizeMode: 'cover',
   },
   authorContainer: {
     backgroundColor: Colors.primaryBackground,
