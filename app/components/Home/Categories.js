@@ -7,7 +7,7 @@ const Categories = ({ data }) => {
     <View style={styles.buttonContainer}>
       <TouchableOpacity style={styles.button}>
         <AdventureIcon />
-        <Text style={styles.categoryName}>{data.name}</Text>
+        <Text style={styles.categoryName}>{data.title}</Text>
       </TouchableOpacity>
     </View>
   );
