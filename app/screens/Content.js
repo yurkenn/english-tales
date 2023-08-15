@@ -1,65 +1,40 @@
-import React, { useRef, useState } from 'react';
-import { Image, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { ImageHeaderScrollView, TriggeringView } from 'react-native-image-header-scroll-view';
-import * as Animatable from 'react-native-animatable';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { urlFor } from '../../sanity';
-import PortableText from 'react-portable-text';
-import TaleContent from '../components/TaleContent';
+import TaleContent from '../components/Content/TaleContent';
+import { AnimatedScrollView } from '@kanelloc/react-native-animated-header-scroll-view';
+import HeaderNavbar from '../components/Content/HeaderNavbar';
+import TopNavbar from '../components/Content/TopNavbar';
+import { Colors } from '../constants/colors';
+import useGetTale from '../hooks/useGetTale';
+import LoadingAnimation from '../components/Animations/LoadingAnimation';
+import ErrorAnimation from '../components/Animations/ErrorAnimation';
 
 const Content = ({ route }) => {
-  const { data } = route.params;
-  console.log('DATA: ', data);
-  const navTitleView = useRef(null);
-  const [isTitleVisible, setTitleVisible] = useState(false);
+  const { slug } = route.params;
+  console.log('DATA: ', slug);
 
-  const handleScroll = (event) => {
-    const offsetY = event.nativeEvent.contentOffset.y;
-    if (offsetY > 150 && !isTitleVisible) {
-      setTitleVisible(true);
-      navTitleView.current.fadeInUp(200);
-    } else if (offsetY <= 150 && isTitleVisible) {
-      setTitleVisible(false);
-      navTitleView.current.fadeOut(100);
-    }
-  };
+  const { loading, error, tale } = useGetTale(slug);
+  console.log('TALE: ', tale);
+
+  if (loading) return <LoadingAnimation />;
+  if (error) return <ErrorAnimation />;
 
   return (
     <View style={styles.container}>
-      <ImageHeaderScrollView
-        maxHeight={300}
-        minHeight={100}
-        maxOverlayOpacity={0.6}
-        minOverlayOpacity={0.3}
-        renderHeader={() => (
-          <Image source={{ uri: urlFor(data.imageURL).url() }} style={styles.headerImage} />
-        )}
-        renderForeground={() => (
-          <View style={styles.foregroundContainer}>
-            <Text style={styles.imageTitle}>{data.title}</Text>
+      {tale && (
+        <AnimatedScrollView
+          headerImage={{ uri: urlFor(tale[0].imageURL).url() }}
+          HeaderNavbarComponent={<HeaderNavbar title={tale[0].title} />}
+          TopNavBarComponent={<TopNavbar title={tale[0].title} />}
+          imageStyle={styles.headerImage}
+          disableScale={true}
+        >
+          <View style={styles.content}>
+            <TaleContent style={styles.blocks} blocks={tale[0].content} />
           </View>
-        )}
-        renderFixedForeground={() => (
-          <Animatable.View
-            style={[
-              styles.navTitleView,
-              {
-                opacity: isTitleVisible ? 1 : 0,
-              },
-            ]}
-            ref={navTitleView}
-          >
-            <Text style={styles.navTitle}>{data.title}</Text>
-          </Animatable.View>
-        )}
-        onScroll={handleScroll}
-      >
-        <View style={styles.content}>
-          <TriggeringView>
-            <Text style={styles.title}>About {data.title}</Text>
-          </TriggeringView>
-          <TaleContent blocks={data.tales[0].content} />
-        </View>
-      </ImageHeaderScrollView>
+        </AnimatedScrollView>
+      )}
     </View>
   );
 };
@@ -67,54 +42,22 @@ const Content = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: Colors.primaryBackground,
   },
   headerImage: {
     height: 300,
     width: '100%',
+    opacity: 0.8,
     resizeMode: 'cover',
-  },
-  foregroundContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 25,
-    marginTop: Platform.OS === 'ios' ? 14 : '',
-  },
-  imageTitle: {
-    fontSize: Platform.OS === 'ios' ? 25 : 30,
-    color: 'white',
-    fontWeight: 'bold',
   },
   content: {
     padding: 20,
-    backgroundColor: 'white',
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: 'bold',
-    textAlign: 'center',
-    marginTop: 10,
-  },
-  sectionContent: {
-    fontSize: 16,
-    textAlign: 'justify',
-  },
-  navTitleView: {
-    position: 'absolute',
-    left: 20,
-    right: 0,
-    top: Platform.OS === 'ios' ? 45 : 27,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingTop: 16,
-    opacity: 0,
-    zIndex: 1,
-  },
-  navTitle: {
-    color: 'white',
-    fontSize: 19,
-    backgroundColor: 'transparent',
+    marginBottom: 20,
+    color: Colors.white,
   },
 });
 
