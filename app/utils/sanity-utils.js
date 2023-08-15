@@ -25,20 +25,6 @@ export const getFeatured = async () => {
   }
 };
 
-export const getTales = async () => {
-  try {
-    const tales = await client.fetch(`*[_type == "tale"]{
-      title,
-      slug,
-      "imageURL": imageURL.asset->url
-    }`);
-    return tales;
-  } catch (error) {
-    console.error('Error fetching tales:', error);
-    throw error;
-  }
-};
-
 export const getTaleBySlug = async (slug) => {
   try {
     const tale = await client.fetch(
@@ -47,7 +33,7 @@ export const getTaleBySlug = async (slug) => {
         slug,
         "imageURL" : imageURL.asset->url, 
         "author": author->name,
-        "authorImage": author->image,
+        "authorImage": author->image.asset->url,
         "category": categories[0]->title,
         content,
       }`,
@@ -68,6 +54,24 @@ export const getCategories = async () => {
     return categories;
   } catch (error) {
     console.error('Error fetching categories:', error);
+    throw error;
+  }
+};
+
+export const getTalesByCategory = async (category) => {
+  try {
+    const tales = await client.fetch(
+      `*[_type == "tale" && categories[0]->title == $category]{
+        title,
+        slug,
+        "author": author->name,
+        "imageURL": imageURL.asset->url
+      }`,
+      { category }
+    );
+    return tales;
+  } catch (error) {
+    console.error('Error fetching tales by category:', error);
     throw error;
   }
 };
