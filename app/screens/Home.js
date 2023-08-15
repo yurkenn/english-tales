@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import FeaturedStories from '../components/Home/FeaturedStories';
-import Categories from '../components/Home/Categories';
+import Categories from '../components/Category/Categories';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import MyStories from '../components/Home/MyStories';
