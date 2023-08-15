@@ -6,6 +6,7 @@ import TabNavigation from './TabNavigation';
 import Content from '../screens/Content';
 import { AuthContext } from '../store/auth-context';
 import { Colors } from '../constants/colors';
+import CategoryList from '../screens/CategoryList';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,12 +23,21 @@ const HomeStack = () => {
       <Stack.Screen
         name="Content"
         component={Content}
-        options={({ route }) => ({
-          //title: route.params.data.title,
-          headerTitle: '',
+        options={{
           headerTransparent: true,
-          headerBackTitleVisible: false,
           headerTintColor: '#fff',
+          headerTitle: '',
+        }}
+      />
+      <Stack.Screen
+        name="CategoryList"
+        component={CategoryList}
+        options={({ route }) => ({
+          title: route.params.category,
+          headerTintColor: '#fff',
+          headerStyle: {
+            backgroundColor: Colors.primaryBackground,
+          },
         })}
       />
     </Stack.Navigator>
