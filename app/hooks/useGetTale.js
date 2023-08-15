@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getTaleBySlug } from '../utils/sanity-utils';
 
 const useGetTale = (slug) => {
-  const [tale, setTale] = useState(null);
+  const [tale, setTale] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
