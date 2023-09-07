@@ -1,6 +1,5 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import { BookmarkIcon } from '../../UI/SvgIcons';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import BookmarkButton from '../../UI/BookmarkButton';
 
 const MyStories = () => {
@@ -25,7 +24,6 @@ const MyStories = () => {
           <Text style={styles.lastRead}>{data.lastRead}</Text>
         </View>
       </View>
-      <BookmarkButton />
     </View>
   );
 };
