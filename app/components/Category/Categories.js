@@ -1,7 +1,7 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import { AdventureIcon } from '../../UI/SvgIcons';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { PlanetOutlineIcon } from '../../UI/Icons';
 
 const Categories = ({ data }) => {
   const navigation = useNavigation();
@@ -12,7 +12,7 @@ const Categories = ({ data }) => {
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity onPress={handleCategories} style={styles.button}>
-        <AdventureIcon />
+        <PlanetOutlineIcon />
         <Text style={styles.categoryName}>{data.title}</Text>
       </TouchableOpacity>
     </View>
