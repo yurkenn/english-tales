@@ -1,9 +1,7 @@
-import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 
 export const HomeIcon = () => {
-  return <MaterialIcons name="home" size={23} color="white" />;
+  return <Ionicons name="home" size={23} color="white" />;
 };
 
 export const SearchIcon = () => {
@@ -15,7 +13,7 @@ export const ListenIcon = () => {
 };
 
 export const SavedIcon = () => {
-  return <Ionicons name="ios-bookmark" size={24} color="white" />;
+  return <Ionicons name="ios-bookmark" size={23} color="white" />;
 };
 
 export const ProfileIcon = () => {
@@ -26,10 +24,18 @@ export const LogoutIcon = () => {
   return <Ionicons name="log-out-outline" size={23} color="white" />;
 };
 
-export const LikeIcon = () => {
-  return <AntDesign name="like2" size={24} color="white" />;
+export const BookmarkOutlineIcon = () => {
+  return <Ionicons name="bookmarks-outline" size={23} color="white" />;
 };
 
-export const BookmarkOutlineIcon = () => {
-  return <Ionicons name="bookmarks-outline" size={24} color="white" />;
+export const PlanetOutlineIcon = () => {
+  return <Ionicons name="planet-outline" size={23} color="white" />;
+};
+
+export const TimeIcon = () => {
+  return <Ionicons name="time-outline" size={16} color="white" />;
+};
+
+export const StarIcon = () => {
+  return <Ionicons name="star-outline" size={16} color="white" />;
 };
