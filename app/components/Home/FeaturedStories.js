@@ -1,10 +1,10 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { Colors } from '../../constants/colors';
-import { BookmarkOutlineIcon, LikeIcon } from '../../UI/Icons';
 import { useNavigation } from '@react-navigation/native';
-import BookmarkButton from '../../UI/BookmarkButton';
 import { urlFor } from '../../../sanity';
+import FormatReadTime from '../FormatReadTime';
+import { StarIcon, TimeIcon } from '../../UI/Icons';
 
 const FeaturedStories = ({ data }) => {
   const navigation = useNavigation();
@@ -13,15 +13,14 @@ const FeaturedStories = ({ data }) => {
     navigation.navigate('Content', { slug: data.tales[0].slug.current });
   };
 
-  const dateString = data.tales[0].publishedAt;
-  const formattedDate = new Date(dateString).toLocaleDateString();
+  const readTime = data.tales[0].readTime;
+  const formattedReadTime = FormatReadTime(readTime);
 
   return (
     <View>
       {data && (
         <View style={styles.container}>
           <View style={styles.imageContainer}>
-            <BookmarkButton />
             <Image source={{ uri: urlFor(data.imageURL).url() }} style={styles.image} />
             <View style={styles.authorContainer}>
               <Text style={styles.author}>{data.tales[0].author}</Text>
@@ -32,12 +31,13 @@ const FeaturedStories = ({ data }) => {
             <Text style={styles.category}>{data.tales[0].category}</Text>
           </View>
           <View style={styles.infoContainer}>
-            <View style={styles.likeContainer}>
-              <LikeIcon />
-              <Text style={styles.likes}>{data.tales[0].likes}</Text>
+            <View style={styles.readTimeContainer}>
+              <TimeIcon />
+              <Text style={styles.readTime}>{formattedReadTime}</Text>
             </View>
             <View style={styles.bookmarkContainer}>
-              <Text style={styles.bookmarks}>{formattedDate}</Text>
+              <StarIcon />
+              <Text style={styles.bookmarks}>{data.tales[0].likes}</Text>
             </View>
             <View style={styles.readButtonContainer}>
               <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
@@ -101,13 +101,14 @@ const styles = StyleSheet.create({
   infoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  likeContainer: {
+  readTimeContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginRight: 10,
   },
-  likes: {
+  readTime: {
     color: Colors.white,
     fontSize: 12,
     fontWeight: 'bold',
