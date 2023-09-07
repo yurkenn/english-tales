@@ -20,8 +20,11 @@ const styles = StyleSheet.create({
     paddingBottom: Platform.OS === 'ios' ? 0 : 10,
   },
   title: {
-    color: '#fff',
+    color: '#000',
     fontSize: Platform.OS === 'ios' ? 30 : 25,
     fontWeight: 'bold',
+    textShadowColor: 'rgba(255, 255, 255, 0.8)', // White text shadow
+    textShadowOffset: { width: 0, height: 1 }, // Adjust the offset for desired effect
+    textShadowRadius: 10, // Adjust the radius for desired effect
   },
 });
