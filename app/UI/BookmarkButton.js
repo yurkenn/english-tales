@@ -1,11 +1,11 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import { BookmarkIcon } from './SvgIcons';
+import { BookmarkOutlineIcon } from './Icons';
 
 const BookmarkButton = () => {
   return (
     <TouchableOpacity style={styles.button}>
-      <BookmarkIcon />
+      <BookmarkOutlineIcon />
     </TouchableOpacity>
   );
 };
