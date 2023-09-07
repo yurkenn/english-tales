@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   title: {
-    color: Colors.cardBackground,
+    color: Colors.primaryBackground,
     fontSize: 20,
     fontWeight: '500',
   },
