@@ -14,7 +14,8 @@ export const getFeatured = async () => {
         "imageURL": imageURL.asset->url,
         "likes": likes,
         "publishedAt": publishedAt,
-        content
+        content,
+        "readTime": readTime,
 
       }
     }`);
