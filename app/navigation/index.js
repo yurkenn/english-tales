@@ -25,7 +25,7 @@ const HomeStack = () => {
         component={Content}
         options={{
           headerTransparent: true,
-          headerTintColor: '#fff',
+          headerTintColor: '#000',
           headerTitle: '',
         }}
       />
