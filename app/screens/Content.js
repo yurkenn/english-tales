@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { urlFor } from '../../sanity';
 import TaleContent from '../components/Content/TaleContent';
 import { AnimatedScrollView } from '@kanelloc/react-native-animated-header-scroll-view';
@@ -17,6 +17,26 @@ const Content = ({ route }) => {
   const { loading, error, tale } = useGetTale(slug);
   console.log('TALE: ', tale);
 
+  // State for tracking like and bookmark status
+  const [isLiked, setIsLiked] = useState(false);
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  // Function to handle liking
+  const handleLike = () => {
+    // Toggle like status
+    setIsLiked(!isLiked);
+
+    // Implement logic to send like to your server or store it locally
+  };
+
+  // Function to handle bookmarking
+  const handleBookmark = () => {
+    // Toggle bookmark status
+    setIsBookmarked(!isBookmarked);
+
+    // Implement logic to save the story to bookmarks
+  };
+
   if (loading) return <LoadingAnimation />;
   if (error) return <ErrorAnimation />;
 
@@ -32,6 +52,28 @@ const Content = ({ route }) => {
         >
           <View style={styles.content}>
             <TaleContent style={styles.blocks} blocks={tale[0].content} />
+          </View>
+
+          {/* Like and Bookmark Buttons */}
+          <View style={styles.actionButtons}>
+            <TouchableOpacity onPress={handleLike}>
+              {/* <Image
+                source={
+                  isLiked ? require('../../assets/liked.png') : require('../../assets/like.png')
+                }
+                style={styles.likeButton}
+              /> */}
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handleBookmark}>
+              {/* <Image
+                source={
+                  isBookmarked
+                    ? require('../../assets/bookmarked.png')
+                    : require('../../assets/bookmark.png')
+                }
+                style={styles.bookmarkButton}
+              /> */}
+            </TouchableOpacity>
           </View>
         </AnimatedScrollView>
       )}
@@ -53,11 +95,21 @@ const styles = StyleSheet.create({
   content: {
     padding: 20,
   },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginBottom: 20,
-    color: Colors.white,
+  actionButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 20,
+  },
+  likeButton: {
+    width: 32,
+    height: 32,
+    resizeMode: 'contain',
+  },
+  bookmarkButton: {
+    width: 32,
+    height: 32,
+    resizeMode: 'contain',
   },
 });
 
