@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: Colors.cardBackground,
+    backgroundColor: Colors.dark500,
     borderRadius: 10,
   },
   imageContainer: {
