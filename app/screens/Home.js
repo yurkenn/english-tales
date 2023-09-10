@@ -15,6 +15,7 @@ import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import MyStories from '../components/Home/MyStories';
 import useGetFeaturedStories from '../hooks/useGetFeaturedStories';
 import useGetCategories from '../hooks/useGetCategories';
+import { Colors } from '../constants/colors';
 
 const Home = () => {
   const { featuredStories, loading, error } = useGetFeaturedStories();
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   },
   featureContainer: {},
   featureText: {
-    color: '#FFFFFF',
+    color: Colors.white,
     fontSize: 20,
     fontWeight: '500',
     lineHeight: 24,
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   categoriesText: {
-    color: '#FFFFFF',
+    color: Colors.white,
     fontSize: 20,
     fontWeight: '500',
     lineHeight: 24,
@@ -89,13 +90,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   myStoriesText: {
-    color: '#FFFFFF',
+    color: Colors.white,
     fontSize: 20,
     fontWeight: '500',
     lineHeight: 24,
   },
   button: {
-    backgroundColor: '#282828',
+    backgroundColor: Colors.dark500,
     borderRadius: 6,
     height: 48,
     justifyContent: 'center',
@@ -103,7 +104,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: Colors.white,
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 24,
