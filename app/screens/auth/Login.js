@@ -14,6 +14,7 @@ import { loginValidationSchema } from '../../components/Auth/Validation';
 import { AuthContext } from '../../store/auth-context';
 import { useContext } from 'react';
 import * as WebBrowser from 'expo-web-browser';
+import { Colors } from '../../constants/colors';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -45,7 +46,7 @@ const Login = ({ navigation }) => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your email"
-                placeholderTextColor="#fff"
+                placeholderTextColor={Colors.white}
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values.email}
@@ -56,7 +57,7 @@ const Login = ({ navigation }) => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
-                placeholderTextColor="#fff"
+                placeholderTextColor={Colors.white}
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 40,
     fontWeight: '600',
-    color: '#fff',
+    color: Colors.white,
     lineHeight: 52,
     textAlign: 'center',
   },
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   subtitle: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 14,
     lineHeight: 18,
     marginTop: 20,
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#333333',
     borderRadius: 6,
-    backgroundColor: '#161616',
+    backgroundColor: Colors.dark900,
     color: '#bdbdbd',
     fontSize: 14,
     lineHeight: 19,
@@ -148,19 +149,19 @@ const styles = StyleSheet.create({
     height: 48,
     padding: 8,
     marginTop: 20,
-    backgroundColor: '#000000',
+    backgroundColor: Colors.black,
     borderRadius: 6,
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 14,
     lineHeight: 16,
     fontWeight: 'bold',
   },
   infoText: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 12,
     lineHeight: 16,
     textAlign: 'right',
@@ -177,10 +178,10 @@ const styles = StyleSheet.create({
   line: {
     width: 135,
     borderWidth: 0.5,
-    borderColor: '#fff',
+    borderColor: Colors.white,
   },
   orText: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 14,
     lineHeight: 18,
     fontWeight: 'bold',
@@ -192,7 +193,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20,
-    backgroundColor: '#000',
+    backgroundColor: Colors.black,
     borderRadius: 6,
     padding: 8,
   },
@@ -209,7 +210,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   signupInfo: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 14,
     lineHeight: 18,
     marginRight: 5,
