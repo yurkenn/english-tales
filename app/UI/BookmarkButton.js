@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { BookmarkOutlineIcon } from './Icons';
+import { Colors } from '../constants/colors';
 
 const BookmarkButton = () => {
   return (
@@ -14,7 +15,7 @@ export default BookmarkButton;
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#000000',
+    backgroundColor: Colors.black,
     flex: 1,
     borderRadius: 6,
     justifyContent: 'center',
