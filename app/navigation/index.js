@@ -3,10 +3,10 @@ import React, { useContext } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AuthNavigation from './AuthNavigation';
 import TabNavigation from './TabNavigation';
-import Content from '../screens/Content';
 import { AuthContext } from '../store/auth-context';
 import { Colors } from '../constants/colors';
 import CategoryList from '../screens/CategoryList';
+import Content from '../screens/Content';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,7 +25,7 @@ const HomeStack = () => {
         component={Content}
         options={{
           headerTransparent: true,
-          headerTintColor: '#000',
+          headerTintColor: Colors.white,
           headerTitle: '',
         }}
       />
@@ -34,9 +34,9 @@ const HomeStack = () => {
         component={CategoryList}
         options={({ route }) => ({
           title: route.params.category,
-          headerTintColor: '#fff',
+          headerTintColor: Colors.white,
           headerStyle: {
-            backgroundColor: Colors.primaryBackground,
+            backgroundColor: Colors.dark900,
           },
         })}
       />
@@ -48,7 +48,7 @@ const Navigation = () => {
   const authContext = useContext(AuthContext);
 
   return (
-    <NavigationContainer theme={{ colors: { background: Colors.primaryBackground } }}>
+    <NavigationContainer theme={{ colors: { background: Colors.dark900 } }}>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {authContext.userInfo ? (
           <Stack.Screen name="Home" component={HomeStack} />
