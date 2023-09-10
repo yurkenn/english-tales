@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Search from '../screens/Search';
-import Listen from '../screens/Listen';
 import Saved from '../screens/Saved';
 import Profile from '../screens/Profile';
-import { HomeIcon, ListenIcon, LogoutIcon, ProfileIcon, SavedIcon, SearchIcon } from '../UI/Icons';
 import { TouchableOpacity } from 'react-native';
 import { AuthContext } from '../store/auth-context';
+import { Colors } from '../constants/colors';
+import Icon from '../UI/Icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,26 +21,26 @@ const TabNavigation = () => {
     <Tab.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#282828',
+          backgroundColor: Colors.dark500,
           shadowColor: 'transparent',
           elevation: 0,
         },
         headerTitleAlign: 'center',
         headerTitleStyle: {
-          color: '#fff',
+          color: Colors.white,
           fontSize: 16,
           fontWeight: '500',
           lineHeight: 20,
           textAlign: 'center',
         },
         tabBarStyle: {
-          backgroundColor: '#282828',
+          backgroundColor: Colors.dark500,
           height: 72,
           paddingBottom: 10,
           paddingTop: 10,
         },
         tabBarLabelStyle: {
-          color: '#fff',
+          color: Colors.white,
           fontSize: 12,
           fontWeight: '500',
           lineHeight: 14,
@@ -53,38 +53,32 @@ const TabNavigation = () => {
         component={Home}
         options={{
           headerTitle: 'Learn English with Stories',
-          tabBarIcon: () => <HomeIcon />,
+          tabBarIcon: () => <Icon name={'home'} size={23} color={'white'} />,
         }}
       />
       <Tab.Screen
         name="Search"
         component={Search}
         options={{
-          tabBarIcon: () => <SearchIcon />,
+          tabBarIcon: () => <Icon name={'search'} size={23} color={'white'} />,
         }}
       />
-      <Tab.Screen
-        name="Listen"
-        component={Listen}
-        options={{
-          tabBarIcon: () => <ListenIcon />,
-        }}
-      />
+
       <Tab.Screen
         name="Saved"
         component={Saved}
         options={{
-          tabBarIcon: () => <SavedIcon />,
+          tabBarIcon: () => <Icon name={'bookmark'} size={23} color={'white'} />,
         }}
       />
       <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
-          tabBarIcon: () => <ProfileIcon />,
+          tabBarIcon: () => <Icon name={'person'} size={23} color={'white'} />,
           headerRight: () => (
             <TouchableOpacity onPress={handleLogout}>
-              <LogoutIcon />
+              <Icon name={'log-out'} size={23} color={'white'} />
             </TouchableOpacity>
           ),
         }}
