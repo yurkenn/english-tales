@@ -14,6 +14,7 @@ import { signupValidationSchema } from '../../components/Auth/Validation';
 import { AuthContext } from '../../store/auth-context';
 import { useContext } from 'react';
 import SignupAnimation from '../../components/Animations/SignupAnimation';
+import { Colors } from '../../constants/colors';
 
 const Signup = ({ navigation }) => {
   const authContext = useContext(AuthContext);
@@ -46,7 +47,7 @@ const Signup = ({ navigation }) => {
                 <TextInput
                   style={styles.nameInput}
                   placeholder="First Name"
-                  placeholderTextColor="#fff"
+                  placeholderTextColor={Colors.white}
                   onChangeText={handleChange('firstName')}
                   onBlur={handleBlur('firstName')}
                   value={values.firstName}
@@ -56,7 +57,7 @@ const Signup = ({ navigation }) => {
                 <TextInput
                   style={styles.lastNameInput}
                   placeholder="Last Name"
-                  placeholderTextColor="#fff"
+                  placeholderTextColor={Colors.white}
                   onChangeText={handleChange('lastName')}
                   onBlur={handleBlur('lastName')}
                   value={values.lastName}
@@ -90,7 +91,7 @@ const Signup = ({ navigation }) => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your email"
-                placeholderTextColor="#fff"
+                placeholderTextColor={Colors.white}
                 onChangeText={handleChange('email')}
                 onBlur={handleBlur('email')}
                 value={values.email}
@@ -101,7 +102,7 @@ const Signup = ({ navigation }) => {
               <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
-                placeholderTextColor="#fff"
+                placeholderTextColor={Colors.white}
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
                 value={values.password}
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 40,
     fontWeight: '600',
-    color: '#fff',
+    color: Colors.white,
     lineHeight: 52,
     textAlign: 'center',
     marginBottom: 20,
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   subtitle: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 14,
     lineHeight: 18,
     marginTop: 20,
@@ -177,7 +178,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#333333',
     borderRadius: 6,
-    backgroundColor: '#161616',
+    backgroundColor: Colors.dark900,
     color: '#bdbdbd',
     fontSize: 14,
     lineHeight: 19,
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#333333',
     borderRadius: 6,
-    backgroundColor: '#161616',
+    backgroundColor: Colors.dark900,
     color: '#bdbdbd',
     fontSize: 14,
     lineHeight: 19,
@@ -202,7 +203,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#333333',
     borderRadius: 6,
-    backgroundColor: '#161616',
+    backgroundColor: Colors.dark900,
     color: '#bdbdbd',
     fontSize: 14,
     lineHeight: 19,
@@ -213,19 +214,19 @@ const styles = StyleSheet.create({
     height: 48,
     padding: 8,
     marginTop: 20,
-    backgroundColor: '#000000',
+    backgroundColor: Colors.black,
     borderRadius: 6,
     justifyContent: 'center',
     alignItems: 'center',
   },
   buttonText: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 14,
     lineHeight: 16,
     fontWeight: 'bold',
   },
   infoText: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 12,
     lineHeight: 16,
     textAlign: 'right',
@@ -239,7 +240,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   signupInfo: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 14,
     lineHeight: 18,
     marginRight: 5,
