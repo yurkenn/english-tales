@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import BookmarkButton from '../../UI/BookmarkButton';
+import { Colors } from '../../constants/colors';
 
 const MyStories = () => {
   const data = {
@@ -33,7 +34,7 @@ export default MyStories;
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    backgroundColor: '#282828',
+    backgroundColor: Colors.dark500,
     borderRadius: 6,
     marginBottom: 10,
     marginTop: 10,
@@ -55,19 +56,19 @@ const styles = StyleSheet.create({
     marginLeft: 25,
   },
   title: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 20,
   },
   author: {
     marginTop: 8,
-    color: '#fff',
+    color: Colors.white,
     fontSize: 14,
     lineHeight: 16,
   },
   lastRead: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 12,
     fontWeight: '500',
     lineHeight: 14,
