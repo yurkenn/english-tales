@@ -32,6 +32,7 @@ export const getTaleBySlug = async (slug) => {
       `*[_type == "tale" && slug.current == $slug]{
         title,
         slug,
+        likes,
         "imageURL" : imageURL.asset->url, 
         "author": author->name,
         "authorImage": author->image.asset->url,
@@ -73,6 +74,16 @@ export const getTalesByCategory = async (category) => {
     return tales;
   } catch (error) {
     console.error('Error fetching tales by category:', error);
+    throw error;
+  }
+};
+
+export const setLikes = async (id, likes) => {
+  try {
+    const updatedLikes = await client.patch(id).set({ likes }).commit();
+    return updatedLikes.likes;
+  } catch (error) {
+    console.error('Error updating likes:', error);
     throw error;
   }
 };
