@@ -4,45 +4,26 @@ import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 import { urlFor } from '../../../sanity';
 import FormatReadTime from '../FormatReadTime';
-import ModalDetail from '../ModalDetail';
 import Icon from '../../UI/Icons';
-import Animated, {
-  Easing,
-  withTiming,
-  useSharedValue,
-  useAnimatedStyle,
-} from 'react-native-reanimated';
+import { Easing, withTiming, useSharedValue } from 'react-native-reanimated';
 
 const FeaturedStories = ({ data }) => {
   const navigation = useNavigation();
   console.log('DESCRIPTION', data);
 
-  const [isModalVisible, setModalVisible] = useState(false);
-  const modalOpacity = useSharedValue(0);
-
-  const openModal = () => {
-    modalOpacity.value = withTiming(1, { duration: 300, easing: Easing.ease });
-    setModalVisible(true);
-  };
-
-  const closeModal = () => {
-    modalOpacity.value = withTiming(0, { duration: 300, easing: Easing.ease });
-    setModalVisible(false);
-  };
-
-  const handleDetailButton = () => {
-    openModal();
-  };
-
   const handleRead = () => {
     navigation.navigate('Content', { slug: data.tales[0].slug.current });
+  };
+
+  const goDetailScreen = () => {
+    navigation.navigate('Detail', { data });
   };
 
   const readTime = data.tales[0].readTime;
   const formattedReadTime = FormatReadTime(readTime);
 
   return (
-    <TouchableOpacity onPress={handleRead}>
+    <TouchableOpacity onPress={goDetailScreen}>
       <View>
         {data && (
           <View style={styles.container}>
@@ -61,21 +42,7 @@ const FeaturedStories = ({ data }) => {
                 <Icon name={'star-outline'} size={16} color={'white'} />
                 <Text style={styles.bookmarks}>{data.tales[0].likes}</Text>
               </View>
-              <View style={styles.detailButtonContainer}>
-                <TouchableOpacity onPress={handleDetailButton} style={styles.detailButton}>
-                  <Text style={styles.detailButtonText}>Detail</Text>
-                </TouchableOpacity>
-              </View>
             </View>
-            <ModalDetail
-              data={data}
-              isModalVisible={isModalVisible}
-              closeModal={closeModal}
-              onBackdropPress={() => setModalVisible(false)}
-              onSwipeComplete={() => setModalVisible(false)}
-              swipeDirection="down"
-              handleRead={handleRead}
-            />
           </View>
         )}
       </View>
