@@ -7,6 +7,8 @@ import { AuthContext } from '../store/auth-context';
 import { Colors } from '../constants/colors';
 import CategoryList from '../screens/CategoryList';
 import Content from '../screens/Content';
+import Detail from '../screens/Detail';
+import Icon from '../UI/Icons';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +20,16 @@ const HomeStack = () => {
         component={TabNavigation}
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Detail"
+        component={Detail}
+        options={{
+          headerTransparent: true,
+          headerTintColor: Colors.white,
+          headerTitle: '',
+          headerRight: () => <Icon name={'bookmark-outline'} size={24} color={'white'} />,
         }}
       />
       <Stack.Screen
