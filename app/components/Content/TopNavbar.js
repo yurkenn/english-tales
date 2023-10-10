@@ -14,7 +14,7 @@ export default TopNavbar;
 
 const styles = StyleSheet.create({
   container: {
-    height: 110,
+    height: 105,
     backgroundColor: Colors.dark900,
     justifyContent: 'center',
     alignItems: 'center',
