@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { urlFor } from '../../sanity';
 import TaleContent from '../components/Content/TaleContent';
@@ -10,40 +10,42 @@ import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import Icon from '../UI/Icons';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import { setLikes } from '../utils/sanity-utils';
+import { likeStory } from '../utils/sanity-utils';
 
 const Content = ({ route }) => {
   const { slug } = route.params;
-  console.log('DATA: ', slug);
+  console.log('SLUG ', slug);
 
   const { loading, error, tale } = useGetTale(slug);
   console.log('TALE: ', tale);
 
-  // State for tracking like and bookmark status
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
+
+  // Use the optional chaining operator to safely access tale[0]?.likes
   const [likeCount, setLikeCount] = useState(tale[0]?.likes);
 
-  // Function to handle liking
+  useEffect(() => {
+    // Update like count when tale changes
+    setLikeCount(tale[0]?.likes);
+  }, [tale]);
+
   const handleLike = async () => {
     // Toggle like status
     setIsLiked(!isLiked);
 
-    // Implement logic to save the like to the database
+    // Update like count on the server
     try {
-      const updatedLikes = await setLikes(tale[0].slug.current, likeCount + 1);
-      setLikeCount(updatedLikes);
+      // Increment or decrement like count based on isLiked status
+      likeStory(tale[0]._id);
     } catch (error) {
-      console.error('Error updating likes:', error);
+      console.error('Error updating tale likes:', error);
+      // You might want to handle this error gracefully in your UI
     }
   };
 
-  // Function to handle bookmarking
   const handleBookmark = () => {
-    // Toggle bookmark status
     setIsBookmarked(!isBookmarked);
-
-    // Implement logic to save the story to bookmarks
   };
 
   if (loading) return <LoadingAnimation />;
