@@ -30,6 +30,7 @@ export const getTaleBySlug = async (slug) => {
   try {
     const tale = await client.fetch(
       `*[_type == "tale" && slug.current == $slug]{
+        _id,
         title,
         slug,
         likes,
@@ -78,12 +79,34 @@ export const getTalesByCategory = async (category) => {
   }
 };
 
-export const setLikes = async (id, likes) => {
+export const getTalesBySearch = async (search) => {
   try {
-    const updatedLikes = await client.patch(id).set({ likes }).commit();
-    return updatedLikes.likes;
+    const tales = await client.fetch(
+      `*[_type == "tale" && title match $search]{
+        title,
+        slug,
+        "author": author->name,
+        "imageURL": imageURL.asset->url
+      }`,
+      { search }
+    );
+    return tales;
   } catch (error) {
-    console.error('Error updating likes:', error);
+    console.error('Error fetching tales by search:', error);
     throw error;
+  }
+};
+
+export const likeStory = async (storyId) => {
+  try {
+    const story = await client
+      .patch(storyId)
+      .set({ likes: { increment: 1 } })
+      .commit();
+    // Handle success, update the UI, etc.
+    console.log('Story updated:', story);
+  } catch (error) {
+    // Handle error
+    console.log('An error occurred:', error);
   }
 };
