@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import BookmarkButton from '../../UI/BookmarkButton';
 import { Colors } from '../../constants/colors';
 
 const MyStories = () => {
