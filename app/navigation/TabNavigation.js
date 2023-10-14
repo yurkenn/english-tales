@@ -7,7 +7,7 @@ import Profile from '../screens/Profile';
 import { TouchableOpacity } from 'react-native';
 import { AuthContext } from '../store/auth-context';
 import { Colors } from '../constants/colors';
-import Icon from '../UI/Icons';
+import Icon from '../components/Icons';
 
 const Tab = createBottomTabNavigator();
 
