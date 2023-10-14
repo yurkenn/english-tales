@@ -8,7 +8,8 @@ import { Colors } from '../constants/colors';
 import CategoryList from '../screens/CategoryList';
 import Content from '../screens/Content';
 import Detail from '../screens/Detail';
-import Icon from '../UI/Icons';
+import Icon from '../components/Icons';
+import { TouchableOpacity } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,7 +30,6 @@ const HomeStack = () => {
           headerTransparent: true,
           headerTintColor: Colors.white,
           headerTitle: '',
-          headerRight: () => <Icon name={'bookmark-outline'} size={24} color={'white'} />,
         }}
       />
       <Stack.Screen
