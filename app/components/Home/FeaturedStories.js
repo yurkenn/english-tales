@@ -4,16 +4,12 @@ import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 import { urlFor } from '../../../sanity';
 import FormatReadTime from '../FormatReadTime';
-import Icon from '../../UI/Icons';
+import Icon from '../Icons';
 import { Easing, withTiming, useSharedValue } from 'react-native-reanimated';
 
 const FeaturedStories = ({ data }) => {
   const navigation = useNavigation();
   console.log('DESCRIPTION', data);
-
-  const handleRead = () => {
-    navigation.navigate('Content', { slug: data.tales[0].slug.current });
-  };
 
   const goDetailScreen = () => {
     navigation.navigate('Detail', { data });
@@ -66,8 +62,8 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 10,
-    height: 150,
-    width: 250,
+    height: 250,
+    width: 190,
     resizeMode: 'cover',
   },
   authorContainer: {
