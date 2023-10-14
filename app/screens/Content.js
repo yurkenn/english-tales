@@ -8,7 +8,7 @@ import { Colors } from '../constants/colors';
 import useGetTale from '../hooks/useGetTale';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
-import Icon from '../UI/Icons';
+import Icon from '../components/Icons';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { likeStory } from '../utils/sanity-utils';
 
@@ -68,11 +68,15 @@ const Content = ({ route }) => {
         >
           {/* Content */}
           <View style={styles.content}>
+            {/* Title */}
+            <Text style={styles.title}>{tale[0].title}</Text>
+
+            {/* Author */}
             <TaleContent style={styles.blocks} blocks={tale[0].content} />
           </View>
 
           {/* Like and Bookmark Buttons */}
-          <View style={styles.actionButtons}>
+          {/* <View style={styles.actionButtons}>
             <TouchableOpacity
               disabled={isLiked ? true : false}
               style={styles.button}
@@ -93,7 +97,7 @@ const Content = ({ route }) => {
               />
               <Text style={styles.buttonText}>{isBookmarked ? 'Bookmarked' : 'Bookmark'}</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </ParallaxScrollView>
       )}
     </View>
@@ -108,6 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: Colors.white,
+    paddingBottom: 10,
   },
   author: {
     fontSize: 16,
