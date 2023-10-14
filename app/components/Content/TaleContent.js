@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
   },
   normal: {
-    fontSize: 16,
+    fontSize: 18,
     color: Colors.white,
     paddingBottom: 10,
     letterSpacing: 0.5,
