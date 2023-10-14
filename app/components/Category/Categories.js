@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { Colors } from '../../constants/colors';
-import Icon from '../../UI/Icons';
+import Icon from '../Icons';
 
 const Categories = ({ data }) => {
   const navigation = useNavigation();
