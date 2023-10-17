@@ -3,32 +3,19 @@ import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
 import { Colors } from '../constants/colors';
 import { Rating } from 'react-native-ratings';
 import Icon from '../components/Icons';
-import { AuthContext } from '../store/auth-context';
+import { useBookmark } from '../store/BookmarkContext';
 
 const Detail = ({ route, navigation }) => {
   const { data } = route.params;
   const [rating, setRating] = useState(0);
   console.log('DETAIL', data);
 
-  const [bookmarked, setBookmarked] = useState(false);
+  const { bookmarks, toggleBookmark } = useBookmark();
 
-  const authContext = useContext(AuthContext);
-  console.log('BOOKMARKS', authContext.bookmarks);
-
-  // Check if the current book is bookmarked by the user on load.
-  useEffect(() => {
-    const isBookmarked = authContext.bookmarks.includes(data.title); // You might use a unique identifier like 'id' or similar.
-    setBookmarked(isBookmarked);
-  }, [authContext.bookmarks, data.title]);
+  const bookmarked = bookmarks.includes(data);
 
   const handleBookmark = () => {
-    if (bookmarked) {
-      authContext.toggleBookmark(data.title);
-      setBookmarked(false);
-    } else {
-      authContext.toggleBookmark(data.title);
-      setBookmarked(true);
-    }
+    toggleBookmark(data);
   };
 
   const handleReadButton = () => {
@@ -46,7 +33,7 @@ const Detail = ({ route, navigation }) => {
           <Icon
             name={bookmarked ? 'bookmark' : 'bookmark-outline'}
             size={24}
-            color={Colors.white}
+            color={bookmarked ? Colors.white : Colors.white}
           />
         </TouchableOpacity>
       ),
