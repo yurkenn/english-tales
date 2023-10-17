@@ -8,11 +8,11 @@ import { useBookmark } from '../store/BookmarkContext';
 const Detail = ({ route, navigation }) => {
   const { data } = route.params;
   const [rating, setRating] = useState(0);
-  console.log('DETAIL', data);
-
   const { bookmarks, toggleBookmark } = useBookmark();
 
-  const bookmarked = bookmarks.includes(data);
+  const isBookmarked = bookmarks.find(
+    (bookmark) => bookmark.tales[0].slug.current === data.tales[0].slug.current
+  );
 
   const handleBookmark = () => {
     toggleBookmark(data);
@@ -31,9 +31,9 @@ const Detail = ({ route, navigation }) => {
       headerRight: () => (
         <TouchableOpacity onPress={handleBookmark}>
           <Icon
-            name={bookmarked ? 'bookmark' : 'bookmark-outline'}
+            name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
             size={24}
-            color={bookmarked ? Colors.white : Colors.white}
+            color={isBookmarked ? Colors.yellow : Colors.white}
           />
         </TouchableOpacity>
       ),
