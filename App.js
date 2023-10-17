@@ -1,7 +1,8 @@
 import React from 'react';
 import Navigation from './app/navigation';
 import { StatusBar } from 'expo-status-bar';
-import { AuthProvider } from './app/store/auth-context';
+import { AuthProvider } from './app/store/AuthContext';
+import BookmarkProvider from './app/store/BookmarkContext';
 import 'react-native-url-polyfill/auto';
 
 const App = () => {
@@ -9,7 +10,9 @@ const App = () => {
     <>
       <StatusBar style="light" />
       <AuthProvider>
-        <Navigation />
+        <BookmarkProvider>
+          <Navigation />
+        </BookmarkProvider>
       </AuthProvider>
     </>
   );
