@@ -3,13 +3,12 @@ import React, { useContext } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AuthNavigation from './AuthNavigation';
 import TabNavigation from './TabNavigation';
-import { AuthContext } from '../store/auth-context';
+import { AuthContext } from '../store/AuthContext';
 import { Colors } from '../constants/colors';
 import CategoryList from '../screens/CategoryList';
 import Content from '../screens/Content';
 import Detail from '../screens/Detail';
 import Icon from '../components/Icons';
-import { TouchableOpacity } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
