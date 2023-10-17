@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Formik } from 'formik';
 import { signupValidationSchema } from '../../components/Auth/Validation';
-import { AuthContext } from '../../store/auth-context';
+import { AuthContext } from '../../store/AuthContext';
 import { useContext } from 'react';
 import SignupAnimation from '../../components/Animations/SignupAnimation';
 import { Colors } from '../../constants/colors';
