@@ -11,9 +11,6 @@ const CategoryList = ({ route }) => {
 
   const { categoryList, loading, error } = useGetTalesByCategory(category);
 
-  console.log('CategoryList', categoryList);
-  // author , imageURL , title , slug
-
   const renderItem = ({ item }) => <CategoryCard data={item} />;
 
   if (loading) return <LoadingAnimation />;
