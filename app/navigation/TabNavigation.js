@@ -5,7 +5,7 @@ import Search from '../screens/Search';
 import Saved from '../screens/Saved';
 import Profile from '../screens/Profile';
 import { TouchableOpacity } from 'react-native';
-import { AuthContext } from '../store/auth-context';
+import { AuthContext } from '../store/AuthContext';
 import { Colors } from '../constants/colors';
 import Icon from '../components/Icons';
 
