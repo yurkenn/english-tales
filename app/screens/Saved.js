@@ -5,6 +5,7 @@ import SavedCard from '../components/Saved/SavedCard';
 
 const Saved = () => {
   const { bookmarks } = useBookmark();
+  console.log(bookmarks);
 
   const renderItem = ({ item }) => <SavedCard data={item} />;
 
