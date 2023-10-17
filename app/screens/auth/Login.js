@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { Formik } from 'formik';
 import { loginValidationSchema } from '../../components/Auth/Validation';
-import { AuthContext } from '../../store/auth-context';
+import { AuthContext } from '../../store/AuthContext';
 import { useContext } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { Colors } from '../../constants/colors';
