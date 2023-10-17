@@ -14,10 +14,8 @@ import { likeStory } from '../utils/sanity-utils';
 
 const Content = ({ route }) => {
   const { slug } = route.params;
-  console.log('SLUG ', slug);
 
   const { loading, error, tale } = useGetTale(slug);
-  console.log('TALE: ', tale);
 
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
