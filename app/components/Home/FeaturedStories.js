@@ -1,11 +1,10 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useState } from 'react';
+import React from 'react';
 import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 import { urlFor } from '../../../sanity';
 import FormatReadTime from '../FormatReadTime';
 import Icon from '../Icons';
-import { Easing, withTiming, useSharedValue } from 'react-native-reanimated';
 
 const FeaturedStories = ({ data }) => {
   const navigation = useNavigation();
