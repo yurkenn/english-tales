@@ -8,7 +8,6 @@ import Icon from '../Icons';
 
 const FeaturedStories = ({ data }) => {
   const navigation = useNavigation();
-  console.log('DESCRIPTION', data);
 
   const goDetailScreen = () => {
     navigation.navigate('Detail', { data });
