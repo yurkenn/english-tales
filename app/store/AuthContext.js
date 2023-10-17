@@ -19,8 +19,6 @@ const AuthContext = createContext({
   handleSignup: () => {},
   handleLogout: () => {},
   promptAsync: () => {},
-  bookmarks: [],
-  toggleBookmark: () => {},
 });
 
 const AuthProvider = ({ children }) => {
@@ -30,14 +28,6 @@ const AuthProvider = ({ children }) => {
     iosClientId: Config.IOS_CLIENT_ID,
     androidClientId: Config.ANDROID_CLIENT_ID,
   });
-  const [bookmarks, setBookmarks] = useState([]);
-  const toggleBookmark = (bookId) => {
-    if (bookmarks.includes(bookId)) {
-      setBookmarks(bookmarks.filter((id) => id !== bookId));
-    } else {
-      setBookmarks([...bookmarks, bookId]);
-    }
-  };
 
   const checkLocalUser = async () => {
     try {
@@ -129,8 +119,6 @@ const AuthProvider = ({ children }) => {
     request,
     response,
     promptAsync,
-    bookmarks,
-    toggleBookmark,
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
