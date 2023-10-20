@@ -56,7 +56,7 @@ const BookmarkProvider = ({ children }) => {
   };
 
   return (
-    <BookmarkContext.Provider value={{ bookmarks, toggleBookmark }}>
+    <BookmarkContext.Provider value={{ bookmarks, toggleBookmark, setBookmarks }}>
       {children}
     </BookmarkContext.Provider>
   );
