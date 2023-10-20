@@ -34,7 +34,7 @@ const FeaturedStories = ({ data }) => {
               </View>
               <View style={styles.bookmarkContainer}>
                 <Icon name={'star-outline'} size={16} color={'white'} />
-                <Text style={styles.bookmarks}>{data.tales[0].likes}</Text>
+                <Text style={styles.bookmarks}>31</Text>
               </View>
             </View>
           </View>
