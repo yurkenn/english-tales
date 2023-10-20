@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import React, { useContext, useEffect, useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Button } from 'react-native';
 import { urlFor } from '../../sanity';
 import TaleContent from '../components/Content/TaleContent';
 import HeaderNavbar from '../components/Content/HeaderNavbar';
@@ -8,47 +8,40 @@ import { Colors } from '../constants/colors';
 import useGetTale from '../hooks/useGetTale';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
-import Icon from '../components/Icons';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import { likeStory } from '../utils/sanity-utils';
+import { Rating } from 'react-native-ratings';
+import { firestore } from '../../firebaseConfig';
+import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'; // Import from 'firebase/firestore'
+import { AuthContext } from '../store/AuthContext';
 
 const Content = ({ route }) => {
   const { slug } = route.params;
+  const { userInfo } = useContext(AuthContext);
+  const { loading, error, tale, setTale, setLoading, setError } = useGetTale(slug);
+  const [rating, setRating] = useState(0);
+  const [hasRated, setHasRated] = useState(false);
 
-  const { loading, error, tale } = useGetTale(slug);
+  console.log('USER INFO =>', userInfo.uid);
 
-  const [isLiked, setIsLiked] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
-
-  // Use the optional chaining operator to safely access tale[0]?.likes
-  const [likeCount, setLikeCount] = useState(tale[0]?.likes);
-
-  useEffect(() => {
-    // Update like count when tale changes
-    setLikeCount(tale[0]?.likes);
-  }, [tale]);
-
-  const handleLike = async () => {
-    // Toggle like status
-    setIsLiked(!isLiked);
-
-    // Update like count on the server
+  const saveRating = async () => {
     try {
-      // Increment or decrement like count based on isLiked status
-      likeStory(tale[0]._id);
+      await addDoc(collection(firestore, 'taleRatings'), {
+        taleId: tale[0]._id,
+        taleTitle: tale[0].title,
+        rating: rating,
+        userId: userInfo.uid, // add the user ID to the document
+        timestamp: new Date(),
+      });
+      console.log('Rating saved successfully!');
+      setHasRated(true); // set hasRated to true after saving the rating
     } catch (error) {
-      console.error('Error updating tale likes:', error);
-      // You might want to handle this error gracefully in your UI
+      console.error('Error saving rating: ', error);
     }
-  };
-
-  const handleBookmark = () => {
-    setIsBookmarked(!isBookmarked);
   };
 
   if (loading) return <LoadingAnimation />;
   if (error) return <ErrorAnimation />;
-
+  if (!tale || !tale[0]) return null;
   return (
     <View style={styles.container}>
       {tale && (
@@ -64,38 +57,27 @@ const Content = ({ route }) => {
           renderFixedHeader={() => <HeaderNavbar title={tale[0].title} />}
           renderStickyHeader={() => <TopNavbar title={tale[0].title} />}
         >
-          {/* Content */}
           <View style={styles.content}>
-            {/* Title */}
-            <Text style={styles.title}>{tale[0].title}</Text>
-
-            {/* Author */}
+            <Text style={styles.title}>{tale[0]?.title}</Text>
+            <View style={styles.infoContainer}>
+              <Text style={styles.author}>Author: {tale[0].author}</Text>
+              <Text style={styles.category}>Category: {tale[0].category}</Text>
+            </View>
             <TaleContent style={styles.blocks} blocks={tale[0].content} />
+            <View style={styles.ratingContainer}>
+              <Text style={styles.ratingTitle}>Rate this book:</Text>
+              <Rating
+                type="star"
+                ratingCount={5}
+                imageSize={30}
+                startingValue={rating}
+                onFinishRating={setRating}
+                ratingBackgroundColor={Colors.dark900}
+                tintColor={Colors.dark900}
+              />
+              <Button title="Save Rating" onPress={saveRating} />
+            </View>
           </View>
-
-          {/* Like and Bookmark Buttons */}
-          {/* <View style={styles.actionButtons}>
-            <TouchableOpacity
-              disabled={isLiked ? true : false}
-              style={styles.button}
-              onPress={handleLike}
-            >
-              <Icon
-                name={isLiked ? 'heart' : 'heart-outline'}
-                size={23}
-                color={isLiked ? Colors.red : Colors.white}
-              />
-              <Text style={styles.buttonText}>{isLiked ? 'Liked' : 'Like'}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={handleBookmark}>
-              <Icon
-                name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
-                size={23}
-                color={isBookmarked ? Colors.yellow : Colors.white}
-              />
-              <Text style={styles.buttonText}>{isBookmarked ? 'Bookmarked' : 'Bookmark'}</Text>
-            </TouchableOpacity>
-          </View> */}
         </ParallaxScrollView>
       )}
     </View>
@@ -103,34 +85,6 @@ const Content = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
-  infoContainer: {
-    padding: 20,
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: Colors.white,
-    paddingBottom: 10,
-  },
-  author: {
-    fontSize: 16,
-    color: Colors.gray,
-    paddingBottom: 5,
-  },
-  category: {
-    fontSize: 16,
-    color: Colors.gray,
-    paddingBottom: 5,
-  },
-  likeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  likeCount: {
-    fontSize: 14,
-    color: Colors.red,
-    marginLeft: 5,
-  },
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
@@ -138,31 +92,48 @@ const styles = StyleSheet.create({
   headerImage: {
     height: 300,
     width: '100%',
-    opacity: 0.8,
-    resizeMode: 'cover',
+    opacity: 0.7,
   },
   content: {
-    padding: 20,
-  },
-  actionButtons: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    padding: 20,
-  },
-  button: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginHorizontal: 20,
-    backgroundColor: Colors.black,
-    borderRadius: 5,
-    padding: 10,
+    padding: 20,
   },
-  buttonText: {
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
     color: Colors.white,
-    marginLeft: 5,
+    marginBottom: 10,
+  },
+  infoContainer: {
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  author: {
+    fontSize: 16,
+    color: Colors.white,
+  },
+  category: {
+    fontSize: 16,
+    color: Colors.white,
+  },
+  likeContainer: {
+    flexDirection: 'row',
+  },
+  likeCount: {
+    fontSize: 16,
+    color: Colors.white,
+    marginLeft: 10,
+  },
+  ratingContainer: {
+    marginTop: 10,
+    alignItems: 'center',
+    backgroundColor: Colors.dark900,
+  },
+  ratingTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: Colors.white,
+    marginBottom: 10,
   },
 });
 
