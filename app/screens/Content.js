@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button } from 'react-native';
-import { urlFor } from '../../sanity';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { client, urlFor } from '../../sanity';
 import TaleContent from '../components/Content/TaleContent';
 import HeaderNavbar from '../components/Content/HeaderNavbar';
 import TopNavbar from '../components/Content/TopNavbar';
@@ -10,38 +10,17 @@ import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
 import { Rating } from 'react-native-ratings';
-import { firestore } from '../../firebaseConfig';
-import { addDoc, collection, getDocs, query, where } from 'firebase/firestore'; // Import from 'firebase/firestore'
 import { AuthContext } from '../store/AuthContext';
 
 const Content = ({ route }) => {
   const { slug } = route.params;
   const { userInfo } = useContext(AuthContext);
-  const { loading, error, tale, setTale, setLoading, setError } = useGetTale(slug);
-  const [rating, setRating] = useState(0);
-  const [hasRated, setHasRated] = useState(false);
-
-  console.log('USER INFO =>', userInfo.uid);
-
-  const saveRating = async () => {
-    try {
-      await addDoc(collection(firestore, 'taleRatings'), {
-        taleId: tale[0]._id,
-        taleTitle: tale[0].title,
-        rating: rating,
-        userId: userInfo.uid, // add the user ID to the document
-        timestamp: new Date(),
-      });
-      console.log('Rating saved successfully!');
-      setHasRated(true); // set hasRated to true after saving the rating
-    } catch (error) {
-      console.error('Error saving rating: ', error);
-    }
-  };
+  const { loading, error, tale } = useGetTale(slug);
 
   if (loading) return <LoadingAnimation />;
   if (error) return <ErrorAnimation />;
   if (!tale || !tale[0]) return null;
+
   return (
     <View style={styles.container}>
       {tale && (
@@ -64,19 +43,6 @@ const Content = ({ route }) => {
               <Text style={styles.category}>Category: {tale[0].category}</Text>
             </View>
             <TaleContent style={styles.blocks} blocks={tale[0].content} />
-            <View style={styles.ratingContainer}>
-              <Text style={styles.ratingTitle}>Rate this book:</Text>
-              <Rating
-                type="star"
-                ratingCount={5}
-                imageSize={30}
-                startingValue={rating}
-                onFinishRating={setRating}
-                ratingBackgroundColor={Colors.dark900}
-                tintColor={Colors.dark900}
-              />
-              <Button title="Save Rating" onPress={saveRating} />
-            </View>
           </View>
         </ParallaxScrollView>
       )}
@@ -115,25 +81,6 @@ const styles = StyleSheet.create({
   category: {
     fontSize: 16,
     color: Colors.white,
-  },
-  likeContainer: {
-    flexDirection: 'row',
-  },
-  likeCount: {
-    fontSize: 16,
-    color: Colors.white,
-    marginLeft: 10,
-  },
-  ratingContainer: {
-    marginTop: 10,
-    alignItems: 'center',
-    backgroundColor: Colors.dark900,
-  },
-  ratingTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: Colors.white,
-    marginBottom: 10,
   },
 });
 
