@@ -34,34 +34,32 @@ export default CategoryCard;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    padding: 10,
+    marginVertical: 5,
     backgroundColor: Colors.dark500,
-    borderRadius: 10,
+    borderRadius: 5,
+    elevation: 2,
   },
   imageContainer: {
-    flex: 1,
-    padding: 10,
+    marginRight: 10,
   },
   image: {
-    flex: 1,
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
+    width: 50,
+    height: 70,
+    borderRadius: 5,
   },
   titleContainer: {
-    flex: 2,
-    padding: 10,
+    flex: 1,
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
     color: Colors.white,
   },
   author: {
-    fontSize: 16,
+    fontSize: 14,
     color: Colors.white,
   },
 });
