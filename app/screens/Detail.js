@@ -1,14 +1,20 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useContext, useEffect, useLayoutEffect, useState } from 'react';
-import { Colors } from '../constants/colors';
-import { Rating } from 'react-native-ratings';
-import Icon from '../components/Icons';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { fetchLikes, unlikeTale, updateLikes } from '../utils/sanity-utils';
 import { useBookmark } from '../store/BookmarkContext';
+import Icon from '../components/Icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import BookmarkButton from '../Detail/BookmarkButton';
 
-const Detail = ({ route, navigation }) => {
+const Detail = ({ route }) => {
   const { data } = route.params;
-  const [rating, setRating] = useState(0);
   const { bookmarks, toggleBookmark } = useBookmark();
+  const [likes, setLikes] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+  const [hasLiked, setHasLiked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const navigation = useNavigation();
 
   const isBookmarked = bookmarks.find(
     (bookmark) => bookmark.tales[0].slug.current === data.tales[0].slug.current
@@ -22,20 +28,69 @@ const Detail = ({ route, navigation }) => {
     navigation.navigate('Content', { slug: data.tales[0].slug.current });
   };
 
-  const handleRating = (rating) => {
-    setRating(rating);
+  const handleLike = async () => {
+    if (!hasLiked) {
+      setIsLiked(true);
+      setLikes(likes + 1);
+      setHasLiked(true);
+
+      await updateLikes(data.tales[0]._id, likes + 1);
+
+      try {
+        await AsyncStorage.setItem(`liked_${data.tales[0]._id}`, 'true');
+      } catch (error) {
+        console.error(`Error saving like status for tale ${data.tales[0]._id}: ${error.message}`);
+      }
+    }
   };
+
+  const handleUnlike = async () => {
+    setIsLiked(false);
+    setLikes(likes - 1);
+    setHasLiked(false);
+
+    await unlikeTale(data.tales[0]._id, likes - 1);
+  };
+
+  useEffect(() => {
+    const fetchLikesForTale = async () => {
+      const taleId = data.tales[0]._id;
+      const likes = await fetchLikes(taleId);
+      setLikes(likes);
+
+      try {
+        const likeStatus = await AsyncStorage.getItem(`liked_${taleId}`);
+        if (likeStatus === 'true') {
+          setHasLiked(true);
+        }
+      } catch (error) {
+        console.error(`Error fetching like status for tale ${taleId}: ${error.message}`);
+      }
+
+      setIsLoading(false);
+    };
+    fetchLikesForTale();
+  }, [data]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity onPress={handleBookmark}>
-          <Icon
-            name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
-            size={24}
-            color={isBookmarked ? Colors.yellow : Colors.white}
-          />
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row' }}>
+          {hasLiked ? (
+            <TouchableOpacity onPress={handleUnlike} disabled={isLoading}>
+              <Icon name="heart" size={24} color="red" />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={handleLike} disabled={isLiked || isLoading}>
+              <Icon
+                name={isLiked ? 'heart' : 'heart-outline'}
+                size={24}
+                color={isLiked ? 'red' : 'white'}
+              />
+            </TouchableOpacity>
+          )}
+          <BookmarkButton isBookmarked={isBookmarked} handleBookmark={handleBookmark} />
+        </View>
       ),
     });
   });
@@ -50,19 +105,6 @@ const Detail = ({ route, navigation }) => {
       <View style={styles.descriptionContainer}>
         <Text style={styles.descriptionTitle}>Description</Text>
         <Text style={styles.description}>{data.description}</Text>
-      </View>
-      <View style={styles.ratingContainer}>
-        <Text style={styles.ratingTitle}>Rate this book:</Text>
-        <Rating
-          type="star"
-          ratingCount={5}
-          imageSize={30}
-          startingValue={rating}
-          onFinishRating={handleRating}
-          style={{ paddingVertical: 10 }}
-          ratingBackgroundColor={Colors.dark900}
-          tintColor={Colors.dark900}
-        />
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleReadButton} style={styles.button}>
@@ -92,12 +134,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginTop: 15,
-    color: Colors.white,
+    color: 'white',
   },
   author: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: Colors.gray,
+    color: '#666',
     marginTop: 10,
   },
   descriptionContainer: {
@@ -107,33 +149,21 @@ const styles = StyleSheet.create({
   descriptionTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: Colors.white,
+    color: 'white',
     marginBottom: 10,
   },
   description: {
     fontSize: 18,
     marginTop: 5,
     letterSpacing: 0.5,
-    color: Colors.white,
+    color: 'white',
   },
-  ratingContainer: {
-    marginTop: 10,
-    alignItems: 'center',
-    backgroundColor: Colors.dark900,
-  },
-  ratingTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: Colors.white,
-    marginBottom: 10,
-  },
-
   buttonContainer: {
     flex: 1,
     marginTop: 40,
   },
   button: {
-    backgroundColor: Colors.dark500,
+    backgroundColor: '#333',
     padding: 10,
     marginHorizontal: 10,
     borderRadius: 5,
@@ -142,7 +172,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: Colors.white,
+    color: 'white',
     textAlign: 'center',
   },
 });
