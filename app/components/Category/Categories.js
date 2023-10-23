@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
 import { Colors } from '../../constants/colors';
 import Icon from '../Icons';
+import { Image } from 'react-native';
 
 const Categories = ({ data }) => {
   const navigation = useNavigation();
@@ -14,7 +14,7 @@ const Categories = ({ data }) => {
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity onPress={handleCategories} style={styles.button}>
-        <Icon name={'planet-outline'} size={23} color={'white'} />
+        <Image source={{ uri: data.icon }} style={{ height: 24, width: 24 }} />
         <Text style={styles.categoryName}>{data.title}</Text>
       </TouchableOpacity>
     </View>
