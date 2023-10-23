@@ -5,8 +5,9 @@ import Config from 'react-native-config';
 export const client = createClient({
   projectId: Config.SANITY_PROJECT_ID,
   dataset: Config.SANITY_DATASET,
+  token: Config.SANITY_TOKEN,
   apiVersion: '2021-10-21',
-  useCdn: true,
+  useCdn: false,
 });
 
 const builder = ImageUrlBuilder(client);
