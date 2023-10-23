@@ -11,6 +11,7 @@ import {
 import * as Google from 'expo-auth-session/providers/google';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Config from 'react-native-config';
+import { client } from '../../sanity';
 
 const AuthContext = createContext({
   userInfo: null,
@@ -50,6 +51,12 @@ const AuthProvider = ({ children }) => {
         console.log(JSON.stringify(user, null, 2));
         setUserInfo(user);
         await AsyncStorage.setItem('@user', JSON.stringify(user));
+        await client.createOrReplace({
+          _type: 'user',
+          _id: user.uid,
+          id: user.uid,
+          email: user.email,
+        });
       } else {
         setUserInfo(null);
         console.log('User is not authenticated!');
@@ -84,6 +91,13 @@ const AuthProvider = ({ children }) => {
       if (signup.user) {
         const { firstName, lastName, email } = values;
         const userUid = signup.user.uid;
+
+        await client.createOrReplace({
+          _type: 'user',
+          _id: userUid,
+          id: userUid,
+          email,
+        });
 
         await setDoc(doc(firestore, 'users', userUid), {
           uid: userUid,
