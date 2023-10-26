@@ -6,7 +6,6 @@ import { Colors } from '../constants/colors';
 
 const Saved = ({ navigation }) => {
   const { bookmarks, removeBookmark } = useBookmark();
-  console.log(bookmarks);
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
