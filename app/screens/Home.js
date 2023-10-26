@@ -12,14 +12,20 @@ import FeaturedStories from '../components/Home/FeaturedStories';
 import Categories from '../components/Category/Categories';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
-import MyStories from '../components/Home/MyStories';
 import useGetFeaturedStories from '../hooks/useGetFeaturedStories';
 import useGetCategories from '../hooks/useGetCategories';
 import { Colors } from '../constants/colors';
+import useGetAllTales from '../hooks/useGetAllTales';
+import ContinueReading from '../components/Home/ContinueReading';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const { featuredStories, loading, error } = useGetFeaturedStories();
   const { categories } = useGetCategories();
+  const getAllTales = useGetAllTales();
+
+  const handleExploreAll = () => {
+    navigation.navigate('AllTales', { data: getAllTales.allTales });
+  };
 
   if (loading) {
     return <LoadingAnimation />;
@@ -50,10 +56,10 @@ const Home = () => {
         />
       </View>
       <View style={styles.myStoriesContainer}>
-        <Text style={styles.myStoriesText}>My Stories</Text>
-        <MyStories data={categories} />
+        <Text style={styles.myStoriesText}>Continue Reading</Text>
+        <ContinueReading data={categories} />
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity onPress={handleExploreAll} style={styles.button}>
         <Text style={styles.buttonText}>Explore All</Text>
       </TouchableOpacity>
     </ScrollView>
