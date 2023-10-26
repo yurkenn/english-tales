@@ -6,6 +6,8 @@ import { useBookmark } from '../store/BookmarkContext';
 import Icon from '../components/Icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import BookmarkButton from '../Detail/BookmarkButton';
+import { Colors } from '../constants/colors';
+import FormatReadTime from '../components/FormatReadTime';
 
 const Detail = ({ route }) => {
   const { data } = route.params;
@@ -16,6 +18,8 @@ const Detail = ({ route }) => {
   const [isLoading, setIsLoading] = useState(true);
   const navigation = useNavigation();
 
+  const readTime = FormatReadTime(data?.tales[0]?.readTime);
+
   const isBookmarked = bookmarks.find(
     (bookmark) => bookmark.tales[0].slug.current === data.tales[0].slug.current
   );
@@ -24,8 +28,14 @@ const Detail = ({ route }) => {
     toggleBookmark(data);
   };
 
-  const handleReadButton = () => {
+  const handleReadButton = async () => {
     navigation.navigate('Content', { slug: data.tales[0].slug.current });
+
+    try {
+      await AsyncStorage.setItem('lastRead', JSON.stringify(data));
+    } catch (error) {
+      console.log('Error saving last read tale:', error);
+    }
   };
 
   const handleLike = async () => {
@@ -97,18 +107,31 @@ const Detail = ({ route }) => {
 
   return (
     <View style={styles.container}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{data?.tales[0]?.title}</Text>
+        <Text style={styles.author}>{data?.tales[0]?.author}</Text>
+      </View>
       <View style={styles.imageContainer}>
-        <Image source={{ uri: data.imageURL }} style={styles.image} />
-        <Text style={styles.title}>{data.title}</Text>
-        <Text style={styles.author}>{data.tales[0].author}</Text>
+        <Image style={styles.image} source={{ uri: data.imageURL }} />
+        <View style={styles.infoContainer}>
+          <View style={styles.likesContainer}>
+            <Text style={styles.likes}>{data?.tales[0]?.likes}</Text>
+            <Text>Likes</Text>
+          </View>
+          <View style={styles.divider} />
+          <View style={styles.readTimeContainer}>
+            <Text style={styles.readTime}>{readTime}</Text>
+            <Text>Read Time</Text>
+          </View>
+        </View>
       </View>
       <View style={styles.descriptionContainer}>
         <Text style={styles.descriptionTitle}>Description</Text>
-        <Text style={styles.description}>{data.description}</Text>
+        <Text style={styles.description}>{data?.description}</Text>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleReadButton} style={styles.button}>
-          <Text style={styles.buttonText}>Read</Text>
+          <Text style={styles.readText}>Continue Reading</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -122,57 +145,98 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 100,
   },
-  imageContainer: {
-    alignItems: 'center',
-  },
-  image: {
-    width: 200,
-    height: 250,
-    borderRadius: 5,
+  titleContainer: {
+    marginHorizontal: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
-    marginTop: 15,
-    color: 'white',
+    color: Colors.white,
   },
   author: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#666',
-    marginTop: 10,
+    fontSize: 20,
+    fontWeight: '500',
+    marginBottom: 10,
+    color: Colors.gray,
+  },
+  imageContainer: {
+    alignItems: 'center',
+    padding: 16,
+    gap: 16,
+    shadowColor: Colors.white,
+    elevation: 5,
+  },
+  image: {
+    width: 169,
+    height: 237,
+    flexShrink: 0,
+    borderRadius: 10,
+  },
+  infoContainer: {
+    backgroundColor: Colors.white,
+    width: 343,
+    height: 62,
+    marginTop: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    shadowColor: Colors.white,
+    elevation: 5,
+  },
+  likesContainer: {
+    alignItems: 'center',
+  },
+  likes: {
+    fontSize: 20,
+    fontWeight: '500',
+    color: Colors.black,
+  },
+  divider: {
+    width: 1,
+    height: 30,
+    backgroundColor: Colors.gray,
+  },
+  readTimeContainer: {
+    alignItems: 'center',
+  },
+  readTime: {
+    fontSize: 20,
+    fontWeight: '500',
+    color: Colors.black,
   },
   descriptionContainer: {
-    padding: 10,
-    marginTop: 10,
+    marginHorizontal: 20,
+    marginTop: 16,
   },
   descriptionTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white',
-    marginBottom: 10,
+    color: Colors.white,
   },
   description: {
-    fontSize: 18,
-    marginTop: 5,
+    fontSize: 16,
+    color: Colors.white,
+    marginTop: 10,
     letterSpacing: 0.5,
-    color: 'white',
   },
   buttonContainer: {
     flex: 1,
-    marginTop: 40,
+    justifyContent: 'flex-end',
+    marginBottom: 20,
   },
   button: {
-    backgroundColor: '#333',
-    padding: 10,
+    backgroundColor: Colors.dark500,
+    borderRadius: 6,
+    height: 48,
+    justifyContent: 'center',
+    marginVertical: 10,
     marginHorizontal: 10,
-    borderRadius: 5,
-    marginTop: 20,
   },
-  buttonText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: 'white',
+  readText: {
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: '500',
+    lineHeight: 24,
     textAlign: 'center',
   },
 });
