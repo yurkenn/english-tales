@@ -8,7 +8,7 @@ import { Colors } from '../constants/colors';
 import CategoryList from '../screens/CategoryList';
 import Content from '../screens/Content';
 import Detail from '../screens/Detail';
-import Icon from '../components/Icons';
+import AllTales from '../screens/AllTales';
 
 const Stack = createNativeStackNavigator();
 
@@ -50,6 +50,17 @@ const HomeStack = () => {
             backgroundColor: Colors.dark900,
           },
         })}
+      />
+      <Stack.Screen
+        name="AllTales"
+        component={AllTales}
+        options={{
+          headerTintColor: Colors.white,
+          headerStyle: {
+            backgroundColor: Colors.dark900,
+          },
+          headerTitle: 'Here are all the tales',
+        }}
       />
     </Stack.Navigator>
   );
