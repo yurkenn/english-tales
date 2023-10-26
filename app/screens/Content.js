@@ -5,17 +5,16 @@ import TaleContent from '../components/Content/TaleContent';
 import HeaderNavbar from '../components/Content/HeaderNavbar';
 import TopNavbar from '../components/Content/TopNavbar';
 import { Colors } from '../constants/colors';
-import useGetTale from '../hooks/useGetTale';
+import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import { Rating } from 'react-native-ratings';
 import { AuthContext } from '../store/AuthContext';
 
 const Content = ({ route }) => {
   const { slug } = route.params;
   const { userInfo } = useContext(AuthContext);
-  const { loading, error, tale } = useGetTale(slug);
+  const { loading, error, tale } = useGetTaleBySlug(slug);
 
   if (loading) return <LoadingAnimation />;
   if (error) return <ErrorAnimation />;
@@ -38,10 +37,6 @@ const Content = ({ route }) => {
         >
           <View style={styles.content}>
             <Text style={styles.title}>{tale[0]?.title}</Text>
-            <View style={styles.infoContainer}>
-              <Text style={styles.author}>Author: {tale[0].author}</Text>
-              <Text style={styles.category}>Category: {tale[0].category}</Text>
-            </View>
             <TaleContent style={styles.blocks} blocks={tale[0].content} />
           </View>
         </ParallaxScrollView>
