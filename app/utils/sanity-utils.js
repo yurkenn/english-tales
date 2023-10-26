@@ -134,3 +134,18 @@ export const unlikeTale = async (taleId, likes) => {
     console.error(`Error removing like status for tale ${taleId}: ${error.message}`);
   }
 };
+
+export const getAllTales = async () => {
+  try {
+    const tales = await client.fetch(`*[_type == "tale"]{
+      title,
+      slug,
+      "author": author->name,
+      "imageURL": imageURL.asset->url
+    }`);
+    return tales;
+  } catch (error) {
+    console.error('Error fetching all tales:', error);
+    throw new Error('Error fetching all tales' + error.message);
+  }
+};
