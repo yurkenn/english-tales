@@ -9,23 +9,13 @@ const SavedCard = ({ data, onDelete }) => {
   const { setBookmarks, bookmarks } = useBookmark();
   const slideAnim = useRef(new Animated.Value(0)).current;
 
-  const handleDelete = async () => {
+  const handleDelete = async (data) => {
     Animated.timing(slideAnim, {
       toValue: -100,
       duration: 500,
       useNativeDriver: true,
     }).start(async () => {
-      const index = bookmarks.findIndex((b) => b === data);
-      if (index !== -1) {
-        const newBookmarks = [...bookmarks];
-        newBookmarks.splice(index, 1);
-        setBookmarks(newBookmarks);
-        try {
-          await AsyncStorage.setItem('bookmarks', JSON.stringify(newBookmarks));
-        } catch (error) {
-          console.error('Error saving bookmarks:', error);
-        }
-      }
+      onDelete(data);
     });
   };
 
@@ -38,7 +28,7 @@ const SavedCard = ({ data, onDelete }) => {
         <Text style={styles.title}>{data.title}</Text>
         <Text style={styles.author}>{data.tales[0].author}</Text>
       </View>
-      <TouchableOpacity onPress={handleDelete} style={styles.deleteButton}>
+      <TouchableOpacity onPress={() => handleDelete(data)} style={styles.deleteButton}>
         <Icon name="trash" size={24} color="white" />
       </TouchableOpacity>
     </Animated.View>
