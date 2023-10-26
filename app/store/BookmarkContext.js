@@ -55,8 +55,23 @@ const BookmarkProvider = ({ children }) => {
     }
   };
 
+  const removeBookmark = async (bookData) => {
+    const existingBookmark = bookmarks.find(
+      (bookmark) => bookmark.tales[0].slug.current === bookData.tales[0].slug.current
+    );
+
+    if (existingBookmark) {
+      // Remove the bookmark
+      const updatedBookmarks = bookmarks.filter(
+        (bookmark) => bookmark.tales[0].slug.current !== bookData.tales[0].slug.current
+      );
+      setBookmarks(updatedBookmarks);
+      await AsyncStorage.setItem('@bookmark', JSON.stringify(updatedBookmarks));
+    }
+  };
+
   return (
-    <BookmarkContext.Provider value={{ bookmarks, toggleBookmark, setBookmarks }}>
+    <BookmarkContext.Provider value={{ bookmarks, toggleBookmark, setBookmarks, removeBookmark }}>
       {children}
     </BookmarkContext.Provider>
   );
