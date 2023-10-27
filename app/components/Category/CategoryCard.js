@@ -17,13 +17,12 @@ const CategoryCard = ({ data }) => {
           <Image
             style={styles.image}
             source={{
-              uri: data.imageURL,
+              uri: data?.imageURL,
             }}
           />
         </View>
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>{data.title}</Text>
-          <Text style={styles.author}>Written by {data.author}</Text>
+          <Text style={styles.title}>{data?.title}</Text>
         </View>
       </View>
     </TouchableOpacity>
