@@ -4,24 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 
-const ContinueReading = () => {
+const ContinueReading = ({ lastRead }) => {
   const navigation = useNavigation();
-  const [lastRead, setLastRead] = useState(null);
-
-  useEffect(() => {
-    const getLastRead = async () => {
-      try {
-        const value = await AsyncStorage.getItem('lastRead');
-        if (value !== null) {
-          setLastRead(JSON.parse(value));
-        }
-      } catch (error) {
-        console.log('Error retrieving last read tale:', error);
-      }
-    };
-
-    getLastRead();
-  }, [navigation]);
 
   const handleGoTaleDetail = () => {
     navigation.navigate('Detail', { data: lastRead });
