@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import FeaturedStories from '../components/Home/FeaturedStories';
 import Categories from '../components/Category/Categories';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
@@ -17,11 +17,32 @@ import useGetCategories from '../hooks/useGetCategories';
 import { Colors } from '../constants/colors';
 import useGetAllTales from '../hooks/useGetAllTales';
 import ContinueReading from '../components/Home/ContinueReading';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useFocusEffect } from '@react-navigation/native';
 
 const Home = ({ navigation }) => {
   const { featuredStories, loading, error } = useGetFeaturedStories();
   const { categories } = useGetCategories();
   const getAllTales = useGetAllTales();
+
+  const [lastRead, setLastRead] = useState(null);
+
+  useFocusEffect(
+    useCallback(() => {
+      const getLastRead = async () => {
+        try {
+          const value = await AsyncStorage.getItem('lastRead');
+          if (value !== null) {
+            setLastRead(JSON.parse(value));
+          }
+        } catch (error) {
+          console.log('Error retrieving last read tale:', error);
+        }
+      };
+
+      getLastRead();
+    }, [navigation])
+  );
 
   const handleExploreAll = () => {
     navigation.navigate('AllTales', { data: getAllTales.allTales });
@@ -57,7 +78,7 @@ const Home = ({ navigation }) => {
       </View>
       <View style={styles.myStoriesContainer}>
         <Text style={styles.myStoriesText}>Continue Reading</Text>
-        <ContinueReading data={categories} />
+        <ContinueReading lastRead={lastRead} />
       </View>
       <TouchableOpacity onPress={handleExploreAll} style={styles.button}>
         <Text style={styles.buttonText}>Explore All</Text>
