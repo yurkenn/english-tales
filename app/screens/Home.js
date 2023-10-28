@@ -77,7 +77,7 @@ const Home = ({ navigation }) => {
         />
       </View>
       <View style={styles.myStoriesContainer}>
-        <Text style={styles.myStoriesText}>Continue Reading</Text>
+        <Text style={styles.myStoriesText}>Last Read</Text>
         <ContinueReading lastRead={lastRead} />
       </View>
       <TouchableOpacity onPress={handleExploreAll} style={styles.button}>
