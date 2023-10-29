@@ -52,7 +52,9 @@ const ProfileScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
-        {userData?.photoURL ? null : (
+        {userData?.photoURL ? (
+          <Image style={styles.profileImage} source={{ uri: userData.photoURL }} />
+        ) : (
           <Image
             source={require('../../assets/images/blank-profile.png')}
             style={styles.profileImage}
@@ -123,7 +125,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 20,
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 5,
     width: '80%',
   },
   fontSizeText: {
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
   plusButton: {
     backgroundColor: Colors.dark900,
     borderRadius: 6,
-    width: 30,
+    width: 35,
     height: 35,
     justifyContent: 'center',
     alignItems: 'center',
@@ -152,7 +154,7 @@ const styles = StyleSheet.create({
   minusButton: {
     backgroundColor: Colors.dark900,
     borderRadius: 6,
-    width: 30,
+    width: 35,
     height: 35,
     justifyContent: 'center',
     alignItems: 'center',
