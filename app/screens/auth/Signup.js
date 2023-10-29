@@ -38,7 +38,7 @@ const Signup = ({ navigation }) => {
 
         <Formik
           initialValues={{ email: '', password: '', firstName: '', lastName: '' }}
-          onSubmit={handleSubmit}
+          onSubmit={(values) => handleSubmit(values)}
           validationSchema={signupValidationSchema}
         >
           {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
