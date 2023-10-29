@@ -11,7 +11,7 @@ import {
 import * as Google from 'expo-auth-session/providers/google';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Config from 'react-native-config';
-import { client } from '../../sanity';
+import { doc, setDoc } from 'firebase/firestore';
 
 const AuthContext = createContext({
   userInfo: null,
