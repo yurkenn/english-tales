@@ -12,7 +12,7 @@ import {
 import { Formik } from 'formik';
 import { loginValidationSchema } from '../../components/Auth/Validation';
 import { AuthContext } from '../../store/AuthContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { Colors } from '../../constants/colors';
 
@@ -21,6 +21,8 @@ WebBrowser.maybeCompleteAuthSession();
 const Login = ({ navigation }) => {
   const authContext = useContext(AuthContext);
   const promptAsync = authContext.promptAsync;
+
+  const [focusedInput, setFocusedInput] = useState(null);
 
   const handleSubmit = async (values) => {
     authContext.handleLogin(values);
@@ -48,22 +50,34 @@ const Login = ({ navigation }) => {
                 placeholder="Enter your email"
                 placeholderTextColor={Colors.white}
                 onChangeText={handleChange('email')}
-                onBlur={handleBlur('email')}
+                onBlur={() => {
+                  setFocusedInput(null);
+                  handleBlur('email');
+                }}
+                onFocus={() => setFocusedInput('email')}
                 value={values.email}
                 autoCapitalize="none"
               />
-              {errors.email && <Text style={styles.errors}>{errors.email}</Text>}
+              {errors.email && focusedInput === 'email' && (
+                <Text style={styles.errors}>{errors.email}</Text>
+              )}
               <Text style={styles.subtitle}>Password</Text>
               <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
                 placeholderTextColor={Colors.white}
                 onChangeText={handleChange('password')}
-                onBlur={handleBlur('password')}
+                onBlur={() => {
+                  setFocusedInput(null);
+                  handleBlur('password');
+                }}
                 value={values.password}
                 secureTextEntry
+                onFocus={() => setFocusedInput('password')}
               />
-              {errors.password && <Text style={styles.errors}>{errors.password}</Text>}
+              {errors.password && focusedInput === 'password' && (
+                <Text style={styles.errors}>{errors.password}</Text>
+              )}
               <TouchableOpacity onPress={handleSubmit} style={styles.button}>
                 <Text style={styles.buttonText}>Log In</Text>
               </TouchableOpacity>
