@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { fetchLikes, unlikeTale, updateLikes } from '../utils/sanity-utils';
 import { useBookmark } from '../store/BookmarkContext';
@@ -87,11 +87,19 @@ const Detail = ({ route }) => {
       headerRight: () => (
         <View style={{ flexDirection: 'row' }}>
           {hasLiked ? (
-            <TouchableOpacity onPress={handleUnlike} disabled={isLoading}>
+            <TouchableOpacity
+              style={{ marginRight: 15 }}
+              onPress={handleUnlike}
+              disabled={isLoading}
+            >
               <Icon name="heart" size={24} color="red" />
             </TouchableOpacity>
           ) : (
-            <TouchableOpacity onPress={handleLike} disabled={isLiked || isLoading}>
+            <TouchableOpacity
+              style={{ marginRight: 15 }}
+              onPress={handleLike}
+              disabled={isLiked || isLoading}
+            >
               <Icon
                 name={isLiked ? 'heart' : 'heart-outline'}
                 size={24}
@@ -129,6 +137,7 @@ const Detail = ({ route }) => {
         <Text style={styles.descriptionTitle}>Description</Text>
         <Text style={styles.description}>{data?.description}</Text>
       </View>
+
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleReadButton} style={styles.button}>
           <Text style={styles.readText}>Continue Reading</Text>
