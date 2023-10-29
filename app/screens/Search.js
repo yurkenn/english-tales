@@ -32,7 +32,7 @@ const SearchScreen = () => {
       {results.length > 0 ? (
         <FlatList data={results} renderItem={renderItem} />
       ) : (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', opacity: 0.5 }}>
           <Icon name="search" size={100} color="#ccc" />
           <Text style={{ fontSize: 20, color: '#ccc' }}>No results found</Text>
         </View>
