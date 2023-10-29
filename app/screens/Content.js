@@ -9,11 +9,11 @@ import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import { AuthContext } from '../store/AuthContext';
+import { useFontSize } from '../store/FontSizeContext';
 
 const Content = ({ route }) => {
   const { slug } = route.params;
-  const { userInfo } = useContext(AuthContext);
+  const { fontSize } = useFontSize();
   const { loading, error, tale } = useGetTaleBySlug(slug);
 
   if (loading) return <LoadingAnimation />;
