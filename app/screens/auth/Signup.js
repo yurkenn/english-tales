@@ -12,11 +12,13 @@ import {
 import { Formik } from 'formik';
 import { signupValidationSchema } from '../../components/Auth/Validation';
 import { AuthContext } from '../../store/AuthContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import SignupAnimation from '../../components/Animations/SignupAnimation';
 import { Colors } from '../../constants/colors';
 
 const Signup = ({ navigation }) => {
+  const [focusedInput, setFocusedInput] = useState(null);
+
   const authContext = useContext(AuthContext);
 
   const handleSubmit = async (values) => {
@@ -49,7 +51,11 @@ const Signup = ({ navigation }) => {
                   placeholder="First Name"
                   placeholderTextColor={Colors.white}
                   onChangeText={handleChange('firstName')}
-                  onBlur={handleBlur('firstName')}
+                  onBlur={() => {
+                    setFocusedInput(null);
+                    handleBlur('firstName');
+                  }}
+                  onFocus={() => setFocusedInput('firstName')}
                   value={values.firstName}
                   autoCapitalize="none"
                 />
@@ -59,7 +65,11 @@ const Signup = ({ navigation }) => {
                   placeholder="Last Name"
                   placeholderTextColor={Colors.white}
                   onChangeText={handleChange('lastName')}
-                  onBlur={handleBlur('lastName')}
+                  onBlur={() => {
+                    setFocusedInput(null);
+                    handleBlur('lastName');
+                  }}
+                  onFocus={() => setFocusedInput('lastName')}
                   value={values.lastName}
                   autoCapitalize="none"
                 />
@@ -77,7 +87,9 @@ const Signup = ({ navigation }) => {
                     paddingLeft: 25,
                   }}
                 >
-                  {errors.firstName && <Text style={styles.errors}>{errors.firstName}</Text>}
+                  {focusedInput === 'firstName' && errors.firstName && (
+                    <Text style={styles.errors}>{errors.firstName}</Text>
+                  )}
                 </View>
                 <View
                   style={{
@@ -85,7 +97,9 @@ const Signup = ({ navigation }) => {
                     paddingRight: 5,
                   }}
                 >
-                  {errors.lastName && <Text style={styles.errors}>{errors.lastName}</Text>}
+                  {focusedInput === 'lastName' && errors.lastName && (
+                    <Text style={styles.errors}>{errors.lastName}</Text>
+                  )}
                 </View>
               </View>
               <TextInput
@@ -93,22 +107,34 @@ const Signup = ({ navigation }) => {
                 placeholder="Enter your email"
                 placeholderTextColor={Colors.white}
                 onChangeText={handleChange('email')}
-                onBlur={handleBlur('email')}
+                onBlur={() => {
+                  setFocusedInput(null);
+                  handleBlur('email');
+                }}
+                onFocus={() => setFocusedInput('email')}
                 value={values.email}
                 autoCapitalize="none"
               />
-              {errors.email && <Text style={styles.errors}>{errors.email}</Text>}
+              {focusedInput === 'email' && errors.email && (
+                <Text style={styles.errors}>{errors.email}</Text>
+              )}
 
               <TextInput
                 style={styles.input}
                 placeholder="Enter your password"
                 placeholderTextColor={Colors.white}
                 onChangeText={handleChange('password')}
-                onBlur={handleBlur('password')}
+                onBlur={() => {
+                  setFocusedInput(null);
+                  handleBlur('password');
+                }}
+                onFocus={() => setFocusedInput('password')}
                 value={values.password}
                 secureTextEntry
               />
-              {errors.password && <Text style={styles.errors}>{errors.password}</Text>}
+              {focusedInput === 'password' && errors.password && (
+                <Text style={styles.errors}>{errors.password}</Text>
+              )}
               <TouchableOpacity onPress={handleSubmit} style={styles.button}>
                 <Text style={styles.buttonText}>Sign Up</Text>
               </TouchableOpacity>
