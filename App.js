@@ -5,6 +5,7 @@ import { AuthProvider } from './app/store/AuthContext';
 import BookmarkProvider from './app/store/BookmarkContext';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-url-polyfill/auto';
+import { FontSizeProvider } from './app/store/FontSizeContext';
 
 const App = () => {
   return (
@@ -12,9 +13,11 @@ const App = () => {
       <StatusBar style="light" />
       <GestureHandlerRootView style={{ flex: 1 }}>
         <AuthProvider>
-          <BookmarkProvider>
-            <Navigation />
-          </BookmarkProvider>
+          <FontSizeProvider>
+            <BookmarkProvider>
+              <Navigation />
+            </BookmarkProvider>
+          </FontSizeProvider>
         </AuthProvider>
       </GestureHandlerRootView>
     </>
