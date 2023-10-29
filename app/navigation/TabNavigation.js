@@ -12,11 +12,6 @@ import Icon from '../components/Icons';
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
-  const authContext = useContext(AuthContext);
-  const handleLogout = () => {
-    authContext.handleLogout();
-  };
-
   return (
     <Tab.Navigator
       screenOptions={{
@@ -76,11 +71,6 @@ const TabNavigation = () => {
         component={Profile}
         options={{
           tabBarIcon: () => <Icon name={'person'} size={23} color={'white'} />,
-          headerRight: () => (
-            <TouchableOpacity onPress={handleLogout}>
-              <Icon name={'log-out'} size={23} color={'white'} />
-            </TouchableOpacity>
-          ),
         }}
       />
     </Tab.Navigator>
