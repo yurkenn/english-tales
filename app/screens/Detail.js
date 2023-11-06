@@ -159,11 +159,12 @@ export default Detail;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 90,
-    backgroundColor: Colors.modalBackground, // Assuming you want a background color for the container
+    paddingTop: 80,
+    backgroundColor: Colors.modalBackground,
   },
   titleContainer: {
     marginHorizontal: 20,
+    marginBottom: 10,
   },
   title: {
     fontSize: 28, // Adjusted for a more balanced typography
@@ -176,24 +177,18 @@ const styles = StyleSheet.create({
     fontWeight: 'normal', // Adjusted to 'normal' for a lighter touch
     color: Colors.gray,
     textAlign: 'center', // Center if the title is also centered
-    marginBottom: 20, // Increased bottom margin for spacing
   },
-  imageContainer: {
+  imageInfoContainer: {
     alignItems: 'center',
-    alignSelf: 'center',
-    paddingVertical: 20, // Padding adjusted for consistency
-    paddingHorizontal: 16,
-    elevation: 5,
-    borderRadius: 10, // Added for a rounded container
-    backgroundColor: Colors.white, // Assuming a white background for the image container
+    marginVertical: 10,
   },
   image: {
     width: 200, // Slightly larger for better visibility
     height: 300,
     resizeMode: 'cover', // Ensure the image fits nicely within the bounds
     borderRadius: 10,
+    marginBottom: 10,
   },
-
   descriptionContainer: {
     marginHorizontal: 20,
     marginTop: 16,
@@ -231,10 +226,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     textAlign: 'center',
-  },
-  imageInfoContainer: {
-    alignItems: 'center',
-    marginVertical: 10,
   },
 
   headerRightContainer: {
