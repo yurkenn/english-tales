@@ -9,35 +9,39 @@ const Saved = ({ navigation }) => {
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
-      onPress={() =>
-        navigation.navigate('Detail', {
-          data: item,
-        })
-      }
+      onPress={() => navigation.navigate('Detail', { data: item })}
+      activeOpacity={0.5} // Visual feedback on press
+      accessibilityLabel="Tap to view this saved tale"
     >
       <SavedCard data={item} onDelete={removeBookmark} />
     </TouchableOpacity>
   );
 
   return (
-    <Animated.View style={styles.container}>
+    <View style={styles.container}>
       {bookmarks.length > 0 ? (
-        <FlatList data={bookmarks} renderItem={renderItem} />
+        <FlatList
+          data={bookmarks}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => `bookmark-${index}`}
+          // Unique key for each item
+        />
       ) : (
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>You haven't saved any tales yet</Text>
+          {/* Consider adding an image here for a better empty state */}
+          <Text style={styles.emptyText}>You haven't saved any tales yet.</Text>
         </View>
       )}
-    </Animated.View>
+    </View>
   );
 };
-
 export default Saved;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    backgroundColor: Colors.dark900,
   },
   title: {
     fontSize: 24,
@@ -52,6 +56,6 @@ const styles = StyleSheet.create({
   },
   emptyText: {
     fontSize: 18,
-    color: '#666',
+    color: Colors.gray,
   },
 });
