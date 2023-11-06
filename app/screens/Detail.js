@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect, forwardRef } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { fetchLikes, unlikeTale, updateLikes } from '../utils/sanity-utils';
 import { useBookmark } from '../store/BookmarkContext';
-import Icon from '../components/Icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import BookmarkButton from '../Detail/BookmarkButton';
 import { Colors } from '../constants/colors';
 import FormatReadTime from '../components/FormatReadTime';
+import Toast from 'react-native-toast-message';
+import LikeButton from '../components/Detail/LikeButton';
+import InfoComponent from '../components/Detail/InfoComponent';
 
 const Detail = ({ route }) => {
   const { data } = route.params;
@@ -26,6 +28,12 @@ const Detail = ({ route }) => {
 
   const handleBookmark = () => {
     toggleBookmark(data);
+    Toast.show({
+      type: isBookmarked ? 'error' : 'success',
+      position: 'top',
+      text1: isBookmarked ? 'Bookmark removed!' : 'Bookmark added!',
+      topOffset: 90,
+    });
   };
 
   const handleReadButton = async () => {
@@ -45,10 +53,20 @@ const Detail = ({ route }) => {
       setHasLiked(true);
 
       await updateLikes(data.tales[0]._id, likes + 1);
+      Toast.show({
+        type: 'success',
+        position: 'bottom',
+        text1: 'You liked the tale!',
+      });
 
       try {
         await AsyncStorage.setItem(`liked_${data.tales[0]._id}`, 'true');
       } catch (error) {
+        Toast.show({
+          type: 'error',
+          position: 'bottom',
+          text1: 'There was an error saving your like.',
+        });
         console.error(`Error saving like status for tale ${data.tales[0]._id}: ${error.message}`);
       }
     }
@@ -60,6 +78,11 @@ const Detail = ({ route }) => {
     setHasLiked(false);
 
     await unlikeTale(data.tales[0]._id, likes - 1);
+    Toast.show({
+      type: 'info',
+      position: 'bottom',
+      text1: 'You unliked the tale.',
+    });
   };
 
   useEffect(() => {
@@ -85,64 +108,48 @@ const Detail = ({ route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <View style={{ flexDirection: 'row' }}>
-          {hasLiked ? (
-            <TouchableOpacity
-              style={{ marginRight: 15 }}
-              onPress={handleUnlike}
-              disabled={isLoading}
-            >
-              <Icon name="heart" size={24} color="red" />
-            </TouchableOpacity>
-          ) : (
-            <TouchableOpacity
-              style={{ marginRight: 15 }}
-              onPress={handleLike}
-              disabled={isLiked || isLoading}
-            >
-              <Icon
-                name={isLiked ? 'heart' : 'heart-outline'}
-                size={24}
-                color={isLiked ? 'red' : 'white'}
-              />
-            </TouchableOpacity>
-          )}
+        <View style={styles.headerRightContainer}>
+          <LikeButton
+            hasLiked={hasLiked}
+            isLoading={isLoading}
+            handleLike={handleLike}
+            handleUnlike={handleUnlike}
+          />
           <BookmarkButton isBookmarked={isBookmarked} handleBookmark={handleBookmark} />
         </View>
       ),
     });
-  });
+  }, [hasLiked, isLoading, handleLike, handleUnlike, isBookmarked, handleBookmark]);
 
   return (
     <View style={styles.container}>
+      {/* Header */}
       <View style={styles.titleContainer}>
         <Text style={styles.title}>{data?.tales[0]?.title}</Text>
         <Text style={styles.author}>{data?.tales[0]?.author}</Text>
       </View>
-      <View style={styles.imageContainer}>
+
+      {/* Image and Info */}
+      <View style={styles.imageInfoContainer}>
         <Image style={styles.image} source={{ uri: data.imageURL }} />
-        <View style={styles.infoContainer}>
-          <View style={styles.likesContainer}>
-            <Text style={styles.likes}>{data?.tales[0]?.likes}</Text>
-            <Text>Likes</Text>
-          </View>
-          <View style={styles.divider} />
-          <View style={styles.readTimeContainer}>
-            <Text style={styles.readTime}>{readTime}</Text>
-            <Text>Read Time</Text>
-          </View>
-        </View>
+        <InfoComponent readTime={readTime} likes={likes} />
       </View>
+
+      {/* Description */}
       <View style={styles.descriptionContainer}>
         <Text style={styles.descriptionTitle}>Description</Text>
         <Text style={styles.description}>{data?.description}</Text>
       </View>
 
+      {/* Continue Reading Button */}
       <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={handleReadButton} style={styles.button}>
+        <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
           <Text style={styles.readText}>Continue Reading</Text>
         </TouchableOpacity>
       </View>
+
+      {/* Toast Component */}
+      <Toast />
     </View>
   );
 };
@@ -152,100 +159,87 @@ export default Detail;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 100,
+    paddingTop: 90,
+    backgroundColor: Colors.modalBackground, // Assuming you want a background color for the container
   },
   titleContainer: {
     marginHorizontal: 20,
   },
   title: {
-    fontSize: 30,
+    fontSize: 28, // Adjusted for a more balanced typography
     fontWeight: 'bold',
     color: Colors.white,
+    textAlign: 'center', // Center if you want to align the text in the middle
   },
   author: {
-    fontSize: 20,
-    fontWeight: '500',
-    marginBottom: 10,
+    fontSize: 18, // Slightly smaller for visual hierarchy
+    fontWeight: 'normal', // Adjusted to 'normal' for a lighter touch
     color: Colors.gray,
+    textAlign: 'center', // Center if the title is also centered
+    marginBottom: 20, // Increased bottom margin for spacing
   },
   imageContainer: {
     alignItems: 'center',
-    padding: 16,
-    gap: 16,
-    shadowColor: Colors.white,
+    alignSelf: 'center',
+    paddingVertical: 20, // Padding adjusted for consistency
+    paddingHorizontal: 16,
     elevation: 5,
+    borderRadius: 10, // Added for a rounded container
+    backgroundColor: Colors.white, // Assuming a white background for the image container
   },
   image: {
-    width: 169,
-    height: 237,
-    flexShrink: 0,
+    width: 200, // Slightly larger for better visibility
+    height: 300,
+    resizeMode: 'cover', // Ensure the image fits nicely within the bounds
     borderRadius: 10,
   },
-  infoContainer: {
-    backgroundColor: Colors.white,
-    width: 343,
-    height: 62,
-    marginTop: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    shadowColor: Colors.white,
-    elevation: 5,
-  },
-  likesContainer: {
-    alignItems: 'center',
-  },
-  likes: {
-    fontSize: 20,
-    fontWeight: '500',
-    color: Colors.black,
-  },
-  divider: {
-    width: 1,
-    height: 30,
-    backgroundColor: Colors.gray,
-  },
-  readTimeContainer: {
-    alignItems: 'center',
-  },
-  readTime: {
-    fontSize: 20,
-    fontWeight: '500',
-    color: Colors.black,
-  },
+
   descriptionContainer: {
     marginHorizontal: 20,
     marginTop: 16,
+    paddingBottom: 20, // Padding bottom to ensure content doesn't touch the button
   },
   descriptionTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
     color: Colors.white,
+    marginBottom: 8, // Reduced margin for a tighter title and content
   },
   description: {
     fontSize: 16,
     color: Colors.white,
-    marginTop: 10,
     letterSpacing: 0.5,
   },
   buttonContainer: {
-    flex: 1,
     justifyContent: 'flex-end',
-    marginBottom: 20,
+    padding: 20, // Padding for safe area spacing, especially for devices with rounded corners
   },
-  button: {
+  readButton: {
     backgroundColor: Colors.dark500,
     borderRadius: 6,
     height: 48,
     justifyContent: 'center',
     marginVertical: 10,
-    marginHorizontal: 10,
+    marginHorizontal: 20,
+    shadowColor: Colors.black,
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   readText: {
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: '500',
-    lineHeight: 24,
+    fontSize: 18,
+    fontWeight: '600',
     textAlign: 'center',
+  },
+  imageInfoContainer: {
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+
+  headerRightContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
