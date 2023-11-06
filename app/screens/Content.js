@@ -13,7 +13,6 @@ import { useFontSize } from '../store/FontSizeContext';
 
 const Content = ({ route }) => {
   const { slug } = route.params;
-  const { fontSize } = useFontSize();
   const { loading, error, tale } = useGetTaleBySlug(slug);
 
   if (loading) return <LoadingAnimation />;
@@ -24,7 +23,9 @@ const Content = ({ route }) => {
     <View style={styles.container}>
       {tale && (
         <ParallaxScrollView
-          style={{ flex: 1, overflow: 'hidden' }}
+          style={{
+            flex: 1,
+          }}
           backgroundColor={Colors.dark900}
           contentBackgroundColor={Colors.dark900}
           parallaxHeaderHeight={300}
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.dark900,
   },
   headerImage: {
-    height: 300,
+    height: 340,
     width: '100%',
     opacity: 0.7,
   },
