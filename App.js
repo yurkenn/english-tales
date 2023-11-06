@@ -6,6 +6,7 @@ import BookmarkProvider from './app/store/BookmarkContext';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import 'react-native-url-polyfill/auto';
 import { FontSizeProvider } from './app/store/FontSizeContext';
+import Toast from 'react-native-toast-message';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           </FontSizeProvider>
         </AuthProvider>
       </GestureHandlerRootView>
+      <Toast />
     </>
   );
 };
