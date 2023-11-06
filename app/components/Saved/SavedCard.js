@@ -1,12 +1,10 @@
 import React, { useRef } from 'react';
 import { Animated, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Icon from '../Icons';
-import { useBookmark } from '../../store/BookmarkContext';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Colors } from '../../constants/colors';
+import Toast from 'react-native-toast-message';
 
 const SavedCard = ({ data, onDelete }) => {
-  const { setBookmarks, bookmarks } = useBookmark();
   const slideAnim = useRef(new Animated.Value(0)).current;
 
   const handleDelete = async (data) => {
@@ -16,6 +14,11 @@ const SavedCard = ({ data, onDelete }) => {
       useNativeDriver: true,
     }).start(async () => {
       onDelete(data);
+      Toast.show({
+        type: 'error',
+        text1: 'Bookmark removed from saved!',
+        topOffset: 90,
+      });
     });
   };
 
