@@ -4,21 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const BookmarkContext = createContext();
 
 const BookmarkProvider = ({ children }) => {
-  // Initialize bookmarks from AsyncStorage when the context is created.
   const [bookmarks, setBookmarks] = useState([]);
-
-  // Function to clear all data in AsyncStorage
-  const clearAllData = async () => {
-    try {
-      await AsyncStorage.clear();
-      console.log('AsyncStorage data cleared successfully');
-    } catch (error) {
-      console.error('Error clearing AsyncStorage data:', error);
-    }
-  };
-
-  // Call the function to clear data
-  //clearAllData();
 
   useEffect(() => {
     const loadBookmarks = async () => {
@@ -33,7 +19,7 @@ const BookmarkProvider = ({ children }) => {
     };
 
     loadBookmarks();
-  }, []); // Only runs once when the component is created.
+  }, []);
 
   const toggleBookmark = async (bookData) => {
     const existingBookmark = bookmarks.find(
