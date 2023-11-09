@@ -1,6 +1,7 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import CategoryCard from '../components/Category/CategoryCard';
+import { FlashList } from '@shopify/flash-list';
 
 const AllTales = ({ route }) => {
   const { data } = route.params;
@@ -9,7 +10,7 @@ const AllTales = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <FlatList data={data} renderItem={renderItem} />
+      <FlashList data={data} renderItem={renderItem} estimatedItemSize={200} />
     </View>
   );
 };
