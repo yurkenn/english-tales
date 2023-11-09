@@ -56,7 +56,7 @@ const ProfileScreen = () => {
       <ProfileDetails userData={userData} />
       <FontSizeSettings changeFontSize={changeFontSize} fontSize={fontSize} />
       <CustomButton
-        title="Clear Data"
+        title="Clear History"
         style={[styles.button, styles.clearDataButton]}
         onPress={clearAllData}
         textStyle={styles.fontButtonText}
