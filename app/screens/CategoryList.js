@@ -1,4 +1,5 @@
-import { FlatList, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 import React from 'react';
 import useGetTalesByCategory from '../hooks/useGetTalesByCategory';
 import CategoryCard from '../components/Category/CategoryCard';
@@ -18,7 +19,12 @@ const CategoryList = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <FlatList data={categoryList} renderItem={renderItem} keyExtractor={(item) => item.slug} />
+      <FlashList
+        data={categoryList}
+        estimatedItemSize={200}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.slug}
+      />
     </View>
   );
 };
