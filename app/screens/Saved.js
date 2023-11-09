@@ -1,5 +1,6 @@
 import React from 'react';
-import { Animated, FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 import { useBookmark } from '../store/BookmarkContext';
 import SavedCard from '../components/Saved/SavedCard';
 import { Colors } from '../constants/colors';
@@ -20,8 +21,9 @@ const Saved = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {bookmarks.length > 0 ? (
-        <FlatList
+        <FlashList
           data={bookmarks}
+          estimatedItemSize={200}
           renderItem={renderItem}
           keyExtractor={(item, index) => `bookmark-${index}`}
           // Unique key for each item
