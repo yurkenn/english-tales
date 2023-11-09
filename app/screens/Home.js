@@ -1,13 +1,14 @@
 import {
+  Alert,
   FlatList,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, { useCallback, useEffect, useState } from 'react';
+import { FlashList } from '@shopify/flash-list';
+import React, { useCallback, useState } from 'react';
 import FeaturedStories from '../components/Home/FeaturedStories';
 import Categories from '../components/Category/Categories';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
@@ -37,6 +38,7 @@ const Home = ({ navigation }) => {
           }
         } catch (error) {
           console.log('Error retrieving last read tale:', error);
+          Alert.alert('Error', 'There was an issue retrieving your last read story.');
         }
       };
 
@@ -60,8 +62,9 @@ const Home = ({ navigation }) => {
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.featureContainer}>
         <Text style={styles.featureText}>Featured Stories</Text>
-        <FlatList
+        <FlashList
           data={featuredStories}
+          estimatedItemSize={200}
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => <FeaturedStories data={item} />}
