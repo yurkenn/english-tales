@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, TextInput, FlatList, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 import useSearch from '../hooks/useSearch';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
@@ -30,7 +31,7 @@ const SearchScreen = () => {
         value={searchTerm}
       />
       {results.length > 0 ? (
-        <FlatList data={results} renderItem={renderItem} />
+        <FlashList data={results} estimatedItemSize={200} renderItem={renderItem} />
       ) : (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', opacity: 0.5 }}>
           <Icon name="search" size={100} color="#ccc" />
