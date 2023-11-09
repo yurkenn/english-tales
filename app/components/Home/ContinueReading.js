@@ -3,10 +3,13 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
+import FormatReadTime from '../FormatReadTime';
+import Icon from '../Icons';
 
 const ContinueReading = ({ lastRead }) => {
   const navigation = useNavigation();
 
+  const time = FormatReadTime(lastRead.tales[0].readTime);
   const handleGoTaleDetail = () => {
     navigation.navigate('Detail', { data: lastRead });
   };
@@ -19,12 +22,17 @@ const ContinueReading = ({ lastRead }) => {
             <Image source={{ uri: lastRead.imageURL }} style={styles.image} />
           </View>
           <View style={styles.infoContainer}>
-            <View>
-              <Text style={styles.title}>{lastRead.title}</Text>
-              <Text style={styles.author}>{lastRead.tales[0].author}</Text>
+            <Text style={styles.title}>{lastRead.title}</Text>
+            <View style={styles.timeContainer}>
+              <Icon name="time-outline" size={16} color={Colors.white} />
+              <Text style={styles.time}>{time}</Text>
+              <View style={{ flexDirection: 'row', marginLeft: 10 }}>
+                <Icon name="heart" size={16} color={Colors.red} />
+                <Text style={styles.time}>{lastRead.tales[0].likes}</Text>
+              </View>
             </View>
             <View>
-              <Text style={styles.lastRead}>{lastRead.lastRead}</Text>
+              <Text style={styles.lastRead}>{lastRead.description}</Text>
             </View>
           </View>
         </View>
@@ -46,7 +54,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     padding: 10,
   },
-
   imageContainer: {
     flex: 1.5,
   },
@@ -67,10 +74,15 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20,
   },
-  author: {
-    marginTop: 8,
+  timeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  time: {
+    marginLeft: 5,
+    fontWeight: 'bold',
     color: Colors.white,
-    fontSize: 14,
+    fontSize: 12,
     lineHeight: 16,
   },
   lastRead: {
