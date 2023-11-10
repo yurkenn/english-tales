@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Image, Button } from 'react-native';
-import { client, urlFor } from '../../sanity';
+import React from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { urlFor } from '../../sanity';
 import TaleContent from '../components/Content/TaleContent';
 import HeaderNavbar from '../components/Content/HeaderNavbar';
 import TopNavbar from '../components/Content/TopNavbar';
@@ -9,7 +9,6 @@ import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import { useFontSize } from '../store/FontSizeContext';
 
 const Content = ({ route }) => {
   const { slug } = route.params;
