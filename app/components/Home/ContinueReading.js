@@ -9,7 +9,7 @@ import Icon from '../Icons';
 const ContinueReading = ({ lastRead }) => {
   const navigation = useNavigation();
 
-  const time = FormatReadTime(lastRead.tales[0].readTime);
+  const time = FormatReadTime(lastRead?.tales[0]?.readTime);
   const handleGoTaleDetail = () => {
     navigation.navigate('Detail', { data: lastRead });
   };
