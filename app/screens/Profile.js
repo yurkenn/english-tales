@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useContext, useEffect, useState, useCallback } from 'react';
+import { View, StyleSheet, Text, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../store/AuthContext';
 import { Colors } from '../constants/colors';
@@ -8,6 +8,7 @@ import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import CustomButton from '../components/CustomButton';
 import FontSizeSettings from '../components/Profile/FontSizeSettings';
 import ProfileDetails from '../components/Profile/ProfileDetails';
+import Statistics from '../components/Profile/Statistics';
 
 const ProfileScreen = () => {
   const [userData, setUserData] = useState(null);
@@ -16,35 +17,52 @@ const ProfileScreen = () => {
   const { handleLogout } = useContext(AuthContext);
   const { changeFontSize, fontSize } = useFontSize();
 
-  useEffect(() => {
-    const getUserData = async () => {
-      setLoading(true);
-      try {
-        const user = await retrieveUserData();
-        setUserData(user);
-      } catch (error) {
-        console.error('Error retrieving user data from AsyncStorage:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getUserData();
-  }, []);
-
-  const retrieveUserData = async () => {
+  const loadUserData = async () => {
     const userJson = await AsyncStorage.getItem('@user');
     return userJson != null ? JSON.parse(userJson) : null;
   };
 
-  const clearAllData = async () => {
-    try {
-      await AsyncStorage.clear();
-      setUserData(null); // Update the state to reflect the cleared data
-      alert('All data cleared'); // Inform the user
-    } catch (error) {
-      console.error('Error clearing AsyncStorage data:', error);
+  const handleUserStats = useCallback(async () => {
+    const user = await loadUserData();
+    if (user) {
+      const updatedUser = {
+        ...user,
+        stats: {
+          ...user.stats,
+          totalSessions: (user.stats?.totalSessions || 0) + 1,
+        },
+      };
+      await AsyncStorage.setItem('@user', JSON.stringify(updatedUser));
+      setUserData(updatedUser);
     }
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    handleUserStats();
+  }, [handleUserStats]);
+
+  const clearAllData = async () => {
+    Alert.alert(
+      'Clear All Data',
+      'Are you sure you want to clear all data?',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Yes',
+          onPress: async () => {
+            try {
+              await AsyncStorage.clear();
+              setUserData(null);
+            } catch (error) {
+              Alert.alert('Error', 'Failed to clear data.');
+              console.error('Error clearing AsyncStorage data:', error);
+            }
+          },
+        },
+      ],
+      { cancelable: false }
+    );
   };
 
   if (loading) {
@@ -54,22 +72,25 @@ const ProfileScreen = () => {
   return (
     <View style={styles.container}>
       <ProfileDetails userData={userData} />
+      <Statistics userData={userData} />
       <FontSizeSettings changeFontSize={changeFontSize} fontSize={fontSize} />
       <CustomButton
         title="Clear History"
-        style={[styles.button, styles.clearDataButton]}
         onPress={clearAllData}
-        textStyle={styles.fontButtonText}
+        textStyle={[styles.fontButtonText && { color: Colors.red }]}
+        style={styles.clearDataButton}
       />
       <CustomButton
         title="Logout"
-        style={[styles.button, styles.logoutButton]}
         onPress={handleLogout}
         textStyle={styles.fontButtonText}
+        style={styles.logoutButton}
       />
     </View>
   );
 };
+
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -77,19 +98,23 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: Colors.dark900,
   },
-  fontButtonText: {
-    color: Colors.white,
-    fontWeight: 'bold',
-    letterSpacing: 1,
-  },
   clearDataButton: {
-    backgroundColor: Colors.red,
+    backgroundColor: Colors.dark500,
     marginTop: 'auto',
     marginBottom: 20,
   },
   logoutButton: {
     backgroundColor: Colors.dark500,
   },
+  button: {
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  fontButtonText: {
+    fontSize: 16,
+    fontWeight: '500',
+    color: Colors.white,
+  },
 });
-
-export default ProfileScreen;
