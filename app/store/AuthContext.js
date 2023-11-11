@@ -12,6 +12,7 @@ import * as Google from 'expo-auth-session/providers/google';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Config from 'react-native-config';
 import { doc, setDoc } from 'firebase/firestore';
+import { Alert } from 'react-native';
 
 const AuthContext = createContext({
   userInfo: null,
@@ -101,14 +102,38 @@ const AuthProvider = ({ children }) => {
   };
 
   const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      console.log('User Logged Out!');
-      await AsyncStorage.removeItem('@user');
-    } catch (error) {
-      console.log('Logout Error', error);
-      throw error;
-    }
+    Alert.alert(
+      'Confirm Logout',
+      'Are you sure you want to logout?',
+      [
+        // The "No" button
+        // Does nothing but dismiss the dialog when pressed
+        {
+          text: 'No',
+          onPress: () => console.log('Cancel Logout'),
+          style: 'cancel',
+        },
+        // The "Yes" button
+        {
+          text: 'Yes',
+          onPress: async () => {
+            try {
+              await signOut(auth); // Assuming signOut is from your auth system
+              console.log('User Logged Out!');
+              await AsyncStorage.removeItem('@user');
+              // Additional logic after logout if needed
+            } catch (error) {
+              console.log('Logout Error', error);
+              Alert.alert(
+                'Logout Error',
+                'Could not log out at this time. Please try again later.'
+              );
+            }
+          },
+        },
+      ],
+      { cancelable: false }
+    );
   };
 
   const values = {
