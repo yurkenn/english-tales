@@ -1,6 +1,7 @@
 import {
   Alert,
   FlatList,
+  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -8,7 +9,15 @@ import {
   View,
 } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
-import React, { useCallback, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import FeaturedStories from '../components/Home/FeaturedStories';
 import Categories from '../components/Category/Categories';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
@@ -20,13 +29,64 @@ import useGetAllTales from '../hooks/useGetAllTales';
 import ContinueReading from '../components/Home/ContinueReading';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
-
+import BottomSheet, { BottomSheetScrollView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
+import ProfileScreen from '../components/Modal/Profile/ProfileScreen';
+import { AuthContext } from '../store/AuthContext';
 const Home = ({ navigation }) => {
   const { featuredStories, loading, error } = useGetFeaturedStories();
   const { categories } = useGetCategories();
   const getAllTales = useGetAllTales();
+  const { userInfo } = useContext(AuthContext);
 
   const [lastRead, setLastRead] = useState(null);
+  const [userProfileImage, setUserProfileImage] = useState(null);
+  console.log('userProfileImage', userProfileImage);
+
+  const bottomSheetRef = useRef(null);
+  const snapPoints = useMemo(() => ['25%', '50%', '65%'], []);
+
+  const renderBackdrop = useCallback(
+    (props) => <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />,
+    []
+  );
+
+  const loadUserData = async () => {
+    const userJson = await AsyncStorage.getItem('@user');
+    return userJson != null ? JSON.parse(userJson) : null;
+  };
+
+  useEffect(() => {
+    const loadProfileImage = async () => {
+      const user = await loadUserData();
+      if (user) {
+        setUserProfileImage(user.photoURL || '../../../assets/images/blank-profile.png');
+      }
+    };
+
+    loadProfileImage();
+  }, []);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+          onPress={() => {
+            bottomSheetRef.current?.expand();
+          }}
+        >
+          <Image
+            style={styles.profileImage}
+            source={
+              userInfo?.photoURL
+                ? { uri: userInfo.photoURL }
+                : require('../../assets/images/blank-profile.png')
+            }
+            accessibilityLabel="User's profile image"
+          />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation, userInfo.photoURL]);
 
   useFocusEffect(
     useCallback(() => {
@@ -86,6 +146,19 @@ const Home = ({ navigation }) => {
       <TouchableOpacity onPress={handleExploreAll} style={styles.button}>
         <Text style={styles.buttonText}>Explore All</Text>
       </TouchableOpacity>
+      <BottomSheet
+        ref={bottomSheetRef}
+        index={-1}
+        snapPoints={snapPoints}
+        enablePanDownToClose
+        backgroundStyle={{ backgroundColor: Colors.dark900 }}
+        handleIndicatorStyle={{ backgroundColor: Colors.white }}
+        backdropComponent={renderBackdrop}
+      >
+        <BottomSheetScrollView>
+          <ProfileScreen />
+        </BottomSheetScrollView>
+      </BottomSheet>
     </ScrollView>
   );
 };
@@ -139,5 +212,11 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 24,
     textAlign: 'center',
+  },
+  profileImage: {
+    width: 35,
+    height: 35,
+    borderRadius: 35,
+    marginRight: 10,
   },
 });

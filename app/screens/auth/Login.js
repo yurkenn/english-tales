@@ -34,8 +34,8 @@ const Login = ({ navigation }) => {
       style={styles.container}
     >
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Image source={require('../../../assets/images/login.png')} style={styles.image} />
-        <Text style={styles.title}>English Tales</Text>
+        <Image source={require('../../../assets/images/login-image.png')} style={styles.image} />
+        <Text style={styles.title}>English Stories</Text>
 
         <Formik
           initialValues={{ email: '', password: '' }}

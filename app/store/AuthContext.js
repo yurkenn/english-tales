@@ -1,5 +1,5 @@
-import { createContext, useEffect, useState } from 'react';
-import { auth, firestore } from '../../firebaseConfig';
+import { createContext, useEffect, useMemo, useState } from 'react';
+import { auth } from '../../firebaseConfig';
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -11,7 +11,6 @@ import {
 import * as Google from 'expo-auth-session/providers/google';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Config from 'react-native-config';
-import { doc, setDoc } from 'firebase/firestore';
 import { Alert } from 'react-native';
 
 const AuthContext = createContext({
@@ -21,6 +20,7 @@ const AuthContext = createContext({
   handleSignup: () => {},
   handleLogout: () => {},
   promptAsync: () => {},
+  updateUserProfileImage: () => {},
 });
 
 const AuthProvider = ({ children }) => {
@@ -86,13 +86,14 @@ const AuthProvider = ({ children }) => {
       if (signup.user) {
         const { firstName, lastName, email } = values;
         const userUid = signup.user.uid;
-
-        await setDoc(doc(firestore, 'users', userUid), {
-          uid: userUid,
+        const userData = {
           firstName,
           lastName,
           email,
-        });
+          uid: userUid,
+        };
+        await AsyncStorage.setItem('@user', JSON.stringify(userData));
+
         console.log('User data saved to Firestore!', { firstName, lastName, email, uid: userUid });
       }
     } catch (error) {
@@ -136,16 +137,27 @@ const AuthProvider = ({ children }) => {
     );
   };
 
-  const values = {
-    userInfo,
-    loading,
-    handleLogin,
-    createUser,
-    handleLogout,
-    request,
-    response,
-    promptAsync,
+  const updateUserProfileImage = async (newImageUri) => {
+    const updatedUserData = { ...userInfo, photoURL: newImageUri };
+    setUserInfo(updatedUserData);
+    await AsyncStorage.setItem('@user', JSON.stringify(updatedUserData));
+    // You might also want to update the profile picture in your Firebase user profile if applicable
   };
+
+  const values = useMemo(
+    () => ({
+      userInfo,
+      loading,
+      handleLogin,
+      createUser,
+      handleLogout,
+      request,
+      response,
+      promptAsync,
+      updateUserProfileImage,
+    }),
+    [userInfo, loading, request, response]
+  );
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
