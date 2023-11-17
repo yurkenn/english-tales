@@ -16,7 +16,7 @@ const SavedCard = ({ data, onDelete }) => {
       onDelete(data);
       Toast.show({
         type: 'error',
-        text1: 'Bookmark removed from saved!',
+        text1: 'Bookmark removed from library!',
         topOffset: 90,
       });
     });
