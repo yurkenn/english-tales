@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Search from '../screens/Search';
 import Saved from '../screens/Saved';
-import Profile from '../screens/Profile';
-import { TouchableOpacity } from 'react-native';
-import { AuthContext } from '../store/AuthContext';
 import { Colors } from '../constants/colors';
 import Icon from '../components/Icons';
 
@@ -64,13 +61,6 @@ const TabNavigation = () => {
         component={Saved}
         options={{
           tabBarIcon: () => <Icon name={'bookmark'} size={23} color={'white'} />,
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarIcon: () => <Icon name={'person'} size={23} color={'white'} />,
         }}
       />
     </Tab.Navigator>
