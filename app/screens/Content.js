@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { urlFor } from '../../sanity';
 import TaleContent from '../components/Content/TaleContent';
@@ -9,8 +9,9 @@ import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
+import Icon from '../components/Icons';
 
-const Content = ({ route }) => {
+const Content = ({ route, navigation }) => {
   const { slug } = route.params;
   const { loading, error, tale } = useGetTaleBySlug(slug);
 
