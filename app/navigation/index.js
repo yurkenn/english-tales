@@ -1,5 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AuthNavigation from './AuthNavigation';
 import TabNavigation from './TabNavigation';
@@ -9,6 +9,9 @@ import CategoryList from '../screens/CategoryList';
 import Content from '../screens/Content';
 import Detail from '../screens/Detail';
 import AllTales from '../screens/AllTales';
+import Icon from '../components/Icons';
+import { TouchableOpacity } from 'react-native';
+import BottomSheet from '@gorhom/bottom-sheet';
 
 const Stack = createNativeStackNavigator();
 
@@ -59,7 +62,7 @@ const HomeStack = () => {
           headerStyle: {
             backgroundColor: Colors.dark900,
           },
-          headerTitle: 'Here are all the tales',
+          headerTitle: 'Here are all the stories',
         }}
       />
     </Stack.Navigator>
