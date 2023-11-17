@@ -1,4 +1,11 @@
-import React, { useState, useEffect, useLayoutEffect, forwardRef } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useLayoutEffect,
+  forwardRef,
+  useRef,
+  useCallback,
+} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Image, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { fetchLikes, unlikeTale, updateLikes } from '../utils/sanity-utils';
@@ -10,6 +17,10 @@ import FormatReadTime from '../components/FormatReadTime';
 import Toast from 'react-native-toast-message';
 import LikeButton from '../components/Detail/LikeButton';
 import InfoComponent from '../components/Detail/InfoComponent';
+import BottomSheet, { BottomSheetBackdrop, BottomSheetScrollView } from '@gorhom/bottom-sheet';
+import FontSizeSettings from '../components/Modal/FontSizeSettings';
+import SettingsButton from '../components/Detail/SettingsButton';
+import { useFontSize } from '../store/FontSizeContext';
 
 const Detail = ({ route }) => {
   const { data } = route.params;
@@ -19,6 +30,9 @@ const Detail = ({ route }) => {
   const [hasLiked, setHasLiked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const navigation = useNavigation();
+  const snapPoints = ['30%'];
+  const bottomSheetRef = useRef(null);
+  const { fontSize, changeFontSize } = useFontSize();
 
   const readTime = FormatReadTime(data?.tales[0]?.readTime);
 
@@ -105,6 +119,10 @@ const Detail = ({ route }) => {
     fetchLikesForTale();
   }, [data]);
 
+  const handleOpenModal = () => {
+    bottomSheetRef.current?.expand();
+  };
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -116,10 +134,16 @@ const Detail = ({ route }) => {
             handleUnlike={handleUnlike}
           />
           <BookmarkButton isBookmarked={isBookmarked} handleBookmark={handleBookmark} />
+          <SettingsButton handleOpenModal={handleOpenModal} />
         </View>
       ),
     });
   }, [hasLiked, isLoading, handleLike, handleUnlike, isBookmarked, handleBookmark]);
+
+  const renderBackdrop = useCallback(
+    (props) => <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />,
+    []
+  );
 
   return (
     <View style={styles.container}>
@@ -147,6 +171,19 @@ const Detail = ({ route }) => {
           <Text style={styles.readText}>Continue Reading</Text>
         </TouchableOpacity>
       </View>
+      <BottomSheet
+        ref={bottomSheetRef}
+        index={-1}
+        snapPoints={snapPoints}
+        enablePanDownToClose
+        backgroundStyle={{ backgroundColor: Colors.dark900 }}
+        handleIndicatorStyle={{ backgroundColor: Colors.white }}
+        backdropComponent={renderBackdrop}
+      >
+        <BottomSheetScrollView>
+          <FontSizeSettings fontSize={fontSize} changeFontSize={changeFontSize} />
+        </BottomSheetScrollView>
+      </BottomSheet>
 
       {/* Toast Component */}
       <Toast />
