@@ -31,30 +31,18 @@ const AuthProvider = ({ children }) => {
     androidClientId: Config.ANDROID_CLIENT_ID,
   });
 
-  const checkLocalUser = async () => {
-    try {
-      setLoading(true);
-      const userJSON = await AsyncStorage.getItem('@user');
-      const userDATA = userJSON ? JSON.parse(userJSON) : null;
-      console.log('LOCAL STORAGE: USER DATA =>', userDATA);
-      setUserInfo(userDATA);
-    } catch (error) {
-      console.log('Error getting user from local storage', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    checkLocalUser();
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
-        console.log(JSON.stringify(user, null, 2));
-        setUserInfo(user);
-        await AsyncStorage.setItem('@user', JSON.stringify(user));
+        const userJSON = await AsyncStorage.getItem('@user');
+        const userDATA = userJSON ? JSON.parse(userJSON) : null;
+        if (userDATA) {
+          setUserInfo({ ...user, ...userDATA });
+        } else {
+          setUserInfo(user);
+        }
       } else {
         setUserInfo(null);
-        console.log('User is not authenticated!');
       }
     });
 
@@ -82,19 +70,11 @@ const AuthProvider = ({ children }) => {
   const createUser = async (values) => {
     try {
       const signup = await createUserWithEmailAndPassword(auth, values.email, values.password);
-
       if (signup.user) {
         const { firstName, lastName, email } = values;
-        const userUid = signup.user.uid;
-        const userData = {
-          firstName,
-          lastName,
-          email,
-          uid: userUid,
-        };
-        await AsyncStorage.setItem('@user', JSON.stringify(userData));
-
-        console.log('User data saved to Firestore!', { firstName, lastName, email, uid: userUid });
+        const userObj = { firstName, lastName, email, uid: signup.user.uid };
+        await AsyncStorage.setItem('@user', JSON.stringify(userObj));
+        setUserInfo(userObj);
       }
     } catch (error) {
       console.log('Signup Error', error);
@@ -119,7 +99,7 @@ const AuthProvider = ({ children }) => {
           text: 'Yes',
           onPress: async () => {
             try {
-              await signOut(auth); // Assuming signOut is from your auth system
+              await signOut(auth);
               console.log('User Logged Out!');
               await AsyncStorage.removeItem('@user');
               // Additional logic after logout if needed

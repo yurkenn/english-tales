@@ -11,13 +11,21 @@ const ProfileDetails = () => {
       <TouchableOpacity>
         <Image
           style={styles.profileImage}
-          source={{ uri: userInfo.photoURL }}
+          source={
+            userInfo.photoURL
+              ? { uri: userInfo.photoURL }
+              : require('../../../../assets/images/blank-profile.png')
+          }
           accessibilityLabel="User's profile image"
         />
       </TouchableOpacity>
       <Text style={styles.displayName}>
-        {userInfo.displayName || `${userInfo.firstName} ${userInfo.lastName}`}
+        {userInfo.displayName ||
+          (userInfo.firstName && userInfo.lastName
+            ? `${userInfo.firstName} ${userInfo.lastName}`
+            : 'User')}
       </Text>
+
       <Text style={styles.email}>{userInfo.email}</Text>
     </View>
   );
