@@ -37,7 +37,7 @@ const ContinueReading = ({ lastRead }) => {
           </View>
         </View>
       ) : (
-        <Text style={styles.warningText}>No last read tale found</Text>
+        <Text style={styles.warningText}>You haven't read any stories yet. Go read some!</Text>
       )}
     </TouchableOpacity>
   );
@@ -92,9 +92,9 @@ const styles = StyleSheet.create({
     lineHeight: 14,
   },
   warningText: {
+    margin: 10,
     color: Colors.white,
-    fontSize: 16,
-    fontWeight: '500',
+    fontSize: 14,
     lineHeight: 20,
     textAlign: 'center',
   },
