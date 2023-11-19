@@ -20,7 +20,6 @@ const AuthContext = createContext({
   handleSignup: () => {},
   handleLogout: () => {},
   promptAsync: () => {},
-  updateUserProfileImage: () => {},
 });
 
 const AuthProvider = ({ children }) => {
@@ -136,12 +135,24 @@ const AuthProvider = ({ children }) => {
       { cancelable: false }
     );
   };
+  useEffect(() => {
+    const loadUserData = async () => {
+      try {
+        const userJson = await AsyncStorage.getItem('@user');
+        if (userJson != null) {
+          setUserInfo(JSON.parse(userJson));
+        }
+      } catch (error) {
+        console.error('Failed to load user data:', error);
+      }
+    };
 
-  const updateUserProfileImage = async (newImageUri) => {
-    const updatedUserData = { ...userInfo, photoURL: newImageUri };
-    setUserInfo(updatedUserData);
-    await AsyncStorage.setItem('@user', JSON.stringify(updatedUserData));
-    // You might also want to update the profile picture in your Firebase user profile if applicable
+    loadUserData();
+  }, []);
+
+  const updateUserInfo = async (newInfo) => {
+    setUserInfo(newInfo);
+    await AsyncStorage.setItem('@user', JSON.stringify(newInfo));
   };
 
   const values = useMemo(
@@ -154,7 +165,7 @@ const AuthProvider = ({ children }) => {
       request,
       response,
       promptAsync,
-      updateUserProfileImage,
+      updateUserInfo,
     }),
     [userInfo, loading, request, response]
   );

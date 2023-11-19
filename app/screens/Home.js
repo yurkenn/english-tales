@@ -32,15 +32,13 @@ import { useFocusEffect } from '@react-navigation/native';
 import BottomSheet, { BottomSheetScrollView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 import ProfileScreen from '../components/Modal/Profile/ProfileScreen';
 import { AuthContext } from '../store/AuthContext';
+
 const Home = ({ navigation }) => {
   const { featuredStories, loading, error } = useGetFeaturedStories();
   const { categories } = useGetCategories();
   const getAllTales = useGetAllTales();
   const { userInfo } = useContext(AuthContext);
-
   const [lastRead, setLastRead] = useState(null);
-  const [userProfileImage, setUserProfileImage] = useState(null);
-  console.log('userProfileImage', userProfileImage);
 
   const bottomSheetRef = useRef(null);
   const snapPoints = useMemo(() => ['25%', '50%', '65%'], []);
@@ -50,21 +48,9 @@ const Home = ({ navigation }) => {
     []
   );
 
-  const loadUserData = async () => {
-    const userJson = await AsyncStorage.getItem('@user');
-    return userJson != null ? JSON.parse(userJson) : null;
-  };
-
-  useEffect(() => {
-    const loadProfileImage = async () => {
-      const user = await loadUserData();
-      if (user) {
-        setUserProfileImage(user.photoURL || '../../../assets/images/blank-profile.png');
-      }
-    };
-
-    loadProfileImage();
-  }, []);
+  const profilePicture = userInfo.photoURL
+    ? { uri: userInfo.photoURL }
+    : require('../../assets/images/blank-profile.png');
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -76,11 +62,7 @@ const Home = ({ navigation }) => {
         >
           <Image
             style={styles.profileImage}
-            source={
-              userInfo?.photoURL
-                ? { uri: userInfo.photoURL }
-                : require('../../assets/images/blank-profile.png')
-            }
+            source={profilePicture}
             accessibilityLabel="User's profile image"
           />
         </TouchableOpacity>
