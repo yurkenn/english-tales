@@ -6,7 +6,6 @@ import LoadingAnimation from '../../Animations/LoadingAnimation';
 import CustomButton from '../../CustomButton';
 import ProfileDetails from './ProfileDetails';
 import Statistics from './Statistics';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ProfileScreen = () => {
   const { userInfo, updateUserInfo, handleLogout } = useContext(AuthContext);

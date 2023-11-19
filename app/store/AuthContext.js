@@ -20,6 +20,7 @@ const AuthContext = createContext({
   handleSignup: () => {},
   handleLogout: () => {},
   promptAsync: () => {},
+  updateUserInfo: () => {},
 });
 
 const AuthProvider = ({ children }) => {
