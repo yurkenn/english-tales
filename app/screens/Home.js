@@ -48,21 +48,17 @@ const Home = ({ navigation }) => {
     []
   );
 
-  const profilePicture = userInfo.photoURL
-    ? { uri: userInfo.photoURL }
-    : require('../../assets/images/blank-profile.png');
-
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity
-          onPress={() => {
-            bottomSheetRef.current?.expand();
-          }}
-        >
+        <TouchableOpacity onPress={() => bottomSheetRef.current?.expand()}>
           <Image
             style={styles.profileImage}
-            source={profilePicture}
+            source={
+              userInfo.photoURL
+                ? { uri: userInfo.photoURL }
+                : require('../../assets/images/blank-profile.png')
+            }
             accessibilityLabel="User's profile image"
           />
         </TouchableOpacity>
