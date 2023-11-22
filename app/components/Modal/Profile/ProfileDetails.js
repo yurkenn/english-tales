@@ -1,14 +1,34 @@
-import React, { useContext } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { AuthContext } from '../../../store/AuthContext';
 import { Colors } from '../../../constants/colors';
+import * as ImagePicker from 'expo-image-picker';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ProfileDetails = () => {
-  const { userInfo } = useContext(AuthContext);
+  const { userInfo, updateUserInfo } = useContext(AuthContext);
+
+  const pickImage = async () => {
+    try {
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [1, 1], // Changed to 1:1 aspect ratio for square images
+        quality: 1,
+      });
+
+      if (!result.canceled) {
+        const updatedUserInfo = { ...userInfo, photoURL: result.assets[0].uri };
+        updateUserInfo(updatedUserInfo);
+      }
+    } catch (error) {
+      Alert.alert('Error', 'Failed to pick image.');
+    }
+  };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={pickImage}>
         <Image
           style={styles.profileImage}
           source={
@@ -25,7 +45,6 @@ const ProfileDetails = () => {
             ? `${userInfo.firstName} ${userInfo.lastName}`
             : 'User')}
       </Text>
-
       <Text style={styles.email}>{userInfo.email}</Text>
     </View>
   );
