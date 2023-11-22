@@ -4,7 +4,6 @@ import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 import { urlFor } from '../../../sanity';
 import FormatReadTime from '../FormatReadTime';
-import Icon from '../Icons';
 import InfoContainer from './InfoContainer';
 
 const WINDOW_WIDTH = Dimensions.get('window').width;
