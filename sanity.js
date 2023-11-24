@@ -1,11 +1,10 @@
 import { createClient } from '@sanity/client';
 import ImageUrlBuilder from '@sanity/image-url';
-import Config from 'react-native-config';
 
 export const client = createClient({
-  projectId: Config.SANITY_PROJECT_ID,
-  dataset: Config.SANITY_DATASET,
-  token: Config.SANITY_TOKEN,
+  projectId: process.env.EXPO_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.EXPO_PUBLIC_SANITY_DATASET,
+  token: process.env.EXPO_PUBLIC_SANITY_TOKEN,
   apiVersion: '2021-10-21',
   useCdn: false,
 });
