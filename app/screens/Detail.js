@@ -6,7 +6,7 @@ import React, {
   useRef,
   useCallback,
 } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { fetchLikes, unlikeTale, updateLikes } from '../utils/sanity-utils';
 import { useBookmark } from '../store/BookmarkContext';
@@ -193,10 +193,11 @@ const Detail = ({ route }) => {
 
 export default Detail;
 
+const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 80,
+    paddingTop: height * 0.1, // 10% of screen height
     backgroundColor: Colors.modalBackground,
   },
   titleContainer: {
@@ -204,38 +205,38 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   title: {
-    fontSize: 28, // Adjusted for a more balanced typography
+    fontSize: width < 400 ? 24 : 28, // smaller font size on smaller devices
     fontWeight: 'bold',
     color: Colors.white,
-    textAlign: 'center', // Center if you want to align the text in the middle
+    textAlign: 'center',
   },
   author: {
-    fontSize: 18, // Slightly smaller for visual hierarchy
-    fontWeight: 'normal', // Adjusted to 'normal' for a lighter touch
+    fontSize: width < 400 ? 16 : 18,
+    fontWeight: 'normal',
     color: Colors.gray,
-    textAlign: 'center', // Center if the title is also centered
+    textAlign: 'center',
   },
   imageInfoContainer: {
     alignItems: 'center',
     marginVertical: 10,
   },
   image: {
-    width: 200, // Slightly larger for better visibility
-    height: 300,
-    resizeMode: 'cover', // Ensure the image fits nicely within the bounds
+    width: width * 0.5, // 50% of screen width
+    height: height * 0.3, // 30% of screen height
+    resizeMode: 'cover',
     borderRadius: 10,
     marginBottom: 10,
   },
   descriptionContainer: {
     marginHorizontal: 20,
     marginTop: 16,
-    paddingBottom: 20, // Padding bottom to ensure content doesn't touch the button
+    paddingBottom: 20,
   },
   descriptionTitle: {
     fontSize: 22,
     fontWeight: 'bold',
     color: Colors.white,
-    marginBottom: 8, // Reduced margin for a tighter title and content
+    marginBottom: 8,
   },
   description: {
     fontSize: 16,
@@ -244,7 +245,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     justifyContent: 'flex-end',
-    padding: 20, // Padding for safe area spacing, especially for devices with rounded corners
+    paddingHorizontal: 20,
   },
   readButton: {
     backgroundColor: Colors.dark500,
@@ -264,7 +265,6 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     textAlign: 'center',
   },
-
   headerRightContainer: {
     flexDirection: 'row',
     alignItems: 'center',

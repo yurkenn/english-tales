@@ -1,17 +1,17 @@
 import React, { useContext, useEffect } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, Alert, Dimensions } from 'react-native';
 import { AuthContext } from '../../../store/AuthContext';
 import { Colors } from '../../../constants/colors';
 import * as ImagePicker from 'expo-image-picker';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ProfileDetails = () => {
   const { userInfo, updateUserInfo } = useContext(AuthContext);
+  const DEFAULT_IMAGE_PATH = '../../../../assets/images/blank-profile.png';
 
   const pickImage = async () => {
     try {
       let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
         allowsEditing: true,
         aspect: [1, 1], // Changed to 1:1 aspect ratio for square images
         quality: 1,
@@ -31,11 +31,7 @@ const ProfileDetails = () => {
       <TouchableOpacity onPress={pickImage}>
         <Image
           style={styles.profileImage}
-          source={
-            userInfo.photoURL
-              ? { uri: userInfo.photoURL }
-              : require('../../../../assets/images/blank-profile.png')
-          }
+          source={userInfo.photoURL ? { uri: userInfo.photoURL } : require(DEFAULT_IMAGE_PATH)}
           accessibilityLabel="User's profile image"
         />
       </TouchableOpacity>
@@ -52,6 +48,8 @@ const ProfileDetails = () => {
 
 export default ProfileDetails;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     marginBottom: 20,
@@ -59,20 +57,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   displayName: {
-    fontSize: 24,
+    fontSize: width < 400 ? 22 : 24, // Smaller font size for smaller screens
     letterSpacing: 1,
     fontWeight: 'bold',
     color: Colors.white,
   },
   profileImage: {
-    width: 90,
-    height: 90,
-    borderRadius: 50,
+    width: width * 0.25, // 25% of screen width
+    height: width * 0.25, // Maintain aspect ratio
+    borderRadius: width * 0.125, // Half of width and height for a perfect circle
     marginVertical: 10,
   },
   email: {
     marginTop: 10,
-    fontSize: 14,
+    fontSize: width < 400 ? 12 : 14, // Smaller font size for smaller screens
     color: Colors.white,
   },
 });

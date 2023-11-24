@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
@@ -45,6 +45,8 @@ const ContinueReading = ({ lastRead }) => {
 
 export default ContinueReading;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -58,8 +60,8 @@ const styles = StyleSheet.create({
     flex: 1.5,
   },
   image: {
-    height: 136,
-    width: 128,
+    height: width * 0.36, // 30% of screen width
+    width: width * 0.33, // 28% of screen width
     borderRadius: 6,
     resizeMode: 'cover',
   },
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.white,
-    fontSize: 16,
+    fontSize: width < 400 ? 14 : 16,
     fontWeight: '500',
     lineHeight: 20,
   },
@@ -87,14 +89,14 @@ const styles = StyleSheet.create({
   },
   lastRead: {
     color: Colors.white,
-    fontSize: 12,
+    fontSize: width < 400 ? 10 : 12,
     fontWeight: '500',
     lineHeight: 14,
   },
   warningText: {
     margin: 10,
     color: Colors.white,
-    fontSize: 14,
+    fontSize: width < 400 ? 12 : 14,
     lineHeight: 20,
     textAlign: 'center',
   },

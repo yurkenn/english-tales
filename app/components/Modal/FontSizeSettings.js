@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Slider from 'react-native-smooth-slider';
 import { Colors } from '../../constants/colors'; // Make sure you import Colors if needed
@@ -42,6 +42,8 @@ const FontSizeSettings = ({ fontSize, changeFontSize }) => {
 
 export default FontSizeSettings;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   fontSizeSettingsContainer: {
     flex: 1,
@@ -52,12 +54,12 @@ const styles = StyleSheet.create({
   },
   fontSizeTitle: {
     color: Colors.white,
-    fontSize: 20,
+    fontSize: width < 400 ? 18 : 20,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   slider: {
-    width: '100%',
+    width: '90%', // Adjusted to 90% of the container width
     height: 40,
     margin: 10,
   },
@@ -65,10 +67,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.white,
     marginTop: 10,
+    fontSize: width < 400 ? 14 : 16, // Responsive font size
   },
   fontSizeInfo: {
     color: Colors.gray,
-    fontSize: 16,
+    fontSize: width < 400 ? 14 : 16,
     textAlign: 'center',
     marginBottom: 10,
   },

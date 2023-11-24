@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
@@ -6,17 +6,22 @@ import { Colors } from '../../constants/colors';
 const InfoContainer = ({ readTime, likes }) => (
   <View style={styles.infoContainer}>
     <View style={styles.readTimeContainer}>
-      <Icon name={'time-outline'} size={16} color={'white'} />
+      <Icon name={'time-outline'} size={iconSize} color={'white'} />
       <Text style={styles.readTime}>{readTime}</Text>
     </View>
     <View style={styles.bookmarkContainer}>
-      <Icon name={'heart'} size={16} color={'red'} />
+      <Icon name={'heart'} size={iconSize} color={'red'} />
       <Text style={styles.bookmarks}>{likes}</Text>
     </View>
   </View>
 );
 
 export default InfoContainer;
+
+const { width } = Dimensions.get('window');
+
+const fontSize = width < 400 ? 10 : 12; // Smaller font size for smaller screens
+const iconSize = width < 400 ? 14 : 16; // Smaller icon size for smaller screens
 
 const styles = StyleSheet.create({
   infoContainer: {
@@ -32,7 +37,7 @@ const styles = StyleSheet.create({
   },
   readTime: {
     color: Colors.white,
-    fontSize: 12,
+    fontSize: fontSize,
     fontWeight: 'bold',
     marginLeft: 5,
   },
@@ -43,7 +48,7 @@ const styles = StyleSheet.create({
   },
   bookmarks: {
     color: Colors.white,
-    fontSize: 12,
+    fontSize: fontSize,
     fontWeight: 'bold',
     marginLeft: 5,
   },

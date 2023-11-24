@@ -1,4 +1,5 @@
 import {
+  Dimensions,
   Image,
   KeyboardAvoidingView,
   Platform,
@@ -113,6 +114,12 @@ const Login = ({ navigation }) => {
 
 export default Login;
 
+const { width } = Dimensions.get('window');
+
+const inputWidth = width * 0.8; // 80% of screen width
+const buttonWidth = width * 0.8; // 80% of screen width
+const imageSize = width * 0.6; // 60% of screen width
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -124,8 +131,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'center',
     marginTop: 30,
-    width: 250,
-    height: 250,
+    width: imageSize,
+    height: imageSize,
     borderRadius: 6,
     resizeMode: 'cover',
   },
@@ -147,7 +154,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   input: {
-    width: 311,
+    width: inputWidth,
     height: 48,
     padding: 8,
     borderWidth: 1,
@@ -159,7 +166,7 @@ const styles = StyleSheet.create({
     lineHeight: 19,
   },
   button: {
-    width: 311,
+    width: buttonWidth,
     height: 48,
     padding: 8,
     marginTop: 20,

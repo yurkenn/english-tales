@@ -10,7 +10,6 @@ import {
 } from 'firebase/auth';
 import * as Google from 'expo-auth-session/providers/google';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Config from 'react-native-config';
 import { Alert } from 'react-native';
 
 const AuthContext = createContext({
@@ -27,8 +26,8 @@ const AuthProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState(null);
   const [loading, setLoading] = useState(false);
   const [request, response, promptAsync] = Google.useAuthRequest({
-    iosClientId: Config.IOS_CLIENT_ID,
-    androidClientId: Config.ANDROID_CLIENT_ID,
+    iosClientId: process.env.EXPO_PUBLIC_IOS_CLIENT_ID,
+    androidClientId: process.env.EXPO_PUBLIC_ANDROID_CLIENT_ID,
   });
 
   useEffect(() => {

@@ -1,8 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
-import Icon from '../Icons';
 import { Image } from 'react-native';
 
 const Categories = ({ data }) => {
@@ -23,6 +22,11 @@ const Categories = ({ data }) => {
 
 export default Categories;
 
+const { width } = Dimensions.get('window');
+
+const buttonSize = width < 400 ? 83 : 90;
+const fontSize = width < 400 ? 10 : 12;
+
 const styles = StyleSheet.create({
   buttonContainer: {
     marginHorizontal: 10,
@@ -31,14 +35,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: 20,
-    width: 88,
-    height: 88,
+    width: buttonSize,
+    height: buttonSize,
     backgroundColor: Colors.dark500,
     borderRadius: 6,
   },
   categoryName: {
     color: Colors.white,
-    fontSize: 12,
+    fontSize: fontSize,
     lineHeight: 14,
     fontWeight: '500',
     textAlign: 'center',

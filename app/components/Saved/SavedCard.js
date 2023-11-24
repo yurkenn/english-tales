@@ -1,5 +1,13 @@
 import React, { useRef } from 'react';
-import { Animated, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Animated,
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
 import Toast from 'react-native-toast-message';
@@ -40,6 +48,12 @@ const SavedCard = ({ data, onDelete }) => {
 
 export default SavedCard;
 
+const { width } = Dimensions.get('window');
+
+const imageSize = width < 400 ? { width: 40, height: 60 } : { width: 50, height: 70 };
+const titleFontSize = width < 400 ? 14 : 16;
+const authorFontSize = width < 400 ? 12 : 14;
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -54,20 +68,19 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   image: {
-    width: 50,
-    height: 70,
+    ...imageSize,
     borderRadius: 5,
   },
   detailsContainer: {
     flex: 1,
   },
   title: {
-    fontSize: 16,
+    fontSize: titleFontSize,
     fontWeight: 'bold',
     color: Colors.white,
   },
   author: {
-    fontSize: 14,
+    fontSize: authorFontSize,
     color: Colors.gray,
   },
   deleteButton: {

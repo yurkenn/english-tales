@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, StyleSheet, Text, Alert } from 'react-native';
+import { View, StyleSheet, Text, Alert, Dimensions } from 'react-native';
 import { AuthContext } from '../../../store/AuthContext';
 import { Colors } from '../../../constants/colors';
 import LoadingAnimation from '../../Animations/LoadingAnimation';
@@ -80,10 +80,12 @@ const ProfileScreen = () => {
 
 export default ProfileScreen;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: width * 0.03, // 5% of screen width
     backgroundColor: Colors.dark900,
   },
   clearDataButton: {
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   fontButtonText: {
-    fontSize: 16,
+    fontSize: width < 400 ? 14 : 16, // Smaller font size for smaller screens
     fontWeight: '500',
     color: Colors.white,
   },

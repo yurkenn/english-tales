@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import { useBookmark } from '../store/BookmarkContext';
 import SavedCard from '../components/Saved/SavedCard';
@@ -39,14 +39,16 @@ const Saved = ({ navigation }) => {
 };
 export default Saved;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: width * 0.025, // 2.5% of screen width
     backgroundColor: Colors.dark900,
   },
   title: {
-    fontSize: 24,
+    fontSize: width < 400 ? 22 : 24, // smaller font size for smaller screens
     fontWeight: 'bold',
     marginBottom: 10,
     color: Colors.white,
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    fontSize: 18,
+    fontSize: width < 400 ? 16 : 18, // smaller font size for smaller screens
     color: Colors.gray,
   },
 });

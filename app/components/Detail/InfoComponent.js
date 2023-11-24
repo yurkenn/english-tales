@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Colors } from '../../constants/colors';
 
@@ -18,17 +18,23 @@ const InfoComponent = ({ readTime, likes }) => (
 
 export default InfoComponent;
 
+const { width } = Dimensions.get('window');
+
+// Responsive font sizes based on screen width
+const fontSizeLikesReadTime = width < 400 ? 16 : 18;
+const fontSizeInfoText = width < 400 ? 14 : 16;
+
 const styles = StyleSheet.create({
   infoContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
     marginTop: 16,
-    paddingVertical: 10, // Padding for a taller info container
-    width: '90%', // Use percentage for responsive width
-    alignSelf: 'center', // Center the info container
-    borderRadius: 10, // Match the borderRadius with image for consistency
-    backgroundColor: Colors.dark500, // Use a dark theme for info container
+    paddingVertical: 10,
+    width: '90%',
+    alignSelf: 'center',
+    borderRadius: 10,
+    backgroundColor: Colors.dark500,
     shadowColor: Colors.black,
     shadowOpacity: 0.15,
     shadowRadius: 4,
@@ -38,12 +44,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   likes: {
-    fontSize: 18, // Adjusted for balance
-    fontWeight: 'bold', // Bold for emphasis on the number of likes
-    color: Colors.white, // Use a light color for contrast against the dark background
+    fontSize: fontSizeLikesReadTime,
+    fontWeight: 'bold',
+    color: Colors.white,
   },
   infoTextColor: {
-    fontSize: 16, // Adjusted for balance
+    fontSize: fontSizeInfoText,
     color: Colors.gray,
   },
   divider: {
@@ -56,8 +62,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   readTime: {
-    fontSize: 18, // Adjusted for balance
-    fontWeight: 'bold', // Bold for emphasis on the read time
-    color: Colors.white, // Use a light color for contrast against the dark background
+    fontSize: fontSizeLikesReadTime,
+    fontWeight: 'bold',
+    color: Colors.white,
   },
 });

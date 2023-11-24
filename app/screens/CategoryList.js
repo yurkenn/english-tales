@@ -1,4 +1,4 @@
-import { StyleSheet, View } from 'react-native';
+import { Dimensions, StyleSheet, View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import React from 'react';
 import useGetTalesByCategory from '../hooks/useGetTalesByCategory';
@@ -31,10 +31,12 @@ const CategoryList = ({ route }) => {
 
 export default CategoryList;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
-    padding: 10,
+    padding: width * 0.025, // Padding as 2.5% of screen width
   },
 });

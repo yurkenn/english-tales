@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import { useBookmark } from '../../../store/BookmarkContext';
 
 const Statistics = ({ userData }) => {
@@ -24,6 +24,8 @@ const Statistics = ({ userData }) => {
 
 export default Statistics;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -35,12 +37,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bookmarkNumber: {
-    fontSize: 24,
+    fontSize: width < 400 ? 22 : 24,
     fontWeight: 'bold',
     color: '#fff',
   },
   bookmarkText: {
-    fontSize: 16,
+    fontSize: width < 400 ? 14 : 16,
     color: '#fff',
   },
   divider: {
@@ -52,12 +54,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   totalSessionsNumber: {
-    fontSize: 24,
+    fontSize: width < 400 ? 22 : 24,
     fontWeight: 'bold',
     color: '#fff',
   },
   totalSessionsText: {
-    fontSize: 16,
+    fontSize: width < 400 ? 14 : 16,
     color: '#fff',
   },
 });

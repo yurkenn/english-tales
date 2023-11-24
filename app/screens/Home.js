@@ -1,5 +1,6 @@
 import {
   Alert,
+  Dimensions,
   FlatList,
   Image,
   ScrollView,
@@ -39,9 +40,10 @@ const Home = ({ navigation }) => {
   const getAllTales = useGetAllTales();
   const { userInfo } = useContext(AuthContext);
   const [lastRead, setLastRead] = useState(null);
+  const DEFAULT_IMAGE_PATH = '../../assets/images/blank-profile.png';
 
   const bottomSheetRef = useRef(null);
-  const snapPoints = useMemo(() => ['25%', '50%', '65%'], []);
+  const snapPoints = useMemo(() => ['35%', '55%', '75%'], []);
 
   const renderBackdrop = useCallback(
     (props) => <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />,
@@ -54,11 +56,7 @@ const Home = ({ navigation }) => {
         <TouchableOpacity onPress={() => bottomSheetRef.current?.expand()}>
           <Image
             style={styles.profileImage}
-            source={
-              userInfo.photoURL
-                ? { uri: userInfo.photoURL }
-                : require('../../assets/images/blank-profile.png')
-            }
+            source={userInfo.photoURL ? { uri: userInfo.photoURL } : require(DEFAULT_IMAGE_PATH)}
             accessibilityLabel="User's profile image"
           />
         </TouchableOpacity>
@@ -143,15 +141,17 @@ const Home = ({ navigation }) => {
 
 export default Home;
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
-    marginVertical: 20,
+    marginHorizontal: width * 0.025, // 2.5% of screen width
+    marginVertical: height * 0.02, // 2% of screen height
   },
   featureContainer: {},
   featureText: {
     color: Colors.white,
-    fontSize: 20,
+    fontSize: width < 400 ? 18 : 20, // smaller font size for smaller screens
     fontWeight: '500',
     lineHeight: 24,
     marginBottom: 10,
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
   },
   categoriesText: {
     color: Colors.white,
-    fontSize: 20,
+    fontSize: width < 400 ? 18 : 20,
     fontWeight: '500',
     lineHeight: 24,
     paddingHorizontal: 10,
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
   myStoriesText: {
     color: Colors.white,
-    fontSize: 20,
+    fontSize: width < 400 ? 18 : 20,
     fontWeight: '500',
     lineHeight: 24,
   },
@@ -186,13 +186,13 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
+    fontSize: width < 400 ? 14 : 16,
     fontWeight: '500',
     lineHeight: 24,
     textAlign: 'center',
   },
   profileImage: {
-    width: 35,
+    width: 35, // Consider making this relative to screen size
     height: 35,
     borderRadius: 35,
     marginRight: 10,

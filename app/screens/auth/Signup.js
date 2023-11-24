@@ -1,4 +1,5 @@
 import {
+  Dimensions,
   Image,
   KeyboardAvoidingView,
   Platform,
@@ -155,6 +156,12 @@ const Signup = ({ navigation }) => {
 
 export default Signup;
 
+const { width } = Dimensions.get('window');
+
+const inputWidth = width * 0.8; // 80% of screen width
+const buttonWidth = width * 0.8; // 80% of screen width
+const titleFontSize = width < 400 ? 36 : 40;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -172,7 +179,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontSize: 40,
+    fontSize: titleFontSize,
     fontWeight: '600',
     color: Colors.white,
     lineHeight: 52,
@@ -195,10 +202,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
-    width: 311,
+    width: inputWidth,
   },
   nameInput: {
-    width: 120,
+    width: (inputWidth - 20) / 2,
     height: 48,
     padding: 8,
     borderWidth: 1,
@@ -210,7 +217,7 @@ const styles = StyleSheet.create({
     lineHeight: 19,
   },
   lastNameInput: {
-    width: 150,
+    width: (inputWidth - 20) / 2,
     height: 48,
     padding: 8,
     borderWidth: 1,
@@ -223,7 +230,7 @@ const styles = StyleSheet.create({
   },
 
   input: {
-    width: 311,
+    width: inputWidth,
     height: 48,
     padding: 8,
     borderWidth: 1,
@@ -236,7 +243,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   button: {
-    width: 311,
+    width: buttonWidth,
     height: 48,
     padding: 8,
     marginTop: 20,

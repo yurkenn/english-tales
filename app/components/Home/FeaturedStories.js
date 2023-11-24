@@ -6,10 +6,6 @@ import { urlFor } from '../../../sanity';
 import FormatReadTime from '../FormatReadTime';
 import InfoContainer from './InfoContainer';
 
-const WINDOW_WIDTH = Dimensions.get('window').width;
-const IMAGE_WIDTH = WINDOW_WIDTH * 0.5;
-const IMAGE_HEIGHT = IMAGE_WIDTH * 1.25;
-
 const FeaturedStories = ({ data }) => {
   const navigation = useNavigation();
 
@@ -33,6 +29,8 @@ const FeaturedStories = ({ data }) => {
 
 export default FeaturedStories;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.dark500,
@@ -40,19 +38,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     padding: 10,
   },
-
-  imageContainer: {
-    position: 'relative',
-  },
   image: {
     borderRadius: 10,
-    height: IMAGE_HEIGHT,
-    width: IMAGE_WIDTH,
+    height: width * 0.6, // Adjust height based on screen width
+    width: width * 0.45, // Adjust width based on screen width
     resizeMode: 'cover',
   },
   title: {
     color: Colors.white,
-    fontSize: 18,
+    fontSize: width < 400 ? 16 : 18,
     fontWeight: 'bold',
     lineHeight: 24,
     marginTop: 10,

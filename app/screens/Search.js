@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Text, StyleSheet } from 'react-native';
+import { View, TextInput, Text, StyleSheet, Dimensions } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import useSearch from '../hooks/useSearch';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
@@ -44,10 +44,12 @@ const SearchScreen = () => {
 
 export default SearchScreen;
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
+    padding: width * 0.05,
   },
   input: {
     height: 40,
@@ -57,5 +59,6 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 20,
     color: 'white',
+    fontSize: width < 400 ? 14 : 16, // Responsive font size
   },
 });

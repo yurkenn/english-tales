@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
 import { urlFor } from '../../sanity';
 import TaleContent from '../components/Content/TaleContent';
 import HeaderNavbar from '../components/Content/HeaderNavbar';
@@ -9,9 +9,8 @@ import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-import Icon from '../components/Icons';
 
-const Content = ({ route, navigation }) => {
+const Content = ({ route }) => {
   const { slug } = route.params;
   const { loading, error, tale } = useGetTaleBySlug(slug);
 
@@ -28,11 +27,11 @@ const Content = ({ route, navigation }) => {
           }}
           backgroundColor={Colors.dark900}
           contentBackgroundColor={Colors.dark900}
-          parallaxHeaderHeight={300}
+          parallaxHeaderHeight={390}
           renderForeground={() => (
             <Image source={{ uri: urlFor(tale[0].imageURL).url() }} style={styles.headerImage} />
           )}
-          stickyHeaderHeight={80}
+          stickyHeaderHeight={90}
           renderFixedHeader={() => <HeaderNavbar title={tale[0].title} />}
           renderStickyHeader={() => <TopNavbar title={tale[0].title} />}
         >
@@ -46,38 +45,30 @@ const Content = ({ route, navigation }) => {
   );
 };
 
+const { width, height } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
   },
   headerImage: {
-    height: 340,
+    height: height * 0.5,
     width: '100%',
     opacity: 0.7,
+    resizeMode: 'cover',
   },
   content: {
     flex: 1,
     padding: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: width < 400 ? 22 : 24, // smaller font size for smaller screens
     fontWeight: 'bold',
     color: Colors.white,
     marginBottom: 10,
   },
-  infoContainer: {
-    justifyContent: 'space-between',
-    marginBottom: 10,
-  },
-  author: {
-    fontSize: 16,
-    color: Colors.white,
-  },
-  category: {
-    fontSize: 16,
-    color: Colors.white,
-  },
+  // ... other styles
 });
 
 export default Content;
