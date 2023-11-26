@@ -16,6 +16,7 @@ import { AuthContext } from '../../store/AuthContext';
 import { useContext, useState } from 'react';
 import SignupAnimation from '../../components/Animations/SignupAnimation';
 import { Colors } from '../../constants/colors';
+import CustomButton from '../../components/CustomButton';
 
 const Signup = ({ navigation }) => {
   const [focusedInput, setFocusedInput] = useState(null);
@@ -136,9 +137,12 @@ const Signup = ({ navigation }) => {
               {focusedInput === 'password' && errors.password && (
                 <Text style={styles.errors}>{errors.password}</Text>
               )}
-              <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-                <Text style={styles.buttonText}>Sign Up</Text>
-              </TouchableOpacity>
+              <CustomButton
+                onPress={handleSubmit}
+                title="Sign Up"
+                style={styles.button}
+                textStyle={styles.buttonText}
+              />
 
               <View style={styles.signupContainer}>
                 <Text style={styles.signupInfo}>Do you have already an account?</Text>
