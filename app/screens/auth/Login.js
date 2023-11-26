@@ -16,6 +16,7 @@ import { AuthContext } from '../../store/AuthContext';
 import { useContext, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { Colors } from '../../constants/colors';
+import CustomButton from '../../components/CustomButton';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -79,9 +80,13 @@ const Login = ({ navigation }) => {
               {errors.password && focusedInput === 'password' && (
                 <Text style={styles.errors}>{errors.password}</Text>
               )}
-              <TouchableOpacity onPress={handleSubmit} style={styles.button}>
-                <Text style={styles.buttonText}>Log In</Text>
-              </TouchableOpacity>
+              <CustomButton
+                onPress={handleSubmit}
+                title="Log In"
+                style={styles.button}
+                textStyle={styles.buttonText}
+              />
+
               <View>
                 <Text style={styles.infoText}>Forgot password?</Text>
               </View>
@@ -90,14 +95,14 @@ const Login = ({ navigation }) => {
                 <Text style={styles.orText}>or</Text>
                 <View style={styles.line} />
               </View>
-              <TouchableOpacity onPress={() => promptAsync()} style={styles.googleButton}>
-                <Image
-                  source={require('../../../assets/images/google.png')}
-                  style={styles.googleIcon}
-                />
-                <Text style={styles.buttonText}>Continue with Google</Text>
-              </TouchableOpacity>
-
+              <CustomButton
+                onPress={() => promptAsync()}
+                title="Continue with Google"
+                style={styles.googleButton}
+                textStyle={styles.buttonText}
+                imageSource={require('../../../assets/images/google.png')}
+                imageStyle={styles.googleIcon}
+              />
               <View style={styles.signupContainer}>
                 <Text style={styles.signupInfo}>Don't you have an account?</Text>
                 <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
@@ -166,7 +171,7 @@ const styles = StyleSheet.create({
     lineHeight: 19,
   },
   button: {
-    width: buttonWidth,
+    width: buttonWidth, // Use the same width for all buttons
     height: 48,
     padding: 8,
     marginTop: 20,
@@ -208,12 +213,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginHorizontal: 10,
   },
-
   googleButton: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    height: 48,
     marginTop: 20,
+    width: buttonWidth, // Use the same width for Google button
     backgroundColor: Colors.black,
     borderRadius: 6,
     padding: 8,
@@ -223,7 +229,6 @@ const styles = StyleSheet.create({
     height: 24,
     marginRight: 10,
   },
-
   signupContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
