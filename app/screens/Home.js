@@ -192,9 +192,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   profileImage: {
-    width: 35, // Consider making this relative to screen size
-    height: 35,
-    borderRadius: 35,
+    width: width * 0.09,
+    height: height * 0.04,
+    borderRadius: width * 0.09,
     marginRight: 10,
   },
 });
