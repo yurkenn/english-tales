@@ -67,11 +67,6 @@ const Detail = ({ route }) => {
       setHasLiked(true);
 
       await updateLikes(data.tales[0]._id, likes + 1);
-      Toast.show({
-        type: 'success',
-        position: 'bottom',
-        text1: 'You liked the tale!',
-      });
 
       try {
         await AsyncStorage.setItem(`liked_${data.tales[0]._id}`, 'true');
