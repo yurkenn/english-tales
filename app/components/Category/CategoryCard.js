@@ -7,7 +7,7 @@ const CategoryCard = ({ data }) => {
   const navigation = useNavigation();
 
   const handleNavigation = () => {
-    navigation.navigate('Content', { slug: data.slug.current });
+    navigation.navigate('Detail', { data });
   };
 
   return (
