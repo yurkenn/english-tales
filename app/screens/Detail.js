@@ -24,6 +24,7 @@ import { useFontSize } from '../store/FontSizeContext';
 
 const Detail = ({ route }) => {
   const { data } = route.params;
+
   const { bookmarks, toggleBookmark } = useBookmark();
   const [likes, setLikes] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
@@ -34,10 +35,10 @@ const Detail = ({ route }) => {
   const bottomSheetRef = useRef(null);
   const { fontSize, changeFontSize } = useFontSize();
 
-  const readTime = FormatReadTime(data?.tales[0]?.readTime);
+  const readTime = FormatReadTime(data?.readTime);
 
   const isBookmarked = bookmarks.find(
-    (bookmark) => bookmark.tales[0].slug.current === data.tales[0].slug.current
+    (bookmark) => bookmark?.slug?.current === data?.slug?.current
   );
 
   const handleBookmark = () => {
@@ -51,12 +52,12 @@ const Detail = ({ route }) => {
   };
 
   const handleReadButton = async () => {
-    navigation.navigate('Content', { slug: data.tales[0].slug.current });
+    navigation.navigate('Content', { slug: data.slug.current });
 
     try {
       await AsyncStorage.setItem('lastRead', JSON.stringify(data));
     } catch (error) {
-      console.log('Error saving last read tale:', error);
+      throw new Error(`Error saving last read tale: ${error.message}`);
     }
   };
 
@@ -66,17 +67,17 @@ const Detail = ({ route }) => {
       setLikes(likes + 1);
       setHasLiked(true);
 
-      await updateLikes(data.tales[0]._id, likes + 1);
+      await updateLikes(data._id, likes + 1);
 
       try {
-        await AsyncStorage.setItem(`liked_${data.tales[0]._id}`, 'true');
+        await AsyncStorage.setItem(`liked_${data._id}`, 'true');
       } catch (error) {
         Toast.show({
           type: 'error',
           position: 'bottom',
           text1: 'There was an error saving your like.',
         });
-        console.error(`Error saving like status for tale ${data.tales[0]._id}: ${error.message}`);
+        console.error(`Error saving like status for tale ${data._id}: ${error.message}`);
       }
     }
   };
@@ -86,7 +87,7 @@ const Detail = ({ route }) => {
     setLikes(likes - 1);
     setHasLiked(false);
 
-    await unlikeTale(data.tales[0]._id, likes - 1);
+    await unlikeTale(data._id, likes - 1);
     Toast.show({
       type: 'info',
       position: 'bottom',
@@ -96,7 +97,7 @@ const Detail = ({ route }) => {
 
   useEffect(() => {
     const fetchLikesForTale = async () => {
-      const taleId = data.tales[0]._id;
+      const taleId = data._id;
       const likes = await fetchLikes(taleId);
       setLikes(likes);
 
@@ -144,13 +145,13 @@ const Detail = ({ route }) => {
     <View style={styles.container}>
       {/* Header */}
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>{data?.tales[0]?.title}</Text>
-        <Text style={styles.author}>{data?.tales[0]?.author}</Text>
+        <Text style={styles.title}>{data?.title}</Text>
+        <Text style={styles.author}>{data?.author}</Text>
       </View>
 
       {/* Image and Info */}
       <View style={styles.imageInfoContainer}>
-        <Image style={styles.image} source={{ uri: data.imageURL }} />
+        <Image style={styles.image} source={{ uri: data?.imageURL }} />
         <InfoComponent readTime={readTime} likes={likes} />
       </View>
 

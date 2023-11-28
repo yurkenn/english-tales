@@ -11,8 +11,7 @@ const Saved = ({ navigation }) => {
   const renderItem = ({ item }) => (
     <TouchableOpacity
       onPress={() => navigation.navigate('Detail', { data: item })}
-      activeOpacity={0.5} // Visual feedback on press
-      accessibilityLabel="Tap to view this saved tale"
+      activeOpacity={0.8}
     >
       <SavedCard data={item} onDelete={removeBookmark} />
     </TouchableOpacity>

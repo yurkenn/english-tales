@@ -73,7 +73,7 @@ const Home = ({ navigation }) => {
             setLastRead(JSON.parse(value));
           }
         } catch (error) {
-          console.log('Error retrieving last read tale:', error);
+          throw new Error(`Error retrieving last read tale: ${error.message}`);
           Alert.alert('Error', 'There was an issue retrieving your last read story.');
         }
       };
@@ -103,7 +103,7 @@ const Home = ({ navigation }) => {
           estimatedItemSize={200}
           horizontal
           showsHorizontalScrollIndicator={false}
-          renderItem={({ item }) => <FeaturedStories data={item} />}
+          renderItem={({ item }) => <FeaturedStories data={item} navigation={navigation} />}
         />
       </View>
       <View style={styles.categoriesContainer}>

@@ -57,7 +57,7 @@ const TabNavigation = () => {
       />
 
       <Tab.Screen
-        name="Library"
+        name="Saved"
         component={Saved}
         options={{
           tabBarIcon: () => <Icon name={'bookmark'} size={23} color={'white'} />,

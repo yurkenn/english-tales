@@ -6,11 +6,11 @@ import { urlFor } from '../../../sanity';
 import FormatReadTime from '../FormatReadTime';
 import InfoContainer from './InfoContainer';
 
-const FeaturedStories = ({ data }) => {
-  const navigation = useNavigation();
-
+const FeaturedStories = ({ data, navigation }) => {
   const goDetailScreen = () => {
-    navigation.navigate('Detail', { data });
+    if (data && data.tales && data.tales.length > 0) {
+      navigation.navigate('Detail', { data: data.tales[0] });
+    }
   };
 
   const readTime = data.tales[0].readTime;

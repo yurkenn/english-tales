@@ -37,7 +37,7 @@ const SavedCard = ({ data, onDelete }) => {
       </View>
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{data.title}</Text>
-        <Text style={styles.author}>{data.tales[0].author}</Text>
+        <Text style={styles.author}>{data.author}</Text>
       </View>
       <TouchableOpacity onPress={() => handleDelete(data)} style={styles.deleteButton}>
         <Icon name="trash" size={24} color="white" />
