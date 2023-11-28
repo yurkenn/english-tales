@@ -3,7 +3,6 @@ import React from 'react';
 import Slider from 'react-native-smooth-slider';
 import { Colors } from '../../constants/colors'; // Make sure you import Colors if needed
 
-// TODO: when user clicks on the slider, the slider should move to that position and change the font size but not working that way FIX I
 const FontSizeSettings = ({ fontSize, changeFontSize }) => {
   return (
     <View style={styles.fontSizeSettingsContainer}>
@@ -33,7 +32,8 @@ const FontSizeSettings = ({ fontSize, changeFontSize }) => {
         step={1}
         maximumTrackTintColor={Colors.white}
         thumbTintColor={Colors.dark500}
-        onValueChange={changeFontSize}
+        onValueChange={(value) => changeFontSize(value)}
+        onSlidingComplete={(value) => changeFontSize(value)}
         useNativeDriver={true}
       />
       <Text style={[styles.fontSizeText, { fontSize }]}>{fontSize}</Text>
