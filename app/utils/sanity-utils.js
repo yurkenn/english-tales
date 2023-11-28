@@ -12,6 +12,7 @@ export const getFeatured = async () => {
         likes,
         title,
         slug,
+        description,
         "category": categories[0]->title,
         "author": author->name,
         "imageURL": imageURL.asset->url,
@@ -36,6 +37,8 @@ export const getTaleBySlug = async (slug) => {
         title,
         likes,
         slug,
+        readTime,
+        description,
         "imageURL" : imageURL.asset->url, 
         "author": author->name,
         "authorImage": author->image.asset->url,
@@ -68,11 +71,18 @@ export const getTalesByCategory = async (category) => {
   try {
     const tales = await client.fetch(
       `*[_type == "tale" && categories[0]->title == $category]{
+        _id,
         title,
-        icon,
+        likes,
+        tales,
+        readTime,
         slug,
+        description,
+        "imageURL" : imageURL.asset->url, 
         "author": author->name,
-        "imageURL": imageURL.asset->url
+        "authorImage": author->image.asset->url,
+        "category": categories[0]->title,
+        content,
       }`,
       { category }
     );
@@ -90,7 +100,11 @@ export const getTalesBySearch = async (search) => {
         title,
         slug,
         "author": author->name,
-        "imageURL": imageURL.asset->url
+        description,
+        "imageURL": imageURL.asset->url,
+        likes,
+        readTime,
+        _id,
       }`,
       { search }
     );
@@ -141,7 +155,11 @@ export const getAllTales = async () => {
       title,
       slug,
       "author": author->name,
-      "imageURL": imageURL.asset->url
+      "imageURL": imageURL.asset->url,
+      likes,
+      readTime,
+      description,
+      _id,
     }`);
     return tales;
   } catch (error) {
