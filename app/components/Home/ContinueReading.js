@@ -9,7 +9,8 @@ import Icon from '../Icons';
 const ContinueReading = ({ lastRead }) => {
   const navigation = useNavigation();
 
-  const time = FormatReadTime(lastRead?.tales[0]?.readTime);
+  const time = FormatReadTime(lastRead?.readTime);
+
   const handleGoTaleDetail = () => {
     navigation.navigate('Detail', { data: lastRead });
   };
@@ -28,7 +29,7 @@ const ContinueReading = ({ lastRead }) => {
               <Text style={styles.time}>{time}</Text>
               <View style={{ flexDirection: 'row', marginLeft: 10 }}>
                 <Icon name="heart" size={16} color={Colors.red} />
-                <Text style={styles.time}>{lastRead.tales[0].likes}</Text>
+                <Text style={styles.time}>{lastRead.likes}</Text>
               </View>
             </View>
             <View>
