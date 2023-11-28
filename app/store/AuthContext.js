@@ -59,9 +59,7 @@ const AuthProvider = ({ children }) => {
   const handleLogin = async (values) => {
     try {
       const login = await signInWithEmailAndPassword(auth, values.email, values.password);
-      console.log('User Logged In!', login);
     } catch (error) {
-      console.log('Login Error', error);
       throw error;
     }
   };

@@ -17,19 +17,18 @@ const BookmarkProvider = ({ children }) => {
         console.error('Error loading bookmarks from AsyncStorage:', error);
       }
     };
-
     loadBookmarks();
   }, []);
 
   const toggleBookmark = async (bookData) => {
     const existingBookmark = bookmarks.find(
-      (bookmark) => bookmark.tales[0].slug.current === bookData.tales[0].slug.current
+      (bookmark) => bookmark.slug.current === bookData.slug.current
     );
 
     if (existingBookmark) {
       // Remove the bookmark
       const updatedBookmarks = bookmarks.filter(
-        (bookmark) => bookmark.tales[0].slug.current !== bookData.tales[0].slug.current
+        (bookmark) => bookmark.slug.current !== bookData.slug.current
       );
       setBookmarks(updatedBookmarks);
       await AsyncStorage.setItem('@bookmark', JSON.stringify(updatedBookmarks));
@@ -43,13 +42,13 @@ const BookmarkProvider = ({ children }) => {
 
   const removeBookmark = async (bookData) => {
     const existingBookmark = bookmarks.find(
-      (bookmark) => bookmark.tales[0].slug.current === bookData.tales[0].slug.current
+      (bookmark) => bookmark.slug.current === bookData.slug.current
     );
 
     if (existingBookmark) {
       // Remove the bookmark
       const updatedBookmarks = bookmarks.filter(
-        (bookmark) => bookmark.tales[0].slug.current !== bookData.tales[0].slug.current
+        (bookmark) => bookmark.slug.current !== bookData.slug.current
       );
       setBookmarks(updatedBookmarks);
       await AsyncStorage.setItem('@bookmark', JSON.stringify(updatedBookmarks));
