@@ -9,9 +9,6 @@ import CategoryList from '../screens/CategoryList';
 import Content from '../screens/Content';
 import Detail from '../screens/Detail';
 import AllTales from '../screens/AllTales';
-import Icon from '../components/Icons';
-import { TouchableOpacity } from 'react-native';
-import BottomSheet from '@gorhom/bottom-sheet';
 
 const Stack = createNativeStackNavigator();
 

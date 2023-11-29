@@ -21,6 +21,7 @@ import BottomSheet, { BottomSheetBackdrop, BottomSheetScrollView } from '@gorhom
 import FontSizeSettings from '../components/Modal/FontSizeSettings';
 import SettingsButton from '../components/Detail/SettingsButton';
 import { useFontSize } from '../store/FontSizeContext';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
 const Detail = ({ route }) => {
   const { data } = route.params;
@@ -144,29 +145,29 @@ const Detail = ({ route }) => {
   return (
     <View style={styles.container}>
       {/* Header */}
-      <View style={styles.titleContainer}>
+      <Animated.View entering={FadeInDown.delay(200)} style={styles.titleContainer}>
         <Text style={styles.title}>{data?.title}</Text>
         <Text style={styles.author}>{data?.author}</Text>
-      </View>
+      </Animated.View>
 
       {/* Image and Info */}
-      <View style={styles.imageInfoContainer}>
+      <Animated.View entering={FadeInDown.delay(400)} style={styles.imageInfoContainer}>
         <Image style={styles.image} source={{ uri: data?.imageURL }} />
         <InfoComponent readTime={readTime} likes={likes} />
-      </View>
+      </Animated.View>
 
       {/* Description */}
-      <View style={styles.descriptionContainer}>
+      <Animated.View entering={FadeInDown.delay(600)} style={styles.descriptionContainer}>
         <Text style={styles.descriptionTitle}>Description</Text>
         <Text style={styles.description}>{data?.description}</Text>
-      </View>
+      </Animated.View>
 
       {/* Continue Reading Button */}
-      <View style={styles.buttonContainer}>
+      <Animated.View entering={FadeInDown.delay(800)} style={styles.buttonContainer}>
         <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
           <Text style={styles.readText}>Continue Reading</Text>
         </TouchableOpacity>
-      </View>
+      </Animated.View>
       <BottomSheet
         ref={bottomSheetRef}
         index={-1}

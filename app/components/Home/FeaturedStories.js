@@ -1,10 +1,11 @@
 import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { Colors } from '../../constants/colors';
-import { useNavigation } from '@react-navigation/native';
 import { urlFor } from '../../../sanity';
 import FormatReadTime from '../FormatReadTime';
 import InfoContainer from './InfoContainer';
+
+import Animated from 'react-native-reanimated';
 
 const FeaturedStories = ({ data, navigation }) => {
   const goDetailScreen = () => {
@@ -19,7 +20,11 @@ const FeaturedStories = ({ data, navigation }) => {
   return (
     <TouchableOpacity onPress={goDetailScreen} activeOpacity={0.7} accessibilityRole="button">
       <View style={styles.container}>
-        <Image source={{ uri: urlFor(data.imageURL).url() }} style={styles.image} />
+        <Animated.Image
+          sharedTransitionTag="tag"
+          source={{ uri: urlFor(data.imageURL).url() }}
+          style={styles.image}
+        />
         <Text style={styles.title}>{data.title}</Text>
         <InfoContainer readTime={formattedReadTime} likes={data.tales[0].likes} />
       </View>

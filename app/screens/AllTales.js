@@ -6,7 +6,7 @@ import { FlashList } from '@shopify/flash-list';
 const AllTales = ({ route }) => {
   const { data } = route.params;
 
-  const renderItem = ({ item }) => <CategoryCard data={item} />;
+  const renderItem = ({ item, index }) => <CategoryCard index={index} data={item} />;
 
   return (
     <View style={styles.container}>

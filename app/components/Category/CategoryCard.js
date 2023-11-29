@@ -2,8 +2,9 @@ import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'rea
 import React from 'react';
 import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
-const CategoryCard = ({ data }) => {
+const CategoryCard = ({ data, index }) => {
   const navigation = useNavigation();
 
   const handleNavigation = () => {
@@ -11,21 +12,24 @@ const CategoryCard = ({ data }) => {
   };
 
   return (
-    <TouchableOpacity onPress={handleNavigation}>
-      <View style={styles.container}>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={{
-              uri: data?.imageURL,
-            }}
-          />
+    <Animated.View entering={FadeInDown.delay(300 * index)}>
+      <TouchableOpacity onPress={handleNavigation}>
+        <View style={styles.container}>
+          <View style={styles.imageContainer}>
+            <Animated.Image
+              sharedTransitionTag={data?.title}
+              style={styles.image}
+              source={{
+                uri: data?.imageURL,
+              }}
+            />
+          </View>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{data?.title}</Text>
+          </View>
         </View>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>{data?.title}</Text>
-        </View>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </Animated.View>
   );
 };
 
