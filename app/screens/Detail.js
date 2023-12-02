@@ -152,7 +152,7 @@ const Detail = ({ route }) => {
 
       {/* Image and Info */}
       <Animated.View entering={FadeInDown.delay(400)} style={styles.imageInfoContainer}>
-        <Image style={styles.image} source={{ uri: data?.imageURL }} />
+        <Animated.Image style={styles.image} source={{ uri: data?.imageURL }} />
         <InfoComponent readTime={readTime} likes={likes} />
       </Animated.View>
 
