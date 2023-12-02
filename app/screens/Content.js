@@ -9,7 +9,7 @@ import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import ParallaxScrollView from 'react-native-parallax-scroll-view';
-
+import Animated, { FadeInDown } from 'react-native-reanimated';
 const Content = ({ route }) => {
   const { slug } = route.params;
   const { loading, error, tale } = useGetTaleBySlug(slug);
@@ -35,10 +35,10 @@ const Content = ({ route }) => {
           renderFixedHeader={() => <HeaderNavbar title={tale[0].title} />}
           renderStickyHeader={() => <TopNavbar title={tale[0].title} />}
         >
-          <View style={styles.content}>
+          <Animated.View entering={FadeInDown.delay(400)} style={styles.content}>
             <Text style={styles.title}>{tale[0]?.title}</Text>
             <TaleContent style={styles.blocks} blocks={tale[0].content} />
-          </View>
+          </Animated.View>
         </ParallaxScrollView>
       )}
     </View>
