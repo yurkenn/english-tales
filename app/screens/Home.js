@@ -33,6 +33,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import BottomSheet, { BottomSheetScrollView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 import ProfileScreen from '../components/Modal/Profile/ProfileScreen';
 import { AuthContext } from '../store/AuthContext';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 
 const Home = ({ navigation }) => {
   const { featuredStories, loading, error } = useGetFeaturedStories();
@@ -96,7 +97,7 @@ const Home = ({ navigation }) => {
 
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
-      <View style={styles.featureContainer}>
+      <Animated.View entering={FadeInDown.delay(400)} style={styles.featureContainer}>
         <Text style={styles.featureText}>Featured Stories</Text>
         <FlashList
           data={featuredStories}
@@ -105,20 +106,21 @@ const Home = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => <FeaturedStories data={item} navigation={navigation} />}
         />
-      </View>
-      <View style={styles.categoriesContainer}>
+      </Animated.View>
+      <Animated.View entering={FadeInDown.delay(600)} style={styles.categoriesContainer}>
         <Text style={styles.categoriesText}>Categories</Text>
-        <FlatList
+        <FlashList
           data={categories}
           horizontal
+          estimatedItemSize={200}
           showsHorizontalScrollIndicator={false}
           renderItem={({ item }) => <Categories data={item} />}
         />
-      </View>
-      <View style={styles.myStoriesContainer}>
+      </Animated.View>
+      <Animated.View entering={FadeInDown.delay(800)} style={styles.myStoriesContainer}>
         <Text style={styles.myStoriesText}>Last Read</Text>
         <ContinueReading lastRead={lastRead} />
-      </View>
+      </Animated.View>
       <TouchableOpacity onPress={handleExploreAll} style={styles.button}>
         <Text style={styles.buttonText}>Explore All</Text>
       </TouchableOpacity>
