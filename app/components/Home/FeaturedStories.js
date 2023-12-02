@@ -20,11 +20,7 @@ const FeaturedStories = ({ data, navigation }) => {
   return (
     <TouchableOpacity onPress={goDetailScreen} activeOpacity={0.7} accessibilityRole="button">
       <View style={styles.container}>
-        <Animated.Image
-          sharedTransitionTag="tag"
-          source={{ uri: urlFor(data.imageURL).url() }}
-          style={styles.image}
-        />
+        <Animated.Image source={{ uri: urlFor(data.imageURL).url() }} style={styles.image} />
         <Text style={styles.title}>{data.title}</Text>
         <InfoContainer readTime={formattedReadTime} likes={data.tales[0].likes} />
       </View>
