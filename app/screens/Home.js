@@ -160,6 +160,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   categoriesContainer: {
+    flex: 1,
     marginTop: 20,
   },
   categoriesText: {
