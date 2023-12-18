@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "english-tales",
-    "slug": "english-tales",
+    "name": "Learn English with Stories",
+    "slug": "learn-english-with-stories",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,14 +22,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yurken.englishtales"
+      "bundleIdentifier": "com.yurken.learnenglishwithstories"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#161616"
       },
-      "package": "com.yurken.englishtales"
+      "package": "com.yurken.learnenglishwithstories"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -39,6 +39,6 @@
         "projectId": "ed1a926d-a090-4643-bb5e-9c8a1e59df38"
       }
     },
-    "scheme": "com.yurken.englishtales"
+    "scheme": "com.yurken.learnenglishwithstories"
   }
 }

@@ -147,8 +147,10 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: width * 0.025, // 2.5% of screen width
-    marginVertical: height * 0.02, // 2% of screen height
+    flex: 1,
+    width: width,
+    height: height,
+    marginVertical: height * 0.02,
   },
   featureContainer: {},
   featureText: {
