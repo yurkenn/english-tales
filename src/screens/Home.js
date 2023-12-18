@@ -98,7 +98,7 @@ const Home = ({ navigation }) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <Animated.View entering={FadeInDown.delay(400)} style={styles.featureContainer}>
-        <Text style={styles.featureText}>Featured Stories</Text>
+        <Text style={styles.featureText}>Featured Tales</Text>
         <FlashList
           data={featuredStories}
           estimatedItemSize={200}
@@ -109,7 +109,7 @@ const Home = ({ navigation }) => {
       </Animated.View>
       <Animated.View entering={FadeInDown.delay(600)} style={styles.categoriesContainer}>
         <Text style={styles.categoriesText}>Categories</Text>
-        <FlashList
+        <FlatList
           data={categories}
           horizontal
           estimatedItemSize={200}

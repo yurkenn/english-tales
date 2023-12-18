@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Learn English with Stories",
-    "slug": "learn-english-with-stories",
+    "name": "Learn English with Tales",
+    "slug": "english-tales",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -37,7 +37,7 @@ const Login = ({ navigation }) => {
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <Image source={require('../../../assets/images/login-image.png')} style={styles.image} />
-        <Text style={styles.title}>English Stories</Text>
+        <Text style={styles.title}>Learn English with Tales</Text>
 
         <Formik
           initialValues={{ email: '', password: '' }}
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   title: {
-    fontSize: 40,
+    fontSize: 32,
     fontWeight: '600',
     color: Colors.white,
     lineHeight: 52,

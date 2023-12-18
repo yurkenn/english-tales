@@ -11,7 +11,7 @@ const Statistics = ({ userData }) => {
     <View style={styles.container}>
       <View style={styles.bookmark}>
         <Text style={styles.bookmarkNumber}>{totalBookmarks}</Text>
-        <Text style={styles.bookmarkText}>Favorite Stories</Text>
+        <Text style={styles.bookmarkText}>Favorite Tales</Text>
       </View>
       <View style={styles.divider} />
       <View style={styles.totalSessions}>

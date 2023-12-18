@@ -38,7 +38,7 @@ const ContinueReading = ({ lastRead }) => {
           </View>
         </View>
       ) : (
-        <Text style={styles.warningText}>You haven't read any stories yet. Go read some!</Text>
+        <Text style={styles.warningText}>You haven't read any tales yet. Go read some!</Text>
       )}
     </TouchableOpacity>
   );

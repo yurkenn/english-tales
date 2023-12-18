@@ -59,7 +59,7 @@ const HomeStack = () => {
           headerStyle: {
             backgroundColor: Colors.dark900,
           },
-          headerTitle: 'Here are all the stories',
+          headerTitle: 'Here are all the tales',
         }}
       />
     </Stack.Navigator>
