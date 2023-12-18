@@ -11,6 +11,7 @@ import {
 import * as Google from 'expo-auth-session/providers/google';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert } from 'react-native';
+import Toast from 'react-native-toast-message';
 
 const AuthContext = createContext({
   userInfo: null,
@@ -58,24 +59,35 @@ const AuthProvider = ({ children }) => {
 
   const handleLogin = async (values) => {
     try {
+      setLoading(true);
       const login = await signInWithEmailAndPassword(auth, values.email, values.password);
+      setLoading(false);
+      // Additional logic after successful login if needed
     } catch (error) {
-      throw error;
+      setLoading(false);
+      Toast.show({
+        type: 'error',
+        text1: 'Login Failed',
+        text2: 'Invalid email or password. Please try again.',
+      });
+      console.error('Login Error:', error);
     }
   };
 
   const createUser = async (values) => {
     try {
+      setLoading(true);
       const signup = await createUserWithEmailAndPassword(auth, values.email, values.password);
-      if (signup.user) {
-        const { firstName, lastName, email } = values;
-        const userObj = { firstName, lastName, email, uid: signup.user.uid };
-        await AsyncStorage.setItem('@user', JSON.stringify(userObj));
-        setUserInfo(userObj);
-      }
+      setLoading(false);
+      // Additional logic after successful signup if needed
     } catch (error) {
-      console.log('Signup Error', error);
-      throw error;
+      setLoading(false);
+      Toast.show({
+        type: 'error',
+        text1: 'Signup Failed',
+        text2: 'An error occurred during signup. Please try again.',
+      });
+      console.error('Signup Error', error);
     }
   };
 
@@ -99,13 +111,18 @@ const AuthProvider = ({ children }) => {
               await signOut(auth);
               console.log('User Logged Out!');
               await AsyncStorage.removeItem('@user');
-              // Additional logic after logout if needed
+              Toast.show({
+                type: 'success',
+                text1: 'Logout Successful',
+                text2: 'You have been logged out successfully.',
+              });
             } catch (error) {
               console.log('Logout Error', error);
-              Alert.alert(
-                'Logout Error',
-                'Could not log out at this time. Please try again later.'
-              );
+              Toast.show({
+                type: 'error',
+                text1: 'Logout Failed',
+                text2: 'Could not log out at this time. Please try again later.',
+              });
             }
           },
         },
