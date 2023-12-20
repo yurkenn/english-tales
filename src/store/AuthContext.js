@@ -62,6 +62,7 @@ const AuthProvider = ({ children }) => {
       setLoading(true);
       const login = await signInWithEmailAndPassword(auth, values.email, values.password);
       setLoading(false);
+
       // Additional logic after successful login if needed
     } catch (error) {
       setLoading(false);
@@ -78,6 +79,8 @@ const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
       const signup = await createUserWithEmailAndPassword(auth, values.email, values.password);
+      setUserInfo({ ...signup.user, ...values });
+
       setLoading(false);
       // Additional logic after successful signup if needed
     } catch (error) {

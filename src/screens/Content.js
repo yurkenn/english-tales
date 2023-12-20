@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   headerImage: {
     height: height * 0.5,
     width: '100%',
-    opacity: 0.7,
+    opacity: 0.85,
     resizeMode: 'cover',
   },
   content: {

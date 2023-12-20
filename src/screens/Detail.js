@@ -147,7 +147,6 @@ const Detail = ({ route }) => {
       {/* Header */}
       <Animated.View entering={FadeInDown.delay(200)} style={styles.titleContainer}>
         <Text style={styles.title}>{data?.title}</Text>
-        <Text style={styles.author}>{data?.author}</Text>
       </Animated.View>
 
       {/* Image and Info */}

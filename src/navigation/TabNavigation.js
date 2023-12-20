@@ -44,7 +44,7 @@ const TabNavigation = () => {
         name="Home"
         component={Home}
         options={{
-          headerTitle: 'Learn English with Stories',
+          headerTitle: 'Learn English with Tales',
           tabBarIcon: () => <Icon name={'home'} size={23} color={'white'} />,
         }}
       />

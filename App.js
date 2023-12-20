@@ -8,6 +8,8 @@ import 'react-native-url-polyfill/auto';
 import { FontSizeProvider } from './src/store/FontSizeContext';
 import Toast from 'react-native-toast-message';
 import * as SplashScreen from 'expo-splash-screen';
+import { vexo } from 'vexo-analytics';
+vexo(process.env.EXPO_PUBLIC_VEXO_ANALYTICS_KEY);
 
 SplashScreen.preventAutoHideAsync().catch((err) =>
   console.warn(`SplashScreen.preventAutoHideAsync() errored:`, err)
