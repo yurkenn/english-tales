@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
   },
   signupText: {
     color: '#FFA500',
-    fontSize: 14,
+    fontSize: 16,
     lineHeight: 18,
     fontWeight: 'bold',
   },
