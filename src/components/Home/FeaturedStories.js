@@ -9,20 +9,20 @@ import Animated from 'react-native-reanimated';
 
 const FeaturedStories = ({ data, navigation }) => {
   const goDetailScreen = () => {
-    if (data && data.tales && data.tales.length > 0) {
-      navigation.navigate('Detail', { data: data.tales[0] });
+    if (data && data?.tales && data.tales.length > 0) {
+      navigation.navigate('Detail', { data: data?.tales[0] });
     }
   };
 
-  const readTime = data.tales[0].readTime;
+  const readTime = data?.tales[0].readTime;
   const formattedReadTime = FormatReadTime(readTime);
 
   return (
     <TouchableOpacity onPress={goDetailScreen} activeOpacity={0.7} accessibilityRole="button">
       <View style={styles.container}>
-        <Animated.Image source={{ uri: urlFor(data.imageURL).url() }} style={styles.image} />
-        <Text style={styles.title}>{data.title}</Text>
-        <InfoContainer readTime={formattedReadTime} likes={data.tales[0].likes} />
+        <Animated.Image source={{ uri: urlFor(data?.imageURL).url() }} style={styles.image} />
+        <Text style={styles.title}>{data?.title}</Text>
+        <InfoContainer readTime={formattedReadTime} likes={data?.tales[0].likes} />
       </View>
     </TouchableOpacity>
   );

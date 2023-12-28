@@ -20,20 +20,20 @@ const ContinueReading = ({ lastRead }) => {
       {lastRead ? (
         <View style={styles.container}>
           <View style={styles.imageContainer}>
-            <Image source={{ uri: lastRead.imageURL }} style={styles.image} />
+            <Image source={{ uri: lastRead?.imageURL }} style={styles.image} />
           </View>
           <View style={styles.infoContainer}>
-            <Text style={styles.title}>{lastRead.title}</Text>
+            <Text style={styles.title}>{lastRead?.title}</Text>
             <View style={styles.timeContainer}>
               <Icon name="time-outline" size={16} color={Colors.white} />
               <Text style={styles.time}>{time}</Text>
               <View style={{ flexDirection: 'row', marginLeft: 10 }}>
                 <Icon name="heart" size={16} color={Colors.red} />
-                <Text style={styles.time}>{lastRead.likes}</Text>
+                <Text style={styles.time}>{lastRead?.likes}</Text>
               </View>
             </View>
             <View>
-              <Text style={styles.lastRead}>{lastRead.description}</Text>
+              <Text style={styles.lastRead}>{lastRead?.description}</Text>
             </View>
           </View>
         </View>

@@ -7,14 +7,14 @@ import { Image } from 'react-native';
 const Categories = ({ data }) => {
   const navigation = useNavigation();
   const handleCategories = () => {
-    navigation.navigate('CategoryList', { category: data.title });
+    navigation.navigate('CategoryList', { category: data?.title });
   };
 
   return (
     <View style={styles.buttonContainer}>
       <TouchableOpacity onPress={handleCategories} style={styles.button}>
-        <Image source={{ uri: data.icon }} style={{ height: 24, width: 24 }} />
-        <Text style={styles.categoryName}>{data.title}</Text>
+        <Image source={{ uri: data?.icon }} style={{ height: 24, width: 24 }} />
+        <Text style={styles.categoryName}>{data?.title}</Text>
       </TouchableOpacity>
     </View>
   );
