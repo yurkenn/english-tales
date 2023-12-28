@@ -33,10 +33,10 @@ const SavedCard = ({ data, onDelete }) => {
   return (
     <Animated.View style={[styles.container, { transform: [{ translateX: slideAnim }] }]}>
       <View style={styles.imageContainer}>
-        <Image source={{ uri: data.imageURL }} style={styles.image} />
+        <Image source={{ uri: data?.imageURL }} style={styles.image} />
       </View>
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{data.title}</Text>
+        <Text style={styles.title}>{data?.title}</Text>
       </View>
       <TouchableOpacity onPress={() => handleDelete(data)} style={styles.deleteButton}>
         <Icon name="trash" size={24} color="white" />
