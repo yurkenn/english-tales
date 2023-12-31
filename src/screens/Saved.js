@@ -4,6 +4,7 @@ import { FlashList } from '@shopify/flash-list';
 import { useBookmark } from '../store/BookmarkContext';
 import SavedCard from '../components/Saved/SavedCard';
 import { Colors } from '../constants/colors';
+import { FlatList } from 'react-native-gesture-handler';
 
 const Saved = ({ navigation }) => {
   const { bookmarks, removeBookmark } = useBookmark();
@@ -20,13 +21,7 @@ const Saved = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {bookmarks.length > 0 ? (
-        <FlashList
-          data={bookmarks}
-          estimatedItemSize={200}
-          renderItem={renderItem}
-          keyExtractor={(item, index) => `bookmark-${index}`}
-          // Unique key for each item
-        />
+        <FlatList data={bookmarks} renderItem={renderItem} key={bookmarks.slug} />
       ) : (
         <View style={styles.emptyContainer}>
           {/* Consider adding an image here for a better empty state */}
