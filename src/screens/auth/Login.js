@@ -30,6 +30,7 @@ const Login = ({ navigation }) => {
     authContext.handleLogin(values);
   };
 
+  //TODO: Forgot password
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : null}
@@ -86,10 +87,9 @@ const Login = ({ navigation }) => {
                 style={styles.button}
                 textStyle={styles.buttonText}
               />
-
-              <View>
+              {/* <View>
                 <Text style={styles.infoText}>Forgot password?</Text>
-              </View>
+              </View> */}
               <View style={styles.orContainer}>
                 <View style={styles.line} />
                 <Text style={styles.orText}>or</Text>
