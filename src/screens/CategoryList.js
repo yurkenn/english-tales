@@ -6,7 +6,6 @@ import CategoryCard from '../components/Category/CategoryCard';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import { Colors } from '../constants/colors';
-import { useNavigation } from '@react-navigation/native';
 
 const CategoryList = ({ route }) => {
   const { category } = route.params;
