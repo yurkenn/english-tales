@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, StyleSheet, Text, Alert, Dimensions } from 'react-native';
+import { View, StyleSheet, Alert, Dimensions } from 'react-native';
 import { AuthContext } from '../../../store/AuthContext';
 import { Colors } from '../../../constants/colors';
 import LoadingAnimation from '../../Animations/LoadingAnimation';
