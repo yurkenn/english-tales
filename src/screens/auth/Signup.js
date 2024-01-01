@@ -164,7 +164,7 @@ const { width } = Dimensions.get('window');
 
 const inputWidth = width * 0.8; // 80% of screen width
 const buttonWidth = width * 0.8; // 80% of screen width
-const titleFontSize = width < 400 ? 36 : 40;
+const titleFontSize = width < 400 ? 30 : 36;
 
 const styles = StyleSheet.create({
   container: {
@@ -174,19 +174,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
   animation: {
     flex: 0.6,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
   },
-
   title: {
     fontSize: titleFontSize,
     fontWeight: '600',
     color: Colors.white,
-    lineHeight: 52,
     textAlign: 'center',
     marginBottom: 20,
   },

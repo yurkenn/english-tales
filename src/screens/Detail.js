@@ -1,12 +1,5 @@
-import React, {
-  useState,
-  useEffect,
-  useLayoutEffect,
-  forwardRef,
-  useRef,
-  useCallback,
-} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, Button, Dimensions } from 'react-native';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { fetchLikes, unlikeTale, updateLikes } from '../utils/sanity-utils';
 import { useBookmark } from '../store/BookmarkContext';

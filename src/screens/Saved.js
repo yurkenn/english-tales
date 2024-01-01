@@ -1,6 +1,5 @@
 import React from 'react';
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { FlashList } from '@shopify/flash-list';
 import { useBookmark } from '../store/BookmarkContext';
 import SavedCard from '../components/Saved/SavedCard';
 import { Colors } from '../constants/colors';

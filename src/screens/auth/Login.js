@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   title: {
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: '600',
     color: Colors.white,
     lineHeight: 52,

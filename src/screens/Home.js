@@ -7,18 +7,9 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useContext, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import FeaturedStories from '../components/Home/FeaturedStories';
 import Categories from '../components/Category/Categories';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
