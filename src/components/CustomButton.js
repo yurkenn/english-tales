@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Image, View } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 
 const CustomButton = ({ onPress, title, style, textStyle, imageSource, imageStyle }) => {
   return (
