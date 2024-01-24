@@ -48,29 +48,30 @@ const ProfileDetails = () => {
 
 export default ProfileDetails;
 
-const { width } = Dimensions.get('window');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20,
-    textAlign: 'center',
+    flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: windowHeight * 0.05,
   },
   displayName: {
-    fontSize: width < 400 ? 22 : 24, // Smaller font size for smaller screens
-    letterSpacing: 1,
+    fontSize: windowWidth * 0.05,
     fontWeight: 'bold',
     color: Colors.white,
   },
   profileImage: {
-    width: width * 0.25, // 25% of screen width
-    height: width * 0.25, // Maintain aspect ratio
-    borderRadius: width * 0.125, // Half of width and height for a perfect circle
-    marginVertical: 10,
+    width: windowWidth * 0.25,
+    height: windowWidth * 0.25,
+    borderRadius: windowWidth * 0.25,
+    marginVertical: windowHeight * 0.02,
   },
   email: {
-    marginTop: 10,
-    fontSize: width < 400 ? 12 : 14, // Smaller font size for smaller screens
+    marginTop: windowHeight * 0.01,
+    fontSize: windowWidth * 0.04,
     color: Colors.white,
   },
 });

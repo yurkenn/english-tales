@@ -80,30 +80,31 @@ const ProfileScreen = () => {
 
 export default ProfileScreen;
 
-const { width } = Dimensions.get('window');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: width * 0.03, // 5% of screen width
+    paddingHorizontal: windowWidth * 0.03,
+    paddingVertical: windowHeight * 0.02,
     backgroundColor: Colors.dark900,
   },
   clearDataButton: {
     backgroundColor: Colors.dark500,
-    marginTop: 'auto',
-    marginBottom: 20,
+    marginBottom: windowHeight * 0.02,
   },
   logoutButton: {
     backgroundColor: Colors.dark500,
   },
   button: {
-    padding: 10,
+    padding: windowWidth * 0.03,
     borderRadius: 5,
     alignItems: 'center',
     justifyContent: 'center',
   },
   fontButtonText: {
-    fontSize: width < 400 ? 14 : 16, // Smaller font size for smaller screens
+    fontSize: windowWidth * 0.04,
     fontWeight: '500',
     color: Colors.white,
   },
