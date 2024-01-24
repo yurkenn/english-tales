@@ -119,33 +119,24 @@ const Login = ({ navigation }) => {
 
 export default Login;
 
-const { width } = Dimensions.get('window');
-
-const inputWidth = width * 0.8; // 80% of screen width
-const buttonWidth = width * 0.8; // 80% of screen width
-const imageSize = width * 0.6; // 60% of screen width
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 5,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
-    flex: 1,
-    alignSelf: 'center',
-    marginTop: 30,
-    width: imageSize,
-    height: imageSize,
-    borderRadius: 6,
-    resizeMode: 'cover',
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.33,
+    resizeMode: 'contain',
   },
   title: {
-    fontSize: 30,
     fontWeight: '600',
     color: Colors.white,
-    lineHeight: 52,
     textAlign: 'center',
   },
   inner_container: {
@@ -153,28 +144,28 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     color: Colors.white,
-    fontSize: 14,
+    fontSize: windowHeight * 0.02,
     lineHeight: 18,
-    marginTop: 20,
-    marginBottom: 10,
+    marginTop: windowHeight * 0.02,
+    marginBottom: windowHeight * 0.01,
   },
   input: {
-    width: inputWidth,
-    height: 48,
-    padding: 8,
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.06,
+    padding: windowWidth * 0.02,
     borderWidth: 1,
     borderColor: '#333333',
     borderRadius: 6,
     backgroundColor: Colors.dark900,
     color: '#bdbdbd',
-    fontSize: 14,
+    fontSize: windowHeight * 0.02,
     lineHeight: 19,
   },
   button: {
-    width: buttonWidth, // Use the same width for all buttons
-    height: 48,
-    padding: 8,
-    marginTop: 20,
+    width: windowWidth * 0.8, // Use the same width for all buttons
+    height: windowHeight * 0.06,
+    padding: windowWidth * 0.02,
+    marginTop: windowHeight * 0.02,
     backgroundColor: Colors.black,
     borderRadius: 6,
     justifyContent: 'center',
@@ -182,47 +173,47 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 14,
+    fontSize: windowHeight * 0.018,
     lineHeight: 16,
     fontWeight: 'bold',
   },
   infoText: {
     color: Colors.white,
-    fontSize: 12,
+    fontSize: windowHeight * 0.016,
     lineHeight: 16,
     textAlign: 'right',
     fontWeight: '300',
-    marginTop: 10,
+    marginTop: windowHeight * 0.02,
   },
 
   orContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: windowHeight * 0.022,
   },
   line: {
-    width: 135,
+    width: windowWidth * 0.3,
     borderWidth: 0.5,
     borderColor: Colors.white,
   },
   orText: {
     color: Colors.white,
-    fontSize: 14,
+    fontSize: windowHeight * 0.018,
     lineHeight: 18,
     fontWeight: 'bold',
-    marginHorizontal: 10,
+    marginHorizontal: windowWidth * 0.022,
   },
   googleButton: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 48,
-    marginTop: 20,
-    width: buttonWidth, // Use the same width for Google button
+    height: windowHeight * 0.06,
+    marginTop: windowHeight * 0.02,
+    width: windowWidth * 0.8, // Use the same width for Google button
     backgroundColor: Colors.black,
     borderRadius: 6,
-    padding: 8,
+    padding: windowWidth * 0.02,
   },
   googleIcon: {
     width: 24,
@@ -237,20 +228,144 @@ const styles = StyleSheet.create({
   },
   signupInfo: {
     color: Colors.white,
-    fontSize: 14,
+    fontSize: windowHeight * 0.016,
     lineHeight: 18,
     marginRight: 5,
   },
   signupText: {
     color: '#FFA500',
-    fontSize: 16,
+    fontSize: windowHeight * 0.02,
     lineHeight: 18,
     fontWeight: 'bold',
   },
   errors: {
-    fontSize: 14,
+    fontSize: windowHeight * 0.018,
     color: 'red',
-    marginTop: 3,
+    marginTop: windowHeight * 0.003,
     fontWeight: 'normal',
   },
 });
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     padding: 5,
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+//   image: {
+//     width: windowWidth < 400 ? windowWidth * 0.6 : windowWidth * 0.8,
+//     height: windowHeight * 0.4,
+//     resizeMode: 'contain',
+//   },
+//   title: {
+//     fontWeight: '600',
+//     color: Colors.white,
+//     textAlign: 'center',
+//   },
+//   inner_container: {
+//     flex: 1,
+//   },
+//   subtitle: {
+//     color: Colors.white,
+//     fontSize: 14,
+//     lineHeight: 18,
+//     marginTop: 20,
+//     marginBottom: 10,
+//   },
+//   input: {
+//     width: windowWidth * 0.8,
+//     height: 48,
+//     padding: 8,
+//     borderWidth: 1,
+//     borderColor: '#333333',
+//     borderRadius: 6,
+//     backgroundColor: Colors.dark900,
+//     color: '#bdbdbd',
+//     fontSize: 14,
+//     lineHeight: 19,
+//   },
+//   button: {
+//     width: windowWidth * 0.8, // Use the same width for all buttons
+//     height: 48,
+//     padding: 8,
+//     marginTop: 20,
+//     backgroundColor: Colors.black,
+//     borderRadius: 6,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   buttonText: {
+//     color: Colors.white,
+//     fontSize: 14,
+//     lineHeight: 16,
+//     fontWeight: 'bold',
+//   },
+//   infoText: {
+//     color: Colors.white,
+//     fontSize: 12,
+//     lineHeight: 16,
+//     textAlign: 'right',
+//     fontWeight: '300',
+//     marginTop: 10,
+//   },
+
+//   orContainer: {
+//     flexDirection: 'row',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     marginTop: 20,
+//   },
+//   line: {
+//     width: windowWidth * 0.3,
+//     borderWidth: 0.5,
+//     borderColor: Colors.white,
+//   },
+//   orText: {
+//     color: Colors.white,
+//     fontSize: 14,
+//     lineHeight: 18,
+//     fontWeight: 'bold',
+//     marginHorizontal: 10,
+//   },
+//   googleButton: {
+//     flexDirection: 'row',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     height: 48,
+//     marginTop: 20,
+//     width: windowWidth * 0.8, // Use the same width for Google button
+//     backgroundColor: Colors.black,
+//     borderRadius: 6,
+//     padding: 8,
+//   },
+//   googleIcon: {
+//     width: 24,
+//     height: 24,
+//     marginRight: 10,
+//   },
+//   signupContainer: {
+//     flexDirection: 'row',
+//     justifyContent: 'center',
+//     marginTop: 30,
+//     marginBottom: 20,
+//   },
+//   signupInfo: {
+//     color: Colors.white,
+//     fontSize: 14,
+//     lineHeight: 18,
+//     marginRight: 5,
+//   },
+//   signupText: {
+//     color: '#FFA500',
+//     fontSize: 16,
+//     lineHeight: 18,
+//     fontWeight: 'bold',
+//   },
+//   errors: {
+//     fontSize: 14,
+//     color: 'red',
+//     marginTop: 3,
+//     fontWeight: 'normal',
+//   },
+// });

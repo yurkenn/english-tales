@@ -113,6 +113,7 @@ const AuthProvider = ({ children }) => {
             try {
               await signOut(auth);
               console.log('User Logged Out!');
+              setUserInfo(null);
               await AsyncStorage.removeItem('@user');
               Toast.show({
                 type: 'success',

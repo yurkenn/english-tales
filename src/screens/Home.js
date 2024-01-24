@@ -35,8 +35,7 @@ const Home = ({ navigation }) => {
   const DEFAULT_IMAGE_PATH = '../../assets/images/blank-profile.png';
 
   const bottomSheetRef = useRef(null);
-  const snapPoints = useMemo(() => ['35%', '55%', '75%'], []);
-
+  const snapPoints = useMemo(() => ['100%'], []);
   const renderBackdrop = useCallback(
     (props) => <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />,
     []
@@ -134,63 +133,59 @@ const Home = ({ navigation }) => {
 
 export default Home;
 
-const { width, height } = Dimensions.get('window');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: width,
-    height: height,
-    marginVertical: height * 0.02,
+    marginVertical: windowHeight * 0.02,
   },
   featureContainer: {},
   featureText: {
     color: Colors.white,
-    fontSize: width < 400 ? 18 : 20, // smaller font size for smaller screens
+    fontSize: windowHeight * 0.027,
     fontWeight: '500',
-    lineHeight: 24,
-    marginBottom: 10,
-    paddingHorizontal: 10,
+    marginBottom: windowHeight * 0.02,
+    paddingHorizontal: windowWidth * 0.03,
   },
   categoriesContainer: {
     flex: 1,
-    marginTop: 20,
+    marginTop: windowHeight * 0.02,
   },
   categoriesText: {
     color: Colors.white,
-    fontSize: width < 400 ? 18 : 20,
+    fontSize: windowHeight * 0.027,
     fontWeight: '500',
-    lineHeight: 24,
-    paddingHorizontal: 10,
+    paddingHorizontal: windowWidth * 0.03,
   },
   myStoriesContainer: {
-    paddingHorizontal: 10,
+    paddingHorizontal: windowWidth * 0.03,
   },
   myStoriesText: {
     color: Colors.white,
-    fontSize: width < 400 ? 18 : 20,
+    fontSize: windowHeight * 0.027,
     fontWeight: '500',
-    lineHeight: 24,
+    marginBottom: windowHeight * 0.02,
   },
   button: {
     backgroundColor: Colors.dark500,
     borderRadius: 6,
-    height: 48,
+    height: windowHeight * 0.06,
     justifyContent: 'center',
-    marginVertical: 10,
-    marginHorizontal: 10,
+    marginVertical: windowHeight * 0.02,
+    marginHorizontal: windowWidth * 0.03,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: width < 400 ? 14 : 16,
+    fontSize: windowHeight * 0.02,
     fontWeight: '500',
-    lineHeight: 24,
     textAlign: 'center',
   },
   profileImage: {
-    width: width * 0.09,
-    height: height * 0.04,
-    borderRadius: width * 0.09,
-    marginRight: 10,
+    borderRadius: 30,
+    height: 30,
+    marginRight: windowWidth * 0.03,
+    width: 30,
   },
 });
