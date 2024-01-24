@@ -36,44 +36,44 @@ const FontSizeSettings = ({ fontSize, changeFontSize }) => {
         onSlidingComplete={(value) => changeFontSize(value)}
         useNativeDriver={true}
       />
-      <Text style={[styles.fontSizeText, { fontSize }]}>{fontSize}</Text>
+      <Text style={styles.fontSizeText}>{fontSize}</Text>
     </View>
   );
 };
 
 export default FontSizeSettings;
 
-const { width } = Dimensions.get('window');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   fontSizeSettingsContainer: {
     flex: 1,
     backgroundColor: Colors.dark900,
-    padding: 20,
     justifyContent: 'center',
     alignItems: 'center',
   },
   fontSizeTitle: {
     color: Colors.white,
-    fontSize: width < 400 ? 18 : 20,
+    fontSize: windowWidth * 0.045,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: windowHeight * 0.01,
+    marginTop: windowHeight * 0.02,
   },
   slider: {
-    width: '90%', // Adjusted to 90% of the container width
-    height: 40,
-    margin: 10,
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.05,
   },
   fontSizeText: {
+    fontSize: windowWidth * 0.045,
     fontWeight: 'bold',
     color: Colors.white,
-    marginTop: 10,
-    fontSize: width < 400 ? 14 : 16, // Responsive font size
+    marginTop: windowHeight * 0.02,
   },
   fontSizeInfo: {
     color: Colors.gray,
-    fontSize: width < 400 ? 14 : 16,
+    fontSize: windowWidth * 0.033,
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom: windowHeight * 0.03,
   },
 });

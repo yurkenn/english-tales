@@ -18,20 +18,21 @@ const InfoComponent = ({ readTime, likes }) => (
 
 export default InfoComponent;
 
-const { width } = Dimensions.get('window');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 // Responsive font sizes based on screen width
-const fontSizeLikesReadTime = width < 400 ? 16 : 18;
-const fontSizeInfoText = width < 400 ? 14 : 16;
+const fontSizeLikesReadTime = windowWidth * 0.045;
+const fontSizeInfoText = windowWidth * 0.035;
 
 const styles = StyleSheet.create({
   infoContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    marginTop: 16,
-    paddingVertical: 10,
-    width: '90%',
+    marginTop: windowHeight * 0.02,
+    paddingVertical: windowHeight * 0.015,
+    width: windowWidth * 0.9,
     alignSelf: 'center',
     borderRadius: 10,
     backgroundColor: Colors.dark500,
@@ -53,8 +54,8 @@ const styles = StyleSheet.create({
     color: Colors.gray,
   },
   divider: {
-    width: 1,
-    height: 24,
+    width: windowWidth * 0.002,
+    height: windowHeight * 0.04,
     alignSelf: 'center',
     backgroundColor: Colors.gray,
   },
