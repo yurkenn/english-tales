@@ -45,30 +45,31 @@ const Content = ({ route }) => {
   );
 };
 
-const { width, height } = Dimensions.get('window');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.dark900,
   },
   headerImage: {
-    height: height * 0.5,
-    width: '100%',
-    opacity: 0.85,
-    resizeMode: 'cover',
+    flex: 1,
+    width: windowWidth,
+    resizeMode: 'contain',
+    opacity: 0.8,
   },
   content: {
     flex: 1,
-    padding: 20,
+    backgroundColor: Colors.dark900,
+    paddingHorizontal: windowWidth * 0.05,
+    paddingVertical: windowHeight * 0.04,
   },
   title: {
-    fontSize: width < 400 ? 22 : 24, // smaller font size for smaller screens
+    fontSize: windowHeight * 0.04,
     fontWeight: 'bold',
     color: Colors.white,
-    marginBottom: 10,
+    marginBottom: windowHeight * 0.023,
   },
-  // ... other styles
 });
 
 export default Content;

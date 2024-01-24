@@ -182,67 +182,61 @@ const Detail = ({ route }) => {
 
 export default Detail;
 
-const { width, height } = Dimensions.get('window');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: height * 0.1, // 10% of screen height
+    paddingVertical: windowHeight * 0.12,
     backgroundColor: Colors.modalBackground,
   },
   titleContainer: {
-    marginHorizontal: 20,
-    marginBottom: 10,
+    marginBottom: windowHeight * 0.01,
   },
   title: {
-    fontSize: width < 400 ? 24 : 28, // smaller font size on smaller devices
+    fontSize: windowHeight * 0.03,
     fontWeight: 'bold',
     color: Colors.white,
-    textAlign: 'center',
-  },
-  author: {
-    fontSize: width < 400 ? 16 : 18,
-    fontWeight: 'normal',
-    color: Colors.gray,
     textAlign: 'center',
   },
   imageInfoContainer: {
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: windowHeight * 0.015,
   },
   image: {
-    width: width * 0.5, // 50% of screen width
-    height: height * 0.3, // 30% of screen height
+    width: windowWidth * 0.6,
+    height: windowHeight * 0.4,
     resizeMode: 'cover',
-    borderRadius: 10,
-    marginBottom: 10,
+    borderRadius: 6,
+    marginBottom: windowHeight * 0.01,
   },
   descriptionContainer: {
-    marginHorizontal: 20,
-    marginTop: 16,
-    paddingBottom: 20,
+    marginHorizontal: windowWidth * 0.065,
+    marginTop: windowHeight * 0.01,
+    paddingBottom: windowHeight * 0.01,
   },
   descriptionTitle: {
-    fontSize: 22,
+    fontSize: windowHeight * 0.025,
     fontWeight: 'bold',
     color: Colors.white,
-    marginBottom: 8,
+    marginBottom: windowHeight * 0.01,
   },
   description: {
-    fontSize: 16,
+    fontSize: windowHeight * 0.02,
     color: Colors.white,
-    letterSpacing: 0.5,
   },
   buttonContainer: {
     justifyContent: 'flex-end',
-    paddingHorizontal: 20,
+    paddingHorizontal: windowWidth * 0.03,
   },
   readButton: {
     backgroundColor: Colors.dark500,
     borderRadius: 6,
-    height: 48,
+    height: windowHeight * 0.06,
     justifyContent: 'center',
-    marginVertical: 10,
-    marginHorizontal: 20,
+    marginVertical: windowHeight * 0.02,
+    marginHorizontal: windowWidth * 0.03,
     shadowColor: Colors.black,
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
@@ -250,7 +244,7 @@ const styles = StyleSheet.create({
   },
   readText: {
     color: Colors.white,
-    fontSize: 18,
+    fontSize: windowHeight * 0.02,
     fontWeight: '600',
     textAlign: 'center',
   },
