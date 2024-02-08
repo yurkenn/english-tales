@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginVertical: windowHeight * 0.02,
+    marginHorizontal: windowWidth * 0.02,
   },
   featureContainer: {},
   featureText: {

@@ -30,14 +30,14 @@ const FeaturedStories = ({ data, navigation }) => {
 
 export default FeaturedStories;
 
-const { width } = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.dark500,
     borderRadius: 10,
-    marginHorizontal: 10,
-    padding: 10,
+    marginHorizontal: width * 0.02,
+    padding: width * 0.03,
   },
   image: {
     borderRadius: 10,
@@ -47,9 +47,8 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.white,
-    fontSize: width < 400 ? 16 : 18,
+    fontSize: width * 0.04,
     fontWeight: 'bold',
-    lineHeight: 24,
-    marginTop: 10,
+    marginTop: height * 0.01,
   },
 });

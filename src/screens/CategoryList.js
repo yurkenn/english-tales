@@ -23,7 +23,7 @@ const CategoryList = ({ route }) => {
         data={categoryList}
         estimatedItemSize={200}
         renderItem={renderItem}
-        keyExtractor={(item) => item.slug}
+        keyExtractor={(item) => item._id}
       />
     </View>
   );
