@@ -17,6 +17,8 @@ import { useContext, useState } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { Colors } from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
+import Icon from '../../components/Icons';
+import CustomInput from '../../components/CustomInput';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -48,35 +50,25 @@ const Login = ({ navigation }) => {
           {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
             <View style={styles.inner_container}>
               <Text style={styles.subtitle}>Email</Text>
-              <TextInput
-                style={styles.input}
+              <CustomInput
                 placeholder="Enter your email"
-                placeholderTextColor={Colors.white}
                 onChangeText={handleChange('email')}
-                onBlur={() => {
-                  setFocusedInput(null);
-                  handleBlur('email');
-                }}
-                onFocus={() => setFocusedInput('email')}
                 value={values.email}
-                autoCapitalize="none"
+                icon="mail"
+                onPress={() => {}}
+                isSecure={false}
               />
               {errors.email && focusedInput === 'email' && (
                 <Text style={styles.errors}>{errors.email}</Text>
               )}
               <Text style={styles.subtitle}>Password</Text>
-              <TextInput
-                style={styles.input}
+              <CustomInput
                 placeholder="Enter your password"
-                placeholderTextColor={Colors.white}
                 onChangeText={handleChange('password')}
-                onBlur={() => {
-                  setFocusedInput(null);
-                  handleBlur('password');
-                }}
                 value={values.password}
-                secureTextEntry
-                onFocus={() => setFocusedInput('password')}
+                icon="lock-closed"
+                onPress={() => {}}
+                isSecure={true}
               />
               {errors.password && focusedInput === 'password' && (
                 <Text style={styles.errors}>{errors.password}</Text>
@@ -131,7 +123,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: windowWidth * 0.8,
-    height: windowHeight * 0.33,
+    height: windowHeight * 0.31,
     resizeMode: 'contain',
   },
   title: {
@@ -148,18 +140,6 @@ const styles = StyleSheet.create({
     lineHeight: 18,
     marginTop: windowHeight * 0.02,
     marginBottom: windowHeight * 0.01,
-  },
-  input: {
-    width: windowWidth * 0.8,
-    height: windowHeight * 0.06,
-    padding: windowWidth * 0.02,
-    borderWidth: 1,
-    borderColor: '#333333',
-    borderRadius: 6,
-    backgroundColor: Colors.dark900,
-    color: '#bdbdbd',
-    fontSize: windowHeight * 0.02,
-    lineHeight: 19,
   },
   button: {
     width: windowWidth * 0.8, // Use the same width for all buttons

@@ -17,6 +17,7 @@ import { useContext, useState } from 'react';
 import SignupAnimation from '../../components/Animations/SignupAnimation';
 import { Colors } from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
+import CustomInput from '../../components/CustomInput';
 
 const Signup = ({ navigation }) => {
   const [focusedInput, setFocusedInput] = useState(null);
@@ -51,7 +52,7 @@ const Signup = ({ navigation }) => {
                 <TextInput
                   style={styles.nameInput}
                   placeholder="First Name"
-                  placeholderTextColor={Colors.white}
+                  placeholderTextColor={'#d9d5d5'}
                   onChangeText={handleChange('firstName')}
                   onBlur={() => {
                     setFocusedInput(null);
@@ -65,7 +66,7 @@ const Signup = ({ navigation }) => {
                 <TextInput
                   style={styles.lastNameInput}
                   placeholder="Last Name"
-                  placeholderTextColor={Colors.white}
+                  placeholderTextColor={'#d9d5d5'}
                   onChangeText={handleChange('lastName')}
                   onBlur={() => {
                     setFocusedInput(null);
@@ -104,10 +105,9 @@ const Signup = ({ navigation }) => {
                   )}
                 </View>
               </View>
-              <TextInput
-                style={styles.input}
+
+              <CustomInput
                 placeholder="Enter your email"
-                placeholderTextColor={Colors.white}
                 onChangeText={handleChange('email')}
                 onBlur={() => {
                   setFocusedInput(null);
@@ -115,16 +115,16 @@ const Signup = ({ navigation }) => {
                 }}
                 onFocus={() => setFocusedInput('email')}
                 value={values.email}
-                autoCapitalize="none"
+                icon="mail"
+                onPress={() => {}}
+                isSecure={false}
               />
               {focusedInput === 'email' && errors.email && (
                 <Text style={styles.errors}>{errors.email}</Text>
               )}
 
-              <TextInput
-                style={styles.input}
+              <CustomInput
                 placeholder="Enter your password"
-                placeholderTextColor={Colors.white}
                 onChangeText={handleChange('password')}
                 onBlur={() => {
                   setFocusedInput(null);
@@ -132,8 +132,12 @@ const Signup = ({ navigation }) => {
                 }}
                 onFocus={() => setFocusedInput('password')}
                 value={values.password}
-                secureTextEntry
+                icon="lock-closed"
+                onPress={() => {}}
+                isSecure={true}
+                style={{ marginTop: 10 }}
               />
+
               {focusedInput === 'password' && errors.password && (
                 <Text style={styles.errors}>{errors.password}</Text>
               )}
