@@ -16,14 +16,14 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    height: height * 0.15, // 12% of screen height for dynamic sizing
+    height: height * 0.12, // 12% of screen height for dynamic sizing
     backgroundColor: Colors.dark900,
     justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
     color: Colors.white,
-    fontSize: width < 400 ? 18 : 20, // Smaller font size for smaller screens
+    fontSize: width * 0.041,
     fontWeight: '500',
   },
 });
