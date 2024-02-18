@@ -16,7 +16,7 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    height: height * 0.12, // 12% of screen height for dynamic sizing
+    height: height * 0.115,
     backgroundColor: Colors.dark900,
     justifyContent: 'center',
     alignItems: 'center',
