@@ -18,10 +18,16 @@ SplashScreen.preventAutoHideAsync().catch((err) =>
 const App = () => {
   useEffect(() => {
     async function prepare() {
-      // You might want to do some preparations for your app here
-
-      // When preparation is finished, hide the splash screen
-      await SplashScreen.hideAsync();
+      try {
+        // Keep the splash screen visible while we fetch resources
+        await SplashScreen.preventAutoHideAsync();
+        // Load fonts, images, and other resources here
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        // Hide the splash screen
+        SplashScreen.hideAsync();
+      }
     }
 
     prepare();

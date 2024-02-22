@@ -32,8 +32,7 @@ const Content = ({ route }) => {
             <Image source={{ uri: urlFor(tale[0].imageURL).url() }} style={styles.headerImage} />
           )}
           stickyHeaderHeight={90}
-          renderFixedHeader={() => <HeaderNavbar title={tale[0].title} />}
-          renderStickyHeader={() => <TopNavbar title={tale[0].title} />}
+          renderStickyHeader={() => <HeaderNavbar title={tale[0]?.title} />}
         >
           <Animated.View entering={FadeInDown.delay(400)} style={styles.content}>
             <Text style={styles.title}>{tale[0]?.title}</Text>

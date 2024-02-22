@@ -16,14 +16,15 @@ const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    height: height * 0.115,
+    height: height * 0.15,
+    width: width,
     backgroundColor: Colors.dark900,
     justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
     color: Colors.white,
-    fontSize: width * 0.041,
+    fontSize: height * 0.02,
     fontWeight: '500',
   },
 });
