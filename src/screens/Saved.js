@@ -3,56 +3,75 @@ import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import { useBookmark } from '../store/BookmarkContext';
 import SavedCard from '../components/Saved/SavedCard';
 import { Colors } from '../constants/colors';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlashList } from '@shopify/flash-list';
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import { LinearGradient } from 'expo-linear-gradient';
+import Icon from '../components/Icons';
+
+const EmptyState = () => (
+  <Animated.View entering={FadeInDown.springify()} style={styles.emptyContainer}>
+    <Icon name="bookmark-outline" size={windowHeight * 0.1} color={Colors.gray} />
+    <Text style={styles.emptyTitle}>No saved tales yet</Text>
+    <Text style={styles.emptySubtitle}>Your bookmarked tales will appear here</Text>
+  </Animated.View>
+);
 
 const Saved = ({ navigation }) => {
   const { bookmarks, removeBookmark } = useBookmark();
 
-  const renderItem = ({ item }) => (
-    <TouchableOpacity
-      onPress={() => navigation.navigate('Detail', { data: item })}
-      activeOpacity={0.8}
-    >
-      <SavedCard data={item} onDelete={removeBookmark} />
-    </TouchableOpacity>
+  const renderItem = ({ item, index }) => (
+    <Animated.View entering={FadeInDown.delay(index * 100)}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Detail', { data: item })}
+        activeOpacity={0.7}
+      >
+        <SavedCard data={item} onDelete={removeBookmark} />
+      </TouchableOpacity>
+    </Animated.View>
   );
 
   return (
-    <View style={styles.container}>
+    <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.container}>
       {bookmarks.length > 0 ? (
-        <FlatList data={bookmarks} renderItem={renderItem} key={bookmarks.slug} />
+        <FlashList
+          data={bookmarks}
+          renderItem={renderItem}
+          estimatedItemSize={150}
+          contentContainerStyle={styles.listContainer}
+          showsVerticalScrollIndicator={false}
+        />
       ) : (
-        <View style={styles.emptyContainer}>
-          {/* Consider adding an image here for a better empty state */}
-          <Text style={styles.emptyText}>You haven't saved any tales yet.</Text>
-        </View>
+        <EmptyState />
       )}
-    </View>
+    </LinearGradient>
   );
 };
-export default Saved;
 
-const { width } = Dimensions.get('window');
+const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: width * 0.025, // 2.5% of screen width
-    backgroundColor: Colors.dark900,
+    padding: windowWidth * 0.04,
   },
-  title: {
-    fontSize: width < 400 ? 22 : 24, // smaller font size for smaller screens
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: Colors.white,
+  listContainer: {
+    paddingBottom: windowHeight * 0.02,
   },
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    gap: windowHeight * 0.02,
   },
-  emptyText: {
-    fontSize: width < 400 ? 16 : 18, // smaller font size for smaller screens
+  emptyTitle: {
+    fontSize: windowHeight * 0.024,
+    fontWeight: '600',
+    color: Colors.white,
+  },
+  emptySubtitle: {
+    fontSize: windowHeight * 0.016,
     color: Colors.gray,
   },
 });
+
+export default Saved;

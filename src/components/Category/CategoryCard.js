@@ -1,72 +1,98 @@
-import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import { Colors } from '../../constants/colors';
+import { StyleSheet, Text, TouchableOpacity, View, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Animated, { FadeInDown } from 'react-native-reanimated';
+import { Colors } from '../../constants/colors';
+import { LinearGradient } from 'expo-linear-gradient';
+import Animated from 'react-native-reanimated';
+import Icon from '../Icons';
 
-const CategoryCard = ({ data, index }) => {
+const CategoryCard = ({ data }) => {
   const navigation = useNavigation();
 
-  const handleNavigation = () => {
-    navigation.navigate('Detail', { data });
-  };
-
   return (
-    <Animated.View entering={FadeInDown.delay(300 * index)}>
-      <TouchableOpacity onPress={handleNavigation}>
-        <View style={styles.container}>
-          <View style={styles.imageContainer}>
-            <Animated.Image
-              sharedTransitionTag={data?.title}
-              style={styles.image}
-              source={{
-                uri: data?.imageURL,
-              }}
-            />
-          </View>
-          <View style={styles.titleContainer}>
-            <Text style={styles.title}>{data?.title}</Text>
+    <TouchableOpacity onPress={() => navigation.navigate('Detail', { data })} activeOpacity={0.7}>
+      <LinearGradient
+        colors={['#1F1F1F', '#121212']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.container}
+      >
+        <Animated.Image source={{ uri: data?.imageURL }} style={styles.image} />
+
+        <View style={styles.contentContainer}>
+          <Text style={styles.title} numberOfLines={2}>
+            {data?.title}
+          </Text>
+
+          <Text style={styles.description} numberOfLines={3}>
+            {data?.description}
+          </Text>
+
+          <View style={styles.statsContainer}>
+            <View style={styles.stat}>
+              <Icon name="time" size={16} color={Colors.white} />
+              <Text style={styles.statText}>{data?.readTime}m</Text>
+            </View>
+            <View style={styles.stat}>
+              <Icon name="heart" size={16} color={Colors.red} />
+              <Text style={styles.statText}>{data?.likes}</Text>
+            </View>
           </View>
         </View>
-      </TouchableOpacity>
-    </Animated.View>
+      </LinearGradient>
+    </TouchableOpacity>
   );
 };
 
-export default CategoryCard;
-
-const { width } = Dimensions.get('window');
-
-const imageSize = width < 400 ? { width: 40, height: 60 } : { width: 50, height: 70 };
-const titleFontSize = width < 400 ? 14 : 16;
+const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    alignItems: 'center',
-    padding: 10,
-    marginVertical: 5,
-    backgroundColor: Colors.dark500,
-    borderRadius: 5,
-    elevation: 2,
-  },
-  imageContainer: {
-    marginRight: 10,
+    marginBottom: windowHeight * 0.02,
+    padding: windowWidth * 0.03,
+    borderRadius: 12,
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
   image: {
-    ...imageSize,
-    borderRadius: 5,
+    width: windowWidth * 0.25,
+    height: windowHeight * 0.15,
+    borderRadius: 8,
   },
-  titleContainer: {
+  contentContainer: {
     flex: 1,
+    marginLeft: windowWidth * 0.03,
+    justifyContent: 'space-between',
   },
   title: {
-    fontSize: titleFontSize,
-    fontWeight: 'bold',
+    fontSize: windowHeight * 0.022,
+    fontWeight: '600',
     color: Colors.white,
+    marginBottom: windowHeight * 0.01,
   },
-  author: {
-    fontSize: 14,
+  description: {
+    fontSize: windowHeight * 0.016,
+    color: Colors.gray,
+    lineHeight: windowHeight * 0.022,
+  },
+  statsContainer: {
+    flexDirection: 'row',
+    marginTop: windowHeight * 0.01,
+    gap: windowWidth * 0.04,
+  },
+  stat: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: windowWidth * 0.01,
+  },
+  statText: {
     color: Colors.white,
+    fontSize: windowHeight * 0.016,
   },
 });
+
+export default CategoryCard;

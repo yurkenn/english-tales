@@ -1,55 +1,93 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
+import Animated, { FadeIn, useAnimatedStyle, withSpring } from 'react-native-reanimated';
+import { LinearGradient } from 'expo-linear-gradient';
 import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
+import { useState } from 'react';
 
-const InfoContainer = ({ readTime, likes }) => (
-  <View style={styles.infoContainer}>
-    <View style={styles.readTimeContainer}>
-      <Icon name={'time-outline'} size={iconSize} color={'white'} />
-      <Text style={styles.readTime}>{readTime}</Text>
-    </View>
-    <View style={styles.bookmarkContainer}>
-      <Icon name={'heart'} size={iconSize} color={'red'} />
-      <Text style={styles.bookmarks}>{likes}</Text>
-    </View>
-  </View>
+const StatItem = ({ icon, value, color = Colors.white }) => (
+  <Animated.View entering={FadeIn} style={styles.statContainer}>
+    <Icon name={icon} size={20} color={color} />
+    <Text style={styles.statText}>{value}</Text>
+  </Animated.View>
 );
 
-export default InfoContainer;
+const InfoContainer = ({ readTime, likes }) => {
+  const [pressed, setPressed] = useState(false);
 
-const { width } = Dimensions.get('window');
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: withSpring(pressed ? 0.95 : 1) }],
+  }));
 
-const fontSize = width < 400 ? 10 : 12; // Smaller font size for smaller screens
-const iconSize = width < 400 ? 14 : 16; // Smaller icon size for smaller screens
+  return (
+    <Pressable onPressIn={() => setPressed(true)} onPressOut={() => setPressed(false)}>
+      <Animated.View style={[styles.container, animatedStyle]}>
+        <LinearGradient
+          colors={[Colors.dark500 + '80', Colors.dark900 + '80']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.glassEffect}
+        >
+          <StatItem icon="time-outline" value={readTime} />
+          <View style={styles.divider} />
+          <StatItem icon="heart" value={likes} color={Colors.red} />
+        </LinearGradient>
+
+        <LinearGradient
+          colors={['rgba(255,255,255,0.1)', 'rgba(255,255,255,0.05)']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 0, y: 1 }}
+          style={styles.shine}
+        />
+      </Animated.View>
+    </Pressable>
+  );
+};
 
 const styles = StyleSheet.create({
-  infoContainer: {
-    marginTop: 10,
+  container: {
+    borderRadius: 16,
+    overflow: 'hidden',
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.5,
+  },
+  glassEffect: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    padding: 12,
+    gap: 16,
+    backgroundColor: 'rgba(255,255,255,0.05)',
+    backdropFilter: 'blur(10px)',
   },
-  readTimeContainer: {
+  statContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: 10,
+    gap: 6,
   },
-  readTime: {
+  statText: {
     color: Colors.white,
-    fontSize: fontSize,
-    fontWeight: 'bold',
-    marginLeft: 5,
+    fontSize: 14,
+    fontWeight: '600',
+    letterSpacing: 0.5,
   },
-  bookmarkContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingLeft: 10,
+  divider: {
+    width: 1,
+    height: 20,
+    backgroundColor: Colors.white,
+    opacity: 0.2,
   },
-  bookmarks: {
-    color: Colors.white,
-    fontSize: fontSize,
-    fontWeight: 'bold',
-    marginLeft: 5,
+  shine: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '50%',
+    opacity: 0.5,
   },
 });
+
+export default InfoContainer;
