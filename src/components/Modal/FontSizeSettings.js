@@ -1,30 +1,26 @@
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import Slider from 'react-native-smooth-slider';
-import { Colors } from '../../constants/colors'; // Make sure you import Colors if needed
+import { Colors } from '../../constants/colors';
+import Icon from '../Icons';
+import Animated, { FadeIn } from 'react-native-reanimated';
 
 const FontSizeSettings = ({ fontSize, changeFontSize }) => {
   return (
-    <View style={styles.fontSizeSettingsContainer}>
-      <Text style={styles.fontSizeTitle}>Font Size</Text>
-      <Text style={styles.fontSizeInfo}>Change the font size of the story to your liking.</Text>
+    <Animated.View entering={FadeIn} style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Font Size</Text>
+        <Text style={styles.subtitle}>Change the font size of the story to your liking.</Text>
+      </View>
+
+      <View style={styles.previewBox}>
+        <Text style={[styles.previewText, { fontSize }]}>Preview Text</Text>
+      </View>
+
       <Slider
         style={styles.slider}
-        trackStyle={{
-          height: 16,
-          borderRadius: 2,
-          backgroundColor: 'white',
-          borderColor: '#9a9a9a',
-          borderWidth: 0.5,
-        }}
-        thumbStyle={{
-          width: 20,
-          height: 25,
-          borderRadius: 3,
-          backgroundColor: '#eaeaea',
-          borderColor: '#9a9a9a',
-          borderWidth: 1,
-        }}
+        trackStyle={styles.track}
+        thumbStyle={styles.thumb}
         minimumTrackTintColor={Colors.yellow}
         value={fontSize}
         minimumValue={10}
@@ -32,48 +28,70 @@ const FontSizeSettings = ({ fontSize, changeFontSize }) => {
         step={1}
         maximumTrackTintColor={Colors.white}
         thumbTintColor={Colors.dark500}
-        onValueChange={(value) => changeFontSize(value)}
-        onSlidingComplete={(value) => changeFontSize(value)}
-        useNativeDriver={true}
+        onValueChange={changeFontSize}
+        onSlidingComplete={changeFontSize}
       />
-      <Text style={styles.fontSizeText}>{fontSize}</Text>
-    </View>
+
+      <Text style={styles.sizeValue}>{fontSize}px</Text>
+    </Animated.View>
   );
 };
 
-export default FontSizeSettings;
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
+const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
-  fontSizeSettingsContainer: {
+  container: {
     flex: 1,
     backgroundColor: Colors.dark900,
-    justifyContent: 'center',
+    padding: windowWidth * 0.05,
     alignItems: 'center',
   },
-  fontSizeTitle: {
+  header: {
+    width: '100%',
+    marginBottom: windowHeight * 0.02,
+  },
+  title: {
     color: Colors.white,
-    fontSize: windowWidth * 0.045,
-    fontWeight: 'bold',
+    fontSize: windowWidth * 0.05,
+    fontWeight: '700',
     marginBottom: windowHeight * 0.01,
-    marginTop: windowHeight * 0.02,
+  },
+  subtitle: {
+    color: Colors.gray500,
+    fontSize: windowWidth * 0.035,
+  },
+  previewBox: {
+    width: '100%',
+    padding: windowHeight * 0.02,
+    backgroundColor: Colors.dark500,
+    borderRadius: 20,
+    marginBottom: windowHeight * 0.02,
+    alignItems: 'center',
+  },
+  previewText: {
+    color: Colors.white,
   },
   slider: {
     width: windowWidth * 0.8,
     height: windowHeight * 0.05,
   },
-  fontSizeText: {
+  track: {
+    height: 13,
+    borderRadius: 8,
+    backgroundColor: Colors.dark500,
+  },
+  thumb: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    backgroundColor: Colors.white,
+  },
+  sizeValue: {
     fontSize: windowWidth * 0.045,
-    fontWeight: 'bold',
+    fontWeight: '600',
     color: Colors.white,
     marginTop: windowHeight * 0.02,
   },
-  fontSizeInfo: {
-    color: Colors.gray,
-    fontSize: windowWidth * 0.033,
-    textAlign: 'center',
-    marginBottom: windowHeight * 0.03,
-  },
 });
+
+export default FontSizeSettings;

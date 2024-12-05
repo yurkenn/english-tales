@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import { Colors } from '../constants/colors';
 import FormatReadTime from '../components/FormatReadTime';
@@ -9,9 +9,12 @@ import BookmarkButton from '../Detail/BookmarkButton';
 import LikeButton from '../components/Detail/LikeButton';
 import InfoComponent from '../components/Detail/InfoComponent';
 import SettingsButton from '../components/Detail/SettingsButton';
+import BottomSheet, { BottomSheetScrollView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 import { fetchLikes, unlikeTale, updateLikes } from '../utils/sanity-utils';
 import { useBookmark } from '../store/BookmarkContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import FontSizeSettings from '../components/Modal/FontSizeSettings';
+import { useFontSize } from '../store/FontSizeContext';
 
 const Detail = ({ route, navigation }) => {
   const { data } = route.params;
@@ -24,6 +27,18 @@ const Detail = ({ route, navigation }) => {
   const isBookmarked = bookmarks.find(
     (bookmark) => bookmark?.slug?.current === data?.slug?.current
   );
+  const { fontSize, changeFontSize } = useFontSize();
+  const bottomSheetRef = useRef(null);
+  const snapPoints = ['40%'];
+
+  const renderBackdrop = useCallback(
+    (props) => <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />,
+    []
+  );
+
+  const handleOpenModal = () => {
+    bottomSheetRef.current?.expand();
+  };
 
   const handleLike = async () => {
     if (!hasLiked) {
@@ -51,8 +66,6 @@ const Detail = ({ route, navigation }) => {
       topOffset: 90,
     });
   };
-
-  const handleOpenModal = () => bottomSheetRef.current?.expand();
 
   const handleReadButton = async () => {
     navigation.navigate('Content', { slug: data.slug.current });
@@ -89,32 +102,49 @@ const Detail = ({ route, navigation }) => {
   }, [hasLiked, isLoading, isBookmarked]);
 
   return (
-    <Animated.ScrollView style={styles.container}>
-      <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.gradientContainer}>
-        <Animated.Image
-          entering={FadeInDown.springify()}
-          source={{ uri: data?.imageURL }}
-          style={styles.image}
-        />
+    <>
+      <Animated.ScrollView style={styles.container}>
+        <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.gradientContainer}>
+          <Animated.Image
+            entering={FadeInDown.springify()}
+            source={{ uri: data?.imageURL }}
+            style={styles.image}
+          />
 
-        <Animated.View entering={SlideInRight.delay(300)} style={styles.contentContainer}>
-          <Text style={styles.title}>{data?.title}</Text>
-          <InfoComponent readTime={readTime} likes={likes} />
+          <Animated.View entering={SlideInRight.delay(300)} style={styles.contentContainer}>
+            <Text style={styles.title}>{data?.title}</Text>
+            <InfoComponent readTime={readTime} likes={likes} />
 
-          <View style={styles.descriptionContainer}>
-            <Text style={styles.descriptionTitle}>Description</Text>
-            <Text style={styles.description}>{data?.description}</Text>
-          </View>
+            <View style={styles.descriptionContainer}>
+              <Text style={styles.descriptionTitle}>Description</Text>
+              <Text style={styles.description}>{data?.description}</Text>
+            </View>
 
-          <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
-            <LinearGradient colors={['#2A2A2A', '#1F1F1F']} style={styles.buttonGradient}>
-              <Text style={styles.buttonText}>Continue Reading</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-        </Animated.View>
-      </LinearGradient>
+            <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
+              <LinearGradient colors={['#2A2A2A', '#1F1F1F']} style={styles.buttonGradient}>
+                <Text style={styles.buttonText}>Continue Reading</Text>
+              </LinearGradient>
+            </TouchableOpacity>
+          </Animated.View>
+        </LinearGradient>
+      </Animated.ScrollView>
+
+      <BottomSheet
+        ref={bottomSheetRef}
+        index={-1}
+        snapPoints={snapPoints}
+        enablePanDownToClose
+        backgroundStyle={{ backgroundColor: Colors.dark900 }}
+        handleIndicatorStyle={{ backgroundColor: Colors.white }}
+        backdropComponent={renderBackdrop}
+      >
+        <BottomSheetScrollView>
+          <FontSizeSettings fontSize={fontSize} changeFontSize={changeFontSize} />
+        </BottomSheetScrollView>
+      </BottomSheet>
+
       <Toast />
-    </Animated.ScrollView>
+    </>
   );
 };
 
@@ -162,7 +192,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: windowHeight * 0.018,
-    color: Colors.gray,
+    color: Colors.gray500,
     lineHeight: windowHeight * 0.028,
   },
   readButton: {

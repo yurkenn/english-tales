@@ -51,13 +51,13 @@ const styles = StyleSheet.create({
   },
   infoTextColor: {
     fontSize: fontSizeInfoText,
-    color: Colors.gray,
+    color: Colors.gray500,
   },
   divider: {
     width: windowWidth * 0.002,
     height: windowHeight * 0.04,
     alignSelf: 'center',
-    backgroundColor: Colors.gray,
+    backgroundColor: Colors.gray500,
   },
   readTimeContainer: {
     alignItems: 'center',

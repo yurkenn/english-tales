@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: windowHeight * 0.016,
-    color: Colors.gray,
+    color: Colors.gray500,
     lineHeight: windowHeight * 0.022,
   },
   statsContainer: {

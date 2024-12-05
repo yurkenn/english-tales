@@ -1,51 +1,71 @@
-import React, { useEffect } from 'react';
-import Navigation from './src/navigation';
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import * as SplashScreen from 'expo-splash-screen';
+import Toast from 'react-native-toast-message';
+import { vexo } from 'vexo-analytics';
+import 'react-native-url-polyfill/auto';
+
+// Providers
 import { AuthProvider } from './src/store/AuthContext';
 import BookmarkProvider from './src/store/BookmarkContext';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import 'react-native-url-polyfill/auto';
 import { FontSizeProvider } from './src/store/FontSizeContext';
-import Toast from 'react-native-toast-message';
-import * as SplashScreen from 'expo-splash-screen';
-import { vexo } from 'vexo-analytics';
+
+// Navigation
+import RootNavigator from './src/navigation/RootNavigator';
+
+// Analytics initialization
 vexo(process.env.EXPO_PUBLIC_VEXO_ANALYTICS_KEY);
 
+// Prevent splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync().catch((err) =>
-  console.warn(`SplashScreen.preventAutoHideAsync() errored:`, err)
+  console.warn('Error preventing splash screen auto-hide:', err)
+);
+
+const AppProviders = ({ children }) => (
+  <AuthProvider>
+    <FontSizeProvider>
+      <BookmarkProvider>{children}</BookmarkProvider>
+    </FontSizeProvider>
+  </AuthProvider>
 );
 
 const App = () => {
+  const [appIsReady, setAppIsReady] = useState(false);
+
   useEffect(() => {
-    async function prepare() {
+    async function prepareApp() {
       try {
-        // Keep the splash screen visible while we fetch resources
         await SplashScreen.preventAutoHideAsync();
-        // Load fonts, images, and other resources here
-      } catch (e) {
-        console.warn(e);
+        // Add initialization logic here
+        setAppIsReady(true);
+      } catch (error) {
+        console.error('Error preparing app:', error);
       } finally {
-        // Hide the splash screen
-        SplashScreen.hideAsync();
+        try {
+          await SplashScreen.hideAsync();
+        } catch (error) {
+          console.warn('Error hiding splash screen:', error);
+        }
       }
     }
 
-    prepare();
+    prepareApp();
   }, []);
+
+  if (!appIsReady) {
+    return null;
+  }
+
   return (
-    <>
-      <StatusBar style="auto" />
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <AuthProvider>
-          <FontSizeProvider>
-            <BookmarkProvider>
-              <Navigation />
-            </BookmarkProvider>
-          </FontSizeProvider>
-        </AuthProvider>
-      </GestureHandlerRootView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <StatusBar style="light" />
+      <AppProviders>
+        <RootNavigator />
+      </AppProviders>
       <Toast />
-    </>
+    </GestureHandlerRootView>
   );
 };
 

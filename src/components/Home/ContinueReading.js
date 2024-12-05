@@ -14,7 +14,7 @@ const ContinueReading = ({ lastRead }) => {
   if (!lastRead) {
     return (
       <Animated.View entering={FadeIn.duration(800)} style={styles.emptyContainer}>
-        <Icon name="book-outline" size={48} color={Colors.gray} />
+        <Icon name="book-outline" size={48} color={Colors.gray500} />
         <Text style={styles.warningText}>Start your reading journey!</Text>
         <Text style={styles.subText}>Your last read story will appear here</Text>
       </Animated.View>
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     fontSize: width * 0.032,
   },
   description: {
-    color: Colors.gray,
+    color: Colors.gray500,
     fontSize: width * 0.035,
     lineHeight: width * 0.045,
   },
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   progressText: {
-    color: Colors.gray,
+    color: Colors.gray500,
     fontSize: width * 0.03,
   },
   emptyContainer: {
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   subText: {
-    color: Colors.gray,
+    color: Colors.gray500,
     fontSize: width * 0.035,
   },
 });

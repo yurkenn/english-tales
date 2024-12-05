@@ -17,7 +17,7 @@ const SearchScreen = () => {
 
   const renderEmptyState = () => (
     <Animated.View entering={FadeIn} style={styles.emptyContainer}>
-      <Icon name="search" size={windowHeight * 0.1} color={Colors.gray} />
+      <Icon name="search" size={windowHeight * 0.1} color={Colors.gray500} />
       <Text style={styles.emptyText}>{searchTerm ? 'No results found' : 'Search for tales'}</Text>
     </Animated.View>
   );
@@ -25,19 +25,19 @@ const SearchScreen = () => {
   return (
     <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.container}>
       <View style={styles.searchContainer}>
-        <Icon name="search" size={20} color={isFocused ? Colors.white : Colors.gray} />
+        <Icon name="search" size={20} color={isFocused ? Colors.white : Colors.gray500} />
         <TextInput
           style={[styles.input, isFocused && styles.inputFocused]}
           placeholder="Search tales..."
           onChangeText={setSearchTerm}
           value={searchTerm}
-          placeholderTextColor={Colors.gray}
+          placeholderTextColor={Colors.gray500}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />
         {searchTerm && (
           <TouchableOpacity onPress={() => setSearchTerm('')}>
-            <Icon name="close-outline" size={20} color={Colors.gray} />
+            <Icon name="close-outline" size={20} color={Colors.gray500} />
           </TouchableOpacity>
         )}
       </View>
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     gap: windowHeight * 0.02,
   },
   emptyText: {
-    color: Colors.gray,
+    color: Colors.gray500,
     fontSize: windowHeight * 0.02,
   },
   listContainer: {

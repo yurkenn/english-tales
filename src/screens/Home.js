@@ -23,7 +23,6 @@ import ContinueReading from '../components/Home/ContinueReading';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import BottomSheet, { BottomSheetScrollView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
-import ProfileScreen from '../components/Modal/Profile/ProfileScreen';
 import { AuthContext } from '../store/AuthContext';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -50,25 +49,6 @@ const Home = ({ navigation }) => {
     (props) => <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />,
     []
   );
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerRight: () => (
-        <TouchableOpacity
-          onPress={() => bottomSheetRef.current?.expand()}
-          style={styles.profileButton}
-        >
-          <LinearGradient colors={['#1F1F1F', '#121212']} style={styles.profileGradient}>
-            <Image
-              style={styles.profileImage}
-              source={userInfo.photoURL ? { uri: userInfo.photoURL } : require(DEFAULT_IMAGE_PATH)}
-              accessibilityLabel="User's profile image"
-            />
-          </LinearGradient>
-        </TouchableOpacity>
-      ),
-    });
-  }, [navigation, userInfo.photoURL]);
 
   useFocusEffect(
     useCallback(() => {
@@ -133,20 +113,6 @@ const Home = ({ navigation }) => {
           <Text style={styles.buttonText}>Explore All</Text>
         </LinearGradient>
       </TouchableOpacity>
-
-      <BottomSheet
-        ref={bottomSheetRef}
-        index={-1}
-        snapPoints={snapPoints}
-        enablePanDownToClose
-        backgroundStyle={styles.bottomSheetBackground}
-        handleIndicatorStyle={styles.bottomSheetIndicator}
-        backdropComponent={renderBackdrop}
-      >
-        <BottomSheetScrollView>
-          <ProfileScreen />
-        </BottomSheetScrollView>
-      </BottomSheet>
     </ScrollView>
   );
 };
