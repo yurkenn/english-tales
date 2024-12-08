@@ -6,10 +6,35 @@ import FormatReadTime from '../FormatReadTime';
 import Icon from '../Icons';
 import Animated, { FadeIn, SlideInLeft } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useEffect, useState } from 'react';
 
 const ContinueReading = ({ lastRead }) => {
   const navigation = useNavigation();
   const time = FormatReadTime(lastRead?.readTime);
+  const [readingProgress, setReadingProgress] = useState(0);
+
+  useEffect(() => {
+    if (lastRead) {
+      loadReadingProgress();
+    }
+  }, [lastRead]);
+
+  const loadReadingProgress = async () => {
+    try {
+      const progress = await AsyncStorage.getItem(`progress_${lastRead.slug.current}`);
+      if (progress !== null) {
+        setReadingProgress(parseFloat(progress));
+      }
+    } catch (error) {
+      console.error('Error loading reading progress:', error);
+    }
+  };
+
+  // Calculate the percentage based on content length and current position
+  const formatProgress = (progress) => {
+    return `${Math.round(progress)}%`;
+  };
 
   if (!lastRead) {
     return (
@@ -64,15 +89,30 @@ const ContinueReading = ({ lastRead }) => {
 
             <View style={styles.progressContainer}>
               <View style={styles.progressBar}>
-                <View style={[styles.progress, { width: '30%' }]} />
+                <Animated.View
+                  style={[
+                    styles.progress,
+                    {
+                      width: `${readingProgress}%`,
+                      backgroundColor: getProgressColor(readingProgress),
+                    },
+                  ]}
+                />
               </View>
-              <Text style={styles.progressText}>30% completed</Text>
+              <Text style={styles.progressText}>{formatProgress(readingProgress)} completed</Text>
             </View>
           </View>
         </LinearGradient>
       </Animated.View>
     </TouchableOpacity>
   );
+};
+
+// Helper function to get progress color based on percentage
+const getProgressColor = (progress) => {
+  if (progress < 30) return Colors.primary;
+  if (progress < 70) return Colors.warning;
+  return Colors.success;
 };
 
 const { width, height } = Dimensions.get('window');
@@ -144,10 +184,10 @@ const styles = StyleSheet.create({
     height: height * 0.006,
     backgroundColor: Colors.dark500,
     borderRadius: 4,
+    overflow: 'hidden',
   },
   progress: {
     height: '100%',
-    backgroundColor: Colors.primary,
     borderRadius: 4,
   },
   progressText: {
