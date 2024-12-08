@@ -32,7 +32,7 @@ const CategoryList = ({ route }) => {
   return (
     <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.resultCount}>{categoryList.length} Tales</Text>
+        <Text style={styles.resultCount}>{categoryList.length} Stories</Text>
       </View>
 
       <FlashList
