@@ -1,54 +1,60 @@
+import React, { useCallback, useState } from 'react';
 import {
-  Alert,
-  Dimensions,
-  FlatList,
-  Image,
-  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
+  Dimensions,
+  ScrollView,
+  Alert,
 } from 'react-native';
+import { Colors } from '../constants/colors';
+import { LinearGradient } from 'expo-linear-gradient';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { FlashList } from '@shopify/flash-list';
-import React, { useCallback, useContext, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import FeaturedStories from '../components/Home/FeaturedStories';
 import Categories from '../components/Category/Categories';
+import ContinueReading from '../components/Home/ContinueReading';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import useGetFeaturedStories from '../hooks/useGetFeaturedStories';
 import useGetCategories from '../hooks/useGetCategories';
-import { Colors } from '../constants/colors';
 import useGetAllTales from '../hooks/useGetAllTales';
-import ContinueReading from '../components/Home/ContinueReading';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
-import BottomSheet, { BottomSheetScrollView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
-import { AuthContext } from '../store/AuthContext';
-import Animated, { FadeInDown } from 'react-native-reanimated';
-import { LinearGradient } from 'expo-linear-gradient';
+import Icon from '../components/Icons';
 
-const LoadingPlaceholder = () => (
-  <View style={styles.loadingContainer}>
-    <LinearGradient colors={['#1F1F1F', '#2A2A2A', '#1F1F1F']} style={styles.loadingGradient}>
-      <LoadingAnimation />
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+
+const FEATURED_ITEM_SIZE = SCREEN_WIDTH * 0.5;
+const CATEGORY_ITEM_SIZE = SCREEN_WIDTH * 0.25;
+
+const ExploreAllButton = ({ onPress }) => (
+  <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={styles.exploreButtonContainer}>
+    <LinearGradient
+      colors={[Colors.primary, Colors.primary700]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+      style={styles.exploreButton}
+    >
+      <View style={styles.buttonContent}>
+        <View style={styles.buttonLeftContent}>
+          <Text style={styles.buttonTitle}>Explore All Stories</Text>
+          <Text style={styles.buttonSubtitle}>Discover more stories</Text>
+        </View>
+        <View style={styles.iconContainer}>
+          <Icon name="arrow-forward" size={24} color={Colors.white} />
+        </View>
+      </View>
     </LinearGradient>
-  </View>
+  </TouchableOpacity>
 );
 
 const Home = ({ navigation }) => {
   const { featuredStories, loading: storiesLoading, error: storiesError } = useGetFeaturedStories();
   const { categories } = useGetCategories();
   const getAllTales = useGetAllTales();
-  const { userInfo } = useContext(AuthContext);
   const [lastRead, setLastRead] = useState(null);
-  const DEFAULT_IMAGE_PATH = '../../assets/images/blank-profile.png';
-
-  const bottomSheetRef = useRef(null);
-  const snapPoints = useMemo(() => ['100%'], []);
-  const renderBackdrop = useCallback(
-    (props) => <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />,
-    []
-  );
 
   useFocusEffect(
     useCallback(() => {
@@ -67,139 +73,127 @@ const Home = ({ navigation }) => {
     }, [navigation])
   );
 
-  if (storiesLoading) return <LoadingPlaceholder />;
+  if (storiesLoading) return <LoadingAnimation />;
   if (storiesError) return <ErrorAnimation />;
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+    >
       <Animated.View entering={FadeInDown.delay(400)} style={styles.featureContainer}>
-        <Text style={styles.sectionTitle}>Featured Tales</Text>
-        <FlashList
-          data={featuredStories}
-          estimatedItemSize={200}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => (
-            <FeaturedStories data={item} navigation={navigation} index={index} />
-          )}
-        />
+        <Text style={styles.sectionTitle}>Featured Stories</Text>
+        <View style={styles.featuredListContainer}>
+          <FlashList
+            data={featuredStories}
+            estimatedItemSize={FEATURED_ITEM_SIZE}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => (
+              <FeaturedStories data={item} navigation={navigation} index={index} />
+            )}
+          />
+        </View>
       </Animated.View>
 
       <Animated.View entering={FadeInDown.delay(600)} style={styles.categoriesContainer}>
         <Text style={styles.sectionTitle}>Categories</Text>
-        <FlatList
-          data={categories}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => <Categories data={item} index={index} />}
-        />
+        <View style={styles.categoriesListContainer}>
+          <FlashList
+            data={categories}
+            estimatedItemSize={CATEGORY_ITEM_SIZE}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => <Categories data={item} index={index} />}
+          />
+        </View>
       </Animated.View>
 
       <Animated.View entering={FadeInDown.delay(800)} style={styles.myStoriesContainer}>
-        <Text style={styles.sectionTitle}>Last Read</Text>
+        <Text style={styles.sectionTitle}>Continue Reading</Text>
         <ContinueReading lastRead={lastRead} />
       </Animated.View>
 
-      <TouchableOpacity
-        onPress={() => navigation.navigate('AllTales', { data: getAllTales.allTales })}
-        style={styles.exploreButton}
-      >
-        <LinearGradient
-          colors={['#1F1F1F', '#121212']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.buttonGradient}
-        >
-          <Text style={styles.buttonText}>Explore All</Text>
-        </LinearGradient>
-      </TouchableOpacity>
+      <Animated.View entering={FadeInDown.delay(1000)} style={styles.exploreContainer}>
+        <ExploreAllButton
+          onPress={() => navigation.navigate('AllTales', { data: getAllTales.allTales })}
+        />
+      </Animated.View>
     </ScrollView>
   );
 };
-
-const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
-    marginVertical: windowHeight * 0.02,
-    marginHorizontal: windowWidth * 0.02,
   },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Colors.dark900,
+  contentContainer: {
+    paddingTop: SCREEN_HEIGHT * 0.02,
+    paddingBottom: SCREEN_HEIGHT * 0.02,
   },
-  loadingGradient: {
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+  featuredListContainer: {
+    height: SCREEN_HEIGHT * 0.32,
+  },
+  categoriesListContainer: {
+    height: SCREEN_HEIGHT * 0.15,
   },
   sectionTitle: {
     color: Colors.white,
-    fontSize: windowHeight * 0.027,
+    fontSize: SCREEN_HEIGHT * 0.024,
     fontWeight: '600',
-    marginBottom: windowHeight * 0.02,
-    paddingHorizontal: windowWidth * 0.03,
+    marginBottom: SCREEN_HEIGHT * 0.012,
+    paddingHorizontal: SCREEN_WIDTH * 0.05,
   },
   featureContainer: {
-    marginBottom: windowHeight * 0.03,
+    marginBottom: SCREEN_HEIGHT * 0.02,
   },
   categoriesContainer: {
-    marginVertical: windowHeight * 0.02,
+    marginBottom: SCREEN_HEIGHT * 0.02,
   },
   myStoriesContainer: {
-    paddingHorizontal: windowWidth * 0.03,
-    marginBottom: windowHeight * 0.02,
+    paddingHorizontal: SCREEN_WIDTH * 0.02,
+    marginBottom: SCREEN_HEIGHT * 0.02,
+  },
+  exploreContainer: {
+    paddingHorizontal: SCREEN_WIDTH * 0.05,
+  },
+  exploreButtonContainer: {
+    borderRadius: 16,
+    overflow: 'hidden',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
   exploreButton: {
-    marginHorizontal: windowWidth * 0.03,
-    marginVertical: windowHeight * 0.02,
-    borderRadius: 12,
-    overflow: 'hidden',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    width: '100%',
+    padding: SCREEN_WIDTH * 0.04,
   },
-  buttonGradient: {
-    height: windowHeight * 0.06,
-    justifyContent: 'center',
+  buttonContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
-  buttonText: {
+  buttonLeftContent: {
+    flex: 1,
+  },
+  buttonTitle: {
     color: Colors.white,
-    fontSize: windowHeight * 0.02,
-    fontWeight: '600',
+    fontSize: SCREEN_HEIGHT * 0.022,
+    fontWeight: '700',
+    marginBottom: 4,
   },
-  profileButton: {
-    marginRight: windowWidth * 0.03,
-    borderRadius: 30,
-    overflow: 'hidden',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+  buttonSubtitle: {
+    color: Colors.white + '90',
+    fontSize: SCREEN_HEIGHT * 0.016,
   },
-  profileGradient: {
-    padding: 2,
-    borderRadius: 30,
-  },
-  profileImage: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
-  },
-  bottomSheetBackground: {
-    backgroundColor: Colors.dark900,
-  },
-  bottomSheetIndicator: {
-    backgroundColor: Colors.white,
+  iconContainer: {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    borderRadius: 12,
+    padding: 8,
   },
 });
 
