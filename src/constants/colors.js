@@ -1,11 +1,15 @@
 export const Colors = {
   // Base Colors
-  primary: '#3B82F6', // Bright blue as primary color
-  primary100: '#DBEAFE',
-  primary200: '#BFDBFE',
-  primary500: '#3B82F6',
-  primary700: '#1D4ED8',
-  primary900: '#1E3A8A',
+  primary: '#8B5CF6', // Royal Purple
+  primary100: '#F3E8FF',
+  primary200: '#E9D5FF',
+  primary300: '#D8B4FE',
+  primary400: '#C084FC',
+  primary500: '#A855F7',
+  primary600: '#8B5CF6',
+  primary700: '#7C3AED',
+  primary800: '#6D28D9',
+  primary900: '#5B21B6',
 
   // Dark Theme Colors
   dark900: '#161616', // Darkest background
