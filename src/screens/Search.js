@@ -10,37 +10,51 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { Colors } from '../constants/colors';
 
+const EmptyState = ({ searchTerm }) => (
+  <Animated.View entering={FadeIn} style={styles.emptyContainer}>
+    <LinearGradient colors={['#282828', '#161616']} style={styles.emptyCard}>
+      <Icon name="search" size={windowHeight * 0.08} color={Colors.primary} />
+      <Text style={styles.emptyTitle}>{searchTerm ? 'No results found' : 'Search for tales'}</Text>
+      <Text style={styles.emptySubtitle}>
+        {searchTerm
+          ? 'Try different keywords or check spelling'
+          : 'Discover amazing stories in our collection'}
+      </Text>
+    </LinearGradient>
+  </Animated.View>
+);
+
 const SearchScreen = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const { results, loading, error } = useSearch(searchTerm);
   const [isFocused, setIsFocused] = useState(false);
 
-  const renderEmptyState = () => (
-    <Animated.View entering={FadeIn} style={styles.emptyContainer}>
-      <Icon name="search" size={windowHeight * 0.1} color={Colors.gray500} />
-      <Text style={styles.emptyText}>{searchTerm ? 'No results found' : 'Search for tales'}</Text>
-    </Animated.View>
-  );
-
   return (
-    <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.container}>
-      <View style={styles.searchContainer}>
-        <Icon name="search" size={20} color={isFocused ? Colors.white : Colors.gray500} />
-        <TextInput
-          style={[styles.input, isFocused && styles.inputFocused]}
-          placeholder="Search tales..."
-          onChangeText={setSearchTerm}
-          value={searchTerm}
-          placeholderTextColor={Colors.gray500}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-        />
-        {searchTerm && (
-          <TouchableOpacity onPress={() => setSearchTerm('')}>
-            <Icon name="close-outline" size={20} color={Colors.gray500} />
-          </TouchableOpacity>
-        )}
-      </View>
+    <View style={styles.container}>
+      <LinearGradient
+        colors={['#282828', '#161616']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.header}
+      >
+        <View style={styles.searchContainer}>
+          <Icon name="search" size={20} color={isFocused ? Colors.primary : Colors.gray500} />
+          <TextInput
+            style={[styles.input, isFocused && styles.inputFocused]}
+            placeholder="Search tales..."
+            onChangeText={setSearchTerm}
+            value={searchTerm}
+            placeholderTextColor={Colors.gray500}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+          />
+          {searchTerm && (
+            <TouchableOpacity onPress={() => setSearchTerm('')} style={styles.clearButton}>
+              <Icon name="close-circle" size={20} color={Colors.gray500} />
+            </TouchableOpacity>
+          )}
+        </View>
+      </LinearGradient>
 
       {loading ? (
         <LoadingAnimation />
@@ -55,11 +69,12 @@ const SearchScreen = () => {
               <CategoryCard data={item} />
             </Animated.View>
           )}
-          ListEmptyComponent={renderEmptyState}
+          ListEmptyComponent={() => <EmptyState searchTerm={searchTerm} />}
           contentContainerStyle={styles.listContainer}
+          showsVerticalScrollIndicator={false}
         />
       )}
-    </LinearGradient>
+    </View>
   );
 };
 
@@ -68,15 +83,21 @@ const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: Colors.dark900,
+  },
+  header: {
     padding: windowWidth * 0.04,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20,
   },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: Colors.dark500,
+    backgroundColor: Colors.dark900 + '80',
     borderRadius: 12,
     padding: windowWidth * 0.03,
-    marginBottom: windowHeight * 0.02,
+    borderWidth: 1,
+    borderColor: Colors.dark700,
   },
   input: {
     flex: 1,
@@ -88,21 +109,35 @@ const styles = StyleSheet.create({
   inputFocused: {
     color: Colors.white,
   },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: windowHeight * 0.02,
-  },
-  emptyText: {
-    color: Colors.gray500,
-    fontSize: windowHeight * 0.02,
+  clearButton: {
+    padding: 4,
   },
   listContainer: {
-    paddingBottom: windowHeight * 0.02,
+    padding: windowWidth * 0.04,
   },
   cardContainer: {
     marginBottom: windowHeight * 0.02,
+  },
+  emptyContainer: {
+    flex: 1,
+    padding: windowWidth * 0.04,
+  },
+  emptyCard: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: windowHeight * 0.04,
+    borderRadius: 16,
+    gap: windowHeight * 0.02,
+  },
+  emptyTitle: {
+    color: Colors.white,
+    fontSize: windowHeight * 0.024,
+    fontWeight: '600',
+  },
+  emptySubtitle: {
+    color: Colors.gray500,
+    fontSize: windowHeight * 0.016,
+    textAlign: 'center',
   },
 });
 
