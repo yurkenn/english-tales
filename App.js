@@ -14,6 +14,7 @@ import { FontSizeProvider } from './src/store/FontSizeContext';
 
 // Navigation
 import RootNavigator from './src/navigation/RootNavigator';
+import { UserStatsProvider } from './src/store/UserStatsContext';
 
 // Analytics initialization
 vexo(process.env.EXPO_PUBLIC_VEXO_ANALYTICS_KEY);
@@ -25,9 +26,11 @@ SplashScreen.preventAutoHideAsync().catch((err) =>
 
 const AppProviders = ({ children }) => (
   <AuthProvider>
-    <FontSizeProvider>
-      <BookmarkProvider>{children}</BookmarkProvider>
-    </FontSizeProvider>
+    <UserStatsProvider>
+      <FontSizeProvider>
+        <BookmarkProvider>{children}</BookmarkProvider>
+      </FontSizeProvider>
+    </UserStatsProvider>
   </AuthProvider>
 );
 
