@@ -10,7 +10,7 @@ import Icon from '../components/Icons';
 
 const EmptyState = () => (
   <Animated.View entering={FadeInDown.springify()} style={styles.emptyContainer}>
-    <Icon name="bookmark-outline" size={windowHeight * 0.1} color={Colors.gray} />
+    <Icon name="bookmark-outline" size={windowHeight * 0.1} color={Colors.gray500} />
     <Text style={styles.emptyTitle}>No saved tales yet</Text>
     <Text style={styles.emptySubtitle}>Your bookmarked tales will appear here</Text>
   </Animated.View>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   },
   emptySubtitle: {
     fontSize: windowHeight * 0.016,
-    color: Colors.gray,
+    color: Colors.gray500,
   },
 });
 
