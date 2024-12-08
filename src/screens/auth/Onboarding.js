@@ -7,7 +7,7 @@ const Onboarding = ({ navigation }) => {
   const imageList = [
     {
       id: 1,
-      title: 'Explore Diverse Tales',
+      title: 'Explore Diverse Stories',
       description:
         'Discover a wide range of tales spanning different categories, including fantasy, nature, animals, and more, tailored to suit your preferences and interests.',
       image: Images.first,
