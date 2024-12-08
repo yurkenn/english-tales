@@ -9,7 +9,7 @@ export const tabScreens = [
     name: 'Home',
     component: Home,
     options: {
-      headerTitle: 'Read English Tales',
+      headerTitle: 'StoryMagic: Read Short Stories',
       tabBarIcon: ({ focused, color }) => <Icon name="home" size={23} color={color} />,
     },
   },
