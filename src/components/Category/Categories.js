@@ -1,8 +1,7 @@
 import React from 'react';
-import { Dimensions, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View, Text, Image, StyleSheet, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
-import { Image } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -31,12 +30,12 @@ const Categories = ({ data, index }) => {
   );
 };
 
-const { width, height } = Dimensions.get('window');
-const buttonSize = width * 0.25;
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+const BUTTON_SIZE = SCREEN_WIDTH * 0.25;
 
 const styles = StyleSheet.create({
   container: {
-    margin: width * 0.02,
+    margin: SCREEN_WIDTH * 0.02,
     elevation: 4,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -46,20 +45,20 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: buttonSize,
-    height: buttonSize,
+    width: BUTTON_SIZE,
+    height: BUTTON_SIZE,
     borderRadius: 12,
-    padding: width * 0.02,
-    gap: height * 0.01,
+    padding: SCREEN_WIDTH * 0.02,
+    gap: SCREEN_HEIGHT * 0.01,
   },
   icon: {
-    height: buttonSize * 0.4,
-    width: buttonSize * 0.4,
+    height: BUTTON_SIZE * 0.4,
+    width: BUTTON_SIZE * 0.4,
     resizeMode: 'contain',
   },
   categoryName: {
     color: Colors.white,
-    fontSize: width * 0.034,
+    fontSize: SCREEN_WIDTH * 0.034,
     fontWeight: '600',
     textAlign: 'center',
   },
