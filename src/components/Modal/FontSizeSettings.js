@@ -2,10 +2,12 @@ import React from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import Slider from 'react-native-smooth-slider';
 import { Colors } from '../../constants/colors';
-import Icon from '../Icons';
 import Animated, { FadeIn } from 'react-native-reanimated';
+import { useFontSize } from '../../store/FontSizeContext';
 
-const FontSizeSettings = ({ fontSize, changeFontSize }) => {
+const FontSizeSettings = () => {
+  const { fontSize, changeFontSize } = useFontSize();
+
   return (
     <Animated.View entering={FadeIn} style={styles.container}>
       <View style={styles.header}>
@@ -21,15 +23,14 @@ const FontSizeSettings = ({ fontSize, changeFontSize }) => {
         style={styles.slider}
         trackStyle={styles.track}
         thumbStyle={styles.thumb}
-        minimumTrackTintColor={Colors.yellow}
+        minimumTrackTintColor={Colors.primary}
         value={fontSize}
-        minimumValue={10}
-        maximumValue={30}
+        minimumValue={14}
+        maximumValue={24}
         step={1}
-        maximumTrackTintColor={Colors.white}
-        thumbTintColor={Colors.dark500}
+        maximumTrackTintColor={Colors.gray500}
+        thumbTintColor={Colors.white}
         onValueChange={changeFontSize}
-        onSlidingComplete={changeFontSize}
       />
 
       <Text style={styles.sizeValue}>{fontSize}px</Text>
@@ -76,15 +77,15 @@ const styles = StyleSheet.create({
     height: windowHeight * 0.05,
   },
   track: {
-    height: 13,
-    borderRadius: 8,
+    height: 8,
+    borderRadius: 4,
     backgroundColor: Colors.dark500,
   },
   thumb: {
     width: 24,
     height: 24,
     borderRadius: 12,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.primary,
   },
   sizeValue: {
     fontSize: windowWidth * 0.045,
