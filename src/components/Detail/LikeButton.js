@@ -1,6 +1,7 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import Icon from '../Icons';
+import { Colors } from '../../constants/colors';
 
 const LikeButton = ({ hasLiked, isLoading, handleLike, handleUnlike }) => (
   <TouchableOpacity
@@ -11,7 +12,7 @@ const LikeButton = ({ hasLiked, isLoading, handleLike, handleUnlike }) => (
     <Icon
       name={hasLiked ? 'heart' : 'heart-outline'}
       size={24}
-      color={hasLiked ? 'red' : 'white'}
+      color={hasLiked ? Colors.error : Colors.white}
     />
   </TouchableOpacity>
 );
