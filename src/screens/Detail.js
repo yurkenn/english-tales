@@ -1,59 +1,55 @@
-import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import { Colors } from '../constants/colors';
 import FormatReadTime from '../components/FormatReadTime';
 import Toast from 'react-native-toast-message';
 import { LinearGradient } from 'expo-linear-gradient';
-import Animated, { FadeInDown, SlideInRight } from 'react-native-reanimated';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import BookmarkButton from '../Detail/BookmarkButton';
 import LikeButton from '../components/Detail/LikeButton';
 import InfoComponent from '../components/Detail/InfoComponent';
 import SettingsButton from '../components/Detail/SettingsButton';
-import BottomSheet, { BottomSheetScrollView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
+import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { fetchLikes, unlikeTale, updateLikes } from '../utils/sanity-utils';
 import { useBookmark } from '../store/BookmarkContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FontSizeSettings from '../components/Modal/FontSizeSettings';
 import { useFontSize } from '../store/FontSizeContext';
+import Icon from '../components/Icons';
 
 const Detail = ({ route, navigation }) => {
   const { data } = route.params;
   const { bookmarks, toggleBookmark } = useBookmark();
   const [likes, setLikes] = useState(0);
-  const [isLiked, setIsLiked] = useState(false);
   const [hasLiked, setHasLiked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const { fontSize } = useFontSize();
+  const bottomSheetRef = useRef(null);
+  const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+
   const readTime = FormatReadTime(data?.readTime);
   const isBookmarked = bookmarks.find(
     (bookmark) => bookmark?.slug?.current === data?.slug?.current
   );
-  const { fontSize, changeFontSize } = useFontSize();
-  const bottomSheetRef = useRef(null);
-  const snapPoints = ['40%'];
 
-  const renderBackdrop = useCallback(
-    (props) => <BottomSheetBackdrop {...props} disappearsOnIndex={-1} appearsOnIndex={0} />,
-    []
-  );
-
-  const handleOpenModal = () => {
-    bottomSheetRef.current?.expand();
-  };
+  const IMAGE_HEIGHT = SCREEN_HEIGHT * 0.45;
+  const CONTENT_PADDING = SCREEN_WIDTH * 0.05;
+  const TITLE_SIZE = SCREEN_HEIGHT * 0.035;
+  const DESCRIPTION_SIZE = SCREEN_HEIGHT * 0.018;
+  const BUTTON_HEIGHT = SCREEN_HEIGHT * 0.07;
 
   const handleLike = async () => {
     if (!hasLiked) {
-      setIsLiked(true);
-      setLikes(likes + 1);
       setHasLiked(true);
+      setLikes(likes + 1);
       await updateLikes(data._id, likes + 1);
       await AsyncStorage.setItem(`liked_${data._id}`, 'true');
     }
   };
 
   const handleUnlike = async () => {
-    setIsLiked(false);
-    setLikes(likes - 1);
     setHasLiked(false);
+    setLikes(likes - 1);
     await unlikeTale(data._id, likes - 1);
   };
 
@@ -86,6 +82,10 @@ const Detail = ({ route, navigation }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
+      headerTransparent: true,
+      headerStyle: {
+        backgroundColor: 'transparent',
+      },
       headerRight: () => (
         <View style={styles.headerRightContainer}>
           <LikeButton
@@ -95,108 +95,136 @@ const Detail = ({ route, navigation }) => {
             handleUnlike={handleUnlike}
           />
           <BookmarkButton isBookmarked={isBookmarked} handleBookmark={handleBookmark} />
-          <SettingsButton handleOpenModal={handleOpenModal} />
+          <SettingsButton handleOpenModal={() => bottomSheetRef.current?.expand()} />
         </View>
       ),
     });
   }, [hasLiked, isLoading, isBookmarked]);
 
   return (
-    <>
-      <Animated.ScrollView style={styles.container}>
-        <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.gradientContainer}>
-          <Animated.Image
-            entering={FadeInDown.springify()}
-            source={{ uri: data?.imageURL }}
-            style={styles.image}
-          />
+    <View style={styles.container}>
+      {/* Top Gradient for Header */}
+      <LinearGradient
+        colors={['rgba(0,0,0,0.7)', 'rgba(0,0,0,0)']}
+        style={styles.headerGradient}
+        pointerEvents="none"
+      />
 
-          <Animated.View entering={SlideInRight.delay(300)} style={styles.contentContainer}>
-            <Text style={styles.title}>{data?.title}</Text>
-            <InfoComponent readTime={readTime} likes={likes} />
+      {/* Image Section with Gradient */}
+      <View style={[styles.imageContainer, { height: IMAGE_HEIGHT }]}>
+        <Animated.Image
+          entering={FadeInDown.springify()}
+          source={{ uri: data?.imageURL }}
+          style={styles.image}
+        />
+        <LinearGradient
+          colors={['rgba(0,0,0,0)', Colors.dark900]}
+          style={styles.imageGradient}
+          pointerEvents="none"
+        />
+      </View>
 
-            <View style={styles.descriptionContainer}>
-              <Text style={styles.descriptionTitle}>Description</Text>
-              <Text style={styles.description}>{data?.description}</Text>
-            </View>
+      {/* Content Section */}
+      <View style={[styles.contentContainer, { padding: CONTENT_PADDING }]}>
+        <Text style={[styles.title, { fontSize: TITLE_SIZE }]} numberOfLines={2}>
+          {data?.title}
+        </Text>
 
-            <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
-              <LinearGradient colors={['#2A2A2A', '#1F1F1F']} style={styles.buttonGradient}>
-                <Text style={styles.buttonText}>Continue Reading</Text>
-              </LinearGradient>
-            </TouchableOpacity>
-          </Animated.View>
-        </LinearGradient>
-      </Animated.ScrollView>
+        <InfoComponent readTime={readTime} likes={likes} />
+
+        <View style={styles.descriptionContainer}>
+          <Text style={[styles.description, { fontSize: DESCRIPTION_SIZE }]} numberOfLines={4}>
+            {data?.description}
+          </Text>
+        </View>
+
+        <TouchableOpacity
+          onPress={handleReadButton}
+          style={[styles.readButton, { height: BUTTON_HEIGHT }]}
+        >
+          <LinearGradient
+            colors={[Colors.primary, Colors.primary700]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.buttonGradient}
+          >
+            <Icon name="book-outline" size={24} color={Colors.white} style={styles.buttonIcon} />
+            <Text style={styles.buttonText}>Start Reading</Text>
+          </LinearGradient>
+        </TouchableOpacity>
+      </View>
 
       <BottomSheet
         ref={bottomSheetRef}
+        snapPoints={['40%']}
         index={-1}
-        snapPoints={snapPoints}
         enablePanDownToClose
         backgroundStyle={{ backgroundColor: Colors.dark900 }}
         handleIndicatorStyle={{ backgroundColor: Colors.white }}
-        backdropComponent={renderBackdrop}
       >
-        <BottomSheetScrollView>
-          <FontSizeSettings fontSize={fontSize} changeFontSize={changeFontSize} />
-        </BottomSheetScrollView>
+        <FontSizeSettings />
       </BottomSheet>
 
       <Toast />
-    </>
+    </View>
   );
 };
-
-const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
   },
+  headerGradient: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 100,
+    zIndex: 10,
+  },
   headerRightContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: windowWidth * 0.02,
-    marginRight: windowWidth * 0.02,
+    gap: 12,
+    marginRight: 12,
+    backgroundColor: 'rgba(0,0,0,0.3)',
+    padding: 8,
+    borderRadius: 20,
   },
-  gradientContainer: {
-    flex: 1,
-    padding: windowWidth * 0.05,
-    paddingTop: windowHeight * 0.12,
+  imageContainer: {
+    width: '100%',
+    position: 'relative',
   },
   image: {
-    width: windowWidth * 0.9,
-    height: windowHeight * 0.45,
-    borderRadius: 16,
-    alignSelf: 'center',
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
+  },
+  imageGradient: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: '50%',
   },
   contentContainer: {
-    gap: windowHeight * 0.02,
-    marginTop: windowHeight * 0.03,
+    flex: 1,
+    gap: 16,
   },
   title: {
-    fontSize: windowHeight * 0.035,
-    fontWeight: '700',
     color: Colors.white,
+    fontWeight: '700',
     letterSpacing: 0.5,
   },
   descriptionContainer: {
-    gap: windowHeight * 0.01,
-  },
-  descriptionTitle: {
-    fontSize: windowHeight * 0.025,
-    fontWeight: '600',
-    color: Colors.white,
+    flex: 1,
   },
   description: {
-    fontSize: windowHeight * 0.018,
     color: Colors.gray500,
-    lineHeight: windowHeight * 0.028,
+    lineHeight: 24,
   },
   readButton: {
-    marginTop: windowHeight * 0.02,
     borderRadius: 12,
     overflow: 'hidden',
     elevation: 4,
@@ -204,14 +232,21 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
+    marginTop: 'auto',
   },
   buttonGradient: {
-    padding: windowHeight * 0.02,
+    flex: 1,
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+  },
+  buttonIcon: {
+    marginRight: 8,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: windowHeight * 0.02,
+    fontSize: 16,
     fontWeight: '600',
     letterSpacing: 0.5,
   },
