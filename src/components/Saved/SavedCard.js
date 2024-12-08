@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Pressable } from 'react-native';
 import { Colors } from '../../constants/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeIn, SlideOutRight } from 'react-native-reanimated';
@@ -9,12 +9,16 @@ const SavedCard = ({ data, onDelete }) => {
   return (
     <Animated.View entering={FadeIn} exiting={SlideOutRight} style={styles.container}>
       <LinearGradient
-        colors={['#1F1F1F', '#121212']}
+        colors={['#282828', '#161616']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={styles.gradient}
       >
-        <Animated.Image source={{ uri: data?.imageURL }} style={styles.image} />
+        <Animated.Image
+          source={{ uri: data?.imageURL }}
+          style={styles.image}
+          sharedTransitionTag={`image-${data?._id}`}
+        />
 
         <View style={styles.content}>
           <Text style={styles.title} numberOfLines={2}>
@@ -31,11 +35,14 @@ const SavedCard = ({ data, onDelete }) => {
               <Text style={styles.statText}>{data?.readTime}m</Text>
             </View>
             <View style={styles.stat}>
-              <Icon name="heart" size={16} color={Colors.red} />
+              <Icon name="heart" size={16} color={Colors.error} />
               <Text style={styles.statText}>{data?.likes}</Text>
             </View>
-            <Pressable onPress={() => onDelete(data)} style={styles.deleteButton}>
-              <Icon name="trash-outline" size={20} color={Colors.red} />
+            <Pressable
+              onPress={() => onDelete(data)}
+              style={({ pressed }) => [styles.deleteButton, pressed && styles.deleteButtonPressed]}
+            >
+              <Icon name="trash-outline" size={20} color={Colors.error} />
             </Pressable>
           </View>
         </View>
@@ -52,7 +59,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     overflow: 'hidden',
     elevation: 4,
-    shadowColor: '#000',
+    shadowColor: Colors.shadowColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
@@ -65,6 +72,7 @@ const styles = StyleSheet.create({
     width: windowWidth * 0.25,
     height: windowHeight * 0.15,
     borderRadius: 8,
+    backgroundColor: Colors.dark700,
   },
   content: {
     flex: 1,
@@ -100,6 +108,10 @@ const styles = StyleSheet.create({
   deleteButton: {
     marginLeft: 'auto',
     padding: windowWidth * 0.02,
+    borderRadius: windowWidth * 0.02,
+  },
+  deleteButtonPressed: {
+    backgroundColor: Colors.dark700 + '40',
   },
 });
 
