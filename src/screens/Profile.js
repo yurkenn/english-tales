@@ -8,6 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Icon from '../components/Icons';
 import * as ImagePicker from 'expo-image-picker';
 import Toast from 'react-native-toast-message';
+import { AchievementSection } from '../components/Achievement/AchievementSection';
 
 const StatCard = ({ icon, value, label, delay = 0 }) => (
   <Animated.View entering={FadeInDown.delay(delay)} style={styles.statCard}>
@@ -99,6 +100,8 @@ const Profile = () => {
           delay={500}
         />
       </View>
+
+      <AchievementSection achievements={formattedStats.achievements} />
 
       <View style={styles.settingsContainer}>
         <TouchableOpacity style={styles.settingItem} onPress={() => handleLogout()}>
