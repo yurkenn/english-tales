@@ -161,7 +161,7 @@ const Content = ({ route }) => {
             {tale[0]?.title}
           </Text>
 
-          <View style={styles.progressContainer}>
+          {/* <View style={styles.progressContainer}>
             <View style={styles.progressBar}>
               <View
                 style={[
@@ -176,7 +176,7 @@ const Content = ({ route }) => {
             <Text style={[styles.progressText, isCompleted && styles.completedText]}>
               {isCompleted ? 'Completed' : `${Math.round(progress)}% Read`}
             </Text>
-          </View>
+          </View> */}
 
           <TaleContent style={styles.blocks} blocks={tale[0].content} />
         </Animated.View>
