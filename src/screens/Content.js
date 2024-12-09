@@ -5,12 +5,12 @@ import TaleContent from '../components/Content/TaleContent';
 import HeaderNavbar from '../components/Content/HeaderNavbar';
 import { Colors } from '../constants/colors';
 import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
-import { useUserStats } from '../store/UserStatsContext'; // Added this import
+import { useUserStats } from '../store/UserStatsContext';
+import { useReadingProgress } from '../hooks/useReadingProgress';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from '../components/Icons';
-import Toast from 'react-native-toast-message'; // Added this import
+import Toast from 'react-native-toast-message';
 import Animated, {
   FadeInDown,
   FadeIn,
@@ -28,14 +28,18 @@ const Content = ({ route }) => {
   const { width, height } = useWindowDimensions();
   const { slug } = route.params;
   const { loading, error, tale } = useGetTaleBySlug(slug);
-  const { startReading, updateReadingProgress, completeStory } = useUserStats(); // Added useUserStats
+  const { startReading, updateReadingProgress, completeStory } = useUserStats();
+  const { progress, scrollPosition, saveProgress, isCompleted } = useReadingProgress(
+    slug,
+    tale?.[0]
+  );
+
   const scrollY = useSharedValue(0);
   const contentHeight = useSharedValue(0);
   const scrollViewRef = useRef(null);
   const [isContentReady, setIsContentReady] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [readingStartTime, setReadingStartTime] = useState(null);
-  const [currentProgress, setCurrentProgress] = useState(0);
+  const [hasCompletedStory, setHasCompletedStory] = useState(false);
 
   const imageHeight = height * 0.5;
   const headerHeight = height * 0.12;
@@ -44,66 +48,53 @@ const Content = ({ route }) => {
   const contentPadding = height * 0.03;
 
   useEffect(() => {
-    setReadingStartTime(Date.now());
     startReading(slug);
-
     return () => {
-      if (currentProgress === 100) {
-        handleStoryCompletion();
-      } else {
-        updateReadingProgress(slug, currentProgress);
-      }
+      updateReadingProgress(slug, progress);
     };
   }, [slug]);
 
   const handleStoryCompletion = async () => {
-    try {
-      await completeStory(slug);
-      Toast.show({
-        type: 'success',
-        text1: 'Congratulations!',
-        text2: "You've completed this story.",
-      });
-    } catch (error) {
-      console.error('Error completing story:', error);
+    if (!hasCompletedStory) {
+      try {
+        await completeStory(slug);
+        setHasCompletedStory(true);
+        setTimeout(() => {
+          Toast.show({
+            type: 'success',
+            text1: 'Congratulations! 🎉',
+            text2: "You've completed this story!",
+            position: 'bottom',
+            visibilityTime: 3000,
+          });
+        }, 500);
+      } catch (error) {
+        console.error('Error completing story:', error);
+      }
     }
   };
-
-  const saveProgress = useCallback(
-    async (offsetY) => {
-      try {
-        if (contentHeight.value <= 0) return;
-
-        const scrollableHeight = contentHeight.value - height;
-        if (scrollableHeight <= 0) return;
-
-        const progress = Math.min(Math.max((offsetY / scrollableHeight) * 100, 0), 100);
-        setCurrentProgress(progress);
-
-        await Promise.all([
-          AsyncStorage.setItem(`progress_${slug}`, progress.toString()),
-          AsyncStorage.setItem(`scroll_${slug}`, offsetY.toString()),
-        ]);
-
-        if (progress >= 95) {
-          handleStoryCompletion();
-        }
-      } catch (error) {
-        console.error('Error saving progress:', error);
-      }
-    },
-    [slug, height]
-  );
 
   const updateScrollButtonVisibility = useCallback((offsetY) => {
     setShowScrollTop(offsetY > SCROLL_THRESHOLD);
   }, []);
 
+  const handleScroll = useCallback(
+    async (offsetY) => {
+      if (contentHeight.value > 0) {
+        const newProgress = await saveProgress(offsetY, contentHeight.value, height);
+        if (newProgress >= 95 && !hasCompletedStory) {
+          handleStoryCompletion();
+        }
+      }
+    },
+    [contentHeight.value, height, hasCompletedStory]
+  );
+
   const scrollHandler = useAnimatedScrollHandler({
     onScroll: (event) => {
       'worklet';
       scrollY.value = event.contentOffset.y;
-      runOnJS(saveProgress)(event.contentOffset.y);
+      runOnJS(handleScroll)(event.contentOffset.y);
       runOnJS(updateScrollButtonVisibility)(event.contentOffset.y);
     },
   });
@@ -121,32 +112,19 @@ const Content = ({ route }) => {
     return { opacity };
   });
 
-  const restoreReadingPosition = useCallback(async () => {
-    try {
-      const savedPosition = await AsyncStorage.getItem(`scroll_${slug}`);
-      if (savedPosition && scrollViewRef.current) {
-        const position = parseFloat(savedPosition);
-        scrollViewRef.current.scrollTo({ y: position, animated: false });
-      }
-    } catch (error) {
-      console.error('Error restoring position:', error);
-    }
-  }, [slug]);
-
   const onContentLayout = useCallback((event) => {
     contentHeight.value = event.nativeEvent.layout.height;
     setIsContentReady(true);
   }, []);
 
   useEffect(() => {
-    if (isContentReady && scrollViewRef.current) {
+    if (isContentReady && scrollViewRef.current && scrollPosition > 0) {
       const timer = setTimeout(() => {
-        restoreReadingPosition();
+        scrollViewRef.current.scrollTo({ y: scrollPosition, animated: false });
       }, 300);
-
       return () => clearTimeout(timer);
     }
-  }, [isContentReady, restoreReadingPosition]);
+  }, [isContentReady, scrollPosition]);
 
   if (loading) return <LoadingAnimation />;
   if (error) return <ErrorAnimation />;
@@ -183,12 +161,21 @@ const Content = ({ route }) => {
             {tale[0]?.title}
           </Text>
 
-          {/* Added Progress Bar */}
           <View style={styles.progressContainer}>
             <View style={styles.progressBar}>
-              <View style={[styles.progressFill, { width: `${currentProgress}%` }]} />
+              <View
+                style={[
+                  styles.progressFill,
+                  {
+                    width: `${progress}%`,
+                    backgroundColor: isCompleted ? Colors.success : Colors.primary,
+                  },
+                ]}
+              />
             </View>
-            <Text style={styles.progressText}>{Math.round(currentProgress)}% Read</Text>
+            <Text style={[styles.progressText, isCompleted && styles.completedText]}>
+              {isCompleted ? 'Completed' : `${Math.round(progress)}% Read`}
+            </Text>
           </View>
 
           <TaleContent style={styles.blocks} blocks={tale[0].content} />
@@ -238,25 +225,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.white,
   },
-  scrollTopButton: {
-    position: 'absolute',
-    bottom: 20,
-    right: 20,
-    backgroundColor: Colors.primary,
-    borderRadius: 30,
-    elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  },
-  scrollTopTouchable: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   progressContainer: {
     marginVertical: 15,
     padding: 10,
@@ -279,6 +247,25 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 5,
     textAlign: 'center',
+  },
+  scrollTopButton: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20,
+    backgroundColor: Colors.primary,
+    borderRadius: 30,
+    elevation: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  scrollTopTouchable: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
