@@ -62,9 +62,15 @@ const Home = ({ navigation }) => {
         try {
           const value = await AsyncStorage.getItem('lastRead');
           if (value !== null) {
-            setLastRead(JSON.parse(value));
+            const parsedData = JSON.parse(value);
+            console.log('Last read data:', parsedData); // Debug log
+            if (!parsedData.imageURL) {
+              console.warn('Missing imageURL in lastRead data');
+            }
+            setLastRead(parsedData);
           }
         } catch (error) {
+          console.error('Error retrieving last read:', error);
           Alert.alert('Error', 'There was an issue retrieving your last read story.');
         }
       };
