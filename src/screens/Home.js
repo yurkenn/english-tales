@@ -63,7 +63,6 @@ const Home = ({ navigation }) => {
           const value = await AsyncStorage.getItem('lastRead');
           if (value !== null) {
             const parsedData = JSON.parse(value);
-            console.log('Last read data:', parsedData); // Debug log
             if (!parsedData.imageURL) {
               console.warn('Missing imageURL in lastRead data');
             }
