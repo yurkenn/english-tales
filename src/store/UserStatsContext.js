@@ -1,145 +1,165 @@
-// src/store/UserStatsContext.js
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const UserStatsContext = createContext();
 
+export const useUserStats = () => useContext(UserStatsContext);
+
+// Define reader levels
+const READER_LEVELS = {
+  1: { title: 'Novice Reader', requirement: 0 },
+  2: { title: 'Bookworm', requirement: 5 },
+  3: { title: 'Story Explorer', requirement: 10 },
+  4: { title: 'Tale Master', requirement: 20 },
+  5: { title: 'Legend Reader', requirement: 30 },
+};
+
 export const UserStatsProvider = ({ children }) => {
-  const [userStats, setUserStats] = useState({
+  const [stats, setStats] = useState({
     storiesRead: 0,
-    totalTimeSpent: 0, // in minutes
-    completedStories: [], // array of story IDs
-    lastReadTimestamps: {}, // { storyId: timestamp }
-    readingProgress: {}, // { storyId: percentage }
+    timeSpent: 0, // in minutes
+    currentStreak: 0,
+    longestStreak: 0,
+    lastReadDate: null,
+    completedStories: new Set(),
+    readingProgress: {}, // stores progress for each story
+    achievements: new Set(),
   });
 
   // Load stats on mount
   useEffect(() => {
-    loadUserStats();
+    loadStats();
   }, []);
 
-  // Save stats whenever they change
-  useEffect(() => {
-    saveUserStats();
-  }, [userStats]);
-
-  const loadUserStats = async () => {
+  // Load stats from AsyncStorage
+  const loadStats = async () => {
     try {
-      const savedStats = await AsyncStorage.getItem('userReadingStats');
+      const savedStats = await AsyncStorage.getItem('userStats');
       if (savedStats) {
-        setUserStats(JSON.parse(savedStats));
+        const parsedStats = JSON.parse(savedStats);
+        // Convert arrays back to Sets
+        setStats({
+          ...parsedStats,
+          completedStories: new Set(parsedStats.completedStories),
+          achievements: new Set(parsedStats.achievements),
+        });
       }
     } catch (error) {
       console.error('Error loading user stats:', error);
     }
   };
 
-  const saveUserStats = async () => {
+  // Save stats to AsyncStorage
+  const saveStats = async (newStats) => {
     try {
-      await AsyncStorage.setItem('userReadingStats', JSON.stringify(userStats));
+      const statsToSave = {
+        ...newStats,
+        completedStories: Array.from(newStats.completedStories),
+        achievements: Array.from(newStats.achievements),
+      };
+      await AsyncStorage.setItem('userStats', JSON.stringify(statsToSave));
     } catch (error) {
       console.error('Error saving user stats:', error);
     }
   };
 
-  const startReading = async (storyId) => {
-    setUserStats((prev) => ({
-      ...prev,
-      lastReadTimestamps: {
-        ...prev.lastReadTimestamps,
-        [storyId]: Date.now(),
-      },
-    }));
-  };
+  // Update streak
+  const updateStreak = () => {
+    const today = new Date().toDateString();
+    const lastRead = stats.lastReadDate ? new Date(stats.lastReadDate).toDateString() : null;
 
-  const updateReadingProgress = async (storyId, progress) => {
-    setUserStats((prev) => ({
-      ...prev,
-      readingProgress: {
-        ...prev.readingProgress,
-        [storyId]: progress,
-      },
-    }));
-  };
+    if (!lastRead || lastRead !== today) {
+      const isConsecutiveDay = lastRead === new Date(Date.now() - 86400000).toDateString();
+      const newStreak = isConsecutiveDay ? stats.currentStreak + 1 : 1;
+      const newLongestStreak = Math.max(newStreak, stats.longestStreak);
 
-  const completeStory = async (storyId) => {
-    const startTime = userStats.lastReadTimestamps[storyId];
-    if (startTime) {
-      const timeSpent = Math.floor((Date.now() - startTime) / 60000); // Convert to minutes
-
-      setUserStats((prev) => ({
-        ...prev,
-        storiesRead: prev.storiesRead + 1,
-        totalTimeSpent: prev.totalTimeSpent + timeSpent,
-        completedStories: [...prev.completedStories, storyId],
-        readingProgress: {
-          ...prev.readingProgress,
-          [storyId]: 100,
-        },
-      }));
+      setStats((prevStats) => {
+        const newStats = {
+          ...prevStats,
+          currentStreak: newStreak,
+          longestStreak: newLongestStreak,
+          lastReadDate: today,
+        };
+        saveStats(newStats);
+        return newStats;
+      });
     }
   };
 
-  const getFormattedStats = () => {
-    const totalHours = Math.floor(userStats.totalTimeSpent / 60);
-    const remainingMinutes = userStats.totalTimeSpent % 60;
-    const timeSpentFormatted =
-      totalHours > 0 ? `${totalHours}h ${remainingMinutes}m` : `${remainingMinutes}m`;
+  // Start reading a story
+  const startReading = (storyId) => {
+    updateStreak();
+  };
 
-    const totalStories = Object.keys(userStats.readingProgress).length;
-    const completionRate =
-      totalStories > 0 ? Math.round((userStats.completedStories.length / totalStories) * 100) : 0;
+  // Update reading progress for a story
+  const updateReadingProgress = (storyId, progress) => {
+    setStats((prevStats) => {
+      const newStats = {
+        ...prevStats,
+        readingProgress: {
+          ...prevStats.readingProgress,
+          [storyId]: progress,
+        },
+        timeSpent: prevStats.timeSpent + 1, // Increment reading time
+      };
+      saveStats(newStats);
+      return newStats;
+    });
+  };
+
+  // Mark a story as completed
+  const completeStory = async (storyId) => {
+    setStats((prevStats) => {
+      const newCompletedStories = new Set(prevStats.completedStories).add(storyId);
+      const newStats = {
+        ...prevStats,
+        completedStories: newCompletedStories,
+        storiesRead: prevStats.storiesRead + 1,
+      };
+      saveStats(newStats);
+      return newStats;
+    });
+  };
+
+  // Calculate reader level based on stories read
+  const calculateReaderLevel = () => {
+    const storiesCount = stats.storiesRead;
+    let level = 1;
+
+    for (const [lvl, data] of Object.entries(READER_LEVELS)) {
+      if (storiesCount >= data.requirement) {
+        level = Number(lvl);
+      } else {
+        break;
+      }
+    }
 
     return {
-      storiesRead: userStats.storiesRead.toString(),
-      timeSpent: timeSpentFormatted,
-      completion: `${completionRate}%`,
-      achievements: calculateAchievements(),
+      level,
+      title: READER_LEVELS[level].title,
+      nextLevelRequirement:
+        READER_LEVELS[level + 1]?.requirement || READER_LEVELS[level].requirement,
     };
   };
 
-  const calculateAchievements = () => {
-    let achievements = 0;
-
-    // Reading milestones
-    if (userStats.storiesRead >= 5) achievements++;
-    if (userStats.storiesRead >= 10) achievements++;
-    if (userStats.storiesRead >= 25) achievements++;
-
-    // Time spent milestones (in hours)
-    const hoursSpent = userStats.totalTimeSpent / 60;
-    if (hoursSpent >= 1) achievements++;
-    if (hoursSpent >= 5) achievements++;
-    if (hoursSpent >= 10) achievements++;
-
-    // Completion rate milestones
-    const completionRate =
-      userStats.completedStories.length / Object.keys(userStats.readingProgress).length;
-    if (completionRate >= 0.5) achievements++;
-    if (completionRate >= 0.8) achievements++;
-
-    return achievements.toString();
+  // Format stats for display
+  const formattedStats = {
+    storiesRead: stats.storiesRead.toString(),
+    timeSpent: `${Math.floor(stats.timeSpent / 60)}h ${stats.timeSpent % 60}m`,
+    currentStreak: `${stats.currentStreak} days`,
+    achievementProgress: Math.round(
+      (stats.achievements.size / Object.keys(READER_LEVELS).length) * 100
+    ),
+    readerLevel: calculateReaderLevel(),
   };
 
-  return (
-    <UserStatsContext.Provider
-      value={{
-        stats: userStats,
-        formattedStats: getFormattedStats(),
-        startReading,
-        updateReadingProgress,
-        completeStory,
-      }}
-    >
-      {children}
-    </UserStatsContext.Provider>
-  );
-};
+  const value = {
+    stats,
+    formattedStats,
+    startReading,
+    updateReadingProgress,
+    completeStory,
+  };
 
-export const useUserStats = () => {
-  const context = useContext(UserStatsContext);
-  if (!context) {
-    throw new Error('useUserStats must be used within a UserStatsProvider');
-  }
-  return context;
+  return <UserStatsContext.Provider value={value}>{children}</UserStatsContext.Provider>;
 };
