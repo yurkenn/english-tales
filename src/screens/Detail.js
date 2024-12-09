@@ -16,6 +16,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import FontSizeSettings from '../components/Modal/FontSizeSettings';
 import { useFontSize } from '../store/FontSizeContext';
 import Icon from '../components/Icons';
+import { urlFor } from '../../sanity';
 
 const Detail = ({ route, navigation }) => {
   const { data } = route.params;
@@ -64,8 +65,20 @@ const Detail = ({ route, navigation }) => {
   };
 
   const handleReadButton = async () => {
-    navigation.navigate('Content', { slug: data.slug.current });
-    await AsyncStorage.setItem('lastRead', JSON.stringify(data));
+    try {
+      const lastReadData = {
+        ...data,
+        // Make sure to convert the Sanity image URL to a string
+        imageURL: data.imageURL ? urlFor(data.imageURL).url() : null,
+        progress: 0,
+        lastReadAt: new Date().toISOString(),
+      };
+
+      await AsyncStorage.setItem('lastRead', JSON.stringify(lastReadData));
+      navigation.navigate('Content', { slug: data.slug.current });
+    } catch (error) {
+      console.error('Error saving last read:', error);
+    }
   };
 
   useEffect(() => {
