@@ -9,18 +9,8 @@ import Icon from '../components/Icons';
 import * as ImagePicker from 'expo-image-picker';
 import Toast from 'react-native-toast-message';
 import { AchievementSection } from '../components/Achievement/AchievementSection';
-
-const StatCard = ({ icon, value, label, delay = 0 }) => (
-  <Animated.View entering={FadeInDown.delay(delay)} style={styles.statCard}>
-    <LinearGradient colors={['#2A2D3A', '#1F222E']} style={styles.statGradient}>
-      <View style={styles.statIconContainer}>
-        <Icon name={icon} size={24} color={Colors.primary} />
-      </View>
-      <Text style={styles.statValue}>{value}</Text>
-      <Text style={styles.statLabel}>{label}</Text>
-    </LinearGradient>
-  </Animated.View>
-);
+import StatCard from '../components/Profile/StatCard';
+import { wp, hp, scale, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
 
 const Profile = () => {
   const { userInfo, updateUserInfo, handleLogout } = useContext(AuthContext);
@@ -118,8 +108,6 @@ const Profile = () => {
   );
 };
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -127,19 +115,19 @@ const styles = StyleSheet.create({
   },
   header: {
     alignItems: 'center',
-    paddingVertical: SCREEN_HEIGHT * 0.04,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    paddingVertical: hp(4),
+    borderBottomLeftRadius: scale(30),
+    borderBottomRightRadius: scale(30),
   },
   imageContainer: {
     position: 'relative',
-    marginBottom: SCREEN_HEIGHT * 0.02,
+    marginBottom: hp(2),
   },
   profileImage: {
-    width: SCREEN_WIDTH * 0.25,
-    height: SCREEN_WIDTH * 0.25,
-    borderRadius: SCREEN_WIDTH * 0.125,
-    borderWidth: 3,
+    width: wp(25),
+    height: wp(25),
+    borderRadius: wp(12.5),
+    borderWidth: scale(3),
     borderColor: Colors.primary,
   },
   editBadge: {
@@ -147,88 +135,60 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
     backgroundColor: Colors.primary,
-    padding: 8,
-    borderRadius: 12,
-    borderWidth: 3,
+    padding: spacing.sm,
+    borderRadius: layout.borderRadius,
+    borderWidth: scale(3),
     borderColor: Colors.dark900,
   },
   userName: {
-    fontSize: SCREEN_HEIGHT * 0.028,
+    fontSize: fontSizes.xxxl,
     fontWeight: '700',
     color: Colors.white,
-    marginBottom: 5,
+    marginBottom: spacing.xs,
   },
   userEmail: {
-    fontSize: SCREEN_HEIGHT * 0.016,
+    fontSize: fontSizes.sm,
     color: Colors.gray500,
-    marginBottom: SCREEN_HEIGHT * 0.02,
+    marginBottom: hp(2),
   },
   levelBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: Colors.primary + '20',
-    paddingHorizontal: SCREEN_WIDTH * 0.04,
-    paddingVertical: SCREEN_HEIGHT * 0.01,
-    borderRadius: 20,
-    gap: 6,
+    paddingHorizontal: wp(4),
+    paddingVertical: hp(1),
+    borderRadius: scale(20),
+    gap: spacing.xs,
   },
   levelText: {
     color: Colors.primary,
-    fontSize: SCREEN_HEIGHT * 0.016,
+    fontSize: fontSizes.sm,
     fontWeight: '600',
   },
   statsGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    padding: SCREEN_WIDTH * 0.04,
-    gap: SCREEN_WIDTH * 0.04,
-  },
-  statCard: {
-    width: (SCREEN_WIDTH - SCREEN_WIDTH * 0.12) / 2,
-    borderRadius: 12,
-    overflow: 'hidden',
-  },
-  statGradient: {
-    padding: SCREEN_WIDTH * 0.04,
-    alignItems: 'center',
-  },
-  statIconContainer: {
-    width: SCREEN_WIDTH * 0.12,
-    height: SCREEN_WIDTH * 0.12,
-    borderRadius: SCREEN_WIDTH * 0.06,
-    backgroundColor: Colors.primary + '20',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: SCREEN_HEIGHT * 0.01,
-  },
-  statValue: {
-    fontSize: SCREEN_HEIGHT * 0.024,
-    fontWeight: '700',
-    color: Colors.white,
-    marginBottom: 4,
-  },
-  statLabel: {
-    fontSize: SCREEN_HEIGHT * 0.014,
-    color: Colors.gray500,
+    padding: spacing.md,
+    gap: wp(4),
   },
   settingsContainer: {
-    padding: SCREEN_WIDTH * 0.04,
+    padding: spacing.md,
   },
   settingItem: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     backgroundColor: Colors.dark500,
-    padding: SCREEN_WIDTH * 0.04,
-    borderRadius: 12,
+    padding: spacing.md,
+    borderRadius: layout.borderRadius,
   },
   settingLeft: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: SCREEN_WIDTH * 0.03,
+    gap: wp(3),
   },
   settingText: {
-    fontSize: SCREEN_HEIGHT * 0.018,
+    fontSize: fontSizes.md,
     fontWeight: '500',
   },
 });

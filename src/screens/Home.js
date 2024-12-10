@@ -1,60 +1,42 @@
-import React, { useCallback, useState } from 'react';
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Dimensions,
-  ScrollView,
-  Alert,
-} from 'react-native';
-import { Colors } from '../constants/colors';
+// src/screens/Home.js
+import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
+import React, { useCallback, useMemo } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { FlashList } from '@shopify/flash-list';
+
+// Components
 import FeaturedStories from '../components/Home/FeaturedStories';
 import Categories from '../components/Category/Categories';
-import ContinueReading from '../components/Home/ContinueReading';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
+import ContinueReading from '../components/Home/ContinueReading';
+
+// Hooks
 import useGetFeaturedStories from '../hooks/useGetFeaturedStories';
 import useGetCategories from '../hooks/useGetCategories';
 import useGetAllTales from '../hooks/useGetAllTales';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useFocusEffect } from '@react-navigation/native';
-import Icon from '../components/Icons';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+// Utils and Constants
+import { Colors } from '../constants/colors';
+import { wp, hp, fontSizes, spacing, layout } from '../utils/dimensions';
+import ExploreAllButton from '../components/ExploreAllButton';
 
-const FEATURED_ITEM_SIZE = SCREEN_WIDTH * 0.5;
-const CATEGORY_ITEM_SIZE = SCREEN_WIDTH * 0.25;
-
-const ExploreAllButton = ({ onPress }) => (
-  <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={styles.exploreButtonContainer}>
-    <LinearGradient
-      colors={[Colors.primary, Colors.primary700]}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
-      style={styles.exploreButton}
-    >
-      <View style={styles.buttonContent}>
-        <View style={styles.buttonLeftContent}>
-          <Text style={styles.buttonTitle}>Explore All Stories</Text>
-          <Text style={styles.buttonSubtitle}>Discover more stories</Text>
-        </View>
-        <View style={styles.iconContainer}>
-          <Icon name="arrow-forward" size={24} color={Colors.white} />
-        </View>
-      </View>
+const LoadingPlaceholder = () => (
+  <View style={styles.loadingContainer}>
+    <LinearGradient colors={['#1F1F1F', '#2A2A2A', '#1F1F1F']} style={styles.loadingGradient}>
+      <LoadingAnimation />
     </LinearGradient>
-  </TouchableOpacity>
+  </View>
 );
 
 const Home = ({ navigation }) => {
   const { featuredStories, loading: storiesLoading, error: storiesError } = useGetFeaturedStories();
   const { categories } = useGetCategories();
   const getAllTales = useGetAllTales();
-  const [lastRead, setLastRead] = useState(null);
+  const [lastRead, setLastRead] = React.useState(null);
 
   useFocusEffect(
     useCallback(() => {
@@ -62,23 +44,18 @@ const Home = ({ navigation }) => {
         try {
           const value = await AsyncStorage.getItem('lastRead');
           if (value !== null) {
-            const parsedData = JSON.parse(value);
-            if (!parsedData.imageURL) {
-              console.warn('Missing imageURL in lastRead data');
-            }
-            setLastRead(parsedData);
+            setLastRead(JSON.parse(value));
           }
         } catch (error) {
-          console.error('Error retrieving last read:', error);
           Alert.alert('Error', 'There was an issue retrieving your last read story.');
         }
       };
 
       getLastRead();
-    }, [navigation])
+    }, [])
   );
 
-  if (storiesLoading) return <LoadingAnimation />;
+  if (storiesLoading) return <LoadingPlaceholder />;
   if (storiesError) return <ErrorAnimation />;
 
   return (
@@ -88,31 +65,27 @@ const Home = ({ navigation }) => {
       contentContainerStyle={styles.contentContainer}
     >
       <Animated.View entering={FadeInDown.delay(400)} style={styles.featureContainer}>
-        <Text style={styles.sectionTitle}>Featured Stories</Text>
-        <View style={styles.featuredListContainer}>
-          <FlashList
-            data={featuredStories}
-            estimatedItemSize={FEATURED_ITEM_SIZE}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => (
-              <FeaturedStories data={item} navigation={navigation} index={index} />
-            )}
-          />
-        </View>
+        <Text style={styles.sectionTitle}>Featured Tales</Text>
+        <FlashList
+          data={featuredStories}
+          estimatedItemSize={200}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => (
+            <FeaturedStories data={item} navigation={navigation} index={index} />
+          )}
+        />
       </Animated.View>
 
       <Animated.View entering={FadeInDown.delay(600)} style={styles.categoriesContainer}>
         <Text style={styles.sectionTitle}>Categories</Text>
-        <View style={styles.categoriesListContainer}>
-          <FlashList
-            data={categories}
-            estimatedItemSize={CATEGORY_ITEM_SIZE}
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => <Categories data={item} index={index} />}
-          />
-        </View>
+        <FlashList
+          data={categories}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          estimatedItemSize={100}
+          renderItem={({ item, index }) => <Categories data={item} index={index} />}
+        />
       </Animated.View>
 
       <Animated.View entering={FadeInDown.delay(800)} style={styles.myStoriesContainer}>
@@ -120,11 +93,9 @@ const Home = ({ navigation }) => {
         <ContinueReading lastRead={lastRead} />
       </Animated.View>
 
-      <Animated.View entering={FadeInDown.delay(1000)} style={styles.exploreContainer}>
-        <ExploreAllButton
-          onPress={() => navigation.navigate('AllTales', { data: getAllTales.allTales })}
-        />
-      </Animated.View>
+      <ExploreAllButton
+        onPress={() => navigation.navigate('AllTales', { data: getAllTales.allTales })}
+      />
     </ScrollView>
   );
 };
@@ -135,70 +106,37 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.dark900,
   },
   contentContainer: {
-    paddingTop: SCREEN_HEIGHT * 0.02,
-    paddingBottom: SCREEN_HEIGHT * 0.02,
+    paddingVertical: hp(2),
+    paddingHorizontal: wp(2),
   },
-  featuredListContainer: {
-    height: SCREEN_HEIGHT * 0.32,
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.dark900,
   },
-  categoriesListContainer: {
-    height: SCREEN_HEIGHT * 0.15,
+  loadingGradient: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  featureContainer: {
+    marginBottom: hp(3),
+  },
+  categoriesContainer: {
+    marginVertical: hp(2),
+  },
+  myStoriesContainer: {
+    paddingHorizontal: wp(3),
+    marginBottom: hp(2),
   },
   sectionTitle: {
     color: Colors.white,
-    fontSize: SCREEN_HEIGHT * 0.024,
+    fontSize: fontSizes.xl,
     fontWeight: '600',
-    marginBottom: SCREEN_HEIGHT * 0.012,
-    paddingHorizontal: SCREEN_WIDTH * 0.05,
-  },
-  featureContainer: {
-    marginBottom: SCREEN_HEIGHT * 0.02,
-  },
-  categoriesContainer: {
-    marginBottom: SCREEN_HEIGHT * 0.02,
-  },
-  myStoriesContainer: {
-    paddingHorizontal: SCREEN_WIDTH * 0.02,
-    marginBottom: SCREEN_HEIGHT * 0.02,
-  },
-  exploreContainer: {
-    paddingHorizontal: SCREEN_WIDTH * 0.05,
-  },
-  exploreButtonContainer: {
-    borderRadius: 16,
-    overflow: 'hidden',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-  },
-  exploreButton: {
-    width: '100%',
-    padding: SCREEN_WIDTH * 0.04,
-  },
-  buttonContent: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  buttonLeftContent: {
-    flex: 1,
-  },
-  buttonTitle: {
-    color: Colors.white,
-    fontSize: SCREEN_HEIGHT * 0.022,
-    fontWeight: '700',
-    marginBottom: 4,
-  },
-  buttonSubtitle: {
-    color: Colors.white + '90',
-    fontSize: SCREEN_HEIGHT * 0.016,
-  },
-  iconContainer: {
-    backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    borderRadius: 12,
-    padding: 8,
+    marginBottom: hp(2),
+    paddingHorizontal: wp(3),
   },
 });
 

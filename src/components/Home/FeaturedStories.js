@@ -1,13 +1,23 @@
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Colors } from '../../constants/colors';
 import { urlFor } from '../../../sanity';
 import FormatReadTime from '../FormatReadTime';
 import InfoContainer from './InfoContainer';
-import Animated, { FadeInRight, withSpring } from 'react-native-reanimated';
+import Animated, { FadeInRight } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
+import { wp, hp, isSmallDevice, deviceWidth } from '../../utils/dimensions';
 
 const FeaturedStories = ({ data, navigation, index }) => {
+  const [dimensions, setDimensions] = useState({ width: deviceWidth });
+
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener('change', ({ window }) => {
+      setDimensions(window);
+    });
+    return () => subscription?.remove();
+  }, []);
+
   const goDetailScreen = () => {
     if (data?.tales?.[0]) {
       navigation.navigate('Detail', { data: data.tales[0] });
@@ -36,11 +46,9 @@ const FeaturedStories = ({ data, navigation, index }) => {
   );
 };
 
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   animatedContainer: {
-    marginHorizontal: width * 0.02,
+    marginHorizontal: wp(2),
     elevation: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -52,8 +60,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   image: {
-    height: width * 0.7,
-    width: width * 0.5,
+    height: isSmallDevice ? hp(28) : hp(32),
+    width: isSmallDevice ? wp(40) : wp(50),
     resizeMode: 'cover',
   },
   gradient: {
@@ -63,14 +71,14 @@ const styles = StyleSheet.create({
     right: 0,
     height: '50%',
     justifyContent: 'flex-end',
-    padding: width * 0.03,
+    padding: isSmallDevice ? wp(2.5) : wp(3),
   },
   contentContainer: {
-    gap: height * 0.01,
+    gap: hp(1),
   },
   title: {
     color: Colors.white,
-    fontSize: width * 0.042,
+    fontSize: isSmallDevice ? wp(3.8) : wp(4.2),
     fontWeight: '700',
     letterSpacing: 0.3,
   },
