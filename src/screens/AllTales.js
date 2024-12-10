@@ -1,27 +1,39 @@
-import { Dimensions, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import CategoryCard from '../components/Category/CategoryCard';
 import { FlashList } from '@shopify/flash-list';
+import { LinearGradient } from 'expo-linear-gradient';
+import { Colors } from '../constants/colors';
+import { scale, spacing, wp, isSmallDevice } from '../utils/dimensions';
 
 const AllTales = ({ route }) => {
   const { data } = route.params;
 
-  const renderItem = ({ item, index }) => <CategoryCard index={index} data={item} />;
+  const renderItem = ({ item, index }) => <CategoryCard data={item} index={index} />;
 
   return (
-    <View style={styles.container}>
-      <FlashList data={data} renderItem={renderItem} estimatedItemSize={200} />
-    </View>
+    <LinearGradient colors={[Colors.dark500, Colors.dark900]} style={styles.container}>
+      <FlashList
+        data={data}
+        renderItem={renderItem}
+        estimatedItemSize={200}
+        contentContainerStyle={styles.listContainer}
+        showsVerticalScrollIndicator={false}
+      />
+    </LinearGradient>
   );
 };
-
-export default AllTales;
-
-const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: width * 0.025, // Padding as 2.5% of screen width
+    backgroundColor: Colors.dark900,
+  },
+  listContainer: {
+    paddingHorizontal: spacing.md,
+    paddingTop: spacing.sm,
+    paddingBottom: spacing.xl,
   },
 });
+
+export default AllTales;

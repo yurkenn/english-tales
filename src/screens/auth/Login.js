@@ -1,227 +1,224 @@
+import React, { useState } from 'react';
 import {
-  Dimensions,
-  Image,
+  View,
+  Text,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
   TouchableOpacity,
-  View,
+  StyleSheet,
 } from 'react-native';
 import { Formik } from 'formik';
 import { loginValidationSchema } from '../../components/Auth/Validation';
 import { AuthContext } from '../../store/AuthContext';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import * as WebBrowser from 'expo-web-browser';
 import { Colors } from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
-import Icon from '../../components/Icons';
 import CustomInput from '../../components/CustomInput';
+import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
+import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
 
 WebBrowser.maybeCompleteAuthSession();
 
 const Login = ({ navigation }) => {
   const authContext = useContext(AuthContext);
   const promptAsync = authContext.promptAsync;
-
   const [focusedInput, setFocusedInput] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (values) => {
-    authContext.handleLogin(values);
+    try {
+      setIsLoading(true);
+      await authContext.handleLogin(values);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  //TODO: Forgot password
+  const handleForgotPassword = () => {
+    navigation.navigate('ResetPassword'); // Make sure to add this screen to your navigation stack
+  };
+
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : null}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <Image source={require('../../../assets/images/login-image.png')} style={styles.image} />
-        <Text style={styles.title}>StoryMagic: Read Short Stories</Text>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+        <Animated.View entering={FadeIn.duration(1000)} style={styles.headerContainer}>
+          <Text style={styles.welcomeText}>Welcome back</Text>
+          <Text style={styles.subtitle}>Sign in to continue reading</Text>
+        </Animated.View>
 
         <Formik
           initialValues={{ email: '', password: '' }}
           onSubmit={handleSubmit}
           validationSchema={loginValidationSchema}
         >
-          {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-            <View style={styles.inner_container}>
-              <Text style={styles.subtitle}>Email</Text>
-              <CustomInput
-                placeholder="Enter your email"
-                onChangeText={handleChange('email')}
-                value={values.email}
-                icon="mail"
-                onPress={() => {}}
-                isSecure={false}
-              />
-              {errors.email && focusedInput === 'email' && (
-                <Text style={styles.errors}>{errors.email}</Text>
-              )}
-              <Text style={styles.subtitle}>Password</Text>
-              <CustomInput
-                placeholder="Enter your password"
-                onChangeText={handleChange('password')}
-                value={values.password}
-                icon="lock-closed"
-                onPress={() => {}}
-                isSecure={true}
-              />
-              {errors.password && focusedInput === 'password' && (
-                <Text style={styles.errors}>{errors.password}</Text>
-              )}
-              <CustomButton
-                onPress={handleSubmit}
-                title="Log In"
-                style={styles.button}
-                textStyle={styles.buttonText}
-              />
-              {/* <View>
-                <Text style={styles.infoText}>Forgot password?</Text>
-              </View> */}
-              <View style={styles.orContainer}>
-                <View style={styles.line} />
-                <Text style={styles.orText}>or</Text>
-                <View style={styles.line} />
+          {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
+            <Animated.View
+              entering={FadeInDown.duration(1000).delay(200)}
+              style={styles.formContainer}
+            >
+              <View style={styles.inputGroup}>
+                <CustomInput
+                  placeholder="Email"
+                  onChangeText={handleChange('email')}
+                  value={values.email}
+                  onFocus={() => setFocusedInput('email')}
+                  onBlur={() => {
+                    setFocusedInput(null);
+                    handleBlur('email');
+                  }}
+                  icon="mail"
+                  error={touched.email && errors.email}
+                  autoCapitalize="none"
+                  keyboardType="email-address"
+                />
+                {touched.email && errors.email && (
+                  <Text style={styles.errorText}>{errors.email}</Text>
+                )}
+
+                <View style={styles.passwordContainer}>
+                  <CustomInput
+                    placeholder="Password"
+                    onChangeText={handleChange('password')}
+                    value={values.password}
+                    onFocus={() => setFocusedInput('password')}
+                    onBlur={() => {
+                      setFocusedInput(null);
+                      handleBlur('password');
+                    }}
+                    icon="lock-closed"
+                    isSecure={true}
+                    error={touched.password && errors.password}
+                  />
+                  {touched.password && errors.password && (
+                    <Text style={styles.errorText}>{errors.password}</Text>
+                  )}
+                  <TouchableOpacity
+                    onPress={handleForgotPassword}
+                    style={styles.forgotPasswordButton}
+                  >
+                    <Text style={styles.forgotPasswordText}>Forgot password?</Text>
+                  </TouchableOpacity>
+                </View>
               </View>
-              <CustomButton
-                onPress={() => promptAsync()}
-                title="Continue with Google"
-                style={styles.googleButton}
-                textStyle={styles.buttonText}
-                imageSource={require('../../../assets/images/google.png')}
-                imageStyle={styles.googleIcon}
-              />
-              <View style={styles.signupContainer}>
-                <Text style={styles.signupInfo}>Don't you have an account?</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-                  <Text style={styles.signupText}>Sign up</Text>
-                </TouchableOpacity>
+
+              <View style={styles.buttonGroup}>
+                <CustomButton onPress={handleSubmit} title="Sign In" loading={isLoading} />
+
+                <View style={styles.dividerContainer}>
+                  <View style={styles.divider} />
+                  <Text style={styles.dividerText}>or</Text>
+                  <View style={styles.divider} />
+                </View>
+
+                <CustomButton
+                  onPress={() => promptAsync()}
+                  title="Continue with Google"
+                  variant="outlined"
+                  imageSource={require('../../../assets/images/google.png')}
+                />
               </View>
-            </View>
+            </Animated.View>
           )}
         </Formik>
+
+        <Animated.View entering={FadeInDown.duration(1000).delay(400)} style={styles.footer}>
+          <Text style={styles.footerText}>Don't have an account?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+            <Text style={styles.signupText}>Sign up</Text>
+          </TouchableOpacity>
+        </Animated.View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
 };
 
-export default Login;
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: windowWidth * 0.1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: Colors.dark900,
   },
-  image: {
-    width: windowWidth * 0.8,
-    height: windowHeight * 0.31,
-    resizeMode: 'contain',
+  scrollContent: {
+    flexGrow: 1,
+    paddingHorizontal: spacing.lg,
+    paddingTop: hp(8),
+    paddingBottom: spacing.xl,
   },
-  title: {
-    fontWeight: '600',
+  headerContainer: {
+    marginBottom: spacing.xxl,
+  },
+  welcomeText: {
+    fontSize: fontSizes.xxxl,
+    fontWeight: '700',
     color: Colors.white,
-    textAlign: 'center',
-  },
-  inner_container: {
-    flex: 1,
+    marginBottom: spacing.xs,
   },
   subtitle: {
-    color: Colors.white,
-    fontSize: windowHeight * 0.02,
-    lineHeight: 18,
-    marginTop: windowHeight * 0.02,
-    marginBottom: windowHeight * 0.01,
+    fontSize: fontSizes.lg,
+    color: Colors.gray300,
   },
-  button: {
-    width: windowWidth * 0.8, // Use the same width for all buttons
-    height: windowHeight * 0.06,
-    padding: windowWidth * 0.02,
-    marginTop: windowHeight * 0.02,
-    backgroundColor: Colors.black,
-    borderRadius: 6,
-    justifyContent: 'center',
+  formContainer: {
+    gap: spacing.xl,
+  },
+  inputGroup: {
+    gap: spacing.md,
+  },
+  buttonGroup: {
+    gap: spacing.lg,
+  },
+  errorText: {
+    color: Colors.error,
+    fontSize: fontSizes.xs,
+    marginTop: spacing.xs,
+    marginLeft: spacing.sm,
+  },
+  dividerContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
+    gap: spacing.sm,
   },
-  buttonText: {
-    color: Colors.white,
-    fontSize: windowHeight * 0.018,
-    lineHeight: 16,
-    fontWeight: 'bold',
+  divider: {
+    flex: 1,
+    height: 1,
+    backgroundColor: Colors.dark300,
   },
-  infoText: {
-    color: Colors.white,
-    fontSize: windowHeight * 0.016,
-    lineHeight: 16,
-    textAlign: 'right',
-    fontWeight: '300',
-    marginTop: windowHeight * 0.02,
+  dividerText: {
+    color: Colors.gray300,
+    fontSize: fontSizes.sm,
+    fontWeight: '500',
   },
-
-  orContainer: {
+  footer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: windowHeight * 0.022,
+    marginTop: spacing.xxl,
+    gap: spacing.xs,
   },
-  line: {
-    width: windowWidth * 0.3,
-    borderWidth: 0.5,
-    borderColor: Colors.white,
-  },
-  orText: {
-    color: Colors.white,
-    fontSize: windowHeight * 0.018,
-    lineHeight: 18,
-    fontWeight: 'bold',
-    marginHorizontal: windowWidth * 0.022,
-  },
-  googleButton: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: windowHeight * 0.06,
-    marginTop: windowHeight * 0.02,
-    width: windowWidth * 0.8, // Use the same width for Google button
-    backgroundColor: Colors.black,
-    borderRadius: 6,
-    padding: windowWidth * 0.02,
-  },
-  googleIcon: {
-    width: 24,
-    height: 24,
-    marginRight: 10,
-  },
-  signupContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 30,
-    marginBottom: 20,
-  },
-  signupInfo: {
-    color: Colors.white,
-    fontSize: windowHeight * 0.016,
-    lineHeight: 18,
-    marginRight: 5,
+  footerText: {
+    color: Colors.gray300,
+    fontSize: fontSizes.md,
   },
   signupText: {
-    color: '#FFA500',
-    fontSize: windowHeight * 0.02,
-    lineHeight: 18,
-    fontWeight: 'bold',
+    color: Colors.primary,
+    fontSize: fontSizes.md,
+    fontWeight: '600',
   },
-  errors: {
-    fontSize: windowHeight * 0.018,
-    color: 'red',
-    marginTop: windowHeight * 0.003,
-    fontWeight: 'normal',
+  passwordContainer: {
+    gap: spacing.xs,
+  },
+  forgotPasswordButton: {
+    alignSelf: 'flex-end',
+    paddingVertical: spacing.xs,
+  },
+  forgotPasswordText: {
+    color: Colors.primary,
+    fontSize: fontSizes.sm,
+    fontWeight: '500',
   },
 });
+
+export default Login;

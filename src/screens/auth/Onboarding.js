@@ -1,21 +1,26 @@
-import { Button, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Images from '../../components/Onboarding/ImageList';
 import { Colors } from '../../constants/colors';
-const Onboarding = ({ navigation }) => {
-  const imageList = [
+import { LinearGradient } from 'expo-linear-gradient';
+import CustomButton from '../../components/CustomButton';
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import { scale, verticalScale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+
+const OnboardingScreen = ({ navigation }) => {
+  const slides = [
     {
       id: 1,
-      title: 'Explore Diverse Stories',
+      title: 'Explore Diverse Tales',
       description:
-        'Discover a wide range of tales spanning different categories, including fantasy, nature, animals, and more, tailored to suit your preferences and interests.',
+        'Discover a wide range of tales spanning different categories, including fantasy, nature, animals, and more.',
       image: Images.first,
     },
     {
       id: 2,
       title: 'Personalized Experience',
-      description: 'Create your own library by saving your favorite tales for later enjoyment. ',
+      description: 'Create your own library by saving your favorite tales for later enjoyment.',
       image: Images.second,
     },
     {
@@ -35,109 +40,133 @@ const Onboarding = ({ navigation }) => {
     navigation.navigate('Login');
   };
 
+  const renderSlide = (item) => (
+    <Animated.View
+      entering={FadeInDown.duration(1000).springify()}
+      style={styles.slideContainer}
+      key={item.id}
+    >
+      <Image source={item.image} style={styles.image} />
+      <LinearGradient colors={['transparent', Colors.dark900]} style={styles.textGradient}>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.description}>{item.description}</Text>
+      </LinearGradient>
+    </Animated.View>
+  );
+
   return (
     <View style={styles.container}>
       <Swiper
-        dotStyle={{
-          backgroundColor: 'rgba(255,255,255,0.5)',
-          width: 10,
-          height: 10,
-          borderRadius: 5,
-          marginHorizontal: 5,
-        }}
-        activeDotStyle={{
-          backgroundColor: Colors.white,
-          width: 10,
-          height: 10,
-          borderRadius: 5,
-          marginHorizontal: 5,
-        }}
-        paginationStyle={{ bottom: 30 }}
+        style={styles.wrapper}
+        dotStyle={styles.dot}
+        activeDotStyle={styles.activeDot}
+        paginationStyle={styles.pagination}
+        loop={false}
+        autoplay={false}
       >
-        {imageList.map((item) => (
-          <View style={styles.headerContainer} key={item.id}>
-            <Image style={styles.image} source={item.image} />
-            <Text style={styles.h1}>{item.title}</Text>
-            <Text style={styles.h2}>{item.description}</Text>
-          </View>
-        ))}
+        {slides.map((slide) => renderSlide(slide))}
       </Swiper>
-      <TouchableOpacity style={styles.getStartedButton} onPress={handleGetStarted}>
-        <Text style={styles.getStartedText}>Get Started</Text>
-      </TouchableOpacity>
-      <View style={styles.textContainer}>
-        <Text style={styles.t1}>Already Have An Account ?</Text>
-        <Text onPress={handleLogin} style={styles.t2}>
-          Log In
-        </Text>
-      </View>
+
+      <LinearGradient
+        colors={[Colors.dark900 + '00', Colors.dark900]}
+        style={styles.buttonsContainer}
+      >
+        <CustomButton
+          title="Get Started"
+          onPress={handleGetStarted}
+          style={styles.getStartedButton}
+        />
+
+        <View style={styles.loginContainer}>
+          <Text style={styles.loginText}>Already have an account?</Text>
+          <TouchableOpacity onPress={handleLogin}>
+            <Text style={styles.loginLink}>Log In</Text>
+          </TouchableOpacity>
+        </View>
+      </LinearGradient>
     </View>
   );
 };
 
-export default Onboarding;
-
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: Colors.dark900,
   },
-  headerContainer: {
+  wrapper: {},
+  slideContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   image: {
-    width: width / 1.2,
-    height: height / 2.3,
-    resizeMode: 'contain',
+    width: wp(100),
+    height: hp(100),
+    resizeMode: 'cover',
   },
-  h1: {
-    fontSize: height * 0.03,
+  textGradient: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingHorizontal: spacing.lg,
+    paddingTop: hp(15),
+    paddingBottom: hp(20),
+  },
+  title: {
+    fontSize: fontSizes.xxxl,
     fontWeight: 'bold',
-    marginVertical: height * 0.02,
     color: Colors.white,
+    marginBottom: spacing.md,
   },
-  h2: {
-    fontSize: height * 0.02,
-    textAlign: 'center',
-    marginHorizontal: width * 0.1,
-    color: Colors.white,
+  description: {
+    fontSize: fontSizes.lg,
+    color: Colors.gray300,
+    lineHeight: fontSizes.lg * 1.5,
   },
-  textContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+  dot: {
+    backgroundColor: Colors.white + '50',
+    width: scale(8),
+    height: scale(8),
+    borderRadius: scale(4),
+    marginHorizontal: spacing.xs,
+  },
+  activeDot: {
+    backgroundColor: Colors.white,
+    width: scale(8),
+    height: scale(8),
+    borderRadius: scale(4),
+    marginHorizontal: spacing.xs,
+  },
+  pagination: {
+    position: 'absolute',
+    bottom: hp(15),
+  },
+  buttonsContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingHorizontal: spacing.lg,
+    paddingTop: hp(10),
+    paddingBottom: spacing.xl,
     alignItems: 'center',
-    marginBottom: height * 0.05,
-  },
-  t1: {
-    marginTop: height * 0.02,
-    fontSize: height * 0.02,
-    color: 'gray',
-  },
-  t2: {
-    marginTop: height * 0.02,
-    fontSize: height * 0.02,
-    fontWeight: 'bold',
-    marginLeft: 5,
-    color: '#FFA500',
   },
   getStartedButton: {
-    width: width * 0.8, // Use the same width for all buttons
-    height: height * 0.06,
-    padding: width * 0.02,
-    backgroundColor: Colors.black,
-    borderRadius: 6,
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginBottom: spacing.lg,
   },
-  getStartedText: {
-    color: Colors.white,
-    fontSize: height * 0.018,
-    lineHeight: 16,
-    fontWeight: 'bold',
+  loginContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+  },
+  loginText: {
+    color: Colors.gray300,
+    fontSize: fontSizes.md,
+  },
+  loginLink: {
+    color: Colors.primary,
+    fontSize: fontSizes.md,
+    fontWeight: '600',
   },
 });
+
+export default OnboardingScreen;

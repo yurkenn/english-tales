@@ -1,50 +1,67 @@
-import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { StyleSheet, Text, View } from 'react-native';
 import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
+import { LinearGradient } from 'expo-linear-gradient';
+import {
+  scale,
+  verticalScale,
+  spacing,
+  fontSizes,
+  wp,
+  isSmallDevice,
+} from '../../utils/dimensions';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-
-export const StatisticCard = ({ icon, value, label }) => (
+const StatisticCard = ({ icon, value, label }) => (
   <LinearGradient
-    colors={['#2A2D3A', '#1F222E']}
+    colors={[Colors.dark500, Colors.dark900]}
     start={{ x: 0, y: 0 }}
     end={{ x: 1, y: 1 }}
-    style={styles.statCard}
+    style={styles.card}
   >
-    <View style={styles.statIconContainer}>
-      <Icon name={icon} size={24} color={Colors.primary} />
+    <View style={styles.iconContainer}>
+      <Icon name={icon} size={scale(24)} color={Colors.primary} />
     </View>
-    <Text style={styles.statValue}>{value}</Text>
-    <Text style={styles.statLabel}>{label}</Text>
+    <Text style={styles.value}>{value}</Text>
+    <Text style={styles.label}>{label}</Text>
   </LinearGradient>
 );
 
 const styles = StyleSheet.create({
-  statCard: {
-    width: (SCREEN_WIDTH - 55) / 2,
-    borderRadius: 15,
-    padding: 15,
+  card: {
+    width: (wp(100) - spacing.lg * 3) / 2, // Accounts for container padding and gap
+    borderRadius: scale(15),
+    padding: spacing.lg,
     alignItems: 'center',
+    // Add shadow
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: scale(2),
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
-  statIconContainer: {
-    width: SCREEN_WIDTH * 0.12,
-    height: SCREEN_WIDTH * 0.12,
-    borderRadius: SCREEN_WIDTH * 0.06,
-    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+  iconContainer: {
+    width: scale(45),
+    height: scale(45),
+    borderRadius: scale(22.5),
+    backgroundColor: Colors.primary + '15',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: SCREEN_HEIGHT * 0.01,
+    marginBottom: verticalScale(12),
   },
-  statValue: {
-    fontSize: SCREEN_HEIGHT * 0.024,
+  value: {
+    fontSize: isSmallDevice ? fontSizes.xl : fontSizes.xxl,
     fontWeight: '700',
     color: Colors.white,
-    marginBottom: SCREEN_HEIGHT * 0.005,
+    marginBottom: verticalScale(4),
   },
-  statLabel: {
-    fontSize: SCREEN_HEIGHT * 0.016,
-    color: Colors.gray300,
+  label: {
+    fontSize: fontSizes.sm,
+    color: Colors.gray500,
+    textAlign: 'center',
   },
 });
+
+export default StatisticCard;

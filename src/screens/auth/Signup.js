@@ -1,294 +1,221 @@
+import React, { useState } from 'react';
 import {
-  Dimensions,
-  Image,
+  View,
+  Text,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
   TouchableOpacity,
-  View,
+  StyleSheet,
 } from 'react-native';
 import { Formik } from 'formik';
 import { signupValidationSchema } from '../../components/Auth/Validation';
 import { AuthContext } from '../../store/AuthContext';
-import { useContext, useState } from 'react';
-import SignupAnimation from '../../components/Animations/SignupAnimation';
+import { useContext } from 'react';
 import { Colors } from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
+import SignupAnimation from '../../components/Animations/SignupAnimation';
+import { LinearGradient } from 'expo-linear-gradient';
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import { scale, verticalScale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
 
 const Signup = ({ navigation }) => {
+  const { createUser } = useContext(AuthContext);
   const [focusedInput, setFocusedInput] = useState(null);
 
-  const authContext = useContext(AuthContext);
-
   const handleSubmit = async (values) => {
-    authContext.createUser(values);
+    createUser(values);
   };
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : null}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.animation}>
-          <SignupAnimation />
-        </View>
-        <View>
-          <Text style={styles.title}>Create your account</Text>
-        </View>
-
-        <Formik
-          initialValues={{ email: '', password: '', firstName: '', lastName: '' }}
-          onSubmit={(values) => handleSubmit(values)}
-          validationSchema={signupValidationSchema}
+      <LinearGradient colors={[Colors.dark500, Colors.dark900]} style={styles.gradientBackground}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.scrollContent}
         >
-          {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-            <View style={styles.inner_container}>
-              <View style={styles.nameContainer}>
-                <TextInput
-                  style={styles.nameInput}
-                  placeholder="First Name"
-                  placeholderTextColor={'#d9d5d5'}
-                  onChangeText={handleChange('firstName')}
-                  onBlur={() => {
-                    setFocusedInput(null);
-                    handleBlur('firstName');
-                  }}
-                  onFocus={() => setFocusedInput('firstName')}
-                  value={values.firstName}
-                  autoCapitalize="none"
-                />
+          <Animated.View
+            entering={FadeInDown.duration(1000).springify()}
+            style={styles.animationContainer}
+          >
+            <SignupAnimation />
+          </Animated.View>
 
-                <TextInput
-                  style={styles.lastNameInput}
-                  placeholder="Last Name"
-                  placeholderTextColor={'#d9d5d5'}
-                  onChangeText={handleChange('lastName')}
-                  onBlur={() => {
-                    setFocusedInput(null);
-                    handleBlur('lastName');
-                  }}
-                  onFocus={() => setFocusedInput('lastName')}
-                  value={values.lastName}
-                  autoCapitalize="none"
-                />
-              </View>
-              <View
-                style={{
-                  flex: 1,
-                  flexDirection: 'row',
-                  padding: 5,
-                }}
+          <Animated.Text entering={FadeInDown.duration(1000).delay(200)} style={styles.title}>
+            Create your account
+          </Animated.Text>
+
+          <Formik
+            initialValues={{ email: '', password: '', firstName: '', lastName: '' }}
+            onSubmit={handleSubmit}
+            validationSchema={signupValidationSchema}
+          >
+            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+              <Animated.View
+                entering={FadeInDown.duration(1000).delay(400)}
+                style={styles.formContainer}
               >
-                <View
-                  style={{
-                    flex: 1,
-                    paddingLeft: 25,
-                  }}
-                >
-                  {focusedInput === 'firstName' && errors.firstName && (
-                    <Text style={styles.errors}>{errors.firstName}</Text>
-                  )}
+                <View style={styles.nameContainer}>
+                  <View style={styles.nameField}>
+                    <Text style={styles.inputLabel}>First Name</Text>
+                    <CustomInput
+                      placeholder="First Name"
+                      value={values.firstName}
+                      onChangeText={handleChange('firstName')}
+                      onFocus={() => setFocusedInput('firstName')}
+                      onBlur={() => {
+                        setFocusedInput(null);
+                        handleBlur('firstName');
+                      }}
+                      style={styles.nameInput}
+                    />
+                    {errors.firstName && focusedInput === 'firstName' && (
+                      <Text style={styles.errorText}>{errors.firstName}</Text>
+                    )}
+                  </View>
+
+                  <View style={styles.nameField}>
+                    <Text style={styles.inputLabel}>Last Name</Text>
+                    <CustomInput
+                      placeholder="Last Name"
+                      value={values.lastName}
+                      onChangeText={handleChange('lastName')}
+                      onFocus={() => setFocusedInput('lastName')}
+                      onBlur={() => {
+                        setFocusedInput(null);
+                        handleBlur('lastName');
+                      }}
+                      style={styles.nameInput}
+                    />
+                    {errors.lastName && focusedInput === 'lastName' && (
+                      <Text style={styles.errorText}>{errors.lastName}</Text>
+                    )}
+                  </View>
                 </View>
-                <View
-                  style={{
-                    flex: 1,
-                    paddingRight: 5,
+
+                <Text style={styles.inputLabel}>Email</Text>
+                <CustomInput
+                  placeholder="Enter your email"
+                  value={values.email}
+                  onChangeText={handleChange('email')}
+                  onFocus={() => setFocusedInput('email')}
+                  onBlur={() => {
+                    setFocusedInput(null);
+                    handleBlur('email');
                   }}
-                >
-                  {focusedInput === 'lastName' && errors.lastName && (
-                    <Text style={styles.errors}>{errors.lastName}</Text>
-                  )}
+                  icon="mail"
+                />
+                {errors.email && focusedInput === 'email' && (
+                  <Text style={styles.errorText}>{errors.email}</Text>
+                )}
+
+                <Text style={styles.inputLabel}>Password</Text>
+                <CustomInput
+                  placeholder="Enter your password"
+                  value={values.password}
+                  onChangeText={handleChange('password')}
+                  onFocus={() => setFocusedInput('password')}
+                  onBlur={() => {
+                    setFocusedInput(null);
+                    handleBlur('password');
+                  }}
+                  icon="lock-closed"
+                  isSecure={true}
+                />
+                {errors.password && focusedInput === 'password' && (
+                  <Text style={styles.errorText}>{errors.password}</Text>
+                )}
+
+                <CustomButton onPress={handleSubmit} title="Sign Up" style={styles.signupButton} />
+
+                <View style={styles.loginContainer}>
+                  <Text style={styles.loginText}>Already have an account?</Text>
+                  <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+                    <Text style={styles.loginLink}>Log In</Text>
+                  </TouchableOpacity>
                 </View>
-              </View>
-
-              <CustomInput
-                placeholder="Enter your email"
-                onChangeText={handleChange('email')}
-                onBlur={() => {
-                  setFocusedInput(null);
-                  handleBlur('email');
-                }}
-                onFocus={() => setFocusedInput('email')}
-                value={values.email}
-                icon="mail"
-                onPress={() => {}}
-                isSecure={false}
-              />
-              {focusedInput === 'email' && errors.email && (
-                <Text style={styles.errors}>{errors.email}</Text>
-              )}
-
-              <CustomInput
-                placeholder="Enter your password"
-                onChangeText={handleChange('password')}
-                onBlur={() => {
-                  setFocusedInput(null);
-                  handleBlur('password');
-                }}
-                onFocus={() => setFocusedInput('password')}
-                value={values.password}
-                icon="lock-closed"
-                onPress={() => {}}
-                isSecure={true}
-                style={{ marginTop: 10 }}
-              />
-
-              {focusedInput === 'password' && errors.password && (
-                <Text style={styles.errors}>{errors.password}</Text>
-              )}
-              <CustomButton
-                onPress={handleSubmit}
-                title="Sign Up"
-                style={styles.button}
-                textStyle={styles.buttonText}
-              />
-
-              <View style={styles.signupContainer}>
-                <Text style={styles.signupInfo}>Do you have already an account?</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                  <Text style={styles.signupText}>Log In</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          )}
-        </Formik>
-      </ScrollView>
+              </Animated.View>
+            )}
+          </Formik>
+        </ScrollView>
+      </LinearGradient>
     </KeyboardAvoidingView>
   );
 };
 
-export default Signup;
-
-const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: Colors.dark900,
   },
-  animation: {
-    width: windowWidth * 0.8,
-    height: windowHeight * 0.3,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: windowHeight * 0.05,
-    marginTop: windowHeight * 0.05,
+  gradientBackground: {
+    flex: 1,
+  },
+  scrollContent: {
+    flexGrow: 1,
+    paddingHorizontal: spacing.lg,
+    paddingTop: verticalScale(20),
+    paddingBottom: spacing.xl,
+  },
+  animationContainer: {
+    width: wp(80),
+    height: hp(30),
+    alignSelf: 'center',
+    marginBottom: spacing.lg,
   },
   title: {
-    fontSize: windowHeight * 0.04,
+    fontSize: fontSizes.xxl,
     fontWeight: '600',
     color: Colors.white,
     textAlign: 'center',
-    marginBottom: windowHeight * 0.02,
+    marginBottom: spacing.xl,
   },
-  inner_container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  subtitle: {
-    color: Colors.white,
-    fontSize: windowHeight * 0.02,
-    lineHeight: 18,
-    marginTop: windowHeight * 0.02,
-    marginBottom: windowHeight * 0.01,
+  formContainer: {
+    gap: spacing.md,
   },
   nameContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: windowHeight * 0.02,
-    width: windowWidth * 0.8,
+    gap: spacing.md,
+  },
+  nameField: {
+    flex: 1,
   },
   nameInput: {
-    width: windowWidth * 0.35,
-    height: windowHeight * 0.06,
-    padding: windowWidth * 0.02,
-    borderWidth: 1,
-    borderColor: '#333333',
-    borderRadius: 6,
-    backgroundColor: Colors.dark900,
-    color: '#bdbdbd',
-    fontSize: windowHeight * 0.018,
-    lineHeight: 19,
+    width: '100%',
   },
-  lastNameInput: {
-    width: windowWidth * 0.35,
-    height: windowHeight * 0.06,
-    padding: windowWidth * 0.02,
-    borderWidth: 1,
-    borderColor: '#333333',
-    borderRadius: 6,
-    backgroundColor: Colors.dark900,
-    color: '#bdbdbd',
-    fontSize: windowHeight * 0.018,
-    lineHeight: 19,
-  },
-
-  input: {
-    width: windowWidth * 0.8,
-    height: windowHeight * 0.06,
-    padding: windowWidth * 0.02,
-    borderWidth: 1,
-    borderColor: '#333333',
-    borderRadius: 6,
-    backgroundColor: Colors.dark900,
-    color: '#bdbdbd',
-    fontSize: windowHeight * 0.018,
-    lineHeight: 19,
-    marginTop: windowHeight * 0.02,
-  },
-  button: {
-    width: windowWidth * 0.8,
-    height: windowHeight * 0.06,
-    padding: windowWidth * 0.02,
-    marginTop: windowHeight * 0.02,
-    backgroundColor: Colors.black,
-    borderRadius: 6,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
+  inputLabel: {
     color: Colors.white,
-    fontSize: windowHeight * 0.018,
-    lineHeight: 16,
-    fontWeight: 'bold',
+    fontSize: fontSizes.sm,
+    marginBottom: spacing.xs,
   },
-  infoText: {
-    color: Colors.white,
-    fontSize: windowHeight * 0.016,
-    lineHeight: 16,
-    textAlign: 'right',
-    fontWeight: '300',
-    marginTop: windowHeight * 0.02,
+  errorText: {
+    color: Colors.error,
+    fontSize: fontSizes.xs,
+    marginTop: spacing.xs,
   },
-  signupContainer: {
+  signupButton: {
+    marginTop: spacing.lg,
+  },
+  loginContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: windowHeight * 0.035,
+    alignItems: 'center',
+    marginTop: spacing.xl,
+    gap: spacing.xs,
   },
-  signupInfo: {
-    color: Colors.white,
-    fontSize: windowHeight * 0.018,
-    lineHeight: 18,
-    marginRight: 5,
+  loginText: {
+    color: Colors.gray500,
+    fontSize: fontSizes.md,
   },
-  signupText: {
-    color: '#FFA500',
-    fontSize: windowHeight * 0.02,
-    lineHeight: 18,
-    fontWeight: 'bold',
-  },
-  errors: {
-    fontSize: windowHeight * 0.018,
-    color: 'red',
-    marginTop: windowHeight * 0.01,
-    fontWeight: 'normal',
+  loginLink: {
+    color: Colors.primary,
+    fontSize: fontSizes.md,
+    fontWeight: '600',
   },
 });
+
+export default Signup;
