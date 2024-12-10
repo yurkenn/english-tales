@@ -1,5 +1,4 @@
-import { Dimensions, StyleSheet, View, Text } from 'react-native';
-import { FlashList } from '@shopify/flash-list';
+import { Dimensions, StyleSheet, View, Text, FlatList } from 'react-native';
 import React, { useState } from 'react';
 import useGetTalesByCategory from '../hooks/useGetTalesByCategory';
 import CategoryCard from '../components/Category/CategoryCard';
@@ -35,7 +34,7 @@ const CategoryList = ({ route }) => {
         <Text style={styles.resultCount}>{categoryList.length} Stories</Text>
       </View>
 
-      <FlashList
+      <FlatList
         data={categoryList}
         estimatedItemSize={200}
         renderItem={renderItem}
