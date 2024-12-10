@@ -3,8 +3,16 @@ import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'rea
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+import {
+  scale,
+  verticalScale,
+  moderateScale,
+  spacing,
+  fontSizes,
+  wp,
+  hp,
+  isSmallDevice,
+} from '../../utils/dimensions';
 
 export const ProfileHeader = ({ userInfo, isLoading, onImagePress, onEditPress }) => (
   <LinearGradient
@@ -43,51 +51,140 @@ export const ProfileHeader = ({ userInfo, isLoading, onImagePress, onEditPress }
 const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
-    paddingVertical: SCREEN_HEIGHT * 0.03,
-    paddingHorizontal: SCREEN_WIDTH * 0.05,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    paddingVertical: verticalScale(30),
+    paddingHorizontal: spacing.lg,
+    backgroundColor: Colors.dark500,
+    borderBottomLeftRadius: scale(30),
+    borderBottomRightRadius: scale(30),
   },
   imageContainer: {
     position: 'relative',
-    marginBottom: SCREEN_HEIGHT * 0.015,
+    marginBottom: verticalScale(15),
   },
   profileImage: {
-    width: SCREEN_WIDTH * 0.25,
-    height: SCREEN_WIDTH * 0.25,
-    borderRadius: SCREEN_WIDTH * 0.125,
-    borderWidth: 3,
+    width: scale(100),
+    height: scale(100),
+    borderRadius: scale(50),
+    borderWidth: scale(3),
     borderColor: Colors.primary,
   },
   editBadge: {
     position: 'absolute',
     bottom: 0,
     right: 0,
-    padding: 8,
-    borderRadius: 12,
-    borderWidth: 3,
+    backgroundColor: Colors.primary,
+    padding: scale(8),
+    borderRadius: scale(12),
+    borderWidth: scale(3),
     borderColor: Colors.dark900,
   },
   userName: {
-    fontSize: SCREEN_HEIGHT * 0.03,
+    fontSize: fontSizes.xxl,
     fontWeight: '700',
     color: Colors.white,
-    marginBottom: SCREEN_HEIGHT * 0.005,
+    marginBottom: verticalScale(5),
   },
   userEmail: {
-    fontSize: SCREEN_HEIGHT * 0.016,
-    color: Colors.gray300,
-    marginBottom: SCREEN_HEIGHT * 0.015,
+    fontSize: fontSizes.sm,
+    color: Colors.gray500,
+    marginBottom: verticalScale(15),
   },
-  editProfileButton: {
+  levelBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: Colors.primary + '20',
-    paddingHorizontal: SCREEN_WIDTH * 0.04,
-    paddingVertical: SCREEN_HEIGHT * 0.008,
-    borderRadius: 20,
+    paddingHorizontal: scale(12),
+    paddingVertical: verticalScale(6),
+    borderRadius: scale(20),
+    gap: scale(6),
   },
-  editProfileText: {
+  levelText: {
     color: Colors.primary,
-    fontSize: SCREEN_HEIGHT * 0.016,
+    fontSize: fontSizes.md,
     fontWeight: '600',
+  },
+  statsContainer: {
+    padding: spacing.lg,
+  },
+  sectionTitle: {
+    fontSize: fontSizes.lg,
+    fontWeight: '600',
+    color: Colors.white,
+    marginBottom: verticalScale(15),
+  },
+  statsGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: scale(15),
+  },
+  statCard: {
+    width: (wp(100) - spacing.lg * 3) / 2, // Accounting for padding and gap
+    backgroundColor: Colors.dark500,
+    borderRadius: scale(15),
+    padding: spacing.md,
+    alignItems: 'center',
+  },
+  statIconContainer: {
+    width: scale(45),
+    height: scale(45),
+    borderRadius: scale(22.5),
+    backgroundColor: Colors.dark900 + '80',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: verticalScale(10),
+  },
+  statValue: {
+    fontSize: fontSizes.xl,
+    fontWeight: '700',
+    color: Colors.white,
+    marginBottom: verticalScale(5),
+  },
+  statLabel: {
+    fontSize: fontSizes.sm,
+    color: Colors.gray500,
+  },
+  settingsContainer: {
+    padding: spacing.lg,
+  },
+  settingsCard: {
+    backgroundColor: Colors.dark500,
+    borderRadius: scale(15),
+    overflow: 'hidden',
+  },
+  settingItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: spacing.md,
+  },
+  settingBorder: {
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.dark900,
+  },
+  settingLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: scale(12),
+  },
+  settingIconContainer: {
+    width: scale(36),
+    height: scale(36),
+    borderRadius: scale(18),
+    backgroundColor: Colors.primary + '20',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  settingLabel: {
+    fontSize: fontSizes.md,
+    color: Colors.white,
+  },
+  settingRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: scale(8),
+  },
+  settingValue: {
+    fontSize: fontSizes.sm,
+    color: Colors.gray500,
   },
 });

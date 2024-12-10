@@ -1,24 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, Pressable } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 import { Colors } from '../../constants/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeIn, SlideOutRight } from 'react-native-reanimated';
 import Icon from '../Icons';
+import { wp, hp, moderateScale, fontSizes, spacing, layout } from '../../utils/dimensions';
 
 const SavedCard = ({ data, onDelete }) => {
   return (
     <Animated.View entering={FadeIn} exiting={SlideOutRight} style={styles.container}>
       <LinearGradient
-        colors={['#282828', '#161616']}
+        colors={['#1F1F1F', '#121212']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={styles.gradient}
       >
-        <Animated.Image
-          source={{ uri: data?.imageURL }}
-          style={styles.image}
-          sharedTransitionTag={`image-${data?._id}`}
-        />
+        <Animated.Image source={{ uri: data?.imageURL }} style={styles.image} />
 
         <View style={styles.content}>
           <Text style={styles.title} numberOfLines={2}>
@@ -31,18 +28,15 @@ const SavedCard = ({ data, onDelete }) => {
 
           <View style={styles.statsRow}>
             <View style={styles.stat}>
-              <Icon name="time-outline" size={16} color={Colors.white} />
+              <Icon name="time-outline" size={moderateScale(16)} color={Colors.white} />
               <Text style={styles.statText}>{data?.readTime}m</Text>
             </View>
             <View style={styles.stat}>
-              <Icon name="heart" size={16} color={Colors.error} />
+              <Icon name="heart" size={moderateScale(16)} color={Colors.red} />
               <Text style={styles.statText}>{data?.likes}</Text>
             </View>
-            <Pressable
-              onPress={() => onDelete(data)}
-              style={({ pressed }) => [styles.deleteButton, pressed && styles.deleteButtonPressed]}
-            >
-              <Icon name="trash-outline" size={20} color={Colors.error} />
+            <Pressable onPress={() => onDelete(data)} style={styles.deleteButton}>
+              <Icon name="trash-outline" size={moderateScale(20)} color={Colors.red} />
             </Pressable>
           </View>
         </View>
@@ -51,67 +45,60 @@ const SavedCard = ({ data, onDelete }) => {
   );
 };
 
-const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
-    marginBottom: windowHeight * 0.02,
-    borderRadius: 12,
+    marginBottom: hp(2),
+    borderRadius: layout.borderRadius,
     overflow: 'hidden',
     elevation: 4,
-    shadowColor: Colors.shadowColor,
+    shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
   gradient: {
     flexDirection: 'row',
-    padding: windowWidth * 0.03,
+    padding: spacing.sm,
   },
   image: {
-    width: windowWidth * 0.25,
-    height: windowHeight * 0.15,
-    borderRadius: 8,
-    backgroundColor: Colors.dark700,
+    width: wp(25),
+    height: hp(15),
+    borderRadius: layout.borderRadius,
   },
   content: {
     flex: 1,
-    marginLeft: windowWidth * 0.03,
+    marginLeft: spacing.sm,
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: windowHeight * 0.022,
+    fontSize: fontSizes.lg,
     fontWeight: '600',
     color: Colors.white,
-    marginBottom: windowHeight * 0.01,
+    marginBottom: hp(1),
   },
   description: {
-    fontSize: windowHeight * 0.016,
+    fontSize: fontSizes.sm,
     color: Colors.gray500,
-    lineHeight: windowHeight * 0.022,
+    lineHeight: hp(2.2),
   },
   statsRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: windowHeight * 0.01,
+    marginTop: hp(1),
   },
   stat: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: windowWidth * 0.04,
+    marginRight: wp(4),
   },
   statText: {
     color: Colors.white,
-    fontSize: windowHeight * 0.016,
-    marginLeft: windowWidth * 0.01,
+    fontSize: fontSizes.sm,
+    marginLeft: spacing.xs,
   },
   deleteButton: {
     marginLeft: 'auto',
-    padding: windowWidth * 0.02,
-    borderRadius: windowWidth * 0.02,
-  },
-  deleteButtonPressed: {
-    backgroundColor: Colors.dark700 + '40',
+    padding: spacing.sm,
   },
 });
 

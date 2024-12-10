@@ -1,4 +1,5 @@
-import { Dimensions, StyleSheet, View, Text, FlatList } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import { FlashList } from '@shopify/flash-list';
 import React, { useState } from 'react';
 import useGetTalesByCategory from '../hooks/useGetTalesByCategory';
 import CategoryCard from '../components/Category/CategoryCard';
@@ -7,6 +8,7 @@ import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import { Colors } from '../constants/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeInDown } from 'react-native-reanimated';
+import { scale, verticalScale, spacing, fontSizes, wp, isSmallDevice } from '../utils/dimensions';
 
 const CategoryList = ({ route }) => {
   const { category } = route.params;
@@ -14,27 +16,28 @@ const CategoryList = ({ route }) => {
   const [selectedFilter, setSelectedFilter] = useState('all');
 
   const renderItem = ({ item, index }) => (
-    <Animated.View entering={FadeInDown.delay(index * 100)}>
+    <Animated.View entering={FadeInDown.delay(index * 100)} style={styles.cardWrapper}>
       <CategoryCard data={item} />
     </Animated.View>
   );
 
   if (loading) return <LoadingAnimation />;
   if (error) return <ErrorAnimation />;
-  if (!categoryList?.length)
+  if (!categoryList?.length) {
     return (
       <View style={styles.emptyContainer}>
         <Text style={styles.emptyText}>No tales found in this category</Text>
       </View>
     );
+  }
 
   return (
     <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.resultCount}>{categoryList.length} Stories</Text>
+        <Text style={styles.resultCount}>{categoryList.length} Tales</Text>
       </View>
 
-      <FlatList
+      <FlashList
         data={categoryList}
         estimatedItemSize={200}
         renderItem={renderItem}
@@ -46,35 +49,40 @@ const CategoryList = ({ route }) => {
   );
 };
 
-const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: windowWidth * 0.04,
+    padding: spacing.md,
   },
   headerContainer: {
-    marginBottom: windowHeight * 0.02,
-    paddingHorizontal: windowWidth * 0.02,
+    marginBottom: verticalScale(16),
+    paddingHorizontal: spacing.sm,
   },
   resultCount: {
     color: Colors.white,
-    fontSize: windowHeight * 0.02,
+    fontSize: fontSizes.md,
     fontWeight: '600',
     opacity: 0.8,
   },
   listContainer: {
-    paddingBottom: windowHeight * 0.02,
+    paddingBottom: verticalScale(16),
+  },
+  cardWrapper: {
+    marginBottom: spacing.md,
+    // Add additional padding for small devices
+    paddingHorizontal: isSmallDevice ? spacing.xs : 0,
   },
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.dark900,
+    padding: spacing.lg,
   },
   emptyText: {
     color: Colors.white,
-    fontSize: windowHeight * 0.02,
+    fontSize: fontSizes.md,
+    textAlign: 'center',
     opacity: 0.7,
   },
 });

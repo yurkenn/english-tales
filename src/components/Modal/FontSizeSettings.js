@@ -4,7 +4,16 @@ import Slider from 'react-native-smooth-slider';
 import { Colors } from '../../constants/colors';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { useFontSize } from '../../store/FontSizeContext';
-
+import {
+  scale,
+  verticalScale,
+  moderateScale,
+  spacing,
+  fontSizes,
+  wp,
+  hp,
+  isSmallDevice,
+} from '../../utils/dimensions';
 const FontSizeSettings = () => {
   const { fontSize, changeFontSize } = useFontSize();
 
@@ -38,60 +47,58 @@ const FontSizeSettings = () => {
   );
 };
 
-const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
-    padding: windowWidth * 0.05,
+    padding: spacing.lg,
     alignItems: 'center',
   },
   header: {
     width: '100%',
-    marginBottom: windowHeight * 0.02,
+    marginBottom: verticalScale(16),
   },
   title: {
     color: Colors.white,
-    fontSize: windowWidth * 0.05,
+    fontSize: fontSizes.xl,
     fontWeight: '700',
-    marginBottom: windowHeight * 0.01,
+    marginBottom: verticalScale(8),
   },
   subtitle: {
     color: Colors.gray500,
-    fontSize: windowWidth * 0.035,
+    fontSize: fontSizes.md,
   },
   previewBox: {
     width: '100%',
-    padding: windowHeight * 0.02,
+    padding: spacing.lg,
     backgroundColor: Colors.dark500,
-    borderRadius: 20,
-    marginBottom: windowHeight * 0.02,
+    borderRadius: scale(20),
+    marginBottom: verticalScale(16),
     alignItems: 'center',
   },
   previewText: {
     color: Colors.white,
   },
   slider: {
-    width: windowWidth * 0.8,
-    height: windowHeight * 0.05,
+    width: wp(80),
+    height: verticalScale(40),
   },
   track: {
-    height: 8,
-    borderRadius: 4,
+    height: verticalScale(13),
+    borderRadius: scale(8),
     backgroundColor: Colors.dark500,
   },
   thumb: {
-    width: 24,
-    height: 24,
-    borderRadius: 12,
-    backgroundColor: Colors.primary,
+    width: scale(24),
+    height: scale(24),
+    borderRadius: scale(12),
+    backgroundColor: Colors.white,
   },
   sizeValue: {
-    fontSize: windowWidth * 0.045,
+    fontSize: fontSizes.lg,
     fontWeight: '600',
     color: Colors.white,
-    marginTop: windowHeight * 0.02,
+    marginTop: verticalScale(16),
   },
 });
 

@@ -17,6 +17,7 @@ import FontSizeSettings from '../components/Modal/FontSizeSettings';
 import { useFontSize } from '../store/FontSizeContext';
 import Icon from '../components/Icons';
 import { urlFor } from '../../sanity';
+import { wp, hp, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
 
 const Detail = ({ route, navigation }) => {
   const { data } = route.params;
@@ -32,12 +33,6 @@ const Detail = ({ route, navigation }) => {
   const isBookmarked = bookmarks.find(
     (bookmark) => bookmark?.slug?.current === data?.slug?.current
   );
-
-  const IMAGE_HEIGHT = SCREEN_HEIGHT * 0.45;
-  const CONTENT_PADDING = SCREEN_WIDTH * 0.05;
-  const TITLE_SIZE = SCREEN_HEIGHT * 0.035;
-  const DESCRIPTION_SIZE = SCREEN_HEIGHT * 0.018;
-  const BUTTON_HEIGHT = SCREEN_HEIGHT * 0.07;
 
   const handleLike = async () => {
     if (!hasLiked) {
@@ -124,7 +119,7 @@ const Detail = ({ route, navigation }) => {
       />
 
       {/* Image Section with Gradient */}
-      <View style={[styles.imageContainer, { height: IMAGE_HEIGHT }]}>
+      <View style={styles.imageContainer}>
         <Animated.Image
           entering={FadeInDown.springify()}
           source={{ uri: data?.imageURL }}
@@ -138,30 +133,32 @@ const Detail = ({ route, navigation }) => {
       </View>
 
       {/* Content Section */}
-      <View style={[styles.contentContainer, { padding: CONTENT_PADDING }]}>
-        <Text style={[styles.title, { fontSize: TITLE_SIZE }]} numberOfLines={2}>
+      <View style={styles.contentContainer}>
+        <Text style={styles.title} numberOfLines={2}>
           {data?.title}
         </Text>
 
         <InfoComponent readTime={readTime} likes={likes} />
 
         <View style={styles.descriptionContainer}>
-          <Text style={[styles.description, { fontSize: DESCRIPTION_SIZE }]} numberOfLines={4}>
+          <Text style={styles.description} numberOfLines={4}>
             {data?.description}
           </Text>
         </View>
 
-        <TouchableOpacity
-          onPress={handleReadButton}
-          style={[styles.readButton, { height: BUTTON_HEIGHT }]}
-        >
+        <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
           <LinearGradient
             colors={[Colors.primary, Colors.primary700]}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
             style={styles.buttonGradient}
           >
-            <Icon name="book-outline" size={24} color={Colors.white} style={styles.buttonIcon} />
+            <Icon
+              name="book-outline"
+              size={moderateScale(24)}
+              color={Colors.white}
+              style={styles.buttonIcon}
+            />
             <Text style={styles.buttonText}>Start Reading</Text>
           </LinearGradient>
         </TouchableOpacity>
@@ -193,20 +190,21 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: 100,
+    height: hp(12),
     zIndex: 10,
   },
   headerRightContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 12,
-    marginRight: 12,
+    gap: spacing.sm,
+    marginRight: spacing.sm,
     backgroundColor: 'rgba(0,0,0,0.3)',
-    padding: 8,
-    borderRadius: 20,
+    padding: spacing.sm,
+    borderRadius: layout.borderRadius * 2.5,
   },
   imageContainer: {
     width: '100%',
+    height: hp(45),
     position: 'relative',
   },
   image: {
@@ -223,22 +221,25 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
-    gap: 16,
+    padding: spacing.lg,
+    gap: spacing.md,
   },
   title: {
     color: Colors.white,
+    fontSize: fontSizes.xxxl,
     fontWeight: '700',
-    letterSpacing: 0.5,
   },
   descriptionContainer: {
     flex: 1,
   },
   description: {
+    fontSize: fontSizes.md,
     color: Colors.gray500,
-    lineHeight: 24,
+    lineHeight: hp(3),
   },
   readButton: {
-    borderRadius: 12,
+    height: hp(7),
+    borderRadius: layout.borderRadius,
     overflow: 'hidden',
     elevation: 4,
     shadowColor: '#000',
@@ -252,14 +253,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 8,
+    gap: spacing.sm,
   },
   buttonIcon: {
-    marginRight: 8,
+    marginRight: spacing.sm,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 16,
+    fontSize: fontSizes.lg,
     fontWeight: '600',
     letterSpacing: 0.5,
   },

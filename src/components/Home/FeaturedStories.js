@@ -9,21 +9,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { wp, hp, isSmallDevice, deviceWidth } from '../../utils/dimensions';
 
 const FeaturedStories = ({ data, navigation, index }) => {
-  const [dimensions, setDimensions] = useState({ width: deviceWidth });
-
-  useEffect(() => {
-    const subscription = Dimensions.addEventListener('change', ({ window }) => {
-      setDimensions(window);
-    });
-    return () => subscription?.remove();
-  }, []);
-
-  const goDetailScreen = () => {
-    if (data?.tales?.[0]) {
-      navigation.navigate('Detail', { data: data.tales[0] });
-    }
-  };
-
   const formattedReadTime = FormatReadTime(data?.tales?.[0]?.readTime);
 
   return (
@@ -31,7 +16,11 @@ const FeaturedStories = ({ data, navigation, index }) => {
       entering={FadeInRight.delay(index * 200).springify()}
       style={styles.animatedContainer}
     >
-      <TouchableOpacity onPress={goDetailScreen} activeOpacity={0.7} style={styles.container}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Detail', { data: data.tales[0] })}
+        activeOpacity={0.7}
+        style={styles.container}
+      >
         <Animated.Image source={{ uri: urlFor(data?.imageURL).url() }} style={styles.image} />
         <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.gradient}>
           <View style={styles.contentContainer}>

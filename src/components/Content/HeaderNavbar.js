@@ -1,26 +1,15 @@
-import { Dimensions, Image, Platform, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { StyleSheet, Image, Platform, View } from 'react-native';
+import { scale, verticalScale, spacing, layout, isSmallDevice } from '../../utils/dimensions';
 
 const HeaderNavbar = ({ title }) => {
-  return (
-    <View style={styles.container}>
-      <Image source={require('../../../assets/images/login-image.png')} style={styles.icon} />
-    </View>
-  );
+  return <View style={styles.container}></View>;
 };
-
-export default HeaderNavbar;
-
-const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: height * 0.13,
-  },
-  icon: {
-    width: 50,
-    height: 50,
+    height: verticalScale(100),
   },
 });
+
+export default HeaderNavbar;

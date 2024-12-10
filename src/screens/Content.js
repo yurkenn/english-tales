@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, View, Image, useWindowDimensions, TouchableOpacity } from 'react-native';
 import { urlFor } from '../../sanity';
 import TaleContent from '../components/Content/TaleContent';
@@ -11,6 +11,16 @@ import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import Icon from '../components/Icons';
 import Toast from 'react-native-toast-message';
+import {
+  scale,
+  verticalScale,
+  moderateScale,
+  spacing,
+  fontSizes,
+  layout,
+  wp,
+  hp,
+} from '../utils/dimensions';
 import Animated, {
   FadeInDown,
   FadeIn,
@@ -22,7 +32,7 @@ import Animated, {
   runOnJS,
 } from 'react-native-reanimated';
 
-const SCROLL_THRESHOLD = 200;
+const SCROLL_THRESHOLD = verticalScale(200);
 
 const Content = ({ route }) => {
   const { width, height } = useWindowDimensions();
@@ -41,11 +51,9 @@ const Content = ({ route }) => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [hasCompletedStory, setHasCompletedStory] = useState(false);
 
-  const imageHeight = height * 0.5;
-  const headerHeight = height * 0.12;
-  const paddingHorizontal = width * 0.05;
-  const titleSize = height * 0.035;
-  const contentPadding = height * 0.03;
+  const imageHeight = hp(50); // 50% of screen height
+  const headerHeight = verticalScale(70);
+  const paddingHorizontal = wp(5);
 
   useEffect(() => {
     startReading(slug);
@@ -92,7 +100,6 @@ const Content = ({ route }) => {
 
   const scrollHandler = useAnimatedScrollHandler({
     onScroll: (event) => {
-      'worklet';
       scrollY.value = event.contentOffset.y;
       runOnJS(handleScroll)(event.contentOffset.y);
       runOnJS(updateScrollButtonVisibility)(event.contentOffset.y);
@@ -149,43 +156,18 @@ const Content = ({ route }) => {
         <Animated.View
           entering={FadeInDown.delay(400)}
           onLayout={onContentLayout}
-          style={[
-            styles.content,
-            {
-              paddingHorizontal,
-              paddingVertical: contentPadding,
-            },
-          ]}
+          style={[styles.content, { paddingHorizontal }]}
         >
-          <Text style={[styles.title, { fontSize: titleSize, marginBottom: height * 0.02 }]}>
-            {tale[0]?.title}
-          </Text>
+          <Text style={styles.title}>{tale[0]?.title}</Text>
 
-          {/* <View style={styles.progressContainer}>
-            <View style={styles.progressBar}>
-              <View
-                style={[
-                  styles.progressFill,
-                  {
-                    width: `${progress}%`,
-                    backgroundColor: isCompleted ? Colors.success : Colors.primary,
-                  },
-                ]}
-              />
-            </View>
-            <Text style={[styles.progressText, isCompleted && styles.completedText]}>
-              {isCompleted ? 'Completed' : `${Math.round(progress)}% Read`}
-            </Text>
-          </View> */}
-
-          <TaleContent style={styles.blocks} blocks={tale[0].content} />
+          <TaleContent blocks={tale[0].content} />
         </Animated.View>
       </Animated.ScrollView>
 
       {showScrollTop && (
         <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.scrollTopButton}>
           <TouchableOpacity onPress={scrollToTop} style={styles.scrollTopTouchable}>
-            <Icon name="arrow-up" size={24} color={Colors.white} />
+            <Icon name="arrow-up" size={scale(24)} color={Colors.white} />
           </TouchableOpacity>
         </Animated.View>
       )}
@@ -220,50 +202,60 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     backgroundColor: Colors.dark900,
+    paddingVertical: spacing.lg,
   },
   title: {
+    fontSize: fontSizes.xxl,
     fontWeight: 'bold',
     color: Colors.white,
+    marginBottom: spacing.md,
+    lineHeight: moderateScale(32),
   },
   progressContainer: {
-    marginVertical: 15,
-    padding: 10,
+    marginVertical: spacing.md,
+    padding: spacing.md,
     backgroundColor: Colors.dark500,
-    borderRadius: 10,
+    borderRadius: scale(10),
   },
   progressBar: {
-    height: 6,
+    height: verticalScale(6),
     backgroundColor: Colors.dark900,
-    borderRadius: 3,
+    borderRadius: scale(3),
     overflow: 'hidden',
   },
   progressFill: {
     height: '100%',
-    backgroundColor: Colors.primary,
-    borderRadius: 3,
+    borderRadius: scale(3),
   },
   progressText: {
     color: Colors.white,
-    fontSize: 12,
-    marginTop: 5,
+    fontSize: fontSizes.sm,
+    marginTop: spacing.xs,
     textAlign: 'center',
+  },
+  completedText: {
+    color: Colors.success,
+    fontWeight: '600',
   },
   scrollTopButton: {
     position: 'absolute',
-    bottom: 20,
-    right: 20,
+    bottom: spacing.xl,
+    right: spacing.lg,
     backgroundColor: Colors.primary,
-    borderRadius: 30,
+    borderRadius: scale(30),
     elevation: 5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {
+      width: 0,
+      height: scale(2),
+    },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
   scrollTopTouchable: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
+    width: scale(48),
+    height: scale(48),
+    borderRadius: scale(24),
     justifyContent: 'center',
     alignItems: 'center',
   },

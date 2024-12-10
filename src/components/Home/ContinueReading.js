@@ -8,6 +8,16 @@ import Animated, { FadeIn, SlideInLeft } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
+import {
+  scale,
+  verticalScale,
+  moderateScale,
+  spacing,
+  fontSizes,
+  wp,
+  hp,
+  isSmallDevice,
+} from '../../utils/dimensions';
 
 const ContinueReading = ({ lastRead }) => {
   const navigation = useNavigation();
@@ -115,100 +125,102 @@ const getProgressColor = (progress) => {
   return Colors.success;
 };
 
-const { width, height } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 12,
-    marginVertical: height * 0.01,
+    borderRadius: scale(12),
+    marginVertical: verticalScale(8),
     overflow: 'hidden',
     elevation: 5,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: {
+      width: 0,
+      height: scale(2),
+    },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
   gradient: {
     flexDirection: 'row',
-    padding: width * 0.03,
+    padding: spacing.md,
   },
   imageContainer: {
-    width: width * 0.33,
+    width: wp(33),
     position: 'relative',
   },
   image: {
-    height: width * 0.4,
+    height: wp(40),
     width: '100%',
-    borderRadius: 8,
+    borderRadius: scale(8),
   },
   imageOverlay: {
     ...StyleSheet.absoluteFillObject,
-    borderRadius: 8,
+    borderRadius: scale(8),
   },
   infoContainer: {
     flex: 1,
-    marginLeft: width * 0.04,
+    marginLeft: spacing.md,
     justifyContent: 'space-between',
   },
   headerContainer: {
-    gap: height * 0.01,
+    gap: verticalScale(8),
   },
   title: {
     color: Colors.white,
-    fontSize: width * 0.042,
+    fontSize: moderateScale(16),
     fontWeight: '700',
     letterSpacing: 0.3,
   },
   statsContainer: {
     flexDirection: 'row',
-    gap: width * 0.04,
+    gap: scale(16),
   },
   stat: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: width * 0.01,
+    gap: scale(4),
   },
   statText: {
     color: Colors.white,
-    fontSize: width * 0.032,
+    fontSize: fontSizes.sm,
   },
   description: {
     color: Colors.gray500,
-    fontSize: width * 0.035,
-    lineHeight: width * 0.045,
+    fontSize: fontSizes.sm,
+    lineHeight: moderateScale(20),
   },
   progressContainer: {
-    gap: height * 0.01,
+    gap: verticalScale(4),
   },
   progressBar: {
-    height: height * 0.006,
+    height: verticalScale(6),
     backgroundColor: Colors.dark500,
-    borderRadius: 4,
-    overflow: 'hidden',
+    borderRadius: scale(3),
   },
   progress: {
     height: '100%',
-    borderRadius: 4,
+    backgroundColor: Colors.primary,
+    borderRadius: scale(3),
   },
   progressText: {
     color: Colors.gray500,
-    fontSize: width * 0.03,
+    fontSize: fontSizes.xs,
   },
   emptyContainer: {
     alignItems: 'center',
     backgroundColor: Colors.dark500,
-    borderRadius: 12,
-    padding: height * 0.03,
-    gap: height * 0.015,
+    borderRadius: scale(12),
+    padding: spacing.lg,
+    gap: verticalScale(12),
   },
   warningText: {
     color: Colors.white,
-    fontSize: width * 0.04,
+    fontSize: fontSizes.lg,
     fontWeight: '600',
   },
   subText: {
     color: Colors.gray500,
-    fontSize: width * 0.035,
+    fontSize: fontSizes.sm,
+    textAlign: 'center',
   },
 });
 

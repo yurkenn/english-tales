@@ -1,45 +1,22 @@
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
-import { View, Text, TouchableOpacity, Switch, StyleSheet, Dimensions } from 'react-native';
-import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
+import Icon from '../Icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { scale, verticalScale, spacing, fontSizes, isSmallDevice } from '../../utils/dimensions';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-
-export const SettingItem = ({
-  icon,
-  label,
-  value,
-  onPress,
-  isLast,
-  isToggle,
-  isActive,
-  onToggle,
-}) => (
-  <TouchableOpacity
-    style={[styles.settingItem, !isLast && styles.settingBorder]}
-    onPress={onPress}
-    disabled={isToggle}
-  >
-    <View style={styles.settingLeft}>
+const SettingItem = ({ icon, label, value, onPress, isLast }) => (
+  <TouchableOpacity style={[styles.settingItem, !isLast && styles.settingBorder]} onPress={onPress}>
+    <View style={styles.leftContainer}>
       <View style={styles.iconContainer}>
-        <Icon name={icon} size={20} color={Colors.primary} />
+        <Icon name={icon} size={scale(20)} color={Colors.primary} />
       </View>
-      <Text style={styles.settingLabel}>{label}</Text>
+      <Text style={styles.label}>{label}</Text>
     </View>
-    <View style={styles.settingRight}>
-      {isToggle ? (
-        <Switch
-          value={isActive}
-          onValueChange={onToggle}
-          trackColor={{ false: Colors.dark500, true: Colors.primary }}
-          thumbColor={Colors.white}
-        />
-      ) : (
-        <>
-          {value && <Text style={styles.settingValue}>{value}</Text>}
-          <Icon name="chevron-forward" size={20} color={Colors.gray300} />
-        </>
-      )}
+
+    <View style={styles.rightContainer}>
+      {value && <Text style={styles.value}>{value}</Text>}
+      <Icon name="chevron-forward" size={scale(20)} color={Colors.gray500} />
     </View>
   </TouchableOpacity>
 );
@@ -49,36 +26,42 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: SCREEN_HEIGHT * 0.02,
+    paddingHorizontal: spacing.lg,
+    paddingVertical: verticalScale(16),
+    backgroundColor: Colors.dark500,
   },
   settingBorder: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#1F222E',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: Colors.dark900,
   },
-  settingLeft: {
+  leftContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: SCREEN_WIDTH * 0.03,
+    gap: scale(12),
   },
   iconContainer: {
-    width: SCREEN_WIDTH * 0.09,
-    height: SCREEN_WIDTH * 0.09,
-    borderRadius: SCREEN_WIDTH * 0.045,
-    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+    width: scale(40),
+    height: scale(40),
+    borderRadius: scale(20),
+    backgroundColor: Colors.primary + '15',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  settingLabel: {
-    fontSize: SCREEN_HEIGHT * 0.018,
+  label: {
+    fontSize: isSmallDevice ? fontSizes.md : fontSizes.lg,
+    fontWeight: '500',
     color: Colors.white,
   },
-  settingRight: {
+  rightContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: SCREEN_WIDTH * 0.02,
+    gap: scale(8),
   },
-  settingValue: {
-    fontSize: SCREEN_HEIGHT * 0.016,
-    color: Colors.gray300,
+  value: {
+    fontSize: fontSizes.sm,
+    color: Colors.gray500,
+    marginRight: scale(4),
   },
 });
+
+export default SettingItem;

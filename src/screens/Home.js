@@ -1,5 +1,13 @@
 // src/screens/Home.js
-import { Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Alert,
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import React, { useCallback, useMemo } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
@@ -79,7 +87,7 @@ const Home = ({ navigation }) => {
 
       <Animated.View entering={FadeInDown.delay(600)} style={styles.categoriesContainer}>
         <Text style={styles.sectionTitle}>Categories</Text>
-        <FlashList
+        <FlatList
           data={categories}
           horizontal
           showsHorizontalScrollIndicator={false}

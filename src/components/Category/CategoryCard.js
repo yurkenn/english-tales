@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Dimensions } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated from 'react-native-reanimated';
 import Icon from '../Icons';
+import { scale, verticalScale, moderateScale, spacing, fontSizes } from '../../utils/dimensions';
 
 const CategoryCard = ({ data }) => {
   const navigation = useNavigation();
@@ -30,11 +31,11 @@ const CategoryCard = ({ data }) => {
 
           <View style={styles.statsContainer}>
             <View style={styles.stat}>
-              <Icon name="time" size={16} color={Colors.white} />
+              <Icon name="time" size={scale(16)} color={Colors.white} />
               <Text style={styles.statText}>{data?.readTime}m</Text>
             </View>
             <View style={styles.stat}>
-              <Icon name="heart" size={16} color={Colors.red} />
+              <Icon name="heart" size={scale(16)} color={Colors.red} />
               <Text style={styles.statText}>{data?.likes}</Text>
             </View>
           </View>
@@ -44,14 +45,12 @@ const CategoryCard = ({ data }) => {
   );
 };
 
-const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
-
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginBottom: windowHeight * 0.02,
-    padding: windowWidth * 0.03,
-    borderRadius: 12,
+    marginBottom: verticalScale(16),
+    padding: spacing.md,
+    borderRadius: scale(12),
     elevation: 4,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
@@ -59,39 +58,39 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
   },
   image: {
-    width: windowWidth * 0.25,
-    height: windowHeight * 0.15,
-    borderRadius: 8,
+    width: scale(100),
+    height: verticalScale(150),
+    borderRadius: scale(8),
   },
   contentContainer: {
     flex: 1,
-    marginLeft: windowWidth * 0.03,
+    marginLeft: spacing.md,
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: windowHeight * 0.022,
+    fontSize: fontSizes.lg,
     fontWeight: '600',
     color: Colors.white,
-    marginBottom: windowHeight * 0.01,
+    marginBottom: verticalScale(8),
   },
   description: {
-    fontSize: windowHeight * 0.016,
+    fontSize: fontSizes.sm,
     color: Colors.gray500,
-    lineHeight: windowHeight * 0.022,
+    lineHeight: verticalScale(22),
   },
   statsContainer: {
     flexDirection: 'row',
-    marginTop: windowHeight * 0.01,
-    gap: windowWidth * 0.04,
+    marginTop: verticalScale(8),
+    gap: scale(16),
   },
   stat: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: windowWidth * 0.01,
+    gap: scale(4),
   },
   statText: {
     color: Colors.white,
-    fontSize: windowHeight * 0.016,
+    fontSize: fontSizes.sm,
   },
 });
 
