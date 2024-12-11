@@ -1,24 +1,65 @@
+# Dependencies
 node_modules/
-android/
+.pnp/
+.pnp.js
+
+# Expo
 .expo/
 dist/
-npm-debug.*
+web-build/
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
 *.orig.*
-web-build/
-.env
-# macOS
-.DS_Store
 
-# Temporary files created by Metro to check the health of the file watcher
+# Native
+android/
+ios/
+*.ipa
+*.apk
+*.aab
+
+# Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
 .metro-health-check*
 
-/blue-hare
+# Environment
+.env
+.env.*
 eas.json
 google-services.json
 playstore.json
 
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+/blue-hare
+
+# Logs
+logs
+*.log
+
+# Testing
+coverage/
+.jest/
+__tests__/
+
+# Build
+build/
