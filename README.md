@@ -1,4 +1,4 @@
-# StoryMagic: Read Short Stories
+# English Tales
 
 ## Google Play Store link to download the app
 

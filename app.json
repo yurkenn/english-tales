@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "StoryMagic: Read Short Stories",
+    "name": "English Tales",
     "slug": "english-tales",
     "version": "1.0.2",
     "orientation": "portrait",
@@ -9,7 +9,8 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "The app accesses your photos to let you share them with your friends."
+          "photosPermission": "English Tales needs access to your photos to update your profile picture.",
+          "cameraPermission": "English Tales needs access to your camera to take profile pictures."
         }
       ]
     ],
@@ -22,7 +23,13 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.yurken.englishtales"
+      "bundleIdentifier": "com.yurken.englishtales",
+      "buildNumber": "1.0.2",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "English Tales needs access to your photos to update your profile picture.",
+        "NSCameraUsageDescription": "English Tales needs access to your camera to take profile pictures.",
+        "UIBackgroundModes": ["fetch"]
+      }
     },
     "android": {
       "versionCode": 2,
@@ -30,16 +37,24 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#161616"
       },
-      "package": "com.yurken.englishtales"
+      "package": "com.yurken.englishtales",
+      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "updates": {
+      "enabled": true,
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/ed1a926d-a090-4643-bb5e-9c8a1e59df38"
+    },
+    "runtimeVersion": "1.0.0",
     "extra": {
       "eas": {
         "projectId": "ed1a926d-a090-4643-bb5e-9c8a1e59df38"
       }
     },
-    "scheme": "com.yurken.englishtales"
+    "scheme": "com.yurken.englishtales",
+    "owner": "yurken"
   }
 }

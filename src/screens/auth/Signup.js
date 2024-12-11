@@ -71,7 +71,7 @@ const Signup = ({ navigation }) => {
     >
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
         <Animated.View entering={FadeInDown.duration(1000)} style={styles.headerContainer}>
-          <Text style={styles.title}>Sign up for StoryMagic</Text>
+          <Text style={styles.title}>Sign up for English Tales</Text>
           <Text style={styles.subtitle}>Create an account to continue</Text>
         </Animated.View>
 
