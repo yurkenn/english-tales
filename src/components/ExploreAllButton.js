@@ -15,8 +15,8 @@ const ExploreAllButton = ({ onPress }) => (
     >
       <View style={styles.buttonContent}>
         <View style={styles.buttonLeftContent}>
-          <Text style={styles.buttonTitle}>Explore All Stories</Text>
-          <Text style={styles.buttonSubtitle}>Discover more stories</Text>
+          <Text style={styles.buttonTitle}>Explore All Tales</Text>
+          <Text style={styles.buttonSubtitle}>Discover more tales</Text>
         </View>
         <View style={styles.iconContainer}>
           <Icon name="arrow-forward" size={moderateScale(24)} color={Colors.white} />

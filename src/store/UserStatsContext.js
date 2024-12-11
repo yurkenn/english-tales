@@ -26,14 +26,14 @@ const ACHIEVEMENTS = {
   BOOKWORM: {
     id: 'BOOKWORM',
     title: 'Bookworm',
-    description: 'Read 5 stories',
+    description: 'Read 5 tales',
     icon: 'library-outline',
     requirement: (stats) => stats.storiesRead >= 5,
   },
   STORY_MASTER: {
     id: 'STORY_MASTER',
     title: 'Story Master',
-    description: 'Complete 10 stories',
+    description: 'Complete 10 tales',
     icon: 'trophy-outline',
     requirement: (stats) => stats.storiesRead >= 10,
   },

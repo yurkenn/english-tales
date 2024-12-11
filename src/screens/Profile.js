@@ -75,7 +75,7 @@ const Profile = () => {
       </LinearGradient>
 
       <View style={styles.statsGrid}>
-        <StatCard icon="book" value={formattedStats.storiesRead} label="Stories Read" delay={200} />
+        <StatCard icon="book" value={formattedStats.storiesRead} label="Tales Read" delay={200} />
         <StatCard icon="time" value={formattedStats.timeSpent} label="Time Reading" delay={300} />
         <StatCard
           icon="flame"

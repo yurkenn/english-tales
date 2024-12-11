@@ -19,7 +19,7 @@ const EmptyState = ({ searchTerm }) => (
       <Text style={styles.emptySubtitle}>
         {searchTerm
           ? 'Try different keywords or check spelling'
-          : 'Discover amazing stories in our collection'}
+          : 'Discover amazing tales in our collection'}
       </Text>
     </LinearGradient>
   </Animated.View>
