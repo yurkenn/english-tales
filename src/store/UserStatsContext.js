@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { AuthContext } from './AuthContext';
 
 const UserStatsContext = createContext();
 
@@ -53,6 +54,7 @@ const ACHIEVEMENTS = {
 };
 
 export const UserStatsProvider = ({ children }) => {
+  const { userInfo } = useContext(AuthContext);
   const [stats, setStats] = useState({
     storiesRead: 0,
     timeSpent: 0, // in minutes
@@ -64,38 +66,53 @@ export const UserStatsProvider = ({ children }) => {
     achievements: new Set(),
   });
 
-  // Load stats on mount
-  useEffect(() => {
-    loadStats();
-  }, []);
-
   // Load stats from AsyncStorage
   const loadStats = async () => {
     try {
-      const savedStats = await AsyncStorage.getItem('userStats');
-      if (savedStats) {
-        const parsedStats = JSON.parse(savedStats);
-        // Convert arrays back to Sets
-        setStats({
-          ...parsedStats,
-          completedStories: new Set(parsedStats.completedStories),
-          achievements: new Set(parsedStats.achievements),
-        });
+      // Only load stats if we have a user
+      if (userInfo?.uid) {
+        const savedStats = await AsyncStorage.getItem(`userStats_${userInfo.uid}`);
+        if (savedStats) {
+          const parsedStats = JSON.parse(savedStats);
+          setStats({
+            ...parsedStats,
+            completedStories: new Set(parsedStats.completedStories),
+            achievements: new Set(parsedStats.achievements),
+          });
+        } else {
+          // If no stats exist for this user, set to initial state
+          setStats({
+            storiesRead: 0,
+            timeSpent: 0,
+            currentStreak: 0,
+            longestStreak: 0,
+            lastReadDate: null,
+            completedStories: new Set(),
+            readingProgress: {},
+            achievements: new Set(),
+          });
+        }
       }
     } catch (error) {
       console.error('Error loading user stats:', error);
     }
   };
 
+  useEffect(() => {
+    loadStats();
+  }, [userInfo]); // Reload stats when user changes
+
   // Save stats to AsyncStorage
   const saveStats = async (newStats) => {
     try {
-      const statsToSave = {
-        ...newStats,
-        completedStories: Array.from(newStats.completedStories),
-        achievements: Array.from(newStats.achievements),
-      };
-      await AsyncStorage.setItem('userStats', JSON.stringify(statsToSave));
+      if (userInfo?.uid) {
+        const statsToSave = {
+          ...newStats,
+          completedStories: Array.from(newStats.completedStories),
+          achievements: Array.from(newStats.achievements),
+        };
+        await AsyncStorage.setItem(`userStats_${userInfo.uid}`, JSON.stringify(statsToSave));
+      }
     } catch (error) {
       console.error('Error saving user stats:', error);
     }

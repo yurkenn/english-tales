@@ -1,26 +1,38 @@
+// src/store/BookmarkContext.js
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { AuthContext } from './AuthContext';
 
 const BookmarkContext = createContext();
 
 const BookmarkProvider = ({ children }) => {
   const [bookmarks, setBookmarks] = useState([]);
+  const { userInfo } = useContext(AuthContext);
 
   useEffect(() => {
-    const loadBookmarks = async () => {
-      try {
-        const storedBookmarks = await AsyncStorage.getItem('@bookmark');
-        if (storedBookmarks) {
-          setBookmarks(JSON.parse(storedBookmarks));
-        }
-      } catch (error) {
-        console.error('Error loading bookmarks from AsyncStorage:', error);
+    if (userInfo?.uid) {
+      loadBookmarks(userInfo.uid);
+    } else {
+      setBookmarks([]); // Clear bookmarks when no user is logged in
+    }
+  }, [userInfo]); // Reload bookmarks when user changes
+
+  const loadBookmarks = async (userId) => {
+    try {
+      const storedBookmarks = await AsyncStorage.getItem(`bookmarks_${userId}`);
+      if (storedBookmarks) {
+        setBookmarks(JSON.parse(storedBookmarks));
+      } else {
+        setBookmarks([]);
       }
-    };
-    loadBookmarks();
-  }, []);
+    } catch (error) {
+      console.error('Error loading bookmarks from AsyncStorage:', error);
+    }
+  };
 
   const toggleBookmark = async (bookData) => {
+    if (!userInfo?.uid) return;
+
     const existingBookmark = bookmarks.find(
       (bookmark) => bookmark.slug.current === bookData.slug.current
     );
@@ -31,16 +43,18 @@ const BookmarkProvider = ({ children }) => {
         (bookmark) => bookmark.slug.current !== bookData.slug.current
       );
       setBookmarks(updatedBookmarks);
-      await AsyncStorage.setItem('@bookmark', JSON.stringify(updatedBookmarks));
+      await AsyncStorage.setItem(`bookmarks_${userInfo.uid}`, JSON.stringify(updatedBookmarks));
     } else {
       // Add the bookmark
       const updatedBookmarks = [...bookmarks, bookData];
       setBookmarks(updatedBookmarks);
-      await AsyncStorage.setItem('@bookmark', JSON.stringify(updatedBookmarks));
+      await AsyncStorage.setItem(`bookmarks_${userInfo.uid}`, JSON.stringify(updatedBookmarks));
     }
   };
 
   const removeBookmark = async (bookData) => {
+    if (!userInfo?.uid) return;
+
     const existingBookmark = bookmarks.find(
       (bookmark) => bookmark.slug.current === bookData.slug.current
     );
@@ -51,7 +65,7 @@ const BookmarkProvider = ({ children }) => {
         (bookmark) => bookmark.slug.current !== bookData.slug.current
       );
       setBookmarks(updatedBookmarks);
-      await AsyncStorage.setItem('@bookmark', JSON.stringify(updatedBookmarks));
+      await AsyncStorage.setItem(`bookmarks_${userInfo.uid}`, JSON.stringify(updatedBookmarks));
     }
   };
 

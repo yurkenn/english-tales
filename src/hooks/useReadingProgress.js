@@ -1,25 +1,31 @@
 // src/hooks/useReadingProgress.js
 import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useContext } from 'react';
+import { AuthContext } from '../store/AuthContext';
 
 export const useReadingProgress = (slug, storyData) => {
   const [progress, setProgress] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
+  const { userInfo } = useContext(AuthContext);
 
   useEffect(() => {
-    loadProgress();
-  }, [slug]);
+    if (userInfo?.uid && slug) {
+      loadProgress();
+    }
+  }, [slug, userInfo]);
 
   const loadProgress = async () => {
+    if (!userInfo?.uid) return;
+
     try {
       const [savedProgress, savedPosition, completionStatus] = await Promise.all([
-        AsyncStorage.getItem(`progress_${slug}`),
-        AsyncStorage.getItem(`scroll_${slug}`),
-        AsyncStorage.getItem(`completed_story_${slug}`),
+        AsyncStorage.getItem(`progress_${userInfo.uid}_${slug}`),
+        AsyncStorage.getItem(`scroll_${userInfo.uid}_${slug}`),
+        AsyncStorage.getItem(`completed_story_${userInfo.uid}_${slug}`),
       ]);
 
-      // If story was previously completed, set progress to 100
       if (completionStatus === 'true') {
         setProgress(100);
         setIsCompleted(true);
@@ -36,20 +42,25 @@ export const useReadingProgress = (slug, storyData) => {
   };
 
   const markAsCompleted = async () => {
+    if (!userInfo?.uid) return;
+
     try {
       await Promise.all([
-        AsyncStorage.setItem(`completed_story_${slug}`, 'true'),
-        AsyncStorage.setItem(`progress_${slug}`, '100'),
+        AsyncStorage.setItem(`completed_story_${userInfo.uid}_${slug}`, 'true'),
+        AsyncStorage.setItem(`progress_${userInfo.uid}_${slug}`, '100'),
       ]);
       setIsCompleted(true);
       setProgress(100);
 
       // Update completed stories list for achievements
-      const completedStories = await AsyncStorage.getItem('completedStories');
+      const completedStories = await AsyncStorage.getItem(`completedStories_${userInfo.uid}`);
       const completedList = completedStories ? JSON.parse(completedStories) : [];
       if (!completedList.includes(slug)) {
         completedList.push(slug);
-        await AsyncStorage.setItem('completedStories', JSON.stringify(completedList));
+        await AsyncStorage.setItem(
+          `completedStories_${userInfo.uid}`,
+          JSON.stringify(completedList)
+        );
       }
     } catch (error) {
       console.error('Error marking story as completed:', error);
@@ -57,23 +68,23 @@ export const useReadingProgress = (slug, storyData) => {
   };
 
   const saveProgress = async (offsetY, contentHeight, viewportHeight) => {
+    if (!userInfo?.uid) return;
+
     try {
       if (contentHeight <= 0) return;
-      if (isCompleted) return 100; // If already completed, always return 100%
+      if (isCompleted) return 100;
 
       const scrollableHeight = contentHeight - viewportHeight;
       if (scrollableHeight <= 0) return;
 
       const newProgress = Math.min(Math.max((offsetY / scrollableHeight) * 100, 0), 100);
 
-      // If not already completed, update progress
       if (!isCompleted) {
         await Promise.all([
-          AsyncStorage.setItem(`progress_${slug}`, newProgress.toString()),
-          AsyncStorage.setItem(`scroll_${slug}`, offsetY.toString()),
+          AsyncStorage.setItem(`progress_${userInfo.uid}_${slug}`, newProgress.toString()),
+          AsyncStorage.setItem(`scroll_${userInfo.uid}_${slug}`, offsetY.toString()),
         ]);
 
-        // Update last read story with progress information
         if (storyData) {
           const lastReadData = {
             ...storyData,
@@ -82,13 +93,12 @@ export const useReadingProgress = (slug, storyData) => {
             scrollPosition: offsetY,
             isCompleted: newProgress >= 95,
           };
-          await AsyncStorage.setItem('lastRead', JSON.stringify(lastReadData));
+          await AsyncStorage.setItem(`lastRead_${userInfo.uid}`, JSON.stringify(lastReadData));
         }
 
         setProgress(newProgress);
         setScrollPosition(offsetY);
 
-        // If reaching completion threshold for the first time
         if (newProgress >= 95 && !isCompleted) {
           await markAsCompleted();
         }

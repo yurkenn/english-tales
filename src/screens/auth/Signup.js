@@ -9,23 +9,59 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Formik } from 'formik';
-import { signupValidationSchema } from '../../components/Auth/Validation';
+import * as Yup from 'yup';
 import { AuthContext } from '../../store/AuthContext';
 import { useContext } from 'react';
 import { Colors } from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
-import SignupAnimation from '../../components/Animations/SignupAnimation';
-import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { scale, verticalScale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+
+const signupValidationSchema = Yup.object().shape({
+  displayName: Yup.string()
+    .min(2, 'Name is too short')
+    .max(50, 'Name is too long')
+    .required('Name is required'),
+  email: Yup.string().email('Please enter a valid email').required('Email is required'),
+  password: Yup.string()
+    .min(8, 'Password must be at least 8 characters')
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
+      'Password must contain at least one uppercase letter, one lowercase letter, and one number'
+    )
+    .required('Password is required'),
+});
 
 const Signup = ({ navigation }) => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, promptAsync } = useContext(AuthContext);
   const [focusedInput, setFocusedInput] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (values) => {
-    createUser(values);
+  const handleSubmit = async (values, { setFieldError }) => {
+    try {
+      setIsLoading(true);
+      const userCredential = await createUser({
+        email: values.email,
+        password: values.password,
+        displayName: values.displayName.trim(), // Clean the name input
+      });
+
+      // Update user profile with display name
+      if (userCredential?.user) {
+        await updateProfile(userCredential.user, {
+          displayName: values.displayName.trim(),
+        });
+      }
+    } catch (error) {
+      const errorMessage =
+        error.code === 'auth/email-already-in-use'
+          ? 'An account with this email already exists.'
+          : 'Something went wrong. Please try again.';
+      setFieldError('email', errorMessage);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -33,73 +69,47 @@ const Signup = ({ navigation }) => {
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-      <LinearGradient colors={[Colors.dark500, Colors.dark900]} style={styles.gradientBackground}>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.scrollContent}
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
+        <Animated.View entering={FadeInDown.duration(1000)} style={styles.headerContainer}>
+          <Text style={styles.title}>Sign up for StoryMagic</Text>
+          <Text style={styles.subtitle}>Create an account to continue</Text>
+        </Animated.View>
+
+        <Formik
+          initialValues={{
+            displayName: '',
+            email: '',
+            password: '',
+          }}
+          validationSchema={signupValidationSchema}
+          onSubmit={handleSubmit}
         >
-          <Animated.View
-            entering={FadeInDown.duration(1000).springify()}
-            style={styles.animationContainer}
-          >
-            <SignupAnimation />
-          </Animated.View>
-
-          <Animated.Text entering={FadeInDown.duration(1000).delay(200)} style={styles.title}>
-            Create your account
-          </Animated.Text>
-
-          <Formik
-            initialValues={{ email: '', password: '', firstName: '', lastName: '' }}
-            onSubmit={handleSubmit}
-            validationSchema={signupValidationSchema}
-          >
-            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
-              <Animated.View
-                entering={FadeInDown.duration(1000).delay(400)}
-                style={styles.formContainer}
-              >
-                <View style={styles.nameContainer}>
-                  <View style={styles.nameField}>
-                    <Text style={styles.inputLabel}>First Name</Text>
-                    <CustomInput
-                      placeholder="First Name"
-                      value={values.firstName}
-                      onChangeText={handleChange('firstName')}
-                      onFocus={() => setFocusedInput('firstName')}
-                      onBlur={() => {
-                        setFocusedInput(null);
-                        handleBlur('firstName');
-                      }}
-                      style={styles.nameInput}
-                    />
-                    {errors.firstName && focusedInput === 'firstName' && (
-                      <Text style={styles.errorText}>{errors.firstName}</Text>
-                    )}
-                  </View>
-
-                  <View style={styles.nameField}>
-                    <Text style={styles.inputLabel}>Last Name</Text>
-                    <CustomInput
-                      placeholder="Last Name"
-                      value={values.lastName}
-                      onChangeText={handleChange('lastName')}
-                      onFocus={() => setFocusedInput('lastName')}
-                      onBlur={() => {
-                        setFocusedInput(null);
-                        handleBlur('lastName');
-                      }}
-                      style={styles.nameInput}
-                    />
-                    {errors.lastName && focusedInput === 'lastName' && (
-                      <Text style={styles.errorText}>{errors.lastName}</Text>
-                    )}
-                  </View>
-                </View>
-
-                <Text style={styles.inputLabel}>Email</Text>
+          {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
+            <Animated.View
+              entering={FadeInDown.duration(1000).delay(200)}
+              style={styles.formContainer}
+            >
+              <View style={styles.inputGroup}>
                 <CustomInput
-                  placeholder="Enter your email"
+                  placeholder="Your name"
+                  value={values.displayName}
+                  onChangeText={handleChange('displayName')}
+                  onFocus={() => setFocusedInput('displayName')}
+                  onBlur={() => {
+                    setFocusedInput(null);
+                    handleBlur('displayName');
+                  }}
+                  error={touched.displayName && errors.displayName}
+                  icon="person"
+                />
+                {touched.displayName && errors.displayName && (
+                  <Text style={styles.errorText}>{errors.displayName}</Text>
+                )}
+              </View>
+
+              <View style={styles.inputGroup}>
+                <CustomInput
+                  placeholder="Email address"
                   value={values.email}
                   onChangeText={handleChange('email')}
                   onFocus={() => setFocusedInput('email')}
@@ -107,15 +117,19 @@ const Signup = ({ navigation }) => {
                     setFocusedInput(null);
                     handleBlur('email');
                   }}
+                  error={touched.email && errors.email}
                   icon="mail"
+                  autoCapitalize="none"
+                  keyboardType="email-address"
                 />
-                {errors.email && focusedInput === 'email' && (
+                {touched.email && errors.email && (
                   <Text style={styles.errorText}>{errors.email}</Text>
                 )}
+              </View>
 
-                <Text style={styles.inputLabel}>Password</Text>
+              <View style={styles.inputGroup}>
                 <CustomInput
-                  placeholder="Enter your password"
+                  placeholder="Password"
                   value={values.password}
                   onChangeText={handleChange('password')}
                   onFocus={() => setFocusedInput('password')}
@@ -123,26 +137,42 @@ const Signup = ({ navigation }) => {
                     setFocusedInput(null);
                     handleBlur('password');
                   }}
-                  icon="lock-closed"
                   isSecure={true}
+                  error={touched.password && errors.password}
+                  icon="lock-closed"
                 />
-                {errors.password && focusedInput === 'password' && (
+                {touched.password && errors.password && (
                   <Text style={styles.errorText}>{errors.password}</Text>
                 )}
+              </View>
 
-                <CustomButton onPress={handleSubmit} title="Sign Up" style={styles.signupButton} />
+              <View style={styles.buttonGroup}>
+                <CustomButton onPress={handleSubmit} title="Create Account" loading={isLoading} />
 
-                <View style={styles.loginContainer}>
-                  <Text style={styles.loginText}>Already have an account?</Text>
-                  <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                    <Text style={styles.loginLink}>Log In</Text>
-                  </TouchableOpacity>
+                <View style={styles.dividerContainer}>
+                  <View style={styles.divider} />
+                  <Text style={styles.dividerText}>or</Text>
+                  <View style={styles.divider} />
                 </View>
-              </Animated.View>
-            )}
-          </Formik>
-        </ScrollView>
-      </LinearGradient>
+
+                <CustomButton
+                  onPress={() => promptAsync()}
+                  title="Continue with Google"
+                  variant="outlined"
+                  imageSource={require('../../../assets/images/google.png')}
+                />
+              </View>
+            </Animated.View>
+          )}
+        </Formik>
+
+        <Animated.View entering={FadeInDown.duration(1000).delay(400)} style={styles.footer}>
+          <Text style={styles.footerText}>Already have an account?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.loginButton}>
+            <Text style={styles.loginText}>Log in</Text>
+          </TouchableOpacity>
+        </Animated.View>
+      </ScrollView>
     </KeyboardAvoidingView>
   );
 };
@@ -152,66 +182,72 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.dark900,
   },
-  gradientBackground: {
-    flex: 1,
-  },
   scrollContent: {
     flexGrow: 1,
     paddingHorizontal: spacing.lg,
-    paddingTop: verticalScale(20),
+    paddingTop: hp(8),
     paddingBottom: spacing.xl,
   },
-  animationContainer: {
-    width: wp(80),
-    height: hp(30),
-    alignSelf: 'center',
-    marginBottom: spacing.lg,
+  headerContainer: {
+    marginBottom: spacing.xxl,
   },
   title: {
     fontSize: fontSizes.xxl,
-    fontWeight: '600',
+    fontWeight: '700',
     color: Colors.white,
-    textAlign: 'center',
-    marginBottom: spacing.xl,
+    marginBottom: spacing.xs,
+  },
+  subtitle: {
+    fontSize: fontSizes.lg,
+    color: Colors.gray300,
   },
   formContainer: {
-    gap: spacing.md,
+    gap: spacing.lg,
   },
-  nameContainer: {
-    flexDirection: 'row',
-    gap: spacing.md,
-  },
-  nameField: {
-    flex: 1,
-  },
-  nameInput: {
-    width: '100%',
-  },
-  inputLabel: {
-    color: Colors.white,
-    fontSize: fontSizes.sm,
-    marginBottom: spacing.xs,
+  inputGroup: {
+    gap: spacing.xs,
   },
   errorText: {
     color: Colors.error,
     fontSize: fontSizes.xs,
     marginTop: spacing.xs,
+    marginLeft: spacing.sm,
   },
-  signupButton: {
-    marginTop: spacing.lg,
+  buttonGroup: {
+    gap: spacing.lg,
+    marginTop: spacing.md,
   },
-  loginContainer: {
+  dividerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+  },
+  divider: {
+    flex: 1,
+    height: 1,
+    backgroundColor: Colors.dark300,
+  },
+  dividerText: {
+    color: Colors.gray300,
+    fontSize: fontSizes.sm,
+    fontWeight: '500',
+  },
+  footer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: spacing.xl,
+    marginTop: spacing.xxl,
     gap: spacing.xs,
   },
-  loginText: {
-    color: Colors.gray500,
+  footerText: {
+    color: Colors.gray300,
     fontSize: fontSizes.md,
   },
-  loginLink: {
+  loginButton: {
+    paddingVertical: spacing.xs,
+    paddingHorizontal: spacing.sm,
+  },
+  loginText: {
     color: Colors.primary,
     fontSize: fontSizes.md,
     fontWeight: '600',
