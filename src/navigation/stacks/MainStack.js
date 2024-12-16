@@ -7,6 +7,8 @@ import Content from '../../screens/Content';
 import CategoryList from '../../screens/CategoryList';
 import AllTales from '../../screens/AllTales';
 import { screenOptions } from '../config/screenOptions';
+import PrivacyPolicy from '../../screens/PrivacyPolicy';
+import { Colors } from '../../constants/colors';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,5 +23,10 @@ export const MainStack = () => (
       options={({ route }) => screenOptions.categoryHeader(route.params.category)}
     />
     <Stack.Screen name="AllTales" component={AllTales} options={screenOptions.allTalesHeader} />
+    <Stack.Screen
+      name="PrivacyPolicy"
+      component={PrivacyPolicy}
+      options={screenOptions.privacyPolicy}
+    />
   </Stack.Navigator>
 );

@@ -1,7 +1,7 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { Colors } from '../constants/colors';
-import Icon from '../components/Icons';
+import Icon from './Icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { scale, spacing, isSmallDevice } from '../utils/dimensions';
 

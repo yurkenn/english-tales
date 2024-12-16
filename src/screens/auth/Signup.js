@@ -9,7 +9,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
 import { AuthContext } from '../../store/AuthContext';
 import { useContext } from 'react';
 import { Colors } from '../../constants/colors';
@@ -17,21 +16,8 @@ import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
-
-const signupValidationSchema = Yup.object().shape({
-  displayName: Yup.string()
-    .min(2, 'Name is too short')
-    .max(50, 'Name is too long')
-    .required('Name is required'),
-  email: Yup.string().email('Please enter a valid email').required('Email is required'),
-  password: Yup.string()
-    .min(8, 'Password must be at least 8 characters')
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
-      'Password must contain at least one uppercase letter, one lowercase letter, and one number'
-    )
-    .required('Password is required'),
-});
+import Icon from '../../components/Icons';
+import { signupValidationSchema } from '../../components/Auth/Validation';
 
 const Signup = ({ navigation }) => {
   const { createUser, promptAsync } = useContext(AuthContext);
@@ -80,11 +66,12 @@ const Signup = ({ navigation }) => {
             displayName: '',
             email: '',
             password: '',
+            acceptPrivacy: false,
           }}
           validationSchema={signupValidationSchema}
           onSubmit={handleSubmit}
         >
-          {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
+          {({ handleChange, handleBlur, handleSubmit, values, errors, touched, setFieldValue }) => (
             <Animated.View
               entering={FadeInDown.duration(1000).delay(200)}
               style={styles.formContainer}
@@ -146,8 +133,39 @@ const Signup = ({ navigation }) => {
                 )}
               </View>
 
+              <View style={styles.privacyContainer}>
+                <TouchableOpacity
+                  style={styles.checkbox}
+                  onPress={() => setFieldValue('acceptPrivacy', !values.acceptPrivacy)}
+                >
+                  <Icon
+                    name={values.acceptPrivacy ? 'checkmark-circle' : 'ellipse-outline'}
+                    size={24}
+                    color={values.acceptPrivacy ? Colors.primary : Colors.gray500}
+                  />
+                </TouchableOpacity>
+
+                <View style={styles.privacyText}>
+                  <Text style={styles.privacyLabel}>I agree to the </Text>
+                  <TouchableOpacity onPress={() => navigation.navigate('PrivacyPolicy')}>
+                    <Text style={styles.privacyLink}>Privacy Policy</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+
+              {touched.acceptPrivacy && errors.acceptPrivacy && (
+                <Text style={styles.errorText}>{errors.acceptPrivacy}</Text>
+              )}
+
               <View style={styles.buttonGroup}>
-                <CustomButton onPress={handleSubmit} title="Create Account" loading={isLoading} />
+                <CustomButton
+                  onPress={handleSubmit}
+                  title="Create Account"
+                  loading={isLoading}
+                  disabled={!values.acceptPrivacy || isLoading}
+                  variant="filled"
+                  style={!values.acceptPrivacy ? styles.disabledButton : null}
+                />
 
                 <View style={styles.dividerContainer}>
                   <View style={styles.divider} />
@@ -251,6 +269,34 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     fontSize: fontSizes.md,
     fontWeight: '600',
+  },
+  disabledButton: {
+    opacity: 0.5,
+  },
+  privacyContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: spacing.md,
+    paddingHorizontal: spacing.sm,
+  },
+  checkbox: {
+    padding: spacing.xs,
+  },
+  privacyText: {
+    flexDirection: 'row',
+    flex: 1,
+    flexWrap: 'wrap',
+    marginLeft: spacing.xs,
+  },
+  privacyLabel: {
+    color: Colors.gray300,
+    fontSize: fontSizes.sm,
+  },
+  privacyLink: {
+    color: Colors.primary,
+    fontSize: fontSizes.sm,
+    fontWeight: '500',
+    textDecorationLine: 'underline',
   },
 });
 

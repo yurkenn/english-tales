@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, View, Image, useWindowDimensions, TouchableOpacity } from 'react-native';
 import { urlFor } from '../../sanity';
-import TaleContent from '../components/Content/TaleContent';
+import StoryContent from '../components/Content/StoryContent';
 import HeaderNavbar from '../components/Content/HeaderNavbar';
 import { Colors } from '../constants/colors';
 import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
@@ -160,7 +160,7 @@ const Content = ({ route }) => {
         >
           <Text style={styles.title}>{tale[0]?.title}</Text>
 
-          <TaleContent blocks={tale[0].content} />
+          <StoryContent blocks={tale[0].content} />
         </Animated.View>
       </Animated.ScrollView>
 

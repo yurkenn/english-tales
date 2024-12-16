@@ -11,8 +11,9 @@ import Toast from 'react-native-toast-message';
 import { AchievementSection } from '../components/Achievement/AchievementSection';
 import StatCard from '../components/Profile/StatCard';
 import { wp, hp, scale, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
+import SettingItem from '../components/Profile/SettingItem';
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   const { userInfo, updateUserInfo, handleLogout } = useContext(AuthContext);
   const { formattedStats } = useUserStats();
   const [isLoading, setIsLoading] = useState(false);
@@ -94,13 +95,16 @@ const Profile = () => {
       <AchievementSection achievements={formattedStats.achievements} />
 
       <View style={styles.settingsContainer}>
-        <TouchableOpacity style={styles.settingItem} onPress={() => handleLogout()}>
-          <View style={styles.settingLeft}>
-            <Icon name="log-out" size={20} color={Colors.error} />
-            <Text style={[styles.settingText, { color: Colors.error }]}>Logout</Text>
-          </View>
-          <Icon name="chevron-forward" size={20} color={Colors.error} />
-        </TouchableOpacity>
+        <Text style={styles.sectionTitle}>Settings</Text>
+        <View style={styles.settingsCard}>
+          <SettingItem icon="notifications" label="Notifications" onPress={() => {}} />
+          <SettingItem
+            icon="shield-checkmark"
+            label="Privacy Policy"
+            onPress={() => navigation.navigate('PrivacyPolicy')}
+          />
+          <SettingItem icon="log-out" label="Logout" onPress={handleLogout} isLast />
+        </View>
       </View>
 
       <Toast />
@@ -190,6 +194,18 @@ const styles = StyleSheet.create({
   settingText: {
     fontSize: fontSizes.md,
     fontWeight: '500',
+  },
+  settingsContainer: {
+    padding: spacing.lg,
+  },
+  sectionTitle: {
+    fontSize: fontSizes.xl,
+    fontWeight: '600',
+    color: Colors.white,
+    marginBottom: spacing.md,
+  },
+  settingsCard: {
+    marginTop: spacing.sm,
   },
 });
 

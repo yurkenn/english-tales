@@ -31,12 +31,9 @@ export const signupValidationSchema = yup.object().shape({
       'Password must contain at least one uppercase letter, one lowercase letter, and one number'
     )
     .required('Password is required'),
-  firstName: yup
-    .string()
-    .required('First name is required')
-    .min(2, 'First name must be at least 2 characters'),
-  lastName: yup
-    .string()
-    .required('Last name is required')
-    .min(2, 'Last name must be at least 2 characters'),
+  displayName: yup.string().required('Name is required'),
+  acceptPrivacy: yup
+    .boolean()
+    .oneOf([true], 'You must accept the Privacy Policy to continue')
+    .required('You must accept the Privacy Policy to continue'),
 });

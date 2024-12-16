@@ -16,4 +16,9 @@ export const screenOptions = {
     headerStyle: { backgroundColor: Colors.dark900 },
     headerTitle: 'Here are all the tales',
   },
+  privacyPolicy: {
+    title: 'Privacy Policy',
+    headerTintColor: Colors.white,
+    headerStyle: { backgroundColor: Colors.dark900 },
+  },
 };

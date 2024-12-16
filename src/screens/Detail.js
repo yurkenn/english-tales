@@ -5,7 +5,7 @@ import FormatReadTime from '../components/FormatReadTime';
 import Toast from 'react-native-toast-message';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import BookmarkButton from '../Detail/BookmarkButton';
+import BookmarkButton from '../components/BookmarkButton';
 import LikeButton from '../components/Detail/LikeButton';
 import InfoComponent from '../components/Detail/InfoComponent';
 import SettingsButton from '../components/Detail/SettingsButton';
