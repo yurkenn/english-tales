@@ -52,7 +52,7 @@ const Content = ({ route }) => {
   const [hasCompletedStory, setHasCompletedStory] = useState(false);
 
   const imageHeight = hp(50); // 50% of screen height
-  const headerHeight = verticalScale(70);
+  const headerHeight = verticalScale(90);
   const paddingHorizontal = wp(5);
 
   useEffect(() => {
