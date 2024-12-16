@@ -1,4 +1,3 @@
-// src/hooks/useReadingProgress.js
 import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useContext } from 'react';
@@ -16,84 +15,66 @@ export const useReadingProgress = (slug, storyData) => {
     }
   }, [slug, userInfo]);
 
+  const getProgressKey = () => `progress_${userInfo?.uid}_${slug}`;
+  const getScrollKey = () => `scroll_${userInfo?.uid}_${slug}`;
+  const getCompletionKey = () => `completed_story_${userInfo?.uid}_${slug}`;
+  const getLastReadKey = () => `lastRead_${userInfo?.uid}`;
+
   const loadProgress = async () => {
     if (!userInfo?.uid) return;
 
     try {
       const [savedProgress, savedPosition, completionStatus] = await Promise.all([
-        AsyncStorage.getItem(`progress_${userInfo.uid}_${slug}`),
-        AsyncStorage.getItem(`scroll_${userInfo.uid}_${slug}`),
-        AsyncStorage.getItem(`completed_story_${userInfo.uid}_${slug}`),
+        AsyncStorage.getItem(getProgressKey()),
+        AsyncStorage.getItem(getScrollKey()),
+        AsyncStorage.getItem(getCompletionKey()),
       ]);
 
       if (completionStatus === 'true') {
         setProgress(100);
         setIsCompleted(true);
       } else if (savedProgress) {
-        setProgress(parseFloat(savedProgress));
+        const parsedProgress = parseFloat(savedProgress);
+        setProgress(isNaN(parsedProgress) ? 0 : parsedProgress);
       }
 
       if (savedPosition) {
-        setScrollPosition(parseFloat(savedPosition));
+        const parsedPosition = parseFloat(savedPosition);
+        setScrollPosition(isNaN(parsedPosition) ? 0 : parsedPosition);
       }
     } catch (error) {
       console.error('Error loading reading progress:', error);
     }
   };
 
-  const markAsCompleted = async () => {
-    if (!userInfo?.uid) return;
-
-    try {
-      await Promise.all([
-        AsyncStorage.setItem(`completed_story_${userInfo.uid}_${slug}`, 'true'),
-        AsyncStorage.setItem(`progress_${userInfo.uid}_${slug}`, '100'),
-      ]);
-      setIsCompleted(true);
-      setProgress(100);
-
-      // Update completed stories list for achievements
-      const completedStories = await AsyncStorage.getItem(`completedStories_${userInfo.uid}`);
-      const completedList = completedStories ? JSON.parse(completedStories) : [];
-      if (!completedList.includes(slug)) {
-        completedList.push(slug);
-        await AsyncStorage.setItem(
-          `completedStories_${userInfo.uid}`,
-          JSON.stringify(completedList)
-        );
-      }
-    } catch (error) {
-      console.error('Error marking story as completed:', error);
-    }
-  };
-
   const saveProgress = async (offsetY, contentHeight, viewportHeight) => {
-    if (!userInfo?.uid) return;
+    if (!userInfo?.uid || !slug) return;
 
     try {
-      if (contentHeight <= 0) return;
+      if (contentHeight <= 0) return progress;
       if (isCompleted) return 100;
 
       const scrollableHeight = contentHeight - viewportHeight;
-      if (scrollableHeight <= 0) return;
+      if (scrollableHeight <= 0) return progress;
 
       const newProgress = Math.min(Math.max((offsetY / scrollableHeight) * 100, 0), 100);
 
-      if (!isCompleted) {
+      // Only update if the progress has changed significantly (more than 1%)
+      if (Math.abs(newProgress - progress) > 1) {
         await Promise.all([
-          AsyncStorage.setItem(`progress_${userInfo.uid}_${slug}`, newProgress.toString()),
-          AsyncStorage.setItem(`scroll_${userInfo.uid}_${slug}`, offsetY.toString()),
+          AsyncStorage.setItem(getProgressKey(), newProgress.toString()),
+          AsyncStorage.setItem(getScrollKey(), offsetY.toString()),
         ]);
 
         if (storyData) {
           const lastReadData = {
             ...storyData,
             progress: newProgress,
-            lastReadAt: Date.now(),
+            lastReadAt: new Date().toISOString(),
             scrollPosition: offsetY,
             isCompleted: newProgress >= 95,
           };
-          await AsyncStorage.setItem(`lastRead_${userInfo.uid}`, JSON.stringify(lastReadData));
+          await AsyncStorage.setItem(getLastReadKey(), JSON.stringify(lastReadData));
         }
 
         setProgress(newProgress);
@@ -107,6 +88,51 @@ export const useReadingProgress = (slug, storyData) => {
       return newProgress;
     } catch (error) {
       console.error('Error saving reading progress:', error);
+      return progress;
+    }
+  };
+
+  const markAsCompleted = async () => {
+    if (!userInfo?.uid) return;
+
+    try {
+      await Promise.all([
+        AsyncStorage.setItem(getCompletionKey(), 'true'),
+        AsyncStorage.setItem(getProgressKey(), '100'),
+      ]);
+
+      setIsCompleted(true);
+      setProgress(100);
+
+      // Update completed stories list
+      const completedStoriesKey = `completedStories_${userInfo.uid}`;
+      const completedStories = await AsyncStorage.getItem(completedStoriesKey);
+      const completedList = completedStories ? JSON.parse(completedStories) : [];
+
+      if (!completedList.includes(slug)) {
+        completedList.push(slug);
+        await AsyncStorage.setItem(completedStoriesKey, JSON.stringify(completedList));
+      }
+    } catch (error) {
+      console.error('Error marking story as completed:', error);
+    }
+  };
+
+  const resetProgress = async () => {
+    if (!userInfo?.uid) return;
+
+    try {
+      await Promise.all([
+        AsyncStorage.removeItem(getProgressKey()),
+        AsyncStorage.removeItem(getScrollKey()),
+        AsyncStorage.removeItem(getCompletionKey()),
+      ]);
+
+      setProgress(0);
+      setScrollPosition(0);
+      setIsCompleted(false);
+    } catch (error) {
+      console.error('Error resetting progress:', error);
     }
   };
 
@@ -116,5 +142,7 @@ export const useReadingProgress = (slug, storyData) => {
     saveProgress,
     isCompleted,
     markAsCompleted,
+    resetProgress,
+    loadProgress,
   };
 };

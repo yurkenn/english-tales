@@ -1,13 +1,13 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
+import React, { useEffect, useContext } from 'react';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Colors } from '../../constants/colors';
 import { useNavigation } from '@react-navigation/native';
 import FormatReadTime from '../FormatReadTime';
 import Icon from '../Icons';
 import Animated, { FadeIn, SlideInLeft } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useEffect, useState } from 'react';
+import { AuthContext } from '../../store/AuthContext';
+import { useReadingProgress } from '../../hooks/useReadingProgress';
 import {
   scale,
   verticalScale,
@@ -21,29 +21,24 @@ import {
 
 const ContinueReading = ({ lastRead }) => {
   const navigation = useNavigation();
+  const { userInfo } = useContext(AuthContext);
   const time = FormatReadTime(lastRead?.readTime);
-  const [readingProgress, setReadingProgress] = useState(0);
+  const { progress, loadProgress } = useReadingProgress(lastRead?.slug?.current, lastRead);
 
   useEffect(() => {
-    if (lastRead) {
-      loadReadingProgress();
+    if (lastRead?.slug?.current && userInfo?.uid) {
+      loadProgress();
     }
-  }, [lastRead]);
+  }, [lastRead, userInfo]);
 
-  const loadReadingProgress = async () => {
-    try {
-      const progress = await AsyncStorage.getItem(`progress_${lastRead.slug.current}`);
-      if (progress !== null) {
-        setReadingProgress(parseFloat(progress));
-      }
-    } catch (error) {
-      console.error('Error loading reading progress:', error);
-    }
-  };
-
-  // Calculate the percentage based on content length and current position
   const formatProgress = (progress) => {
     return `${Math.round(progress)}%`;
+  };
+
+  const getProgressColor = (progress) => {
+    if (progress < 30) return Colors.primary;
+    if (progress < 70) return Colors.warning;
+    return Colors.success;
   };
 
   if (!lastRead) {
@@ -103,13 +98,13 @@ const ContinueReading = ({ lastRead }) => {
                   style={[
                     styles.progress,
                     {
-                      width: `${readingProgress}%`,
-                      backgroundColor: getProgressColor(readingProgress),
+                      width: `${progress}%`,
+                      backgroundColor: getProgressColor(progress),
                     },
                   ]}
                 />
               </View>
-              <Text style={styles.progressText}>{formatProgress(readingProgress)} completed</Text>
+              <Text style={styles.progressText}>{formatProgress(progress)} completed</Text>
             </View>
           </View>
         </LinearGradient>
@@ -117,14 +112,6 @@ const ContinueReading = ({ lastRead }) => {
     </TouchableOpacity>
   );
 };
-
-// Helper function to get progress color based on percentage
-const getProgressColor = (progress) => {
-  if (progress < 30) return Colors.primary;
-  if (progress < 70) return Colors.warning;
-  return Colors.success;
-};
-
 const styles = StyleSheet.create({
   container: {
     borderRadius: scale(12),
