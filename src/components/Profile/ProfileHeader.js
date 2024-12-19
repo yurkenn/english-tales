@@ -1,27 +1,13 @@
+// src/components/Profile/ProfileHeader.js
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import Icon from '../Icons';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { Colors } from '../../constants/colors';
-import {
-  scale,
-  verticalScale,
-  moderateScale,
-  spacing,
-  fontSizes,
-  wp,
-  hp,
-  isSmallDevice,
-} from '../../utils/dimensions';
+import Icon from '../Icons';
+import { wp, hp, scale, fontSizes, spacing } from '../../utils/dimensions';
 
-export const ProfileHeader = ({ userInfo, isLoading, onImagePress, onEditPress }) => (
-  <LinearGradient
-    colors={['#2A2D3A', '#1F222E']}
-    start={{ x: 0, y: 0 }}
-    end={{ x: 1, y: 1 }}
-    style={styles.header}
-  >
-    <TouchableOpacity onPress={onImagePress} disabled={isLoading}>
+const ProfileHeader = ({ userInfo, readerLevel, isLoading }) => {
+  return (
+    <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image
           source={
@@ -31,160 +17,62 @@ export const ProfileHeader = ({ userInfo, isLoading, onImagePress, onEditPress }
           }
           style={styles.profileImage}
         />
-        <LinearGradient colors={[Colors.primary, Colors.primary700]} style={styles.editBadge}>
-          <Icon name="camera" size={16} color={Colors.white} />
-        </LinearGradient>
       </View>
-    </TouchableOpacity>
 
-    <Text style={styles.userName}>
-      {userInfo?.displayName || userInfo?.email?.split('@')[0] || 'Reader'}
-    </Text>
-    <Text style={styles.userEmail}>{userInfo?.email}</Text>
+      <Text style={styles.userName}>{userInfo?.displayName || 'Reader'}</Text>
+      <Text style={styles.userEmail}>{userInfo?.email}</Text>
 
-    <TouchableOpacity onPress={onEditPress} style={styles.editProfileButton}>
-      <Text style={styles.editProfileText}>Edit Profile</Text>
-    </TouchableOpacity>
-  </LinearGradient>
-);
+      <View style={styles.levelBadge}>
+        <Icon name="star" size={16} color={Colors.primary} />
+        <Text style={styles.levelText}>
+          {readerLevel?.title || 'Novice Reader'} - Level {readerLevel?.level || 1}
+        </Text>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-  header: {
+  container: {
     alignItems: 'center',
-    paddingVertical: verticalScale(30),
-    paddingHorizontal: spacing.lg,
-    backgroundColor: Colors.dark500,
-    borderBottomLeftRadius: scale(30),
-    borderBottomRightRadius: scale(30),
+    paddingVertical: hp(2),
   },
   imageContainer: {
     position: 'relative',
-    marginBottom: verticalScale(15),
+    marginBottom: hp(2),
   },
   profileImage: {
-    width: scale(100),
-    height: scale(100),
-    borderRadius: scale(50),
+    width: wp(25),
+    height: wp(25),
+    borderRadius: wp(12.5),
     borderWidth: scale(3),
     borderColor: Colors.primary,
   },
-  editBadge: {
-    position: 'absolute',
-    bottom: 0,
-    right: 0,
-    backgroundColor: Colors.primary,
-    padding: scale(8),
-    borderRadius: scale(12),
-    borderWidth: scale(3),
-    borderColor: Colors.dark900,
-  },
   userName: {
-    fontSize: fontSizes.xxl,
+    fontSize: fontSizes.xxxl,
     fontWeight: '700',
     color: Colors.white,
-    marginBottom: verticalScale(5),
+    marginBottom: spacing.xs,
   },
   userEmail: {
     fontSize: fontSizes.sm,
     color: Colors.gray500,
-    marginBottom: verticalScale(15),
+    marginBottom: hp(2),
   },
   levelBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: Colors.primary + '20',
-    paddingHorizontal: scale(12),
-    paddingVertical: verticalScale(6),
+    paddingHorizontal: wp(4),
+    paddingVertical: hp(1),
     borderRadius: scale(20),
-    gap: scale(6),
+    gap: spacing.xs,
   },
   levelText: {
     color: Colors.primary,
-    fontSize: fontSizes.md,
-    fontWeight: '600',
-  },
-  statsContainer: {
-    padding: spacing.lg,
-  },
-  sectionTitle: {
-    fontSize: fontSizes.lg,
-    fontWeight: '600',
-    color: Colors.white,
-    marginBottom: verticalScale(15),
-  },
-  statsGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: scale(15),
-  },
-  statCard: {
-    width: (wp(100) - spacing.lg * 3) / 2, // Accounting for padding and gap
-    backgroundColor: Colors.dark500,
-    borderRadius: scale(15),
-    padding: spacing.md,
-    alignItems: 'center',
-  },
-  statIconContainer: {
-    width: scale(45),
-    height: scale(45),
-    borderRadius: scale(22.5),
-    backgroundColor: Colors.dark900 + '80',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: verticalScale(10),
-  },
-  statValue: {
-    fontSize: fontSizes.xl,
-    fontWeight: '700',
-    color: Colors.white,
-    marginBottom: verticalScale(5),
-  },
-  statLabel: {
     fontSize: fontSizes.sm,
-    color: Colors.gray500,
-  },
-  settingsContainer: {
-    padding: spacing.lg,
-  },
-  settingsCard: {
-    backgroundColor: Colors.dark500,
-    borderRadius: scale(15),
-    overflow: 'hidden',
-  },
-  settingItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: spacing.md,
-  },
-  settingBorder: {
-    borderBottomWidth: 1,
-    borderBottomColor: Colors.dark900,
-  },
-  settingLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: scale(12),
-  },
-  settingIconContainer: {
-    width: scale(36),
-    height: scale(36),
-    borderRadius: scale(18),
-    backgroundColor: Colors.primary + '20',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  settingLabel: {
-    fontSize: fontSizes.md,
-    color: Colors.white,
-  },
-  settingRight: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: scale(8),
-  },
-  settingValue: {
-    fontSize: fontSizes.sm,
-    color: Colors.gray500,
+    fontWeight: '600',
   },
 });
+
+export default ProfileHeader;

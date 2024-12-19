@@ -1,21 +1,19 @@
 import React from 'react';
-import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Slider from 'react-native-smooth-slider';
 import { Colors } from '../../constants/colors';
 import Animated, { FadeIn } from 'react-native-reanimated';
-import { useFontSize } from '../../store/FontSizeContext';
-import {
-  scale,
-  verticalScale,
-  moderateScale,
-  spacing,
-  fontSizes,
-  wp,
-  hp,
-  isSmallDevice,
-} from '../../utils/dimensions';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFontSize } from '../../store/slices/fontSizeSlice';
+import { scale, verticalScale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+
 const FontSizeSettings = () => {
-  const { fontSize, changeFontSize } = useFontSize();
+  const dispatch = useDispatch();
+  const { fontSize } = useSelector((state) => state.fontSize);
+
+  const handleFontSizeChange = async (newSize) => {
+    dispatch(changeFontSize(newSize));
+  };
 
   return (
     <Animated.View entering={FadeIn} style={styles.container}>
@@ -39,7 +37,7 @@ const FontSizeSettings = () => {
         step={1}
         maximumTrackTintColor={Colors.gray500}
         thumbTintColor={Colors.white}
-        onValueChange={changeFontSize}
+        onValueChange={handleFontSizeChange}
       />
 
       <Text style={styles.sizeValue}>{fontSize}px</Text>
