@@ -1,17 +1,8 @@
 // src/screens/Home.js
-import {
-  Alert,
-  FlatList,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Alert, FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 
@@ -21,16 +12,18 @@ import Categories from '../components/Category/Categories';
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import ContinueReading from '../components/Home/ContinueReading';
+import ExploreAllButton from '../components/ExploreAllButton';
 
-// Hooks
+// Hooks and Redux
 import useGetFeaturedStories from '../hooks/useGetFeaturedStories';
 import useGetCategories from '../hooks/useGetCategories';
 import useGetAllTales from '../hooks/useGetAllTales';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadLastRead } from '../store/slices/readingProgressSlice';
 
 // Utils and Constants
 import { Colors } from '../constants/colors';
 import { wp, hp, fontSizes, spacing, layout } from '../utils/dimensions';
-import ExploreAllButton from '../components/ExploreAllButton';
 
 const LoadingPlaceholder = () => (
   <View style={styles.loadingContainer}>
@@ -41,26 +34,31 @@ const LoadingPlaceholder = () => (
 );
 
 const Home = ({ navigation }) => {
+  const dispatch = useDispatch();
   const { featuredStories, loading: storiesLoading, error: storiesError } = useGetFeaturedStories();
   const { categories } = useGetCategories();
   const getAllTales = useGetAllTales();
-  const [lastRead, setLastRead] = React.useState(null);
+
+  // Get user and last read from Redux
+  const userInfo = useSelector((state) => state.auth.user);
+  const lastRead = useSelector((state) => state.readingProgress.lastRead);
+  const isLoadingLastRead = useSelector((state) => state.readingProgress.loading);
 
   useFocusEffect(
     useCallback(() => {
-      const getLastRead = async () => {
-        try {
-          const value = await AsyncStorage.getItem('lastRead');
-          if (value !== null) {
-            setLastRead(JSON.parse(value));
+      const loadUserData = async () => {
+        if (userInfo?.uid) {
+          try {
+            await dispatch(loadLastRead(userInfo.uid)).unwrap();
+          } catch (error) {
+            console.error('Error loading last read:', error);
+            Alert.alert('Error', 'There was an issue retrieving your reading progress.');
           }
-        } catch (error) {
-          Alert.alert('Error', 'There was an issue retrieving your last read story.');
         }
       };
 
-      getLastRead();
-    }, [])
+      loadUserData();
+    }, [userInfo?.uid, dispatch])
   );
 
   if (storiesLoading) return <LoadingPlaceholder />;
@@ -98,7 +96,11 @@ const Home = ({ navigation }) => {
 
       <Animated.View entering={FadeInDown.delay(800)} style={styles.myStoriesContainer}>
         <Text style={styles.sectionTitle}>Continue Reading</Text>
-        <ContinueReading lastRead={lastRead} />
+        <ContinueReading
+          lastRead={lastRead}
+          isLoading={isLoadingLastRead}
+          navigation={navigation}
+        />
       </Animated.View>
 
       <ExploreAllButton

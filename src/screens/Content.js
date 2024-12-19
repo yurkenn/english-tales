@@ -1,177 +1,213 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { StyleSheet, Text, View, Image, useWindowDimensions, TouchableOpacity } from 'react-native';
-import { urlFor } from '../../sanity';
-import StoryContent from '../components/Content/StoryContent';
-import HeaderNavbar from '../components/Content/HeaderNavbar';
+// src/screens/Content.js
+import React, { useEffect, useRef, useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import { Colors } from '../constants/colors';
-import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
-import { useUserStats } from '../store/UserStatsContext';
-import { useReadingProgress } from '../hooks/useReadingProgress';
-import LoadingAnimation from '../components/Animations/LoadingAnimation';
-import ErrorAnimation from '../components/Animations/ErrorAnimation';
-import Icon from '../components/Icons';
-import Toast from 'react-native-toast-message';
-import {
-  scale,
-  verticalScale,
-  moderateScale,
-  spacing,
-  fontSizes,
-  layout,
-  wp,
-  hp,
-} from '../utils/dimensions';
+import { spacing, hp, fontSizes } from '../utils/dimensions';
 import Animated, {
-  FadeInDown,
-  FadeIn,
-  FadeOut,
-  interpolate,
   useAnimatedScrollHandler,
-  useAnimatedStyle,
   useSharedValue,
+  useAnimatedStyle,
+  interpolate,
+  withTiming,
   runOnJS,
 } from 'react-native-reanimated';
+import Toast from 'react-native-toast-message';
 
-const SCROLL_THRESHOLD = verticalScale(200);
+// Components
+import LoadingAnimation from '../components/Animations/LoadingAnimation';
+import ErrorAnimation from '../components/Animations/ErrorAnimation';
+import TaleHeader from '../components/Content/TaleHeader';
+import BookContent from '../components/Content/BookContent';
+import ScrollToTopButton from '../components/Content/ScrollToTopButton';
 
-const Content = ({ route }) => {
-  const { width, height } = useWindowDimensions();
-  const { slug } = route.params;
+// Redux and Hooks
+import { updateReadingProgress } from '../store/slices/userStatsSlice';
+import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
+import { LinearGradient } from 'expo-linear-gradient';
+import { updateLastRead } from '../store/slices/readingProgressSlice';
+
+const IMAGE_HEIGHT = hp(45);
+const HEADER_HEIGHT = 80;
+const PROGRESS_UPDATE_INTERVAL = 5000; // 5 seconds
+const MINIMUM_READ_TIME = 10000; // 10 seconds before first progress update
+
+const Content = ({ route, navigation }) => {
+  const dispatch = useDispatch();
+  const { slug, category } = route.params;
   const { loading, error, tale } = useGetTaleBySlug(slug);
-  const { startReading, updateReadingProgress, completeStory } = useUserStats();
-  const { progress, scrollPosition, saveProgress, isCompleted } = useReadingProgress(
-    slug,
-    tale?.[0]
-  );
+  const userInfo = useSelector((state) => state.auth.user);
 
+  // State and refs
+  const [readStartTime] = useState(Date.now());
+  const [currentProgress, setCurrentProgress] = useState(0);
+  const [isInitialProgress, setIsInitialProgress] = useState(true);
   const scrollY = useSharedValue(0);
-  const contentHeight = useSharedValue(0);
   const scrollViewRef = useRef(null);
-  const [isContentReady, setIsContentReady] = useState(false);
-  const [showScrollTop, setShowScrollTop] = useState(false);
-  const [hasCompletedStory, setHasCompletedStory] = useState(false);
+  const progressInterval = useRef(null);
+  const contentHeight = useRef(0);
+  const viewHeight = useRef(0);
 
-  const imageHeight = hp(50); // 50% of screen height
-  const headerHeight = verticalScale(90);
-  const paddingHorizontal = wp(5);
-
+  // Configure navigation header
   useEffect(() => {
-    startReading(slug);
-    return () => {
-      updateReadingProgress(slug, progress);
-    };
-  }, [slug]);
+    navigation.setOptions({
+      headerTransparent: true,
+      headerStyle: { backgroundColor: 'transparent' },
+      headerTintColor: Colors.white,
+      headerTitle: '',
+    });
+  }, [navigation]);
 
-  const handleStoryCompletion = async () => {
-    if (!hasCompletedStory) {
-      try {
-        await completeStory(slug);
-        setHasCompletedStory(true);
-        setTimeout(() => {
-          Toast.show({
-            type: 'success',
-            text1: 'Congratulations! 🎉',
-            text2: "You've completed this story!",
-            position: 'bottom',
-            visibilityTime: 3000,
-          });
-        }, 500);
-      } catch (error) {
-        console.error('Error completing story:', error);
+  // Header animation style
+  const headerBackgroundStyle = useAnimatedStyle(() => ({
+    opacity: interpolate(scrollY.value, [0, IMAGE_HEIGHT - HEADER_HEIGHT], [0, 1], 'clamp'),
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: HEADER_HEIGHT,
+    backgroundColor: Colors.dark900,
+    zIndex: 1,
+  }));
+
+  // Setup progress tracking
+  useEffect(() => {
+    if (!userInfo?.uid || !tale?.[0]?._id) return;
+
+    const updateInterval = setInterval(() => {
+      if (Date.now() - readStartTime >= MINIMUM_READ_TIME) {
+        updateProgress();
       }
-    }
+    }, PROGRESS_UPDATE_INTERVAL);
+
+    progressInterval.current = updateInterval;
+
+    return () => {
+      clearInterval(updateInterval);
+      // Save final progress when leaving
+      if (!isInitialProgress) {
+        updateProgress(true);
+      }
+    };
+  }, [userInfo, tale, isInitialProgress]);
+
+  const calculateProgress = () => {
+    if (!contentHeight.current || !viewHeight.current) return 0;
+
+    const currentOffset = scrollY.value;
+    const maxScroll = contentHeight.current - viewHeight.current;
+
+    if (maxScroll <= 0) return 100;
+
+    const progress = (currentOffset / maxScroll) * 100;
+    return Math.min(Math.round(progress), 100);
   };
 
-  const updateScrollButtonVisibility = useCallback((offsetY) => {
-    setShowScrollTop(offsetY > SCROLL_THRESHOLD);
-  }, []);
+  const calculateTimeSpent = () => {
+    return Math.max(1, Math.round((Date.now() - readStartTime) / 60000)); // Minimum 1 minute
+  };
 
-  const handleScroll = useCallback(
-    async (offsetY) => {
-      if (contentHeight.value > 0) {
-        const newProgress = await saveProgress(offsetY, contentHeight.value, height);
-        if (newProgress >= 95 && !hasCompletedStory) {
-          handleStoryCompletion();
+  const updateProgress = async (isFinal = false) => {
+    if (!userInfo?.uid || !tale?.[0]) return;
+
+    try {
+      const progress = isFinal ? 100 : calculateProgress();
+      const timeSpent = calculateTimeSpent();
+
+      // Only update if progress has changed or it's the final update
+      if (progress !== currentProgress || isFinal) {
+        setCurrentProgress(progress);
+        setIsInitialProgress(false);
+
+        await dispatch(
+          updateReadingProgress({
+            userId: userInfo.uid,
+            storyId: tale[0]._id,
+            progress,
+            category: category || tale[0].categories?.[0]?.title,
+            timeSpent,
+          })
+        ).unwrap();
+
+        // Also update last read data to reflect current progress
+        if (progress > 0) {
+          dispatch(
+            updateLastRead({
+              userId: userInfo.uid,
+              storyData: {
+                ...tale[0],
+                progress,
+                lastReadAt: new Date().toISOString(),
+              },
+            })
+          );
         }
       }
-    },
-    [contentHeight.value, height, hasCompletedStory]
-  );
+    } catch (error) {
+      console.error('Error updating progress:', error);
+      Toast.show({
+        type: 'error',
+        text1: 'Error updating progress',
+        text2: 'Your progress may not be saved',
+      });
+    }
+  };
 
   const scrollHandler = useAnimatedScrollHandler({
     onScroll: (event) => {
       scrollY.value = event.contentOffset.y;
-      runOnJS(handleScroll)(event.contentOffset.y);
-      runOnJS(updateScrollButtonVisibility)(event.contentOffset.y);
+    },
+    onMomentumEnd: () => {
+      runOnJS(updateProgress)();
     },
   });
 
-  const scrollToTop = () => {
-    scrollViewRef.current?.scrollTo({
-      y: 0,
-      animated: true,
-    });
+  const handleLayout = (event) => {
+    viewHeight.current = event.nativeEvent.layout.height;
   };
 
-  const headerStyle = useAnimatedStyle(() => {
-    'worklet';
-    const opacity = interpolate(scrollY.value, [0, imageHeight * 0.7], [0, 1], 'clamp');
-    return { opacity };
-  });
+  const handleContentSizeChange = (_, height) => {
+    contentHeight.current = height;
+  };
 
-  const onContentLayout = useCallback((event) => {
-    contentHeight.value = event.nativeEvent.layout.height;
-    setIsContentReady(true);
-  }, []);
-
-  useEffect(() => {
-    if (isContentReady && scrollViewRef.current && scrollPosition > 0) {
-      const timer = setTimeout(() => {
-        scrollViewRef.current.scrollTo({ y: scrollPosition, animated: false });
-      }, 300);
-      return () => clearTimeout(timer);
-    }
-  }, [isContentReady, scrollPosition]);
+  const handleScrollToTop = () => {
+    scrollViewRef.current?.scrollTo({ y: 0, animated: true });
+  };
 
   if (loading) return <LoadingAnimation />;
   if (error) return <ErrorAnimation />;
   if (!tale || !tale[0]) return null;
 
+  const currentTale = tale[0];
+
   return (
     <View style={styles.container}>
-      <Animated.View style={[styles.stickyHeader, headerStyle, { height: headerHeight }]}>
-        <HeaderNavbar title={tale[0]?.title} style={{ height: headerHeight }} />
-      </Animated.View>
+      <Animated.View style={headerBackgroundStyle} />
 
       <Animated.ScrollView
         ref={scrollViewRef}
+        showsVerticalScrollIndicator={false}
         onScroll={scrollHandler}
         scrollEventThrottle={16}
-        style={styles.scrollView}
+        contentContainerStyle={styles.scrollContent}
+        onLayout={handleLayout}
+        onContentSizeChange={handleContentSizeChange}
       >
-        <Image
-          source={{ uri: urlFor(tale[0].imageURL).url() }}
-          style={[styles.headerImage, { height: imageHeight }]}
-        />
-        <Animated.View
-          entering={FadeInDown.delay(400)}
-          onLayout={onContentLayout}
-          style={[styles.content, { paddingHorizontal }]}
-        >
-          <Text style={styles.title}>{tale[0]?.title}</Text>
+        <View style={[styles.imageContainer, { height: IMAGE_HEIGHT }]}>
+          <TaleHeader imageURL={currentTale.imageURL} />
+          <LinearGradient colors={['transparent', Colors.dark900]} style={styles.gradientOverlay} />
+        </View>
 
-          <StoryContent blocks={tale[0].content} />
-        </Animated.View>
+        <View style={styles.bookContainer}>
+          <View style={styles.chapterInfo}>
+            <Text style={styles.chapterTitle}>{currentTale.title}</Text>
+          </View>
+
+          <BookContent blocks={currentTale.content} />
+        </View>
       </Animated.ScrollView>
 
-      {showScrollTop && (
-        <Animated.View entering={FadeIn} exiting={FadeOut} style={styles.scrollTopButton}>
-          <TouchableOpacity onPress={scrollToTop} style={styles.scrollTopTouchable}>
-            <Icon name="arrow-up" size={scale(24)} color={Colors.white} />
-          </TouchableOpacity>
-        </Animated.View>
-      )}
-
+      <ScrollToTopButton scrollY={scrollY} onPress={handleScrollToTop} />
       <Toast />
     </View>
   );
@@ -182,82 +218,46 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.dark900,
   },
-  scrollView: {
-    flex: 1,
+  scrollContent: {
+    flexGrow: 1,
   },
-  stickyHeader: {
+  imageContainer: {
+    position: 'relative',
+  },
+  gradientOverlay: {
     position: 'absolute',
-    top: 0,
+    bottom: 0,
     left: 0,
     right: 0,
-    zIndex: 100,
-    backgroundColor: Colors.dark900,
-    justifyContent: 'center',
+    height: '50%',
   },
-  headerImage: {
-    width: '100%',
-    resizeMode: 'cover',
-    opacity: 0.8,
-  },
-  content: {
+  bookContainer: {
     flex: 1,
     backgroundColor: Colors.dark900,
-    paddingVertical: spacing.lg,
-  },
-  title: {
-    fontSize: fontSizes.xxl,
-    fontWeight: 'bold',
-    color: Colors.white,
-    marginBottom: spacing.md,
-    lineHeight: moderateScale(32),
-  },
-  progressContainer: {
-    marginVertical: spacing.md,
-    padding: spacing.md,
-    backgroundColor: Colors.dark500,
-    borderRadius: scale(10),
-  },
-  progressBar: {
-    height: verticalScale(6),
-    backgroundColor: Colors.dark900,
-    borderRadius: scale(3),
-    overflow: 'hidden',
-  },
-  progressFill: {
-    height: '100%',
-    borderRadius: scale(3),
-  },
-  progressText: {
-    color: Colors.white,
-    fontSize: fontSizes.sm,
-    marginTop: spacing.xs,
-    textAlign: 'center',
-  },
-  completedText: {
-    color: Colors.success,
-    fontWeight: '600',
-  },
-  scrollTopButton: {
-    position: 'absolute',
-    bottom: spacing.xl,
-    right: spacing.lg,
-    backgroundColor: Colors.primary,
-    borderRadius: scale(30),
-    elevation: 5,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: scale(2),
+      height: -2,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    marginTop: -spacing.xl,
+    paddingTop: spacing.xl,
+    minHeight: hp(100),
   },
-  scrollTopTouchable: {
-    width: scale(48),
-    height: scale(48),
-    borderRadius: scale(24),
-    justifyContent: 'center',
+  chapterInfo: {
     alignItems: 'center',
+    marginBottom: spacing.xl,
+    paddingHorizontal: spacing.lg,
+  },
+  chapterTitle: {
+    fontSize: fontSizes.xl,
+    fontWeight: '700',
+    color: Colors.white,
+    textAlign: 'center',
+    fontFamily: 'serif',
   },
 });
 

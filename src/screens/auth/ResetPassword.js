@@ -1,24 +1,26 @@
+// src/screens/auth/ResetPassword.js
 import React, { useState } from 'react';
 import { View, Text, KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { Colors } from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
-import SuccessModal from '../../components/Modal/SuccessModal';
-import ErrorModal from '../../components/Modal/ErrorModal';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { auth } from '../../../firebaseConfig';
-import { sendPasswordResetEmail } from 'firebase/auth';
-import { getFirebaseErrorMessage, shouldShowErrorModal } from '../../utils/firebaseErrors';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+// Import Redux hooks and actions
+import { useDispatch, useSelector } from 'react-redux';
+import { resetPassword } from '../../store/slices/authSlice';
+import SuccessModal from '../../components/Modal/SuccessModal';
+import ErrorModal from '../../components/Modal/ErrorModal';
 
 const resetValidationSchema = Yup.object().shape({
   email: Yup.string().email('Please enter a valid email address').required('Email is required'),
 });
 
 const ResetPassword = ({ navigation }) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.auth);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [resetEmail, setResetEmail] = useState('');
@@ -26,21 +28,18 @@ const ResetPassword = ({ navigation }) => {
 
   const handleResetPassword = async (values, { setFieldError }) => {
     try {
-      setIsLoading(true);
-      await sendPasswordResetEmail(auth, values.email);
+      await dispatch(resetPassword(values.email)).unwrap();
       setResetEmail(values.email);
       setShowSuccessModal(true);
     } catch (error) {
-      const message = getFirebaseErrorMessage(error);
-
-      if (shouldShowErrorModal(error)) {
-        setErrorMessage(message);
+      // If it's a serious error that requires a modal
+      if (error.includes('too many requests') || error.includes('disabled')) {
+        setErrorMessage(error);
         setShowErrorModal(true);
       } else {
-        setFieldError('email', message);
+        // For regular validation errors
+        setFieldError('email', error);
       }
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -92,7 +91,7 @@ const ResetPassword = ({ navigation }) => {
               <CustomButton
                 onPress={handleSubmit}
                 title="Send Reset Link"
-                loading={isLoading}
+                loading={loading}
                 style={styles.button}
               />
 
@@ -146,6 +145,9 @@ const styles = StyleSheet.create({
   },
   form: {
     gap: spacing.md,
+  },
+  inputGroup: {
+    gap: spacing.xs,
   },
   errorText: {
     color: Colors.error,

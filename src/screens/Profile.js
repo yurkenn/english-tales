@@ -1,78 +1,46 @@
-import React, { useContext, useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, Dimensions, TouchableOpacity } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { Colors } from '../constants/colors';
-import { AuthContext } from '../store/AuthContext';
-import { useUserStats } from '../store/UserStatsContext';
+import { useDispatch, useSelector } from 'react-redux';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
-import Icon from '../components/Icons';
-import * as ImagePicker from 'expo-image-picker';
-import Toast from 'react-native-toast-message';
+import { wp, hp, scale, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
+import { selectUser, selectFormattedStats, selectUserStatsLoading } from '../store/selectors';
+import { loadUserStats } from '../store/slices/userStatsSlice';
+import { logoutUser } from '../store/slices/authSlice';
 import { AchievementSection } from '../components/Achievement/AchievementSection';
 import StatCard from '../components/Profile/StatCard';
-import { wp, hp, scale, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
 import SettingItem from '../components/Profile/SettingItem';
+import ProfileHeader from '../components/Profile/ProfileHeader';
 
 const Profile = ({ navigation }) => {
-  const { userInfo, updateUserInfo, handleLogout } = useContext(AuthContext);
-  const { formattedStats } = useUserStats();
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const userInfo = useSelector(selectUser);
+  const formattedStats = useSelector(selectFormattedStats);
+  const loading = useSelector(selectUserStatsLoading);
 
-  const pickImage = async () => {
+  useEffect(() => {
+    if (userInfo?.uid) {
+      dispatch(loadUserStats(userInfo.uid));
+    }
+  }, [userInfo]);
+
+  const handleLogout = async () => {
     try {
-      setIsLoading(true);
-      const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: true,
-        aspect: [1, 1],
-        quality: 1,
-      });
-
-      if (!result.canceled) {
-        await updateUserInfo({ ...userInfo, photoURL: result.assets[0].uri });
-        Toast.show({
-          type: 'success',
-          text1: 'Profile photo updated successfully',
-        });
-      }
+      await dispatch(logoutUser()).unwrap();
     } catch (error) {
-      Toast.show({
-        type: 'error',
-        text1: 'Failed to update profile photo',
-      });
-    } finally {
-      setIsLoading(false);
+      console.error('Logout failed:', error);
     }
   };
 
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <LinearGradient colors={['#2A2D3A', '#1F222E']} style={styles.header}>
-        <TouchableOpacity onPress={pickImage} disabled={isLoading}>
-          <View style={styles.imageContainer}>
-            <Animated.Image
-              source={
-                userInfo.photoURL
-                  ? { uri: userInfo.photoURL }
-                  : require('../../assets/images/blank-profile.png')
-              }
-              style={styles.profileImage}
-            />
-            <View style={styles.editBadge}>
-              <Icon name="camera" size={16} color={Colors.white} />
-            </View>
-          </View>
-        </TouchableOpacity>
-
-        <Text style={styles.userName}>{userInfo.displayName || 'Reader'}</Text>
-        <Text style={styles.userEmail}>{userInfo.email}</Text>
-
-        <View style={styles.levelBadge}>
-          <Icon name="star" size={16} color={Colors.primary} />
-          <Text style={styles.levelText}>
-            {formattedStats.readerLevel.title} - Level {formattedStats.readerLevel.level}
-          </Text>
-        </View>
+        <ProfileHeader
+          userInfo={userInfo}
+          readerLevel={formattedStats.readerLevel}
+          isLoading={loading}
+        />
       </LinearGradient>
 
       <View style={styles.statsGrid}>
@@ -106,8 +74,6 @@ const Profile = ({ navigation }) => {
           <SettingItem icon="log-out" label="Logout" onPress={handleLogout} isLast />
         </View>
       </View>
-
-      <Toast />
     </ScrollView>
   );
 };

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// src/screens/auth/Signup.js
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -9,8 +10,6 @@ import {
   StyleSheet,
 } from 'react-native';
 import { Formik } from 'formik';
-import { AuthContext } from '../../store/AuthContext';
-import { useContext } from 'react';
 import { Colors } from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
@@ -18,35 +17,58 @@ import Animated, { FadeInDown } from 'react-native-reanimated';
 import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
 import Icon from '../../components/Icons';
 import { signupValidationSchema } from '../../components/Auth/Validation';
+import { useDispatch, useSelector } from 'react-redux';
+import { createUser, googleSignIn } from '../../store/slices/authSlice';
+import { initializeUserStats } from '../../store/slices/userStatsSlice';
+import * as WebBrowser from 'expo-web-browser';
+import * as Google from 'expo-auth-session/providers/google';
+
+WebBrowser.maybeCompleteAuthSession();
 
 const Signup = ({ navigation }) => {
-  const { createUser, promptAsync } = useContext(AuthContext);
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.auth);
   const [focusedInput, setFocusedInput] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [request, response, promptAsync] = Google.useAuthRequest({
+    iosClientId: process.env.EXPO_PUBLIC_IOS_CLIENT_ID,
+    androidClientId: process.env.EXPO_PUBLIC_ANDROID_CLIENT_ID,
+    webClientId: process.env.EXPO_PUBLIC_WEB_CLIENT_ID,
+  });
+
+  useEffect(() => {
+    if (response?.type === 'success') {
+      handleGoogleSignIn(response);
+    }
+  }, [response]);
+
+  const handleGoogleSignIn = async (response) => {
+    try {
+      const { id_token } = response.params;
+      const result = await dispatch(googleSignIn(id_token)).unwrap();
+      if (result?.uid) {
+        await dispatch(initializeUserStats(result.uid)).unwrap();
+      }
+    } catch (error) {
+      console.error('Google sign in error:', error);
+    }
+  };
 
   const handleSubmit = async (values, { setFieldError }) => {
     try {
-      setIsLoading(true);
-      const userCredential = await createUser({
-        email: values.email,
-        password: values.password,
-        displayName: values.displayName.trim(), // Clean the name input
-      });
-
-      // Update user profile with display name
-      if (userCredential?.user) {
-        await updateProfile(userCredential.user, {
+      const result = await dispatch(
+        createUser({
+          email: values.email,
+          password: values.password,
           displayName: values.displayName.trim(),
-        });
+        })
+      ).unwrap();
+
+      if (result?.uid) {
+        await dispatch(initializeUserStats(result.uid)).unwrap();
       }
     } catch (error) {
-      const errorMessage =
-        error.code === 'auth/email-already-in-use'
-          ? 'An account with this email already exists.'
-          : 'Something went wrong. Please try again.';
-      setFieldError('email', errorMessage);
-    } finally {
-      setIsLoading(false);
+      setFieldError('email', error);
     }
   };
 
@@ -161,8 +183,8 @@ const Signup = ({ navigation }) => {
                 <CustomButton
                   onPress={handleSubmit}
                   title="Create Account"
-                  loading={isLoading}
-                  disabled={!values.acceptPrivacy || isLoading}
+                  loading={loading}
+                  disabled={!values.acceptPrivacy || loading}
                   variant="filled"
                   style={!values.acceptPrivacy ? styles.disabledButton : null}
                 />
@@ -178,6 +200,7 @@ const Signup = ({ navigation }) => {
                   title="Continue with Google"
                   variant="outlined"
                   imageSource={require('../../../assets/images/google.png')}
+                  disabled={!request}
                 />
               </View>
             </Animated.View>

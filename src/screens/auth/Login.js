@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -10,34 +10,46 @@ import {
 } from 'react-native';
 import { Formik } from 'formik';
 import { loginValidationSchema } from '../../components/Auth/Validation';
-import { AuthContext } from '../../store/AuthContext';
-import { useContext } from 'react';
 import * as WebBrowser from 'expo-web-browser';
+import * as Google from 'expo-auth-session/providers/google';
 import { Colors } from '../../constants/colors';
 import CustomButton from '../../components/CustomButton';
 import CustomInput from '../../components/CustomInput';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser, googleSignIn } from '../../store/slices/authSlice';
 
 WebBrowser.maybeCompleteAuthSession();
 
 const Login = ({ navigation }) => {
-  const authContext = useContext(AuthContext);
-  const promptAsync = authContext.promptAsync;
+  const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.auth);
   const [focusedInput, setFocusedInput] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [request, response, promptAsync] = Google.useAuthRequest({
+    iosClientId: process.env.EXPO_PUBLIC_IOS_CLIENT_ID,
+    androidClientId: process.env.EXPO_PUBLIC_ANDROID_CLIENT_ID,
+    webClientId: process.env.EXPO_PUBLIC_WEB_CLIENT_ID,
+  });
+
+  useEffect(() => {
+    if (response?.type === 'success') {
+      const { id_token } = response.params;
+      dispatch(googleSignIn(id_token));
+    }
+  }, [response]);
 
   const handleSubmit = async (values) => {
     try {
-      setIsLoading(true);
-      await authContext.handleLogin(values);
-    } finally {
-      setIsLoading(false);
+      await dispatch(loginUser(values)).unwrap();
+    } catch (error) {
+      console.error('Login error:', error);
     }
   };
 
   const handleForgotPassword = () => {
-    navigation.navigate('ResetPassword'); // Make sure to add this screen to your navigation stack
+    navigation.navigate('ResetPassword');
   };
 
   return (
@@ -107,7 +119,7 @@ const Login = ({ navigation }) => {
               </View>
 
               <View style={styles.buttonGroup}>
-                <CustomButton onPress={handleSubmit} title="Sign In" loading={isLoading} />
+                <CustomButton onPress={handleSubmit} title="Sign In" loading={loading} />
 
                 <View style={styles.dividerContainer}>
                   <View style={styles.divider} />
@@ -120,6 +132,7 @@ const Login = ({ navigation }) => {
                   title="Continue with Google"
                   variant="outlined"
                   imageSource={require('../../../assets/images/google.png')}
+                  disabled={!request}
                 />
               </View>
             </Animated.View>

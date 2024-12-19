@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useBookmark } from '../store/BookmarkContext';
-import SavedCard from '../components/Saved/SavedCard';
 import { Colors } from '../constants/colors';
 import { FlashList } from '@shopify/flash-list';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from '../components/Icons';
 import { wp, hp, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
+import { useDispatch, useSelector } from 'react-redux';
+import { loadBookmarks, removeBookmark } from '../store/slices/bookmarkSlice';
+import SavedCard from '../components/Saved/SavedCard';
 
 const EmptyState = () => (
   <Animated.View entering={FadeInDown.springify()} style={styles.emptyContainer}>
@@ -18,7 +19,19 @@ const EmptyState = () => (
 );
 
 const Saved = ({ navigation }) => {
-  const { bookmarks, removeBookmark } = useBookmark();
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+  const { bookmarks } = useSelector((state) => state.bookmarks);
+
+  useEffect(() => {
+    if (user?.uid) {
+      dispatch(loadBookmarks(user.uid));
+    }
+  }, [user]);
+
+  const handleRemoveBookmark = (bookData) => {
+    dispatch(removeBookmark({ bookData, userId: user.uid }));
+  };
 
   const renderItem = ({ item, index }) => (
     <Animated.View entering={FadeInDown.delay(index * 100)}>
@@ -26,7 +39,7 @@ const Saved = ({ navigation }) => {
         onPress={() => navigation.navigate('Detail', { data: item })}
         activeOpacity={0.7}
       >
-        <SavedCard data={item} onDelete={removeBookmark} />
+        <SavedCard data={item} onDelete={handleRemoveBookmark} />
       </TouchableOpacity>
     </Animated.View>
   );
