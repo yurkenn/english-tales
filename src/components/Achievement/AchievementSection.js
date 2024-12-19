@@ -1,58 +1,47 @@
+// src/components/Achievement/AchievementSection.js
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Colors } from '../../constants/colors';
 import Icon from '../Icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import Animated, { FadeInRight } from 'react-native-reanimated';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-
-export const AchievementSection = ({ achievements }) => {
-  return (
-    <Animated.View entering={FadeInRight.delay(600)} style={styles.achievementsContainer}>
-      <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>Achievements</Text>
-        <View style={styles.progressBadge}>
-          <Text style={styles.progressText}>
-            {achievements.filter((a) => a.isUnlocked).length}/{achievements.length}
-          </Text>
-        </View>
-      </View>
-      <View style={styles.achievementsList}>
-        {achievements.map((achievement, index) => (
-          <AchievementCard key={achievement.id} achievement={achievement} delay={index * 100} />
-        ))}
-      </View>
-    </Animated.View>
-  );
-};
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import { wp, hp, fontSizes, spacing, layout } from '../../utils/dimensions';
 
 const AchievementCard = ({ achievement, delay = 0 }) => {
+  const { isUnlocked, progress = 0 } = achievement;
+
   return (
-    <Animated.View entering={FadeInRight.delay(delay)} style={styles.cardContainer}>
+    <Animated.View entering={FadeInDown.delay(delay)} style={styles.cardContainer}>
       <LinearGradient
-        colors={achievement.isUnlocked ? ['#2A2D3A', '#1F222E'] : ['#1F1F1F', '#121212']}
+        colors={isUnlocked ? ['#2A2D3A', '#1F222E'] : ['#1F1F1F', '#121212']}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 1 }}
         style={styles.card}
       >
-        <View style={[styles.iconContainer, achievement.isUnlocked && styles.unlockedIcon]}>
+        <View style={[styles.iconContainer, isUnlocked && styles.unlockedIcon]}>
           <Icon
             name={achievement.icon}
             size={24}
-            color={achievement.isUnlocked ? Colors.primary : Colors.gray500}
+            color={isUnlocked ? Colors.primary : Colors.gray500}
           />
         </View>
 
         <View style={styles.contentContainer}>
-          <Text style={[styles.title, achievement.isUnlocked && styles.unlockedText]}>
-            {achievement.title}
-          </Text>
+          <Text style={[styles.title, isUnlocked && styles.unlockedText]}>{achievement.title}</Text>
           <Text style={styles.description}>{achievement.description}</Text>
+
+          {!isUnlocked && (
+            <View style={styles.progressContainer}>
+              <View style={styles.progressBar}>
+                <View style={[styles.progressFill, { width: `${progress}%` }]} />
+              </View>
+              <Text style={styles.progressText}>{`${progress}%`}</Text>
+            </View>
+          )}
         </View>
 
         <View style={styles.statusContainer}>
-          {achievement.isUnlocked ? (
+          {isUnlocked ? (
             <Icon name="checkmark-circle" size={24} color={Colors.primary} />
           ) : (
             <Icon name="lock-closed" size={20} color={Colors.gray500} />
@@ -63,38 +52,62 @@ const AchievementCard = ({ achievement, delay = 0 }) => {
   );
 };
 
+export const AchievementSection = ({ achievements = [] }) => {
+  if (!achievements?.length) return null;
+
+  const unlockedCount = achievements.filter((a) => a.isUnlocked).length;
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.sectionTitle}>Achievements</Text>
+        <View style={styles.progressBadge}>
+          <Text style={styles.progressText}>
+            {unlockedCount}/{achievements.length}
+          </Text>
+        </View>
+      </View>
+
+      <View style={styles.list}>
+        {achievements.map((achievement, index) => (
+          <AchievementCard key={achievement.id} achievement={achievement} delay={index * 100} />
+        ))}
+      </View>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
-  achievementsContainer: {
-    padding: SCREEN_WIDTH * 0.04,
-    marginTop: SCREEN_HEIGHT * 0.02,
+  container: {
+    padding: spacing.lg,
   },
-  sectionHeader: {
+  header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: SCREEN_HEIGHT * 0.02,
+    marginBottom: spacing.lg,
   },
   sectionTitle: {
-    fontSize: SCREEN_HEIGHT * 0.024,
+    fontSize: fontSizes.xl,
     fontWeight: '600',
     color: Colors.white,
   },
   progressBadge: {
     backgroundColor: Colors.primary + '20',
-    paddingHorizontal: SCREEN_WIDTH * 0.03,
-    paddingVertical: SCREEN_HEIGHT * 0.006,
-    borderRadius: 12,
+    paddingHorizontal: wp(3),
+    paddingVertical: hp(0.6),
+    borderRadius: layout.borderRadius,
   },
   progressText: {
     color: Colors.primary,
-    fontSize: SCREEN_HEIGHT * 0.016,
+    fontSize: fontSizes.sm,
     fontWeight: '600',
   },
-  achievementsList: {
-    gap: SCREEN_HEIGHT * 0.012,
+  list: {
+    gap: spacing.md,
   },
   cardContainer: {
-    borderRadius: 12,
+    borderRadius: layout.borderRadius,
     overflow: 'hidden',
     elevation: 4,
     shadowColor: '#000',
@@ -105,13 +118,13 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
     alignItems: 'center',
-    padding: SCREEN_WIDTH * 0.04,
-    gap: SCREEN_WIDTH * 0.03,
+    padding: spacing.md,
+    gap: spacing.md,
   },
   iconContainer: {
-    width: SCREEN_WIDTH * 0.12,
-    height: SCREEN_WIDTH * 0.12,
-    borderRadius: SCREEN_WIDTH * 0.06,
+    width: wp(12),
+    height: wp(12),
+    borderRadius: wp(6),
     backgroundColor: Colors.dark900 + '40',
     justifyContent: 'center',
     alignItems: 'center',
@@ -121,22 +134,46 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
+    gap: spacing.xs,
   },
   title: {
-    fontSize: SCREEN_HEIGHT * 0.018,
+    fontSize: fontSizes.md,
     fontWeight: '600',
     color: Colors.gray500,
-    marginBottom: 4,
   },
   unlockedText: {
     color: Colors.white,
   },
   description: {
-    fontSize: SCREEN_HEIGHT * 0.014,
+    fontSize: fontSizes.sm,
     color: Colors.gray500,
-    lineHeight: SCREEN_HEIGHT * 0.02,
+    lineHeight: fontSizes.md * 1.5,
+  },
+  progressContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    marginTop: spacing.xs,
+  },
+  progressBar: {
+    flex: 1,
+    height: hp(0.8),
+    backgroundColor: Colors.dark900,
+    borderRadius: hp(0.4),
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    backgroundColor: Colors.primary,
+  },
+  progressText: {
+    fontSize: fontSizes.xs,
+    color: Colors.gray500,
+    width: wp(8),
   },
   statusContainer: {
-    marginLeft: SCREEN_WIDTH * 0.02,
+    marginLeft: spacing.sm,
   },
 });
+
+export default AchievementSection;
