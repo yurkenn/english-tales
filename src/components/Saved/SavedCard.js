@@ -1,104 +1,140 @@
+// src/components/Saved/SavedCard.js
 import React from 'react';
-import { StyleSheet, Text, View, Pressable } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Colors } from '../../constants/colors';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
-import Animated, { FadeIn, SlideOutRight } from 'react-native-reanimated';
 import Icon from '../Icons';
-import { wp, hp, moderateScale, fontSizes, spacing, layout } from '../../utils/dimensions';
+import { wp, hp, moderateScale, fontSizes, spacing } from '../../utils/dimensions';
 
-const SavedCard = ({ data, onDelete }) => {
+const SavedCard = ({ data, onDelete, onPress }) => {
   return (
-    <Animated.View entering={FadeIn} exiting={SlideOutRight} style={styles.container}>
-      <LinearGradient
-        colors={['#1F1F1F', '#121212']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        style={styles.gradient}
-      >
-        <Animated.Image source={{ uri: data?.imageURL }} style={styles.image} />
+    <Animated.View entering={FadeInDown} style={styles.cardContainer}>
+      <TouchableOpacity onPress={onPress} activeOpacity={0.7}>
+        <LinearGradient
+          colors={['#2A2D3A', '#1F222E']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.card}
+        >
+          <Animated.Image source={{ uri: data?.imageURL }} style={styles.image} />
 
-        <View style={styles.content}>
-          <Text style={styles.title} numberOfLines={2}>
-            {data?.title}
-          </Text>
-
-          <Text style={styles.description} numberOfLines={2}>
-            {data?.description}
-          </Text>
-
-          <View style={styles.statsRow}>
-            <View style={styles.stat}>
-              <Icon name="time-outline" size={moderateScale(16)} color={Colors.white} />
-              <Text style={styles.statText}>{data?.readTime}m</Text>
+          <View style={styles.contentContainer}>
+            <View style={styles.headerContainer}>
+              <View style={styles.categoryBadge}>
+                <Text style={styles.categoryText}>{data?.category || 'Story'}</Text>
+              </View>
+              <TouchableOpacity
+                onPress={() => onDelete(data)}
+                style={styles.deleteButton}
+                hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              >
+                <Icon name="trash-outline" size={moderateScale(20)} color={Colors.error} />
+              </TouchableOpacity>
             </View>
-            <View style={styles.stat}>
-              <Icon name="heart" size={moderateScale(16)} color={Colors.red} />
-              <Text style={styles.statText}>{data?.likes}</Text>
+
+            <Text style={styles.title} numberOfLines={2}>
+              {data?.title}
+            </Text>
+
+            <Text style={styles.description} numberOfLines={2}>
+              {data?.description}
+            </Text>
+
+            <View style={styles.footer}>
+              <View style={styles.readButton}>
+                <Text style={styles.readButtonText}>Continue Reading</Text>
+                <Icon name="arrow-forward" size={moderateScale(16)} color={Colors.primary} />
+              </View>
             </View>
-            <Pressable onPress={() => onDelete(data)} style={styles.deleteButton}>
-              <Icon name="trash-outline" size={moderateScale(20)} color={Colors.red} />
-            </Pressable>
           </View>
-        </View>
-      </LinearGradient>
+        </LinearGradient>
+      </TouchableOpacity>
     </Animated.View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    marginBottom: hp(2),
-    borderRadius: layout.borderRadius,
+  cardContainer: {
+    marginBottom: spacing.md,
+    borderRadius: moderateScale(16),
     overflow: 'hidden',
-    elevation: 4,
+    elevation: 5,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
-  gradient: {
+  card: {
     flexDirection: 'row',
-    padding: spacing.sm,
+    padding: spacing.md,
+    gap: spacing.md,
   },
   image: {
     width: wp(25),
     height: hp(15),
-    borderRadius: layout.borderRadius,
+    borderRadius: moderateScale(12),
   },
-  content: {
+  contentContainer: {
     flex: 1,
-    marginLeft: spacing.sm,
     justifyContent: 'space-between',
+  },
+  headerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: spacing.xs,
+  },
+  categoryBadge: {
+    backgroundColor: Colors.primary + '20',
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.xs,
+    borderRadius: moderateScale(6),
+  },
+  categoryText: {
+    color: Colors.primary,
+    fontSize: fontSizes.xs,
+    fontWeight: '600',
+  },
+  deleteButton: {
+    padding: spacing.xs,
   },
   title: {
     fontSize: fontSizes.lg,
     fontWeight: '600',
     color: Colors.white,
-    marginBottom: hp(1),
+    marginBottom: spacing.xs,
+    lineHeight: fontSizes.lg * 1.3,
   },
   description: {
     fontSize: fontSizes.sm,
     color: Colors.gray500,
-    lineHeight: hp(2.2),
+    lineHeight: fontSizes.md * 1.2,
+    marginBottom: spacing.sm,
   },
-  statsRow: {
+  footer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: hp(1),
+    justifyContent: 'space-between',
   },
   stat: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginRight: wp(4),
+    gap: spacing.xs,
   },
   statText: {
     color: Colors.white,
     fontSize: fontSizes.sm,
-    marginLeft: spacing.xs,
   },
-  deleteButton: {
-    marginLeft: 'auto',
-    padding: spacing.sm,
+  readButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+  },
+  readButtonText: {
+    color: Colors.primary,
+    fontSize: fontSizes.sm,
+    fontWeight: '600',
   },
 });
 
