@@ -1,26 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo } from 'react';
+import useQueryState from './useQueryState';
 import { getTaleBySlug } from '../utils/sanity-utils';
 
 const useGetTaleBySlug = (slug) => {
-  const [tale, setTale] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: tale, loading, error, execute } = useQueryState(getTaleBySlug);
 
   useEffect(() => {
     const fetchTale = async () => {
-      try {
-        const tale = await getTaleBySlug(slug);
-        setTale(tale);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
+      if (!slug) {
+        return;
       }
+      await execute(slug);
     };
-    fetchTale();
-  }, [slug]);
 
-  return { tale, loading, error };
+    fetchTale();
+  }, [slug, execute]);
+
+  // Memoize the tale data to prevent unnecessary re-renders
+  const memoizedTale = useMemo(() => tale || [], [tale]);
+
+  // Add cleanup logic when component unmounts
+  useEffect(() => {
+    return () => {
+      // Any cleanup needed
+    };
+  }, []);
+
+  return {
+    tale: memoizedTale,
+    loading,
+    error,
+    // Expose refetch functionality
+    refetch: () => execute(slug),
+  };
 };
 
 export default useGetTaleBySlug;

@@ -1,29 +1,17 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
+import useQueryState from './useQueryState';
 import { getFeatured } from '../utils/sanity-utils';
 
 const useGetFeaturedStories = () => {
-  const [featuredStories, setFeaturedStories] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: featuredStories, loading, error, execute } = useQueryState(getFeatured);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getFeatured();
-        setFeaturedStories(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+    execute();
+  }, [execute]);
 
-  // Memoize the featuredStories array to optimize performance
-  const memoizedFeaturedStories = useMemo(() => featuredStories, [featuredStories]);
+  const memoizedStories = useMemo(() => featuredStories, [featuredStories]);
 
-  return { featuredStories: memoizedFeaturedStories, loading, error };
+  return { featuredStories: memoizedStories, loading, error };
 };
 
 export default useGetFeaturedStories;

@@ -1,28 +1,17 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
+import useQueryState from './useQueryState';
 import { getCategories } from '../utils/sanity-utils';
 
 const useGetCategories = () => {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-  const [categories, setCategories] = useState([]);
+  const { data: categories, loading, error, execute } = useQueryState(getCategories);
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const categories = await getCategories();
-        setCategories(categories);
-      } catch (error) {
-        setError(true);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchCategories();
-  }, []);
+    execute();
+  }, [execute]);
 
   const memoizedCategories = useMemo(() => categories, [categories]);
 
-  return { loading, error, categories: memoizedCategories };
+  return { categories: memoizedCategories, loading, error };
 };
 
 export default useGetCategories;

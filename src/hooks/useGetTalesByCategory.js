@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useCallback } from 'react';
+import useQueryState from './useQueryState';
 import { getTalesByCategory } from '../utils/sanity-utils';
 
 const useGetTalesByCategory = (category) => {
-  const [categoryList, setCategoryList] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: categoryList, loading, error, execute } = useQueryState(getTalesByCategory);
 
-  const fetchTalesByCategory = async () => {
-    try {
-      const data = await getTalesByCategory(category);
-      setCategoryList(data);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const fetchTalesByCategory = useCallback(async () => {
+    if (!category) return;
+    await execute(category);
+  }, [category, execute]);
 
   useEffect(() => {
     fetchTalesByCategory();
-  }, [category]);
+  }, [fetchTalesByCategory]);
 
   return { categoryList, loading, error };
 };

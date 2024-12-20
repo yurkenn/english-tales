@@ -1,25 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import useQueryState from './useQueryState';
 import { getAllTales } from '../utils/sanity-utils';
 
 const useGetAllTales = () => {
-  const [allTales, setAllTales] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: allTales, loading, error, execute } = useQueryState(getAllTales);
 
   useEffect(() => {
-    const fetchTales = async () => {
-      try {
-        const response = await getAllTales();
-        setAllTales(response);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    };
-
-    fetchTales();
-  }, []);
+    execute();
+  }, [execute]);
 
   return { allTales, loading, error };
 };
