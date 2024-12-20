@@ -3,12 +3,13 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
 import Images from '../../components/Onboarding/ImageList';
 import { Colors } from '../../constants/colors';
-import { LinearGradient } from 'expo-linear-gradient';
 import CustomButton from '../../components/CustomButton';
-import Animated, { FadeInDown } from 'react-native-reanimated';
-import { scale, verticalScale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+import useOnboarding from '../../hooks/useOnboarding';
 
 const OnboardingScreen = ({ navigation }) => {
+  const { markOnboardingComplete } = useOnboarding();
+
   const slides = [
     {
       id: 1,
@@ -32,8 +33,9 @@ const OnboardingScreen = ({ navigation }) => {
     },
   ];
 
-  const handleGetStarted = () => {
-    navigation.navigate('Signup');
+  const handleGetStarted = async () => {
+    await markOnboardingComplete();
+    navigation.replace('Login');
   };
 
   const handleLogin = () => {
@@ -41,17 +43,13 @@ const OnboardingScreen = ({ navigation }) => {
   };
 
   const renderSlide = (item) => (
-    <Animated.View
-      entering={FadeInDown.duration(1000).springify()}
-      style={styles.slideContainer}
-      key={item.id}
-    >
+    <View style={styles.slide} key={item.id}>
       <Image source={item.image} style={styles.image} />
-      <LinearGradient colors={['transparent', Colors.dark900]} style={styles.textGradient}>
+      <View style={styles.textContainer}>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.description}>{item.description}</Text>
-      </LinearGradient>
-    </Animated.View>
+      </View>
+    </View>
   );
 
   return (
@@ -67,23 +65,16 @@ const OnboardingScreen = ({ navigation }) => {
         {slides.map((slide) => renderSlide(slide))}
       </Swiper>
 
-      <LinearGradient
-        colors={[Colors.dark900 + '00', Colors.dark900]}
-        style={styles.buttonsContainer}
-      >
+      <View style={styles.buttonsContainer}>
         <CustomButton
           title="Get Started"
           onPress={handleGetStarted}
           style={styles.getStartedButton}
         />
-
-        <View style={styles.loginContainer}>
-          <Text style={styles.loginText}>Already have an account?</Text>
-          <TouchableOpacity onPress={handleLogin}>
-            <Text style={styles.loginLink}>Log In</Text>
-          </TouchableOpacity>
-        </View>
-      </LinearGradient>
+        <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
+          <Text style={styles.loginText}>Log In</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -94,33 +85,33 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.dark900,
   },
   wrapper: {},
-  slideContainer: {
+  slide: {
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingBottom: hp(10),
   },
   image: {
     width: wp(100),
-    height: hp(100),
+    height: hp(50),
     resizeMode: 'cover',
   },
-  textGradient: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    paddingHorizontal: spacing.lg,
-    paddingTop: hp(15),
-    paddingBottom: hp(20),
+  textContainer: {
+    paddingHorizontal: spacing.md,
+    alignItems: 'center',
   },
   title: {
     fontSize: fontSizes.xxxl,
     fontWeight: 'bold',
     color: Colors.white,
-    marginBottom: spacing.md,
+    textAlign: 'center',
+    marginBottom: spacing.sm,
   },
   description: {
-    fontSize: fontSizes.lg,
+    fontSize: fontSizes.md,
     color: Colors.gray300,
-    lineHeight: fontSizes.lg * 1.5,
+    textAlign: 'center',
+    lineHeight: fontSizes.md * 1.5,
   },
   dot: {
     backgroundColor: Colors.white + '50',
@@ -130,42 +121,33 @@ const styles = StyleSheet.create({
     marginHorizontal: spacing.xs,
   },
   activeDot: {
-    backgroundColor: Colors.white,
-    width: scale(8),
-    height: scale(8),
-    borderRadius: scale(4),
+    backgroundColor: Colors.primary,
+    width: scale(10),
+    height: scale(10),
+    borderRadius: scale(5),
     marginHorizontal: spacing.xs,
   },
   pagination: {
     position: 'absolute',
-    bottom: hp(15),
+    bottom: hp(2),
   },
   buttonsContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    paddingHorizontal: spacing.lg,
-    paddingTop: hp(10),
-    paddingBottom: spacing.xl,
+    paddingHorizontal: spacing.xl,
+    paddingBottom: spacing.lg,
     alignItems: 'center',
   },
   getStartedButton: {
-    marginBottom: spacing.lg,
+    marginBottom: spacing.md, // Added more margin for better spacing
+    width: '100%',
   },
-  loginContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.xs,
+  loginButton: {
+    marginTop: spacing.md, // Added top margin for better separation
   },
   loginText: {
-    color: Colors.gray300,
-    fontSize: fontSizes.md,
-  },
-  loginLink: {
     color: Colors.primary,
     fontSize: fontSizes.md,
     fontWeight: '600',
+    textAlign: 'center',
   },
 });
 
