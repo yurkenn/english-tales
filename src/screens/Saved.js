@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View, RefreshControl } from 'react-native';
 import { Colors } from '../constants/colors';
 import { FlashList } from '@shopify/flash-list';
 import Animated, { FadeInDown } from 'react-native-reanimated';
@@ -12,16 +12,21 @@ import SavedCard from '../components/Saved/SavedCard';
 
 const EmptyState = () => (
   <Animated.View entering={FadeInDown.springify()} style={styles.emptyContainer}>
-    <Icon name="bookmark-outline" size={moderateScale(48)} color={Colors.gray500} />
-    <Text style={styles.emptyTitle}>No saved tales yet</Text>
-    <Text style={styles.emptySubtitle}>Your bookmarked tales will appear here</Text>
+    <LinearGradient colors={['#2A2D3A', '#1F222E']} style={styles.emptyContent}>
+      <Icon name="bookmark-outline" size={moderateScale(48)} color={Colors.primary} />
+      <Text style={styles.emptyTitle}>No saved tales yet</Text>
+      <Text style={styles.emptySubtitle}>
+        Your reading journey starts here. Save stories to read them anytime, even offline.
+      </Text>
+    </LinearGradient>
   </Animated.View>
 );
 
 const Saved = ({ navigation }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-  const { bookmarks } = useSelector((state) => state.bookmarks);
+  const { bookmarks, loading } = useSelector((state) => state.bookmarks);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     if (user?.uid) {
@@ -33,56 +38,84 @@ const Saved = ({ navigation }) => {
     dispatch(removeBookmark({ bookData, userId: user.uid }));
   };
 
+  const onRefresh = React.useCallback(() => {
+    if (user?.uid) {
+      setRefreshing(true);
+      dispatch(loadBookmarks(user.uid)).finally(() => {
+        setRefreshing(false);
+      });
+    }
+  }, [user]);
+
   const renderItem = ({ item, index }) => (
-    <Animated.View entering={FadeInDown.delay(index * 100)}>
-      <TouchableOpacity
+    <Animated.View entering={FadeInDown.delay(index * 100).springify()}>
+      <SavedCard
+        data={item}
+        onDelete={handleRemoveBookmark}
         onPress={() => navigation.navigate('Detail', { data: item })}
-        activeOpacity={0.7}
-      >
-        <SavedCard data={item} onDelete={handleRemoveBookmark} />
-      </TouchableOpacity>
+      />
     </Animated.View>
   );
 
   return (
-    <LinearGradient colors={['#1F1F1F', Colors.dark900]} style={styles.container}>
+    <View style={styles.container}>
+      {/* Content */}
       {bookmarks.length > 0 ? (
         <FlashList
           data={bookmarks}
           renderItem={renderItem}
-          estimatedItemSize={150}
+          estimatedItemSize={200}
           contentContainerStyle={styles.listContainer}
           showsVerticalScrollIndicator={false}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+              tintColor={Colors.primary}
+              colors={[Colors.primary]}
+            />
+          }
         />
       ) : (
         <EmptyState />
       )}
-    </LinearGradient>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: spacing.md,
+    backgroundColor: Colors.dark900,
   },
+
   listContainer: {
-    paddingBottom: hp(2),
+    padding: spacing.md,
   },
   emptyContainer: {
     flex: 1,
+    padding: spacing.lg,
+  },
+  emptyContent: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    gap: hp(2),
+    gap: spacing.lg,
+    borderRadius: moderateScale(24),
+    padding: spacing.xl,
   },
   emptyTitle: {
     fontSize: fontSizes.xl,
     fontWeight: '600',
     color: Colors.white,
+    textAlign: 'center',
   },
   emptySubtitle: {
     fontSize: fontSizes.sm,
     color: Colors.gray500,
+    textAlign: 'center',
+    lineHeight: fontSizes.lg,
+    paddingHorizontal: spacing.lg,
   },
 });
 

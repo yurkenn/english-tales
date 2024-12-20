@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { View, TextInput, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
 import useSearch from '../hooks/useSearch';
@@ -26,9 +26,19 @@ const EmptyState = ({ searchTerm }) => (
 );
 
 const SearchScreen = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const { results, loading, error } = useSearch(searchTerm);
   const [isFocused, setIsFocused] = useState(false);
+  const { searchTerm, setSearchTerm, clearSearch, results, loading, error } = useSearch();
+
+  const handleTextChange = useCallback(
+    (text) => {
+      setSearchTerm(text);
+    },
+    [setSearchTerm]
+  );
+
+  const handleClear = useCallback(() => {
+    clearSearch();
+  }, [clearSearch]);
 
   return (
     <View style={styles.container}>
@@ -47,17 +57,17 @@ const SearchScreen = () => {
           <TextInput
             style={[styles.input, isFocused && styles.inputFocused]}
             placeholder="Search tales..."
-            onChangeText={setSearchTerm}
+            onChangeText={handleTextChange}
             value={searchTerm}
             placeholderTextColor={Colors.gray500}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
           />
-          {searchTerm && (
-            <TouchableOpacity onPress={() => setSearchTerm('')} style={styles.clearButton}>
+          {searchTerm ? (
+            <TouchableOpacity onPress={handleClear} style={styles.clearButton}>
               <Icon name="close-circle" size={moderateScale(20)} color={Colors.gray500} />
             </TouchableOpacity>
-          )}
+          ) : null}
         </View>
       </LinearGradient>
 
