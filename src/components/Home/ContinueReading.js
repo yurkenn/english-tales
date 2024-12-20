@@ -29,7 +29,7 @@ const ContinueReading = ({ lastRead }) => {
     }
   }, [userStats?.readingProgress]);
 
-  if (!lastRead && !readingHistory.length) {
+  if (!lastRead) {
     return (
       <Animated.View entering={FadeIn.duration(800)} style={styles.emptyContainer}>
         <Icon name="book-outline" size={48} color={Colors.gray500} />
@@ -41,9 +41,6 @@ const ContinueReading = ({ lastRead }) => {
 
   const renderLastRead = () => {
     if (!lastRead) return null;
-
-    const time = FormatReadTime(lastRead?.readTime);
-    const progress = userStats?.readingProgress?.[lastRead._id] || 0;
 
     return (
       <TouchableOpacity
@@ -71,16 +68,9 @@ const ContinueReading = ({ lastRead }) => {
                 <Text style={styles.title} numberOfLines={2}>
                   {lastRead.title}
                 </Text>
-                <View style={styles.statsContainer}>
-                  <View style={styles.stat}>
-                    <Icon name="time-outline" size={16} color={Colors.white} />
-                    <Text style={styles.statText}>{time}</Text>
-                  </View>
-                  <View style={styles.stat}>
-                    <Icon name="book" size={16} color={Colors.primary} />
-                    <Text style={styles.statText}>{Math.round(progress)}%</Text>
-                  </View>
-                </View>
+                <Text style={styles.description} numberOfLines={4}>
+                  {lastRead.description}
+                </Text>
               </View>
             </View>
           </LinearGradient>
@@ -90,36 +80,22 @@ const ContinueReading = ({ lastRead }) => {
   };
 
   const renderHistoryItem = ({ item, index }) => {
-    const tale = userStats?.completedStories?.find((story) => story._id === item.storyId);
-    if (!tale) return null;
+    if (!item) return null;
 
     return (
       <Animated.View entering={FadeIn.delay(index * 100)} style={styles.historyItemContainer}>
         <TouchableOpacity
           style={styles.historyItem}
-          onPress={() => navigation.navigate('Detail', { data: tale })}
+          onPress={() => navigation.navigate('Detail', { data: item })}
           activeOpacity={0.7}
         >
           <LinearGradient colors={[Colors.dark500, Colors.dark900]} style={styles.historyGradient}>
-            <Image source={{ uri: tale.imageURL }} style={styles.historyImage} />
+            <Image source={{ uri: item.imageURL }} style={styles.historyImage} />
             <View style={styles.historyInfo}>
-              <Text style={styles.historyTitle} numberOfLines={1}>
-                {tale.title}
+              <Text style={styles.historyTitle} numberOfLines={2}>
+                {item.title}
               </Text>
-              <View style={styles.historyStats}>
-                <Text style={styles.progressText}>{Math.round(item.progress)}% Complete</Text>
-                <View style={styles.progressBar}>
-                  <View
-                    style={[
-                      styles.progressFill,
-                      {
-                        width: `${item.progress}%`,
-                        backgroundColor: getProgressColor(item.progress),
-                      },
-                    ]}
-                  />
-                </View>
-              </View>
+              <Icon name="chevron-forward" size={16} color={Colors.gray500} />
             </View>
           </LinearGradient>
         </TouchableOpacity>
@@ -127,23 +103,17 @@ const ContinueReading = ({ lastRead }) => {
     );
   };
 
-  const getProgressColor = (progress) => {
-    if (progress < 30) return Colors.primary;
-    if (progress < 70) return Colors.warning;
-    return Colors.success;
-  };
-
   return (
     <View style={styles.container}>
       {renderLastRead()}
 
-      {readingHistory.length > 0 && (
+      {lastRead.related && lastRead.related.length > 0 && (
         <View style={styles.historyContainer}>
-          <Text style={styles.historyTitle}>Reading History</Text>
+          <Text style={styles.historyTitle}>You May Also Like</Text>
           <FlatList
-            data={readingHistory}
+            data={lastRead.related}
             renderItem={renderHistoryItem}
-            keyExtractor={(item) => item.storyId}
+            keyExtractor={(item) => item._id}
             horizontal
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={styles.historyList}
@@ -224,18 +194,10 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     letterSpacing: 0.3,
   },
-  statsContainer: {
-    flexDirection: 'row',
-    gap: scale(16),
-  },
-  stat: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: scale(4),
-  },
-  statText: {
-    color: Colors.white,
+  description: {
+    color: Colors.gray500,
     fontSize: fontSizes.sm,
+    lineHeight: scale(18),
   },
   historyContainer: {
     marginTop: spacing.lg,
@@ -270,28 +232,15 @@ const styles = StyleSheet.create({
   },
   historyInfo: {
     flex: 1,
-    gap: spacing.xs,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
   historyTitle: {
+    flex: 1,
     color: Colors.white,
     fontSize: fontSizes.md,
     fontWeight: '600',
-  },
-  historyStats: {
-    gap: spacing.xs,
-  },
-  progressText: {
-    color: Colors.gray300,
-    fontSize: fontSizes.sm,
-  },
-  progressBar: {
-    height: scale(4),
-    backgroundColor: Colors.dark700,
-    borderRadius: scale(2),
-  },
-  progressFill: {
-    height: '100%',
-    borderRadius: scale(2),
   },
 });
 
