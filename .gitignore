@@ -63,3 +63,6 @@ __tests__/
 
 # Build
 build/
+
+# scripts
+scripts/
