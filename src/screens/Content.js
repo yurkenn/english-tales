@@ -13,18 +13,18 @@ import Animated, {
   runOnJS,
 } from 'react-native-reanimated';
 import Toast from 'react-native-toast-message';
+import { LinearGradient } from 'expo-linear-gradient';
 
 // Components
 import LoadingAnimation from '../components/Animations/LoadingAnimation';
 import ErrorAnimation from '../components/Animations/ErrorAnimation';
 import TaleHeader from '../components/Content/TaleHeader';
-import BookContent from '../components/Content/BookContent';
+import StoryContent from '../components/Content/StoryContent';
 import ScrollToTopButton from '../components/Content/ScrollToTopButton';
 
 // Redux and Hooks
 import { updateReadingProgress } from '../store/slices/userStatsSlice';
 import useGetTaleBySlug from '../hooks/useGetTaleBySlug';
-import { LinearGradient } from 'expo-linear-gradient';
 import { updateLastRead } from '../store/slices/readingProgressSlice';
 
 const IMAGE_HEIGHT = hp(45);
@@ -37,6 +37,7 @@ const Content = ({ route, navigation }) => {
   const { slug, category } = route.params;
   const { loading, error, tale } = useGetTaleBySlug(slug);
   const userInfo = useSelector((state) => state.auth.user);
+  const fontSize = useSelector((state) => state.fontSize.fontSize);
 
   // State and refs
   const [readStartTime] = useState(Date.now());
@@ -129,7 +130,7 @@ const Content = ({ route, navigation }) => {
           })
         ).unwrap();
 
-        // Also update last read data to reflect current progress
+        // Also update last read data
         if (progress > 0) {
           dispatch(
             updateLastRead({
@@ -179,7 +180,6 @@ const Content = ({ route, navigation }) => {
   if (!tale || !tale[0]) return null;
 
   const currentTale = tale[0];
-
   return (
     <View style={styles.container}>
       <Animated.View style={headerBackgroundStyle} />
@@ -201,9 +201,25 @@ const Content = ({ route, navigation }) => {
         <View style={styles.bookContainer}>
           <View style={styles.chapterInfo}>
             <Text style={styles.chapterTitle}>{currentTale.title}</Text>
+            {currentTale.subtitle && <Text style={styles.subtitle}>{currentTale.subtitle}</Text>}
           </View>
 
-          <BookContent blocks={currentTale.content} />
+          <StoryContent
+            blocks={currentTale.content}
+            vocabulary={currentTale.vocabulary}
+            grammarFocus={currentTale.grammarFocus}
+            interactiveElements={currentTale.interactiveElements}
+            fontSize={fontSize}
+          />
+
+          {currentTale.author && (
+            <View style={styles.authorContainer}>
+              <Text style={styles.authorName}>Written by {currentTale.author.name}</Text>
+              {currentTale.author.bio && (
+                <Text style={styles.authorBio}>{currentTale.author.bio}</Text>
+              )}
+            </View>
+          )}
         </View>
       </Animated.ScrollView>
 
@@ -258,6 +274,32 @@ const styles = StyleSheet.create({
     color: Colors.white,
     textAlign: 'center',
     fontFamily: 'serif',
+  },
+  subtitle: {
+    fontSize: fontSizes.md,
+    color: Colors.gray300,
+    textAlign: 'center',
+    marginTop: spacing.sm,
+    fontFamily: 'serif',
+  },
+  authorContainer: {
+    marginTop: spacing.xxl,
+    padding: spacing.lg,
+    backgroundColor: Colors.dark800,
+    borderRadius: 12,
+    marginHorizontal: spacing.md,
+    marginBottom: spacing.xl,
+  },
+  authorName: {
+    fontSize: fontSizes.md,
+    fontWeight: '600',
+    color: Colors.white,
+    marginBottom: spacing.sm,
+  },
+  authorBio: {
+    fontSize: fontSizes.sm,
+    color: Colors.gray300,
+    lineHeight: fontSizes.lg,
   },
 });
 
