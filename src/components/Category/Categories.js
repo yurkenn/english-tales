@@ -5,6 +5,7 @@ import { Colors } from '../../constants/colors';
 import { Image } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
+import Icon from '../Icons';
 import {
   scale,
   verticalScale,
@@ -18,9 +19,6 @@ import {
 
 const Categories = ({ data, index }) => {
   const navigation = useNavigation();
-
-  // Calculate dynamic button size based on screen width
-  // Use slightly smaller size for small devices
   const buttonSize = isSmallDevice ? wp(22) : wp(25);
 
   return (
@@ -30,21 +28,12 @@ const Categories = ({ data, index }) => {
         activeOpacity={0.7}
       >
         <LinearGradient
-          colors={['#1F1F1F', '#121212']}
+          colors={[data?.color || '#1F1F1F', Colors.dark900]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
           style={[styles.button, { width: buttonSize, height: buttonSize }]}
         >
-          <Image
-            source={{ uri: data?.icon }}
-            style={[
-              styles.icon,
-              {
-                height: buttonSize * 0.4,
-                width: buttonSize * 0.4,
-              },
-            ]}
-          />
+          <Icon name={data?.iconName || 'book'} size={buttonSize * 0.4} color={Colors.white} />
           <Text style={styles.categoryName} numberOfLines={2}>
             {data?.title}
           </Text>
@@ -73,19 +62,13 @@ const styles = StyleSheet.create({
     padding: spacing.sm,
     gap: verticalScale(8),
   },
-  icon: {
-    resizeMode: 'contain',
-  },
   categoryName: {
     color: Colors.white,
     fontSize: moderateScale(12),
     fontWeight: '600',
     textAlign: 'center',
-    // Add padding for text wrapping
     paddingHorizontal: spacing.xs,
-    // Adjust line height for better readability
     lineHeight: moderateScale(18),
-    // Ensure text doesn't get cut off
     marginBottom: spacing.xs,
   },
 });
