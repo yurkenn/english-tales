@@ -1,19 +1,17 @@
 // src/screens/Detail.js
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { Colors } from '../constants/colors';
-import FormatReadTime from '../components/FormatReadTime';
 import Toast from 'react-native-toast-message';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import BookmarkButton from '../components/BookmarkButton';
 import LikeButton from '../components/Detail/LikeButton';
-import InfoComponent from '../components/Detail/InfoComponent';
 import SettingsButton from '../components/Detail/SettingsButton';
 import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { urlFor } from '../../sanity';
 import Icon from '../components/Icons';
-import { wp, hp, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
+import { wp, hp, scale, fontSizes, spacing, layout } from '../utils/dimensions';
 
 // Redux imports
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,7 +20,7 @@ import { toggleLike, fetchTaleLikes } from '../store/slices/likeSlice';
 import { updateStreak } from '../store/slices/userStatsSlice';
 import { selectUser, selectBookmarks, selectUserLikes, selectLikes } from '../store/selectors';
 import FontSizeSettings from '../components/Modal/FontSizeSettings';
-import { updateLastRead } from '../store/slices/readingProgressSlice';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Detail = ({ route, navigation }) => {
   const dispatch = useDispatch();
@@ -35,11 +33,11 @@ const Detail = ({ route, navigation }) => {
   const likes = useSelector(selectLikes);
 
   const bottomSheetRef = useRef(null);
-
-  // Local states
   const [isLoading, setIsLoading] = useState(false);
 
-  const readTime = FormatReadTime(data?.readTime);
+  // Format values
+  const formattedDuration = `${data?.estimatedDuration} min`;
+  const difficultyText = `${data?.difficulty}/5`;
   const isBookmarked = bookmarks.find(
     (bookmark) => bookmark?.slug?.current === data?.slug?.current
   );
@@ -112,33 +110,32 @@ const Detail = ({ route, navigation }) => {
         return;
       }
 
-      setIsLoading(true);
+      const lastReadData = {
+        ...data,
+        imageURL: data.imageURL ? urlFor(data.imageURL).url() : null,
+        progress: 0,
+        lastReadAt: new Date().toISOString(),
+      };
 
-      // Update last read
-      await dispatch(
-        updateLastRead({
-          userId: userInfo.uid,
-          storyData: {
-            ...data,
-            imageURL: data.imageURL ? urlFor(data.imageURL).url() : null,
-          },
-        })
-      ).unwrap();
+      await AsyncStorage.setItem(`lastRead_${userInfo.uid}`, JSON.stringify(lastReadData));
 
-      // Navigate to content
+      try {
+        await dispatch(updateStreak({ userId: userInfo.uid })).unwrap();
+      } catch (streakError) {
+        console.error('Error updating streak:', streakError);
+      }
+
       navigation.navigate('Content', {
         slug: data.slug.current,
-        category: data.category,
+        category: data.category?.title,
       });
     } catch (error) {
-      console.error('Error starting reading:', error);
+      console.error('Error saving last read:', error);
       Toast.show({
         type: 'error',
         text1: 'Error',
         text2: 'Failed to start reading. Please try again.',
       });
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -160,71 +157,72 @@ const Detail = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* Top Gradient for Header */}
+      {/* Üst gradient (header için) */}
       <LinearGradient
-        colors={['rgba(0,0,0,0.7)', 'rgba(0,0,0,0)']}
+        colors={['rgba(0,0,0,0.7)', 'transparent']}
         style={styles.headerGradient}
         pointerEvents="none"
       />
 
-      {/* Image Section with Gradient */}
-      <View style={styles.imageContainer}>
-        <Animated.Image
-          entering={FadeInDown.springify()}
-          source={{ uri: data?.imageURL }}
-          style={styles.image}
-        />
-        <LinearGradient
-          colors={['rgba(0,0,0,0)', Colors.dark900]}
-          style={styles.imageGradient}
-          pointerEvents="none"
-        />
+      {/* Resim ve alt gradient */}
+      <View style={styles.imageWrapper}>
+        <Image source={{ uri: data?.imageURL }} style={styles.coverImage} />
+        <LinearGradient colors={['transparent', Colors.dark900]} style={styles.imageGradient} />
       </View>
 
-      {/* Content Section */}
-      <View style={styles.contentContainer}>
-        <Text style={styles.title} numberOfLines={2}>
-          {data?.title}
-        </Text>
-
-        <InfoComponent readTime={readTime} likes={currentLikes} />
-
-        <View style={styles.descriptionContainer}>
-          <Text style={styles.description} numberOfLines={4}>
-            {data?.description}
-          </Text>
+      {/* İçerik */}
+      <View style={styles.content}>
+        {/* Başlık ve Level */}
+        <View style={styles.titleRow}>
+          <Text style={styles.title}>{data?.title}</Text>
+          <View style={styles.levelTag}>
+            <Text style={styles.levelText}>{data?.level}</Text>
+          </View>
         </View>
 
-        <TouchableOpacity onPress={handleReadButton} style={styles.readButton}>
-          <LinearGradient
-            colors={[Colors.primary, Colors.primary700]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.buttonGradient}
-          >
-            <Icon
-              name="book-outline"
-              size={moderateScale(24)}
-              color={Colors.white}
-              style={styles.buttonIcon}
-            />
-            <Text style={styles.buttonText}>Start Reading</Text>
-          </LinearGradient>
+        {/* İstatistikler */}
+        <View style={styles.statsCard}>
+          <View style={styles.statItem}>
+            <Icon name="time-outline" size={20} color={Colors.primary} />
+            <Text style={styles.statText}>{formattedDuration}</Text>
+          </View>
+          <View style={styles.divider} />
+          <View style={styles.statItem}>
+            <Icon name="star" size={20} color={Colors.warning} />
+            <Text style={styles.statText}>{difficultyText}</Text>
+          </View>
+          <View style={styles.divider} />
+          <View style={styles.statItem}>
+            <Icon name="heart" size={20} color={Colors.error} />
+            <Text style={styles.statText}>{currentLikes}</Text>
+          </View>
+        </View>
+
+        {/* Konular */}
+        {data?.topics?.length > 0 && (
+          <View style={styles.topicsRow}>
+            {data.topics.map((topic, index) => (
+              <View key={index} style={styles.topicTag}>
+                <Text style={styles.topicText}>{topic}</Text>
+              </View>
+            ))}
+          </View>
+        )}
+
+        {/* Author */}
+        <View style={styles.authorBadge}>
+          <Text style={styles.authorText}>{data?.author?.name || 'Unknown Author'}</Text>
+        </View>
+
+        {/* Açıklama */}
+        <Text style={styles.description}>{data?.description}</Text>
+
+        {/* Başla Butonu */}
+        <TouchableOpacity style={styles.startButton} onPress={handleReadButton}>
+          <Icon name="book-outline" size={24} color={Colors.white} />
+          <Text style={styles.buttonText}>Start Reading</Text>
         </TouchableOpacity>
       </View>
-
-      <BottomSheet
-        ref={bottomSheetRef}
-        snapPoints={['50%']}
-        index={-1}
-        enablePanDownToClose
-        backgroundStyle={{ backgroundColor: Colors.dark900 }}
-        handleIndicatorStyle={{ backgroundColor: Colors.white }}
-      >
-        <FontSizeSettings />
-      </BottomSheet>
-
-      <Toast />
     </View>
   );
 };
@@ -239,24 +237,14 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: hp(12),
-    zIndex: 10,
+    height: hp(15),
+    zIndex: 1,
   },
-  headerRightContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-    marginRight: spacing.sm,
-    backgroundColor: 'rgba(0,0,0,0.3)',
-    padding: spacing.sm,
-    borderRadius: layout.borderRadius * 2.5,
-  },
-  imageContainer: {
+  imageWrapper: {
     width: '100%',
     height: hp(45),
-    position: 'relative',
   },
-  image: {
+  coverImage: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
@@ -266,52 +254,112 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    height: '50%',
+    height: hp(20),
   },
-  contentContainer: {
+  content: {
     flex: 1,
-    padding: spacing.lg,
-    gap: spacing.md,
+    padding: 20,
+  },
+  titleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 16,
   },
   title: {
-    color: Colors.white,
-    fontSize: fontSizes.xxxl,
-    fontWeight: '700',
-  },
-  descriptionContainer: {
     flex: 1,
+    fontSize: 32,
+    fontWeight: '700',
+    color: Colors.white,
+    marginRight: 12,
+  },
+  levelTag: {
+    backgroundColor: Colors.primary + '20',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 8,
+  },
+  levelText: {
+    color: Colors.primary,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  statsCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    backgroundColor: Colors.dark800 + '80',
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 16,
+  },
+  statItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  statText: {
+    color: Colors.white,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  divider: {
+    width: 1,
+    height: 24,
+    backgroundColor: Colors.dark500,
+  },
+  topicsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginBottom: 16,
+  },
+  topicTag: {
+    backgroundColor: Colors.dark800,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
+  },
+  topicText: {
+    color: Colors.gray300,
+    fontSize: 14,
   },
   description: {
-    fontSize: fontSizes.md,
-    color: Colors.gray500,
-    lineHeight: hp(3),
+    fontSize: 16,
+    color: Colors.gray300,
+    lineHeight: 24,
+    marginBottom: 16,
   },
-  readButton: {
-    height: hp(7),
-    borderRadius: layout.borderRadius,
-    overflow: 'hidden',
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    marginTop: 'auto',
+  authorBadge: {
+    backgroundColor: 'rgba(45, 45, 45, 0.5)',
+    alignSelf: 'flex-start',
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 8,
+    marginBottom: 16,
   },
-  buttonGradient: {
-    flex: 1,
+  authorText: {
+    color: Colors.gray300,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  startButton: {
+    position: 'absolute',
+    bottom: 20,
+    left: 20,
+    right: 20,
+    backgroundColor: Colors.primary,
+    height: 56,
+    borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: spacing.sm,
-  },
-  buttonIcon: {
-    marginRight: spacing.sm,
+    gap: 8,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: fontSizes.lg,
+    fontSize: 18,
     fontWeight: '600',
-    letterSpacing: 0.5,
   },
 });
 
