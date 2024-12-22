@@ -1,79 +1,59 @@
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import React from 'react';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { Colors } from '../../constants/colors';
 import Icon from '../Icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import { scale, verticalScale, spacing, isSmallDevice } from '../../utils/dimensions';
+import Animated, { withSpring, useAnimatedStyle, withSequence } from 'react-native-reanimated';
+import { scale } from '../../utils/dimensions';
 
-const LikeButton = ({
-  hasLiked,
-  isLoading,
-  handleLike,
-  handleUnlike,
-  size = 'normal', // 'small' | 'normal' | 'large'
-}) => {
-  const getIconSize = () => {
-    switch (size) {
-      case 'small':
-        return scale(20);
-      case 'large':
-        return scale(28);
-      default:
-        return scale(24);
+const LikeButton = ({ hasLiked, isLoading, handleLike }) => {
+  const buttonStyle = useAnimatedStyle(() => {
+    if (hasLiked) {
+      return {
+        transform: [{ scale: withSequence(withSpring(1.2), withSpring(1)) }],
+      };
     }
-  };
-
-  const getButtonSize = () => {
-    switch (size) {
-      case 'small':
-        return scale(36);
-      case 'large':
-        return scale(48);
-      default:
-        return scale(42);
-    }
-  };
+    return {
+      transform: [{ scale: 1 }],
+    };
+  });
 
   return (
     <TouchableOpacity
-      onPress={hasLiked ? handleUnlike : handleLike}
+      onPress={handleLike}
       disabled={isLoading}
-      style={styles.container}
       activeOpacity={0.7}
+      style={styles.touchable}
     >
-      <LinearGradient
-        colors={
-          hasLiked ? [Colors.error + '20', Colors.error + '40'] : [Colors.dark500, Colors.dark900]
-        }
-        style={[styles.button, { width: getButtonSize(), height: getButtonSize() }]}
-      >
+      <Animated.View style={[styles.container, buttonStyle, hasLiked && styles.activeBg]}>
         <Icon
           name={hasLiked ? 'heart' : 'heart-outline'}
-          size={getIconSize()}
-          color={hasLiked ? Colors.error : Colors.white}
+          size={22}
+          color={hasLiked ? Colors.white : Colors.primary}
         />
-      </LinearGradient>
+      </Animated.View>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: spacing.xs,
-  },
-  button: {
-    borderRadius: scale(21),
+    width: scale(42),
+    height: scale(42),
+    borderRadius: scale(12),
     justifyContent: 'center',
     alignItems: 'center',
-    // Add subtle shadow
+    backgroundColor: Colors.dark800,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
       height: scale(2),
     },
     shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowRadius: scale(3.84),
     elevation: 5,
+  },
+  activeBg: {
+    backgroundColor: Colors.primary,
   },
 });
 
