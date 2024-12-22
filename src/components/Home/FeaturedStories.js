@@ -9,7 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { wp, hp, isSmallDevice, deviceWidth } from '../../utils/dimensions';
 
 const FeaturedStories = ({ data, navigation, index }) => {
-  const formattedReadTime = FormatReadTime(data?.tales?.[0]?.readTime);
+  const formattedReadTime = FormatReadTime(data?.tales?.[0]?.estimatedDuration);
 
   return (
     <Animated.View
