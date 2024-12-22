@@ -1,42 +1,53 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
-import { Image } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from '../Icons';
-import {
-  scale,
-  verticalScale,
-  moderateScale,
-  spacing,
-  fontSizes,
-  wp,
-  isSmallDevice,
-  layout,
-} from '../../utils/dimensions';
+import { wp, hp, moderateScale, spacing, fontSizes } from '../../utils/dimensions';
 
 const Categories = ({ data, index }) => {
   const navigation = useNavigation();
-  const buttonSize = isSmallDevice ? wp(22) : wp(25);
 
   return (
     <Animated.View entering={FadeInDown.springify().delay(index * 100)} style={styles.container}>
       <TouchableOpacity
         onPress={() => navigation.navigate('CategoryList', { category: data?.title })}
-        activeOpacity={0.7}
+        activeOpacity={0.8}
       >
         <LinearGradient
-          colors={[data?.color || '#1F1F1F', Colors.dark900]}
+          colors={[data?.color + '30' || Colors.dark800, Colors.dark900]}
           start={{ x: 0, y: 0 }}
           end={{ x: 1, y: 1 }}
-          style={[styles.button, { width: buttonSize, height: buttonSize }]}
+          style={styles.card}
         >
-          <Icon name={data?.iconName || 'book'} size={buttonSize * 0.4} color={Colors.white} />
-          <Text style={styles.categoryName} numberOfLines={2}>
-            {data?.title}
-          </Text>
+          <View style={styles.iconWrapper}>
+            <View style={[styles.iconBackground, { backgroundColor: data?.color + '15' }]}>
+              <Icon
+                name={data?.iconName || 'book'}
+                size={22}
+                color={data?.color || Colors.primary}
+              />
+            </View>
+          </View>
+
+          <View style={styles.contentContainer}>
+            <View style={styles.titleContainer}>
+              <Text style={styles.title} numberOfLines={1}>
+                {data?.title}
+              </Text>
+              {data?.talesCount > 0 && (
+                <Text style={[styles.count, { color: data?.color }]}>{data.talesCount} Tales</Text>
+              )}
+            </View>
+
+            <View style={styles.arrow}>
+              <Icon name="arrow-forward" size={16} color={data?.color || Colors.primary} />
+            </View>
+          </View>
+
+          <View style={[styles.accent, { backgroundColor: data?.color + '40' }]} />
         </LinearGradient>
       </TouchableOpacity>
     </Animated.View>
@@ -45,31 +56,57 @@ const Categories = ({ data, index }) => {
 
 const styles = StyleSheet.create({
   container: {
+    width: wp(42),
     margin: spacing.xs,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: scale(2),
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
   },
-  button: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: scale(12),
+  card: {
+    borderRadius: moderateScale(14),
+    height: wp(38),
     padding: spacing.sm,
-    gap: verticalScale(8),
+    overflow: 'hidden',
+    position: 'relative',
+    borderWidth: 1,
+    borderColor: Colors.dark700 + '30',
   },
-  categoryName: {
+  iconWrapper: {
+    alignItems: 'flex-start',
+    marginBottom: spacing.sm,
+  },
+  iconBackground: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  titleContainer: {
+    gap: 4,
+  },
+  title: {
+    fontSize: fontSizes.md,
     color: Colors.white,
-    fontSize: moderateScale(12),
     fontWeight: '600',
-    textAlign: 'center',
-    paddingHorizontal: spacing.xs,
-    lineHeight: moderateScale(18),
+  },
+  count: {
+    fontSize: fontSizes.xs,
+    fontWeight: '500',
+  },
+  arrow: {
+    alignSelf: 'flex-end',
     marginBottom: spacing.xs,
+  },
+  accent: {
+    position: 'absolute',
+    right: -20,
+    top: -20,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    opacity: 0.3,
   },
 });
 
