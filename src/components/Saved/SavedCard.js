@@ -22,7 +22,7 @@ const SavedCard = ({ data, onDelete, onPress }) => {
           <View style={styles.contentContainer}>
             <View style={styles.headerContainer}>
               <View style={styles.categoryBadge}>
-                <Text style={styles.categoryText}>{data?.category || 'Story'}</Text>
+                <Text style={styles.categoryText}>{data?.category.title || 'Story'}</Text>
               </View>
               <TouchableOpacity
                 onPress={() => onDelete(data)}
