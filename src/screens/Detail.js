@@ -1,39 +1,40 @@
-// src/screens/Detail.js
-import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
+import React, { useLayoutEffect, useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { Colors } from '../constants/colors';
 import Toast from 'react-native-toast-message';
 import { LinearGradient } from 'expo-linear-gradient';
-import Animated, { FadeInDown } from 'react-native-reanimated';
-import BookmarkButton from '../components/BookmarkButton';
-import LikeButton from '../components/Detail/LikeButton';
-import SettingsButton from '../components/Detail/SettingsButton';
-import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
-import { urlFor } from '../../sanity';
+import Animated, {
+  FadeInDown,
+  useAnimatedScrollHandler,
+  useSharedValue,
+} from 'react-native-reanimated';
+import HeaderButtons from '../components/Detail/HeaderButtons';
+import FontSettingsModal from '../components/Modal/FontSettingsModal';
 import Icon from '../components/Icons';
-import { wp, hp, scale, fontSizes, spacing, layout } from '../utils/dimensions';
-
-// Redux imports
+import { wp, hp, scale, fontSizes, spacing } from '../utils/dimensions';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleBookmark } from '../store/slices/bookmarkSlice';
-import { toggleLike, fetchTaleLikes } from '../store/slices/likeSlice';
+import { toggleLike } from '../store/slices/likeSlice';
 import { updateStreak } from '../store/slices/userStatsSlice';
-import { selectUser, selectBookmarks, selectUserLikes, selectLikes } from '../store/selectors';
-import FontSizeSettings from '../components/Modal/FontSizeSettings';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Detail = ({ route, navigation }) => {
   const dispatch = useDispatch();
   const { data } = route.params;
+  const [isLoading, setIsLoading] = useState(false);
+  const [showFontSettings, setShowFontSettings] = useState(false);
+  const scrollY = useSharedValue(0);
+
+  const scrollHandler = useAnimatedScrollHandler({
+    onScroll: (event) => {
+      scrollY.value = event.contentOffset.y;
+    },
+  });
 
   // Redux selectors
-  const userInfo = useSelector(selectUser);
-  const bookmarks = useSelector(selectBookmarks);
-  const userLikes = useSelector(selectUserLikes);
-  const likes = useSelector(selectLikes);
-
-  const bottomSheetRef = useRef(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const userInfo = useSelector((state) => state.auth.user);
+  const bookmarks = useSelector((state) => state.bookmarks.bookmarks);
+  const userLikes = useSelector((state) => state.likes.userLikes);
+  const likes = useSelector((state) => state.likes.likes);
 
   // Format values
   const formattedDuration = `${data?.estimatedDuration} min`;
@@ -44,93 +45,45 @@ const Detail = ({ route, navigation }) => {
   const hasLiked = userLikes[data._id] || false;
   const currentLikes = likes[data._id] || 0;
 
-  useEffect(() => {
-    if (data._id) {
-      dispatch(fetchTaleLikes(data._id));
-    }
-  }, [data._id]);
-
   const handleLike = async () => {
     if (!userInfo) {
-      Toast.show({
-        type: 'error',
-        text1: 'Please login to like stories',
-      });
+      Toast.show({ type: 'error', text1: 'Please login to like stories' });
       return;
     }
 
     try {
-      await dispatch(
-        toggleLike({
-          taleId: data._id,
-          currentLikes,
-        })
-      ).unwrap();
+      await dispatch(toggleLike({ taleId: data._id, currentLikes })).unwrap();
     } catch (error) {
-      Toast.show({
-        type: 'error',
-        text1: 'Failed to update like',
-        text2: error.message,
-      });
+      Toast.show({ type: 'error', text1: 'Failed to update like', text2: error.message });
     }
   };
 
   const handleBookmark = async () => {
     if (!userInfo) {
-      Toast.show({
-        type: 'error',
-        text1: 'Please login to bookmark stories',
-      });
+      Toast.show({ type: 'error', text1: 'Please login to bookmark stories' });
       return;
     }
 
     try {
-      await dispatch(
-        toggleBookmark({
-          bookData: data,
-          userId: userInfo.uid,
-        })
-      ).unwrap();
+      await dispatch(toggleBookmark({ bookData: data, userId: userInfo.uid })).unwrap();
     } catch (error) {
-      Toast.show({
-        type: 'error',
-        text1: 'Failed to update bookmark',
-        text2: error.message,
-      });
+      Toast.show({ type: 'error', text1: 'Failed to update bookmark', text2: error.message });
     }
   };
 
   const handleReadButton = async () => {
+    if (!userInfo?.uid) {
+      Toast.show({ type: 'error', text1: 'Please login to read stories' });
+      return;
+    }
+
     try {
-      if (!userInfo?.uid) {
-        Toast.show({
-          type: 'error',
-          text1: 'Please login to read stories',
-        });
-        return;
-      }
-
-      const lastReadData = {
-        ...data,
-        imageURL: data.imageURL ? urlFor(data.imageURL).url() : null,
-        progress: 0,
-        lastReadAt: new Date().toISOString(),
-      };
-
-      await AsyncStorage.setItem(`lastRead_${userInfo.uid}`, JSON.stringify(lastReadData));
-
-      try {
-        await dispatch(updateStreak({ userId: userInfo.uid })).unwrap();
-      } catch (streakError) {
-        console.error('Error updating streak:', streakError);
-      }
-
+      await dispatch(updateStreak({ userId: userInfo.uid })).unwrap();
       navigation.navigate('Content', {
         slug: data.slug.current,
         category: data.category?.title,
       });
     } catch (error) {
-      console.error('Error saving last read:', error);
       Toast.show({
         type: 'error',
         text1: 'Error',
@@ -141,88 +94,109 @@ const Detail = ({ route, navigation }) => {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerTransparent: true,
-      headerStyle: {
-        backgroundColor: 'transparent',
-      },
-      headerRight: () => (
-        <View style={styles.headerRightContainer}>
-          <LikeButton hasLiked={hasLiked} isLoading={isLoading} handleLike={handleLike} />
-          <BookmarkButton isBookmarked={isBookmarked} handleBookmark={handleBookmark} />
-          <SettingsButton handleOpenModal={() => bottomSheetRef.current?.expand()} />
-        </View>
-      ),
+      headerShown: false,
     });
-  }, [hasLiked, isLoading, isBookmarked]);
+  }, []);
 
   return (
     <View style={styles.container}>
-      {/* Üst gradient (header için) */}
       <LinearGradient
         colors={['rgba(0,0,0,0.7)', 'transparent']}
         style={styles.headerGradient}
         pointerEvents="none"
       />
 
-      {/* Resim ve alt gradient */}
-      <View style={styles.imageWrapper}>
-        <Image source={{ uri: data?.imageURL }} style={styles.coverImage} />
-        <LinearGradient colors={['transparent', Colors.dark900]} style={styles.imageGradient} />
-      </View>
+      <HeaderButtons
+        scrollY={scrollY}
+        hasLiked={hasLiked}
+        isLoading={isLoading}
+        handleLike={handleLike}
+        isBookmarked={isBookmarked}
+        handleBookmark={handleBookmark}
+        handleOpenModal={() => setShowFontSettings(true)}
+      />
 
-      {/* İçerik */}
-      <View style={styles.content}>
-        {/* Başlık ve Level */}
-        <View style={styles.titleRow}>
-          <Text style={styles.title}>{data?.title}</Text>
-          <View style={styles.levelTag}>
-            <Text style={styles.levelText}>{data?.level}</Text>
-          </View>
+      <Animated.ScrollView
+        showsVerticalScrollIndicator={false}
+        onScroll={scrollHandler}
+        scrollEventThrottle={16}
+      >
+        <View style={styles.imageWrapper}>
+          <Image source={{ uri: data?.imageURL }} style={styles.coverImage} />
+          <LinearGradient colors={['transparent', Colors.dark900]} style={styles.imageGradient} />
         </View>
 
-        {/* İstatistikler */}
-        <View style={styles.statsCard}>
-          <View style={styles.statItem}>
-            <Icon name="time-outline" size={20} color={Colors.primary} />
-            <Text style={styles.statText}>{formattedDuration}</Text>
-          </View>
-          <View style={styles.divider} />
-          <View style={styles.statItem}>
-            <Icon name="star" size={20} color={Colors.warning} />
-            <Text style={styles.statText}>{difficultyText}</Text>
-          </View>
-          <View style={styles.divider} />
-          <View style={styles.statItem}>
-            <Icon name="heart" size={20} color={Colors.error} />
-            <Text style={styles.statText}>{currentLikes}</Text>
-          </View>
-        </View>
+        <View style={styles.content}>
+          <Animated.View entering={FadeInDown.delay(100)} style={styles.titleContainer}>
+            <Text style={styles.title}>{data?.title}</Text>
+            <View style={[styles.levelTag, { backgroundColor: Colors.primary + '15' }]}>
+              <Text style={[styles.levelText, { color: Colors.primary }]}>{data?.level}</Text>
+            </View>
+          </Animated.View>
 
-        {/* Konular */}
-        {data?.topics?.length > 0 && (
-          <View style={styles.topicsRow}>
-            {data.topics.map((topic, index) => (
-              <View key={index} style={styles.topicTag}>
-                <Text style={styles.topicText}>{topic}</Text>
+          <Animated.View entering={FadeInDown.delay(200)} style={styles.statsContainer}>
+            <View style={styles.statItem}>
+              <View style={[styles.iconWrapper, { backgroundColor: Colors.primary + '15' }]}>
+                <Icon name="time-outline" size={20} color={Colors.primary} />
               </View>
-            ))}
-          </View>
-        )}
+              <Text style={styles.statText}>{formattedDuration}</Text>
+            </View>
 
-        {/* Author */}
-        <View style={styles.authorBadge}>
-          <Text style={styles.authorText}>{data?.author?.name || 'Unknown Author'}</Text>
+            <View style={styles.statDivider} />
+
+            <View style={styles.statItem}>
+              <View style={[styles.iconWrapper, { backgroundColor: Colors.warning + '15' }]}>
+                <Icon name="star" size={20} color={Colors.warning} />
+              </View>
+              <Text style={styles.statText}>{difficultyText}</Text>
+            </View>
+
+            <View style={styles.statDivider} />
+
+            <View style={styles.statItem}>
+              <View style={[styles.iconWrapper, { backgroundColor: Colors.error + '15' }]}>
+                <Icon name="heart" size={20} color={Colors.error} />
+              </View>
+              <Text style={styles.statText}>{currentLikes}</Text>
+            </View>
+          </Animated.View>
+
+          {data?.topics?.length > 0 && (
+            <Animated.View entering={FadeInDown.delay(300)} style={styles.topicsContainer}>
+              {data.topics.map((topic, index) => (
+                <View key={index} style={styles.topicTag}>
+                  <Text style={styles.topicText}>{topic}</Text>
+                </View>
+              ))}
+            </Animated.View>
+          )}
+
+          <Animated.View entering={FadeInDown.delay(400)} style={styles.authorContainer}>
+            <LinearGradient colors={[Colors.dark800, Colors.dark900]} style={styles.authorCard}>
+              <Icon name="person" size={20} color={Colors.primary} />
+              <Text style={styles.authorText}>{data?.author?.name || 'Unknown Author'}</Text>
+            </LinearGradient>
+          </Animated.View>
+
+          <Animated.View entering={FadeInDown.delay(500)}>
+            <Text style={styles.description}>{data?.description}</Text>
+          </Animated.View>
+
+          <TouchableOpacity style={styles.startButton} onPress={handleReadButton}>
+            <LinearGradient
+              colors={[Colors.primary, Colors.primary700]}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              style={styles.buttonGradient}
+            >
+              <Icon name="book-outline" size={24} color={Colors.white} />
+              <Text style={styles.buttonText}>Start Reading</Text>
+            </LinearGradient>
+          </TouchableOpacity>
         </View>
+      </Animated.ScrollView>
 
-        {/* Açıklama */}
-        <Text style={styles.description}>{data?.description}</Text>
-
-        {/* Başla Butonu */}
-        <TouchableOpacity style={styles.startButton} onPress={handleReadButton}>
-          <Icon name="book-outline" size={24} color={Colors.white} />
-          <Text style={styles.buttonText}>Start Reading</Text>
-        </TouchableOpacity>
-      </View>
+      <FontSettingsModal visible={showFontSettings} onClose={() => setShowFontSettings(false)} />
     </View>
   );
 };
@@ -258,107 +232,119 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    padding: 20,
+    padding: spacing.xl,
   },
-  titleRow: {
+  titleContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 16,
+    marginBottom: spacing.lg,
   },
   title: {
     flex: 1,
-    fontSize: 32,
+    fontSize: fontSizes.xxxl,
     fontWeight: '700',
     color: Colors.white,
-    marginRight: 12,
+    marginRight: spacing.md,
+    letterSpacing: 0.3,
   },
   levelTag: {
-    backgroundColor: Colors.primary + '20',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 8,
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
+    borderRadius: scale(20),
   },
   levelText: {
-    color: Colors.primary,
-    fontSize: 16,
+    fontSize: fontSizes.sm,
     fontWeight: '600',
   },
-  statsCard: {
+  statsContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: Colors.dark800 + '80',
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 16,
+    marginBottom: spacing.xl,
+    padding: spacing.lg,
+    backgroundColor: Colors.dark800 + '40',
+    borderRadius: scale(16),
   },
   statItem: {
-    flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    gap: spacing.xs,
+  },
+  iconWrapper: {
+    width: scale(40),
+    height: scale(40),
+    borderRadius: scale(12),
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   statText: {
     color: Colors.white,
-    fontSize: 14,
-    fontWeight: '500',
+    fontSize: fontSizes.sm,
+    fontWeight: '600',
   },
-  divider: {
+  statDivider: {
     width: 1,
-    height: 24,
+    height: scale(30),
     backgroundColor: Colors.dark500,
   },
-  topicsRow: {
+  topicsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
-    marginBottom: 16,
+    gap: spacing.xs,
+    marginBottom: spacing.lg,
   },
   topicTag: {
-    backgroundColor: Colors.dark800,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
+    backgroundColor: Colors.dark800 + '80',
+    paddingHorizontal: spacing.md,
+    paddingVertical: spacing.xs,
+    borderRadius: scale(20),
   },
   topicText: {
     color: Colors.gray300,
-    fontSize: 14,
+    fontSize: fontSizes.sm,
   },
-  description: {
-    fontSize: 16,
-    color: Colors.gray300,
-    lineHeight: 24,
-    marginBottom: 16,
+  authorContainer: {
+    marginBottom: spacing.lg,
   },
-  authorBadge: {
-    backgroundColor: 'rgba(45, 45, 45, 0.5)',
+  authorCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    padding: spacing.md,
+    borderRadius: scale(12),
     alignSelf: 'flex-start',
-    paddingVertical: 6,
-    paddingHorizontal: 12,
-    borderRadius: 8,
-    marginBottom: 16,
   },
   authorText: {
-    color: Colors.gray300,
-    fontSize: 14,
+    color: Colors.white,
+    fontSize: fontSizes.md,
     fontWeight: '500',
   },
+  description: {
+    fontSize: fontSizes.md,
+    color: Colors.gray300,
+    lineHeight: scale(24),
+    marginBottom: spacing.xl,
+  },
   startButton: {
-    position: 'absolute',
-    bottom: 20,
-    left: 20,
-    right: 20,
-    backgroundColor: Colors.primary,
-    height: 56,
-    borderRadius: 12,
+    marginTop: spacing.md,
+    borderRadius: scale(12),
+    overflow: 'hidden',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  buttonGradient: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 8,
+    gap: spacing.sm,
+    paddingVertical: spacing.lg,
   },
   buttonText: {
     color: Colors.white,
-    fontSize: 18,
+    fontSize: fontSizes.lg,
     fontWeight: '600',
   },
 });
