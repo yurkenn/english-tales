@@ -24,13 +24,34 @@ const BookContent = ({ blocks = [] }) => {
         );
       default:
         return (
-          <Text key={index} style={[styles.paragraph, { fontSize }]}>
-            <Text style={styles.firstLetter}>{block.children?.[0]?.text.charAt(0)}</Text>
-            {block.children?.[0]?.text.slice(1)}
-            {block.children
-              ?.slice(1)
-              .map((child) => child.text)
-              .join('')}
+          <Text
+            key={index}
+            style={[
+              styles.paragraph,
+              {
+                fontSize,
+                lineHeight: fontSize * 1.6,
+              },
+            ]}
+          >
+            <Text
+              style={[
+                styles.firstLetter,
+                {
+                  fontSize: fontSize * 2.2,
+                  lineHeight: fontSize * 2.4, // First letter için özel line-height
+                },
+              ]}
+            >
+              {block.children?.[0]?.text.charAt(0)}
+            </Text>
+            <Text>
+              {block.children?.[0]?.text.slice(1)}
+              {block.children
+                ?.slice(1)
+                .map((child) => child.text)
+                .join('')}
+            </Text>
           </Text>
         );
     }
@@ -63,16 +84,17 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     color: Colors.white,
-    lineHeight: spacing.xl * 1.5,
     marginBottom: spacing.md,
-    textAlign: 'justify',
+    textAlign: 'left', // justify yerine left kullanıyoruz
     fontFamily: 'serif',
+    paddingRight: wp(2), // Sağ tarafa biraz padding ekliyoruz
   },
   firstLetter: {
-    fontSize: fontSizes.xxl,
     fontWeight: '700',
     color: Colors.primary,
     fontFamily: 'serif',
+    paddingTop: spacing.xs,
+    marginRight: spacing.xs,
   },
 });
 
