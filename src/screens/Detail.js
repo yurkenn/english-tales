@@ -100,12 +100,6 @@ const Detail = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      <LinearGradient
-        colors={['rgba(0,0,0,0.7)', 'transparent']}
-        style={styles.headerGradient}
-        pointerEvents="none"
-      />
-
       <HeaderButtons
         scrollY={scrollY}
         hasLiked={hasLiked}
@@ -137,7 +131,7 @@ const Detail = ({ route, navigation }) => {
           <Animated.View entering={FadeInDown.delay(200)} style={styles.statsContainer}>
             <View style={styles.statItem}>
               <View style={[styles.iconWrapper, { backgroundColor: Colors.primary + '15' }]}>
-                <Icon name="time-outline" size={20} color={Colors.primary} />
+                <Icon name="time-outline" size={scale(20)} color={Colors.primary} />
               </View>
               <Text style={styles.statText}>{formattedDuration}</Text>
             </View>
@@ -146,7 +140,7 @@ const Detail = ({ route, navigation }) => {
 
             <View style={styles.statItem}>
               <View style={[styles.iconWrapper, { backgroundColor: Colors.warning + '15' }]}>
-                <Icon name="star" size={20} color={Colors.warning} />
+                <Icon name="star" size={scale(20)} color={Colors.warning} />
               </View>
               <Text style={styles.statText}>{difficultyText}</Text>
             </View>
@@ -155,7 +149,7 @@ const Detail = ({ route, navigation }) => {
 
             <View style={styles.statItem}>
               <View style={[styles.iconWrapper, { backgroundColor: Colors.error + '15' }]}>
-                <Icon name="heart" size={20} color={Colors.error} />
+                <Icon name="heart" size={scale(20)} color={Colors.error} />
               </View>
               <Text style={styles.statText}>{currentLikes}</Text>
             </View>
@@ -173,7 +167,7 @@ const Detail = ({ route, navigation }) => {
 
           <Animated.View entering={FadeInDown.delay(400)} style={styles.authorContainer}>
             <LinearGradient colors={[Colors.dark800, Colors.dark900]} style={styles.authorCard}>
-              <Icon name="person" size={20} color={Colors.primary} />
+              <Icon name="person" size={scale(20)} color={Colors.primary} />
               <Text style={styles.authorText}>{data?.author?.name || 'Unknown Author'}</Text>
             </LinearGradient>
           </Animated.View>
@@ -189,7 +183,7 @@ const Detail = ({ route, navigation }) => {
               end={{ x: 1, y: 1 }}
               style={styles.buttonGradient}
             >
-              <Icon name="book-outline" size={24} color={Colors.white} />
+              <Icon name="book-outline" size={scale(24)} color={Colors.white} />
               <Text style={styles.buttonText}>Start Reading</Text>
             </LinearGradient>
           </TouchableOpacity>
@@ -205,14 +199,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
-  },
-  headerGradient: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    height: hp(15),
-    zIndex: 1,
   },
   imageWrapper: {
     width: '100%',
@@ -232,25 +218,25 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    padding: spacing.xl,
+    padding: wp(4),
   },
   titleContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: spacing.lg,
+    marginBottom: hp(2),
   },
   title: {
     flex: 1,
     fontSize: fontSizes.xxxl,
     fontWeight: '700',
     color: Colors.white,
-    marginRight: spacing.md,
+    marginRight: wp(3),
     letterSpacing: 0.3,
   },
   levelTag: {
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xs,
+    paddingHorizontal: wp(3),
+    paddingVertical: hp(0.8),
     borderRadius: scale(20),
   },
   levelText: {
@@ -261,18 +247,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginBottom: spacing.xl,
-    padding: spacing.lg,
+    marginBottom: hp(3),
+    padding: wp(4),
     backgroundColor: Colors.dark800 + '40',
     borderRadius: scale(16),
   },
   statItem: {
     alignItems: 'center',
-    gap: spacing.xs,
+    gap: hp(1),
   },
   iconWrapper: {
-    width: scale(40),
-    height: scale(40),
+    width: scale(42),
+    height: scale(42),
     borderRadius: scale(12),
     justifyContent: 'center',
     alignItems: 'center',
@@ -290,13 +276,13 @@ const styles = StyleSheet.create({
   topicsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: spacing.xs,
-    marginBottom: spacing.lg,
+    gap: wp(2),
+    marginBottom: hp(2),
   },
   topicTag: {
     backgroundColor: Colors.dark800 + '80',
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xs,
+    paddingHorizontal: wp(3),
+    paddingVertical: hp(0.8),
     borderRadius: scale(20),
   },
   topicText: {
@@ -304,13 +290,13 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.sm,
   },
   authorContainer: {
-    marginBottom: spacing.lg,
+    marginBottom: hp(2),
   },
   authorCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: spacing.sm,
-    padding: spacing.md,
+    gap: wp(2),
+    padding: wp(3),
     borderRadius: scale(12),
     alignSelf: 'flex-start',
   },
@@ -323,24 +309,24 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.md,
     color: Colors.gray300,
     lineHeight: scale(24),
-    marginBottom: spacing.xl,
+    marginBottom: hp(3),
   },
   startButton: {
-    marginTop: spacing.md,
+    marginTop: hp(2),
     borderRadius: scale(12),
     overflow: 'hidden',
     elevation: 4,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0, height: scale(2) },
     shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowRadius: scale(3.84),
   },
   buttonGradient: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: spacing.sm,
-    paddingVertical: spacing.lg,
+    gap: wp(2),
+    paddingVertical: hp(2),
   },
   buttonText: {
     color: Colors.white,
