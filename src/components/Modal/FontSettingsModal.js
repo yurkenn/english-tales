@@ -5,7 +5,6 @@ import Icon from '../Icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeFontSize } from '../../store/slices/fontSizeSlice';
 import { wp, hp, scale, fontSizes, spacing } from '../../utils/dimensions';
-import Animated, { FadeIn } from 'react-native-reanimated';
 
 const FONT_SIZES = [
   { label: 'Small', size: 14 },
@@ -23,9 +22,9 @@ const FontSettingsModal = ({ visible, onClose }) => {
   };
 
   return (
-    <Modal visible={visible} transparent statusBarTranslucent animationType="fade">
+    <Modal visible={visible} transparent statusBarTranslucent>
       <View style={styles.overlay}>
-        <Animated.View entering={FadeIn} style={styles.modalContainer}>
+        <View style={styles.modalContainer}>
           <View style={styles.header}>
             <Text style={styles.title}>Text Size</Text>
             <TouchableOpacity
@@ -71,7 +70,7 @@ const FontSettingsModal = ({ visible, onClose }) => {
               </Text>
             </View>
           </View>
-        </Animated.View>
+        </View>
       </View>
     </Modal>
   );
