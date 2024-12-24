@@ -1,123 +1,145 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList } from 'react-native';
+import React from 'react';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Colors } from '../../constants/colors';
-import { useNavigation } from '@react-navigation/native';
-import FormatReadTime from '../FormatReadTime';
-import Icon from '../Icons';
-import Animated, { FadeIn, SlideInLeft } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
-import { useSelector } from 'react-redux';
+import Icon from '../Icons';
+import Animated, {
+  FadeInDown,
+  useAnimatedStyle,
+  useSharedValue,
+  interpolate,
+  withSpring,
+} from 'react-native-reanimated';
 import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
 
-const ContinueReading = ({ lastRead }) => {
-  const navigation = useNavigation();
-  const userStats = useSelector((state) => state.userStats.stats);
-  const [readingHistory, setReadingHistory] = useState([]);
+const HEADER_HEIGHT = hp(40);
+const SCROLL_DISTANCE = 200;
 
-  // Get reading history sorted by progress
-  useEffect(() => {
-    if (userStats?.readingProgress) {
-      // Convert reading progress to array and sort by progress
-      const progressEntries = Object.entries(userStats.readingProgress)
-        .map(([storyId, progress]) => ({
-          storyId,
-          progress,
-        }))
-        .sort((a, b) => b.progress - a.progress);
+const ParallaxHeader = ({ imageUrl, onPress, title, description }) => {
+  const scrollY = useSharedValue(0);
+  const pressed = useSharedValue(1);
 
-      setReadingHistory(progressEntries);
-    }
-  }, [userStats?.readingProgress]);
-
-  if (!lastRead) {
-    return (
-      <Animated.View entering={FadeIn.duration(800)} style={styles.emptyContainer}>
-        <Icon name="book-outline" size={48} color={Colors.gray500} />
-        <Text style={styles.warningText}>Start your reading journey!</Text>
-        <Text style={styles.subText}>Your reading progress will appear here</Text>
-      </Animated.View>
+  const imageStyle = useAnimatedStyle(() => {
+    const translateY = interpolate(
+      scrollY.value,
+      [-SCROLL_DISTANCE, 0, SCROLL_DISTANCE],
+      [-50, 0, 50]
     );
-  }
+    const scale = interpolate(scrollY.value, [-SCROLL_DISTANCE, 0, SCROLL_DISTANCE], [1.4, 1, 0.8]);
 
-  const renderLastRead = () => {
-    if (!lastRead) return null;
+    return {
+      transform: [{ translateY }, { scale: scale * pressed.value }],
+    };
+  });
 
-    return (
-      <TouchableOpacity
-        onPress={() => navigation.navigate('Detail', { data: lastRead })}
-        activeOpacity={0.7}
-      >
-        <Animated.View entering={SlideInLeft.duration(600)} style={styles.lastReadCard}>
-          <LinearGradient
-            colors={[Colors.primary + '20', Colors.dark900]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.gradient}
-          >
-            <View style={styles.imageContainer}>
-              <Image source={{ uri: lastRead.imageURL }} style={styles.image} />
-              <LinearGradient
-                colors={['transparent', 'rgba(0,0,0,0.5)']}
-                style={styles.imageOverlay}
-              />
-            </View>
+  const overlayStyle = useAnimatedStyle(() => {
+    const translateY = interpolate(
+      scrollY.value,
+      [-SCROLL_DISTANCE, 0, SCROLL_DISTANCE],
+      [20, 0, -20]
+    );
+    const opacity = interpolate(
+      scrollY.value,
+      [-SCROLL_DISTANCE, 0, SCROLL_DISTANCE],
+      [0.4, 1, 1.2]
+    );
 
-            <View style={styles.infoContainer}>
-              <View style={styles.headerContainer}>
-                <Text style={styles.cardLabel}>Continue Reading</Text>
-                <Text style={styles.title} numberOfLines={2}>
-                  {lastRead.title}
-                </Text>
-                <Text style={styles.description} numberOfLines={4}>
-                  {lastRead.description}
-                </Text>
+    return {
+      transform: [{ translateY }],
+      opacity,
+    };
+  });
+
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={1}
+      onPressIn={() => {
+        pressed.value = withSpring(0.95);
+      }}
+      onPressOut={() => {
+        pressed.value = withSpring(1);
+      }}
+    >
+      <View style={styles.headerContainer}>
+        <Animated.Image source={{ uri: imageUrl }} style={[styles.headerImage, imageStyle]} />
+        <Animated.View style={[styles.headerOverlay, overlayStyle]}>
+          <LinearGradient colors={['transparent', 'rgba(0,0,0,0.95)']} style={styles.gradient}>
+            <View style={styles.cardContent}>
+              <View style={styles.badge}>
+                <Icon name="book-outline" size={16} color={Colors.primary} />
+                <Text style={styles.badgeText}>Continue Reading</Text>
+              </View>
+
+              <Text style={styles.overlayTitle} numberOfLines={2}>
+                {title}
+              </Text>
+              <Text style={styles.overlayDescription} numberOfLines={3}>
+                {description}
+              </Text>
+
+              <View style={styles.readButton}>
+                <Text style={styles.readButtonText}>Resume Reading</Text>
+                <Icon name="arrow-forward" size={16} color={Colors.primary} />
               </View>
             </View>
           </LinearGradient>
         </Animated.View>
-      </TouchableOpacity>
-    );
-  };
+      </View>
+    </TouchableOpacity>
+  );
+};
 
-  const renderHistoryItem = ({ item, index }) => {
-    if (!item) return null;
-
+const ContinueReading = ({ lastRead, navigation }) => {
+  if (!lastRead) {
     return (
-      <Animated.View entering={FadeIn.delay(index * 100)} style={styles.historyItemContainer}>
-        <TouchableOpacity
-          style={styles.historyItem}
-          onPress={() => navigation.navigate('Detail', { data: item })}
-          activeOpacity={0.7}
-        >
-          <LinearGradient colors={[Colors.dark500, Colors.dark900]} style={styles.historyGradient}>
-            <Image source={{ uri: item.imageURL }} style={styles.historyImage} />
-            <View style={styles.historyInfo}>
-              <Text style={styles.historyTitle} numberOfLines={2}>
-                {item.title}
-              </Text>
-              <Icon name="chevron-forward" size={16} color={Colors.gray500} />
-            </View>
-          </LinearGradient>
-        </TouchableOpacity>
+      <Animated.View entering={FadeInDown} style={styles.emptyContainer}>
+        <LinearGradient colors={['#2A2D3A', '#1F222E']} style={styles.emptyContent}>
+          <Icon name="book-outline" size={48} color={Colors.primary} />
+          <Text style={styles.emptyTitle}>Start Your Journey</Text>
+          <Text style={styles.emptySubtitle}>Pick a tale to begin your reading adventure</Text>
+        </LinearGradient>
       </Animated.View>
     );
-  };
+  }
 
   return (
     <View style={styles.container}>
-      {renderLastRead()}
+      <ParallaxHeader
+        imageUrl={lastRead.imageURL}
+        title={lastRead.title}
+        description={lastRead.description}
+        onPress={() => navigation.navigate('Detail', { data: lastRead })}
+      />
 
       {lastRead.related && lastRead.related.length > 0 && (
-        <View style={styles.historyContainer}>
-          <Text style={styles.historyTitle}>You May Also Like</Text>
-          <FlatList
-            data={lastRead.related}
-            renderItem={renderHistoryItem}
-            keyExtractor={(item) => item._id}
+        <View style={styles.relatedSection}>
+          <Text style={styles.sectionTitle}>Similar Tales</Text>
+          <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.historyList}
-          />
+            contentContainerStyle={styles.relatedScroll}
+          >
+            {lastRead.related.map((item, index) => (
+              <Animated.View key={item._id} entering={FadeInDown.delay(index * 100)}>
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('Detail', { data: item })}
+                  activeOpacity={0.8}
+                  style={styles.relatedCard}
+                >
+                  <Image source={{ uri: item.imageURL }} style={styles.relatedImage} />
+                  <LinearGradient
+                    colors={['transparent', 'rgba(0,0,0,0.9)']}
+                    style={styles.relatedGradient}
+                  >
+                    <Text style={styles.relatedTitle} numberOfLines={2}>
+                      {item.title}
+                    </Text>
+                  </LinearGradient>
+                </TouchableOpacity>
+              </Animated.View>
+            ))}
+          </ScrollView>
         </View>
       )}
     </View>
@@ -128,119 +150,129 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  emptyContainer: {
-    alignItems: 'center',
-    backgroundColor: Colors.dark500,
-    borderRadius: scale(12),
-    padding: spacing.lg,
-    gap: spacing.md,
-  },
-  warningText: {
-    color: Colors.white,
-    fontSize: fontSizes.lg,
-    fontWeight: '600',
-  },
-  subText: {
-    color: Colors.gray500,
-    fontSize: fontSizes.sm,
-    textAlign: 'center',
-  },
-  lastReadCard: {
-    borderRadius: scale(12),
-    marginVertical: spacing.sm,
+  headerContainer: {
+    height: HEADER_HEIGHT,
     overflow: 'hidden',
-    elevation: 5,
+    borderRadius: scale(20),
+    marginHorizontal: spacing.md,
+    elevation: 8,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: scale(2),
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+  },
+  headerImage: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
+  },
+  headerOverlay: {
+    ...StyleSheet.absoluteFillObject,
   },
   gradient: {
-    flexDirection: 'row',
-    padding: spacing.md,
-  },
-  imageContainer: {
-    width: wp(33),
-    position: 'relative',
-  },
-  image: {
-    height: wp(40),
-    width: '100%',
-    borderRadius: scale(8),
-  },
-  imageOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    borderRadius: scale(8),
-  },
-  infoContainer: {
     flex: 1,
-    marginLeft: spacing.md,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
+    padding: spacing.lg,
+    height: '100%',
   },
-  headerContainer: {
+  cardContent: {
+    gap: spacing.md,
+  },
+  badge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(139, 92, 246, 0.15)',
+    paddingHorizontal: spacing.sm,
+    paddingVertical: spacing.xs,
+    borderRadius: scale(20),
     gap: spacing.xs,
+    alignSelf: 'flex-start',
   },
-  cardLabel: {
+  badgeText: {
+    color: Colors.primary,
+    fontSize: fontSizes.xs,
+    fontWeight: '600',
+  },
+  overlayTitle: {
+    fontSize: fontSizes.xxl,
+    fontWeight: '700',
+    color: Colors.white,
+    letterSpacing: 0.3,
+  },
+  overlayDescription: {
+    fontSize: fontSizes.sm,
+    color: Colors.gray300,
+    lineHeight: fontSizes.lg,
+  },
+  readButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.xs,
+    alignSelf: 'flex-start',
+    marginTop: spacing.sm,
+  },
+  readButtonText: {
     color: Colors.primary,
     fontSize: fontSizes.sm,
     fontWeight: '600',
   },
-  title: {
-    color: Colors.white,
-    fontSize: fontSizes.lg,
-    fontWeight: '700',
-    letterSpacing: 0.3,
+  emptyContainer: {
+    margin: spacing.md,
   },
-  description: {
-    color: Colors.gray500,
+  emptyContent: {
+    padding: spacing.xl,
+    borderRadius: scale(20),
+    alignItems: 'center',
+    gap: spacing.md,
+  },
+  emptyTitle: {
+    fontSize: fontSizes.xl,
+    fontWeight: '600',
+    color: Colors.white,
+  },
+  emptySubtitle: {
     fontSize: fontSizes.sm,
-    lineHeight: scale(18),
+    color: Colors.gray400,
+    textAlign: 'center',
   },
-  historyContainer: {
-    marginTop: spacing.lg,
+  relatedSection: {
+    marginTop: spacing.md,
+    paddingLeft: spacing.md,
   },
-  historyTitle: {
-    color: Colors.white,
+  sectionTitle: {
     fontSize: fontSizes.lg,
     fontWeight: '600',
+    color: Colors.white,
     marginBottom: spacing.md,
   },
-  historyList: {
-    paddingHorizontal: spacing.xs,
+  relatedScroll: {
+    gap: spacing.md,
+    paddingRight: spacing.md,
   },
-  historyItemContainer: {
-    width: wp(60),
-    marginRight: spacing.md,
-  },
-  historyItem: {
-    borderRadius: scale(12),
+  relatedCard: {
+    width: wp(40),
+    height: hp(25),
+    borderRadius: scale(16),
     overflow: 'hidden',
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
   },
-  historyGradient: {
+  relatedImage: {
+    width: '100%',
+    height: '100%',
+  },
+  relatedGradient: {
+    ...StyleSheet.absoluteFillObject,
+    justifyContent: 'flex-end',
     padding: spacing.sm,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
   },
-  historyImage: {
-    width: wp(15),
-    height: wp(15),
-    borderRadius: scale(8),
-  },
-  historyInfo: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  historyTitle: {
-    flex: 1,
-    color: Colors.white,
+  relatedTitle: {
     fontSize: fontSizes.md,
     fontWeight: '600',
+    color: Colors.white,
   },
 });
 
