@@ -117,36 +117,22 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingVertical: hp(2),
-    paddingHorizontal: wp(2),
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: Colors.dark900,
-  },
-  loadingGradient: {
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    paddingHorizontal: wp(4),
   },
   featureContainer: {
     marginBottom: hp(3),
   },
   categoriesContainer: {
-    marginVertical: hp(2),
+    marginVertical: hp(3),
   },
   myStoriesContainer: {
-    paddingHorizontal: wp(3),
-    marginBottom: hp(2),
+    marginBottom: hp(3),
   },
   sectionTitle: {
     color: Colors.white,
     fontSize: fontSizes.xl,
     fontWeight: '600',
     marginBottom: hp(2),
-    paddingHorizontal: wp(3),
   },
 });
 
