@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
   badge: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'rgba(139, 92, 246, 0.15)',
+    backgroundColor: 'rgba(133, 84, 247, 0.15)',
     paddingHorizontal: spacing.sm,
     paddingVertical: spacing.xs,
     borderRadius: scale(20),
