@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../constants/colors';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -45,17 +45,10 @@ const CategoryCard = ({ data, index }) => {
               <View style={[styles.levelBadge, { backgroundColor: cardColor + '15' }]}>
                 <Text style={[styles.levelText, { color: cardColor }]}>{data?.level}</Text>
               </View>
-              {/* Kategori etiketi */}
-              <View style={styles.categoryTag}>
-                <Icon
-                  name={data?.category?.iconName || 'bookmark'}
-                  size={14}
-                  color={cardColor}
-                  style={styles.categoryIcon}
-                />
-                <Text style={[styles.categoryText, { color: cardColor }]}>
-                  {data?.category?.title || 'Story'}
-                </Text>
+              {/* Author */}
+              <View style={styles.author}>
+                <Image source={{ uri: data?.author?.image }} style={styles.authorImage} />
+                <Text style={styles.authorText}>{data?.author?.name}</Text>
               </View>
             </View>
 
@@ -144,23 +137,22 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.sm,
     fontWeight: '900',
   },
-  categoryTag: {
+  author: {
     position: 'absolute',
     bottom: spacing.sm,
     left: spacing.sm,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: Colors.dark900 + 'CC',
-    paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.xs,
-    borderRadius: scale(8),
-    gap: scale(4),
+    gap: spacing.xs,
   },
-  categoryIcon: {
-    opacity: 0.9,
+  authorImage: {
+    width: scale(24),
+    height: scale(24),
+    borderRadius: scale(12),
   },
-  categoryText: {
+  authorText: {
     fontSize: fontSizes.sm,
+    color: Colors.white,
     fontWeight: '500',
   },
   contentSection: {
