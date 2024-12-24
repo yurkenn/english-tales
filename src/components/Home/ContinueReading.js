@@ -66,11 +66,6 @@ const ParallaxHeader = ({ imageUrl, onPress, title, description }) => {
         <Animated.View style={[styles.headerOverlay, overlayStyle]}>
           <LinearGradient colors={['transparent', 'rgba(0,0,0,0.95)']} style={styles.gradient}>
             <View style={styles.cardContent}>
-              <View style={styles.badge}>
-                <Icon name="book-outline" size={16} color={Colors.primary} />
-                <Text style={styles.badgeText}>Continue Reading</Text>
-              </View>
-
               <Text style={styles.overlayTitle} numberOfLines={2}>
                 {title}
               </Text>
@@ -79,7 +74,7 @@ const ParallaxHeader = ({ imageUrl, onPress, title, description }) => {
               </Text>
 
               <View style={styles.readButton}>
-                <Text style={styles.readButtonText}>Resume Reading</Text>
+                <Text style={styles.readButtonText}>Continue Reading</Text>
                 <Icon name="arrow-forward" size={16} color={Colors.primary} />
               </View>
             </View>
