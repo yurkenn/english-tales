@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   },
   levelText: {
     fontSize: fontSizes.sm,
-    fontWeight: '600',
+    fontWeight: '900',
   },
   categoryTag: {
     position: 'absolute',
