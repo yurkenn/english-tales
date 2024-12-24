@@ -117,11 +117,9 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingVertical: hp(2),
-    paddingHorizontal: wp(4),
+    paddingHorizontal: wp(3),
   },
-  featureContainer: {
-    marginBottom: hp(3),
-  },
+  featureContainer: {},
   categoriesContainer: {
     marginVertical: hp(3),
   },
@@ -133,6 +131,19 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.xl,
     fontWeight: '600',
     marginBottom: hp(2),
+    marginLeft: wp(4),
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Colors.dark900,
+  },
+  loadingGradient: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
