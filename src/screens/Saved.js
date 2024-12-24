@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, RefreshControl } from 'react-native';
+import { StyleSheet, Text, View, RefreshControl } from 'react-native';
 import { Colors } from '../constants/colors';
 import { FlashList } from '@shopify/flash-list';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from '../components/Icons';
-import { wp, hp, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
+import { wp, hp, moderateScale, fontSizes, spacing } from '../utils/dimensions';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadBookmarks, removeBookmark } from '../store/slices/bookmarkSlice';
 import SavedCard from '../components/Saved/SavedCard';
+import LoadingScreen from '../components/LoadingScreen';
 
 const EmptyState = () => (
   <Animated.View entering={FadeInDown.springify()} style={styles.emptyContainer}>
@@ -26,7 +27,6 @@ const Saved = ({ navigation }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   const { bookmarks, loading } = useSelector((state) => state.bookmarks);
-  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     if (user?.uid) {
@@ -34,32 +34,25 @@ const Saved = ({ navigation }) => {
     }
   }, [user]);
 
-  const handleRemoveBookmark = (bookData) => {
-    dispatch(removeBookmark({ bookData, userId: user.uid }));
+  const handleRemoveBookmark = (item) => {
+    dispatch(removeBookmark({ bookData: item, userId: user.uid }));
   };
 
-  const onRefresh = React.useCallback(() => {
-    if (user?.uid) {
-      setRefreshing(true);
-      dispatch(loadBookmarks(user.uid)).finally(() => {
-        setRefreshing(false);
-      });
-    }
-  }, [user]);
+  if (loading) {
+    return <LoadingScreen />;
+  }
 
   const renderItem = ({ item, index }) => (
-    <Animated.View entering={FadeInDown.delay(index * 100).springify()}>
-      <SavedCard
-        data={item}
-        onDelete={handleRemoveBookmark}
-        onPress={() => navigation.navigate('Detail', { data: item })}
-      />
-    </Animated.View>
+    <SavedCard
+      data={item}
+      onDelete={handleRemoveBookmark}
+      onPress={() => navigation.navigate('Detail', { data: item })}
+      index={index}
+    />
   );
 
   return (
     <View style={styles.container}>
-      {/* Content */}
       {bookmarks.length > 0 ? (
         <FlashList
           data={bookmarks}
@@ -67,14 +60,6 @@ const Saved = ({ navigation }) => {
           estimatedItemSize={200}
           contentContainerStyle={styles.listContainer}
           showsVerticalScrollIndicator={false}
-          refreshControl={
-            <RefreshControl
-              refreshing={refreshing}
-              onRefresh={onRefresh}
-              tintColor={Colors.primary}
-              colors={[Colors.primary]}
-            />
-          }
         />
       ) : (
         <EmptyState />
@@ -88,7 +73,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.dark900,
   },
-
   listContainer: {
     padding: spacing.md,
   },
