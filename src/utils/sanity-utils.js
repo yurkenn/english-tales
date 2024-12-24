@@ -69,33 +69,45 @@ export const getTaleBySlug = async (slug) => {
 
   try {
     const tale = await client.fetch(
-      `*[_type == "tale" && slug.current == $slug]{
-        _id,
-        title,
-        likes,
-        slug,
-        estimatedDuration,
-        level,
-        difficulty,
-        topics,
-        vocabulary,
-        grammarFocus,
-        description,
-        "imageURL": imageURL.asset->url,
-        "author": author->{
-          name,
-          "image": image.asset->url,
-          bio,
-          expertise
-        },
-        "category": categories[0]->{
-          title,
-          color,
-          iconName
-        },
-        content,
-        interactiveElements
-      }`,
+      `
+     *[_type == "tale" && slug.current == $slug]{
+       _id,
+       title,
+       likes,
+       slug,
+       estimatedDuration,
+       level,
+       difficulty,
+       description,
+       content,
+       vocabulary,
+       grammarFocus,
+       topics,
+       "imageURL": imageURL.asset->url,
+       "author": author->{
+         name,
+         bio,
+         expertise,
+         qualification,
+         "image": image.asset->url
+       },
+       "category": categories[0]->{
+         title,
+         color,
+         iconName
+       },
+       "related": *[_type == "tale" && 
+         categories[0]->title == ^.categories[0]->title && 
+         slug.current != $slug] | order(publishedAt desc)[0...4]{
+         _id,
+         title,
+         slug,
+         description,
+         difficulty,
+         estimatedDuration,
+         "imageURL": imageURL.asset->url
+       }
+     }`,
       { slug }
     );
 
