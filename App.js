@@ -12,6 +12,7 @@ import { store } from './src/store';
 
 // Navigation
 import RootNavigator from './src/navigation/RootNavigator';
+import CustomToast from './src/components/CustomToast';
 
 // Analytics initialization
 vexo(process.env.EXPO_PUBLIC_VEXO_ANALYTICS_KEY);
@@ -57,7 +58,7 @@ const App = () => {
       <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>
         <StatusBar style="light" />
         <RootNavigator />
-        <Toast />
+        <CustomToast />
       </GestureHandlerRootView>
     </Provider>
   );
