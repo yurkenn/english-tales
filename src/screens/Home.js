@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingVertical: hp(2),
-    paddingHorizontal: wp(3),
+    paddingHorizontal: wp(1),
   },
   featureContainer: {},
   categoriesContainer: {
