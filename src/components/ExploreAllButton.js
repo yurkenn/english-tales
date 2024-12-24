@@ -30,7 +30,7 @@ export default ExploreAllButton;
 
 const styles = StyleSheet.create({
   exploreButtonContainer: {
-    marginHorizontal: wp(3),
+    marginHorizontal: wp(4),
     marginVertical: hp(2),
     borderRadius: layout.borderRadius,
     overflow: 'hidden',
