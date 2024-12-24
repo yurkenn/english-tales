@@ -57,7 +57,7 @@ const Categories = ({ data, index }) => {
 const styles = StyleSheet.create({
   container: {
     width: wp(42),
-    margin: spacing.xs,
+    marginHorizontal: spacing.md,
   },
   card: {
     borderRadius: moderateScale(14),
