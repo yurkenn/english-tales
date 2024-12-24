@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Toast from 'react-native-toast-message';
 
 const initialState = {
   stats: {
@@ -91,6 +92,19 @@ export const updateStreak = createAsyncThunk(
 
         if (streakAchievements.length > 0) {
           newStats.achievements = [...(newStats.achievements || []), ...streakAchievements];
+          streakAchievements.forEach((achievement) => {
+            Toast.show({
+              type: 'success',
+              text1: '🏆 Achievement Unlocked!',
+              text2:
+                achievement === 'THREE_DAY_STREAK'
+                  ? 'You completed a 3-day reading streak!'
+                  : 'You completed a 7-day reading streak!',
+              position: 'top',
+              visibilityTime: 4000,
+              topOffset: 50,
+            });
+          });
         }
 
         await AsyncStorage.setItem(`userStats_${userId}`, JSON.stringify(newStats));
@@ -173,6 +187,33 @@ export const updateReadingProgress = createAsyncThunk(
 
       if (newAchievements.length > 0) {
         newStats.achievements = [...(newStats.achievements || []), ...newAchievements];
+
+        newAchievements.forEach((achievement) => {
+          let message = '';
+          switch (achievement) {
+            case 'FIRST_STORY':
+              message = 'You completed your first story! Your reading journey begins!';
+              break;
+            case 'STORY_COLLECTOR':
+              message = 'You completed 10 stories! A true collector!';
+              break;
+            case 'GENRE_EXPLORER':
+              message = 'You explored 5 different categories! Adventure awaits!';
+              break;
+            case 'COMPLETIONIST':
+              message = 'You fully completed 5 stories! Perfect reader!';
+              break;
+          }
+
+          Toast.show({
+            type: 'success',
+            text1: '🏆 New Achievement!',
+            text2: message,
+            position: 'top',
+            visibilityTime: 4000,
+            topOffset: 50,
+          });
+        });
       }
 
       await AsyncStorage.setItem(`userStats_${userId}`, JSON.stringify(newStats));

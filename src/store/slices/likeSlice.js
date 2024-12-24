@@ -48,6 +48,7 @@ export const toggleLike = createAsyncThunk(
       } else {
         // Unlike
         await unlikeTale(taleId, currentLikes - 1);
+        await AsyncStorage.removeItem(`liked_${taleId}`);
         return {
           taleId,
           likes: currentLikes - 1,
