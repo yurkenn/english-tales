@@ -1,94 +1,187 @@
-import React, { useState, useCallback } from 'react';
-import { View, TextInput, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { FlashList } from '@shopify/flash-list';
-import useSearch from '../hooks/useSearch';
-import LoadingAnimation from '../components/Animations/LoadingAnimation';
-import ErrorAnimation from '../components/Animations/ErrorAnimation';
-import CategoryCard from '../components/Category/CategoryCard';
-import Icon from '../components/Icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import Animated, { FadeIn } from 'react-native-reanimated';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import { useSharedValue, withSpring } from 'react-native-reanimated';
 import { Colors } from '../constants/colors';
-import { wp, hp, moderateScale, fontSizes, spacing, layout } from '../utils/dimensions';
+import { spacing } from '../utils/dimensions';
 
-const EmptyState = ({ searchTerm }) => (
-  <Animated.View entering={FadeIn} style={styles.emptyContainer}>
-    <LinearGradient colors={['#282828', '#161616']} style={styles.emptyCard}>
-      <Icon name="search" size={moderateScale(48)} color={Colors.primary} />
-      <Text style={styles.emptyTitle}>{searchTerm ? 'No results found' : 'Search for tales'}</Text>
-      <Text style={styles.emptySubtitle}>
-        {searchTerm
-          ? 'Try different keywords or check spelling'
-          : 'Discover amazing tales in our collection'}
-      </Text>
-    </LinearGradient>
-  </Animated.View>
-);
+// Components
+import SearchHeader from '../components/Search/SearchHeader';
+import RecentSearches from '../components/Search/RecentSearches';
+import CategoryCard from '../components/Category/CategoryCard';
+import EmptyState from '../components/Search/EmptyState';
+
+// Hooks
+import useGetCategories from '../hooks/useGetCategories';
+import useSearch from '../hooks/useSearch';
+import useGetTalesByCategory from '../hooks/useGetTalesByCategory';
+import Icon from '../components/Icons';
+import PopularCategories from '../components/Search/PopularCategories';
+import SuggestedSearches from '../components/Search/SuggestedSearches';
+
+const RECENT_SEARCHES_KEY = '@recent_searches';
+const MAX_RECENT_SEARCHES = 5;
 
 const SearchScreen = () => {
   const [isFocused, setIsFocused] = useState(false);
-  const { searchTerm, setSearchTerm, clearSearch, results, loading, error } = useSearch();
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [recentSearches, setRecentSearches] = useState([]);
+  const inputScale = useSharedValue(1);
+
+  const { categories = [], loading: categoriesLoading } = useGetCategories();
+  const {
+    searchTerm,
+    setSearchTerm,
+    clearSearch,
+    results: searchResults = [],
+    loading: searchLoading,
+  } = useSearch();
+
+  const { categoryList = [], loading: categoryLoading } = useGetTalesByCategory(
+    selectedCategory?.title
+  );
+
+  const loading = searchLoading || categoryLoading;
+  const results = useMemo(() => {
+    if (selectedCategory) {
+      return categoryList || [];
+    }
+    return searchResults || [];
+  }, [selectedCategory, categoryList, searchResults]);
+
+  useEffect(() => {
+    loadRecentSearches();
+  }, []);
+
+  const loadRecentSearches = async () => {
+    try {
+      const searches = await AsyncStorage.getItem(RECENT_SEARCHES_KEY);
+      if (searches) {
+        setRecentSearches(JSON.parse(searches));
+      }
+    } catch (error) {
+      console.error('Error loading recent searches:', error);
+    }
+  };
+
+  const saveRecentSearch = async (search) => {
+    if (!search?.trim()) return;
+
+    try {
+      let searches = [...recentSearches];
+      searches = searches.filter((item) => item !== search);
+      searches.unshift(search);
+      searches = searches.slice(0, MAX_RECENT_SEARCHES);
+
+      await AsyncStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(searches));
+      setRecentSearches(searches);
+    } catch (error) {
+      console.error('Error saving recent search:', error);
+    }
+  };
 
   const handleTextChange = useCallback(
     (text) => {
       setSearchTerm(text);
+      if (text?.trim()) {
+        saveRecentSearch(text);
+        setSelectedCategory(null);
+      }
     },
     [setSearchTerm]
   );
 
+  const clearSearchHistory = async () => {
+    try {
+      await AsyncStorage.removeItem(RECENT_SEARCHES_KEY);
+      setRecentSearches([]);
+    } catch (error) {
+      console.error('Error clearing search history:', error);
+    }
+  };
+
   const handleClear = useCallback(() => {
     clearSearch();
+    setSelectedCategory(null);
   }, [clearSearch]);
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    inputScale.value = withSpring(1.02);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+    inputScale.value = withSpring(1);
+  };
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    setSearchTerm('');
+  };
 
   return (
     <View style={styles.container}>
-      <LinearGradient
-        colors={['#282828', '#161616']}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-        style={styles.header}
-      >
-        <View style={styles.searchContainer}>
-          <Icon
-            name="search"
-            size={moderateScale(20)}
-            color={isFocused ? Colors.primary : Colors.gray500}
-          />
-          <TextInput
-            style={[styles.input, isFocused && styles.inputFocused]}
-            placeholder="Search tales..."
-            onChangeText={handleTextChange}
-            value={searchTerm}
-            placeholderTextColor={Colors.gray500}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-          />
-          {searchTerm ? (
-            <TouchableOpacity onPress={handleClear} style={styles.clearButton}>
-              <Icon name="close-circle" size={moderateScale(20)} color={Colors.gray500} />
-            </TouchableOpacity>
-          ) : null}
-        </View>
-      </LinearGradient>
+      <SearchHeader
+        searchTerm={searchTerm}
+        isFocused={isFocused}
+        inputScale={inputScale}
+        onChangeText={handleTextChange}
+        onClear={handleClear}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      />
 
-      {loading ? (
-        <LoadingAnimation />
-      ) : error ? (
-        <ErrorAnimation />
-      ) : (
-        <FlashList
-          data={results}
-          estimatedItemSize={200}
-          renderItem={({ item, index }) => (
-            <Animated.View entering={FadeIn.delay(index * 100)} style={styles.cardContainer}>
-              <CategoryCard data={item} />
-            </Animated.View>
-          )}
-          ListEmptyComponent={() => <EmptyState searchTerm={searchTerm} />}
-          contentContainerStyle={styles.listContainer}
-          showsVerticalScrollIndicator={false}
-        />
-      )}
+      <View style={styles.content}>
+        {!searchTerm && !loading && (
+          <RecentSearches
+            searches={recentSearches}
+            onSelectSearch={setSearchTerm}
+            onClearHistory={clearSearchHistory}
+          />
+        )}
+
+        {loading ? (
+          <View style={styles.loadingContainer}>
+            <Icon name="refresh" size={32} color={Colors.primary} />
+          </View>
+        ) : (
+          <>
+            {results.length > 0 ? (
+              <ScrollView showsVerticalScrollIndicator={false}>
+                <View style={styles.resultsContainer}>
+                  {results.map((item, index) => (
+                    <Animated.View
+                      key={item?._id || Math.random().toString()}
+                      entering={FadeInDown.delay(index * 100)}
+                      style={styles.cardContainer}
+                    >
+                      <CategoryCard data={item} />
+                    </Animated.View>
+                  ))}
+                </View>
+
+                <PopularCategories
+                  categories={categories}
+                  onSelectCategory={handleCategorySelect}
+                />
+                <SuggestedSearches onSelectSearch={setSearchTerm} />
+                <View style={styles.bottomPadding} />
+              </ScrollView>
+            ) : (
+              <EmptyState
+                searchTerm={searchTerm}
+                categories={categories}
+                loading={categoriesLoading}
+                onSelectSearch={setSearchTerm}
+                onSelectCategory={handleCategorySelect}
+              />
+            )}
+          </>
+        )}
+      </View>
     </View>
   );
 };
@@ -98,59 +191,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.dark900,
   },
-  header: {
-    padding: spacing.md,
-    borderBottomLeftRadius: layout.borderRadius * 2.5,
-    borderBottomRightRadius: layout.borderRadius * 2.5,
-  },
-  searchContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: Colors.dark900 + '80',
-    borderRadius: layout.borderRadius,
-    padding: spacing.sm,
-    borderWidth: 1,
-    borderColor: Colors.dark700,
-  },
-  input: {
+  content: {
     flex: 1,
-    color: Colors.white,
-    fontSize: fontSizes.md,
-    marginHorizontal: spacing.sm,
-    padding: 0,
   },
-  inputFocused: {
-    color: Colors.white,
-  },
-  clearButton: {
-    padding: spacing.xs,
-  },
-  listContainer: {
-    padding: spacing.md,
-  },
-  cardContainer: {
-    marginBottom: hp(2),
-  },
-  emptyContainer: {
+  loadingContainer: {
     flex: 1,
-    padding: spacing.md,
-  },
-  emptyCard: {
     justifyContent: 'center',
     alignItems: 'center',
-    padding: spacing.xl,
-    borderRadius: layout.borderRadius * 2,
-    gap: hp(2),
   },
-  emptyTitle: {
-    color: Colors.white,
-    fontSize: fontSizes.xl,
-    fontWeight: '600',
+  resultsContainer: {
+    padding: spacing.lg,
   },
-  emptySubtitle: {
-    color: Colors.gray500,
-    fontSize: fontSizes.sm,
-    textAlign: 'center',
+  cardContainer: {
+    marginBottom: spacing.md,
+  },
+  bottomPadding: {
+    height: spacing.xl * 2,
   },
 });
 
