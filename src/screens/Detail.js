@@ -11,6 +11,7 @@ import LikeButton from '../components/Detail/LikeButton';
 import SettingsButton from '../components/Detail/SettingsButton';
 import Icon from '../components/Icons';
 import { wp, hp, scale, fontSizes, spacing, layout } from '../utils/dimensions';
+import FontSettingsModal from '../components/Modal/FontSettingsModal';
 
 // Redux imports
 import { useDispatch, useSelector } from 'react-redux';
@@ -31,51 +32,21 @@ const Detail = ({ route, navigation }) => {
 
   // Local state
   const [isLoading, setIsLoading] = useState(false);
-  const [hasLiked, setHasLiked] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
-  const [currentLikes, setCurrentLikes] = useState(0);
+  const [isFontModalVisible, setFontModalVisible] = useState(false);
 
   // Format values
   const formattedDuration = `${data?.estimatedDuration} min`;
   const difficultyText = `${data?.difficulty}/5`;
 
   useEffect(() => {
-    const checkPreviousInteractions = async () => {
-      if (userInfo?.uid && data?._id) {
-        // Check like status
-        try {
-          await dispatch(fetchTaleLikes(data._id)).unwrap();
-          const likeStatus = await AsyncStorage.getItem(`liked_${data._id}`);
-          setHasLiked(likeStatus === 'true');
-        } catch (error) {
-          console.error('Error fetching likes:', error);
-        }
-
-        // Check bookmark status
-        try {
-          const storedBookmarks = await AsyncStorage.getItem(`bookmarks_${userInfo.uid}`);
-          const bookmarkData = JSON.parse(storedBookmarks);
-          if (bookmarkData) {
-            const isBookmarked = bookmarkData.find(
-              (bookmark) => bookmark.slug.current === data.slug.current
-            );
-            setIsBookmarked(!!isBookmarked);
-          }
-        } catch (error) {
-          console.error('Error fetching bookmarks:', error);
-        }
-      }
-    };
-
-    checkPreviousInteractions();
-  }, [userInfo, data]);
-
-  useEffect(() => {
     if (data._id) {
       dispatch(fetchTaleLikes(data._id));
-      setCurrentLikes(likes[data._id] || 0);
     }
-  }, [data._id, likes]);
+  }, [data._id]);
+
+  const hasLiked = userLikes[data._id] || false;
+  const currentLikes = likes[data._id] || 0;
+  const isBookmarked = bookmarks.some((bookmark) => bookmark.slug.current === data.slug.current);
 
   const handleLike = async () => {
     if (!userInfo) {
@@ -96,11 +67,6 @@ const Detail = ({ route, navigation }) => {
           currentLikes: currentLikes,
         })
       ).unwrap();
-
-      // Save like status locally
-      await AsyncStorage.setItem(`liked_${data._id}`, (!hasLiked).toString());
-      setHasLiked(!hasLiked);
-      setCurrentLikes((prev) => (hasLiked ? prev - 1 : prev + 1));
 
       Toast.show({
         type: 'success',
@@ -139,8 +105,6 @@ const Detail = ({ route, navigation }) => {
           userId: userInfo.uid,
         })
       ).unwrap();
-
-      setIsBookmarked(!isBookmarked);
 
       Toast.show({
         type: !isBookmarked ? 'success' : 'info',
@@ -194,6 +158,14 @@ const Detail = ({ route, navigation }) => {
     }
   };
 
+  const handleOpenFontModal = () => {
+    setFontModalVisible(true);
+  };
+
+  const handleCloseFontModal = () => {
+    setFontModalVisible(false);
+  };
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerTransparent: true,
@@ -204,7 +176,7 @@ const Detail = ({ route, navigation }) => {
         <View style={styles.headerRightContainer}>
           <LikeButton hasLiked={hasLiked} isLoading={isLoading} handleLike={handleLike} />
           <BookmarkButton isBookmarked={isBookmarked} handleBookmark={handleBookmark} />
-          <SettingsButton handleOpenModal={() => {}} />
+          <SettingsButton handleOpenModal={handleOpenFontModal} />
         </View>
       ),
     });
@@ -280,6 +252,7 @@ const Detail = ({ route, navigation }) => {
           <Text style={styles.buttonText}>Start Reading</Text>
         </TouchableOpacity>
       </View>
+      <FontSettingsModal visible={isFontModalVisible} onClose={handleCloseFontModal} />
     </View>
   );
 };
