@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
   // Text Styles
   paragraph: {
     color: Colors.white,
-    lineHeight: moderateScale(28),
+    lineHeight: moderateScale(40),
     marginBottom: spacing.md,
     fontFamily: 'serif',
   },
