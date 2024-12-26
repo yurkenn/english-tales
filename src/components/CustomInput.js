@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Animated, StyleSheet } from 'react-native';
+import { View, TextInput, Animated, StyleSheet, TouchableOpacity } from 'react-native';
 import { Colors } from '../constants/colors';
 import Icon from './Icons';
 import * as Haptics from 'expo-haptics';
@@ -21,7 +21,7 @@ const CustomInput = ({
   ...props
 }) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [isSecureEntry, setIsSecureEntry] = useState(isSecure);
+  const [showPassword, setShowPassword] = useState(false);
   const focusAnim = new Animated.Value(0);
 
   const handleFocus = () => {
@@ -45,9 +45,14 @@ const CustomInput = ({
     onBlur?.();
   };
 
-  const toggleSecureEntry = () => {
+  const togglePasswordVisibility = () => {
     Haptics.selectionAsync();
-    setIsSecureEntry(!isSecureEntry);
+    setShowPassword(!showPassword);
+  };
+
+  const handleIconPress = () => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    togglePasswordVisibility();
   };
 
   const borderColor = focusAnim.interpolate({
@@ -88,19 +93,19 @@ const CustomInput = ({
         onChangeText={onChangeText}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        secureTextEntry={isSecureEntry}
+        secureTextEntry={isSecure && !showPassword}
         selectionColor={Colors.primary}
         {...props}
       />
 
       {isSecure && (
-        <Icon
-          name={isSecureEntry ? 'eye-off' : 'eye'}
-          size={scale(20)}
-          color={Colors.gray500}
-          style={styles.rightIcon}
-          onPress={toggleSecureEntry}
-        />
+        <TouchableOpacity onPress={handleIconPress} style={styles.rightIcon}>
+          <Icon
+            name={showPassword ? 'eye-outline' : 'eye-off-outline'}
+            size={scale(20)}
+            color={Colors.gray500}
+          />
+        </TouchableOpacity>
       )}
     </Animated.View>
   );
@@ -134,7 +139,7 @@ const styles = StyleSheet.create({
     marginRight: spacing.xs,
   },
   rightIcon: {
-    marginLeft: spacing.xs,
+    padding: spacing.xs,
   },
 });
 
