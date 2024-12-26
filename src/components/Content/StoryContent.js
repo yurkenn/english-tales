@@ -17,13 +17,6 @@ const VocabularyWord = ({ word }) => (
 
     {word.example && (
       <View style={styles.exampleContainer}>
-        <Icon
-          type="entypo"
-          name="quote"
-          size={16}
-          color={Colors.primary}
-          style={styles.quoteIcon}
-        />
         <Text style={styles.example}>{word.example}</Text>
       </View>
     )}
@@ -203,7 +196,7 @@ const styles = StyleSheet.create({
   paragraph: {
     color: Colors.white,
     lineHeight: moderateScale(40),
-    marginBottom: spacing.md,
+    marginBottom: spacing.xs,
     fontFamily: 'serif',
   },
   firstLetter: {
