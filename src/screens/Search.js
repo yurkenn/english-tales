@@ -20,6 +20,7 @@ import useGetTalesByCategory from '../hooks/useGetTalesByCategory';
 import Icon from '../components/Icons';
 import PopularCategories from '../components/Search/PopularCategories';
 import SuggestedSearches from '../components/Search/SuggestedSearches';
+import LoadingScreen from '../components/LoadingScreen';
 
 const RECENT_SEARCHES_KEY = '@recent_searches';
 const MAX_RECENT_SEARCHES = 5;
@@ -144,9 +145,7 @@ const SearchScreen = () => {
         )}
 
         {loading ? (
-          <View style={styles.loadingContainer}>
-            <Icon name="refresh" size={32} color={Colors.primary} />
-          </View>
+          <LoadingScreen />
         ) : (
           <>
             {results.length > 0 ? (
@@ -193,11 +192,6 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-  },
-  loadingContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   resultsContainer: {
     padding: spacing.lg,

@@ -1,22 +1,23 @@
 //src/components/Search/PopularCategories.js
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
 import { scale, spacing, fontSizes, wp } from '../../utils/dimensions';
 
 const PopularCategories = ({ categories = [], onSelectCategory }) => {
-  // categories boşsa null döndür
   if (!categories?.length) return null;
-
-  const popularCategories = categories.slice(0, 6);
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Popular Categories</Text>
-      <View style={styles.grid}>
-        {popularCategories.map((category) => (
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
+      >
+        {categories.map((category) => (
           <TouchableOpacity
             key={category?._id || Math.random().toString()}
             onPress={() => onSelectCategory?.(category)}
@@ -24,65 +25,56 @@ const PopularCategories = ({ categories = [], onSelectCategory }) => {
             activeOpacity={0.7}
           >
             <LinearGradient
-              colors={[category?.color || '#1F1F1F', Colors.dark900]}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
+              colors={[Colors.dark800, Colors.dark900]}
               style={styles.categoryGradient}
             >
-              <Icon name={category?.iconName || 'book'} size={scale(24)} color={Colors.white} />
-              <Text style={styles.categoryName} numberOfLines={2}>
+              <Icon name={category?.iconName || 'book'} size={16} color={Colors.primary} />
+              <Text style={styles.categoryName} numberOfLines={1}>
                 {category?.title || 'Category'}
               </Text>
             </LinearGradient>
           </TouchableOpacity>
         ))}
-      </View>
+      </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: spacing.xl,
-    paddingHorizontal: spacing.lg,
+    marginTop: spacing.lg,
   },
   title: {
     fontSize: fontSizes.lg,
     fontWeight: '600',
     color: Colors.white,
     marginBottom: spacing.md,
+    paddingHorizontal: spacing.lg,
   },
-  grid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: spacing.xs,
+  scrollContent: {
+    paddingHorizontal: spacing.lg,
   },
   categoryButton: {
-    margin: spacing.xs,
-    elevation: 4,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: scale(2),
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    marginRight: spacing.sm,
+    width: wp(32), // Fixed width for all categories (approximately 32% of screen width)
   },
   categoryGradient: {
-    width: wp(22),
-    height: wp(22),
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: scale(12),
-    padding: spacing.sm,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+    borderRadius: scale(8),
     gap: spacing.xs,
+    borderWidth: 1,
+    borderColor: Colors.dark700 + '20',
+    minHeight: scale(44), // Fixed height for all categories
   },
   categoryName: {
     color: Colors.white,
     fontSize: fontSizes.sm,
-    fontWeight: '600',
+    fontWeight: '500',
     textAlign: 'center',
-    marginTop: spacing.xs,
   },
 });
 
