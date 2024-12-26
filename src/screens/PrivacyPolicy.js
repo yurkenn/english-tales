@@ -39,7 +39,7 @@ const PrivacyPolicy = () => {
         'Device Identifiers: We collect device IDs for authentication and app functionality',
         'Installation ID: Used to maintain your app installation state',
         'Analytics Data: Anonymous usage data to improve app performance',
-        'Authentication Tokens: Secure your login sessions',
+        'Authentication Tokens: Secure your sign in sessions',
       ],
     },
   ];

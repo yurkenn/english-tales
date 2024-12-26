@@ -97,7 +97,7 @@ const ResetPassword = ({ navigation }) => {
 
               <CustomButton
                 onPress={() => navigation.goBack()}
-                title="Back to Login"
+                title="Back to Sign In"
                 variant="text"
               />
             </Animated.View>
@@ -109,7 +109,7 @@ const ResetPassword = ({ navigation }) => {
           onClose={handleModalClose}
           title="Check Your Email"
           message={`We've sent password reset instructions to ${resetEmail}. Please check your inbox and follow the link to reset your password.`}
-          buttonText="Back to Login"
+          buttonText="Back to Sign In"
         />
 
         <ErrorModal

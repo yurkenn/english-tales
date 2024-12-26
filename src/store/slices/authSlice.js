@@ -160,7 +160,7 @@ const authSlice = createSlice({
         state.error = action.payload;
         Toast.show({
           type: 'error',
-          text1: 'Login Failed',
+          text1: 'Sign In Failed',
           text2: action.payload,
         });
       })

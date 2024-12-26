@@ -60,7 +60,7 @@ const Login = ({ navigation }) => {
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
         <Animated.View entering={FadeIn.duration(1000)} style={styles.headerContainer}>
           <Text style={styles.welcomeText}>Welcome back</Text>
-          <Text style={styles.subtitle}>Sign in to continue reading</Text>
+          <Text style={styles.subtitle}>Sign In to continue reading</Text>
         </Animated.View>
 
         <Formik

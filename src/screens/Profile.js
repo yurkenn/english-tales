@@ -65,7 +65,6 @@ const Profile = ({ navigation }) => {
       <View style={styles.settingsContainer}>
         <Text style={styles.sectionTitle}>Settings</Text>
         <View style={styles.settingsCard}>
-          <SettingItem icon="notifications" label="Notifications" onPress={() => {}} />
           <SettingItem
             icon="shield-checkmark"
             label="Privacy Policy"

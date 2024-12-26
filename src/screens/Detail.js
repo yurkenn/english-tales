@@ -52,7 +52,7 @@ const Detail = ({ route, navigation }) => {
     if (!userInfo) {
       Toast.show({
         type: 'error',
-        text1: 'Please login to like stories',
+        text1: 'Please sign in to like stories',
         position: 'top',
         topOffset: 50,
       });
@@ -91,7 +91,7 @@ const Detail = ({ route, navigation }) => {
     if (!userInfo) {
       Toast.show({
         type: 'error',
-        text1: 'Please login to bookmark stories',
+        text1: 'Please sign in to bookmark stories',
         position: 'top',
         topOffset: 50,
       });
@@ -129,7 +129,7 @@ const Detail = ({ route, navigation }) => {
       if (!userInfo?.uid) {
         Toast.show({
           type: 'error',
-          text1: 'Please login to read stories',
+          text1: 'Please sign in to read stories',
           position: 'top',
           topOffset: 50,
         });
