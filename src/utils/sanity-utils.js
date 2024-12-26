@@ -105,7 +105,15 @@ export const getTaleBySlug = async (slug) => {
          description,
          difficulty,
          estimatedDuration,
-         "imageURL": imageURL.asset->url
+         "imageURL": imageURL.asset->url,
+          likes,
+          "author": author->{
+            name,
+            "image": image.asset->url
+          },
+          level,
+          
+
        }
      }`,
       { slug }
