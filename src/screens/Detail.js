@@ -221,7 +221,7 @@ const Detail = ({ route, navigation }) => {
           <View style={styles.divider} />
           <View style={styles.statItem}>
             <Icon name="heart" size={20} color={Colors.error} />
-            <Text style={styles.statText}>{currentLikes}</Text>
+            <Text style={styles.statText}>{data?.likes}</Text>
           </View>
         </View>
 
