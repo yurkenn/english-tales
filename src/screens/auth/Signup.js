@@ -210,7 +210,7 @@ const Signup = ({ navigation }) => {
         <Animated.View entering={FadeInDown.duration(1000).delay(400)} style={styles.footer}>
           <Text style={styles.footerText}>Already have an account?</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.loginButton}>
-            <Text style={styles.loginText}>Log in</Text>
+            <Text style={styles.loginText}>Sign in</Text>
           </TouchableOpacity>
         </Animated.View>
       </ScrollView>
