@@ -160,12 +160,12 @@ const authSlice = createSlice({
         state.error = action.payload;
         Toast.show({
           type: 'error',
-          text1: 'Sign In Failed',
+          text1: 'Login Failed',
           text2: action.payload,
         });
       })
 
-      // Google Sign In cases
+      // Google Login cases
       .addCase(googleSignIn.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -185,7 +185,7 @@ const authSlice = createSlice({
         state.error = action.payload;
         Toast.show({
           type: 'error',
-          text1: 'Google Sign In Failed',
+          text1: 'Google Login Failed',
           text2: action.payload,
         });
       })

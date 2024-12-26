@@ -15,7 +15,7 @@ export const getFirebaseErrorMessage = (error) => {
     'auth/invalid-action-code': 'This password reset link is invalid or has expired.',
     'auth/expired-action-code': 'This password reset link has expired.',
     'auth/operation-not-allowed': 'This operation is not allowed. Please contact support.',
-    'auth/requires-recent-login': 'Please Sign in again to complete this action.',
+    'auth/requires-recent-login': 'Please Login again to complete this action.',
 
     // Custom general errors
     timeout: 'Request timed out. Please try again.',
