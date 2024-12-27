@@ -1,223 +1,169 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, {
   FadeInDown,
-  useAnimatedStyle,
   useSharedValue,
+  useAnimatedStyle,
   withSpring,
 } from 'react-native-reanimated';
 import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
-import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
+import { scale, spacing, fontSizes } from '../../utils/dimensions';
 
-const SavedCard = ({ data, onDelete, onPress, index = 0 }) => {
-  const pressed = useSharedValue(1);
-
-  const animatedStyle = useAnimatedStyle(() => {
-    return {
-      transform: [{ scale: withSpring(pressed.value) }],
-    };
-  });
-
-  const handlePressIn = () => {
-    pressed.value = 0.95;
-  };
-
-  const handlePressOut = () => {
-    pressed.value = 1;
-  };
+const SavedCard = ({ data, onDelete, onPress, index }) => {
+  const scale = useSharedValue(1);
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }],
+  }));
 
   return (
-    <Animated.View entering={FadeInDown.delay(index * 100).springify()} style={styles.container}>
-      <Animated.View style={[animatedStyle]}>
-        <TouchableOpacity
-          onPress={onPress}
-          onPressIn={handlePressIn}
-          onPressOut={handlePressOut}
-          activeOpacity={0.9}
-        >
-          <LinearGradient
-            colors={[Colors.dark800, Colors.dark900]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.card}
-          >
-            {/* Image with Overlay */}
-            <View style={styles.imageWrapper}>
-              <Image source={{ uri: data?.imageURL }} style={styles.image} />
-              <LinearGradient
-                colors={['transparent', 'rgba(0,0,0,0.6)']}
-                style={StyleSheet.absoluteFillObject}
-              />
+    <Animated.View entering={FadeInDown.delay(index * 100)} style={styles.container}>
+      <TouchableOpacity
+        onPress={onPress}
+        onPressIn={() => (scale.value = withSpring(0.98))}
+        onPressOut={() => (scale.value = withSpring(1))}
+        activeOpacity={1}
+      >
+        <Animated.View style={[styles.card, animatedStyle]}>
+          <View style={styles.imageContainer}>
+            <Image source={{ uri: data?.imageURL }} style={styles.image} />
+            <LinearGradient colors={['transparent', 'rgba(0,0,0,0.8)']} style={styles.overlay} />
+            <View
+              style={[
+                styles.levelBadge,
+                { backgroundColor: data?.category?.color || Colors.primary },
+              ]}
+            >
+              <Text style={styles.levelText}>{data?.level}</Text>
             </View>
+          </View>
 
-            {/* Content Container */}
-            <View style={styles.contentContainer}>
-              {/* Category and Delete */}
-              <View style={styles.topRow}>
-                <View style={[styles.categoryBadge, { backgroundColor: Colors.primary + '15' }]}>
-                  <Icon name="bookmark" size={14} color={Colors.primary} />
-                  <Text style={styles.categoryText}>{data?.category?.title || 'Story'}</Text>
-                </View>
-
-                <TouchableOpacity
-                  onPress={() => onDelete(data)}
-                  style={styles.deleteButton}
-                  hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          <View style={styles.content}>
+            <View style={styles.header}>
+              <Text style={styles.title} numberOfLines={2}>
+                {data?.title}
+              </Text>
+              <TouchableOpacity
+                onPress={() => onDelete(data)}
+                style={styles.deleteButton}
+                hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              >
+                <LinearGradient
+                  colors={[Colors.dark700, Colors.dark900]}
+                  style={styles.deleteButtonGradient}
                 >
-                  <Icon name="trash-outline" size={18} color={Colors.error} />
-                </TouchableOpacity>
-              </View>
-
-              {/* Title & Description */}
-              <View style={styles.textContent}>
-                <Text style={styles.title} numberOfLines={1}>
-                  {data?.title}
-                </Text>
-                <Text style={styles.description} numberOfLines={2}>
-                  {data?.description}
-                </Text>
-              </View>
-
-              {/* Stats & Continue Button */}
-              <View style={styles.bottomRow}>
-                <View style={styles.stats}>
-                  <View style={styles.statItem}>
-                    <Icon name="time-outline" size={16} color={Colors.gray300} />
-                    <Text style={styles.statText}>{data?.estimatedDuration}m</Text>
-                  </View>
-                  <View style={styles.separator} />
-                  <View style={styles.statItem}>
-                    <Icon name="heart" size={16} color={Colors.error} />
-                    <Text style={styles.statText}>{data?.likes || 0}</Text>
-                  </View>
-                </View>
-
-                <TouchableOpacity style={styles.continueButton}>
-                  <Text style={styles.continueText}>Continue</Text>
-                  <Icon name="arrow-forward" size={14} color={Colors.primary} />
-                </TouchableOpacity>
-              </View>
+                  <Icon name="trash-outline" size={20} color={Colors.error} />
+                </LinearGradient>
+              </TouchableOpacity>
             </View>
-          </LinearGradient>
-        </TouchableOpacity>
-      </Animated.View>
+
+            <View style={styles.stats}>
+              <Icon name="time" size={16} color={data?.category?.color || Colors.primary} />
+              <Text style={styles.statText}>{data?.estimatedDuration}m</Text>
+              <View style={styles.dot} />
+              <Icon name="heart" size={16} color={Colors.error} />
+              <Text style={styles.statText}>{data?.likes || 0}</Text>
+            </View>
+
+            <TouchableOpacity style={styles.continueBtn}>
+              <Text
+                style={[styles.continueText, { color: data?.category?.color || Colors.primary }]}
+              >
+                Continue Reading
+              </Text>
+              <Icon
+                name="arrow-forward"
+                size={16}
+                color={data?.category?.color || Colors.primary}
+              />
+            </TouchableOpacity>
+          </View>
+        </Animated.View>
+      </TouchableOpacity>
     </Animated.View>
   );
 };
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
-    marginVertical: spacing.xs,
-    marginHorizontal: spacing.md,
-    borderRadius: scale(16),
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: scale(2),
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 3.84,
-    elevation: 5,
+    marginHorizontal: spacing.lg,
+    marginVertical: spacing.sm,
   },
   card: {
-    flexDirection: 'row',
-    borderRadius: scale(16),
-    overflow: 'hidden',
-    borderWidth: 1,
-    borderColor: Colors.dark700 + '20',
-    padding: spacing.sm,
-  },
-  imageWrapper: {
-    width: wp(22),
-    aspectRatio: 0.75,
+    backgroundColor: Colors.dark800,
     borderRadius: scale(12),
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: Colors.dark700,
+  },
+  imageContainer: {
+    height: scale(140),
+    width: '100%',
+    position: 'relative',
   },
   image: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
   },
-  contentContainer: {
-    flex: 1,
-    marginLeft: spacing.sm,
-    justifyContent: 'space-between',
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
   },
-  topRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  categoryBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
+  levelBadge: {
+    position: 'absolute',
+    top: spacing.sm,
+    right: spacing.sm,
     paddingHorizontal: spacing.sm,
-    paddingVertical: spacing.xs / 2,
-    borderRadius: scale(12),
-    gap: 4,
+    paddingVertical: spacing.xs,
+    borderRadius: scale(6),
   },
-  categoryText: {
+  levelText: {
+    color: Colors.white,
     fontSize: fontSizes.xs,
-    color: Colors.primary,
     fontWeight: '600',
   },
-  deleteButton: {
-    padding: spacing.xs,
+  content: {
+    padding: spacing.md,
+    gap: spacing.sm,
   },
-  textContent: {
-    flex: 1,
-    justifyContent: 'center',
-    paddingVertical: spacing.xs,
-  },
-  title: {
-    fontSize: fontSizes.md,
-    fontWeight: '700',
-    color: Colors.white,
-    marginBottom: spacing.xs / 2,
-  },
-  description: {
-    fontSize: fontSizes.sm,
-    color: Colors.gray300,
-    lineHeight: fontSizes.md * 1.3,
-  },
-  bottomRow: {
+  header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    gap: spacing.sm,
+  },
+  title: {
+    flex: 1,
+    fontSize: fontSizes.lg,
+    fontWeight: '700',
+    color: Colors.white,
   },
   stats: {
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  statItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-  },
-  separator: {
-    width: 1,
-    height: '60%',
-    backgroundColor: Colors.dark700,
-    marginHorizontal: spacing.sm,
+    gap: spacing.sm,
   },
   statText: {
-    fontSize: fontSizes.xs,
+    fontSize: fontSizes.sm,
     color: Colors.gray300,
   },
-  continueButton: {
+  dot: {
+    width: scale(3),
+    height: scale(3),
+    borderRadius: scale(1.5),
+    backgroundColor: Colors.gray500,
+  },
+  continueBtn: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 4,
-    paddingVertical: spacing.xs,
-    paddingHorizontal: spacing.sm,
+    justifyContent: 'space-between',
+    marginTop: spacing.xs,
   },
   continueText: {
     fontSize: fontSizes.sm,
     fontWeight: '600',
-    color: Colors.primary,
   },
-});
+};
 
 export default SavedCard;
