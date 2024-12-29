@@ -10,7 +10,7 @@ import BookmarkButton from '../components/Detail/BookmarkButton';
 import LikeButton from '../components/Detail/LikeButton';
 import SettingsButton from '../components/Detail/SettingsButton';
 import Icon from '../components/Icons';
-import { wp, hp, scale, fontSizes, spacing, layout } from '../utils/dimensions';
+import { wp, hp, scale, fontSizes, spacing, layout, isSmallDevice } from '../utils/dimensions';
 import FontSettingsModal from '../components/Modal/FontSettingsModal';
 
 // Redux imports
@@ -184,74 +184,95 @@ const Detail = ({ route, navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* Header gradient (for header) */}
+      {/* Header Gradient */}
       <LinearGradient
         colors={['rgba(0,0,0,0.7)', 'transparent']}
         style={styles.headerGradient}
         pointerEvents="none"
       />
 
-      {/* Cover image and gradient */}
-      <View style={styles.imageWrapper}>
-        <Image source={{ uri: data?.imageURL }} style={styles.coverImage} />
-        <LinearGradient colors={['transparent', Colors.dark900]} style={styles.imageGradient} />
-      </View>
-
-      {/* Content */}
-      <View style={styles.content}>
-        {/* Title and Level */}
-        <View style={styles.titleRow}>
-          <Text style={styles.title}>{data?.title}</Text>
-          <View style={styles.levelTag}>
-            <Text style={styles.levelText}>{data?.level}</Text>
-          </View>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+        {/* Cover Image Section */}
+        <View style={styles.imageWrapper}>
+          <Image source={{ uri: data?.imageURL }} style={styles.coverImage} />
+          <LinearGradient colors={['transparent', Colors.dark900]} style={styles.imageGradient} />
         </View>
 
-        {/* Statistics */}
-        <View style={styles.statsCard}>
-          <View style={styles.statItem}>
-            <Icon name="time-outline" size={20} color={Colors.primary} />
-            <Text style={styles.statText}>{formattedDuration}</Text>
+        {/* Content Section */}
+        <View style={styles.contentWrapper}>
+          {/* Title and Level Section */}
+          <View style={styles.titleRow}>
+            <Text style={styles.title} numberOfLines={2}>
+              {data?.title}
+            </Text>
+            <View style={styles.levelTag}>
+              <Text style={styles.levelText}>{data?.level}</Text>
+            </View>
           </View>
-          <View style={styles.divider} />
-          <View style={styles.statItem}>
-            <Icon name="star" size={20} color={Colors.warning} />
-            <Text style={styles.statText}>{difficultyText}</Text>
+
+          {/* Stats Card */}
+          <View style={styles.statsCard}>
+            <View style={styles.statItem}>
+              <Icon name="time-outline" size={scale(18)} color={Colors.primary} />
+              <Text style={styles.statText}>{formattedDuration}</Text>
+            </View>
+            <View style={styles.divider} />
+            <View style={styles.statItem}>
+              <Icon name="star" size={scale(18)} color={Colors.warning} />
+              <Text style={styles.statText}>{difficultyText}</Text>
+            </View>
+            <View style={styles.divider} />
+            <View style={styles.statItem}>
+              <Icon name="heart" size={scale(18)} color={Colors.error} />
+              <Text style={styles.statText}>{data?.likes}</Text>
+            </View>
           </View>
-          <View style={styles.divider} />
-          <View style={styles.statItem}>
-            <Icon name="heart" size={20} color={Colors.error} />
-            <Text style={styles.statText}>{data?.likes}</Text>
+
+          {/* Topics Section */}
+          {data?.topics?.length > 0 && (
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              style={styles.topicsContainer}
+              contentContainerStyle={styles.topicsContent}
+            >
+              {data.topics.map((topic, index) => (
+                <View key={index} style={styles.topicTag}>
+                  <Text style={styles.topicText}>{topic}</Text>
+                </View>
+              ))}
+            </ScrollView>
+          )}
+
+          {/* Author Badge */}
+          <View style={styles.authorBadge}>
+            <Image
+              source={
+                data?.author?.image
+                  ? { uri: data.author.image }
+                  : require('../../assets/images/blank-profile.png')
+              }
+              style={styles.authorImage}
+            />
+            <View style={styles.authorInfo}>
+              <Text style={styles.authorTitle}>Written by</Text>
+              <Text style={styles.authorText}>{data?.author?.name || 'Unknown Author'}</Text>
+            </View>
           </View>
+
+          {/* Description */}
+          <Text style={styles.description}>{data?.description}</Text>
         </View>
+      </ScrollView>
 
-        {/* Topics */}
-        {data?.topics?.length > 0 && (
-          <View style={styles.topicsRow}>
-            {data.topics.map((topic, index) => (
-              <View key={index} style={styles.topicTag}>
-                <Text style={styles.topicText}>{topic}</Text>
-              </View>
-            ))}
-          </View>
-        )}
-
-        {/* Author */}
-        <View style={styles.authorBadge}>
-          <Text style={styles.authorText}>{data?.author?.name || 'Unknown Author'}</Text>
-        </View>
-
-        {/* Description */}
-        <Text style={styles.description} numberOfLines={3}>
-          {data?.description}
-        </Text>
-
-        {/* Start Reading Button */}
-        <TouchableOpacity style={styles.startButton} onPress={handleReadButton}>
-          <Icon name="book-outline" size={24} color={Colors.white} />
+      {/* Start Reading Button */}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.startButton} onPress={handleReadButton} activeOpacity={0.8}>
+          <Icon name="book-outline" size={scale(22)} color={Colors.white} />
           <Text style={styles.buttonText}>Start Reading</Text>
         </TouchableOpacity>
       </View>
+
       <FontSettingsModal visible={isFontModalVisible} onClose={handleCloseFontModal} />
     </View>
   );
@@ -267,18 +288,15 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: hp(15),
-    zIndex: 1,
+    height: hp(12),
+    zIndex: 2,
   },
-  headerRightContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: spacing.sm,
-    marginRight: spacing.sm,
+  scrollView: {
+    flex: 1,
   },
   imageWrapper: {
     width: '100%',
-    height: hp(45),
+    height: isSmallDevice ? hp(40) : hp(45),
   },
   coverImage: {
     width: '100%',
@@ -292,33 +310,36 @@ const styles = StyleSheet.create({
     right: 0,
     height: hp(20),
   },
-  content: {
+  contentWrapper: {
     flex: 1,
-    padding: spacing.lg,
-    paddingBottom: spacing.xl + scale(56),
+    marginTop: -hp(4),
+    paddingHorizontal: spacing.lg,
+    paddingBottom: hp(12),
   },
   titleRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: spacing.md,
+    marginBottom: spacing.lg,
   },
   title: {
     flex: 1,
-    fontSize: fontSizes.xxxl,
+    fontSize: isSmallDevice ? fontSizes.xxl : fontSizes.xxxl,
     fontWeight: '700',
     color: Colors.white,
     marginRight: spacing.md,
+    lineHeight: isSmallDevice ? scale(32) : scale(38),
   },
   levelTag: {
     backgroundColor: Colors.primary + '20',
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
     borderRadius: scale(8),
+    alignSelf: 'flex-start',
   },
   levelText: {
     color: Colors.primary,
-    fontSize: fontSizes.md,
+    fontSize: isSmallDevice ? fontSizes.sm : fontSizes.md,
     fontWeight: '600',
   },
   statsCard: {
@@ -328,7 +349,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.dark800 + '80',
     padding: spacing.md,
     borderRadius: scale(12),
-    marginBottom: spacing.md,
+    marginBottom: spacing.lg,
   },
   statItem: {
     flexDirection: 'row',
@@ -337,56 +358,84 @@ const styles = StyleSheet.create({
   },
   statText: {
     color: Colors.white,
-    fontSize: fontSizes.sm,
+    fontSize: isSmallDevice ? fontSizes.sm : fontSizes.md,
     fontWeight: '500',
   },
   divider: {
     width: 1,
-    height: scale(24),
+    height: scale(20),
     backgroundColor: Colors.dark500,
   },
-  topicsRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: spacing.xs,
-    marginBottom: spacing.md,
+  topicsContainer: {
+    marginBottom: spacing.lg,
+  },
+  topicsContent: {
+    paddingRight: spacing.lg,
   },
   topicTag: {
     backgroundColor: Colors.dark800,
     paddingHorizontal: spacing.md,
     paddingVertical: spacing.xs,
     borderRadius: scale(16),
+    marginRight: spacing.xs,
   },
   topicText: {
     color: Colors.gray300,
-    fontSize: fontSizes.sm,
+    fontSize: isSmallDevice ? fontSizes.xs : fontSizes.sm,
   },
   authorBadge: {
-    backgroundColor: 'rgba(45, 45, 45, 0.5)',
-    alignSelf: 'flex-start',
-    paddingVertical: spacing.xs,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: Colors.dark800 + '80',
+    paddingVertical: spacing.sm,
     paddingHorizontal: spacing.md,
-    borderRadius: scale(8),
-    marginBottom: spacing.md,
+    borderRadius: scale(12),
+    marginBottom: spacing.lg,
+    gap: spacing.sm,
+    borderWidth: 1,
+    borderColor: Colors.dark700 + '40',
+  },
+  authorImage: {
+    width: scale(40),
+    height: scale(40),
+    borderRadius: scale(20),
+    backgroundColor: Colors.dark700,
+    borderWidth: 2,
+    borderColor: Colors.primary + '30',
+  },
+  authorInfo: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  authorTitle: {
+    color: Colors.primary,
+    fontSize: isSmallDevice ? fontSizes.xs : fontSizes.sm,
+    marginBottom: 2,
   },
   authorText: {
-    color: Colors.gray300,
-    fontSize: fontSizes.sm,
-    fontWeight: '500',
+    color: Colors.white,
+    fontSize: isSmallDevice ? fontSizes.sm : fontSizes.md,
+    fontWeight: '600',
   },
   description: {
-    fontSize: fontSizes.md,
+    fontSize: isSmallDevice ? fontSizes.sm : fontSizes.md,
     color: Colors.gray300,
     lineHeight: scale(24),
-    marginBottom: spacing.md,
+    marginBottom: spacing.xl,
+  },
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    paddingHorizontal: spacing.lg,
+    paddingBottom: spacing.lg,
+    paddingTop: spacing.md,
+    backgroundColor: Colors.dark900 + 'F0',
   },
   startButton: {
-    position: 'absolute',
-    bottom: spacing.lg,
-    left: spacing.lg,
-    right: spacing.lg,
     backgroundColor: Colors.primary,
-    height: scale(56),
+    height: isSmallDevice ? hp(6) : hp(7),
     borderRadius: scale(12),
     flexDirection: 'row',
     alignItems: 'center',
@@ -395,9 +444,14 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: Colors.white,
-    fontSize: fontSizes.lg,
+    fontSize: isSmallDevice ? fontSizes.lg : fontSizes.xl,
     fontWeight: '600',
   },
+  headerRightContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.sm,
+    marginRight: spacing.sm,
+  },
 });
-
 export default Detail;
