@@ -227,7 +227,7 @@ const styles = StyleSheet.create({
   },
   emptySubtitle: {
     fontSize: fontSizes.sm,
-    color: Colors.gray400,
+    color: Colors.gray300,
     textAlign: 'center',
   },
   relatedSection: {
