@@ -1,79 +1,101 @@
-import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import Swiper from 'react-native-swiper';
-import Images from '../../components/Onboarding/ImageList';
+import React, { useState } from 'react';
+import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
+import Carousel from 'react-native-reanimated-carousel';
+import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
+import { LinearGradient } from 'expo-linear-gradient';
+import { wp, hp, scale, spacing, fontSizes } from '../../utils/dimensions';
 import { Colors } from '../../constants/colors';
-import CustomButton from '../../components/CustomButton';
-import { scale, spacing, fontSizes, wp, hp } from '../../utils/dimensions';
-import useOnboarding from '../../hooks/useOnboarding';
+import Images from '../../components/Onboarding/ImageList';
 
-const OnboardingScreen = ({ navigation }) => {
-  const { markOnboardingComplete } = useOnboarding();
+const onboardingData = [
+  {
+    id: 1,
+    title: 'Welcome to\nEnglish Tales',
+    subtitle: 'Explore Diverse Tales',
+    description: 'Discover a world of stories across genres.',
+    image: Images.first,
+  },
+  {
+    id: 2,
+    title: 'Your Journey\nYour Stories',
+    subtitle: 'Personalized Experience',
+    description: 'Save your favorite tales for later.',
+    image: Images.second,
+  },
+  {
+    id: 3,
+    title: 'Read\nAnywhere',
+    subtitle: 'Always Available',
+    description: 'Enjoy tales on the go with an internet connection.',
+    image: Images.third,
+  },
+];
 
-  const slides = [
-    {
-      id: 1,
-      title: 'Explore Diverse Tales',
-      description:
-        'Discover a wide range of tales spanning different categories, including fantasy, nature, animals, and more.',
-      image: Images.first,
-    },
-    {
-      id: 2,
-      title: 'Personalized Experience',
-      description: 'Create your own library by saving your favorite tales for later enjoyment.',
-      image: Images.second,
-    },
-    {
-      id: 3,
-      title: 'Read Anywhere, Anytime',
-      description:
-        'Enjoy your favorite tales on the go, at home, or anywhere else. All you need is an internet connection.',
-      image: Images.third,
-    },
-  ];
+const Onboarding = ({ navigation }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleGetStarted = async () => {
-    await markOnboardingComplete();
-    navigation.replace('Login');
-  };
-
-  const handleLogin = () => {
-    navigation.navigate('Login');
-  };
-
-  const renderSlide = (item) => (
-    <View style={styles.slide} key={item.id}>
-      <Image source={item.image} style={styles.image} />
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.description}</Text>
-      </View>
+  const renderItem = ({ item }) => (
+    <View style={styles.slide}>
+      <ImageBackground source={item.image} style={styles.slideImage}>
+        <LinearGradient colors={['transparent', Colors.dark900]} style={styles.gradient}>
+          <Animated.View entering={FadeInDown.duration(800)} style={styles.content}>
+            <Text style={styles.title}>{item.title}</Text>
+            <Text style={styles.subtitle}>{item.subtitle}</Text>
+            <Text style={styles.description}>{item.description}</Text>
+          </Animated.View>
+        </LinearGradient>
+      </ImageBackground>
     </View>
   );
 
+  const renderProgress = () => (
+    <View style={styles.progressContainer}>
+      {onboardingData.map((_, index) => (
+        <View
+          key={index}
+          style={[
+            styles.progressBar,
+            {
+              width: wp(25),
+              backgroundColor: index === activeIndex ? Colors.primary : Colors.dark700,
+            },
+          ]}
+        />
+      ))}
+    </View>
+  );
+
+  const handleNext = () => {
+    if (activeIndex === onboardingData.length - 1) {
+      navigation.replace('Login');
+    }
+  };
+
   return (
     <View style={styles.container}>
-      <Swiper
-        style={styles.wrapper}
-        dotStyle={styles.dot}
-        activeDotStyle={styles.activeDot}
-        paginationStyle={styles.pagination}
-        loop={false}
-        autoplay={false}
-      >
-        {slides.map((slide) => renderSlide(slide))}
-      </Swiper>
+      <Carousel
+        data={onboardingData}
+        renderItem={renderItem}
+        width={wp(100)}
+        height={hp(100)}
+        onSnapToItem={setActiveIndex}
+        mode="parallax"
+      />
 
-      <View style={styles.buttonsContainer}>
-        <CustomButton
-          title="Get Started"
-          onPress={handleGetStarted}
-          style={styles.getStartedButton}
-        />
-        <TouchableOpacity onPress={handleLogin} style={styles.loginButton}>
-          <Text style={styles.loginText}>Login</Text>
-        </TouchableOpacity>
+      <View style={styles.footer}>
+        {renderProgress()}
+
+        <View style={styles.actions}>
+          <TouchableOpacity onPress={() => navigation.replace('Login')} style={styles.skipButton}>
+            <Text style={styles.skipText}>Skip</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={handleNext} style={styles.nextButton}>
+            <Text style={styles.nextText}>
+              {activeIndex === onboardingData.length - 1 ? 'Get Started' : 'Next'}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -84,71 +106,80 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.dark900,
   },
-  wrapper: {},
   slide: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    paddingBottom: hp(10),
   },
-  image: {
+  slideImage: {
+    flex: 1,
     width: wp(100),
-    height: hp(50),
-    resizeMode: 'cover',
+    height: hp(100),
   },
-  textContainer: {
-    paddingHorizontal: spacing.md,
-    alignItems: 'center',
+  gradient: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    paddingBottom: hp(15),
+  },
+  content: {
+    paddingHorizontal: spacing.xl,
   },
   title: {
     fontSize: fontSizes.xxxl,
-    fontWeight: 'bold',
+    fontWeight: '800',
     color: Colors.white,
-    textAlign: 'center',
     marginBottom: spacing.sm,
+    lineHeight: fontSizes.xxxl * 1.2,
+  },
+  subtitle: {
+    fontSize: fontSizes.xl,
+    fontWeight: '600',
+    color: Colors.primary,
+    marginBottom: spacing.md,
   },
   description: {
     fontSize: fontSizes.md,
     color: Colors.gray300,
-    textAlign: 'center',
     lineHeight: fontSizes.md * 1.5,
   },
-  dot: {
-    backgroundColor: Colors.white + '50',
-    width: scale(8),
-    height: scale(8),
-    borderRadius: scale(4),
-    marginHorizontal: spacing.xs,
-  },
-  activeDot: {
-    backgroundColor: Colors.primary,
-    width: scale(10),
-    height: scale(10),
-    borderRadius: scale(5),
-    marginHorizontal: spacing.xs,
-  },
-  pagination: {
+  footer: {
     position: 'absolute',
-    bottom: hp(2),
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: spacing.xl,
   },
-  buttonsContainer: {
-    paddingHorizontal: spacing.xl,
-    paddingBottom: spacing.lg,
+  progressContainer: {
+    flexDirection: 'row',
+    gap: spacing.sm,
+    marginBottom: spacing.xl,
+  },
+  progressBar: {
+    height: scale(4),
+    borderRadius: scale(2),
+  },
+  actions: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
-  getStartedButton: {
-    marginBottom: spacing.md, // Added more margin for better spacing
-    width: '100%',
+  skipButton: {
+    padding: spacing.md,
   },
-  loginButton: {
-    marginTop: spacing.md, // Added top margin for better separation
-  },
-  loginText: {
-    color: Colors.primary,
+  skipText: {
+    color: Colors.gray300,
     fontSize: fontSizes.md,
     fontWeight: '600',
-    textAlign: 'center',
+  },
+  nextButton: {
+    backgroundColor: Colors.primary,
+    paddingVertical: spacing.md,
+    paddingHorizontal: spacing.xl,
+    borderRadius: scale(8),
+  },
+  nextText: {
+    color: Colors.white,
+    fontSize: fontSizes.md,
+    fontWeight: '600',
   },
 });
 
-export default OnboardingScreen;
+export default Onboarding;
