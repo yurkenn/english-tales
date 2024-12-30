@@ -5,7 +5,11 @@ import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { LinearGradient } from 'expo-linear-gradient';
 import { wp, hp, scale, spacing, fontSizes } from '../../utils/dimensions';
 import { Colors } from '../../constants/colors';
-import Images from '../../components/Onboarding/ImageList';
+import {
+  ReadingGlassesSVG,
+  BookReadingSVG,
+  LearningProcessSVG,
+} from '../../components/Onboarding/ImageList';
 
 const onboardingData = [
   {
@@ -13,21 +17,21 @@ const onboardingData = [
     title: 'Welcome to\nEnglish Tales',
     subtitle: 'Explore Diverse Tales',
     description: 'Discover a world of stories across genres.',
-    image: Images.first,
+    SvgComponent: ReadingGlassesSVG,
   },
   {
     id: 2,
     title: 'Your Journey\nYour Stories',
     subtitle: 'Personalized Experience',
     description: 'Save your favorite tales for later.',
-    image: Images.second,
+    SvgComponent: BookReadingSVG,
   },
   {
     id: 3,
     title: 'Read\nAnywhere',
     subtitle: 'Always Available',
     description: 'Enjoy tales on the go with an internet connection.',
-    image: Images.third,
+    SvgComponent: LearningProcessSVG,
   },
 ];
 
@@ -36,15 +40,16 @@ const Onboarding = ({ navigation }) => {
 
   const renderItem = ({ item }) => (
     <View style={styles.slide}>
-      <ImageBackground source={item.image} style={styles.slideImage}>
-        <LinearGradient colors={['transparent', Colors.dark900]} style={styles.gradient}>
-          <Animated.View entering={FadeInDown.duration(800)} style={styles.content}>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.subtitle}>{item.subtitle}</Text>
-            <Text style={styles.description}>{item.description}</Text>
-          </Animated.View>
-        </LinearGradient>
-      </ImageBackground>
+      <View style={styles.imageContainer}>
+        <item.SvgComponent />
+      </View>
+      <LinearGradient colors={['transparent', Colors.dark900]} style={styles.gradient}>
+        <Animated.View entering={FadeInDown.duration(800)} style={styles.content}>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.subtitle}>{item.subtitle}</Text>
+          <Text style={styles.description}>{item.description}</Text>
+        </Animated.View>
+      </LinearGradient>
     </View>
   );
 
@@ -109,10 +114,11 @@ const styles = StyleSheet.create({
   slide: {
     flex: 1,
   },
-  slideImage: {
+  imageContainer: {
     flex: 1,
-    width: wp(100),
-    height: hp(100),
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: hp(10),
   },
   gradient: {
     flex: 1,
