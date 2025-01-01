@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import * as ExpoSplashScreen from 'expo-splash-screen';
-import Toast from 'react-native-toast-message';
+import { hideAsync } from 'expo-splash-screen';
 import { vexo } from 'vexo-analytics';
 import 'react-native-url-polyfill/auto';
 import { Provider } from 'react-redux';
@@ -24,45 +23,30 @@ const App = () => {
   const [appIsReady, setAppIsReady] = useState(false);
   const [showAnimatedSplash, setShowAnimatedSplash] = useState(true);
 
-  const initializeApp = useCallback(async () => {
-    try {
-      await ExpoSplashScreen.preventAutoHideAsync();
-      // Add initialization logic here
-      setAppIsReady(true);
-    } catch (error) {
-      console.error('Error initializing app:', error);
-    }
-  }, []);
-
   useEffect(() => {
-    initializeApp();
-  }, [initializeApp]);
-
-  const onLayoutRootView = useCallback(async () => {
-    if (appIsReady) {
+    async function prepare() {
       try {
-        await ExpoSplashScreen.hideAsync();
-      } catch (error) {
-        console.warn('Error hiding splash screen:', error);
+        // Hide native splash immediately
+        await hideAsync();
+        setAppIsReady(true);
+      } catch (e) {
+        console.warn(e);
       }
     }
-  }, [appIsReady]);
+    prepare();
+  }, []);
 
   const handleAnimatedSplashComplete = () => {
     setShowAnimatedSplash(false);
   };
 
-  if (!appIsReady) {
-    return null;
-  }
-
-  if (showAnimatedSplash) {
+  if (!appIsReady) return null;
+  if (showAnimatedSplash)
     return <AnimatedSplashScreen onAnimationComplete={handleAnimatedSplashComplete} />;
-  }
 
   return (
     <Provider store={store}>
-      <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
         <StatusBar style="light" />
         <RootNavigator />
         <CustomToast />

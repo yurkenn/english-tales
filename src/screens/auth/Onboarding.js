@@ -24,13 +24,13 @@ const SLIDES = [
     icon: 'book',
     title: 'Welcome to\nEnglish Tales',
     subtitle: 'Explore Diverse Tales',
-    description: 'Discover a world of stories across genres.',
+    description: 'Discover a world of tales across genres.',
     image: require('../../../assets/images/onboarding/onboarding1.png'),
   },
   {
     id: 2,
     icon: 'bookmark',
-    title: 'Your Journey\nYour Stories',
+    title: 'Your Journey\nYour Tales',
     subtitle: 'Personalized Experience',
     description: 'Save your favorite tales for later.',
     image: require('../../../assets/images/onboarding/onboarding2.png'),
@@ -131,7 +131,7 @@ const OnboardingScreen = ({ navigation }) => {
       });
     } else {
       await markOnboardingComplete();
-      navigation.replace('Login');
+      navigation.navigate('Auth');
     }
   }, [currentIndex, markOnboardingComplete]);
 
@@ -172,13 +172,7 @@ const OnboardingScreen = ({ navigation }) => {
 
         <View style={styles.buttons}>
           {currentIndex < SLIDES.length - 1 ? (
-            <TouchableOpacity
-              onPress={async () => {
-                await markOnboardingComplete();
-                navigation.replace('Login');
-              }}
-              style={styles.skipButton}
-            >
+            <TouchableOpacity onPress={handleNext} style={styles.skipButton}>
               <Text style={styles.skipText}>Skip</Text>
             </TouchableOpacity>
           ) : (
