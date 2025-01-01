@@ -6,19 +6,22 @@ import { AuthStack } from './stacks/AuthStack';
 import { MainStack } from './stacks/MainStack';
 import { Colors } from '../constants/colors';
 import { checkAuthState } from '../store/slices/authSlice';
-import LoadingScreen from '../components/LoadingScreen'; // You'll need to create this
+import LoadingScreen from '../components/LoadingScreen';
+import useOnboarding from '../hooks/useOnboarding';
+import OnboardingScreen from '../screens/auth/Onboarding';
 
 const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
   const dispatch = useDispatch();
   const { user, loading } = useSelector((state) => state.auth);
+  const { showOnboarding, loading: onboardingLoading } = useOnboarding();
 
   useEffect(() => {
     dispatch(checkAuthState());
   }, [dispatch]);
 
-  if (loading) {
+  if (loading || onboardingLoading) {
     return <LoadingScreen />;
   }
 
@@ -28,7 +31,10 @@ const RootNavigator = () => {
         {user ? (
           <Stack.Screen name="Main" component={MainStack} />
         ) : (
-          <Stack.Screen name="Auth" component={AuthStack} />
+          <>
+            {showOnboarding && <Stack.Screen name="Onboarding" component={OnboardingScreen} />}
+            <Stack.Screen name="Auth" component={AuthStack} />
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,14 +1,27 @@
-import React, { useState } from 'react';
-import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
-import Carousel from 'react-native-reanimated-carousel';
-import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
+import React, { useState, useCallback } from 'react';
+import { View, Text, Image, TouchableOpacity, Dimensions, StatusBar } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { wp, hp, scale, spacing, fontSizes } from '../../utils/dimensions';
+import Animated, {
+  useAnimatedStyle,
+  useAnimatedScrollHandler,
+  useSharedValue,
+  withSpring,
+  withTiming,
+  interpolate,
+  Extrapolate,
+  runOnJS,
+} from 'react-native-reanimated';
 import { Colors } from '../../constants/colors';
+import { wp, hp, scale, spacing, fontSizes } from '../../utils/dimensions';
+import Icon from '../../components/Icons';
+import useOnboarding from '../../hooks/useOnboarding';
 
-const onboardingData = [
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+
+const SLIDES = [
   {
     id: 1,
+    icon: 'book',
     title: 'Welcome to\nEnglish Tales',
     subtitle: 'Explore Diverse Tales',
     description: 'Discover a world of stories across genres.',
@@ -16,6 +29,7 @@ const onboardingData = [
   },
   {
     id: 2,
+    icon: 'bookmark',
     title: 'Your Journey\nYour Stories',
     subtitle: 'Personalized Experience',
     description: 'Save your favorite tales for later.',
@@ -23,6 +37,7 @@ const onboardingData = [
   },
   {
     id: 3,
+    icon: 'globe',
     title: 'Read\nAnywhere',
     subtitle: 'Always Available',
     description: 'Enjoy tales on the go with an internet connection.',
@@ -30,109 +45,238 @@ const onboardingData = [
   },
 ];
 
-const Onboarding = ({ navigation }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const OnboardingSlide = ({ item, index, scrollX }) => {
+  const inputRange = [(index - 1) * SCREEN_WIDTH, index * SCREEN_WIDTH, (index + 1) * SCREEN_WIDTH];
 
-  const renderItem = ({ item }) => (
+  const imageAnimStyle = useAnimatedStyle(() => ({
+    transform: [
+      {
+        scale: interpolate(scrollX.value, inputRange, [0.8, 1, 0.8], Extrapolate.CLAMP),
+      },
+    ],
+    opacity: interpolate(scrollX.value, inputRange, [0.5, 1, 0.5], Extrapolate.CLAMP),
+  }));
+
+  const contentAnimStyle = useAnimatedStyle(() => ({
+    transform: [
+      {
+        translateY: interpolate(scrollX.value, inputRange, [50, 0, 50], Extrapolate.CLAMP),
+      },
+    ],
+    opacity: interpolate(scrollX.value, inputRange, [0, 1, 0], Extrapolate.CLAMP),
+  }));
+
+  const iconAnimStyle = useAnimatedStyle(() => ({
+    transform: [
+      {
+        scale: interpolate(scrollX.value, inputRange, [0, 1, 0], Extrapolate.CLAMP),
+      },
+      {
+        rotate: `${interpolate(scrollX.value, inputRange, [-30, 0, 30], Extrapolate.CLAMP)}deg`,
+      },
+    ],
+  }));
+
+  return (
     <View style={styles.slide}>
-      <ImageBackground source={item.image} style={styles.slideImage} resizeMode="contain">
-        <LinearGradient colors={['transparent', Colors.dark900]} style={styles.gradient}>
-          <Animated.View entering={FadeInDown.duration(800)} style={styles.content}>
+      <Animated.Image
+        source={item.image}
+        style={[styles.image, imageAnimStyle]}
+        resizeMode="cover"
+        onError={(e) => console.log('Image loading error:', e.nativeEvent.error)}
+      />
+      <LinearGradient
+        colors={['transparent', 'rgba(22,22,22,0.8)', Colors.dark900]}
+        locations={[0, 0.5, 1]}
+        style={styles.gradient}
+      >
+        <View style={styles.contentWrapper}>
+          <Animated.View style={[styles.iconContainer, iconAnimStyle]}>
+            <Icon name={item.icon} size={scale(32)} color={Colors.primary} />
+          </Animated.View>
+
+          <Animated.View style={[styles.content, contentAnimStyle]}>
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.subtitle}>{item.subtitle}</Text>
             <Text style={styles.description}>{item.description}</Text>
           </Animated.View>
-        </LinearGradient>
-      </ImageBackground>
+        </View>
+      </LinearGradient>
     </View>
   );
+};
 
-  const renderProgress = () => (
-    <View style={styles.progressContainer}>
-      {onboardingData.map((_, index) => (
-        <View
-          key={index}
-          style={[
-            styles.progressBar,
-            {
-              width: wp(25),
-              backgroundColor: index === activeIndex ? Colors.primary : Colors.dark700,
-            },
-          ]}
-        />
-      ))}
-    </View>
-  );
+const OnboardingScreen = ({ navigation }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const buttonScale = useSharedValue(1);
+  const scrollX = useSharedValue(0);
+  const scrollViewRef = React.useRef(null);
+  const { markOnboardingComplete } = useOnboarding();
 
-  const handleNext = () => {
-    if (activeIndex === onboardingData.length - 1) {
+  const scrollHandler = useAnimatedScrollHandler({
+    onScroll: (event) => {
+      scrollX.value = event.contentOffset.x;
+    },
+    onMomentumEnd: (event) => {
+      const newIndex = Math.round(event.contentOffset.x / SCREEN_WIDTH);
+      runOnJS(setCurrentIndex)(newIndex);
+    },
+  });
+
+  const handleNext = useCallback(async () => {
+    if (currentIndex < SLIDES.length - 1) {
+      scrollViewRef.current?.scrollTo({
+        x: (currentIndex + 1) * SCREEN_WIDTH,
+        animated: true,
+      });
+    } else {
+      await markOnboardingComplete();
       navigation.replace('Login');
     }
-  };
+  }, [currentIndex, markOnboardingComplete]);
+
+  const progressStyle = useAnimatedStyle(() => ({
+    width: withSpring(
+      interpolate(
+        scrollX.value,
+        [0, SCREEN_WIDTH * (SLIDES.length - 1)],
+        [SCREEN_WIDTH * 0.25, SCREEN_WIDTH * 0.9],
+        Extrapolate.CLAMP
+      ),
+      { damping: 20, stiffness: 90 }
+    ),
+  }));
 
   return (
     <View style={styles.container}>
-      <Carousel
-        data={onboardingData}
-        renderItem={renderItem}
-        width={wp(100)}
-        height={hp(100)}
-        onSnapToItem={setActiveIndex}
-        mode="parallax"
-      />
+      <StatusBar barStyle="light-content" />
+
+      <Animated.ScrollView
+        ref={scrollViewRef}
+        horizontal
+        pagingEnabled
+        bounces={false}
+        showsHorizontalScrollIndicator={false}
+        onScroll={scrollHandler}
+        scrollEventThrottle={16}
+      >
+        {SLIDES.map((slide, index) => (
+          <OnboardingSlide key={slide.id} item={slide} index={index} scrollX={scrollX} />
+        ))}
+      </Animated.ScrollView>
 
       <View style={styles.footer}>
-        {renderProgress()}
+        <View style={styles.progressContainer}>
+          <Animated.View style={[styles.progressBar, progressStyle]} />
+        </View>
 
-        <View style={styles.actions}>
-          <TouchableOpacity onPress={() => navigation.replace('Login')} style={styles.skipButton}>
-            <Text style={styles.skipText}>Skip</Text>
-          </TouchableOpacity>
+        <View style={styles.buttons}>
+          {currentIndex < SLIDES.length - 1 ? (
+            <TouchableOpacity
+              onPress={async () => {
+                await markOnboardingComplete();
+                navigation.replace('Login');
+              }}
+              style={styles.skipButton}
+            >
+              <Text style={styles.skipText}>Skip</Text>
+            </TouchableOpacity>
+          ) : (
+            <View />
+          )}
 
-          <TouchableOpacity onPress={handleNext} style={styles.nextButton}>
-            <Text style={styles.nextText}>
-              {activeIndex === onboardingData.length - 1 ? 'Get Started' : 'Next'}
-            </Text>
-          </TouchableOpacity>
+          <Animated.View
+            style={[
+              styles.nextButtonContainer,
+              useAnimatedStyle(() => ({
+                transform: [{ scale: buttonScale.value }],
+              })),
+            ]}
+          >
+            <TouchableOpacity
+              onPress={handleNext}
+              style={styles.nextButton}
+              onPressIn={() => {
+                buttonScale.value = withSpring(0.95);
+              }}
+              onPressOut={() => {
+                buttonScale.value = withSpring(1);
+              }}
+            >
+              <LinearGradient
+                colors={[Colors.primary, Colors.primary700]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 0 }}
+                style={styles.buttonGradient}
+              >
+                <Text style={styles.nextText}>
+                  {currentIndex === SLIDES.length - 1 ? 'Get Started' : 'Next'}
+                </Text>
+                <Icon name="arrow-forward" size={scale(20)} color={Colors.white} />
+              </LinearGradient>
+            </TouchableOpacity>
+          </Animated.View>
         </View>
       </View>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
   },
   slide: {
-    flex: 1,
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
   },
-  slideImage: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
+  image: {
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT * 0.7, // Limit height to 70% of screen
+    position: 'absolute',
+    top: 0,
+    resizeMode: 'cover',
   },
   gradient: {
-    flex: 1,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: SCREEN_HEIGHT * 0.7, // Match image height
     justifyContent: 'flex-end',
-    paddingBottom: hp(20),
+    paddingBottom: hp(25),
+  },
+  contentWrapper: {
+    padding: spacing.xl,
+    paddingVertical: spacing.lg,
+    marginHorizontal: spacing.lg,
+    backgroundColor: 'rgba(255,255,255,0.05)',
+    borderRadius: scale(20),
+    marginBottom: hp(5),
+  },
+  iconContainer: {
+    width: scale(60),
+    height: scale(60),
+    borderRadius: scale(30),
+    backgroundColor: Colors.primary + '20',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: spacing.lg,
   },
   content: {
-    paddingHorizontal: spacing.xl,
+    gap: spacing.sm,
   },
   title: {
     fontSize: fontSizes.xxxl,
     fontWeight: '800',
     color: Colors.white,
-    marginBottom: spacing.sm,
     lineHeight: fontSizes.xxxl * 1.2,
   },
   subtitle: {
     fontSize: fontSizes.xl,
     fontWeight: '600',
     color: Colors.primary,
-    marginBottom: spacing.md,
   },
   description: {
     fontSize: fontSizes.md,
@@ -147,15 +291,19 @@ const styles = StyleSheet.create({
     padding: spacing.xl,
   },
   progressContainer: {
-    flexDirection: 'row',
-    gap: spacing.sm,
+    width: '100%',
+    height: scale(4),
+    backgroundColor: Colors.dark500,
+    borderRadius: scale(2),
     marginBottom: spacing.xl,
+    overflow: 'hidden',
   },
   progressBar: {
-    height: scale(4),
+    height: '100%',
+    backgroundColor: Colors.primary,
     borderRadius: scale(2),
   },
-  actions: {
+  buttons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -168,17 +316,26 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.md,
     fontWeight: '600',
   },
+  nextButtonContainer: {
+    borderRadius: scale(12),
+    overflow: 'hidden',
+  },
   nextButton: {
-    backgroundColor: Colors.primary,
+    borderRadius: scale(12),
+    overflow: 'hidden',
+  },
+  buttonGradient: {
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingVertical: spacing.md,
     paddingHorizontal: spacing.xl,
-    borderRadius: scale(8),
+    gap: spacing.sm,
   },
   nextText: {
     color: Colors.white,
     fontSize: fontSizes.md,
     fontWeight: '600',
   },
-});
+};
 
-export default Onboarding;
+export default OnboardingScreen;
