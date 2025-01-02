@@ -36,7 +36,7 @@ const Detail = ({ route, navigation }) => {
 
   // Format values
   const formattedDuration = `${data?.estimatedDuration} min`;
-  const difficultyText = `${data?.difficulty}/5`;
+  const difficultyText = `${data?.difficulty.charAt(0).toUpperCase()}${data?.difficulty.slice(1)}`;
 
   useEffect(() => {
     if (data._id) {
@@ -218,7 +218,7 @@ const Detail = ({ route, navigation }) => {
             </View>
             <View style={styles.divider} />
             <View style={styles.statItem}>
-              <Icon name="star" size={scale(18)} color={Colors.warning} />
+              <Icon name="school" size={scale(18)} color={Colors.warning} />
               <Text style={styles.statText}>{difficultyText}</Text>
             </View>
             <View style={styles.divider} />
