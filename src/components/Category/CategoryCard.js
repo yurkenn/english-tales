@@ -71,7 +71,7 @@ const CategoryCard = ({ data, index }) => {
                 <View style={styles.statDivider} />
                 <View style={styles.stat}>
                   <Icon name="star" size={16} color={Colors.warning} />
-                  <Text style={styles.statText}>{data?.difficulty}/5</Text>
+                  <Text style={styles.statText}>{data?.difficulty}</Text>
                 </View>
                 <View style={styles.statDivider} />
                 <View style={styles.stat}>
