@@ -31,30 +31,27 @@ export const fetchTaleLikes = createAsyncThunk(
 // Toggle like
 export const toggleLike = createAsyncThunk(
   'likes/toggleLike',
-  async ({ taleId, currentLikes }, { getState, rejectWithValue }) => {
+  async ({ taleId }, { getState, rejectWithValue }) => {
     try {
       const { userLikes } = getState().likes;
       const hasLiked = userLikes[taleId];
 
+      let result;
       if (!hasLiked) {
         // Like
-        await updateLikes(taleId, currentLikes + 1);
+        result = await updateLikes(taleId);
         await AsyncStorage.setItem(`liked_${taleId}`, 'true');
-        return {
-          taleId,
-          likes: currentLikes + 1,
-          hasLiked: true,
-        };
       } else {
         // Unlike
-        await unlikeTale(taleId, currentLikes - 1);
+        result = await unlikeTale(taleId);
         await AsyncStorage.removeItem(`liked_${taleId}`);
-        return {
-          taleId,
-          likes: currentLikes - 1,
-          hasLiked: false,
-        };
       }
+
+      return {
+        taleId,
+        likes: result,
+        hasLiked: !hasLiked,
+      };
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -74,6 +71,7 @@ const likeSlice = createSlice({
     builder
       .addCase(fetchTaleLikes.pending, (state) => {
         state.loading = true;
+        state.error = null;
       })
       .addCase(fetchTaleLikes.fulfilled, (state, action) => {
         state.loading = false;
@@ -83,6 +81,9 @@ const likeSlice = createSlice({
       .addCase(fetchTaleLikes.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
+      })
+      .addCase(toggleLike.pending, (state) => {
+        state.error = null;
       })
       .addCase(toggleLike.fulfilled, (state, action) => {
         state.likes[action.payload.taleId] = action.payload.likes;

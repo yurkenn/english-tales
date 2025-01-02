@@ -250,7 +250,11 @@ export const getAllTales = async () => {
 // Like functionality
 export const fetchLikes = async (taleId) => {
   try {
-    const result = await client.fetch(`*[_type == "tale" && _id == $taleId].likes[0]`, { taleId });
+    // Query the entire tale document to get the likes field
+    const result = await client.fetch(
+      `*[_type == "tale" && _id == $taleId][0].likes`,
+      { taleId }
+    );
     return result || 0;
   } catch (error) {
     console.error(`Error fetching likes for tale ${taleId}:`, error);
@@ -258,9 +262,16 @@ export const fetchLikes = async (taleId) => {
   }
 };
 
-export const updateLikes = async (taleId, likes) => {
+export const updateLikes = async (taleId, newLikes) => {
   try {
-    const result = await client.patch(taleId).set({ likes }).commit();
+    // First get the current likes to ensure we're not overwriting with a wrong value
+    const currentLikes = await fetchLikes(taleId);
+    
+    // Increment the likes count
+    const result = await client
+      .patch(taleId)
+      .set({ likes: (currentLikes || 0) + 1 })
+      .commit();
 
     // Invalidate related caches
     cache.delete(`tale_${result.slug.current}`);
@@ -270,6 +281,29 @@ export const updateLikes = async (taleId, likes) => {
     return result.likes;
   } catch (error) {
     console.error(`Error updating likes for tale ${taleId}:`, error);
+    throw error;
+  }
+};
+
+export const unlikeTale = async (taleId, newLikes) => {
+  try {
+    // First get the current likes to ensure we're not going below 0
+    const currentLikes = await fetchLikes(taleId);
+    
+    // Decrement the likes count, but don't go below 0
+    const result = await client
+      .patch(taleId)
+      .set({ likes: Math.max(0, (currentLikes || 0) - 1) })
+      .commit();
+
+    // Invalidate related caches
+    cache.delete(`tale_${result.slug.current}`);
+    cache.delete('featured');
+    cache.delete('all_tales');
+
+    return result.likes;
+  } catch (error) {
+    console.error(`Error unliking tale ${taleId}:`, error);
     throw error;
   }
 };
