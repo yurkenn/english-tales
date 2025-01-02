@@ -6,7 +6,6 @@ import Icon from '../Icons';
 import { Colors } from '../../constants/colors';
 import { scale, spacing, fontSizes } from '../../utils/dimensions';
 import PopularCategories from './PopularCategories';
-import SuggestedSearches from './SuggestedSearches';
 
 const EmptyState = ({ searchTerm, categories, loading, onSelectSearch, onSelectCategory }) => {
   if (loading) {
@@ -34,7 +33,6 @@ const EmptyState = ({ searchTerm, categories, loading, onSelectSearch, onSelectC
       {categories && categories.length > 0 && (
         <PopularCategories categories={categories} onSelectCategory={onSelectCategory} />
       )}
-      <SuggestedSearches onSelectSearch={onSelectSearch} />
     </ScrollView>
   );
 };

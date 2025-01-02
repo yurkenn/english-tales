@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { FlashList } from '@shopify/flash-list';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { useSharedValue, withSpring } from 'react-native-reanimated';
@@ -17,9 +16,8 @@ import EmptyState from '../components/Search/EmptyState';
 import useGetCategories from '../hooks/useGetCategories';
 import useSearch from '../hooks/useSearch';
 import useGetTalesByCategory from '../hooks/useGetTalesByCategory';
-import Icon from '../components/Icons';
+
 import PopularCategories from '../components/Search/PopularCategories';
-import SuggestedSearches from '../components/Search/SuggestedSearches';
 import LoadingScreen from '../components/LoadingScreen';
 
 const RECENT_SEARCHES_KEY = '@recent_searches';
@@ -166,7 +164,6 @@ const SearchScreen = () => {
                   categories={categories}
                   onSelectCategory={handleCategorySelect}
                 />
-                <SuggestedSearches onSelectSearch={setSearchTerm} />
                 <View style={styles.bottomPadding} />
               </ScrollView>
             ) : (
