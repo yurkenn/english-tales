@@ -1,6 +1,6 @@
 // src/screens/Content.js
 import React, { useEffect, useRef, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Colors } from '../constants/colors';
 import { spacing, hp, fontSizes } from '../utils/dimensions';
@@ -143,6 +143,23 @@ const Content = ({ route, navigation }) => {
             })
           );
         }
+
+        // Show completion toast if the story is finished
+        if (progress === 100) {
+          Toast.show({
+            type: 'success',
+            text1: '🎉 Story Completed!',
+            text2: 'Great job! Your progress has been saved.',
+            visibilityTime: 3000,
+            position: 'bottom',
+            bottomOffset: 80,
+            props: {
+              style: {
+                borderLeftColor: Colors.primary,
+              },
+            },
+          });
+        }
       }
     } catch (error) {
       console.error('Error updating progress:', error);
@@ -150,6 +167,9 @@ const Content = ({ route, navigation }) => {
         type: 'error',
         text1: 'Error updating progress',
         text2: 'Your progress may not be saved',
+        visibilityTime: 3000,
+        position: 'bottom',
+        bottomOffset: 80,
       });
     }
   };
@@ -175,11 +195,38 @@ const Content = ({ route, navigation }) => {
     scrollViewRef.current?.scrollTo({ y: 0, animated: true });
   };
 
-  if (loading) return <LoadingAnimation />;
-  if (error) return <ErrorAnimation />;
-  if (!tale || !tale[0]) return null;
+  // Get current tale with null check
+  const currentTale = tale && tale.length > 0 ? tale[0] : null;
 
-  const currentTale = tale[0];
+  if (loading) {
+    return (
+      <View style={[styles.container, styles.centerContent]}>
+        <ActivityIndicator size="large" color={Colors.primary} />
+      </View>
+    );
+  }
+
+  if (error || !currentTale) {
+    return (
+      <View style={[styles.container, styles.centerContent]}>
+        <Text style={styles.errorText}>Failed to load the tale. Please try again later.</Text>
+      </View>
+    );
+  }
+
+  // Ensure all required properties exist with default values
+  const {
+    content = [],
+    vocabulary = [],
+    grammarFocus = [],
+    interactiveElements = [],
+    title = '',
+    subtitle = '',
+    author = null,
+    imageURL = '',
+    difficulty = ''
+  } = currentTale;
+
   return (
     <View style={styles.container}>
       <Animated.View style={headerBackgroundStyle} />
@@ -194,29 +241,29 @@ const Content = ({ route, navigation }) => {
         onContentSizeChange={handleContentSizeChange}
       >
         <View style={[styles.imageContainer, { height: IMAGE_HEIGHT }]}>
-          <TaleHeader imageURL={currentTale.imageURL} />
+          <TaleHeader imageURL={imageURL} difficulty={difficulty} />
           <LinearGradient colors={['transparent', Colors.dark900]} style={styles.gradientOverlay} />
         </View>
 
         <View style={styles.bookContainer}>
           <View style={styles.chapterInfo}>
-            <Text style={styles.chapterTitle}>{currentTale.title}</Text>
-            {currentTale.subtitle && <Text style={styles.subtitle}>{currentTale.subtitle}</Text>}
+            <Text style={styles.chapterTitle}>{title}</Text>
+            {subtitle && <Text style={styles.subtitle}>{subtitle}</Text>}
           </View>
 
           <StoryContent
-            blocks={currentTale.content}
-            vocabulary={currentTale.vocabulary}
-            grammarFocus={currentTale.grammarFocus}
-            interactiveElements={currentTale.interactiveElements}
+            blocks={content}
+            vocabulary={vocabulary}
+            grammarFocus={grammarFocus}
+            interactiveElements={interactiveElements}
             fontSize={fontSize}
           />
 
-          {currentTale.author && (
+          {author && (
             <View style={styles.authorContainer}>
-              <Text style={styles.authorName}>Written by {currentTale.author.name}</Text>
-              {currentTale.author.bio && (
-                <Text style={styles.authorBio}>{currentTale.author.bio}</Text>
+              <Text style={styles.authorName}>Written by {author.name}</Text>
+              {author.bio && (
+                <Text style={styles.authorBio}>{author.bio}</Text>
               )}
             </View>
           )}
@@ -233,6 +280,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.dark900,
+  },
+  centerContent: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   scrollContent: {
     flexGrow: 1,
@@ -300,6 +351,12 @@ const styles = StyleSheet.create({
     fontSize: fontSizes.sm,
     color: Colors.gray300,
     lineHeight: fontSizes.lg,
+  },
+  errorText: {
+    fontSize: fontSizes.md,
+    color: Colors.white,
+    textAlign: 'center',
+    padding: spacing.lg,
   },
 });
 

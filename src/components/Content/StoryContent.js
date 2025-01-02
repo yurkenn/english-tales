@@ -70,7 +70,12 @@ const InteractiveElement = ({ element }) => {
 };
 
 const TextBlock = ({ block, fontSize }) => {
+  if (!block || !block.children) {
+    return null;
+  }
+
   const renderChild = (child, index) => {
+    if (!child) return null;
     if (typeof child === 'string') return child;
 
     const marks = child.marks || [];
@@ -109,15 +114,20 @@ const TextBlock = ({ block, fontSize }) => {
     return content;
   };
 
+  const renderChildren = (children) => {
+    if (!Array.isArray(children)) return null;
+    return children.map(renderChild);
+  };
+
   switch (block.style) {
     case 'h1':
-      return <Text style={styles.h1}>{block.children?.map(renderChild)}</Text>;
+      return <Text style={styles.h1}>{renderChildren(block.children)}</Text>;
     case 'h2':
-      return <Text style={styles.h2}>{block.children?.map(renderChild)}</Text>;
+      return <Text style={styles.h2}>{renderChildren(block.children)}</Text>;
     case 'blockquote':
       return (
         <View style={styles.blockquote}>
-          <Text style={styles.blockquoteText}>{block.children?.map(renderChild)}</Text>
+          <Text style={styles.blockquoteText}>{renderChildren(block.children)}</Text>
         </View>
       );
     default:
@@ -130,12 +140,12 @@ const TextBlock = ({ block, fontSize }) => {
           <Text style={[styles.paragraph, { fontSize }]}>
             <Text style={[styles.firstLetter, { fontSize: fontSize * 2 }]}>{firstChar}</Text>
             {restOfFirstWord}
-            {block.children?.slice(1).map(renderChild)}
+            {renderChildren(block.children.slice(1))}
           </Text>
         );
       } else {
         return (
-          <Text style={[styles.paragraph, { fontSize }]}>{block.children?.map(renderChild)}</Text>
+          <Text style={[styles.paragraph, { fontSize }]}>{renderChildren(block.children)}</Text>
         );
       }
   }
@@ -149,9 +159,15 @@ const StoryContent = ({
   fontSize = fontSizes.md,
 }) => {
   const renderContent = () => {
+    if (!Array.isArray(blocks)) return null;
+    
     return blocks.map((block, index) => {
+      if (!block) return null;
+      
       // Check if there's an interactive element that should be inserted here
-      const interactiveElement = interactiveElements.find((element) => element.position === index);
+      const interactiveElement = Array.isArray(interactiveElements) 
+        ? interactiveElements.find((element) => element?.position === index)
+        : null;
 
       return (
         <React.Fragment key={block._key || index}>
@@ -166,20 +182,20 @@ const StoryContent = ({
     <View style={styles.container}>
       {renderContent()}
 
-      {vocabulary.length > 0 && (
+      {Array.isArray(vocabulary) && vocabulary.length > 0 && (
         <View style={styles.vocabularySection}>
           <Text style={styles.sectionTitle}>Vocabulary</Text>
           {vocabulary.map((word, index) => (
-            <VocabularyWord key={index} word={word} />
+            word ? <VocabularyWord key={index} word={word} /> : null
           ))}
         </View>
       )}
 
-      {grammarFocus.length > 0 && (
+      {Array.isArray(grammarFocus) && grammarFocus.length > 0 && (
         <View style={styles.grammarSection}>
           <Text style={styles.sectionTitle}>Grammar Focus</Text>
           {grammarFocus.map((item, index) => (
-            <GrammarPoint key={index} item={item} />
+            item ? <GrammarPoint key={index} item={item} /> : null
           ))}
         </View>
       )}
