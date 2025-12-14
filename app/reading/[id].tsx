@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable, ActivityIndicator, Modal } from 'react-native';
+import { View, Text, ScrollView, Pressable, ActivityIndicator, Modal, Share } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,7 +8,18 @@ import { ProgressBar } from '@/components';
 import { useStory } from '@/hooks/useQueries';
 import { useProgressStore } from '@/store/progressStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
+import { useLibraryStore } from '@/store/libraryStore';
+import { useThemeStore } from '@/store/themeStore';
+import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
+
+type ReadingTheme = 'light' | 'dark' | 'sepia';
+
+const readingThemes = {
+    light: { bg: '#FFFFFF', text: '#1B0E0E' },
+    dark: { bg: '#121212', text: '#FAFAFA' },
+    sepia: { bg: '#F4ECD8', text: '#5C4B37' },
+};
 
 export default function ReadingScreen() {
     const { theme } = useUnistyles();
@@ -17,14 +28,20 @@ export default function ReadingScreen() {
     const { id } = useLocalSearchParams<{ id: string }>();
     const [progress, setProgress] = useState(0);
     const [showCompletionModal, setShowCompletionModal] = useState(false);
+    const [showSettingsModal, setShowSettingsModal] = useState(false);
+    const [readingTheme, setReadingTheme] = useState<ReadingTheme>('light');
     const hasShownCompletion = useRef(false);
 
     // Reading preferences
-    const { fontSize, actions: prefsActions } = useReadingPrefsStore();
+    const { fontSize, lineHeight, actions: prefsActions } = useReadingPrefsStore();
 
-    // Progress store
+    // Progress & Library store
     const { progressMap, actions: progressActions } = useProgressStore();
+    const { actions: libraryActions } = useLibraryStore();
+    const { actions: themeActions } = useThemeStore();
     const saveTimeoutRef = useRef<number | null>(null);
+
+    const isInLibrary = id ? libraryActions.isInLibrary(id) : false;
 
     const { data: storyDoc, isLoading } = useStory(id || '');
 
@@ -180,35 +197,84 @@ export default function ReadingScreen() {
                     <View style={styles.fontControls}>
                         <Pressable
                             style={styles.controlButton}
-                            onPress={() => prefsActions.setFontSize(Math.max(14, fontSize - 2))}
+                            onPress={() => {
+                                haptics.light();
+                                prefsActions.setFontSize(Math.max(14, fontSize - 2));
+                            }}
                         >
                             <Text style={styles.fontButtonText}>A-</Text>
                         </Pressable>
                         <Text style={styles.fontSizeText}>{fontSize}pt</Text>
                         <Pressable
                             style={styles.controlButton}
-                            onPress={() => prefsActions.setFontSize(Math.min(28, fontSize + 2))}
+                            onPress={() => {
+                                haptics.light();
+                                prefsActions.setFontSize(Math.min(28, fontSize + 2));
+                            }}
                         >
                             <Text style={styles.fontButtonText}>A+</Text>
                         </Pressable>
                     </View>
 
                     {/* Theme Toggle */}
-                    <Pressable style={styles.controlButton}>
+                    <Pressable
+                        style={styles.controlButton}
+                        onPress={() => {
+                            haptics.selection();
+                            const themes: ReadingTheme[] = ['light', 'dark', 'sepia'];
+                            const currentIndex = themes.indexOf(readingTheme);
+                            setReadingTheme(themes[(currentIndex + 1) % 3]);
+                        }}
+                    >
                         <Ionicons
-                            name="moon-outline"
+                            name={readingTheme === 'dark' ? 'sunny-outline' : 'moon-outline'}
                             size={20}
                             color={theme.colors.text}
                         />
                     </Pressable>
 
                     {/* Bookmark */}
-                    <Pressable style={styles.controlButton}>
+                    <Pressable
+                        style={styles.controlButton}
+                        onPress={async () => {
+                            if (!storyDoc || !id) return;
+                            haptics.success();
+                            if (isInLibrary) {
+                                await libraryActions.removeFromLibrary(id);
+                            } else {
+                                await libraryActions.addToLibrary({
+                                    id: id,
+                                    title: storyDoc.title,
+                                    coverImage: storyDoc.coverImage?.asset?.url || '',
+                                    author: storyDoc.author?.name || 'Unknown',
+                                    description: storyDoc.description || '',
+                                    rating: 0,
+                                    estimatedReadTime: 5,
+                                    level: storyDoc.level || 'Beginner',
+                                });
+                            }
+                        }}
+                    >
                         <Ionicons
-                            name="bookmark-outline"
+                            name={isInLibrary ? 'bookmark' : 'bookmark-outline'}
                             size={20}
-                            color={theme.colors.text}
+                            color={isInLibrary ? theme.colors.primary : theme.colors.text}
                         />
+                    </Pressable>
+
+                    {/* Share */}
+                    <Pressable
+                        style={styles.controlButton}
+                        onPress={async () => {
+                            haptics.light();
+                            try {
+                                await Share.share({
+                                    message: `Check out "${storyDoc?.title}" on English Tales!`,
+                                });
+                            } catch (e) { }
+                        }}
+                    >
+                        <Ionicons name="share-outline" size={20} color={theme.colors.text} />
                     </Pressable>
                 </View>
             </View>

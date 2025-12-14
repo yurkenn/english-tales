@@ -4,7 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { ProgressBar } from '@/components';
+import { ProgressBar, EmptyState } from '@/components';
 import { LibraryItem } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
@@ -229,17 +229,13 @@ export default function LibraryScreen() {
                     />
                 }
                 ListEmptyComponent={
-                    <View style={styles.emptyState}>
-                        <Ionicons
-                            name="book-outline"
-                            size={64}
-                            color={theme.colors.textMuted}
-                        />
-                        <Text style={styles.emptyTitle}>Your library is empty</Text>
-                        <Text style={styles.emptySubtitle}>
-                            Start reading to add books to your library
-                        </Text>
-                    </View>
+                    <EmptyState
+                        icon="book-outline"
+                        title="Your library is empty"
+                        message="Start reading to add books to your library"
+                        actionLabel="Discover Stories"
+                        onAction={() => router.push('/(tabs)/discover')}
+                    />
                 }
             />
         </View>

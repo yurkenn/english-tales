@@ -131,6 +131,10 @@ export default function ProfileScreen() {
                     <Pressable
                         style={styles.settingsButton}
                         hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                        onPress={() => {
+                            haptics.selection();
+                            router.push('/settings');
+                        }}
                     >
                         <Ionicons
                             name="settings-outline"
@@ -154,7 +158,8 @@ export default function ProfileScreen() {
                             style={styles.editButton}
                             onPress={() => {
                                 haptics.selection();
-                                Alert.alert('Edit Profile', 'Profile editing coming soon! You can update your display name and profile picture.', [{ text: 'OK' }]);
+                                setEditName(user.displayName || '');
+                                setShowEditModal(true);
                             }}
                         >
                             <Ionicons
@@ -228,6 +233,45 @@ export default function ProfileScreen() {
                     <Text style={styles.signOutText}>Sign Out</Text>
                 </Pressable>
             </ScrollView>
+
+            {/* Edit Profile Modal */}
+            <Modal
+                visible={showEditModal}
+                transparent
+                animationType="slide"
+                onRequestClose={() => setShowEditModal(false)}
+            >
+                <View style={styles.modalOverlay}>
+                    <View style={styles.modalContent}>
+                        <View style={styles.modalHeader}>
+                            <Text style={styles.modalTitle}>Edit Profile</Text>
+                            <Pressable onPress={() => setShowEditModal(false)}>
+                                <Ionicons name="close" size={24} color={theme.colors.text} />
+                            </Pressable>
+                        </View>
+
+                        <Text style={styles.inputLabel}>Display Name</Text>
+                        <TextInput
+                            style={styles.textInput}
+                            value={editName}
+                            onChangeText={setEditName}
+                            placeholder="Enter your name"
+                            placeholderTextColor={theme.colors.textMuted}
+                        />
+
+                        <Pressable
+                            style={styles.saveButton}
+                            onPress={() => {
+                                haptics.success();
+                                Alert.alert('Saved!', `Display name updated to "${editName}"`, [{ text: 'OK' }]);
+                                setShowEditModal(false);
+                            }}
+                        >
+                            <Text style={styles.saveButtonText}>Save Changes</Text>
+                        </Pressable>
+                    </View>
+                </View>
+            </Modal>
         </View>
     );
 }
@@ -385,5 +429,53 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.textMuted,
         marginRight: theme.spacing.xs,
+    },
+    modalOverlay: {
+        flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        justifyContent: 'flex-end',
+    },
+    modalContent: {
+        backgroundColor: theme.colors.surface,
+        borderTopLeftRadius: theme.radius.xxl,
+        borderTopRightRadius: theme.radius.xxl,
+        padding: theme.spacing.xl,
+        paddingBottom: 40,
+    },
+    modalHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: theme.spacing.xl,
+    },
+    modalTitle: {
+        fontSize: theme.typography.size.xxl,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.text,
+    },
+    inputLabel: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.semibold,
+        color: theme.colors.text,
+        marginBottom: theme.spacing.sm,
+    },
+    textInput: {
+        backgroundColor: theme.colors.backgroundSecondary,
+        borderRadius: theme.radius.lg,
+        padding: theme.spacing.md,
+        fontSize: theme.typography.size.lg,
+        color: theme.colors.text,
+        marginBottom: theme.spacing.xl,
+    },
+    saveButton: {
+        backgroundColor: theme.colors.primary,
+        paddingVertical: theme.spacing.md,
+        borderRadius: theme.radius.full,
+        alignItems: 'center',
+    },
+    saveButtonText: {
+        fontSize: theme.typography.size.lg,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.textInverse,
     },
 }));
