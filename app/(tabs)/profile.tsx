@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { View, Text, ScrollView, Pressable, Image, ActivityIndicator } from 'react-native';
+import React, { useMemo, useState } from 'react';
+import { View, Text, ScrollView, Pressable, Image, ActivityIndicator, Alert, TextInput, Modal } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,6 +8,8 @@ import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useThemeStore } from '@/store/themeStore';
+import { useAchievementsStore } from '@/store/achievementsStore';
+import { haptics } from '@/utils/haptics';
 
 export default function ProfileScreen() {
     const { theme } = useUnistyles();
@@ -59,13 +61,52 @@ export default function ProfileScreen() {
     const { mode: themeMode, actions: themeActions } = useThemeStore();
     const themeModeLabel = themeMode === 'system' ? 'System' : themeMode === 'light' ? 'Light' : 'Dark';
 
+    // Achievements
+    const { actions: achievementActions } = useAchievementsStore();
+    const achievements = achievementActions.getAll();
+    const unlockedCount = achievements.filter(a => a.unlocked).length;
+
+    // Edit profile state
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [editName, setEditName] = useState(user?.displayName || '');
+
+    // Menu handlers
+    const handleAchievements = () => {
+        haptics.selection();
+        Alert.alert(
+            '🏆 Achievements',
+            `You've unlocked ${unlockedCount}/${achievements.length} achievements!\n\n${achievements.map(a => `${a.unlocked ? '✅' : '🔒'} ${a.icon} ${a.title}`).join('\n')}`,
+            [{ text: 'OK' }]
+        );
+    };
+
+    const handleNotifications = () => {
+        haptics.selection();
+        Alert.alert('Notifications', 'Coming soon! We\'ll notify you about new stories and reading reminders.', [{ text: 'OK' }]);
+    };
+
+    const handleReadingGoals = () => {
+        haptics.selection();
+        Alert.alert('Reading Goals', 'Coming soon! Set daily reading targets and track your progress.', [{ text: 'OK' }]);
+    };
+
+    const handleHelp = () => {
+        haptics.selection();
+        Alert.alert('Help & Support', 'Need help? Contact us at support@englishtales.app', [{ text: 'OK' }]);
+    };
+
+    const handleAbout = () => {
+        haptics.selection();
+        Alert.alert('About English Tales', 'Version 1.0.0\n\nImprove your English through beautiful stories.\n\n© 2024 English Tales', [{ text: 'OK' }]);
+    };
+
     const menuItems = [
-        { label: 'Reading Goals', icon: 'flag-outline' as const },
-        { label: 'Achievements', icon: 'trophy-outline' as const },
-        { label: 'Notifications', icon: 'notifications-outline' as const },
+        { label: 'Reading Goals', icon: 'flag-outline' as const, onPress: handleReadingGoals },
+        { label: 'Achievements', icon: 'trophy-outline' as const, value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
+        { label: 'Notifications', icon: 'notifications-outline' as const, onPress: handleNotifications },
         { label: 'Appearance', icon: 'color-palette-outline' as const, value: themeModeLabel, onPress: themeActions.toggleTheme },
-        { label: 'Help & Support', icon: 'help-circle-outline' as const },
-        { label: 'About', icon: 'information-circle-outline' as const },
+        { label: 'Help & Support', icon: 'help-circle-outline' as const, onPress: handleHelp },
+        { label: 'About', icon: 'information-circle-outline' as const, onPress: handleAbout },
     ];
 
     if (isLoading) {
@@ -109,7 +150,13 @@ export default function ProfileScreen() {
                     <Text style={styles.userEmail}>{user.isAnonymous ? 'Sign up to sync your progress' : user.email}</Text>
 
                     {!user.isAnonymous && (
-                        <Pressable style={styles.editButton}>
+                        <Pressable
+                            style={styles.editButton}
+                            onPress={() => {
+                                haptics.selection();
+                                Alert.alert('Edit Profile', 'Profile editing coming soon! You can update your display name and profile picture.', [{ text: 'OK' }]);
+                            }}
+                        >
                             <Ionicons
                                 name="pencil-outline"
                                 size={16}

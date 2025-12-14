@@ -7,7 +7,9 @@ import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useThemeStore } from '@/store/themeStore';
+import { useAchievementsStore } from '@/store/achievementsStore';
 import { secureStorage } from '@/services/storage';
+import { AchievementToast } from '@/components';
 
 export default function RootLayout() {
   const { theme } = useUnistyles();
@@ -119,6 +121,7 @@ export default function RootLayout() {
           }}
         />
       </Stack>
+      <AchievementToast />
     </QueryProvider>
   );
 }

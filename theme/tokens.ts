@@ -45,43 +45,43 @@ export const colors = {
 
 export const colorsDark = {
     // Primary
-    primary: '#EA2A33',
-    primaryDark: '#C62828',
-    primaryLight: '#FF6659',
+    primary: '#FF4D4D',
+    primaryDark: '#E63946',
+    primaryLight: '#FF6B6B',
 
-    // Backgrounds (from design HTML)
-    background: '#211111',
-    backgroundSecondary: '#2A1A1A',
-    surface: '#2A1A1A',
-    surfaceElevated: '#332222',
+    // Backgrounds - Modern neutral dark
+    background: '#121212',
+    backgroundSecondary: '#1E1E1E',
+    surface: '#1E1E1E',
+    surfaceElevated: '#2A2A2A',
 
-    // Text
-    text: '#FCF8F8',
-    textSecondary: '#A1A1AA',
-    textMuted: '#71717A',
-    textInverse: '#1B0E0E',
+    // Text - High contrast
+    text: '#FAFAFA',
+    textSecondary: '#B3B3B3',
+    textMuted: '#737373',
+    textInverse: '#121212',
 
     // UI Elements
-    border: '#374151',
-    borderLight: '#4B5563',
-    divider: '#374151',
+    border: '#2E2E2E',
+    borderLight: '#3D3D3D',
+    divider: '#2E2E2E',
 
     // Chip backgrounds
-    chipActive: '#EA2A33',
-    chipInactive: 'rgba(255, 255, 255, 0.05)',
+    chipActive: '#FF4D4D',
+    chipInactive: 'rgba(255, 255, 255, 0.08)',
 
     // Status
-    success: '#22C55E',
-    warning: '#F59E0B',
-    error: '#EF4444',
+    success: '#4ADE80',
+    warning: '#FBBF24',
+    error: '#F87171',
 
     // Rating
     star: '#FBBF24',
-    starEmpty: '#4B5563',
+    starEmpty: '#404040',
 
     // Overlay
-    overlay: 'rgba(0, 0, 0, 0.7)',
-    overlayLight: 'rgba(0, 0, 0, 0.5)',
+    overlay: 'rgba(0, 0, 0, 0.8)',
+    overlayLight: 'rgba(0, 0, 0, 0.6)',
 } as const;
 
 export const spacing = {

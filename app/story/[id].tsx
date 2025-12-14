@@ -1,21 +1,28 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { View, Text, ScrollView, Pressable, Image, ImageBackground, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { RatingStars } from '@/components';
-import { useStory, useStoryRating, useReviewsByStory } from '@/hooks/useQueries';
+import { RatingStars, WriteReviewModal } from '@/components';
+import { useStory, useStoryRating, useReviewsByStory, useCreateReview } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
 import { Story } from '@/types';
 import { useLibraryStore } from '@/store/libraryStore';
+import { useAuthStore } from '@/store/authStore';
 
 export default function StoryDetailScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
+    const [showReviewModal, setShowReviewModal] = useState(false);
+
+    // Auth & Library
+    const { user } = useAuthStore();
+    const { actions: libraryActions } = useLibraryStore();
+    const createReview = useCreateReview();
 
     // Fetch data
     const { data: storyDoc, isLoading: loadingStory } = useStory(id || '');
@@ -47,7 +54,6 @@ export default function StoryDetailScreen() {
     const reviews = reviewsData || [];
 
     // Library integration
-    const { actions: libraryActions } = useLibraryStore();
     const isInLibrary = story ? libraryActions.isInLibrary(story.id) : false;
 
     const handleBookmarkPress = async () => {
@@ -221,9 +227,38 @@ export default function StoryDetailScreen() {
                         ) : (
                             <Text style={styles.noReviewsText}>No reviews yet</Text>
                         )}
+
+                        {/* Write Review Button */}
+                        {user && !user.isAnonymous && (
+                            <Pressable
+                                style={styles.writeReviewButton}
+                                onPress={() => setShowReviewModal(true)}
+                            >
+                                <Ionicons name="create-outline" size={18} color={theme.colors.primary} />
+                                <Text style={styles.writeReviewText}>Write a Review</Text>
+                            </Pressable>
+                        )}
                     </View>
                 </View>
             </ScrollView>
+
+            {/* Write Review Modal */}
+            <WriteReviewModal
+                visible={showReviewModal}
+                onClose={() => setShowReviewModal(false)}
+                storyTitle={story.title}
+                onSubmit={async (rating, text) => {
+                    if (!user || !story) return;
+                    await createReview.mutateAsync({
+                        storyId: story.id,
+                        userId: user.id,
+                        userName: user.displayName || 'Anonymous',
+                        userAvatar: user.photoURL || undefined,
+                        rating,
+                        text,
+                    });
+                }}
+            />
 
             {/* Bottom Action */}
             <View style={[styles.bottomAction, { paddingBottom: insets.bottom + 16 }]}>
@@ -452,5 +487,21 @@ const styles = StyleSheet.create((theme) => ({
     center: {
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    writeReviewButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: theme.spacing.xs,
+        paddingVertical: theme.spacing.md,
+        marginTop: theme.spacing.md,
+        borderWidth: 1,
+        borderColor: theme.colors.primary,
+        borderRadius: theme.radius.lg,
+    },
+    writeReviewText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.semibold,
+        color: theme.colors.primary,
     },
 }));
