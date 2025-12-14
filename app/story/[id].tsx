@@ -9,6 +9,7 @@ import { RatingStars } from '@/components';
 import { useStory, useStoryRating, useReviewsByStory } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
 import { Story } from '@/types';
+import { useLibraryStore } from '@/store/libraryStore';
 
 export default function StoryDetailScreen() {
     const { theme } = useUnistyles();
@@ -44,6 +45,19 @@ export default function StoryDetailScreen() {
     const rating = ratingData?.averageRating || 0;
     const count = ratingData?.totalReviews || 0;
     const reviews = reviewsData || [];
+
+    // Library integration
+    const { actions: libraryActions } = useLibraryStore();
+    const isInLibrary = story ? libraryActions.isInLibrary(story.id) : false;
+
+    const handleBookmarkPress = async () => {
+        if (!story) return;
+        if (isInLibrary) {
+            await libraryActions.removeFromLibrary(story.id);
+        } else {
+            await libraryActions.addToLibrary(story);
+        }
+    };
 
     const isLoading = loadingStory || loadingRating || loadingReviews;
 
@@ -104,11 +118,12 @@ export default function StoryDetailScreen() {
                     {/* Bookmark Button */}
                     <Pressable
                         style={[styles.bookmarkButton, { top: insets.top + 8 }]}
+                        onPress={handleBookmarkPress}
                     >
                         <Ionicons
-                            name="bookmark-outline"
+                            name={isInLibrary ? 'bookmark' : 'bookmark-outline'}
                             size={24}
-                            color={theme.colors.textInverse}
+                            color={isInLibrary ? theme.colors.primary : theme.colors.textInverse}
                         />
                     </Pressable>
                 </ImageBackground>

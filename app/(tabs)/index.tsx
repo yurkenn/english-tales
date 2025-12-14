@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import { View, Text, ScrollView, FlatList, Pressable, Image, ActivityIndicator } from 'react-native';
+import React, { useState, useMemo, useCallback } from 'react';
+import { View, Text, ScrollView, FlatList, Pressable, Image, ActivityIndicator, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,10 +13,11 @@ import {
     FeaturedCard,
     BookListItem,
 } from '@/components';
-import { mockLibrary } from '@/data/mock';
 import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries';
 import { Story } from '@/types';
 import { useAuthStore } from '@/store/authStore';
+import { useLibraryStore } from '@/store/libraryStore';
+import { useProgressStore } from '@/store/progressStore';
 import { mapSanityStory } from '@/utils/storyMapper';
 
 // Get time-based greeting
@@ -35,9 +36,9 @@ export default function HomeScreen() {
     const [selectedGenre, setSelectedGenre] = useState(0);
 
     // Fetch data
-    const { data: categoriesData, isLoading: loadingCategories } = useCategories();
-    const { data: featuredData, isLoading: loadingFeatured } = useFeaturedStories();
-    const { data: storiesData, isLoading: loadingStories } = useStories();
+    const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories } = useCategories();
+    const { data: featuredData, isLoading: loadingFeatured, refetch: refetchFeatured } = useFeaturedStories();
+    const { data: storiesData, isLoading: loadingStories, refetch: refetchStories } = useStories();
 
     // Transform Categories
     const genres = useMemo(() => {
@@ -61,8 +62,27 @@ export default function HomeScreen() {
     const recommendedStories = allStories.slice(0, 5);
     const trendingList = allStories.slice(2, 6); // Just taking some other slice
 
-    // Get continue reading story (Still Mock for now as it depends on user progress)
-    const continueReading = mockLibrary.find((item) => item.progress);
+    // Get continue reading from real progress data
+    const { items: libraryItems } = useLibraryStore();
+    const { progressMap } = useProgressStore();
+
+    const continueReading = useMemo(() => {
+        // Find item with progress that's not completed
+        const inProgress = libraryItems.find((item) => {
+            const progress = progressMap[item.storyId];
+            return progress && progress.percentage > 0 && !progress.isCompleted;
+        });
+        if (!inProgress) return null;
+
+        const progress = progressMap[inProgress.storyId];
+        return {
+            ...inProgress,
+            progress: progress ? {
+                percentage: progress.percentage,
+                isCompleted: progress.isCompleted,
+            } : undefined,
+        };
+    }, [libraryItems, progressMap]);
 
     const handleStoryPress = (storyId: string) => {
         router.push(`/story/${storyId}`);
@@ -73,6 +93,17 @@ export default function HomeScreen() {
     };
 
     const isLoading = loadingCategories || loadingFeatured || loadingStories;
+    const [refreshing, setRefreshing] = useState(false);
+
+    const onRefresh = useCallback(async () => {
+        setRefreshing(true);
+        await Promise.all([
+            refetchCategories(),
+            refetchFeatured(),
+            refetchStories(),
+        ]);
+        setRefreshing(false);
+    }, [refetchCategories, refetchFeatured, refetchStories]);
 
     if (isLoading) {
         return (
@@ -140,6 +171,14 @@ export default function HomeScreen() {
                 style={styles.content}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                        tintColor={theme.colors.primary}
+                        colors={[theme.colors.primary]}
+                    />
+                }
             >
                 {/* Continue Reading */}
                 {continueReading && continueReading.progress && (

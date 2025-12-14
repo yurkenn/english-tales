@@ -7,7 +7,7 @@ import { ProgressBar } from './ProgressBar';
 
 interface ContinueReadingCardProps {
     story: Story;
-    progress: ReadingProgress;
+    progress: { percentage: number; isCompleted?: boolean };
     onPress?: () => void;
     onPlayPress?: () => void;
 }

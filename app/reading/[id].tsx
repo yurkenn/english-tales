@@ -1,11 +1,13 @@
-import React, { useState, useMemo } from 'react';
-import { View, Text, ScrollView, Pressable, ActivityIndicator } from 'react-native';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
+import { View, Text, ScrollView, Pressable, ActivityIndicator, Modal } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar } from '@/components';
 import { useStory } from '@/hooks/useQueries';
+import { useProgressStore } from '@/store/progressStore';
+import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { PortableTextBlock } from '@portabletext/types';
 
 export default function ReadingScreen() {
@@ -13,10 +15,54 @@ export default function ReadingScreen() {
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
-    const [fontSize, setFontSize] = useState(18);
     const [progress, setProgress] = useState(0);
+    const [showCompletionModal, setShowCompletionModal] = useState(false);
+    const hasShownCompletion = useRef(false);
+
+    // Reading preferences
+    const { fontSize, actions: prefsActions } = useReadingPrefsStore();
+
+    // Progress store
+    const { progressMap, actions: progressActions } = useProgressStore();
+    const saveTimeoutRef = useRef<number | null>(null);
 
     const { data: storyDoc, isLoading } = useStory(id || '');
+
+    // Load reading prefs on mount
+    useEffect(() => {
+        prefsActions.loadPrefs();
+    }, [prefsActions]);
+
+    // Load initial progress
+    useEffect(() => {
+        if (id && progressMap[id]) {
+            setProgress(progressMap[id].percentage);
+        }
+    }, [id, progressMap]);
+
+    // Debounced save progress
+    const saveProgress = useCallback((newProgress: number) => {
+        if (!id) return;
+
+        // Clear existing timeout
+        if (saveTimeoutRef.current) {
+            clearTimeout(saveTimeoutRef.current);
+        }
+
+        // Debounce: save after 1 second of no scroll
+        saveTimeoutRef.current = setTimeout(() => {
+            progressActions.updateProgress(id, 0, newProgress);
+        }, 1000) as unknown as number;
+    }, [id, progressActions]);
+
+    // Cleanup timeout on unmount
+    useEffect(() => {
+        return () => {
+            if (saveTimeoutRef.current) {
+                clearTimeout(saveTimeoutRef.current);
+            }
+        };
+    }, []);
 
     const content = useMemo(() => {
         if (!storyDoc?.content) return 'No content available.';
@@ -29,6 +75,36 @@ export default function ReadingScreen() {
             })
             .join('\n\n');
     }, [storyDoc]);
+
+    const handleScroll = useCallback((event: any) => {
+        const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
+        const scrollableHeight = contentSize.height - layoutMeasurement.height;
+        if (scrollableHeight <= 0) return;
+
+        const newProgress = Math.min(
+            100,
+            Math.round((contentOffset.y / scrollableHeight) * 100)
+        );
+
+        if (newProgress > 0 && newProgress !== progress) {
+            setProgress(newProgress);
+            saveProgress(newProgress);
+
+            // Detect completion at 95%+
+            if (newProgress >= 95 && !hasShownCompletion.current) {
+                hasShownCompletion.current = true;
+                setShowCompletionModal(true);
+            }
+        }
+    }, [progress, saveProgress]);
+
+    const handleMarkComplete = useCallback(async () => {
+        if (id) {
+            await progressActions.markComplete(id);
+        }
+        setShowCompletionModal(false);
+        router.back();
+    }, [id, progressActions, router]);
 
     if (isLoading) {
         return (
@@ -89,14 +165,7 @@ export default function ReadingScreen() {
                 style={styles.content}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
-                onScroll={(event) => {
-                    const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
-                    const newProgress = Math.min(
-                        100,
-                        Math.round((contentOffset.y / (contentSize.height - layoutMeasurement.height)) * 100)
-                    );
-                    if (newProgress > 0) setProgress(newProgress);
-                }}
+                onScroll={handleScroll}
                 scrollEventThrottle={16}
             >
                 <Text style={[styles.storyText, { fontSize }]}>
@@ -111,14 +180,14 @@ export default function ReadingScreen() {
                     <View style={styles.fontControls}>
                         <Pressable
                             style={styles.controlButton}
-                            onPress={() => setFontSize(Math.max(14, fontSize - 2))}
+                            onPress={() => prefsActions.setFontSize(Math.max(14, fontSize - 2))}
                         >
                             <Text style={styles.fontButtonText}>A-</Text>
                         </Pressable>
                         <Text style={styles.fontSizeText}>{fontSize}pt</Text>
                         <Pressable
                             style={styles.controlButton}
-                            onPress={() => setFontSize(Math.min(28, fontSize + 2))}
+                            onPress={() => prefsActions.setFontSize(Math.min(28, fontSize + 2))}
                         >
                             <Text style={styles.fontButtonText}>A+</Text>
                         </Pressable>
@@ -143,6 +212,35 @@ export default function ReadingScreen() {
                     </Pressable>
                 </View>
             </View>
+
+            {/* Completion Modal */}
+            <Modal
+                visible={showCompletionModal}
+                transparent
+                animationType="fade"
+                onRequestClose={() => setShowCompletionModal(false)}
+            >
+                <View style={styles.modalOverlay}>
+                    <View style={styles.modalContent}>
+                        <View style={styles.modalIcon}>
+                            <Ionicons name="trophy" size={48} color={theme.colors.primary} />
+                        </View>
+                        <Text style={styles.modalTitle}>Congratulations! 🎉</Text>
+                        <Text style={styles.modalMessage}>
+                            You've finished reading this story!
+                        </Text>
+                        <Pressable style={styles.modalButton} onPress={handleMarkComplete}>
+                            <Text style={styles.modalButtonText}>Mark as Complete</Text>
+                        </Pressable>
+                        <Pressable
+                            style={styles.modalSecondary}
+                            onPress={() => setShowCompletionModal(false)}
+                        >
+                            <Text style={styles.modalSecondaryText}>Continue Reading</Text>
+                        </Pressable>
+                    </View>
+                </View>
+            </Modal>
         </View>
     );
 }
@@ -248,5 +346,61 @@ const styles = StyleSheet.create((theme) => ({
     center: {
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    modalOverlay: {
+        flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.6)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: 32,
+    },
+    modalContent: {
+        width: '100%',
+        backgroundColor: theme.colors.surface,
+        borderRadius: theme.radius.xxl,
+        padding: 32,
+        alignItems: 'center',
+        ...theme.shadows.lg,
+    },
+    modalIcon: {
+        width: 80,
+        height: 80,
+        borderRadius: 40,
+        backgroundColor: `${theme.colors.primary}15`,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 16,
+    },
+    modalTitle: {
+        fontSize: theme.typography.size.xxl,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.text,
+        marginBottom: 8,
+    },
+    modalMessage: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textSecondary,
+        textAlign: 'center',
+        marginBottom: 24,
+    },
+    modalButton: {
+        width: '100%',
+        backgroundColor: theme.colors.primary,
+        paddingVertical: 16,
+        borderRadius: theme.radius.full,
+        alignItems: 'center',
+        marginBottom: 12,
+    },
+    modalButtonText: {
+        fontSize: theme.typography.size.lg,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.textInverse,
+    },
+    modalSecondary: {
+        padding: 12,
+    },
+    modalSecondaryText: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textSecondary,
     },
 }));

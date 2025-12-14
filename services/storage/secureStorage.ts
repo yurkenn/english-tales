@@ -5,6 +5,7 @@ const KEYS = {
     USER_ID: 'user_id',
     REFRESH_TOKEN: 'refresh_token',
     READING_PROGRESS: 'reading_progress',
+    ONBOARDING_COMPLETE: 'onboarding_complete',
 } as const;
 
 // Secure storage for sensitive data
@@ -58,6 +59,16 @@ export const secureStorage = {
         return data ? JSON.parse(data) : {};
     },
 
+    // Onboarding
+    async setOnboardingComplete(): Promise<void> {
+        await SecureStore.setItemAsync(KEYS.ONBOARDING_COMPLETE, 'true');
+    },
+
+    async hasCompletedOnboarding(): Promise<boolean> {
+        const value = await SecureStore.getItemAsync(KEYS.ONBOARDING_COMPLETE);
+        return value === 'true';
+    },
+
     // Clear all
     async clearAll(): Promise<void> {
         await Promise.all([
@@ -68,3 +79,4 @@ export const secureStorage = {
         ]);
     },
 };
+

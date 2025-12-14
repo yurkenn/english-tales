@@ -1,18 +1,57 @@
-import React from 'react';
-import { View, Text, FlatList, Pressable, Image } from 'react-native';
+import React, { useMemo, useState, useCallback } from 'react';
+import { View, Text, FlatList, Pressable, Image, ActivityIndicator, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar } from '@/components';
-import { mockLibrary } from '@/data/mock';
 import { LibraryItem } from '@/types';
 import { useAuthStore } from '@/store/authStore';
+import { useLibraryStore } from '@/store/libraryStore';
+import { useProgressStore } from '@/store/progressStore';
 
 export default function LibraryScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { user } = useAuthStore();
+    const { items: libraryItems, isLoading, actions: libraryActions } = useLibraryStore();
+    const { progressMap, actions: progressActions } = useProgressStore();
+
+    const [refreshing, setRefreshing] = useState(false);
+
+    const onRefresh = useCallback(async () => {
+        setRefreshing(true);
+        await Promise.all([
+            libraryActions.fetchLibrary(),
+            progressActions.fetchAllProgress(),
+        ]);
+        setRefreshing(false);
+    }, [libraryActions, progressActions]);
+
+    // Local type for library items with simplified progress info
+    type LibraryItemWithProgress = Omit<LibraryItem, 'progress'> & {
+        progress?: { percentage: number; isCompleted: boolean };
+    };
+
+    // Merge progress data with library items
+    const libraryWithProgress: LibraryItemWithProgress[] = useMemo(() => {
+        return libraryItems.map((item) => ({
+            ...item,
+            progress: progressMap[item.storyId] ? {
+                percentage: progressMap[item.storyId].percentage,
+                isCompleted: progressMap[item.storyId].isCompleted,
+            } : undefined,
+        }));
+    }, [libraryItems, progressMap]);
+
+    // Stats
+    const stats = useMemo(() => {
+        const total = libraryWithProgress.length;
+        const completed = libraryWithProgress.filter((i) => i.progress?.isCompleted).length;
+        const inProgress = libraryWithProgress.filter((i) => i.progress && !i.progress.isCompleted).length;
+        return { total, completed, inProgress };
+    }, [libraryWithProgress]);
 
     const handleStoryPress = (storyId: string) => {
         router.push(`/story/${storyId}`);
@@ -22,7 +61,7 @@ export default function LibraryScreen() {
         router.push(`/reading/${storyId}`);
     };
 
-    const renderItem = ({ item }: { item: LibraryItem }) => {
+    const renderItem = ({ item }: { item: LibraryItemWithProgress }) => {
         const progress = item.progress?.percentage || 0;
         const isCompleted = item.progress?.isCompleted || false;
 
@@ -94,6 +133,38 @@ export default function LibraryScreen() {
         );
     };
 
+    if (isLoading) {
+        return (
+            <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
+                <ActivityIndicator size="large" color={theme.colors.primary} />
+            </View>
+        );
+    }
+
+    // Check if user is anonymous - show limited message
+    if (user?.isAnonymous) {
+        return (
+            <View style={[styles.container, { paddingTop: insets.top }]}>
+                <View style={styles.header}>
+                    <Text style={styles.title}>My Library</Text>
+                </View>
+                <View style={styles.anonymousMessage}>
+                    <Ionicons name="person-outline" size={64} color={theme.colors.textMuted} />
+                    <Text style={styles.anonymousTitle}>Sign in to save books</Text>
+                    <Text style={styles.anonymousSubtitle}>
+                        Create an account to save books and track your reading progress
+                    </Text>
+                    <Pressable
+                        style={styles.signInButton}
+                        onPress={() => router.push('/login')}
+                    >
+                        <Text style={styles.signInButtonText}>Sign In</Text>
+                    </Pressable>
+                </View>
+            </View>
+        );
+    }
+
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
@@ -126,33 +197,37 @@ export default function LibraryScreen() {
             {/* Stats */}
             <View style={styles.statsRow}>
                 <View style={styles.statItem}>
-                    <Text style={styles.statValue}>{mockLibrary.length}</Text>
+                    <Text style={styles.statValue}>{stats.total}</Text>
                     <Text style={styles.statLabel}>Books</Text>
                 </View>
                 <View style={styles.statDivider} />
                 <View style={styles.statItem}>
-                    <Text style={styles.statValue}>
-                        {mockLibrary.filter((i) => i.progress?.isCompleted).length}
-                    </Text>
+                    <Text style={styles.statValue}>{stats.completed}</Text>
                     <Text style={styles.statLabel}>Completed</Text>
                 </View>
                 <View style={styles.statDivider} />
                 <View style={styles.statItem}>
-                    <Text style={styles.statValue}>
-                        {mockLibrary.filter((i) => i.progress && !i.progress.isCompleted).length}
-                    </Text>
+                    <Text style={styles.statValue}>{stats.inProgress}</Text>
                     <Text style={styles.statLabel}>In Progress</Text>
                 </View>
             </View>
 
             {/* Book List */}
             <FlatList
-                data={mockLibrary}
+                data={libraryWithProgress}
                 keyExtractor={(item) => item.storyId}
                 renderItem={renderItem}
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                        tintColor={theme.colors.primary}
+                        colors={[theme.colors.primary]}
+                    />
+                }
                 ListEmptyComponent={
                     <View style={styles.emptyState}>
                         <Ionicons
@@ -327,5 +402,39 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
         textAlign: 'center',
+    },
+    center: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    anonymousMessage: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingHorizontal: theme.spacing.xl,
+        gap: theme.spacing.md,
+    },
+    anonymousTitle: {
+        fontSize: theme.typography.size.xl,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.text,
+        marginTop: theme.spacing.md,
+    },
+    anonymousSubtitle: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textSecondary,
+        textAlign: 'center',
+    },
+    signInButton: {
+        backgroundColor: theme.colors.primary,
+        paddingHorizontal: theme.spacing.xl,
+        paddingVertical: theme.spacing.md,
+        borderRadius: theme.radius.lg,
+        marginTop: theme.spacing.md,
+    },
+    signInButtonText: {
+        color: theme.colors.textInverse,
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.semibold,
     },
 }));

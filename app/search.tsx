@@ -1,30 +1,50 @@
-import React, { useState } from 'react';
-import { View, Text, FlatList, Pressable, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, FlatList, Pressable, TextInput, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { BookListItem } from '@/components';
-import { mockStories } from '@/data/mock';
+import { useSearchStories } from '@/hooks/useQueries';
+import { useLibraryStore } from '@/store/libraryStore';
+import { mapSanityStory } from '@/utils/storyMapper';
+import { Story } from '@/types';
 
 export default function SearchScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const [query, setQuery] = useState('');
+    const [debouncedQuery, setDebouncedQuery] = useState('');
 
-    const filteredStories = query.length > 0
-        ? mockStories.filter(
-            (s) =>
-                s.title.toLowerCase().includes(query.toLowerCase()) ||
-                s.author.toLowerCase().includes(query.toLowerCase()) ||
-                s.tags.some((t) => t.toLowerCase().includes(query.toLowerCase()))
-        )
-        : [];
+    const { data: searchResults, isLoading, isFetching } = useSearchStories(debouncedQuery);
+    const { actions: libraryActions } = useLibraryStore();
+
+    // Debounce search input
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setDebouncedQuery(query);
+        }, 300);
+        return () => clearTimeout(timer);
+    }, [query]);
+
+    // Map results to Story type
+    const stories: Story[] = searchResults?.map(mapSanityStory) || [];
 
     const handleStoryPress = (storyId: string) => {
         router.push(`/story/${storyId}`);
     };
+
+    const handleBookmarkPress = async (story: Story) => {
+        const isInLibrary = libraryActions.isInLibrary(story.id);
+        if (isInLibrary) {
+            await libraryActions.removeFromLibrary(story.id);
+        } else {
+            await libraryActions.addToLibrary(story);
+        }
+    };
+
+    const showLoading = isLoading || isFetching;
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -82,7 +102,18 @@ export default function SearchScreen() {
                         Find your next favorite read by title, author, or genre
                     </Text>
                 </View>
-            ) : filteredStories.length === 0 ? (
+            ) : query.length < 2 ? (
+                <View style={styles.emptyState}>
+                    <Text style={styles.emptySubtitle}>
+                        Type at least 2 characters to search
+                    </Text>
+                </View>
+            ) : showLoading ? (
+                <View style={styles.loadingState}>
+                    <ActivityIndicator size="large" color={theme.colors.primary} />
+                    <Text style={styles.loadingText}>Searching...</Text>
+                </View>
+            ) : stories.length === 0 ? (
                 <View style={styles.emptyState}>
                     <Ionicons
                         name="document-text-outline"
@@ -96,13 +127,13 @@ export default function SearchScreen() {
                 </View>
             ) : (
                 <FlatList
-                    data={filteredStories}
+                    data={stories}
                     keyExtractor={(item) => item.id}
                     renderItem={({ item }) => (
                         <BookListItem
                             story={item}
                             onPress={() => handleStoryPress(item.id)}
-                            onBookmarkPress={() => { }}
+                            onBookmarkPress={() => handleBookmarkPress(item)}
                         />
                     )}
                     contentContainerStyle={styles.listContent}
@@ -110,7 +141,7 @@ export default function SearchScreen() {
                     ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
                     ListHeaderComponent={
                         <Text style={styles.resultsCount}>
-                            {filteredStories.length} result{filteredStories.length !== 1 ? 's' : ''}
+                            {stories.length} result{stories.length !== 1 ? 's' : ''}
                         </Text>
                     }
                 />
@@ -172,6 +203,16 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
         textAlign: 'center',
     },
+    loadingState: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: theme.spacing.md,
+    },
+    loadingText: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textSecondary,
+    },
     listContent: {
         paddingHorizontal: theme.spacing.lg,
         paddingTop: theme.spacing.sm,
@@ -183,3 +224,4 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.md,
     },
 }));
+

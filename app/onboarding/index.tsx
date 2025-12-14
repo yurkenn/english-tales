@@ -50,11 +50,7 @@ export default function OnboardingScreen() {
 
     const completeOnboarding = async () => {
         // Mark onboarding as completed
-        // We'll add this key to secureStorage or just set a simple flag
-        // For now, assume auth token presence or just direct navigation
-        // ideally we store a specific flag like 'has_seen_onboarding'
-        // Since we didn't define that in secureStorage, we might need to add it or just duplicate logic for now.
-        // Let's assume we navigate to tabs.
+        await secureStorage.setOnboardingComplete();
         router.replace('/(tabs)');
     };
 

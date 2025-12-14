@@ -1,30 +1,69 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { View, Text, ScrollView, Pressable, Image, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { mockUserStats } from '@/data/mock';
 import { useAuthStore } from '@/store/authStore';
+import { useLibraryStore } from '@/store/libraryStore';
+import { useProgressStore } from '@/store/progressStore';
+import { useThemeStore } from '@/store/themeStore';
 
 export default function ProfileScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { user, signOut, isLoading } = useAuthStore();
+    const { items: libraryItems } = useLibraryStore();
+    const { progressMap, actions: progressActions } = useProgressStore();
+
+    // Compute real stats from progress data
+    const computedStats = useMemo(() => {
+        let booksRead = 0;
+        let totalWords = 0;
+        let totalMinutes = 0;
+
+        // Count completed books and sum words/time
+        Object.values(progressMap).forEach((progress) => {
+            if (progress.isCompleted) {
+                booksRead++;
+                // Find story in library to get word count
+                const libraryItem = libraryItems.find((item) => item.storyId === progress.storyId);
+                if (libraryItem?.story) {
+                    totalWords += libraryItem.story.wordCount || 0;
+                    totalMinutes += libraryItem.story.estimatedReadTime || 0;
+                }
+            }
+        });
+
+        // Convert words to approximate page count (250 words per page)
+        const pagesRead = Math.ceil(totalWords / 250);
+
+        return {
+            booksRead,
+            pagesRead,
+            minutesRead: totalMinutes,
+            // Streak from real reading dates
+            readingStreak: progressActions.getStreak(),
+        };
+    }, [progressMap, libraryItems, progressActions]);
 
     const stats = [
-        { label: 'Books Read', value: mockUserStats.booksRead, icon: 'book' as const },
-        { label: 'Pages Read', value: mockUserStats.pagesRead.toLocaleString(), icon: 'document-text' as const },
-        { label: 'Day Streak', value: mockUserStats.readingStreak, icon: 'flame' as const },
-        { label: 'Minutes', value: mockUserStats.minutesRead.toLocaleString(), icon: 'time' as const },
+        { label: 'Books Read', value: computedStats.booksRead, icon: 'book' as const },
+        { label: 'Pages Read', value: computedStats.pagesRead.toLocaleString(), icon: 'document-text' as const },
+        { label: 'Day Streak', value: computedStats.readingStreak, icon: 'flame' as const },
+        { label: 'Minutes', value: computedStats.minutesRead.toLocaleString(), icon: 'time' as const },
     ];
+
+    // Theme
+    const { mode: themeMode, actions: themeActions } = useThemeStore();
+    const themeModeLabel = themeMode === 'system' ? 'System' : themeMode === 'light' ? 'Light' : 'Dark';
 
     const menuItems = [
         { label: 'Reading Goals', icon: 'flag-outline' as const },
         { label: 'Achievements', icon: 'trophy-outline' as const },
         { label: 'Notifications', icon: 'notifications-outline' as const },
-        { label: 'Appearance', icon: 'color-palette-outline' as const },
+        { label: 'Appearance', icon: 'color-palette-outline' as const, value: themeModeLabel, onPress: themeActions.toggleTheme },
         { label: 'Help & Support', icon: 'help-circle-outline' as const },
         { label: 'About', icon: 'information-circle-outline' as const },
     ];
@@ -107,7 +146,11 @@ export default function ProfileScreen() {
                 {/* Menu */}
                 <View style={styles.menuSection}>
                     {menuItems.map((item, index) => (
-                        <Pressable key={item.label} style={styles.menuItem}>
+                        <Pressable
+                            key={item.label}
+                            style={styles.menuItem}
+                            onPress={item.onPress}
+                        >
                             <View style={styles.menuIconContainer}>
                                 <Ionicons
                                     name={item.icon}
@@ -116,6 +159,9 @@ export default function ProfileScreen() {
                                 />
                             </View>
                             <Text style={styles.menuLabel}>{item.label}</Text>
+                            {item.value && (
+                                <Text style={styles.menuValue}>{item.value}</Text>
+                            )}
                             <Ionicons
                                 name="chevron-forward"
                                 size={20}
@@ -287,5 +333,10 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: theme.colors.background,
+    },
+    menuValue: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textMuted,
+        marginRight: theme.spacing.xs,
     },
 }));

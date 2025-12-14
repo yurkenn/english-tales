@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, ScrollView, FlatList, Pressable, ImageBackground } from 'react-native';
+import React, { useState, useMemo, useCallback } from 'react';
+import { View, Text, ScrollView, FlatList, Pressable, ImageBackground, ActivityIndicator, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -12,18 +12,57 @@ import {
     BookCard,
     BookListItem,
 } from '@/components';
-import {
-    genres,
-    featuredAuthor,
-    trendingStories,
-    recommendedStories,
-} from '@/data/mock';
+import { useStories, useFeaturedAuthor, useCategories } from '@/hooks/useQueries';
+import { urlFor } from '@/services/sanity/client';
+import { mapSanityStory } from '@/utils/storyMapper';
+import { Story } from '@/types';
 
 export default function DiscoverScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const [selectedGenre, setSelectedGenre] = useState(0);
+
+    // Fetch real data from Sanity
+    const { data: storiesData, isLoading: loadingStories, refetch: refetchStories } = useStories();
+    const { data: authorData, isLoading: loadingAuthor, refetch: refetchAuthor } = useFeaturedAuthor();
+    const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories } = useCategories();
+
+    // Transform data
+    const allStories = useMemo(() => {
+        return storiesData?.map(mapSanityStory) || [];
+    }, [storiesData]);
+
+    const trendingStories = allStories.slice(0, 5);
+    const recommendedStories = allStories.slice(5, 10);
+
+    const genres = useMemo(() => {
+        const list: { id: string | null; title: string }[] = [{ id: null, title: 'All' }];
+        if (categoriesData) {
+            list.push(...categoriesData.map((c: any) => ({ id: c._id, title: c.title })));
+        }
+        return list;
+    }, [categoriesData]);
+
+    const handleGenrePress = (index: number) => {
+        const genre = genres[index];
+        if (genre.id) {
+            router.push(`/category/${genre.id}?title=${encodeURIComponent(genre.title)}`);
+        } else {
+            setSelectedGenre(index);
+        }
+    };
+
+    const featuredAuthor = useMemo(() => {
+        if (!authorData) return null;
+        return {
+            id: authorData._id,
+            name: authorData.name,
+            bio: authorData.bio || '',
+            imageUrl: authorData.image ? urlFor(authorData.image).width(600).url() : '',
+            storyCount: authorData.storyCount || 0,
+        };
+    }, [authorData]);
 
     const handleStoryPress = (storyId: string) => {
         router.push(`/story/${storyId}`);
@@ -32,6 +71,23 @@ export default function DiscoverScreen() {
     const handleSearch = () => {
         router.push('/search');
     };
+
+    const isLoading = loadingStories || loadingAuthor || loadingCategories;
+    const [refreshing, setRefreshing] = useState(false);
+
+    const onRefresh = useCallback(async () => {
+        setRefreshing(true);
+        await Promise.all([refetchStories(), refetchAuthor(), refetchCategories()]);
+        setRefreshing(false);
+    }, [refetchStories, refetchAuthor, refetchCategories]);
+
+    if (isLoading) {
+        return (
+            <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
+                <ActivityIndicator size="large" color={theme.colors.primary} />
+            </View>
+        );
+    }
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -66,12 +122,12 @@ export default function DiscoverScreen() {
                     showsHorizontalScrollIndicator={false}
                     contentContainerStyle={styles.chipsContainer}
                 >
-                    {['All', ...genres.slice(1)].map((genre, index) => (
+                    {genres.map((genre, index) => (
                         <GenreChip
-                            key={genre}
-                            label={genre}
+                            key={genre.id || genre.title}
+                            label={genre.title}
                             isSelected={selectedGenre === index}
-                            onPress={() => setSelectedGenre(index)}
+                            onPress={() => handleGenrePress(index)}
                         />
                     ))}
                 </ScrollView>
@@ -82,65 +138,77 @@ export default function DiscoverScreen() {
                 style={styles.content}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                        tintColor={theme.colors.primary}
+                        colors={[theme.colors.primary]}
+                    />
+                }
             >
                 {/* Author Spotlight */}
-                <View style={styles.section}>
-                    <SectionHeader title="Author Spotlight" />
-                    <View style={styles.sectionContent}>
-                        <Pressable style={styles.spotlightCard}>
-                            <ImageBackground
-                                source={{ uri: featuredAuthor.imageUrl }}
-                                style={styles.spotlightImage}
-                                resizeMode="cover"
-                            >
-                                <LinearGradient
-                                    colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.9)']}
-                                    style={styles.spotlightGradient}
-                                />
-                                <View style={styles.spotlightContent}>
-                                    <View style={styles.featuredBadge}>
-                                        <Text style={styles.featuredBadgeText}>Featured</Text>
+                {featuredAuthor && (
+                    <View style={styles.section}>
+                        <SectionHeader title="Author Spotlight" />
+                        <View style={styles.sectionContent}>
+                            <Pressable style={styles.spotlightCard}>
+                                <ImageBackground
+                                    source={{ uri: featuredAuthor.imageUrl || 'https://via.placeholder.com/400x300' }}
+                                    style={styles.spotlightImage}
+                                    resizeMode="cover"
+                                >
+                                    <LinearGradient
+                                        colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.9)']}
+                                        style={styles.spotlightGradient}
+                                    />
+                                    <View style={styles.spotlightContent}>
+                                        <View style={styles.featuredBadge}>
+                                            <Text style={styles.featuredBadgeText}>Featured</Text>
+                                        </View>
+                                        <Text style={styles.spotlightName}>{featuredAuthor.name}</Text>
+                                        <Text style={styles.spotlightBio} numberOfLines={2}>
+                                            {featuredAuthor.bio}
+                                        </Text>
+                                        <Pressable style={styles.spotlightButton}>
+                                            <Text style={styles.spotlightButtonText}>Read Now</Text>
+                                            <Ionicons
+                                                name="arrow-forward"
+                                                size={14}
+                                                color={theme.colors.text}
+                                            />
+                                        </Pressable>
                                     </View>
-                                    <Text style={styles.spotlightName}>{featuredAuthor.name}</Text>
-                                    <Text style={styles.spotlightBio} numberOfLines={2}>
-                                        {featuredAuthor.bio}
-                                    </Text>
-                                    <Pressable style={styles.spotlightButton}>
-                                        <Text style={styles.spotlightButtonText}>Read Now</Text>
-                                        <Ionicons
-                                            name="arrow-forward"
-                                            size={14}
-                                            color={theme.colors.text}
-                                        />
-                                    </Pressable>
-                                </View>
-                            </ImageBackground>
-                        </Pressable>
+                                </ImageBackground>
+                            </Pressable>
+                        </View>
                     </View>
-                </View>
+                )}
 
                 {/* Trending Now */}
-                <View style={styles.section}>
-                    <SectionHeader
-                        title="Trending Now"
-                        onActionPress={() => { }}
-                    />
-                    <FlatList
-                        data={trendingStories}
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={styles.carouselContent}
-                        keyExtractor={(item) => item.id}
-                        renderItem={({ item, index }) => (
-                            <BookCard
-                                story={item}
-                                showRank={index + 1}
-                                onPress={() => handleStoryPress(item.id)}
-                            />
-                        )}
-                        ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
-                    />
-                </View>
+                {trendingStories.length > 0 && (
+                    <View style={styles.section}>
+                        <SectionHeader
+                            title="Trending Now"
+                            onActionPress={() => { }}
+                        />
+                        <FlatList
+                            data={trendingStories}
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={styles.carouselContent}
+                            keyExtractor={(item) => item.id}
+                            renderItem={({ item, index }) => (
+                                <BookCard
+                                    story={item}
+                                    showRank={index + 1}
+                                    onPress={() => handleStoryPress(item.id)}
+                                />
+                            )}
+                            ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+                        />
+                    </View>
+                )}
 
                 {/* Explore Genres */}
                 <View style={styles.section}>
@@ -176,19 +244,21 @@ export default function DiscoverScreen() {
                 </View>
 
                 {/* Recommended For You */}
-                <View style={styles.section}>
-                    <SectionHeader title="Recommended For You" />
-                    <View style={styles.sectionContent}>
-                        {recommendedStories.slice(0, 3).map((story) => (
-                            <BookListItem
-                                key={story.id}
-                                story={story}
-                                onPress={() => handleStoryPress(story.id)}
-                                onBookmarkPress={() => { }}
-                            />
-                        ))}
+                {recommendedStories.length > 0 && (
+                    <View style={styles.section}>
+                        <SectionHeader title="Recommended For You" />
+                        <View style={styles.sectionContent}>
+                            {recommendedStories.slice(0, 3).map((story: Story) => (
+                                <BookListItem
+                                    key={story.id}
+                                    story={story}
+                                    onPress={() => handleStoryPress(story.id)}
+                                    onBookmarkPress={() => { }}
+                                />
+                            ))}
+                        </View>
                     </View>
-                </View>
+                )}
             </ScrollView>
         </View>
     );
@@ -336,5 +406,9 @@ const styles = StyleSheet.create((theme) => ({
         position: 'absolute',
         right: -10,
         bottom: -10,
+    },
+    center: {
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 }));

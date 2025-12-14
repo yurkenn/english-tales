@@ -1,15 +1,23 @@
 import '@/theme/unistyles';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { useUnistyles } from 'react-native-unistyles';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { QueryProvider } from '@/providers/QueryProvider';
 import { useAuthStore } from '@/store/authStore';
+import { useLibraryStore } from '@/store/libraryStore';
+import { useProgressStore } from '@/store/progressStore';
+import { useThemeStore } from '@/store/themeStore';
+import { secureStorage } from '@/services/storage';
 
 export default function RootLayout() {
   const { theme } = useUnistyles();
   const { initialize, user, isLoading, initialized } = useAuthStore();
+  const libraryActions = useLibraryStore((s) => s.actions);
+  const progressActions = useProgressStore((s) => s.actions);
   const segments = useSegments();
   const router = useRouter();
+
+  const themeActions = useThemeStore((s) => s.actions);
 
   // Initialize auth listener
   useEffect(() => {
@@ -17,20 +25,54 @@ export default function RootLayout() {
     return unsubscribe;
   }, [initialize]);
 
-  // Protected Route Logic
+  // Load saved theme preference
   useEffect(() => {
-    if (!initialized || isLoading) return;
+    themeActions.loadTheme();
+  }, [themeActions]);
 
-    const inAuthGroup = segments[0] === '(auth)';
-    const inProtectedGroup = segments[0] === '(tabs)';
+  // Sync stores with auth state
+  useEffect(() => {
+    if (!initialized) return;
 
-    if (!user && inProtectedGroup) {
-      // Redirect to login if trying to access protected route without user
-      router.replace('/login');
-    } else if (user && inAuthGroup) {
-      // Redirect to home if user is logged in but tries to access auth screens
-      router.replace('/(tabs)');
+    const userId = user?.id || null;
+    // Only sync for non-anonymous users (anonymous users get local-only storage)
+    if (user && !user.isAnonymous) {
+      libraryActions.setUserId(userId);
+      progressActions.setUserId(userId);
+    } else {
+      libraryActions.setUserId(null);
+      progressActions.setUserId(null);
     }
+  }, [user, initialized]);
+
+  // Protected Route Logic
+  const [hasCheckedOnboarding, setHasCheckedOnboarding] = useState(false);
+
+  useEffect(() => {
+    const checkOnboarding = async () => {
+      if (!initialized || isLoading) return;
+
+      const hasOnboarded = await secureStorage.hasCompletedOnboarding();
+      const inOnboarding = segments[0] === 'onboarding';
+      const inAuthGroup = segments[0] === '(auth)';
+      const inProtectedGroup = segments[0] === '(tabs)';
+
+      // First-time user: show onboarding
+      if (!hasOnboarded && !inOnboarding && !user) {
+        router.replace('/onboarding');
+        return;
+      }
+
+      if (!user && inProtectedGroup) {
+        router.replace('/login');
+      } else if (user && inAuthGroup) {
+        router.replace('/(tabs)');
+      }
+
+      setHasCheckedOnboarding(true);
+    };
+
+    checkOnboarding();
   }, [user, isLoading, initialized, segments]);
 
   return (
