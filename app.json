@@ -2,60 +2,46 @@
   "expo": {
     "name": "English Tales",
     "slug": "english-tales",
-    "version": "1.0.3",
+    "version": "1.0.0",
+    "newArchEnabled": true,
+    "scheme": "english-tales",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "tsconfigPaths": true
+    },
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "plugins": [
-      [
-        "expo-image-picker",
-        {
-          "photosPermission": "English Tales needs access to your photos to update your profile picture.",
-          "cameraPermission": "English Tales needs access to your camera to take profile pictures."
-        }
-      ]
-    ],
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000000",
-      "show_splash_screen": false
+      "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.yurken.englishtales",
-      "buildNumber": "1.0.2",
-      "infoPlist": {
-        "NSPhotoLibraryUsageDescription": "English Tales needs access to your photos to update your profile picture.",
-        "NSCameraUsageDescription": "English Tales needs access to your camera to take profile pictures.",
-        "UIBackgroundModes": ["fetch"]
-      }
+      "supportsTablet": true
     },
     "android": {
-      "versionCode": 3,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#161616"
+        "backgroundColor": "#ffffff"
       },
-      "package": "com.yurken.englishtales",
-      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
-    "updates": {
-      "enabled": true,
-      "fallbackToCacheTimeout": 0,
-      "url": "https://u.expo.dev/ed1a926d-a090-4643-bb5e-9c8a1e59df38"
-    },
-    "runtimeVersion": "1.0.0",
-    "extra": {
-      "eas": {
-        "projectId": "ed1a926d-a090-4643-bb5e-9c8a1e59df38"
-      }
-    },
-    "scheme": "com.yurken.englishtales",
-    "owner": "yurken"
+      "package": "com.yurken.englishtales"
+    }
   }
 }

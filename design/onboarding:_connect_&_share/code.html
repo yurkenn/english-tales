@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>English Tales - Onboarding</title>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee9d2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221a10",
+                        "text-main": "#1b160d",
+                        "text-inverted": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "3xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom smooth scroll behavior */
+        html { scroll-behavior: smooth; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main dark:text-background-light transition-colors duration-300 antialiased overflow-hidden">
+<div class="relative flex h-full min-h-screen w-full flex-col overflow-x-hidden max-w-md mx-auto shadow-2xl bg-white dark:bg-[#221a10]">
+<!-- Hero Section with Layered UI Cards -->
+<!-- Modified HeaderImage component to include layered UI elements as requested -->
+<div class="relative flex-1 w-full flex flex-col justify-end bg-gradient-to-b from-blue-50 to-[#fcfaf8] dark:from-[#2a2115] dark:to-[#221a10] overflow-hidden rounded-b-[2.5rem]">
+<!-- Abstract background pattern -->
+<div class="absolute inset-0 opacity-10 dark:opacity-5" style="background-image: radial-gradient(#ee9d2b 1px, transparent 1px); background-size: 20px 20px;"></div>
+<!-- Main Hero Visual Container -->
+<div class="relative w-full h-full flex items-center justify-center p-8 mt-10">
+<!-- Back Layer: Bookshelf Card -->
+<div class="absolute w-56 h-72 bg-white dark:bg-[#32281e] rounded-2xl shadow-lg transform -rotate-6 translate-x-8 translate-y-4 border border-gray-100 dark:border-gray-800 flex flex-col p-4 opacity-80">
+<div class="w-full h-32 bg-gray-200 dark:bg-gray-700 rounded-lg mb-3 bg-cover bg-center" data-alt="Abstract book cover pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlurNLi18AIltwlszeMptPc9zbLDOBkzMAURGg5uhilAngKn9gzJjKKFWEwN-Zp_hpnzIAOpaCNdNTezrnSk4TddxVNwNbAHAdEYy9rHsyBJ-0evabapHo8uC3sU5ojVuuNb0B5IHR8x-dP3gpZ1DmdRlyFi172WBi3BmldXgW22vWD3XuEB580PzqNTjM1oB5DRYfbVLRDqdQ_e8RlqntkvY_sr2-X300WDu_yJTxQ0NlJZ_CrtpRP1YCYzfAqUjO4Wa6sF1-goc');"></div>
+<div class="h-3 w-3/4 bg-gray-100 dark:bg-gray-600 rounded mb-2"></div>
+<div class="h-3 w-1/2 bg-gray-100 dark:bg-gray-600 rounded"></div>
+</div>
+<!-- Front Layer: Featured Book & Review -->
+<div class="relative w-64 bg-white dark:bg-[#2c2317] rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 p-4 transform rotate-2 transition-transform hover:rotate-0 duration-500">
+<!-- Book Image -->
+<div class="w-full aspect-[4/3] rounded-xl bg-gray-100 dark:bg-gray-700 mb-4 overflow-hidden relative group">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Illustration of a person reading a book on a cozy chair" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCq4zgOgBckuUxIrz2Aip-LPWzpQrdxQPhEN1ZyjGRh71L2YHoB7bAFd9hVniCvsQJ_mg-OnISBvLRH_9Q0d0Q2k7i0W5YMbIbFcP067pZVB_rYfCit_25vFPtGNPl4C5Vk7gnmYUHRF1-z_DXkdu1tOpid-sjS-rxKPFJb-AkV6-seKvvjESmc0iFyz6i7-mrY-XjnZ3DksmgB8zAtST-g4p8Y_5URoTCDVjJHcMnZ6aj95n4V3VZikqq0IVKhb5iDt-5urtd4i9c');"></div>
+<!-- Favorite Button Overlay -->
+<div class="absolute top-2 right-2 h-8 w-8 bg-white/90 dark:bg-black/60 backdrop-blur-sm rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">favorite</span>
+</div>
+</div>
+<!-- Review Content -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary text-[18px]">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]">star</span>
+<span class="material-symbols-outlined text-primary text-[18px]">star</span>
+</div>
+<span class="text-xs font-semibold text-gray-400 dark:text-gray-500">4.9</span>
+</div>
+<div class="flex items-center gap-2 pt-1 border-t border-gray-100 dark:border-gray-700/50 mt-3">
+<div class="h-6 w-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-[10px] font-bold text-blue-600 dark:text-blue-300">JD</div>
+<p class="text-xs text-gray-500 dark:text-gray-400 truncate">"A masterpiece! Highly recommend."</p>
+</div>
+</div>
+</div>
+<!-- Floating Share Notification -->
+<div class="absolute -right-2 bottom-20 bg-primary text-text-main text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 animate-bounce" style="animation-duration: 3s;">
+<span class="material-symbols-outlined text-[14px]">share</span>
+<span>Shared!</span>
+</div>
+</div>
+</div>
+<!-- Content Section -->
+<div class="flex flex-col items-center px-6 pt-8 pb-10 z-10 bg-background-light dark:bg-background-dark">
+<!-- HeadlineText Component -->
+<div class="w-full text-center space-y-2">
+<h1 class="text-[#1b160d] dark:text-white tracking-tight text-[28px] md:text-[32px] font-bold leading-tight">
+                    Connect with<br/>Fellow Readers
+                </h1>
+</div>
+<!-- BodyText Component -->
+<div class="w-full max-w-[320px] mx-auto">
+<p class="text-gray-600 dark:text-gray-300 text-base font-normal leading-relaxed text-center pt-3 pb-6">
+                    Curate your bookshelf, share reviews, and discover what your friends are reading right now.
+                </p>
+</div>
+<!-- PageIndicators Component -->
+<div class="flex w-full flex-row items-center justify-center gap-3 py-4 mb-4">
+<div class="h-2 w-2 rounded-full bg-gray-300 dark:bg-gray-700 transition-colors"></div>
+<div class="h-2 w-2 rounded-full bg-gray-300 dark:bg-gray-700 transition-colors"></div>
+<div class="h-2 w-8 rounded-full bg-primary shadow-sm shadow-orange-500/20"></div>
+</div>
+<!-- SingleButton Component -->
+<div class="w-full flex flex-col gap-4">
+<button class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 bg-primary hover:bg-[#e08d1f] active:scale-[0.98] transition-all duration-200 text-[#1b160d] text-base font-bold leading-normal tracking-wide shadow-lg shadow-orange-500/20">
+<span class="mr-2">Get Started</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Secondary Action -->
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors text-center py-2" href="#">
+                    Already have an account? <span class="text-gray-800 dark:text-gray-200 underline decoration-primary/50 underline-offset-4">Log In</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>

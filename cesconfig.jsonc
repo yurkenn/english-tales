@@ -1,0 +1,46 @@
+// This is an optional configuration file used primarily for debugging purposes when reporting issues.
+// It is safe to delete this file as it does not affect the functionality of your application.
+{
+  "cesVersion": "2.20.1",
+  "projectName": "aa",
+  "packages": [
+    {
+      "name": "expo-router",
+      "type": "navigation",
+      "options": {
+        "type": "stack"
+      }
+    },
+    {
+      "name": "unistyles",
+      "type": "styling"
+    },
+    {
+      "name": "zustand",
+      "type": "state-management"
+    },
+    {
+      "name": "firebase",
+      "type": "authentication"
+    }
+  ],
+  "flags": {
+    "noGit": false,
+    "noInstall": false,
+    "overwrite": false,
+    "importAlias": true,
+    "packageManager": "npm",
+    "eas": true,
+    "publish": false
+  },
+  "packageManager": {
+    "type": "npm",
+    "version": "11.6.4"
+  },
+  "os": {
+    "type": "Darwin",
+    "platform": "darwin",
+    "arch": "arm64",
+    "kernelVersion": "25.1.0"
+  }
+}
