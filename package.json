@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
+    "@gorhom/bottom-sheet": "^5.2.8",
     "@hookform/resolvers": "^5.2.2",
     "@portabletext/react": "^6.0.0",
     "@portabletext/types": "^4.0.0",

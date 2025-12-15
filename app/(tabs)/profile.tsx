@@ -1,14 +1,15 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useRef, useEffect, useCallback } from 'react';
 import { View, Text, ScrollView, Pressable, ActivityIndicator, Alert } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import BottomSheet from '@gorhom/bottom-sheet';
 import {
     ProfileCard,
     StatsGrid,
     ProfileMenu,
-    ReadingGoalsModal,
+    ReadingGoalsSheet,
 } from '@/components';
 import type { MenuItem } from '@/components';
 import { useAuthStore } from '@/store/authStore';
@@ -26,6 +27,9 @@ export default function ProfileScreen() {
     const { user, signOut, isLoading, updateProfile } = useAuthStore();
     const { items: libraryItems } = useLibraryStore();
     const { progressMap, actions: progressActions } = useProgressStore();
+
+    // Bottom sheet refs
+    const goalsSheetRef = useRef<BottomSheet>(null);
 
     // Compute real stats from progress data
     const computedStats = useMemo(() => {
@@ -70,15 +74,23 @@ export default function ProfileScreen() {
     const achievements = achievementActions.getAll();
     const unlockedCount = achievements.filter(a => a.unlocked).length;
 
-    // Modal states
-    const [showGoalsModal, setShowGoalsModal] = useState(false);
+    // Settings
     const { settings, actions: settingsActions } = useSettingsStore();
 
     useEffect(() => {
         settingsActions.loadSettings();
     }, []);
 
-    // Menu handlers
+    // Handlers
+    const handleOpenGoals = useCallback(() => {
+        haptics.selection();
+        goalsSheetRef.current?.expand();
+    }, []);
+
+    const handleCloseGoals = useCallback(() => {
+        goalsSheetRef.current?.close();
+    }, []);
+
     const handleAchievements = () => {
         haptics.selection();
         Alert.alert(
@@ -104,7 +116,7 @@ export default function ProfileScreen() {
     };
 
     const menuItems: MenuItem[] = [
-        { label: 'Reading Goals', icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: () => { haptics.selection(); setShowGoalsModal(true); } },
+        { label: 'Reading Goals', icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: handleOpenGoals },
         { label: 'Achievements', icon: 'trophy-outline', value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
         { label: 'Notifications', icon: 'notifications-outline', value: settings.notificationsEnabled ? 'On' : 'Off', onPress: handleNotifications },
         { label: 'Appearance', icon: 'color-palette-outline', value: themeModeLabel, onPress: themeActions.toggleTheme },
@@ -159,12 +171,12 @@ export default function ProfileScreen() {
                 </Pressable>
             </ScrollView>
 
-            {/* Modals */}
-            <ReadingGoalsModal
-                visible={showGoalsModal}
-                onClose={() => setShowGoalsModal(false)}
+            {/* Reading Goals Bottom Sheet */}
+            <ReadingGoalsSheet
+                ref={goalsSheetRef}
                 currentGoal={settings.dailyGoalMinutes}
                 onSelectGoal={(minutes) => settingsActions.updateSettings({ dailyGoalMinutes: minutes })}
+                onClose={handleCloseGoals}
             />
         </View>
     );
@@ -207,7 +219,8 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xl,
-        ...theme.shadows.sm,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     signOutText: {
         fontSize: theme.typography.size.lg,

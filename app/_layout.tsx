@@ -2,6 +2,8 @@ import '@/theme/unistyles';
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { useUnistyles } from 'react-native-unistyles';
 import { useEffect, useState } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { QueryProvider } from '@/providers/QueryProvider';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
@@ -81,51 +83,55 @@ export default function RootLayout() {
   }, [user, isLoading, initialized, segments]);
 
   return (
-    <QueryProvider>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: {
-            backgroundColor: theme.colors.background,
-          },
-        }}
-      >
-        <Stack.Screen name="(tabs)" />
-        <Stack.Screen name="(auth)" />
-        <Stack.Screen
-          name="story/[id]"
-          options={{
-            presentation: 'card',
-          }}
-        />
-        <Stack.Screen
-          name="reading/[id]"
-          options={{
-            presentation: 'fullScreenModal',
-          }}
-        />
-        <Stack.Screen
-          name="search"
-          options={{
-            presentation: 'card',
-          }}
-        />
-        <Stack.Screen
-          name="reviews/[id]"
-          options={{
-            presentation: 'card',
-          }}
-        />
-        <Stack.Screen
-          name="onboarding/index"
-          options={{
-            headerShown: false,
-            gestureEnabled: false,
-          }}
-        />
-      </Stack>
-      <ToastContainer />
-      <AchievementToast />
-    </QueryProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <QueryProvider>
+        <BottomSheetModalProvider>
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              contentStyle: {
+                backgroundColor: theme.colors.background,
+              },
+            }}
+          >
+            <Stack.Screen name="(tabs)" />
+            <Stack.Screen name="(auth)" />
+            <Stack.Screen
+              name="story/[id]"
+              options={{
+                presentation: 'card',
+              }}
+            />
+            <Stack.Screen
+              name="reading/[id]"
+              options={{
+                presentation: 'fullScreenModal',
+              }}
+            />
+            <Stack.Screen
+              name="search"
+              options={{
+                presentation: 'card',
+              }}
+            />
+            <Stack.Screen
+              name="reviews/[id]"
+              options={{
+                presentation: 'card',
+              }}
+            />
+            <Stack.Screen
+              name="onboarding/index"
+              options={{
+                headerShown: false,
+                gestureEnabled: false,
+              }}
+            />
+          </Stack>
+          <ToastContainer />
+          <AchievementToast />
+        </BottomSheetModalProvider>
+      </QueryProvider>
+    </GestureHandlerRootView>
   );
 }

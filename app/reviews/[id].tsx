@@ -1,10 +1,11 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useCallback } from 'react';
 import { View, Text, FlatList, Pressable, Image, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { RatingStars, WriteReviewModal } from '@/components';
+import BottomSheet from '@gorhom/bottom-sheet';
+import { RatingStars, WriteReviewSheet } from '@/components';
 import { useStory, useReviewsByStory, useStoryRating, useCreateReview } from '@/hooks/useQueries';
 import { Review } from '@/types';
 import { useAuthStore } from '@/store/authStore';
@@ -15,8 +16,16 @@ export default function ReviewsScreen() {
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
     const { user } = useAuthStore();
-    const [showReviewModal, setShowReviewModal] = useState(false);
+    const reviewSheetRef = useRef<BottomSheet>(null);
     const createReview = useCreateReview();
+
+    const handleOpenReviewSheet = useCallback(() => {
+        reviewSheetRef.current?.expand();
+    }, []);
+
+    const handleCloseReviewSheet = useCallback(() => {
+        reviewSheetRef.current?.close();
+    }, []);
 
     // Fetch data
     const { data: storyDoc } = useStory(id || '');
@@ -127,18 +136,18 @@ export default function ReviewsScreen() {
             {canWriteReview && (
                 <Pressable
                     style={[styles.fab, { bottom: insets.bottom + 20 }]}
-                    onPress={() => setShowReviewModal(true)}
+                    onPress={handleOpenReviewSheet}
                 >
-                    <Ionicons name="create-outline" size={24} color={theme.colors.textInverse} />
+                    <Ionicons name="create-outline" size={24} color="#FFFFFF" />
                     <Text style={styles.fabText}>Write Review</Text>
                 </Pressable>
             )}
 
-            {/* Write Review Modal */}
-            <WriteReviewModal
-                visible={showReviewModal}
-                onClose={() => setShowReviewModal(false)}
+            {/* Write Review Bottom Sheet */}
+            <WriteReviewSheet
+                ref={reviewSheetRef}
                 storyTitle={storyDoc?.title || 'Story'}
+                onClose={handleCloseReviewSheet}
                 onSubmit={async (rating, text) => {
                     if (!user || !id) return;
                     await createReview.mutateAsync({
