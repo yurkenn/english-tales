@@ -8,7 +8,6 @@ import {
     ProfileCard,
     StatsGrid,
     ProfileMenu,
-    EditProfileModal,
     ReadingGoalsModal,
 } from '@/components';
 import type { MenuItem } from '@/components';
@@ -72,7 +71,6 @@ export default function ProfileScreen() {
     const unlockedCount = achievements.filter(a => a.unlocked).length;
 
     // Modal states
-    const [showEditModal, setShowEditModal] = useState(false);
     const [showGoalsModal, setShowGoalsModal] = useState(false);
     const { settings, actions: settingsActions } = useSettingsStore();
 
@@ -145,7 +143,6 @@ export default function ProfileScreen() {
                     displayName={user.displayName}
                     email={user.email}
                     isAnonymous={user.isAnonymous}
-                    onEditPress={() => { haptics.selection(); setShowEditModal(true); }}
                     onSignInPress={signOut}
                 />
 
@@ -163,12 +160,6 @@ export default function ProfileScreen() {
             </ScrollView>
 
             {/* Modals */}
-            <EditProfileModal
-                visible={showEditModal}
-                onClose={() => setShowEditModal(false)}
-                initialName={user.displayName || ''}
-                onSave={updateProfile}
-            />
             <ReadingGoalsModal
                 visible={showGoalsModal}
                 onClose={() => setShowGoalsModal(false)}

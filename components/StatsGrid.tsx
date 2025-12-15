@@ -13,20 +13,47 @@ interface StatsGridProps {
     stats: StatItem[];
 }
 
+const getIconColor = (icon: string, theme: any): string => {
+    switch (icon) {
+        case 'flame': return '#FF6B35';
+        case 'book': return theme.colors.primary;
+        case 'time': return '#6366F1';
+        case 'document-text': return '#10B981';
+        default: return theme.colors.primary;
+    }
+};
+
+const getIconBg = (icon: string): string => {
+    switch (icon) {
+        case 'flame': return 'rgba(255, 107, 53, 0.12)';
+        case 'book': return 'rgba(234, 42, 51, 0.12)';
+        case 'time': return 'rgba(99, 102, 241, 0.12)';
+        case 'document-text': return 'rgba(16, 185, 129, 0.12)';
+        default: return 'rgba(234, 42, 51, 0.12)';
+    }
+};
+
 export const StatsGrid: React.FC<StatsGridProps> = ({ stats }) => {
     const { theme } = useUnistyles();
 
     return (
         <View style={styles.container}>
-            {stats.map((stat) => (
-                <View key={stat.label} style={styles.statCard}>
-                    <View style={styles.iconContainer}>
-                        <Ionicons name={stat.icon} size={20} color={theme.colors.primary} />
+            {stats.map((stat, index) => {
+                const iconColor = getIconColor(stat.icon, theme);
+                const iconBg = getIconBg(stat.icon);
+
+                return (
+                    <View key={stat.label} style={styles.statCard}>
+                        <View style={[styles.iconContainer, { backgroundColor: iconBg }]}>
+                            <Ionicons name={stat.icon} size={22} color={iconColor} />
+                        </View>
+                        <View style={styles.textContainer}>
+                            <Text style={styles.value}>{stat.value}</Text>
+                            <Text style={styles.label}>{stat.label}</Text>
+                        </View>
                     </View>
-                    <Text style={styles.value}>{stat.value}</Text>
-                    <Text style={styles.label}>{stat.label}</Text>
-                </View>
-            ))}
+                );
+            })}
         </View>
     );
 };
@@ -36,33 +63,39 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         flexWrap: 'wrap',
         paddingHorizontal: theme.spacing.lg,
-        gap: theme.spacing.md,
-        marginBottom: theme.spacing.xl,
+        gap: theme.spacing.sm,
+        marginBottom: theme.spacing.lg,
     },
     statCard: {
-        width: '47%',
+        width: '48%',
+        flexDirection: 'row',
         alignItems: 'center',
-        paddingVertical: theme.spacing.lg,
+        gap: theme.spacing.md,
+        paddingVertical: theme.spacing.md,
+        paddingHorizontal: theme.spacing.md,
         backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
-        ...theme.shadows.sm,
+        borderRadius: theme.radius.lg,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     iconContainer: {
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.full,
-        backgroundColor: `${theme.colors.primary}15`,
+        width: 44,
+        height: 44,
+        borderRadius: theme.radius.md,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: theme.spacing.sm,
+    },
+    textContainer: {
+        flex: 1,
     },
     value: {
-        fontSize: theme.typography.size.xxl,
+        fontSize: theme.typography.size.xl,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
     },
     label: {
-        fontSize: theme.typography.size.sm,
+        fontSize: theme.typography.size.xs,
         color: theme.colors.textSecondary,
+        marginTop: 2,
     },
 }));

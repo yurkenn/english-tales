@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface ProfileCardProps {
     photoURL?: string | null;
@@ -22,26 +23,51 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
 }) => {
     const { theme } = useUnistyles();
 
-    const avatarUri = photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(isAnonymous ? 'Guest' : displayName || 'User')}`;
+    const avatarUri = photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(isAnonymous ? 'Guest' : displayName || 'User')}&background=EA2A33&color=fff&bold=true`;
     const name = isAnonymous ? 'Guest User' : (displayName || 'Reader');
-    const subtitle = isAnonymous ? 'Sign up to sync your progress' : email;
+    const subtitle = isAnonymous ? 'Sign in to sync your progress' : email;
 
     return (
         <View style={styles.container}>
-            <Image source={{ uri: avatarUri }} style={styles.avatar} />
+            {/* Decorative gradient background */}
+            <LinearGradient
+                colors={[`${theme.colors.primary}15`, 'transparent']}
+                style={styles.gradientBg}
+            />
+
+            {/* Avatar with ring */}
+            <View style={styles.avatarWrapper}>
+                <LinearGradient
+                    colors={[theme.colors.primary, theme.colors.primaryDark]}
+                    style={styles.avatarRing}
+                >
+                    <View style={styles.avatarInner}>
+                        <Image source={{ uri: avatarUri }} style={styles.avatar} />
+                    </View>
+                </LinearGradient>
+                {!isAnonymous && (
+                    <View style={styles.verifiedBadge}>
+                        <Ionicons name="checkmark" size={10} color="#FFFFFF" />
+                    </View>
+                )}
+            </View>
+
+            {/* Name & Email */}
             <Text style={styles.userName}>{name}</Text>
             <Text style={styles.userEmail}>{subtitle}</Text>
 
-            {!isAnonymous && onEditPress && (
-                <Pressable style={styles.editButton} onPress={onEditPress}>
-                    <Ionicons name="pencil-outline" size={16} color={theme.colors.primary} />
-                    <Text style={styles.editButtonText}>Edit Profile</Text>
-                </Pressable>
-            )}
-
+            {/* Anonymous CTA */}
             {isAnonymous && onSignInPress && (
-                <Pressable style={styles.editButton} onPress={onSignInPress}>
-                    <Text style={styles.editButtonText}>Sign In / Sign Up</Text>
+                <Pressable style={styles.signInButton} onPress={onSignInPress}>
+                    <LinearGradient
+                        colors={[theme.colors.primary, theme.colors.primaryDark]}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        style={styles.signInGradient}
+                    >
+                        <Ionicons name="log-in-outline" size={18} color="#FFFFFF" />
+                        <Text style={styles.signInText}>Sign In / Sign Up</Text>
+                    </LinearGradient>
                 </Pressable>
             )}
         </View>
@@ -51,19 +77,56 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
 const styles = StyleSheet.create((theme) => ({
     container: {
         alignItems: 'center',
-        paddingVertical: theme.spacing.xl,
+        paddingVertical: theme.spacing.xxl,
+        paddingHorizontal: theme.spacing.xl,
         marginHorizontal: theme.spacing.lg,
-        marginBottom: theme.spacing.xl,
+        marginBottom: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xxl,
-        ...theme.shadows.md,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        overflow: 'hidden',
+    },
+    gradientBg: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: 100,
+    },
+    avatarWrapper: {
+        position: 'relative',
+        marginBottom: theme.spacing.md,
+    },
+    avatarRing: {
+        width: 88,
+        height: 88,
+        borderRadius: 44,
+        padding: 3,
+    },
+    avatarInner: {
+        flex: 1,
+        borderRadius: 42,
+        backgroundColor: theme.colors.surface,
+        padding: 2,
     },
     avatar: {
-        width: theme.avatarSize.xl,
-        height: theme.avatarSize.xl,
-        borderRadius: theme.radius.full,
+        flex: 1,
+        borderRadius: 40,
         backgroundColor: theme.colors.borderLight,
-        marginBottom: theme.spacing.md,
+    },
+    verifiedBadge: {
+        position: 'absolute',
+        bottom: 2,
+        right: 2,
+        width: 22,
+        height: 22,
+        borderRadius: 11,
+        backgroundColor: theme.colors.success,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 2,
+        borderColor: theme.colors.surface,
     },
     userName: {
         fontSize: theme.typography.size.xxl,
@@ -74,21 +137,22 @@ const styles = StyleSheet.create((theme) => ({
     userEmail: {
         fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
-        marginBottom: theme.spacing.lg,
     },
-    editButton: {
+    signInButton: {
+        marginTop: theme.spacing.lg,
+        borderRadius: theme.radius.full,
+        overflow: 'hidden',
+    },
+    signInGradient: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: theme.spacing.xs,
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.sm,
-        borderRadius: theme.radius.full,
-        borderWidth: 1,
-        borderColor: theme.colors.primary,
+        gap: theme.spacing.sm,
+        paddingHorizontal: theme.spacing.xl,
+        paddingVertical: theme.spacing.md,
     },
-    editButtonText: {
+    signInText: {
         fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.primary,
+        fontWeight: theme.typography.weight.bold,
+        color: '#FFFFFF',
     },
 }));
