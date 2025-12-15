@@ -5,7 +5,7 @@ import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuthor, useStories } from '@/hooks/useQueries';
-import { BookCard } from '@/components';
+import { BookCard, NetworkError } from '@/components';
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
 
@@ -15,7 +15,7 @@ export default function AuthorScreen() {
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
 
-    const { data: authorData, isLoading: loadingAuthor } = useAuthor(id || '');
+    const { data: authorData, isLoading: loadingAuthor, error: errorAuthor, refetch: refetchAuthor } = useAuthor(id || '');
     const { data: storiesData } = useStories();
 
     const author = useMemo(() => {
@@ -24,7 +24,7 @@ export default function AuthorScreen() {
             id: authorData._id,
             name: authorData.name,
             bio: authorData.bio,
-            avatar: authorData.avatar ? urlFor(authorData.avatar).width(200).url() : null,
+            avatar: authorData.image ? urlFor(authorData.image).width(200).url() : null,
             storyCount: authorData.storyCount || 0,
         };
     }, [authorData]);
@@ -46,6 +46,16 @@ export default function AuthorScreen() {
     }
 
     if (!author) {
+        if (errorAuthor) {
+            return (
+                <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
+                    <NetworkError
+                        message="Failed to load author. Please try again."
+                        onRetry={refetchAuthor}
+                    />
+                </View>
+            );
+        }
         return (
             <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
                 <Text style={styles.errorText}>Author not found</Text>

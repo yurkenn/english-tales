@@ -17,6 +17,7 @@
   "dependencies": {
     "@expo/vector-icons": "^15.0.2",
     "@hookform/resolvers": "^5.2.2",
+    "@portabletext/react": "^6.0.0",
     "@portabletext/types": "^4.0.0",
     "@react-native-async-storage/async-storage": "^1.24.0",
     "@react-native-community/netinfo": "11.4.1",

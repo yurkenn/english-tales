@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { View, Text, FlatList, ActivityIndicator, Pressable } from 'react-native';
+import React, { useMemo, useState, useCallback } from 'react';
+import { View, Text, FlatList, ActivityIndicator, Pressable, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -7,12 +7,17 @@ import { Ionicons } from '@expo/vector-icons';
 import { useStoriesByCategory } from '@/hooks/useQueries';
 import { BookListItem, NetworkError } from '@/components';
 import { mapSanityStory } from '@/utils/storyMapper';
+import { useLibraryStore } from '@/store/libraryStore';
+import { haptics } from '@/utils/haptics';
+import { Story } from '@/types';
 
 export default function CategoryScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { id, title } = useLocalSearchParams<{ id: string; title?: string }>();
+    const { actions: libraryActions } = useLibraryStore();
+    const [refreshing, setRefreshing] = useState(false);
 
     const { data: storiesData, isLoading, isError, refetch } = useStoriesByCategory(id || '');
 
@@ -23,6 +28,21 @@ export default function CategoryScreen() {
     const handleStoryPress = (storyId: string) => {
         router.push(`/story/${storyId}`);
     };
+
+    const handleBookmarkPress = async (story: Story) => {
+        haptics.selection();
+        if (libraryActions.isInLibrary(story.id)) {
+            await libraryActions.removeFromLibrary(story.id);
+        } else {
+            await libraryActions.addToLibrary(story);
+        }
+    };
+
+    const onRefresh = useCallback(async () => {
+        setRefreshing(true);
+        await refetch();
+        setRefreshing(false);
+    }, [refetch]);
 
     if (isLoading) {
         return (
@@ -62,11 +82,21 @@ export default function CategoryScreen() {
                     <BookListItem
                         story={item}
                         onPress={() => handleStoryPress(item.id)}
+                        onBookmarkPress={() => handleBookmarkPress(item)}
+                        isBookmarked={libraryActions.isInLibrary(item.id)}
                     />
                 )}
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                refreshControl={
+                    <RefreshControl
+                        refreshing={refreshing}
+                        onRefresh={onRefresh}
+                        tintColor={theme.colors.primary}
+                        colors={[theme.colors.primary]}
+                    />
+                }
                 ListEmptyComponent={
                     <View style={styles.emptyState}>
                         <Ionicons name="book-outline" size={48} color={theme.colors.textMuted} />

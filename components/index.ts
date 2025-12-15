@@ -29,6 +29,8 @@ export { ReadingGoalsModal } from './ReadingGoalsModal';
 export { StoryHero } from './StoryHero';
 export { StoryMeta } from './StoryMeta';
 export { ReviewCard } from './ReviewCard';
+export { PortableTextRenderer } from './PortableTextRenderer';
+export { AuthorSpotlight } from './AuthorSpotlight';
 
 
 

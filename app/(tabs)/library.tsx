@@ -9,6 +9,9 @@ import { LibraryItem } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
+import { haptics } from '@/utils/haptics';
+
+type FilterType = 'all' | 'in-progress' | 'completed' | 'not-started';
 
 export default function LibraryScreen() {
     const { theme } = useUnistyles();
@@ -19,6 +22,7 @@ export default function LibraryScreen() {
     const { progressMap, actions: progressActions } = useProgressStore();
 
     const [refreshing, setRefreshing] = useState(false);
+    const [filter, setFilter] = useState<FilterType>('all');
 
     const onRefresh = useCallback(async () => {
         setRefreshing(true);
@@ -52,6 +56,36 @@ export default function LibraryScreen() {
         const inProgress = libraryWithProgress.filter((i) => i.progress && !i.progress.isCompleted).length;
         return { total, completed, inProgress };
     }, [libraryWithProgress]);
+
+    // Filtered list based on filter state
+    const filteredLibrary = useMemo(() => {
+        switch (filter) {
+            case 'completed':
+                return libraryWithProgress.filter((i) => i.progress?.isCompleted);
+            case 'in-progress':
+                return libraryWithProgress.filter((i) => i.progress && i.progress.percentage > 0 && !i.progress.isCompleted);
+            case 'not-started':
+                return libraryWithProgress.filter((i) => !i.progress || i.progress.percentage === 0);
+            default:
+                return libraryWithProgress;
+        }
+    }, [libraryWithProgress, filter]);
+
+    const cycleFilter = () => {
+        haptics.selection();
+        const filters: FilterType[] = ['all', 'in-progress', 'completed', 'not-started'];
+        const currentIndex = filters.indexOf(filter);
+        setFilter(filters[(currentIndex + 1) % filters.length]);
+    };
+
+    const getFilterLabel = () => {
+        switch (filter) {
+            case 'all': return 'All';
+            case 'in-progress': return 'Reading';
+            case 'completed': return 'Done';
+            case 'not-started': return 'New';
+        }
+    };
 
     const handleStoryPress = (storyId: string) => {
         router.push(`/story/${storyId}`);
@@ -174,6 +208,7 @@ export default function LibraryScreen() {
                     <Pressable
                         style={styles.headerButton}
                         hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                        onPress={() => router.push('/search')}
                     >
                         <Ionicons
                             name="search-outline"
@@ -182,17 +217,28 @@ export default function LibraryScreen() {
                         />
                     </Pressable>
                     <Pressable
-                        style={styles.headerButton}
+                        style={[styles.headerButton, filter !== 'all' && styles.filterActive]}
                         hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                        onPress={cycleFilter}
                     >
                         <Ionicons
                             name="filter-outline"
                             size={theme.iconSize.md}
-                            color={theme.colors.text}
+                            color={filter !== 'all' ? theme.colors.primary : theme.colors.text}
                         />
                     </Pressable>
                 </View>
             </View>
+
+            {/* Filter Badge */}
+            {filter !== 'all' && (
+                <View style={styles.filterBadgeRow}>
+                    <Pressable style={styles.filterBadge} onPress={cycleFilter}>
+                        <Text style={styles.filterBadgeText}>{getFilterLabel()}</Text>
+                        <Ionicons name="close-circle" size={16} color={theme.colors.primary} />
+                    </Pressable>
+                </View>
+            )}
 
             {/* Stats */}
             <View style={styles.statsRow}>
@@ -214,7 +260,7 @@ export default function LibraryScreen() {
 
             {/* Book List */}
             <FlatList
-                data={libraryWithProgress}
+                data={filteredLibrary}
                 keyExtractor={(item) => item.storyId}
                 renderItem={renderItem}
                 contentContainerStyle={styles.listContent}
@@ -231,10 +277,10 @@ export default function LibraryScreen() {
                 ListEmptyComponent={
                     <EmptyState
                         icon="book-outline"
-                        title="Your library is empty"
-                        message="Start reading to add books to your library"
-                        actionLabel="Discover Stories"
-                        onAction={() => router.push('/(tabs)/discover')}
+                        title={filter === 'all' ? "Your library is empty" : `No ${getFilterLabel().toLowerCase()} books`}
+                        message={filter === 'all' ? "Start reading to add books to your library" : "Try changing the filter"}
+                        actionLabel={filter === 'all' ? "Discover Stories" : "Clear Filter"}
+                        onAction={filter === 'all' ? () => router.push('/(tabs)/discover') : () => setFilter('all')}
                     />
                 }
             />
@@ -270,6 +316,28 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.full,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    filterActive: {
+        backgroundColor: `${theme.colors.primary}15`,
+    },
+    filterBadgeRow: {
+        paddingHorizontal: theme.spacing.lg,
+        marginBottom: theme.spacing.md,
+    },
+    filterBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        alignSelf: 'flex-start',
+        gap: theme.spacing.xs,
+        paddingHorizontal: theme.spacing.md,
+        paddingVertical: theme.spacing.xs,
+        backgroundColor: `${theme.colors.primary}15`,
+        borderRadius: theme.radius.full,
+    },
+    filterBadgeText: {
+        fontSize: theme.typography.size.sm,
+        fontWeight: theme.typography.weight.medium,
+        color: theme.colors.primary,
     },
     statsRow: {
         flexDirection: 'row',

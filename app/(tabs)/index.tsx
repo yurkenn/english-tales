@@ -12,6 +12,7 @@ import {
     ContinueReadingCard,
     FeaturedCard,
     BookListItem,
+    NetworkError,
 } from '@/components';
 import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries';
 import { Story } from '@/types';
@@ -19,6 +20,7 @@ import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { mapSanityStory } from '@/utils/storyMapper';
+import { haptics } from '@/utils/haptics';
 
 // Get time-based greeting
 const getGreeting = (): string => {
@@ -36,9 +38,9 @@ export default function HomeScreen() {
     const [selectedGenre, setSelectedGenre] = useState(0);
 
     // Fetch data
-    const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories } = useCategories();
-    const { data: featuredData, isLoading: loadingFeatured, refetch: refetchFeatured } = useFeaturedStories();
-    const { data: storiesData, isLoading: loadingStories, refetch: refetchStories } = useStories();
+    const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories, error: errorCategories } = useCategories();
+    const { data: featuredData, isLoading: loadingFeatured, refetch: refetchFeatured, error: errorFeatured } = useFeaturedStories();
+    const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
 
     // Transform Categories
     const genres = useMemo(() => {
@@ -63,7 +65,7 @@ export default function HomeScreen() {
     const trendingList = allStories.slice(2, 6); // Just taking some other slice
 
     // Get continue reading from real progress data
-    const { items: libraryItems } = useLibraryStore();
+    const { items: libraryItems, actions: libraryActions } = useLibraryStore();
     const { progressMap } = useProgressStore();
 
     const continueReading = useMemo(() => {
@@ -92,6 +94,15 @@ export default function HomeScreen() {
         router.push(`/reading/${storyId}`);
     };
 
+    const handleBookmarkPress = async (story: Story) => {
+        haptics.selection();
+        if (libraryActions.isInLibrary(story.id)) {
+            await libraryActions.removeFromLibrary(story.id);
+        } else {
+            await libraryActions.addToLibrary(story);
+        }
+    };
+
     const isLoading = loadingCategories || loadingFeatured || loadingStories;
     const [refreshing, setRefreshing] = useState(false);
 
@@ -109,6 +120,18 @@ export default function HomeScreen() {
         return (
             <View style={[styles.container, styles.center]}>
                 <ActivityIndicator size="large" color={theme.colors.primary} />
+            </View>
+        );
+    }
+
+    const hasError = errorCategories || errorFeatured || errorStories;
+    if (hasError) {
+        return (
+            <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
+                <NetworkError
+                    message="Failed to load stories. Please check your connection."
+                    onRetry={onRefresh}
+                />
             </View>
         );
     }
@@ -243,7 +266,8 @@ export default function HomeScreen() {
                                 key={story.id}
                                 story={story}
                                 onPress={() => handleStoryPress(story.id)}
-                                onBookmarkPress={() => { }}
+                                onBookmarkPress={() => handleBookmarkPress(story)}
+                                isBookmarked={libraryActions.isInLibrary(story.id)}
                             />
                         ))}
                     </View>

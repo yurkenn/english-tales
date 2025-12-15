@@ -1,16 +1,17 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { View, Text, ScrollView, FlatList, Pressable, ImageBackground, ActivityIndicator, RefreshControl } from 'react-native';
+import { View, Text, ScrollView, FlatList, Pressable, ActivityIndicator, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
 import {
     SearchBar,
     GenreChip,
     SectionHeader,
     BookCard,
     BookListItem,
+    NetworkError,
+    AuthorSpotlight,
 } from '@/components';
 import { useStories, useFeaturedAuthor, useCategories } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
@@ -24,9 +25,9 @@ export default function DiscoverScreen() {
     const [selectedGenre, setSelectedGenre] = useState(0);
 
     // Fetch real data from Sanity
-    const { data: storiesData, isLoading: loadingStories, refetch: refetchStories } = useStories();
-    const { data: authorData, isLoading: loadingAuthor, refetch: refetchAuthor } = useFeaturedAuthor();
-    const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories } = useCategories();
+    const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
+    const { data: authorData, isLoading: loadingAuthor, refetch: refetchAuthor, error: errorAuthor } = useFeaturedAuthor();
+    const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories, error: errorCategories } = useCategories();
 
     // Transform data
     const allStories = useMemo(() => {
@@ -85,6 +86,18 @@ export default function DiscoverScreen() {
         return (
             <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
                 <ActivityIndicator size="large" color={theme.colors.primary} />
+            </View>
+        );
+    }
+
+    const hasError = errorStories || errorAuthor || errorCategories;
+    if (hasError) {
+        return (
+            <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
+                <NetworkError
+                    message="Failed to load content. Please try again."
+                    onRetry={onRefresh}
+                />
             </View>
         );
     }
@@ -152,35 +165,13 @@ export default function DiscoverScreen() {
                     <View style={styles.section}>
                         <SectionHeader title="Author Spotlight" />
                         <View style={styles.sectionContent}>
-                            <Pressable style={styles.spotlightCard}>
-                                <ImageBackground
-                                    source={{ uri: featuredAuthor.imageUrl || 'https://via.placeholder.com/400x300' }}
-                                    style={styles.spotlightImage}
-                                    resizeMode="cover"
-                                >
-                                    <LinearGradient
-                                        colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.9)']}
-                                        style={styles.spotlightGradient}
-                                    />
-                                    <View style={styles.spotlightContent}>
-                                        <View style={styles.featuredBadge}>
-                                            <Text style={styles.featuredBadgeText}>Featured</Text>
-                                        </View>
-                                        <Text style={styles.spotlightName}>{featuredAuthor.name}</Text>
-                                        <Text style={styles.spotlightBio} numberOfLines={2}>
-                                            {featuredAuthor.bio}
-                                        </Text>
-                                        <Pressable style={styles.spotlightButton}>
-                                            <Text style={styles.spotlightButtonText}>Read Now</Text>
-                                            <Ionicons
-                                                name="arrow-forward"
-                                                size={14}
-                                                color={theme.colors.text}
-                                            />
-                                        </Pressable>
-                                    </View>
-                                </ImageBackground>
-                            </Pressable>
+                            <AuthorSpotlight
+                                id={featuredAuthor.id}
+                                name={featuredAuthor.name}
+                                bio={featuredAuthor.bio}
+                                imageUrl={featuredAuthor.imageUrl}
+                                onPress={() => router.push(`/author/${featuredAuthor.id}`)}
+                            />
                         </View>
                     </View>
                 )}
@@ -319,61 +310,6 @@ const styles = StyleSheet.create((theme) => ({
     },
     carouselContent: {
         paddingHorizontal: theme.spacing.lg,
-    },
-    spotlightCard: {
-        borderRadius: theme.radius.xl,
-        overflow: 'hidden',
-        ...theme.shadows.lg,
-    },
-    spotlightImage: {
-        aspectRatio: 4 / 3,
-        justifyContent: 'flex-end',
-    },
-    spotlightGradient: {
-        ...StyleSheet.absoluteFillObject,
-    },
-    spotlightContent: {
-        padding: theme.spacing.xl,
-        gap: theme.spacing.sm,
-    },
-    featuredBadge: {
-        alignSelf: 'flex-start',
-        backgroundColor: theme.colors.primary,
-        paddingHorizontal: theme.spacing.sm,
-        paddingVertical: theme.spacing.xs,
-        borderRadius: theme.radius.sm,
-    },
-    featuredBadgeText: {
-        color: theme.colors.textInverse,
-        fontSize: theme.typography.size.xs,
-        fontWeight: theme.typography.weight.bold,
-        textTransform: 'uppercase',
-        letterSpacing: 0.5,
-    },
-    spotlightName: {
-        fontSize: theme.typography.size.xxxl,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.textInverse,
-    },
-    spotlightBio: {
-        fontSize: theme.typography.size.md,
-        color: 'rgba(255, 255, 255, 0.9)',
-        lineHeight: 22,
-    },
-    spotlightButton: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: theme.spacing.sm,
-        backgroundColor: theme.colors.textInverse,
-        height: 44,
-        borderRadius: theme.radius.lg,
-        marginTop: theme.spacing.sm,
-    },
-    spotlightButtonText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
     },
     genreGrid: {
         flexDirection: 'row',

@@ -10,6 +10,7 @@ import {
     StoryHero,
     StoryMeta,
     ReviewCard,
+    NetworkError,
 } from '@/components';
 import { useStory, useStoryRating, useReviewsByStory, useCreateReview } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
@@ -30,12 +31,12 @@ export default function StoryDetailScreen() {
     const createReview = useCreateReview();
 
     // Fetch data
-    const { data: storyDoc, isLoading: loadingStory } = useStory(id || '');
-    const { data: ratingData, isLoading: loadingRating } = useStoryRating(id || '');
-    const { data: reviewsData, isLoading: loadingReviews } = useReviewsByStory(id || '');
+    const { data: storyDoc, isLoading: loadingStory, error: errorStory, refetch: refetchStory } = useStory(id || '');
+    const { data: ratingData, isLoading: loadingRating, refetch: refetchRating } = useStoryRating(id || '');
+    const { data: reviewsData, isLoading: loadingReviews, refetch: refetchReviews } = useReviewsByStory(id || '');
 
     // Transform Story
-    const story: Story | null = useMemo(() => {
+    const story = useMemo(() => {
         if (!storyDoc) return null;
         return {
             id: storyDoc._id,
@@ -44,6 +45,7 @@ export default function StoryDetailScreen() {
             content: storyDoc.content || '',
             coverImage: storyDoc.coverImage ? urlFor(storyDoc.coverImage).width(800).url() : '',
             author: storyDoc.author?.name || 'Unknown Author',
+            authorId: storyDoc.author?._id || null,
             difficulty: storyDoc.difficulty || 'intermediate',
             estimatedReadTime: storyDoc.estimatedReadTime || 5,
             wordCount: storyDoc.wordCount || 1000,
@@ -78,6 +80,20 @@ export default function StoryDetailScreen() {
     }
 
     if (!story) {
+        if (errorStory) {
+            return (
+                <View style={[styles.container, { paddingTop: insets.top }, styles.center]}>
+                    <NetworkError
+                        message="Failed to load story. Please try again."
+                        onRetry={() => {
+                            refetchStory();
+                            refetchRating();
+                            refetchReviews();
+                        }}
+                    />
+                </View>
+            );
+        }
         return (
             <View style={[styles.container, { paddingTop: insets.top }, styles.center]}>
                 <Text style={styles.errorText}>Story not found</Text>
@@ -109,7 +125,9 @@ export default function StoryDetailScreen() {
                     {/* Title and Author */}
                     <View style={styles.titleSection}>
                         <Text style={styles.title}>{story.title}</Text>
-                        <Text style={styles.author}>{story.author}</Text>
+                        <Pressable onPress={() => story.authorId && router.push(`/author/${story.authorId}`)}>
+                            <Text style={[styles.author, story.authorId && { color: theme.colors.primary }]}>{story.author}</Text>
+                        </Pressable>
                     </View>
 
                     {/* Rating */}
@@ -128,7 +146,7 @@ export default function StoryDetailScreen() {
 
                     {/* Tags */}
                     <View style={styles.tagsRow}>
-                        {story.tags.map((tag) => (
+                        {story.tags.map((tag: string) => (
                             <View key={tag} style={styles.tag}>
                                 <Text style={styles.tagText}>{tag}</Text>
                             </View>

@@ -4,7 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { ProgressBar } from '@/components';
+import { ProgressBar, PortableTextRenderer } from '@/components';
 import { useStory } from '@/hooks/useQueries';
 import { useProgressStore } from '@/store/progressStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
@@ -81,17 +81,7 @@ export default function ReadingScreen() {
         };
     }, []);
 
-    const content = useMemo(() => {
-        if (!storyDoc?.content) return 'No content available.';
-
-        // Simple plain text extractor for Portable Text
-        return (storyDoc.content as PortableTextBlock[])
-            .map(block => {
-                if (block._type !== 'block' || !block.children) return '';
-                return (block.children as any[]).map(child => child.text).join('');
-            })
-            .join('\n\n');
-    }, [storyDoc]);
+    const content = storyDoc?.content as PortableTextBlock[] | undefined;
 
     const handleScroll = useCallback((event: any) => {
         const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
@@ -185,9 +175,18 @@ export default function ReadingScreen() {
                 onScroll={handleScroll}
                 scrollEventThrottle={16}
             >
-                <Text style={[styles.storyText, { fontSize, color: readingThemes[readingTheme].text, lineHeight: fontSize * lineHeight }]}>
-                    {content}
-                </Text>
+                {content ? (
+                    <PortableTextRenderer
+                        content={content}
+                        fontSize={fontSize}
+                        lineHeight={lineHeight}
+                        textColor={readingThemes[readingTheme].text}
+                    />
+                ) : (
+                    <Text style={[styles.storyText, { fontSize, color: readingThemes[readingTheme].text }]}>
+                        No content available.
+                    </Text>
+                )}
             </ScrollView>
 
             {/* Bottom Controls */}
