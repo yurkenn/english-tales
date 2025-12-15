@@ -10,6 +10,7 @@ import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { haptics } from '@/utils/haptics';
+import { sendPasswordResetEmail } from '@/services/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type IconName = React.ComponentProps<typeof Ionicons>['name'];
@@ -188,7 +189,30 @@ export default function SettingsScreen() {
                             label="Change Password"
                             onPress={() => {
                                 haptics.selection();
-                                Alert.alert('Change Password', 'A password reset email will be sent to your email address.');
+                                if (!user?.email) {
+                                    Alert.alert('Error', 'No email associated with this account.');
+                                    return;
+                                }
+                                Alert.alert(
+                                    'Change Password',
+                                    `A password reset email will be sent to ${user.email}`,
+                                    [
+                                        { text: 'Cancel', style: 'cancel' },
+                                        {
+                                            text: 'Send',
+                                            onPress: async () => {
+                                                try {
+                                                    await sendPasswordResetEmail(user.email!);
+                                                    haptics.success();
+                                                    Alert.alert('Success', 'Password reset email sent! Check your inbox.');
+                                                } catch (error) {
+                                                    haptics.error();
+                                                    Alert.alert('Error', 'Failed to send reset email. Please try again.');
+                                                }
+                                            }
+                                        }
+                                    ]
+                                );
                             }}
                         />
                     </View>

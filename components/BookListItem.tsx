@@ -3,13 +3,13 @@ import { View, Text, Image, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { Story } from '@/types';
-import { getStoryRating } from '@/data/mock';
 
 interface BookListItemProps {
     story: Story;
     onPress?: () => void;
     onBookmarkPress?: () => void;
     isBookmarked?: boolean;
+    rating?: number | null;
 }
 
 export const BookListItem: React.FC<BookListItemProps> = ({
@@ -17,9 +17,9 @@ export const BookListItem: React.FC<BookListItemProps> = ({
     onPress,
     onBookmarkPress,
     isBookmarked = false,
+    rating = null,
 }) => {
     const { theme } = useUnistyles();
-    const { rating } = getStoryRating(story.id);
 
     return (
         <Pressable style={styles.container} onPress={onPress}>
@@ -57,14 +57,16 @@ export const BookListItem: React.FC<BookListItemProps> = ({
                     <View style={styles.tag}>
                         <Text style={styles.tagText}>{story.tags[0]}</Text>
                     </View>
-                    <View style={styles.ratingContainer}>
-                        <Ionicons
-                            name="star"
-                            size={12}
-                            color={theme.colors.star}
-                        />
-                        <Text style={styles.ratingText}>{rating.toFixed(1)}</Text>
-                    </View>
+                    {rating !== null && (
+                        <View style={styles.ratingContainer}>
+                            <Ionicons
+                                name="star"
+                                size={12}
+                                color={theme.colors.star}
+                            />
+                            <Text style={styles.ratingText}>{rating.toFixed(1)}</Text>
+                        </View>
+                    )}
                 </View>
             </View>
         </Pressable>

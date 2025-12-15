@@ -7,7 +7,7 @@ export const categorySchema = defineType({
     fields: [
         defineField({
             name: 'title',
-            title: 'Title',
+            title: 'Kategori Adı',
             type: 'string',
             validation: (Rule) => Rule.required(),
         }),
@@ -23,34 +23,49 @@ export const categorySchema = defineType({
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Açıklama',
             type: 'text',
             rows: 2,
         }),
         defineField({
             name: 'icon',
-            title: 'Icon Name',
+            title: 'İkon Adı',
             type: 'string',
-            description: 'Ionicons icon name (e.g., "book-outline", "heart-outline")',
+            description: 'Ionicons ikon adı (örn: "book-outline", "heart-outline")',
         }),
         defineField({
             name: 'color',
-            title: 'Color',
+            title: 'Renk',
             type: 'string',
-            description: 'Hex color for category (e.g., "#EA2A33")',
+            description: 'Hex renk kodu (örn: "#EA2A33")',
         }),
         defineField({
             name: 'order',
-            title: 'Display Order',
+            title: 'Sıralama',
             type: 'number',
             initialValue: 0,
+            description: 'Düşük sayı = Önce gösterilir',
         }),
     ],
     orderings: [
         {
-            title: 'Display Order',
+            title: 'Sıralama',
             name: 'orderAsc',
             by: [{ field: 'order', direction: 'asc' }],
         },
     ],
+    preview: {
+        select: {
+            title: 'title',
+            order: 'order',
+            icon: 'icon',
+        },
+        prepare(selection) {
+            const { title, order, icon } = selection
+            return {
+                title: title,
+                subtitle: `Sıra: ${order || 0} • İkon: ${icon || 'Yok'}`,
+            }
+        },
+    },
 })

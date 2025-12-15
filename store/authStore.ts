@@ -11,6 +11,7 @@ interface AuthState {
     setIsLoading: (isLoading: boolean) => void;
     signOut: () => Promise<void>;
     signInAnonymously: () => Promise<void>;
+    updateProfile: (displayName: string) => Promise<void>;
     initialize: () => () => void; // Returns unsubscribe function
 }
 
@@ -30,6 +31,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         // Just triggering the service call here
         const { signInAnonymously } = await import('@/services/auth');
         await signInAnonymously();
+    },
+    updateProfile: async (displayName: string) => {
+        const { updateUserProfile } = await import('@/services/auth');
+        const updatedUser = await updateUserProfile(displayName);
+        set({ user: updatedUser });
     },
     initialize: () => {
         if (get().initialized) return () => { };

@@ -1,6 +1,9 @@
 import { create } from 'zustand';
 import { Settings } from '@/types';
 import { Result } from '@/types/api';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const SETTINGS_KEY = '@english_tales_settings';
 
 // State
 interface SettingsState {
@@ -12,8 +15,8 @@ interface SettingsState {
 // Actions
 interface SettingsActions {
     updateSettings: (updates: Partial<Settings>) => Promise<Result<Settings>>;
-    resetSettings: () => void;
-    fetchSettings: () => Promise<Result<Settings>>;
+    resetSettings: () => Promise<void>;
+    loadSettings: () => Promise<void>;
 }
 
 // Default settings
@@ -37,8 +40,8 @@ export const useSettingsStore = create<SettingsState & { actions: SettingsAction
     actions: {
         updateSettings: async (updates) => {
             try {
-                // TODO: Add persistence (AsyncStorage or Firebase)
                 const newSettings = { ...get().settings, ...updates };
+                await AsyncStorage.setItem(SETTINGS_KEY, JSON.stringify(newSettings));
                 set({ settings: newSettings });
                 return { success: true, data: newSettings };
             } catch (error) {
@@ -48,18 +51,24 @@ export const useSettingsStore = create<SettingsState & { actions: SettingsAction
             }
         },
 
-        resetSettings: () => set({ settings: defaultSettings }),
+        resetSettings: async () => {
+            await AsyncStorage.removeItem(SETTINGS_KEY);
+            set({ settings: defaultSettings });
+        },
 
-        fetchSettings: async () => {
+        loadSettings: async () => {
             set({ isLoading: true, error: null });
             try {
-                // TODO: Add persistence (AsyncStorage or Firebase)
-                set({ isLoading: false });
-                return { success: true, data: get().settings };
+                const stored = await AsyncStorage.getItem(SETTINGS_KEY);
+                if (stored) {
+                    const parsed = JSON.parse(stored) as Settings;
+                    set({ settings: { ...defaultSettings, ...parsed }, isLoading: false });
+                } else {
+                    set({ isLoading: false });
+                }
             } catch (error) {
-                const message = error instanceof Error ? error.message : 'Failed to fetch settings';
+                const message = error instanceof Error ? error.message : 'Failed to load settings';
                 set({ isLoading: false, error: message });
-                return { success: false, error: message };
             }
         },
     },

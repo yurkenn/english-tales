@@ -5,21 +5,25 @@ import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Story } from '@/types';
 import { RatingStars } from './RatingStars';
-import { getStoryRating } from '@/data/mock';
 
 interface FeaturedCardProps {
     story: Story;
     badge?: string;
     onPress?: () => void;
+    rating?: number | null;
+    reviewCount?: number | null;
 }
 
 export const FeaturedCard: React.FC<FeaturedCardProps> = ({
     story,
     badge = "Editor's Choice",
     onPress,
+    rating = null,
+    reviewCount = null,
 }) => {
     const { theme } = useUnistyles();
-    const { rating, count } = getStoryRating(story.id);
+    const displayRating = rating ?? 0;
+    const count = reviewCount ?? 0;
 
     const formatCount = (num: number): string => {
         if (num >= 1000) {
@@ -57,8 +61,8 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
             <View style={styles.content}>
                 {/* Rating */}
                 <View style={styles.ratingRow}>
-                    <RatingStars rating={rating} size="md" showEmpty />
-                    <Text style={styles.ratingValue}>{rating.toFixed(1)}</Text>
+                    <RatingStars rating={displayRating} size="md" showEmpty />
+                    <Text style={styles.ratingValue}>{displayRating.toFixed(1)}</Text>
                     <Text style={styles.ratingCount}>({formatCount(count)} reviews)</Text>
                 </View>
 

@@ -16,6 +16,19 @@ export { WriteReviewModal } from './WriteReviewModal';
 export { AchievementToast } from './AchievementToast';
 export { EmptyState } from './EmptyState';
 export { StatBar, WeeklyChart } from './ReadingStats';
+export { SearchHeader } from './SearchHeader';
+export { SearchEmptyState } from './SearchEmptyState';
+export { RecentSearches } from './RecentSearches';
+export { TrendingSuggestions } from './TrendingSuggestions';
+export { ProfileCard } from './ProfileCard';
+export { StatsGrid } from './StatsGrid';
+export { ProfileMenu } from './ProfileMenu';
+export type { MenuItem } from './ProfileMenu';
+export { EditProfileModal } from './EditProfileModal';
+export { ReadingGoalsModal } from './ReadingGoalsModal';
+export { StoryHero } from './StoryHero';
+export { StoryMeta } from './StoryMeta';
+export { ReviewCard } from './ReviewCard';
 
 
 

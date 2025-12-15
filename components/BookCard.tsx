@@ -3,21 +3,21 @@ import { View, Text, Image, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { Story } from '@/types';
-import { getStoryRating } from '@/data/mock';
 
 interface BookCardProps {
     story: Story;
     onPress?: () => void;
     showRank?: number;
+    rating?: number | null;
 }
 
 export const BookCard: React.FC<BookCardProps> = ({
     story,
     onPress,
     showRank,
+    rating = null,
 }) => {
     const { theme } = useUnistyles();
-    const { rating } = getStoryRating(story.id);
 
     return (
         <Pressable style={styles.container} onPress={onPress}>
@@ -31,14 +31,16 @@ export const BookCard: React.FC<BookCardProps> = ({
                     </View>
                 )}
                 {/* Rating Badge */}
-                <View style={styles.ratingBadge}>
-                    <Ionicons
-                        name="star"
-                        size={10}
-                        color={theme.colors.star}
-                    />
-                    <Text style={styles.ratingText}>{rating.toFixed(1)}</Text>
-                </View>
+                {rating !== null && (
+                    <View style={styles.ratingBadge}>
+                        <Ionicons
+                            name="star"
+                            size={10}
+                            color={theme.colors.star}
+                        />
+                        <Text style={styles.ratingText}>{rating.toFixed(1)}</Text>
+                    </View>
+                )}
             </View>
             {/* Info */}
             <View style={styles.info}>

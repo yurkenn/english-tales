@@ -179,13 +179,13 @@ export default function ReadingScreen() {
 
             {/* Content */}
             <ScrollView
-                style={styles.content}
+                style={[styles.content, { backgroundColor: readingThemes[readingTheme].bg }]}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
                 onScroll={handleScroll}
                 scrollEventThrottle={16}
             >
-                <Text style={[styles.storyText, { fontSize }]}>
+                <Text style={[styles.storyText, { fontSize, color: readingThemes[readingTheme].text, lineHeight: fontSize * lineHeight }]}>
                     {content}
                 </Text>
             </ScrollView>
@@ -244,14 +244,13 @@ export default function ReadingScreen() {
                             } else {
                                 await libraryActions.addToLibrary({
                                     id: id,
-                                    title: storyDoc.title,
+                                    title: storyDoc.title || 'Untitled',
                                     coverImage: storyDoc.coverImage?.asset?.url || '',
                                     author: storyDoc.author?.name || 'Unknown',
                                     description: storyDoc.description || '',
-                                    rating: 0,
-                                    estimatedReadTime: 5,
+                                    estimatedReadTime: storyDoc.estimatedReadTime || 5,
                                     level: storyDoc.level || 'Beginner',
-                                });
+                                } as any);
                             }
                         }}
                     >

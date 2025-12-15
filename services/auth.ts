@@ -5,6 +5,7 @@ import {
     updateProfile,
     onAuthStateChanged,
     signInAnonymously as firebaseSignInAnonymously,
+    sendPasswordResetEmail as firebaseSendPasswordResetEmail,
     User as FirebaseUser,
     AuthError
 } from 'firebase/auth';
@@ -63,5 +64,69 @@ export const signInAnonymously = async () => {
         return mapUser(userCredential.user);
     } catch (error) {
         throw error as AuthError;
+    }
+};
+
+export const updateUserProfile = async (displayName: string): Promise<User> => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+        throw new Error('No user logged in');
+    }
+    try {
+        await updateProfile(currentUser, { displayName });
+        return mapUser(currentUser);
+    } catch (error) {
+        throw error as AuthError;
+    }
+};
+
+export const sendPasswordResetEmail = async (email: string): Promise<void> => {
+    try {
+        await firebaseSendPasswordResetEmail(auth, email);
+    } catch (error) {
+        throw error as AuthError;
+    }
+};
+
+// Google Sign-In
+import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
+import { GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
+
+// Configure Google Sign-In (must be called before using signInWithGoogle)
+GoogleSignin.configure({
+    webClientId: process.env.EXPO_PUBLIC_IOS_CLIENT_ID, // Use web client ID from Firebase Console
+    offlineAccess: true,
+});
+
+export const signInWithGoogle = async (): Promise<User> => {
+    try {
+        // Check for Play Services on Android
+        await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+
+        // Sign in with Google
+        const signInResult = await GoogleSignin.signIn();
+
+        // Get the ID token
+        const idToken = signInResult.data?.idToken;
+        if (!idToken) {
+            throw new Error('No ID token returned from Google Sign-In');
+        }
+
+        // Create Firebase credential
+        const googleCredential = GoogleAuthProvider.credential(idToken);
+
+        // Sign in to Firebase with the Google credential
+        const userCredential = await signInWithCredential(auth, googleCredential);
+
+        return mapUser(userCredential.user);
+    } catch (error: any) {
+        if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+            throw new Error('Sign in was cancelled');
+        } else if (error.code === statusCodes.IN_PROGRESS) {
+            throw new Error('Sign in is already in progress');
+        } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+            throw new Error('Play services not available');
+        }
+        throw error;
     }
 };

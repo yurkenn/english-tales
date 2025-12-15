@@ -1,17 +1,22 @@
-import {defineConfig} from 'sanity'
-// @ts-ignore - defineConfig exists but TypeScript definitions may be incomplete
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { visionTool } from '@sanity/vision'
+import { schemaTypes } from './schemaTypes'
+import { structure } from './structure'
 
 export default defineConfig({
   name: 'default',
-  title: 'blue-hare',
+  title: 'English Tales CMS',
 
   projectId: 'c5kac9s9',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool({
+      structure,
+    }),
+    visionTool(),
+  ],
 
   schema: {
     types: schemaTypes,

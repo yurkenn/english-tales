@@ -7,66 +7,89 @@ export const reviewSchema = defineType({
     fields: [
         defineField({
             name: 'story',
-            title: 'Story',
+            title: 'Hikaye',
             type: 'reference',
             to: [{ type: 'story' }],
             validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'userId',
-            title: 'User ID',
+            title: 'Kullanıcı ID',
             type: 'string',
-            description: 'Firebase user ID',
+            description: 'Firebase kullanıcı ID',
             validation: (Rule) => Rule.required(),
+            readOnly: true,
         }),
         defineField({
             name: 'userName',
-            title: 'User Name',
+            title: 'Kullanıcı Adı',
             type: 'string',
             validation: (Rule) => Rule.required(),
+            readOnly: true,
         }),
         defineField({
             name: 'userAvatar',
-            title: 'User Avatar URL',
+            title: 'Kullanıcı Avatarı',
             type: 'url',
+            readOnly: true,
         }),
         defineField({
             name: 'rating',
-            title: 'Rating',
+            title: 'Puan',
             type: 'number',
             validation: (Rule) => Rule.required().min(1).max(5),
+            readOnly: true,
         }),
         defineField({
             name: 'text',
-            title: 'Review Text',
+            title: 'Yorum Metni',
             type: 'text',
             rows: 4,
             validation: (Rule) => Rule.required().min(10).max(1000),
+            readOnly: true,
         }),
         defineField({
             name: 'isApproved',
-            title: 'Approved',
+            title: '✅ Onaylandı',
             type: 'boolean',
             initialValue: false,
+            description: 'Yorumu onaylamak için işaretleyin',
         }),
         defineField({
             name: 'createdAt',
-            title: 'Created At',
+            title: 'Oluşturulma Tarihi',
             type: 'datetime',
             initialValue: () => new Date().toISOString(),
+            readOnly: true,
         }),
+    ],
+    orderings: [
+        {
+            title: 'En Yeni',
+            name: 'createdAtDesc',
+            by: [{ field: 'createdAt', direction: 'desc' }],
+        },
+        {
+            title: 'Puana Göre',
+            name: 'ratingDesc',
+            by: [{ field: 'rating', direction: 'desc' }],
+        },
     ],
     preview: {
         select: {
-            title: 'userName',
-            subtitle: 'story.title',
+            userName: 'userName',
+            storyTitle: 'story.title',
             rating: 'rating',
+            isApproved: 'isApproved',
+            text: 'text',
         },
         prepare(selection) {
-            const { title, subtitle, rating } = selection
+            const { userName, storyTitle, rating, isApproved, text } = selection
+            const stars = '★'.repeat(rating || 0) + '☆'.repeat(5 - (rating || 0))
+            const status = isApproved ? '✅' : '⏳'
             return {
-                title: `${title} - ${'★'.repeat(rating)}`,
-                subtitle: subtitle,
+                title: `${status} ${userName || 'Anonim'} - ${stars}`,
+                subtitle: `${storyTitle || 'Hikaye'} • ${text?.substring(0, 50)}...`,
             }
         },
     },

@@ -7,7 +7,7 @@ export const authorSchema = defineType({
     fields: [
         defineField({
             name: 'name',
-            title: 'Name',
+            title: 'İsim',
             type: 'string',
             validation: (Rule) => Rule.required(),
         }),
@@ -22,7 +22,7 @@ export const authorSchema = defineType({
         }),
         defineField({
             name: 'image',
-            title: 'Image',
+            title: 'Fotoğraf',
             type: 'image',
             options: {
                 hotspot: true,
@@ -30,28 +30,29 @@ export const authorSchema = defineType({
         }),
         defineField({
             name: 'bio',
-            title: 'Biography',
+            title: 'Biyografi',
             type: 'text',
             rows: 4,
         }),
         defineField({
             name: 'nationality',
-            title: 'Nationality',
+            title: 'Milliyet',
             type: 'string',
         }),
         defineField({
             name: 'birthYear',
-            title: 'Birth Year',
+            title: 'Doğum Yılı',
             type: 'number',
         }),
         defineField({
             name: 'deathYear',
-            title: 'Death Year',
+            title: 'Ölüm Yılı',
             type: 'number',
+            description: 'Yaşıyorsa boş bırakın',
         }),
         defineField({
             name: 'isFeatured',
-            title: 'Featured Author',
+            title: '⭐ Öne Çıkan Yazar',
             type: 'boolean',
             initialValue: false,
         }),
@@ -60,6 +61,17 @@ export const authorSchema = defineType({
         select: {
             title: 'name',
             media: 'image',
+            nationality: 'nationality',
+            isFeatured: 'isFeatured',
+        },
+        prepare(selection) {
+            const { title, media, nationality, isFeatured } = selection
+            const featuredEmoji = isFeatured ? '⭐ ' : ''
+            return {
+                title: `${featuredEmoji}${title}`,
+                subtitle: nationality || '',
+                media,
+            }
         },
     },
 })

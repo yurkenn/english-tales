@@ -4,7 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { signUp } from '@/services/auth';
+import { signUp, signInWithGoogle } from '@/services/auth';
 
 export default function SignupScreen() {
     const { theme } = useUnistyles();
@@ -28,6 +28,20 @@ export default function SignupScreen() {
             // AuthContext will handle redirect
         } catch (error: any) {
             Alert.alert('Signup Failed', error.message);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleGoogleSignIn = async () => {
+        setLoading(true);
+        try {
+            await signInWithGoogle();
+            // AuthContext will handle redirect
+        } catch (error: any) {
+            if (error.message !== 'Sign in was cancelled') {
+                Alert.alert('Google Sign-In Failed', error.message);
+            }
         } finally {
             setLoading(false);
         }
@@ -98,6 +112,23 @@ export default function SignupScreen() {
                         )}
                     </Pressable>
                 </View>
+
+                {/* Divider */}
+                <View style={styles.dividerContainer}>
+                    <View style={styles.divider} />
+                    <Text style={styles.dividerText}>or</Text>
+                    <View style={styles.divider} />
+                </View>
+
+                {/* Social Auth */}
+                <Pressable
+                    style={[styles.googleButton, loading && styles.buttonDisabled]}
+                    onPress={handleGoogleSignIn}
+                    disabled={loading}
+                >
+                    <Ionicons name="logo-google" size={20} color={theme.colors.text} />
+                    <Text style={styles.googleButtonText}>Continue with Google</Text>
+                </Pressable>
 
                 {/* Footer */}
                 <View style={styles.footer}>
@@ -199,5 +230,37 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.primary,
+    },
+    dividerContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginVertical: theme.spacing.xl,
+    },
+    divider: {
+        flex: 1,
+        height: 1,
+        backgroundColor: theme.colors.borderLight,
+    },
+    dividerText: {
+        marginHorizontal: theme.spacing.lg,
+        color: theme.colors.textMuted,
+        fontSize: theme.typography.size.sm,
+    },
+    googleButton: {
+        flexDirection: 'row',
+        height: 56,
+        backgroundColor: theme.colors.surface,
+        borderRadius: theme.radius.xl,
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: theme.spacing.md,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        marginBottom: theme.spacing.xl,
+    },
+    googleButtonText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.semibold,
+        color: theme.colors.text,
     },
 }));

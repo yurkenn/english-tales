@@ -20,6 +20,7 @@
     "@portabletext/types": "^4.0.0",
     "@react-native-async-storage/async-storage": "^1.24.0",
     "@react-native-community/netinfo": "11.4.1",
+    "@react-native-google-signin/google-signin": "^16.0.0",
     "@react-navigation/native": "^7.1.6",
     "@sanity/client": "^7.13.2",
     "@sanity/image-url": "^2.0.2",

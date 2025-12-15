@@ -1,21 +1,30 @@
-import React, { useMemo, useState } from 'react';
-import { View, Text, ScrollView, Pressable, Image, ActivityIndicator, Alert, TextInput, Modal } from 'react-native';
+import React, { useMemo, useState, useEffect } from 'react';
+import { View, Text, ScrollView, Pressable, ActivityIndicator, Alert } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import {
+    ProfileCard,
+    StatsGrid,
+    ProfileMenu,
+    EditProfileModal,
+    ReadingGoalsModal,
+} from '@/components';
+import type { MenuItem } from '@/components';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useThemeStore } from '@/store/themeStore';
 import { useAchievementsStore } from '@/store/achievementsStore';
+import { useSettingsStore } from '@/store/settingsStore';
 import { haptics } from '@/utils/haptics';
 
 export default function ProfileScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
-    const { user, signOut, isLoading } = useAuthStore();
+    const { user, signOut, isLoading, updateProfile } = useAuthStore();
     const { items: libraryItems } = useLibraryStore();
     const { progressMap, actions: progressActions } = useProgressStore();
 
@@ -25,11 +34,9 @@ export default function ProfileScreen() {
         let totalWords = 0;
         let totalMinutes = 0;
 
-        // Count completed books and sum words/time
         Object.values(progressMap).forEach((progress) => {
             if (progress.isCompleted) {
                 booksRead++;
-                // Find story in library to get word count
                 const libraryItem = libraryItems.find((item) => item.storyId === progress.storyId);
                 if (libraryItem?.story) {
                     totalWords += libraryItem.story.wordCount || 0;
@@ -38,14 +45,12 @@ export default function ProfileScreen() {
             }
         });
 
-        // Convert words to approximate page count (250 words per page)
         const pagesRead = Math.ceil(totalWords / 250);
 
         return {
             booksRead,
             pagesRead,
             minutesRead: totalMinutes,
-            // Streak from real reading dates
             readingStreak: progressActions.getStreak(),
         };
     }, [progressMap, libraryItems, progressActions]);
@@ -66,9 +71,14 @@ export default function ProfileScreen() {
     const achievements = achievementActions.getAll();
     const unlockedCount = achievements.filter(a => a.unlocked).length;
 
-    // Edit profile state
+    // Modal states
     const [showEditModal, setShowEditModal] = useState(false);
-    const [editName, setEditName] = useState(user?.displayName || '');
+    const [showGoalsModal, setShowGoalsModal] = useState(false);
+    const { settings, actions: settingsActions } = useSettingsStore();
+
+    useEffect(() => {
+        settingsActions.loadSettings();
+    }, []);
 
     // Menu handlers
     const handleAchievements = () => {
@@ -80,14 +90,9 @@ export default function ProfileScreen() {
         );
     };
 
-    const handleNotifications = () => {
+    const handleNotifications = async () => {
         haptics.selection();
-        Alert.alert('Notifications', 'Coming soon! We\'ll notify you about new stories and reading reminders.', [{ text: 'OK' }]);
-    };
-
-    const handleReadingGoals = () => {
-        haptics.selection();
-        Alert.alert('Reading Goals', 'Coming soon! Set daily reading targets and track your progress.', [{ text: 'OK' }]);
+        await settingsActions.updateSettings({ notificationsEnabled: !settings.notificationsEnabled });
     };
 
     const handleHelp = () => {
@@ -100,13 +105,13 @@ export default function ProfileScreen() {
         Alert.alert('About English Tales', 'Version 1.0.0\n\nImprove your English through beautiful stories.\n\n© 2024 English Tales', [{ text: 'OK' }]);
     };
 
-    const menuItems = [
-        { label: 'Reading Goals', icon: 'flag-outline' as const, onPress: handleReadingGoals },
-        { label: 'Achievements', icon: 'trophy-outline' as const, value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
-        { label: 'Notifications', icon: 'notifications-outline' as const, onPress: handleNotifications },
-        { label: 'Appearance', icon: 'color-palette-outline' as const, value: themeModeLabel, onPress: themeActions.toggleTheme },
-        { label: 'Help & Support', icon: 'help-circle-outline' as const, onPress: handleHelp },
-        { label: 'About', icon: 'information-circle-outline' as const, onPress: handleAbout },
+    const menuItems: MenuItem[] = [
+        { label: 'Reading Goals', icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: () => { haptics.selection(); setShowGoalsModal(true); } },
+        { label: 'Achievements', icon: 'trophy-outline', value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
+        { label: 'Notifications', icon: 'notifications-outline', value: settings.notificationsEnabled ? 'On' : 'Off', onPress: handleNotifications },
+        { label: 'Appearance', icon: 'color-palette-outline', value: themeModeLabel, onPress: themeActions.toggleTheme },
+        { label: 'Help & Support', icon: 'help-circle-outline', onPress: handleHelp },
+        { label: 'About', icon: 'information-circle-outline', onPress: handleAbout },
     ];
 
     if (isLoading) {
@@ -117,161 +122,59 @@ export default function ProfileScreen() {
         );
     }
 
-    if (!user) return null; // Should be handled by protected route, but safe guard
+    if (!user) return null;
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
-            <ScrollView
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={styles.content}
-            >
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
                 {/* Header */}
                 <View style={styles.header}>
                     <Text style={styles.title}>Profile</Text>
                     <Pressable
                         style={styles.settingsButton}
                         hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                        onPress={() => {
-                            haptics.selection();
-                            router.push('/settings');
-                        }}
+                        onPress={() => { haptics.selection(); router.push('/settings'); }}
                     >
-                        <Ionicons
-                            name="settings-outline"
-                            size={theme.iconSize.md}
-                            color={theme.colors.text}
-                        />
+                        <Ionicons name="settings-outline" size={theme.iconSize.md} color={theme.colors.text} />
                     </Pressable>
                 </View>
 
                 {/* Profile Card */}
-                <View style={styles.profileCard}>
-                    <Image
-                        source={{ uri: user.photoURL || 'https://ui-avatars.com/api/?name=' + (user.isAnonymous ? 'Guest' : user.displayName) }}
-                        style={styles.avatar}
-                    />
-                    <Text style={styles.userName}>{user.isAnonymous ? 'Guest User' : (user.displayName || 'Reader')}</Text>
-                    <Text style={styles.userEmail}>{user.isAnonymous ? 'Sign up to sync your progress' : user.email}</Text>
-
-                    {!user.isAnonymous && (
-                        <Pressable
-                            style={styles.editButton}
-                            onPress={() => {
-                                haptics.selection();
-                                setEditName(user.displayName || '');
-                                setShowEditModal(true);
-                            }}
-                        >
-                            <Ionicons
-                                name="pencil-outline"
-                                size={16}
-                                color={theme.colors.primary}
-                            />
-                            <Text style={styles.editButtonText}>Edit Profile</Text>
-                        </Pressable>
-                    )}
-
-                    {user.isAnonymous && (
-                        <Pressable style={styles.editButton} onPress={() => signOut()}>
-                            <Text style={styles.editButtonText}>Sign In / Sign Up</Text>
-                        </Pressable>
-                    )}
-                </View>
+                <ProfileCard
+                    photoURL={user.photoURL}
+                    displayName={user.displayName}
+                    email={user.email}
+                    isAnonymous={user.isAnonymous}
+                    onEditPress={() => { haptics.selection(); setShowEditModal(true); }}
+                    onSignInPress={signOut}
+                />
 
                 {/* Stats Grid */}
-                <View style={styles.statsGrid}>
-                    {stats.map((stat, index) => (
-                        <View key={stat.label} style={styles.statCard}>
-                            <View style={styles.statIconContainer}>
-                                <Ionicons
-                                    name={stat.icon}
-                                    size={20}
-                                    color={theme.colors.primary}
-                                />
-                            </View>
-                            <Text style={styles.statValue}>{stat.value}</Text>
-                            <Text style={styles.statLabel}>{stat.label}</Text>
-                        </View>
-                    ))}
-                </View>
+                <StatsGrid stats={stats} />
 
                 {/* Menu */}
-                <View style={styles.menuSection}>
-                    {menuItems.map((item, index) => (
-                        <Pressable
-                            key={item.label}
-                            style={styles.menuItem}
-                            onPress={item.onPress}
-                        >
-                            <View style={styles.menuIconContainer}>
-                                <Ionicons
-                                    name={item.icon}
-                                    size={22}
-                                    color={theme.colors.text}
-                                />
-                            </View>
-                            <Text style={styles.menuLabel}>{item.label}</Text>
-                            {item.value && (
-                                <Text style={styles.menuValue}>{item.value}</Text>
-                            )}
-                            <Ionicons
-                                name="chevron-forward"
-                                size={20}
-                                color={theme.colors.textMuted}
-                            />
-                        </Pressable>
-                    ))}
-                </View>
+                <ProfileMenu items={menuItems} />
 
                 {/* Sign Out */}
                 <Pressable style={styles.signOutButton} onPress={signOut}>
-                    <Ionicons
-                        name="log-out-outline"
-                        size={22}
-                        color={theme.colors.error}
-                    />
+                    <Ionicons name="log-out-outline" size={22} color={theme.colors.error} />
                     <Text style={styles.signOutText}>Sign Out</Text>
                 </Pressable>
             </ScrollView>
 
-            {/* Edit Profile Modal */}
-            <Modal
+            {/* Modals */}
+            <EditProfileModal
                 visible={showEditModal}
-                transparent
-                animationType="slide"
-                onRequestClose={() => setShowEditModal(false)}
-            >
-                <View style={styles.modalOverlay}>
-                    <View style={styles.modalContent}>
-                        <View style={styles.modalHeader}>
-                            <Text style={styles.modalTitle}>Edit Profile</Text>
-                            <Pressable onPress={() => setShowEditModal(false)}>
-                                <Ionicons name="close" size={24} color={theme.colors.text} />
-                            </Pressable>
-                        </View>
-
-                        <Text style={styles.inputLabel}>Display Name</Text>
-                        <TextInput
-                            style={styles.textInput}
-                            value={editName}
-                            onChangeText={setEditName}
-                            placeholder="Enter your name"
-                            placeholderTextColor={theme.colors.textMuted}
-                        />
-
-                        <Pressable
-                            style={styles.saveButton}
-                            onPress={() => {
-                                haptics.success();
-                                Alert.alert('Saved!', `Display name updated to "${editName}"`, [{ text: 'OK' }]);
-                                setShowEditModal(false);
-                            }}
-                        >
-                            <Text style={styles.saveButtonText}>Save Changes</Text>
-                        </Pressable>
-                    </View>
-                </View>
-            </Modal>
+                onClose={() => setShowEditModal(false)}
+                initialName={user.displayName || ''}
+                onSave={updateProfile}
+            />
+            <ReadingGoalsModal
+                visible={showGoalsModal}
+                onClose={() => setShowGoalsModal(false)}
+                currentGoal={settings.dailyGoalMinutes}
+                onSelectGoal={(minutes) => settingsActions.updateSettings({ dailyGoalMinutes: minutes })}
+            />
         </View>
     );
 }
@@ -304,105 +207,6 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    profileCard: {
-        alignItems: 'center',
-        paddingVertical: theme.spacing.xl,
-        marginHorizontal: theme.spacing.lg,
-        marginBottom: theme.spacing.xl,
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xxl,
-        ...theme.shadows.md,
-    },
-    avatar: {
-        width: theme.avatarSize.xl,
-        height: theme.avatarSize.xl,
-        borderRadius: theme.radius.full,
-        backgroundColor: theme.colors.borderLight,
-        marginBottom: theme.spacing.md,
-    },
-    userName: {
-        fontSize: theme.typography.size.xxl,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-        marginBottom: theme.spacing.xxs,
-    },
-    userEmail: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.textSecondary,
-        marginBottom: theme.spacing.lg,
-    },
-    editButton: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: theme.spacing.xs,
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.sm,
-        borderRadius: theme.radius.full,
-        borderWidth: 1,
-        borderColor: theme.colors.primary,
-    },
-    editButtonText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.primary,
-    },
-    statsGrid: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        paddingHorizontal: theme.spacing.lg,
-        gap: theme.spacing.md,
-        marginBottom: theme.spacing.xl,
-    },
-    statCard: {
-        width: '47%',
-        alignItems: 'center',
-        paddingVertical: theme.spacing.lg,
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
-        ...theme.shadows.sm,
-    },
-    statIconContainer: {
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.full,
-        backgroundColor: `${theme.colors.primary}15`,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: theme.spacing.sm,
-    },
-    statValue: {
-        fontSize: theme.typography.size.xxl,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-    },
-    statLabel: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
-    },
-    menuSection: {
-        marginHorizontal: theme.spacing.lg,
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
-        ...theme.shadows.sm,
-        marginBottom: theme.spacing.xl,
-    },
-    menuItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingVertical: theme.spacing.lg,
-        paddingHorizontal: theme.spacing.lg,
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.borderLight,
-    },
-    menuIconContainer: {
-        width: 36,
-        alignItems: 'center',
-    },
-    menuLabel: {
-        flex: 1,
-        fontSize: theme.typography.size.lg,
-        color: theme.colors.text,
-    },
     signOutButton: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -424,58 +228,5 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: theme.colors.background,
-    },
-    menuValue: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.textMuted,
-        marginRight: theme.spacing.xs,
-    },
-    modalOverlay: {
-        flex: 1,
-        backgroundColor: 'rgba(0,0,0,0.5)',
-        justifyContent: 'flex-end',
-    },
-    modalContent: {
-        backgroundColor: theme.colors.surface,
-        borderTopLeftRadius: theme.radius.xxl,
-        borderTopRightRadius: theme.radius.xxl,
-        padding: theme.spacing.xl,
-        paddingBottom: 40,
-    },
-    modalHeader: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: theme.spacing.xl,
-    },
-    modalTitle: {
-        fontSize: theme.typography.size.xxl,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-    },
-    inputLabel: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.text,
-        marginBottom: theme.spacing.sm,
-    },
-    textInput: {
-        backgroundColor: theme.colors.backgroundSecondary,
-        borderRadius: theme.radius.lg,
-        padding: theme.spacing.md,
-        fontSize: theme.typography.size.lg,
-        color: theme.colors.text,
-        marginBottom: theme.spacing.xl,
-    },
-    saveButton: {
-        backgroundColor: theme.colors.primary,
-        paddingVertical: theme.spacing.md,
-        borderRadius: theme.radius.full,
-        alignItems: 'center',
-    },
-    saveButtonText: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.textInverse,
     },
 }));

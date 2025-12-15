@@ -4,7 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { signIn, signInAnonymously } from '@/services/auth';
+import { signIn, signInAnonymously, signInWithGoogle } from '@/services/auth';
 
 export default function LoginScreen() {
     const { theme } = useUnistyles();
@@ -38,6 +38,20 @@ export default function LoginScreen() {
             await signInAnonymously();
         } catch (error: any) {
             Alert.alert('Error', 'Could not sign in as guest');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleGoogleSignIn = async () => {
+        setLoading(true);
+        try {
+            await signInWithGoogle();
+            // AuthContext will handle redirect
+        } catch (error: any) {
+            if (error.message !== 'Sign in was cancelled') {
+                Alert.alert('Google Sign-In Failed', error.message);
+            }
         } finally {
             setLoading(false);
         }
@@ -107,7 +121,11 @@ export default function LoginScreen() {
 
                 {/* Social Auth */}
                 <View style={styles.socialRow}>
-                    <Pressable style={styles.socialButton}>
+                    <Pressable
+                        style={[styles.socialButton, loading && styles.buttonDisabled]}
+                        onPress={handleGoogleSignIn}
+                        disabled={loading}
+                    >
                         <Ionicons name="logo-google" size={24} color={theme.colors.text} />
                     </Pressable>
                     <Pressable style={styles.socialButton}>

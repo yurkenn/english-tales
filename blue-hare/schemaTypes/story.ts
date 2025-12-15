@@ -4,17 +4,24 @@ export const storySchema = defineType({
     name: 'story',
     title: 'Story',
     type: 'document',
+    groups: [
+        { name: 'main', title: 'Ana Bilgiler', default: true },
+        { name: 'content', title: 'İçerik' },
+        { name: 'meta', title: 'Meta Bilgiler' },
+    ],
     fields: [
         defineField({
             name: 'title',
-            title: 'Title',
+            title: 'Başlık',
             type: 'string',
+            group: 'main',
             validation: (Rule) => Rule.required().min(1).max(100),
         }),
         defineField({
             name: 'slug',
             title: 'Slug',
             type: 'slug',
+            group: 'main',
             options: {
                 source: 'title',
                 maxLength: 96,
@@ -23,15 +30,17 @@ export const storySchema = defineType({
         }),
         defineField({
             name: 'author',
-            title: 'Author',
+            title: 'Yazar',
             type: 'reference',
+            group: 'main',
             to: [{ type: 'author' }],
             validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'coverImage',
-            title: 'Cover Image',
+            title: 'Kapak Görseli',
             type: 'image',
+            group: 'main',
             options: {
                 hotspot: true,
             },
@@ -39,69 +48,104 @@ export const storySchema = defineType({
         }),
         defineField({
             name: 'description',
-            title: 'Description',
+            title: 'Açıklama',
             type: 'text',
+            group: 'main',
             rows: 3,
             validation: (Rule) => Rule.required().min(10).max(500),
         }),
         defineField({
             name: 'content',
-            title: 'Story Content',
+            title: 'Hikaye İçeriği',
             type: 'array',
+            group: 'content',
             of: [
                 {
                     type: 'block',
                     styles: [
                         { title: 'Normal', value: 'normal' },
-                        { title: 'H2', value: 'h2' },
-                        { title: 'H3', value: 'h3' },
-                        { title: 'Quote', value: 'blockquote' },
+                        { title: 'Başlık 2', value: 'h2' },
+                        { title: 'Başlık 3', value: 'h3' },
+                        { title: 'Alıntı', value: 'blockquote' },
+                    ],
+                    marks: {
+                        decorators: [
+                            { title: 'Kalın', value: 'strong' },
+                            { title: 'İtalik', value: 'em' },
+                            { title: 'Altı Çizili', value: 'underline' },
+                        ],
+                    },
+                },
+                {
+                    type: 'image',
+                    title: 'Görsel',
+                    options: {
+                        hotspot: true,
+                    },
+                    fields: [
+                        {
+                            name: 'caption',
+                            title: 'Görsel Açıklaması',
+                            type: 'string',
+                        },
+                        {
+                            name: 'alt',
+                            title: 'Alt Metin',
+                            type: 'string',
+                        },
                     ],
                 },
             ],
         }),
         defineField({
             name: 'categories',
-            title: 'Categories',
+            title: 'Kategoriler',
             type: 'array',
+            group: 'meta',
             of: [{ type: 'reference', to: [{ type: 'category' }] }],
             validation: (Rule) => Rule.required().min(1),
         }),
         defineField({
             name: 'difficulty',
-            title: 'Difficulty Level',
+            title: 'Zorluk Seviyesi',
             type: 'string',
+            group: 'meta',
             options: {
                 list: [
-                    { title: 'Beginner', value: 'beginner' },
-                    { title: 'Intermediate', value: 'intermediate' },
-                    { title: 'Advanced', value: 'advanced' },
+                    { title: '🟢 Başlangıç', value: 'beginner' },
+                    { title: '🟡 Orta', value: 'intermediate' },
+                    { title: '🔴 İleri', value: 'advanced' },
                 ],
+                layout: 'radio',
             },
             validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'estimatedReadTime',
-            title: 'Estimated Read Time (minutes)',
+            title: 'Tahmini Okuma Süresi (dakika)',
             type: 'number',
+            group: 'meta',
             validation: (Rule) => Rule.required().min(1),
         }),
         defineField({
             name: 'wordCount',
-            title: 'Word Count',
+            title: 'Kelime Sayısı',
             type: 'number',
+            group: 'meta',
             validation: (Rule) => Rule.required().min(1),
         }),
         defineField({
             name: 'isFeatured',
-            title: 'Featured Story',
+            title: '⭐ Öne Çıkan Hikaye',
             type: 'boolean',
+            group: 'meta',
             initialValue: false,
         }),
         defineField({
             name: 'publishedAt',
-            title: 'Published At',
+            title: 'Yayınlanma Tarihi',
             type: 'datetime',
+            group: 'meta',
         }),
     ],
     preview: {
@@ -109,10 +153,18 @@ export const storySchema = defineType({
             title: 'title',
             author: 'author.name',
             media: 'coverImage',
+            isFeatured: 'isFeatured',
+            difficulty: 'difficulty',
         },
         prepare(selection) {
-            const { author } = selection
-            return { ...selection, subtitle: author && `by ${author}` }
+            const { title, author, media, isFeatured, difficulty } = selection
+            const difficultyEmoji = difficulty === 'beginner' ? '🟢' : difficulty === 'intermediate' ? '🟡' : '🔴'
+            const featuredEmoji = isFeatured ? '⭐ ' : ''
+            return {
+                title: `${featuredEmoji}${title}`,
+                subtitle: `${difficultyEmoji} ${author || 'Yazar belirtilmemiş'}`,
+                media,
+            }
         },
     },
 })
