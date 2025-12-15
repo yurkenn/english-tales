@@ -12,6 +12,7 @@ import {
     BookListItem,
     NetworkError,
     AuthorSpotlight,
+    DiscoverScreenSkeleton,
 } from '@/components';
 import { useStories, useFeaturedAuthor, useCategories } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
@@ -84,8 +85,8 @@ export default function DiscoverScreen() {
 
     if (isLoading) {
         return (
-            <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={[styles.container, { paddingTop: insets.top }]}>
+                <DiscoverScreenSkeleton />
             </View>
         );
     }

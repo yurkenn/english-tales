@@ -127,4 +127,159 @@ const skeletonStyles = StyleSheet.create((theme) => ({
     sectionCards: {
         flexDirection: 'row',
     },
+    homeScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+        paddingTop: theme.spacing.md,
+    },
+    homeHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: theme.spacing.lg,
+    },
+    libraryScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    statsRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        paddingVertical: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
+    },
+    statItem: {
+        alignItems: 'center',
+        gap: theme.spacing.xs,
+    },
+    libraryList: {
+        paddingHorizontal: theme.spacing.lg,
+        gap: theme.spacing.md,
+    },
+    discoverScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    featuredCard: {
+        marginTop: theme.spacing.md,
+    },
 }));
+
+// Featured Card Skeleton
+export const FeaturedCardSkeleton: React.FC = () => {
+    const { theme } = useUnistyles();
+    return (
+        <View style={skeletonStyles.featuredCard}>
+            <Skeleton width="100%" height={200} borderRadius={theme.radius.xl} />
+        </View>
+    );
+};
+
+// Home Screen Skeleton
+export const HomeScreenSkeleton: React.FC = () => {
+    return (
+        <View style={skeletonStyles.homeScreen}>
+            {/* Header */}
+            <View style={skeletonStyles.homeHeader}>
+                <View>
+                    <Skeleton width={150} height={24} />
+                    <Skeleton width={200} height={16} style={{ marginTop: 6 }} />
+                </View>
+                <Skeleton width={44} height={44} borderRadius={22} />
+            </View>
+
+            {/* Search Bar */}
+            <View style={{ paddingHorizontal: 16, marginTop: 16 }}>
+                <Skeleton width="100%" height={50} borderRadius={25} />
+            </View>
+
+            {/* Genre Chips */}
+            <View style={{ flexDirection: 'row', gap: 8, paddingHorizontal: 16, marginTop: 20 }}>
+                <Skeleton width={60} height={36} borderRadius={18} />
+                <Skeleton width={80} height={36} borderRadius={18} />
+                <Skeleton width={70} height={36} borderRadius={18} />
+                <Skeleton width={90} height={36} borderRadius={18} />
+            </View>
+
+            {/* Featured */}
+            <View style={{ paddingHorizontal: 16, marginTop: 24 }}>
+                <Skeleton width={150} height={20} />
+                <FeaturedCardSkeleton />
+            </View>
+
+            {/* Trending */}
+            <View style={{ paddingHorizontal: 16, marginTop: 24 }}>
+                <Skeleton width={120} height={20} />
+                <View style={{ gap: 12, marginTop: 12 }}>
+                    <BookListItemSkeleton />
+                    <BookListItemSkeleton />
+                    <BookListItemSkeleton />
+                </View>
+            </View>
+        </View>
+    );
+};
+
+// Library Screen Skeleton
+export const LibraryScreenSkeleton: React.FC = () => {
+    return (
+        <View style={skeletonStyles.libraryScreen}>
+            {/* Stats */}
+            <View style={skeletonStyles.statsRow}>
+                <View style={skeletonStyles.statItem}>
+                    <Skeleton width={40} height={32} />
+                    <Skeleton width={50} height={14} />
+                </View>
+                <View style={skeletonStyles.statItem}>
+                    <Skeleton width={40} height={32} />
+                    <Skeleton width={60} height={14} />
+                </View>
+                <View style={skeletonStyles.statItem}>
+                    <Skeleton width={40} height={32} />
+                    <Skeleton width={70} height={14} />
+                </View>
+            </View>
+
+            {/* Library Items */}
+            <View style={skeletonStyles.libraryList}>
+                <BookListItemSkeleton />
+                <BookListItemSkeleton />
+                <BookListItemSkeleton />
+                <BookListItemSkeleton />
+            </View>
+        </View>
+    );
+};
+
+// Discover Screen Skeleton
+export const DiscoverScreenSkeleton: React.FC = () => {
+    const { theme } = useUnistyles();
+    return (
+        <View style={skeletonStyles.discoverScreen}>
+            {/* Author Spotlight */}
+            <View style={{ paddingHorizontal: 16, marginTop: 16 }}>
+                <Skeleton width={140} height={20} />
+                <Skeleton width="100%" height={200} borderRadius={theme.radius.xl} style={{ marginTop: 12 }} />
+            </View>
+
+            {/* Trending */}
+            <View style={{ paddingHorizontal: 16, marginTop: 24 }}>
+                <Skeleton width={130} height={20} />
+                <View style={{ flexDirection: 'row', gap: 12, marginTop: 12 }}>
+                    <BookCardSkeleton />
+                    <BookCardSkeleton />
+                    <BookCardSkeleton />
+                </View>
+            </View>
+
+            {/* Recommended */}
+            <View style={{ paddingHorizontal: 16, marginTop: 24 }}>
+                <Skeleton width={160} height={20} />
+                <View style={{ gap: 12, marginTop: 12 }}>
+                    <BookListItemSkeleton />
+                    <BookListItemSkeleton />
+                </View>
+            </View>
+        </View>
+    );
+};

@@ -9,6 +9,7 @@ import { useThemeStore } from '@/store/themeStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
+import { useDownloadStore, formatBytes } from '@/store/downloadStore';
 import { haptics } from '@/utils/haptics';
 import { sendPasswordResetEmail } from '@/services/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -41,6 +42,10 @@ export default function SettingsScreen() {
     const { fontSize, actions: readingActions } = useReadingPrefsStore();
     const { actions: libraryActions } = useLibraryStore();
     const { actions: progressActions } = useProgressStore();
+    const { downloads, actions: downloadActions } = useDownloadStore();
+
+    const downloadSize = downloadActions.getTotalDownloadSize();
+    const downloadCount = Object.keys(downloads).length;
 
     const [cacheSize, setCacheSize] = useState('Calculating...');
     const [notificationsEnabled, setNotificationsEnabled] = useState(true);
@@ -257,6 +262,35 @@ export default function SettingsScreen() {
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>STORAGE</Text>
                     <View style={styles.sectionContent}>
+                        <SettingItem
+                            icon="cloud-download-outline"
+                            label="Downloads"
+                            value={downloadCount > 0 ? `${downloadCount} stories (${formatBytes(downloadSize)})` : 'None'}
+                            hasChevron={false}
+                        />
+                        {downloadCount > 0 && (
+                            <SettingItem
+                                icon="cloud-offline-outline"
+                                label="Clear All Downloads"
+                                onPress={() => {
+                                    Alert.alert(
+                                        'Clear Downloads',
+                                        `Remove all ${downloadCount} downloaded stories? They will no longer be available offline.`,
+                                        [
+                                            { text: 'Cancel', style: 'cancel' },
+                                            {
+                                                text: 'Clear All',
+                                                style: 'destructive',
+                                                onPress: async () => {
+                                                    await downloadActions.clearAllDownloads();
+                                                    haptics.success();
+                                                }
+                                            }
+                                        ]
+                                    );
+                                }}
+                            />
+                        )}
                         <SettingItem
                             icon="folder-outline"
                             label="Cache"

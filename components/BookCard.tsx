@@ -18,12 +18,13 @@ export const BookCard: React.FC<BookCardProps> = ({
     rating = null,
 }) => {
     const { theme } = useUnistyles();
+    const coverUri = story.coverImage || 'https://via.placeholder.com/240x336/1a1a2e/ffffff?text=No+Cover';
 
     return (
         <Pressable style={styles.container} onPress={onPress}>
             {/* Cover Image */}
             <View style={styles.coverContainer}>
-                <Image source={{ uri: story.coverImage }} style={styles.cover} />
+                <Image source={{ uri: coverUri }} style={styles.cover} />
                 {/* Rank Badge */}
                 {showRank && (
                     <View style={styles.rankBadge}>

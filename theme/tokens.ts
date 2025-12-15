@@ -57,18 +57,18 @@ export const colorsDark = {
 
     // Text - High contrast
     text: '#FAFAFA',
-    textSecondary: '#B3B3B3',
-    textMuted: '#737373',
-    textInverse: '#121212',
+    textSecondary: '#A1A1A1',  // Improved from #B3B3B3 for better contrast
+    textMuted: '#808080',      // Improved from #737373 for better contrast
+    textInverse: '#FFFFFF',    // FIXED: Was #121212, should be white for overlays
 
     // UI Elements
-    border: '#2E2E2E',
-    borderLight: '#3D3D3D',
-    divider: '#2E2E2E',
+    border: '#333333',         // Slightly lighter for better visibility
+    borderLight: '#404040',    // Slightly lighter
+    divider: '#333333',
 
     // Chip backgrounds
     chipActive: '#FF4D4D',
-    chipInactive: 'rgba(255, 255, 255, 0.08)',
+    chipInactive: 'rgba(255, 255, 255, 0.1)',  // Slightly more visible
 
     // Status
     success: '#4ADE80',

@@ -4,12 +4,13 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { ProgressBar, PortableTextRenderer } from '@/components';
+import { ProgressBar, PortableTextRenderer, ConfettiCelebration } from '@/components';
 import { useStory } from '@/hooks/useQueries';
 import { useProgressStore } from '@/store/progressStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useThemeStore } from '@/store/themeStore';
+import { useDownloadStore } from '@/store/downloadStore';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
 
@@ -39,9 +40,11 @@ export default function ReadingScreen() {
     const { progressMap, actions: progressActions } = useProgressStore();
     const { actions: libraryActions } = useLibraryStore();
     const { actions: themeActions } = useThemeStore();
+    const { downloads, actions: downloadActions } = useDownloadStore();
     const saveTimeoutRef = useRef<number | null>(null);
 
     const isInLibrary = id ? libraryActions.isInLibrary(id) : false;
+    const isDownloaded = id ? downloadActions.isDownloaded(id) : false;
 
     const { data: storyDoc, isLoading } = useStory(id || '');
 
@@ -81,7 +84,13 @@ export default function ReadingScreen() {
         };
     }, []);
 
-    const content = storyDoc?.content as PortableTextBlock[] | undefined;
+    // Use cached content if downloaded, otherwise use online content
+    const content = useMemo(() => {
+        if (id && isDownloaded && downloads[id]?.content?.length > 0) {
+            return downloads[id].content;
+        }
+        return storyDoc?.content as PortableTextBlock[] | undefined;
+    }, [id, isDownloaded, downloads, storyDoc]);
 
     const handleScroll = useCallback((event: any) => {
         const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
@@ -147,14 +156,22 @@ export default function ReadingScreen() {
                     />
                 </Pressable>
                 <View style={styles.headerTitleContainer}>
-                    <Text style={styles.headerTitle} numberOfLines={1}>
-                        {storyDoc.title}
-                    </Text>
+                    <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+                        <Text style={styles.headerTitle} numberOfLines={1}>
+                            {storyDoc.title}
+                        </Text>
+                        {isDownloaded && (
+                            <Ionicons name="cloud-done" size={16} color={theme.colors.success} />
+                        )}
+                    </View>
                     <Text style={styles.headerSubtitle}>Chapter 1</Text>
                 </View>
-                <Pressable style={styles.headerButton}>
+                <Pressable
+                    style={styles.headerButton}
+                    onPress={() => setShowSettingsModal(true)}
+                >
                     <Ionicons
-                        name="ellipsis-vertical"
+                        name="settings-outline"
                         size={24}
                         color={theme.colors.text}
                     />
@@ -164,7 +181,12 @@ export default function ReadingScreen() {
             {/* Progress Bar */}
             <View style={styles.progressContainer}>
                 <ProgressBar progress={progress} height={4} />
-                <Text style={styles.progressText}>{progress}% complete</Text>
+                <View style={styles.progressInfo}>
+                    <Text style={styles.progressText}>{progress}% complete</Text>
+                    <Text style={styles.remainingText}>
+                        ~{Math.max(1, Math.ceil((storyDoc.estimatedReadTime || 5) * (100 - progress) / 100))} min left
+                    </Text>
+                </View>
             </View>
 
             {/* Content */}
@@ -284,6 +306,7 @@ export default function ReadingScreen() {
                 animationType="fade"
                 onRequestClose={() => setShowCompletionModal(false)}
             >
+                <ConfettiCelebration visible={showCompletionModal} />
                 <View style={styles.modalOverlay}>
                     <View style={styles.modalContent}>
                         <View style={styles.modalIcon}>
@@ -302,6 +325,92 @@ export default function ReadingScreen() {
                         >
                             <Text style={styles.modalSecondaryText}>Continue Reading</Text>
                         </Pressable>
+                    </View>
+                </View>
+            </Modal>
+
+            {/* Settings Modal */}
+            <Modal
+                visible={showSettingsModal}
+                transparent
+                animationType="slide"
+                onRequestClose={() => setShowSettingsModal(false)}
+            >
+                <View style={styles.settingsOverlay}>
+                    <View style={styles.settingsContent}>
+                        <View style={styles.settingsHeader}>
+                            <Text style={styles.settingsTitle}>Reading Settings</Text>
+                            <Pressable onPress={() => setShowSettingsModal(false)}>
+                                <Ionicons name="close" size={24} color={theme.colors.text} />
+                            </Pressable>
+                        </View>
+
+                        {/* Font Size */}
+                        <View style={styles.settingsSection}>
+                            <Text style={styles.settingsLabel}>Font Size</Text>
+                            <View style={styles.fontSizeControls}>
+                                <Pressable
+                                    style={styles.fontSizeButton}
+                                    onPress={() => prefsActions.setFontSize(Math.max(14, fontSize - 2))}
+                                >
+                                    <Text style={styles.fontSizeButtonText}>A-</Text>
+                                </Pressable>
+                                <Text style={styles.fontSizeValue}>{fontSize}pt</Text>
+                                <Pressable
+                                    style={styles.fontSizeButton}
+                                    onPress={() => prefsActions.setFontSize(Math.min(28, fontSize + 2))}
+                                >
+                                    <Text style={styles.fontSizeButtonText}>A+</Text>
+                                </Pressable>
+                            </View>
+                        </View>
+
+                        {/* Line Height */}
+                        <View style={styles.settingsSection}>
+                            <Text style={styles.settingsLabel}>Line Spacing</Text>
+                            <View style={styles.lineHeightControls}>
+                                {[1.4, 1.6, 1.8, 2.0].map((lh) => (
+                                    <Pressable
+                                        key={lh}
+                                        style={[
+                                            styles.lineHeightButton,
+                                            lineHeight === lh && styles.lineHeightButtonActive,
+                                        ]}
+                                        onPress={() => prefsActions.setLineHeight(lh)}
+                                    >
+                                        <Text style={[
+                                            styles.lineHeightButtonText,
+                                            lineHeight === lh && styles.lineHeightButtonTextActive,
+                                        ]}>{lh}x</Text>
+                                    </Pressable>
+                                ))}
+                            </View>
+                        </View>
+
+                        {/* Theme */}
+                        <View style={styles.settingsSection}>
+                            <Text style={styles.settingsLabel}>Reading Theme</Text>
+                            <View style={styles.themeControls}>
+                                {(['light', 'dark', 'sepia'] as ReadingTheme[]).map((t) => (
+                                    <Pressable
+                                        key={t}
+                                        style={[
+                                            styles.themeButton,
+                                            { backgroundColor: readingThemes[t].bg },
+                                            readingTheme === t && styles.themeButtonActive,
+                                        ]}
+                                        onPress={() => setReadingTheme(t)}
+                                    >
+                                        <Text style={[
+                                            styles.themeButtonText,
+                                            { color: readingThemes[t].text },
+                                        ]}>
+                                            {t.charAt(0).toUpperCase() + t.slice(1)}
+                                        </Text>
+                                    </Pressable>
+                                ))}
+                            </View>
+                        </View>
                     </View>
                 </View>
             </Modal>
@@ -355,10 +464,18 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: theme.spacing.sm,
         gap: theme.spacing.xs,
     },
+    progressInfo: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+    },
     progressText: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
-        textAlign: 'right',
+    },
+    remainingText: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.textSecondary,
     },
     content: {
         flex: 1,
@@ -466,5 +583,105 @@ const styles = StyleSheet.create((theme) => ({
     modalSecondaryText: {
         fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
+    },
+    // Settings Modal Styles
+    settingsOverlay: {
+        flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        justifyContent: 'flex-end',
+    },
+    settingsContent: {
+        backgroundColor: theme.colors.surface,
+        borderTopLeftRadius: theme.radius.xxl,
+        borderTopRightRadius: theme.radius.xxl,
+        padding: theme.spacing.xl,
+        paddingBottom: theme.spacing.xxxl,
+    },
+    settingsHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: theme.spacing.xl,
+    },
+    settingsTitle: {
+        fontSize: theme.typography.size.xl,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.text,
+    },
+    settingsSection: {
+        marginBottom: theme.spacing.xl,
+    },
+    settingsLabel: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.semibold,
+        color: theme.colors.text,
+        marginBottom: theme.spacing.md,
+    },
+    fontSizeControls: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: theme.spacing.xl,
+    },
+    fontSizeButton: {
+        width: 48,
+        height: 48,
+        borderRadius: theme.radius.full,
+        backgroundColor: theme.colors.backgroundSecondary,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    fontSizeButtonText: {
+        fontSize: theme.typography.size.lg,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.text,
+    },
+    fontSizeValue: {
+        fontSize: theme.typography.size.xl,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.primary,
+        minWidth: 60,
+        textAlign: 'center',
+    },
+    lineHeightControls: {
+        flexDirection: 'row',
+        gap: theme.spacing.sm,
+    },
+    lineHeightButton: {
+        flex: 1,
+        paddingVertical: theme.spacing.md,
+        borderRadius: theme.radius.lg,
+        backgroundColor: theme.colors.backgroundSecondary,
+        alignItems: 'center',
+    },
+    lineHeightButtonActive: {
+        backgroundColor: theme.colors.primary,
+    },
+    lineHeightButtonText: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.text,
+    },
+    lineHeightButtonTextActive: {
+        color: theme.colors.textInverse,
+        fontWeight: theme.typography.weight.bold,
+    },
+    themeControls: {
+        flexDirection: 'row',
+        gap: theme.spacing.sm,
+    },
+    themeButton: {
+        flex: 1,
+        paddingVertical: theme.spacing.lg,
+        borderRadius: theme.radius.lg,
+        alignItems: 'center',
+        borderWidth: 2,
+        borderColor: 'transparent',
+    },
+    themeButtonActive: {
+        borderColor: theme.colors.primary,
+    },
+    themeButtonText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.medium,
     },
 }));

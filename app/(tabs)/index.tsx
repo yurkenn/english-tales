@@ -13,12 +13,14 @@ import {
     FeaturedCard,
     BookListItem,
     NetworkError,
+    HomeScreenSkeleton,
 } from '@/components';
 import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries';
 import { Story } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
+import { useToastStore } from '@/store/toastStore';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { haptics } from '@/utils/haptics';
 
@@ -42,11 +44,14 @@ export default function HomeScreen() {
     const { data: featuredData, isLoading: loadingFeatured, refetch: refetchFeatured, error: errorFeatured } = useFeaturedStories();
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
 
-    // Transform Categories
+    // Transform Categories - deduplicate to avoid key errors
     const genres = useMemo(() => {
-        const list = ['For You'];
+        const list: string[] = ['For You'];
         if (categoriesData) {
-            list.push(...categoriesData.map((c: any) => c.title));
+            const categoryTitles = categoriesData.map((c: any) => c.title as string);
+            // Remove duplicates
+            const uniqueTitles = [...new Set<string>(categoryTitles)];
+            list.push(...uniqueTitles);
         }
         return list;
     }, [categoriesData]);
@@ -96,10 +101,13 @@ export default function HomeScreen() {
 
     const handleBookmarkPress = async (story: Story) => {
         haptics.selection();
+        const toastActions = useToastStore.getState().actions;
         if (libraryActions.isInLibrary(story.id)) {
             await libraryActions.removeFromLibrary(story.id);
+            toastActions.success('Removed from library');
         } else {
             await libraryActions.addToLibrary(story);
+            toastActions.success('Added to library');
         }
     };
 
@@ -118,8 +126,8 @@ export default function HomeScreen() {
 
     if (isLoading) {
         return (
-            <View style={[styles.container, styles.center]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={[styles.container, { paddingTop: insets.top }]}>
+                <HomeScreenSkeleton />
             </View>
         );
     }

@@ -28,7 +28,7 @@ export const StoryHero: React.FC<StoryHeroProps> = ({
                 style={styles.gradient}
             />
             <Pressable style={[styles.backButton, { top: topInset + 8 }]} onPress={onBackPress}>
-                <Ionicons name="arrow-back" size={24} color={theme.colors.textInverse} />
+                <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
             </Pressable>
             <Pressable style={[styles.bookmarkButton, { top: topInset + 8 }]} onPress={onBookmarkPress}>
                 <Ionicons
@@ -55,7 +55,7 @@ const styles = StyleSheet.create((theme) => ({
         width: 40,
         height: 40,
         borderRadius: theme.radius.full,
-        backgroundColor: 'rgba(0,0,0,0.3)',
+        backgroundColor: 'rgba(0,0,0,0.5)',
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -65,7 +65,7 @@ const styles = StyleSheet.create((theme) => ({
         width: 40,
         height: 40,
         borderRadius: theme.radius.full,
-        backgroundColor: 'rgba(0,0,0,0.3)',
+        backgroundColor: 'rgba(0,0,0,0.5)',
         alignItems: 'center',
         justifyContent: 'center',
     },

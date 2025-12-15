@@ -8,8 +8,9 @@ import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useThemeStore } from '@/store/themeStore';
 import { useAchievementsStore } from '@/store/achievementsStore';
+import { useDownloadStore } from '@/store/downloadStore';
 import { secureStorage } from '@/services/storage';
-import { AchievementToast } from '@/components';
+import { AchievementToast, ToastContainer } from '@/components';
 
 export default function RootLayout() {
   const { theme } = useUnistyles();
@@ -20,6 +21,7 @@ export default function RootLayout() {
   const router = useRouter();
 
   const themeActions = useThemeStore((s) => s.actions);
+  const downloadActions = useDownloadStore((s) => s.actions);
 
   // Initialize auth listener
   useEffect(() => {
@@ -27,10 +29,11 @@ export default function RootLayout() {
     return unsubscribe;
   }, [initialize]);
 
-  // Load saved theme preference
+  // Load saved theme preference and downloads
   useEffect(() => {
     themeActions.loadTheme();
-  }, [themeActions]);
+    downloadActions.loadDownloads();
+  }, [themeActions, downloadActions]);
 
   // Sync stores with auth state
   useEffect(() => {
@@ -121,6 +124,7 @@ export default function RootLayout() {
           }}
         />
       </Stack>
+      <ToastContainer />
       <AchievementToast />
     </QueryProvider>
   );

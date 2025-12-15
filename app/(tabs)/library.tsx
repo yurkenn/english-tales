@@ -4,11 +4,13 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { LibraryScreenSkeleton } from '@/components';
 import { ProgressBar, EmptyState } from '@/components';
 import { LibraryItem } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
+import { useDownloadStore } from '@/store/downloadStore';
 import { haptics } from '@/utils/haptics';
 
 type FilterType = 'all' | 'in-progress' | 'completed' | 'not-started';
@@ -20,6 +22,7 @@ export default function LibraryScreen() {
     const { user } = useAuthStore();
     const { items: libraryItems, isLoading, actions: libraryActions } = useLibraryStore();
     const { progressMap, actions: progressActions } = useProgressStore();
+    const { actions: downloadActions } = useDownloadStore();
 
     const [refreshing, setRefreshing] = useState(false);
     const [filter, setFilter] = useState<FilterType>('all');
@@ -98,6 +101,7 @@ export default function LibraryScreen() {
     const renderItem = ({ item }: { item: LibraryItemWithProgress }) => {
         const progress = item.progress?.percentage || 0;
         const isCompleted = item.progress?.isCompleted || false;
+        const isDownloaded = downloadActions.isDownloaded(item.storyId);
 
         return (
             <Pressable
@@ -114,6 +118,12 @@ export default function LibraryScreen() {
                             <Text style={styles.bookAuthor} numberOfLines={1}>
                                 {item.story.author}
                             </Text>
+                            {isDownloaded && (
+                                <View style={styles.offlineBadge}>
+                                    <Ionicons name="cloud-done" size={12} color={theme.colors.success} />
+                                    <Text style={styles.offlineBadgeText}>Offline</Text>
+                                </View>
+                            )}
                         </View>
                         <Pressable
                             style={styles.moreButton}
@@ -169,8 +179,8 @@ export default function LibraryScreen() {
 
     if (isLoading) {
         return (
-            <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={[styles.container, { paddingTop: insets.top }]}>
+                <LibraryScreenSkeleton />
             </View>
         );
     }
@@ -406,6 +416,17 @@ const styles = StyleSheet.create((theme) => ({
     bookAuthor: {
         fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
+    },
+    offlineBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 4,
+        marginTop: 4,
+    },
+    offlineBadgeText: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.success,
+        fontWeight: theme.typography.weight.medium,
     },
     moreButton: {
         width: 32,

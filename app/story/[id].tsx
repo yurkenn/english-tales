@@ -11,12 +11,18 @@ import {
     StoryMeta,
     ReviewCard,
     NetworkError,
+    DownloadButton,
 } from '@/components';
 import { useStory, useStoryRating, useReviewsByStory, useCreateReview } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
 import { Story } from '@/types';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useAuthStore } from '@/store/authStore';
+import { useDownloadStore } from '@/store/downloadStore';
+import { useToastStore } from '@/store/toastStore';
+import { haptics } from '@/utils/haptics';
+import { PortableTextBlock } from '@portabletext/types';
+import { Alert } from 'react-native';
 
 export default function StoryDetailScreen() {
     const { theme } = useUnistyles();
@@ -25,9 +31,10 @@ export default function StoryDetailScreen() {
     const { id } = useLocalSearchParams<{ id: string }>();
     const [showReviewModal, setShowReviewModal] = useState(false);
 
-    // Auth & Library
+    // Auth & Library & Downloads
     const { user } = useAuthStore();
     const { actions: libraryActions } = useLibraryStore();
+    const { downloads, actions: downloadActions } = useDownloadStore();
     const createReview = useCreateReview();
 
     // Fetch data
@@ -142,6 +149,44 @@ export default function StoryDetailScreen() {
                         readTime={story.estimatedReadTime}
                         wordCount={story.wordCount}
                         difficulty={story.difficulty}
+                    />
+
+                    {/* Download for Offline */}
+                    <DownloadButton
+                        status={downloadActions.getDownloadStatus(story.id)}
+                        sizeBytes={downloads[story.id]?.sizeBytes}
+                        onDownload={async () => {
+                            haptics.selection();
+                            const toastActions = useToastStore.getState().actions;
+                            const content = storyDoc?.content as PortableTextBlock[] | undefined;
+                            if (content) {
+                                const success = await downloadActions.downloadStory(story as any, content);
+                                if (success) {
+                                    haptics.success();
+                                    toastActions.success('Downloaded for offline reading');
+                                } else {
+                                    toastActions.error('Download failed. Please try again.');
+                                }
+                            }
+                        }}
+                        onDelete={() => {
+                            Alert.alert(
+                                'Remove Download',
+                                'This story will no longer be available offline.',
+                                [
+                                    { text: 'Cancel', style: 'cancel' },
+                                    {
+                                        text: 'Remove',
+                                        style: 'destructive',
+                                        onPress: async () => {
+                                            await downloadActions.deleteDownload(story.id);
+                                            haptics.selection();
+                                            useToastStore.getState().actions.success('Download removed');
+                                        },
+                                    },
+                                ]
+                            );
+                        }}
                     />
 
                     {/* Tags */}

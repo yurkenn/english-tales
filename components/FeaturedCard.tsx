@@ -24,6 +24,7 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
     const { theme } = useUnistyles();
     const displayRating = rating ?? 0;
     const count = reviewCount ?? 0;
+    const coverUri = story.coverImage || 'https://via.placeholder.com/800x400/1a1a2e/ffffff?text=Featured+Story';
 
     const formatCount = (num: number): string => {
         if (num >= 1000) {
@@ -36,7 +37,7 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
         <View style={styles.container}>
             {/* Hero Image */}
             <ImageBackground
-                source={{ uri: story.coverImage }}
+                source={{ uri: coverUri }}
                 style={styles.imageContainer}
                 resizeMode="cover"
             >
@@ -125,8 +126,11 @@ const styles = StyleSheet.create((theme) => ({
     heroTitle: {
         fontSize: theme.typography.size.xxxl,
         fontWeight: theme.typography.weight.bold,
-        color: theme.colors.textInverse,
+        color: '#FFFFFF',
         marginBottom: theme.spacing.xs,
+        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowOffset: { width: 0, height: 1 },
+        textShadowRadius: 3,
     },
     heroSubtitle: {
         fontSize: theme.typography.size.md,

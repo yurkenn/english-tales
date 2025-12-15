@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, ImageBackground } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -20,95 +20,108 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({
     onPress,
 }) => {
     const { theme } = useUnistyles();
+    const initial = name.charAt(0).toUpperCase();
 
     return (
-        <Pressable style={styles.card} onPress={onPress}>
-            <ImageBackground
-                source={{ uri: imageUrl || 'https://via.placeholder.com/400x300' }}
-                style={styles.image}
-                resizeMode="cover"
-            >
+        <Pressable style={styles.container} onPress={onPress}>
+            {/* Left side - Avatar */}
+            <View style={styles.avatarContainer}>
                 <LinearGradient
-                    colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.9)']}
-                    style={styles.gradient}
-                />
-                <View style={styles.content}>
-                    <View style={styles.badge}>
-                        <Text style={styles.badgeText}>Featured</Text>
-                    </View>
-                    <Text style={styles.name}>{name}</Text>
-                    <Text style={styles.bio} numberOfLines={2}>
-                        {bio}
-                    </Text>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>View Author</Text>
-                        <Ionicons
-                            name="arrow-forward"
-                            size={14}
-                            color={theme.colors.text}
-                        />
-                    </View>
+                    colors={[theme.colors.primary, theme.colors.primaryDark]}
+                    style={styles.avatarGradient}
+                >
+                    <Text style={styles.avatarText}>{initial}</Text>
+                </LinearGradient>
+            </View>
+
+            {/* Right side - Content */}
+            <View style={styles.content}>
+                {/* Badge */}
+                <View style={styles.badge}>
+                    <Ionicons name="star" size={10} color={theme.colors.primary} />
+                    <Text style={styles.badgeText}>Featured Author</Text>
                 </View>
-            </ImageBackground>
+
+                {/* Name */}
+                <Text style={styles.name} numberOfLines={1}>{name}</Text>
+
+                {/* Bio */}
+                <Text style={styles.bio} numberOfLines={2}>{bio}</Text>
+
+                {/* Button */}
+                <View style={styles.button}>
+                    <Text style={styles.buttonText}>View Profile</Text>
+                    <Ionicons name="chevron-forward" size={14} color={theme.colors.primary} />
+                </View>
+            </View>
         </Pressable>
     );
 };
 
 const styles = StyleSheet.create((theme) => ({
-    card: {
+    container: {
+        flexDirection: 'row',
+        backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xl,
-        overflow: 'hidden',
-        ...theme.shadows.md,
+        padding: theme.spacing.lg,
+        gap: theme.spacing.lg,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        ...theme.shadows.sm,
     },
-    image: {
-        height: 200,
-        justifyContent: 'flex-end',
+    avatarContainer: {
+        alignSelf: 'center',
     },
-    gradient: {
-        ...StyleSheet.absoluteFillObject,
+    avatarGradient: {
+        width: 72,
+        height: 72,
+        borderRadius: 36,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    avatarText: {
+        fontSize: 28,
+        fontWeight: '700',
+        color: '#FFFFFF',
     },
     content: {
-        padding: theme.spacing.lg,
+        flex: 1,
         gap: theme.spacing.xs,
     },
     badge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 4,
         alignSelf: 'flex-start',
-        backgroundColor: theme.colors.primary,
+        backgroundColor: `${theme.colors.primary}15`,
         paddingHorizontal: theme.spacing.sm,
         paddingVertical: theme.spacing.xxs,
-        borderRadius: theme.radius.sm,
-        marginBottom: theme.spacing.xs,
+        borderRadius: theme.radius.full,
     },
     badgeText: {
         fontSize: theme.typography.size.xs,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.textInverse,
-        textTransform: 'uppercase',
+        fontWeight: theme.typography.weight.semibold,
+        color: theme.colors.primary,
     },
     name: {
-        fontSize: theme.typography.size.xxl,
+        fontSize: theme.typography.size.lg,
         fontWeight: theme.typography.weight.bold,
-        color: '#FFFFFF',
+        color: theme.colors.text,
     },
     bio: {
-        fontSize: theme.typography.size.md,
-        color: 'rgba(255,255,255,0.8)',
-        lineHeight: 22,
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textSecondary,
+        lineHeight: 18,
     },
     button: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: theme.spacing.xs,
-        marginTop: theme.spacing.sm,
-        backgroundColor: 'rgba(255,255,255,0.9)',
-        alignSelf: 'flex-start',
-        paddingHorizontal: theme.spacing.md,
-        paddingVertical: theme.spacing.xs,
-        borderRadius: theme.radius.full,
+        gap: 2,
+        marginTop: theme.spacing.xs,
     },
     buttonText: {
         fontSize: theme.typography.size.sm,
         fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.text,
+        color: theme.colors.primary,
     },
 }));

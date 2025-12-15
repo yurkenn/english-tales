@@ -1,18 +1,22 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { View, Text, FlatList, Pressable, Image, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { RatingStars } from '@/components';
-import { useStory, useReviewsByStory, useStoryRating } from '@/hooks/useQueries';
+import { RatingStars, WriteReviewModal } from '@/components';
+import { useStory, useReviewsByStory, useStoryRating, useCreateReview } from '@/hooks/useQueries';
 import { Review } from '@/types';
+import { useAuthStore } from '@/store/authStore';
 
 export default function ReviewsScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
+    const { user } = useAuthStore();
+    const [showReviewModal, setShowReviewModal] = useState(false);
+    const createReview = useCreateReview();
 
     // Fetch data
     const { data: storyDoc } = useStory(id || '');
@@ -22,6 +26,8 @@ export default function ReviewsScreen() {
     const reviews = reviewsData || [];
     const averageRating = ratingData?.averageRating || 0;
     const totalReviews = ratingData?.totalReviews || 0;
+
+    const canWriteReview = user && !user.isAnonymous;
 
     const formatDate = (date: string | Date): string => {
         return new Date(date).toLocaleDateString('en-US', {
@@ -86,7 +92,7 @@ export default function ReviewsScreen() {
                 data={reviews}
                 keyExtractor={(item) => item._id}
                 renderItem={renderReview}
-                contentContainerStyle={styles.listContent}
+                contentContainerStyle={[styles.listContent, { paddingBottom: insets.bottom + 80 }]}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
                 ListEmptyComponent={
@@ -115,6 +121,35 @@ export default function ReviewsScreen() {
                         </View>
                     ) : null
                 }
+            />
+
+            {/* Write Review FAB */}
+            {canWriteReview && (
+                <Pressable
+                    style={[styles.fab, { bottom: insets.bottom + 20 }]}
+                    onPress={() => setShowReviewModal(true)}
+                >
+                    <Ionicons name="create-outline" size={24} color={theme.colors.textInverse} />
+                    <Text style={styles.fabText}>Write Review</Text>
+                </Pressable>
+            )}
+
+            {/* Write Review Modal */}
+            <WriteReviewModal
+                visible={showReviewModal}
+                onClose={() => setShowReviewModal(false)}
+                storyTitle={storyDoc?.title || 'Story'}
+                onSubmit={async (rating, text) => {
+                    if (!user || !id) return;
+                    await createReview.mutateAsync({
+                        storyId: id,
+                        userId: user.id,
+                        userName: user.displayName || 'Anonymous',
+                        userAvatar: user.photoURL || undefined,
+                        rating,
+                        text,
+                    });
+                }}
             />
         </View>
     );
@@ -161,7 +196,6 @@ const styles = StyleSheet.create((theme) => ({
     },
     listContent: {
         paddingHorizontal: theme.spacing.lg,
-        paddingBottom: theme.spacing.xxxl,
     },
     statsSection: {
         paddingVertical: theme.spacing.xl,
@@ -246,5 +280,22 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
         textAlign: 'center',
+    },
+    fab: {
+        position: 'absolute',
+        right: theme.spacing.lg,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: theme.spacing.sm,
+        backgroundColor: theme.colors.primary,
+        paddingHorizontal: theme.spacing.xl,
+        paddingVertical: theme.spacing.md,
+        borderRadius: theme.radius.full,
+        ...theme.shadows.lg,
+    },
+    fabText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.textInverse,
     },
 }));

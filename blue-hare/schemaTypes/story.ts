@@ -44,7 +44,7 @@ export const storySchema = defineType({
             options: {
                 hotspot: true,
             },
-            validation: (Rule) => Rule.required(),
+            // validation: (Rule) => Rule.required(), // Temporarily disabled
         }),
         defineField({
             name: 'description',
