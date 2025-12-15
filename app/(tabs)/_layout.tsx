@@ -1,43 +1,76 @@
 import React from 'react';
+import { View, Pressable } from 'react-native';
 import { Tabs } from 'expo-router';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import Animated, {
+    useAnimatedStyle,
+    withSpring,
+    interpolateColor,
+    useSharedValue,
+    withTiming,
+} from 'react-native-reanimated';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 type TabIconName = 'home' | 'compass' | 'book' | 'person';
 
-export default function TabLayout() {
+interface TabIconProps {
+    name: TabIconName;
+    focused: boolean;
+    color: string;
+}
+
+const AnimatedIcon = Animated.createAnimatedComponent(View);
+
+const TabIcon: React.FC<TabIconProps> = ({ name, focused, color }) => {
     const { theme } = useUnistyles();
 
-    const getTabIcon = (
-        name: TabIconName,
-        focused: boolean
-    ): keyof typeof Ionicons.glyphMap => {
-        const icons: Record<TabIconName, { active: keyof typeof Ionicons.glyphMap; inactive: keyof typeof Ionicons.glyphMap }> = {
-            home: { active: 'home', inactive: 'home-outline' },
-            compass: { active: 'compass', inactive: 'compass-outline' },
-            book: { active: 'book', inactive: 'book-outline' },
-            person: { active: 'person', inactive: 'person-outline' },
-        };
-        return focused ? icons[name].active : icons[name].inactive;
+    const icons: Record<TabIconName, { active: keyof typeof Ionicons.glyphMap; inactive: keyof typeof Ionicons.glyphMap }> = {
+        home: { active: 'home', inactive: 'home-outline' },
+        compass: { active: 'compass', inactive: 'compass-outline' },
+        book: { active: 'bookmark', inactive: 'bookmark-outline' },
+        person: { active: 'person-circle', inactive: 'person-circle-outline' },
     };
+
+    const iconName = focused ? icons[name].active : icons[name].inactive;
+
+    const animatedStyle = useAnimatedStyle(() => ({
+        transform: [
+            { scale: withSpring(focused ? 1 : 0.95, { damping: 15, stiffness: 200 }) },
+        ],
+    }));
+
+    return (
+        <AnimatedIcon style={animatedStyle}>
+            <Ionicons
+                name={iconName}
+                size={28}
+                color={color}
+            />
+        </AnimatedIcon>
+    );
+};
+
+export default function TabLayout() {
+    const { theme, themeName } = useUnistyles();
+    const insets = useSafeAreaInsets();
 
     return (
         <Tabs
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: theme.colors.primary,
+                tabBarActiveTintColor: theme.colors.text,
                 tabBarInactiveTintColor: theme.colors.textMuted,
+                tabBarShowLabel: false,
                 tabBarStyle: {
                     backgroundColor: theme.colors.surface,
+                    borderTopWidth: 0.5,
                     borderTopColor: theme.colors.borderLight,
-                    height: theme.tabBar.height + 20, // extra for safe area
-                    paddingTop: theme.spacing.sm,
-                    paddingBottom: theme.spacing.xl,
-                    ...theme.shadows.sm,
-                },
-                tabBarLabelStyle: {
-                    fontSize: theme.typography.size.xs,
-                    fontWeight: theme.typography.weight.medium,
+                    height: 50 + insets.bottom,
+                    paddingBottom: insets.bottom > 0 ? insets.bottom - 8 : 4,
+                    paddingTop: 8,
+                    elevation: 0,
+                    shadowOpacity: 0,
                 },
             }}
         >
@@ -46,11 +79,7 @@ export default function TabLayout() {
                 options={{
                     title: 'Home',
                     tabBarIcon: ({ focused, color }) => (
-                        <Ionicons
-                            name={getTabIcon('home', focused)}
-                            size={theme.tabBar.iconSize}
-                            color={color}
-                        />
+                        <TabIcon name="home" focused={focused} color={color} />
                     ),
                 }}
             />
@@ -59,11 +88,7 @@ export default function TabLayout() {
                 options={{
                     title: 'Discover',
                     tabBarIcon: ({ focused, color }) => (
-                        <Ionicons
-                            name={getTabIcon('compass', focused)}
-                            size={theme.tabBar.iconSize}
-                            color={color}
-                        />
+                        <TabIcon name="compass" focused={focused} color={color} />
                     ),
                 }}
             />
@@ -72,11 +97,7 @@ export default function TabLayout() {
                 options={{
                     title: 'Library',
                     tabBarIcon: ({ focused, color }) => (
-                        <Ionicons
-                            name={getTabIcon('book', focused)}
-                            size={theme.tabBar.iconSize}
-                            color={color}
-                        />
+                        <TabIcon name="book" focused={focused} color={color} />
                     ),
                 }}
             />
@@ -85,11 +106,7 @@ export default function TabLayout() {
                 options={{
                     title: 'Profile',
                     tabBarIcon: ({ focused, color }) => (
-                        <Ionicons
-                            name={getTabIcon('person', focused)}
-                            size={theme.tabBar.iconSize}
-                            color={color}
-                        />
+                        <TabIcon name="person" focused={focused} color={color} />
                     ),
                 }}
             />

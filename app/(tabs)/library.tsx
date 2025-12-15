@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useCallback } from 'react';
-import { View, Text, FlatList, Pressable, Image, ActivityIndicator, RefreshControl } from 'react-native';
+import { View, Text, FlatList, Pressable, Image, ActivityIndicator, RefreshControl, Alert } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -98,6 +98,53 @@ export default function LibraryScreen() {
         router.push(`/reading/${storyId}`);
     };
 
+    const handleMorePress = (item: LibraryItemWithProgress) => {
+        haptics.selection();
+        const isDownloaded = downloadActions.isDownloaded(item.storyId);
+
+        const options = [
+            { text: 'Cancel', style: 'cancel' as const },
+            {
+                text: 'Remove from Library',
+                style: 'destructive' as const,
+                onPress: () => {
+                    Alert.alert(
+                        'Remove from Library',
+                        `Remove "${item.story.title}" from your library?`,
+                        [
+                            { text: 'Cancel', style: 'cancel' },
+                            {
+                                text: 'Remove',
+                                style: 'destructive',
+                                onPress: async () => {
+                                    haptics.success();
+                                    await libraryActions.removeFromLibrary(item.storyId);
+                                }
+                            }
+                        ]
+                    );
+                }
+            },
+        ];
+
+        if (isDownloaded) {
+            options.splice(1, 0, {
+                text: 'Delete Download',
+                style: 'destructive' as const,
+                onPress: () => {
+                    downloadActions.deleteDownload(item.storyId);
+                    haptics.success();
+                }
+            });
+        }
+
+        Alert.alert(
+            item.story.title,
+            `by ${item.story.author}`,
+            options
+        );
+    };
+
     const renderItem = ({ item }: { item: LibraryItemWithProgress }) => {
         const progress = item.progress?.percentage || 0;
         const isCompleted = item.progress?.isCompleted || false;
@@ -128,6 +175,7 @@ export default function LibraryScreen() {
                         <Pressable
                             style={styles.moreButton}
                             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                            onPress={() => handleMorePress(item)}
                         >
                             <Ionicons
                                 name="ellipsis-vertical"
