@@ -163,6 +163,110 @@ const skeletonStyles = StyleSheet.create((theme) => ({
     featuredCard: {
         marginTop: theme.spacing.md,
     },
+    categoryScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    categoryHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.md,
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.border,
+    },
+    categoryList: {
+        padding: theme.spacing.lg,
+        gap: theme.spacing.md,
+    },
+    authorScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    authorHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.md,
+    },
+    authorInfo: {
+        alignItems: 'center',
+        paddingHorizontal: theme.spacing.xl,
+        paddingVertical: theme.spacing.xxl,
+    },
+    authorStories: {
+        paddingHorizontal: theme.spacing.lg,
+        marginBottom: theme.spacing.xxl,
+    },
+    storyDetailScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    reviewsScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    reviewsHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.md,
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.borderLight,
+    },
+    reviewsList: {
+        paddingHorizontal: theme.spacing.lg,
+        gap: theme.spacing.md,
+    },
+    reviewCard: {
+        backgroundColor: theme.colors.surface,
+        padding: theme.spacing.lg,
+        borderRadius: theme.radius.xl,
+    },
+    profileScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    profileHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.lg,
+    },
+    profileCard: {
+        alignItems: 'center',
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.xl,
+    },
+    statsGrid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        paddingHorizontal: theme.spacing.lg,
+        gap: theme.spacing.md,
+        marginBottom: theme.spacing.lg,
+    },
+    menuCard: {
+        backgroundColor: theme.colors.surface,
+        borderRadius: theme.radius.xl,
+        marginHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.sm,
+    },
+    menuItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: theme.spacing.md,
+        paddingHorizontal: theme.spacing.lg,
+        gap: theme.spacing.md,
+    },
+    readingScreen: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+        paddingTop: 60,
+    },
 }));
 
 // Featured Card Skeleton
@@ -279,6 +383,189 @@ export const DiscoverScreenSkeleton: React.FC = () => {
                     <BookListItemSkeleton />
                     <BookListItemSkeleton />
                 </View>
+            </View>
+        </View>
+    );
+};
+
+// Category Screen Skeleton
+export const CategoryScreenSkeleton: React.FC = () => {
+    return (
+        <View style={skeletonStyles.categoryScreen}>
+            {/* Header */}
+            <View style={skeletonStyles.categoryHeader}>
+                <Skeleton width={40} height={40} borderRadius={20} />
+                <Skeleton width={120} height={24} />
+                <Skeleton width={40} height={40} borderRadius={20} />
+            </View>
+
+            {/* Stories List */}
+            <View style={skeletonStyles.categoryList}>
+                <BookListItemSkeleton />
+                <BookListItemSkeleton />
+                <BookListItemSkeleton />
+                <BookListItemSkeleton />
+                <BookListItemSkeleton />
+            </View>
+        </View>
+    );
+};
+
+// Author Screen Skeleton
+export const AuthorScreenSkeleton: React.FC = () => {
+    return (
+        <View style={skeletonStyles.authorScreen}>
+            {/* Header */}
+            <View style={skeletonStyles.authorHeader}>
+                <Skeleton width={40} height={40} borderRadius={20} />
+                <Skeleton width={80} height={24} />
+                <Skeleton width={40} height={40} borderRadius={20} />
+            </View>
+
+            {/* Author Info */}
+            <View style={skeletonStyles.authorInfo}>
+                <Skeleton width={120} height={120} borderRadius={60} />
+                <Skeleton width={150} height={28} style={{ marginTop: 16 }} />
+                <Skeleton width={100} height={16} style={{ marginTop: 8 }} />
+                <Skeleton width="80%" height={16} style={{ marginTop: 16 }} />
+                <Skeleton width="70%" height={16} style={{ marginTop: 8 }} />
+            </View>
+
+            {/* Stories */}
+            <View style={skeletonStyles.authorStories}>
+                <Skeleton width={100} height={20} />
+                <View style={{ flexDirection: 'row', gap: 12, marginTop: 12 }}>
+                    <BookCardSkeleton />
+                    <BookCardSkeleton />
+                    <BookCardSkeleton />
+                </View>
+            </View>
+        </View>
+    );
+};
+
+// Story Detail Screen Skeleton
+export const StoryDetailScreenSkeleton: React.FC = () => {
+    return (
+        <View style={skeletonStyles.storyDetailScreen}>
+            <Skeleton width="100%" height={300} />
+            <View style={{ padding: 20, gap: 12 }}>
+                <Skeleton width="80%" height={32} />
+                <Skeleton width="60%" height={20} />
+                <Skeleton width="100%" height={16} style={{ marginTop: 16 }} />
+                <Skeleton width="90%" height={16} />
+                <Skeleton width="100%" height={16} />
+            </View>
+        </View>
+    );
+};
+
+// Reviews Screen Skeleton
+export const ReviewsScreenSkeleton: React.FC = () => {
+    return (
+        <View style={skeletonStyles.reviewsScreen}>
+            {/* Header */}
+            <View style={skeletonStyles.reviewsHeader}>
+                <Skeleton width={40} height={40} borderRadius={20} />
+                <Skeleton width={100} height={24} />
+                <Skeleton width={40} height={40} borderRadius={20} />
+            </View>
+
+            {/* Reviews List */}
+            <View style={skeletonStyles.reviewsList}>
+                <View style={skeletonStyles.reviewCard}>
+                    <View style={{ flexDirection: 'row', gap: 12 }}>
+                        <Skeleton width={40} height={40} borderRadius={20} />
+                        <View style={{ flex: 1, gap: 8 }}>
+                            <Skeleton width="60%" height={18} />
+                            <Skeleton width="40%" height={14} />
+                        </View>
+                    </View>
+                    <Skeleton width="100%" height={16} style={{ marginTop: 12 }} />
+                    <Skeleton width="90%" height={16} style={{ marginTop: 8 }} />
+                </View>
+                <View style={skeletonStyles.reviewCard}>
+                    <View style={{ flexDirection: 'row', gap: 12 }}>
+                        <Skeleton width={40} height={40} borderRadius={20} />
+                        <View style={{ flex: 1, gap: 8 }}>
+                            <Skeleton width="60%" height={18} />
+                            <Skeleton width="40%" height={14} />
+                        </View>
+                    </View>
+                    <Skeleton width="100%" height={16} style={{ marginTop: 12 }} />
+                    <Skeleton width="90%" height={16} style={{ marginTop: 8 }} />
+                </View>
+            </View>
+        </View>
+    );
+};
+
+// Profile Screen Skeleton
+export const ProfileScreenSkeleton: React.FC = () => {
+    return (
+        <View style={skeletonStyles.profileScreen}>
+            {/* Header */}
+            <View style={skeletonStyles.profileHeader}>
+                <Skeleton width={120} height={28} />
+                <Skeleton width={40} height={40} borderRadius={20} />
+            </View>
+
+            {/* Profile Card */}
+            <View style={skeletonStyles.profileCard}>
+                <Skeleton width={80} height={80} borderRadius={40} />
+                <Skeleton width={150} height={24} style={{ marginTop: 16 }} />
+                <Skeleton width={200} height={16} style={{ marginTop: 8 }} />
+            </View>
+
+            {/* Stats Grid */}
+            <View style={skeletonStyles.statsGrid}>
+                <View style={skeletonStyles.statItem}>
+                    <Skeleton width={40} height={32} />
+                    <Skeleton width={60} height={14} style={{ marginTop: 8 }} />
+                </View>
+                <View style={skeletonStyles.statItem}>
+                    <Skeleton width={40} height={32} />
+                    <Skeleton width={60} height={14} style={{ marginTop: 8 }} />
+                </View>
+                <View style={skeletonStyles.statItem}>
+                    <Skeleton width={40} height={32} />
+                    <Skeleton width={60} height={14} style={{ marginTop: 8 }} />
+                </View>
+                <View style={skeletonStyles.statItem}>
+                    <Skeleton width={40} height={32} />
+                    <Skeleton width={60} height={14} style={{ marginTop: 8 }} />
+                </View>
+            </View>
+
+            {/* Menu */}
+            <View style={skeletonStyles.menuCard}>
+                <View style={skeletonStyles.menuItem}>
+                    <Skeleton width={36} height={36} borderRadius={18} />
+                    <Skeleton width="60%" height={18} />
+                    <Skeleton width={20} height={20} borderRadius={10} />
+                </View>
+                <View style={skeletonStyles.menuItem}>
+                    <Skeleton width={36} height={36} borderRadius={18} />
+                    <Skeleton width="60%" height={18} />
+                    <Skeleton width={20} height={20} borderRadius={10} />
+                </View>
+            </View>
+        </View>
+    );
+};
+
+// Reading Screen Skeleton (simple version)
+export const ReadingScreenSkeleton: React.FC = () => {
+    return (
+        <View style={skeletonStyles.readingScreen}>
+            <View style={{ padding: 20, gap: 16 }}>
+                <Skeleton width="100%" height={20} />
+                <Skeleton width="95%" height={20} />
+                <Skeleton width="100%" height={20} />
+                <Skeleton width="90%" height={20} />
+                <Skeleton width="100%" height={20} style={{ marginTop: 24 }} />
+                <Skeleton width="95%" height={20} />
+                <Skeleton width="100%" height={20} />
             </View>
         </View>
     );

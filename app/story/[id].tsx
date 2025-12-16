@@ -1,17 +1,20 @@
-import React, { useMemo, useState } from 'react';
-import { View, Text, ScrollView, Pressable, ActivityIndicator } from 'react-native';
+import React, { useMemo, useState, useRef } from 'react';
+import { View, Text, ScrollView, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import BottomSheet from '@gorhom/bottom-sheet';
 import {
     RatingStars,
-    WriteReviewModal,
+    WriteReviewSheet,
     StoryHero,
     StoryMeta,
     ReviewCard,
     NetworkError,
     DownloadButton,
+    ConfirmationDialog,
+    StoryDetailScreenSkeleton,
 } from '@/components';
 import { useStory, useStoryRating, useReviewsByStory, useCreateReview } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
@@ -22,14 +25,14 @@ import { useDownloadStore } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
-import { Alert } from 'react-native';
 
 export default function StoryDetailScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
-    const [showReviewModal, setShowReviewModal] = useState(false);
+    const writeReviewSheetRef = useRef<BottomSheet>(null);
+    const removeDownloadDialogRef = useRef<BottomSheet>(null);
 
     // Auth & Library & Downloads
     const { user } = useAuthStore();
@@ -80,8 +83,8 @@ export default function StoryDetailScreen() {
 
     if (isLoading) {
         return (
-            <View style={[styles.container, styles.center]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={styles.container}>
+                <StoryDetailScreenSkeleton />
             </View>
         );
     }
@@ -170,22 +173,8 @@ export default function StoryDetailScreen() {
                             }
                         }}
                         onDelete={() => {
-                            Alert.alert(
-                                'Remove Download',
-                                'This story will no longer be available offline.',
-                                [
-                                    { text: 'Cancel', style: 'cancel' },
-                                    {
-                                        text: 'Remove',
-                                        style: 'destructive',
-                                        onPress: async () => {
-                                            await downloadActions.deleteDownload(story.id);
-                                            haptics.selection();
-                                            useToastStore.getState().actions.success('Download removed');
-                                        },
-                                    },
-                                ]
-                            );
+                            haptics.selection();
+                            removeDownloadDialogRef.current?.expand();
                         }}
                     />
 
@@ -224,7 +213,13 @@ export default function StoryDetailScreen() {
                         )}
 
                         {user && !user.isAnonymous && (
-                            <Pressable style={styles.writeReviewButton} onPress={() => setShowReviewModal(true)}>
+                            <Pressable
+                                style={styles.writeReviewButton}
+                                onPress={() => {
+                                    haptics.selection();
+                                    writeReviewSheetRef.current?.expand();
+                                }}
+                            >
                                 <Ionicons name="create-outline" size={18} color={theme.colors.primary} />
                                 <Text style={styles.writeReviewText}>Write a Review</Text>
                             </Pressable>
@@ -233,10 +228,9 @@ export default function StoryDetailScreen() {
                 </View>
             </ScrollView>
 
-            {/* Write Review Modal */}
-            <WriteReviewModal
-                visible={showReviewModal}
-                onClose={() => setShowReviewModal(false)}
+            {/* Write Review Sheet */}
+            <WriteReviewSheet
+                ref={writeReviewSheetRef}
                 storyTitle={story.title}
                 onSubmit={async (rating, text) => {
                     if (!user || !story) return;
@@ -249,6 +243,7 @@ export default function StoryDetailScreen() {
                         text,
                     });
                 }}
+                onClose={() => writeReviewSheetRef.current?.close()}
             />
 
             {/* Bottom Action */}
@@ -258,6 +253,24 @@ export default function StoryDetailScreen() {
                     <Text style={styles.readButtonText}>Start Reading</Text>
                 </Pressable>
             </View>
+
+            {/* Confirmation Dialog */}
+            <ConfirmationDialog
+                ref={removeDownloadDialogRef}
+                title="Remove Download"
+                message="This story will no longer be available offline."
+                confirmLabel="Remove"
+                cancelLabel="Cancel"
+                destructive
+                icon="cloud-offline-outline"
+                onConfirm={async () => {
+                    await downloadActions.deleteDownload(story.id);
+                    haptics.selection();
+                    removeDownloadDialogRef.current?.close();
+                    useToastStore.getState().actions.success('Download removed');
+                }}
+                onCancel={() => removeDownloadDialogRef.current?.close()}
+            />
         </View>
     );
 }

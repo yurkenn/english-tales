@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ProfileCardProps {
     photoURL?: string | null;
@@ -42,7 +43,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                     style={styles.avatarRing}
                 >
                     <View style={styles.avatarInner}>
-                        <Image source={{ uri: avatarUri }} style={styles.avatar} />
+                        <OptimizedImage source={{ uri: avatarUri }} style={styles.avatar} />
                     </View>
                 </LinearGradient>
                 {!isAnonymous && (

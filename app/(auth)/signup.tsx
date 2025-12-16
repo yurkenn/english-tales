@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
+import { FormField } from '@/components';
+import { useToastStore } from '@/store/toastStore';
+import { signupSchema } from '@/lib/validations';
 import { signUp, signInWithGoogle } from '@/services/auth';
 
 export default function SignupScreen() {
@@ -15,19 +17,30 @@ export default function SignupScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string }>({});
+    const toastActions = useToastStore((state) => state.actions);
 
     const handleSignup = async () => {
-        if (!name || !email || !password) {
-            Alert.alert('Error', 'Please fill in all fields.');
+        // Validate form
+        const result = signupSchema.safeParse({ name, email, password });
+        if (!result.success) {
+            const fieldErrors: { name?: string; email?: string; password?: string } = {};
+            result.error.errors.forEach((err) => {
+                if (err.path[0]) {
+                    fieldErrors[err.path[0] as 'name' | 'email' | 'password'] = err.message;
+                }
+            });
+            setErrors(fieldErrors);
             return;
         }
 
+        setErrors({});
         setLoading(true);
         try {
             await signUp(email, password, name);
             // AuthContext will handle redirect
         } catch (error: any) {
-            Alert.alert('Signup Failed', error.message);
+            toastActions.error(error.message || 'Signup failed');
         } finally {
             setLoading(false);
         }
@@ -40,7 +53,7 @@ export default function SignupScreen() {
             // AuthContext will handle redirect
         } catch (error: any) {
             if (error.message !== 'Sign in was cancelled') {
-                Alert.alert('Google Sign-In Failed', error.message);
+                toastActions.error(error.message || 'Google sign-in failed');
             }
         } finally {
             setLoading(false);
@@ -66,39 +79,49 @@ export default function SignupScreen() {
 
                 {/* Form */}
                 <View style={styles.form}>
-                    <View style={styles.inputContainer}>
-                        <Ionicons name="person-outline" size={20} color={theme.colors.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Full Name"
-                            placeholderTextColor={theme.colors.textMuted}
-                            value={name}
-                            onChangeText={setName}
-                        />
-                    </View>
-                    <View style={styles.inputContainer}>
-                        <Ionicons name="mail-outline" size={20} color={theme.colors.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Email"
-                            placeholderTextColor={theme.colors.textMuted}
-                            value={email}
-                            onChangeText={setEmail}
-                            autoCapitalize="none"
-                            keyboardType="email-address"
-                        />
-                    </View>
-                    <View style={styles.inputContainer}>
-                        <Ionicons name="lock-closed-outline" size={20} color={theme.colors.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Password"
-                            placeholderTextColor={theme.colors.textMuted}
-                            value={password}
-                            onChangeText={setPassword}
-                            secureTextEntry
-                        />
-                    </View>
+                    <FormField
+                        icon="person-outline"
+                        placeholder="Full Name"
+                        value={name}
+                        onChangeText={(text) => {
+                            setName(text);
+                            if (errors.name) {
+                                setErrors({ ...errors, name: undefined });
+                            }
+                        }}
+                        error={errors.name}
+                        containerStyle={styles.fieldContainer}
+                    />
+                    <FormField
+                        icon="mail-outline"
+                        placeholder="Email"
+                        value={email}
+                        onChangeText={(text) => {
+                            setEmail(text);
+                            if (errors.email) {
+                                setErrors({ ...errors, email: undefined });
+                            }
+                        }}
+                        autoCapitalize="none"
+                        keyboardType="email-address"
+                        error={errors.email}
+                        containerStyle={styles.fieldContainer}
+                    />
+                    <FormField
+                        icon="lock-closed-outline"
+                        placeholder="Password"
+                        value={password}
+                        onChangeText={(text) => {
+                            setPassword(text);
+                            if (errors.password) {
+                                setErrors({ ...errors, password: undefined });
+                            }
+                        }}
+                        secureTextEntry
+                        error={errors.password}
+                        helperText="Must be at least 6 characters"
+                        containerStyle={styles.fieldContainer}
+                    />
 
                     <Pressable
                         style={[styles.button, loading && styles.buttonDisabled]}
@@ -182,23 +205,8 @@ const styles = StyleSheet.create((theme) => ({
     form: {
         gap: theme.spacing.lg,
     },
-    inputContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        height: 56,
-        paddingHorizontal: theme.spacing.lg,
-    },
-    inputIcon: {
-        marginRight: theme.spacing.md,
-    },
-    input: {
-        flex: 1,
-        fontSize: theme.typography.size.md,
-        color: theme.colors.text,
+    fieldContainer: {
+        marginBottom: theme.spacing.xs,
     },
     button: {
         height: 56,

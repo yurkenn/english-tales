@@ -1,11 +1,11 @@
 import React, { useMemo, useRef, useCallback } from 'react';
-import { View, Text, FlatList, Pressable, Image, ActivityIndicator } from 'react-native';
+import { View, Text, FlatList, Pressable, Image } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import BottomSheet from '@gorhom/bottom-sheet';
-import { RatingStars, WriteReviewSheet } from '@/components';
+import { RatingStars, WriteReviewSheet, EmptyState, ReviewsScreenSkeleton } from '@/components';
 import { useStory, useReviewsByStory, useStoryRating, useCreateReview } from '@/hooks/useQueries';
 import { Review } from '@/types';
 import { useAuthStore } from '@/store/authStore';
@@ -65,8 +65,8 @@ export default function ReviewsScreen() {
 
     if (loadingReviews) {
         return (
-            <View style={[styles.container, styles.center]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={[styles.container, { paddingTop: insets.top }]}>
+                <ReviewsScreenSkeleton />
             </View>
         );
     }
@@ -104,18 +104,19 @@ export default function ReviewsScreen() {
                 contentContainerStyle={[styles.listContent, { paddingBottom: insets.bottom + 80 }]}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                removeClippedSubviews={true}
+                initialNumToRender={10}
+                maxToRenderPerBatch={5}
+                windowSize={10}
+                updateCellsBatchingPeriod={50}
                 ListEmptyComponent={
-                    <View style={styles.emptyState}>
-                        <Ionicons
-                            name="chatbubble-outline"
-                            size={64}
-                            color={theme.colors.textMuted}
-                        />
-                        <Text style={styles.emptyTitle}>No reviews yet</Text>
-                        <Text style={styles.emptySubtitle}>
-                            Be the first to share your thoughts
-                        </Text>
-                    </View>
+                    <EmptyState
+                        icon="chatbubble-outline"
+                        title="No reviews yet"
+                        message="Be the first to share your thoughts about this story"
+                        actionLabel={canWriteReview ? "Write a Review" : undefined}
+                        onAction={canWriteReview ? handleOpenReviewSheet : undefined}
+                    />
                 }
                 ListHeaderComponent={
                     reviews.length > 0 ? (
@@ -273,22 +274,6 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
         lineHeight: 22,
-    },
-    emptyState: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: theme.spacing.xxxxl,
-        gap: theme.spacing.md,
-    },
-    emptyTitle: {
-        fontSize: theme.typography.size.xl,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-    },
-    emptySubtitle: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.textSecondary,
-        textAlign: 'center',
     },
     fab: {
         position: 'absolute',

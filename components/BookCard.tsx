@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { OptimizedImage } from './OptimizedImage';
 import { Story } from '@/types';
 
 interface BookCardProps {
@@ -24,7 +25,7 @@ export const BookCard: React.FC<BookCardProps> = ({
         <Pressable style={styles.container} onPress={onPress}>
             {/* Cover Image */}
             <View style={styles.coverContainer}>
-                <Image source={{ uri: coverUri }} style={styles.cover} />
+                <OptimizedImage source={{ uri: coverUri }} style={styles.cover} />
                 {/* Rank Badge */}
                 {showRank && (
                     <View style={styles.rankBadge}>

@@ -1,10 +1,10 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable, ActivityIndicator, Modal, Share } from 'react-native';
+import { View, Text, ScrollView, Pressable, Modal, Share } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { ProgressBar, PortableTextRenderer, ConfettiCelebration } from '@/components';
+import { ProgressBar, PortableTextRenderer, ConfettiCelebration, ReadingScreenSkeleton } from '@/components';
 import { useStory } from '@/hooks/useQueries';
 import { useProgressStore } from '@/store/progressStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
@@ -124,8 +124,8 @@ export default function ReadingScreen() {
 
     if (isLoading) {
         return (
-            <View style={[styles.container, styles.center]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={styles.container}>
+                <ReadingScreenSkeleton />
             </View>
         );
     }

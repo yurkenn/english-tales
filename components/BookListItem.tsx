@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { OptimizedImage } from './OptimizedImage';
 import { Story } from '@/types';
 
 interface BookListItemProps {
@@ -25,7 +26,7 @@ export const BookListItem: React.FC<BookListItemProps> = ({
         <Pressable style={styles.container} onPress={onPress}>
             {/* Cover */}
             <View style={styles.coverContainer}>
-                <Image source={{ uri: story.coverImage }} style={styles.cover} />
+                <OptimizedImage source={{ uri: story.coverImage }} style={styles.cover} />
             </View>
 
             {/* Content */}

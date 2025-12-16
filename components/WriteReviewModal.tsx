@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, Modal, Pressable, TextInput, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, Modal, Pressable, TextInput, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 
 interface WriteReviewModalProps {
@@ -21,6 +22,7 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
     const [rating, setRating] = useState(0);
     const [text, setText] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const toastActions = useToastStore((state) => state.actions);
 
     const handleRatingPress = (value: number) => {
         haptics.selection();
@@ -30,29 +32,26 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
     const handleSubmit = async () => {
         if (rating === 0) {
             haptics.error();
-            Alert.alert('Rating Required', 'Please select a rating before submitting.');
+            toastActions.error('Please select a rating before submitting.');
             return;
         }
         if (text.trim().length < 10) {
             haptics.error();
-            Alert.alert('Review Too Short', 'Please write at least 10 characters for your review.');
+            toastActions.error('Please write at least 10 characters for your review.');
             return;
         }
         setIsSubmitting(true);
         try {
             await onSubmit(rating, text.trim());
             haptics.success();
-            Alert.alert('Thank You!', 'Your review has been submitted and is pending approval.');
+            toastActions.success('Your review has been submitted and is pending approval.');
             setRating(0);
             setText('');
             onClose();
         } catch (error) {
             console.error('Review submission error:', error);
             haptics.error();
-            Alert.alert(
-                'Submission Failed',
-                'Could not submit your review. Please check your connection and try again.'
-            );
+            toastActions.error('Could not submit your review. Please check your connection and try again.');
         } finally {
             setIsSubmitting(false);
         }

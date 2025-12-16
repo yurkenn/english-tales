@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, TextInput, Modal, Alert } from 'react-native';
+import { View, Text, Pressable, TextInput, Modal } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 
 interface EditProfileModalProps {
@@ -20,22 +21,23 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
     const { theme } = useUnistyles();
     const [name, setName] = useState(initialName);
     const [isSaving, setIsSaving] = useState(false);
+    const toastActions = useToastStore((state) => state.actions);
 
     const handleSave = async () => {
         if (!name.trim()) {
             haptics.error();
-            Alert.alert('Error', 'Display name cannot be empty');
+            toastActions.error('Display name cannot be empty');
             return;
         }
         setIsSaving(true);
         try {
             await onSave(name.trim());
             haptics.success();
-            Alert.alert('Saved!', 'Profile updated successfully');
+            toastActions.success('Profile updated successfully');
             onClose();
         } catch (error) {
             haptics.error();
-            Alert.alert('Error', 'Failed to update profile. Please try again.');
+            toastActions.error('Failed to update profile. Please try again.');
         } finally {
             setIsSaving(false);
         }

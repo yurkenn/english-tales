@@ -1,17 +1,20 @@
-import React, { useMemo, useState, useCallback } from 'react';
-import { View, Text, FlatList, Pressable, Image, ActivityIndicator, RefreshControl, Alert } from 'react-native';
+import React, { useMemo, useState, useCallback, useRef } from 'react';
+import { View, Text, FlatList, Pressable, Image, ActivityIndicator, RefreshControl, Dimensions } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { LibraryScreenSkeleton } from '@/components';
-import { ProgressBar, EmptyState } from '@/components';
+import { LibraryScreenSkeleton, ProgressBar, EmptyState, StoryCardMenu, StoryCardMenuItem, ConfirmationDialog } from '@/components';
+import BottomSheet from '@gorhom/bottom-sheet';
 import { LibraryItem } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useDownloadStore } from '@/store/downloadStore';
+import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
+
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 type FilterType = 'all' | 'in-progress' | 'completed' | 'not-started';
 
@@ -26,6 +29,12 @@ export default function LibraryScreen() {
 
     const [refreshing, setRefreshing] = useState(false);
     const [filter, setFilter] = useState<FilterType>('all');
+    const [menuVisible, setMenuVisible] = useState(false);
+    const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
+    const [selectedItem, setSelectedItem] = useState<LibraryItemWithProgress | null>(null);
+    const buttonRefs = useRef<{ [key: string]: View | null }>({});
+    const removeFromLibraryDialogRef = useRef<BottomSheet>(null);
+    const deleteDownloadDialogRef = useRef<BottomSheet>(null);
 
     const onRefresh = useCallback(async () => {
         setRefreshing(true);
@@ -100,52 +109,62 @@ export default function LibraryScreen() {
 
     const handleMorePress = (item: LibraryItemWithProgress) => {
         haptics.selection();
-        const isDownloaded = downloadActions.isDownloaded(item.storyId);
+        
+        // Measure button position
+        const buttonRef = buttonRefs.current[item.storyId];
+        if (buttonRef) {
+            buttonRef.measure((x, y, width, height, pageX, pageY) => {
+                setMenuPosition({ x: pageX + width, y: pageY });
+                setSelectedItem(item);
+                setMenuVisible(true);
+            });
+        } else {
+            // Fallback: set a default position
+            setMenuPosition({ x: SCREEN_WIDTH - 220, y: 100 });
+            setSelectedItem(item);
+            setMenuVisible(true);
+        }
+    };
 
-        const options = [
-            { text: 'Cancel', style: 'cancel' as const },
-            {
-                text: 'Remove from Library',
-                style: 'destructive' as const,
-                onPress: () => {
-                    Alert.alert(
-                        'Remove from Library',
-                        `Remove "${item.story.title}" from your library?`,
-                        [
-                            { text: 'Cancel', style: 'cancel' },
-                            {
-                                text: 'Remove',
-                                style: 'destructive',
-                                onPress: async () => {
-                                    haptics.success();
-                                    await libraryActions.removeFromLibrary(item.storyId);
-                                }
-                            }
-                        ]
-                    );
-                }
-            },
-        ];
+    const handleMenuClose = () => {
+        setMenuVisible(false);
+        setTimeout(() => {
+            setSelectedItem(null);
+        }, 200);
+    };
+
+    const getMenuItems = (): StoryCardMenuItem[] => {
+        if (!selectedItem) return [];
+
+        const isDownloaded = downloadActions.isDownloaded(selectedItem.storyId);
+        const items: StoryCardMenuItem[] = [];
 
         if (isDownloaded) {
-            options.splice(1, 0, {
-                text: 'Delete Download',
-                style: 'destructive' as const,
+            items.push({
+                label: 'Delete Download',
+                icon: 'trash-outline',
+                destructive: true,
                 onPress: () => {
-                    downloadActions.deleteDownload(item.storyId);
-                    haptics.success();
-                }
+                    haptics.selection();
+                    deleteDownloadDialogRef.current?.expand();
+                },
             });
         }
 
-        Alert.alert(
-            item.story.title,
-            `by ${item.story.author}`,
-            options
-        );
+        items.push({
+            label: 'Remove from Library',
+            icon: 'remove-circle-outline',
+            destructive: true,
+            onPress: () => {
+                haptics.selection();
+                removeFromLibraryDialogRef.current?.expand();
+            },
+        });
+
+        return items;
     };
 
-    const renderItem = ({ item }: { item: LibraryItemWithProgress }) => {
+    const renderItem = useCallback(({ item }: { item: LibraryItemWithProgress }) => {
         const progress = item.progress?.percentage || 0;
         const isCompleted = item.progress?.isCompleted || false;
         const isDownloaded = downloadActions.isDownloaded(item.storyId);
@@ -172,17 +191,24 @@ export default function LibraryScreen() {
                                 </View>
                             )}
                         </View>
-                        <Pressable
-                            style={styles.moreButton}
-                            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                            onPress={() => handleMorePress(item)}
+                        <View
+                            ref={(ref) => {
+                                buttonRefs.current[item.storyId] = ref;
+                            }}
+                            collapsable={false}
                         >
-                            <Ionicons
-                                name="ellipsis-vertical"
-                                size={theme.iconSize.sm}
-                                color={theme.colors.textMuted}
-                            />
-                        </Pressable>
+                            <Pressable
+                                style={styles.moreButton}
+                                hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                                onPress={() => handleMorePress(item)}
+                            >
+                                <Ionicons
+                                    name="ellipsis-vertical"
+                                    size={theme.iconSize.sm}
+                                    color={theme.colors.textMuted}
+                                />
+                            </Pressable>
+                        </View>
                     </View>
 
                     {/* Progress */}
@@ -223,7 +249,7 @@ export default function LibraryScreen() {
                 </View>
             </Pressable>
         );
-    };
+    }, [theme, handleStoryPress, handleReadPress, handleMorePress, downloadActions]);
 
     if (isLoading) {
         return (
@@ -324,6 +350,11 @@ export default function LibraryScreen() {
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+                removeClippedSubviews={true}
+                initialNumToRender={10}
+                maxToRenderPerBatch={5}
+                windowSize={10}
+                updateCellsBatchingPeriod={50}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
@@ -341,6 +372,53 @@ export default function LibraryScreen() {
                         onAction={filter === 'all' ? () => router.push('/(tabs)/discover') : () => setFilter('all')}
                     />
                 }
+            />
+
+            {/* Story Card Menu */}
+            <StoryCardMenu
+                visible={menuVisible}
+                onClose={handleMenuClose}
+                position={menuPosition}
+                items={getMenuItems()}
+            />
+
+            {/* Confirmation Dialogs */}
+            <ConfirmationDialog
+                ref={removeFromLibraryDialogRef}
+                title="Remove from Library"
+                message={selectedItem ? `Remove "${selectedItem.story.title}" from your library?` : ''}
+                confirmLabel="Remove"
+                cancelLabel="Cancel"
+                destructive
+                icon="remove-circle-outline"
+                onConfirm={async () => {
+                    if (selectedItem) {
+                        await libraryActions.removeFromLibrary(selectedItem.storyId);
+                        haptics.success();
+                        removeFromLibraryDialogRef.current?.close();
+                        useToastStore.getState().actions.success('Removed from library');
+                    }
+                }}
+                onCancel={() => removeFromLibraryDialogRef.current?.close()}
+            />
+
+            <ConfirmationDialog
+                ref={deleteDownloadDialogRef}
+                title="Delete Download"
+                message={selectedItem ? `Delete "${selectedItem.story.title}" download? It will no longer be available offline.` : ''}
+                confirmLabel="Delete"
+                cancelLabel="Cancel"
+                destructive
+                icon="trash-outline"
+                onConfirm={async () => {
+                    if (selectedItem) {
+                        await downloadActions.deleteDownload(selectedItem.storyId);
+                        haptics.success();
+                        deleteDownloadDialogRef.current?.close();
+                        useToastStore.getState().actions.success('Download deleted');
+                    }
+                }}
+                onCancel={() => deleteDownloadDialogRef.current?.close()}
             />
         </View>
     );

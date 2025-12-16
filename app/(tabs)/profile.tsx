@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useEffect, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, ScrollView, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -10,6 +10,7 @@ import {
     StatsGrid,
     ProfileMenu,
     ReadingGoalsSheet,
+    ProfileScreenSkeleton,
 } from '@/components';
 import type { MenuItem } from '@/components';
 import { useAuthStore } from '@/store/authStore';
@@ -18,6 +19,7 @@ import { useProgressStore } from '@/store/progressStore';
 import { useThemeStore } from '@/store/themeStore';
 import { useAchievementsStore } from '@/store/achievementsStore';
 import { useSettingsStore } from '@/store/settingsStore';
+import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 
 export default function ProfileScreen() {
@@ -76,6 +78,7 @@ export default function ProfileScreen() {
 
     // Settings
     const { settings, actions: settingsActions } = useSettingsStore();
+    const toastActions = useToastStore((state) => state.actions);
 
     useEffect(() => {
         settingsActions.loadSettings();
@@ -93,26 +96,23 @@ export default function ProfileScreen() {
 
     const handleAchievements = () => {
         haptics.selection();
-        Alert.alert(
-            '🏆 Achievements',
-            `You've unlocked ${unlockedCount}/${achievements.length} achievements!\n\n${achievements.map(a => `${a.unlocked ? '✅' : '🔒'} ${a.icon} ${a.title}`).join('\n')}`,
-            [{ text: 'OK' }]
-        );
+        router.push('/achievements');
     };
 
     const handleNotifications = async () => {
         haptics.selection();
         await settingsActions.updateSettings({ notificationsEnabled: !settings.notificationsEnabled });
+        toastActions.success(`Notifications ${!settings.notificationsEnabled ? 'enabled' : 'disabled'}`);
     };
 
     const handleHelp = () => {
         haptics.selection();
-        Alert.alert('Help & Support', 'Need help? Contact us at support@englishtales.app', [{ text: 'OK' }]);
+        toastActions.info('Need help? Contact us at support@englishtales.app');
     };
 
     const handleAbout = () => {
         haptics.selection();
-        Alert.alert('About English Tales', 'Version 1.0.0\n\nImprove your English through beautiful stories.\n\n© 2024 English Tales', [{ text: 'OK' }]);
+        toastActions.info('English Tales v1.0.0\n\nImprove your English through beautiful stories.\n\n© 2024 English Tales');
     };
 
     const menuItems: MenuItem[] = [
@@ -126,8 +126,8 @@ export default function ProfileScreen() {
 
     if (isLoading) {
         return (
-            <View style={[styles.container, styles.center]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={[styles.container, { paddingTop: insets.top }]}>
+                <ProfileScreenSkeleton />
             </View>
         );
     }

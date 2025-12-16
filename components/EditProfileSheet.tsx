@@ -1,9 +1,10 @@
 import React, { forwardRef, useState, useCallback, useMemo, useEffect } from 'react';
-import { View, Text, Pressable, TextInput, Alert, Keyboard } from 'react-native';
+import { View, Text, Pressable, TextInput, Keyboard } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView, BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 
 interface EditProfileSheetProps {
@@ -18,6 +19,7 @@ export const EditProfileSheet = forwardRef<BottomSheet, EditProfileSheetProps>(
         const insets = useSafeAreaInsets();
         const [name, setName] = useState(initialName);
         const [isSaving, setIsSaving] = useState(false);
+        const toastActions = useToastStore((state) => state.actions);
 
         const snapPoints = useMemo(() => ['45%'], []);
 
@@ -41,7 +43,7 @@ export const EditProfileSheet = forwardRef<BottomSheet, EditProfileSheetProps>(
         const handleSave = async () => {
             if (!name.trim()) {
                 haptics.error();
-                Alert.alert('Error', 'Display name cannot be empty');
+                toastActions.error('Display name cannot be empty');
                 return;
             }
             Keyboard.dismiss();
@@ -49,10 +51,11 @@ export const EditProfileSheet = forwardRef<BottomSheet, EditProfileSheetProps>(
             try {
                 await onSave(name.trim());
                 haptics.success();
+                toastActions.success('Profile updated successfully');
                 onClose();
             } catch (error) {
                 haptics.error();
-                Alert.alert('Error', 'Failed to update profile. Please try again.');
+                toastActions.error('Failed to update profile. Please try again.');
             } finally {
                 setIsSaving(false);
             }

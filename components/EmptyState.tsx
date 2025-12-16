@@ -30,7 +30,12 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.message}>{message}</Text>
             {actionLabel && onAction && (
-                <Pressable style={styles.actionButton} onPress={onAction}>
+                <Pressable
+                    style={styles.actionButton}
+                    onPress={onAction}
+                    accessibilityRole="button"
+                    accessibilityLabel={actionLabel}
+                >
                     <Text style={styles.actionText}>{actionLabel}</Text>
                 </Pressable>
             )}

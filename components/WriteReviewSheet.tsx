@@ -1,9 +1,10 @@
 import React, { forwardRef, useState, useCallback, useMemo, useEffect } from 'react';
-import { View, Text, Pressable, ActivityIndicator, Alert, Keyboard } from 'react-native';
+import { View, Text, Pressable, ActivityIndicator, Keyboard } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView, BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 
 interface WriteReviewSheetProps {
@@ -19,6 +20,7 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
         const [rating, setRating] = useState(0);
         const [text, setText] = useState('');
         const [isSubmitting, setIsSubmitting] = useState(false);
+        const toastActions = useToastStore((state) => state.actions);
 
         const snapPoints = useMemo(() => ['75%'], []);
 
@@ -43,12 +45,12 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
         const handleSubmit = async () => {
             if (rating === 0) {
                 haptics.error();
-                Alert.alert('Rating Required', 'Please select a rating before submitting.');
+                toastActions.error('Please select a rating before submitting.');
                 return;
             }
             if (text.trim().length < 10) {
                 haptics.error();
-                Alert.alert('Review Too Short', 'Please write at least 10 characters for your review.');
+                toastActions.error('Please write at least 10 characters for your review.');
                 return;
             }
             Keyboard.dismiss();
@@ -58,14 +60,12 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                 haptics.success();
                 setRating(0);
                 setText('');
+                toastActions.success('Review submitted successfully!');
                 onClose();
             } catch (error) {
                 console.error('Review submission error:', error);
                 haptics.error();
-                Alert.alert(
-                    'Submission Failed',
-                    'Could not submit your review. Please check your connection and try again.'
-                );
+                toastActions.error('Could not submit your review. Please check your connection and try again.');
             } finally {
                 setIsSubmitting(false);
             }

@@ -1,11 +1,11 @@
 import React, { useMemo, useState, useCallback } from 'react';
-import { View, Text, FlatList, ActivityIndicator, Pressable, RefreshControl } from 'react-native';
+import { View, Text, FlatList, Pressable, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useStoriesByCategory } from '@/hooks/useQueries';
-import { BookListItem, NetworkError } from '@/components';
+import { BookListItem, NetworkError, EmptyState, CategoryScreenSkeleton } from '@/components';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { useLibraryStore } from '@/store/libraryStore';
 import { haptics } from '@/utils/haptics';
@@ -46,8 +46,8 @@ export default function CategoryScreen() {
 
     if (isLoading) {
         return (
-            <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={[styles.container, { paddingTop: insets.top }]}>
+                <CategoryScreenSkeleton />
             </View>
         );
     }
@@ -78,17 +78,22 @@ export default function CategoryScreen() {
             <FlatList
                 data={stories}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
+                renderItem={useCallback(({ item }: { item: Story }) => (
                     <BookListItem
                         story={item}
                         onPress={() => handleStoryPress(item.id)}
                         onBookmarkPress={() => handleBookmarkPress(item)}
                         isBookmarked={libraryActions.isInLibrary(item.id)}
                     />
-                )}
+                ), [handleStoryPress, handleBookmarkPress, libraryActions])}
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                removeClippedSubviews={true}
+                initialNumToRender={10}
+                maxToRenderPerBatch={5}
+                windowSize={10}
+                updateCellsBatchingPeriod={50}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
@@ -98,10 +103,11 @@ export default function CategoryScreen() {
                     />
                 }
                 ListEmptyComponent={
-                    <View style={styles.emptyState}>
-                        <Ionicons name="book-outline" size={48} color={theme.colors.textMuted} />
-                        <Text style={styles.emptyText}>No stories in this category yet</Text>
-                    </View>
+                    <EmptyState
+                        icon="book-outline"
+                        title="No stories yet"
+                        message="There are no stories in this category yet. Check back later!"
+                    />
                 }
             />
         </View>
@@ -142,15 +148,5 @@ const styles = StyleSheet.create((theme) => ({
     },
     listContent: {
         padding: theme.spacing.lg,
-    },
-    emptyState: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: theme.spacing.xxl,
-        gap: theme.spacing.md,
-    },
-    emptyText: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.textMuted,
     },
 }));

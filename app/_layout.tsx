@@ -12,7 +12,7 @@ import { useThemeStore } from '@/store/themeStore';
 import { useAchievementsStore } from '@/store/achievementsStore';
 import { useDownloadStore } from '@/store/downloadStore';
 import { secureStorage } from '@/services/storage';
-import { AchievementToast, ToastContainer } from '@/components';
+import { AchievementToast, ToastContainer, ErrorBoundary } from '@/components';
 
 export default function RootLayout() {
   const { theme } = useUnistyles();
@@ -83,10 +83,11 @@ export default function RootLayout() {
   }, [user, isLoading, initialized, segments]);
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <QueryProvider>
-        <BottomSheetModalProvider>
-          <Stack
+    <ErrorBoundary>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <QueryProvider>
+          <BottomSheetModalProvider>
+            <Stack
             screenOptions={{
               headerShown: false,
               contentStyle: {
@@ -121,6 +122,12 @@ export default function RootLayout() {
               }}
             />
             <Stack.Screen
+              name="achievements"
+              options={{
+                presentation: 'card',
+              }}
+            />
+            <Stack.Screen
               name="onboarding/index"
               options={{
                 headerShown: false,
@@ -128,10 +135,11 @@ export default function RootLayout() {
               }}
             />
           </Stack>
-          <ToastContainer />
-          <AchievementToast />
-        </BottomSheetModalProvider>
-      </QueryProvider>
-    </GestureHandlerRootView>
+            <ToastContainer />
+            <AchievementToast />
+          </BottomSheetModalProvider>
+        </QueryProvider>
+      </GestureHandlerRootView>
+    </ErrorBoundary>
   );
 }

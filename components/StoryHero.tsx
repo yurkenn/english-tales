@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, ImageBackground, Pressable } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { OptimizedImage } from './OptimizedImage';
 
 interface StoryHeroProps {
     coverImage: string;
@@ -22,7 +23,12 @@ export const StoryHero: React.FC<StoryHeroProps> = ({
     const { theme } = useUnistyles();
 
     return (
-        <ImageBackground source={{ uri: coverImage }} style={styles.container} resizeMode="cover">
+        <View style={styles.container}>
+            <OptimizedImage
+                source={{ uri: coverImage }}
+                style={StyleSheet.absoluteFill}
+                contentFit="cover"
+            />
             <LinearGradient
                 colors={['rgba(0,0,0,0.3)', 'transparent', 'rgba(0,0,0,0.8)']}
                 style={styles.gradient}
@@ -37,7 +43,7 @@ export const StoryHero: React.FC<StoryHeroProps> = ({
                     color={isBookmarked ? theme.colors.primary : theme.colors.textInverse}
                 />
             </Pressable>
-        </ImageBackground>
+        </View>
     );
 };
 

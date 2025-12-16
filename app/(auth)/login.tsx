@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable, Image, KeyboardAvoidingView, Platform, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, Pressable, Image, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
+import { FormField } from '@/components';
+import { useToastStore } from '@/store/toastStore';
+import { loginSchema } from '@/lib/validations';
 import { signIn, signInAnonymously, signInWithGoogle } from '@/services/auth';
 
 export default function LoginScreen() {
@@ -14,19 +16,30 @@ export default function LoginScreen() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+    const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+    const toastActions = useToastStore((state) => state.actions);
 
     const handleLogin = async () => {
-        if (!email || !password) {
-            Alert.alert('Error', 'Please enter both email and password.');
+        // Validate form
+        const result = loginSchema.safeParse({ email, password });
+        if (!result.success) {
+            const fieldErrors: { email?: string; password?: string } = {};
+            result.error.errors.forEach((err) => {
+                if (err.path[0]) {
+                    fieldErrors[err.path[0] as 'email' | 'password'] = err.message;
+                }
+            });
+            setErrors(fieldErrors);
             return;
         }
 
+        setErrors({});
         setLoading(true);
         try {
             await signIn(email, password);
             // AuthContext will handle redirect
         } catch (error: any) {
-            Alert.alert('Login Failed', error.message);
+            toastActions.error(error.message || 'Login failed');
         } finally {
             setLoading(false);
         }
@@ -36,8 +49,9 @@ export default function LoginScreen() {
         setLoading(true);
         try {
             await signInAnonymously();
+            // AuthContext will handle redirect
         } catch (error: any) {
-            Alert.alert('Error', 'Could not sign in as guest');
+            toastActions.error('Could not sign in as guest');
         } finally {
             setLoading(false);
         }
@@ -50,7 +64,7 @@ export default function LoginScreen() {
             // AuthContext will handle redirect
         } catch (error: any) {
             if (error.message !== 'Sign in was cancelled') {
-                Alert.alert('Google Sign-In Failed', error.message);
+                toastActions.error(error.message || 'Google sign-in failed');
             }
         } finally {
             setLoading(false);
@@ -71,29 +85,35 @@ export default function LoginScreen() {
 
                 {/* Form */}
                 <View style={styles.form}>
-                    <View style={styles.inputContainer}>
-                        <Ionicons name="mail-outline" size={20} color={theme.colors.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Email"
-                            placeholderTextColor={theme.colors.textMuted}
-                            value={email}
-                            onChangeText={setEmail}
-                            autoCapitalize="none"
-                            keyboardType="email-address"
-                        />
-                    </View>
-                    <View style={styles.inputContainer}>
-                        <Ionicons name="lock-closed-outline" size={20} color={theme.colors.textSecondary} style={styles.inputIcon} />
-                        <TextInput
-                            style={styles.input}
-                            placeholder="Password"
-                            placeholderTextColor={theme.colors.textMuted}
-                            value={password}
-                            onChangeText={setPassword}
-                            secureTextEntry
-                        />
-                    </View>
+                    <FormField
+                        icon="mail-outline"
+                        placeholder="Email"
+                        value={email}
+                        onChangeText={(text) => {
+                            setEmail(text);
+                            if (errors.email) {
+                                setErrors({ ...errors, email: undefined });
+                            }
+                        }}
+                        autoCapitalize="none"
+                        keyboardType="email-address"
+                        error={errors.email}
+                        containerStyle={styles.fieldContainer}
+                    />
+                    <FormField
+                        icon="lock-closed-outline"
+                        placeholder="Password"
+                        value={password}
+                        onChangeText={(text) => {
+                            setPassword(text);
+                            if (errors.password) {
+                                setErrors({ ...errors, password: undefined });
+                            }
+                        }}
+                        secureTextEntry
+                        error={errors.password}
+                        containerStyle={styles.fieldContainer}
+                    />
 
                     <Pressable style={styles.forgotPassword}>
                         <Text style={styles.linkText}>Forgot Password?</Text>
@@ -178,23 +198,8 @@ const styles = StyleSheet.create((theme) => ({
     form: {
         gap: theme.spacing.lg,
     },
-    inputContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        height: 56,
-        paddingHorizontal: theme.spacing.lg,
-    },
-    inputIcon: {
-        marginRight: theme.spacing.md,
-    },
-    input: {
-        flex: 1,
-        fontSize: theme.typography.size.md,
-        color: theme.colors.text,
+    fieldContainer: {
+        marginBottom: theme.spacing.xs,
     },
     forgotPassword: {
         alignSelf: 'flex-end',

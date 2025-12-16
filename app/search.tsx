@@ -126,16 +126,21 @@ export default function SearchScreen() {
             <FlatList
                 data={stories}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
+                renderItem={useCallback(({ item }: { item: Story }) => (
                     <BookListItem
                         story={item}
                         onPress={() => handleStoryPress(item.id)}
                         onBookmarkPress={() => handleBookmarkPress(item)}
                     />
-                )}
+                ), [handleStoryPress, handleBookmarkPress])}
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                removeClippedSubviews={true}
+                initialNumToRender={10}
+                maxToRenderPerBatch={5}
+                windowSize={10}
+                updateCellsBatchingPeriod={50}
                 ListHeaderComponent={
                     <Text style={styles.resultsCount}>
                         {stories.length} result{stories.length !== 1 ? 's' : ''}

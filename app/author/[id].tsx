@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
-import { View, Text, ScrollView, Pressable, Image, ActivityIndicator } from 'react-native';
+import { View, Text, ScrollView, Pressable, Image } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuthor, useStories } from '@/hooks/useQueries';
-import { BookCard, NetworkError } from '@/components';
+import { BookCard, NetworkError, EmptyState, AuthorScreenSkeleton } from '@/components';
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
 
@@ -39,8 +39,8 @@ export default function AuthorScreen() {
 
     if (loadingAuthor) {
         return (
-            <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
-                <ActivityIndicator size="large" color={theme.colors.primary} />
+            <View style={[styles.container, { paddingTop: insets.top }]}>
+                <AuthorScreenSkeleton />
             </View>
         );
     }
@@ -92,9 +92,9 @@ export default function AuthorScreen() {
                 </View>
 
                 {/* Stories by Author */}
-                {authorStories.length > 0 && (
-                    <View style={styles.storiesSection}>
-                        <Text style={styles.sectionTitle}>Stories</Text>
+                <View style={styles.storiesSection}>
+                    <Text style={styles.sectionTitle}>Stories</Text>
+                    {authorStories.length > 0 ? (
                         <ScrollView
                             horizontal
                             showsHorizontalScrollIndicator={false}
@@ -108,8 +108,14 @@ export default function AuthorScreen() {
                                 />
                             ))}
                         </ScrollView>
-                    </View>
-                )}
+                    ) : (
+                        <EmptyState
+                            icon="book-outline"
+                            title="No stories yet"
+                            message="This author hasn't published any stories yet"
+                        />
+                    )}
+                </View>
             </ScrollView>
         </View>
     );

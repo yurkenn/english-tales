@@ -19,9 +19,16 @@ export {
     HomeScreenSkeleton,
     LibraryScreenSkeleton,
     DiscoverScreenSkeleton,
+    CategoryScreenSkeleton,
+    AuthorScreenSkeleton,
+    StoryDetailScreenSkeleton,
+    ReviewsScreenSkeleton,
+    ProfileScreenSkeleton,
+    ReadingScreenSkeleton,
 } from './Skeleton';
 export { NetworkError } from './NetworkError';
-export { WriteReviewModal } from './WriteReviewModal';
+// Deprecated: Use WriteReviewSheet instead
+// export { WriteReviewModal } from './WriteReviewModal';
 export { AchievementToast } from './AchievementToast';
 export { EmptyState } from './EmptyState';
 export { StatBar, WeeklyChart } from './ReadingStats';
@@ -33,8 +40,10 @@ export { ProfileCard } from './ProfileCard';
 export { StatsGrid } from './StatsGrid';
 export { ProfileMenu } from './ProfileMenu';
 export type { MenuItem } from './ProfileMenu';
-export { EditProfileModal } from './EditProfileModal';
-export { ReadingGoalsModal } from './ReadingGoalsModal';
+// Deprecated: Use EditProfileSheet instead
+// export { EditProfileModal } from './EditProfileModal';
+// Deprecated: Use ReadingGoalsSheet instead
+// export { ReadingGoalsModal } from './ReadingGoalsModal';
 export { StoryHero } from './StoryHero';
 export { StoryMeta } from './StoryMeta';
 export { ReviewCard } from './ReviewCard';
@@ -50,3 +59,22 @@ export type { ActionSheetOption } from './ActionSheet';
 export { EditProfileSheet } from './EditProfileSheet';
 export { ReadingGoalsSheet } from './ReadingGoalsSheet';
 export { WriteReviewSheet } from './WriteReviewSheet';
+
+// Menus
+export { StoryCardMenu } from './StoryCardMenu';
+export type { StoryCardMenuItem } from './StoryCardMenu';
+
+// Dialogs
+export { ConfirmationDialog } from './ConfirmationDialog';
+export type { ConfirmationDialogProps } from './ConfirmationDialog';
+
+// Form
+export { FormField } from './FormField';
+export type { FormFieldProps } from './FormField';
+
+// Error Handling
+export { ErrorBoundary } from './ErrorBoundary';
+
+// Image
+export { OptimizedImage } from './OptimizedImage';
+export type { OptimizedImageProps } from './OptimizedImage';

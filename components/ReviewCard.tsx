@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 import { RatingStars } from './RatingStars';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ReviewCardProps {
     userName: string;
@@ -21,7 +22,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image source={{ uri: avatarUri }} style={styles.avatar} />
+                <OptimizedImage source={{ uri: avatarUri }} style={styles.avatar} />
                 <View style={styles.info}>
                     <Text style={styles.name}>{userName}</Text>
                     <RatingStars rating={rating} size="sm" />

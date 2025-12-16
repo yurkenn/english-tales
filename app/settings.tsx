@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, Pressable, Switch, Alert, Linking } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Text, ScrollView, Pressable, Switch, Linking } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import BottomSheet from '@gorhom/bottom-sheet';
 import { useAuthStore } from '@/store/authStore';
 import { useThemeStore } from '@/store/themeStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useDownloadStore, formatBytes } from '@/store/downloadStore';
+import { useToastStore } from '@/store/toastStore';
+import { ConfirmationDialog } from '@/components';
 import { haptics } from '@/utils/haptics';
 import { sendPasswordResetEmail } from '@/services/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -49,6 +52,15 @@ export default function SettingsScreen() {
 
     const [cacheSize, setCacheSize] = useState('Calculating...');
     const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+    
+    // Dialog refs
+    const signOutDialogRef = useRef<BottomSheet>(null);
+    const deleteAccountDialogRef = useRef<BottomSheet>(null);
+    const clearCacheDialogRef = useRef<BottomSheet>(null);
+    const clearDownloadsDialogRef = useRef<BottomSheet>(null);
+    const changePasswordDialogRef = useRef<BottomSheet>(null);
+    
+    const toastActions = useToastStore((state) => state.actions);
 
     // Calculate cache size
     useEffect(() => {
@@ -66,44 +78,31 @@ export default function SettingsScreen() {
     const themeModeLabel = themeMode === 'system' ? 'System' : themeMode === 'light' ? 'Light' : 'Dark';
 
     const handleClearCache = () => {
-        Alert.alert(
-            'Clear Cache',
-            'This will clear temporary data. Your library and progress will not be affected.',
-            [
-                { text: 'Cancel', style: 'cancel' },
-                {
-                    text: 'Clear',
-                    style: 'destructive',
-                    onPress: async () => {
-                        haptics.success();
-                        setCacheSize('Cleared');
-                    }
-                }
-            ]
-        );
+        haptics.selection();
+        clearCacheDialogRef.current?.expand();
+    };
+
+    const handleConfirmClearCache = async () => {
+        haptics.success();
+        setCacheSize('Cleared');
+        clearCacheDialogRef.current?.close();
+        toastActions.success('Cache cleared');
     };
 
     const handleDeleteAccount = () => {
-        Alert.alert(
-            'Delete Account',
-            'This will permanently delete your account and all data. This action cannot be undone.',
-            [
-                { text: 'Cancel', style: 'cancel' },
-                {
-                    text: 'Delete',
-                    style: 'destructive',
-                    onPress: () => {
-                        haptics.error();
-                        Alert.alert('Account Deletion', 'Please contact support@englishtales.app to delete your account.');
-                    }
-                }
-            ]
-        );
+        haptics.selection();
+        deleteAccountDialogRef.current?.expand();
+    };
+
+    const handleConfirmDeleteAccount = () => {
+        haptics.error();
+        deleteAccountDialogRef.current?.close();
+        toastActions.info('Please contact support@englishtales.app to delete your account.');
     };
 
     const handleRateApp = () => {
         haptics.light();
-        Alert.alert('Rate Us', 'Thank you for wanting to rate us! App Store link coming soon.');
+        toastActions.info('Thank you for wanting to rate us! App Store link coming soon.');
     };
 
     const handlePrivacyPolicy = () => {
@@ -195,29 +194,10 @@ export default function SettingsScreen() {
                             onPress={() => {
                                 haptics.selection();
                                 if (!user?.email) {
-                                    Alert.alert('Error', 'No email associated with this account.');
+                                    toastActions.error('No email associated with this account.');
                                     return;
                                 }
-                                Alert.alert(
-                                    'Change Password',
-                                    `A password reset email will be sent to ${user.email}`,
-                                    [
-                                        { text: 'Cancel', style: 'cancel' },
-                                        {
-                                            text: 'Send',
-                                            onPress: async () => {
-                                                try {
-                                                    await sendPasswordResetEmail(user.email!);
-                                                    haptics.success();
-                                                    Alert.alert('Success', 'Password reset email sent! Check your inbox.');
-                                                } catch (error) {
-                                                    haptics.error();
-                                                    Alert.alert('Error', 'Failed to send reset email. Please try again.');
-                                                }
-                                            }
-                                        }
-                                    ]
-                                );
+                                changePasswordDialogRef.current?.expand();
                             }}
                         />
                     </View>
@@ -242,11 +222,7 @@ export default function SettingsScreen() {
                             value={`${fontSize}pt`}
                             onPress={() => {
                                 haptics.selection();
-                                Alert.alert(
-                                    'Font Size',
-                                    'Adjust reading font size in the reading screen using A- and A+ buttons.',
-                                    [{ text: 'OK' }]
-                                );
+                                toastActions.info('Adjust reading font size in the reading screen using A- and A+ buttons.');
                             }}
                         />
                         <SettingToggle
@@ -273,21 +249,8 @@ export default function SettingsScreen() {
                                 icon="cloud-offline-outline"
                                 label="Clear All Downloads"
                                 onPress={() => {
-                                    Alert.alert(
-                                        'Clear Downloads',
-                                        `Remove all ${downloadCount} downloaded stories? They will no longer be available offline.`,
-                                        [
-                                            { text: 'Cancel', style: 'cancel' },
-                                            {
-                                                text: 'Clear All',
-                                                style: 'destructive',
-                                                onPress: async () => {
-                                                    await downloadActions.clearAllDownloads();
-                                                    haptics.success();
-                                                }
-                                            }
-                                        ]
-                                    );
+                                    haptics.selection();
+                                    clearDownloadsDialogRef.current?.expand();
                                 }}
                             />
                         )}
@@ -343,14 +306,7 @@ export default function SettingsScreen() {
                             isDestructive
                             onPress={() => {
                                 haptics.warning();
-                                Alert.alert(
-                                    'Sign Out',
-                                    'Are you sure you want to sign out?',
-                                    [
-                                        { text: 'Cancel', style: 'cancel' },
-                                        { text: 'Sign Out', style: 'destructive', onPress: signOut }
-                                    ]
-                                );
+                                signOutDialogRef.current?.expand();
                             }}
                         />
                         <SettingItem
@@ -366,6 +322,81 @@ export default function SettingsScreen() {
                     Made with ❤️ for English learners
                 </Text>
             </ScrollView>
+
+            {/* Confirmation Dialogs */}
+            <ConfirmationDialog
+                ref={signOutDialogRef}
+                title="Sign Out"
+                message="Are you sure you want to sign out?"
+                confirmLabel="Sign Out"
+                cancelLabel="Cancel"
+                destructive
+                icon="log-out-outline"
+                onConfirm={signOut}
+                onCancel={() => signOutDialogRef.current?.close()}
+            />
+
+            <ConfirmationDialog
+                ref={deleteAccountDialogRef}
+                title="Delete Account"
+                message="This will permanently delete your account and all data. This action cannot be undone."
+                confirmLabel="Delete"
+                cancelLabel="Cancel"
+                destructive
+                icon="trash-bin-outline"
+                onConfirm={handleConfirmDeleteAccount}
+                onCancel={() => deleteAccountDialogRef.current?.close()}
+            />
+
+            <ConfirmationDialog
+                ref={clearCacheDialogRef}
+                title="Clear Cache"
+                message="This will clear temporary data. Your library and progress will not be affected."
+                confirmLabel="Clear"
+                cancelLabel="Cancel"
+                icon="trash-outline"
+                onConfirm={handleConfirmClearCache}
+                onCancel={() => clearCacheDialogRef.current?.close()}
+            />
+
+            <ConfirmationDialog
+                ref={clearDownloadsDialogRef}
+                title="Clear Downloads"
+                message={`Remove all ${downloadCount} downloaded stories? They will no longer be available offline.`}
+                confirmLabel="Clear All"
+                cancelLabel="Cancel"
+                destructive
+                icon="cloud-offline-outline"
+                onConfirm={async () => {
+                    await downloadActions.clearAllDownloads();
+                    haptics.success();
+                    clearDownloadsDialogRef.current?.close();
+                    toastActions.success('All downloads cleared');
+                }}
+                onCancel={() => clearDownloadsDialogRef.current?.close()}
+            />
+
+            <ConfirmationDialog
+                ref={changePasswordDialogRef}
+                title="Change Password"
+                message={`A password reset email will be sent to ${user?.email}`}
+                confirmLabel="Send"
+                cancelLabel="Cancel"
+                icon="mail-outline"
+                onConfirm={async () => {
+                    try {
+                        await sendPasswordResetEmail(user!.email!);
+                        haptics.success();
+                        changePasswordDialogRef.current?.close();
+                        toastActions.success('Password reset email sent! Check your inbox.');
+                    } catch (error) {
+                        haptics.error();
+                        changePasswordDialogRef.current?.close();
+                        toastActions.error('Failed to send reset email. Please try again.');
+                    }
+                }}
+                onCancel={() => changePasswordDialogRef.current?.close()}
+            />
         </View>
     );
 }

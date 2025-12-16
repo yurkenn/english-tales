@@ -76,6 +76,9 @@ export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
                                     index === options.length - 1 && styles.optionLast,
                                 ]}
                                 onPress={() => handleOptionPress(option)}
+                                accessibilityRole="button"
+                                accessibilityLabel={option.label}
+                                accessibilityHint={option.destructive ? "This action cannot be undone" : undefined}
                             >
                                 {option.icon && (
                                     <View style={[
@@ -111,6 +114,9 @@ export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
                             pressed && styles.cancelButtonPressed,
                         ]}
                         onPress={onClose}
+                        accessibilityRole="button"
+                        accessibilityLabel="Cancel"
+                        accessibilityHint="Close this menu"
                     >
                         <Text style={styles.cancelText}>Cancel</Text>
                     </Pressable>
