@@ -52,7 +52,7 @@ const TabIcon: React.FC<TabIconProps> = ({ name, focused, color }) => {
 };
 
 export default function TabLayout() {
-    const { theme, themeName } = useUnistyles();
+    const { theme } = useUnistyles();
     const insets = useSafeAreaInsets();
 
     return (

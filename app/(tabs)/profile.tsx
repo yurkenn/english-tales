@@ -136,7 +136,12 @@ export default function ProfileScreen() {
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.content}
+                removeClippedSubviews={true}
+                scrollEventThrottle={16}
+            >
                 {/* Header */}
                 <View style={styles.header}>
                     <Text style={styles.title}>Profile</Text>

@@ -59,7 +59,7 @@ export default function StoryDetailScreen() {
             difficulty: storyDoc.difficulty || 'intermediate',
             estimatedReadTime: storyDoc.estimatedReadTime || 5,
             wordCount: storyDoc.wordCount || 1000,
-            tags: storyDoc.categories?.map((c: any) => c.title) || [],
+            tags: storyDoc.categories?.map((c: { title: string }) => c.title) || [],
             createdAt: new Date(storyDoc.publishedAt || new Date()),
             updatedAt: new Date(storyDoc.publishedAt || new Date()),
         };
@@ -162,8 +162,8 @@ export default function StoryDetailScreen() {
                             haptics.selection();
                             const toastActions = useToastStore.getState().actions;
                             const content = storyDoc?.content as PortableTextBlock[] | undefined;
-                            if (content) {
-                                const success = await downloadActions.downloadStory(story as any, content);
+                            if (content && story) {
+                                const success = await downloadActions.downloadStory(story, content);
                                 if (success) {
                                     haptics.success();
                                     toastActions.success('Downloaded for offline reading');

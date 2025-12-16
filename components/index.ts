@@ -10,6 +10,7 @@ export { BookCard } from './BookCard';
 export { ContinueReadingCard } from './ContinueReadingCard';
 export { FeaturedCard } from './FeaturedCard';
 export { BookListItem } from './BookListItem';
+export { TrendingCard } from './TrendingCard';
 export {
     Skeleton,
     BookCardSkeleton,

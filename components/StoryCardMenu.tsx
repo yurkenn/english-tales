@@ -101,7 +101,6 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
             <Pressable
                 style={[styles.overlay, { backgroundColor: theme.colors.overlay }]}
                 onPress={onClose}
-                activeOpacity={1}
             >
                 <Animated.View
                     style={[

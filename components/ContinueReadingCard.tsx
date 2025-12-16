@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ interface ContinueReadingCardProps {
     onPlayPress?: () => void;
 }
 
-export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = ({
+export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = memo(({
     story,
     progress,
     onPress,
@@ -65,7 +65,9 @@ export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = ({
             </Pressable>
         </Pressable>
     );
-};
+});
+
+ContinueReadingCard.displayName = 'ContinueReadingCard';
 
 const styles = StyleSheet.create((theme) => ({
     container: {

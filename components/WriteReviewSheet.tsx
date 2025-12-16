@@ -63,7 +63,6 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                 toastActions.success('Review submitted successfully!');
                 onClose();
             } catch (error) {
-                console.error('Review submission error:', error);
                 haptics.error();
                 toastActions.error('Could not submit your review. Please check your connection and try again.');
             } finally {

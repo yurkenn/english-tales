@@ -15,18 +15,24 @@ export const NetworkError: React.FC<NetworkErrorProps> = ({
     const { theme } = useUnistyles();
 
     return (
-        <View style={styles.container}>
-            <View style={styles.iconContainer}>
+        <View style={styles.container} accessibilityRole="alert">
+            <View style={styles.iconContainer} accessibilityElementsHidden>
                 <Ionicons
                     name="cloud-offline-outline"
                     size={64}
                     color={theme.colors.textMuted}
                 />
             </View>
-            <Text style={styles.title}>Oops!</Text>
+            <Text style={styles.title} accessibilityRole="header">Oops!</Text>
             <Text style={styles.message}>{message}</Text>
             {onRetry && (
-                <Pressable style={styles.retryButton} onPress={onRetry}>
+                <Pressable
+                    style={styles.retryButton}
+                    onPress={onRetry}
+                    accessibilityRole="button"
+                    accessibilityLabel="Try again"
+                    accessibilityHint="Retry loading the content"
+                >
                     <Ionicons name="refresh" size={20} color={theme.colors.textInverse} />
                     <Text style={styles.retryText}>Try Again</Text>
                 </Pressable>

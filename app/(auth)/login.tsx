@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, Image, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 import { FormField } from '@/components';
 import { useToastStore } from '@/store/toastStore';
 import { loginSchema } from '@/lib/validations';
@@ -24,7 +25,7 @@ export default function LoginScreen() {
         const result = loginSchema.safeParse({ email, password });
         if (!result.success) {
             const fieldErrors: { email?: string; password?: string } = {};
-            result.error.errors.forEach((err) => {
+            result.error.issues.forEach((err) => {
                 if (err.path[0]) {
                     fieldErrors[err.path[0] as 'email' | 'password'] = err.message;
                 }
@@ -38,8 +39,9 @@ export default function LoginScreen() {
         try {
             await signIn(email, password);
             // AuthContext will handle redirect
-        } catch (error: any) {
-            toastActions.error(error.message || 'Login failed');
+        } catch (error: unknown) {
+            const message = error instanceof Error ? error.message : 'Login failed';
+            toastActions.error(message);
         } finally {
             setLoading(false);
         }
@@ -50,7 +52,7 @@ export default function LoginScreen() {
         try {
             await signInAnonymously();
             // AuthContext will handle redirect
-        } catch (error: any) {
+        } catch (error: unknown) {
             toastActions.error('Could not sign in as guest');
         } finally {
             setLoading(false);
@@ -62,9 +64,10 @@ export default function LoginScreen() {
         try {
             await signInWithGoogle();
             // AuthContext will handle redirect
-        } catch (error: any) {
-            if (error.message !== 'Sign in was cancelled') {
-                toastActions.error(error.message || 'Google sign-in failed');
+        } catch (error: unknown) {
+            const message = error instanceof Error ? error.message : 'Google sign-in failed';
+            if (message !== 'Sign in was cancelled') {
+                toastActions.error(message);
             }
         } finally {
             setLoading(false);

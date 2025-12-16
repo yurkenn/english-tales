@@ -73,18 +73,26 @@ export default function SearchScreen() {
     // Map results to Story type
     const stories: Story[] = searchResults?.map(mapSanityStory) || [];
 
-    const handleStoryPress = (storyId: string) => {
+    const handleStoryPress = useCallback((storyId: string) => {
         router.push(`/story/${storyId}`);
-    };
+    }, [router]);
 
-    const handleBookmarkPress = async (story: Story) => {
+    const handleBookmarkPress = useCallback(async (story: Story) => {
         const isInLibrary = libraryActions.isInLibrary(story.id);
         if (isInLibrary) {
             await libraryActions.removeFromLibrary(story.id);
         } else {
             await libraryActions.addToLibrary(story);
         }
-    };
+    }, [libraryActions]);
+
+    const renderItem = useCallback(({ item }: { item: Story }) => (
+        <BookListItem
+            story={item}
+            onPress={() => handleStoryPress(item.id)}
+            onBookmarkPress={() => handleBookmarkPress(item)}
+        />
+    ), [handleStoryPress, handleBookmarkPress]);
 
     const showLoading = isLoading || isFetching;
 
@@ -126,13 +134,7 @@ export default function SearchScreen() {
             <FlatList
                 data={stories}
                 keyExtractor={(item) => item.id}
-                renderItem={useCallback(({ item }: { item: Story }) => (
-                    <BookListItem
-                        story={item}
-                        onPress={() => handleStoryPress(item.id)}
-                        onBookmarkPress={() => handleBookmarkPress(item)}
-                    />
-                ), [handleStoryPress, handleBookmarkPress])}
+                renderItem={renderItem}
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { View, Text, ScrollView, FlatList, Pressable, ActivityIndicator, RefreshControl } from 'react-native';
+import { View, Text, ScrollView, FlatList, Pressable, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -13,17 +13,22 @@ import {
     NetworkError,
     AuthorSpotlight,
     DiscoverScreenSkeleton,
+    TrendingCard,
 } from '@/components';
 import { useStories, useFeaturedAuthor, useCategories } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { Story } from '@/types';
+import { useLibraryStore } from '@/store/libraryStore';
+import { useToastStore } from '@/store/toastStore';
+import { haptics } from '@/utils/haptics';
 
 export default function DiscoverScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const [selectedGenre, setSelectedGenre] = useState(0);
+    const { actions: libraryActions } = useLibraryStore();
 
     // Fetch real data from Sanity
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
@@ -41,19 +46,20 @@ export default function DiscoverScreen() {
     const genres = useMemo(() => {
         const list: { id: string | null; title: string }[] = [{ id: null, title: 'All' }];
         if (categoriesData) {
-            list.push(...categoriesData.map((c: any) => ({ id: c._id, title: c.title })));
+            list.push(...categoriesData.map((c: { _id: string; title: string }) => ({ id: c._id, title: c.title })));
         }
         return list;
     }, [categoriesData]);
 
-    const handleGenrePress = (index: number) => {
+    const handleGenrePress = useCallback((index: number) => {
+        haptics.selection();
         const genre = genres[index];
         if (genre.id) {
             router.push(`/category/${genre.id}?title=${encodeURIComponent(genre.title)}`);
         } else {
             setSelectedGenre(index);
         }
-    };
+    }, [genres, router]);
 
     const featuredAuthor = useMemo(() => {
         if (!authorData) return null;
@@ -66,13 +72,40 @@ export default function DiscoverScreen() {
         };
     }, [authorData]);
 
-    const handleStoryPress = (storyId: string) => {
+    const handleStoryPress = useCallback((storyId: string) => {
+        haptics.selection();
         router.push(`/story/${storyId}`);
-    };
+    }, [router]);
 
-    const handleSearch = () => {
+    const handleSearch = useCallback(() => {
+        haptics.selection();
         router.push('/search');
-    };
+    }, [router]);
+
+    const handleBookmarkPress = useCallback(async (story: Story) => {
+        haptics.selection();
+        const toastActions = useToastStore.getState().actions;
+        if (libraryActions.isInLibrary(story.id)) {
+            await libraryActions.removeFromLibrary(story.id);
+            toastActions.success('Removed from library');
+        } else {
+            await libraryActions.addToLibrary(story);
+            toastActions.success('Added to library');
+        }
+    }, [libraryActions]);
+
+    const handleNotificationPress = useCallback(() => {
+        haptics.selection();
+        const toastActions = useToastStore.getState().actions;
+        toastActions.info('Notifications coming soon!');
+    }, []);
+
+    const handleTrendingActionPress = useCallback(() => {
+        haptics.selection();
+        // Could navigate to a trending page or show more trending stories
+        const toastActions = useToastStore.getState().actions;
+        toastActions.info('View all trending stories');
+    }, []);
 
     const isLoading = loadingStories || loadingAuthor || loadingCategories;
     const [refreshing, setRefreshing] = useState(false);
@@ -110,7 +143,11 @@ export default function DiscoverScreen() {
                 <Text style={styles.title}>Discover</Text>
                 <Pressable
                     style={styles.notificationButton}
+                    onPress={handleNotificationPress}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                    accessibilityRole="button"
+                    accessibilityLabel="Notifications"
+                    accessibilityHint="Double tap to view notifications"
                 >
                     <Ionicons
                         name="notifications-outline"
@@ -152,6 +189,8 @@ export default function DiscoverScreen() {
                 style={styles.content}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
+                removeClippedSubviews={true}
+                scrollEventThrottle={16}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
@@ -182,10 +221,108 @@ export default function DiscoverScreen() {
                     <View style={styles.section}>
                         <SectionHeader
                             title="Trending Now"
-                            onActionPress={() => { }}
+                            onActionPress={handleTrendingActionPress}
                         />
                         <FlatList
                             data={trendingStories}
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={styles.trendingCarouselContent}
+                            keyExtractor={(item) => item.id}
+                            renderItem={({ item, index }) => (
+                                <TrendingCard
+                                    story={item}
+                                    index={index}
+                                    onPress={() => handleStoryPress(item.id)}
+                                    onBookmarkPress={() => handleBookmarkPress(item)}
+                                    isBookmarked={libraryActions.isInLibrary(item.id)}
+                                />
+                            )}
+                            ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+                            removeClippedSubviews={true}
+                            initialNumToRender={3}
+                            maxToRenderPerBatch={2}
+                            windowSize={5}
+                            updateCellsBatchingPeriod={50}
+                        />
+                    </View>
+                )}
+
+                {/* Explore Genres */}
+                {categoriesData && categoriesData.length > 0 && (
+                    <View style={styles.section}>
+                        <SectionHeader 
+                            title="Explore Genres"
+                            onActionPress={() => {
+                                haptics.selection();
+                                // Could navigate to all categories page
+                            }}
+                        />
+                        <View style={styles.sectionContent}>
+                            <View style={styles.genreGrid}>
+                                {categoriesData.slice(0, 4).map((category: { _id: string; title: string; icon?: string; color?: string; storyCount?: number }) => {
+                                    const iconMap: Record<string, keyof typeof Ionicons.glyphMap> = {
+                                        'book': 'book-outline',
+                                        'mystery': 'search-outline',
+                                        'adventure': 'compass-outline',
+                                        'romance': 'heart-outline',
+                                        'fantasy': 'sparkles-outline',
+                                        'horror': 'moon-outline',
+                                        'sci-fi': 'rocket-outline',
+                                        'classics': 'library-outline',
+                                    };
+                                    const defaultIcon = 'book-outline';
+                                    const iconName = category.icon && iconMap[category.icon.toLowerCase()] 
+                                        ? iconMap[category.icon.toLowerCase()] 
+                                        : defaultIcon;
+                                    
+                                    return (
+                                        <Pressable
+                                            key={category._id}
+                                            style={({ pressed }) => [
+                                                styles.genreCard,
+                                                pressed && styles.genreCardPressed,
+                                            ]}
+                                            onPress={() => {
+                                                haptics.selection();
+                                                router.push(`/category/${category._id}?title=${encodeURIComponent(category.title)}`);
+                                            }}
+                                            accessibilityRole="button"
+                                            accessibilityLabel={`${category.title} category`}
+                                            accessibilityHint={`Double tap to view ${category.title} stories`}
+                                        >
+                                            <View style={styles.genreCardContent}>
+                                                <Text style={styles.genreCardTitle}>{category.title}</Text>
+                                                <Text style={styles.genreCardSubtitle}>
+                                                    {category.storyCount || 0} {category.storyCount === 1 ? 'story' : 'stories'}
+                                                </Text>
+                                            </View>
+                                            <Ionicons
+                                                name={iconName}
+                                                size={60}
+                                                color={category.color ? `${category.color}15` : 'rgba(0, 0, 0, 0.05)'}
+                                                style={styles.genreCardIcon}
+                                            />
+                                        </Pressable>
+                                    );
+                                })}
+                            </View>
+                        </View>
+                    </View>
+                )}
+
+                {/* Recommended For You */}
+                {recommendedStories.length > 0 && (
+                    <View style={styles.section}>
+                        <SectionHeader 
+                            title="Recommended For You"
+                            onActionPress={() => {
+                                haptics.selection();
+                                // Could navigate to all recommended stories
+                            }}
+                        />
+                        <FlatList
+                            data={recommendedStories}
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             contentContainerStyle={styles.carouselContent}
@@ -198,57 +335,12 @@ export default function DiscoverScreen() {
                                 />
                             )}
                             ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+                            removeClippedSubviews={true}
+                            initialNumToRender={5}
+                            maxToRenderPerBatch={3}
+                            windowSize={5}
+                            updateCellsBatchingPeriod={50}
                         />
-                    </View>
-                )}
-
-                {/* Explore Genres */}
-                <View style={styles.section}>
-                    <SectionHeader title="Explore Genres" />
-                    <View style={styles.sectionContent}>
-                        <View style={styles.genreGrid}>
-                            <Pressable style={[styles.genreCard, styles.genreClassics]}>
-                                <View>
-                                    <Text style={styles.genreCardTitle}>Classics</Text>
-                                    <Text style={styles.genreCardSubtitle}>Timeless tales</Text>
-                                </View>
-                                <Ionicons
-                                    name="book-outline"
-                                    size={60}
-                                    color="rgba(234, 42, 51, 0.08)"
-                                    style={styles.genreCardIcon}
-                                />
-                            </Pressable>
-                            <Pressable style={[styles.genreCard, styles.genreMystery]}>
-                                <View>
-                                    <Text style={styles.genreCardTitle}>Mystery</Text>
-                                    <Text style={styles.genreCardSubtitle}>Solve the case</Text>
-                                </View>
-                                <Ionicons
-                                    name="search-outline"
-                                    size={60}
-                                    color="rgba(99, 102, 241, 0.08)"
-                                    style={styles.genreCardIcon}
-                                />
-                            </Pressable>
-                        </View>
-                    </View>
-                </View>
-
-                {/* Recommended For You */}
-                {recommendedStories.length > 0 && (
-                    <View style={styles.section}>
-                        <SectionHeader title="Recommended For You" />
-                        <View style={styles.sectionContent}>
-                            {recommendedStories.slice(0, 3).map((story: Story) => (
-                                <BookListItem
-                                    key={story.id}
-                                    story={story}
-                                    onPress={() => handleStoryPress(story.id)}
-                                    onBookmarkPress={() => { }}
-                                />
-                            ))}
-                        </View>
                     </View>
                 )}
             </ScrollView>
@@ -312,6 +404,10 @@ const styles = StyleSheet.create((theme) => ({
     carouselContent: {
         paddingHorizontal: theme.spacing.lg,
     },
+    trendingCarouselContent: {
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.xs,
+    },
     genreGrid: {
         flexDirection: 'row',
         gap: theme.spacing.md,
@@ -323,6 +419,14 @@ const styles = StyleSheet.create((theme) => ({
         padding: theme.spacing.lg,
         justifyContent: 'center',
         overflow: 'hidden',
+        ...theme.shadows.sm,
+    },
+    genreCardPressed: {
+        opacity: 0.9,
+        transform: [{ scale: 0.98 }],
+    },
+    genreCardContent: {
+        zIndex: 1,
     },
     genreClassics: {
         backgroundColor: 'rgba(234, 42, 51, 0.08)',

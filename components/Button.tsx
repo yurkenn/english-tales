@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Text, Pressable, PressableProps, ActivityIndicator, View } from 'react-native';
+import { Text, Pressable, PressableProps, ActivityIndicator, View, ViewStyle, StyleProp } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
@@ -78,15 +78,19 @@ export const Button = forwardRef<View, ButtonProps>(({
   return (
     <Pressable
       ref={ref}
-      style={({ pressed }) => [
-        styles.button,
-        sizeStyles[size],
-        variantStyles[variant],
-        fullWidth && styles.fullWidth,
-        (disabled || loading) && styles.disabled,
-        pressed && !disabled && !loading && styles.pressed,
-        style,
-      ]}
+      style={(state) => {
+        const { pressed } = state;
+        const pressedStyle = pressed && !disabled && !loading ? styles.pressed : undefined;
+        return [
+          styles.button,
+          sizeStyles[size],
+          variantStyles[variant],
+          fullWidth && styles.fullWidth,
+          (disabled || loading) && styles.disabled,
+          pressedStyle,
+          style,
+        ].filter(Boolean) as StyleProp<ViewStyle>;
+      }}
       onPress={handlePress}
       disabled={disabled || loading}
       accessibilityRole="button"

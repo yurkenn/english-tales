@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ interface BookListItemProps {
     rating?: number | null;
 }
 
-export const BookListItem: React.FC<BookListItemProps> = ({
+export const BookListItem: React.FC<BookListItemProps> = memo(({
     story,
     onPress,
     onBookmarkPress,
@@ -72,7 +72,9 @@ export const BookListItem: React.FC<BookListItemProps> = ({
             </View>
         </Pressable>
     );
-};
+});
+
+BookListItem.displayName = 'BookListItem';
 
 const styles = StyleSheet.create((theme) => ({
     container: {
