@@ -15,6 +15,12 @@ const imageDir = './story-covers'
 
 // Map story slug to image filename
 const storyImageMap: Record<string, string> = {
+    // Original Grimm/Andersen stories (newly added)
+    'the-ugly-duckling': 'ugly_duckling_cover_1765913930465.png',
+    'little-red-riding-hood': 'red_riding_hood_cover_1765913948898.png',
+    'the-three-little-pigs': 'three_little_pigs_cover.jpg',
+    'the-emperors-new-clothes': 'emperors_new_clothes_cover.jpg',
+    'hansel-and-gretel': 'hansel_gretel_cover.jpg',
     // Oscar Wilde stories
     'the-happy-prince': 'happy_prince_cover_1765849694087.png',
     'the-selfish-giant': 'selfish_giant_cover_1765849709431.png',
