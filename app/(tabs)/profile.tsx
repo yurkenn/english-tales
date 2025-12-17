@@ -55,6 +55,18 @@ export default function ProfileScreen() {
         { label: 'Day Streak', value: computedStats.readingStreak, icon: 'flame' as const },
     ];
 
+    // Prepare reading data for calendar
+    const readingData = useMemo(() => {
+        const data: Record<string, number> = {};
+        Object.values(progressMap).forEach((progress) => {
+            if (progress.lastReadAt) {
+                const dateStr = new Date(progress.lastReadAt).toISOString().split('T')[0];
+                data[dateStr] = (data[dateStr] || 0) + 1;
+            }
+        });
+        return data;
+    }, [progressMap]);
+
     // Theme
     const { mode: themeMode, actions: themeActions } = useThemeStore();
     const themeModeLabel = themeMode === 'system' ? 'System' : themeMode === 'light' ? 'Light' : 'Dark';
@@ -150,18 +162,7 @@ export default function ProfileScreen() {
                 <StatsGrid stats={stats} />
 
                 {/* Reading Calendar */}
-                {useMemo(() => {
-                    // Prepare reading data for calendar
-                    const readingData: Record<string, number> = {};
-                    Object.values(progressMap).forEach((progress) => {
-                        if (progress.lastReadAt) {
-                            const dateStr = new Date(progress.lastReadAt).toISOString().split('T')[0];
-                            // Use 1 to indicate activity (can be enhanced with actual minutes later)
-                            readingData[dateStr] = (readingData[dateStr] || 0) + 1;
-                        }
-                    });
-                    return <ReadingCalendar readingData={readingData} />;
-                }, [progressMap])}
+                <ReadingCalendar readingData={readingData} />
 
                 {/* Menu */}
                 <ProfileMenu items={menuItems} />
@@ -211,6 +212,7 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.full,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: theme.colors.surfaceElevated,
     },
     signOutButton: {
         flexDirection: 'row',

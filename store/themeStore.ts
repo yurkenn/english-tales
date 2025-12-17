@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { UnistylesRuntime } from 'react-native-unistyles';
-import { Appearance } from 'react-native';
+import { Appearance, type ColorSchemeName } from 'react-native';
 import { haptics } from '@/utils/haptics';
 
 type ThemeMode = 'light' | 'dark' | 'system';
@@ -15,21 +15,26 @@ interface ThemeActions {
     setMode: (mode: ThemeMode) => void;
     toggleTheme: () => void;
     loadTheme: () => Promise<void>;
+    setupSystemThemeListener: () => () => void;
 }
 
 const THEME_KEY = '@english_tales_theme';
 
-const applyTheme = (mode: ThemeMode) => {
+const applyTheme = (mode: ThemeMode, colorScheme?: ColorSchemeName) => {
     let actualTheme: 'light' | 'dark' = 'light';
 
     if (mode === 'system') {
-        const colorScheme = Appearance.getColorScheme();
-        actualTheme = colorScheme === 'dark' ? 'dark' : 'light';
+        const scheme = colorScheme ?? Appearance.getColorScheme();
+        actualTheme = scheme === 'dark' ? 'dark' : 'light';
     } else {
         actualTheme = mode;
     }
 
-    UnistylesRuntime.setTheme(actualTheme);
+    try {
+        UnistylesRuntime.setTheme(actualTheme);
+    } catch (error) {
+        console.warn('Failed to set theme:', error);
+    }
 };
 
 export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((set, get) => ({
@@ -69,5 +74,19 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
                 applyTheme('system');
             }
         },
+
+        setupSystemThemeListener: () => {
+            const subscription = Appearance.addChangeListener(({ colorScheme }) => {
+                const currentMode = get().mode;
+                // Only update if we're in system mode
+                if (currentMode === 'system') {
+                    applyTheme('system', colorScheme);
+                }
+            });
+
+            // Return cleanup function
+            return () => subscription.remove();
+        },
     },
 }));
+

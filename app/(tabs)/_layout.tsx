@@ -11,6 +11,7 @@ import Animated, {
     withTiming,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useThemeStore } from '@/store/themeStore';
 
 type TabIconName = 'home' | 'compass' | 'book' | 'person';
 
@@ -52,26 +53,31 @@ const TabIcon: React.FC<TabIconProps> = ({ name, focused, color }) => {
 };
 
 export default function TabLayout() {
-    const { theme, themeName } = useUnistyles();
+    const { theme } = useUnistyles();
     const insets = useSafeAreaInsets();
+    const themeMode = useThemeStore((s) => s.mode);
+
+    // Create tabBarStyle with current theme values
+    const tabBarStyle = {
+        backgroundColor: theme.colors.surface,
+        borderTopWidth: 0.5,
+        borderTopColor: theme.colors.borderLight,
+        height: 50 + insets.bottom,
+        paddingBottom: insets.bottom > 0 ? insets.bottom - 8 : 4,
+        paddingTop: 8,
+        elevation: 0,
+        shadowOpacity: 0,
+    };
 
     return (
         <Tabs
+            key={themeMode} // Force re-render when theme changes
             screenOptions={{
                 headerShown: false,
                 tabBarActiveTintColor: theme.colors.text,
                 tabBarInactiveTintColor: theme.colors.textMuted,
                 tabBarShowLabel: false,
-                tabBarStyle: {
-                    backgroundColor: theme.colors.surface,
-                    borderTopWidth: 0.5,
-                    borderTopColor: theme.colors.borderLight,
-                    height: 50 + insets.bottom,
-                    paddingBottom: insets.bottom > 0 ? insets.bottom - 8 : 4,
-                    paddingTop: 8,
-                    elevation: 0,
-                    shadowOpacity: 0,
-                },
+                tabBarStyle: tabBarStyle,
             }}
         >
             <Tabs.Screen
@@ -113,3 +119,4 @@ export default function TabLayout() {
         </Tabs>
     );
 }
+

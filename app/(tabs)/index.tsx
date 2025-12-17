@@ -57,9 +57,22 @@ export default function HomeScreen() {
         return storiesData?.map(mapSanityStory) || [];
     }, [storiesData]);
 
-    // Derived Lists
-    const recommendedStories = allStories.slice(0, 5);
-    const trendingList = allStories.slice(2, 6); // Just taking some other slice
+    // Filter stories based on selected genre/difficulty
+    const filteredStories = useMemo(() => {
+        if (selectedGenre === 0) return allStories; // For You - show all
+        const difficultyMap: Record<number, string> = {
+            1: 'beginner',    // Easy
+            2: 'intermediate', // Medium
+            3: 'advanced',     // Hard
+        };
+        const difficulty = difficultyMap[selectedGenre];
+        if (!difficulty) return allStories;
+        return allStories.filter((s: Story) => s.difficulty === difficulty);
+    }, [allStories, selectedGenre]);
+
+    // Derived Lists - use filtered stories
+    const recommendedStories = filteredStories.slice(0, 5);
+    const trendingList = filteredStories.slice(2, 6); // Just taking some other slice
 
     // Get continue reading from real progress data
     const { items: libraryItems, actions: libraryActions } = useLibraryStore();
@@ -167,7 +180,7 @@ export default function HomeScreen() {
             <View style={styles.searchContainer}>
                 <SearchBar
                     placeholder="Search English stories..."
-                    onMicPress={() => { }}
+                    onPress={() => router.push('/search')}
                 />
             </View>
 
@@ -245,7 +258,7 @@ export default function HomeScreen() {
                 <View style={styles.section}>
                     <SectionHeader
                         title="Recommended for You"
-                        onActionPress={() => router.push('/discover')}
+                        onActionPress={() => router.push('/stories')}
                     />
                     <FlatList
                         data={recommendedStories}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Pressable } from 'react-native';
+import { View, TextInput, Pressable, Text } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -9,6 +9,7 @@ interface SearchBarProps {
     onChangeText?: (text: string) => void;
     onSubmit?: () => void;
     onMicPress?: () => void;
+    onPress?: () => void;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({
@@ -17,8 +18,27 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     onChangeText,
     onSubmit,
     onMicPress,
+    onPress,
 }) => {
     const { theme } = useUnistyles();
+
+    // If onPress is provided, render as a button (for navigation to search screen)
+    if (onPress) {
+        return (
+            <Pressable style={styles.container} onPress={onPress}>
+                <View style={styles.iconContainer}>
+                    <Ionicons
+                        name="search"
+                        size={theme.iconSize.md}
+                        color={theme.colors.textMuted}
+                    />
+                </View>
+                <View style={styles.inputContainer}>
+                    <Text style={styles.placeholderText}>{placeholder}</Text>
+                </View>
+            </Pressable>
+        );
+    }
 
     return (
         <View style={styles.container}>
@@ -79,5 +99,14 @@ const styles = StyleSheet.create((theme) => ({
     micButton: {
         marginLeft: theme.spacing.sm,
         padding: theme.spacing.xs,
+    },
+    inputContainer: {
+        flex: 1,
+        height: '100%',
+        justifyContent: 'center',
+    },
+    placeholderText: {
+        fontSize: theme.typography.size.lg,
+        color: theme.colors.textMuted,
     },
 }));

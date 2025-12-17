@@ -36,8 +36,21 @@ export default function DiscoverScreen() {
         return storiesData?.map(mapSanityStory) || [];
     }, [storiesData]);
 
-    const trendingStories = allStories.slice(0, 5);
-    const recommendedStories = allStories.slice(5, 10);
+    // Filter stories based on selected genre/difficulty
+    const filteredStories = useMemo(() => {
+        if (selectedGenre === 0) return allStories; // All - show all
+        const difficultyMap: Record<number, string> = {
+            1: 'beginner',    // Easy
+            2: 'intermediate', // Medium  
+            3: 'advanced',     // Hard
+        };
+        const difficulty = difficultyMap[selectedGenre];
+        if (!difficulty) return allStories;
+        return allStories.filter((s: Story) => s.difficulty === difficulty);
+    }, [allStories, selectedGenre]);
+
+    const trendingStories = filteredStories.slice(0, 5);
+    const recommendedStories = filteredStories.slice(5, 10);
 
     // Difficulty-based genre filters + Authors
     const genres = ['All', 'Easy', 'Medium', 'Hard', 'Authors'];
@@ -121,11 +134,10 @@ export default function DiscoverScreen() {
 
             {/* Search Bar */}
             <View style={styles.searchContainer}>
-                <Pressable onPress={handleSearch}>
-                    <SearchBar
-                        placeholder="Search titles, authors, or genres..."
-                    />
-                </Pressable>
+                <SearchBar
+                    placeholder="Search titles, authors, or genres..."
+                    onPress={handleSearch}
+                />
             </View>
 
             {/* Genre Chips - wrapped to prevent flex expansion */}
@@ -201,38 +213,6 @@ export default function DiscoverScreen() {
                     </View>
                 )}
 
-                {/* Explore Genres */}
-                <View style={styles.section}>
-                    <SectionHeader title="Explore Genres" />
-                    <View style={styles.sectionContent}>
-                        <View style={styles.genreGrid}>
-                            <Pressable style={[styles.genreCard, styles.genreClassics]}>
-                                <View>
-                                    <Text style={styles.genreCardTitle}>Classics</Text>
-                                    <Text style={styles.genreCardSubtitle}>Timeless tales</Text>
-                                </View>
-                                <Ionicons
-                                    name="book-outline"
-                                    size={60}
-                                    color="rgba(234, 42, 51, 0.08)"
-                                    style={styles.genreCardIcon}
-                                />
-                            </Pressable>
-                            <Pressable style={[styles.genreCard, styles.genreMystery]}>
-                                <View>
-                                    <Text style={styles.genreCardTitle}>Mystery</Text>
-                                    <Text style={styles.genreCardSubtitle}>Solve the case</Text>
-                                </View>
-                                <Ionicons
-                                    name="search-outline"
-                                    size={60}
-                                    color="rgba(99, 102, 241, 0.08)"
-                                    style={styles.genreCardIcon}
-                                />
-                            </Pressable>
-                        </View>
-                    </View>
-                </View>
 
                 {/* Recommended For You */}
                 {recommendedStories.length > 0 && (
@@ -310,38 +290,6 @@ const styles = StyleSheet.create((theme) => ({
     },
     carouselContent: {
         paddingHorizontal: theme.spacing.lg,
-    },
-    genreGrid: {
-        flexDirection: 'row',
-        gap: theme.spacing.md,
-    },
-    genreCard: {
-        flex: 1,
-        height: 96,
-        borderRadius: theme.radius.lg,
-        padding: theme.spacing.lg,
-        justifyContent: 'center',
-        overflow: 'hidden',
-    },
-    genreClassics: {
-        backgroundColor: 'rgba(234, 42, 51, 0.08)',
-    },
-    genreMystery: {
-        backgroundColor: 'rgba(99, 102, 241, 0.08)',
-    },
-    genreCardTitle: {
-        fontSize: theme.typography.size.xl,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-    },
-    genreCardSubtitle: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
-    },
-    genreCardIcon: {
-        position: 'absolute',
-        right: -10,
-        bottom: -10,
     },
     center: {
         alignItems: 'center',

@@ -153,7 +153,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         gap: theme.spacing.xs,
-        backgroundColor: 'rgba(255, 107, 53, 0.12)',
+        backgroundColor: `${theme.colors.warning}20`,
         paddingHorizontal: theme.spacing.sm,
         paddingVertical: theme.spacing.xs,
         borderRadius: theme.radius.full,

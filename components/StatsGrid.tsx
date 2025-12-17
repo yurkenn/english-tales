@@ -15,21 +15,21 @@ interface StatsGridProps {
 
 const getIconColor = (icon: string, theme: any): string => {
     switch (icon) {
-        case 'flame': return '#FF6B35';
+        case 'flame': return theme.colors.warning;
         case 'book': return theme.colors.primary;
-        case 'time': return '#6366F1';
-        case 'document-text': return '#10B981';
+        case 'time': return theme.colors.textSecondary;
+        case 'document-text': return theme.colors.success;
         default: return theme.colors.primary;
     }
 };
 
-const getIconBg = (icon: string): string => {
+const getIconBg = (icon: string, theme: any): string => {
     switch (icon) {
-        case 'flame': return 'rgba(255, 107, 53, 0.12)';
-        case 'book': return 'rgba(234, 42, 51, 0.12)';
-        case 'time': return 'rgba(99, 102, 241, 0.12)';
-        case 'document-text': return 'rgba(16, 185, 129, 0.12)';
-        default: return 'rgba(234, 42, 51, 0.12)';
+        case 'flame': return `${theme.colors.warning}20`;
+        case 'book': return `${theme.colors.primary}20`;
+        case 'time': return `${theme.colors.textSecondary}20`;
+        case 'document-text': return `${theme.colors.success}20`;
+        default: return `${theme.colors.primary}20`;
     }
 };
 
@@ -40,7 +40,7 @@ export const StatsGrid: React.FC<StatsGridProps> = ({ stats }) => {
         <View style={styles.container}>
             {stats.map((stat, index) => {
                 const iconColor = getIconColor(stat.icon, theme);
-                const iconBg = getIconBg(stat.icon);
+                const iconBg = getIconBg(stat.icon, theme);
 
                 return (
                     <View key={stat.label} style={styles.statCard}>
