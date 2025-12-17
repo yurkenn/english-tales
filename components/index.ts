@@ -25,7 +25,7 @@ export {
     ReviewsScreenSkeleton,
     ProfileScreenSkeleton,
     ReadingScreenSkeleton,
-} from './Skeleton';
+} from './skeletons';
 export { NetworkError } from './NetworkError';
 // Deprecated: Use WriteReviewSheet instead
 // export { WriteReviewModal } from './WriteReviewModal';
@@ -50,6 +50,7 @@ export { StoryMeta } from './StoryMeta';
 export { ReviewCard } from './ReviewCard';
 export { PortableTextRenderer } from './PortableTextRenderer';
 export { AuthorSpotlight } from './AuthorSpotlight';
+export { DifficultyCard } from './DifficultyCard';
 export { DownloadButton } from './DownloadButton';
 export { ToastContainer } from './ToastContainer';
 export { ConfettiCelebration } from './ConfettiCelebration';

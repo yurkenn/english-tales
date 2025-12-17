@@ -66,11 +66,11 @@ export const Button = forwardRef<View, ButtonProps>(({
     },
   };
 
-  const textColor = variant === 'primary' 
-    ? theme.colors.textInverse 
+  const textColor = variant === 'primary'
+    ? theme.colors.textInverse
     : variant === 'outline' || variant === 'ghost'
-    ? theme.colors.primary
-    : theme.colors.text;
+      ? theme.colors.primary
+      : theme.colors.text;
 
   const iconSize = size === 'sm' ? 16 : size === 'md' ? 20 : 24;
   const textSize = size === 'sm' ? theme.typography.size.sm : size === 'md' ? theme.typography.size.md : theme.typography.size.lg;
@@ -85,7 +85,7 @@ export const Button = forwardRef<View, ButtonProps>(({
         fullWidth && styles.fullWidth,
         (disabled || loading) && styles.disabled,
         pressed && !disabled && !loading && styles.pressed,
-        style,
+        style as any,
       ]}
       onPress={handlePress}
       disabled={disabled || loading}

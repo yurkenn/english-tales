@@ -1,71 +1,65 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { View, Text, ScrollView, FlatList, Pressable, ActivityIndicator, RefreshControl } from 'react-native';
+import { View, ScrollView, FlatList, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
 import {
     SearchBar,
     GenreChip,
     SectionHeader,
     BookCard,
-    BookListItem,
     NetworkError,
     AuthorSpotlight,
     DiscoverScreenSkeleton,
 } from '@/components';
-import { useStories, useFeaturedAuthor, useCategories } from '@/hooks/useQueries';
+import {
+    DiscoverHeader,
+    SurpriseMeButton,
+    PopularStoryCard,
+    BrowseAllButton,
+} from '@/components/discover';
+import { useStories, useFeaturedAuthor } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { Story } from '@/types';
 import { haptics } from '@/utils/haptics';
+
+const GENRES = ['All', 'Easy', 'Medium', 'Hard', 'Authors'];
+const DIFFICULTY_MAP: Record<number, string> = {
+    1: 'beginner',
+    2: 'intermediate',
+    3: 'advanced',
+};
 
 export default function DiscoverScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const [selectedGenre, setSelectedGenre] = useState(0);
+    const [refreshing, setRefreshing] = useState(false);
 
-    // Fetch real data from Sanity
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
     const { data: authorData, isLoading: loadingAuthor, refetch: refetchAuthor, error: errorAuthor } = useFeaturedAuthor();
-    const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories, error: errorCategories } = useCategories();
 
-    // Transform data
-    const allStories = useMemo(() => {
-        return storiesData?.map(mapSanityStory) || [];
-    }, [storiesData]);
+    const allStories = useMemo(() => storiesData?.map(mapSanityStory) || [], [storiesData]);
 
-    // Filter stories based on selected genre/difficulty
     const filteredStories = useMemo(() => {
-        if (selectedGenre === 0) return allStories; // All - show all
-        const difficultyMap: Record<number, string> = {
-            1: 'beginner',    // Easy
-            2: 'intermediate', // Medium  
-            3: 'advanced',     // Hard
-        };
-        const difficulty = difficultyMap[selectedGenre];
-        if (!difficulty) return allStories;
-        return allStories.filter((s: Story) => s.difficulty === difficulty);
+        if (selectedGenre === 0) return allStories;
+        const difficulty = DIFFICULTY_MAP[selectedGenre];
+        return difficulty ? allStories.filter((s: Story) => s.difficulty === difficulty) : allStories;
     }, [allStories, selectedGenre]);
 
-    const trendingStories = filteredStories.slice(0, 5);
-    const recommendedStories = filteredStories.slice(5, 10);
+    const recentlyAdded = useMemo(() => {
+        return [...filteredStories]
+            .sort((a, b) => {
+                const dateA = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+                const dateB = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+                return dateB - dateA;
+            })
+            .slice(0, 5);
+    }, [filteredStories]);
 
-    // Difficulty-based genre filters + Authors
-    const genres = ['All', 'Easy', 'Medium', 'Hard', 'Authors'];
-
-    const handleGenrePress = useCallback((index: number) => {
-        haptics.selection();
-
-        // Authors chip - navigate to authors page
-        if (index === 4) {
-            router.push('/authors');
-            return;
-        }
-
-        setSelectedGenre(index);
-    }, [router]);
+    const popularStories = useMemo(() => filteredStories.slice(0, 5), [filteredStories]);
 
     const featuredAuthor = useMemo(() => {
         if (!authorData) return null;
@@ -78,22 +72,33 @@ export default function DiscoverScreen() {
         };
     }, [authorData]);
 
-    const handleStoryPress = (storyId: string) => {
-        router.push(`/story/${storyId}`);
-    };
+    const handleGenrePress = useCallback((index: number) => {
+        haptics.selection();
+        if (index === 4) {
+            router.push('/authors');
+            return;
+        }
+        setSelectedGenre(index);
+    }, [router]);
 
-    const handleSearch = () => {
-        router.push('/search');
-    };
+    const handleStoryPress = useCallback((storyId: string) => router.push(`/story/${storyId}`), [router]);
+    const handleSearch = useCallback(() => router.push('/search'), [router]);
 
-    const isLoading = loadingStories || loadingAuthor || loadingCategories;
-    const [refreshing, setRefreshing] = useState(false);
+    const handleSurpriseMe = useCallback(() => {
+        haptics.medium();
+        if (allStories.length > 0) {
+            const randomIndex = Math.floor(Math.random() * allStories.length);
+            router.push(`/story/${allStories[randomIndex].id}`);
+        }
+    }, [allStories, router]);
 
     const onRefresh = useCallback(async () => {
         setRefreshing(true);
-        await Promise.all([refetchStories(), refetchAuthor(), refetchCategories()]);
+        await Promise.all([refetchStories(), refetchAuthor()]);
         setRefreshing(false);
-    }, [refetchStories, refetchAuthor, refetchCategories]);
+    }, [refetchStories, refetchAuthor]);
+
+    const isLoading = loadingStories || loadingAuthor;
 
     if (isLoading) {
         return (
@@ -103,51 +108,25 @@ export default function DiscoverScreen() {
         );
     }
 
-    const hasError = errorStories || errorAuthor || errorCategories;
-    if (hasError) {
+    if (errorStories || errorAuthor) {
         return (
             <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
-                <NetworkError
-                    message="Failed to load content. Please try again."
-                    onRetry={onRefresh}
-                />
+                <NetworkError message="Failed to load content. Please try again." onRetry={onRefresh} />
             </View>
         );
     }
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
-            {/* Header */}
-            <View style={styles.header}>
-                <Text style={styles.title}>Discover</Text>
-                <Pressable
-                    style={styles.notificationButton}
-                    hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                >
-                    <Ionicons
-                        name="notifications-outline"
-                        size={theme.iconSize.md}
-                        color={theme.colors.text}
-                    />
-                </Pressable>
-            </View>
+            <DiscoverHeader />
 
-            {/* Search Bar */}
             <View style={styles.searchContainer}>
-                <SearchBar
-                    placeholder="Search titles, authors, or genres..."
-                    onPress={handleSearch}
-                />
+                <SearchBar placeholder="Search titles, authors, or genres..." onPress={handleSearch} />
             </View>
 
-            {/* Genre Chips - wrapped to prevent flex expansion */}
             <View style={styles.chipsWrapper}>
-                <ScrollView
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    contentContainerStyle={styles.chipsContainer}
-                >
-                    {genres.map((genre, index) => (
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipsContainer}>
+                    {GENRES.map((genre, index) => (
                         <GenreChip
                             key={genre}
                             label={genre}
@@ -158,7 +137,6 @@ export default function DiscoverScreen() {
                 </ScrollView>
             </View>
 
-            {/* Main Content */}
             <ScrollView
                 style={styles.content}
                 showsVerticalScrollIndicator={false}
@@ -172,7 +150,8 @@ export default function DiscoverScreen() {
                     />
                 }
             >
-                {/* Author Spotlight */}
+                <SurpriseMeButton onPress={handleSurpriseMe} />
+
                 {featuredAuthor && (
                     <View style={styles.section}>
                         <SectionHeader title="Author Spotlight" />
@@ -188,48 +167,42 @@ export default function DiscoverScreen() {
                     </View>
                 )}
 
-                {/* Trending Now */}
-                {trendingStories.length > 0 && (
+                {recentlyAdded.length > 0 && (
                     <View style={styles.section}>
-                        <SectionHeader
-                            title="Trending Now"
-                            onActionPress={() => { }}
-                        />
+                        <SectionHeader title="Recently Added" onActionPress={() => router.push('/stories')} />
                         <FlatList
-                            data={trendingStories}
+                            data={recentlyAdded}
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             contentContainerStyle={styles.carouselContent}
                             keyExtractor={(item) => item.id}
-                            renderItem={({ item, index }) => (
-                                <BookCard
-                                    story={item}
-                                    showRank={index + 1}
-                                    onPress={() => handleStoryPress(item.id)}
-                                />
+                            renderItem={({ item }) => (
+                                <BookCard story={item} onPress={() => handleStoryPress(item.id)} />
                             )}
                             ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
                         />
                     </View>
                 )}
 
-
-                {/* Recommended For You */}
-                {recommendedStories.length > 0 && (
+                {popularStories.length > 0 && (
                     <View style={styles.section}>
-                        <SectionHeader title="Recommended For You" />
-                        <View style={styles.sectionContent}>
-                            {recommendedStories.slice(0, 3).map((story: Story) => (
-                                <BookListItem
+                        <SectionHeader title="Popular This Week" onActionPress={() => router.push('/stories')} />
+                        <View style={styles.popularContainer}>
+                            {popularStories.map((story: Story, index: number) => (
+                                <PopularStoryCard
                                     key={story.id}
                                     story={story}
+                                    rank={index + 1}
                                     onPress={() => handleStoryPress(story.id)}
-                                    onBookmarkPress={() => { }}
                                 />
                             ))}
                         </View>
                     </View>
                 )}
+
+                <View style={styles.section}>
+                    <BrowseAllButton onPress={() => router.push('/stories')} />
+                </View>
             </ScrollView>
         </View>
     );
@@ -239,26 +212,6 @@ const styles = StyleSheet.create((theme) => ({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
-    },
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.lg,
-    },
-    title: {
-        fontSize: theme.typography.size.xxxl,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-        letterSpacing: -0.5,
-    },
-    notificationButton: {
-        width: theme.avatarSize.md,
-        height: theme.avatarSize.md,
-        borderRadius: theme.radius.full,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     searchContainer: {
         paddingHorizontal: theme.spacing.lg,
@@ -276,7 +229,6 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
     },
     contentContainer: {
-        flexGrow: 0,
         paddingTop: theme.spacing.sm,
         paddingBottom: theme.spacing.xxxl,
         gap: theme.spacing.xl,
@@ -290,6 +242,10 @@ const styles = StyleSheet.create((theme) => ({
     },
     carouselContent: {
         paddingHorizontal: theme.spacing.lg,
+    },
+    popularContainer: {
+        paddingHorizontal: theme.spacing.lg,
+        gap: theme.spacing.sm,
     },
     center: {
         alignItems: 'center',

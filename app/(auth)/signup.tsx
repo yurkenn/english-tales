@@ -5,6 +5,7 @@ import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { FormField } from '@/components';
+import { AuthHeader, AuthDivider, SocialAuthButton, TermsCheckbox } from '@/components/auth';
 import { useToastStore } from '@/store/toastStore';
 import { signupSchema } from '@/lib/validations';
 import { signUp, signInWithGoogle } from '@/services/auth';
@@ -32,10 +33,8 @@ export default function SignupScreen() {
     };
 
     const handleSignup = async () => {
-        // Validate terms first
         if (!validateTerms()) return;
 
-        // Validate form
         const result = signupSchema.safeParse({ name, email, password });
         if (!result.success) {
             const fieldErrors: { name?: string; email?: string; password?: string } = {};
@@ -52,7 +51,6 @@ export default function SignupScreen() {
         setLoading(true);
         try {
             await signUp(email, password, name);
-            // AuthContext will handle redirect
         } catch (error: any) {
             toastActions.error(error.message || 'Signup failed');
         } finally {
@@ -61,13 +59,11 @@ export default function SignupScreen() {
     };
 
     const handleGoogleSignIn = async () => {
-        // Validate terms first for Google sign-in too
         if (!validateTerms()) return;
 
         setLoading(true);
         try {
             await signInWithGoogle();
-            // AuthContext will handle redirect
         } catch (error: any) {
             if (error.message !== 'Sign in was cancelled') {
                 toastActions.error(error.message || 'Google sign-in failed');
@@ -79,33 +75,22 @@ export default function SignupScreen() {
 
     const handleTermsToggle = () => {
         setTermsAccepted(!termsAccepted);
-        if (errors.terms) {
-            setErrors((prev) => ({ ...prev, terms: undefined }));
-        }
+        if (errors.terms) setErrors((prev) => ({ ...prev, terms: undefined }));
     };
 
     return (
-        <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}
-        >
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
             <ScrollView
                 contentContainerStyle={[styles.content, { paddingTop: insets.top + 60, paddingBottom: insets.bottom + 20 }]}
                 showsVerticalScrollIndicator={false}
                 keyboardShouldPersistTaps="handled"
             >
-                {/* Back Button */}
                 <Pressable style={[styles.backButton, { top: insets.top + 10 }]} onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
 
-                {/* Header */}
-                <View style={styles.header}>
-                    <Text style={styles.title}>Create Account</Text>
-                    <Text style={styles.subtitle}>Start your English reading adventure today</Text>
-                </View>
+                <AuthHeader title="Create Account" subtitle="Start your English reading adventure today" />
 
-                {/* Form */}
                 <View style={styles.form}>
                     <FormField
                         icon="person-outline"
@@ -145,29 +130,7 @@ export default function SignupScreen() {
                         containerStyle={styles.fieldContainer}
                     />
 
-                    {/* Terms of Service Checkbox */}
-                    <View style={styles.termsContainer}>
-                        <Pressable onPress={handleTermsToggle} style={styles.checkbox} hitSlop={10}>
-                            <Ionicons
-                                name={termsAccepted ? "checkbox" : "square-outline"}
-                                size={24}
-                                color={errors.terms ? theme.colors.error : (termsAccepted ? theme.colors.primary : theme.colors.textSecondary)}
-                            />
-                        </Pressable>
-                        <View style={styles.termsTextContainer}>
-                            <Text style={styles.termsText}>
-                                I agree to the{' '}
-                                <Text style={styles.termsLink} onPress={() => router.push('/legal/terms')}>
-                                    Terms of Service
-                                </Text>
-                                {' '}and{' '}
-                                <Text style={styles.termsLink} onPress={() => router.push('/legal/privacy')}>
-                                    Privacy Policy
-                                </Text>
-                            </Text>
-                            {errors.terms && <Text style={styles.termsError}>{errors.terms}</Text>}
-                        </View>
-                    </View>
+                    <TermsCheckbox checked={termsAccepted} onToggle={handleTermsToggle} error={errors.terms} />
 
                     <Pressable
                         style={[styles.button, loading && styles.buttonDisabled]}
@@ -182,24 +145,10 @@ export default function SignupScreen() {
                     </Pressable>
                 </View>
 
-                {/* Divider */}
-                <View style={styles.dividerContainer}>
-                    <View style={styles.divider} />
-                    <Text style={styles.dividerText}>or</Text>
-                    <View style={styles.divider} />
-                </View>
+                <AuthDivider text="or" />
 
-                {/* Social Auth */}
-                <Pressable
-                    style={[styles.googleButton, loading && styles.buttonDisabled]}
-                    onPress={handleGoogleSignIn}
-                    disabled={loading}
-                >
-                    <Ionicons name="logo-google" size={20} color={theme.colors.text} />
-                    <Text style={styles.googleButtonText}>Continue with Google</Text>
-                </Pressable>
+                <SocialAuthButton provider="google" onPress={handleGoogleSignIn} disabled={loading} />
 
-                {/* Footer */}
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>Already have an account? </Text>
                     <Link href="/login" asChild>
@@ -234,19 +183,6 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         borderRadius: theme.radius.full,
         backgroundColor: theme.colors.surface,
-    },
-    header: {
-        marginBottom: theme.spacing.xxxxl,
-    },
-    title: {
-        fontSize: 32,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-        marginBottom: theme.spacing.sm,
-    },
-    subtitle: {
-        fontSize: theme.typography.size.lg,
-        color: theme.colors.textSecondary,
     },
     form: {
         gap: theme.spacing.lg,
@@ -284,63 +220,5 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.primary,
-    },
-    dividerContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginVertical: theme.spacing.xl,
-    },
-    divider: {
-        flex: 1,
-        height: 1,
-        backgroundColor: theme.colors.borderLight,
-    },
-    dividerText: {
-        marginHorizontal: theme.spacing.lg,
-        color: theme.colors.textMuted,
-        fontSize: theme.typography.size.sm,
-    },
-    googleButton: {
-        flexDirection: 'row',
-        height: 56,
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: theme.spacing.md,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        marginBottom: theme.spacing.xl,
-    },
-    googleButtonText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.text,
-    },
-    termsContainer: {
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        gap: theme.spacing.md,
-        marginTop: theme.spacing.sm,
-    },
-    checkbox: {
-        marginTop: 2,
-    },
-    termsTextContainer: {
-        flex: 1,
-    },
-    termsText: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
-        lineHeight: 20,
-    },
-    termsLink: {
-        color: theme.colors.primary,
-        fontWeight: theme.typography.weight.semibold,
-    },
-    termsError: {
-        fontSize: theme.typography.size.xs,
-        color: theme.colors.error,
-        marginTop: theme.spacing.xs,
     },
 }));

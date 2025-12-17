@@ -3,8 +3,8 @@ import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicato
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
 import { FormField } from '@/components';
+import { AuthHeader, AuthDivider, SocialAuthButton } from '@/components/auth';
 import { useToastStore } from '@/store/toastStore';
 import { loginSchema } from '@/lib/validations';
 import { signIn, signInAnonymously, signInWithGoogle } from '@/services/auth';
@@ -21,7 +21,6 @@ export default function LoginScreen() {
     const toastActions = useToastStore((state) => state.actions);
 
     const handleLogin = async () => {
-        // Validate form
         const result = loginSchema.safeParse({ email, password });
         if (!result.success) {
             const fieldErrors: { email?: string; password?: string } = {};
@@ -38,7 +37,6 @@ export default function LoginScreen() {
         setLoading(true);
         try {
             await signIn(email, password);
-            // AuthContext will handle redirect
         } catch (error: any) {
             toastActions.error(error.message || 'Login failed');
         } finally {
@@ -50,7 +48,6 @@ export default function LoginScreen() {
         setLoading(true);
         try {
             await signInAnonymously();
-            // AuthContext will handle redirect
         } catch (error: any) {
             toastActions.error('Could not sign in as guest');
         } finally {
@@ -62,7 +59,6 @@ export default function LoginScreen() {
         setLoading(true);
         try {
             await signInWithGoogle();
-            // AuthContext will handle redirect
         } catch (error: any) {
             if (error.message !== 'Sign in was cancelled') {
                 toastActions.error(error.message || 'Google sign-in failed');
@@ -73,18 +69,10 @@ export default function LoginScreen() {
     };
 
     return (
-        <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-            style={styles.container}
-        >
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
             <View style={[styles.content, { paddingTop: insets.top + 40, paddingBottom: insets.bottom + 20 }]}>
-                {/* Header */}
-                <View style={styles.header}>
-                    <Text style={styles.title}>Welcome Back</Text>
-                    <Text style={styles.subtitle}>Sign in to continue your reading journey</Text>
-                </View>
+                <AuthHeader title="Welcome Back" subtitle="Sign in to continue your reading journey" />
 
-                {/* Form */}
                 <View style={styles.form}>
                     <FormField
                         icon="mail-outline"
@@ -92,9 +80,7 @@ export default function LoginScreen() {
                         value={email}
                         onChangeText={(text) => {
                             setEmail(text);
-                            if (errors.email) {
-                                setErrors({ ...errors, email: undefined });
-                            }
+                            if (errors.email) setErrors({ ...errors, email: undefined });
                         }}
                         autoCapitalize="none"
                         keyboardType="email-address"
@@ -107,9 +93,7 @@ export default function LoginScreen() {
                         value={password}
                         onChangeText={(text) => {
                             setPassword(text);
-                            if (errors.password) {
-                                setErrors({ ...errors, password: undefined });
-                            }
+                            if (errors.password) setErrors({ ...errors, password: undefined });
                         }}
                         secureTextEntry
                         error={errors.password}
@@ -133,29 +117,14 @@ export default function LoginScreen() {
                     </Pressable>
                 </View>
 
-                {/* Divider */}
-                <View style={styles.dividerContainer}>
-                    <View style={styles.divider} />
-                    <Text style={styles.dividerText}>or continue with</Text>
-                    <View style={styles.divider} />
-                </View>
+                <AuthDivider />
 
-                {/* Social Auth - Google Only */}
-                <Pressable
-                    style={[styles.googleButton, loading && styles.buttonDisabled]}
-                    onPress={handleGoogleSignIn}
-                    disabled={loading}
-                >
-                    <Ionicons name="logo-google" size={20} color={theme.colors.text} />
-                    <Text style={styles.googleButtonText}>Continue with Google</Text>
-                </Pressable>
+                <SocialAuthButton provider="google" onPress={handleGoogleSignIn} disabled={loading} />
 
-                {/* Guest Login */}
                 <Pressable onPress={handleGuestLogin} style={styles.guestButton}>
                     <Text style={styles.guestButtonText}>Continue as Guest</Text>
                 </Pressable>
 
-                {/* Footer */}
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>Don't have an account? </Text>
                     <Link href="/signup" asChild>
@@ -178,19 +147,6 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         paddingHorizontal: theme.spacing.xl,
         justifyContent: 'center',
-    },
-    header: {
-        marginBottom: theme.spacing.xxxxl,
-    },
-    title: {
-        fontSize: 32,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-        marginBottom: theme.spacing.sm,
-    },
-    subtitle: {
-        fontSize: theme.typography.size.lg,
-        color: theme.colors.textSecondary,
     },
     form: {
         gap: theme.spacing.lg,
@@ -216,38 +172,6 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.lg,
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.textInverse,
-    },
-    dividerContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginVertical: theme.spacing.xxxxl,
-    },
-    divider: {
-        flex: 1,
-        height: 1,
-        backgroundColor: theme.colors.borderLight,
-    },
-    dividerText: {
-        marginHorizontal: theme.spacing.lg,
-        color: theme.colors.textMuted,
-        fontSize: theme.typography.size.sm,
-    },
-    googleButton: {
-        flexDirection: 'row',
-        height: 56,
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: theme.spacing.md,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        marginBottom: theme.spacing.lg,
-    },
-    googleButtonText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.text,
     },
     footer: {
         flexDirection: 'row',

@@ -1,17 +1,14 @@
-import React from 'react';
-import { View, Pressable } from 'react-native';
+import React, { useMemo } from 'react';
+import { View } from 'react-native';
 import { Tabs } from 'expo-router';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, {
     useAnimatedStyle,
     withSpring,
-    interpolateColor,
-    useSharedValue,
-    withTiming,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useThemeStore } from '@/store/themeStore';
+import { useIsDark, useThemeKey } from '@/store/themeStore';
+import { lightTheme, darkTheme } from '@/theme/unistyles';
 
 type TabIconName = 'home' | 'compass' | 'book' | 'person';
 
@@ -24,8 +21,6 @@ interface TabIconProps {
 const AnimatedIcon = Animated.createAnimatedComponent(View);
 
 const TabIcon: React.FC<TabIconProps> = ({ name, focused, color }) => {
-    const { theme } = useUnistyles();
-
     const icons: Record<TabIconName, { active: keyof typeof Ionicons.glyphMap; inactive: keyof typeof Ionicons.glyphMap }> = {
         home: { active: 'home', inactive: 'home-outline' },
         compass: { active: 'compass', inactive: 'compass-outline' },
@@ -53,12 +48,16 @@ const TabIcon: React.FC<TabIconProps> = ({ name, focused, color }) => {
 };
 
 export default function TabLayout() {
-    const { theme } = useUnistyles();
     const insets = useSafeAreaInsets();
-    const themeMode = useThemeStore((s) => s.mode);
 
-    // Create tabBarStyle with current theme values
-    const tabBarStyle = {
+    // Subscribe to theme changes
+    const isDark = useIsDark();
+    const themeKey = useThemeKey();
+
+    // Get theme based on isDark state directly
+    const theme = isDark ? darkTheme : lightTheme;
+
+    const tabBarStyle = useMemo(() => ({
         backgroundColor: theme.colors.surface,
         borderTopWidth: 0.5,
         borderTopColor: theme.colors.borderLight,
@@ -67,19 +66,18 @@ export default function TabLayout() {
         paddingTop: 8,
         elevation: 0,
         shadowOpacity: 0,
-    };
+    }), [theme.colors.surface, theme.colors.borderLight, insets.bottom, themeKey]);
+
+    const screenOptions = useMemo(() => ({
+        headerShown: false,
+        tabBarActiveTintColor: theme.colors.text,
+        tabBarInactiveTintColor: theme.colors.textMuted,
+        tabBarShowLabel: false,
+        tabBarStyle: tabBarStyle,
+    }), [theme.colors.text, theme.colors.textMuted, tabBarStyle, themeKey]);
 
     return (
-        <Tabs
-            key={themeMode} // Force re-render when theme changes
-            screenOptions={{
-                headerShown: false,
-                tabBarActiveTintColor: theme.colors.text,
-                tabBarInactiveTintColor: theme.colors.textMuted,
-                tabBarShowLabel: false,
-                tabBarStyle: tabBarStyle,
-            }}
-        >
+        <Tabs screenOptions={screenOptions} key={`tabs-${themeKey}`}>
             <Tabs.Screen
                 name="index"
                 options={{
@@ -119,4 +117,3 @@ export default function TabLayout() {
         </Tabs>
     );
 }
-
