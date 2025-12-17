@@ -40,6 +40,7 @@ export { ProfileCard } from './ProfileCard';
 export { StatsGrid } from './StatsGrid';
 export { ProfileMenu } from './ProfileMenu';
 export type { MenuItem } from './ProfileMenu';
+export { ReadingCalendar } from './ReadingCalendar';
 // Deprecated: Use EditProfileSheet instead
 // export { EditProfileModal } from './EditProfileModal';
 // Deprecated: Use ReadingGoalsSheet instead

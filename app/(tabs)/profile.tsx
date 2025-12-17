@@ -11,6 +11,7 @@ import {
     ProfileMenu,
     ReadingGoalsSheet,
     ProfileScreenSkeleton,
+    ReadingCalendar,
 } from '@/components';
 import type { MenuItem } from '@/components';
 import { useAuthStore } from '@/store/authStore';
@@ -36,35 +37,22 @@ export default function ProfileScreen() {
     // Compute real stats from progress data
     const computedStats = useMemo(() => {
         let booksRead = 0;
-        let totalWords = 0;
-        let totalMinutes = 0;
 
         Object.values(progressMap).forEach((progress) => {
             if (progress.isCompleted) {
                 booksRead++;
-                const libraryItem = libraryItems.find((item) => item.storyId === progress.storyId);
-                if (libraryItem?.story) {
-                    totalWords += libraryItem.story.wordCount || 0;
-                    totalMinutes += libraryItem.story.estimatedReadTime || 0;
-                }
             }
         });
 
-        const pagesRead = Math.ceil(totalWords / 250);
-
         return {
             booksRead,
-            pagesRead,
-            minutesRead: totalMinutes,
             readingStreak: progressActions.getStreak(),
         };
-    }, [progressMap, libraryItems, progressActions]);
+    }, [progressMap, progressActions]);
 
     const stats = [
         { label: 'Books Read', value: computedStats.booksRead, icon: 'book' as const },
-        { label: 'Pages Read', value: computedStats.pagesRead.toLocaleString(), icon: 'document-text' as const },
         { label: 'Day Streak', value: computedStats.readingStreak, icon: 'flame' as const },
-        { label: 'Minutes', value: computedStats.minutesRead.toLocaleString(), icon: 'time' as const },
     ];
 
     // Theme
@@ -160,6 +148,20 @@ export default function ProfileScreen() {
 
                 {/* Stats Grid */}
                 <StatsGrid stats={stats} />
+
+                {/* Reading Calendar */}
+                {useMemo(() => {
+                    // Prepare reading data for calendar
+                    const readingData: Record<string, number> = {};
+                    Object.values(progressMap).forEach((progress) => {
+                        if (progress.lastReadAt) {
+                            const dateStr = new Date(progress.lastReadAt).toISOString().split('T')[0];
+                            // Use 1 to indicate activity (can be enhanced with actual minutes later)
+                            readingData[dateStr] = (readingData[dateStr] || 0) + 1;
+                        }
+                    });
+                    return <ReadingCalendar readingData={readingData} />;
+                }, [progressMap])}
 
                 {/* Menu */}
                 <ProfileMenu items={menuItems} />

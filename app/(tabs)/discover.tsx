@@ -18,6 +18,7 @@ import { useStories, useFeaturedAuthor, useCategories } from '@/hooks/useQueries
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { Story } from '@/types';
+import { haptics } from '@/utils/haptics';
 
 export default function DiscoverScreen() {
     const { theme } = useUnistyles();
@@ -38,22 +39,20 @@ export default function DiscoverScreen() {
     const trendingStories = allStories.slice(0, 5);
     const recommendedStories = allStories.slice(5, 10);
 
-    const genres = useMemo(() => {
-        const list: { id: string | null; title: string }[] = [{ id: null, title: 'All' }];
-        if (categoriesData) {
-            list.push(...categoriesData.map((c: any) => ({ id: c._id, title: c.title })));
-        }
-        return list;
-    }, [categoriesData]);
+    // Difficulty-based genre filters + Authors
+    const genres = ['All', 'Easy', 'Medium', 'Hard', 'Authors'];
 
-    const handleGenrePress = (index: number) => {
-        const genre = genres[index];
-        if (genre.id) {
-            router.push(`/category/${genre.id}?title=${encodeURIComponent(genre.title)}`);
-        } else {
-            setSelectedGenre(index);
+    const handleGenrePress = useCallback((index: number) => {
+        haptics.selection();
+
+        // Authors chip - navigate to authors page
+        if (index === 4) {
+            router.push('/authors');
+            return;
         }
-    };
+
+        setSelectedGenre(index);
+    }, [router]);
 
     const featuredAuthor = useMemo(() => {
         if (!authorData) return null;
@@ -138,8 +137,8 @@ export default function DiscoverScreen() {
                 >
                     {genres.map((genre, index) => (
                         <GenreChip
-                            key={genre.id || genre.title}
-                            label={genre.title}
+                            key={genre}
+                            label={genre}
                             isSelected={selectedGenre === index}
                             onPress={() => handleGenrePress(index)}
                         />

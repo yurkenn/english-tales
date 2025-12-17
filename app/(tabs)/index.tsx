@@ -45,16 +45,8 @@ export default function HomeScreen() {
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
 
     // Transform Categories - deduplicate to avoid key errors
-    const genres = useMemo(() => {
-        const list: string[] = ['For You'];
-        if (categoriesData) {
-            const categoryTitles = categoriesData.map((c: any) => c.title as string);
-            // Remove duplicates
-            const uniqueTitles = [...new Set<string>(categoryTitles)];
-            list.push(...uniqueTitles);
-        }
-        return list;
-    }, [categoriesData]);
+    // Difficulty-based genre filters + Authors
+    const genres = ['For You', 'Easy', 'Medium', 'Hard', 'Authors'];
 
     const featuredStory = useMemo(() => {
         if (!featuredData?.[0]) return null;
@@ -191,7 +183,14 @@ export default function HomeScreen() {
                             key={genre}
                             label={genre}
                             isSelected={selectedGenre === index}
-                            onPress={() => setSelectedGenre(index)}
+                            onPress={() => {
+                                haptics.selection();
+                                if (index === 4) {
+                                    router.push('/authors');
+                                } else {
+                                    setSelectedGenre(index);
+                                }
+                            }}
                         />
                     ))}
                 </ScrollView>

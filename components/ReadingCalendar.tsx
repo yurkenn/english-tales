@@ -4,12 +4,12 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 
 interface ReadingDay {
     date: Date;
-    minutesRead: number;
+    activityLevel: number;
     hasActivity: boolean;
 }
 
 interface ReadingCalendarProps {
-    readingData?: Record<string, number>; // date string -> minutes read
+    readingData?: Record<string, number>; // date string -> activity count
 }
 
 const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -21,17 +21,26 @@ export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
     const weekData = useMemo(() => {
         const days: ReadingDay[] = [];
         const today = new Date();
+        today.setHours(0, 0, 0, 0);
 
         for (let i = 6; i >= 0; i--) {
             const date = new Date(today);
             date.setDate(today.getDate() - i);
             const dateStr = date.toISOString().split('T')[0];
-            const minutesRead = readingData[dateStr] || 0;
+            const activityCount = readingData[dateStr] || 0;
+            const hasActivity = activityCount > 0;
+
+            // Map activity count to intensity level (0-4)
+            let activityLevel = 0;
+            if (activityCount >= 5) activityLevel = 4;
+            else if (activityCount >= 3) activityLevel = 3;
+            else if (activityCount >= 2) activityLevel = 2;
+            else if (activityCount >= 1) activityLevel = 1;
 
             days.push({
                 date,
-                minutesRead,
-                hasActivity: minutesRead > 0,
+                activityLevel,
+                hasActivity,
             });
         }
 
@@ -52,13 +61,17 @@ export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
         return streak;
     }, [weekData]);
 
-    // Get intensity color based on minutes
-    const getIntensityColor = (minutes: number) => {
-        if (minutes === 0) return theme.colors.borderLight;
-        if (minutes < 5) return `${theme.colors.primary}30`;
-        if (minutes < 15) return `${theme.colors.primary}50`;
-        if (minutes < 30) return `${theme.colors.primary}80`;
-        return theme.colors.primary;
+    // Get intensity color based on activity level
+    const getIntensityColor = (level: number) => {
+        if (level === 0) return theme.colors.borderLight;
+        const opacityMap: Record<number, string> = {
+            1: '40',
+            2: '60',
+            3: '80',
+            4: '100',
+        };
+        const opacity = opacityMap[level] || '40';
+        return `${theme.colors.primary}${opacity}`;
     };
 
     return (
@@ -80,7 +93,7 @@ export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
                         <View
                             style={[
                                 styles.dayCell,
-                                { backgroundColor: getIntensityColor(day.minutesRead) },
+                                { backgroundColor: getIntensityColor(day.activityLevel) },
                                 day.hasActivity && styles.dayCellActive,
                             ]}
                         >
@@ -98,12 +111,12 @@ export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
             <View style={styles.legend}>
                 <Text style={styles.legendText}>Less</Text>
                 <View style={styles.legendCells}>
-                    {[0, 5, 15, 30, 60].map((minutes, index) => (
+                    {[0, 1, 2, 3, 4].map((level, index) => (
                         <View
                             key={index}
                             style={[
                                 styles.legendCell,
-                                { backgroundColor: getIntensityColor(minutes) },
+                                { backgroundColor: getIntensityColor(level) },
                             ]}
                         />
                     ))}
@@ -117,17 +130,19 @@ export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
 const styles = StyleSheet.create((theme) => ({
     container: {
         marginHorizontal: theme.spacing.lg,
-        marginVertical: theme.spacing.md,
+        marginBottom: theme.spacing.lg,
         padding: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xl,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
     },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: theme.spacing.md,
+        marginBottom: theme.spacing.lg,
     },
     title: {
         fontSize: theme.typography.size.lg,
@@ -137,14 +152,14 @@ const styles = StyleSheet.create((theme) => ({
     streakBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
-        backgroundColor: `${theme.colors.warning}20`,
+        gap: theme.spacing.xs,
+        backgroundColor: 'rgba(255, 107, 53, 0.12)',
         paddingHorizontal: theme.spacing.sm,
-        paddingVertical: 4,
+        paddingVertical: theme.spacing.xs,
         borderRadius: theme.radius.full,
     },
     streakIcon: {
-        fontSize: 14,
+        fontSize: theme.typography.size.sm,
     },
     streakText: {
         fontSize: theme.typography.size.sm,
@@ -154,10 +169,12 @@ const styles = StyleSheet.create((theme) => ({
     calendarRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginBottom: theme.spacing.md,
     },
     dayColumn: {
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.sm,
+        flex: 1,
     },
     dayLabel: {
         fontSize: theme.typography.size.xs,
@@ -165,31 +182,33 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.medium,
     },
     dayCell: {
-        width: 36,
-        height: 36,
+        width: 40,
+        height: 40,
         borderRadius: theme.radius.md,
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: 'transparent',
     },
     dayCellActive: {
         borderWidth: 2,
         borderColor: theme.colors.primary,
     },
     checkmark: {
-        fontSize: 16,
-        color: '#FFFFFF',
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textInverse,
         fontWeight: theme.typography.weight.bold,
     },
     dateLabel: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textSecondary,
+        fontWeight: theme.typography.weight.medium,
     },
     legend: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         gap: theme.spacing.sm,
-        marginTop: theme.spacing.md,
         paddingTop: theme.spacing.md,
         borderTopWidth: 1,
         borderTopColor: theme.colors.borderLight,
@@ -197,14 +216,15 @@ const styles = StyleSheet.create((theme) => ({
     legendText: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
+        fontWeight: theme.typography.weight.medium,
     },
     legendCells: {
         flexDirection: 'row',
-        gap: 4,
+        gap: theme.spacing.xs,
     },
     legendCell: {
-        width: 16,
-        height: 16,
-        borderRadius: 4,
+        width: 12,
+        height: 12,
+        borderRadius: theme.radius.xs,
     },
 }));

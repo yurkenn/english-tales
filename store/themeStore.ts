@@ -1,6 +1,7 @@
 import { create } from 'zustand';
-import { UnistylesRuntime } from 'react-native-unistyles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { UnistylesRuntime } from 'react-native-unistyles';
+import { Appearance } from 'react-native';
 import { haptics } from '@/utils/haptics';
 
 type ThemeMode = 'light' | 'dark' | 'system';
@@ -19,14 +20,16 @@ interface ThemeActions {
 const THEME_KEY = '@english_tales_theme';
 
 const applyTheme = (mode: ThemeMode) => {
+    let actualTheme: 'light' | 'dark' = 'light';
+
     if (mode === 'system') {
-        // Enable adaptive themes to follow system
-        UnistylesRuntime.setAdaptiveThemes(true);
+        const colorScheme = Appearance.getColorScheme();
+        actualTheme = colorScheme === 'dark' ? 'dark' : 'light';
     } else {
-        // Disable adaptive and set specific theme
-        UnistylesRuntime.setAdaptiveThemes(false);
-        UnistylesRuntime.setTheme(mode);
+        actualTheme = mode;
     }
+
+    UnistylesRuntime.setTheme(actualTheme);
 };
 
 export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((set, get) => ({
@@ -59,11 +62,12 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
                     applyTheme(saved as ThemeMode);
                 } else {
                     set({ isLoaded: true });
+                    applyTheme('system');
                 }
             } catch (e) {
                 set({ isLoaded: true });
+                applyTheme('system');
             }
         },
     },
 }));
-

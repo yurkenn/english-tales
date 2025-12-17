@@ -25,18 +25,18 @@ export default function CategoryScreen() {
         return storiesData?.map(mapSanityStory) || [];
     }, [storiesData]);
 
-    const handleStoryPress = (storyId: string) => {
+    const handleStoryPress = useCallback((storyId: string) => {
         router.push(`/story/${storyId}`);
-    };
+    }, [router]);
 
-    const handleBookmarkPress = async (story: Story) => {
+    const handleBookmarkPress = useCallback(async (story: Story) => {
         haptics.selection();
         if (libraryActions.isInLibrary(story.id)) {
             await libraryActions.removeFromLibrary(story.id);
         } else {
             await libraryActions.addToLibrary(story);
         }
-    };
+    }, [libraryActions]);
 
     const onRefresh = useCallback(async () => {
         setRefreshing(true);

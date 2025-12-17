@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 import { FormField } from '@/components';
 import { useToastStore } from '@/store/toastStore';
 import { signupSchema } from '@/lib/validations';
@@ -16,21 +17,34 @@ export default function SignupScreen() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [termsAccepted, setTermsAccepted] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string }>({});
+    const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string; terms?: string }>({});
     const toastActions = useToastStore((state) => state.actions);
 
+    const validateTerms = (): boolean => {
+        if (!termsAccepted) {
+            setErrors((prev) => ({ ...prev, terms: 'You must accept the Terms of Service' }));
+            return false;
+        }
+        setErrors((prev) => ({ ...prev, terms: undefined }));
+        return true;
+    };
+
     const handleSignup = async () => {
+        // Validate terms first
+        if (!validateTerms()) return;
+
         // Validate form
         const result = signupSchema.safeParse({ name, email, password });
         if (!result.success) {
             const fieldErrors: { name?: string; email?: string; password?: string } = {};
-            result.error.errors.forEach((err) => {
-                if (err.path[0]) {
-                    fieldErrors[err.path[0] as 'name' | 'email' | 'password'] = err.message;
+            result.error.issues.forEach((issue) => {
+                if (issue.path[0]) {
+                    fieldErrors[issue.path[0] as 'name' | 'email' | 'password'] = issue.message;
                 }
             });
-            setErrors(fieldErrors);
+            setErrors((prev) => ({ ...prev, ...fieldErrors }));
             return;
         }
 
@@ -47,6 +61,9 @@ export default function SignupScreen() {
     };
 
     const handleGoogleSignIn = async () => {
+        // Validate terms first for Google sign-in too
+        if (!validateTerms()) return;
+
         setLoading(true);
         try {
             await signInWithGoogle();
@@ -60,14 +77,25 @@ export default function SignupScreen() {
         }
     };
 
+    const handleTermsToggle = () => {
+        setTermsAccepted(!termsAccepted);
+        if (errors.terms) {
+            setErrors((prev) => ({ ...prev, terms: undefined }));
+        }
+    };
+
     return (
         <KeyboardAvoidingView
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
             style={styles.container}
         >
-            <View style={[styles.content, { paddingTop: insets.top + 40, paddingBottom: insets.bottom + 20 }]}>
+            <ScrollView
+                contentContainerStyle={[styles.content, { paddingTop: insets.top + 60, paddingBottom: insets.bottom + 20 }]}
+                showsVerticalScrollIndicator={false}
+                keyboardShouldPersistTaps="handled"
+            >
                 {/* Back Button */}
-                <Pressable style={styles.backButton} onPress={() => router.back()}>
+                <Pressable style={[styles.backButton, { top: insets.top + 10 }]} onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
 
@@ -85,9 +113,7 @@ export default function SignupScreen() {
                         value={name}
                         onChangeText={(text) => {
                             setName(text);
-                            if (errors.name) {
-                                setErrors({ ...errors, name: undefined });
-                            }
+                            if (errors.name) setErrors({ ...errors, name: undefined });
                         }}
                         error={errors.name}
                         containerStyle={styles.fieldContainer}
@@ -98,9 +124,7 @@ export default function SignupScreen() {
                         value={email}
                         onChangeText={(text) => {
                             setEmail(text);
-                            if (errors.email) {
-                                setErrors({ ...errors, email: undefined });
-                            }
+                            if (errors.email) setErrors({ ...errors, email: undefined });
                         }}
                         autoCapitalize="none"
                         keyboardType="email-address"
@@ -113,15 +137,37 @@ export default function SignupScreen() {
                         value={password}
                         onChangeText={(text) => {
                             setPassword(text);
-                            if (errors.password) {
-                                setErrors({ ...errors, password: undefined });
-                            }
+                            if (errors.password) setErrors({ ...errors, password: undefined });
                         }}
                         secureTextEntry
                         error={errors.password}
                         helperText="Must be at least 6 characters"
                         containerStyle={styles.fieldContainer}
                     />
+
+                    {/* Terms of Service Checkbox */}
+                    <View style={styles.termsContainer}>
+                        <Pressable onPress={handleTermsToggle} style={styles.checkbox} hitSlop={10}>
+                            <Ionicons
+                                name={termsAccepted ? "checkbox" : "square-outline"}
+                                size={24}
+                                color={errors.terms ? theme.colors.error : (termsAccepted ? theme.colors.primary : theme.colors.textSecondary)}
+                            />
+                        </Pressable>
+                        <View style={styles.termsTextContainer}>
+                            <Text style={styles.termsText}>
+                                I agree to the{' '}
+                                <Text style={styles.termsLink} onPress={() => router.push('/legal/terms')}>
+                                    Terms of Service
+                                </Text>
+                                {' '}and{' '}
+                                <Text style={styles.termsLink} onPress={() => router.push('/legal/privacy')}>
+                                    Privacy Policy
+                                </Text>
+                            </Text>
+                            {errors.terms && <Text style={styles.termsError}>{errors.terms}</Text>}
+                        </View>
+                    </View>
 
                     <Pressable
                         style={[styles.button, loading && styles.buttonDisabled]}
@@ -162,7 +208,7 @@ export default function SignupScreen() {
                         </Pressable>
                     </Link>
                 </View>
-            </View>
+            </ScrollView>
         </KeyboardAvoidingView>
     );
 }
@@ -173,7 +219,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.background,
     },
     content: {
-        flex: 1,
+        flexGrow: 1,
         paddingHorizontal: theme.spacing.xl,
         justifyContent: 'center',
     },
@@ -270,5 +316,31 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.text,
+    },
+    termsContainer: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        gap: theme.spacing.md,
+        marginTop: theme.spacing.sm,
+    },
+    checkbox: {
+        marginTop: 2,
+    },
+    termsTextContainer: {
+        flex: 1,
+    },
+    termsText: {
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textSecondary,
+        lineHeight: 20,
+    },
+    termsLink: {
+        color: theme.colors.primary,
+        fontWeight: theme.typography.weight.semibold,
+    },
+    termsError: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.error,
+        marginTop: theme.spacing.xs,
     },
 }));

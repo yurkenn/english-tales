@@ -91,24 +91,53 @@ export const sendPasswordResetEmail = async (email: string): Promise<void> => {
 // Google Sign-In
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
+import { Platform } from 'react-native';
 
-// Configure Google Sign-In (must be called before using signInWithGoogle)
-GoogleSignin.configure({
-    webClientId: process.env.EXPO_PUBLIC_IOS_CLIENT_ID, // Use web client ID from Firebase Console
-    offlineAccess: true,
-});
+let isGoogleSignInConfigured = false;
+
+// Configure Google Sign-In (lazy initialization)
+const configureGoogleSignIn = () => {
+    if (isGoogleSignInConfigured) return;
+
+    const webClientId = process.env.EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID;
+    const iosClientId = process.env.EXPO_PUBLIC_IOS_CLIENT_ID;
+    
+    if (!webClientId) {
+        throw new Error('EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID is not set in environment variables');
+    }
+
+    const config: any = {
+        webClientId, // Web client ID from Firebase Console (required for both iOS and Android)
+        offlineAccess: true, // Enables server-side access and refresh tokens
+    };
+
+    // Add iOS client ID if available
+    if (Platform.OS === 'ios' && iosClientId) {
+        config.iosClientId = iosClientId;
+    }
+
+    GoogleSignin.configure(config);
+    isGoogleSignInConfigured = true;
+};
 
 export const signInWithGoogle = async (): Promise<User> => {
     try {
-        // Check for Play Services on Android
-        await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+        // Configure Google Sign-In if not already configured
+        configureGoogleSignIn();
+
+        // Check for Play Services on Android only
+        if (Platform.OS === 'android') {
+            await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+        }
 
         // Sign in with Google
         const signInResult = await GoogleSignin.signIn();
 
-        // Get the ID token
+        // Get the ID token - API returns data.idToken
         const idToken = signInResult.data?.idToken;
+        
         if (!idToken) {
+            console.error('Google Sign-In result:', JSON.stringify(signInResult, null, 2));
             throw new Error('No ID token returned from Google Sign-In');
         }
 
@@ -120,13 +149,31 @@ export const signInWithGoogle = async (): Promise<User> => {
 
         return mapUser(userCredential.user);
     } catch (error: any) {
+        // Handle DEVELOPER_ERROR with helpful message
+        if (error.code === 'DEVELOPER_ERROR' || error.message?.includes('DEVELOPER_ERROR')) {
+            const developerErrorMsg = Platform.OS === 'android' 
+                ? 'DEVELOPER_ERROR: Please ensure SHA-1 fingerprint is registered in Firebase Console. Run: cd android && ./gradlew signingReport'
+                : 'DEVELOPER_ERROR: Please verify bundle identifier and OAuth client IDs in Firebase Console';
+            throw new Error(developerErrorMsg);
+        }
+        
+        // Handle specific error codes
         if (error.code === statusCodes.SIGN_IN_CANCELLED) {
             throw new Error('Sign in was cancelled');
         } else if (error.code === statusCodes.IN_PROGRESS) {
             throw new Error('Sign in is already in progress');
         } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
             throw new Error('Play services not available');
+        } else if (error.code === statusCodes.SIGN_IN_REQUIRED) {
+            throw new Error('Sign in required');
         }
-        throw error;
+        
+        // Handle Firebase auth errors
+        if (error.code?.startsWith('auth/')) {
+            throw new Error(error.message || 'Authentication failed');
+        }
+        
+        // Re-throw with message if available
+        throw new Error(error.message || 'Google sign-in failed');
     }
 };

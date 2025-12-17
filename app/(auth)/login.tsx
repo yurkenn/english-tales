@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, Image, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Ionicons } from '@expo/vector-icons';
 import { FormField } from '@/components';
 import { useToastStore } from '@/store/toastStore';
 import { loginSchema } from '@/lib/validations';
@@ -24,9 +25,9 @@ export default function LoginScreen() {
         const result = loginSchema.safeParse({ email, password });
         if (!result.success) {
             const fieldErrors: { email?: string; password?: string } = {};
-            result.error.errors.forEach((err) => {
-                if (err.path[0]) {
-                    fieldErrors[err.path[0] as 'email' | 'password'] = err.message;
+            result.error.issues.forEach((issue) => {
+                if (issue.path[0]) {
+                    fieldErrors[issue.path[0] as 'email' | 'password'] = issue.message;
                 }
             });
             setErrors(fieldErrors);
@@ -115,7 +116,7 @@ export default function LoginScreen() {
                         containerStyle={styles.fieldContainer}
                     />
 
-                    <Pressable style={styles.forgotPassword}>
+                    <Pressable style={styles.forgotPassword} onPress={() => router.push('/forgot-password')}>
                         <Text style={styles.linkText}>Forgot Password?</Text>
                     </Pressable>
 
@@ -139,19 +140,15 @@ export default function LoginScreen() {
                     <View style={styles.divider} />
                 </View>
 
-                {/* Social Auth */}
-                <View style={styles.socialRow}>
-                    <Pressable
-                        style={[styles.socialButton, loading && styles.buttonDisabled]}
-                        onPress={handleGoogleSignIn}
-                        disabled={loading}
-                    >
-                        <Ionicons name="logo-google" size={24} color={theme.colors.text} />
-                    </Pressable>
-                    <Pressable style={styles.socialButton}>
-                        <Ionicons name="logo-apple" size={24} color={theme.colors.text} />
-                    </Pressable>
-                </View>
+                {/* Social Auth - Google Only */}
+                <Pressable
+                    style={[styles.googleButton, loading && styles.buttonDisabled]}
+                    onPress={handleGoogleSignIn}
+                    disabled={loading}
+                >
+                    <Ionicons name="logo-google" size={20} color={theme.colors.text} />
+                    <Text style={styles.googleButtonText}>Continue with Google</Text>
+                </Pressable>
 
                 {/* Guest Login */}
                 <Pressable onPress={handleGuestLogin} style={styles.guestButton}>
@@ -235,21 +232,22 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textMuted,
         fontSize: theme.typography.size.sm,
     },
-    socialRow: {
+    googleButton: {
         flexDirection: 'row',
-        justifyContent: 'center',
-        gap: theme.spacing.xl,
-        marginBottom: theme.spacing.xxxxl,
-    },
-    socialButton: {
-        width: 56,
         height: 56,
-        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.surface,
+        borderRadius: theme.radius.xl,
         alignItems: 'center',
         justifyContent: 'center',
+        gap: theme.spacing.md,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
+        marginBottom: theme.spacing.lg,
+    },
+    googleButtonText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.semibold,
+        color: theme.colors.text,
     },
     footer: {
         flexDirection: 'row',
