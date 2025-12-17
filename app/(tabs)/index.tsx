@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react';
-import { View, Text, ScrollView, FlatList, Pressable, RefreshControl } from 'react-native';
+import { View, Text, ScrollView, FlatList, Pressable, Image, ActivityIndicator, RefreshControl } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -14,8 +14,6 @@ import {
     BookListItem,
     NetworkError,
     HomeScreenSkeleton,
-    OptimizedImage,
-    TrendingCard,
 } from '@/components';
 import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries';
 import { Story } from '@/types';
@@ -50,7 +48,7 @@ export default function HomeScreen() {
     const genres = useMemo(() => {
         const list: string[] = ['For You'];
         if (categoriesData) {
-            const categoryTitles = categoriesData.map((c: { title: string }) => c.title);
+            const categoryTitles = categoriesData.map((c: any) => c.title as string);
             // Remove duplicates
             const uniqueTitles = [...new Set<string>(categoryTitles)];
             list.push(...uniqueTitles);
@@ -67,6 +65,9 @@ export default function HomeScreen() {
         return storiesData?.map(mapSanityStory) || [];
     }, [storiesData]);
 
+    // Derived Lists
+    const recommendedStories = allStories.slice(0, 5);
+    const trendingList = allStories.slice(2, 6); // Just taking some other slice
 
     // Get continue reading from real progress data
     const { items: libraryItems, actions: libraryActions } = useLibraryStore();
@@ -90,15 +91,15 @@ export default function HomeScreen() {
         };
     }, [libraryItems, progressMap]);
 
-    const handleStoryPress = useCallback((storyId: string) => {
+    const handleStoryPress = (storyId: string) => {
         router.push(`/story/${storyId}`);
-    }, [router]);
+    };
 
-    const handleReadPress = useCallback((storyId: string) => {
+    const handleReadPress = (storyId: string) => {
         router.push(`/reading/${storyId}`);
-    }, [router]);
+    };
 
-    const handleBookmarkPress = useCallback(async (story: Story) => {
+    const handleBookmarkPress = async (story: Story) => {
         haptics.selection();
         const toastActions = useToastStore.getState().actions;
         if (libraryActions.isInLibrary(story.id)) {
@@ -108,75 +109,7 @@ export default function HomeScreen() {
             await libraryActions.addToLibrary(story);
             toastActions.success('Added to library');
         }
-    }, [libraryActions]);
-
-    const renderRecommendedItem = useCallback(({ item, index }: { item: Story; index: number }) => (
-        <BookCard
-            story={item}
-            showRank={selectedGenre === 0 ? index + 1 : undefined}
-            onPress={() => handleStoryPress(item.id)}
-        />
-    ), [handleStoryPress, selectedGenre]);
-
-    // Handle search navigation
-    const handleSearchPress = useCallback(() => {
-        haptics.selection();
-        router.push('/search');
-    }, [router]);
-
-    // Handle genre filter
-    const handleGenrePress = useCallback((index: number) => {
-        haptics.selection();
-        setSelectedGenre(index);
-        
-        // Show feedback for genre selection (except "For You")
-        if (index !== 0) {
-            const genreTitle = genres[index];
-            const filteredCount = allStories.filter((story: Story) => 
-                story.tags.some((tag: string) => 
-                    tag.toLowerCase() === genreTitle.toLowerCase()
-                )
-            ).length;
-            
-            const toastActions = useToastStore.getState().actions;
-            if (filteredCount > 0) {
-                toastActions.info(`${filteredCount} ${filteredCount === 1 ? 'story' : 'stories'} in ${genreTitle}`);
-            } else {
-                toastActions.warning(`No stories found in ${genreTitle}`);
-            }
-        }
-    }, [genres, allStories]);
-
-    // Filter stories by selected genre
-    const filteredStories = useMemo(() => {
-        if (selectedGenre === 0) {
-            // "For You" - show all stories
-            return allStories;
-        }
-        const selectedGenreTitle = genres[selectedGenre];
-        if (!selectedGenreTitle || !categoriesData) return allStories;
-        
-        // Find category by title
-        const category = categoriesData.find((c: { title: string }) => c.title === selectedGenreTitle);
-        if (!category) return allStories;
-        
-        // Filter stories that belong to this category
-        // Check if story's tags include the category title
-        return allStories.filter((story: Story) => 
-            story.tags.some((tag: string) => 
-                tag.toLowerCase() === selectedGenreTitle.toLowerCase()
-            )
-        );
-    }, [selectedGenre, genres, allStories, categoriesData]);
-
-    // Update derived lists based on filtered stories
-    const recommendedStoriesFiltered = useMemo(() => {
-        return filteredStories.slice(0, 5);
-    }, [filteredStories]);
-
-    const trendingListFiltered = useMemo(() => {
-        return filteredStories.slice(2, 6);
-    }, [filteredStories]);
+    };
 
     const isLoading = loadingCategories || loadingFeatured || loadingStories;
     const [refreshing, setRefreshing] = useState(false);
@@ -216,7 +149,7 @@ export default function HomeScreen() {
             {/* Header */}
             <View style={styles.header}>
                 <View style={styles.userRow}>
-                    <OptimizedImage
+                    <Image
                         source={{ uri: user?.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.displayName || 'Reader')}` }}
                         style={styles.avatar}
                     />
@@ -228,13 +161,6 @@ export default function HomeScreen() {
                 <Pressable
                     style={styles.notificationButton}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                    onPress={() => {
-                        haptics.selection();
-                        const toastActions = useToastStore.getState().actions;
-                        toastActions.info('Notifications coming soon!');
-                    }}
-                    accessibilityRole="button"
-                    accessibilityLabel="Notifications"
                 >
                     <Ionicons
                         name="notifications-outline"
@@ -249,9 +175,7 @@ export default function HomeScreen() {
             <View style={styles.searchContainer}>
                 <SearchBar
                     placeholder="Search English stories..."
-                    onPress={handleSearchPress}
-                    onMicPress={handleSearchPress}
-                    onSubmit={handleSearchPress}
+                    onMicPress={() => { }}
                 />
             </View>
 
@@ -261,15 +185,13 @@ export default function HomeScreen() {
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     contentContainerStyle={styles.chipsContainer}
-                    removeClippedSubviews={true}
-                    scrollEventThrottle={16}
                 >
                     {genres.map((genre, index) => (
                         <GenreChip
                             key={genre}
                             label={genre}
                             isSelected={selectedGenre === index}
-                            onPress={() => handleGenrePress(index)}
+                            onPress={() => setSelectedGenre(index)}
                         />
                     ))}
                 </ScrollView>
@@ -280,8 +202,6 @@ export default function HomeScreen() {
                 style={styles.content}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
-                removeClippedSubviews={true}
-                scrollEventThrottle={16}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
@@ -323,55 +243,43 @@ export default function HomeScreen() {
                 )}
 
                 {/* Recommended */}
-                {recommendedStoriesFiltered.length > 0 && (
-                    <View style={styles.section}>
-                        <SectionHeader
-                            title={selectedGenre === 0 ? "Recommended for You" : `Recommended in ${genres[selectedGenre]}`}
-                            onActionPress={() => router.push('/discover')}
-                        />
-                        <FlatList
-                            data={recommendedStoriesFiltered}
-                            horizontal
-                            showsHorizontalScrollIndicator={false}
-                            contentContainerStyle={styles.carouselContent}
-                            keyExtractor={(item) => item.id}
-                            renderItem={renderRecommendedItem}
-                            ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
-                            removeClippedSubviews={true}
-                            initialNumToRender={5}
-                            maxToRenderPerBatch={3}
-                            windowSize={5}
-                        />
-                    </View>
-                )}
+                <View style={styles.section}>
+                    <SectionHeader
+                        title="Recommended for You"
+                        onActionPress={() => router.push('/discover')}
+                    />
+                    <FlatList
+                        data={recommendedStories}
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.carouselContent}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item, index }) => (
+                            <BookCard
+                                story={item}
+                                showRank={index + 1}
+                                onPress={() => handleStoryPress(item.id)}
+                            />
+                        )}
+                        ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+                    />
+                </View>
 
                 {/* Trending Now */}
-                {trendingListFiltered.length > 0 && (
-                    <View style={styles.section}>
-                        <SectionHeader title={selectedGenre === 0 ? "Trending Now" : `Trending in ${genres[selectedGenre]}`} />
-                        <FlatList
-                            data={trendingListFiltered}
-                            horizontal
-                            showsHorizontalScrollIndicator={false}
-                            contentContainerStyle={styles.trendingCarouselContent}
-                            keyExtractor={(item) => item.id}
-                            renderItem={({ item, index }) => (
-                                <TrendingCard
-                                    story={item}
-                                    index={index}
-                                    onPress={() => handleStoryPress(item.id)}
-                                    onBookmarkPress={() => handleBookmarkPress(item)}
-                                    isBookmarked={libraryActions.isInLibrary(item.id)}
-                                />
-                            )}
-                            ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
-                            removeClippedSubviews={true}
-                            initialNumToRender={3}
-                            maxToRenderPerBatch={2}
-                            windowSize={5}
-                        />
+                <View style={styles.section}>
+                    <SectionHeader title="Trending Now" />
+                    <View style={styles.sectionContent}>
+                        {trendingList.map((story: Story) => (
+                            <BookListItem
+                                key={story.id}
+                                story={story}
+                                onPress={() => handleStoryPress(story.id)}
+                                onBookmarkPress={() => handleBookmarkPress(story)}
+                                isBookmarked={libraryActions.isInLibrary(story.id)}
+                            />
+                        ))}
                     </View>
-                )}
+                </View>
             </ScrollView>
         </View>
     );
@@ -463,10 +371,6 @@ const styles = StyleSheet.create((theme) => ({
     },
     carouselContent: {
         paddingHorizontal: theme.spacing.lg,
-    },
-    trendingCarouselContent: {
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.xs,
     },
     center: {
         alignItems: 'center',

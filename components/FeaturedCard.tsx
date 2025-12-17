@@ -1,11 +1,10 @@
-import React, { memo } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import React from 'react';
+import { View, Text, ImageBackground, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Story } from '@/types';
 import { RatingStars } from './RatingStars';
-import { OptimizedImage } from './OptimizedImage';
 
 interface FeaturedCardProps {
     story: Story;
@@ -15,7 +14,7 @@ interface FeaturedCardProps {
     reviewCount?: number | null;
 }
 
-export const FeaturedCard: React.FC<FeaturedCardProps> = memo(({
+export const FeaturedCard: React.FC<FeaturedCardProps> = ({
     story,
     badge = "Editor's Choice",
     onPress,
@@ -37,12 +36,11 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = memo(({
     return (
         <View style={styles.container}>
             {/* Hero Image */}
-            <View style={styles.imageContainer}>
-                <OptimizedImage
-                    source={{ uri: coverUri }}
-                    style={StyleSheet.absoluteFill}
-                    contentFit="cover"
-                />
+            <ImageBackground
+                source={{ uri: coverUri }}
+                style={styles.imageContainer}
+                resizeMode="cover"
+            >
                 <LinearGradient
                     colors={['transparent', 'rgba(0,0,0,0.3)', 'rgba(0,0,0,0.85)']}
                     style={styles.gradient}
@@ -58,7 +56,7 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = memo(({
                         {story.author} • {story.tags[0]}
                     </Text>
                 </View>
-            </View>
+            </ImageBackground>
 
             {/* Content */}
             <View style={styles.content}>
@@ -86,9 +84,7 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = memo(({
             </View>
         </View>
     );
-});
-
-FeaturedCard.displayName = 'FeaturedCard';
+};
 
 const styles = StyleSheet.create((theme) => ({
     container: {
@@ -102,8 +98,6 @@ const styles = StyleSheet.create((theme) => ({
     imageContainer: {
         height: 220,
         justifyContent: 'flex-end',
-        position: 'relative',
-        overflow: 'hidden',
     },
     gradient: {
         ...StyleSheet.absoluteFillObject,

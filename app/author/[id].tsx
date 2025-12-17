@@ -1,14 +1,13 @@
 import React, { useMemo } from 'react';
-import { View, Text, ScrollView, Pressable } from 'react-native';
+import { View, Text, ScrollView, Pressable, Image } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuthor, useStories } from '@/hooks/useQueries';
-import { BookCard, NetworkError, EmptyState, AuthorScreenSkeleton, OptimizedImage } from '@/components';
+import { BookCard, NetworkError, EmptyState, AuthorScreenSkeleton } from '@/components';
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
-import { Story } from '@/types';
 
 export default function AuthorScreen() {
     const { theme } = useUnistyles();
@@ -33,10 +32,7 @@ export default function AuthorScreen() {
     const authorStories = useMemo(() => {
         if (!storiesData || !author) return [];
         return storiesData
-            .filter((story: { author?: { _ref?: string; _id?: string } }) => {
-                const authorRef = story.author?._ref || story.author?._id;
-                return authorRef === id;
-            })
+            .filter((story: any) => story.author?._ref === id || story.author?._id === id)
             .map(mapSanityStory)
             .slice(0, 10);
     }, [storiesData, author, id]);
@@ -81,14 +77,10 @@ export default function AuthorScreen() {
                 <View style={styles.placeholder} />
             </View>
 
-            <ScrollView
-                showsVerticalScrollIndicator={false}
-                removeClippedSubviews={true}
-                scrollEventThrottle={16}
-            >
+            <ScrollView showsVerticalScrollIndicator={false}>
                 {/* Author Info */}
                 <View style={styles.authorSection}>
-                    <OptimizedImage
+                    <Image
                         source={{ uri: author.avatar || `https://ui-avatars.com/api/?name=${author.name}` }}
                         style={styles.avatar}
                     />
@@ -107,10 +99,8 @@ export default function AuthorScreen() {
                             horizontal
                             showsHorizontalScrollIndicator={false}
                             contentContainerStyle={styles.storiesRow}
-                            removeClippedSubviews={true}
-                            scrollEventThrottle={16}
                         >
-                            {authorStories.map((story: Story) => (
+                            {authorStories.map((story: any) => (
                                 <BookCard
                                     key={story.id}
                                     story={story}

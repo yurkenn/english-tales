@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,7 +12,7 @@ interface BookCardProps {
     rating?: number | null;
 }
 
-export const BookCard: React.FC<BookCardProps> = memo(({
+export const BookCard: React.FC<BookCardProps> = ({
     story,
     onPress,
     showRank,
@@ -55,9 +55,7 @@ export const BookCard: React.FC<BookCardProps> = memo(({
             </View>
         </Pressable>
     );
-});
-
-BookCard.displayName = 'BookCard';
+};
 
 const styles = StyleSheet.create((theme) => ({
     container: {

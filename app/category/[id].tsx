@@ -44,6 +44,15 @@ export default function CategoryScreen() {
         setRefreshing(false);
     }, [refetch]);
 
+    const renderStoryItem = useCallback(({ item }: { item: Story }) => (
+        <BookListItem
+            story={item}
+            onPress={() => handleStoryPress(item.id)}
+            onBookmarkPress={() => handleBookmarkPress(item)}
+            isBookmarked={libraryActions.isInLibrary(item.id)}
+        />
+    ), [handleStoryPress, handleBookmarkPress, libraryActions]);
+
     if (isLoading) {
         return (
             <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -78,14 +87,7 @@ export default function CategoryScreen() {
             <FlatList
                 data={stories}
                 keyExtractor={(item) => item.id}
-                renderItem={useCallback(({ item }: { item: Story }) => (
-                    <BookListItem
-                        story={item}
-                        onPress={() => handleStoryPress(item.id)}
-                        onBookmarkPress={() => handleBookmarkPress(item)}
-                        isBookmarked={libraryActions.isInLibrary(item.id)}
-                    />
-                ), [handleStoryPress, handleBookmarkPress, libraryActions])}
+                renderItem={renderStoryItem}
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}

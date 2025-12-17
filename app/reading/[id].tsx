@@ -6,7 +6,6 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar, PortableTextRenderer, ConfettiCelebration, ReadingScreenSkeleton } from '@/components';
 import { useStory } from '@/hooks/useQueries';
-import { mapSanityStory } from '@/utils/storyMapper';
 import { useProgressStore } from '@/store/progressStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useLibraryStore } from '@/store/libraryStore';
@@ -93,7 +92,7 @@ export default function ReadingScreen() {
         return storyDoc?.content as PortableTextBlock[] | undefined;
     }, [id, isDownloaded, downloads, storyDoc]);
 
-    const handleScroll = useCallback((event: { nativeEvent: { contentOffset: { y: number }; contentSize: { height: number }; layoutMeasurement: { height: number } } }) => {
+    const handleScroll = useCallback((event: any) => {
         const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
         const scrollableHeight = contentSize.height - layoutMeasurement.height;
         if (scrollableHeight <= 0) return;
@@ -263,9 +262,16 @@ export default function ReadingScreen() {
                             haptics.success();
                             if (isInLibrary) {
                                 await libraryActions.removeFromLibrary(id);
-                            } else if (storyDoc) {
-                                const storyToAdd = mapSanityStory(storyDoc);
-                                await libraryActions.addToLibrary(storyToAdd);
+                            } else {
+                                await libraryActions.addToLibrary({
+                                    id: id,
+                                    title: storyDoc.title || 'Untitled',
+                                    coverImage: storyDoc.coverImage?.asset?.url || '',
+                                    author: storyDoc.author?.name || 'Unknown',
+                                    description: storyDoc.description || '',
+                                    estimatedReadTime: storyDoc.estimatedReadTime || 5,
+                                    level: storyDoc.level || 'Beginner',
+                                } as any);
                             }
                         }}
                     >

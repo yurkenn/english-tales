@@ -53,6 +53,7 @@ export const FormField: React.FC<FormFieldProps> = ({
                     placeholderTextColor={theme.colors.textMuted}
                     accessibilityLabel={label || textInputProps.placeholder}
                     accessibilityHint={error || helperText}
+                    accessibilityState={{ invalid: hasError }}
                     {...textInputProps}
                 />
             </View>

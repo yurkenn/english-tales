@@ -9,7 +9,6 @@ interface SearchBarProps {
     onChangeText?: (text: string) => void;
     onSubmit?: () => void;
     onMicPress?: () => void;
-    onPress?: () => void;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({
@@ -18,18 +17,11 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     onChangeText,
     onSubmit,
     onMicPress,
-    onPress,
 }) => {
     const { theme } = useUnistyles();
 
-    const Container = onPress ? Pressable : View;
-    const containerProps = onPress ? { onPress } : {};
-
-    // If onPress is provided, make input non-editable (just a visual placeholder)
-    const isEditable = !onPress && !!onChangeText;
-
     return (
-        <Container style={styles.container} {...containerProps}>
+        <View style={styles.container}>
             <View style={styles.iconContainer}>
                 <Ionicons
                     name="search"
@@ -47,11 +39,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 returnKeyType="search"
                 autoCapitalize="none"
                 autoCorrect={false}
-                editable={isEditable}
-                onFocus={onPress ? onPress : undefined}
-                pointerEvents={onPress ? 'none' : 'auto'}
-                accessibilityRole="search"
-                accessibilityLabel="Search stories"
             />
             {onMicPress && (
                 <Pressable
@@ -66,7 +53,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                     />
                 </Pressable>
             )}
-        </Container>
+        </View>
     );
 };
 

@@ -3,7 +3,6 @@ import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicato
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
 import { FormField } from '@/components';
 import { useToastStore } from '@/store/toastStore';
 import { signupSchema } from '@/lib/validations';
@@ -26,7 +25,7 @@ export default function SignupScreen() {
         const result = signupSchema.safeParse({ name, email, password });
         if (!result.success) {
             const fieldErrors: { name?: string; email?: string; password?: string } = {};
-            result.error.issues.forEach((err) => {
+            result.error.errors.forEach((err) => {
                 if (err.path[0]) {
                     fieldErrors[err.path[0] as 'name' | 'email' | 'password'] = err.message;
                 }
@@ -40,9 +39,8 @@ export default function SignupScreen() {
         try {
             await signUp(email, password, name);
             // AuthContext will handle redirect
-        } catch (error: unknown) {
-            const message = error instanceof Error ? error.message : 'Signup failed';
-            toastActions.error(message);
+        } catch (error: any) {
+            toastActions.error(error.message || 'Signup failed');
         } finally {
             setLoading(false);
         }
@@ -53,10 +51,9 @@ export default function SignupScreen() {
         try {
             await signInWithGoogle();
             // AuthContext will handle redirect
-        } catch (error: unknown) {
-            const message = error instanceof Error ? error.message : 'Google sign-in failed';
-            if (message !== 'Sign in was cancelled') {
-                toastActions.error(message);
+        } catch (error: any) {
+            if (error.message !== 'Sign in was cancelled') {
+                toastActions.error(error.message || 'Google sign-in failed');
             }
         } finally {
             setLoading(false);

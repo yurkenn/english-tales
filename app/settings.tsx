@@ -52,14 +52,14 @@ export default function SettingsScreen() {
 
     const [cacheSize, setCacheSize] = useState('Calculating...');
     const [notificationsEnabled, setNotificationsEnabled] = useState(true);
-    
+
     // Dialog refs
     const signOutDialogRef = useRef<BottomSheet>(null);
     const deleteAccountDialogRef = useRef<BottomSheet>(null);
     const clearCacheDialogRef = useRef<BottomSheet>(null);
     const clearDownloadsDialogRef = useRef<BottomSheet>(null);
     const changePasswordDialogRef = useRef<BottomSheet>(null);
-    
+
     const toastActions = useToastStore((state) => state.actions);
 
     // Calculate cache size
@@ -173,15 +173,6 @@ export default function SettingsScreen() {
                 <View style={styles.section}>
                     <Text style={styles.sectionTitle}>ACCOUNT</Text>
                     <View style={styles.sectionContent}>
-                        <SettingItem
-                            icon="person-outline"
-                            label="Edit Profile"
-                            onPress={() => {
-                                haptics.selection();
-                                router.back();
-                                // The edit profile modal is on the profile screen
-                            }}
-                        />
                         <SettingItem
                             icon="mail-outline"
                             label="Email"
