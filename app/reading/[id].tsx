@@ -98,12 +98,12 @@ export default function ReadingScreen() {
 
     // Debounced save progress
     const saveProgress = useCallback((newProgress: number) => {
-        if (!id) return;
+        if (!id || !storyDoc) return;
         if (saveTimeoutRef.current) clearTimeout(saveTimeoutRef.current);
         saveTimeoutRef.current = setTimeout(() => {
-            progressActions.updateProgress(id, 0, newProgress);
+            progressActions.updateProgress(id, 0, newProgress, storyDoc.title);
         }, 1000) as unknown as number;
-    }, [id, progressActions]);
+    }, [id, progressActions, storyDoc]);
 
     useEffect(() => {
         return () => {
@@ -139,7 +139,7 @@ export default function ReadingScreen() {
 
     const handleMarkComplete = useCallback(async () => {
         haptics.success();
-        if (id) await progressActions.markComplete(id);
+        if (id) await progressActions.markComplete(id, storyDoc?.title);
         setShowCompletionModal(false);
 
         // Check if there's a quiz

@@ -89,6 +89,52 @@ class ActivityService {
             return { success: false, error: 'Failed to check milestones' };
         }
     }
+    /**
+     * Posts a story-related activity (started or completed)
+     */
+    async postStoryActivity(
+        userId: string,
+        userName: string,
+        userPhoto: string | null,
+        storyId: string,
+        storyTitle: string,
+        type: 'started_reading' | 'story_completed'
+    ): Promise<Result<void>> {
+        try {
+            const activityId = `${userId}_${storyId}_${type}`;
+            const logRef = doc(db, 'user_activity_log', activityId);
+            const logSnap = await getDoc(logRef);
+
+            if (logSnap.exists()) {
+                return { success: true, data: undefined };
+            }
+
+            const content = type === 'started_reading'
+                ? `Started reading "${storyTitle}"`
+                : `Just finished reading "${storyTitle}"! 🏆`;
+
+            await communityService.createPost(
+                userId,
+                userName,
+                userPhoto,
+                content,
+                type,
+                { storyId, storyTitle }
+            );
+
+            await setDoc(logRef, {
+                userId,
+                storyId,
+                type,
+                timestamp: serverTimestamp(),
+            });
+
+            return { success: true, data: undefined };
+        } catch (error) {
+            console.error('Post story activity failed:', error);
+            return { success: false, error: 'Failed to post activity' };
+        }
+    }
 }
 
 export const activityService = new ActivityService();

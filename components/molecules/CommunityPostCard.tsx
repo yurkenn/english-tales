@@ -11,6 +11,7 @@ import Animated, {
 import { useRouter } from 'expo-router';
 import { Typography } from '../atoms/Typography';
 import { OptimizedImage } from '../atoms/OptimizedImage';
+import { RatingStars } from '../atoms/RatingStars';
 import { haptics } from '@/utils/haptics';
 
 import { CommunityPost } from '@/types';
@@ -39,7 +40,11 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     const hasLiked = currentUserId ? post.likedBy?.includes(currentUserId) : false;
     const postDate = post.timestamp?.toDate ? post.timestamp.toDate() : new Date(post.timestamp);
     const isAchievement = post.type === 'achievement' || post.type === 'milestone';
+    const isReview = post.type === 'story_review';
+
     const achievementTitle = post.metadata?.achievementTitle;
+    const storyTitle = post.metadata?.storyTitle;
+    const rating = post.metadata?.rating;
 
     const likeScale = useSharedValue(1);
     const replyScale = useSharedValue(1);
@@ -80,13 +85,22 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     return (
         <View style={[
             styles.postCard,
-            isAchievement && styles.achievementCard
+            isAchievement && styles.achievementCard,
+            isReview && styles.reviewCard
         ]}>
             {isAchievement && (
                 <View style={styles.achievementBadge}>
                     <Ionicons name="trophy" size={14} color={theme.colors.background} />
                     <Typography variant="caption" style={styles.achievementBadgeText}>
                         {achievementTitle || 'Achievement'}
+                    </Typography>
+                </View>
+            )}
+            {isReview && (
+                <View style={styles.reviewBadge}>
+                    <Ionicons name="star" size={12} color={theme.colors.background} />
+                    <Typography variant="caption" style={styles.reviewBadgeText}>
+                        Story Review
                     </Typography>
                 </View>
             )}
@@ -109,11 +123,17 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                 </Pressable>
             </View>
 
+            {isReview && rating && (
+                <View style={styles.ratingRow}>
+                    <RatingStars rating={rating} size="sm" />
+                </View>
+            )}
+
             <Typography variant="body" style={styles.postContent}>
                 {post.content}
             </Typography>
 
-            {post.metadata?.storyTitle && (
+            {storyTitle && (
                 <Pressable
                     style={styles.storyTag}
                     onPress={() => {
@@ -123,7 +143,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                 >
                     <Ionicons name="book-outline" size={16} color={theme.colors.primary} />
                     <Typography variant="caption" color={theme.colors.primary} style={{ marginLeft: 6 }}>
-                        {post.metadata.storyTitle}
+                        {storyTitle}
                     </Typography>
                 </Pressable>
             )}
@@ -257,5 +277,32 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: 'bold',
         marginLeft: 4,
         fontSize: 10,
+    },
+    reviewCard: {
+        borderColor: theme.colors.primary + '40',
+        backgroundColor: theme.colors.primary + '05',
+        borderWidth: 2,
+    },
+    reviewBadge: {
+        position: 'absolute',
+        top: -12,
+        right: 20,
+        backgroundColor: theme.colors.primary,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+        borderRadius: 12,
+        ...theme.shadows.sm,
+    },
+    reviewBadgeText: {
+        color: theme.colors.background,
+        fontWeight: 'bold',
+        marginLeft: 4,
+        fontSize: 10,
+    },
+    ratingRow: {
+        flexDirection: 'row',
+        marginBottom: theme.spacing.sm,
     },
 }));

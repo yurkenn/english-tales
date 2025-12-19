@@ -24,6 +24,7 @@ export const useFirestoreReviews = (storyId: string) => {
     }, [fetchReviews]);
 
     const addReview = async (
+        storyTitle: string,
         userId: string,
         userName: string,
         userPhoto: string | null,
@@ -33,6 +34,7 @@ export const useFirestoreReviews = (storyId: string) => {
         haptics.success();
         const result = await reviewService.addReview(
             storyId,
+            storyTitle,
             userId,
             userName,
             userPhoto,

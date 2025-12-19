@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { View, ScrollView, FlatList, RefreshControl } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
@@ -18,14 +18,14 @@ import {
     CommunityBuzz,
 } from '@/components';
 import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries';
-import { Story } from '@/types';
+import { Story, CommunityPost } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useToastStore } from '@/store/toastStore';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { haptics } from '@/utils/haptics';
-
+import { communityService } from '@/services/communityService';
 import { useTranslation } from 'react-i18next';
 
 const DIFFICULTY_MAP: Record<number, string> = {
@@ -100,11 +100,52 @@ export default function HomeScreen() {
         }
     }, [router]);
 
+    const [buzz, setBuzz] = useState<any[]>([]);
+    const [loadingBuzz, setLoadingBuzz] = useState(true);
+
+    const fetchBuzz = useCallback(async () => {
+        try {
+            await communityService.seedCommunityActivities();
+            const result = await communityService.getBuzzActivities(10);
+            if (result.success) {
+                const mapped = result.data.map((post: CommunityPost) => {
+                    let type: 'share' | 'achievement' | 'milestone' | 'thought' | 'follow' | 'story_review' | 'story_completed' | 'started_reading' = 'started_reading';
+                    let targetName = (post.metadata as any)?.storyTitle || (post.metadata as any)?.achievementTitle || 'a story';
+
+                    if (post.type === 'story_completed') type = 'story_completed';
+                    else if (post.type === 'achievement') type = 'achievement';
+
+                    return {
+                        id: post.id,
+                        userId: post.userId,
+                        userName: post.userName,
+                        userPhoto: post.userPhoto,
+                        type,
+                        targetName,
+                        timestamp: (post.timestamp as any)?.toDate ? (post.timestamp as any).toDate() : new Date(),
+                    };
+                });
+                setBuzz(mapped);
+            }
+        } catch (e) {
+            console.error('Error fetching buzz:', e);
+        } finally {
+            setLoadingBuzz(false);
+        }
+    }, []);
+
     const onRefresh = useCallback(async () => {
         setRefreshing(true);
-        await Promise.all([refetchCategories(), refetchFeatured(), refetchStories()]);
-        setRefreshing(false);
-    }, [refetchCategories, refetchFeatured, refetchStories]);
+        try {
+            await Promise.all([refetchCategories(), refetchFeatured(), refetchStories(), fetchBuzz()]);
+        } finally {
+            setRefreshing(false);
+        }
+    }, [refetchCategories, refetchFeatured, refetchStories, fetchBuzz]);
+
+    useEffect(() => {
+        fetchBuzz();
+    }, [fetchBuzz]);
 
     const isLoading = loadingCategories || loadingFeatured || loadingStories;
 
@@ -165,35 +206,8 @@ export default function HomeScreen() {
                 }
             >
                 <CommunityBuzz
-                    activities={[
-                        {
-                            id: '1',
-                            userId: 'u1',
-                            userName: 'Sophie',
-                            userPhoto: 'https://i.pravatar.cc/150?u=u1',
-                            type: 'story_completed',
-                            targetName: 'The Ugly Duckling',
-                            timestamp: new Date()
-                        },
-                        {
-                            id: '2',
-                            userId: 'u2',
-                            userName: 'Mert',
-                            userPhoto: 'https://i.pravatar.cc/150?u=u2',
-                            type: 'achievement',
-                            targetName: '7 Day Streak',
-                            timestamp: new Date()
-                        },
-                        {
-                            id: '3',
-                            userId: 'u3',
-                            userName: 'Elena',
-                            userPhoto: 'https://i.pravatar.cc/150?u=u3',
-                            type: 'started_reading',
-                            targetName: 'Sherlock Holmes',
-                            timestamp: new Date()
-                        }
-                    ]}
+                    activities={buzz}
+                    onPressActivity={(activity) => router.push(`/user/${activity.userId}`)}
                 />
 
                 {continueReading && continueReading.progress && (

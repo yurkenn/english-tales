@@ -28,6 +28,31 @@ class CommunityService {
     private REPLIES_COLLECTION = 'replies';
 
     /**
+     * Get a single post by ID
+     */
+    async getPostById(postId: string): Promise<Result<CommunityPost>> {
+        try {
+            const postRef = doc(db, this.COLLECTION, postId);
+            const postSnap = await getDoc(postRef);
+
+            if (!postSnap.exists()) {
+                return { success: false, error: 'Post not found' };
+            }
+
+            return {
+                success: true,
+                data: {
+                    id: postSnap.id,
+                    ...postSnap.data()
+                } as CommunityPost
+            };
+        } catch (error) {
+            console.error('Error getting post:', error);
+            return { success: false, error: 'Failed to fetch post' };
+        }
+    }
+
+    /**
      * Fetch posts with pagination
      */
     async getPosts(postsLimit: number = 20, lastDoc?: any): Promise<Result<{ posts: CommunityPost[], lastVisible: any }>> {
@@ -321,6 +346,89 @@ class CommunityService {
             } as CommunityPost));
             callback(posts);
         });
+    }
+
+    /**
+     * Get recent highlight activities for the Home "Buzz"
+     */
+    async getBuzzActivities(limitCount: number = 10): Promise<Result<CommunityPost[]>> {
+        try {
+            const q = query(
+                collection(db, this.COLLECTION),
+                where('type', 'in', ['story_completed', 'achievement', 'started_reading', 'story_review']),
+                orderBy('timestamp', 'desc'),
+                limit(limitCount)
+            );
+
+            const snapshot = await getDocs(q);
+            const activities = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data()
+            } as CommunityPost));
+
+            return { success: true, data: activities };
+        } catch (error) {
+            console.error('Error getting buzz activities:', error);
+            return { success: false, error: 'Failed to fetch buzz' };
+        }
+    }
+
+    /**
+     * Seed some initial activities if the feed is empty
+     */
+    async seedCommunityActivities(): Promise<Result<void>> {
+        try {
+            const countRes = await getCountFromServer(collection(db, this.COLLECTION));
+            if (countRes.data().count > 5) return { success: true, data: undefined };
+
+            const seeds = [
+                {
+                    userId: 'seed_1',
+                    userName: 'Sophie',
+                    userPhoto: 'https://i.pravatar.cc/150?u=seed_1',
+                    content: 'Just finished reading a beautiful story!',
+                    type: 'story_completed',
+                    metadata: { storyTitle: 'The Ugly Duckling', storyId: 's1' },
+                    timestamp: serverTimestamp(),
+                    likes: 12,
+                    likedBy: [],
+                    replyCount: 0,
+                },
+                {
+                    userId: 'seed_2',
+                    userName: 'Mert',
+                    userPhoto: 'https://i.pravatar.cc/150?u=seed_2',
+                    content: "Can't believe I maintained this streak for 7 days!",
+                    type: 'achievement',
+                    metadata: { achievementTitle: '7 Day Streak', achievementId: 'a1' },
+                    timestamp: serverTimestamp(),
+                    likes: 8,
+                    likedBy: [],
+                    replyCount: 0,
+                },
+                {
+                    userId: 'seed_3',
+                    userName: 'Elena',
+                    userPhoto: 'https://i.pravatar.cc/150?u=seed_3',
+                    content: 'Starting a new journey with Sherlock Holmes.',
+                    type: 'started_reading',
+                    metadata: { storyTitle: 'Sherlock Holmes', storyId: 's2' },
+                    timestamp: serverTimestamp(),
+                    likes: 5,
+                    likedBy: [],
+                    replyCount: 0,
+                }
+            ];
+
+            for (const seed of seeds) {
+                await addDoc(collection(db, this.COLLECTION), seed);
+            }
+
+            return { success: true, data: undefined };
+        } catch (error) {
+            console.error('Error seeding community:', error);
+            return { success: false, error: 'Failed to seed' };
+        }
     }
 }
 

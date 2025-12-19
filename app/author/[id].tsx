@@ -1,13 +1,16 @@
 import React, { useMemo } from 'react';
-import { View, Text, ScrollView, Pressable, Image } from 'react-native';
+import { View, Text, ScrollView, Pressable, Image, ActivityIndicator } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuthor, useStories } from '@/hooks/useQueries';
+import { useAuthorSocial } from '@/hooks/useAuthor';
 import { BookCard, NetworkError, EmptyState, AuthorScreenSkeleton } from '@/components';
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
+import { Typography } from '@/components/atoms/Typography';
+import { haptics } from '@/utils/haptics';
 
 import { useTranslation } from 'react-i18next';
 
@@ -20,6 +23,12 @@ export default function AuthorScreen() {
 
     const { data: authorData, isLoading: loadingAuthor, error: errorAuthor, refetch: refetchAuthor } = useAuthor(id || '');
     const { data: storiesData } = useStories();
+    const {
+        isFollowing,
+        followerCount,
+        actionLoading,
+        handleFollowToggle
+    } = useAuthorSocial(id || '', authorData?.name || '');
 
     const author = useMemo(() => {
         if (!authorData) return null;
@@ -88,7 +97,48 @@ export default function AuthorScreen() {
                         style={styles.avatar}
                     />
                     <Text style={styles.authorName}>{author.name}</Text>
-                    <Text style={styles.storyCount}>{author.storyCount} {author.storyCount === 1 ? t('authors.storyCountSingular') : t('authors.storyCount', { count: author.storyCount })}</Text>
+
+                    <View style={styles.statsRow}>
+                        <View style={styles.statItem}>
+                            <Typography variant="bodyBold">{author.storyCount}</Typography>
+                            <Typography variant="caption" color={theme.colors.textMuted}>{t('authors.stories')}</Typography>
+                        </View>
+                        <View style={styles.statDivider} />
+                        <View style={styles.statItem}>
+                            <Typography variant="bodyBold">{followerCount}</Typography>
+                            <Typography variant="caption" color={theme.colors.textMuted}>Followers</Typography>
+                        </View>
+                    </View>
+
+                    <Pressable
+                        style={[
+                            styles.followButton,
+                            isFollowing && styles.followingButton,
+                            actionLoading && { opacity: 0.7 }
+                        ]}
+                        onPress={handleFollowToggle}
+                        disabled={actionLoading}
+                    >
+                        {actionLoading ? (
+                            <ActivityIndicator size="small" color={isFollowing ? theme.colors.primary : theme.colors.textInverse} />
+                        ) : (
+                            <>
+                                <Ionicons
+                                    name={isFollowing ? "person-remove-outline" : "person-add"}
+                                    size={18}
+                                    color={isFollowing ? theme.colors.primary : theme.colors.textInverse}
+                                />
+                                <Typography
+                                    variant="bodyBold"
+                                    color={isFollowing ? theme.colors.primary : theme.colors.textInverse}
+                                    style={{ marginLeft: 8 }}
+                                >
+                                    {isFollowing ? t('social.following', 'Following') : t('social.follow', 'Follow')}
+                                </Typography>
+                            </>
+                        )}
+                    </Pressable>
+
                     {author.bio && (
                         <Text style={styles.bio}>{author.bio}</Text>
                     )}
@@ -169,12 +219,40 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.xxxl,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
-        marginBottom: theme.spacing.xs,
+        marginBottom: theme.spacing.md,
     },
-    storyCount: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.primary,
-        marginBottom: theme.spacing.lg,
+    statsRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        marginBottom: theme.spacing.xl,
+    },
+    statItem: {
+        alignItems: 'center',
+        paddingHorizontal: theme.spacing.lg,
+    },
+    statDivider: {
+        width: 1,
+        height: 20,
+        backgroundColor: theme.colors.borderLight,
+    },
+    followButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: theme.colors.primary,
+        paddingHorizontal: 24,
+        paddingVertical: 10,
+        borderRadius: 20,
+        marginBottom: theme.spacing.xl,
+        minWidth: 150,
+        ...theme.shadows.sm,
+    },
+    followingButton: {
+        backgroundColor: theme.colors.surface,
+        borderWidth: 1,
+        borderColor: theme.colors.primary,
     },
     bio: {
         fontSize: theme.typography.size.md,

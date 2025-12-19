@@ -13,11 +13,13 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomSheet from '@gorhom/bottom-sheet';
 
 import { Typography } from '@/components/atoms/Typography';
-import { UserSearchModal, FriendListItem, FriendWithFid } from '@/components/molecules';
+import { UserSearchModal, FriendListItem } from '@/components/molecules';
 import { socialService } from '@/services/socialService';
+import { userService } from '@/services/userService';
 import { useAuthStore } from '@/store/authStore';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
+import { UserProfile } from '@/types';
 import { useTranslation } from 'react-i18next';
 
 export default function SocialScreen() {
@@ -30,24 +32,27 @@ export default function SocialScreen() {
 
     const [loading, setLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
-    const [friends, setFriends] = useState<FriendWithFid[]>([]);
-    const [pendingIncoming, setPendingIncoming] = useState<FriendWithFid[]>([]);
-    const [pendingOutgoing, setPendingOutgoing] = useState<FriendWithFid[]>([]);
+    const [following, setFollowing] = useState<UserProfile[]>([]);
 
     const searchSheetRef = useRef<BottomSheet>(null);
 
-    const loadSocialData = useCallback(async () => {
+    const loadSocialData = async () => {
         if (!user) return;
 
-        const res = await socialService.getFriendships(user.id);
+        const res = await socialService.getFollowingIds(user.id);
         if (res.success) {
-            setFriends(res.data.accepted);
-            setPendingIncoming(res.data.pendingIncoming);
-            setPendingOutgoing(res.data.pendingOutgoing);
+            const profiles: UserProfile[] = [];
+            for (const id of res.data) {
+                const profileRes = await userService.getUserProfile(id);
+                if (profileRes.success) {
+                    profiles.push(profileRes.data);
+                }
+            }
+            setFollowing(profiles);
         }
         setLoading(false);
         setRefreshing(false);
-    }, [user]);
+    };
 
     useEffect(() => {
         loadSocialData();
@@ -58,20 +63,12 @@ export default function SocialScreen() {
         loadSocialData();
     };
 
-    const handleAcceptRequest = async (friendshipId: string) => {
-        haptics.success();
-        const res = await socialService.acceptFriendRequest(friendshipId);
-        if (res.success) {
-            toast.success(t('social.requestAccepted', 'Friend request accepted!'));
-            loadSocialData();
-        }
-    };
-
-    const handleRemoveFriendship = async (friendshipId: string, isRemoval: boolean) => {
+    const handleUnfollow = async (targetUserId: string) => {
+        if (!user) return;
         haptics.selection();
-        const res = await socialService.removeFriendship(friendshipId);
+        const res = await socialService.unfollowUser(user.id, targetUserId);
         if (res.success) {
-            toast.success(isRemoval ? t('social.friendRemoved', 'Friend removed') : t('social.requestCancelled', 'Request cancelled'));
+            toast.success(t('social.unfollowed', 'Unfollowed successfully'));
             loadSocialData();
         }
     };
@@ -80,17 +77,17 @@ export default function SocialScreen() {
         <View style={styles.emptyState}>
             <Ionicons name="people-outline" size={64} color={theme.colors.border} />
             <Typography variant="h3" style={{ marginTop: 16 }}>
-                {t('social.emptyTitle', 'No Friends Yet')}
+                {t('social.emptyFollowing', 'Not Following Anyone')}
             </Typography>
             <Typography color={theme.colors.textMuted} align="center" style={{ marginTop: 8 }}>
-                {t('social.emptyDesc', 'Start connecting with other readers to share your progress and see their achievements!')}
+                {t('social.emptyFollowingDesc', 'Follow other readers to see their progress and stay inspired!')}
             </Typography>
             <Pressable
                 style={styles.primaryButton}
                 onPress={() => searchSheetRef.current?.expand()}
             >
                 <Typography variant="button" color={theme.colors.textInverse}>
-                    {t('social.findFriends', 'Find Friends')}
+                    {t('social.explore', 'Explore Community')}
                 </Typography>
             </Pressable>
         </View>
@@ -103,7 +100,7 @@ export default function SocialScreen() {
                     <Pressable onPress={() => router.back()} style={styles.backButton}>
                         <Ionicons name="chevron-back" size={24} color={theme.colors.text} />
                     </Pressable>
-                    <Typography variant="h2" style={styles.headerTitle}>{t('social.myFriends', 'My Friends')}</Typography>
+                    <Typography variant="h2" style={styles.headerTitle}>{t('social.following', 'Following')}</Typography>
                 </View>
                 <Pressable
                     style={styles.addButton}
@@ -125,66 +122,28 @@ export default function SocialScreen() {
                     contentContainerStyle={styles.scrollContent}
                     showsVerticalScrollIndicator={false}
                 >
-                    {pendingIncoming.length > 0 && (
+                    {following.length === 0 ? (
+                        renderEmptyState()
+                    ) : (
                         <View style={styles.section}>
                             <Typography variant="label" color={theme.colors.textMuted} style={styles.sectionHeader}>
-                                {t('social.requests', 'FRIEND REQUESTS').toUpperCase()}
+                                {t('social.followingCount', 'FOLLOWING {{count}}', { count: following.length }).toUpperCase()}
                             </Typography>
                             <View style={styles.cardGroup}>
-                                {pendingIncoming.map((f, i) => (
+                                {following.map((f, i) => (
                                     <FriendListItem
-                                        key={f.friendshipId}
-                                        friend={f}
-                                        type="incoming"
-                                        onAccept={handleAcceptRequest}
-                                        onRemove={handleRemoveFriendship}
-                                        showDivider={i < pendingIncoming.length - 1}
+                                        key={f.id}
+                                        friend={{
+                                            ...f,
+                                            friendshipId: f.id,
+                                        } as any}
+                                        type="friends"
+                                        onRemove={handleUnfollow}
+                                        showDivider={i < following.length - 1}
                                     />
                                 ))}
                             </View>
                         </View>
-                    )}
-
-                    {friends.length === 0 && pendingIncoming.length === 0 && pendingOutgoing.length === 0 ? (
-                        renderEmptyState()
-                    ) : (
-                        <>
-                            <View style={styles.section}>
-                                <Typography variant="label" color={theme.colors.textMuted} style={styles.sectionHeader}>
-                                    {t('social.myFriends', 'MY FRIENDS').toUpperCase()}
-                                </Typography>
-                                <View style={styles.cardGroup}>
-                                    {friends.map((f, i) => (
-                                        <FriendListItem
-                                            key={f.friendshipId}
-                                            friend={f}
-                                            type="friends"
-                                            onRemove={handleRemoveFriendship}
-                                            showDivider={i < friends.length - 1}
-                                        />
-                                    ))}
-                                </View>
-                            </View>
-
-                            {pendingOutgoing.length > 0 && (
-                                <View style={styles.section}>
-                                    <Typography variant="label" color={theme.colors.textMuted} style={styles.sectionHeader}>
-                                        {t('social.sentRequests', 'SENT REQUESTS').toUpperCase()}
-                                    </Typography>
-                                    <View style={styles.cardGroup}>
-                                        {pendingOutgoing.map((f, i) => (
-                                            <FriendListItem
-                                                key={f.friendshipId}
-                                                friend={f}
-                                                type="outgoing"
-                                                onRemove={handleRemoveFriendship}
-                                                showDivider={i < pendingOutgoing.length - 1}
-                                            />
-                                        ))}
-                                    </View>
-                                </View>
-                            )}
-                        </>
                     )}
                 </ScrollView>
             )}

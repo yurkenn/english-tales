@@ -22,6 +22,9 @@ export interface UserProfile {
     isAnonymous: boolean;
     location?: string;
     bio?: string;
+    streak?: number;
+    followersCount?: number;
+    followingCount?: number;
 }
 
 // Story types
@@ -74,7 +77,7 @@ export interface Settings {
 }
 
 // Community types
-export type ActivityType = 'share' | 'achievement' | 'milestone' | 'thought' | 'follow';
+export type ActivityType = 'share' | 'achievement' | 'milestone' | 'thought' | 'follow' | 'story_review' | 'story_completed' | 'started_reading';
 
 export interface CommunityPost {
     id: string;
@@ -90,6 +93,7 @@ export interface CommunityPost {
     metadata?: {
         storyId?: string;
         storyTitle?: string;
+        rating?: number;
         achievementId?: string;
         achievementTitle?: string;
         achievementType?: string;
@@ -127,6 +131,7 @@ export interface StoryReview {
     userId: string;
     userName: string;
     userPhoto: string | null;
+    storyTitle?: string;
     rating: number; // 1-5
     comment: string;
     timestamp: any;

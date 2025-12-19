@@ -10,8 +10,9 @@ import {
     getDocs,
     limit,
     orderBy,
+    Timestamp,
 } from 'firebase/firestore';
-import { User as AppUser, UserProfile } from '@/types';
+import { User as AppUser, UserProfile, LibraryItem, Story } from '@/types';
 import { Result } from '@/types/api';
 
 class UserService {
@@ -100,6 +101,32 @@ class UserService {
         } catch (error) {
             console.error('Error getting user profile:', error);
             return { success: false, error: 'Failed to get user profile' };
+        }
+    }
+
+    async getUserLibrary(userId: string): Promise<Result<LibraryItem[]>> {
+        try {
+            const libraryRef = collection(db, this.COLLECTION, userId, 'library');
+            const q = query(libraryRef, orderBy('addedAt', 'desc'), limit(10));
+            const snapshot = await getDocs(q);
+
+            const items: LibraryItem[] = snapshot.docs.map(docSnap => {
+                const data = docSnap.data();
+                return {
+                    storyId: data.storyId,
+                    userId: data.userId,
+                    addedAt: data.addedAt instanceof Timestamp
+                        ? data.addedAt.toDate()
+                        : new Date(data.addedAt),
+                    story: data.story as Story,
+                    progress: data.progress,
+                } as LibraryItem;
+            });
+
+            return { success: true, data: items };
+        } catch (error) {
+            console.error('Error getting user library:', error);
+            return { success: false, error: 'Failed' };
         }
     }
 }

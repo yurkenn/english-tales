@@ -24,6 +24,7 @@ import { useSettingsStore } from '@/store/settingsStore';
 import { useToastStore } from '@/store/toastStore';
 import { useVocabularyStore } from '@/store/vocabularyStore';
 import { socialService } from '@/services/socialService';
+import { userService } from '@/services/userService';
 import { UserProfile } from '@/types';
 import { haptics } from '@/utils/haptics';
 
@@ -129,16 +130,23 @@ export default function ProfileScreen() {
     }, []);
 
     useEffect(() => {
-        const fetchFriends = async () => {
+        const fetchFollowing = async () => {
             if (!user) return;
             setIsLoadingFriends(true);
-            const result = await socialService.getFriendships(user.id);
-            if (result.success) {
-                setFriends(result.data.accepted);
+            const res = await socialService.getFollowingIds(user.id);
+            if (res.success) {
+                const profiles: UserProfile[] = [];
+                for (const id of res.data.slice(0, 5)) { // Show only a few on profile preview
+                    const profileRes = await userService.getUserProfile(id);
+                    if (profileRes.success) {
+                        profiles.push(profileRes.data);
+                    }
+                }
+                setFriends(profiles);
             }
             setIsLoadingFriends(false);
         };
-        fetchFriends();
+        fetchFollowing();
     }, [user]);
 
     // Handlers
@@ -180,7 +188,7 @@ export default function ProfileScreen() {
     const menuItems: MenuItem[] = [
         { label: t('profile.readingGoals'), icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: handleOpenGoals },
         { label: t('profile.achievements'), icon: 'trophy-outline', value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
-        { label: t('social.myFriends', 'Friends'), icon: 'people-outline', onPress: () => { haptics.selection(); router.push('/social' as any); } },
+        { label: t('social.following', 'Following'), icon: 'people-outline', onPress: () => { haptics.selection(); router.push('/social' as any); } },
         { label: t('profile.language'), icon: 'language-outline', value: currentLanguageLabel, onPress: handleLanguage },
         { label: t('profile.notifications'), icon: 'notifications-outline', value: settings.notificationsEnabled ? t('common.on') : t('common.off'), onPress: handleNotifications },
         { label: t('profile.appearance'), icon: 'color-palette-outline', value: themeModeLabel, onPress: themeActions.toggleTheme },

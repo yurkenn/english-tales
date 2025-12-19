@@ -11,6 +11,7 @@ import {
     getDocs,
     updateDoc,
     orderBy,
+    getCountFromServer,
 } from 'firebase/firestore';
 import { Result } from '@/types/api';
 import { UserProfile } from '@/types';
@@ -251,6 +252,40 @@ class SocialService {
             return { success: true, data: snapshot.docs.map(doc => doc.data().targetUserId) };
         } catch (error) {
             return { success: false, error: 'Failed' };
+        }
+    }
+
+    /**
+     * Get following count
+     */
+    async getFollowingCount(userId: string): Promise<number> {
+        try {
+            const q = query(
+                collection(db, 'follows'),
+                where('followerId', '==', userId)
+            );
+            const snapshot = await getCountFromServer(q);
+            return snapshot.data().count;
+        } catch (error) {
+            console.error('Error getting following count:', error);
+            return 0;
+        }
+    }
+
+    /**
+     * Get followers count
+     */
+    async getFollowersCount(userId: string): Promise<number> {
+        try {
+            const q = query(
+                collection(db, 'follows'),
+                where('targetUserId', '==', userId)
+            );
+            const snapshot = await getCountFromServer(q);
+            return snapshot.data().count;
+        } catch (error) {
+            console.error('Error getting followers count:', error);
+            return 0;
         }
     }
 }

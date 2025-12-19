@@ -270,6 +270,7 @@ export default function StoryDetailScreen() {
                 onSubmit={async (rating, text) => {
                     if (!user || !story) return;
                     await addReview(
+                        story.title,
                         user.id,
                         user.displayName || 'Anonymous',
                         user.photoURL,

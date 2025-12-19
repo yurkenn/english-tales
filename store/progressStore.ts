@@ -65,9 +65,10 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
             }
         },
 
-        updateProgress: async (storyId, position, percentage) => {
+        updateProgress: async (storyId, position, percentage, storyTitle = 'a story') => {
             const { userId } = get();
-            if (!userId) {
+            const user = useAuthStore.getState().user;
+            if (!userId || !user) {
                 return { success: false, error: 'User not authenticated' };
             }
 
@@ -95,6 +96,18 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     },
                 }));
 
+                // Post "started reading" if they've made some progress
+                if (percentage >= 5) {
+                    activityService.postStoryActivity(
+                        userId,
+                        user.displayName || 'Anonymous',
+                        user.photoURL,
+                        storyId,
+                        storyTitle,
+                        'started_reading'
+                    );
+                }
+
                 return { success: true, data: progress };
             } catch (error) {
                 const message = error instanceof Error ? error.message : 'Failed to update progress';
@@ -103,9 +116,10 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
             }
         },
 
-        markComplete: async (storyId) => {
+        markComplete: async (storyId, storyTitle = 'a story') => {
             const { userId, progressMap } = get();
-            if (!userId) {
+            const user = useAuthStore.getState().user;
+            if (!userId || !user) {
                 return { success: false, error: 'User not authenticated' };
             }
 
@@ -133,6 +147,16 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                         [storyId]: progress,
                     },
                 }));
+
+                // Post to social feed
+                activityService.postStoryActivity(
+                    userId,
+                    user.displayName || 'Anonymous',
+                    user.photoURL,
+                    storyId,
+                    storyTitle,
+                    'story_completed'
+                );
 
                 // Sync to leaderboard on completion
                 get().actions.syncLeaderboard();

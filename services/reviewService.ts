@@ -19,6 +19,7 @@ import {
 } from 'firebase/firestore';
 import { StoryReview, UserFavorite } from '@/types';
 import { Result } from '@/types/api';
+import { communityService } from './communityService';
 
 class ReviewService {
     private REVIEWS_COLLECTION = 'reviews';
@@ -29,6 +30,7 @@ class ReviewService {
      */
     async addReview(
         storyId: string,
+        storyTitle: string,
         userId: string,
         userName: string,
         userPhoto: string | null,
@@ -38,6 +40,7 @@ class ReviewService {
         try {
             const reviewData = {
                 storyId,
+                storyTitle,
                 userId,
                 userName,
                 userPhoto,
@@ -49,6 +52,21 @@ class ReviewService {
             };
 
             const docRef = await addDoc(collection(db, this.REVIEWS_COLLECTION), reviewData);
+
+            // Auto-post to community feed
+            await communityService.createPost(
+                userId,
+                userName,
+                userPhoto,
+                comment,
+                'story_review',
+                {
+                    storyId,
+                    storyTitle,
+                    rating,
+                }
+            );
+
             return { success: true, data: docRef.id };
         } catch (error) {
             console.error('Error adding review:', error);

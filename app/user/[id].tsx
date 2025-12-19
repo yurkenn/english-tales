@@ -35,13 +35,15 @@ export default function UserProfileScreen() {
         posts,
         reviews,
         favorites,
+        stats,
         relationship,
         loading,
         actionLoading,
         refresh,
-        handleAddFriend,
-        handleAcceptRequest,
-        handleRemoveFriend,
+        handleFollow,
+        handleUnfollow,
+        recentlyReadStory,
+        libraryItems,
     } = useUserProfile(id!);
 
     const { actions: libraryActions } = useLibraryStore();
@@ -69,53 +71,33 @@ export default function UserProfileScreen() {
     const renderActionButton = () => {
         if (relationship === 'self') return null;
 
-        let icon: keyof typeof Ionicons.glyphMap = 'person-add';
-        let label = t('social.addFriend', 'Add Friend');
-        let onPress = handleAddFriend;
-        let variant: 'primary' | 'outline' | 'error' = 'primary';
-
-        if (relationship === 'pending_sent') {
-            icon = 'time-outline';
-            label = t('social.pending', 'Pending');
-            onPress = handleRemoveFriend; // Cancel request
-            variant = 'outline';
-        } else if (relationship === 'pending_received') {
-            icon = 'checkmark-circle-outline';
-            label = t('social.accept', 'Accept');
-            onPress = handleAcceptRequest;
-            variant = 'primary';
-        } else if (relationship === 'accepted') {
-            icon = 'people';
-            label = t('social.friends', 'Friends');
-            onPress = handleRemoveFriend;
-            variant = 'outline';
-        }
+        const isFollowing = relationship === 'following';
 
         return (
             <Pressable
                 style={[
                     styles.actionButton,
-                    variant === 'outline' && styles.actionButtonOutline,
+                    isFollowing && styles.actionButtonOutline,
                     actionLoading && { opacity: 0.7 }
                 ]}
-                onPress={() => { !actionLoading && onPress(); }}
+                onPress={() => { !actionLoading && (isFollowing ? handleUnfollow() : handleFollow()); }}
                 disabled={actionLoading}
             >
                 {actionLoading ? (
-                    <ActivityIndicator size="small" color={variant === 'primary' ? theme.colors.textInverse : theme.colors.primary} />
+                    <ActivityIndicator size="small" color={isFollowing ? theme.colors.primary : theme.colors.textInverse} />
                 ) : (
                     <>
                         <Ionicons
-                            name={icon}
+                            name={isFollowing ? 'person-remove-outline' : 'person-add'}
                             size={18}
-                            color={variant === 'primary' ? theme.colors.textInverse : theme.colors.primary}
+                            color={isFollowing ? theme.colors.primary : theme.colors.textInverse}
                         />
                         <Typography
                             variant="bodyBold"
-                            color={variant === 'primary' ? theme.colors.textInverse : theme.colors.primary}
+                            color={isFollowing ? theme.colors.primary : theme.colors.textInverse}
                             style={{ marginLeft: 8 }}
                         >
-                            {label}
+                            {isFollowing ? t('social.following', 'Following') : t('social.follow', 'Follow')}
                         </Typography>
                     </>
                 )}
@@ -162,14 +144,27 @@ export default function UserProfileScreen() {
                             <Typography variant="caption" color={theme.colors.textMuted}>Posts</Typography>
                         </View>
                         <View style={[styles.statBox, styles.statDivider]}>
-                            <Typography variant="title">0</Typography>
-                            <Typography variant="caption" color={theme.colors.textMuted}>Friends</Typography>
+                            <Typography variant="title">{stats.followers}</Typography>
+                            <Typography variant="caption" color={theme.colors.textMuted}>Followers</Typography>
+                        </View>
+                        <View style={[styles.statBox, styles.statDivider]}>
+                            <Typography variant="title">{stats.following}</Typography>
+                            <Typography variant="caption" color={theme.colors.textMuted}>Following</Typography>
                         </View>
                         <View style={styles.statBox}>
-                            <Typography variant="title">🔥 0</Typography>
+                            <Typography variant="title">🔥 {stats.streak}</Typography>
                             <Typography variant="caption" color={theme.colors.textMuted}>Streak</Typography>
                         </View>
                     </View>
+
+                    {recentlyReadStory && (
+                        <View style={styles.readingStatus}>
+                            <Ionicons name="book-outline" size={16} color={theme.colors.primary} />
+                            <Typography variant="body" style={{ marginLeft: 8 }}>
+                                {t('social.reading', 'Currently Reading')}: <Typography variant="bodyBold">{recentlyReadStory.title}</Typography>
+                            </Typography>
+                        </View>
+                    )}
 
                     {renderActionButton()}
                 </View>
@@ -223,7 +218,7 @@ export default function UserProfileScreen() {
                             color={activeTab === 'collections' ? theme.colors.primary : theme.colors.textMuted}
                             style={styles.tabText}
                         >
-                            Collection
+                            Favorites
                         </Typography>
                     </Pressable>
                 </View>
@@ -233,9 +228,7 @@ export default function UserProfileScreen() {
                         <View style={styles.postsList}>
                             {posts.length === 0 ? (
                                 <View style={styles.emptyFeed}>
-                                    <Typography color={theme.colors.textMuted}>
-                                        {t('social.noPostsYet', 'No post shared yet.')}
-                                    </Typography>
+                                    <Typography color={theme.colors.textMuted}>No posts yet.</Typography>
                                 </View>
                             ) : (
                                 posts.map(post => (
@@ -243,6 +236,8 @@ export default function UserProfileScreen() {
                                         key={post.id}
                                         post={post}
                                         currentUserId={id}
+                                        onLike={() => { }}
+                                        onReply={() => { }}
                                     />
                                 ))
                             )}
@@ -253,28 +248,23 @@ export default function UserProfileScreen() {
                         <View style={styles.reviewsList}>
                             {reviews.length === 0 ? (
                                 <View style={styles.emptyFeed}>
-                                    <Typography color={theme.colors.textMuted}>
-                                        {t('social.noReviewsYet', 'No reviews yet.')}
-                                    </Typography>
+                                    <Typography color={theme.colors.textMuted}>No reviews yet.</Typography>
                                 </View>
                             ) : (
-                                reviews.map((review: StoryReview) => (
+                                reviews.map(review => (
                                     <View key={review.id} style={styles.reviewItem}>
                                         <ReviewCard
-                                            userName={profile.displayName || 'Anonymous'}
-                                            userAvatar={profile.photoURL || undefined}
+                                            userName={review.userName}
+                                            userAvatar={review.userPhoto}
                                             rating={review.rating}
                                             text={review.comment}
                                         />
-                                        <Pressable
-                                            style={styles.reviewStoryTag}
-                                            onPress={() => router.push(`/story/${review.storyId}`)}
-                                        >
+                                        <View style={styles.reviewStoryTag}>
                                             <Ionicons name="book-outline" size={14} color={theme.colors.primary} />
-                                            <Typography variant="caption" color={theme.colors.primary} style={{ marginLeft: 4 }}>
-                                                View Story
+                                            <Typography variant="bodyBold" style={{ fontSize: 13, marginLeft: 6 }}>
+                                                {review.storyTitle || 'English Tale'}
                                             </Typography>
-                                        </Pressable>
+                                        </View>
                                     </View>
                                 ))
                             )}
@@ -285,27 +275,31 @@ export default function UserProfileScreen() {
                         <View style={styles.collectionsGrid}>
                             {favorites.length === 0 ? (
                                 <View style={styles.emptyFeed}>
-                                    <Typography color={theme.colors.textMuted}>
-                                        {t('social.noFavoritesYet', 'No favorite stories yet.')}
-                                    </Typography>
+                                    <Typography color={theme.colors.textMuted}>No favorite stories yet.</Typography>
                                 </View>
                             ) : (
                                 <View style={styles.grid}>
-                                    {favorites.map((fav: UserFavorite) => (
-                                        <StoryGridCard
-                                            key={fav.storyId}
-                                            story={{
-                                                id: fav.storyId,
-                                                title: fav.storyTitle,
-                                                coverImage: fav.storyCover,
-                                                author: '', // We don't have it in fav, could add but for now keep it empty
-                                                difficulty: 'beginner' as const,
-                                                estimatedReadTime: 0,
-                                            } as any}
-                                            isInLibrary={libraryActions.isInLibrary(fav.storyId)}
-                                            onPress={() => router.push(`/story/${fav.storyId}`)}
-                                        />
-                                    ))}
+                                    {favorites.map(fav => {
+                                        // Construct a partial Story object for the card
+                                        const mockStory: any = {
+                                            id: fav.storyId,
+                                            title: fav.storyTitle,
+                                            coverImage: fav.storyCover,
+                                            author: 'Author', // Placeholder
+                                            difficulty: 'beginner',
+                                            estimatedReadTime: 5,
+                                        };
+                                        const isInLibrary = libraryItems.some(item => item.storyId === fav.storyId);
+
+                                        return (
+                                            <StoryGridCard
+                                                key={fav.storyId}
+                                                story={mockStory}
+                                                isInLibrary={isInLibrary}
+                                                onPress={() => router.push(`/story/${fav.storyId}`)}
+                                            />
+                                        );
+                                    })}
                                 </View>
                             )}
                         </View>
@@ -324,61 +318,55 @@ const styles = StyleSheet.create((theme) => ({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: theme.spacing.md,
-        paddingBottom: theme.spacing.md,
-        backgroundColor: theme.colors.background,
-        zIndex: 10,
+        paddingHorizontal: theme.spacing.lg,
+        paddingBottom: theme.spacing.sm,
     },
     backButton: {
-        width: 44,
-        height: 44,
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: theme.colors.borderLight,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 22,
-        backgroundColor: theme.colors.surface,
-        ...theme.shadows.sm,
     },
     profileInfo: {
         alignItems: 'center',
-        paddingTop: 20,
-        paddingBottom: 30,
-        backgroundColor: theme.colors.background,
+        paddingHorizontal: theme.spacing.xl,
+        paddingBottom: theme.spacing.xl,
     },
     avatarContainer: {
-        width: 120,
-        height: 120,
-        borderRadius: 60,
-        backgroundColor: theme.colors.surface,
         padding: 4,
-        ...theme.shadows.md,
-        marginBottom: 16,
+        borderRadius: 60,
+        borderWidth: 2,
+        borderColor: theme.colors.primary,
+        marginBottom: theme.spacing.md,
     },
     avatar: {
-        width: '100%',
-        height: '100%',
-        borderRadius: 56,
+        width: 100,
+        height: 100,
+        borderRadius: 50,
     },
     displayName: {
-        fontWeight: '900',
+        fontSize: 24,
+        fontWeight: '800',
         marginBottom: 4,
     },
     guestBadge: {
         backgroundColor: theme.colors.borderLight,
-        paddingHorizontal: 8,
-        paddingVertical: 2,
-        borderRadius: 4,
-        marginBottom: 16,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
+        borderRadius: 12,
+        marginBottom: theme.spacing.md,
     },
     statsRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 20,
-        marginBottom: 24,
+        justifyContent: 'space-between',
+        width: '100%',
+        marginTop: theme.spacing.md,
         backgroundColor: theme.colors.surface,
-        borderRadius: 20,
-        paddingVertical: 16,
-        paddingHorizontal: 24,
-        width: SCREEN_WIDTH - 64,
+        padding: theme.spacing.lg,
+        borderRadius: 16,
         ...theme.shadows.sm,
     },
     statBox: {
@@ -387,18 +375,18 @@ const styles = StyleSheet.create((theme) => ({
     },
     statDivider: {
         borderLeftWidth: 1,
-        borderRightWidth: 1,
         borderColor: theme.colors.borderLight,
     },
     actionButton: {
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: theme.colors.primary,
         paddingHorizontal: 32,
-        paddingVertical: 14,
-        borderRadius: 16,
-        minWidth: 200,
-        justifyContent: 'center',
+        paddingVertical: 12,
+        borderRadius: 25,
+        marginTop: theme.spacing.xl,
+        width: '100%',
         ...theme.shadows.md,
     },
     actionButtonOutline: {
@@ -406,18 +394,18 @@ const styles = StyleSheet.create((theme) => ({
         borderWidth: 1,
         borderColor: theme.colors.primary,
     },
-    feedSection: {
-        paddingTop: 10,
-    },
-    sectionTitle: {
-        marginHorizontal: theme.spacing.lg,
-        marginBottom: theme.spacing.md,
-        fontSize: 20,
-        fontWeight: '800',
-    },
-    emptyFeed: {
+    readingStatus: {
+        flexDirection: 'row',
         alignItems: 'center',
-        paddingTop: 60,
+        backgroundColor: theme.colors.surface,
+        paddingHorizontal: 16,
+        paddingVertical: 10,
+        borderRadius: 12,
+        marginHorizontal: theme.spacing.xl,
+        marginTop: theme.spacing.md,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        alignSelf: 'center',
     },
     center: {
         flex: 1,
@@ -479,5 +467,9 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         flexWrap: 'wrap',
         gap: 16,
+    },
+    emptyFeed: {
+        alignItems: 'center',
+        paddingTop: 60,
     },
 }));

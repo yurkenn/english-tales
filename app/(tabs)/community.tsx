@@ -106,7 +106,7 @@ export default function CommunityTab() {
 
     const handleOpenReply = (postId: string) => {
         haptics.selection();
-        setReplyingTo(postId);
+        router.push(`/community/${postId}`);
     };
 
     const handleSubmitReply = async (content: string) => {

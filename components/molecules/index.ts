@@ -45,3 +45,4 @@ export { CreatePostBar } from './CreatePostBar';
 export { ProfileQuickView } from './ProfileQuickView';
 export { StorySelectorModal } from './StorySelectorModal';
 export { NotificationList } from './NotificationList';
+export { CommunityReplyCard } from './CommunityReplyCard';
