@@ -36,6 +36,8 @@ export interface ReadingProgress {
     percentage: number;
     lastReadAt: Date;
     isCompleted: boolean;
+    quizScore?: number;
+    quizTotal?: number;
 }
 
 // Library item (saved story)

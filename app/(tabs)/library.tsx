@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useCallback, useRef } from 'react';
-import { View, FlatList, RefreshControl, Dimensions } from 'react-native';
+import { View, FlatList, RefreshControl, Dimensions, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -21,6 +21,8 @@ import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useDownloadStore } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
+import { useVocabularyStore } from '@/store/vocabularyStore';
+import { VocabularyItem } from '@/components/library/VocabularyItem';
 import { haptics } from '@/utils/haptics';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -39,12 +41,17 @@ export default function LibraryScreen() {
 
     const [refreshing, setRefreshing] = useState(false);
     const [filter, setFilter] = useState<FilterType>('all');
+    const [viewMode, setViewMode] = useState<'stories' | 'vocabulary'>('stories');
     const [menuVisible, setMenuVisible] = useState(false);
     const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
     const [selectedItem, setSelectedItem] = useState<LibraryItemWithProgress | null>(null);
     const buttonRefs = useRef<{ [key: string]: View | null }>({});
     const removeFromLibraryDialogRef = useRef<BottomSheet>(null);
     const deleteDownloadDialogRef = useRef<BottomSheet>(null);
+
+    const savedWords = useVocabularyStore((s) => s.savedWords);
+    const vocabActions = useVocabularyStore((s) => s.actions);
+    const wordList = useMemo(() => Object.values(savedWords).sort((a, b) => b.addedAt - a.addedAt), [savedWords]);
 
     const onRefresh = useCallback(async () => {
         setRefreshing(true);
@@ -193,44 +200,95 @@ export default function LibraryScreen() {
                 onFilterPress={cycleFilter}
             />
 
-            <LibraryFilterBadge filter={filter} onPress={cycleFilter} />
+            <View style={styles.segmentedControl}>
+                <Pressable
+                    onPress={() => setViewMode('stories')}
+                    style={[styles.segment, viewMode === 'stories' && styles.segmentActive]}
+                >
+                    <Text style={[styles.segmentText, viewMode === 'stories' && styles.segmentTextActive]}>
+                        {t('library.tabs.stories') || 'Stories'}
+                    </Text>
+                </Pressable>
+                <Pressable
+                    onPress={() => setViewMode('vocabulary')}
+                    style={[styles.segment, viewMode === 'vocabulary' && styles.segmentActive]}
+                >
+                    <Text style={[styles.segmentText, viewMode === 'vocabulary' && styles.segmentTextActive]}>
+                        {t('library.tabs.vocabulary') || 'Vocabulary'}
+                    </Text>
+                    {wordList.length > 0 && (
+                        <View style={styles.badge}>
+                            <Text style={styles.badgeText}>{wordList.length}</Text>
+                        </View>
+                    )}
+                </Pressable>
+            </View>
 
-            <LibraryStatsRow
-                total={stats.total}
-                completed={stats.completed}
-                inProgress={stats.inProgress}
-            />
+            {viewMode === 'stories' ? (
+                <>
+                    <LibraryFilterBadge filter={filter} onPress={cycleFilter} />
 
-            <FlatList
-                data={filteredLibrary}
-                keyExtractor={(item) => item.storyId}
-                renderItem={renderItem}
-                contentContainerStyle={styles.listContent}
-                showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
-                removeClippedSubviews={true}
-                initialNumToRender={10}
-                maxToRenderPerBatch={5}
-                windowSize={10}
-                updateCellsBatchingPeriod={50}
-                refreshControl={
-                    <RefreshControl
-                        refreshing={refreshing}
-                        onRefresh={onRefresh}
-                        tintColor={theme.colors.primary}
-                        colors={[theme.colors.primary]}
+                    <LibraryStatsRow
+                        total={stats.total}
+                        completed={stats.completed}
+                        inProgress={stats.inProgress}
                     />
-                }
-                ListEmptyComponent={
-                    <EmptyState
-                        icon="book-outline"
-                        title={filter === 'all' ? t('library.empty') : t('common.error')}
-                        message={filter === 'all' ? t('library.emptyMessage') : t('common.retry')}
-                        actionLabel={filter === 'all' ? t('library.discoverStories') : t('common.retry')}
-                        onAction={filter === 'all' ? () => router.push('/(tabs)/discover') : () => setFilter('all')}
+
+                    <FlatList
+                        data={filteredLibrary}
+                        keyExtractor={(item) => item.storyId}
+                        renderItem={renderItem}
+                        contentContainerStyle={styles.listContent}
+                        showsVerticalScrollIndicator={false}
+                        ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+                        removeClippedSubviews={true}
+                        initialNumToRender={10}
+                        maxToRenderPerBatch={5}
+                        windowSize={10}
+                        updateCellsBatchingPeriod={50}
+                        refreshControl={
+                            <RefreshControl
+                                refreshing={refreshing}
+                                onRefresh={onRefresh}
+                                tintColor={theme.colors.primary}
+                                colors={[theme.colors.primary]}
+                            />
+                        }
+                        ListEmptyComponent={
+                            <EmptyState
+                                icon="book-outline"
+                                title={filter === 'all' ? t('library.empty') : t('common.error')}
+                                message={filter === 'all' ? t('library.emptyMessage') : t('common.retry')}
+                                actionLabel={filter === 'all' ? t('library.discoverStories') : t('common.retry')}
+                                onAction={filter === 'all' ? () => router.push('/(tabs)/discover') : () => setFilter('all')}
+                            />
+                        }
                     />
-                }
-            />
+                </>
+            ) : (
+                <FlatList
+                    data={wordList}
+                    keyExtractor={(word) => word.id}
+                    renderItem={({ item }) => (
+                        <VocabularyItem
+                            item={item}
+                            onRemove={vocabActions.removeWord}
+                        />
+                    )}
+                    contentContainerStyle={styles.listContent}
+                    showsVerticalScrollIndicator={false}
+                    ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                    ListEmptyComponent={
+                        <EmptyState
+                            icon="bookmark-outline"
+                            title={t('vocabulary.empty') || 'No words saved'}
+                            message={t('vocabulary.emptyMessage') || 'Tap on unknown words while reading to save them here.'}
+                            actionLabel={t('vocabulary.startReading') || 'Start Reading'}
+                            onAction={() => router.push('/(tabs)')}
+                        />
+                    }
+                />
+            )}
 
             <StoryCardMenu
                 visible={menuVisible}
@@ -288,5 +346,47 @@ const styles = StyleSheet.create((theme) => ({
     listContent: {
         paddingHorizontal: theme.spacing.lg,
         paddingBottom: theme.spacing.xxxl,
+    },
+    segmentedControl: {
+        flexDirection: 'row',
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.md,
+        gap: theme.spacing.md,
+    },
+    segment: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderRadius: 20,
+        backgroundColor: theme.colors.backgroundSecondary,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+    },
+    segmentActive: {
+        backgroundColor: theme.colors.primary,
+        borderColor: theme.colors.primary,
+    },
+    segmentText: {
+        fontSize: theme.typography.size.sm,
+        fontWeight: '600',
+        color: theme.colors.textSecondary,
+    },
+    segmentTextActive: {
+        color: '#FFFFFF',
+    },
+    badge: {
+        marginLeft: 6,
+        backgroundColor: 'rgba(255,255,255,0.3)',
+        paddingHorizontal: 6,
+        paddingVertical: 2,
+        borderRadius: 10,
+        minWidth: 20,
+        alignItems: 'center',
+    },
+    badgeText: {
+        fontSize: 10,
+        fontWeight: 'bold',
+        color: '#FFFFFF',
     },
 }));

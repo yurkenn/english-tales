@@ -44,7 +44,6 @@ export const storySchema = defineType({
             options: {
                 hotspot: true,
             },
-            // validation: (Rule) => Rule.required(), // Temporarily disabled
         }),
         defineField({
             name: 'description',
@@ -79,20 +78,25 @@ export const storySchema = defineType({
                 {
                     type: 'image',
                     title: 'Görsel',
-                    options: {
-                        hotspot: true,
-                    },
+                    options: { hotspot: true },
                     fields: [
+                        { name: 'caption', title: 'Görsel Açıklaması', type: 'string' },
+                        { name: 'alt', title: 'Alt Metin', type: 'string' },
+                    ],
+                },
+                {
+                    type: 'object',
+                    name: 'checkpoint',
+                    title: 'Checkpoint',
+                    fields: [
+                        { name: 'question', title: 'Soru', type: 'string' },
                         {
-                            name: 'caption',
-                            title: 'Görsel Açıklaması',
-                            type: 'string',
+                            name: 'options',
+                            title: 'Seçenekler',
+                            type: 'array',
+                            of: [{ type: 'string' }],
                         },
-                        {
-                            name: 'alt',
-                            title: 'Alt Metin',
-                            type: 'string',
-                        },
+                        { name: 'correctIndex', title: 'Doğru Seçenek Dizini', type: 'number' },
                     ],
                 },
             ],
@@ -146,6 +150,28 @@ export const storySchema = defineType({
             title: 'Yayınlanma Tarihi',
             type: 'datetime',
             group: 'meta',
+        }),
+        defineField({
+            name: 'quiz',
+            title: 'Anlama Testi',
+            type: 'array',
+            group: 'content',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        { name: 'question', title: 'Soru', type: 'string' },
+                        {
+                            name: 'options',
+                            title: 'Seçenekler',
+                            type: 'array',
+                            of: [{ type: 'string' }],
+                        },
+                        { name: 'correctIndex', title: 'Doğru Cevap (0-3)', type: 'number' },
+                        { name: 'explanation', title: 'Açıklama', type: 'text' },
+                    ],
+                },
+            ],
         }),
     ],
     preview: {

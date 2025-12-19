@@ -110,7 +110,16 @@
             "removeMessage": "\"{{title}}\" kitaplığınızdan kaldırılsın mı?",
             "deleteDownloadTitle": "İndirmeyi Sil",
             "deleteDownloadMessage": "\"{{title}}\" indirmesi silinsin mi? Artık çevrimdışı kullanılamayacak."
+        },
+        "tabs": {
+            "stories": "Hikayeler",
+            "vocabulary": "Kelime Haznesi"
         }
+    },
+    "vocabulary": {
+        "empty": "Kaydedilmiş kelime yok",
+        "emptyMessage": "Okurken bilmediğiniz kelimelere dokunarak buraya kaydedebilirsiniz.",
+        "startReading": "Okumaya Başla"
     },
     "reading": {
         "complete": "%{{percentage}} tamamlandı",
@@ -118,7 +127,23 @@
         "chapter": "Bölüm {{number}}",
         "notFound": "Hikaye bulunamadı",
         "noContent": "İçerik mevcut değil.",
-        "lineSpacing": "Satır Aralığı"
+        "lineSpacing": "Satır Aralığı",
+        "audioAssist": "Sesli Destek",
+        "readingAloud": "Hikaye okunuyor...",
+        "audioAssistReady": "Sesli Destek Hazır",
+        "quiz": {
+            "title": "Anlama Testi",
+            "subtitle": "Bakalım neler öğrendin!",
+            "start": "Teste Başla",
+            "next": "Sonraki Soru",
+            "finish": "Bitir",
+            "correct": "Doğru!",
+            "incorrect": "Pek değil...",
+            "result": "{{total}} sorudan {{count}} doğru yaptın",
+            "accuracy": "Başarı Oranı: %{{percentage}}",
+            "done": "Hikayeye Dön",
+            "checkpoint": "Kontrol Noktası"
+        }
     },
     "settings": {
         "sections": {

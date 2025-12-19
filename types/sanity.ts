@@ -1,6 +1,13 @@
 // TypeScript types for Sanity data
 import type { PortableTextBlock } from '@portabletext/types';
 
+export interface QuizQuestion {
+    question: string;
+    options: string[];
+    correctIndex: number;
+    explanation?: string;
+}
+
 // Base Sanity document
 export interface SanityDocument {
     _id: string;
@@ -70,6 +77,7 @@ export interface Story extends SanityDocument {
     wordCount: number;
     isFeatured?: boolean;
     publishedAt?: string;
+    quiz?: QuizQuestion[];
 }
 
 // Review

@@ -26,6 +26,7 @@ interface ProgressActions {
     setUserId: (userId: string | null) => void;
     updateProgress: (storyId: string, position: number, percentage: number) => Promise<Result<ReadingProgress>>;
     markComplete: (storyId: string) => Promise<Result<ReadingProgress>>;
+    saveQuizResult: (storyId: string, score: number, total: number) => Promise<Result<ReadingProgress>>;
     getProgress: (storyId: string) => ReadingProgress | undefined;
     fetchAllProgress: () => Promise<Result<Record<string, ReadingProgress>>>;
     getStreak: () => number;
@@ -131,6 +132,45 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
             }
         },
 
+        saveQuizResult: async (storyId, score, total) => {
+            const { userId, progressMap } = get();
+            if (!userId) {
+                return { success: false, error: 'User not authenticated' };
+            }
+
+            try {
+                const existing = progressMap[storyId];
+                const progressRef = doc(db, 'users', userId, 'progress', storyId);
+
+                const progress: ReadingProgress = {
+                    ...existing,
+                    storyId,
+                    userId,
+                    quizScore: score,
+                    quizTotal: total,
+                    lastReadAt: new Date(),
+                } as ReadingProgress;
+
+                await setDoc(progressRef, {
+                    ...progress,
+                    lastReadAt: serverTimestamp(),
+                }, { merge: true });
+
+                set((state) => ({
+                    progressMap: {
+                        ...state.progressMap,
+                        [storyId]: progress,
+                    },
+                }));
+
+                return { success: true, data: progress };
+            } catch (error) {
+                const message = error instanceof Error ? error.message : 'Failed to save quiz result';
+                set({ error: message });
+                return { success: false, error: message };
+            }
+        },
+
         getProgress: (storyId) => {
             return get().progressMap[storyId];
         },
@@ -158,6 +198,8 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                             ? data.lastReadAt.toDate()
                             : new Date(data.lastReadAt),
                         isCompleted: data.isCompleted,
+                        quizScore: data.quizScore,
+                        quizTotal: data.quizTotal,
                     };
                 });
 

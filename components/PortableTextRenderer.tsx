@@ -1,14 +1,15 @@
-import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Pressable } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
 import { PortableTextBlock } from '@portabletext/types';
 import { urlFor } from '@/services/sanity/client';
+import { CheckpointItem } from './reading/CheckpointItem';
 
 interface PortableTextRendererProps {
     content: PortableTextBlock[];
     fontSize: number;
     lineHeight: number;
     textColor: string;
+    onWordPress?: (word: string) => void;
 }
 
 export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
@@ -16,6 +17,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
     fontSize,
     lineHeight,
     textColor,
+    onWordPress,
 }) => {
     if (!content || !Array.isArray(content)) {
         return <Text style={[styles.paragraph, { fontSize, color: textColor, lineHeight: fontSize * lineHeight }]}>No content available.</Text>;
@@ -37,6 +39,31 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
                             style.textDecorationLine = 'underline';
                         }
                     });
+                }
+
+                if (onWordPress) {
+                    // Split text into words while preserving spaces
+                    const words = child.text.split(/(\s+)/);
+                    return (
+                        <Text key={index} style={style}>
+                            {words.map((part: string, wordIdx: number) => {
+                                // If it's just whitespace, render it as-is
+                                if (part.trim() === '') {
+                                    return <Text key={wordIdx}>{part}</Text>;
+                                }
+                                // If it's a word, make it pressable
+                                return (
+                                    <Text
+                                        key={wordIdx}
+                                        onPress={() => onWordPress(part)}
+                                        suppressHighlighting={false}
+                                    >
+                                        {part}
+                                    </Text>
+                                );
+                            })}
+                        </Text>
+                    );
                 }
 
                 return <Text key={index} style={style}>{child.text}</Text>;
@@ -67,6 +94,19 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
         }
 
         // Handle text blocks
+        if (block._type === 'checkpoint') {
+            return (
+                <CheckpointItem
+                    key={index}
+                    question={block.question}
+                    options={block.options}
+                    correctIndex={block.correctIndex}
+                    textColor={textColor}
+                    onComplete={() => { }} // Could track progress here if needed
+                />
+            );
+        }
+
         if (block._type !== 'block' || !block.children) {
             return null;
         }

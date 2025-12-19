@@ -1,7 +1,7 @@
 // GROQ Queries for Sanity
 export const queries = {
-    // Stories
-    allStories: `*[_type == "story"] | order(publishedAt desc) {
+  // Stories
+  allStories: `*[_type == "story"] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -16,7 +16,7 @@ export const queries = {
     "categories": categories[]->{_id, title, slug, color}
   }`,
 
-    featuredStories: `*[_type == "story" && isFeatured == true] | order(publishedAt desc) [0...5] {
+  featuredStories: `*[_type == "story" && isFeatured == true] | order(publishedAt desc) [0...5] {
     _id,
     title,
     slug,
@@ -30,7 +30,7 @@ export const queries = {
     "categories": categories[]->{_id, title, slug, color}
   }`,
 
-    storyById: `*[_type == "story" && _id == $id][0] {
+  storyById: `*[_type == "story" && _id == $id][0] {
     _id,
     title,
     slug,
@@ -42,11 +42,12 @@ export const queries = {
     wordCount,
     isFeatured,
     publishedAt,
+    quiz,
     "author": author->{_id, name, slug, image, bio},
     "categories": categories[]->{_id, title, slug, color}
   }`,
 
-    storyBySlug: `*[_type == "story" && slug.current == $slug][0] {
+  storyBySlug: `*[_type == "story" && slug.current == $slug][0] {
     _id,
     title,
     slug,
@@ -58,11 +59,12 @@ export const queries = {
     wordCount,
     isFeatured,
     publishedAt,
+    quiz,
     "author": author->{_id, name, slug, image, bio},
     "categories": categories[]->{_id, title, slug, color}
   }`,
 
-    storiesByCategory: `*[_type == "story" && $categoryId in categories[]._ref] | order(publishedAt desc) {
+  storiesByCategory: `*[_type == "story" && $categoryId in categories[]._ref] | order(publishedAt desc) {
     _id,
     title,
     slug,
@@ -76,7 +78,7 @@ export const queries = {
     "categories": categories[]->{_id, title, slug, color}
   }`,
 
-    searchStories: `*[_type == "story" && (
+  searchStories: `*[_type == "story" && (
     title match $query ||
     description match $query ||
     author->name match $query
@@ -92,8 +94,8 @@ export const queries = {
     "categories": categories[]->{_id, title, slug, color}
   }`,
 
-    // Authors
-    allAuthors: `*[_type == "author"] | order(name asc) {
+  // Authors
+  allAuthors: `*[_type == "author"] | order(name asc) {
     _id,
     name,
     slug,
@@ -103,7 +105,7 @@ export const queries = {
     isFeatured
   }`,
 
-    featuredAuthor: `*[_type == "author" && isFeatured == true][0] {
+  featuredAuthor: `*[_type == "author" && isFeatured == true][0] {
     _id,
     name,
     slug,
@@ -113,7 +115,7 @@ export const queries = {
     "storyCount": count(*[_type == "story" && references(^._id)])
   }`,
 
-    authorById: `*[_type == "author" && _id == $id][0] {
+  authorById: `*[_type == "author" && _id == $id][0] {
     _id,
     name,
     slug,
@@ -132,8 +134,8 @@ export const queries = {
     }
   }`,
 
-    // Categories
-    allCategories: `*[_type == "category"] | order(order asc) {
+  // Categories
+  allCategories: `*[_type == "category"] | order(order asc) {
     _id,
     title,
     slug,
@@ -143,8 +145,8 @@ export const queries = {
     "storyCount": count(*[_type == "story" && references(^._id)])
   }`,
 
-    // Reviews
-    reviewsByStory: `*[_type == "review" && story._ref == $storyId && isApproved == true] | order(createdAt desc) {
+  // Reviews
+  reviewsByStory: `*[_type == "review" && story._ref == $storyId && isApproved == true] | order(createdAt desc) {
     _id,
     userId,
     userName,
@@ -154,7 +156,7 @@ export const queries = {
     createdAt
   }`,
 
-    storyRating: `{
+  storyRating: `{
     "averageRating": math::avg(*[_type == "review" && story._ref == $storyId && isApproved == true].rating),
     "totalReviews": count(*[_type == "review" && story._ref == $storyId && isApproved == true])
   }`,

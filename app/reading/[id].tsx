@@ -10,16 +10,23 @@ import {
     ReadingControls,
     CompletionModal,
     ReadingSettingsModal,
+    WordLookupSheet,
+    QuizModal,
+    AudioPlayer,
     READING_THEMES,
     type ReadingTheme,
+    type QuizQuestion,
 } from '@/components/reading';
 import { useStory } from '@/hooks/useQueries';
 import { useProgressStore } from '@/store/progressStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useDownloadStore } from '@/store/downloadStore';
+import { dictionaryService, DictionaryEntry } from '@/services/dictionary';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
+import * as Speech from 'expo-speech';
 
 import { useTranslation } from 'react-i18next';
 
@@ -36,6 +43,20 @@ export default function ReadingScreen() {
     const [readingTheme, setReadingTheme] = useState<ReadingTheme>('light');
     const hasShownCompletion = useRef(false);
     const saveTimeoutRef = useRef<number | null>(null);
+
+    // Word Lookup
+    const wordSheetRef = useRef<BottomSheetModal>(null);
+    const [selectedWord, setSelectedWord] = useState('');
+    const [dictionaryData, setDictionaryData] = useState<DictionaryEntry | null>(null);
+    const [isWordLoading, setIsWordLoading] = useState(false);
+
+    // Audio Assist (TTS)
+    const [showAudioPlayer, setShowAudioPlayer] = useState(false);
+    const [isAudioPlaying, setIsAudioPlaying] = useState(false);
+    const [isAudioBuffering, setIsAudioBuffering] = useState(false);
+
+    // Quiz
+    const [showQuizModal, setShowQuizModal] = useState(false);
 
     // Stores
     const { fontSize, lineHeight, actions: prefsActions } = useReadingPrefsStore();
@@ -102,10 +123,26 @@ export default function ReadingScreen() {
     }, [progress, saveProgress]);
 
     const handleMarkComplete = useCallback(async () => {
+        haptics.success();
         if (id) await progressActions.markComplete(id);
         setShowCompletionModal(false);
+
+        // Check if there's a quiz
+        if (storyDoc?.quiz && storyDoc.quiz.length > 0) {
+            setShowQuizModal(true);
+        } else {
+            router.back();
+        }
+    }, [id, progressActions, router, storyDoc]);
+
+    const handleQuizClose = useCallback(async (accuracy: number) => {
+        if (id && storyDoc?.quiz) {
+            const score = Math.round((accuracy / 100) * storyDoc.quiz.length);
+            await progressActions.saveQuizResult(id, score, storyDoc.quiz.length);
+        }
+        setShowQuizModal(false);
         router.back();
-    }, [id, progressActions, router]);
+    }, [id, storyDoc, progressActions, router]);
 
     const handleBookmarkToggle = useCallback(async () => {
         if (!storyDoc || !id) return;
@@ -131,6 +168,90 @@ export default function ReadingScreen() {
         const currentIndex = themes.indexOf(readingTheme);
         setReadingTheme(themes[(currentIndex + 1) % 3]);
     }, [readingTheme]);
+
+    const handleWordPress = useCallback(async (word: string) => {
+        const cleaned = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim();
+        if (!cleaned) return;
+
+        haptics.light();
+        setSelectedWord(cleaned);
+        setIsWordLoading(true);
+        wordSheetRef.current?.present();
+
+        const data = await dictionaryService.lookup(cleaned);
+        setDictionaryData(data);
+        setIsWordLoading(false);
+    }, []);
+
+    // TTS Logic
+    const storyText = useMemo(() => {
+        if (!content) return '';
+        return content
+            .map(block => {
+                if (block._type !== 'block' || !block.children) return '';
+                return (block.children as any[]).map(c => c.text).join('');
+            })
+            .join(' ');
+    }, [content]);
+
+    const handlePlayPauseAudio = useCallback(async () => {
+        haptics.selection();
+        if (isAudioPlaying) {
+            Speech.pause();
+            setIsAudioPlaying(false);
+        } else {
+            const isPaused = await Speech.isSpeakingAsync();
+            if (isPaused) {
+                Speech.resume();
+                setIsAudioPlaying(true);
+            } else {
+                setIsAudioBuffering(true);
+                Speech.speak(storyText, {
+                    language: 'en',
+                    onStart: () => {
+                        setIsAudioPlaying(true);
+                        setIsAudioBuffering(false);
+                    },
+                    onDone: () => {
+                        setIsAudioPlaying(false);
+                        setIsAudioBuffering(false);
+                    },
+                    onStopped: () => {
+                        setIsAudioPlaying(false);
+                        setIsAudioBuffering(false);
+                    },
+                    onError: () => {
+                        setIsAudioPlaying(false);
+                        setIsAudioBuffering(false);
+                    },
+                });
+            }
+        }
+    }, [isAudioPlaying, storyText]);
+
+    const handleStopAudio = useCallback(() => {
+        haptics.selection();
+        Speech.stop();
+        setIsAudioPlaying(false);
+        setIsAudioBuffering(false);
+    }, []);
+
+    const toggleAudioPlayer = useCallback(() => {
+        haptics.light();
+        setShowAudioPlayer(prev => {
+            if (prev) {
+                Speech.stop();
+                setIsAudioPlaying(false);
+            }
+            return !prev;
+        });
+    }, []);
+
+    useEffect(() => {
+        return () => {
+            Speech.stop();
+        };
+    }, []);
 
     if (isLoading) {
         return (
@@ -178,6 +299,7 @@ export default function ReadingScreen() {
                         fontSize={fontSize}
                         lineHeight={lineHeight}
                         textColor={READING_THEMES[readingTheme].text}
+                        onWordPress={handleWordPress}
                     />
                 ) : (
                     <Text style={[styles.storyText, { fontSize, color: READING_THEMES[readingTheme].text }]}>
@@ -196,13 +318,29 @@ export default function ReadingScreen() {
                     onFontIncrease={() => { haptics.light(); prefsActions.setFontSize(Math.min(28, fontSize + 2)); }}
                     onThemeToggle={cycleReadingTheme}
                     onBookmarkToggle={handleBookmarkToggle}
+                    onAudioToggle={toggleAudioPlayer}
                 />
             </View>
+
+            {showAudioPlayer && (
+                <AudioPlayer
+                    isPlaying={isAudioPlaying}
+                    isBuffering={isAudioBuffering}
+                    onPlayPause={handlePlayPauseAudio}
+                    onStop={handleStopAudio}
+                />
+            )}
 
             <CompletionModal
                 visible={showCompletionModal}
                 onComplete={handleMarkComplete}
                 onContinue={() => setShowCompletionModal(false)}
+            />
+
+            <QuizModal
+                visible={showQuizModal}
+                questions={storyDoc?.quiz as QuizQuestion[]}
+                onClose={handleQuizClose}
             />
 
             <ReadingSettingsModal
@@ -214,6 +352,15 @@ export default function ReadingScreen() {
                 onFontSizeChange={prefsActions.setFontSize}
                 onLineHeightChange={prefsActions.setLineHeight}
                 onThemeChange={setReadingTheme}
+            />
+
+            <WordLookupSheet
+                ref={wordSheetRef}
+                word={selectedWord}
+                dictionaryData={dictionaryData}
+                isLoading={isWordLoading}
+                storyId={id}
+                storyTitle={storyDoc.title}
             />
         </View>
     );

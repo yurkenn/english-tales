@@ -110,7 +110,16 @@
             "removeMessage": "Remove \"{{title}}\" from your library?",
             "deleteDownloadTitle": "Delete Download",
             "deleteDownloadMessage": "Delete \"{{title}}\" download? It will no longer be available offline."
+        },
+        "tabs": {
+            "stories": "Stories",
+            "vocabulary": "Vocabulary"
         }
+    },
+    "vocabulary": {
+        "empty": "No words saved",
+        "emptyMessage": "Tap on unknown words while reading to save them here.",
+        "startReading": "Start Reading"
     },
     "reading": {
         "complete": "{{percentage}}% complete",
@@ -118,7 +127,23 @@
         "chapter": "Chapter {{number}}",
         "notFound": "Story not found",
         "noContent": "No content available.",
-        "lineSpacing": "Line Spacing"
+        "lineSpacing": "Line Spacing",
+        "audioAssist": "Audio Assist",
+        "readingAloud": "Reading aloud...",
+        "audioAssistReady": "Audio Assist Ready",
+        "quiz": {
+            "title": "Comprehension Quiz",
+            "subtitle": "Let's see what you've learned!",
+            "start": "Start Quiz",
+            "next": "Next Question",
+            "finish": "Finish",
+            "correct": "Correct!",
+            "incorrect": "Not quite...",
+            "result": "You got {{count}} out of {{total}} correct",
+            "accuracy": "Accuracy: {{percentage}}%",
+            "done": "Back to Story",
+            "checkpoint": "Checkpoint"
+        }
     },
     "settings": {
         "sections": {

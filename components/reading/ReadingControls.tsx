@@ -14,6 +14,7 @@ interface ReadingControlsProps {
     onFontIncrease: () => void;
     onThemeToggle: () => void;
     onBookmarkToggle: () => void;
+    onAudioToggle: () => void;
 }
 
 export const ReadingControls: React.FC<ReadingControlsProps> = ({
@@ -25,6 +26,7 @@ export const ReadingControls: React.FC<ReadingControlsProps> = ({
     onFontIncrease,
     onThemeToggle,
     onBookmarkToggle,
+    onAudioToggle,
 }) => {
     const { theme } = useUnistyles();
 
@@ -72,6 +74,11 @@ export const ReadingControls: React.FC<ReadingControlsProps> = ({
             <Pressable style={styles.button} onPress={handleShare}>
                 <Ionicons name="share-outline" size={20} color={theme.colors.text} />
             </Pressable>
+
+            {/* Audio Assist */}
+            <Pressable style={[styles.button, styles.audioButton]} onPress={onAudioToggle}>
+                <Ionicons name="volume-medium-outline" size={20} color="#FFFFFF" />
+            </Pressable>
         </View>
     );
 };
@@ -103,5 +110,8 @@ const styles = StyleSheet.create((theme) => ({
     fontSizeText: {
         fontSize: theme.typography.size.sm,
         color: theme.colors.textSecondary,
+    },
+    audioButton: {
+        backgroundColor: theme.colors.primary,
     },
 }));
