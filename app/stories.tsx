@@ -1,15 +1,17 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { View, FlatList, RefreshControl, Dimensions } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { NetworkError, EmptyState } from '@/components';
 import {
+    NetworkError,
+    EmptyState,
     StoryGridCard,
     StoriesStatsRow,
     StoriesHeader,
-    DifficultyFilter,
-} from '@/components/stories';
+} from '@/components';
+import { type DifficultyFilter } from '@/components/molecules/moleculeTypes';
 import { useStories } from '@/hooks/useQueries';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { useLibraryStore } from '@/store/libraryStore';
@@ -82,12 +84,17 @@ export default function StoriesScreen() {
         setFilter(filters[(currentIndex + 1) % filters.length]);
     }, [filter]);
 
-    const renderItem = useCallback(({ item }: { item: Story }) => (
-        <StoryGridCard
-            story={item}
-            isInLibrary={libraryActions.isInLibrary(item.id)}
-            onPress={() => handleStoryPress(item.id)}
-        />
+    const renderItem = useCallback(({ item, index }: { item: Story; index: number }) => (
+        <Animated.View
+            entering={FadeInDown.delay((index % 6) * 100).duration(500).springify()}
+            style={{ flex: 1, maxWidth: '48%' }}
+        >
+            <StoryGridCard
+                story={item}
+                isInLibrary={libraryActions.isInLibrary(item.id)}
+                onPress={() => handleStoryPress(item.id)}
+            />
+        </Animated.View>
     ), [libraryActions, handleStoryPress]);
 
     if (isError) {
@@ -159,6 +166,6 @@ const styles = StyleSheet.create((theme) => ({
     },
     gridRow: {
         justifyContent: 'space-between',
-        marginBottom: CARD_GAP,
+        marginBottom: 0,
     },
 }));

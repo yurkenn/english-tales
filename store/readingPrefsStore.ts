@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 interface ReadingPrefs {
     fontSize: number;
     lineHeight: number;
+    dyslexicFontEnabled: boolean;
 }
 
 interface ReadingPrefsState extends ReadingPrefs {
@@ -13,6 +14,7 @@ interface ReadingPrefsState extends ReadingPrefs {
 interface ReadingPrefsActions {
     setFontSize: (size: number) => void;
     setLineHeight: (height: number) => void;
+    setDyslexicFontEnabled: (enabled: boolean) => void;
     loadPrefs: () => Promise<void>;
 }
 
@@ -21,6 +23,7 @@ const READING_PREFS_KEY = '@english_tales_reading_prefs';
 const defaultPrefs: ReadingPrefs = {
     fontSize: 18,
     lineHeight: 1.6,
+    dyslexicFontEnabled: false,
 };
 
 export const useReadingPrefsStore = create<ReadingPrefsState & { actions: ReadingPrefsActions }>()((set, get) => ({
@@ -36,7 +39,13 @@ export const useReadingPrefsStore = create<ReadingPrefsState & { actions: Readin
 
         setLineHeight: async (height) => {
             set({ lineHeight: height });
-            const prefs = { fontSize: get().fontSize, lineHeight: height };
+            const prefs = { fontSize: get().fontSize, lineHeight: height, dyslexicFontEnabled: get().dyslexicFontEnabled };
+            await AsyncStorage.setItem(READING_PREFS_KEY, JSON.stringify(prefs));
+        },
+
+        setDyslexicFontEnabled: async (enabled) => {
+            set({ dyslexicFontEnabled: enabled });
+            const prefs = { fontSize: get().fontSize, lineHeight: get().lineHeight, dyslexicFontEnabled: enabled };
             await AsyncStorage.setItem(READING_PREFS_KEY, JSON.stringify(prefs));
         },
 

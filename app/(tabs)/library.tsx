@@ -1,28 +1,36 @@
 import React, { useMemo, useState, useCallback, useRef } from 'react';
 import { View, FlatList, RefreshControl, Dimensions, Text, Pressable } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomSheet from '@gorhom/bottom-sheet';
-import { LibraryScreenSkeleton, EmptyState, StoryCardMenu, StoryCardMenuItem, ConfirmationDialog } from '@/components';
 import {
+    LibraryScreenSkeleton,
+    EmptyState,
+    StoryCardMenu,
+    StoryCardMenuItem,
+    ConfirmationDialog,
     LibraryHeader,
     LibraryStatsRow,
     LibraryFilterBadge,
     LibraryBookCard,
     LibraryAnonymousState,
+    VocabularyItem,
+} from '@/components';
+import {
     type LibraryItemWithProgress,
     type FilterType,
     FILTER_LABELS,
     FILTERS,
-} from '@/components/library';
+} from '@/components/molecules/moleculeTypes';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
 import { useDownloadStore } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
 import { useVocabularyStore } from '@/store/vocabularyStore';
-import { VocabularyItem } from '@/components/library/VocabularyItem';
+// VocabularyItem already imported above
 import { haptics } from '@/utils/haptics';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -160,15 +168,17 @@ export default function LibraryScreen() {
         return items;
     }, [selectedItem, downloadActions, t]);
 
-    const renderItem = useCallback(({ item }: { item: LibraryItemWithProgress }) => (
-        <LibraryBookCard
-            item={item}
-            isDownloaded={downloadActions.isDownloaded(item.storyId)}
-            onPress={() => handleStoryPress(item.storyId)}
-            onReadPress={() => handleReadPress(item.storyId)}
-            onMorePress={() => handleMorePress(item)}
-            moreButtonRef={(ref: View | null) => { buttonRefs.current[item.storyId] = ref; }}
-        />
+    const renderItem = useCallback(({ item, index }: { item: LibraryItemWithProgress; index: number }) => (
+        <Animated.View entering={FadeInDown.delay(index * 100).duration(500).springify()}>
+            <LibraryBookCard
+                item={item}
+                isDownloaded={downloadActions.isDownloaded(item.storyId)}
+                onPress={() => handleStoryPress(item.storyId)}
+                onReadPress={() => handleReadPress(item.storyId)}
+                onMorePress={() => handleMorePress(item)}
+                moreButtonRef={(ref: View | null) => { buttonRefs.current[item.storyId] = ref; }}
+            />
+        </Animated.View>
     ), [downloadActions, handleStoryPress, handleReadPress, handleMorePress]);
 
     if (isLoading) {
@@ -269,11 +279,13 @@ export default function LibraryScreen() {
                 <FlatList
                     data={wordList}
                     keyExtractor={(word) => word.id}
-                    renderItem={({ item }) => (
-                        <VocabularyItem
-                            item={item}
-                            onRemove={vocabActions.removeWord}
-                        />
+                    renderItem={({ item, index }) => (
+                        <Animated.View entering={FadeInDown.delay(index * 100).duration(500).springify()}>
+                            <VocabularyItem
+                                item={item}
+                                onRemove={vocabActions.removeWord}
+                            />
+                        </Animated.View>
                     )}
                     contentContainerStyle={styles.listContent}
                     showsVerticalScrollIndicator={false}

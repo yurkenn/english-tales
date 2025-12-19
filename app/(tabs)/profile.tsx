@@ -5,14 +5,18 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import BottomSheet from '@gorhom/bottom-sheet';
-import { ProfileCard } from '../../components/ProfileCard';
-import { StatsGrid } from '../../components/StatsGrid';
-import { ProfileMenu } from '../../components/ProfileMenu';
-import { ReadingGoalsSheet } from '../../components/ReadingGoalsSheet';
-import { ProfileScreenSkeleton } from '../../components/skeletons/ProfileScreenSkeleton';
-import { ReadingCalendar } from '../../components/ReadingCalendar';
-import { ActionSheet } from '../../components/ActionSheet';
-import type { MenuItem } from '../../components/ProfileMenu';
+import {
+    ProfileCard,
+    StatsGrid,
+    ProfileMenu,
+    ReadingGoalsSheet,
+    ReadingCalendar,
+    ActionSheet,
+    InsightsCard,
+    WordGrowthChart,
+    ProfileScreenSkeleton,
+    MenuItem
+} from '@/components';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
@@ -20,6 +24,7 @@ import { useThemeStore } from '@/store/themeStore';
 import { useAchievementsStore } from '@/store/achievementsStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { useToastStore } from '@/store/toastStore';
+import { useVocabularyStore } from '@/store/vocabularyStore';
 import { haptics } from '@/utils/haptics';
 
 import { useTranslation } from 'react-i18next';
@@ -31,7 +36,8 @@ export default function ProfileScreen() {
     const insets = useSafeAreaInsets();
     const { user, signOut, isLoading, updateProfile } = useAuthStore();
     const { items: libraryItems } = useLibraryStore();
-    const { progressMap, actions: progressActions } = useProgressStore();
+    const { progressMap, totalReadingTimeMs, actions: progressActions } = useProgressStore();
+    const { savedWords } = useVocabularyStore();
 
     // Bottom sheet refs
     const goalsSheetRef = useRef<BottomSheet>(null);
@@ -52,6 +58,28 @@ export default function ProfileScreen() {
             readingStreak: progressActions.getStreak(),
         };
     }, [progressMap, progressActions]);
+
+    // Calculate Learning Insights
+    const learningInsights = useMemo(() => {
+        const words = Object.values(savedWords);
+        const quizResults = Object.values(progressMap).filter(p => p.quizScore !== undefined);
+
+        let avgAccuracy = 0;
+        if (quizResults.length > 0) {
+            const totalAccuracy = quizResults.reduce((acc, p) => {
+                const accuracy = p.quizTotal ? (p.quizScore || 0) / p.quizTotal : 0;
+                return acc + accuracy;
+            }, 0);
+            avgAccuracy = Math.round((totalAccuracy / quizResults.length) * 100);
+        }
+
+        return {
+            wordsLearned: words.length,
+            averageAccuracy: avgAccuracy,
+            totalReadingTimeMs,
+            words,
+        };
+    }, [savedWords, progressMap, totalReadingTimeMs]);
 
     const stats = [
         { label: t('profile.booksRead', 'Books Read'), value: computedStats.booksRead, icon: 'book' as const },
@@ -179,6 +207,15 @@ export default function ProfileScreen() {
 
                 {/* Stats Grid */}
                 <StatsGrid stats={stats} />
+
+                {/* Learning Insights */}
+                <InsightsCard
+                    wordsLearned={learningInsights.wordsLearned}
+                    averageAccuracy={learningInsights.averageAccuracy}
+                    totalReadingTimeMs={learningInsights.totalReadingTimeMs}
+                />
+
+                <WordGrowthChart words={learningInsights.words} />
 
                 {/* Reading Calendar */}
                 <ReadingCalendar readingData={readingData} />

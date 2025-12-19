@@ -3,8 +3,7 @@ import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicato
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { FormField } from '@/components';
-import { AuthHeader, AuthDivider, SocialAuthButton } from '@/components/auth';
+import { FormField, AuthHeader, AuthDivider, SocialAuthButton } from '@/components';
 import { useToastStore } from '@/store/toastStore';
 import { loginSchema } from '@/lib/validations';
 import { signIn, signInAnonymously, signInWithGoogle } from '@/services/auth';

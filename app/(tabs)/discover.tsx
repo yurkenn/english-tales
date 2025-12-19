@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react';
 import { View, ScrollView, FlatList, RefreshControl } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -11,13 +12,11 @@ import {
     NetworkError,
     AuthorSpotlight,
     DiscoverScreenSkeleton,
-} from '@/components';
-import {
     DiscoverHeader,
     SurpriseMeButton,
     PopularStoryCard,
     BrowseAllButton,
-} from '@/components/discover';
+} from '@/components';
 import { useStories, useFeaturedAuthor } from '@/hooks/useQueries';
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
@@ -186,8 +185,10 @@ export default function DiscoverScreen() {
                             showsHorizontalScrollIndicator={false}
                             contentContainerStyle={styles.carouselContent}
                             keyExtractor={(item) => item.id}
-                            renderItem={({ item }) => (
-                                <BookCard story={item} onPress={() => handleStoryPress(item.id)} />
+                            renderItem={({ item, index }) => (
+                                <Animated.View entering={FadeInDown.delay(index * 100).duration(500).springify()}>
+                                    <BookCard story={item} onPress={() => handleStoryPress(item.id)} />
+                                </Animated.View>
                             )}
                             ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
                         />
@@ -199,12 +200,16 @@ export default function DiscoverScreen() {
                         <SectionHeader title={t('discover.popularThisWeek')} onActionPress={() => router.push('/stories')} />
                         <View style={styles.popularContainer}>
                             {popularStories.map((story: Story, index: number) => (
-                                <PopularStoryCard
+                                <Animated.View
                                     key={story.id}
-                                    story={story}
-                                    rank={index + 1}
-                                    onPress={() => handleStoryPress(story.id)}
-                                />
+                                    entering={FadeInDown.delay(300 + index * 100).duration(500).springify()}
+                                >
+                                    <PopularStoryCard
+                                        story={story}
+                                        rank={index + 1}
+                                        onPress={() => handleStoryPress(story.id)}
+                                    />
+                                </Animated.View>
                             ))}
                         </View>
                     </View>

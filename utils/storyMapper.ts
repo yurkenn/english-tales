@@ -11,6 +11,7 @@ export const mapSanityStory = (doc: any): Story => ({
     description: doc.description,
     content: doc.content || '',
     coverImage: doc.coverImage ? urlFor(doc.coverImage).width(500).url() : '',
+    coverImageLqip: doc.coverImageLqip,
     author: doc.author?.name || 'Unknown Author',
     difficulty: doc.difficulty || 'intermediate',
     estimatedReadTime: doc.estimatedReadTime || 5,

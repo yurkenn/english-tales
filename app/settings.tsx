@@ -9,14 +9,14 @@ import { useThemeStore } from '@/store/themeStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useDownloadStore, formatBytes } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
-import { ConfirmationDialog } from '@/components';
 import { useTranslation } from 'react-i18next';
 import {
+    ConfirmationDialog,
     SettingItem,
     SettingToggle,
     SettingsHeader,
     SettingSection,
-} from '@/components/settings';
+} from '@/components';
 import { haptics } from '@/utils/haptics';
 import { sendPasswordResetEmail } from '@/services/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -39,9 +39,9 @@ export default function SettingsScreen() {
     const { theme } = useUnistyles();
 
     const { user, signOut } = useAuthStore();
-    const { mode: themeMode, actions: themeActions } = useThemeStore();
+    const { mode: themeMode, highContrastEnabled, actions: themeActions } = useThemeStore();
     const { settings, actions: settingsActions } = useSettingsStore();
-    const { fontSize } = useReadingPrefsStore();
+    const { fontSize, dyslexicFontEnabled, actions: prefsActions } = useReadingPrefsStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
     const toastActions = useToastStore((state) => state.actions);
 
@@ -136,6 +136,18 @@ export default function SettingsScreen() {
                             setNotificationsEnabled(val);
                             settingsActions.updateSettings({ notificationsEnabled: val });
                         }}
+                    />
+                    <SettingToggle
+                        icon="text-outline"
+                        label={t('settings.preferences.dyslexicFont', 'Dyslexic Font')}
+                        value={dyslexicFontEnabled}
+                        onValueChange={prefsActions.setDyslexicFontEnabled}
+                    />
+                    <SettingToggle
+                        icon="contrast-outline"
+                        label={t('settings.preferences.highContrast', 'High Contrast')}
+                        value={highContrastEnabled}
+                        onValueChange={themeActions.setHighContrastEnabled}
                     />
                 </SettingSection>
 

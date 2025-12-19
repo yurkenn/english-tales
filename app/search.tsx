@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, FlatList } from 'react-native';
+import Animated, { FadeInDown } from 'react-native-reanimated';
 import { StyleSheet } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -86,12 +87,14 @@ export default function SearchScreen() {
         }
     }, [libraryActions]);
 
-    const renderItem = useCallback(({ item }: { item: Story }) => (
-        <BookListItem
-            story={item}
-            onPress={() => handleStoryPress(item.id)}
-            onBookmarkPress={() => handleBookmarkPress(item)}
-        />
+    const renderItem = useCallback(({ item, index }: { item: Story; index: number }) => (
+        <Animated.View entering={FadeInDown.delay(index * 50).duration(400).springify()}>
+            <BookListItem
+                story={item}
+                onPress={() => handleStoryPress(item.id)}
+                onBookmarkPress={() => handleBookmarkPress(item)}
+            />
+        </Animated.View>
     ), [handleStoryPress, handleBookmarkPress]);
 
     const showLoading = isLoading || isFetching;

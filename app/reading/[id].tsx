@@ -3,7 +3,6 @@ import { View, Text, ScrollView, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { PortableTextRenderer, ReadingScreenSkeleton } from '@/components';
 import {
     ReadingHeader,
     ReadingProgressBar,
@@ -13,13 +12,16 @@ import {
     WordLookupSheet,
     QuizModal,
     AudioPlayer,
+    PortableTextRenderer,
+    ReadingScreenSkeleton,
     READING_THEMES,
     type ReadingTheme,
-    type QuizQuestion,
-} from '@/components/reading';
+} from '@/components';
+import { type QuizQuestion } from '@/types/sanity';
 import { useStory } from '@/hooks/useQueries';
 import { useProgressStore } from '@/store/progressStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
+import { useThemeStore } from '@/store/themeStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useDownloadStore } from '@/store/downloadStore';
 import { dictionaryService, DictionaryEntry } from '@/services/dictionary';
@@ -41,8 +43,10 @@ export default function ReadingScreen() {
     const [showCompletionModal, setShowCompletionModal] = useState(false);
     const [showSettingsModal, setShowSettingsModal] = useState(false);
     const [readingTheme, setReadingTheme] = useState<ReadingTheme>('light');
+    const { isDark, highContrastEnabled: globalHighContrast } = useThemeStore();
     const hasShownCompletion = useRef(false);
     const saveTimeoutRef = useRef<number | null>(null);
+    const startTimeRef = useRef<number>(Date.now());
 
     // Word Lookup
     const wordSheetRef = useRef<BottomSheetModal>(null);
@@ -59,8 +63,8 @@ export default function ReadingScreen() {
     const [showQuizModal, setShowQuizModal] = useState(false);
 
     // Stores
-    const { fontSize, lineHeight, actions: prefsActions } = useReadingPrefsStore();
-    const { progressMap, actions: progressActions } = useProgressStore();
+    const { fontSize, lineHeight, dyslexicFontEnabled, actions: prefsActions } = useReadingPrefsStore();
+    const { progressMap, totalReadingTimeMs, actions: progressActions } = useProgressStore();
     const { actions: libraryActions } = useLibraryStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
 
@@ -68,6 +72,17 @@ export default function ReadingScreen() {
     const isDownloaded = id ? downloadActions.isDownloaded(id) : false;
 
     const { data: storyDoc, isLoading } = useStory(id || '');
+
+    // Sync reading time on unmount
+    useEffect(() => {
+        startTimeRef.current = Date.now();
+        return () => {
+            const elapsed = Date.now() - startTimeRef.current;
+            if (id && elapsed > 2000) { // Min 2 seconds to count
+                progressActions.incrementReadingTime(id, elapsed);
+            }
+        };
+    }, [id, progressActions]);
 
     // Load reading prefs on mount
     useEffect(() => {
@@ -287,7 +302,14 @@ export default function ReadingScreen() {
             />
 
             <ScrollView
-                style={[styles.content, { backgroundColor: READING_THEMES[readingTheme].bg }]}
+                style={[
+                    styles.content,
+                    {
+                        backgroundColor: globalHighContrast
+                            ? (isDark ? '#000000' : '#FFFFFF')
+                            : READING_THEMES[readingTheme].bg
+                    }
+                ]}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
                 onScroll={handleScroll}
@@ -298,8 +320,12 @@ export default function ReadingScreen() {
                         content={content}
                         fontSize={fontSize}
                         lineHeight={lineHeight}
-                        textColor={READING_THEMES[readingTheme].text}
+                        textColor={globalHighContrast
+                            ? (isDark ? '#FFFFFF' : '#000000')
+                            : READING_THEMES[readingTheme].text
+                        }
                         onWordPress={handleWordPress}
+                        dyslexicFontEnabled={dyslexicFontEnabled}
                     />
                 ) : (
                     <Text style={[styles.storyText, { fontSize, color: READING_THEMES[readingTheme].text }]}>

@@ -5,7 +5,7 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useAchievementsStore } from '@/store/achievementsStore';
-import { AchievementCard, AchievementsProgressCard } from '@/components/achievements';
+import { AchievementCard, AchievementsProgressCard } from '@/components';
 import { haptics } from '@/utils/haptics';
 
 export default function AchievementsScreen() {

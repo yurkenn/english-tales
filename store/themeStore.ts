@@ -12,6 +12,7 @@ interface ThemeState {
     isLoaded: boolean;
     /** Key that changes on every theme switch to force re-renders */
     themeKey: number;
+    highContrastEnabled: boolean;
 }
 
 interface ThemeActions {
@@ -19,6 +20,7 @@ interface ThemeActions {
     toggleTheme: () => void;
     loadTheme: () => Promise<void>;
     setupSystemThemeListener: () => () => void;
+    setHighContrastEnabled: (enabled: boolean) => void;
 }
 
 const THEME_KEY = '@english_tales_theme';
@@ -46,6 +48,7 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
     isDark: Appearance.getColorScheme() === 'dark',
     isLoaded: false,
     themeKey: 0,
+    highContrastEnabled: false,
 
     actions: {
         setMode: async (mode) => {
@@ -82,12 +85,16 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
                 const mode: ThemeMode = saved && VALID_MODES.includes(saved as ThemeMode)
                     ? (saved as ThemeMode)
                     : 'system';
+
+                const savedHighContrast = await AsyncStorage.getItem('@english_tales_high_contrast');
+                const highContrastEnabled = savedHighContrast === 'true';
+
                 const isDark = resolveIsDark(mode);
-                set({ mode, isDark, isLoaded: true });
+                set({ mode, isDark, isLoaded: true, highContrastEnabled });
                 applyTheme(isDark);
             } catch {
                 const isDark = resolveIsDark('system');
-                set({ isDark, isLoaded: true });
+                set({ isDark, isLoaded: true, highContrastEnabled: false });
                 applyTheme(isDark);
             }
         },
@@ -107,6 +114,15 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
             });
 
             return () => subscription.remove();
+        },
+
+        setHighContrastEnabled: async (enabled) => {
+            set({ highContrastEnabled: enabled });
+            try {
+                await AsyncStorage.setItem('@english_tales_high_contrast', String(enabled));
+            } catch (e) {
+                console.error('Failed to save high contrast preference');
+            }
         },
     },
 }));

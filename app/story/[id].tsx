@@ -54,6 +54,7 @@ export default function StoryDetailScreen() {
             description: storyDoc.description,
             content: storyDoc.content || '',
             coverImage: storyDoc.coverImage ? urlFor(storyDoc.coverImage).width(800).url() : '',
+            coverImageLqip: storyDoc.coverImageLqip,
             author: storyDoc.author?.name || 'Unknown Author',
             authorId: storyDoc.author?._id || null,
             difficulty: storyDoc.difficulty || 'intermediate',
@@ -123,7 +124,9 @@ export default function StoryDetailScreen() {
             >
                 {/* Hero Image */}
                 <StoryHero
+                    storyId={story.id}
                     coverImage={story.coverImage}
+                    coverImageLqip={story.coverImageLqip}
                     onBackPress={() => router.back()}
                     onBookmarkPress={handleBookmarkPress}
                     isBookmarked={isInLibrary}

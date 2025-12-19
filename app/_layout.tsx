@@ -12,10 +12,12 @@ import { useProgressStore } from '../store/progressStore';
 import { useThemeStore, useThemeKey, useIsDark } from '../store/themeStore';
 import { useDownloadStore } from '../store/downloadStore';
 import { secureStorage } from '../services/storage';
-import { AchievementToast } from '../components/AchievementToast';
-import { ToastContainer } from '../components/ToastContainer';
-import { ErrorBoundary } from '../components/ErrorBoundary';
-import { AnimatedSplashScreen } from '../components/AnimatedSplashScreen';
+import {
+  AchievementToast,
+  ToastContainer,
+  ErrorBoundary,
+  AnimatedSplashScreen,
+} from '@/components';
 import { lightTheme, darkTheme } from '../theme/unistyles';
 
 // Keep the splash screen visible while we fetch resources
@@ -71,15 +73,23 @@ export default function RootLayout() {
     setIsSplashAnimationFinished(true);
   };
 
-  // Hide native splash once the animated splash component is ready to handle the transition
+  // Ref to ensure splash is hidden only once
+  const isSplashHidden = useState(false);
+
+  // Hide native splash once the app is initialized
   useEffect(() => {
-    if (isAppReady) {
-      // Wait a tiny frame to ensure the AnimatedSplashScreen is rendered
+    if (initialized && !isLoading && !isSplashHidden[0]) {
+      // Small frame delay to ensure React has rendered the AnimatedSplashScreen
       requestAnimationFrame(async () => {
-        await SplashScreen.hideAsync().catch(() => { });
+        try {
+          await SplashScreen.hideAsync();
+          isSplashHidden[1](true);
+        } catch (e) {
+          // ignore
+        }
       });
     }
-  }, [isAppReady]);
+  }, [initialized, isLoading, isSplashHidden]);
 
   // Sync stores with auth state
   useEffect(() => {
@@ -126,7 +136,7 @@ export default function RootLayout() {
 
   return (
     <ErrorBoundary>
-      <GestureHandlerRootView style={{ flex: 1 }} key={`root-${themeKey}`}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
         <QueryProvider>
           <BottomSheetModalProvider>
             {!isSplashAnimationFinished && (

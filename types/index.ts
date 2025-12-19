@@ -19,6 +19,7 @@ export interface Story {
     description: string;
     content: string;
     coverImage: string;
+    coverImageLqip?: string;
     author: string;
     difficulty: 'beginner' | 'intermediate' | 'advanced';
     estimatedReadTime: number; // in minutes
@@ -38,6 +39,7 @@ export interface ReadingProgress {
     isCompleted: boolean;
     quizScore?: number;
     quizTotal?: number;
+    readingTimeMs?: number;
 }
 
 // Library item (saved story)

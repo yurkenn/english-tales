@@ -19,6 +19,7 @@ interface ProgressState {
     isLoading: boolean;
     error: string | null;
     userId: string | null;
+    totalReadingTimeMs: number;
 }
 
 // Actions
@@ -30,6 +31,7 @@ interface ProgressActions {
     getProgress: (storyId: string) => ReadingProgress | undefined;
     fetchAllProgress: () => Promise<Result<Record<string, ReadingProgress>>>;
     getStreak: () => number;
+    incrementReadingTime: (storyId: string, durationMs: number) => Promise<void>;
     clearProgress: () => void;
 }
 
@@ -39,6 +41,7 @@ const initialState: ProgressState = {
     isLoading: false,
     error: null,
     userId: null,
+    totalReadingTimeMs: 0,
 };
 
 export const useProgressStore = create<ProgressState & { actions: ProgressActions }>()((set, get) => ({
@@ -200,10 +203,16 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                         isCompleted: data.isCompleted,
                         quizScore: data.quizScore,
                         quizTotal: data.quizTotal,
+                        readingTimeMs: data.readingTimeMs || 0,
                     };
                 });
 
-                set({ progressMap, isLoading: false });
+                const totalReadingTimeMs = Object.values(progressMap).reduce(
+                    (acc, p) => acc + (p.readingTimeMs || 0),
+                    0
+                );
+
+                set({ progressMap, totalReadingTimeMs, isLoading: false });
                 return { success: true, data: progressMap };
             } catch (error) {
                 const message = error instanceof Error ? error.message : 'Failed to fetch progress';
@@ -252,6 +261,44 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
             return streak;
         },
 
-        clearProgress: () => set({ progressMap: {}, userId: null }),
+        incrementReadingTime: async (storyId, durationMs) => {
+            const { userId, progressMap } = get();
+            if (!userId) return;
+
+            const existing = progressMap[storyId];
+            const newTime = (existing?.readingTimeMs || 0) + durationMs;
+
+            // Optimistic update
+            set((state) => ({
+                totalReadingTimeMs: state.totalReadingTimeMs + durationMs,
+                progressMap: {
+                    ...state.progressMap,
+                    [storyId]: {
+                        ...(existing || {
+                            storyId,
+                            userId,
+                            currentPosition: 0,
+                            percentage: 0,
+                            isCompleted: false,
+                        }),
+                        readingTimeMs: newTime,
+                        lastReadAt: new Date(),
+                    } as ReadingProgress,
+                },
+            }));
+
+            // Sync to Firebase
+            try {
+                const progressRef = doc(db, 'users', userId, 'progress', storyId);
+                await setDoc(progressRef, {
+                    readingTimeMs: newTime,
+                    lastReadAt: serverTimestamp(),
+                }, { merge: true });
+            } catch (error) {
+                console.error('Failed to sync reading time to Firebase:', error);
+            }
+        },
+
+        clearProgress: () => set({ ...initialState }),
     },
 }));
