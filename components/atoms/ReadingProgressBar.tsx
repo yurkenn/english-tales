@@ -26,10 +26,16 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = ({
     const remainingTime = Math.max(1, Math.ceil(estimatedReadTime * (100 - progress) / 100));
     return (
         <View style={styles.container}>
-            <ProgressBar progress={progress} height={4} />
+            <ProgressBar
+                progress={progress}
+                height={2}
+                trackColor="rgba(0,0,0,0.05)"
+            />
             <View style={styles.info}>
-                <Text style={styles.progressText}>{t('reading.complete', { percentage: progress })}</Text>
-                <Text style={styles.remainingText}>{t('reading.remainingTime', { time: remainingTime })}</Text>
+                <Text style={styles.remainingText}>
+                    {t('reading.remainingTime', { time: remainingTime })}
+                </Text>
+                <Text style={styles.percentageText}>{Math.round(progress)}%</Text>
             </View>
         </View>
     );
@@ -37,21 +43,26 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = ({
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.sm,
-        gap: theme.spacing.xs,
+        paddingHorizontal: theme.spacing.xl,
+        paddingVertical: theme.spacing.xs,
+        gap: 6,
     },
     info: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-    },
-    progressText: {
-        fontSize: theme.typography.size.xs,
-        color: theme.colors.textMuted,
+        paddingHorizontal: 2,
     },
     remainingText: {
-        fontSize: theme.typography.size.xs,
-        color: theme.colors.textSecondary,
+        fontSize: 11,
+        fontFamily: theme.typography.fontFamily.semiBold,
+        textTransform: 'uppercase',
+        letterSpacing: 0.5,
+        color: theme.colors.textMuted,
+    },
+    percentageText: {
+        fontSize: 11,
+        fontFamily: theme.typography.fontFamily.semiBold,
+        color: theme.colors.textMuted,
     },
 }));

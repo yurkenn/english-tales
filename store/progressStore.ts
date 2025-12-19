@@ -30,8 +30,8 @@ interface ProgressState {
 // Actions
 interface ProgressActions {
     setUserId: (userId: string | null) => void;
-    updateProgress: (storyId: string, position: number, percentage: number) => Promise<Result<ReadingProgress>>;
-    markComplete: (storyId: string) => Promise<Result<ReadingProgress>>;
+    updateProgress: (storyId: string, position: number, percentage: number, storyTitle?: string) => Promise<Result<ReadingProgress>>;
+    markComplete: (storyId: string, storyTitle?: string) => Promise<Result<ReadingProgress>>;
     saveQuizResult: (storyId: string, score: number, total: number) => Promise<Result<ReadingProgress>>;
     getProgress: (storyId: string) => ReadingProgress | undefined;
     fetchAllProgress: () => Promise<Result<Record<string, ReadingProgress>>>;

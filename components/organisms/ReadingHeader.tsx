@@ -34,19 +34,24 @@ export const ReadingHeader: React.FC<ReadingHeaderProps> = ({
     return (
         <View style={styles.header}>
             <Pressable style={styles.button} onPress={onClose}>
-                <Ionicons name="close" size={24} color={theme.colors.text} />
+                <Ionicons name="chevron-down" size={28} color={theme.colors.text} />
             </Pressable>
+
             <View style={styles.titleContainer}>
-                <View style={styles.titleRow}>
-                    <Text style={styles.title} numberOfLines={1}>{title}</Text>
+                <Text style={styles.title} numberOfLines={1}>{title}</Text>
+                <View style={styles.badgeRow}>
+                    <Text style={styles.subtitle}>{t('reading.chapter', { number: 1 }).toUpperCase()}</Text>
                     {isDownloaded && (
-                        <Ionicons name="cloud-done" size={16} color={theme.colors.success} />
+                        <View style={styles.offlineBadge}>
+                            <Ionicons name="checkmark-circle" size={12} color={theme.colors.success} />
+                            <Text style={styles.offlineText}>OFFLINE</Text>
+                        </View>
                     )}
                 </View>
-                <Text style={styles.subtitle}>{t('reading.chapter', { number: 1 })}</Text>
             </View>
+
             <Pressable style={styles.button} onPress={onSettings}>
-                <Ionicons name="settings-outline" size={24} color={theme.colors.text} />
+                <Ionicons name="options-outline" size={24} color={theme.colors.text} />
             </Pressable>
         </View>
     );
@@ -58,13 +63,12 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.md,
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.borderLight,
+        paddingBottom: theme.spacing.sm,
+        borderBottomWidth: 0, // Cleaner look
     },
     button: {
-        width: 40,
-        height: 40,
+        width: 44,
+        height: 44,
         borderRadius: theme.radius.full,
         alignItems: 'center',
         justifyContent: 'center',
@@ -72,20 +76,38 @@ const styles = StyleSheet.create((theme) => ({
     titleContainer: {
         flex: 1,
         alignItems: 'center',
-        gap: 2,
-    },
-    titleRow: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: 6,
+        paddingHorizontal: theme.spacing.sm,
     },
     title: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.semibold,
+        fontSize: 15,
+        fontFamily: theme.typography.fontFamily.heading,
         color: theme.colors.text,
+        letterSpacing: -0.2,
+    },
+    badgeRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+        marginTop: 2,
     },
     subtitle: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
+        fontSize: 10,
+        fontFamily: theme.typography.fontFamily.semiBold,
+        color: theme.colors.textMuted,
+        letterSpacing: 0.8,
+    },
+    offlineBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: theme.colors.success + '15',
+        paddingHorizontal: 6,
+        paddingVertical: 2,
+        borderRadius: 4,
+        gap: 3,
+    },
+    offlineText: {
+        fontSize: 9,
+        fontFamily: theme.typography.fontFamily.bold,
+        color: theme.colors.success,
     },
 }));

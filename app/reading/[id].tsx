@@ -188,7 +188,7 @@ export default function ReadingScreen() {
         const cleaned = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim();
         if (!cleaned) return;
 
-        haptics.light();
+        haptics.light(); // Use light for subtle feel
         setSelectedWord(cleaned);
         setIsWordLoading(true);
         wordSheetRef.current?.present();

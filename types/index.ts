@@ -25,6 +25,12 @@ export interface UserProfile {
     streak?: number;
     followersCount?: number;
     followingCount?: number;
+    socialLinks?: {
+        instagram?: string;
+        twitter?: string;
+        website?: string;
+        github?: string;
+    };
 }
 
 // Story types

@@ -105,6 +105,38 @@ export default function UserProfileScreen() {
         );
     };
 
+    const renderSocialLinks = () => {
+        if (!profile.socialLinks) return null;
+
+        const links = profile.socialLinks;
+        const availableLinks = [
+            { icon: 'logo-instagram', url: links.instagram, key: 'instagram' },
+            { icon: 'logo-twitter', url: links.twitter, key: 'twitter' },
+            { icon: 'globe-outline', url: links.website, key: 'website' },
+            { icon: 'logo-github', url: links.github, key: 'github' },
+        ].filter(l => l.url);
+
+        if (availableLinks.length === 0) return null;
+
+        return (
+            <View style={styles.socialRow}>
+                {availableLinks.map(link => (
+                    <Pressable
+                        key={link.key}
+                        style={styles.socialIcon}
+                        onPress={() => {
+                            haptics.light();
+                            // In a real app, use Linking.openURL
+                            console.log(`Opening ${link.url}`);
+                        }}
+                    >
+                        <Ionicons name={link.icon as any} size={20} color={theme.colors.textSecondary} />
+                    </Pressable>
+                ))}
+            </View>
+        );
+    };
+
     return (
         <View style={styles.container}>
             <View style={[styles.header, { paddingTop: insets.top }]}>
@@ -156,6 +188,14 @@ export default function UserProfileScreen() {
                             <Typography variant="caption" color={theme.colors.textMuted}>Streak</Typography>
                         </View>
                     </View>
+
+                    {profile.bio && (
+                        <Typography variant="body" color={theme.colors.textSecondary} style={styles.bio}>
+                            {profile.bio}
+                        </Typography>
+                    )}
+
+                    {renderSocialLinks()}
 
                     {recentlyReadStory && (
                         <View style={styles.readingStatus}>
@@ -402,10 +442,32 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: 10,
         borderRadius: 12,
         marginHorizontal: theme.spacing.xl,
-        marginTop: theme.spacing.md,
+        marginTop: theme.spacing.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         alignSelf: 'center',
+    },
+    bio: {
+        textAlign: 'center',
+        marginTop: theme.spacing.sm,
+        paddingHorizontal: theme.spacing.md,
+    },
+    socialRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: theme.spacing.md,
+        gap: theme.spacing.md,
+    },
+    socialIcon: {
+        width: 36,
+        height: 36,
+        borderRadius: 18,
+        backgroundColor: theme.colors.surface,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     center: {
         flex: 1,

@@ -129,6 +129,23 @@ class UserService {
             return { success: false, error: 'Failed' };
         }
     }
+
+    /**
+     * Update a user's profile with partial data
+     */
+    async updateUserProfile(userId: string, data: Partial<UserProfile>): Promise<Result<void>> {
+        try {
+            const userRef = doc(db, this.COLLECTION, userId);
+            await setDoc(userRef, {
+                ...data,
+                updatedAt: serverTimestamp(),
+            }, { merge: true });
+            return { success: true, data: undefined };
+        } catch (error) {
+            console.error('Error updating user profile:', error);
+            return { success: false, error: 'Failed to update profile' };
+        }
+    }
 }
 
 export const userService = new UserService();

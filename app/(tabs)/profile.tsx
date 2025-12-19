@@ -62,6 +62,19 @@ export default function ProfileScreen() {
 
     const [friends, setFriends] = useState<UserProfile[]>([]);
     const [isLoadingFriends, setIsLoadingFriends] = useState(true);
+    const [fullProfile, setFullProfile] = useState<UserProfile | null>(null);
+
+    // Fetch user profile data from Firestore
+    useEffect(() => {
+        const fetchFullProfile = async () => {
+            if (!user) return;
+            const res = await userService.getUserProfile(user.id);
+            if (res.success) {
+                setFullProfile(res.data);
+            }
+        };
+        fetchFullProfile();
+    }, [user]);
 
     // Calculate Learning Insights
     const learningInsights = useMemo(() => {
@@ -226,8 +239,11 @@ export default function ProfileScreen() {
                     photoURL={user.photoURL}
                     displayName={user.displayName}
                     email={user.email}
+                    bio={fullProfile?.bio}
+                    socialLinks={fullProfile?.socialLinks}
                     isAnonymous={user.isAnonymous}
                     onSignInPress={signOut}
+                    onEditPress={() => { haptics.selection(); router.push('/user/edit'); }}
                 />
 
                 <FriendCircle

@@ -77,11 +77,7 @@ export default function CommunityTab() {
 
     const handleAvatarPress = async (userId: string) => {
         haptics.selection();
-        const result = await userService.getUserProfile(userId);
-        if (result.success) {
-            setSelectedUser(result.data);
-            quickViewRef.current?.expand();
-        }
+        router.push(`/user/${userId}`);
     };
 
     // Story Tagging State

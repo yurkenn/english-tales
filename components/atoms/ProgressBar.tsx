@@ -6,12 +6,14 @@ interface ProgressBarProps {
     progress: number; // 0-100
     height?: number;
     showBackground?: boolean;
+    trackColor?: string;
 }
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({
     progress,
     height = 8,
     showBackground = true,
+    trackColor,
 }) => {
     const { theme } = useUnistyles();
     const clampedProgress = Math.min(100, Math.max(0, progress));
@@ -22,9 +24,11 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
                 styles.container,
                 {
                     height,
-                    backgroundColor: showBackground
-                        ? theme.colors.borderLight
-                        : 'transparent',
+                    backgroundColor: trackColor
+                        ? trackColor
+                        : showBackground
+                            ? theme.colors.borderLight
+                            : 'transparent',
                 },
             ]}
         >

@@ -41,22 +41,11 @@ export const ReadingControls: React.FC<ReadingControlsProps> = ({
 
     return (
         <View style={styles.controlRow}>
-            {/* Font Size */}
-            <View style={styles.fontControls}>
-                <Pressable style={styles.button} onPress={onFontDecrease}>
-                    <Text style={styles.fontButtonText}>A-</Text>
-                </Pressable>
-                <Text style={styles.fontSizeText}>{fontSize}pt</Text>
-                <Pressable style={styles.button} onPress={onFontIncrease}>
-                    <Text style={styles.fontButtonText}>A+</Text>
-                </Pressable>
-            </View>
-
-            {/* Theme Toggle */}
+            {/* Reading Settings Toggle (Font Size, etc) */}
             <Pressable style={styles.button} onPress={onThemeToggle}>
                 <Ionicons
-                    name={readingTheme === 'dark' ? 'sunny-outline' : 'moon-outline'}
-                    size={20}
+                    name={readingTheme === 'dark' ? 'sunny-outline' : 'moon'}
+                    size={22}
                     color={theme.colors.text}
                 />
             </Pressable>
@@ -65,19 +54,26 @@ export const ReadingControls: React.FC<ReadingControlsProps> = ({
             <Pressable style={styles.button} onPress={onBookmarkToggle}>
                 <Ionicons
                     name={isInLibrary ? 'bookmark' : 'bookmark-outline'}
-                    size={20}
+                    size={22}
                     color={isInLibrary ? theme.colors.primary : theme.colors.text}
                 />
             </Pressable>
 
             {/* Share */}
             <Pressable style={styles.button} onPress={handleShare}>
-                <Ionicons name="share-outline" size={20} color={theme.colors.text} />
+                <Ionicons name="share-outline" size={22} color={theme.colors.text} />
             </Pressable>
 
-            {/* Audio Assist */}
-            <Pressable style={[styles.button, styles.audioButton]} onPress={onAudioToggle}>
-                <Ionicons name="volume-medium-outline" size={20} color="#FFFFFF" />
+            {/* Audio Assist (Flipped prominence) */}
+            <Pressable
+                style={[
+                    styles.button,
+                    styles.audioButton,
+                    { backgroundColor: theme.colors.primary + '15' }
+                ]}
+                onPress={onAudioToggle}
+            >
+                <Ionicons name="volume-medium-outline" size={22} color={theme.colors.primary} />
             </Pressable>
         </View>
     );
@@ -87,31 +83,17 @@ const styles = StyleSheet.create((theme) => ({
     controlRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    fontControls: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: theme.spacing.md,
+        justifyContent: 'space-around', // Changed for more spread
+        paddingVertical: theme.spacing.xs,
     },
     button: {
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.md,
-        backgroundColor: theme.colors.backgroundSecondary,
+        width: 48,
+        height: 48,
+        borderRadius: 24,
         alignItems: 'center',
         justifyContent: 'center',
     },
-    fontButtonText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-    },
-    fontSizeText: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
-    },
     audioButton: {
-        backgroundColor: theme.colors.primary,
+        borderRadius: theme.radius.md,
     },
 }));

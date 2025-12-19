@@ -22,11 +22,13 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
     onWordPress,
     dyslexicFontEnabled,
 }) => {
+    const { theme } = useUnistyles();
+
     if (!content || !Array.isArray(content)) {
         return <Text style={[styles.paragraph, { fontSize, color: textColor, lineHeight: fontSize * lineHeight }]}>No content available.</Text>;
     }
 
-    const renderChildren = (children: any[], marks?: any[]) => {
+    const renderChildren = (children: any[], isFirstParagraph = false) => {
         return children.map((child, index) => {
             if (child._type === 'span') {
                 let style: any = {
@@ -34,14 +36,15 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
                     color: textColor,
                     lineHeight: fontSize * lineHeight,
                     letterSpacing: dyslexicFontEnabled ? 0.8 : 0.3,
-                    fontWeight: dyslexicFontEnabled ? '500' : '400',
+                    fontFamily: theme.typography.fontFamily.body,
                 };
 
                 // Apply marks (bold, italic, underline)
                 if (child.marks && child.marks.length > 0) {
                     child.marks.forEach((mark: string) => {
                         if (mark === 'strong') {
-                            style.fontWeight = 'bold';
+                            style.fontFamily = theme.typography.fontFamily.bold;
+                            style.fontWeight = '700';
                         } else if (mark === 'em') {
                             style.fontStyle = 'italic';
                         } else if (mark === 'underline') {
@@ -52,20 +55,34 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
 
                 if (onWordPress) {
                     // Split text into words while preserving spaces
-                    const words = child.text.split(/(\s+)/);
+                    let text = child.text;
+                    let dropCapLetter = '';
+
+                    // Handle Drop Cap for the first span of the first block
+                    if (isFirstParagraph && index === 0 && text.length > 0 && !dyslexicFontEnabled) {
+                        dropCapLetter = text.charAt(0);
+                        text = text.substring(1);
+                    }
+
+                    const words = text.split(/(\s+)/);
+
                     return (
                         <Text key={index} style={style}>
+                            {dropCapLetter ? (
+                                <Text style={[styles.dropCap, { color: theme.colors.primary, fontSize: fontSize * 2.5 }]}>
+                                    {dropCapLetter}
+                                </Text>
+                            ) : null}
                             {words.map((part: string, wordIdx: number) => {
-                                // If it's just whitespace, render it as-is
                                 if (part.trim() === '') {
                                     return <Text key={wordIdx}>{part}</Text>;
                                 }
-                                // If it's a word, make it pressable
                                 return (
                                     <Text
                                         key={wordIdx}
                                         onPress={() => onWordPress(part)}
                                         suppressHighlighting={false}
+                                        style={styles.word}
                                     >
                                         {part}
                                     </Text>
@@ -81,7 +98,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
         });
     };
 
-    const renderBlock = (block: any, index: number) => {
+    const renderBlock = (block: any, index: number, isFirst: boolean) => {
         // Handle images
         if (block._type === 'image') {
             const imageUrl = block.asset ? urlFor(block).width(800).url() : null;
@@ -91,10 +108,10 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
                         <Image
                             source={{ uri: imageUrl }}
                             style={styles.image}
-                            resizeMode="contain"
+                            resizeMode="cover"
                         />
                         {block.caption && (
-                            <Text style={[styles.caption, { color: textColor }]}>{block.caption}</Text>
+                            <Text style={[styles.caption, { color: theme.colors.textSecondary }]}>{block.caption}</Text>
                         )}
                     </View>
                 );
@@ -111,7 +128,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
                     options={block.options}
                     correctIndex={block.correctIndex}
                     textColor={textColor}
-                    onComplete={() => { }} // Could track progress here if needed
+                    onComplete={() => { }}
                 />
             );
         }
@@ -120,25 +137,25 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
             return null;
         }
 
-        const style = block.style || 'normal';
+        const blockStyle = block.style || 'normal';
 
-        switch (style) {
+        switch (blockStyle) {
             case 'h2':
                 return (
-                    <Text key={index} style={[styles.heading2, { color: textColor }]}>
+                    <Text key={index} style={[styles.heading2, { color: textColor, fontFamily: theme.typography.fontFamily.heading }]}>
                         {renderChildren(block.children)}
                     </Text>
                 );
             case 'h3':
                 return (
-                    <Text key={index} style={[styles.heading3, { color: textColor }]}>
+                    <Text key={index} style={[styles.heading3, { color: textColor, fontFamily: theme.typography.fontFamily.heading }]}>
                         {renderChildren(block.children)}
                     </Text>
                 );
             case 'blockquote':
                 return (
-                    <View key={index} style={styles.blockquote}>
-                        <Text style={[styles.blockquoteText, { fontSize, color: textColor, lineHeight: fontSize * lineHeight }]}>
+                    <View key={index} style={[styles.blockquote, { borderLeftColor: theme.colors.primary + '40' }]}>
+                        <Text style={[styles.blockquoteText, { fontSize: fontSize * 1.05, color: textColor, lineHeight: fontSize * lineHeight * 1.1 }]}>
                             {renderChildren(block.children)}
                         </Text>
                     </View>
@@ -151,10 +168,10 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
                             fontSize,
                             color: textColor,
                             lineHeight: fontSize * lineHeight,
-                            letterSpacing: dyslexicFontEnabled ? 1 : 0.3,
+                            letterSpacing: dyslexicFontEnabled ? 1 : 0.2,
                         }
                     ]}>
-                        {renderChildren(block.children)}
+                        {renderChildren(block.children, isFirst)}
                     </Text>
                 );
         }
@@ -162,53 +179,66 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
 
     return (
         <View style={styles.container}>
-            {content.map((block, index) => renderBlock(block, index))}
+            {content.map((block, index) => renderBlock(block, index, index === 0))}
         </View>
     );
 };
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        gap: theme.spacing.lg,
+        gap: theme.spacing.xl,
     },
     paragraph: {
-        letterSpacing: 0.3,
+        textAlign: 'left',
+    },
+    word: {
+        // Subtle feedback background can be added if needed
+    },
+    dropCap: {
+        fontWeight: '900',
+        lineHeight: 0, // Let it hang
+        paddingRight: theme.spacing.sm,
+        marginTop: theme.spacing.sm,
     },
     heading2: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginTop: theme.spacing.lg,
+        fontSize: 28,
+        marginTop: theme.spacing.xl,
         marginBottom: theme.spacing.sm,
+        letterSpacing: -0.5,
     },
     heading3: {
-        fontSize: 20,
-        fontWeight: '600',
-        marginTop: theme.spacing.md,
+        fontSize: 22,
+        marginTop: theme.spacing.lg,
         marginBottom: theme.spacing.xs,
+        letterSpacing: -0.3,
     },
     blockquote: {
-        borderLeftWidth: 3,
-        borderLeftColor: theme.colors.primary,
-        paddingLeft: theme.spacing.lg,
-        marginVertical: theme.spacing.md,
-        opacity: 0.9,
+        borderLeftWidth: 4,
+        paddingLeft: theme.spacing.xl,
+        marginVertical: theme.spacing.xl,
+        backgroundColor: theme.colors.primary + '08',
+        paddingVertical: theme.spacing.lg,
+        borderRadius: theme.radius.sm,
     },
     blockquoteText: {
         fontStyle: 'italic',
+        opacity: 0.9,
     },
     imageContainer: {
-        marginVertical: theme.spacing.lg,
+        marginVertical: theme.spacing.xxl,
         alignItems: 'center',
     },
     image: {
         width: '100%',
-        height: 200,
-        borderRadius: theme.radius.lg,
+        aspectRatio: 16 / 9,
+        borderRadius: theme.radius.xl,
+        backgroundColor: theme.colors.borderLight,
     },
     caption: {
-        fontSize: 12,
-        marginTop: theme.spacing.sm,
+        fontSize: 13,
+        marginTop: theme.spacing.md,
         textAlign: 'center',
-        opacity: 0.7,
+        fontStyle: 'italic',
+        opacity: 0.6,
     },
 }));
