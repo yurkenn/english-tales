@@ -25,7 +25,10 @@ import { haptics } from '@/utils/haptics';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
+import { useTranslation } from 'react-i18next';
+
 export default function LibraryScreen() {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
@@ -127,7 +130,7 @@ export default function LibraryScreen() {
 
         if (isDownloaded) {
             items.push({
-                label: 'Delete Download',
+                label: t('library.menu.deleteDownload'),
                 icon: 'trash-outline',
                 destructive: true,
                 onPress: () => {
@@ -138,7 +141,7 @@ export default function LibraryScreen() {
         }
 
         items.push({
-            label: 'Remove from Library',
+            label: t('library.menu.removeFromLibrary'),
             icon: 'remove-circle-outline',
             destructive: true,
             onPress: () => {
@@ -148,7 +151,7 @@ export default function LibraryScreen() {
         });
 
         return items;
-    }, [selectedItem, downloadActions]);
+    }, [selectedItem, downloadActions, t]);
 
     const renderItem = useCallback(({ item }: { item: LibraryItemWithProgress }) => (
         <LibraryBookCard
@@ -221,9 +224,9 @@ export default function LibraryScreen() {
                 ListEmptyComponent={
                     <EmptyState
                         icon="book-outline"
-                        title={filter === 'all' ? "Your library is empty" : `No ${FILTER_LABELS[filter].toLowerCase()} books`}
-                        message={filter === 'all' ? "Start reading to add books to your library" : "Try changing the filter"}
-                        actionLabel={filter === 'all' ? "Discover Stories" : "Clear Filter"}
+                        title={filter === 'all' ? t('library.empty') : t('common.error')}
+                        message={filter === 'all' ? t('library.emptyMessage') : t('common.retry')}
+                        actionLabel={filter === 'all' ? t('library.discoverStories') : t('common.retry')}
                         onAction={filter === 'all' ? () => router.push('/(tabs)/discover') : () => setFilter('all')}
                     />
                 }
@@ -238,10 +241,10 @@ export default function LibraryScreen() {
 
             <ConfirmationDialog
                 ref={removeFromLibraryDialogRef}
-                title="Remove from Library"
-                message={selectedItem ? `Remove "${selectedItem.story.title}" from your library?` : ''}
-                confirmLabel="Remove"
-                cancelLabel="Cancel"
+                title={t('library.dialogs.removeTitle')}
+                message={selectedItem ? t('library.dialogs.removeMessage', { title: selectedItem.story.title }) : ''}
+                confirmLabel={t('common.delete')}
+                cancelLabel={t('common.cancel')}
                 destructive
                 icon="remove-circle-outline"
                 onConfirm={async () => {
@@ -249,7 +252,7 @@ export default function LibraryScreen() {
                         await libraryActions.removeFromLibrary(selectedItem.storyId);
                         haptics.success();
                         removeFromLibraryDialogRef.current?.close();
-                        useToastStore.getState().actions.success('Removed from library');
+                        useToastStore.getState().actions.success(t('common.save'));
                     }
                 }}
                 onCancel={() => removeFromLibraryDialogRef.current?.close()}
@@ -257,10 +260,10 @@ export default function LibraryScreen() {
 
             <ConfirmationDialog
                 ref={deleteDownloadDialogRef}
-                title="Delete Download"
-                message={selectedItem ? `Delete "${selectedItem.story.title}" download? It will no longer be available offline.` : ''}
-                confirmLabel="Delete"
-                cancelLabel="Cancel"
+                title={t('library.dialogs.deleteDownloadTitle')}
+                message={selectedItem ? t('library.dialogs.deleteDownloadMessage', { title: selectedItem.story.title }) : ''}
+                confirmLabel={t('common.delete')}
+                cancelLabel={t('common.cancel')}
                 destructive
                 icon="trash-outline"
                 onConfirm={async () => {
@@ -268,7 +271,7 @@ export default function LibraryScreen() {
                         await downloadActions.deleteDownload(selectedItem.storyId);
                         haptics.success();
                         deleteDownloadDialogRef.current?.close();
-                        useToastStore.getState().actions.success('Download deleted');
+                        useToastStore.getState().actions.success(t('common.delete'));
                     }
                 }}
                 onCancel={() => deleteDownloadDialogRef.current?.close()}

@@ -5,15 +5,14 @@ import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import BottomSheet from '@gorhom/bottom-sheet';
-import {
-    ProfileCard,
-    StatsGrid,
-    ProfileMenu,
-    ReadingGoalsSheet,
-    ProfileScreenSkeleton,
-    ReadingCalendar,
-} from '@/components';
-import type { MenuItem } from '@/components';
+import { ProfileCard } from '../../components/ProfileCard';
+import { StatsGrid } from '../../components/StatsGrid';
+import { ProfileMenu } from '../../components/ProfileMenu';
+import { ReadingGoalsSheet } from '../../components/ReadingGoalsSheet';
+import { ProfileScreenSkeleton } from '../../components/skeletons/ProfileScreenSkeleton';
+import { ReadingCalendar } from '../../components/ReadingCalendar';
+import { ActionSheet } from '../../components/ActionSheet';
+import type { MenuItem } from '../../components/ProfileMenu';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
@@ -23,7 +22,10 @@ import { useSettingsStore } from '@/store/settingsStore';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 
+import { useTranslation } from 'react-i18next';
+
 export default function ProfileScreen() {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
@@ -33,6 +35,7 @@ export default function ProfileScreen() {
 
     // Bottom sheet refs
     const goalsSheetRef = useRef<BottomSheet>(null);
+    const langSheetRef = useRef<BottomSheet>(null);
 
     // Compute real stats from progress data
     const computedStats = useMemo(() => {
@@ -51,8 +54,8 @@ export default function ProfileScreen() {
     }, [progressMap, progressActions]);
 
     const stats = [
-        { label: 'Books Read', value: computedStats.booksRead, icon: 'book' as const },
-        { label: 'Day Streak', value: computedStats.readingStreak, icon: 'flame' as const },
+        { label: t('profile.booksRead', 'Books Read'), value: computedStats.booksRead, icon: 'book' as const },
+        { label: t('profile.dayStreak', 'Day Streak'), value: computedStats.readingStreak, icon: 'flame' as const },
     ];
 
     // Prepare reading data for calendar
@@ -69,7 +72,7 @@ export default function ProfileScreen() {
 
     // Theme
     const { mode: themeMode, actions: themeActions } = useThemeStore();
-    const themeModeLabel = themeMode === 'system' ? 'System' : themeMode === 'light' ? 'Light' : 'Dark';
+    const themeModeLabel = themeMode === 'system' ? t('appearance.system', 'System') : themeMode === 'light' ? t('appearance.light', 'Light') : t('appearance.dark', 'Dark');
 
     // Achievements
     const { actions: achievementActions } = useAchievementsStore();
@@ -79,6 +82,16 @@ export default function ProfileScreen() {
     // Settings
     const { settings, actions: settingsActions } = useSettingsStore();
     const toastActions = useToastStore((state) => state.actions);
+
+    const LANGUAGES = [
+        { code: 'en', label: 'English' },
+        { code: 'tr', label: 'Türkçe' },
+        { code: 'es', label: 'Español' },
+        { code: 'de', label: 'Deutsch' },
+        { code: 'fr', label: 'Français' },
+    ];
+
+    const currentLanguageLabel = LANGUAGES.find(l => l.code === (settings.language || 'en'))?.label || 'English';
 
     useEffect(() => {
         settingsActions.loadSettings();
@@ -102,26 +115,32 @@ export default function ProfileScreen() {
     const handleNotifications = async () => {
         haptics.selection();
         await settingsActions.updateSettings({ notificationsEnabled: !settings.notificationsEnabled });
-        toastActions.success(`Notifications ${!settings.notificationsEnabled ? 'enabled' : 'disabled'}`);
+        toastActions.success(t('notifications.feedback', { status: !settings.notificationsEnabled ? t('common.on') : t('common.off') }));
     };
 
     const handleHelp = () => {
         haptics.selection();
-        toastActions.info('Need help? Contact us at support@englishtales.app');
+        toastActions.info(t('profile.helpMessage', 'Need help? Contact us at support@englishtales.app'));
     };
 
     const handleAbout = () => {
         haptics.selection();
-        toastActions.info('English Tales v1.0.0\n\nImprove your English through beautiful stories.\n\n© 2024 English Tales');
+        toastActions.info(t('profile.aboutMessage', 'English Tales v1.0.0\n\nImprove your English through beautiful stories.\n\n© 2024 English Tales'));
+    };
+
+    const handleLanguage = () => {
+        haptics.selection();
+        langSheetRef.current?.expand();
     };
 
     const menuItems: MenuItem[] = [
-        { label: 'Reading Goals', icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: handleOpenGoals },
-        { label: 'Achievements', icon: 'trophy-outline', value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
-        { label: 'Notifications', icon: 'notifications-outline', value: settings.notificationsEnabled ? 'On' : 'Off', onPress: handleNotifications },
-        { label: 'Appearance', icon: 'color-palette-outline', value: themeModeLabel, onPress: themeActions.toggleTheme },
-        { label: 'Help & Support', icon: 'help-circle-outline', onPress: handleHelp },
-        { label: 'About', icon: 'information-circle-outline', onPress: handleAbout },
+        { label: t('profile.readingGoals'), icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: handleOpenGoals },
+        { label: t('profile.achievements'), icon: 'trophy-outline', value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
+        { label: t('profile.language'), icon: 'language-outline', value: currentLanguageLabel, onPress: handleLanguage },
+        { label: t('profile.notifications'), icon: 'notifications-outline', value: settings.notificationsEnabled ? t('common.on') : t('common.off'), onPress: handleNotifications },
+        { label: t('profile.appearance'), icon: 'color-palette-outline', value: themeModeLabel, onPress: themeActions.toggleTheme },
+        { label: t('profile.help'), icon: 'help-circle-outline', onPress: handleHelp },
+        { label: t('profile.about'), icon: 'information-circle-outline', onPress: handleAbout },
     ];
 
     if (isLoading) {
@@ -139,7 +158,7 @@ export default function ProfileScreen() {
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
                 {/* Header */}
                 <View style={styles.header}>
-                    <Text style={styles.title}>Profile</Text>
+                    <Text style={styles.title}>{t('profile.title')}</Text>
                     <Pressable
                         style={styles.settingsButton}
                         hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
@@ -170,7 +189,7 @@ export default function ProfileScreen() {
                 {/* Sign Out */}
                 <Pressable style={styles.signOutButton} onPress={signOut}>
                     <Ionicons name="log-out-outline" size={22} color={theme.colors.error} />
-                    <Text style={styles.signOutText}>Sign Out</Text>
+                    <Text style={styles.signOutText}>{t('profile.signOut')}</Text>
                 </Pressable>
             </ScrollView>
 
@@ -180,6 +199,21 @@ export default function ProfileScreen() {
                 currentGoal={settings.dailyGoalMinutes}
                 onSelectGoal={(minutes) => settingsActions.updateSettings({ dailyGoalMinutes: minutes })}
                 onClose={handleCloseGoals}
+            />
+
+            {/* Language Selection Sheet */}
+            <ActionSheet
+                ref={langSheetRef}
+                title={t('settings.preferences.language')}
+                options={LANGUAGES.map(lang => ({
+                    label: lang.label,
+                    icon: (settings.language === lang.code) ? 'checkmark-circle' : 'ellipse-outline',
+                    onPress: () => {
+                        haptics.success();
+                        settingsActions.updateSettings({ language: lang.code as any });
+                    }
+                }))}
+                onClose={() => langSheetRef.current?.close()}
             />
         </View>
     );

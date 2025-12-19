@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 export interface MenuItem {
     label: string;
@@ -15,11 +16,12 @@ interface ProfileMenuProps {
 }
 
 export const ProfileMenu: React.FC<ProfileMenuProps> = ({ items }) => {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
 
     return (
         <View style={styles.container}>
-            <Text style={styles.sectionTitle}>Quick Settings</Text>
+            <Text style={styles.sectionTitle}>{t('profile.quickSettings', 'Quick Settings')}</Text>
             <View style={styles.menuCard}>
                 {items.map((item, index) => (
                     <Pressable

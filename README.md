@@ -1,28 +1,46 @@
-# English Tales
+# English Tales 📚
 
-## Google Play Store link to download the app
+Beautifully illustrated stories for English learners.
 
-https://play.google.com/store/apps/details?id=com.yurken.englishtales
+## 🚀 Modern Architecture
+This app is built with a focus on performance, maintainability, and developer experience.
 
-## Introduction
+- **Framework:** Expo (React Native) with Expo Router (File-based routing)
+- **Theming:** [react-native-unistyles](https://github.com/jpb06/react-native-unistyles) (Modern, type-safe, and high-performance)
+- **State Management:** [Zustand](https://github.com/pmndrs/zustand) (Lightweight and modular store management)
+- **Data Fetching:** [TanStack Query v5](https://tanstack.com/query/latest) (Declarative async data management)
+- **CMS:** [Sanity.io](https://www.sanity.io/) (Headless CMS for rich story content)
+- **Backend:** Firebase (Authentication and user data storage)
 
-This is a project to help people learn English by reading tales.
+## 🌍 Localization
+Fully prepared for multi-language support using `i18next`. Currently supporting:
+- English (Primary)
+- Turkish
+- Spanish
+- German
+- French
 
-## Screenshots
+## 🛠️ Getting Started
 
-<div>
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/33022e1a-7149-4a88-8819-752b45645a20" width="222" height="480" />
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/1bb6e5b5-9161-4147-898c-b74646273fbd" width="222" height="480" />
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/05b52717-ebe3-4d86-9614-df49da50f472" width="222" height="480" />
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/98243e26-1988-4c23-baf7-6a34ff3aebbb" width="222" height="480" />
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/4a173b9b-95ee-479b-9f22-55b73ceca700" width="222" height="480" />
-</div>
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Features && How to use
+2. **Environment Setup:**
+   Create a `.env` file with your Firebase and Sanity credentials.
 
-1. Download the app from the Google Play Store
-2. Open the app
-3. Choose the tale you want to read
-4. Read the tale
-5. Save the tale to your favorites
-6. Share the tale with your friends whatever you like
+3. **Run the app:**
+   ```bash
+   npm run ios     # Run on iOS Simulator
+   npm run android # Run on Android Emulator
+   ```
+
+## 🧪 Testing
+Includes Unit and Component testing infrastructure.
+```bash
+npm test
+```
+
+## 📖 Architecture
+Detailed architecture overview is available in [ARCHITECTURE.md](./ARCHITECTURE.md).

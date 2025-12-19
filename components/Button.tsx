@@ -3,18 +3,29 @@ import { Text, Pressable, PressableProps, ActivityIndicator, View } from 'react-
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
-
 export interface ButtonProps extends Omit<PressableProps, 'children'> {
+  /** Text to display on the button */
   title?: string;
+  /** If true, the button will show a loading indicator and be disabled */
   loading?: boolean;
+  /** Optional icon name from Ionicons */
   icon?: keyof typeof Ionicons.glyphMap;
+  /** Position of the icon relative to the text */
   iconPosition?: 'left' | 'right';
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  /** Visual variant of the button */
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'error';
+  /** Size variant of the button */
   size?: 'sm' | 'md' | 'lg';
+  /** If true, the button will take up the full width of its container */
   fullWidth?: boolean;
+  /** Children to render inside the button, overrides `title` if provided */
   children?: React.ReactNode;
 }
 
+/**
+ * Reusable Button component with multiple variants and sizes.
+ * Supports loading state, icons, and haptic feedback.
+ */
 export const Button = forwardRef<View, ButtonProps>(({
   title,
   loading = false,
@@ -64,9 +75,14 @@ export const Button = forwardRef<View, ButtonProps>(({
       borderWidth: 0,
       borderColor: 'transparent',
     },
+    error: {
+      backgroundColor: theme.colors.error,
+      borderWidth: 0,
+      borderColor: 'transparent',
+    },
   };
 
-  const textColor = variant === 'primary'
+  const textColor = variant === 'primary' || variant === 'error'
     ? theme.colors.textInverse
     : variant === 'outline' || variant === 'ghost'
       ? theme.colors.primary

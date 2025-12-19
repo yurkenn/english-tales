@@ -9,7 +9,10 @@ import { BookCard, NetworkError, EmptyState, AuthorScreenSkeleton } from '@/comp
 import { urlFor } from '@/services/sanity/client';
 import { mapSanityStory } from '@/utils/storyMapper';
 
+import { useTranslation } from 'react-i18next';
+
 export default function AuthorScreen() {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
@@ -50,7 +53,7 @@ export default function AuthorScreen() {
             return (
                 <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
                     <NetworkError
-                        message="Failed to load author. Please try again."
+                        message={t('authors.notFound')}
                         onRetry={refetchAuthor}
                     />
                 </View>
@@ -58,9 +61,9 @@ export default function AuthorScreen() {
         }
         return (
             <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
-                <Text style={styles.errorText}>Author not found</Text>
+                <Text style={styles.errorText}>{t('authors.notFound')}</Text>
                 <Pressable onPress={() => router.back()} style={{ marginTop: 20 }}>
-                    <Text style={{ color: theme.colors.primary }}>Go Back</Text>
+                    <Text style={{ color: theme.colors.primary }}>{t('common.goBack')}</Text>
                 </Pressable>
             </View>
         );
@@ -73,7 +76,7 @@ export default function AuthorScreen() {
                 <Pressable style={styles.backButton} onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
-                <Text style={styles.headerTitle}>Author</Text>
+                <Text style={styles.headerTitle}>{t('authors.author')}</Text>
                 <View style={styles.placeholder} />
             </View>
 
@@ -85,7 +88,7 @@ export default function AuthorScreen() {
                         style={styles.avatar}
                     />
                     <Text style={styles.authorName}>{author.name}</Text>
-                    <Text style={styles.storyCount}>{author.storyCount} stories</Text>
+                    <Text style={styles.storyCount}>{author.storyCount} {author.storyCount === 1 ? t('authors.storyCountSingular') : t('authors.storyCount', { count: author.storyCount })}</Text>
                     {author.bio && (
                         <Text style={styles.bio}>{author.bio}</Text>
                     )}
@@ -93,7 +96,7 @@ export default function AuthorScreen() {
 
                 {/* Stories by Author */}
                 <View style={styles.storiesSection}>
-                    <Text style={styles.sectionTitle}>Stories</Text>
+                    <Text style={styles.sectionTitle}>{t('authors.stories')}</Text>
                     {authorStories.length > 0 ? (
                         <ScrollView
                             horizontal
@@ -111,8 +114,8 @@ export default function AuthorScreen() {
                     ) : (
                         <EmptyState
                             icon="book-outline"
-                            title="No stories yet"
-                            message="This author hasn't published any stories yet"
+                            title={t('authors.noStoriesTitle')}
+                            message={t('authors.noStoriesMessage')}
                         />
                     )}
                 </View>

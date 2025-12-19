@@ -21,7 +21,10 @@ import { useDownloadStore } from '@/store/downloadStore';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
 
+import { useTranslation } from 'react-i18next';
+
 export default function ReadingScreen() {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
@@ -140,9 +143,9 @@ export default function ReadingScreen() {
     if (!storyDoc) {
         return (
             <View style={[styles.container, { paddingTop: insets.top }, styles.center]}>
-                <Text style={styles.errorText}>Story not found</Text>
+                <Text style={styles.errorText}>{t('reading.notFound')}</Text>
                 <Pressable onPress={() => router.back()} style={{ marginTop: 20 }}>
-                    <Text style={{ color: theme.colors.primary }}>Go Back</Text>
+                    <Text style={{ color: theme.colors.primary }}>{t('common.goBack')}</Text>
                 </Pressable>
             </View>
         );
@@ -178,7 +181,7 @@ export default function ReadingScreen() {
                     />
                 ) : (
                     <Text style={[styles.storyText, { fontSize, color: READING_THEMES[readingTheme].text }]}>
-                        No content available.
+                        {t('reading.noContent')}
                     </Text>
                 )}
             </ScrollView>

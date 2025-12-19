@@ -2,6 +2,8 @@ import { create } from 'zustand';
 import { Settings } from '@/types';
 import { Result } from '@/types/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import i18n from '@/i18n';
+import * as Localization from 'expo-localization';
 
 const SETTINGS_KEY = '@english_tales_settings';
 
@@ -20,11 +22,21 @@ interface SettingsActions {
 }
 
 // Default settings
+const getInitialLanguage = () => {
+    try {
+        const locales = Localization.getLocales();
+        return (locales && locales.length > 0 ? locales[0].languageCode : 'en') as any;
+    } catch {
+        return 'en';
+    }
+};
+
 const defaultSettings: Settings = {
     theme: 'system',
     fontSize: 'medium',
     notificationsEnabled: true,
     dailyGoalMinutes: 15,
+    language: getInitialLanguage(),
 };
 
 // Initial state
@@ -42,6 +54,11 @@ export const useSettingsStore = create<SettingsState & { actions: SettingsAction
             try {
                 const newSettings = { ...get().settings, ...updates };
                 await AsyncStorage.setItem(SETTINGS_KEY, JSON.stringify(newSettings));
+
+                if (updates.language) {
+                    await i18n.changeLanguage(updates.language);
+                }
+
                 set({ settings: newSettings });
                 return { success: true, data: newSettings };
             } catch (error) {
@@ -62,7 +79,14 @@ export const useSettingsStore = create<SettingsState & { actions: SettingsAction
                 const stored = await AsyncStorage.getItem(SETTINGS_KEY);
                 if (stored) {
                     const parsed = JSON.parse(stored) as Settings;
-                    set({ settings: { ...defaultSettings, ...parsed }, isLoading: false });
+                    const mergedSettings = { ...defaultSettings, ...parsed };
+
+                    // Apply language to i18n
+                    if (mergedSettings.language) {
+                        await i18n.changeLanguage(mergedSettings.language);
+                    }
+
+                    set({ settings: mergedSettings, isLoading: false });
                 } else {
                     set({ isLoading: false });
                 }

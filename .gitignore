@@ -58,7 +58,6 @@ logs
 # Testing
 coverage/
 .jest/
-__tests__/
 
 # Build
 build/

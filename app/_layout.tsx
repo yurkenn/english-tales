@@ -1,17 +1,27 @@
 import '@/theme/unistyles';
+import '@/i18n'; // Initialize i18n
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import * as SplashScreen from 'expo-splash-screen';
 import { QueryProvider } from '@/providers/QueryProvider';
-import { useAuthStore } from '@/store/authStore';
-import { useLibraryStore } from '@/store/libraryStore';
-import { useProgressStore } from '@/store/progressStore';
-import { useThemeStore, useThemeKey, useIsDark } from '@/store/themeStore';
-import { useDownloadStore } from '@/store/downloadStore';
-import { secureStorage } from '@/services/storage';
-import { AchievementToast, ToastContainer, ErrorBoundary } from '@/components';
-import { lightTheme, darkTheme } from '@/theme/unistyles';
+import { useAuthStore } from '../store/authStore';
+import { useLibraryStore } from '../store/libraryStore';
+import { useProgressStore } from '../store/progressStore';
+import { useThemeStore, useThemeKey, useIsDark } from '../store/themeStore';
+import { useDownloadStore } from '../store/downloadStore';
+import { secureStorage } from '../services/storage';
+import { AchievementToast } from '../components/AchievementToast';
+import { ToastContainer } from '../components/ToastContainer';
+import { ErrorBoundary } from '../components/ErrorBoundary';
+import { AnimatedSplashScreen } from '../components/AnimatedSplashScreen';
+import { lightTheme, darkTheme } from '../theme/unistyles';
+
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync().catch(() => {
+  /* reloading the app might cause some errors here, safe to ignore */
+});
 
 export default function RootLayout() {
   const { initialize, user, isLoading, initialized } = useAuthStore();
@@ -26,6 +36,9 @@ export default function RootLayout() {
   // Subscribe to theme changes for force re-render
   const themeKey = useThemeKey();
   const isDark = useIsDark();
+
+  const [isSplashAnimationFinished, setIsSplashAnimationFinished] = useState(false);
+  const [isAppReady, setIsAppReady] = useState(false);
 
   // Get the correct theme object based on isDark state
   const currentTheme = isDark ? darkTheme : lightTheme;
@@ -45,6 +58,28 @@ export default function RootLayout() {
     const cleanup = themeActions.setupSystemThemeListener();
     return cleanup;
   }, [themeActions, downloadActions]);
+
+  // Handle splash screen visibility
+  useEffect(() => {
+    if (initialized && !isLoading) {
+      // App is initialized (auth, settings etc)
+      setIsAppReady(true);
+    }
+  }, [initialized, isLoading]);
+
+  const onSplashAnimationComplete = () => {
+    setIsSplashAnimationFinished(true);
+  };
+
+  // Hide native splash once the animated splash component is ready to handle the transition
+  useEffect(() => {
+    if (isAppReady) {
+      // Wait a tiny frame to ensure the AnimatedSplashScreen is rendered
+      requestAnimationFrame(async () => {
+        await SplashScreen.hideAsync().catch(() => { });
+      });
+    }
+  }, [isAppReady]);
 
   // Sync stores with auth state
   useEffect(() => {
@@ -79,7 +114,7 @@ export default function RootLayout() {
 
       if (!user && inProtectedGroup) {
         router.replace('/login');
-      } else if (user && inAuthGroup) {
+      } else if (user && !user.isAnonymous && inAuthGroup) {
         router.replace('/(tabs)');
       }
 
@@ -94,6 +129,9 @@ export default function RootLayout() {
       <GestureHandlerRootView style={{ flex: 1 }} key={`root-${themeKey}`}>
         <QueryProvider>
           <BottomSheetModalProvider>
+            {!isSplashAnimationFinished && (
+              <AnimatedSplashScreen onAnimationComplete={onSplashAnimationComplete} />
+            )}
             <Stack
               screenOptions={{
                 headerShown: false,

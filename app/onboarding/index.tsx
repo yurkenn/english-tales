@@ -5,15 +5,19 @@ import {
     FlatList,
     useWindowDimensions,
     Pressable,
-    Image,
     NativeSyntheticEvent,
     NativeScrollEvent,
+    ActivityIndicator,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useUnistyles, StyleSheet } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { secureStorage } from '@/services/storage';
 import { LinearGradient } from 'expo-linear-gradient';
+import { signInAnonymously } from '@/services/auth';
+import { useSettingsStore } from '@/store/settingsStore';
+
+type ProficiencyLevel = 'beginner' | 'intermediate' | 'advanced';
 
 const ONBOARDING_DATA = [
     {
@@ -26,16 +30,31 @@ const ONBOARDING_DATA = [
         id: 'connect',
         title: 'Connect with\nFellow Readers',
         description: 'Curate your bookshelf, share reviews, and discover what your friends are reading right now.',
-        buttonLabel: 'Get Started',
+        buttonLabel: 'Next',
     },
+    {
+        id: 'level',
+        title: 'What\'s Your\nEnglish Level?',
+        description: 'Help us personalize your reading experience by selecting your proficiency.',
+        buttonLabel: 'Start Reading',
+    },
+];
+
+const LEVELS: { id: ProficiencyLevel; label: string; icon: string; description: string }[] = [
+    { id: 'beginner', label: 'Beginner', icon: '🌱', description: 'Simple words, short sentences' },
+    { id: 'intermediate', label: 'Intermediate', icon: '📚', description: 'Everyday vocabulary, complex sentences' },
+    { id: 'advanced', label: 'Advanced', icon: '🎓', description: 'Rich vocabulary, literary style' },
 ];
 
 export default function OnboardingScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
-    const { width, height } = useWindowDimensions();
+    const { width } = useWindowDimensions();
     const flatListRef = useRef<FlatList>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedLevel, setSelectedLevel] = useState<ProficiencyLevel>('intermediate');
+    const [isLoading, setIsLoading] = useState(false);
+    const settingsActions = useSettingsStore((s) => s.actions);
 
     const handleNext = async () => {
         if (currentIndex < ONBOARDING_DATA.length - 1) {
@@ -49,9 +68,23 @@ export default function OnboardingScreen() {
     };
 
     const completeOnboarding = async () => {
-        // Mark onboarding as completed
-        await secureStorage.setOnboardingComplete();
-        router.replace('/(tabs)');
+        setIsLoading(true);
+        try {
+            // Save proficiency level
+            await settingsActions.updateSettings({ proficiencyLevel: selectedLevel });
+            // Sign in as guest
+            await signInAnonymously();
+            // Mark onboarding as completed
+            await secureStorage.setOnboardingComplete();
+            router.replace('/(tabs)');
+        } catch (error) {
+            console.error('Onboarding completion error:', error);
+            // Still navigate even if anonymous sign-in fails
+            await secureStorage.setOnboardingComplete();
+            router.replace('/(tabs)');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const onScroll = useCallback((event: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -70,8 +103,13 @@ export default function OnboardingScreen() {
                 <View style={styles.visualContainer}>
                     {item.id === 'track' ? (
                         <TrackProgressVisual />
-                    ) : (
+                    ) : item.id === 'connect' ? (
                         <ConnectShareVisual />
+                    ) : (
+                        <LevelSelectionVisual
+                            selectedLevel={selectedLevel}
+                            onSelectLevel={setSelectedLevel}
+                        />
                     )}
                 </View>
 
@@ -97,15 +135,22 @@ export default function OnboardingScreen() {
 
                     {/* Action Button */}
                     <Pressable
-                        style={styles.button}
+                        style={[styles.button, isLoading && styles.buttonDisabled]}
                         onPress={handleNext}
+                        disabled={isLoading}
                     >
-                        <Text style={styles.buttonText}>{item.buttonLabel}</Text>
-                        <Ionicons name="arrow-forward" size={24} color={theme.colors.textInverse} />
+                        {isLoading ? (
+                            <ActivityIndicator color={theme.colors.textInverse} />
+                        ) : (
+                            <>
+                                <Text style={styles.buttonText}>{item.buttonLabel}</Text>
+                                <Ionicons name="arrow-forward" size={24} color={theme.colors.textInverse} />
+                            </>
+                        )}
                     </Pressable>
 
-                    {index === 1 && (
-                        <Pressable style={styles.linkButton} onPress={() => router.replace('/(tabs)')}>
+                    {index === ONBOARDING_DATA.length - 1 && (
+                        <Pressable style={styles.linkButton} onPress={() => router.replace('/login')}>
                             <Text style={styles.linkText}>
                                 Already have an account? <Text style={styles.linkHighlight}>Log In</Text>
                             </Text>
@@ -130,11 +175,16 @@ export default function OnboardingScreen() {
                 keyExtractor={(item) => item.id}
                 bounces={false}
             />
-            {/* Skip Button - Only on first slide */}
-            {currentIndex === 0 && (
+            {/* Skip Button - Only on first two slides */}
+            {currentIndex < ONBOARDING_DATA.length - 1 && (
                 <Pressable
                     style={[styles.skipButton, { top: 60 }]}
-                    onPress={() => completeOnboarding()}
+                    onPress={() => {
+                        flatListRef.current?.scrollToIndex({
+                            index: ONBOARDING_DATA.length - 1,
+                            animated: true,
+                        });
+                    }}
                 >
                     <Text style={styles.skipText}>Skip</Text>
                 </Pressable>
@@ -143,10 +193,51 @@ export default function OnboardingScreen() {
     );
 }
 
+// Level Selection Visual
+const LevelSelectionVisual = ({
+    selectedLevel,
+    onSelectLevel,
+}: {
+    selectedLevel: ProficiencyLevel;
+    onSelectLevel: (level: ProficiencyLevel) => void;
+}) => {
+    const { theme } = useUnistyles();
+
+    return (
+        <View style={styles.levelContainer}>
+            {LEVELS.map((level) => (
+                <Pressable
+                    key={level.id}
+                    style={[
+                        styles.levelCard,
+                        selectedLevel === level.id && styles.levelCardSelected,
+                    ]}
+                    onPress={() => onSelectLevel(level.id)}
+                >
+                    <View style={styles.levelIconContainer}>
+                        <Text style={styles.levelIcon}>{level.icon}</Text>
+                    </View>
+                    <View style={styles.levelTextContainer}>
+                        <Text style={[
+                            styles.levelLabel,
+                            selectedLevel === level.id && styles.levelLabelSelected,
+                        ]}>
+                            {level.label}
+                        </Text>
+                        <Text style={styles.levelDescription}>{level.description}</Text>
+                    </View>
+                    {selectedLevel === level.id && (
+                        <Ionicons name="checkmark-circle" size={24} color={theme.colors.primary} />
+                    )}
+                </Pressable>
+            ))}
+        </View>
+    );
+};
+
 // Visual Components matching the design
 const TrackProgressVisual = () => {
     const { theme } = useUnistyles();
-    // Using placeholders or colored views to simulate the complex design
     return (
         <View style={styles.visualWrapper}>
             {/* Ambient Background Blob */}
@@ -324,6 +415,9 @@ const styles = StyleSheet.create((theme) => ({
         gap: 8,
         ...theme.shadows.md,
     },
+    buttonDisabled: {
+        opacity: 0.7,
+    },
     buttonText: {
         color: theme.colors.textInverse,
         fontSize: theme.typography.size.lg,
@@ -354,13 +448,59 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         fontWeight: 'bold',
     },
+    // Level Selection Styles
+    levelContainer: {
+        width: '100%',
+        paddingHorizontal: 24,
+        gap: 12,
+    },
+    levelCard: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 16,
+        backgroundColor: theme.colors.surface,
+        borderRadius: theme.radius.xl,
+        borderWidth: 2,
+        borderColor: theme.colors.borderLight,
+        gap: 12,
+    },
+    levelCardSelected: {
+        borderColor: theme.colors.primary,
+        backgroundColor: theme.colors.primary + '10',
+    },
+    levelIconContainer: {
+        width: 48,
+        height: 48,
+        borderRadius: 24,
+        backgroundColor: theme.colors.borderLight,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    levelIcon: {
+        fontSize: 24,
+    },
+    levelTextContainer: {
+        flex: 1,
+    },
+    levelLabel: {
+        fontSize: theme.typography.size.lg,
+        fontWeight: 'bold',
+        color: theme.colors.text,
+        marginBottom: 2,
+    },
+    levelLabelSelected: {
+        color: theme.colors.primary,
+    },
+    levelDescription: {
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textMuted,
+    },
     // Visual Styles
     blob: {
         position: 'absolute',
         width: 250,
         height: 250,
         borderRadius: 999,
-        filter: 'blur(40px)', // Note: blur might need platform specific handling or image
         opacity: 0.5,
     },
     cardCommon: {

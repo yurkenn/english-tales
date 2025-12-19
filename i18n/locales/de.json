@@ -1,0 +1,194 @@
+{
+    "common": {
+        "error": "Etwas ist schief gelaufen",
+        "retry": "Nochmal versuchen",
+        "cancel": "Abbrechen",
+        "save": "Speichern",
+        "delete": "Löschen",
+        "loading": "Laden...",
+        "search": "Suchen...",
+        "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung.",
+        "all": "Alle",
+        "easy": "Einfach",
+        "medium": "Mittel",
+        "hard": "Schwer",
+        "on": "An",
+        "off": "Aus",
+        "goBack": "Zurück"
+    },
+    "tabs": {
+        "home": "Startseite",
+        "discover": "Entdecken",
+        "library": "Bibliothek",
+        "profile": "Profil"
+    },
+    "profile": {
+        "title": "Profil",
+        "booksRead": "Gelesene Geschichten",
+        "dayStreak": "Tages-Streak",
+        "readingGoals": "Leseziele",
+        "achievements": "Erfolge",
+        "appearance": "Erscheinungsbild",
+        "language": "Sprache",
+        "notifications": "Benachrichtigungen",
+        "fontSize": "Schriftgröße",
+        "help": "Hilfe & Support",
+        "helpMessage": "Brauchen Sie Hilfe? Kontaktieren Sie uns unter support@englishtales.app",
+        "about": "Über",
+        "aboutMessage": "English Tales v1.0.0\n\nVerbessern Sie Ihr Englisch durch wunderschöne Geschichten.\n\n© 2025 English Tales",
+        "signOut": "Abmelden",
+        "login": "Anmelden",
+        "logout": "Abmelden",
+        "stats": {
+            "storiesRead": "Gelesene Geschichten",
+            "readingTime": "Lesezeit",
+            "streak": "Tages-Streak"
+        },
+        "quickSettings": "Schnelleinstellungen"
+    },
+    "appearance": {
+        "title": "Erscheinungsbild",
+        "theme": "Design",
+        "system": "System",
+        "light": "Hell",
+        "dark": "Dunkel"
+    },
+    "home": {
+        "greeting": "Hallo, {{name}}",
+        "continueReading": "Weiterlesen",
+        "dailyPick": "Tages-Favorit",
+        "recommended": "Für dich empfohlen",
+        "trending": "Jetzt im Trend",
+        "categories": {
+            "forYou": "Für dich",
+            "easy": "Einfach",
+            "medium": "Mittel",
+            "hard": "Schwer",
+            "authors": "Autoren"
+        }
+    },
+    "discover": {
+        "surpriseMe": "Überrasch mich",
+        "authorSpotlight": "Autoren im Fokus",
+        "recentlyAdded": "Kürzlich hinzugefügt",
+        "popularThisWeek": "Beliebt diese Woche",
+        "categories": {
+            "all": "Alle",
+            "easy": "Einfach",
+            "medium": "Mittel",
+            "hard": "Schwer",
+            "authors": "Autoren"
+        }
+    },
+    "authors": {
+        "title": "Autoren",
+        "author": "Autor",
+        "stories": "Geschichten",
+        "storyCount": "{{count}} Geschichten",
+        "storyCountSingular": "1 Geschichte",
+        "emptyTitle": "Keine Autoren gefunden",
+        "emptyMessage": "Autoren erscheinen hier, sobald sie hinzugefügt wurden.",
+        "noStoriesTitle": "Noch keine Geschichten",
+        "noStoriesMessage": "Dieser Autor hat noch keine Geschichten veröffentlicht",
+        "notFound": "Autor nicht gefunden"
+    },
+    "library": {
+        "empty": "Deine Bibliothek ist leer",
+        "emptyMessage": "Beginne zu lesen, um Bücher zu deiner Bibliothek hinzuzufügen",
+        "discoverStories": "Geschichten entdecken",
+        "stats": {
+            "total": "Gesamt",
+            "completed": "Abgeschlossen",
+            "inProgress": "Am Lesen"
+        },
+        "menu": {
+            "removeFromLibrary": "Aus Bibliothek entfernen",
+            "deleteDownload": "Download löschen"
+        },
+        "dialogs": {
+            "removeTitle": "Aus Bibliothek entfernen",
+            "removeMessage": "\"{{title}}\" aus deiner Bibliothek entfernen?",
+            "deleteDownloadTitle": "Download löschen",
+            "deleteDownloadMessage": "Download von \"{{title}}\" löschen? Er wird nicht mehr offline verfügbar sein."
+        }
+    },
+    "reading": {
+        "complete": "{{percentage}}% abgeschlossen",
+        "remainingTime": "~{{time}} Min. übrig",
+        "chapter": "Kapitel {{number}}",
+        "notFound": "Geschichte nicht gefunden",
+        "noContent": "Kein Inhalt verfügbar.",
+        "lineSpacing": "Zeilenabstand"
+    },
+    "settings": {
+        "sections": {
+            "account": "KONTO",
+            "preferences": "EINSTELLUNGEN",
+            "storage": "SPEICHER",
+            "about": "ÜBER",
+            "dangerZone": "GEFAHRENZONE"
+        },
+        "account": {
+            "email": "E-Mail",
+            "notSet": "Nicht festgelegt",
+            "changePassword": "Passwort ändern"
+        },
+        "preferences": {
+            "theme": "Design",
+            "language": "Sprache",
+            "fontSize": "Schriftgröße",
+            "fontSizeInstruction": "Passen Sie die Schriftgröße im Lese-Bildschirm mit den Tasten A- und A+ anzuzeigen.",
+            "notifications": "Benachrichtigungen"
+        },
+        "storage": {
+            "downloads": "Downloads",
+            "storiesCount": "{{count}} Geschichten",
+            "none": "Keine",
+            "clearDownloads": "Alle Downloads löschen",
+            "cache": "Cache",
+            "clearCache": "Cache löschen"
+        },
+        "about": {
+            "rateApp": "App bewerten",
+            "rateAppMessage": "Vielen Dank für Ihre Bewertung! Der App Store Link folgt in Kürze.",
+            "privacyPolicy": "Datenschutzrichtlinie",
+            "termsOfService": "Nutzungsbedingungen",
+            "version": "Version"
+        },
+        "dangerZone": {
+            "signOut": "Abmelden",
+            "deleteAccount": "Konto löschen"
+        },
+        "dialogs": {
+            "signOut": {
+                "title": "Abmelden",
+                "message": "Sind Sie sicher, dass Sie sich abmelden möchten?"
+            },
+            "deleteAccount": {
+                "title": "Konto löschen",
+                "message": "Dies wird Ihr Konto und alle Daten dauerhaft löschen. Dieser Vorgang kann nicht rückgängig gemacht werden.",
+                "instruction": "Bitte kontaktieren Sie support@englishtales.app, um Ihr Konto zu löschen."
+            },
+            "clearCache": {
+                "title": "Cache löschen",
+                "message": "Dies wird temporäre Daten löschen. Ihre Bibliothek und Ihr Fortschritt bleiben erhalten.",
+                "success": "Cache gelöscht"
+            },
+            "clearDownloads": {
+                "title": "Downloads löschen",
+                "message": "Alle {{count}} heruntergeladenen Geschichten löschen? Sie werden offline nicht mehr verfügbar sein.",
+                "success": "Alle Downloads gelöscht"
+            },
+            "changePassword": {
+                "title": "Passwort ändern",
+                "message": "Eine E-Mail zum Zurücksetzen des Passworts wird an {{email}} gesendet",
+                "success": "E-Mail zum Zurücksetzen gesendet! Prüfen Sie Ihren Posteingang.",
+                "error": "E-Mail konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+            }
+        },
+        "footer": "Mit ❤️ für Englischlernende gemacht"
+    },
+    "notifications": {
+        "feedback": "Benachrichtigungen {{status}}"
+    }
+}

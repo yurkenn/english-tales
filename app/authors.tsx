@@ -8,6 +8,7 @@ import { NetworkError, EmptyState } from '@/components';
 import { useAuthors } from '@/hooks/useQueries';
 import { haptics } from '@/utils/haptics';
 import { urlFor } from '@/services/sanity';
+import { useTranslation } from 'react-i18next';
 
 interface Author {
     _id: string;
@@ -22,6 +23,7 @@ interface Author {
 }
 
 export default function AuthorsScreen() {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
@@ -69,7 +71,7 @@ export default function AuthorsScreen() {
                     <View style={styles.storyCountBadge}>
                         <Ionicons name="book-outline" size={12} color={theme.colors.primary} />
                         <Text style={styles.storyCountText}>
-                            {item.storyCount || 0} {(item.storyCount || 0) === 1 ? 'story' : 'stories'}
+                            {item.storyCount || 0} {(item.storyCount || 0) === 1 ? t('authors.storyCountSingular') : t('authors.storyCount', { count: item.storyCount || 0 })}
                         </Text>
                     </View>
                 </View>
@@ -82,7 +84,7 @@ export default function AuthorsScreen() {
         return (
             <View style={[styles.container, { paddingTop: insets.top }]}>
                 <NetworkError
-                    message="Failed to load authors"
+                    message={t('authors.notFound')}
                     onRetry={refetch}
                 />
             </View>
@@ -96,7 +98,7 @@ export default function AuthorsScreen() {
                 <Pressable style={styles.backButton} onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
-                <Text style={styles.title}>Authors</Text>
+                <Text style={styles.title}>{t('authors.title')}</Text>
                 <View style={styles.placeholder} />
             </View>
 
@@ -112,8 +114,8 @@ export default function AuthorsScreen() {
                     isLoading ? null : (
                         <EmptyState
                             icon="person-outline"
-                            title="No authors found"
-                            message="Authors will appear here once added."
+                            title={t('authors.emptyTitle')}
+                            message={t('authors.emptyMessage')}
                         />
                     )
                 }

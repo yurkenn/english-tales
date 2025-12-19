@@ -10,9 +10,6 @@ const config = getDefaultConfig(__dirname);
 // Disabling package exports forces Metro back to mainFields resolution and fixes it.
 config.resolver.unstable_enablePackageExports = false;
 
-// Fix for @sanity/client/csm module resolution in React Native
-// Use resolveRequest to redirect the CSM submodule import
-const originalResolveRequest = config.resolver.resolveRequest;
 config.resolver.resolveRequest = (context, moduleName, platform) => {
     if (moduleName === '@sanity/client/csm') {
         return {
@@ -20,10 +17,9 @@ config.resolver.resolveRequest = (context, moduleName, platform) => {
             type: 'sourceFile',
         };
     }
-    if (originalResolveRequest) {
-        return originalResolveRequest(context, moduleName, platform);
-    }
-    return context.resolveRequest(context, moduleName, platform);
+    // Pass a context without the custom resolveRequest to avoid recursion
+    const { resolveRequest, ...restContext } = context;
+    return context.resolveRequest(restContext, moduleName, platform);
 };
 
 module.exports = config;

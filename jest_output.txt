@@ -1,0 +1,25 @@
+FAIL __tests__/unit/haptics.test.ts
+  ● Test suite failed to run
+
+    ReferenceError: You are trying to `import` a file outside of the scope of the test code.
+
+      at Runtime._execModule (node_modules/jest-runtime/build/index.js:1216:13)
+      at require (node_modules/expo/src/winter/runtime.native.ts:20:43)
+      at getValue (node_modules/expo/src/winter/installGlobal.ts:97:21)
+      at Object.get [as __ExpoImportMetaRegistry] (node_modules/expo/src/winter/installGlobal.ts:44:16)
+
+FAIL __tests__/components/Button.test.tsx
+  ● Test suite failed to run
+
+    ReferenceError: You are trying to `import` a file outside of the scope of the test code.
+
+      at Runtime._execModule (node_modules/jest-runtime/build/index.js:1216:13)
+      at require (node_modules/expo/src/winter/runtime.native.ts:20:43)
+      at getValue (node_modules/expo/src/winter/installGlobal.ts:97:21)
+      at Object.get [as __ExpoImportMetaRegistry] (node_modules/expo/src/winter/installGlobal.ts:44:16)
+
+Test Suites: 2 failed, 2 total
+Tests:       0 total
+Snapshots:   0 total
+Time:        2.642 s
+Ran all test suites.

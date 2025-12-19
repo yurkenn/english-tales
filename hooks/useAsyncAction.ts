@@ -10,7 +10,10 @@ interface UseAsyncActionReturn {
 }
 
 /**
- * Hook for handling async actions with loading state and error handling
+ * Custom hook to handle asynchronous actions with loading and error states.
+ * 
+ * @param options - Configuration options like onError callback
+ * @returns An object containing the execute function and loading state
  */
 export const useAsyncAction = (options: UseAsyncActionOptions = {}): UseAsyncActionReturn => {
     const [loading, setLoading] = useState(false);
@@ -28,7 +31,7 @@ export const useAsyncAction = (options: UseAsyncActionOptions = {}): UseAsyncAct
         } finally {
             setLoading(false);
         }
-    }, [options.onError]);
+    }, [options]);
 
     return { loading, execute };
 };

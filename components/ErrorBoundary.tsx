@@ -2,6 +2,7 @@ import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
     children: ReactNode;
@@ -63,6 +64,7 @@ interface ErrorFallbackProps {
 }
 
 const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, onReset }) => {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
 
     return (
@@ -79,7 +81,7 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, onReset }) => {
                     />
                 </View>
                 <Text style={[styles.title, { color: theme.colors.text }]}>
-                    Something went wrong
+                    {t('common.error')}
                 </Text>
                 <Text style={[styles.message, { color: theme.colors.textSecondary }]}>
                     {error?.message || 'An unexpected error occurred'}
@@ -95,10 +97,10 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, onReset }) => {
                     style={[styles.button, { backgroundColor: theme.colors.primary }]}
                     onPress={onReset}
                     accessibilityRole="button"
-                    accessibilityLabel="Try again"
+                    accessibilityLabel={t('common.retry')}
                 >
                     <Text style={[styles.buttonText, { color: theme.colors.textInverse }]}>
-                        Try Again
+                        {t('common.retry')}
                     </Text>
                 </Pressable>
             </ScrollView>

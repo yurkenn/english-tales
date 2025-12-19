@@ -24,7 +24,8 @@ import { mapSanityStory } from '@/utils/storyMapper';
 import { Story } from '@/types';
 import { haptics } from '@/utils/haptics';
 
-const GENRES = ['All', 'Easy', 'Medium', 'Hard', 'Authors'];
+import { useTranslation } from 'react-i18next';
+
 const DIFFICULTY_MAP: Record<number, string> = {
     1: 'beginner',
     2: 'intermediate',
@@ -32,11 +33,20 @@ const DIFFICULTY_MAP: Record<number, string> = {
 };
 
 export default function DiscoverScreen() {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const [selectedGenre, setSelectedGenre] = useState(0);
     const [refreshing, setRefreshing] = useState(false);
+
+    const GENRES = [
+        t('discover.categories.all'),
+        t('discover.categories.easy'),
+        t('discover.categories.medium'),
+        t('discover.categories.hard'),
+        t('discover.categories.authors')
+    ];
 
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
     const { data: authorData, isLoading: loadingAuthor, refetch: refetchAuthor, error: errorAuthor } = useFeaturedAuthor();
@@ -111,7 +121,7 @@ export default function DiscoverScreen() {
     if (errorStories || errorAuthor) {
         return (
             <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
-                <NetworkError message="Failed to load content. Please try again." onRetry={onRefresh} />
+                <NetworkError message={t('common.error')} onRetry={onRefresh} />
             </View>
         );
     }
@@ -121,7 +131,7 @@ export default function DiscoverScreen() {
             <DiscoverHeader />
 
             <View style={styles.searchContainer}>
-                <SearchBar placeholder="Search titles, authors, or genres..." onPress={handleSearch} />
+                <SearchBar placeholder={t('discover.searchPlaceholder')} onPress={handleSearch} />
             </View>
 
             <View style={styles.chipsWrapper}>
@@ -154,7 +164,7 @@ export default function DiscoverScreen() {
 
                 {featuredAuthor && (
                     <View style={styles.section}>
-                        <SectionHeader title="Author Spotlight" />
+                        <SectionHeader title={t('discover.authorSpotlight')} />
                         <View style={styles.sectionContent}>
                             <AuthorSpotlight
                                 id={featuredAuthor.id}
@@ -169,7 +179,7 @@ export default function DiscoverScreen() {
 
                 {recentlyAdded.length > 0 && (
                     <View style={styles.section}>
-                        <SectionHeader title="Recently Added" onActionPress={() => router.push('/stories')} />
+                        <SectionHeader title={t('discover.recentlyAdded')} onActionPress={() => router.push('/stories')} />
                         <FlatList
                             data={recentlyAdded}
                             horizontal
@@ -186,7 +196,7 @@ export default function DiscoverScreen() {
 
                 {popularStories.length > 0 && (
                     <View style={styles.section}>
-                        <SectionHeader title="Popular This Week" onActionPress={() => router.push('/stories')} />
+                        <SectionHeader title={t('discover.popularThisWeek')} onActionPress={() => router.push('/stories')} />
                         <View style={styles.popularContainer}>
                             {popularStories.map((story: Story, index: number) => (
                                 <PopularStoryCard

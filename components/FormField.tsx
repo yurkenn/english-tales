@@ -1,16 +1,27 @@
 import React from 'react';
-import { View, Text, TextInput, TextInputProps } from 'react-native';
+import { View, Text, TextInput, TextInputProps, ViewStyle, StyleProp } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 
+/**
+ * Props for the FormField component
+ */
 export interface FormFieldProps extends TextInputProps {
+    /** Label text displayed above the input */
     label?: string;
+    /** Optional icon name from Ionicons displayed on the left */
     icon?: keyof typeof Ionicons.glyphMap;
+    /** Error message displayed below the input */
     error?: string;
+    /** Helper text displayed below the input when there is no error */
     helperText?: string;
-    containerStyle?: any;
+    /** Optional container style override */
+    containerStyle?: StyleProp<ViewStyle>;
 }
 
+/**
+ * Reusable form field component that includes a label, icon, and error handling.
+ */
 export const FormField: React.FC<FormFieldProps> = ({
     label,
     icon,
@@ -24,7 +35,7 @@ export const FormField: React.FC<FormFieldProps> = ({
     const hasError = !!error;
 
     return (
-        <View style={containerStyle}>
+        <View style={[styles.container, containerStyle]}>
             {label && (
                 <Text style={[styles.label, { color: theme.colors.textSecondary }]}>
                     {label}
@@ -114,5 +125,9 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.xs,
         marginTop: theme.spacing.xs,
         marginLeft: theme.spacing.xs,
+    },
+    container: {
+        width: '100%',
+        marginBottom: theme.spacing.md,
     },
 }));

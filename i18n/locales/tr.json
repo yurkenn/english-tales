@@ -1,0 +1,194 @@
+{
+    "common": {
+        "error": "Bir şeyler yanlış gitti",
+        "retry": "Tekrar dene",
+        "cancel": "İptal",
+        "save": "Kaydet",
+        "delete": "Sil",
+        "loading": "Yükleniyor...",
+        "search": "Ara...",
+        "networkError": "Ağ hatası. Lütfen bağlantınızı kontrol edin.",
+        "all": "Hepsi",
+        "easy": "Kolay",
+        "medium": "Orta",
+        "hard": "Zor",
+        "on": "Açık",
+        "off": "Kapalı",
+        "goBack": "Geri Git"
+    },
+    "tabs": {
+        "home": "Ana Sayfa",
+        "discover": "Keşfet",
+        "library": "Kitaplık",
+        "profile": "Profil"
+    },
+    "profile": {
+        "title": "Profil",
+        "booksRead": "Okunan Hikayeler",
+        "dayStreak": "Günlük Seri",
+        "readingGoals": "Okuma Hedefleri",
+        "achievements": "Başarımlar",
+        "appearance": "Görünüm",
+        "language": "Dil",
+        "notifications": "Bildirimler",
+        "fontSize": "Yazı Boyutu",
+        "help": "Yardım ve Destek",
+        "helpMessage": "Yardıma mı ihtiyacınız var? Destek için: support@englishtales.app",
+        "about": "Hakkında",
+        "aboutMessage": "English Tales v1.0.0\n\nHarika hikayelerle İngilizcenizi geliştirin.\n\n© 2025 English Tales",
+        "signOut": "Çıkış Yap",
+        "login": "Giriş Yap",
+        "logout": "Çıkış Yap",
+        "stats": {
+            "storiesRead": "Okunan Hikayeler",
+            "readingTime": "Okuma Süresi",
+            "streak": "Günlük Seri"
+        },
+        "quickSettings": "Hızlı Ayarlar"
+    },
+    "appearance": {
+        "title": "Görünüm",
+        "theme": "Tema",
+        "system": "Sistem",
+        "light": "Açık",
+        "dark": "Koyu"
+    },
+    "home": {
+        "greeting": "Merhaba, {{name}}",
+        "continueReading": "Okumaya Devam Et",
+        "dailyPick": "Günün Hikayesi",
+        "recommended": "Senin İçin Önerilenler",
+        "trending": "Şu An Trend",
+        "categories": {
+            "forYou": "Senin İçin",
+            "easy": "Kolay",
+            "medium": "Orta",
+            "hard": "Zor",
+            "authors": "Yazarlar"
+        }
+    },
+    "discover": {
+        "surpriseMe": "Beni Şaşırt",
+        "authorSpotlight": "Öne Çıkan Yazarlar",
+        "recentlyAdded": "Son Eklenenler",
+        "popularThisWeek": "Bu Haftanın Popülerleri",
+        "categories": {
+            "all": "Hepsi",
+            "easy": "Kolay",
+            "medium": "Orta",
+            "hard": "Zor",
+            "authors": "Yazarlar"
+        }
+    },
+    "authors": {
+        "title": "Yazarlar",
+        "author": "Yazar",
+        "stories": "Hikayeler",
+        "storyCount": "{{count}} hikaye",
+        "storyCountSingular": "1 hikaye",
+        "emptyTitle": "Yazar bulunamadı",
+        "emptyMessage": "Yazarlar eklendiğinde burada görünecek.",
+        "noStoriesTitle": "Henüz hikaye yok",
+        "noStoriesMessage": "Bu yazar henüz bir hikaye yayınlamadı",
+        "notFound": "Yazar bulunamadı"
+    },
+    "library": {
+        "empty": "Kitaplığınız boş",
+        "emptyMessage": "Kitaplığınıza eser eklemek için okumaya başlayın",
+        "discoverStories": "Hikayeleri Keşfet",
+        "stats": {
+            "total": "Toplam",
+            "completed": "Tamamlanan",
+            "inProgress": "Okunan"
+        },
+        "menu": {
+            "removeFromLibrary": "Kitaplıktan Kaldır",
+            "deleteDownload": "İndirmeyi Sil"
+        },
+        "dialogs": {
+            "removeTitle": "Kitaplıktan Kaldır",
+            "removeMessage": "\"{{title}}\" kitaplığınızdan kaldırılsın mı?",
+            "deleteDownloadTitle": "İndirmeyi Sil",
+            "deleteDownloadMessage": "\"{{title}}\" indirmesi silinsin mi? Artık çevrimdışı kullanılamayacak."
+        }
+    },
+    "reading": {
+        "complete": "%{{percentage}} tamamlandı",
+        "remainingTime": "~{{time}} dk kaldı",
+        "chapter": "Bölüm {{number}}",
+        "notFound": "Hikaye bulunamadı",
+        "noContent": "İçerik mevcut değil.",
+        "lineSpacing": "Satır Aralığı"
+    },
+    "settings": {
+        "sections": {
+            "account": "HESAP",
+            "preferences": "TERCİHLER",
+            "storage": "DEPOLAMA",
+            "about": "HAKKINDA",
+            "dangerZone": "TEHLİKELİ BÖLGE"
+        },
+        "account": {
+            "email": "E-posta",
+            "notSet": "Ayarlanmadı",
+            "changePassword": "Şifreyi Değiştir"
+        },
+        "preferences": {
+            "theme": "Tema",
+            "language": "Dil",
+            "fontSize": "Yazı Boyutu",
+            "fontSizeInstruction": "Okuma ekranındaki A- ve A+ butonlarını kullanarak yazı boyutunu ayarlayabilirsiniz.",
+            "notifications": "Bildirimler"
+        },
+        "storage": {
+            "downloads": "İndirmeler",
+            "storiesCount": "{{count}} hikaye",
+            "none": "Yok",
+            "clearDownloads": "Tüm İndirmeleri Temizle",
+            "cache": "Önbellek",
+            "clearCache": "Önbelleği Temizle"
+        },
+        "about": {
+            "rateApp": "Uygulamayı Oyla",
+            "rateAppMessage": "Bizi oylamak istediğiniz için teşekkürler! Uygulama mağazası linki yakında eklenecek.",
+            "privacyPolicy": "Gizlilik Politikası",
+            "termsOfService": "Kullanım Şartları",
+            "version": "Versiyon"
+        },
+        "dangerZone": {
+            "signOut": "Çıkış Yap",
+            "deleteAccount": "Hesabı Sil"
+        },
+        "dialogs": {
+            "signOut": {
+                "title": "Çıkış Yap",
+                "message": "Çıkış yapmak istediğinizden emin misiniz?"
+            },
+            "deleteAccount": {
+                "title": "Hesabı Sil",
+                "message": "Bu işlem hesabınızı ve tüm verilerinizi kalıcı olarak silecektir. Bu işlem geri alınamaz.",
+                "instruction": "Hesabınızı silmek için lütfen support@englishtales.app adresi ile iletişime geçin."
+            },
+            "clearCache": {
+                "title": "Önbelleği Temizle",
+                "message": "Bu işlem geçici verileri temizleyecektir. Kitaplığınız ve ilerlemeniz etkilenmez.",
+                "success": "Önbellek temizlendi"
+            },
+            "clearDownloads": {
+                "title": "İndirmeleri Temizle",
+                "message": "Tüm {{count}} indirilmiş hikaye silinsin mi? Artık çevrimdışı kullanılamayacaklar.",
+                "success": "Tüm indirmeler temizlendi"
+            },
+            "changePassword": {
+                "title": "Şifreyi Değiştir",
+                "message": "{{email}} adresine bir şifre sıfırlama e-postası gönderilecek",
+                "success": "Şifre sıfırlama e-postası gönderildi! Gelen kutunuzu kontrol edin.",
+                "error": "E-posta gönderilemedi. Lütfen tekrar deneyin."
+            }
+        },
+        "footer": "İngilizce öğrenenler için ❤️ ile yapıldı"
+    },
+    "notifications": {
+        "feedback": "Bildirimler {{status}}"
+    }
+}

@@ -23,7 +23,8 @@ import { useToastStore } from '@/store/toastStore';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { haptics } from '@/utils/haptics';
 
-const GENRES = ['For You', 'Easy', 'Medium', 'Hard', 'Authors'];
+import { useTranslation } from 'react-i18next';
+
 const DIFFICULTY_MAP: Record<number, string> = {
     1: 'beginner',
     2: 'intermediate',
@@ -31,12 +32,21 @@ const DIFFICULTY_MAP: Record<number, string> = {
 };
 
 export default function HomeScreen() {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { user } = useAuthStore();
     const [selectedGenre, setSelectedGenre] = useState(0);
     const [refreshing, setRefreshing] = useState(false);
+
+    const GENRES = [
+        t('home.categories.forYou'),
+        t('home.categories.easy'),
+        t('home.categories.medium'),
+        t('home.categories.hard'),
+        t('home.categories.authors')
+    ];
 
     const { data: featuredData, isLoading: loadingFeatured, refetch: refetchFeatured, error: errorFeatured } = useFeaturedStories();
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
@@ -106,7 +116,7 @@ export default function HomeScreen() {
     if (errorCategories || errorFeatured || errorStories) {
         return (
             <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
-                <NetworkError message="Failed to load stories. Please check your connection." onRetry={onRefresh} />
+                <NetworkError message={t('common.error')} onRetry={onRefresh} />
             </View>
         );
     }
@@ -114,13 +124,13 @@ export default function HomeScreen() {
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             <HomeHeader
-                userName={user?.displayName || 'Reader'}
+                userName={user?.displayName || t('home.greetingDefault')}
                 userPhotoUrl={user?.photoURL || undefined}
                 isAnonymous={user?.isAnonymous}
             />
 
             <View style={styles.searchContainer}>
-                <SearchBar placeholder="Search English stories..." onPress={() => router.push('/search')} />
+                <SearchBar placeholder={t('home.searchPlaceholder')} onPress={() => router.push('/search')} />
             </View>
 
             <View style={styles.chipsWrapper}>
@@ -151,7 +161,7 @@ export default function HomeScreen() {
             >
                 {continueReading && continueReading.progress && (
                     <View style={styles.section}>
-                        <SectionHeader title="Continue Reading" onActionPress={() => router.push('/library')} />
+                        <SectionHeader title={t('home.continueReading')} onActionPress={() => router.push('/library')} />
                         <View style={styles.sectionContent}>
                             <ContinueReadingCard
                                 story={continueReading.story}
@@ -165,7 +175,7 @@ export default function HomeScreen() {
 
                 {featuredStory && (
                     <View style={styles.section}>
-                        <SectionHeader title="Daily Pick" />
+                        <SectionHeader title={t('home.dailyPick')} />
                         <View style={styles.sectionContent}>
                             <FeaturedCard story={featuredStory} onPress={() => handleStoryPress(featuredStory.id)} />
                         </View>
@@ -173,7 +183,7 @@ export default function HomeScreen() {
                 )}
 
                 <View style={styles.section}>
-                    <SectionHeader title="Recommended for You" onActionPress={() => router.push('/stories')} />
+                    <SectionHeader title={t('home.recommended')} onActionPress={() => router.push('/stories')} />
                     <FlatList
                         data={recommendedStories}
                         horizontal
@@ -188,7 +198,7 @@ export default function HomeScreen() {
                 </View>
 
                 <View style={styles.section}>
-                    <SectionHeader title="Trending Now" onActionPress={() => router.push('/stories?sort=trending')} />
+                    <SectionHeader title={t('home.trending')} onActionPress={() => router.push('/stories?sort=trending')} />
                     <View style={styles.trendingContainer}>
                         {trendingList.map((story: Story, index: number) => (
                             <TrendingStoryCard

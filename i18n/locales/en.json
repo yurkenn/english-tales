@@ -1,0 +1,194 @@
+{
+    "common": {
+        "error": "Something went wrong",
+        "retry": "Try again",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "loading": "Loading...",
+        "search": "Search...",
+        "networkError": "Network error. Please check your connection.",
+        "all": "All",
+        "easy": "Easy",
+        "medium": "Medium",
+        "hard": "Hard",
+        "on": "On",
+        "off": "Off",
+        "goBack": "Go Back"
+    },
+    "tabs": {
+        "home": "Home",
+        "discover": "Discover",
+        "library": "Library",
+        "profile": "Profile"
+    },
+    "profile": {
+        "title": "Profile",
+        "booksRead": "Books Read",
+        "dayStreak": "Day Streak",
+        "readingGoals": "Reading Goals",
+        "achievements": "Achievements",
+        "appearance": "Appearance",
+        "language": "Language",
+        "notifications": "Notifications",
+        "fontSize": "Font Size",
+        "help": "Help & Support",
+        "helpMessage": "Need help? Contact us at support@englishtales.app",
+        "about": "About",
+        "aboutMessage": "English Tales v1.0.0\n\nImprove your English through beautiful stories.\n\n© 2025 English Tales",
+        "signOut": "Sign Out",
+        "login": "Log In",
+        "logout": "Log Out",
+        "stats": {
+            "storiesRead": "Stories Read",
+            "readingTime": "Reading Time",
+            "streak": "Day Streak"
+        },
+        "quickSettings": "Quick Settings"
+    },
+    "appearance": {
+        "title": "Appearance",
+        "theme": "Theme",
+        "system": "System",
+        "light": "Light",
+        "dark": "Dark"
+    },
+    "home": {
+        "greeting": "Hello, {{name}}",
+        "continueReading": "Continue Reading",
+        "dailyPick": "Daily Pick",
+        "recommended": "Recommended for You",
+        "trending": "Trending Now",
+        "categories": {
+            "forYou": "For You",
+            "easy": "Easy",
+            "medium": "Medium",
+            "hard": "Hard",
+            "authors": "Authors"
+        }
+    },
+    "discover": {
+        "surpriseMe": "Surprise Me",
+        "authorSpotlight": "Author Spotlight",
+        "recentlyAdded": "Recently Added",
+        "popularThisWeek": "Popular This Week",
+        "categories": {
+            "all": "All",
+            "easy": "Easy",
+            "medium": "Medium",
+            "hard": "Hard",
+            "authors": "Authors"
+        }
+    },
+    "authors": {
+        "title": "Authors",
+        "author": "Author",
+        "stories": "Stories",
+        "storyCount": "{{count}} stories",
+        "storyCountSingular": "1 story",
+        "emptyTitle": "No authors found",
+        "emptyMessage": "Authors will appear here once added.",
+        "noStoriesTitle": "No stories yet",
+        "noStoriesMessage": "This author hasn't published any stories yet",
+        "notFound": "Author not found"
+    },
+    "library": {
+        "empty": "Your library is empty",
+        "emptyMessage": "Start reading to add books to your library",
+        "discoverStories": "Discover Stories",
+        "stats": {
+            "total": "Total",
+            "completed": "Completed",
+            "inProgress": "Reading"
+        },
+        "menu": {
+            "removeFromLibrary": "Remove from Library",
+            "deleteDownload": "Delete Download"
+        },
+        "dialogs": {
+            "removeTitle": "Remove from Library",
+            "removeMessage": "Remove \"{{title}}\" from your library?",
+            "deleteDownloadTitle": "Delete Download",
+            "deleteDownloadMessage": "Delete \"{{title}}\" download? It will no longer be available offline."
+        }
+    },
+    "reading": {
+        "complete": "{{percentage}}% complete",
+        "remainingTime": "~{{time}} min left",
+        "chapter": "Chapter {{number}}",
+        "notFound": "Story not found",
+        "noContent": "No content available.",
+        "lineSpacing": "Line Spacing"
+    },
+    "settings": {
+        "sections": {
+            "account": "ACCOUNT",
+            "preferences": "PREFERENCES",
+            "storage": "STORAGE",
+            "about": "ABOUT",
+            "dangerZone": "DANGER ZONE"
+        },
+        "account": {
+            "email": "Email",
+            "notSet": "Not set",
+            "changePassword": "Change Password"
+        },
+        "preferences": {
+            "theme": "Theme",
+            "language": "Language",
+            "fontSize": "Font Size",
+            "fontSizeInstruction": "Adjust reading font size in the reading screen using A- and A+ buttons.",
+            "notifications": "Notifications"
+        },
+        "storage": {
+            "downloads": "Downloads",
+            "storiesCount": "{{count}} stories",
+            "none": "None",
+            "clearDownloads": "Clear All Downloads",
+            "cache": "Cache",
+            "clearCache": "Clear Cache"
+        },
+        "about": {
+            "rateApp": "Rate App",
+            "rateAppMessage": "Thank you for wanting to rate us! App Store link coming soon.",
+            "privacyPolicy": "Privacy Policy",
+            "termsOfService": "Terms of Service",
+            "version": "Version"
+        },
+        "dangerZone": {
+            "signOut": "Sign Out",
+            "deleteAccount": "Delete Account"
+        },
+        "dialogs": {
+            "signOut": {
+                "title": "Sign Out",
+                "message": "Are you sure you want to sign out?"
+            },
+            "deleteAccount": {
+                "title": "Delete Account",
+                "message": "This will permanently delete your account and all data. This action cannot be undone.",
+                "instruction": "Please contact support@englishtales.app to delete your account."
+            },
+            "clearCache": {
+                "title": "Clear Cache",
+                "message": "This will clear temporary data. Your library and progress will not be affected.",
+                "success": "Cache cleared"
+            },
+            "clearDownloads": {
+                "title": "Clear Downloads",
+                "message": "Remove all {{count}} downloaded stories? They will no longer be available offline.",
+                "success": "All downloads cleared"
+            },
+            "changePassword": {
+                "title": "Change Password",
+                "message": "A password reset email will be sent to {{email}}",
+                "success": "Password reset email sent! Check your inbox.",
+                "error": "Failed to send reset email. Please try again."
+            }
+        },
+        "footer": "Made with ❤️ for English learners"
+    },
+    "notifications": {
+        "feedback": "Notifications {{status}}"
+    }
+}

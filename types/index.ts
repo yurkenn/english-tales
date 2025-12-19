@@ -53,4 +53,6 @@ export interface Settings {
     fontSize: 'small' | 'medium' | 'large';
     notificationsEnabled: boolean;
     dailyGoalMinutes: number;
+    language: 'en' | 'tr' | 'es' | 'de' | 'fr';
+    proficiencyLevel?: 'beginner' | 'intermediate' | 'advanced';
 }
