@@ -41,5 +41,7 @@ export { EditProfileModal } from './EditProfileModal';
 export { ReadingGoalsModal } from './ReadingGoalsModal';
 export { WriteReviewModal } from './WriteReviewModal';
 export { HomeHeader } from './HomeHeader';
+export { CreatePostModal } from './CreatePostModal';
+export { ReplyModal } from './ReplyModal';
 export * from './readingTypes';
 export * from './settingsTypes';

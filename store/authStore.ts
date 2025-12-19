@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { User } from '@/types';
 import { onAuthStateChange, signOut as authSignOut } from '@/services/auth';
 import { router } from 'expo-router';
+import { userService } from '@/services/userService';
 
 interface AuthState {
     user: User | null;
@@ -35,12 +36,18 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     updateProfile: async (displayName: string) => {
         const { updateUserProfile } = await import('@/services/auth');
         const updatedUser = await updateUserProfile(displayName);
+        if (updatedUser) {
+            await userService.syncProfile(updatedUser);
+        }
         set({ user: updatedUser });
     },
     initialize: () => {
         if (get().initialized) return () => { };
 
         const unsubscribe = onAuthStateChange((user) => {
+            if (user) {
+                userService.syncProfile(user);
+            }
             set({ user, isLoading: false, initialized: true });
         });
 

@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Story } from '@/types';
-import { RatingStars, OptimizedImage } from '../atoms';
+import {
+    Typography,
+    OptimizedImage,
+    RatingStars
+} from '../atoms';
 
 interface FeaturedCardProps {
     story: Story;
@@ -37,49 +41,55 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
         <View style={styles.container}>
             {/* Hero Image */}
             <Pressable onPress={onPress}>
-                <View style={styles.imageContainer}>
+                <View style={styles.heroImage}>
                     <OptimizedImage
                         source={{ uri: coverUri }}
                         placeholder={story.coverImageLqip}
-                        style={StyleSheet.absoluteFill}
+                        style={RNStyleSheet.absoluteFill}
                         sharedTransitionTag={`story-image-${story.id}`}
                         height={220}
                     />
                     <LinearGradient
-                        colors={['transparent', 'rgba(0,0,0,0.3)', 'rgba(0,0,0,0.85)']}
-                        style={styles.gradient}
+                        colors={['transparent', 'rgba(0, 0, 0, 0.8)']}
+                        style={RNStyleSheet.absoluteFillObject}
                     />
                     {/* Badge */}
                     <View style={styles.badge}>
-                        <Text style={styles.badgeText}>{badge}</Text>
+                        <Typography variant="label" color={theme.colors.textInverse}>{badge}</Typography>
                     </View>
                     {/* Title on image */}
                     <View style={styles.imageContent}>
-                        <Text style={styles.heroTitle}>{story.title}</Text>
-                        <Text style={styles.heroSubtitle}>
+                        <Typography variant="h1" color="#FFFFFF">
+                            {story.title}
+                        </Typography>
+                        <Typography variant="subtitle" color="rgba(255, 255, 255, 0.9)">
                             {story.author} • {story.tags[0]}
-                        </Text>
+                        </Typography>
                     </View>
                 </View>
             </Pressable>
 
-            {/* Content */}
+            {/* Bottom Content */}
             <View style={styles.content}>
                 {/* Rating */}
                 <View style={styles.ratingRow}>
                     <RatingStars rating={displayRating} size="md" showEmpty />
-                    <Text style={styles.ratingValue}>{displayRating.toFixed(1)}</Text>
-                    <Text style={styles.ratingCount}>({formatCount(count)} reviews)</Text>
+                    <Typography variant="bodyBold">
+                        {displayRating.toFixed(1)}
+                    </Typography>
+                    <Typography variant="caption" color={theme.colors.textMuted}>
+                        ({formatCount(count)} reviews)
+                    </Typography>
                 </View>
 
                 {/* Description */}
-                <Text style={styles.description} numberOfLines={3}>
+                <Typography variant="body" numberOfLines={3}>
                     {story.description}
-                </Text>
+                </Typography>
 
                 {/* CTA Button */}
                 <Pressable style={styles.button} onPress={onPress}>
-                    <Text style={styles.buttonText}>Read Now</Text>
+                    <Typography variant="button" color={theme.colors.textInverse}>Read Now</Typography>
                     <Ionicons
                         name="arrow-forward"
                         size={theme.iconSize.sm}
@@ -100,12 +110,12 @@ const styles = StyleSheet.create((theme) => ({
         borderColor: theme.colors.borderLight,
         ...theme.shadows.lg,
     },
-    imageContainer: {
+    heroImage: {
         height: 220,
         justifyContent: 'flex-end',
     },
     gradient: {
-        ...StyleSheet.absoluteFillObject,
+        ...RNStyleSheet.absoluteFillObject,
     },
     badge: {
         position: 'absolute',
@@ -120,27 +130,11 @@ const styles = StyleSheet.create((theme) => ({
     },
     badgeText: {
         color: theme.colors.textInverse,
-        fontSize: theme.typography.size.xs,
-        fontWeight: theme.typography.weight.bold,
         textTransform: 'uppercase',
         letterSpacing: 0.5,
     },
     imageContent: {
         padding: theme.spacing.lg,
-    },
-    heroTitle: {
-        fontSize: theme.typography.size.xxxl,
-        fontWeight: theme.typography.weight.bold,
-        color: '#FFFFFF',
-        marginBottom: theme.spacing.xs,
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
-        textShadowOffset: { width: 0, height: 1 },
-        textShadowRadius: 3,
-    },
-    heroSubtitle: {
-        fontSize: theme.typography.size.md,
-        color: 'rgba(255, 255, 255, 0.9)',
-        fontWeight: theme.typography.weight.medium,
     },
     content: {
         padding: theme.spacing.xl,
@@ -150,20 +144,6 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         gap: theme.spacing.sm,
-    },
-    ratingValue: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-    },
-    ratingCount: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textMuted,
-    },
-    description: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.textSecondary,
-        lineHeight: 22,
     },
     button: {
         flexDirection: 'row',
@@ -176,8 +156,6 @@ const styles = StyleSheet.create((theme) => ({
         ...theme.shadows.md,
     },
     buttonText: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.semibold,
         color: theme.colors.textInverse,
     },
 }));

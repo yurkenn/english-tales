@@ -12,6 +12,11 @@ import {
     serverTimestamp,
     Timestamp,
 } from 'firebase/firestore';
+import { leaderboardService } from '@/services/leaderboardService';
+import { activityService } from '@/services/activityService';
+import { communityService } from '@/services/communityService';
+import { useAuthStore } from './authStore';
+import { useLibraryStore } from './libraryStore';
 
 // State
 interface ProgressState {
@@ -32,6 +37,8 @@ interface ProgressActions {
     fetchAllProgress: () => Promise<Result<Record<string, ReadingProgress>>>;
     getStreak: () => number;
     incrementReadingTime: (storyId: string, durationMs: number) => Promise<void>;
+    syncLeaderboard: () => Promise<void>;
+    checkSocialMilestones: () => Promise<void>;
     clearProgress: () => void;
 }
 
@@ -127,6 +134,10 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     },
                 }));
 
+                // Sync to leaderboard on completion
+                get().actions.syncLeaderboard();
+                get().actions.checkSocialMilestones();
+
                 return { success: true, data: progress };
             } catch (error) {
                 const message = error instanceof Error ? error.message : 'Failed to mark complete';
@@ -165,6 +176,10 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                         [storyId]: progress,
                     },
                 }));
+
+                // Sync to leaderboard on quiz result
+                get().actions.syncLeaderboard();
+                get().actions.checkSocialMilestones();
 
                 return { success: true, data: progress };
             } catch (error) {
@@ -297,6 +312,44 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
             } catch (error) {
                 console.error('Failed to sync reading time to Firebase:', error);
             }
+        },
+
+        syncLeaderboard: async () => {
+            const { userId, progressMap } = get();
+            const user = useAuthStore.getState().user;
+            const libraryItems = useLibraryStore.getState().items;
+
+            if (!userId || !user) return;
+
+            // Create wordCount lookup map from library items
+            const storyMetadata: Record<string, { wordCount: number }> = {};
+            libraryItems.forEach(item => {
+                storyMetadata[item.storyId] = { wordCount: item.story.wordCount };
+            });
+
+            await leaderboardService.syncUserStats(
+                user,
+                progressMap,
+                storyMetadata,
+                get().actions.getStreak()
+            );
+        },
+
+        checkSocialMilestones: async () => {
+            const { userId, progressMap } = get();
+            const user = useAuthStore.getState().user;
+            if (!userId || !user) return;
+
+            const completedStories = Object.values(progressMap).filter(p => p.isCompleted).length;
+            const streak = get().actions.getStreak();
+            const reviewsCount = await communityService.getUserReviewCount(userId);
+
+            await activityService.checkAndPostMilestones(
+                userId,
+                user.displayName || 'Anonymous',
+                user.photoURL,
+                { completedStories, streak, reviewsCount }
+            );
         },
 
         clearProgress: () => set({ ...initialState }),

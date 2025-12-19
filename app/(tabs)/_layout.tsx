@@ -8,9 +8,11 @@ import Animated, {
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useIsDark, useThemeKey } from '@/store/themeStore';
+import { useNotificationStore } from '@/store/notificationStore';
+import { useNotifications } from '@/hooks/useNotifications';
 import { lightTheme, darkTheme } from '@/theme/unistyles';
 
-type TabIconName = 'home' | 'compass' | 'book' | 'person';
+type TabIconName = 'home' | 'compass' | 'book' | 'person' | 'people';
 
 interface TabIconProps {
     name: TabIconName;
@@ -26,6 +28,7 @@ const TabIcon: React.FC<TabIconProps> = ({ name, focused, color }) => {
         compass: { active: 'compass', inactive: 'compass-outline' },
         book: { active: 'bookmark', inactive: 'bookmark-outline' },
         person: { active: 'person-circle', inactive: 'person-circle-outline' },
+        people: { active: 'people', inactive: 'people-outline' },
     };
 
     const iconName = focused ? icons[name].active : icons[name].inactive;
@@ -49,6 +52,8 @@ const TabIcon: React.FC<TabIconProps> = ({ name, focused, color }) => {
 
 export default function TabLayout() {
     const insets = useSafeAreaInsets();
+    useNotifications(); // Initialize subscription
+    const unreadCount = useNotificationStore(s => s.unreadCount);
 
     // Subscribe to theme changes
     const isDark = useIsDark();
@@ -93,6 +98,30 @@ export default function TabLayout() {
                     title: 'Discover',
                     tabBarIcon: ({ focused, color }) => (
                         <TabIcon name="compass" focused={focused} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
+                name="community"
+                options={{
+                    title: 'Community',
+                    tabBarIcon: ({ focused, color }) => (
+                        <View>
+                            <TabIcon name="people" focused={focused} color={color} />
+                            {unreadCount > 0 && (
+                                <View style={{
+                                    position: 'absolute',
+                                    right: -4,
+                                    top: -2,
+                                    backgroundColor: theme.colors.error,
+                                    width: 10,
+                                    height: 10,
+                                    borderRadius: 5,
+                                    borderWidth: 1.5,
+                                    borderColor: theme.colors.surface,
+                                }} />
+                            )}
+                        </View>
                     ),
                 }}
             />

@@ -5,6 +5,11 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomSheet from '@gorhom/bottom-sheet';
+// - **Rankings Screen**: Beautiful leaderboard UI with trophy highlights and sticky personal rank.
+// - **Real-time Sync**: Transparent background syncing of reading stats to Firestore.
+
+// ### 7. Core Stability: Circular Dependency Resolution
+// ,
 import {
     LibraryScreenSkeleton,
     EmptyState,
@@ -196,6 +201,7 @@ export default function LibraryScreen() {
                     filter={filter}
                     onSearchPress={() => router.push('/search')}
                     onFilterPress={cycleFilter}
+                    onRankingsPress={() => router.push('/rankings')}
                 />
                 <LibraryAnonymousState onSignInPress={() => router.push('/login')} />
             </View>
@@ -208,6 +214,7 @@ export default function LibraryScreen() {
                 filter={filter}
                 onSearchPress={() => router.push('/search')}
                 onFilterPress={cycleFilter}
+                onRankingsPress={() => router.push('/rankings')}
             />
 
             <View style={styles.segmentedControl}>

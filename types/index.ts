@@ -12,6 +12,18 @@ export interface User {
     isAnonymous: boolean;
 }
 
+export interface UserProfile {
+    id: string;
+    displayName: string | null;
+    photoURL: string | null;
+    emailSearchField?: string | null; // Lowercase email for search
+    displayNameSearchField?: string | null; // Lowercase name for search
+    lastSeenAt?: any;
+    isAnonymous: boolean;
+    location?: string;
+    bio?: string;
+}
+
 // Story types
 export interface Story {
     id: string;
@@ -59,4 +71,74 @@ export interface Settings {
     dailyGoalMinutes: number;
     language: 'en' | 'tr' | 'es' | 'de' | 'fr';
     proficiencyLevel?: 'beginner' | 'intermediate' | 'advanced';
+}
+
+// Community types
+export type ActivityType = 'share' | 'achievement' | 'milestone' | 'thought' | 'follow';
+
+export interface CommunityPost {
+    id: string;
+    userId: string;
+    userName: string;
+    userPhoto: string | null;
+    content: string;
+    timestamp: any; // Firestore timestamp
+    likes: number;
+    likedBy: string[]; // Array of user IDs
+    replyCount?: number;
+    type: ActivityType;
+    metadata?: {
+        storyId?: string;
+        storyTitle?: string;
+        achievementId?: string;
+        achievementTitle?: string;
+        achievementType?: string;
+        streakCount?: number;
+    };
+}
+
+export interface CommunityReply {
+    id: string;
+    postId: string;
+    userId: string;
+    userName: string;
+    userPhoto: string | null;
+    content: string;
+    timestamp: any;
+    likes?: number;
+    likedBy?: string[];
+}
+
+export interface SocialNotification {
+    id: string;
+    type: 'like' | 'reply' | 'follow' | 'achievement';
+    senderId: string;
+    senderName: string;
+    senderPhoto: string | null;
+    postId?: string; // Optional: link to post
+    content?: string; // Short preview text
+    timestamp: any;
+    isRead: boolean;
+}
+
+export interface StoryReview {
+    id: string;
+    storyId: string;
+    userId: string;
+    userName: string;
+    userPhoto: string | null;
+    rating: number; // 1-5
+    comment: string;
+    timestamp: any;
+    likes: number;
+    likedBy: string[];
+}
+
+export interface UserFavorite {
+    id: string; // userId_storyId
+    userId: string;
+    storyId: string;
+    storyTitle: string;
+    storyCover: string;
+    addedAt: any;
 }

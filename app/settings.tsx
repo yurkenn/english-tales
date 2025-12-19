@@ -19,6 +19,7 @@ import {
 } from '@/components';
 import { haptics } from '@/utils/haptics';
 import { sendPasswordResetEmail } from '@/services/auth';
+import { notificationService } from '@/services/notificationService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import i18n from '@/i18n';
 
@@ -132,9 +133,14 @@ export default function SettingsScreen() {
                         icon="notifications-outline"
                         label={t('settings.preferences.notifications')}
                         value={notificationsEnabled}
-                        onValueChange={(val) => {
+                        onValueChange={async (val) => {
                             setNotificationsEnabled(val);
                             settingsActions.updateSettings({ notificationsEnabled: val });
+                            if (val) {
+                                await notificationService.initialize();
+                            } else {
+                                await notificationService.cancelAllDailyReminders();
+                            }
                         }}
                     />
                     <SettingToggle

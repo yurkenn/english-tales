@@ -7,3 +7,6 @@ export { GenreChip } from './GenreChip';
 export { RatingStars } from './RatingStars';
 export { Container } from './Container';
 export { SectionHeader } from './SectionHeader';
+export { Typography } from './Typography';
+export type { TypographyVariant } from './Typography';
+export { SegmentedPicker } from './SegmentedPicker';

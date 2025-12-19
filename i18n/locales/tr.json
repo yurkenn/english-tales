@@ -215,5 +215,39 @@
     },
     "notifications": {
         "feedback": "Bildirimler {{status}}"
+    },
+    "social": {
+        "title": "Topluluk",
+        "community": "Topluluk",
+        "findFriends": "Arkadaş Bul",
+        "searchPlaceholder": "İsim veya e-posta ile ara...",
+        "noUsersFound": "Kullanıcı bulunamadı",
+        "add": "Ekle",
+        "requestSent": "Arkadaşlık isteği gönderildi!",
+        "requestAccepted": "Arkadaşlık isteği kabul edildi!",
+        "requestCancelled": "İstek iptal edildi",
+        "friendRemoved": "Arkadaş silindi",
+        "requests": "Arkadaşlık İstekleri",
+        "myFriends": "Arkadaşlarım",
+        "sentRequests": "Gönderilen İstekler",
+        "requestPending": "İstek beklemede",
+        "emptyTitle": "Henüz Arkadaş Yok",
+        "emptyDesc": "Diğer okuyucularla bağlantı kurarak ilerlemenizi paylaşın ve başarılarını görün!",
+        "communityBuzz": "Toplulukta Neler Oluyor?",
+        "activityFinished": "{{title}} hikayesini bitirdi",
+        "activityEarned": "{{title}} başarısını kazandı",
+        "activityStarted": "{{title}} hikayesini okumaya başladı",
+        "shareSomething": "İlerlemeni paylaş...",
+        "reply": "Yanıtla"
+    },
+    "rankings": {
+        "title": "Sıralamalar",
+        "global": "Genel",
+        "friends": "Arkadaşlar",
+        "globalTitle": "Küresel Sıralama",
+        "friendsTitle": "Arkadaş Sıralaması",
+        "scoreLabel": "KELİME",
+        "emptyFriends": "Arkadaşlarını takip ederek onlarla nasıl yarıştığını gör!",
+        "stats": "{{words}}k kelime • {{stories}} hikaye"
     }
 }

@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useRef } from 'react';
-import { View, Text, ScrollView, Pressable } from 'react-native';
+import { View, Text, ScrollView, Pressable, Share } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -16,7 +16,9 @@ import {
     ConfirmationDialog,
     StoryDetailScreenSkeleton,
 } from '@/components';
-import { useStory, useStoryRating, useReviewsByStory, useCreateReview } from '@/hooks/useQueries';
+import { useStory } from '@/hooks/useQueries';
+import { useFirestoreReviews } from '@/hooks/useFirestoreReviews';
+import { useFavorites } from '@/hooks/useFavorites';
 import { urlFor } from '@/services/sanity/client';
 import { Story } from '@/types';
 import { useLibraryStore } from '@/store/libraryStore';
@@ -38,12 +40,24 @@ export default function StoryDetailScreen() {
     const { user } = useAuthStore();
     const { actions: libraryActions } = useLibraryStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
-    const createReview = useCreateReview();
 
     // Fetch data
     const { data: storyDoc, isLoading: loadingStory, error: errorStory, refetch: refetchStory } = useStory(id || '');
-    const { data: ratingData, isLoading: loadingRating, refetch: refetchRating } = useStoryRating(id || '');
-    const { data: reviewsData, isLoading: loadingReviews, refetch: refetchReviews } = useReviewsByStory(id || '');
+
+    // Firestore social features
+    const {
+        reviews,
+        loading: loadingReviews,
+        addReview,
+        averageRating: rating,
+        totalReviews: count,
+        refresh: refreshReviews
+    } = useFirestoreReviews(id || '');
+
+    const {
+        isFavorited,
+        toggleFavorite,
+    } = useFavorites(id || '');
 
     // Transform Story
     const story = useMemo(() => {
@@ -66,13 +80,11 @@ export default function StoryDetailScreen() {
         };
     }, [storyDoc]);
 
-    const rating = ratingData?.averageRating || 0;
-    const count = ratingData?.totalReviews || 0;
-    const reviews = reviewsData || [];
     const isInLibrary = story ? libraryActions.isInLibrary(story.id) : false;
 
     const handleBookmarkPress = async () => {
         if (!story) return;
+        haptics.selection();
         if (isInLibrary) {
             await libraryActions.removeFromLibrary(story.id);
         } else {
@@ -80,7 +92,25 @@ export default function StoryDetailScreen() {
         }
     };
 
-    const isLoading = loadingStory || loadingRating || loadingReviews;
+    const handleFavoritePress = async () => {
+        if (!story) return;
+        await toggleFavorite(story.title, story.coverImage);
+    };
+
+    const handleSharePress = async () => {
+        if (!story) return;
+        haptics.selection();
+        try {
+            await Share.share({
+                title: story.title,
+                message: `Check out this story on English Tales: ${story.title}\n\n${story.description}`,
+            });
+        } catch (error) {
+            console.error('Error sharing story:', error);
+        }
+    };
+
+    const isLoading = loadingStory || loadingReviews;
 
     if (isLoading) {
         return (
@@ -98,8 +128,7 @@ export default function StoryDetailScreen() {
                         message="Failed to load story. Please try again."
                         onRetry={() => {
                             refetchStory();
-                            refetchRating();
-                            refetchReviews();
+                            refreshReviews();
                         }}
                     />
                 </View>
@@ -130,7 +159,10 @@ export default function StoryDetailScreen() {
                     onBackPress={() => router.back()}
                     onBookmarkPress={handleBookmarkPress}
                     isBookmarked={isInLibrary}
+                    onFavoritePress={handleFavoritePress}
+                    isFavorited={isFavorited}
                     topInset={insets.top}
+                    onSharePress={handleSharePress}
                 />
 
                 {/* Content */}
@@ -207,9 +239,9 @@ export default function StoryDetailScreen() {
                         {reviews.length > 0 ? (
                             <ReviewCard
                                 userName={reviews[0].userName}
-                                userAvatar={reviews[0].userAvatar}
+                                userAvatar={reviews[0].userPhoto || undefined}
                                 rating={reviews[0].rating}
-                                text={reviews[0].text}
+                                text={reviews[0].comment}
                             />
                         ) : (
                             <Text style={styles.noReviewsText}>No reviews yet</Text>
@@ -237,14 +269,13 @@ export default function StoryDetailScreen() {
                 storyTitle={story.title}
                 onSubmit={async (rating, text) => {
                     if (!user || !story) return;
-                    await createReview.mutateAsync({
-                        storyId: story.id,
-                        userId: user.id,
-                        userName: user.displayName || 'Anonymous',
-                        userAvatar: user.photoURL || undefined,
+                    await addReview(
+                        user.id,
+                        user.displayName || 'Anonymous',
+                        user.photoURL,
                         rating,
-                        text,
-                    });
+                        text
+                    );
                 }}
                 onClose={() => writeReviewSheetRef.current?.close()}
             />

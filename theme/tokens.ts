@@ -107,6 +107,12 @@ export const radius = {
 } as const;
 
 export const typography = {
+    fontFamily: {
+        heading: 'Outfit_600SemiBold',
+        body: 'Inter_400Regular',
+        semiBold: 'Inter_600SemiBold',
+        bold: 'Outfit_700Bold',
+    },
     size: {
         xs: 10,
         sm: 12,

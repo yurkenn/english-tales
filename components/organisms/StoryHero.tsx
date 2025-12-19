@@ -11,7 +11,10 @@ interface StoryHeroProps {
     onBackPress: () => void;
     onBookmarkPress: () => void;
     isBookmarked: boolean;
+    onFavoritePress: () => void;
+    isFavorited: boolean;
     topInset: number;
+    onSharePress?: () => void;
 }
 
 export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
@@ -21,7 +24,10 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
     onBackPress,
     onBookmarkPress,
     isBookmarked,
+    onFavoritePress,
+    isFavorited,
     topInset,
+    onSharePress,
 }) => {
     const { theme } = useUnistyles();
 
@@ -41,13 +47,30 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
             <Pressable style={[styles.backButton, { top: topInset + 8 }]} onPress={onBackPress}>
                 <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
             </Pressable>
-            <Pressable style={[styles.bookmarkButton, { top: topInset + 8 }]} onPress={onBookmarkPress}>
-                <Ionicons
-                    name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
-                    size={24}
-                    color={isBookmarked ? theme.colors.primary : theme.colors.textInverse}
-                />
-            </Pressable>
+
+            <View style={[styles.rightButtons, { top: topInset + 8 }]}>
+                <Pressable style={styles.actionButton} onPress={onFavoritePress}>
+                    <Ionicons
+                        name={isFavorited ? 'heart' : 'heart-outline'}
+                        size={24}
+                        color={isFavorited ? theme.colors.error : '#FFFFFF'}
+                    />
+                </Pressable>
+
+                <Pressable style={styles.actionButton} onPress={onBookmarkPress}>
+                    <Ionicons
+                        name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
+                        size={24}
+                        color={isBookmarked ? theme.colors.primary : '#FFFFFF'}
+                    />
+                </Pressable>
+
+                {onSharePress && (
+                    <Pressable style={styles.actionButton} onPress={onSharePress}>
+                        <Ionicons name="share-social-outline" size={24} color="#FFFFFF" />
+                    </Pressable>
+                )}
+            </View>
         </View>
     );
 };
@@ -70,9 +93,13 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    bookmarkButton: {
+    rightButtons: {
         position: 'absolute',
         right: theme.spacing.lg,
+        flexDirection: 'row',
+        gap: theme.spacing.sm,
+    },
+    actionButton: {
         width: 40,
         height: 40,
         borderRadius: theme.radius.full,

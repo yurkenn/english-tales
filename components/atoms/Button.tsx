@@ -146,7 +146,7 @@ const styles = StyleSheet.create((theme) => ({
     opacity: 0.8,
   },
   buttonText: {
-    fontWeight: theme.typography.weight.semibold,
+    fontFamily: theme.typography.fontFamily.semiBold,
     textAlign: 'center',
   },
   iconLeft: {

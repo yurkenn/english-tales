@@ -5,13 +5,24 @@ import { useEffect, useState } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import * as SplashScreen from 'expo-splash-screen';
+import { useFonts } from 'expo-font';
+import {
+  Outfit_600SemiBold,
+  Outfit_700Bold
+} from '@expo-google-fonts/outfit';
+import {
+  Inter_400Regular,
+  Inter_600SemiBold
+} from '@expo-google-fonts/inter';
 import { QueryProvider } from '@/providers/QueryProvider';
 import { useAuthStore } from '../store/authStore';
 import { useLibraryStore } from '../store/libraryStore';
 import { useProgressStore } from '../store/progressStore';
 import { useThemeStore, useThemeKey, useIsDark } from '../store/themeStore';
 import { useDownloadStore } from '../store/downloadStore';
+import { useSettingsStore } from '@/store/settingsStore';
 import { secureStorage } from '../services/storage';
+import { notificationService } from '@/services/notificationService';
 import {
   AchievementToast,
   ToastContainer,
@@ -61,13 +72,21 @@ export default function RootLayout() {
     return cleanup;
   }, [themeActions, downloadActions]);
 
+  // Load fonts
+  const [fontsLoaded] = useFonts({
+    Outfit_600SemiBold,
+    Outfit_700Bold,
+    Inter_400Regular,
+    Inter_600SemiBold,
+  });
+
   // Handle splash screen visibility
   useEffect(() => {
-    if (initialized && !isLoading) {
-      // App is initialized (auth, settings etc)
+    if (initialized && !isLoading && fontsLoaded) {
+      // App is initialized (auth, settings, fonts etc)
       setIsAppReady(true);
     }
-  }, [initialized, isLoading]);
+  }, [initialized, isLoading, fontsLoaded]);
 
   const onSplashAnimationComplete = () => {
     setIsSplashAnimationFinished(true);
@@ -76,9 +95,19 @@ export default function RootLayout() {
   // Ref to ensure splash is hidden only once
   const isSplashHidden = useState(false);
 
+  // Background initialization
+  useEffect(() => {
+    if (initialized) {
+      // Initialize notifications if enabled
+      if (useSettingsStore.getState().settings.notificationsEnabled) {
+        notificationService.initialize();
+      }
+    }
+  }, [initialized]);
+
   // Hide native splash once the app is initialized
   useEffect(() => {
-    if (initialized && !isLoading && !isSplashHidden[0]) {
+    if (initialized && !isLoading && fontsLoaded && !isSplashHidden[0]) {
       // Small frame delay to ensure React has rendered the AnimatedSplashScreen
       requestAnimationFrame(async () => {
         try {

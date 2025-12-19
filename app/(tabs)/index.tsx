@@ -15,6 +15,7 @@ import {
     HomeScreenSkeleton,
     HomeHeader,
     TrendingStoryCard,
+    CommunityBuzz,
 } from '@/components';
 import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries';
 import { Story } from '@/types';
@@ -129,6 +130,8 @@ export default function HomeScreen() {
                 userName={user?.displayName || t('home.greetingDefault')}
                 userPhotoUrl={user?.photoURL || undefined}
                 isAnonymous={user?.isAnonymous}
+                onSocialPress={() => { haptics.selection(); router.push('/social' as any); }}
+                onNotificationPress={() => { haptics.selection(); router.push('/settings' as any); }}
             />
 
             <View style={styles.searchContainer}>
@@ -161,6 +164,38 @@ export default function HomeScreen() {
                     />
                 }
             >
+                <CommunityBuzz
+                    activities={[
+                        {
+                            id: '1',
+                            userId: 'u1',
+                            userName: 'Sophie',
+                            userPhoto: 'https://i.pravatar.cc/150?u=u1',
+                            type: 'story_completed',
+                            targetName: 'The Ugly Duckling',
+                            timestamp: new Date()
+                        },
+                        {
+                            id: '2',
+                            userId: 'u2',
+                            userName: 'Mert',
+                            userPhoto: 'https://i.pravatar.cc/150?u=u2',
+                            type: 'achievement',
+                            targetName: '7 Day Streak',
+                            timestamp: new Date()
+                        },
+                        {
+                            id: '3',
+                            userId: 'u3',
+                            userName: 'Elena',
+                            userPhoto: 'https://i.pravatar.cc/150?u=u3',
+                            type: 'started_reading',
+                            targetName: 'Sherlock Holmes',
+                            timestamp: new Date()
+                        }
+                    ]}
+                />
+
                 {continueReading && continueReading.progress && (
                     <View style={styles.section}>
                         <SectionHeader title={t('home.continueReading')} onActionPress={() => router.push('/library')} />

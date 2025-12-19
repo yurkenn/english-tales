@@ -215,5 +215,39 @@
     },
     "notifications": {
         "feedback": "Notifications {{status}}"
+    },
+    "social": {
+        "title": "Community",
+        "community": "Community",
+        "findFriends": "Find Friends",
+        "searchPlaceholder": "Search by name or email...",
+        "noUsersFound": "No users found",
+        "add": "Add",
+        "requestSent": "Friend request sent!",
+        "requestAccepted": "Friend request accepted!",
+        "requestCancelled": "Request cancelled",
+        "friendRemoved": "Friend removed",
+        "requests": "Friend Requests",
+        "myFriends": "My Friends",
+        "sentRequests": "Sent Requests",
+        "requestPending": "Request pending",
+        "emptyTitle": "No Friends Yet",
+        "emptyDesc": "Start connecting with other readers to share your progress and see their achievements!",
+        "communityBuzz": "Community Buzz",
+        "activityFinished": "finished {{title}}",
+        "activityEarned": "earned {{title}}",
+        "activityStarted": "started reading {{title}}",
+        "shareSomething": "Share your progress...",
+        "reply": "Reply"
+    },
+    "rankings": {
+        "title": "Rankings",
+        "global": "Global",
+        "friends": "Friends",
+        "globalTitle": "Global Rankings",
+        "friendsTitle": "Friend Rankings",
+        "scoreLabel": "WORDS",
+        "emptyFriends": "Follow more readers to see how you rank against them!",
+        "stats": "{{words}}k words • {{stories}} stories"
     }
 }

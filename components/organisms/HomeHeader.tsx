@@ -16,6 +16,7 @@ interface HomeHeaderProps {
     userPhotoUrl?: string;
     isAnonymous?: boolean;
     onNotificationPress?: () => void;
+    onSocialPress?: () => void;
 }
 
 export const HomeHeader: React.FC<HomeHeaderProps> = ({
@@ -23,6 +24,7 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
     userPhotoUrl,
     isAnonymous,
     onNotificationPress,
+    onSocialPress,
 }) => {
     const { theme } = useUnistyles();
     const displayName = isAnonymous ? 'Guest' : (userName || 'Reader');
@@ -37,18 +39,31 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
                     <Text style={styles.userName}>{displayName}</Text>
                 </View>
             </View>
-            <Pressable
-                style={styles.notificationButton}
-                hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                onPress={onNotificationPress}
-            >
-                <Ionicons
-                    name="notifications-outline"
-                    size={theme.iconSize.md}
-                    color={theme.colors.text}
-                />
-                <View style={styles.notificationBadge} />
-            </Pressable>
+            <View style={styles.actionRow}>
+                <Pressable
+                    style={styles.notificationButton}
+                    hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                    onPress={onSocialPress}
+                >
+                    <Ionicons
+                        name="people-outline"
+                        size={theme.iconSize.md}
+                        color={theme.colors.text}
+                    />
+                </Pressable>
+                <Pressable
+                    style={styles.notificationButton}
+                    hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                    onPress={onNotificationPress}
+                >
+                    <Ionicons
+                        name="notifications-outline"
+                        size={theme.iconSize.md}
+                        color={theme.colors.text}
+                    />
+                    <View style={styles.notificationBadge} />
+                </Pressable>
+            </View>
         </View>
     );
 };
@@ -60,6 +75,11 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'space-between',
         paddingHorizontal: theme.spacing.lg,
         paddingVertical: theme.spacing.sm,
+    },
+    actionRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: theme.spacing.xs,
     },
     userRow: {
         flexDirection: 'row',

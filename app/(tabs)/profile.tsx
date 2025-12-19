@@ -1,22 +1,20 @@
-import React, { useMemo, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import { View, Text, ScrollView, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import BottomSheet from '@gorhom/bottom-sheet';
-import {
-    ProfileCard,
-    StatsGrid,
-    ProfileMenu,
-    ReadingGoalsSheet,
-    ReadingCalendar,
-    ActionSheet,
-    InsightsCard,
-    WordGrowthChart,
-    ProfileScreenSkeleton,
-    MenuItem
-} from '@/components';
+import { ProfileCard } from '../../components/organisms/ProfileCard';
+import { StatsGrid } from '../../components/organisms/StatsGrid';
+import { ProfileMenu, MenuItem } from '../../components/organisms/ProfileMenu';
+import { ReadingGoalsSheet } from '../../components/organisms/ReadingGoalsSheet';
+import { ReadingCalendar } from '../../components/organisms/ReadingCalendar';
+import { ActionSheet } from '../../components/molecules/ActionSheet';
+import { InsightsCard } from '../../components/organisms/InsightsCard';
+import { WordGrowthChart } from '../../components/organisms/WordGrowthChart';
+import { ProfileScreenSkeleton } from '../../components/skeletons';
+import { FriendCircle } from '../../components/molecules/FriendCircle';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
@@ -25,6 +23,8 @@ import { useAchievementsStore } from '@/store/achievementsStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { useToastStore } from '@/store/toastStore';
 import { useVocabularyStore } from '@/store/vocabularyStore';
+import { socialService } from '@/services/socialService';
+import { UserProfile } from '@/types';
 import { haptics } from '@/utils/haptics';
 
 import { useTranslation } from 'react-i18next';
@@ -58,6 +58,9 @@ export default function ProfileScreen() {
             readingStreak: progressActions.getStreak(),
         };
     }, [progressMap, progressActions]);
+
+    const [friends, setFriends] = useState<UserProfile[]>([]);
+    const [isLoadingFriends, setIsLoadingFriends] = useState(true);
 
     // Calculate Learning Insights
     const learningInsights = useMemo(() => {
@@ -125,6 +128,19 @@ export default function ProfileScreen() {
         settingsActions.loadSettings();
     }, []);
 
+    useEffect(() => {
+        const fetchFriends = async () => {
+            if (!user) return;
+            setIsLoadingFriends(true);
+            const result = await socialService.getFriendships(user.id);
+            if (result.success) {
+                setFriends(result.data.accepted);
+            }
+            setIsLoadingFriends(false);
+        };
+        fetchFriends();
+    }, [user]);
+
     // Handlers
     const handleOpenGoals = useCallback(() => {
         haptics.selection();
@@ -164,6 +180,7 @@ export default function ProfileScreen() {
     const menuItems: MenuItem[] = [
         { label: t('profile.readingGoals'), icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: handleOpenGoals },
         { label: t('profile.achievements'), icon: 'trophy-outline', value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
+        { label: t('social.myFriends', 'Friends'), icon: 'people-outline', onPress: () => { haptics.selection(); router.push('/social' as any); } },
         { label: t('profile.language'), icon: 'language-outline', value: currentLanguageLabel, onPress: handleLanguage },
         { label: t('profile.notifications'), icon: 'notifications-outline', value: settings.notificationsEnabled ? t('common.on') : t('common.off'), onPress: handleNotifications },
         { label: t('profile.appearance'), icon: 'color-palette-outline', value: themeModeLabel, onPress: themeActions.toggleTheme },
@@ -203,6 +220,11 @@ export default function ProfileScreen() {
                     email={user.email}
                     isAnonymous={user.isAnonymous}
                     onSignInPress={signOut}
+                />
+
+                <FriendCircle
+                    friends={friends}
+                    onPressAll={() => router.push('/social' as any)}
                 />
 
                 {/* Stats Grid */}
