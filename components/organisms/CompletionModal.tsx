@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, Pressable, Modal } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { ConfettiCelebration } from './ConfettiCelebration';
 import { haptics } from '@/utils/haptics';
 
@@ -23,6 +24,7 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
     onContinue,
 }) => {
     const { theme } = useUnistyles();
+    const { t } = useTranslation();
     const [rating, setRating] = useState(0);
 
     const handleRatingPress = (value: number) => {
@@ -39,8 +41,8 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                         <View style={styles.iconContainer}>
                             <Ionicons name="trophy" size={40} color={theme.colors.primary} />
                         </View>
-                        <Text style={styles.congratsText}>Way to go!</Text>
-                        <Text style={styles.title}>Story Completed</Text>
+                        <Text style={styles.congratsText}>{t('reading.completion.congrats', 'Way to go!')}</Text>
+                        <Text style={styles.title}>{t('reading.completion.title', 'Story Completed')}</Text>
                     </View>
 
                     <Text style={styles.storyTitle}>{storyTitle}</Text>
@@ -48,17 +50,17 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                     <View style={styles.statsRow}>
                         <View style={styles.statBox}>
                             <Text style={styles.statValue}>{readingTimeMinutes}</Text>
-                            <Text style={styles.statLabel}>min read</Text>
+                            <Text style={styles.statLabel}>{t('reading.completion.minRead', 'min read')}</Text>
                         </View>
                         <View style={styles.statDivider} />
                         <View style={styles.statBox}>
                             <Text style={styles.statValue}>{wordCount}</Text>
-                            <Text style={styles.statLabel}>words</Text>
+                            <Text style={styles.statLabel}>{t('reading.completion.words', 'words')}</Text>
                         </View>
                     </View>
 
                     <View style={styles.ratingSection}>
-                        <Text style={styles.ratingLabel}>Support the author with a rating</Text>
+                        <Text style={styles.ratingLabel}>{t('reading.completion.ratingLabel', 'Support the author with a rating')}</Text>
                         <View style={styles.stars}>
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <Pressable key={star} onPress={() => handleRatingPress(star)}>
@@ -73,11 +75,11 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                     </View>
 
                     <Pressable style={styles.button} onPress={() => onComplete(rating > 0 ? rating : undefined)}>
-                        <Text style={styles.buttonText}>Finish & Share</Text>
+                        <Text style={styles.buttonText}>{t('reading.completion.finishAndShare', 'Finish & Share')}</Text>
                     </Pressable>
 
                     <Pressable style={styles.secondary} onPress={onContinue}>
-                        <Text style={styles.secondaryText}>Back to Library</Text>
+                        <Text style={styles.secondaryText}>{t('reading.completion.backToLibrary', 'Back to Library')}</Text>
                     </Pressable>
                 </View>
             </View>

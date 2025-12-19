@@ -106,7 +106,7 @@ export default function AuthorScreen() {
                         <View style={styles.statDivider} />
                         <View style={styles.statItem}>
                             <Typography variant="bodyBold">{followerCount}</Typography>
-                            <Typography variant="caption" color={theme.colors.textMuted}>Followers</Typography>
+                            <Typography variant="caption" color={theme.colors.textMuted}>{t('social.followers', 'Followers')}</Typography>
                         </View>
                     </View>
 

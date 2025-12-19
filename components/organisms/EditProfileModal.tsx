@@ -4,6 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
+import { useTranslation } from 'react-i18next';
 
 interface EditProfileModalProps {
     visible: boolean;
@@ -19,6 +20,7 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
     onSave,
 }) => {
     const { theme } = useUnistyles();
+    const { t } = useTranslation();
     const [name, setName] = useState(initialName);
     const [isSaving, setIsSaving] = useState(false);
     const toastActions = useToastStore((state) => state.actions);
@@ -26,18 +28,18 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
     const handleSave = async () => {
         if (!name.trim()) {
             haptics.error();
-            toastActions.error('Display name cannot be empty');
+            toastActions.error(t('profile.edit.emptyNameError', 'Display name cannot be empty'));
             return;
         }
         setIsSaving(true);
         try {
             await onSave(name.trim());
             haptics.success();
-            toastActions.success('Profile updated successfully');
+            toastActions.success(t('profile.edit.success', 'Profile updated successfully'));
             onClose();
         } catch (error) {
             haptics.error();
-            toastActions.error('Failed to update profile. Please try again.');
+            toastActions.error(t('profile.edit.error', 'Failed to update profile. Please try again.'));
         } finally {
             setIsSaving(false);
         }
@@ -48,18 +50,18 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
             <View style={styles.overlay}>
                 <View style={styles.content}>
                     <View style={styles.header}>
-                        <Text style={styles.title}>Edit Profile</Text>
+                        <Text style={styles.title}>{t('profile.editProfile', 'Edit Profile')}</Text>
                         <Pressable onPress={onClose}>
                             <Ionicons name="close" size={24} color={theme.colors.text} />
                         </Pressable>
                     </View>
 
-                    <Text style={styles.inputLabel}>Display Name</Text>
+                    <Text style={styles.inputLabel}>{t('auth.displayName', 'Display Name')}</Text>
                     <TextInput
                         style={styles.textInput}
                         value={name}
                         onChangeText={setName}
-                        placeholder="Enter your name"
+                        placeholder={t('profile.edit.displayNamePlaceholder', 'Enter your name')}
                         placeholderTextColor={theme.colors.textMuted}
                     />
 
@@ -69,7 +71,7 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
                         onPress={handleSave}
                     >
                         <Text style={styles.saveButtonText}>
-                            {isSaving ? 'Saving...' : 'Save Changes'}
+                            {isSaving ? t('common.saving', 'Saving...') : t('common.save', 'Save Changes')}
                         </Text>
                     </Pressable>
                 </View>

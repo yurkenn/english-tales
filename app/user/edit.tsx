@@ -120,17 +120,17 @@ export default function EditProfileScreen() {
             >
                 <SettingSection title={t('settings.sections.general', 'General Info')}>
                     <FormField
-                        label={t('auth.displayName', 'Display Name')}
+                        label={t('profile.fullName', 'Full Name')}
                         value={displayName}
                         onChangeText={setDisplayName}
-                        placeholder="Your name"
+                        placeholder={t('profile.edit.fullNamePlaceholder', 'Your name')}
                         icon="person-outline"
                     />
                     <FormField
                         label={t('profile.bio', 'Bio')}
                         value={bio}
                         onChangeText={setBio}
-                        placeholder="Tell others about yourself..."
+                        placeholder={t('profile.edit.bioPlaceholder', 'Tell others about yourself...')}
                         multiline
                         numberOfLines={3}
                         style={styles.bioInput}
@@ -143,7 +143,7 @@ export default function EditProfileScreen() {
                         label="Instagram"
                         value={instagram}
                         onChangeText={setInstagram}
-                        placeholder="@username"
+                        placeholder={t('profile.edit.usernamePlaceholder', '@username')}
                         icon="logo-instagram"
                         autoCapitalize="none"
                     />
@@ -151,7 +151,7 @@ export default function EditProfileScreen() {
                         label="Twitter"
                         value={twitter}
                         onChangeText={setTwitter}
-                        placeholder="@username"
+                        placeholder={t('profile.edit.usernamePlaceholder', '@username')}
                         icon="logo-twitter"
                         autoCapitalize="none"
                     />
@@ -159,7 +159,7 @@ export default function EditProfileScreen() {
                         label="Website"
                         value={website}
                         onChangeText={setWebsite}
-                        placeholder="https://..."
+                        placeholder={t('profile.edit.websitePlaceholder', 'https://...')}
                         icon="globe-outline"
                         autoCapitalize="none"
                         keyboardType="url"
@@ -168,14 +168,14 @@ export default function EditProfileScreen() {
                         label="GitHub"
                         value={github}
                         onChangeText={setGithub}
-                        placeholder="username"
+                        placeholder={t('profile.edit.githubPlaceholder', 'username')}
                         icon="logo-github"
                         autoCapitalize="none"
                     />
                 </SettingSection>
 
                 <Button
-                    title={t('common.save', 'Save Changes')}
+                    title={saving ? t('common.saving', 'Saving...') : t('common.save', 'Save Changes')}
                     onPress={handleSave}
                     loading={saving}
                     style={styles.saveButton}

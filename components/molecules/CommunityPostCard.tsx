@@ -13,6 +13,7 @@ import { Typography } from '../atoms/Typography';
 import { OptimizedImage } from '../atoms/OptimizedImage';
 import { RatingStars } from '../atoms/RatingStars';
 import { haptics } from '@/utils/haptics';
+import { useTranslation } from 'react-i18next';
 
 import { CommunityPost } from '@/types';
 
@@ -35,6 +36,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     onAvatarPress,
 }) => {
     const { theme } = useUnistyles();
+    const { t } = useTranslation();
     const router = useRouter();
 
     const hasLiked = currentUserId ? post.likedBy?.includes(currentUserId) : false;
@@ -85,27 +87,28 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     return (
         <View style={[
             styles.postCard,
-            isAchievement && styles.achievementCard,
-            isReview && styles.reviewCard
+            isAchievement && { borderColor: theme.colors.warning + '30' },
+            isReview && { borderColor: theme.colors.primary + '30' }
         ]}>
             {isAchievement && (
                 <View style={styles.achievementBadge}>
-                    <Ionicons name="trophy" size={14} color={theme.colors.background} />
+                    <Ionicons name="trophy" size={10} color="#FFFFFF" />
                     <Typography variant="caption" style={styles.achievementBadgeText}>
-                        {achievementTitle || 'Achievement'}
+                        {achievementTitle || t('social.achievement', 'Achievement')}
                     </Typography>
                 </View>
             )}
             {isReview && (
                 <View style={styles.reviewBadge}>
-                    <Ionicons name="star" size={12} color={theme.colors.background} />
+                    <Ionicons name="star" size={10} color="#FFFFFF" />
                     <Typography variant="caption" style={styles.reviewBadgeText}>
-                        Story Review
+                        {t('reading.review', 'Story Review')}
                     </Typography>
                 </View>
             )}
+
             <View style={styles.postHeader}>
-                <Pressable onPress={handleProfilePress}>
+                <Pressable onPress={handleProfilePress} style={styles.avatarContainer}>
                     <OptimizedImage
                         source={{ uri: post.userPhoto || '' }}
                         style={styles.avatar}
@@ -175,7 +178,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                         }
                     >
                         {isAchievement
-                            ? (hasLiked ? 'Congratulated' : 'Congratulate')
+                            ? (hasLiked ? t('social.congratulated', 'Congratulated') : t('social.congratulate', 'Congratulate'))
                             : (post.likes || 0)
                         }
                         {isAchievement && post.likes > 0 && ` (${post.likes})`}
@@ -203,27 +206,29 @@ const styles = StyleSheet.create((theme) => ({
     postCard: {
         backgroundColor: theme.colors.surface,
         padding: theme.spacing.lg,
-        marginBottom: theme.spacing.sm,
+        marginBottom: theme.spacing.md,
+        borderRadius: 16,
+        marginHorizontal: theme.spacing.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
-        borderRadius: 20,
-        marginHorizontal: theme.spacing.lg,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.03,
-        shadowRadius: 2,
-        elevation: 1,
+        ...theme.shadows.sm,
     },
     postHeader: {
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: theme.spacing.md,
     },
-    avatar: {
-        width: 44,
-        height: 44,
+    avatarContainer: {
+        padding: 1.5,
         borderRadius: 22,
+        borderWidth: 1,
+        borderColor: theme.colors.border,
         backgroundColor: theme.colors.background,
+    },
+    avatar: {
+        width: 40,
+        height: 40,
+        borderRadius: 20,
     },
     headerInfo: {
         flex: 1,
@@ -232,16 +237,20 @@ const styles = StyleSheet.create((theme) => ({
     postContent: {
         lineHeight: 22,
         marginBottom: theme.spacing.md,
+        color: theme.colors.text,
+        fontSize: 15,
     },
     storyTag: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: theme.colors.primary + '08',
+        backgroundColor: theme.colors.background,
         paddingHorizontal: theme.spacing.md,
         paddingVertical: theme.spacing.sm,
-        borderRadius: theme.radius.md,
+        borderRadius: theme.radius.sm,
         alignSelf: 'flex-start',
         marginBottom: theme.spacing.md,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     postFooter: {
         flexDirection: 'row',
@@ -255,51 +264,47 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
     },
-    achievementCard: {
-        borderColor: theme.colors.warning + '40',
-        backgroundColor: theme.colors.warning + '05',
-        borderWidth: 2,
-    },
     achievementBadge: {
         position: 'absolute',
-        top: -12,
-        right: 20,
+        top: 0,
+        right: 0,
         backgroundColor: theme.colors.warning,
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: 10,
-        paddingVertical: 4,
-        borderRadius: 12,
-        ...theme.shadows.sm,
+        paddingVertical: 5,
+        borderTopRightRadius: 15,
+        borderBottomLeftRadius: 12,
+        zIndex: 1,
     },
     achievementBadgeText: {
-        color: theme.colors.background,
+        color: '#FFFFFF',
         fontWeight: 'bold',
         marginLeft: 4,
-        fontSize: 10,
-    },
-    reviewCard: {
-        borderColor: theme.colors.primary + '40',
-        backgroundColor: theme.colors.primary + '05',
-        borderWidth: 2,
+        fontSize: 9,
+        textTransform: 'uppercase',
+        letterSpacing: 0.5,
     },
     reviewBadge: {
         position: 'absolute',
-        top: -12,
-        right: 20,
+        top: 0,
+        right: 0,
         backgroundColor: theme.colors.primary,
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: 10,
-        paddingVertical: 4,
-        borderRadius: 12,
-        ...theme.shadows.sm,
+        paddingVertical: 5,
+        borderTopRightRadius: 15,
+        borderBottomLeftRadius: 12,
+        zIndex: 1,
     },
     reviewBadgeText: {
-        color: theme.colors.background,
+        color: '#FFFFFF',
         fontWeight: 'bold',
         marginLeft: 4,
-        fontSize: 10,
+        fontSize: 9,
+        textTransform: 'uppercase',
+        letterSpacing: 0.5,
     },
     ratingRow: {
         flexDirection: 'row',

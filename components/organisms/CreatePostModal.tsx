@@ -93,8 +93,8 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
                                 placeholder="person-circle"
                             />
                             <View style={{ marginLeft: 12 }}>
-                                <Typography variant="bodyBold">{user?.displayName || 'Anonymous'}</Typography>
-                                <Typography variant="caption" color={theme.colors.textMuted}>Public Post</Typography>
+                                <Typography variant="bodyBold">{user?.displayName || t('common.anonymous', 'Anonymous')}</Typography>
+                                <Typography variant="caption" color={theme.colors.textMuted}>{t('social.publicPost', 'Public Post')}</Typography>
                             </View>
                         </View>
 
@@ -130,7 +130,7 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
                             >
                                 <Ionicons name="pricetag-outline" size={20} color={theme.colors.primary} />
                                 <Typography variant="caption" color={theme.colors.primary} style={{ marginLeft: 6 }}>
-                                    Tag Story
+                                    {t('social.tagStory', 'Tag Story')}
                                 </Typography>
                             </Pressable>
                             <Typography variant="caption" color={theme.colors.textMuted}>

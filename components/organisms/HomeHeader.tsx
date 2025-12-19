@@ -2,14 +2,7 @@ import React from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
-
-// Get time-based greeting
-const getGreeting = (): string => {
-    const hour = new Date().getHours();
-    if (hour < 12) return 'Good Morning';
-    if (hour < 17) return 'Good Afternoon';
-    return 'Good Evening';
-};
+import { useTranslation } from 'react-i18next';
 
 interface HomeHeaderProps {
     userName: string;
@@ -19,6 +12,13 @@ interface HomeHeaderProps {
     onSocialPress?: () => void;
 }
 
+const getGreeting = (t: any) => {
+    const hour = new Date().getHours();
+    if (hour < 12) return t('home.greeting_morning', 'Good Morning');
+    if (hour < 17) return t('home.greeting_afternoon', 'Good Afternoon');
+    return t('home.greeting_evening', 'Good Evening');
+};
+
 export const HomeHeader: React.FC<HomeHeaderProps> = ({
     userName,
     userPhotoUrl,
@@ -27,7 +27,8 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
     onSocialPress,
 }) => {
     const { theme } = useUnistyles();
-    const displayName = isAnonymous ? 'Guest' : (userName || 'Reader');
+    const { t } = useTranslation();
+    const displayName = isAnonymous ? t('common.guest', 'Guest') : (userName || t('common.reader', 'Reader'));
     const avatarUrl = userPhotoUrl || `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}`;
 
     return (
@@ -35,7 +36,7 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
             <View style={styles.userRow}>
                 <Image source={{ uri: avatarUrl }} style={styles.avatar} />
                 <View style={styles.greeting}>
-                    <Text style={styles.greetingLabel}>{getGreeting()}</Text>
+                    <Text style={styles.greetingLabel}>{getGreeting(t)}</Text>
                     <Text style={styles.userName}>{displayName}</Text>
                 </View>
             </View>

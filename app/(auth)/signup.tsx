@@ -5,6 +5,7 @@ import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { FormField, AuthHeader, AuthDivider, SocialAuthButton, TermsCheckbox } from '@/components';
+import { useTranslation } from 'react-i18next';
 import { useToastStore } from '@/store/toastStore';
 import { signupSchema } from '@/lib/validations';
 import { signUp, signInWithGoogle } from '@/services/auth';
@@ -13,6 +14,7 @@ export default function SignupScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { t } = useTranslation();
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -24,7 +26,7 @@ export default function SignupScreen() {
 
     const validateTerms = (): boolean => {
         if (!termsAccepted) {
-            setErrors((prev) => ({ ...prev, terms: 'You must accept the Terms of Service' }));
+            setErrors((prev) => ({ ...prev, terms: t('auth.signup.acceptTerms', 'You must accept the Terms of Service') }));
             return false;
         }
         setErrors((prev) => ({ ...prev, terms: undefined }));
@@ -51,7 +53,7 @@ export default function SignupScreen() {
         try {
             await signUp(email, password, name);
         } catch (error: any) {
-            toastActions.error(error.message || 'Signup failed');
+            toastActions.error(error.message || t('auth.signup.failed', 'Signup failed'));
         } finally {
             setLoading(false);
         }
@@ -88,12 +90,12 @@ export default function SignupScreen() {
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
 
-                <AuthHeader title="Create Account" subtitle="Start your English reading adventure today" />
+                <AuthHeader title={t('auth.signup.title', 'Create Account')} subtitle={t('auth.signup.subtitle', 'Start your English reading adventure today')} />
 
                 <View style={styles.form}>
                     <FormField
                         icon="person-outline"
-                        placeholder="Full Name"
+                        placeholder={t('auth.signup.fullName', 'Full Name')}
                         value={name}
                         onChangeText={(text) => {
                             setName(text);
@@ -104,7 +106,7 @@ export default function SignupScreen() {
                     />
                     <FormField
                         icon="mail-outline"
-                        placeholder="Email"
+                        placeholder={t('common.email', 'Email')}
                         value={email}
                         onChangeText={(text) => {
                             setEmail(text);
@@ -117,7 +119,7 @@ export default function SignupScreen() {
                     />
                     <FormField
                         icon="lock-closed-outline"
-                        placeholder="Password"
+                        placeholder={t('auth.signup.password', 'Password')}
                         value={password}
                         onChangeText={(text) => {
                             setPassword(text);
@@ -125,7 +127,7 @@ export default function SignupScreen() {
                         }}
                         secureTextEntry
                         error={errors.password}
-                        helperText="Must be at least 6 characters"
+                        helperText={t('auth.signup.passwordHint', 'Must be at least 6 characters')}
                         containerStyle={styles.fieldContainer}
                     />
 
@@ -139,20 +141,20 @@ export default function SignupScreen() {
                         {loading ? (
                             <ActivityIndicator color={theme.colors.textInverse} />
                         ) : (
-                            <Text style={styles.buttonText}>Sign Up</Text>
+                            <Text style={styles.buttonText}>{t('auth.signup.title', 'Sign Up')}</Text>
                         )}
                     </Pressable>
                 </View>
 
-                <AuthDivider text="or" />
+                <AuthDivider text={t('auth.signup.or', 'or')} />
 
                 <SocialAuthButton provider="google" onPress={handleGoogleSignIn} disabled={loading} />
 
                 <View style={styles.footer}>
-                    <Text style={styles.footerText}>Already have an account? </Text>
+                    <Text style={styles.footerText}>{t('auth.signup.hasAccount', 'Already have an account? ')}</Text>
                     <Link href="/login" asChild>
                         <Pressable>
-                            <Text style={styles.linkText}>Log In</Text>
+                            <Text style={styles.linkText}>{t('profile.login', 'Log In')}</Text>
                         </Pressable>
                     </Link>
                 </View>

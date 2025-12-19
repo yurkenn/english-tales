@@ -1,4 +1,19 @@
 {
+    "auth": {
+        "signup": {
+            "title": "Hesap Oluştur",
+            "subtitle": "İngilizce okuma macerana bugün başla"
+        },
+        "login": {
+            "title": "Tekrar Hoş Geldin",
+            "subtitle": "Okuma yolculuğuna devam etmek için giriş yap"
+        },
+        "forgotPassword": {
+            "title": "Şifremi Unuttum",
+            "message": "Şifrenizi sıfırlamak için e-posta adresinizi girin",
+            "placeholder": "E-posta"
+        }
+    },
     "common": {
         "error": "Bir şeyler yanlış gitti",
         "retry": "Tekrar dene",
@@ -14,7 +29,14 @@
         "hard": "Zor",
         "on": "Açık",
         "off": "Kapalı",
-        "goBack": "Geri Git"
+        "goBack": "Geri Git",
+        "saving": "Kaydediliyor...",
+        "saveChanges": "Değişiklikleri Kaydet",
+        "unknownAuthor": "Bilinmeyen Yazar",
+        "accept": "Kabul Et",
+        "seeAll": "Hepsini Gör",
+        "confirm": "Onayla",
+        "you": "Sen"
     },
     "tabs": {
         "home": "Ana Sayfa",
@@ -56,12 +78,18 @@
     },
     "home": {
         "greeting": "Merhaba, {{name}}",
+        "greeting_morning": "Günaydın",
+        "greeting_afternoon": "Tünaydın",
+        "greeting_evening": "İyi Akşamlar",
+        "greetingDefault": "Okur",
+        "searchPlaceholder": "Hikaye, yazar ara...",
         "continueReading": "Okumaya Devam Et",
         "dailyPick": "Günün Hikayesi",
         "recommended": "Senin İçin Önerilenler",
         "trending": "Şu An Trend",
         "categories": {
             "forYou": "Senin İçin",
+            "following": "Takip Ettiklerin",
             "easy": "Kolay",
             "medium": "Orta",
             "hard": "Zor",
@@ -130,6 +158,8 @@
         "complete": "%{{percentage}} tamamlandı",
         "remainingTime": "~{{time}} dk kaldı",
         "chapter": "Bölüm {{number}}",
+        "startReading": "Okumaya Başla",
+        "continue": "Devam Et",
         "notFound": "Hikaye bulunamadı",
         "noContent": "İçerik mevcut değil.",
         "lineSpacing": "Satır Aralığı",
@@ -243,7 +273,12 @@
         "activityEarned": "{{title}} başarısını kazandı",
         "activityStarted": "{{title}} hikayesini okumaya başladı",
         "shareSomething": "İlerlemeni paylaş...",
-        "reply": "Yanıtla"
+        "reply": "Yanıtla",
+        "congratulate": "Tebrik Et",
+        "congratulated": "Tebrik Edildi",
+        "achievement": "Başarım",
+        "activeReader": "Aktif Okuyucu",
+        "createPost": "Yeni Gönderi"
     },
     "rankings": {
         "title": "Sıralamalar",

@@ -1,4 +1,19 @@
 {
+    "auth": {
+        "signup": {
+            "title": "Créer un compte",
+            "subtitle": "Commencez votre aventure de lecture en anglais aujourd'hui"
+        },
+        "login": {
+            "title": "Bon retour",
+            "subtitle": "Connectez-vous pour continuer votre voyage de lecture"
+        },
+        "forgotPassword": {
+            "title": "Mot de passe oublié",
+            "message": "Entrez votre email pour réinitialiser votre mot de passe",
+            "placeholder": "E-mail"
+        }
+    },
     "common": {
         "error": "Une erreur est survenue",
         "retry": "Réessayer",
@@ -14,7 +29,14 @@
         "hard": "Difficile",
         "on": "Activé",
         "off": "Désactivé",
-        "goBack": "Retour"
+        "goBack": "Retour",
+        "saving": "Enregistrement...",
+        "saveChanges": "Enregistrer les modifications",
+        "unknownAuthor": "Auteur inconnu",
+        "accept": "Accepter",
+        "seeAll": "Voir tout",
+        "confirm": "Confirmer",
+        "you": "Vous"
     },
     "tabs": {
         "home": "Accueil",
@@ -44,7 +66,8 @@
             "readingTime": "Temps de lecture",
             "streak": "Série de jours"
         },
-        "quickSettings": "Paramètres rapides"
+        "quickSettings": "Paramètres rapides",
+        "vocabulary": "Vocabulaire"
     },
     "appearance": {
         "title": "Apparence",
@@ -55,12 +78,18 @@
     },
     "home": {
         "greeting": "Bonjour, {{name}}",
+        "greeting_morning": "Bonjour",
+        "greeting_afternoon": "Bon après-midi",
+        "greeting_evening": "Bonsoir",
+        "greetingDefault": "Lecteur",
+        "searchPlaceholder": "Rechercher des histoires, auteurs...",
         "continueReading": "Continuer la lecture",
         "dailyPick": "Choix du jour",
         "recommended": "Recommandé pour vous",
         "trending": "Tendance actuelle",
         "categories": {
             "forYou": "Pour vous",
+            "following": "Suivi",
             "easy": "Facile",
             "medium": "Moyen",
             "hard": "Difficile",
@@ -110,15 +139,46 @@
             "removeMessage": "Retirer \"{{title}}\" de votre bibliothèque ?",
             "deleteDownloadTitle": "Supprimer le téléchargement",
             "deleteDownloadMessage": "Supprimer le téléchargement de \"{{title}}\" ? Il ne sera plus disponible hors ligne."
+        },
+        "tabs": {
+            "stories": "Histoires",
+            "vocabulary": "Vocabulaire"
         }
+    },
+    "vocabulary": {
+        "title": "Constructeur de vocabulaire",
+        "searchPlaceholder": "Rechercher des mots enregistrés...",
+        "empty": "Aucun mot enregistré",
+        "emptyMessage": "Appuyez sur des mots inconnus en lisant pour les enregistrer ici.",
+        "startReading": "Commencer à lire",
+        "noMatches": "Aucun mot correspondant",
+        "noMatchesMessage": "Essayez un autre terme de recherche."
     },
     "reading": {
         "complete": "{{percentage}}% terminé",
         "remainingTime": "~{{time}} min restantes",
         "chapter": "Chapitre {{number}}",
+        "startReading": "Commencer à lire",
+        "continue": "Continuer",
         "notFound": "Histoire non trouvée",
         "noContent": "Pas de contenu disponible.",
-        "lineSpacing": "Espacement des lignes"
+        "lineSpacing": "Espacement des lignes",
+        "audioAssist": "Assistance audio",
+        "readingAloud": "Lecture à voix haute...",
+        "audioAssistReady": "Assistance audio prête",
+        "quiz": {
+            "title": "Quiz de compréhension",
+            "subtitle": "Voyons ce que vous avez appris !",
+            "start": "Commencer le quiz",
+            "next": "Question suivante",
+            "finish": "Terminer",
+            "correct": "Correct !",
+            "incorrect": "Pas tout à fait...",
+            "result": "Vous avez eu {{count}} sur {{total}}",
+            "accuracy": "Précision : {{percentage}}%",
+            "done": "Retour à l'histoire",
+            "checkpoint": "Point de contrôle"
+        }
     },
     "settings": {
         "sections": {
@@ -190,5 +250,44 @@
     },
     "notifications": {
         "feedback": "Notifications {{status}}"
+    },
+    "social": {
+        "title": "Communauté",
+        "community": "Communauté",
+        "findFriends": "Trouver des amis",
+        "searchPlaceholder": "Rechercher par nom ou email...",
+        "noUsersFound": "Aucun utilisateur trouvé",
+        "add": "Ajouter",
+        "requestSent": "Demande envoyée !",
+        "requestAccepted": "Demande acceptée !",
+        "requestCancelled": "Demande annulée",
+        "friendRemoved": "Ami supprimé",
+        "requests": "Demandes d'ami",
+        "myFriends": "Mes amis",
+        "sentRequests": "Demandes envoyées",
+        "requestPending": "Demande en attente",
+        "emptyTitle": "Pas encore d'amis",
+        "emptyDesc": "Connectez-vous avec d'autres lecteurs pour partager votre progression !",
+        "communityBuzz": "Actualités de la communauté",
+        "activityFinished": "a terminé {{title}}",
+        "activityEarned": "a obtenu {{title}}",
+        "activityStarted": "a commencé à lire {{title}}",
+        "shareSomething": "Partagez votre progression...",
+        "reply": "Répondre",
+        "congratulate": "Féliciter",
+        "congratulated": "Félicité",
+        "achievement": "Succès",
+        "activeReader": "Lecteur actif",
+        "createPost": "Nouvelle publication"
+    },
+    "rankings": {
+        "title": "Classements",
+        "global": "Global",
+        "friends": "Amis",
+        "globalTitle": "Classement global",
+        "friendsTitle": "Classement des amis",
+        "scoreLabel": "MOTS",
+        "emptyFriends": "Suivez plus de lecteurs pour voir votre classement !",
+        "stats": "{{words}}k mots • {{stories}} histoires"
     }
 }

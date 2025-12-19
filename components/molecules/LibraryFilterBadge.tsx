@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { FILTER_LABELS, type FilterType } from './moleculeTypes';
 
 interface LibraryFilterBadgeProps {
@@ -14,13 +15,23 @@ export const LibraryFilterBadge: React.FC<LibraryFilterBadgeProps> = ({
     onPress,
 }) => {
     const { theme } = useUnistyles();
+    const { t } = useTranslation();
 
     if (filter === 'all') return null;
+
+    const getFilterLabel = (f: FilterType) => {
+        switch (f) {
+            case 'in-progress': return t('library.filters.reading', 'Reading');
+            case 'completed': return t('library.filters.done', 'Done');
+            case 'not-started': return t('library.filters.new', 'New');
+            default: return f;
+        }
+    };
 
     return (
         <View style={styles.filterBadgeRow}>
             <Pressable style={styles.filterBadge} onPress={onPress}>
-                <Text style={styles.filterBadgeText}>{FILTER_LABELS[filter]}</Text>
+                <Text style={styles.filterBadgeText}>{getFilterLabel(filter)}</Text>
                 <Ionicons name="close-circle" size={16} color={theme.colors.primary} />
             </Pressable>
         </View>

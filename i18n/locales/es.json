@@ -1,4 +1,19 @@
 {
+    "auth": {
+        "signup": {
+            "title": "Crear cuenta",
+            "subtitle": "Comienza hoy tu aventura de lectura en inglés"
+        },
+        "login": {
+            "title": "Bienvenido de nuevo",
+            "subtitle": "Inicia sesión para continuar tu viaje de lectura"
+        },
+        "forgotPassword": {
+            "title": "Olvidé mi contraseña",
+            "message": "Introduce tu correo para restablecer tu contraseña",
+            "placeholder": "Correo electrónico"
+        }
+    },
     "common": {
         "error": "Algo salió mal",
         "retry": "Intentar de nuevo",
@@ -14,7 +29,14 @@
         "hard": "Difícil",
         "on": "Encendido",
         "off": "Apagado",
-        "goBack": "Volver"
+        "goBack": "Volver",
+        "saving": "Guardando...",
+        "saveChanges": "Guardar cambios",
+        "unknownAuthor": "Autor desconocido",
+        "accept": "Aceptar",
+        "seeAll": "Ver todo",
+        "confirm": "Confirmar",
+        "you": "Tú"
     },
     "tabs": {
         "home": "Inicio",
@@ -44,7 +66,8 @@
             "readingTime": "Tiempo de lectura",
             "streak": "Racha de días"
         },
-        "quickSettings": "Ajustes rápidos"
+        "quickSettings": "Ajustes rápidos",
+        "vocabulary": "Vocabulario"
     },
     "appearance": {
         "title": "Apariencia",
@@ -55,12 +78,18 @@
     },
     "home": {
         "greeting": "Hola, {{name}}",
+        "greeting_morning": "Buenos días",
+        "greeting_afternoon": "Buenas tardes",
+        "greeting_evening": "Buenas noches",
+        "greetingDefault": "Lector",
+        "searchPlaceholder": "Buscar historias, autores...",
         "continueReading": "Continuar leyendo",
         "dailyPick": "Elección diaria",
         "recommended": "Recomendado para ti",
         "trending": "Tendencia ahora",
         "categories": {
             "forYou": "Para ti",
+            "following": "Siguiendo",
             "easy": "Fácil",
             "medium": "Medio",
             "hard": "Difícil",
@@ -110,15 +139,46 @@
             "removeMessage": "¿Quitar \"{{title}}\" de tu biblioteca?",
             "deleteDownloadTitle": "Eliminar descarga",
             "deleteDownloadMessage": "¿Eliminar la descarga de \"{{title}}\"? Ya no estará disponible sin conexión."
+        },
+        "tabs": {
+            "stories": "Historias",
+            "vocabulary": "Vocabulario"
         }
+    },
+    "vocabulary": {
+        "title": "Constructor de vocabulario",
+        "searchPlaceholder": "Buscar palabras guardadas...",
+        "empty": "No hay palabras guardadas",
+        "emptyMessage": "Toca palabras desconocidas mientras lees para guardarlas aquí.",
+        "startReading": "Empezar a leer",
+        "noMatches": "No hay palabras coincidentes",
+        "noMatchesMessage": "Prueba con un término de búsqueda diferente."
     },
     "reading": {
         "complete": "{{percentage}}% completado",
         "remainingTime": "~{{time}} min restantes",
         "chapter": "Capítulo {{number}}",
+        "startReading": "Empezar a leer",
+        "continue": "Continuar",
         "notFound": "Historia no encontrada",
         "noContent": "Contenido no disponible.",
-        "lineSpacing": "Espaciado de líneas"
+        "lineSpacing": "Espaciado de líneas",
+        "audioAssist": "Asistencia de audio",
+        "readingAloud": "Leyendo en voz alta...",
+        "audioAssistReady": "Asistencia de audio lista",
+        "quiz": {
+            "title": "Cuestionario de comprensión",
+            "subtitle": "¡Veamos qué has aprendido!",
+            "start": "Empezar cuestionario",
+            "next": "Siguiente pregunta",
+            "finish": "Finalizar",
+            "correct": "¡Correcto!",
+            "incorrect": "No del todo...",
+            "result": "Acertaste {{count}} de {{total}}",
+            "accuracy": "Precisión: {{percentage}}%",
+            "done": "Volver a la historia",
+            "checkpoint": "Punto de control"
+        }
     },
     "settings": {
         "sections": {
@@ -190,5 +250,44 @@
     },
     "notifications": {
         "feedback": "Notificaciones {{status}}"
+    },
+    "social": {
+        "title": "Comunidad",
+        "community": "Comunidad",
+        "findFriends": "Buscar amigos",
+        "searchPlaceholder": "Buscar por nombre o correo...",
+        "noUsersFound": "No se encontraron usuarios",
+        "add": "Añadir",
+        "requestSent": "¡Solicitud enviada!",
+        "requestAccepted": "¡Solicitud aceptada!",
+        "requestCancelled": "Solicitud cancelada",
+        "friendRemoved": "Amigo eliminado",
+        "requests": "Solicitudes de amistad",
+        "myFriends": "Mis amigos",
+        "sentRequests": "Solicitudes enviadas",
+        "requestPending": "Solicitud pendiente",
+        "emptyTitle": "Aún no tienes amigos",
+        "emptyDesc": "¡Conecta con otros lectores para compartir tu progreso!",
+        "communityBuzz": "Novedades de la comunidad",
+        "activityFinished": "terminó {{title}}",
+        "activityEarned": "ganó {{title}}",
+        "activityStarted": "empezó a leer {{title}}",
+        "shareSomething": "Comparte tu progreso...",
+        "reply": "Responder",
+        "congratulate": "Felicitar",
+        "congratulated": "Felicitado",
+        "achievement": "Logro",
+        "activeReader": "Lector activo",
+        "createPost": "Nueva publicación"
+    },
+    "rankings": {
+        "title": "Clasificaciones",
+        "global": "Global",
+        "friends": "Amigos",
+        "globalTitle": "Clasificación global",
+        "friendsTitle": "Clasificación de amigos",
+        "scoreLabel": "PALABRAS",
+        "emptyFriends": "¡Sigue a más lectores para ver tu posición!",
+        "stats": "{{words}}k palabras • {{stories}} historias"
     }
 }

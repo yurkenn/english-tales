@@ -6,6 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
+import { useTranslation } from 'react-i18next';
 
 interface WriteReviewSheetProps {
     storyTitle: string;
@@ -17,6 +18,7 @@ interface WriteReviewSheetProps {
 export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
     ({ storyTitle, initialRating = 0, onSubmit, onClose }, ref) => {
         const { theme } = useUnistyles();
+        const { t } = useTranslation();
         const insets = useSafeAreaInsets();
         const [rating, setRating] = useState(initialRating);
 
@@ -52,12 +54,12 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
         const handleSubmit = async () => {
             if (rating === 0) {
                 haptics.error();
-                toastActions.error('Please select a rating before submitting.');
+                toastActions.error(t('reading.review.errorRating', 'Please select a rating before submitting.'));
                 return;
             }
             if (text.trim().length < 10) {
                 haptics.error();
-                toastActions.error('Please write at least 10 characters for your review.');
+                toastActions.error(t('reading.review.errorText', 'Please write at least 10 characters for your review.'));
                 return;
             }
             Keyboard.dismiss();
@@ -67,12 +69,12 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                 haptics.success();
                 setRating(0);
                 setText('');
-                toastActions.success('Review submitted successfully!');
+                toastActions.success(t('reading.review.success', 'Review submitted successfully!'));
                 onClose();
             } catch (error) {
                 console.error('Review submission error:', error);
                 haptics.error();
-                toastActions.error('Could not submit your review. Please check your connection and try again.');
+                toastActions.error(t('reading.review.error', 'Could not submit your review. Please check your connection and try again.'));
             } finally {
                 setIsSubmitting(false);
             }
@@ -104,7 +106,7 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                     {/* Header */}
                     <View style={styles.header}>
                         <View>
-                            <Text style={styles.title}>Write a Review</Text>
+                            <Text style={styles.title}>{t('reading.review.writeTitle', 'Write a Review')}</Text>
                             <Text style={styles.storyTitle} numberOfLines={1}>{storyTitle}</Text>
                         </View>
                         <Pressable onPress={handleSheetClose} hitSlop={10}>
@@ -114,7 +116,7 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
 
                     {/* Star Rating */}
                     <View style={styles.ratingSection}>
-                        <Text style={styles.ratingLabel}>How would you rate this story?</Text>
+                        <Text style={styles.ratingLabel}>{t('reading.review.ratingQuestion', 'How would you rate this story?')}</Text>
                         <View style={styles.stars}>
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <Pressable
@@ -132,7 +134,11 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                         </View>
                         {rating > 0 && (
                             <Text style={styles.ratingText}>
-                                {rating === 1 ? 'Poor' : rating === 2 ? 'Fair' : rating === 3 ? 'Good' : rating === 4 ? 'Very Good' : 'Excellent'}
+                                {rating === 1 ? t('reading.review.poor', 'Poor') :
+                                    rating === 2 ? t('reading.review.fair', 'Fair') :
+                                        rating === 3 ? t('reading.review.good', 'Good') :
+                                            rating === 4 ? t('reading.review.veryGood', 'Very Good') :
+                                                t('reading.review.excellent', 'Excellent')}
                             </Text>
                         )}
                     </View>
@@ -141,7 +147,7 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                     <View style={styles.inputWrapper}>
                         <BottomSheetTextInput
                             style={styles.textInput}
-                            placeholder="Share your thoughts about this story..."
+                            placeholder={t('reading.review.placeholder', 'Share your thoughts about this story...')}
                             placeholderTextColor={theme.colors.textMuted}
                             multiline
                             numberOfLines={4}
@@ -149,7 +155,9 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                             onChangeText={setText}
                             textAlignVertical="top"
                         />
-                        <Text style={styles.charCount}>{text.length} characters</Text>
+                        <Text style={styles.charCount}>
+                            {t('reading.review.charCount', { count: text.length, defaultValue: `${text.length} characters` })}
+                        </Text>
                     </View>
 
                     {/* Submit Button */}
@@ -167,7 +175,7 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                         ) : (
                             <>
                                 <Ionicons name="send" size={18} color="#FFFFFF" />
-                                <Text style={styles.submitButtonText}>Submit Review</Text>
+                                <Text style={styles.submitButtonText}>{t('reading.review.submit', 'Submit Review')}</Text>
                             </>
                         )}
                     </Pressable>

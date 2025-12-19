@@ -4,6 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FormField, AuthHeader, AuthDivider, SocialAuthButton } from '@/components';
+import { useTranslation } from 'react-i18next';
 import { useToastStore } from '@/store/toastStore';
 import { loginSchema } from '@/lib/validations';
 import { signIn, signInAnonymously, signInWithGoogle } from '@/services/auth';
@@ -12,6 +13,7 @@ export default function LoginScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { t } = useTranslation();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -37,7 +39,7 @@ export default function LoginScreen() {
         try {
             await signIn(email, password);
         } catch (error: any) {
-            toastActions.error(error.message || 'Login failed');
+            toastActions.error(error.message || t('auth.login.failed', 'Login failed'));
         } finally {
             setLoading(false);
         }
@@ -48,7 +50,7 @@ export default function LoginScreen() {
         try {
             await signInAnonymously();
         } catch (error: any) {
-            toastActions.error('Could not sign in as guest');
+            toastActions.error(t('auth.login.guestFailed', 'Could not sign in as guest'));
         } finally {
             setLoading(false);
         }
@@ -70,12 +72,12 @@ export default function LoginScreen() {
     return (
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
             <View style={[styles.content, { paddingTop: insets.top + 40, paddingBottom: insets.bottom + 20 }]}>
-                <AuthHeader title="Welcome Back" subtitle="Sign in to continue your reading journey" />
+                <AuthHeader title={t('auth.login.title', 'Welcome Back')} subtitle={t('auth.login.subtitle', 'Sign in to continue your reading journey')} />
 
                 <View style={styles.form}>
                     <FormField
                         icon="mail-outline"
-                        placeholder="Email"
+                        placeholder={t('common.email', 'Email')}
                         value={email}
                         onChangeText={(text) => {
                             setEmail(text);
@@ -88,7 +90,7 @@ export default function LoginScreen() {
                     />
                     <FormField
                         icon="lock-closed-outline"
-                        placeholder="Password"
+                        placeholder={t('auth.login.password', 'Password')}
                         value={password}
                         onChangeText={(text) => {
                             setPassword(text);
@@ -100,7 +102,7 @@ export default function LoginScreen() {
                     />
 
                     <Pressable style={styles.forgotPassword} onPress={() => router.push('/forgot-password')}>
-                        <Text style={styles.linkText}>Forgot Password?</Text>
+                        <Text style={styles.linkText}>{t('auth.login.forgotPassword', 'Forgot Password?')}</Text>
                     </Pressable>
 
                     <Pressable
@@ -111,7 +113,7 @@ export default function LoginScreen() {
                         {loading ? (
                             <ActivityIndicator color={theme.colors.textInverse} />
                         ) : (
-                            <Text style={styles.buttonText}>Log In</Text>
+                            <Text style={styles.buttonText}>{t('profile.login', 'Log In')}</Text>
                         )}
                     </Pressable>
                 </View>
@@ -121,14 +123,14 @@ export default function LoginScreen() {
                 <SocialAuthButton provider="google" onPress={handleGoogleSignIn} disabled={loading} />
 
                 <Pressable onPress={handleGuestLogin} style={styles.guestButton}>
-                    <Text style={styles.guestButtonText}>Continue as Guest</Text>
+                    <Text style={styles.guestButtonText}>{t('auth.login.guest', 'Continue as Guest')}</Text>
                 </Pressable>
 
                 <View style={styles.footer}>
-                    <Text style={styles.footerText}>Don't have an account? </Text>
+                    <Text style={styles.footerText}>{t('auth.login.noAccount', "Don't have an account? ")}</Text>
                     <Link href="/signup" asChild>
                         <Pressable>
-                            <Text style={styles.linkText}>Sign Up</Text>
+                            <Text style={styles.linkText}>{t('auth.signup.title', 'Sign Up')}</Text>
                         </Pressable>
                     </Link>
                 </View>

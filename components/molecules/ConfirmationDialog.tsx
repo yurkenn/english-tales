@@ -5,6 +5,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { haptics } from '@/utils/haptics';
+import { useTranslation } from 'react-i18next';
 
 export interface ConfirmationDialogProps {
     title: string;
@@ -29,7 +30,11 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
         icon,
     }, ref) => {
         const { theme } = useUnistyles();
+        const { t } = useTranslation();
         const insets = useSafeAreaInsets();
+
+        const confirmLabelText = confirmLabel || t('common.confirm', 'Confirm');
+        const cancelLabelText = cancelLabel || t('common.cancel', 'Cancel');
 
         const snapPoints = useMemo(() => ['40%'], []);
 
@@ -103,10 +108,10 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
                             ]}
                             onPress={handleCancel}
                             accessibilityRole="button"
-                            accessibilityLabel={cancelLabel}
-                            accessibilityHint="Cancel this action"
+                            accessibilityLabel={cancelLabelText}
+                            accessibilityHint={t('common.accessibility.cancelHint', 'Cancel this action')}
                         >
-                            <Text style={styles.cancelButtonText}>{cancelLabel}</Text>
+                            <Text style={styles.cancelButtonText}>{cancelLabelText}</Text>
                         </Pressable>
                         <Pressable
                             style={({ pressed }) => [
@@ -116,8 +121,8 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
                             ]}
                             onPress={handleConfirm}
                             accessibilityRole="button"
-                            accessibilityLabel={confirmLabel}
-                            accessibilityHint={destructive ? "This action cannot be undone" : "Confirm this action"}
+                            accessibilityLabel={confirmLabelText}
+                            accessibilityHint={destructive ? t('common.accessibility.destructiveHint', "This action cannot be undone") : t('common.accessibility.confirmHint', "Confirm this action")}
                         >
                             <Text
                                 style={[
@@ -125,7 +130,7 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
                                     destructive && styles.destructiveButtonText,
                                 ]}
                             >
-                                {confirmLabel}
+                                {confirmLabelText}
                             </Text>
                         </Pressable>
                     </View>

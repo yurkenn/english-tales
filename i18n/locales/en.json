@@ -1,4 +1,19 @@
 {
+    "auth": {
+        "signup": {
+            "title": "Create Account",
+            "subtitle": "Start your English reading adventure today"
+        },
+        "login": {
+            "title": "Welcome Back",
+            "subtitle": "Sign in to continue your reading journey"
+        },
+        "forgotPassword": {
+            "title": "Forgot Password",
+            "message": "Enter your email to reset your password",
+            "placeholder": "Email"
+        }
+    },
     "common": {
         "error": "Something went wrong",
         "retry": "Try again",
@@ -14,7 +29,14 @@
         "hard": "Hard",
         "on": "On",
         "off": "Off",
-        "goBack": "Go Back"
+        "goBack": "Go Back",
+        "saving": "Saving...",
+        "saveChanges": "Save Changes",
+        "unknownAuthor": "Unknown Author",
+        "accept": "Accept",
+        "seeAll": "See All",
+        "confirm": "Confirm",
+        "you": "You"
     },
     "tabs": {
         "home": "Home",
@@ -56,12 +78,18 @@
     },
     "home": {
         "greeting": "Hello, {{name}}",
+        "greeting_morning": "Good Morning",
+        "greeting_afternoon": "Good Afternoon",
+        "greeting_evening": "Good Evening",
+        "greetingDefault": "Reader",
+        "searchPlaceholder": "Search stories, authors...",
         "continueReading": "Continue Reading",
         "dailyPick": "Daily Pick",
         "recommended": "Recommended for You",
         "trending": "Trending Now",
         "categories": {
             "forYou": "For You",
+            "following": "Following",
             "easy": "Easy",
             "medium": "Medium",
             "hard": "Hard",
@@ -130,6 +158,8 @@
         "complete": "{{percentage}}% complete",
         "remainingTime": "~{{time}} min left",
         "chapter": "Chapter {{number}}",
+        "startReading": "Start Reading",
+        "continue": "Continue",
         "notFound": "Story not found",
         "noContent": "No content available.",
         "lineSpacing": "Line Spacing",
@@ -243,7 +273,12 @@
         "activityEarned": "earned {{title}}",
         "activityStarted": "started reading {{title}}",
         "shareSomething": "Share your progress...",
-        "reply": "Reply"
+        "reply": "Reply",
+        "congratulate": "Congratulate",
+        "congratulated": "Congratulated",
+        "achievement": "Achievement",
+        "activeReader": "Active Reader",
+        "createPost": "New Post"
     },
     "rankings": {
         "title": "Rankings",

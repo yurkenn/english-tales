@@ -57,14 +57,14 @@ const styles = StyleSheet.create((theme) => ({
     background: {
         flexDirection: 'row',
         backgroundColor: theme.colors.borderLight,
-        borderRadius: 8,
-        padding: 2,
+        borderRadius: 14,
+        padding: 4,
     },
     segment: {
         flex: 1,
-        paddingVertical: 8,
+        paddingVertical: 10,
         alignItems: 'center',
-        borderRadius: 6,
+        borderRadius: 10,
     },
     segmentActive: {
         backgroundColor: theme.colors.surface,

@@ -3,6 +3,7 @@ import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar, OptimizedImage } from '../atoms';
+import { useTranslation } from 'react-i18next';
 import type { LibraryItemWithProgress } from './moleculeTypes';
 
 interface LibraryBookCardProps {
@@ -23,6 +24,7 @@ export const LibraryBookCard: React.FC<LibraryBookCardProps> = ({
     moreButtonRef,
 }) => {
     const { theme } = useUnistyles();
+    const { t } = useTranslation();
     const progress = item.progress?.percentage || 0;
     const isCompleted = item.progress?.isCompleted || false;
 
@@ -45,7 +47,7 @@ export const LibraryBookCard: React.FC<LibraryBookCardProps> = ({
                         {isDownloaded && (
                             <View style={styles.offlineBadge}>
                                 <Ionicons name="cloud-done" size={12} color={theme.colors.success} />
-                                <Text style={styles.offlineBadgeText}>Offline</Text>
+                                <Text style={styles.offlineBadgeText}>{t('library.actions.downloaded', 'Offline')}</Text>
                             </View>
                         )}
                     </View>
@@ -73,15 +75,17 @@ export const LibraryBookCard: React.FC<LibraryBookCardProps> = ({
                                 size={14}
                                 color={theme.colors.success}
                             />
-                            <Text style={styles.completedText}>Completed</Text>
+                            <Text style={styles.completedText}>{t('library.status.done', 'Completed')}</Text>
                         </View>
                     ) : progress > 0 ? (
                         <View style={styles.progressInfo}>
                             <ProgressBar progress={progress} height={6} />
-                            <Text style={styles.progressText}>{progress}% complete</Text>
+                            <Text style={styles.progressText}>
+                                {t('library.readingProgress', { percentage: progress, defaultValue: `${progress}% complete` })}
+                            </Text>
                         </View>
                     ) : (
-                        <Text style={styles.notStartedText}>Not started</Text>
+                        <Text style={styles.notStartedText}>{t('library.status.new', 'Not started')}</Text>
                     )}
                 </View>
 
@@ -93,7 +97,7 @@ export const LibraryBookCard: React.FC<LibraryBookCardProps> = ({
                         color={theme.colors.primary}
                     />
                     <Text style={styles.actionButtonText}>
-                        {progress > 0 ? 'Continue' : 'Start Reading'}
+                        {progress > 0 ? t('reading.continue', 'Continue') : t('reading.startReading', 'Start Reading')}
                     </Text>
                 </Pressable>
             </View>

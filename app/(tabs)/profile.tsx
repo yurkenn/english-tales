@@ -256,11 +256,13 @@ export default function ProfileScreen() {
                 <StatsGrid stats={stats} />
 
                 {/* Learning Insights */}
-                <InsightsCard
-                    wordsLearned={learningInsights.wordsLearned}
-                    averageAccuracy={learningInsights.averageAccuracy}
-                    totalReadingTimeMs={learningInsights.totalReadingTimeMs}
-                />
+                {learningInsights && (
+                    <InsightsCard
+                        wordsLearned={learningInsights.wordsLearned}
+                        averageAccuracy={learningInsights.averageAccuracy}
+                        totalReadingTimeMs={learningInsights.totalReadingTimeMs}
+                    />
+                )}
 
                 <WordGrowthChart words={learningInsights.words} />
 

@@ -3,6 +3,7 @@ import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useTranslation } from 'react-i18next';
 
 interface DifficultyCardProps {
     difficulty: 'beginner' | 'intermediate' | 'advanced';
@@ -37,6 +38,29 @@ export const DifficultyCard: React.FC<DifficultyCardProps> = ({
     onPress,
 }) => {
     const { theme } = useUnistyles();
+    const { t } = useTranslation();
+
+    const DIFFICULTY_CONFIG = {
+        beginner: {
+            label: t('common.difficulty.easy', 'Easy'),
+            icon: 'leaf-outline' as const,
+            colors: ['#10B981', '#059669'] as [string, string],
+            description: t('common.difficulty.easyDesc', 'Perfect for beginners'),
+        },
+        intermediate: {
+            label: t('common.difficulty.medium', 'Medium'),
+            icon: 'flash-outline' as const,
+            colors: ['#F59E0B', '#D97706'] as [string, string],
+            description: t('common.difficulty.mediumDesc', 'Challenge yourself'),
+        },
+        advanced: {
+            label: t('common.difficulty.hard', 'Hard'),
+            icon: 'flame-outline' as const,
+            colors: ['#EF4444', '#DC2626'] as [string, string],
+            description: t('common.difficulty.hardDesc', 'For advanced readers'),
+        },
+    };
+
     const config = DIFFICULTY_CONFIG[difficulty];
 
     return (
@@ -62,7 +86,7 @@ export const DifficultyCard: React.FC<DifficultyCardProps> = ({
                 </View>
                 <Text style={styles.label}>{config.label}</Text>
                 <Text style={styles.count}>
-                    {storyCount} {storyCount === 1 ? 'story' : 'stories'}
+                    {storyCount} {storyCount === 1 ? t('authors.story', 'story') : t('authors.stories', 'stories')}
                 </Text>
             </LinearGradient>
         </Pressable>

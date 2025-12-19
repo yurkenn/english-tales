@@ -4,6 +4,7 @@ import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/botto
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 
 export interface ActionSheetOption {
     label: string;
@@ -22,6 +23,7 @@ interface ActionSheetProps {
 export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
     ({ title, subtitle, options, onClose }, ref) => {
         const { theme } = useUnistyles();
+        const { t } = useTranslation();
         const insets = useSafeAreaInsets();
 
         const snapPoints = useMemo(() => ['50%'], []);
@@ -78,7 +80,7 @@ export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
                                 onPress={() => handleOptionPress(option)}
                                 accessibilityRole="button"
                                 accessibilityLabel={option.label}
-                                accessibilityHint={option.destructive ? "This action cannot be undone" : undefined}
+                                accessibilityHint={option.destructive ? t('common.accessibility.destructiveHint', "This action cannot be undone") : undefined}
                             >
                                 {option.icon && (
                                     <View style={[
@@ -115,10 +117,10 @@ export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
                         ]}
                         onPress={onClose}
                         accessibilityRole="button"
-                        accessibilityLabel="Cancel"
-                        accessibilityHint="Close this menu"
+                        accessibilityLabel={t('common.cancel', 'Cancel')}
+                        accessibilityHint={t('common.accessibility.closeMenuHint', 'Close this menu')}
                     >
-                        <Text style={styles.cancelText}>Cancel</Text>
+                        <Text style={styles.cancelText}>{t('common.cancel', 'Cancel')}</Text>
                     </Pressable>
                 </BottomSheetView>
             </BottomSheet>
