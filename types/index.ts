@@ -42,6 +42,7 @@ export interface Story {
     coverImage: string;
     coverImageLqip?: string;
     author: string;
+    authorId?: string;
     difficulty: 'beginner' | 'intermediate' | 'advanced';
     estimatedReadTime: number; // in minutes
     wordCount: number;

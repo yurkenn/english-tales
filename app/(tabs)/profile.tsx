@@ -202,6 +202,7 @@ export default function ProfileScreen() {
         { label: t('profile.readingGoals'), icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: handleOpenGoals },
         { label: t('profile.achievements'), icon: 'trophy-outline', value: `${unlockedCount}/${achievements.length}`, onPress: handleAchievements },
         { label: t('social.following', 'Following'), icon: 'people-outline', onPress: () => { haptics.selection(); router.push('/social' as any); } },
+        { label: t('profile.vocabulary', 'Vocabulary'), icon: 'bookmark-outline', value: `${learningInsights.wordsLearned} words`, onPress: () => { haptics.selection(); router.push('/user/vocabulary'); } },
         { label: t('profile.language'), icon: 'language-outline', value: currentLanguageLabel, onPress: handleLanguage },
         { label: t('profile.notifications'), icon: 'notifications-outline', value: settings.notificationsEnabled ? t('common.on') : t('common.off'), onPress: handleNotifications },
         { label: t('profile.appearance'), icon: 'color-palette-outline', value: themeModeLabel, onPress: themeActions.toggleTheme },

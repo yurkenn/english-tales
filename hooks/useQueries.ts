@@ -30,7 +30,7 @@ export const useStories = () => {
     return useQuery({
         queryKey: queryKeys.stories.all,
         queryFn: () => sanityClient.fetch(queries.allStories),
-        staleTime: 5 * 60 * 1000, // 5 minutes
+        staleTime: 60 * 60 * 1000, // 1 hour
     });
 };
 
@@ -38,7 +38,7 @@ export const useFeaturedStories = () => {
     return useQuery({
         queryKey: queryKeys.stories.featured,
         queryFn: () => sanityClient.fetch(queries.featuredStories),
-        staleTime: 5 * 60 * 1000,
+        staleTime: 60 * 60 * 1000, // 1 hour
     });
 };
 
@@ -47,7 +47,7 @@ export const useStory = (id: string) => {
         queryKey: queryKeys.stories.byId(id),
         queryFn: () => sanityClient.fetch(queries.storyById, { id }),
         enabled: !!id,
-        staleTime: 10 * 60 * 1000, // 10 minutes
+        staleTime: 24 * 60 * 60 * 1000, // 24 hours
     });
 };
 
@@ -56,7 +56,7 @@ export const useStoryBySlug = (slug: string) => {
         queryKey: queryKeys.stories.bySlug(slug),
         queryFn: () => sanityClient.fetch(queries.storyBySlug, { slug }),
         enabled: !!slug,
-        staleTime: 10 * 60 * 1000,
+        staleTime: 24 * 60 * 60 * 1000, // 24 hours
     });
 };
 
@@ -65,7 +65,7 @@ export const useStoriesByCategory = (categoryId: string) => {
         queryKey: queryKeys.stories.byCategory(categoryId),
         queryFn: () => sanityClient.fetch(queries.storiesByCategory, { categoryId }),
         enabled: !!categoryId,
-        staleTime: 5 * 60 * 1000,
+        staleTime: 60 * 60 * 1000, // 1 hour
     });
 };
 
@@ -83,7 +83,7 @@ export const useAuthors = () => {
     return useQuery({
         queryKey: queryKeys.authors.all,
         queryFn: () => sanityClient.fetch(queries.allAuthors),
-        staleTime: 10 * 60 * 1000,
+        staleTime: 24 * 60 * 60 * 1000, // 24 hours
     });
 };
 
@@ -91,7 +91,7 @@ export const useFeaturedAuthor = () => {
     return useQuery({
         queryKey: queryKeys.authors.featured,
         queryFn: () => sanityClient.fetch(queries.featuredAuthor),
-        staleTime: 10 * 60 * 1000,
+        staleTime: 24 * 60 * 60 * 1000, // 24 hours
     });
 };
 
@@ -100,7 +100,7 @@ export const useAuthor = (id: string) => {
         queryKey: queryKeys.authors.byId(id),
         queryFn: () => sanityClient.fetch(queries.authorById, { id }),
         enabled: !!id,
-        staleTime: 10 * 60 * 1000,
+        staleTime: 24 * 60 * 60 * 1000, // 24 hours
     });
 };
 
@@ -109,7 +109,7 @@ export const useCategories = () => {
     return useQuery({
         queryKey: queryKeys.categories.all,
         queryFn: () => sanityClient.fetch(queries.allCategories),
-        staleTime: 30 * 60 * 1000, // 30 minutes - categories change rarely
+        staleTime: 24 * 60 * 60 * 1000, // 24 hours
     });
 };
 

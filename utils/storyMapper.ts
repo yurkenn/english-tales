@@ -13,6 +13,7 @@ export const mapSanityStory = (doc: any): Story => ({
     coverImage: doc.coverImage ? urlFor(doc.coverImage).width(500).url() : '',
     coverImageLqip: doc.coverImageLqip,
     author: doc.author?.name || 'Unknown Author',
+    authorId: doc.author?._id,
     difficulty: doc.difficulty || 'intermediate',
     estimatedReadTime: doc.estimatedReadTime || 5,
     wordCount: doc.wordCount || 1000,

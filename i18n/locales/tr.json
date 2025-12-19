@@ -44,7 +44,8 @@
             "readingTime": "Okuma Süresi",
             "streak": "Günlük Seri"
         },
-        "quickSettings": "Hızlı Ayarlar"
+        "quickSettings": "Hızlı Ayarlar",
+        "vocabulary": "Kelime Dağarcığı"
     },
     "appearance": {
         "title": "Görünüm",
@@ -117,9 +118,13 @@
         }
     },
     "vocabulary": {
+        "title": "Kelime Dağarcığı",
+        "searchPlaceholder": "Kaydedilen kelimelerde ara...",
         "empty": "Kaydedilmiş kelime yok",
         "emptyMessage": "Okurken bilmediğiniz kelimelere dokunarak buraya kaydedebilirsiniz.",
-        "startReading": "Okumaya Başla"
+        "startReading": "Okumaya Başla",
+        "noMatches": "Eşleşen kelime yok",
+        "noMatchesMessage": "Farklı bir arama terimi deneyin."
     },
     "reading": {
         "complete": "%{{percentage}} tamamlandı",

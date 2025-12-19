@@ -1,20 +1,29 @@
 import React from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient } from '@tanstack/react-query';
+import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client';
+import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// Create a client with default options
+// Create a client with aggressive default options for static content
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
             retry: 2,
-            staleTime: 5 * 60 * 1000, // 5 minutes
-            gcTime: 30 * 60 * 1000, // 30 minutes (formerly cacheTime)
+            staleTime: 60 * 60 * 1000,    // 1 hour (Stories are mostly static)
+            gcTime: 24 * 60 * 60 * 1000,   // 24 hours persistence
             refetchOnWindowFocus: false,
-            refetchOnReconnect: true,
+            refetchOnReconnect: 'always',
         },
         mutations: {
             retry: 1,
         },
     },
+});
+
+// Create Async Storage Persister
+const asyncStoragePersister = createAsyncStoragePersister({
+    storage: AsyncStorage,
+    key: 'ENGLISH_TALES_OFFLINE_CACHE',
 });
 
 interface QueryProviderProps {
@@ -23,9 +32,15 @@ interface QueryProviderProps {
 
 export const QueryProvider: React.FC<QueryProviderProps> = ({ children }) => {
     return (
-        <QueryClientProvider client={queryClient}>
+        <PersistQueryClientProvider
+            client={queryClient}
+            persistOptions={{
+                persister: asyncStoragePersister,
+                maxAge: 1000 * 60 * 60 * 24, // 24 hours
+            }}
+        >
             {children}
-        </QueryClientProvider>
+        </PersistQueryClientProvider>
     );
 };
 

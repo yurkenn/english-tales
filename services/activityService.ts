@@ -98,7 +98,8 @@ class ActivityService {
         userPhoto: string | null,
         storyId: string,
         storyTitle: string,
-        type: 'started_reading' | 'story_completed'
+        type: 'started_reading' | 'story_completed',
+        metadata?: { rating?: number; readingTime?: number; wordCount?: number }
     ): Promise<Result<void>> {
         try {
             const activityId = `${userId}_${storyId}_${type}`;
@@ -119,7 +120,7 @@ class ActivityService {
                 userPhoto,
                 content,
                 type,
-                { storyId, storyTitle }
+                { storyId, storyTitle, ...metadata }
             );
 
             await setDoc(logRef, {

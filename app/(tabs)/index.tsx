@@ -26,7 +26,9 @@ import { useToastStore } from '@/store/toastStore';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { haptics } from '@/utils/haptics';
 import { communityService } from '@/services/communityService';
+import { socialService } from '@/services/socialService';
 import { useTranslation } from 'react-i18next';
+import { useRecommendations } from '@/hooks/useRecommendations';
 
 const DIFFICULTY_MAP: Record<number, string> = {
     1: 'beginner',
@@ -45,19 +47,34 @@ export default function HomeScreen() {
 
     const GENRES = [
         t('home.categories.forYou'),
+        t('home.categories.following'),
         t('home.categories.easy'),
         t('home.categories.medium'),
         t('home.categories.hard'),
         t('home.categories.authors')
     ];
 
+    const [followingIds, setFollowingIds] = useState<string[]>([]);
+    const [buzz, setBuzz] = useState<any[]>([]);
+    const [loadingBuzz, setLoadingBuzz] = useState(true);
+
     const { data: featuredData, isLoading: loadingFeatured, refetch: refetchFeatured, error: errorFeatured } = useFeaturedStories();
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
     const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories, error: errorCategories } = useCategories();
 
+    useEffect(() => {
+        const fetchFollowing = async () => {
+            if (user) {
+                const res = await socialService.getFollowingIds(user.id);
+                if (res.success) setFollowingIds(res.data);
+            }
+        };
+        fetchFollowing();
+    }, [user]);
+
     const { items: libraryItems } = useLibraryStore();
     const { progressMap } = useProgressStore();
-    const libraryActions = useLibraryStore((s) => s.actions);
+    const libraryActions = useLibraryStore((s: any) => s.actions);
 
     const featuredStory = useMemo(() => {
         if (!featuredData?.[0]) return null;
@@ -66,11 +83,19 @@ export default function HomeScreen() {
 
     const allStories = useMemo(() => storiesData?.map(mapSanityStory) || [], [storiesData]);
 
+    const recommendedStoriesList = useRecommendations(allStories, libraryItems, progressMap);
+
     const filteredStories = useMemo(() => {
-        if (selectedGenre === 0) return allStories;
-        const difficulty = DIFFICULTY_MAP[selectedGenre];
+        if (selectedGenre === 0) return recommendedStoriesList;
+        if (selectedGenre === 1) {
+            // Following Filter
+            return allStories.filter((s: Story) => followingIds.includes(s.authorId || ''));
+        }
+
+        // Adjust index for difficulty map because we inserted "Following" at index 1
+        const difficulty = DIFFICULTY_MAP[selectedGenre - 1];
         return difficulty ? allStories.filter((s: Story) => s.difficulty === difficulty) : allStories;
-    }, [allStories, selectedGenre]);
+    }, [allStories, selectedGenre, followingIds, recommendedStoriesList]);
 
     const recommendedStories = filteredStories.slice(0, 5);
     const trendingList = filteredStories.slice(2, 6);
@@ -87,21 +112,28 @@ export default function HomeScreen() {
             progress: progress ? { percentage: progress.percentage, isCompleted: progress.isCompleted } : undefined,
         };
     }, [libraryItems, progressMap]);
+    const fetchFollowing = useCallback(async () => {
+        if (user) {
+            const res = await socialService.getFollowingIds(user.id);
+            if (res.success) setFollowingIds(res.data);
+        }
+    }, [user]);
+
+    useEffect(() => {
+        fetchFollowing();
+    }, [fetchFollowing]);
 
     const handleStoryPress = useCallback((storyId: string) => router.push(`/story/${storyId}`), [router]);
     const handleReadPress = useCallback((storyId: string) => router.push(`/reading/${storyId}`), [router]);
 
     const handleGenrePress = useCallback((index: number) => {
         haptics.selection();
-        if (index === 4) {
+        if (index === 5) {
             router.push('/authors');
         } else {
             setSelectedGenre(index);
         }
     }, [router]);
-
-    const [buzz, setBuzz] = useState<any[]>([]);
-    const [loadingBuzz, setLoadingBuzz] = useState(true);
 
     const fetchBuzz = useCallback(async () => {
         try {

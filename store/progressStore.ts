@@ -31,7 +31,7 @@ interface ProgressState {
 interface ProgressActions {
     setUserId: (userId: string | null) => void;
     updateProgress: (storyId: string, position: number, percentage: number, storyTitle?: string) => Promise<Result<ReadingProgress>>;
-    markComplete: (storyId: string, storyTitle?: string) => Promise<Result<ReadingProgress>>;
+    markComplete: (storyId: string, storyTitle?: string, metadata?: { rating?: number; readingTime?: number; wordCount?: number }) => Promise<Result<ReadingProgress>>;
     saveQuizResult: (storyId: string, score: number, total: number) => Promise<Result<ReadingProgress>>;
     getProgress: (storyId: string) => ReadingProgress | undefined;
     fetchAllProgress: () => Promise<Result<Record<string, ReadingProgress>>>;
@@ -116,7 +116,7 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
             }
         },
 
-        markComplete: async (storyId, storyTitle = 'a story') => {
+        markComplete: async (storyId, storyTitle = 'a story', metadata) => {
             const { userId, progressMap } = get();
             const user = useAuthStore.getState().user;
             if (!userId || !user) {
@@ -155,7 +155,8 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     user.photoURL,
                     storyId,
                     storyTitle,
-                    'story_completed'
+                    'story_completed',
+                    metadata
                 );
 
                 // Sync to leaderboard on completion

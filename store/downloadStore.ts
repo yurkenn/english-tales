@@ -35,6 +35,7 @@ interface DownloadActions {
     getDownloadedContent: (storyId: string) => PortableTextBlock[] | null;
     getDownloadStatus: (storyId: string) => DownloadStatus;
     getTotalDownloadSize: () => number;
+    fetchDownloadedContent: (storyId: string) => Promise<PortableTextBlock[] | null>;
     clearAllDownloads: () => Promise<void>;
 }
 
@@ -202,6 +203,41 @@ export const useDownloadStore = create<DownloadState & { actions: DownloadAction
         getTotalDownloadSize: () => {
             const { downloads } = get();
             return Object.values(downloads).reduce((sum, d) => sum + d.sizeBytes, 0);
+        },
+
+        fetchDownloadedContent: async (storyId) => {
+            const { downloads } = get();
+            const download = downloads[storyId];
+
+            if (!download) return null;
+
+            // Already in memory
+            if (download.content && download.content.length > 0) {
+                return download.content;
+            }
+
+            try {
+                const contentJson = await AsyncStorage.getItem(`${DOWNLOAD_CONTENT_PREFIX}${storyId}`);
+                if (contentJson) {
+                    const content = JSON.parse(contentJson);
+
+                    // Update state to keep it in memory
+                    set((state) => ({
+                        downloads: {
+                            ...state.downloads,
+                            [storyId]: {
+                                ...state.downloads[storyId],
+                                content,
+                            },
+                        },
+                    }));
+
+                    return content;
+                }
+            } catch (error) {
+                console.error('Failed to fetch downloaded content:', error);
+            }
+            return null;
         },
 
         clearAllDownloads: async () => {

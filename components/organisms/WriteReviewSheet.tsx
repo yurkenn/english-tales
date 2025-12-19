@@ -9,15 +9,22 @@ import { haptics } from '@/utils/haptics';
 
 interface WriteReviewSheetProps {
     storyTitle: string;
+    initialRating?: number;
     onSubmit: (rating: number, text: string) => Promise<void>;
     onClose: () => void;
 }
 
 export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
-    ({ storyTitle, onSubmit, onClose }, ref) => {
+    ({ storyTitle, initialRating = 0, onSubmit, onClose }, ref) => {
         const { theme } = useUnistyles();
         const insets = useSafeAreaInsets();
-        const [rating, setRating] = useState(0);
+        const [rating, setRating] = useState(initialRating);
+
+        useEffect(() => {
+            if (initialRating > 0) {
+                setRating(initialRating);
+            }
+        }, [initialRating]);
         const [text, setText] = useState('');
         const [isSubmitting, setIsSubmitting] = useState(false);
         const toastActions = useToastStore((state) => state.actions);

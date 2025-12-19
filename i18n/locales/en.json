@@ -44,7 +44,8 @@
             "readingTime": "Reading Time",
             "streak": "Day Streak"
         },
-        "quickSettings": "Quick Settings"
+        "quickSettings": "Quick Settings",
+        "vocabulary": "Vocabulary"
     },
     "appearance": {
         "title": "Appearance",
@@ -117,9 +118,13 @@
         }
     },
     "vocabulary": {
+        "title": "Vocabulary Builder",
+        "searchPlaceholder": "Search saved words...",
         "empty": "No words saved",
         "emptyMessage": "Tap on unknown words while reading to save them here.",
-        "startReading": "Start Reading"
+        "startReading": "Start Reading",
+        "noMatches": "No matching words",
+        "noMatchesMessage": "Try a different search term."
     },
     "reading": {
         "complete": "{{percentage}}% complete",

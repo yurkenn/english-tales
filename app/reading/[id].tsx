@@ -14,18 +14,21 @@ import {
     AudioPlayer,
     PortableTextRenderer,
     ReadingScreenSkeleton,
+    WriteReviewSheet,
     READING_THEMES,
     type ReadingTheme,
 } from '@/components';
 import { type QuizQuestion } from '@/types/sanity';
 import { useStory } from '@/hooks/useQueries';
 import { useProgressStore } from '@/store/progressStore';
+import { useAuthStore } from '@/store/authStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useThemeStore } from '@/store/themeStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useDownloadStore } from '@/store/downloadStore';
 import { dictionaryService, DictionaryEntry } from '@/services/dictionary';
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import BottomSheet from '@gorhom/bottom-sheet';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
 import * as Speech from 'expo-speech';
@@ -54,6 +57,10 @@ export default function ReadingScreen() {
     const [dictionaryData, setDictionaryData] = useState<DictionaryEntry | null>(null);
     const [isWordLoading, setIsWordLoading] = useState(false);
 
+    // Review
+    const reviewSheetRef = useRef<BottomSheet>(null);
+    const [completionRating, setCompletionRating] = useState(0);
+
     // Audio Assist (TTS)
     const [showAudioPlayer, setShowAudioPlayer] = useState(false);
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -71,7 +78,17 @@ export default function ReadingScreen() {
     const isInLibrary = id ? libraryActions.isInLibrary(id) : false;
     const isDownloaded = id ? downloadActions.isDownloaded(id) : false;
 
-    const { data: storyDoc, isLoading } = useStory(id || '');
+    const { data: storyDoc, isLoading: loadingStory } = useStory(id || '');
+    const [downloadedContent, setDownloadedContent] = useState<PortableTextBlock[] | null>(null);
+
+    // Load offline content if available
+    useEffect(() => {
+        if (id && isDownloaded) {
+            downloadActions.fetchDownloadedContent(id).then(setDownloadedContent);
+        }
+    }, [id, isDownloaded, downloadActions]);
+
+    const isLoading = loadingStory && !downloadedContent; // Don't show skeleton if we have offline content
 
     // Sync reading time on unmount
     useEffect(() => {
@@ -113,11 +130,9 @@ export default function ReadingScreen() {
 
     // Use cached content if downloaded
     const content = useMemo(() => {
-        if (id && isDownloaded && downloads[id]?.content?.length > 0) {
-            return downloads[id].content;
-        }
+        if (downloadedContent) return downloadedContent;
         return storyDoc?.content as PortableTextBlock[] | undefined;
-    }, [id, isDownloaded, downloads, storyDoc]);
+    }, [downloadedContent, storyDoc]);
 
     const handleScroll = useCallback((event: any) => {
         const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
@@ -137,16 +152,31 @@ export default function ReadingScreen() {
         }
     }, [progress, saveProgress]);
 
-    const handleMarkComplete = useCallback(async () => {
+    const handleMarkComplete = useCallback(async (rating?: number) => {
         haptics.success();
-        if (id) await progressActions.markComplete(id, storyDoc?.title);
+        const readingTimeMinutes = Math.max(1, Math.round((Date.now() - startTimeRef.current) / 60000));
+        const metadata = {
+            rating,
+            readingTime: readingTimeMinutes,
+            wordCount: storyDoc?.wordCount || 0
+        };
+
+        if (id) await progressActions.markComplete(id, storyDoc?.title, metadata);
         setShowCompletionModal(false);
 
-        // Check if there's a quiz
-        if (storyDoc?.quiz && storyDoc.quiz.length > 0) {
-            setShowQuizModal(true);
+        if (rating) {
+            setCompletionRating(rating);
+            // Small delay to ensure completion modal is closed
+            setTimeout(() => {
+                reviewSheetRef.current?.expand();
+            }, 500);
         } else {
-            router.back();
+            // Check if there's a quiz
+            if (storyDoc?.quiz && storyDoc.quiz.length > 0) {
+                setShowQuizModal(true);
+            } else {
+                router.back();
+            }
         }
     }, [id, progressActions, router, storyDoc]);
 
@@ -359,14 +389,49 @@ export default function ReadingScreen() {
 
             <CompletionModal
                 visible={showCompletionModal}
+                storyTitle={storyDoc.title}
+                readingTimeMinutes={Math.max(1, Math.round((Date.now() - startTimeRef.current) / 60000))}
+                wordCount={storyDoc.wordCount || 0}
                 onComplete={handleMarkComplete}
-                onContinue={() => setShowCompletionModal(false)}
+                onContinue={() => {
+                    setShowCompletionModal(false);
+                    router.back();
+                }}
             />
 
             <QuizModal
                 visible={showQuizModal}
                 questions={storyDoc?.quiz as QuizQuestion[]}
                 onClose={handleQuizClose}
+            />
+
+            <WriteReviewSheet
+                ref={reviewSheetRef}
+                storyTitle={storyDoc.title}
+                initialRating={completionRating}
+                onClose={() => reviewSheetRef.current?.close()}
+                onSubmit={async (rating, text) => {
+                    const { user } = useAuthStore.getState();
+                    if (!user || !id) return;
+
+                    const { reviewService } = await import('@/services/reviewService');
+                    await reviewService.addReview(
+                        id,
+                        storyDoc.title,
+                        user.id,
+                        user.displayName || 'Anonymous',
+                        user.photoURL,
+                        rating,
+                        text
+                    );
+
+                    // After review, maybe go back or show quiz
+                    if (storyDoc?.quiz && storyDoc.quiz.length > 0) {
+                        setShowQuizModal(true);
+                    } else {
+                        router.back();
+                    }
+                }}
             />
 
             <ReadingSettingsModal
