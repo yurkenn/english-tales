@@ -477,19 +477,24 @@ const styles = StyleSheet.create((theme) => ({
     },
     contentContainer: {
         paddingHorizontal: theme.spacing.xl,
-        paddingVertical: theme.spacing.lg,
-        paddingBottom: theme.spacing.xxxxl,
+        paddingVertical: 24,
+        paddingBottom: 140,
     },
     storyText: {
         color: theme.colors.text,
-        lineHeight: 32,
-        letterSpacing: 0.3,
+        lineHeight: 34,
+        letterSpacing: 0.2,
     },
     controls: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
         paddingHorizontal: theme.spacing.lg,
         paddingTop: theme.spacing.md,
         backgroundColor: theme.colors.surface,
         borderTopWidth: 1,
         borderTopColor: theme.colors.borderLight,
+        ...theme.shadows.lg,
     },
 }));

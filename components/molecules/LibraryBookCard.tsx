@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
-import { ProgressBar, OptimizedImage } from '../atoms';
+import { ProgressBar, OptimizedImage, BookCover } from '../atoms';
 import { useTranslation } from 'react-i18next';
 import type { LibraryItemWithProgress } from './moleculeTypes';
 
@@ -30,9 +30,11 @@ export const LibraryBookCard: React.FC<LibraryBookCardProps> = ({
 
     return (
         <Pressable style={styles.bookItem} onPress={onPress}>
-            <OptimizedImage
+            <BookCover
                 source={{ uri: item.story.coverImage }}
-                style={styles.bookCover}
+                width={84}
+                height={120}
+                borderRadius={10}
                 sharedTransitionTag={`story-image-${item.story.id}`}
             />
             <View style={styles.bookInfo}>
@@ -101,7 +103,7 @@ export const LibraryBookCard: React.FC<LibraryBookCardProps> = ({
                     </Text>
                 </Pressable>
             </View>
-        </Pressable>
+        </Pressable >
     );
 };
 
@@ -109,16 +111,20 @@ const styles = StyleSheet.create((theme) => ({
     bookItem: {
         flexDirection: 'row',
         backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
+        borderRadius: 14,
         padding: theme.spacing.md,
-        gap: theme.spacing.lg,
+        gap: theme.spacing.md,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
     },
     bookCover: {
-        width: 80,
+        width: 84,
         height: 120,
-        borderRadius: theme.radius.md,
-        backgroundColor: theme.colors.borderLight,
+        borderRadius: 12,
+        backgroundColor: theme.colors.background,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     bookInfo: {
         flex: 1,
@@ -133,13 +139,15 @@ const styles = StyleSheet.create((theme) => ({
         gap: 2,
     },
     bookTitle: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.bold,
+        fontSize: 18,
+        fontWeight: 'bold',
         color: theme.colors.text,
+        letterSpacing: -0.4,
     },
     bookAuthor: {
         fontSize: theme.typography.size.md,
-        color: theme.colors.textSecondary,
+        color: theme.colors.textMuted,
+        fontWeight: '500',
     },
     offlineBadge: {
         flexDirection: 'row',
@@ -148,52 +156,58 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: 4,
     },
     offlineBadgeText: {
-        fontSize: theme.typography.size.xs,
+        fontSize: 11,
         color: theme.colors.success,
-        fontWeight: theme.typography.weight.medium,
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
     },
     moreButton: {
         width: 32,
         height: 32,
         alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: 8,
     },
     progressSection: {
-        paddingVertical: theme.spacing.sm,
+        paddingVertical: 6,
     },
     progressInfo: {
-        gap: theme.spacing.xs,
+        gap: 6,
     },
     progressText: {
-        fontSize: theme.typography.size.sm,
+        fontSize: 12,
+        fontWeight: '600',
         color: theme.colors.textSecondary,
     },
     completedBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: theme.spacing.xs,
+        gap: 6,
     },
     completedText: {
-        fontSize: theme.typography.size.sm,
+        fontSize: 12,
         color: theme.colors.success,
-        fontWeight: theme.typography.weight.medium,
+        fontWeight: 'bold',
     },
     notStartedText: {
-        fontSize: theme.typography.size.sm,
+        fontSize: 12,
         color: theme.colors.textMuted,
+        fontWeight: '500',
     },
     actionButton: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: theme.spacing.xs,
-        backgroundColor: `${theme.colors.primary}15`,
-        height: 36,
-        borderRadius: theme.radius.md,
+        gap: 6,
+        backgroundColor: theme.colors.primary + '10',
+        height: 40,
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: theme.colors.primary + '20',
     },
     actionButtonText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.semibold,
+        fontSize: 14,
+        fontWeight: 'bold',
         color: theme.colors.primary,
     },
 }));

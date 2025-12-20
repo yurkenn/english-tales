@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Text, Pressable, Dimensions } from 'react-native';
+import { View, Pressable, Dimensions } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { OptimizedImage } from '../atoms';
+import { Typography, BookCover } from '../atoms';
 import type { Story } from '@/types';
 import { DIFFICULTY_COLORS, DIFFICULTY_LABELS } from './moleculeTypes';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
-const CARD_GAP = 12;
+const CARD_GAP = 16; // Increased from 12 for better breathing room
 const HORIZONTAL_PADDING = 16;
 export const CARD_WIDTH = (SCREEN_WIDTH - HORIZONTAL_PADDING * 2 - CARD_GAP) / 2;
 export const CARD_IMAGE_HEIGHT = CARD_WIDTH * 1.5;
@@ -37,23 +37,26 @@ export const StoryGridCard: React.FC<StoryGridCardProps> = ({
             onPress={onPress}
         >
             <View style={styles.coverContainer}>
-                <OptimizedImage
-                    source={{ uri: story.coverImage || 'https://via.placeholder.com/200x300' }}
+                <BookCover
+                    source={{ uri: story.coverImage || '' }}
                     placeholder={story.coverImageLqip}
-                    style={styles.coverImage}
-                    sharedTransitionTag={`story-image-${story.id}`}
                     width={CARD_WIDTH}
                     height={CARD_IMAGE_HEIGHT}
+                    sharedTransitionTag={`story-image-${story.id}`}
+                    showPages={true}
+                    borderRadius={10}
                 />
 
                 <LinearGradient
-                    colors={['transparent', 'rgba(0,0,0,0.8)']}
+                    colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.85)']} // Refined gradient
                     style={styles.gradient}
                 />
 
                 <View style={styles.topBadges}>
                     <View style={[styles.difficultyBadge, { backgroundColor: difficultyColor }]}>
-                        <Text style={styles.difficultyText}>{difficultyLabel}</Text>
+                        <Typography variant="label" color="#FFFFFF" style={styles.difficultyText}>
+                            {difficultyLabel}
+                        </Typography>
                     </View>
                     {isInLibrary && (
                         <View style={styles.libraryBadge}>
@@ -63,16 +66,18 @@ export const StoryGridCard: React.FC<StoryGridCardProps> = ({
                 </View>
 
                 <View style={styles.overlayInfo}>
-                    <Text style={styles.overlayTitle} numberOfLines={2}>
+                    <Typography variant="subtitle" color="#FFFFFF" numberOfLines={2} style={styles.overlayTitle}>
                         {story.title}
-                    </Text>
+                    </Typography>
                     <View style={styles.overlayMeta}>
-                        <Text style={styles.overlayAuthor} numberOfLines={1}>
+                        <Typography variant="caption" color="rgba(255,255,255,0.8)" numberOfLines={1} style={styles.overlayAuthor}>
                             {story.author}
-                        </Text>
+                        </Typography>
                         <View style={styles.readTimeBadge}>
                             <Ionicons name="time-outline" size={10} color="rgba(255,255,255,0.8)" />
-                            <Text style={styles.readTimeText}>{story.estimatedReadTime}m</Text>
+                            <Typography variant="label" color="rgba(255,255,255,0.9)" style={styles.readTimeText}>
+                                {story.estimatedReadTime}m
+                            </Typography>
                         </View>
                     </View>
                 </View>
@@ -84,9 +89,7 @@ export const StoryGridCard: React.FC<StoryGridCardProps> = ({
 const styles = StyleSheet.create((theme) => ({
     card: {
         width: CARD_WIDTH,
-        borderRadius: theme.radius.xl,
-        overflow: 'hidden',
-        ...theme.shadows.md,
+        marginBottom: theme.spacing.md,
     },
     cardPressed: {
         opacity: 0.9,
@@ -97,17 +100,14 @@ const styles = StyleSheet.create((theme) => ({
         width: CARD_WIDTH,
         height: CARD_IMAGE_HEIGHT,
     },
-    coverImage: {
-        width: '100%',
-        height: '100%',
-        backgroundColor: theme.colors.borderLight,
-    },
     gradient: {
         position: 'absolute',
         left: 0,
         right: 0,
         bottom: 0,
-        height: '60%',
+        height: '65%',
+        borderBottomLeftRadius: 16,
+        borderBottomRightRadius: 16,
     },
     topBadges: {
         position: 'absolute',
@@ -117,26 +117,27 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+        zIndex: 10,
     },
     difficultyBadge: {
-        paddingHorizontal: 10,
-        paddingVertical: 4,
+        paddingHorizontal: 8,
+        paddingVertical: 2,
         borderRadius: theme.radius.full,
     },
     difficultyText: {
-        fontSize: 10,
-        fontWeight: theme.typography.weight.bold,
-        color: '#FFFFFF',
+        fontSize: 9,
+        fontWeight: 'bold',
         textTransform: 'uppercase',
         letterSpacing: 0.5,
     },
     libraryBadge: {
-        width: 26,
-        height: 26,
-        borderRadius: theme.radius.full,
+        width: 24,
+        height: 24,
+        borderRadius: 12,
         backgroundColor: theme.colors.primary,
         alignItems: 'center',
         justifyContent: 'center',
+        ...theme.shadows.sm,
     },
     overlayInfo: {
         position: 'absolute',
@@ -144,42 +145,35 @@ const styles = StyleSheet.create((theme) => ({
         left: 0,
         right: 0,
         padding: theme.spacing.sm,
+        paddingBottom: theme.spacing.md,
+        zIndex: 5,
     },
     overlayTitle: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.bold,
-        color: '#FFFFFF',
-        lineHeight: 20,
-        textShadowColor: 'rgba(0, 0, 0, 0.5)',
-        textShadowOffset: { width: 0, height: 1 },
-        textShadowRadius: 2,
+        fontSize: 14,
+        fontWeight: '700',
+        lineHeight: 18,
     },
     overlayMeta: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginTop: 4,
+        marginTop: 2,
     },
     overlayAuthor: {
         flex: 1,
-        fontSize: theme.typography.size.sm,
-        color: 'rgba(255,255,255,0.85)',
-        textShadowColor: 'rgba(0, 0, 0, 0.5)',
-        textShadowOffset: { width: 0, height: 1 },
-        textShadowRadius: 2,
+        fontSize: 11,
     },
     readTimeBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 3,
-        backgroundColor: 'rgba(0,0,0,0.4)',
+        gap: 2,
+        backgroundColor: 'rgba(255,255,255,0.15)',
         paddingHorizontal: 6,
-        paddingVertical: 2,
+        paddingVertical: 1,
         borderRadius: theme.radius.full,
     },
     readTimeText: {
-        fontSize: 10,
-        color: 'rgba(255,255,255,0.9)',
-        fontWeight: theme.typography.weight.medium,
+        fontSize: 9,
+        fontWeight: '600',
     },
 }));

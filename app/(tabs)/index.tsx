@@ -141,18 +141,18 @@ export default function HomeScreen() {
             const result = await communityService.getBuzzActivities(10);
             if (result.success) {
                 const mapped = result.data.map((post: CommunityPost) => {
-                    let type: 'share' | 'achievement' | 'milestone' | 'thought' | 'follow' | 'story_review' | 'story_completed' | 'started_reading' = 'started_reading';
-                    let targetName = (post.metadata as any)?.storyTitle || (post.metadata as any)?.achievementTitle || 'a story';
-
-                    if (post.type === 'story_completed') type = 'story_completed';
-                    else if (post.type === 'achievement') type = 'achievement';
+                    const type = post.type as any;
+                    let targetName = (post.metadata as any)?.storyTitle ||
+                        (post.metadata as any)?.achievementTitle ||
+                        (post.metadata as any)?.targetUserName ||
+                        'a story';
 
                     return {
                         id: post.id,
                         userId: post.userId,
                         userName: post.userName,
                         userPhoto: post.userPhoto,
-                        type,
+                        type: type,
                         targetName,
                         timestamp: (post.timestamp as any)?.toDate ? (post.timestamp as any).toDate() : new Date(),
                     };
@@ -318,7 +318,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     chipsContainer: {
         paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.sm,
+        paddingVertical: theme.spacing.sm, // Reduced from md
         gap: theme.spacing.sm,
     },
     content: {
@@ -326,23 +326,21 @@ const styles = StyleSheet.create((theme) => ({
     },
     contentContainer: {
         flexGrow: 0,
-        paddingTop: theme.spacing.sm,
-        paddingBottom: theme.spacing.xxxl,
-        gap: theme.spacing.xl,
+        paddingBottom: theme.spacing.xxxxl,
+        gap: theme.spacing.lg, // Reduced from xl (16px vs 20px)
     },
     section: {
-        gap: theme.spacing.md,
+        gap: theme.spacing.sm, // Reduced from md (8px vs 12px)
     },
     sectionContent: {
         paddingHorizontal: theme.spacing.lg,
-        gap: theme.spacing.md,
     },
     carouselContent: {
         paddingHorizontal: theme.spacing.lg,
     },
     trendingContainer: {
         paddingHorizontal: theme.spacing.lg,
-        gap: theme.spacing.sm,
+        gap: theme.spacing.md,
     },
     center: {
         alignItems: 'center',

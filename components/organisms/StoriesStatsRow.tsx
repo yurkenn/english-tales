@@ -66,7 +66,7 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-around',
         marginHorizontal: theme.spacing.lg,
-        marginBottom: theme.spacing.lg,
+        marginBottom: theme.spacing.md,
         paddingVertical: theme.spacing.md,
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xl,

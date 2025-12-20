@@ -73,10 +73,11 @@ const styles = StyleSheet.create((theme) => ({
         marginHorizontal: theme.spacing.lg,
         padding: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
+        borderRadius: 16,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         marginBottom: theme.spacing.lg,
+        ...theme.shadows.sm,
     },
     title: {
         fontSize: theme.typography.size.lg,
@@ -87,16 +88,16 @@ const styles = StyleSheet.create((theme) => ({
     grid: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        gap: theme.spacing.sm,
+        gap: theme.spacing.md,
     },
     metricItem: {
         flex: 1,
         alignItems: 'center',
     },
     iconContainer: {
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.md,
+        width: 44,
+        height: 44,
+        borderRadius: 12,
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: theme.spacing.sm,
@@ -108,9 +109,11 @@ const styles = StyleSheet.create((theme) => ({
     },
     label: {
         fontSize: 10,
-        color: theme.colors.textSecondary,
+        color: theme.colors.textMuted,
         textAlign: 'center',
-        marginTop: 2,
-        fontWeight: theme.typography.weight.medium,
+        marginTop: 4,
+        fontWeight: theme.typography.weight.bold,
+        textTransform: 'uppercase',
+        letterSpacing: 0.5,
     },
 }));

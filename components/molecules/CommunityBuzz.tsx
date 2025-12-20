@@ -1,5 +1,7 @@
-import { View, ScrollView, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
+import React from 'react';
+import { View, ScrollView, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
 import { OptimizedImage } from '../atoms/OptimizedImage';
 import { haptics } from '@/utils/haptics';
@@ -10,8 +12,8 @@ interface ActivityItem {
     userId: string;
     userName: string;
     userPhoto?: string;
-    type: 'story_completed' | 'achievement' | 'started_reading';
-    targetName: string; // story title or achievement name
+    type: 'story_completed' | 'achievement' | 'started_reading' | 'follow' | 'story_review';
+    targetName: string;
     timestamp: Date;
 }
 
@@ -20,67 +22,89 @@ interface CommunityBuzzProps {
     onPressActivity?: (activity: ActivityItem) => void;
 }
 
+const CARD_WIDTH = 180;
+
 export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPressActivity }) => {
     const { t } = useTranslation();
     const { theme } = useUnistyles();
 
     if (activities.length === 0) return null;
 
-    const renderIcon = (type: ActivityItem['type']) => {
+    const getActivityConfig = (type: ActivityItem['type']) => {
         switch (type) {
-            case 'story_completed': return '🏆';
-            case 'achievement': return '🌟';
-            case 'started_reading': return '📖';
-            default: return '✨';
+            case 'story_completed':
+                return { icon: 'trophy' as const, color: '#FFD700', bg: 'rgba(255, 215, 0, 0.15)' };
+            case 'achievement':
+                return { icon: 'star' as const, color: '#4ADE80', bg: 'rgba(74, 222, 128, 0.15)' };
+            case 'started_reading':
+                return { icon: 'book' as const, color: theme.colors.primary, bg: 'rgba(234, 42, 51, 0.1)' };
+            case 'follow':
+                return { icon: 'person-add' as const, color: '#60A5FA', bg: 'rgba(96, 165, 250, 0.15)' };
+            case 'story_review':
+                return { icon: 'chatbox-ellipses' as const, color: '#F472B6', bg: 'rgba(244, 114, 182, 0.15)' };
+            default:
+                return { icon: 'flash' as const, color: theme.colors.primary, bg: 'rgba(234, 42, 51, 0.1)' };
         }
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Typography variant="h3">{t('social.communityBuzz', 'Community Buzz')}</Typography>
-                <Typography variant="caption" color={theme.colors.primary}>
-                    {t('common.seeAll', 'See All')}
+                <Typography variant="label" color={theme.colors.textMuted} style={styles.headerTitle}>
+                    {t('social.communityBuzz', 'BEYOND THE BOOKS').toUpperCase()}
                 </Typography>
+                <Pressable onPress={() => haptics.selection()} style={styles.seeAll}>
+                    <Typography variant="label" color={theme.colors.primary} style={styles.seeAllText}>
+                        {t('common.seeAll', 'See All')}
+                    </Typography>
+                    <Ionicons name="chevron-forward" size={10} color={theme.colors.primary} />
+                </Pressable>
             </View>
 
             <ScrollView
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={styles.scrollContent}
+                decelerationRate="fast"
+                snapToInterval={CARD_WIDTH + theme.spacing.md}
             >
-                {activities.map((item) => (
-                    <Pressable
-                        key={item.id}
-                        style={styles.card}
-                        onPress={() => {
-                            haptics.selection();
-                            onPressActivity?.(item);
-                        }}
-                    >
-                        <View style={styles.cardHeader}>
-                            <OptimizedImage
-                                source={{ uri: item.userPhoto || '' }}
-                                style={styles.avatar}
-                                placeholder="person-circle"
-                            />
-                            <View style={styles.iconBadge}>
-                                <Typography style={{ fontSize: 10 }}>{renderIcon(item.type)}</Typography>
+                {activities.map((item) => {
+                    const config = getActivityConfig(item.type);
+                    return (
+                        <Pressable
+                            key={item.id}
+                            style={styles.activityRow}
+                            onPress={() => {
+                                haptics.selection();
+                                onPressActivity?.(item);
+                            }}
+                        >
+                            <View style={styles.avatarWrapper}>
+                                <OptimizedImage
+                                    source={{ uri: item.userPhoto || '' }}
+                                    style={styles.avatar}
+                                    placeholder="person-circle"
+                                />
+                                <View style={[styles.typeBadge, { backgroundColor: config.color }]}>
+                                    <Ionicons name={config.icon} size={8} color="#FFF" />
+                                </View>
                             </View>
-                        </View>
 
-                        <View style={styles.textContainer}>
-                            <Typography variant="bodyBold" style={{ fontSize: 12 }} numberOfLines={1}>
-                                {item.userName}
-                            </Typography>
-                            <Typography variant="caption" color={theme.colors.textMuted} numberOfLines={2}>
-                                {item.type === 'story_completed' && t('social.activityFinished', { title: item.targetName })}
-                                {item.type === 'achievement' && t('social.activityEarned', { title: item.targetName })}
-                                {item.type === 'started_reading' && t('social.activityStarted', { title: item.targetName })}
-                            </Typography>
-                        </View>
-                    </Pressable>
-                ))}
+                            <View style={styles.textWrapper}>
+                                <Typography variant="label" numberOfLines={1} style={styles.userName}>
+                                    {item.userName}
+                                </Typography>
+                                <Typography variant="caption" color={theme.colors.textSecondary} numberOfLines={1} style={styles.activityText}>
+                                    {item.type === 'story_completed' && t('social.activityFinished', { title: item.targetName })}
+                                    {item.type === 'achievement' && t('social.activityEarned', { title: item.targetName })}
+                                    {item.type === 'started_reading' && t('social.activityStarted', { title: item.targetName })}
+                                    {item.type === 'follow' && t('social.activityFollowed', { name: item.targetName })}
+                                    {item.type === 'story_review' && t('social.activityReviewed', { title: item.targetName })}
+                                </Typography>
+                            </View>
+                        </Pressable>
+                    );
+                })}
             </ScrollView>
         </View>
     );
@@ -88,53 +112,77 @@ export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPres
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        marginVertical: theme.spacing.lg,
+        marginTop: theme.spacing.xs,
+        marginBottom: theme.spacing.sm,
     },
     header: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: theme.spacing.lg,
-        marginBottom: theme.spacing.md,
+        marginBottom: theme.spacing.xs,
+    },
+    headerTitle: {
+        letterSpacing: 1,
+        fontWeight: '700',
+        fontSize: 10,
+    },
+    seeAll: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 2,
+    },
+    seeAllText: {
+        fontWeight: '700',
+        fontSize: 10,
     },
     scrollContent: {
         paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.xs,
         gap: theme.spacing.md,
     },
-    card: {
-        width: 154,
-        backgroundColor: theme.colors.surface,
-        borderRadius: 20,
-        padding: theme.spacing.md,
-        ...theme.shadows.sm,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
+    activityRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: CARD_WIDTH,
+        backgroundColor: theme.colors.surfaceElevated,
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: theme.spacing.xs,
+        borderRadius: 30, // Pill shaped
+        gap: theme.spacing.sm,
     },
-    cardHeader: {
+    avatarWrapper: {
         position: 'relative',
-        marginBottom: theme.spacing.sm,
     },
     avatar: {
-        width: 44,
-        height: 44,
-        borderRadius: 22,
+        width: 30,
+        height: 30,
+        borderRadius: 15,
         backgroundColor: theme.colors.background,
     },
-    iconBadge: {
+    typeBadge: {
         position: 'absolute',
         bottom: -2,
         right: -2,
-        backgroundColor: theme.colors.surface,
-        width: 20,
-        height: 20,
-        borderRadius: 10,
+        width: 14,
+        height: 14,
+        borderRadius: 7,
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1.5,
-        borderColor: theme.colors.surface,
-        ...theme.shadows.sm,
+        borderColor: theme.colors.surfaceElevated,
     },
-    textContainer: {
-        gap: 2,
+    textWrapper: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    userName: {
+        fontSize: 11,
+        fontWeight: '700',
+        lineHeight: 13,
+    },
+    activityText: {
+        fontSize: 10,
+        lineHeight: 12,
     },
 }));

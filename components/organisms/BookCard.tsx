@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
-import { OptimizedImage } from '../atoms';
+import { Typography, BookCover } from '../atoms';
 import { Story } from '@/types';
 
 interface BookCardProps {
@@ -23,41 +23,43 @@ export const BookCard: React.FC<BookCardProps> = ({
 
     return (
         <Pressable style={styles.container} onPress={onPress}>
-            {/* Cover Image */}
-            <View style={styles.coverContainer}>
-                <OptimizedImage
-                    source={{ uri: coverUri }}
-                    placeholder={story.coverImageLqip}
-                    style={styles.cover}
-                    sharedTransitionTag={`story-image-${story.id}`}
-                    width={theme.bookCover.width}
-                />
-                {/* Rank Badge */}
-                {showRank && (
-                    <View style={styles.rankBadge}>
-                        <Text style={styles.rankText}>#{showRank}</Text>
-                    </View>
-                )}
-                {/* Rating Badge */}
-                {rating !== null && (
-                    <View style={styles.ratingBadge}>
-                        <Ionicons
-                            name="star"
-                            size={10}
-                            color={theme.colors.star}
-                        />
-                        <Text style={styles.ratingText}>{rating.toFixed(1)}</Text>
-                    </View>
-                )}
-            </View>
+            {/* Cover Image with Page Stack Effect */}
+            <BookCover
+                source={{ uri: coverUri }}
+                placeholder={story.coverImageLqip}
+                width={theme.bookCover.width}
+                sharedTransitionTag={`story-image-${story.id}`}
+                showPages={true}
+                borderRadius={10}
+            />
+
+            {/* Rank Badge overlay on top of BookCover */}
+            {showRank && (
+                <View style={styles.rankBadge}>
+                    <Typography variant="label" color={theme.colors.textInverse}>#{showRank}</Typography>
+                </View>
+            )}
+
+            {/* Rating Badge overlay on top of BookCover */}
+            {rating !== null && (
+                <View style={styles.ratingBadge}>
+                    <Ionicons
+                        name="star"
+                        size={10}
+                        color={theme.colors.star}
+                    />
+                    <Typography variant="label" color="#FFFFFF">{rating.toFixed(1)}</Typography>
+                </View>
+            )}
+
             {/* Info */}
             <View style={styles.info}>
-                <Text style={styles.title} numberOfLines={1}>
+                <Typography variant="subtitle" numberOfLines={1} style={styles.title}>
                     {story.title}
-                </Text>
-                <Text style={styles.author} numberOfLines={1}>
+                </Typography>
+                <Typography variant="caption" color={theme.colors.textMuted} numberOfLines={1}>
                     {story.author}
-                </Text>
+                </Typography>
             </View>
         </Pressable>
     );
@@ -66,19 +68,8 @@ export const BookCard: React.FC<BookCardProps> = ({
 const styles = StyleSheet.create((theme) => ({
     container: {
         width: theme.bookCover.width,
-        gap: theme.spacing.sm,
-    },
-    coverContainer: {
-        width: '100%',
-        aspectRatio: theme.bookCover.aspectRatio,
-        borderRadius: theme.radius.lg,
-        overflow: 'hidden',
-        backgroundColor: theme.colors.borderLight,
-        ...theme.shadows.md,
-    },
-    cover: {
-        width: '100%',
-        height: '100%',
+        gap: theme.spacing.xs, // Reduced from md
+        marginBottom: theme.spacing.sm, // Clearance for shadow
     },
     rankBadge: {
         position: 'absolute',
@@ -87,12 +78,9 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.primary,
         paddingHorizontal: theme.spacing.sm,
         paddingVertical: theme.spacing.xs,
+        borderTopLeftRadius: theme.radius.lg,
         borderBottomRightRadius: theme.radius.lg,
-    },
-    rankText: {
-        color: theme.colors.textInverse,
-        fontSize: theme.typography.size.xs,
-        fontWeight: theme.typography.weight.bold,
+        zIndex: 10,
     },
     ratingBadge: {
         position: 'absolute',
@@ -105,22 +93,12 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: theme.spacing.xs,
         paddingVertical: 2,
         borderRadius: theme.radius.xs,
-    },
-    ratingText: {
-        color: theme.colors.textInverse,
-        fontSize: theme.typography.size.xs,
-        fontWeight: theme.typography.weight.bold,
+        zIndex: 10,
     },
     info: {
-        gap: 2,
+        gap: 0,
     },
     title: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-    },
-    author: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
+        marginTop: 0,
     },
 }));

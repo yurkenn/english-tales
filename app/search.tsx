@@ -175,16 +175,19 @@ const styles = StyleSheet.create((theme) => ({
     suggestionsContainer: {
         flex: 1,
         paddingHorizontal: theme.spacing.lg,
-        paddingTop: theme.spacing.lg,
+        paddingTop: theme.spacing.md,
     },
     listContent: {
         paddingHorizontal: theme.spacing.lg,
-        paddingTop: theme.spacing.sm,
-        paddingBottom: theme.spacing.xxxl,
+        paddingTop: theme.spacing.md,
+        paddingBottom: theme.spacing.xxxxl,
     },
     resultsCount: {
         fontSize: theme.typography.size.md,
-        color: theme.colors.textSecondary,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.textMuted,
         marginBottom: theme.spacing.md,
+        textTransform: 'uppercase',
+        letterSpacing: 0.8,
     },
 }));

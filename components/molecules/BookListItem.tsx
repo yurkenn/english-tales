@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
-import { OptimizedImage } from '../atoms';
+import { OptimizedImage, BookCover } from '../atoms';
 import { Story } from '@/types';
 
 interface BookListItemProps {
@@ -25,9 +25,13 @@ export const BookListItem: React.FC<BookListItemProps> = ({
     return (
         <Pressable style={styles.container} onPress={onPress}>
             {/* Cover */}
-            <View style={styles.coverContainer}>
-                <OptimizedImage source={{ uri: story.coverImage }} style={styles.cover} />
-            </View>
+            <BookCover
+                source={{ uri: story.coverImage }}
+                width={64}
+                height={96}
+                borderRadius={10}
+                sharedTransitionTag={`story-image-${story.id}`}
+            />
 
             {/* Content */}
             <View style={styles.content}>
@@ -79,7 +83,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
+        borderRadius: 14,
         padding: theme.spacing.md,
         gap: theme.spacing.lg,
         borderWidth: 1,
@@ -89,10 +93,11 @@ const styles = StyleSheet.create((theme) => ({
     coverContainer: {
         width: 64,
         height: 64,
-        borderRadius: theme.radius.lg,
+        borderRadius: 12,
         overflow: 'hidden',
-        backgroundColor: theme.colors.borderLight,
-        ...theme.shadows.sm,
+        backgroundColor: theme.colors.background,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     cover: {
         width: '100%',
@@ -118,15 +123,17 @@ const styles = StyleSheet.create((theme) => ({
     },
     author: {
         fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
+        color: theme.colors.textMuted,
     },
     bookmarkButton: {
         width: 36,
         height: 36,
-        borderRadius: theme.radius.full,
-        backgroundColor: theme.colors.backgroundSecondary,
+        borderRadius: 18,
+        backgroundColor: theme.colors.background,
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     footer: {
         flexDirection: 'row',
@@ -134,14 +141,16 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.sm,
     },
     tag: {
-        backgroundColor: theme.colors.backgroundSecondary,
+        backgroundColor: theme.colors.background,
         paddingHorizontal: theme.spacing.sm,
-        paddingVertical: theme.spacing.xxs,
-        borderRadius: theme.radius.xs,
+        paddingVertical: 2,
+        borderRadius: 6,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     tagText: {
         fontSize: theme.typography.size.xs,
-        fontWeight: theme.typography.weight.medium,
+        fontWeight: theme.typography.weight.bold,
         color: theme.colors.textSecondary,
         textTransform: 'uppercase',
         letterSpacing: 0.5,

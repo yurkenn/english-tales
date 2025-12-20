@@ -10,3 +10,4 @@ export { SectionHeader } from './SectionHeader';
 export { Typography } from './Typography';
 export type { TypographyVariant } from './Typography';
 export { SegmentedPicker } from './SegmentedPicker';
+export { BookCover } from './BookCover';

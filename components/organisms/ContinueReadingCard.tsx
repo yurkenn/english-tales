@@ -3,7 +3,7 @@ import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { Story, ReadingProgress } from '@/types';
-import { ProgressBar, OptimizedImage } from '../atoms';
+import { ProgressBar, OptimizedImage, BookCover } from '../atoms';
 
 interface ContinueReadingCardProps {
     story: Story;
@@ -25,13 +25,13 @@ export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = ({
     return (
         <Pressable style={styles.container} onPress={onPress}>
             {/* Cover */}
-            <View style={styles.coverContainer}>
-                <OptimizedImage
-                    source={{ uri: story.coverImage }}
-                    style={styles.cover}
-                    sharedTransitionTag={`story-image-${story.id}`}
-                />
-            </View>
+            <BookCover
+                source={{ uri: story.coverImage }}
+                width={80}
+                height={112}
+                borderRadius={10}
+                sharedTransitionTag={`story-image-${story.id}`}
+            />
 
             {/* Content */}
             <View style={styles.content}>
@@ -75,20 +75,21 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
+        borderRadius: 14,
         padding: theme.spacing.md,
         gap: theme.spacing.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
-        ...theme.shadows.md,
+        ...theme.shadows.sm,
     },
     coverContainer: {
         width: 80,
         height: 112,
-        borderRadius: theme.radius.md,
+        borderRadius: 12,
         overflow: 'hidden',
-        backgroundColor: theme.colors.borderLight,
-        ...theme.shadows.sm,
+        backgroundColor: theme.colors.background,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     cover: {
         width: '100%',
@@ -100,7 +101,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.xs,
     },
     title: {
-        fontSize: theme.typography.size.xl,
+        fontSize: theme.typography.size.lg,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
     },
@@ -119,7 +120,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     progressText: {
         fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
+        color: theme.colors.textMuted,
         fontWeight: theme.typography.weight.medium,
     },
     progressPercent: {
@@ -128,11 +129,14 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.bold,
     },
     playButton: {
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.full,
-        backgroundColor: `${theme.colors.primary}15`,
+        width: 44,
+        height: 44,
+        borderRadius: 22,
+        backgroundColor: theme.colors.background,
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        ...theme.shadows.sm,
     },
 }));

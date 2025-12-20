@@ -97,7 +97,9 @@
         }
     },
     "discover": {
+        "searchPlaceholder": "Search stories, authors...",
         "surpriseMe": "Surprise Me",
+        "surpriseMeDesc": "Let us pick a story for you",
         "authorSpotlight": "Author Spotlight",
         "recentlyAdded": "Recently Added",
         "popularThisWeek": "Popular This Week",

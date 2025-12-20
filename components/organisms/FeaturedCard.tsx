@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
+import { View, Pressable, StyleSheet as RNStyleSheet, Dimensions } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -7,8 +7,11 @@ import { Story } from '@/types';
 import {
     Typography,
     OptimizedImage,
-    RatingStars
+    RatingStars,
+    BookCover
 } from '../atoms';
+
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 interface FeaturedCardProps {
     story: Story;
@@ -47,12 +50,13 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
                         placeholder={story.coverImageLqip}
                         style={RNStyleSheet.absoluteFill}
                         sharedTransitionTag={`story-image-${story.id}`}
-                        height={220}
                     />
                     <LinearGradient
-                        colors={['transparent', 'rgba(0, 0, 0, 0.8)']}
+                        colors={['rgba(0,0,0,0.3)', 'transparent', 'rgba(0, 0, 0, 0.8)']}
                         style={RNStyleSheet.absoluteFillObject}
                     />
+                    {/* Spine Effect Overlay */}
+                    <View style={styles.spineLine} />
                     {/* Badge */}
                     <View style={styles.badge}>
                         <Typography variant="label" color={theme.colors.textInverse}>{badge}</Typography>
@@ -104,14 +108,14 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
 const styles = StyleSheet.create((theme) => ({
     container: {
         backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xxl,
+        borderRadius: 14,
         overflow: 'hidden',
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
-        ...theme.shadows.lg,
+        ...theme.shadows.md,
     },
     heroImage: {
-        height: 220,
+        height: 240,
         justifyContent: 'flex-end',
     },
     gradient: {
@@ -119,25 +123,29 @@ const styles = StyleSheet.create((theme) => ({
     },
     badge: {
         position: 'absolute',
-        top: theme.spacing.lg,
-        left: theme.spacing.lg,
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+        top: theme.spacing.md,
+        left: theme.spacing.md,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         paddingHorizontal: theme.spacing.md,
         paddingVertical: theme.spacing.xs,
-        borderRadius: theme.radius.full,
+        borderRadius: 8,
         borderWidth: 1,
-        borderColor: 'rgba(255, 255, 255, 0.3)',
-    },
-    badgeText: {
-        color: theme.colors.textInverse,
-        textTransform: 'uppercase',
-        letterSpacing: 0.5,
+        borderColor: 'rgba(255, 255, 255, 0.2)',
     },
     imageContent: {
         padding: theme.spacing.lg,
     },
+    spineLine: {
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        bottom: 0,
+        width: 1,
+        backgroundColor: 'rgba(255,255,255,0.15)',
+        zIndex: 1,
+    },
     content: {
-        padding: theme.spacing.xl,
+        padding: theme.spacing.lg,
         gap: theme.spacing.md,
     },
     ratingRow: {
@@ -151,11 +159,8 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         gap: theme.spacing.sm,
         backgroundColor: theme.colors.primary,
-        height: 48,
-        borderRadius: theme.radius.lg,
-        ...theme.shadows.md,
-    },
-    buttonText: {
-        color: theme.colors.textInverse,
+        height: 52,
+        borderRadius: 12,
+        ...theme.shadows.sm,
     },
 }));

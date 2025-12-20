@@ -70,23 +70,28 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: theme.spacing.lg,
     },
     title: {
-        fontSize: theme.typography.size.xxxl,
-        fontWeight: theme.typography.weight.bold,
+        fontSize: 28,
+        fontWeight: 'bold',
         color: theme.colors.text,
-        letterSpacing: -0.5,
+        letterSpacing: -0.8,
     },
     headerActions: {
         flexDirection: 'row',
         gap: theme.spacing.sm,
     },
     headerButton: {
-        width: theme.avatarSize.md,
-        height: theme.avatarSize.md,
-        borderRadius: theme.radius.full,
+        width: 44,
+        height: 44,
+        borderRadius: 12,
+        backgroundColor: theme.colors.surface,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
         alignItems: 'center',
         justifyContent: 'center',
+        ...theme.shadows.sm,
     },
     filterActive: {
-        backgroundColor: `${theme.colors.primary}15`,
+        backgroundColor: theme.colors.primary + '10', // Consistent with other active states
+        borderColor: theme.colors.primary + '40',
     },
 }));

@@ -2,13 +2,14 @@ import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
+import { useTranslation } from 'react-i18next';
 
 interface SurpriseMeButtonProps {
     onPress: () => void;
 }
 
 export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) => {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
 
     return (
@@ -20,16 +21,16 @@ export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) =
                 ]}
                 onPress={onPress}
             >
-                <LinearGradient
-                    colors={[theme.colors.primary, '#8B5CF6']}
-                    start={{ x: 0, y: 0 }}
-                    end={{ x: 1, y: 1 }}
-                    style={styles.gradient}
-                >
-                    <Ionicons name="shuffle" size={22} color="#FFFFFF" />
-                    <Text style={styles.text}>Surprise Me!</Text>
-                    <Ionicons name="arrow-forward" size={18} color="#FFFFFF" />
-                </LinearGradient>
+                <View style={styles.content}>
+                    <View style={styles.iconWrapper}>
+                        <Ionicons name="shuffle" size={22} color={theme.colors.primary} />
+                    </View>
+                    <View style={styles.textContainer}>
+                        <Text style={styles.title}>{t('discover.surpriseMe')}</Text>
+                        <Text style={styles.subtitle}>{t('discover.surpriseMeDesc', 'Let us pick a story for you')}</Text>
+                    </View>
+                    <Ionicons name="chevron-forward" size={20} color={theme.colors.textMuted} />
+                </View>
             </Pressable>
         </View>
     );
@@ -37,29 +38,45 @@ export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) =
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        gap: theme.spacing.md,
+        marginBottom: theme.spacing.sm,
     },
     button: {
         marginHorizontal: theme.spacing.lg,
-        borderRadius: theme.radius.xl,
-        overflow: 'hidden',
-        ...theme.shadows.md,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        ...theme.shadows.sm,
     },
     buttonPressed: {
+        backgroundColor: theme.colors.background,
         opacity: 0.9,
-        transform: [{ scale: 0.99 }],
     },
-    gradient: {
+    content: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: theme.spacing.md,
-        paddingHorizontal: theme.spacing.xl,
-        gap: theme.spacing.sm,
+        padding: theme.spacing.lg,
+        gap: theme.spacing.md,
     },
-    text: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.bold,
-        color: '#FFFFFF',
+    iconWrapper: {
+        width: 44,
+        height: 44,
+        borderRadius: 12,
+        backgroundColor: theme.colors.primary + '10', // 10% opacity primary
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    textContainer: {
+        flex: 1,
+        gap: 2,
+    },
+    title: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: theme.colors.text,
+    },
+    subtitle: {
+        fontSize: 13,
+        color: theme.colors.textSecondary,
     },
 }));

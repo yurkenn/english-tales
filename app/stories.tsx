@@ -19,7 +19,7 @@ import { haptics } from '@/utils/haptics';
 import { Story } from '@/types';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
-const CARD_GAP = 12;
+const CARD_GAP = 16;
 const HORIZONTAL_PADDING = 16;
 
 export default function StoriesScreen() {
@@ -165,7 +165,8 @@ const styles = StyleSheet.create((theme) => ({
         paddingBottom: theme.spacing.xxxl,
     },
     gridRow: {
-        justifyContent: 'space-between',
-        marginBottom: 0,
+        justifyContent: 'flex-start',
+        gap: CARD_GAP,
+        marginBottom: theme.spacing.md,
     },
 }));

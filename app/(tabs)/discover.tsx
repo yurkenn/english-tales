@@ -230,37 +230,35 @@ const styles = StyleSheet.create((theme) => ({
     },
     searchContainer: {
         paddingHorizontal: theme.spacing.lg,
-        marginBottom: theme.spacing.sm,
+        paddingBottom: theme.spacing.sm,
     },
     chipsWrapper: {
         flexShrink: 0,
     },
     chipsContainer: {
         paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.sm,
+        paddingVertical: theme.spacing.md,
         gap: theme.spacing.sm,
     },
     content: {
         flex: 1,
     },
     contentContainer: {
-        paddingTop: theme.spacing.sm,
-        paddingBottom: theme.spacing.xxxl,
-        gap: theme.spacing.xl,
+        paddingBottom: theme.spacing.xxxxl,
+        gap: theme.spacing.xxxl,
     },
     section: {
         gap: theme.spacing.md,
     },
     sectionContent: {
         paddingHorizontal: theme.spacing.lg,
-        gap: theme.spacing.md,
     },
     carouselContent: {
         paddingHorizontal: theme.spacing.lg,
     },
     popularContainer: {
         paddingHorizontal: theme.spacing.lg,
-        gap: theme.spacing.sm,
+        gap: theme.spacing.md,
     },
     center: {
         alignItems: 'center',

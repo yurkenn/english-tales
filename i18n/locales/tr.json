@@ -97,7 +97,9 @@
         }
     },
     "discover": {
+        "searchPlaceholder": "Hikaye, yazar ara...",
         "surpriseMe": "Beni Şaşırt",
+        "surpriseMeDesc": "Senin için bir hikaye seçelim",
         "authorSpotlight": "Öne Çıkan Yazarlar",
         "recentlyAdded": "Son Eklenenler",
         "popularThisWeek": "Bu Haftanın Popülerleri",
