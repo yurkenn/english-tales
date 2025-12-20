@@ -36,7 +36,7 @@ export default function SocialScreen() {
 
     const searchSheetRef = useRef<BottomSheet>(null);
 
-    const loadSocialData = async () => {
+    const loadSocialData = useCallback(async () => {
         if (!user) return;
 
         const res = await socialService.getFollowingIds(user.id);
@@ -52,7 +52,7 @@ export default function SocialScreen() {
         }
         setLoading(false);
         setRefreshing(false);
-    };
+    }, [user]);
 
     useEffect(() => {
         loadSocialData();

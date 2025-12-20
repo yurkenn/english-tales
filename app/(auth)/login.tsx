@@ -20,7 +20,6 @@ export default function LoginScreen() {
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
     const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
-    const toastActions = useToastStore((state) => state.actions);
 
     const handleLogin = async () => {
         const result = loginSchema.safeParse({ email, password });

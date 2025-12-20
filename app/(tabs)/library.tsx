@@ -5,6 +5,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomSheet from '@gorhom/bottom-sheet';
+import { useTranslation } from 'react-i18next';
 // - **Rankings Screen**: Beautiful leaderboard UI with trophy highlights and sticky personal rank.
 // - **Real-time Sync**: Transparent background syncing of reading stats to Firestore.
 
@@ -26,7 +27,6 @@ import {
 import {
     type LibraryItemWithProgress,
     type FilterType,
-    FILTER_LABELS,
     FILTERS,
 } from '@/components/molecules/moleculeTypes';
 import { useAuthStore } from '@/store/authStore';
@@ -39,8 +39,6 @@ import { useVocabularyStore } from '@/store/vocabularyStore';
 import { haptics } from '@/utils/haptics';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
-
-import { useTranslation } from 'react-i18next';
 
 export default function LibraryScreen() {
     const { t } = useTranslation();

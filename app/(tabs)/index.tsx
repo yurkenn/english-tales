@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
 import { View, ScrollView, FlatList, RefreshControl, LayoutAnimation, UIManager, Platform } from 'react-native';
-import Animated, { FadeInDown, FadeIn, FadeOut, Layout } from 'react-native-reanimated';
+import Animated, { FadeInDown, FadeIn } from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -24,7 +24,7 @@ import { Story, CommunityPost } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useProgressStore } from '@/store/progressStore';
-import { useToastStore } from '@/store/toastStore';
+
 import { mapSanityStory } from '@/utils/storyMapper';
 import { haptics } from '@/utils/haptics';
 import { communityService } from '@/services/communityService';
@@ -37,7 +37,7 @@ const isFabricEnabled = !!(global as any).nativeFabricUIManager;
 if (Platform.OS === 'android' && !isFabricEnabled && UIManager.setLayoutAnimationEnabledExperimental) {
     try {
         UIManager.setLayoutAnimationEnabledExperimental(true);
-    } catch (e) {
+    } catch {
         // Suppress runtime errors
     }
 }
@@ -69,11 +69,11 @@ export default function HomeScreen() {
 
     const [followingIds, setFollowingIds] = useState<string[]>([]);
     const [buzz, setBuzz] = useState<any[]>([]);
-    const [loadingBuzz, setLoadingBuzz] = useState(true);
+    const [, setLoadingBuzz] = useState(true);
 
     const { data: featuredData, isLoading: loadingFeatured, refetch: refetchFeatured, error: errorFeatured } = useFeaturedStories();
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories();
-    const { data: categoriesData, isLoading: loadingCategories, refetch: refetchCategories, error: errorCategories } = useCategories();
+    const { isLoading: loadingCategories, refetch: refetchCategories, error: errorCategories } = useCategories();
 
     useEffect(() => {
         const fetchFollowing = async () => {
@@ -87,7 +87,6 @@ export default function HomeScreen() {
 
     const { items: libraryItems } = useLibraryStore();
     const { progressMap } = useProgressStore();
-    const libraryActions = useLibraryStore((s: any) => s.actions);
 
     const featuredStory = useMemo(() => {
         if (!featuredData?.[0]) return null;

@@ -1,11 +1,9 @@
-import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import {
     View,
     Pressable,
     RefreshControl,
     ActivityIndicator,
-    Platform,
-    Dimensions,
 } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
@@ -21,8 +19,9 @@ import Animated, {
     FadeInDown,
 } from 'react-native-reanimated';
 import { Typography } from '@/components/atoms/Typography';
-import { CreatePostBar, ProfileQuickView, NotificationList } from '@/components/molecules';
-import { CommunityPostCard, CreatePostModal, ReplyModal, PostActionSheet } from '@/components/organisms';
+import { CreatePostBar, NotificationList } from '@/components/molecules';
+import { CommunityPostCard, CreatePostModal, PostActionSheet } from '@/components/organisms';
+import { CommunityScreenSkeleton } from '@/components';
 import { useNotificationStore } from '@/store/notificationStore';
 import { useAuthStore } from '@/store/authStore';
 import { useTranslation } from 'react-i18next';
@@ -30,14 +29,12 @@ import { haptics } from '@/utils/haptics';
 import { useCommunityFeed } from '@/hooks/useCommunityFeed';
 import { OptimizedImage } from '@/components/atoms/OptimizedImage';
 import { SegmentedPicker } from '@/components/atoms/SegmentedPicker';
-import { UserProfile, Story } from '@/types';
+import { Story } from '@/types';
 import { useStories } from '@/hooks/useQueries';
 import { mapSanityStory } from '@/utils/storyMapper';
 import { StorySelectorModal } from '@/components/molecules/StorySelectorModal';
 
 const HEADER_HEIGHT = 120;
-
-import { CommunityScreenSkeleton } from '@/components';
 
 export default function CommunityTab() {
     const { t } = useTranslation();
@@ -57,10 +54,8 @@ export default function CommunityTab() {
         filter,
         setFilter,
         handleRefresh,
-        handleLoadMore,
         handleCreatePost,
         handleToggleLike,
-        handleAddReply,
     } = useCommunityFeed();
 
     const { notifications, unreadCount, actions: notificationActions } = useNotificationStore();
@@ -99,10 +94,6 @@ export default function CommunityTab() {
         { label: t('social.all', 'For You'), value: 'all' as const },
         { label: t('social.following', 'Following'), value: 'following' as const },
     ];
-
-    // Quick View State
-    const quickViewRef = useRef<BottomSheet>(null);
-    const [selectedUser, setSelectedUser] = useState<UserProfile | null>(null);
 
     const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
     const [selectedStory, setSelectedStory] = useState<Story | null>(null);

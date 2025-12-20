@@ -1,14 +1,10 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useNotificationStore } from '@/store/notificationStore';
 import { useNotifications } from '@/hooks/useNotifications';
 import { CustomTabBar } from '@/components/organisms/CustomTabBar';
 
 export default function TabLayout() {
-    const insets = useSafeAreaInsets();
     useNotifications(); // Initialize subscription
-    const unreadCount = useNotificationStore(s => s.unreadCount);
 
     return (
         <Tabs

@@ -18,7 +18,6 @@ import { useLibraryStore } from '@/store/libraryStore';
 import { haptics } from '@/utils/haptics';
 import { Story } from '@/types';
 
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
 const CARD_GAP = 16;
 const HORIZONTAL_PADDING = 16;
 

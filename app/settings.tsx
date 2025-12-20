@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Linking, Pressable } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomSheet from '@gorhom/bottom-sheet';
-import { Ionicons } from '@expo/vector-icons';
-import Animated, { FadeIn } from 'react-native-reanimated';
 
 import { useAuthStore } from '@/store/authStore';
 import { useThemeStore } from '@/store/themeStore';
@@ -21,7 +19,7 @@ import {
     SettingsHeader,
     SettingSection,
 } from '@/components';
-import { Typography, OptimizedImage } from '@/components/atoms';
+import { Typography } from '@/components/atoms';
 import { haptics } from '@/utils/haptics';
 import { sendPasswordResetEmail } from '@/services/auth';
 import { notificationService } from '@/services/notificationService';
@@ -45,11 +43,11 @@ export default function SettingsScreen() {
     const { user, signOut } = useAuthStore();
     const { mode: themeMode, actions: themeActions } = useThemeStore();
     const { settings, actions: settingsActions } = useSettingsStore();
-    const { fontSize, dyslexicFontEnabled, actions: prefsActions } = useReadingPrefsStore();
+    const { fontSize } = useReadingPrefsStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
     const toast = useToastStore();
 
-    const [cacheSize, setCacheSize] = useState(t('common.loading'));
+    const [, setCacheSize] = useState(t('common.loading'));
     const [notificationsEnabled, setNotificationsEnabled] = useState(settings.notificationsEnabled);
 
     // Dialog refs

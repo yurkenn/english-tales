@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
-import { View, ScrollView, Pressable, ActivityIndicator, Linking, Dimensions } from 'react-native';
+import { View, Pressable, ActivityIndicator, Linking } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,9 +8,6 @@ import BottomSheet from '@gorhom/bottom-sheet';
 import Animated, {
     useSharedValue,
     useAnimatedScrollHandler,
-    useAnimatedStyle,
-    interpolate,
-    Extrapolation,
     FadeInDown
 } from 'react-native-reanimated';
 
@@ -40,11 +37,6 @@ import { UserProfile, CommunityPost } from '@/types';
 import { haptics } from '@/utils/haptics';
 import { useTranslation } from 'react-i18next';
 
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
-
-// Illustrations
-const NO_POSTS_ILLUSTRATION = require('@/assets/illustrations/no_posts.png');
-const EMPTY_LIBRARY_ILLUSTRATION = require('@/assets/illustrations/empty_library.png');
 
 export default function ProfileScreen() {
     const { t } = useTranslation();
@@ -97,24 +89,6 @@ export default function ProfileScreen() {
         loadInitialData();
         settingsActions.loadSettings();
     }, [user]);
-
-    // Sticky Header Style
-    const stickyHeaderStyle = useAnimatedStyle(() => {
-        const opacity = interpolate(
-            scrollY.value,
-            [150, 250],
-            [0, 1],
-            Extrapolation.CLAMP
-        );
-        return { opacity };
-    });
-
-    const settingsButtonStyle = useAnimatedStyle(() => {
-        const backgroundColor = scrollY.value > 150
-            ? 'transparent'
-            : 'rgba(0,0,0,0.3)';
-        return { backgroundColor };
-    });
 
     // Compute Stats
     const stats = useMemo(() => {
