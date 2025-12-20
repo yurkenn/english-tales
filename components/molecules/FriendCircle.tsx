@@ -74,7 +74,7 @@ export const FriendCircle: React.FC<FriendCircleProps> = ({ friends, onPressAll,
                     <View style={styles.emptyIcon}>
                         <Ionicons name="people-outline" size={32} color={theme.colors.textMuted} />
                     </View>
-                    <View>
+                    <View style={styles.emptyTextContainer}>
                         <Typography variant="bodyBold">{t('social.emptyTitle', 'No Friends Yet')}</Typography>
                         <Typography variant="caption" color={theme.colors.textMuted}>
                             {t('social.emptyDesc', 'Connect with readers now')}
@@ -155,5 +155,9 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
+    },
+    emptyTextContainer: {
+        flex: 1,
+        flexShrink: 1,
     },
 }));
