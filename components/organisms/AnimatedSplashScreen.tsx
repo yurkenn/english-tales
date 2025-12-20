@@ -9,66 +9,62 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Image } from 'expo-image';
 
-const { width } = Dimensions.get('window');
-const ICON_SIZE = width * 0.4; // Responsive icon size matching native splash roughly
+const { width, height } = Dimensions.get('window');
+// Expo splash images are usually centered. We'll use the splash image directly
+// to ensure pixel-perfect match with the native splash.
 
 interface AnimatedSplashScreenProps {
     onAnimationComplete: () => void;
 }
 
-/**
- * AnimatedSplashScreen component using Reanimated.
- * Provides a seamless transition from the native static splash.
- */
 export const AnimatedSplashScreen: React.FC<AnimatedSplashScreenProps> = ({
     onAnimationComplete,
 }) => {
-    // Start at 1 to match the native splash exactly
-    const logoOpacity = useSharedValue(1);
-    const logoScale = useSharedValue(1);
     const containerOpacity = useSharedValue(1);
-
-    const animatedLogoStyle = useAnimatedStyle(() => ({
-        opacity: logoOpacity.value,
-        transform: [{ scale: logoScale.value }],
-    }));
+    const contentScale = useSharedValue(1);
+    const contentOpacity = useSharedValue(1);
 
     const animatedContainerStyle = useAnimatedStyle(() => ({
         opacity: containerOpacity.value,
     }));
 
+    const animatedContentStyle = useAnimatedStyle(() => ({
+        transform: [{ scale: contentScale.value }],
+        opacity: contentOpacity.value,
+    }));
+
     useEffect(() => {
-        // Subtle wait for the eye to track, then perform zoom-out/fade-out
+        // Reduced initial delay for faster feedback
         const timer = setTimeout(() => {
-            // "Netflix-like" zoom in and fade out
-            logoScale.value = withTiming(1.2, {
-                duration: 600,
-                easing: Easing.bezier(0.25, 0.1, 0.25, 1),
+            // Subtle premium transition: slight zoom in while fading out
+            contentScale.value = withTiming(1.05, {
+                duration: 800,
+                easing: Easing.out(Easing.quad),
             });
 
-            logoOpacity.value = withTiming(0, {
-                duration: 500,
+            contentOpacity.value = withTiming(0, {
+                duration: 600,
             });
 
             containerOpacity.value = withTiming(0, {
-                duration: 600
+                duration: 800,
+                easing: Easing.out(Easing.quad),
             }, (finished) => {
                 if (finished) {
                     runOnJS(onAnimationComplete)();
                 }
             });
-        }, 800);
+        }, 400); // Small pause to let the user see the "readiness"
 
         return () => clearTimeout(timer);
     }, [onAnimationComplete]);
 
     return (
         <Animated.View style={[styles.container, animatedContainerStyle]}>
-            <View style={styles.background} />
-            <Animated.View style={animatedLogoStyle}>
+            <Animated.View style={[styles.content, animatedContentStyle]}>
                 <Image
-                    source={require('../../assets/icon.png')}
-                    style={styles.logo}
+                    source={require('../../assets/splash.png')}
+                    style={styles.splashImage}
                     contentFit="contain"
                     priority="high"
                 />
@@ -80,17 +76,19 @@ export const AnimatedSplashScreen: React.FC<AnimatedSplashScreenProps> = ({
 const styles = StyleSheet.create({
     container: {
         ...StyleSheet.absoluteFillObject,
+        backgroundColor: '#FFFFFF', // Matches app.json splash backgroundColor
+        zIndex: 9999,
         alignItems: 'center',
         justifyContent: 'center',
-        zIndex: 9999,
-        backgroundColor: '#FFFFFF',
     },
-    background: {
-        ...StyleSheet.absoluteFillObject,
-        backgroundColor: '#FFFFFF',
+    content: {
+        width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-    logo: {
-        width: ICON_SIZE,
-        height: ICON_SIZE,
+    splashImage: {
+        width: width,
+        height: height,
     },
 });
