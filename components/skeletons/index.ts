@@ -9,3 +9,4 @@ export { AuthorScreenSkeleton } from './AuthorScreenSkeleton';
 export { StoryDetailScreenSkeleton } from './StoryDetailScreenSkeleton';
 export { ReviewsScreenSkeleton } from './ReviewsScreenSkeleton';
 export { ReadingScreenSkeleton } from './ReadingScreenSkeleton';
+export { CommunityScreenSkeleton } from './CommunityScreenSkeleton';

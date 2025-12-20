@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     View,
     Modal,
@@ -8,10 +8,15 @@ import {
     Platform,
     TouchableWithoutFeedback,
     Keyboard,
-    StyleSheet as RNStyleSheet,
 } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
-import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    withSpring,
+    interpolateColor
+} from 'react-native-reanimated';
 import { useTranslation } from 'react-i18next';
 import { Typography } from '../atoms/Typography';
 import { OptimizedImage } from '../atoms/OptimizedImage';
@@ -29,6 +34,8 @@ interface CreatePostModalProps {
     onRemoveStory: () => void;
 }
 
+const MAX_CHARS = 500;
+
 export const CreatePostModal: React.FC<CreatePostModalProps> = ({
     visible,
     onClose,
@@ -42,17 +49,34 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
     const { t } = useTranslation();
     const { theme } = useUnistyles();
     const [content, setContent] = useState('');
+    const buttonScale = useSharedValue(1);
 
     const handleSubmit = async () => {
         if (!content.trim() || isSubmitting) return;
+        haptics.success();
         await onSubmit(content, selectedStory);
         setContent('');
     };
 
     const handleClose = () => {
+        haptics.selection();
         setContent('');
         onClose();
     };
+
+    const pressIn = () => {
+        buttonScale.value = withSpring(0.95);
+    };
+
+    const pressOut = () => {
+        buttonScale.value = withSpring(1);
+    };
+
+    const animatedButtonStyle = useAnimatedStyle(() => ({
+        transform: [{ scale: buttonScale.value }],
+    }));
+
+    const progress = Math.min(content.length / MAX_CHARS, 1);
 
     return (
         <Modal
@@ -62,83 +86,124 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
             onRequestClose={handleClose}
         >
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-                <KeyboardAvoidingView
-                    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                    style={styles.modalContent}
-                >
-                    <View style={styles.modalHeader}>
-                        <Pressable style={styles.modalHeaderAction} onPress={handleClose}>
-                            <Typography color={theme.colors.error}>{t('common.cancel', 'Cancel')}</Typography>
+                <View style={styles.modalContent}>
+                    {/* Header integrated into composer */}
+                    <View style={styles.header}>
+                        <Pressable onPress={handleClose} style={styles.closeBtn}>
+                            <Feather name="x" size={24} color={theme.colors.text} />
                         </Pressable>
-                        <Typography variant="bodyBold">{t('social.createPost', 'New Post')}</Typography>
-                        <Pressable
-                            style={[styles.modalHeaderAction, { alignItems: 'flex-end' }]}
-                            onPress={handleSubmit}
-                            disabled={!content.trim() || isSubmitting}
-                        >
-                            <Typography
-                                color={!content.trim() || isSubmitting ? theme.colors.textMuted : theme.colors.primary}
-                                variant="bodyBold"
-                            >
-                                {isSubmitting ? t('common.sharing', '...') : t('common.share', 'Post')}
-                            </Typography>
-                        </Pressable>
-                    </View>
 
-                    <View style={styles.modalBody}>
-                        <View style={styles.userSection}>
-                            <OptimizedImage
-                                source={{ uri: user?.photoURL || '' }}
-                                style={styles.modalAvatar}
-                                placeholder="person-circle"
-                            />
-                            <View style={{ marginLeft: 12 }}>
-                                <Typography variant="bodyBold">{user?.displayName || t('common.anonymous', 'Anonymous')}</Typography>
-                                <Typography variant="caption" color={theme.colors.textMuted}>{t('social.publicPost', 'Public Post')}</Typography>
-                            </View>
-                        </View>
-
-                        <TextInput
-                            style={styles.textInput}
-                            multiline
-                            placeholder={t('social.shareSomething', "What's on your mind?")}
-                            placeholderTextColor={theme.colors.textMuted}
-                            value={content}
-                            onChangeText={setContent}
-                            autoFocus
-                            selectionColor={theme.colors.primary}
-                        />
-
-                        {selectedStory && (
-                            <View style={styles.taggedStory}>
-                                <View style={styles.taggedStoryContent}>
-                                    <Ionicons name="book" size={16} color={theme.colors.primary} />
-                                    <Typography variant="caption" color={theme.colors.primary} style={{ marginLeft: 6 }}>
-                                        {selectedStory.title}
-                                    </Typography>
-                                </View>
-                                <Pressable onPress={() => { haptics.selection(); onRemoveStory(); }}>
-                                    <Ionicons name="close-circle" size={20} color={theme.colors.textMuted} />
-                                </Pressable>
-                            </View>
-                        )}
-
-                        <View style={styles.modalFooter}>
+                        <Animated.View style={animatedButtonStyle}>
                             <Pressable
-                                style={styles.tagBtn}
-                                onPress={() => { haptics.selection(); onOpenStorySelector(); }}
+                                onPressIn={pressIn}
+                                onPressOut={pressOut}
+                                onPress={handleSubmit}
+                                disabled={!content.trim() || isSubmitting}
+                                style={[
+                                    styles.postBtn,
+                                    (!content.trim() || isSubmitting) && styles.postBtnDisabled
+                                ]}
                             >
-                                <Ionicons name="pricetag-outline" size={20} color={theme.colors.primary} />
-                                <Typography variant="caption" color={theme.colors.primary} style={{ marginLeft: 6 }}>
-                                    {t('social.tagStory', 'Tag Story')}
+                                <Typography
+                                    color={!content.trim() || isSubmitting ? theme.colors.textMuted : theme.colors.textInverse}
+                                    variant="bodyBold"
+                                >
+                                    {isSubmitting ? t('common.sharing', '...') : t('common.share', 'Post')}
                                 </Typography>
                             </Pressable>
-                            <Typography variant="caption" color={theme.colors.textMuted}>
-                                {content.length} / 500
-                            </Typography>
-                        </View>
+                        </Animated.View>
                     </View>
-                </KeyboardAvoidingView>
+
+                    <KeyboardAvoidingView
+                        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                        style={styles.composerContainer}
+                    >
+                        <View style={styles.scrollContent}>
+                            <View style={styles.userRow}>
+                                <OptimizedImage
+                                    source={{ uri: user?.photoURL || '' }}
+                                    style={styles.avatar}
+                                    placeholder="person-circle"
+                                />
+                                <View style={styles.userInfo}>
+                                    <Typography variant="bodyBold">{user?.displayName || t('common.anonymous', 'Anonymous')}</Typography>
+                                    <View style={styles.publicBadge}>
+                                        <Feather name="globe" size={10} color={theme.colors.textMuted} />
+                                        <Typography variant="caption" color={theme.colors.textMuted} style={{ marginLeft: 4 }}>
+                                            {t('social.publicPost', 'Public Post')}
+                                        </Typography>
+                                    </View>
+                                </View>
+                            </View>
+
+                            <TextInput
+                                style={styles.textInput}
+                                multiline
+                                placeholder={t('social.shareSomething', "What's on your mind?")}
+                                placeholderTextColor={theme.colors.textMuted}
+                                value={content}
+                                onChangeText={setContent}
+                                autoFocus
+                                selectionColor={theme.colors.primary}
+                                maxLength={MAX_CHARS}
+                            />
+
+                            {selectedStory && (
+                                <View style={styles.storyCard}>
+                                    <View style={styles.storyCardLeft}>
+                                        <View style={styles.storyIconCircle}>
+                                            <Feather name="book-open" size={14} color={theme.colors.primary} />
+                                        </View>
+                                        <View style={{ marginLeft: 12 }}>
+                                            <Typography variant="caption" weight="600" color={theme.colors.primary}>
+                                                {selectedStory.title}
+                                            </Typography>
+                                            <Typography variant="label" color={theme.colors.textMuted}>
+                                                {t('social.taggedStory', 'Tagged Story')}
+                                            </Typography>
+                                        </View>
+                                    </View>
+                                    <Pressable onPress={() => { haptics.selection(); onRemoveStory(); }} style={styles.removeStoryBtn}>
+                                        <Feather name="x-circle" size={18} color={theme.colors.textMuted} />
+                                    </Pressable>
+                                </View>
+                            )}
+                        </View>
+
+                        <View style={styles.toolbar}>
+                            <View style={styles.toolbarActions}>
+                                <Pressable
+                                    style={styles.toolbarBtn}
+                                    onPress={() => { haptics.selection(); onOpenStorySelector(); }}
+                                >
+                                    <Feather name="link" size={20} color={theme.colors.primary} />
+                                    <Typography variant="label" color={theme.colors.primary} style={{ marginLeft: 6 }}>
+                                        {t('social.tagStory', 'Tag Story')}
+                                    </Typography>
+                                </Pressable>
+                            </View>
+
+                            <View style={styles.progressContainer}>
+                                <View style={styles.progressTrack}>
+                                    <View style={[
+                                        styles.progressBar,
+                                        {
+                                            width: `${progress * 100}%`,
+                                            backgroundColor: progress > 0.9 ? theme.colors.error : theme.colors.primary
+                                        }
+                                    ]} />
+                                </View>
+                                <Typography
+                                    variant="label"
+                                    color={progress > 0.9 ? theme.colors.error : theme.colors.textMuted}
+                                    style={{ marginLeft: 8, width: 30 }}
+                                >
+                                    {MAX_CHARS - content.length}
+                                </Typography>
+                            </View>
+                        </View>
+                    </KeyboardAvoidingView>
+                </View>
             </TouchableWithoutFeedback>
         </Modal>
     );
@@ -149,65 +214,137 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         backgroundColor: theme.colors.background,
     },
-    modalHeader: {
+    header: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: theme.spacing.lg,
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.borderLight,
+        paddingHorizontal: theme.spacing.lg,
+        paddingTop: Platform.OS === 'ios' ? 10 : 20,
+        paddingBottom: 10,
     },
-    modalHeaderAction: {
-        minWidth: 60,
-    },
-    modalBody: {
-        flex: 1,
-        padding: theme.spacing.lg,
-    },
-    userSection: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: theme.spacing.lg,
-    },
-    modalAvatar: {
+    closeBtn: {
         width: 40,
         height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    postBtn: {
+        backgroundColor: theme.colors.primary,
+        paddingHorizontal: 20,
+        paddingVertical: 8,
         borderRadius: 20,
+        // Premium shadow
+        shadowColor: theme.colors.primary,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
+        elevation: 4,
+    },
+    postBtnDisabled: {
+        backgroundColor: theme.colors.borderLight,
+        shadowOpacity: 0,
+        elevation: 0,
+    },
+    composerContainer: {
+        flex: 1,
+    },
+    scrollContent: {
+        flex: 1,
+        paddingHorizontal: theme.spacing.lg,
+    },
+    userRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 20,
+    },
+    avatar: {
+        width: 44,
+        height: 44,
+        borderRadius: 22,
+        backgroundColor: theme.colors.borderLight,
+    },
+    userInfo: {
+        marginLeft: 12,
+    },
+    publicBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 2,
     },
     textInput: {
-        fontSize: 18,
+        fontSize: 20,
         color: theme.colors.text,
-        lineHeight: 24,
-        flex: 1,
+        lineHeight: 28,
         textAlignVertical: 'top',
+        minHeight: 150,
     },
-    modalFooter: {
-        paddingVertical: theme.spacing.md,
+    storyCard: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        backgroundColor: theme.colors.surfaceElevated,
+        padding: 12,
+        borderRadius: 16,
+        marginTop: 20,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.05,
+        shadowRadius: 5,
+        elevation: 2,
+    },
+    storyCardLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    storyIconCircle: {
+        width: 32,
+        height: 32,
+        borderRadius: 16,
+        backgroundColor: theme.colors.primary + '15',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    removeStoryBtn: {
+        padding: 4,
+    },
+    toolbar: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: 12,
         borderTopWidth: 1,
         borderTopColor: theme.colors.borderLight,
+        backgroundColor: theme.colors.background,
     },
-    taggedStory: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: theme.colors.primary + '10',
-        padding: 12,
-        borderRadius: 12,
-        marginBottom: 12,
-    },
-    taggedStoryContent: {
+    toolbarActions: {
         flexDirection: 'row',
         alignItems: 'center',
     },
-    tagBtn: {
+    toolbarBtn: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: theme.colors.borderLight,
         paddingHorizontal: 12,
         paddingVertical: 6,
+        backgroundColor: theme.colors.borderLight,
         borderRadius: 20,
+    },
+    progressContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    progressTrack: {
+        width: 60,
+        height: 4,
+        backgroundColor: theme.colors.borderLight,
+        borderRadius: 2,
+        overflow: 'hidden',
+    },
+    progressBar: {
+        height: '100%',
+        borderRadius: 2,
     },
 }));

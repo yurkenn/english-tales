@@ -6,7 +6,8 @@ import Animated, {
     useAnimatedStyle,
     useSharedValue,
     withSpring,
-    withSequence
+    withSequence,
+    FadeInDown,
 } from 'react-native-reanimated';
 import { useRouter } from 'expo-router';
 import { Typography } from '../atoms/Typography';
@@ -25,6 +26,7 @@ interface CommunityPostCardProps {
     onShare?: (postId: string) => void;
     onMorePress?: (postId: string) => void;
     onAvatarPress?: (userId: string) => void;
+    index?: number;
 }
 
 export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
@@ -34,6 +36,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     onReply,
     onMorePress,
     onAvatarPress,
+    index = 0,
 }) => {
     const { theme } = useUnistyles();
     const { t } = useTranslation();
@@ -61,8 +64,8 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
 
     const handleLike = () => {
         likeScale.value = withSequence(
-            withSpring(1.2, { damping: 10, stiffness: 200 }),
-            withSpring(1, { damping: 10, stiffness: 200 })
+            withSpring(1.4, { damping: 12, stiffness: 200 }),
+            withSpring(1, { damping: 12, stiffness: 200 })
         );
         onLike?.(post.id);
     };
@@ -85,15 +88,18 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     };
 
     return (
-        <View style={[
-            styles.postCard,
-            isAchievement && { borderColor: theme.colors.warning + '30' },
-            isReview && { borderColor: theme.colors.primary + '30' }
-        ]}>
+        <Animated.View
+            entering={FadeInDown.delay(index * 50).springify()}
+            style={[
+                styles.postCard,
+                isAchievement && { borderColor: theme.colors.warning + '20' },
+                isReview && { borderColor: theme.colors.primary + '20' }
+            ]}
+        >
             {isAchievement && (
                 <View style={styles.achievementBadge}>
                     <Ionicons name="trophy" size={10} color="#FFFFFF" />
-                    <Typography variant="caption" style={styles.achievementBadgeText}>
+                    <Typography variant="caption" weight="700" style={styles.achievementBadgeText}>
                         {achievementTitle || t('social.achievement', 'Achievement')}
                     </Typography>
                 </View>
@@ -101,7 +107,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
             {isReview && (
                 <View style={styles.reviewBadge}>
                     <Ionicons name="star" size={10} color="#FFFFFF" />
-                    <Typography variant="caption" style={styles.reviewBadgeText}>
+                    <Typography variant="caption" weight="700" style={styles.reviewBadgeText}>
                         {t('reading.review', 'Story Review')}
                     </Typography>
                 </View>
@@ -145,7 +151,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                     }}
                 >
                     <Ionicons name="book-outline" size={16} color={theme.colors.primary} />
-                    <Typography variant="caption" color={theme.colors.primary} style={{ marginLeft: 6 }}>
+                    <Typography variant="caption" weight="600" color={theme.colors.primary} style={{ marginLeft: 6 }}>
                         {storyTitle}
                     </Typography>
                 </Pressable>
@@ -171,6 +177,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                     </Animated.View>
                     <Typography
                         variant="caption"
+                        weight="600"
                         style={{ marginLeft: 6 }}
                         color={hasLiked
                             ? (isAchievement ? theme.colors.warning : theme.colors.error)
@@ -189,16 +196,16 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                     <Animated.View style={replyAnimationStyle}>
                         <Ionicons name="chatbubble-outline" size={20} color={theme.colors.textMuted} />
                     </Animated.View>
-                    <Typography variant="caption" color={theme.colors.textMuted} style={{ marginLeft: 6 }}>
+                    <Typography variant="caption" weight="600" color={theme.colors.textMuted} style={{ marginLeft: 6 }}>
                         {post.replyCount || 0}
                     </Typography>
                 </Pressable>
 
-                <Pressable style={styles.actionButton}>
+                <Pressable style={styles.actionButton} onPress={() => haptics.selection()}>
                     <Ionicons name="share-outline" size={20} color={theme.colors.textMuted} />
                 </Pressable>
             </View>
-        </View>
+        </Animated.View>
     );
 };
 

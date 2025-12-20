@@ -1,23 +1,25 @@
-import React, { useState, useCallback, useRef, useEffect } from 'react';
+import React, { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import {
     View,
-    ScrollView,
     Pressable,
     RefreshControl,
     ActivityIndicator,
-    Modal,
-    TextInput,
-    KeyboardAvoidingView,
     Platform,
-    TouchableWithoutFeedback,
-    Keyboard,
-    StyleSheet as RNStyleSheet,
+    Dimensions,
 } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomSheet from '@gorhom/bottom-sheet';
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    useAnimatedScrollHandler,
+    interpolate,
+    Extrapolate,
+    FadeInDown,
+} from 'react-native-reanimated';
 import { Typography } from '@/components/atoms/Typography';
 import { CommunityPostCard, CreatePostBar, ProfileQuickView, NotificationList } from '@/components/molecules';
 import { CreatePostModal, ReplyModal } from '@/components/organisms';
@@ -28,9 +30,14 @@ import { haptics } from '@/utils/haptics';
 import { useCommunityFeed } from '@/hooks/useCommunityFeed';
 import { OptimizedImage } from '@/components/atoms/OptimizedImage';
 import { SegmentedPicker } from '@/components/atoms/SegmentedPicker';
-import { userService } from '@/services/userService';
 import { UserProfile, Story } from '@/types';
+import { useStories } from '@/hooks/useQueries';
+import { mapSanityStory } from '@/utils/storyMapper';
 import { StorySelectorModal } from '@/components/molecules/StorySelectorModal';
+
+const HEADER_HEIGHT = 120;
+
+import { CommunityScreenSkeleton } from '@/components';
 
 export default function CommunityTab() {
     const { t } = useTranslation();
@@ -38,6 +45,11 @@ export default function CommunityTab() {
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { user } = useAuthStore();
+
+    // Fetch stories for trending section
+    const { data: storiesData } = useStories();
+    const trendingStories = useMemo(() => storiesData?.map(mapSanityStory) || [], [storiesData]);
+
     const {
         posts,
         loading,
@@ -49,21 +61,38 @@ export default function CommunityTab() {
         handleCreatePost,
         handleToggleLike,
         handleAddReply,
-        getReplies,
     } = useCommunityFeed();
 
     const { notifications, unreadCount, actions: notificationActions } = useNotificationStore();
     const notificationSheetRef = useRef<BottomSheet>(null);
 
-    // Seed community logic removed to prevent interference with user testing
+    // Scroll Animation Logic
+    const scrollY = useSharedValue(0);
+    const scrollHandler = useAnimatedScrollHandler((event) => {
+        scrollY.value = event.contentOffset.y;
+    });
+
+    const headerAnimatedStyle = useAnimatedStyle(() => {
+        return {
+            transform: [
+                { translateY: interpolate(scrollY.value, [0, HEADER_HEIGHT], [0, -10], Extrapolate.CLAMP) }
+            ],
+            opacity: interpolate(scrollY.value, [0, HEADER_HEIGHT / 2], [1, 0.9], Extrapolate.CLAMP),
+        };
+    });
+
+    const titleAnimatedStyle = useAnimatedStyle(() => {
+        return {
+            transform: [
+                { scale: interpolate(scrollY.value, [0, HEADER_HEIGHT], [1, 0.85], Extrapolate.CLAMP) },
+                { translateX: interpolate(scrollY.value, [0, HEADER_HEIGHT], [0, -10], Extrapolate.CLAMP) }
+            ],
+        };
+    });
 
     // Create Post State
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
-
-    // Reply State
-    const [replyingTo, setReplyingTo] = useState<string | null>(null);
-    const [isReplying, setIsReplying] = useState(false);
 
     // Filter Categories
     const categories = [
@@ -75,12 +104,6 @@ export default function CommunityTab() {
     const quickViewRef = useRef<BottomSheet>(null);
     const [selectedUser, setSelectedUser] = useState<UserProfile | null>(null);
 
-    const handleAvatarPress = async (userId: string) => {
-        haptics.selection();
-        router.push(`/user/${userId}`);
-    };
-
-    // Story Tagging State
     const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
     const [selectedStory, setSelectedStory] = useState<Story | null>(null);
 
@@ -105,119 +128,158 @@ export default function CommunityTab() {
         router.push(`/community/${postId}`);
     };
 
-    const handleSubmitReply = async (content: string) => {
-        if (!replyingTo || isReplying) return;
-
-        setIsReplying(true);
-        const success = await handleAddReply(replyingTo, content);
-        setIsReplying(false);
-
-        if (success) {
-            setReplyingTo(null);
-        }
-    };
-
     const handleNotificationPress = (notification: any) => {
         notificationActions.markAsRead(user?.id || '', notification.id);
+        notificationSheetRef.current?.close();
         if (notification.postId) {
-            // Future scroll-to or view post modal
-            notificationSheetRef.current?.close();
+            router.push(`/community/${notification.postId}`);
         } else if (notification.type === 'follow') {
             router.push(`/user/${notification.senderId}`);
-            notificationSheetRef.current?.close();
         }
     };
 
+    // Memoized trending slice
+    const trendingList = useMemo(() => trendingStories.slice(0, 6), [trendingStories]);
+
     return (
-        <View style={[styles.container, { paddingTop: insets.top }]}>
-            <View style={styles.header}>
-                <Typography variant="h2" style={styles.headerTitle}>{t('social.title', 'Community')}</Typography>
+        <View style={styles.container}>
+            {/* Header with Parallax */}
+            <Animated.View style={[
+                styles.header,
+                { paddingTop: insets.top + 10 },
+                headerAnimatedStyle
+            ]}>
+                <Animated.View style={titleAnimatedStyle}>
+                    <Typography variant="h2" style={styles.headerTitle}>{t('social.title', 'Community')}</Typography>
+                </Animated.View>
+
                 <View style={styles.headerButtons}>
                     <Pressable
-                        style={styles.trophyButton}
+                        style={styles.headerActionBtn}
                         onPress={() => {
                             haptics.selection();
                             notificationSheetRef.current?.expand();
                         }}
                     >
-                        <Ionicons name="notifications-outline" size={22} color={theme.colors.text} />
+                        <Feather name="bell" size={22} color={theme.colors.text} />
                         {unreadCount > 0 && (
                             <View style={styles.badge} />
                         )}
                     </Pressable>
                     <Pressable
-                        style={styles.trophyButton}
-                        onPress={() => router.push('/rankings')}
+                        style={styles.headerActionBtn}
+                        onPress={() => { haptics.selection(); router.push('/rankings'); }}
                     >
-                        <Ionicons name="trophy-outline" size={22} color={theme.colors.text} />
+                        <Feather name="award" size={22} color={theme.colors.text} />
                     </Pressable>
                 </View>
-            </View>
+            </Animated.View>
 
-            <View style={styles.filterSection}>
-                <SegmentedPicker
-                    options={categories}
-                    selectedValue={filter}
-                    onValueChange={setFilter}
-                    style={styles.picker}
-                />
-            </View>
-
-            <ScrollView
+            <Animated.ScrollView
                 style={styles.content}
-                contentContainerStyle={styles.scrollContent}
+                contentContainerStyle={[styles.scrollContent, { paddingBottom: insets.bottom + 100 }]}
                 showsVerticalScrollIndicator={false}
-                onScroll={({ nativeEvent }) => {
-                    const isCloseToBottom = nativeEvent.layoutMeasurement.height + nativeEvent.contentOffset.y >= nativeEvent.contentSize.height - 20;
-                    if (isCloseToBottom) {
-                        handleLoadMore();
-                    }
-                }}
-                scrollEventThrottle={400}
+                onScroll={scrollHandler}
+                scrollEventThrottle={16}
                 refreshControl={
                     <RefreshControl
                         refreshing={refreshing}
                         onRefresh={handleRefresh}
                         tintColor={theme.colors.primary}
+                        progressViewOffset={HEADER_HEIGHT}
                     />
                 }
             >
+                {/* Filter Section (Inside Scroll for better UX) */}
+                <View style={styles.filterSection}>
+                    <SegmentedPicker
+                        options={categories}
+                        selectedValue={filter}
+                        onValueChange={setFilter}
+                    />
+                </View>
+
+                {/* Trending Stories Ribbon */}
+                <View style={styles.trendingSection}>
+                    <View style={styles.sectionHeader}>
+                        <Feather name="trending-up" size={14} color={theme.colors.primary} />
+                        <Typography variant="label" color={theme.colors.primary} style={{ marginLeft: 6 }}>
+                            {t('social.trendingNow', 'Trending Now')}
+                        </Typography>
+                    </View>
+                    <Animated.ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        contentContainerStyle={styles.trendingScroll}
+                    >
+                        {trendingList.map((story: Story, index: number) => (
+                            <Animated.View
+                                key={story.id}
+                                entering={FadeInDown.delay(index * 100)}
+                                style={styles.trendingItem}
+                            >
+                                <Pressable
+                                    onPress={() => { haptics.selection(); router.push(`/story/${story.id}`); }}
+                                    style={styles.trendingCoverWrapper}
+                                >
+                                    <OptimizedImage
+                                        source={{ uri: story.coverImage }}
+                                        style={styles.trendingCover}
+                                    />
+                                    <View style={styles.hotBadge}>
+                                        <Feather name="zap" size={10} color="#FFF" />
+                                    </View>
+                                </Pressable>
+                                <Typography variant="label" numberOfLines={1} style={styles.trendingTitle}>
+                                    {story.title}
+                                </Typography>
+                            </Animated.View>
+                        ))}
+                    </Animated.ScrollView>
+                </View>
+
                 <CreatePostBar
                     userPhotoUrl={user?.photoURL}
                     placeholder={t('social.shareSomething', 'Share your progress...')}
                     onPress={() => setIsCreateModalOpen(true)}
                 />
 
-                {posts.length === 0 && !loading ? (
-                    <View style={styles.emptyContainer}>
-                        <Ionicons name="chatbubbles-outline" size={48} color={theme.colors.border} />
-                        <Typography color={theme.colors.textMuted} style={{ marginTop: 16 }}>
-                            {t('social.noPosts', 'No posts yet. Be the first to share!')}
-                        </Typography>
-                    </View>
+                {loading && posts.length === 0 ? (
+                    <CommunityScreenSkeleton />
                 ) : (
-                    posts.map(post => (
-                        <CommunityPostCard
-                            key={post.id}
-                            post={post}
-                            currentUserId={user?.id}
-                            onLike={handleToggleLike}
-                            onReply={handleOpenReply}
-                            onAvatarPress={handleAvatarPress}
-                        />
-                    ))
+                    <>
+                        {posts.length === 0 ? (
+                            <View style={styles.emptyContainer}>
+                                <Feather name="message-square" size={48} color={theme.colors.border} />
+                                <Typography color={theme.colors.textMuted} style={{ marginTop: 16 }}>
+                                    {t('social.noPosts', 'No posts yet. Be the first to share!')}
+                                </Typography>
+                            </View>
+                        ) : (
+                            posts.map((post, index: number) => (
+                                <CommunityPostCard
+                                    key={post.id}
+                                    post={post}
+                                    currentUserId={user?.id}
+                                    onLike={handleToggleLike}
+                                    onReply={handleOpenReply}
+                                    index={index}
+                                />
+                            ))
+                        )}
+                    </>
                 )}
 
-                {loading && (
+                {loading && posts.length > 0 && (
                     <ActivityIndicator size="small" color={theme.colors.primary} style={{ marginTop: 20 }} />
                 )}
-            </ScrollView>
+            </Animated.ScrollView>
 
             <Pressable
-                style={[styles.fab, { bottom: insets.bottom + 16 }]}
+                style={[styles.fab, { bottom: insets.bottom + 20 }]}
                 onPress={() => { haptics.selection(); setIsCreateModalOpen(true); }}
             >
-                <Ionicons name="add" size={32} color={theme.colors.textInverse} />
+                <Feather name="plus" size={28} color={theme.colors.textInverse} />
             </Pressable>
 
             {/* Create Post Modal */}
@@ -232,28 +294,11 @@ export default function CommunityTab() {
                 onRemoveStory={() => setSelectedStory(null)}
             />
 
-            {/* Reply Modal */}
-            <ReplyModal
-                visible={!!replyingTo}
-                onClose={() => setReplyingTo(null)}
-                onSubmit={handleSubmitReply}
-                isSubmitting={isReplying}
-            />
-
-            {/* Profile Quick View */}
-            {selectedUser && (
-                <ProfileQuickView
-                    ref={quickViewRef}
-                    profile={selectedUser}
-                    onClose={() => setSelectedUser(null)}
-                />
-            )}
-
             {/* Notifications Sheet */}
             <BottomSheet
                 ref={notificationSheetRef}
                 index={-1}
-                snapPoints={['70%']}
+                snapPoints={['75%']}
                 enablePanDownToClose
                 backgroundStyle={{ backgroundColor: theme.colors.surface }}
                 handleIndicatorStyle={{ backgroundColor: theme.colors.textMuted }}
@@ -261,8 +306,8 @@ export default function CommunityTab() {
                 <View style={styles.notificationHeader}>
                     <Typography variant="h3">Activity</Typography>
                     {unreadCount > 0 && (
-                        <Pressable onPress={() => notificationActions.markAllAsRead(user?.id || '')}>
-                            <Typography variant="body" color={theme.colors.primary}>Mark all as read</Typography>
+                        <Pressable onPress={() => { haptics.selection(); notificationActions.markAllAsRead(user?.id || ''); }}>
+                            <Typography variant="body" color={theme.colors.primary}>Mark all read</Typography>
                         </Pressable>
                     )}
                 </View>
@@ -271,11 +316,11 @@ export default function CommunityTab() {
                     onNotificationPress={handleNotificationPress}
                 />
             </BottomSheet>
-            {/* Story Selector Modal */}
+
             <StorySelectorModal
                 visible={isStoryModalOpen}
                 onClose={() => setIsStoryModalOpen(false)}
-                onSelect={(story) => {
+                onSelect={(story: Story) => {
                     setSelectedStory(story);
                     setIsStoryModalOpen(false);
                 }}
@@ -294,74 +339,129 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: theme.spacing.lg,
-        paddingTop: theme.spacing.md,
         paddingBottom: theme.spacing.md,
+        backgroundColor: theme.colors.background,
+        zIndex: 10,
     },
     headerTitle: {
-        fontSize: 28,
-        fontWeight: 'bold',
+        fontSize: 32,
+        fontWeight: '800',
         color: theme.colors.text,
-    },
-    trophyButton: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        backgroundColor: theme.colors.surface,
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
+        letterSpacing: -0.5,
     },
     headerButtons: {
         flexDirection: 'row',
         gap: theme.spacing.sm,
     },
+    headerActionBtn: {
+        width: 44,
+        height: 44,
+        borderRadius: 22,
+        backgroundColor: theme.colors.surfaceElevated,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.05,
+        shadowRadius: 5,
+        elevation: 2,
+    },
     badge: {
         position: 'absolute',
-        top: 8,
-        right: 8,
-        width: 10,
-        height: 10,
-        borderRadius: 5,
+        top: 10,
+        right: 10,
+        width: 8,
+        height: 8,
+        borderRadius: 4,
         backgroundColor: theme.colors.error,
-        borderWidth: 2,
-        borderColor: theme.colors.surface,
+        borderWidth: 1.5,
+        borderColor: theme.colors.surfaceElevated,
     },
     filterSection: {
         paddingHorizontal: theme.spacing.lg,
-        paddingBottom: theme.spacing.md,
-    },
-    picker: {
-        marginBottom: 4,
+        marginTop: 10,
+        marginBottom: 16,
     },
     content: {
         flex: 1,
     },
     scrollContent: {
-        paddingBottom: 100,
+        paddingTop: 10,
+    },
+    trendingSection: {
+        marginBottom: 20,
+    },
+    sectionHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: theme.spacing.lg,
+        marginBottom: 12,
+    },
+    trendingScroll: {
+        paddingHorizontal: theme.spacing.lg,
+        gap: 16,
+    },
+    trendingItem: {
+        width: 70,
+        alignItems: 'center',
+    },
+    trendingCoverWrapper: {
+        width: 70,
+        height: 100,
+        borderRadius: 12,
+        backgroundColor: theme.colors.surfaceElevated,
+        overflow: 'hidden',
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
+        elevation: 4,
+    },
+    trendingCover: {
+        width: '100%',
+        height: '100%',
+    },
+    hotBadge: {
+        position: 'absolute',
+        top: 4,
+        right: 4,
+        width: 20,
+        height: 20,
+        borderRadius: 10,
+        backgroundColor: theme.colors.error,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: '#FFF',
+    },
+    trendingTitle: {
+        marginTop: 6,
+        width: '100%',
+        textAlign: 'center',
     },
     fab: {
         position: 'absolute',
         right: 20,
-        width: 56,
-        height: 56,
-        borderRadius: 28,
+        width: 64,
+        height: 64,
+        borderRadius: 32,
         backgroundColor: theme.colors.primary,
         alignItems: 'center',
         justifyContent: 'center',
-        ...theme.shadows.md,
+        shadowColor: theme.colors.primary,
+        shadowOffset: { width: 0, height: 8 },
+        shadowOpacity: 0.3,
+        shadowRadius: 12,
+        elevation: 8,
     },
     emptyContainer: {
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 100,
-    },
-    sendButton: {
-        backgroundColor: theme.colors.primary,
-        paddingHorizontal: 24,
-        paddingVertical: 10,
-        borderRadius: 20,
     },
     notificationHeader: {
         flexDirection: 'row',

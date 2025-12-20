@@ -19,4 +19,5 @@ export {
     ReviewsScreenSkeleton,
     ProfileScreenSkeleton,
     ReadingScreenSkeleton,
+    CommunityScreenSkeleton,
 } from './skeletons';
