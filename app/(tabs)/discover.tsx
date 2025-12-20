@@ -126,7 +126,7 @@ export default function DiscoverScreen() {
     }
 
     return (
-        <View style={[styles.container, { paddingTop: insets.top }]}>
+        <View style={styles.container}>
             <DiscoverHeader />
 
             <View style={styles.searchContainer}>
@@ -229,16 +229,17 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.background,
     },
     searchContainer: {
-        paddingHorizontal: theme.spacing.lg,
-        paddingBottom: theme.spacing.sm,
+        paddingHorizontal: 20,
+        paddingTop: 0,
+        paddingBottom: 8,
     },
     chipsWrapper: {
         flexShrink: 0,
     },
     chipsContainer: {
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.md,
-        gap: theme.spacing.sm,
+        paddingHorizontal: 20,
+        paddingVertical: 8,
+        gap: 8,
     },
     content: {
         flex: 1,
@@ -251,14 +252,14 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.md,
     },
     sectionContent: {
-        paddingHorizontal: theme.spacing.lg,
+        paddingHorizontal: 20,
     },
     carouselContent: {
-        paddingHorizontal: theme.spacing.lg,
+        paddingHorizontal: 20,
     },
     popularContainer: {
-        paddingHorizontal: theme.spacing.lg,
-        gap: theme.spacing.md,
+        paddingHorizontal: 20,
+        gap: 12,
     },
     center: {
         alignItems: 'center',

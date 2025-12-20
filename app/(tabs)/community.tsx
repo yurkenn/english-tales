@@ -163,7 +163,7 @@ export default function CommunityTab() {
             {/* Header with Parallax */}
             <Animated.View style={[
                 styles.header,
-                { paddingTop: insets.top },
+                { paddingTop: insets.top + 8 },
                 headerAnimatedStyle
             ]}>
                 <Animated.View style={titleAnimatedStyle}>
@@ -361,14 +361,14 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.lg,
-        paddingBottom: theme.spacing.md,
+        paddingHorizontal: 20,
+        paddingBottom: 12,
         backgroundColor: theme.colors.background,
         zIndex: 10,
     },
     headerTitle: {
-        fontSize: 32,
-        fontWeight: '800',
+        fontSize: theme.typography.size.xxxl,
+        fontWeight: 'bold',
         color: theme.colors.text,
         letterSpacing: -0.5,
     },
@@ -403,9 +403,9 @@ const styles = StyleSheet.create((theme) => ({
         borderColor: theme.colors.surfaceElevated,
     },
     filterSection: {
-        paddingHorizontal: theme.spacing.lg,
-        marginTop: 10,
-        marginBottom: 16,
+        paddingHorizontal: 20,
+        paddingTop: 0,
+        paddingBottom: 12,
     },
     content: {
         flex: 1,

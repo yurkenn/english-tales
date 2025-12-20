@@ -109,7 +109,7 @@ const styles = StyleSheet.create((theme) => ({
         paddingBottom: 40,
     },
     title: {
-        fontSize: 32,
+        fontSize: theme.typography.size.display,
         fontWeight: 'bold',
         color: theme.colors.text,
         textAlign: 'center',

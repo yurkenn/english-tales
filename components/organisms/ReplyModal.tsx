@@ -107,7 +107,7 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.md,
     },
     replyInput: {
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         color: theme.colors.text,
         maxHeight: 150,
         minHeight: 80,

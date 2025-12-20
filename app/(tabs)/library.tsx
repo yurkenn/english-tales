@@ -208,7 +208,7 @@ export default function LibraryScreen() {
     }
 
     return (
-        <View style={[styles.container, { paddingTop: insets.top }]}>
+        <View style={styles.container}>
             <LibraryHeader
                 filter={filter}
                 onSearchPress={() => router.push('/search')}
@@ -367,9 +367,9 @@ const styles = StyleSheet.create((theme) => ({
     },
     segmentedControl: {
         flexDirection: 'row',
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.md,
-        gap: theme.spacing.sm,
+        paddingHorizontal: 20,
+        paddingVertical: 12,
+        gap: 8,
     },
     segment: {
         flex: 1,
@@ -390,7 +390,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     segmentText: {
         fontSize: theme.typography.size.md,
-        fontWeight: 'bold',
+        fontWeight: '600',
         color: theme.colors.textSecondary,
     },
     segmentTextActive: {
@@ -406,7 +406,7 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
     },
     badgeText: {
-        fontSize: 10,
+        fontSize: theme.typography.size.xs,
         fontWeight: 'bold',
         color: '#FFFFFF',
     },

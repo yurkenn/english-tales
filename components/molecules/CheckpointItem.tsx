@@ -129,13 +129,13 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: 8,
     },
     title: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         fontWeight: 'bold',
         textTransform: 'uppercase',
         letterSpacing: 1,
     },
     question: {
-        fontSize: 17,
+        fontSize: theme.typography.size.lg,
         fontWeight: '600',
         lineHeight: 24,
         marginBottom: 16,
@@ -152,7 +152,7 @@ const styles = StyleSheet.create((theme) => ({
         borderWidth: 1,
     },
     optionText: {
-        fontSize: 15,
+        fontSize: theme.typography.size.md,
         flex: 1,
         marginRight: 8,
     },

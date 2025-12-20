@@ -39,7 +39,7 @@ const styles = StyleSheet.create((theme) => ({
         color: '#FFFFFF',
         fontWeight: 'bold',
         marginLeft: 4,
-        fontSize: 9,
+        fontSize: theme.typography.size.xs,
         textTransform: 'uppercase',
         letterSpacing: 0.5,
     },

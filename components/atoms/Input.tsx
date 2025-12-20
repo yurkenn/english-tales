@@ -86,7 +86,7 @@ const styles = StyleSheet.create((theme) => ({
     label: {
         marginBottom: 8,
         marginLeft: 4,
-        fontSize: 13,
+        fontSize: theme.typography.size.sm,
         fontWeight: '600',
     },
     inputWrapper: {
@@ -102,7 +102,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     input: {
         flex: 1,
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         height: '100%',
     },
     clearButton: {

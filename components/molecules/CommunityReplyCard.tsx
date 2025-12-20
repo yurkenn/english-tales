@@ -98,7 +98,7 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'baseline',
     },
     userName: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         fontWeight: '700',
     },
     timestamp: {
@@ -111,7 +111,7 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: 4,
     },
     content: {
-        fontSize: 15,
+        fontSize: theme.typography.size.md,
         lineHeight: 20,
         color: theme.colors.text,
     },

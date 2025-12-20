@@ -187,7 +187,7 @@ const styles = StyleSheet.create((theme) => ({
         marginLeft: -10,
     },
     headerTitle: {
-        fontSize: 28,
+        fontSize: theme.typography.size.xxxl,
         fontWeight: '800',
     },
     addButton: {
@@ -206,7 +206,7 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: theme.spacing.xl,
     },
     sectionHeader: {
-        fontSize: 11,
+        fontSize: theme.typography.size.xs,
         letterSpacing: 1.2,
         fontWeight: '900',
         marginBottom: theme.spacing.md,

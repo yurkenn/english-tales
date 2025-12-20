@@ -160,7 +160,7 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         height: 44,
         color: theme.colors.text,
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
     },
     list: {
         paddingHorizontal: theme.spacing.lg,

@@ -136,11 +136,11 @@ export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        marginHorizontal: theme.spacing.lg,
-        marginBottom: theme.spacing.lg,
-        padding: theme.spacing.lg,
+        marginHorizontal: 20,
+        marginBottom: 16,
+        padding: 16,
         backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xl,
+        borderRadius: 16,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
@@ -153,7 +153,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     title: {
         fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.bold,
+        fontWeight: 'bold',
         color: theme.colors.text,
     },
     streakBadge: {
@@ -166,11 +166,11 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.full,
     },
     streakIcon: {
-        fontSize: theme.typography.size.sm,
+        fontSize: theme.typography.size.md,
     },
     streakText: {
         fontSize: theme.typography.size.sm,
-        fontWeight: theme.typography.weight.semibold,
+        fontWeight: '600',
         color: theme.colors.warning,
     },
     calendarRow: {
@@ -184,14 +184,14 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
     },
     dayLabel: {
-        fontSize: theme.typography.size.xs,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
-        fontWeight: theme.typography.weight.medium,
+        fontWeight: '500',
     },
     dayCell: {
         width: 40,
         height: 40,
-        borderRadius: theme.radius.md,
+        borderRadius: 12,
         alignItems: 'center',
         justifyContent: 'center',
         borderWidth: 1,
@@ -204,12 +204,12 @@ const styles = StyleSheet.create((theme) => ({
     checkmark: {
         fontSize: theme.typography.size.md,
         color: theme.colors.textInverse,
-        fontWeight: theme.typography.weight.bold,
+        fontWeight: 'bold',
     },
     dateLabel: {
-        fontSize: theme.typography.size.xs,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textSecondary,
-        fontWeight: theme.typography.weight.medium,
+        fontWeight: '500',
     },
     legend: {
         flexDirection: 'row',
@@ -223,7 +223,7 @@ const styles = StyleSheet.create((theme) => ({
     legendText: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
-        fontWeight: theme.typography.weight.medium,
+        fontWeight: '500',
     },
     legendCells: {
         flexDirection: 'row',

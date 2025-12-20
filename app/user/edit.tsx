@@ -327,7 +327,7 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
     },
     headerTitle: {
-        fontSize: 17,
+        fontSize: theme.typography.size.lg,
         fontWeight: '600',
         color: theme.colors.text,
     },
@@ -374,7 +374,7 @@ const styles = StyleSheet.create((theme) => ({
         borderColor: theme.colors.background,
     },
     changePhotoText: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         fontWeight: '600',
         color: theme.colors.primary,
     },
@@ -383,7 +383,7 @@ const styles = StyleSheet.create((theme) => ({
         paddingBottom: 24,
     },
     sectionTitle: {
-        fontSize: 13,
+        fontSize: theme.typography.size.sm,
         fontWeight: '700',
         color: theme.colors.textMuted,
         textTransform: 'uppercase',
@@ -403,17 +403,17 @@ const styles = StyleSheet.create((theme) => ({
         marginRight: 8,
     },
     inputLabel: {
-        fontSize: 13,
+        fontSize: theme.typography.size.sm,
         fontWeight: '600',
         color: theme.colors.textMuted,
         flex: 1,
     },
     charCount: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
     },
     input: {
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         paddingVertical: 10,
         paddingHorizontal: 0,
         borderBottomWidth: 1.5,

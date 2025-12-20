@@ -125,7 +125,7 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.full,
     },
     difficultyText: {
-        fontSize: 9,
+        fontSize: theme.typography.size.xs,
         fontWeight: 'bold',
         textTransform: 'uppercase',
         letterSpacing: 0.5,
@@ -149,7 +149,7 @@ const styles = StyleSheet.create((theme) => ({
         zIndex: 5,
     },
     overlayTitle: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         fontWeight: '700',
         lineHeight: 18,
     },
@@ -161,7 +161,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     overlayAuthor: {
         flex: 1,
-        fontSize: 11,
+        fontSize: theme.typography.size.xs,
     },
     readTimeBadge: {
         flexDirection: 'row',
@@ -173,7 +173,7 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.full,
     },
     readTimeText: {
-        fontSize: 9,
+        fontSize: theme.typography.size.xs,
         fontWeight: '600',
     },
 }));

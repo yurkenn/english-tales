@@ -236,7 +236,7 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: 45,
     },
     username: {
-        fontSize: 16,
+        fontSize: theme.typography.size.xl,
         fontWeight: '600',
         color: theme.colors.text,
         marginBottom: 16,
@@ -252,12 +252,12 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: 12,
     },
     statValue: {
-        fontSize: 17,
+        fontSize: theme.typography.size.xl,
         fontWeight: '700',
         color: theme.colors.text,
     },
     statLabel: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
         marginTop: 2,
     },
@@ -277,7 +277,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.background,
     },
     editButtonText: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         fontWeight: '600',
         color: theme.colors.text,
     },
@@ -288,7 +288,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.primary,
     },
     followButtonText: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         fontWeight: '600',
         color: '#FFFFFF',
     },
@@ -302,10 +302,10 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
     },
     bio: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         color: theme.colors.text,
         textAlign: 'center',
-        lineHeight: 20,
+        lineHeight: 22,
         marginBottom: 8,
         paddingHorizontal: 16,
     },
@@ -313,7 +313,7 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: 8,
     },
     addBioText: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         color: theme.colors.textMuted,
     },
     locationRow: {
@@ -322,7 +322,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: 4,
     },
     locationText: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         color: theme.colors.textMuted,
     },
 }));

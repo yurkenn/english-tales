@@ -116,7 +116,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     name: {
         textAlign: 'center',
-        fontSize: 11,
+        fontSize: theme.typography.size.xs,
         fontWeight: '600',
     },
     addButton: {

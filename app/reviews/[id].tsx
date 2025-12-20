@@ -216,7 +216,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.sm,
     },
     overallRatingValue: {
-        fontSize: 48,
+        fontSize: theme.typography.size.display,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
     },

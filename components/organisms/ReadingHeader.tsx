@@ -79,7 +79,7 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: theme.spacing.sm,
     },
     title: {
-        fontSize: 15,
+        fontSize: theme.typography.size.md,
         fontFamily: theme.typography.fontFamily.heading,
         color: theme.colors.text,
         letterSpacing: -0.2,
@@ -91,7 +91,7 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: 2,
     },
     subtitle: {
-        fontSize: 10,
+        fontSize: theme.typography.size.xs,
         fontFamily: theme.typography.fontFamily.semiBold,
         color: theme.colors.textMuted,
         letterSpacing: 0.8,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: 3,
     },
     offlineText: {
-        fontSize: 9,
+        fontSize: theme.typography.size.xs,
         fontFamily: theme.typography.fontFamily.bold,
         color: theme.colors.success,
     },

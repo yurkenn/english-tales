@@ -296,7 +296,7 @@ const styles = StyleSheet.create((theme) => ({
         marginLeft: 14,
     },
     profileName: {
-        fontSize: 18,
+        fontSize: theme.typography.size.xl,
         fontWeight: '600',
     },
     footerContainer: {

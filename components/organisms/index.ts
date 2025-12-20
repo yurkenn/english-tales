@@ -48,3 +48,4 @@ export { CommunityPostHeader } from './CommunityPostHeader';
 export { CommunityPostFooter } from './CommunityPostFooter';
 export * from './readingTypes';
 export * from './settingsTypes';
+export { TabHeader } from './TabHeader';

@@ -156,7 +156,7 @@ export default function UserProfileScreen() {
                                     />
                                     <View style={styles.reviewStoryTag}>
                                         <Ionicons name="book-outline" size={14} color={theme.colors.primary} />
-                                        <Typography variant="bodyBold" style={{ fontSize: 13, marginLeft: 6 }}>
+                                        <Typography variant="bodyBold" style={{ fontSize: theme.typography.size.sm, marginLeft: 6 }}>
                                             {review.storyTitle || 'English Tale'}
                                         </Typography>
                                     </View>
@@ -226,7 +226,7 @@ export default function UserProfileScreen() {
                         style={styles.navAction}
                         onPress={() => router.back()}
                     >
-                        <Ionicons name="chevron-back" size={24} color={scrollY.value > 150 ? theme.colors.text : "#FFF"} />
+                        <Ionicons name="chevron-back" size={24} color={theme.colors.text} />
                     </Pressable>
                 </Animated.View>
             </View>
@@ -315,7 +315,7 @@ const styles = StyleSheet.create((theme) => ({
         ...theme.shadows.sm,
     },
     stickyTitle: {
-        fontSize: 17,
+        fontSize: theme.typography.size.lg,
     },
     tabContent: {
         paddingTop: theme.spacing.md,
@@ -335,7 +335,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     emptyText: {
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
     },
     grid: {
         flexDirection: 'row',

@@ -183,7 +183,7 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
     },
     headerTitle: {
-        fontSize: 18,
+        fontSize: theme.typography.size.xl,
         fontWeight: '700',
     },
     content: {
@@ -196,7 +196,7 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: theme.spacing.md,
     },
     repliesTitle: {
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         fontWeight: '700',
         paddingHorizontal: theme.spacing.lg,
         marginBottom: theme.spacing.md,
@@ -221,7 +221,7 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: theme.spacing.lg,
         paddingVertical: 10,
         paddingTop: 10,
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         color: theme.colors.text,
         maxHeight: 100,
     },

@@ -119,13 +119,13 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.lg,
+        paddingHorizontal: 20,
         marginBottom: theme.spacing.xs,
     },
     headerTitle: {
         letterSpacing: 1,
         fontWeight: '700',
-        fontSize: 10,
+        fontSize: theme.typography.size.xs,
     },
     seeAll: {
         flexDirection: 'row',
@@ -134,10 +134,10 @@ const styles = StyleSheet.create((theme) => ({
     },
     seeAllText: {
         fontWeight: '700',
-        fontSize: 10,
+        fontSize: theme.typography.size.xs,
     },
     scrollContent: {
-        paddingHorizontal: theme.spacing.lg,
+        paddingHorizontal: 20,
         paddingVertical: theme.spacing.xs,
         gap: theme.spacing.md,
     },
@@ -177,12 +177,12 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
     },
     userName: {
-        fontSize: 11,
+        fontSize: theme.typography.size.xs,
         fontWeight: '700',
         lineHeight: 13,
     },
     activityText: {
-        fontSize: 10,
+        fontSize: theme.typography.size.xs,
         lineHeight: 12,
     },
 }));

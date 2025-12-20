@@ -167,14 +167,15 @@ export const typography = {
         bold: 'Outfit_700Bold',
     },
     size: {
-        xs: 10,
-        sm: 12,
-        md: 14,
-        lg: 16,
-        xl: 18,
-        xxl: 20,
-        xxxl: 24,
-        display: 32,
+        // Consistent scale - use these everywhere
+        xs: 11,      // Captions, badges, legends
+        sm: 13,      // Secondary text, labels
+        md: 15,      // Body text, default
+        lg: 17,      // Emphasized body, card titles
+        xl: 20,      // Section titles
+        xxl: 24,     // Screen subtitles
+        xxxl: 28,    // Screen titles (headers)
+        display: 34, // Large display text
     },
     weight: {
         regular: '400' as const,

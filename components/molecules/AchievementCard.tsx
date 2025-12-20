@@ -79,7 +79,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.backgroundSecondary,
     },
     iconText: {
-        fontSize: 32,
+        fontSize: theme.typography.size.display,
     },
     lockOverlay: {
         position: 'absolute',

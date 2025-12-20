@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
 import { type FilterType } from '../molecules/moleculeTypes';
 
 interface LibraryHeaderProps {
@@ -16,30 +18,32 @@ export const LibraryHeader: React.FC<LibraryHeaderProps> = ({
     onFilterPress,
 }) => {
     const { theme } = useUnistyles();
+    const { t } = useTranslation();
+    const insets = useSafeAreaInsets();
 
     return (
-        <View style={styles.header}>
-            <Text style={styles.title}>My Library</Text>
-            <View style={styles.headerActions}>
+        <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
+            <Text style={styles.title}>{t('tabs.library', 'My Library')}</Text>
+            <View style={styles.actions}>
                 <Pressable
-                    style={styles.headerButton}
+                    style={styles.actionButton}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                     onPress={onSearchPress}
                 >
                     <Ionicons
                         name="search-outline"
-                        size={theme.iconSize.md}
+                        size={22}
                         color={theme.colors.text}
                     />
                 </Pressable>
                 <Pressable
-                    style={[styles.headerButton, filter !== 'all' && styles.filterActive]}
+                    style={[styles.actionButton, filter !== 'all' && styles.filterActive]}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                     onPress={onFilterPress}
                 >
                     <Ionicons
                         name="filter-outline"
-                        size={theme.iconSize.md}
+                        size={22}
                         color={filter !== 'all' ? theme.colors.primary : theme.colors.text}
                     />
                 </Pressable>
@@ -53,20 +57,20 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.lg,
+        paddingHorizontal: 20,
+        paddingBottom: 12,
     },
     title: {
-        fontSize: 28,
+        fontSize: theme.typography.size.xxxl,
         fontWeight: 'bold',
         color: theme.colors.text,
-        letterSpacing: -0.8,
+        letterSpacing: -0.5,
     },
-    headerActions: {
+    actions: {
         flexDirection: 'row',
-        gap: theme.spacing.sm,
+        gap: 8,
     },
-    headerButton: {
+    actionButton: {
         width: 44,
         height: 44,
         borderRadius: 12,
@@ -78,7 +82,7 @@ const styles = StyleSheet.create((theme) => ({
         ...theme.shadows.sm,
     },
     filterActive: {
-        backgroundColor: theme.colors.primary + '10', // Consistent with other active states
+        backgroundColor: theme.colors.primary + '10',
         borderColor: theme.colors.primary + '40',
     },
 }));

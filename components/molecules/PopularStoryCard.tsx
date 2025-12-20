@@ -145,7 +145,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: 'rgba(239, 68, 68, 0.15)',
     },
     difficultyText: {
-        fontSize: 10,
+        fontSize: theme.typography.size.xs,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
         textTransform: 'uppercase',

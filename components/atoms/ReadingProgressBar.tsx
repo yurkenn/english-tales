@@ -54,14 +54,14 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: 2,
     },
     remainingText: {
-        fontSize: 11,
+        fontSize: theme.typography.size.xs,
         fontFamily: theme.typography.fontFamily.semiBold,
         textTransform: 'uppercase',
         letterSpacing: 0.5,
         color: theme.colors.textMuted,
     },
     percentageText: {
-        fontSize: 11,
+        fontSize: theme.typography.size.xs,
         fontFamily: theme.typography.fontFamily.semiBold,
         color: theme.colors.textMuted,
     },

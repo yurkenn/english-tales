@@ -90,7 +90,7 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
     },
     levelIcon: {
-        fontSize: 24,
+        fontSize: theme.typography.size.xxl,
     },
     levelTextContainer: {
         flex: 1,

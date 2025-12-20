@@ -41,7 +41,7 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.sm,
     },
     button: {
-        marginHorizontal: theme.spacing.lg,
+        marginHorizontal: 20,
         backgroundColor: theme.colors.surface,
         borderRadius: 16,
         borderWidth: 1,
@@ -71,12 +71,12 @@ const styles = StyleSheet.create((theme) => ({
         gap: 2,
     },
     title: {
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         fontWeight: 'bold',
         color: theme.colors.text,
     },
     subtitle: {
-        fontSize: 13,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textSecondary,
     },
 }));

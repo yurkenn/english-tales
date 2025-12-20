@@ -80,7 +80,7 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
     },
     avatarText: {
-        fontSize: 28,
+        fontSize: theme.typography.size.xxxl,
         fontWeight: '700',
         color: '#FFFFFF',
     },

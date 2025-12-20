@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable, StyleSheet, Dimensions } from 'react-native';
-import { useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, Dimensions } from 'react-native';
+import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, {
     useAnimatedStyle,
@@ -76,7 +76,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
                     >
                         <Ionicons
                             name={isActive ? tab.icon.replace('-outline', '') : tab.icon}
-                            size={20}
+                            size={22}
                             color={isActive ? theme.colors.primary : theme.colors.textMuted}
                         />
                         <View style={styles.labelWrapper}>
@@ -94,7 +94,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
                                 ]}>
                                     <Typography
                                         variant="caption"
-                                        style={{ fontSize: 9, fontWeight: '700' }}
+                                        style={{ fontSize: theme.typography.size.xs, fontWeight: '700' }}
                                         color={isActive ? theme.colors.primary : theme.colors.textMuted}
                                     >
                                         {tab.count}
@@ -109,7 +109,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
     );
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create((theme) => ({
     container: {
         flexDirection: 'row',
         borderBottomWidth: 1,
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         marginTop: 4,
     },
     tabText: {
-        fontSize: 11,
+        fontSize: theme.typography.size.sm,
         textTransform: 'uppercase',
         letterSpacing: 0.8,
     },
@@ -145,4 +145,4 @@ const styles = StyleSheet.create({
         paddingVertical: 1,
         borderRadius: 6,
     },
-});
+}));

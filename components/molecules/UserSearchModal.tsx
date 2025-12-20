@@ -186,7 +186,7 @@ const styles = StyleSheet.create((theme) => ({
     input: {
         flex: 1,
         color: theme.colors.text,
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
     },
     listContent: {
         padding: theme.spacing.lg,

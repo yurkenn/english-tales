@@ -201,13 +201,13 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: theme.spacing.sm,
     },
     heading2: {
-        fontSize: 28,
+        fontSize: theme.typography.size.xxxl,
         marginTop: theme.spacing.xl,
         marginBottom: theme.spacing.sm,
         letterSpacing: -0.5,
     },
     heading3: {
-        fontSize: 22,
+        fontSize: theme.typography.size.xxl,
         marginTop: theme.spacing.lg,
         marginBottom: theme.spacing.xs,
         letterSpacing: -0.3,
@@ -235,7 +235,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.borderLight,
     },
     caption: {
-        fontSize: 13,
+        fontSize: theme.typography.size.sm,
         marginTop: theme.spacing.md,
         textAlign: 'center',
         fontStyle: 'italic',

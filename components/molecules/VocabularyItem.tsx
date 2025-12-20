@@ -66,14 +66,14 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: 6,
     },
     word: {
-        fontSize: 18,
+        fontSize: theme.typography.size.xl,
         fontWeight: 'bold',
         color: theme.colors.text,
         textTransform: 'capitalize',
         letterSpacing: -0.4,
     },
     partOfSpeech: {
-        fontSize: 10,
+        fontSize: theme.typography.size.xs,
         fontWeight: 'bold',
         color: theme.colors.primary,
         backgroundColor: theme.colors.primary + '10',
@@ -84,12 +84,12 @@ const styles = StyleSheet.create((theme) => ({
         overflow: 'hidden',
     },
     definition: {
-        fontSize: 15,
+        fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
         lineHeight: 22,
     },
     source: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         fontWeight: '500',
         color: theme.colors.textMuted,
         marginTop: 6,

@@ -21,7 +21,7 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.xxxxl,
     },
     title: {
-        fontSize: 32,
+        fontSize: theme.typography.size.display,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
         marginBottom: theme.spacing.sm,

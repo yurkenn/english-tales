@@ -339,7 +339,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.xs,
     },
     title: {
-        fontSize: 32,
+        fontSize: theme.typography.size.display,
         fontWeight: 'bold',
         color: theme.colors.text,
         letterSpacing: -1,
@@ -403,7 +403,7 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.primary,
     },
     description: {
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
         lineHeight: 26,
     },
@@ -435,7 +435,7 @@ const styles = StyleSheet.create((theme) => ({
         ...theme.shadows.md,
     },
     readButtonText: {
-        fontSize: 18,
+        fontSize: theme.typography.size.xl,
         fontWeight: 'bold',
         color: theme.colors.textInverse,
     },

@@ -273,7 +273,7 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: 2,
     },
     textInput: {
-        fontSize: 20,
+        fontSize: theme.typography.size.xl,
         color: theme.colors.text,
         lineHeight: 28,
         textAlignVertical: 'top',

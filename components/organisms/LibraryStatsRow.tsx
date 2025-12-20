@@ -52,13 +52,13 @@ const styles = StyleSheet.create((theme) => ({
         gap: 2,
     },
     statValue: {
-        fontSize: 24,
+        fontSize: theme.typography.size.xxl,
         fontWeight: 'bold',
         color: theme.colors.text,
         letterSpacing: -0.5,
     },
     statLabel: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         fontWeight: '600',
         color: theme.colors.textMuted,
         textTransform: 'uppercase',

@@ -140,7 +140,7 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.lg,
     },
     wordTitle: {
-        fontSize: 32,
+        fontSize: theme.typography.size.display,
         fontWeight: 'bold',
         color: theme.colors.text,
         textTransform: 'capitalize',

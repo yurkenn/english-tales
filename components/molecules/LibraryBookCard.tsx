@@ -139,7 +139,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: 2,
     },
     bookTitle: {
-        fontSize: 18,
+        fontSize: theme.typography.size.xl,
         fontWeight: 'bold',
         color: theme.colors.text,
         letterSpacing: -0.4,
@@ -156,7 +156,7 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: 4,
     },
     offlineBadgeText: {
-        fontSize: 11,
+        fontSize: theme.typography.size.xs,
         color: theme.colors.success,
         fontWeight: 'bold',
         textTransform: 'uppercase',
@@ -175,7 +175,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: 6,
     },
     progressText: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         fontWeight: '600',
         color: theme.colors.textSecondary,
     },
@@ -185,12 +185,12 @@ const styles = StyleSheet.create((theme) => ({
         gap: 6,
     },
     completedText: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.success,
         fontWeight: 'bold',
     },
     notStartedText: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
         fontWeight: '500',
     },
@@ -206,7 +206,7 @@ const styles = StyleSheet.create((theme) => ({
         borderColor: theme.colors.primary + '20',
     },
     actionButtonText: {
-        fontSize: 14,
+        fontSize: theme.typography.size.md,
         fontWeight: 'bold',
         color: theme.colors.primary,
     },

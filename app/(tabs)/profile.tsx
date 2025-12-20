@@ -264,26 +264,17 @@ export default function ProfileScreen() {
 
     return (
         <View style={styles.container}>
-            <Animated.View style={[
-                styles.stickyHeader,
-                { paddingTop: Math.max(insets.top, 16) },
-                stickyHeaderStyle
-            ]}>
-                <Typography variant="bodyBold" style={styles.stickyTitle}>
-                    {fullProfile.displayName}
+            {/* Header - matches other tabs */}
+            <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
+                <Typography variant="h2" style={styles.headerTitle}>
+                    {t('tabs.profile', 'Profile')}
                 </Typography>
-            </Animated.View>
-
-            <View style={[styles.navBar, { paddingTop: Math.max(insets.top, 16) }]}>
-                <View style={styles.navBarFill} />
-                <Animated.View style={[styles.settingsButtonWrapper, settingsButtonStyle]}>
-                    <Pressable
-                        style={styles.navAction}
-                        onPress={() => { haptics.selection(); router.push('/settings'); }}
-                    >
-                        <Ionicons name="settings-outline" size={24} color={scrollY.value > 150 ? theme.colors.text : "#FFF"} />
-                    </Pressable>
-                </Animated.View>
+                <Pressable
+                    style={styles.headerAction}
+                    onPress={() => { haptics.selection(); router.push('/settings'); }}
+                >
+                    <Ionicons name="settings-outline" size={22} color={theme.colors.text} />
+                </Pressable>
             </View>
 
             <Animated.ScrollView
@@ -291,7 +282,6 @@ export default function ProfileScreen() {
                 scrollEventThrottle={16}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={{ paddingBottom: 120 }}
-                stickyHeaderIndices={[1]}
             >
                 <ProfileHeader
                     profile={{
@@ -348,16 +338,30 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         backgroundColor: theme.colors.background,
     },
-    navBar: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 20,
-        paddingHorizontal: theme.spacing.lg,
+    header: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: 100,
+        justifyContent: 'space-between',
+        paddingHorizontal: 20,
+        paddingBottom: 12,
+        backgroundColor: theme.colors.background,
+    },
+    headerTitle: {
+        fontSize: theme.typography.size.xxxl,
+        fontWeight: 'bold',
+        color: theme.colors.text,
+        letterSpacing: -0.5,
+    },
+    headerAction: {
+        width: 44,
+        height: 44,
+        borderRadius: 12,
+        backgroundColor: theme.colors.surface,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        alignItems: 'center',
+        justifyContent: 'center',
+        ...theme.shadows.sm,
     },
     navBarFill: {
         flex: 1,
@@ -390,7 +394,7 @@ const styles = StyleSheet.create((theme) => ({
         ...theme.shadows.sm,
     },
     stickyTitle: {
-        fontSize: 17,
+        fontSize: theme.typography.size.lg,
     },
     tabContent: {
         paddingTop: theme.spacing.md,
@@ -409,7 +413,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     emptyText: {
         textAlign: 'center',
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         lineHeight: 24,
     },
     grid: {
