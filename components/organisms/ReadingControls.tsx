@@ -42,7 +42,13 @@ export const ReadingControls: React.FC<ReadingControlsProps> = ({
     return (
         <View style={styles.controlRow}>
             {/* Reading Settings Toggle (Font Size, etc) */}
-            <Pressable style={styles.button} onPress={onThemeToggle}>
+            <Pressable
+                style={styles.button}
+                onPress={() => {
+                    haptics.selection();
+                    onThemeToggle();
+                }}
+            >
                 <Ionicons
                     name={readingTheme === 'dark' ? 'sunny-outline' : 'moon'}
                     size={22}
@@ -51,7 +57,13 @@ export const ReadingControls: React.FC<ReadingControlsProps> = ({
             </Pressable>
 
             {/* Bookmark */}
-            <Pressable style={styles.button} onPress={onBookmarkToggle}>
+            <Pressable
+                style={styles.button}
+                onPress={() => {
+                    haptics.success();
+                    onBookmarkToggle();
+                }}
+            >
                 <Ionicons
                     name={isInLibrary ? 'bookmark' : 'bookmark-outline'}
                     size={22}
@@ -71,7 +83,10 @@ export const ReadingControls: React.FC<ReadingControlsProps> = ({
                     styles.audioButton,
                     { backgroundColor: theme.colors.primary + '15' }
                 ]}
-                onPress={onAudioToggle}
+                onPress={() => {
+                    haptics.light();
+                    onAudioToggle();
+                }}
             >
                 <Ionicons name="volume-medium-outline" size={22} color={theme.colors.primary} />
             </Pressable>

@@ -32,6 +32,11 @@ export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
     const { theme } = useUnistyles();
     const { settings, actions: settingsActions } = useSettingsStore();
 
+    const themes: { name: string; key: ReadingTheme; color: string }[] = [
+        { name: t('appearance.light'), key: 'light', color: '#FFFFFF' },
+        { name: t('appearance.dark'), key: 'dark', color: '#1B0E0E' },
+        { name: 'Sepia', key: 'sepia', color: '#FDF6E3' },
+    ];
     const LANGUAGES = [
         { code: 'en', label: 'English' },
         { code: 'tr', label: 'Türkçe' },

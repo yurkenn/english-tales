@@ -7,10 +7,10 @@ import Animated, {
     withSpring,
 } from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { useIsDark, useThemeKey } from '@/store/themeStore';
+import { useIsDark, useThemeKey, useThemeMode } from '@/store/themeStore';
 import { useNotificationStore } from '@/store/notificationStore';
 import { useNotifications } from '@/hooks/useNotifications';
-import { lightTheme, darkTheme } from '@/theme/unistyles';
+import { lightTheme, darkTheme, sepiaTheme } from '@/theme/unistyles';
 
 type TabIconName = 'home' | 'compass' | 'book' | 'person' | 'people';
 
@@ -56,11 +56,15 @@ export default function TabLayout() {
     const unreadCount = useNotificationStore(s => s.unreadCount);
 
     // Subscribe to theme changes
+    const mode = useThemeMode();
     const isDark = useIsDark();
     const themeKey = useThemeKey();
 
-    // Get theme based on isDark state directly
-    const theme = isDark ? darkTheme : lightTheme;
+    // Get theme based on current mode
+    const theme = useMemo(() => {
+        if (mode === 'sepia') return sepiaTheme;
+        return isDark ? darkTheme : lightTheme;
+    }, [mode, isDark]);
 
     const tabBarStyle = useMemo(() => ({
         backgroundColor: theme.colors.surface,
@@ -71,7 +75,7 @@ export default function TabLayout() {
         paddingTop: 8,
         elevation: 0,
         shadowOpacity: 0,
-    }), [theme.colors.surface, theme.colors.borderLight, insets.bottom, themeKey]);
+    }), [theme.colors.surface, theme.colors.borderLight, insets.bottom, themeKey, mode]);
 
     const screenOptions = useMemo(() => ({
         headerShown: false,
@@ -79,7 +83,7 @@ export default function TabLayout() {
         tabBarInactiveTintColor: theme.colors.textMuted,
         tabBarShowLabel: false,
         tabBarStyle: tabBarStyle,
-    }), [theme.colors.text, theme.colors.textMuted, tabBarStyle, themeKey]);
+    }), [theme.colors.text, theme.colors.textMuted, tabBarStyle, themeKey, mode]);
 
     return (
         <Tabs screenOptions={screenOptions} key={`tabs-${themeKey}`}>

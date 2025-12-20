@@ -207,11 +207,23 @@ export default function ReadingScreen() {
         }
     }, [id, storyDoc, isInLibrary, libraryActions]);
 
+    // Sync readingTheme state with global theme on mount
+    useEffect(() => {
+        const currentMode = useThemeStore.getState().mode;
+        if (currentMode === 'sepia') setReadingTheme('sepia');
+        else if (currentMode === 'dark') setReadingTheme('dark');
+        else setReadingTheme('light');
+    }, []);
+
     const cycleReadingTheme = useCallback(() => {
         haptics.selection();
         const themes: ReadingTheme[] = ['light', 'dark', 'sepia'];
         const currentIndex = themes.indexOf(readingTheme);
-        setReadingTheme(themes[(currentIndex + 1) % 3]);
+        const next = themes[(currentIndex + 1) % 3];
+        setReadingTheme(next);
+
+        // Sync with global theme store for a unified feel
+        useThemeStore.getState().actions.setMode(next);
     }, [readingTheme]);
 
     const handleWordPress = useCallback(async (word: string) => {
@@ -317,8 +329,10 @@ export default function ReadingScreen() {
         );
     }
 
+    const currentTheme = READING_THEMES[readingTheme];
+
     return (
-        <View style={[styles.container, { paddingTop: insets.top }]}>
+        <View style={[styles.container, { paddingTop: insets.top, backgroundColor: currentTheme.bg }]}>
             <ReadingHeader
                 title={storyDoc.title}
                 isDownloaded={isDownloaded}
@@ -337,7 +351,7 @@ export default function ReadingScreen() {
                     {
                         backgroundColor: globalHighContrast
                             ? (isDark ? '#000000' : '#FFFFFF')
-                            : READING_THEMES[readingTheme].bg
+                            : currentTheme.bg
                     }
                 ]}
                 showsVerticalScrollIndicator={false}
@@ -352,13 +366,13 @@ export default function ReadingScreen() {
                         lineHeight={lineHeight}
                         textColor={globalHighContrast
                             ? (isDark ? '#FFFFFF' : '#000000')
-                            : READING_THEMES[readingTheme].text
+                            : currentTheme.text
                         }
                         onWordPress={handleWordPress}
                         dyslexicFontEnabled={dyslexicFontEnabled}
                     />
                 ) : (
-                    <Text style={[styles.storyText, { fontSize, color: READING_THEMES[readingTheme].text }]}>
+                    <Text style={[styles.storyText, { fontSize, color: currentTheme.text }]}>
                         {t('reading.noContent')}
                     </Text>
                 )}

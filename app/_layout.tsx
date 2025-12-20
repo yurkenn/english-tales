@@ -1,7 +1,7 @@
 import '@/theme/unistyles';
 import '@/i18n'; // Initialize i18n
 import { Stack, useRouter, useSegments } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import * as SplashScreen from 'expo-splash-screen';
@@ -18,18 +18,19 @@ import { QueryProvider } from '@/providers/QueryProvider';
 import { useAuthStore } from '../store/authStore';
 import { useLibraryStore } from '../store/libraryStore';
 import { useProgressStore } from '../store/progressStore';
-import { useThemeStore, useThemeKey, useIsDark } from '../store/themeStore';
+import { useThemeStore, useThemeKey, useIsDark, useThemeMode } from '../store/themeStore';
 import { useDownloadStore } from '../store/downloadStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { secureStorage } from '../services/storage';
 import { notificationService } from '@/services/notificationService';
+import { StatusBar } from 'expo-status-bar';
 import {
   AchievementToast,
   ToastContainer,
   ErrorBoundary,
   AnimatedSplashScreen,
 } from '@/components';
-import { lightTheme, darkTheme } from '../theme/unistyles';
+import { lightTheme, darkTheme, sepiaTheme } from '../theme/unistyles';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync().catch(() => {
@@ -47,14 +48,18 @@ export default function RootLayout() {
   const downloadActions = useDownloadStore((s) => s.actions);
 
   // Subscribe to theme changes for force re-render
+  const mode = useThemeMode();
   const themeKey = useThemeKey();
   const isDark = useIsDark();
 
   const [isSplashAnimationFinished, setIsSplashAnimationFinished] = useState(false);
   const [isAppReady, setIsAppReady] = useState(false);
 
-  // Get the correct theme object based on isDark state
-  const currentTheme = isDark ? darkTheme : lightTheme;
+  // Get the correct theme object based on current mode
+  const currentTheme = useMemo(() => {
+    if (mode === 'sepia') return sepiaTheme;
+    return isDark ? darkTheme : lightTheme;
+  }, [mode, isDark]);
 
   // Initialize auth listener
   useEffect(() => {
@@ -168,6 +173,7 @@ export default function RootLayout() {
       <GestureHandlerRootView style={{ flex: 1 }}>
         <QueryProvider>
           <BottomSheetModalProvider>
+            <StatusBar style={mode === 'sepia' || isDark ? 'light' : 'dark'} />
             {!isSplashAnimationFinished && (
               <AnimatedSplashScreen onAnimationComplete={onSplashAnimationComplete} />
             )}

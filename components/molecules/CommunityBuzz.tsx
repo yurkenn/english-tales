@@ -33,17 +33,17 @@ export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPres
     const getActivityConfig = (type: ActivityItem['type']) => {
         switch (type) {
             case 'story_completed':
-                return { icon: 'trophy' as const, color: '#FFD700', bg: 'rgba(255, 215, 0, 0.15)' };
+                return { icon: 'trophy' as const, color: theme.colors.warning, bg: `${theme.colors.warning}20` };
             case 'achievement':
-                return { icon: 'star' as const, color: '#4ADE80', bg: 'rgba(74, 222, 128, 0.15)' };
+                return { icon: 'star' as const, color: theme.colors.success, bg: `${theme.colors.success}20` };
             case 'started_reading':
-                return { icon: 'book' as const, color: theme.colors.primary, bg: 'rgba(234, 42, 51, 0.1)' };
+                return { icon: 'book' as const, color: theme.colors.primary, bg: `${theme.colors.primary}20` };
             case 'follow':
-                return { icon: 'person-add' as const, color: '#60A5FA', bg: 'rgba(96, 165, 250, 0.15)' };
+                return { icon: 'person-add' as const, color: theme.colors.primary, bg: `${theme.colors.primary}20` };
             case 'story_review':
-                return { icon: 'chatbox-ellipses' as const, color: '#F472B6', bg: 'rgba(244, 114, 182, 0.15)' };
+                return { icon: 'chatbox-ellipses' as const, color: theme.colors.primary, bg: `${theme.colors.primary}20` };
             default:
-                return { icon: 'flash' as const, color: theme.colors.primary, bg: 'rgba(234, 42, 51, 0.1)' };
+                return { icon: 'flash' as const, color: theme.colors.primary, bg: `${theme.colors.primary}20` };
         }
     };
 

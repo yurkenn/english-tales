@@ -84,6 +84,47 @@ export const colorsDark = {
     overlayLight: 'rgba(0, 0, 0, 0.6)',
 } as const;
 
+export const colorsSepia = {
+    // Primary - Rich Cognac/Leather tone
+    primary: '#936639',
+    primaryDark: '#7F5539',
+    primaryLight: '#B6AD90',
+
+    // Backgrounds - Traditional "Ayva Sarısı" / Aged Paper
+    background: '#FAF3E0',
+    backgroundSecondary: '#F2E9D0',
+    surface: '#F2E9D0',
+    surfaceElevated: '#E8DFCA',
+
+    // Text - Softer Sepia Ink
+    text: '#3D342B',
+    textSecondary: '#6B5E51',
+    textMuted: '#9B8E7D',
+    textInverse: '#FAF3E0',
+
+    // UI Elements
+    border: '#E8DFCA',
+    borderLight: 'rgba(61, 52, 43, 0.08)',
+    divider: 'rgba(61, 52, 43, 0.08)',
+
+    // Chip backgrounds
+    chipActive: '#936639',
+    chipInactive: 'rgba(147, 102, 57, 0.12)',
+
+    // Status (Muted for Sepia)
+    success: '#6A994E',
+    warning: '#BC6C25',
+    error: '#BC4749',
+
+    // Rating
+    star: '#BC6C25',
+    starEmpty: '#E8DFCA',
+
+    // Overlay
+    overlay: 'rgba(30, 20, 10, 0.5)',
+    overlayLight: 'rgba(30, 20, 10, 0.3)',
+} as const;
+
 export const spacing = {
     xxs: 2,
     xs: 4,

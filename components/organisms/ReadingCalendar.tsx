@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { View, Text } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface ReadingDay {
     date: Date;
@@ -79,6 +80,12 @@ export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
             <View style={styles.header}>
                 <Text style={styles.title}>This Week</Text>
                 <View style={styles.streakBadge}>
+                    <LinearGradient
+                        colors={[`${theme.colors.warning}30`, `${theme.colors.warning}10`]}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        style={StyleSheet.absoluteFill}
+                    />
                     <Text style={styles.streakIcon}>🔥</Text>
                     <Text style={styles.streakText}>{currentStreak} day streak</Text>
                 </View>

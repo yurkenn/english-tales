@@ -4,7 +4,7 @@ import { Appearance, type ColorSchemeName } from 'react-native';
 import { setAppTheme } from '@/theme/unistyles';
 import { haptics } from '@/utils/haptics';
 
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type ThemeMode = 'light' | 'dark' | 'sepia' | 'system';
 
 interface ThemeState {
     mode: ThemeMode;
@@ -24,7 +24,7 @@ interface ThemeActions {
 }
 
 const THEME_KEY = '@english_tales_theme';
-const VALID_MODES: ThemeMode[] = ['light', 'dark', 'system'];
+const VALID_MODES: ThemeMode[] = ['light', 'dark', 'sepia', 'system'];
 
 /**
  * Resolve whether we should use dark theme
@@ -39,8 +39,12 @@ const resolveIsDark = (mode: ThemeMode, colorScheme?: ColorSchemeName): boolean 
 /**
  * Apply theme to Unistyles runtime
  */
-const applyTheme = (isDark: boolean): void => {
-    setAppTheme(isDark ? 'dark' : 'light');
+const applyTheme = (mode: ThemeMode, isDark: boolean): void => {
+    if (mode === 'sepia') {
+        setAppTheme('sepia');
+    } else {
+        setAppTheme(isDark ? 'dark' : 'light');
+    }
 };
 
 export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((set, get) => ({
@@ -61,7 +65,7 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
                 themeKey: state.themeKey + 1,
             }));
 
-            applyTheme(isDark);
+            applyTheme(mode, isDark);
 
             // Persist preference
             try {
@@ -74,8 +78,10 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
         toggleTheme: () => {
             haptics.selection();
             const current = get().mode;
-            // Cycle: light -> dark -> system -> light
-            const next: ThemeMode = current === 'light' ? 'dark' : current === 'dark' ? 'system' : 'light';
+            // Cycle: light -> dark -> sepia -> system -> light
+            const modes: ThemeMode[] = ['light', 'dark', 'sepia', 'system'];
+            const currentIndex = modes.indexOf(current);
+            const next = modes[(currentIndex + 1) % modes.length];
             get().actions.setMode(next);
         },
 
@@ -91,11 +97,11 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
 
                 const isDark = resolveIsDark(mode);
                 set({ mode, isDark, isLoaded: true, highContrastEnabled });
-                applyTheme(isDark);
+                applyTheme(mode, isDark);
             } catch {
                 const isDark = resolveIsDark('system');
                 set({ isDark, isLoaded: true, highContrastEnabled: false });
-                applyTheme(isDark);
+                applyTheme('system', isDark);
             }
         },
 
@@ -109,7 +115,7 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
                         isDark,
                         themeKey: state.themeKey + 1,
                     }));
-                    applyTheme(isDark);
+                    applyTheme('system', isDark);
                 }
             });
 

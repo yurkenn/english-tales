@@ -1,5 +1,6 @@
-import React from 'react';
-import { View, ViewStyle, StyleProp } from 'react-native';
+import React, { useMemo } from 'react';
+import { View, StyleProp, ViewStyle } from 'react-native';
+import Animated from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { LinearGradient } from 'expo-linear-gradient';
 import { OptimizedImage } from './OptimizedImage';
@@ -24,116 +25,109 @@ export const BookCover: React.FC<BookCoverProps> = ({
     width,
     height,
     borderRadius = 10,
+    placeholder,
     style,
     sharedTransitionTag,
-    placeholder,
     contentFit = 'cover',
     flat = false,
     showPages = false,
 }) => {
     const { theme } = useUnistyles();
-    const finalHeight = height || (width * 3) / 2;
+    const finalHeight = height || width * (3 / 2);
+
+    const imageSource = useMemo(() => {
+        if (typeof source === 'number') return source;
+        return { uri: source.uri };
+    }, [source]);
 
     return (
-        <View style={[styles.container, { width, height: finalHeight }, style]}>
+        <View style={[styles.container(width, finalHeight), style]}>
+            {/* Page Stack Effect */}
             {showPages && (
                 <>
-                    {/* Page stack effect - Bottom layer */}
-                    <View style={[styles.pageLayer, {
-                        bottom: -4,
-                        right: -3,
-                        width: '100%',
-                        height: '100%',
-                        borderRadius,
-                        backgroundColor: (theme as any).colors.backgroundSecondary || '#F0F0F0',
-                        borderWidth: 1,
-                        borderColor: 'rgba(0,0,0,0.05)',
-                    }]} />
-                    {/* Page stack effect - Top layer */}
-                    <View style={[styles.pageLayer, {
-                        bottom: -2,
-                        right: -1.5,
-                        width: '100%',
-                        height: '100%',
-                        borderRadius,
-                        backgroundColor: (theme as any).colors.background || '#FFFFFF',
-                        borderWidth: 1,
-                        borderColor: 'rgba(0,0,0,0.05)',
-                    }]} />
+                    <View style={[styles.pageLayer(borderRadius, 1), { right: -3, bottom: -3, zIndex: -1 }]} />
+                    <View style={[styles.pageLayer(borderRadius, 2), { right: -6, bottom: -6, zIndex: -2 }]} />
                 </>
             )}
 
-            <View style={[styles.innerContainer, { borderRadius }]}>
-                <OptimizedImage
-                    source={source}
-                    placeholder={placeholder}
-                    contentFit={contentFit}
-                    style={StyleSheet.absoluteFill}
-                    sharedTransitionTag={sharedTransitionTag}
-                    width={width}
-                    height={finalHeight}
-                />
-
-                {!flat && (
-                    <>
-                        {/* Spine Shadow Overlay */}
-                        <LinearGradient
-                            colors={['rgba(0,0,0,0.25)', 'rgba(0,0,0,0.05)', 'transparent']}
-                            start={{ x: 0, y: 0.5 }}
-                            end={{ x: 0.1, y: 0.5 }}
-                            style={StyleSheet.absoluteFill}
-                        />
-
-                        {/* Spine Edge Highlight (The 'fold') */}
-                        <View style={styles.spineHighlight} />
-
-                        {/* Gloss/Reflect Overlay */}
-                        <LinearGradient
-                            colors={['rgba(255,255,255,0.05)', 'rgba(255,255,255,0.02)', 'transparent']}
-                            start={{ x: 1, y: 0 }}
-                            end={{ x: 0.5, y: 0.5 }}
-                            style={StyleSheet.absoluteFill}
-                        />
-                    </>
+            <View style={styles.imageContainer(borderRadius)}>
+                {sharedTransitionTag ? (
+                    <Animated.Image
+                        source={imageSource}
+                        style={styles.image}
+                        {...({ sharedTransitionTag } as any)}
+                    />
+                ) : (
+                    <OptimizedImage
+                        source={source}
+                        style={styles.image}
+                        contentFit={contentFit}
+                        placeholder={placeholder}
+                    />
                 )}
 
-                {/* Subtle Inner Border */}
-                <View style={[styles.innerBorder, { borderRadius }]} />
+                {/* Spine Shadow Effect */}
+                {!flat && (
+                    <LinearGradient
+                        colors={['rgba(0,0,0,0.3)', 'rgba(0,0,0,0.1)', 'transparent']}
+                        start={{ x: 0, y: 0.5 }}
+                        end={{ x: 0.15, y: 0.5 }}
+                        style={StyleSheet.absoluteFill}
+                    />
+                )}
+
+                {/* Inner Border Look */}
+                {!flat && <View style={styles.innerBorder(borderRadius)} />}
+
+                {/* Gloss/Highlight Effect */}
+                {!flat && (
+                    <LinearGradient
+                        colors={['rgba(255,255,255,0.12)', 'rgba(255,255,255,0)', 'rgba(255,255,255,0.05)']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        style={styles.glossOverlay}
+                    />
+                )}
             </View>
         </View>
     );
 };
 
-const styles = StyleSheet.create((theme: any) => ({
-    container: {
-        backgroundColor: 'transparent',
-        // Note: Shadows should be on the outer container
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.12,
-        shadowRadius: 8,
-        elevation: 6,
-    },
-    pageLayer: {
+const styles = StyleSheet.create((theme) => ({
+    container: (width: number, height: number) => ({
+        width,
+        height,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 10,
+        ...theme.shadows.md,
+    }),
+    pageLayer: (borderRadius: number, level: number) => ({
         position: 'absolute',
-        zIndex: -1,
-    },
-    innerContainer: {
-        flex: 1,
-        overflow: 'hidden',
-        backgroundColor: theme.colors.background || '#FFFFFF',
-    },
-    spineHighlight: {
-        position: 'absolute',
-        left: 0,
-        top: 0,
-        bottom: 0,
-        width: 1,
-        backgroundColor: 'rgba(255,255,255,0.15)',
-    },
-    innerBorder: {
-        ...StyleSheet.absoluteFillObject,
+        top: level,
+        left: level,
+        borderRadius,
+        backgroundColor: theme.colors.backgroundSecondary,
         borderWidth: 1,
-        borderColor: 'rgba(0,0,0,0.05)',
+        borderColor: theme.colors.borderLight,
+    }),
+    imageContainer: (borderRadius: number) => ({
+        flex: 1,
+        borderRadius,
+        overflow: 'hidden',
+        backgroundColor: theme.colors.surface,
+    }),
+    image: {
+        width: '100%',
+        height: '100%',
+    },
+    innerBorder: (borderRadius: number) => ({
+        ...StyleSheet.absoluteFillObject,
+        borderRadius,
+        borderWidth: 1,
+        borderColor: 'rgba(255,255,255,0.1)',
+    }),
+    glossOverlay: {
+        ...StyleSheet.absoluteFillObject,
+        opacity: 0.5,
     },
 }));
