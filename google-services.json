@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "28104909219",
+    "project_id": "english-tales-77d32",
+    "storage_bucket": "english-tales-77d32.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28104909219:android:d260e093436283f95a7a16",
+        "android_client_info": {
+          "package_name": "com.yurken.englishtales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28104909219-6lu2kadqrbloqsbsr22360bt7tkf4udk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXXrBoyieSPqruJ2w6IBWW0FFADTJ2zzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28104909219-6lu2kadqrbloqsbsr22360bt7tkf4udk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
