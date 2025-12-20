@@ -41,6 +41,10 @@ export const colors = {
     // Overlay
     overlay: 'rgba(0, 0, 0, 0.5)',
     overlayLight: 'rgba(0, 0, 0, 0.3)',
+
+    // Illustration Accents
+    accentOrange: '#EE9D2B',
+    accentBlue: '#4287F5',
 } as const;
 
 export const colorsDark = {
@@ -82,6 +86,10 @@ export const colorsDark = {
     // Overlay
     overlay: 'rgba(0, 0, 0, 0.8)',
     overlayLight: 'rgba(0, 0, 0, 0.6)',
+
+    // Illustration Accents (kept vibrant but accessible)
+    accentOrange: '#F59E0B',
+    accentBlue: '#3B82F6',
 } as const;
 
 export const colorsSepia = {
@@ -123,6 +131,10 @@ export const colorsSepia = {
     // Overlay
     overlay: 'rgba(30, 20, 10, 0.5)',
     overlayLight: 'rgba(30, 20, 10, 0.3)',
+
+    // Illustration Accents (Muted for Sepia)
+    accentOrange: '#BC6C25',
+    accentBlue: '#7F5539',
 } as const;
 
 export const spacing = {

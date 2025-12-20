@@ -4,7 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { useAuthor, useStories } from '@/hooks/useQueries';
+import { useAuthor } from '@/hooks/useQueries';
 import { useAuthorSocial } from '@/hooks/useAuthor';
 import { BookCard, NetworkError, EmptyState, AuthorScreenSkeleton } from '@/components';
 import { urlFor } from '@/services/sanity/client';
@@ -22,7 +22,6 @@ export default function AuthorScreen() {
     const { id } = useLocalSearchParams<{ id: string }>();
 
     const { data: authorData, isLoading: loadingAuthor, error: errorAuthor, refetch: refetchAuthor } = useAuthor(id || '');
-    const { data: storiesData } = useStories();
     const {
         isFollowing,
         followerCount,
@@ -37,17 +36,14 @@ export default function AuthorScreen() {
             name: authorData.name,
             bio: authorData.bio,
             avatar: authorData.image ? urlFor(authorData.image).width(200).url() : null,
-            storyCount: authorData.storyCount || 0,
+            storyCount: authorData.stories?.length || authorData.storyCount || 0,
         };
     }, [authorData]);
 
     const authorStories = useMemo(() => {
-        if (!storiesData || !author) return [];
-        return storiesData
-            .filter((story: any) => story.author?._ref === id || story.author?._id === id)
-            .map(mapSanityStory)
-            .slice(0, 10);
-    }, [storiesData, author, id]);
+        if (!authorData?.stories) return [];
+        return authorData.stories.map(mapSanityStory);
+    }, [authorData]);
 
     if (loadingAuthor) {
         return (

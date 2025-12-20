@@ -13,6 +13,10 @@ import { useRouter } from 'expo-router';
 import { Typography } from '../atoms/Typography';
 import { OptimizedImage } from '../atoms/OptimizedImage';
 import { RatingStars } from '../atoms/RatingStars';
+import { AchievementBadge } from '../atoms/AchievementBadge';
+import { StoryTag } from '../atoms/StoryTag';
+import { CommunityPostHeader } from './CommunityPostHeader';
+import { CommunityPostFooter } from './CommunityPostFooter';
 import { haptics } from '@/utils/haptics';
 import { useTranslation } from 'react-i18next';
 
@@ -97,13 +101,9 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
             ]}
         >
             {isAchievement && (
-                <View style={styles.achievementBadge}>
-                    <Ionicons name="trophy" size={10} color="#FFFFFF" />
-                    <Typography variant="caption" weight="700" style={styles.achievementBadgeText}>
-                        {achievementTitle || t('social.achievement', 'Achievement')}
-                    </Typography>
-                </View>
+                <AchievementBadge title={achievementTitle || t('social.achievement', 'Achievement')} />
             )}
+
             {isReview && (
                 <View style={styles.reviewBadge}>
                     <Ionicons name="star" size={10} color="#FFFFFF" />
@@ -113,24 +113,13 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                 </View>
             )}
 
-            <View style={styles.postHeader}>
-                <Pressable onPress={handleProfilePress} style={styles.avatarContainer}>
-                    <OptimizedImage
-                        source={{ uri: post.userPhoto || '' }}
-                        style={styles.avatar}
-                        placeholder="person-circle"
-                    />
-                </Pressable>
-                <Pressable style={styles.headerInfo} onPress={handleProfilePress}>
-                    <Typography variant="bodyBold">{post.userName}</Typography>
-                    <Typography variant="caption" color={theme.colors.textMuted}>
-                        {postDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                    </Typography>
-                </Pressable>
-                <Pressable onPress={() => { haptics.selection(); onMorePress?.(post.id); }}>
-                    <Ionicons name="ellipsis-horizontal" size={20} color={theme.colors.textMuted} />
-                </Pressable>
-            </View>
+            <CommunityPostHeader
+                userName={post.userName}
+                userPhoto={post.userPhoto}
+                timestamp={postDate}
+                onAvatarPress={handleProfilePress}
+                onMorePress={() => onMorePress?.(post.id)}
+            />
 
             {isReview && rating && (
                 <View style={styles.ratingRow}>
@@ -143,68 +132,24 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
             </Typography>
 
             {storyTitle && (
-                <Pressable
-                    style={styles.storyTag}
+                <StoryTag
+                    title={storyTitle}
                     onPress={() => {
-                        haptics.selection();
                         if (post.metadata?.storyId) router.push(`/story/${post.metadata.storyId}`);
                     }}
-                >
-                    <Ionicons name="book-outline" size={16} color={theme.colors.primary} />
-                    <Typography variant="caption" weight="600" color={theme.colors.primary} style={{ marginLeft: 6 }}>
-                        {storyTitle}
-                    </Typography>
-                </Pressable>
+                />
             )}
 
-            <View style={styles.postFooter}>
-                <Pressable
-                    style={styles.actionButton}
-                    onPress={handleLike}
-                >
-                    <Animated.View style={likeAnimationStyle}>
-                        <Ionicons
-                            name={isAchievement
-                                ? (hasLiked ? "star" : "star-outline")
-                                : (hasLiked ? "heart" : "heart-outline")
-                            }
-                            size={22}
-                            color={hasLiked
-                                ? (isAchievement ? theme.colors.warning : theme.colors.error)
-                                : theme.colors.textMuted
-                            }
-                        />
-                    </Animated.View>
-                    <Typography
-                        variant="caption"
-                        weight="600"
-                        style={{ marginLeft: 6 }}
-                        color={hasLiked
-                            ? (isAchievement ? theme.colors.warning : theme.colors.error)
-                            : theme.colors.textMuted
-                        }
-                    >
-                        {isAchievement
-                            ? (hasLiked ? t('social.congratulated', 'Congratulated') : t('social.congratulate', 'Congratulate'))
-                            : (post.likes || 0)
-                        }
-                        {isAchievement && post.likes > 0 && ` (${post.likes})`}
-                    </Typography>
-                </Pressable>
-
-                <Pressable style={styles.actionButton} onPress={handleReply}>
-                    <Animated.View style={replyAnimationStyle}>
-                        <Ionicons name="chatbubble-outline" size={20} color={theme.colors.textMuted} />
-                    </Animated.View>
-                    <Typography variant="caption" weight="600" color={theme.colors.textMuted} style={{ marginLeft: 6 }}>
-                        {post.replyCount || 0}
-                    </Typography>
-                </Pressable>
-
-                <Pressable style={styles.actionButton} onPress={() => haptics.selection()}>
-                    <Ionicons name="share-outline" size={20} color={theme.colors.textMuted} />
-                </Pressable>
-            </View>
+            <CommunityPostFooter
+                likes={post.likes || 0}
+                replyCount={post.replyCount || 0}
+                hasLiked={hasLiked}
+                isAchievement={isAchievement}
+                onLike={handleLike}
+                onReply={handleReply}
+                likeAnimationStyle={likeAnimationStyle}
+                replyAnimationStyle={replyAnimationStyle}
+            />
         </Animated.View>
     );
 };

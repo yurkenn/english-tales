@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { useToastStore } from '@/store/toastStore';
 import { loginSchema } from '@/lib/validations';
 import { signIn, signInAnonymously, signInWithGoogle } from '@/services/auth';
+import { handleAuthError } from '@/utils/errorHandler';
 
 export default function LoginScreen() {
     const { theme } = useUnistyles();
@@ -39,7 +40,7 @@ export default function LoginScreen() {
         try {
             await signIn(email, password);
         } catch (error: any) {
-            toastActions.error(error.message || t('auth.login.failed', 'Login failed'));
+            handleAuthError(error);
         } finally {
             setLoading(false);
         }
@@ -50,7 +51,7 @@ export default function LoginScreen() {
         try {
             await signInAnonymously();
         } catch (error: any) {
-            toastActions.error(t('auth.login.guestFailed', 'Could not sign in as guest'));
+            handleAuthError(error, { fallbackMessage: t('auth.login.guestFailed', 'Could not sign in as guest') });
         } finally {
             setLoading(false);
         }
@@ -61,8 +62,8 @@ export default function LoginScreen() {
         try {
             await signInWithGoogle();
         } catch (error: any) {
-            if (error.message !== 'Sign in was cancelled') {
-                toastActions.error(error.message || 'Google sign-in failed');
+            if (error.code !== 'auth/popup-closed-by-user' && error.code !== 'auth/cancelled-popup-request') {
+                handleAuthError(error);
             }
         } finally {
             setLoading(false);

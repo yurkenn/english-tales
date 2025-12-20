@@ -1,7 +1,6 @@
 export { FeaturedCard } from './FeaturedCard';
 export { ReadingCalendar } from './ReadingCalendar';
 export { StatsGrid } from './StatsGrid';
-export { BookCard } from './BookCard';
 export { ContinueReadingCard } from './ContinueReadingCard';
 export { ProfileCard } from './ProfileCard';
 export { PortableTextRenderer } from './PortableTextRenderer';
@@ -43,5 +42,9 @@ export { WriteReviewModal } from './WriteReviewModal';
 export { HomeHeader } from './HomeHeader';
 export { CreatePostModal } from './CreatePostModal';
 export { ReplyModal } from './ReplyModal';
+export { CommunityPostCard } from './CommunityPostCard';
+export { PostActionSheet } from './PostActionSheet';
+export { CommunityPostHeader } from './CommunityPostHeader';
+export { CommunityPostFooter } from './CommunityPostFooter';
 export * from './readingTypes';
 export * from './settingsTypes';

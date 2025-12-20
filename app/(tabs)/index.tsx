@@ -1,6 +1,6 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react';
-import { View, ScrollView, FlatList, RefreshControl } from 'react-native';
-import Animated, { FadeInDown } from 'react-native-reanimated';
+import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
+import { View, ScrollView, FlatList, RefreshControl, LayoutAnimation, UIManager, Platform } from 'react-native';
+import Animated, { FadeInDown, FadeIn, FadeOut, Layout } from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -16,6 +16,8 @@ import {
     HomeHeader,
     TrendingStoryCard,
     CommunityBuzz,
+    ActiveFilterBadge,
+    FilteredEmptyState,
 } from '@/components';
 import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries';
 import { Story, CommunityPost } from '@/types';
@@ -29,6 +31,16 @@ import { communityService } from '@/services/communityService';
 import { socialService } from '@/services/socialService';
 import { useTranslation } from 'react-i18next';
 import { useRecommendations } from '@/hooks/useRecommendations';
+
+// Enable LayoutAnimation on Android (Only for Old Architecture)
+const isFabricEnabled = !!(global as any).nativeFabricUIManager;
+if (Platform.OS === 'android' && !isFabricEnabled && UIManager.setLayoutAnimationEnabledExperimental) {
+    try {
+        UIManager.setLayoutAnimationEnabledExperimental(true);
+    } catch (e) {
+        // Suppress runtime errors
+    }
+}
 
 const DIFFICULTY_MAP: Record<number, string> = {
     1: 'beginner',
@@ -44,6 +56,7 @@ export default function HomeScreen() {
     const { user } = useAuthStore();
     const [selectedGenre, setSelectedGenre] = useState(0);
     const [refreshing, setRefreshing] = useState(false);
+    const scrollViewRef = useRef<ScrollView>(null);
 
     const GENRES = [
         t('home.categories.forYou'),
@@ -84,6 +97,23 @@ export default function HomeScreen() {
     const allStories = useMemo(() => storiesData?.map(mapSanityStory) || [], [storiesData]);
 
     const recommendedStoriesList = useRecommendations(allStories, libraryItems, progressMap);
+
+    // Calculate counts for each filter
+    const filterCounts = useMemo((): Record<number, number> => {
+        const beginnerCount = allStories.filter((s: Story) => s.difficulty === 'beginner').length;
+        const intermediateCount = allStories.filter((s: Story) => s.difficulty === 'intermediate').length;
+        const advancedCount = allStories.filter((s: Story) => s.difficulty === 'advanced').length;
+        const followingCount = allStories.filter((s: Story) => followingIds.includes(s.authorId || '')).length;
+
+        return {
+            0: recommendedStoriesList.length, // For You
+            1: followingCount, // Following
+            2: beginnerCount, // Easy
+            3: intermediateCount, // Medium
+            4: advancedCount, // Hard
+            5: 0, // Authors (navigates away)
+        };
+    }, [allStories, followingIds, recommendedStoriesList]);
 
     const filteredStories = useMemo(() => {
         if (selectedGenre === 0) return recommendedStoriesList;
@@ -131,9 +161,22 @@ export default function HomeScreen() {
         if (index === 5) {
             router.push('/authors');
         } else {
+            // Animate layout change
+            LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
             setSelectedGenre(index);
+
+            // Auto-scroll to content area after filter change
+            setTimeout(() => {
+                scrollViewRef.current?.scrollTo({ y: 0, animated: true });
+            }, 100);
         }
     }, [router]);
+
+    const handleClearFilter = useCallback(() => {
+        haptics.selection();
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        setSelectedGenre(0);
+    }, []);
 
     const fetchBuzz = useCallback(async () => {
         try {
@@ -197,6 +240,9 @@ export default function HomeScreen() {
         );
     }
 
+    const isFilterActive = selectedGenre !== 0;
+    const hasNoResults = filteredStories.length === 0;
+
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             <HomeHeader
@@ -218,13 +264,24 @@ export default function HomeScreen() {
                             key={genre}
                             label={genre}
                             isSelected={selectedGenre === index}
+                            count={index !== 5 ? filterCounts[index] : undefined}
                             onPress={() => handleGenrePress(index)}
                         />
                     ))}
                 </ScrollView>
             </View>
 
+            {/* Active Filter Badge */}
+            {isFilterActive && (
+                <ActiveFilterBadge
+                    filterName={GENRES[selectedGenre]}
+                    resultCount={filteredStories.length}
+                    onClear={handleClearFilter}
+                />
+            )}
+
             <ScrollView
+                ref={scrollViewRef}
                 style={styles.content}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
@@ -237,68 +294,78 @@ export default function HomeScreen() {
                     />
                 }
             >
-                <CommunityBuzz
-                    activities={buzz}
-                    onPressActivity={(activity) => router.push(`/user/${activity.userId}`)}
-                />
+                {/* Show empty state when filter has no results */}
+                {hasNoResults ? (
+                    <FilteredEmptyState
+                        filterName={GENRES[selectedGenre]}
+                        onClearFilter={handleClearFilter}
+                    />
+                ) : (
+                    <>
+                        <CommunityBuzz
+                            activities={buzz}
+                            onPressActivity={(activity) => router.push(`/user/${activity.userId}`)}
+                        />
 
-                {continueReading && continueReading.progress && (
-                    <View style={styles.section}>
-                        <SectionHeader title={t('home.continueReading')} onActionPress={() => router.push('/library')} />
-                        <View style={styles.sectionContent}>
-                            <ContinueReadingCard
-                                story={continueReading.story}
-                                progress={continueReading.progress}
-                                onPress={() => handleStoryPress(continueReading.storyId)}
-                                onPlayPress={() => handleReadPress(continueReading.storyId)}
-                            />
-                        </View>
-                    </View>
-                )}
-
-                {featuredStory && (
-                    <View style={styles.section}>
-                        <SectionHeader title={t('home.dailyPick')} />
-                        <View style={styles.sectionContent}>
-                            <FeaturedCard story={featuredStory} onPress={() => handleStoryPress(featuredStory.id)} />
-                        </View>
-                    </View>
-                )}
-
-                <View style={styles.section}>
-                    <SectionHeader title={t('home.recommended')} onActionPress={() => router.push('/stories')} />
-                    <FlatList
-                        data={recommendedStories}
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={styles.carouselContent}
-                        keyExtractor={(item) => item.id}
-                        renderItem={({ item, index }) => (
-                            <Animated.View entering={FadeInDown.delay(index * 100).duration(500).springify()}>
-                                <BookCard story={item} showRank={index + 1} onPress={() => handleStoryPress(item.id)} />
+                        {continueReading && continueReading.progress && (
+                            <Animated.View entering={FadeIn.duration(300)} style={styles.section}>
+                                <SectionHeader title={t('home.continueReading')} onActionPress={() => router.push('/library')} />
+                                <View style={styles.sectionContent}>
+                                    <ContinueReadingCard
+                                        story={continueReading.story}
+                                        progress={continueReading.progress}
+                                        onPress={() => handleStoryPress(continueReading.storyId)}
+                                        onPlayPress={() => handleReadPress(continueReading.storyId)}
+                                    />
+                                </View>
                             </Animated.View>
                         )}
-                        ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
-                    />
-                </View>
 
-                <View style={styles.section}>
-                    <SectionHeader title={t('home.trending')} onActionPress={() => router.push('/stories?sort=trending')} />
-                    <View style={styles.trendingContainer}>
-                        {trendingList.map((story: Story, index: number) => (
-                            <Animated.View
-                                key={story.id}
-                                entering={FadeInDown.delay(400 + index * 100).duration(500).springify()}
-                            >
-                                <TrendingStoryCard
-                                    story={story}
-                                    rank={index + 1}
-                                    onPress={() => handleStoryPress(story.id)}
-                                />
+                        {featuredStory && !isFilterActive && (
+                            <Animated.View entering={FadeIn.duration(300)} style={styles.section}>
+                                <SectionHeader title={t('home.dailyPick')} />
+                                <View style={styles.sectionContent}>
+                                    <FeaturedCard story={featuredStory} onPress={() => handleStoryPress(featuredStory.id)} />
+                                </View>
                             </Animated.View>
-                        ))}
-                    </View>
-                </View>
+                        )}
+
+                        <View style={styles.section}>
+                            <SectionHeader title={t('home.recommended')} onActionPress={() => router.push('/stories')} />
+                            <FlatList
+                                data={recommendedStories}
+                                horizontal
+                                showsHorizontalScrollIndicator={false}
+                                contentContainerStyle={styles.carouselContent}
+                                keyExtractor={(item) => item.id}
+                                renderItem={({ item, index }) => (
+                                    <Animated.View entering={FadeInDown.delay(index * 100).duration(500).springify()}>
+                                        <BookCard story={item} showRank={index + 1} onPress={() => handleStoryPress(item.id)} />
+                                    </Animated.View>
+                                )}
+                                ItemSeparatorComponent={() => <View style={{ width: 16 }} />}
+                            />
+                        </View>
+
+                        <View style={styles.section}>
+                            <SectionHeader title={t('home.trending')} onActionPress={() => router.push('/stories?sort=trending')} />
+                            <View style={styles.trendingContainer}>
+                                {trendingList.map((story: Story, index: number) => (
+                                    <Animated.View
+                                        key={story.id}
+                                        entering={FadeInDown.delay(400 + index * 100).duration(500).springify()}
+                                    >
+                                        <TrendingStoryCard
+                                            story={story}
+                                            rank={index + 1}
+                                            onPress={() => handleStoryPress(story.id)}
+                                        />
+                                    </Animated.View>
+                                ))}
+                            </View>
+                        </View>
+                    </>
+                )}
             </ScrollView>
         </View>
     );
@@ -318,19 +385,19 @@ const styles = StyleSheet.create((theme) => ({
     },
     chipsContainer: {
         paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.sm, // Reduced from md
+        paddingVertical: theme.spacing.sm,
         gap: theme.spacing.sm,
     },
     content: {
         flex: 1,
     },
     contentContainer: {
-        flexGrow: 0,
+        flexGrow: 1,
         paddingBottom: theme.spacing.xxxxl,
-        gap: theme.spacing.lg, // Reduced from xl (16px vs 20px)
+        gap: theme.spacing.lg,
     },
     section: {
-        gap: theme.spacing.sm, // Reduced from md (8px vs 12px)
+        gap: theme.spacing.sm,
     },
     sectionContent: {
         paddingHorizontal: theme.spacing.lg,

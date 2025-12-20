@@ -9,6 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { useToastStore } from '@/store/toastStore';
 import { signupSchema } from '@/lib/validations';
 import { signUp, signInWithGoogle } from '@/services/auth';
+import { handleAuthError } from '@/utils/errorHandler';
 
 export default function SignupScreen() {
     const { theme } = useUnistyles();
@@ -53,7 +54,7 @@ export default function SignupScreen() {
         try {
             await signUp(email, password, name);
         } catch (error: any) {
-            toastActions.error(error.message || t('auth.signup.failed', 'Signup failed'));
+            handleAuthError(error, { fallbackMessage: t('auth.signup.failed', 'Signup failed') });
         } finally {
             setLoading(false);
         }
@@ -66,8 +67,8 @@ export default function SignupScreen() {
         try {
             await signInWithGoogle();
         } catch (error: any) {
-            if (error.message !== 'Sign in was cancelled') {
-                toastActions.error(error.message || 'Google sign-in failed');
+            if (error.code !== 'auth/popup-closed-by-user' && error.code !== 'auth/cancelled-popup-request') {
+                handleAuthError(error);
             }
         } finally {
             setLoading(false);

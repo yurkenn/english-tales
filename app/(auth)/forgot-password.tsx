@@ -8,6 +8,7 @@ import { FormField } from '@/components';
 import { useTranslation } from 'react-i18next';
 import { useToastStore } from '@/store/toastStore';
 import { sendPasswordResetEmail } from '@/services/auth';
+import { handleAuthError } from '@/utils/errorHandler';
 import { z } from 'zod';
 
 const emailSchema = z.string().min(1, 'Email is required').email('Please enter a valid email');
@@ -39,12 +40,7 @@ export default function ForgotPasswordScreen() {
             setSuccess(true);
             toastActions.success('Password reset email sent!');
         } catch (err: unknown) {
-            const message = err instanceof Error ? err.message : 'Failed to send reset email';
-            if (message.includes('user-not-found')) {
-                setError('No account found with this email');
-            } else {
-                toastActions.error(message);
-            }
+            handleAuthError(err);
         } finally {
             setLoading(false);
         }

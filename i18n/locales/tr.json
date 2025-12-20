@@ -94,7 +94,11 @@
             "medium": "Orta",
             "hard": "Zor",
             "authors": "Yazarlar"
-        }
+        },
+        "showing": "Gösterilen",
+        "clearFilter": "Filtreyi Temizle",
+        "noResultsTitle": "Hikaye bulunamadı",
+        "noResultsDesc": "\"{{filter}}\" filtresiyle eşleşen hikaye yok. Farklı bir kategori deneyin."
     },
     "discover": {
         "searchPlaceholder": "Hikaye, yazar ara...",
@@ -121,7 +125,10 @@
         "emptyMessage": "Yazarlar eklendiğinde burada görünecek.",
         "noStoriesTitle": "Henüz hikaye yok",
         "noStoriesMessage": "Bu yazar henüz bir hikaye yayınlamadı",
-        "notFound": "Yazar bulunamadı"
+        "notFound": "Yazar bulunamadı",
+        "discoverSubtitle": "Hikayelerimizin arkasındaki sesleri keşfedin",
+        "searchPlaceholder": "Yazar ara...",
+        "noSearchResults": "Aramanızla eşleşen yazar bulunamadı"
     },
     "library": {
         "empty": "Kitaplığınız boş",

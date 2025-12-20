@@ -94,7 +94,11 @@
             "medium": "Medium",
             "hard": "Hard",
             "authors": "Authors"
-        }
+        },
+        "showing": "Showing",
+        "clearFilter": "Clear Filter",
+        "noResultsTitle": "No stories found",
+        "noResultsDesc": "No stories match the \"{{filter}}\" filter. Try a different category."
     },
     "discover": {
         "searchPlaceholder": "Search stories, authors...",
@@ -121,7 +125,10 @@
         "emptyMessage": "Authors will appear here once added.",
         "noStoriesTitle": "No stories yet",
         "noStoriesMessage": "This author hasn't published any stories yet",
-        "notFound": "Author not found"
+        "notFound": "Author not found",
+        "discoverSubtitle": "Discover the voices behind our stories",
+        "searchPlaceholder": "Search authors...",
+        "noSearchResults": "No authors match your search"
     },
     "library": {
         "empty": "Your library is empty",

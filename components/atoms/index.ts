@@ -11,3 +11,7 @@ export { Typography } from './Typography';
 export type { TypographyVariant } from './Typography';
 export { SegmentedPicker } from './SegmentedPicker';
 export { BookCover } from './BookCover';
+export { ActiveFilterBadge } from './ActiveFilterBadge';
+export { FilteredEmptyState } from './FilteredEmptyState';
+export { AchievementBadge } from './AchievementBadge';
+export { StoryTag } from './StoryTag';

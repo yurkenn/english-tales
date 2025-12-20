@@ -101,15 +101,18 @@ export const queries = {
   }`,
 
   // Authors
-  allAuthors: `*[_type == "author"] | order(name asc) {
+  allAuthors: `*[_type == "author"] {
     _id,
     name,
     slug,
     image,
     bio,
     nationality,
-    isFeatured
-  }`,
+    birthYear,
+    deathYear,
+    isFeatured,
+    "storyCount": count(*[_type == "story" && author._ref == ^._id])
+  } | order(storyCount desc, name asc)`,
 
   featuredAuthor: `*[_type == "author" && isFeatured == true][0] {
     _id,
@@ -118,7 +121,7 @@ export const queries = {
     image,
     bio,
     nationality,
-    "storyCount": count(*[_type == "story" && references(^._id)])
+    "storyCount": count(*[_type == "story" && author._ref == ^._id])
   }`,
 
   authorById: `*[_type == "author" && _id == $id][0] {
@@ -130,14 +133,19 @@ export const queries = {
     nationality,
     birthYear,
     deathYear,
-    "stories": *[_type == "story" && references(^._id)] | order(publishedAt desc) {
+    "storyCount": count(*[_type == "story" && author._ref == ^._id]),
+    "stories": *[_type == "story" && author._ref == ^._id] | order(publishedAt desc) {
       _id,
       title,
       slug,
+      description,
       coverImage,
       "coverImageLqip": coverImage.asset->metadata.lqip,
       difficulty,
-      estimatedReadTime
+      estimatedReadTime,
+      wordCount,
+      publishedAt,
+      "author": { "name": ^.name, "_id": ^._id }
     }
   }`,
 
@@ -149,7 +157,7 @@ export const queries = {
     description,
     icon,
     color,
-    "storyCount": count(*[_type == "story" && references(^._id)])
+    "storyCount": count(*[_type == "story" && author._ref == ^._id])
   }`,
 
   // Reviews

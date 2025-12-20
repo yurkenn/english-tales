@@ -1,11 +1,12 @@
-import React, { useMemo, useCallback } from 'react';
-import { View, Text, FlatList, Pressable, Image } from 'react-native';
+import React, { useMemo, useCallback, useState } from 'react';
+import { View, Text, FlatList, Pressable, Image, TextInput } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
-import { NetworkError, EmptyState } from '@/components';
-import { useAuthors } from '@/hooks/useQueries';
+import Animated, { FadeInDown } from 'react-native-reanimated';
+import { NetworkError, EmptyState, SectionHeader, AuthorSpotlight } from '@/components';
+import { useAuthors, useFeaturedAuthor } from '@/hooks/useQueries';
 import { haptics } from '@/utils/haptics';
 import { urlFor } from '@/services/sanity';
 import { useTranslation } from 'react-i18next';
@@ -27,58 +28,131 @@ export default function AuthorsScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const [searchQuery, setSearchQuery] = useState('');
 
     const { data: authorsData, isLoading, isError, refetch } = useAuthors();
+    const { data: featuredAuthorData } = useFeaturedAuthor();
 
     const authors = useMemo(() => {
-        return authorsData || [];
-    }, [authorsData]);
+        const list = [...(authorsData || [])];
+
+        // Sort by story count descending, then by name ascending
+        list.sort((a, b) => {
+            const countA = a.storyCount || 0;
+            const countB = b.storyCount || 0;
+            if (countB !== countA) return countB - countA;
+            return a.name.localeCompare(b.name);
+        });
+
+        if (!searchQuery.trim()) return list;
+        return list.filter((a: Author) =>
+            a.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            a.nationality?.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    }, [authorsData, searchQuery]);
+
+    const featuredAuthor = useMemo(() => {
+        if (!featuredAuthorData) return null;
+        return {
+            id: featuredAuthorData._id,
+            name: featuredAuthorData.name,
+            bio: featuredAuthorData.bio || '',
+            imageUrl: featuredAuthorData.image ? urlFor(featuredAuthorData.image).width(200).url() : '',
+        };
+    }, [featuredAuthorData]);
 
     const handleAuthorPress = useCallback((authorId: string) => {
         haptics.light();
         router.push(`/author/${authorId}`);
     }, [router]);
 
-    const renderItem = useCallback(({ item }: { item: Author }) => {
+    const renderItem = useCallback(({ item, index }: { item: Author; index: number }) => {
         const imageUrl = item.image ? urlFor(item.image).width(120).height(120).url() : null;
         const lifespan = item.birthYear
             ? `${item.birthYear}${item.deathYear ? ` - ${item.deathYear}` : ''}`
             : null;
 
         return (
-            <Pressable
-                style={({ pressed }) => [
-                    styles.authorCard,
-                    pressed && styles.authorCardPressed,
-                ]}
-                onPress={() => handleAuthorPress(item._id)}
-            >
-                {imageUrl ? (
-                    <Image source={{ uri: imageUrl }} style={styles.authorImage} />
-                ) : (
-                    <View style={[styles.authorImage, styles.authorImagePlaceholder]}>
-                        <Ionicons name="person" size={32} color={theme.colors.textMuted} />
-                    </View>
-                )}
-                <View style={styles.authorInfo}>
-                    <Text style={styles.authorName}>{item.name}</Text>
-                    {lifespan && (
-                        <Text style={styles.authorLifespan}>{lifespan}</Text>
+            <Animated.View entering={FadeInDown.delay(index * 50).duration(400).springify()}>
+                <Pressable
+                    style={({ pressed }) => [
+                        styles.authorCard,
+                        pressed && styles.authorCardPressed,
+                    ]}
+                    onPress={() => handleAuthorPress(item._id)}
+                >
+                    {imageUrl ? (
+                        <Image source={{ uri: imageUrl }} style={styles.authorImage} />
+                    ) : (
+                        <View style={[styles.authorImage, styles.authorImagePlaceholder]}>
+                            <Ionicons name="person" size={28} color={theme.colors.textMuted} />
+                        </View>
                     )}
-                    {item.nationality && (
-                        <Text style={styles.authorNationality}>{item.nationality}</Text>
-                    )}
-                    <View style={styles.storyCountBadge}>
-                        <Ionicons name="book-outline" size={12} color={theme.colors.primary} />
-                        <Text style={styles.storyCountText}>
-                            {item.storyCount || 0} {(item.storyCount || 0) === 1 ? t('authors.storyCountSingular') : t('authors.storyCount', { count: item.storyCount || 0 })}
-                        </Text>
+                    <View style={styles.authorInfo}>
+                        <Text style={styles.authorName}>{item.name}</Text>
+                        {lifespan && (
+                            <Text style={styles.authorLifespan}>{lifespan}</Text>
+                        )}
+                        {item.nationality && (
+                            <Text style={styles.authorNationality}>{item.nationality}</Text>
+                        )}
+                        <View style={styles.storyCountBadge}>
+                            <Ionicons name="book-outline" size={12} color={theme.colors.primary} />
+                            <Text style={styles.storyCountText}>
+                                {item.storyCount || 0} {(item.storyCount || 0) === 1 ? 'story' : 'stories'}
+                            </Text>
+                        </View>
                     </View>
-                </View>
-                <Ionicons name="chevron-forward" size={20} color={theme.colors.textMuted} />
-            </Pressable>
+                    <Ionicons name="chevron-forward" size={20} color={theme.colors.textMuted} />
+                </Pressable>
+            </Animated.View>
         );
     }, [theme, handleAuthorPress]);
+
+    const ListHeader = useMemo(() => (
+        <View style={styles.listHeader}>
+            {/* Search Bar */}
+            <View style={styles.searchContainer}>
+                <View style={styles.searchInputWrapper}>
+                    <Ionicons name="search" size={18} color={theme.colors.textMuted} />
+                    <TextInput
+                        style={styles.searchInput}
+                        placeholder={t('authors.searchPlaceholder', 'Search authors...')}
+                        placeholderTextColor={theme.colors.textMuted}
+                        value={searchQuery}
+                        onChangeText={setSearchQuery}
+                    />
+                    {searchQuery.length > 0 && (
+                        <Pressable onPress={() => setSearchQuery('')}>
+                            <Ionicons name="close-circle" size={18} color={theme.colors.textMuted} />
+                        </Pressable>
+                    )}
+                </View>
+            </View>
+
+            {/* Featured Author */}
+            {featuredAuthor && !searchQuery && (
+                <View style={styles.section}>
+                    <SectionHeader title={t('discover.authorSpotlight', 'Featured Author')} />
+                    <View style={styles.sectionContent}>
+                        <AuthorSpotlight
+                            id={featuredAuthor.id}
+                            name={featuredAuthor.name}
+                            bio={featuredAuthor.bio}
+                            imageUrl={featuredAuthor.imageUrl}
+                            onPress={() => handleAuthorPress(featuredAuthor.id)}
+                        />
+                    </View>
+                </View>
+            )}
+
+            {/* Section Title */}
+            <View style={styles.sectionTitleRow}>
+                <Text style={styles.sectionTitle}>{t('authors.title', 'All Authors')}</Text>
+                <Text style={styles.authorCount}>{authors.length}</Text>
+            </View>
+        </View>
+    ), [featuredAuthor, searchQuery, authors.length, handleAuthorPress, t, theme]);
 
     if (isError) {
         return (
@@ -110,12 +184,13 @@ export default function AuthorsScreen() {
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                ListHeaderComponent={ListHeader}
                 ListEmptyComponent={
                     isLoading ? null : (
                         <EmptyState
                             icon="person-outline"
                             title={t('authors.emptyTitle')}
-                            message={t('authors.emptyMessage')}
+                            message={searchQuery ? t('authors.noSearchResults', 'No authors match your search') : t('authors.emptyMessage')}
                         />
                     )
                 }
@@ -150,6 +225,54 @@ const styles = StyleSheet.create((theme) => ({
     placeholder: {
         width: 40,
     },
+    listHeader: {
+        gap: theme.spacing.lg,
+        marginBottom: theme.spacing.lg,
+    },
+    searchContainer: {
+        paddingHorizontal: theme.spacing.lg,
+    },
+    searchInputWrapper: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: theme.colors.surface,
+        borderRadius: theme.radius.xl,
+        paddingHorizontal: theme.spacing.md,
+        height: 44,
+        gap: theme.spacing.sm,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+    },
+    searchInput: {
+        flex: 1,
+        fontSize: theme.typography.size.md,
+        color: theme.colors.text,
+    },
+    section: {
+        gap: theme.spacing.md,
+    },
+    sectionContent: {
+        paddingHorizontal: theme.spacing.lg,
+    },
+    sectionTitleRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: theme.spacing.lg,
+    },
+    sectionTitle: {
+        fontSize: theme.typography.size.lg,
+        fontWeight: theme.typography.weight.bold,
+        color: theme.colors.text,
+    },
+    authorCount: {
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textSecondary,
+        backgroundColor: theme.colors.backgroundSecondary,
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: 2,
+        borderRadius: theme.radius.full,
+    },
     listContent: {
         paddingHorizontal: theme.spacing.lg,
         paddingBottom: theme.spacing.xxxl,
@@ -161,17 +284,19 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.xl,
         padding: theme.spacing.md,
         gap: theme.spacing.md,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
     },
     authorCardPressed: {
-        opacity: 0.9,
-        transform: [{ scale: 0.98 }],
+        backgroundColor: theme.colors.surfaceElevated,
+        transform: [{ scale: 0.99 }],
     },
     authorImage: {
-        width: 64,
-        height: 64,
+        width: 56,
+        height: 56,
         borderRadius: theme.radius.full,
-        backgroundColor: theme.colors.borderLight,
+        backgroundColor: theme.colors.backgroundSecondary,
     },
     authorImagePlaceholder: {
         alignItems: 'center',
@@ -182,7 +307,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: 2,
     },
     authorName: {
-        fontSize: theme.typography.size.lg,
+        fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
     },
@@ -191,7 +316,7 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
     },
     authorNationality: {
-        fontSize: theme.typography.size.sm,
+        fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
     },
     storyCountBadge: {

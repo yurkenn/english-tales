@@ -83,7 +83,7 @@ export const useAuthors = () => {
     return useQuery({
         queryKey: queryKeys.authors.all,
         queryFn: () => sanityClient.fetch(queries.allAuthors),
-        staleTime: 24 * 60 * 60 * 1000, // 24 hours
+        staleTime: 60 * 60 * 1000, // 1 hour
     });
 };
 
@@ -100,7 +100,7 @@ export const useAuthor = (id: string) => {
         queryKey: queryKeys.authors.byId(id),
         queryFn: () => sanityClient.fetch(queries.authorById, { id }),
         enabled: !!id,
-        staleTime: 24 * 60 * 60 * 1000, // 24 hours
+        staleTime: 60 * 60 * 1000, // 1 hour
     });
 };
 

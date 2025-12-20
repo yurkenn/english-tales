@@ -119,9 +119,13 @@ export const handleValidationError = (error: unknown): string => {
 /**
  * Handle authentication errors
  */
-export const handleAuthError = (error: unknown): string => {
+export const handleAuthError = (
+    error: unknown,
+    options: Omit<ErrorHandlerOptions, 'defaultMessage'> & { fallbackMessage?: string } = {}
+): string => {
     return handleFirebaseError(error, {
         fallbackMessage: 'Authentication failed. Please try again.',
+        ...options,
     });
 };
 
