@@ -31,6 +31,8 @@ export interface UserProfile {
         website?: string;
         github?: string;
     };
+    joinedAt?: any;
+    updatedAt?: any;
 }
 
 // Story types

@@ -15,3 +15,4 @@ export { ActiveFilterBadge } from './ActiveFilterBadge';
 export { FilteredEmptyState } from './FilteredEmptyState';
 export { AchievementBadge } from './AchievementBadge';
 export { StoryTag } from './StoryTag';
+export { Input } from './Input';

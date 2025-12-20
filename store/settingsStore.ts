@@ -37,6 +37,7 @@ const defaultSettings: Settings = {
     notificationsEnabled: true,
     dailyGoalMinutes: 15,
     language: getInitialLanguage(),
+    proficiencyLevel: 'intermediate',
 };
 
 // Initial state

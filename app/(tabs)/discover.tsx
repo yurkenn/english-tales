@@ -244,7 +244,7 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
     },
     contentContainer: {
-        paddingBottom: theme.spacing.xxxxl,
+        paddingBottom: 120,
         gap: theme.spacing.xxxl,
     },
     section: {

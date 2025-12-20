@@ -363,7 +363,7 @@ const styles = StyleSheet.create((theme) => ({
     listContent: {
         paddingHorizontal: theme.spacing.lg,
         paddingTop: theme.spacing.sm,
-        paddingBottom: theme.spacing.xxxxl,
+        paddingBottom: 120,
     },
     segmentedControl: {
         flexDirection: 'row',

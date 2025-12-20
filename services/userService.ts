@@ -24,12 +24,16 @@ class UserService {
 
     async syncProfile(user: AppUser): Promise<Result<void>> {
         try {
+            const userDoc = await getDoc(doc(db, this.COLLECTION, user.id));
+            const existingData = userDoc.exists() ? userDoc.data() as UserProfile : null;
+
             const profile: UserProfile = {
                 id: user.id,
                 displayName: user.displayName,
                 photoURL: user.photoURL,
                 emailSearchField: user.email ? user.email.toLowerCase() : null,
                 displayNameSearchField: user.displayName ? user.displayName.toLowerCase() : null,
+                joinedAt: existingData?.joinedAt || serverTimestamp(),
                 lastSeenAt: serverTimestamp(),
                 isAnonymous: user.isAnonymous,
             };
@@ -115,7 +119,11 @@ class UserService {
             });
 
             return { success: true, data: items };
-        } catch (error) {
+        } catch (error: any) {
+            // Handle permission denied gracefully - usually means library is private
+            if (error?.code === 'firestore/permission-denied') {
+                return { success: true, data: [] };
+            }
             console.error('Error getting user library:', error);
             return { success: false, error: 'Failed' };
         }

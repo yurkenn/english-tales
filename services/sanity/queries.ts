@@ -157,7 +157,7 @@ export const queries = {
     description,
     icon,
     color,
-    "storyCount": count(*[_type == "story" && author._ref == ^._id])
+    "storyCount": count(*[_type == "story" && ^._id in categories[]._ref])
   }`,
 
   // Reviews

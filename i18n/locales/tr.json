@@ -281,6 +281,7 @@
         "activityFinished": "{{title}} hikayesini bitirdi",
         "activityEarned": "{{title}} başarısını kazandı",
         "activityStarted": "{{title}} hikayesini okumaya başladı",
+        "activityReviewed": "{{title}} hikayesini değerlendirdi",
         "shareSomething": "İlerlemeni paylaş...",
         "reply": "Yanıtla",
         "congratulate": "Tebrik Et",

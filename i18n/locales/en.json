@@ -281,6 +281,7 @@
         "activityFinished": "finished {{title}}",
         "activityEarned": "earned {{title}}",
         "activityStarted": "started reading {{title}}",
+        "activityReviewed": "reviewed {{title}}",
         "shareSomething": "Share your progress...",
         "reply": "Reply",
         "congratulate": "Congratulate",

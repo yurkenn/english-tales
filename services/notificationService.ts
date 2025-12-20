@@ -25,7 +25,7 @@ class NotificationService {
 
     async registerForPushNotificationsAsync() {
         if (!Device.isDevice) {
-            console.log('Must use physical device for Push Notifications');
+            // console.log('Must use physical device for Push Notifications');
             return null;
         }
 

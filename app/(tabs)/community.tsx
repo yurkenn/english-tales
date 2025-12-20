@@ -163,7 +163,7 @@ export default function CommunityTab() {
             {/* Header with Parallax */}
             <Animated.View style={[
                 styles.header,
-                { paddingTop: insets.top + 10 },
+                { paddingTop: insets.top },
                 headerAnimatedStyle
             ]}>
                 <Animated.View style={titleAnimatedStyle}>
@@ -188,7 +188,7 @@ export default function CommunityTab() {
 
             <Animated.ScrollView
                 style={styles.content}
-                contentContainerStyle={[styles.scrollContent, { paddingBottom: insets.bottom + 100 }]}
+                contentContainerStyle={[styles.scrollContent, { paddingBottom: 120 }]}
                 showsVerticalScrollIndicator={false}
                 onScroll={scrollHandler}
                 scrollEventThrottle={16}

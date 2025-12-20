@@ -41,6 +41,7 @@
     "@tanstack/react-query-persist-client": "^5.90.14",
     "date-fns": "^4.1.0",
     "expo": "^54.0.0",
+    "expo-blur": "~15.0.8",
     "expo-build-properties": "~1.0.10",
     "expo-constants": "~18.0.9",
     "expo-dev-client": "~6.0.13",

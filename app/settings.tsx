@@ -1,14 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, Linking } from 'react-native';
+import { View, Text, ScrollView, Linking, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import BottomSheet from '@gorhom/bottom-sheet';
+import { Ionicons } from '@expo/vector-icons';
+import Animated, { FadeIn } from 'react-native-reanimated';
+
 import { useAuthStore } from '@/store/authStore';
 import { useThemeStore } from '@/store/themeStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useDownloadStore, formatBytes } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
+import { useSettingsStore } from '@/store/settingsStore';
 import { useTranslation } from 'react-i18next';
 import {
     ConfirmationDialog,
@@ -17,14 +21,12 @@ import {
     SettingsHeader,
     SettingSection,
 } from '@/components';
+import { Typography, OptimizedImage } from '@/components/atoms';
 import { haptics } from '@/utils/haptics';
 import { sendPasswordResetEmail } from '@/services/auth';
 import { notificationService } from '@/services/notificationService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import i18n from '@/i18n';
-import { crashlyticsService } from '@/services/firebase/crashlytics';
-
-import { useSettingsStore } from '@/store/settingsStore';
 
 const LANGUAGES = [
     { code: 'en', label: 'English' },
@@ -41,23 +43,18 @@ export default function SettingsScreen() {
     const { theme } = useUnistyles();
 
     const { user, signOut } = useAuthStore();
-    const { mode: themeMode, highContrastEnabled, actions: themeActions } = useThemeStore();
+    const { mode: themeMode, actions: themeActions } = useThemeStore();
     const { settings, actions: settingsActions } = useSettingsStore();
     const { fontSize, dyslexicFontEnabled, actions: prefsActions } = useReadingPrefsStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
-    const toastActions = useToastStore((state) => state.actions);
-
-    const downloadSize = downloadActions.getTotalDownloadSize();
-    const downloadCount = Object.keys(downloads).length;
+    const toast = useToastStore();
 
     const [cacheSize, setCacheSize] = useState(t('common.loading'));
     const [notificationsEnabled, setNotificationsEnabled] = useState(settings.notificationsEnabled);
 
     // Dialog refs
     const signOutDialogRef = useRef<BottomSheet>(null);
-    const deleteAccountDialogRef = useRef<BottomSheet>(null);
     const clearCacheDialogRef = useRef<BottomSheet>(null);
-    const clearDownloadsDialogRef = useRef<BottomSheet>(null);
     const changePasswordDialogRef = useRef<BottomSheet>(null);
     const languageDialogRef = useRef<BottomSheet>(null);
 
@@ -71,14 +68,20 @@ export default function SettingsScreen() {
             }
         };
         calculateCache();
+        settingsActions.loadSettings();
     }, []);
 
+    const downloadSize = downloadActions.getTotalDownloadSize();
+    const downloadCount = Object.keys(downloads).length;
     const themeModeLabel = t(`appearance.${themeMode}`);
     const currentLanguage = LANGUAGES.find(l => l.code === i18n.language.split('-')[0])?.label || 'English';
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
-            <SettingsHeader title={t('tabs.profile')} onBackPress={() => router.back()} />
+            <SettingsHeader
+                title={t('settings.title', 'Settings')}
+                onBackPress={() => router.back()}
+            />
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
                 <SettingSection title={t('settings.sections.account')}>
@@ -94,7 +97,7 @@ export default function SettingsScreen() {
                         onPress={() => {
                             haptics.selection();
                             if (!user?.email) {
-                                toastActions.error('No email associated with this account.');
+                                toast.actions.error('No email associated with this account.');
                                 return;
                             }
                             changePasswordDialogRef.current?.expand();
@@ -127,7 +130,7 @@ export default function SettingsScreen() {
                         value={`${fontSize}pt`}
                         onPress={() => {
                             haptics.selection();
-                            toastActions.info(t('settings.preferences.fontSizeInstruction'));
+                            toast.actions.info(t('settings.preferences.fontSizeInstruction'));
                         }}
                     />
                     <SettingToggle
@@ -144,18 +147,6 @@ export default function SettingsScreen() {
                             }
                         }}
                     />
-                    <SettingToggle
-                        icon="text-outline"
-                        label={t('settings.preferences.dyslexicFont', 'Dyslexic Font')}
-                        value={dyslexicFontEnabled}
-                        onValueChange={prefsActions.setDyslexicFontEnabled}
-                    />
-                    <SettingToggle
-                        icon="contrast-outline"
-                        label={t('settings.preferences.highContrast', 'High Contrast')}
-                        value={highContrastEnabled}
-                        onValueChange={themeActions.setHighContrastEnabled}
-                    />
                 </SettingSection>
 
                 <SettingSection title={t('settings.sections.storage')}>
@@ -163,22 +154,6 @@ export default function SettingsScreen() {
                         icon="cloud-download-outline"
                         label={t('settings.storage.downloads')}
                         value={downloadCount > 0 ? t('settings.storage.storiesCount', { count: downloadCount }) + ` (${formatBytes(downloadSize)})` : t('settings.storage.none')}
-                        hasChevron={false}
-                    />
-                    {downloadCount > 0 && (
-                        <SettingItem
-                            icon="cloud-offline-outline"
-                            label={t('settings.storage.clearDownloads')}
-                            onPress={() => {
-                                haptics.selection();
-                                clearDownloadsDialogRef.current?.expand();
-                            }}
-                        />
-                    )}
-                    <SettingItem
-                        icon="folder-outline"
-                        label={t('settings.storage.cache')}
-                        value={cacheSize}
                         hasChevron={false}
                     />
                     <SettingItem
@@ -191,40 +166,6 @@ export default function SettingsScreen() {
                     />
                 </SettingSection>
 
-                <SettingSection title={t('settings.sections.about')}>
-                    <SettingItem
-                        icon="star-outline"
-                        label={t('settings.about.rateApp')}
-                        onPress={() => {
-                            haptics.light();
-                            toastActions.info(t('settings.about.rateAppMessage'));
-                        }}
-                    />
-                    <SettingItem
-                        icon="shield-outline"
-                        label={t('settings.about.privacyPolicy')}
-                        onPress={() => {
-                            haptics.light();
-                            Linking.openURL('https://englishtales.app/privacy');
-                        }}
-                    />
-                    <SettingItem
-                        icon="document-text-outline"
-                        label={t('settings.about.termsOfService')}
-                        onPress={() => {
-                            haptics.light();
-                            Linking.openURL('https://englishtales.app/terms');
-                        }}
-                    />
-                    <SettingItem
-                        icon="information-circle-outline"
-                        label={t('settings.about.version')}
-                        value="1.0.0"
-                        hasChevron={false}
-                    />
-                    {/* Test crash button removed - crash() not available in modular API */}
-                </SettingSection>
-
                 <SettingSection title={t('settings.sections.dangerZone')} isDanger>
                     <SettingItem
                         icon="log-out-outline"
@@ -235,21 +176,15 @@ export default function SettingsScreen() {
                             signOutDialogRef.current?.expand();
                         }}
                     />
-                    <SettingItem
-                        icon="trash-bin-outline"
-                        label={t('settings.dangerZone.deleteAccount')}
-                        isDestructive
-                        onPress={() => {
-                            haptics.selection();
-                            deleteAccountDialogRef.current?.expand();
-                        }}
-                    />
                 </SettingSection>
 
-                <Text style={styles.footer}>{t('settings.footer')}</Text>
+                <View style={styles.footerContainer}>
+                    <Typography variant="caption" color={theme.colors.textMuted}>
+                        English Tales v1.0.0
+                    </Typography>
+                </View>
             </ScrollView>
 
-            {/* Confirmation Dialogs */}
             <ConfirmationDialog
                 ref={signOutDialogRef}
                 title={t('settings.dialogs.signOut.title')}
@@ -263,22 +198,6 @@ export default function SettingsScreen() {
             />
 
             <ConfirmationDialog
-                ref={deleteAccountDialogRef}
-                title={t('settings.dialogs.deleteAccount.title')}
-                message={t('settings.dialogs.deleteAccount.message')}
-                confirmLabel={t('common.delete')}
-                cancelLabel={t('common.cancel')}
-                destructive
-                icon="trash-bin-outline"
-                onConfirm={() => {
-                    haptics.error();
-                    deleteAccountDialogRef.current?.close();
-                    toastActions.info(t('settings.dialogs.deleteAccount.instruction'));
-                }}
-                onCancel={() => deleteAccountDialogRef.current?.close()}
-            />
-
-            <ConfirmationDialog
                 ref={clearCacheDialogRef}
                 title={t('settings.dialogs.clearCache.title')}
                 message={t('settings.dialogs.clearCache.message')}
@@ -289,26 +208,9 @@ export default function SettingsScreen() {
                     haptics.success();
                     setCacheSize('Cleared');
                     clearCacheDialogRef.current?.close();
-                    toastActions.success(t('settings.dialogs.clearCache.success'));
+                    toast.actions.success(t('settings.dialogs.clearCache.success'));
                 }}
                 onCancel={() => clearCacheDialogRef.current?.close()}
-            />
-
-            <ConfirmationDialog
-                ref={clearDownloadsDialogRef}
-                title={t('settings.dialogs.clearDownloads.title')}
-                message={t('settings.dialogs.clearDownloads.message', { count: downloadCount })}
-                confirmLabel={t('common.delete')}
-                cancelLabel={t('common.cancel')}
-                destructive
-                icon="cloud-offline-outline"
-                onConfirm={async () => {
-                    await downloadActions.clearAllDownloads();
-                    haptics.success();
-                    clearDownloadsDialogRef.current?.close();
-                    toastActions.success(t('settings.dialogs.clearDownloads.success'));
-                }}
-                onCancel={() => clearDownloadsDialogRef.current?.close()}
             />
 
             <ConfirmationDialog
@@ -323,17 +225,16 @@ export default function SettingsScreen() {
                         await sendPasswordResetEmail(user!.email!);
                         haptics.success();
                         changePasswordDialogRef.current?.close();
-                        toastActions.success(t('settings.dialogs.changePassword.success'));
+                        toast.actions.success(t('settings.dialogs.changePassword.success'));
                     } catch {
                         haptics.error();
                         changePasswordDialogRef.current?.close();
-                        toastActions.error(t('settings.dialogs.changePassword.error'));
+                        toast.actions.error(t('settings.dialogs.changePassword.error'));
                     }
                 }}
                 onCancel={() => changePasswordDialogRef.current?.close()}
             />
 
-            {/* Language Selection Sheet */}
             <BottomSheet
                 ref={languageDialogRef}
                 index={-1}
@@ -370,12 +271,38 @@ const styles = StyleSheet.create((theme) => ({
     content: {
         paddingBottom: 40,
     },
-    footer: {
-        textAlign: 'center',
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textMuted,
+    profileCardWrapper: {
+        paddingHorizontal: theme.spacing.lg,
+        paddingTop: theme.spacing.lg,
+        paddingBottom: theme.spacing.sm,
+    },
+    profileCard: {
+        backgroundColor: theme.colors.surface,
+        borderRadius: 12,
+        padding: 12,
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+    },
+    avatar: {
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: theme.colors.surfaceElevated,
+    },
+    profileText: {
+        flex: 1,
+        marginLeft: 14,
+    },
+    profileName: {
+        fontSize: 18,
+        fontWeight: '600',
+    },
+    footerContainer: {
         marginTop: theme.spacing.xxl,
         marginBottom: theme.spacing.xl,
+        alignItems: 'center',
     },
     sheetContent: {
         flex: 1,

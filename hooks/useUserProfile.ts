@@ -36,10 +36,14 @@ export const useUserProfile = (profileId: string) => {
             }
 
             // 2. Fetch Stats (Followers, Following, Streak)
+            // Only fetch library if it's the current user and not anonymous
+            const isSelf = currentUser?.id === profileId;
+            const canFetchLibrary = isSelf && !currentUser?.isAnonymous;
+
             const [followersCount, followingCount, libRes] = await Promise.all([
                 socialService.getFollowersCount(profileId),
                 socialService.getFollowingCount(profileId),
-                userService.getUserLibrary(profileId)
+                canFetchLibrary ? userService.getUserLibrary(profileId) : Promise.resolve({ success: true, data: [] as LibraryItem[] })
             ]);
 
             // Calculate streak from library items if available

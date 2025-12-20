@@ -180,7 +180,6 @@ export default function HomeScreen() {
 
     const fetchBuzz = useCallback(async () => {
         try {
-            await communityService.seedCommunityActivities();
             const result = await communityService.getBuzzActivities(10);
             if (result.success) {
                 const mapped = result.data.map((post: CommunityPost) => {
@@ -393,7 +392,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     contentContainer: {
         flexGrow: 1,
-        paddingBottom: theme.spacing.xxxxl,
+        paddingBottom: 120,
         gap: theme.spacing.lg,
     },
     section: {

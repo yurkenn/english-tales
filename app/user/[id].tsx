@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     View,
     ScrollView,
@@ -6,23 +6,36 @@ import {
     RefreshControl,
     ActivityIndicator,
     Dimensions,
+    Linking,
 } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import Animated, {
+    useSharedValue,
+    useAnimatedScrollHandler,
+    useAnimatedStyle,
+    interpolate,
+    Extrapolation,
+    FadeInDown
+} from 'react-native-reanimated';
+
 import { Typography } from '@/components/atoms/Typography';
-import { OptimizedImage } from '@/components/atoms/OptimizedImage';
-import { ReviewCard, StoryGridCard } from '@/components/molecules';
-import { CommunityPostCard } from '@/components/organisms';
+import { StoryGridCard } from '@/components/molecules/StoryGridCard';
+import { ReviewCard } from '@/components/molecules/ReviewCard';
+import { CommunityPostCard } from '@/components/organisms/CommunityPostCard';
+import { ProfileHeader } from '@/components/organisms/ProfileHeader';
+import { ProfileTabs, ProfileTabType } from '@/components/molecules/ProfileTabs';
+
 import { useUserProfile } from '@/hooks/useUserProfile';
-import { StoryReview, UserFavorite } from '@/types';
 import { useTranslation } from 'react-i18next';
 import { haptics } from '@/utils/haptics';
-import { useLibraryStore } from '@/store/libraryStore';
+import { useToastStore } from '@/store/toastStore';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
-const COLUMN_WIDTH = (SCREEN_WIDTH - 48) / 2;
+
+
 
 export default function UserProfileScreen() {
     const { id } = useLocalSearchParams<{ id: string }>();
@@ -30,12 +43,12 @@ export default function UserProfileScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const toast = useToastStore();
 
     const {
         profile,
         posts,
         reviews,
-        favorites,
         stats,
         relationship,
         loading,
@@ -43,12 +56,39 @@ export default function UserProfileScreen() {
         refresh,
         handleFollow,
         handleUnfollow,
-        recentlyReadStory,
         libraryItems,
     } = useUserProfile(id!);
 
-    const { actions: libraryActions } = useLibraryStore();
-    const [activeTab, setActiveTab] = React.useState<'posts' | 'reviews' | 'collections'>('posts');
+    const [activeTab, setActiveTab] = useState<ProfileTabType>('posts');
+
+    // Animation Refs
+    const scrollY = useSharedValue(0);
+    const scrollHandler = useAnimatedScrollHandler((event) => {
+        scrollY.value = event.contentOffset.y;
+    });
+
+    // Sticky Header Style
+    const stickyHeaderStyle = useAnimatedStyle(() => {
+        const opacity = interpolate(
+            scrollY.value,
+            [150, 250],
+            [0, 1],
+            Extrapolation.CLAMP
+        );
+        return { opacity };
+    });
+
+    const backButtonStyle = useAnimatedStyle(() => {
+        const backgroundColor = scrollY.value > 150
+            ? 'transparent'
+            : 'rgba(0,0,0,0.3)';
+        return { backgroundColor };
+    });
+
+    const handleSocialPress = (type: string, url: string) => {
+        haptics.light();
+        Linking.openURL(url).catch(() => toast.actions.error('Could not open link'));
+    };
 
     if (loading && !profile) {
         return (
@@ -69,284 +109,164 @@ export default function UserProfileScreen() {
         );
     }
 
-    const renderActionButton = () => {
-        if (relationship === 'self') return null;
-
-        const isFollowing = relationship === 'following';
-
-        return (
-            <Pressable
-                style={[
-                    styles.actionButton,
-                    isFollowing && styles.actionButtonOutline,
-                    actionLoading && { opacity: 0.7 }
-                ]}
-                onPress={() => { !actionLoading && (isFollowing ? handleUnfollow() : handleFollow()); }}
-                disabled={actionLoading}
-            >
-                {actionLoading ? (
-                    <ActivityIndicator size="small" color={isFollowing ? theme.colors.primary : theme.colors.textInverse} />
-                ) : (
-                    <>
-                        <Ionicons
-                            name={isFollowing ? 'person-remove-outline' : 'person-add'}
-                            size={18}
-                            color={isFollowing ? theme.colors.primary : theme.colors.textInverse}
-                        />
-                        <Typography
-                            variant="bodyBold"
-                            color={isFollowing ? theme.colors.primary : theme.colors.textInverse}
-                            style={{ marginLeft: 8 }}
-                        >
-                            {isFollowing ? t('social.following', 'Following') : t('social.follow', 'Follow')}
-                        </Typography>
-                    </>
-                )}
-            </Pressable>
-        );
-    };
-
-    const renderSocialLinks = () => {
-        if (!profile.socialLinks) return null;
-
-        const links = profile.socialLinks;
-        const availableLinks = [
-            { icon: 'logo-instagram', url: links.instagram, key: 'instagram' },
-            { icon: 'logo-twitter', url: links.twitter, key: 'twitter' },
-            { icon: 'globe-outline', url: links.website, key: 'website' },
-            { icon: 'logo-github', url: links.github, key: 'github' },
-        ].filter(l => l.url);
-
-        if (availableLinks.length === 0) return null;
-
-        return (
-            <View style={styles.socialRow}>
-                {availableLinks.map(link => (
-                    <Pressable
-                        key={link.key}
-                        style={styles.socialIcon}
-                        onPress={() => {
-                            haptics.light();
-                            // In a real app, use Linking.openURL
-                            console.log(`Opening ${link.url}`);
-                        }}
-                    >
-                        <Ionicons name={link.icon as any} size={20} color={theme.colors.textSecondary} />
-                    </Pressable>
-                ))}
-            </View>
-        );
+    const renderTabContent = () => {
+        switch (activeTab) {
+            case 'posts':
+                return (
+                    <Animated.View entering={FadeInDown.duration(400)} style={styles.tabContent}>
+                        {posts.length === 0 ? (
+                            <View style={styles.emptyContainer}>
+                                <Ionicons name="chatbubble-ellipses-outline" size={64} color={theme.colors.border} />
+                                <Typography color={theme.colors.textMuted} style={styles.emptyText}>
+                                    No posts yet.
+                                </Typography>
+                            </View>
+                        ) : (
+                            posts.map((post, index) => (
+                                <Animated.View key={post.id} entering={FadeInDown.delay(index * 100).duration(400)}>
+                                    <CommunityPostCard
+                                        post={post}
+                                        currentUserId={""}
+                                        onLike={() => { }}
+                                        onReply={() => { }}
+                                    />
+                                </Animated.View>
+                            ))
+                        )}
+                    </Animated.View>
+                );
+            case 'reviews':
+                return (
+                    <Animated.View entering={FadeInDown.duration(400)} style={styles.tabContent}>
+                        {reviews.length === 0 ? (
+                            <View style={styles.emptyContainer}>
+                                <Ionicons name="star-outline" size={64} color={theme.colors.border} />
+                                <Typography color={theme.colors.textMuted} style={styles.emptyText}>
+                                    No reviews yet.
+                                </Typography>
+                            </View>
+                        ) : (
+                            reviews.map((review, index) => (
+                                <Animated.View key={review.id} entering={FadeInDown.delay(index * 100).duration(400)} style={styles.reviewItem}>
+                                    <ReviewCard
+                                        userName={review.userName}
+                                        userAvatar={review.userPhoto}
+                                        rating={review.rating}
+                                        text={review.comment}
+                                    />
+                                    <View style={styles.reviewStoryTag}>
+                                        <Ionicons name="book-outline" size={14} color={theme.colors.primary} />
+                                        <Typography variant="bodyBold" style={{ fontSize: 13, marginLeft: 6 }}>
+                                            {review.storyTitle || 'English Tale'}
+                                        </Typography>
+                                    </View>
+                                </Animated.View>
+                            ))
+                        )}
+                    </Animated.View>
+                );
+            case 'library':
+                return (
+                    <Animated.View entering={FadeInDown.duration(400)} style={styles.tabContent}>
+                        {libraryItems.length === 0 ? (
+                            <View style={styles.emptyContainer}>
+                                <Ionicons name="library-outline" size={64} color={theme.colors.border} />
+                                <Typography color={theme.colors.textMuted} style={styles.emptyText}>
+                                    The library is private or empty.
+                                </Typography>
+                            </View>
+                        ) : (
+                            <View style={styles.grid}>
+                                {libraryItems.map((item, index) => (
+                                    <Animated.View key={item.storyId} entering={FadeInDown.delay(index * 50).duration(400)}>
+                                        <StoryGridCard
+                                            story={item.story}
+                                            isInLibrary={false}
+                                            onPress={() => router.push(`/story/${item.storyId}`)}
+                                        />
+                                    </Animated.View>
+                                ))}
+                            </View>
+                        )}
+                    </Animated.View>
+                );
+            case 'more':
+                return (
+                    <Animated.View entering={FadeInDown.duration(400)} style={styles.tabContent}>
+                        <View style={styles.emptyContainer}>
+                            <Ionicons name="information-circle-outline" size={64} color={theme.colors.border} />
+                            <Typography color={theme.colors.textMuted} style={styles.emptyText}>
+                                More info is currently private.
+                            </Typography>
+                        </View>
+                    </Animated.View>
+                );
+            default:
+                return null;
+        }
     };
 
     return (
         <View style={styles.container}>
-            <View style={[styles.header, { paddingTop: insets.top }]}>
-                <Pressable onPress={() => router.back()} style={styles.backButton}>
-                    <Ionicons name="chevron-back" size={28} color={theme.colors.text} />
-                </Pressable>
+            {/* Secondary Sticky Header */}
+            <Animated.View style={[
+                styles.stickyHeader,
+                { paddingTop: Math.max(insets.top, 16) },
+                stickyHeaderStyle
+            ]}>
+                <Typography variant="bodyBold" style={styles.stickyTitle}>
+                    {profile.displayName}
+                </Typography>
+            </Animated.View>
+
+            {/* Top Navigation Bar */}
+            <View style={[styles.navBar, { paddingTop: Math.max(insets.top, 16) }]}>
+                <Animated.View style={[styles.backButtonWrapper, backButtonStyle]}>
+                    <Pressable
+                        style={styles.navAction}
+                        onPress={() => router.back()}
+                    >
+                        <Ionicons name="chevron-back" size={24} color={scrollY.value > 150 ? theme.colors.text : "#FFF"} />
+                    </Pressable>
+                </Animated.View>
             </View>
 
-            <ScrollView
+            <Animated.ScrollView
+                onScroll={scrollHandler}
+                scrollEventThrottle={16}
                 showsVerticalScrollIndicator={false}
+                stickyHeaderIndices={[1]}
                 refreshControl={
                     <RefreshControl refreshing={loading} onRefresh={refresh} tintColor={theme.colors.primary} />
                 }
             >
-                <View style={styles.profileInfo}>
-                    <View style={styles.avatarContainer}>
-                        <OptimizedImage
-                            source={{ uri: profile.photoURL || '' }}
-                            style={styles.avatar}
-                            placeholder="person-circle"
-                        />
-                    </View>
+                <ProfileHeader
+                    profile={{
+                        ...profile,
+                        followersCount: stats.followers,
+                        followingCount: stats.following,
+                        streak: stats.streak
+                    }}
+                    relationship={relationship}
+                    onFollowPress={() => { relationship === 'following' ? handleUnfollow() : handleFollow(); }}
+                    onSocialPress={handleSocialPress}
+                    actionLoading={actionLoading}
+                    scrollY={scrollY}
+                />
 
-                    <Typography variant="h2" style={styles.displayName}>
-                        {profile.displayName || 'Anonymous'}
-                    </Typography>
-
-                    {profile.isAnonymous && (
-                        <View style={styles.guestBadge}>
-                            <Typography variant="caption" color={theme.colors.textMuted}>Guest User</Typography>
-                        </View>
-                    )}
-
-                    <View style={styles.statsRow}>
-                        <View style={styles.statBox}>
-                            <Typography variant="title">{posts.length}</Typography>
-                            <Typography variant="caption" color={theme.colors.textMuted}>Posts</Typography>
-                        </View>
-                        <View style={[styles.statBox, styles.statDivider]}>
-                            <Typography variant="title">{stats.followers}</Typography>
-                            <Typography variant="caption" color={theme.colors.textMuted}>Followers</Typography>
-                        </View>
-                        <View style={[styles.statBox, styles.statDivider]}>
-                            <Typography variant="title">{stats.following}</Typography>
-                            <Typography variant="caption" color={theme.colors.textMuted}>Following</Typography>
-                        </View>
-                        <View style={styles.statBox}>
-                            <Typography variant="title">🔥 {stats.streak}</Typography>
-                            <Typography variant="caption" color={theme.colors.textMuted}>Streak</Typography>
-                        </View>
-                    </View>
-
-                    {profile.bio && (
-                        <Typography variant="body" color={theme.colors.textSecondary} style={styles.bio}>
-                            {profile.bio}
-                        </Typography>
-                    )}
-
-                    {renderSocialLinks()}
-
-                    {recentlyReadStory && (
-                        <View style={styles.readingStatus}>
-                            <Ionicons name="book-outline" size={16} color={theme.colors.primary} />
-                            <Typography variant="body" style={{ marginLeft: 8 }}>
-                                {t('social.reading', 'Currently Reading')}: <Typography variant="bodyBold">{recentlyReadStory.title}</Typography>
-                            </Typography>
-                        </View>
-                    )}
-
-                    {renderActionButton()}
+                <View style={{ backgroundColor: theme.colors.background }}>
+                    <ProfileTabs
+                        activeTab={activeTab}
+                        onTabChange={setActiveTab}
+                        counts={{
+                            posts: posts.length,
+                            library: libraryItems.length
+                        }}
+                    />
                 </View>
 
-                <View style={styles.tabsContainer}>
-                    <Pressable
-                        style={[styles.tab, activeTab === 'posts' && styles.activeTab]}
-                        onPress={() => { haptics.selection(); setActiveTab('posts'); }}
-                    >
-                        <Ionicons
-                            name="apps"
-                            size={20}
-                            color={activeTab === 'posts' ? theme.colors.primary : theme.colors.textMuted}
-                        />
-                        <Typography
-                            variant="caption"
-                            color={activeTab === 'posts' ? theme.colors.primary : theme.colors.textMuted}
-                            style={styles.tabText}
-                        >
-                            Posts
-                        </Typography>
-                    </Pressable>
-                    <Pressable
-                        style={[styles.tab, activeTab === 'reviews' && styles.activeTab]}
-                        onPress={() => { haptics.selection(); setActiveTab('reviews'); }}
-                    >
-                        <Ionicons
-                            name="star"
-                            size={20}
-                            color={activeTab === 'reviews' ? theme.colors.primary : theme.colors.textMuted}
-                        />
-                        <Typography
-                            variant="caption"
-                            color={activeTab === 'reviews' ? theme.colors.primary : theme.colors.textMuted}
-                            style={styles.tabText}
-                        >
-                            Reviews
-                        </Typography>
-                    </Pressable>
-                    <Pressable
-                        style={[styles.tab, activeTab === 'collections' && styles.activeTab]}
-                        onPress={() => { haptics.selection(); setActiveTab('collections'); }}
-                    >
-                        <Ionicons
-                            name="heart"
-                            size={20}
-                            color={activeTab === 'collections' ? theme.colors.primary : theme.colors.textMuted}
-                        />
-                        <Typography
-                            variant="caption"
-                            color={activeTab === 'collections' ? theme.colors.primary : theme.colors.textMuted}
-                            style={styles.tabText}
-                        >
-                            Favorites
-                        </Typography>
-                    </Pressable>
-                </View>
-
-                <View style={styles.contentSection}>
-                    {activeTab === 'posts' && (
-                        <View style={styles.postsList}>
-                            {posts.length === 0 ? (
-                                <View style={styles.emptyFeed}>
-                                    <Typography color={theme.colors.textMuted}>No posts yet.</Typography>
-                                </View>
-                            ) : (
-                                posts.map(post => (
-                                    <CommunityPostCard
-                                        key={post.id}
-                                        post={post}
-                                        currentUserId={id}
-                                        onLike={() => { }}
-                                        onReply={() => { }}
-                                    />
-                                ))
-                            )}
-                        </View>
-                    )}
-
-                    {activeTab === 'reviews' && (
-                        <View style={styles.reviewsList}>
-                            {reviews.length === 0 ? (
-                                <View style={styles.emptyFeed}>
-                                    <Typography color={theme.colors.textMuted}>No reviews yet.</Typography>
-                                </View>
-                            ) : (
-                                reviews.map(review => (
-                                    <View key={review.id} style={styles.reviewItem}>
-                                        <ReviewCard
-                                            userName={review.userName}
-                                            userAvatar={review.userPhoto}
-                                            rating={review.rating}
-                                            text={review.comment}
-                                        />
-                                        <View style={styles.reviewStoryTag}>
-                                            <Ionicons name="book-outline" size={14} color={theme.colors.primary} />
-                                            <Typography variant="bodyBold" style={{ fontSize: 13, marginLeft: 6 }}>
-                                                {review.storyTitle || 'English Tale'}
-                                            </Typography>
-                                        </View>
-                                    </View>
-                                ))
-                            )}
-                        </View>
-                    )}
-
-                    {activeTab === 'collections' && (
-                        <View style={styles.collectionsGrid}>
-                            {favorites.length === 0 ? (
-                                <View style={styles.emptyFeed}>
-                                    <Typography color={theme.colors.textMuted}>No favorite stories yet.</Typography>
-                                </View>
-                            ) : (
-                                <View style={styles.grid}>
-                                    {favorites.map(fav => {
-                                        // Construct a partial Story object for the card
-                                        const mockStory: any = {
-                                            id: fav.storyId,
-                                            title: fav.storyTitle,
-                                            coverImage: fav.storyCover,
-                                            author: 'Author', // Placeholder
-                                            difficulty: 'beginner',
-                                            estimatedReadTime: 5,
-                                        };
-                                        const isInLibrary = libraryItems.some(item => item.storyId === fav.storyId);
-
-                                        return (
-                                            <StoryGridCard
-                                                key={fav.storyId}
-                                                story={mockStory}
-                                                isInLibrary={isInLibrary}
-                                                onPress={() => router.push(`/story/${fav.storyId}`)}
-                                            />
-                                        );
-                                    })}
-                                </View>
-                            )}
-                        </View>
-                    )}
-                </View>
-            </ScrollView>
+                {renderTabContent()}
+            </Animated.ScrollView>
         </View>
     );
 }
@@ -356,119 +276,72 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         backgroundColor: theme.colors.background,
     },
-    header: {
+    navBar: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 20,
+        paddingHorizontal: theme.spacing.lg,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: theme.spacing.lg,
-        paddingBottom: theme.spacing.sm,
+        height: 100,
     },
-    backButton: {
-        width: 40,
-        height: 40,
-        borderRadius: 20,
-        backgroundColor: theme.colors.borderLight,
+    backButtonWrapper: {
+        width: 44,
+        height: 44,
+        borderRadius: 22,
         alignItems: 'center',
         justifyContent: 'center',
     },
-    profileInfo: {
-        alignItems: 'center',
-        paddingHorizontal: theme.spacing.xl,
-        paddingBottom: theme.spacing.xl,
-    },
-    avatarContainer: {
-        padding: 4,
-        borderRadius: 60,
-        borderWidth: 2,
-        borderColor: theme.colors.primary,
-        marginBottom: theme.spacing.md,
-    },
-    avatar: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
-    },
-    displayName: {
-        fontSize: 24,
-        fontWeight: '800',
-        marginBottom: 4,
-    },
-    guestBadge: {
-        backgroundColor: theme.colors.borderLight,
-        paddingHorizontal: 12,
-        paddingVertical: 4,
-        borderRadius: 12,
-        marginBottom: theme.spacing.md,
-    },
-    statsRow: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+    navAction: {
         width: '100%',
-        marginTop: theme.spacing.md,
-        backgroundColor: theme.colors.surface,
-        padding: theme.spacing.lg,
-        borderRadius: 16,
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    stickyHeader: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 15,
+        height: 100,
+        backgroundColor: theme.colors.background,
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.borderLight,
+        alignItems: 'center',
+        justifyContent: 'center',
         ...theme.shadows.sm,
     },
-    statBox: {
-        flex: 1,
-        alignItems: 'center',
+    stickyTitle: {
+        fontSize: 17,
     },
-    statDivider: {
-        borderLeftWidth: 1,
-        borderColor: theme.colors.borderLight,
+    tabContent: {
+        paddingTop: theme.spacing.md,
+        paddingBottom: 40,
     },
-    actionButton: {
-        flexDirection: 'row',
+    emptyContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: theme.colors.primary,
-        paddingHorizontal: 32,
-        paddingVertical: 12,
-        borderRadius: 25,
-        marginTop: theme.spacing.xl,
-        width: '100%',
-        ...theme.shadows.md,
+        paddingVertical: 100,
+        paddingHorizontal: 40,
     },
-    actionButtonOutline: {
-        backgroundColor: theme.colors.surface,
-        borderWidth: 1,
-        borderColor: theme.colors.primary,
+    emptyIllustration: {
+        width: 200,
+        height: 200,
+        resizeMode: 'contain',
+        marginBottom: 20,
     },
-    readingStatus: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: theme.colors.surface,
-        paddingHorizontal: 16,
-        paddingVertical: 10,
-        borderRadius: 12,
-        marginHorizontal: theme.spacing.xl,
-        marginTop: theme.spacing.lg,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        alignSelf: 'center',
-    },
-    bio: {
+    emptyText: {
         textAlign: 'center',
-        marginTop: theme.spacing.sm,
-        paddingHorizontal: theme.spacing.md,
+        fontSize: 16,
     },
-    socialRow: {
+    grid: {
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: theme.spacing.md,
-        gap: theme.spacing.md,
-    },
-    socialIcon: {
-        width: 36,
-        height: 36,
-        borderRadius: 18,
-        backgroundColor: theme.colors.surface,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
+        flexWrap: 'wrap',
+        paddingHorizontal: theme.spacing.lg,
+        gap: 16,
     },
     center: {
         flex: 1,
@@ -476,63 +349,19 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         backgroundColor: theme.colors.background,
     },
-    tabsContainer: {
-        flexDirection: 'row',
-        paddingHorizontal: theme.spacing.lg,
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.borderLight,
-        backgroundColor: theme.colors.background,
-    },
-    tab: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 14,
-        gap: 6,
-    },
-    activeTab: {
-        borderBottomWidth: 2,
-        borderBottomColor: theme.colors.primary,
-    },
-    tabText: {
-        fontSize: 12,
-        fontWeight: '600',
-    },
-    contentSection: {
-        flex: 1,
-        paddingBottom: 40,
-    },
-    postsList: {
-        paddingTop: 10,
-    },
-    reviewsList: {
-        padding: theme.spacing.lg,
-        gap: 20,
-    },
     reviewItem: {
+        paddingHorizontal: theme.spacing.lg,
+        marginBottom: 20,
         gap: 8,
     },
     reviewStoryTag: {
         flexDirection: 'row',
         alignItems: 'center',
         alignSelf: 'flex-start',
-        backgroundColor: theme.colors.surface,
+        backgroundColor: theme.colors.surfaceElevated,
         paddingHorizontal: 12,
         paddingVertical: 6,
         borderRadius: 8,
         marginLeft: 4,
-    },
-    collectionsGrid: {
-        padding: 16,
-    },
-    grid: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: 16,
-    },
-    emptyFeed: {
-        alignItems: 'center',
-        paddingTop: 60,
     },
 }));

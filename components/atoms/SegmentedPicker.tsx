@@ -1,7 +1,6 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
+import { View, Pressable, Text } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
-import { Typography } from './Typography';
 import { haptics } from '@/utils/haptics';
 
 interface SegmentedPickerProps<T extends string> {
@@ -21,53 +20,58 @@ export const SegmentedPicker = <T extends string>({
 
     return (
         <View style={[styles.container, style]}>
-            <View style={styles.background}>
-                {options.map((option) => (
+            {options.map((option) => {
+                const isActive = selectedValue === option.value;
+                return (
                     <Pressable
                         key={option.value}
                         style={[
                             styles.segment,
-                            selectedValue === option.value && styles.segmentActive,
+                            isActive && [styles.segmentActive, { backgroundColor: theme.colors.primary, borderColor: theme.colors.primary }],
                         ]}
                         onPress={() => {
-                            if (selectedValue !== option.value) {
+                            if (!isActive) {
                                 haptics.selection();
                                 onValueChange(option.value);
                             }
                         }}
                     >
-                        <Typography
-                            variant="body"
-                            color={selectedValue === option.value ? theme.colors.text : theme.colors.textMuted}
-                            style={{ fontWeight: selectedValue === option.value ? '600' : '400' }}
+                        <Text
+                            style={[
+                                styles.segmentText,
+                                { color: isActive ? '#FFFFFF' : theme.colors.textSecondary }
+                            ]}
                         >
                             {option.label}
-                        </Typography>
+                        </Text>
                     </Pressable>
-                ))}
-            </View>
+                );
+            })}
         </View>
     );
 };
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        paddingVertical: theme.spacing.sm,
-    },
-    background: {
         flexDirection: 'row',
-        backgroundColor: theme.colors.borderLight,
-        borderRadius: 14,
-        padding: 4,
+        gap: theme.spacing.sm,
     },
     segment: {
         flex: 1,
         paddingVertical: 10,
         alignItems: 'center',
-        borderRadius: 10,
+        justifyContent: 'center',
+        borderRadius: 12,
+        backgroundColor: theme.colors.surface,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        ...theme.shadows.sm,
     },
     segmentActive: {
-        backgroundColor: theme.colors.surface,
-        ...theme.shadows.sm,
+        ...theme.shadows.md,
+    },
+    segmentText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '600',
     },
 }));
