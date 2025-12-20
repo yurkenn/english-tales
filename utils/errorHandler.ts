@@ -1,5 +1,6 @@
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from './haptics';
+import { getFirebaseErrorMessage, isNetworkError, isRateLimited } from './firebaseErrorMapper';
 
 export interface ErrorHandlerOptions {
     showToast?: boolean;
@@ -53,6 +54,50 @@ export const handleError = (
 };
 
 /**
+ * Handle Firebase errors with user-friendly i18n messages
+ */
+export const handleFirebaseError = (
+    error: unknown,
+    options: Omit<ErrorHandlerOptions, 'defaultMessage'> & { fallbackMessage?: string } = {}
+): string => {
+    const {
+        showToast = true,
+        hapticFeedback = true,
+        logError = true,
+        fallbackMessage,
+    } = options;
+
+    // Get user-friendly Firebase error message
+    const errorMessage = getFirebaseErrorMessage(error, fallbackMessage);
+
+    // Log error if enabled
+    if (logError) {
+        console.error('Firebase Error:', error);
+    }
+
+    // Haptic feedback
+    if (hapticFeedback) {
+        haptics.error();
+    }
+
+    // Show toast if enabled
+    if (showToast) {
+        const toastActions = useToastStore.getState().actions;
+
+        // Use warning for rate limiting, error for others
+        if (isRateLimited(error)) {
+            toastActions.error(errorMessage);
+        } else if (isNetworkError(error)) {
+            toastActions.error(errorMessage);
+        } else {
+            toastActions.error(errorMessage);
+        }
+    }
+
+    return errorMessage;
+};
+
+/**
  * Handle API/Network errors specifically
  */
 export const handleApiError = (error: unknown): string => {
@@ -75,7 +120,8 @@ export const handleValidationError = (error: unknown): string => {
  * Handle authentication errors
  */
 export const handleAuthError = (error: unknown): string => {
-    return handleError(error, {
-        defaultMessage: 'Authentication failed. Please try again.',
+    return handleFirebaseError(error, {
+        fallbackMessage: 'Authentication failed. Please try again.',
     });
 };
+
