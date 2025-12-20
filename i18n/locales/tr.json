@@ -281,15 +281,5 @@
         "achievement": "Başarım",
         "activeReader": "Aktif Okuyucu",
         "createPost": "Yeni Gönderi"
-    },
-    "rankings": {
-        "title": "Sıralamalar",
-        "global": "Genel",
-        "friends": "Arkadaşlar",
-        "globalTitle": "Küresel Sıralama",
-        "friendsTitle": "Arkadaş Sıralaması",
-        "scoreLabel": "KELİME",
-        "emptyFriends": "Arkadaşlarını takip ederek onlarla nasıl yarıştığını gör!",
-        "stats": "{{words}}k kelime • {{stories}} hikaye"
     }
 }

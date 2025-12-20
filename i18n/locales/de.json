@@ -279,15 +279,5 @@
         "achievement": "Erfolg",
         "activeReader": "Aktiver Leser",
         "createPost": "Neuer Beitrag"
-    },
-    "rankings": {
-        "title": "Ranglisten",
-        "global": "Global",
-        "friends": "Freunde",
-        "globalTitle": "Globale Ranglisten",
-        "friendsTitle": "Freunde-Ranglisten",
-        "scoreLabel": "WÖRTER",
-        "emptyFriends": "Folge mehr Lesern, um zu sehen, wie du im Vergleich abschneidest!",
-        "stats": "{{words}}k Wörter • {{stories}} Geschichten"
     }
 }

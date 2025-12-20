@@ -8,14 +8,12 @@ interface LibraryHeaderProps {
     filter: FilterType;
     onSearchPress: () => void;
     onFilterPress: () => void;
-    onRankingsPress: () => void;
 }
 
 export const LibraryHeader: React.FC<LibraryHeaderProps> = ({
     filter,
     onSearchPress,
     onFilterPress,
-    onRankingsPress,
 }) => {
     const { theme } = useUnistyles();
 
@@ -23,17 +21,6 @@ export const LibraryHeader: React.FC<LibraryHeaderProps> = ({
         <View style={styles.header}>
             <Text style={styles.title}>My Library</Text>
             <View style={styles.headerActions}>
-                <Pressable
-                    style={styles.headerButton}
-                    hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                    onPress={onRankingsPress}
-                >
-                    <Ionicons
-                        name="trophy-outline"
-                        size={theme.iconSize.md}
-                        color={theme.colors.primary}
-                    />
-                </Pressable>
                 <Pressable
                     style={styles.headerButton}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}

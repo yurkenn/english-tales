@@ -279,15 +279,5 @@
         "achievement": "Succès",
         "activeReader": "Lecteur actif",
         "createPost": "Nouvelle publication"
-    },
-    "rankings": {
-        "title": "Classements",
-        "global": "Global",
-        "friends": "Amis",
-        "globalTitle": "Classement global",
-        "friendsTitle": "Classement des amis",
-        "scoreLabel": "MOTS",
-        "emptyFriends": "Suivez plus de lecteurs pour voir votre classement !",
-        "stats": "{{words}}k mots • {{stories}} histoires"
     }
 }

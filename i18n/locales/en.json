@@ -281,15 +281,5 @@
         "achievement": "Achievement",
         "activeReader": "Active Reader",
         "createPost": "New Post"
-    },
-    "rankings": {
-        "title": "Rankings",
-        "global": "Global",
-        "friends": "Friends",
-        "globalTitle": "Global Rankings",
-        "friendsTitle": "Friend Rankings",
-        "scoreLabel": "WORDS",
-        "emptyFriends": "Follow more readers to see how you rank against them!",
-        "stats": "{{words}}k words • {{stories}} stories"
     }
 }

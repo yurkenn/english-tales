@@ -166,12 +166,6 @@ export default function CommunityTab() {
                             <View style={styles.badge} />
                         )}
                     </Pressable>
-                    <Pressable
-                        style={styles.headerActionBtn}
-                        onPress={() => { haptics.selection(); router.push('/rankings'); }}
-                    >
-                        <Feather name="award" size={22} color={theme.colors.text} />
-                    </Pressable>
                 </View>
             </Animated.View>
 

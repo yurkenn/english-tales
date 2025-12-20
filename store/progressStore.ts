@@ -6,17 +6,13 @@ import {
     collection,
     doc,
     setDoc,
-    getDoc,
     getDocs,
-    query,
     serverTimestamp,
     Timestamp,
 } from 'firebase/firestore';
-import { leaderboardService } from '@/services/leaderboardService';
 import { activityService } from '@/services/activityService';
 import { communityService } from '@/services/communityService';
 import { useAuthStore } from './authStore';
-import { useLibraryStore } from './libraryStore';
 
 // State
 interface ProgressState {
@@ -37,7 +33,6 @@ interface ProgressActions {
     fetchAllProgress: () => Promise<Result<Record<string, ReadingProgress>>>;
     getStreak: () => number;
     incrementReadingTime: (storyId: string, durationMs: number) => Promise<void>;
-    syncLeaderboard: () => Promise<void>;
     checkSocialMilestones: () => Promise<void>;
     clearProgress: () => void;
 }
@@ -96,17 +91,6 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     },
                 }));
 
-                // Post "started reading" if they've made some progress
-                if (percentage >= 5) {
-                    activityService.postStoryActivity(
-                        userId,
-                        user.displayName || 'Anonymous',
-                        user.photoURL,
-                        storyId,
-                        storyTitle,
-                        'started_reading'
-                    );
-                }
 
                 return { success: true, data: progress };
             } catch (error) {
@@ -148,19 +132,7 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     },
                 }));
 
-                // Post to social feed
-                activityService.postStoryActivity(
-                    userId,
-                    user.displayName || 'Anonymous',
-                    user.photoURL,
-                    storyId,
-                    storyTitle,
-                    'story_completed',
-                    metadata
-                );
 
-                // Sync to leaderboard on completion
-                get().actions.syncLeaderboard();
                 get().actions.checkSocialMilestones();
 
                 return { success: true, data: progress };
@@ -202,8 +174,7 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     },
                 }));
 
-                // Sync to leaderboard on quiz result
-                get().actions.syncLeaderboard();
+                // Sync to social on quiz result
                 get().actions.checkSocialMilestones();
 
                 return { success: true, data: progress };
@@ -339,26 +310,6 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
             }
         },
 
-        syncLeaderboard: async () => {
-            const { userId, progressMap } = get();
-            const user = useAuthStore.getState().user;
-            const libraryItems = useLibraryStore.getState().items;
-
-            if (!userId || !user) return;
-
-            // Create wordCount lookup map from library items
-            const storyMetadata: Record<string, { wordCount: number }> = {};
-            libraryItems.forEach(item => {
-                storyMetadata[item.storyId] = { wordCount: item.story.wordCount };
-            });
-
-            await leaderboardService.syncUserStats(
-                user,
-                progressMap,
-                storyMetadata,
-                get().actions.getStreak()
-            );
-        },
 
         checkSocialMilestones: async () => {
             const { userId, progressMap } = get();

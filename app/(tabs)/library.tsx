@@ -201,7 +201,6 @@ export default function LibraryScreen() {
                     filter={filter}
                     onSearchPress={() => router.push('/search')}
                     onFilterPress={cycleFilter}
-                    onRankingsPress={() => router.push('/rankings')}
                 />
                 <LibraryAnonymousState onSignInPress={() => router.push('/login')} />
             </View>
@@ -214,7 +213,6 @@ export default function LibraryScreen() {
                 filter={filter}
                 onSearchPress={() => router.push('/search')}
                 onFilterPress={cycleFilter}
-                onRankingsPress={() => router.push('/rankings')}
             />
 
             <View style={styles.segmentedControl}>
