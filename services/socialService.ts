@@ -1,28 +1,31 @@
-import { db } from './firebase/config';
+/**
+ * Social Service - Native Firebase Firestore Modular API
+ */
 import {
+    getFirestore,
+    collection,
     doc,
     setDoc,
     getDoc,
+    getDocs,
     deleteDoc,
-    serverTimestamp,
-    collection,
+    updateDoc,
     query,
     where,
-    getDocs,
-    updateDoc,
-    orderBy,
-    getCountFromServer,
-} from 'firebase/firestore';
+    serverTimestamp,
+} from '@react-native-firebase/firestore';
 import { Result } from '@/types/api';
 import { UserProfile } from '@/types';
 import { userService } from './userService';
 import { notificationService } from './notificationService';
 
+const db = getFirestore();
+
 export type FriendshipStatus = 'pending' | 'accepted' | 'declined';
 
 export interface Friendship {
-    id: string; // senderId_receiverId
-    users: [string, string]; // [userA, userB]
+    id: string;
+    users: [string, string];
     senderId: string;
     receiverId: string;
     status: FriendshipStatus;
@@ -37,9 +40,6 @@ class SocialService {
         return [userId1, userId2].sort().join('_');
     }
 
-    /**
-     * Send a friend request
-     */
     async sendFriendRequest(senderId: string, receiverId: string): Promise<Result<void>> {
         try {
             if (senderId === receiverId) return { success: false, error: 'Cannot add yourself' };
@@ -68,34 +68,26 @@ class SocialService {
             return { success: true, data: undefined };
         } catch (error) {
             console.error('Error sending friend request:', error);
-            return { success: false, error: 'Failed to send friend request' };
+            return { success: false, error: 'Failed' };
         }
     }
 
-    /**
-     * Accept a friend request
-     */
     async acceptFriendRequest(friendshipId: string): Promise<Result<void>> {
         try {
-            const docRef = doc(db, this.COLLECTION, friendshipId);
-            await updateDoc(docRef, {
+            await updateDoc(doc(db, this.COLLECTION, friendshipId), {
                 status: 'accepted',
                 updatedAt: serverTimestamp(),
             });
             return { success: true, data: undefined };
         } catch (error) {
             console.error('Error accepting friend request:', error);
-            return { success: false, error: 'Failed to accept friend request' };
+            return { success: false, error: 'Failed' };
         }
     }
 
-    /**
-     * Decline or remove a friend
-     */
     async removeFriendship(friendshipId: string): Promise<Result<void>> {
         try {
-            const docRef = doc(db, this.COLLECTION, friendshipId);
-            await deleteDoc(docRef);
+            await deleteDoc(doc(db, this.COLLECTION, friendshipId));
             return { success: true, data: undefined };
         } catch (error) {
             console.error('Error removing friendship:', error);
@@ -103,16 +95,12 @@ class SocialService {
         }
     }
 
-    /**
-     * Get the friendship status between two users
-     */
     async getRelationshipStatus(userId1: string, userId2: string): Promise<Result<FriendshipStatus | 'none' | 'pending_sent' | 'pending_received'>> {
         try {
             if (userId1 === userId2) return { success: true, data: 'none' };
 
             const friendshipId = this.getFriendshipId(userId1, userId2);
-            const docRef = doc(db, this.COLLECTION, friendshipId);
-            const docSnap = await getDoc(docRef);
+            const docSnap = await getDoc(doc(db, this.COLLECTION, friendshipId));
 
             if (!docSnap.exists()) {
                 return { success: true, data: 'none' };
@@ -136,9 +124,6 @@ class SocialService {
         }
     }
 
-    /**
-     * Get all friendships for a user
-     */
     async getFriendships(userId: string): Promise<Result<{
         accepted: (UserProfile & { friendshipId: string })[],
         pendingIncoming: (UserProfile & { friendshipId: string })[],
@@ -151,18 +136,18 @@ class SocialService {
             );
 
             const snapshot = await getDocs(q);
-            const friendships = snapshot.docs.map(doc => doc.data() as Friendship);
+            const friendships = snapshot.docs.map((d: any) => d.data() as Friendship);
 
             const accepted: (UserProfile & { friendshipId: string })[] = [];
             const pendingIncoming: (UserProfile & { friendshipId: string })[] = [];
             const pendingOutgoing: (UserProfile & { friendshipId: string })[] = [];
 
             for (const f of friendships) {
-                const otherUserId = f.users.find(id => id !== userId)!;
-                const userProfileResult = await userService.getUserProfile(otherUserId);
+                const otherUserId = f.users.find((id: string) => id !== userId)!;
+                const result = await userService.getUserProfile(otherUserId);
 
-                if (userProfileResult.success) {
-                    const profile = { ...userProfileResult.data, friendshipId: f.id };
+                if (result.success) {
+                    const profile = { ...result.data, friendshipId: f.id };
                     if (f.status === 'accepted') {
                         accepted.push(profile);
                     } else if (f.status === 'pending') {
@@ -175,19 +160,13 @@ class SocialService {
                 }
             }
 
-            return {
-                success: true,
-                data: { accepted, pendingIncoming, pendingOutgoing }
-            };
+            return { success: true, data: { accepted, pendingIncoming, pendingOutgoing } };
         } catch (error) {
             console.error('Error getting friendships:', error);
-            return { success: false, error: 'Failed to get friends' };
+            return { success: false, error: 'Failed' };
         }
     }
 
-    /**
-     * Follow a user
-     */
     async followUser(followerId: string, followerName: string, followerPhoto: string | null, targetUserId: string): Promise<Result<void>> {
         try {
             const followId = `${followerId}_${targetUserId}`;
@@ -197,7 +176,6 @@ class SocialService {
                 createdAt: serverTimestamp(),
             });
 
-            // Send notification
             await notificationService.createSocialNotification(targetUserId, {
                 type: 'follow',
                 senderId: followerId,
@@ -212,9 +190,6 @@ class SocialService {
         }
     }
 
-    /**
-     * Unfollow a user
-     */
     async unfollowUser(followerId: string, targetUserId: string): Promise<Result<void>> {
         try {
             const followId = `${followerId}_${targetUserId}`;
@@ -226,22 +201,16 @@ class SocialService {
         }
     }
 
-    /**
-     * Check if following
-     */
     async isFollowing(followerId: string, targetUserId: string): Promise<Result<boolean>> {
         try {
             const followId = `${followerId}_${targetUserId}`;
             const docSnap = await getDoc(doc(db, 'follows', followId));
             return { success: true, data: docSnap.exists() };
-        } catch (error) {
+        } catch {
             return { success: true, data: false };
         }
     }
 
-    /**
-     * Get following IDs
-     */
     async getFollowingIds(userId: string): Promise<Result<string[]>> {
         try {
             const q = query(
@@ -249,40 +218,34 @@ class SocialService {
                 where('followerId', '==', userId)
             );
             const snapshot = await getDocs(q);
-            return { success: true, data: snapshot.docs.map(doc => doc.data().targetUserId) };
-        } catch (error) {
+            return { success: true, data: snapshot.docs.map((d: any) => d.data().targetUserId) };
+        } catch {
             return { success: false, error: 'Failed' };
         }
     }
 
-    /**
-     * Get following count
-     */
     async getFollowingCount(userId: string): Promise<number> {
         try {
             const q = query(
                 collection(db, 'follows'),
                 where('followerId', '==', userId)
             );
-            const snapshot = await getCountFromServer(q);
-            return snapshot.data().count;
+            const snapshot = await getDocs(q);
+            return snapshot.size;
         } catch (error) {
             console.error('Error getting following count:', error);
             return 0;
         }
     }
 
-    /**
-     * Get followers count
-     */
     async getFollowersCount(userId: string): Promise<number> {
         try {
             const q = query(
                 collection(db, 'follows'),
                 where('targetUserId', '==', userId)
             );
-            const snapshot = await getCountFromServer(q);
-            return snapshot.data().count;
+            const snapshot = await getDocs(q);
+            return snapshot.size;
         } catch (error) {
             console.error('Error getting followers count:', error);
             return 0;

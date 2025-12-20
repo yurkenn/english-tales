@@ -1,13 +1,18 @@
-import { db } from './firebase/config';
+/**
+ * Activity Service - Native Firebase Firestore Modular API
+ */
 import {
+    getFirestore,
     doc,
     getDoc,
     setDoc,
     serverTimestamp,
-} from 'firebase/firestore';
+} from '@react-native-firebase/firestore';
 import { communityService } from './communityService';
 import { Result } from '@/types/api';
 import { ActivityType } from '@/types';
+
+const db = getFirestore();
 
 export interface Achievement {
     id: string;
@@ -29,9 +34,6 @@ const MILESTONES: Achievement[] = [
 class ActivityService {
     private ACHIEVEMENTS_COLLECTION = 'user_achievements';
 
-    /**
-     * Checks if a user has reached any new milestones and posts them
-     */
     async checkAndPostMilestones(
         userId: string,
         userName: string,
@@ -39,9 +41,9 @@ class ActivityService {
         stats: { completedStories: number; streak: number; reviewsCount: number }
     ): Promise<Result<string[]>> {
         try {
-            const userAchievementsRef = doc(db, this.ACHIEVEMENTS_COLLECTION, userId);
-            const docSnap = await getDoc(userAchievementsRef);
-            const earnedIds: string[] = docSnap.exists() ? docSnap.data().earnedIds || [] : [];
+            const docSnap = await getDoc(doc(db, this.ACHIEVEMENTS_COLLECTION, userId));
+            const docData = docSnap.data();
+            const earnedIds: string[] = docData?.earnedIds || [];
 
             const newlyEarned: string[] = [];
 
@@ -59,8 +61,6 @@ class ActivityService {
 
                 if (isEarned) {
                     newlyEarned.push(milestone.id);
-
-                    // Post to community
                     await communityService.createPost(
                         userId,
                         userName,
@@ -77,7 +77,7 @@ class ActivityService {
             }
 
             if (newlyEarned.length > 0) {
-                await setDoc(userAchievementsRef, {
+                await setDoc(doc(db, this.ACHIEVEMENTS_COLLECTION, userId), {
                     earnedIds: [...earnedIds, ...newlyEarned],
                     lastUpdateAt: serverTimestamp(),
                 }, { merge: true });
@@ -89,9 +89,7 @@ class ActivityService {
             return { success: false, error: 'Failed to check milestones' };
         }
     }
-    /**
-     * Posts a story-related activity (started or completed)
-     */
+
     async postStoryActivity(
         userId: string,
         userName: string,

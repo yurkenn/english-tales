@@ -1,10 +1,9 @@
 import * as Haptics from 'expo-haptics';
-import { Platform } from 'react-native';
 
 const safeHaptic = async (fn: () => Promise<void>) => {
     try {
         await fn();
-    } catch (e) {
+    } catch {
         // Haptics not available on this device/platform
     }
 };

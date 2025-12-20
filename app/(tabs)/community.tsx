@@ -21,7 +21,7 @@ import Animated, {
     FadeInDown,
 } from 'react-native-reanimated';
 import { Typography } from '@/components/atoms/Typography';
-import { CommunityPostCard, CreatePostBar, ProfileQuickView, NotificationList } from '@/components/molecules';
+import { CommunityPostCard, CreatePostBar, ProfileQuickView, NotificationList, PostActionSheet } from '@/components/molecules';
 import { CreatePostModal, ReplyModal } from '@/components/organisms';
 import { useNotificationStore } from '@/store/notificationStore';
 import { useAuthStore } from '@/store/authStore';
@@ -106,6 +106,23 @@ export default function CommunityTab() {
 
     const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
     const [selectedStory, setSelectedStory] = useState<Story | null>(null);
+    const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
+    const [isActionSheetOpen, setIsActionSheetOpen] = useState(false);
+    const postActionSheetRef = useRef<BottomSheet>(null);
+
+    const handleMorePress = (postId: string) => {
+        setSelectedPostId(postId);
+        setIsActionSheetOpen(true);
+        postActionSheetRef.current?.expand();
+    };
+
+    const handleActionSheetClose = () => {
+        setIsActionSheetOpen(false);
+    };
+
+    const handlePostDeleted = () => {
+        handleRefresh();
+    };
 
     const handleSubmitPost = async (content: string, story: Story | null) => {
         setIsSubmitting(true);
@@ -257,6 +274,7 @@ export default function CommunityTab() {
                                     currentUserId={user?.id}
                                     onLike={handleToggleLike}
                                     onReply={handleOpenReply}
+                                    onMorePress={handleMorePress}
                                     index={index}
                                 />
                             ))
@@ -269,12 +287,14 @@ export default function CommunityTab() {
                 )}
             </Animated.ScrollView>
 
-            <Pressable
-                style={[styles.fab, { bottom: insets.bottom + 20 }]}
-                onPress={() => { haptics.selection(); setIsCreateModalOpen(true); }}
-            >
-                <Feather name="plus" size={28} color={theme.colors.textInverse} />
-            </Pressable>
+            {!isActionSheetOpen && (
+                <Pressable
+                    style={[styles.fab, { bottom: insets.bottom + 90 }]}
+                    onPress={() => { haptics.selection(); setIsCreateModalOpen(true); }}
+                >
+                    <Feather name="plus" size={28} color={theme.colors.textInverse} />
+                </Pressable>
+            )}
 
             {/* Create Post Modal */}
             <CreatePostModal
@@ -318,6 +338,15 @@ export default function CommunityTab() {
                     setSelectedStory(story);
                     setIsStoryModalOpen(false);
                 }}
+            />
+
+            {/* Post Actions Sheet */}
+            <PostActionSheet
+                sheetRef={postActionSheetRef}
+                postId={selectedPostId}
+                currentUserId={user?.id || null}
+                onPostDeleted={handlePostDeleted}
+                onClose={handleActionSheetClose}
             />
         </View>
     );

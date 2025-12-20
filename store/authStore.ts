@@ -3,6 +3,8 @@ import { User } from '@/types';
 import { onAuthStateChange, signOut as authSignOut } from '@/services/auth';
 import { router } from 'expo-router';
 import { userService } from '@/services/userService';
+import { analyticsService } from '@/services/firebase/analytics';
+import { crashlyticsService } from '@/services/firebase/crashlytics';
 
 interface AuthState {
     user: User | null;
@@ -20,7 +22,15 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     user: null,
     isLoading: true,
     initialized: false,
-    setUser: (user) => set({ user }),
+    setUser: (user) => {
+        set({ user });
+        if (user) {
+            analyticsService.setUserId(user.id);
+            crashlyticsService.setUserId(user.id);
+        } else {
+            analyticsService.setUserId(null);
+        }
+    },
     setIsLoading: (isLoading) => set({ isLoading }),
     signOut: async () => {
         await authSignOut();
@@ -47,6 +57,10 @@ export const useAuthStore = create<AuthState>((set, get) => ({
         const unsubscribe = onAuthStateChange((user) => {
             if (user) {
                 userService.syncProfile(user);
+                analyticsService.setUserId(user.id);
+                crashlyticsService.setUserId(user.id);
+            } else {
+                analyticsService.setUserId(null);
             }
             set({ user, isLoading: false, initialized: true });
         });

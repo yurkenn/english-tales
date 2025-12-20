@@ -115,7 +115,7 @@ export const useAchievementsStore = create<AchievementsState & { actions: Achiev
                 } else {
                     set({ isLoaded: true });
                 }
-            } catch (e) {
+            } catch {
                 set({ isLoaded: true });
             }
         },

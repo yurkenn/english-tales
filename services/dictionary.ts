@@ -1,19 +1,19 @@
 export interface DictionaryEntry {
     word: string;
     phonetic?: string;
-    phonetics: Array<{
+    phonetics: {
         text: string;
         audio?: string;
-    }>;
-    meanings: Array<{
+    }[];
+    meanings: {
         partOfSpeech: string;
-        definitions: Array<{
+        definitions: {
             definition: string;
             example?: string;
             synonyms: string[];
             antonyms: string[];
-        }>;
-    }>;
+        }[];
+    }[];
 }
 
 const API_URL = 'https://api.dictionaryapi.dev/api/v2/entries/en';

@@ -32,6 +32,7 @@ import BottomSheet from '@gorhom/bottom-sheet';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
 import * as Speech from 'expo-speech';
+import { analyticsService } from '@/services/firebase/analytics';
 
 import { useTranslation } from 'react-i18next';
 
@@ -89,6 +90,22 @@ export default function ReadingScreen() {
     }, [id, isDownloaded, downloadActions]);
 
     const isLoading = loadingStory && !downloadedContent; // Don't show skeleton if we have offline content
+
+    useEffect(() => {
+        analyticsService.logScreenView('ReadingScreen');
+        if (id) {
+            analyticsService.logEvent('story_opened', { story_id: id });
+        }
+    }, [id]);
+
+    useEffect(() => {
+        if (!isLoading && storyDoc) {
+            analyticsService.logEvent('story_content_loaded', {
+                story_id: id,
+                story_title: storyDoc.title
+            });
+        }
+    }, [isLoading, storyDoc, id]);
 
     // Sync reading time on unmount
     useEffect(() => {
@@ -161,7 +178,16 @@ export default function ReadingScreen() {
             wordCount: storyDoc?.wordCount || 0
         };
 
-        if (id) await progressActions.markComplete(id, storyDoc?.title, metadata);
+        if (id) {
+            analyticsService.logEvent('story_completed', {
+                story_id: id,
+                story_title: storyDoc?.title,
+                rating,
+                reading_time: readingTimeMinutes,
+                word_count: storyDoc?.wordCount || 0
+            });
+            await progressActions.markComplete(id, storyDoc?.title, metadata);
+        }
         setShowCompletionModal(false);
 
         if (rating) {
@@ -238,6 +264,10 @@ export default function ReadingScreen() {
         const data = await dictionaryService.lookup(cleaned);
         setDictionaryData(data);
         setIsWordLoading(false);
+        analyticsService.logEvent('word_lookup', {
+            word: cleaned,
+            story_id: id
+        });
     }, []);
 
     // TTS Logic

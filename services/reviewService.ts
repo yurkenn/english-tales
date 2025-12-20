@@ -1,5 +1,8 @@
-import { db } from './firebase/config';
+/**
+ * Review Service - Native Firebase Firestore Modular API
+ */
 import {
+    getFirestore,
     collection,
     doc,
     addDoc,
@@ -10,24 +13,18 @@ import {
     query,
     where,
     orderBy,
-    limit,
     serverTimestamp,
-    updateDoc,
-    arrayUnion,
-    arrayRemove,
-    increment,
-} from 'firebase/firestore';
+} from '@react-native-firebase/firestore';
 import { StoryReview, UserFavorite } from '@/types';
 import { Result } from '@/types/api';
 import { communityService } from './communityService';
+
+const db = getFirestore();
 
 class ReviewService {
     private REVIEWS_COLLECTION = 'reviews';
     private FAVORITES_COLLECTION = 'favorites';
 
-    /**
-     * Add a review to a story
-     */
     async addReview(
         storyId: string,
         storyTitle: string,
@@ -48,23 +45,18 @@ class ReviewService {
                 comment,
                 timestamp: serverTimestamp(),
                 likes: 0,
-                likedBy: [],
+                likedBy: [] as string[],
             };
 
             const docRef = await addDoc(collection(db, this.REVIEWS_COLLECTION), reviewData);
 
-            // Auto-post to community feed
             await communityService.createPost(
                 userId,
                 userName,
                 userPhoto,
                 comment,
                 'story_review',
-                {
-                    storyId,
-                    storyTitle,
-                    rating,
-                }
+                { storyId, storyTitle, rating }
             );
 
             return { success: true, data: docRef.id };
@@ -74,9 +66,6 @@ class ReviewService {
         }
     }
 
-    /**
-     * Get all reviews for a story
-     */
     async getStoryReviews(storyId: string): Promise<Result<StoryReview[]>> {
         try {
             const q = query(
@@ -86,9 +75,9 @@ class ReviewService {
             );
 
             const snapshot = await getDocs(q);
-            const reviews = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
+            const reviews = snapshot.docs.map((d: any) => ({
+                id: d.id,
+                ...d.data()
             } as StoryReview));
 
             return { success: true, data: reviews };
@@ -98,9 +87,6 @@ class ReviewService {
         }
     }
 
-    /**
-     * Get all reviews by a user
-     */
     async getUserReviews(userId: string): Promise<Result<StoryReview[]>> {
         try {
             const q = query(
@@ -110,9 +96,9 @@ class ReviewService {
             );
 
             const snapshot = await getDocs(q);
-            const reviews = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
+            const reviews = snapshot.docs.map((d: any) => ({
+                id: d.id,
+                ...d.data()
             } as StoryReview));
 
             return { success: true, data: reviews };
@@ -122,9 +108,6 @@ class ReviewService {
         }
     }
 
-    /**
-     * Toggle favorite status for a story
-     */
     async toggleFavorite(
         userId: string,
         storyId: string,
@@ -138,7 +121,7 @@ class ReviewService {
 
             if (docSnap.exists()) {
                 await deleteDoc(docRef);
-                return { success: true, data: false }; // Unfavorited
+                return { success: true, data: false };
             } else {
                 const favoriteData: UserFavorite = {
                     id: favoriteId,
@@ -149,7 +132,7 @@ class ReviewService {
                     addedAt: serverTimestamp(),
                 };
                 await setDoc(docRef, favoriteData);
-                return { success: true, data: true }; // Favorited
+                return { success: true, data: true };
             }
         } catch (error) {
             console.error('Error toggling favorite:', error);
@@ -157,9 +140,6 @@ class ReviewService {
         }
     }
 
-    /**
-     * Get all favorites for a user
-     */
     async getUserFavorites(userId: string): Promise<Result<UserFavorite[]>> {
         try {
             const q = query(
@@ -169,8 +149,7 @@ class ReviewService {
             );
 
             const snapshot = await getDocs(q);
-            const favorites = snapshot.docs.map(doc => doc.data() as UserFavorite);
-
+            const favorites = snapshot.docs.map((d: any) => d.data() as UserFavorite);
             return { success: true, data: favorites };
         } catch (error) {
             console.error('Error getting user favorites:', error);
@@ -178,15 +157,12 @@ class ReviewService {
         }
     }
 
-    /**
-     * Check if a story is favorited by a user
-     */
     async isFavorited(userId: string, storyId: string): Promise<Result<boolean>> {
         try {
             const favoriteId = `${userId}_${storyId}`;
             const docSnap = await getDoc(doc(db, this.FAVORITES_COLLECTION, favoriteId));
             return { success: true, data: docSnap.exists() };
-        } catch (error) {
+        } catch {
             return { success: false, error: 'Failed' };
         }
     }

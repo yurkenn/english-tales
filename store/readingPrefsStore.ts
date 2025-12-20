@@ -58,7 +58,7 @@ export const useReadingPrefsStore = create<ReadingPrefsState & { actions: Readin
                 } else {
                     set({ isLoaded: true });
                 }
-            } catch (e) {
+            } catch {
                 set({ isLoaded: true });
             }
         },

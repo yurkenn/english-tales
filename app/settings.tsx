@@ -22,6 +22,7 @@ import { sendPasswordResetEmail } from '@/services/auth';
 import { notificationService } from '@/services/notificationService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import i18n from '@/i18n';
+import { crashlyticsService } from '@/services/firebase/crashlytics';
 
 import { useSettingsStore } from '@/store/settingsStore';
 
@@ -221,6 +222,7 @@ export default function SettingsScreen() {
                         value="1.0.0"
                         hasChevron={false}
                     />
+                    {/* Test crash button removed - crash() not available in modular API */}
                 </SettingSection>
 
                 <SettingSection title={t('settings.sections.dangerZone')} isDanger>

@@ -1,30 +1,29 @@
-import { db } from './firebase/config';
+/**
+ * User Service - Native Firebase Firestore Modular API
+ */
 import {
+    getFirestore,
+    collection,
     doc,
     setDoc,
     getDoc,
-    serverTimestamp,
-    collection,
+    getDocs,
     query,
     where,
-    getDocs,
-    limit,
     orderBy,
-    Timestamp,
-} from 'firebase/firestore';
+    limit,
+    serverTimestamp,
+} from '@react-native-firebase/firestore';
 import { User as AppUser, UserProfile, LibraryItem, Story } from '@/types';
 import { Result } from '@/types/api';
+
+const db = getFirestore();
 
 class UserService {
     private COLLECTION = 'users';
 
-    /**
-     * Syncs the current user's profile to Firestore to make it searchable
-     */
     async syncProfile(user: AppUser): Promise<Result<void>> {
         try {
-            const userRef = doc(db, this.COLLECTION, user.id);
-
             const profile: UserProfile = {
                 id: user.id,
                 displayName: user.displayName,
@@ -35,7 +34,7 @@ class UserService {
                 isAnonymous: user.isAnonymous,
             };
 
-            await setDoc(userRef, profile, { merge: true });
+            await setDoc(doc(db, this.COLLECTION, user.id), profile, { merge: true });
             return { success: true, data: undefined };
         } catch (error) {
             console.error('Error syncing user profile:', error);
@@ -43,15 +42,11 @@ class UserService {
         }
     }
 
-    /**
-     * Search for users by display name or email
-     */
     async searchUsers(searchTerm: string, limitCount = 10): Promise<Result<UserProfile[]>> {
         try {
             const term = searchTerm.toLowerCase().trim();
             if (!term) return { success: true, data: [] };
 
-            // Search by display name start (prefix search)
             const q = query(
                 collection(db, this.COLLECTION),
                 where('displayNameSearchField', '>=', term),
@@ -60,9 +55,8 @@ class UserService {
             );
 
             const snapshot = await getDocs(q);
-            const results = snapshot.docs.map(doc => doc.data() as UserProfile);
+            const results = snapshot.docs.map((d: any) => d.data() as UserProfile);
 
-            // If not enough results, try searching by email
             if (results.length < limitCount) {
                 const eq = query(
                     collection(db, this.COLLECTION),
@@ -70,9 +64,9 @@ class UserService {
                     limit(limitCount - results.length)
                 );
                 const eSnapshot = await getDocs(eq);
-                eSnapshot.docs.forEach(doc => {
-                    const data = doc.data() as UserProfile;
-                    if (!results.find(r => r.id === data.id)) {
+                eSnapshot.docs.forEach((d: any) => {
+                    const data = d.data() as UserProfile;
+                    if (!results.find((r: any) => r.id === data.id)) {
                         results.push(data);
                     }
                 });
@@ -85,13 +79,9 @@ class UserService {
         }
     }
 
-    /**
-     * Get a user profile by ID
-     */
     async getUserProfile(userId: string): Promise<Result<UserProfile>> {
         try {
-            const docRef = doc(db, this.COLLECTION, userId);
-            const docSnap = await getDoc(docRef);
+            const docSnap = await getDoc(doc(db, this.COLLECTION, userId));
 
             if (docSnap.exists()) {
                 return { success: true, data: docSnap.data() as UserProfile };
@@ -106,18 +96,19 @@ class UserService {
 
     async getUserLibrary(userId: string): Promise<Result<LibraryItem[]>> {
         try {
-            const libraryRef = collection(db, this.COLLECTION, userId, 'library');
-            const q = query(libraryRef, orderBy('addedAt', 'desc'), limit(10));
+            const q = query(
+                collection(db, this.COLLECTION, userId, 'library'),
+                orderBy('addedAt', 'desc'),
+                limit(10)
+            );
             const snapshot = await getDocs(q);
 
-            const items: LibraryItem[] = snapshot.docs.map(docSnap => {
+            const items: LibraryItem[] = snapshot.docs.map((docSnap: any) => {
                 const data = docSnap.data();
                 return {
                     storyId: data.storyId,
                     userId: data.userId,
-                    addedAt: data.addedAt instanceof Timestamp
-                        ? data.addedAt.toDate()
-                        : new Date(data.addedAt),
+                    addedAt: data.addedAt?.toDate?.() || new Date(data.addedAt),
                     story: data.story as Story,
                     progress: data.progress,
                 } as LibraryItem;
@@ -130,13 +121,9 @@ class UserService {
         }
     }
 
-    /**
-     * Update a user's profile with partial data
-     */
     async updateUserProfile(userId: string, data: Partial<UserProfile>): Promise<Result<void>> {
         try {
-            const userRef = doc(db, this.COLLECTION, userId);
-            await setDoc(userRef, {
+            await setDoc(doc(db, this.COLLECTION, userId), {
                 ...data,
                 updatedAt: serverTimestamp(),
             }, { merge: true });

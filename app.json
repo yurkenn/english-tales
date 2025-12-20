@@ -2,24 +2,29 @@
   "expo": {
     "name": "English Tales",
     "slug": "english-tales",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "newArchEnabled": true,
     "scheme": "english-tales",
     "platforms": [
-      "ios",
       "android"
     ],
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/favicon.png"
-    },
     "plugins": [
       "expo-router",
       "expo-secure-store",
       "@react-native-google-signin/google-signin",
       "expo-localization",
-      "expo-font"
+      "expo-font",
+      "@react-native-firebase/app",
+      "@react-native-firebase/crashlytics",
+      "@react-native-firebase/perf",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 24
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,
@@ -36,16 +41,13 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.yurken.englishtales"
-    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.yurken.englishtales"
+      "package": "com.yurken.englishtales",
+      "googleServicesFile": "./google-services.json"
     }
   }
 }

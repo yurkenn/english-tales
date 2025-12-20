@@ -70,7 +70,7 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
             // Persist preference
             try {
                 await AsyncStorage.setItem(THEME_KEY, mode);
-            } catch (e) {
+            } catch {
                 console.error('Failed to save theme preference');
             }
         },
@@ -126,7 +126,7 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
             set({ highContrastEnabled: enabled });
             try {
                 await AsyncStorage.setItem('@english_tales_high_contrast', String(enabled));
-            } catch (e) {
+            } catch {
                 console.error('Failed to save high contrast preference');
             }
         },

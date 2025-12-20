@@ -6,24 +6,18 @@ const projectId = process.env.EXPO_PUBLIC_SANITY_PROJECT_ID!;
 const dataset = process.env.EXPO_PUBLIC_SANITY_DATASET || 'production';
 const apiVersion = '2024-01-01';
 
-// Create Sanity client
+// Create Sanity client (read-only, no token needed for public datasets)
 export const sanityClient = createClient({
     projectId,
     dataset,
     apiVersion,
     useCdn: true, // Use CDN for faster reads
-    // token is optional for public datasets
-    token: process.env.EXPO_PUBLIC_SANITY_TOKEN,
+    // No token - public dataset, read-only access
+    // Write operations should only be done via blue-hare scripts with proper token
 });
 
-// Sanity client for mutations (no CDN)
-export const sanityWriteClient = createClient({
-    projectId,
-    dataset,
-    apiVersion,
-    useCdn: false,
-    token: process.env.EXPO_PUBLIC_SANITY_TOKEN,
-});
+// Legacy alias for backwards compatibility (read-only)
+export const sanityWriteClient = sanityClient;
 
 // Image URL builder
 const builder = createImageUrlBuilder(sanityClient);
