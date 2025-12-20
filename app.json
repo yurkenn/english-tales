@@ -48,6 +48,12 @@
       },
       "package": "com.yurken.englishtales",
       "googleServicesFile": "./google-services.json"
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "ed1a926d-a090-4643-bb5e-9c8a1e59df38"
+      }
     }
   }
 }
