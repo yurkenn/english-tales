@@ -9,9 +9,14 @@
             "subtitle": "Sign in to continue your reading journey"
         },
         "forgotPassword": {
-            "title": "Forgot Password",
-            "message": "Enter your email to reset your password",
-            "placeholder": "Email"
+            "title": "Forgot Password?",
+            "message": "No worries! Enter your email address and we'll send you a link to reset your password.",
+            "submit": "Send Reset Link",
+            "backToLogin": "Back to Login",
+            "successTitle": "Check Your Email",
+            "successMessage": "We've sent a password reset link to",
+            "spamHint": "If you don't see the email, check your spam folder.",
+            "toastSuccess": "Password reset email sent!"
         }
     },
     "common": {
@@ -187,6 +192,14 @@
             "accuracy": "Accuracy: {{percentage}}%",
             "done": "Back to Story",
             "checkpoint": "Checkpoint"
+        },
+        "completion": {
+            "title": "Story Completed!",
+            "subtitle": "Amazing job! You've finished another adventure.",
+            "nextStory": "Find Next Story",
+            "backToHome": "Back to Home",
+            "ratingOptional": "How was the story? (Optional)",
+            "readyForMore": "Ready for another adventure?"
         }
     },
     "settings": {

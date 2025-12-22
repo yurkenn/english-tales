@@ -60,9 +60,9 @@ export default function LibraryScreen() {
     const removeFromLibraryDialogRef = useRef<BottomSheet>(null);
     const deleteDownloadDialogRef = useRef<BottomSheet>(null);
 
-    const savedWords = useVocabularyStore((s) => s.savedWords);
+    const savedWordsForUser = useVocabularyStore((s) => s.savedWords[user?.id || ''] || {});
     const vocabActions = useVocabularyStore((s) => s.actions);
-    const wordList = useMemo(() => Object.values(savedWords).sort((a, b) => b.addedAt - a.addedAt), [savedWords]);
+    const wordList = useMemo(() => Object.values(savedWordsForUser).sort((a, b) => b.addedAt - a.addedAt), [savedWordsForUser]);
 
     const onRefresh = useCallback(async () => {
         setRefreshing(true);
@@ -192,18 +192,7 @@ export default function LibraryScreen() {
         );
     }
 
-    if (user?.isAnonymous) {
-        return (
-            <View style={[styles.container, { paddingTop: insets.top }]}>
-                <LibraryHeader
-                    filter={filter}
-                    onSearchPress={() => router.push('/search')}
-                    onFilterPress={cycleFilter}
-                />
-                <LibraryAnonymousState onSignInPress={() => router.push('/login')} />
-            </View>
-        );
-    }
+    // Removed LibraryAnonymousState block to allow guests to see their local library
 
     return (
         <View style={styles.container}>
@@ -286,7 +275,7 @@ export default function LibraryScreen() {
                         <Animated.View entering={FadeInDown.delay(index * 100).duration(500).springify()}>
                             <VocabularyItem
                                 item={item}
-                                onRemove={vocabActions.removeWord}
+                                onRemove={(wordId) => user?.id && vocabActions.removeWord(user.id, wordId)}
                             />
                         </Animated.View>
                     )}

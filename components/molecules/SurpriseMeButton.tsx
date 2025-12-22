@@ -3,6 +3,7 @@ import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import { LinearGradient } from 'expo-linear-gradient';
 
 interface SurpriseMeButtonProps {
     onPress: () => void;
@@ -22,14 +23,21 @@ export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) =
                 onPress={onPress}
             >
                 <View style={styles.content}>
-                    <View style={styles.iconWrapper}>
-                        <Ionicons name="shuffle" size={22} color={theme.colors.primary} />
-                    </View>
+                    <LinearGradient
+                        colors={[theme.colors.primary, '#FF6B6B']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        style={styles.iconWrapper}
+                    >
+                        <Ionicons name="dice" size={26} color="#FFF" />
+                    </LinearGradient>
                     <View style={styles.textContainer}>
                         <Text style={styles.title}>{t('discover.surpriseMe')}</Text>
                         <Text style={styles.subtitle}>{t('discover.surpriseMeDesc', 'Let us pick a story for you')}</Text>
                     </View>
-                    <Ionicons name="chevron-forward" size={20} color={theme.colors.textMuted} />
+                    <View style={styles.arrowWrapper}>
+                        <Ionicons name="chevron-forward" size={20} color={theme.colors.textMuted} />
+                    </View>
                 </View>
             </Pressable>
         </View>
@@ -59,12 +67,12 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.md,
     },
     iconWrapper: {
-        width: 44,
-        height: 44,
-        borderRadius: 12,
-        backgroundColor: theme.colors.primary + '10', // 10% opacity primary
+        width: 52,
+        height: 52,
+        borderRadius: 16,
         alignItems: 'center',
         justifyContent: 'center',
+        ...theme.shadows.md,
     },
     textContainer: {
         flex: 1,
@@ -78,5 +86,15 @@ const styles = StyleSheet.create((theme) => ({
     subtitle: {
         fontSize: theme.typography.size.sm,
         color: theme.colors.textSecondary,
+    },
+    arrowWrapper: {
+        width: 32,
+        height: 32,
+        borderRadius: 16,
+        backgroundColor: theme.colors.background,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
 }));

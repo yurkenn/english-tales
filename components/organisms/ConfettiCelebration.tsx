@@ -93,9 +93,9 @@ export const ConfettiCelebration: React.FC<ConfettiCelebrationProps> = ({
     onComplete
 }) => {
     const pieces = useRef(
-        Array.from({ length: 50 }, (_, i) => ({
+        Array.from({ length: 100 }, (_, i) => ({
             id: i,
-            delay: Math.random() * 500,
+            delay: Math.random() * 1000,
             color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
             startX: Math.random() * SCREEN_WIDTH,
         }))

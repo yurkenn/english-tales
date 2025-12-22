@@ -10,8 +10,13 @@
         },
         "forgotPassword": {
             "title": "Şifremi Unuttum",
-            "message": "Şifrenizi sıfırlamak için e-posta adresinizi girin",
-            "placeholder": "E-posta"
+            "message": "Endişelenmeyin! E-posta adresinizi girin, size şifrenizi sıfırlamanız için bir bağlantı gönderelim.",
+            "submit": "Sıfırlama Bağlantısı Gönder",
+            "backToLogin": "Giriş Yap",
+            "successTitle": "E-postanızı Kontrol Edin",
+            "successMessage": "Şifre sıfırlama bağlantısını şu adrese gönderdik:",
+            "spamHint": "E-postayı görmüyorsanız, lütfen spam klasörünüzü kontrol edin.",
+            "toastSuccess": "Şifre sıfırlama e-postası gönderildi!"
         }
     },
     "common": {
@@ -187,6 +192,14 @@
             "accuracy": "Başarı Oranı: %{{percentage}}",
             "done": "Hikayeye Dön",
             "checkpoint": "Kontrol Noktası"
+        },
+        "completion": {
+            "title": "Hikaye Bitti!",
+            "subtitle": "Harika bir iş çıkardın! Bir macerayı daha tamamladın.",
+            "nextStory": "Yeni Hikaye Keşfet",
+            "backToHome": "Ana Sayfaya Dön",
+            "ratingOptional": "Hikaye nasıldı? (İsteğe bağlı)",
+            "readyForMore": "Yeni bir maceraya hazır mısın?"
         }
     },
     "settings": {

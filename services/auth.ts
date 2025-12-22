@@ -12,7 +12,9 @@ import {
     onAuthStateChanged,
     updateProfile,
     signInWithCredential,
+    reauthenticateWithCredential,
     GoogleAuthProvider,
+    EmailAuthProvider,
 } from '@react-native-firebase/auth';
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { Platform } from 'react-native';
@@ -48,7 +50,11 @@ export const onAuthStateChange = (callback: (user: User | null) => void) => {
 export const signUp = async (email: string, password: string, displayName: string): Promise<User> => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(userCredential.user, { displayName });
-    return mapUser(userCredential.user);
+    // Reload user to get updated displayName
+    await userCredential.user.reload();
+    // Get the current user with updated profile
+    const updatedUser = auth.currentUser;
+    return mapUser(updatedUser || userCredential.user);
 };
 
 /**
@@ -172,4 +178,63 @@ export const signInWithGoogle = async (): Promise<User> => {
 export const getCurrentUser = (): User | null => {
     const currentUser = auth.currentUser;
     return currentUser ? mapUser(currentUser) : null;
+};
+
+/**
+ * Delete user account
+ * This permanently deletes the Firebase Auth user
+ * User data in Firestore should be deleted separately via userService
+ */
+export const deleteAccount = async (): Promise<void> => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) {
+        throw new Error('No user logged in');
+    }
+
+    const deleteUser = async () => {
+        // Sign out of Google if signed in
+        try {
+            await GoogleSignin.signOut();
+        } catch {
+            // Ignore if not signed in with Google
+        }
+
+        // Delete the Firebase Auth user
+        await currentUser.delete();
+    };
+
+    try {
+        await deleteUser();
+    } catch (error: any) {
+        // If requires recent authentication, try to reauthenticate
+        if (error.code === 'auth/requires-recent-login') {
+            // Check if user signed in with Google
+            const googleProvider = currentUser.providerData.find(
+                (p) => p.providerId === 'google.com'
+            );
+
+            if (googleProvider) {
+                // Try to reauthenticate with Google
+                try {
+                    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+                    const signInResult = await GoogleSignin.signIn();
+                    const idToken = signInResult?.data?.idToken;
+
+                    if (idToken) {
+                        const credential = GoogleAuthProvider.credential(idToken);
+                        await reauthenticateWithCredential(currentUser, credential);
+                        // Retry deletion after reauthentication
+                        await deleteUser();
+                        return;
+                    }
+                } catch (reauthError) {
+                    console.error('Failed to reauthenticate with Google:', reauthError);
+                }
+            }
+
+            // For email users or if Google reauth failed, throw error
+            throw new Error('REQUIRES_REAUTHENTICATION');
+        }
+        throw error;
+    }
 };

@@ -90,18 +90,19 @@ export default function ProfileScreen() {
         settingsActions.loadSettings();
     }, [user]);
 
-    // Compute Stats
     const stats = useMemo(() => {
         let booksRead = 0;
         Object.values(progressMap).forEach(p => { if (p.isCompleted) booksRead++; });
+
+        const userWords = user?.id ? (savedWords[user.id] || {}) : {};
 
         return {
             booksRead,
             streak: progressActions.getStreak(),
             postsCount: myPosts.length,
-            vocabCount: Object.keys(savedWords).length
+            vocabCount: Object.keys(userWords).length
         };
-    }, [progressMap, myPosts, savedWords]);
+    }, [progressMap, myPosts, savedWords, user?.id]);
 
     // Menu logic
     const achievements = achievementActions.getAll();
@@ -207,7 +208,7 @@ export default function ProfileScreen() {
                         <View style={{ marginVertical: 12 }}>
                             <ReadingCalendar readingData={{}} />
                         </View>
-                        <WordGrowthChart words={Object.values(savedWords)} />
+                        <WordGrowthChart words={Object.values(user?.id ? (savedWords[user.id] || {}) : {})} />
 
                         <View style={styles.sectionDivider} />
                         <View style={styles.sectionHeader}>
@@ -215,7 +216,7 @@ export default function ProfileScreen() {
                         </View>
                         <ProfileMenu items={menuItems} />
 
-                        <Pressable style={styles.signOutButton} onPress={signOut}>
+                        <Pressable style={styles.signOutButton} onPress={() => { haptics.warning(); signOut(); }}>
                             <Ionicons name="log-out-outline" size={20} color={theme.colors.error} />
                             <Typography variant="bodyBold" color={theme.colors.error}>Sign Out</Typography>
                         </Pressable>
@@ -265,7 +266,7 @@ export default function ProfileScreen() {
                         streak: stats.streak
                     }}
                     isSelf={true}
-                    onEditPress={() => router.push('/user/edit')}
+                    onEditPress={() => { haptics.selection(); router.push('/user/edit'); }}
                     scrollY={scrollY}
                 />
 

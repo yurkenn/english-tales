@@ -127,6 +127,7 @@ export default function SignupScreen() {
                             if (errors.password) setErrors({ ...errors, password: undefined });
                         }}
                         secureTextEntry
+                        showPasswordToggle
                         error={errors.password}
                         helperText={t('auth.signup.passwordHint', 'Must be at least 6 characters')}
                         containerStyle={styles.fieldContainer}

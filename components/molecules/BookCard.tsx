@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,7 +12,7 @@ interface BookCardProps {
     rating?: number | null;
 }
 
-export const BookCard: React.FC<BookCardProps> = ({
+const BookCardComponent: React.FC<BookCardProps> = ({
     story,
     onPress,
     showRank,
@@ -64,6 +64,13 @@ export const BookCard: React.FC<BookCardProps> = ({
         </Pressable>
     );
 };
+
+// Memoize component to prevent unnecessary re-renders in lists
+export const BookCard = memo(BookCardComponent, (prevProps, nextProps) => {
+    return prevProps.story.id === nextProps.story.id
+        && prevProps.showRank === nextProps.showRank
+        && prevProps.rating === nextProps.rating;
+});
 
 const styles = StyleSheet.create((theme) => ({
     container: {

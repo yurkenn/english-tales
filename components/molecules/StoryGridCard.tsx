@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Pressable, Dimensions } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,7 +19,7 @@ interface StoryGridCardProps {
     onPress: () => void;
 }
 
-export const StoryGridCard: React.FC<StoryGridCardProps> = ({
+const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
     story,
     isInLibrary,
     onPress,
@@ -85,6 +85,12 @@ export const StoryGridCard: React.FC<StoryGridCardProps> = ({
         </Pressable>
     );
 };
+
+// Memoize component to prevent unnecessary re-renders in grid lists
+export const StoryGridCard = memo(StoryGridCardComponent, (prevProps, nextProps) => {
+    return prevProps.story.id === nextProps.story.id
+        && prevProps.isInLibrary === nextProps.isInLibrary;
+});
 
 const styles = StyleSheet.create((theme) => ({
     card: {

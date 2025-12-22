@@ -38,7 +38,7 @@ export default function ForgotPasswordScreen() {
         try {
             await sendPasswordResetEmail(email);
             setSuccess(true);
-            toastActions.success('Password reset email sent!');
+            toastActions.success(t('auth.forgotPassword.toastSuccess'));
         } catch (err: unknown) {
             handleAuthError(err);
         } finally {
@@ -53,17 +53,21 @@ export default function ForgotPasswordScreen() {
                     <View style={styles.successIconContainer}>
                         <Ionicons name="mail-open-outline" size={64} color={theme.colors.primary} />
                     </View>
-                    <Text style={styles.successTitle}>{t('settings.dialogs.changePassword.success', 'Check Your Email')}</Text>
-                    <Text style={styles.successText}>
-                        {t('auth.forgotPassword.successMessage', "We've sent a password reset link to")}{'\n'}
-                        <Text style={styles.emailHighlight}>{email}</Text>
-                    </Text>
-                    <Text style={styles.successHint}>
-                        {t('auth.forgotPassword.spamHint', "If you don't see the email, check your spam folder.")}
-                    </Text>
-                    <Pressable style={styles.button} onPress={() => router.replace('/login')}>
-                        <Text style={styles.buttonText}>{t('auth.forgotPassword.backToLogin', 'Back to Login')}</Text>
-                    </Pressable>
+                    <Text style={styles.successTitle}>{t('auth.forgotPassword.successTitle')}</Text>
+                    <View style={styles.successMessageContainer}>
+                        <Text style={styles.successText}>
+                            {t('auth.forgotPassword.successMessage')} {'\n'}
+                            <Text style={styles.emailHighlight}>{email}</Text>
+                        </Text>
+                        <Text style={styles.successHint}>
+                            {t('auth.forgotPassword.spamHint')}
+                        </Text>
+                    </View>
+                    <View style={styles.successFooter}>
+                        <Pressable style={styles.button} onPress={() => router.replace('/login')}>
+                            <Text style={styles.buttonText}>{t('auth.forgotPassword.backToLogin')}</Text>
+                        </Pressable>
+                    </View>
                 </View>
             </View>
         );
@@ -85,9 +89,9 @@ export default function ForgotPasswordScreen() {
                     <View style={styles.iconContainer}>
                         <Ionicons name="lock-open-outline" size={48} color={theme.colors.primary} />
                     </View>
-                    <Text style={styles.title}>{t('auth.forgotPassword.title', 'Forgot Password?')}</Text>
+                    <Text style={styles.title}>{t('auth.forgotPassword.title')}</Text>
                     <Text style={styles.subtitle}>
-                        {t('auth.forgotPassword.message', "No worries! Enter your email address and we'll send you a link to reset your password.")}
+                        {t('auth.forgotPassword.message')}
                     </Text>
                 </View>
 
@@ -95,7 +99,7 @@ export default function ForgotPasswordScreen() {
                 <View style={styles.form}>
                     <FormField
                         icon="mail-outline"
-                        placeholder={t('common.email', 'Email')}
+                        placeholder={t('common.email')}
                         value={email}
                         onChangeText={(text) => {
                             setEmail(text);
@@ -115,7 +119,7 @@ export default function ForgotPasswordScreen() {
                         {loading ? (
                             <ActivityIndicator color={theme.colors.textInverse} />
                         ) : (
-                            <Text style={styles.buttonText}>{t('settings.dialogs.changePassword.title', 'Send Reset Link')}</Text>
+                            <Text style={styles.buttonText}>{t('auth.forgotPassword.submit')}</Text>
                         )}
                     </Pressable>
                 </View>
@@ -123,7 +127,7 @@ export default function ForgotPasswordScreen() {
                 {/* Footer */}
                 <Pressable style={styles.backToLogin} onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={16} color={theme.colors.primary} />
-                    <Text style={styles.backToLoginText}>{t('auth.forgotPassword.backToLogin', 'Back to Login')}</Text>
+                    <Text style={styles.backToLoginText}>{t('auth.forgotPassword.backToLogin')}</Text>
                 </Pressable>
             </View>
         </KeyboardAvoidingView>
@@ -227,14 +231,19 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.primaryLight,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: theme.spacing.xl,
+        marginBottom: theme.spacing.xxl,
     },
     successTitle: {
         fontSize: theme.typography.size.xxxl,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
-        marginBottom: theme.spacing.md,
+        marginBottom: theme.spacing.lg,
         textAlign: 'center',
+    },
+    successMessageContainer: {
+        alignItems: 'center',
+        marginBottom: theme.spacing.xxxxl,
+        paddingHorizontal: theme.spacing.sm,
     },
     successText: {
         fontSize: theme.typography.size.md,
@@ -251,6 +260,9 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
         textAlign: 'center',
-        marginBottom: theme.spacing.xxxxl,
+    },
+    successFooter: {
+        width: '100%',
+        marginTop: theme.spacing.lg,
     },
 }));

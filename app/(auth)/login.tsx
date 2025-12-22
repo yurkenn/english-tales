@@ -49,6 +49,7 @@ export default function LoginScreen() {
         setLoading(true);
         try {
             await signInAnonymously();
+            router.replace('/(tabs)');
         } catch (error: any) {
             handleAuthError(error, { fallbackMessage: t('auth.login.guestFailed', 'Could not sign in as guest') });
         } finally {
@@ -97,6 +98,7 @@ export default function LoginScreen() {
                             if (errors.password) setErrors({ ...errors, password: undefined });
                         }}
                         secureTextEntry
+                        showPasswordToggle
                         error={errors.password}
                         containerStyle={styles.fieldContainer}
                     />

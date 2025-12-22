@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TextInputProps, ViewStyle, StyleProp } from 'react-native';
+import { View, Text, TextInput, TextInputProps, ViewStyle, StyleProp, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -17,6 +17,8 @@ export interface FormFieldProps extends TextInputProps {
     helperText?: string;
     /** Optional container style override */
     containerStyle?: StyleProp<ViewStyle>;
+    /** Whether to show a toggle for password visibility */
+    showPasswordToggle?: boolean;
 }
 
 /**
@@ -29,10 +31,14 @@ export const FormField: React.FC<FormFieldProps> = ({
     helperText,
     containerStyle,
     style,
+    showPasswordToggle,
     ...textInputProps
 }) => {
     const { theme } = useUnistyles();
+    const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
     const hasError = !!error;
+
+    const isSecure = textInputProps.secureTextEntry && !isPasswordVisible;
 
     return (
         <View style={[styles.container, containerStyle]}>
@@ -64,9 +70,23 @@ export const FormField: React.FC<FormFieldProps> = ({
                     placeholderTextColor={theme.colors.textMuted}
                     accessibilityLabel={label || textInputProps.placeholder}
                     accessibilityHint={error || helperText}
-                    accessibilityState={{ disabled: !!textInputProps.editable === false }}
+                    accessibilityState={{ disabled: textInputProps.editable === false }}
                     {...textInputProps}
+                    secureTextEntry={isSecure}
                 />
+                {showPasswordToggle && textInputProps.secureTextEntry && (
+                    <Pressable
+                        onPress={() => setIsPasswordVisible(!isPasswordVisible)}
+                        style={styles.toggleIcon}
+                        hitSlop={10}
+                    >
+                        <Ionicons
+                            name={isPasswordVisible ? 'eye-off-outline' : 'eye-outline'}
+                            size={20}
+                            color={theme.colors.textSecondary}
+                        />
+                    </Pressable>
+                )}
             </View>
             {error && (
                 <View style={styles.errorContainer}>
@@ -109,6 +129,10 @@ const styles = StyleSheet.create((theme) => ({
     input: {
         flex: 1,
         fontSize: theme.typography.size.md,
+        paddingVertical: theme.spacing.sm,
+    },
+    toggleIcon: {
+        marginLeft: theme.spacing.sm,
     },
     errorContainer: {
         flexDirection: 'row',

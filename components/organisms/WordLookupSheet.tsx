@@ -5,6 +5,7 @@ import { BottomSheetModal, BottomSheetView, BottomSheetBackdrop } from '@gorhom/
 import { Ionicons } from '@expo/vector-icons';
 import { DictionaryEntry } from '@/services/dictionary';
 import { useVocabularyStore } from '@/store/vocabularyStore';
+import { useAuthStore } from '@/store/authStore';
 import { haptics } from '@/utils/haptics';
 
 interface WordLookupSheetProps {
@@ -20,13 +21,15 @@ export const WordLookupSheet = forwardRef<BottomSheetModal, WordLookupSheetProps
         const { theme } = useUnistyles();
         const snapPoints = useMemo(() => ['40%', '60%'], []);
 
+        const { user } = useAuthStore();
         const { actions: vocabActions } = useVocabularyStore();
-        const isSaved = useVocabularyStore((s) => s.actions.isWordSaved(word));
+        const isSaved = useVocabularyStore((s) => user?.id ? s.actions.isWordSaved(user.id, word) : false);
 
         const handleSaveToggle = () => {
+            if (!user) return;
             haptics.medium();
             if (isSaved) {
-                vocabActions.removeWord(word);
+                vocabActions.removeWord(user.id, word);
             } else if (dictionaryData) {
                 // Take the first definition as primary
                 const firstMeaning = dictionaryData.meanings[0];
@@ -41,6 +44,7 @@ export const WordLookupSheet = forwardRef<BottomSheetModal, WordLookupSheetProps
                     addedAt: Date.now(),
                     storyId,
                     storyTitle,
+                    userId: user.id,
                 });
             }
         };

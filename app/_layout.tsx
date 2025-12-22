@@ -130,7 +130,7 @@ export default function RootLayout() {
     if (!initialized) return;
 
     const userId = user?.id || null;
-    if (user && !user.isAnonymous) {
+    if (user) {
       libraryActions.setUserId(userId);
       progressActions.setUserId(userId);
     } else {

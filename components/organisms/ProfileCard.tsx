@@ -1,9 +1,12 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { OptimizedImage } from '../atoms';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/default-avatar.png');
 
 interface ProfileCardProps {
     photoURL?: string | null;
@@ -55,7 +58,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
         );
     };
 
-    const avatarUri = photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(isAnonymous ? 'Guest' : displayName || 'User')}&background=EA2A33&color=fff&bold=true`;
+    const avatarSource: ImageSourcePropType = photoURL ? { uri: photoURL } : DEFAULT_AVATAR;
     const name = isAnonymous ? 'Guest User' : (displayName || 'Reader');
     const subtitle = isAnonymous ? 'Sign in to sync your progress' : email;
 
@@ -74,7 +77,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                     style={styles.avatarRing}
                 >
                     <View style={styles.avatarInner}>
-                        <OptimizedImage source={{ uri: avatarUri }} style={styles.avatar} />
+                        <Image source={avatarSource} style={styles.avatar} />
                     </View>
                 </LinearGradient>
                 {!isAnonymous && (

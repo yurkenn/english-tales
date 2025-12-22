@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar } from './ProgressBar';
 import { useTranslation } from 'react-i18next';
 
@@ -23,18 +24,22 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = ({
     estimatedReadTime,
 }) => {
     const { t } = useTranslation();
+    const { theme } = useUnistyles();
     const remainingTime = Math.max(1, Math.ceil(estimatedReadTime * (100 - progress) / 100));
     return (
         <View style={styles.container}>
             <ProgressBar
                 progress={progress}
-                height={2}
-                trackColor="rgba(0,0,0,0.05)"
+                height={3}
+                trackColor={theme.colors.borderLight}
             />
             <View style={styles.info}>
-                <Text style={styles.remainingText}>
-                    {t('reading.remainingTime', { time: remainingTime })}
-                </Text>
+                <View style={styles.timeBadge}>
+                    <Ionicons name="time-outline" size={12} color={theme.colors.textMuted} />
+                    <Text style={styles.remainingText}>
+                        {t('reading.remainingTime', { time: remainingTime })}
+                    </Text>
+                </View>
                 <Text style={styles.percentageText}>{Math.round(progress)}%</Text>
             </View>
         </View>
@@ -44,14 +49,20 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = ({
 const styles = StyleSheet.create((theme) => ({
     container: {
         paddingHorizontal: theme.spacing.xl,
-        paddingVertical: theme.spacing.xs,
-        gap: 6,
+        paddingVertical: 10,
+        gap: 8,
+        backgroundColor: theme.colors.background,
     },
     info: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 2,
+    },
+    timeBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 4,
     },
     remainingText: {
         fontSize: theme.typography.size.xs,

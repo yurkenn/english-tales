@@ -33,7 +33,15 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     },
     setIsLoading: (isLoading) => set({ isLoading }),
     signOut: async () => {
+        const { useLibraryStore } = await import('./libraryStore');
+        const { useProgressStore } = await import('./progressStore');
+        const { useVocabularyStore } = await import('./vocabularyStore');
+
         await authSignOut();
+        useLibraryStore.getState().actions.clearLibrary();
+        useProgressStore.getState().actions.clearProgress();
+        useVocabularyStore.getState().actions.clearAll();
+
         set({ user: null });
         router.replace('/login');
     },

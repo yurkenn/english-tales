@@ -41,8 +41,8 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                         <View style={styles.iconContainer}>
                             <Ionicons name="trophy" size={40} color={theme.colors.primary} />
                         </View>
-                        <Text style={styles.congratsText}>{t('reading.completion.congrats', 'Way to go!')}</Text>
-                        <Text style={styles.title}>{t('reading.completion.title', 'Story Completed')}</Text>
+                        <Text style={styles.title}>{t('reading.completion.title')}</Text>
+                        <Text style={styles.congratsText}>{t('reading.completion.subtitle')}</Text>
                     </View>
 
                     <Text style={styles.storyTitle}>{storyTitle}</Text>
@@ -50,17 +50,17 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                     <View style={styles.statsRow}>
                         <View style={styles.statBox}>
                             <Text style={styles.statValue}>{readingTimeMinutes}</Text>
-                            <Text style={styles.statLabel}>{t('reading.completion.minRead', 'min read')}</Text>
+                            <Text style={styles.statLabel}>{t('profile.stats.readingTime').split(' ')[0]} min</Text>
                         </View>
                         <View style={styles.statDivider} />
                         <View style={styles.statBox}>
                             <Text style={styles.statValue}>{wordCount}</Text>
-                            <Text style={styles.statLabel}>{t('reading.completion.words', 'words')}</Text>
+                            <Text style={styles.statLabel}>{t('authors.stories').toLowerCase()}</Text>
                         </View>
                     </View>
 
                     <View style={styles.ratingSection}>
-                        <Text style={styles.ratingLabel}>{t('reading.completion.ratingLabel', 'Support the author with a rating')}</Text>
+                        <Text style={styles.ratingLabel}>{t('reading.completion.ratingOptional')}</Text>
                         <View style={styles.stars}>
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <Pressable key={star} onPress={() => handleRatingPress(star)}>
@@ -74,13 +74,23 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                         </View>
                     </View>
 
-                    <Pressable style={styles.button} onPress={() => onComplete(rating > 0 ? rating : undefined)}>
-                        <Text style={styles.buttonText}>{t('reading.completion.finishAndShare', 'Finish & Share')}</Text>
-                    </Pressable>
+                    <View style={styles.footer}>
+                        <Text style={styles.readyText}>{t('reading.completion.readyForMore')}</Text>
+                        <Pressable
+                            style={styles.button}
+                            onPress={() => {
+                                haptics.success();
+                                onComplete(rating > 0 ? rating : undefined);
+                            }}
+                        >
+                            <Text style={styles.buttonText}>{t('reading.completion.nextStory')}</Text>
+                            <Ionicons name="arrow-forward" size={20} color={theme.colors.textInverse} />
+                        </Pressable>
 
-                    <Pressable style={styles.secondary} onPress={onContinue}>
-                        <Text style={styles.secondaryText}>{t('reading.completion.backToLibrary', 'Back to Library')}</Text>
-                    </Pressable>
+                        <Pressable style={styles.secondary} onPress={onContinue}>
+                            <Text style={styles.secondaryText}>{t('reading.completion.backToHome')}</Text>
+                        </Pressable>
+                    </View>
                 </View>
             </View>
         </Modal>
@@ -117,17 +127,17 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: 16,
     },
     congratsText: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.primary,
-        textTransform: 'uppercase',
-        letterSpacing: 2,
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textMuted,
+        textAlign: 'center',
+        paddingHorizontal: 20,
     },
     title: {
         fontSize: theme.typography.size.xxl,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
         marginTop: 4,
+        marginBottom: 8,
     },
     storyTitle: {
         fontSize: theme.typography.size.lg,
@@ -179,13 +189,26 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         gap: 8,
     },
+    footer: {
+        width: '100%',
+        alignItems: 'center',
+        gap: 16,
+    },
+    readyText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.semibold,
+        color: theme.colors.text,
+    },
     button: {
         width: '100%',
         backgroundColor: theme.colors.primary,
         paddingVertical: 16,
+        paddingHorizontal: 24,
         borderRadius: theme.radius.full,
+        flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 12,
+        justifyContent: 'center',
+        gap: 8,
         ...theme.shadows.md,
     },
     buttonText: {
@@ -194,10 +217,11 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textInverse,
     },
     secondary: {
-        padding: 12,
+        padding: 8,
     },
     secondaryText: {
         fontSize: theme.typography.size.md,
         color: theme.colors.textMuted,
+        fontWeight: theme.typography.weight.medium,
     },
 }));

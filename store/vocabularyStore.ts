@@ -11,14 +11,16 @@ export interface SavedWord {
     addedAt: number;
     storyId?: string; // which story it was learned from
     storyTitle?: string;
+    userId: string; // Add userId to associate word with owner
 }
 
 interface VocabularyState {
-    savedWords: Record<string, SavedWord>;
+    savedWords: Record<string, Record<string, SavedWord>>; // Record<userId, Record<wordId, SavedWord>>
     actions: {
         saveWord: (word: SavedWord) => void;
-        removeWord: (wordId: string) => void;
-        isWordSaved: (wordId: string) => boolean;
+        removeWord: (userId: string, wordId: string) => void;
+        isWordSaved: (userId: string, wordId: string) => boolean;
+        getWordsForUser: (userId: string) => SavedWord[];
         clearAll: () => void;
     };
 }
@@ -31,24 +33,39 @@ export const useVocabularyStore = create<VocabularyState>()(
             actions: {
                 saveWord: (word) => {
                     const wordId = word.word.toLowerCase();
+                    const userId = word.userId;
                     set((state) => ({
                         savedWords: {
                             ...state.savedWords,
-                            [wordId]: { ...word, id: wordId }
+                            [userId]: {
+                                ...(state.savedWords[userId] || {}),
+                                [wordId]: { ...word, id: wordId }
+                            }
                         }
                     }));
                 },
 
-                removeWord: (wordId) => {
+                removeWord: (userId, wordId) => {
                     const id = wordId.toLowerCase();
                     set((state) => {
-                        const { [id]: _, ...rest } = state.savedWords;
-                        return { savedWords: rest };
+                        const userWords = { ...(state.savedWords[userId] || {}) };
+                        delete userWords[id];
+                        return {
+                            savedWords: {
+                                ...state.savedWords,
+                                [userId]: userWords
+                            }
+                        };
                     });
                 },
 
-                isWordSaved: (wordId) => {
-                    return !!get().savedWords[wordId.toLowerCase()];
+                isWordSaved: (userId, wordId) => {
+                    return !!get().savedWords[userId]?.[wordId.toLowerCase()];
+                },
+
+                getWordsForUser: (userId) => {
+                    const words = get().savedWords[userId] || {};
+                    return Object.values(words).sort((a, b) => b.addedAt - a.addedAt);
                 },
 
                 clearAll: () => {

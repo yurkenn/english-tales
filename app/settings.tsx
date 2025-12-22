@@ -12,16 +12,11 @@ import { useDownloadStore, formatBytes } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { useTranslation } from 'react-i18next';
-import {
-    ConfirmationDialog,
-    SettingItem,
-    SettingToggle,
-    SettingsHeader,
-    SettingSection,
-} from '@/components';
+import { ConfirmationDialog, SettingItem, SettingToggle, SettingsHeader, SettingSection } from '@/components';
 import { Typography } from '@/components/atoms';
 import { haptics } from '@/utils/haptics';
-import { sendPasswordResetEmail } from '@/services/auth';
+import { sendPasswordResetEmail, deleteAccount } from '@/services/auth';
+import { userService } from '@/services/userService';
 import { notificationService } from '@/services/notificationService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import i18n from '@/i18n';
@@ -55,6 +50,8 @@ export default function SettingsScreen() {
     const clearCacheDialogRef = useRef<BottomSheet>(null);
     const changePasswordDialogRef = useRef<BottomSheet>(null);
     const languageDialogRef = useRef<BottomSheet>(null);
+    const deleteAccountDialogRef = useRef<BottomSheet>(null);
+    const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
         const calculateCache = async () => {
@@ -136,6 +133,7 @@ export default function SettingsScreen() {
                         label={t('settings.preferences.notifications')}
                         value={notificationsEnabled}
                         onValueChange={async (val) => {
+                            haptics.selection();
                             setNotificationsEnabled(val);
                             settingsActions.updateSettings({ notificationsEnabled: val });
                             if (val) {
@@ -174,6 +172,17 @@ export default function SettingsScreen() {
                             signOutDialogRef.current?.expand();
                         }}
                     />
+                    {user && !user.isAnonymous && (
+                        <SettingItem
+                            icon="trash-outline"
+                            label={t('settings.dangerZone.deleteAccount')}
+                            isDestructive
+                            onPress={() => {
+                                haptics.warning();
+                                deleteAccountDialogRef.current?.expand();
+                            }}
+                        />
+                    )}
                 </SettingSection>
 
                 <View style={styles.footerContainer}>
@@ -257,6 +266,47 @@ export default function SettingsScreen() {
                     ))}
                 </View>
             </BottomSheet>
+
+            <ConfirmationDialog
+                ref={deleteAccountDialogRef}
+                title={t('settings.dialogs.deleteAccount.title')}
+                message={t('settings.dialogs.deleteAccount.message')}
+                confirmLabel={isDeleting ? t('common.loading') : t('common.delete')}
+                cancelLabel={t('common.cancel')}
+                destructive
+                icon="trash-outline"
+                onConfirm={async () => {
+                    if (!user || isDeleting) return;
+
+                    setIsDeleting(true);
+                    try {
+                        // First delete all user data from Firestore
+                        const deleteResult = await userService.deleteUserData(user.id);
+                        if (!deleteResult.success) {
+                            throw new Error(deleteResult.error);
+                        }
+
+                        // Then delete the Firebase Auth account
+                        await deleteAccount();
+
+                        haptics.success();
+                        deleteAccountDialogRef.current?.close();
+                        toast.actions.success('Account deleted successfully');
+                        router.replace('/login');
+                    } catch (error: any) {
+                        haptics.error();
+                        setIsDeleting(false);
+
+                        if (error.message === 'REQUIRES_REAUTHENTICATION') {
+                            toast.actions.error('Please sign out and sign in again, then try deleting your account.');
+                        } else {
+                            toast.actions.error('Failed to delete account. Please try again.');
+                        }
+                        deleteAccountDialogRef.current?.close();
+                    }
+                }}
+                onCancel={() => deleteAccountDialogRef.current?.close()}
+            />
         </View>
     );
 }

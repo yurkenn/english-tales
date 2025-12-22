@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { View, ScrollView, FlatList, RefreshControl, LayoutAnimation, UIManager, Platform } from 'react-native';
+import { View, ScrollView, FlatList, RefreshControl, Platform } from 'react-native';
 import Animated, { FadeInDown, FadeIn } from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
@@ -32,15 +32,7 @@ import { socialService } from '@/services/socialService';
 import { useTranslation } from 'react-i18next';
 import { useRecommendations } from '@/hooks/useRecommendations';
 
-// Enable LayoutAnimation on Android (Only for Old Architecture)
-const isFabricEnabled = !!(global as any).nativeFabricUIManager;
-if (Platform.OS === 'android' && !isFabricEnabled && UIManager.setLayoutAnimationEnabledExperimental) {
-    try {
-        UIManager.setLayoutAnimationEnabledExperimental(true);
-    } catch {
-        // Suppress runtime errors
-    }
-}
+
 
 const DIFFICULTY_MAP: Record<number, string> = {
     1: 'beginner',
@@ -160,8 +152,6 @@ export default function HomeScreen() {
         if (index === 5) {
             router.push('/authors');
         } else {
-            // Animate layout change
-            LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
             setSelectedGenre(index);
 
             // Auto-scroll to content area after filter change
@@ -173,7 +163,6 @@ export default function HomeScreen() {
 
     const handleClearFilter = useCallback(() => {
         haptics.selection();
-        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
         setSelectedGenre(0);
     }, []);
 
@@ -247,6 +236,7 @@ export default function HomeScreen() {
                 userName={user?.displayName || t('home.greetingDefault')}
                 userPhotoUrl={user?.photoURL || undefined}
                 isAnonymous={user?.isAnonymous}
+                onProfilePress={() => { haptics.selection(); router.push('/(tabs)/profile'); }}
                 onSocialPress={() => { haptics.selection(); router.push('/social' as any); }}
                 onNotificationPress={() => { haptics.selection(); router.push('/settings' as any); }}
             />

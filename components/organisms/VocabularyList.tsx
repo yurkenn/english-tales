@@ -3,6 +3,7 @@ import { View, FlatList, Text } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { VocabularyItem } from '../molecules/VocabularyItem';
 import { SavedWord, useVocabularyStore } from '@/store/vocabularyStore';
+import { useAuthStore } from '@/store/authStore';
 import { EmptyState } from '../molecules/EmptyState';
 import { haptics } from '@/utils/haptics';
 
@@ -16,10 +17,12 @@ interface VocabularyListProps {
 export const VocabularyList: React.FC<VocabularyListProps> = ({ searchQuery = '', onWordPress }) => {
     const { t } = useTranslation();
     const { theme } = useUnistyles();
+    const { user } = useAuthStore();
     const { savedWords, actions } = useVocabularyStore();
 
     const filteredWords = useMemo(() => {
-        const words = Object.values(savedWords).sort((a, b) => b.addedAt - a.addedAt);
+        const userWords = user?.id ? (savedWords[user.id] || {}) : {};
+        const words = Object.values(userWords).sort((a, b) => b.addedAt - a.addedAt);
         if (!searchQuery) return words;
 
         const query = searchQuery.toLowerCase();
@@ -27,11 +30,12 @@ export const VocabularyList: React.FC<VocabularyListProps> = ({ searchQuery = ''
             item.word.toLowerCase().includes(query) ||
             item.definition.toLowerCase().includes(query)
         );
-    }, [savedWords, searchQuery]);
+    }, [savedWords, searchQuery, user?.id]);
 
     const handleRemove = (id: string) => {
+        if (!user?.id) return;
         haptics.light();
-        actions.removeWord(id);
+        actions.removeWord(user.id, id);
     };
 
     if (filteredWords.length === 0) {

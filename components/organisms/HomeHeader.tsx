@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/default-avatar.png');
 
 interface HomeHeaderProps {
     userName: string;
@@ -10,6 +13,7 @@ interface HomeHeaderProps {
     isAnonymous?: boolean;
     onNotificationPress?: () => void;
     onSocialPress?: () => void;
+    onProfilePress?: () => void;
 }
 
 const getGreeting = (t: any) => {
@@ -25,21 +29,22 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
     isAnonymous,
     onNotificationPress,
     onSocialPress,
+    onProfilePress,
 }) => {
     const { theme } = useUnistyles();
     const { t } = useTranslation();
     const displayName = isAnonymous ? t('common.guest', 'Guest') : (userName || t('common.reader', 'Reader'));
-    const avatarUrl = userPhotoUrl || `https://ui-avatars.com/api/?name=${encodeURIComponent(displayName)}`;
+    const avatarSource: ImageSourcePropType = userPhotoUrl ? { uri: userPhotoUrl } : DEFAULT_AVATAR;
 
     return (
         <View style={styles.header}>
-            <View style={styles.userRow}>
-                <Image source={{ uri: avatarUrl }} style={styles.avatar} />
+            <Pressable style={styles.userRow} onPress={onProfilePress}>
+                <Image source={avatarSource} style={styles.avatar} />
                 <View style={styles.greeting}>
                     <Text style={styles.greetingLabel}>{getGreeting(t)}</Text>
                     <Text style={styles.userName}>{displayName}</Text>
                 </View>
-            </View>
+            </Pressable>
             <View style={styles.actionRow}>
                 <Pressable
                     style={styles.notificationButton}

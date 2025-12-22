@@ -8,6 +8,7 @@ import {
     setDoc,
     getDoc,
     getDocs,
+    deleteDoc,
     query,
     where,
     orderBy,
@@ -140,6 +141,108 @@ class UserService {
             console.error('Error updating user profile:', error);
             return { success: false, error: 'Failed to update profile' };
         }
+    }
+
+    /**
+     * Delete all user data from Firestore
+     * This includes: user profile, library, progress, community posts, and notifications
+     * Each step is wrapped in try-catch to continue even if some data doesn't exist
+     */
+    async deleteUserData(userId: string): Promise<Result<void>> {
+        const errors: string[] = [];
+
+        // Delete user document
+        try {
+            await deleteDoc(doc(db, this.COLLECTION, userId));
+        } catch (e) {
+            console.warn('Could not delete user document:', e);
+            errors.push('user document');
+        }
+
+        // Delete library subcollection
+        try {
+            const libraryRef = collection(db, this.COLLECTION, userId, 'library');
+            const librarySnap = await getDocs(libraryRef);
+            for (const docSnap of librarySnap.docs) {
+                await deleteDoc(docSnap.ref);
+            }
+        } catch (e) {
+            console.warn('Could not delete library data:', e);
+            errors.push('library');
+        }
+
+        // Delete progress subcollection
+        try {
+            const progressRef = collection(db, this.COLLECTION, userId, 'progress');
+            const progressSnap = await getDocs(progressRef);
+            for (const docSnap of progressSnap.docs) {
+                await deleteDoc(docSnap.ref);
+            }
+        } catch (e) {
+            console.warn('Could not delete progress data:', e);
+            errors.push('progress');
+        }
+
+        // Delete user's community posts
+        try {
+            const postsQuery = query(
+                collection(db, 'posts'),
+                where('userId', '==', userId)
+            );
+            const postsSnap = await getDocs(postsQuery);
+            for (const docSnap of postsSnap.docs) {
+                await deleteDoc(docSnap.ref);
+            }
+        } catch (e) {
+            console.warn('Could not delete posts:', e);
+            errors.push('posts');
+        }
+
+        // Delete user's notifications (may not exist for all users)
+        try {
+            const notificationsRef = collection(db, 'notifications', userId, 'items');
+            const notificationsSnap = await getDocs(notificationsRef);
+            for (const docSnap of notificationsSnap.docs) {
+                await deleteDoc(docSnap.ref);
+            }
+        } catch (e) {
+            // This is expected to fail if notifications don't exist
+            console.warn('Could not delete notifications (may not exist):', e);
+        }
+
+        // Delete social connections (followers/following)
+        try {
+            const followersQuery = query(
+                collection(db, 'social'),
+                where('followerId', '==', userId)
+            );
+            const followersSnap = await getDocs(followersQuery);
+            for (const docSnap of followersSnap.docs) {
+                await deleteDoc(docSnap.ref);
+            }
+
+            const followingQuery = query(
+                collection(db, 'social'),
+                where('followingId', '==', userId)
+            );
+            const followingSnap = await getDocs(followingQuery);
+            for (const docSnap of followingSnap.docs) {
+                await deleteDoc(docSnap.ref);
+            }
+        } catch (e) {
+            console.warn('Could not delete social data:', e);
+            errors.push('social connections');
+        }
+
+        // Log result
+        if (errors.length > 0) {
+            console.warn(`Partial deletion for user ${userId}. Failed to delete: ${errors.join(', ')}`);
+        } else {
+            console.log(`All data for user ${userId} has been deleted`);
+        }
+
+        // Always return success - the important thing is deleting the Firebase Auth account
+        return { success: true, data: undefined };
     }
 }
 

@@ -4,13 +4,60 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 export default function TermsOfServiceScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { i18n } = useTranslation();
 
-    const sections = [
+    const isEnglish = i18n.language.startsWith('en');
+
+    const sectionsEN = [
+        {
+            title: '1. Service Description',
+            content: 'English Tales is an educational app that helps you learn English by reading classic stories. The app offers story reading, vocabulary learning, progress tracking, achievement badges, and offline reading features.',
+        },
+        {
+            title: '2. Account Creation',
+            content: 'To use the app, you can register with email, sign in with your Google account, or continue as a guest. Guest users cannot write reviews and use some features. You are responsible for the accuracy of your account information.',
+        },
+        {
+            title: '3. Story Content',
+            content: 'The stories in the app consist of classic works by authors such as Aesop, Brothers Grimm, Hans Christian Andersen, and Oscar Wilde. These works are in the public domain. Commercial copying or distribution of the content is prohibited.',
+        },
+        {
+            title: '4. Reviews and Ratings',
+            content: 'You can submit reviews and ratings for stories. Your reviews go through a moderation process. Reviews containing insults, spam, or inappropriate content will be deleted. Your account may be suspended for repeated violations.',
+        },
+        {
+            title: '5. Offline Download',
+            content: 'You can download stories to your device to read without internet. Downloaded content is for personal use only and cannot be shared on other platforms.',
+        },
+        {
+            title: '6. Achievements and Progress',
+            content: 'You earn achievement badges based on your reading activities. Your progress data is linked to your account. If you sign out from a guest account, your progress may be lost.',
+        },
+        {
+            title: '7. Usage Rules',
+            content: 'You may only use the app for educational purposes. Misusing the app, reverse engineering, or exploiting security vulnerabilities is prohibited.',
+        },
+        {
+            title: '8. Disclaimer',
+            content: 'English Tales is provided "as is". Language learning results depend on the user\'s effort. The app does not guarantee uninterrupted operation.',
+        },
+        {
+            title: '9. Changes',
+            content: 'We may change these terms without prior notice. Important changes will be announced through in-app notifications.',
+        },
+        {
+            title: '10. Contact',
+            content: 'For questions, you can reach us through the Settings > Support section in the app.',
+        },
+    ];
+
+    const sectionsTR = [
         {
             title: '1. Hizmet Tanımı',
             content: 'English Tales, klasik İngilizce hikayeleri okuyarak dil öğrenmenizi sağlayan bir eğitim uygulamasıdır. Uygulama; hikaye okuma, kelime öğrenme, ilerleme takibi, başarı rozetleri ve çevrimdışı okuma özellikleri sunar.',
@@ -53,6 +100,16 @@ export default function TermsOfServiceScreen() {
         },
     ];
 
+    const sections = isEnglish ? sectionsEN : sectionsTR;
+    const headerTitle = isEnglish ? 'Terms of Service' : 'Kullanım Koşulları';
+    const lastUpdated = isEnglish ? 'Last updated: December 2024' : 'Son güncelleme: Aralık 2024';
+    const intro = isEnglish
+        ? 'By using English Tales, you agree to the following terms.'
+        : 'English Tales uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursunuz.';
+    const footer = isEnglish
+        ? 'By accepting these terms, you can start using English Tales. Happy reading! 📚'
+        : 'Bu koşulları kabul ederek English Tales\'i kullanmaya başlayabilirsiniz. İyi okumalar! 📚';
+
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
@@ -60,7 +117,7 @@ export default function TermsOfServiceScreen() {
                 <Pressable style={styles.backButton} onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
-                <Text style={styles.headerTitle}>Kullanım Koşulları</Text>
+                <Text style={styles.headerTitle}>{headerTitle}</Text>
                 <View style={styles.placeholder} />
             </View>
 
@@ -68,11 +125,9 @@ export default function TermsOfServiceScreen() {
                 contentContainerStyle={[styles.content, { paddingBottom: insets.bottom + 20 }]}
                 showsVerticalScrollIndicator={false}
             >
-                <Text style={styles.lastUpdated}>Son güncelleme: Aralık 2024</Text>
+                <Text style={styles.lastUpdated}>{lastUpdated}</Text>
 
-                <Text style={styles.intro}>
-                    English Tales uygulamasını kullanarak aşağıdaki koşulları kabul etmiş olursunuz.
-                </Text>
+                <Text style={styles.intro}>{intro}</Text>
 
                 {sections.map((section, index) => (
                     <View key={index} style={styles.section}>
@@ -82,9 +137,7 @@ export default function TermsOfServiceScreen() {
                 ))}
 
                 <View style={styles.footer}>
-                    <Text style={styles.footerText}>
-                        Bu koşulları kabul ederek English Tales'i kullanmaya başlayabilirsiniz. İyi okumalar! 📚
-                    </Text>
+                    <Text style={styles.footerText}>{footer}</Text>
                 </View>
             </ScrollView>
         </View>

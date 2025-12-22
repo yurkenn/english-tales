@@ -4,6 +4,7 @@ import {
     Pressable,
     RefreshControl,
     ActivityIndicator,
+    FlatList,
 } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
@@ -258,17 +259,26 @@ export default function CommunityTab() {
                                 </Typography>
                             </View>
                         ) : (
-                            posts.map((post, index: number) => (
-                                <CommunityPostCard
-                                    key={post.id}
-                                    post={post}
-                                    currentUserId={user?.id}
-                                    onLike={handleToggleLike}
-                                    onReply={handleOpenReply}
-                                    onMorePress={handleMorePress}
-                                    index={index}
-                                />
-                            ))
+                            <FlatList
+                                data={posts}
+                                keyExtractor={(item) => item.id}
+                                renderItem={({ item: post, index }) => (
+                                    <CommunityPostCard
+                                        post={post}
+                                        currentUserId={user?.id}
+                                        onLike={handleToggleLike}
+                                        onReply={handleOpenReply}
+                                        onMorePress={handleMorePress}
+                                        index={index}
+                                    />
+                                )}
+                                scrollEnabled={false}
+                                removeClippedSubviews={true}
+                                initialNumToRender={5}
+                                maxToRenderPerBatch={3}
+                                windowSize={5}
+                                updateCellsBatchingPeriod={100}
+                            />
                         )}
                     </>
                 )}

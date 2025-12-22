@@ -197,12 +197,9 @@ export default function ReadingScreen() {
                 reviewSheetRef.current?.expand();
             }, 500);
         } else {
-            // Check if there's a quiz
-            if (storyDoc?.quiz && storyDoc.quiz.length > 0) {
-                setShowQuizModal(true);
-            } else {
-                router.back();
-            }
+            // If no rating, user just wants to find the next story
+            setShowCompletionModal(false);
+            router.push('/(tabs)/discover');
         }
     }, [id, progressActions, router, storyDoc]);
 
@@ -439,7 +436,7 @@ export default function ReadingScreen() {
                 onComplete={handleMarkComplete}
                 onContinue={() => {
                     setShowCompletionModal(false);
-                    router.back();
+                    router.replace('/(tabs)');
                 }}
             />
 

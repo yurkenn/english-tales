@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Pressable, Dimensions, Linking } from 'react-native';
+import { View, Pressable, Dimensions, Linking, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -14,6 +14,9 @@ import { Typography, Button, OptimizedImage } from '../atoms';
 import { UserProfile } from '@/types';
 import { haptics } from '@/utils/haptics';
 import { useTranslation } from 'react-i18next';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/default-avatar.png');
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -85,6 +88,12 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
             style={[styles.container, animatedStyle]}
             collapsable={false}
         >
+            {/* Background Gradient */}
+            <LinearGradient
+                colors={[`${theme.colors.primary}15`, `${theme.colors.primary}05`, 'transparent']}
+                style={styles.backgroundGradient}
+            />
+
             {/* Avatar with Gradient Ring */}
             <View style={styles.avatarSection}>
                 <View style={styles.avatarWrapper}>
@@ -95,10 +104,9 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
                         style={styles.avatarRing}
                     >
                         <View style={styles.avatarInner}>
-                            <OptimizedImage
-                                source={{ uri: profile.photoURL || '' }}
+                            <Image
+                                source={profile.photoURL ? { uri: profile.photoURL } : DEFAULT_AVATAR}
                                 style={styles.avatar}
-                                placeholder="person-circle"
                             />
                         </View>
                     </LinearGradient>
@@ -107,24 +115,34 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 
             {/* Username */}
             <Typography style={styles.username}>
+                {profile.displayName || 'Reader'}
+            </Typography>
+            <Typography style={styles.handle}>
                 @{profile.displayName?.toLowerCase().replace(/\s+/g, '') || 'anonymous'}
             </Typography>
 
-            {/* Stats Row */}
-            <View style={styles.statsRow}>
-                <Pressable style={styles.statItem}>
+            {/* Stats Row - Clean Minimal Design */}
+            <View style={styles.statsContainer}>
+                <Pressable style={styles.statCard}>
                     <Typography style={styles.statValue}>{profile.followingCount || 0}</Typography>
                     <Typography style={styles.statLabel}>{t('social.following', 'Following')}</Typography>
                 </Pressable>
 
-                <Pressable style={styles.statItem}>
+                <View style={styles.statDivider} />
+
+                <Pressable style={styles.statCard}>
                     <Typography style={styles.statValue}>{profile.followersCount || 0}</Typography>
                     <Typography style={styles.statLabel}>{t('social.followers', 'Followers')}</Typography>
                 </Pressable>
 
-                <Pressable style={styles.statItem}>
-                    <Typography style={styles.statValue}>{profile.streak || 0}</Typography>
-                    <Typography style={styles.statLabel}>🔥 {t('profile.streak', 'Streak')}</Typography>
+                <View style={styles.statDivider} />
+
+                <Pressable style={styles.statCard}>
+                    <View style={styles.streakRow}>
+                        <Typography style={styles.statValue}>{profile.streak || 0}</Typography>
+                        <Typography style={styles.streakEmoji}>🔥</Typography>
+                    </View>
+                    <Typography style={styles.statLabel}>{t('profile.streak', 'Streak')}</Typography>
                 </Pressable>
             </View>
 
@@ -136,6 +154,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
                             style={({ pressed }) => [styles.editButton, pressed && { opacity: 0.7 }]}
                             onPress={onEditPress}
                         >
+                            <Ionicons name="pencil-outline" size={16} color={theme.colors.text} />
                             <Typography style={styles.editButtonText}>
                                 {t('profile.editProfile', 'Edit profile')}
                             </Typography>
@@ -161,6 +180,11 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
                             ]}
                             onPress={onFollowPress}
                         >
+                            <Ionicons
+                                name={relationship === 'following' ? 'checkmark-circle' : 'person-add-outline'}
+                                size={16}
+                                color={relationship === 'following' ? theme.colors.text : '#FFFFFF'}
+                            />
                             <Typography style={relationship === 'following' ? styles.editButtonText : styles.followButtonText}>
                                 {relationship === 'following'
                                     ? t('social.following', 'Following')
@@ -185,10 +209,13 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 
             {/* Bio */}
             {profile.bio ? (
-                <Typography style={styles.bio}>{profile.bio}</Typography>
+                <View style={styles.bioContainer}>
+                    <Typography style={styles.bio}>{profile.bio}</Typography>
+                </View>
             ) : isSelf ? (
                 <Pressable style={styles.addBioButton} onPress={onEditPress}>
-                    <Typography style={styles.addBioText}>+ {t('profile.addBio', 'Add bio')}</Typography>
+                    <Ionicons name="add-circle-outline" size={16} color={theme.colors.primary} />
+                    <Typography style={styles.addBioText}>{t('profile.addBio', 'Add bio')}</Typography>
                 </Pressable>
             ) : null}
 
@@ -207,74 +234,116 @@ const styles = StyleSheet.create((theme) => ({
     container: {
         backgroundColor: theme.colors.background,
         alignItems: 'center',
-        paddingTop: 32,
-        paddingBottom: 16,
+        paddingTop: 24,
+        paddingBottom: 20,
         paddingHorizontal: 16,
+        position: 'relative',
+        overflow: 'hidden',
+    },
+    backgroundGradient: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        height: 180,
     },
     avatarSection: {
-        marginBottom: 8,
+        marginBottom: 12,
     },
     avatarWrapper: {
         position: 'relative',
+        ...theme.shadows.md,
     },
     avatarRing: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
-        padding: 3,
+        width: 110,
+        height: 110,
+        borderRadius: 55,
+        padding: 4,
     },
     avatarInner: {
         flex: 1,
-        borderRadius: 47,
+        borderRadius: 51,
         overflow: 'hidden',
-        backgroundColor: theme.colors.background,
-        padding: 2,
+        backgroundColor: theme.colors.surface,
+        padding: 3,
     },
     avatar: {
         width: '100%',
         height: '100%',
-        borderRadius: 45,
+        borderRadius: 48,
     },
     username: {
-        fontSize: theme.typography.size.xl,
-        fontWeight: '600',
+        fontSize: theme.typography.size.xxl,
+        fontWeight: '700',
         color: theme.colors.text,
-        marginBottom: 16,
+        letterSpacing: -0.5,
     },
-    statsRow: {
+    handle: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textMuted,
+        marginBottom: 20,
+    },
+    statsContainer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginBottom: 16,
-        gap: 24,
-    },
-    statItem: {
         alignItems: 'center',
-        paddingHorizontal: 12,
+        marginBottom: 20,
+        width: '100%',
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+    },
+    statCard: {
+        flex: 1,
+        alignItems: 'center',
+        paddingVertical: 16,
+    },
+    statDivider: {
+        width: 1,
+        height: 40,
+        backgroundColor: theme.colors.border,
+        alignSelf: 'center',
     },
     statValue: {
-        fontSize: theme.typography.size.xl,
+        fontSize: theme.typography.size.xxl,
         fontWeight: '700',
         color: theme.colors.text,
     },
     statLabel: {
         fontSize: theme.typography.size.sm,
+        fontWeight: '500',
         color: theme.colors.textMuted,
-        marginTop: 2,
+        marginTop: 4,
+    },
+    streakRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 4,
+    },
+    streakEmoji: {
+        fontSize: 16,
     },
     actionsRow: {
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 8,
+        gap: 10,
         marginBottom: 16,
     },
     editButton: {
-        paddingVertical: 10,
-        paddingHorizontal: 32,
-        borderRadius: 6,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+        paddingVertical: 12,
+        paddingHorizontal: 24,
+        borderRadius: 12,
         borderWidth: 1,
         borderColor: theme.colors.border,
-        backgroundColor: theme.colors.background,
+        backgroundColor: theme.colors.surface,
+        ...theme.shadows.sm,
     },
     editButtonText: {
         fontSize: theme.typography.size.md,
@@ -282,10 +351,14 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
     },
     followButton: {
-        paddingVertical: 10,
-        paddingHorizontal: 32,
-        borderRadius: 6,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+        paddingVertical: 12,
+        paddingHorizontal: 24,
+        borderRadius: 12,
         backgroundColor: theme.colors.primary,
+        ...theme.shadows.md,
     },
     followButtonText: {
         fontSize: theme.typography.size.md,
@@ -293,36 +366,58 @@ const styles = StyleSheet.create((theme) => ({
         color: '#FFFFFF',
     },
     socialIcon: {
-        width: 40,
-        height: 40,
-        borderRadius: 6,
+        width: 44,
+        height: 44,
+        borderRadius: 12,
         borderWidth: 1,
         borderColor: theme.colors.border,
+        backgroundColor: theme.colors.surface,
         alignItems: 'center',
         justifyContent: 'center',
+        ...theme.shadows.sm,
+    },
+    bioContainer: {
+        backgroundColor: theme.colors.surface,
+        borderRadius: 12,
+        paddingVertical: 12,
+        paddingHorizontal: 16,
+        marginHorizontal: 8,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
     },
     bio: {
         fontSize: theme.typography.size.md,
         color: theme.colors.text,
         textAlign: 'center',
         lineHeight: 22,
-        marginBottom: 8,
-        paddingHorizontal: 16,
     },
     addBioButton: {
-        marginBottom: 8,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderRadius: 20,
+        backgroundColor: `${theme.colors.primary}10`,
     },
     addBioText: {
         fontSize: theme.typography.size.md,
-        color: theme.colors.textMuted,
+        color: theme.colors.primary,
+        fontWeight: '600',
     },
     locationRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
+        gap: 6,
+        marginTop: 8,
+        paddingVertical: 6,
+        paddingHorizontal: 12,
+        borderRadius: 20,
+        backgroundColor: theme.colors.surface,
     },
     locationText: {
-        fontSize: theme.typography.size.md,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
     },
 }));
+

@@ -17,11 +17,30 @@ export const PopularStoryCard: React.FC<PopularStoryCardProps> = ({
 }) => {
     const { theme } = useUnistyles();
 
-    const getRankStyle = () => {
-        if (rank === 1) return styles.rankBadgeGold;
-        if (rank === 2) return styles.rankBadgeSilver;
-        if (rank === 3) return styles.rankBadgeBronze;
-        return null;
+    const renderRankBadge = () => {
+        const isTop3 = rank <= 3;
+        let iconName: keyof typeof Ionicons.glyphMap | null = null;
+        let badgeStyle = styles.rankBadge;
+
+        if (rank === 1) {
+            iconName = 'medal';
+            badgeStyle = [styles.rankBadge, styles.rankBadgeGold];
+        } else if (rank === 2) {
+            iconName = 'medal';
+            badgeStyle = [styles.rankBadge, styles.rankBadgeSilver];
+        } else if (rank === 3) {
+            iconName = 'medal';
+            badgeStyle = [styles.rankBadge, styles.rankBadgeBronze];
+        }
+
+        return (
+            <View style={badgeStyle}>
+                {iconName ? (
+                    <Ionicons name={iconName} size={14} color="#FFF" style={styles.medalIcon} />
+                ) : null}
+                <Text style={[styles.rankText, isTop3 && styles.rankTextWhite]}>{rank}</Text>
+            </View>
+        );
     };
 
     const getDifficultyLabel = () => {
@@ -44,9 +63,7 @@ export const PopularStoryCard: React.FC<PopularStoryCardProps> = ({
             ]}
             onPress={onPress}
         >
-            <View style={[styles.rankBadge, getRankStyle()]}>
-                <Text style={styles.rankText}>{rank}</Text>
-            </View>
+            {renderRankBadge()}
 
             <View style={styles.info}>
                 <Text style={styles.title} numberOfLines={1}>
@@ -91,26 +108,49 @@ const styles = StyleSheet.create((theme) => ({
         transform: [{ scale: 0.99 }],
     },
     rankBadge: {
-        width: 32,
-        height: 32,
-        borderRadius: theme.radius.lg,
-        backgroundColor: theme.colors.backgroundSecondary,
+        width: 36,
+        height: 36,
+        borderRadius: 12,
+        backgroundColor: theme.colors.surfaceElevated,
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        position: 'relative',
     },
     rankBadgeGold: {
-        backgroundColor: '#FCD34D',
+        backgroundColor: '#FFD700',
+        borderColor: '#FFC107',
+        ...theme.shadows.sm,
     },
     rankBadgeSilver: {
-        backgroundColor: '#D1D5DB',
+        backgroundColor: '#C0C0C0',
+        borderColor: '#9E9E9E',
+        ...theme.shadows.sm,
     },
     rankBadgeBronze: {
-        backgroundColor: '#FBBF24',
+        backgroundColor: '#CD7F32',
+        borderColor: '#A0522D',
+        ...theme.shadows.sm,
+    },
+    medalIcon: {
+        position: 'absolute',
+        top: -4,
+        right: -4,
+        textShadowColor: 'rgba(0,0,0,0.2)',
+        textShadowOffset: { width: 0, height: 1 },
+        textShadowRadius: 2,
     },
     rankText: {
         fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
+        fontWeight: '800',
+        color: theme.colors.textSecondary,
+    },
+    rankTextWhite: {
+        color: '#FFFFFF',
+        textShadowColor: 'rgba(0,0,0,0.2)',
+        textShadowOffset: { width: 0, height: 1 },
+        textShadowRadius: 2,
     },
     info: {
         flex: 1,

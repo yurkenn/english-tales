@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
@@ -15,7 +15,7 @@ interface LibraryBookCardProps {
     moreButtonRef?: (ref: View | null) => void;
 }
 
-export const LibraryBookCard: React.FC<LibraryBookCardProps> = ({
+const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
     item,
     isDownloaded,
     onPress,
@@ -106,6 +106,13 @@ export const LibraryBookCard: React.FC<LibraryBookCardProps> = ({
         </Pressable >
     );
 };
+
+// Memoize component to prevent unnecessary re-renders in lists
+export const LibraryBookCard = memo(LibraryBookCardComponent, (prevProps, nextProps) => {
+    return prevProps.item.storyId === nextProps.item.storyId
+        && prevProps.item.progress?.percentage === nextProps.item.progress?.percentage
+        && prevProps.isDownloaded === nextProps.isDownloaded;
+});
 
 const styles = StyleSheet.create((theme) => ({
     bookItem: {
