@@ -16,7 +16,7 @@ import { haptics } from '@/utils/haptics';
 import { useTranslation } from 'react-i18next';
 
 // Default mascot avatar for users without profile photo
-const DEFAULT_AVATAR = require('@/assets/default-avatar.png');
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 

@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 
 // Default mascot avatar for users without profile photo
-const DEFAULT_AVATAR = require('@/assets/default-avatar.png');
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 interface HomeHeaderProps {
     userName: string;

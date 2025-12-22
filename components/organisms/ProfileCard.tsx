@@ -6,7 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { OptimizedImage } from '../atoms';
 
 // Default mascot avatar for users without profile photo
-const DEFAULT_AVATAR = require('@/assets/default-avatar.png');
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 interface ProfileCardProps {
     photoURL?: string | null;

@@ -31,7 +31,7 @@
     "@react-native-firebase/firestore": "^23.7.0",
     "@react-native-firebase/perf": "^23.7.0",
     "@react-native-google-signin/google-signin": "^16.0.0",
-    "@react-navigation/bottom-tabs": "^7.9.0",
+    "@react-navigation/bottom-tabs": "^7.4.0",
     "@react-navigation/native": "^7.1.6",
     "@sanity/client": "^7.13.2",
     "@sanity/image-url": "^2.0.2",
