@@ -73,6 +73,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
                                 onTabChange(tab.id);
                             }
                         }}
+                        hitSlop={{ top: 10, bottom: 10, left: 5, right: 5 }}
                     >
                         <Ionicons
                             name={isActive ? tab.icon.replace('-outline', '') : tab.icon}

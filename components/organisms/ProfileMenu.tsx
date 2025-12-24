@@ -32,6 +32,7 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({ items }) => {
                             pressed && styles.menuItemPressed,
                         ]}
                         onPress={item.onPress}
+                        hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
                     >
                         <View style={styles.iconContainer}>
                             <Ionicons name={item.icon} size={20} color={theme.colors.primary} />

@@ -6,6 +6,7 @@ import {
     RefreshControl,
     ActivityIndicator,
 } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -82,14 +83,18 @@ export default function SocialScreen() {
             <Typography color={theme.colors.textMuted} align="center" style={{ marginTop: 8 }}>
                 {t('social.emptyFollowingDesc', 'Follow other readers to see their progress and stay inspired!')}
             </Typography>
-            <Pressable
+            <TouchableOpacity
                 style={styles.primaryButton}
-                onPress={() => searchSheetRef.current?.expand()}
+                onPress={() => {
+                    haptics.selection();
+                    router.push('/(tabs)/community');
+                }}
+                activeOpacity={0.8}
             >
                 <Typography variant="button" color={theme.colors.textInverse}>
                     {t('social.explore', 'Explore Community')}
                 </Typography>
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 

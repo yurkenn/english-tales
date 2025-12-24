@@ -283,7 +283,16 @@ export default function StoryDetailScreen() {
 
             {/* Bottom Action */}
             <View style={[styles.bottomAction, { paddingBottom: insets.bottom + 16 }]}>
-                <Pressable style={styles.readButton} onPress={() => router.push(`/reading/${story.id}`)}>
+                <Pressable
+                    style={styles.readButton}
+                    onPress={() => {
+                        haptics.selection();
+                        // Delay navigation to allow UI to respond first
+                        requestAnimationFrame(() => {
+                            router.push(`/reading/${story.id}`);
+                        });
+                    }}
+                >
                     <Ionicons name="book-outline" size={20} color={theme.colors.textInverse} />
                     <Text style={styles.readButtonText}>Start Reading</Text>
                 </Pressable>
