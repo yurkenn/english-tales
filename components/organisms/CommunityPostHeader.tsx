@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
+import { View, Pressable, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
-import { OptimizedImage } from '../atoms/OptimizedImage';
 import { haptics } from '@/utils/haptics';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 interface CommunityPostHeaderProps {
     userName: string;
@@ -22,16 +24,17 @@ export const CommunityPostHeader: React.FC<CommunityPostHeaderProps> = ({
     onMorePress,
 }) => {
     const { theme } = useUnistyles();
+    const avatarSource: ImageSourcePropType = userPhoto ? { uri: userPhoto } : DEFAULT_AVATAR;
 
     return (
         <View style={styles.postHeader}>
             <Pressable onPress={onAvatarPress} style={styles.avatarContainer}>
-                <OptimizedImage
-                    source={{ uri: userPhoto || '' }}
+                <Image
+                    source={avatarSource}
                     style={styles.avatar}
-                    placeholder="person-circle"
                 />
             </Pressable>
+
             <Pressable style={styles.headerInfo} onPress={onAvatarPress}>
                 <Typography variant="bodyBold">{userName}</Typography>
                 <Typography variant="caption" color={theme.colors.textMuted}>

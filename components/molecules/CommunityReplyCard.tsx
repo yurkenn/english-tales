@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
+import { View, Pressable, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
-import { OptimizedImage } from '../atoms/OptimizedImage';
 import { CommunityReply } from '@/types';
 import { haptics } from '@/utils/haptics';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 interface CommunityReplyCardProps {
     reply: CommunityReply;
@@ -19,6 +21,7 @@ export const CommunityReplyCard: React.FC<CommunityReplyCardProps> = ({ reply, o
     const router = useRouter();
     const replyDate = reply.timestamp?.toDate ? reply.timestamp.toDate() : new Date(reply.timestamp);
     const hasLiked = reply.likedBy?.includes(currentUserId || '');
+    const avatarSource: ImageSourcePropType = reply.userPhoto ? { uri: reply.userPhoto } : DEFAULT_AVATAR;
 
     const handleProfilePress = () => {
         haptics.selection();
@@ -28,12 +31,12 @@ export const CommunityReplyCard: React.FC<CommunityReplyCardProps> = ({ reply, o
     return (
         <View style={styles.container}>
             <Pressable onPress={handleProfilePress}>
-                <OptimizedImage
-                    source={{ uri: reply.userPhoto || '' }}
+                <Image
+                    source={avatarSource}
                     style={styles.avatar}
-                    placeholder="person-circle"
                 />
             </Pressable>
+
             <View style={styles.contentContainer}>
                 <View style={styles.header}>
                     <Pressable onPress={handleProfilePress} style={styles.headerText}>

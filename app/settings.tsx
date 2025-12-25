@@ -79,6 +79,21 @@ export default function SettingsScreen() {
             />
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
+                {/* Guest Sign In Section */}
+                {user?.isAnonymous && (
+                    <SettingSection title={t('settings.sections.signIn', 'Sign In')}>
+                        <SettingItem
+                            icon="log-in-outline"
+                            label={t('settings.account.signIn', 'Sign In / Sign Up')}
+                            value={t('settings.account.unlockFeatures', 'Unlock all features')}
+                            onPress={() => {
+                                haptics.selection();
+                                router.push('/login');
+                            }}
+                        />
+                    </SettingSection>
+                )}
+
                 <SettingSection title={t('settings.sections.account')}>
                     <SettingItem
                         icon="mail-outline"
@@ -86,19 +101,22 @@ export default function SettingsScreen() {
                         value={user?.email || t('settings.account.notSet')}
                         hasChevron={false}
                     />
-                    <SettingItem
-                        icon="key-outline"
-                        label={t('settings.account.changePassword')}
-                        onPress={() => {
-                            haptics.selection();
-                            if (!user?.email) {
-                                toast.actions.error('No email associated with this account.');
-                                return;
-                            }
-                            changePasswordDialogRef.current?.expand();
-                        }}
-                    />
+                    {!user?.isAnonymous && (
+                        <SettingItem
+                            icon="key-outline"
+                            label={t('settings.account.changePassword')}
+                            onPress={() => {
+                                haptics.selection();
+                                if (!user?.email) {
+                                    toast.actions.error('No email associated with this account.');
+                                    return;
+                                }
+                                changePasswordDialogRef.current?.expand();
+                            }}
+                        />
+                    )}
                 </SettingSection>
+
 
                 <SettingSection title={t('settings.sections.preferences')}>
                     <SettingItem

@@ -7,11 +7,12 @@ import {
     ActivityIndicator,
     KeyboardAvoidingView,
     Platform,
+    Image,
+    ImageSourcePropType,
 } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
-import { OptimizedImage } from '../atoms/OptimizedImage';
 import { userService } from '@/services/userService';
 import { UserProfile } from '@/types';
 import { socialService } from '@/services/socialService';
@@ -19,6 +20,9 @@ import { useAuthStore } from '@/store/authStore';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 import { useTranslation } from 'react-i18next';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 interface UserSearchModalProps {
     onClose: () => void;
@@ -68,16 +72,20 @@ export const UserSearchModal: React.FC<UserSearchModalProps> = ({ onClose }) => 
         setSendingRequestId(null);
     };
 
+    const getAvatarSource = (photoURL?: string | null): ImageSourcePropType => {
+        return photoURL ? { uri: photoURL } : DEFAULT_AVATAR;
+    };
+
     const renderUserItem = ({ item }: { item: UserProfile }) => (
         <View style={styles.userCard}>
             <View style={styles.userInfo}>
                 <View style={styles.avatarWrapper}>
-                    <OptimizedImage
-                        source={{ uri: item.photoURL || '' }}
+                    <Image
+                        source={getAvatarSource(item.photoURL)}
                         style={styles.avatar}
-                        placeholder="person-circle"
                     />
                 </View>
+
                 <View style={styles.userData}>
                     <Typography variant="bodyBold">{item.displayName || 'Anonymous'}</Typography>
                     <Typography variant="caption" color={theme.colors.textMuted}>

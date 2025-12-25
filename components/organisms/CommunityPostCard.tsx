@@ -92,14 +92,15 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     };
 
     return (
-        <Animated.View
-            entering={FadeInDown.delay(index * 50).springify()}
+        <View
             style={[
                 styles.postCard,
                 isAchievement && { borderColor: theme.colors.warning + '20' },
                 isReview && { borderColor: theme.colors.primary + '20' }
             ]}
         >
+
+
             {isAchievement && (
                 <AchievementBadge title={achievementTitle || t('social.achievement', 'Achievement')} />
             )}
@@ -121,24 +122,28 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                 onMorePress={() => onMorePress?.(post.id)}
             />
 
-            {isReview && rating && (
-                <View style={styles.ratingRow}>
-                    <RatingStars rating={rating} size="sm" />
-                </View>
-            )}
+            {
+                isReview && rating && (
+                    <View style={styles.ratingRow}>
+                        <RatingStars rating={rating} size="sm" />
+                    </View>
+                )
+            }
 
             <Typography variant="body" style={styles.postContent}>
                 {post.content}
             </Typography>
 
-            {storyTitle && (
-                <StoryTag
-                    title={storyTitle}
-                    onPress={() => {
-                        if (post.metadata?.storyId) router.push(`/story/${post.metadata.storyId}`);
-                    }}
-                />
-            )}
+            {
+                storyTitle && (
+                    <StoryTag
+                        title={storyTitle}
+                        onPress={() => {
+                            if (post.metadata?.storyId) router.push(`/story/${post.metadata.storyId}`);
+                        }}
+                    />
+                )
+            }
 
             <CommunityPostFooter
                 likes={post.likes || 0}
@@ -150,7 +155,8 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                 likeAnimationStyle={likeAnimationStyle}
                 replyAnimationStyle={replyAnimationStyle}
             />
-        </Animated.View>
+        </View>
+
     );
 };
 

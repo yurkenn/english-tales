@@ -49,3 +49,4 @@ export { CommunityPostFooter } from './CommunityPostFooter';
 export * from './readingTypes';
 export * from './settingsTypes';
 export { TabHeader } from './TabHeader';
+export { UserProfileSheet } from './UserProfileSheet';

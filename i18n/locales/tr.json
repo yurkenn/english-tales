@@ -17,6 +17,11 @@
             "successMessage": "Şifre sıfırlama bağlantısını şu adrese gönderdik:",
             "spamHint": "E-postayı görmüyorsanız, lütfen spam klasörünüzü kontrol edin.",
             "toastSuccess": "Şifre sıfırlama e-postası gönderildi!"
+        },
+        "guestBanner": {
+            "title": "Tüm Özelliklerin Kilidini Aç",
+            "subtitle": "İlerlemeni senkronize etmek, yorum yazmak ve topluluğa katılmak için giriş yap!",
+            "cta": "Giriş Yap / Kayıt Ol"
         }
     },
     "common": {
@@ -203,17 +208,21 @@
         }
     },
     "settings": {
+        "title": "Ayarlar",
         "sections": {
             "account": "HESAP",
             "preferences": "TERCİHLER",
             "storage": "DEPOLAMA",
             "about": "HAKKINDA",
-            "dangerZone": "TEHLİKELİ BÖLGE"
+            "dangerZone": "TEHLİKELİ BÖLGE",
+            "signIn": "GİRİŞ YAP"
         },
         "account": {
             "email": "E-posta",
             "notSet": "Ayarlanmadı",
-            "changePassword": "Şifreyi Değiştir"
+            "changePassword": "Şifreyi Değiştir",
+            "signIn": "Giriş Yap / Kayıt Ol",
+            "unlockFeatures": "Tüm özelliklerin kilidini aç"
         },
         "preferences": {
             "theme": "Tema",

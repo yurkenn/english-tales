@@ -17,6 +17,11 @@
             "successMessage": "We've sent a password reset link to",
             "spamHint": "If you don't see the email, check your spam folder.",
             "toastSuccess": "Password reset email sent!"
+        },
+        "guestBanner": {
+            "title": "Unlock All Features",
+            "subtitle": "Sign in to sync your progress, write reviews, and join the community!",
+            "cta": "Sign In / Sign Up"
         }
     },
     "common": {
@@ -203,17 +208,21 @@
         }
     },
     "settings": {
+        "title": "Settings",
         "sections": {
             "account": "ACCOUNT",
             "preferences": "PREFERENCES",
             "storage": "STORAGE",
             "about": "ABOUT",
-            "dangerZone": "DANGER ZONE"
+            "dangerZone": "DANGER ZONE",
+            "signIn": "SIGN IN"
         },
         "account": {
             "email": "Email",
             "notSet": "Not set",
-            "changePassword": "Change Password"
+            "changePassword": "Change Password",
+            "signIn": "Sign In / Sign Up",
+            "unlockFeatures": "Unlock all features"
         },
         "preferences": {
             "theme": "Theme",

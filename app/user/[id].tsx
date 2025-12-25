@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
     View,
-    ScrollView,
     Pressable,
     RefreshControl,
     ActivityIndicator,
@@ -15,11 +14,9 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, {
     useSharedValue,
     useAnimatedScrollHandler,
-    useAnimatedStyle,
-    interpolate,
-    Extrapolation,
     FadeInDown
 } from 'react-native-reanimated';
+
 
 import { Typography } from '@/components/atoms/Typography';
 import { StoryGridCard } from '@/components/molecules/StoryGridCard';
@@ -67,27 +64,10 @@ export default function UserProfileScreen() {
         scrollY.value = event.contentOffset.y;
     });
 
-    // Sticky Header Style
-    const stickyHeaderStyle = useAnimatedStyle(() => {
-        const opacity = interpolate(
-            scrollY.value,
-            [150, 250],
-            [0, 1],
-            Extrapolation.CLAMP
-        );
-        return { opacity };
-    });
-
-    const backButtonStyle = useAnimatedStyle(() => {
-        const backgroundColor = scrollY.value > 150
-            ? 'transparent'
-            : 'rgba(0,0,0,0.3)';
-        return { backgroundColor };
-    });
-
     const handleSocialPress = (type: string, url: string) => {
         haptics.light();
         Linking.openURL(url).catch(() => toast.actions.error('Could not open link'));
+
     };
 
     if (loading && !profile) {
@@ -208,27 +188,18 @@ export default function UserProfileScreen() {
 
     return (
         <View style={styles.container}>
-            {/* Secondary Sticky Header */}
-            <Animated.View style={[
-                styles.stickyHeader,
-                { paddingTop: Math.max(insets.top, 16) },
-                stickyHeaderStyle
-            ]}>
-                <Typography variant="bodyBold" style={styles.stickyTitle}>
-                    {profile.displayName}
+            {/* Header - matches other screens */}
+            <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
+                <Pressable
+                    style={styles.backButton}
+                    onPress={() => { haptics.selection(); router.back(); }}
+                >
+                    <Ionicons name="chevron-back" size={24} color={theme.colors.text} />
+                </Pressable>
+                <Typography variant="h2" style={styles.headerTitle} numberOfLines={1}>
+                    {profile.displayName || t('profile.title', 'Profile')}
                 </Typography>
-            </Animated.View>
-
-            {/* Top Navigation Bar */}
-            <View style={[styles.navBar, { paddingTop: Math.max(insets.top, 16) }]}>
-                <Animated.View style={[styles.backButtonWrapper, backButtonStyle]}>
-                    <Pressable
-                        style={styles.navAction}
-                        onPress={() => router.back()}
-                    >
-                        <Ionicons name="chevron-back" size={24} color={theme.colors.text} />
-                    </Pressable>
-                </Animated.View>
+                <View style={styles.headerSpacer} />
             </View>
 
             <Animated.ScrollView
@@ -252,7 +223,9 @@ export default function UserProfileScreen() {
                     onSocialPress={handleSocialPress}
                     actionLoading={actionLoading}
                     scrollY={scrollY}
+                    hasNavigationHeader={true}
                 />
+
 
                 <View style={{ backgroundColor: theme.colors.background }}>
                     <ProfileTabs
@@ -276,46 +249,29 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         backgroundColor: theme.colors.background,
     },
-    navBar: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 20,
-        paddingHorizontal: theme.spacing.lg,
+    header: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: 100,
+        justifyContent: 'space-between',
+        paddingHorizontal: theme.spacing.lg,
+        paddingBottom: theme.spacing.md,
+        backgroundColor: theme.colors.background,
     },
-    backButtonWrapper: {
+    backButton: {
         width: 44,
         height: 44,
-        borderRadius: 22,
         alignItems: 'center',
         justifyContent: 'center',
+        marginLeft: -12,
     },
-    navAction: {
-        width: '100%',
-        height: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    stickyHeader: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 15,
-        height: 100,
-        backgroundColor: theme.colors.background,
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.borderLight,
-        alignItems: 'center',
-        justifyContent: 'center',
-        ...theme.shadows.sm,
-    },
-    stickyTitle: {
+    headerTitle: {
+        flex: 1,
+        textAlign: 'center',
         fontSize: theme.typography.size.lg,
+        fontWeight: theme.typography.weight.bold,
+    },
+    headerSpacer: {
+        width: 44,
     },
     tabContent: {
         paddingTop: theme.spacing.md,

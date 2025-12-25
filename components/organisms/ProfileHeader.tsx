@@ -29,6 +29,7 @@ interface ProfileHeaderProps {
     onSocialPress?: (type: string, url: string) => void;
     actionLoading?: boolean;
     scrollY?: SharedValue<number>;
+    hasNavigationHeader?: boolean; // When true, reduces top padding since there's a header above
 }
 
 export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
@@ -40,6 +41,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
     onSocialPress,
     actionLoading,
     scrollY,
+    hasNavigationHeader = false,
 }) => {
     const { t } = useTranslation();
     const { theme } = useUnistyles();
@@ -85,7 +87,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 
     return (
         <Animated.View
-            style={[styles.container, animatedStyle]}
+            style={[styles.container, animatedStyle, hasNavigationHeader && styles.containerWithHeader]}
             collapsable={false}
         >
             {/* Background Gradient */}
@@ -239,6 +241,9 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: 16,
         position: 'relative',
         overflow: 'hidden',
+    },
+    containerWithHeader: {
+        paddingTop: 8, // Less padding when there's a navigation header above
     },
     backgroundGradient: {
         position: 'absolute',

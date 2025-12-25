@@ -46,10 +46,9 @@ export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) =
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        marginBottom: theme.spacing.sm,
+        paddingHorizontal: 20,
     },
     button: {
-        marginHorizontal: 20,
         backgroundColor: theme.colors.surface,
         borderRadius: 16,
         borderWidth: 1,

@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, ScrollView, Pressable } from 'react-native';
+import { View, ScrollView, Pressable, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
-import { OptimizedImage } from '../atoms/OptimizedImage';
 import { haptics } from '@/utils/haptics';
 import { useTranslation } from 'react-i18next';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 interface ActivityItem {
     id: string;
@@ -47,6 +49,10 @@ export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPres
         }
     };
 
+    const getAvatarSource = (userPhoto?: string): ImageSourcePropType => {
+        return userPhoto ? { uri: userPhoto } : DEFAULT_AVATAR;
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -80,15 +86,15 @@ export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPres
                             }}
                         >
                             <View style={styles.avatarWrapper}>
-                                <OptimizedImage
-                                    source={{ uri: item.userPhoto || '' }}
+                                <Image
+                                    source={getAvatarSource(item.userPhoto)}
                                     style={styles.avatar}
-                                    placeholder="person-circle"
                                 />
                                 <View style={[styles.typeBadge, { backgroundColor: config.color }]}>
                                     <Ionicons name={config.icon} size={8} color="#FFF" />
                                 </View>
                             </View>
+
 
                             <View style={styles.textWrapper}>
                                 <Typography variant="label" numberOfLines={1} style={styles.userName}>

@@ -47,3 +47,4 @@ export { OnboardingSlide } from './OnboardingSlide';
 export { OnboardingLevelSelection } from './OnboardingLevelSelection';
 export { OnboardingTrackVisual } from './OnboardingTrackVisual';
 export { OnboardingConnectVisual } from './OnboardingConnectVisual';
+export { GuestLoginBanner } from './GuestLoginBanner';

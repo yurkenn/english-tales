@@ -19,6 +19,7 @@ import {
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { Platform } from 'react-native';
 import { User } from '@/types';
+import { generateGuestUsername } from '@/utils/guestUsername';
 
 const auth = getAuth();
 
@@ -79,11 +80,24 @@ export const signOut = async (): Promise<void> => {
 
 /**
  * Sign in anonymously (guest mode)
+ * Generates a fun, thematic username automatically
  */
 export const signInAnonymously = async (): Promise<User> => {
     const userCredential = await firebaseSignInAnonymously(auth);
-    return mapUser(userCredential.user);
+
+    // Generate a fun username for the guest user
+    const guestUsername = generateGuestUsername();
+
+    // Update the profile with the generated username
+    await updateProfile(userCredential.user, { displayName: guestUsername });
+
+    // Reload to get updated profile
+    await userCredential.user.reload();
+    const updatedUser = auth.currentUser;
+
+    return mapUser(updatedUser || userCredential.user);
 };
+
 
 /**
  * Update user profile

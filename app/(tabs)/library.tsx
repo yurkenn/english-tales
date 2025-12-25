@@ -1,16 +1,10 @@
-import React, { useMemo, useState, useCallback, useRef } from 'react';
-import { View, FlatList, RefreshControl, Dimensions, Text, Pressable } from 'react-native';
-import Animated, { FadeInDown } from 'react-native-reanimated';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
-import { useRouter } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import BottomSheet from '@gorhom/bottom-sheet';
-import { useTranslation } from 'react-i18next';
-// - **Rankings Screen**: Beautiful leaderboard UI with trophy highlights and sticky personal rank.
-// - **Real-time Sync**: Transparent background syncing of reading stats to Firestore.
-
-// ### 7. Core Stability: Circular Dependency Resolution
-// ,
+import React, { useMemo, useState, useCallback, useRef } from 'react'
+import { View, FlatList, RefreshControl, Dimensions, Text, Pressable } from 'react-native'
+import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useRouter } from 'expo-router'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import BottomSheet from '@gorhom/bottom-sheet'
+import { useTranslation } from 'react-i18next'
 import {
     LibraryScreenSkeleton,
     EmptyState,
@@ -21,130 +15,149 @@ import {
     LibraryStatsRow,
     LibraryFilterBadge,
     LibraryBookCard,
-    LibraryAnonymousState,
     VocabularyItem,
-} from '@/components';
+} from '@/components'
 import {
     type LibraryItemWithProgress,
     type FilterType,
     FILTERS,
-} from '@/components/molecules/moleculeTypes';
-import { useAuthStore } from '@/store/authStore';
-import { useLibraryStore } from '@/store/libraryStore';
-import { useProgressStore } from '@/store/progressStore';
-import { useDownloadStore } from '@/store/downloadStore';
-import { useToastStore } from '@/store/toastStore';
-import { useVocabularyStore } from '@/store/vocabularyStore';
-// VocabularyItem already imported above
-import { haptics } from '@/utils/haptics';
+} from '@/components/molecules/moleculeTypes'
+import { useAuthStore } from '@/store/authStore'
+import { useLibraryStore } from '@/store/libraryStore'
+import { useProgressStore } from '@/store/progressStore'
+import { useDownloadStore } from '@/store/downloadStore'
+import { useToastStore } from '@/store/toastStore'
+import { useVocabularyStore } from '@/store/vocabularyStore'
+import { haptics } from '@/utils/haptics'
 
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
+const { width: SCREEN_WIDTH } = Dimensions.get('window')
+
+// Segmented Tab Component
+interface SegmentTabProps {
+    label: string
+    isActive: boolean
+    badge?: number
+    onPress: () => void
+}
+
+const SegmentTab = ({ label, isActive, badge, onPress }: SegmentTabProps) => (
+    <Pressable onPress={onPress} style={[styles.segment, isActive && styles.segmentActive]}>
+        <Text style={[styles.segmentText, isActive && styles.segmentTextActive]}>{label}</Text>
+        {badge !== undefined && badge > 0 && (
+            <View style={styles.badge}>
+                <Text style={styles.badgeText}>{badge}</Text>
+            </View>
+        )}
+    </Pressable>
+)
 
 export default function LibraryScreen() {
-    const { t } = useTranslation();
-    const { theme } = useUnistyles();
-    const router = useRouter();
-    const insets = useSafeAreaInsets();
-    const { user } = useAuthStore();
-    const { items: libraryItems, isLoading, actions: libraryActions } = useLibraryStore();
-    const { progressMap, actions: progressActions } = useProgressStore();
-    const { actions: downloadActions } = useDownloadStore();
+    const { t } = useTranslation()
+    const { theme } = useUnistyles()
+    const router = useRouter()
+    const insets = useSafeAreaInsets()
+    const { user } = useAuthStore()
+    const { items: libraryItems, isLoading, actions: libraryActions } = useLibraryStore()
+    const { progressMap, actions: progressActions } = useProgressStore()
+    const { actions: downloadActions } = useDownloadStore()
 
-    const [refreshing, setRefreshing] = useState(false);
-    const [filter, setFilter] = useState<FilterType>('all');
-    const [viewMode, setViewMode] = useState<'stories' | 'vocabulary'>('stories');
-    const [menuVisible, setMenuVisible] = useState(false);
-    const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
-    const [selectedItem, setSelectedItem] = useState<LibraryItemWithProgress | null>(null);
-    const buttonRefs = useRef<{ [key: string]: View | null }>({});
-    const removeFromLibraryDialogRef = useRef<BottomSheet>(null);
-    const deleteDownloadDialogRef = useRef<BottomSheet>(null);
+    // State
+    const [refreshing, setRefreshing] = useState(false)
+    const [filter, setFilter] = useState<FilterType>('all')
+    const [viewMode, setViewMode] = useState<'stories' | 'vocabulary'>('stories')
+    const [menuVisible, setMenuVisible] = useState(false)
+    const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 })
+    const [selectedItem, setSelectedItem] = useState<LibraryItemWithProgress | null>(null)
 
-    const savedWordsForUser = useVocabularyStore((s) => s.savedWords[user?.id || ''] || {});
-    const vocabActions = useVocabularyStore((s) => s.actions);
-    const wordList = useMemo(() => Object.values(savedWordsForUser).sort((a, b) => b.addedAt - a.addedAt), [savedWordsForUser]);
+    // Refs
+    const buttonRefs = useRef<{ [key: string]: View | null }>({})
+    const removeFromLibraryDialogRef = useRef<BottomSheet>(null)
+    const deleteDownloadDialogRef = useRef<BottomSheet>(null)
 
-    const onRefresh = useCallback(async () => {
-        setRefreshing(true);
-        await Promise.all([
-            libraryActions.fetchLibrary(),
-            progressActions.fetchAllProgress(),
-        ]);
-        setRefreshing(false);
-    }, [libraryActions, progressActions]);
+    // Vocabulary data
+    const savedWordsForUser = useVocabularyStore((s) => s.savedWords[user?.id || ''] || {})
+    const vocabActions = useVocabularyStore((s) => s.actions)
+    const wordList = useMemo(
+        () => Object.values(savedWordsForUser).sort((a, b) => b.addedAt - a.addedAt),
+        [savedWordsForUser]
+    )
 
     // Merge progress data with library items
-    const libraryWithProgress: LibraryItemWithProgress[] = useMemo(() => {
+    const libraryWithProgress = useMemo<LibraryItemWithProgress[]>(() => {
         return libraryItems.map((item) => ({
             ...item,
-            progress: progressMap[item.storyId] ? {
-                percentage: progressMap[item.storyId].percentage,
-                isCompleted: progressMap[item.storyId].isCompleted,
-            } : undefined,
-        }));
-    }, [libraryItems, progressMap]);
+            progress: progressMap[item.storyId]
+                ? {
+                    percentage: progressMap[item.storyId].percentage,
+                    isCompleted: progressMap[item.storyId].isCompleted,
+                }
+                : undefined,
+        }))
+    }, [libraryItems, progressMap])
 
     // Stats
     const stats = useMemo(() => {
-        const total = libraryWithProgress.length;
-        const completed = libraryWithProgress.filter((i) => i.progress?.isCompleted).length;
-        const inProgress = libraryWithProgress.filter((i) => i.progress && !i.progress.isCompleted).length;
-        return { total, completed, inProgress };
-    }, [libraryWithProgress]);
+        const total = libraryWithProgress.length
+        const completed = libraryWithProgress.filter((i) => i.progress?.isCompleted).length
+        const inProgress = libraryWithProgress.filter((i) => i.progress && !i.progress.isCompleted).length
+        return { total, completed, inProgress }
+    }, [libraryWithProgress])
 
-    // Filtered list based on filter state
+    // Filtered list
     const filteredLibrary = useMemo(() => {
         switch (filter) {
             case 'completed':
-                return libraryWithProgress.filter((i) => i.progress?.isCompleted);
+                return libraryWithProgress.filter((i) => i.progress?.isCompleted)
             case 'in-progress':
-                return libraryWithProgress.filter((i) => i.progress && i.progress.percentage > 0 && !i.progress.isCompleted);
+                return libraryWithProgress.filter((i) => i.progress && i.progress.percentage > 0 && !i.progress.isCompleted)
             case 'not-started':
-                return libraryWithProgress.filter((i) => !i.progress || i.progress.percentage === 0);
+                return libraryWithProgress.filter((i) => !i.progress || i.progress.percentage === 0)
             default:
-                return libraryWithProgress;
+                return libraryWithProgress
         }
-    }, [libraryWithProgress, filter]);
+    }, [libraryWithProgress, filter])
+
+    // Handlers
+    const onRefresh = useCallback(async () => {
+        setRefreshing(true)
+        await Promise.all([libraryActions.fetchLibrary(), progressActions.fetchAllProgress()])
+        setRefreshing(false)
+    }, [libraryActions, progressActions])
 
     const cycleFilter = useCallback(() => {
-        haptics.selection();
-        const currentIndex = FILTERS.indexOf(filter);
-        setFilter(FILTERS[(currentIndex + 1) % FILTERS.length]);
-    }, [filter]);
+        haptics.selection()
+        const currentIndex = FILTERS.indexOf(filter)
+        setFilter(FILTERS[(currentIndex + 1) % FILTERS.length])
+    }, [filter])
 
-    const handleStoryPress = useCallback((storyId: string) => {
-        router.push(`/story/${storyId}`);
-    }, [router]);
-
-    const handleReadPress = useCallback((storyId: string) => {
-        router.push(`/reading/${storyId}`);
-    }, [router]);
+    const handleStoryPress = useCallback((storyId: string) => router.push(`/story/${storyId}`), [router])
+    const handleReadPress = useCallback((storyId: string) => router.push(`/reading/${storyId}`), [router])
 
     const handleMorePress = useCallback((item: LibraryItemWithProgress) => {
-        haptics.selection();
-        const buttonRef = buttonRefs.current[item.storyId];
+        haptics.selection()
+        const buttonRef = buttonRefs.current[item.storyId]
         if (buttonRef) {
             buttonRef.measure((x, y, width, height, pageX, pageY) => {
-                setMenuPosition({ x: pageX + width, y: pageY });
-                setSelectedItem(item);
-                setMenuVisible(true);
-            });
+                setMenuPosition({ x: pageX + width, y: pageY })
+                setSelectedItem(item)
+                setMenuVisible(true)
+            })
         } else {
-            setMenuPosition({ x: SCREEN_WIDTH - 220, y: 100 });
-            setSelectedItem(item);
-            setMenuVisible(true);
+            setMenuPosition({ x: SCREEN_WIDTH - 220, y: 100 })
+            setSelectedItem(item)
+            setMenuVisible(true)
         }
-    }, []);
+    }, [])
 
     const handleMenuClose = useCallback(() => {
-        setMenuVisible(false);
-        setTimeout(() => setSelectedItem(null), 200);
-    }, []);
+        setMenuVisible(false)
+        setTimeout(() => setSelectedItem(null), 200)
+    }, [])
 
     const getMenuItems = useCallback((): StoryCardMenuItem[] => {
-        if (!selectedItem) return [];
-        const isDownloaded = downloadActions.isDownloaded(selectedItem.storyId);
-        const items: StoryCardMenuItem[] = [];
+        if (!selectedItem) return []
+        const isDownloaded = downloadActions.isDownloaded(selectedItem.storyId)
+        const items: StoryCardMenuItem[] = []
 
         if (isDownloaded) {
             items.push({
@@ -152,10 +165,10 @@ export default function LibraryScreen() {
                 icon: 'trash-outline',
                 destructive: true,
                 onPress: () => {
-                    haptics.selection();
-                    deleteDownloadDialogRef.current?.expand();
+                    haptics.selection()
+                    deleteDownloadDialogRef.current?.expand()
                 },
-            });
+            })
         }
 
         items.push({
@@ -163,36 +176,64 @@ export default function LibraryScreen() {
             icon: 'remove-circle-outline',
             destructive: true,
             onPress: () => {
-                haptics.selection();
-                removeFromLibraryDialogRef.current?.expand();
+                haptics.selection()
+                removeFromLibraryDialogRef.current?.expand()
             },
-        });
+        })
 
-        return items;
-    }, [selectedItem, downloadActions, t]);
+        return items
+    }, [selectedItem, downloadActions, t])
 
-    const renderItem = useCallback(({ item, index }: { item: LibraryItemWithProgress; index: number }) => (
-        <Animated.View entering={FadeInDown.delay(index * 100).duration(500).springify()}>
+    // Dialog handlers
+    const handleRemoveFromLibrary = useCallback(async () => {
+        if (!selectedItem) return
+        await libraryActions.removeFromLibrary(selectedItem.storyId)
+        haptics.success()
+        removeFromLibraryDialogRef.current?.close()
+        useToastStore.getState().actions.success(t('common.save'))
+    }, [selectedItem, libraryActions, t])
+
+    const handleDeleteDownload = useCallback(async () => {
+        if (!selectedItem) return
+        await downloadActions.deleteDownload(selectedItem.storyId)
+        haptics.success()
+        deleteDownloadDialogRef.current?.close()
+        useToastStore.getState().actions.success(t('common.delete'))
+    }, [selectedItem, downloadActions, t])
+
+    // Render items
+    const renderLibraryItem = useCallback(
+        ({ item }: { item: LibraryItemWithProgress }) => (
             <LibraryBookCard
                 item={item}
                 isDownloaded={downloadActions.isDownloaded(item.storyId)}
                 onPress={() => handleStoryPress(item.storyId)}
                 onReadPress={() => handleReadPress(item.storyId)}
                 onMorePress={() => handleMorePress(item)}
-                moreButtonRef={(ref: View | null) => { buttonRefs.current[item.storyId] = ref; }}
+                moreButtonRef={(ref: View | null) => { buttonRefs.current[item.storyId] = ref }}
             />
-        </Animated.View>
-    ), [downloadActions, handleStoryPress, handleReadPress, handleMorePress]);
+        ),
+        [downloadActions, handleStoryPress, handleReadPress, handleMorePress]
+    )
 
+    const renderVocabularyItem = useCallback(
+        ({ item }: { item: any }) => (
+            <VocabularyItem
+                item={item}
+                onRemove={(wordId) => user?.id && vocabActions.removeWord(user.id, wordId)}
+            />
+        ),
+        [user?.id, vocabActions]
+    )
+
+    // Loading state
     if (isLoading) {
         return (
             <View style={[styles.container, { paddingTop: insets.top }]}>
                 <LibraryScreenSkeleton />
             </View>
-        );
+        )
     }
-
-    // Removed LibraryAnonymousState block to allow guests to see their local library
 
     return (
         <View style={styles.container}>
@@ -202,48 +243,34 @@ export default function LibraryScreen() {
                 onFilterPress={cycleFilter}
             />
 
+            {/* Segmented Control */}
             <View style={styles.segmentedControl}>
-                <Pressable
+                <SegmentTab
+                    label={t('library.tabs.stories') || 'Stories'}
+                    isActive={viewMode === 'stories'}
                     onPress={() => setViewMode('stories')}
-                    style={[styles.segment, viewMode === 'stories' && styles.segmentActive]}
-                >
-                    <Text style={[styles.segmentText, viewMode === 'stories' && styles.segmentTextActive]}>
-                        {t('library.tabs.stories') || 'Stories'}
-                    </Text>
-                </Pressable>
-                <Pressable
+                />
+                <SegmentTab
+                    label={t('library.tabs.vocabulary') || 'Vocabulary'}
+                    isActive={viewMode === 'vocabulary'}
+                    badge={wordList.length}
                     onPress={() => setViewMode('vocabulary')}
-                    style={[styles.segment, viewMode === 'vocabulary' && styles.segmentActive]}
-                >
-                    <Text style={[styles.segmentText, viewMode === 'vocabulary' && styles.segmentTextActive]}>
-                        {t('library.tabs.vocabulary') || 'Vocabulary'}
-                    </Text>
-                    {wordList.length > 0 && (
-                        <View style={styles.badge}>
-                            <Text style={styles.badgeText}>{wordList.length}</Text>
-                        </View>
-                    )}
-                </Pressable>
+                />
             </View>
 
             {viewMode === 'stories' ? (
                 <>
                     <LibraryFilterBadge filter={filter} onPress={cycleFilter} />
-
-                    <LibraryStatsRow
-                        total={stats.total}
-                        completed={stats.completed}
-                        inProgress={stats.inProgress}
-                    />
+                    <LibraryStatsRow total={stats.total} completed={stats.completed} inProgress={stats.inProgress} />
 
                     <FlatList
                         data={filteredLibrary}
                         keyExtractor={(item) => item.storyId}
-                        renderItem={renderItem}
+                        renderItem={renderLibraryItem}
                         contentContainerStyle={styles.listContent}
                         showsVerticalScrollIndicator={false}
-                        ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
-                        removeClippedSubviews={true}
+                        ItemSeparatorComponent={() => <View style={styles.separator} />}
+                        removeClippedSubviews
                         initialNumToRender={10}
                         maxToRenderPerBatch={5}
                         windowSize={10}
@@ -271,17 +298,10 @@ export default function LibraryScreen() {
                 <FlatList
                     data={wordList}
                     keyExtractor={(word) => word.id}
-                    renderItem={({ item, index }) => (
-                        <Animated.View entering={FadeInDown.delay(index * 100).duration(500).springify()}>
-                            <VocabularyItem
-                                item={item}
-                                onRemove={(wordId) => user?.id && vocabActions.removeWord(user.id, wordId)}
-                            />
-                        </Animated.View>
-                    )}
+                    renderItem={renderVocabularyItem}
                     contentContainerStyle={styles.listContent}
                     showsVerticalScrollIndicator={false}
-                    ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                    ItemSeparatorComponent={() => <View style={styles.separatorSmall} />}
                     ListEmptyComponent={
                         <EmptyState
                             icon="bookmark-outline"
@@ -294,12 +314,7 @@ export default function LibraryScreen() {
                 />
             )}
 
-            <StoryCardMenu
-                visible={menuVisible}
-                onClose={handleMenuClose}
-                position={menuPosition}
-                items={getMenuItems()}
-            />
+            <StoryCardMenu visible={menuVisible} onClose={handleMenuClose} position={menuPosition} items={getMenuItems()} />
 
             <ConfirmationDialog
                 ref={removeFromLibraryDialogRef}
@@ -309,14 +324,7 @@ export default function LibraryScreen() {
                 cancelLabel={t('common.cancel')}
                 destructive
                 icon="remove-circle-outline"
-                onConfirm={async () => {
-                    if (selectedItem) {
-                        await libraryActions.removeFromLibrary(selectedItem.storyId);
-                        haptics.success();
-                        removeFromLibraryDialogRef.current?.close();
-                        useToastStore.getState().actions.success(t('common.save'));
-                    }
-                }}
+                onConfirm={handleRemoveFromLibrary}
                 onCancel={() => removeFromLibraryDialogRef.current?.close()}
             />
 
@@ -328,18 +336,11 @@ export default function LibraryScreen() {
                 cancelLabel={t('common.cancel')}
                 destructive
                 icon="trash-outline"
-                onConfirm={async () => {
-                    if (selectedItem) {
-                        await downloadActions.deleteDownload(selectedItem.storyId);
-                        haptics.success();
-                        deleteDownloadDialogRef.current?.close();
-                        useToastStore.getState().actions.success(t('common.delete'));
-                    }
-                }}
+                onConfirm={handleDeleteDownload}
                 onCancel={() => deleteDownloadDialogRef.current?.close()}
             />
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create((theme) => ({
@@ -351,6 +352,12 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: theme.spacing.lg,
         paddingTop: theme.spacing.sm,
         paddingBottom: 120,
+    },
+    separator: {
+        height: 16,
+    },
+    separatorSmall: {
+        height: 12,
     },
     segmentedControl: {
         flexDirection: 'row',
@@ -397,4 +404,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: 'bold',
         color: '#FFFFFF',
     },
-}));
+}))

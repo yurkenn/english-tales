@@ -1,13 +1,15 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
+import { View, Pressable, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'expo-router';
 import { Typography } from '../atoms/Typography';
-import { OptimizedImage } from '../atoms/OptimizedImage';
 import { UserProfile } from '@/types';
 import { haptics } from '@/utils/haptics';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 export type FriendWithFid = UserProfile & { friendshipId: string };
 
@@ -29,6 +31,7 @@ export const FriendListItem: React.FC<FriendListItemProps> = ({
     const { t } = useTranslation();
     const { theme } = useUnistyles();
     const router = useRouter();
+    const avatarSource: ImageSourcePropType = friend.photoURL ? { uri: friend.photoURL } : DEFAULT_AVATAR;
 
     const handleProfilePress = () => {
         haptics.selection();
@@ -39,12 +42,12 @@ export const FriendListItem: React.FC<FriendListItemProps> = ({
         <View style={[styles.friendCard, !showDivider && styles.noDivider]}>
             <Pressable style={styles.friendInfo} onPress={handleProfilePress}>
                 <View style={styles.avatarWrapper}>
-                    <OptimizedImage
-                        source={{ uri: friend.photoURL || '' }}
+                    <Image
+                        source={avatarSource}
                         style={styles.avatar}
-                        placeholder="person-circle"
                     />
                 </View>
+
                 <View style={styles.friendText}>
                     <Typography variant="bodyBold">{friend.displayName || 'Anonymous'}</Typography>
                     <Typography variant="caption" color={theme.colors.textMuted}>

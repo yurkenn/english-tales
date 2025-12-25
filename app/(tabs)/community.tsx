@@ -1,26 +1,33 @@
 import React, { useState, useRef, useMemo } from 'react';
 import {
     View,
+    ScrollView,
     Pressable,
     RefreshControl,
     ActivityIndicator,
 } from 'react-native';
+
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import BottomSheet from '@gorhom/bottom-sheet';
+import BottomSheet, { BottomSheetModal } from '@gorhom/bottom-sheet';
 import Animated, {
     useSharedValue,
     useAnimatedStyle,
     useAnimatedScrollHandler,
     interpolate,
     Extrapolate,
-    FadeInDown,
-} from 'react-native-reanimated';
+    FadeIn,
+    FadeInRight,
+    SlideInRight,
+    withSpring,
+    withTiming,
+    Easing,
+} from 'react-native-reanimated'
 import { Typography } from '@/components/atoms/Typography';
 import { CreatePostBar, NotificationList } from '@/components/molecules';
-import { CommunityPostCard, CreatePostModal, PostActionSheet } from '@/components/organisms';
+import { CommunityPostCard, CreatePostModal, PostActionSheet, UserProfileSheet } from '@/components/organisms';
 import { CommunityScreenSkeleton } from '@/components';
 import { useNotificationStore } from '@/store/notificationStore';
 import { useAuthStore } from '@/store/authStore';
@@ -100,6 +107,25 @@ export default function CommunityTab() {
     const [selectedPostId, setSelectedPostId] = useState<string | null>(null);
     const [isActionSheetOpen, setIsActionSheetOpen] = useState(false);
     const postActionSheetRef = useRef<BottomSheet>(null);
+
+    // User Profile Sheet state
+    const [selectedProfileUserId, setSelectedProfileUserId] = useState<string | null>(null);
+    const userProfileSheetRef = useRef<BottomSheetModal>(null);
+
+    const handleAvatarPress = (userId: string) => {
+        haptics.selection();
+        setSelectedProfileUserId(userId);
+        // Use setTimeout to ensure state is updated before presenting
+        setTimeout(() => {
+            userProfileSheetRef.current?.present();
+        }, 50);
+    };
+
+    const handleProfileSheetClose = () => {
+        userProfileSheetRef.current?.dismiss();
+        setSelectedProfileUserId(null);
+    };
+
 
     const handleMorePress = (postId: string) => {
         setSelectedPostId(postId);
@@ -209,17 +235,13 @@ export default function CommunityTab() {
                             {t('social.trendingNow', 'Trending Now')}
                         </Typography>
                     </View>
-                    <Animated.ScrollView
+                    <ScrollView
                         horizontal
                         showsHorizontalScrollIndicator={false}
                         contentContainerStyle={styles.trendingScroll}
                     >
-                        {trendingList.map((story: Story, index: number) => (
-                            <Animated.View
-                                key={story.id}
-                                entering={FadeInDown.delay(index * 100)}
-                                style={styles.trendingItem}
-                            >
+                        {trendingList.map((story: Story) => (
+                            <View key={story.id} style={styles.trendingItem}>
                                 <Pressable
                                     onPress={() => { haptics.selection(); router.push(`/story/${story.id}`); }}
                                     style={styles.trendingCoverWrapper}
@@ -235,10 +257,11 @@ export default function CommunityTab() {
                                 <Typography variant="label" numberOfLines={1} style={styles.trendingTitle}>
                                     {story.title}
                                 </Typography>
-                            </Animated.View>
+                            </View>
                         ))}
-                    </Animated.ScrollView>
+                    </ScrollView>
                 </View>
+
 
                 <CreatePostBar
                     userPhotoUrl={user?.photoURL}
@@ -266,6 +289,7 @@ export default function CommunityTab() {
                                     onLike={handleToggleLike}
                                     onReply={handleOpenReply}
                                     onMorePress={handleMorePress}
+                                    onAvatarPress={handleAvatarPress}
                                     index={index}
                                 />
                             ))
@@ -339,6 +363,15 @@ export default function CommunityTab() {
                 onPostDeleted={handlePostDeleted}
                 onClose={handleActionSheetClose}
             />
+
+            {/* User Profile Sheet */}
+            {selectedProfileUserId && (
+                <UserProfileSheet
+                    ref={userProfileSheetRef}
+                    userId={selectedProfileUserId}
+                    onClose={handleProfileSheetClose}
+                />
+            )}
         </View>
     );
 }

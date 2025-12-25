@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
+import { View, Pressable, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
-import { OptimizedImage } from '../atoms/OptimizedImage';
 import { haptics } from '@/utils/haptics';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 interface CreatePostBarProps {
     userPhotoUrl?: string | null;
@@ -20,16 +22,17 @@ export const CreatePostBar: React.FC<CreatePostBarProps> = ({
     onImagePress,
 }) => {
     const { theme } = useUnistyles();
+    const avatarSource: ImageSourcePropType = userPhotoUrl ? { uri: userPhotoUrl } : DEFAULT_AVATAR;
 
     return (
         <View style={styles.createPostBar}>
             <View style={styles.avatarWrapper}>
-                <OptimizedImage
-                    source={{ uri: userPhotoUrl || '' }}
+                <Image
+                    source={avatarSource}
                     style={styles.myAvatar}
-                    placeholder="person-circle"
                 />
             </View>
+
             <Pressable
                 style={styles.inputPlaceholder}
                 onPress={() => { haptics.selection(); onPress(); }}

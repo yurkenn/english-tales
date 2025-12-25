@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet } from 'react-native-unistyles';
-import { RatingStars, OptimizedImage } from '../atoms';
+import { RatingStars } from '../atoms';
+
+// Default mascot avatar for users without profile photo
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
 
 interface ReviewCardProps {
     userName: string;
@@ -16,12 +19,12 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
     rating,
     text,
 }) => {
-    const avatarUri = userAvatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(userName || 'User')}`;
+    const avatarSource: ImageSourcePropType = userAvatar ? { uri: userAvatar } : DEFAULT_AVATAR;
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <OptimizedImage source={{ uri: avatarUri }} style={styles.avatar} />
+                <Image source={avatarSource} style={styles.avatar} />
                 <View style={styles.info}>
                     <Text style={styles.name}>{userName}</Text>
                     <RatingStars rating={rating} size="sm" />
@@ -31,6 +34,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
         </View>
     );
 };
+
 
 const styles = StyleSheet.create((theme) => ({
     container: {
