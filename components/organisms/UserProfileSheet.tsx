@@ -7,7 +7,7 @@ import { useRouter } from 'expo-router'
 import { Typography } from '../atoms'
 import { StoryGridCard } from '../molecules/StoryGridCard'
 import { CommunityPostCard } from './CommunityPostCard'
-import { ProfileTabs, ProfileTabType } from '../molecules/ProfileTabs'
+import { EmptyState } from '../molecules/EmptyState'
 import { UserProfile, CommunityPost, LibraryItem } from '@/types'
 import { useAuthStore } from '@/store/authStore'
 import { socialService } from '@/services/socialService'
@@ -16,7 +16,6 @@ import { communityService } from '@/services/communityService'
 import { useToastStore } from '@/store/toastStore'
 import { haptics } from '@/utils/haptics'
 import { useTranslation } from 'react-i18next'
-import Animated, { FadeInDown } from 'react-native-reanimated'
 
 const DEFAULT_AVATAR = require('@/assets/defaultavatar.png')
 
@@ -31,92 +30,64 @@ interface ProfileStats {
     streak: number
 }
 
-// Empty state component for reusability
-const EmptyState = ({ icon, message }: { icon: keyof typeof Ionicons.glyphMap; message: string }) => {
-    const { theme } = useUnistyles()
-    return (
-        <View style={styles.emptyContainer}>
-            <Ionicons name={icon} size={48} color={theme.colors.border} />
-            <Typography color={theme.colors.textMuted} style={styles.emptyText}>
-                {message}
-            </Typography>
-        </View>
-    )
-}
+// Tab Types
+type TabType = 'posts' | 'saved' | 'about'
 
-// Profile avatar with fallback
-const ProfileAvatar = ({ photoURL }: { photoURL?: string | null }) => {
-    const source: ImageSourcePropType = photoURL ? { uri: photoURL } : DEFAULT_AVATAR
-    return <Image source={source} style={styles.avatar} />
-}
-
-// Stats row component
-const StatsRow = ({ stats, t }: { stats: ProfileStats; t: any }) => {
-    const { theme } = useUnistyles()
-
-    const statItems = [
-        { value: stats.followers, label: t('profile.followers', 'Followers') },
-        { value: stats.following, label: t('profile.following', 'Following') },
-        { value: stats.streak, label: t('profile.streak', 'Streak') },
-    ]
-
-    return (
-        <View style={styles.statsRow}>
-            {statItems.map((item, index) => (
-                <React.Fragment key={item.label}>
-                    {index > 0 && <View style={styles.statDivider} />}
-                    <View style={styles.statItem}>
-                        <Typography variant="h3">{item.value}</Typography>
-                        <Typography variant="caption" color={theme.colors.textMuted}>
-                            {item.label}
-                        </Typography>
-                    </View>
-                </React.Fragment>
-            ))}
-        </View>
-    )
-}
-
-// Follow button component
-const FollowButton = ({
-    isFollowing,
-    loading,
-    onPress,
-    t
+// Tab Button Component
+const TabButton = ({
+    label,
+    count,
+    isActive,
+    onPress
 }: {
-    isFollowing: boolean
-    loading: boolean
+    label: string
+    count?: number
+    isActive: boolean
     onPress: () => void
-    t: any
 }) => {
     const { theme } = useUnistyles()
-
     return (
-        <Pressable
-            style={[styles.followButton, isFollowing && styles.followingButton]}
-            onPress={onPress}
-            disabled={loading}
-        >
-            {loading ? (
-                <ActivityIndicator color={isFollowing ? theme.colors.primary : '#FFFFFF'} />
-            ) : (
-                <>
-                    <Ionicons
-                        name={isFollowing ? 'checkmark' : 'person-add-outline'}
-                        size={18}
-                        color={isFollowing ? theme.colors.primary : '#FFFFFF'}
-                    />
-                    <Typography
-                        variant="bodyBold"
-                        color={isFollowing ? theme.colors.primary : '#FFFFFF'}
-                    >
-                        {isFollowing ? t('social.following', 'Following') : t('social.follow', 'Follow')}
-                    </Typography>
-                </>
+        <Pressable style={styles.tabButton} onPress={onPress}>
+            <View style={styles.tabButtonContent}>
+                <Typography
+                    style={[
+                        styles.tabButtonText,
+                        { color: isActive ? theme.colors.text : theme.colors.textMuted },
+                        isActive && styles.tabButtonTextActive
+                    ]}
+                >
+                    {label}
+                </Typography>
+                {count !== undefined && count > 0 && (
+                    <View style={[
+                        styles.tabBadge,
+                        { backgroundColor: isActive ? theme.colors.primary : theme.colors.surfaceElevated }
+                    ]}>
+                        <Typography
+                            style={[
+                                styles.tabBadgeText,
+                                { color: isActive ? '#FFFFFF' : theme.colors.textMuted }
+                            ]}
+                        >
+                            {count > 99 ? '99+' : count}
+                        </Typography>
+                    </View>
+                )}
+            </View>
+            {isActive && (
+                <View style={[styles.tabIndicator, { backgroundColor: theme.colors.primary }]} />
             )}
         </Pressable>
     )
 }
+
+// Stat Item Component
+const StatItem = ({ value, label }: { value: string | number; label: string }) => (
+    <View style={styles.statItem}>
+        <Typography style={styles.statItemValue}>{value}</Typography>
+        <Typography style={styles.statItemLabel}>{label}</Typography>
+    </View>
+)
 
 export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetProps>(
     ({ userId, onClose }, ref) => {
@@ -130,7 +101,7 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
         const [profile, setProfile] = useState<UserProfile | null>(null)
         const [posts, setPosts] = useState<CommunityPost[]>([])
         const [libraryItems, setLibraryItems] = useState<LibraryItem[]>([])
-        const [activeTab, setActiveTab] = useState<ProfileTabType>('posts')
+        const [activeTab, setActiveTab] = useState<TabType>('posts')
         const [loading, setLoading] = useState(true)
         const [refreshing, setRefreshing] = useState(false)
         const [isFollowing, setIsFollowing] = useState(false)
@@ -141,7 +112,7 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
         const snapPoints = useMemo(() => ['95%'], [])
         const isSelf = currentUser?.id === profile?.id
 
-        // Common sheet props
+        // Sheet props
         const sheetProps = useMemo(() => ({
             snapPoints,
             enablePanDownToClose: true,
@@ -239,51 +210,113 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
             }
         }, [currentUser, profile, isSelf, isFollowing, toast, t])
 
+        const handleViewFullProfile = useCallback(() => {
+            onClose()
+            router.push(`/user/${userId}`)
+        }, [onClose, router, userId])
+
+        const handleTabChange = useCallback((tab: TabType) => {
+            haptics.selection()
+            setActiveTab(tab)
+        }, [])
+
         // Tab content renderer
         const renderTabContent = useCallback(() => {
-            if (activeTab === 'posts') {
-                if (posts.length === 0) {
-                    return <EmptyState icon="chatbubble-ellipses-outline" message={t('profile.noPosts', 'No posts yet')} />
-                }
-                return (
-                    <View style={styles.tabContent}>
-                        {posts.map((post, index) => (
-                            <Animated.View key={post.id} entering={FadeInDown.delay(index * 50).duration(300)}>
+            switch (activeTab) {
+                case 'posts':
+                    return posts.length === 0 ? (
+                        <EmptyState
+                            icon="chatbubble-ellipses-outline"
+                            title={t('profile.noPosts', 'No posts yet')}
+                            message={t('profile.noUserPosts', 'This user hasn\'t shared anything yet.')}
+                        />
+                    ) : (
+                        <View style={styles.feedContainer}>
+                            {posts.map((post) => (
                                 <CommunityPostCard
+                                    key={post.id}
                                     post={post}
                                     currentUserId={currentUser?.id || ''}
                                     onLike={() => { }}
                                     onReply={() => { }}
                                 />
-                            </Animated.View>
-                        ))}
-                    </View>
-                )
-            }
+                            ))}
+                        </View>
+                    )
 
-            if (activeTab === 'library') {
-                if (libraryItems.length === 0) {
-                    return <EmptyState icon="library-outline" message={t('profile.privateLibrary', 'Library is private')} />
-                }
-                return (
-                    <View style={[styles.tabContent, styles.grid]}>
-                        {libraryItems.map((item) => (
-                            <StoryGridCard
-                                key={item.storyId}
-                                story={item.story}
-                                isInLibrary={false}
-                                onPress={() => {
-                                    onClose()
-                                    router.push(`/story/${item.storyId}`)
-                                }}
-                            />
-                        ))}
-                    </View>
-                )
-            }
+                case 'saved':
+                    return libraryItems.length === 0 ? (
+                        <EmptyState
+                            icon="bookmark-outline"
+                            title={t('profile.emptyLibrary', 'Nothing saved')}
+                            message={t('profile.privateLibrary', 'This library is private or empty.')}
+                        />
+                    ) : (
+                        <View style={styles.savedGrid}>
+                            {libraryItems.map((item) => (
+                                <StoryGridCard
+                                    key={item.storyId}
+                                    story={item.story}
+                                    isInLibrary={false}
+                                    onPress={() => {
+                                        onClose()
+                                        router.push(`/story/${item.storyId}`)
+                                    }}
+                                />
+                            ))}
+                        </View>
+                    )
 
-            return null
-        }, [activeTab, posts, libraryItems, currentUser?.id, onClose, router, t])
+                case 'about':
+                    return (
+                        <View style={styles.aboutContainer}>
+                            {/* Quick Stats */}
+                            <View style={styles.quickStatsCard}>
+                                <View style={styles.quickStatsRow}>
+                                    <View style={styles.quickStatItem}>
+                                        <Ionicons name="book" size={20} color={theme.colors.primary} />
+                                        <Typography style={styles.quickStatValue}>{libraryItems.length}</Typography>
+                                        <Typography style={styles.quickStatLabel}>{t('profile.books', 'Books')}</Typography>
+                                    </View>
+                                    <View style={styles.quickStatDivider} />
+                                    <View style={styles.quickStatItem}>
+                                        <Ionicons name="chatbubble" size={20} color="#F59E0B" />
+                                        <Typography style={styles.quickStatValue}>{posts.length}</Typography>
+                                        <Typography style={styles.quickStatLabel}>{t('profile.posts', 'Posts')}</Typography>
+                                    </View>
+                                    <View style={styles.quickStatDivider} />
+                                    <View style={styles.quickStatItem}>
+                                        <Ionicons name="flame" size={20} color="#EF4444" />
+                                        <Typography style={styles.quickStatValue}>{stats.streak}</Typography>
+                                        <Typography style={styles.quickStatLabel}>{t('profile.streak', 'Streak')}</Typography>
+                                    </View>
+                                </View>
+                            </View>
+
+                            {/* Bio */}
+                            {profile?.bio && (
+                                <View style={styles.bioSection}>
+                                    <Typography style={styles.sectionTitle}>{t('profile.about', 'About')}</Typography>
+                                    <View style={styles.bioCard}>
+                                        <Typography style={styles.bioText}>{profile.bio}</Typography>
+                                    </View>
+                                </View>
+                            )}
+
+                            {/* View Full Profile */}
+                            <Pressable style={styles.viewFullButton} onPress={handleViewFullProfile}>
+                                <Ionicons name="expand-outline" size={18} color={theme.colors.primary} />
+                                <Typography style={[styles.viewFullText, { color: theme.colors.primary }]}>
+                                    {t('profile.viewFull', 'View Full Profile')}
+                                </Typography>
+                            </Pressable>
+                        </View>
+                    )
+
+                default:
+                    return null
+            }
+        }, [activeTab, posts, libraryItems, stats, profile, currentUser?.id, onClose, router, theme.colors, t, handleViewFullProfile])
 
         // Loading state
         if (loading) {
@@ -301,13 +334,16 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
             return (
                 <BottomSheetModal ref={ref} {...sheetProps} backdropComponent={renderBackdrop}>
                     <View style={styles.loadingContainer}>
-                        <Typography color={theme.colors.textMuted}>
+                        <Ionicons name="person-outline" size={48} color={theme.colors.textMuted} />
+                        <Typography color={theme.colors.textMuted} style={styles.notFoundText}>
                             {t('social.userNotFound', 'User not found')}
                         </Typography>
                     </View>
                 </BottomSheetModal>
             )
         }
+
+        const avatarSource: ImageSourcePropType = profile.photoURL ? { uri: profile.photoURL } : DEFAULT_AVATAR
 
         return (
             <BottomSheetModal ref={ref} {...sheetProps} backdropComponent={renderBackdrop}>
@@ -320,55 +356,119 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
                         />
                     }
                     showsVerticalScrollIndicator={false}
+                    contentContainerStyle={styles.scrollContent}
                 >
                     {/* Header */}
                     <View style={styles.header}>
                         <View style={styles.headerSpacer} />
-                        <Typography variant="bodyBold" style={styles.headerTitle}>
+                        <Typography style={styles.headerTitle}>
                             {t('profile.title', 'Profile')}
                         </Typography>
                         <Pressable onPress={onClose} style={styles.closeButton}>
-                            <Ionicons name="close" size={24} color={theme.colors.text} />
+                            <Ionicons name="close" size={22} color={theme.colors.text} />
                         </Pressable>
                     </View>
 
-                    {/* Profile Section */}
-                    <View style={styles.profileSection}>
-                        <View style={styles.avatarContainer}>
-                            <ProfileAvatar photoURL={profile.photoURL} />
+                    {/* Profile Card */}
+                    <View style={styles.profileCard}>
+                        {/* Avatar Row */}
+                        <View style={styles.avatarRow}>
+                            <Image source={avatarSource} style={styles.avatar} />
+                            <View style={styles.statsRow}>
+                                <StatItem
+                                    value={stats.followers}
+                                    label={t('social.followers', 'Followers')}
+                                />
+                                <StatItem
+                                    value={stats.following}
+                                    label={t('social.following', 'Following')}
+                                />
+                                <StatItem
+                                    value={stats.streak}
+                                    label={t('profile.streak', 'Streak')}
+                                />
+                            </View>
                         </View>
 
-                        <Typography variant="h2" style={styles.displayName}>
-                            {profile.displayName || 'Anonymous'}
-                        </Typography>
-
-                        {profile.bio && (
-                            <Typography color={theme.colors.textSecondary} style={styles.bio}>
-                                {profile.bio}
+                        {/* User Info */}
+                        <View style={styles.userInfo}>
+                            <Typography style={styles.displayName}>
+                                {profile.displayName || 'Reader'}
                             </Typography>
-                        )}
+                            <Typography style={styles.username}>
+                                @{profile.displayName?.toLowerCase().replace(/\s+/g, '_') || 'reader'}
+                            </Typography>
 
-                        <StatsRow stats={stats} t={t} />
+                            {/* Bio Preview */}
+                            {profile.bio && (
+                                <Typography style={styles.bioPreview} numberOfLines={2}>
+                                    {profile.bio}
+                                </Typography>
+                            )}
 
-                        {!isSelf && (
-                            <FollowButton
-                                isFollowing={isFollowing}
-                                loading={actionLoading}
-                                onPress={handleFollowPress}
-                                t={t}
-                            />
-                        )}
+                            {/* Follow Button */}
+                            {!isSelf && (
+                                <Pressable
+                                    style={[
+                                        styles.followButton,
+                                        isFollowing && styles.followingButton,
+                                        { borderColor: theme.colors.border }
+                                    ]}
+                                    onPress={handleFollowPress}
+                                    disabled={actionLoading}
+                                >
+                                    {actionLoading ? (
+                                        <ActivityIndicator size="small" color={isFollowing ? theme.colors.text : '#FFFFFF'} />
+                                    ) : (
+                                        <>
+                                            <Ionicons
+                                                name={isFollowing ? 'checkmark' : 'person-add-outline'}
+                                                size={16}
+                                                color={isFollowing ? theme.colors.text : '#FFFFFF'}
+                                            />
+                                            <Typography
+                                                style={[
+                                                    styles.followButtonText,
+                                                    { color: isFollowing ? theme.colors.text : '#FFFFFF' }
+                                                ]}
+                                            >
+                                                {isFollowing
+                                                    ? t('social.following', 'Following')
+                                                    : t('social.follow', 'Follow')
+                                                }
+                                            </Typography>
+                                        </>
+                                    )}
+                                </Pressable>
+                            )}
+                        </View>
                     </View>
 
                     {/* Tabs */}
-                    <ProfileTabs
-                        activeTab={activeTab}
-                        onTabChange={setActiveTab}
-                        counts={{ posts: posts.length, library: libraryItems.length }}
-                    />
+                    <View style={styles.tabsContainer}>
+                        <TabButton
+                            label={t('profile.tabPosts', 'Posts')}
+                            count={posts.length}
+                            isActive={activeTab === 'posts'}
+                            onPress={() => handleTabChange('posts')}
+                        />
+                        <TabButton
+                            label={t('profile.tabSaved', 'Saved')}
+                            count={libraryItems.length}
+                            isActive={activeTab === 'saved'}
+                            onPress={() => handleTabChange('saved')}
+                        />
+                        <TabButton
+                            label={t('profile.tabAbout', 'About')}
+                            isActive={activeTab === 'about'}
+                            onPress={() => handleTabChange('about')}
+                        />
+                    </View>
 
                     {/* Tab Content */}
-                    {renderTabContent()}
+                    <View style={styles.tabContent}>
+                        {renderTabContent()}
+                    </View>
                 </BottomSheetScrollView>
             </BottomSheetModal>
         )
@@ -381,105 +481,249 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         paddingVertical: 100,
+        gap: 16,
+    },
+    notFoundText: {
+        fontSize: theme.typography.size.md,
+    },
+    scrollContent: {
+        paddingBottom: 40,
     },
     header: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.lg,
-        paddingBottom: theme.spacing.md,
+        paddingHorizontal: 16,
+        paddingBottom: 12,
     },
     headerSpacer: {
         width: 40,
     },
     headerTitle: {
         fontSize: theme.typography.size.lg,
+        fontWeight: '600',
+        color: theme.colors.text,
     },
     closeButton: {
         width: 40,
         height: 40,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 20,
-        backgroundColor: theme.colors.borderLight,
-    },
-    profileSection: {
-        alignItems: 'center',
-        paddingHorizontal: theme.spacing.lg,
-        paddingBottom: theme.spacing.lg,
-    },
-    avatarContainer: {
-        marginBottom: theme.spacing.md,
-    },
-    avatar: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
-        backgroundColor: theme.colors.borderLight,
-    },
-    displayName: {
-        fontWeight: '800',
-        marginBottom: 4,
-    },
-    bio: {
-        textAlign: 'center',
-        marginBottom: theme.spacing.md,
-        paddingHorizontal: theme.spacing.xl,
-        lineHeight: 20,
-    },
-    statsRow: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
+        borderRadius: 12,
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
-        paddingVertical: theme.spacing.md,
-        paddingHorizontal: theme.spacing.xl,
-        marginBottom: theme.spacing.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
     },
+
+    // Profile Card
+    profileCard: {
+        marginHorizontal: 16,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 20,
+        padding: 20,
+        ...theme.shadows.md,
+    },
+    avatarRow: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+    },
+    avatar: {
+        width: 72,
+        height: 72,
+        borderRadius: 36,
+        backgroundColor: theme.colors.borderLight,
+    },
+    statsRow: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        marginLeft: 16,
+        paddingTop: 8,
+    },
     statItem: {
         alignItems: 'center',
-        paddingHorizontal: theme.spacing.lg,
     },
-    statDivider: {
-        width: 1,
-        height: 30,
-        backgroundColor: theme.colors.border,
+    statItemValue: {
+        fontSize: theme.typography.size.xl,
+        fontWeight: '700',
+        color: theme.colors.text,
+    },
+    statItemLabel: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.textMuted,
+        marginTop: 2,
+    },
+    userInfo: {
+        marginTop: 16,
+    },
+    displayName: {
+        fontSize: theme.typography.size.xl,
+        fontWeight: '700',
+        color: theme.colors.text,
+    },
+    username: {
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textMuted,
+        marginTop: 2,
+    },
+    bioPreview: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textSecondary,
+        marginTop: 12,
+        lineHeight: 20,
     },
     followButton: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         gap: 8,
-        backgroundColor: theme.colors.primary,
-        paddingVertical: 14,
-        paddingHorizontal: 32,
+        marginTop: 16,
+        paddingVertical: 12,
         borderRadius: 12,
-        ...theme.shadows.sm,
+        backgroundColor: theme.colors.primary,
     },
     followingButton: {
         backgroundColor: theme.colors.surface,
         borderWidth: 1,
-        borderColor: theme.colors.primary,
     },
-    tabContent: {
-        paddingBottom: 40,
+    followButtonText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '600',
     },
-    emptyContainer: {
+
+    // Tabs
+    tabsContainer: {
+        flexDirection: 'row',
+        marginTop: 20,
+        marginHorizontal: 16,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 12,
+        padding: 4,
+    },
+    tabButton: {
+        flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: 60,
-        gap: theme.spacing.md,
+        paddingVertical: 12,
+        borderRadius: 10,
+        position: 'relative',
     },
-    emptyText: {
-        textAlign: 'center',
+    tabButtonContent: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
     },
-    grid: {
+    tabButtonText: {
+        fontSize: theme.typography.size.sm,
+        fontWeight: '600',
+    },
+    tabButtonTextActive: {
+        fontWeight: '700',
+    },
+    tabBadge: {
+        paddingHorizontal: 6,
+        paddingVertical: 2,
+        borderRadius: 10,
+        minWidth: 20,
+        alignItems: 'center',
+    },
+    tabBadgeText: {
+        fontSize: 10,
+        fontWeight: '700',
+    },
+    tabIndicator: {
+        position: 'absolute',
+        bottom: 2,
+        width: 24,
+        height: 3,
+        borderRadius: 2,
+    },
+
+    // Tab Content
+    tabContent: {
+        minHeight: 300,
+    },
+    feedContainer: {
+        padding: 16,
+        gap: 16,
+    },
+    savedGrid: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        paddingHorizontal: theme.spacing.lg,
-        gap: 16,
+        padding: 16,
+        gap: 12,
+    },
+
+    // About Tab
+    aboutContainer: {
+        padding: 16,
+    },
+    quickStatsCard: {
+        backgroundColor: theme.colors.surface,
+        borderRadius: 16,
+        padding: 20,
+        marginBottom: 20,
+        ...theme.shadows.sm,
+    },
+    quickStatsRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    quickStatItem: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    quickStatDivider: {
+        width: 1,
+        backgroundColor: theme.colors.borderLight,
+        marginVertical: 4,
+    },
+    quickStatValue: {
+        fontSize: theme.typography.size.lg,
+        fontWeight: '700',
+        color: theme.colors.text,
+        marginTop: 8,
+    },
+    quickStatLabel: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.textMuted,
+        marginTop: 2,
+    },
+    bioSection: {
+        marginBottom: 20,
+    },
+    sectionTitle: {
+        fontSize: theme.typography.size.xs,
+        fontWeight: '700',
+        color: theme.colors.textMuted,
+        textTransform: 'uppercase',
+        letterSpacing: 1,
+        marginBottom: 10,
+        marginLeft: 4,
+    },
+    bioCard: {
+        backgroundColor: theme.colors.surface,
+        borderRadius: 12,
+        padding: 16,
+        ...theme.shadows.sm,
+    },
+    bioText: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.text,
+        lineHeight: 22,
+    },
+    viewFullButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 8,
+        paddingVertical: 14,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 12,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+    },
+    viewFullText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '600',
     },
 }))

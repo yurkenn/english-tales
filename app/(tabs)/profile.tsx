@@ -1,39 +1,151 @@
-import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react'
-import { View, Pressable, Linking, ScrollView } from 'react-native'
+import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react'
+import { View, Pressable, ScrollView, Image, Dimensions } from 'react-native'
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
-
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
-import BottomSheet from '@gorhom/bottom-sheet'
 import { useTranslation } from 'react-i18next'
+import BottomSheet from '@gorhom/bottom-sheet'
 
 import { Typography } from '../../components/atoms'
-import { ProfileHeader } from '../../components/organisms/ProfileHeader'
-import { ProfileTabs, ProfileTabType } from '../../components/molecules/ProfileTabs'
-import { ReadingGoalsSheet } from '../../components/organisms/ReadingGoalsSheet'
-import { ReadingCalendar } from '../../components/organisms/ReadingCalendar'
-import { InsightsCard } from '../../components/organisms/InsightsCard'
-import { WordGrowthChart } from '../../components/organisms/WordGrowthChart'
-import { ProfileMenu, MenuItem } from '../../components/organisms/ProfileMenu'
 import { CommunityPostCard } from '../../components/organisms/CommunityPostCard'
 import { StoryGridCard } from '../../components/molecules/StoryGridCard'
-import { ActionSheet } from '../../components/molecules/ActionSheet'
 import { GuestLoginBanner } from '../../components/molecules/GuestLoginBanner'
+import { EmptyState } from '../../components/molecules/EmptyState'
 import { ProfileScreenSkeleton } from '../../components/skeletons/ProfileScreenSkeleton'
+import { ReadingGoalsSheet } from '../../components/organisms/ReadingGoalsSheet'
+import { ActionSheet } from '../../components/molecules/ActionSheet'
 
 import { useAuthStore } from '@/store/authStore'
 import { useLibraryStore } from '@/store/libraryStore'
 import { useProgressStore } from '@/store/progressStore'
-import { useThemeStore } from '@/store/themeStore'
 import { useAchievementsStore } from '@/store/achievementsStore'
 import { useSettingsStore } from '@/store/settingsStore'
-import { useToastStore } from '@/store/toastStore'
+import { useThemeStore } from '@/store/themeStore'
 import { useVocabularyStore } from '@/store/vocabularyStore'
 import { userService } from '@/services/userService'
 import { communityService } from '@/services/communityService'
 import { UserProfile, CommunityPost } from '@/types'
 import { haptics } from '@/utils/haptics'
+
+const DEFAULT_AVATAR = require('@/assets/defaultavatar.png')
+const { width: SCREEN_WIDTH } = Dimensions.get('window')
+
+// Tab Types
+type TabType = 'posts' | 'saved' | 'about'
+
+// Tab Button Component
+const TabButton = ({
+    label,
+    count,
+    isActive,
+    onPress
+}: {
+    label: string
+    count?: number
+    isActive: boolean
+    onPress: () => void
+}) => {
+    const { theme } = useUnistyles()
+    return (
+        <Pressable
+            style={styles.tabButton}
+            onPress={onPress}
+            android_ripple={{ color: theme.colors.primary + '20' }}
+        >
+            <View style={styles.tabButtonContent}>
+                <Typography
+                    style={[
+                        styles.tabButtonText,
+                        { color: isActive ? theme.colors.text : theme.colors.textMuted },
+                        isActive && styles.tabButtonTextActive
+                    ]}
+                >
+                    {label}
+                </Typography>
+                {count !== undefined && count > 0 && (
+                    <View style={[
+                        styles.tabBadge,
+                        { backgroundColor: isActive ? theme.colors.primary : theme.colors.surfaceElevated }
+                    ]}>
+                        <Typography
+                            style={[
+                                styles.tabBadgeText,
+                                { color: isActive ? '#FFFFFF' : theme.colors.textMuted }
+                            ]}
+                        >
+                            {count > 99 ? '99+' : count}
+                        </Typography>
+                    </View>
+                )}
+            </View>
+            {isActive && (
+                <View style={[styles.tabIndicator, { backgroundColor: theme.colors.primary }]} />
+            )}
+        </Pressable>
+    )
+}
+
+// Stat Item Component
+const StatItem = ({
+    value,
+    label,
+    onPress
+}: {
+    value: string | number
+    label: string
+    onPress?: () => void
+}) => {
+    const { theme } = useUnistyles()
+    const content = (
+        <View style={styles.statItem}>
+            <Typography style={styles.statItemValue}>{value}</Typography>
+            <Typography style={styles.statItemLabel}>{label}</Typography>
+        </View>
+    )
+
+    if (onPress) {
+        return <Pressable onPress={onPress}>{content}</Pressable>
+    }
+    return content
+}
+
+// Menu Item Component
+const MenuItem = ({
+    icon,
+    label,
+    value,
+    onPress,
+    isLast = false
+}: {
+    icon: string
+    label: string
+    value?: string
+    onPress: () => void
+    isLast?: boolean
+}) => {
+    const { theme } = useUnistyles()
+    return (
+        <Pressable
+            style={[styles.menuItem, !isLast && styles.menuItemBorder]}
+            onPress={() => { haptics.selection(); onPress() }}
+            android_ripple={{ color: theme.colors.primary + '10' }}
+        >
+            <View style={styles.menuItemLeft}>
+                <View style={[styles.menuIconWrapper, { backgroundColor: theme.colors.primary + '15' }]}>
+                    <Ionicons name={icon as any} size={18} color={theme.colors.primary} />
+                </View>
+                <Typography style={styles.menuItemLabel}>{label}</Typography>
+            </View>
+            <View style={styles.menuItemRight}>
+                {value && (
+                    <Typography style={styles.menuItemValue}>{value}</Typography>
+                )}
+                <Ionicons name="chevron-forward" size={16} color={theme.colors.textMuted} />
+            </View>
+        </Pressable>
+    )
+}
 
 // Constants
 const LANGUAGES = [
@@ -43,19 +155,6 @@ const LANGUAGES = [
     { code: 'de', label: 'Deutsch' },
     { code: 'fr', label: 'Français' },
 ]
-
-// Empty State Component
-const EmptyState = ({ icon, message }: { icon: keyof typeof Ionicons.glyphMap; message: string }) => {
-    const { theme } = useUnistyles()
-    return (
-        <View style={styles.emptyContainer}>
-            <Ionicons name={icon} size={64} color={theme.colors.border} />
-            <Typography color={theme.colors.textMuted} style={styles.emptyText}>
-                {message}
-            </Typography>
-        </View>
-    )
-}
 
 export default function ProfileScreen() {
     const { t } = useTranslation()
@@ -68,13 +167,12 @@ export default function ProfileScreen() {
     const { items: libraryItems } = useLibraryStore()
     const { progressMap, totalReadingTimeMs, actions: progressActions } = useProgressStore()
     const { savedWords } = useVocabularyStore()
+    const { actions: achievementActions } = useAchievementsStore()
     const { settings, actions: settingsActions } = useSettingsStore()
     const { mode: themeMode, actions: themeActions } = useThemeStore()
-    const { actions: achievementActions } = useAchievementsStore()
-    const toast = useToastStore()
 
     // State
-    const [activeTab, setActiveTab] = useState<ProfileTabType>('posts')
+    const [activeTab, setActiveTab] = useState<TabType>('posts')
     const [fullProfile, setFullProfile] = useState<UserProfile | null>(null)
     const [myPosts, setMyPosts] = useState<CommunityPost[]>([])
     const [loadingProfile, setLoadingProfile] = useState(true)
@@ -104,41 +202,33 @@ export default function ProfileScreen() {
         settingsActions.loadSettings()
     }, [user, settingsActions])
 
-    // Stats
+    // Computed
+    const achievements = achievementActions.getAll()
+    const unlockedCount = achievements.filter((a) => a.unlocked).length
+
     const stats = useMemo(() => {
         let booksRead = 0
         Object.values(progressMap).forEach((p) => { if (p.isCompleted) booksRead++ })
         const userWords = user?.id ? (savedWords[user.id] || {}) : {}
+        const readingHours = Math.floor(totalReadingTimeMs / (1000 * 60 * 60))
 
         return {
             booksRead,
             streak: progressActions.getStreak(),
             postsCount: myPosts.length,
             vocabCount: Object.keys(userWords).length,
+            readingHours,
         }
-    }, [progressMap, myPosts, savedWords, user?.id, progressActions])
+    }, [progressMap, myPosts, savedWords, user?.id, progressActions, totalReadingTimeMs])
 
-    // Menu items
-    const achievements = achievementActions.getAll()
-    const unlockedCount = achievements.filter((a) => a.unlocked).length
-    const themeModeLabel = themeMode === 'system' ? t('appearance.system') : themeMode === 'light' ? t('appearance.light') : t('appearance.dark')
+    const themeModeLabel = themeMode === 'system'
+        ? t('appearance.system')
+        : themeMode === 'light'
+            ? t('appearance.light')
+            : t('appearance.dark')
     const currentLanguageLabel = LANGUAGES.find((l) => l.code === (settings.language || 'en'))?.label || 'English'
 
-    const menuItems = useMemo<MenuItem[]>(() => [
-        { label: t('profile.readingGoals'), icon: 'flag-outline', value: `${settings.dailyGoalMinutes} min/day`, onPress: () => { haptics.selection(); goalsSheetRef.current?.expand() } },
-        { label: t('profile.achievements'), icon: 'trophy-outline', value: `${unlockedCount}/${achievements.length}`, onPress: () => { haptics.selection(); router.push('/achievements') } },
-        { label: t('social.following', 'Following'), icon: 'people-outline', onPress: () => { haptics.selection(); router.push('/social' as any) } },
-        { label: t('profile.vocabulary', 'Vocabulary'), icon: 'bookmark-outline', value: `${stats.vocabCount} words`, onPress: () => { haptics.selection(); router.push('/user/vocabulary') } },
-        { label: t('profile.language'), icon: 'language-outline', value: currentLanguageLabel, onPress: () => { haptics.selection(); langSheetRef.current?.expand() } },
-        { label: t('profile.appearance'), icon: 'color-palette-outline', value: themeModeLabel, onPress: themeActions.toggleTheme },
-    ], [t, settings.dailyGoalMinutes, unlockedCount, achievements.length, stats.vocabCount, currentLanguageLabel, themeModeLabel, router, themeActions])
-
     // Handlers
-    const handleSignOut = useCallback(() => {
-        haptics.warning()
-        signOut()
-    }, [signOut])
-
     const handleSettingsPress = useCallback(() => {
         haptics.selection()
         router.push('/settings')
@@ -149,132 +239,308 @@ export default function ProfileScreen() {
         router.push('/user/edit')
     }, [router])
 
+    const handleTabChange = useCallback((tab: TabType) => {
+        haptics.selection()
+        setActiveTab(tab)
+    }, [])
+
+    const handleSignOut = useCallback(() => {
+        haptics.warning()
+        signOut()
+    }, [signOut])
+
+    const handleFollowersPress = useCallback(() => {
+        haptics.selection()
+        router.push('/social' as any)
+    }, [router])
+
     // Tab content renderer
     const renderTabContent = useCallback(() => {
         switch (activeTab) {
             case 'posts':
-                return (
-                    <View style={styles.tabContent}>
-                        {myPosts.length === 0 ? (
-                            <EmptyState icon="chatbubble-ellipses-outline" message="No posts yet. Share something with the community!" />
-                        ) : (
-                            myPosts.map((post) => (
-                                <CommunityPostCard
-                                    key={post.id}
-                                    post={post}
-                                    currentUserId={user?.id}
-                                    onLike={() => { }}
-                                    onReply={() => { }}
-                                />
-                            ))
-                        )}
+                return myPosts.length === 0 ? (
+                    <EmptyState
+                        icon="chatbubble-ellipses-outline"
+                        title={t('profile.noPosts', 'No posts yet')}
+                        message={t('profile.noPostsMessage', 'Share your reading journey with the community!')}
+                        actionLabel={t('profile.shareFirst', 'Create Post')}
+                        onAction={() => router.push('/(tabs)/community')}
+                    />
+                ) : (
+                    <View style={styles.feedContainer}>
+                        {myPosts.map((post) => (
+                            <CommunityPostCard
+                                key={post.id}
+                                post={post}
+                                currentUserId={user?.id}
+                                onLike={() => { }}
+                                onReply={() => { }}
+                            />
+                        ))}
                     </View>
                 )
-            case 'reviews':
-                return (
-                    <View style={styles.tabContent}>
-                        <EmptyState icon="star-outline" message="No reviews written yet. Rate some stories to see them here!" />
+
+            case 'saved':
+                return libraryItems.length === 0 ? (
+                    <EmptyState
+                        icon="bookmark-outline"
+                        title={t('profile.emptyLibrary', 'Nothing saved yet')}
+                        message={t('profile.emptyLibraryMessage', 'Save stories to easily find them here!')}
+                        actionLabel={t('profile.exploreStories', 'Explore Stories')}
+                        onAction={() => router.push('/(tabs)/discover')}
+                    />
+                ) : (
+                    <View style={styles.savedGrid}>
+                        {libraryItems.map((item) => (
+                            <StoryGridCard
+                                key={item.storyId}
+                                story={item.story}
+                                isInLibrary
+                                onPress={() => router.push(`/story/${item.storyId}`)}
+                            />
+                        ))}
                     </View>
                 )
-            case 'library':
+
+            case 'about':
                 return (
-                    <View style={styles.tabContent}>
-                        {libraryItems.length === 0 ? (
-                            <EmptyState icon="library-outline" message="Your library is empty. Save stories to read them later!" />
-                        ) : (
-                            <View style={styles.grid}>
-                                {libraryItems.map((item) => (
-                                    <StoryGridCard
-                                        key={item.storyId}
-                                        story={item.story}
-                                        isInLibrary
-                                        onPress={() => router.push(`/story/${item.storyId}`)}
-                                    />
-                                ))}
+                    <View style={styles.aboutContainer}>
+                        {/* Quick Stats */}
+                        <View style={styles.quickStatsCard}>
+                            <View style={styles.quickStatsRow}>
+                                <View style={styles.quickStatItem}>
+                                    <Ionicons name="book" size={20} color={theme.colors.primary} />
+                                    <Typography style={styles.quickStatValue}>{stats.booksRead}</Typography>
+                                    <Typography style={styles.quickStatLabel}>{t('profile.booksRead', 'Books')}</Typography>
+                                </View>
+                                <View style={styles.quickStatDivider} />
+                                <View style={styles.quickStatItem}>
+                                    <Ionicons name="time" size={20} color="#F59E0B" />
+                                    <Typography style={styles.quickStatValue}>{stats.readingHours}h</Typography>
+                                    <Typography style={styles.quickStatLabel}>{t('profile.time', 'Reading')}</Typography>
+                                </View>
+                                <View style={styles.quickStatDivider} />
+                                <View style={styles.quickStatItem}>
+                                    <Ionicons name="text" size={20} color="#10B981" />
+                                    <Typography style={styles.quickStatValue}>{stats.vocabCount}</Typography>
+                                    <Typography style={styles.quickStatLabel}>{t('profile.words', 'Words')}</Typography>
+                                </View>
+                                <View style={styles.quickStatDivider} />
+                                <View style={styles.quickStatItem}>
+                                    <Ionicons name="trophy" size={20} color="#8B5CF6" />
+                                    <Typography style={styles.quickStatValue}>{unlockedCount}</Typography>
+                                    <Typography style={styles.quickStatLabel}>{t('profile.badges', 'Badges')}</Typography>
+                                </View>
                             </View>
-                        )}
-                    </View>
-                )
-            case 'more':
-                return (
-                    <View style={styles.tabContent}>
-                        <View style={styles.sectionHeader}>
-                            <Typography variant="h3">{t('profile.learningInsights', 'Learning Insights')}</Typography>
                         </View>
-                        <InsightsCard wordsLearned={stats.vocabCount} averageAccuracy={0} totalReadingTimeMs={totalReadingTimeMs} />
-                        <View style={styles.calendarWrapper}>
-                            <ReadingCalendar readingData={{}} />
-                        </View>
-                        <WordGrowthChart words={Object.values(user?.id ? (savedWords[user.id] || {}) : {})} />
 
-                        <View style={styles.sectionDivider} />
-                        <View style={styles.sectionHeader}>
-                            <Typography variant="h3">{t('settings.title', 'Settings')}</Typography>
+                        {/* Activity Menu */}
+                        <View style={styles.menuSection}>
+                            <Typography style={styles.menuSectionTitle}>{t('profile.activity', 'Activity')}</Typography>
+                            <View style={styles.menuCard}>
+                                <MenuItem
+                                    icon="trophy-outline"
+                                    label={t('profile.achievements')}
+                                    value={`${unlockedCount}/${achievements.length}`}
+                                    onPress={() => router.push('/achievements')}
+                                />
+                                <MenuItem
+                                    icon="bookmark-outline"
+                                    label={t('profile.vocabulary')}
+                                    value={`${stats.vocabCount}`}
+                                    onPress={() => router.push('/user/vocabulary')}
+                                />
+                                <MenuItem
+                                    icon="people-outline"
+                                    label={t('social.following')}
+                                    onPress={() => router.push('/social' as any)}
+                                    isLast
+                                />
+                            </View>
                         </View>
-                        <ProfileMenu items={menuItems} />
 
-                        <Pressable style={styles.signOutButton} onPress={handleSignOut}>
+                        {/* Settings Menu */}
+                        <View style={styles.menuSection}>
+                            <Typography style={styles.menuSectionTitle}>{t('profile.preferences', 'Preferences')}</Typography>
+                            <View style={styles.menuCard}>
+                                <MenuItem
+                                    icon="flag-outline"
+                                    label={t('profile.readingGoals')}
+                                    value={`${settings.dailyGoalMinutes} min`}
+                                    onPress={() => goalsSheetRef.current?.expand()}
+                                />
+                                <MenuItem
+                                    icon="language-outline"
+                                    label={t('profile.language')}
+                                    value={currentLanguageLabel}
+                                    onPress={() => langSheetRef.current?.expand()}
+                                />
+                                <MenuItem
+                                    icon="color-palette-outline"
+                                    label={t('profile.appearance')}
+                                    value={themeModeLabel}
+                                    onPress={themeActions.toggleTheme}
+                                />
+                                <MenuItem
+                                    icon="settings-outline"
+                                    label={t('profile.allSettings', 'All Settings')}
+                                    onPress={handleSettingsPress}
+                                    isLast
+                                />
+                            </View>
+                        </View>
+
+                        {/* Sign Out */}
+                        <Pressable
+                            style={styles.signOutButton}
+                            onPress={handleSignOut}
+                            android_ripple={{ color: theme.colors.error + '20' }}
+                        >
                             <Ionicons name="log-out-outline" size={20} color={theme.colors.error} />
-                            <Typography variant="bodyBold" color={theme.colors.error}>Sign Out</Typography>
+                            <Typography style={[styles.signOutText, { color: theme.colors.error }]}>
+                                {t('profile.signOut', 'Sign Out')}
+                            </Typography>
                         </Pressable>
                     </View>
                 )
+
             default:
                 return null
         }
-    }, [activeTab, myPosts, libraryItems, user?.id, savedWords, stats.vocabCount, totalReadingTimeMs, menuItems, router, handleSignOut, theme.colors.error, t])
+    }, [activeTab, myPosts, libraryItems, stats, achievements, unlockedCount, settings, user?.id, router, theme.colors, t, currentLanguageLabel, themeModeLabel, handleSettingsPress, handleSignOut, themeActions])
 
-    // Loading state
-    if (authLoading || loadingProfile) {
-        return <ProfileScreenSkeleton />
-    }
-
-    // No user state
+    // Loading
+    if (authLoading || loadingProfile) return <ProfileScreenSkeleton />
     if (!user || !fullProfile) return null
 
     return (
         <View style={styles.container}>
-            {/* Header */}
-            <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
-                <Typography variant="h2" style={styles.headerTitle}>
-                    {t('tabs.profile', 'Profile')}
-                </Typography>
-                <Pressable style={styles.headerAction} onPress={handleSettingsPress}>
-                    <Ionicons name="settings-outline" size={22} color={theme.colors.text} />
-                </Pressable>
-            </View>
+            <ScrollView
+                style={styles.scrollView}
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.scrollContent}
+                bounces={false}
+            >
+                {/* Standard Header */}
+                <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
+                    <Typography style={styles.headerTitle}>{t('tabs.profile', 'Profile')}</Typography>
+                    <Pressable
+                        style={styles.settingsButton}
+                        onPress={handleSettingsPress}
+                        hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                    >
+                        <Ionicons name="settings-outline" size={24} color={theme.colors.text} />
+                    </Pressable>
+                </View>
 
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scrollContent}>
-                {/* Guest Login Banner */}
-                {user?.isAnonymous && showGuestBanner && (
-                    <GuestLoginBanner
-                        onSignInPress={() => router.push('/login')}
-                        onDismiss={() => setShowGuestBanner(false)}
+                {/* Profile Card */}
+                <View style={styles.profileCard}>
+                    {/* Avatar Row */}
+                    <View style={styles.avatarRow}>
+                        <View style={styles.avatarWrapper}>
+                            <Image
+                                source={fullProfile.photoURL ? { uri: fullProfile.photoURL } : DEFAULT_AVATAR}
+                                style={styles.avatar}
+                            />
+                            <Pressable
+                                style={[styles.editAvatarBtn, { backgroundColor: theme.colors.primary }]}
+                                onPress={handleEditPress}
+                            >
+                                <Ionicons name="pencil" size={14} color="#FFFFFF" />
+                            </Pressable>
+                        </View>
+
+                        {/* Stats Row */}
+                        <View style={styles.statsRow}>
+                            <StatItem
+                                value={fullProfile.followersCount || 0}
+                                label={t('social.followers', 'Followers')}
+                                onPress={handleFollowersPress}
+                            />
+                            <StatItem
+                                value={fullProfile.followingCount || 0}
+                                label={t('social.following', 'Following')}
+                                onPress={handleFollowersPress}
+                            />
+                            <StatItem
+                                value={stats.streak}
+                                label={t('profile.streak', 'Streak')}
+                            />
+                        </View>
+                    </View>
+
+                    {/* User Info */}
+                    <View style={styles.userInfo}>
+                        <Typography style={styles.displayName}>
+                            {fullProfile.displayName || 'Reader'}
+                        </Typography>
+                        <Typography style={styles.username}>
+                            @{fullProfile.displayName?.toLowerCase().replace(/\s+/g, '_') || 'reader'}
+                        </Typography>
+
+                        {/* Bio */}
+                        {fullProfile.bio ? (
+                            <Typography style={styles.bio}>{fullProfile.bio}</Typography>
+                        ) : (
+                            <Pressable style={styles.addBioBtn} onPress={handleEditPress}>
+                                <Ionicons name="add-circle-outline" size={16} color={theme.colors.primary} />
+                                <Typography style={[styles.addBioText, { color: theme.colors.primary }]}>
+                                    {t('profile.addBio', 'Add a bio')}
+                                </Typography>
+                            </Pressable>
+                        )}
+
+                        {/* Edit Profile Button */}
+                        <Pressable
+                            style={[styles.editProfileBtn, { borderColor: theme.colors.border }]}
+                            onPress={handleEditPress}
+                        >
+                            <Ionicons name="create-outline" size={16} color={theme.colors.text} />
+                            <Typography style={styles.editProfileText}>
+                                {t('profile.editProfile', 'Edit Profile')}
+                            </Typography>
+                        </Pressable>
+                    </View>
+
+                    {/* Guest Banner */}
+                    {user?.isAnonymous && showGuestBanner && (
+                        <View style={styles.guestBannerWrapper}>
+                            <GuestLoginBanner
+                                onSignInPress={() => router.push('/login')}
+                                onDismiss={() => setShowGuestBanner(false)}
+                            />
+                        </View>
+                    )}
+                </View>
+
+                {/* Tabs */}
+                <View style={styles.tabsContainer}>
+                    <TabButton
+                        label={t('profile.tabPosts', 'Posts')}
+                        count={stats.postsCount}
+                        isActive={activeTab === 'posts'}
+                        onPress={() => handleTabChange('posts')}
                     />
-                )}
-
-                <ProfileHeader
-                    profile={{
-                        ...fullProfile,
-                        followersCount: fullProfile.followersCount || 0,
-                        followingCount: fullProfile.followingCount || 0,
-                        streak: stats.streak,
-                    }}
-                    isSelf
-                    onEditPress={handleEditPress}
-                />
-
-                <View style={styles.tabsWrapper}>
-                    <ProfileTabs
-                        activeTab={activeTab}
-                        onTabChange={setActiveTab}
-                        counts={{ posts: stats.postsCount, library: libraryItems.length }}
+                    <TabButton
+                        label={t('profile.tabSaved', 'Saved')}
+                        count={libraryItems.length}
+                        isActive={activeTab === 'saved'}
+                        onPress={() => handleTabChange('saved')}
+                    />
+                    <TabButton
+                        label={t('profile.tabAbout', 'About')}
+                        isActive={activeTab === 'about'}
+                        onPress={() => handleTabChange('about')}
                     />
                 </View>
 
-                {renderTabContent()}
+                {/* Tab Content */}
+                <View style={styles.tabContent}>
+                    {renderTabContent()}
+                </View>
             </ScrollView>
 
+            {/* Bottom Sheets */}
             <ReadingGoalsSheet
                 ref={goalsSheetRef}
                 currentGoal={settings.dailyGoalMinutes}
@@ -304,21 +570,29 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         backgroundColor: theme.colors.background,
     },
+    scrollView: {
+        flex: 1,
+    },
+    scrollContent: {
+        paddingBottom: 120,
+    },
+
+    // Header
     header: {
         flexDirection: 'row',
-        alignItems: 'center',
         justifyContent: 'space-between',
+        alignItems: 'center',
         paddingHorizontal: 20,
-        paddingBottom: 12,
+        paddingBottom: 16,
         backgroundColor: theme.colors.background,
     },
     headerTitle: {
         fontSize: theme.typography.size.xxxl,
-        fontWeight: 'bold',
+        fontWeight: '700',
         color: theme.colors.text,
         letterSpacing: -0.5,
     },
-    headerAction: {
+    settingsButton: {
         width: 44,
         height: 44,
         borderRadius: 12,
@@ -329,58 +603,272 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         ...theme.shadows.sm,
     },
-    scrollContent: {
-        paddingBottom: 120,
+
+    // Profile Card
+    profileCard: {
+        marginHorizontal: 16,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 20,
+        padding: 20,
+        ...theme.shadows.md,
     },
-    tabsWrapper: {
-        backgroundColor: theme.colors.background,
+    avatarRow: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
     },
-    tabContent: {
-        paddingTop: theme.spacing.md,
+    avatarWrapper: {
+        position: 'relative',
     },
-    emptyContainer: {
+    avatar: {
+        width: 72,
+        height: 72,
+        borderRadius: 36,
+        borderWidth: 3,
+        borderColor: theme.colors.surface,
+    },
+    editAvatarBtn: {
+        position: 'absolute',
+        bottom: -2,
+        right: -2,
+        width: 28,
+        height: 28,
+        borderRadius: 14,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: 60,
-        paddingHorizontal: 40,
+        borderWidth: 3,
+        borderColor: theme.colors.surface,
     },
-    emptyText: {
-        textAlign: 'center',
-        fontSize: theme.typography.size.md,
-        lineHeight: 24,
-        marginTop: 16,
-    },
-    grid: {
+    statsRow: {
+        flex: 1,
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        paddingHorizontal: theme.spacing.lg,
-        gap: 16,
+        justifyContent: 'space-around',
+        marginLeft: 16,
         paddingTop: 8,
     },
+    statItem: {
+        alignItems: 'center',
+    },
+    statItemValue: {
+        fontSize: theme.typography.size.xl,
+        fontWeight: '700',
+        color: theme.colors.text,
+    },
+    statItemLabel: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.textMuted,
+        marginTop: 2,
+    },
+    userInfo: {
+        marginTop: 16,
+    },
+    displayName: {
+        fontSize: theme.typography.size.xl,
+        fontWeight: '700',
+        color: theme.colors.text,
+    },
+    username: {
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textMuted,
+        marginTop: 2,
+    },
+    bio: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.textSecondary,
+        marginTop: 12,
+        lineHeight: 22,
+    },
+    addBioBtn: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+        marginTop: 12,
+    },
+    addBioText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '500',
+    },
+    editProfileBtn: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 8,
+        marginTop: 16,
+        paddingVertical: 10,
+        borderRadius: 10,
+        borderWidth: 1,
+    },
+    editProfileText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '600',
+        color: theme.colors.text,
+    },
+    guestBannerWrapper: {
+        marginTop: 16,
+    },
 
-    sectionDivider: {
-        height: 12,
-        backgroundColor: theme.colors.surfaceElevated,
-        marginVertical: theme.spacing.xxl,
+    // Tabs
+    tabsContainer: {
+        flexDirection: 'row',
+        marginTop: 20,
+        marginHorizontal: 16,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 12,
+        padding: 4,
     },
-    sectionHeader: {
-        paddingHorizontal: theme.spacing.lg,
-        marginBottom: theme.spacing.lg,
+    tabButton: {
+        flex: 1,
+        alignItems: 'center',
+        paddingVertical: 12,
+        borderRadius: 10,
+        position: 'relative',
     },
-    calendarWrapper: {
-        marginVertical: 12,
+    tabButtonContent: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+    },
+    tabButtonText: {
+        fontSize: theme.typography.size.sm,
+        fontWeight: '600',
+    },
+    tabButtonTextActive: {
+        fontWeight: '700',
+    },
+    tabBadge: {
+        paddingHorizontal: 6,
+        paddingVertical: 2,
+        borderRadius: 10,
+        minWidth: 20,
+        alignItems: 'center',
+    },
+    tabBadgeText: {
+        fontSize: 10,
+        fontWeight: '700',
+    },
+    tabIndicator: {
+        position: 'absolute',
+        bottom: 2,
+        width: 24,
+        height: 3,
+        borderRadius: 2,
+    },
+
+    // Tab Content
+    tabContent: {
+        minHeight: 400,
+    },
+    feedContainer: {
+        padding: 16,
+        gap: 16,
+    },
+    savedGrid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        padding: 16,
+        gap: 12,
+    },
+
+    // About Tab
+    aboutContainer: {
+        padding: 16,
+    },
+    quickStatsCard: {
+        backgroundColor: theme.colors.surface,
+        borderRadius: 16,
+        padding: 20,
+        marginBottom: 20,
+        ...theme.shadows.sm,
+    },
+    quickStatsRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    quickStatItem: {
+        flex: 1,
+        alignItems: 'center',
+    },
+    quickStatDivider: {
+        width: 1,
+        backgroundColor: theme.colors.borderLight,
+        marginVertical: 4,
+    },
+    quickStatValue: {
+        fontSize: theme.typography.size.lg,
+        fontWeight: '700',
+        color: theme.colors.text,
+        marginTop: 8,
+    },
+    quickStatLabel: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.textMuted,
+        marginTop: 2,
+    },
+    menuSection: {
+        marginBottom: 20,
+    },
+    menuSectionTitle: {
+        fontSize: theme.typography.size.xs,
+        fontWeight: '700',
+        color: theme.colors.textMuted,
+        textTransform: 'uppercase',
+        letterSpacing: 1,
+        marginBottom: 10,
+        marginLeft: 4,
+    },
+    menuCard: {
+        backgroundColor: theme.colors.surface,
+        borderRadius: 16,
+        overflow: 'hidden',
+        ...theme.shadows.sm,
+    },
+    menuItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: 14,
+    },
+    menuItemBorder: {
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.borderLight,
+    },
+    menuItemLeft: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 12,
+    },
+    menuIconWrapper: {
+        width: 36,
+        height: 36,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    menuItemRight: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+    },
+    menuItemLabel: {
+        fontSize: theme.typography.size.md,
+        color: theme.colors.text,
+        fontWeight: '500',
+    },
+    menuItemValue: {
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textMuted,
     },
     signOutButton: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: theme.spacing.sm,
-        marginVertical: 60,
+        gap: 8,
         paddingVertical: 14,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        marginHorizontal: theme.spacing.lg,
-        borderRadius: 16,
+        marginTop: 12,
         backgroundColor: theme.colors.surface,
+        borderRadius: 12,
+    },
+    signOutText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '600',
     },
 }))

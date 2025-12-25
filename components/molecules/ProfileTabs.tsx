@@ -10,7 +10,7 @@ import Animated, {
 import { Typography } from '../atoms';
 import { haptics } from '@/utils/haptics';
 
-export type ProfileTabType = 'posts' | 'reviews' | 'library' | 'more';
+export type ProfileTabType = 'posts' | 'reviews' | 'library' | 'achievements';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -21,6 +21,7 @@ interface ProfileTabsProps {
         posts?: number;
         reviews?: number;
         library?: number;
+        achievements?: number;
     };
 }
 
@@ -34,8 +35,8 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
     const tabs: { id: ProfileTabType; icon: any; label: string; count?: number }[] = [
         { id: 'posts', icon: 'apps-outline', label: 'Posts', count: counts?.posts },
         { id: 'reviews', icon: 'star-outline', label: 'Reviews', count: counts?.reviews },
-        { id: 'library', icon: 'book-outline', label: 'Library', count: counts?.library },
-        { id: 'more', icon: 'menu-outline', label: 'More' },
+        { id: 'library', icon: 'book-outline', label: 'Saved', count: counts?.library },
+        { id: 'achievements', icon: 'trophy-outline', label: 'Badges', count: counts?.achievements },
     ];
 
     const tabWidth = SCREEN_WIDTH / tabs.length;
