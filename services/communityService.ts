@@ -143,14 +143,22 @@ class CommunityService {
                 });
 
                 if (data.userId !== userId) {
-                    await notificationService.createSocialNotification(data.userId, {
-                        type: 'like',
-                        senderId: userId,
-                        senderName: userName,
-                        senderPhoto: userPhoto,
-                        postId: postId,
-                        content: data.content.substring(0, 50),
-                    });
+                    // Note: Social notifications require Cloud Functions to work properly
+                    // because security rules prevent writing to other users' subcollections
+                    // Silently skip notification creation for now
+                    // TODO: Implement via Cloud Functions for production
+                    try {
+                        await notificationService.createSocialNotification(data.userId, {
+                            type: 'like',
+                            senderId: userId,
+                            senderName: userName,
+                            senderPhoto: userPhoto,
+                            postId: postId,
+                            content: data.content.substring(0, 50),
+                        });
+                    } catch {
+                        // Silently ignore - notification requires Cloud Functions
+                    }
                 }
 
                 return { success: true, data: true };
@@ -166,11 +174,15 @@ class CommunityService {
         userId: string,
         userName: string,
         userPhoto: string | null,
-        content: string
+        content: string,
+        parentId: string | null = null,
+        depth: number = 0
     ): Promise<Result<string>> {
         try {
             const replyData = {
                 postId,
+                parentId,
+                depth,
                 userId,
                 userName,
                 userPhoto,
@@ -191,14 +203,18 @@ class CommunityService {
                 });
 
                 if (data.userId !== userId) {
-                    await notificationService.createSocialNotification(data.userId, {
-                        type: 'reply',
-                        senderId: userId,
-                        senderName: userName,
-                        senderPhoto: userPhoto,
-                        postId: postId,
-                        content: content.substring(0, 50),
-                    });
+                    try {
+                        await notificationService.createSocialNotification(data.userId, {
+                            type: 'reply',
+                            senderId: userId,
+                            senderName: userName,
+                            senderPhoto: userPhoto,
+                            postId: postId,
+                            content: content.substring(0, 50),
+                        });
+                    } catch {
+                        // Silently ignore - notification requires Cloud Functions
+                    }
                 }
             }
 

@@ -113,6 +113,8 @@ export interface CommunityPost {
 export interface CommunityReply {
     id: string;
     postId: string;
+    parentId: string | null; // null = top-level, string = reply to another comment
+    depth: number; // 0 = top-level, 1, 2 (max 2 for simplicity)
     userId: string;
     userName: string;
     userPhoto: string | null;

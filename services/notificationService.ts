@@ -112,8 +112,8 @@ class NotificationService {
                 isRead: false,
                 timestamp: serverTimestamp(),
             });
-        } catch (error) {
-            console.error('[NotificationService] Failed to create notification:', error);
+        } catch {
+            // Silently ignore - requires Cloud Functions due to security rules
         }
     }
 

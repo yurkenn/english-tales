@@ -74,24 +74,6 @@ export default function CommunityTab() {
         scrollY.value = event.contentOffset.y;
     });
 
-    const headerAnimatedStyle = useAnimatedStyle(() => {
-        return {
-            transform: [
-                { translateY: interpolate(scrollY.value, [0, HEADER_HEIGHT], [0, -10], Extrapolate.CLAMP) }
-            ],
-            opacity: interpolate(scrollY.value, [0, HEADER_HEIGHT / 2], [1, 0.9], Extrapolate.CLAMP),
-        };
-    });
-
-    const titleAnimatedStyle = useAnimatedStyle(() => {
-        return {
-            transform: [
-                { scale: interpolate(scrollY.value, [0, HEADER_HEIGHT], [1, 0.85], Extrapolate.CLAMP) },
-                { translateX: interpolate(scrollY.value, [0, HEADER_HEIGHT], [0, -10], Extrapolate.CLAMP) }
-            ],
-        };
-    });
-
     // Create Post State
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -124,6 +106,11 @@ export default function CommunityTab() {
     const handleProfileSheetClose = () => {
         userProfileSheetRef.current?.dismiss();
         setSelectedProfileUserId(null);
+    };
+
+    const handlePostPress = (postId: string) => {
+        haptics.selection();
+        router.push(`/community/${postId}`);
     };
 
 
@@ -177,15 +164,9 @@ export default function CommunityTab() {
 
     return (
         <View style={styles.container}>
-            {/* Header with Parallax */}
-            <Animated.View style={[
-                styles.header,
-                { paddingTop: insets.top + 8 },
-                headerAnimatedStyle
-            ]}>
-                <Animated.View style={titleAnimatedStyle}>
-                    <Typography variant="h2" style={styles.headerTitle}>{t('social.title', 'Community')}</Typography>
-                </Animated.View>
+            {/* Header - Static like other screens */}
+            <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
+                <Typography variant="h2" style={styles.headerTitle}>{t('social.title', 'Community')}</Typography>
 
                 <View style={styles.headerButtons}>
                     <Pressable
@@ -201,7 +182,7 @@ export default function CommunityTab() {
                         )}
                     </Pressable>
                 </View>
-            </Animated.View>
+            </View>
 
             <Animated.ScrollView
                 style={styles.content}
@@ -290,6 +271,7 @@ export default function CommunityTab() {
                                     onReply={handleOpenReply}
                                     onMorePress={handleMorePress}
                                     onAvatarPress={handleAvatarPress}
+                                    onPress={() => handlePostPress(post.id)}
                                     index={index}
                                 />
                             ))

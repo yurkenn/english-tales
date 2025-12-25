@@ -30,6 +30,7 @@ interface CommunityPostCardProps {
     onShare?: (postId: string) => void;
     onMorePress?: (postId: string) => void;
     onAvatarPress?: (userId: string) => void;
+    onPress?: () => void;
     index?: number;
 }
 
@@ -40,6 +41,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     onReply,
     onMorePress,
     onAvatarPress,
+    onPress,
     index = 0,
 }) => {
     const { theme } = useUnistyles();
@@ -92,7 +94,11 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     };
 
     return (
-        <View
+        <Pressable
+            onPress={() => {
+                haptics.selection();
+                onPress?.();
+            }}
             style={[
                 styles.postCard,
                 isAchievement && { borderColor: theme.colors.warning + '20' },
@@ -155,7 +161,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                 likeAnimationStyle={likeAnimationStyle}
                 replyAnimationStyle={replyAnimationStyle}
             />
-        </View>
+        </Pressable>
 
     );
 };

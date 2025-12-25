@@ -50,3 +50,4 @@ export * from './readingTypes';
 export * from './settingsTypes';
 export { TabHeader } from './TabHeader';
 export { UserProfileSheet } from './UserProfileSheet';
+export { PostDetailSheet } from './PostDetailSheet';
