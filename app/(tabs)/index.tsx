@@ -14,10 +14,11 @@ import {
     NetworkError,
     HomeScreenSkeleton,
     HomeHeader,
-    TrendingStoryCard,
+    RankedStoryCard,
     CommunityBuzz,
     ActiveFilterBadge,
     FilteredEmptyState,
+    VocabularyMilestoneCard,
 } from '@/components'
 import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries'
 import { Story, CommunityPost } from '@/types'
@@ -289,6 +290,9 @@ export default function HomeScreen() {
                             </View>
                         )}
 
+                        {/* Vocabulary Quiz Milestone Event - After continue reading */}
+                        <VocabularyMilestoneCard />
+
                         {featuredStory && !isFilterActive && (
                             <View style={styles.section}>
                                 <SectionHeader title={t('home.dailyPick')} />
@@ -315,7 +319,7 @@ export default function HomeScreen() {
                             <SectionHeader title={t('home.trending')} onActionPress={() => router.push('/stories?sort=trending')} />
                             <View style={styles.trendingContainer}>
                                 {trendingList.map((story: Story, index: number) => (
-                                    <TrendingStoryCard
+                                    <RankedStoryCard
                                         key={story.id}
                                         story={story}
                                         rank={index + 1}

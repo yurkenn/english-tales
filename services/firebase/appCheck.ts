@@ -1,4 +1,5 @@
-import appCheck from '@react-native-firebase/app-check';
+import appCheck from '@react-native-firebase/app-check'
+import { appCheckLogger as logger } from '@/utils/logger'
 
 /**
  * Initialize Firebase App Check for security.
@@ -10,7 +11,7 @@ import appCheck from '@react-native-firebase/app-check';
  * - For iOS: Enable DeviceCheck or App Attest
  */
 class AppCheckService {
-    private initialized = false;
+    private initialized = false
 
     /**
      * Initialize App Check
@@ -18,16 +19,16 @@ class AppCheckService {
      */
     async initialize(): Promise<void> {
         if (this.initialized) {
-            console.log('[App Check] Already initialized');
-            return;
+            logger.log('Already initialized')
+            return
         }
 
         try {
             // For debug builds, use debug provider
             if (__DEV__) {
                 // In development, you can use debug token
-                // Get debug token from console.log and add to Firebase Console
-                const rnfbProvider = appCheck().newReactNativeFirebaseAppCheckProvider();
+                // Get debug token from logs and add to Firebase Console
+                const rnfbProvider = appCheck().newReactNativeFirebaseAppCheckProvider()
                 rnfbProvider.configure({
                     android: {
                         provider: 'debug',
@@ -35,15 +36,15 @@ class AppCheckService {
                     apple: {
                         provider: 'debug',
                     },
-                });
+                })
                 await appCheck().initializeAppCheck({
                     provider: rnfbProvider,
                     isTokenAutoRefreshEnabled: true,
-                });
-                console.log('[App Check] Initialized with debug provider');
+                })
+                logger.log('Initialized with debug provider')
             } else {
                 // In production, use Play Integrity (Android) or App Attest (iOS)
-                const rnfbProvider = appCheck().newReactNativeFirebaseAppCheckProvider();
+                const rnfbProvider = appCheck().newReactNativeFirebaseAppCheckProvider()
                 rnfbProvider.configure({
                     android: {
                         provider: 'playIntegrity',
@@ -51,17 +52,17 @@ class AppCheckService {
                     apple: {
                         provider: 'appAttest',
                     },
-                });
+                })
                 await appCheck().initializeAppCheck({
                     provider: rnfbProvider,
                     isTokenAutoRefreshEnabled: true,
-                });
-                console.log('[App Check] Initialized with production provider');
+                })
+                logger.log('Initialized with production provider')
             }
 
-            this.initialized = true;
+            this.initialized = true
         } catch (error) {
-            console.error('[App Check] Initialization failed:', error);
+            logger.error('Initialization failed:', error)
             // Don't throw - app should still work without App Check
             // but Firebase requests may fail if enforcement is enabled
         }
@@ -73,11 +74,11 @@ class AppCheckService {
      */
     async getToken(): Promise<string | null> {
         try {
-            const { token } = await appCheck().getToken(true);
-            return token;
+            const { token } = await appCheck().getToken(true)
+            return token
         } catch (error) {
-            console.error('[App Check] Failed to get token:', error);
-            return null;
+            logger.error('Failed to get token:', error)
+            return null
         }
     }
 
@@ -85,8 +86,8 @@ class AppCheckService {
      * Check if App Check is supported on this device
      */
     isSupported(): boolean {
-        return true; // React Native Firebase supports App Check on both platforms
+        return true // React Native Firebase supports App Check on both platforms
     }
 }
 
-export const appCheckService = new AppCheckService();
+export const appCheckService = new AppCheckService()

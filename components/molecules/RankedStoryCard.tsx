@@ -1,70 +1,84 @@
-import React, { memo } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import React, { memo, useMemo } from 'react';
+import { View, Text, Pressable, StyleProp, ViewStyle } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import type { Story } from '@/types';
 
-interface TrendingStoryCardProps {
+interface RankedStoryCardProps {
     story: Story;
     rank: number;
     onPress: () => void;
+    style?: StyleProp<ViewStyle>;
 }
 
-const TrendingStoryCardComponent: React.FC<TrendingStoryCardProps> = ({
+/**
+ * Unified component for displaying ranked stories
+ * Replaces PopularStoryCard and TrendingStoryCard
+ */
+const RankedStoryCardComponent: React.FC<RankedStoryCardProps> = ({
     story,
     rank,
     onPress,
+    style,
 }) => {
     const { theme } = useUnistyles();
 
-    const renderRankBadge = () => {
+    const rankConfig = useMemo(() => {
         const isTop3 = rank <= 3;
-        let iconName: keyof typeof Ionicons.glyphMap | null = null;
-        let extraRankStyle = {};
+        const configs: Record<number, { color: string; borderColor: string }> = {
+            1: { color: '#FFD700', borderColor: '#FFC107' },
+            2: { color: '#C0C0C0', borderColor: '#9E9E9E' },
+            3: { color: '#CD7F32', borderColor: '#A0522D' },
+        };
+        return { isTop3, ...configs[rank] };
+    }, [rank]);
 
-        if (rank === 1) {
-            iconName = 'medal';
-            extraRankStyle = styles.rankGold;
-        } else if (rank === 2) {
-            iconName = 'medal';
-            extraRankStyle = styles.rankSilver;
-        } else if (rank === 3) {
-            iconName = 'medal';
-            extraRankStyle = styles.rankBronze;
-        }
+    const difficultyConfig = useMemo(() => {
+        const configs: Record<string, { label: string; bgColor: string }> = {
+            beginner: { label: 'Easy', bgColor: 'rgba(16, 185, 129, 0.15)' },
+            intermediate: { label: 'Medium', bgColor: 'rgba(245, 158, 11, 0.15)' },
+            advanced: { label: 'Hard', bgColor: 'rgba(239, 68, 68, 0.15)' },
+        };
+        return configs[story.difficulty] || configs.beginner;
+    }, [story.difficulty]);
 
-        return (
-            <View style={[styles.rank, extraRankStyle]}>
-                {iconName ? (
-                    <Ionicons name={iconName} size={14} color="#FFF" style={styles.medalIcon} />
-                ) : null}
-                <Text style={[styles.rankText, isTop3 && styles.rankTextWhite]}>{rank}</Text>
-            </View>
-        );
-    };
-
-    const getDifficultyLabel = () => {
-        if (story.difficulty === 'beginner') return 'Easy';
-        if (story.difficulty === 'intermediate') return 'Medium';
-        return 'Hard';
-    };
-
-    const getDifficultyStyle = () => {
-        if (story.difficulty === 'beginner') return styles.difficultyEasy;
-        if (story.difficulty === 'intermediate') return styles.difficultyMedium;
-        return styles.difficultyHard;
-    };
+    const rankBadgeStyle = useMemo(() => {
+        if (!rankConfig.color) return {};
+        return {
+            backgroundColor: rankConfig.color,
+            borderColor: rankConfig.borderColor,
+            ...theme.shadows.sm,
+        };
+    }, [rankConfig, theme.shadows.sm]);
 
     return (
         <Pressable
             style={({ pressed }) => [
                 styles.card,
                 pressed && styles.cardPressed,
+                style,
             ]}
             onPress={onPress}
         >
-            {renderRankBadge()}
+            {/* Rank Badge */}
+            <View style={[styles.rankBadge, rankBadgeStyle]}>
+                {rankConfig.isTop3 && (
+                    <Ionicons
+                        name="medal"
+                        size={14}
+                        color="#FFF"
+                        style={styles.medalIcon}
+                    />
+                )}
+                <Text style={[
+                    styles.rankText,
+                    rankConfig.isTop3 && styles.rankTextWhite
+                ]}>
+                    {rank}
+                </Text>
+            </View>
 
+            {/* Story Info */}
             <View style={styles.info}>
                 <Text style={styles.title} numberOfLines={1}>
                     {story.title}
@@ -74,13 +88,25 @@ const TrendingStoryCardComponent: React.FC<TrendingStoryCardProps> = ({
                 </Text>
             </View>
 
+            {/* Meta */}
             <View style={styles.meta}>
-                <View style={[styles.difficulty, getDifficultyStyle()]}>
-                    <Text style={styles.difficultyText}>{getDifficultyLabel()}</Text>
+                <View style={[
+                    styles.difficultyBadge,
+                    { backgroundColor: difficultyConfig.bgColor }
+                ]}>
+                    <Text style={styles.difficultyText}>
+                        {difficultyConfig.label}
+                    </Text>
                 </View>
-                <View style={styles.readTime}>
-                    <Ionicons name="time-outline" size={12} color={theme.colors.textMuted} />
-                    <Text style={styles.readTimeText}>{story.estimatedReadTime}m</Text>
+                <View style={styles.readTimeBadge}>
+                    <Ionicons
+                        name="time-outline"
+                        size={12}
+                        color={theme.colors.textMuted}
+                    />
+                    <Text style={styles.readTimeText}>
+                        {story.estimatedReadTime}m
+                    </Text>
                 </View>
             </View>
 
@@ -93,10 +119,9 @@ const TrendingStoryCardComponent: React.FC<TrendingStoryCardProps> = ({
     );
 };
 
-// Memoize component to prevent unnecessary re-renders 
-export const TrendingStoryCard = memo(TrendingStoryCardComponent, (prevProps, nextProps) => {
-    return prevProps.story.id === nextProps.story.id
-        && prevProps.rank === nextProps.rank;
+// Memoize with custom comparison
+export const RankedStoryCard = memo(RankedStoryCardComponent, (prev, next) => {
+    return prev.story.id === next.story.id && prev.rank === next.rank;
 });
 
 const styles = StyleSheet.create((theme) => ({
@@ -113,7 +138,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.surfaceElevated,
         transform: [{ scale: 0.99 }],
     },
-    rank: {
+    rankBadge: {
         width: 36,
         height: 36,
         borderRadius: 12,
@@ -123,21 +148,6 @@ const styles = StyleSheet.create((theme) => ({
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         position: 'relative',
-    },
-    rankGold: {
-        backgroundColor: '#FFD700',
-        borderColor: '#FFC107',
-        ...theme.shadows.sm,
-    },
-    rankSilver: {
-        backgroundColor: '#C0C0C0',
-        borderColor: '#9E9E9E',
-        ...theme.shadows.sm,
-    },
-    rankBronze: {
-        backgroundColor: '#CD7F32',
-        borderColor: '#A0522D',
-        ...theme.shadows.sm,
     },
     medalIcon: {
         position: 'absolute',
@@ -176,19 +186,10 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         gap: theme.spacing.xs,
     },
-    difficulty: {
+    difficultyBadge: {
         paddingHorizontal: theme.spacing.sm,
         paddingVertical: 3,
         borderRadius: theme.radius.full,
-    },
-    difficultyEasy: {
-        backgroundColor: 'rgba(16, 185, 129, 0.15)',
-    },
-    difficultyMedium: {
-        backgroundColor: 'rgba(245, 158, 11, 0.15)',
-    },
-    difficultyHard: {
-        backgroundColor: 'rgba(239, 68, 68, 0.15)',
     },
     difficultyText: {
         fontSize: theme.typography.size.xs,
@@ -196,7 +197,7 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
         textTransform: 'uppercase',
     },
-    readTime: {
+    readTimeBadge: {
         flexDirection: 'row',
         alignItems: 'center',
         gap: 2,

@@ -7,7 +7,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { useTranslation } from 'react-i18next'
 import BottomSheet from '@gorhom/bottom-sheet'
 
-import { Typography } from '../../components/atoms'
+import { Typography, ProfileTabButton, ProfileStatItem } from '../../components/atoms'
 import { CommunityPostCard } from '../../components/organisms/CommunityPostCard'
 import { StoryGridCard } from '../../components/molecules/StoryGridCard'
 import { GuestLoginBanner } from '../../components/molecules/GuestLoginBanner'
@@ -33,82 +33,6 @@ const { width: SCREEN_WIDTH } = Dimensions.get('window')
 
 // Tab Types
 type TabType = 'posts' | 'saved' | 'about'
-
-// Tab Button Component
-const TabButton = ({
-    label,
-    count,
-    isActive,
-    onPress
-}: {
-    label: string
-    count?: number
-    isActive: boolean
-    onPress: () => void
-}) => {
-    const { theme } = useUnistyles()
-    return (
-        <Pressable
-            style={styles.tabButton}
-            onPress={onPress}
-            android_ripple={{ color: theme.colors.primary + '20' }}
-        >
-            <View style={styles.tabButtonContent}>
-                <Typography
-                    style={[
-                        styles.tabButtonText,
-                        { color: isActive ? theme.colors.text : theme.colors.textMuted },
-                        isActive && styles.tabButtonTextActive
-                    ]}
-                >
-                    {label}
-                </Typography>
-                {count !== undefined && count > 0 && (
-                    <View style={[
-                        styles.tabBadge,
-                        { backgroundColor: isActive ? theme.colors.primary : theme.colors.surfaceElevated }
-                    ]}>
-                        <Typography
-                            style={[
-                                styles.tabBadgeText,
-                                { color: isActive ? '#FFFFFF' : theme.colors.textMuted }
-                            ]}
-                        >
-                            {count > 99 ? '99+' : count}
-                        </Typography>
-                    </View>
-                )}
-            </View>
-            {isActive && (
-                <View style={[styles.tabIndicator, { backgroundColor: theme.colors.primary }]} />
-            )}
-        </Pressable>
-    )
-}
-
-// Stat Item Component
-const StatItem = ({
-    value,
-    label,
-    onPress
-}: {
-    value: string | number
-    label: string
-    onPress?: () => void
-}) => {
-    const { theme } = useUnistyles()
-    const content = (
-        <View style={styles.statItem}>
-            <Typography style={styles.statItemValue}>{value}</Typography>
-            <Typography style={styles.statItemLabel}>{label}</Typography>
-        </View>
-    )
-
-    if (onPress) {
-        return <Pressable onPress={onPress}>{content}</Pressable>
-    }
-    return content
-}
 
 // Menu Item Component
 const MenuItem = ({
@@ -351,6 +275,11 @@ export default function ProfileScreen() {
                                     onPress={() => router.push('/user/vocabulary')}
                                 />
                                 <MenuItem
+                                    icon="school-outline"
+                                    label={t('profile.quiz', 'Practice Quiz')}
+                                    onPress={() => router.push('/user/quiz')}
+                                />
+                                <MenuItem
                                     icon="people-outline"
                                     label={t('social.following')}
                                     onPress={() => router.push('/social' as any)}
@@ -452,17 +381,17 @@ export default function ProfileScreen() {
 
                         {/* Stats Row */}
                         <View style={styles.statsRow}>
-                            <StatItem
+                            <ProfileStatItem
                                 value={fullProfile.followersCount || 0}
                                 label={t('social.followers', 'Followers')}
                                 onPress={handleFollowersPress}
                             />
-                            <StatItem
+                            <ProfileStatItem
                                 value={fullProfile.followingCount || 0}
                                 label={t('social.following', 'Following')}
                                 onPress={handleFollowersPress}
                             />
-                            <StatItem
+                            <ProfileStatItem
                                 value={stats.streak}
                                 label={t('profile.streak', 'Streak')}
                             />
@@ -515,19 +444,19 @@ export default function ProfileScreen() {
 
                 {/* Tabs */}
                 <View style={styles.tabsContainer}>
-                    <TabButton
+                    <ProfileTabButton
                         label={t('profile.tabPosts', 'Posts')}
                         count={stats.postsCount}
                         isActive={activeTab === 'posts'}
                         onPress={() => handleTabChange('posts')}
                     />
-                    <TabButton
+                    <ProfileTabButton
                         label={t('profile.tabSaved', 'Saved')}
                         count={libraryItems.length}
                         isActive={activeTab === 'saved'}
                         onPress={() => handleTabChange('saved')}
                     />
-                    <TabButton
+                    <ProfileTabButton
                         label={t('profile.tabAbout', 'About')}
                         isActive={activeTab === 'about'}
                         onPress={() => handleTabChange('about')}

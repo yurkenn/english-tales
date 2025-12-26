@@ -295,23 +295,47 @@ export default function LibraryScreen() {
                     />
                 </>
             ) : (
-                <FlatList
-                    data={wordList}
-                    keyExtractor={(word) => word.id}
-                    renderItem={renderVocabularyItem}
-                    contentContainerStyle={styles.listContent}
-                    showsVerticalScrollIndicator={false}
-                    ItemSeparatorComponent={() => <View style={styles.separatorSmall} />}
-                    ListEmptyComponent={
-                        <EmptyState
-                            icon="bookmark-outline"
-                            title={t('vocabulary.empty') || 'No words saved'}
-                            message={t('vocabulary.emptyMessage') || 'Tap on unknown words while reading to save them here.'}
-                            actionLabel={t('vocabulary.startReading') || 'Start Reading'}
-                            onAction={() => router.push('/(tabs)')}
-                        />
-                    }
-                />
+                <>
+                    {/* Quiz Button Header for Vocabulary */}
+                    {wordList.length >= 3 && (
+                        <Pressable
+                            onPress={() => { haptics.medium(); router.push('/user/quiz') }}
+                            style={styles.quizHeader}
+                        >
+                            <View style={styles.quizHeaderContent}>
+                                <View style={styles.quizHeaderIcon}>
+                                    <Text style={{ fontSize: 18 }}>🎴</Text>
+                                </View>
+                                <View style={styles.quizHeaderText}>
+                                    <Text style={styles.quizHeaderTitle}>{t('library.quizTitle', 'Practice Quiz')}</Text>
+                                    <Text style={styles.quizHeaderSubtitle}>
+                                        {t('library.quizSubtitle', '{{count}} words to practice', { count: wordList.length })}
+                                    </Text>
+                                </View>
+                            </View>
+                            <View style={styles.quizHeaderArrow}>
+                                <Text style={{ fontSize: 20 }}>→</Text>
+                            </View>
+                        </Pressable>
+                    )}
+                    <FlatList
+                        data={wordList}
+                        keyExtractor={(word) => word.id}
+                        renderItem={renderVocabularyItem}
+                        contentContainerStyle={styles.listContent}
+                        showsVerticalScrollIndicator={false}
+                        ItemSeparatorComponent={() => <View style={styles.separatorSmall} />}
+                        ListEmptyComponent={
+                            <EmptyState
+                                icon="bookmark-outline"
+                                title={t('vocabulary.empty') || 'No words saved'}
+                                message={t('vocabulary.emptyMessage') || 'Tap on unknown words while reading to save them here.'}
+                                actionLabel={t('vocabulary.startReading') || 'Start Reading'}
+                                onAction={() => router.push('/(tabs)')}
+                            />
+                        }
+                    />
+                </>
             )}
 
             <StoryCardMenu visible={menuVisible} onClose={handleMenuClose} position={menuPosition} items={getMenuItems()} />
@@ -403,5 +427,48 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.xs,
         fontWeight: 'bold',
         color: '#FFFFFF',
+    },
+    quizHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: theme.colors.surface,
+        marginHorizontal: theme.spacing.lg,
+        marginTop: theme.spacing.sm,
+        marginBottom: theme.spacing.sm,
+        padding: theme.spacing.md,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        ...theme.shadows.sm,
+    },
+    quizHeaderContent: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 12,
+    },
+    quizHeaderIcon: {
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: theme.colors.primary + '10',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    quizHeaderText: {
+        gap: 2,
+    },
+    quizHeaderTitle: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '700',
+        color: theme.colors.text,
+    },
+    quizHeaderSubtitle: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.textSecondary,
+    },
+    quizHeaderArrow: {
+        color: theme.colors.primary,
+        opacity: 0.5,
     },
 }))

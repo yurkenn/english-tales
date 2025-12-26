@@ -77,7 +77,26 @@
             "streak": "Günlük Seri"
         },
         "quickSettings": "Hızlı Ayarlar",
-        "vocabulary": "Kelime Dağarcığı"
+        "vocabulary": "Kelime Dağarcığı",
+        "quiz": "Pratik Quiz",
+        "activity": "Aktivite",
+        "preferences": "Tercihler",
+        "allSettings": "Tüm Ayarlar",
+        "time": "Okuma",
+        "words": "Kelime",
+        "badges": "Rozet",
+        "streak": "Seri",
+        "noPosts": "Henüz gönderi yok",
+        "noPostsMessage": "Okuma yolculuğunu toplulukla paylaş!",
+        "shareFirst": "Gönderi Oluştur",
+        "emptyLibrary": "Henüz kayıtlı hikaye yok",
+        "emptyLibraryMessage": "Hikayeleri kaydet, burada kolayca bul!",
+        "exploreStories": "Hikayeleri Keşfet",
+        "addBio": "Bio ekle",
+        "editProfile": "Profili Düzenle",
+        "tabPosts": "Gönderiler",
+        "tabSaved": "Kaydedilenler",
+        "tabAbout": "Hakkında"
     },
     "appearance": {
         "title": "Görünüm",
@@ -144,6 +163,8 @@
         "empty": "Kitaplığınız boş",
         "emptyMessage": "Kitaplığınıza eser eklemek için okumaya başlayın",
         "discoverStories": "Hikayeleri Keşfet",
+        "quizTitle": "Pratik Quiz",
+        "quizSubtitle": "{{count}} kelime ile pratik yap",
         "stats": {
             "total": "Toplam",
             "completed": "Tamamlanan",
@@ -285,6 +306,7 @@
     "social": {
         "title": "Topluluk",
         "community": "Topluluk",
+        "following": "Takip Edilenler",
         "findFriends": "Arkadaş Bul",
         "searchPlaceholder": "İsim veya e-posta ile ara...",
         "noUsersFound": "Kullanıcı bulunamadı",

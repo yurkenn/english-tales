@@ -77,7 +77,26 @@
             "streak": "Day Streak"
         },
         "quickSettings": "Quick Settings",
-        "vocabulary": "Vocabulary"
+        "vocabulary": "Vocabulary",
+        "quiz": "Practice Quiz",
+        "activity": "Activity",
+        "preferences": "Preferences",
+        "allSettings": "All Settings",
+        "time": "Reading",
+        "words": "Words",
+        "badges": "Badges",
+        "streak": "Streak",
+        "noPosts": "No posts yet",
+        "noPostsMessage": "Share your reading journey with the community!",
+        "shareFirst": "Create Post",
+        "emptyLibrary": "Nothing saved yet",
+        "emptyLibraryMessage": "Save stories to easily find them here!",
+        "exploreStories": "Explore Stories",
+        "addBio": "Add a bio",
+        "editProfile": "Edit Profile",
+        "tabPosts": "Posts",
+        "tabSaved": "Saved",
+        "tabAbout": "About"
     },
     "appearance": {
         "title": "Appearance",
@@ -144,6 +163,8 @@
         "empty": "Your library is empty",
         "emptyMessage": "Start reading to add books to your library",
         "discoverStories": "Discover Stories",
+        "quizTitle": "Practice Quiz",
+        "quizSubtitle": "{{count}} words to practice",
         "stats": {
             "total": "Total",
             "completed": "Completed",
@@ -285,6 +306,7 @@
     "social": {
         "title": "Community",
         "community": "Community",
+        "following": "Following",
         "findFriends": "Find Friends",
         "searchPlaceholder": "Search by name or email...",
         "noUsersFound": "No users found",

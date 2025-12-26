@@ -1,55 +1,136 @@
-import React from 'react';
-import { View, Text, ScrollView, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
-import { useRouter } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
-import { useAchievementsStore } from '@/store/achievementsStore';
-import { AchievementCard, AchievementsProgressCard } from '@/components';
-import { haptics } from '@/utils/haptics';
+import React, { useState, useCallback } from 'react'
+import { View, ScrollView, Pressable, Animated } from 'react-native'
+import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useRouter } from 'expo-router'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Ionicons } from '@expo/vector-icons'
+import { useTranslation } from 'react-i18next'
+import { Typography } from '@/components/atoms'
+import { AchievementCard, AchievementsProgressCard } from '@/components'
+import { useAchievementsStore, AchievementCategory, CATEGORY_ICONS } from '@/store/achievementsStore'
+import { haptics } from '@/utils/haptics'
+
+type FilterType = 'all' | AchievementCategory
+
+const FILTERS: { key: FilterType; label: string; icon?: string }[] = [
+    { key: 'all', label: 'All' },
+    { key: 'reading', label: 'Reading', icon: CATEGORY_ICONS.reading },
+    { key: 'streak', label: 'Streak', icon: CATEGORY_ICONS.streak },
+    { key: 'social', label: 'Social', icon: CATEGORY_ICONS.social },
+]
 
 export default function AchievementsScreen() {
-    const { theme } = useUnistyles();
-    const router = useRouter();
-    const insets = useSafeAreaInsets();
-    const { actions: achievementActions } = useAchievementsStore();
-    const achievements = achievementActions.getAll();
+    const { theme } = useUnistyles()
+    const { t } = useTranslation()
+    const router = useRouter()
+    const insets = useSafeAreaInsets()
+    const { actions: achievementActions } = useAchievementsStore()
 
-    const unlockedCount = achievements.filter(a => a.unlocked).length;
-    const totalCount = achievements.length;
+    const [activeFilter, setActiveFilter] = useState<FilterType>('all')
+
+    const allAchievements = achievementActions.getAll()
+    const filteredAchievements = activeFilter === 'all'
+        ? allAchievements
+        : achievementActions.getByCategory(activeFilter)
+
+    const unlockedCount = allAchievements.filter(a => a.unlocked).length
+    const totalCount = allAchievements.length
+
+    const handleFilterChange = useCallback((filter: FilterType) => {
+        haptics.selection()
+        setActiveFilter(filter)
+    }, [])
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
+            {/* Header */}
             <View style={styles.header}>
                 <Pressable
                     style={styles.backButton}
                     onPress={() => {
-                        haptics.selection();
-                        router.back();
+                        haptics.selection()
+                        router.back()
                     }}
                     accessibilityRole="button"
                     accessibilityLabel="Go back"
                 >
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
-                <Text style={styles.headerTitle}>Achievements</Text>
+                <Typography style={styles.headerTitle}>
+                    {t('achievements.title', 'Achievements')}
+                </Typography>
                 <View style={styles.placeholder} />
             </View>
 
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
-                <AchievementsProgressCard
-                    unlockedCount={unlockedCount}
-                    totalCount={totalCount}
-                />
+            {/* Filter Tabs */}
+            <View style={styles.filterContainer}>
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    contentContainerStyle={styles.filterScroll}
+                >
+                    {FILTERS.map(filter => {
+                        const isActive = activeFilter === filter.key
+                        return (
+                            <Pressable
+                                key={filter.key}
+                                style={[
+                                    styles.filterTab,
+                                    isActive && styles.filterTabActive,
+                                ]}
+                                onPress={() => handleFilterChange(filter.key)}
+                            >
+                                {filter.icon && (
+                                    <Typography style={styles.filterIcon}>{filter.icon}</Typography>
+                                )}
+                                <Typography
+                                    style={[
+                                        styles.filterLabel,
+                                        isActive && styles.filterLabelActive,
+                                    ]}
+                                >
+                                    {filter.label}
+                                </Typography>
+                            </Pressable>
+                        )
+                    })}
+                </ScrollView>
+            </View>
 
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={styles.content}
+            >
+                {/* Progress Card - only show on "All" filter */}
+                {activeFilter === 'all' && (
+                    <AchievementsProgressCard
+                        unlockedCount={unlockedCount}
+                        totalCount={totalCount}
+                    />
+                )}
+
+                {/* Achievements Grid */}
                 <View style={styles.grid}>
-                    {achievements.map((achievement) => (
-                        <AchievementCard key={achievement.id} achievement={achievement} />
+                    {filteredAchievements.map((achievement, index) => (
+                        <AchievementCard
+                            key={achievement.id}
+                            achievement={achievement}
+                        />
                     ))}
                 </View>
+
+                {/* Empty state for filtered view */}
+                {filteredAchievements.length === 0 && (
+                    <View style={styles.emptyState}>
+                        <Typography style={styles.emptyIcon}>🏆</Typography>
+                        <Typography style={styles.emptyText}>
+                            No achievements in this category yet
+                        </Typography>
+                    </View>
+                )}
             </ScrollView>
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create((theme) => ({
@@ -61,32 +142,80 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.md,
+        paddingHorizontal: 16,
+        paddingVertical: 12,
         borderBottomWidth: 1,
-        borderBottomColor: theme.colors.border,
+        borderBottomColor: theme.colors.borderLight,
     },
     backButton: {
         width: 40,
         height: 40,
         alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: 12,
+        backgroundColor: theme.colors.surface,
     },
     headerTitle: {
-        fontSize: theme.typography.size.xl,
-        fontWeight: theme.typography.weight.bold,
+        fontSize: 18,
+        fontWeight: '700',
         color: theme.colors.text,
     },
     placeholder: {
         width: 40,
     },
+    filterContainer: {
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.borderLight,
+    },
+    filterScroll: {
+        paddingHorizontal: 16,
+        paddingVertical: 12,
+        gap: 8,
+    },
+    filterTab: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+        borderRadius: 20,
+        backgroundColor: theme.colors.surface,
+        gap: 6,
+        marginRight: 8,
+    },
+    filterTabActive: {
+        backgroundColor: theme.colors.primary,
+    },
+    filterIcon: {
+        fontSize: 14,
+    },
+    filterLabel: {
+        fontSize: 13,
+        fontWeight: '600',
+        color: theme.colors.textSecondary,
+    },
+    filterLabelActive: {
+        color: '#FFFFFF',
+    },
     content: {
-        padding: theme.spacing.lg,
-        paddingBottom: theme.spacing.xxxl,
+        padding: 16,
+        paddingBottom: 40,
     },
     grid: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        gap: theme.spacing.md,
+        gap: 12,
+        justifyContent: 'space-between',
     },
-}));
+    emptyState: {
+        alignItems: 'center',
+        paddingVertical: 40,
+    },
+    emptyIcon: {
+        fontSize: 48,
+        marginBottom: 12,
+    },
+    emptyText: {
+        fontSize: 14,
+        color: theme.colors.textMuted,
+    },
+}))

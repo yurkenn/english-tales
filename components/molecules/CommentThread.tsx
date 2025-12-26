@@ -7,6 +7,7 @@ import Animated, { FadeInDown } from 'react-native-reanimated'
 import { Typography } from '../atoms'
 import { CommunityReply } from '@/types'
 import { haptics } from '@/utils/haptics'
+import { formatRelativeTime } from '@/utils/dateUtils'
 import { useTranslation } from 'react-i18next'
 
 const DEFAULT_AVATAR = require('@/assets/defaultavatar.png')
@@ -17,23 +18,6 @@ interface CommentThreadProps {
     currentUserId?: string
     onReply: (commentId: string, userName: string) => void
     onLike?: (commentId: string) => void
-}
-
-// Format relative time
-const formatRelativeTime = (timestamp: any): string => {
-    if (!timestamp) return ''
-    const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp)
-    const now = new Date()
-    const diffMs = now.getTime() - date.getTime()
-    const diffMins = Math.floor(diffMs / 60000)
-    const diffHours = Math.floor(diffMins / 60)
-    const diffDays = Math.floor(diffHours / 24)
-
-    if (diffMins < 1) return 'now'
-    if (diffMins < 60) return `${diffMins}m`
-    if (diffHours < 24) return `${diffHours}h`
-    if (diffDays < 7) return `${diffDays}d`
-    return date.toLocaleDateString()
 }
 
 // Build nested comment tree

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Pressable, Alert, ScrollView } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
@@ -8,7 +8,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Typography } from '../atoms/Typography';
 import { haptics } from '@/utils/haptics'
 import { useTranslation } from 'react-i18next';
-import { communityService, ADMIN_USER_IDS } from '@/services/communityService';
+import { communityService } from '@/services/communityService';
 import { useToastStore } from '@/store/toastStore';
 
 interface PostActionSheetProps {
@@ -40,8 +40,17 @@ export const PostActionSheet: React.FC<PostActionSheetProps> = ({
     const toastActions = useToastStore((s) => s.actions);
     const [showReportOptions, setShowReportOptions] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
 
-    const isAdmin = currentUserId ? ADMIN_USER_IDS.includes(currentUserId) : false;
+    // Check admin status when component mounts or userId changes
+    useEffect(() => {
+        if (currentUserId) {
+            communityService.isAdmin(currentUserId).then(setIsAdmin);
+        } else {
+            setIsAdmin(false);
+        }
+    }, [currentUserId]);
+
     const bottomPadding = insets.bottom + 80; // Tab bar height ~80px
 
     const REPORT_REASONS: ReportReason[] = [

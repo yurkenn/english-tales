@@ -67,7 +67,26 @@
             "streak": "Racha de días"
         },
         "quickSettings": "Ajustes rápidos",
-        "vocabulary": "Vocabulario"
+        "vocabulary": "Vocabulario",
+        "quiz": "Quiz de práctica",
+        "activity": "Actividad",
+        "preferences": "Preferencias",
+        "allSettings": "Todos los ajustes",
+        "time": "Lectura",
+        "words": "Palabras",
+        "badges": "Insignias",
+        "streak": "Racha",
+        "noPosts": "Sin publicaciones",
+        "noPostsMessage": "¡Comparte tu viaje de lectura con la comunidad!",
+        "shareFirst": "Crear publicación",
+        "emptyLibrary": "Nada guardado",
+        "emptyLibraryMessage": "¡Guarda historias para encontrarlas fácilmente aquí!",
+        "exploreStories": "Explorar historias",
+        "addBio": "Añadir biografía",
+        "editProfile": "Editar perfil",
+        "tabPosts": "Publicaciones",
+        "tabSaved": "Guardados",
+        "tabAbout": "Acerca de"
     },
     "appearance": {
         "title": "Apariencia",
@@ -125,6 +144,8 @@
         "empty": "Tu biblioteca está vacía",
         "emptyMessage": "Empieza a leer para añadir libros a tu biblioteca",
         "discoverStories": "Descubrir historias",
+        "quizTitle": "Quiz de práctica",
+        "quizSubtitle": "{{count}} palabras para practicar",
         "stats": {
             "total": "Total",
             "completed": "Completado",
@@ -254,6 +275,7 @@
     "social": {
         "title": "Comunidad",
         "community": "Comunidad",
+        "following": "Siguiendo",
         "findFriends": "Buscar amigos",
         "searchPlaceholder": "Buscar por nombre o correo...",
         "noUsersFound": "No se encontraron usuarios",

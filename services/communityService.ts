@@ -19,25 +19,26 @@ import {
     serverTimestamp,
     arrayUnion,
     arrayRemove,
-} from '@react-native-firebase/firestore';
-import { CommunityPost, ActivityType, CommunityReply } from '@/types';
-import { Result } from '@/types/api';
-import { notificationService } from './notificationService';
+} from '@react-native-firebase/firestore'
+import { CommunityPost, ActivityType, CommunityReply } from '@/types'
+import { Result } from '@/types/api'
+import { notificationService } from './notificationService'
+import { communityLogger as logger } from '@/utils/logger'
 
-const db = getFirestore();
+const db = getFirestore()
 
-// Admin user IDs - can delete any post
-// Add more user IDs to give admin access
-export const ADMIN_USER_IDS = [
-    '2ZEBSYikdNhspWWGPcEkAgM52pE2', // Oğuz Yürken
-    // Add more admin IDs here:
-    // 'USER_ID_HERE',
-];
+// Admin cache for performance (5 minute TTL)
+const adminCache: { ids: Set<string>; lastFetch: number } = {
+    ids: new Set(),
+    lastFetch: 0,
+};
+const ADMIN_CACHE_TTL = 5 * 60 * 1000; // 5 minutes
 
 class CommunityService {
     private COLLECTION = 'posts';
     private REPLIES_COLLECTION = 'replies';
     private REPORTS_COLLECTION = 'reports';
+    private ADMINS_COLLECTION = 'admins';
 
     async getPostById(postId: string): Promise<Result<CommunityPost>> {
         try {
@@ -52,7 +53,7 @@ class CommunityService {
                 data: { id: postSnap.id, ...postSnap.data() } as CommunityPost
             };
         } catch (error) {
-            console.error('Error getting post:', error);
+            logger.error('Error getting post:', error)
             return { success: false, error: 'Failed to fetch post' };
         }
     }
@@ -83,7 +84,7 @@ class CommunityService {
                 }
             };
         } catch (error) {
-            console.error('Error getting posts:', error);
+            logger.error('Error getting posts:', error)
             return { success: false, error: 'Failed to fetch posts' };
         }
     }
@@ -113,7 +114,7 @@ class CommunityService {
             const docRef = await addDoc(collection(db, this.COLLECTION), postData);
             return { success: true, data: docRef.id };
         } catch (error) {
-            console.error('Error creating post:', error);
+            logger.error('Error creating post:', error)
             return { success: false, error: 'Failed to create post' };
         }
     }
@@ -444,8 +445,43 @@ class CommunityService {
         }
     }
 
-    isAdmin(userId: string): boolean {
-        return ADMIN_USER_IDS.includes(userId);
+    /**
+     * Check if user is an admin
+     * Fetches from Firestore 'admins' collection with 5-minute cache
+     * 
+     * Admin document structure in Firestore:
+     * admins/{userId} -> { createdAt: timestamp, email?: string }
+     */
+    async isAdmin(userId: string): Promise<boolean> {
+        const now = Date.now();
+
+        // Return from cache if still valid
+        if (now - adminCache.lastFetch < ADMIN_CACHE_TTL && adminCache.ids.size > 0) {
+            return adminCache.ids.has(userId);
+        }
+
+        // Fetch fresh admin list from Firestore
+        try {
+            const snapshot = await getDocs(collection(db, this.ADMINS_COLLECTION));
+            adminCache.ids.clear();
+            snapshot.docs.forEach((docSnap: any) => {
+                adminCache.ids.add(docSnap.id);
+            });
+            adminCache.lastFetch = now;
+            return adminCache.ids.has(userId);
+        } catch (error) {
+            console.error('Error fetching admins:', error);
+            // Fallback to cache if fetch fails
+            return adminCache.ids.has(userId);
+        }
+    }
+
+    /**
+     * Synchronous admin check (uses cache only)
+     * Use when async is not possible, but call isAdmin() first to populate cache
+     */
+    isAdminSync(userId: string): boolean {
+        return adminCache.ids.has(userId);
     }
 }
 

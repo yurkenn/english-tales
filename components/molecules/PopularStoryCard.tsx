@@ -20,21 +20,21 @@ export const PopularStoryCard: React.FC<PopularStoryCardProps> = ({
     const renderRankBadge = () => {
         const isTop3 = rank <= 3;
         let iconName: keyof typeof Ionicons.glyphMap | null = null;
-        let badgeStyle = styles.rankBadge;
+        let extraBadgeStyle = {};
 
         if (rank === 1) {
             iconName = 'medal';
-            badgeStyle = [styles.rankBadge, styles.rankBadgeGold];
+            extraBadgeStyle = styles.rankBadgeGold;
         } else if (rank === 2) {
             iconName = 'medal';
-            badgeStyle = [styles.rankBadge, styles.rankBadgeSilver];
+            extraBadgeStyle = styles.rankBadgeSilver;
         } else if (rank === 3) {
             iconName = 'medal';
-            badgeStyle = [styles.rankBadge, styles.rankBadgeBronze];
+            extraBadgeStyle = styles.rankBadgeBronze;
         }
 
         return (
-            <View style={badgeStyle}>
+            <View style={[styles.rankBadge, extraBadgeStyle]}>
                 {iconName ? (
                     <Ionicons name={iconName} size={14} color="#FFF" style={styles.medalIcon} />
                 ) : null}

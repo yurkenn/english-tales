@@ -4,7 +4,7 @@ import { BottomSheetModal, BottomSheetBackdrop, BottomSheetScrollView } from '@g
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
-import { Typography } from '../atoms'
+import { Typography, ProfileTabButton, ProfileStatItem } from '../atoms'
 import { StoryGridCard } from '../molecules/StoryGridCard'
 import { CommunityPostCard } from './CommunityPostCard'
 import { EmptyState } from '../molecules/EmptyState'
@@ -32,62 +32,6 @@ interface ProfileStats {
 
 // Tab Types
 type TabType = 'posts' | 'saved' | 'about'
-
-// Tab Button Component
-const TabButton = ({
-    label,
-    count,
-    isActive,
-    onPress
-}: {
-    label: string
-    count?: number
-    isActive: boolean
-    onPress: () => void
-}) => {
-    const { theme } = useUnistyles()
-    return (
-        <Pressable style={styles.tabButton} onPress={onPress}>
-            <View style={styles.tabButtonContent}>
-                <Typography
-                    style={[
-                        styles.tabButtonText,
-                        { color: isActive ? theme.colors.text : theme.colors.textMuted },
-                        isActive && styles.tabButtonTextActive
-                    ]}
-                >
-                    {label}
-                </Typography>
-                {count !== undefined && count > 0 && (
-                    <View style={[
-                        styles.tabBadge,
-                        { backgroundColor: isActive ? theme.colors.primary : theme.colors.surfaceElevated }
-                    ]}>
-                        <Typography
-                            style={[
-                                styles.tabBadgeText,
-                                { color: isActive ? '#FFFFFF' : theme.colors.textMuted }
-                            ]}
-                        >
-                            {count > 99 ? '99+' : count}
-                        </Typography>
-                    </View>
-                )}
-            </View>
-            {isActive && (
-                <View style={[styles.tabIndicator, { backgroundColor: theme.colors.primary }]} />
-            )}
-        </Pressable>
-    )
-}
-
-// Stat Item Component
-const StatItem = ({ value, label }: { value: string | number; label: string }) => (
-    <View style={styles.statItem}>
-        <Typography style={styles.statItemValue}>{value}</Typography>
-        <Typography style={styles.statItemLabel}>{label}</Typography>
-    </View>
-)
 
 export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetProps>(
     ({ userId, onClose }, ref) => {
@@ -375,15 +319,15 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
                         <View style={styles.avatarRow}>
                             <Image source={avatarSource} style={styles.avatar} />
                             <View style={styles.statsRow}>
-                                <StatItem
+                                <ProfileStatItem
                                     value={stats.followers}
                                     label={t('social.followers', 'Followers')}
                                 />
-                                <StatItem
+                                <ProfileStatItem
                                     value={stats.following}
                                     label={t('social.following', 'Following')}
                                 />
-                                <StatItem
+                                <ProfileStatItem
                                     value={stats.streak}
                                     label={t('profile.streak', 'Streak')}
                                 />
@@ -446,19 +390,19 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
 
                     {/* Tabs */}
                     <View style={styles.tabsContainer}>
-                        <TabButton
+                        <ProfileTabButton
                             label={t('profile.tabPosts', 'Posts')}
                             count={posts.length}
                             isActive={activeTab === 'posts'}
                             onPress={() => handleTabChange('posts')}
                         />
-                        <TabButton
+                        <ProfileTabButton
                             label={t('profile.tabSaved', 'Saved')}
                             count={libraryItems.length}
                             isActive={activeTab === 'saved'}
                             onPress={() => handleTabChange('saved')}
                         />
-                        <TabButton
+                        <ProfileTabButton
                             label={t('profile.tabAbout', 'About')}
                             isActive={activeTab === 'about'}
                             onPress={() => handleTabChange('about')}

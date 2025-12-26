@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { View, Text, Image, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { PortableTextBlock } from '@portabletext/types';
@@ -12,6 +12,7 @@ interface PortableTextRendererProps {
     textColor: string;
     onWordPress?: (word: string) => void;
     dyslexicFontEnabled?: boolean;
+    selectedWord?: string; // New: for highlight
 }
 
 export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.memo(({
@@ -21,8 +22,16 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
     textColor,
     onWordPress,
     dyslexicFontEnabled,
+    selectedWord,
 }) => {
     const { theme } = useUnistyles();
+
+    // Memoized word press handler to prevent inline function creation
+    const handleWordPress = useCallback((word: string) => {
+        if (onWordPress) {
+            onWordPress(word);
+        }
+    }, [onWordPress]);
 
     if (!content || !Array.isArray(content)) {
         return <Text style={[styles.paragraph, { fontSize, color: textColor, lineHeight: fontSize * lineHeight }]}>No content available.</Text>;
@@ -77,12 +86,20 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                                 if (part.trim() === '') {
                                     return <Text key={wordIdx}>{part}</Text>;
                                 }
+                                const cleanWord = part.replace(/[^a-zA-Z]/g, '').toLowerCase();
+                                const isSelected = selectedWord && cleanWord === selectedWord.toLowerCase();
                                 return (
                                     <Text
                                         key={wordIdx}
-                                        onPress={() => onWordPress(part)}
+                                        onPress={() => handleWordPress(part)}
                                         suppressHighlighting={false}
-                                        style={styles.word}
+                                        style={[
+                                            styles.word,
+                                            isSelected && {
+                                                backgroundColor: theme.colors.primary + '30',
+                                                borderRadius: 4,
+                                            }
+                                        ]}
                                     >
                                         {part}
                                     </Text>

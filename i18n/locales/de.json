@@ -67,7 +67,26 @@
             "streak": "Tages-Streak"
         },
         "quickSettings": "Schnelleinstellungen",
-        "vocabulary": "Vokabular"
+        "vocabulary": "Vokabular",
+        "quiz": "Übungsquiz",
+        "activity": "Aktivität",
+        "preferences": "Einstellungen",
+        "allSettings": "Alle Einstellungen",
+        "time": "Lesen",
+        "words": "Wörter",
+        "badges": "Abzeichen",
+        "streak": "Streak",
+        "noPosts": "Noch keine Beiträge",
+        "noPostsMessage": "Teile deine Lesereise mit der Community!",
+        "shareFirst": "Beitrag erstellen",
+        "emptyLibrary": "Noch nichts gespeichert",
+        "emptyLibraryMessage": "Speichere Geschichten, um sie hier leicht zu finden!",
+        "exploreStories": "Geschichten entdecken",
+        "addBio": "Bio hinzufügen",
+        "editProfile": "Profil bearbeiten",
+        "tabPosts": "Beiträge",
+        "tabSaved": "Gespeichert",
+        "tabAbout": "Über"
     },
     "appearance": {
         "title": "Erscheinungsbild",
@@ -125,6 +144,8 @@
         "empty": "Deine Bibliothek ist leer",
         "emptyMessage": "Beginne zu lesen, um Bücher zu deiner Bibliothek hinzuzufügen",
         "discoverStories": "Geschichten entdecken",
+        "quizTitle": "Übungsquiz",
+        "quizSubtitle": "{{count}} Wörter zum Üben",
         "stats": {
             "total": "Gesamt",
             "completed": "Abgeschlossen",
@@ -254,6 +275,7 @@
     "social": {
         "title": "Community",
         "community": "Community",
+        "following": "Folge ich",
         "findFriends": "Freunde finden",
         "searchPlaceholder": "Nach Name oder E-Mail suchen...",
         "noUsersFound": "Keine Benutzer gefunden",

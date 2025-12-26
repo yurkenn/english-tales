@@ -1,21 +1,38 @@
-import React, { useState } from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
-import { useRouter } from 'expo-router';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons';
-import { SearchBar } from '@/components';
-import { VocabularyList } from '@/components/organisms/VocabularyList';
-import { haptics } from '@/utils/haptics';
-
-import { useTranslation } from 'react-i18next';
+import React, { useState, useMemo } from 'react'
+import { View, Text, Pressable, Animated } from 'react-native'
+import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useRouter } from 'expo-router'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Ionicons } from '@expo/vector-icons'
+import { LinearGradient } from 'expo-linear-gradient'
+import { SearchBar, Typography } from '@/components'
+import { VocabularyList } from '@/components/organisms/VocabularyList'
+import { useVocabularyStore } from '@/store/vocabularyStore'
+import { useAuthStore } from '@/store/authStore'
+import { haptics } from '@/utils/haptics'
+import { useTranslation } from 'react-i18next'
 
 export default function VocabularyScreen() {
-    const { t } = useTranslation();
-    const { theme } = useUnistyles();
-    const router = useRouter();
-    const insets = useSafeAreaInsets();
-    const [searchQuery, setSearchQuery] = useState('');
+    const { t } = useTranslation()
+    const { theme } = useUnistyles()
+    const router = useRouter()
+    const insets = useSafeAreaInsets()
+    const [searchQuery, setSearchQuery] = useState('')
+
+    const { user } = useAuthStore()
+    const { actions: vocabActions } = useVocabularyStore()
+
+    const words = useMemo(() => {
+        if (!user) return []
+        return vocabActions.getWordsForUser(user.id)
+    }, [user, vocabActions])
+
+    const wordCount = words.length
+
+    const handleStartQuiz = () => {
+        haptics.medium()
+        router.push('/user/quiz')
+    }
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -28,14 +45,83 @@ export default function VocabularyScreen() {
                 >
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
-                <Text style={styles.title}>{t('vocabulary.title')}</Text>
-                <View style={{ width: 40 }} />
+                <Text style={styles.title}>{t('vocabulary.title', 'My Words')}</Text>
+                {wordCount >= 3 ? (
+                    <Pressable
+                        onPress={handleStartQuiz}
+                        style={styles.quizHeaderButton}
+                        hitSlop={12}
+                    >
+                        <Ionicons name="school" size={22} color={theme.colors.primary} />
+                    </Pressable>
+                ) : (
+                    <View style={{ width: 40 }} />
+                )}
             </View>
+
+            {/* Quiz Banner - Only show if user has words */}
+            {wordCount >= 3 && (
+                <Pressable onPress={handleStartQuiz} style={styles.quizBannerWrapper}>
+                    <LinearGradient
+                        colors={[theme.colors.primary, theme.colors.primaryDark || '#C62828']}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                        style={styles.quizBanner}
+                    >
+                        <View style={styles.quizBannerContent}>
+                            <View style={styles.quizIconContainer}>
+                                <Text style={styles.quizIcon}>🎴</Text>
+                            </View>
+                            <View style={styles.quizTextContainer}>
+                                <Typography style={styles.quizTitle}>
+                                    Practice Your Words!
+                                </Typography>
+                                <Typography style={styles.quizSubtitle}>
+                                    {wordCount} words ready to review
+                                </Typography>
+                            </View>
+                            <View style={styles.quizArrow}>
+                                <Ionicons name="play-circle" size={36} color="#FFFFFF" />
+                            </View>
+                        </View>
+
+                        {/* Decorative elements */}
+                        <View style={styles.decorCircle1} />
+                        <View style={styles.decorCircle2} />
+                    </LinearGradient>
+                </Pressable>
+            )}
+
+            {/* Encouragement for new users */}
+            {wordCount > 0 && wordCount < 3 && (
+                <View style={styles.encouragementCard}>
+                    <Text style={styles.encouragementIcon}>📚</Text>
+                    <View style={styles.encouragementText}>
+                        <Typography style={styles.encouragementTitle}>
+                            {3 - wordCount} more to unlock Quiz!
+                        </Typography>
+                        <Typography style={styles.encouragementSubtitle}>
+                            Save words while reading to practice
+                        </Typography>
+                    </View>
+                    <View style={styles.progressDots}>
+                        {[0, 1, 2].map(i => (
+                            <View
+                                key={i}
+                                style={[
+                                    styles.progressDot,
+                                    i < wordCount && styles.progressDotFilled
+                                ]}
+                            />
+                        ))}
+                    </View>
+                </View>
+            )}
 
             {/* Search */}
             <View style={styles.searchSection}>
                 <SearchBar
-                    placeholder={t('vocabulary.searchPlaceholder')}
+                    placeholder={t('vocabulary.searchPlaceholder', 'Search words...')}
                     value={searchQuery}
                     onChangeText={setSearchQuery}
                     onClear={() => setSearchQuery('')}
@@ -47,13 +133,12 @@ export default function VocabularyScreen() {
                 <VocabularyList
                     searchQuery={searchQuery}
                     onWordPress={(item) => {
-                        haptics.selection();
-                        // Optional: Navigate to a detail or show a toast/modal
+                        haptics.selection()
                     }}
                 />
             </View>
         </View>
-    );
+    )
 }
 
 const styles = StyleSheet.create((theme) => ({
@@ -82,6 +167,109 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
     },
+    quizBannerWrapper: {
+        marginHorizontal: theme.spacing.lg,
+        marginBottom: theme.spacing.md,
+    },
+    quizBanner: {
+        borderRadius: 20,
+        padding: 16,
+        overflow: 'hidden',
+        position: 'relative',
+    },
+    quizBannerContent: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        zIndex: 1,
+    },
+    quizIconContainer: {
+        width: 48,
+        height: 48,
+        borderRadius: 14,
+        backgroundColor: 'rgba(255,255,255,0.2)',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    quizIcon: {
+        fontSize: 24,
+    },
+    quizTextContainer: {
+        flex: 1,
+        marginLeft: 14,
+    },
+    quizTitle: {
+        fontSize: 16,
+        fontWeight: '700',
+        color: '#FFFFFF',
+    },
+    quizSubtitle: {
+        fontSize: 13,
+        color: 'rgba(255,255,255,0.8)',
+        marginTop: 2,
+    },
+    quizArrow: {
+        opacity: 0.9,
+    },
+    decorCircle1: {
+        position: 'absolute',
+        top: -30,
+        right: -30,
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+        backgroundColor: 'rgba(255,255,255,0.1)',
+    },
+    decorCircle2: {
+        position: 'absolute',
+        bottom: -20,
+        left: 60,
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        backgroundColor: 'rgba(255,255,255,0.08)',
+    },
+    encouragementCard: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: theme.colors.surface,
+        marginHorizontal: theme.spacing.lg,
+        marginBottom: theme.spacing.md,
+        padding: 14,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: theme.colors.primary + '30',
+        ...theme.shadows.sm,
+    },
+    encouragementIcon: {
+        fontSize: 28,
+    },
+    encouragementText: {
+        flex: 1,
+        marginLeft: 12,
+    },
+    encouragementTitle: {
+        fontSize: 14,
+        fontWeight: '600',
+        color: theme.colors.text,
+    },
+    encouragementSubtitle: {
+        fontSize: 12,
+        color: theme.colors.textSecondary,
+        marginTop: 2,
+    },
+    progressDots: {
+        flexDirection: 'row',
+        gap: 6,
+    },
+    progressDot: {
+        width: 10,
+        height: 10,
+        borderRadius: 5,
+        backgroundColor: theme.colors.backgroundSecondary,
+    },
+    progressDotFilled: {
+        backgroundColor: theme.colors.primary,
+    },
     searchSection: {
         paddingHorizontal: theme.spacing.lg,
         paddingBottom: theme.spacing.md,
@@ -90,4 +278,12 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         paddingHorizontal: theme.spacing.lg,
     },
-}));
+    quizHeaderButton: {
+        width: 40,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: theme.colors.primary + '15',
+        borderRadius: theme.radius.full,
+    },
+}))

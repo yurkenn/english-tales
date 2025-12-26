@@ -14,19 +14,20 @@ import {
     orderBy,
     limit,
     serverTimestamp,
-} from '@react-native-firebase/firestore';
-import { User as AppUser, UserProfile, LibraryItem, Story } from '@/types';
-import { Result } from '@/types/api';
+} from '@react-native-firebase/firestore'
+import { User as AppUser, UserProfile, LibraryItem, Story } from '@/types'
+import { Result } from '@/types/api'
+import { userLogger as logger } from '@/utils/logger'
 
-const db = getFirestore();
+const db = getFirestore()
 
 class UserService {
-    private COLLECTION = 'users';
+    private COLLECTION = 'users'
 
     async syncProfile(user: AppUser): Promise<Result<void>> {
         try {
-            const userDoc = await getDoc(doc(db, this.COLLECTION, user.id));
-            const existingData = userDoc.exists() ? userDoc.data() as UserProfile : null;
+            const userDoc = await getDoc(doc(db, this.COLLECTION, user.id))
+            const existingData = userDoc.exists() ? userDoc.data() as UserProfile : null
 
             const profile: UserProfile = {
                 id: user.id,
@@ -37,65 +38,65 @@ class UserService {
                 joinedAt: existingData?.joinedAt || serverTimestamp(),
                 lastSeenAt: serverTimestamp(),
                 isAnonymous: user.isAnonymous,
-            };
+            }
 
-            await setDoc(doc(db, this.COLLECTION, user.id), profile, { merge: true });
-            return { success: true, data: undefined };
+            await setDoc(doc(db, this.COLLECTION, user.id), profile, { merge: true })
+            return { success: true, data: undefined }
         } catch (error) {
-            console.error('Error syncing user profile:', error);
-            return { success: false, error: 'Failed to sync profile' };
+            logger.error('Error syncing user profile:', error)
+            return { success: false, error: 'Failed to sync profile' }
         }
     }
 
     async searchUsers(searchTerm: string, limitCount = 10): Promise<Result<UserProfile[]>> {
         try {
-            const term = searchTerm.toLowerCase().trim();
-            if (!term) return { success: true, data: [] };
+            const term = searchTerm.toLowerCase().trim()
+            if (!term) return { success: true, data: [] }
 
             const q = query(
                 collection(db, this.COLLECTION),
                 where('displayNameSearchField', '>=', term),
                 where('displayNameSearchField', '<=', term + '\uf8ff'),
                 limit(limitCount)
-            );
+            )
 
-            const snapshot = await getDocs(q);
-            const results = snapshot.docs.map((d: any) => d.data() as UserProfile);
+            const snapshot = await getDocs(q)
+            const results = snapshot.docs.map((d: any) => d.data() as UserProfile)
 
             if (results.length < limitCount) {
                 const eq = query(
                     collection(db, this.COLLECTION),
                     where('emailSearchField', '==', term),
                     limit(limitCount - results.length)
-                );
-                const eSnapshot = await getDocs(eq);
+                )
+                const eSnapshot = await getDocs(eq)
                 eSnapshot.docs.forEach((d: any) => {
-                    const data = d.data() as UserProfile;
+                    const data = d.data() as UserProfile
                     if (!results.find((r: any) => r.id === data.id)) {
-                        results.push(data);
+                        results.push(data)
                     }
-                });
+                })
             }
 
-            return { success: true, data: results };
+            return { success: true, data: results }
         } catch (error) {
-            console.error('Error searching users:', error);
-            return { success: false, error: 'Failed to search users' };
+            logger.error('Error searching users:', error)
+            return { success: false, error: 'Failed to search users' }
         }
     }
 
     async getUserProfile(userId: string): Promise<Result<UserProfile>> {
         try {
-            const docSnap = await getDoc(doc(db, this.COLLECTION, userId));
+            const docSnap = await getDoc(doc(db, this.COLLECTION, userId))
 
             if (docSnap.exists()) {
-                return { success: true, data: docSnap.data() as UserProfile };
+                return { success: true, data: docSnap.data() as UserProfile }
             } else {
-                return { success: false, error: 'User not found' };
+                return { success: false, error: 'User not found' }
             }
         } catch (error) {
-            console.error('Error getting user profile:', error);
-            return { success: false, error: 'Failed to get user profile' };
+            logger.error('Error getting user profile:', error)
+            return { success: false, error: 'Failed to get user profile' }
         }
     }
 
@@ -105,28 +106,28 @@ class UserService {
                 collection(db, this.COLLECTION, userId, 'library'),
                 orderBy('addedAt', 'desc'),
                 limit(10)
-            );
-            const snapshot = await getDocs(q);
+            )
+            const snapshot = await getDocs(q)
 
             const items: LibraryItem[] = snapshot.docs.map((docSnap: any) => {
-                const data = docSnap.data();
+                const data = docSnap.data()
                 return {
                     storyId: data.storyId,
                     userId: data.userId,
                     addedAt: data.addedAt?.toDate?.() || new Date(data.addedAt),
                     story: data.story as Story,
                     progress: data.progress,
-                } as LibraryItem;
-            });
+                } as LibraryItem
+            })
 
-            return { success: true, data: items };
+            return { success: true, data: items }
         } catch (error: any) {
             // Handle permission denied gracefully - usually means library is private
             if (error?.code === 'firestore/permission-denied') {
-                return { success: true, data: [] };
+                return { success: true, data: [] }
             }
-            console.error('Error getting user library:', error);
-            return { success: false, error: 'Failed' };
+            logger.error('Error getting user library:', error)
+            return { success: false, error: 'Failed' }
         }
     }
 
@@ -135,11 +136,11 @@ class UserService {
             await setDoc(doc(db, this.COLLECTION, userId), {
                 ...data,
                 updatedAt: serverTimestamp(),
-            }, { merge: true });
-            return { success: true, data: undefined };
+            }, { merge: true })
+            return { success: true, data: undefined }
         } catch (error) {
-            console.error('Error updating user profile:', error);
-            return { success: false, error: 'Failed to update profile' };
+            logger.error('Error updating user profile:', error)
+            return { success: false, error: 'Failed to update profile' }
         }
     }
 
@@ -149,38 +150,38 @@ class UserService {
      * Each step is wrapped in try-catch to continue even if some data doesn't exist
      */
     async deleteUserData(userId: string): Promise<Result<void>> {
-        const errors: string[] = [];
+        const errors: string[] = []
 
         // Delete user document
         try {
-            await deleteDoc(doc(db, this.COLLECTION, userId));
+            await deleteDoc(doc(db, this.COLLECTION, userId))
         } catch (e) {
-            console.warn('Could not delete user document:', e);
-            errors.push('user document');
+            logger.warn('Could not delete user document:', e)
+            errors.push('user document')
         }
 
         // Delete library subcollection
         try {
-            const libraryRef = collection(db, this.COLLECTION, userId, 'library');
-            const librarySnap = await getDocs(libraryRef);
+            const libraryRef = collection(db, this.COLLECTION, userId, 'library')
+            const librarySnap = await getDocs(libraryRef)
             for (const docSnap of librarySnap.docs) {
-                await deleteDoc(docSnap.ref);
+                await deleteDoc(docSnap.ref)
             }
         } catch (e) {
-            console.warn('Could not delete library data:', e);
-            errors.push('library');
+            logger.warn('Could not delete library data:', e)
+            errors.push('library')
         }
 
         // Delete progress subcollection
         try {
-            const progressRef = collection(db, this.COLLECTION, userId, 'progress');
-            const progressSnap = await getDocs(progressRef);
+            const progressRef = collection(db, this.COLLECTION, userId, 'progress')
+            const progressSnap = await getDocs(progressRef)
             for (const docSnap of progressSnap.docs) {
-                await deleteDoc(docSnap.ref);
+                await deleteDoc(docSnap.ref)
             }
         } catch (e) {
-            console.warn('Could not delete progress data:', e);
-            errors.push('progress');
+            logger.warn('Could not delete progress data:', e)
+            errors.push('progress')
         }
 
         // Delete user's community posts
@@ -188,26 +189,26 @@ class UserService {
             const postsQuery = query(
                 collection(db, 'posts'),
                 where('userId', '==', userId)
-            );
-            const postsSnap = await getDocs(postsQuery);
+            )
+            const postsSnap = await getDocs(postsQuery)
             for (const docSnap of postsSnap.docs) {
-                await deleteDoc(docSnap.ref);
+                await deleteDoc(docSnap.ref)
             }
         } catch (e) {
-            console.warn('Could not delete posts:', e);
-            errors.push('posts');
+            logger.warn('Could not delete posts:', e)
+            errors.push('posts')
         }
 
         // Delete user's notifications (may not exist for all users)
         try {
-            const notificationsRef = collection(db, 'notifications', userId, 'items');
-            const notificationsSnap = await getDocs(notificationsRef);
+            const notificationsRef = collection(db, 'notifications', userId, 'items')
+            const notificationsSnap = await getDocs(notificationsRef)
             for (const docSnap of notificationsSnap.docs) {
-                await deleteDoc(docSnap.ref);
+                await deleteDoc(docSnap.ref)
             }
         } catch (e) {
             // This is expected to fail if notifications don't exist
-            console.warn('Could not delete notifications (may not exist):', e);
+            logger.warn('Could not delete notifications (may not exist):', e)
         }
 
         // Delete social connections (followers/following)
@@ -215,35 +216,35 @@ class UserService {
             const followersQuery = query(
                 collection(db, 'social'),
                 where('followerId', '==', userId)
-            );
-            const followersSnap = await getDocs(followersQuery);
+            )
+            const followersSnap = await getDocs(followersQuery)
             for (const docSnap of followersSnap.docs) {
-                await deleteDoc(docSnap.ref);
+                await deleteDoc(docSnap.ref)
             }
 
             const followingQuery = query(
                 collection(db, 'social'),
                 where('followingId', '==', userId)
-            );
-            const followingSnap = await getDocs(followingQuery);
+            )
+            const followingSnap = await getDocs(followingQuery)
             for (const docSnap of followingSnap.docs) {
-                await deleteDoc(docSnap.ref);
+                await deleteDoc(docSnap.ref)
             }
         } catch (e) {
-            console.warn('Could not delete social data:', e);
-            errors.push('social connections');
+            logger.warn('Could not delete social data:', e)
+            errors.push('social connections')
         }
 
         // Log result
         if (errors.length > 0) {
-            console.warn(`Partial deletion for user ${userId}. Failed to delete: ${errors.join(', ')}`);
+            logger.warn(`Partial deletion for user ${userId}. Failed to delete: ${errors.join(', ')}`)
         } else {
-            console.log(`All data for user ${userId} has been deleted`);
+            logger.log(`All data for user ${userId} has been deleted`)
         }
 
         // Always return success - the important thing is deleting the Firebase Auth account
-        return { success: true, data: undefined };
+        return { success: true, data: undefined }
     }
 }
 
-export const userService = new UserService();
+export const userService = new UserService()

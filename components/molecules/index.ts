@@ -18,12 +18,15 @@ export { AuthDivider } from './AuthDivider';
 export { SocialAuthButton } from './SocialAuthButton';
 export { TermsCheckbox } from './TermsCheckbox';
 export { BrowseAllButton } from './BrowseAllButton';
+export { RankedStoryCard } from './RankedStoryCard';
+// @deprecated Use RankedStoryCard instead
 export { PopularStoryCard } from './PopularStoryCard';
 export { SurpriseMeButton } from './SurpriseMeButton';
 export { LibraryBookCard } from './LibraryBookCard';
 export { LibraryFilterBadge } from './LibraryFilterBadge';
 export { VocabularyItem } from './VocabularyItem';
 export { StoryGridCard } from './StoryGridCard';
+// @deprecated Use RankedStoryCard instead
 export { TrendingStoryCard } from './TrendingStoryCard';
 export { CheckpointItem } from './CheckpointItem';
 export { AchievementCard } from './AchievementCard';
@@ -49,3 +52,5 @@ export { OnboardingTrackVisual } from './OnboardingTrackVisual';
 export { OnboardingConnectVisual } from './OnboardingConnectVisual';
 export { GuestLoginBanner } from './GuestLoginBanner';
 export { CommentThread } from './CommentThread';
+export { FlashCard } from './FlashCard';
+export { VocabularyMilestoneCard } from './VocabularyMilestoneCard';

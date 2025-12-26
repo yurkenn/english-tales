@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useTranslation } from 'react-i18next'
 
-import { Typography } from '@/components/atoms'
+import { Typography, ProfileTabButton, ProfileStatItem } from '@/components/atoms'
 import { CommunityPostCard } from '@/components/organisms/CommunityPostCard'
 import { StoryGridCard } from '@/components/molecules/StoryGridCard'
 import { EmptyState } from '@/components/molecules/EmptyState'
@@ -21,66 +21,6 @@ const DEFAULT_AVATAR = require('@/assets/defaultavatar.png')
 
 // Tab Types (matching profile.tsx)
 type TabType = 'posts' | 'saved' | 'about'
-
-// Tab Button Component
-const TabButton = ({
-    label,
-    count,
-    isActive,
-    onPress
-}: {
-    label: string
-    count?: number
-    isActive: boolean
-    onPress: () => void
-}) => {
-    const { theme } = useUnistyles()
-    return (
-        <Pressable style={styles.tabButton} onPress={onPress}>
-            <View style={styles.tabButtonContent}>
-                <Typography
-                    style={[
-                        styles.tabButtonText,
-                        { color: isActive ? theme.colors.text : theme.colors.textMuted },
-                        isActive && styles.tabButtonTextActive
-                    ]}
-                >
-                    {label}
-                </Typography>
-                {count !== undefined && count > 0 && (
-                    <View style={[
-                        styles.tabBadge,
-                        { backgroundColor: isActive ? theme.colors.primary : theme.colors.surfaceElevated }
-                    ]}>
-                        <Typography
-                            style={[
-                                styles.tabBadgeText,
-                                { color: isActive ? '#FFFFFF' : theme.colors.textMuted }
-                            ]}
-                        >
-                            {count > 99 ? '99+' : count}
-                        </Typography>
-                    </View>
-                )}
-            </View>
-            {isActive && (
-                <View style={[styles.tabIndicator, { backgroundColor: theme.colors.primary }]} />
-            )}
-        </Pressable>
-    )
-}
-
-// Stat Item Component
-const StatItem = ({ value, label, onPress }: { value: string | number; label: string; onPress?: () => void }) => {
-    const { theme } = useUnistyles()
-    const content = (
-        <View style={styles.statItem}>
-            <Typography style={styles.statItemValue}>{value}</Typography>
-            <Typography style={styles.statItemLabel}>{label}</Typography>
-        </View>
-    )
-    return onPress ? <Pressable onPress={onPress}>{content}</Pressable> : content
-}
 
 export default function UserProfileScreen() {
     const { id } = useLocalSearchParams<{ id: string }>()
@@ -296,15 +236,15 @@ export default function UserProfileScreen() {
                             style={styles.avatar}
                         />
                         <View style={styles.statsRow}>
-                            <StatItem
+                            <ProfileStatItem
                                 value={stats.followers}
                                 label={t('social.followers', 'Followers')}
                             />
-                            <StatItem
+                            <ProfileStatItem
                                 value={stats.following}
                                 label={t('social.following', 'Following')}
                             />
-                            <StatItem
+                            <ProfileStatItem
                                 value={stats.streak}
                                 label={t('profile.streak', 'Streak')}
                             />
@@ -365,19 +305,19 @@ export default function UserProfileScreen() {
 
                 {/* Tabs */}
                 <View style={styles.tabsContainer}>
-                    <TabButton
+                    <ProfileTabButton
                         label={t('profile.tabPosts', 'Posts')}
                         count={posts.length}
                         isActive={activeTab === 'posts'}
                         onPress={() => handleTabChange('posts')}
                     />
-                    <TabButton
+                    <ProfileTabButton
                         label={t('profile.tabSaved', 'Saved')}
                         count={libraryItems.length}
                         isActive={activeTab === 'saved'}
                         onPress={() => handleTabChange('saved')}
                     />
-                    <TabButton
+                    <ProfileTabButton
                         label={t('profile.tabAbout', 'About')}
                         isActive={activeTab === 'about'}
                         onPress={() => handleTabChange('about')}

@@ -1,49 +1,50 @@
 /**
  * Analytics Service - Native Firebase Modular API
  */
-import { getAnalytics, logEvent, logScreenView, setUserId, setUserProperties } from '@react-native-firebase/analytics';
+import { getAnalytics, logEvent, logScreenView, setUserId, setUserProperties } from '@react-native-firebase/analytics'
+import { analyticsLogger as logger } from '@/utils/logger'
 
-const analytics = getAnalytics();
+const analytics = getAnalytics()
 
 class AnalyticsService {
     async logScreenView(screenName: string, screenClass?: string) {
-        console.log(`[Firebase Analytics] logScreenView: ${screenName}`);
+        logger.log(`logScreenView: ${screenName}`)
         try {
             await logScreenView(analytics, {
                 screen_name: screenName,
                 screen_class: screenClass || screenName,
-            });
+            })
         } catch (error) {
-            console.error('[Firebase Analytics] logScreenView failed', error);
+            logger.error('logScreenView failed', error)
         }
     }
 
     async logEvent(name: string, params: Record<string, any> = {}) {
-        console.log(`[Firebase Analytics] logEvent: ${name}`, params);
+        logger.log(`logEvent: ${name}`, params)
         try {
-            await logEvent(analytics, name, params);
+            await logEvent(analytics, name, params)
         } catch (error) {
-            console.error(`[Firebase Analytics] logEvent "${name}" failed`, error);
+            logger.error(`logEvent "${name}" failed`, error)
         }
     }
 
     async setUserId(userId: string | null) {
-        console.log(`[Firebase Analytics] setUserId: ${userId}`);
+        logger.log(`setUserId: ${userId}`)
         try {
-            await setUserId(analytics, userId);
+            await setUserId(analytics, userId)
         } catch (error) {
-            console.error('[Firebase Analytics] setUserId failed', error);
+            logger.error('setUserId failed', error)
         }
     }
 
     async setUserProperties(properties: Record<string, string | null>) {
-        console.log('[Firebase Analytics] setUserProperties', properties);
+        logger.log('setUserProperties', properties)
         try {
-            await setUserProperties(analytics, properties);
+            await setUserProperties(analytics, properties)
         } catch (error) {
-            console.error('[Firebase Analytics] setUserProperties failed', error);
+            logger.error('setUserProperties failed', error)
         }
     }
 }
 
-export const analyticsService = new AnalyticsService();
+export const analyticsService = new AnalyticsService()

@@ -1,23 +1,24 @@
-import perf, { FirebasePerformanceTypes } from '@react-native-firebase/perf';
+import perf, { FirebasePerformanceTypes } from '@react-native-firebase/perf'
+import { perfLogger as logger } from '@/utils/logger'
 
 /**
  * Service for native Firebase Performance Monitoring.
  * Tracks app performance metrics like startup time, network requests, and custom traces.
  */
 class PerformanceService {
-    private traces: Map<string, FirebasePerformanceTypes.Trace> = new Map();
+    private traces: Map<string, FirebasePerformanceTypes.Trace> = new Map()
 
     /**
      * Start a performance trace
      * @param traceName - Unique name for the trace
      */
     async startTrace(traceName: string): Promise<void> {
-        console.log(`[Firebase Performance] Starting trace: ${traceName}`);
+        logger.log(`Starting trace: ${traceName}`)
         try {
-            const trace = await perf().startTrace(traceName);
-            this.traces.set(traceName, trace);
+            const trace = await perf().startTrace(traceName)
+            this.traces.set(traceName, trace)
         } catch (error) {
-            console.error(`[Firebase Performance] Failed to start trace "${traceName}"`, error);
+            logger.error(`Failed to start trace "${traceName}"`, error)
         }
     }
 
@@ -26,17 +27,17 @@ class PerformanceService {
      * @param traceName - Name of the trace to stop
      */
     async stopTrace(traceName: string): Promise<void> {
-        console.log(`[Firebase Performance] Stopping trace: ${traceName}`);
+        logger.log(`Stopping trace: ${traceName}`)
         try {
-            const trace = this.traces.get(traceName);
+            const trace = this.traces.get(traceName)
             if (trace) {
-                await trace.stop();
-                this.traces.delete(traceName);
+                await trace.stop()
+                this.traces.delete(traceName)
             } else {
-                console.warn(`[Firebase Performance] Trace "${traceName}" not found`);
+                logger.warn(`Trace "${traceName}" not found`)
             }
         } catch (error) {
-            console.error(`[Firebase Performance] Failed to stop trace "${traceName}"`, error);
+            logger.error(`Failed to stop trace "${traceName}"`, error)
         }
     }
 
@@ -48,14 +49,14 @@ class PerformanceService {
      */
     async putMetric(traceName: string, metricName: string, value: number): Promise<void> {
         try {
-            const trace = this.traces.get(traceName);
+            const trace = this.traces.get(traceName)
             if (trace) {
-                trace.putMetric(metricName, value);
+                trace.putMetric(metricName, value)
             } else {
-                console.warn(`[Firebase Performance] Trace "${traceName}" not found for metric`);
+                logger.warn(`Trace "${traceName}" not found for metric`)
             }
         } catch (error) {
-            console.error(`[Firebase Performance] Failed to put metric`, error);
+            logger.error(`Failed to put metric`, error)
         }
     }
 
@@ -67,14 +68,14 @@ class PerformanceService {
      */
     async incrementMetric(traceName: string, metricName: string, incrementBy: number = 1): Promise<void> {
         try {
-            const trace = this.traces.get(traceName);
+            const trace = this.traces.get(traceName)
             if (trace) {
-                trace.incrementMetric(metricName, incrementBy);
+                trace.incrementMetric(metricName, incrementBy)
             } else {
-                console.warn(`[Firebase Performance] Trace "${traceName}" not found for incrementing metric`);
+                logger.warn(`Trace "${traceName}" not found for incrementing metric`)
             }
         } catch (error) {
-            console.error(`[Firebase Performance] Failed to increment metric`, error);
+            logger.error(`Failed to increment metric`, error)
         }
     }
 
@@ -86,14 +87,14 @@ class PerformanceService {
      */
     async putAttribute(traceName: string, attribute: string, value: string): Promise<void> {
         try {
-            const trace = this.traces.get(traceName);
+            const trace = this.traces.get(traceName)
             if (trace) {
-                trace.putAttribute(attribute, value);
+                trace.putAttribute(attribute, value)
             } else {
-                console.warn(`[Firebase Performance] Trace "${traceName}" not found for attribute`);
+                logger.warn(`Trace "${traceName}" not found for attribute`)
             }
         } catch (error) {
-            console.error(`[Firebase Performance] Failed to put attribute`, error);
+            logger.error(`Failed to put attribute`, error)
         }
     }
 
@@ -102,11 +103,11 @@ class PerformanceService {
      * @param enabled - Whether to enable HTTP metrics
      */
     async setHttpMetricsEnabled(enabled: boolean): Promise<void> {
-        console.log(`[Firebase Performance] HTTP metrics enabled: ${enabled}`);
+        logger.log(`HTTP metrics enabled: ${enabled}`)
         try {
-            await perf().setPerformanceCollectionEnabled(enabled);
+            await perf().setPerformanceCollectionEnabled(enabled)
         } catch (error) {
-            console.error('[Firebase Performance] Failed to set HTTP metrics', error);
+            logger.error('Failed to set HTTP metrics', error)
         }
     }
 
@@ -115,11 +116,11 @@ class PerformanceService {
      * @param enabled - Whether to enable performance collection
      */
     async setPerformanceCollectionEnabled(enabled: boolean): Promise<void> {
-        console.log(`[Firebase Performance] Collection enabled: ${enabled}`);
+        logger.log(`Collection enabled: ${enabled}`)
         try {
-            await perf().setPerformanceCollectionEnabled(enabled);
+            await perf().setPerformanceCollectionEnabled(enabled)
         } catch (error) {
-            console.error('[Firebase Performance] Failed to set collection enabled', error);
+            logger.error('Failed to set collection enabled', error)
         }
     }
 
@@ -130,12 +131,12 @@ class PerformanceService {
      */
     async newHttpMetric(url: string, httpMethod: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'HEAD' | 'OPTIONS' | 'TRACE' | 'CONNECT') {
         try {
-            return perf().newHttpMetric(url, httpMethod);
+            return perf().newHttpMetric(url, httpMethod)
         } catch (error) {
-            console.error('[Firebase Performance] Failed to create HTTP metric', error);
-            return null;
+            logger.error('Failed to create HTTP metric', error)
+            return null
         }
     }
 }
 
-export const performanceService = new PerformanceService();
+export const performanceService = new PerformanceService()

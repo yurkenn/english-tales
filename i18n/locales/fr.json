@@ -67,7 +67,26 @@
             "streak": "Série de jours"
         },
         "quickSettings": "Paramètres rapides",
-        "vocabulary": "Vocabulaire"
+        "vocabulary": "Vocabulaire",
+        "quiz": "Quiz de pratique",
+        "activity": "Activité",
+        "preferences": "Préférences",
+        "allSettings": "Tous les paramètres",
+        "time": "Lecture",
+        "words": "Mots",
+        "badges": "Badges",
+        "streak": "Série",
+        "noPosts": "Pas encore de publications",
+        "noPostsMessage": "Partagez votre voyage de lecture avec la communauté !",
+        "shareFirst": "Créer une publication",
+        "emptyLibrary": "Rien de sauvegardé",
+        "emptyLibraryMessage": "Sauvegardez des histoires pour les retrouver facilement ici !",
+        "exploreStories": "Explorer les histoires",
+        "addBio": "Ajouter une bio",
+        "editProfile": "Modifier le profil",
+        "tabPosts": "Publications",
+        "tabSaved": "Sauvegardés",
+        "tabAbout": "À propos"
     },
     "appearance": {
         "title": "Apparence",
@@ -125,6 +144,8 @@
         "empty": "Votre bibliothèque est vide",
         "emptyMessage": "Commencez à lire pour ajouter des livres à votre bibliothèque",
         "discoverStories": "Découvrir des histoires",
+        "quizTitle": "Quiz de pratique",
+        "quizSubtitle": "{{count}} mots à pratiquer",
         "stats": {
             "total": "Total",
             "completed": "Terminé",
@@ -254,6 +275,7 @@
     "social": {
         "title": "Communauté",
         "community": "Communauté",
+        "following": "Abonnements",
         "findFriends": "Trouver des amis",
         "searchPlaceholder": "Rechercher par nom ou email...",
         "noUsersFound": "Aucun utilisateur trouvé",

@@ -14,7 +14,7 @@ import {
     DiscoverScreenSkeleton,
     DiscoverHeader,
     SurpriseMeButton,
-    PopularStoryCard,
+    RankedStoryCard,
     BrowseAllButton,
 } from '@/components'
 import { useStories, useFeaturedAuthor } from '@/hooks/useQueries'
@@ -223,7 +223,7 @@ export default function DiscoverScreen() {
                         <SectionHeader title={t('discover.popularThisWeek')} onActionPress={handleBrowseAll} />
                         <View style={styles.popularContainer}>
                             {popularStories.map((story: Story, index: number) => (
-                                <PopularStoryCard
+                                <RankedStoryCard
                                     key={story.id}
                                     story={story}
                                     rank={index + 1}
