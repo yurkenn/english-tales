@@ -153,16 +153,16 @@ const styles = StyleSheet.create((theme) => ({
     scrollContent: {
         flexGrow: 1,
         paddingHorizontal: theme.spacing.lg,
-        justifyContent: 'center',
     },
     form: {
-        gap: theme.spacing.md,
+        gap: theme.spacing.lg,
     },
     fieldContainer: {
-        marginBottom: theme.spacing.xs,
+        marginBottom: 0,
     },
     forgotPassword: {
         alignSelf: 'flex-end',
+        marginTop: -theme.spacing.sm,
     },
     button: {
         height: 56,
@@ -170,6 +170,7 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.xl,
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: theme.spacing.md,
         ...theme.shadows.md,
     },
     buttonDisabled: {
@@ -183,7 +184,8 @@ const styles = StyleSheet.create((theme) => ({
     footer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: 'auto',
+        marginTop: theme.spacing.xxxl,
+        marginBottom: theme.spacing.lg,
     },
     footerText: {
         fontSize: theme.typography.size.md,

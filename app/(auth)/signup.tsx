@@ -83,11 +83,11 @@ export default function SignupScreen() {
     return (
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
             <ScrollView
-                contentContainerStyle={[styles.content, { paddingTop: insets.top + 60, paddingBottom: insets.bottom + 20 }]}
+                contentContainerStyle={[styles.content, { paddingTop: insets.top + (theme.spacing.xxxl * 2), paddingBottom: insets.bottom + theme.spacing.xl }]}
                 showsVerticalScrollIndicator={false}
                 keyboardShouldPersistTaps="handled"
             >
-                <Pressable style={[styles.backButton, { top: insets.top + 10 }]} onPress={() => router.back()}>
+                <Pressable style={[styles.backButton, { top: insets.top + 20 }]} onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
 
@@ -172,26 +172,25 @@ const styles = StyleSheet.create((theme) => ({
     },
     content: {
         flexGrow: 1,
-        paddingHorizontal: theme.spacing.xl,
-        justifyContent: 'center',
+        paddingHorizontal: theme.spacing.lg,
     },
     backButton: {
         position: 'absolute',
-        top: 60,
         left: 20,
         zIndex: 10,
-        width: 40,
-        height: 40,
+        width: 44,
+        height: 44,
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: theme.radius.full,
         backgroundColor: theme.colors.surface,
+        ...theme.shadows.sm,
     },
     form: {
         gap: theme.spacing.lg,
     },
     fieldContainer: {
-        marginBottom: theme.spacing.xs,
+        marginBottom: 0,
     },
     button: {
         height: 56,
@@ -199,8 +198,8 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.xl,
         alignItems: 'center',
         justifyContent: 'center',
-        ...theme.shadows.md,
         marginTop: theme.spacing.md,
+        ...theme.shadows.md,
     },
     buttonDisabled: {
         opacity: 0.7,
@@ -213,7 +212,8 @@ const styles = StyleSheet.create((theme) => ({
     footer: {
         flexDirection: 'row',
         justifyContent: 'center',
-        marginTop: 'auto',
+        marginTop: theme.spacing.xxxl,
+        marginBottom: theme.spacing.lg,
     },
     footerText: {
         fontSize: theme.typography.size.md,

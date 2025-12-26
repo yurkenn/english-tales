@@ -107,8 +107,8 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: 24,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingTop: 16,
-        paddingBottom: 24,
+        paddingTop: 0,
+        paddingBottom: 40,
     },
     title: {
         fontSize: theme.typography.size.xxl,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     button: {
         width: '100%',
-        height: 52,
+        height: 56,
         backgroundColor: theme.colors.primary,
         borderRadius: theme.radius.full,
         flexDirection: 'row',
