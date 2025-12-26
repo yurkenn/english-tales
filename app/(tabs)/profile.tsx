@@ -152,25 +152,30 @@ export default function ProfileScreen() {
                         <View style={styles.quickStatsCard}>
                             <View style={styles.quickStatsRow}>
                                 <View style={styles.quickStatItem}>
-                                    <Ionicons name="book" size={20} color={theme.colors.primary} />
-                                    <Typography style={styles.quickStatValue}>{stats.booksRead}</Typography>
-                                    <Typography style={styles.quickStatLabel}>{t('profile.booksRead', 'Books')}</Typography>
+                                    <View style={[styles.quickStatIcon, { backgroundColor: theme.colors.primary + '15' }]}>
+                                        <Ionicons name="book" size={18} color={theme.colors.primary} />
+                                    </View>
+                                    <Typography style={styles.quickStatValue}>{Math.round(stats.booksRead)}</Typography>
+                                    <Typography style={styles.quickStatLabel}>{t('profile.books', 'Books')}</Typography>
                                 </View>
-                                <View style={styles.quickStatDivider} />
                                 <View style={styles.quickStatItem}>
-                                    <Ionicons name="time" size={20} color="#F59E0B" />
-                                    <Typography style={styles.quickStatValue}>{stats.readingHours}h</Typography>
-                                    <Typography style={styles.quickStatLabel}>{t('profile.time', 'Reading')}</Typography>
+                                    <View style={[styles.quickStatIcon, { backgroundColor: '#F59E0B15' }]}>
+                                        <Ionicons name="time" size={18} color="#F59E0B" />
+                                    </View>
+                                    <Typography style={styles.quickStatValue}>{Math.round(stats.readingHours)}h</Typography>
+                                    <Typography style={styles.quickStatLabel}>{t('profile.reading', 'Hours')}</Typography>
                                 </View>
-                                <View style={styles.quickStatDivider} />
                                 <View style={styles.quickStatItem}>
-                                    <Ionicons name="text" size={20} color="#10B981" />
-                                    <Typography style={styles.quickStatValue}>{stats.vocabCount}</Typography>
+                                    <View style={[styles.quickStatIcon, { backgroundColor: '#10B98115' }]}>
+                                        <Ionicons name="text" size={18} color="#10B981" />
+                                    </View>
+                                    <Typography style={styles.quickStatValue}>{Math.round(stats.vocabCount)}</Typography>
                                     <Typography style={styles.quickStatLabel}>{t('profile.words', 'Words')}</Typography>
                                 </View>
-                                <View style={styles.quickStatDivider} />
                                 <View style={styles.quickStatItem}>
-                                    <Ionicons name="trophy" size={20} color="#8B5CF6" />
+                                    <View style={[styles.quickStatIcon, { backgroundColor: '#8B5CF615' }]}>
+                                        <Ionicons name="trophy" size={18} color="#8B5CF6" />
+                                    </View>
                                     <Typography style={styles.quickStatValue}>{unlockedCount}</Typography>
                                     <Typography style={styles.quickStatLabel}>{t('profile.badges', 'Badges')}</Typography>
                                 </View>
@@ -461,12 +466,12 @@ const styles = StyleSheet.create((theme) => ({
         ...theme.shadows.sm,
     },
 
-    // Profile Card
     profileCard: {
-        marginHorizontal: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xxl,
         padding: theme.spacing.xl,
+        marginHorizontal: theme.spacing.lg,
+        marginTop: theme.spacing.lg,
         ...theme.shadows.md,
     },
     avatarRow: {
@@ -602,6 +607,16 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 10,
         fontWeight: '700',
     },
+    unlockBanner: {
+        backgroundColor: theme.colors.primary,
+        borderRadius: theme.radius.xxl,
+        padding: theme.spacing.xl,
+        marginHorizontal: theme.spacing.lg,
+        marginTop: theme.spacing.lg,
+        alignItems: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+    },
     tabIndicator: {
         position: 'absolute',
         bottom: 2,
@@ -631,34 +646,40 @@ const styles = StyleSheet.create((theme) => ({
     },
     quickStatsCard: {
         backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.lg,
+        borderRadius: theme.radius.xxl,
         padding: theme.spacing.xl,
         marginBottom: theme.spacing.xl,
-        ...theme.shadows.sm,
+        ...theme.shadows.md,
     },
     quickStatsRow: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: theme.spacing.md,
     },
     quickStatItem: {
         flex: 1,
+        minWidth: '40%',
         alignItems: 'center',
+        paddingVertical: theme.spacing.sm,
     },
-    quickStatDivider: {
-        width: 1,
-        backgroundColor: theme.colors.borderLight,
-        marginVertical: 4,
+    quickStatIcon: {
+        width: 40,
+        height: 40,
+        borderRadius: theme.radius.full,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: theme.spacing.sm,
     },
     quickStatValue: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: '700',
+        fontSize: theme.typography.size.xl,
+        fontWeight: '800',
         color: theme.colors.text,
-        marginTop: theme.spacing.sm,
     },
     quickStatLabel: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
-        marginTop: theme.spacing.xxs,
+        fontWeight: '600',
+        marginTop: 2,
     },
     menuSection: {
         marginBottom: theme.spacing.xl,

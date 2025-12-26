@@ -7,13 +7,21 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import * as SplashScreen from 'expo-splash-screen';
 import { useFonts } from 'expo-font';
 import {
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_600SemiBold,
+  Inter_700Bold
+} from '@expo-google-fonts/inter';
+import {
+  CrimsonPro_400Regular,
+  CrimsonPro_700Bold,
+} from '@expo-google-fonts/crimson-pro';
+import {
+  Outfit_400Regular,
+  Outfit_500Medium,
   Outfit_600SemiBold,
   Outfit_700Bold
 } from '@expo-google-fonts/outfit';
-import {
-  Inter_400Regular,
-  Inter_600SemiBold
-} from '@expo-google-fonts/inter';
 import { QueryProvider } from '@/providers/QueryProvider';
 import { useAuthStore } from '../store/authStore';
 import { useLibraryStore } from '../store/libraryStore';
@@ -79,10 +87,16 @@ export default function RootLayout() {
 
   // Load fonts
   const [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_600SemiBold,
+    Inter_700Bold,
+    CrimsonPro_400Regular,
+    CrimsonPro_700Bold,
+    Outfit_400Regular,
+    Outfit_500Medium,
     Outfit_600SemiBold,
     Outfit_700Bold,
-    Inter_400Regular,
-    Inter_600SemiBold,
   });
 
   // Handle splash screen visibility

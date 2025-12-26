@@ -17,6 +17,7 @@ interface PagedContentProps {
     onTryNextOnLastPage?: () => void;
     fontSize: number;
     lineHeight: number;
+    fontFamily?: 'sans-serif' | 'serif';
     textColor: string;
     backgroundColor: string;
     dyslexicFontEnabled?: boolean;
@@ -33,6 +34,7 @@ export const PagedContent = React.memo(({
     onTryNextOnLastPage,
     fontSize,
     lineHeight,
+    fontFamily,
     textColor,
     backgroundColor,
     dyslexicFontEnabled,
@@ -77,10 +79,10 @@ export const PagedContent = React.memo(({
     }, [currentPage, pages.length, onPageChange, onTryNextOnLastPage]);
 
     const handlePageSelected = useCallback((e: any) => {
-        const position = e.nativeEvent.position;
-        lastSyncedPage.current = position;
-        if (position !== currentPage) {
-            onPageChange(position);
+        const newPage = e.nativeEvent.position;
+        if (newPage !== currentPage) {
+            onPageChange(newPage);
+            lastSyncedPage.current = newPage;
         }
     }, [currentPage, onPageChange]);
 
@@ -102,18 +104,26 @@ export const PagedContent = React.memo(({
                     <View key={pageIndex} style={styles.page}>
                         <Animated.View
                             entering={FadeIn.duration(200)}
-                            style={[styles.pageContent, { backgroundColor }]}
+                            style={[
+                                styles.pageContent,
+                                {
+                                    backgroundColor,
+                                }
+                            ]}
                         >
                             <PortableTextRenderer
                                 content={pageBlocks}
                                 fontSize={fontSize}
                                 lineHeight={lineHeight}
+                                fontFamily={fontFamily}
                                 textColor={textColor}
                                 onWordPress={onWordPress}
                                 onWordLongPress={onWordLongPress}
                                 dyslexicFontEnabled={dyslexicFontEnabled}
                                 selectedWord={selectedWord}
                                 highlights={highlights}
+                                enableDropCap={true}
+                                isFirstPage={pageIndex === 0}
                             />
                         </Animated.View>
                     </View>

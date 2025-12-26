@@ -11,10 +11,12 @@ interface ReadingSettingsModalProps {
     visible: boolean;
     fontSize: number;
     lineHeight: number;
+    fontFamily: 'sans-serif' | 'serif';
     readingTheme: ReadingTheme;
     onClose: () => void;
     onFontSizeChange: (size: number) => void;
     onLineHeightChange: (height: number) => void;
+    onFontFamilyChange: (family: 'sans-serif' | 'serif') => void;
     onThemeChange: (theme: ReadingTheme) => void;
 }
 
@@ -22,21 +24,29 @@ export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
     visible,
     fontSize,
     lineHeight,
+    fontFamily,
     readingTheme,
     onClose,
     onFontSizeChange,
     onLineHeightChange,
+    onFontFamilyChange,
     onThemeChange,
 }) => {
     const { t } = useTranslation();
     const { theme } = useUnistyles();
     const { settings, actions: settingsActions } = useSettingsStore();
 
+    const FONT_FAMILIES: { key: 'sans-serif' | 'serif'; label: string; preview: string }[] = [
+        { key: 'sans-serif', label: 'Sans-Serif', preview: 'Abc' },
+        { key: 'serif', label: 'Serif', preview: 'Abc' },
+    ];
+
     const themes: { name: string; key: ReadingTheme; color: string }[] = [
         { name: t('appearance.light'), key: 'light', color: '#FFFFFF' },
         { name: t('appearance.dark'), key: 'dark', color: '#1B0E0E' },
         { name: 'Sepia', key: 'sepia', color: '#FDF6E3' },
     ];
+
     const LANGUAGES = [
         { code: 'en', label: 'English' },
         { code: 'tr', label: 'Türkçe' },
@@ -79,6 +89,44 @@ export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
                                         ]}
                                     >
                                         {lang.label}
+                                    </Text>
+                                </Pressable>
+                            ))}
+                        </View>
+                    </View>
+
+                    {/* Font Family */}
+                    <View style={styles.section}>
+                        <Text style={styles.label}>{t('reading.fontFamily', 'Font Style')}</Text>
+                        <View style={styles.fontFamilyControls}>
+                            {FONT_FAMILIES.map((ff) => (
+                                <Pressable
+                                    key={ff.key}
+                                    style={[
+                                        styles.ffButton,
+                                        fontFamily === ff.key && styles.ffButtonActive,
+                                    ]}
+                                    onPress={() => {
+                                        haptics.selection();
+                                        onFontFamilyChange(ff.key);
+                                    }}
+                                >
+                                    <Text
+                                        style={[
+                                            styles.ffPreview,
+                                            { fontFamily: ff.key === 'serif' ? theme.typography.fontFamily.serif : theme.typography.fontFamily.body },
+                                            fontFamily === ff.key && styles.ffTextActive,
+                                        ]}
+                                    >
+                                        {ff.preview}
+                                    </Text>
+                                    <Text
+                                        style={[
+                                            styles.ffLabel,
+                                            fontFamily === ff.key && styles.ffTextActive,
+                                        ]}
+                                    >
+                                        {ff.label}
                                     </Text>
                                 </Pressable>
                             ))}
@@ -161,7 +209,7 @@ const styles = StyleSheet.create((theme) => ({
         borderTopLeftRadius: theme.radius.xxl,
         borderTopRightRadius: theme.radius.xxl,
         padding: theme.spacing.xl,
-        paddingBottom: theme.spacing.xxxl,
+        paddingBottom: theme.spacing.xxxxl,
     },
     header: {
         flexDirection: 'row',
@@ -182,6 +230,37 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.text,
         marginBottom: theme.spacing.md,
+    },
+    fontFamilyControls: {
+        flexDirection: 'row',
+        gap: theme.spacing.md,
+    },
+    ffButton: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: theme.spacing.md,
+        borderRadius: theme.radius.lg,
+        backgroundColor: theme.colors.backgroundSecondary,
+        gap: theme.spacing.md,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+    },
+    ffButtonActive: {
+        backgroundColor: theme.colors.primary,
+        borderColor: theme.colors.primary,
+    },
+    ffPreview: {
+        fontSize: theme.typography.size.lg,
+        color: theme.colors.text,
+    },
+    ffLabel: {
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.text,
+        fontWeight: theme.typography.weight.medium,
+    },
+    ffTextActive: {
+        color: theme.colors.textInverse,
     },
     fontControls: {
         flexDirection: 'row',

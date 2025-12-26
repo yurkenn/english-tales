@@ -161,10 +161,13 @@ export const radius = {
 
 export const typography = {
     fontFamily: {
-        heading: 'Outfit_600SemiBold',
+        heading: 'Inter_600SemiBold', // Replaced Outfit with Inter for Apple-like uniformity
         body: 'Inter_400Regular',
         semiBold: 'Inter_600SemiBold',
-        bold: 'Outfit_700Bold',
+        medium: 'Inter_500Medium',
+        bold: 'Inter_700Bold',
+        serif: 'CrimsonPro_400Regular', // Premium serif for stories
+        serifBold: 'CrimsonPro_700Bold',
     },
     size: {
         // Consistent scale - use these everywhere
@@ -187,6 +190,11 @@ export const typography = {
         tight: 1.2,
         normal: 1.4,
         relaxed: 1.6,
+    },
+    letterSpacing: {
+        heading: -0.5,
+        body: 0,
+        button: 0.5,
     },
 } as const;
 

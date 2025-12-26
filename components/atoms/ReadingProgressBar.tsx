@@ -66,9 +66,9 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = React.memo(
 const styles = StyleSheet.create((theme) => ({
     container: {
         paddingHorizontal: theme.spacing.xl,
-        paddingVertical: 10,
-        gap: 8,
-        backgroundColor: theme.colors.background,
+        paddingVertical: 12,
+        gap: 10,
+        backgroundColor: 'transparent',
     },
     info: {
         flexDirection: 'row',
@@ -79,18 +79,23 @@ const styles = StyleSheet.create((theme) => ({
     timeBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
+        gap: 6,
+        backgroundColor: theme.colors.backgroundSecondary,
+        paddingHorizontal: 8,
+        paddingVertical: 4,
+        borderRadius: theme.radius.full,
     },
     remainingText: {
-        fontSize: theme.typography.size.xs,
+        fontSize: 10,
         fontFamily: theme.typography.fontFamily.semiBold,
         textTransform: 'uppercase',
-        letterSpacing: 0.5,
+        letterSpacing: 0.8,
         color: theme.colors.textMuted,
     },
     percentageText: {
-        fontSize: theme.typography.size.xs,
+        fontSize: 11,
         fontFamily: theme.typography.fontFamily.semiBold,
-        color: theme.colors.textMuted,
+        color: theme.colors.textSecondary,
+        opacity: 0.8,
     },
 }));

@@ -10,24 +10,30 @@ interface PortableTextRendererProps {
     content: PortableTextBlock[];
     fontSize: number;
     lineHeight: number;
+    fontFamily?: 'sans-serif' | 'serif';
     textColor: string;
     onWordPress?: (word: string) => void;
     onWordLongPress?: (word: string, blockKey: string) => void;
     dyslexicFontEnabled?: boolean;
     selectedWord?: string;
     highlights?: Highlight[];
+    enableDropCap?: boolean;
+    isFirstPage?: boolean;
 }
 
 export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.memo(({
     content,
     fontSize,
     lineHeight,
+    fontFamily,
     textColor,
     onWordPress,
     onWordLongPress,
     dyslexicFontEnabled,
     selectedWord,
     highlights = [],
+    enableDropCap = false,
+    isFirstPage = false,
 }) => {
     const { theme } = useUnistyles();
 
@@ -51,9 +57,42 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
     const renderChildren = (children: any[], blockKey: string, isFirstParagraph = false) => {
         return children.map((child, index) => {
             if (child._type === 'span') {
-                // Safety check: if child.text is undefined/null, skip or render empty
                 if (child.text == null || child.text === undefined) {
                     return null;
+                }
+
+                const isFirstSpan = index === 0;
+                let text = String(child.text || '');
+
+                if (enableDropCap && isFirstParagraph && isFirstSpan && text.length > 0) {
+                    const firstLetter = text.charAt(0);
+                    const restOfText = text.slice(1);
+
+                    return (
+                        <Text key={index}>
+                            <Text
+                                style={{
+                                    fontSize: fontSize * 3,
+                                    lineHeight: fontSize * 3.2,
+                                    fontFamily: theme.typography.fontFamily.serif,
+                                    fontWeight: '700',
+                                    color: theme.colors.primary,
+                                }}
+                            >
+                                {firstLetter}
+                            </Text>
+                            <Text
+                                style={{
+                                    fontSize,
+                                    color: textColor,
+                                    lineHeight: fontSize * lineHeight,
+                                    fontFamily: fontFamily === 'serif' ? theme.typography.fontFamily.serif : theme.typography.fontFamily.body,
+                                }}
+                            >
+                                {restOfText}
+                            </Text>
+                        </Text>
+                    );
                 }
 
                 let style: any = {
@@ -61,7 +100,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                     color: textColor,
                     lineHeight: fontSize * lineHeight,
                     letterSpacing: dyslexicFontEnabled ? 0.8 : 0.3,
-                    fontFamily: theme.typography.fontFamily.body,
+                    fontFamily: fontFamily === 'serif' ? theme.typography.fontFamily.serif : theme.typography.fontFamily.body,
                 };
 
                 // Apply marks (bold, italic, underline)
@@ -107,7 +146,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                                             {
                                                 color: textColor,
                                                 fontSize,
-                                                fontFamily: theme.typography.fontFamily.body,
+                                                fontFamily: fontFamily === 'serif' ? theme.typography.fontFamily.serif : theme.typography.fontFamily.body,
                                             },
                                             isSelected && {
                                                 backgroundColor: theme.colors.primary + '30',
@@ -224,7 +263,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
 
     return (
         <View style={styles.container}>
-            {filteredContent.map((block, index) => renderBlock(block, index, index === 0))}
+            {filteredContent.map((block, index) => renderBlock(block, index, index === 0 && isFirstPage))}
         </View>
     );
 });

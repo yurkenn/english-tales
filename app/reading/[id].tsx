@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Animated } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -52,7 +52,6 @@ export default function ReadingScreen() {
 
     const [showCompletionModal, setShowCompletionModal] = useState(false);
     const [showSettingsModal, setShowSettingsModal] = useState(false);
-    const [readingTheme, setReadingTheme] = useState<ReadingTheme>('light');
     const { isDark, highContrastEnabled: globalHighContrast } = useThemeStore();
     const hasShownCompletion = useRef(false);
     const startTimeRef = useRef<number>(Date.now());
@@ -65,7 +64,7 @@ export default function ReadingScreen() {
     const [showQuizModal, setShowQuizModal] = useState(false);
 
     // Stores
-    const { fontSize, lineHeight, dyslexicFontEnabled, actions: prefsActions } = useReadingPrefsStore();
+    const { fontSize, lineHeight, dyslexicFontEnabled, theme: readingTheme, fontFamily, actions: prefsActions } = useReadingPrefsStore();
     const { progressMap, actions: progressActions } = useProgressStore();
     const { actions: libraryActions } = useLibraryStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
@@ -274,21 +273,14 @@ export default function ReadingScreen() {
         }
     }, [id, storyDoc, isInLibrary, libraryActions]);
 
-    useEffect(() => {
-        const currentMode = useThemeStore.getState().mode;
-        if (currentMode === 'sepia') setReadingTheme('sepia');
-        else if (currentMode === 'dark') setReadingTheme('dark');
-        else setReadingTheme('light');
-    }, []);
-
     const cycleReadingTheme = useCallback(() => {
         haptics.selection();
         const themes: ReadingTheme[] = ['light', 'dark', 'sepia'];
         const currentIndex = themes.indexOf(readingTheme);
         const next = themes[(currentIndex + 1) % 3];
-        setReadingTheme(next);
+        prefsActions.setTheme(next);
         useThemeStore.getState().actions.setMode(next);
-    }, [readingTheme]);
+    }, [readingTheme, prefsActions]);
 
     if (isLoading) {
         return (
@@ -313,19 +305,21 @@ export default function ReadingScreen() {
 
     return (
         <View style={[styles.container, { paddingTop: insets.top, backgroundColor: currentTheme.bg }]}>
-            <ReadingHeader
-                title={storyDoc.title}
-                isDownloaded={isDownloaded}
-                onClose={() => router.back()}
-                onSettings={() => setShowSettingsModal(true)}
-            />
+            <View style={{ zIndex: 100 }}>
+                <ReadingHeader
+                    title={storyDoc.title}
+                    isDownloaded={isDownloaded}
+                    onClose={() => router.back()}
+                    onSettings={() => setShowSettingsModal(true)}
+                />
 
-            <ReadingProgressBar
-                progress={progress}
-                estimatedReadTime={storyDoc.estimatedReadTime || 5}
-                currentPage={currentPage + 1}
-                totalPages={totalPages}
-            />
+                <ReadingProgressBar
+                    progress={progress}
+                    estimatedReadTime={storyDoc.estimatedReadTime || 5}
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                />
+            </View>
 
             {pages.length > 0 ? (
                 <PagedContent
@@ -336,6 +330,7 @@ export default function ReadingScreen() {
                     onWordLongPress={handleWordLongPress}
                     fontSize={fontSize}
                     lineHeight={lineHeight}
+                    fontFamily={fontFamily}
                     textColor={globalHighContrast
                         ? (isDark ? '#FFFFFF' : '#000000')
                         : currentTheme.text
@@ -357,7 +352,12 @@ export default function ReadingScreen() {
                 </View>
             )}
 
-            <View style={[styles.controls, { paddingBottom: insets.bottom + theme.spacing.sm }]}>
+            <View
+                style={{
+                    paddingBottom: insets.bottom + theme.spacing.sm,
+                    backgroundColor: currentTheme.bg,
+                }}
+            >
                 <ReadingControls
                     fontSize={fontSize}
                     readingTheme={readingTheme}
@@ -430,11 +430,16 @@ export default function ReadingScreen() {
                 visible={showSettingsModal}
                 fontSize={fontSize}
                 lineHeight={lineHeight}
+                fontFamily={fontFamily}
                 readingTheme={readingTheme}
                 onClose={() => setShowSettingsModal(false)}
                 onFontSizeChange={prefsActions.setFontSize}
                 onLineHeightChange={prefsActions.setLineHeight}
-                onThemeChange={setReadingTheme}
+                onFontFamilyChange={prefsActions.setFontFamily}
+                onThemeChange={(t) => {
+                    prefsActions.setTheme(t);
+                    useThemeStore.getState().actions.setMode(t);
+                }}
             />
 
             <WordLookupSheet
