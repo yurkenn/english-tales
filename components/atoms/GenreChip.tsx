@@ -1,4 +1,4 @@
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, Text } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import Animated, {
     useSharedValue,
@@ -19,10 +19,8 @@ const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 export const GenreChip: React.FC<GenreChipProps> = ({
     label,
     isSelected = false,
-    count,
     onPress,
 }) => {
-    const { theme } = useUnistyles();
     const scale = useSharedValue(1);
 
     const animatedStyle = useAnimatedStyle(() => ({
@@ -61,19 +59,6 @@ export const GenreChip: React.FC<GenreChipProps> = ({
             >
                 {label}
             </Text>
-            {count !== undefined && count > 0 && (
-                <View style={[
-                    styles.countBadge,
-                    isSelected && styles.countBadgeSelected,
-                ]}>
-                    <Text style={[
-                        styles.countText,
-                        { color: isSelected ? theme.colors.textInverse : theme.colors.textSecondary }
-                    ]}>
-                        {count > 99 ? '99+' : count}
-                    </Text>
-                </View>
-            )}
         </AnimatedPressable>
     );
 };
@@ -105,21 +90,5 @@ const styles = StyleSheet.create((theme) => ({
     labelDefault: {
         color: theme.colors.text,
         fontWeight: theme.typography.weight.medium,
-    },
-    countBadge: {
-        minWidth: 20,
-        height: 20,
-        borderRadius: 10,
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: theme.spacing.xs,
-    },
-    countBadgeSelected: {
-        backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    },
-    countText: {
-        fontSize: theme.typography.size.xs,
-        fontWeight: theme.typography.weight.semibold,
     },
 }));

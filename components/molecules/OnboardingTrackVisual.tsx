@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { useUnistyles, StyleSheet } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Image } from 'expo-image';
 
 export const OnboardingTrackVisual = () => {
     const { theme } = useUnistyles();
@@ -21,9 +22,17 @@ export const OnboardingTrackVisual = () => {
 
             {/* Foreground Card */}
             <View style={[styles.cardCommon, styles.cardFront]}>
-                {/* Book Cover Placeholder */}
-                <View style={styles.bookCoverPlaceholder}>
-                    <Ionicons name="book" size={64} color={theme.colors.textMuted} />
+                {/* Book Cover with Generated Image */}
+                <View style={styles.bookCoverContainer}>
+                    <Image
+                        source={require('@/assets/images/onboarding_book.png')}
+                        style={styles.bookCoverImage}
+                        contentFit="cover"
+                    />
+                    <LinearGradient
+                        colors={['transparent', 'rgba(0,0,0,0.3)']}
+                        style={styles.bookCoverOverlay}
+                    />
                     <View style={styles.playButtonOverlay}>
                         <View style={styles.playButton}>
                             <Ionicons name="play" size={24} color={theme.colors.textInverse} />
@@ -63,16 +72,17 @@ export const OnboardingTrackVisual = () => {
 
 const styles = StyleSheet.create((theme) => ({
     visualWrapper: {
-        width: 300,
-        height: 400,
+        width: '100%',
+        maxWidth: 300,
+        aspectRatio: 0.75,
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
     },
     blob: {
         position: 'absolute',
-        width: 250,
-        height: 250,
+        width: '85%',
+        aspectRatio: 1,
         borderRadius: 999,
         opacity: 0.5,
     },
@@ -95,11 +105,21 @@ const styles = StyleSheet.create((theme) => ({
         zIndex: 2,
         overflow: 'hidden',
     },
-    bookCoverPlaceholder: {
+    bookCoverContainer: {
         flex: 2,
-        backgroundColor: theme.colors.borderLight,
-        alignItems: 'center',
-        justifyContent: 'center',
+        position: 'relative',
+        overflow: 'hidden',
+    },
+    bookCoverImage: {
+        width: '100%',
+        height: '100%',
+    },
+    bookCoverOverlay: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 60,
     },
     playButtonOverlay: {
         position: 'absolute',

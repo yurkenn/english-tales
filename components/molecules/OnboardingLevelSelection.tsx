@@ -2,20 +2,40 @@ import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { useUnistyles, StyleSheet } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
 
 type ProficiencyLevel = 'beginner' | 'intermediate' | 'advanced';
 
 interface LevelOption {
     id: ProficiencyLevel;
     label: string;
-    icon: string;
+    icon: keyof typeof Ionicons.glyphMap;
     description: string;
+    colors: [string, string];
 }
 
 const LEVELS: LevelOption[] = [
-    { id: 'beginner', label: 'Beginner', icon: '🌱', description: 'Simple words, short sentences' },
-    { id: 'intermediate', label: 'Intermediate', icon: '📚', description: 'Everyday vocabulary, complex sentences' },
-    { id: 'advanced', label: 'Advanced', icon: '🎓', description: 'Rich vocabulary, literary style' },
+    {
+        id: 'beginner',
+        label: 'Beginner',
+        icon: 'leaf',
+        description: 'Simple words, short sentences',
+        colors: ['#22C55E', '#16A34A'],
+    },
+    {
+        id: 'intermediate',
+        label: 'Intermediate',
+        icon: 'library',
+        description: 'Everyday vocabulary, complex sentences',
+        colors: ['#3B82F6', '#2563EB'],
+    },
+    {
+        id: 'advanced',
+        label: 'Advanced',
+        icon: 'school',
+        description: 'Rich vocabulary, literary style',
+        colors: ['#A855F7', '#9333EA'],
+    },
 ];
 
 interface OnboardingLevelSelectionProps {
@@ -40,9 +60,14 @@ export const OnboardingLevelSelection = ({
                     ]}
                     onPress={() => onSelectLevel(level.id)}
                 >
-                    <View style={styles.levelIconContainer}>
-                        <Text style={styles.levelIcon}>{level.icon}</Text>
-                    </View>
+                    <LinearGradient
+                        colors={level.colors}
+                        style={styles.levelIconContainer}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                    >
+                        <Ionicons name={level.icon} size={24} color="#FFFFFF" />
+                    </LinearGradient>
                     <View style={styles.levelTextContainer}>
                         <Text style={[
                             styles.levelLabel,
@@ -85,12 +110,9 @@ const styles = StyleSheet.create((theme) => ({
         width: 48,
         height: 48,
         borderRadius: 24,
-        backgroundColor: theme.colors.borderLight,
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    levelIcon: {
-        fontSize: theme.typography.size.xxl,
+        overflow: 'hidden',
     },
     levelTextContainer: {
         flex: 1,

@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
 
 interface StatItem {
     label: string;
@@ -35,6 +36,7 @@ const getIconBg = (icon: string, theme: any): string => {
 
 export const StatsGrid: React.FC<StatsGridProps> = ({ stats }) => {
     const { theme } = useUnistyles();
+    const { cardWidth } = useResponsiveGrid();
 
     return (
         <View style={styles.container}>
@@ -43,7 +45,7 @@ export const StatsGrid: React.FC<StatsGridProps> = ({ stats }) => {
                 const iconBg = getIconBg(stat.icon, theme);
 
                 return (
-                    <View key={stat.label} style={styles.statCard}>
+                    <View key={stat.label} style={[styles.statCard, { width: cardWidth }]}>
                         <View style={[styles.iconContainer, { backgroundColor: iconBg }]}>
                             <Ionicons name={stat.icon} size={22} color={iconColor} />
                         </View>
@@ -67,7 +69,6 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.lg,
     },
     statCard: {
-        width: '48%',
         flexDirection: 'row',
         alignItems: 'center',
         gap: theme.spacing.md,

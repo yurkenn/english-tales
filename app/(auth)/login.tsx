@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
+import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -72,7 +72,11 @@ export default function LoginScreen() {
 
     return (
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
-            <View style={[styles.content, { paddingTop: insets.top + 40, paddingBottom: insets.bottom + 20 }]}>
+            <ScrollView
+                contentContainerStyle={[styles.scrollContent, { paddingTop: insets.top + 24, paddingBottom: insets.bottom + 16 }]}
+                showsVerticalScrollIndicator={false}
+                keyboardShouldPersistTaps="handled"
+            >
                 <AuthHeader title={t('auth.login.title', 'Welcome Back')} subtitle={t('auth.login.subtitle', 'Sign in to continue your reading journey')} />
 
                 <View style={styles.form}>
@@ -136,7 +140,7 @@ export default function LoginScreen() {
                         </Pressable>
                     </Link>
                 </View>
-            </View>
+            </ScrollView>
         </KeyboardAvoidingView>
     );
 }
@@ -146,13 +150,13 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         backgroundColor: theme.colors.background,
     },
-    content: {
-        flex: 1,
-        paddingHorizontal: theme.spacing.xl,
+    scrollContent: {
+        flexGrow: 1,
+        paddingHorizontal: theme.spacing.lg,
         justifyContent: 'center',
     },
     form: {
-        gap: theme.spacing.lg,
+        gap: theme.spacing.md,
     },
     fieldContainer: {
         marginBottom: theme.spacing.xs,

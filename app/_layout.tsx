@@ -151,7 +151,7 @@ export default function RootLayout() {
       const inAuthGroup = segments[0] === '(auth)';
       const inProtectedGroup = segments[0] === '(tabs)';
 
-      if (!hasOnboarded && !inOnboarding && !user) {
+      if (!hasOnboarded && !inOnboarding && !inAuthGroup && !user) {
         router.replace('/onboarding');
         return;
       }

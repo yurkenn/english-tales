@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, Modal, Dimensions } from 'react-native';
+import { View, Text, Pressable, Modal } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeIn, FadeOut, ZoomIn, ZoomOut } from 'react-native-reanimated';
 import { haptics } from '@/utils/haptics';
 import { useTranslation } from 'react-i18next';
-
-const { width } = Dimensions.get('window');
 
 export interface QuizQuestion {
     question: string;

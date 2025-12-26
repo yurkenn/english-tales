@@ -15,6 +15,7 @@ import {
     reauthenticateWithCredential,
     GoogleAuthProvider,
     EmailAuthProvider,
+    reload,
 } from '@react-native-firebase/auth';
 import { GoogleSignin, statusCodes } from '@react-native-google-signin/google-signin';
 import { Platform } from 'react-native';
@@ -52,7 +53,7 @@ export const signUp = async (email: string, password: string, displayName: strin
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(userCredential.user, { displayName });
     // Reload user to get updated displayName
-    await userCredential.user.reload();
+    await reload(userCredential.user);
     // Get the current user with updated profile
     const updatedUser = auth.currentUser;
     return mapUser(updatedUser || userCredential.user);
@@ -92,7 +93,7 @@ export const signInAnonymously = async (): Promise<User> => {
     await updateProfile(userCredential.user, { displayName: guestUsername });
 
     // Reload to get updated profile
-    await userCredential.user.reload();
+    await reload(userCredential.user);
     const updatedUser = auth.currentUser;
 
     return mapUser(updatedUser || userCredential.user);

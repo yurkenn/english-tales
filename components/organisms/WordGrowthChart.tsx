@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { View, Text, useWindowDimensions } from 'react-native';
+import { View, Text } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { subDays, format, startOfDay, isSameDay } from 'date-fns';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +11,6 @@ interface ChartData {
 export const WordGrowthChart: React.FC<ChartData> = ({ words }) => {
     const { t } = useTranslation();
     const { theme } = useUnistyles();
-    const { width: windowWidth } = useWindowDimensions();
 
     const chartData = useMemo(() => {
         const last7Days = Array.from({ length: 7 }, (_, i) => {

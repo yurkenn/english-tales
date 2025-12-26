@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, Pressable, ActivityIndicator, useWindowDimensions } from 'react-native';
+import { View, Text, Pressable, ActivityIndicator } from 'react-native';
 import { useUnistyles, StyleSheet } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
 
 interface OnboardingSlideProps {
     title: string;
@@ -29,10 +30,10 @@ export const OnboardingSlide = ({
     children,
 }: OnboardingSlideProps) => {
     const { theme } = useUnistyles();
-    const { width } = useWindowDimensions();
+    const { windowWidth } = useResponsiveGrid();
 
     return (
-        <View style={[styles.slide, { width }]}>
+        <View style={[styles.slide, { width: windowWidth }]}>
             {/* Visual Area */}
             <View style={styles.visualContainer}>
                 {children}
@@ -93,41 +94,42 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
     },
     visualContainer: {
-        flex: 1.2,
+        flex: 1,
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
+        paddingVertical: 16,
     },
     contentContainer: {
         flex: 1,
         width: '100%',
-        paddingHorizontal: 32,
+        paddingHorizontal: 24,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingTop: 32,
-        paddingBottom: 40,
+        paddingTop: 16,
+        paddingBottom: 24,
     },
     title: {
-        fontSize: theme.typography.size.display,
+        fontSize: theme.typography.size.xxl,
         fontWeight: 'bold',
         color: theme.colors.text,
         textAlign: 'center',
-        marginBottom: 16,
-        lineHeight: 40,
+        marginBottom: 12,
+        lineHeight: 32,
     },
     description: {
-        fontSize: theme.typography.size.md,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
         textAlign: 'center',
-        marginBottom: 32,
-        lineHeight: 24,
+        marginBottom: 20,
+        lineHeight: 20,
         maxWidth: 280,
     },
     indicators: {
         flexDirection: 'row',
         gap: 8,
-        marginBottom: 32,
+        marginBottom: 20,
     },
     indicator: {
         height: 8,
@@ -143,7 +145,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     button: {
         width: '100%',
-        height: 56,
+        height: 52,
         backgroundColor: theme.colors.primary,
         borderRadius: theme.radius.full,
         flexDirection: 'row',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, StyleSheet as RNStyleSheet, Dimensions } from 'react-native';
+import { View, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -10,8 +10,6 @@ import {
     RatingStars,
     BookCover
 } from '../atoms';
-
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 interface FeaturedCardProps {
     story: Story;

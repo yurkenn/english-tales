@@ -1,17 +1,12 @@
 import React, { memo } from 'react';
-import { View, Pressable, Dimensions } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Typography, BookCover } from '../atoms';
 import type { Story } from '@/types';
 import { DIFFICULTY_COLORS, DIFFICULTY_LABELS } from './moleculeTypes';
-
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
-const CARD_GAP = 16; // Increased from 12 for better breathing room
-const HORIZONTAL_PADDING = 16;
-export const CARD_WIDTH = (SCREEN_WIDTH - HORIZONTAL_PADDING * 2 - CARD_GAP) / 2;
-export const CARD_IMAGE_HEIGHT = CARD_WIDTH * 1.5;
+import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
 
 interface StoryGridCardProps {
     story: Story;
@@ -25,6 +20,9 @@ const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
     onPress,
 }) => {
     const { theme } = useUnistyles();
+    const { cardWidth } = useResponsiveGrid();
+    const cardImageHeight = cardWidth * 1.5;
+
     const difficultyColor = DIFFICULTY_COLORS[story.difficulty] || theme.colors.textMuted;
     const difficultyLabel = DIFFICULTY_LABELS[story.difficulty] || story.difficulty;
 
@@ -32,23 +30,24 @@ const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
         <Pressable
             style={({ pressed }) => [
                 styles.card,
+                { width: cardWidth },
                 pressed && styles.cardPressed,
             ]}
             onPress={onPress}
         >
-            <View style={styles.coverContainer}>
+            <View style={[styles.coverContainer, { width: cardWidth, height: cardImageHeight }]}>
                 <BookCover
                     source={{ uri: story.coverImage || '' }}
                     placeholder={story.coverImageLqip}
-                    width={CARD_WIDTH}
-                    height={CARD_IMAGE_HEIGHT}
+                    width={cardWidth}
+                    height={cardImageHeight}
                     sharedTransitionTag={`story-image-${story.id}`}
                     showPages={true}
                     borderRadius={10}
                 />
 
                 <LinearGradient
-                    colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.85)']} // Refined gradient
+                    colors={['transparent', 'rgba(0,0,0,0.4)', 'rgba(0,0,0,0.85)']}
                     style={styles.gradient}
                 />
 
@@ -94,7 +93,6 @@ export const StoryGridCard = memo(StoryGridCardComponent, (prevProps, nextProps)
 
 const styles = StyleSheet.create((theme) => ({
     card: {
-        width: CARD_WIDTH,
         marginBottom: theme.spacing.md,
     },
     cardPressed: {
@@ -103,8 +101,6 @@ const styles = StyleSheet.create((theme) => ({
     },
     coverContainer: {
         position: 'relative',
-        width: CARD_WIDTH,
-        height: CARD_IMAGE_HEIGHT,
     },
     gradient: {
         position: 'absolute',

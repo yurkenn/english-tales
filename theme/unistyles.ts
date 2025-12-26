@@ -13,6 +13,7 @@ import {
     bookCover,
     tabBar,
 } from './tokens';
+import { breakpoints, layout } from './responsive';
 
 // Light theme
 export const lightTheme = {
@@ -25,6 +26,7 @@ export const lightTheme = {
     avatarSize,
     bookCover,
     tabBar,
+    layout,
 } as const;
 
 // Dark theme
@@ -38,6 +40,7 @@ export const darkTheme = {
     avatarSize,
     bookCover,
     tabBar,
+    layout,
 } as const;
 
 // Sepia theme
@@ -51,6 +54,7 @@ export const sepiaTheme = {
     avatarSize,
     bookCover,
     tabBar,
+    layout,
 } as const;
 
 export type Theme = typeof lightTheme;
@@ -61,8 +65,11 @@ type AppThemes = {
     sepia: typeof sepiaTheme;
 };
 
+type AppBreakpoints = typeof breakpoints
+
 declare module 'react-native-unistyles' {
     export interface UnistylesThemes extends AppThemes { }
+    export interface UnistylesBreakpoints extends AppBreakpoints { }
 }
 
 // Get initial theme from system appearance
@@ -70,8 +77,9 @@ const getInitialTheme = (): 'light' | 'dark' | 'sepia' => {
     return Appearance.getColorScheme() === 'dark' ? 'dark' : 'light';
 };
 
-// Configure unistyles - NO adaptiveThemes, we control switching manually
+// Configure unistyles - with breakpoints for responsive design
 StyleSheet.configure({
+    breakpoints,
     themes: {
         light: lightTheme,
         dark: darkTheme,

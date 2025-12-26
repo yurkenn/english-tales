@@ -1,7 +1,7 @@
 /**
  * Analytics Service - Native Firebase Modular API
  */
-import { getAnalytics, logEvent, logScreenView, setUserId, setUserProperties } from '@react-native-firebase/analytics'
+import { getAnalytics, logEvent, setUserId, setUserProperties } from '@react-native-firebase/analytics'
 import { analyticsLogger as logger } from '@/utils/logger'
 
 const analytics = getAnalytics()
@@ -10,7 +10,9 @@ class AnalyticsService {
     async logScreenView(screenName: string, screenClass?: string) {
         logger.log(`logScreenView: ${screenName}`)
         try {
-            await logScreenView(analytics, {
+            // Using logEvent with screen_view as per Firebase v22 migration
+            // Type assertion needed as screen_view is a valid Firebase event
+            await logEvent(analytics, 'screen_view' as any, {
                 screen_name: screenName,
                 screen_class: screenClass || screenName,
             })

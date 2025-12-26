@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react'
-import { View, Pressable, ScrollView, Image, Dimensions } from 'react-native'
+import { View, Pressable, ScrollView, Image } from 'react-native'
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -29,7 +29,6 @@ import { UserProfile, CommunityPost } from '@/types'
 import { haptics } from '@/utils/haptics'
 
 const DEFAULT_AVATAR = require('@/assets/defaultavatar.png')
-const { width: SCREEN_WIDTH } = Dimensions.get('window')
 
 // Tab Types
 type TabType = 'posts' | 'saved' | 'about'

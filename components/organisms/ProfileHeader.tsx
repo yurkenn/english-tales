@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Pressable, Dimensions, Linking, Image, ImageSourcePropType } from 'react-native';
+import { View, Pressable, Linking, Image, ImageSourcePropType } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -17,8 +17,6 @@ import { useTranslation } from 'react-i18next';
 
 // Default mascot avatar for users without profile photo
 const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
-
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 interface ProfileHeaderProps {
     profile: UserProfile;

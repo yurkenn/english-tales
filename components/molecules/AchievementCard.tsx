@@ -4,6 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles'
 import { Ionicons } from '@expo/vector-icons'
 import { Achievement, AchievementRarity, RARITY_COLORS } from '@/store/achievementsStore'
 import { Typography } from '@/components/atoms'
+import { useResponsiveGrid } from '@/hooks/useResponsiveGrid'
 
 interface AchievementCardProps {
     achievement: Achievement & { unlocked: boolean }
@@ -27,6 +28,7 @@ const formatDate = (date: Date | undefined): string => {
 
 export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, progress = 0 }) => {
     const { theme } = useUnistyles()
+    const { cardWidth } = useResponsiveGrid()
     const shimmerAnim = useRef(new Animated.Value(0)).current
     const scaleAnim = useRef(new Animated.Value(1)).current
     const rarityColors = RARITY_COLORS[achievement.rarity]
@@ -78,7 +80,7 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, p
         <Animated.View
             style={[
                 styles.card,
-                { transform: [{ scale: scaleAnim }] },
+                { width: cardWidth, transform: [{ scale: scaleAnim }] },
                 achievement.unlocked && {
                     borderWidth: 2,
                     borderColor: rarityColors.primary,
@@ -106,21 +108,25 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, p
                 <Text style={styles.iconText}>{achievement.icon}</Text>
 
                 {/* Shimmer overlay for unlocked */}
-                {achievement.unlocked && (
-                    <Animated.View
-                        style={[
-                            styles.shimmer,
-                            { opacity: shimmerOpacity, backgroundColor: rarityColors.glow },
-                        ]}
-                    />
-                )}
+                {
+                    achievement.unlocked && (
+                        <Animated.View
+                            style={[
+                                styles.shimmer,
+                                { opacity: shimmerOpacity, backgroundColor: rarityColors.glow },
+                            ]}
+                        />
+                    )
+                }
 
                 {/* Lock overlay for locked */}
-                {!achievement.unlocked && (
-                    <View style={styles.lockOverlay}>
-                        <Ionicons name="lock-closed" size={20} color={theme.colors.textMuted} />
-                    </View>
-                )}
+                {
+                    !achievement.unlocked && (
+                        <View style={styles.lockOverlay}>
+                            <Ionicons name="lock-closed" size={20} color={theme.colors.textMuted} />
+                        </View>
+                    )
+                }
             </View>
 
             {/* Title */}
@@ -140,36 +146,39 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, p
             </Typography>
 
             {/* Progress bar for locked achievements */}
-            {!achievement.unlocked && progress > 0 && (
-                <View style={styles.progressContainer}>
-                    <View style={styles.progressBar}>
-                        <View
-                            style={[
-                                styles.progressFill,
-                                { width: `${progress * 100}%`, backgroundColor: rarityColors.primary },
-                            ]}
-                        />
+            {
+                !achievement.unlocked && progress > 0 && (
+                    <View style={styles.progressContainer}>
+                        <View style={styles.progressBar}>
+                            <View
+                                style={[
+                                    styles.progressFill,
+                                    { width: `${progress * 100}%`, backgroundColor: rarityColors.primary },
+                                ]}
+                            />
+                        </View>
+                        <Typography style={styles.progressText}>{Math.round(progress * 100)}%</Typography>
                     </View>
-                    <Typography style={styles.progressText}>{Math.round(progress * 100)}%</Typography>
-                </View>
-            )}
+                )
+            }
 
             {/* Unlock date */}
-            {achievement.unlocked && achievement.unlockedAt && (
-                <View style={styles.unlockedContainer}>
-                    <Ionicons name="checkmark-circle" size={14} color={rarityColors.primary} />
-                    <Typography style={[styles.unlockedDate, { color: rarityColors.primary }]}>
-                        {formatDate(achievement.unlockedAt)}
-                    </Typography>
-                </View>
-            )}
+            {
+                achievement.unlocked && achievement.unlockedAt && (
+                    <View style={styles.unlockedContainer}>
+                        <Ionicons name="checkmark-circle" size={14} color={rarityColors.primary} />
+                        <Typography style={[styles.unlockedDate, { color: rarityColors.primary }]}>
+                            {formatDate(achievement.unlockedAt)}
+                        </Typography>
+                    </View>
+                )
+            }
         </Animated.View>
     )
 }
 
 const styles = StyleSheet.create((theme) => ({
     card: {
-        width: '48%',
         backgroundColor: theme.colors.surface,
         borderRadius: 16,
         padding: 16,

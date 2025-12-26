@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Modal, View, Text, Pressable, Animated, Dimensions } from 'react-native';
+import { Modal, View, Text, Pressable, Animated, useWindowDimensions } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -19,7 +19,6 @@ interface StoryCardMenuProps {
     sectionLabel?: string;
 }
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 const MENU_WIDTH = 200;
 const MENU_OFFSET = 8;
 
@@ -31,6 +30,7 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
     sectionLabel,
 }) => {
     const { theme } = useUnistyles();
+    const { width: windowWidth, height: windowHeight } = useWindowDimensions();
     const insets = useSafeAreaInsets();
     const opacityAnim = useRef(new Animated.Value(0)).current;
     const scaleAnim = useRef(new Animated.Value(0.95)).current;
@@ -70,7 +70,7 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
     // The position.x is the right edge of the button, position.y is the top
     const menuX = Math.min(
         position.x - MENU_WIDTH, // Align right edge of menu with button's right edge
-        SCREEN_WIDTH - MENU_WIDTH - insets.right - theme.spacing.lg
+        windowWidth - MENU_WIDTH - insets.right - theme.spacing.lg
     );
     const menuY = position.y + MENU_OFFSET; // Position below the button
 
@@ -80,7 +80,7 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
         insets.top + theme.spacing.sm,
         Math.min(
             menuY,
-            SCREEN_HEIGHT - (items.length * 50) - insets.bottom - theme.spacing.lg
+            windowHeight - (items.length * 50) - insets.bottom - theme.spacing.lg
         )
     );
 

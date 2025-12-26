@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useCallback, useRef } from 'react'
-import { View, FlatList, RefreshControl, Dimensions, Text, Pressable } from 'react-native'
+import { View, FlatList, RefreshControl, Text, Pressable } from 'react-native'
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -29,8 +29,7 @@ import { useDownloadStore } from '@/store/downloadStore'
 import { useToastStore } from '@/store/toastStore'
 import { useVocabularyStore } from '@/store/vocabularyStore'
 import { haptics } from '@/utils/haptics'
-
-const { width: SCREEN_WIDTH } = Dimensions.get('window')
+import { useResponsiveGrid } from '@/hooks/useResponsiveGrid'
 
 // Segmented Tab Component
 interface SegmentTabProps {
@@ -56,6 +55,7 @@ export default function LibraryScreen() {
     const { theme } = useUnistyles()
     const router = useRouter()
     const insets = useSafeAreaInsets()
+    const { windowWidth } = useResponsiveGrid()
     const { user } = useAuthStore()
     const { items: libraryItems, isLoading, actions: libraryActions } = useLibraryStore()
     const { progressMap, actions: progressActions } = useProgressStore()
@@ -143,11 +143,11 @@ export default function LibraryScreen() {
                 setMenuVisible(true)
             })
         } else {
-            setMenuPosition({ x: SCREEN_WIDTH - 220, y: 100 })
+            setMenuPosition({ x: windowWidth - 220, y: 100 })
             setSelectedItem(item)
             setMenuVisible(true)
         }
-    }, [])
+    }, [windowWidth])
 
     const handleMenuClose = useCallback(() => {
         setMenuVisible(false)

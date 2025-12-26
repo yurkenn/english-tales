@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Pressable, LayoutChangeEvent, Dimensions } from 'react-native';
+import { View, Pressable, LayoutChangeEvent } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Feather } from '@expo/vector-icons';
@@ -12,11 +12,10 @@ import Animated, {
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { haptics } from '@/utils/haptics';
 import { useNotificationStore } from '@/store/notificationStore';
+import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
 
 const TAB_BAR_WIDTH_PERCENT = 0.94;
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const CONTAINER_WIDTH = SCREEN_WIDTH * TAB_BAR_WIDTH_PERCENT;
-const BUBBLE_PADDING = 6; // Padding around the bubble within each tab slot
+const BUBBLE_PADDING = 6;
 
 const SPRING_CONFIG = {
     damping: 20,
@@ -26,11 +25,14 @@ const SPRING_CONFIG = {
 
 export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, navigation }) => {
     const { theme } = useUnistyles();
+    const { windowWidth } = useResponsiveGrid();
     const insets = useSafeAreaInsets();
     const unreadCount = useNotificationStore(s => s.unreadCount);
-    const [tabWidth, setTabWidth] = useState(CONTAINER_WIDTH / state.routes.length);
 
-    const translateX = useSharedValue(state.index * (CONTAINER_WIDTH / state.routes.length));
+    const containerWidth = windowWidth * TAB_BAR_WIDTH_PERCENT;
+    const [tabWidth, setTabWidth] = useState(containerWidth / state.routes.length);
+
+    const translateX = useSharedValue(state.index * tabWidth);
 
     useEffect(() => {
         translateX.value = withSpring(state.index * tabWidth, SPRING_CONFIG);

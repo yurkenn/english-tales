@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, Dimensions } from 'react-native';
+import { View, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, {
@@ -9,10 +9,9 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Typography } from '../atoms';
 import { haptics } from '@/utils/haptics';
+import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
 
 export type ProfileTabType = 'posts' | 'reviews' | 'library' | 'achievements';
-
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 interface ProfileTabsProps {
     activeTab: ProfileTabType;
@@ -31,6 +30,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
     counts,
 }) => {
     const { theme } = useUnistyles();
+    const { windowWidth } = useResponsiveGrid();
 
     const tabs: { id: ProfileTabType; icon: any; label: string; count?: number }[] = [
         { id: 'posts', icon: 'apps-outline', label: 'Posts', count: counts?.posts },
@@ -39,7 +39,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
         { id: 'achievements', icon: 'trophy-outline', label: 'Badges', count: counts?.achievements },
     ];
 
-    const tabWidth = SCREEN_WIDTH / tabs.length;
+    const tabWidth = windowWidth / tabs.length;
     const activeIndex = tabs.findIndex(t => t.id === activeTab);
 
     const indicatorStyle = useAnimatedStyle(() => {

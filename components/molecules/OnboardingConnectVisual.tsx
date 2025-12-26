@@ -51,16 +51,17 @@ export const OnboardingConnectVisual = () => {
 
 const styles = StyleSheet.create((theme) => ({
     visualWrapper: {
-        width: 300,
-        height: 400,
+        width: '100%',
+        maxWidth: 300,
+        aspectRatio: 0.75,
         alignItems: 'center',
         justifyContent: 'center',
         position: 'relative',
     },
     blob: {
         position: 'absolute',
-        width: 250,
-        height: 250,
+        width: '85%',
+        aspectRatio: 1,
         borderRadius: 999,
         opacity: 0.5,
     },

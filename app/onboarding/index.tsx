@@ -103,7 +103,7 @@ export default function OnboardingScreen() {
                 onNext={handleNext}
                 isLoading={isLastSlide && isLoading}
                 showLoginLink={isLastSlide}
-                onLoginPress={() => router.replace('/login')}
+                onLoginPress={() => router.push('/(auth)/login')}
             >
                 {item.id === 'track' && <OnboardingTrackVisual />}
                 {item.id === 'connect' && <OnboardingConnectVisual />}
