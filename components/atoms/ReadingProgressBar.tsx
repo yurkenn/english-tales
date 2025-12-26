@@ -19,7 +19,7 @@ interface ReadingProgressBarProps {
  * Progress bar component for the reading screen.
  * Visualizes reading progress and displays remaining time.
  */
-export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = ({
+export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = React.memo(({
     progress,
     estimatedReadTime,
 }) => {
@@ -44,7 +44,7 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = ({
             </View>
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create((theme) => ({
     container: {

@@ -76,6 +76,17 @@ export default function ReadingScreen() {
     const { actions: libraryActions } = useLibraryStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
 
+    // Memoized font size handlers to prevent re-renders
+    const handleFontDecrease = useCallback(() => {
+        haptics.light();
+        prefsActions.setFontSize(Math.max(14, fontSize - 2));
+    }, [fontSize, prefsActions]);
+
+    const handleFontIncrease = useCallback(() => {
+        haptics.light();
+        prefsActions.setFontSize(Math.min(28, fontSize + 2));
+    }, [fontSize, prefsActions]);
+
     const isInLibrary = id ? libraryActions.isInLibrary(id) : false;
     const isDownloaded = id ? downloadActions.isDownloaded(id) : false;
 
@@ -158,7 +169,8 @@ export default function ReadingScreen() {
 
         const newProgress = Math.min(100, Math.round((contentOffset.y / scrollableHeight) * 100));
 
-        if (newProgress > 0 && newProgress !== progress) {
+        // Only update if progress changed by at least 1% to reduce re-renders
+        if (newProgress > 0 && Math.abs(newProgress - progress) >= 1) {
             setProgress(newProgress);
             saveProgress(newProgress);
 
@@ -384,7 +396,7 @@ export default function ReadingScreen() {
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
                 onScroll={handleScroll}
-                scrollEventThrottle={16}
+                scrollEventThrottle={100}
             >
                 {content ? (
                     <PortableTextRenderer
@@ -411,8 +423,8 @@ export default function ReadingScreen() {
                     readingTheme={readingTheme}
                     isInLibrary={isInLibrary}
                     storyTitle={storyDoc.title}
-                    onFontDecrease={() => { haptics.light(); prefsActions.setFontSize(Math.max(14, fontSize - 2)); }}
-                    onFontIncrease={() => { haptics.light(); prefsActions.setFontSize(Math.min(28, fontSize + 2)); }}
+                    onFontDecrease={handleFontDecrease}
+                    onFontIncrease={handleFontIncrease}
                     onThemeToggle={cycleReadingTheme}
                     onBookmarkToggle={handleBookmarkToggle}
                     onAudioToggle={toggleAudioPlayer}

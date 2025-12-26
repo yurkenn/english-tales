@@ -14,7 +14,7 @@ interface PortableTextRendererProps {
     dyslexicFontEnabled?: boolean;
 }
 
-export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
+export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.memo(({
     content,
     fontSize,
     lineHeight,
@@ -182,7 +182,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = ({
             {content.map((block, index) => renderBlock(block, index, index === 0))}
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create((theme) => ({
     container: {

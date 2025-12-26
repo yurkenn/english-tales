@@ -17,7 +17,7 @@ interface ReadingControlsProps {
     onAudioToggle: () => void;
 }
 
-export const ReadingControls: React.FC<ReadingControlsProps> = ({
+export const ReadingControls: React.FC<ReadingControlsProps> = React.memo(({
     fontSize,
     readingTheme,
     isInLibrary,
@@ -92,7 +92,7 @@ export const ReadingControls: React.FC<ReadingControlsProps> = ({
             </Pressable>
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create((theme) => ({
     controlRow: {

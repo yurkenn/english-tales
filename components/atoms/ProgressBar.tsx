@@ -9,7 +9,7 @@ interface ProgressBarProps {
     trackColor?: string;
 }
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({
+export const ProgressBar: React.FC<ProgressBarProps> = React.memo(({
     progress,
     height = 8,
     showBackground = true,
@@ -43,7 +43,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
             />
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create((theme) => ({
     container: {

@@ -22,7 +22,7 @@ interface ReadingHeaderProps {
  * Header component for the reading screen.
  * Displays title, download status, and provides actions for closing and settings.
  */
-export const ReadingHeader: React.FC<ReadingHeaderProps> = ({
+export const ReadingHeader: React.FC<ReadingHeaderProps> = React.memo(({
     title,
     isDownloaded,
     onClose,
@@ -55,7 +55,7 @@ export const ReadingHeader: React.FC<ReadingHeaderProps> = ({
             </Pressable>
         </View>
     );
-};
+});
 
 const styles = StyleSheet.create((theme) => ({
     header: {
