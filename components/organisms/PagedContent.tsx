@@ -6,12 +6,14 @@ import PagerView from 'react-native-pager-view';
 import { PortableTextRenderer } from './PortableTextRenderer';
 import { haptics } from '@/utils/haptics';
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated';
+import { Highlight } from '@/store/highlightStore';
 
 interface PagedContentProps {
     pages: PortableTextBlock[][];
     currentPage: number;
     onPageChange: (page: number) => void;
     onWordPress: (word: string) => void;
+    onWordLongPress?: (word: string, blockKey: string) => void;
     onTryNextOnLastPage?: () => void;
     fontSize: number;
     lineHeight: number;
@@ -19,6 +21,7 @@ interface PagedContentProps {
     backgroundColor: string;
     dyslexicFontEnabled?: boolean;
     selectedWord?: string;
+    highlights?: Highlight[];
 }
 
 export const PagedContent = React.memo(({
@@ -26,6 +29,7 @@ export const PagedContent = React.memo(({
     currentPage,
     onPageChange,
     onWordPress,
+    onWordLongPress,
     onTryNextOnLastPage,
     fontSize,
     lineHeight,
@@ -33,6 +37,7 @@ export const PagedContent = React.memo(({
     backgroundColor,
     dyslexicFontEnabled,
     selectedWord,
+    highlights = [],
 }: PagedContentProps) => {
     const { theme } = useUnistyles();
     const { width } = useWindowDimensions();
@@ -105,8 +110,10 @@ export const PagedContent = React.memo(({
                                 lineHeight={lineHeight}
                                 textColor={textColor}
                                 onWordPress={onWordPress}
+                                onWordLongPress={onWordLongPress}
                                 dyslexicFontEnabled={dyslexicFontEnabled}
                                 selectedWord={selectedWord}
+                                highlights={highlights}
                             />
                         </Animated.View>
                     </View>

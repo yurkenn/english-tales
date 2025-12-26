@@ -4,6 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { PortableTextBlock } from '@portabletext/types';
 import { urlFor } from '@/services/sanity/client';
 import { CheckpointItem } from '../molecules';
+import { Highlight, HIGHLIGHT_COLORS } from '@/store/highlightStore';
 
 interface PortableTextRendererProps {
     content: PortableTextBlock[];
@@ -11,8 +12,10 @@ interface PortableTextRendererProps {
     lineHeight: number;
     textColor: string;
     onWordPress?: (word: string) => void;
+    onWordLongPress?: (word: string, blockKey: string) => void;
     dyslexicFontEnabled?: boolean;
-    selectedWord?: string; // New: for highlight
+    selectedWord?: string;
+    highlights?: Highlight[];
 }
 
 export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.memo(({
@@ -21,8 +24,10 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
     lineHeight,
     textColor,
     onWordPress,
+    onWordLongPress,
     dyslexicFontEnabled,
     selectedWord,
+    highlights = [],
 }) => {
     const { theme } = useUnistyles();
 
@@ -33,11 +38,17 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
         }
     }, [onWordPress]);
 
+    const handleWordLongPress = useCallback((word: string, blockKey: string) => {
+        if (onWordLongPress) {
+            onWordLongPress(word, blockKey);
+        }
+    }, [onWordLongPress]);
+
     if (!content || !Array.isArray(content)) {
         return <Text style={[styles.paragraph, { fontSize, color: textColor, lineHeight: fontSize * lineHeight }]}>No content available.</Text>;
     }
 
-    const renderChildren = (children: any[], isFirstParagraph = false) => {
+    const renderChildren = (children: any[], blockKey: string, isFirstParagraph = false) => {
         return children.map((child, index) => {
             if (child._type === 'span') {
                 // Safety check: if child.text is undefined/null, skip or render empty
@@ -67,7 +78,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                     });
                 }
 
-                if (onWordPress) {
+                if (onWordPress || onWordLongPress) {
                     // Split text into words while preserving spaces
                     const text = String(child.text || '');
                     const words = text.split(/(\s+)/);
@@ -80,10 +91,18 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                                 }
                                 const cleanWord = part.replace(/[^a-zA-Z]/g, '').toLowerCase();
                                 const isSelected = selectedWord && cleanWord === selectedWord.toLowerCase();
+
+                                // Check if word has a highlight
+                                const wordHighlight = highlights.find(h =>
+                                    h.blockKey === blockKey &&
+                                    h.text.replace(/[^a-zA-Z]/g, '').toLowerCase() === cleanWord
+                                );
+
                                 return (
                                     <Text
                                         key={wordIdx}
                                         onPress={() => handleWordPress(part)}
+                                        onLongPress={() => handleWordLongPress(part, blockKey)}
                                         style={[
                                             {
                                                 color: textColor,
@@ -93,6 +112,10 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                                             isSelected && {
                                                 backgroundColor: theme.colors.primary + '30',
                                                 borderRadius: 4,
+                                            },
+                                            wordHighlight && {
+                                                backgroundColor: HIGHLIGHT_COLORS[wordHighlight.color],
+                                                borderRadius: 2,
                                             }
                                         ]}
                                     >
@@ -155,20 +178,20 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
             case 'h2':
                 return (
                     <Text key={index} style={[styles.heading2, { color: textColor, fontFamily: theme.typography.fontFamily.heading }]}>
-                        {renderChildren(block.children)}
+                        {renderChildren(block.children, block._key || `block-${index}`)}
                     </Text>
                 );
             case 'h3':
                 return (
                     <Text key={index} style={[styles.heading3, { color: textColor, fontFamily: theme.typography.fontFamily.heading }]}>
-                        {renderChildren(block.children)}
+                        {renderChildren(block.children, block._key || `block-${index}`)}
                     </Text>
                 );
             case 'blockquote':
                 return (
                     <View key={index} style={[styles.blockquote, { borderLeftColor: theme.colors.primary + '40' }]}>
                         <Text style={[styles.blockquoteText, { fontSize: fontSize * 1.05, color: textColor, lineHeight: fontSize * lineHeight * 1.1 }]}>
-                            {renderChildren(block.children)}
+                            {renderChildren(block.children, block._key || `block-${index}`)}
                         </Text>
                     </View>
                 );
@@ -183,7 +206,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                             letterSpacing: dyslexicFontEnabled ? 1 : 0.2,
                         }
                     ]}>
-                        {renderChildren(block.children, isFirst)}
+                        {renderChildren(block.children, block._key || `block-${index}`, isFirst)}
                     </Text>
                 );
         }

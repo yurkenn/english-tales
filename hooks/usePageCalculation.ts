@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useCallback } from 'react';
 import { useWindowDimensions } from 'react-native';
 import { PortableTextBlock } from '@portabletext/types';
 
@@ -15,6 +15,7 @@ interface UsePageCalculationProps {
 interface UsePageCalculationResult {
     pages: PortableTextBlock[][];
     totalPages: number;
+    findPageByBlockKey: (blockKey: string | undefined) => number;
 }
 
 // Get text content from a block
@@ -111,8 +112,17 @@ export function usePageCalculation({
         return result;
     }, [content, fontSize, lineHeight, width, height, headerHeight, controlsHeight, horizontalPadding, verticalPadding]);
 
+    const findPageByBlockKey = useCallback((blockKey: string | undefined): number => {
+        if (!blockKey) return 0;
+        const index = pages.findIndex(page =>
+            page.some(block => block._key === blockKey)
+        );
+        return index >= 0 ? index : 0;
+    }, [pages]);
+
     return {
         pages,
         totalPages: pages.length,
+        findPageByBlockKey,
     };
 }

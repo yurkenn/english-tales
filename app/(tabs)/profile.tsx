@@ -1,11 +1,9 @@
-import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react'
+import React, { useCallback } from 'react'
 import { View, Pressable, ScrollView, Image } from 'react-native'
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
-import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
 import { useTranslation } from 'react-i18next'
-import BottomSheet from '@gorhom/bottom-sheet'
 
 import { Typography, ProfileTabButton, ProfileStatItem } from '../../components/atoms'
 import { CommunityPostCard } from '../../components/organisms/CommunityPostCard'
@@ -15,23 +13,14 @@ import { EmptyState } from '../../components/molecules/EmptyState'
 import { ProfileScreenSkeleton } from '../../components/skeletons/ProfileScreenSkeleton'
 import { ReadingGoalsSheet } from '../../components/organisms/ReadingGoalsSheet'
 import { ActionSheet } from '../../components/molecules/ActionSheet'
+import { DailyGoalCard } from '../../components/molecules/DailyGoalCard'
 
-import { useAuthStore } from '@/store/authStore'
 import { useLibraryStore } from '@/store/libraryStore'
 import { useProgressStore } from '@/store/progressStore'
-import { useAchievementsStore } from '@/store/achievementsStore'
-import { useSettingsStore } from '@/store/settingsStore'
-import { useThemeStore } from '@/store/themeStore'
-import { useVocabularyStore } from '@/store/vocabularyStore'
-import { userService } from '@/services/userService'
-import { communityService } from '@/services/communityService'
-import { UserProfile, CommunityPost } from '@/types'
 import { haptics } from '@/utils/haptics'
+import { useProfileDataManager, useProfileStatsManager, useProfileUIController } from '@/hooks'
 
 const DEFAULT_AVATAR = require('@/assets/defaultavatar.png')
-
-// Tab Types
-type TabType = 'posts' | 'saved' | 'about'
 
 // Menu Item Component
 const MenuItem = ({
@@ -70,112 +59,43 @@ const MenuItem = ({
     )
 }
 
-// Constants
-const LANGUAGES = [
-    { code: 'en', label: 'English' },
-    { code: 'tr', label: 'Türkçe' },
-    { code: 'es', label: 'Español' },
-    { code: 'de', label: 'Deutsch' },
-    { code: 'fr', label: 'Français' },
-]
-
 export default function ProfileScreen() {
     const { t } = useTranslation()
     const { theme } = useUnistyles()
-    const router = useRouter()
     const insets = useSafeAreaInsets()
 
     // Stores
-    const { user, signOut, isLoading: authLoading } = useAuthStore()
     const { items: libraryItems } = useLibraryStore()
-    const { progressMap, totalReadingTimeMs, actions: progressActions } = useProgressStore()
-    const { savedWords } = useVocabularyStore()
-    const { actions: achievementActions } = useAchievementsStore()
-    const { settings, actions: settingsActions } = useSettingsStore()
-    const { mode: themeMode, actions: themeActions } = useThemeStore()
+    const { todayStats } = useProgressStore()
 
-    // State
-    const [activeTab, setActiveTab] = useState<TabType>('posts')
-    const [fullProfile, setFullProfile] = useState<UserProfile | null>(null)
-    const [myPosts, setMyPosts] = useState<CommunityPost[]>([])
-    const [loadingProfile, setLoadingProfile] = useState(true)
-    const [showGuestBanner, setShowGuestBanner] = useState(true)
+    // Hooks
+    const { user, fullProfile, myPosts, loadingProfile } = useProfileDataManager()
+    const {
+        stats,
+        achievements,
+        unlockedCount,
+        themeModeLabel,
+        currentLanguageLabel,
+        settings,
+        LANGUAGES
+    } = useProfileStatsManager(user, myPosts)
 
-    // Refs
-    const goalsSheetRef = useRef<BottomSheet>(null)
-    const langSheetRef = useRef<BottomSheet>(null)
-
-    // Initial load
-    useEffect(() => {
-        const loadInitialData = async () => {
-            if (!user) return
-            setLoadingProfile(true)
-
-            const [profileRes, postsRes] = await Promise.all([
-                userService.getUserProfile(user.id),
-                communityService.getPostsByUser(user.id),
-            ])
-
-            if (profileRes.success) setFullProfile(profileRes.data)
-            if (postsRes.success) setMyPosts(postsRes.data)
-
-            setLoadingProfile(false)
-        }
-        loadInitialData()
-        settingsActions.loadSettings()
-    }, [user, settingsActions])
-
-    // Computed
-    const achievements = achievementActions.getAll()
-    const unlockedCount = achievements.filter((a) => a.unlocked).length
-
-    const stats = useMemo(() => {
-        let booksRead = 0
-        Object.values(progressMap).forEach((p) => { if (p.isCompleted) booksRead++ })
-        const userWords = user?.id ? (savedWords[user.id] || {}) : {}
-        const readingHours = Math.floor(totalReadingTimeMs / (1000 * 60 * 60))
-
-        return {
-            booksRead,
-            streak: progressActions.getStreak(),
-            postsCount: myPosts.length,
-            vocabCount: Object.keys(userWords).length,
-            readingHours,
-        }
-    }, [progressMap, myPosts, savedWords, user?.id, progressActions, totalReadingTimeMs])
-
-    const themeModeLabel = themeMode === 'system'
-        ? t('appearance.system')
-        : themeMode === 'light'
-            ? t('appearance.light')
-            : t('appearance.dark')
-    const currentLanguageLabel = LANGUAGES.find((l) => l.code === (settings.language || 'en'))?.label || 'English'
-
-    // Handlers
-    const handleSettingsPress = useCallback(() => {
-        haptics.selection()
-        router.push('/settings')
-    }, [router])
-
-    const handleEditPress = useCallback(() => {
-        haptics.selection()
-        router.push('/user/edit')
-    }, [router])
-
-    const handleTabChange = useCallback((tab: TabType) => {
-        haptics.selection()
-        setActiveTab(tab)
-    }, [])
-
-    const handleSignOut = useCallback(() => {
-        haptics.warning()
-        signOut()
-    }, [signOut])
-
-    const handleFollowersPress = useCallback(() => {
-        haptics.selection()
-        router.push('/social' as any)
-    }, [router])
+    const {
+        activeTab,
+        showGuestBanner,
+        setShowGuestBanner,
+        goalsSheetRef,
+        langSheetRef,
+        handleSettingsPress,
+        handleEditPress,
+        handleTabChange,
+        handleSignOut,
+        handleFollowersPress,
+        themeActions,
+        settingsActions,
+        progressActions,
+        router
+    } = useProfileUIController()
 
     // Tab content renderer
     const renderTabContent = useCallback(() => {
@@ -335,10 +255,10 @@ export default function ProfileScreen() {
             default:
                 return null
         }
-    }, [activeTab, myPosts, libraryItems, stats, achievements, unlockedCount, settings, user?.id, router, theme.colors, t, currentLanguageLabel, themeModeLabel, handleSettingsPress, handleSignOut, themeActions])
+    }, [activeTab, myPosts, libraryItems, stats, achievements, unlockedCount, settings, user?.id, router, theme.colors, t, currentLanguageLabel, themeModeLabel, handleSettingsPress, handleSignOut, themeActions, goalsSheetRef, langSheetRef])
 
     // Loading
-    if (authLoading || loadingProfile) return <ProfileScreenSkeleton />
+    if (loadingProfile) return <ProfileScreenSkeleton />
     if (!user || !fullProfile) return null
 
     return (
@@ -441,6 +361,12 @@ export default function ProfileScreen() {
                     )}
                 </View>
 
+                {/* Daily Goal Card */}
+                <DailyGoalCard
+                    stats={todayStats}
+                    onPress={() => goalsSheetRef.current?.expand()}
+                />
+
                 {/* Tabs */}
                 <View style={styles.tabsContainer}>
                     <ProfileTabButton
@@ -472,7 +398,10 @@ export default function ProfileScreen() {
             <ReadingGoalsSheet
                 ref={goalsSheetRef}
                 currentGoal={settings.dailyGoalMinutes}
-                onSelectGoal={(min) => settingsActions.updateSettings({ dailyGoalMinutes: min })}
+                onSelectGoal={(min) => {
+                    settingsActions.updateSettings({ dailyGoalMinutes: min });
+                    progressActions.fetchTodayStats();
+                }}
                 onClose={() => goalsSheetRef.current?.close()}
             />
 
@@ -799,4 +728,5 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: '600',
     },
-}))
+}));
+

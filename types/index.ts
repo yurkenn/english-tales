@@ -57,13 +57,16 @@ export interface Story {
 export interface ReadingProgress {
     storyId: string;
     userId: string;
-    currentPosition: number; // character index
+    currentPosition: number; // character index (legacy)
     percentage: number;
     lastReadAt: Date;
     isCompleted: boolean;
     quizScore?: number;
     quizTotal?: number;
     readingTimeMs?: number;
+    // Apple Books style: block-based position
+    lastBlockKey?: string; // The block key user was reading
+    lastPageIndex?: number; // Quick restore hint (may change with font)
 }
 
 // Library item (saved story)
@@ -157,4 +160,12 @@ export interface UserFavorite {
     storyTitle: string;
     storyCover: string;
     addedAt: any;
+}
+
+export interface DailyStat {
+    date: string; // YYYY-MM-DD
+    minutesRead: number;
+    goalMinutes: number;
+    isGoalReached: boolean;
+    lastUpdated: any;
 }

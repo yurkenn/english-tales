@@ -52,7 +52,8 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = React.memo(
                 </View>
                 {showPageInfo ? (
                     <Text style={styles.percentageText}>
-                        {currentPage} / {totalPages}
+                        {t('reading.pageOfShifted', { current: currentPage + 1, total: totalPages })}
+                        {totalPages - (currentPage + 1) > 0 && ` · ${t('reading.pagesLeftCount', { count: totalPages - (currentPage + 1) })}`}
                     </Text>
                 ) : (
                     <Text style={styles.percentageText}>{Math.round(progress)}%</Text>

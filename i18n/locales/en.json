@@ -96,7 +96,13 @@
         "editProfile": "Edit Profile",
         "tabPosts": "Posts",
         "tabSaved": "Saved",
-        "tabAbout": "About"
+        "tabAbout": "About",
+        "dailyGoal": "Daily Goal",
+        "goalReached": "Goal Reached!",
+        "minRemaining": "{{count}} min remaining",
+        "minRemaining_one": "1 min remaining",
+        "goalAlmost": "You're almost there!",
+        "goalKeepGoing": "Keep reading to reach your goal!"
     },
     "appearance": {
         "title": "Appearance",
@@ -197,6 +203,9 @@
     "reading": {
         "complete": "{{percentage}}% complete",
         "remainingTime": "~{{time}} min left",
+        "pageOfShifted": "Page {{current}} of {{total}}",
+        "pagesLeftCount": "{{count}} pages left",
+        "pagesLeftCount_one": "1 page left",
         "chapter": "Chapter {{number}}",
         "startReading": "Start Reading",
         "continue": "Continue",

@@ -15,6 +15,7 @@ import {
     PagedContent,
     ReadingScreenSkeleton,
     WriteReviewSheet,
+    HighlightMenu,
     READING_THEMES,
     type ReadingTheme,
 } from '@/components';
@@ -27,15 +28,20 @@ import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useThemeStore } from '@/store/themeStore';
 import { useLibraryStore } from '@/store/libraryStore';
 import { useDownloadStore } from '@/store/downloadStore';
-import { dictionaryService, DictionaryEntry } from '@/services/dictionary';
-import { BottomSheetModal } from '@gorhom/bottom-sheet';
-import BottomSheet from '@gorhom/bottom-sheet';
+import { useHighlightStore } from '@/store/highlightStore';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
-import * as Speech from 'expo-speech';
 import { analyticsService } from '@/services/firebase/analytics';
-
 import { useTranslation } from 'react-i18next';
+import BottomSheet from '@gorhom/bottom-sheet';
+
+import {
+    useReadingProgressManager,
+    useDictionaryManagement,
+    useHighlightManagement,
+    useAudioAssist,
+} from '@/hooks';
+
 
 export default function ReadingScreen() {
     const { t } = useTranslation();
@@ -44,39 +50,32 @@ export default function ReadingScreen() {
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
 
-    const [progress, setProgress] = useState(0);
-    const [currentPage, setCurrentPage] = useState(0);
     const [showCompletionModal, setShowCompletionModal] = useState(false);
     const [showSettingsModal, setShowSettingsModal] = useState(false);
     const [readingTheme, setReadingTheme] = useState<ReadingTheme>('light');
     const { isDark, highContrastEnabled: globalHighContrast } = useThemeStore();
     const hasShownCompletion = useRef(false);
-    const saveTimeoutRef = useRef<number | null>(null);
     const startTimeRef = useRef<number>(Date.now());
-
-    // Word Lookup
-    const wordSheetRef = useRef<BottomSheetModal>(null);
-    const [selectedWord, setSelectedWord] = useState('');
-    const [dictionaryData, setDictionaryData] = useState<DictionaryEntry | null>(null);
-    const [isWordLoading, setIsWordLoading] = useState(false);
 
     // Review
     const reviewSheetRef = useRef<BottomSheet>(null);
     const [completionRating, setCompletionRating] = useState(0);
-
-    // Audio Assist (TTS)
-    const [showAudioPlayer, setShowAudioPlayer] = useState(false);
-    const [isAudioPlaying, setIsAudioPlaying] = useState(false);
-    const [isAudioBuffering, setIsAudioBuffering] = useState(false);
 
     // Quiz
     const [showQuizModal, setShowQuizModal] = useState(false);
 
     // Stores
     const { fontSize, lineHeight, dyslexicFontEnabled, actions: prefsActions } = useReadingPrefsStore();
-    const { progressMap, totalReadingTimeMs, actions: progressActions } = useProgressStore();
+    const { progressMap, actions: progressActions } = useProgressStore();
     const { actions: libraryActions } = useLibraryStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
+    const { user } = useAuthStore();
+
+    // Get highlights for this story (reactive)
+    const storyHighlights = useHighlightStore((state) => {
+        if (!user || !id) return [];
+        return state.highlights[user.id]?.[id] || [];
+    });
 
     // Memoized font size handlers to prevent re-renders
     const handleFontDecrease = useCallback(() => {
@@ -102,7 +101,7 @@ export default function ReadingScreen() {
         }
     }, [id, isDownloaded, downloadActions]);
 
-    const isLoading = loadingStory && !downloadedContent; // Don't show skeleton if we have offline content
+    const isLoading = loadingStory && !downloadedContent;
 
     useEffect(() => {
         analyticsService.logScreenView('ReadingScreen');
@@ -125,7 +124,7 @@ export default function ReadingScreen() {
         startTimeRef.current = Date.now();
         return () => {
             const elapsed = Date.now() - startTimeRef.current;
-            if (id && elapsed > 2000) { // Min 2 seconds to count
+            if (id && elapsed > 2000) {
                 progressActions.incrementReadingTime(id, elapsed);
             }
         };
@@ -136,28 +135,6 @@ export default function ReadingScreen() {
         prefsActions.loadPrefs();
     }, [prefsActions]);
 
-    // Load initial progress
-    useEffect(() => {
-        if (id && progressMap[id]) {
-            setProgress(progressMap[id].percentage);
-        }
-    }, [id, progressMap]);
-
-    // Debounced save progress
-    const saveProgress = useCallback((newProgress: number) => {
-        if (!id || !storyDoc) return;
-        if (saveTimeoutRef.current) clearTimeout(saveTimeoutRef.current);
-        saveTimeoutRef.current = setTimeout(() => {
-            progressActions.updateProgress(id, 0, newProgress, storyDoc.title);
-        }, 1000) as unknown as number;
-    }, [id, progressActions, storyDoc]);
-
-    useEffect(() => {
-        return () => {
-            if (saveTimeoutRef.current) clearTimeout(saveTimeoutRef.current);
-        };
-    }, []);
-
     // Use cached content if downloaded
     const content = useMemo(() => {
         if (downloadedContent) return downloadedContent;
@@ -165,7 +142,7 @@ export default function ReadingScreen() {
     }, [downloadedContent, storyDoc]);
 
     // Calculate pages from content
-    const { pages, totalPages } = usePageCalculation({
+    const { pages, totalPages, findPageByBlockKey } = usePageCalculation({
         content,
         fontSize,
         lineHeight,
@@ -173,36 +150,61 @@ export default function ReadingScreen() {
         controlsHeight: 80,
     });
 
-    // Restore current page from saved progress when pages are calculated
-    useEffect(() => {
-        if (totalPages > 0 && id && progressMap[id]) {
-            const savedProgress = progressMap[id].percentage;
-            const restoredPage = Math.min(
-                Math.floor((savedProgress / 100) * totalPages),
-                totalPages - 1
-            );
-            if (restoredPage > 0 && currentPage === 0) {
-                setCurrentPage(restoredPage);
-                setProgress(savedProgress);
-            }
-        }
-    }, [totalPages, id, progressMap]);
+    // --- Modularized Logic Hooks ---
 
-    // Handle page change (replaces scroll-based progress)
-    const handlePageChange = useCallback((newPage: number) => {
-        // Only update if page actually changed
-        if (newPage === currentPage) return;
+    // Progress Management
+    const {
+        progress,
+        currentPage,
+        handlePageChange
+    } = useReadingProgressManager({
+        storyId: id,
+        storyTitle: storyDoc?.title,
+        totalPages,
+        pages,
+        findPageByBlockKey,
+        initialPercentage: id && progressMap[id] ? progressMap[id].percentage : 0,
+    });
 
-        setCurrentPage(newPage);
+    // Dictionary Management
+    const {
+        wordSheetRef,
+        selectedWord,
+        dictionaryData,
+        isWordLoading,
+        handleWordPress,
+    } = useDictionaryManagement({ storyId: id });
 
-        // Calculate progress based on page position
-        const newProgress = totalPages > 0
-            ? Math.min(100, Math.round(((newPage + 1) / totalPages) * 100))
-            : 0;
+    // Highlight Management
+    const {
+        showHighlightMenu,
+        setShowHighlightMenu,
+        highlightWord,
+        handleWordLongPress,
+        addHighlight,
+    } = useHighlightManagement({ storyId: id, currentPage });
 
-        setProgress(newProgress);
-        saveProgress(newProgress);
-    }, [currentPage, totalPages, saveProgress]);
+    // TTS Logic
+    const storyText = useMemo(() => {
+        if (!content) return '';
+        return content
+            .map(block => {
+                if (block._type !== 'block' || !block.children) return '';
+                return (block.children as any[]).map(c => c.text).join('');
+            })
+            .join(' ');
+    }, [content]);
+
+    const {
+        showAudioPlayer,
+        isAudioPlaying,
+        isAudioBuffering,
+        handlePlayPauseAudio,
+        handleStopAudio,
+        toggleAudioPlayer,
+    } = useAudioAssist({ storyText });
+
+    // --- End Modularized Logic Hooks ---
 
     // Kindle-style: show completion when user tries to go past last page
     const handleTryNextOnLastPage = useCallback(() => {
@@ -236,12 +238,10 @@ export default function ReadingScreen() {
 
         if (rating) {
             setCompletionRating(rating);
-            // Small delay to ensure completion modal is closed
             setTimeout(() => {
                 reviewSheetRef.current?.expand();
             }, 500);
         } else {
-            // If no rating, user just wants to find the next story
             setShowCompletionModal(false);
             router.push('/(tabs)/discover');
         }
@@ -274,7 +274,6 @@ export default function ReadingScreen() {
         }
     }, [id, storyDoc, isInLibrary, libraryActions]);
 
-    // Sync readingTheme state with global theme on mount
     useEffect(() => {
         const currentMode = useThemeStore.getState().mode;
         if (currentMode === 'sepia') setReadingTheme('sepia');
@@ -288,98 +287,8 @@ export default function ReadingScreen() {
         const currentIndex = themes.indexOf(readingTheme);
         const next = themes[(currentIndex + 1) % 3];
         setReadingTheme(next);
-
-        // Sync with global theme store for a unified feel
         useThemeStore.getState().actions.setMode(next);
     }, [readingTheme]);
-
-    const handleWordPress = useCallback(async (word: string) => {
-        const cleaned = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim();
-        if (!cleaned) return;
-
-        haptics.light(); // Use light for subtle feel
-        setSelectedWord(cleaned);
-        setIsWordLoading(true);
-        wordSheetRef.current?.present();
-
-        const data = await dictionaryService.lookup(cleaned);
-        setDictionaryData(data);
-        setIsWordLoading(false);
-        analyticsService.logEvent('word_lookup', {
-            word: cleaned,
-            story_id: id
-        });
-    }, []);
-
-    // TTS Logic
-    const storyText = useMemo(() => {
-        if (!content) return '';
-        return content
-            .map(block => {
-                if (block._type !== 'block' || !block.children) return '';
-                return (block.children as any[]).map(c => c.text).join('');
-            })
-            .join(' ');
-    }, [content]);
-
-    const handlePlayPauseAudio = useCallback(async () => {
-        haptics.selection();
-        if (isAudioPlaying) {
-            Speech.pause();
-            setIsAudioPlaying(false);
-        } else {
-            const isPaused = await Speech.isSpeakingAsync();
-            if (isPaused) {
-                Speech.resume();
-                setIsAudioPlaying(true);
-            } else {
-                setIsAudioBuffering(true);
-                Speech.speak(storyText, {
-                    language: 'en',
-                    onStart: () => {
-                        setIsAudioPlaying(true);
-                        setIsAudioBuffering(false);
-                    },
-                    onDone: () => {
-                        setIsAudioPlaying(false);
-                        setIsAudioBuffering(false);
-                    },
-                    onStopped: () => {
-                        setIsAudioPlaying(false);
-                        setIsAudioBuffering(false);
-                    },
-                    onError: () => {
-                        setIsAudioPlaying(false);
-                        setIsAudioBuffering(false);
-                    },
-                });
-            }
-        }
-    }, [isAudioPlaying, storyText]);
-
-    const handleStopAudio = useCallback(() => {
-        haptics.selection();
-        Speech.stop();
-        setIsAudioPlaying(false);
-        setIsAudioBuffering(false);
-    }, []);
-
-    const toggleAudioPlayer = useCallback(() => {
-        haptics.light();
-        setShowAudioPlayer(prev => {
-            if (prev) {
-                Speech.stop();
-                setIsAudioPlaying(false);
-            }
-            return !prev;
-        });
-    }, []);
-
-    useEffect(() => {
-        return () => {
-            Speech.stop();
-        };
-    }, []);
 
     if (isLoading) {
         return (
@@ -424,6 +333,7 @@ export default function ReadingScreen() {
                     currentPage={currentPage}
                     onPageChange={handlePageChange}
                     onWordPress={handleWordPress}
+                    onWordLongPress={handleWordLongPress}
                     fontSize={fontSize}
                     lineHeight={lineHeight}
                     textColor={globalHighContrast
@@ -437,6 +347,7 @@ export default function ReadingScreen() {
                     dyslexicFontEnabled={dyslexicFontEnabled}
                     selectedWord={selectedWord}
                     onTryNextOnLastPage={handleTryNextOnLastPage}
+                    highlights={storyHighlights}
                 />
             ) : (
                 <View style={styles.emptyContent}>
@@ -507,7 +418,6 @@ export default function ReadingScreen() {
                         text
                     );
 
-                    // After review, maybe go back or show quiz
                     if (storyDoc?.quiz && storyDoc.quiz.length > 0) {
                         setShowQuizModal(true);
                     } else {
@@ -534,6 +444,16 @@ export default function ReadingScreen() {
                 isLoading={isWordLoading}
                 storyId={id}
                 storyTitle={storyDoc.title}
+            />
+
+            <HighlightMenu
+                visible={showHighlightMenu}
+                selectedText={highlightWord}
+                onHighlight={addHighlight}
+                onCopy={() => {
+                    setShowHighlightMenu(false);
+                }}
+                onDismiss={() => setShowHighlightMenu(false)}
             />
         </View>
     );
