@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { useUnistyles, StyleSheet } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
+import { Image } from 'expo-image';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export const OnboardingConnectVisual = () => {
     const { theme } = useUnistyles();
@@ -18,8 +20,16 @@ export const OnboardingConnectVisual = () => {
 
             {/* Front Card (Review) */}
             <View style={[styles.cardCommon, styles.cardFrontRotated]}>
-                <View style={styles.reviewImagePlaceholder}>
-                    <Ionicons name="image" size={48} color={theme.colors.textMuted} />
+                <View style={styles.reviewImageContainer}>
+                    <Image
+                        source={require('@/assets/images/onboarding_connect.png')}
+                        style={styles.reviewImage}
+                        contentFit="cover"
+                    />
+                    <LinearGradient
+                        colors={['transparent', 'rgba(0,0,0,0.2)']}
+                        style={styles.reviewImageOverlay}
+                    />
                     <View style={styles.favoriteBadge}>
                         <Ionicons name="heart" size={16} color={theme.colors.primary} />
                     </View>
@@ -92,14 +102,23 @@ const styles = StyleSheet.create((theme) => ({
         zIndex: 2,
         padding: 12,
     },
-    reviewImagePlaceholder: {
+    reviewImageContainer: {
         flex: 1.5,
-        backgroundColor: theme.colors.borderLight,
         borderRadius: theme.radius.lg,
-        alignItems: 'center',
-        justifyContent: 'center',
         position: 'relative',
         marginBottom: 12,
+        overflow: 'hidden',
+    },
+    reviewImage: {
+        width: '100%',
+        height: '100%',
+    },
+    reviewImageOverlay: {
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        height: 40,
     },
     favoriteBadge: {
         position: 'absolute',
