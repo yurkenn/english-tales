@@ -83,7 +83,7 @@ const styles = StyleSheet.create((theme) => ({
         position: 'absolute',
         width: '85%',
         aspectRatio: 1,
-        borderRadius: 999,
+        borderRadius: theme.radius.full,
         opacity: 0.5,
     },
     cardCommon: {
@@ -139,7 +139,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     cardBody: {
         flex: 1,
-        padding: 12,
+        padding: theme.spacing.md,
         justifyContent: 'space-between',
     },
     cardTitle: {
@@ -152,7 +152,7 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textMuted,
     },
     progressSection: {
-        gap: 4,
+        gap: theme.spacing.xs,
     },
     progressRow: {
         flexDirection: 'row',
@@ -171,23 +171,23 @@ const styles = StyleSheet.create((theme) => ({
     progressBarBg: {
         height: 6,
         backgroundColor: theme.colors.borderLight,
-        borderRadius: 3,
+        borderRadius: theme.radius.xxs,
         overflow: 'hidden',
     },
     progressBarFill: {
         height: '100%',
         backgroundColor: theme.colors.primary,
-        borderRadius: 3,
+        borderRadius: theme.radius.xxs,
     },
     floatingTooltip: {
         position: 'absolute',
-        bottom: 40,
-        left: -20,
+        bottom: theme.spacing.xxxxl * 0.8, // roughly 40
+        left: -theme.spacing.xl,
         backgroundColor: theme.colors.surface,
-        padding: 10,
-        borderRadius: 12,
+        padding: theme.spacing.sm + 2, // 10
+        borderRadius: theme.radius.md,
         flexDirection: 'row',
-        gap: 8,
+        gap: theme.spacing.sm,
         alignItems: 'center',
         ...theme.shadows.lg,
         zIndex: 3,

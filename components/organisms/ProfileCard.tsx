@@ -130,7 +130,7 @@ const styles = StyleSheet.create((theme) => ({
         marginHorizontal: theme.spacing.lg,
         marginBottom: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
+        borderRadius: theme.radius.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         overflow: 'hidden',
@@ -141,7 +141,7 @@ const styles = StyleSheet.create((theme) => ({
         top: 0,
         left: 0,
         right: 0,
-        height: 80,
+        height: theme.spacing.xxxxl * 0.8,
     },
     avatarWrapper: {
         position: 'relative',
@@ -191,7 +191,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         gap: theme.spacing.sm,
-        marginBottom: 2,
+        marginBottom: theme.spacing.xxs,
     },
     editButton: {
         width: 32,
@@ -206,7 +206,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     signInButton: {
         marginTop: theme.spacing.lg,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         overflow: 'hidden',
         ...theme.shadows.sm,
     },

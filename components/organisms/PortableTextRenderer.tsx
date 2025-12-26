@@ -40,6 +40,11 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
     const renderChildren = (children: any[], isFirstParagraph = false) => {
         return children.map((child, index) => {
             if (child._type === 'span') {
+                // Safety check: if child.text is undefined/null, skip or render empty
+                if (child.text == null || child.text === undefined) {
+                    return null;
+                }
+
                 let style: any = {
                     fontSize,
                     color: textColor,
@@ -64,24 +69,11 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
 
                 if (onWordPress) {
                     // Split text into words while preserving spaces
-                    let text = child.text;
-                    let dropCapLetter = '';
-
-                    // Handle Drop Cap for the first span of the first block
-                    if (isFirstParagraph && index === 0 && text.length > 0 && !dyslexicFontEnabled) {
-                        dropCapLetter = text.charAt(0);
-                        text = text.substring(1);
-                    }
-
+                    const text = String(child.text || '');
                     const words = text.split(/(\s+)/);
 
                     return (
                         <Text key={index} style={style}>
-                            {dropCapLetter ? (
-                                <Text style={[styles.dropCap, { color: theme.colors.primary, fontSize: fontSize * 2.5 }]}>
-                                    {dropCapLetter}
-                                </Text>
-                            ) : null}
                             {words.map((part: string, wordIdx: number) => {
                                 if (part.trim() === '') {
                                     return <Text key={wordIdx}>{part}</Text>;
@@ -92,9 +84,12 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                                     <Text
                                         key={wordIdx}
                                         onPress={() => handleWordPress(part)}
-                                        suppressHighlighting={false}
                                         style={[
-                                            styles.word,
+                                            {
+                                                color: textColor,
+                                                fontSize,
+                                                fontFamily: theme.typography.fontFamily.body,
+                                            },
                                             isSelected && {
                                                 backgroundColor: theme.colors.primary + '30',
                                                 borderRadius: 4,
@@ -109,7 +104,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
                     );
                 }
 
-                return <Text key={index} style={style}>{child.text}</Text>;
+                return <Text key={index} style={style}>{String(child.text || '')}</Text>;
             }
             return null;
         });
@@ -194,9 +189,19 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
         }
     };
 
+    // Filter out empty blocks (blocks with no meaningful content)
+    const filteredContent = content.filter((block: any) => {
+        if (block._type === 'block' && block.children) {
+            const text = block.children.map((c: any) => c.text || '').join('').trim();
+            return text.length > 0;
+        }
+        // Keep non-block types (images, checkpoints, etc.)
+        return true;
+    });
+
     return (
         <View style={styles.container}>
-            {content.map((block, index) => renderBlock(block, index, index === 0))}
+            {filteredContent.map((block, index) => renderBlock(block, index, index === 0))}
         </View>
     );
 });
@@ -207,15 +212,6 @@ const styles = StyleSheet.create((theme) => ({
     },
     paragraph: {
         textAlign: 'left',
-    },
-    word: {
-        // Subtle feedback background can be added if needed
-    },
-    dropCap: {
-        fontWeight: '900',
-        lineHeight: 0, // Let it hang
-        paddingRight: theme.spacing.sm,
-        marginTop: theme.spacing.sm,
     },
     heading2: {
         fontSize: theme.typography.size.xxxl,

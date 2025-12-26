@@ -180,8 +180,8 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, p
 const styles = StyleSheet.create((theme) => ({
     card: {
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
-        padding: 16,
+        borderRadius: theme.radius.lg,
+        padding: theme.spacing.lg,
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
@@ -192,11 +192,11 @@ const styles = StyleSheet.create((theme) => ({
     },
     rarityBadge: {
         position: 'absolute',
-        top: 8,
-        right: 8,
-        paddingHorizontal: 8,
-        paddingVertical: 2,
-        borderRadius: 10,
+        top: theme.spacing.sm,
+        right: theme.spacing.sm,
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: theme.spacing.xxs,
+        borderRadius: theme.radius.sm,
     },
     rarityText: {
         fontSize: 9,
@@ -208,12 +208,12 @@ const styles = StyleSheet.create((theme) => ({
     iconContainer: {
         width: 56,
         height: 56,
-        borderRadius: 28,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.backgroundSecondary,
         alignItems: 'center',
         justifyContent: 'center',
-        marginBottom: 12,
-        marginTop: 8,
+        marginBottom: theme.spacing.md,
+        marginTop: theme.spacing.sm,
         position: 'relative',
         overflow: 'hidden',
     },
@@ -229,7 +229,7 @@ const styles = StyleSheet.create((theme) => ({
         left: 0,
         right: 0,
         bottom: 0,
-        borderRadius: 28,
+        borderRadius: theme.radius.full,
     },
     lockOverlay: {
         position: 'absolute',
@@ -238,22 +238,22 @@ const styles = StyleSheet.create((theme) => ({
         right: 0,
         bottom: 0,
         backgroundColor: 'rgba(0,0,0,0.4)',
-        borderRadius: 28,
+        borderRadius: theme.radius.full,
         alignItems: 'center',
         justifyContent: 'center',
     },
     title: {
-        fontSize: 14,
-        fontWeight: '700',
+        fontSize: theme.typography.size.sm + 1, // 14
+        fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
         textAlign: 'center',
-        marginBottom: 4,
+        marginBottom: theme.spacing.xs,
     },
     titleLocked: {
         color: theme.colors.textMuted,
     },
     description: {
-        fontSize: 11,
+        fontSize: theme.typography.size.xs,
         color: theme.colors.textSecondary,
         textAlign: 'center',
         lineHeight: 14,
@@ -264,20 +264,20 @@ const styles = StyleSheet.create((theme) => ({
     progressContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: theme.spacing.sm,
         width: '100%',
-        gap: 6,
+        gap: theme.spacing.xs,
     },
     progressBar: {
         flex: 1,
         height: 4,
         backgroundColor: theme.colors.backgroundSecondary,
-        borderRadius: 2,
+        borderRadius: theme.radius.xxs,
         overflow: 'hidden',
     },
     progressFill: {
         height: '100%',
-        borderRadius: 2,
+        borderRadius: theme.radius.xxs,
     },
     progressText: {
         fontSize: 10,
@@ -287,8 +287,8 @@ const styles = StyleSheet.create((theme) => ({
     unlockedContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 8,
-        gap: 4,
+        marginTop: theme.spacing.sm,
+        gap: theme.spacing.xs,
     },
     unlockedDate: {
         fontSize: 11,

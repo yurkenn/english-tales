@@ -168,24 +168,24 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: 'rgba(0,0,0,0.7)',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 20,
+        padding: theme.spacing.xl,
     },
     content: {
         width: '100%',
         backgroundColor: theme.colors.surface,
-        borderRadius: 24,
-        padding: 24,
+        borderRadius: theme.radius.xxl,
+        padding: theme.spacing.xxl,
         maxHeight: '80%',
         ...theme.shadows.lg,
     },
     header: {
-        marginBottom: 24,
+        marginBottom: theme.spacing.xxl,
     },
     headerTop: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 12,
+        marginBottom: theme.spacing.md,
     },
     quizTitle: {
         fontSize: theme.typography.size.lg,
@@ -207,7 +207,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.primary,
     },
     questionContainer: {
-        marginBottom: 24,
+        marginBottom: theme.spacing.xxl,
     },
     questionText: {
         fontSize: theme.typography.size.xl,
@@ -216,14 +216,14 @@ const styles = StyleSheet.create((theme) => ({
         lineHeight: 28,
     },
     optionsContainer: {
-        gap: 12,
+        gap: theme.spacing.md,
     },
     option: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 16,
-        borderRadius: 16,
+        padding: theme.spacing.lg,
+        borderRadius: theme.radius.lg,
         borderWidth: 1,
         borderColor: theme.colors.border,
         backgroundColor: theme.colors.surface,
@@ -244,7 +244,7 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.text,
         flex: 1,
-        marginRight: 8,
+        marginRight: theme.spacing.sm,
     },
     optionTextSelected: {
         color: theme.colors.primary,
@@ -259,10 +259,10 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
     },
     explanationContainer: {
-        marginTop: 16,
-        padding: 12,
+        marginTop: theme.spacing.lg,
+        padding: theme.spacing.md,
         backgroundColor: `${theme.colors.textSecondary}10`,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
     },
     explanationText: {
         fontSize: theme.typography.size.sm,
@@ -270,12 +270,12 @@ const styles = StyleSheet.create((theme) => ({
         fontStyle: 'italic',
     },
     footer: {
-        marginTop: 32,
+        marginTop: theme.spacing.xxxl,
     },
     button: {
         backgroundColor: theme.colors.primary,
-        paddingVertical: 16,
-        borderRadius: 16,
+        paddingVertical: theme.spacing.lg,
+        borderRadius: theme.radius.lg,
         alignItems: 'center',
     },
     buttonDisabled: {

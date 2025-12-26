@@ -172,8 +172,8 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.md,
     },
     quizBanner: {
-        borderRadius: 20,
-        padding: 16,
+        borderRadius: theme.radius.xxl,
+        padding: theme.spacing.lg,
         overflow: 'hidden',
         position: 'relative',
     },
@@ -185,7 +185,7 @@ const styles = StyleSheet.create((theme) => ({
     quizIconContainer: {
         width: 48,
         height: 48,
-        borderRadius: 14,
+        borderRadius: theme.radius.md,
         backgroundColor: 'rgba(255,255,255,0.2)',
         alignItems: 'center',
         justifyContent: 'center',
@@ -195,17 +195,17 @@ const styles = StyleSheet.create((theme) => ({
     },
     quizTextContainer: {
         flex: 1,
-        marginLeft: 14,
+        marginLeft: theme.spacing.md,
     },
     quizTitle: {
-        fontSize: 16,
+        fontSize: theme.typography.size.md,
         fontWeight: '700',
         color: '#FFFFFF',
     },
     quizSubtitle: {
-        fontSize: 13,
+        fontSize: theme.typography.size.xs,
         color: 'rgba(255,255,255,0.8)',
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     quizArrow: {
         opacity: 0.9,
@@ -234,8 +234,8 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.surface,
         marginHorizontal: theme.spacing.lg,
         marginBottom: theme.spacing.md,
-        padding: 14,
-        borderRadius: 16,
+        padding: theme.spacing.md,
+        borderRadius: theme.radius.lg,
         borderWidth: 1,
         borderColor: theme.colors.primary + '30',
         ...theme.shadows.sm,
@@ -245,21 +245,21 @@ const styles = StyleSheet.create((theme) => ({
     },
     encouragementText: {
         flex: 1,
-        marginLeft: 12,
+        marginLeft: theme.spacing.md,
     },
     encouragementTitle: {
-        fontSize: 14,
+        fontSize: theme.typography.size.sm,
         fontWeight: '600',
         color: theme.colors.text,
     },
     encouragementSubtitle: {
-        fontSize: 12,
+        fontSize: theme.typography.size.xs,
         color: theme.colors.textSecondary,
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     progressDots: {
         flexDirection: 'row',
-        gap: 6,
+        gap: theme.spacing.xs,
     },
     progressDot: {
         width: 10,

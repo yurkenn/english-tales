@@ -70,13 +70,13 @@ export const InsightsCard: React.FC<InsightsCardProps> = ({
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        marginHorizontal: 20,
-        padding: 16,
+        marginHorizontal: theme.spacing.xl,
+        padding: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
+        borderRadius: theme.radius.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
-        marginBottom: 16,
+        marginBottom: theme.spacing.lg,
         ...theme.shadows.sm,
     },
     title: {
@@ -97,7 +97,7 @@ const styles = StyleSheet.create((theme) => ({
     iconContainer: {
         width: 44,
         height: 44,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: theme.spacing.sm,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
         textAlign: 'center',
-        marginTop: 4,
+        marginTop: theme.spacing.xxs,
         fontWeight: 'bold',
         textTransform: 'uppercase',
         letterSpacing: 0.5,

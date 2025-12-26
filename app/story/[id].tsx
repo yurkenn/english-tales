@@ -328,7 +328,7 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
     },
     contentContainer: {
-        paddingBottom: 120,
+        paddingBottom: theme.spacing.xxxxl * 2,
     },
     errorText: {
         fontSize: theme.typography.size.lg,
@@ -339,10 +339,10 @@ const styles = StyleSheet.create((theme) => ({
     content: {
         padding: theme.spacing.xl,
         gap: theme.spacing.xl,
-        marginTop: -24,
+        marginTop: -theme.spacing.xxxxl * 0.4,
         backgroundColor: theme.colors.background,
-        borderTopLeftRadius: 24,
-        borderTopRightRadius: 24,
+        borderTopLeftRadius: theme.radius.xxl,
+        borderTopRightRadius: theme.radius.xxl,
     },
     titleSection: {
         gap: theme.spacing.xs,
@@ -380,8 +380,8 @@ const styles = StyleSheet.create((theme) => ({
     tag: {
         backgroundColor: theme.colors.surface,
         paddingHorizontal: theme.spacing.md,
-        paddingVertical: 6,
-        borderRadius: 12,
+        paddingVertical: theme.spacing.xs,
+        borderRadius: theme.radius.md,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
@@ -440,7 +440,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.sm,
         backgroundColor: theme.colors.primary,
         height: 56,
-        borderRadius: 16,
+        borderRadius: theme.radius.lg,
         ...theme.shadows.md,
     },
     readButtonText: {
@@ -461,7 +461,7 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: theme.spacing.md,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
-        borderRadius: 16,
+        borderRadius: theme.radius.lg,
         backgroundColor: theme.colors.surface,
         ...theme.shadows.sm,
     },

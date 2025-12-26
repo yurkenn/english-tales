@@ -98,18 +98,18 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.md,
     },
     scrollContent: {
-        gap: 16,
+        gap: theme.spacing.lg,
         paddingRight: theme.spacing.lg,
     },
     friendItem: {
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.xs + 2, // 6
         width: 64,
     },
     avatar: {
         width: 64,
         height: 64,
-        borderRadius: 32,
+        borderRadius: theme.radius.full,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         backgroundColor: theme.colors.surface,
@@ -121,13 +121,13 @@ const styles = StyleSheet.create((theme) => ({
     },
     addButton: {
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.xs + 2, // 6
         width: 64,
     },
     addIconContainer: {
         width: 64,
         height: 64,
-        borderRadius: 32,
+        borderRadius: theme.radius.full,
         borderWidth: 1.5,
         borderColor: theme.colors.primary,
         borderStyle: 'dashed',
@@ -141,7 +141,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.md,
         padding: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
-        borderRadius: 20,
+        borderRadius: theme.radius.xl,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
@@ -149,7 +149,7 @@ const styles = StyleSheet.create((theme) => ({
     emptyIcon: {
         width: 52,
         height: 52,
-        borderRadius: 26,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.background,
         alignItems: 'center',
         justifyContent: 'center',

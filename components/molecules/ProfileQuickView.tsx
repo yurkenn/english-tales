@@ -172,7 +172,7 @@ const styles = StyleSheet.create((theme) => ({
     avatar: {
         width: 64,
         height: 64,
-        borderRadius: 32,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.borderLight,
     },
     userInfo: {
@@ -190,7 +190,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     followButton: {
         backgroundColor: theme.colors.primary,
-        paddingVertical: 14,
+        paddingVertical: theme.spacing.lg - 2, // 14
         borderRadius: theme.radius.xl,
         alignItems: 'center',
         justifyContent: 'center',
@@ -202,7 +202,7 @@ const styles = StyleSheet.create((theme) => ({
         borderColor: theme.colors.primary,
     },
     profileButton: {
-        paddingVertical: 14,
+        paddingVertical: theme.spacing.lg - 2, // 14
         borderRadius: theme.radius.xl,
         alignItems: 'center',
         justifyContent: 'center',

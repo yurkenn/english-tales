@@ -53,7 +53,7 @@ const styles = StyleSheet.create((theme) => ({
     iconContainer: {
         width: 80,
         height: 80,
-        borderRadius: 40,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.backgroundSecondary,
         alignItems: 'center',
         justifyContent: 'center',

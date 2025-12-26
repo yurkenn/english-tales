@@ -34,7 +34,7 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
                 source={{ uri: item.story.coverImage }}
                 width={84}
                 height={120}
-                borderRadius={10}
+                borderRadius={theme.radius.md}
                 sharedTransitionTag={`story-image-${item.story.id}`}
             />
             <View style={styles.bookInfo}>
@@ -118,7 +118,7 @@ const styles = StyleSheet.create((theme) => ({
     bookItem: {
         flexDirection: 'row',
         backgroundColor: theme.colors.surface,
-        borderRadius: 14,
+        borderRadius: theme.radius.md,
         padding: theme.spacing.md,
         gap: theme.spacing.md,
         borderWidth: 1,
@@ -143,7 +143,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     bookTitleContainer: {
         flex: 1,
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     bookTitle: {
         fontSize: theme.typography.size.xl,
@@ -159,8 +159,8 @@ const styles = StyleSheet.create((theme) => ({
     offlineBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
-        marginTop: 4,
+        gap: theme.spacing.xs,
+        marginTop: theme.spacing.xs,
     },
     offlineBadgeText: {
         fontSize: theme.typography.size.xs,
@@ -176,10 +176,10 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: 8,
     },
     progressSection: {
-        paddingVertical: 6,
+        paddingVertical: theme.spacing.xs + 2, // 6
     },
     progressInfo: {
-        gap: 6,
+        gap: theme.spacing.xs + 2, // 6
     },
     progressText: {
         fontSize: theme.typography.size.sm,
@@ -189,7 +189,7 @@ const styles = StyleSheet.create((theme) => ({
     completedBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.xs + 2, // 6
     },
     completedText: {
         fontSize: theme.typography.size.sm,
@@ -205,10 +205,10 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 6,
+        gap: theme.spacing.xs + 2, // 6
         backgroundColor: theme.colors.primary + '10',
         height: 40,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         borderWidth: 1,
         borderColor: theme.colors.primary + '20',
     },

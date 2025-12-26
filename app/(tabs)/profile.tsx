@@ -502,7 +502,7 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
     },
     scrollContent: {
-        paddingBottom: 120,
+        paddingBottom: theme.spacing.xxxxl * 2,
     },
 
     // Header
@@ -510,8 +510,8 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: 20,
-        paddingBottom: 16,
+        paddingHorizontal: theme.spacing.xl,
+        paddingBottom: theme.spacing.lg,
         backgroundColor: theme.colors.background,
     },
     headerTitle: {
@@ -523,7 +523,7 @@ const styles = StyleSheet.create((theme) => ({
     settingsButton: {
         width: 44,
         height: 44,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         backgroundColor: theme.colors.surface,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
@@ -534,10 +534,10 @@ const styles = StyleSheet.create((theme) => ({
 
     // Profile Card
     profileCard: {
-        marginHorizontal: 16,
+        marginHorizontal: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
-        borderRadius: 20,
-        padding: 20,
+        borderRadius: theme.radius.xxl,
+        padding: theme.spacing.xl,
         ...theme.shadows.md,
     },
     avatarRow: {
@@ -570,8 +570,8 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
-        marginLeft: 16,
-        paddingTop: 8,
+        marginLeft: theme.spacing.lg,
+        paddingTop: theme.spacing.sm,
     },
     statItem: {
         alignItems: 'center',
@@ -584,10 +584,10 @@ const styles = StyleSheet.create((theme) => ({
     statItemLabel: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     userInfo: {
-        marginTop: 16,
+        marginTop: theme.spacing.lg,
     },
     displayName: {
         fontSize: theme.typography.size.xl,
@@ -597,19 +597,19 @@ const styles = StyleSheet.create((theme) => ({
     username: {
         fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     bio: {
         fontSize: theme.typography.size.md,
         color: theme.colors.textSecondary,
-        marginTop: 12,
+        marginTop: theme.spacing.md,
         lineHeight: 22,
     },
     addBioBtn: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
-        marginTop: 12,
+        gap: theme.spacing.sm,
+        marginTop: theme.spacing.md,
     },
     addBioText: {
         fontSize: theme.typography.size.md,
@@ -619,10 +619,10 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 8,
-        marginTop: 16,
-        paddingVertical: 10,
-        borderRadius: 10,
+        gap: theme.spacing.sm,
+        marginTop: theme.spacing.lg,
+        paddingVertical: theme.spacing.md,
+        borderRadius: theme.radius.md,
         borderWidth: 1,
     },
     editProfileText: {
@@ -631,29 +631,29 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
     },
     guestBannerWrapper: {
-        marginTop: 16,
+        marginTop: theme.spacing.lg,
     },
 
     // Tabs
     tabsContainer: {
         flexDirection: 'row',
-        marginTop: 20,
-        marginHorizontal: 16,
+        marginTop: theme.spacing.xl,
+        marginHorizontal: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
-        borderRadius: 12,
-        padding: 4,
+        borderRadius: theme.radius.md,
+        padding: theme.spacing.xs,
     },
     tabButton: {
         flex: 1,
         alignItems: 'center',
-        paddingVertical: 12,
-        borderRadius: 10,
+        paddingVertical: theme.spacing.md,
+        borderRadius: theme.radius.sm,
         position: 'relative',
     },
     tabButtonContent: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.sm,
     },
     tabButtonText: {
         fontSize: theme.typography.size.sm,
@@ -663,9 +663,9 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: '700',
     },
     tabBadge: {
-        paddingHorizontal: 6,
-        paddingVertical: 2,
-        borderRadius: 10,
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: theme.spacing.xxs,
+        borderRadius: theme.radius.sm,
         minWidth: 20,
         alignItems: 'center',
     },
@@ -678,7 +678,7 @@ const styles = StyleSheet.create((theme) => ({
         bottom: 2,
         width: 24,
         height: 3,
-        borderRadius: 2,
+        borderRadius: theme.radius.xxs,
     },
 
     // Tab Content
@@ -686,25 +686,25 @@ const styles = StyleSheet.create((theme) => ({
         minHeight: 400,
     },
     feedContainer: {
-        padding: 16,
-        gap: 16,
+        padding: theme.spacing.lg,
+        gap: theme.spacing.lg,
     },
     savedGrid: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        padding: 16,
-        gap: 12,
+        padding: theme.spacing.lg,
+        gap: theme.spacing.md,
     },
 
     // About Tab
     aboutContainer: {
-        padding: 16,
+        padding: theme.spacing.lg,
     },
     quickStatsCard: {
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
-        padding: 20,
-        marginBottom: 20,
+        borderRadius: theme.radius.lg,
+        padding: theme.spacing.xl,
+        marginBottom: theme.spacing.xl,
         ...theme.shadows.sm,
     },
     quickStatsRow: {
@@ -724,15 +724,15 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.lg,
         fontWeight: '700',
         color: theme.colors.text,
-        marginTop: 8,
+        marginTop: theme.spacing.sm,
     },
     quickStatLabel: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     menuSection: {
-        marginBottom: 20,
+        marginBottom: theme.spacing.xl,
     },
     menuSectionTitle: {
         fontSize: theme.typography.size.xs,
@@ -740,12 +740,12 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textMuted,
         textTransform: 'uppercase',
         letterSpacing: 1,
-        marginBottom: 10,
-        marginLeft: 4,
+        marginBottom: theme.spacing.md,
+        marginLeft: theme.spacing.xs,
     },
     menuCard: {
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
+        borderRadius: theme.radius.md,
         overflow: 'hidden',
         ...theme.shadows.sm,
     },
@@ -753,7 +753,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 14,
+        padding: theme.spacing.lg,
     },
     menuItemBorder: {
         borderBottomWidth: 1,
@@ -762,19 +762,19 @@ const styles = StyleSheet.create((theme) => ({
     menuItemLeft: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 12,
+        gap: theme.spacing.lg,
     },
     menuIconWrapper: {
         width: 36,
         height: 36,
-        borderRadius: 10,
+        borderRadius: theme.radius.sm,
         alignItems: 'center',
         justifyContent: 'center',
     },
     menuItemRight: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.xs,
     },
     menuItemLabel: {
         fontSize: theme.typography.size.md,
@@ -789,11 +789,11 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 8,
-        paddingVertical: 14,
-        marginTop: 12,
+        gap: theme.spacing.sm,
+        paddingVertical: theme.spacing.lg,
+        marginTop: theme.spacing.md,
         backgroundColor: theme.colors.surface,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
     },
     signOutText: {
         fontSize: theme.typography.size.md,

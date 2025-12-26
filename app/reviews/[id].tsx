@@ -103,7 +103,7 @@ export default function ReviewsScreen() {
                 renderItem={renderReview}
                 contentContainerStyle={[styles.listContent, { paddingBottom: insets.bottom + 80 }]}
                 showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                ItemSeparatorComponent={() => <View style={{ height: theme.spacing.md }} />}
                 removeClippedSubviews={true}
                 initialNumToRender={10}
                 maxToRenderPerBatch={5}
@@ -193,7 +193,7 @@ const styles = StyleSheet.create((theme) => ({
     headerTitleContainer: {
         flex: 1,
         alignItems: 'center',
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     headerTitle: {
         fontSize: theme.typography.size.xl,
@@ -245,7 +245,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     reviewerInfo: {
         flex: 1,
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     reviewerName: {
         fontSize: theme.typography.size.md,

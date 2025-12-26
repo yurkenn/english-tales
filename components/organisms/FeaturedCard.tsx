@@ -106,7 +106,7 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
 const styles = StyleSheet.create((theme) => ({
     container: {
         backgroundColor: theme.colors.surface,
-        borderRadius: 14,
+        borderRadius: theme.radius.lg,
         overflow: 'hidden',
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
         paddingHorizontal: theme.spacing.md,
         paddingVertical: theme.spacing.xs,
-        borderRadius: 8,
+        borderRadius: theme.radius.sm,
         borderWidth: 1,
         borderColor: 'rgba(255, 255, 255, 0.2)',
     },
@@ -158,7 +158,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.sm,
         backgroundColor: theme.colors.primary,
         height: 52,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         ...theme.shadows.sm,
     },
 }));

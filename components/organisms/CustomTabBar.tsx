@@ -57,7 +57,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
     };
 
     return (
-        <View style={[styles.outerContainer, { bottom: insets.bottom > 0 ? insets.bottom + 10 : 20 }]}>
+        <View style={[styles.outerContainer, { bottom: insets.bottom > 0 ? insets.bottom + theme.spacing.sm : theme.spacing.xl }]}>
             <View style={styles.container} onLayout={onLayout}>
                 {/* Sliding Indicator Bubble (Minimalist Semi-transparent) */}
                 <Animated.View style={[styles.indicator, animatedIndicatorStyle]} />
@@ -152,7 +152,7 @@ const styles = StyleSheet.create((theme) => ({
         width: `${TAB_BAR_WIDTH_PERCENT * 100}%`,
         height: 60,
         backgroundColor: theme.colors.surface,
-        borderRadius: 30,
+        borderRadius: theme.radius.full,
         alignItems: 'center',
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
@@ -167,7 +167,7 @@ const styles = StyleSheet.create((theme) => ({
         position: 'absolute',
         height: 44,
         backgroundColor: theme.colors.primary + '15', // Minimalist semi-transparent
-        borderRadius: 22,
+        borderRadius: theme.radius.full,
         top: 8,
     },
     tabItem: {
@@ -186,7 +186,7 @@ const styles = StyleSheet.create((theme) => ({
         right: '25%',
         width: 10,
         height: 10,
-        borderRadius: 5,
+        borderRadius: theme.radius.full,
         borderWidth: 1.5,
     },
 }));

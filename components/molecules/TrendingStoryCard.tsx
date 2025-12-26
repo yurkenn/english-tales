@@ -116,7 +116,7 @@ const styles = StyleSheet.create((theme) => ({
     rank: {
         width: 36,
         height: 36,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         backgroundColor: theme.colors.surfaceElevated,
         alignItems: 'center',
         justifyContent: 'center',
@@ -160,7 +160,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     info: {
         flex: 1,
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     title: {
         fontSize: theme.typography.size.md,
@@ -178,7 +178,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     difficulty: {
         paddingHorizontal: theme.spacing.sm,
-        paddingVertical: 3,
+        paddingVertical: 2,
         borderRadius: theme.radius.full,
     },
     difficultyEasy: {
@@ -199,7 +199,7 @@ const styles = StyleSheet.create((theme) => ({
     readTime: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     readTimeText: {
         fontSize: theme.typography.size.xs,

@@ -75,7 +75,7 @@ const styles = StyleSheet.create((theme) => ({
     avatarGradient: {
         width: 72,
         height: 72,
-        borderRadius: 36,
+        borderRadius: theme.radius.full,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -91,7 +91,7 @@ const styles = StyleSheet.create((theme) => ({
     badge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
+        gap: theme.spacing.xxs,
         alignSelf: 'flex-start',
         backgroundColor: `${theme.colors.primary}15`,
         paddingHorizontal: theme.spacing.sm,
@@ -116,7 +116,7 @@ const styles = StyleSheet.create((theme) => ({
     button: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 2,
+        gap: theme.spacing.xxs,
         marginTop: theme.spacing.xs,
     },
     buttonText: {

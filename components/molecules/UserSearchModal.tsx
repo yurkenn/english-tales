@@ -173,7 +173,7 @@ const styles = StyleSheet.create((theme) => ({
     closeBtn: {
         width: 32,
         height: 32,
-        borderRadius: 16,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.borderLight,
         alignItems: 'center',
         justifyContent: 'center',
@@ -188,7 +188,7 @@ const styles = StyleSheet.create((theme) => ({
         paddingHorizontal: theme.spacing.md,
         height: 44,
         backgroundColor: theme.colors.borderLight,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         gap: theme.spacing.sm,
     },
     input: {
@@ -206,7 +206,7 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'space-between',
         padding: theme.spacing.md,
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
+        borderRadius: theme.radius.xl,
         marginBottom: theme.spacing.sm,
         ...theme.shadows.sm,
         borderWidth: 1,
@@ -221,7 +221,7 @@ const styles = StyleSheet.create((theme) => ({
     avatarWrapper: {
         width: 48,
         height: 48,
-        borderRadius: 24,
+        borderRadius: theme.radius.full,
         padding: 2,
         backgroundColor: theme.colors.background,
         borderWidth: 1,
@@ -233,13 +233,13 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: 22,
     },
     userData: {
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     addButton: {
         backgroundColor: theme.colors.primary,
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-        borderRadius: 100,
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.sm,
+        borderRadius: theme.radius.full,
         minWidth: 70,
         alignItems: 'center',
     },

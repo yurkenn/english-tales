@@ -107,25 +107,25 @@ export const VocabularyMilestoneCard: React.FC<VocabularyMilestoneCardProps> = (
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        marginHorizontal: 20,
-        marginBottom: 8,
+        marginHorizontal: theme.spacing.xl,
+        marginBottom: theme.spacing.sm,
     },
     card: {
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
-        padding: 16,
+        borderRadius: theme.radius.lg,
+        padding: theme.spacing.lg,
         borderWidth: 1,
         borderColor: theme.colors.primary + '20',
         ...theme.shadows.sm,
     },
     dismissButton: {
         position: 'absolute',
-        top: 8,
-        right: 8,
+        top: theme.spacing.sm,
+        right: theme.spacing.sm,
         zIndex: 2,
         width: 24,
         height: 24,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         backgroundColor: theme.colors.backgroundSecondary,
         alignItems: 'center',
         justifyContent: 'center',
@@ -137,7 +137,7 @@ const styles = StyleSheet.create((theme) => ({
     iconContainer: {
         width: 44,
         height: 44,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -146,7 +146,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     textContainer: {
         flex: 1,
-        marginLeft: 12,
+        marginLeft: theme.spacing.md,
     },
     title: {
         fontSize: 15,
@@ -154,27 +154,27 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
     },
     subtitle: {
-        fontSize: 12,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textSecondary,
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     ctaButton: {
         width: 36,
         height: 36,
-        borderRadius: 10,
+        borderRadius: theme.radius.sm + 2, // 10
         alignItems: 'center',
         justifyContent: 'center',
     },
     badge: {
         position: 'absolute',
         top: -6,
-        left: 16,
+        left: theme.spacing.lg,
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: 8,
-        paddingVertical: 3,
-        borderRadius: 10,
-        gap: 4,
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: theme.spacing.xxs + 1, // 3
+        borderRadius: theme.radius.sm + 2, // 10
+        gap: theme.spacing.xs,
     },
     badgeText: {
         fontSize: 11,

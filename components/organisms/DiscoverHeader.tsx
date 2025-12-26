@@ -17,7 +17,7 @@ export const DiscoverHeader: React.FC<DiscoverHeaderProps> = ({
     const insets = useSafeAreaInsets();
 
     return (
-        <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
+        <View style={[styles.header, { paddingTop: insets.top + theme.spacing.sm }]}>
             <Text style={styles.title}>{t('tabs.discover', 'Discover')}</Text>
             <Pressable
                 style={styles.actionButton}
@@ -39,8 +39,8 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 20,
-        paddingBottom: 12,
+        paddingHorizontal: theme.spacing.xl,
+        paddingBottom: theme.spacing.md,
     },
     title: {
         fontSize: theme.typography.size.xxxl,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create((theme) => ({
     actionButton: {
         width: 44,
         height: 44,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         backgroundColor: theme.colors.surface,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,

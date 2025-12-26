@@ -387,14 +387,14 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: 100,
+        paddingVertical: theme.spacing.xxxxl + theme.spacing.xxxxl, // ~80-100
     },
     header: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 16,
-        paddingBottom: 12,
+        paddingHorizontal: theme.spacing.lg,
+        paddingBottom: theme.spacing.md,
         borderBottomWidth: 1,
         borderBottomColor: theme.colors.borderLight,
     },
@@ -413,29 +413,29 @@ const styles = StyleSheet.create((theme) => ({
         width: 40,
     },
     scrollContent: {
-        paddingBottom: 20,
+        paddingBottom: theme.spacing.xl,
     },
 
     // Post Card
     postCard: {
-        padding: 16,
+        padding: theme.spacing.lg,
         borderBottomWidth: 1,
         borderBottomColor: theme.colors.borderLight,
     },
     authorRow: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 12,
+        marginBottom: theme.spacing.md,
     },
     authorInfo: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 12,
+        gap: theme.spacing.md,
     },
     avatar: {
         width: 44,
         height: 44,
-        borderRadius: 22,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.borderLight,
     },
     authorName: {
@@ -446,7 +446,7 @@ const styles = StyleSheet.create((theme) => ({
     postTime: {
         fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     postContent: {
         fontSize: theme.typography.size.lg,
@@ -456,13 +456,13 @@ const styles = StyleSheet.create((theme) => ({
     storyTag: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.xs,
         alignSelf: 'flex-start',
         backgroundColor: theme.colors.surfaceElevated,
-        paddingHorizontal: 12,
-        paddingVertical: 8,
-        borderRadius: 8,
-        marginTop: 12,
+        paddingHorizontal: theme.spacing.md,
+        paddingVertical: theme.spacing.sm,
+        borderRadius: theme.radius.sm,
+        marginTop: theme.spacing.md,
     },
     storyTagText: {
         fontSize: theme.typography.size.sm,
@@ -470,16 +470,16 @@ const styles = StyleSheet.create((theme) => ({
     },
     actionsRow: {
         flexDirection: 'row',
-        gap: 24,
-        marginTop: 16,
-        paddingTop: 12,
+        gap: theme.spacing.xxl,
+        marginTop: theme.spacing.lg,
+        paddingTop: theme.spacing.md,
         borderTopWidth: 1,
         borderTopColor: theme.colors.borderLight,
     },
     actionButton: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.xs,
     },
     actionCount: {
         fontSize: theme.typography.size.sm,
@@ -489,18 +489,18 @@ const styles = StyleSheet.create((theme) => ({
 
     // Comments
     commentsSection: {
-        padding: 16,
+        padding: theme.spacing.lg,
     },
     commentsSectionTitle: {
         fontSize: theme.typography.size.md,
         fontWeight: '700',
         color: theme.colors.text,
-        marginBottom: 16,
+        marginBottom: theme.spacing.lg,
     },
     emptyComments: {
         alignItems: 'center',
-        paddingVertical: 40,
-        gap: 12,
+        paddingVertical: theme.spacing.xxxxl,
+        gap: theme.spacing.md,
     },
     emptyCommentsText: {
         fontSize: theme.typography.size.md,
@@ -508,14 +508,14 @@ const styles = StyleSheet.create((theme) => ({
     },
     commentItem: {
         flexDirection: 'row',
-        gap: 12,
-        marginBottom: 16,
+        gap: theme.spacing.md,
+        marginBottom: theme.spacing.lg,
     },
     commentAvatar: {},
     commentAvatarImage: {
         width: 36,
         height: 36,
-        borderRadius: 18,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.borderLight,
     },
     commentContent: {
@@ -524,7 +524,7 @@ const styles = StyleSheet.create((theme) => ({
     commentHeader: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 8,
+        gap: theme.spacing.sm,
     },
     commentUserName: {
         fontSize: theme.typography.size.sm,
@@ -539,17 +539,17 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.text,
         lineHeight: 20,
-        marginTop: 4,
+        marginTop: theme.spacing.xs,
     },
     commentActions: {
         flexDirection: 'row',
-        gap: 16,
-        marginTop: 8,
+        gap: theme.spacing.lg,
+        marginTop: theme.spacing.sm,
     },
     commentAction: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
+        gap: theme.spacing.xs,
     },
     commentActionText: {
         fontSize: theme.typography.size.xs,
@@ -561,15 +561,15 @@ const styles = StyleSheet.create((theme) => ({
         borderTopWidth: 1,
         borderTopColor: theme.colors.borderLight,
         backgroundColor: theme.colors.background,
-        paddingHorizontal: 16,
-        paddingVertical: 12,
-        paddingBottom: 24,
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.md,
+        paddingBottom: theme.spacing.xxl,
     },
     replyingToRow: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginBottom: 8,
+        marginBottom: theme.spacing.sm,
     },
     replyingToText: {
         fontSize: theme.typography.size.xs,
@@ -578,21 +578,21 @@ const styles = StyleSheet.create((theme) => ({
     inputRow: {
         flexDirection: 'row',
         alignItems: 'flex-end',
-        gap: 12,
+        gap: theme.spacing.md,
     },
     inputAvatar: {
         width: 32,
         height: 32,
-        borderRadius: 16,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.borderLight,
     },
     textInput: {
         flex: 1,
         fontSize: theme.typography.size.md,
         backgroundColor: theme.colors.surface,
-        borderRadius: 20,
-        paddingHorizontal: 16,
-        paddingVertical: 10,
+        borderRadius: theme.radius.xxl,
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.md,
         maxHeight: 100,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
@@ -600,7 +600,7 @@ const styles = StyleSheet.create((theme) => ({
     sendButton: {
         width: 36,
         height: 36,
-        borderRadius: 18,
+        borderRadius: theme.radius.full,
         alignItems: 'center',
         justifyContent: 'center',
     },

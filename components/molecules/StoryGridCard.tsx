@@ -43,7 +43,7 @@ const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
                     height={cardImageHeight}
                     sharedTransitionTag={`story-image-${story.id}`}
                     showPages={true}
-                    borderRadius={10}
+                    borderRadius={theme.radius.md}
                 />
 
                 <LinearGradient
@@ -108,21 +108,21 @@ const styles = StyleSheet.create((theme) => ({
         right: 0,
         bottom: 0,
         height: '65%',
-        borderBottomLeftRadius: 16,
-        borderBottomRightRadius: 16,
+        borderBottomLeftRadius: theme.radius.lg,
+        borderBottomRightRadius: theme.radius.lg,
     },
     topBadges: {
         position: 'absolute',
-        top: 8,
-        left: 8,
-        right: 8,
+        top: theme.spacing.sm,
+        left: theme.spacing.sm,
+        right: theme.spacing.sm,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         zIndex: 10,
     },
     difficultyBadge: {
-        paddingHorizontal: 8,
+        paddingHorizontal: theme.spacing.sm,
         paddingVertical: 2,
         borderRadius: theme.radius.full,
     },
@@ -135,7 +135,7 @@ const styles = StyleSheet.create((theme) => ({
     libraryBadge: {
         width: 24,
         height: 24,
-        borderRadius: 12,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.primary,
         alignItems: 'center',
         justifyContent: 'center',
@@ -159,7 +159,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     overlayAuthor: {
         flex: 1,
@@ -168,9 +168,9 @@ const styles = StyleSheet.create((theme) => ({
     readTimeBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 2,
+        gap: theme.spacing.xxs,
         backgroundColor: 'rgba(255,255,255,0.15)',
-        paddingHorizontal: 6,
+        paddingHorizontal: theme.spacing.xs + 2, // 6
         paddingVertical: 1,
         borderRadius: theme.radius.full,
     },

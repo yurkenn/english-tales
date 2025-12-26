@@ -219,8 +219,8 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: theme.spacing.lg,
-        paddingTop: Platform.OS === 'ios' ? 10 : 20,
-        paddingBottom: 10,
+        paddingTop: Platform.OS === 'ios' ? theme.spacing.sm : theme.spacing.lg,
+        paddingBottom: theme.spacing.sm,
     },
     closeBtn: {
         width: 40,
@@ -230,9 +230,9 @@ const styles = StyleSheet.create((theme) => ({
     },
     postBtn: {
         backgroundColor: theme.colors.primary,
-        paddingHorizontal: 20,
-        paddingVertical: 8,
-        borderRadius: 20,
+        paddingHorizontal: theme.spacing.xl,
+        paddingVertical: theme.spacing.sm,
+        borderRadius: theme.radius.xxl,
         // Premium shadow
         shadowColor: theme.colors.primary,
         shadowOffset: { width: 0, height: 4 },
@@ -255,8 +255,8 @@ const styles = StyleSheet.create((theme) => ({
     userRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 20,
+        marginTop: theme.spacing.sm,
+        marginBottom: theme.spacing.xl,
     },
     avatar: {
         width: 44,
@@ -265,12 +265,12 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.borderLight,
     },
     userInfo: {
-        marginLeft: 12,
+        marginLeft: theme.spacing.md,
     },
     publicBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     textInput: {
         fontSize: theme.typography.size.xl,
@@ -284,9 +284,9 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: theme.colors.surfaceElevated,
-        padding: 12,
-        borderRadius: 16,
-        marginTop: 20,
+        padding: theme.spacing.md,
+        borderRadius: theme.radius.lg,
+        marginTop: theme.spacing.xl,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         shadowColor: '#000',
@@ -315,7 +315,7 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: theme.spacing.lg,
-        paddingVertical: 12,
+        paddingVertical: theme.spacing.md,
         borderTopWidth: 1,
         borderTopColor: theme.colors.borderLight,
         backgroundColor: theme.colors.background,
@@ -327,10 +327,10 @@ const styles = StyleSheet.create((theme) => ({
     toolbarBtn: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingHorizontal: 12,
-        paddingVertical: 6,
+        paddingHorizontal: theme.spacing.md,
+        paddingVertical: theme.spacing.xs,
         backgroundColor: theme.colors.borderLight,
-        borderRadius: 20,
+        borderRadius: theme.radius.xxl,
     },
     progressContainer: {
         flexDirection: 'row',

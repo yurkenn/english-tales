@@ -51,7 +51,7 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         padding: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         marginHorizontal: theme.spacing.lg,
         marginTop: theme.spacing.sm,
         marginBottom: theme.spacing.md,
@@ -61,7 +61,7 @@ const styles = StyleSheet.create((theme) => ({
     avatarWrapper: {
         width: 36,
         height: 36,
-        borderRadius: 18,
+        borderRadius: theme.radius.full,
         padding: 1,
         backgroundColor: theme.colors.background,
         borderWidth: 1,
@@ -70,13 +70,13 @@ const styles = StyleSheet.create((theme) => ({
     myAvatar: {
         width: '100%',
         height: '100%',
-        borderRadius: 17,
+        borderRadius: theme.radius.full,
     },
     inputPlaceholder: {
         flex: 1,
         height: 38,
         backgroundColor: theme.colors.background,
-        borderRadius: 8,
+        borderRadius: theme.radius.sm,
         justifyContent: 'center',
         paddingHorizontal: theme.spacing.md,
         marginLeft: theme.spacing.md,
@@ -84,6 +84,6 @@ const styles = StyleSheet.create((theme) => ({
         borderColor: theme.colors.borderLight,
     },
     imageAction: {
-        padding: 4,
+        padding: theme.spacing.xs,
     },
 }));

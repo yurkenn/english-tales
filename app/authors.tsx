@@ -183,7 +183,7 @@ export default function AuthorsScreen() {
                 renderItem={renderItem}
                 contentContainerStyle={styles.listContent}
                 showsVerticalScrollIndicator={false}
-                ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
+                ItemSeparatorComponent={() => <View style={{ height: theme.spacing.md }} />}
                 ListHeaderComponent={ListHeader}
                 ListEmptyComponent={
                     isLoading ? null : (
@@ -270,7 +270,7 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
         backgroundColor: theme.colors.backgroundSecondary,
         paddingHorizontal: theme.spacing.sm,
-        paddingVertical: 2,
+        paddingVertical: theme.spacing.xxs,
         borderRadius: theme.radius.full,
     },
     listContent: {
@@ -304,7 +304,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     authorInfo: {
         flex: 1,
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     authorName: {
         fontSize: theme.typography.size.md,
@@ -322,8 +322,8 @@ const styles = StyleSheet.create((theme) => ({
     storyCountBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
-        marginTop: 4,
+        gap: theme.spacing.xs,
+        marginTop: theme.spacing.xs,
     },
     storyCountText: {
         fontSize: theme.typography.size.sm,

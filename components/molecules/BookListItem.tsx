@@ -29,7 +29,7 @@ export const BookListItem: React.FC<BookListItemProps> = ({
                 source={{ uri: story.coverImage }}
                 width={64}
                 height={96}
-                borderRadius={10}
+                borderRadius={theme.radius.md}
                 sharedTransitionTag={`story-image-${story.id}`}
             />
 
@@ -83,7 +83,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: theme.colors.surface,
-        borderRadius: 14,
+        borderRadius: theme.radius.md,
         padding: theme.spacing.md,
         gap: theme.spacing.lg,
         borderWidth: 1,
@@ -93,7 +93,7 @@ const styles = StyleSheet.create((theme) => ({
     coverContainer: {
         width: 64,
         height: 64,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         overflow: 'hidden',
         backgroundColor: theme.colors.background,
         borderWidth: 1,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     titleContainer: {
         flex: 1,
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     title: {
         fontSize: theme.typography.size.md,
@@ -128,7 +128,7 @@ const styles = StyleSheet.create((theme) => ({
     bookmarkButton: {
         width: 36,
         height: 36,
-        borderRadius: 18,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.background,
         alignItems: 'center',
         justifyContent: 'center',
@@ -144,7 +144,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.background,
         paddingHorizontal: theme.spacing.sm,
         paddingVertical: 2,
-        borderRadius: 6,
+        borderRadius: theme.radius.xs + 3, // 5
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
     },

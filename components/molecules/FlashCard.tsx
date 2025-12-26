@@ -170,7 +170,7 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 20,
+        padding: theme.spacing.xl,
     },
     cardWrapper: {
         width: '100%',
@@ -181,7 +181,7 @@ const styles = StyleSheet.create((theme) => ({
         position: 'absolute',
         width: '100%',
         height: '100%',
-        borderRadius: 20,
+        borderRadius: theme.radius.xl,
         backfaceVisibility: 'hidden',
     },
     cardFront: {
@@ -194,23 +194,23 @@ const styles = StyleSheet.create((theme) => ({
     },
     cardContent: {
         flex: 1,
-        padding: 32,
+        padding: theme.spacing.xxxl,
         alignItems: 'center',
         justifyContent: 'center',
     },
     label: {
-        fontSize: 11,
-        fontWeight: '600',
+        fontSize: theme.typography.size.xs,
+        fontWeight: theme.typography.weight.semibold,
         letterSpacing: 2,
         color: theme.colors.textMuted,
-        marginBottom: 20,
+        marginBottom: theme.spacing.xl,
     },
     labelBack: {
-        fontSize: 11,
-        fontWeight: '600',
+        fontSize: theme.typography.size.xs,
+        fontWeight: theme.typography.weight.semibold,
         letterSpacing: 2,
         color: 'rgba(255,255,255,0.6)',
-        marginBottom: 20,
+        marginBottom: theme.spacing.xl,
     },
     word: {
         fontSize: 32,
@@ -220,16 +220,16 @@ const styles = StyleSheet.create((theme) => ({
         textTransform: 'capitalize',
     },
     partOfSpeech: {
-        fontSize: 14,
+        fontSize: theme.typography.size.sm + 1, // 14
         color: theme.colors.primary,
         fontStyle: 'italic',
-        marginTop: 8,
+        marginTop: theme.spacing.sm,
     },
     tapHint: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 40,
-        gap: 6,
+        marginTop: theme.spacing.xxxxl * 0.8, // roughly 40
+        gap: theme.spacing.xs + 2, // 6
         opacity: 0.6,
     },
     tapHintText: {
@@ -237,33 +237,33 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textMuted,
     },
     definition: {
-        fontSize: 18,
-        fontWeight: '500',
+        fontSize: theme.typography.size.lg + 1, // 18
+        fontWeight: theme.typography.weight.medium,
         color: '#FFFFFF',
         textAlign: 'center',
         lineHeight: 26,
     },
     example: {
-        fontSize: 14,
+        fontSize: theme.typography.size.sm + 1, // 14
         color: 'rgba(255,255,255,0.7)',
         fontStyle: 'italic',
         textAlign: 'center',
-        marginTop: 24,
-        paddingHorizontal: 12,
+        marginTop: theme.spacing.xxl,
+        paddingHorizontal: theme.spacing.md,
     },
     actions: {
         flexDirection: 'row',
-        gap: 12,
-        marginTop: 20,
+        gap: theme.spacing.md,
+        marginTop: theme.spacing.xl,
     },
     actionButton: {
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        paddingVertical: 14,
-        borderRadius: 14,
-        gap: 8,
+        paddingVertical: theme.spacing.lg - 2, // 14
+        borderRadius: theme.radius.md + 2, // 14
+        gap: theme.spacing.sm,
         backgroundColor: theme.colors.surface,
         borderWidth: 1,
     },

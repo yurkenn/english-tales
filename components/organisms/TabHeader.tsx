@@ -21,7 +21,7 @@ export const TabHeader: React.FC<TabHeaderProps> = ({ title, actions = [] }) => 
     const insets = useSafeAreaInsets();
 
     return (
-        <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
+        <View style={[styles.header, { paddingTop: insets.top + theme.spacing.sm }]}>
             <Text style={styles.title}>{title}</Text>
             {actions.length > 0 && (
                 <View style={styles.actions}>
@@ -53,8 +53,8 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 20,
-        paddingBottom: 12,
+        paddingHorizontal: theme.spacing.xl,
+        paddingBottom: theme.spacing.md,
         backgroundColor: theme.colors.background,
     },
     title: {
@@ -66,12 +66,12 @@ const styles = StyleSheet.create((theme) => ({
     actions: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 8,
+        gap: theme.spacing.sm,
     },
     actionButton: {
         width: 44,
         height: 44,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         backgroundColor: theme.colors.surface,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create((theme) => ({
         right: 10,
         width: 8,
         height: 8,
-        borderRadius: 4,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.primary,
         borderWidth: 2,
         borderColor: theme.colors.surface,

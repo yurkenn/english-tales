@@ -110,7 +110,7 @@ const styles = StyleSheet.create((theme) => ({
     container: {
         flexDirection: 'row',
         marginVertical: theme.spacing.xl,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         overflow: 'hidden',
         borderWidth: 1,
         backgroundColor: 'rgba(0,0,0,0.01)',
@@ -120,13 +120,13 @@ const styles = StyleSheet.create((theme) => ({
     },
     content: {
         flex: 1,
-        padding: 16,
+        padding: theme.spacing.lg,
     },
     header: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
-        marginBottom: 8,
+        gap: theme.spacing.xs + 2, // 6
+        marginBottom: theme.spacing.sm,
     },
     title: {
         fontSize: theme.typography.size.sm,
@@ -138,22 +138,22 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.lg,
         fontWeight: '600',
         lineHeight: 24,
-        marginBottom: 16,
+        marginBottom: theme.spacing.lg,
     },
     options: {
-        gap: 8,
+        gap: theme.spacing.sm,
     },
     option: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 12,
-        borderRadius: 8,
+        padding: theme.spacing.md,
+        borderRadius: theme.radius.sm,
         borderWidth: 1,
     },
     optionText: {
         fontSize: theme.typography.size.md,
         flex: 1,
-        marginRight: 8,
+        marginRight: theme.spacing.sm,
     },
 }));

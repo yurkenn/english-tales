@@ -42,14 +42,14 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.lg,
         paddingVertical: theme.spacing.xl,
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
+        borderRadius: theme.radius.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
     },
     statItem: {
         alignItems: 'center',
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     statValue: {
         fontSize: theme.typography.size.xxl,

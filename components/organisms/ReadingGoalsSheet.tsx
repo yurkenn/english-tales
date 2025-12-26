@@ -53,7 +53,7 @@ export const ReadingGoalsSheet = forwardRef<BottomSheet, ReadingGoalsSheetProps>
                     if (index === -1) onClose();
                 }}
             >
-                <BottomSheetView style={[styles.content, { paddingBottom: insets.bottom + 16 }]}>
+                <BottomSheetView style={[styles.content, { paddingBottom: insets.bottom + theme.spacing.lg }]}>
                     {/* Header */}
                     <View style={styles.header}>
                         <View style={styles.iconContainer}>
@@ -112,7 +112,7 @@ const styles = StyleSheet.create((theme) => ({
     iconContainer: {
         width: 56,
         height: 56,
-        borderRadius: 28,
+        borderRadius: theme.radius.full,
         backgroundColor: `${theme.colors.primary}15`,
         alignItems: 'center',
         justifyContent: 'center',
@@ -161,7 +161,7 @@ const styles = StyleSheet.create((theme) => ({
     label: {
         fontSize: theme.typography.size.sm,
         color: theme.colors.textSecondary,
-        marginTop: 2,
+        marginTop: theme.spacing.xxxxxsmall,
     },
     textSelected: {
         color: '#FFFFFF',
@@ -172,7 +172,7 @@ const styles = StyleSheet.create((theme) => ({
         right: 6,
         width: 18,
         height: 18,
-        borderRadius: 9,
+        borderRadius: theme.radius.full,
         backgroundColor: 'rgba(255,255,255,0.3)',
         alignItems: 'center',
         justifyContent: 'center',

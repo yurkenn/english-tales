@@ -57,7 +57,7 @@ export const CommunityReplyCard: React.FC<CommunityReplyCardProps> = ({ reply, o
                             color={hasLiked ? theme.colors.error : theme.colors.textMuted}
                         />
                         {reply.likes ? (
-                            <Typography variant="caption" color={hasLiked ? theme.colors.error : theme.colors.textMuted} style={{ marginLeft: 4 }}>
+                            <Typography variant="caption" color={hasLiked ? theme.colors.error : theme.colors.textMuted} style={{ marginLeft: theme.spacing.xs }}>
                                 {reply.likes}
                             </Typography>
                         ) : null}
@@ -82,7 +82,7 @@ const styles = StyleSheet.create((theme) => ({
     avatar: {
         width: 36,
         height: 36,
-        borderRadius: 18,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.borderLight,
     },
     contentContainer: {
@@ -93,7 +93,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'baseline',
-        marginBottom: 4,
+        marginBottom: theme.spacing.xs,
     },
     headerText: {
         flex: 1,
@@ -110,8 +110,8 @@ const styles = StyleSheet.create((theme) => ({
     likeButton: {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingLeft: 12,
-        paddingVertical: 4,
+        paddingLeft: theme.spacing.md,
+        paddingVertical: theme.spacing.xs,
     },
     content: {
         fontSize: theme.typography.size.md,

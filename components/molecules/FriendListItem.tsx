@@ -122,7 +122,7 @@ const styles = StyleSheet.create((theme) => ({
     avatarWrapper: {
         width: 52,
         height: 52,
-        borderRadius: 26,
+        borderRadius: theme.radius.full,
         padding: 2,
         backgroundColor: theme.colors.background,
         borderWidth: 1,
@@ -131,10 +131,10 @@ const styles = StyleSheet.create((theme) => ({
     avatar: {
         width: '100%',
         height: '100%',
-        borderRadius: 24,
+        borderRadius: theme.radius.full,
     },
     friendText: {
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     actions: {
         flexDirection: 'row',
@@ -145,9 +145,9 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.sm,
     },
     actionBtn: {
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-        borderRadius: 100,
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.sm,
+        borderRadius: theme.radius.full,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -159,17 +159,19 @@ const styles = StyleSheet.create((theme) => ({
         width: 36,
         height: 36,
         paddingHorizontal: 0,
+        borderRadius: theme.radius.full,
     },
     secondaryActionBtn: {
         backgroundColor: theme.colors.borderLight,
-        paddingHorizontal: 14,
-        paddingVertical: 6,
-        borderRadius: 8,
+        paddingHorizontal: theme.spacing.lg - 2, // 14
+        paddingVertical: theme.spacing.xs + 2, // 6
+        borderRadius: theme.radius.sm,
     },
     ghostActionBtn: {
         width: 32,
         height: 32,
         alignItems: 'center',
         justifyContent: 'center',
+        borderRadius: theme.radius.sm,
     },
 }));

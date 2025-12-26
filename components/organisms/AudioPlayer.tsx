@@ -103,7 +103,7 @@ const styles = StyleSheet.create((theme) => ({
     controlButton: {
         width: 44,
         height: 44,
-        borderRadius: 22,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.primary + '10',
         alignItems: 'center',
         justifyContent: 'center',

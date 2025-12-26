@@ -29,7 +29,7 @@ export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = ({
                 source={{ uri: story.coverImage }}
                 width={80}
                 height={112}
-                borderRadius={10}
+                borderRadius={theme.radius.md}
                 sharedTransitionTag={`story-image-${story.id}`}
             />
 
@@ -75,7 +75,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: theme.colors.surface,
-        borderRadius: 14,
+        borderRadius: theme.radius.md,
         padding: theme.spacing.md,
         gap: theme.spacing.lg,
         borderWidth: 1,
@@ -85,7 +85,7 @@ const styles = StyleSheet.create((theme) => ({
     coverContainer: {
         width: 80,
         height: 112,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         overflow: 'hidden',
         backgroundColor: theme.colors.background,
         borderWidth: 1,
@@ -131,7 +131,7 @@ const styles = StyleSheet.create((theme) => ({
     playButton: {
         width: 44,
         height: 44,
-        borderRadius: 22,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.background,
         alignItems: 'center',
         justifyContent: 'center',

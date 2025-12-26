@@ -88,7 +88,7 @@ const CommentItem = ({
     return (
         <Animated.View
             entering={FadeInDown.delay(index * 30).duration(200)}
-            style={[styles.commentContainer, { marginLeft: depth * 16 }]}
+            style={[styles.commentContainer, { marginLeft: depth * theme.spacing.lg }]}
         >
             {/* Thread line for nested comments */}
             {depth > 0 && (
@@ -203,7 +203,7 @@ export const CommentThread: React.FC<CommentThreadProps> = ({
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        gap: 4,
+        gap: theme.spacing.xs,
     },
     commentContainer: {
         position: 'relative',
@@ -214,17 +214,17 @@ const styles = StyleSheet.create((theme) => ({
         top: 0,
         bottom: 0,
         width: 2,
-        borderRadius: 1,
+        borderRadius: theme.radius.xxs,
     },
     commentItem: {
         flexDirection: 'row',
-        gap: 10,
-        paddingVertical: 8,
+        gap: theme.spacing.sm + 2, // 10
+        paddingVertical: theme.spacing.sm,
     },
     avatar: {
         width: 32,
         height: 32,
-        borderRadius: 16,
+        borderRadius: theme.radius.lg,
         backgroundColor: theme.colors.borderLight,
     },
     contentWrapper: {
@@ -233,7 +233,7 @@ const styles = StyleSheet.create((theme) => ({
     commentHeader: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 8,
+        gap: theme.spacing.sm,
     },
     userName: {
         fontSize: theme.typography.size.sm,
@@ -248,23 +248,23 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.text,
         lineHeight: 20,
-        marginTop: 4,
+        marginTop: theme.spacing.xs,
     },
     actions: {
         flexDirection: 'row',
-        gap: 16,
-        marginTop: 8,
+        gap: theme.spacing.lg,
+        marginTop: theme.spacing.sm,
     },
     actionBtn: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4,
+        gap: theme.spacing.xs,
     },
     actionText: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
     },
     repliesContainer: {
-        marginTop: 4,
+        marginTop: theme.spacing.xs,
     },
 }))

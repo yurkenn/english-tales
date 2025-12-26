@@ -249,24 +249,24 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.background,
     },
     searchContainer: {
-        paddingHorizontal: 20,
+        paddingHorizontal: theme.spacing.xl,
         paddingTop: 0,
-        paddingBottom: 8,
+        paddingBottom: theme.spacing.sm,
     },
     chipsWrapper: {
         flexShrink: 0,
     },
     chipsContainer: {
-        paddingHorizontal: 20,
-        paddingVertical: 8,
-        gap: 8,
+        paddingHorizontal: theme.spacing.xl,
+        paddingVertical: theme.spacing.sm,
+        gap: theme.spacing.sm,
     },
     content: {
         flex: 1,
     },
     contentContainer: {
         paddingTop: theme.spacing.md,
-        paddingBottom: 120,
+        paddingBottom: theme.spacing.xxxxl * 2 + theme.spacing.xxl, // ~120
         gap: theme.spacing.xl,
     },
     surpriseSection: {
@@ -276,17 +276,17 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.md,
     },
     sectionContent: {
-        paddingHorizontal: 20,
+        paddingHorizontal: theme.spacing.xl,
     },
     carouselContent: {
-        paddingHorizontal: 20,
+        paddingHorizontal: theme.spacing.xl,
     },
     popularContainer: {
-        paddingHorizontal: 20,
-        gap: 12,
+        paddingHorizontal: theme.spacing.xl,
+        gap: theme.spacing.md,
     },
     horizontalSeparator: {
-        width: 16,
+        width: theme.spacing.lg,
     },
     center: {
         alignItems: 'center',

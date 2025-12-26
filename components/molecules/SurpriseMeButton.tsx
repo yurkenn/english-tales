@@ -46,11 +46,11 @@ export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) =
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        paddingHorizontal: 20,
+        paddingHorizontal: theme.spacing.xl,
     },
     button: {
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
+        borderRadius: theme.radius.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
@@ -68,14 +68,14 @@ const styles = StyleSheet.create((theme) => ({
     iconWrapper: {
         width: 52,
         height: 52,
-        borderRadius: 16,
+        borderRadius: theme.radius.md + 4, // 16
         alignItems: 'center',
         justifyContent: 'center',
         ...theme.shadows.md,
     },
     textContainer: {
         flex: 1,
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     title: {
         fontSize: theme.typography.size.md,
@@ -89,7 +89,7 @@ const styles = StyleSheet.create((theme) => ({
     arrowWrapper: {
         width: 32,
         height: 32,
-        borderRadius: 16,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.background,
         alignItems: 'center',
         justifyContent: 'center',

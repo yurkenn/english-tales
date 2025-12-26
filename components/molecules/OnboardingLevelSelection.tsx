@@ -89,18 +89,18 @@ export const OnboardingLevelSelection = ({
 const styles = StyleSheet.create((theme) => ({
     levelContainer: {
         width: '100%',
-        paddingHorizontal: 24,
-        gap: 12,
+        paddingHorizontal: theme.spacing.xxl,
+        gap: theme.spacing.md,
     },
     levelCard: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 16,
+        padding: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xl,
         borderWidth: 2,
         borderColor: theme.colors.borderLight,
-        gap: 12,
+        gap: theme.spacing.md,
     },
     levelCardSelected: {
         borderColor: theme.colors.primary,
@@ -109,7 +109,7 @@ const styles = StyleSheet.create((theme) => ({
     levelIconContainer: {
         width: 48,
         height: 48,
-        borderRadius: 24,
+        borderRadius: theme.radius.full,
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
@@ -121,7 +121,7 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.lg,
         fontWeight: 'bold',
         color: theme.colors.text,
-        marginBottom: 2,
+        marginBottom: theme.spacing.xxs,
     },
     levelLabelSelected: {
         color: theme.colors.primary,

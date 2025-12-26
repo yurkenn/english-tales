@@ -141,7 +141,7 @@ const styles = StyleSheet.create((theme) => ({
     rankBadge: {
         width: 36,
         height: 36,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         backgroundColor: theme.colors.surfaceElevated,
         alignItems: 'center',
         justifyContent: 'center',
@@ -170,7 +170,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     info: {
         flex: 1,
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     title: {
         fontSize: theme.typography.size.md,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     difficultyBadge: {
         paddingHorizontal: theme.spacing.sm,
-        paddingVertical: 3,
+        paddingVertical: 2,
         borderRadius: theme.radius.full,
     },
     difficultyText: {
@@ -200,7 +200,7 @@ const styles = StyleSheet.create((theme) => ({
     readTimeBadge: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 2,
+        gap: theme.spacing.xxs,
     },
     readTimeText: {
         fontSize: theme.typography.size.xs,

@@ -90,16 +90,16 @@ export const AchievementsProgressCard: React.FC<AchievementsProgressCardProps> =
 const styles = StyleSheet.create((theme) => ({
     container: {
         backgroundColor: theme.colors.surface,
-        borderRadius: 20,
-        padding: 20,
-        marginBottom: 20,
+        borderRadius: theme.radius.xl,
+        padding: theme.spacing.xl,
+        marginBottom: theme.spacing.xl,
         ...theme.shadows.md,
     },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 16,
+        marginBottom: theme.spacing.lg,
     },
     headerLeft: {
         flexDirection: 'row',
@@ -109,7 +109,7 @@ const styles = StyleSheet.create((theme) => ({
     trophyContainer: {
         width: 44,
         height: 44,
-        borderRadius: 12,
+        borderRadius: theme.radius.md,
         backgroundColor: 'rgba(245, 158, 11, 0.15)',
         alignItems: 'center',
         justifyContent: 'center',
@@ -120,9 +120,9 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
     },
     subtitle: {
-        fontSize: 12,
+        fontSize: theme.typography.size.xs,
         color: theme.colors.textSecondary,
-        marginTop: 2,
+        marginTop: theme.spacing.xxs,
     },
     countContainer: {
         flexDirection: 'row',
@@ -146,20 +146,20 @@ const styles = StyleSheet.create((theme) => ({
     mainProgressContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 10,
-        marginBottom: 20,
+        gap: theme.spacing.sm,
+        marginBottom: theme.spacing.xl,
     },
     barContainer: {
         flex: 1,
         height: 10,
         backgroundColor: theme.colors.backgroundSecondary,
-        borderRadius: 5,
+        borderRadius: theme.radius.xs,
         overflow: 'hidden',
     },
     bar: {
         height: '100%',
         backgroundColor: theme.colors.primary,
-        borderRadius: 5,
+        borderRadius: theme.radius.xs,
     },
     percentText: {
         fontSize: 14,
@@ -169,15 +169,15 @@ const styles = StyleSheet.create((theme) => ({
         textAlign: 'right',
     },
     categoriesContainer: {
-        gap: 12,
+        gap: theme.spacing.md,
     },
     categoryItem: {
-        gap: 6,
+        gap: theme.spacing.xs,
     },
     categoryHeader: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
+        gap: theme.spacing.xs,
     },
     categoryIcon: {
         fontSize: 14,
@@ -196,11 +196,11 @@ const styles = StyleSheet.create((theme) => ({
     categoryBarContainer: {
         height: 4,
         backgroundColor: theme.colors.backgroundSecondary,
-        borderRadius: 2,
+        borderRadius: theme.radius.xxs,
         overflow: 'hidden',
     },
     categoryBar: {
         height: '100%',
-        borderRadius: 2,
+        borderRadius: theme.radius.xxs,
     },
 }))

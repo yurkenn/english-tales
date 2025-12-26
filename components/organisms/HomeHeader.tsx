@@ -96,7 +96,7 @@ const styles = StyleSheet.create((theme) => ({
     avatar: {
         width: 44,
         height: 44,
-        borderRadius: 22,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.background,
         borderWidth: 1.5,
         borderColor: theme.colors.surface,
@@ -120,7 +120,7 @@ const styles = StyleSheet.create((theme) => ({
     notificationButton: {
         width: 40,
         height: 40,
-        borderRadius: 20,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.surface,
         alignItems: 'center',
         justifyContent: 'center',
@@ -134,7 +134,7 @@ const styles = StyleSheet.create((theme) => ({
         right: 8,
         width: 10,
         height: 10,
-        borderRadius: 5,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.primary,
         borderWidth: 2,
         borderColor: theme.colors.surface,

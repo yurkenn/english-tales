@@ -335,7 +335,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.background,
     },
     content: {
-        paddingBottom: 40,
+        paddingBottom: theme.spacing.xxxxl,
     },
     profileCardWrapper: {
         paddingHorizontal: theme.spacing.lg,
@@ -344,8 +344,8 @@ const styles = StyleSheet.create((theme) => ({
     },
     profileCard: {
         backgroundColor: theme.colors.surface,
-        borderRadius: 12,
-        padding: 12,
+        borderRadius: theme.radius.md,
+        padding: theme.spacing.md,
         flexDirection: 'row',
         alignItems: 'center',
         borderWidth: 1,
@@ -354,12 +354,12 @@ const styles = StyleSheet.create((theme) => ({
     avatar: {
         width: 60,
         height: 60,
-        borderRadius: 30,
+        borderRadius: theme.radius.full,
         backgroundColor: theme.colors.surfaceElevated,
     },
     profileText: {
         flex: 1,
-        marginLeft: 14,
+        marginLeft: theme.spacing.lg,
     },
     profileName: {
         fontSize: theme.typography.size.xl,

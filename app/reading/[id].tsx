@@ -361,7 +361,7 @@ export default function ReadingScreen() {
         return (
             <View style={[styles.container, { paddingTop: insets.top }, styles.center]}>
                 <Text style={styles.errorText}>{t('reading.notFound')}</Text>
-                <Pressable onPress={() => router.back()} style={{ marginTop: 20 }}>
+                <Pressable onPress={() => router.back()} style={{ marginTop: theme.spacing.xl }}>
                     <Text style={{ color: theme.colors.primary }}>{t('common.goBack')}</Text>
                 </Pressable>
             </View>
@@ -417,7 +417,7 @@ export default function ReadingScreen() {
                 )}
             </ScrollView>
 
-            <View style={[styles.controls, { paddingBottom: insets.bottom + 8 }]}>
+            <View style={[styles.controls, { paddingBottom: insets.bottom + theme.spacing.sm }]}>
                 <ReadingControls
                     fontSize={fontSize}
                     readingTheme={readingTheme}
@@ -529,9 +529,12 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
     },
     contentContainer: {
+        flexGrow: 1,
+        justifyContent: 'flex-start',
+        alignItems: 'stretch',
         paddingHorizontal: theme.spacing.xl,
-        paddingVertical: 24,
-        paddingBottom: 140,
+        paddingVertical: theme.spacing.xxl,
+        paddingBottom: theme.spacing.xxxxl * 3,
     },
     storyText: {
         color: theme.colors.text,

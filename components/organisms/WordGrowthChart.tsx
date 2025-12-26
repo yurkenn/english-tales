@@ -73,19 +73,19 @@ export const WordGrowthChart: React.FC<ChartData> = ({ words }) => {
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        marginHorizontal: 20,
-        padding: 16,
+        marginHorizontal: theme.spacing.xl,
+        padding: theme.spacing.lg,
         backgroundColor: theme.colors.surface,
-        borderRadius: 16,
+        borderRadius: theme.radius.lg,
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
-        marginBottom: 16,
+        marginBottom: theme.spacing.lg,
     },
     title: {
         fontSize: theme.typography.size.lg,
         fontWeight: 'bold',
         color: theme.colors.text,
-        marginBottom: 16,
+        marginBottom: theme.spacing.lg,
     },
     chartArea: {
         height: 120,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     bar: {
         width: 12,
-        borderRadius: 6,
+        borderRadius: theme.radius.full,
     },
     countText: {
         position: 'absolute',
