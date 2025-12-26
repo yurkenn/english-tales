@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable } from 'react-native';
+import { View, Text, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -12,7 +12,7 @@ import {
     WordLookupSheet,
     QuizModal,
     AudioPlayer,
-    PortableTextRenderer,
+    PagedContent,
     ReadingScreenSkeleton,
     WriteReviewSheet,
     READING_THEMES,
@@ -20,6 +20,7 @@ import {
 } from '@/components';
 import { type QuizQuestion } from '@/types/sanity';
 import { useStory } from '@/hooks/useQueries';
+import { usePageCalculation } from '@/hooks/usePageCalculation';
 import { useProgressStore } from '@/store/progressStore';
 import { useAuthStore } from '@/store/authStore';
 import { useReadingPrefsStore } from '@/store/readingPrefsStore';
@@ -44,6 +45,7 @@ export default function ReadingScreen() {
     const { id } = useLocalSearchParams<{ id: string }>();
 
     const [progress, setProgress] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
     const [showCompletionModal, setShowCompletionModal] = useState(false);
     const [showSettingsModal, setShowSettingsModal] = useState(false);
     const [readingTheme, setReadingTheme] = useState<ReadingTheme>('light');
@@ -162,24 +164,54 @@ export default function ReadingScreen() {
         return storyDoc?.content as PortableTextBlock[] | undefined;
     }, [downloadedContent, storyDoc]);
 
-    const handleScroll = useCallback((event: any) => {
-        const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
-        const scrollableHeight = contentSize.height - layoutMeasurement.height;
-        if (scrollableHeight <= 0) return;
+    // Calculate pages from content
+    const { pages, totalPages } = usePageCalculation({
+        content,
+        fontSize,
+        lineHeight,
+        headerHeight: 100,
+        controlsHeight: 80,
+    });
 
-        const newProgress = Math.min(100, Math.round((contentOffset.y / scrollableHeight) * 100));
-
-        // Only update if progress changed by at least 1% to reduce re-renders
-        if (newProgress > 0 && Math.abs(newProgress - progress) >= 1) {
-            setProgress(newProgress);
-            saveProgress(newProgress);
-
-            if (newProgress >= 95 && !hasShownCompletion.current) {
-                hasShownCompletion.current = true;
-                setShowCompletionModal(true);
+    // Restore current page from saved progress when pages are calculated
+    useEffect(() => {
+        if (totalPages > 0 && id && progressMap[id]) {
+            const savedProgress = progressMap[id].percentage;
+            const restoredPage = Math.min(
+                Math.floor((savedProgress / 100) * totalPages),
+                totalPages - 1
+            );
+            if (restoredPage > 0 && currentPage === 0) {
+                setCurrentPage(restoredPage);
+                setProgress(savedProgress);
             }
         }
-    }, [progress, saveProgress]);
+    }, [totalPages, id, progressMap]);
+
+    // Handle page change (replaces scroll-based progress)
+    const handlePageChange = useCallback((newPage: number) => {
+        // Only update if page actually changed
+        if (newPage === currentPage) return;
+
+        setCurrentPage(newPage);
+
+        // Calculate progress based on page position
+        const newProgress = totalPages > 0
+            ? Math.min(100, Math.round(((newPage + 1) / totalPages) * 100))
+            : 0;
+
+        setProgress(newProgress);
+        saveProgress(newProgress);
+    }, [currentPage, totalPages, saveProgress]);
+
+    // Kindle-style: show completion when user tries to go past last page
+    const handleTryNextOnLastPage = useCallback(() => {
+        if (!hasShownCompletion.current) {
+            hasShownCompletion.current = true;
+            haptics.success();
+            setShowCompletionModal(true);
+        }
+    }, []);
 
     const handleMarkComplete = useCallback(async (rating?: number) => {
         haptics.success();
@@ -382,40 +414,37 @@ export default function ReadingScreen() {
             <ReadingProgressBar
                 progress={progress}
                 estimatedReadTime={storyDoc.estimatedReadTime || 5}
+                currentPage={currentPage + 1}
+                totalPages={totalPages}
             />
 
-            <ScrollView
-                style={[
-                    styles.content,
-                    {
-                        backgroundColor: globalHighContrast
-                            ? (isDark ? '#000000' : '#FFFFFF')
-                            : currentTheme.bg
+            {pages.length > 0 ? (
+                <PagedContent
+                    pages={pages}
+                    currentPage={currentPage}
+                    onPageChange={handlePageChange}
+                    onWordPress={handleWordPress}
+                    fontSize={fontSize}
+                    lineHeight={lineHeight}
+                    textColor={globalHighContrast
+                        ? (isDark ? '#FFFFFF' : '#000000')
+                        : currentTheme.text
                     }
-                ]}
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={styles.contentContainer}
-                onScroll={handleScroll}
-                scrollEventThrottle={100}
-            >
-                {content ? (
-                    <PortableTextRenderer
-                        content={content}
-                        fontSize={fontSize}
-                        lineHeight={lineHeight}
-                        textColor={globalHighContrast
-                            ? (isDark ? '#FFFFFF' : '#000000')
-                            : currentTheme.text
-                        }
-                        onWordPress={handleWordPress}
-                        dyslexicFontEnabled={dyslexicFontEnabled}
-                    />
-                ) : (
+                    backgroundColor={globalHighContrast
+                        ? (isDark ? '#000000' : '#FFFFFF')
+                        : currentTheme.bg
+                    }
+                    dyslexicFontEnabled={dyslexicFontEnabled}
+                    selectedWord={selectedWord}
+                    onTryNextOnLastPage={handleTryNextOnLastPage}
+                />
+            ) : (
+                <View style={styles.emptyContent}>
                     <Text style={[styles.storyText, { fontSize, color: currentTheme.text }]}>
                         {t('reading.noContent')}
                     </Text>
-                )}
-            </ScrollView>
+                </View>
+            )}
 
             <View style={[styles.controls, { paddingBottom: insets.bottom + theme.spacing.sm }]}>
                 <ReadingControls
@@ -552,5 +581,11 @@ const styles = StyleSheet.create((theme) => ({
         borderTopWidth: 1,
         borderTopColor: theme.colors.borderLight,
         ...theme.shadows.lg,
+    },
+    emptyContent: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: theme.spacing.xl,
     },
 }));

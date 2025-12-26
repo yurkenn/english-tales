@@ -13,6 +13,10 @@ interface ReadingProgressBarProps {
     progress: number;
     /** Total estimated reading time for the story in minutes */
     estimatedReadTime: number;
+    /** Current page number (1-indexed) */
+    currentPage?: number;
+    /** Total number of pages */
+    totalPages?: number;
 }
 
 /**
@@ -22,10 +26,16 @@ interface ReadingProgressBarProps {
 export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = React.memo(({
     progress,
     estimatedReadTime,
+    currentPage,
+    totalPages,
 }) => {
     const { t } = useTranslation();
     const { theme } = useUnistyles();
     const remainingTime = Math.max(1, Math.ceil(estimatedReadTime * (100 - progress) / 100));
+
+    // Show page info if available, otherwise show percentage
+    const showPageInfo = currentPage !== undefined && totalPages !== undefined && totalPages > 0;
+
     return (
         <View style={styles.container}>
             <ProgressBar
@@ -40,7 +50,13 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = React.memo(
                         {t('reading.remainingTime', { time: remainingTime })}
                     </Text>
                 </View>
-                <Text style={styles.percentageText}>{Math.round(progress)}%</Text>
+                {showPageInfo ? (
+                    <Text style={styles.percentageText}>
+                        {currentPage} / {totalPages}
+                    </Text>
+                ) : (
+                    <Text style={styles.percentageText}>{Math.round(progress)}%</Text>
+                )}
             </View>
         </View>
     );

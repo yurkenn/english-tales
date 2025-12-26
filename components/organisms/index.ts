@@ -51,3 +51,4 @@ export * from './settingsTypes';
 export { TabHeader } from './TabHeader';
 export { UserProfileSheet } from './UserProfileSheet';
 export { PostDetailSheet } from './PostDetailSheet';
+export { PagedContent } from './PagedContent';

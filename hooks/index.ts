@@ -5,3 +5,4 @@ export * from './useRefreshControl';
 export * from './useDifficultyFilter';
 export * from './useAsyncAction';
 export * from './useSearchFilter';
+export * from './usePageCalculation';
