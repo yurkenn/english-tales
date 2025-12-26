@@ -46,7 +46,12 @@
         "accept": "Accept",
         "seeAll": "See All",
         "confirm": "Confirm",
-        "you": "You"
+        "you": "You",
+        "min": "min",
+        "story": "story",
+        "offline": "Offline",
+        "check": "Check",
+        "words": "words"
     },
     "tabs": {
         "home": "Home",
@@ -109,7 +114,8 @@
         "theme": "Theme",
         "system": "System",
         "light": "Light",
-        "dark": "Dark"
+        "dark": "Dark",
+        "sepia": "Sepia"
     },
     "home": {
         "greeting": "Hello, {{name}}",
@@ -215,6 +221,15 @@
         "audioAssist": "Audio Assist",
         "readingAloud": "Reading aloud...",
         "audioAssistReady": "Audio Assist Ready",
+        "minutesLeft": "{{count}} min left to reach goal",
+        "minutesLeft_one": "1 min left to reach goal",
+        "controls": {
+            "appearance": "Appearance",
+            "save": "Save",
+            "saved": "Saved",
+            "share": "Share",
+            "listen": "Listen"
+        },
         "quiz": {
             "title": "Comprehension Quiz",
             "subtitle": "Let's see what you've learned!",

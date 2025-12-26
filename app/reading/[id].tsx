@@ -33,6 +33,7 @@ import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
 import { analyticsService } from '@/services/firebase/analytics';
 import { useTranslation } from 'react-i18next';
+import { useToastStore } from '@/store/toastStore';
 import BottomSheet from '@gorhom/bottom-sheet';
 
 import {
@@ -67,8 +68,10 @@ export default function ReadingScreen() {
     const { fontSize, lineHeight, dyslexicFontEnabled, theme: readingTheme, fontFamily, actions: prefsActions } = useReadingPrefsStore();
     const { progressMap, actions: progressActions } = useProgressStore();
     const { actions: libraryActions } = useLibraryStore();
+    const isInLibrary = useLibraryStore((state) => state.items.some((i) => i.storyId === id));
     const { downloads, actions: downloadActions } = useDownloadStore();
     const { user } = useAuthStore();
+    const toastActions = useToastStore((state) => state.actions);
 
     // Get highlights for this story (reactive)
     const storyHighlights = useHighlightStore((state) => {
@@ -87,7 +90,6 @@ export default function ReadingScreen() {
         prefsActions.setFontSize(Math.min(28, fontSize + 2));
     }, [fontSize, prefsActions]);
 
-    const isInLibrary = id ? libraryActions.isInLibrary(id) : false;
     const isDownloaded = id ? downloadActions.isDownloaded(id) : false;
 
     const { data: storyDoc, isLoading: loadingStory } = useStory(id || '');
@@ -257,11 +259,19 @@ export default function ReadingScreen() {
 
     const handleBookmarkToggle = useCallback(async () => {
         if (!storyDoc || !id) return;
-        haptics.success();
+
+        if (!user || user.isAnonymous) {
+            toastActions.warning(t('auth.guestBanner.title'));
+            return;
+        }
+
         if (isInLibrary) {
-            await libraryActions.removeFromLibrary(id);
+            const result = await libraryActions.removeFromLibrary(id);
+            if (result.success) {
+                toastActions.info(t('library.menu.removeFromLibrary'));
+            }
         } else {
-            await libraryActions.addToLibrary({
+            const result = await libraryActions.addToLibrary({
                 id,
                 title: storyDoc.title || 'Untitled',
                 coverImage: storyDoc.coverImage?.asset?.url || '',
@@ -270,8 +280,12 @@ export default function ReadingScreen() {
                 estimatedReadTime: storyDoc.estimatedReadTime || 5,
                 level: storyDoc.level || 'Beginner',
             } as any);
+
+            if (result.success) {
+                toastActions.success(t('profile.tabSaved'));
+            }
         }
-    }, [id, storyDoc, isInLibrary, libraryActions]);
+    }, [id, storyDoc, isInLibrary, libraryActions, user, toastActions, t]);
 
     const cycleReadingTheme = useCallback(() => {
         haptics.selection();

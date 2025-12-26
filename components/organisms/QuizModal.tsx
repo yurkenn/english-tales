@@ -146,7 +146,7 @@ export const QuizModal: React.FC<QuizModalProps> = ({ visible, questions, onClos
                                 onPress={handleCheckAnswer}
                                 disabled={selectedOption === null}
                             >
-                                <Text style={styles.buttonText}>{t('common.save') /* reuse for now */}</Text>
+                                <Text style={styles.buttonText}>{t('common.check')}</Text>
                             </Pressable>
                         ) : (
                             <Pressable style={styles.button} onPress={handleNext}>

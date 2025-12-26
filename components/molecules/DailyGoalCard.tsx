@@ -38,7 +38,7 @@ export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
                     <Text style={styles.stats}>
                         <Text style={styles.minutesRead}>{minutesRead}</Text>
                         <Text style={styles.separator}> / </Text>
-                        <Text style={styles.goalMinutes}>{goalMinutes} {t('common.min', 'min')}</Text>
+                        <Text style={styles.goalMinutes}>{goalMinutes} {t('common.min')}</Text>
                     </Text>
                 </View>
 
@@ -60,7 +60,7 @@ export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
             {!isGoalReached && (
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>
-                        {Math.max(0, Math.ceil(goalMinutes - (stats?.minutesRead || 0)))} {t('reading.minutesLeft', 'mins left to reach goal')}
+                        {t('reading.minutesLeft', { count: Math.max(0, Math.ceil(goalMinutes - (stats?.minutesRead || 0))) })}
                     </Text>
                     <Ionicons name="chevron-forward" size={16} color={theme.colors.textSecondary} />
                 </View>

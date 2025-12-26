@@ -2,7 +2,7 @@
     "auth": {
         "signup": {
             "title": "Hesap Oluştur",
-            "subtitle": "İngilizce okuma macerana bugün başla"
+            "subtitle": "İngilizce okuma yolculuğuna bugün katıl"
         },
         "login": {
             "title": "Tekrar Hoş Geldin",
@@ -12,7 +12,7 @@
             "title": "Şifremi Unuttum",
             "message": "Endişelenmeyin! E-posta adresinizi girin, size şifrenizi sıfırlamanız için bir bağlantı gönderelim.",
             "submit": "Sıfırlama Bağlantısı Gönder",
-            "backToLogin": "Giriş Yap",
+            "backToLogin": "Giriş Ekranına Dön",
             "successTitle": "E-postanızı Kontrol Edin",
             "successMessage": "Şifre sıfırlama bağlantısını şu adrese gönderdik:",
             "spamHint": "E-postayı görmüyorsanız, lütfen spam klasörünüzü kontrol edin.",
@@ -25,7 +25,7 @@
         }
     },
     "common": {
-        "error": "Bir şeyler yanlış gitti",
+        "error": "Bir hata oluştu",
         "retry": "Tekrar dene",
         "cancel": "İptal",
         "save": "Kaydet",
@@ -46,7 +46,12 @@
         "accept": "Kabul Et",
         "seeAll": "Hepsini Gör",
         "confirm": "Onayla",
-        "you": "Sen"
+        "you": "Sen",
+        "min": "dk",
+        "story": "hikaye",
+        "offline": "Çevrimdışı",
+        "check": "Kontrol Et",
+        "words": "kelime"
     },
     "tabs": {
         "home": "Ana Sayfa",
@@ -98,17 +103,18 @@
         "tabSaved": "Kaydedilenler",
         "tabAbout": "Hakkında",
         "dailyGoal": "Günlük Hedef",
-        "goalReached": "Hedefe Ulaşıldı!",
+        "goalReached": "Günlük Hedef Tamamlandı!",
         "minRemaining": "{{count}} dk kaldı",
         "goalAlmost": "Neredeyse başardın!",
-        "goalKeepGoing": "Hedefine ulaşmak için okumaya devam et!"
+        "goalKeepGoing": "Hedefine ulaşmana çok az kaldı, okumaya devam et!"
     },
     "appearance": {
         "title": "Görünüm",
         "theme": "Tema",
         "system": "Sistem",
         "light": "Açık",
-        "dark": "Koyu"
+        "dark": "Koyu",
+        "sepia": "Sepia"
     },
     "home": {
         "greeting": "Merhaba, {{name}}",
@@ -208,11 +214,20 @@
         "startReading": "Okumaya Başla",
         "continue": "Devam Et",
         "notFound": "Hikaye bulunamadı",
-        "noContent": "İçerik mevcut değil.",
+        "noContent": "Henüz içerik eklenmemiş.",
         "lineSpacing": "Satır Aralığı",
         "audioAssist": "Sesli Destek",
         "readingAloud": "Hikaye okunuyor...",
         "audioAssistReady": "Sesli Destek Hazır",
+        "minutesLeft": "hedefe {{count}} dk kaldı",
+        "minutesLeft_one": "hedefe 1 dk kaldı",
+        "controls": {
+            "appearance": "Görünüm",
+            "save": "Kaydet",
+            "saved": "Kaydedildi",
+            "share": "Paylaş",
+            "listen": "Dinle"
+        },
         "quiz": {
             "title": "Anlama Testi",
             "subtitle": "Bakalım neler öğrendin!",

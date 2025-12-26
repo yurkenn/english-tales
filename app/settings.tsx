@@ -12,14 +12,13 @@ import { useDownloadStore, formatBytes } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { useTranslation } from 'react-i18next';
-import { ConfirmationDialog, SettingItem, SettingToggle, SettingsHeader, SettingSection } from '@/components';
+import { ActionSheet, ConfirmationDialog, SettingItem, SettingToggle, SettingsHeader, SettingSection } from '@/components';
 import { Typography } from '@/components/atoms';
 import { haptics } from '@/utils/haptics';
 import { sendPasswordResetEmail, deleteAccount } from '@/services/auth';
 import { userService } from '@/services/userService';
 import { notificationService } from '@/services/notificationService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import i18n from '@/i18n';
 
 const LANGUAGES = [
     { code: 'en', label: 'English' },
@@ -29,10 +28,17 @@ const LANGUAGES = [
     { code: 'fr', label: 'Français' },
 ] as const;
 
+const THEME_MODES = [
+    { code: 'system', icon: 'settings-outline' },
+    { code: 'light', icon: 'sunny-outline' },
+    { code: 'dark', icon: 'moon-outline' },
+    { code: 'sepia', icon: 'book-outline' },
+] as const;
+
 export default function SettingsScreen() {
     const router = useRouter();
     const insets = useSafeAreaInsets();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const { theme } = useUnistyles();
 
     const { user, signOut } = useAuthStore();
@@ -50,6 +56,7 @@ export default function SettingsScreen() {
     const clearCacheDialogRef = useRef<BottomSheet>(null);
     const changePasswordDialogRef = useRef<BottomSheet>(null);
     const languageDialogRef = useRef<BottomSheet>(null);
+    const themeDialogRef = useRef<BottomSheet>(null);
     const deleteAccountDialogRef = useRef<BottomSheet>(null);
     const [isDeleting, setIsDeleting] = useState(false);
 
@@ -69,7 +76,7 @@ export default function SettingsScreen() {
     const downloadSize = downloadActions.getTotalDownloadSize();
     const downloadCount = Object.keys(downloads).length;
     const themeModeLabel = t(`appearance.${themeMode}`);
-    const currentLanguage = LANGUAGES.find(l => l.code === i18n.language.split('-')[0])?.label || 'English';
+    const currentLanguage = LANGUAGES.find(l => l.code === (i18n.language || 'en').split('-')[0])?.label || 'English';
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -125,7 +132,7 @@ export default function SettingsScreen() {
                         value={themeModeLabel}
                         onPress={() => {
                             haptics.selection();
-                            themeActions.toggleTheme();
+                            themeDialogRef.current?.expand();
                         }}
                     />
                     <SettingItem
@@ -260,30 +267,31 @@ export default function SettingsScreen() {
                 onCancel={() => changePasswordDialogRef.current?.close()}
             />
 
-            <BottomSheet
+            <ActionSheet
+                ref={themeDialogRef}
+                title={t('settings.preferences.theme')}
+                options={THEME_MODES.map((mode) => ({
+                    label: t(`appearance.${mode.code}`),
+                    icon: themeMode === mode.code ? 'checkmark-circle' : mode.icon as any,
+                    onPress: () => {
+                        themeActions.setMode(mode.code as any);
+                    },
+                }))}
+                onClose={() => themeDialogRef.current?.close()}
+            />
+
+            <ActionSheet
                 ref={languageDialogRef}
-                index={-1}
-                snapPoints={['50%']}
-                enablePanDownToClose
-                backgroundStyle={{ backgroundColor: theme.colors.background }}
-                handleIndicatorStyle={{ backgroundColor: theme.colors.border }}
-            >
-                <View style={styles.sheetContent}>
-                    <Text style={styles.sheetTitle}>{t('settings.preferences.language')}</Text>
-                    {LANGUAGES.map((lang) => (
-                        <SettingItem
-                            key={lang.code}
-                            icon={i18n.language.startsWith(lang.code) ? "checkmark-circle" : "ellipse-outline"}
-                            label={lang.label}
-                            onPress={() => {
-                                haptics.selection();
-                                settingsActions.updateSettings({ language: lang.code as any });
-                                languageDialogRef.current?.close();
-                            }}
-                        />
-                    ))}
-                </View>
-            </BottomSheet>
+                title={t('settings.preferences.language')}
+                options={LANGUAGES.map((lang) => ({
+                    label: lang.label,
+                    icon: (i18n.language || 'en').startsWith(lang.code) ? 'checkmark-circle' : 'ellipse-outline',
+                    onPress: () => {
+                        settingsActions.updateSettings({ language: lang.code as any });
+                    },
+                }))}
+                onClose={() => languageDialogRef.current?.close()}
+            />
 
             <ConfirmationDialog
                 ref={deleteAccountDialogRef}

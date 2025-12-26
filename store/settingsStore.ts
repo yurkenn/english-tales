@@ -22,10 +22,12 @@ interface SettingsActions {
 }
 
 // Default settings
-const getInitialLanguage = () => {
+const getInitialLanguage = (): 'en' | 'tr' | 'es' | 'de' | 'fr' => {
     try {
         const locales = Localization.getLocales();
-        return (locales && locales.length > 0 ? locales[0].languageCode : 'en') as any;
+        const code = locales && locales.length > 0 ? locales[0].languageCode : 'en';
+        const supported = ['en', 'tr', 'es', 'de', 'fr'];
+        return supported.includes(code as string) ? (code as any) : 'en';
     } catch {
         return 'en';
     }

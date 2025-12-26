@@ -3,6 +3,7 @@ import { View, Text, Image, Pressable } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { PortableTextBlock } from '@portabletext/types';
 import { urlFor } from '@/services/sanity/client';
+import { useTranslation } from 'react-i18next';
 import { CheckpointItem } from '../molecules';
 import { Highlight, HIGHLIGHT_COLORS } from '@/store/highlightStore';
 
@@ -35,6 +36,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
     enableDropCap = false,
     isFirstPage = false,
 }) => {
+    const { t } = useTranslation();
     const { theme } = useUnistyles();
 
     // Memoized word press handler to prevent inline function creation
@@ -51,7 +53,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
     }, [onWordLongPress]);
 
     if (!content || !Array.isArray(content)) {
-        return <Text style={[styles.paragraph, { fontSize, color: textColor, lineHeight: fontSize * lineHeight }]}>No content available.</Text>;
+        return <Text style={[styles.paragraph, { fontSize, color: textColor, lineHeight: fontSize * lineHeight }]}>{t('reading.noContent')}</Text>;
     }
 
     const renderChildren = (children: any[], blockKey: string, isFirstParagraph = false) => {

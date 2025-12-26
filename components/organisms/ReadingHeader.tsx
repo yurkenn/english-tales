@@ -44,7 +44,7 @@ export const ReadingHeader: React.FC<ReadingHeaderProps> = React.memo(({
                     {isDownloaded && (
                         <View style={styles.offlineBadge}>
                             <Ionicons name="checkmark-circle" size={12} color={theme.colors.success} />
-                            <Text style={styles.offlineText}>OFFLINE</Text>
+                            <Text style={styles.offlineText}>{t('common.offline').toUpperCase()}</Text>
                         </View>
                     )}
                 </View>

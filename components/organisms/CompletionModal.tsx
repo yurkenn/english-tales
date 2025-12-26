@@ -50,12 +50,12 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                     <View style={styles.statsRow}>
                         <View style={styles.statBox}>
                             <Text style={styles.statValue}>{readingTimeMinutes}</Text>
-                            <Text style={styles.statLabel}>{t('profile.stats.readingTime').split(' ')[0]} min</Text>
+                            <Text style={styles.statLabel}>{t('common.min')}</Text>
                         </View>
                         <View style={styles.statDivider} />
                         <View style={styles.statBox}>
                             <Text style={styles.statValue}>{wordCount}</Text>
-                            <Text style={styles.statLabel}>{t('authors.stories').toLowerCase()}</Text>
+                            <Text style={styles.statLabel}>{t('common.words')}</Text>
                         </View>
                     </View>
 

@@ -15,11 +15,21 @@ const resources = {
     fr: { translation: fr },
 };
 
+const getInitialLanguage = () => {
+    try {
+        const locales = Localization.getLocales();
+        const code = locales && locales.length > 0 ? locales[0].languageCode : 'en';
+        return ['en', 'tr', 'es', 'de', 'fr'].includes(code as string) ? code : 'en';
+    } catch {
+        return 'en';
+    }
+};
+
 i18n
     .use(initReactI18next)
     .init({
         resources,
-        lng: 'en',
+        lng: getInitialLanguage(),
         fallbackLng: 'en',
         interpolation: {
             escapeValue: false,

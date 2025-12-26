@@ -52,6 +52,7 @@ export default function RootLayout() {
   const segments = useSegments();
   const router = useRouter();
 
+  const { actions: settingsActions } = useSettingsStore();
   const themeActions = useThemeStore((s) => s.actions);
   const downloadActions = useDownloadStore((s) => s.actions);
 
@@ -75,15 +76,16 @@ export default function RootLayout() {
     return unsubscribe;
   }, [initialize]);
 
-  // Load saved theme preference and downloads, and setup system theme listener
+  // Load saved theme preference, settings, downloads, and setup system theme listener
   useEffect(() => {
     themeActions.loadTheme();
+    settingsActions.loadSettings();
     downloadActions.loadDownloads();
 
     // Setup listener for system theme changes
     const cleanup = themeActions.setupSystemThemeListener();
     return cleanup;
-  }, [themeActions, downloadActions]);
+  }, [themeActions, settingsActions, downloadActions]);
 
   // Load fonts
   const [fontsLoaded] = useFonts({
