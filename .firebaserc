@@ -1,5 +1,15 @@
 {
-  "projects": {},
-  "targets": {},
+  "projects": {
+    "default": "english-tales-77d32"
+  },
+  "targets": {
+    "english-tales-77d32": {
+      "storage": {
+        "default": [
+          "english-tales-77d32.firebasestorage.app"
+        ]
+      }
+    }
+  },
   "etags": {}
 }
