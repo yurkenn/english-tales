@@ -20,7 +20,7 @@ import {
     FilteredEmptyState,
     VocabularyMilestoneCard,
 } from '@/components'
-import { useStories, useFeaturedStories, useCategories } from '@/hooks/useQueries'
+import { useStories, useFeaturedStories, useCategories, useDailyPick } from '@/hooks/useQueries'
 import { Story, CommunityPost } from '@/types'
 import { useAuthStore } from '@/store/authStore'
 import { useLibraryStore } from '@/store/libraryStore'
@@ -67,6 +67,7 @@ export default function HomeScreen() {
 
     // Data fetching
     const { data: featuredData, isLoading: loadingFeatured, refetch: refetchFeatured, error: errorFeatured } = useFeaturedStories()
+    const { data: dailyPickData, isLoading: loadingDailyPick, refetch: refetchDailyPick } = useDailyPick()
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories()
     const { isLoading: loadingCategories, refetch: refetchCategories, error: errorCategories } = useCategories()
 
@@ -115,9 +116,9 @@ export default function HomeScreen() {
 
     // Derived data
     const featuredStory = useMemo(() => {
-        if (!featuredData?.[0]) return null
-        return mapSanityStory(featuredData[0])
-    }, [featuredData])
+        if (!dailyPickData) return null
+        return mapSanityStory(dailyPickData)
+    }, [dailyPickData])
 
     const allStories = useMemo(() => storiesData?.map(mapSanityStory) || [], [storiesData])
     const recommendedStoriesList = useRecommendations(allStories, libraryItems, progressMap)
@@ -178,7 +179,7 @@ export default function HomeScreen() {
     const onRefresh = useCallback(async () => {
         setRefreshing(true)
         try {
-            await Promise.all([refetchCategories(), refetchFeatured(), refetchStories(), fetchBuzz()])
+            await Promise.all([refetchCategories(), refetchFeatured(), refetchStories(), refetchDailyPick(), fetchBuzz()])
         } finally {
             setRefreshing(false)
         }
@@ -193,7 +194,7 @@ export default function HomeScreen() {
     )
 
     // Computed values
-    const isLoading = loadingCategories || loadingFeatured || loadingStories
+    const isLoading = loadingCategories || loadingFeatured || loadingStories || loadingDailyPick
     const hasError = errorCategories || errorFeatured || errorStories
     const isFilterActive = selectedGenre !== 0
     const hasNoResults = filteredStories.length === 0

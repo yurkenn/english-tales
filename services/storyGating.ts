@@ -59,8 +59,8 @@ export function checkStoryAccess(
         }
     }
 
-    // First N stories are free
-    if (storyIndex < FREE_STORY_COUNT) {
+    // First N stories are free (only for non-premium stories)
+    if (!isPremiumStory && storyIndex < FREE_STORY_COUNT) {
         return {
             status: 'free',
             canAccess: true,

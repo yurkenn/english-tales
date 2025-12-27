@@ -1,39 +1,58 @@
-// Custom Sanity Studio Structure
-// Organizes content for easier management
+// Sanity Studio Structure
+// Clean, organized content management
 
 import { StructureBuilder } from 'sanity/structure'
-import { BookIcon, UsersIcon, TagIcon, StarIcon, CheckmarkCircleIcon, ClockIcon, EditIcon } from '@sanity/icons'
 
 export const structure = (S: StructureBuilder) =>
     S.list()
-        .title('İçerik Yönetimi')
+        .title('Content Manager')
         .items([
-            // Stories Section
+            // ===== STORIES =====
             S.listItem()
-                .title('Hikayeler')
-                .icon(BookIcon)
+                .title('📖 Stories')
                 .child(
                     S.list()
-                        .title('Hikayeler')
+                        .title('Story Management')
                         .items([
                             S.listItem()
-                                .title('Tüm Hikayeler')
-                                .icon(BookIcon)
+                                .title('🆓 Free Stories')
                                 .child(
                                     S.documentTypeList('story')
-                                        .title('Tüm Hikayeler')
+                                        .title('Free Stories')
+                                        .filter('_type == "story" && isPremiumOnly != true')
                                 ),
                             S.listItem()
-                                .title('Öne Çıkan Hikayeler')
-                                .icon(StarIcon)
+                                .title('🔒 Premium Stories')
                                 .child(
                                     S.documentTypeList('story')
-                                        .title('Öne Çıkan Hikayeler')
-                                        .filter('isFeatured == true')
+                                        .title('Premium Stories')
+                                        .filter('_type == "story" && isPremiumOnly == true')
+                                ),
+                            S.divider(),
+                            S.listItem()
+                                .title('⭐ Featured Stories')
+                                .child(
+                                    S.documentTypeList('story')
+                                        .title('Featured Stories')
+                                        .filter('_type == "story" && isFeatured == true')
                                 ),
                             S.listItem()
-                                .title('Yeni Hikaye Ekle')
-                                .icon(EditIcon)
+                                .title('📅 Daily Pick Schedule')
+                                .child(
+                                    S.documentTypeList('story')
+                                        .title('Daily Pick Schedule')
+                                        .filter('_type == "story" && defined(dailyPickDate)')
+                                        .defaultOrdering([{ field: 'dailyPickDate', direction: 'desc' }])
+                                ),
+                            S.divider(),
+                            S.listItem()
+                                .title('📚 All Stories')
+                                .child(
+                                    S.documentTypeList('story')
+                                        .title('All Stories')
+                                ),
+                            S.listItem()
+                                .title('➕ New Story')
                                 .child(
                                     S.document()
                                         .schemaType('story')
@@ -44,74 +63,93 @@ export const structure = (S: StructureBuilder) =>
 
             S.divider(),
 
-            // Authors Section
+            // ===== COMMUNITY CONTENT =====
             S.listItem()
-                .title('Yazarlar')
-                .icon(UsersIcon)
+                .title('👥 Community')
                 .child(
                     S.list()
-                        .title('Yazarlar')
+                        .title('Moderation Center')
                         .items([
                             S.listItem()
-                                .title('Tüm Yazarlar')
-                                .icon(UsersIcon)
+                                .title('⏳ Pending Review')
                                 .child(
-                                    S.documentTypeList('author')
-                                        .title('Tüm Yazarlar')
+                                    S.documentTypeList('userStory')
+                                        .title('Pending Stories')
+                                        .filter('_type == "userStory" && status == "pending"')
+                                        .defaultOrdering([{ field: 'submittedAt', direction: 'asc' }])
                                 ),
                             S.listItem()
-                                .title('Öne Çıkan Yazarlar')
-                                .icon(StarIcon)
+                                .title('✅ Approved')
                                 .child(
-                                    S.documentTypeList('author')
-                                        .title('Öne Çıkan Yazarlar')
-                                        .filter('isFeatured == true')
+                                    S.documentTypeList('userStory')
+                                        .title('Approved Stories')
+                                        .filter('_type == "userStory" && status == "approved"')
+                                ),
+                            S.listItem()
+                                .title('🔄 Revision Requested')
+                                .child(
+                                    S.documentTypeList('userStory')
+                                        .title('Needs Revision')
+                                        .filter('_type == "userStory" && status == "revision_requested"')
+                                ),
+                            S.listItem()
+                                .title('❌ Rejected')
+                                .child(
+                                    S.documentTypeList('userStory')
+                                        .title('Rejected Stories')
+                                        .filter('_type == "userStory" && status == "rejected"')
+                                ),
+                            S.divider(),
+                            S.listItem()
+                                .title('📢 Published')
+                                .child(
+                                    S.documentTypeList('userStory')
+                                        .title('Published Community Stories')
+                                        .filter('_type == "userStory" && isPublished == true')
+                                ),
+                            S.listItem()
+                                .title('📋 All Submissions')
+                                .child(
+                                    S.documentTypeList('userStory')
+                                        .title('All Community Stories')
+                                        .filter('_type == "userStory"')
                                 ),
                         ])
-                ),
-
-            // Categories
-            S.listItem()
-                .title('Kategoriler')
-                .icon(TagIcon)
-                .child(
-                    S.documentTypeList('category')
-                        .title('Kategoriler')
                 ),
 
             S.divider(),
 
-            // Reviews Section - Most Important for Moderation
+            // ===== AUTHORS =====
             S.listItem()
-                .title('Yorumlar')
-                .icon(StarIcon)
+                .title('✍️ Authors')
                 .child(
                     S.list()
-                        .title('Yorum Yönetimi')
+                        .title('Authors')
                         .items([
                             S.listItem()
-                                .title('⏳ Onay Bekleyenler')
-                                .icon(ClockIcon)
+                                .title('All Authors')
                                 .child(
-                                    S.documentTypeList('review')
-                                        .title('Onay Bekleyen Yorumlar')
-                                        .filter('isApproved == false')
+                                    S.documentTypeList('author')
+                                        .title('All Authors')
+                                        .filter('_type == "author"')
                                 ),
                             S.listItem()
-                                .title('✅ Onaylanmış Yorumlar')
-                                .icon(CheckmarkCircleIcon)
+                                .title('⭐ Featured Authors')
                                 .child(
-                                    S.documentTypeList('review')
-                                        .title('Onaylanmış Yorumlar')
-                                        .filter('isApproved == true')
-                                ),
-                            S.listItem()
-                                .title('Tüm Yorumlar')
-                                .icon(StarIcon)
-                                .child(
-                                    S.documentTypeList('review')
-                                        .title('Tüm Yorumlar')
+                                    S.documentTypeList('author')
+                                        .title('Featured Authors')
+                                        .filter('_type == "author" && isFeatured == true')
                                 ),
                         ])
+                ),
+
+            // ===== CATEGORIES =====
+            S.listItem()
+                .title('🏷️ Categories')
+                .child(
+                    S.documentTypeList('category')
+                        .title('Categories')
+                        .filter('_type == "category"')
+                        .defaultOrdering([{ field: 'order', direction: 'asc' }])
                 ),
         ])

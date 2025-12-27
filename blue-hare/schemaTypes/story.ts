@@ -4,15 +4,17 @@ export const storySchema = defineType({
     name: 'story',
     title: 'Story',
     type: 'document',
+    icon: () => '📖',
     groups: [
-        { name: 'main', title: 'Ana Bilgiler', default: true },
-        { name: 'content', title: 'İçerik' },
-        { name: 'meta', title: 'Meta Bilgiler' },
+        { name: 'main', title: '📝 Main Info', default: true },
+        { name: 'content', title: '📄 Content' },
+        { name: 'settings', title: '⚙️ Settings' },
     ],
     fields: [
+        // === MAIN INFO ===
         defineField({
             name: 'title',
-            title: 'Başlık',
+            title: 'Title',
             type: 'string',
             group: 'main',
             validation: (Rule) => Rule.required().min(1).max(100),
@@ -22,40 +24,45 @@ export const storySchema = defineType({
             title: 'Slug',
             type: 'slug',
             group: 'main',
-            options: {
-                source: 'title',
-                maxLength: 96,
-            },
+            options: { source: 'title', maxLength: 96 },
             validation: (Rule) => Rule.required(),
         }),
         defineField({
+            name: 'description',
+            title: 'Description',
+            type: 'text',
+            group: 'main',
+            rows: 3,
+            validation: (Rule) => Rule.required().min(10).max(300),
+        }),
+        defineField({
+            name: 'coverImage',
+            title: 'Cover Image',
+            type: 'image',
+            group: 'main',
+            options: { hotspot: true },
+        }),
+        defineField({
             name: 'author',
-            title: 'Yazar',
+            title: 'Author',
             type: 'reference',
             group: 'main',
             to: [{ type: 'author' }],
             validation: (Rule) => Rule.required(),
         }),
         defineField({
-            name: 'coverImage',
-            title: 'Kapak Görseli',
-            type: 'image',
+            name: 'categories',
+            title: 'Categories',
+            type: 'array',
             group: 'main',
-            options: {
-                hotspot: true,
-            },
+            of: [{ type: 'reference', to: [{ type: 'category' }] }],
+            validation: (Rule) => Rule.required().min(1),
         }),
-        defineField({
-            name: 'description',
-            title: 'Açıklama',
-            type: 'text',
-            group: 'main',
-            rows: 3,
-            validation: (Rule) => Rule.required().min(10).max(500),
-        }),
+
+        // === CONTENT ===
         defineField({
             name: 'content',
-            title: 'Hikaye İçeriği',
+            title: 'Story Content',
             type: 'array',
             group: 'content',
             of: [
@@ -63,62 +70,68 @@ export const storySchema = defineType({
                     type: 'block',
                     styles: [
                         { title: 'Normal', value: 'normal' },
-                        { title: 'Başlık 2', value: 'h2' },
-                        { title: 'Başlık 3', value: 'h3' },
-                        { title: 'Alıntı', value: 'blockquote' },
+                        { title: 'Heading 2', value: 'h2' },
+                        { title: 'Heading 3', value: 'h3' },
+                        { title: 'Quote', value: 'blockquote' },
                     ],
                     marks: {
                         decorators: [
-                            { title: 'Kalın', value: 'strong' },
-                            { title: 'İtalik', value: 'em' },
-                            { title: 'Altı Çizili', value: 'underline' },
+                            { title: 'Bold', value: 'strong' },
+                            { title: 'Italic', value: 'em' },
                         ],
                     },
                 },
                 {
                     type: 'image',
-                    title: 'Görsel',
+                    title: 'Image',
                     options: { hotspot: true },
-                    fields: [
-                        { name: 'caption', title: 'Görsel Açıklaması', type: 'string' },
-                        { name: 'alt', title: 'Alt Metin', type: 'string' },
-                    ],
                 },
                 {
                     type: 'object',
                     name: 'checkpoint',
-                    title: 'Checkpoint',
+                    title: '❓ Checkpoint Quiz',
+                    icon: () => '❓',
                     fields: [
-                        { name: 'question', title: 'Soru', type: 'string' },
-                        {
-                            name: 'options',
-                            title: 'Seçenekler',
-                            type: 'array',
-                            of: [{ type: 'string' }],
-                        },
-                        { name: 'correctIndex', title: 'Doğru Seçenek Dizini', type: 'number' },
+                        { name: 'question', title: 'Question', type: 'string', validation: (Rule: any) => Rule.required() },
+                        { name: 'options', title: 'Options', type: 'array', of: [{ type: 'string' }], validation: (Rule: any) => Rule.required().min(2).max(4) },
+                        { name: 'correctIndex', title: 'Correct Answer (0-3)', type: 'number', validation: (Rule: any) => Rule.required().min(0).max(3) },
                     ],
+                    preview: {
+                        select: { question: 'question' },
+                        prepare: ({ question }: { question: string }) => ({ title: `❓ ${question}` }),
+                    },
                 },
             ],
         }),
         defineField({
-            name: 'categories',
-            title: 'Kategoriler',
+            name: 'quiz',
+            title: 'End Quiz',
             type: 'array',
-            group: 'meta',
-            of: [{ type: 'reference', to: [{ type: 'category' }] }],
-            validation: (Rule) => Rule.required().min(1),
+            group: 'content',
+            of: [
+                {
+                    type: 'object',
+                    fields: [
+                        { name: 'question', title: 'Question', type: 'string' },
+                        { name: 'options', title: 'Options', type: 'array', of: [{ type: 'string' }] },
+                        { name: 'correctIndex', title: 'Correct Answer (0-3)', type: 'number' },
+                        { name: 'explanation', title: 'Explanation', type: 'text' },
+                    ],
+                },
+            ],
         }),
+
+        // === SETTINGS ===
         defineField({
             name: 'difficulty',
-            title: 'Zorluk Seviyesi',
+            title: 'Difficulty',
             type: 'string',
-            group: 'meta',
+            group: 'settings',
             options: {
                 list: [
-                    { title: '🟢 Başlangıç', value: 'beginner' },
-                    { title: '🟡 Orta', value: 'intermediate' },
-                    { title: '🔴 İleri', value: 'advanced' },
+                    { title: '🟢 Beginner', value: 'beginner' },
+                    { title: '🟡 Intermediate', value: 'intermediate' },
+                    { title: '🔴 Advanced', value: 'advanced' },
                 ],
                 layout: 'radio',
             },
@@ -126,78 +139,70 @@ export const storySchema = defineType({
         }),
         defineField({
             name: 'estimatedReadTime',
-            title: 'Tahmini Okuma Süresi (dakika)',
+            title: 'Read Time (minutes)',
             type: 'number',
-            group: 'meta',
+            group: 'settings',
             validation: (Rule) => Rule.required().min(1),
         }),
         defineField({
             name: 'wordCount',
-            title: 'Kelime Sayısı',
+            title: 'Word Count',
             type: 'number',
-            group: 'meta',
+            group: 'settings',
             validation: (Rule) => Rule.required().min(1),
         }),
         defineField({
-            name: 'isFeatured',
-            title: '⭐ Öne Çıkan Hikaye',
+            name: 'isPremiumOnly',
+            title: '🔒 Premium Only',
             type: 'boolean',
-            group: 'meta',
+            group: 'settings',
+            initialValue: false,
+            description: 'Only Premium subscribers can read this story',
+        }),
+        defineField({
+            name: 'isFeatured',
+            title: '⭐ Featured',
+            type: 'boolean',
+            group: 'settings',
             initialValue: false,
         }),
         defineField({
-            name: 'isPremiumOnly',
-            title: '🔒 Sadece Premium Kullanıcılar',
-            type: 'boolean',
-            group: 'meta',
-            initialValue: false,
+            name: 'dailyPickDate',
+            title: '📅 Daily Pick Date',
+            type: 'date',
+            group: 'settings',
+            description: 'Story will be shown as Daily Pick on this date',
         }),
         defineField({
             name: 'publishedAt',
-            title: 'Yayınlanma Tarihi',
+            title: 'Published At',
             type: 'datetime',
-            group: 'meta',
+            group: 'settings',
+            initialValue: () => new Date().toISOString(),
         }),
-        defineField({
-            name: 'quiz',
-            title: 'Anlama Testi',
-            type: 'array',
-            group: 'content',
-            of: [
-                {
-                    type: 'object',
-                    fields: [
-                        { name: 'question', title: 'Soru', type: 'string' },
-                        {
-                            name: 'options',
-                            title: 'Seçenekler',
-                            type: 'array',
-                            of: [{ type: 'string' }],
-                        },
-                        { name: 'correctIndex', title: 'Doğru Cevap (0-3)', type: 'number' },
-                        { name: 'explanation', title: 'Açıklama', type: 'text' },
-                    ],
-                },
-            ],
-        }),
+    ],
+    orderings: [
+        { title: 'Newest', name: 'publishedAtDesc', by: [{ field: 'publishedAt', direction: 'desc' }] },
+        { title: 'Title A-Z', name: 'titleAsc', by: [{ field: 'title', direction: 'asc' }] },
     ],
     preview: {
         select: {
             title: 'title',
             author: 'author.name',
             media: 'coverImage',
+            isPremium: 'isPremiumOnly',
             isFeatured: 'isFeatured',
-            isPremiumOnly: 'isPremiumOnly',
             difficulty: 'difficulty',
         },
-        prepare(selection) {
-            const { title, author, media, isFeatured, isPremiumOnly, difficulty } = selection
-            const difficultyEmoji = difficulty === 'beginner' ? '🟢' : difficulty === 'intermediate' ? '🟡' : '🔴'
-            const featuredEmoji = isFeatured ? '⭐ ' : ''
-            const premiumEmoji = isPremiumOnly ? '🔒 ' : ''
+        prepare({ title, author, media, isPremium, isFeatured, difficulty }) {
+            const badges = [
+                isPremium ? '🔒' : '🆓',
+                isFeatured ? '⭐' : '',
+                difficulty === 'beginner' ? '🟢' : difficulty === 'intermediate' ? '🟡' : '🔴',
+            ].filter(Boolean).join(' ')
             return {
-                title: `${featuredEmoji}${premiumEmoji}${title}`,
-                subtitle: `${difficultyEmoji} ${author || 'Yazar belirtilmemiş'}`,
+                title: `${badges} ${title}`,
+                subtitle: author || 'No author',
                 media,
             }
         },

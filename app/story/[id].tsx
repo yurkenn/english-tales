@@ -28,8 +28,7 @@ import Animated, {
     Extrapolate,
     useAnimatedScrollHandler
 } from 'react-native-reanimated';
-import { useStory } from '@/hooks/useQueries';
-import { useFirestoreReviews } from '@/hooks/useFirestoreReviews';
+import { useStory, useReviewsByStory, useStoryRating, useCreateReview } from '@/hooks/useQueries';
 import { useFavorites } from '@/hooks/useFavorites';
 import { urlFor } from '@/services/sanity/client';
 import { Story } from '@/types';
@@ -41,6 +40,7 @@ import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
 import { useTranslation } from 'react-i18next';
 import { useSubscriptionStore } from '@/store/subscriptionStore';
+import { useProgressStore } from '@/store/progressStore';
 import { checkStoryAccess } from '@/services/storyGating';
 
 interface StoryDetails extends Story {
@@ -69,24 +69,26 @@ export default function StoryDetailScreen() {
     const { actions: libraryActions } = useLibraryStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
     const isPremium = useSubscriptionStore((s) => s.isPremium);
+    const progressMap = useProgressStore((s) => s.progressMap);
 
     // Gating modals
     const [showUnlockModal, setShowUnlockModal] = useState(false);
     const [showPaywallModal, setShowPaywallModal] = useState(false);
-    const [storyIndex, setStoryIndex] = useState(0); // Position in list for gating
+
+    // Calculate how many stories user has interacted with for gating
+    const storyIndex = useMemo(() => Object.keys(progressMap).length, [progressMap]);
 
     // Fetch data
     const { data: storyDoc, isLoading: loadingStory, error: errorStory, refetch: refetchStory } = useStory(id || '');
 
-    // Firestore social features
-    const {
-        reviews,
-        loading: loadingReviews,
-        addReview,
-        averageRating: rating,
-        totalReviews: count,
-        refresh: refreshReviews
-    } = useFirestoreReviews(id || '');
+    // Sanity-based social features
+    const { data: reviewsData, isLoading: loadingReviews, refetch: refreshReviews } = useReviewsByStory(id || '');
+    const { data: ratingData } = useStoryRating(id || '');
+    const createReview = useCreateReview();
+
+    const reviews = reviewsData || [];
+    const rating = ratingData?.averageRating || 0;
+    const count = ratingData?.totalReviews || 0;
 
     const {
         isFavorited,
@@ -94,7 +96,7 @@ export default function StoryDetailScreen() {
     } = useFavorites(id || '');
 
     // Transform Story
-    const story = useMemo<StoryDetails | null>(() => {
+    const story = useMemo<Story | null>(() => {
         if (!storyDoc) return null;
         return {
             id: storyDoc._id,
@@ -374,22 +376,25 @@ export default function StoryDetailScreen() {
             {/* Write Review Sheet */}
             <WriteReviewSheet
                 ref={writeReviewSheetRef}
-                storyTitle={story.title}
+                storyTitle={story?.title || 'Story'}
+                onClose={() => writeReviewSheetRef.current?.close()}
                 onSubmit={async (rating, text) => {
                     if (!user || !story) return;
-                    await addReview(
-                        story.title,
-                        user.id,
-                        user.displayName || 'Anonymous',
-                        user.photoURL,
-                        rating,
-                        text
-                    );
+                    try {
+                        await createReview.mutateAsync({
+                            storyId: story.id,
+                            userId: user.id,
+                            userName: user.displayName || 'Anonymous',
+                            userAvatar: user.photoURL || undefined,
+                            rating,
+                            text,
+                        });
+                        writeReviewSheetRef.current?.close();
+                    } catch (error) {
+                        console.error('Failed to submit review:', error);
+                    }
                 }}
-                onClose={() => writeReviewSheetRef.current?.close()}
             />
-
-            {/* Bottom Action */}
             <View style={[styles.bottomAction, { paddingBottom: insets.bottom + 16 }]}>
                 <Pressable
                     style={styles.readButton}

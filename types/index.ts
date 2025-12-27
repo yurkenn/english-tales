@@ -48,10 +48,12 @@ export interface Story {
     coverImageLqip?: string;
     author: string;
     authorId?: string;
+    authorBio?: string;
     difficulty: 'beginner' | 'intermediate' | 'advanced';
     estimatedReadTime: number; // in minutes
     wordCount: number;
     tags: string[];
+    isPremiumOnly?: boolean;
     createdAt: Date;
     updatedAt: Date;
 }

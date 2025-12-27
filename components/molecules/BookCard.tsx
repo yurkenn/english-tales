@@ -83,8 +83,8 @@ export const BookCard = memo(BookCardComponent, (prevProps, nextProps) => {
 const styles = StyleSheet.create((theme) => ({
     container: {
         width: theme.bookCover.width,
-        gap: theme.spacing.xs, // Reduced from md
-        marginBottom: theme.spacing.sm, // Clearance for shadow
+        gap: theme.spacing.xs,
+        marginBottom: theme.spacing.sm,
     },
     rankBadge: {
         position: 'absolute',
@@ -118,7 +118,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     premiumBadge: {
         position: 'absolute',
-        bottom: 50, // Above the info section, on top of the cover
+        bottom: 50,
         right: theme.spacing.sm,
         flexDirection: 'row',
         alignItems: 'center',

@@ -17,7 +17,7 @@ export function TrialTimeline({ days = 3 }: TrialTimelineProps) {
 
             <View style={styles.step}>
                 <View style={[styles.dot, { backgroundColor: theme.colors.primary }]}>
-                    <Ionicons name="unlock-outline" size={14} color="#fff" />
+                    <Ionicons name="lock-open-outline" size={14} color="#fff" />
                 </View>
                 <View style={styles.textContainer}>
                     <Text style={styles.stepTitle}>Today</Text>

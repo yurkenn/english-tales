@@ -34,6 +34,41 @@ export const queries = {
     isPremiumOnly
   }`,
 
+  // Daily Pick - Returns story scheduled for today, or fallback to latest featured
+  dailyPick: `coalesce(
+    *[_type == "story" && dailyPickDate == $today][0] {
+      _id,
+      title,
+      slug,
+      description,
+      coverImage,
+      "coverImageLqip": coverImage.asset->metadata.lqip,
+      difficulty,
+      estimatedReadTime,
+      wordCount,
+      publishedAt,
+      "author": author->{_id, name, slug, image},
+      "categories": categories[]->{_id, title, slug, color},
+      isPremiumOnly
+    },
+    *[_type == "story" && isFeatured == true] | order(publishedAt desc) [0] {
+      _id,
+      title,
+      slug,
+      description,
+      coverImage,
+      "coverImageLqip": coverImage.asset->metadata.lqip,
+      difficulty,
+      estimatedReadTime,
+      wordCount,
+      publishedAt,
+      "author": author->{_id, name, slug, image},
+      "categories": categories[]->{_id, title, slug, color},
+      isPremiumOnly
+    }
+  )`,
+
+
   storyById: `*[_type == "story" && _id == $id][0] {
     _id,
     title,

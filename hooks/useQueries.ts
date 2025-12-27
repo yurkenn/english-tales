@@ -42,6 +42,15 @@ export const useFeaturedStories = () => {
     });
 };
 
+export const useDailyPick = () => {
+    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+    return useQuery({
+        queryKey: ['stories', 'dailyPick', today],
+        queryFn: () => sanityClient.fetch(queries.dailyPick, { today }),
+        staleTime: 60 * 60 * 1000, // 1 hour - refetch periodically
+    });
+};
+
 export const useStory = (id: string) => {
     return useQuery({
         queryKey: queryKeys.stories.byId(id),

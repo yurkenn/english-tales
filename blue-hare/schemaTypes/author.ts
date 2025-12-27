@@ -4,10 +4,11 @@ export const authorSchema = defineType({
     name: 'author',
     title: 'Author',
     type: 'document',
+    icon: () => '✍️',
     fields: [
         defineField({
             name: 'name',
-            title: 'İsim',
+            title: 'Name',
             type: 'string',
             validation: (Rule) => Rule.required(),
         }),
@@ -15,44 +16,39 @@ export const authorSchema = defineType({
             name: 'slug',
             title: 'Slug',
             type: 'slug',
-            options: {
-                source: 'name',
-                maxLength: 96,
-            },
+            options: { source: 'name', maxLength: 96 },
         }),
         defineField({
             name: 'image',
-            title: 'Fotoğraf',
+            title: 'Photo',
             type: 'image',
-            options: {
-                hotspot: true,
-            },
+            options: { hotspot: true },
         }),
         defineField({
             name: 'bio',
-            title: 'Biyografi',
+            title: 'Biography',
             type: 'text',
             rows: 4,
         }),
         defineField({
             name: 'nationality',
-            title: 'Milliyet',
+            title: 'Nationality',
             type: 'string',
         }),
         defineField({
             name: 'birthYear',
-            title: 'Doğum Yılı',
+            title: 'Birth Year',
             type: 'number',
         }),
         defineField({
             name: 'deathYear',
-            title: 'Ölüm Yılı',
+            title: 'Death Year',
             type: 'number',
-            description: 'Yaşıyorsa boş bırakın',
+            description: 'Leave empty if still alive',
         }),
         defineField({
             name: 'isFeatured',
-            title: '⭐ Öne Çıkan Yazar',
+            title: '⭐ Featured Author',
             type: 'boolean',
             initialValue: false,
         }),
@@ -64,11 +60,9 @@ export const authorSchema = defineType({
             nationality: 'nationality',
             isFeatured: 'isFeatured',
         },
-        prepare(selection) {
-            const { title, media, nationality, isFeatured } = selection
-            const featuredEmoji = isFeatured ? '⭐ ' : ''
+        prepare({ title, media, nationality, isFeatured }) {
             return {
-                title: `${featuredEmoji}${title}`,
+                title: `${isFeatured ? '⭐ ' : ''}${title}`,
                 subtitle: nationality || '',
                 media,
             }
