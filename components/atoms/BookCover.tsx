@@ -75,6 +75,8 @@ export const BookCover: React.FC<BookCoverProps> = ({
                         style={styles.image}
                         contentFit={contentFit}
                         placeholder={placeholder}
+                        width={width}
+                        height={finalHeight}
                     />
                 )}
 

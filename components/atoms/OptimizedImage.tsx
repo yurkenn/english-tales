@@ -57,8 +57,9 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
             style={style}
             placeholder={placeholder || theme.colors.borderLight}
             contentFit="cover"
-            transition={300} // Slightly longer transition for smoother progressive load
+            transition={200} // Faster transition for snappier feel
             cachePolicy="memory-disk"
+            recyclingKey={typeof source !== 'number' ? source.uri : undefined}
             sharedTransitionTag={sharedTransitionTag}
             {...props}
         />

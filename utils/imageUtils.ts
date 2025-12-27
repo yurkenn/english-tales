@@ -32,14 +32,14 @@ export const getOptimizedUri = (
     let finalUri = optimizedUri;
 
     if (width) {
-        finalUri += `${finalUri.includes('?') ? '&' : '?'}w=${Math.round(width * 2)}`; // 2x for retina
+        finalUri += `${finalUri.includes('?') ? '&' : '?'}w=${Math.round(width * 1.5)}`; // 1.5x for retina (optimized)
     }
     if (height) {
-        finalUri += `${finalUri.includes('?') ? '&' : '?'}h=${Math.round(height * 2)}`;
+        finalUri += `${finalUri.includes('?') ? '&' : '?'}h=${Math.round(height * 1.5)}`;
     }
 
-    // Add auto format and quality
-    finalUri += `${finalUri.includes('?') ? '&' : '?'}auto=format&q=75`;
+    // Use WebP format and optimized quality
+    finalUri += `${finalUri.includes('?') ? '&' : '?'}fm=webp&q=70`;
 
     return finalUri;
 };

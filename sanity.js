@@ -6,7 +6,7 @@ export const client = createClient({
   dataset: process.env.EXPO_PUBLIC_SANITY_DATASET,
   token: process.env.EXPO_PUBLIC_SANITY_TOKEN,
   apiVersion: '2021-10-21',
-  useCdn: false,
+  useCdn: true,
 });
 
 const builder = createImageUrlBuilder(client);
