@@ -51,7 +51,26 @@
         "story": "story",
         "offline": "Offline",
         "check": "Check",
-        "words": "words"
+        "words": "words",
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced",
+        "level": "Level"
+    },
+    "stories": {
+        "filters": {
+            "difficulty": "Level"
+        },
+        "details": {
+            "about": "About this story",
+            "reviews": "Reviews",
+            "noReviews": "No reviews yet",
+            "writeReview": "Write a Review",
+            "seeAll": "See All",
+            "startReading": "Start Reading",
+            "reviewCount": "{{count}} reviews",
+            "reviewCount_one": "1 review"
+        }
     },
     "tabs": {
         "home": "Home",

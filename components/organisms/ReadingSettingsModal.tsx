@@ -4,8 +4,10 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useSettingsStore } from '@/store/settingsStore';
-import { haptics } from '@/utils/haptics';
-import { READING_THEMES, type ReadingTheme } from './readingTypes';
+import { type ReadingTheme } from './readingTypes';
+import { LanguageSection } from './ReadingSettings/LanguageSection';
+import { FontSection } from './ReadingSettings/FontSection';
+import { AppearanceSection } from './ReadingSettings/AppearanceSection';
 
 interface ReadingSettingsModalProps {
     visible: boolean;
@@ -36,25 +38,6 @@ export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
     const { theme } = useUnistyles();
     const { settings, actions: settingsActions } = useSettingsStore();
 
-    const FONT_FAMILIES: { key: 'sans-serif' | 'serif'; label: string; preview: string }[] = [
-        { key: 'sans-serif', label: 'Sans-Serif', preview: 'Abc' },
-        { key: 'serif', label: 'Serif', preview: 'Abc' },
-    ];
-
-    const themes: { name: string; key: ReadingTheme; color: string }[] = [
-        { name: t('appearance.light'), key: 'light', color: '#FFFFFF' },
-        { name: t('appearance.dark'), key: 'dark', color: '#1B0E0E' },
-        { name: 'Sepia', key: 'sepia', color: '#FDF6E3' },
-    ];
-
-    const LANGUAGES = [
-        { code: 'en', label: 'English' },
-        { code: 'tr', label: 'Türkçe' },
-        { code: 'es', label: 'Español' },
-        { code: 'de', label: 'Deutsch' },
-        { code: 'fr', label: 'Français' },
-    ];
-
     return (
         <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
             <View style={styles.overlay}>
@@ -67,131 +50,26 @@ export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
                     </View>
 
                     {/* Language Selection */}
-                    <View style={styles.section}>
-                        <Text style={styles.label}>{t('settings.preferences.language')}</Text>
-                        <View style={styles.languageControls}>
-                            {LANGUAGES.map((lang) => (
-                                <Pressable
-                                    key={lang.code}
-                                    style={[
-                                        styles.langButton,
-                                        settings.language === lang.code && styles.langButtonActive,
-                                    ]}
-                                    onPress={() => {
-                                        haptics.selection();
-                                        settingsActions.updateSettings({ language: lang.code as any });
-                                    }}
-                                >
-                                    <Text
-                                        style={[
-                                            styles.langButtonText,
-                                            settings.language === lang.code && styles.langButtonTextActive,
-                                        ]}
-                                    >
-                                        {lang.label}
-                                    </Text>
-                                </Pressable>
-                            ))}
-                        </View>
-                    </View>
+                    <LanguageSection
+                        currentLanguage={settings.language}
+                        onLanguageChange={(lang) => settingsActions.updateSettings({ language: lang })}
+                    />
 
-                    {/* Font Family */}
-                    <View style={styles.section}>
-                        <Text style={styles.label}>{t('reading.fontFamily', 'Font Style')}</Text>
-                        <View style={styles.fontFamilyControls}>
-                            {FONT_FAMILIES.map((ff) => (
-                                <Pressable
-                                    key={ff.key}
-                                    style={[
-                                        styles.ffButton,
-                                        fontFamily === ff.key && styles.ffButtonActive,
-                                    ]}
-                                    onPress={() => {
-                                        haptics.selection();
-                                        onFontFamilyChange(ff.key);
-                                    }}
-                                >
-                                    <Text
-                                        style={[
-                                            styles.ffPreview,
-                                            { fontFamily: ff.key === 'serif' ? theme.typography.fontFamily.serif : theme.typography.fontFamily.body },
-                                            fontFamily === ff.key && styles.ffTextActive,
-                                        ]}
-                                    >
-                                        {ff.preview}
-                                    </Text>
-                                    <Text
-                                        style={[
-                                            styles.ffLabel,
-                                            fontFamily === ff.key && styles.ffTextActive,
-                                        ]}
-                                    >
-                                        {ff.label}
-                                    </Text>
-                                </Pressable>
-                            ))}
-                        </View>
-                    </View>
+                    {/* Font Family & Size */}
+                    <FontSection
+                        fontSize={fontSize}
+                        fontFamily={fontFamily}
+                        onFontSizeChange={onFontSizeChange}
+                        onFontFamilyChange={onFontFamilyChange}
+                    />
 
-                    {/* Font Size */}
-                    <View style={styles.section}>
-                        <Text style={styles.label}>{t('settings.preferences.fontSize')}</Text>
-                        <View style={styles.fontControls}>
-                            <Pressable
-                                style={styles.fontButton}
-                                onPress={() => { haptics.light(); onFontSizeChange(Math.max(14, fontSize - 2)); }}
-                            >
-                                <Text style={styles.fontButtonText}>A-</Text>
-                            </Pressable>
-                            <Text style={styles.fontValue}>{fontSize}pt</Text>
-                            <Pressable
-                                style={styles.fontButton}
-                                onPress={() => { haptics.light(); onFontSizeChange(Math.min(28, fontSize + 2)); }}
-                            >
-                                <Text style={styles.fontButtonText}>A+</Text>
-                            </Pressable>
-                        </View>
-                    </View>
-
-                    {/* Line Height */}
-                    <View style={styles.section}>
-                        <Text style={styles.label}>{t('reading.lineSpacing', 'Line Spacing')}</Text>
-                        <View style={styles.lineControls}>
-                            {[1.4, 1.6, 1.8, 2.0].map((lh) => (
-                                <Pressable
-                                    key={lh}
-                                    style={[styles.lineButton, lineHeight === lh && styles.lineButtonActive]}
-                                    onPress={() => { haptics.selection(); onLineHeightChange(lh); }}
-                                >
-                                    <Text style={[styles.lineButtonText, lineHeight === lh && styles.lineButtonTextActive]}>
-                                        {lh}x
-                                    </Text>
-                                </Pressable>
-                            ))}
-                        </View>
-                    </View>
-
-                    {/* Theme */}
-                    <View style={styles.section}>
-                        <Text style={styles.label}>{t('settings.preferences.theme')}</Text>
-                        <View style={styles.themeControls}>
-                            {(['light', 'dark', 'sepia'] as ReadingTheme[]).map((tValue) => (
-                                <Pressable
-                                    key={tValue}
-                                    style={[
-                                        styles.themeButton,
-                                        { backgroundColor: READING_THEMES[tValue].bg },
-                                        readingTheme === tValue && styles.themeButtonActive,
-                                    ]}
-                                    onPress={() => { haptics.selection(); onThemeChange(tValue); }}
-                                >
-                                    <Text style={[styles.themeButtonText, { color: READING_THEMES[tValue].text }]}>
-                                        {tValue.charAt(0).toUpperCase() + tValue.slice(1)}
-                                    </Text>
-                                </Pressable>
-                            ))}
-                        </View>
-                    </View>
+                    {/* Line Height & Theme */}
+                    <AppearanceSection
+                        lineHeight={lineHeight}
+                        readingTheme={readingTheme}
+                        onLineHeightChange={onLineHeightChange}
+                        onThemeChange={onThemeChange}
+                    />
                 </View>
             </View>
         </Modal>
@@ -222,136 +100,5 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
     },
-    section: {
-        marginBottom: theme.spacing.xl,
-    },
-    label: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.text,
-        marginBottom: theme.spacing.md,
-    },
-    fontFamilyControls: {
-        flexDirection: 'row',
-        gap: theme.spacing.md,
-    },
-    ffButton: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: theme.spacing.md,
-        borderRadius: theme.radius.lg,
-        backgroundColor: theme.colors.backgroundSecondary,
-        gap: theme.spacing.md,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-    },
-    ffButtonActive: {
-        backgroundColor: theme.colors.primary,
-        borderColor: theme.colors.primary,
-    },
-    ffPreview: {
-        fontSize: theme.typography.size.lg,
-        color: theme.colors.text,
-    },
-    ffLabel: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.text,
-        fontWeight: theme.typography.weight.medium,
-    },
-    ffTextActive: {
-        color: theme.colors.textInverse,
-    },
-    fontControls: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: theme.spacing.xl,
-    },
-    fontButton: {
-        width: 48,
-        height: 48,
-        borderRadius: theme.radius.full,
-        backgroundColor: theme.colors.backgroundSecondary,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    fontButtonText: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.text,
-    },
-    fontValue: {
-        fontSize: theme.typography.size.xl,
-        fontWeight: theme.typography.weight.bold,
-        color: theme.colors.primary,
-        minWidth: 60,
-        textAlign: 'center',
-    },
-    lineControls: {
-        flexDirection: 'row',
-        gap: theme.spacing.sm,
-    },
-    lineButton: {
-        flex: 1,
-        paddingVertical: theme.spacing.md,
-        borderRadius: theme.radius.lg,
-        backgroundColor: theme.colors.backgroundSecondary,
-        alignItems: 'center',
-    },
-    lineButtonActive: {
-        backgroundColor: theme.colors.primary,
-    },
-    lineButtonText: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.text,
-    },
-    lineButtonTextActive: {
-        color: theme.colors.textInverse,
-        fontWeight: theme.typography.weight.bold,
-    },
-    themeControls: {
-        flexDirection: 'row',
-        gap: theme.spacing.sm,
-    },
-    themeButton: {
-        flex: 1,
-        paddingVertical: theme.spacing.lg,
-        borderRadius: theme.radius.lg,
-        alignItems: 'center',
-        borderWidth: 2,
-        borderColor: 'transparent',
-    },
-    themeButtonActive: {
-        borderColor: theme.colors.primary,
-    },
-    themeButtonText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.medium,
-    },
-    languageControls: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: theme.spacing.sm,
-    },
-    langButton: {
-        paddingHorizontal: theme.spacing.md,
-        paddingVertical: theme.spacing.sm,
-        borderRadius: theme.radius.full,
-        backgroundColor: theme.colors.backgroundSecondary,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-    },
-    langButtonActive: {
-        backgroundColor: theme.colors.primary,
-        borderColor: theme.colors.primary,
-    },
-    langButtonText: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.text,
-    },
-    langButtonTextActive: {
-        color: theme.colors.textInverse,
-        fontWeight: theme.typography.weight.bold,
-    },
 }));
+

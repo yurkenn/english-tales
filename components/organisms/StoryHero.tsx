@@ -1,9 +1,12 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
+// Force reload: 2
+
+import { View, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
-import { Ionicons } from '@expo/vector-icons';
+import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
-import { OptimizedImage, BookCover } from '../atoms';
+import { Ionicons } from '@expo/vector-icons';
+import { OptimizedImage } from '../atoms';
 
 interface StoryHeroProps {
     coverImage: string;
@@ -33,38 +36,50 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
 
     return (
         <View style={styles.container}>
-            <OptimizedImage
-                source={{ uri: coverImage }}
-                placeholder={coverImageLqip}
-                style={StyleSheet.absoluteFill}
-                contentFit="cover"
-                sharedTransitionTag={`story-image-${storyId}`}
-            />
-            <LinearGradient
-                colors={['rgba(0,0,0,0.1)', 'transparent', 'rgba(0,0,0,0.8)']}
-                style={styles.gradient}
-            />
+            {/* Immersive Blurred Backdrop */}
+            <View style={RNStyleSheet.absoluteFill}>
+                <OptimizedImage
+                    source={{ uri: coverImage || '' }}
+                    placeholder={coverImageLqip}
+                    style={RNStyleSheet.absoluteFill}
+                    contentFit="cover"
+                />
+                <BlurView intensity={60} style={RNStyleSheet.absoluteFill} tint={theme.mode === 'dark' ? 'dark' : 'light'} />
+                <LinearGradient
+                    colors={['rgba(0,0,0,0.3)', 'transparent', theme.colors.background]}
+                    style={styles.gradient}
+                />
+            </View>
 
-            {/* Subtle Spine Decoration Overlay */}
-            <View style={styles.spineSpine} />
-            <LinearGradient
-                colors={['rgba(0,0,0,0.3)', 'transparent']}
-                start={{ x: 0, y: 0.5 }}
-                end={{ x: 0.05, y: 0.5 }}
-                style={StyleSheet.absoluteFill}
-            />
+            {/* Main Book Cover */}
+            <View style={styles.coverWrapper}>
+                <OptimizedImage
+                    source={{ uri: coverImage || '' }}
+                    placeholder={coverImageLqip}
+                    style={styles.bookImage}
+                    contentFit="cover"
+                    sharedTransitionTag={`story-image-${storyId}`}
+                />
+                {/* Subtle Spine Decoration Overlay */}
+                <View style={styles.spineShadow} />
+                <LinearGradient
+                    colors={['rgba(0,0,0,0.2)', 'transparent']}
+                    start={{ x: 0, y: 0.5 }}
+                    end={{ x: 0.05, y: 0.5 }}
+                    style={styles.bookImage}
+                />
+            </View>
 
             <Pressable style={[styles.backButton, { top: topInset + 8 }]} onPress={onBackPress}>
-                <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
+                <Ionicons name="arrow-back" size={24} color={theme.mode === 'dark' ? '#FFFFFF' : '#000000'} />
             </Pressable>
 
             <View style={[styles.rightButtons, { top: topInset + 8 }]}>
-                {/* ... (buttons remain the same) */}
                 <Pressable style={styles.actionButton} onPress={onFavoritePress}>
                     <Ionicons
                         name={isFavorited ? 'heart' : 'heart-outline'}
                         size={24}
-                        color={isFavorited ? theme.colors.error : '#FFFFFF'}
+                        color={isFavorited ? theme.colors.error : (theme.mode === 'dark' ? '#FFFFFF' : '#000000')}
                     />
                 </Pressable>
 
@@ -72,13 +87,13 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
                     <Ionicons
                         name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
                         size={24}
-                        color={isBookmarked ? theme.colors.primary : '#FFFFFF'}
+                        color={isBookmarked ? theme.colors.primary : (theme.mode === 'dark' ? '#FFFFFF' : '#000000')}
                     />
                 </Pressable>
 
                 {onSharePress && (
                     <Pressable style={styles.actionButton} onPress={onSharePress}>
-                        <Ionicons name="share-social-outline" size={24} color="#FFFFFF" />
+                        <Ionicons name="share-social-outline" size={24} color={theme.mode === 'dark' ? '#FFFFFF' : '#000000'} />
                     </Pressable>
                 )}
             </View>
@@ -88,19 +103,36 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
 
 const styles = StyleSheet.create((theme) => ({
     container: {
-        height: 420, // Taller immersive hero
+        height: 480, // Taller immersive hero
         width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     gradient: {
-        ...StyleSheet.absoluteFillObject,
+        ...RNStyleSheet.absoluteFillObject,
     },
-    spineSpine: {
+    coverWrapper: {
+        width: 180,
+        height: 270,
+        borderRadius: theme.radius.sm,
+        overflow: 'hidden',
+        backgroundColor: theme.colors.surface,
+        ...theme.shadows.lg,
+        shadowColor: '#000',
+        shadowOpacity: 0.5,
+        shadowRadius: 15,
+        elevation: 10,
+    },
+    bookImage: {
+        ...RNStyleSheet.absoluteFillObject,
+    },
+    spineShadow: {
         position: 'absolute',
         left: 0,
         top: 0,
         bottom: 0,
-        width: 1.5,
-        backgroundColor: 'rgba(255,255,255,0.2)',
+        width: 4,
+        backgroundColor: 'rgba(0,0,0,0.3)',
         zIndex: 1,
     },
     backButton: {
@@ -109,10 +141,12 @@ const styles = StyleSheet.create((theme) => ({
         width: 40,
         height: 40,
         borderRadius: theme.radius.full,
-        backgroundColor: 'rgba(0,0,0,0.3)',
+        backgroundColor: 'rgba(255,255,255,0.2)',
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 10,
+        borderWidth: 1,
+        borderColor: 'rgba(255,255,255,0.1)',
     },
     rightButtons: {
         position: 'absolute',
@@ -125,8 +159,10 @@ const styles = StyleSheet.create((theme) => ({
         width: 40,
         height: 40,
         borderRadius: theme.radius.full,
-        backgroundColor: 'rgba(0,0,0,0.3)',
+        backgroundColor: 'rgba(255,255,255,0.2)',
         alignItems: 'center',
         justifyContent: 'center',
+        borderWidth: 1,
+        borderColor: 'rgba(255,255,255,0.1)',
     },
 }));

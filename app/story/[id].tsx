@@ -15,7 +15,17 @@ import {
     DownloadButton,
     ConfirmationDialog,
     StoryDetailScreenSkeleton,
+    AuthorSection,
+    StorySnippet,
+    RelatedStories,
 } from '@/components';
+import Animated, {
+    useSharedValue,
+    useAnimatedStyle,
+    interpolate,
+    Extrapolate,
+    useAnimatedScrollHandler
+} from 'react-native-reanimated';
 import { useStory } from '@/hooks/useQueries';
 import { useFirestoreReviews } from '@/hooks/useFirestoreReviews';
 import { useFavorites } from '@/hooks/useFavorites';
@@ -27,14 +37,27 @@ import { useDownloadStore } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
+import { useTranslation } from 'react-i18next';
+
+interface StoryDetails extends Story {
+    authorBio?: string;
+}
 
 export default function StoryDetailScreen() {
     const { theme } = useUnistyles();
     const router = useRouter();
+    const { t } = useTranslation();
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
     const writeReviewSheetRef = useRef<BottomSheet>(null);
     const removeDownloadDialogRef = useRef<BottomSheet>(null);
+    const scrollY = useSharedValue(0);
+
+    const scrollHandler = useAnimatedScrollHandler({
+        onScroll: (event) => {
+            scrollY.value = event.contentOffset.y;
+        },
+    });
 
     // Auth & Library & Downloads
     const { user } = useAuthStore();
@@ -60,17 +83,18 @@ export default function StoryDetailScreen() {
     } = useFavorites(id || '');
 
     // Transform Story
-    const story = useMemo(() => {
+    const story = useMemo<StoryDetails | null>(() => {
         if (!storyDoc) return null;
         return {
             id: storyDoc._id,
             title: storyDoc.title,
             description: storyDoc.description,
-            content: storyDoc.content || '',
+            content: storyDoc.content ? (typeof storyDoc.content === 'string' ? storyDoc.content : '') : '',
             coverImage: storyDoc.coverImage ? urlFor(storyDoc.coverImage).width(800).url() : '',
             coverImageLqip: storyDoc.coverImageLqip,
             author: storyDoc.author?.name || 'Unknown Author',
             authorId: storyDoc.author?._id || null,
+            authorBio: storyDoc.author?.bio,
             difficulty: storyDoc.difficulty || 'intermediate',
             estimatedReadTime: storyDoc.estimatedReadTime || 5,
             wordCount: storyDoc.wordCount || 1000,
@@ -110,6 +134,17 @@ export default function StoryDetailScreen() {
         }
     };
 
+    const headerOpacity = useAnimatedStyle(() => {
+        return {
+            opacity: interpolate(
+                scrollY.value,
+                [300, 400],
+                [0, 1],
+                Extrapolate.CLAMP
+            ),
+        };
+    });
+
     const isLoading = loadingStory || loadingReviews;
 
     if (isLoading) {
@@ -146,10 +181,23 @@ export default function StoryDetailScreen() {
 
     return (
         <View style={styles.container}>
-            <ScrollView
+            {/* Sticky Header */}
+            <Animated.View style={[styles.stickyHeader, { paddingTop: insets.top }, headerOpacity]}>
+                <View style={styles.stickyHeaderContent}>
+                    <Pressable onPress={() => router.back()} style={styles.stickyBackButton}>
+                        <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
+                    </Pressable>
+                    <Text style={styles.stickyTitle} numberOfLines={1}>{story.title}</Text>
+                    <View style={{ width: 40 }} />
+                </View>
+            </Animated.View>
+
+            <Animated.ScrollView
                 style={styles.scrollView}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
+                onScroll={scrollHandler}
+                scrollEventThrottle={16}
             >
                 {/* Hero Image */}
                 <StoryHero
@@ -179,7 +227,9 @@ export default function StoryDetailScreen() {
                     <View style={styles.ratingRow}>
                         <RatingStars rating={rating} size="md" showEmpty />
                         <Text style={styles.ratingValue}>{rating.toFixed(1)}</Text>
-                        <Text style={styles.ratingCount}>({count.toLocaleString()} reviews)</Text>
+                        <Text style={styles.ratingCount}>
+                            ({t('stories.details.reviewCount', { count })})
+                        </Text>
                     </View>
 
                     {/* Meta Info */}
@@ -222,18 +272,36 @@ export default function StoryDetailScreen() {
                         ))}
                     </View>
 
+                    {/* Story Snippet */}
+                    <StorySnippet text={story.description.length > 100 ? story.description.substring(0, 150) + '...' : story.description} />
+
                     {/* Description */}
                     <View style={styles.section}>
-                        <Text style={styles.sectionTitle}>About this story</Text>
+                        <Text style={styles.sectionTitle}>{t('stories.details.about')}</Text>
                         <Text style={styles.description}>{story.description}</Text>
                     </View>
+
+                    {/* Author Section */}
+                    <AuthorSection
+                        name={story.author}
+                        bio={story.authorBio}
+                        onPress={() => story.authorId && router.push(`/author/${story.authorId}`)}
+                    />
+
+                    {/* Related Stories */}
+                    {storyDoc?.categories?.[0]?._id && (
+                        <RelatedStories
+                            categoryId={storyDoc.categories[0]._id}
+                            currentStoryId={story.id}
+                        />
+                    )}
 
                     {/* Reviews Preview */}
                     <View style={styles.section}>
                         <View style={styles.sectionHeader}>
-                            <Text style={styles.sectionTitle}>Reviews</Text>
+                            <Text style={styles.sectionTitle}>{t('stories.details.reviews')}</Text>
                             <Pressable onPress={() => router.push(`/reviews/${story.id}`)}>
-                                <Text style={styles.seeAllLink}>See All</Text>
+                                <Text style={styles.seeAllLink}>{t('stories.details.seeAll')}</Text>
                             </Pressable>
                         </View>
                         {reviews.length > 0 ? (
@@ -244,7 +312,7 @@ export default function StoryDetailScreen() {
                                 text={reviews[0].comment}
                             />
                         ) : (
-                            <Text style={styles.noReviewsText}>No reviews yet</Text>
+                            <Text style={styles.noReviewsText}>{t('stories.details.noReviews')}</Text>
                         )}
 
                         {user && !user.isAnonymous && (
@@ -256,12 +324,12 @@ export default function StoryDetailScreen() {
                                 }}
                             >
                                 <Ionicons name="create-outline" size={18} color={theme.colors.primary} />
-                                <Text style={styles.writeReviewText}>Write a Review</Text>
+                                <Text style={styles.writeReviewText}>{t('stories.details.writeReview')}</Text>
                             </Pressable>
                         )}
                     </View>
                 </View>
-            </ScrollView>
+            </Animated.ScrollView>
 
             {/* Write Review Sheet */}
             <WriteReviewSheet
@@ -294,7 +362,7 @@ export default function StoryDetailScreen() {
                     }}
                 >
                     <Ionicons name="book-outline" size={20} color={theme.colors.textInverse} />
-                    <Text style={styles.readButtonText}>Start Reading</Text>
+                    <Text style={styles.readButtonText}>{t('stories.details.startReading')}</Text>
                 </Pressable>
             </View>
 
@@ -469,5 +537,35 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.primary,
+    },
+    stickyHeader: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        backgroundColor: theme.colors.background,
+        zIndex: 100,
+        borderBottomWidth: 1,
+        borderBottomColor: theme.colors.borderLight,
+        ...theme.shadows.sm,
+    },
+    stickyHeaderContent: {
+        height: 56,
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: theme.spacing.md,
+    },
+    stickyBackButton: {
+        width: 40,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    stickyTitle: {
+        flex: 1,
+        fontSize: theme.typography.size.lg,
+        fontWeight: 'bold',
+        color: theme.colors.text,
+        textAlign: 'center',
     },
 }));

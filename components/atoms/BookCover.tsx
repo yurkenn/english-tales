@@ -4,9 +4,10 @@ import Animated from 'react-native-reanimated';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { LinearGradient } from 'expo-linear-gradient';
 import { OptimizedImage } from './OptimizedImage';
+import { urlFor } from '@/services/sanity';
 
 interface BookCoverProps {
-    source: { uri: string } | number;
+    source: { uri: string | any } | number;
     width: number;
     height?: number;
     borderRadius?: number;
@@ -37,8 +38,19 @@ export const BookCover: React.FC<BookCoverProps> = ({
 
     const imageSource = useMemo(() => {
         if (typeof source === 'number') return source;
-        return { uri: source.uri };
-    }, [source]);
+        const uri = source.uri;
+        if (!uri) return null;
+
+        if (typeof uri === 'string') return { uri };
+
+        // Handle Sanity image object
+        try {
+            return { uri: urlFor(uri).width(Math.round(width * 2)).url() };
+        } catch (e) {
+            console.warn('[BookCover] Failed to generate URL from Sanity object:', e);
+            return null;
+        }
+    }, [source, width]);
 
     return (
         <View style={[styles.container(width, finalHeight), style]}>

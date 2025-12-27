@@ -55,3 +55,5 @@ export { CommentThread } from './CommentThread';
 export { FlashCard } from './FlashCard';
 export { VocabularyMilestoneCard } from './VocabularyMilestoneCard';
 export { HighlightMenu } from './HighlightMenu';
+export { AuthorSection } from './AuthorSection';
+export { StorySnippet } from './StorySnippet';

@@ -3,11 +3,12 @@ import { Image, ImageProps, ImageStyle, StyleProp } from 'react-native';
 import { Image as ExpoImage, ImageProps as ExpoImageProps } from 'expo-image';
 import { useUnistyles } from 'react-native-unistyles';
 import Animated from 'react-native-reanimated';
+import { getOptimizedUri } from '@/utils/imageUtils';
 
 const AnimatedExpoImage = Animated.createAnimatedComponent(ExpoImage) as any;
 
 export interface OptimizedImageProps extends Omit<ExpoImageProps, 'source'> {
-    source: { uri: string } | number;
+    source: { uri: string | any } | number;
     placeholder?: string;
     style?: StyleProp<ImageStyle>;
     fallback?: boolean; // Use React Native Image as fallback
@@ -32,26 +33,12 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 }) => {
     const { theme } = useUnistyles();
 
-    // Helper to optimize Sanity URL
-    const getOptimizedUri = (uri: string) => {
-        if (!uri.includes('cdn.sanity.io')) return uri;
-
-        let optimizedUri = uri;
-        const separator = optimizedUri.includes('?') ? '&' : '?';
-
-        if (width) optimizedUri += `${separator}w=${Math.round(width * 2)}`; // 2x for retina
-        if (height) optimizedUri += `${optimizedUri.includes('?') ? '&' : '?'}h=${Math.round(height * 2)}`;
-
-        // Add auto format and quality
-        optimizedUri += `${optimizedUri.includes('?') ? '&' : '?'}auto=format&q=75`;
-
-        return optimizedUri;
-    };
 
     // Convert source to expo-image format
+    const optimizedUri = typeof source !== 'number' ? getOptimizedUri(source.uri, { width, height }) : '';
     const imageSource = typeof source === 'number'
         ? source
-        : { uri: getOptimizedUri(source.uri) };
+        : (optimizedUri ? { uri: optimizedUri } : null);
 
     // Use React Native Image as fallback if needed
     if (fallback) {

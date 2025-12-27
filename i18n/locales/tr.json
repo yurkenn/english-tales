@@ -51,7 +51,26 @@
         "story": "hikaye",
         "offline": "Çevrimdışı",
         "check": "Kontrol Et",
-        "words": "kelime"
+        "words": "kelime",
+        "beginner": "Başlangıç",
+        "intermediate": "Orta",
+        "advanced": "İleri",
+        "level": "Seviye"
+    },
+    "stories": {
+        "filters": {
+            "difficulty": "Seviye"
+        },
+        "details": {
+            "about": "Bu Hikaye Hakkında",
+            "reviews": "Değerlendirmeler",
+            "noReviews": "Henüz değerlendirme yok",
+            "writeReview": "Yorum Yap",
+            "seeAll": "Hepsini Gör",
+            "startReading": "Okumaya Başla",
+            "reviewCount": "{{count}} değerlendirme",
+            "reviewCount_one": "1 değerlendirme"
+        }
     },
     "tabs": {
         "home": "Ana Sayfa",

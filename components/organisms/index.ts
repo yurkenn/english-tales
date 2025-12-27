@@ -52,3 +52,4 @@ export { TabHeader } from './TabHeader';
 export { UserProfileSheet } from './UserProfileSheet';
 export { PostDetailSheet } from './PostDetailSheet';
 export { PagedContent } from './PagedContent';
+export { RelatedStories } from './RelatedStories';
