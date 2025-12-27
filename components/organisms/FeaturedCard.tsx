@@ -59,6 +59,12 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
                     <View style={styles.badge}>
                         <Typography variant="label" color={theme.colors.textInverse}>{badge}</Typography>
                     </View>
+                    {story.isPremiumOnly && (
+                        <View style={styles.premiumBadge}>
+                            <Ionicons name="star" size={14} color="#FFFFFF" />
+                            <Typography variant="label" color="#FFFFFF" style={styles.premiumText}>PRO</Typography>
+                        </View>
+                    )}
                     {/* Title on image */}
                     <View style={styles.imageContent}>
                         <Typography variant="h1" color="#FFFFFF">
@@ -160,5 +166,23 @@ const styles = StyleSheet.create((theme) => ({
         height: 52,
         borderRadius: theme.radius.md,
         ...theme.shadows.sm,
+    },
+    premiumBadge: {
+        position: 'absolute',
+        top: theme.spacing.md,
+        right: theme.spacing.md,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 4,
+        backgroundColor: theme.colors.warning,
+        paddingHorizontal: theme.spacing.md,
+        paddingVertical: theme.spacing.xs,
+        borderRadius: theme.radius.sm,
+        borderWidth: 1,
+        borderColor: 'rgba(255, 255, 255, 0.2)',
+    },
+    premiumText: {
+        fontSize: 12,
+        fontWeight: 'bold',
     },
 }));

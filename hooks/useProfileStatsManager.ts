@@ -13,6 +13,10 @@ const LANGUAGES = [
     { code: 'es', label: 'Español' },
     { code: 'de', label: 'Deutsch' },
     { code: 'fr', label: 'Français' },
+    { code: 'id', label: 'Indonesia' },
+    { code: 'ja', label: '日本語' },
+    { code: 'ko', label: '한국어' },
+    { code: 'pt-BR', label: 'Português (Brasil)' },
 ]
 
 export const useProfileStatsManager = (user: User | null, myPosts: CommunityPost[]) => {

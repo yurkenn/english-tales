@@ -1,0 +1,474 @@
+{
+    "auth": {
+        "signup": {
+            "title": "アカウント作成",
+            "subtitle": "今日から英語の読書アドベンチャーを始めましょう"
+        },
+        "login": {
+            "title": "おかえりなさい",
+            "subtitle": "サインインして読書の旅を続けましょう"
+        },
+        "forgotPassword": {
+            "title": "パスワードをお忘れですか？",
+            "message": "ご安心ください。メールアドレスを入力していただければ、パスワード再設定用のリンクをお送りします。",
+            "submit": "設定リンクを送信",
+            "backToLogin": "ログインに戻る",
+            "successTitle": "メールを確認してください",
+            "successMessage": "パスワード再設定リンクを以下に送信しました：",
+            "spamHint": "メールが見当たらない場合は、迷惑メールフォルダを確認してください。",
+            "toastSuccess": "パスワード再設定メールを送信しました！"
+        },
+        "guestBanner": {
+            "title": "すべての機能を解除",
+            "subtitle": "サインインして進捗を同期し、レビューを書いて、コミュニティに参加しましょう！",
+            "cta": "サインイン / 新規登録"
+        }
+    },
+    "common": {
+        "error": "問題が発生しました",
+        "retry": "再試行",
+        "cancel": "キャンセル",
+        "save": "保存",
+        "delete": "削除",
+        "loading": "読み込み中...",
+        "search": "検索...",
+        "networkError": "ネットワークエラー。接続を確認してください。",
+        "all": "すべて",
+        "easy": "かんたん",
+        "medium": "ふつう",
+        "hard": "むずかしい",
+        "on": "オン",
+        "off": "オフ",
+        "goBack": "戻る",
+        "saving": "保存中...",
+        "saveChanges": "変更を保存",
+        "unknownAuthor": "不明な著者",
+        "accept": "承認",
+        "seeAll": "すべて表示",
+        "confirm": "確定",
+        "you": "あなた",
+        "min": "分",
+        "story": "ストーリー",
+        "offline": "オフライン",
+        "check": "チェック",
+        "words": "単語",
+        "beginner": "初級",
+        "intermediate": "中級",
+        "advanced": "上級",
+        "level": "レベル"
+    },
+    "stories": {
+        "filters": {
+            "difficulty": "レベル"
+        },
+        "details": {
+            "about": "このストーリーについて",
+            "reviews": "レビュー",
+            "noReviews": "レビューはまだありません",
+            "writeReview": "レビューを書く",
+            "seeAll": "すべて表示",
+            "startReading": "読み始める",
+            "reviewCount": "{{count}} 件のレビュー",
+            "reviewCount_one": "1 件のレビュー"
+        }
+    },
+    "tabs": {
+        "home": "ホーム",
+        "discover": "見つける",
+        "library": "ライブラリ",
+        "profile": "プロフィール"
+    },
+    "profile": {
+        "title": "プロフィール",
+        "booksRead": "読んだ本の数",
+        "dayStreak": "継続日数",
+        "readingGoals": "読書の目標",
+        "achievements": "実績",
+        "appearance": "外観",
+        "language": "言語",
+        "notifications": "通知",
+        "fontSize": "文字サイズ",
+        "help": "ヘルプとサポート",
+        "helpMessage": "お困りですか？ support@englishtales.app までご連絡ください",
+        "about": "このアプリについて",
+        "aboutMessage": "English Tales v1.0.0\n\n美しいストーリーを通じて英語力を高めましょう。\n\n© 2025 English Tales",
+        "signOut": "サインアウト",
+        "login": "ログイン",
+        "logout": "ログアウト",
+        "stats": {
+            "storiesRead": "読んだストーリー",
+            "readingTime": "読書時間",
+            "streak": "継続日数"
+        },
+        "quickSettings": "クイック設定",
+        "vocabulary": "語彙",
+        "quiz": "練習クイズ",
+        "activity": "アクティビティ",
+        "preferences": "設定",
+        "allSettings": "すべての設定",
+        "time": "読書",
+        "words": "単語",
+        "badges": "バッジ",
+        "streak": "ストリーク",
+        "noPosts": "投稿はまだありません",
+        "noPostsMessage": "読書の旅をコミュニティで共有しましょう！",
+        "shareFirst": "投稿を作成",
+        "emptyLibrary": "保存されたものはありません",
+        "emptyLibraryMessage": "ストーリーを保存して、ここですぐに見つけられるようにしましょう！",
+        "exploreStories": "ストーリーを探す",
+        "addBio": "自己紹介を追加",
+        "editProfile": "プロフィールを編集",
+        "tabPosts": "投稿",
+        "tabSaved": "保存済み",
+        "tabAbout": "詳細",
+        "dailyGoal": "今日の目標",
+        "goalReached": "目標達成！",
+        "minRemaining": "あと {{count}} 分",
+        "minRemaining_one": "あと 1 分",
+        "goalAlmost": "あともう少しです！",
+        "goalKeepGoing": "目標達成まで読み続けましょう！"
+    },
+    "appearance": {
+        "title": "外観",
+        "theme": "テーマ",
+        "system": "システム",
+        "light": "ライト",
+        "dark": "ダーク",
+        "sepia": "セピア"
+    },
+    "home": {
+        "greeting": "こんにちは、{{name}}さん",
+        "greeting_morning": "おはようございます",
+        "greeting_afternoon": "こんにちは",
+        "greeting_evening": "こんばんは",
+        "greetingDefault": "読者",
+        "searchPlaceholder": "ストーリー、著者を検索...",
+        "continueReading": "続きをよむ",
+        "dailyPick": "今日のおすすめ",
+        "recommended": "あなたへの推奨",
+        "trending": "現在のトレンド",
+        "categories": {
+            "forYou": "あなたへ",
+            "following": "フォロー中",
+            "easy": "かんたん",
+            "medium": "ふつう",
+            "hard": "むずかしい",
+            "authors": "著者"
+        },
+        "showing": "表示中",
+        "clearFilter": "フィルターをクリア",
+        "noResultsTitle": "ストーリーが見つかりません",
+        "noResultsDesc": "「{{filter}}」に一致するストーリーはありません。別のカテゴリーを試してください。"
+    },
+    "discover": {
+        "searchPlaceholder": "ストーリー、著者を検索...",
+        "surpriseMe": "おまかせ",
+        "surpriseMeDesc": "あなたにぴったりの一冊を選びます",
+        "authorSpotlight": "注目の著者",
+        "recentlyAdded": "最近追加されたストーリー",
+        "popularThisWeek": "今週の人気",
+        "categories": {
+            "all": "すべて",
+            "easy": "かんたん",
+            "medium": "ふつう",
+            "hard": "むむずかしい",
+            "authors": "著者"
+        }
+    },
+    "authors": {
+        "title": "著者",
+        "author": "著者",
+        "stories": "ストーリー",
+        "storyCount": "{{count}} 個のストーリー",
+        "storyCountSingular": "1 個のストーリー",
+        "emptyTitle": "著者が見つかりません",
+        "emptyMessage": "著者が追加されるとここに表示されます。",
+        "noStoriesTitle": "ストーリーはまだありません",
+        "noStoriesMessage": "この著者はまだストーリーを公開していません",
+        "notFound": "著者が見つかりません",
+        "discoverSubtitle": "ストーリーの背後にある声を見つける",
+        "searchPlaceholder": "著者を検索...",
+        "noSearchResults": "検索に一致する著者はいません"
+    },
+    "library": {
+        "empty": "ライブラリは空です",
+        "emptyMessage": "読書を始めて、本をライブラリに追加しましょう",
+        "discoverStories": "ストーリーを探す",
+        "quizTitle": "練習クイズ",
+        "quizSubtitle": "{{count}} 単語の練習",
+        "stats": {
+            "total": "合計",
+            "completed": "完了",
+            "inProgress": "読書中"
+        },
+        "menu": {
+            "removeFromLibrary": "ライブラリから削除",
+            "deleteDownload": "ダウンロードを削除"
+        },
+        "dialogs": {
+            "removeTitle": "ライブラリから削除",
+            "removeMessage": "「{{title}}」をライブラリから削除しますか？",
+            "deleteDownloadTitle": "ダウンロードを削除",
+            "deleteDownloadMessage": "「{{title}}」のダウンロードを削除しますか？オフラインで利用できなくなります。"
+        },
+        "tabs": {
+            "stories": "ストーリー",
+            "vocabulary": "単語帳"
+        }
+    },
+    "vocabulary": {
+        "title": "単語ビルダー",
+        "searchPlaceholder": "保存した単語を検索...",
+        "empty": "保存された単語はありません",
+        "emptyMessage": "読書中に知らない単語をタップして、ここに保存しましょう。",
+        "startReading": "読み始める",
+        "noMatches": "一致する単語はありません",
+        "noMatchesMessage": "別の検索ワードを試してください。"
+    },
+    "reading": {
+        "complete": "{{percentage}}% 完了",
+        "remainingTime": "残り約 {{time}} 分",
+        "pageOfShifted": "{{total}} ページ中 {{current}} ページ",
+        "pagesLeftCount": "残り {{count}} ページ",
+        "pagesLeftCount_one": "残り 1 ページ",
+        "chapter": "第 {{number}} 章",
+        "startReading": "読み始める",
+        "continue": "続ける",
+        "notFound": "ストーリーが見つかりません",
+        "noContent": "コンテンツがありません。",
+        "lineSpacing": "行間",
+        "audioAssist": "オーディオアシスト",
+        "readingAloud": "読み上げ中...",
+        "audioAssistReady": "読み上げの準備ができました",
+        "minutesLeft": "目標まであと {{count}} 分",
+        "minutesLeft_one": "目標まであと 1 分",
+        "controls": {
+            "appearance": "外観",
+            "save": "保存",
+            "saved": "保存済み",
+            "share": "共有",
+            "listen": "聴く"
+        },
+        "quiz": {
+            "title": "理解度クイズ",
+            "subtitle": "学んだことを確認しましょう！",
+            "start": "クイズを開始",
+            "next": "次の問題",
+            "finish": "終了",
+            "correct": "正解！",
+            "incorrect": "残念...",
+            "result": "{{total}} 問中 {{count}} 問正解",
+            "accuracy": "正解率: {{percentage}}%",
+            "done": "ストーリーに戻る",
+            "checkpoint": "チェックポイント"
+        },
+        "completion": {
+            "title": "ストーリー完了！",
+            "subtitle": "素晴らしい！また一つ冒険を終えましたね。",
+            "nextStory": "次のストーリーを探す",
+            "backToHome": "ホームに戻る",
+            "ratingOptional": "ストーリーはどうでしたか？（任意）",
+            "readyForMore": "次の冒険の準備はいいですか？"
+        }
+    },
+    "settings": {
+        "title": "設定",
+        "sections": {
+            "account": "アカウント",
+            "preferences": "基本設定",
+            "storage": "ストレージ",
+            "about": "情報",
+            "dangerZone": "危険エリア",
+            "signIn": "サインイン"
+        },
+        "account": {
+            "email": "メールアドレス",
+            "notSet": "未設定",
+            "changePassword": "パスワード変更",
+            "signIn": "サインイン / 新規登録",
+            "unlockFeatures": "すべての機能を解除"
+        },
+        "preferences": {
+            "theme": "テーマ",
+            "language": "言語",
+            "fontSize": "文字サイズ",
+            "fontSizeInstruction": "読書画面の A- および A+ ボタンで文字サイズを調整できます。",
+            "notifications": "通知"
+        },
+        "storage": {
+            "downloads": "ダウンロード",
+            "storiesCount": "{{count}} 個のストーリー",
+            "none": "なし",
+            "clearDownloads": "すべてのダウンロードを削除",
+            "cache": "キャッシュ",
+            "clearCache": "キャッシュをクリア"
+        },
+        "about": {
+            "rateApp": "アプリを評価する",
+            "rateAppMessage": "評価ありがとうございます！App Storeのリンクは近日公開予定です。",
+            "privacyPolicy": "プライバシーポリシー",
+            "termsOfService": "利用規約",
+            "version": "バージョン"
+        },
+        "dangerZone": {
+            "signOut": "サインアウト",
+            "deleteAccount": "アカウント削除"
+        },
+        "dialogs": {
+            "signOut": {
+                "title": "サインアウト",
+                "message": "本当にサインアウトしますか？"
+            },
+            "deleteAccount": {
+                "title": "アカウント削除",
+                "message": "アカウントとすべてのデータが永久に削除されます。この操作は取り消せません。",
+                "instruction": "削除するには support@englishtales.app までご連絡ください。"
+            },
+            "clearCache": {
+                "title": "キャッシュをクリア",
+                "message": "一時データをクリアします。ライブラリや進捗には影響しません。",
+                "success": "キャッシュをクリアしました"
+            },
+            "clearDownloads": {
+                "title": "ダウンロードを削除",
+                "message": "{{count}} 個のダウンロード済みストーリーを削除しますか？オフラインで利用できなくなります。",
+                "success": "ダウンロードをすべて削除しました"
+            },
+            "changePassword": {
+                "title": "パスワード変更",
+                "message": "{{email}} 宛に再設定メールを送信します",
+                "success": "メールを送信しました！受信トレイを確認してください。",
+                "error": "送信に失敗しました。もう一度お試しください。"
+            }
+        },
+        "footer": "英語学習者のために ❤️ を込めて"
+    },
+    "notifications": {
+        "feedback": "通知は {{status}} です"
+    },
+    "social": {
+        "title": "コミュニティ",
+        "community": "コミュニティ",
+        "following": "フォロー中",
+        "findFriends": "友達を探す",
+        "searchPlaceholder": "名前やメールアドレスで検索...",
+        "noUsersFound": "ユーザーが見つかりません",
+        "add": "追加",
+        "requestSent": "友達リクエストを送信しました！",
+        "requestAccepted": "友達リクエストを承認しました！",
+        "requestCancelled": "リクエストをキャンセルしました",
+        "friendRemoved": "友達を削除しました",
+        "requests": "友達リクエスト",
+        "myFriends": "友達リスト",
+        "sentRequests": "送信済みリクエスト",
+        "requestPending": "承認待ち",
+        "emptyTitle": "友達はまだいません",
+        "emptyDesc": "他の読者とつながって、進捗や実績を共有しましょう！",
+        "communityBuzz": "コミュニティの話題",
+        "activityFinished": "が {{title}} を読み終えました",
+        "activityEarned": "が {{title}} を獲得しました",
+        "activityStarted": "が {{title}} を読み始めました",
+        "activityReviewed": "が {{title}} をレビューしました",
+        "shareSomething": "進捗を共有しましょう...",
+        "reply": "返信",
+        "congratulate": "お祝いする",
+        "congratulated": "お祝い済み",
+        "achievement": "実績",
+        "activeReader": "アクティブな読者",
+        "createPost": "新規投稿"
+    },
+    "errors": {
+        "firebase": {
+            "unknown": "エラーが発生しました。もう一度お試しください。",
+            "networkError": "ネットワークエラー。接続を確認してください。",
+            "emailAlreadyInUse": "このメールアドレスは既に登録されています。",
+            "invalidEmail": "有効なメールアドレスを入力してください。",
+            "userDisabled": "このアカウントは無効化されています。",
+            "userNotFound": "このメールアドレスのアカウントは見つかりません。",
+            "wrongPassword": "パスワードが間違っています。",
+            "tooManyRequests": "試行回数が多すぎます。しばらく待ってからお試しください。",
+            "sessionExpired": "セッションが期限切れです。再度サインインしてください。",
+            "unauthenticated": "サインインして続行してください。"
+        }
+    },
+    "monetization": {
+        "coins": {
+            "balance": "{{count}} コイン",
+            "earned": "+{{count}} コインを獲得しました！",
+            "spent": "-{{count}} コインを消費しました",
+            "notEnough": "コインが足りません"
+        },
+        "storyUnlock": {
+            "title": "ストーリーを解除",
+            "locked": "このストーリーはロックされています",
+            "watchAd": "広告を見て解除",
+            "watchAdFree": "無料 • 短い広告を見る",
+            "useCoins": "{{count}} コインを使用",
+            "unlockFor24h": "24時間解除",
+            "goPremium": "プレミアムになる",
+            "unlockAll": "すべてのストーリーを永久解除",
+            "success": "解除されました！",
+            "adWatching": "広告を読み込み中..."
+        },
+        "streakProtection": {
+            "title": "ストリークを保護！",
+            "subtitle": "{{count}} 日間の継続が途切れるピンチです！",
+            "message": "今日はまだ読んでいません。ストリーク保護を使って進捗を守りましょう。",
+            "watchAd": "広告を見る",
+            "watchAdDesc": "無料保護",
+            "useCoins": "{{count}} コインを使用",
+            "coinsDesc": "即時保護",
+            "goPremium": "プレミアムになる",
+            "premiumDesc": "永久自動保護",
+            "protected": "ストリークが保護されました！",
+            "loseStreak": "スキップ（継続を失う）"
+        },
+        "dailyBonus": {
+            "title": "デイリーボーナス！",
+            "subtitle": "7日中 {{day}} 日目",
+            "claim": "報酬を受け取る",
+            "claimed": "また明日来てください！",
+            "doubleWithAd": "広告を見て報酬2倍",
+            "doubleSuccess": "報酬が2倍になりました！",
+            "rewards": {
+                "coins": "{{count}} コイン",
+                "translations": "{{count}} 回の無料翻訳",
+                "streakProtector": "ストリーク保護",
+                "premiumTrial": "1日間無料プレミアム"
+            },
+            "day1": "1日目",
+            "day2": "2日目",
+            "day3": "3日目",
+            "day4": "4日目",
+            "day5": "5日目",
+            "day6": "6日目",
+            "day7": "7日目"
+        },
+        "premium": {
+            "title": "プレミアム",
+            "subtitle": "すべての機能を体験しましょう",
+            "features": {
+                "unlimitedTranslations": "翻訳が無制限",
+                "allStories": "すべてのストーリーが解除",
+                "noAds": "広告なし",
+                "streakProtection": "ストリーク自動保護",
+                "dailyCoins": "毎日100ボーナスコイン"
+            },
+            "monthly": "月払い",
+            "yearly": "年払い",
+            "saveBadge": "{{percent}}% お得",
+            "subscribe": "購読する",
+            "restore": "購入を復元",
+            "terms": "利用規約",
+            "privacy": "プライバシー",
+            "cancelAnytime": "いつでも解約可能"
+        },
+        "translationLimit": {
+            "title": "翻訳リミットに達しました",
+            "message": "今日の無料翻訳をすべて使い切りました。",
+            "watchAd": "広告を見てもう5回分獲得",
+            "goPremium": "プレミアムで無制限に",
+            "remaining": "残り翻訳回数: {{count}} 回"
+        }
+    }
+}

@@ -82,6 +82,12 @@ export const PopularStoryCard: React.FC<PopularStoryCardProps> = ({
                     <Ionicons name="time-outline" size={12} color={theme.colors.textMuted} />
                     <Text style={styles.readTimeText}>{story.estimatedReadTime}m</Text>
                 </View>
+                {story.isPremiumOnly && (
+                    <View style={styles.premiumBadge}>
+                        <Ionicons name="star" size={10} color="#FFFFFF" />
+                        <Text style={styles.premiumText}>PRO</Text>
+                    </View>
+                )}
             </View>
 
             <Ionicons
@@ -198,5 +204,19 @@ const styles = StyleSheet.create((theme) => ({
     readTimeText: {
         fontSize: theme.typography.size.xs,
         color: theme.colors.textMuted,
+    },
+    premiumBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 2,
+        backgroundColor: theme.colors.warning,
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: 1,
+        borderRadius: theme.radius.full,
+    },
+    premiumText: {
+        fontSize: 10,
+        fontWeight: 'bold',
+        color: '#FFFFFF',
     },
 }));

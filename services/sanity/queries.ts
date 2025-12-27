@@ -14,7 +14,8 @@ export const queries = {
     isFeatured,
     publishedAt,
     "author": author->{_id, name, slug, image},
-    "categories": categories[]->{_id, title, slug, color}
+    "categories": categories[]->{_id, title, slug, color},
+    isPremiumOnly
   }`,
 
   featuredStories: `*[_type == "story" && isFeatured == true] | order(publishedAt desc) [0...5] {
@@ -29,7 +30,8 @@ export const queries = {
     wordCount,
     publishedAt,
     "author": author->{_id, name, slug, image},
-    "categories": categories[]->{_id, title, slug, color}
+    "categories": categories[]->{_id, title, slug, color},
+    isPremiumOnly
   }`,
 
   storyById: `*[_type == "story" && _id == $id][0] {
@@ -47,7 +49,8 @@ export const queries = {
     publishedAt,
     quiz,
     "author": author->{_id, name, slug, image, bio},
-    "categories": categories[]->{_id, title, slug, color}
+    "categories": categories[]->{_id, title, slug, color},
+    isPremiumOnly
   }`,
 
   storyBySlug: `*[_type == "story" && slug.current == $slug][0] {
@@ -65,7 +68,8 @@ export const queries = {
     publishedAt,
     quiz,
     "author": author->{_id, name, slug, image, bio},
-    "categories": categories[]->{_id, title, slug, color}
+    "categories": categories[]->{_id, title, slug, color},
+    isPremiumOnly
   }`,
 
   storiesByCategory: `*[_type == "story" && $categoryId in categories[]._ref] | order(publishedAt desc) {
@@ -80,7 +84,8 @@ export const queries = {
     wordCount,
     publishedAt,
     "author": author->{_id, name, slug, image},
-    "categories": categories[]->{_id, title, slug, color}
+    "categories": categories[]->{_id, title, slug, color},
+    isPremiumOnly
   }`,
 
   searchStories: `*[_type == "story" && (
@@ -97,7 +102,8 @@ export const queries = {
     difficulty,
     estimatedReadTime,
     "author": author->{_id, name, slug, image},
-    "categories": categories[]->{_id, title, slug, color}
+    "categories": categories[]->{_id, title, slug, color},
+    isPremiumOnly
   }`,
 
   // Authors
@@ -145,7 +151,8 @@ export const queries = {
       estimatedReadTime,
       wordCount,
       publishedAt,
-      "author": { "name": ^.name, "_id": ^._id }
+      "author": { "name": ^.name, "_id": ^._id },
+      isPremiumOnly
     }
   }`,
 

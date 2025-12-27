@@ -17,6 +17,7 @@ import {
     WriteReviewSheet,
     HighlightMenu,
     TranslationLimitModal,
+    PaywallModal,
     READING_THEMES,
     type ReadingTheme,
 } from '@/components';
@@ -25,23 +26,20 @@ import { useStory } from '@/hooks/useQueries';
 import { usePageCalculation } from '@/hooks/usePageCalculation';
 import { useProgressStore } from '@/store/progressStore';
 import { useAuthStore } from '@/store/authStore';
-import { useReadingPrefsStore } from '@/store/readingPrefsStore';
-import { useThemeStore } from '@/store/themeStore';
-import { useLibraryStore } from '@/store/libraryStore';
 import { useDownloadStore } from '@/store/downloadStore';
 import { useHighlightStore } from '@/store/highlightStore';
-import { haptics } from '@/utils/haptics';
+import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { PortableTextBlock } from '@portabletext/types';
 import { analyticsService } from '@/services/firebase/analytics';
 import { useTranslation } from 'react-i18next';
-import { useToastStore } from '@/store/toastStore';
-import BottomSheet from '@gorhom/bottom-sheet';
 
 import {
     useReadingProgressManager,
     useDictionaryManagement,
     useHighlightManagement,
     useAudioAssist,
+    useReadingCompletion,
+    useReadingControls,
 } from '@/hooks';
 
 
@@ -52,44 +50,20 @@ export default function ReadingScreen() {
     const insets = useSafeAreaInsets();
     const { id } = useLocalSearchParams<{ id: string }>();
 
-    const [showCompletionModal, setShowCompletionModal] = useState(false);
-    const [showSettingsModal, setShowSettingsModal] = useState(false);
-    const { isDark, highContrastEnabled: globalHighContrast } = useThemeStore();
-    const hasShownCompletion = useRef(false);
-    const startTimeRef = useRef<number>(Date.now());
+    // Paywall
+    const [showPaywallModal, setShowPaywallModal] = useState(false);
 
-    // Review
-    const reviewSheetRef = useRef<BottomSheet>(null);
-    const [completionRating, setCompletionRating] = useState(0);
-
-    // Quiz
-    const [showQuizModal, setShowQuizModal] = useState(false);
-
-    // Stores
-    const { fontSize, lineHeight, dyslexicFontEnabled, theme: readingTheme, fontFamily, actions: prefsActions } = useReadingPrefsStore();
-    const { progressMap, actions: progressActions } = useProgressStore();
-    const { actions: libraryActions } = useLibraryStore();
-    const isInLibrary = useLibraryStore((state) => state.items.some((i) => i.storyId === id));
-    const { downloads, actions: downloadActions } = useDownloadStore();
+    // Progress map for initial percentage
+    const { progressMap } = useProgressStore();
+    const { actions: downloadActions } = useDownloadStore();
+    const { actions: prefsActions } = useReadingPrefsStore();
     const { user } = useAuthStore();
-    const toastActions = useToastStore((state) => state.actions);
 
     // Get highlights for this story (reactive)
     const storyHighlights = useHighlightStore((state) => {
         if (!user || !id) return [];
         return state.highlights[user.id]?.[id] || [];
     });
-
-    // Memoized font size handlers to prevent re-renders
-    const handleFontDecrease = useCallback(() => {
-        haptics.light();
-        prefsActions.setFontSize(Math.max(14, fontSize - 2));
-    }, [fontSize, prefsActions]);
-
-    const handleFontIncrease = useCallback(() => {
-        haptics.light();
-        prefsActions.setFontSize(Math.min(28, fontSize + 2));
-    }, [fontSize, prefsActions]);
 
     const isDownloaded = id ? downloadActions.isDownloaded(id) : false;
 
@@ -121,16 +95,8 @@ export default function ReadingScreen() {
         }
     }, [isLoading, storyDoc, id]);
 
-    // Sync reading time on unmount
-    useEffect(() => {
-        startTimeRef.current = Date.now();
-        return () => {
-            const elapsed = Date.now() - startTimeRef.current;
-            if (id && elapsed > 2000) {
-                progressActions.incrementReadingTime(id, elapsed);
-            }
-        };
-    }, [id, progressActions]);
+    // Sync reading time on unmount - now handled by useReadingCompletion
+    // (removed startTimeRef and manual tracking)
 
     // Load reading prefs on mount
     useEffect(() => {
@@ -210,96 +176,72 @@ export default function ReadingScreen() {
         toggleAudioPlayer,
     } = useAudioAssist({ storyText });
 
-    // --- End Modularized Logic Hooks ---
+    // Completion, Review & Quiz Management
+    const {
+        showCompletionModal,
+        showQuizModal,
+        completionRating,
+        reviewSheetRef,
+        readingTimeMinutes,
+        triggerCompletion,
+        handleMarkComplete,
+        handleContinueHome,
+        handleReviewSubmit,
+        handleQuizClose,
+        syncReadingTime,
+    } = useReadingCompletion({
+        storyId: id,
+        storyTitle: storyDoc?.title,
+        wordCount: storyDoc?.wordCount,
+        hasQuiz: !!(storyDoc?.quiz && storyDoc.quiz.length > 0),
+        quizLength: storyDoc?.quiz?.length || 0,
+    });
+
+    // Sync reading time on unmount
+    useEffect(() => {
+        return () => syncReadingTime();
+    }, [syncReadingTime]);
 
     // Kindle-style: show completion when user tries to go past last page
     const handleTryNextOnLastPage = useCallback(() => {
-        if (!hasShownCompletion.current) {
-            hasShownCompletion.current = true;
-            haptics.success();
-            setShowCompletionModal(true);
-        }
-    }, []);
+        triggerCompletion();
+    }, [triggerCompletion]);
 
-    const handleMarkComplete = useCallback(async (rating?: number) => {
-        haptics.success();
-        const readingTimeMinutes = Math.max(1, Math.round((Date.now() - startTimeRef.current) / 60000));
-        const metadata = {
-            rating,
-            readingTime: readingTimeMinutes,
-            wordCount: storyDoc?.wordCount || 0
-        };
+    // handleMarkComplete, handleQuizClose, handleReviewSubmit are now provided by useReadingCompletion hook
 
-        if (id) {
-            analyticsService.logEvent('story_completed', {
-                story_id: id,
-                story_title: storyDoc?.title,
-                rating,
-                reading_time: readingTimeMinutes,
-                word_count: storyDoc?.wordCount || 0
-            });
-            await progressActions.markComplete(id, storyDoc?.title, metadata);
-        }
-        setShowCompletionModal(false);
-
-        if (rating) {
-            setCompletionRating(rating);
-            setTimeout(() => {
-                reviewSheetRef.current?.expand();
-            }, 500);
-        } else {
-            setShowCompletionModal(false);
-            router.push('/(tabs)/discover');
-        }
-    }, [id, progressActions, router, storyDoc]);
-
-    const handleQuizClose = useCallback(async (accuracy: number) => {
-        if (id && storyDoc?.quiz) {
-            const score = Math.round((accuracy / 100) * storyDoc.quiz.length);
-            await progressActions.saveQuizResult(id, score, storyDoc.quiz.length);
-        }
-        setShowQuizModal(false);
-        router.back();
-    }, [id, storyDoc, progressActions, router]);
-
-    const handleBookmarkToggle = useCallback(async () => {
-        if (!storyDoc || !id) return;
-
-        if (!user || user.isAnonymous) {
-            toastActions.warning(t('auth.guestBanner.title'));
-            return;
-        }
-
-        if (isInLibrary) {
-            const result = await libraryActions.removeFromLibrary(id);
-            if (result.success) {
-                toastActions.info(t('library.menu.removeFromLibrary'));
-            }
-        } else {
-            const result = await libraryActions.addToLibrary({
-                id,
-                title: storyDoc.title || 'Untitled',
-                coverImage: storyDoc.coverImage?.asset?.url || '',
-                author: storyDoc.author?.name || 'Unknown',
-                description: storyDoc.description || '',
-                estimatedReadTime: storyDoc.estimatedReadTime || 5,
-                level: storyDoc.level || 'Beginner',
-            } as any);
-
-            if (result.success) {
-                toastActions.success(t('profile.tabSaved'));
-            }
-        }
-    }, [id, storyDoc, isInLibrary, libraryActions, user, toastActions, t]);
-
-    const cycleReadingTheme = useCallback(() => {
-        haptics.selection();
-        const themes: ReadingTheme[] = ['light', 'dark', 'sepia'];
-        const currentIndex = themes.indexOf(readingTheme);
-        const next = themes[(currentIndex + 1) % 3];
-        prefsActions.setTheme(next);
-        useThemeStore.getState().actions.setMode(next);
-    }, [readingTheme, prefsActions]);
+    // Reading Controls (font, theme, bookmark, settings)
+    const {
+        fontSize,
+        lineHeight,
+        fontFamily,
+        readingTheme,
+        dyslexicFontEnabled,
+        isDark,
+        highContrastEnabled: globalHighContrast,
+        isInLibrary,
+        showSettingsModal,
+        handleFontDecrease,
+        handleFontIncrease,
+        cycleReadingTheme,
+        handleThemeChange,
+        handleBookmarkToggle,
+        openSettings,
+        closeSettings,
+        setFontSize,
+        setLineHeight,
+        setFontFamily,
+    } = useReadingControls({
+        storyId: id,
+        storyMeta: storyDoc ? {
+            id,
+            title: storyDoc.title,
+            coverImage: storyDoc.coverImage?.asset?.url,
+            author: storyDoc.author?.name,
+            description: storyDoc.description,
+            estimatedReadTime: storyDoc.estimatedReadTime,
+            level: storyDoc.level,
+        } : null,
+    });
 
     if (isLoading) {
         return (
@@ -329,7 +271,7 @@ export default function ReadingScreen() {
                     title={storyDoc.title}
                     isDownloaded={isDownloaded}
                     onClose={() => router.back()}
-                    onSettings={() => setShowSettingsModal(true)}
+                    onSettings={openSettings}
                 />
 
                 <ReadingProgressBar
@@ -402,13 +344,10 @@ export default function ReadingScreen() {
             <CompletionModal
                 visible={showCompletionModal}
                 storyTitle={storyDoc.title}
-                readingTimeMinutes={Math.max(1, Math.round((Date.now() - startTimeRef.current) / 60000))}
+                readingTimeMinutes={readingTimeMinutes}
                 wordCount={storyDoc.wordCount || 0}
                 onComplete={handleMarkComplete}
-                onContinue={() => {
-                    setShowCompletionModal(false);
-                    router.replace('/(tabs)');
-                }}
+                onContinue={handleContinueHome}
             />
 
             <QuizModal
@@ -422,27 +361,7 @@ export default function ReadingScreen() {
                 storyTitle={storyDoc.title}
                 initialRating={completionRating}
                 onClose={() => reviewSheetRef.current?.close()}
-                onSubmit={async (rating, text) => {
-                    const { user } = useAuthStore.getState();
-                    if (!user || !id) return;
-
-                    const { reviewService } = await import('@/services/reviewService');
-                    await reviewService.addReview(
-                        id,
-                        storyDoc.title,
-                        user.id,
-                        user.displayName || 'Anonymous',
-                        user.photoURL,
-                        rating,
-                        text
-                    );
-
-                    if (storyDoc?.quiz && storyDoc.quiz.length > 0) {
-                        setShowQuizModal(true);
-                    } else {
-                        router.back();
-                    }
-                }}
+                onSubmit={handleReviewSubmit}
             />
 
             <ReadingSettingsModal
@@ -451,14 +370,11 @@ export default function ReadingScreen() {
                 lineHeight={lineHeight}
                 fontFamily={fontFamily}
                 readingTheme={readingTheme}
-                onClose={() => setShowSettingsModal(false)}
-                onFontSizeChange={prefsActions.setFontSize}
-                onLineHeightChange={prefsActions.setLineHeight}
-                onFontFamilyChange={prefsActions.setFontFamily}
-                onThemeChange={(t) => {
-                    prefsActions.setTheme(t);
-                    useThemeStore.getState().actions.setMode(t);
-                }}
+                onClose={closeSettings}
+                onFontSizeChange={setFontSize}
+                onLineHeightChange={setLineHeight}
+                onFontFamilyChange={setFontFamily}
+                onThemeChange={handleThemeChange}
             />
 
             <WordLookupSheet
@@ -484,6 +400,16 @@ export default function ReadingScreen() {
                 visible={showTranslationLimitModal}
                 onClose={closeTranslationLimitModal}
                 onRewardEarned={handleTranslationRewardEarned}
+                onGetPremium={() => {
+                    closeTranslationLimitModal();
+                    setShowPaywallModal(true);
+                }}
+            />
+
+            <PaywallModal
+                visible={showPaywallModal}
+                onClose={() => setShowPaywallModal(false)}
+                onSuccess={() => setShowPaywallModal(false)}
             />
         </View>
     );

@@ -417,5 +417,85 @@
             "retryLimitExceeded": "Upload failed. Please try again.",
             "uploadCanceled": "Upload was cancelled."
         }
+    },
+    "monetization": {
+        "coins": {
+            "balance": "{{count}} Coins",
+            "earned": "+{{count}} coins earned!",
+            "spent": "-{{count}} coins spent",
+            "notEnough": "Not enough coins"
+        },
+        "storyUnlock": {
+            "title": "Unlock Story",
+            "locked": "This story is locked",
+            "watchAd": "Watch Ad to Unlock",
+            "watchAdFree": "Free • Watch short ad",
+            "useCoins": "Use {{count}} Coins",
+            "unlockFor24h": "Unlock for 24 hours",
+            "goPremium": "Go Premium",
+            "unlockAll": "Unlock all stories forever",
+            "success": "Story unlocked!",
+            "adWatching": "Loading ad..."
+        },
+        "streakProtection": {
+            "title": "Protect Your Streak!",
+            "subtitle": "Your {{count}}-day streak is at risk!",
+            "message": "You haven't read today. Use a streak protector to save your progress.",
+            "watchAd": "Watch Ad",
+            "watchAdDesc": "Free protection",
+            "useCoins": "Use {{count}} Coins",
+            "coinsDesc": "Instant protection",
+            "goPremium": "Go Premium",
+            "premiumDesc": "Auto-protection forever",
+            "protected": "Streak protected!",
+            "loseStreak": "Skip & Lose Streak"
+        },
+        "dailyBonus": {
+            "title": "Daily Bonus!",
+            "subtitle": "Day {{day}} of 7",
+            "claim": "Claim Reward",
+            "claimed": "Come back tomorrow!",
+            "doubleWithAd": "Watch Ad for 2x",
+            "doubleSuccess": "Reward doubled!",
+            "rewards": {
+                "coins": "{{count}} Coins",
+                "translations": "{{count}} Free Translations",
+                "streakProtector": "Streak Protector",
+                "premiumTrial": "1-Day Premium Trial"
+            },
+            "day1": "Day 1",
+            "day2": "Day 2",
+            "day3": "Day 3",
+            "day4": "Day 4",
+            "day5": "Day 5",
+            "day6": "Day 6",
+            "day7": "Day 7"
+        },
+        "premium": {
+            "title": "Go Premium",
+            "subtitle": "Unlock the full experience",
+            "features": {
+                "unlimitedTranslations": "Unlimited translations",
+                "allStories": "All stories unlocked",
+                "noAds": "No ads ever",
+                "streakProtection": "Automatic streak protection",
+                "dailyCoins": "100 bonus coins daily"
+            },
+            "monthly": "Monthly",
+            "yearly": "Yearly",
+            "saveBadge": "Save {{percent}}%",
+            "subscribe": "Subscribe",
+            "restore": "Restore Purchase",
+            "terms": "Terms of Service",
+            "privacy": "Privacy Policy",
+            "cancelAnytime": "Cancel anytime"
+        },
+        "translationLimit": {
+            "title": "Translation Limit Reached",
+            "message": "You've used all your free translations today.",
+            "watchAd": "Watch Ad for 5 More",
+            "goPremium": "Go Premium for Unlimited",
+            "remaining": "{{count}} translations remaining"
+        }
     }
 }

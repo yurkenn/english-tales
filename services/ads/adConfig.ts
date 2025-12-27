@@ -22,7 +22,7 @@ export const AD_UNIT_IDS = {
 
 export const REWARD_CONFIG = {
     // Translation limits
-    DAILY_FREE_TRANSLATIONS: 10,
+    DAILY_FREE_TRANSLATIONS: 5,
     TRANSLATIONS_PER_AD: 10,
 
     // Story unlock duration

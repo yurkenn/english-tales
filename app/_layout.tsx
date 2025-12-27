@@ -29,16 +29,22 @@ import { useProgressStore } from '../store/progressStore';
 import { useThemeStore, useThemeKey, useIsDark, useThemeMode } from '../store/themeStore';
 import { useDownloadStore } from '../store/downloadStore';
 import { useSettingsStore } from '@/store/settingsStore';
+import { useCoinStore } from '@/store/coinStore';
 import { secureStorage } from '../services/storage';
 import { notificationService } from '@/services/notificationService';
 import { adService } from '@/services/ads';
+import { subscriptionService } from '@/services/subscription';
 import { StatusBar } from 'expo-status-bar';
 import {
   AchievementToast,
   ToastContainer,
   ErrorBoundary,
   AnimatedSplashScreen,
+  DailyBonusModal,
+  StreakProtectionModal,
+  PaywallModal,
 } from '@/components';
+import { useDailyBonusManager } from '@/hooks';
 import { lightTheme, darkTheme, sepiaTheme } from '../theme/unistyles';
 
 // Keep the splash screen visible while we fetch resources
@@ -64,6 +70,19 @@ export default function RootLayout() {
 
   const [isSplashAnimationFinished, setIsSplashAnimationFinished] = useState(false);
   const [isAppReady, setIsAppReady] = useState(false);
+  const [showPaywallModal, setShowPaywallModal] = useState(false);
+
+  // Daily bonus and streak protection
+  const {
+    showDailyBonus,
+    showStreakProtection,
+    currentBonusDay,
+    currentStreak,
+    claimDailyBonus,
+    closeDailyBonus,
+    closeStreakProtection,
+    onStreakProtected,
+  } = useDailyBonusManager();
 
   // Get the correct theme object based on current mode
   const currentTheme = useMemo(() => {
@@ -129,6 +148,11 @@ export default function RootLayout() {
       adService.initialize().catch((err) => {
         console.warn('[AdMob] Failed to initialize:', err);
       });
+
+      // Initialize RevenueCat subscription service
+      subscriptionService.initialize(user?.id).catch((err) => {
+        console.warn('[Subscription] Failed to initialize:', err);
+      });
     }
   }, [initialized]);
 
@@ -152,12 +176,15 @@ export default function RootLayout() {
     if (!initialized) return;
 
     const userId = user?.id || null;
+    const coinActions = useCoinStore.getState().actions;
     if (user) {
       libraryActions.setUserId(userId);
       progressActions.setUserId(userId);
+      coinActions.setUserId(userId);
     } else {
       libraryActions.setUserId(null);
       progressActions.setUserId(null);
+      coinActions.setUserId(null);
     }
   }, [user, initialized]);
 
@@ -223,6 +250,28 @@ export default function RootLayout() {
             </Stack>
             <ToastContainer />
             <AchievementToast />
+
+            {/* Monetization Modals */}
+            <DailyBonusModal
+              visible={showDailyBonus}
+              currentDay={currentBonusDay}
+              onClose={closeDailyBonus}
+              onClaimed={claimDailyBonus}
+            />
+            <StreakProtectionModal
+              visible={showStreakProtection}
+              currentStreak={currentStreak}
+              onClose={closeStreakProtection}
+              onProtected={onStreakProtected}
+              onGetPremium={() => {
+                closeStreakProtection();
+                setShowPaywallModal(true);
+              }}
+            />
+            <PaywallModal
+              visible={showPaywallModal}
+              onClose={() => setShowPaywallModal(false)}
+            />
           </BottomSheetModalProvider>
         </QueryProvider>
       </GestureHandlerRootView>

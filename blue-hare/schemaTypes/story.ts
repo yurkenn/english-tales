@@ -146,6 +146,13 @@ export const storySchema = defineType({
             initialValue: false,
         }),
         defineField({
+            name: 'isPremiumOnly',
+            title: '🔒 Sadece Premium Kullanıcılar',
+            type: 'boolean',
+            group: 'meta',
+            initialValue: false,
+        }),
+        defineField({
             name: 'publishedAt',
             title: 'Yayınlanma Tarihi',
             type: 'datetime',
@@ -180,14 +187,16 @@ export const storySchema = defineType({
             author: 'author.name',
             media: 'coverImage',
             isFeatured: 'isFeatured',
+            isPremiumOnly: 'isPremiumOnly',
             difficulty: 'difficulty',
         },
         prepare(selection) {
-            const { title, author, media, isFeatured, difficulty } = selection
+            const { title, author, media, isFeatured, isPremiumOnly, difficulty } = selection
             const difficultyEmoji = difficulty === 'beginner' ? '🟢' : difficulty === 'intermediate' ? '🟡' : '🔴'
             const featuredEmoji = isFeatured ? '⭐ ' : ''
+            const premiumEmoji = isPremiumOnly ? '🔒 ' : ''
             return {
-                title: `${featuredEmoji}${title}`,
+                title: `${featuredEmoji}${premiumEmoji}${title}`,
                 subtitle: `${difficultyEmoji} ${author || 'Yazar belirtilmemiş'}`,
                 media,
             }

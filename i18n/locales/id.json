@@ -1,0 +1,476 @@
+{
+    "auth": {
+        "signup": {
+            "title": "Buat Akun",
+            "subtitle": "Mulai petualangan membaca bahasa Inggris Anda hari ini"
+        },
+        "login": {
+            "title": "Selamat Datang Kembali",
+            "subtitle": "Masuk untuk melanjutkan perjalanan membaca Anda"
+        },
+        "forgotPassword": {
+            "title": "Lupa Kata Sandi?",
+            "message": "Jangan khawatir! Masukkan alamat email Anda dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda.",
+            "submit": "Kirim Tautan Atur Ulang",
+            "backToLogin": "Kembali ke Login",
+            "successTitle": "Periksa Email Anda",
+            "successMessage": "Kami telah mengirimkan tautan atur ulang kata sandi ke",
+            "spamHint": "Jika Anda tidak melihat email tersebut, periksa folder spam Anda.",
+            "toastSuccess": "Email atur ulang kata sandi telah dikirim!"
+        },
+        "guestBanner": {
+            "title": "Buka Semua Fitur",
+            "subtitle": "Masuk untuk menyinkronkan progres, menulis ulasan, dan bergabung dengan komunitas!",
+            "cta": "Masuk / Daftar"
+        }
+    },
+    "common": {
+        "error": "Terjadi kesalahan",
+        "retry": "Coba lagi",
+        "cancel": "Batal",
+        "save": "Simpan",
+        "delete": "Hapus",
+        "loading": "Memuat...",
+        "search": "Cari...",
+        "networkError": "Kesalahan jaringan. Silakan periksa koneksi Anda.",
+        "all": "Semua",
+        "easy": "Mudah",
+        "medium": "Sedang",
+        "hard": "Sulit",
+        "on": "Aktif",
+        "off": "Nonaktif",
+        "goBack": "Kembali",
+        "saving": "Menyimpan...",
+        "saveChanges": "Simpan Perubahan",
+        "unknownAuthor": "Penulis Tidak Dikenal",
+        "accept": "Terima",
+        "seeAll": "Lihat Semua",
+        "confirm": "Konfirmasi",
+        "you": "Anda",
+        "min": "mnt",
+        "story": "cerita",
+        "offline": "Luring",
+        "check": "Periksa",
+        "words": "kata",
+        "beginner": "Pemula",
+        "intermediate": "Menengah",
+        "advanced": "Lanjutan",
+        "level": "Level"
+    },
+    "stories": {
+        "filters": {
+            "difficulty": "Level"
+        },
+        "details": {
+            "about": "Tentang cerita ini",
+            "reviews": "Ulasan",
+            "noReviews": "Belum ada ulasan",
+            "writeReview": "Tulis Ulasan",
+            "seeAll": "Lihat Semua",
+            "startReading": "Mulai Membaca",
+            "reviewCount": "{{count}} ulasan",
+            "reviewCount_one": "1 ulasan"
+        }
+    },
+    "tabs": {
+        "home": "Beranda",
+        "discover": "Jelajahi",
+        "library": "Perpustakaan",
+        "profile": "Profil"
+    },
+    "profile": {
+        "title": "Profil",
+        "booksRead": "Buku Dibaca",
+        "dayStreak": "Runtutan Hari",
+        "readingGoals": "Target Membaca",
+        "achievements": "Pencapaian",
+        "appearance": "Tampilan",
+        "language": "Bahasa",
+        "notifications": "Notifikasi",
+        "fontSize": "Ukuran Font",
+        "help": "Bantuan & Dukungan",
+        "helpMessage": "Butuh bantuan? Hubungi kami di support@englishtales.app",
+        "about": "Tentang",
+        "aboutMessage": "English Tales v1.0.0\n\nTingkatkan bahasa Inggris Anda melalui cerita-cerita indah.\n\n© 2025 English Tales",
+        "signOut": "Keluar",
+        "login": "Masuk",
+        "logout": "Keluar",
+        "stats": {
+            "storiesRead": "Cerita Dibaca",
+            "readingTime": "Waktu Membaca",
+            "streak": "Runtutan Hari"
+        },
+        "quickSettings": "Pengaturan Cepat",
+        "vocabulary": "Kosakata",
+        "quiz": "Kuis Latihan",
+        "activity": "Aktivitas",
+        "preferences": "Preferensi",
+        "allSettings": "Semua Pengaturan",
+        "time": "Membaca",
+        "words": "Kata",
+        "badges": "Lencana",
+        "streak": "Runtutan",
+        "noPosts": "Belum ada postingan",
+        "noPostsMessage": "Bagikan perjalanan membaca Anda dengan komunitas!",
+        "shareFirst": "Buat Postingan",
+        "emptyLibrary": "Belum ada yang disimpan",
+        "emptyLibraryMessage": "Simpan cerita untuk menemukannya dengan mudah di sini!",
+        "exploreStories": "Jelajahi Cerita",
+        "addBio": "Tambah bio",
+        "editProfile": "Edit Profil",
+        "tabPosts": "Postingan",
+        "tabSaved": "Disimpan",
+        "tabAbout": "Tentang",
+        "dailyGoal": "Target Harian",
+        "goalReached": "Target Tercapai!",
+        "minRemaining": "Sisa {{count}} mnt",
+        "minRemaining_one": "Sisa 1 mnt",
+        "goalAlmost": "Hampir sampai!",
+        "goalKeepGoing": "Terus membaca untuk mencapai target Anda!"
+    },
+    "appearance": {
+        "title": "Tampilan",
+        "theme": "Tema",
+        "system": "Sistem",
+        "light": "Terang",
+        "dark": "Gelap",
+        "sepia": "Sepia"
+    },
+    "home": {
+        "greeting": "Halo, {{name}}",
+        "greeting_morning": "Selamat Pagi",
+        "greeting_afternoon": "Selamat Siang",
+        "greeting_evening": "Selamat Malam",
+        "greetingDefault": "Pembaca",
+        "searchPlaceholder": "Cari cerita, penulis...",
+        "continueReading": "Lanjutkan Membaca",
+        "dailyPick": "Pilihan Hari Ini",
+        "recommended": "Direkomendasikan untuk Anda",
+        "trending": "Sedang Tren",
+        "categories": {
+            "forYou": "Untuk Anda",
+            "following": "Mengikuti",
+            "easy": "Mudah",
+            "medium": "Sedang",
+            "hard": "Sulit",
+            "authors": "Penulis"
+        },
+        "showing": "Menampilkan",
+        "clearFilter": "Hapus Filter",
+        "noResultsTitle": "Cerita tidak ditemukan",
+        "noResultsDesc": "Tidak ada cerita yang cocok dengan filter \"{{filter}}\". Coba kategori lain."
+    },
+    "discover": {
+        "searchPlaceholder": "Cari cerita, penulis...",
+        "surpriseMe": "Kejutan untuk Saya",
+        "surpriseMeDesc": "Biarkan kami memilihkan cerita untuk Anda",
+        "authorSpotlight": "Sorotan Penulis",
+        "recentlyAdded": "Baru Saja Ditambahkan",
+        "popularThisWeek": "Populer Minggu Ini",
+        "categories": {
+            "all": "Semua",
+            "easy": "Mudah",
+            "medium": "Sedang",
+            "hard": "Sulit",
+            "authors": "Penulis"
+        }
+    },
+    "authors": {
+        "title": "Penulis",
+        "author": "Penulis",
+        "stories": "Cerita",
+        "storyCount": "{{count}} cerita",
+        "storyCountSingular": "1 cerita",
+        "emptyTitle": "Penulis tidak ditemukan",
+        "emptyMessage": "Penulis akan muncul di sini setelah ditambahkan.",
+        "noStoriesTitle": "Belum ada cerita",
+        "noStoriesMessage": "Penulis ini belum menerbitkan cerita apa pun",
+        "notFound": "Penulis tidak ditemukan",
+        "discoverSubtitle": "Temukan suara di balik cerita kami",
+        "searchPlaceholder": "Cari penulis...",
+        "noSearchResults": "Tidak ada penulis yang cocok dengan pencarian Anda"
+    },
+    "library": {
+        "empty": "Perpustakaan Anda kosong",
+        "emptyMessage": "Mulai membaca untuk menambahkan buku ke perpustakaan Anda",
+        "discoverStories": "Jelajahi Cerita",
+        "quizTitle": "Kuis Latihan",
+        "quizSubtitle": "{{count}} kata untuk dilatih",
+        "stats": {
+            "total": "Total",
+            "completed": "Selesai",
+            "inProgress": "Membaca"
+        },
+        "menu": {
+            "removeFromLibrary": "Hapus dari Perpustakaan",
+            "deleteDownload": "Hapus Unduhan"
+        },
+        "dialogs": {
+            "removeTitle": "Hapus dari Perpustakaan",
+            "removeMessage": "Hapus \"{{title}}\" dari perpustakaan Anda?",
+            "deleteDownloadTitle": "Hapus Unduhan",
+            "deleteDownloadMessage": "Hapus unduhan \"{{title}}\"? Buku tidak akan tersedia lagi secara luring."
+        },
+        "tabs": {
+            "stories": "Cerita",
+            "vocabulary": "Kosakata"
+        }
+    },
+    "vocabulary": {
+        "title": "Pembangun Kosakata",
+        "searchPlaceholder": "Cari kata yang disimpan...",
+        "empty": "Belum ada kata yang disimpan",
+        "emptyMessage": "Ketuk kata yang tidak dikenal saat membaca untuk menyimpannya di sini.",
+        "startReading": "Mulai Membaca",
+        "noMatches": "Tidak ada kata yang cocok",
+        "noMatchesMessage": "Coba kata kunci pencarian yang lain."
+    },
+    "reading": {
+        "complete": "{{percentage}}% selesai",
+        "remainingTime": "~{{time}} mnt lagi",
+        "pageOfShifted": "Halaman {{current}} dari {{total}}",
+        "pagesLeftCount": "Sisa {{count}} halaman",
+        "pagesLeftCount_one": "Sisa 1 halaman",
+        "chapter": "Bab {{number}}",
+        "startReading": "Mulai Membaca",
+        "continue": "Lanjutkan",
+        "notFound": "Cerita tidak ditemukan",
+        "noContent": "Konten tidak tersedia.",
+        "lineSpacing": "Spasi Baris",
+        "audioAssist": "Bantuan Audio",
+        "readingAloud": "Membaca nyaring...",
+        "audioAssistReady": "Bantuan Audio Siap",
+        "minutesLeft": "Sisa {{count}} mnt untuk mencapai target",
+        "minutesLeft_one": "Sisa 1 mnt untuk mencapai target",
+        "controls": {
+            "appearance": "Tampilan",
+            "save": "Simpan",
+            "saved": "Disimpan",
+            "share": "Bagikan",
+            "listen": "Dengarkan"
+        },
+        "quiz": {
+            "title": "Kuis Pemahaman",
+            "subtitle": "Mari kita lihat apa yang telah Anda pelajari!",
+            "start": "Mulai Kuis",
+            "next": "Pertanyaan Berikutnya",
+            "finish": "Selesai",
+            "correct": "Benar!",
+            "incorrect": "Kurang tepat...",
+            "result": "Anda menjawab benar {{count}} dari {{total}}",
+            "accuracy": "Akurasi: {{percentage}}%",
+            "done": "Kembali ke Cerita",
+            "checkpoint": "Titik Pemeriksaan"
+        },
+        "completion": {
+            "title": "Cerita Selesai!",
+            "subtitle": "Luar biasa! Anda telah menyelesaikan petualangan lainnya.",
+            "nextStory": "Cari Cerita Berikutnya",
+            "backToHome": "Kembali ke Beranda",
+            "ratingOptional": "Bagaimana opinimu tentang cerita ini? (Opsional)",
+            "readyForMore": "Siap untuk petualangan lainnya?"
+        }
+    },
+    "settings": {
+        "title": "Pengaturan",
+        "sections": {
+            "account": "AKUN",
+            "preferences": "PREFERENSI",
+            "storage": "PENYIMPANAN",
+            "about": "TENTANG",
+            "dangerZone": "ZONA BAHAYA",
+            "signIn": "MASUK"
+        },
+        "account": {
+            "email": "Email",
+            "notSet": "Belum diatur",
+            "changePassword": "Ubah Kata Sandi",
+            "signIn": "Masuk / Daftar",
+            "unlockFeatures": "Buka semua fitur"
+        },
+        "preferences": {
+            "theme": "Tema",
+            "language": "Bahasa",
+            "fontSize": "Ukuran Font",
+            "fontSizeInstruction": "Atur ukuran font membaca di layar baca menggunakan tombol A- dan A+.",
+            "notifications": "Notifikasi"
+        },
+        "storage": {
+            "downloads": "Unduhan",
+            "storiesCount": "{{count}} cerita",
+            "none": "Tidak ada",
+            "clearDownloads": "Hapus Semua Unduhan",
+            "cache": "Cache",
+            "clearCache": "Bersihkan Cache"
+        },
+        "about": {
+            "rateApp": "Beri Nilai Aplikasi",
+            "rateAppMessage": "Terima kasih telah ingin memberi kami nilai! Tautan App Store segera hadir.",
+            "privacyPolicy": "Kebijakan Privasi",
+            "termsOfService": "Ketentuan Layanan",
+            "version": "Versi"
+        },
+        "dangerZone": {
+            "signOut": "Keluar",
+            "deleteAccount": "Hapus Akun"
+        },
+        "dialogs": {
+            "signOut": {
+                "title": "Keluar",
+                "message": "Apakah Anda yakin ingin keluar?"
+            },
+            "deleteAccount": {
+                "title": "Hapus Akun",
+                "message": "Ini akan menghapus akun dan semua data Anda secara permanen. Tindakan ini tidak dapat dibatalkan.",
+                "instruction": "Silakan hubungi support@englishtales.app untuk menghapus akun Anda."
+            },
+            "clearCache": {
+                "title": "Bersihkan Cache",
+                "message": "Ini akan membersihkan data sementara. Perpustakaan dan progres Anda tidak akan terpengaruh.",
+                "success": "Cache dibersihkan"
+            },
+            "clearDownloads": {
+                "title": "Hapus Unduhan",
+                "message": "Hapus semua {{count}} cerita yang diunduh? Buku tidak akan tersedia lagi secara luring.",
+                "success": "Semua unduhan dihapus"
+            },
+            "changePassword": {
+                "title": "Ubah Kata Sandi",
+                "message": "Email atur ulang kata sandi akan dikirim ke {{email}}",
+                "success": "Email atur ulang telah dikirim! Periksa kotak masuk Anda.",
+                "error": "Gagal mengirim email reset. Silakan coba lagi."
+            }
+        },
+        "footer": "Dibuat dengan ❤️ untuk pelajar bahasa Inggris"
+    },
+    "notifications": {
+        "feedback": "Notifikasi {{status}}"
+    },
+    "social": {
+        "title": "Komunitas",
+        "community": "Komunitas",
+        "following": "Mengikuti",
+        "findFriends": "Cari Teman",
+        "searchPlaceholder": "Cari berdasarkan nama atau email...",
+        "noUsersFound": "Pengguna tidak ditemukan",
+        "add": "Tambah",
+        "requestSent": "Permintaan pertemanan dikirim!",
+        "requestAccepted": "Permintaan pertemanan diterima!",
+        "requestCancelled": "Permintaan dibatalkan",
+        "friendRemoved": "Teman dihapus",
+        "requests": "Permintaan Pertemanan",
+        "myFriends": "Teman Saya",
+        "sentRequests": "Permintaan Terkirim",
+        "requestPending": "Permintaan tertunda",
+        "emptyTitle": "Belum Ada Teman",
+        "emptyDesc": "Mulai terhubung dengan pembaca lain untuk berbagi progres dan melihat pencapaian mereka!",
+        "communityBuzz": "Kabar Komunitas",
+        "activityFinished": "menyelesaikan {{title}}",
+        "activityEarned": "mendapatkan {{title}}",
+        "activityStarted": "mulai membaca {{title}}",
+        "activityReviewed": "mengulas {{title}}",
+        "shareSomething": "Bagikan progres Anda...",
+        "reply": "Balas",
+        "congratulate": "Ucapkan Selamat",
+        "congratulated": "Selamat telah diucapkan",
+        "achievement": "Pencapaian",
+        "activeReader": "Pembaca Aktif",
+        "createPost": "Postingan Baru"
+    },
+    "errors": {
+        "firebase": {
+            "unknown": "Terjadi kesalahan. Silakan coba lagi.",
+            "networkError": "Kesalahan jaringan. Silakan periksa koneksi internet Anda.",
+            "emailAlreadyInUse": "Email ini sudah terdaftar. Coba masuk.",
+            "invalidEmail": "Masukkan alamat email yang valid.",
+            "userDisabled": "Akun ini telah dinonaktifkan. Hubungi dukungan untuk bantuan.",
+            "userNotFound": "Tidak ada akun ditemukan dengan email ini.",
+            "wrongPassword": "Kata sandi salah. Silakan coba lagi.",
+            "weakPassword": "Kata sandi terlalu lemah. Gunakan minimal 6 karakter.",
+            "invalidCredential": "Kredensial login tidak valid. Silakan coba lagi.",
+            "tooManyRequests": "Terlalu banyak percobaan. Silakan tunggu sebentar dan coba lagi.",
+            "sessionExpired": "Sersi Anda telah berakhir. Silakan masuk kembali.",
+            "unauthenticated": "Silakan masuk untuk melanjutkan."
+        }
+    },
+    "monetization": {
+        "coins": {
+            "balance": "{{count}} Koin",
+            "earned": "+{{count}} koin didapatkan!",
+            "spent": "-{{count}} koin dihabiskan",
+            "notEnough": "Koin tidak cukup"
+        },
+        "storyUnlock": {
+            "title": "Buka Cerita",
+            "locked": "Cerita ini terkunci",
+            "watchAd": "Tonton Iklan untuk Membuka",
+            "watchAdFree": "Gratis • Tonton iklan pendek",
+            "useCoins": "Gunakan {{count}} Koin",
+            "unlockFor24h": "Buka selama 24 jam",
+            "goPremium": "Jadi Premium",
+            "unlockAll": "Buka semua cerita selamanya",
+            "success": "Cerita terbuka!",
+            "adWatching": "Memuat iklan..."
+        },
+        "streakProtection": {
+            "title": "Lindungi Runtutan Anda!",
+            "subtitle": "Runtutan {{count}} hari Anda dalam risiko!",
+            "message": "Anda belum membaca hari ini. Gunakan pelindung runtutan untuk menyimpan progres.",
+            "watchAd": "Tonton Iklan",
+            "watchAdDesc": "Perlindungan gratis",
+            "useCoins": "Gunakan {{count}} Koin",
+            "coinsDesc": "Perlindungan instan",
+            "goPremium": "Jadi Premium",
+            "premiumDesc": "Pelindung otomatis selamanya",
+            "protected": "Runtutan terlindungi!",
+            "loseStreak": "Lewati & Kehilangan Runtutan"
+        },
+        "dailyBonus": {
+            "title": "Bonus Harian!",
+            "subtitle": "Hari {{day}} dari 7",
+            "claim": "Klaim Hadiah",
+            "claimed": "Kembali besok!",
+            "doubleWithAd": "Tonton Iklan untuk 2x",
+            "doubleSuccess": "Hadiah digandakan!",
+            "rewards": {
+                "coins": "{{count}} Koin",
+                "translations": "{{count}} Terjemahan Gratis",
+                "streakProtector": "Pelindung Runtutan",
+                "premiumTrial": "Uji Coba Premium 1 Hari"
+            },
+            "day1": "Hari 1",
+            "day2": "Hari 2",
+            "day3": "Hari 3",
+            "day4": "Hari 4",
+            "day5": "Hari 5",
+            "day6": "Hari 6",
+            "day7": "Hari 7"
+        },
+        "premium": {
+            "title": "Jadi Premium",
+            "subtitle": "Buka pengalaman lengkap",
+            "features": {
+                "unlimitedTranslations": "Terjemahan tanpa batas",
+                "allStories": "Semua cerita terbuka",
+                "noAds": "Tanpa iklan selamanya",
+                "streakProtection": "Perlindungan runtutan otomatis",
+                "dailyCoins": "100 koin bonus setiap hari"
+            },
+            "monthly": "Bulanan",
+            "yearly": "Tahunan",
+            "saveBadge": "Hemat {{percent}}%",
+            "subscribe": "Berlangganan",
+            "restore": "Pulihkan Pembelian",
+            "terms": "Ketentuan Layanan",
+            "privacy": "Kebijakan Privasi",
+            "cancelAnytime": "Batal kapan saja"
+        },
+        "translationLimit": {
+            "title": "Batas Terjemahan Tercapai",
+            "message": "Anda telah menggunakan semua terjemahan gratis hari ini.",
+            "watchAd": "Tonton Iklan untuk 5 Lagi",
+            "goPremium": "Jadi Premium untuk Tanpa Batas",
+            "remaining": "Sisa {{count}} terjemahan"
+        }
+    }
+}

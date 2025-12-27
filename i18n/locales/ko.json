@@ -1,0 +1,474 @@
+{
+    "auth": {
+        "signup": {
+            "title": "계정 만들기",
+            "subtitle": "오늘부터 영어 독서 모험을 시작하세요"
+        },
+        "login": {
+            "title": "환영합니다",
+            "subtitle": "로그인하여 독서 여정을 계속하세요"
+        },
+        "forgotPassword": {
+            "title": "비밀번호를 잊으셨나요?",
+            "message": "걱정 마세요! 이메일 주소를 입력하시면 비밀번호 재설정 링크를 보내드립니다.",
+            "submit": "재설정 링크 보내기",
+            "backToLogin": "로그인으로 돌아가기",
+            "successTitle": "이메일을 확인하세요",
+            "successMessage": "비밀번호 재설정 링크를 다음 주소로 보냈습니다:",
+            "spamHint": "이메일이 보이지 않으면 스팸함을 확인해 주세요.",
+            "toastSuccess": "비밀번호 재설정 이메일을 보냈습니다!"
+        },
+        "guestBanner": {
+            "title": "모든 기능 잠금 해제",
+            "subtitle": "로그인하여 진행 상황을 동기화하고, 리뷰를 작성하고, 커뮤니티에 참여하세요!",
+            "cta": "로그인 / 회원가입"
+        }
+    },
+    "common": {
+        "error": "문제가 발생했습니다",
+        "retry": "재시도",
+        "cancel": "취소",
+        "save": "저장",
+        "delete": "삭제",
+        "loading": "로딩 중...",
+        "search": "검색...",
+        "networkError": "네트워크 오류. 연결을 확인해 주세요.",
+        "all": "전체",
+        "easy": "쉬움",
+        "medium": "보통",
+        "hard": "어려움",
+        "on": "켬",
+        "off": "끔",
+        "goBack": "뒤로",
+        "saving": "저장 중...",
+        "saveChanges": "변경사항 저장",
+        "unknownAuthor": "알 수 없는 작가",
+        "accept": "수락",
+        "seeAll": "전체 보기",
+        "confirm": "확인",
+        "you": "나",
+        "min": "분",
+        "story": "이야기",
+        "offline": "오프라인",
+        "check": "확인",
+        "words": "단어",
+        "beginner": "초급",
+        "intermediate": "중급",
+        "advanced": "고급",
+        "level": "레벨"
+    },
+    "stories": {
+        "filters": {
+            "difficulty": "레벨"
+        },
+        "details": {
+            "about": "이야기 정보",
+            "reviews": "리뷰",
+            "noReviews": "아직 리뷰가 없습니다",
+            "writeReview": "리뷰 작성",
+            "seeAll": "전체 보기",
+            "startReading": "읽기 시작",
+            "reviewCount": "리뷰 {{count}}개",
+            "reviewCount_one": "리뷰 1개"
+        }
+    },
+    "tabs": {
+        "home": "홈",
+        "discover": "둘러보기",
+        "library": "라이브러리",
+        "profile": "프로필"
+    },
+    "profile": {
+        "title": "프로필",
+        "booksRead": "읽은 책",
+        "dayStreak": "연속 학습일",
+        "readingGoals": "독서 목표",
+        "achievements": "업적",
+        "appearance": "화면 설정",
+        "language": "언어",
+        "notifications": "알림",
+        "fontSize": "글자 크기",
+        "help": "도움말 및 지원",
+        "helpMessage": "도움이 필요하신가요? support@englishtales.app으로 문의하세요",
+        "about": "정보",
+        "aboutMessage": "English Tales v1.0.0\n\n아름다운 이야기를 통해 영어를 향상시키세요.\n\n© 2025 English Tales",
+        "signOut": "로그아웃",
+        "login": "로그인",
+        "logout": "로그아웃",
+        "stats": {
+            "storiesRead": "읽은 이야기",
+            "readingTime": "독서 시간",
+            "streak": "연속 학습일"
+        },
+        "quickSettings": "빠른 설정",
+        "vocabulary": "단어장",
+        "quiz": "연습 퀴즈",
+        "activity": "활동",
+        "preferences": "환경 설정",
+        "allSettings": "모든 설정",
+        "time": "독서",
+        "words": "단어",
+        "badges": "배지",
+        "streak": "스트릭",
+        "noPosts": "아직 게시물이 없습니다",
+        "noPostsMessage": "독서 여정을 커뮤니티와 공유해 보세요!",
+        "shareFirst": "게시물 작성",
+        "emptyLibrary": "저장된 항목 없음",
+        "emptyLibraryMessage": "이야기를 저장하여 여기에서 쉽게 찾아보세요!",
+        "exploreStories": "이야기 둘러보기",
+        "addBio": "소개 추가",
+        "editProfile": "프로필 수정",
+        "tabPosts": "게시물",
+        "tabSaved": "저장됨",
+        "tabAbout": "정보",
+        "dailyGoal": "일일 목표",
+        "goalReached": "목표 달성!",
+        "minRemaining": "{{count}}분 남음",
+        "minRemaining_one": "1분 남음",
+        "goalAlmost": "거의 다 왔어요!",
+        "goalKeepGoing": "목표 달성을 위해 계속 읽어보세요!"
+    },
+    "appearance": {
+        "title": "화면 설정",
+        "theme": "테마",
+        "system": "시스템 설정",
+        "light": "라이트 모드",
+        "dark": "다크 모드",
+        "sepia": "세피아"
+    },
+    "home": {
+        "greeting": "안녕하세요, {{name}}님",
+        "greeting_morning": "좋은 아침입니다",
+        "greeting_afternoon": "즐거운 오후입니다",
+        "greeting_evening": "편안한 저녁입니다",
+        "greetingDefault": "독자",
+        "searchPlaceholder": "이야기, 작가 검색...",
+        "continueReading": "계속 읽기",
+        "dailyPick": "오늘의 추천",
+        "recommended": "추천 이야기",
+        "trending": "인기 급상승",
+        "categories": {
+            "forYou": "추천",
+            "following": "팔로잉",
+            "easy": "쉬움",
+            "medium": "보통",
+            "hard": "어려움",
+            "authors": "작가"
+        },
+        "showing": "표시 중",
+        "clearFilter": "필터 해제",
+        "noResultsTitle": "이야기를 찾을 수 없습니다",
+        "noResultsDesc": "\"{{filter}}\" 필터와 일치하는 이야기가 없습니다. 다른 카테고리를 시도해 보세요."
+    },
+    "discover": {
+        "searchPlaceholder": "이야기, 작가 검색...",
+        "surpriseMe": "랜덤 추천",
+        "surpriseMeDesc": "당신을 위한 이야기를 골라드릴게요",
+        "authorSpotlight": "작가 스포트라이트",
+        "recentlyAdded": "최근 추가된 이야기",
+        "popularThisWeek": "이번 주 인기",
+        "categories": {
+            "all": "전체",
+            "easy": "쉬움",
+            "medium": "보통",
+            "hard": "어려움",
+            "authors": "작가"
+        }
+    },
+    "authors": {
+        "title": "작가",
+        "author": "작가",
+        "stories": "이야기",
+        "storyCount": "이야기 {{count}}개",
+        "storyCountSingular": "이야기 1개",
+        "emptyTitle": "작가를 찾을 수 없습니다",
+        "emptyMessage": "작가가 추가되면 여기에 표시됩니다.",
+        "noStoriesTitle": "게시된 이야기 없음",
+        "noStoriesMessage": "이 작가는 아직 게시한 이야기가 없습니다",
+        "notFound": "작가를 찾을 수 없습니다",
+        "discoverSubtitle": "이야기 뒤에 숨겨진 목소리를 만나보세요",
+        "searchPlaceholder": "작가 검색...",
+        "noSearchResults": "검색 결과와 일치하는 작가가 없습니다"
+    },
+    "library": {
+        "empty": "라이브러리가 비어 있습니다",
+        "emptyMessage": "독서를 시작하여 라이브러리에 책을 추가해 보세요",
+        "discoverStories": "이야기 둘러보기",
+        "quizTitle": "연습 퀴즈",
+        "quizSubtitle": "{{count}}개 단어 연습",
+        "stats": {
+            "total": "전체",
+            "completed": "완료",
+            "inProgress": "읽는 중"
+        },
+        "menu": {
+            "removeFromLibrary": "라이브러리에서 제거",
+            "deleteDownload": "다운로드 삭제"
+        },
+        "dialogs": {
+            "removeTitle": "라이브러리에서 제거",
+            "removeMessage": "라이브러리에서 \"{{title}}\"을(를) 제거하시겠습니까?",
+            "deleteDownloadTitle": "다운로드 삭제",
+            "deleteDownloadMessage": "\"{{title}}\" 다운로드를 삭제하시겠습니까? 오프라인에서 읽을 수 없게 됩니다."
+        },
+        "tabs": {
+            "stories": "이야기",
+            "vocabulary": "단어장"
+        }
+    },
+    "vocabulary": {
+        "title": "내 단어장",
+        "searchPlaceholder": "저장된 단어 검색...",
+        "empty": "저장된 단어가 없습니다",
+        "emptyMessage": "이야기를 읽다가 모르는 단어를 탭하여 여기에 저장해 보세요.",
+        "startReading": "읽기 시작",
+        "noMatches": "일치하는 단어 없음",
+        "noMatchesMessage": "다른 검색어를 입력해 보세요."
+    },
+    "reading": {
+        "complete": "{{percentage}}% 완료",
+        "remainingTime": "약 {{time}}분 남음",
+        "pageOfShifted": "{{total}}페이지 중 {{current}}페이지",
+        "pagesLeftCount": "{{count}}페이지 남음",
+        "pagesLeftCount_one": "1페이지 남음",
+        "chapter": "제{{number}}장",
+        "startReading": "읽기 시작",
+        "continue": "계속하기",
+        "notFound": "이야기를 찾을 수 없습니다",
+        "noContent": "내용이 없습니다.",
+        "lineSpacing": "줄 간격",
+        "audioAssist": "오디오 가이드",
+        "readingAloud": "읽어주는 중...",
+        "audioAssistReady": "오디오 준비 완료",
+        "minutesLeft": "목표 달성까지 {{count}}분 더 읽기",
+        "minutesLeft_one": "목표 달성까지 1분 더 읽기",
+        "controls": {
+            "appearance": "화면 설정",
+            "save": "저장",
+            "saved": "저장됨",
+            "share": "공유",
+            "listen": "듣기"
+        },
+        "quiz": {
+            "title": "이해력 퀴즈",
+            "subtitle": "무엇을 배웠는지 확인해 볼까요!",
+            "start": "퀴즈 시작",
+            "next": "다음 문제",
+            "finish": "마치기",
+            "correct": "정답입니다!",
+            "incorrect": "조금 아쉽네요...",
+            "result": "{{total}}문제 중 {{count}}문제 정답",
+            "accuracy": "정확도: {{percentage}}%",
+            "done": "이야기로 돌아가기",
+            "checkpoint": "체크포인트"
+        },
+        "completion": {
+            "title": "이야기 완료!",
+            "subtitle": "잘하셨어요! 또 하나의 모험을 마치셨네요.",
+            "nextStory": "다음 이야기 찾기",
+            "backToHome": "홈으로 이동",
+            "ratingOptional": "이야기가 어땠나요? (선택 사항)",
+            "readyForMore": "다음 모험을 떠날 준비가 되셨나요?"
+        }
+    },
+    "settings": {
+        "title": "설정",
+        "sections": {
+            "account": "계정",
+            "preferences": "환경 설정",
+            "storage": "저장 공간",
+            "about": "정보",
+            "dangerZone": "위험 지역",
+            "signIn": "로그인"
+        },
+        "account": {
+            "email": "이메일",
+            "notSet": "설정 안 됨",
+            "changePassword": "비밀번호 변경",
+            "signIn": "로그인 / 회원가입",
+            "unlockFeatures": "모든 기능 잠금 해제"
+        },
+        "preferences": {
+            "theme": "테마",
+            "language": "언어",
+            "fontSize": "글자 크기",
+            "fontSizeInstruction": "독서 화면의 A- 및 A+ 버튼을 사용하여 글자 크기를 조절할 수 있습니다.",
+            "notifications": "알림"
+        },
+        "storage": {
+            "downloads": "다운로드",
+            "storiesCount": "이야기 {{count}}개",
+            "none": "없음",
+            "clearDownloads": "모든 다운로드 삭제",
+            "cache": "캐시",
+            "clearCache": "캐시 삭제"
+        },
+        "about": {
+            "rateApp": "앱 평가하기",
+            "rateAppMessage": "평가해 주셔서 감사합니다! 앱 스토어 링크가 곧 제공될 예정입니다.",
+            "privacyPolicy": "개인정보 처리방침",
+            "termsOfService": "이용약관",
+            "version": "버전"
+        },
+        "dangerZone": {
+            "signOut": "로그아웃",
+            "deleteAccount": "계정 삭제"
+        },
+        "dialogs": {
+            "signOut": {
+                "title": "로그아웃",
+                "message": "정말로 로그아웃하시겠습니까?"
+            },
+            "deleteAccount": {
+                "title": "계정 삭제",
+                "message": "계정과 모든 데이터가 영구적으로 삭제됩니다. 이 작업은 되돌릴 수 없습니다.",
+                "instruction": "계정 삭제를 원하시면 support@englishtales.app으로 문의하세요."
+            },
+            "clearCache": {
+                "title": "캐시 삭제",
+                "message": "임시 데이터가 삭제됩니다. 라이브러리와 진행 상황은 유지됩니다.",
+                "success": "캐시가 삭제되었습니다"
+            },
+            "clearDownloads": {
+                "title": "다운로드 삭제",
+                "message": "다운로드한 이야기 {{count}}개를 모두 삭제하시겠습니까? 오프라인에서 읽을 수 없게 됩니다.",
+                "success": "모든 다운로드가 삭제되었습니다"
+            },
+            "changePassword": {
+                "title": "비밀번호 변경",
+                "message": "{{email}}(으)로 재설정 이메일을 보냅니다",
+                "success": "이메일을 보냈습니다! 받은 편지함을 확인하세요.",
+                "error": "이메일 전송에 실패했습니다. 다시 시도해 주세요."
+            }
+        },
+        "footer": "영어 학습자를 위해 ❤️를 담아 만들었습니다"
+    },
+    "notifications": {
+        "feedback": "알림이 {{status}}되었습니다"
+    },
+    "social": {
+        "title": "커뮤니티",
+        "community": "커뮤니티",
+        "following": "팔로잉",
+        "findFriends": "친구 찾기",
+        "searchPlaceholder": "이름 또는 이메일로 검색...",
+        "noUsersFound": "사용자를 찾을 수 없습니다",
+        "add": "추가",
+        "requestSent": "친구 요청을 보냈습니다!",
+        "requestAccepted": "친구 요청을 수락했습니다!",
+        "requestCancelled": "요청이 취소되었습니다",
+        "friendRemoved": "친구가 삭제되었습니다",
+        "requests": "친구 요청",
+        "myFriends": "내 친구",
+        "sentRequests": "보낸 요청",
+        "requestPending": "수락 대기 중",
+        "emptyTitle": "아직 친구가 없습니다",
+        "emptyDesc": "다른 독자들과 연결하여 서로의 진행 상황을 공유해 보세요!",
+        "communityBuzz": "커뮤니티 소식",
+        "activityFinished": "님이 {{title}}을(를) 다 읽었습니다",
+        "activityEarned": "님이 {{title}}을(를) 획득했습니다",
+        "activityStarted": "님이 {{title}}을(를) 읽기 시작했습니다",
+        "activityReviewed": "님이 {{title}}에 리뷰를 남겼습니다",
+        "shareSomething": "진행 상황을 공유해 보세요...",
+        "reply": "답글",
+        "congratulate": "축하하기",
+        "congratulated": "축하함",
+        "achievement": "업적",
+        "activeReader": "열혈 독자",
+        "createPost": "새 게시물"
+    },
+    "errors": {
+        "firebase": {
+            "unknown": "문제가 발생했습니다. 다시 시도해 주세요.",
+            "networkError": "네트워크 오류가 발생했습니다. 확인 후 다시 시도해 주세요.",
+            "emailAlreadyInUse": "이미 사용 중인 이메일입니다.",
+            "invalidEmail": "유효한 이메일 형식이 아닙니다.",
+            "userDisabled": "비활성화된 계정입니다.",
+            "userNotFound": "계정을 찾을 수 없습니다.",
+            "wrongPassword": "비밀번호가 틀렸습니다.",
+            "tooManyRequests": "너무 많은 요청이 발생했습니다. 잠시 후 다시 시도해 주세요.",
+            "sessionExpired": "세션이 만료되었습니다. 다시 로그인해 주세요.",
+            "unauthenticated": "로그인 후 이용해 주세요."
+        }
+    },
+    "monetization": {
+        "coins": {
+            "balance": "{{count}} 코인",
+            "earned": "+{{count}} 코인 획득!",
+            "spent": "-{{count}} 코인 사용",
+            "notEnough": "코인이 부족합니다"
+        },
+        "storyUnlock": {
+            "title": "이야기 잠금 해제",
+            "locked": "잠겨 있는 이야기입니다",
+            "watchAd": "광고 보고 잠금 해제",
+            "watchAdFree": "무료 • 짧은 광고 시청",
+            "useCoins": "{{count}} 코인 사용",
+            "unlockFor24h": "24시간 동안 잠금 해제",
+            "goPremium": "프리미엄 구매",
+            "unlockAll": "모든 이야기 평생 잠금 해제",
+            "success": "잠금이 해제되었습니다!",
+            "adWatching": "광고를 불러오는 중..."
+        },
+        "streakProtection": {
+            "title": "스트릭 보호!",
+            "subtitle": "{{count}}일 연속 기록이 사라질 위험에 처했습니다!",
+            "message": "오늘 아직 독서를 하지 않았습니다. 스트릭 보호를 사용하여 기록을 지키세요.",
+            "watchAd": "광고 시청",
+            "watchAdDesc": "무료 보호",
+            "useCoins": "{{count}} 코인 사용",
+            "coinsDesc": "즉시 보호",
+            "goPremium": "프리미엄 구매",
+            "premiumDesc": "평생 자동 보호",
+            "protected": "스트릭이 보호되었습니다!",
+            "loseStreak": "건너뛰고 스트릭 잃기"
+        },
+        "dailyBonus": {
+            "title": "일일 보너스!",
+            "subtitle": "7일 중 {{day}}일차",
+            "claim": "보상 받기",
+            "claimed": "내일 다시 오세요!",
+            "doubleWithAd": "광고 보고 2배 받기",
+            "doubleSuccess": "보상이 2배가 되었습니다!",
+            "rewards": {
+                "coins": "{{count}} 코인",
+                "translations": "{{count}}회 무료 번역",
+                "streakProtector": "스트릭 보호권",
+                "premiumTrial": "프리미엄 1일 체험"
+            },
+            "day1": "1일차",
+            "day2": "2일차",
+            "day3": "3일차",
+            "day4": "4일차",
+            "day5": "5일차",
+            "day6": "6일차",
+            "day7": "7일차"
+        },
+        "premium": {
+            "title": "프리미엄",
+            "subtitle": "모든 기능을 자유롭게 이용하세요",
+            "features": {
+                "unlimitedTranslations": "무제한 번역",
+                "allStories": "모든 이야기 잠금 해제",
+                "noAds": "광고 없이 이용",
+                "streakProtection": "자동 스트릭 보호",
+                "dailyCoins": "매일 100 보너스 코인"
+            },
+            "monthly": "월간 구독",
+            "yearly": "연간 구독",
+            "saveBadge": "{{percent}}% 절약",
+            "subscribe": "구독하기",
+            "restore": "구매 복원",
+            "terms": "이용약관",
+            "privacy": "개인정보 처리방침",
+            "cancelAnytime": "언제든 취소 가능"
+        },
+        "translationLimit": {
+            "title": "번역 한도 도달",
+            "message": "오늘 제공된 무료 번역을 모두 사용했습니다.",
+            "watchAd": "광고 보고 5회 추가",
+            "goPremium": "무제한 번역을 위해 프리미엄 구매",
+            "remaining": "남은 번역 횟수: {{count}}회"
+        }
+    }
+}

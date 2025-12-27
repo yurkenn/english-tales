@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo, useRef, useState, useCallback } from 'react';
 import { View, Text, ScrollView, Pressable, Share } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -18,6 +18,8 @@ import {
     AuthorSection,
     StorySnippet,
     RelatedStories,
+    StoryUnlockModal,
+    PaywallModal,
 } from '@/components';
 import Animated, {
     useSharedValue,
@@ -38,9 +40,12 @@ import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
 import { PortableTextBlock } from '@portabletext/types';
 import { useTranslation } from 'react-i18next';
+import { useSubscriptionStore } from '@/store/subscriptionStore';
+import { checkStoryAccess } from '@/services/storyGating';
 
 interface StoryDetails extends Story {
     authorBio?: string;
+    isPremiumOnly?: boolean;
 }
 
 export default function StoryDetailScreen() {
@@ -63,6 +68,12 @@ export default function StoryDetailScreen() {
     const { user } = useAuthStore();
     const { actions: libraryActions } = useLibraryStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
+    const isPremium = useSubscriptionStore((s) => s.isPremium);
+
+    // Gating modals
+    const [showUnlockModal, setShowUnlockModal] = useState(false);
+    const [showPaywallModal, setShowPaywallModal] = useState(false);
+    const [storyIndex, setStoryIndex] = useState(0); // Position in list for gating
 
     // Fetch data
     const { data: storyDoc, isLoading: loadingStory, error: errorStory, refetch: refetchStory } = useStory(id || '');
@@ -101,6 +112,7 @@ export default function StoryDetailScreen() {
             tags: storyDoc.categories?.map((c: any) => c.title) || [],
             createdAt: new Date(storyDoc.publishedAt || new Date()),
             updatedAt: new Date(storyDoc.publishedAt || new Date()),
+            isPremiumOnly: storyDoc.isPremiumOnly,
         };
     }, [storyDoc]);
 
@@ -120,6 +132,34 @@ export default function StoryDetailScreen() {
         if (!story) return;
         await toggleFavorite(story.title, story.coverImage);
     };
+
+    // Start reading with gating check
+    const handleStartReading = useCallback(() => {
+        if (!story) return;
+        haptics.selection();
+
+        // Check story access
+        const accessResult = checkStoryAccess(story.id, storyIndex, story.isPremiumOnly);
+
+        if (accessResult.status === 'free' || accessResult.status === 'unlocked') {
+            // Can read directly
+            requestAnimationFrame(() => {
+                router.push(`/reading/${story.id}`);
+            });
+        } else {
+            // Story is locked - show unlock modal
+            setShowUnlockModal(true);
+        }
+    }, [story, isPremium, storyIndex, router]);
+
+    const handleUnlockSuccess = useCallback(() => {
+        setShowUnlockModal(false);
+        if (story) {
+            requestAnimationFrame(() => {
+                router.push(`/reading/${story.id}`);
+            });
+        }
+    }, [story, router]);
 
     const handleSharePress = async () => {
         if (!story) return;
@@ -353,18 +393,40 @@ export default function StoryDetailScreen() {
             <View style={[styles.bottomAction, { paddingBottom: insets.bottom + 16 }]}>
                 <Pressable
                     style={styles.readButton}
-                    onPress={() => {
-                        haptics.selection();
-                        // Delay navigation to allow UI to respond first
-                        requestAnimationFrame(() => {
-                            router.push(`/reading/${story.id}`);
-                        });
-                    }}
+                    onPress={handleStartReading}
                 >
                     <Ionicons name="book-outline" size={20} color={theme.colors.textInverse} />
                     <Text style={styles.readButtonText}>{t('stories.details.startReading')}</Text>
                 </Pressable>
             </View>
+
+            {/* Story Unlock Modal */}
+            <StoryUnlockModal
+                visible={showUnlockModal}
+                storyId={story?.id || ''}
+                storyTitle={story?.title || ''}
+                storyCover={story?.coverImage}
+                isPremiumOnly={story?.isPremiumOnly}
+                onClose={() => setShowUnlockModal(false)}
+                onUnlocked={handleUnlockSuccess}
+                onGetPremium={() => {
+                    setShowUnlockModal(false);
+                    setShowPaywallModal(true);
+                }}
+            />
+
+            {/* Paywall Modal */}
+            <PaywallModal
+                visible={showPaywallModal}
+                onClose={() => setShowPaywallModal(false)}
+                onSuccess={() => {
+                    setShowPaywallModal(false);
+                    // After premium, go directly to reading
+                    if (story) {
+                        router.push(`/reading/${story.id}`);
+                    }
+                }}
+            />
 
             {/* Confirmation Dialog */}
             <ConfirmationDialog

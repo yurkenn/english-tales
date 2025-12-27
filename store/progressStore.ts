@@ -6,6 +6,7 @@ import { activityService } from '@/services/activityService';
 import { communityService } from '@/services/communityService';
 import { useAuthStore } from './authStore';
 import { useSettingsStore } from './settingsStore';
+import { useCoinStore } from './coinStore';
 
 const db = getFirestore();
 
@@ -16,6 +17,10 @@ interface ProgressState {
     error: string | null;
     userId: string | null;
     totalReadingTimeMs: number;
+    stats: {
+        streak: number;
+        lastReadDate: string | null;
+    };
 }
 
 interface ProgressActions {
@@ -38,7 +43,39 @@ const initialState: ProgressState = {
     isLoading: false,
     error: null,
     userId: null,
-    totalReadingTimeMs: 0
+    totalReadingTimeMs: 0,
+    stats: {
+        streak: 0,
+        lastReadDate: null,
+    },
+};
+
+const computeStats = (progressMap: Record<string, ReadingProgress>) => {
+    const allDates = Object.values(progressMap)
+        .filter(p => p.lastReadAt)
+        .map(p => new Date(p.lastReadAt).toISOString().split('T')[0]);
+
+    if (allDates.length === 0) return { streak: 0, lastReadDate: null };
+
+    const uniqueDates = [...new Set(allDates)].sort().reverse();
+    const today = new Date().toISOString().split('T')[0];
+    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+
+    const lastReadDate = uniqueDates[0];
+    let streak = 0;
+
+    if (uniqueDates[0] === today || uniqueDates[0] === yesterday) {
+        streak = 1;
+        for (let i = 1; i < uniqueDates.length; i++) {
+            const prevDate = new Date(uniqueDates[i - 1]);
+            const currDate = new Date(uniqueDates[i]);
+            const diffDays = Math.round((new Date(prevDate).getTime() - new Date(currDate).getTime()) / 86400000);
+            if (diffDays === 1) streak++;
+            else break;
+        }
+    }
+
+    return { streak, lastReadDate };
 };
 
 export const useProgressStore = create<ProgressState & { actions: ProgressActions }>()((set, get) => ({
@@ -50,7 +87,7 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                 get().actions.fetchAllProgress();
                 get().actions.fetchTodayStats();
             } else {
-                set({ progressMap: {}, todayStats: null });
+                set({ progressMap: {}, todayStats: null, stats: initialState.stats });
             }
         },
         updateProgress: async (storyId, position, percentage, _storyTitle = 'a story', blockKey?: string, pageIndex?: number) => {
@@ -69,7 +106,8 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     lastPageIndex: pageIndex,
                 };
                 await setDoc(doc(collection(db, 'users', userId, 'progress'), storyId), { ...progress, lastReadAt: serverTimestamp() }, { merge: true });
-                set((s) => ({ progressMap: { ...s.progressMap, [storyId]: progress } }));
+                const newMap = { ...get().progressMap, [storyId]: progress };
+                set({ progressMap: newMap, stats: computeStats(newMap) });
                 return { success: true, data: progress };
             } catch (e) {
                 const msg = e instanceof Error ? e.message : 'Failed';
@@ -92,7 +130,12 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     isCompleted: true
                 };
                 await setDoc(doc(collection(db, 'users', userId, 'progress'), storyId), { ...progress, lastReadAt: serverTimestamp() }, { merge: true });
-                set((s) => ({ progressMap: { ...s.progressMap, [storyId]: progress } }));
+                const newMap = { ...get().progressMap, [storyId]: progress };
+                set({ progressMap: newMap, stats: computeStats(newMap) });
+
+                // Award coins for story completion
+                useCoinStore.getState().actions.earnFromStoryComplete();
+
                 get().actions.checkSocialMilestones();
                 return { success: true, data: progress };
             } catch (e) {
@@ -116,6 +159,12 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                 } as ReadingProgress;
                 await setDoc(doc(collection(db, 'users', userId, 'progress'), storyId), { ...progress, lastReadAt: serverTimestamp() }, { merge: true });
                 set((s) => ({ progressMap: { ...s.progressMap, [storyId]: progress } }));
+
+                // Award bonus coins for perfect quiz score
+                if (score === total) {
+                    useCoinStore.getState().actions.earnFromQuizPerfect();
+                }
+
                 get().actions.checkSocialMilestones();
                 return { success: true, data: progress };
             } catch (e) {
@@ -149,7 +198,7 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     };
                 });
                 const totalReadingTimeMs = Object.values(progressMap).reduce((acc, p) => acc + (p.readingTimeMs || 0), 0);
-                set({ progressMap, totalReadingTimeMs, isLoading: false });
+                set({ progressMap, totalReadingTimeMs, stats: computeStats(progressMap), isLoading: false });
                 return { success: true, data: progressMap };
             } catch (e) {
                 const msg = e instanceof Error ? e.message : 'Failed';
@@ -240,17 +289,20 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                     lastUpdated: new Date(),
                 };
 
+            const newMap = {
+                ...get().progressMap,
+                [storyId]: {
+                    ...(existing || { storyId, userId, currentPosition: 0, percentage: 0, isCompleted: false }),
+                    readingTimeMs: newTime,
+                    lastReadAt: new Date()
+                } as ReadingProgress
+            };
+
             set((s) => ({
                 totalReadingTimeMs: s.totalReadingTimeMs + durationMs,
                 todayStats: updatedTodayStats,
-                progressMap: {
-                    ...s.progressMap,
-                    [storyId]: {
-                        ...(existing || { storyId, userId, currentPosition: 0, percentage: 0, isCompleted: false }),
-                        readingTimeMs: newTime,
-                        lastReadAt: new Date()
-                    } as ReadingProgress
-                }
+                progressMap: newMap,
+                stats: computeStats(newMap)
             }));
 
             try {

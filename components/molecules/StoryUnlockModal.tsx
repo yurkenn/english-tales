@@ -10,6 +10,8 @@ import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { useStoryUnlockAd } from '@/hooks/useRewardedAd'
 import { REWARD_CONFIG } from '@/services/ads'
+import { useCoinStore, COIN_COSTS } from '@/store/coinStore'
+import { unlockStoryWithCoins } from '@/services/storyGating'
 import { useTranslation } from 'react-i18next'
 import { haptics } from '@/utils/haptics'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
@@ -22,6 +24,7 @@ interface StoryUnlockModalProps {
     onClose: () => void
     onUnlocked?: () => void
     onGetPremium?: () => void
+    isPremiumOnly?: boolean
 }
 
 function StoryUnlockModalComponent({
@@ -32,11 +35,14 @@ function StoryUnlockModalComponent({
     onClose,
     onUnlocked,
     onGetPremium,
+    isPremiumOnly = false,
 }: StoryUnlockModalProps) {
     const { theme } = useUnistyles()
     const { t } = useTranslation()
 
     const { showAd, isLoading, isReady, isUnlocked } = useStoryUnlockAd(storyId)
+    const coinBalance = useCoinStore((s) => s.balance)
+    const canAffordUnlock = coinBalance >= COIN_COSTS.UNLOCK_STORY_24H
 
     const handleWatchAd = async () => {
         const success = await showAd()
@@ -101,57 +107,108 @@ function StoryUnlockModalComponent({
 
                     {/* Description */}
                     <Text style={styles.description}>
-                        {t('ads.storyUnlock.description',
-                            'Watch a short ad to unlock this story for 24 hours, or get Premium for unlimited access.'
-                        )}
+                        {isPremiumOnly
+                            ? t('ads.storyUnlock.premiumOnlyDescription', 'This story is exclusive for Premium members. Unlock unlimited access to all stories!')
+                            : t('ads.storyUnlock.description', 'Watch a short ad to unlock this story for 24 hours, or get Premium for unlimited access.')
+                        }
                     </Text>
 
                     {/* Unlock Duration Info */}
-                    <View style={styles.infoRow}>
-                        <Ionicons name="time-outline" size={18} color={theme.colors.textMuted} />
-                        <Text style={styles.infoText}>
-                            {t('ads.storyUnlock.duration',
-                                `Access for ${REWARD_CONFIG.STORY_UNLOCK_DURATION_HOURS} hours`
-                            )}
-                        </Text>
-                    </View>
+                    {!isPremiumOnly && (
+                        <View style={styles.infoRow}>
+                            <Ionicons name="time-outline" size={18} color={theme.colors.textMuted} />
+                            <Text style={styles.infoText}>
+                                {t('ads.storyUnlock.duration',
+                                    `Access for ${REWARD_CONFIG.STORY_UNLOCK_DURATION_HOURS} hours`
+                                )}
+                            </Text>
+                        </View>
+                    )}
 
                     {/* Actions */}
                     <View style={styles.actionsContainer}>
                         {/* Watch Ad Button */}
-                        <Pressable
-                            style={[
-                                styles.watchAdButton,
-                                (!isReady || isLoading) && styles.buttonDisabled,
-                            ]}
-                            onPress={handleWatchAd}
-                            disabled={!isReady || isLoading}
-                        >
-                            {isLoading ? (
-                                <Text style={styles.watchAdButtonText}>
-                                    {t('ads.loading', 'Loading...')}
-                                </Text>
-                            ) : (
-                                <>
-                                    <Ionicons name="play-circle" size={24} color="#fff" />
+                        {!isPremiumOnly && (
+                            <Pressable
+                                style={[
+                                    styles.watchAdButton,
+                                    (!isReady || isLoading) && styles.buttonDisabled,
+                                ]}
+                                onPress={handleWatchAd}
+                                disabled={!isReady || isLoading}
+                            >
+                                {isLoading ? (
                                     <Text style={styles.watchAdButtonText}>
-                                        {t('ads.storyUnlock.watchAd', 'Watch Ad to Unlock')}
+                                        {t('ads.loading', 'Loading...')}
                                     </Text>
-                                </>
-                            )}
-                        </Pressable>
+                                ) : (
+                                    <>
+                                        <Ionicons name="play-circle" size={24} color="#fff" />
+                                        <Text style={styles.watchAdButtonText}>
+                                            {t('ads.storyUnlock.watchAd', 'Watch Ad to Unlock')}
+                                        </Text>
+                                    </>
+                                )}
+                            </Pressable>
+                        )}
+
+                        {/* Pay with Coins Button */}
+                        {!isPremiumOnly && (
+                            <Pressable
+                                style={[
+                                    styles.coinButton,
+                                    !canAffordUnlock && styles.buttonDisabled,
+                                ]}
+                                onPress={() => {
+                                    if (canAffordUnlock) {
+                                        const success = unlockStoryWithCoins(storyId)
+                                        if (success) {
+                                            haptics.success()
+                                            onUnlocked?.()
+                                            onClose()
+                                        }
+                                    }
+                                }}
+                                disabled={!canAffordUnlock}
+                            >
+                                <Ionicons
+                                    name="logo-bitcoin"
+                                    size={20}
+                                    color={canAffordUnlock ? '#FFD700' : theme.colors.textMuted}
+                                />
+                                <Text style={[
+                                    styles.coinButtonText,
+                                    !canAffordUnlock && { color: theme.colors.textMuted }
+                                ]}>
+                                    {COIN_COSTS.UNLOCK_STORY_24H} Coins
+                                </Text>
+                                <Text style={styles.coinBalanceText}>
+                                    ({coinBalance} available)
+                                </Text>
+                            </Pressable>
+                        )}
 
                         {/* Premium Button */}
                         {onGetPremium && (
                             <Pressable
-                                style={styles.premiumButton}
+                                style={[
+                                    styles.premiumButton,
+                                    isPremiumOnly && styles.premiumButtonPrimary,
+                                ]}
                                 onPress={() => {
                                     haptics.selection()
                                     onGetPremium()
                                 }}
                             >
-                                <Ionicons name="star" size={20} color={theme.colors.warning} />
-                                <Text style={styles.premiumButtonText}>
+                                <Ionicons
+                                    name="star"
+                                    size={20}
+                                    color={isPremiumOnly ? '#fff' : theme.colors.warning}
+                                />
+                                <Text style={[
+                                    styles.premiumButtonText,
+                                    isPremiumOnly && styles.premiumButtonTextPrimary,
+                                ]}>
                                     {t('ads.storyUnlock.getPremium', 'Get Premium')}
                                 </Text>
                             </Pressable>
@@ -265,6 +322,26 @@ const styles = StyleSheet.create((theme) => ({
     buttonDisabled: {
         opacity: 0.5,
     },
+    coinButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: theme.spacing.sm,
+        backgroundColor: theme.colors.background,
+        borderWidth: 1,
+        borderColor: theme.colors.border,
+        paddingVertical: theme.spacing.md,
+        borderRadius: theme.radius.lg,
+    },
+    coinButtonText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: theme.typography.weight.semibold,
+        color: theme.colors.text,
+    },
+    coinBalanceText: {
+        fontSize: theme.typography.size.sm,
+        color: theme.colors.textMuted,
+    },
     premiumButton: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -279,6 +356,13 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.warning,
+    },
+    premiumButtonPrimary: {
+        backgroundColor: theme.colors.primary,
+        borderColor: theme.colors.primary,
+    },
+    premiumButtonTextPrimary: {
+        color: '#fff',
     },
     closeButton: {
         position: 'absolute',

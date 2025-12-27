@@ -1,0 +1,474 @@
+{
+    "auth": {
+        "signup": {
+            "title": "Criar Conta",
+            "subtitle": "Comece sua aventura de leitura em inglês hoje"
+        },
+        "login": {
+            "title": "Bem-vindo de volta",
+            "subtitle": "Entre para continuar sua jornada de leitura"
+        },
+        "forgotPassword": {
+            "title": "Esqueceu a senha?",
+            "message": "Não se preocupe! Digite seu e-mail e enviaremos um link para redefinir sua senha.",
+            "submit": "Enviar Link de Redefinição",
+            "backToLogin": "Voltar para Login",
+            "successTitle": "Verifique seu e-mail",
+            "successMessage": "Enviamos um link de redefinição para",
+            "spamHint": "Se não vir o e-mail, verifique sua pasta de spam.",
+            "toastSuccess": "E-mail de redefinição enviado!"
+        },
+        "guestBanner": {
+            "title": "Desbloqueie Todos os Recursos",
+            "subtitle": "Entre para sincronizar seu progresso, escrever avaliações e participar da comunidade!",
+            "cta": "Entrar / Registrar"
+        }
+    },
+    "common": {
+        "error": "Algo deu errado",
+        "retry": "Tentar novamente",
+        "cancel": "Cancelar",
+        "save": "Salvar",
+        "delete": "Excluir",
+        "loading": "Carregando...",
+        "search": "Buscar...",
+        "networkError": "Erro de rede. Verifique sua conexão.",
+        "all": "Tudo",
+        "easy": "Fácil",
+        "medium": "Médio",
+        "hard": "Difícil",
+        "on": "Ativado",
+        "off": "Desativado",
+        "goBack": "Voltar",
+        "saving": "Salvando...",
+        "saveChanges": "Salvar Alterações",
+        "unknownAuthor": "Autor Desconhecido",
+        "accept": "Aceitar",
+        "seeAll": "Ver tudo",
+        "confirm": "Confirmar",
+        "you": "Você",
+        "min": "min",
+        "story": "história",
+        "offline": "Offline",
+        "check": "Verificar",
+        "words": "palavras",
+        "beginner": "Iniciante",
+        "intermediate": "Intermediário",
+        "advanced": "Avançado",
+        "level": "Nível"
+    },
+    "stories": {
+        "filters": {
+            "difficulty": "Nível"
+        },
+        "details": {
+            "about": "Sobre esta história",
+            "reviews": "Avaliações",
+            "noReviews": "Ainda não há avaliações",
+            "writeReview": "Escrever avaliação",
+            "seeAll": "Ver tudo",
+            "startReading": "Começar a ler",
+            "reviewCount": "{{count}} avaliações",
+            "reviewCount_one": "1 avaliação"
+        }
+    },
+    "tabs": {
+        "home": "Home",
+        "discover": "Descobrir",
+        "library": "Biblioteca",
+        "profile": "Perfil"
+    },
+    "profile": {
+        "title": "Perfil",
+        "booksRead": "Livros Lidos",
+        "dayStreak": "Sequência de Dias",
+        "readingGoals": "Metas de Leitura",
+        "achievements": "Conquistas",
+        "appearance": "Aparência",
+        "language": "Idioma",
+        "notifications": "Notificações",
+        "fontSize": "Tamanho da Fonte",
+        "help": "Ajuda e Suporte",
+        "helpMessage": "Precisa de ajuda? Entre em contato: support@englishtales.app",
+        "about": "Sobre",
+        "aboutMessage": "English Tales v1.0.0\n\nMelhore seu inglês através de belas histórias.\n\n© 2025 English Tales",
+        "signOut": "Sair",
+        "login": "Entrar",
+        "logout": "Sair",
+        "stats": {
+            "storiesRead": "Histórias Lidas",
+            "readingTime": "Tempo de Leitura",
+            "streak": "Sequência de Dias"
+        },
+        "quickSettings": "Configurações Rápidas",
+        "vocabulary": "Vocabulário",
+        "quiz": "Quiz de Prática",
+        "activity": "Atividade",
+        "preferences": "Preferências",
+        "allSettings": "Todas as Configurações",
+        "time": "Leitura",
+        "words": "Palavras",
+        "badges": "Distintivos",
+        "streak": "Sequência",
+        "noPosts": "Ainda não há postagens",
+        "noPostsMessage": "Compartilhe sua jornada de leitura com a comunidade!",
+        "shareFirst": "Criar Postagem",
+        "emptyLibrary": "Nada salvo ainda",
+        "emptyLibraryMessage": "Salve histórias para encontrá-las facilmente aqui!",
+        "exploreStories": "Explorar Histórias",
+        "addBio": "Adicionar bio",
+        "editProfile": "Editar Perfil",
+        "tabPosts": "Postagens",
+        "tabSaved": "Salvos",
+        "tabAbout": "Sobre",
+        "dailyGoal": "Meta Diária",
+        "goalReached": "Meta Atingida!",
+        "minRemaining": "Faltam {{count}} min",
+        "minRemaining_one": "Falta 1 min",
+        "goalAlmost": "Quase lá!",
+        "goalKeepGoing": "Continue lendo para atingir sua meta!"
+    },
+    "appearance": {
+        "title": "Aparência",
+        "theme": "Tema",
+        "system": "Sistema",
+        "light": "Claro",
+        "dark": "Escuro",
+        "sepia": "Sépia"
+    },
+    "home": {
+        "greeting": "Olá, {{name}}",
+        "greeting_morning": "Bom dia",
+        "greeting_afternoon": "Boa tarde",
+        "greeting_evening": "Boa noite",
+        "greetingDefault": "Leitor",
+        "searchPlaceholder": "Buscar histórias, autores...",
+        "continueReading": "Continuar Lendo",
+        "dailyPick": "Escolha do Dia",
+        "recommended": "Recomendado para Você",
+        "trending": "Tendências agora",
+        "categories": {
+            "forYou": "Para Você",
+            "following": "Seguindo",
+            "easy": "Fácil",
+            "medium": "Médio",
+            "hard": "Difícil",
+            "authors": "Autores"
+        },
+        "showing": "Mostrando",
+        "clearFilter": "Limpar Filtro",
+        "noResultsTitle": "Nenhuma história encontrada",
+        "noResultsDesc": "Nenhuma história corresponde ao filtro \"{{filter}}\". Tente outra categoria."
+    },
+    "discover": {
+        "searchPlaceholder": "Buscar histórias, autores...",
+        "surpriseMe": "Surpreenda-me",
+        "surpriseMeDesc": "Deixe-nos escolher uma para você",
+        "authorSpotlight": "Autor em Destaque",
+        "recentlyAdded": "Adicionados Recentemente",
+        "popularThisWeek": "Popular esta Semana",
+        "categories": {
+            "all": "Tudo",
+            "easy": "Fácil",
+            "medium": "Médio",
+            "hard": "Difícil",
+            "authors": "Autores"
+        }
+    },
+    "authors": {
+        "title": "Autores",
+        "author": "Autor",
+        "stories": "Histórias",
+        "storyCount": "{{count}} histórias",
+        "storyCountSingular": "1 história",
+        "emptyTitle": "Nenhum autor encontrado",
+        "emptyMessage": "Autores aparecerão aqui quando forem adicionados.",
+        "noStoriesTitle": "Sem histórias ainda",
+        "noStoriesMessage": "Este autor ainda não publicou histórias",
+        "notFound": "Autor não encontrado",
+        "discoverSubtitle": "Descubra as vozes por trás de nossas histórias",
+        "searchPlaceholder": "Buscar autores...",
+        "noSearchResults": "Nenhum autor corresponde à sua busca"
+    },
+    "library": {
+        "empty": "Sua biblioteca está vazia",
+        "emptyMessage": "Comece a ler para adicionar livros",
+        "discoverStories": "Descobrir Histórias",
+        "quizTitle": "Quiz de Prática",
+        "quizSubtitle": "{{count}} palavras para praticar",
+        "stats": {
+            "total": "Total",
+            "completed": "Lidos",
+            "inProgress": "Lendo"
+        },
+        "menu": {
+            "removeFromLibrary": "Remover da Biblioteca",
+            "deleteDownload": "Excluir Download"
+        },
+        "dialogs": {
+            "removeTitle": "Remover da Biblioteca",
+            "removeMessage": "Remover \"{{title}}\" da sua biblioteca?",
+            "deleteDownloadTitle": "Excluir Download",
+            "deleteDownloadMessage": "Excluir download de \"{{title}}\"? Não estará disponível offline."
+        },
+        "tabs": {
+            "stories": "Histórias",
+            "vocabulary": "Vocabulário"
+        }
+    },
+    "vocabulary": {
+        "title": "Vocabulário",
+        "searchPlaceholder": "Buscar palavras salvas...",
+        "empty": "Nenhuma palavra salva",
+        "emptyMessage": "Toque em palavras desconhecidas ao ler para salvá-las aqui.",
+        "startReading": "Começar a Ler",
+        "noMatches": "Sem correspondências",
+        "noMatchesMessage": "Tente outro termo de busca."
+    },
+    "reading": {
+        "complete": "{{percentage}}% concluído",
+        "remainingTime": "~{{time}} min restantes",
+        "pageOfShifted": "Página {{current}} de {{total}}",
+        "pagesLeftCount": "Faltam {{count}} páginas",
+        "pagesLeftCount_one": "Falta 1 página",
+        "chapter": "Capítulo {{number}}",
+        "startReading": "Começar a Ler",
+        "continue": "Continuar",
+        "notFound": "História não encontrada",
+        "noContent": "Conteúdo indisponível.",
+        "lineSpacing": "Espaçamento",
+        "audioAssist": "Assistente de Áudio",
+        "readingAloud": "Lendo em voz alta...",
+        "audioAssistReady": "Assistente de áudio pronto",
+        "minutesLeft": "Mais {{count}} min para sua meta",
+        "minutesLeft_one": "Mais 1 min para sua meta",
+        "controls": {
+            "appearance": "Aparência",
+            "save": "Salvar",
+            "saved": "Salvo",
+            "share": "Compartilhar",
+            "listen": "Ouvir"
+        },
+        "quiz": {
+            "title": "Quiz de Compreensão",
+            "subtitle": "Vamos ver o que você aprendeu!",
+            "start": "Começar Quiz",
+            "next": "Próxima Pergunta",
+            "finish": "Finalizar",
+            "correct": "Correto!",
+            "incorrect": "Não exatamente...",
+            "result": "Você acertou {{count}} de {{total}}",
+            "accuracy": "Precisão: {{percentage}}%",
+            "done": "Voltar para História",
+            "checkpoint": "Ponto de Verificação"
+        },
+        "completion": {
+            "title": "História Concluída!",
+            "subtitle": "Ótimo trabalho! Você terminou mais uma aventura.",
+            "nextStory": "Próxima História",
+            "backToHome": "Voltar para Home",
+            "ratingOptional": "O que achou da história? (Opcional)",
+            "readyForMore": "Pronto para outra aventura?"
+        }
+    },
+    "settings": {
+        "title": "Configurações",
+        "sections": {
+            "account": "CONTA",
+            "preferences": "PREFERÊNCIAS",
+            "storage": "ARMAZENAMENTO",
+            "about": "SOBRE",
+            "dangerZone": "ZONA DE PERIGO",
+            "signIn": "ENTRAR"
+        },
+        "account": {
+            "email": "E-mail",
+            "notSet": "Não definido",
+            "changePassword": "Mudar Senha",
+            "signIn": "Entrar / Registrar",
+            "unlockFeatures": "Desbloquear Todos os Recursos"
+        },
+        "preferences": {
+            "theme": "Tema",
+            "language": "Idioma",
+            "fontSize": "Tamanho da Fonte",
+            "fontSizeInstruction": "Ajuste o tamanho da fonte na tela de leitura usando os botões A- e A+.",
+            "notifications": "Notificações"
+        },
+        "storage": {
+            "downloads": "Downloads",
+            "storiesCount": "{{count}} histórias",
+            "none": "Nenhum",
+            "clearDownloads": "Excluir Todos os Downloads",
+            "cache": "Cache",
+            "clearCache": "Limpar Cache"
+        },
+        "about": {
+            "rateApp": "Avaliar App",
+            "rateAppMessage": "Obrigado! O link da App Store estará disponível em breve.",
+            "privacyPolicy": "Privacidade",
+            "termsOfService": "Termos de Uso",
+            "version": "Versão"
+        },
+        "dangerZone": {
+            "signOut": "Sair",
+            "deleteAccount": "Excluir Conta"
+        },
+        "dialogs": {
+            "signOut": {
+                "title": "Sair",
+                "message": "Tem certeza que deseja sair?"
+            },
+            "deleteAccount": {
+                "title": "Excluir Conta",
+                "message": "Isso excluirá permanentemente sua conta e dados. Não pode ser desfeito.",
+                "instruction": "Contate support@englishtales.app para excluir."
+            },
+            "clearCache": {
+                "title": "Limpar Cache",
+                "message": "Limpa dados temporários. Seu progresso será mantido.",
+                "success": "Cache limpo"
+            },
+            "clearDownloads": {
+                "title": "Excluir Downloads",
+                "message": "Excluir as {{count}} histórias baixadas?",
+                "success": "Downloads excluídos"
+            },
+            "changePassword": {
+                "title": "Mudar Senha",
+                "message": "E-mail de redefinição será enviado para {{email}}",
+                "success": "E-mail enviado! Verifique sua caixa de entrada.",
+                "error": "Erro ao enviar e-mail."
+            }
+        },
+        "footer": "Feito com ❤️ para estudantes de inglês"
+    },
+    "notifications": {
+        "feedback": "Notificações {{status}}"
+    },
+    "social": {
+        "title": "Comunidade",
+        "community": "Comunidade",
+        "following": "Seguindo",
+        "findFriends": "Encontrar Amigos",
+        "searchPlaceholder": "Buscar por nome ou e-mail...",
+        "noUsersFound": "Nenhum usuário encontrado",
+        "add": "Adicionar",
+        "requestSent": "Pedido enviado!",
+        "requestAccepted": "Pedido aceito!",
+        "requestCancelled": "Pedido cancelado",
+        "friendRemoved": "Amigo removido",
+        "requests": "Pedidos",
+        "myFriends": "Meus Amigos",
+        "sentRequests": "Pedidos Enviados",
+        "requestPending": "Pendente",
+        "emptyTitle": "Sem amigos ainda",
+        "emptyDesc": "Conecte-se com outros leitores!",
+        "communityBuzz": "Feed da Comunidade",
+        "activityFinished": "terminou {{title}}",
+        "activityEarned": "ganhou {{title}}",
+        "activityStarted": "começou a ler {{title}}",
+        "activityReviewed": "avaliou {{title}}",
+        "shareSomething": "Compartilhe seu progresso...",
+        "reply": "Responder",
+        "congratulate": "Parabenizar",
+        "congratulated": "Parabenizado",
+        "achievement": "Conquista",
+        "activeReader": "Leitor Ativo",
+        "createPost": "Nova Postagem"
+    },
+    "errors": {
+        "firebase": {
+            "unknown": "Erro. Tente novamente.",
+            "networkError": "Erro de rede.",
+            "emailAlreadyInUse": "E-mail já em uso.",
+            "invalidEmail": "E-mail inválido.",
+            "userDisabled": "Conta desativada.",
+            "userNotFound": "Usuário não encontrado.",
+            "wrongPassword": "Senha incorreta.",
+            "tooManyRequests": "Muitas tentativas. Aguarde um pouco.",
+            "sessionExpired": "Sessão expirada. Entre de novo.",
+            "unauthenticated": "Por favor, entre para continuar."
+        }
+    },
+    "monetization": {
+        "coins": {
+            "balance": "{{count}} Moedas",
+            "earned": "+{{count}} moedas ganhas!",
+            "spent": "-{{count}} moedas gastas",
+            "notEnough": "Moedas insuficientes"
+        },
+        "storyUnlock": {
+            "title": "Desbloquear História",
+            "locked": "Esta história está bloqueada",
+            "watchAd": "Ver anúncio para desbloquear",
+            "watchAdFree": "Grátis • Ver anúncio curto",
+            "useCoins": "Usar {{count}} Moedas",
+            "unlockFor24h": "Desbloquear por 24h",
+            "goPremium": "Seja Premium",
+            "unlockAll": "Tudo livre para sempre",
+            "success": "História desbloqueada!",
+            "adWatching": "Carregando anúncio..."
+        },
+        "streakProtection": {
+            "title": "Proteja sua Sequência!",
+            "subtitle": "Sua sequência de {{count}} dias está em risco!",
+            "message": "Você ainda não leu hoje. Use uma proteção.",
+            "watchAd": "Ver anúncio",
+            "watchAdDesc": "Proteção grátis",
+            "useCoins": "Usar {{count}} Moedas",
+            "coinsDesc": "Proteção instantânea",
+            "goPremium": "Seja Premium",
+            "premiumDesc": "Auto-proteção para sempre",
+            "protected": "Sequência protegida!",
+            "loseStreak": "Pular e perder sequência"
+        },
+        "dailyBonus": {
+            "title": "Bônus Diário!",
+            "subtitle": "Dia {{day}} de 7",
+            "claim": "Resgatar",
+            "claimed": "Volte amanhã!",
+            "doubleWithAd": "2x com anúncio",
+            "doubleSuccess": "Recompensa dobrada!",
+            "rewards": {
+                "coins": "{{count}} Moedas",
+                "translations": "{{count}} Traduções Grátis",
+                "streakProtector": "Protetor de Sequência",
+                "premiumTrial": "1 dia de Premium"
+            },
+            "day1": "Dia 1",
+            "day2": "Dia 2",
+            "day3": "Dia 3",
+            "day4": "Dia 4",
+            "day5": "Dia 5",
+            "day6": "Dia 6",
+            "day7": "Dia 7"
+        },
+        "premium": {
+            "title": "Seja Premium",
+            "subtitle": "Desbloqueie a experiência completa",
+            "features": {
+                "unlimitedTranslations": "Traduções ilimitadas",
+                "allStories": "Histórias liberadas",
+                "noAds": "Sem anúncios",
+                "streakProtection": "Proteção de sequência automática",
+                "dailyCoins": "100 moedas bônus diárias"
+            },
+            "monthly": "Mensal",
+            "yearly": "Anual",
+            "saveBadge": "Economize {{percent}}%",
+            "subscribe": "Assinar",
+            "restore": "Restaurar Compra",
+            "terms": "Termos",
+            "privacy": "Privacidade",
+            "cancelAnytime": "Cancele quando quiser"
+        },
+        "translationLimit": {
+            "title": "Limite Atingido",
+            "message": "Traduções grátis esgotadas.",
+            "watchAd": "Ver anúncio por +5",
+            "goPremium": "Premium para ilimitado",
+            "remaining": "{{count}} traduções restantes"
+        }
+    }
+}

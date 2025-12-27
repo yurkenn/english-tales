@@ -7,6 +7,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { adService, RewardType, REWARD_CONFIG } from '@/services/ads'
 import { useAdStore } from '@/store/adStore'
 import { useRewardStore } from '@/store/rewardStore'
+import { useCoinStore } from '@/store/coinStore'
 import { haptics } from '@/utils/haptics'
 
 interface UseRewardedAdOptions {
@@ -47,6 +48,9 @@ export function useRewardedAd(options: UseRewardedAdOptions): UseRewardedAdRetur
     }, [rewardType])
 
     const applyReward = useCallback(() => {
+        // Always earn coins when watching ads
+        useCoinStore.getState().actions.earnFromAd()
+
         switch (rewardType) {
             case 'translation':
                 rewardActions.addTranslations(REWARD_CONFIG.TRANSLATIONS_PER_AD)

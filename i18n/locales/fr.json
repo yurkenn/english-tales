@@ -9,9 +9,19 @@
             "subtitle": "Connectez-vous pour continuer votre voyage de lecture"
         },
         "forgotPassword": {
-            "title": "Mot de passe oublié",
-            "message": "Entrez votre email pour réinitialiser votre mot de passe",
-            "placeholder": "E-mail"
+            "title": "Mot de passe oublié ?",
+            "message": "Pas de souci ! Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+            "submit": "Envoyer le lien",
+            "backToLogin": "Retour à la connexion",
+            "successTitle": "Vérifiez vos e-mails",
+            "successMessage": "Nous avons envoyé un lien de réinitialisation à",
+            "spamHint": "Si vous ne voyez pas l'e-mail, vérifiez votre dossier spam.",
+            "toastSuccess": "E-mail de réinitialisation envoyé !"
+        },
+        "guestBanner": {
+            "title": "Débloquez toutes les fonctionnalités",
+            "subtitle": "Connectez-vous pour synchroniser votre progression, écrire des avis et rejoindre la communauté !",
+            "cta": "Connexion / Inscription"
         }
     },
     "common": {
@@ -36,7 +46,31 @@
         "accept": "Accepter",
         "seeAll": "Voir tout",
         "confirm": "Confirmer",
-        "you": "Vous"
+        "you": "Vous",
+        "min": "min",
+        "story": "histoire",
+        "offline": "Hors ligne",
+        "check": "Vérifier",
+        "words": "mots",
+        "beginner": "Débutant",
+        "intermediate": "Intermédiaire",
+        "advanced": "Avancé",
+        "level": "Niveau"
+    },
+    "stories": {
+        "filters": {
+            "difficulty": "Niveau"
+        },
+        "details": {
+            "about": "À propos de cette histoire",
+            "reviews": "Avis",
+            "noReviews": "Pas encore d'avis",
+            "writeReview": "Écrire un avis",
+            "seeAll": "Voir tout",
+            "startReading": "Commencer à lire",
+            "reviewCount": "{{count}} avis",
+            "reviewCount_one": "1 avis"
+        }
     },
     "tabs": {
         "home": "Accueil",
@@ -46,7 +80,7 @@
     },
     "profile": {
         "title": "Profil",
-        "booksRead": "Histoires lues",
+        "booksRead": "Livres lus",
         "dayStreak": "Série de jours",
         "readingGoals": "Objectifs de lecture",
         "achievements": "Succès",
@@ -78,22 +112,29 @@
         "streak": "Série",
         "noPosts": "Pas encore de publications",
         "noPostsMessage": "Partagez votre voyage de lecture avec la communauté !",
-        "shareFirst": "Créer une publication",
+        "shareFirst": "Créer un message",
         "emptyLibrary": "Rien de sauvegardé",
-        "emptyLibraryMessage": "Sauvegardez des histoires pour les retrouver facilement ici !",
+        "emptyLibraryMessage": "Sauvegardez des histoires pour les retrouver ici !",
         "exploreStories": "Explorer les histoires",
         "addBio": "Ajouter une bio",
         "editProfile": "Modifier le profil",
-        "tabPosts": "Publications",
+        "tabPosts": "Messages",
         "tabSaved": "Sauvegardés",
-        "tabAbout": "À propos"
+        "tabAbout": "À propos",
+        "dailyGoal": "Objectif quotidien",
+        "goalReached": "Objectif atteint !",
+        "minRemaining": "Encore {{count}} min",
+        "minRemaining_one": "Encore 1 min",
+        "goalAlmost": "Presque là !",
+        "goalKeepGoing": "Continuez à lire pour atteindre votre objectif !"
     },
     "appearance": {
         "title": "Apparence",
         "theme": "Thème",
         "system": "Système",
         "light": "Clair",
-        "dark": "Sombre"
+        "dark": "Sombre",
+        "sepia": "Sépia"
     },
     "home": {
         "greeting": "Bonjour, {{name}}",
@@ -101,24 +142,30 @@
         "greeting_afternoon": "Bon après-midi",
         "greeting_evening": "Bonsoir",
         "greetingDefault": "Lecteur",
-        "searchPlaceholder": "Rechercher des histoires, auteurs...",
+        "searchPlaceholder": "Histoires, auteurs...",
         "continueReading": "Continuer la lecture",
         "dailyPick": "Choix du jour",
         "recommended": "Recommandé pour vous",
-        "trending": "Tendance actuelle",
+        "trending": "Tendances",
         "categories": {
             "forYou": "Pour vous",
-            "following": "Suivi",
+            "following": "Abonnements",
             "easy": "Facile",
             "medium": "Moyen",
             "hard": "Difficile",
             "authors": "Auteurs"
-        }
+        },
+        "showing": "Affichage",
+        "clearFilter": "Effacer le filtre",
+        "noResultsTitle": "Aucune histoire trouvée",
+        "noResultsDesc": "Aucune histoire ne correspond au filtre \"{{filter}}\". Essayez une autre catégorie."
     },
     "discover": {
+        "searchPlaceholder": "Histoires, auteurs...",
         "surpriseMe": "Surprenez-moi",
+        "surpriseMeDesc": "Laissez-nous choisir pour vous",
         "authorSpotlight": "Auteurs à la une",
-        "recentlyAdded": "Récemment ajouté",
+        "recentlyAdded": "Récemment ajoutés",
         "popularThisWeek": "Populaire cette semaine",
         "categories": {
             "all": "Tout",
@@ -138,11 +185,14 @@
         "emptyMessage": "Les auteurs apparaîtront ici une fois ajoutés.",
         "noStoriesTitle": "Pas encore d'histoires",
         "noStoriesMessage": "Cet auteur n'a pas encore publié d'histoires",
-        "notFound": "Auteur non trouvé"
+        "notFound": "Auteur non trouvé",
+        "discoverSubtitle": "Découvrez les voix derrière nos histoires",
+        "searchPlaceholder": "Chercher des auteurs...",
+        "noSearchResults": "Aucun auteur ne correspond à votre recherche"
     },
     "library": {
         "empty": "Votre bibliothèque est vide",
-        "emptyMessage": "Commencez à lire pour ajouter des livres à votre bibliothèque",
+        "emptyMessage": "Commencez à lire pour ajouter des livres",
         "discoverStories": "Découvrir des histoires",
         "quizTitle": "Quiz de pratique",
         "quizSubtitle": "{{count}} mots à pratiquer",
@@ -159,7 +209,7 @@
             "removeTitle": "Retirer de la bibliothèque",
             "removeMessage": "Retirer \"{{title}}\" de votre bibliothèque ?",
             "deleteDownloadTitle": "Supprimer le téléchargement",
-            "deleteDownloadMessage": "Supprimer le téléchargement de \"{{title}}\" ? Il ne sera plus disponible hors ligne."
+            "deleteDownloadMessage": "Supprimer \"{{title}}\" ? Plus disponible hors ligne."
         },
         "tabs": {
             "stories": "Histoires",
@@ -167,72 +217,96 @@
         }
     },
     "vocabulary": {
-        "title": "Constructeur de vocabulaire",
-        "searchPlaceholder": "Rechercher des mots enregistrés...",
+        "title": "Vocabulaire",
+        "searchPlaceholder": "Chercher des mots...",
         "empty": "Aucun mot enregistré",
-        "emptyMessage": "Appuyez sur des mots inconnus en lisant pour les enregistrer ici.",
+        "emptyMessage": "Appuyez sur des mots inconnus pour les sauvegarder ici.",
         "startReading": "Commencer à lire",
-        "noMatches": "Aucun mot correspondant",
-        "noMatchesMessage": "Essayez un autre terme de recherche."
+        "noMatches": "Aucun résultat",
+        "noMatchesMessage": "Essayez un autre terme."
     },
     "reading": {
         "complete": "{{percentage}}% terminé",
         "remainingTime": "~{{time}} min restantes",
+        "pageOfShifted": "Page {{current}} sur {{total}}",
+        "pagesLeftCount": "Encore {{count}} pages",
+        "pagesLeftCount_one": "Encore 1 page",
         "chapter": "Chapitre {{number}}",
         "startReading": "Commencer à lire",
         "continue": "Continuer",
         "notFound": "Histoire non trouvée",
-        "noContent": "Pas de contenu disponible.",
-        "lineSpacing": "Espacement des lignes",
+        "noContent": "Contenu indisponible.",
+        "lineSpacing": "Interligne",
         "audioAssist": "Assistance audio",
         "readingAloud": "Lecture à voix haute...",
         "audioAssistReady": "Assistance audio prête",
+        "minutesLeft": "Plus que {{count}} min pour votre objectif",
+        "minutesLeft_one": "Plus que 1 min pour votre objectif",
+        "controls": {
+            "appearance": "Apparence",
+            "save": "Enregistrer",
+            "saved": "Enregistré",
+            "share": "Partager",
+            "listen": "Écouter"
+        },
         "quiz": {
             "title": "Quiz de compréhension",
             "subtitle": "Voyons ce que vous avez appris !",
-            "start": "Commencer le quiz",
+            "start": "Commencer le Quiz",
             "next": "Question suivante",
             "finish": "Terminer",
             "correct": "Correct !",
             "incorrect": "Pas tout à fait...",
-            "result": "Vous avez eu {{count}} sur {{total}}",
+            "result": "Score : {{count}}/{{total}}",
             "accuracy": "Précision : {{percentage}}%",
             "done": "Retour à l'histoire",
             "checkpoint": "Point de contrôle"
+        },
+        "completion": {
+            "title": "Histoire terminée !",
+            "subtitle": "Beau travail ! Vous avez fini une autre aventure.",
+            "nextStory": "Trouver l'histoire suivante",
+            "backToHome": "Retour à l'accueil",
+            "ratingOptional": "Comment était l'histoire ? (Optionnel)",
+            "readyForMore": "Prêt pour une autre aventure ?"
         }
     },
     "settings": {
+        "title": "Paramètres",
         "sections": {
             "account": "COMPTE",
             "preferences": "PRÉFÉRENCES",
             "storage": "STOCKAGE",
             "about": "À PROPOS",
-            "dangerZone": "ZONE DE DANGER"
+            "dangerZone": "ZONE DE DANGER",
+            "signIn": "CONNEXION"
         },
         "account": {
             "email": "E-mail",
             "notSet": "Non défini",
-            "changePassword": "Changer le mot de passe"
+            "changePassword": "Changer le mot de passe",
+            "signIn": "Connexion / Inscription",
+            "unlockFeatures": "Débloquer tout"
         },
         "preferences": {
             "theme": "Thème",
             "language": "Langue",
             "fontSize": "Taille de police",
-            "fontSizeInstruction": "Réglez la taille de la police de lecture dans l'écran de lecture à l'aide des boutons A- et A+.",
+            "fontSizeInstruction": "Réglez la taille de police avec A- et A+ dans la lecture.",
             "notifications": "Notifications"
         },
         "storage": {
             "downloads": "Téléchargements",
             "storiesCount": "{{count}} histoires",
             "none": "Aucun",
-            "clearDownloads": "Effacer tous les téléchargements",
+            "clearDownloads": "Effacer tout",
             "cache": "Cache",
             "clearCache": "Effacer le cache"
         },
         "about": {
-            "rateApp": "Évaluer l'application",
-            "rateAppMessage": "Merci de vouloir nous évaluer ! Le lien vers l'App Store sera bientôt disponible.",
-            "privacyPolicy": "Politique de confidentialité",
+            "rateApp": "Évaluer l'app",
+            "rateAppMessage": "Merci ! Le lien App Store arrive bientôt.",
+            "privacyPolicy": "Confidentialité",
             "termsOfService": "Conditions d'utilisation",
             "version": "Version"
         },
@@ -243,28 +317,28 @@
         "dialogs": {
             "signOut": {
                 "title": "Déconnexion",
-                "message": "Êtes-vous sûr de vouloir vous déconnecter ?"
+                "message": "Êtes-vous sûr ?"
             },
             "deleteAccount": {
                 "title": "Supprimer le compte",
-                "message": "Cela supprimera définitivement votre compte et toutes les données. Cette action ne peut pas être annulée.",
-                "instruction": "Veuillez contacter support@englishtales.app pour supprimer votre compte."
+                "message": "Ceci est irréversible. Toutes les données seront supprimées.",
+                "instruction": "Contactez support@englishtales.app pour supprimer."
             },
             "clearCache": {
                 "title": "Effacer le cache",
-                "message": "Cela effacera les données temporaires. Votre bibliothèque et votre progression ne seront pas affectées.",
+                "message": "Efface les données temporaires. Votre progression est sauve.",
                 "success": "Cache effacé"
             },
             "clearDownloads": {
                 "title": "Effacer les téléchargements",
-                "message": "Supprimer les {{count}} histoires téléchargées ? Elles ne seront plus disponibles hors ligne.",
-                "success": "Tous les téléchargements effacés"
+                "message": "Supprimer les {{count}} téléchargements ?",
+                "success": "Téléchargements effacés"
             },
             "changePassword": {
                 "title": "Changer le mot de passe",
-                "message": "Un e-mail de réinitialisation sera envoyé à {{email}}",
-                "success": "E-mail envoyé ! Vérifiez votre boîte de réception.",
-                "error": "Échec de l'envoi. Veuillez réessayer."
+                "message": "E-mail envoyé à {{email}}",
+                "success": "E-mail envoyé !",
+                "error": "Erreur d'envoi."
             }
         },
         "footer": "Fait avec ❤️ pour les apprenants d'anglais"
@@ -277,29 +351,115 @@
         "community": "Communauté",
         "following": "Abonnements",
         "findFriends": "Trouver des amis",
-        "searchPlaceholder": "Rechercher par nom ou email...",
+        "searchPlaceholder": "Nom ou e-mail...",
         "noUsersFound": "Aucun utilisateur trouvé",
         "add": "Ajouter",
         "requestSent": "Demande envoyée !",
         "requestAccepted": "Demande acceptée !",
         "requestCancelled": "Demande annulée",
         "friendRemoved": "Ami supprimé",
-        "requests": "Demandes d'ami",
+        "requests": "Demandes",
         "myFriends": "Mes amis",
-        "sentRequests": "Demandes envoyées",
-        "requestPending": "Demande en attente",
+        "sentRequests": "Envoyées",
+        "requestPending": "En attente",
         "emptyTitle": "Pas encore d'amis",
-        "emptyDesc": "Connectez-vous avec d'autres lecteurs pour partager votre progression !",
-        "communityBuzz": "Actualités de la communauté",
+        "emptyDesc": "Connectez-vous avec d'autres lecteurs !",
+        "communityBuzz": "Fil d'actualité",
         "activityFinished": "a terminé {{title}}",
         "activityEarned": "a obtenu {{title}}",
-        "activityStarted": "a commencé à lire {{title}}",
+        "activityStarted": "lit {{title}}",
+        "activityReviewed": "a évalué {{title}}",
         "shareSomething": "Partagez votre progression...",
         "reply": "Répondre",
         "congratulate": "Féliciter",
         "congratulated": "Félicité",
         "achievement": "Succès",
         "activeReader": "Lecteur actif",
-        "createPost": "Nouvelle publication"
+        "createPost": "Nouveau message"
+    },
+    "errors": {
+        "firebase": {
+            "unknown": "Erreur. Réessayez.",
+            "networkError": "Erreur réseau.",
+            "emailAlreadyInUse": "E-mail déjà utilisé.",
+            "invalidEmail": "E-mail invalide.",
+            "userDisabled": "Compte désactivé.",
+            "tooManyRequests": "Trop de tentatives.",
+            "sessionExpired": "Session expirée.",
+            "unauthenticated": "Identifiez-vous."
+        }
+    },
+    "monetization": {
+        "coins": {
+            "balance": "{{count}} Pièces",
+            "earned": "+{{count}} pièces gagnées !",
+            "spent": "-{{count}} pièces dépensées",
+            "notEnough": "Pas assez de pièces"
+        },
+        "storyUnlock": {
+            "title": "Débloquer l'histoire",
+            "locked": "Cette histoire est verrouillée",
+            "watchAd": "Regarder une pub pour débloquer",
+            "watchAdFree": "Gratuit • Regardez une courte pub",
+            "useCoins": "Utiliser {{count}} Pièces",
+            "unlockFor24h": "Débloquer pour 24h",
+            "goPremium": "Passer Premium",
+            "unlockAll": "Tout débloquer pour toujours",
+            "success": "Histoire débloquée !",
+            "adWatching": "Chargement de la pub..."
+        },
+        "streakProtection": {
+            "title": "Protégez votre série !",
+            "subtitle": "Votre série de {{count}} jours est en danger !",
+            "message": "Vous n'avez pas lu aujourd'hui. Utilisez une protection.",
+            "watchAd": "Regarder une pub",
+            "watchAdDesc": "Protection gratuite",
+            "useCoins": "Utiliser {{count}} Pièces",
+            "coinsDesc": "Protection instantanée",
+            "goPremium": "Passer Premium",
+            "premiumDesc": "Auto-protection permanente",
+            "protected": "Série protégée !",
+            "loseStreak": "Passer & perdre la série"
+        },
+        "dailyBonus": {
+            "title": "Bonus quotidien !",
+            "subtitle": "Jour {{day}} sur 7",
+            "claim": "Récupérer",
+            "claimed": "Revenez demain !",
+            "doubleWithAd": "2x avec une pub",
+            "doubleSuccess": "Récompense doublée !",
+            "rewards": {
+                "coins": "{{count}} Pièces",
+                "translations": "{{count}} traductions gratuites",
+                "streakProtector": "Protecteur de série",
+                "premiumTrial": "1 jour Premium offert"
+            }
+        },
+        "premium": {
+            "title": "Passer Premium",
+            "subtitle": "Débloquez l'expérience complète",
+            "features": {
+                "unlimitedTranslations": "Traductions illimitées",
+                "allStories": "Toutes les histoires libres",
+                "noAds": "Zéro publicité",
+                "streakProtection": "Protection auto de série",
+                "dailyCoins": "100 pièces bonus par jour"
+            },
+            "monthly": "Mensuel",
+            "yearly": "Annuel",
+            "saveBadge": "Économisez {{percent}}%",
+            "subscribe": "S'abonner",
+            "restore": "Restaurer l'achat",
+            "terms": "Conditions",
+            "privacy": "Confidentialité",
+            "cancelAnytime": "Annulable à tout moment"
+        },
+        "translationLimit": {
+            "title": "Limite atteinte",
+            "message": "Traductions gratuites épuisées.",
+            "watchAd": "Voir une pub pour +5",
+            "goPremium": "Premium pour l'illimité",
+            "remaining": "{{count}} traductions restantes"
+        }
     }
 }

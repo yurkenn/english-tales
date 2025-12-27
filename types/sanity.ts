@@ -76,6 +76,7 @@ export interface Story extends SanityDocument {
     estimatedReadTime: number;
     wordCount: number;
     isFeatured?: boolean;
+    isPremiumOnly?: boolean;
     publishedAt?: string;
     quiz?: QuizQuestion[];
 }

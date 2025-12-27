@@ -52,6 +52,14 @@ const BookCardComponent: React.FC<BookCardProps> = ({
                 </View>
             )}
 
+            {/* Premium Badge */}
+            {story.isPremiumOnly && (
+                <View style={styles.premiumBadge}>
+                    <Ionicons name="star" size={10} color="#FFFFFF" />
+                    <Typography variant="label" color="#FFFFFF" style={styles.premiumText}>PRO</Typography>
+                </View>
+            )}
+
             {/* Info */}
             <View style={styles.info}>
                 <Typography variant="subtitle" numberOfLines={1} style={styles.title}>
@@ -107,5 +115,22 @@ const styles = StyleSheet.create((theme) => ({
     },
     title: {
         marginTop: 0,
+    },
+    premiumBadge: {
+        position: 'absolute',
+        bottom: 50, // Above the info section, on top of the cover
+        right: theme.spacing.sm,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 2,
+        backgroundColor: theme.colors.warning,
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: 2,
+        borderRadius: theme.radius.full,
+        zIndex: 10,
+    },
+    premiumText: {
+        fontSize: 10,
+        fontWeight: 'bold',
     },
 }));

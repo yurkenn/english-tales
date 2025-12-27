@@ -124,6 +124,7 @@
         "dailyGoal": "Günlük Hedef",
         "goalReached": "Günlük Hedef Tamamlandı!",
         "minRemaining": "{{count}} dk kaldı",
+        "minRemaining_one": "1 dk kaldı",
         "goalAlmost": "Neredeyse başardın!",
         "goalKeepGoing": "Hedefine ulaşmana çok az kaldı, okumaya devam et!"
     },
@@ -229,6 +230,7 @@
         "remainingTime": "~{{time}} dk kaldı",
         "pageOfShifted": "Sayfa {{current}} / {{total}}",
         "pagesLeftCount": "{{count}} sayfa kaldı",
+        "pagesLeftCount_one": "1 sayfa kaldı",
         "chapter": "Bölüm {{number}}",
         "startReading": "Okumaya Başla",
         "continue": "Devam Et",
@@ -414,6 +416,86 @@
             "unauthorized": "Bu dosyaya erişim izniniz yok.",
             "retryLimitExceeded": "Yükleme başarısız. Lütfen tekrar deneyin.",
             "uploadCanceled": "Yükleme iptal edildi."
+        }
+    },
+    "monetization": {
+        "coins": {
+            "balance": "{{count}} Altın",
+            "earned": "+{{count}} altın kazanıldı!",
+            "spent": "-{{count}} altın harcandı",
+            "notEnough": "Yeterli altın yok"
+        },
+        "storyUnlock": {
+            "title": "Hikayeyi Aç",
+            "locked": "Bu hikaye kilitli",
+            "watchAd": "Reklam İzle ve Aç",
+            "watchAdFree": "Ücretsiz • Kısa reklam izle",
+            "useCoins": "{{count}} Altın Kullan",
+            "unlockFor24h": "24 saat için aç",
+            "goPremium": "Premium'a Geç",
+            "unlockAll": "Tüm hikayelere sınırsız eriş",
+            "success": "Hikaye açıldı!",
+            "adWatching": "Reklam yükleniyor..."
+        },
+        "streakProtection": {
+            "title": "Serisini Koru!",
+            "subtitle": "{{count}} günlük serin risk altında!",
+            "message": "Bugün okumadın. Seriyi korumak için koruyucu kullan.",
+            "watchAd": "Reklam İzle",
+            "watchAdDesc": "Ücretsiz koruma",
+            "useCoins": "{{count}} Altın Kullan",
+            "coinsDesc": "Anında koruma",
+            "goPremium": "Premium'a Geç",
+            "premiumDesc": "Otomatik koruma",
+            "protected": "Seri korundu!",
+            "loseStreak": "Geç ve Seriyi Kaybet"
+        },
+        "dailyBonus": {
+            "title": "Günlük Bonus!",
+            "subtitle": "Gün {{day}} / 7",
+            "claim": "Ödülü Al",
+            "claimed": "Yarın tekrar gel!",
+            "doubleWithAd": "Reklam İzle 2x Al",
+            "doubleSuccess": "Ödül ikiye katlandı!",
+            "rewards": {
+                "coins": "{{count}} Altın",
+                "translations": "{{count}} Ücretsiz Çeviri",
+                "streakProtector": "Seri Koruyucu",
+                "premiumTrial": "1 Günlük Premium Deneme"
+            },
+            "day1": "1. Gün",
+            "day2": "2. Gün",
+            "day3": "3. Gün",
+            "day4": "4. Gün",
+            "day5": "5. Gün",
+            "day6": "6. Gün",
+            "day7": "7. Gün"
+        },
+        "premium": {
+            "title": "Premium'a Geç",
+            "subtitle": "Tam deneyimin kilidini aç",
+            "features": {
+                "unlimitedTranslations": "Sınırsız çeviri",
+                "allStories": "Tüm hikayeler açık",
+                "noAds": "Reklamsız deneyim",
+                "streakProtection": "Otomatik seri koruma",
+                "dailyCoins": "Günlük 100 bonus altın"
+            },
+            "monthly": "Aylık",
+            "yearly": "Yıllık",
+            "saveBadge": "%{{percent}} Tasarruf",
+            "subscribe": "Abone Ol",
+            "restore": "Satın Almayı Geri Yükle",
+            "terms": "Kullanım Koşulları",
+            "privacy": "Gizlilik Politikası",
+            "cancelAnytime": "İstediğin zaman iptal et"
+        },
+        "translationLimit": {
+            "title": "Çeviri Limiti Doldu",
+            "message": "Bugünkü ücretsiz çevirilerin bitti.",
+            "watchAd": "Reklam İzle 5 Çeviri Kazan",
+            "goPremium": "Sınırsız için Premium'a Geç",
+            "remaining": "{{count}} çeviri hakkı kaldı"
         }
     }
 }

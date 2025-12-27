@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
 import { useTranslation } from 'react-i18next'
 
-import { Typography, ProfileTabButton, ProfileStatItem } from '../../components/atoms'
+import { Typography, ProfileTabButton, ProfileStatItem, CoinDisplay } from '../../components/atoms'
 import { CommunityPostCard } from '../../components/organisms/CommunityPostCard'
 import { StoryGridCard } from '../../components/molecules/StoryGridCard'
 import { GuestLoginBanner } from '../../components/molecules/GuestLoginBanner'
@@ -277,13 +277,16 @@ export default function ProfileScreen() {
                 {/* Standard Header */}
                 <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
                     <Typography style={styles.headerTitle}>{t('tabs.profile', 'Profile')}</Typography>
-                    <Pressable
-                        style={styles.settingsButton}
-                        onPress={handleSettingsPress}
-                        hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                    >
-                        <Ionicons name="settings-outline" size={24} color={theme.colors.text} />
-                    </Pressable>
+                    <View style={styles.headerRight}>
+                        <CoinDisplay />
+                        <Pressable
+                            style={styles.settingsButton}
+                            onPress={handleSettingsPress}
+                            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                        >
+                            <Ionicons name="settings-outline" size={24} color={theme.colors.text} />
+                        </Pressable>
+                    </View>
                 </View>
 
                 {/* Profile Card */}
@@ -464,6 +467,11 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         ...theme.shadows.sm,
+    },
+    headerRight: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: theme.spacing.md,
     },
 
     profileCard: {

@@ -14,3 +14,6 @@ export * from './useProfileDataManager';
 export * from './useProfileStatsManager';
 export * from './useProfileUIController';
 export * from './useRewardedAd';
+export * from './useReadingCompletion';
+export * from './useReadingControls';
+export * from './useDailyBonusManager';

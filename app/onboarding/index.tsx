@@ -16,8 +16,9 @@ import {
     OnboardingSlide,
     OnboardingLevelSelection,
     OnboardingTrackVisual,
-    OnboardingConnectVisual
-} from '@/components/molecules';
+    OnboardingConnectVisual,
+    OnboardingPaywall
+} from '@/components';
 
 type ProficiencyLevel = 'beginner' | 'intermediate' | 'advanced';
 
@@ -48,6 +49,7 @@ export default function OnboardingScreen() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedLevel, setSelectedLevel] = useState<ProficiencyLevel>('intermediate');
     const [isLoading, setIsLoading] = useState(false);
+    const [showPaywall, setShowPaywall] = useState(false);
     const settingsActions = useSettingsStore((s) => s.actions);
 
     const handleNext = async () => {
@@ -57,7 +59,7 @@ export default function OnboardingScreen() {
                 animated: true,
             });
         } else {
-            await completeOnboarding();
+            setShowPaywall(true);
         }
     };
 
@@ -119,31 +121,40 @@ export default function OnboardingScreen() {
 
     return (
         <View style={styles.container}>
-            <FlatList
-                ref={flatListRef}
-                data={ONBOARDING_DATA}
-                renderItem={renderSlide}
-                horizontal
-                pagingEnabled
-                showsHorizontalScrollIndicator={false}
-                onScroll={onScroll}
-                scrollEventThrottle={16}
-                keyExtractor={(item) => item.id}
-                bounces={false}
-            />
-            {/* Skip Button - Only on first two slides */}
-            {currentIndex < ONBOARDING_DATA.length - 1 && (
-                <Pressable
-                    style={styles.skipButton}
-                    onPress={() => {
-                        flatListRef.current?.scrollToIndex({
-                            index: ONBOARDING_DATA.length - 1,
-                            animated: true,
-                        });
-                    }}
-                >
-                    <Text style={styles.skipText}>Skip</Text>
-                </Pressable>
+            {showPaywall ? (
+                <OnboardingPaywall
+                    onClose={completeOnboarding}
+                    onSuccess={completeOnboarding}
+                />
+            ) : (
+                <>
+                    <FlatList
+                        ref={flatListRef}
+                        data={ONBOARDING_DATA}
+                        renderItem={renderSlide}
+                        horizontal
+                        pagingEnabled
+                        showsHorizontalScrollIndicator={false}
+                        onScroll={onScroll}
+                        scrollEventThrottle={16}
+                        keyExtractor={(item) => item.id}
+                        bounces={false}
+                    />
+                    {/* Skip Button - Only on first two slides */}
+                    {currentIndex < ONBOARDING_DATA.length - 1 && (
+                        <Pressable
+                            style={styles.skipButton}
+                            onPress={() => {
+                                flatListRef.current?.scrollToIndex({
+                                    index: ONBOARDING_DATA.length - 1,
+                                    animated: true,
+                                });
+                            }}
+                        >
+                            <Text style={styles.skipText}>Skip</Text>
+                        </Pressable>
+                    )}
+                </>
             )}
         </View>
     );

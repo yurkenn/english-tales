@@ -4,6 +4,7 @@ import { dictionaryService, DictionaryEntry } from '@/services/dictionary'
 import { analyticsService } from '@/services/firebase/analytics'
 import { useRewardStore } from '@/store/rewardStore'
 import { useAuthStore } from '@/store/authStore'
+import { useSubscriptionStore } from '@/store/subscriptionStore'
 import { haptics } from '@/utils/haptics'
 
 interface UseDictionaryManagementProps {
@@ -43,8 +44,10 @@ export function useDictionaryManagement({ storyId }: UseDictionaryManagementProp
         haptics.light()
 
         // Check if user is premium (skip limit for premium users)
+        // Check both user field and RevenueCat subscription store
         const user = useAuthStore.getState().user
-        const isPremium = user?.isPremium ?? false
+        const subscriptionState = useSubscriptionStore.getState()
+        const isPremium = user?.isPremium || subscriptionState.isPremium
 
         if (isPremium) {
             // Premium users have unlimited translations
@@ -57,7 +60,7 @@ export function useDictionaryManagement({ storyId }: UseDictionaryManagementProp
             // Show limit modal and save the word for later
             setPendingWord(cleaned)
             setShowTranslationLimitModal(true)
-            
+
             analyticsService.logEvent('translation_limit_reached', {
                 story_id: storyId
             })
@@ -71,7 +74,7 @@ export function useDictionaryManagement({ storyId }: UseDictionaryManagementProp
 
     const handleTranslationRewardEarned = useCallback(() => {
         setShowTranslationLimitModal(false)
-        
+
         // If there was a pending word, look it up now
         if (pendingWord) {
             rewardActions.useTranslation()

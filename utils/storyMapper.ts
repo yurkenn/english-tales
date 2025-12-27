@@ -20,6 +20,7 @@ export const mapSanityStory = (doc: any): Story => ({
     tags: doc.categories?.map((c: any) => c.title) || [],
     createdAt: new Date(doc.publishedAt || new Date()),
     updatedAt: new Date(doc.publishedAt || new Date()),
+    isPremiumOnly: doc.isPremiumOnly || false,
 });
 
 /**

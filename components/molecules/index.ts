@@ -60,3 +60,6 @@ export { StorySnippet } from './StorySnippet';
 export { RewardedAdButton } from './RewardedAdButton';
 export { TranslationLimitModal } from './TranslationLimitModal';
 export { StoryUnlockModal } from './StoryUnlockModal';
+export { StreakProtectionModal } from './StreakProtectionModal';
+export { DailyBonusModal } from './DailyBonusModal';
+export { TrialTimeline } from './TrialTimeline';

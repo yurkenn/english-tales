@@ -57,6 +57,14 @@ const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
                             {difficultyLabel}
                         </Typography>
                     </View>
+                    {story.isPremiumOnly && (
+                        <View style={styles.premiumBadge}>
+                            <Ionicons name="star" size={12} color="#FFFFFF" />
+                            <Typography variant="label" color="#FFFFFF" style={styles.premiumText}>
+                                PRO
+                            </Typography>
+                        </View>
+                    )}
                     {isInLibrary && (
                         <View style={styles.libraryBadge}>
                             <Ionicons name="bookmark" size={12} color="#FFFFFF" />
@@ -140,6 +148,19 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         ...theme.shadows.sm,
+    },
+    premiumBadge: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 2,
+        backgroundColor: theme.colors.warning,
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: 2,
+        borderRadius: theme.radius.full,
+    },
+    premiumText: {
+        fontSize: 10,
+        fontWeight: 'bold',
     },
     overlayInfo: {
         position: 'absolute',

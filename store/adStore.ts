@@ -8,6 +8,13 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { REWARD_CONFIG } from '@/services/ads/adConfig'
 
+// Helper to check if user should see ads (non-premium)
+const shouldShowAds = () => {
+    // Dynamic import to avoid circular dependencies
+    const { useSubscriptionStore } = require('./subscriptionStore')
+    return !useSubscriptionStore.getState().isPremium
+}
+
 interface AdState {
     isInitialized: boolean
     isAdLoading: boolean
