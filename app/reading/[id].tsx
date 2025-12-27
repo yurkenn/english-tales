@@ -16,6 +16,7 @@ import {
     ReadingScreenSkeleton,
     WriteReviewSheet,
     HighlightMenu,
+    TranslationLimitModal,
     READING_THEMES,
     type ReadingTheme,
 } from '@/components';
@@ -174,6 +175,10 @@ export default function ReadingScreen() {
         dictionaryData,
         isWordLoading,
         handleWordPress,
+        showTranslationLimitModal,
+        closeTranslationLimitModal,
+        handleTranslationRewardEarned,
+        remainingTranslations,
     } = useDictionaryManagement({ storyId: id });
 
     // Highlight Management
@@ -473,6 +478,12 @@ export default function ReadingScreen() {
                     setShowHighlightMenu(false);
                 }}
                 onDismiss={() => setShowHighlightMenu(false)}
+            />
+
+            <TranslationLimitModal
+                visible={showTranslationLimitModal}
+                onClose={closeTranslationLimitModal}
+                onRewardEarned={handleTranslationRewardEarned}
             />
         </View>
     );

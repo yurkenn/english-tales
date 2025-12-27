@@ -10,6 +10,9 @@ export interface User {
     photoURL: string | null;
     createdAt: Date;
     isAnonymous: boolean;
+    // Premium subscription fields
+    isPremium?: boolean;
+    subscriptionExpiresAt?: Date;
 }
 
 export interface UserProfile {

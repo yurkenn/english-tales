@@ -1,10 +1,20 @@
 {
-    "react-native": {
-        "crashlytics_auto_collection_enabled": true,
-        "crashlytics_debug_enabled": true,
-        "crashlytics_is_error_generation_on_js_crash_enabled": true,
-        "crashlytics_javascript_exception_handler_chaining_enabled": true,
-        "perf_auto_collection_enabled": true,
-        "analytics_auto_collection_enabled": true
-    }
+  "react-native": {
+    "crashlytics_auto_collection_enabled": true,
+    "crashlytics_debug_enabled": true,
+    "crashlytics_is_error_generation_on_js_crash_enabled": true,
+    "crashlytics_javascript_exception_handler_chaining_enabled": true,
+    "perf_auto_collection_enabled": true,
+    "analytics_auto_collection_enabled": true
+  },
+  "hosting": {
+    "site": "englishtales-app",
+    "public": "public",
+    "cleanUrls": true,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
 }

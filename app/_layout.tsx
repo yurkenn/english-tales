@@ -31,6 +31,7 @@ import { useDownloadStore } from '../store/downloadStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { secureStorage } from '../services/storage';
 import { notificationService } from '@/services/notificationService';
+import { adService } from '@/services/ads';
 import { StatusBar } from 'expo-status-bar';
 import {
   AchievementToast,
@@ -123,6 +124,11 @@ export default function RootLayout() {
       if (useSettingsStore.getState().settings.notificationsEnabled) {
         notificationService.initialize();
       }
+
+      // Initialize AdMob SDK and preload ads
+      adService.initialize().catch((err) => {
+        console.warn('[AdMob] Failed to initialize:', err);
+      });
     }
   }, [initialized]);
 

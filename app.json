@@ -24,6 +24,12 @@
             "minSdkVersion": 24
           }
         }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-6012481599277383~8771515308"
+        }
       ]
     ],
     "experiments": {

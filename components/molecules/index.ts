@@ -57,3 +57,6 @@ export { VocabularyMilestoneCard } from './VocabularyMilestoneCard';
 export { HighlightMenu } from './HighlightMenu';
 export { AuthorSection } from './AuthorSection';
 export { StorySnippet } from './StorySnippet';
+export { RewardedAdButton } from './RewardedAdButton';
+export { TranslationLimitModal } from './TranslationLimitModal';
+export { StoryUnlockModal } from './StoryUnlockModal';

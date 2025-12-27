@@ -4,7 +4,9 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { ConfettiCelebration } from './ConfettiCelebration';
+import { RewardedAdButton } from '../molecules/RewardedAdButton';
 import { haptics } from '@/utils/haptics';
+import { useToastStore } from '@/store/toastStore';
 
 interface CompletionModalProps {
     visible: boolean;
@@ -26,10 +28,15 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
     const { theme } = useUnistyles();
     const { t } = useTranslation();
     const [rating, setRating] = useState(0);
+    const toastActions = useToastStore((s) => s.actions);
 
     const handleRatingPress = (value: number) => {
         haptics.selection();
         setRating(value);
+    };
+
+    const handleAdRewardEarned = () => {
+        toastActions.success(t('ads.rewardEarned', 'Reward earned! Next story unlocked.'));
     };
 
     return (
@@ -76,6 +83,19 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
 
                     <View style={styles.footer}>
                         <Text style={styles.readyText}>{t('reading.completion.readyForMore')}</Text>
+
+                        {/* Rewarded Ad Option */}
+                        <View style={styles.adButtonContainer}>
+                            <RewardedAdButton
+                                rewardType="story_unlock"
+                                buttonText={t('ads.watchForNextStory', 'Watch ad for bonus')}
+                                rewardDescription={t('ads.unlockNextFree', 'Unlock next story free')}
+                                onRewardEarned={handleAdRewardEarned}
+                                variant="outline"
+                                size="md"
+                            />
+                        </View>
+
                         <Pressable
                             style={styles.button}
                             onPress={() => {
@@ -96,6 +116,7 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
         </Modal>
     );
 };
+
 
 const styles = StyleSheet.create((theme) => ({
     overlay: {
@@ -223,5 +244,8 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.textMuted,
         fontWeight: theme.typography.weight.medium,
+    },
+    adButtonContainer: {
+        width: '100%',
     },
 }));

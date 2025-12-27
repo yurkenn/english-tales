@@ -13,3 +13,4 @@ export * from './useAudioAssist';
 export * from './useProfileDataManager';
 export * from './useProfileStatsManager';
 export * from './useProfileUIController';
+export * from './useRewardedAd';
