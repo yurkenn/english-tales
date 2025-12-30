@@ -11,6 +11,7 @@ import { useReadingPrefsStore } from '@/store/readingPrefsStore';
 import { useDownloadStore, formatBytes } from '@/store/downloadStore';
 import { useToastStore } from '@/store/toastStore';
 import { useSettingsStore } from '@/store/settingsStore';
+import { useSubscriptionStore } from '@/store/subscriptionStore';
 import { useTranslation } from 'react-i18next';
 import { ActionSheet, ConfirmationDialog, SettingItem, SettingToggle, SettingsHeader, SettingSection } from '@/components';
 import { Typography } from '@/components/atoms';
@@ -46,6 +47,7 @@ export default function SettingsScreen() {
     const { settings, actions: settingsActions } = useSettingsStore();
     const { fontSize } = useReadingPrefsStore();
     const { downloads, actions: downloadActions } = useDownloadStore();
+    const { isPremium, subscriptionType, expiresAt, actions: subscriptionActions } = useSubscriptionStore();
     const toast = useToastStore();
 
     const [, setCacheSize] = useState(t('common.loading'));
@@ -59,6 +61,7 @@ export default function SettingsScreen() {
     const themeDialogRef = useRef<BottomSheet>(null);
     const deleteAccountDialogRef = useRef<BottomSheet>(null);
     const [isDeleting, setIsDeleting] = useState(false);
+    const [isRestoring, setIsRestoring] = useState(false);
 
     useEffect(() => {
         const calculateCache = async () => {
@@ -124,6 +127,52 @@ export default function SettingsScreen() {
                     )}
                 </SettingSection>
 
+                {/* Subscription Section */}
+                <SettingSection title={t('settings.sections.subscription', 'Subscription')}>
+                    <SettingItem
+                        icon={isPremium ? 'star' : 'star-outline'}
+                        label={t('settings.subscription.status', 'Status')}
+                        value={isPremium
+                            ? t('settings.subscription.premium', 'Premium') + (subscriptionType ? ` (${subscriptionType})` : '')
+                            : t('settings.subscription.free', 'Free')
+                        }
+                        hasChevron={false}
+                    />
+                    {isPremium && expiresAt && subscriptionType !== 'lifetime' && (
+                        <SettingItem
+                            icon="calendar-outline"
+                            label={t('settings.subscription.expiresAt', 'Expires')}
+                            value={new Date(expiresAt).toLocaleDateString()}
+                            hasChevron={false}
+                        />
+                    )}
+                    <SettingItem
+                        icon="refresh-outline"
+                        label={isRestoring
+                            ? t('common.loading', 'Loading...')
+                            : t('settings.subscription.restore', 'Restore Purchases')
+                        }
+                        onPress={async () => {
+                            if (isRestoring) return;
+                            haptics.selection();
+                            setIsRestoring(true);
+                            try {
+                                const restored = await subscriptionActions.restore();
+                                if (restored) {
+                                    haptics.success();
+                                    toast.actions.success(t('settings.subscription.restoreSuccess', 'Purchases restored successfully!'));
+                                } else {
+                                    toast.actions.info(t('settings.subscription.noSubscription', 'No active subscription found.'));
+                                }
+                            } catch (error) {
+                                haptics.error();
+                                toast.actions.error(t('settings.subscription.restoreError', 'Failed to restore purchases.'));
+                            } finally {
+                                setIsRestoring(false);
+                            }
+                        }}
+                    />
+                </SettingSection>
 
                 <SettingSection title={t('settings.sections.preferences')}>
                     <SettingItem

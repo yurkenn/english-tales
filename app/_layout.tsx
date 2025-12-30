@@ -154,6 +154,23 @@ export default function RootLayout() {
         console.warn('[Subscription] Failed to initialize:', err);
       });
     }
+  }, [initialized]);
+
+  // Sync subscription store with user auth state
+  useEffect(() => {
+    if (initialized && user?.id) {
+      // Login to RevenueCat when user authenticates (links purchases to user account)
+      useSubscriptionStore.getState().actions.loginUser(user.id).catch((err) => {
+        console.warn('[Subscription] Failed to login user:', err);
+      });
+    }
+
+    // Validate cached premium status on app start (check expiration)
+    if (initialized) {
+      useSubscriptionStore.getState().actions.validatePremiumStatus().catch((err) => {
+        console.warn('[Subscription] Failed to validate premium status:', err);
+      });
+    }
   }, [initialized, user?.id]);
 
   // Hide native splash once the app is initialized

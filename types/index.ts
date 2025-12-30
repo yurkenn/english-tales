@@ -36,6 +36,10 @@ export interface UserProfile {
     };
     joinedAt?: any;
     updatedAt?: any;
+    // Premium subscription fields (synced from RevenueCat)
+    isPremium?: boolean;
+    subscriptionType?: 'monthly' | 'yearly' | 'lifetime';
+    subscriptionExpiresAt?: any;
 }
 
 // Story types

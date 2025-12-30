@@ -8,6 +8,7 @@ import { persist, createJSONStorage } from 'zustand/middleware'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { PurchasesOffering, PurchasesPackage, CustomerInfo } from 'react-native-purchases'
 import { subscriptionService, PREMIUM_ENTITLEMENT } from '@/services/subscription'
+import { userService } from '@/services/userService'
 
 interface SubscriptionState {
     // Status
@@ -19,6 +20,9 @@ interface SubscriptionState {
     subscriptionType: 'monthly' | 'yearly' | 'lifetime' | null
     expiresAt: Date | null
 
+    // User tracking for Firestore sync
+    currentUserId: string | null
+
     // Offerings
     offerings: PurchasesOffering | null
     packages: PurchasesPackage[]
@@ -29,7 +33,9 @@ interface SubscriptionState {
 
 interface SubscriptionActions {
     initialize: (userId?: string) => Promise<void>
+    loginUser: (userId: string) => Promise<void>
     checkPremiumStatus: () => Promise<boolean>
+    validatePremiumStatus: () => Promise<void>
     fetchOfferings: () => Promise<void>
     purchase: (pkg: PurchasesPackage) => Promise<boolean>
     restore: () => Promise<boolean>
@@ -45,6 +51,7 @@ const initialState: SubscriptionState = {
     isLoading: false,
     subscriptionType: null,
     expiresAt: null,
+    currentUserId: null,
     offerings: null,
     packages: [],
     error: null,
@@ -58,7 +65,7 @@ export const useSubscriptionStore = create<SubscriptionState & { actions: Subscr
                 initialize: async (userId?: string) => {
                     if (get().isInitialized) return
 
-                    set({ isLoading: true, error: null })
+                    set({ isLoading: true, error: null, currentUserId: userId || null })
 
                     try {
                         const success = await subscriptionService.initialize(userId)
@@ -75,6 +82,22 @@ export const useSubscriptionStore = create<SubscriptionState & { actions: Subscr
                     }
                 },
 
+                loginUser: async (userId: string) => {
+                    try {
+                        // Update stored userId
+                        set({ currentUserId: userId })
+
+                        // Login to RevenueCat to sync purchases with user account
+                        const customerInfo = await subscriptionService.logIn(userId)
+                        if (customerInfo) {
+                            get().actions.syncWithCustomerInfo(customerInfo)
+                            console.log('[SubscriptionStore] User logged in to RevenueCat:', userId)
+                        }
+                    } catch (error) {
+                        console.error('[SubscriptionStore] Failed to login user:', error)
+                    }
+                },
+
                 checkPremiumStatus: async () => {
                     try {
                         const customerInfo = await subscriptionService.getCustomerInfo()
@@ -86,6 +109,32 @@ export const useSubscriptionStore = create<SubscriptionState & { actions: Subscr
                     } catch (error) {
                         console.error('[SubscriptionStore] Status check failed:', error)
                         return false
+                    }
+                },
+
+                validatePremiumStatus: async () => {
+                    const { isPremium, expiresAt, subscriptionType } = get()
+
+                    // If not premium, nothing to validate
+                    if (!isPremium) return
+
+                    // Lifetime subscriptions don't expire
+                    if (subscriptionType === 'lifetime') return
+
+                    // Check if cached premium has expired
+                    if (expiresAt) {
+                        const now = new Date()
+                        const expiration = new Date(expiresAt)
+
+                        if (now > expiration) {
+                            console.log('[SubscriptionStore] Cached premium expired, re-verifying with RevenueCat...')
+                            // Re-verify with RevenueCat
+                            await get().actions.checkPremiumStatus()
+                        }
+                    } else {
+                        // No expiration date cached, re-verify to be safe
+                        console.log('[SubscriptionStore] No expiration date, verifying premium status...')
+                        await get().actions.checkPremiumStatus()
                     }
                 },
 
@@ -201,6 +250,19 @@ export const useSubscriptionStore = create<SubscriptionState & { actions: Subscr
                         subscriptionType,
                         expiresAt,
                     })
+
+                    // Sync premium status to Firestore if user is logged in
+                    const userId = get().currentUserId
+                    if (userId) {
+                        userService.updatePremiumStatus(
+                            userId,
+                            isPremium,
+                            subscriptionType,
+                            expiresAt
+                        ).catch((err) => {
+                            console.warn('[SubscriptionStore] Failed to sync premium to Firestore:', err)
+                        })
+                    }
                 },
             },
         }),

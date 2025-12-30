@@ -48,6 +48,31 @@ class UserService {
         }
     }
 
+    /**
+     * Update premium subscription status in Firestore
+     * Called after successful purchase or restore
+     */
+    async updatePremiumStatus(
+        userId: string,
+        isPremium: boolean,
+        subscriptionType: 'monthly' | 'yearly' | 'lifetime' | null,
+        expiresAt: Date | null
+    ): Promise<Result<void>> {
+        try {
+            await setDoc(doc(db, this.COLLECTION, userId), {
+                isPremium,
+                subscriptionType: subscriptionType || null,
+                subscriptionExpiresAt: expiresAt || null,
+                updatedAt: serverTimestamp(),
+            }, { merge: true })
+            logger.log(`[UserService] Premium status updated for ${userId}: ${isPremium}`)
+            return { success: true, data: undefined }
+        } catch (error) {
+            logger.error('Error updating premium status:', error)
+            return { success: false, error: 'Failed to update premium status' }
+        }
+    }
+
     async searchUsers(searchTerm: string, limitCount = 10): Promise<Result<UserProfile[]>> {
         try {
             const term = searchTerm.toLowerCase().trim()
