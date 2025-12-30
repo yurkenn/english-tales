@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, useWindowDimensions } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
@@ -18,6 +18,13 @@ export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
 }) => {
     const { t } = useTranslation();
     const { theme } = useUnistyles();
+    const { width: screenWidth } = useWindowDimensions();
+
+    // Responsive sizing
+    const isSmallScreen = screenWidth < 375;
+    const minutesFontSize = isSmallScreen ? 22 : 28;
+    const goalFontSize = isSmallScreen ? 14 : 18;
+    const ringSize = isSmallScreen ? 48 : 56;
 
     const minutesRead = Math.round(stats?.minutesRead || 0);
     const goalMinutes = stats?.goalMinutes || 15;
@@ -36,22 +43,22 @@ export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
                 <View style={styles.textContainer}>
                     <Text style={styles.title}>{t('reading.dailyGoal', 'Daily Goal')}</Text>
                     <Text style={styles.stats}>
-                        <Text style={styles.minutesRead}>{minutesRead}</Text>
-                        <Text style={styles.separator}> / </Text>
-                        <Text style={styles.goalMinutes}>{goalMinutes} {t('common.min')}</Text>
+                        <Text style={[styles.minutesRead, { fontSize: minutesFontSize }]}>{minutesRead}</Text>
+                        <Text style={[styles.separator, { fontSize: goalFontSize }]}> / </Text>
+                        <Text style={[styles.goalMinutes, { fontSize: goalFontSize }]}>{goalMinutes} {t('common.min')}</Text>
                     </Text>
                 </View>
 
-                <View style={styles.ringContainer}>
+                <View style={[styles.ringContainer, isSmallScreen && { marginLeft: theme.spacing.md }]}>
                     <ReadingGoalRing
                         progress={progress}
-                        size={56}
-                        strokeWidth={5}
+                        size={ringSize}
+                        strokeWidth={isSmallScreen ? 4 : 5}
                         showLabel={true}
                     />
                     {isGoalReached && (
                         <View style={styles.checkIcon}>
-                            <Ionicons name="checkmark-circle" size={20} color={theme.colors.success} />
+                            <Ionicons name="checkmark-circle" size={isSmallScreen ? 16 : 20} color={theme.colors.success} />
                         </View>
                     )}
                 </View>

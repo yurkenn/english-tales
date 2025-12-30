@@ -33,7 +33,7 @@ import { useCoinStore } from '@/store/coinStore';
 import { secureStorage } from '../services/storage';
 import { notificationService } from '@/services/notificationService';
 import { adService } from '@/services/ads';
-import { subscriptionService } from '@/services/subscription';
+import { useSubscriptionStore } from '@/store/subscriptionStore';
 import { StatusBar } from 'expo-status-bar';
 import {
   AchievementToast,
@@ -149,12 +149,12 @@ export default function RootLayout() {
         console.warn('[AdMob] Failed to initialize:', err);
       });
 
-      // Initialize RevenueCat subscription service
-      subscriptionService.initialize(user?.id).catch((err) => {
+      // Initialize RevenueCat subscription store (fetches offerings and packages)
+      useSubscriptionStore.getState().actions.initialize(user?.id).catch((err) => {
         console.warn('[Subscription] Failed to initialize:', err);
       });
     }
-  }, [initialized]);
+  }, [initialized, user?.id]);
 
   // Hide native splash once the app is initialized
   useEffect(() => {

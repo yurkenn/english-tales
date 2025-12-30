@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { View, Pressable } from 'react-native'
+import { View, Pressable, useWindowDimensions } from 'react-native'
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
 import { Typography } from './Typography'
 
@@ -19,11 +19,23 @@ export const ProfileStatItem = memo<ProfileStatItemProps>(({
     onPress
 }) => {
     const { theme } = useUnistyles()
+    const { width: screenWidth } = useWindowDimensions()
+
+    // Responsive sizing for small screens
+    const isSmallScreen = screenWidth < 375
+    const valueSize = isSmallScreen ? theme.typography.size.lg : theme.typography.size.xl
+    const labelSize = isSmallScreen ? theme.typography.size.xs : theme.typography.size.sm
 
     const content = (
         <View style={styles.statItem}>
-            <Typography style={styles.statValue}>{value}</Typography>
-            <Typography style={styles.statLabel}>{label}</Typography>
+            <Typography style={[styles.statValue, { fontSize: valueSize }]}>{value}</Typography>
+            <Typography
+                style={[styles.statLabel, { fontSize: labelSize }]}
+                numberOfLines={1}
+                adjustsFontSizeToFit
+            >
+                {label}
+            </Typography>
         </View>
     )
 

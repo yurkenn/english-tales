@@ -1,18 +1,22 @@
 /**
  * PaywallModal
- * Premium subscription purchase screen
+ * Premium subscription purchase screen - Modern redesign
  */
 
-import React, { memo, useCallback, useState } from 'react'
-import { View, Text, Modal, Pressable, ScrollView, ActivityIndicator, Image } from 'react-native'
+import React, { memo, useCallback, useState, useEffect } from 'react'
+import { View, Text, Modal, Pressable, ScrollView, ActivityIndicator, Image, useWindowDimensions } from 'react-native'
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
 import { Ionicons } from '@expo/vector-icons'
-import { BlurView } from 'expo-blur'
+import { LinearGradient } from 'expo-linear-gradient'
 import { useSubscriptionStore } from '@/store/subscriptionStore'
 import { PurchasesPackage } from 'react-native-purchases'
 import { useTranslation } from 'react-i18next'
 import { haptics } from '@/utils/haptics'
-import { TrialTimeline } from '../molecules'
+import Animated, {
+    useAnimatedStyle,
+    withSpring,
+    useSharedValue,
+} from 'react-native-reanimated'
 
 interface PaywallModalProps {
     visible: boolean
@@ -20,26 +24,49 @@ interface PaywallModalProps {
     onSuccess?: () => void
 }
 
-const PREMIUM_FEATURES = [
-    { title: 'Unlimited translations', sub: 'Translate any story, any time' },
-    { title: 'All stories unlocked', sub: 'Access our full library of stories' },
-    { title: 'Automatic streak protection', sub: 'Never lose your progress' },
-    { title: '100 bonus coins daily', sub: 'Boost your learning every day' },
-    { title: 'No advertisements', sub: 'Enjoy an uninterrupted experience' },
-    { title: 'Unlimited offline downloads', sub: 'Learn on the go, without internet' },
-    { title: 'Audio narration (coming soon)', sub: 'Listen to stories with professional narration' },
-    { title: 'Early access to new stories', sub: 'Be the first to read our latest content' },
+const HIGHLIGHT_FEATURES = [
+    { icon: 'infinite-outline', title: 'Unlimited Translations', color: '#6366F1' },
+    { icon: 'book-outline', title: 'All Stories', color: '#EC4899' },
+    { icon: 'sparkles-outline', title: 'No Ads', color: '#F59E0B' },
+]
+
+const EXTRA_FEATURES = [
+    'Automatic streak protection',
+    '100 bonus coins daily',
+    'Unlimited offline downloads',
+    'Audio narration (coming soon)',
+    'Early access to new stories',
 ]
 
 function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProps) {
     const { theme } = useUnistyles()
     const { t } = useTranslation()
+    const { width: screenWidth, height: screenHeight } = useWindowDimensions()
     const [selectedPackage, setSelectedPackage] = useState<PurchasesPackage | null>(null)
+
+    // Responsive calculations
+    const isSmallScreen = screenWidth < 375
+    const isVerySmallScreen = screenHeight < 700
 
     const packages = useSubscriptionStore((s) => s.packages)
     const isLoading = useSubscriptionStore((s) => s.isLoading)
     const error = useSubscriptionStore((s) => s.error)
     const actions = useSubscriptionStore((s) => s.actions)
+
+    // Auto-select yearly package when packages load
+    useEffect(() => {
+        if (packages.length > 0 && !selectedPackage) {
+            const yearlyPkg = packages.find(p =>
+                p.identifier.toLowerCase().includes('annual') ||
+                p.identifier.toLowerCase().includes('yearly')
+            )
+            if (yearlyPkg) {
+                setSelectedPackage(yearlyPkg)
+            } else {
+                setSelectedPackage(packages[0])
+            }
+        }
+    }, [packages, selectedPackage])
 
     const handlePurchase = useCallback(async () => {
         if (!selectedPackage) return
@@ -67,127 +94,183 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
         return pkg.product.priceString
     }
 
-    const getPackageLabel = (pkg: PurchasesPackage) => {
+    const getPackageInfo = (pkg: PurchasesPackage) => {
         const id = pkg.identifier.toLowerCase()
         if (id.includes('annual') || id.includes('yearly')) {
-            return t('paywall.yearly', 'Yearly')
+            return {
+                label: t('paywall.yearly', 'Yearly'),
+                period: t('paywall.perYear', '/ year'),
+                badge: t('paywall.bestValue', 'Best Value'),
+                isBest: true
+            }
         }
         if (id.includes('monthly')) {
-            return t('paywall.monthly', 'Monthly')
+            return {
+                label: t('paywall.monthly', 'Monthly'),
+                period: t('paywall.perMonth', '/ month'),
+                badge: null,
+                isBest: false
+            }
         }
-        return pkg.identifier
+        if (id.includes('lifetime')) {
+            return {
+                label: t('paywall.lifetime', 'Lifetime'),
+                period: t('paywall.oneTime', 'One-time'),
+                badge: t('paywall.forever', 'Forever'),
+                isBest: false
+            }
+        }
+        return {
+            label: pkg.identifier,
+            period: '',
+            badge: null,
+            isBest: false
+        }
     }
 
-    const getPackageSavings = (pkg: PurchasesPackage) => {
-        const id = pkg.identifier.toLowerCase()
-        if (id.includes('annual') || id.includes('yearly')) {
-            return t('paywall.save50', 'SAVE 50%')
-        }
-        return null
-    }
+    const AnimatedPackageCard = ({ pkg, isSelected, onSelect, compact }: {
+        pkg: PurchasesPackage
+        isSelected: boolean
+        onSelect: () => void
+        compact?: boolean
+    }) => {
+        const scale = useSharedValue(1)
+        const info = getPackageInfo(pkg)
 
-    const isMostPopular = (pkg: PurchasesPackage) => {
-        const id = pkg.identifier.toLowerCase()
-        return id.includes('annual') || id.includes('yearly')
+        useEffect(() => {
+            scale.value = withSpring(isSelected ? 1.02 : 1, { damping: 15 })
+        }, [isSelected])
+
+        const animatedStyle = useAnimatedStyle(() => ({
+            transform: [{ scale: scale.value }],
+        }))
+
+        return (
+            <Animated.View style={animatedStyle}>
+                <Pressable
+                    style={[
+                        styles.packageCard,
+                        isSelected && styles.packageCardSelected,
+                        info.isBest && styles.packageCardBest,
+                        compact && { minHeight: 110, padding: theme.spacing.sm },
+                    ]}
+                    onPress={() => {
+                        haptics.selection()
+                        onSelect()
+                    }}
+                >
+                    {info.badge && (
+                        <View style={[
+                            styles.packageBadge,
+                            info.isBest && styles.packageBadgeBest
+                        ]}>
+                            <Text style={[styles.packageBadgeText, compact && { fontSize: 8 }]}>{info.badge}</Text>
+                        </View>
+                    )}
+
+                    <Text style={[styles.packageLabel, compact && { fontSize: 12 }]}>{info.label}</Text>
+                    <Text style={[styles.packagePrice, compact && { fontSize: 16 }]}>{formatPrice(pkg)}</Text>
+                    <Text style={[styles.packagePeriod, compact && { fontSize: 10 }]}>{info.period}</Text>
+
+                    {isSelected && (
+                        <View style={styles.selectedIndicator}>
+                            <Ionicons name="checkmark-circle" size={compact ? 20 : 24} color={theme.colors.primary} />
+                        </View>
+                    )}
+                </Pressable>
+            </Animated.View>
+        )
     }
 
     return (
         <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
-            <BlurView intensity={30} style={styles.overlay}>
+            <View style={styles.overlay}>
                 <View style={styles.container}>
-                    {/* Header */}
-                    <View style={styles.header}>
-                        <Pressable style={styles.closeBtn} onPress={onClose}>
-                            <Ionicons name="close" size={24} color={theme.colors.textMuted} />
-                        </Pressable>
-                    </View>
+                    {/* Close Button */}
+                    <Pressable style={styles.closeBtn} onPress={onClose}>
+                        <Ionicons name="close" size={28} color={theme.colors.textMuted} />
+                    </Pressable>
 
                     <ScrollView
                         style={styles.scrollView}
                         contentContainerStyle={styles.scrollContent}
                         showsVerticalScrollIndicator={false}
                     >
-                        {/* App Icon with Branded PRO Badge */}
-                        <View style={styles.iconContainer}>
-                            <View style={styles.appIconWrapper}>
+                        {/* Hero Section */}
+                        <LinearGradient
+                            colors={[theme.colors.primary + '20', 'transparent']}
+                            style={[styles.heroGradient, isVerySmallScreen && { paddingTop: theme.spacing.lg, paddingBottom: theme.spacing.md }]}
+                        >
+                            <View style={styles.iconContainer}>
                                 <Image
                                     source={require('@/assets/icon.png')}
-                                    style={styles.appIcon}
+                                    style={[styles.appIcon, isSmallScreen && { width: 64, height: 64, borderRadius: 16 }]}
                                 />
                                 <View style={styles.proBadge}>
+                                    <Ionicons name="star" size={isSmallScreen ? 10 : 12} color="#fff" />
                                     <Text style={styles.proBadgeText}>PRO</Text>
                                 </View>
                             </View>
-                        </View>
 
-                        {/* Title */}
-                        <Text style={styles.title}>
-                            {t('paywall.title', 'Go Premium')}
-                        </Text>
-                        <Text style={styles.subtitle}>
-                            {t('paywall.subtitle', 'Unlock the full English Tales experience')}
-                        </Text>
+                            <Text style={[styles.title, isSmallScreen && { fontSize: 24 }]}>
+                                {t('paywall.title', 'Go Premium')}
+                            </Text>
+                            <Text style={[styles.subtitle, isSmallScreen && { fontSize: 14 }]}>
+                                {t('paywall.subtitle', 'Unlock the full English Tales experience')}
+                            </Text>
+                        </LinearGradient>
 
-                        {/* Features */}
-                        <View style={styles.featuresContainer}>
-                            <View style={styles.featuresList}>
-                                {PREMIUM_FEATURES.map((feature, index) => (
-                                    <View key={index} style={styles.featureItem}>
-                                        <Ionicons name="checkmark-circle" size={24} color={theme.colors.success} />
-                                        <View style={styles.featureText}>
-                                            <Text style={styles.featureTitle}>{feature.title}</Text>
-                                            <Text style={styles.featureSub}>{feature.sub}</Text>
-                                        </View>
+                        {/* Feature Highlights */}
+                        <View style={styles.highlightsContainer}>
+                            {HIGHLIGHT_FEATURES.map((feature, index) => (
+                                <View key={index} style={styles.highlightCard}>
+                                    <View style={[
+                                        styles.highlightIcon,
+                                        { backgroundColor: feature.color + '20' },
+                                        isSmallScreen && { width: 40, height: 40 }
+                                    ]}>
+                                        <Ionicons
+                                            name={feature.icon as any}
+                                            size={isSmallScreen ? 20 : 24}
+                                            color={feature.color}
+                                        />
                                     </View>
-                                ))}
-                            </View>
-
-                            <TrialTimeline days={3} />
+                                    <Text style={[
+                                        styles.highlightText,
+                                        isSmallScreen && { fontSize: 10 }
+                                    ]}>{feature.title}</Text>
+                                </View>
+                            ))}
                         </View>
 
                         {/* Package Selection */}
-                        <View style={styles.packagesContainer}>
-                            {packages.map((pkg) => {
-                                const isSelected = selectedPackage?.identifier === pkg.identifier
-                                const savings = getPackageSavings(pkg)
+                        <Text style={[
+                            styles.sectionTitle,
+                            isSmallScreen && { fontSize: 16 }
+                        ]}>
+                            {t('paywall.choosePlan', 'Choose Your Plan')}
+                        </Text>
 
-                                return (
-                                    <Pressable
-                                        key={pkg.identifier}
-                                        style={[
-                                            styles.packageCard,
-                                            isSelected && styles.packageCardSelected,
-                                            isMostPopular(pkg) && styles.packageCardPopular,
-                                        ]}
-                                        onPress={() => {
-                                            haptics.selection()
-                                            setSelectedPackage(pkg)
-                                        }}
-                                    >
-                                        {savings && (
-                                            <View style={styles.savingsBadge}>
-                                                <Text style={styles.savingsText}>{savings}</Text>
-                                            </View>
-                                        )}
-                                        {isMostPopular(pkg) && (
-                                            <View style={styles.popularBadge}>
-                                                <Text style={styles.popularBadgeText}>{t('paywall.mostPopular', 'MOST POPULAR')}</Text>
-                                            </View>
-                                        )}
-                                        <View style={[styles.radioOuter, isSelected && styles.radioOuterSelected]}>
-                                            {isSelected && <View style={styles.radioInner} />}
-                                        </View>
-                                        <View style={styles.packageInfo}>
-                                            <Text style={styles.packageLabel}>
-                                                {getPackageLabel(pkg)}
-                                            </Text>
-                                            <Text style={styles.packagePrice}>
-                                                {formatPrice(pkg)}
-                                            </Text>
-                                        </View>
-                                    </Pressable>
-                                )
-                            })}
+                        <View style={styles.packagesContainer}>
+                            {packages.map((pkg) => (
+                                <AnimatedPackageCard
+                                    key={pkg.identifier}
+                                    pkg={pkg}
+                                    isSelected={selectedPackage?.identifier === pkg.identifier}
+                                    onSelect={() => setSelectedPackage(pkg)}
+                                    compact={isSmallScreen}
+                                />
+                            ))}
+                        </View>
+
+                        {/* Extra Features */}
+                        <View style={styles.extraFeatures}>
+                            {EXTRA_FEATURES.map((feature, index) => (
+                                <View key={index} style={styles.extraFeatureItem}>
+                                    <Ionicons name="checkmark" size={16} color={theme.colors.success} />
+                                    <Text style={styles.extraFeatureText}>{feature}</Text>
+                                </View>
+                            ))}
                         </View>
 
                         {/* Error */}
@@ -196,7 +279,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                         )}
                     </ScrollView>
 
-                    {/* Purchase Button */}
+                    {/* Footer */}
                     <View style={styles.footer}>
                         <Pressable
                             style={[
@@ -206,29 +289,48 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                             onPress={handlePurchase}
                             disabled={!selectedPackage || isLoading}
                         >
-                            {isLoading ? (
-                                <ActivityIndicator color="#fff" />
-                            ) : (
-                                <Text style={styles.purchaseBtnText}>
-                                    {selectedPackage && isMostPopular(selectedPackage)
-                                        ? t('paywall.startTrial', 'Start 3-Day Free Trial')
-                                        : t('paywall.subscribeNow', 'Subscribe Now')}
-                                </Text>
-                            )}
+                            <LinearGradient
+                                colors={[theme.colors.primary, theme.colors.primaryDark || theme.colors.primary]}
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 1, y: 0 }}
+                                style={styles.purchaseBtnGradient}
+                            >
+                                {isLoading ? (
+                                    <ActivityIndicator color="#fff" />
+                                ) : (
+                                    <Text style={styles.purchaseBtnText}>
+                                        {t('paywall.continue', 'Continue')}
+                                    </Text>
+                                )}
+                            </LinearGradient>
                         </Pressable>
 
-                        <Pressable style={styles.restoreBtn} onPress={handleRestore}>
-                            <Text style={styles.restoreBtnText}>
-                                {t('paywall.restore', 'Restore Purchases')}
-                            </Text>
-                        </Pressable>
-
-                        <Text style={styles.termsText}>
-                            {t('paywall.terms', 'By subscribing you agree to our Terms of Service and Privacy Policy')}
+                        <Text style={styles.trialInfo}>
+                            {t('paywall.trialInfo', 'Cancel anytime. No commitment.')}
                         </Text>
+
+                        <View style={styles.footerLinks}>
+                            <Pressable onPress={handleRestore}>
+                                <Text style={styles.footerLink}>
+                                    {t('paywall.restore', 'Restore')}
+                                </Text>
+                            </Pressable>
+                            <Text style={styles.footerDivider}>•</Text>
+                            <Pressable>
+                                <Text style={styles.footerLink}>
+                                    {t('paywall.terms', 'Terms')}
+                                </Text>
+                            </Pressable>
+                            <Text style={styles.footerDivider}>•</Text>
+                            <Pressable>
+                                <Text style={styles.footerLink}>
+                                    {t('paywall.privacy', 'Privacy')}
+                                </Text>
+                            </Pressable>
+                        </View>
                     </View>
                 </View>
-            </BlurView>
+            </View>
         </Modal>
     )
 }
@@ -238,223 +340,238 @@ export const PaywallModal = memo(PaywallModalComponent)
 const styles = StyleSheet.create((theme) => ({
     overlay: {
         flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.5)',
         justifyContent: 'flex-end',
     },
     container: {
         backgroundColor: theme.colors.surface,
-        borderTopLeftRadius: theme.radius.xxl,
-        borderTopRightRadius: theme.radius.xxl,
-        maxHeight: '90%',
+        borderTopLeftRadius: 28,
+        borderTopRightRadius: 28,
+        maxHeight: '92%',
         ...theme.shadows.lg,
     },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        padding: theme.spacing.md,
-    },
     closeBtn: {
+        position: 'absolute',
+        top: theme.spacing.md,
+        right: theme.spacing.md,
+        zIndex: 10,
         padding: theme.spacing.sm,
     },
     scrollView: {
         flexGrow: 0,
     },
     scrollContent: {
-        paddingHorizontal: theme.spacing.xl,
         paddingBottom: theme.spacing.lg,
     },
-    iconContainer: {
+    // Hero
+    heroGradient: {
         alignItems: 'center',
-        alignSelf: 'center',
-        marginBottom: theme.spacing.xl,
-        marginTop: theme.spacing.md,
+        paddingTop: theme.spacing.xxl,
+        paddingBottom: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.xl,
     },
-    appIconWrapper: {
+    iconContainer: {
         position: 'relative',
+        marginBottom: theme.spacing.lg,
     },
     appIcon: {
-        width: 100,
-        height: 100,
-        borderRadius: 24,
-        backgroundColor: theme.colors.surface,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
+        width: 80,
+        height: 80,
+        borderRadius: 20,
     },
     proBadge: {
         position: 'absolute',
-        bottom: -4,
-        right: -4,
+        bottom: -8,
+        right: -8,
         backgroundColor: theme.colors.primary,
-        paddingHorizontal: 12,
-        paddingVertical: 5,
-        borderRadius: 14,
-        borderWidth: 4,
-        borderColor: theme.colors.surface,
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+        borderRadius: 12,
         flexDirection: 'row',
         alignItems: 'center',
+        gap: 4,
+        borderWidth: 3,
+        borderColor: theme.colors.surface,
     },
     proBadgeText: {
         color: '#fff',
-        fontSize: 12,
-        fontWeight: theme.typography.weight.bold,
-        letterSpacing: 0.5,
+        fontSize: 11,
+        fontWeight: '800',
     },
     title: {
-        fontSize: theme.typography.size.xxxl,
-        fontWeight: theme.typography.weight.bold,
+        fontSize: 28,
+        fontWeight: '700',
         color: theme.colors.text,
         textAlign: 'center',
         marginBottom: theme.spacing.xs,
     },
     subtitle: {
-        fontSize: theme.typography.size.md,
+        fontSize: 16,
         color: theme.colors.textSecondary,
         textAlign: 'center',
-        marginBottom: theme.spacing.xl,
     },
-    featuresContainer: {
-        gap: theme.spacing.md,
-        marginBottom: theme.spacing.xl,
-    },
-    featureItem: {
+    // Highlights
+    highlightsContainer: {
         flexDirection: 'row',
-        alignItems: 'center',
+        justifyContent: 'center',
         gap: theme.spacing.md,
+        paddingHorizontal: theme.spacing.lg,
+        marginBottom: theme.spacing.xl,
     },
-    featureText: {
+    highlightCard: {
         flex: 1,
+        alignItems: 'center',
+        padding: theme.spacing.md,
+        backgroundColor: theme.colors.background,
+        borderRadius: theme.radius.lg,
+        gap: theme.spacing.sm,
     },
-    featureTitle: {
-        fontSize: theme.typography.size.md,
-        fontWeight: theme.typography.weight.semibold,
+    highlightIcon: {
+        width: 48,
+        height: 48,
+        borderRadius: 24,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    highlightText: {
+        fontSize: 12,
+        fontWeight: '600',
         color: theme.colors.text,
+        textAlign: 'center',
     },
-    featureSub: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textSecondary,
-        marginTop: 2,
+    // Packages
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: '700',
+        color: theme.colors.text,
+        textAlign: 'center',
+        marginBottom: theme.spacing.md,
     },
     packagesContainer: {
-        gap: theme.spacing.md,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: theme.spacing.sm,
+        paddingHorizontal: theme.spacing.lg,
+        marginBottom: theme.spacing.xl,
     },
     packageCard: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: theme.spacing.lg,
+        flex: 1,
+        backgroundColor: theme.colors.background,
         borderRadius: theme.radius.lg,
+        padding: theme.spacing.md,
+        alignItems: 'center',
         borderWidth: 2,
         borderColor: theme.colors.border,
-        backgroundColor: theme.colors.background,
-        position: 'relative',
-        overflow: 'hidden',
+        minHeight: 130,
+        justifyContent: 'center',
     },
     packageCardSelected: {
         borderColor: theme.colors.primary,
-        backgroundColor: theme.colors.primary + '10',
+        backgroundColor: theme.colors.primary + '08',
     },
-    savingsBadge: {
-        position: 'absolute',
-        top: 0,
-        right: 0,
-        backgroundColor: theme.colors.success,
-        paddingHorizontal: theme.spacing.md,
-        paddingVertical: 4,
-        borderBottomLeftRadius: theme.radius.md,
-    },
-    popularBadge: {
-        position: 'absolute',
-        top: -12,
-        left: 20,
-        backgroundColor: theme.colors.primary,
-        paddingHorizontal: 12,
-        paddingVertical: 4,
-        borderRadius: 8,
-        ...theme.shadows.sm,
-    },
-    popularBadgeText: {
-        color: '#fff',
-        fontSize: 10,
-        fontWeight: '900',
-        letterSpacing: 0.5,
-    },
-    packageCardPopular: {
-        marginTop: 12, // Space for the badge
-    },
-    savingsText: {
-        fontSize: theme.typography.size.xs,
-        fontWeight: theme.typography.weight.bold,
-        color: '#fff',
-    },
-    radioOuter: {
-        width: 24,
-        height: 24,
-        borderRadius: 12,
-        borderWidth: 2,
-        borderColor: theme.colors.border,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginRight: theme.spacing.md,
-    },
-    radioOuterSelected: {
+    packageCardBest: {
         borderColor: theme.colors.primary,
     },
-    radioInner: {
-        width: 12,
-        height: 12,
+    packageBadge: {
+        position: 'absolute',
+        top: -10,
+        backgroundColor: theme.colors.success,
+        paddingHorizontal: 8,
+        paddingVertical: 3,
         borderRadius: 6,
+    },
+    packageBadgeBest: {
         backgroundColor: theme.colors.primary,
     },
-    packageInfo: {
-        flex: 1,
+    packageBadgeText: {
+        fontSize: 9,
+        fontWeight: '800',
+        color: '#fff',
+        textTransform: 'uppercase',
     },
     packageLabel: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.semibold,
-        color: theme.colors.text,
+        fontSize: 14,
+        fontWeight: '600',
+        color: theme.colors.textSecondary,
+        marginBottom: 4,
     },
     packagePrice: {
-        fontSize: theme.typography.size.md,
+        fontSize: 20,
+        fontWeight: '800',
+        color: theme.colors.text,
+    },
+    packagePeriod: {
+        fontSize: 11,
+        color: theme.colors.textMuted,
+        marginTop: 2,
+    },
+    selectedIndicator: {
+        position: 'absolute',
+        top: 8,
+        right: 8,
+    },
+    // Extra Features
+    extraFeatures: {
+        paddingHorizontal: theme.spacing.xl,
+        gap: theme.spacing.sm,
+        marginBottom: theme.spacing.lg,
+    },
+    extraFeatureItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: theme.spacing.sm,
+    },
+    extraFeatureText: {
+        fontSize: 14,
         color: theme.colors.textSecondary,
     },
-    errorText: {
-        color: theme.colors.error,
-        fontSize: theme.typography.size.sm,
-        textAlign: 'center',
-        marginTop: theme.spacing.md,
-    },
+    // Footer
     footer: {
-        padding: theme.spacing.xl,
-        paddingTop: theme.spacing.lg,
+        padding: theme.spacing.lg,
+        paddingBottom: theme.spacing.xl,
         borderTopWidth: 1,
-        borderTopColor: theme.colors.border,
+        borderTopColor: theme.colors.borderLight,
     },
     purchaseBtn: {
-        backgroundColor: theme.colors.primary,
-        paddingVertical: theme.spacing.lg,
         borderRadius: theme.radius.lg,
-        alignItems: 'center',
-        marginBottom: theme.spacing.md,
+        overflow: 'hidden',
+        marginBottom: theme.spacing.sm,
     },
     purchaseBtnDisabled: {
         opacity: 0.5,
     },
+    purchaseBtnGradient: {
+        paddingVertical: theme.spacing.lg,
+        alignItems: 'center',
+    },
     purchaseBtnText: {
-        fontSize: theme.typography.size.lg,
-        fontWeight: theme.typography.weight.bold,
+        fontSize: 18,
+        fontWeight: '700',
         color: '#fff',
     },
-    restoreBtn: {
-        alignItems: 'center',
-        paddingVertical: theme.spacing.sm,
-    },
-    restoreBtnText: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.primary,
-    },
-    termsText: {
-        fontSize: theme.typography.size.xs,
+    trialInfo: {
+        fontSize: 13,
         color: theme.colors.textMuted,
         textAlign: 'center',
-        marginTop: theme.spacing.md,
-        lineHeight: 16,
+        marginBottom: theme.spacing.md,
+    },
+    footerLinks: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: theme.spacing.sm,
+    },
+    footerLink: {
+        fontSize: 13,
+        color: theme.colors.primary,
+    },
+    footerDivider: {
+        color: theme.colors.textMuted,
+    },
+    errorText: {
+        color: theme.colors.error,
+        fontSize: 14,
+        textAlign: 'center',
+        marginHorizontal: theme.spacing.xl,
     },
 }))

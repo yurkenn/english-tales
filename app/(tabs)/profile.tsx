@@ -511,9 +511,11 @@ const styles = StyleSheet.create((theme) => ({
     statsRow: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginLeft: theme.spacing.lg,
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        marginLeft: theme.spacing.md,
         paddingTop: theme.spacing.sm,
+        flexWrap: 'nowrap',
     },
     statItem: {
         alignItems: 'center',
