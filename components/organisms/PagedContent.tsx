@@ -102,7 +102,7 @@ export const PagedContent = React.memo(({
             >
                 {pages.map((pageBlocks, pageIndex) => (
                     <View key={pageIndex} style={styles.page}>
-                        <Animated.View
+                        <Animated.ScrollView
                             entering={FadeIn.duration(200)}
                             style={[
                                 styles.pageContent,
@@ -110,6 +110,13 @@ export const PagedContent = React.memo(({
                                     backgroundColor,
                                 }
                             ]}
+                            contentContainerStyle={{
+                                flexGrow: 1,
+                                paddingHorizontal: theme.spacing.xl,
+                                paddingVertical: theme.spacing.xxl,
+                                paddingBottom: theme.spacing.xxxxl, // Extra padding at bottom
+                            }}
+                            showsVerticalScrollIndicator={false}
                         >
                             <PortableTextRenderer
                                 content={pageBlocks}
@@ -125,7 +132,7 @@ export const PagedContent = React.memo(({
                                 enableDropCap={true}
                                 isFirstPage={pageIndex === 0}
                             />
-                        </Animated.View>
+                        </Animated.ScrollView>
                     </View>
                 ))}
             </PagerView>
@@ -160,8 +167,6 @@ const styles = StyleSheet.create((theme) => ({
     },
     pageContent: {
         flex: 1,
-        paddingHorizontal: theme.spacing.xl,
-        paddingVertical: theme.spacing.xxl,
     },
     tapZone: {
         position: 'absolute',

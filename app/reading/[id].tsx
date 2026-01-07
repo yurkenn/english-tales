@@ -114,8 +114,8 @@ export default function ReadingScreen() {
         content,
         fontSize,
         lineHeight,
-        headerHeight: 100,
-        controlsHeight: 80,
+        headerHeight: 60 + insets.top + (theme.spacing.xxl), // Header + top inset + padding
+        controlsHeight: 80 + insets.bottom + (theme.spacing.xxl), // Controls + bottom inset + padding
     });
 
     // --- Modularized Logic Hooks ---
