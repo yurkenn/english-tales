@@ -5,6 +5,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { secureStorage } from '@/services/storage'
 import { useProgressStore } from '@/store/progressStore'
 import { useSubscriptionStore } from '@/store/subscriptionStore'
 import { useCoinStore, COIN_REWARDS } from '@/store/coinStore'
@@ -27,6 +28,9 @@ export function useDailyBonusManager() {
     // Check if daily bonus should be shown
     const checkDailyBonus = useCallback(async () => {
         try {
+            const hasOnboarded = await secureStorage.hasCompletedOnboarding()
+            if (!hasOnboarded) return
+
             const lastBonusDate = await AsyncStorage.getItem(STORAGE_KEYS.LAST_BONUS_DATE)
             const savedDay = await AsyncStorage.getItem(STORAGE_KEYS.BONUS_DAY)
 

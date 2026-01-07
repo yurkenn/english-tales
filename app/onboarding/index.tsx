@@ -12,6 +12,7 @@ import { StyleSheet } from 'react-native-unistyles';
 import { secureStorage } from '@/services/storage';
 import { signInAnonymously } from '@/services/auth';
 import { useSettingsStore } from '@/store/settingsStore';
+import { haptics } from '@/utils/haptics';
 import {
     OnboardingSlide,
     OnboardingLevelSelection,
@@ -145,6 +146,7 @@ export default function OnboardingScreen() {
                         <Pressable
                             style={styles.skipButton}
                             onPress={() => {
+                                haptics.selection();
                                 flatListRef.current?.scrollToIndex({
                                     index: ONBOARDING_DATA.length - 1,
                                     animated: true,

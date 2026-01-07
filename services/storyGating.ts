@@ -97,12 +97,7 @@ export function checkStoryAccess(
                 label: 'Watch Ad',
                 available: true, // Ad availability checked elsewhere
             },
-            {
-                type: 'coins',
-                label: `${COIN_COSTS.UNLOCK_STORY_24H} Coins`,
-                cost: COIN_COSTS.UNLOCK_STORY_24H,
-                available: coinState.balance >= COIN_COSTS.UNLOCK_STORY_24H,
-            },
+
             {
                 type: 'premium',
                 label: 'Go Premium',

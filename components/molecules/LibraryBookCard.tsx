@@ -4,6 +4,7 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar, OptimizedImage, BookCover } from '../atoms';
 import { useTranslation } from 'react-i18next';
+import { haptics } from '@/utils/haptics';
 import type { LibraryItemWithProgress } from './moleculeTypes';
 
 interface LibraryBookCardProps {
@@ -13,6 +14,7 @@ interface LibraryBookCardProps {
     onReadPress: () => void;
     onMorePress: () => void;
     moreButtonRef?: (ref: View | null) => void;
+    priority?: 'low' | 'normal' | 'high';
 }
 
 const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
@@ -22,20 +24,43 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
     onReadPress,
     onMorePress,
     moreButtonRef,
+    priority,
 }) => {
     const { theme } = useUnistyles();
     const { t } = useTranslation();
     const progress = item.progress?.percentage || 0;
     const isCompleted = item.progress?.isCompleted || false;
 
+    const handlePress = () => {
+        haptics.selection();
+        onPress();
+    };
+
+    const handleReadPress = () => {
+        haptics.medium();
+        onReadPress();
+    };
+
+    const handleMorePress = () => {
+        haptics.selection();
+        onMorePress();
+    };
+
     return (
-        <Pressable style={styles.bookItem} onPress={onPress}>
+        <Pressable
+            style={styles.bookItem}
+            onPress={handlePress}
+            accessible
+            accessibilityRole="button"
+            accessibilityLabel={`${item.story.title} by ${item.story.author}${isCompleted ? ', Completed' : progress > 0 ? `, ${progress}% complete` : ''}`}
+        >
             <BookCover
                 source={{ uri: item.story.coverImage }}
                 width={84}
                 height={120}
                 borderRadius={theme.radius.md}
                 sharedTransitionTag={`story-image-${item.story.id}`}
+                priority={priority}
             />
             <View style={styles.bookInfo}>
                 <View style={styles.bookHeader}>
@@ -57,7 +82,7 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
                         <Pressable
                             style={styles.moreButton}
                             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
-                            onPress={onMorePress}
+                            onPress={handleMorePress}
                         >
                             <Ionicons
                                 name="ellipsis-vertical"
@@ -92,7 +117,7 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
                 </View>
 
                 {/* Action Button */}
-                <Pressable style={styles.actionButton} onPress={onReadPress}>
+                <Pressable style={styles.actionButton} onPress={handleReadPress}>
                     <Ionicons
                         name={progress > 0 ? 'play' : 'book-outline'}
                         size={16}
@@ -111,7 +136,8 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
 export const LibraryBookCard = memo(LibraryBookCardComponent, (prevProps, nextProps) => {
     return prevProps.item.storyId === nextProps.item.storyId
         && prevProps.item.progress?.percentage === nextProps.item.progress?.percentage
-        && prevProps.isDownloaded === nextProps.isDownloaded;
+        && prevProps.isDownloaded === nextProps.isDownloaded
+        && prevProps.priority === nextProps.priority;
 });
 
 const styles = StyleSheet.create((theme) => ({

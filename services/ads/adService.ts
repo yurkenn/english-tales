@@ -8,6 +8,7 @@ import mobileAds, {
     RewardedAdEventType,
     AdEventType,
 } from 'react-native-google-mobile-ads'
+import NetInfo from '@react-native-community/netinfo'
 import { AD_UNIT_IDS, REWARD_CONFIG, RewardType } from './adConfig'
 import { analyticsService } from '../firebase/analytics'
 
@@ -70,7 +71,13 @@ class AdService {
     /**
      * Preload a rewarded ad
      */
-    preloadAd(rewardType: RewardType): void {
+    async preloadAd(rewardType: RewardType): Promise<void> {
+        const state = await NetInfo.fetch()
+        if (!state.isConnected) {
+            console.log(`[AdService] Offline, skipping preload for ${rewardType}`)
+            return
+        }
+
         const adUnitId = this.getAdUnitId(rewardType)
 
         if (this.rewardedAds.has(rewardType)) {
@@ -86,7 +93,12 @@ class AdService {
         })
 
         rewarded.addAdEventListener(AdEventType.ERROR, (error) => {
-            console.error(`[AdService] ${rewardType} ad error:`, error)
+            if (__DEV__) {
+                console.warn(`[AdService] ${rewardType} ad error:`, error)
+            } else {
+                // In production, just log non-fatal or handle gracefully
+                console.log(`[AdService] ${rewardType} ad error: ${error.message}`)
+            }
             this.rewardedAds.delete(rewardType)
         })
 

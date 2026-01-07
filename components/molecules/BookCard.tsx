@@ -10,6 +10,7 @@ interface BookCardProps {
     onPress?: () => void;
     showRank?: number;
     rating?: number | null;
+    priority?: 'low' | 'normal' | 'high';
 }
 
 const BookCardComponent: React.FC<BookCardProps> = ({
@@ -17,12 +18,19 @@ const BookCardComponent: React.FC<BookCardProps> = ({
     onPress,
     showRank,
     rating = null,
+    priority,
 }) => {
     const { theme } = useUnistyles();
     const coverUri = story.coverImage || 'https://via.placeholder.com/240x336/1a1a2e/ffffff?text=No+Cover';
 
     return (
-        <Pressable style={styles.container} onPress={onPress}>
+        <Pressable
+            style={styles.container}
+            onPress={onPress}
+            accessible
+            accessibilityRole="button"
+            accessibilityLabel={`${story.title} by ${story.author}${story.isPremiumOnly ? ', Premium content' : ''}`}
+        >
             {/* Cover Image with Page Stack Effect */}
             <BookCover
                 source={{ uri: coverUri }}
@@ -31,6 +39,7 @@ const BookCardComponent: React.FC<BookCardProps> = ({
                 sharedTransitionTag={`story-image-${story.id}`}
                 showPages={true}
                 borderRadius={10}
+                priority={priority}
             />
 
             {/* Rank Badge overlay on top of BookCover */}
@@ -77,7 +86,8 @@ const BookCardComponent: React.FC<BookCardProps> = ({
 export const BookCard = memo(BookCardComponent, (prevProps, nextProps) => {
     return prevProps.story.id === nextProps.story.id
         && prevProps.showRank === nextProps.showRank
-        && prevProps.rating === nextProps.rating;
+        && prevProps.rating === nextProps.rating
+        && prevProps.priority === nextProps.priority;
 });
 
 const styles = StyleSheet.create((theme) => ({

@@ -40,11 +40,16 @@ function StoryUnlockModalComponent({
     const { theme } = useUnistyles()
     const { t } = useTranslation()
 
-    const { showAd, isLoading, isReady, isUnlocked } = useStoryUnlockAd(storyId)
+    const { showAd, isLoading, isReady, isUnlocked, loadAd } = useStoryUnlockAd(storyId)
     const coinBalance = useCoinStore((s) => s.balance)
     const canAffordUnlock = coinBalance >= COIN_COSTS.UNLOCK_STORY_24H
 
     const handleWatchAd = async () => {
+        if (!isReady) {
+            loadAd()
+            return
+        }
+
         const success = await showAd()
         if (success) {
             haptics.success()
@@ -60,6 +65,13 @@ function StoryUnlockModalComponent({
             onClose()
         }
     }, [visible, isUnlocked, onUnlocked, onClose])
+
+    // Refresh ad status when modal becomes visible
+    React.useEffect(() => {
+        if (visible && !isReady) {
+            loadAd()
+        }
+    }, [visible, isReady, loadAd])
 
     return (
         <Modal
@@ -132,14 +144,18 @@ function StoryUnlockModalComponent({
                             <Pressable
                                 style={[
                                     styles.watchAdButton,
-                                    (!isReady || isLoading) && styles.buttonDisabled,
+                                    isLoading && styles.buttonDisabled,
                                 ]}
                                 onPress={handleWatchAd}
-                                disabled={!isReady || isLoading}
+                                disabled={isLoading}
                             >
                                 {isLoading ? (
                                     <Text style={styles.watchAdButtonText}>
                                         {t('ads.loading', 'Loading...')}
+                                    </Text>
+                                ) : !isReady ? (
+                                    <Text style={styles.watchAdButtonText}>
+                                        {t('ads.storyUnlock.loadAd', 'Tap to Load Ad')}
                                     </Text>
                                 ) : (
                                     <>
@@ -152,41 +168,7 @@ function StoryUnlockModalComponent({
                             </Pressable>
                         )}
 
-                        {/* Pay with Coins Button */}
-                        {!isPremiumOnly && (
-                            <Pressable
-                                style={[
-                                    styles.coinButton,
-                                    !canAffordUnlock && styles.buttonDisabled,
-                                ]}
-                                onPress={() => {
-                                    if (canAffordUnlock) {
-                                        const success = unlockStoryWithCoins(storyId)
-                                        if (success) {
-                                            haptics.success()
-                                            onUnlocked?.()
-                                            onClose()
-                                        }
-                                    }
-                                }}
-                                disabled={!canAffordUnlock}
-                            >
-                                <Ionicons
-                                    name="logo-bitcoin"
-                                    size={20}
-                                    color={canAffordUnlock ? '#FFD700' : theme.colors.textMuted}
-                                />
-                                <Text style={[
-                                    styles.coinButtonText,
-                                    !canAffordUnlock && { color: theme.colors.textMuted }
-                                ]}>
-                                    {COIN_COSTS.UNLOCK_STORY_24H} Coins
-                                </Text>
-                                <Text style={styles.coinBalanceText}>
-                                    ({coinBalance} available)
-                                </Text>
-                            </Pressable>
-                        )}
+
 
                         {/* Premium Button */}
                         {onGetPremium && (

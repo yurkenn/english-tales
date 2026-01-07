@@ -21,7 +21,9 @@ interface UseRewardedAdReturn {
     isLoading: boolean
     isReady: boolean
     canWatch: boolean
+
     remainingAds: number
+    loadAd: () => void
 }
 
 export function useRewardedAd(options: UseRewardedAdOptions): UseRewardedAdReturn {
@@ -45,6 +47,17 @@ export function useRewardedAd(options: UseRewardedAdOptions): UseRewardedAdRetur
         const interval = setInterval(checkReady, 1000)
 
         return () => clearInterval(interval)
+    }, [rewardType])
+
+    // Auto-load ad if not ready
+    useEffect(() => {
+        if (!isReady) {
+            adService.preloadAd(rewardType)
+        }
+    }, [rewardType])
+
+    const loadAd = useCallback(() => {
+        adService.preloadAd(rewardType)
     }, [rewardType])
 
     const applyReward = useCallback(() => {
@@ -110,6 +123,7 @@ export function useRewardedAd(options: UseRewardedAdOptions): UseRewardedAdRetur
         isReady,
         canWatch,
         remainingAds,
+        loadAd,
     }
 }
 
@@ -120,7 +134,7 @@ export function useStoryUnlockAd(storyId: string) {
     const rewardActions = useRewardStore((state) => state.actions)
     const isUnlocked = useRewardStore((state) => state.actions.isStoryUnlocked(storyId))
 
-    const { showAd, isLoading, isReady, canWatch, remainingAds } = useRewardedAd({
+    const { showAd, isLoading, isReady, canWatch, remainingAds, loadAd } = useRewardedAd({
         rewardType: 'story_unlock',
         onRewardEarned: () => {
             rewardActions.unlockStory(storyId)
@@ -134,5 +148,6 @@ export function useStoryUnlockAd(storyId: string) {
         canWatch,
         remainingAds,
         isUnlocked,
+        loadAd,
     }
 }

@@ -1,19 +1,22 @@
 /**
  * OnboardingPaywall
- * High-conversion sales screen for the end of onboarding
+ * High-conversion sales screen inspired by top-tier apps
+ * Features:
+ * - Dynamic theming via Unistyles
+ * - Clear value proposition
+ * - Toggle for trial activation
+ * - High contrast CTA
  */
 
-import React, { memo, useCallback, useState } from 'react'
-import { View, Text, Pressable, ScrollView, ActivityIndicator, Image, Dimensions } from 'react-native'
+import React, { memo, useCallback, useState, useEffect } from 'react'
+import { View, Text, Pressable, ActivityIndicator, Dimensions, Switch, Platform } from 'react-native'
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
 import { Ionicons } from '@expo/vector-icons'
-import { BlurView } from 'expo-blur'
 import { useSubscriptionStore } from '@/store/subscriptionStore'
 import { PurchasesPackage } from 'react-native-purchases'
 import { useTranslation } from 'react-i18next'
 import { haptics } from '@/utils/haptics'
-import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated'
-import { TrialTimeline } from '../molecules'
+import Animated, { FadeInDown } from 'react-native-reanimated'
 
 const { width } = Dimensions.get('window')
 
@@ -24,139 +27,265 @@ interface OnboardingPaywallProps {
 
 const PREMIUM_FEATURES = [
     { icon: 'infinite', title: 'Unlimited Translations', sub: 'Understand every word instantly' },
-    { icon: 'book', title: 'All Stories Unlocked', sub: 'Full access to our entire library' },
-    { icon: 'cloud-download', title: 'Offline Mode', sub: 'Read and learn anywhere, anytime' },
-    { icon: 'headset', title: 'Premium Audio', sub: 'Natural AI narration for all stories' },
+    { icon: 'flame', title: 'Stay disciplined with streaks', sub: 'Build a daily learning habit' },
+    { icon: 'shield-checkmark', title: 'Your data stays on your phone', sub: 'Privacy first, always' },
+    { icon: 'ban', title: 'No ads, ever', sub: 'Distraction-free reading' },
 ]
 
 function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallProps) {
     const { theme } = useUnistyles()
     const { t } = useTranslation()
-    const [selectedPackage, setSelectedPackage] = useState<PurchasesPackage | null>(null)
+    const [isTrialEnabled, setIsTrialEnabled] = useState(true)
 
+    // RevenueCat Data
     const packages = useSubscriptionStore((s) => s.packages)
     const isLoading = useSubscriptionStore((s) => s.isLoading)
     const actions = useSubscriptionStore((s) => s.actions)
 
-    // Set annual as default if available
-    React.useEffect(() => {
-        if (packages.length > 0 && !selectedPackage) {
-            const annual = packages.find(p => p.identifier.toLowerCase().includes('annual') || p.identifier.toLowerCase().includes('yearly'))
-            setSelectedPackage(annual || packages[0])
+    // Derived State
+    const annualPackage = packages.find(p => p.identifier.toLowerCase().includes('annual') || p.identifier.toLowerCase().includes('yearly'))
+    const monthlyPackage = packages.find(p => p.identifier.toLowerCase().includes('monthly'))
+    const weeklyPackage = packages.find(p => p.identifier.toLowerCase().includes('weekly')) || packages[0]
+
+    const [selectedPkg, setSelectedPkg] = useState<PurchasesPackage | null>(null)
+
+    // Effect: Select weekly by default if available, otherwise annual
+    useEffect(() => {
+        if (packages.length > 0 && !selectedPkg) {
+            if (weeklyPackage) {
+                setSelectedPkg(weeklyPackage)
+            } else if (annualPackage) {
+                setSelectedPkg(annualPackage)
+            }
         }
-    }, [packages, selectedPackage])
+    }, [packages, selectedPkg, weeklyPackage, annualPackage])
+
+    // Toggle logic
+    const toggleTrial = (value: boolean) => {
+        haptics.selection()
+        setIsTrialEnabled(value)
+
+        if (value) {
+            if (weeklyPackage) setSelectedPkg(weeklyPackage)
+        } else {
+            // Recommendation: Switch to annual if trial disabled, as it's best value 
+            if (annualPackage) setSelectedPkg(annualPackage)
+        }
+    }
 
     const handlePurchase = useCallback(async () => {
-        if (!selectedPackage) return
+        if (!selectedPkg) return
 
         haptics.selection()
-        const success = await actions.purchase(selectedPackage)
+        const success = await actions.purchase(selectedPkg)
         if (success) {
             haptics.success()
             onSuccess()
         }
-    }, [selectedPackage, actions, onSuccess])
+    }, [selectedPkg, actions, onSuccess])
+
+    const handleRestore = async () => {
+        haptics.selection()
+        await actions.restore()
+    }
+
+    // Calculations for UI
+    const annualPrice = annualPackage?.product.price || 0
+    const weeklyPrice = weeklyPackage?.product.price || 0
+    const monthlyPrice = monthlyPackage?.product.price || 0
+
+    // Savings calculations (anchor against monthly if available, else weekly)
+    const yearlyFullPrice = monthlyPrice > 0 ? monthlyPrice * 12 : weeklyPrice * 52
+    const savingsPercent = yearlyFullPrice > 0 ? Math.round(((yearlyFullPrice - annualPrice) / yearlyFullPrice) * 100) : 88
+
+    // Theme Colors
+    const goldColor = theme.colors.warning
+    const activeBorderColor = theme.colors.text
+    const ctaColor = theme.colors.primary
 
     return (
         <View style={styles.container}>
-            <ScrollView
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={styles.scrollContent}
-            >
-                <Animated.View entering={FadeIn.duration(800)} style={styles.header}>
-                    <Image
+            <View style={styles.contentContainer}>
+                {/* Header Section */}
+                <View style={styles.header}>
+                    <Pressable onPress={onClose} style={styles.closeButton}>
+                        <Ionicons name="close" size={24} color={theme.colors.textSecondary} />
+                    </Pressable>
+
+                    <Animated.Image
+                        entering={FadeInDown.delay(100).springify()}
                         source={require('@/assets/icon.png')}
-                        style={styles.logo}
+                        style={styles.mascot}
                     />
-                    <View style={styles.proBadge}>
-                        <Text style={styles.proBadgeText}>PRO</Text>
-                    </View>
-                </Animated.View>
 
-                <Animated.View entering={FadeInDown.delay(200)} style={styles.titleSection}>
-                    <Text style={styles.title}>Unlock Your Full Potential</Text>
-                    <Text style={styles.subtitle}>Start your 3-day free trial and experience the ultimate way to learn English.</Text>
-                </Animated.View>
+                    <Animated.Text entering={FadeInDown.delay(200)} style={styles.title}>
+                        Unlimited Access
+                    </Animated.Text>
+                </View>
 
-                <View style={styles.featuresList}>
-                    {PREMIUM_FEATURES.map((feature, index) => (
+                {/* Features List */}
+                <View style={styles.features}>
+                    {PREMIUM_FEATURES.map((feature, idx) => (
                         <Animated.View
-                            key={index}
-                            entering={FadeInDown.delay(400 + index * 100)}
-                            style={styles.featureItem}
+                            key={idx}
+                            entering={FadeInDown.delay(300 + (idx * 100))}
+                            style={styles.featureRow}
                         >
-                            <View style={styles.iconWrapper}>
-                                <Ionicons name={feature.icon as any} size={24} color={theme.colors.primary} />
-                            </View>
-                            <View style={styles.featureText}>
+                            <Ionicons name={feature.icon as any} size={22} color={goldColor} />
+                            <View style={styles.featureTextContainer}>
                                 <Text style={styles.featureTitle}>{feature.title}</Text>
-                                <Text style={styles.featureSub}>{feature.sub}</Text>
                             </View>
                         </Animated.View>
                     ))}
                 </View>
 
-                <TrialTimeline days={3} />
+                <View style={{ flex: 1 }} />
 
-                <View style={styles.packagesContainer}>
-                    {packages.map((pkg) => {
-                        const isAnnual = pkg.identifier.toLowerCase().includes('annual') || pkg.identifier.toLowerCase().includes('yearly')
-                        const isSelected = selectedPackage?.identifier === pkg.identifier
+                {/* Plans Section */}
+                <Animated.View entering={FadeInDown.delay(700)} style={styles.plansContainer}>
 
-                        return (
-                            <Pressable
-                                key={pkg.identifier}
-                                style={[
-                                    styles.packageCard,
-                                    isSelected && styles.packageCardSelected
-                                ]}
-                                onPress={() => {
-                                    haptics.selection()
-                                    setSelectedPackage(pkg)
-                                }}
-                            >
-                                {isAnnual && (
-                                    <View style={styles.bestValueBadge}>
-                                        <Text style={styles.bestValueText}>MOST POPULAR - SAVE 50%</Text>
+                    {/* Yearly Plan (Best Value) */}
+                    {annualPackage && (
+                        <Pressable
+                            style={[
+                                styles.planCard,
+                                selectedPkg?.identifier === annualPackage.identifier && { borderColor: activeBorderColor }
+                            ]}
+                            onPress={() => {
+                                haptics.selection()
+                                setSelectedPkg(annualPackage)
+                                setIsTrialEnabled(false)
+                            }}
+                        >
+                            <View style={styles.planContent}>
+                                <View style={styles.planHeader}>
+                                    <Text style={styles.planTitle}>Yearly Plan</Text>
+                                    <View style={[styles.saveBadge, { backgroundColor: theme.colors.error }]}>
+                                        <Text style={styles.saveText}>SAVE {savingsPercent}%</Text>
                                     </View>
-                                )}
-                                <View style={styles.packageInfo}>
-                                    <Text style={styles.packageLabel}>
-                                        {isAnnual ? 'Annual Access' : 'Monthly Access'}
-                                    </Text>
-                                    <Text style={styles.packageDetail}>
-                                        {isAnnual ? '3 Days Free, then ' : ''}{pkg.product.priceString}{isAnnual ? '/year' : '/month'}
-                                    </Text>
                                 </View>
-                                <View style={[styles.radio, isSelected && styles.radioSelected]}>
-                                    {isSelected && <Ionicons name="checkmark" size={16} color="#fff" />}
+                                <View style={styles.priceRow}>
+                                    {yearlyFullPrice > 0 && <Text style={styles.oldPrice}>{(yearlyFullPrice).toFixed(2)}</Text>}
+                                    <Text style={styles.newPrice}>{annualPackage.product.priceString}</Text>
+                                    <Text style={styles.perYear}>/year</Text>
                                 </View>
-                            </Pressable>
-                        )
-                    })}
-                </View>
-            </ScrollView>
-
-            <View style={styles.footer}>
-                <Pressable
-                    style={[styles.mainButton, isLoading && styles.buttonDisabled]}
-                    onPress={handlePurchase}
-                    disabled={isLoading}
-                >
-                    {isLoading ? (
-                        <ActivityIndicator color="#fff" />
-                    ) : (
-                        <Text style={styles.mainButtonText}>Start 3-Day Free Trial</Text>
+                            </View>
+                            <View style={[
+                                styles.radio,
+                                selectedPkg?.identifier === annualPackage.identifier && { borderColor: activeBorderColor, backgroundColor: activeBorderColor }
+                            ]} />
+                        </Pressable>
                     )}
-                </Pressable>
 
-                <Pressable onPress={onClose} style={styles.skipButton}>
-                    <Text style={styles.skipButtonText}>Not now, I'll stick with Basic</Text>
-                </Pressable>
+                    {/* Monthly Plan (Flexible) - Only show if trial is disabled or as secondary option */}
+                    {monthlyPackage && !isTrialEnabled && (
+                        <Pressable
+                            style={[
+                                styles.planCard,
+                                selectedPkg?.identifier === monthlyPackage.identifier && { borderColor: activeBorderColor }
+                            ]}
+                            onPress={() => {
+                                haptics.selection()
+                                setSelectedPkg(monthlyPackage)
+                                setIsTrialEnabled(false)
+                            }}
+                        >
+                            <View style={styles.planContent}>
+                                <View style={styles.planHeader}>
+                                    <Text style={styles.planTitle}>Monthly Plan</Text>
+                                </View>
+                                <View style={styles.priceRow}>
+                                    <Text style={styles.newPrice}>{monthlyPackage.product.priceString}</Text>
+                                    <Text style={styles.perYear}>/month</Text>
+                                </View>
+                            </View>
+                            <View style={[
+                                styles.radio,
+                                selectedPkg?.identifier === monthlyPackage.identifier && { borderColor: activeBorderColor, backgroundColor: activeBorderColor }
+                            ]} />
+                        </Pressable>
+                    )}
 
-                <Text style={styles.legalText}>
-                    Subscription automatically renews. Cancel anytime in App Store settings.
-                </Text>
+                    {/* Trial / Weekly Plan */}
+                    {weeklyPackage && (
+                        <Pressable
+                            style={[
+                                styles.planCard,
+                                styles.trialCard,
+                                selectedPkg?.identifier === weeklyPackage.identifier && { borderColor: goldColor, borderWidth: 2 }
+                            ]}
+                            onPress={() => {
+                                haptics.selection()
+                                setSelectedPkg(weeklyPackage)
+                                setIsTrialEnabled(true)
+                            }}
+                        >
+                            <View style={styles.planContent}>
+                                <View style={styles.planHeader}>
+                                    <Text style={styles.planTitle}>3-Day Trial</Text>
+                                    <View style={[styles.freeBadge, { backgroundColor: goldColor }]}>
+                                        <Text style={styles.freeText}>FREE</Text>
+                                    </View>
+                                </View>
+                                <Text style={styles.trialSub}>
+                                    then {weeklyPackage.product.priceString} per week
+                                </Text>
+                            </View>
+                            <Ionicons
+                                name="checkmark-circle"
+                                size={24}
+                                color={selectedPkg?.identifier === weeklyPackage.identifier ? goldColor : theme.colors.textSecondary}
+                            />
+                        </Pressable>
+                    )}
+
+                    {/* Trial Toggle */}
+                    <View style={styles.toggleRow}>
+                        <Text style={styles.toggleText}>Free Trial Enabled</Text>
+                        <Switch
+                            value={isTrialEnabled}
+                            onValueChange={toggleTrial}
+                            trackColor={{ false: theme.colors.border, true: theme.colors.success }}
+                            thumbColor={'#FFF'}
+                            ios_backgroundColor={theme.colors.border}
+                        />
+                    </View>
+
+                    {/* CTA Button */}
+                    <Pressable
+                        style={[
+                            styles.ctaButton,
+                            styles.shadow,
+                            { backgroundColor: ctaColor, shadowColor: ctaColor }
+                        ]}
+                        onPress={handlePurchase}
+                        disabled={isLoading}
+                    >
+                        {isLoading ? (
+                            <ActivityIndicator color="#fff" />
+                        ) : (
+                            <Text style={styles.ctaText}>
+                                {isTrialEnabled ? 'Try for Free' : 'Subscribe'} {'>'}
+                            </Text>
+                        )}
+                    </Pressable>
+
+                    {/* Footer Links */}
+                    <View style={styles.footerLinks}>
+                        <Pressable onPress={handleRestore}>
+                            <Text style={styles.linkText}>Restore</Text>
+                        </Pressable>
+                        <Text style={styles.linkText}>•</Text>
+                        <Pressable>
+                            <Text style={styles.linkText}>Terms</Text>
+                        </Pressable>
+                        <Text style={styles.linkText}>•</Text>
+                        <Pressable>
+                            <Text style={styles.linkText}>Privacy</Text>
+                        </Pressable>
+                    </View>
+
+                </Animated.View>
             </View>
         </View>
     )
@@ -168,174 +297,176 @@ const styles = StyleSheet.create((theme) => ({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
+        paddingTop: Platform.OS === 'android' ? 40 : 0,
     },
-    scrollContent: {
-        paddingTop: 60,
-        paddingHorizontal: theme.spacing.xl,
+    contentContainer: {
+        flex: 1,
+        paddingHorizontal: 24,
         paddingBottom: 40,
+        paddingTop: 20,
     },
     header: {
         alignItems: 'center',
-        marginBottom: theme.spacing.xl,
+        marginBottom: 30,
+        position: 'relative',
     },
-    logo: {
-        width: 80,
-        height: 80,
-        borderRadius: 20,
+    closeButton: {
+        position: 'absolute',
+        right: 0,
+        top: 0,
+        padding: 5,
+        zIndex: 10,
     },
-    proBadge: {
-        backgroundColor: theme.colors.primary,
-        paddingHorizontal: 10,
-        paddingVertical: 4,
-        borderRadius: 10,
-        marginTop: -12,
-        borderWidth: 3,
-        borderColor: theme.colors.background,
-    },
-    proBadgeText: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 10,
-    },
-    titleSection: {
-        marginBottom: theme.spacing.xxl,
+    mascot: {
+        width: 100,
+        height: 100,
+        marginBottom: 20,
+        marginTop: 20,
     },
     title: {
-        fontSize: 32,
-        fontWeight: '800',
+        fontSize: 28,
+        fontWeight: '700',
         color: theme.colors.text,
         textAlign: 'center',
-        marginBottom: theme.spacing.sm,
     },
-    subtitle: {
-        fontSize: 16,
-        color: theme.colors.textSecondary,
-        textAlign: 'center',
-        lineHeight: 22,
-        paddingHorizontal: 10,
+    features: {
+        gap: 16,
     },
-    featuresList: {
-        gap: theme.spacing.lg,
-        marginBottom: theme.spacing.xxxxl,
-    },
-    featureItem: {
+    featureRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: theme.spacing.md,
+        gap: 12,
     },
-    iconWrapper: {
-        width: 48,
-        height: 48,
-        borderRadius: 14,
-        backgroundColor: theme.colors.primary + '15',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    featureText: {
+    featureTextContainer: {
         flex: 1,
     },
     featureTitle: {
-        fontSize: 17,
-        fontWeight: '700',
+        fontSize: 16,
+        fontWeight: '500',
         color: theme.colors.text,
     },
-    featureSub: {
-        fontSize: 14,
-        color: theme.colors.textSecondary,
-        marginTop: 2,
+    plansContainer: {
+        gap: 12,
     },
-    packagesContainer: {
-        gap: theme.spacing.md,
-    },
-    packageCard: {
+    planCard: {
+        backgroundColor: theme.colors.surfaceElevated,
+        borderRadius: 16,
+        padding: 16,
         flexDirection: 'row',
         alignItems: 'center',
-        padding: theme.spacing.xl,
-        borderRadius: 20,
-        borderWidth: 2,
-        borderColor: theme.colors.border,
-        backgroundColor: theme.colors.surface,
-        position: 'relative',
+        justifyContent: 'space-between',
+        borderWidth: 1.5,
+        borderColor: 'transparent',
     },
-    packageCardSelected: {
-        borderColor: theme.colors.primary,
-        backgroundColor: theme.colors.primary + '05',
+    trialCard: {
+        // Default style for trial card
     },
-    bestValueBadge: {
-        position: 'absolute',
-        top: -12,
-        left: 20,
-        backgroundColor: theme.colors.primary,
-        paddingHorizontal: 12,
-        paddingVertical: 4,
-        borderRadius: 8,
-    },
-    bestValueText: {
-        color: '#fff',
-        fontSize: 10,
-        fontWeight: '900',
-    },
-    packageInfo: {
+    planContent: {
         flex: 1,
     },
-    packageLabel: {
-        fontSize: 18,
+    planHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 8,
+        marginBottom: 4,
+    },
+    planTitle: {
+        fontSize: 16,
         fontWeight: '700',
         color: theme.colors.text,
     },
-    packageDetail: {
-        fontSize: 14,
-        color: theme.colors.textSecondary,
-        marginTop: 2,
+    saveBadge: {
+        paddingHorizontal: 6,
+        paddingVertical: 2,
+        borderRadius: 4,
     },
-    radio: {
-        width: 28,
-        height: 28,
-        borderRadius: 14,
-        borderWidth: 2,
-        borderColor: theme.colors.border,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    radioSelected: {
-        backgroundColor: theme.colors.primary,
-        borderColor: theme.colors.primary,
-    },
-    footer: {
-        padding: theme.spacing.xl,
-        paddingBottom: 40,
-        gap: theme.spacing.md,
-    },
-    mainButton: {
-        backgroundColor: theme.colors.primary,
-        height: 64,
-        borderRadius: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-        ...theme.shadows.md,
-    },
-    buttonDisabled: {
-        opacity: 0.7,
-    },
-    mainButtonText: {
-        color: '#fff',
-        fontSize: 18,
+    saveText: {
+        color: '#FFF',
+        fontSize: 10,
         fontWeight: '800',
     },
-    skipButton: {
-        alignItems: 'center',
-        paddingVertical: theme.spacing.sm,
+    freeBadge: {
+        paddingHorizontal: 6,
+        paddingVertical: 2,
+        borderRadius: 4,
     },
-    skipButtonText: {
+    freeText: {
+        color: '#000',
+        fontSize: 10,
+        fontWeight: '800',
+    },
+    priceRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 6,
+    },
+    oldPrice: {
         color: theme.colors.textSecondary,
-        fontSize: 15,
+        textDecorationLine: 'line-through',
+        fontSize: 14,
+    },
+    newPrice: {
+        color: theme.colors.text,
+        fontWeight: '600',
+        fontSize: 14,
+    },
+    perYear: {
+        color: theme.colors.textSecondary,
+        fontSize: 14,
+    },
+    trialSub: {
+        color: theme.colors.textSecondary,
+        fontSize: 13,
+    },
+    radio: {
+        width: 24,
+        height: 24,
+        borderRadius: 12,
+        borderWidth: 2,
+        borderColor: theme.colors.textSecondary,
+    },
+    toggleRow: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: theme.colors.surfaceElevated,
+        paddingVertical: 10,
+        paddingHorizontal: 16,
+        borderRadius: 16,
+        marginTop: 4,
+        marginBottom: 12,
+    },
+    toggleText: {
+        color: theme.colors.text,
+        fontSize: 13,
         fontWeight: '600',
     },
-    legalText: {
-        fontSize: 11,
-        color: theme.colors.textMuted,
-        textAlign: 'center',
-        marginTop: theme.spacing.xs,
-        lineHeight: 16,
+    ctaButton: {
+        height: 56,
+        borderRadius: 28,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 16,
+    },
+    shadow: {
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.3,
+        shadowRadius: 8,
+        elevation: 5,
+    },
+    ctaText: {
+        color: '#FFF',
+        fontSize: 18,
+        fontWeight: '700',
+    },
+    footerLinks: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 12,
+    },
+    linkText: {
+        color: theme.colors.textSecondary,
+        fontSize: 12,
+        fontWeight: '500',
     },
 }))

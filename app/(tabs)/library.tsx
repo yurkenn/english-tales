@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useCallback, useRef } from 'react'
-import { View, FlatList, RefreshControl, Text, Pressable } from 'react-native'
+import { View, FlatList, RefreshControl, Text, Pressable, LayoutAnimation, Platform, UIManager } from 'react-native'
 import { StyleSheet, useUnistyles } from 'react-native-unistyles'
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -39,16 +39,34 @@ interface SegmentTabProps {
     onPress: () => void
 }
 
-const SegmentTab = ({ label, isActive, badge, onPress }: SegmentTabProps) => (
-    <Pressable onPress={onPress} style={[styles.segment, isActive && styles.segmentActive]}>
-        <Text style={[styles.segmentText, isActive && styles.segmentTextActive]}>{label}</Text>
-        {badge !== undefined && badge > 0 && (
-            <View style={styles.badge}>
-                <Text style={styles.badgeText}>{badge}</Text>
-            </View>
-        )}
-    </Pressable>
-)
+const SegmentTab = ({ label, isActive, badge, onPress }: SegmentTabProps) => {
+    const handlePress = () => {
+        haptics.selection()
+        onPress()
+    }
+
+    return (
+        <Pressable
+            onPress={handlePress}
+            style={[styles.segment, isActive && styles.segmentActive]}
+            accessible
+            accessibilityRole="tab"
+            accessibilityLabel={badge ? `${label}, ${badge} items` : label}
+            accessibilityState={{ selected: isActive }}
+        >
+            <Text style={[styles.segmentText, isActive && styles.segmentTextActive]}>{label}</Text>
+            {badge !== undefined && badge > 0 && (
+                <View style={styles.badge}>
+                    <Text style={styles.badgeText}>{badge}</Text>
+                </View>
+            )}
+        </Pressable>
+    )
+}
+
+if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
+    UIManager.setLayoutAnimationEnabledExperimental(true)
+}
 
 export default function LibraryScreen() {
     const { t } = useTranslation()
@@ -126,6 +144,7 @@ export default function LibraryScreen() {
 
     const cycleFilter = useCallback(() => {
         haptics.selection()
+        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
         const currentIndex = FILTERS.indexOf(filter)
         setFilter(FILTERS[(currentIndex + 1) % FILTERS.length])
     }, [filter])
@@ -203,7 +222,7 @@ export default function LibraryScreen() {
 
     // Render items
     const renderLibraryItem = useCallback(
-        ({ item }: { item: LibraryItemWithProgress }) => (
+        ({ item, index }: { item: LibraryItemWithProgress, index: number }) => (
             <LibraryBookCard
                 item={item}
                 isDownloaded={downloadActions.isDownloaded(item.storyId)}
@@ -211,6 +230,7 @@ export default function LibraryScreen() {
                 onReadPress={() => handleReadPress(item.storyId)}
                 onMorePress={() => handleMorePress(item)}
                 moreButtonRef={(ref: View | null) => { buttonRefs.current[item.storyId] = ref }}
+                priority={index < 6 ? 'high' : 'normal'}
             />
         ),
         [downloadActions, handleStoryPress, handleReadPress, handleMorePress]
@@ -248,13 +268,19 @@ export default function LibraryScreen() {
                 <SegmentTab
                     label={t('library.tabs.stories') || 'Stories'}
                     isActive={viewMode === 'stories'}
-                    onPress={() => setViewMode('stories')}
+                    onPress={() => {
+                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
+                        setViewMode('stories')
+                    }}
                 />
                 <SegmentTab
                     label={t('library.tabs.vocabulary') || 'Vocabulary'}
                     isActive={viewMode === 'vocabulary'}
                     badge={wordList.length}
-                    onPress={() => setViewMode('vocabulary')}
+                    onPress={() => {
+                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
+                        setViewMode('vocabulary')
+                    }}
                 />
             </View>
 
@@ -270,6 +296,11 @@ export default function LibraryScreen() {
                         contentContainerStyle={styles.listContent}
                         showsVerticalScrollIndicator={false}
                         ItemSeparatorComponent={() => <View style={styles.separator} />}
+                        getItemLayout={(data, index) => ({
+                            length: 152, // Approximate height: 120px cover + 32px padding
+                            offset: 152 * index + (index * 16), // Add separator height
+                            index,
+                        })}
                         removeClippedSubviews
                         initialNumToRender={10}
                         maxToRenderPerBatch={5}

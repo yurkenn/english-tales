@@ -50,6 +50,10 @@ export const GenreChip: React.FC<GenreChipProps> = ({
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
             onPress={handlePress}
+            accessible
+            accessibilityRole="button"
+            accessibilityLabel={label}
+            accessibilityState={{ selected: isSelected }}
         >
             <Text
                 style={[

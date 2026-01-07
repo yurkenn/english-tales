@@ -366,6 +366,9 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: theme.spacing.lg,
         borderRadius: theme.radius.lg,
         alignItems: 'center',
+        ...theme.shadows.md,
+        borderBottomWidth: 4,
+        borderBottomColor: theme.colors.primaryDark || '#00000020',
     },
     claimButtonText: {
         fontSize: theme.typography.size.lg,

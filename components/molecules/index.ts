@@ -63,3 +63,4 @@ export { StoryUnlockModal } from './StoryUnlockModal';
 export { StreakProtectionModal } from './StreakProtectionModal';
 export { DailyBonusModal } from './DailyBonusModal';
 export { TrialTimeline } from './TrialTimeline';
+export { OfflineBanner } from './OfflineBanner';

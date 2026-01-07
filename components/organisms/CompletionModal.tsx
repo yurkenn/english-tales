@@ -4,7 +4,6 @@ import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { ConfettiCelebration } from './ConfettiCelebration';
-import { RewardedAdButton } from '../molecules/RewardedAdButton';
 import { haptics } from '@/utils/haptics';
 import { useToastStore } from '@/store/toastStore';
 
@@ -35,9 +34,7 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
         setRating(value);
     };
 
-    const handleAdRewardEarned = () => {
-        toastActions.success(t('ads.rewardEarned', 'Reward earned! Next story unlocked.'));
-    };
+
 
     return (
         <Modal visible={visible} transparent animationType="fade" onRequestClose={onContinue}>
@@ -84,17 +81,7 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                     <View style={styles.footer}>
                         <Text style={styles.readyText}>{t('reading.completion.readyForMore')}</Text>
 
-                        {/* Rewarded Ad Option */}
-                        <View style={styles.adButtonContainer}>
-                            <RewardedAdButton
-                                rewardType="story_unlock"
-                                buttonText={t('ads.watchForNextStory', 'Watch ad for bonus')}
-                                rewardDescription={t('ads.unlockNextFree', 'Unlock next story free')}
-                                onRewardEarned={handleAdRewardEarned}
-                                variant="outline"
-                                size="md"
-                            />
-                        </View>
+
 
                         <Pressable
                             style={styles.button}
@@ -245,7 +232,5 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textMuted,
         fontWeight: theme.typography.weight.medium,
     },
-    adButtonContainer: {
-        width: '100%',
-    },
+
 }));

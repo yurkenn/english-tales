@@ -17,3 +17,4 @@ export * from './useRewardedAd';
 export * from './useReadingCompletion';
 export * from './useReadingControls';
 export * from './useDailyBonusManager';
+export * from './useDeepLinking';

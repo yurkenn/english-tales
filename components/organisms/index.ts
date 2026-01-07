@@ -54,3 +54,4 @@ export { PostDetailSheet } from './PostDetailSheet';
 export { PagedContent } from './PagedContent';
 export { RelatedStories } from './RelatedStories';
 export { PaywallModal } from './PaywallModal';
+export { OnboardingPaywall } from './OnboardingPaywall';

@@ -25,11 +25,23 @@ import { Story, CommunityPost } from '@/types'
 import { useAuthStore } from '@/store/authStore'
 import { useLibraryStore } from '@/store/libraryStore'
 import { useProgressStore } from '@/store/progressStore'
+import { useToastStore } from '@/store/toastStore'
 import { mapSanityStory } from '@/utils/storyMapper'
 import { haptics } from '@/utils/haptics'
 import { communityService } from '@/services/communityService'
 import { socialService } from '@/services/socialService'
 import { useRecommendations } from '@/hooks/useRecommendations'
+
+// Types - matches CommunityBuzz ActivityItem interface
+interface BuzzActivity {
+    id: string
+    userId: string
+    userName: string
+    userPhoto?: string
+    type: 'story_completed' | 'achievement' | 'started_reading' | 'follow' | 'story_review'
+    targetName: string
+    timestamp: Date
+}
 
 // Constants
 const DIFFICULTY_MAP: Record<number, string> = {
@@ -50,7 +62,7 @@ export default function HomeScreen() {
     const [selectedGenre, setSelectedGenre] = useState(0)
     const [refreshing, setRefreshing] = useState(false)
     const [followingIds, setFollowingIds] = useState<string[]>([])
-    const [buzz, setBuzz] = useState<any[]>([])
+    const [buzz, setBuzz] = useState<BuzzActivity[]>([])
 
     // Refs
     const scrollViewRef = useRef<ScrollView>(null)
@@ -95,8 +107,8 @@ export default function HomeScreen() {
                     id: post.id,
                     userId: post.userId,
                     userName: post.userName,
-                    userPhoto: post.userPhoto,
-                    type: post.type,
+                    userPhoto: post.userPhoto ?? undefined,
+                    type: post.type as BuzzActivity['type'],
                     targetName: (post.metadata as any)?.storyTitle ||
                         (post.metadata as any)?.achievementTitle ||
                         (post.metadata as any)?.targetUserName ||
@@ -106,7 +118,11 @@ export default function HomeScreen() {
                 setBuzz(mapped)
             }
         } catch (e) {
-            console.error('Error fetching buzz:', e)
+            // Silent fail for buzz - don't disrupt main feed experience
+            // Only log in development
+            if (__DEV__) {
+                console.warn('[HomeScreen] Buzz fetch failed:', e)
+            }
         }
     }, [])
 
@@ -188,7 +204,12 @@ export default function HomeScreen() {
     // Render functions
     const renderBookCard = useCallback(
         ({ item, index }: { item: Story; index: number }) => (
-            <BookCard story={item} showRank={index + 1} onPress={() => handleStoryPress(item.id)} />
+            <BookCard
+                story={item}
+                showRank={index + 1}
+                onPress={() => handleStoryPress(item.id)}
+                priority={index < 4 ? 'high' : 'normal'}
+            />
         ),
         [handleStoryPress]
     )

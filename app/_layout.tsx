@@ -43,8 +43,9 @@ import {
   DailyBonusModal,
   StreakProtectionModal,
   PaywallModal,
+  OfflineBanner,
 } from '@/components';
-import { useDailyBonusManager } from '@/hooks';
+import { useDailyBonusManager, useDeepLinking } from '@/hooks';
 import { lightTheme, darkTheme, sepiaTheme } from '../theme/unistyles';
 
 // Keep the splash screen visible while we fetch resources
@@ -83,6 +84,9 @@ export default function RootLayout() {
     closeStreakProtection,
     onStreakProtected,
   } = useDailyBonusManager();
+
+  // Deep linking - handles incoming URLs
+  useDeepLinking();
 
   // Get the correct theme object based on current mode
   const currentTheme = useMemo(() => {
@@ -237,6 +241,7 @@ export default function RootLayout() {
   return (
     <ErrorBoundary>
       <GestureHandlerRootView style={{ flex: 1 }}>
+        <OfflineBanner />
         <QueryProvider>
           <BottomSheetModalProvider>
             <StatusBar style={mode === 'sepia' || isDark ? 'light' : 'dark'} />

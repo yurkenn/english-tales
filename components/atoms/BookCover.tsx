@@ -19,6 +19,7 @@ interface BookCoverProps {
     flat?: boolean;
     /** If true, shows a stack of pages on the right and bottom edges */
     showPages?: boolean;
+    priority?: 'low' | 'normal' | 'high';
 }
 
 export const BookCover: React.FC<BookCoverProps> = ({
@@ -32,6 +33,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
     contentFit = 'cover',
     flat = false,
     showPages = false,
+    priority,
 }) => {
     const { theme } = useUnistyles();
     const finalHeight = height || width * (3 / 2);
@@ -77,6 +79,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
                         placeholder={placeholder}
                         width={width}
                         height={finalHeight}
+                        priority={priority}
                     />
                 )}
 
