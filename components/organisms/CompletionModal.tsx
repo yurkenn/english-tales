@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Pressable, Modal } from 'react-native';
 import { StyleSheet, useUnistyles } from 'react-native-unistyles';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import * as StoreReview from 'expo-store-review';
 import { ConfettiCelebration } from './ConfettiCelebration';
 import { haptics } from '@/utils/haptics';
 import { useToastStore } from '@/store/toastStore';
@@ -28,6 +29,16 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
     const { t } = useTranslation();
     const [rating, setRating] = useState(0);
     const toastActions = useToastStore((s) => s.actions);
+
+    useEffect(() => {
+        const attemptReview = async () => {
+            if (visible && await StoreReview.hasAction()) {
+                // Try to ask for a review. The OS will decide if it actually shows.
+                StoreReview.requestReview();
+            }
+        }
+        attemptReview();
+    }, [visible]);
 
     const handleRatingPress = (value: number) => {
         haptics.selection();
