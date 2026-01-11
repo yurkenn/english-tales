@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react'
 import { View, ScrollView, Pressable, Animated } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme, semanticColors } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
@@ -14,7 +15,8 @@ import { haptics } from '@/utils/haptics'
 type QuizMode = 'flashcard' | 'multiple_choice'
 
 export default function VocabularyQuizScreen() {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
     const router = useRouter()
     const insets = useSafeAreaInsets()
@@ -112,18 +114,18 @@ export default function VocabularyQuizScreen() {
                     </View>
                     <View style={styles.statsRow}>
                         <View style={[styles.statBox, { backgroundColor: 'rgba(16, 185, 129, 0.1)' }]}>
-                            <Ionicons name="checkmark-circle" size={24} color="#10B981" />
-                            <Typography style={[styles.statValue, { color: '#10B981' }]}>{correctCount}</Typography>
+                            <Ionicons name="checkmark-circle" size={24} color={semanticColors.level.beginner} />
+                            <Typography style={[styles.statValue, { color: semanticColors.level.beginner }]}>{correctCount}</Typography>
                             <Typography style={styles.statLabel}>Correct</Typography>
                         </View>
                         <View style={[styles.statBox, { backgroundColor: 'rgba(239, 68, 68, 0.1)' }]}>
-                            <Ionicons name="close-circle" size={24} color="#EF4444" />
-                            <Typography style={[styles.statValue, { color: '#EF4444' }]}>{incorrectCount}</Typography>
+                            <Ionicons name="close-circle" size={24} color={semanticColors.level.advanced} />
+                            <Typography style={[styles.statValue, { color: semanticColors.level.advanced }]}>{incorrectCount}</Typography>
                             <Typography style={styles.statLabel}>Learning</Typography>
                         </View>
                     </View>
                     <Pressable style={styles.restartButton} onPress={handleRestart}>
-                        <Ionicons name="refresh" size={20} color="#FFFFFF" />
+                        <Ionicons name="refresh" size={20} color={theme.colors.textInverse} />
                         <Typography style={styles.restartButtonText}>Practice Again</Typography>
                     </Pressable>
                 </View>
@@ -173,7 +175,7 @@ export default function VocabularyQuizScreen() {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -236,7 +238,7 @@ const styles = StyleSheet.create((theme) => ({
         padding: theme.spacing.xxxxl,
     },
     emptyIcon: {
-        fontSize: 64,
+        fontSize: theme.typography.size.display * 2,
         marginBottom: theme.spacing.lg,
     },
     emptyTitle: {
@@ -260,7 +262,7 @@ const styles = StyleSheet.create((theme) => ({
     emptyButtonText: {
         fontSize: theme.typography.size.sm,
         fontWeight: '600',
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
     },
     completeContainer: {
         flex: 1,
@@ -279,9 +281,9 @@ const styles = StyleSheet.create((theme) => ({
         ...theme.shadows.lg,
     },
     scorePercent: {
-        fontSize: 48,
+        fontSize: theme.typography.size.display * 1.5,
         fontWeight: '800',
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
     },
     scoreLabel: {
         fontSize: theme.typography.size.sm,
@@ -301,7 +303,7 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.xs,
     },
     statValue: {
-        fontSize: 24,
+        fontSize: theme.typography.size.xxl,
         fontWeight: '700',
     },
     statLabel: {
@@ -320,6 +322,6 @@ const styles = StyleSheet.create((theme) => ({
     restartButtonText: {
         fontSize: theme.typography.size.md,
         fontWeight: '600',
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
     },
-}))
+});

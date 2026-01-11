@@ -1,9 +1,10 @@
 import React, { useMemo, useRef, useState, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable, Share } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, ScrollView, Pressable, Share, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import BottomSheet from '@gorhom/bottom-sheet';
 import {
     RatingStars,
@@ -49,10 +50,12 @@ interface StoryDetails extends Story {
 }
 
 export default function StoryDetailScreen() {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const { t } = useTranslation();
     const insets = useSafeAreaInsets();
+    const { containerPadding } = useResponsiveLayout();
     const { id } = useLocalSearchParams<{ id: string }>();
     const writeReviewSheetRef = useRef<BottomSheet>(null);
     const removeDownloadDialogRef = useRef<BottomSheet>(null);
@@ -256,7 +259,7 @@ export default function StoryDetailScreen() {
                 />
 
                 {/* Content */}
-                <View style={styles.content}>
+                <View style={[styles.content, { padding: containerPadding }]}>
                     {/* Title and Author */}
                     <View style={styles.titleSection}>
                         <Text style={styles.title}>{story.title}</Text>
@@ -395,7 +398,7 @@ export default function StoryDetailScreen() {
                     }
                 }}
             />
-            <View style={[styles.bottomAction, { paddingBottom: insets.bottom + 16 }]}>
+            <View style={[styles.bottomAction, { paddingBottom: insets.bottom + 16, paddingHorizontal: containerPadding }]}>
                 <Pressable
                     style={styles.readButton}
                     onPress={handleStartReading}
@@ -454,7 +457,7 @@ export default function StoryDetailScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -472,7 +475,7 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: theme.spacing.xxxl,
     },
     content: {
-        padding: theme.spacing.xl,
+        padding: theme.spacing.lg,
         gap: theme.spacing.xl,
         marginTop: -theme.spacing.xxxxl * 0.4,
         backgroundColor: theme.colors.background,
@@ -562,7 +565,7 @@ const styles = StyleSheet.create((theme) => ({
         bottom: 0,
         left: 0,
         right: 0,
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
         paddingTop: theme.spacing.md,
         backgroundColor: theme.colors.background,
         borderTopWidth: 1,
@@ -635,4 +638,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
         textAlign: 'center',
     },
-}));
+});

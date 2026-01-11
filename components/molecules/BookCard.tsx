@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { View, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography, BookCover } from '../atoms';
 import { Story } from '@/types';
@@ -20,7 +20,8 @@ const BookCardComponent: React.FC<BookCardProps> = ({
     rating = null,
     priority,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const coverUri = story.coverImage || 'https://via.placeholder.com/240x336/1a1a2e/ffffff?text=No+Cover';
 
     return (
@@ -90,7 +91,7 @@ export const BookCard = memo(BookCardComponent, (prevProps, nextProps) => {
         && prevProps.priority === nextProps.priority;
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         width: theme.bookCover.width,
         gap: theme.spacing.xs,
@@ -143,4 +144,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 10,
         fontWeight: 'bold',
     },
-}));
+});

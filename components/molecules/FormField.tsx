@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, TextInput, TextInputProps, ViewStyle, StyleProp, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, TextInput, TextInputProps, ViewStyle, StyleProp, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 /**
@@ -34,7 +34,8 @@ export const FormField: React.FC<FormFieldProps> = ({
     showPasswordToggle,
     ...textInputProps
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
     const hasError = !!error;
 
@@ -105,7 +106,7 @@ export const FormField: React.FC<FormFieldProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     label: {
         fontSize: theme.typography.size.sm,
         fontWeight: theme.typography.weight.semibold,
@@ -154,4 +155,4 @@ const styles = StyleSheet.create((theme) => ({
         width: '100%',
         marginBottom: theme.spacing.md,
     },
-}));
+});

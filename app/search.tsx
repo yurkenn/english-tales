@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { StyleSheet } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import {
     BookListItem,
     SearchHeader,
@@ -30,8 +31,11 @@ const TRENDING_SUGGESTIONS = [
 ];
 
 export default function SearchScreen() {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { containerPadding } = useResponsiveLayout();
     const [query, setQuery] = useState('');
     const [debouncedQuery, setDebouncedQuery] = useState('');
     const [recentSearches, setRecentSearches] = useState<string[]>([]);
@@ -103,7 +107,7 @@ export default function SearchScreen() {
         // Show suggestions when no query
         if (query.length === 0) {
             return (
-                <View style={styles.suggestionsContainer}>
+                <View style={[styles.suggestionsContainer, { paddingHorizontal: containerPadding }]}>
                     <RecentSearches
                         searches={recentSearches}
                         onSearchPress={setQuery}
@@ -138,7 +142,7 @@ export default function SearchScreen() {
                 data={stories}
                 keyExtractor={(item) => item.id}
                 renderItem={renderItem}
-                contentContainerStyle={styles.listContent}
+                contentContainerStyle={[styles.listContent, { paddingHorizontal: containerPadding }]}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: 12 }} />}
                 removeClippedSubviews={true}
@@ -167,7 +171,7 @@ export default function SearchScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -190,4 +194,4 @@ const styles = StyleSheet.create((theme) => ({
         textTransform: 'uppercase',
         letterSpacing: 0.8,
     },
-}));
+});

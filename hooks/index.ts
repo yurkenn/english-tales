@@ -18,3 +18,4 @@ export * from './useReadingCompletion';
 export * from './useReadingControls';
 export * from './useDailyBonusManager';
 export * from './useDeepLinking';
+export * from './useResponsiveLayout';

@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react'
 import { View, ScrollView, FlatList, RefreshControl } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useTranslation } from 'react-i18next'
@@ -31,6 +32,7 @@ import { haptics } from '@/utils/haptics'
 import { communityService } from '@/services/communityService'
 import { socialService } from '@/services/socialService'
 import { useRecommendations } from '@/hooks/useRecommendations'
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout'
 
 // Types - matches CommunityBuzz ActivityItem interface
 interface BuzzActivity {
@@ -53,10 +55,12 @@ const AUTHORS_INDEX = 5
 
 export default function HomeScreen() {
     const { t } = useTranslation()
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter()
     const insets = useSafeAreaInsets()
     const { user } = useAuthStore()
+    const { containerPadding, sectionSpacing } = useResponsiveLayout()
 
     // State
     const [selectedGenre, setSelectedGenre] = useState(0)
@@ -249,13 +253,13 @@ export default function HomeScreen() {
                 onNotificationPress={() => { haptics.selection(); router.push('/settings' as any) }}
             />
 
-            <View style={styles.searchContainer}>
+            <View style={[styles.searchContainer, { paddingHorizontal: containerPadding }]}>
                 <SearchBar placeholder={t('home.searchPlaceholder')} onPress={handleSearch} />
             </View>
 
             {/* Genre Chips */}
             <View style={styles.chipsWrapper}>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipsContainer}>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={[styles.chipsContainer, { paddingHorizontal: containerPadding }]}>
                     {genres.map((genre, index) => (
                         <GenreChip
                             key={genre}
@@ -318,7 +322,7 @@ export default function HomeScreen() {
                         {featuredStory && !isFilterActive && (
                             <View style={styles.section}>
                                 <SectionHeader title={t('home.dailyPick')} />
-                                <View style={styles.sectionContent}>
+                                <View style={[styles.sectionContent, { paddingHorizontal: containerPadding }]}>
                                     <FeaturedCard story={featuredStory} onPress={() => handleStoryPress(featuredStory.id)} />
                                 </View>
                             </View>
@@ -330,7 +334,7 @@ export default function HomeScreen() {
                                 data={recommendedStories}
                                 horizontal
                                 showsHorizontalScrollIndicator={false}
-                                contentContainerStyle={styles.carouselContent}
+                                contentContainerStyle={[styles.carouselContent, { paddingHorizontal: containerPadding }]}
                                 keyExtractor={(item) => item.id}
                                 renderItem={renderBookCard}
                                 ItemSeparatorComponent={() => <View style={styles.horizontalSeparator} />}
@@ -339,7 +343,7 @@ export default function HomeScreen() {
 
                         <View style={styles.section}>
                             <SectionHeader title={t('home.trending')} onActionPress={() => router.push('/stories?sort=trending')} />
-                            <View style={styles.trendingContainer}>
+                            <View style={[styles.trendingContainer, { paddingHorizontal: containerPadding }]}>
                                 {trendingList.map((story: Story, index: number) => (
                                     <RankedStoryCard
                                         key={story.id}
@@ -357,13 +361,13 @@ export default function HomeScreen() {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
     },
     searchContainer: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
         paddingTop: 0,
         paddingBottom: theme.spacing.sm,
     },
@@ -371,7 +375,7 @@ const styles = StyleSheet.create((theme) => ({
         flexShrink: 0,
     },
     chipsContainer: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
         paddingVertical: theme.spacing.sm,
         gap: theme.spacing.sm,
     },
@@ -387,13 +391,13 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.sm,
     },
     sectionContent: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
     },
     carouselContent: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
     },
     trendingContainer: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
         gap: theme.spacing.md,
     },
     horizontalSeparator: {
@@ -403,4 +407,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-}))
+});

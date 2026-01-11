@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -15,7 +15,8 @@ export const FilteredEmptyState: React.FC<FilteredEmptyStateProps> = ({
     filterName,
     onClearFilter,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
 
     const handleClear = () => {
@@ -44,7 +45,7 @@ export const FilteredEmptyState: React.FC<FilteredEmptyStateProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -89,4 +90,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.textInverse,
     },
-}));
+});

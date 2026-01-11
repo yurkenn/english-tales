@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable, Image, ImageSourcePropType } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
 import { haptics } from '@/utils/haptics';
@@ -21,7 +21,8 @@ export const CreatePostBar: React.FC<CreatePostBarProps> = ({
     onPress,
     onImagePress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const avatarSource: ImageSourcePropType = userPhotoUrl ? { uri: userPhotoUrl } : DEFAULT_AVATAR;
 
     return (
@@ -45,7 +46,7 @@ export const CreatePostBar: React.FC<CreatePostBarProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     createPostBar: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -86,4 +87,4 @@ const styles = StyleSheet.create((theme) => ({
     imageAction: {
         padding: theme.spacing.xs,
     },
-}));
+});

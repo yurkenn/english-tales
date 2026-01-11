@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Modal, Pressable, TextInput, ActivityIndicator } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Modal, Pressable, TextInput, ActivityIndicator , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
@@ -18,7 +18,8 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
     onSubmit,
     storyTitle,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [rating, setRating] = useState(0);
     const [text, setText] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -135,7 +136,7 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.5)',
@@ -206,4 +207,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.textInverse,
     },
-}));
+});

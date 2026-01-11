@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 
@@ -16,7 +16,8 @@ export const InsightsCard: React.FC<InsightsCardProps> = ({
     totalReadingTimeMs
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const formatTime = (ms: number) => {
         const totalMinutes = Math.floor(ms / 60000);
@@ -68,7 +69,7 @@ export const InsightsCard: React.FC<InsightsCardProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginHorizontal: theme.spacing.xl,
         padding: theme.spacing.lg,
@@ -116,4 +117,4 @@ const styles = StyleSheet.create((theme) => ({
         textTransform: 'uppercase',
         letterSpacing: 0.5,
     },
-}));
+});

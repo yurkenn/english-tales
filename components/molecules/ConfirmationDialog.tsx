@@ -1,7 +1,7 @@
 import React, { forwardRef, useCallback, useMemo } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { haptics } from '@/utils/haptics';
@@ -29,7 +29,8 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
         destructive = false,
         icon,
     }, ref) => {
-        const { theme } = useUnistyles();
+        const { theme } = useTheme();
+    const styles = createStyles(theme);
         const { t } = useTranslation();
         const insets = useSafeAreaInsets();
 
@@ -142,7 +143,7 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
 
 ConfirmationDialog.displayName = 'ConfirmationDialog';
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     content: {
         paddingHorizontal: theme.spacing.xl,
         paddingTop: theme.spacing.xl,
@@ -213,4 +214,4 @@ const styles = StyleSheet.create((theme) => ({
     destructiveButtonText: {
         color: theme.colors.textInverse,
     },
-}));
+});

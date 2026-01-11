@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown, FadeOutUp } from 'react-native-reanimated';
 import { haptics } from '@/utils/haptics';
@@ -22,7 +22,8 @@ export const CheckpointItem: React.FC<CheckpointProps> = ({
     onComplete,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [selectedOption, setSelectedOption] = useState<number | null>(null);
     const [isAnswered, setIsAnswered] = useState(false);
 
@@ -106,7 +107,7 @@ export const CheckpointItem: React.FC<CheckpointProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         marginVertical: theme.spacing.xl,
@@ -156,4 +157,4 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         marginRight: theme.spacing.sm,
     },
-}));
+});

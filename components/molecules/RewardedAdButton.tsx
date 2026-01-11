@@ -5,7 +5,8 @@
 
 import React, { memo } from 'react'
 import { Pressable, Text, View, ActivityIndicator } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { useRewardedAd } from '@/hooks/useRewardedAd'
 import { RewardType } from '@/services/ads'
@@ -32,7 +33,8 @@ function RewardedAdButtonComponent({
     size = 'md',
     disabled = false,
 }: RewardedAdButtonProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
 
     const { showAd, isLoading, isReady, canWatch } = useRewardedAd({
@@ -125,7 +127,7 @@ function RewardedAdButtonComponent({
 
 export const RewardedAdButton = memo(RewardedAdButtonComponent)
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     button: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -184,4 +186,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: 'bold',
         color: '#000',
     },
-}))
+});

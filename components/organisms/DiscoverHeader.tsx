@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 
 interface DiscoverHeaderProps {
     onNotificationPress?: () => void;
@@ -12,7 +13,9 @@ interface DiscoverHeaderProps {
 export const DiscoverHeader: React.FC<DiscoverHeaderProps> = ({
     onNotificationPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const { containerPadding } = useResponsiveLayout();
+    const styles = createStyles(theme, containerPadding);
     const { t } = useTranslation();
     const insets = useSafeAreaInsets();
 
@@ -34,12 +37,12 @@ export const DiscoverHeader: React.FC<DiscoverHeaderProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme, containerPadding: number) => StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: containerPadding,
         paddingBottom: theme.spacing.md,
     },
     title: {
@@ -59,4 +62,4 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         ...theme.shadows.sm,
     },
-}));
+});

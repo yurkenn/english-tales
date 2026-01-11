@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, Text, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { haptics } from '@/utils/haptics';
 
 interface SegmentedPickerProps<T extends string> {
@@ -16,7 +16,8 @@ export const SegmentedPicker = <T extends string>({
     onValueChange,
     style,
 }: SegmentedPickerProps<T>) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={[styles.container, style]}>
@@ -39,7 +40,7 @@ export const SegmentedPicker = <T extends string>({
                         <Text
                             style={[
                                 styles.segmentText,
-                                { color: isActive ? '#FFFFFF' : theme.colors.textSecondary }
+                                { color: isActive ? theme.colors.textInverse : theme.colors.textSecondary }
                             ]}
                         >
                             {option.label}
@@ -51,7 +52,7 @@ export const SegmentedPicker = <T extends string>({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         gap: theme.spacing.sm,
@@ -74,4 +75,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: '600',
     },
-}));
+});

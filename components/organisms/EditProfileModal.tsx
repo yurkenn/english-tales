@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, TextInput, Modal } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, TextInput, Modal , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useToastStore } from '@/store/toastStore';
 import { haptics } from '@/utils/haptics';
@@ -19,7 +19,8 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
     initialName,
     onSave,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
     const [name, setName] = useState(initialName);
     const [isSaving, setIsSaving] = useState(false);
@@ -80,7 +81,7 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.5)',
@@ -129,4 +130,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.textInverse,
     },
-}));
+});

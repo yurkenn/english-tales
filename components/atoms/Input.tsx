@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, TextInput, TextInputProps, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, TextInput, TextInputProps, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from './Typography';
 
@@ -19,7 +19,8 @@ export const Input: React.FC<InputProps> = ({
     style,
     ...props
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [isFocused, setIsFocused] = React.useState(false);
 
     return (
@@ -79,7 +80,7 @@ export const Input: React.FC<InputProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         width: '100%',
     },
@@ -112,4 +113,4 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: 4,
         marginLeft: 4,
     },
-}));
+});

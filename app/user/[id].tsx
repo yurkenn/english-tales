@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useCallback } from 'react'
 import { View, Pressable, ScrollView, Image, RefreshControl } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -25,7 +26,8 @@ type TabType = 'posts' | 'saved' | 'about'
 export default function UserProfileScreen() {
     const { id } = useLocalSearchParams<{ id: string }>()
     const { t } = useTranslation()
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter()
     const insets = useSafeAreaInsets()
     const { user: currentUser } = useAuthStore()
@@ -333,7 +335,7 @@ export default function UserProfileScreen() {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -609,4 +611,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
         lineHeight: 22,
     },
-}))
+});

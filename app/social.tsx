@@ -4,13 +4,14 @@ import {
     ScrollView,
     Pressable,
     RefreshControl,
-    ActivityIndicator,
+    ActivityIndicator, StyleSheet
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import BottomSheet from '@gorhom/bottom-sheet';
 
 import { Typography } from '@/components/atoms/Typography';
@@ -25,9 +26,11 @@ import { useTranslation } from 'react-i18next';
 
 export default function SocialScreen() {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { containerPadding } = useResponsiveLayout();
     const { user } = useAuthStore();
     const toast = useToastStore(s => s.actions);
 
@@ -100,7 +103,7 @@ export default function SocialScreen() {
 
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
-            <View style={styles.header}>
+            <View style={[styles.header, { paddingHorizontal: containerPadding }]}>
                 <View style={styles.headerLeft}>
                     <Pressable onPress={() => router.back()} style={styles.backButton}>
                         <Ionicons name="chevron-back" size={24} color={theme.colors.text} />
@@ -124,7 +127,7 @@ export default function SocialScreen() {
                     refreshControl={
                         <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} tintColor={theme.colors.primary} />
                     }
-                    contentContainerStyle={styles.scrollContent}
+                    contentContainerStyle={[styles.scrollContent, { paddingHorizontal: containerPadding }]}
                     showsVerticalScrollIndicator={false}
                 >
                     {following.length === 0 ? (
@@ -167,7 +170,7 @@ export default function SocialScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -248,4 +251,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-}));
+});

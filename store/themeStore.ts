@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Appearance, type ColorSchemeName } from 'react-native';
-import { setAppTheme } from '@/theme/unistyles';
 import { haptics } from '@/utils/haptics';
 
 export type ThemeMode = 'light' | 'dark' | 'sepia' | 'system';
@@ -26,25 +25,11 @@ interface ThemeActions {
 const THEME_KEY = '@english_tales_theme';
 const VALID_MODES: ThemeMode[] = ['light', 'dark', 'sepia', 'system'];
 
-/**
- * Resolve whether we should use dark theme
- */
 const resolveIsDark = (mode: ThemeMode, colorScheme?: ColorSchemeName): boolean => {
     if (mode === 'system') {
         return (colorScheme ?? Appearance.getColorScheme()) === 'dark';
     }
     return mode === 'dark';
-};
-
-/**
- * Apply theme to Unistyles runtime
- */
-const applyTheme = (mode: ThemeMode, isDark: boolean): void => {
-    if (mode === 'sepia') {
-        setAppTheme('sepia');
-    } else {
-        setAppTheme(isDark ? 'dark' : 'light');
-    }
 };
 
 export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((set, get) => ({
@@ -64,8 +49,6 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
                 isDark,
                 themeKey: state.themeKey + 1,
             }));
-
-            applyTheme(mode, isDark);
 
             // Persist preference
             try {
@@ -97,11 +80,9 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
 
                 const isDark = resolveIsDark(mode);
                 set({ mode, isDark, isLoaded: true, highContrastEnabled });
-                applyTheme(mode, isDark);
             } catch {
                 const isDark = resolveIsDark('system');
                 set({ isDark, isLoaded: true, highContrastEnabled: false });
-                applyTheme('system', isDark);
             }
         },
 
@@ -115,7 +96,6 @@ export const useThemeStore = create<ThemeState & { actions: ThemeActions }>()((s
                         isDark,
                         themeKey: state.themeKey + 1,
                     }));
-                    applyTheme('system', isDark);
                 }
             });
 

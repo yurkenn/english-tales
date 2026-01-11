@@ -8,7 +8,7 @@ import {
     Platform,
     StyleSheet as RNStyleSheet,
 } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { Typography } from '../atoms/Typography';
@@ -27,7 +27,8 @@ export const ReplyModal: React.FC<ReplyModalProps> = ({
     isSubmitting,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [content, setContent] = useState('');
 
     const handleSubmit = async () => {
@@ -87,7 +88,7 @@ export const ReplyModal: React.FC<ReplyModalProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => RNStyleSheet.create({
     overlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.5)',
@@ -126,4 +127,4 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: 10,
         borderRadius: 20,
     },
-}));
+});

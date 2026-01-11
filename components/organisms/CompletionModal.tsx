@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Pressable, Modal } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, Modal , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import * as StoreReview from 'expo-store-review';
@@ -25,7 +25,8 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
     onComplete,
     onContinue,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
     const [rating, setRating] = useState(0);
     const toastActions = useToastStore((s) => s.actions);
@@ -116,7 +117,7 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
 };
 
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.7)',
@@ -244,4 +245,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.medium,
     },
 
-}));
+});

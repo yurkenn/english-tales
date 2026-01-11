@@ -1,6 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { Typography } from '@/components/atoms'
 import { AchievementCategory, CATEGORY_ICONS, useAchievementsStore } from '@/store/achievementsStore'
@@ -20,7 +21,8 @@ export const AchievementsProgressCard: React.FC<AchievementsProgressCardProps> =
     unlockedCount,
     totalCount,
 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { actions } = useAchievementsStore()
     const progress = totalCount > 0 ? (unlockedCount / totalCount) * 100 : 0
 
@@ -87,7 +89,7 @@ export const AchievementsProgressCard: React.FC<AchievementsProgressCardProps> =
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xl,
@@ -203,4 +205,4 @@ const styles = StyleSheet.create((theme) => ({
         height: '100%',
         borderRadius: theme.radius.xxs,
     },
-}))
+});

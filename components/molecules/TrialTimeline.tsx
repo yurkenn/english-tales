@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import Animated, { FadeInDown } from 'react-native-reanimated'
 
@@ -9,7 +10,8 @@ interface TrialTimelineProps {
 }
 
 export function TrialTimeline({ days = 3 }: TrialTimelineProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <Animated.View entering={FadeInDown.delay(600)} style={styles.container}>
@@ -48,7 +50,7 @@ export function TrialTimeline({ days = 3 }: TrialTimelineProps) {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginVertical: theme.spacing.xl,
         paddingHorizontal: theme.spacing.sm,
@@ -92,4 +94,4 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: 2,
         lineHeight: 18,
     },
-}))
+});

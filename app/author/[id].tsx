@@ -1,9 +1,10 @@
 import React, { useMemo } from 'react';
-import { View, Text, ScrollView, Pressable, Image, ActivityIndicator } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, ScrollView, Pressable, Image, ActivityIndicator, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import { useAuthor } from '@/hooks/useQueries';
 import { useAuthorSocial } from '@/hooks/useAuthor';
 import { BookCard, NetworkError, EmptyState, AuthorScreenSkeleton } from '@/components';
@@ -16,9 +17,11 @@ import { useTranslation } from 'react-i18next';
 
 export default function AuthorScreen() {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { containerPadding } = useResponsiveLayout();
     const { id } = useLocalSearchParams<{ id: string }>();
 
     const { data: authorData, isLoading: loadingAuthor, error: errorAuthor, refetch: refetchAuthor } = useAuthor(id || '');
@@ -77,7 +80,7 @@ export default function AuthorScreen() {
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
-            <View style={styles.header}>
+            <View style={[styles.header, { paddingHorizontal: containerPadding }]}>
                 <Pressable style={styles.backButton} onPress={() => router.back()}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
                 </Pressable>
@@ -87,7 +90,7 @@ export default function AuthorScreen() {
 
             <ScrollView showsVerticalScrollIndicator={false}>
                 {/* Author Info */}
-                <View style={styles.authorSection}>
+                <View style={[styles.authorSection, { paddingHorizontal: containerPadding }]}>
                     <Image
                         source={{ uri: author.avatar || `https://ui-avatars.com/api/?name=${author.name}` }}
                         style={styles.avatar}
@@ -141,7 +144,7 @@ export default function AuthorScreen() {
                 </View>
 
                 {/* Stories by Author */}
-                <View style={styles.storiesSection}>
+                <View style={[styles.storiesSection, { paddingHorizontal: containerPadding }]}>
                     <Text style={styles.sectionTitle}>{t('authors.stories')}</Text>
                     {authorStories.length > 0 ? (
                         <ScrollView
@@ -170,7 +173,7 @@ export default function AuthorScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -273,4 +276,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.lg,
         color: theme.colors.textMuted,
     },
-}));
+});

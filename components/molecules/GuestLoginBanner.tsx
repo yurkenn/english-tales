@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Pressable } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
 import Animated, { FadeInDown } from 'react-native-reanimated'
@@ -16,7 +17,8 @@ export const GuestLoginBanner: React.FC<GuestLoginBannerProps> = ({
     onSignInPress,
     onDismiss,
 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
 
     const handleSignIn = () => {
@@ -74,7 +76,7 @@ export const GuestLoginBanner: React.FC<GuestLoginBannerProps> = ({
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginHorizontal: theme.spacing.lg,
         marginBottom: theme.spacing.lg,
@@ -139,4 +141,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.bold,
     },
-}))
+});

@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
-import { View, FlatList, RefreshControl, Dimensions } from 'react-native';
+import { View, FlatList, RefreshControl, Dimensions, StyleSheet } from 'react-native';
 import Animated, { FadeInDown } from 'react-native-reanimated';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import {
     NetworkError,
     EmptyState,
@@ -19,12 +20,13 @@ import { haptics } from '@/utils/haptics';
 import { Story } from '@/types';
 
 const CARD_GAP = 16;
-const HORIZONTAL_PADDING = 16;
 
 export default function StoriesScreen() {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { containerPadding, cardGap } = useResponsiveLayout();
     const { difficulty: difficultyParam, sort: sortParam } = useLocalSearchParams<{ difficulty?: string; sort?: string }>();
 
     const initialFilter = useMemo((): DifficultyFilter => {
@@ -125,8 +127,8 @@ export default function StoriesScreen() {
                 keyExtractor={(item) => item.id}
                 renderItem={renderItem}
                 numColumns={2}
-                columnWrapperStyle={styles.gridRow}
-                contentContainerStyle={styles.listContent}
+                columnWrapperStyle={[styles.gridRow, { gap: cardGap }]}
+                contentContainerStyle={[styles.listContent, { paddingHorizontal: containerPadding }]}
                 showsVerticalScrollIndicator={false}
                 removeClippedSubviews={true}
                 initialNumToRender={10}
@@ -154,18 +156,18 @@ export default function StoriesScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
     },
     listContent: {
-        paddingHorizontal: HORIZONTAL_PADDING,
+        paddingHorizontal: theme.spacing.lg,
         paddingBottom: theme.spacing.xxxl,
     },
     gridRow: {
         justifyContent: 'flex-start',
-        gap: CARD_GAP,
+        gap: theme.spacing.md,
         marginBottom: theme.spacing.md,
     },
-}));
+});

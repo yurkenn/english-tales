@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FormField, AuthHeader, AuthDivider, SocialAuthButton } from '@/components';
@@ -11,7 +11,8 @@ import { signIn, signInAnonymously, signInWithGoogle } from '@/services/auth';
 import { handleAuthError } from '@/utils/errorHandler';
 
 export default function LoginScreen() {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { t } = useTranslation();
@@ -145,7 +146,7 @@ export default function LoginScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -206,4 +207,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
         textDecorationLine: 'underline',
     },
-}));
+});

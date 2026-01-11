@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { View, Pressable } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
 import { Ionicons } from '@expo/vector-icons'
 import { Typography } from '@/components/atoms'
@@ -31,7 +32,8 @@ interface VocabularyMilestoneCardProps {
 }
 
 export const VocabularyMilestoneCard: React.FC<VocabularyMilestoneCardProps> = ({ onDismiss }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter()
 
     const { user } = useAuthStore()
@@ -105,7 +107,7 @@ export const VocabularyMilestoneCard: React.FC<VocabularyMilestoneCardProps> = (
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginHorizontal: theme.spacing.xl,
         marginBottom: theme.spacing.sm,
@@ -180,4 +182,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 11,
         fontWeight: '700',
     },
-}))
+});

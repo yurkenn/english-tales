@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, Text, View, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Animated, Text, View, Pressable, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useAchievementsStore } from '@/store/achievementsStore';
 
 export const AchievementToast: React.FC = () => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { pendingUnlock, actions } = useAchievementsStore();
     const slideAnim = useRef(new Animated.Value(-100)).current;
     const opacityAnim = useRef(new Animated.Value(0)).current;
@@ -55,6 +56,7 @@ export const AchievementToast: React.FC = () => {
                     opacity: opacityAnim,
                 },
             ]}
+            pointerEvents="box-none"
         >
             <Pressable style={styles.content} onPress={actions.dismissPending}>
                 <Text style={styles.icon}>{pendingUnlock.icon}</Text>
@@ -68,7 +70,7 @@ export const AchievementToast: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         position: 'absolute',
         top: 60,
@@ -107,4 +109,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         color: theme.colors.textSecondary,
     },
-}));
+});

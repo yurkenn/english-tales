@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable, Image, ImageSourcePropType } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
@@ -17,7 +17,8 @@ interface CommunityReplyCardProps {
 }
 
 export const CommunityReplyCard: React.FC<CommunityReplyCardProps> = ({ reply, onLike, currentUserId }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const replyDate = reply.timestamp?.toDate ? reply.timestamp.toDate() : new Date(reply.timestamp);
     const hasLiked = reply.likedBy?.includes(currentUserId || '');
@@ -71,7 +72,7 @@ export const CommunityReplyCard: React.FC<CommunityReplyCardProps> = ({ reply, o
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         paddingHorizontal: theme.spacing.lg,
@@ -118,4 +119,4 @@ const styles = StyleSheet.create((theme) => ({
         lineHeight: 20,
         color: theme.colors.text,
     },
-}));
+});

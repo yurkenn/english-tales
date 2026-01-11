@@ -7,12 +7,13 @@ import {
     KeyboardAvoidingView,
     Platform,
     TextInput,
-    RefreshControl,
+    RefreshControl, StyleSheet
 } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import { Typography } from '@/components/atoms/Typography';
 import { CommunityReplyCard } from '@/components/molecules';
 import { CommunityPostCard } from '@/components/organisms';
@@ -22,9 +23,11 @@ import { haptics } from '@/utils/haptics';
 
 export default function CommunityPostDetail() {
     const { id } = useLocalSearchParams<{ id: string }>();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { containerPadding } = useResponsiveLayout();
     const { user } = useAuthStore();
 
     const {
@@ -82,7 +85,7 @@ export default function CommunityPostDetail() {
             behavior={Platform.OS === 'ios' ? 'padding' : undefined}
             keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 0}
         >
-            <View style={[styles.header, { paddingTop: insets.top }]}>
+            <View style={[styles.header, { paddingTop: insets.top, paddingHorizontal: containerPadding }]}>
                 <Pressable onPress={() => router.back()} style={styles.backButton}>
                     <Ionicons name="chevron-back" size={28} color={theme.colors.text} />
                 </Pressable>
@@ -130,7 +133,7 @@ export default function CommunityPostDetail() {
                 </View>
             </ScrollView>
 
-            <View style={[styles.inputContainer, { paddingBottom: Math.max(insets.bottom, 16) }]}>
+            <View style={[styles.inputContainer, { paddingBottom: Math.max(insets.bottom, 16), paddingHorizontal: containerPadding }]}>
                 <TextInput
                     style={styles.input}
                     placeholder="Write a reply..."
@@ -155,7 +158,7 @@ export default function CommunityPostDetail() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -234,4 +237,4 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         marginLeft: theme.spacing.md,
     },
-}));
+});

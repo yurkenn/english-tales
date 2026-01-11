@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
 import { haptics } from '@/utils/haptics';
 
@@ -21,6 +21,8 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
     currentLanguage,
     onLanguageChange,
 }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
 
     return (
@@ -54,7 +56,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     section: {
         marginBottom: theme.spacing.xl,
     },
@@ -89,4 +91,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textInverse,
         fontWeight: theme.typography.weight.bold,
     },
-}));
+});

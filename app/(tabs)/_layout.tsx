@@ -8,15 +8,9 @@ export default function TabLayout() {
 
     return (
         <Tabs
-            tabBar={(props) => {
-                if (!CustomTabBar) {
-                    console.error('CustomTabBar is undefined in TabLayout!');
-                    return null;
-                }
-                return <CustomTabBar {...props} />;
-            }}
             screenOptions={{
                 headerShown: false,
+                tabBarStyle: { display: 'flex' }, // Ensure default tab bar is visible
             }}
         >
             <Tabs.Screen

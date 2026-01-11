@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { LinearGradient } from 'expo-linear-gradient';
 
 interface ReadingDay {
@@ -16,7 +16,8 @@ interface ReadingCalendarProps {
 const WEEKDAYS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     // Generate last 7 days
     const weekData = useMemo(() => {
@@ -134,7 +135,7 @@ export function ReadingCalendar({ readingData = {} }: ReadingCalendarProps) {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginHorizontal: 20,
         marginBottom: 16,
@@ -234,4 +235,4 @@ const styles = StyleSheet.create((theme) => ({
         height: 12,
         borderRadius: theme.radius.xs,
     },
-}));
+});

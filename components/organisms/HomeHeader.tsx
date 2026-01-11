@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, Image, Pressable, ImageSourcePropType } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Image, Pressable, ImageSourcePropType, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 
 // Default mascot avatar for users without profile photo
 const DEFAULT_AVATAR = require('@/assets/defaultavatar.png');
@@ -31,7 +32,9 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
     onSocialPress,
     onProfilePress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const { containerPadding } = useResponsiveLayout();
+    const styles = createStyles(theme, containerPadding);
     const { t } = useTranslation();
     const displayName = isAnonymous ? t('common.guest', 'Guest') : (userName || t('common.reader', 'Reader'));
     const avatarSource: ImageSourcePropType = userPhotoUrl ? { uri: userPhotoUrl } : DEFAULT_AVATAR;
@@ -74,12 +77,12 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme, containerPadding: number) => StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.lg,
+        paddingHorizontal: containerPadding,
         paddingTop: theme.spacing.md,
         paddingBottom: theme.spacing.sm,
     },
@@ -139,4 +142,4 @@ const styles = StyleSheet.create((theme) => ({
         borderWidth: 2,
         borderColor: theme.colors.surface,
     },
-}));
+});

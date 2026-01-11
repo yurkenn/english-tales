@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { useUnistyles, StyleSheet } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import { LinearGradient } from 'expo-linear-gradient';
 
 export const OnboardingConnectVisual = () => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.visualWrapper}>
             {/* Ambient Background Blob */}
@@ -59,7 +60,7 @@ export const OnboardingConnectVisual = () => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     visualWrapper: {
         width: '100%',
         maxWidth: 300,
@@ -192,4 +193,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 10,
         fontWeight: 'bold',
     },
-}));
+});

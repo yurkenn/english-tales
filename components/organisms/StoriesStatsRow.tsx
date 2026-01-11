@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { useTheme, Theme, semanticColors } from '@/theme';
 import { haptics } from '@/utils/haptics';
 import { type DifficultyFilter } from '../molecules/moleculeTypes';
 
@@ -20,7 +20,8 @@ export const StoriesStatsRow: React.FC<StoriesStatsRowProps> = ({
     activeFilter,
     onFilterChange,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const handlePress = (filter: DifficultyFilter) => {
         haptics.selection();
@@ -37,21 +38,21 @@ export const StoriesStatsRow: React.FC<StoriesStatsRowProps> = ({
             </Pressable>
             <View style={styles.divider} />
             <Pressable style={styles.statItem} onPress={() => handlePress('beginner')}>
-                <Text style={[styles.statValue, { color: activeFilter === 'beginner' ? '#10B981' : theme.colors.text }]}>
+                <Text style={[styles.statValue, { color: activeFilter === 'beginner' ? semanticColors.level.beginner : theme.colors.text }]}>
                     {stats.beginner}
                 </Text>
                 <Text style={styles.statLabel}>Easy</Text>
             </Pressable>
             <View style={styles.divider} />
             <Pressable style={styles.statItem} onPress={() => handlePress('intermediate')}>
-                <Text style={[styles.statValue, { color: activeFilter === 'intermediate' ? '#F59E0B' : theme.colors.text }]}>
+                <Text style={[styles.statValue, { color: activeFilter === 'intermediate' ? semanticColors.level.intermediate : theme.colors.text }]}>
                     {stats.intermediate}
                 </Text>
                 <Text style={styles.statLabel}>Medium</Text>
             </Pressable>
             <View style={styles.divider} />
             <Pressable style={styles.statItem} onPress={() => handlePress('advanced')}>
-                <Text style={[styles.statValue, { color: activeFilter === 'advanced' ? '#EF4444' : theme.colors.text }]}>
+                <Text style={[styles.statValue, { color: activeFilter === 'advanced' ? semanticColors.level.advanced : theme.colors.text }]}>
                     {stats.advanced}
                 </Text>
                 <Text style={styles.statLabel}>Hard</Text>
@@ -60,7 +61,7 @@ export const StoriesStatsRow: React.FC<StoriesStatsRowProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -94,4 +95,4 @@ const styles = StyleSheet.create((theme) => ({
         height: 28,
         backgroundColor: theme.colors.border,
     },
-}));
+});

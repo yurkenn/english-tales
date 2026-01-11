@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { View, StyleProp, ViewStyle } from 'react-native';
+import { View, StyleProp, ViewStyle, StyleSheet, ImageStyle } from 'react-native';
 import Animated from 'react-native-reanimated';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { LinearGradient } from 'expo-linear-gradient';
 import { OptimizedImage } from './OptimizedImage';
 import { urlFor } from '@/services/sanity';
@@ -35,7 +35,8 @@ export const BookCover: React.FC<BookCoverProps> = ({
     showPages = false,
     priority,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const finalHeight = height || width * (3 / 2);
 
     const imageSource = useMemo(() => {
@@ -54,21 +55,56 @@ export const BookCover: React.FC<BookCoverProps> = ({
         }
     }, [source, width]);
 
+    // Dynamic styles computed inline
+    const containerStyle: ViewStyle = useMemo(() => ({
+        width,
+        height: finalHeight,
+        backgroundColor: theme.colors.surface,
+        borderRadius: 10,
+        ...theme.shadows.md,
+    }), [width, finalHeight, theme]);
+
+    const pageLayerStyle = (level: number): ViewStyle => ({
+        position: 'absolute',
+        top: level,
+        left: level,
+        borderRadius,
+        backgroundColor: theme.colors.backgroundSecondary,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        width: width - (level * 2),
+        height: finalHeight - (level * 2),
+    });
+
+    const imageContainerStyle: ViewStyle = useMemo(() => ({
+        flex: 1,
+        borderRadius,
+        overflow: 'hidden',
+        backgroundColor: theme.colors.surface,
+    }), [borderRadius, theme]);
+
+    const innerBorderStyle: ViewStyle = useMemo(() => ({
+        ...StyleSheet.absoluteFillObject,
+        borderRadius,
+        borderWidth: 1,
+        borderColor: 'rgba(255,255,255,0.1)',
+    }), [borderRadius]);
+
     return (
-        <View style={[styles.container(width, finalHeight), style]}>
+        <View style={[containerStyle, style]}>
             {/* Page Stack Effect */}
             {showPages && (
                 <>
-                    <View style={[styles.pageLayer(borderRadius, 1), { right: -3, bottom: -3, zIndex: -1 }]} />
-                    <View style={[styles.pageLayer(borderRadius, 2), { right: -6, bottom: -6, zIndex: -2 }]} />
+                    <View style={[pageLayerStyle(1), { right: -3, bottom: -3, zIndex: -1 }]} />
+                    <View style={[pageLayerStyle(2), { right: -6, bottom: -6, zIndex: -2 }]} />
                 </>
             )}
 
-            <View style={styles.imageContainer(borderRadius)}>
+            <View style={imageContainerStyle}>
                 {sharedTransitionTag ? (
                     <Animated.Image
                         source={imageSource}
-                        style={styles.image}
+                        style={styles.image as ImageStyle}
                         {...({ sharedTransitionTag } as any)}
                     />
                 ) : (
@@ -94,7 +130,7 @@ export const BookCover: React.FC<BookCoverProps> = ({
                 )}
 
                 {/* Inner Border Look */}
-                {!flat && <View style={styles.innerBorder(borderRadius)} />}
+                {!flat && <View style={innerBorderStyle} />}
 
                 {/* Gloss/Highlight Effect */}
                 {!flat && (
@@ -110,41 +146,13 @@ export const BookCover: React.FC<BookCoverProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
-    container: (width: number, height: number) => ({
-        width,
-        height,
-        backgroundColor: theme.colors.surface,
-        borderRadius: 10,
-        ...theme.shadows.md,
-    }),
-    pageLayer: (borderRadius: number, level: number) => ({
-        position: 'absolute',
-        top: level,
-        left: level,
-        borderRadius,
-        backgroundColor: theme.colors.backgroundSecondary,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-    }),
-    imageContainer: (borderRadius: number) => ({
-        flex: 1,
-        borderRadius,
-        overflow: 'hidden',
-        backgroundColor: theme.colors.surface,
-    }),
+const createStyles = (theme: Theme) => StyleSheet.create({
     image: {
         width: '100%',
         height: '100%',
     },
-    innerBorder: (borderRadius: number) => ({
-        ...StyleSheet.absoluteFillObject,
-        borderRadius,
-        borderWidth: 1,
-        borderColor: 'rgba(255,255,255,0.1)',
-    }),
     glossOverlay: {
         ...StyleSheet.absoluteFillObject,
         opacity: 0.5,
     },
-}));
+});

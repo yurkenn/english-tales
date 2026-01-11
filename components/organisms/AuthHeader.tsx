@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, Text, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 
 interface AuthHeaderProps {
     title: string;
@@ -8,6 +8,8 @@ interface AuthHeaderProps {
 }
 
 export const AuthHeader: React.FC<AuthHeaderProps> = ({ title, subtitle }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
@@ -16,7 +18,7 @@ export const AuthHeader: React.FC<AuthHeaderProps> = ({ title, subtitle }) => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginBottom: theme.spacing.xxxxl,
     },
@@ -30,4 +32,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.lg,
         color: theme.colors.textSecondary,
     },
-}));
+});

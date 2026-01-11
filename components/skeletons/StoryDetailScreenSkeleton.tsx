@@ -1,9 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Skeleton } from './BaseSkeleton';
 
 export const StoryDetailScreenSkeleton: React.FC = () => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.container}>
             <Skeleton width="100%" height={300} />
@@ -18,9 +20,9 @@ export const StoryDetailScreenSkeleton: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
     },
-}));
+});

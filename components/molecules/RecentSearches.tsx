@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
 
@@ -15,7 +15,8 @@ export const RecentSearches: React.FC<RecentSearchesProps> = ({
     onSearchPress,
     onClear,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     if (searches.length === 0) return null;
 
@@ -44,7 +45,7 @@ export const RecentSearches: React.FC<RecentSearchesProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     section: {
         marginBottom: theme.spacing.xl,
     },
@@ -75,4 +76,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.text,
     },
-}));
+});

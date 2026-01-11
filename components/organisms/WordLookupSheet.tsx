@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo } from 'react';
-import { View, Text, ActivityIndicator, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, ActivityIndicator, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { BottomSheetModal, BottomSheetView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 import { Ionicons } from '@expo/vector-icons';
 import { DictionaryEntry } from '@/services/dictionary';
@@ -18,7 +18,8 @@ interface WordLookupSheetProps {
 
 export const WordLookupSheet = forwardRef<BottomSheetModal, WordLookupSheetProps>(
     ({ word, dictionaryData, isLoading, storyId, storyTitle }, ref) => {
-        const { theme } = useUnistyles();
+        const { theme } = useTheme();
+    const styles = createStyles(theme);
         const snapPoints = useMemo(() => ['40%', '60%'], []);
 
         const { user } = useAuthStore();
@@ -123,7 +124,7 @@ export const WordLookupSheet = forwardRef<BottomSheetModal, WordLookupSheetProps
     }
 );
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         padding: theme.spacing.xl,
@@ -199,4 +200,4 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: theme.spacing.md,
         textAlign: 'center',
     },
-}));
+});

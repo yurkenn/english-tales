@@ -1,10 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Skeleton, BookCardSkeleton, BookListItemSkeleton } from './BaseSkeleton';
 
 export const DiscoverScreenSkeleton: React.FC = () => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.container}>
             <View style={{ paddingHorizontal: 16, marginTop: 16 }}>
@@ -32,9 +33,9 @@ export const DiscoverScreenSkeleton: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
     },
-}));
+});

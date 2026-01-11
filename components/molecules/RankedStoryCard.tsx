@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from 'react';
-import { View, Text, Pressable, StyleProp, ViewStyle } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, StyleProp, ViewStyle , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import type { Story } from '@/types';
 
@@ -21,7 +21,8 @@ const RankedStoryCardComponent: React.FC<RankedStoryCardProps> = ({
     onPress,
     style,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const rankConfig = useMemo(() => {
         const isTop3 = rank <= 3;
@@ -130,7 +131,7 @@ export const RankedStoryCard = memo(RankedStoryCardComponent, (prev, next) => {
     return prev.story.id === next.story.id && prev.rank === next.rank;
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     card: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -226,4 +227,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: 'bold',
         color: '#FFFFFF',
     },
-}));
+});

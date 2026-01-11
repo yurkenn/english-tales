@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, View, ViewStyle } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Animated, View, ViewStyle, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 
 interface SkeletonProps {
     width?: number | string;
@@ -15,7 +15,8 @@ export const Skeleton: React.FC<SkeletonProps> = ({
     borderRadius = 8,
     style,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const opacity = useRef(new Animated.Value(0.3)).current;
 
     useEffect(() => {
@@ -55,6 +56,8 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 
 // Pre-built skeleton variants
 export const BookCardSkeleton: React.FC = () => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.bookCard}>
             <Skeleton width={120} height={168} borderRadius={12} />
@@ -67,6 +70,8 @@ export const BookCardSkeleton: React.FC = () => {
 };
 
 export const BookListItemSkeleton: React.FC = () => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.listItem}>
             <Skeleton width={80} height={112} borderRadius={12} />
@@ -80,6 +85,8 @@ export const BookListItemSkeleton: React.FC = () => {
 };
 
 export const StorySectionSkeleton: React.FC = () => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
@@ -96,7 +103,8 @@ export const StorySectionSkeleton: React.FC = () => {
 };
 
 export const FeaturedCardSkeleton: React.FC = () => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.featuredCard}>
             <Skeleton width="100%" height={200} borderRadius={theme.radius.xl} />
@@ -104,7 +112,7 @@ export const FeaturedCardSkeleton: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     bookCard: {
         width: 120,
         marginRight: theme.spacing.md,
@@ -138,4 +146,4 @@ const styles = StyleSheet.create((theme) => ({
     featuredCard: {
         marginTop: theme.spacing.md,
     },
-}));
+});

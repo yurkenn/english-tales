@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar } from './ProgressBar';
 import { useTranslation } from 'react-i18next';
@@ -30,7 +30,8 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = React.memo(
     totalPages,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const remainingTime = Math.max(1, Math.ceil(estimatedReadTime * (100 - progress) / 100));
 
     // Show page info if available, otherwise show percentage
@@ -63,7 +64,7 @@ export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = React.memo(
     );
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         paddingHorizontal: theme.spacing.xl,
         paddingVertical: 12,
@@ -98,4 +99,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
         opacity: 0.8,
     },
-}));
+});

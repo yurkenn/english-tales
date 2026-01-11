@@ -1,7 +1,7 @@
 import React, { forwardRef, useState, useCallback, useMemo, useEffect } from 'react';
-import { View, Text, Pressable, ActivityIndicator, Keyboard } from 'react-native';
+import { View, Text, Pressable, ActivityIndicator, Keyboard, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView, BottomSheetTextInput } from '@gorhom/bottom-sheet';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useToastStore } from '@/store/toastStore';
@@ -17,7 +17,8 @@ interface WriteReviewSheetProps {
 
 export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
     ({ storyTitle, initialRating = 0, onSubmit, onClose }, ref) => {
-        const { theme } = useUnistyles();
+        const { theme } = useTheme();
+        const styles = createStyles(theme);
         const { t } = useTranslation();
         const insets = useSafeAreaInsets();
         const [rating, setRating] = useState(initialRating);
@@ -171,10 +172,10 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                         disabled={rating === 0 || isSubmitting}
                     >
                         {isSubmitting ? (
-                            <ActivityIndicator color="#FFFFFF" />
+                            <ActivityIndicator color={theme.colors.textInverse} />
                         ) : (
                             <>
-                                <Ionicons name="send" size={18} color="#FFFFFF" />
+                                <Ionicons name="send" size={18} color={theme.colors.textInverse} />
                                 <Text style={styles.submitButtonText}>{t('reading.review.submit', 'Submit Review')}</Text>
                             </>
                         )}
@@ -185,7 +186,7 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
     }
 );
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     content: {
         flex: 1,
         paddingHorizontal: theme.spacing.xl,
@@ -267,6 +268,6 @@ const styles = StyleSheet.create((theme) => ({
     submitButtonText: {
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.bold,
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
     },
-}));
+});

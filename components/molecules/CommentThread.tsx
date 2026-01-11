@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { View, Pressable, Image, ImageSourcePropType } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import Animated, { FadeInDown } from 'react-native-reanimated'
@@ -63,7 +64,8 @@ const CommentItem = ({
     depth: number
     index: number
 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
     const router = useRouter()
     const [collapsed, setCollapsed] = useState(false)
@@ -178,6 +180,8 @@ export const CommentThread: React.FC<CommentThreadProps> = ({
     onReply,
     onLike
 }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const commentTree = buildCommentTree(comments)
 
     if (commentTree.length === 0) {
@@ -201,7 +205,7 @@ export const CommentThread: React.FC<CommentThreadProps> = ({
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         gap: theme.spacing.xs,
     },
@@ -267,4 +271,4 @@ const styles = StyleSheet.create((theme) => ({
     repliesContainer: {
         marginTop: theme.spacing.xs,
     },
-}))
+});

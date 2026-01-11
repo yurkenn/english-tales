@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, TextInput, Pressable, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, TextInput, Pressable, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 interface SearchBarProps {
@@ -22,7 +22,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     onClear,
     onPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     // If onPress is provided, render as a button (for navigation to search screen)
     if (onPress) {
@@ -92,7 +93,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -124,4 +125,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.lg,
         color: theme.colors.textMuted,
     },
-}));
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 interface SettingsHeaderProps {
@@ -12,7 +12,8 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
     title,
     onBackPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.header}>
@@ -25,7 +26,7 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -49,4 +50,4 @@ const styles = StyleSheet.create((theme) => ({
     placeholder: {
         width: 40,
     },
-}));
+});

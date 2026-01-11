@@ -5,7 +5,8 @@
 
 import React, { memo, useCallback, useState, useEffect } from 'react'
 import { View, Text, Modal, Pressable, ScrollView, ActivityIndicator, Image, Dimensions, Switch, Platform } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { useSubscriptionStore } from '@/store/subscriptionStore'
 import { PurchasesPackage } from 'react-native-purchases'
@@ -27,7 +28,8 @@ const PREMIUM_FEATURES = [
 ]
 
 function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
     const [isTrialEnabled, setIsTrialEnabled] = useState(true)
 
@@ -293,7 +295,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
 
 export const PaywallModal = memo(PaywallModalComponent)
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -469,4 +471,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 12,
         fontWeight: '500',
     },
-}))
+});

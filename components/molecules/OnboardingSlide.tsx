@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable, ActivityIndicator } from 'react-native';
-import { useUnistyles, StyleSheet } from 'react-native-unistyles';
+import { View, Text, Pressable, ActivityIndicator , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
 
@@ -29,7 +29,8 @@ export const OnboardingSlide = ({
     showLoginLink = false,
     children,
 }: OnboardingSlideProps) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { windowWidth } = useResponsiveGrid();
 
     return (
@@ -87,7 +88,7 @@ export const OnboardingSlide = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     slide: {
         flex: 1,
         alignItems: 'center',
@@ -175,4 +176,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: 'bold',
         textDecorationLine: 'underline',
     },
-}));
+});

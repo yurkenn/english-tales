@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
 
@@ -35,7 +35,8 @@ const getIconBg = (icon: string, theme: any): string => {
 };
 
 export const StatsGrid: React.FC<StatsGridProps> = ({ stats }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { cardWidth } = useResponsiveGrid();
 
     return (
@@ -60,7 +61,7 @@ export const StatsGrid: React.FC<StatsGridProps> = ({ stats }) => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -99,4 +100,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
         marginTop: 2,
     },
-}));
+});

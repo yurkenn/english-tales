@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import { View, ScrollView, Pressable, Animated } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
@@ -20,7 +21,8 @@ const FILTERS: { key: FilterType; label: string; icon?: string }[] = [
 ]
 
 export default function AchievementsScreen() {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
     const router = useRouter()
     const insets = useSafeAreaInsets()
@@ -133,7 +135,7 @@ export default function AchievementsScreen() {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -156,7 +158,7 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.surface,
     },
     headerTitle: {
-        fontSize: 18,
+        fontSize: theme.typography.size.lg,
         fontWeight: '700',
         color: theme.colors.text,
     },
@@ -186,10 +188,10 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.primary,
     },
     filterIcon: {
-        fontSize: 14,
+        fontSize: theme.typography.size.sm,
     },
     filterLabel: {
-        fontSize: 13,
+        fontSize: theme.typography.size.sm,
         fontWeight: '600',
         color: theme.colors.textSecondary,
     },
@@ -211,11 +213,11 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: theme.spacing.xxxxl,
     },
     emptyIcon: {
-        fontSize: 48,
+        fontSize: theme.typography.size.display * 1.5,
         marginBottom: theme.spacing.md,
     },
     emptyText: {
-        fontSize: 14,
+        fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
     },
-}))
+});

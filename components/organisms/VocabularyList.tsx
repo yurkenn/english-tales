@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { View, FlatList, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, FlatList, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { VocabularyItem } from '../molecules/VocabularyItem';
 import { SavedWord, useVocabularyStore } from '@/store/vocabularyStore';
 import { useAuthStore } from '@/store/authStore';
@@ -16,7 +16,8 @@ interface VocabularyListProps {
 
 export const VocabularyList: React.FC<VocabularyListProps> = ({ searchQuery = '', onWordPress }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { user } = useAuthStore();
     const { savedWords, actions } = useVocabularyStore();
 
@@ -68,7 +69,7 @@ export const VocabularyList: React.FC<VocabularyListProps> = ({ searchQuery = ''
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     listContent: {
         paddingVertical: theme.spacing.md,
     },
@@ -80,4 +81,4 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         paddingTop: 100,
     },
-}));
+});

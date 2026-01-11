@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar, OptimizedImage, BookCover } from '../atoms';
 import { useTranslation } from 'react-i18next';
@@ -26,7 +26,8 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
     moreButtonRef,
     priority,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
     const progress = item.progress?.percentage || 0;
     const isCompleted = item.progress?.isCompleted || false;
@@ -140,7 +141,7 @@ export const LibraryBookCard = memo(LibraryBookCardComponent, (prevProps, nextPr
         && prevProps.priority === nextProps.priority;
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     bookItem: {
         flexDirection: 'row',
         backgroundColor: theme.colors.surface,
@@ -243,4 +244,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: 'bold',
         color: theme.colors.primary,
     },
-}));
+});

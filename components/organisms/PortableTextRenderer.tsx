@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Image, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { PortableTextBlock } from '@portabletext/types';
 import { urlFor } from '@/services/sanity/client';
 import { useTranslation } from 'react-i18next';
@@ -37,7 +37,8 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
     isFirstPage = false,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     // Memoized word press handler to prevent inline function creation
     const handleWordPress = useCallback((word: string) => {
@@ -270,7 +271,7 @@ export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.m
     );
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         gap: theme.spacing.xl,
     },
@@ -318,4 +319,4 @@ const styles = StyleSheet.create((theme) => ({
         fontStyle: 'italic',
         opacity: 0.6,
     },
-}));
+});

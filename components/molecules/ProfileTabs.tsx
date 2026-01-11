@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, {
     useAnimatedStyle,
@@ -29,7 +29,8 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
     onTabChange,
     counts,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { windowWidth } = useResponsiveGrid();
 
     const tabs: { id: ProfileTabType; icon: any; label: string; count?: number }[] = [
@@ -111,7 +112,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         borderBottomWidth: 1,
@@ -147,4 +148,4 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: 1,
         borderRadius: 6,
     },
-}));
+});

@@ -1,7 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Typography } from './Typography';
 
 interface AchievementBadgeProps {
@@ -9,11 +9,12 @@ interface AchievementBadgeProps {
 }
 
 export const AchievementBadge: React.FC<AchievementBadgeProps> = ({ title }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.badge}>
-            <Ionicons name="trophy" size={10} color="#FFFFFF" />
+            <Ionicons name="trophy" size={10} color={theme.colors.textInverse} />
             <Typography variant="caption" weight="700" style={styles.text}>
                 {title}
             </Typography>
@@ -21,7 +22,7 @@ export const AchievementBadge: React.FC<AchievementBadgeProps> = ({ title }) => 
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     badge: {
         position: 'absolute',
         top: 0,
@@ -36,11 +37,11 @@ const styles = StyleSheet.create((theme) => ({
         zIndex: 1,
     },
     text: {
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
         fontWeight: 'bold',
         marginLeft: 4,
         fontSize: theme.typography.size.xs,
         textTransform: 'uppercase',
         letterSpacing: 0.5,
     },
-}));
+});

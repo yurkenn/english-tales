@@ -1,10 +1,11 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { type FilterType } from '../molecules/moleculeTypes';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 
 interface LibraryHeaderProps {
     filter: FilterType;
@@ -17,7 +18,9 @@ export const LibraryHeader: React.FC<LibraryHeaderProps> = ({
     onSearchPress,
     onFilterPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const { containerPadding } = useResponsiveLayout();
+    const styles = createStyles(theme, containerPadding);
     const { t } = useTranslation();
     const insets = useSafeAreaInsets();
 
@@ -52,12 +55,12 @@ export const LibraryHeader: React.FC<LibraryHeaderProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme, containerPadding: number) => StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: containerPadding,
         paddingBottom: theme.spacing.md,
     },
     title: {
@@ -85,4 +88,4 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.primary + '10',
         borderColor: theme.colors.primary + '40',
     },
-}));
+});

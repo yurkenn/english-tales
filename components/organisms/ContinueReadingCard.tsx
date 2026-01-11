@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Story, ReadingProgress } from '@/types';
 import { ProgressBar, OptimizedImage, BookCover } from '../atoms';
@@ -18,7 +18,8 @@ export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = ({
     onPress,
     onPlayPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const totalPages = Math.ceil(story.wordCount / 250); // ~250 words per page
     const currentPage = Math.ceil((progress.percentage / 100) * totalPages);
 
@@ -70,7 +71,7 @@ export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -139,4 +140,4 @@ const styles = StyleSheet.create((theme) => ({
         borderColor: theme.colors.borderLight,
         ...theme.shadows.sm,
     },
-}));
+});

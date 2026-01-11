@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Modal, Pressable, TextInput, FlatList, ActivityIndicator } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Modal, Pressable, TextInput, FlatList, ActivityIndicator , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
 import { OptimizedImage } from '../atoms/OptimizedImage';
@@ -18,7 +18,8 @@ export const StorySelectorModal: React.FC<StorySelectorModalProps> = ({
     onClose,
     onSelect,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [search, setSearch] = useState('');
     const [stories, setStories] = useState<Story[]>([]);
     const [loading, setLoading] = useState(false);
@@ -129,7 +130,7 @@ export const StorySelectorModal: React.FC<StorySelectorModalProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -186,4 +187,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         paddingVertical: 40,
     },
-}));
+});

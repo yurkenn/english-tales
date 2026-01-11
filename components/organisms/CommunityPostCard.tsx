@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, {
     useAnimatedStyle,
@@ -44,7 +44,8 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     onPress,
     index = 0,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
     const router = useRouter();
 
@@ -166,7 +167,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     postCard: {
         backgroundColor: theme.colors.surface,
         padding: theme.spacing.lg,
@@ -274,4 +275,4 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         marginBottom: theme.spacing.sm,
     },
-}));
+});

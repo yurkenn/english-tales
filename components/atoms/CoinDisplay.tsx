@@ -5,7 +5,8 @@
 
 import React, { memo, useEffect, useRef } from 'react'
 import { View, Text, Pressable, Animated as RNAnimated } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme, semanticColors } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { useCoinStore } from '@/store/coinStore'
 import { haptics } from '@/utils/haptics'
@@ -21,7 +22,8 @@ function CoinDisplayComponent({
     showLabel = false,
     size = 'md',
 }: CoinDisplayProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const balance = useCoinStore((state) => state.balance)
     const prevBalance = useRef(balance)
     const scaleAnim = useRef(new RNAnimated.Value(1)).current
@@ -69,7 +71,7 @@ function CoinDisplayComponent({
                 <Ionicons
                     name="logo-bitcoin"
                     size={iconSize}
-                    color="#FFD700"
+                    color={semanticColors.gold}
                 />
             </RNAnimated.View>
             <Text style={[styles.balance, { fontSize }]}>
@@ -84,7 +86,7 @@ function CoinDisplayComponent({
 
 export const CoinDisplay = memo(CoinDisplayComponent)
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -111,4 +113,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textMuted,
         marginLeft: theme.spacing.xxs,
     },
-}))
+});

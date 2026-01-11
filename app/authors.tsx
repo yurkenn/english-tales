@@ -1,6 +1,6 @@
 import React, { useMemo, useCallback, useState } from 'react';
-import { View, Text, FlatList, Pressable, Image, TextInput } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, FlatList, Pressable, Image, TextInput , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -25,7 +25,8 @@ interface Author {
 
 export default function AuthorsScreen() {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const [searchQuery, setSearchQuery] = useState('');
@@ -199,7 +200,7 @@ export default function AuthorsScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -330,4 +331,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.primary,
         fontWeight: theme.typography.weight.medium,
     },
-}));
+});

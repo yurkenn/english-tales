@@ -1,13 +1,14 @@
 import React from 'react';
-import { View, Text, ScrollView, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, ScrollView, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 
 export default function TermsOfServiceScreen() {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { i18n } = useTranslation();
@@ -144,7 +145,7 @@ export default function TermsOfServiceScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -215,4 +216,4 @@ const styles = StyleSheet.create((theme) => ({
         textAlign: 'center',
         lineHeight: 20,
     },
-}));
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 type IconName = React.ComponentProps<typeof Ionicons>['name'];
@@ -20,7 +20,8 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
     actionLabel,
     onAction,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.container}>
@@ -43,7 +44,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -84,4 +85,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.textInverse,
     },
-}));
+});

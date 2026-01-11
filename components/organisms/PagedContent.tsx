@@ -1,6 +1,6 @@
 import React, { useRef, useCallback, useEffect } from 'react';
-import { View, Pressable, useWindowDimensions } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, useWindowDimensions , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { PortableTextBlock } from '@portabletext/types';
 import PagerView from 'react-native-pager-view';
 import { PortableTextRenderer } from './PortableTextRenderer';
@@ -41,7 +41,8 @@ export const PagedContent = React.memo(({
     selectedWord,
     highlights = [],
 }: PagedContentProps) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { width } = useWindowDimensions();
     const pagerRef = useRef<PagerView>(null);
     const lastSyncedPage = useRef(0);
@@ -154,7 +155,7 @@ export const PagedContent = React.memo(({
 
 PagedContent.displayName = 'PagedContent';
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         position: 'relative',
@@ -182,4 +183,4 @@ const styles = StyleSheet.create((theme) => ({
     rightTapZone: {
         right: 0,
     },
-}));
+});

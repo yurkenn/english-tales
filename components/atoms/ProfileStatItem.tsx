@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 import { View, Pressable, useWindowDimensions } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Typography } from './Typography'
 
 interface ProfileStatItemProps {
@@ -18,7 +19,8 @@ export const ProfileStatItem = memo<ProfileStatItemProps>(({
     label,
     onPress
 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { width: screenWidth } = useWindowDimensions()
 
     // Responsive sizing for small screens
@@ -50,7 +52,7 @@ export const ProfileStatItem = memo<ProfileStatItemProps>(({
     return content
 })
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     statItem: {
         alignItems: 'center',
         gap: 2,
@@ -69,4 +71,4 @@ const styles = StyleSheet.create((theme) => ({
         paddingVertical: 4,
         paddingHorizontal: 8,
     },
-}))
+});

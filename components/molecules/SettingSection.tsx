@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, Text, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 
 interface SettingSectionProps {
     title: string;
@@ -13,6 +13,8 @@ export const SettingSection: React.FC<SettingSectionProps> = ({
     isDanger,
     children,
 }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.section}>
             <Text style={[styles.sectionTitle, isDanger && styles.dangerTitle]}>
@@ -23,7 +25,7 @@ export const SettingSection: React.FC<SettingSectionProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     section: {
         marginTop: theme.spacing.xl,
         paddingHorizontal: theme.spacing.lg,
@@ -43,4 +45,4 @@ const styles = StyleSheet.create((theme) => ({
     dangerTitle: {
         color: theme.colors.error,
     },
-}));
+});

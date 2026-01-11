@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react'
 import { View, Pressable, ScrollView, Image } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme, semanticColors } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
 import { useTranslation } from 'react-i18next'
@@ -19,6 +20,7 @@ import { useLibraryStore } from '@/store/libraryStore'
 import { useProgressStore } from '@/store/progressStore'
 import { haptics } from '@/utils/haptics'
 import { useProfileDataManager, useProfileStatsManager, useProfileUIController } from '@/hooks'
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout'
 
 const DEFAULT_AVATAR = require('@/assets/defaultavatar.png')
 
@@ -36,7 +38,8 @@ const MenuItem = ({
     onPress: () => void
     isLast?: boolean
 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <Pressable
             style={[styles.menuItem, !isLast && styles.menuItemBorder]}
@@ -61,8 +64,10 @@ const MenuItem = ({
 
 export default function ProfileScreen() {
     const { t } = useTranslation()
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const insets = useSafeAreaInsets()
+    const { containerPadding, sectionSpacing } = useResponsiveLayout()
 
     // Stores
     const { items: libraryItems } = useLibraryStore()
@@ -159,22 +164,22 @@ export default function ProfileScreen() {
                                     <Typography style={styles.quickStatLabel}>{t('profile.books', 'Books')}</Typography>
                                 </View>
                                 <View style={styles.quickStatItem}>
-                                    <View style={[styles.quickStatIcon, { backgroundColor: '#F59E0B15' }]}>
-                                        <Ionicons name="time" size={18} color="#F59E0B" />
+                                    <View style={[styles.quickStatIcon, { backgroundColor: semanticColors.level.intermediate + '15' }]}>
+                                        <Ionicons name="time" size={18} color={semanticColors.level.intermediate} />
                                     </View>
                                     <Typography style={styles.quickStatValue}>{Math.round(stats.readingHours)}h</Typography>
                                     <Typography style={styles.quickStatLabel}>{t('profile.reading', 'Hours')}</Typography>
                                 </View>
                                 <View style={styles.quickStatItem}>
-                                    <View style={[styles.quickStatIcon, { backgroundColor: '#10B98115' }]}>
-                                        <Ionicons name="text" size={18} color="#10B981" />
+                                    <View style={[styles.quickStatIcon, { backgroundColor: semanticColors.level.beginner + '15' }]}>
+                                        <Ionicons name="text" size={18} color={semanticColors.level.beginner} />
                                     </View>
                                     <Typography style={styles.quickStatValue}>{Math.round(stats.vocabCount)}</Typography>
                                     <Typography style={styles.quickStatLabel}>{t('profile.words', 'Words')}</Typography>
                                 </View>
                                 <View style={styles.quickStatItem}>
-                                    <View style={[styles.quickStatIcon, { backgroundColor: '#8B5CF615' }]}>
-                                        <Ionicons name="trophy" size={18} color="#8B5CF6" />
+                                    <View style={[styles.quickStatIcon, { backgroundColor: '#8B5CF6' + '15' }]}>
+                                        <Ionicons name="trophy" size={18} color={'#8B5CF6'} />
                                     </View>
                                     <Typography style={styles.quickStatValue}>{unlockedCount}</Typography>
                                     <Typography style={styles.quickStatLabel}>{t('profile.badges', 'Badges')}</Typography>
@@ -302,7 +307,7 @@ export default function ProfileScreen() {
                                 style={[styles.editAvatarBtn, { backgroundColor: theme.colors.primary }]}
                                 onPress={handleEditPress}
                             >
-                                <Ionicons name="pencil" size={14} color="#FFFFFF" />
+                                <Ionicons name="pencil" size={14} color={theme.colors.textInverse} />
                             </Pressable>
                         </View>
 
@@ -430,7 +435,7 @@ export default function ProfileScreen() {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -442,12 +447,11 @@ const styles = StyleSheet.create((theme) => ({
         paddingBottom: theme.spacing.xxxxl * 2,
     },
 
-    // Header
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
         paddingBottom: theme.spacing.lg,
         backgroundColor: theme.colors.background,
     },
@@ -578,7 +582,6 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: theme.spacing.lg,
     },
 
-    // Tabs
     tabsContainer: {
         flexDirection: 'row',
         marginTop: theme.spacing.xl,
@@ -759,5 +762,5 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: '600',
     },
-}));
+});
 

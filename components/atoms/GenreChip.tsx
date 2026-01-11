@@ -1,5 +1,5 @@
-import { Pressable, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Pressable, Text, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import Animated, {
     useSharedValue,
     useAnimatedStyle,
@@ -21,6 +21,8 @@ export const GenreChip: React.FC<GenreChipProps> = ({
     isSelected = false,
     onPress,
 }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const scale = useSharedValue(1);
 
     const animatedStyle = useAnimatedStyle(() => ({
@@ -67,7 +69,7 @@ export const GenreChip: React.FC<GenreChipProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     chip: {
         height: 36,
         paddingHorizontal: theme.spacing.lg,
@@ -95,4 +97,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
         fontWeight: theme.typography.weight.medium,
     },
-}));
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable, Modal } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, Modal , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useSettingsStore } from '@/store/settingsStore';
@@ -35,7 +35,8 @@ export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
     onThemeChange,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { settings, actions: settingsActions } = useSettingsStore();
 
     return (
@@ -76,7 +77,7 @@ export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
         backgroundColor: 'rgba(0,0,0,0.5)',
@@ -100,5 +101,5 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.text,
     },
-}));
+});
 

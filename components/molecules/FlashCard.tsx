@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { View, Pressable, Animated } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Typography } from '@/components/atoms'
 import { Ionicons } from '@expo/vector-icons'
 import { haptics } from '@/utils/haptics'
@@ -24,7 +25,8 @@ export const FlashCard: React.FC<FlashCardProps> = ({
     onIncorrect,
     autoFlip = false,
 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [isFlipped, setIsFlipped] = useState(false)
     const flipAnim = useRef(new Animated.Value(0)).current
 
@@ -165,7 +167,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -277,4 +279,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 14,
         fontWeight: '600',
     },
-}))
+});

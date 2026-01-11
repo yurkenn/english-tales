@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { subDays, format, startOfDay, isSameDay } from 'date-fns';
 import { useTranslation } from 'react-i18next';
 
@@ -10,7 +10,8 @@ interface ChartData {
 
 export const WordGrowthChart: React.FC<ChartData> = ({ words }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const chartData = useMemo(() => {
         const last7Days = Array.from({ length: 7 }, (_, i) => {
@@ -71,7 +72,7 @@ export const WordGrowthChart: React.FC<ChartData> = ({ words }) => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginHorizontal: theme.spacing.xl,
         padding: theme.spacing.lg,
@@ -124,4 +125,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.primary,
         fontWeight: 'bold',
     },
-}));
+});

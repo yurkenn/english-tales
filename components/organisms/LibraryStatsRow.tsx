@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, Text, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 
 interface LibraryStatsRowProps {
     total: number;
@@ -13,6 +13,8 @@ export const LibraryStatsRow: React.FC<LibraryStatsRowProps> = ({
     completed,
     inProgress,
 }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.statsRow}>
             <View style={styles.statItem}>
@@ -33,7 +35,7 @@ export const LibraryStatsRow: React.FC<LibraryStatsRowProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     statsRow: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -69,4 +71,4 @@ const styles = StyleSheet.create((theme) => ({
         height: 32,
         backgroundColor: theme.colors.borderLight,
     },
-}));
+});

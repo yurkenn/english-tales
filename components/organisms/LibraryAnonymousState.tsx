@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 interface LibraryAnonymousStateProps {
@@ -10,7 +10,8 @@ interface LibraryAnonymousStateProps {
 export const LibraryAnonymousState: React.FC<LibraryAnonymousStateProps> = ({
     onSignInPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.container}>
@@ -26,7 +27,7 @@ export const LibraryAnonymousState: React.FC<LibraryAnonymousStateProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -57,4 +58,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.semibold,
     },
-}));
+});

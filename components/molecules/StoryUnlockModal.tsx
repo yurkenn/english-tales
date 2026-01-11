@@ -5,7 +5,8 @@
 
 import React, { memo } from 'react'
 import { View, Text, Modal, Pressable, Image } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { useStoryUnlockAd } from '@/hooks/useRewardedAd'
@@ -37,7 +38,8 @@ function StoryUnlockModalComponent({
     onGetPremium,
     isPremiumOnly = false,
 }: StoryUnlockModalProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
 
     const { showAd, isLoading, isReady, isUnlocked, loadAd } = useStoryUnlockAd(storyId)
@@ -209,7 +211,7 @@ function StoryUnlockModalComponent({
 
 export const StoryUnlockModal = memo(StoryUnlockModalComponent)
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
         justifyContent: 'center',
@@ -357,4 +359,4 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
     },
-}))
+});

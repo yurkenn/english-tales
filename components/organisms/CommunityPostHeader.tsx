@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable, Image, ImageSourcePropType } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
 import { haptics } from '@/utils/haptics';
@@ -23,7 +23,8 @@ export const CommunityPostHeader: React.FC<CommunityPostHeaderProps> = ({
     onAvatarPress,
     onMorePress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const avatarSource: ImageSourcePropType = userPhoto ? { uri: userPhoto } : DEFAULT_AVATAR;
 
     return (
@@ -48,7 +49,7 @@ export const CommunityPostHeader: React.FC<CommunityPostHeaderProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     postHeader: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -70,4 +71,4 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         marginLeft: theme.spacing.md,
     },
-}));
+});

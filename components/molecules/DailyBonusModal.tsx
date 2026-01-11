@@ -5,7 +5,8 @@
 
 import React, { memo, useCallback } from 'react'
 import { View, Text, Modal, Pressable, ScrollView, ActivityIndicator } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { useTranslation } from 'react-i18next'
@@ -38,7 +39,8 @@ function DailyBonusModalComponent({
     onClose,
     onClaimed,
 }: DailyBonusModalProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
     const coinActions = useCoinStore((s) => s.actions)
     const rewardActions = useRewardStore((s) => s.actions)
@@ -256,7 +258,7 @@ function DailyBonusModalComponent({
 
 export const DailyBonusModal = memo(DailyBonusModalComponent)
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
         justifyContent: 'center',
@@ -428,4 +430,4 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
     },
-}))
+});

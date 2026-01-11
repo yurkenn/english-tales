@@ -1,6 +1,6 @@
 import React from 'react';
-import { Pressable, Text, ActivityIndicator, View } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Pressable, Text, ActivityIndicator, View , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { DownloadStatus, formatBytes } from '@/store/downloadStore';
 
@@ -19,7 +19,8 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     onDelete,
     compact = false,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     if (status === 'downloading') {
         return (
@@ -57,7 +58,7 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     button: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -97,4 +98,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.medium,
         color: theme.colors.success,
     },
-}));
+});

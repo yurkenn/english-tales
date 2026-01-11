@@ -1,7 +1,7 @@
 import React, { forwardRef, useCallback, useMemo } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { haptics } from '@/utils/haptics';
@@ -16,7 +16,8 @@ const GOAL_OPTIONS = [5, 10, 15, 20, 30, 45, 60];
 
 export const ReadingGoalsSheet = forwardRef<BottomSheet, ReadingGoalsSheetProps>(
     ({ currentGoal, onSelectGoal, onClose }, ref) => {
-        const { theme } = useUnistyles();
+        const { theme } = useTheme();
+        const styles = createStyles(theme);
         const insets = useSafeAreaInsets();
 
         const snapPoints = useMemo(() => ['55%'], []);
@@ -100,7 +101,7 @@ export const ReadingGoalsSheet = forwardRef<BottomSheet, ReadingGoalsSheetProps>
     }
 );
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     content: {
         flex: 1,
         paddingHorizontal: theme.spacing.xl,
@@ -161,7 +162,7 @@ const styles = StyleSheet.create((theme) => ({
     label: {
         fontSize: theme.typography.size.sm,
         color: theme.colors.textSecondary,
-        marginTop: theme.spacing.xxxxxsmall,
+        marginTop: theme.spacing.xxs,
     },
     textSelected: {
         color: '#FFFFFF',
@@ -177,4 +178,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-}));
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 
@@ -29,7 +29,8 @@ export const ReadingHeader: React.FC<ReadingHeaderProps> = React.memo(({
     onSettings,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.header}>
@@ -57,7 +58,7 @@ export const ReadingHeader: React.FC<ReadingHeaderProps> = React.memo(({
     );
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -110,4 +111,4 @@ const styles = StyleSheet.create((theme) => ({
         fontFamily: theme.typography.fontFamily.bold,
         color: theme.colors.success,
     },
-}));
+});

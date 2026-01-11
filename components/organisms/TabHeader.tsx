@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -17,7 +17,8 @@ interface TabHeaderProps {
 }
 
 export const TabHeader: React.FC<TabHeaderProps> = ({ title, actions = [] }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const insets = useSafeAreaInsets();
 
     return (
@@ -48,7 +49,7 @@ export const TabHeader: React.FC<TabHeaderProps> = ({ title, actions = [] }) => 
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -90,4 +91,4 @@ const styles = StyleSheet.create((theme) => ({
         borderWidth: 2,
         borderColor: theme.colors.surface,
     },
-}));
+});

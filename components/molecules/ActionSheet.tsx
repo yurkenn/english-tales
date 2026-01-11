@@ -1,7 +1,7 @@
 import React, { forwardRef, useCallback, useMemo } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
@@ -22,7 +22,8 @@ interface ActionSheetProps {
 
 export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
     ({ title, subtitle, options, onClose }, ref) => {
-        const { theme } = useUnistyles();
+        const { theme } = useTheme();
+    const styles = createStyles(theme);
         const { t } = useTranslation();
         const insets = useSafeAreaInsets();
 
@@ -128,7 +129,7 @@ export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
     }
 );
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     content: {
         flex: 1,
         paddingHorizontal: theme.spacing.lg,
@@ -205,4 +206,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.text,
     },
-}));
+});

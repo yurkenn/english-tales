@@ -1,6 +1,7 @@
 import React, { useMemo, useState, useCallback, useRef } from 'react'
 import { View, FlatList, RefreshControl, Text, Pressable, LayoutAnimation, Platform, UIManager } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import BottomSheet from '@gorhom/bottom-sheet'
@@ -30,6 +31,7 @@ import { useToastStore } from '@/store/toastStore'
 import { useVocabularyStore } from '@/store/vocabularyStore'
 import { haptics } from '@/utils/haptics'
 import { useResponsiveGrid } from '@/hooks/useResponsiveGrid'
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout'
 
 // Segmented Tab Component
 interface SegmentTabProps {
@@ -40,6 +42,8 @@ interface SegmentTabProps {
 }
 
 const SegmentTab = ({ label, isActive, badge, onPress }: SegmentTabProps) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const handlePress = () => {
         haptics.selection()
         onPress()
@@ -70,10 +74,12 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
 
 export default function LibraryScreen() {
     const { t } = useTranslation()
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter()
     const insets = useSafeAreaInsets()
     const { windowWidth } = useResponsiveGrid()
+    const { containerPadding } = useResponsiveLayout()
     const { user } = useAuthStore()
     const { items: libraryItems, isLoading, actions: libraryActions } = useLibraryStore()
     const { progressMap, actions: progressActions } = useProgressStore()
@@ -398,7 +404,7 @@ export default function LibraryScreen() {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -416,7 +422,7 @@ const styles = StyleSheet.create((theme) => ({
     },
     segmentedControl: {
         flexDirection: 'row',
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
         paddingVertical: theme.spacing.md,
         gap: theme.spacing.sm,
     },
@@ -443,7 +449,7 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
     },
     segmentTextActive: {
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
     },
     badge: {
         marginLeft: theme.spacing.sm,
@@ -457,7 +463,7 @@ const styles = StyleSheet.create((theme) => ({
     badgeText: {
         fontSize: theme.typography.size.xs,
         fontWeight: 'bold',
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
     },
     quizHeader: {
         flexDirection: 'row',
@@ -502,4 +508,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.primary,
         opacity: 0.5,
     },
-}))
+});

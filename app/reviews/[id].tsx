@@ -1,9 +1,10 @@
 import React, { useMemo, useRef, useCallback } from 'react';
-import { View, Text, FlatList, Pressable, Image } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, FlatList, Pressable, Image, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { RatingStars, WriteReviewSheet, EmptyState, ReviewsScreenSkeleton } from '@/components';
 import { useStory, useReviewsByStory, useStoryRating, useCreateReview } from '@/hooks/useQueries';
@@ -11,9 +12,11 @@ import { Review } from '@/types';
 import { useAuthStore } from '@/store/authStore';
 
 export default function ReviewsScreen() {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { containerPadding } = useResponsiveLayout();
     const { id } = useLocalSearchParams<{ id: string }>();
     const { user } = useAuthStore();
     const reviewSheetRef = useRef<BottomSheet>(null);
@@ -74,7 +77,7 @@ export default function ReviewsScreen() {
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
-            <View style={styles.header}>
+            <View style={[styles.header, { paddingHorizontal: containerPadding }]}>
                 <Pressable
                     style={styles.backButton}
                     onPress={() => router.back()}
@@ -101,7 +104,7 @@ export default function ReviewsScreen() {
                 data={reviews}
                 keyExtractor={(item) => item._id}
                 renderItem={renderReview}
-                contentContainerStyle={[styles.listContent, { paddingBottom: insets.bottom + 80 }]}
+                contentContainerStyle={[styles.listContent, { paddingBottom: insets.bottom + 80, paddingHorizontal: containerPadding }]}
                 showsVerticalScrollIndicator={false}
                 ItemSeparatorComponent={() => <View style={{ height: theme.spacing.md }} />}
                 removeClippedSubviews={true}
@@ -165,7 +168,7 @@ export default function ReviewsScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -292,4 +295,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.bold,
         color: theme.colors.textInverse,
     },
-}));
+});

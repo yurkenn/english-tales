@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 
@@ -17,7 +17,8 @@ interface ProfileMenuProps {
 
 export const ProfileMenu: React.FC<ProfileMenuProps> = ({ items }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.container}>
@@ -53,7 +54,7 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({ items }) => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginHorizontal: theme.spacing.lg,
         marginBottom: theme.spacing.lg,
@@ -119,4 +120,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.medium,
         color: theme.colors.textSecondary,
     },
-}));
+});

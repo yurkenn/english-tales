@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { Modal, View, Text, Pressable, Animated, useWindowDimensions } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Modal, View, Text, Pressable, Animated, useWindowDimensions , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -29,7 +29,8 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
     items,
     sectionLabel,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { width: windowWidth, height: windowHeight } = useWindowDimensions();
     const insets = useSafeAreaInsets();
     const opacityAnim = useRef(new Animated.Value(0)).current;
@@ -176,7 +177,7 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
     },
@@ -217,4 +218,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.medium,
     },
-}));
+});

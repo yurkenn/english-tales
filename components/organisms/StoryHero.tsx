@@ -2,7 +2,7 @@ import React from 'react';
 // Force reload: 2
 
 import { View, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
@@ -32,7 +32,8 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
     topInset,
     onSharePress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme, isDark } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.container}>
@@ -44,7 +45,7 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
                     style={RNStyleSheet.absoluteFill}
                     contentFit="cover"
                 />
-                <BlurView intensity={60} style={RNStyleSheet.absoluteFill} tint={theme.mode === 'dark' ? 'dark' : 'light'} />
+                <BlurView intensity={60} style={RNStyleSheet.absoluteFill} tint={isDark ? 'dark' : 'light'} />
                 <LinearGradient
                     colors={['rgba(0,0,0,0.3)', 'transparent', theme.colors.background]}
                     style={styles.gradient}
@@ -71,7 +72,7 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
             </View>
 
             <Pressable style={[styles.backButton, { top: topInset + 8 }]} onPress={onBackPress}>
-                <Ionicons name="arrow-back" size={24} color={theme.mode === 'dark' ? '#FFFFFF' : '#000000'} />
+                <Ionicons name="arrow-back" size={24} color={isDark ? theme.colors.textInverse : theme.colors.text} />
             </Pressable>
 
             <View style={[styles.rightButtons, { top: topInset + 8 }]}>
@@ -79,7 +80,7 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
                     <Ionicons
                         name={isFavorited ? 'heart' : 'heart-outline'}
                         size={24}
-                        color={isFavorited ? theme.colors.error : (theme.mode === 'dark' ? '#FFFFFF' : '#000000')}
+                        color={isFavorited ? theme.colors.error : (isDark ? theme.colors.textInverse : theme.colors.text)}
                     />
                 </Pressable>
 
@@ -87,13 +88,13 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
                     <Ionicons
                         name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
                         size={24}
-                        color={isBookmarked ? theme.colors.primary : (theme.mode === 'dark' ? '#FFFFFF' : '#000000')}
+                        color={isBookmarked ? theme.colors.primary : (isDark ? theme.colors.textInverse : theme.colors.text)}
                     />
                 </Pressable>
 
                 {onSharePress && (
                     <Pressable style={styles.actionButton} onPress={onSharePress}>
-                        <Ionicons name="share-social-outline" size={24} color={theme.mode === 'dark' ? '#FFFFFF' : '#000000'} />
+                        <Ionicons name="share-social-outline" size={24} color={isDark ? theme.colors.textInverse : theme.colors.text} />
                     </Pressable>
                 )}
             </View>
@@ -101,7 +102,7 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => RNStyleSheet.create({
     container: {
         height: 480, // Taller immersive hero
         width: '100%',
@@ -165,4 +166,4 @@ const styles = StyleSheet.create((theme) => ({
         borderWidth: 1,
         borderColor: 'rgba(255,255,255,0.1)',
     },
-}));
+});

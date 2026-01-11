@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { View, Pressable, Linking, Image, ImageSourcePropType } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, Linking, Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { useTheme, Theme, semanticColors } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import Animated, {
@@ -42,7 +42,8 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
     hasNavigationHeader = false,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     // Subtle entrance animation
     const opacity = useSharedValue(0);
@@ -57,8 +58,8 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 
     const socialLinks = profile.socialLinks || {};
     const availableLinks = [
-        { icon: 'logo-instagram', url: socialLinks.instagram, type: 'instagram', color: '#E4405F' },
-        { icon: 'logo-twitter', url: socialLinks.twitter, type: 'twitter', color: '#1DA1F2' },
+        { icon: 'logo-instagram', url: socialLinks.instagram, type: 'instagram', color: semanticColors.social.instagram },
+        { icon: 'logo-twitter', url: socialLinks.twitter, type: 'twitter', color: semanticColors.social.twitter },
         { icon: 'globe-outline', url: socialLinks.website, type: 'website', color: theme.colors.text },
         { icon: 'logo-github', url: socialLinks.github, type: 'github', color: theme.colors.text },
     ].filter(l => l.url);
@@ -98,7 +99,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
             <View style={styles.avatarSection}>
                 <View style={styles.avatarWrapper}>
                     <LinearGradient
-                        colors={[theme.colors.primary, '#FF6B6B', theme.colors.primaryLight]}
+                        colors={[theme.colors.primary, theme.colors.primaryLight, theme.colors.primaryDark]}
                         start={{ x: 0, y: 0 }}
                         end={{ x: 1, y: 1 }}
                         style={styles.avatarRing}
@@ -183,7 +184,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
                             <Ionicons
                                 name={relationship === 'following' ? 'checkmark-circle' : 'person-add-outline'}
                                 size={16}
-                                color={relationship === 'following' ? theme.colors.text : '#FFFFFF'}
+                                color={relationship === 'following' ? theme.colors.text : theme.colors.textInverse}
                             />
                             <Typography style={relationship === 'following' ? styles.editButtonText : styles.followButtonText}>
                                 {relationship === 'following'
@@ -230,7 +231,7 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         backgroundColor: theme.colors.background,
         alignItems: 'center',
@@ -366,7 +367,7 @@ const styles = StyleSheet.create((theme) => ({
     followButtonText: {
         fontSize: theme.typography.size.md,
         fontWeight: '600',
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
     },
     socialIcon: {
         width: 44,
@@ -422,5 +423,5 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
     },
-}));
+});
 

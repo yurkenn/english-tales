@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, ScrollView, Pressable, Image, ImageSourcePropType } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, ScrollView, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
 import { haptics } from '@/utils/haptics';
@@ -28,7 +28,8 @@ const CARD_WIDTH = 180;
 
 export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPressActivity }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     if (activities.length === 0) return null;
 
@@ -116,7 +117,7 @@ export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPres
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginTop: theme.spacing.xs,
         marginBottom: theme.spacing.sm,
@@ -191,4 +192,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.xs,
         lineHeight: 12,
     },
-}));
+});

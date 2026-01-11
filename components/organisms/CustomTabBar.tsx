@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View, Pressable, LayoutChangeEvent } from 'react-native';
+import { View, Pressable, LayoutChangeEvent, StyleSheet } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Feather } from '@expo/vector-icons';
 import Animated, {
     useAnimatedStyle,
@@ -24,7 +24,8 @@ const SPRING_CONFIG = {
 };
 
 export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, navigation }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const themedStyles = createStyles(theme);
     const { windowWidth } = useResponsiveGrid();
     const insets = useSafeAreaInsets();
     const unreadCount = useNotificationStore(s => s.unreadCount);
@@ -57,10 +58,13 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
     };
 
     return (
-        <View style={[styles.outerContainer, { bottom: insets.bottom > 0 ? insets.bottom + theme.spacing.sm : theme.spacing.xl }]}>
-            <View style={styles.container} onLayout={onLayout}>
+        <View
+            pointerEvents="box-none"
+            style={[themedStyles.outerContainer, { bottom: insets.bottom > 0 ? insets.bottom + theme.spacing.sm : theme.spacing.xl }]}
+        >
+            <View style={themedStyles.container} onLayout={onLayout}>
                 {/* Sliding Indicator Bubble (Minimalist Semi-transparent) */}
-                <Animated.View style={[styles.indicator, animatedIndicatorStyle]} />
+                <Animated.View style={[themedStyles.indicator, animatedIndicatorStyle]} />
 
                 {state.routes.map((route, index) => {
                     const { options } = descriptors[route.key];
@@ -88,7 +92,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
                             accessibilityLabel={options.tabBarAccessibilityLabel}
                             testID={(options as any).tabBarTestID}
                             onPress={onPress}
-                            style={styles.tabItem}
+                            style={themedStyles.tabItem}
                         >
                             <TabItemContent
                                 isFocused={isFocused}
@@ -98,7 +102,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
                             />
                             {route.name === 'community' && unreadCount > 0 && (
                                 <View style={[
-                                    styles.unreadBadge,
+                                    themedStyles.unreadBadge,
                                     {
                                         backgroundColor: theme.colors.error,
                                         borderColor: theme.colors.surface
@@ -128,7 +132,7 @@ const TabItemContent = ({ isFocused, iconName, activeColor, inactiveColor }: { i
     }));
 
     return (
-        <Animated.View style={[styles.iconWrapper, animatedStyle]}>
+        <Animated.View style={[staticStyles.iconWrapper, animatedStyle]}>
             <Feather
                 name={iconName}
                 size={22}
@@ -138,7 +142,7 @@ const TabItemContent = ({ isFocused, iconName, activeColor, inactiveColor }: { i
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     outerContainer: {
         position: 'absolute',
         left: 0,
@@ -149,14 +153,13 @@ const styles = StyleSheet.create((theme) => ({
     },
     container: {
         flexDirection: 'row',
-        width: `${TAB_BAR_WIDTH_PERCENT * 100}%`,
+        width: `${TAB_BAR_WIDTH_PERCENT * 100}%` as any,
         height: 60,
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.full,
         alignItems: 'center',
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
-        // Premium shadow
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 10 },
         shadowOpacity: 0.1,
@@ -166,17 +169,13 @@ const styles = StyleSheet.create((theme) => ({
     indicator: {
         position: 'absolute',
         height: 44,
-        backgroundColor: theme.colors.primary + '15', // Minimalist semi-transparent
+        backgroundColor: theme.colors.primary + '15',
         borderRadius: theme.radius.full,
         top: 8,
     },
     tabItem: {
         flex: 1,
         height: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    iconWrapper: {
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -189,4 +188,12 @@ const styles = StyleSheet.create((theme) => ({
         borderRadius: theme.radius.full,
         borderWidth: 1.5,
     },
-}));
+});
+
+// Static styles that don't depend on theme
+const staticStyles = StyleSheet.create({
+    iconWrapper: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});

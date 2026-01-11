@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 
 interface StatBarProps {
     label: string;
@@ -15,7 +15,8 @@ export const StatBar: React.FC<StatBarProps> = ({
     maxValue,
     color,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const percentage = Math.min((value / maxValue) * 100, 100);
     const barColor = color || theme.colors.primary;
 
@@ -46,7 +47,8 @@ export const WeeklyChart: React.FC<WeeklyChartProps> = ({
     data,
     labels = ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const maxValue = Math.max(...data, 1);
 
     return (
@@ -78,7 +80,7 @@ export const WeeklyChart: React.FC<WeeklyChartProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginBottom: theme.spacing.md,
     },
@@ -141,4 +143,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.primary,
         fontWeight: theme.typography.weight.bold,
     },
-}));
+});

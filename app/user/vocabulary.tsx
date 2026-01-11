@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import { View, Text, Pressable, Animated } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Ionicons } from '@expo/vector-icons'
@@ -14,7 +15,8 @@ import { useTranslation } from 'react-i18next'
 
 export default function VocabularyScreen() {
     const { t } = useTranslation()
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter()
     const insets = useSafeAreaInsets()
     const [searchQuery, setSearchQuery] = useState('')
@@ -141,7 +143,7 @@ export default function VocabularyScreen() {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -191,7 +193,7 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
     },
     quizIcon: {
-        fontSize: 24,
+        fontSize: theme.typography.size.xxl,
     },
     quizTextContainer: {
         flex: 1,
@@ -241,7 +243,7 @@ const styles = StyleSheet.create((theme) => ({
         ...theme.shadows.sm,
     },
     encouragementIcon: {
-        fontSize: 28,
+        fontSize: theme.typography.size.xxxl,
     },
     encouragementText: {
         flex: 1,
@@ -286,4 +288,4 @@ const styles = StyleSheet.create((theme) => ({
         backgroundColor: theme.colors.primary + '15',
         borderRadius: theme.radius.full,
     },
-}))
+});

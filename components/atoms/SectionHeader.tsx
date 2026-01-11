@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 
 interface SectionHeaderProps {
     title: string;
@@ -13,6 +14,9 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     actionLabel = 'See All',
     onActionPress,
 }) => {
+    const { theme } = useTheme();
+    const { containerPadding } = useResponsiveLayout();
+    const styles = createStyles(theme, containerPadding);
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
@@ -25,12 +29,12 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme, containerPadding: number) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.lg,
+        paddingHorizontal: containerPadding,
     },
     title: {
         fontSize: theme.typography.size.xl,
@@ -43,4 +47,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.primary,
     },
-}));
+});

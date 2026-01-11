@@ -10,7 +10,8 @@
 
 import React, { memo, useCallback, useState, useEffect } from 'react'
 import { View, Text, Pressable, ActivityIndicator, Dimensions, Switch, Platform } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { useSubscriptionStore } from '@/store/subscriptionStore'
 import { PurchasesPackage } from 'react-native-purchases'
@@ -33,7 +34,8 @@ const PREMIUM_FEATURES = [
 ]
 
 function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
     const [isTrialEnabled, setIsTrialEnabled] = useState(true)
 
@@ -293,7 +295,7 @@ function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallPro
 
 export const OnboardingPaywall = memo(OnboardingPaywallComponent)
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -469,4 +471,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 12,
         fontWeight: '500',
     },
-}))
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import Animated, {
     useAnimatedStyle,
     withSpring,
@@ -25,7 +25,8 @@ export const ReadingGoalRing: React.FC<ReadingGoalRingProps> = ({
     strokeWidth = 4,
     showLabel = false,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const clampedProgress = Math.min(1, Math.max(0, progress));
 
     // We'll use two semi-circles to create the ring effect
@@ -91,7 +92,7 @@ export const ReadingGoalRing: React.FC<ReadingGoalRingProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
@@ -118,4 +119,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: '700',
         color: theme.colors.primary,
     },
-}));
+});

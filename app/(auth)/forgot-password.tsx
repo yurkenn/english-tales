@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,7 +14,8 @@ import { z } from 'zod';
 const emailSchema = z.string().min(1, 'Email is required').email('Please enter a valid email');
 
 export default function ForgotPasswordScreen() {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { t } = useTranslation();
@@ -134,7 +135,7 @@ export default function ForgotPasswordScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -265,4 +266,4 @@ const styles = StyleSheet.create((theme) => ({
         width: '100%',
         marginTop: theme.spacing.lg,
     },
-}));
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 interface RatingStarsProps {
@@ -14,7 +14,7 @@ export const RatingStars: React.FC<RatingStarsProps> = ({
     size = 'sm',
     showEmpty = false,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
 
     const sizeMap = {
         sm: 12,
@@ -60,10 +60,10 @@ export const RatingStars: React.FC<RatingStarsProps> = ({
     );
 };
 
-const styles = StyleSheet.create(() => ({
+const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
         gap: 1,
     },
-}));
+});

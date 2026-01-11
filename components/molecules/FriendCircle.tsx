@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable, ScrollView } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, ScrollView , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Typography } from '../atoms/Typography';
 import { OptimizedImage } from '../atoms/OptimizedImage';
 import { Ionicons } from '@expo/vector-icons';
@@ -16,7 +16,8 @@ interface FriendCircleProps {
 
 export const FriendCircle: React.FC<FriendCircleProps> = ({ friends, onPressAll, onPressFriend }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const hasFriends = friends.length > 0;
 
@@ -86,7 +87,7 @@ export const FriendCircle: React.FC<FriendCircleProps> = ({ friends, onPressAll,
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         marginVertical: theme.spacing.md,
         paddingHorizontal: theme.spacing.lg,
@@ -160,4 +161,4 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         flexShrink: 1,
     },
-}));
+});

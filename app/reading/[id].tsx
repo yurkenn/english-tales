@@ -1,8 +1,9 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { View, Text, Pressable, Animated } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, Animated, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import {
     ReadingHeader,
     ReadingProgressBar,
@@ -45,9 +46,11 @@ import {
 
 export default function ReadingScreen() {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { containerPadding } = useResponsiveLayout();
     const { id } = useLocalSearchParams<{ id: string }>();
 
     // Paywall
@@ -108,6 +111,40 @@ export default function ReadingScreen() {
         if (downloadedContent) return downloadedContent;
         return storyDoc?.content as PortableTextBlock[] | undefined;
     }, [downloadedContent, storyDoc]);
+
+    // Reading Controls - must come before usePageCalculation since it provides fontSize/lineHeight
+    const {
+        fontSize,
+        lineHeight,
+        fontFamily,
+        readingTheme,
+        dyslexicFontEnabled,
+        isDark,
+        highContrastEnabled: globalHighContrast,
+        isInLibrary,
+        showSettingsModal,
+        handleFontDecrease,
+        handleFontIncrease,
+        cycleReadingTheme,
+        handleThemeChange,
+        handleBookmarkToggle,
+        openSettings,
+        closeSettings,
+        setFontSize,
+        setLineHeight,
+        setFontFamily,
+    } = useReadingControls({
+        storyId: id,
+        storyMeta: storyDoc ? {
+            id,
+            title: storyDoc.title,
+            coverImage: storyDoc.coverImage?.asset?.url,
+            author: storyDoc.author?.name,
+            description: storyDoc.description,
+            estimatedReadTime: storyDoc.estimatedReadTime,
+            level: storyDoc.level,
+        } : null,
+    });
 
     // Calculate pages from content
     const { pages, totalPages, findPageByBlockKey } = usePageCalculation({
@@ -209,40 +246,6 @@ export default function ReadingScreen() {
 
     // handleMarkComplete, handleQuizClose, handleReviewSubmit are now provided by useReadingCompletion hook
 
-    // Reading Controls (font, theme, bookmark, settings)
-    const {
-        fontSize,
-        lineHeight,
-        fontFamily,
-        readingTheme,
-        dyslexicFontEnabled,
-        isDark,
-        highContrastEnabled: globalHighContrast,
-        isInLibrary,
-        showSettingsModal,
-        handleFontDecrease,
-        handleFontIncrease,
-        cycleReadingTheme,
-        handleThemeChange,
-        handleBookmarkToggle,
-        openSettings,
-        closeSettings,
-        setFontSize,
-        setLineHeight,
-        setFontFamily,
-    } = useReadingControls({
-        storyId: id,
-        storyMeta: storyDoc ? {
-            id,
-            title: storyDoc.title,
-            coverImage: storyDoc.coverImage?.asset?.url,
-            author: storyDoc.author?.name,
-            description: storyDoc.description,
-            estimatedReadTime: storyDoc.estimatedReadTime,
-            level: storyDoc.level,
-        } : null,
-    });
-
     if (isLoading) {
         return (
             <View style={styles.container}>
@@ -317,6 +320,8 @@ export default function ReadingScreen() {
                 style={{
                     paddingBottom: insets.bottom + theme.spacing.sm,
                     backgroundColor: currentTheme.bg,
+                    zIndex: 20, // Ensure controls are above PagedContent
+                    elevation: 5,
                 }}
             >
                 <ReadingControls
@@ -415,7 +420,7 @@ export default function ReadingScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -464,4 +469,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         paddingHorizontal: theme.spacing.xl,
     },
-}));
+});

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, ImageProps, ImageStyle, StyleProp } from 'react-native';
+import { Image, ImageProps, ImageStyle, StyleProp, StyleSheet } from 'react-native';
 import { Image as ExpoImage, ImageProps as ExpoImageProps } from 'expo-image';
-import { useUnistyles } from 'react-native-unistyles';
+import { useTheme } from '@/theme';
 import Animated from 'react-native-reanimated';
 import { getOptimizedUri } from '@/utils/imageUtils';
 
@@ -31,8 +31,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
     height,
     ...props
 }) => {
-    const { theme } = useUnistyles();
-
+    const { theme } = useTheme();
 
     // Convert source to expo-image format
     const optimizedUri = typeof source !== 'number' ? getOptimizedUri(source.uri, { width, height }) : '';

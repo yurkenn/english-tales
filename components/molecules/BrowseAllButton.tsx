@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 interface BrowseAllButtonProps {
@@ -8,7 +8,8 @@ interface BrowseAllButtonProps {
 }
 
 export const BrowseAllButton: React.FC<BrowseAllButtonProps> = ({ onPress }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <Pressable
@@ -25,7 +26,7 @@ export const BrowseAllButton: React.FC<BrowseAllButtonProps> = ({ onPress }) => 
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     button: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -46,4 +47,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.primary,
     },
-}));
+});

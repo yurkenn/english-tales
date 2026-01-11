@@ -5,7 +5,8 @@
 
 import React, { memo, useCallback } from 'react'
 import { View, Text, Modal, Pressable, ActivityIndicator } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { useTranslation } from 'react-i18next'
@@ -29,7 +30,8 @@ function StreakProtectionModalComponent({
     onProtected,
     onGetPremium,
 }: StreakProtectionModalProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
     const coinBalance = useCoinStore((s) => s.balance)
     const canAfford = coinBalance >= COIN_COSTS.STREAK_PROTECTOR
@@ -166,7 +168,7 @@ function StreakProtectionModalComponent({
 
 export const StreakProtectionModal = memo(StreakProtectionModalComponent)
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
         justifyContent: 'center',
@@ -301,4 +303,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
     },
-}))
+});

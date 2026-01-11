@@ -1,7 +1,7 @@
 import React, { forwardRef, useCallback, useMemo, useState, useEffect } from 'react';
-import { View, Text, Pressable, ActivityIndicator } from 'react-native';
+import { View, Text, Pressable, ActivityIndicator , StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { OptimizedImage, Typography } from '../atoms';
@@ -18,7 +18,8 @@ interface ProfileQuickViewProps {
 
 export const ProfileQuickView = forwardRef<BottomSheet, ProfileQuickViewProps>(
     ({ profile, onClose }, ref) => {
-        const { theme } = useUnistyles();
+        const { theme } = useTheme();
+    const styles = createStyles(theme);
         const router = useRouter();
         const { user: currentUser } = useAuthStore();
         const toast = useToastStore(s => s.actions);
@@ -159,7 +160,7 @@ export const ProfileQuickView = forwardRef<BottomSheet, ProfileQuickViewProps>(
     }
 );
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     content: {
         flex: 1,
         padding: theme.spacing.xl,
@@ -211,4 +212,4 @@ const styles = StyleSheet.create((theme) => ({
     disabledButton: {
         opacity: 0.5,
     },
-}));
+});

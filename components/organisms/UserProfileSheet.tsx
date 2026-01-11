@@ -1,7 +1,8 @@
 import React, { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
 import { View, Pressable, ActivityIndicator, RefreshControl, Image, ImageSourcePropType } from 'react-native'
 import { BottomSheetModal, BottomSheetBackdrop, BottomSheetScrollView } from '@gorhom/bottom-sheet'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme, semanticColors } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import { Typography, ProfileTabButton, ProfileStatItem } from '../atoms'
@@ -36,7 +37,8 @@ type TabType = 'posts' | 'saved' | 'about'
 export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetProps>(
     ({ userId, onClose }, ref) => {
         const { t } = useTranslation()
-        const { theme } = useUnistyles()
+        const { theme } = useTheme();
+        const styles = createStyles(theme);
         const router = useRouter()
         const { user: currentUser } = useAuthStore()
         const toast = useToastStore(s => s.actions)
@@ -224,13 +226,13 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
                                     </View>
                                     <View style={styles.quickStatDivider} />
                                     <View style={styles.quickStatItem}>
-                                        <Ionicons name="chatbubble" size={20} color="#F59E0B" />
+                                        <Ionicons name="chatbubble" size={20} color={semanticColors.level.intermediate} />
                                         <Typography style={styles.quickStatValue}>{posts.length}</Typography>
                                         <Typography style={styles.quickStatLabel}>{t('profile.posts', 'Posts')}</Typography>
                                     </View>
                                     <View style={styles.quickStatDivider} />
                                     <View style={styles.quickStatItem}>
-                                        <Ionicons name="flame" size={20} color="#EF4444" />
+                                        <Ionicons name="flame" size={20} color={semanticColors.level.advanced} />
                                         <Typography style={styles.quickStatValue}>{stats.streak}</Typography>
                                         <Typography style={styles.quickStatLabel}>{t('profile.streak', 'Streak')}</Typography>
                                     </View>
@@ -362,18 +364,18 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
                                     disabled={actionLoading}
                                 >
                                     {actionLoading ? (
-                                        <ActivityIndicator size="small" color={isFollowing ? theme.colors.text : '#FFFFFF'} />
+                                        <ActivityIndicator size="small" color={isFollowing ? theme.colors.text : theme.colors.textInverse} />
                                     ) : (
                                         <>
                                             <Ionicons
                                                 name={isFollowing ? 'checkmark' : 'person-add-outline'}
                                                 size={16}
-                                                color={isFollowing ? theme.colors.text : '#FFFFFF'}
+                                                color={isFollowing ? theme.colors.text : theme.colors.textInverse}
                                             />
                                             <Typography
                                                 style={[
                                                     styles.followButtonText,
-                                                    { color: isFollowing ? theme.colors.text : '#FFFFFF' }
+                                                    { color: isFollowing ? theme.colors.text : theme.colors.textInverse }
                                                 ]}
                                             >
                                                 {isFollowing
@@ -419,7 +421,7 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
     }
 )
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     loadingContainer: {
         flex: 1,
         alignItems: 'center',
@@ -670,4 +672,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         fontWeight: '600',
     },
-}))
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable, Image, ImageSourcePropType } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'expo-router';
@@ -29,7 +29,8 @@ export const FriendListItem: React.FC<FriendListItemProps> = ({
     showDivider = true,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const avatarSource: ImageSourcePropType = friend.photoURL ? { uri: friend.photoURL } : DEFAULT_AVATAR;
 
@@ -100,7 +101,7 @@ export const FriendListItem: React.FC<FriendListItemProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     friendCard: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -174,4 +175,4 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         borderRadius: theme.radius.sm,
     },
-}));
+});

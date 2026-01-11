@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, TextInput, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, TextInput, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 interface SearchHeaderProps {
@@ -16,7 +16,8 @@ export const SearchHeader: React.FC<SearchHeaderProps> = ({
     onBack,
     autoFocus = true,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.header}>
@@ -46,7 +47,7 @@ export const SearchHeader: React.FC<SearchHeaderProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     header: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -77,4 +78,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
         height: '100%',
     },
-}));
+});

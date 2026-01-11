@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
@@ -15,7 +15,8 @@ export const TermsCheckbox: React.FC<TermsCheckboxProps> = ({
     onToggle,
     error,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
 
     return (
@@ -44,7 +45,7 @@ export const TermsCheckbox: React.FC<TermsCheckboxProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'flex-start',
@@ -71,4 +72,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.error,
         marginTop: theme.spacing.xs,
     },
-}));
+});

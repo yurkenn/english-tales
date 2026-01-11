@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { useUnistyles, StyleSheet } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -47,7 +47,8 @@ export const OnboardingLevelSelection = ({
     selectedLevel,
     onSelectLevel,
 }: OnboardingLevelSelectionProps) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.levelContainer}>
@@ -86,7 +87,7 @@ export const OnboardingLevelSelection = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     levelContainer: {
         width: '100%',
         paddingHorizontal: theme.spacing.xxl,
@@ -130,4 +131,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         color: theme.colors.textMuted,
     },
-}));
+});

@@ -2,7 +2,7 @@ import React from 'react';
 // Force reload: 1
 
 import { View, Text, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { Typography } from '../atoms';
@@ -19,7 +19,8 @@ export const AuthorSection: React.FC<AuthorSectionProps> = ({
     bio,
     onPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
 
     return (
@@ -46,7 +47,7 @@ export const AuthorSection: React.FC<AuthorSectionProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => RNStyleSheet.create({
     container: {
         backgroundColor: theme.colors.surface,
         padding: theme.spacing.lg,
@@ -93,4 +94,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-}));
+});

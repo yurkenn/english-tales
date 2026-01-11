@@ -1,7 +1,7 @@
 import React, { forwardRef, useState, useCallback, useMemo, useEffect } from 'react';
-import { View, Text, Pressable, TextInput, Keyboard } from 'react-native';
+import { View, Text, Pressable, TextInput, Keyboard , StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView, BottomSheetTextInput } from '@gorhom/bottom-sheet';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useToastStore } from '@/store/toastStore';
@@ -15,7 +15,8 @@ interface EditProfileSheetProps {
 
 export const EditProfileSheet = forwardRef<BottomSheet, EditProfileSheetProps>(
     ({ initialName, onSave, onClose }, ref) => {
-        const { theme } = useUnistyles();
+        const { theme } = useTheme();
+    const styles = createStyles(theme);
         const insets = useSafeAreaInsets();
         const [name, setName] = useState(initialName);
         const [isSaving, setIsSaving] = useState(false);
@@ -120,7 +121,7 @@ export const EditProfileSheet = forwardRef<BottomSheet, EditProfileSheetProps>(
     }
 );
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     content: {
         flex: 1,
         paddingHorizontal: theme.spacing.xl,
@@ -166,4 +167,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.bold,
         color: '#FFFFFF',
     },
-}));
+});

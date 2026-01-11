@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable, useWindowDimensions } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, useWindowDimensions , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 import { ReadingGoalRing } from '../atoms/ReadingGoalRing';
@@ -17,7 +17,8 @@ export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
     onPress,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { width: screenWidth } = useWindowDimensions();
 
     // Responsive sizing
@@ -76,7 +77,7 @@ export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.xxl,
@@ -146,4 +147,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.primary,
         fontWeight: '600',
     },
-}));
+});

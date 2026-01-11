@@ -1,6 +1,6 @@
 import React from 'react';
-import { View } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 
 interface ProgressBarProps {
     progress: number; // 0-100
@@ -15,7 +15,8 @@ export const ProgressBar: React.FC<ProgressBarProps> = React.memo(({
     showBackground = true,
     trackColor,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const clampedProgress = Math.min(100, Math.max(0, progress));
 
     return (
@@ -45,7 +46,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = React.memo(({
     );
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         width: '100%',
         borderRadius: theme.radius.full,
@@ -55,4 +56,4 @@ const styles = StyleSheet.create((theme) => ({
         height: '100%',
         borderRadius: theme.radius.full,
     },
-}));
+});

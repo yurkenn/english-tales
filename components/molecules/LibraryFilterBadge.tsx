@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { FILTER_LABELS, type FilterType } from './moleculeTypes';
@@ -14,7 +14,8 @@ export const LibraryFilterBadge: React.FC<LibraryFilterBadgeProps> = ({
     filter,
     onPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
 
     if (filter === 'all') return null;
@@ -38,7 +39,7 @@ export const LibraryFilterBadge: React.FC<LibraryFilterBadgeProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     filterBadgeRow: {
         paddingHorizontal: theme.spacing.lg,
         marginBottom: theme.spacing.md,
@@ -58,4 +59,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.medium,
         color: theme.colors.primary,
     },
-}));
+});

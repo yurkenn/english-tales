@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -19,7 +19,8 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({
     imageUrl,
     onPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const initial = name.charAt(0).toUpperCase();
 
     return (
@@ -58,7 +59,7 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         backgroundColor: theme.colors.surface,
@@ -124,4 +125,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.primary,
     },
-}));
+});

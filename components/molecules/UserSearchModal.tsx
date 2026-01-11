@@ -8,9 +8,8 @@ import {
     KeyboardAvoidingView,
     Platform,
     Image,
-    ImageSourcePropType,
-} from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+    ImageSourcePropType, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
 import { userService } from '@/services/userService';
@@ -30,7 +29,8 @@ interface UserSearchModalProps {
 
 export const UserSearchModal: React.FC<UserSearchModalProps> = ({ onClose }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { user: currentUser } = useAuthStore();
     const toast = useToastStore(s => s.actions);
 
@@ -158,7 +158,7 @@ export const UserSearchModal: React.FC<UserSearchModalProps> = ({ onClose }) => 
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -250,4 +250,4 @@ const styles = StyleSheet.create((theme) => ({
         padding: theme.spacing.xl,
         alignItems: 'center',
     },
-}));
+});

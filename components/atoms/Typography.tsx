@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text as RNText, TextProps, TextStyle } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Text as RNText, TextProps, TextStyle, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 
 export type TypographyVariant =
     | 'h1'
@@ -30,7 +31,8 @@ export const Typography: React.FC<TypographyProps> = ({
     weight,
     ...props
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const { scaleFont } = useResponsiveLayout();
 
     const getVariantStyle = (): TextStyle => {
         const { typography } = theme;
@@ -38,66 +40,66 @@ export const Typography: React.FC<TypographyProps> = ({
         switch (variant) {
             case 'h1':
                 return {
-                    fontSize: typography.size.display,
+                    fontSize: scaleFont(typography.size.display),
                     fontFamily: typography.fontFamily.bold,
-                    lineHeight: typography.size.display * typography.lineHeight.tight,
+                    lineHeight: scaleFont(typography.size.display) * typography.lineHeight.tight,
                 };
             case 'h2':
                 return {
-                    fontSize: typography.size.xxxl,
+                    fontSize: scaleFont(typography.size.xxxl),
                     fontFamily: typography.fontFamily.bold,
-                    lineHeight: typography.size.xxxl * typography.lineHeight.tight,
+                    lineHeight: scaleFont(typography.size.xxxl) * typography.lineHeight.tight,
                 };
             case 'h3':
                 return {
-                    fontSize: typography.size.xxl,
+                    fontSize: scaleFont(typography.size.xxl),
                     fontFamily: typography.fontFamily.heading,
-                    lineHeight: typography.size.xxl * typography.lineHeight.tight,
+                    lineHeight: scaleFont(typography.size.xxl) * typography.lineHeight.tight,
                 };
             case 'title':
                 return {
-                    fontSize: typography.size.xl,
+                    fontSize: scaleFont(typography.size.xl),
                     fontFamily: typography.fontFamily.heading,
-                    lineHeight: typography.size.xl * typography.lineHeight.normal,
+                    lineHeight: scaleFont(typography.size.xl) * typography.lineHeight.normal,
                 };
             case 'subtitle':
                 return {
-                    fontSize: typography.size.lg,
+                    fontSize: scaleFont(typography.size.lg),
                     fontFamily: typography.fontFamily.semiBold,
-                    lineHeight: typography.size.lg * typography.lineHeight.normal,
+                    lineHeight: scaleFont(typography.size.lg) * typography.lineHeight.normal,
                 };
             case 'bodyBold':
                 return {
-                    fontSize: typography.size.md,
+                    fontSize: scaleFont(typography.size.md),
                     fontFamily: typography.fontFamily.semiBold,
-                    lineHeight: typography.size.md * typography.lineHeight.relaxed,
+                    lineHeight: scaleFont(typography.size.md) * typography.lineHeight.relaxed,
                 };
             case 'caption':
                 return {
-                    fontSize: typography.size.sm,
+                    fontSize: scaleFont(typography.size.sm),
                     fontFamily: typography.fontFamily.body,
-                    lineHeight: typography.size.sm * typography.lineHeight.normal,
+                    lineHeight: scaleFont(typography.size.sm) * typography.lineHeight.normal,
                 };
             case 'label':
                 return {
-                    fontSize: typography.size.xs,
+                    fontSize: scaleFont(typography.size.xs),
                     fontFamily: typography.fontFamily.semiBold,
-                    lineHeight: typography.size.xs * typography.lineHeight.normal,
+                    lineHeight: scaleFont(typography.size.xs) * typography.lineHeight.normal,
                     textTransform: 'uppercase',
                     letterSpacing: 0.5,
                 };
             case 'button':
                 return {
-                    fontSize: typography.size.lg,
+                    fontSize: scaleFont(typography.size.lg),
                     fontFamily: typography.fontFamily.semiBold,
-                    lineHeight: typography.size.lg * typography.lineHeight.tight,
+                    lineHeight: scaleFont(typography.size.lg) * typography.lineHeight.tight,
                 };
             case 'body':
             default:
                 return {
-                    fontSize: typography.size.md,
+                    fontSize: scaleFont(typography.size.md),
                     fontFamily: typography.fontFamily.body,
-                    lineHeight: typography.size.md * typography.lineHeight.relaxed,
+                    lineHeight: scaleFont(typography.size.md) * typography.lineHeight.relaxed,
                 };
         }
     };

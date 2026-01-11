@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { useUnistyles } from 'react-native-unistyles';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useNetInfo } from '@react-native-community/netinfo';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import Animated, { FadeInUp, FadeOutUp } from 'react-native-reanimated';
 
+// Error color from tokens - hardcoded for performance (no theme dependency)
+const ERROR_COLOR = '#EF4444';
+
 export const OfflineBanner = () => {
-    const { theme } = useUnistyles();
     const { t } = useTranslation();
     const insets = useSafeAreaInsets();
     const netInfo = useNetInfo();
@@ -45,13 +46,13 @@ export const OfflineBanner = () => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const styles = StyleSheet.create({
     container: {
         position: 'absolute',
         top: 0,
         left: 0,
         right: 0,
-        backgroundColor: theme.colors.error,
+        backgroundColor: ERROR_COLOR,
         zIndex: 9999,
         paddingBottom: 8,
         alignItems: 'center',
@@ -68,4 +69,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 12,
         fontWeight: '600',
     },
-}));
+});

@@ -1,6 +1,7 @@
 import React from 'react'
 import { View, Text, Pressable } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
 import { HighlightColor, HIGHLIGHT_COLOR_SOLID } from '@/store/highlightStore'
@@ -27,7 +28,8 @@ export const HighlightMenu = React.memo(({
     existingColor,
     onRemoveHighlight,
 }: HighlightMenuProps) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     if (!visible) return null
 
@@ -100,7 +102,7 @@ export const HighlightMenu = React.memo(({
 
 HighlightMenu.displayName = 'HighlightMenu'
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         position: 'absolute',
         top: 0,
@@ -165,4 +167,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         fontFamily: theme.typography.fontFamily.semiBold,
     },
-}))
+});

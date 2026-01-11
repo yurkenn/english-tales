@@ -10,7 +10,8 @@ import {
     TextInput as RNTextInput
 } from 'react-native'
 import { BottomSheetModal, BottomSheetBackdrop, BottomSheetScrollView, BottomSheetTextInput } from '@gorhom/bottom-sheet'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { useRouter } from 'expo-router'
 import { Typography } from '../atoms'
@@ -45,7 +46,8 @@ const CommentItem = ({
     onReply: (userName: string) => void
     index: number
 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter()
     const avatarSource: ImageSourcePropType = reply.userPhoto ? { uri: reply.userPhoto } : DEFAULT_AVATAR
 
@@ -87,7 +89,8 @@ const CommentItem = ({
 export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps>(
     ({ post, onClose, onLike, currentUserId }, ref) => {
         const { t } = useTranslation()
-        const { theme } = useUnistyles()
+        const { theme } = useTheme();
+        const styles = createStyles(theme);
         const router = useRouter()
         const { user } = useAuthStore()
         const toast = useToastStore(s => s.actions)
@@ -379,7 +382,7 @@ export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps
     }
 )
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
     },
@@ -604,4 +607,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-}))
+});

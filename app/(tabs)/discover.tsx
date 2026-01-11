@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback } from 'react'
-import { View, ScrollView, FlatList, RefreshControl } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { View, ScrollView, FlatList, RefreshControl, StyleSheet } from 'react-native'
+import { useTheme, Theme } from '@/theme'
 import { useRouter } from 'expo-router'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useTranslation } from 'react-i18next'
@@ -22,6 +22,7 @@ import { urlFor } from '@/services/sanity/client'
 import { mapSanityStory } from '@/utils/storyMapper'
 import { Story } from '@/types'
 import { haptics } from '@/utils/haptics'
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout'
 
 // Constants
 const DIFFICULTY_MAP: Record<number, string> = {
@@ -34,9 +35,11 @@ const AUTHORS_INDEX = 4
 
 export default function DiscoverScreen() {
     const { t } = useTranslation()
-    const { theme } = useUnistyles()
+    const { theme } = useTheme()
+    const styles = createStyles(theme)
     const router = useRouter()
     const insets = useSafeAreaInsets()
+    const { containerPadding, sectionSpacing } = useResponsiveLayout()
 
     // State
     const [selectedGenre, setSelectedGenre] = useState(0)
@@ -148,13 +151,13 @@ export default function DiscoverScreen() {
         <View style={styles.container}>
             <DiscoverHeader />
 
-            <View style={styles.searchContainer}>
+            <View style={[styles.searchContainer, { paddingHorizontal: containerPadding }]}>
                 <SearchBar placeholder={t('discover.searchPlaceholder')} onPress={handleSearch} />
             </View>
 
             {/* Genre Chips */}
             <View style={styles.chipsWrapper}>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chipsContainer}>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={[styles.chipsContainer, { paddingHorizontal: containerPadding }]}>
                     {genres.map((genre, index) => (
                         <GenreChip
                             key={genre}
@@ -189,7 +192,7 @@ export default function DiscoverScreen() {
                 {featuredAuthor && (
                     <View style={styles.section}>
                         <SectionHeader title={t('discover.authorSpotlight')} />
-                        <View style={styles.sectionContent}>
+                        <View style={[styles.sectionContent, { paddingHorizontal: containerPadding }]}>
                             <AuthorSpotlight
                                 id={featuredAuthor.id}
                                 name={featuredAuthor.name}
@@ -209,7 +212,7 @@ export default function DiscoverScreen() {
                             data={recentlyAdded}
                             horizontal
                             showsHorizontalScrollIndicator={false}
-                            contentContainerStyle={styles.carouselContent}
+                            contentContainerStyle={[styles.carouselContent, { paddingHorizontal: containerPadding }]}
                             keyExtractor={(item) => item.id}
                             renderItem={renderBookCard}
                             ItemSeparatorComponent={() => <View style={styles.horizontalSeparator} />}
@@ -221,7 +224,7 @@ export default function DiscoverScreen() {
                 {popularStories.length > 0 && (
                     <View style={styles.section}>
                         <SectionHeader title={t('discover.popularThisWeek')} onActionPress={handleBrowseAll} />
-                        <View style={styles.popularContainer}>
+                        <View style={[styles.popularContainer, { paddingHorizontal: containerPadding }]}>
                             {popularStories.map((story: Story, index: number) => (
                                 <RankedStoryCard
                                     key={story.id}
@@ -243,13 +246,13 @@ export default function DiscoverScreen() {
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
     },
     searchContainer: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
         paddingTop: 0,
         paddingBottom: theme.spacing.sm,
     },
@@ -257,7 +260,7 @@ const styles = StyleSheet.create((theme) => ({
         flexShrink: 0,
     },
     chipsContainer: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
         paddingVertical: theme.spacing.sm,
         gap: theme.spacing.sm,
     },
@@ -276,13 +279,13 @@ const styles = StyleSheet.create((theme) => ({
         gap: theme.spacing.md,
     },
     sectionContent: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
     },
     carouselContent: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
     },
     popularContainer: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
         gap: theme.spacing.md,
     },
     horizontalSeparator: {
@@ -292,4 +295,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-}))
+});

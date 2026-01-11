@@ -6,9 +6,10 @@ import {
     NativeScrollEvent,
     Pressable,
     Text,
+    StyleSheet
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import { StyleSheet } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { secureStorage } from '@/services/storage';
 import { signInAnonymously } from '@/services/auth';
 import { useSettingsStore } from '@/store/settingsStore';
@@ -45,6 +46,8 @@ const ONBOARDING_DATA = [
 ];
 
 export default function OnboardingScreen() {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const flatListRef = useRef<FlatList>(null);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -162,7 +165,7 @@ export default function OnboardingScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -179,5 +182,5 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         fontWeight: 'bold',
     },
-}));
+});
 

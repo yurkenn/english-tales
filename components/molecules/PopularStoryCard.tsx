@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import type { Story } from '@/types';
 
@@ -15,7 +15,8 @@ export const PopularStoryCard: React.FC<PopularStoryCardProps> = ({
     rank,
     onPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const renderRankBadge = () => {
         const isTop3 = rank <= 3;
@@ -99,7 +100,7 @@ export const PopularStoryCard: React.FC<PopularStoryCardProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     card: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -219,4 +220,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: 'bold',
         color: '#FFFFFF',
     },
-}));
+});

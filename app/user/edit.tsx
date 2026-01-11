@@ -6,9 +6,8 @@ import {
     ActivityIndicator,
     TextInput,
     KeyboardAvoidingView,
-    Platform,
-} from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+    Platform, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -25,7 +24,8 @@ import { useTranslation } from 'react-i18next';
 export default function EditProfileScreen() {
     const { t } = useTranslation();
     const router = useRouter();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const insets = useSafeAreaInsets();
     const { user, updateProfile: updateAuthProfile } = useAuthStore();
     const toast = useToastStore();
@@ -262,7 +262,8 @@ const InputField = ({
     keyboardType?: 'default' | 'url' | 'email-address';
     autoCapitalize?: 'none' | 'sentences' | 'words' | 'characters';
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [isFocused, setIsFocused] = useState(false);
 
     return (
@@ -306,7 +307,7 @@ const InputField = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -429,4 +430,4 @@ const styles = StyleSheet.create((theme) => ({
         justifyContent: 'center',
         backgroundColor: theme.colors.background,
     },
-}));
+});

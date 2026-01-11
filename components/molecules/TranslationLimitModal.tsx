@@ -5,7 +5,8 @@
 
 import React, { memo } from 'react'
 import { View, Text, Modal, Pressable } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { RewardedAdButton } from './RewardedAdButton'
@@ -27,7 +28,8 @@ function TranslationLimitModalComponent({
     onRewardEarned,
     onGetPremium,
 }: TranslationLimitModalProps) {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation()
     const remainingTranslations = useRewardStore((state) =>
         state.actions.getRemainingTranslations()
@@ -124,7 +126,7 @@ function TranslationLimitModalComponent({
 
 export const TranslationLimitModal = memo(TranslationLimitModalComponent)
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     overlay: {
         flex: 1,
         justifyContent: 'center',
@@ -212,4 +214,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.textMuted,
     },
-}))
+});

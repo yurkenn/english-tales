@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,7 +12,8 @@ import { signUp, signInWithGoogle } from '@/services/auth';
 import { handleAuthError } from '@/utils/errorHandler';
 
 export default function SignupScreen() {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { t } = useTranslation();
@@ -165,7 +166,7 @@ export default function SignupScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -224,4 +225,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.primary,
     },
-}));
+});

@@ -23,11 +23,11 @@ const resources = {
     'pt-BR': { translation: ptBR },
 };
 
-const getInitialLanguage = () => {
+const getInitialLanguage = (): string => {
     try {
         const locales = Localization.getLocales();
-        const code = locales && locales.length > 0 ? locales[0].languageCode : 'en';
-        return ['en', 'tr', 'es', 'de', 'fr', 'id', 'ja', 'ko', 'pt-BR'].includes(code as string) ? code : 'en';
+        const code = locales && locales.length > 0 ? (locales[0].languageCode ?? 'en') : 'en';
+        return ['en', 'tr', 'es', 'de', 'fr', 'id', 'ja', 'ko', 'pt-BR'].includes(code) ? code : 'en';
     } catch {
         return 'en';
     }

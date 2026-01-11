@@ -1,8 +1,8 @@
 import React from 'react';
 // Force reload: 1
 
-import { View, Text } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
 
 interface StoryMetaProps {
@@ -16,7 +16,8 @@ export const StoryMeta: React.FC<StoryMetaProps> = ({
     wordCount,
     difficulty,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
 
     const formatReadTime = (minutes: number): string => {
@@ -51,7 +52,7 @@ export const StoryMeta: React.FC<StoryMetaProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -84,4 +85,4 @@ const styles = StyleSheet.create((theme) => ({
         letterSpacing: 0.5,
         fontWeight: theme.typography.weight.semibold,
     },
-}));
+});

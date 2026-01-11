@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { View, Text, Animated } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 import { Achievement, AchievementRarity, RARITY_COLORS } from '@/store/achievementsStore'
 import { Typography } from '@/components/atoms'
@@ -27,7 +28,8 @@ const formatDate = (date: Date | undefined): string => {
 }
 
 export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, progress = 0 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { cardWidth } = useResponsiveGrid()
     const shimmerAnim = useRef(new Animated.Value(0)).current
     const scaleAnim = useRef(new Animated.Value(1)).current
@@ -177,7 +179,7 @@ export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, p
     )
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     card: {
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.lg,
@@ -294,4 +296,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 11,
         fontWeight: '600',
     },
-}))
+});

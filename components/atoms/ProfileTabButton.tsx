@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
 import { View, Pressable } from 'react-native'
-import { StyleSheet, useUnistyles } from 'react-native-unistyles'
+import { useTheme, Theme } from '@/theme';
+import { StyleSheet } from 'react-native';
 import { Typography } from './Typography'
 
 interface ProfileTabButtonProps {
@@ -20,7 +21,8 @@ export const ProfileTabButton = memo<ProfileTabButtonProps>(({
     isActive,
     onPress
 }) => {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <Pressable
@@ -46,7 +48,7 @@ export const ProfileTabButton = memo<ProfileTabButtonProps>(({
                         <Typography
                             style={[
                                 styles.tabBadgeText,
-                                { color: isActive ? '#FFFFFF' : theme.colors.textMuted }
+                                { color: isActive ? theme.colors.textInverse : theme.colors.textMuted }
                             ]}
                         >
                             {count > 99 ? '99+' : count}
@@ -61,7 +63,7 @@ export const ProfileTabButton = memo<ProfileTabButtonProps>(({
     )
 })
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     tabButton: {
         flex: 1,
         paddingVertical: theme.spacing.md,
@@ -96,4 +98,4 @@ const styles = StyleSheet.create((theme) => ({
         marginTop: 8,
         width: '60%',
     },
-}))
+});

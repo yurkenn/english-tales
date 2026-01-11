@@ -30,7 +30,7 @@ export const layout = {
     containerPadding: {
         xs: 12,
         sm: 16,
-        md: 16,
+        md: 20,
         lg: 24,
         xl: 32,
     },
@@ -49,6 +49,38 @@ export const layout = {
         md: 64,
         lg: 72,
         xl: 80,
+    },
+    // Header yüksekliği
+    headerHeight: {
+        xs: 56,
+        sm: 60,
+        md: 64,
+        lg: 72,
+        xl: 80,
+    },
+    // Section spacing (vertical)
+    sectionSpacing: {
+        xs: 16,
+        sm: 20,
+        md: 24,
+        lg: 32,
+        xl: 40,
+    },
+    // Font scale multiplier for responsive typography
+    fontScale: {
+        xs: 0.9,   // Small phones: slightly smaller
+        sm: 1.0,   // Standard phones: base size
+        md: 1.0,   // Large phones: base size
+        lg: 1.1,   // Tablets: slightly larger
+        xl: 1.15,  // Large tablets: larger
+    },
+    // Content max width for tablets (prevents too wide content)
+    contentMaxWidth: {
+        xs: 9999, // No limit on phones
+        sm: 9999,
+        md: 9999,
+        lg: 600,  // Tablet: limit content width
+        xl: 720,  // Large tablet: wider limit
     },
 } as const
 

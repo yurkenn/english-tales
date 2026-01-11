@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import type { SettingItemProps } from '../organisms/settingsTypes';
 
@@ -12,7 +12,8 @@ export const SettingItem: React.FC<SettingItemProps> = ({
     onPress,
     isDestructive,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <Pressable style={styles.settingItem} onPress={onPress}>
@@ -34,7 +35,7 @@ export const SettingItem: React.FC<SettingItemProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     settingItem: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -68,4 +69,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textMuted,
         marginRight: theme.spacing.sm,
     },
-}));
+});

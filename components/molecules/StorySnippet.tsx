@@ -2,7 +2,7 @@ import React from 'react';
 // Force reload: 1
 
 import { View, Text, StyleSheet as RNStyleSheet } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 
@@ -11,7 +11,8 @@ interface StorySnippetProps {
 }
 
 export const StorySnippet: React.FC<StorySnippetProps> = ({ text }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
 
     return (
@@ -31,7 +32,7 @@ export const StorySnippet: React.FC<StorySnippetProps> = ({ text }) => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => RNStyleSheet.create({
     container: {
         padding: theme.spacing.xl,
         backgroundColor: theme.colors.surfaceElevated,
@@ -69,4 +70,4 @@ const styles = StyleSheet.create((theme) => ({
         letterSpacing: 2,
         fontWeight: theme.typography.weight.bold,
     },
-}));
+});

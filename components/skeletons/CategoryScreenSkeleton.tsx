@@ -1,9 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Skeleton, BookListItemSkeleton } from './BaseSkeleton';
 
 export const CategoryScreenSkeleton: React.FC = () => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -23,7 +25,7 @@ export const CategoryScreenSkeleton: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -41,4 +43,4 @@ const styles = StyleSheet.create((theme) => ({
         padding: theme.spacing.lg,
         gap: theme.spacing.md,
     },
-}));
+});

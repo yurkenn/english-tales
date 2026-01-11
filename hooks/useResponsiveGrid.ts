@@ -1,5 +1,5 @@
 import { useWindowDimensions } from 'react-native'
-import { useUnistyles } from 'react-native-unistyles'
+import { useTheme } from '@/theme';
 import { getBreakpoint, type Breakpoint } from '@/theme/responsive'
 
 /**
@@ -12,7 +12,7 @@ import { getBreakpoint, type Breakpoint } from '@/theme/responsive'
  * const { cardWidth, columns, gap, padding, breakpoint } = useResponsiveGrid()
  */
 export function useResponsiveGrid() {
-    const { theme } = useUnistyles()
+    const { theme } = useTheme();
     const { width: windowWidth } = useWindowDimensions()
 
     // Mevcut breakpoint'i belirle

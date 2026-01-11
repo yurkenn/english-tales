@@ -2,7 +2,7 @@ import React from 'react';
 // Force reload: 3
 
 import { View, Text, ScrollView, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { useStoriesByCategory } from '@/hooks/useQueries';
@@ -17,7 +17,8 @@ interface RelatedStoriesProps {
 }
 
 export const RelatedStories: React.FC<RelatedStoriesProps> = ({ categoryId, currentStoryId }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const { t } = useTranslation();
     const { data: stories, isLoading } = useStoriesByCategory(categoryId);
@@ -62,7 +63,7 @@ export const RelatedStories: React.FC<RelatedStoriesProps> = ({ categoryId, curr
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => RNStyleSheet.create({
     container: {
         marginTop: theme.spacing.xl,
         gap: theme.spacing.md,
@@ -99,4 +100,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.text,
         marginTop: 4,
     },
-}));
+});

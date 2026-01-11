@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable, Share } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, Share , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { haptics } from '@/utils/haptics';
@@ -30,7 +30,8 @@ export const ReadingControls: React.FC<ReadingControlsProps> = React.memo(({
     onAudioToggle,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const handleShare = async () => {
         haptics.light();
@@ -133,7 +134,7 @@ export const ReadingControls: React.FC<ReadingControlsProps> = React.memo(({
     );
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     controlRow: {
         flexDirection: 'row',
         alignItems: 'flex-start',
@@ -166,4 +167,4 @@ const styles = StyleSheet.create((theme) => ({
         textAlign: 'center',
         opacity: 0.8,
     },
-}));
+});

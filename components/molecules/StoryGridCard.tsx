@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { View, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Typography, BookCover } from '../atoms';
@@ -19,7 +19,8 @@ const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
     isInLibrary,
     onPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { cardWidth } = useResponsiveGrid();
     const cardImageHeight = cardWidth * 1.5;
 
@@ -99,7 +100,7 @@ export const StoryGridCard = memo(StoryGridCardComponent, (prevProps, nextProps)
         && prevProps.isInLibrary === nextProps.isInLibrary;
 });
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     card: {
         marginBottom: theme.spacing.md,
     },
@@ -199,4 +200,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.xs,
         fontWeight: '600',
     },
-}));
+});

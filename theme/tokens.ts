@@ -19,6 +19,7 @@ export const colors = {
     textSecondary: '#6B7280',
     textMuted: '#9CA3AF',
     textInverse: '#FFFFFF',
+    textTertiary: '#A1A1A1',
 
     // UI Elements
     border: '#E5E7EB',
@@ -64,6 +65,7 @@ export const colorsDark = {
     textSecondary: '#A1A1A1',  // Improved from #B3B3B3 for better contrast
     textMuted: '#808080',      // Improved from #737373 for better contrast
     textInverse: '#FFFFFF',    // FIXED: Was #121212, should be white for overlays
+    textTertiary: '#666666',
 
     // UI Elements
     border: '#333333',         // Slightly lighter for better visibility
@@ -109,6 +111,7 @@ export const colorsSepia = {
     textSecondary: '#6B5E51',
     textMuted: '#9B8E7D',
     textInverse: '#FAF3E0',
+    textTertiary: '#7D7162',
 
     // UI Elements
     border: '#E8DFCA',
@@ -150,6 +153,7 @@ export const spacing = {
 } as const;
 
 export const radius = {
+    xxs: 2,
     xs: 4,
     sm: 8,
     md: 12,
@@ -248,4 +252,53 @@ export const tabBar = {
     height: 64,
     iconSize: 26,
     labelSize: 10,
+} as const;
+
+// Semantic Colors - Use these for consistent theming across all components
+export const semanticColors = {
+    // Level/Difficulty indicators
+    level: {
+        beginner: '#10B981',      // Green
+        intermediate: '#F59E0B',  // Amber
+        advanced: '#EF4444',      // Red
+    },
+    // Social media brand colors
+    social: {
+        instagram: '#E4405F',
+        twitter: '#1DA1F2',
+        facebook: '#1877F2',
+    },
+    // Celebration/Confetti colors
+    celebration: [
+        '#FF6B6B', // Red
+        '#4ECDC4', // Teal
+        '#45B7D1', // Blue
+        '#96CEB4', // Green
+        '#FFEAA7', // Yellow
+        '#DDA0DD', // Plum
+        '#98D8C8', // Mint
+        '#F7DC6F', // Gold
+    ],
+    // Special accent colors
+    gold: '#FFD700',
+    goldDark: '#D4A500',
+} as const;
+
+// Reading screen specific colors - derived from main theme tokens
+export const readingColors = {
+    light: {
+        bg: '#FBFBFB',      // Slightly off-white for less eye strain
+        text: '#1A1A1A',    // Near black
+        accent: '#EA2A33',  // Primary red
+    },
+    dark: {
+        bg: '#0F0F0F',      // Deep black
+        text: '#E0E0E0',    // Light gray
+        accent: '#FF4D4D',  // Brighter red for dark mode
+    },
+    sepia: {
+        bg: '#FDF6E3',      // Warm cream
+        text: '#433422',    // Dark brown
+        accent: '#A67C52',  // Warm brown accent
+    },
 } as const;

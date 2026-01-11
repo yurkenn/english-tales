@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Story } from '@/types';
@@ -26,7 +26,8 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
     rating = null,
     reviewCount = null,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const displayRating = rating ?? 0;
     const count = reviewCount ?? 0;
     const coverUri = story.coverImage || 'https://via.placeholder.com/800x400/1a1a2e/ffffff?text=Featured+Story';
@@ -61,13 +62,13 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
                     </View>
                     {story.isPremiumOnly && (
                         <View style={styles.premiumBadge}>
-                            <Ionicons name="star" size={14} color="#FFFFFF" />
-                            <Typography variant="label" color="#FFFFFF" style={styles.premiumText}>PRO</Typography>
+                            <Ionicons name="star" size={14} color={theme.colors.textInverse} />
+                            <Typography variant="label" color={theme.colors.textInverse} style={styles.premiumText}>PRO</Typography>
                         </View>
                     )}
                     {/* Title on image */}
                     <View style={styles.imageContent}>
-                        <Typography variant="h1" color="#FFFFFF">
+                        <Typography variant="h1" color={theme.colors.textInverse}>
                             {story.title}
                         </Typography>
                         <Typography variant="subtitle" color="rgba(255, 255, 255, 0.9)">
@@ -109,7 +110,7 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => RNStyleSheet.create({
     container: {
         backgroundColor: theme.colors.surface,
         borderRadius: theme.radius.lg,
@@ -185,4 +186,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: 12,
         fontWeight: 'bold',
     },
-}));
+});

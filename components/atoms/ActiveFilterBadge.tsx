@@ -1,6 +1,6 @@
 import React from 'react';
-import { Pressable, Text, View } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Pressable, Text, View , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import Animated, { FadeInDown, FadeOutUp } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
@@ -17,7 +17,8 @@ export const ActiveFilterBadge: React.FC<ActiveFilterBadgeProps> = ({
     resultCount,
     onClear,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
 
     const handleClear = () => {
@@ -51,7 +52,7 @@ export const ActiveFilterBadge: React.FC<ActiveFilterBadgeProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         paddingHorizontal: theme.spacing.lg,
         paddingVertical: theme.spacing.sm,
@@ -88,4 +89,4 @@ const styles = StyleSheet.create((theme) => ({
     clearButton: {
         padding: theme.spacing.xs,
     },
-}));
+});

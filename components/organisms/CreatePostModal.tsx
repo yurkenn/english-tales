@@ -7,9 +7,8 @@ import {
     KeyboardAvoidingView,
     Platform,
     TouchableWithoutFeedback,
-    Keyboard,
-} from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+    Keyboard, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Feather } from '@expo/vector-icons';
 import Animated, {
     useSharedValue,
@@ -47,7 +46,8 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
     onRemoveStory,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const [content, setContent] = useState('');
     const buttonScale = useSharedValue(1);
 
@@ -209,7 +209,7 @@ export const CreatePostModal: React.FC<CreatePostModalProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     modalContent: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -347,4 +347,4 @@ const styles = StyleSheet.create((theme) => ({
         height: '100%',
         borderRadius: 2,
     },
-}));
+});

@@ -1,4 +1,3 @@
-import '@/theme/unistyles';
 import '@/i18n'; // Initialize i18n
 import { Stack, useRouter, useSegments } from 'expo-router';
 import { useEffect, useState, useMemo } from 'react';
@@ -46,7 +45,8 @@ import {
   OfflineBanner,
 } from '@/components';
 import { useDailyBonusManager, useDeepLinking } from '@/hooks';
-import { lightTheme, darkTheme, sepiaTheme } from '../theme/unistyles';
+import { ThemeProvider, lightTheme, darkTheme, sepiaTheme } from '../theme/ThemeContext';
+
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync().catch(() => {
@@ -240,63 +240,65 @@ export default function RootLayout() {
 
   return (
     <ErrorBoundary>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <OfflineBanner />
-        <QueryProvider>
-          <BottomSheetModalProvider>
-            <StatusBar style={mode === 'sepia' || isDark ? 'light' : 'dark'} />
-            {!isSplashAnimationFinished && (
-              <AnimatedSplashScreen onAnimationComplete={onSplashAnimationComplete} />
-            )}
-            <Stack
-              screenOptions={{
-                headerShown: false,
-                contentStyle: {
-                  backgroundColor: currentTheme.colors.background,
-                },
-              }}
-            >
-              <Stack.Screen name="(tabs)" />
-              <Stack.Screen name="(auth)" />
-              <Stack.Screen name="story/[id]" options={{ presentation: 'card' }} />
-              <Stack.Screen name="reading/[id]" options={{ presentation: 'fullScreenModal' }} />
-              <Stack.Screen name="search" options={{ presentation: 'card' }} />
-              <Stack.Screen name="reviews/[id]" options={{ presentation: 'card' }} />
-              <Stack.Screen name="achievements" options={{ presentation: 'card' }} />
-              <Stack.Screen name="stories" options={{ presentation: 'card' }} />
-              <Stack.Screen name="authors" options={{ presentation: 'card' }} />
-              <Stack.Screen name="author/[id]" options={{ presentation: 'card' }} />
-              <Stack.Screen name="category/[id]" options={{ presentation: 'card' }} />
-              <Stack.Screen name="settings" options={{ presentation: 'card' }} />
-              <Stack.Screen name="onboarding/index" options={{ headerShown: false, gestureEnabled: false }} />
-            </Stack>
-            <ToastContainer />
-            <AchievementToast />
+      <ThemeProvider>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <OfflineBanner />
+          <QueryProvider>
+            <BottomSheetModalProvider>
+              <StatusBar style={mode === 'sepia' || isDark ? 'light' : 'dark'} />
+              {!isSplashAnimationFinished && (
+                <AnimatedSplashScreen onAnimationComplete={onSplashAnimationComplete} />
+              )}
+              <Stack
+                screenOptions={{
+                  headerShown: false,
+                  contentStyle: {
+                    backgroundColor: currentTheme.colors.background,
+                  },
+                }}
+              >
+                <Stack.Screen name="(tabs)" />
+                <Stack.Screen name="(auth)" />
+                <Stack.Screen name="story/[id]" options={{ presentation: 'card' }} />
+                <Stack.Screen name="reading/[id]" options={{ presentation: 'fullScreenModal' }} />
+                <Stack.Screen name="search" options={{ presentation: 'card' }} />
+                <Stack.Screen name="reviews/[id]" options={{ presentation: 'card' }} />
+                <Stack.Screen name="achievements" options={{ presentation: 'card' }} />
+                <Stack.Screen name="stories" options={{ presentation: 'card' }} />
+                <Stack.Screen name="authors" options={{ presentation: 'card' }} />
+                <Stack.Screen name="author/[id]" options={{ presentation: 'card' }} />
+                <Stack.Screen name="category/[id]" options={{ presentation: 'card' }} />
+                <Stack.Screen name="settings" options={{ presentation: 'card' }} />
+                <Stack.Screen name="onboarding/index" options={{ headerShown: false, gestureEnabled: false }} />
+              </Stack>
+              <ToastContainer />
+              <AchievementToast />
 
-            {/* Monetization Modals */}
-            <DailyBonusModal
-              visible={showDailyBonus}
-              currentDay={currentBonusDay}
-              onClose={closeDailyBonus}
-              onClaimed={claimDailyBonus}
-            />
-            <StreakProtectionModal
-              visible={showStreakProtection}
-              currentStreak={currentStreak}
-              onClose={closeStreakProtection}
-              onProtected={onStreakProtected}
-              onGetPremium={() => {
-                closeStreakProtection();
-                setShowPaywallModal(true);
-              }}
-            />
-            <PaywallModal
-              visible={showPaywallModal}
-              onClose={() => setShowPaywallModal(false)}
-            />
-          </BottomSheetModalProvider>
-        </QueryProvider>
-      </GestureHandlerRootView>
+              {/* Monetization Modals */}
+              <DailyBonusModal
+                visible={showDailyBonus}
+                currentDay={currentBonusDay}
+                onClose={closeDailyBonus}
+                onClaimed={claimDailyBonus}
+              />
+              <StreakProtectionModal
+                visible={showStreakProtection}
+                currentStreak={currentStreak}
+                onClose={closeStreakProtection}
+                onProtected={onStreakProtected}
+                onGetPremium={() => {
+                  closeStreakProtection();
+                  setShowPaywallModal(true);
+                }}
+              />
+              <PaywallModal
+                visible={showPaywallModal}
+                onClose={() => setShowPaywallModal(false)}
+              />
+            </BottomSheetModalProvider>
+          </QueryProvider>
+        </GestureHandlerRootView>
+      </ThemeProvider>
     </ErrorBoundary>
   );
 }

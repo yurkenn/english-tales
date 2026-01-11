@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Pressable, FlatList, ActivityIndicator } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, FlatList, ActivityIndicator , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography, OptimizedImage } from '../atoms';
 import { SocialNotification } from '@/types';
@@ -17,7 +17,8 @@ export const NotificationList: React.FC<NotificationListProps> = ({
     onNotificationPress,
     isLoading
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const renderItem = ({ item }: { item: SocialNotification }) => {
         const getIcon = () => {
@@ -101,7 +102,7 @@ export const NotificationList: React.FC<NotificationListProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     list: {
         paddingVertical: theme.spacing.md,
     },
@@ -163,4 +164,4 @@ const styles = StyleSheet.create((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
-}));
+});

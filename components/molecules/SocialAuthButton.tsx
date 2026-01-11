@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, Pressable, ActivityIndicator } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Text, Pressable, ActivityIndicator , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 type SocialProvider = 'google' | 'apple';
@@ -29,7 +29,8 @@ export const SocialAuthButton: React.FC<SocialAuthButtonProps> = ({
     disabled,
     loading,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const config = PROVIDER_CONFIG[provider];
 
     return (
@@ -50,7 +51,7 @@ export const SocialAuthButton: React.FC<SocialAuthButtonProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     button: {
         flexDirection: 'row',
         height: 56,
@@ -71,4 +72,4 @@ const styles = StyleSheet.create((theme) => ({
         fontWeight: theme.typography.weight.semibold,
         color: theme.colors.text,
     },
-}));
+});

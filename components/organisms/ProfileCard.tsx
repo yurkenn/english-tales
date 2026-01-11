@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable, Image, ImageSourcePropType } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { OptimizedImage } from '../atoms';
@@ -34,7 +34,8 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
     onEditPress,
     onSignInPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     const renderSocialLinks = () => {
         if (!socialLinks) return null;
@@ -82,7 +83,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                 </LinearGradient>
                 {!isAnonymous && (
                     <View style={styles.verifiedBadge}>
-                        <Ionicons name="checkmark" size={10} color="#FFFFFF" />
+                        <Ionicons name="checkmark" size={10} color={theme.colors.textInverse} />
                     </View>
                 )}
             </View>
@@ -113,7 +114,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                         end={{ x: 1, y: 0 }}
                         style={styles.signInGradient}
                     >
-                        <Ionicons name="log-in-outline" size={18} color="#FFFFFF" />
+                        <Ionicons name="log-in-outline" size={18} color={theme.colors.textInverse} />
                         <Text style={styles.signInText}>Sign In / Sign Up</Text>
                     </LinearGradient>
                 </Pressable>
@@ -122,7 +123,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         alignItems: 'center',
         paddingVertical: theme.spacing.xl,
@@ -220,7 +221,7 @@ const styles = StyleSheet.create((theme) => ({
     signInText: {
         fontSize: theme.typography.size.md,
         fontWeight: theme.typography.weight.bold,
-        color: '#FFFFFF',
+        color: theme.colors.textInverse,
     },
     bioText: {
         fontSize: theme.typography.size.sm,
@@ -247,4 +248,4 @@ const styles = StyleSheet.create((theme) => ({
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
     },
-}));
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
 
@@ -13,7 +13,8 @@ export const TrendingSuggestions: React.FC<TrendingSuggestionsProps> = ({
     suggestions,
     onSuggestionPress,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <View style={styles.section}>
@@ -37,7 +38,7 @@ export const TrendingSuggestions: React.FC<TrendingSuggestionsProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     section: {
         marginBottom: theme.spacing.xl,
     },
@@ -65,4 +66,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.sm,
         color: theme.colors.text,
     },
-}));
+});

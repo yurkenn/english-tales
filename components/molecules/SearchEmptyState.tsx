@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, ActivityIndicator , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 interface SearchEmptyStateProps {
@@ -8,7 +8,8 @@ interface SearchEmptyStateProps {
 }
 
 export const SearchEmptyState: React.FC<SearchEmptyStateProps> = ({ type }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     if (type === 'loading') {
         return (
@@ -42,7 +43,7 @@ export const SearchEmptyState: React.FC<SearchEmptyStateProps> = ({ type }) => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
@@ -61,4 +62,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
         textAlign: 'center',
     },
-}));
+});

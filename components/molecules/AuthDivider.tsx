@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, Text, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 
 interface AuthDividerProps {
     text?: string;
 }
 
 export const AuthDivider: React.FC<AuthDividerProps> = ({ text = 'or continue with' }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     return (
         <View style={styles.container}>
             <View style={styles.line} />
@@ -16,7 +18,7 @@ export const AuthDivider: React.FC<AuthDividerProps> = ({ text = 'or continue wi
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -32,4 +34,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textMuted,
         fontSize: theme.typography.size.sm,
     },
-}));
+});

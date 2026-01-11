@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
 import { haptics } from '@/utils/haptics';
 
@@ -23,7 +23,8 @@ export const FontSection: React.FC<FontSectionProps> = ({
     onFontFamilyChange,
 }) => {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <>
@@ -88,7 +89,7 @@ export const FontSection: React.FC<FontSectionProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     section: {
         marginBottom: theme.spacing.xl,
     },
@@ -155,4 +156,4 @@ const styles = StyleSheet.create((theme) => ({
         minWidth: 60,
         textAlign: 'center',
     },
-}));
+});

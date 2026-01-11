@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import { Text, Pressable, PressableProps, ActivityIndicator, View } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { Text, Pressable, PressableProps, ActivityIndicator, View , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
 export interface ButtonProps extends Omit<PressableProps, 'children'> {
@@ -40,7 +40,8 @@ export const Button = forwardRef<View, ButtonProps>(({
   children,
   ...props
 }, ref) => {
-  const { theme } = useUnistyles();
+  const { theme } = useTheme();
+    const styles = createStyles(theme);
 
   const handlePress = (e: any) => {
     if (disabled || loading) return;
@@ -128,7 +129,7 @@ export const Button = forwardRef<View, ButtonProps>(({
 
 Button.displayName = 'Button';
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
   button: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -155,4 +156,4 @@ const styles = StyleSheet.create((theme) => ({
   iconRight: {
     marginLeft: theme.spacing.xs,
   },
-}));
+});

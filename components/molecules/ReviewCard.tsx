@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Image, ImageSourcePropType } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, Text, Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { RatingStars } from '../atoms';
 
 // Default mascot avatar for users without profile photo
@@ -19,6 +19,8 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
     rating,
     text,
 }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const avatarSource: ImageSourcePropType = userAvatar ? { uri: userAvatar } : DEFAULT_AVATAR;
 
     return (
@@ -36,7 +38,7 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
 };
 
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         backgroundColor: theme.colors.surface,
         padding: theme.spacing.lg,
@@ -68,4 +70,4 @@ const styles = StyleSheet.create((theme) => ({
         color: theme.colors.textSecondary,
         lineHeight: 22,
     },
-}));
+});

@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable, Animated } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, Pressable, Animated, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useToastStore, ToastType } from '@/store/toastStore';
@@ -12,7 +12,8 @@ const ToastItem: React.FC<{
     type: ToastType;
     onDismiss: () => void;
 }> = ({ id, message, type, onDismiss }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const translateY = useRef(new Animated.Value(-100)).current;
     const opacity = useRef(new Animated.Value(0)).current;
 
@@ -60,13 +61,15 @@ const ToastItem: React.FC<{
 };
 
 export const ToastContainer: React.FC = () => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const insets = useSafeAreaInsets();
     const { toasts, actions } = useToastStore();
 
     if (toasts.length === 0) return null;
 
     return (
-        <View style={[styles.container, { top: insets.top + 10 }]}>
+        <View style={[styles.container, { top: insets.top + 10 }]} pointerEvents="box-none">
             {toasts.map((toast) => (
                 <ToastItem
                     key={toast.id}
@@ -80,7 +83,7 @@ export const ToastContainer: React.FC = () => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         position: 'absolute',
         left: theme.spacing.lg,
@@ -103,4 +106,4 @@ const styles = StyleSheet.create((theme) => ({
         fontSize: theme.typography.size.md,
         color: theme.colors.text,
     },
-}));
+});

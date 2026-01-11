@@ -1,15 +1,17 @@
 import React from 'react';
-import { View } from 'react-native';
-import { StyleSheet } from 'react-native-unistyles';
+import { View, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 
 export const Container = ({ children }: { children: React.ReactNode }) => {
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
   return <View style={styles.container}>{children}</View>;
 };
 
-const styles = StyleSheet.create((theme, rt) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
   container: {
     flex: 1,
-    paddingBottom: rt.insets.bottom,
+    paddingBottom: 0,
     backgroundColor: theme.colors.background,
   },
-}));
+});

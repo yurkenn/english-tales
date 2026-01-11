@@ -4,13 +4,14 @@ import {
     ScrollView,
     Pressable,
     RefreshControl,
-    ActivityIndicator,
+    ActivityIndicator, StyleSheet
 } from 'react-native';
 
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { Feather } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import BottomSheet, { BottomSheetModal } from '@gorhom/bottom-sheet';
 import Animated, {
     useSharedValue,
@@ -45,9 +46,11 @@ const HEADER_HEIGHT = 120;
 
 export default function CommunityTab() {
     const { t } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const router = useRouter();
     const insets = useSafeAreaInsets();
+    const { containerPadding } = useResponsiveLayout();
     const { user } = useAuthStore();
 
     // Fetch stories for trending section
@@ -165,7 +168,7 @@ export default function CommunityTab() {
     return (
         <View style={styles.container}>
             {/* Header - Static like other screens */}
-            <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
+            <View style={[styles.header, { paddingTop: insets.top + 8, paddingHorizontal: containerPadding }]}>
                 <Typography variant="h2" style={styles.headerTitle}>{t('social.title', 'Community')}</Typography>
 
                 <View style={styles.headerButtons}>
@@ -200,7 +203,7 @@ export default function CommunityTab() {
                 }
             >
                 {/* Filter Section (Inside Scroll for better UX) */}
-                <View style={styles.filterSection}>
+                <View style={[styles.filterSection, { paddingHorizontal: containerPadding }]}>
                     <SegmentedPicker
                         options={categories}
                         selectedValue={filter}
@@ -219,7 +222,7 @@ export default function CommunityTab() {
                     <ScrollView
                         horizontal
                         showsHorizontalScrollIndicator={false}
-                        contentContainerStyle={styles.trendingScroll}
+                        contentContainerStyle={[styles.trendingScroll, { paddingHorizontal: containerPadding }]}
                     >
                         {trendingList.map((story: Story) => (
                             <View key={story.id} style={styles.trendingItem}>
@@ -358,7 +361,7 @@ export default function CommunityTab() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -367,7 +370,7 @@ const styles = StyleSheet.create((theme) => ({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
         paddingBottom: theme.spacing.md,
         backgroundColor: theme.colors.background,
         zIndex: 10,
@@ -409,7 +412,7 @@ const styles = StyleSheet.create((theme) => ({
         borderColor: theme.colors.surfaceElevated,
     },
     filterSection: {
-        paddingHorizontal: theme.spacing.xl,
+        paddingHorizontal: theme.spacing.lg,
         paddingTop: 0,
         paddingBottom: theme.spacing.md,
     },
@@ -501,4 +504,4 @@ const styles = StyleSheet.create((theme) => ({
         borderBottomWidth: 1,
         borderBottomColor: theme.colors.borderLight,
     },
-}));
+});

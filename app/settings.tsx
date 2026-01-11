@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import BottomSheet from '@gorhom/bottom-sheet';
 
 import { useAuthStore } from '@/store/authStore';
@@ -40,7 +41,9 @@ export default function SettingsScreen() {
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { t, i18n } = useTranslation();
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const { containerPadding } = useResponsiveLayout();
+    const styles = createStyles(theme);
 
     const { user, signOut } = useAuthStore();
     const { mode: themeMode, actions: themeActions } = useThemeStore();
@@ -88,7 +91,7 @@ export default function SettingsScreen() {
                 onBackPress={() => router.back()}
             />
 
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={[styles.content, { paddingHorizontal: containerPadding }]}>
                 {/* Guest Sign In Section */}
                 {user?.isAnonymous && (
                     <SettingSection title={t('settings.sections.signIn', 'Sign In')}>
@@ -386,7 +389,7 @@ export default function SettingsScreen() {
     );
 }
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: theme.colors.background,
@@ -438,4 +441,4 @@ const styles = StyleSheet.create((theme) => ({
         marginBottom: theme.spacing.lg,
         textAlign: 'center',
     },
-}));
+});

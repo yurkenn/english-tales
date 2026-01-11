@@ -1,7 +1,7 @@
 import React from 'react';
-import { Pressable } from 'react-native';
+import { Pressable , StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { useTheme, Theme } from '@/theme';
 import { Typography } from './Typography';
 import { haptics } from '@/utils/haptics';
 
@@ -11,7 +11,8 @@ interface StoryTagProps {
 }
 
 export const StoryTag: React.FC<StoryTagProps> = ({ title, onPress }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
 
     return (
         <Pressable
@@ -29,7 +30,7 @@ export const StoryTag: React.FC<StoryTagProps> = ({ title, onPress }) => {
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     storyTag: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -42,4 +43,4 @@ const styles = StyleSheet.create((theme) => ({
         borderWidth: 1,
         borderColor: theme.colors.borderLight,
     },
-}));
+});

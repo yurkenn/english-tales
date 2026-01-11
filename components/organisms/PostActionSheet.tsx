@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { View, Pressable, Alert, ScrollView } from 'react-native';
-import { StyleSheet, useUnistyles } from 'react-native-unistyles';
+import { View, Pressable, Alert, ScrollView , StyleSheet } from 'react-native';
+import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import BottomSheet, { BottomSheetView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
@@ -34,7 +34,8 @@ export const PostActionSheet: React.FC<PostActionSheetProps> = ({
     onPostDeleted,
     onClose,
 }) => {
-    const { theme } = useUnistyles();
+    const { theme } = useTheme();
+    const styles = createStyles(theme);
     const { t } = useTranslation();
     const insets = useSafeAreaInsets();
     const toastActions = useToastStore((s) => s.actions);
@@ -246,7 +247,7 @@ export const PostActionSheet: React.FC<PostActionSheetProps> = ({
     );
 };
 
-const styles = StyleSheet.create((theme) => ({
+const createStyles = (theme: Theme) => StyleSheet.create({
     content: {
         flex: 1,
         paddingHorizontal: theme.spacing.lg,
@@ -324,4 +325,4 @@ const styles = StyleSheet.create((theme) => ({
         flex: 1,
         gap: 2,
     },
-}));
+});
