@@ -28,7 +28,7 @@ import { useProgressStore } from '../store/progressStore';
 import { useThemeStore, useThemeKey, useIsDark, useThemeMode } from '../store/themeStore';
 import { useDownloadStore } from '../store/downloadStore';
 import { useSettingsStore } from '@/store/settingsStore';
-import { useCoinStore } from '@/store/coinStore';
+
 import { secureStorage } from '../services/storage';
 import { notificationService } from '@/services/notificationService';
 import { adService } from '@/services/ads';
@@ -39,12 +39,12 @@ import {
   ToastContainer,
   ErrorBoundary,
   AnimatedSplashScreen,
-  DailyBonusModal,
+
   StreakProtectionModal,
   PaywallModal,
   OfflineBanner,
 } from '@/components';
-import { useDailyBonusManager, useDeepLinking } from '@/hooks';
+import { useDeepLinking } from '@/hooks';
 import { ThemeProvider, lightTheme, darkTheme, sepiaTheme } from '../theme/ThemeContext';
 
 
@@ -73,17 +73,11 @@ export default function RootLayout() {
   const [isAppReady, setIsAppReady] = useState(false);
   const [showPaywallModal, setShowPaywallModal] = useState(false);
 
-  // Daily bonus and streak protection
-  const {
-    showDailyBonus,
-    showStreakProtection,
-    currentBonusDay,
-    currentStreak,
-    claimDailyBonus,
-    closeDailyBonus,
-    closeStreakProtection,
-    onStreakProtected,
-  } = useDailyBonusManager();
+  // Streak protection
+  const showStreakProtection = false;
+  const currentStreak = 0;
+  const closeStreakProtection = () => { };
+  const onStreakProtected = () => { };
 
   // Deep linking - handles incoming URLs
   useDeepLinking();
@@ -197,15 +191,12 @@ export default function RootLayout() {
     if (!initialized) return;
 
     const userId = user?.id || null;
-    const coinActions = useCoinStore.getState().actions;
     if (user) {
       libraryActions.setUserId(userId);
       progressActions.setUserId(userId);
-      coinActions.setUserId(userId);
     } else {
       libraryActions.setUserId(null);
       progressActions.setUserId(null);
-      coinActions.setUserId(null);
     }
   }, [user, initialized]);
 
@@ -275,12 +266,6 @@ export default function RootLayout() {
               <AchievementToast />
 
               {/* Monetization Modals */}
-              <DailyBonusModal
-                visible={showDailyBonus}
-                currentDay={currentBonusDay}
-                onClose={closeDailyBonus}
-                onClaimed={claimDailyBonus}
-              />
               <StreakProtectionModal
                 visible={showStreakProtection}
                 currentStreak={currentStreak}

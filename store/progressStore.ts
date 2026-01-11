@@ -6,7 +6,7 @@ import { activityService } from '@/services/activityService';
 import { communityService } from '@/services/communityService';
 import { useAuthStore } from './authStore';
 import { useSettingsStore } from './settingsStore';
-import { useCoinStore } from './coinStore';
+
 
 const db = getFirestore();
 
@@ -133,9 +133,6 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                 const newMap = { ...get().progressMap, [storyId]: progress };
                 set({ progressMap: newMap, stats: computeStats(newMap) });
 
-                // Award coins for story completion
-                useCoinStore.getState().actions.earnFromStoryComplete();
-
                 get().actions.checkSocialMilestones();
                 return { success: true, data: progress };
             } catch (e) {
@@ -159,11 +156,6 @@ export const useProgressStore = create<ProgressState & { actions: ProgressAction
                 } as ReadingProgress;
                 await setDoc(doc(collection(db, 'users', userId, 'progress'), storyId), { ...progress, lastReadAt: serverTimestamp() }, { merge: true });
                 set((s) => ({ progressMap: { ...s.progressMap, [storyId]: progress } }));
-
-                // Award bonus coins for perfect quiz score
-                if (score === total) {
-                    useCoinStore.getState().actions.earnFromQuizPerfect();
-                }
 
                 get().actions.checkSocialMilestones();
                 return { success: true, data: progress };
