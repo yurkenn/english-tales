@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useCallback, useRef } from 'react'
-import { View, FlatList, RefreshControl, Text, TouchableOpacity, LayoutAnimation, Platform, UIManager } from 'react-native'
+import { View, FlatList, RefreshControl, Text, Pressable, LayoutAnimation, Platform, UIManager } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
@@ -41,114 +41,6 @@ interface SegmentTabProps {
     onPress: () => void
 }
 
-function createStyles(theme: Theme) {
-    return StyleSheet.create({
-        container: {
-            flex: 1,
-            backgroundColor: theme.colors.background,
-        },
-        listContent: {
-            paddingHorizontal: theme.spacing.lg,
-            paddingTop: theme.spacing.sm,
-            paddingBottom: theme.spacing.xxxxl * 2 + theme.spacing.xxl, // ~120
-        },
-        separator: {
-            height: theme.spacing.lg,
-        },
-        separatorSmall: {
-            height: theme.spacing.md,
-        },
-        segmentedControl: {
-            flexDirection: 'row',
-            paddingHorizontal: theme.spacing.lg,
-            paddingVertical: theme.spacing.md,
-            gap: theme.spacing.sm,
-        },
-        segment: {
-            flex: 1,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-            paddingVertical: theme.spacing.sm,
-            borderRadius: theme.radius.md,
-            backgroundColor: theme.colors.surface,
-            borderWidth: 1,
-            borderColor: theme.colors.borderLight,
-            ...theme.shadows.sm,
-        },
-        segmentActive: {
-            backgroundColor: theme.colors.primary,
-            borderColor: theme.colors.primary,
-            ...theme.shadows.md,
-        },
-        segmentText: {
-            fontSize: theme.typography.size.md,
-            fontWeight: '600',
-            color: theme.colors.textSecondary,
-        },
-        segmentTextActive: {
-            color: theme.colors.textInverse,
-        },
-        badge: {
-            marginLeft: theme.spacing.sm,
-            backgroundColor: 'rgba(255,255,255,0.25)',
-            paddingHorizontal: theme.spacing.sm,
-            paddingVertical: 1,
-            borderRadius: theme.radius.sm,
-            minWidth: 18,
-            alignItems: 'center',
-        },
-        badgeText: {
-            fontSize: theme.typography.size.xs,
-            fontWeight: 'bold',
-            color: theme.colors.textInverse,
-        },
-        quizHeader: {
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            backgroundColor: theme.colors.surface,
-            marginHorizontal: theme.spacing.lg,
-            marginTop: theme.spacing.sm,
-            marginBottom: theme.spacing.sm,
-            padding: theme.spacing.md,
-            borderRadius: theme.radius.lg,
-            borderWidth: 1,
-            borderColor: theme.colors.borderLight,
-            ...theme.shadows.sm,
-        },
-        quizHeaderContent: {
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: theme.spacing.md,
-        },
-        quizHeaderIcon: {
-            width: 40,
-            height: 40,
-            borderRadius: theme.radius.full,
-            backgroundColor: theme.colors.primary + '10',
-            alignItems: 'center',
-            justifyContent: 'center',
-        },
-        quizHeaderText: {
-            gap: theme.spacing.xxs,
-        },
-        quizHeaderTitle: {
-            fontSize: theme.typography.size.md,
-            fontWeight: '700',
-            color: theme.colors.text,
-        },
-        quizHeaderSubtitle: {
-            fontSize: theme.typography.size.xs,
-            color: theme.colors.textSecondary,
-        },
-        quizHeaderArrow: {
-            color: theme.colors.primary,
-            opacity: 0.5,
-        },
-    });
-}
-
 const SegmentTab = ({ label, isActive, badge, onPress }: SegmentTabProps) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
@@ -158,15 +50,13 @@ const SegmentTab = ({ label, isActive, badge, onPress }: SegmentTabProps) => {
     }
 
     return (
-        <TouchableOpacity
+        <Pressable
             onPress={handlePress}
             style={[styles.segment, isActive && styles.segmentActive]}
             accessible
             accessibilityRole="tab"
             accessibilityLabel={badge ? `${label}, ${badge} items` : label}
             accessibilityState={{ selected: isActive }}
-            activeOpacity={0.7}
-            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
         >
             <Text style={[styles.segmentText, isActive && styles.segmentTextActive]}>{label}</Text>
             {badge !== undefined && badge > 0 && (
@@ -174,7 +64,7 @@ const SegmentTab = ({ label, isActive, badge, onPress }: SegmentTabProps) => {
                     <Text style={styles.badgeText}>{badge}</Text>
                 </View>
             )}
-        </TouchableOpacity>
+        </Pressable>
     )
 }
 
@@ -445,10 +335,9 @@ export default function LibraryScreen() {
                 <>
                     {/* Quiz Button Header for Vocabulary */}
                     {wordList.length >= 3 && (
-                        <TouchableOpacity
+                        <Pressable
                             onPress={() => { haptics.medium(); router.push('/user/quiz') }}
                             style={styles.quizHeader}
-                            activeOpacity={0.7}
                         >
                             <View style={styles.quizHeaderContent}>
                                 <View style={styles.quizHeaderIcon}>
@@ -464,7 +353,7 @@ export default function LibraryScreen() {
                             <View style={styles.quizHeaderArrow}>
                                 <Text style={{ fontSize: 20 }}>→</Text>
                             </View>
-                        </TouchableOpacity>
+                        </Pressable>
                     )}
                     <FlatList
                         data={wordList}
@@ -488,31 +377,140 @@ export default function LibraryScreen() {
 
             <StoryCardMenu visible={menuVisible} onClose={handleMenuClose} position={menuPosition} items={getMenuItems()} />
 
-            <ConfirmationDialog
-                ref={removeFromLibraryDialogRef}
-                title={t('library.dialogs.removeTitle')}
-                message={selectedItem ? t('library.dialogs.removeMessage', { title: selectedItem.story.title }) : ''}
-                confirmLabel={t('common.delete')}
-                cancelLabel={t('common.cancel')}
-                destructive
-                icon="remove-circle-outline"
-                onConfirm={handleRemoveFromLibrary}
-                onCancel={() => removeFromLibraryDialogRef.current?.close()}
-            />
+            {/* Confirmation Dialogs - only render when selectedItem exists to prevent touch blocking */}
+            {selectedItem && (
+                <>
+                    <ConfirmationDialog
+                        ref={removeFromLibraryDialogRef}
+                        title={t('library.dialogs.removeTitle')}
+                        message={t('library.dialogs.removeMessage', { title: selectedItem.story.title })}
+                        confirmLabel={t('common.delete')}
+                        cancelLabel={t('common.cancel')}
+                        destructive
+                        icon="remove-circle-outline"
+                        onConfirm={handleRemoveFromLibrary}
+                        onCancel={() => removeFromLibraryDialogRef.current?.close()}
+                    />
 
-            <ConfirmationDialog
-                ref={deleteDownloadDialogRef}
-                title={t('library.dialogs.deleteDownloadTitle')}
-                message={selectedItem ? t('library.dialogs.deleteDownloadMessage', { title: selectedItem.story.title }) : ''}
-                confirmLabel={t('common.delete')}
-                cancelLabel={t('common.cancel')}
-                destructive
-                icon="trash-outline"
-                onConfirm={handleDeleteDownload}
-                onCancel={() => deleteDownloadDialogRef.current?.close()}
-            />
+                    <ConfirmationDialog
+                        ref={deleteDownloadDialogRef}
+                        title={t('library.dialogs.deleteDownloadTitle')}
+                        message={t('library.dialogs.deleteDownloadMessage', { title: selectedItem.story.title })}
+                        confirmLabel={t('common.delete')}
+                        cancelLabel={t('common.cancel')}
+                        destructive
+                        icon="trash-outline"
+                        onConfirm={handleDeleteDownload}
+                        onCancel={() => deleteDownloadDialogRef.current?.close()}
+                    />
+                </>
+            )}
         </View>
     )
 }
 
-
+const createStyles = (theme: Theme) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: theme.colors.background,
+    },
+    listContent: {
+        paddingHorizontal: theme.spacing.lg,
+        paddingTop: theme.spacing.sm,
+        paddingBottom: theme.spacing.xxxxl * 2 + theme.spacing.xxl, // ~120
+    },
+    separator: {
+        height: theme.spacing.lg,
+    },
+    separatorSmall: {
+        height: theme.spacing.md,
+    },
+    segmentedControl: {
+        flexDirection: 'row',
+        paddingHorizontal: theme.spacing.lg,
+        paddingVertical: theme.spacing.md,
+        gap: theme.spacing.sm,
+    },
+    segment: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: theme.spacing.sm,
+        borderRadius: theme.radius.md,
+        backgroundColor: theme.colors.surface,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        ...theme.shadows.sm,
+    },
+    segmentActive: {
+        backgroundColor: theme.colors.primary,
+        borderColor: theme.colors.primary,
+        ...theme.shadows.md,
+    },
+    segmentText: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '600',
+        color: theme.colors.textSecondary,
+    },
+    segmentTextActive: {
+        color: theme.colors.textInverse,
+    },
+    badge: {
+        marginLeft: theme.spacing.sm,
+        backgroundColor: 'rgba(255,255,255,0.25)',
+        paddingHorizontal: theme.spacing.sm,
+        paddingVertical: 1,
+        borderRadius: theme.radius.sm,
+        minWidth: 18,
+        alignItems: 'center',
+    },
+    badgeText: {
+        fontSize: theme.typography.size.xs,
+        fontWeight: 'bold',
+        color: theme.colors.textInverse,
+    },
+    quizHeader: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: theme.colors.surface,
+        marginHorizontal: theme.spacing.lg,
+        marginTop: theme.spacing.sm,
+        marginBottom: theme.spacing.sm,
+        padding: theme.spacing.md,
+        borderRadius: theme.radius.lg,
+        borderWidth: 1,
+        borderColor: theme.colors.borderLight,
+        ...theme.shadows.sm,
+    },
+    quizHeaderContent: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: theme.spacing.md,
+    },
+    quizHeaderIcon: {
+        width: 40,
+        height: 40,
+        borderRadius: theme.radius.full,
+        backgroundColor: theme.colors.primary + '10',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    quizHeaderText: {
+        gap: theme.spacing.xxs,
+    },
+    quizHeaderTitle: {
+        fontSize: theme.typography.size.md,
+        fontWeight: '700',
+        color: theme.colors.text,
+    },
+    quizHeaderSubtitle: {
+        fontSize: theme.typography.size.xs,
+        color: theme.colors.textSecondary,
+    },
+    quizHeaderArrow: {
+        color: theme.colors.primary,
+        opacity: 0.5,
+    },
+});

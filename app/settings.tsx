@@ -64,8 +64,28 @@ export default function SettingsScreen() {
     const languageDialogRef = useRef<BottomSheet>(null);
     const themeDialogRef = useRef<BottomSheet>(null);
     const deleteAccountDialogRef = useRef<BottomSheet>(null);
+
+    // Dialog open states - prevents backdrop from blocking touches when closed
+    const [isSignOutOpen, setIsSignOutOpen] = useState(false);
+    const [isClearCacheOpen, setIsClearCacheOpen] = useState(false);
+    const [isChangePasswordOpen, setIsChangePasswordOpen] = useState(false);
+    const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+    const [isThemeOpen, setIsThemeOpen] = useState(false);
+    const [isDeleteAccountOpen, setIsDeleteAccountOpen] = useState(false);
+
     const [isDeleting, setIsDeleting] = useState(false);
     const [isRestoring, setIsRestoring] = useState(false);
+
+    // Dialog helper functions
+    const openDialog = (setOpen: React.Dispatch<React.SetStateAction<boolean>>, ref: React.RefObject<BottomSheet>) => {
+        setOpen(true);
+        setTimeout(() => ref.current?.expand(), 50);
+    };
+
+    const closeDialog = (setOpen: React.Dispatch<React.SetStateAction<boolean>>, ref: React.RefObject<BottomSheet>) => {
+        ref.current?.close();
+        setTimeout(() => setOpen(false), 300);
+    };
 
     useEffect(() => {
         const calculateCache = async () => {
@@ -125,7 +145,7 @@ export default function SettingsScreen() {
                                     toast.actions.error('No email associated with this account.');
                                     return;
                                 }
-                                changePasswordDialogRef.current?.expand();
+                                openDialog(setIsChangePasswordOpen, changePasswordDialogRef);
                             }}
                         />
                     )}
@@ -185,7 +205,7 @@ export default function SettingsScreen() {
                         value={themeModeLabel}
                         onPress={() => {
                             haptics.selection();
-                            themeDialogRef.current?.expand();
+                            openDialog(setIsThemeOpen, themeDialogRef);
                         }}
                     />
                     <SettingItem
@@ -194,7 +214,7 @@ export default function SettingsScreen() {
                         value={currentLanguage}
                         onPress={() => {
                             haptics.selection();
-                            languageDialogRef.current?.expand();
+                            openDialog(setIsLanguageOpen, languageDialogRef);
                         }}
                     />
                     <SettingItem
@@ -235,7 +255,7 @@ export default function SettingsScreen() {
                         label={t('settings.storage.clearCache')}
                         onPress={() => {
                             haptics.selection();
-                            clearCacheDialogRef.current?.expand();
+                            openDialog(setIsClearCacheOpen, clearCacheDialogRef);
                         }}
                     />
                 </SettingSection>
@@ -247,7 +267,7 @@ export default function SettingsScreen() {
                         isDestructive
                         onPress={() => {
                             haptics.warning();
-                            signOutDialogRef.current?.expand();
+                            openDialog(setIsSignOutOpen, signOutDialogRef);
                         }}
                     />
                     {user && !user.isAnonymous && (
@@ -257,7 +277,7 @@ export default function SettingsScreen() {
                             isDestructive
                             onPress={() => {
                                 haptics.warning();
-                                deleteAccountDialogRef.current?.expand();
+                                openDialog(setIsDeleteAccountOpen, deleteAccountDialogRef);
                             }}
                         />
                     )}
@@ -270,122 +290,133 @@ export default function SettingsScreen() {
                 </View>
             </ScrollView>
 
-            <ConfirmationDialog
-                ref={signOutDialogRef}
-                title={t('settings.dialogs.signOut.title')}
-                message={t('settings.dialogs.signOut.message')}
-                confirmLabel={t('settings.dangerZone.signOut')}
-                cancelLabel={t('common.cancel')}
-                destructive
-                icon="log-out-outline"
-                onConfirm={signOut}
-                onCancel={() => signOutDialogRef.current?.close()}
-            />
+            {/* Dialogs - Conditional rendering to prevent touch blocking */}
+            {isSignOutOpen && (
+                <ConfirmationDialog
+                    ref={signOutDialogRef}
+                    title={t('settings.dialogs.signOut.title')}
+                    message={t('settings.dialogs.signOut.message')}
+                    confirmLabel={t('settings.dangerZone.signOut')}
+                    cancelLabel={t('common.cancel')}
+                    destructive
+                    icon="log-out-outline"
+                    onConfirm={() => {
+                        signOut();
+                        closeDialog(setIsSignOutOpen, signOutDialogRef);
+                    }}
+                    onCancel={() => closeDialog(setIsSignOutOpen, signOutDialogRef)}
+                />
+            )}
 
-            <ConfirmationDialog
-                ref={clearCacheDialogRef}
-                title={t('settings.dialogs.clearCache.title')}
-                message={t('settings.dialogs.clearCache.message')}
-                confirmLabel={t('common.delete')}
-                cancelLabel={t('common.cancel')}
-                icon="trash-outline"
-                onConfirm={async () => {
-                    haptics.success();
-                    setCacheSize('Cleared');
-                    clearCacheDialogRef.current?.close();
-                    toast.actions.success(t('settings.dialogs.clearCache.success'));
-                }}
-                onCancel={() => clearCacheDialogRef.current?.close()}
-            />
-
-            <ConfirmationDialog
-                ref={changePasswordDialogRef}
-                title={t('settings.dialogs.changePassword.title')}
-                message={t('settings.dialogs.changePassword.message', { email: user?.email })}
-                confirmLabel={t('common.save')}
-                cancelLabel={t('common.cancel')}
-                icon="mail-outline"
-                onConfirm={async () => {
-                    try {
-                        await sendPasswordResetEmail(user!.email!);
+            {isClearCacheOpen && (
+                <ConfirmationDialog
+                    ref={clearCacheDialogRef}
+                    title={t('settings.dialogs.clearCache.title')}
+                    message={t('settings.dialogs.clearCache.message')}
+                    confirmLabel={t('common.delete')}
+                    cancelLabel={t('common.cancel')}
+                    icon="trash-outline"
+                    onConfirm={async () => {
                         haptics.success();
-                        changePasswordDialogRef.current?.close();
-                        toast.actions.success(t('settings.dialogs.changePassword.success'));
-                    } catch {
-                        haptics.error();
-                        changePasswordDialogRef.current?.close();
-                        toast.actions.error(t('settings.dialogs.changePassword.error'));
-                    }
-                }}
-                onCancel={() => changePasswordDialogRef.current?.close()}
-            />
+                        setCacheSize('Cleared');
+                        closeDialog(setIsClearCacheOpen, clearCacheDialogRef);
+                        toast.actions.success(t('settings.dialogs.clearCache.success'));
+                    }}
+                    onCancel={() => closeDialog(setIsClearCacheOpen, clearCacheDialogRef)}
+                />
+            )}
 
-            <ActionSheet
-                ref={themeDialogRef}
-                title={t('settings.preferences.theme')}
-                options={THEME_MODES.map((mode) => ({
-                    label: t(`appearance.${mode.code}`),
-                    icon: themeMode === mode.code ? 'checkmark-circle' : mode.icon as any,
-                    onPress: () => {
-                        themeActions.setMode(mode.code as any);
-                    },
-                }))}
-                onClose={() => themeDialogRef.current?.close()}
-            />
-
-            <ActionSheet
-                ref={languageDialogRef}
-                title={t('settings.preferences.language')}
-                options={LANGUAGES.map((lang) => ({
-                    label: lang.label,
-                    icon: (i18n.language || 'en').startsWith(lang.code) ? 'checkmark-circle' : 'ellipse-outline',
-                    onPress: () => {
-                        settingsActions.updateSettings({ language: lang.code as any });
-                    },
-                }))}
-                onClose={() => languageDialogRef.current?.close()}
-            />
-
-            <ConfirmationDialog
-                ref={deleteAccountDialogRef}
-                title={t('settings.dialogs.deleteAccount.title')}
-                message={t('settings.dialogs.deleteAccount.message')}
-                confirmLabel={isDeleting ? t('common.loading') : t('common.delete')}
-                cancelLabel={t('common.cancel')}
-                destructive
-                icon="trash-outline"
-                onConfirm={async () => {
-                    if (!user || isDeleting) return;
-
-                    setIsDeleting(true);
-                    try {
-                        // First delete all user data from Firestore
-                        const deleteResult = await userService.deleteUserData(user.id);
-                        if (!deleteResult.success) {
-                            throw new Error(deleteResult.error);
+            {isChangePasswordOpen && (
+                <ConfirmationDialog
+                    ref={changePasswordDialogRef}
+                    title={t('settings.dialogs.changePassword.title')}
+                    message={t('settings.dialogs.changePassword.message', { email: user?.email })}
+                    confirmLabel={t('common.save')}
+                    cancelLabel={t('common.cancel')}
+                    icon="mail-outline"
+                    onConfirm={async () => {
+                        try {
+                            await sendPasswordResetEmail(user!.email!);
+                            haptics.success();
+                            closeDialog(setIsChangePasswordOpen, changePasswordDialogRef);
+                            toast.actions.success(t('settings.dialogs.changePassword.success'));
+                        } catch {
+                            haptics.error();
+                            closeDialog(setIsChangePasswordOpen, changePasswordDialogRef);
+                            toast.actions.error(t('settings.dialogs.changePassword.error'));
                         }
+                    }}
+                    onCancel={() => closeDialog(setIsChangePasswordOpen, changePasswordDialogRef)}
+                />
+            )}
 
-                        // Then delete the Firebase Auth account
-                        await deleteAccount();
+            {isThemeOpen && (
+                <ActionSheet
+                    ref={themeDialogRef}
+                    title={t('settings.preferences.theme')}
+                    options={THEME_MODES.map((mode) => ({
+                        label: t(`appearance.${mode.code}`),
+                        icon: themeMode === mode.code ? 'checkmark-circle' : mode.icon as any,
+                        onPress: () => {
+                            themeActions.setMode(mode.code as any);
+                        },
+                    }))}
+                    onClose={() => closeDialog(setIsThemeOpen, themeDialogRef)}
+                />
+            )}
 
-                        haptics.success();
-                        deleteAccountDialogRef.current?.close();
-                        toast.actions.success('Account deleted successfully');
-                        router.replace('/login');
-                    } catch (error: any) {
-                        haptics.error();
-                        setIsDeleting(false);
+            {isLanguageOpen && (
+                <ActionSheet
+                    ref={languageDialogRef}
+                    title={t('settings.preferences.language')}
+                    options={LANGUAGES.map((lang) => ({
+                        label: lang.label,
+                        icon: (i18n.language || 'en').startsWith(lang.code) ? 'checkmark-circle' : 'ellipse-outline',
+                        onPress: () => {
+                            settingsActions.updateSettings({ language: lang.code as any });
+                        },
+                    }))}
+                    onClose={() => closeDialog(setIsLanguageOpen, languageDialogRef)}
+                />
+            )}
 
-                        if (error.message === 'REQUIRES_REAUTHENTICATION') {
-                            toast.actions.error('Please sign out and sign in again, then try deleting your account.');
-                        } else {
-                            toast.actions.error('Failed to delete account. Please try again.');
+            {isDeleteAccountOpen && (
+                <ConfirmationDialog
+                    ref={deleteAccountDialogRef}
+                    title={t('settings.dialogs.deleteAccount.title')}
+                    message={t('settings.dialogs.deleteAccount.message')}
+                    confirmLabel={isDeleting ? t('common.loading') : t('common.delete')}
+                    cancelLabel={t('common.cancel')}
+                    destructive
+                    icon="trash-outline"
+                    onConfirm={async () => {
+                        if (!user || isDeleting) return;
+
+                        setIsDeleting(true);
+                        try {
+                            const deleteResult = await userService.deleteUserData(user.id);
+                            if (!deleteResult.success) {
+                                throw new Error(deleteResult.error);
+                            }
+                            await deleteAccount();
+                            haptics.success();
+                            closeDialog(setIsDeleteAccountOpen, deleteAccountDialogRef);
+                            toast.actions.success('Account deleted successfully');
+                            router.replace('/login');
+                        } catch (error: any) {
+                            haptics.error();
+                            setIsDeleting(false);
+                            if (error.message === 'REQUIRES_REAUTHENTICATION') {
+                                toast.actions.error('Please sign out and sign in again, then try deleting your account.');
+                            } else {
+                                toast.actions.error('Failed to delete account. Please try again.');
+                            }
+                            closeDialog(setIsDeleteAccountOpen, deleteAccountDialogRef);
                         }
-                        deleteAccountDialogRef.current?.close();
-                    }
-                }}
-                onCancel={() => deleteAccountDialogRef.current?.close()}
-            />
+                    }}
+                    onCancel={() => closeDialog(setIsDeleteAccountOpen, deleteAccountDialogRef)}
+                />
+            )}
         </View>
     );
 }

@@ -18,9 +18,31 @@ export const useProfileUIController = () => {
 
     const [activeTab, setActiveTab] = useState<TabType>('posts')
     const [showGuestBanner, setShowGuestBanner] = useState(true)
+    const [isGoalsSheetOpen, setIsGoalsSheetOpen] = useState(false)
+    const [isLangSheetOpen, setIsLangSheetOpen] = useState(false)
 
     const goalsSheetRef = useRef<BottomSheet>(null)
     const langSheetRef = useRef<BottomSheet>(null)
+
+    const openGoalsSheet = useCallback(() => {
+        setIsGoalsSheetOpen(true)
+        setTimeout(() => goalsSheetRef.current?.expand(), 50)
+    }, [])
+
+    const closeGoalsSheet = useCallback(() => {
+        goalsSheetRef.current?.close()
+        setTimeout(() => setIsGoalsSheetOpen(false), 300)
+    }, [])
+
+    const openLangSheet = useCallback(() => {
+        setIsLangSheetOpen(true)
+        setTimeout(() => langSheetRef.current?.expand(), 50)
+    }, [])
+
+    const closeLangSheet = useCallback(() => {
+        langSheetRef.current?.close()
+        setTimeout(() => setIsLangSheetOpen(false), 300)
+    }, [])
 
     const handleSettingsPress = useCallback(() => {
         haptics.selection()
@@ -53,6 +75,12 @@ export const useProfileUIController = () => {
         setShowGuestBanner,
         goalsSheetRef,
         langSheetRef,
+        isGoalsSheetOpen,
+        isLangSheetOpen,
+        openGoalsSheet,
+        closeGoalsSheet,
+        openLangSheet,
+        closeLangSheet,
         handleSettingsPress,
         handleEditPress,
         handleTabChange,
