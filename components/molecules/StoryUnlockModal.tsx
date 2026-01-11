@@ -11,8 +11,6 @@ import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { useStoryUnlockAd } from '@/hooks/useRewardedAd'
 import { REWARD_CONFIG } from '@/services/ads'
-import { useCoinStore, COIN_COSTS } from '@/store/coinStore'
-import { unlockStoryWithCoins } from '@/services/storyGating'
 import { useTranslation } from 'react-i18next'
 import { haptics } from '@/utils/haptics'
 import Animated, { FadeIn, FadeOut } from 'react-native-reanimated'
@@ -43,8 +41,6 @@ function StoryUnlockModalComponent({
     const { t } = useTranslation()
 
     const { showAd, isLoading, isReady, isUnlocked, loadAd } = useStoryUnlockAd(storyId)
-    const coinBalance = useCoinStore((s) => s.balance)
-    const canAffordUnlock = coinBalance >= COIN_COSTS.UNLOCK_STORY_24H
 
     const handleWatchAd = async () => {
         if (!isReady) {

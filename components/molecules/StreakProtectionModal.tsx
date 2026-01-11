@@ -11,7 +11,6 @@ import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur'
 import { useTranslation } from 'react-i18next'
 import { haptics } from '@/utils/haptics'
-import { useCoinStore, COIN_COSTS } from '@/store/coinStore'
 import { useRewardStore } from '@/store/rewardStore'
 import { useRewardedAd } from '@/hooks/useRewardedAd'
 
@@ -33,8 +32,6 @@ function StreakProtectionModalComponent({
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const { t } = useTranslation()
-    const coinBalance = useCoinStore((s) => s.balance)
-    const canAfford = coinBalance >= COIN_COSTS.STREAK_PROTECTOR
     const rewardActions = useRewardStore((s) => s.actions)
 
     const { showAd, isLoading: adLoading } = useRewardedAd({
@@ -50,18 +47,6 @@ function StreakProtectionModalComponent({
         haptics.selection()
         await showAd()
     }, [showAd])
-
-    const handlePayWithCoins = useCallback(() => {
-        haptics.selection()
-        const coinActions = useCoinStore.getState().actions
-
-        if (coinActions.buyStreakProtector()) {
-            rewardActions.grantStreakProtector()
-            haptics.success()
-            onProtected()
-            onClose()
-        }
-    }, [rewardActions, onProtected, onClose])
 
     return (
         <Modal visible={visible} transparent animationType="fade" onRequestClose={onClose}>
@@ -117,31 +102,6 @@ function StreakProtectionModalComponent({
                                     </View>
                                 </>
                             )}
-                        </TouchableOpacity>
-
-                        {/* Pay with Coins */}
-                        <TouchableOpacity
-                            style={[styles.coinButton, !canAfford && styles.buttonDisabled]}
-                            onPress={handlePayWithCoins}
-                            disabled={!canAfford}
-                            activeOpacity={0.7}
-                        >
-                            <Ionicons
-                                name="logo-bitcoin"
-                                size={22}
-                                color={canAfford ? '#FFD700' : theme.colors.textMuted}
-                            />
-                            <View style={styles.optionTextContainer}>
-                                <Text style={[styles.coinButtonText, !canAfford && styles.textDisabled]}>
-                                    {COIN_COSTS.STREAK_PROTECTOR} Coins
-                                </Text>
-                                <Text style={[styles.coinButtonSubtext, !canAfford && styles.textDisabled]}>
-                                    {canAfford
-                                        ? t('streak.protection.youHave', 'You have {{count}}', { count: coinBalance })
-                                        : t('streak.protection.notEnough', 'Not enough coins')
-                                    }
-                                </Text>
-                            </View>
                         </TouchableOpacity>
 
                         {/* Go Premium */}
