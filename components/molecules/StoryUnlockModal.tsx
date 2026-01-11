@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react'
-import { View, Text, Modal, Pressable, Image } from 'react-native'
+import { View, Text, Modal, TouchableOpacity, Image } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -143,13 +143,14 @@ function StoryUnlockModalComponent({
                     <View style={styles.actionsContainer}>
                         {/* Watch Ad Button */}
                         {!isPremiumOnly && (
-                            <Pressable
+                            <TouchableOpacity
                                 style={[
                                     styles.watchAdButton,
                                     isLoading && styles.buttonDisabled,
                                 ]}
                                 onPress={handleWatchAd}
                                 disabled={isLoading}
+                                activeOpacity={0.8}
                             >
                                 {isLoading ? (
                                     <Text style={styles.watchAdButtonText}>
@@ -167,14 +168,14 @@ function StoryUnlockModalComponent({
                                         </Text>
                                     </>
                                 )}
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
 
 
 
                         {/* Premium Button */}
                         {onGetPremium && (
-                            <Pressable
+                            <TouchableOpacity
                                 style={[
                                     styles.premiumButton,
                                     isPremiumOnly && styles.premiumButtonPrimary,
@@ -183,6 +184,7 @@ function StoryUnlockModalComponent({
                                     haptics.selection()
                                     onGetPremium()
                                 }}
+                                activeOpacity={0.7}
                             >
                                 <Ionicons
                                     name="star"
@@ -195,14 +197,14 @@ function StoryUnlockModalComponent({
                                 ]}>
                                     {t('ads.storyUnlock.getPremium', 'Get Premium')}
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
                     </View>
 
                     {/* Close Button */}
-                    <Pressable style={styles.closeButton} onPress={onClose}>
+                    <TouchableOpacity style={styles.closeButton} onPress={onClose} activeOpacity={0.7}>
                         <Ionicons name="close" size={24} color={theme.colors.textMuted} />
-                    </Pressable>
+                    </TouchableOpacity>
                 </Animated.View>
             </BlurView>
         </Modal>

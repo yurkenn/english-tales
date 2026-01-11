@@ -4,7 +4,7 @@
  */
 
 import React, { memo, useEffect, useRef } from 'react'
-import { View, Text, Pressable, Animated as RNAnimated } from 'react-native'
+import { View, Text, TouchableOpacity, Animated as RNAnimated } from 'react-native'
 import { useTheme, Theme, semanticColors } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -52,11 +52,12 @@ function CoinDisplayComponent({
     const iconSize = size === 'sm' ? 16 : size === 'lg' ? 24 : 20
     const fontSize = size === 'sm' ? theme.typography.size.sm : size === 'lg' ? theme.typography.size.xl : theme.typography.size.md
 
-    const Container = onPress ? Pressable : View
+    const Container = onPress ? TouchableOpacity : View
 
     return (
         <Container
             style={styles.container}
+            activeOpacity={0.7}
             onPress={() => {
                 haptics.selection()
                 onPress?.()

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Modal, Pressable, TextInput, FlatList, ActivityIndicator , StyleSheet } from 'react-native';
+import { View, Modal, TouchableOpacity, TextInput, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
@@ -11,6 +11,67 @@ interface StorySelectorModalProps {
     visible: boolean;
     onClose: () => void;
     onSelect: (story: Story) => void;
+}
+
+function createStyles(theme: Theme) {
+    return StyleSheet.create({
+        container: {
+            flex: 1,
+            backgroundColor: theme.colors.background,
+        },
+        header: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: theme.spacing.lg,
+            borderBottomWidth: 1,
+            borderBottomColor: theme.colors.borderLight,
+        },
+        closeButton: {
+            padding: 4,
+        },
+        searchContainer: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            backgroundColor: theme.colors.borderLight,
+            margin: theme.spacing.lg,
+            borderRadius: 12,
+            paddingHorizontal: theme.spacing.md,
+        },
+        searchIcon: {
+            marginRight: theme.spacing.sm,
+        },
+        searchInput: {
+            flex: 1,
+            height: 44,
+            color: theme.colors.text,
+            fontSize: theme.typography.size.md,
+        },
+        list: {
+            paddingHorizontal: theme.spacing.lg,
+        },
+        storyItem: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingVertical: theme.spacing.md,
+            borderBottomWidth: 1,
+            borderBottomColor: theme.colors.borderLight,
+        },
+        cover: {
+            width: 40,
+            height: 56,
+            borderRadius: 4,
+            backgroundColor: theme.colors.borderLight,
+        },
+        storyInfo: {
+            flex: 1,
+            marginLeft: theme.spacing.md,
+        },
+        empty: {
+            alignItems: 'center',
+            paddingVertical: 40,
+        },
+    });
 }
 
 export const StorySelectorModal: React.FC<StorySelectorModalProps> = ({
@@ -70,9 +131,10 @@ export const StorySelectorModal: React.FC<StorySelectorModalProps> = ({
         const authorName = typeof item.author === 'object' ? (item.author as any).name : item.author;
 
         return (
-            <Pressable
+            <TouchableOpacity
                 style={styles.storyItem}
                 onPress={() => onSelect(item)}
+                activeOpacity={0.7}
             >
                 <OptimizedImage
                     source={{ uri: item.coverImage ? getImageUrl(item.coverImage, { width: 100 }) : '' }}
@@ -84,7 +146,7 @@ export const StorySelectorModal: React.FC<StorySelectorModalProps> = ({
                     <Typography variant="caption" color={theme.colors.textMuted}>{authorName || 'Unknown Author'}</Typography>
                 </View>
                 <Ionicons name="chevron-forward" size={20} color={theme.colors.border} />
-            </Pressable>
+            </TouchableOpacity>
         );
     };
 
@@ -92,9 +154,9 @@ export const StorySelectorModal: React.FC<StorySelectorModalProps> = ({
         <Modal visible={visible} animationType="slide" presentationStyle="pageSheet" onRequestClose={onClose}>
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Pressable onPress={onClose} style={styles.closeButton}>
+                    <TouchableOpacity onPress={onClose} style={styles.closeButton} activeOpacity={0.6}>
                         <Ionicons name="close" size={24} color={theme.colors.text} />
-                    </Pressable>
+                    </TouchableOpacity>
                     <Typography variant="h3">Tag a Story</Typography>
                     <View style={{ width: 24 }} />
                 </View>
@@ -129,62 +191,3 @@ export const StorySelectorModal: React.FC<StorySelectorModalProps> = ({
         </Modal>
     );
 };
-
-const createStyles = (theme: Theme) => StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: theme.colors.background,
-    },
-    header: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: theme.spacing.lg,
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.borderLight,
-    },
-    closeButton: {
-        padding: 4,
-    },
-    searchContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: theme.colors.borderLight,
-        margin: theme.spacing.lg,
-        borderRadius: 12,
-        paddingHorizontal: theme.spacing.md,
-    },
-    searchIcon: {
-        marginRight: theme.spacing.sm,
-    },
-    searchInput: {
-        flex: 1,
-        height: 44,
-        color: theme.colors.text,
-        fontSize: theme.typography.size.md,
-    },
-    list: {
-        paddingHorizontal: theme.spacing.lg,
-    },
-    storyItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingVertical: theme.spacing.md,
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.borderLight,
-    },
-    cover: {
-        width: 40,
-        height: 56,
-        borderRadius: 4,
-        backgroundColor: theme.colors.borderLight,
-    },
-    storyInfo: {
-        flex: 1,
-        marginLeft: theme.spacing.md,
-    },
-    empty: {
-        alignItems: 'center',
-        paddingVertical: 40,
-    },
-});

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TextInputProps, ViewStyle, StyleProp, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TextInput, TextInputProps, ViewStyle, StyleProp, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -76,17 +76,18 @@ export const FormField: React.FC<FormFieldProps> = ({
                     secureTextEntry={isSecure}
                 />
                 {showPasswordToggle && textInputProps.secureTextEntry && (
-                    <Pressable
+                    <TouchableOpacity
                         onPress={() => setIsPasswordVisible(!isPasswordVisible)}
                         style={styles.toggleIcon}
                         hitSlop={10}
+                        activeOpacity={0.7}
                     >
                         <Ionicons
                             name={isPasswordVisible ? 'eye-off-outline' : 'eye-outline'}
                             size={20}
                             color={theme.colors.textSecondary}
                         />
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
             </View>
             {error && (

@@ -1,7 +1,7 @@
 import React, { forwardRef, useCallback, useMemo, useState, useEffect, useRef } from 'react'
 import {
     View,
-    Pressable,
+    TouchableOpacity,
     ActivityIndicator,
     KeyboardAvoidingView,
     Platform,
@@ -56,30 +56,32 @@ const CommentItem = ({
             entering={FadeInDown.delay(index * 50).duration(300)}
             style={styles.commentItem}
         >
-            <Pressable
+            <TouchableOpacity
                 style={styles.commentAvatar}
                 onPress={() => router.push(`/user/${reply.userId}`)}
+                activeOpacity={0.7}
             >
                 <Image source={avatarSource} style={styles.commentAvatarImage} />
-            </Pressable>
+            </TouchableOpacity>
             <View style={styles.commentContent}>
                 <View style={styles.commentHeader}>
-                    <Pressable onPress={() => router.push(`/user/${reply.userId}`)}>
+                    <TouchableOpacity onPress={() => router.push(`/user/${reply.userId}`)} activeOpacity={0.7}>
                         <Typography style={styles.commentUserName}>{reply.userName}</Typography>
-                    </Pressable>
+                    </TouchableOpacity>
                     <Typography style={styles.commentTime}>
                         {formatRelativeTime(reply.timestamp)}
                     </Typography>
                 </View>
                 <Typography style={styles.commentText}>{reply.content}</Typography>
                 <View style={styles.commentActions}>
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.commentAction}
                         onPress={() => { haptics.selection(); onReply(reply.userName) }}
+                        activeOpacity={0.7}
                     >
                         <Ionicons name="chatbubble-outline" size={14} color={theme.colors.textMuted} />
                         <Typography style={styles.commentActionText}>Reply</Typography>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         </Animated.View>
@@ -235,9 +237,9 @@ export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps
                 >
                     {/* Header */}
                     <View style={styles.header}>
-                        <Pressable style={styles.backButton} onPress={onClose}>
+                        <TouchableOpacity style={styles.backButton} onPress={onClose} activeOpacity={0.7}>
                             <Ionicons name="chevron-down" size={24} color={theme.colors.text} />
-                        </Pressable>
+                        </TouchableOpacity>
                         <Typography style={styles.headerTitle}>{t('community.post', 'Post')}</Typography>
                         <View style={styles.headerSpacer} />
                     </View>
@@ -251,9 +253,10 @@ export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps
                         <View style={styles.postCard}>
                             {/* Author */}
                             <View style={styles.authorRow}>
-                                <Pressable
+                                <TouchableOpacity
                                     style={styles.authorInfo}
                                     onPress={() => router.push(`/user/${post.userId}`)}
+                                    activeOpacity={0.7}
                                 >
                                     <Image source={avatarSource} style={styles.avatar} />
                                     <View>
@@ -262,7 +265,7 @@ export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps
                                             {formatRelativeTime(post.timestamp)}
                                         </Typography>
                                     </View>
-                                </Pressable>
+                                </TouchableOpacity>
                             </View>
 
                             {/* Content */}
@@ -270,21 +273,22 @@ export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps
 
                             {/* Story Tag */}
                             {post.metadata?.storyTitle && (
-                                <Pressable
+                                <TouchableOpacity
                                     style={styles.storyTag}
                                     onPress={() => router.push(`/story/${post.metadata?.storyId}`)}
+                                    activeOpacity={0.7}
                                 >
                                     <Ionicons name="book-outline" size={14} color={theme.colors.primary} />
                                     <Typography style={[styles.storyTagText, { color: theme.colors.primary }]}>
                                         {post.metadata.storyTitle}
                                     </Typography>
-                                </Pressable>
+                                </TouchableOpacity>
                             )}
 
                             {/* Actions */}
                             <View style={styles.actionsRow}>
                                 <Animated.View style={likeAnimStyle}>
-                                    <Pressable style={styles.actionButton} onPress={handleLikePress}>
+                                    <TouchableOpacity style={styles.actionButton} onPress={handleLikePress} activeOpacity={0.7}>
                                         <Ionicons
                                             name={isLiked ? 'heart' : 'heart-outline'}
                                             size={20}
@@ -296,15 +300,15 @@ export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps
                                         ]}>
                                             {post.likes || 0}
                                         </Typography>
-                                    </Pressable>
+                                    </TouchableOpacity>
                                 </Animated.View>
                                 <View style={styles.actionButton}>
                                     <Ionicons name="chatbubble-outline" size={18} color={theme.colors.textMuted} />
                                     <Typography style={styles.actionCount}>{replies.length}</Typography>
                                 </View>
-                                <Pressable style={styles.actionButton}>
+                                <TouchableOpacity style={styles.actionButton} activeOpacity={0.7}>
                                     <Ionicons name="share-outline" size={18} color={theme.colors.textMuted} />
-                                </Pressable>
+                                </TouchableOpacity>
                             </View>
                         </View>
 
@@ -340,9 +344,9 @@ export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps
                                 <Typography style={styles.replyingToText}>
                                     Replying to @{replyingTo.userName}
                                 </Typography>
-                                <Pressable onPress={() => { setReplyingTo(null); setReplyText('') }}>
+                                <TouchableOpacity onPress={() => { setReplyingTo(null); setReplyText('') }} activeOpacity={0.7}>
                                     <Ionicons name="close" size={16} color={theme.colors.textMuted} />
-                                </Pressable>
+                                </TouchableOpacity>
                             </View>
                         )}
                         <View style={styles.inputRow}>
@@ -360,20 +364,21 @@ export const PostDetailSheet = forwardRef<BottomSheetModal, PostDetailSheetProps
                                 multiline
                                 maxLength={500}
                             />
-                            <Pressable
+                            <TouchableOpacity
                                 style={[
                                     styles.sendButton,
                                     { backgroundColor: replyText.trim() ? theme.colors.primary : theme.colors.borderLight }
                                 ]}
                                 onPress={handleSubmitReply}
                                 disabled={!replyText.trim() || submitting}
+                                activeOpacity={0.8}
                             >
                                 {submitting ? (
                                     <ActivityIndicator size="small" color="#FFFFFF" />
                                 ) : (
                                     <Ionicons name="send" size={16} color="#FFFFFF" />
                                 )}
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </KeyboardAvoidingView>

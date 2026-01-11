@@ -2,11 +2,10 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import {
     View,
     ScrollView,
-    Pressable,
     RefreshControl,
-    ActivityIndicator, StyleSheet
+    ActivityIndicator, StyleSheet,
+    TouchableOpacity
 } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -105,17 +104,18 @@ export default function SocialScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             <View style={[styles.header, { paddingHorizontal: containerPadding }]}>
                 <View style={styles.headerLeft}>
-                    <Pressable onPress={() => router.back()} style={styles.backButton}>
+                    <TouchableOpacity onPress={() => router.back()} style={styles.backButton} activeOpacity={0.7}>
                         <Ionicons name="chevron-back" size={24} color={theme.colors.text} />
-                    </Pressable>
+                    </TouchableOpacity>
                     <Typography variant="h2" style={styles.headerTitle}>{t('social.following', 'Following')}</Typography>
                 </View>
-                <Pressable
+                <TouchableOpacity
                     style={styles.addButton}
                     onPress={() => searchSheetRef.current?.expand()}
+                    activeOpacity={0.7}
                 >
                     <Ionicons name="person-add" size={20} color={theme.colors.primary} />
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             {loading ? (

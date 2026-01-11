@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';

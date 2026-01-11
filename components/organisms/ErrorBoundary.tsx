@@ -1,5 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { View, Text, Pressable, ScrollView , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -94,16 +94,17 @@ const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, onReset }) => {
                         </Text>
                     </View>
                 )}
-                <Pressable
+                <TouchableOpacity
                     style={[styles.button, { backgroundColor: theme.colors.primary }]}
                     onPress={onReset}
                     accessibilityRole="button"
                     accessibilityLabel={t('common.retry')}
+                    activeOpacity={0.7}
                 >
                     <Text style={[styles.buttonText, { color: theme.colors.textInverse }]}>
                         {t('common.retry')}
                     </Text>
-                </Pressable>
+                </TouchableOpacity>
             </ScrollView>
         </View>
     );

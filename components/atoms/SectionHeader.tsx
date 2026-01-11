@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 
@@ -21,9 +21,13 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
             {onActionPress && (
-                <Pressable onPress={onActionPress} hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}>
+                <TouchableOpacity
+                    onPress={onActionPress}
+                    hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                    activeOpacity={0.6}
+                >
                     <Text style={styles.action}>{actionLabel}</Text>
-                </Pressable>
+                </TouchableOpacity>
             )}
         </View>
     );

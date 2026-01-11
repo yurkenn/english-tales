@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import type { Story } from '@/types';
@@ -57,12 +57,10 @@ const TrendingStoryCardComponent: React.FC<TrendingStoryCardProps> = ({
     };
 
     return (
-        <Pressable
-            style={({ pressed }) => [
-                styles.card,
-                pressed && styles.cardPressed,
-            ]}
+        <TouchableOpacity
+            style={styles.card}
             onPress={onPress}
+            activeOpacity={0.8}
         >
             {renderRankBadge()}
 
@@ -90,7 +88,7 @@ const TrendingStoryCardComponent: React.FC<TrendingStoryCardProps> = ({
                 size={20}
                 color={theme.colors.textMuted}
             />
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

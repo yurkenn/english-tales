@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
@@ -29,22 +29,22 @@ export const CommunityPostHeader: React.FC<CommunityPostHeaderProps> = ({
 
     return (
         <View style={styles.postHeader}>
-            <Pressable onPress={onAvatarPress} style={styles.avatarContainer}>
+            <TouchableOpacity onPress={onAvatarPress} style={styles.avatarContainer} activeOpacity={0.9}>
                 <Image
                     source={avatarSource}
                     style={styles.avatar}
                 />
-            </Pressable>
+            </TouchableOpacity>
 
-            <Pressable style={styles.headerInfo} onPress={onAvatarPress}>
+            <TouchableOpacity style={styles.headerInfo} onPress={onAvatarPress} activeOpacity={0.7}>
                 <Typography variant="bodyBold">{userName}</Typography>
                 <Typography variant="caption" color={theme.colors.textMuted}>
                     {timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </Typography>
-            </Pressable>
-            <Pressable onPress={() => { haptics.selection(); onMorePress(); }}>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => { haptics.selection(); onMorePress(); }} activeOpacity={0.7}>
                 <Ionicons name="ellipsis-horizontal" size={20} color={theme.colors.textMuted} />
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 };

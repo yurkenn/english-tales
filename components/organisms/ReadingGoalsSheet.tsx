@@ -1,5 +1,5 @@
 import React, { forwardRef, useCallback, useMemo } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -71,14 +71,14 @@ export const ReadingGoalsSheet = forwardRef<BottomSheet, ReadingGoalsSheetProps>
                         {GOAL_OPTIONS.map((minutes) => {
                             const isSelected = currentGoal === minutes;
                             return (
-                                <Pressable
+                                <TouchableOpacity
                                     key={minutes}
-                                    style={({ pressed }) => [
+                                    style={[
                                         styles.option,
                                         isSelected && styles.optionSelected,
-                                        pressed && !isSelected && styles.optionPressed,
                                     ]}
                                     onPress={() => handleSelect(minutes)}
+                                    activeOpacity={0.8}
                                 >
                                     <Text style={[styles.minutes, isSelected && styles.textSelected]}>
                                         {minutes}
@@ -91,7 +91,7 @@ export const ReadingGoalsSheet = forwardRef<BottomSheet, ReadingGoalsSheetProps>
                                             <Ionicons name="checkmark" size={12} color="#FFFFFF" />
                                         </View>
                                     )}
-                                </Pressable>
+                                </TouchableOpacity>
                             );
                         })}
                     </View>

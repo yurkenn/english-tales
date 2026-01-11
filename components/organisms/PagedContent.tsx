@@ -1,5 +1,5 @@
 import React, { useRef, useCallback, useEffect } from 'react';
-import { View, Pressable, useWindowDimensions , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, useWindowDimensions, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { PortableTextBlock } from '@portabletext/types';
 import PagerView from 'react-native-pager-view';
@@ -139,15 +139,17 @@ export const PagedContent = React.memo(({
             </PagerView>
 
             {/* Left tap zone for previous page */}
-            <Pressable
+            <TouchableOpacity
                 style={[styles.tapZone, styles.leftTapZone, { width: tapZoneWidth }]}
                 onPress={handleLeftTap}
+                activeOpacity={1}
             />
 
             {/* Right tap zone for next page */}
-            <Pressable
+            <TouchableOpacity
                 style={[styles.tapZone, styles.rightTapZone, { width: tapZoneWidth }]}
                 onPress={handleRightTap}
+                activeOpacity={1}
             />
         </View>
     );

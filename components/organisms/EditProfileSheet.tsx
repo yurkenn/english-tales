@@ -1,5 +1,5 @@
 import React, { forwardRef, useState, useCallback, useMemo, useEffect } from 'react';
-import { View, Text, Pressable, TextInput, Keyboard , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, Keyboard, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView, BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -16,7 +16,7 @@ interface EditProfileSheetProps {
 export const EditProfileSheet = forwardRef<BottomSheet, EditProfileSheetProps>(
     ({ initialName, onSave, onClose }, ref) => {
         const { theme } = useTheme();
-    const styles = createStyles(theme);
+        const styles = createStyles(theme);
         const insets = useSafeAreaInsets();
         const [name, setName] = useState(initialName);
         const [isSaving, setIsSaving] = useState(false);
@@ -84,9 +84,9 @@ export const EditProfileSheet = forwardRef<BottomSheet, EditProfileSheetProps>(
                     {/* Header */}
                     <View style={styles.header}>
                         <Text style={styles.title}>Edit Profile</Text>
-                        <Pressable onPress={onClose} hitSlop={10}>
+                        <TouchableOpacity onPress={onClose} hitSlop={10} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.textMuted} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     {/* Input */}
@@ -103,18 +103,19 @@ export const EditProfileSheet = forwardRef<BottomSheet, EditProfileSheetProps>(
                     />
 
                     {/* Save Button */}
-                    <Pressable
-                        style={({ pressed }) => [
+                    <TouchableOpacity
+                        style={[
                             styles.saveButton,
-                            (isSaving || pressed) && { opacity: 0.8 },
+                            isSaving && { opacity: 0.8 },
                         ]}
                         disabled={isSaving}
                         onPress={handleSave}
+                        activeOpacity={0.8}
                     >
                         <Text style={styles.saveButtonText}>
                             {isSaving ? 'Saving...' : 'Save Changes'}
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </BottomSheetView>
             </BottomSheet>
         );

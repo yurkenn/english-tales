@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { View, ScrollView, Pressable, Animated } from 'react-native'
+import { View, ScrollView, TouchableOpacity, Animated } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
@@ -47,7 +47,7 @@ export default function AchievementsScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
             <View style={styles.header}>
-                <Pressable
+                <TouchableOpacity
                     style={styles.backButton}
                     onPress={() => {
                         haptics.selection()
@@ -55,9 +55,10 @@ export default function AchievementsScreen() {
                     }}
                     accessibilityRole="button"
                     accessibilityLabel="Go back"
+                    activeOpacity={0.7}
                 >
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Typography style={styles.headerTitle}>
                     {t('achievements.title', 'Achievements')}
                 </Typography>
@@ -74,13 +75,14 @@ export default function AchievementsScreen() {
                     {FILTERS.map(filter => {
                         const isActive = activeFilter === filter.key
                         return (
-                            <Pressable
+                            <TouchableOpacity
                                 key={filter.key}
                                 style={[
                                     styles.filterTab,
                                     isActive && styles.filterTabActive,
                                 ]}
                                 onPress={() => handleFilterChange(filter.key)}
+                                activeOpacity={0.7}
                             >
                                 {filter.icon && (
                                     <Typography style={styles.filterIcon}>{filter.icon}</Typography>
@@ -93,7 +95,7 @@ export default function AchievementsScreen() {
                                 >
                                     {filter.label}
                                 </Typography>
-                            </Pressable>
+                            </TouchableOpacity>
                         )
                     })}
                 </ScrollView>

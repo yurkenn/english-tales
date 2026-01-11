@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { ProgressBar, OptimizedImage, BookCover } from '../atoms';
@@ -48,12 +48,13 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
     };
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={styles.bookItem}
             onPress={handlePress}
             accessible
             accessibilityRole="button"
             accessibilityLabel={`${item.story.title} by ${item.story.author}${isCompleted ? ', Completed' : progress > 0 ? `, ${progress}% complete` : ''}`}
+            activeOpacity={0.8}
         >
             <BookCover
                 source={{ uri: item.story.coverImage }}
@@ -80,17 +81,18 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
                         )}
                     </View>
                     <View ref={moreButtonRef} collapsable={false}>
-                        <Pressable
+                        <TouchableOpacity
                             style={styles.moreButton}
                             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                             onPress={handleMorePress}
+                            activeOpacity={0.7}
                         >
                             <Ionicons
                                 name="ellipsis-vertical"
                                 size={theme.iconSize.sm}
                                 color={theme.colors.textMuted}
                             />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
@@ -118,7 +120,7 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
                 </View>
 
                 {/* Action Button */}
-                <Pressable style={styles.actionButton} onPress={handleReadPress}>
+                <TouchableOpacity style={styles.actionButton} onPress={handleReadPress} activeOpacity={0.7}>
                     <Ionicons
                         name={progress > 0 ? 'play' : 'book-outline'}
                         size={16}
@@ -127,9 +129,9 @@ const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
                     <Text style={styles.actionButtonText}>
                         {progress > 0 ? t('reading.continue', 'Continue') : t('reading.startReading', 'Start Reading')}
                     </Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
-        </Pressable >
+        </TouchableOpacity >
     );
 };
 

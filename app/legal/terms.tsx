@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView, Pressable , StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -115,9 +115,9 @@ export default function TermsOfServiceScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
             <View style={styles.header}>
-                <Pressable style={styles.backButton} onPress={() => router.back()}>
+                <TouchableOpacity style={styles.backButton} onPress={() => router.back()} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Text style={styles.headerTitle}>{headerTitle}</Text>
                 <View style={styles.placeholder} />
             </View>

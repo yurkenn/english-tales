@@ -33,6 +33,59 @@ const DIFFICULTY_MAP: Record<number, string> = {
 
 const AUTHORS_INDEX = 4
 
+function createStyles(theme: Theme) {
+    return StyleSheet.create({
+        container: {
+            flex: 1,
+            backgroundColor: theme.colors.background,
+        },
+        searchContainer: {
+            paddingHorizontal: theme.spacing.lg,
+            paddingTop: 0,
+            paddingBottom: theme.spacing.sm,
+        },
+        chipsWrapper: {
+            flexShrink: 0,
+        },
+        chipsContainer: {
+            paddingHorizontal: theme.spacing.lg,
+            paddingVertical: theme.spacing.sm,
+            gap: theme.spacing.sm,
+        },
+        content: {
+            flex: 1,
+        },
+        contentContainer: {
+            paddingTop: theme.spacing.md,
+            paddingBottom: theme.spacing.xxxxl * 2 + theme.spacing.xxl, // ~120
+            gap: theme.spacing.xl,
+        },
+        surpriseSection: {
+            paddingTop: theme.spacing.sm,
+        },
+        section: {
+            gap: theme.spacing.md,
+        },
+        sectionContent: {
+            paddingHorizontal: theme.spacing.lg,
+        },
+        carouselContent: {
+            paddingHorizontal: theme.spacing.lg,
+        },
+        popularContainer: {
+            paddingHorizontal: theme.spacing.lg,
+            gap: theme.spacing.md,
+        },
+        horizontalSeparator: {
+            width: theme.spacing.lg,
+        },
+        center: {
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+    });
+}
+
 export default function DiscoverScreen() {
     const { t } = useTranslation()
     const { theme } = useTheme()
@@ -246,53 +299,4 @@ export default function DiscoverScreen() {
     )
 }
 
-const createStyles = (theme: Theme) => StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: theme.colors.background,
-    },
-    searchContainer: {
-        paddingHorizontal: theme.spacing.lg,
-        paddingTop: 0,
-        paddingBottom: theme.spacing.sm,
-    },
-    chipsWrapper: {
-        flexShrink: 0,
-    },
-    chipsContainer: {
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.sm,
-        gap: theme.spacing.sm,
-    },
-    content: {
-        flex: 1,
-    },
-    contentContainer: {
-        paddingTop: theme.spacing.md,
-        paddingBottom: theme.spacing.xxxxl * 2 + theme.spacing.xxl, // ~120
-        gap: theme.spacing.xl,
-    },
-    surpriseSection: {
-        paddingTop: theme.spacing.sm,
-    },
-    section: {
-        gap: theme.spacing.md,
-    },
-    sectionContent: {
-        paddingHorizontal: theme.spacing.lg,
-    },
-    carouselContent: {
-        paddingHorizontal: theme.spacing.lg,
-    },
-    popularContainer: {
-        paddingHorizontal: theme.spacing.lg,
-        gap: theme.spacing.md,
-    },
-    horizontalSeparator: {
-        width: theme.spacing.lg,
-    },
-    center: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+

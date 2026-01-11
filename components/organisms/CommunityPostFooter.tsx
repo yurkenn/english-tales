@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated from 'react-native-reanimated';
@@ -34,9 +34,10 @@ export const CommunityPostFooter: React.FC<CommunityPostFooterProps> = ({
 
     return (
         <View style={styles.postFooter}>
-            <Pressable
+            <TouchableOpacity
                 style={styles.actionButton}
                 onPress={onLike}
+                activeOpacity={0.6}
             >
                 <Animated.View style={likeAnimationStyle}>
                     <Ionicons
@@ -66,20 +67,20 @@ export const CommunityPostFooter: React.FC<CommunityPostFooterProps> = ({
                     }
                     {isAchievement && likes > 0 && ` (${likes})`}
                 </Typography>
-            </Pressable>
+            </TouchableOpacity>
 
-            <Pressable style={styles.actionButton} onPress={onReply}>
+            <TouchableOpacity style={styles.actionButton} onPress={onReply} activeOpacity={0.6}>
                 <Animated.View style={replyAnimationStyle}>
                     <Ionicons name="chatbubble-outline" size={20} color={theme.colors.textMuted} />
                 </Animated.View>
                 <Typography variant="caption" weight="600" color={theme.colors.textMuted} style={{ marginLeft: 6 }}>
                     {replyCount || 0}
                 </Typography>
-            </Pressable>
+            </TouchableOpacity>
 
-            <Pressable style={styles.actionButton} onPress={() => haptics.selection()}>
+            <TouchableOpacity style={styles.actionButton} onPress={() => haptics.selection()} activeOpacity={0.6}>
                 <Ionicons name="share-outline" size={20} color={theme.colors.textMuted} />
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 };

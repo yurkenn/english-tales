@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Pressable, Linking, Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Linking, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme, semanticColors } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -124,62 +124,64 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
 
             {/* Stats Row - Clean Minimal Design */}
             <View style={styles.statsContainer}>
-                <Pressable style={styles.statCard}>
+                <TouchableOpacity style={styles.statCard} activeOpacity={0.7}>
                     <Typography style={styles.statValue}>{profile.followingCount || 0}</Typography>
                     <Typography style={styles.statLabel}>{t('social.following', 'Following')}</Typography>
-                </Pressable>
+                </TouchableOpacity>
 
                 <View style={styles.statDivider} />
 
-                <Pressable style={styles.statCard}>
+                <TouchableOpacity style={styles.statCard} activeOpacity={0.7}>
                     <Typography style={styles.statValue}>{profile.followersCount || 0}</Typography>
                     <Typography style={styles.statLabel}>{t('social.followers', 'Followers')}</Typography>
-                </Pressable>
+                </TouchableOpacity>
 
                 <View style={styles.statDivider} />
 
-                <Pressable style={styles.statCard}>
+                <TouchableOpacity style={styles.statCard} activeOpacity={0.7}>
                     <View style={styles.streakRow}>
                         <Typography style={styles.statValue}>{profile.streak || 0}</Typography>
                         <Typography style={styles.streakEmoji}>🔥</Typography>
                     </View>
                     <Typography style={styles.statLabel}>{t('profile.streak', 'Streak')}</Typography>
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             {/* Action Buttons */}
             <View style={styles.actionsRow}>
                 {isSelf ? (
                     <>
-                        <Pressable
-                            style={({ pressed }) => [styles.editButton, pressed && { opacity: 0.7 }]}
+                        <TouchableOpacity
+                            style={styles.editButton}
                             onPress={onEditPress}
+                            activeOpacity={0.7}
                         >
                             <Ionicons name="pencil-outline" size={16} color={theme.colors.text} />
                             <Typography style={styles.editButtonText}>
                                 {t('profile.editProfile', 'Edit profile')}
                             </Typography>
-                        </Pressable>
+                        </TouchableOpacity>
 
                         {/* Social Icons */}
                         {availableLinks.map(link => (
-                            <Pressable
+                            <TouchableOpacity
                                 key={link.type}
-                                style={({ pressed }) => [styles.socialIcon, pressed && { opacity: 0.5 }]}
+                                style={styles.socialIcon}
                                 onPress={() => handleSocialPress(link.type, link.url!)}
+                                activeOpacity={0.6}
                             >
                                 <Ionicons name={link.icon as any} size={20} color={link.color} />
-                            </Pressable>
+                            </TouchableOpacity>
                         ))}
                     </>
                 ) : (
                     <>
-                        <Pressable
-                            style={({ pressed }) => [
+                        <TouchableOpacity
+                            style={[
                                 relationship === 'following' ? styles.editButton : styles.followButton,
-                                pressed && { opacity: 0.7 }
                             ]}
                             onPress={onFollowPress}
+                            activeOpacity={0.7}
                         >
                             <Ionicons
                                 name={relationship === 'following' ? 'checkmark-circle' : 'person-add-outline'}
@@ -192,17 +194,18 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
                                     : t('social.follow', 'Follow')
                                 }
                             </Typography>
-                        </Pressable>
+                        </TouchableOpacity>
 
                         {/* Social Icons for other users */}
                         {availableLinks.map(link => (
-                            <Pressable
+                            <TouchableOpacity
                                 key={link.type}
-                                style={({ pressed }) => [styles.socialIcon, pressed && { opacity: 0.5 }]}
+                                style={styles.socialIcon}
                                 onPress={() => handleSocialPress(link.type, link.url!)}
+                                activeOpacity={0.6}
                             >
                                 <Ionicons name={link.icon as any} size={20} color={link.color} />
-                            </Pressable>
+                            </TouchableOpacity>
                         ))}
                     </>
                 )}
@@ -214,10 +217,10 @@ export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
                     <Typography style={styles.bio}>{profile.bio}</Typography>
                 </View>
             ) : isSelf ? (
-                <Pressable style={styles.addBioButton} onPress={onEditPress}>
+                <TouchableOpacity style={styles.addBioButton} onPress={onEditPress} activeOpacity={0.7}>
                     <Ionicons name="add-circle-outline" size={16} color={theme.colors.primary} />
                     <Typography style={styles.addBioText}>{t('profile.addBio', 'Add bio')}</Typography>
-                </Pressable>
+                </TouchableOpacity>
             ) : null}
 
             {/* Location */}

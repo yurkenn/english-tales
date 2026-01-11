@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -34,9 +34,9 @@ export const ReadingHeader: React.FC<ReadingHeaderProps> = React.memo(({
 
     return (
         <View style={styles.header}>
-            <Pressable style={styles.button} onPress={onClose}>
+            <TouchableOpacity style={styles.button} onPress={onClose} activeOpacity={0.7}>
                 <Ionicons name="chevron-down" size={28} color={theme.colors.text} />
-            </Pressable>
+            </TouchableOpacity>
 
             <View style={styles.titleContainer}>
                 <Text style={styles.title} numberOfLines={1}>{title}</Text>
@@ -51,9 +51,9 @@ export const ReadingHeader: React.FC<ReadingHeaderProps> = React.memo(({
                 </View>
             </View>
 
-            <Pressable style={styles.button} onPress={onSettings}>
+            <TouchableOpacity style={styles.button} onPress={onSettings} activeOpacity={0.7}>
                 <Ionicons name="options-outline" size={24} color={theme.colors.text} />
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 });

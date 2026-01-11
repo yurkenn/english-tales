@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import Animated, { FadeIn } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
@@ -35,12 +35,12 @@ export const FilteredEmptyState: React.FC<FilteredEmptyStateProps> = ({
             <Text style={styles.description}>
                 {t('home.noResultsDesc', 'No stories match the "{{filter}}" filter. Try a different category.', { filter: filterName })}
             </Text>
-            <Pressable style={styles.button} onPress={handleClear}>
+            <TouchableOpacity style={styles.button} onPress={handleClear} activeOpacity={0.8}>
                 <Ionicons name="refresh" size={18} color={theme.colors.textInverse} />
                 <Text style={styles.buttonText}>
                     {t('home.clearFilter', 'Clear Filter')}
                 </Text>
-            </Pressable>
+            </TouchableOpacity>
         </Animated.View>
     );
 };

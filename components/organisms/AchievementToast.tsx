@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated, Text, View, Pressable, StyleSheet } from 'react-native';
+import { Animated, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useAchievementsStore } from '@/store/achievementsStore';
 
@@ -58,14 +58,14 @@ export const AchievementToast: React.FC = () => {
             ]}
             pointerEvents="box-none"
         >
-            <Pressable style={styles.content} onPress={actions.dismissPending}>
+            <TouchableOpacity style={styles.content} onPress={actions.dismissPending} activeOpacity={0.7}>
                 <Text style={styles.icon}>{pendingUnlock.icon}</Text>
                 <View style={styles.textContainer}>
                     <Text style={styles.title}>🎉 Achievement Unlocked!</Text>
                     <Text style={styles.name}>{pendingUnlock.title}</Text>
                     <Text style={styles.description}>{pendingUnlock.description}</Text>
                 </View>
-            </Pressable>
+            </TouchableOpacity>
         </Animated.View>
     );
 };

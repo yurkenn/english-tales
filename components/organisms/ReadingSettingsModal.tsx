@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, Modal , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -45,9 +45,9 @@ export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
                 <View style={styles.content}>
                     <View style={styles.header}>
                         <Text style={styles.title}>{t('settings.sections.preferences')}</Text>
-                        <Pressable onPress={onClose}>
+                        <TouchableOpacity onPress={onClose} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.text} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     {/* Language Selection */}

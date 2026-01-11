@@ -2,11 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
     View,
     ScrollView,
-    Pressable,
+    TouchableOpacity,
     ActivityIndicator,
     TextInput,
     KeyboardAvoidingView,
-    Platform, StyleSheet } from 'react-native';
+    Platform, StyleSheet
+} from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -103,28 +104,30 @@ export default function EditProfileScreen() {
         <View style={styles.container}>
             {/* Header */}
             <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
-                <Pressable
+                <TouchableOpacity
                     onPress={() => { haptics.light(); router.back(); }}
                     style={styles.headerButton}
+                    activeOpacity={0.7}
                 >
                     <Ionicons name="close" size={28} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
 
                 <Typography style={styles.headerTitle}>
                     {t('profile.editProfile', 'Edit Profile')}
                 </Typography>
 
-                <Pressable
+                <TouchableOpacity
                     onPress={handleSave}
                     disabled={saving}
                     style={styles.headerButton}
+                    activeOpacity={0.7}
                 >
                     {saving ? (
                         <ActivityIndicator size="small" color={theme.colors.primary} />
                     ) : (
                         <Ionicons name="checkmark" size={28} color={theme.colors.primary} />
                     )}
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             <KeyboardAvoidingView
@@ -141,7 +144,7 @@ export default function EditProfileScreen() {
                         entering={FadeIn.duration(400)}
                         style={styles.avatarSection}
                     >
-                        <Pressable style={styles.avatarContainer}>
+                        <TouchableOpacity style={styles.avatarContainer} activeOpacity={0.8}>
                             <LinearGradient
                                 colors={[theme.colors.primary, '#FF6B6B', theme.colors.primaryLight]}
                                 start={{ x: 0, y: 0 }}
@@ -159,7 +162,7 @@ export default function EditProfileScreen() {
                             <View style={styles.cameraButton}>
                                 <Ionicons name="camera" size={16} color="#FFF" />
                             </View>
-                        </Pressable>
+                        </TouchableOpacity>
                         <Typography style={styles.changePhotoText}>
                             {t('profile.changePhoto', 'Change photo')}
                         </Typography>

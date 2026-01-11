@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, ActivityIndicator , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown, FadeOutDown } from 'react-native-reanimated';
@@ -39,10 +39,11 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
                 </View>
 
                 <View style={styles.controls}>
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.controlButton}
                         onPress={onPlayPause}
                         disabled={isBuffering}
+                        activeOpacity={0.7}
                     >
                         {isBuffering ? (
                             <ActivityIndicator size="small" color={theme.colors.primary} />
@@ -53,14 +54,15 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
                                 color={theme.colors.primary}
                             />
                         )}
-                    </Pressable>
+                    </TouchableOpacity>
 
-                    <Pressable
+                    <TouchableOpacity
                         style={[styles.controlButton, styles.stopButton]}
                         onPress={onStop}
+                        activeOpacity={0.7}
                     >
                         <Ionicons name="stop" size={20} color={theme.colors.textSecondary} />
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         </Animated.View>

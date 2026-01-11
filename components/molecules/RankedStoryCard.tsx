@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from 'react';
-import { View, Text, Pressable, StyleProp, ViewStyle , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleProp, ViewStyle, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import type { Story } from '@/types';
@@ -53,13 +53,13 @@ const RankedStoryCardComponent: React.FC<RankedStoryCardProps> = ({
     }, [rankConfig, theme.shadows.sm]);
 
     return (
-        <Pressable
-            style={({ pressed }) => [
+        <TouchableOpacity
+            style={[
                 styles.card,
-                pressed && styles.cardPressed,
                 style,
             ]}
             onPress={onPress}
+            activeOpacity={0.8}
         >
             {/* Rank Badge */}
             <View style={[styles.rankBadge, rankBadgeStyle]}>
@@ -122,7 +122,7 @@ const RankedStoryCardComponent: React.FC<RankedStoryCardProps> = ({
                 size={20}
                 color={theme.colors.textMuted}
             />
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

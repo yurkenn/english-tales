@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable , StyleSheet } from 'react-native';
+import { TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme, Theme } from '@/theme';
 import { Typography } from './Typography';
@@ -15,8 +15,9 @@ export const StoryTag: React.FC<StoryTagProps> = ({ title, onPress }) => {
     const styles = createStyles(theme);
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={styles.storyTag}
+            activeOpacity={0.7}
             onPress={() => {
                 haptics.selection();
                 onPress();
@@ -26,7 +27,7 @@ export const StoryTag: React.FC<StoryTagProps> = ({ title, onPress }) => {
             <Typography variant="caption" weight="600" color={theme.colors.primary} style={{ marginLeft: 6 }}>
                 {title}
             </Typography>
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import type { SettingItemProps } from '../organisms/settingsTypes';
@@ -16,7 +16,7 @@ export const SettingItem: React.FC<SettingItemProps> = ({
     const styles = createStyles(theme);
 
     return (
-        <Pressable style={styles.settingItem} onPress={onPress}>
+        <TouchableOpacity style={styles.settingItem} onPress={onPress} activeOpacity={0.7}>
             <View style={[styles.settingIcon, isDestructive && styles.settingIconDestructive]}>
                 <Ionicons
                     name={icon}
@@ -31,7 +31,7 @@ export const SettingItem: React.FC<SettingItemProps> = ({
             {hasChevron && (
                 <Ionicons name="chevron-forward" size={18} color={theme.colors.textMuted} />
             )}
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

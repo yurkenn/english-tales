@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { View, Pressable, useWindowDimensions } from 'react-native'
+import { View, TouchableOpacity, useWindowDimensions } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Typography } from './Typography'
@@ -43,9 +43,9 @@ export const ProfileStatItem = memo<ProfileStatItemProps>(({
 
     if (onPress) {
         return (
-            <Pressable onPress={onPress} style={styles.pressable}>
+            <TouchableOpacity onPress={onPress} style={styles.pressable} activeOpacity={0.7}>
                 {content}
-            </Pressable>
+            </TouchableOpacity>
         )
     }
 

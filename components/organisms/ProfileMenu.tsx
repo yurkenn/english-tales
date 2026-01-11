@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -25,15 +25,12 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({ items }) => {
             <Text style={styles.sectionTitle}>{t('profile.quickSettings', 'Quick Settings')}</Text>
             <View style={styles.menuCard}>
                 {items.map((item, index) => (
-                    <Pressable
+                    <TouchableOpacity
                         key={item.label}
-                        style={({ pressed }) => [
-                            styles.menuItem,
-                            index === items.length - 1 && styles.lastItem,
-                            pressed && styles.menuItemPressed,
-                        ]}
+                        style={styles.menuItem}
                         onPress={item.onPress}
                         hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+                        activeOpacity={0.7}
                     >
                         <View style={styles.iconContainer}>
                             <Ionicons name={item.icon} size={20} color={theme.colors.primary} />
@@ -47,7 +44,7 @@ export const ProfileMenu: React.FC<ProfileMenuProps> = ({ items }) => {
                             )}
                             <Ionicons name="chevron-forward" size={18} color={theme.colors.textMuted} />
                         </View>
-                    </Pressable>
+                    </TouchableOpacity>
                 ))}
             </View>
         </View>

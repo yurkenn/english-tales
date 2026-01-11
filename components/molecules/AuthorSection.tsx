@@ -1,7 +1,7 @@
 import React from 'react';
 // Force reload: 1
 
-import { View, Text, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet as RNStyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -33,9 +33,9 @@ export const AuthorSection: React.FC<AuthorSectionProps> = ({
                     <Text style={styles.name}>{name}</Text>
                     <Text style={styles.role}>{t('authors.author')}</Text>
                 </View>
-                <Pressable onPress={onPress} style={styles.action}>
+                <TouchableOpacity onPress={onPress} style={styles.action} activeOpacity={0.7}>
                     <Ionicons name="chevron-forward" size={20} color={theme.colors.primary} />
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             {bio && (

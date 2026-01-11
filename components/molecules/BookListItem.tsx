@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { OptimizedImage, BookCover } from '../atoms';
@@ -24,7 +24,7 @@ export const BookListItem: React.FC<BookListItemProps> = ({
     const styles = createStyles(theme);
 
     return (
-        <Pressable style={styles.container} onPress={onPress}>
+        <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.7}>
             {/* Cover */}
             <BookCover
                 source={{ uri: story.coverImage }}
@@ -45,17 +45,18 @@ export const BookListItem: React.FC<BookListItemProps> = ({
                             {story.author}
                         </Text>
                     </View>
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.bookmarkButton}
                         onPress={onBookmarkPress}
                         hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                        activeOpacity={0.7}
                     >
                         <Ionicons
                             name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
                             size={theme.iconSize.md}
                             color={isBookmarked ? theme.colors.primary : theme.colors.textMuted}
                         />
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
                 {/* Tags and Rating */}
@@ -75,7 +76,7 @@ export const BookListItem: React.FC<BookListItemProps> = ({
                     )}
                 </View>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

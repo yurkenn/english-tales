@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useCallback } from 'react';
-import { View, Text, FlatList, Pressable, RefreshControl , StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, RefreshControl, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -77,9 +77,9 @@ export default function CategoryScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
             <View style={styles.header}>
-                <Pressable style={styles.backButton} onPress={() => router.back()}>
+                <TouchableOpacity style={styles.backButton} onPress={() => router.back()} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Text style={styles.title}>{title || 'Stories'}</Text>
                 <View style={styles.placeholder} />
             </View>

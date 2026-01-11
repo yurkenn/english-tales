@@ -1,7 +1,7 @@
 import React from 'react';
 // Force reload: 3
 
-import { View, Text, ScrollView, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet as RNStyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -39,13 +39,14 @@ export const RelatedStories: React.FC<RelatedStoriesProps> = ({ categoryId, curr
                 contentContainerStyle={styles.scrollContent}
             >
                 {relatedStories.map((story: Story) => (
-                    <Pressable
+                    <TouchableOpacity
                         key={story.id}
                         style={styles.card}
                         onPress={() => {
                             haptics.selection();
                             router.push(`/story/${story.id}`);
                         }}
+                        activeOpacity={0.7}
                     >
                         <View style={styles.imageContainer}>
                             <OptimizedImage
@@ -56,7 +57,7 @@ export const RelatedStories: React.FC<RelatedStoriesProps> = ({ categoryId, curr
                         <Text style={styles.storyTitle} numberOfLines={2}>
                             {story.title}
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 ))}
             </ScrollView>
         </View>

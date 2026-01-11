@@ -1,5 +1,4 @@
-import React, { useState, useCallback } from 'react'
-import { View, Pressable, Image, ImageSourcePropType } from 'react-native'
+import { View, TouchableOpacity, Image, ImageSourcePropType } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -99,17 +98,17 @@ const CommentItem = ({
 
             <View style={styles.commentItem}>
                 {/* Avatar */}
-                <Pressable onPress={() => router.push(`/user/${comment.userId}`)}>
+                <TouchableOpacity onPress={() => router.push(`/user/${comment.userId}`)} activeOpacity={0.7}>
                     <Image source={avatarSource} style={styles.avatar} />
-                </Pressable>
+                </TouchableOpacity>
 
                 {/* Content */}
                 <View style={styles.contentWrapper}>
                     {/* Header */}
                     <View style={styles.commentHeader}>
-                        <Pressable onPress={() => router.push(`/user/${comment.userId}`)}>
+                        <TouchableOpacity onPress={() => router.push(`/user/${comment.userId}`)} activeOpacity={0.7}>
                             <Typography style={styles.userName}>{comment.userName}</Typography>
-                        </Pressable>
+                        </TouchableOpacity>
                         <Typography style={styles.time}>{formatRelativeTime(comment.timestamp)}</Typography>
                     </View>
 
@@ -119,24 +118,25 @@ const CommentItem = ({
                     {/* Actions */}
                     <View style={styles.actions}>
                         {onLike && (
-                            <Pressable
+                            <TouchableOpacity
                                 style={styles.actionBtn}
                                 onPress={() => { haptics.selection(); onLike(comment.id) }}
+                                activeOpacity={0.7}
                             >
                                 <Ionicons name="heart-outline" size={14} color={theme.colors.textMuted} />
                                 {(comment.likes ?? 0) > 0 && (
                                     <Typography style={styles.actionText}>{comment.likes}</Typography>
                                 )}
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
                         {canReply && (
-                            <Pressable style={styles.actionBtn} onPress={handleReply}>
+                            <TouchableOpacity style={styles.actionBtn} onPress={handleReply} activeOpacity={0.7}>
                                 <Ionicons name="chatbubble-outline" size={14} color={theme.colors.textMuted} />
                                 <Typography style={styles.actionText}>{t('community.reply', 'Reply')}</Typography>
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
                         {hasReplies && (
-                            <Pressable style={styles.actionBtn} onPress={handleToggleCollapse}>
+                            <TouchableOpacity style={styles.actionBtn} onPress={handleToggleCollapse} activeOpacity={0.7}>
                                 <Ionicons
                                     name={collapsed ? 'chevron-down' : 'chevron-up'}
                                     size={14}
@@ -148,7 +148,7 @@ const CommentItem = ({
                                         : t('community.hideReplies', 'Hide')
                                     }
                                 </Typography>
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
                     </View>
                 </View>

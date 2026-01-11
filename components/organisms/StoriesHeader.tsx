@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { type DifficultyFilter, STORY_FILTER_LABELS as FILTER_LABELS } from '../molecules/moleculeTypes';
@@ -26,38 +26,40 @@ export const StoriesHeader: React.FC<StoriesHeaderProps> = ({
     return (
         <>
             <View style={styles.header}>
-                <Pressable style={styles.backButton} onPress={onBackPress}>
+                <TouchableOpacity style={styles.backButton} onPress={onBackPress} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Text style={styles.title}>{title}</Text>
                 <View style={styles.actions}>
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.button}
                         hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                         onPress={onSearchPress}
+                        activeOpacity={0.7}
                     >
                         <Ionicons name="search-outline" size={theme.iconSize.md} color={theme.colors.text} />
-                    </Pressable>
-                    <Pressable
+                    </TouchableOpacity>
+                    <TouchableOpacity
                         style={[styles.button, isFilterActive && styles.filterActive]}
                         hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                         onPress={onFilterPress}
+                        activeOpacity={0.7}
                     >
                         <Ionicons
                             name="filter-outline"
                             size={theme.iconSize.md}
                             color={isFilterActive ? theme.colors.primary : theme.colors.text}
                         />
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
 
             {isFilterActive && (
                 <View style={styles.badgeRow}>
-                    <Pressable style={styles.badge} onPress={onFilterPress}>
+                    <TouchableOpacity style={styles.badge} onPress={onFilterPress} activeOpacity={0.8}>
                         <Text style={styles.badgeText}>{FILTER_LABELS[filter]}</Text>
                         <Ionicons name="close-circle" size={16} color={theme.colors.primary} />
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             )}
         </>

@@ -1,5 +1,5 @@
 import React, { forwardRef, useCallback, useMemo, useState, useEffect } from 'react';
-import { View, Text, Pressable, ActivityIndicator , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,7 +19,7 @@ interface ProfileQuickViewProps {
 export const ProfileQuickView = forwardRef<BottomSheet, ProfileQuickViewProps>(
     ({ profile, onClose }, ref) => {
         const { theme } = useTheme();
-    const styles = createStyles(theme);
+        const styles = createStyles(theme);
         const router = useRouter();
         const { user: currentUser } = useAuthStore();
         const toast = useToastStore(s => s.actions);
@@ -121,13 +121,13 @@ export const ProfileQuickView = forwardRef<BottomSheet, ProfileQuickViewProps>(
                                 {profile.bio || 'No bio yet'}
                             </Typography>
                         </View>
-                        <Pressable onPress={onClose} style={styles.closeButton}>
+                        <TouchableOpacity onPress={onClose} style={styles.closeButton} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.textMuted} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={styles.actions}>
-                        <Pressable
+                        <TouchableOpacity
                             style={[
                                 styles.followButton,
                                 isFollowing && styles.followingButton,
@@ -135,6 +135,7 @@ export const ProfileQuickView = forwardRef<BottomSheet, ProfileQuickViewProps>(
                             ]}
                             onPress={handleFollowPress}
                             disabled={loading || checking || currentUser?.id === profile.id}
+                            activeOpacity={0.8}
                         >
                             {loading || checking ? (
                                 <ActivityIndicator color={isFollowing ? theme.colors.primary : '#FFFFFF'} />
@@ -146,13 +147,13 @@ export const ProfileQuickView = forwardRef<BottomSheet, ProfileQuickViewProps>(
                                     {isFollowing ? 'Following' : 'Follow'}
                                 </Typography>
                             )}
-                        </Pressable>
+                        </TouchableOpacity>
 
-                        <Pressable style={styles.profileButton} onPress={handleFullProfilePress}>
+                        <TouchableOpacity style={styles.profileButton} onPress={handleFullProfilePress} activeOpacity={0.7}>
                             <Typography variant="bodyBold" color={theme.colors.text}>
                                 View Full Profile
                             </Typography>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </BottomSheetView>
             </BottomSheet>

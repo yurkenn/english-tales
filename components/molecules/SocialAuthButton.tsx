@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Pressable, ActivityIndicator , StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -34,10 +34,11 @@ export const SocialAuthButton: React.FC<SocialAuthButtonProps> = ({
     const config = PROVIDER_CONFIG[provider];
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={[styles.button, disabled && styles.buttonDisabled]}
             onPress={onPress}
             disabled={disabled || loading}
+            activeOpacity={0.7}
         >
             {loading ? (
                 <ActivityIndicator color={theme.colors.text} />
@@ -47,7 +48,7 @@ export const SocialAuthButton: React.FC<SocialAuthButtonProps> = ({
                     <Text style={styles.text}>{config.label}</Text>
                 </>
             )}
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

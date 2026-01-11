@@ -3,12 +3,13 @@ import {
     View,
     TextInput,
     FlatList,
-    Pressable,
+    TouchableOpacity,
     ActivityIndicator,
     KeyboardAvoidingView,
     Platform,
     Image,
-    ImageSourcePropType, StyleSheet } from 'react-native';
+    ImageSourcePropType, StyleSheet
+} from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
@@ -94,10 +95,11 @@ export const UserSearchModal: React.FC<UserSearchModalProps> = ({ onClose }) => 
                 </View>
             </View>
 
-            <Pressable
+            <TouchableOpacity
                 style={[styles.addButton, sendingRequestId === item.id && styles.disabledButton]}
                 onPress={() => handleAddFriend(item)}
                 disabled={sendingRequestId === item.id}
+                activeOpacity={0.7}
             >
                 {sendingRequestId === item.id ? (
                     <ActivityIndicator size="small" color={theme.colors.primary} />
@@ -106,7 +108,7 @@ export const UserSearchModal: React.FC<UserSearchModalProps> = ({ onClose }) => 
                         {t('social.add', 'Add')}
                     </Typography>
                 )}
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 
@@ -117,9 +119,9 @@ export const UserSearchModal: React.FC<UserSearchModalProps> = ({ onClose }) => 
         >
             <View style={styles.header}>
                 <Typography variant="h3" style={{ fontWeight: '800' }}>{t('social.findFriends', 'Find Friends')}</Typography>
-                <Pressable onPress={onClose} hitSlop={15} style={styles.closeBtn}>
+                <TouchableOpacity onPress={onClose} hitSlop={15} style={styles.closeBtn} activeOpacity={0.7}>
                     <Ionicons name="close" size={24} color={theme.colors.textMuted} />
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             <View style={styles.searchBarContainer}>

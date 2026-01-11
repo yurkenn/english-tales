@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -20,9 +20,9 @@ export const LibraryAnonymousState: React.FC<LibraryAnonymousStateProps> = ({
             <Text style={styles.subtitle}>
                 Create an account to save books and track your reading progress
             </Text>
-            <Pressable style={styles.signInButton} onPress={onSignInPress}>
+            <TouchableOpacity style={styles.signInButton} onPress={onSignInPress} activeOpacity={0.8}>
                 <Text style={styles.signInButtonText}>Sign In</Text>
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 };

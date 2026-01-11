@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, Platform, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -65,9 +65,9 @@ export default function ForgotPasswordScreen() {
                         </Text>
                     </View>
                     <View style={styles.successFooter}>
-                        <Pressable style={styles.button} onPress={() => router.replace('/login')}>
+                        <TouchableOpacity style={styles.button} onPress={() => router.replace('/login')} activeOpacity={0.8}>
                             <Text style={styles.buttonText}>{t('auth.forgotPassword.backToLogin')}</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -81,9 +81,9 @@ export default function ForgotPasswordScreen() {
         >
             <View style={[styles.content, { paddingTop: insets.top + 40, paddingBottom: insets.bottom + 20 }]}>
                 {/* Back Button */}
-                <Pressable style={styles.backButton} onPress={() => router.back()}>
+                <TouchableOpacity style={styles.backButton} onPress={() => router.back()} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
 
                 {/* Header */}
                 <View style={styles.header}>
@@ -112,24 +112,25 @@ export default function ForgotPasswordScreen() {
                         containerStyle={styles.fieldContainer}
                     />
 
-                    <Pressable
+                    <TouchableOpacity
                         style={[styles.button, loading && styles.buttonDisabled]}
                         onPress={handleResetPassword}
                         disabled={loading}
+                        activeOpacity={0.8}
                     >
                         {loading ? (
                             <ActivityIndicator color={theme.colors.textInverse} />
                         ) : (
                             <Text style={styles.buttonText}>{t('auth.forgotPassword.submit')}</Text>
                         )}
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
                 {/* Footer */}
-                <Pressable style={styles.backToLogin} onPress={() => router.back()}>
+                <TouchableOpacity style={styles.backToLogin} onPress={() => router.back()} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={16} color={theme.colors.primary} />
                     <Text style={styles.backToLoginText}>{t('auth.forgotPassword.backToLogin')}</Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>
     );

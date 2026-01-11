@@ -1,5 +1,5 @@
-import React, { forwardRef, useCallback, useMemo } from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import React, { forwardRef, useMemo, useCallback } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -23,7 +23,7 @@ interface ActionSheetProps {
 export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
     ({ title, subtitle, options, onClose }, ref) => {
         const { theme } = useTheme();
-    const styles = createStyles(theme);
+        const styles = createStyles(theme);
         const { t } = useTranslation();
         const insets = useSafeAreaInsets();
 
@@ -71,14 +71,14 @@ export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
                     {/* Options */}
                     <View style={styles.options}>
                         {options.map((option, index) => (
-                            <Pressable
+                            <TouchableOpacity
                                 key={option.label}
-                                style={({ pressed }) => [
+                                style={[
                                     styles.option,
-                                    pressed && styles.optionPressed,
                                     index === options.length - 1 && styles.optionLast,
                                 ]}
                                 onPress={() => handleOptionPress(option)}
+                                activeOpacity={0.7}
                                 accessibilityRole="button"
                                 accessibilityLabel={option.label}
                                 accessibilityHint={option.destructive ? t('common.accessibility.destructiveHint', "This action cannot be undone") : undefined}
@@ -106,23 +106,21 @@ export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
                                     size={18}
                                     color={theme.colors.textMuted}
                                 />
-                            </Pressable>
+                            </TouchableOpacity>
                         ))}
                     </View>
 
                     {/* Cancel Button */}
-                    <Pressable
-                        style={({ pressed }) => [
-                            styles.cancelButton,
-                            pressed && styles.cancelButtonPressed,
-                        ]}
+                    <TouchableOpacity
+                        style={styles.cancelButton}
                         onPress={onClose}
+                        activeOpacity={0.7}
                         accessibilityRole="button"
                         accessibilityLabel={t('common.cancel', 'Cancel')}
                         accessibilityHint={t('common.accessibility.closeMenuHint', 'Close this menu')}
                     >
                         <Text style={styles.cancelText}>{t('common.cancel', 'Cancel')}</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </BottomSheetView>
             </BottomSheet>
         );

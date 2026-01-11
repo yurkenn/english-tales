@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
 import { haptics } from '@/utils/haptics';
@@ -33,7 +33,7 @@ export const FontSection: React.FC<FontSectionProps> = ({
                 <Text style={styles.label}>{t('reading.fontFamily', 'Font Style')}</Text>
                 <View style={styles.fontFamilyControls}>
                     {FONT_FAMILIES.map((ff) => (
-                        <Pressable
+                        <TouchableOpacity
                             key={ff.key}
                             style={[
                                 styles.ffButton,
@@ -43,6 +43,7 @@ export const FontSection: React.FC<FontSectionProps> = ({
                                 haptics.selection();
                                 onFontFamilyChange(ff.key);
                             }}
+                            activeOpacity={0.8}
                         >
                             <Text
                                 style={[
@@ -61,7 +62,7 @@ export const FontSection: React.FC<FontSectionProps> = ({
                             >
                                 {ff.label}
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     ))}
                 </View>
             </View>
@@ -70,19 +71,21 @@ export const FontSection: React.FC<FontSectionProps> = ({
             <View style={styles.section}>
                 <Text style={styles.label}>{t('settings.preferences.fontSize')}</Text>
                 <View style={styles.fontControls}>
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.fontButton}
                         onPress={() => { haptics.light(); onFontSizeChange(Math.max(14, fontSize - 2)); }}
+                        activeOpacity={0.7}
                     >
                         <Text style={styles.fontButtonText}>A-</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                     <Text style={styles.fontValue}>{fontSize}pt</Text>
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.fontButton}
                         onPress={() => { haptics.light(); onFontSizeChange(Math.min(28, fontSize + 2)); }}
+                        activeOpacity={0.7}
                     >
                         <Text style={styles.fontButtonText}>A+</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         </>

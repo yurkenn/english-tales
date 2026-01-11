@@ -4,7 +4,7 @@
  */
 
 import React, { memo, useCallback } from 'react'
-import { View, Text, Modal, Pressable, ActivityIndicator } from 'react-native'
+import { View, Text, Modal, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -96,10 +96,11 @@ function StreakProtectionModalComponent({
                     {/* Options */}
                     <View style={styles.optionsContainer}>
                         {/* Watch Ad */}
-                        <Pressable
+                        <TouchableOpacity
                             style={styles.adButton}
                             onPress={handleWatchAd}
                             disabled={adLoading}
+                            activeOpacity={0.8}
                         >
                             {adLoading ? (
                                 <ActivityIndicator color="#fff" />
@@ -116,13 +117,14 @@ function StreakProtectionModalComponent({
                                     </View>
                                 </>
                             )}
-                        </Pressable>
+                        </TouchableOpacity>
 
                         {/* Pay with Coins */}
-                        <Pressable
+                        <TouchableOpacity
                             style={[styles.coinButton, !canAfford && styles.buttonDisabled]}
                             onPress={handlePayWithCoins}
                             disabled={!canAfford}
+                            activeOpacity={0.7}
                         >
                             <Ionicons
                                 name="logo-bitcoin"
@@ -140,26 +142,29 @@ function StreakProtectionModalComponent({
                                     }
                                 </Text>
                             </View>
-                        </Pressable>
+                        </TouchableOpacity>
 
                         {/* Go Premium */}
-                        <Pressable style={styles.premiumButton} onPress={() => {
-                            haptics.selection()
-                            onGetPremium()
-                        }}>
+                        <TouchableOpacity
+                            style={styles.premiumButton}
+                            activeOpacity={0.7}
+                            onPress={() => {
+                                haptics.selection()
+                                onGetPremium()
+                            }}>
                             <Ionicons name="shield-checkmark" size={20} color={theme.colors.primary} />
                             <Text style={styles.premiumButtonText}>
                                 {t('streak.protection.goPremium', 'Go Premium - Auto Protection')}
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     {/* Skip */}
-                    <Pressable style={styles.skipButton} onPress={onClose}>
+                    <TouchableOpacity style={styles.skipButton} onPress={onClose} activeOpacity={0.6}>
                         <Text style={styles.skipText}>
                             {t('streak.protection.skip', 'Skip & Lose Streak')}
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </BlurView>
         </Modal>

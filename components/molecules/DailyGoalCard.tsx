@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, useWindowDimensions , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, useWindowDimensions, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
@@ -33,12 +33,13 @@ export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
     const isGoalReached = minutesRead >= goalMinutes;
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={styles.container}
             onPress={() => {
                 haptics.light();
                 onPress?.();
             }}
+            activeOpacity={0.8}
         >
             <View style={styles.content}>
                 <View style={styles.textContainer}>
@@ -73,7 +74,7 @@ export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
                     <Ionicons name="chevron-forward" size={16} color={theme.colors.textSecondary} />
                 </View>
             )}
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

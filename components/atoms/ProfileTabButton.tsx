@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { View, Pressable } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Typography } from './Typography'
@@ -25,10 +25,10 @@ export const ProfileTabButton = memo<ProfileTabButtonProps>(({
     const styles = createStyles(theme);
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={styles.tabButton}
             onPress={onPress}
-            android_ripple={{ color: theme.colors.primary + '20' }}
+            activeOpacity={0.7}
         >
             <View style={styles.tabButtonContent}>
                 <Typography
@@ -59,7 +59,7 @@ export const ProfileTabButton = memo<ProfileTabButtonProps>(({
             {isActive && (
                 <View style={[styles.tabIndicator, { backgroundColor: theme.colors.primary }]} />
             )}
-        </Pressable>
+        </TouchableOpacity>
     )
 })
 

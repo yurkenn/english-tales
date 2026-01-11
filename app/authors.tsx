@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback, useState } from 'react';
-import { View, Text, FlatList, Pressable, Image, TextInput , StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Image, TextInput, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -75,12 +75,10 @@ export default function AuthorsScreen() {
 
         return (
             <Animated.View entering={FadeInDown.delay(index * 50).duration(400).springify()}>
-                <Pressable
-                    style={({ pressed }) => [
-                        styles.authorCard,
-                        pressed && styles.authorCardPressed,
-                    ]}
+                <TouchableOpacity
+                    style={styles.authorCard}
                     onPress={() => handleAuthorPress(item._id)}
+                    activeOpacity={0.7}
                 >
                     {imageUrl ? (
                         <Image source={{ uri: imageUrl }} style={styles.authorImage} />
@@ -105,7 +103,7 @@ export default function AuthorsScreen() {
                         </View>
                     </View>
                     <Ionicons name="chevron-forward" size={20} color={theme.colors.textMuted} />
-                </Pressable>
+                </TouchableOpacity>
             </Animated.View>
         );
     }, [theme, handleAuthorPress]);
@@ -124,9 +122,9 @@ export default function AuthorsScreen() {
                         onChangeText={setSearchQuery}
                     />
                     {searchQuery.length > 0 && (
-                        <Pressable onPress={() => setSearchQuery('')}>
+                        <TouchableOpacity onPress={() => setSearchQuery('')} activeOpacity={0.6}>
                             <Ionicons name="close-circle" size={18} color={theme.colors.textMuted} />
-                        </Pressable>
+                        </TouchableOpacity>
                     )}
                 </View>
             </View>
@@ -170,9 +168,9 @@ export default function AuthorsScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
             <View style={styles.header}>
-                <Pressable style={styles.backButton} onPress={() => router.back()}>
+                <TouchableOpacity style={styles.backButton} onPress={() => router.back()} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Text style={styles.title}>{t('authors.title')}</Text>
                 <View style={styles.placeholder} />
             </View>

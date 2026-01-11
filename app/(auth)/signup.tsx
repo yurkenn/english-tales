@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -88,9 +88,9 @@ export default function SignupScreen() {
                 showsVerticalScrollIndicator={false}
                 keyboardShouldPersistTaps="handled"
             >
-                <Pressable style={[styles.backButton, { top: insets.top + 20 }]} onPress={() => router.back()}>
+                <TouchableOpacity style={[styles.backButton, { top: insets.top + 20 }]} onPress={() => router.back()} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
 
                 <AuthHeader title={t('auth.signup.title', 'Create Account')} subtitle={t('auth.signup.subtitle', 'Start your English reading adventure today')} />
 
@@ -136,17 +136,18 @@ export default function SignupScreen() {
 
                     <TermsCheckbox checked={termsAccepted} onToggle={handleTermsToggle} error={errors.terms} />
 
-                    <Pressable
+                    <TouchableOpacity
                         style={[styles.button, loading && styles.buttonDisabled]}
                         onPress={handleSignup}
                         disabled={loading}
+                        activeOpacity={0.8}
                     >
                         {loading ? (
                             <ActivityIndicator color={theme.colors.textInverse} />
                         ) : (
                             <Text style={styles.buttonText}>{t('auth.signup.title', 'Sign Up')}</Text>
                         )}
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
                 <AuthDivider text={t('auth.signup.or', 'or')} />
@@ -156,9 +157,9 @@ export default function SignupScreen() {
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>{t('auth.signup.hasAccount', 'Already have an account? ')}</Text>
                     <Link href="/login" asChild>
-                        <Pressable>
+                        <TouchableOpacity activeOpacity={0.7}>
                             <Text style={styles.linkText}>{t('profile.login', 'Log In')}</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </Link>
                 </View>
             </ScrollView>

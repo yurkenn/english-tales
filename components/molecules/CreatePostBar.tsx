@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
@@ -34,14 +34,15 @@ export const CreatePostBar: React.FC<CreatePostBarProps> = ({
                 />
             </View>
 
-            <Pressable
+            <TouchableOpacity
                 style={styles.inputPlaceholder}
+                activeOpacity={0.7}
                 onPress={() => { haptics.selection(); onPress(); }}
             >
                 <Typography color={theme.colors.textMuted}>
                     {placeholder}
                 </Typography>
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 };

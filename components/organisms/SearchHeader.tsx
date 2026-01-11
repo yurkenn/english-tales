@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Pressable , StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -21,9 +21,9 @@ export const SearchHeader: React.FC<SearchHeaderProps> = ({
 
     return (
         <View style={styles.header}>
-            <Pressable style={styles.backButton} onPress={onBack}>
+            <TouchableOpacity style={styles.backButton} onPress={onBack} activeOpacity={0.7}>
                 <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-            </Pressable>
+            </TouchableOpacity>
             <View style={styles.searchInputContainer}>
                 <Ionicons name="search" size={20} color={theme.colors.textMuted} />
                 <TextInput
@@ -38,9 +38,9 @@ export const SearchHeader: React.FC<SearchHeaderProps> = ({
                     autoCorrect={false}
                 />
                 {query.length > 0 && (
-                    <Pressable onPress={() => onQueryChange('')}>
+                    <TouchableOpacity onPress={() => onQueryChange('')} activeOpacity={0.7}>
                         <Ionicons name="close-circle" size={20} color={theme.colors.textMuted} />
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
             </View>
         </View>

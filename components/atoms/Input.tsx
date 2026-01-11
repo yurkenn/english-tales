@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, TextInputProps, Pressable , StyleSheet } from 'react-native';
+import { View, TextInput, TextInputProps, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from './Typography';
@@ -65,9 +65,9 @@ export const Input: React.FC<InputProps> = ({
                 />
 
                 {onClear && props.value && props.value.length > 0 && (
-                    <Pressable onPress={onClear} style={styles.clearButton}>
+                    <TouchableOpacity onPress={onClear} style={styles.clearButton} activeOpacity={0.6}>
                         <Ionicons name="close-circle" size={18} color={theme.colors.textMuted} />
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
             </View>
 

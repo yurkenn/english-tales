@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Pressable, Modal , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -79,13 +79,13 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
                         <Text style={styles.ratingLabel}>{t('reading.completion.ratingOptional')}</Text>
                         <View style={styles.stars}>
                             {[1, 2, 3, 4, 5].map((star) => (
-                                <Pressable key={star} onPress={() => handleRatingPress(star)}>
+                                <TouchableOpacity key={star} onPress={() => handleRatingPress(star)} activeOpacity={0.7}>
                                     <Ionicons
                                         name={star <= rating ? 'star' : 'star-outline'}
                                         size={32}
                                         color={star <= rating ? theme.colors.warning : theme.colors.textMuted}
                                     />
-                                </Pressable>
+                                </TouchableOpacity>
                             ))}
                         </View>
                     </View>
@@ -95,20 +95,21 @@ export const CompletionModal: React.FC<CompletionModalProps> = ({
 
 
 
-                        <Pressable
+                        <TouchableOpacity
                             style={styles.button}
                             onPress={() => {
                                 haptics.success();
                                 onComplete(rating > 0 ? rating : undefined);
                             }}
+                            activeOpacity={0.8}
                         >
                             <Text style={styles.buttonText}>{t('reading.completion.nextStory')}</Text>
                             <Ionicons name="arrow-forward" size={20} color={theme.colors.textInverse} />
-                        </Pressable>
+                        </TouchableOpacity>
 
-                        <Pressable style={styles.secondary} onPress={onContinue}>
+                        <TouchableOpacity style={styles.secondary} onPress={onContinue} activeOpacity={0.7}>
                             <Text style={styles.secondaryText}>{t('reading.completion.backToHome')}</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>

@@ -1,5 +1,4 @@
-import React from 'react';
-import { View, Pressable, FlatList, ActivityIndicator , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography, OptimizedImage } from '../atoms';
@@ -35,12 +34,13 @@ export const NotificationList: React.FC<NotificationListProps> = ({
         const date = item.timestamp?.toDate ? item.timestamp.toDate() : new Date();
 
         return (
-            <Pressable
+            <TouchableOpacity
                 style={[styles.item, !item.isRead && styles.unreadItem]}
                 onPress={() => {
                     haptics.selection();
                     onNotificationPress(item);
                 }}
+                activeOpacity={0.7}
             >
                 <View style={styles.avatarContainer}>
                     <OptimizedImage
@@ -72,7 +72,7 @@ export const NotificationList: React.FC<NotificationListProps> = ({
                 </View>
 
                 {!item.isRead && <View style={styles.unreadDot} />}
-            </Pressable>
+            </TouchableOpacity>
         );
     };
 

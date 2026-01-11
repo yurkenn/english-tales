@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react'
-import { Pressable, Text, View, ActivityIndicator } from 'react-native'
+import { TouchableOpacity, Text, View, ActivityIndicator } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -87,10 +87,11 @@ function RewardedAdButtonComponent({
     }
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={getButtonStyle()}
             onPress={handlePress}
             disabled={isDisabled}
+            activeOpacity={0.8}
         >
             {isLoading ? (
                 <ActivityIndicator size="small" color={getTextColor()} />
@@ -121,7 +122,7 @@ function RewardedAdButtonComponent({
                     </Text>
                 </View>
             )}
-        </Pressable>
+        </TouchableOpacity>
     )
 }
 

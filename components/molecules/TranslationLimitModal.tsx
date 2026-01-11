@@ -4,7 +4,7 @@
  */
 
 import React, { memo } from 'react'
-import { View, Text, Modal, Pressable } from 'react-native'
+import { View, Text, Modal, TouchableOpacity } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -93,8 +93,9 @@ function TranslationLimitModalComponent({
 
                         {/* Premium Option */}
                         {onGetPremium && (
-                            <Pressable
+                            <TouchableOpacity
                                 style={styles.premiumButton}
+                                activeOpacity={0.6}
                                 onPress={() => {
                                     haptics.selection()
                                     onGetPremium()
@@ -108,16 +109,16 @@ function TranslationLimitModalComponent({
                                 <Text style={styles.premiumButtonText}>
                                     {t('ads.translationLimit.getPremium', 'Get Premium for unlimited')}
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
                     </View>
 
                     {/* Close button */}
-                    <Pressable style={styles.closeButton} onPress={onClose}>
+                    <TouchableOpacity style={styles.closeButton} onPress={onClose} activeOpacity={0.6}>
                         <Text style={styles.closeButtonText}>
                             {t('common.close', 'Close')}
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </BlurView>
         </Modal>

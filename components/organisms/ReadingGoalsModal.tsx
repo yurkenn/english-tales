@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, Modal , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
@@ -34,9 +34,9 @@ export const ReadingGoalsModal: React.FC<ReadingGoalsModalProps> = ({
                 <View style={styles.content}>
                     <View style={styles.header}>
                         <Text style={styles.title}>Daily Reading Goal</Text>
-                        <Pressable onPress={onClose}>
+                        <TouchableOpacity onPress={onClose} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.text} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     <Text style={styles.subtitle}>
@@ -45,13 +45,14 @@ export const ReadingGoalsModal: React.FC<ReadingGoalsModalProps> = ({
 
                     <View style={styles.grid}>
                         {GOAL_OPTIONS.map((minutes) => (
-                            <Pressable
+                            <TouchableOpacity
                                 key={minutes}
                                 style={[
                                     styles.option,
                                     currentGoal === minutes && styles.optionSelected,
                                 ]}
                                 onPress={() => handleSelect(minutes)}
+                                activeOpacity={0.7}
                             >
                                 <Text
                                     style={[
@@ -69,7 +70,7 @@ export const ReadingGoalsModal: React.FC<ReadingGoalsModalProps> = ({
                                 >
                                     min
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         ))}
                     </View>
                 </View>

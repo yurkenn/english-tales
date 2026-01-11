@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -53,13 +53,14 @@ export const OnboardingLevelSelection = ({
     return (
         <View style={styles.levelContainer}>
             {LEVELS.map((level) => (
-                <Pressable
+                <TouchableOpacity
                     key={level.id}
                     style={[
                         styles.levelCard,
                         selectedLevel === level.id && styles.levelCardSelected,
                     ]}
                     onPress={() => onSelectLevel(level.id)}
+                    activeOpacity={0.7}
                 >
                     <LinearGradient
                         colors={level.colors}
@@ -81,7 +82,7 @@ export const OnboardingLevelSelection = ({
                     {selectedLevel === level.id && (
                         <Ionicons name="checkmark-circle" size={24} color={theme.colors.primary} />
                     )}
-                </Pressable>
+                </TouchableOpacity>
             ))}
         </View>
     );

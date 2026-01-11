@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -16,12 +16,10 @@ export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) =
 
     return (
         <View style={styles.container}>
-            <Pressable
-                style={({ pressed }) => [
-                    styles.button,
-                    pressed && styles.buttonPressed,
-                ]}
+            <TouchableOpacity
+                style={styles.button}
                 onPress={onPress}
+                activeOpacity={0.8}
             >
                 <View style={styles.content}>
                     <LinearGradient
@@ -40,7 +38,7 @@ export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) =
                         <Ionicons name="chevron-forward" size={20} color={theme.colors.textMuted} />
                     </View>
                 </View>
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 };

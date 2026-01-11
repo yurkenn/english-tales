@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
@@ -21,17 +21,18 @@ export const TrendingSuggestions: React.FC<TrendingSuggestionsProps> = ({
             <Text style={styles.sectionTitle}>Trending</Text>
             <View style={styles.tagsContainer}>
                 {suggestions.map((term) => (
-                    <Pressable
+                    <TouchableOpacity
                         key={term}
                         style={styles.tagChip}
                         onPress={() => {
                             haptics.selection();
                             onSuggestionPress(term);
                         }}
+                        activeOpacity={0.7}
                     >
                         <Ionicons name="trending-up" size={14} color={theme.colors.primary} />
                         <Text style={styles.tagText}>{term}</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 ))}
             </View>
         </View>

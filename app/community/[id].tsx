@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
     View,
     ScrollView,
-    Pressable,
+    TouchableOpacity,
     ActivityIndicator,
     KeyboardAvoidingView,
     Platform,
@@ -72,9 +72,9 @@ export default function CommunityPostDetail() {
         return (
             <View style={styles.center}>
                 <Typography>Post not found</Typography>
-                <Pressable onPress={() => router.back()} style={{ marginTop: 20 }}>
+                <TouchableOpacity onPress={() => router.back()} style={{ marginTop: 20 }} activeOpacity={0.7}>
                     <Typography color={theme.colors.primary}>Go Back</Typography>
-                </Pressable>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -86,9 +86,9 @@ export default function CommunityPostDetail() {
             keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 0}
         >
             <View style={[styles.header, { paddingTop: insets.top, paddingHorizontal: containerPadding }]}>
-                <Pressable onPress={() => router.back()} style={styles.backButton}>
+                <TouchableOpacity onPress={() => router.back()} style={styles.backButton} activeOpacity={0.7}>
                     <Ionicons name="chevron-back" size={28} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Typography variant="h3" style={styles.headerTitle}>Post</Typography>
                 <View style={{ width: 40 }} />
             </View>
@@ -142,17 +142,18 @@ export default function CommunityPostDetail() {
                     onChangeText={setReplyText}
                     multiline
                 />
-                <Pressable
+                <TouchableOpacity
                     onPress={onSubmitReply}
                     disabled={!replyText.trim() || submitting}
                     style={[styles.sendButton, !replyText.trim() && { opacity: 0.5 }]}
+                    activeOpacity={0.8}
                 >
                     {submitting ? (
                         <ActivityIndicator size="small" color={theme.colors.textInverse} />
                     ) : (
                         <Ionicons name="send" size={20} color={theme.colors.textInverse} />
                     )}
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </KeyboardAvoidingView>
     );

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Modal, View, Text, Pressable, Animated, useWindowDimensions , StyleSheet } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, Animated, useWindowDimensions, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -99,9 +99,10 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
             animationType="none"
             onRequestClose={onClose}
         >
-            <Pressable
+            <TouchableOpacity
                 style={[styles.overlay, { backgroundColor: theme.colors.overlay }]}
                 onPress={onClose}
+                activeOpacity={1}
             >
                 <Animated.View
                     style={[
@@ -131,19 +132,17 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
 
                     <View style={styles.menuItems}>
                         {items.map((item, index) => (
-                            <Pressable
+                            <TouchableOpacity
                                 key={item.label}
-                                style={({ pressed }) => [
+                                style={[
                                     styles.menuItem,
                                     index === items.length - 1 && styles.menuItemLast,
-                                    pressed && {
-                                        backgroundColor: theme.colors.backgroundSecondary,
-                                    },
                                 ]}
                                 onPress={() => handleItemPress(item)}
                                 accessibilityRole="button"
                                 accessibilityLabel={item.label}
                                 accessibilityHint={item.destructive ? "This action cannot be undone" : undefined}
+                                activeOpacity={0.6}
                             >
                                 <Text
                                     style={[
@@ -168,11 +167,11 @@ export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
                                         }
                                     />
                                 )}
-                            </Pressable>
+                            </TouchableOpacity>
                         ))}
                     </View>
                 </Animated.View>
-            </Pressable>
+            </TouchableOpacity>
         </Modal>
     );
 };

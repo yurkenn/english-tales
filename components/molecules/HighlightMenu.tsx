@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -54,7 +54,7 @@ export const HighlightMenu = React.memo(({
             exiting={FadeOut.duration(100)}
             style={styles.container}
         >
-            <Pressable style={styles.backdrop} onPress={onDismiss} />
+            <TouchableOpacity style={styles.backdrop} activeOpacity={1} onPress={onDismiss} />
 
             <View style={[styles.menu, { backgroundColor: theme.colors.surface }]}>
                 {/* Truncated preview of selected text */}
@@ -65,34 +65,35 @@ export const HighlightMenu = React.memo(({
                 {/* Color options */}
                 <View style={styles.colorsRow}>
                     {COLORS.map((color) => (
-                        <Pressable
+                        <TouchableOpacity
                             key={color}
                             style={[
                                 styles.colorButton,
                                 { backgroundColor: HIGHLIGHT_COLOR_SOLID[color] },
                                 existingColor === color && styles.colorButtonSelected,
                             ]}
+                            activeOpacity={0.8}
                             onPress={() => handleColorPress(color)}
                         >
                             {existingColor === color && (
                                 <Ionicons name="checkmark" size={16} color="#fff" />
                             )}
-                        </Pressable>
+                        </TouchableOpacity>
                     ))}
                 </View>
 
                 {/* Action buttons */}
                 <View style={styles.actionsRow}>
-                    <Pressable style={styles.actionButton} onPress={handleCopy}>
+                    <TouchableOpacity style={styles.actionButton} onPress={handleCopy} activeOpacity={0.6}>
                         <Ionicons name="copy-outline" size={18} color={theme.colors.text} />
                         <Text style={[styles.actionText, { color: theme.colors.text }]}>Copy</Text>
-                    </Pressable>
+                    </TouchableOpacity>
 
                     {existingColor && onRemoveHighlight && (
-                        <Pressable style={styles.actionButton} onPress={handleRemove}>
+                        <TouchableOpacity style={styles.actionButton} onPress={handleRemove} activeOpacity={0.6}>
                             <Ionicons name="trash-outline" size={18} color={theme.colors.error} />
                             <Text style={[styles.actionText, { color: theme.colors.error }]}>Remove</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     )}
                 </View>
             </View>

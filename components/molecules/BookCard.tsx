@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, Pressable , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography, BookCover } from '../atoms';
@@ -25,12 +25,13 @@ const BookCardComponent: React.FC<BookCardProps> = ({
     const coverUri = story.coverImage || 'https://via.placeholder.com/240x336/1a1a2e/ffffff?text=No+Cover';
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={styles.container}
             onPress={onPress}
             accessible
             accessibilityRole="button"
             accessibilityLabel={`${story.title} by ${story.author}${story.isPremiumOnly ? ', Premium content' : ''}`}
+            activeOpacity={0.9}
         >
             {/* Cover Image with Page Stack Effect */}
             <BookCover
@@ -79,7 +80,7 @@ const BookCardComponent: React.FC<BookCardProps> = ({
                     {story.author}
                 </Typography>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

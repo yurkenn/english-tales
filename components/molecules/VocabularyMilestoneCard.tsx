@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { View, Pressable } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
@@ -64,17 +64,18 @@ export const VocabularyMilestoneCard: React.FC<VocabularyMilestoneCardProps> = (
     }
 
     return (
-        <Pressable onPress={handlePress} style={styles.container}>
+        <TouchableOpacity onPress={handlePress} style={styles.container} activeOpacity={0.9}>
             <View style={styles.card}>
                 {/* Dismiss button */}
                 {onDismiss && (
-                    <Pressable
+                    <TouchableOpacity
                         onPress={handleDismiss}
                         style={styles.dismissButton}
                         hitSlop={12}
+                        activeOpacity={0.7}
                     >
                         <Ionicons name="close" size={16} color={theme.colors.textMuted} />
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
 
                 <View style={styles.content}>
@@ -103,7 +104,7 @@ export const VocabularyMilestoneCard: React.FC<VocabularyMilestoneCardProps> = (
                     </Typography>
                 </View>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     )
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -31,14 +31,15 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
             <Text style={styles.title}>{title}</Text>
             <Text style={styles.message}>{message}</Text>
             {actionLabel && onAction && (
-                <Pressable
+                <TouchableOpacity
                     style={styles.actionButton}
                     onPress={onAction}
+                    activeOpacity={0.8}
                     accessibilityRole="button"
                     accessibilityLabel={actionLabel}
                 >
                     <Text style={styles.actionText}>{actionLabel}</Text>
-                </Pressable>
+                </TouchableOpacity>
             )}
         </View>
     );

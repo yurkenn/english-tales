@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
 import { haptics } from '@/utils/haptics';
@@ -30,7 +30,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
             <Text style={styles.label}>{t('settings.preferences.language')}</Text>
             <View style={styles.languageControls}>
                 {LANGUAGES.map((lang) => (
-                    <Pressable
+                    <TouchableOpacity
                         key={lang.code}
                         style={[
                             styles.langButton,
@@ -40,6 +40,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
                             haptics.selection();
                             onLanguageChange(lang.code);
                         }}
+                        activeOpacity={0.7}
                     >
                         <Text
                             style={[
@@ -49,7 +50,7 @@ export const LanguageSection: React.FC<LanguageSectionProps> = ({
                         >
                             {lang.label}
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 ))}
             </View>
         </View>

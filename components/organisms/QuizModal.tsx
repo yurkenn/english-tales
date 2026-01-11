@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, Modal , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeIn, FadeOut, ZoomIn, ZoomOut } from 'react-native-reanimated';
@@ -107,11 +107,12 @@ export const QuizModal: React.FC<QuizModalProps> = ({ visible, questions, onClos
                             }
 
                             return (
-                                <Pressable
+                                <TouchableOpacity
                                     key={index}
                                     style={optionStyle}
                                     onPress={() => handleOptionPress(index)}
                                     disabled={isAnswered}
+                                    activeOpacity={0.7}
                                 >
                                     <Text style={[
                                         styles.optionText,
@@ -127,7 +128,7 @@ export const QuizModal: React.FC<QuizModalProps> = ({ visible, questions, onClos
                                     {isAnswered && isSelected && !isCorrect && (
                                         <Ionicons name="close-circle" size={20} color={theme.colors.error} />
                                     )}
-                                </Pressable>
+                                </TouchableOpacity>
                             );
                         })}
                     </View>
@@ -142,19 +143,20 @@ export const QuizModal: React.FC<QuizModalProps> = ({ visible, questions, onClos
                     {/* Footer Actions */}
                     <View style={styles.footer}>
                         {!isAnswered ? (
-                            <Pressable
+                            <TouchableOpacity
                                 style={[styles.button, selectedOption === null && styles.buttonDisabled]}
                                 onPress={handleCheckAnswer}
                                 disabled={selectedOption === null}
+                                activeOpacity={0.8}
                             >
                                 <Text style={styles.buttonText}>{t('common.check')}</Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         ) : (
-                            <Pressable style={styles.button} onPress={handleNext}>
+                            <TouchableOpacity style={styles.button} onPress={handleNext} activeOpacity={0.8}>
                                 <Text style={styles.buttonText}>
                                     {currentIndex === questions.length - 1 ? t('reading.quiz.finish') : t('reading.quiz.next')}
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
                     </View>
                 </Animated.View>

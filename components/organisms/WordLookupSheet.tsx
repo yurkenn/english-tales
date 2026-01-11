@@ -1,5 +1,5 @@
 import React, { forwardRef, useMemo } from 'react';
-import { View, Text, ActivityIndicator, Pressable , StyleSheet } from 'react-native';
+import { View, Text, ActivityIndicator, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { BottomSheetModal, BottomSheetView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,7 +19,7 @@ interface WordLookupSheetProps {
 export const WordLookupSheet = forwardRef<BottomSheetModal, WordLookupSheetProps>(
     ({ word, dictionaryData, isLoading, storyId, storyTitle }, ref) => {
         const { theme } = useTheme();
-    const styles = createStyles(theme);
+        const styles = createStyles(theme);
         const snapPoints = useMemo(() => ['40%', '60%'], []);
 
         const { user } = useAuthStore();
@@ -77,19 +77,20 @@ export const WordLookupSheet = forwardRef<BottomSheetModal, WordLookupSheetProps
                                         <Text style={styles.phonetic}>{dictionaryData.phonetic}</Text>
                                     )}
                                 </View>
-                                <Pressable
+                                <TouchableOpacity
                                     onPress={handleSaveToggle}
                                     style={[
                                         styles.saveButton,
                                         isSaved && { backgroundColor: theme.colors.primary + '20' }
                                     ]}
+                                    activeOpacity={0.7}
                                 >
                                     <Ionicons
                                         name={isSaved ? "bookmark" : "bookmark-outline"}
                                         size={24}
                                         color={isSaved ? theme.colors.primary : theme.colors.textSecondary}
                                     />
-                                </Pressable>
+                                </TouchableOpacity>
                             </View>
 
                             <View style={styles.scrollContainer}>

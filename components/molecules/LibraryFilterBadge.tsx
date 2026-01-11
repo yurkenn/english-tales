@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -31,10 +31,10 @@ export const LibraryFilterBadge: React.FC<LibraryFilterBadgeProps> = ({
 
     return (
         <View style={styles.filterBadgeRow}>
-            <Pressable style={styles.filterBadge} onPress={onPress}>
+            <TouchableOpacity style={styles.filterBadge} onPress={onPress} activeOpacity={0.7}>
                 <Text style={styles.filterBadgeText}>{getFilterLabel(filter)}</Text>
                 <Ionicons name="close-circle" size={16} color={theme.colors.primary} />
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 };

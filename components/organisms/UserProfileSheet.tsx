@@ -1,5 +1,5 @@
 import React, { forwardRef, useCallback, useMemo, useState, useEffect } from 'react'
-import { View, Pressable, ActivityIndicator, RefreshControl, Image, ImageSourcePropType } from 'react-native'
+import { View, TouchableOpacity, ActivityIndicator, RefreshControl, Image, ImageSourcePropType } from 'react-native'
 import { BottomSheetModal, BottomSheetBackdrop, BottomSheetScrollView } from '@gorhom/bottom-sheet'
 import { useTheme, Theme, semanticColors } from '@/theme';
 import { StyleSheet } from 'react-native';
@@ -250,12 +250,12 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
                             )}
 
                             {/* View Full Profile */}
-                            <Pressable style={styles.viewFullButton} onPress={handleViewFullProfile}>
+                            <TouchableOpacity style={styles.viewFullButton} onPress={handleViewFullProfile} activeOpacity={0.7}>
                                 <Ionicons name="expand-outline" size={18} color={theme.colors.primary} />
                                 <Typography style={[styles.viewFullText, { color: theme.colors.primary }]}>
                                     {t('profile.viewFull', 'View Full Profile')}
                                 </Typography>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
                     )
 
@@ -310,9 +310,9 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
                         <Typography style={styles.headerTitle}>
                             {t('profile.title', 'Profile')}
                         </Typography>
-                        <Pressable onPress={onClose} style={styles.closeButton}>
+                        <TouchableOpacity onPress={onClose} style={styles.closeButton} activeOpacity={0.7}>
                             <Ionicons name="close" size={22} color={theme.colors.text} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     {/* Profile Card */}
@@ -354,7 +354,7 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
 
                             {/* Follow Button */}
                             {!isSelf && (
-                                <Pressable
+                                <TouchableOpacity
                                     style={[
                                         styles.followButton,
                                         isFollowing && styles.followingButton,
@@ -362,6 +362,7 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
                                     ]}
                                     onPress={handleFollowPress}
                                     disabled={actionLoading}
+                                    activeOpacity={0.8}
                                 >
                                     {actionLoading ? (
                                         <ActivityIndicator size="small" color={isFollowing ? theme.colors.text : theme.colors.textInverse} />
@@ -385,7 +386,7 @@ export const UserProfileSheet = forwardRef<BottomSheetModal, UserProfileSheetPro
                                             </Typography>
                                         </>
                                     )}
-                                </Pressable>
+                                </TouchableOpacity>
                             )}
                         </View>
                     </View>

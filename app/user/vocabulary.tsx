@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react'
-import { View, Text, Pressable, Animated } from 'react-native'
+import { View, Text, TouchableOpacity, Animated } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
@@ -40,22 +40,24 @@ export default function VocabularyScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
             <View style={styles.header}>
-                <Pressable
+                <TouchableOpacity
                     onPress={() => router.back()}
                     style={styles.backButton}
                     hitSlop={12}
+                    activeOpacity={0.7}
                 >
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Text style={styles.title}>{t('vocabulary.title', 'My Words')}</Text>
                 {wordCount >= 3 ? (
-                    <Pressable
+                    <TouchableOpacity
                         onPress={handleStartQuiz}
                         style={styles.quizHeaderButton}
                         hitSlop={12}
+                        activeOpacity={0.7}
                     >
                         <Ionicons name="school" size={22} color={theme.colors.primary} />
-                    </Pressable>
+                    </TouchableOpacity>
                 ) : (
                     <View style={{ width: 40 }} />
                 )}
@@ -63,7 +65,7 @@ export default function VocabularyScreen() {
 
             {/* Quiz Banner - Only show if user has words */}
             {wordCount >= 3 && (
-                <Pressable onPress={handleStartQuiz} style={styles.quizBannerWrapper}>
+                <TouchableOpacity onPress={handleStartQuiz} style={styles.quizBannerWrapper} activeOpacity={0.9}>
                     <LinearGradient
                         colors={[theme.colors.primary, theme.colors.primaryDark || '#C62828']}
                         start={{ x: 0, y: 0 }}
@@ -91,7 +93,7 @@ export default function VocabularyScreen() {
                         <View style={styles.decorCircle1} />
                         <View style={styles.decorCircle2} />
                     </LinearGradient>
-                </Pressable>
+                </TouchableOpacity>
             )}
 
             {/* Encouragement for new users */}

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { View, Text, ScrollView, Pressable, Image, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -70,9 +70,9 @@ export default function AuthorScreen() {
         return (
             <View style={[styles.container, styles.center, { paddingTop: insets.top }]}>
                 <Text style={styles.errorText}>{t('authors.notFound')}</Text>
-                <Pressable onPress={() => router.back()} style={{ marginTop: 20 }}>
+                <TouchableOpacity onPress={() => router.back()} style={{ marginTop: 20 }} activeOpacity={0.7}>
                     <Text style={{ color: theme.colors.primary }}>{t('common.goBack')}</Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -81,9 +81,9 @@ export default function AuthorScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
             <View style={[styles.header, { paddingHorizontal: containerPadding }]}>
-                <Pressable style={styles.backButton} onPress={() => router.back()}>
+                <TouchableOpacity style={styles.backButton} onPress={() => router.back()} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Text style={styles.headerTitle}>{t('authors.author')}</Text>
                 <View style={styles.placeholder} />
             </View>
@@ -109,7 +109,7 @@ export default function AuthorScreen() {
                         </View>
                     </View>
 
-                    <Pressable
+                    <TouchableOpacity
                         style={[
                             styles.followButton,
                             isFollowing && styles.followingButton,
@@ -117,6 +117,7 @@ export default function AuthorScreen() {
                         ]}
                         onPress={handleFollowToggle}
                         disabled={actionLoading}
+                        activeOpacity={0.8}
                     >
                         {actionLoading ? (
                             <ActivityIndicator size="small" color={isFollowing ? theme.colors.primary : theme.colors.textInverse} />
@@ -136,7 +137,7 @@ export default function AuthorScreen() {
                                 </Typography>
                             </>
                         )}
-                    </Pressable>
+                    </TouchableOpacity>
 
                     {author.bio && (
                         <Text style={styles.bio}>{author.bio}</Text>

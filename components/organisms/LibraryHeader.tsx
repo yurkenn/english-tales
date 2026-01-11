@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -28,28 +28,30 @@ export const LibraryHeader: React.FC<LibraryHeaderProps> = ({
         <View style={[styles.header, { paddingTop: insets.top + theme.spacing.sm }]}>
             <Text style={styles.title}>{t('tabs.library', 'My Library')}</Text>
             <View style={styles.actions}>
-                <Pressable
+                <TouchableOpacity
                     style={styles.actionButton}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                     onPress={onSearchPress}
+                    activeOpacity={0.7}
                 >
                     <Ionicons
                         name="search-outline"
                         size={22}
                         color={theme.colors.text}
                     />
-                </Pressable>
-                <Pressable
+                </TouchableOpacity>
+                <TouchableOpacity
                     style={[styles.actionButton, filter !== 'all' && styles.filterActive]}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                     onPress={onFilterPress}
+                    activeOpacity={0.7}
                 >
                     <Ionicons
                         name="filter-outline"
                         size={22}
                         color={filter !== 'all' ? theme.colors.primary : theme.colors.text}
                     />
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </View>
     );

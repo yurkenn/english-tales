@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, { FadeInDown, FadeOutUp } from 'react-native-reanimated';
@@ -81,11 +81,12 @@ export const CheckpointItem: React.FC<CheckpointProps> = ({
                         }
 
                         return (
-                            <Pressable
+                            <TouchableOpacity
                                 key={index}
                                 style={[styles.option, { backgroundColor: bg, borderColor: border }]}
                                 onPress={() => handleOptionPress(index)}
                                 disabled={isAnswered}
+                                activeOpacity={0.7}
                             >
                                 <Text style={[
                                     styles.optionText,
@@ -98,7 +99,7 @@ export const CheckpointItem: React.FC<CheckpointProps> = ({
                                 {isAnswered && isCorrect && (
                                     <Ionicons name="checkmark-circle" size={18} color={theme.colors.success} />
                                 )}
-                            </Pressable>
+                            </TouchableOpacity>
                         );
                     })}
                 </View>

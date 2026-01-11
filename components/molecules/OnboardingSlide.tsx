@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, ActivityIndicator , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
@@ -61,10 +61,11 @@ export const OnboardingSlide = ({
                 </View>
 
                 {/* Action Button */}
-                <Pressable
+                <TouchableOpacity
                     style={[styles.button, isLoading && styles.buttonDisabled]}
                     onPress={onNext}
                     disabled={isLoading}
+                    activeOpacity={0.8}
                 >
                     {isLoading ? (
                         <ActivityIndicator color={theme.colors.textInverse} />
@@ -74,14 +75,14 @@ export const OnboardingSlide = ({
                             <Ionicons name="arrow-forward" size={24} color={theme.colors.textInverse} />
                         </>
                     )}
-                </Pressable>
+                </TouchableOpacity>
 
                 {showLoginLink && onLoginPress && (
-                    <Pressable style={styles.linkButton} onPress={onLoginPress}>
+                    <TouchableOpacity style={styles.linkButton} onPress={onLoginPress} activeOpacity={0.7}>
                         <Text style={styles.linkText}>
                             Already have an account? <Text style={styles.linkHighlight}>Log In</Text>
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
             </View>
         </View>

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Pressable, Text, ActivityIndicator, View , StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, ActivityIndicator, View, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { DownloadStatus, formatBytes } from '@/store/downloadStore';
@@ -33,9 +32,10 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
 
     if (status === 'downloaded') {
         return (
-            <Pressable
+            <TouchableOpacity
                 style={[styles.button, styles.downloaded, compact && styles.compact]}
                 onPress={onDelete}
+                activeOpacity={0.7}
             >
                 <Ionicons name="checkmark-circle" size={20} color={theme.colors.success} />
                 {!compact && (
@@ -43,18 +43,19 @@ export const DownloadButton: React.FC<DownloadButtonProps> = ({
                         Downloaded {sizeBytes ? `(${formatBytes(sizeBytes)})` : ''}
                     </Text>
                 )}
-            </Pressable>
+            </TouchableOpacity>
         );
     }
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={[styles.button, styles.idle, compact && styles.compact]}
             onPress={onDownload}
+            activeOpacity={0.7}
         >
             <Ionicons name="download-outline" size={20} color={theme.colors.primary} />
             {!compact && <Text style={styles.idleText}>Download for Offline</Text>}
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

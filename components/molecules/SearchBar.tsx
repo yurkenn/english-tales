@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TextInput, Pressable, Text , StyleSheet } from 'react-native';
+import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -28,7 +28,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
     // If onPress is provided, render as a button (for navigation to search screen)
     if (onPress) {
         return (
-            <Pressable style={styles.container} onPress={onPress}>
+            <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
                 <View style={styles.iconContainer}>
                     <Ionicons
                         name="search"
@@ -39,7 +39,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 <View style={styles.inputContainer}>
                     <Text style={styles.placeholderText}>{placeholder}</Text>
                 </View>
-            </Pressable>
+            </TouchableOpacity>
         );
     }
 
@@ -64,30 +64,32 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 autoCorrect={false}
             />
             {value && onClear && (
-                <Pressable
+                <TouchableOpacity
                     style={styles.rightButton}
                     onPress={onClear}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                    activeOpacity={0.7}
                 >
                     <Ionicons
                         name="close-circle"
                         size={theme.iconSize.md}
                         color={theme.colors.textMuted}
                     />
-                </Pressable>
+                </TouchableOpacity>
             )}
             {onMicPress && (
-                <Pressable
+                <TouchableOpacity
                     style={styles.rightButton}
                     onPress={onMicPress}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                    activeOpacity={0.7}
                 >
                     <Ionicons
                         name="mic-outline"
                         size={theme.iconSize.md}
                         color={theme.colors.textMuted}
                     />
-                </Pressable>
+                </TouchableOpacity>
             )}
         </View>
     );

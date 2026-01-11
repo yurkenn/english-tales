@@ -1,5 +1,4 @@
-import React from 'react';
-import { View, Pressable, ScrollView , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Typography } from '../atoms/Typography';
 import { OptimizedImage } from '../atoms/OptimizedImage';
@@ -25,11 +24,11 @@ export const FriendCircle: React.FC<FriendCircleProps> = ({ friends, onPressAll,
         <View style={styles.container}>
             <View style={styles.header}>
                 <Typography variant="h3">{t('social.myFriends', 'My Friends')}</Typography>
-                <Pressable onPress={() => { haptics.selection(); onPressAll?.(); }}>
+                <TouchableOpacity onPress={() => { haptics.selection(); onPressAll?.(); }} activeOpacity={0.6}>
                     <Typography variant="caption" color={theme.colors.primary}>
                         {hasFriends ? t('common.seeAll', 'See All') : t('social.findFriends', 'Find Friends')}
                     </Typography>
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             {hasFriends ? (
@@ -39,13 +38,14 @@ export const FriendCircle: React.FC<FriendCircleProps> = ({ friends, onPressAll,
                     contentContainerStyle={styles.scrollContent}
                 >
                     {friends.slice(0, 10).map((friend) => (
-                        <Pressable
+                        <TouchableOpacity
                             key={friend.id}
                             style={styles.friendItem}
                             onPress={() => {
                                 haptics.selection();
                                 onPressFriend?.(friend);
                             }}
+                            activeOpacity={0.7}
                         >
                             <OptimizedImage
                                 source={{ uri: friend.photoURL || '' }}
@@ -55,22 +55,24 @@ export const FriendCircle: React.FC<FriendCircleProps> = ({ friends, onPressAll,
                             <Typography variant="label" numberOfLines={1} style={styles.name}>
                                 {friend.displayName?.split(' ')[0]}
                             </Typography>
-                        </Pressable>
+                        </TouchableOpacity>
                     ))}
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.addButton}
                         onPress={() => { haptics.selection(); onPressAll?.(); }}
+                        activeOpacity={0.7}
                     >
                         <View style={styles.addIconContainer}>
                             <Ionicons name="add" size={24} color={theme.colors.primary} />
                         </View>
                         <Typography variant="label" color={theme.colors.primary}>{t('social.add', 'Add')}</Typography>
-                    </Pressable>
+                    </TouchableOpacity>
                 </ScrollView>
             ) : (
-                <Pressable
+                <TouchableOpacity
                     style={styles.emptyContainer}
                     onPress={() => { haptics.selection(); onPressAll?.(); }}
+                    activeOpacity={0.6}
                 >
                     <View style={styles.emptyIcon}>
                         <Ionicons name="people-outline" size={32} color={theme.colors.textMuted} />
@@ -81,7 +83,7 @@ export const FriendCircle: React.FC<FriendCircleProps> = ({ friends, onPressAll,
                             {t('social.emptyDesc', 'Connect with readers now')}
                         </Typography>
                     </View>
-                </Pressable>
+                </TouchableOpacity>
             )}
         </View>
     );

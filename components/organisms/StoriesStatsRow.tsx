@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme, semanticColors } from '@/theme';
 import { haptics } from '@/utils/haptics';
 import { type DifficultyFilter } from '../molecules/moleculeTypes';
@@ -30,33 +30,33 @@ export const StoriesStatsRow: React.FC<StoriesStatsRowProps> = ({
 
     return (
         <View style={styles.container}>
-            <Pressable style={styles.statItem} onPress={() => handlePress('all')}>
+            <TouchableOpacity style={styles.statItem} onPress={() => handlePress('all')} activeOpacity={0.7}>
                 <Text style={[styles.statValue, activeFilter === 'all' && styles.statValueActive]}>
                     {stats.total}
                 </Text>
                 <Text style={styles.statLabel}>All</Text>
-            </Pressable>
+            </TouchableOpacity>
             <View style={styles.divider} />
-            <Pressable style={styles.statItem} onPress={() => handlePress('beginner')}>
+            <TouchableOpacity style={styles.statItem} onPress={() => handlePress('beginner')} activeOpacity={0.7}>
                 <Text style={[styles.statValue, { color: activeFilter === 'beginner' ? semanticColors.level.beginner : theme.colors.text }]}>
                     {stats.beginner}
                 </Text>
                 <Text style={styles.statLabel}>Easy</Text>
-            </Pressable>
+            </TouchableOpacity>
             <View style={styles.divider} />
-            <Pressable style={styles.statItem} onPress={() => handlePress('intermediate')}>
+            <TouchableOpacity style={styles.statItem} onPress={() => handlePress('intermediate')} activeOpacity={0.7}>
                 <Text style={[styles.statValue, { color: activeFilter === 'intermediate' ? semanticColors.level.intermediate : theme.colors.text }]}>
                     {stats.intermediate}
                 </Text>
                 <Text style={styles.statLabel}>Medium</Text>
-            </Pressable>
+            </TouchableOpacity>
             <View style={styles.divider} />
-            <Pressable style={styles.statItem} onPress={() => handlePress('advanced')}>
+            <TouchableOpacity style={styles.statItem} onPress={() => handlePress('advanced')} activeOpacity={0.7}>
                 <Text style={[styles.statValue, { color: activeFilter === 'advanced' ? semanticColors.level.advanced : theme.colors.text }]}>
                     {stats.advanced}
                 </Text>
                 <Text style={styles.statLabel}>Hard</Text>
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 };

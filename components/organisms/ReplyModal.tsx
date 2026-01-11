@@ -3,7 +3,7 @@ import {
     View,
     Modal,
     TextInput,
-    Pressable,
+    TouchableOpacity,
     KeyboardAvoidingView,
     Platform,
     StyleSheet as RNStyleSheet,
@@ -56,9 +56,9 @@ export const ReplyModal: React.FC<ReplyModalProps> = ({
                 >
                     <View style={styles.replyHeader}>
                         <Typography variant="bodyBold">{t('social.reply', 'Reply to Post')}</Typography>
-                        <Pressable onPress={handleClose}>
+                        <TouchableOpacity onPress={handleClose} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.text} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     <TextInput
@@ -72,15 +72,16 @@ export const ReplyModal: React.FC<ReplyModalProps> = ({
                     />
 
                     <View style={styles.replyFooter}>
-                        <Pressable
+                        <TouchableOpacity
                             style={[styles.sendButton, (!content.trim() || isSubmitting) && { opacity: 0.5 }]}
                             onPress={handleSubmit}
                             disabled={!content.trim() || isSubmitting}
+                            activeOpacity={0.8}
                         >
                             <Typography color={theme.colors.textInverse} variant="bodyBold">
                                 {isSubmitting ? '...' : t('common.send', 'Send')}
                             </Typography>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </KeyboardAvoidingView>
             </View>

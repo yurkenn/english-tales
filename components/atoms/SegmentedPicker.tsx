@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, Text, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { haptics } from '@/utils/haptics';
 
@@ -24,8 +24,9 @@ export const SegmentedPicker = <T extends string>({
             {options.map((option) => {
                 const isActive = selectedValue === option.value;
                 return (
-                    <Pressable
+                    <TouchableOpacity
                         key={option.value}
+                        activeOpacity={isActive ? 1 : 0.7}
                         style={[
                             styles.segment,
                             isActive && [styles.segmentActive, { backgroundColor: theme.colors.primary, borderColor: theme.colors.primary }],
@@ -45,7 +46,7 @@ export const SegmentedPicker = <T extends string>({
                         >
                             {option.label}
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 );
             })}
         </View>

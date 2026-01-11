@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
@@ -24,14 +24,15 @@ export const RecentSearches: React.FC<RecentSearchesProps> = ({
         <View style={styles.section}>
             <View style={styles.sectionHeader}>
                 <Text style={styles.sectionTitle}>Recent Searches</Text>
-                <Pressable onPress={onClear}>
+                <TouchableOpacity onPress={onClear} activeOpacity={0.6}>
                     <Text style={styles.clearText}>Clear</Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
             {searches.map((term, index) => (
-                <Pressable
+                <TouchableOpacity
                     key={term + index}
                     style={styles.suggestionItem}
+                    activeOpacity={0.7}
                     onPress={() => {
                         haptics.selection();
                         onSearchPress(term);
@@ -39,7 +40,7 @@ export const RecentSearches: React.FC<RecentSearchesProps> = ({
                 >
                     <Ionicons name="time-outline" size={18} color={theme.colors.textMuted} />
                     <Text style={styles.suggestionText}>{term}</Text>
-                </Pressable>
+                </TouchableOpacity>
             ))}
         </View>
     );

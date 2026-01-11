@@ -1,7 +1,8 @@
 import React from 'react';
-// Force reload: 2
+// Force reload: 3
 
-import { View, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
+import { View, StyleSheet as RNStyleSheet, TouchableOpacity } from 'react-native';
+import { } from 'react-native-gesture-handler';
 import { useTheme, Theme } from '@/theme';
 import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -11,26 +12,12 @@ import { OptimizedImage } from '../atoms';
 interface StoryHeroProps {
     coverImage: string;
     coverImageLqip?: string;
-    onBackPress: () => void;
-    onBookmarkPress: () => void;
-    isBookmarked: boolean;
-    onFavoritePress: () => void;
-    isFavorited: boolean;
-    topInset: number;
-    onSharePress?: () => void;
 }
 
 export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
     storyId,
     coverImage,
     coverImageLqip,
-    onBackPress,
-    onBookmarkPress,
-    isBookmarked,
-    onFavoritePress,
-    isFavorited,
-    topInset,
-    onSharePress,
 }) => {
     const { theme, isDark } = useTheme();
     const styles = createStyles(theme);
@@ -38,7 +25,7 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
     return (
         <View style={styles.container}>
             {/* Immersive Blurred Backdrop */}
-            <View style={RNStyleSheet.absoluteFill}>
+            <View style={RNStyleSheet.absoluteFill} pointerEvents="none">
                 <OptimizedImage
                     source={{ uri: coverImage || '' }}
                     placeholder={coverImageLqip}
@@ -69,34 +56,6 @@ export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
                     end={{ x: 0.05, y: 0.5 }}
                     style={styles.bookImage}
                 />
-            </View>
-
-            <Pressable style={[styles.backButton, { top: topInset + 8 }]} onPress={onBackPress}>
-                <Ionicons name="arrow-back" size={24} color={isDark ? theme.colors.textInverse : theme.colors.text} />
-            </Pressable>
-
-            <View style={[styles.rightButtons, { top: topInset + 8 }]}>
-                <Pressable style={styles.actionButton} onPress={onFavoritePress}>
-                    <Ionicons
-                        name={isFavorited ? 'heart' : 'heart-outline'}
-                        size={24}
-                        color={isFavorited ? theme.colors.error : (isDark ? theme.colors.textInverse : theme.colors.text)}
-                    />
-                </Pressable>
-
-                <Pressable style={styles.actionButton} onPress={onBookmarkPress}>
-                    <Ionicons
-                        name={isBookmarked ? 'bookmark' : 'bookmark-outline'}
-                        size={24}
-                        color={isBookmarked ? theme.colors.primary : (isDark ? theme.colors.textInverse : theme.colors.text)}
-                    />
-                </Pressable>
-
-                {onSharePress && (
-                    <Pressable style={styles.actionButton} onPress={onSharePress}>
-                        <Ionicons name="share-social-outline" size={24} color={isDark ? theme.colors.textInverse : theme.colors.text} />
-                    </Pressable>
-                )}
             </View>
         </View>
     );
@@ -135,35 +94,5 @@ const createStyles = (theme: Theme) => RNStyleSheet.create({
         width: 4,
         backgroundColor: 'rgba(0,0,0,0.3)',
         zIndex: 1,
-    },
-    backButton: {
-        position: 'absolute',
-        left: theme.spacing.lg,
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.full,
-        backgroundColor: 'rgba(255,255,255,0.2)',
-        alignItems: 'center',
-        justifyContent: 'center',
-        zIndex: 10,
-        borderWidth: 1,
-        borderColor: 'rgba(255,255,255,0.1)',
-    },
-    rightButtons: {
-        position: 'absolute',
-        right: theme.spacing.lg,
-        flexDirection: 'row',
-        gap: theme.spacing.sm,
-        zIndex: 10,
-    },
-    actionButton: {
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.full,
-        backgroundColor: 'rgba(255,255,255,0.2)',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 1,
-        borderColor: 'rgba(255,255,255,0.1)',
     },
 });

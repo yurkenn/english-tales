@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -24,7 +24,7 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({
     const initial = name.charAt(0).toUpperCase();
 
     return (
-        <Pressable style={styles.container} onPress={onPress}>
+        <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
             {/* Left side - Avatar */}
             <View style={styles.avatarContainer}>
                 <LinearGradient
@@ -55,7 +55,7 @@ export const AuthorSpotlight: React.FC<AuthorSpotlightProps> = ({
                     <Ionicons name="chevron-forward" size={14} color={theme.colors.primary} />
                 </View>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

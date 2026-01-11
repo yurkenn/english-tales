@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { View, ScrollView, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Typography } from '../atoms/Typography';
@@ -60,12 +60,12 @@ export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPres
                 <Typography variant="label" color={theme.colors.textMuted} style={styles.headerTitle}>
                     {t('social.communityBuzz', 'BEYOND THE BOOKS').toUpperCase()}
                 </Typography>
-                <Pressable onPress={() => haptics.selection()} style={styles.seeAll}>
+                <TouchableOpacity onPress={() => haptics.selection()} style={styles.seeAll} activeOpacity={0.7}>
                     <Typography variant="label" color={theme.colors.primary} style={styles.seeAllText}>
                         {t('common.seeAll', 'See All')}
                     </Typography>
                     <Ionicons name="chevron-forward" size={10} color={theme.colors.primary} />
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             <ScrollView
@@ -78,13 +78,14 @@ export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPres
                 {activities.map((item) => {
                     const config = getActivityConfig(item.type);
                     return (
-                        <Pressable
+                        <TouchableOpacity
                             key={item.id}
                             style={styles.activityRow}
                             onPress={() => {
                                 haptics.selection();
                                 onPressActivity?.(item);
                             }}
+                            activeOpacity={0.8}
                         >
                             <View style={styles.avatarWrapper}>
                                 <Image
@@ -109,7 +110,7 @@ export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPres
                                     {item.type === 'story_review' && t('social.activityReviewed', { title: item.targetName })}
                                 </Typography>
                             </View>
-                        </Pressable>
+                        </TouchableOpacity>
                     );
                 })}
             </ScrollView>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, Image, ImageSourcePropType, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -92,9 +92,9 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
             <View style={styles.nameRow}>
                 <Text style={styles.userName}>{name}</Text>
                 {onEditPress && !isAnonymous && (
-                    <Pressable onPress={onEditPress} style={styles.editButton}>
+                    <TouchableOpacity onPress={onEditPress} style={styles.editButton} activeOpacity={0.7}>
                         <Ionicons name="pencil" size={16} color={theme.colors.primary} />
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
             </View>
             <Text style={styles.userEmail}>{subtitle}</Text>
@@ -107,7 +107,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
 
             {/* Anonymous CTA */}
             {isAnonymous && onSignInPress && (
-                <Pressable style={styles.signInButton} onPress={onSignInPress}>
+                <TouchableOpacity style={styles.signInButton} onPress={onSignInPress} activeOpacity={0.8}>
                     <LinearGradient
                         colors={[theme.colors.primary, theme.colors.primaryDark]}
                         start={{ x: 0, y: 0 }}
@@ -117,7 +117,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                         <Ionicons name="log-in-outline" size={18} color={theme.colors.textInverse} />
                         <Text style={styles.signInText}>Sign In / Sign Up</Text>
                     </LinearGradient>
-                </Pressable>
+                </TouchableOpacity>
             )}
         </View>
     );

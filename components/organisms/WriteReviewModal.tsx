@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Modal, Pressable, TextInput, ActivityIndicator , StyleSheet } from 'react-native';
+import { View, Text, Modal, TouchableOpacity, TextInput, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useToastStore } from '@/store/toastStore';
@@ -76,9 +76,9 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
                     {/* Header */}
                     <View style={styles.header}>
                         <Text style={styles.title}>Write a Review</Text>
-                        <Pressable onPress={handleClose} style={styles.closeButton}>
+                        <TouchableOpacity onPress={handleClose} style={styles.closeButton} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.text} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     <Text style={styles.storyTitle}>{storyTitle}</Text>
@@ -88,17 +88,18 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
                         <Text style={styles.ratingLabel}>Tap to rate:</Text>
                         <View style={styles.stars}>
                             {[1, 2, 3, 4, 5].map((star) => (
-                                <Pressable
+                                <TouchableOpacity
                                     key={star}
                                     onPress={() => handleRatingPress(star)}
                                     style={styles.starButton}
+                                    activeOpacity={0.7}
                                 >
                                     <Ionicons
                                         name={star <= rating ? 'star' : 'star-outline'}
                                         size={36}
                                         color={star <= rating ? theme.colors.warning : theme.colors.textMuted}
                                     />
-                                </Pressable>
+                                </TouchableOpacity>
                             ))}
                         </View>
                     </View>
@@ -116,20 +117,21 @@ export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
                     />
 
                     {/* Submit Button */}
-                    <Pressable
+                    <TouchableOpacity
                         style={[
                             styles.submitButton,
                             rating === 0 && styles.submitButtonDisabled,
                         ]}
                         onPress={handleSubmit}
                         disabled={rating === 0 || isSubmitting}
+                        activeOpacity={0.8}
                     >
                         {isSubmitting ? (
                             <ActivityIndicator color={theme.colors.textInverse} />
                         ) : (
                             <Text style={styles.submitButtonText}>Submit Review</Text>
                         )}
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         </Modal>

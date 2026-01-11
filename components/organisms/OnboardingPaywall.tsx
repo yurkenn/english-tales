@@ -9,7 +9,7 @@
  */
 
 import React, { memo, useCallback, useState, useEffect } from 'react'
-import { View, Text, Pressable, ActivityIndicator, Dimensions, Switch, Platform } from 'react-native'
+import { View, Text, TouchableOpacity, ActivityIndicator, Dimensions, Switch, Platform } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -110,9 +110,9 @@ function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallPro
             <View style={styles.contentContainer}>
                 {/* Header Section */}
                 <View style={styles.header}>
-                    <Pressable onPress={onClose} style={styles.closeButton}>
+                    <TouchableOpacity onPress={onClose} style={styles.closeButton} activeOpacity={0.7}>
                         <Ionicons name="close" size={24} color={theme.colors.textSecondary} />
-                    </Pressable>
+                    </TouchableOpacity>
 
                     <Animated.Image
                         entering={FadeInDown.delay(100).springify()}
@@ -148,11 +148,12 @@ function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallPro
 
                     {/* Yearly Plan (Best Value) */}
                     {annualPackage && (
-                        <Pressable
+                        <TouchableOpacity
                             style={[
                                 styles.planCard,
                                 selectedPkg?.identifier === annualPackage.identifier && { borderColor: activeBorderColor }
                             ]}
+                            activeOpacity={0.8}
                             onPress={() => {
                                 haptics.selection()
                                 setSelectedPkg(annualPackage)
@@ -176,16 +177,17 @@ function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallPro
                                 styles.radio,
                                 selectedPkg?.identifier === annualPackage.identifier && { borderColor: activeBorderColor, backgroundColor: activeBorderColor }
                             ]} />
-                        </Pressable>
+                        </TouchableOpacity>
                     )}
 
                     {/* Monthly Plan (Flexible) - Only show if trial is disabled or as secondary option */}
                     {monthlyPackage && !isTrialEnabled && (
-                        <Pressable
+                        <TouchableOpacity
                             style={[
                                 styles.planCard,
                                 selectedPkg?.identifier === monthlyPackage.identifier && { borderColor: activeBorderColor }
                             ]}
+                            activeOpacity={0.8}
                             onPress={() => {
                                 haptics.selection()
                                 setSelectedPkg(monthlyPackage)
@@ -205,17 +207,18 @@ function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallPro
                                 styles.radio,
                                 selectedPkg?.identifier === monthlyPackage.identifier && { borderColor: activeBorderColor, backgroundColor: activeBorderColor }
                             ]} />
-                        </Pressable>
+                        </TouchableOpacity>
                     )}
 
                     {/* Trial / Weekly Plan */}
                     {weeklyPackage && (
-                        <Pressable
+                        <TouchableOpacity
                             style={[
                                 styles.planCard,
                                 styles.trialCard,
                                 selectedPkg?.identifier === weeklyPackage.identifier && { borderColor: goldColor, borderWidth: 2 }
                             ]}
+                            activeOpacity={0.8}
                             onPress={() => {
                                 haptics.selection()
                                 setSelectedPkg(weeklyPackage)
@@ -238,7 +241,7 @@ function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallPro
                                 size={24}
                                 color={selectedPkg?.identifier === weeklyPackage.identifier ? goldColor : theme.colors.textSecondary}
                             />
-                        </Pressable>
+                        </TouchableOpacity>
                     )}
 
                     {/* Trial Toggle */}
@@ -254,12 +257,13 @@ function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallPro
                     </View>
 
                     {/* CTA Button */}
-                    <Pressable
+                    <TouchableOpacity
                         style={[
                             styles.ctaButton,
                             styles.shadow,
                             { backgroundColor: ctaColor, shadowColor: ctaColor }
                         ]}
+                        activeOpacity={0.8}
                         onPress={handlePurchase}
                         disabled={isLoading}
                     >
@@ -270,21 +274,21 @@ function OnboardingPaywallComponent({ onClose, onSuccess }: OnboardingPaywallPro
                                 {isTrialEnabled ? 'Try for Free' : 'Subscribe'} {'>'}
                             </Text>
                         )}
-                    </Pressable>
+                    </TouchableOpacity>
 
                     {/* Footer Links */}
                     <View style={styles.footerLinks}>
-                        <Pressable onPress={handleRestore}>
+                        <TouchableOpacity onPress={handleRestore} activeOpacity={0.7}>
                             <Text style={styles.linkText}>Restore</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                         <Text style={styles.linkText}>•</Text>
-                        <Pressable>
+                        <TouchableOpacity activeOpacity={0.7}>
                             <Text style={styles.linkText}>Terms</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                         <Text style={styles.linkText}>•</Text>
-                        <Pressable>
+                        <TouchableOpacity activeOpacity={0.7}>
                             <Text style={styles.linkText}>Privacy</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                 </Animated.View>

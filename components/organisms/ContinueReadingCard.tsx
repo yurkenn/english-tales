@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { Story, ReadingProgress } from '@/types';
@@ -24,7 +24,7 @@ export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = ({
     const currentPage = Math.ceil((progress.percentage / 100) * totalPages);
 
     return (
-        <Pressable style={styles.container} onPress={onPress}>
+        <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
             {/* Cover */}
             <BookCover
                 source={{ uri: story.coverImage }}
@@ -56,18 +56,19 @@ export const ContinueReadingCard: React.FC<ContinueReadingCardProps> = ({
             </View>
 
             {/* Play Button */}
-            <Pressable
+            <TouchableOpacity
                 style={styles.playButton}
                 onPress={onPlayPress}
                 hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                activeOpacity={0.7}
             >
                 <Ionicons
                     name="play"
                     size={theme.iconSize.md}
                     color={theme.colors.primary}
                 />
-            </Pressable>
-        </Pressable>
+            </TouchableOpacity>
+        </TouchableOpacity>
     );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -65,12 +65,10 @@ export const DifficultyCard: React.FC<DifficultyCardProps> = ({
     const config = DIFFICULTY_CONFIG[difficulty];
 
     return (
-        <Pressable
-            style={({ pressed }) => [
-                styles.container,
-                pressed && styles.pressed,
-            ]}
+        <TouchableOpacity
+            style={styles.container}
             onPress={onPress}
+            activeOpacity={0.8}
         >
             <LinearGradient
                 colors={config.colors}
@@ -90,7 +88,7 @@ export const DifficultyCard: React.FC<DifficultyCardProps> = ({
                     {storyCount} {storyCount === 1 ? t('authors.story', 'story') : t('authors.stories', 'stories')}
                 </Text>
             </LinearGradient>
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

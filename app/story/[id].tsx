@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useState, useCallback } from 'react';
-import { View, Text, ScrollView, Pressable, Share, StyleSheet } from 'react-native';
+import { View, Text, Share, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -27,7 +28,9 @@ import Animated, {
     useAnimatedStyle,
     interpolate,
     Extrapolate,
-    useAnimatedScrollHandler
+    useAnimatedScrollHandler,
+    useAnimatedReaction,
+    runOnJS,
 } from 'react-native-reanimated';
 import { useStory, useReviewsByStory, useStoryRating, useCreateReview } from '@/hooks/useQueries';
 import { useFavorites } from '@/hooks/useFavorites';
@@ -43,6 +46,8 @@ import { useTranslation } from 'react-i18next';
 import { useSubscriptionStore } from '@/store/subscriptionStore';
 import { useProgressStore } from '@/store/progressStore';
 import { checkStoryAccess } from '@/services/storyGating';
+
+const AnimatedScrollView = Animated.createAnimatedComponent(ScrollView);
 
 interface StoryDetails extends Story {
     authorBio?: string;
@@ -179,17 +184,6 @@ export default function StoryDetailScreen() {
         }
     };
 
-    const headerOpacity = useAnimatedStyle(() => {
-        return {
-            opacity: interpolate(
-                scrollY.value,
-                [300, 400],
-                [0, 1],
-                Extrapolate.CLAMP
-            ),
-        };
-    });
-
     const isLoading = loadingStory || loadingReviews;
 
     if (isLoading) {
@@ -217,27 +211,16 @@ export default function StoryDetailScreen() {
         return (
             <View style={[styles.container, { paddingTop: insets.top }, styles.center]}>
                 <Text style={styles.errorText}>Story not found</Text>
-                <Pressable onPress={() => router.back()} style={{ marginTop: 20 }}>
+                <TouchableOpacity onPress={() => router.back()} style={{ marginTop: 20 }} activeOpacity={0.7}>
                     <Text style={{ color: theme.colors.primary }}>Go Back</Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
         );
     }
 
     return (
         <View style={styles.container}>
-            {/* Sticky Header */}
-            <Animated.View style={[styles.stickyHeader, { paddingTop: insets.top }, headerOpacity]}>
-                <View style={styles.stickyHeaderContent}>
-                    <Pressable onPress={() => router.back()} style={styles.stickyBackButton}>
-                        <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                    </Pressable>
-                    <Text style={styles.stickyTitle} numberOfLines={1}>{story.title}</Text>
-                    <View style={{ width: 40 }} />
-                </View>
-            </Animated.View>
-
-            <Animated.ScrollView
+            <AnimatedScrollView
                 style={styles.scrollView}
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.contentContainer}
@@ -249,13 +232,6 @@ export default function StoryDetailScreen() {
                     storyId={story.id}
                     coverImage={story.coverImage}
                     coverImageLqip={story.coverImageLqip}
-                    onBackPress={() => router.back()}
-                    onBookmarkPress={handleBookmarkPress}
-                    isBookmarked={isInLibrary}
-                    onFavoritePress={handleFavoritePress}
-                    isFavorited={isFavorited}
-                    topInset={insets.top}
-                    onSharePress={handleSharePress}
                 />
 
                 {/* Content */}
@@ -263,9 +239,9 @@ export default function StoryDetailScreen() {
                     {/* Title and Author */}
                     <View style={styles.titleSection}>
                         <Text style={styles.title}>{story.title}</Text>
-                        <Pressable onPress={() => story.authorId && router.push(`/author/${story.authorId}`)}>
+                        <TouchableOpacity onPress={() => story.authorId && router.push(`/author/${story.authorId}`)} activeOpacity={0.7}>
                             <Text style={[styles.author, story.authorId && { color: theme.colors.primary }]}>{story.author}</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     {/* Rating */}
@@ -345,9 +321,9 @@ export default function StoryDetailScreen() {
                     <View style={styles.section}>
                         <View style={styles.sectionHeader}>
                             <Text style={styles.sectionTitle}>{t('stories.details.reviews')}</Text>
-                            <Pressable onPress={() => router.push(`/reviews/${story.id}`)}>
+                            <TouchableOpacity onPress={() => router.push(`/reviews/${story.id}`)} activeOpacity={0.7}>
                                 <Text style={styles.seeAllLink}>{t('stories.details.seeAll')}</Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
                         {reviews.length > 0 ? (
                             <ReviewCard
@@ -361,20 +337,21 @@ export default function StoryDetailScreen() {
                         )}
 
                         {user && !user.isAnonymous && (
-                            <Pressable
+                            <TouchableOpacity
                                 style={styles.writeReviewButton}
                                 onPress={() => {
                                     haptics.selection();
                                     writeReviewSheetRef.current?.expand();
                                 }}
+                                activeOpacity={0.7}
                             >
                                 <Ionicons name="create-outline" size={18} color={theme.colors.primary} />
                                 <Text style={styles.writeReviewText}>{t('stories.details.writeReview')}</Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
                     </View>
                 </View>
-            </Animated.ScrollView>
+            </AnimatedScrollView>
 
             {/* Write Review Sheet */}
             <WriteReviewSheet
@@ -399,13 +376,14 @@ export default function StoryDetailScreen() {
                 }}
             />
             <View style={[styles.bottomAction, { paddingBottom: insets.bottom + 16, paddingHorizontal: containerPadding }]}>
-                <Pressable
+                <TouchableOpacity
                     style={styles.readButton}
                     onPress={handleStartReading}
+                    activeOpacity={0.8}
                 >
                     <Ionicons name="book-outline" size={20} color={theme.colors.textInverse} />
                     <Text style={styles.readButtonText}>{t('stories.details.startReading')}</Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             {/* Story Unlock Modal */}
@@ -422,6 +400,55 @@ export default function StoryDetailScreen() {
                     setShowPaywallModal(true);
                 }}
             />
+
+            {/* Simplified Top Action Bar - Fixed at top, outside ScrollView */}
+            <View style={[styles.navBar, { top: insets.top + 8 }]}>
+                <TouchableOpacity
+                    style={styles.navButton}
+                    onPress={() => router.back()}
+                    hitSlop={15}
+                    activeOpacity={0.7}
+                >
+                    <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
+                </TouchableOpacity>
+
+                <View style={styles.navRight}>
+                    <TouchableOpacity
+                        style={styles.navButton}
+                        onPress={handleFavoritePress}
+                        hitSlop={15}
+                        activeOpacity={0.7}
+                    >
+                        <Ionicons
+                            name={isFavorited ? 'heart' : 'heart-outline'}
+                            size={24}
+                            color={isFavorited ? theme.colors.error : theme.colors.text}
+                        />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.navButton}
+                        onPress={handleBookmarkPress}
+                        hitSlop={15}
+                        activeOpacity={0.7}
+                    >
+                        <Ionicons
+                            name={isInLibrary ? 'bookmark' : 'bookmark-outline'}
+                            size={24}
+                            color={isInLibrary ? theme.colors.primary : theme.colors.text}
+                        />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.navButton}
+                        onPress={handleSharePress}
+                        hitSlop={15}
+                        activeOpacity={0.7}
+                    >
+                        <Ionicons name="share-social-outline" size={24} color={theme.colors.text} />
+                    </TouchableOpacity>
+                </View>
+            </View>
 
             {/* Paywall Modal */}
             <PaywallModal
@@ -570,6 +597,7 @@ const createStyles = (theme: Theme) => StyleSheet.create({
         backgroundColor: theme.colors.background,
         borderTopWidth: 1,
         borderTopColor: theme.colors.borderLight,
+        zIndex: 50,
     },
     readButton: {
         flexDirection: 'row',
@@ -637,5 +665,27 @@ const createStyles = (theme: Theme) => StyleSheet.create({
         fontWeight: 'bold',
         color: theme.colors.text,
         textAlign: 'center',
+    },
+    navBar: {
+        position: 'absolute',
+        left: theme.spacing.lg,
+        right: theme.spacing.lg,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        zIndex: 1000,
+    },
+    navRight: {
+        flexDirection: 'row',
+        gap: theme.spacing.sm,
+    },
+    navButton: {
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+        backgroundColor: theme.colors.surface + 'CC', // Semi-transparent
+        alignItems: 'center',
+        justifyContent: 'center',
+        ...theme.shadows.sm,
     },
 });

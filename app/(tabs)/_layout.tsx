@@ -8,9 +8,9 @@ export default function TabLayout() {
 
     return (
         <Tabs
+            tabBar={(props) => <CustomTabBar {...props} />}
             screenOptions={{
                 headerShown: false,
-                tabBarStyle: { display: 'flex' }, // Ensure default tab bar is visible
             }}
         >
             <Tabs.Screen

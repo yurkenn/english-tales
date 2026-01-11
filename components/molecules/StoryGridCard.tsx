@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { View, Pressable , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -28,13 +28,13 @@ const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
     const difficultyLabel = DIFFICULTY_LABELS[story.difficulty] || story.difficulty;
 
     return (
-        <Pressable
-            style={({ pressed }) => [
+        <TouchableOpacity
+            style={[
                 styles.card,
-                { width: cardWidth },
-                pressed && styles.cardPressed,
+                { width: cardWidth }
             ]}
             onPress={onPress}
+            activeOpacity={0.9}
         >
             <View style={[styles.coverContainer, { width: cardWidth, height: cardImageHeight }]}>
                 <BookCover
@@ -90,7 +90,7 @@ const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
                     </View>
                 </View>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

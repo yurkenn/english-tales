@@ -1,5 +1,4 @@
-import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { SavedWord } from '@/store/vocabularyStore';
@@ -15,9 +14,10 @@ export const VocabularyItem: React.FC<VocabularyItemProps> = ({ item, onRemove, 
     const styles = createStyles(theme);
 
     return (
-        <Pressable
+        <TouchableOpacity
             style={styles.container}
             onPress={() => onPress?.(item)}
+            activeOpacity={0.7}
         >
             <View style={styles.content}>
                 <View style={styles.header}>
@@ -35,14 +35,15 @@ export const VocabularyItem: React.FC<VocabularyItemProps> = ({ item, onRemove, 
                     </Text>
                 )}
             </View>
-            <Pressable
+            <TouchableOpacity
                 onPress={() => onRemove(item.id)}
                 style={styles.removeButton}
                 hitSlop={12}
+                activeOpacity={0.6}
             >
                 <Ionicons name="trash-outline" size={20} color={theme.colors.textSecondary} />
-            </Pressable>
-        </Pressable>
+            </TouchableOpacity>
+        </TouchableOpacity>
     );
 };
 

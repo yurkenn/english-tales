@@ -1,5 +1,5 @@
-import React, { forwardRef, useCallback, useMemo } from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import React, { forwardRef, useMemo, useCallback } from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView } from '@gorhom/bottom-sheet';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -30,7 +30,7 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
         icon,
     }, ref) => {
         const { theme } = useTheme();
-    const styles = createStyles(theme);
+        const styles = createStyles(theme);
         const { t } = useTranslation();
         const insets = useSafeAreaInsets();
 
@@ -101,26 +101,26 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
 
                     {/* Buttons */}
                     <View style={styles.buttons}>
-                        <Pressable
-                            style={({ pressed }) => [
+                        <TouchableOpacity
+                            style={[
                                 styles.button,
                                 styles.cancelButton,
-                                pressed && styles.buttonPressed,
                             ]}
                             onPress={handleCancel}
+                            activeOpacity={0.7}
                             accessibilityRole="button"
                             accessibilityLabel={cancelLabelText}
                             accessibilityHint={t('common.accessibility.cancelHint', 'Cancel this action')}
                         >
                             <Text style={styles.cancelButtonText}>{cancelLabelText}</Text>
-                        </Pressable>
-                        <Pressable
-                            style={({ pressed }) => [
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={[
                                 styles.button,
                                 destructive ? styles.destructiveButton : styles.confirmButton,
-                                pressed && styles.buttonPressed,
                             ]}
                             onPress={handleConfirm}
+                            activeOpacity={0.8}
                             accessibilityRole="button"
                             accessibilityLabel={confirmLabelText}
                             accessibilityHint={destructive ? t('common.accessibility.destructiveHint', "This action cannot be undone") : t('common.accessibility.confirmHint', "Confirm this action")}
@@ -133,7 +133,7 @@ export const ConfirmationDialog = forwardRef<BottomSheet, ConfirmationDialogProp
                             >
                                 {confirmLabelText}
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </BottomSheetView>
             </BottomSheet>

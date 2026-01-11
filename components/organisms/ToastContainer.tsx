@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, Animated, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Animated, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
@@ -53,9 +53,9 @@ const ToastItem: React.FC<{
             <Text style={styles.message} numberOfLines={2}>
                 {message}
             </Text>
-            <Pressable onPress={onDismiss} hitSlop={10}>
+            <TouchableOpacity onPress={onDismiss} hitSlop={10} activeOpacity={0.7}>
                 <Ionicons name="close" size={20} color={theme.colors.textMuted} />
-            </Pressable>
+            </TouchableOpacity>
         </Animated.View>
     );
 };

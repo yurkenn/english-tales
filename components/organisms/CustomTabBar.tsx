@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Pressable, LayoutChangeEvent, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, LayoutChangeEvent, StyleSheet } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { useTheme, Theme } from '@/theme';
 import { Feather } from '@expo/vector-icons';
@@ -85,7 +85,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
                     };
 
                     return (
-                        <Pressable
+                        <TouchableOpacity
                             key={route.key}
                             accessibilityRole="button"
                             accessibilityState={isFocused ? { selected: true } : {}}
@@ -93,6 +93,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
                             testID={(options as any).tabBarTestID}
                             onPress={onPress}
                             style={themedStyles.tabItem}
+                            activeOpacity={0.7}
                         >
                             <TabItemContent
                                 isFocused={isFocused}
@@ -109,7 +110,7 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
                                     }
                                 ]} />
                             )}
-                        </Pressable>
+                        </TouchableOpacity>
                     );
                 })}
             </View>

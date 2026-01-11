@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -41,7 +41,7 @@ export const FriendListItem: React.FC<FriendListItemProps> = ({
 
     return (
         <View style={[styles.friendCard, !showDivider && styles.noDivider]}>
-            <Pressable style={styles.friendInfo} onPress={handleProfilePress}>
+            <TouchableOpacity style={styles.friendInfo} onPress={handleProfilePress} activeOpacity={0.7}>
                 <View style={styles.avatarWrapper}>
                     <Image
                         source={avatarSource}
@@ -57,44 +57,48 @@ export const FriendListItem: React.FC<FriendListItemProps> = ({
                                 t('social.waitingApproval', 'Waiting for approval')}
                     </Typography>
                 </View>
-            </Pressable>
+            </TouchableOpacity>
 
             <View style={styles.actions}>
                 {type === 'incoming' && (
                     <View style={styles.actionGroup}>
-                        <Pressable
+                        <TouchableOpacity
                             style={[styles.actionBtn, styles.acceptBtn]}
                             onPress={() => onAccept?.(friend.friendshipId)}
+                            activeOpacity={0.8}
                         >
                             <Typography variant="label" color={theme.colors.textInverse}>
                                 {t('common.accept', 'Accept')}
                             </Typography>
-                        </Pressable>
-                        <Pressable
+                        </TouchableOpacity>
+                        <TouchableOpacity
                             style={[styles.actionBtn, styles.rejectBtn]}
                             onPress={() => onRemove?.(friend.friendshipId, false)}
+                            activeOpacity={0.6}
                         >
                             <Ionicons name="close" size={18} color={theme.colors.textMuted} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 )}
                 {type === 'outgoing' && (
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.secondaryActionBtn}
                         onPress={() => onRemove?.(friend.friendshipId, false)}
+                        activeOpacity={0.7}
                     >
                         <Typography variant="label" color={theme.colors.textMuted}>
                             {t('common.cancel', 'Cancel')}
                         </Typography>
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
                 {type === 'friends' && (
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.ghostActionBtn}
                         onPress={() => onRemove?.(friend.friendshipId, true)}
+                        activeOpacity={0.6}
                     >
                         <Ionicons name="ellipsis-horizontal" size={20} color={theme.colors.textMuted} />
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
             </View>
         </View>

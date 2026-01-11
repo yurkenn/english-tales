@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -27,10 +27,10 @@ export const NetworkError: React.FC<NetworkErrorProps> = ({
             <Text style={styles.title}>Oops!</Text>
             <Text style={styles.message}>{message}</Text>
             {onRetry && (
-                <Pressable style={styles.retryButton} onPress={onRetry}>
+                <TouchableOpacity style={styles.retryButton} onPress={onRetry} activeOpacity={0.8}>
                     <Ionicons name="refresh" size={20} color={theme.colors.textInverse} />
                     <Text style={styles.retryText}>Try Again</Text>
-                </Pressable>
+                </TouchableOpacity>
             )}
         </View>
     );

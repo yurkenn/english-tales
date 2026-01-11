@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { View, Text, Pressable, Animated, StyleSheet } from 'react-native';
+import { View, Text, Animated, StyleSheet, TouchableOpacity } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -258,9 +258,9 @@ export default function ReadingScreen() {
         return (
             <View style={[styles.container, { paddingTop: insets.top }, styles.center]}>
                 <Text style={styles.errorText}>{t('reading.notFound')}</Text>
-                <Pressable onPress={() => router.back()} style={{ marginTop: theme.spacing.xl }}>
+                <TouchableOpacity onPress={() => router.back()} style={{ marginTop: theme.spacing.xl }} activeOpacity={0.7}>
                     <Text style={{ color: theme.colors.primary }}>{t('common.goBack')}</Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
         );
     }

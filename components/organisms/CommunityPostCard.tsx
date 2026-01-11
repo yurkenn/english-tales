@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, {
@@ -95,7 +95,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
     };
 
     return (
-        <Pressable
+        <TouchableOpacity
             onPress={() => {
                 haptics.selection();
                 onPress?.();
@@ -105,6 +105,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                 isAchievement && { borderColor: theme.colors.warning + '20' },
                 isReview && { borderColor: theme.colors.primary + '20' }
             ]}
+            activeOpacity={0.7}
         >
 
 
@@ -162,7 +163,7 @@ export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
                 likeAnimationStyle={likeAnimationStyle}
                 replyAnimationStyle={replyAnimationStyle}
             />
-        </Pressable>
+        </TouchableOpacity>
 
     );
 };

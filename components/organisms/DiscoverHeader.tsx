@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -22,17 +22,18 @@ export const DiscoverHeader: React.FC<DiscoverHeaderProps> = ({
     return (
         <View style={[styles.header, { paddingTop: insets.top + theme.spacing.sm }]}>
             <Text style={styles.title}>{t('tabs.discover', 'Discover')}</Text>
-            <Pressable
+            <TouchableOpacity
                 style={styles.actionButton}
                 hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                 onPress={onNotificationPress}
+                activeOpacity={0.7}
             >
                 <Ionicons
                     name="notifications-outline"
                     size={22}
                     color={theme.colors.text}
                 />
-            </Pressable>
+            </TouchableOpacity>
         </View>
     );
 };

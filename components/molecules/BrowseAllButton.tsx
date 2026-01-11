@@ -1,5 +1,4 @@
-import React from 'react';
-import { Text, Pressable , StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -12,17 +11,15 @@ export const BrowseAllButton: React.FC<BrowseAllButtonProps> = ({ onPress }) => 
     const styles = createStyles(theme);
 
     return (
-        <Pressable
-            style={({ pressed }) => [
-                styles.button,
-                pressed && styles.buttonPressed,
-            ]}
+        <TouchableOpacity
+            style={styles.button}
             onPress={onPress}
+            activeOpacity={0.7}
         >
             <Ionicons name="library-outline" size={24} color={theme.colors.primary} />
             <Text style={styles.text}>Browse All Stories</Text>
             <Ionicons name="arrow-forward" size={20} color={theme.colors.primary} />
-        </Pressable>
+        </TouchableOpacity>
     );
 };
 

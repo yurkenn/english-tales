@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, Image, ImageSourcePropType , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -31,26 +31,27 @@ export const CommunityReplyCard: React.FC<CommunityReplyCardProps> = ({ reply, o
 
     return (
         <View style={styles.container}>
-            <Pressable onPress={handleProfilePress}>
+            <TouchableOpacity onPress={handleProfilePress} activeOpacity={0.7}>
                 <Image
                     source={avatarSource}
                     style={styles.avatar}
                 />
-            </Pressable>
+            </TouchableOpacity>
 
             <View style={styles.contentContainer}>
                 <View style={styles.header}>
-                    <Pressable onPress={handleProfilePress} style={styles.headerText}>
+                    <TouchableOpacity onPress={handleProfilePress} style={styles.headerText} activeOpacity={0.7}>
                         <Typography variant="bodyBold" style={styles.userName}>
                             {reply.userName}
                         </Typography>
                         <Typography variant="caption" color={theme.colors.textMuted} style={styles.timestamp}>
                             {replyDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </Typography>
-                    </Pressable>
-                    <Pressable
+                    </TouchableOpacity>
+                    <TouchableOpacity
                         onPress={() => { haptics.selection(); onLike?.(); }}
                         style={styles.likeButton}
+                        activeOpacity={0.6}
                     >
                         <Ionicons
                             name={hasLiked ? "heart" : "heart-outline"}
@@ -62,7 +63,7 @@ export const CommunityReplyCard: React.FC<CommunityReplyCardProps> = ({ reply, o
                                 {reply.likes}
                             </Typography>
                         ) : null}
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
                 <Typography variant="body" style={styles.content}>
                     {reply.content}

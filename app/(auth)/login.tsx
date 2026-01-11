@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, KeyboardAvoidingView, Platform, ActivityIndicator, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter, Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -108,37 +108,38 @@ export default function LoginScreen() {
                         containerStyle={styles.fieldContainer}
                     />
 
-                    <Pressable style={styles.forgotPassword} onPress={() => router.push('/forgot-password')}>
+                    <TouchableOpacity style={styles.forgotPassword} onPress={() => router.push('/forgot-password')} activeOpacity={0.7}>
                         <Text style={styles.linkText}>{t('auth.login.forgotPassword', 'Forgot Password?')}</Text>
-                    </Pressable>
+                    </TouchableOpacity>
 
-                    <Pressable
+                    <TouchableOpacity
                         style={[styles.button, loading && styles.buttonDisabled]}
                         onPress={handleLogin}
                         disabled={loading}
+                        activeOpacity={0.8}
                     >
                         {loading ? (
                             <ActivityIndicator color={theme.colors.textInverse} />
                         ) : (
                             <Text style={styles.buttonText}>{t('profile.login', 'Log In')}</Text>
                         )}
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
                 <AuthDivider />
 
                 <SocialAuthButton provider="google" onPress={handleGoogleSignIn} disabled={loading} />
 
-                <Pressable onPress={handleGuestLogin} style={styles.guestButton}>
+                <TouchableOpacity onPress={handleGuestLogin} style={styles.guestButton} activeOpacity={0.7}>
                     <Text style={styles.guestButtonText}>{t('auth.login.guest', 'Continue as Guest')}</Text>
-                </Pressable>
+                </TouchableOpacity>
 
                 <View style={styles.footer}>
                     <Text style={styles.footerText}>{t('auth.login.noAccount', "Don't have an account? ")}</Text>
                     <Link href="/signup" asChild>
-                        <Pressable>
+                        <TouchableOpacity activeOpacity={0.7}>
                             <Text style={styles.linkText}>{t('auth.signup.title', 'Sign Up')}</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </Link>
                 </View>
             </ScrollView>

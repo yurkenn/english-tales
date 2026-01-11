@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react'
-import { View, ScrollView, Pressable, Animated } from 'react-native'
+import { View, ScrollView, TouchableOpacity, Animated } from 'react-native'
 import { useTheme, Theme, semanticColors } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router'
@@ -72,9 +72,9 @@ export default function VocabularyQuizScreen() {
         return (
             <View style={[styles.container, { paddingTop: insets.top }]}>
                 <View style={styles.header}>
-                    <Pressable style={styles.backButton} onPress={() => router.back()}>
+                    <TouchableOpacity style={styles.backButton} onPress={() => router.back()} activeOpacity={0.7}>
                         <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                    </Pressable>
+                    </TouchableOpacity>
                     <Typography style={styles.headerTitle}>Vocabulary Quiz</Typography>
                     <View style={styles.placeholder} />
                 </View>
@@ -84,12 +84,13 @@ export default function VocabularyQuizScreen() {
                     <Typography style={styles.emptyText}>
                         Save some words while reading to start practicing!
                     </Typography>
-                    <Pressable
+                    <TouchableOpacity
                         style={styles.emptyButton}
                         onPress={() => router.push('/(tabs)')}
+                        activeOpacity={0.7}
                     >
                         <Typography style={styles.emptyButtonText}>Start Reading</Typography>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
@@ -101,9 +102,9 @@ export default function VocabularyQuizScreen() {
         return (
             <View style={[styles.container, { paddingTop: insets.top }]}>
                 <View style={styles.header}>
-                    <Pressable style={styles.backButton} onPress={() => router.back()}>
+                    <TouchableOpacity style={styles.backButton} onPress={() => router.back()} activeOpacity={0.7}>
                         <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                    </Pressable>
+                    </TouchableOpacity>
                     <Typography style={styles.headerTitle}>Quiz Complete!</Typography>
                     <View style={styles.placeholder} />
                 </View>
@@ -124,10 +125,10 @@ export default function VocabularyQuizScreen() {
                             <Typography style={styles.statLabel}>Learning</Typography>
                         </View>
                     </View>
-                    <Pressable style={styles.restartButton} onPress={handleRestart}>
+                    <TouchableOpacity style={styles.restartButton} onPress={handleRestart} activeOpacity={0.8}>
                         <Ionicons name="refresh" size={20} color={theme.colors.textInverse} />
                         <Typography style={styles.restartButtonText}>Practice Again</Typography>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         )
@@ -137,9 +138,9 @@ export default function VocabularyQuizScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
             <View style={styles.header}>
-                <Pressable style={styles.backButton} onPress={() => router.back()}>
+                <TouchableOpacity style={styles.backButton} onPress={() => router.back()} activeOpacity={0.7}>
                     <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Typography style={styles.headerTitle}>Vocabulary Quiz</Typography>
                 <View style={styles.placeholder} />
             </View>

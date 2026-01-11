@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import Animated, {
@@ -66,7 +66,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
                 const isActive = activeTab === tab.id;
 
                 return (
-                    <Pressable
+                    <TouchableOpacity
                         key={tab.id}
                         style={styles.tab}
                         onPress={() => {
@@ -76,6 +76,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
                             }
                         }}
                         hitSlop={{ top: 10, bottom: 10, left: 5, right: 5 }}
+                        activeOpacity={0.7}
                     >
                         <Ionicons
                             name={isActive ? tab.icon.replace('-outline', '') : tab.icon}
@@ -105,7 +106,7 @@ export const ProfileTabs: React.FC<ProfileTabsProps> = ({
                                 </View>
                             )}
                         </View>
-                    </Pressable>
+                    </TouchableOpacity>
                 );
             })}
         </View>

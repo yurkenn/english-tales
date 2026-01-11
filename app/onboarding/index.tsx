@@ -4,7 +4,7 @@ import {
     FlatList,
     NativeSyntheticEvent,
     NativeScrollEvent,
-    Pressable,
+    TouchableOpacity,
     Text,
     StyleSheet
 } from 'react-native';
@@ -146,7 +146,7 @@ export default function OnboardingScreen() {
                     />
                     {/* Skip Button - Only on first two slides */}
                     {currentIndex < ONBOARDING_DATA.length - 1 && (
-                        <Pressable
+                        <TouchableOpacity
                             style={styles.skipButton}
                             onPress={() => {
                                 haptics.selection();
@@ -155,9 +155,10 @@ export default function OnboardingScreen() {
                                     animated: true,
                                 });
                             }}
+                            activeOpacity={0.7}
                         >
                             <Text style={styles.skipText}>Skip</Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     )}
                 </>
             )}

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback } from 'react'
-import { View, Pressable, ScrollView, Image, RefreshControl } from 'react-native'
+import { View, TouchableOpacity, ScrollView, Image, RefreshControl } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router'
@@ -202,9 +202,9 @@ export default function UserProfileScreen() {
             <View style={styles.centerContainer}>
                 <Ionicons name="person-outline" size={64} color={theme.colors.textMuted} />
                 <Typography style={styles.notFoundText}>{t('social.userNotFound', 'User not found')}</Typography>
-                <Pressable style={styles.goBackButton} onPress={handleBack}>
+                <TouchableOpacity style={styles.goBackButton} onPress={handleBack} activeOpacity={0.7}>
                     <Typography color={theme.colors.primary}>{t('common.goBack', 'Go Back')}</Typography>
-                </Pressable>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -213,9 +213,9 @@ export default function UserProfileScreen() {
         <View style={styles.container}>
             {/* Header */}
             <View style={[styles.header, { paddingTop: insets.top + 8 }]}>
-                <Pressable style={styles.backButton} onPress={handleBack}>
+                <TouchableOpacity style={styles.backButton} onPress={handleBack} activeOpacity={0.7}>
                     <Ionicons name="chevron-back" size={24} color={theme.colors.text} />
-                </Pressable>
+                </TouchableOpacity>
                 <Typography style={styles.headerTitle} numberOfLines={1}>
                     {profile.displayName || t('profile.title', 'Profile')}
                 </Typography>
@@ -270,7 +270,7 @@ export default function UserProfileScreen() {
                         )}
 
                         {/* Follow Button */}
-                        <Pressable
+                        <TouchableOpacity
                             style={[
                                 styles.followButton,
                                 relationship === 'following' && styles.followingButton,
@@ -278,6 +278,7 @@ export default function UserProfileScreen() {
                             ]}
                             onPress={handleFollowPress}
                             disabled={actionLoading}
+                            activeOpacity={0.8}
                         >
                             {actionLoading ? (
                                 <Typography style={styles.followButtonText}>...</Typography>
@@ -301,7 +302,7 @@ export default function UserProfileScreen() {
                                     </Typography>
                                 </>
                             )}
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </View>
 

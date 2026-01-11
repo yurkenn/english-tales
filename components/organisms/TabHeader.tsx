@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -27,11 +27,12 @@ export const TabHeader: React.FC<TabHeaderProps> = ({ title, actions = [] }) => 
             {actions.length > 0 && (
                 <View style={styles.actions}>
                     {actions.map((action, index) => (
-                        <Pressable
+                        <TouchableOpacity
                             key={index}
                             style={styles.actionButton}
                             onPress={action.onPress}
                             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                            activeOpacity={0.7}
                         >
                             <Ionicons
                                 name={action.icon as any}
@@ -41,7 +42,7 @@ export const TabHeader: React.FC<TabHeaderProps> = ({ title, actions = [] }) => 
                             {action.badge && (
                                 <View style={[styles.badge, action.badgeColor && { backgroundColor: action.badgeColor }]} />
                             )}
-                        </Pressable>
+                        </TouchableOpacity>
                     ))}
                 </View>
             )}

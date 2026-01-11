@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, TextInput, Modal , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useToastStore } from '@/store/toastStore';
@@ -52,9 +52,9 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
                 <View style={styles.content}>
                     <View style={styles.header}>
                         <Text style={styles.title}>{t('profile.editProfile', 'Edit Profile')}</Text>
-                        <Pressable onPress={onClose}>
+                        <TouchableOpacity onPress={onClose} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.text} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     <Text style={styles.inputLabel}>{t('auth.displayName', 'Display Name')}</Text>
@@ -66,15 +66,16 @@ export const EditProfileModal: React.FC<EditProfileModalProps> = ({
                         placeholderTextColor={theme.colors.textMuted}
                     />
 
-                    <Pressable
+                    <TouchableOpacity
                         style={[styles.saveButton, isSaving && { opacity: 0.6 }]}
                         disabled={isSaving}
+                        activeOpacity={0.8}
                         onPress={handleSave}
                     >
                         <Text style={styles.saveButtonText}>
                             {isSaving ? t('common.saving', 'Saving...') : t('common.save', 'Save Changes')}
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
             </View>
         </Modal>

@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { View, Text, Image, Pressable , StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { PortableTextBlock } from '@portabletext/types';
 import { urlFor } from '@/services/sanity/client';

@@ -1,9 +1,10 @@
 import React, { forwardRef } from 'react';
-import { Text, Pressable, PressableProps, ActivityIndicator, View , StyleSheet } from 'react-native';
+import { Text, TouchableOpacity, TouchableOpacityProps, ActivityIndicator, View, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
-export interface ButtonProps extends Omit<PressableProps, 'children'> {
+
+export interface ButtonProps extends Omit<TouchableOpacityProps, 'children'> {
   /** Text to display on the button */
   title?: string;
   /** If true, the button will show a loading indicator and be disabled */
@@ -41,7 +42,7 @@ export const Button = forwardRef<View, ButtonProps>(({
   ...props
 }, ref) => {
   const { theme } = useTheme();
-    const styles = createStyles(theme);
+  const styles = createStyles(theme);
 
   const handlePress = (e: any) => {
     if (disabled || loading) return;
@@ -93,19 +94,19 @@ export const Button = forwardRef<View, ButtonProps>(({
   const textSize = size === 'sm' ? theme.typography.size.sm : size === 'md' ? theme.typography.size.md : theme.typography.size.lg;
 
   return (
-    <Pressable
-      ref={ref}
-      style={({ pressed }) => [
+    <TouchableOpacity
+      ref={ref as any}
+      style={[
         styles.button,
         sizeStyles[size],
         variantStyles[variant],
         fullWidth && styles.fullWidth,
         (disabled || loading) && styles.disabled,
-        pressed && !disabled && !loading && styles.pressed,
         style as any,
       ]}
       onPress={handlePress}
       disabled={disabled || loading}
+      activeOpacity={0.7}
       accessibilityRole="button"
       accessibilityState={{ disabled: disabled || loading }}
       {...props}
@@ -123,7 +124,7 @@ export const Button = forwardRef<View, ButtonProps>(({
           )}
         </>
       )}
-    </Pressable>
+    </TouchableOpacity>
   );
 });
 

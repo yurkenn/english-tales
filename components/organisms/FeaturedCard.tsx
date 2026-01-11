@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Pressable, StyleSheet as RNStyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet as RNStyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -42,7 +42,7 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
     return (
         <View style={styles.container}>
             {/* Hero Image */}
-            <Pressable onPress={onPress}>
+            <TouchableOpacity onPress={onPress} activeOpacity={0.9}>
                 <View style={styles.heroImage}>
                     <OptimizedImage
                         source={{ uri: coverUri }}
@@ -76,7 +76,7 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
                         </Typography>
                     </View>
                 </View>
-            </Pressable>
+            </TouchableOpacity>
 
             {/* Bottom Content */}
             <View style={styles.content}>
@@ -97,14 +97,14 @@ export const FeaturedCard: React.FC<FeaturedCardProps> = ({
                 </Typography>
 
                 {/* CTA Button */}
-                <Pressable style={styles.button} onPress={onPress}>
+                <TouchableOpacity style={styles.button} onPress={onPress} activeOpacity={0.8}>
                     <Typography variant="button" color={theme.colors.textInverse}>Read Now</Typography>
                     <Ionicons
                         name="arrow-forward"
                         size={theme.iconSize.sm}
                         color={theme.colors.textInverse}
                     />
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </View>
     );

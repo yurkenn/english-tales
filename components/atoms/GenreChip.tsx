@@ -1,4 +1,4 @@
-import { Pressable, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import Animated, {
     useSharedValue,
@@ -14,7 +14,39 @@ interface GenreChipProps {
     onPress?: () => void;
 }
 
-const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+const AnimatedTouchableOpacity = Animated.createAnimatedComponent(TouchableOpacity);
+
+function createStyles(theme: Theme) {
+    return StyleSheet.create({
+        chip: {
+            height: 36,
+            paddingHorizontal: theme.spacing.lg,
+            borderRadius: theme.radius.full,
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: theme.spacing.xs,
+        },
+        chipSelected: {
+            backgroundColor: theme.colors.primary,
+            ...theme.shadows.md,
+        },
+        chipDefault: {
+            backgroundColor: theme.colors.chipInactive,
+        },
+        label: {
+            fontSize: theme.typography.size.md,
+        },
+        labelSelected: {
+            color: theme.colors.textInverse,
+            fontWeight: theme.typography.weight.semibold,
+        },
+        labelDefault: {
+            color: theme.colors.text,
+            fontWeight: theme.typography.weight.medium,
+        },
+    });
+}
 
 export const GenreChip: React.FC<GenreChipProps> = ({
     label,
@@ -43,7 +75,7 @@ export const GenreChip: React.FC<GenreChipProps> = ({
     };
 
     return (
-        <AnimatedPressable
+        <AnimatedTouchableOpacity
             style={[
                 styles.chip,
                 animatedStyle,
@@ -52,10 +84,12 @@ export const GenreChip: React.FC<GenreChipProps> = ({
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
             onPress={handlePress}
+            activeOpacity={0.9}
             accessible
             accessibilityRole="button"
             accessibilityLabel={label}
             accessibilityState={{ selected: isSelected }}
+            hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
         >
             <Text
                 style={[
@@ -65,36 +99,6 @@ export const GenreChip: React.FC<GenreChipProps> = ({
             >
                 {label}
             </Text>
-        </AnimatedPressable>
+        </AnimatedTouchableOpacity>
     );
 };
-
-const createStyles = (theme: Theme) => StyleSheet.create({
-    chip: {
-        height: 36,
-        paddingHorizontal: theme.spacing.lg,
-        borderRadius: theme.radius.full,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: theme.spacing.xs,
-    },
-    chipSelected: {
-        backgroundColor: theme.colors.primary,
-        ...theme.shadows.md,
-    },
-    chipDefault: {
-        backgroundColor: theme.colors.chipInactive,
-    },
-    label: {
-        fontSize: theme.typography.size.md,
-    },
-    labelSelected: {
-        color: theme.colors.textInverse,
-        fontWeight: theme.typography.weight.semibold,
-    },
-    labelDefault: {
-        color: theme.colors.text,
-        fontWeight: theme.typography.weight.medium,
-    },
-});

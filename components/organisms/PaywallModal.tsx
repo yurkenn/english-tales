@@ -4,7 +4,7 @@
  */
 
 import React, { memo, useCallback, useState, useEffect } from 'react'
-import { View, Text, Modal, Pressable, ScrollView, ActivityIndicator, Image, Dimensions, Switch, Platform } from 'react-native'
+import { View, Text, Modal, TouchableOpacity, ScrollView, ActivityIndicator, Image, Dimensions, Switch, Platform } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -109,9 +109,9 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                 <View style={styles.contentContainer}>
                     {/* Header Section */}
                     <View style={styles.header}>
-                        <Pressable onPress={onClose} style={styles.closeButton}>
+                        <TouchableOpacity onPress={onClose} style={styles.closeButton} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.textSecondary} />
-                        </Pressable>
+                        </TouchableOpacity>
 
                         <Animated.Image
                             entering={FadeInDown.delay(100).springify()}
@@ -147,7 +147,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
 
                         {/* Yearly Plan */}
                         {annualPackage && (
-                            <Pressable
+                            <TouchableOpacity
                                 style={[
                                     styles.planCard,
                                     selectedPkg?.identifier === annualPackage.identifier && { borderColor: activeBorderColor }
@@ -157,6 +157,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                                     setSelectedPkg(annualPackage)
                                     setIsTrialEnabled(false)
                                 }}
+                                activeOpacity={0.8}
                             >
                                 <View style={styles.planContent}>
                                     <View style={styles.planHeader}>
@@ -175,12 +176,12 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                                     styles.radio,
                                     selectedPkg?.identifier === annualPackage.identifier && { borderColor: activeBorderColor, backgroundColor: activeBorderColor }
                                 ]} />
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
 
                         {/* Monthly Plan - Flexible Option */}
                         {monthlyPackage && !isTrialEnabled && (
-                            <Pressable
+                            <TouchableOpacity
                                 style={[
                                     styles.planCard,
                                     selectedPkg?.identifier === monthlyPackage.identifier && { borderColor: activeBorderColor }
@@ -190,6 +191,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                                     setSelectedPkg(monthlyPackage)
                                     setIsTrialEnabled(false)
                                 }}
+                                activeOpacity={0.8}
                             >
                                 <View style={styles.planContent}>
                                     <View style={styles.planHeader}>
@@ -204,12 +206,12 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                                     styles.radio,
                                     selectedPkg?.identifier === monthlyPackage.identifier && { borderColor: activeBorderColor, backgroundColor: activeBorderColor }
                                 ]} />
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
 
                         {/* Trial / Weekly Plan */}
                         {weeklyPackage && (
-                            <Pressable
+                            <TouchableOpacity
                                 style={[
                                     styles.planCard,
                                     styles.trialCard,
@@ -220,6 +222,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                                     setSelectedPkg(weeklyPackage)
                                     setIsTrialEnabled(true)
                                 }}
+                                activeOpacity={0.8}
                             >
                                 <View style={styles.planContent}>
                                     <View style={styles.planHeader}>
@@ -237,7 +240,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                                     size={24}
                                     color={selectedPkg?.identifier === weeklyPackage.identifier ? goldColor : theme.colors.textSecondary}
                                 />
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
 
                         {/* Trial Toggle */}
@@ -253,7 +256,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                         </View>
 
                         {/* CTA Button */}
-                        <Pressable
+                        <TouchableOpacity
                             style={[
                                 styles.ctaButton,
                                 styles.shadow,
@@ -261,6 +264,7 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                             ]}
                             onPress={handlePurchase}
                             disabled={isLoading}
+                            activeOpacity={0.8}
                         >
                             {isLoading ? (
                                 <ActivityIndicator color="#fff" />
@@ -269,21 +273,21 @@ function PaywallModalComponent({ visible, onClose, onSuccess }: PaywallModalProp
                                     {isTrialEnabled ? 'Try for Free' : 'Subscribe'} {'>'}
                                 </Text>
                             )}
-                        </Pressable>
+                        </TouchableOpacity>
 
                         {/* Footer Links */}
                         <View style={styles.footerLinks}>
-                            <Pressable onPress={handleRestore}>
+                            <TouchableOpacity onPress={handleRestore} activeOpacity={0.7}>
                                 <Text style={styles.linkText}>Restore</Text>
-                            </Pressable>
+                            </TouchableOpacity>
                             <Text style={styles.linkText}>•</Text>
-                            <Pressable>
+                            <TouchableOpacity activeOpacity={0.7}>
                                 <Text style={styles.linkText}>Terms</Text>
-                            </Pressable>
+                            </TouchableOpacity>
                             <Text style={styles.linkText}>•</Text>
-                            <Pressable>
+                            <TouchableOpacity activeOpacity={0.7}>
                                 <Text style={styles.linkText}>Privacy</Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
 
                     </Animated.View>

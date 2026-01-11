@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, Text, View , StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import Animated, { FadeInDown, FadeOutUp } from 'react-native-reanimated';
 import { Ionicons } from '@expo/vector-icons';
@@ -40,13 +40,14 @@ export const ActiveFilterBadge: React.FC<ActiveFilterBadgeProps> = ({
                         <Text style={styles.count}> ({resultCount})</Text>
                     )}
                 </View>
-                <Pressable
+                <TouchableOpacity
                     style={styles.clearButton}
                     onPress={handleClear}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                    activeOpacity={0.6}
                 >
                     <Ionicons name="close-circle" size={18} color={theme.colors.primary} />
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </Animated.View>
     );

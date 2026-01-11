@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -17,9 +17,9 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
 
     return (
         <View style={styles.header}>
-            <Pressable style={styles.backButton} onPress={onBackPress}>
+            <TouchableOpacity style={styles.backButton} onPress={onBackPress} activeOpacity={0.7}>
                 <Ionicons name="arrow-back" size={24} color={theme.colors.text} />
-            </Pressable>
+            </TouchableOpacity>
             <Text style={styles.headerTitle}>{title}</Text>
             <View style={styles.placeholder} />
         </View>

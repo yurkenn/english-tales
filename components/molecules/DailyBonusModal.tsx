@@ -4,7 +4,7 @@
  */
 
 import React, { memo, useCallback } from 'react'
-import { View, Text, Modal, Pressable, ScrollView, ActivityIndicator } from 'react-native'
+import { View, Text, Modal, TouchableOpacity, ScrollView, ActivityIndicator } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -199,11 +199,15 @@ function DailyBonusModalComponent({
 
                     {/* Actions */}
                     {!showDoubleAd && !claimed && (
-                        <Pressable style={styles.claimButton} onPress={handleClaim}>
+                        <TouchableOpacity
+                            style={styles.claimButton}
+                            onPress={handleClaim}
+                            activeOpacity={0.8}
+                        >
                             <Text style={styles.claimButtonText}>
                                 {t('dailyBonus.claim', 'Claim Reward')}
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     )}
 
                     {showDoubleAd && !claimed && (
@@ -211,10 +215,11 @@ function DailyBonusModalComponent({
                             <Text style={styles.doubleTitle}>
                                 {t('dailyBonus.doubleOffer', 'Double your reward?')}
                             </Text>
-                            <Pressable
+                            <TouchableOpacity
                                 style={styles.doubleAdButton}
                                 onPress={handleWatchAd}
                                 disabled={adLoading}
+                                activeOpacity={0.8}
                             >
                                 {adLoading ? (
                                     <ActivityIndicator color="#fff" />
@@ -226,12 +231,12 @@ function DailyBonusModalComponent({
                                         </Text>
                                     </>
                                 )}
-                            </Pressable>
-                            <Pressable style={styles.skipDoubleButton} onPress={handleClaimNormal}>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.skipDoubleButton} onPress={handleClaimNormal} activeOpacity={0.6}>
                                 <Text style={styles.skipDoubleText}>
                                     {t('dailyBonus.claimNormal', 'Claim 1x Instead')}
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
                     )}
 
@@ -246,9 +251,9 @@ function DailyBonusModalComponent({
 
                     {/* Close */}
                     {!claimed && (
-                        <Pressable style={styles.closeButton} onPress={onClose}>
+                        <TouchableOpacity style={styles.closeButton} onPress={onClose} activeOpacity={0.6}>
                             <Ionicons name="close" size={24} color={theme.colors.textMuted} />
-                        </Pressable>
+                        </TouchableOpacity>
                     )}
                 </View>
             </BlurView>

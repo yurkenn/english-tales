@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Pressable, Alert, ScrollView , StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Alert, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import BottomSheet, { BottomSheetView, BottomSheetBackdrop } from '@gorhom/bottom-sheet';
@@ -166,7 +166,7 @@ export const PostActionSheet: React.FC<PostActionSheetProps> = ({
                             {t('moderation.postOptions', 'Post Options')}
                         </Typography>
 
-                        <Pressable style={styles.actionButton} onPress={handleOpenReport}>
+                        <TouchableOpacity style={styles.actionButton} onPress={handleOpenReport} activeOpacity={0.7}>
                             <View style={[styles.iconContainer, { backgroundColor: theme.colors.warning + '15' }]}>
                                 <Ionicons name="flag" size={20} color={theme.colors.warning} />
                             </View>
@@ -179,10 +179,10 @@ export const PostActionSheet: React.FC<PostActionSheetProps> = ({
                                 </Typography>
                             </View>
                             <Ionicons name="chevron-forward" size={18} color={theme.colors.textMuted} />
-                        </Pressable>
+                        </TouchableOpacity>
 
                         {isAdmin && (
-                            <Pressable style={styles.actionButton} onPress={handleDelete}>
+                            <TouchableOpacity style={styles.actionButton} onPress={handleDelete} activeOpacity={0.7}>
                                 <View style={[styles.iconContainer, { backgroundColor: theme.colors.error + '15' }]}>
                                     <Ionicons name="trash" size={20} color={theme.colors.error} />
                                 </View>
@@ -195,16 +195,16 @@ export const PostActionSheet: React.FC<PostActionSheetProps> = ({
                                     </Typography>
                                 </View>
                                 <Ionicons name="chevron-forward" size={18} color={theme.colors.textMuted} />
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
                     </View>
                 ) : (
                     // Report Options
                     <Animated.View entering={FadeIn.duration(200)} style={styles.reportContainer}>
                         <View style={styles.reportHeader}>
-                            <Pressable onPress={() => setShowReportOptions(false)} style={styles.backButton}>
+                            <TouchableOpacity onPress={() => setShowReportOptions(false)} style={styles.backButton} activeOpacity={0.7}>
                                 <Ionicons name="arrow-back" size={22} color={theme.colors.text} />
-                            </Pressable>
+                            </TouchableOpacity>
                             <Typography variant="h3" style={styles.reportTitle}>
                                 {t('moderation.whyReport', 'Why are you reporting?')}
                             </Typography>
@@ -220,10 +220,11 @@ export const PostActionSheet: React.FC<PostActionSheetProps> = ({
                                     key={reason.id}
                                     entering={FadeInDown.delay(index * 50).springify()}
                                 >
-                                    <Pressable
+                                    <TouchableOpacity
                                         style={[styles.reasonCard, isSubmitting && styles.disabledCard]}
                                         onPress={() => handleSubmitReport(reason)}
                                         disabled={isSubmitting}
+                                        activeOpacity={0.7}
                                     >
                                         <View style={[styles.reasonIcon, { backgroundColor: reason.color + '15' }]}>
                                             <Ionicons name={reason.icon} size={24} color={reason.color} />
@@ -236,7 +237,7 @@ export const PostActionSheet: React.FC<PostActionSheetProps> = ({
                                                 {reason.description}
                                             </Typography>
                                         </View>
-                                    </Pressable>
+                                    </TouchableOpacity>
                                 </Animated.View>
                             ))}
                         </ScrollView>

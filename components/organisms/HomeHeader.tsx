@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, Pressable, ImageSourcePropType, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
@@ -41,29 +41,31 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
 
     return (
         <View style={styles.header}>
-            <Pressable style={styles.userRow} onPress={onProfilePress}>
+            <TouchableOpacity style={styles.userRow} onPress={onProfilePress} activeOpacity={0.7}>
                 <Image source={avatarSource} style={styles.avatar} />
                 <View style={styles.greeting}>
                     <Text style={styles.greetingLabel}>{getGreeting(t)}</Text>
                     <Text style={styles.userName}>{displayName}</Text>
                 </View>
-            </Pressable>
+            </TouchableOpacity>
             <View style={styles.actionRow}>
-                <Pressable
+                <TouchableOpacity
                     style={styles.notificationButton}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                     onPress={onSocialPress}
+                    activeOpacity={0.7}
                 >
                     <Ionicons
                         name="people-outline"
                         size={theme.iconSize.md}
                         color={theme.colors.text}
                     />
-                </Pressable>
-                <Pressable
+                </TouchableOpacity>
+                <TouchableOpacity
                     style={styles.notificationButton}
                     hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
                     onPress={onNotificationPress}
+                    activeOpacity={0.7}
                 >
                     <Ionicons
                         name="notifications-outline"
@@ -71,7 +73,7 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
                         color={theme.colors.text}
                     />
                     <View style={styles.notificationBadge} />
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </View>
     );

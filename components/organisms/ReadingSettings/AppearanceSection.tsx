@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
 import { haptics } from '@/utils/haptics';
@@ -29,15 +29,16 @@ export const AppearanceSection: React.FC<AppearanceSectionProps> = ({
                 <Text style={styles.label}>{t('reading.lineSpacing', 'Line Spacing')}</Text>
                 <View style={styles.lineControls}>
                     {[1.4, 1.6, 1.8, 2.0].map((lh) => (
-                        <Pressable
+                        <TouchableOpacity
                             key={lh}
                             style={[styles.lineButton, lineHeight === lh && styles.lineButtonActive]}
                             onPress={() => { haptics.selection(); onLineHeightChange(lh); }}
+                            activeOpacity={0.8}
                         >
                             <Text style={[styles.lineButtonText, lineHeight === lh && styles.lineButtonTextActive]}>
                                 {lh}x
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     ))}
                 </View>
             </View>
@@ -47,7 +48,7 @@ export const AppearanceSection: React.FC<AppearanceSectionProps> = ({
                 <Text style={styles.label}>{t('settings.preferences.theme')}</Text>
                 <View style={styles.themeControls}>
                     {(['light', 'dark', 'sepia'] as ReadingTheme[]).map((tValue) => (
-                        <Pressable
+                        <TouchableOpacity
                             key={tValue}
                             style={[
                                 styles.themeButton,
@@ -55,11 +56,12 @@ export const AppearanceSection: React.FC<AppearanceSectionProps> = ({
                                 readingTheme === tValue && styles.themeButtonActive,
                             ]}
                             onPress={() => { haptics.selection(); onThemeChange(tValue); }}
+                            activeOpacity={0.9}
                         >
                             <Text style={[styles.themeButtonText, { color: READING_THEMES[tValue].text }]}>
                                 {tValue.charAt(0).toUpperCase() + tValue.slice(1)}
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     ))}
                 </View>
             </View>

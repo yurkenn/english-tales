@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -41,9 +41,9 @@ export const GuestLoginBanner: React.FC<GuestLoginBannerProps> = ({
             >
                 {/* Dismiss button */}
                 {onDismiss && (
-                    <Pressable style={styles.dismissButton} onPress={handleDismiss}>
+                    <TouchableOpacity style={styles.dismissButton} onPress={handleDismiss} activeOpacity={0.6}>
                         <Ionicons name="close" size={18} color="rgba(255,255,255,0.7)" />
-                    </Pressable>
+                    </TouchableOpacity>
                 )}
 
                 {/* Icon */}
@@ -62,15 +62,16 @@ export const GuestLoginBanner: React.FC<GuestLoginBannerProps> = ({
                 </View>
 
                 {/* CTA Button */}
-                <Pressable
-                    style={({ pressed }) => [styles.ctaButton, pressed && { opacity: 0.9 }]}
+                <TouchableOpacity
+                    style={styles.ctaButton}
                     onPress={handleSignIn}
+                    activeOpacity={0.8}
                 >
                     <Ionicons name="log-in-outline" size={18} color={theme.colors.primary} />
                     <Text style={[styles.ctaText, { color: theme.colors.primary }]}>
                         {t('auth.guestBanner.cta', 'Sign In / Sign Up')}
                     </Text>
-                </Pressable>
+                </TouchableOpacity>
             </LinearGradient>
         </Animated.View>
     )

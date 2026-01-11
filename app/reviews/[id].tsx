@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useCallback } from 'react';
-import { View, Text, FlatList, Pressable, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -78,16 +78,17 @@ export default function ReviewsScreen() {
         <View style={[styles.container, { paddingTop: insets.top }]}>
             {/* Header */}
             <View style={[styles.header, { paddingHorizontal: containerPadding }]}>
-                <Pressable
+                <TouchableOpacity
                     style={styles.backButton}
                     onPress={() => router.back()}
+                    activeOpacity={0.7}
                 >
                     <Ionicons
                         name="arrow-back"
                         size={24}
                         color={theme.colors.text}
                     />
-                </Pressable>
+                </TouchableOpacity>
                 <View style={styles.headerTitleContainer}>
                     <Text style={styles.headerTitle}>Reviews</Text>
                     {storyDoc && (
@@ -138,13 +139,14 @@ export default function ReviewsScreen() {
 
             {/* Write Review FAB */}
             {canWriteReview && (
-                <Pressable
+                <TouchableOpacity
                     style={[styles.fab, { bottom: insets.bottom + 20 }]}
                     onPress={handleOpenReviewSheet}
+                    activeOpacity={0.8}
                 >
                     <Ionicons name="create-outline" size={24} color="#FFFFFF" />
                     <Text style={styles.fabText}>Write Review</Text>
-                </Pressable>
+                </TouchableOpacity>
             )}
 
             {/* Write Review Bottom Sheet */}

@@ -1,5 +1,4 @@
-import React from 'react';
-import { View, Text, Pressable , StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -21,13 +20,13 @@ export const TermsCheckbox: React.FC<TermsCheckboxProps> = ({
 
     return (
         <View style={styles.container}>
-            <Pressable onPress={onToggle} style={styles.checkbox} hitSlop={10}>
+            <TouchableOpacity onPress={onToggle} style={styles.checkbox} hitSlop={10} activeOpacity={0.7}>
                 <Ionicons
                     name={checked ? 'checkbox' : 'square-outline'}
                     size={24}
                     color={error ? theme.colors.error : (checked ? theme.colors.primary : theme.colors.textSecondary)}
                 />
-            </Pressable>
+            </TouchableOpacity>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>
                     I agree to the{' '}

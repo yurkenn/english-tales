@@ -53,6 +53,56 @@ const DIFFICULTY_MAP: Record<number, string> = {
 }
 const AUTHORS_INDEX = 5
 
+function createStyles(theme: Theme) {
+    return StyleSheet.create({
+        container: {
+            flex: 1,
+            backgroundColor: theme.colors.background,
+        },
+        searchContainer: {
+            paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
+            paddingTop: 0,
+            paddingBottom: theme.spacing.sm,
+        },
+        chipsWrapper: {
+            flexShrink: 0,
+        },
+        chipsContainer: {
+            paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
+            paddingVertical: theme.spacing.sm,
+            gap: theme.spacing.sm,
+        },
+        content: {
+            flex: 1,
+        },
+        contentContainer: {
+            flexGrow: 1,
+            paddingBottom: 160, // Sufficient space to scroll past tab bar
+            gap: theme.spacing.lg,
+        },
+        section: {
+            gap: theme.spacing.sm,
+        },
+        sectionContent: {
+            paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
+        },
+        carouselContent: {
+            paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
+        },
+        trendingContainer: {
+            paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
+            gap: theme.spacing.md,
+        },
+        horizontalSeparator: {
+            width: theme.spacing.lg,
+        },
+        center: {
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+    });
+}
+
 export default function HomeScreen() {
     const { t } = useTranslation()
     const { theme } = useTheme();
@@ -361,50 +411,4 @@ export default function HomeScreen() {
     )
 }
 
-const createStyles = (theme: Theme) => StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: theme.colors.background,
-    },
-    searchContainer: {
-        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
-        paddingTop: 0,
-        paddingBottom: theme.spacing.sm,
-    },
-    chipsWrapper: {
-        flexShrink: 0,
-    },
-    chipsContainer: {
-        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
-        paddingVertical: theme.spacing.sm,
-        gap: theme.spacing.sm,
-    },
-    content: {
-        flex: 1,
-    },
-    contentContainer: {
-        flexGrow: 1,
-        paddingBottom: 160, // Sufficient space to scroll past tab bar
-        gap: theme.spacing.lg,
-    },
-    section: {
-        gap: theme.spacing.sm,
-    },
-    sectionContent: {
-        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
-    },
-    carouselContent: {
-        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
-    },
-    trendingContainer: {
-        paddingHorizontal: theme.spacing.lg, // Will be overridden by inline style
-        gap: theme.spacing.md,
-    },
-    horizontalSeparator: {
-        width: theme.spacing.lg,
-    },
-    center: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+

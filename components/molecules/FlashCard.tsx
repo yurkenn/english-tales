@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { View, Pressable, Animated } from 'react-native'
+import { View, TouchableOpacity, Animated } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Typography } from '@/components/atoms'
@@ -108,7 +107,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({
     return (
         <View style={styles.container}>
             {/* Card */}
-            <Pressable onPress={handleFlip} style={styles.cardWrapper}>
+            <TouchableOpacity onPress={handleFlip} style={styles.cardWrapper} activeOpacity={0.9}>
                 {/* Front - Word */}
                 <Animated.View style={[styles.card, styles.cardFront, frontAnimatedStyle]}>
                     <View style={styles.cardContent}>
@@ -134,7 +133,7 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                         )}
                     </View>
                 </Animated.View>
-            </Pressable>
+            </TouchableOpacity>
 
             {/* Action Buttons - shown after flip */}
             <Animated.View
@@ -144,24 +143,26 @@ export const FlashCard: React.FC<FlashCardProps> = ({
                 ]}
                 pointerEvents={isFlipped ? 'auto' : 'none'}
             >
-                <Pressable
+                <TouchableOpacity
                     style={[styles.actionButton, styles.incorrectButton]}
                     onPress={handleIncorrect}
+                    activeOpacity={0.7}
                 >
                     <Ionicons name="close" size={24} color={theme.colors.error} />
                     <Typography style={[styles.actionText, { color: theme.colors.error }]}>
                         Learning
                     </Typography>
-                </Pressable>
-                <Pressable
+                </TouchableOpacity>
+                <TouchableOpacity
                     style={[styles.actionButton, styles.correctButton]}
                     onPress={handleCorrect}
+                    activeOpacity={0.7}
                 >
                     <Ionicons name="checkmark" size={24} color={theme.colors.success} />
                     <Typography style={[styles.actionText, { color: theme.colors.success }]}>
                         Got It!
                     </Typography>
-                </Pressable>
+                </TouchableOpacity>
             </Animated.View>
         </View>
     )

@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { View, Pressable, ScrollView, Image } from 'react-native'
+import { View, TouchableOpacity, ScrollView, Image } from 'react-native'
 import { useTheme, Theme, semanticColors } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -24,6 +24,337 @@ import { useResponsiveLayout } from '@/hooks/useResponsiveLayout'
 
 const DEFAULT_AVATAR = require('@/assets/defaultavatar.png')
 
+function createStyles(theme: Theme) {
+    return StyleSheet.create({
+        container: {
+            flex: 1,
+            backgroundColor: theme.colors.background,
+        },
+        scrollView: {
+            flex: 1,
+        },
+        scrollContent: {
+            paddingBottom: theme.spacing.xxxxl * 2,
+        },
+
+        header: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingHorizontal: theme.spacing.lg,
+            paddingBottom: theme.spacing.lg,
+            backgroundColor: theme.colors.background,
+        },
+        headerTitle: {
+            fontSize: theme.typography.size.xxxl,
+            fontWeight: '700',
+            color: theme.colors.text,
+            letterSpacing: -0.5,
+        },
+        settingsButton: {
+            width: 44,
+            height: 44,
+            borderRadius: theme.radius.md,
+            backgroundColor: theme.colors.surface,
+            borderWidth: 1,
+            borderColor: theme.colors.borderLight,
+            alignItems: 'center',
+            justifyContent: 'center',
+            ...theme.shadows.sm,
+        },
+        headerRight: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: theme.spacing.md,
+        },
+
+        profileCard: {
+            backgroundColor: theme.colors.surface,
+            borderRadius: theme.radius.xxl,
+            padding: theme.spacing.xl,
+            marginHorizontal: theme.spacing.lg,
+            marginTop: theme.spacing.lg,
+            ...theme.shadows.md,
+        },
+        avatarRow: {
+            flexDirection: 'row',
+            alignItems: 'flex-start',
+        },
+        avatarWrapper: {
+            position: 'relative',
+        },
+        avatar: {
+            width: 72,
+            height: 72,
+            borderRadius: 36,
+            borderWidth: 3,
+            borderColor: theme.colors.surface,
+        },
+        editAvatarBtn: {
+            position: 'absolute',
+            bottom: -2,
+            right: -2,
+            width: 28,
+            height: 28,
+            borderRadius: 14,
+            alignItems: 'center',
+            justifyContent: 'center',
+            borderWidth: 3,
+            borderColor: theme.colors.surface,
+        },
+        statsRow: {
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            marginLeft: theme.spacing.md,
+            paddingTop: theme.spacing.sm,
+            flexWrap: 'nowrap',
+        },
+        statItem: {
+            alignItems: 'center',
+        },
+        statItemValue: {
+            fontSize: theme.typography.size.xl,
+            fontWeight: '700',
+            color: theme.colors.text,
+        },
+        statItemLabel: {
+            fontSize: theme.typography.size.xs,
+            color: theme.colors.textMuted,
+            marginTop: theme.spacing.xxs,
+        },
+        userInfo: {
+            marginTop: theme.spacing.lg,
+        },
+        displayName: {
+            fontSize: theme.typography.size.xl,
+            fontWeight: '700',
+            color: theme.colors.text,
+        },
+        username: {
+            fontSize: theme.typography.size.sm,
+            color: theme.colors.textMuted,
+            marginTop: theme.spacing.xxs,
+        },
+        bio: {
+            fontSize: theme.typography.size.md,
+            color: theme.colors.textSecondary,
+            marginTop: theme.spacing.md,
+            lineHeight: 22,
+        },
+        addBioBtn: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: theme.spacing.sm,
+            marginTop: theme.spacing.md,
+        },
+        addBioText: {
+            fontSize: theme.typography.size.md,
+            fontWeight: '500',
+        },
+        editProfileBtn: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: theme.spacing.sm,
+            marginTop: theme.spacing.lg,
+            paddingVertical: theme.spacing.md,
+            borderRadius: theme.radius.md,
+            borderWidth: 1,
+        },
+        editProfileText: {
+            fontSize: theme.typography.size.md,
+            fontWeight: '600',
+            color: theme.colors.text,
+        },
+        guestBannerWrapper: {
+            marginTop: theme.spacing.lg,
+        },
+
+        tabsContainer: {
+            flexDirection: 'row',
+            marginTop: theme.spacing.xl,
+            marginHorizontal: theme.spacing.lg,
+            backgroundColor: theme.colors.surface,
+            borderRadius: theme.radius.md,
+            padding: theme.spacing.xs,
+        },
+        tabButton: {
+            flex: 1,
+            alignItems: 'center',
+            paddingVertical: theme.spacing.md,
+            borderRadius: theme.radius.sm,
+            position: 'relative',
+        },
+        tabButtonContent: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: theme.spacing.sm,
+        },
+        tabButtonText: {
+            fontSize: theme.typography.size.sm,
+            fontWeight: '600',
+        },
+        tabButtonTextActive: {
+            fontWeight: '700',
+        },
+        tabBadge: {
+            paddingHorizontal: theme.spacing.sm,
+            paddingVertical: theme.spacing.xxs,
+            borderRadius: theme.radius.sm,
+            minWidth: 20,
+            alignItems: 'center',
+        },
+        tabBadgeText: {
+            fontSize: 10,
+            fontWeight: '700',
+        },
+        unlockBanner: {
+            backgroundColor: theme.colors.primary,
+            borderRadius: theme.radius.xxl,
+            padding: theme.spacing.xl,
+            marginHorizontal: theme.spacing.lg,
+            marginTop: theme.spacing.lg,
+            alignItems: 'center',
+            position: 'relative',
+            overflow: 'hidden',
+        },
+        tabIndicator: {
+            position: 'absolute',
+            bottom: 2,
+            width: 24,
+            height: 3,
+            borderRadius: theme.radius.xxs,
+        },
+
+        // Tab Content
+        tabContent: {
+            minHeight: 400,
+        },
+        feedContainer: {
+            padding: theme.spacing.lg,
+            gap: theme.spacing.lg,
+        },
+        savedGrid: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            padding: theme.spacing.lg,
+            gap: theme.spacing.md,
+        },
+
+        // About Tab
+        aboutContainer: {
+            padding: theme.spacing.lg,
+        },
+        quickStatsCard: {
+            backgroundColor: theme.colors.surface,
+            borderRadius: theme.radius.xxl,
+            padding: theme.spacing.xl,
+            marginBottom: theme.spacing.xl,
+            ...theme.shadows.md,
+        },
+        quickStatsRow: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            gap: theme.spacing.md,
+        },
+        quickStatItem: {
+            flex: 1,
+            minWidth: '40%',
+            alignItems: 'center',
+            paddingVertical: theme.spacing.sm,
+        },
+        quickStatIcon: {
+            width: 40,
+            height: 40,
+            borderRadius: theme.radius.full,
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: theme.spacing.sm,
+        },
+        quickStatValue: {
+            fontSize: theme.typography.size.xl,
+            fontWeight: '800',
+            color: theme.colors.text,
+        },
+        quickStatLabel: {
+            fontSize: theme.typography.size.xs,
+            color: theme.colors.textMuted,
+            fontWeight: '600',
+            marginTop: 2,
+        },
+        menuSection: {
+            marginBottom: theme.spacing.xl,
+        },
+        menuSectionTitle: {
+            fontSize: theme.typography.size.xs,
+            fontWeight: '700',
+            color: theme.colors.textMuted,
+            textTransform: 'uppercase',
+            letterSpacing: 1,
+            marginBottom: theme.spacing.md,
+            marginLeft: theme.spacing.xs,
+        },
+        menuCard: {
+            backgroundColor: theme.colors.surface,
+            borderRadius: theme.radius.md,
+            overflow: 'hidden',
+            ...theme.shadows.sm,
+        },
+        menuItem: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: theme.spacing.lg,
+        },
+        menuItemBorder: {
+            borderBottomWidth: 1,
+            borderBottomColor: theme.colors.borderLight,
+        },
+        menuItemLeft: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: theme.spacing.lg,
+        },
+        menuIconWrapper: {
+            width: 36,
+            height: 36,
+            borderRadius: theme.radius.sm,
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+        menuItemRight: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: theme.spacing.xs,
+        },
+        menuItemLabel: {
+            fontSize: theme.typography.size.md,
+            color: theme.colors.text,
+            fontWeight: '500',
+        },
+        menuItemValue: {
+            fontSize: theme.typography.size.sm,
+            color: theme.colors.textMuted,
+        },
+        signOutButton: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: theme.spacing.sm,
+            paddingVertical: theme.spacing.lg,
+            marginTop: theme.spacing.md,
+            backgroundColor: theme.colors.surface,
+            borderRadius: theme.radius.md,
+        },
+        signOutText: {
+            fontSize: theme.typography.size.md,
+            fontWeight: '600',
+        },
+    });
+}
+
 // Menu Item Component
 const MenuItem = ({
     icon,
@@ -41,10 +372,10 @@ const MenuItem = ({
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (
-        <Pressable
+        <TouchableOpacity
             style={[styles.menuItem, !isLast && styles.menuItemBorder]}
             onPress={() => { haptics.selection(); onPress() }}
-            android_ripple={{ color: theme.colors.primary + '10' }}
+            activeOpacity={0.7}
         >
             <View style={styles.menuItemLeft}>
                 <View style={[styles.menuIconWrapper, { backgroundColor: theme.colors.primary + '15' }]}>
@@ -58,7 +389,7 @@ const MenuItem = ({
                 )}
                 <Ionicons name="chevron-forward" size={16} color={theme.colors.textMuted} />
             </View>
-        </Pressable>
+        </TouchableOpacity>
     )
 }
 
@@ -249,16 +580,16 @@ export default function ProfileScreen() {
                         </View>
 
                         {/* Sign Out */}
-                        <Pressable
+                        <TouchableOpacity
                             style={styles.signOutButton}
                             onPress={handleSignOut}
-                            android_ripple={{ color: theme.colors.error + '20' }}
+                            activeOpacity={0.7}
                         >
                             <Ionicons name="log-out-outline" size={20} color={theme.colors.error} />
                             <Typography style={[styles.signOutText, { color: theme.colors.error }]}>
                                 {t('profile.signOut', 'Sign Out')}
                             </Typography>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 )
 
@@ -284,13 +615,14 @@ export default function ProfileScreen() {
                     <Typography style={styles.headerTitle}>{t('tabs.profile', 'Profile')}</Typography>
                     <View style={styles.headerRight}>
                         <CoinDisplay />
-                        <Pressable
+                        <TouchableOpacity
                             style={styles.settingsButton}
                             onPress={handleSettingsPress}
                             hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+                            activeOpacity={0.7}
                         >
                             <Ionicons name="settings-outline" size={24} color={theme.colors.text} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
@@ -303,12 +635,13 @@ export default function ProfileScreen() {
                                 source={fullProfile.photoURL ? { uri: fullProfile.photoURL } : DEFAULT_AVATAR}
                                 style={styles.avatar}
                             />
-                            <Pressable
+                            <TouchableOpacity
                                 style={[styles.editAvatarBtn, { backgroundColor: theme.colors.primary }]}
                                 onPress={handleEditPress}
+                                activeOpacity={0.8}
                             >
                                 <Ionicons name="pencil" size={14} color={theme.colors.textInverse} />
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
 
                         {/* Stats Row */}
@@ -343,24 +676,25 @@ export default function ProfileScreen() {
                         {fullProfile.bio ? (
                             <Typography style={styles.bio}>{fullProfile.bio}</Typography>
                         ) : (
-                            <Pressable style={styles.addBioBtn} onPress={handleEditPress}>
+                            <TouchableOpacity style={styles.addBioBtn} onPress={handleEditPress} activeOpacity={0.7}>
                                 <Ionicons name="add-circle-outline" size={16} color={theme.colors.primary} />
                                 <Typography style={[styles.addBioText, { color: theme.colors.primary }]}>
                                     {t('profile.addBio', 'Add a bio')}
                                 </Typography>
-                            </Pressable>
+                            </TouchableOpacity>
                         )}
 
                         {/* Edit Profile Button */}
-                        <Pressable
+                        <TouchableOpacity
                             style={[styles.editProfileBtn, { borderColor: theme.colors.border }]}
                             onPress={handleEditPress}
+                            activeOpacity={0.7}
                         >
                             <Ionicons name="create-outline" size={16} color={theme.colors.text} />
                             <Typography style={styles.editProfileText}>
                                 {t('profile.editProfile', 'Edit Profile')}
                             </Typography>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     {/* Guest Banner */}
@@ -435,332 +769,5 @@ export default function ProfileScreen() {
     )
 }
 
-const createStyles = (theme: Theme) => StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: theme.colors.background,
-    },
-    scrollView: {
-        flex: 1,
-    },
-    scrollContent: {
-        paddingBottom: theme.spacing.xxxxl * 2,
-    },
 
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingHorizontal: theme.spacing.lg,
-        paddingBottom: theme.spacing.lg,
-        backgroundColor: theme.colors.background,
-    },
-    headerTitle: {
-        fontSize: theme.typography.size.xxxl,
-        fontWeight: '700',
-        color: theme.colors.text,
-        letterSpacing: -0.5,
-    },
-    settingsButton: {
-        width: 44,
-        height: 44,
-        borderRadius: theme.radius.md,
-        backgroundColor: theme.colors.surface,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        alignItems: 'center',
-        justifyContent: 'center',
-        ...theme.shadows.sm,
-    },
-    headerRight: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: theme.spacing.md,
-    },
-
-    profileCard: {
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xxl,
-        padding: theme.spacing.xl,
-        marginHorizontal: theme.spacing.lg,
-        marginTop: theme.spacing.lg,
-        ...theme.shadows.md,
-    },
-    avatarRow: {
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-    },
-    avatarWrapper: {
-        position: 'relative',
-    },
-    avatar: {
-        width: 72,
-        height: 72,
-        borderRadius: 36,
-        borderWidth: 3,
-        borderColor: theme.colors.surface,
-    },
-    editAvatarBtn: {
-        position: 'absolute',
-        bottom: -2,
-        right: -2,
-        width: 28,
-        height: 28,
-        borderRadius: 14,
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderWidth: 3,
-        borderColor: theme.colors.surface,
-    },
-    statsRow: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-        marginLeft: theme.spacing.md,
-        paddingTop: theme.spacing.sm,
-        flexWrap: 'nowrap',
-    },
-    statItem: {
-        alignItems: 'center',
-    },
-    statItemValue: {
-        fontSize: theme.typography.size.xl,
-        fontWeight: '700',
-        color: theme.colors.text,
-    },
-    statItemLabel: {
-        fontSize: theme.typography.size.xs,
-        color: theme.colors.textMuted,
-        marginTop: theme.spacing.xxs,
-    },
-    userInfo: {
-        marginTop: theme.spacing.lg,
-    },
-    displayName: {
-        fontSize: theme.typography.size.xl,
-        fontWeight: '700',
-        color: theme.colors.text,
-    },
-    username: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textMuted,
-        marginTop: theme.spacing.xxs,
-    },
-    bio: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.textSecondary,
-        marginTop: theme.spacing.md,
-        lineHeight: 22,
-    },
-    addBioBtn: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: theme.spacing.sm,
-        marginTop: theme.spacing.md,
-    },
-    addBioText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: '500',
-    },
-    editProfileBtn: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: theme.spacing.sm,
-        marginTop: theme.spacing.lg,
-        paddingVertical: theme.spacing.md,
-        borderRadius: theme.radius.md,
-        borderWidth: 1,
-    },
-    editProfileText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: '600',
-        color: theme.colors.text,
-    },
-    guestBannerWrapper: {
-        marginTop: theme.spacing.lg,
-    },
-
-    tabsContainer: {
-        flexDirection: 'row',
-        marginTop: theme.spacing.xl,
-        marginHorizontal: theme.spacing.lg,
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.md,
-        padding: theme.spacing.xs,
-    },
-    tabButton: {
-        flex: 1,
-        alignItems: 'center',
-        paddingVertical: theme.spacing.md,
-        borderRadius: theme.radius.sm,
-        position: 'relative',
-    },
-    tabButtonContent: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: theme.spacing.sm,
-    },
-    tabButtonText: {
-        fontSize: theme.typography.size.sm,
-        fontWeight: '600',
-    },
-    tabButtonTextActive: {
-        fontWeight: '700',
-    },
-    tabBadge: {
-        paddingHorizontal: theme.spacing.sm,
-        paddingVertical: theme.spacing.xxs,
-        borderRadius: theme.radius.sm,
-        minWidth: 20,
-        alignItems: 'center',
-    },
-    tabBadgeText: {
-        fontSize: 10,
-        fontWeight: '700',
-    },
-    unlockBanner: {
-        backgroundColor: theme.colors.primary,
-        borderRadius: theme.radius.xxl,
-        padding: theme.spacing.xl,
-        marginHorizontal: theme.spacing.lg,
-        marginTop: theme.spacing.lg,
-        alignItems: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-    },
-    tabIndicator: {
-        position: 'absolute',
-        bottom: 2,
-        width: 24,
-        height: 3,
-        borderRadius: theme.radius.xxs,
-    },
-
-    // Tab Content
-    tabContent: {
-        minHeight: 400,
-    },
-    feedContainer: {
-        padding: theme.spacing.lg,
-        gap: theme.spacing.lg,
-    },
-    savedGrid: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        padding: theme.spacing.lg,
-        gap: theme.spacing.md,
-    },
-
-    // About Tab
-    aboutContainer: {
-        padding: theme.spacing.lg,
-    },
-    quickStatsCard: {
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.xxl,
-        padding: theme.spacing.xl,
-        marginBottom: theme.spacing.xl,
-        ...theme.shadows.md,
-    },
-    quickStatsRow: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        gap: theme.spacing.md,
-    },
-    quickStatItem: {
-        flex: 1,
-        minWidth: '40%',
-        alignItems: 'center',
-        paddingVertical: theme.spacing.sm,
-    },
-    quickStatIcon: {
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.full,
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: theme.spacing.sm,
-    },
-    quickStatValue: {
-        fontSize: theme.typography.size.xl,
-        fontWeight: '800',
-        color: theme.colors.text,
-    },
-    quickStatLabel: {
-        fontSize: theme.typography.size.xs,
-        color: theme.colors.textMuted,
-        fontWeight: '600',
-        marginTop: 2,
-    },
-    menuSection: {
-        marginBottom: theme.spacing.xl,
-    },
-    menuSectionTitle: {
-        fontSize: theme.typography.size.xs,
-        fontWeight: '700',
-        color: theme.colors.textMuted,
-        textTransform: 'uppercase',
-        letterSpacing: 1,
-        marginBottom: theme.spacing.md,
-        marginLeft: theme.spacing.xs,
-    },
-    menuCard: {
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.md,
-        overflow: 'hidden',
-        ...theme.shadows.sm,
-    },
-    menuItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: theme.spacing.lg,
-    },
-    menuItemBorder: {
-        borderBottomWidth: 1,
-        borderBottomColor: theme.colors.borderLight,
-    },
-    menuItemLeft: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: theme.spacing.lg,
-    },
-    menuIconWrapper: {
-        width: 36,
-        height: 36,
-        borderRadius: theme.radius.sm,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    menuItemRight: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: theme.spacing.xs,
-    },
-    menuItemLabel: {
-        fontSize: theme.typography.size.md,
-        color: theme.colors.text,
-        fontWeight: '500',
-    },
-    menuItemValue: {
-        fontSize: theme.typography.size.sm,
-        color: theme.colors.textMuted,
-    },
-    signOutButton: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: theme.spacing.sm,
-        paddingVertical: theme.spacing.lg,
-        marginTop: theme.spacing.md,
-        backgroundColor: theme.colors.surface,
-        borderRadius: theme.radius.md,
-    },
-    signOutText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: '600',
-    },
-});
 

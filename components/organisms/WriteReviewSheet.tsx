@@ -1,5 +1,5 @@
 import React, { forwardRef, useState, useCallback, useMemo, useEffect } from 'react';
-import { View, Text, Pressable, ActivityIndicator, Keyboard, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, ActivityIndicator, Keyboard, StyleSheet } from 'react-native';
 import BottomSheet, { BottomSheetBackdrop, BottomSheetView, BottomSheetTextInput } from '@gorhom/bottom-sheet';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -110,9 +110,9 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                             <Text style={styles.title}>{t('reading.review.writeTitle', 'Write a Review')}</Text>
                             <Text style={styles.storyTitle} numberOfLines={1}>{storyTitle}</Text>
                         </View>
-                        <Pressable onPress={handleSheetClose} hitSlop={10}>
+                        <TouchableOpacity onPress={handleSheetClose} hitSlop={10} activeOpacity={0.7}>
                             <Ionicons name="close" size={24} color={theme.colors.textMuted} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     {/* Star Rating */}
@@ -120,17 +120,18 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                         <Text style={styles.ratingLabel}>{t('reading.review.ratingQuestion', 'How would you rate this story?')}</Text>
                         <View style={styles.stars}>
                             {[1, 2, 3, 4, 5].map((star) => (
-                                <Pressable
+                                <TouchableOpacity
                                     key={star}
                                     onPress={() => handleRatingPress(star)}
                                     style={styles.starButton}
+                                    activeOpacity={0.7}
                                 >
                                     <Ionicons
                                         name={star <= rating ? 'star' : 'star-outline'}
                                         size={40}
                                         color={star <= rating ? theme.colors.warning : theme.colors.textMuted}
                                     />
-                                </Pressable>
+                                </TouchableOpacity>
                             ))}
                         </View>
                         {rating > 0 && (
@@ -162,14 +163,14 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                     </View>
 
                     {/* Submit Button */}
-                    <Pressable
-                        style={({ pressed }) => [
+                    <TouchableOpacity
+                        style={[
                             styles.submitButton,
-                            (rating === 0 || isSubmitting) && styles.submitButtonDisabled,
-                            pressed && { opacity: 0.9 },
+                            (rating === 0 || isSubmitting) && styles.submitButtonDisabled
                         ]}
                         onPress={handleSubmit}
                         disabled={rating === 0 || isSubmitting}
+                        activeOpacity={0.8}
                     >
                         {isSubmitting ? (
                             <ActivityIndicator color={theme.colors.textInverse} />
@@ -179,7 +180,7 @@ export const WriteReviewSheet = forwardRef<BottomSheet, WriteReviewSheetProps>(
                                 <Text style={styles.submitButtonText}>{t('reading.review.submit', 'Submit Review')}</Text>
                             </>
                         )}
-                    </Pressable>
+                    </TouchableOpacity>
                 </BottomSheetView>
             </BottomSheet>
         );
