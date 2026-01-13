@@ -16,6 +16,7 @@ export function useDictionaryManagement({ storyId }: UseDictionaryManagementProp
     const [selectedWord, setSelectedWord] = useState('')
     const [dictionaryData, setDictionaryData] = useState<DictionaryEntry | null>(null)
     const [isWordLoading, setIsWordLoading] = useState(false)
+    const [isWordSheetOpen, setIsWordSheetOpen] = useState(false)
     const [showTranslationLimitModal, setShowTranslationLimitModal] = useState(false)
     const [pendingWord, setPendingWord] = useState<string | null>(null)
 
@@ -25,7 +26,8 @@ export function useDictionaryManagement({ storyId }: UseDictionaryManagementProp
     const performLookup = useCallback(async (word: string) => {
         setSelectedWord(word)
         setIsWordLoading(true)
-        wordSheetRef.current?.present()
+        setIsWordSheetOpen(true)
+        setTimeout(() => wordSheetRef.current?.present(), 50)
 
         const data = await dictionaryService.lookup(word)
         setDictionaryData(data)
@@ -36,6 +38,15 @@ export function useDictionaryManagement({ storyId }: UseDictionaryManagementProp
             story_id: storyId
         })
     }, [storyId])
+
+    const closeWordSheet = useCallback(() => {
+        wordSheetRef.current?.dismiss()
+        setTimeout(() => {
+            setIsWordSheetOpen(false)
+            setSelectedWord('')
+            setDictionaryData(null)
+        }, 300)
+    }, [])
 
     const handleWordPress = useCallback(async (word: string) => {
         const cleaned = word.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "").trim()
@@ -93,6 +104,8 @@ export function useDictionaryManagement({ storyId }: UseDictionaryManagementProp
         selectedWord,
         dictionaryData,
         isWordLoading,
+        isWordSheetOpen,
+        closeWordSheet,
         handleWordPress,
         // Translation limit
         showTranslationLimitModal,

@@ -177,6 +177,8 @@ export default function ReadingScreen() {
         selectedWord,
         dictionaryData,
         isWordLoading,
+        isWordSheetOpen,
+        closeWordSheet,
         handleWordPress,
         showTranslationLimitModal,
         closeTranslationLimitModal,
@@ -219,12 +221,14 @@ export default function ReadingScreen() {
         showQuizModal,
         completionRating,
         reviewSheetRef,
+        isReviewSheetOpen,
         readingTimeMinutes,
         triggerCompletion,
         handleMarkComplete,
         handleContinueHome,
         handleReviewSubmit,
         handleQuizClose,
+        closeReviewSheet,
         syncReadingTime,
     } = useReadingCompletion({
         storyId: id,
@@ -361,13 +365,16 @@ export default function ReadingScreen() {
                 onClose={handleQuizClose}
             />
 
-            <WriteReviewSheet
-                ref={reviewSheetRef}
-                storyTitle={storyDoc.title}
-                initialRating={completionRating}
-                onClose={() => reviewSheetRef.current?.close()}
-                onSubmit={handleReviewSubmit}
-            />
+            {/* Write Review Sheet - conditional rendering to prevent touch blocking */}
+            {isReviewSheetOpen && (
+                <WriteReviewSheet
+                    ref={reviewSheetRef}
+                    storyTitle={storyDoc.title}
+                    initialRating={completionRating}
+                    onClose={closeReviewSheet}
+                    onSubmit={handleReviewSubmit}
+                />
+            )}
 
             <ReadingSettingsModal
                 visible={showSettingsModal}
@@ -382,14 +389,17 @@ export default function ReadingScreen() {
                 onThemeChange={handleThemeChange}
             />
 
-            <WordLookupSheet
-                ref={wordSheetRef}
-                word={selectedWord}
-                dictionaryData={dictionaryData}
-                isLoading={isWordLoading}
-                storyId={id}
-                storyTitle={storyDoc.title}
-            />
+            {/* Word Lookup Sheet - conditional rendering to prevent touch blocking */}
+            {isWordSheetOpen && (
+                <WordLookupSheet
+                    ref={wordSheetRef}
+                    word={selectedWord}
+                    dictionaryData={dictionaryData}
+                    isLoading={isWordLoading}
+                    storyId={id}
+                    storyTitle={storyDoc.title}
+                />
+            )}
 
             <HighlightMenu
                 visible={showHighlightMenu}

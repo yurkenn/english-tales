@@ -1,3 +1,4 @@
+import React, { useState, useRef, useEffect } from 'react'
 import { View, TouchableOpacity, Animated } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';

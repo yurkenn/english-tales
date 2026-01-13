@@ -32,10 +32,23 @@ export function useReadingCompletion({
     const [showCompletionModal, setShowCompletionModal] = useState(false)
     const [showQuizModal, setShowQuizModal] = useState(false)
     const [completionRating, setCompletionRating] = useState(0)
+    const [isReviewSheetOpen, setIsReviewSheetOpen] = useState(false)
 
     const reviewSheetRef = useRef<BottomSheet>(null)
     const hasShownCompletion = useRef(false)
     const startTimeRef = useRef<number>(Date.now())
+
+    // Open review sheet with state
+    const openReviewSheet = useCallback(() => {
+        setIsReviewSheetOpen(true)
+        setTimeout(() => reviewSheetRef.current?.expand(), 50)
+    }, [])
+
+    // Close review sheet with state
+    const closeReviewSheet = useCallback(() => {
+        reviewSheetRef.current?.close()
+        setTimeout(() => setIsReviewSheetOpen(false), 300)
+    }, [])
 
     // Reset timer on mount
     const resetTimer = useCallback(() => {
@@ -82,12 +95,12 @@ export function useReadingCompletion({
         if (rating) {
             setCompletionRating(rating)
             setTimeout(() => {
-                reviewSheetRef.current?.expand()
+                openReviewSheet()
             }, 500)
         } else {
             router.push('/(tabs)/discover')
         }
-    }, [storyId, storyTitle, wordCount, progressActions, router, getReadingTimeMinutes])
+    }, [storyId, storyTitle, wordCount, progressActions, router, getReadingTimeMinutes, openReviewSheet])
 
     // Handle continuing without completion
     const handleContinueHome = useCallback(() => {
@@ -142,6 +155,7 @@ export function useReadingCompletion({
         showQuizModal,
         completionRating,
         reviewSheetRef,
+        isReviewSheetOpen,
 
         // Derived
         readingTimeMinutes: getReadingTimeMinutes(),
@@ -154,8 +168,6 @@ export function useReadingCompletion({
         handleQuizClose,
         resetTimer,
         syncReadingTime,
-
-        // Close helpers
-        closeReviewSheet: () => reviewSheetRef.current?.close(),
+        closeReviewSheet,
     }
 }
