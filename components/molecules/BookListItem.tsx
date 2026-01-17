@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ interface BookListItemProps {
     rating?: number | null;
 }
 
-export const BookListItem: React.FC<BookListItemProps> = ({
+export const BookListItem: FC<BookListItemProps> = ({
     story,
     onPress,
     onBookmarkPress,

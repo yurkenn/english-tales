@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, memo } from 'react';
 import { View , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 
@@ -9,7 +9,7 @@ interface ProgressBarProps {
     trackColor?: string;
 }
 
-export const ProgressBar: React.FC<ProgressBarProps> = React.memo(({
+export const ProgressBar: FC<ProgressBarProps> = memo(({
     progress,
     height = 8,
     showBackground = true,

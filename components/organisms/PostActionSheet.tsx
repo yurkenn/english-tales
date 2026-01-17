@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC, RefObject } from 'react';
 import { View, TouchableOpacity, Alert, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,7 +12,7 @@ import { communityService } from '@/services/communityService';
 import { useToastStore } from '@/store/toastStore';
 
 interface PostActionSheetProps {
-    sheetRef: React.RefObject<BottomSheet | null>;
+    sheetRef: RefObject<BottomSheet | null>;
     postId: string | null;
     currentUserId: string | null;
     onPostDeleted?: () => void;
@@ -27,7 +27,7 @@ interface ReportReason {
     color: string;
 }
 
-export const PostActionSheet: React.FC<PostActionSheetProps> = ({
+export const PostActionSheet: FC<PostActionSheetProps> = ({
     sheetRef,
     postId,
     currentUserId,

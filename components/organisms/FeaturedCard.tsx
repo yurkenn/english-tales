@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TouchableOpacity, StyleSheet as RNStyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,7 +19,7 @@ interface FeaturedCardProps {
     reviewCount?: number | null;
 }
 
-export const FeaturedCard: React.FC<FeaturedCardProps> = ({
+export const FeaturedCard: FC<FeaturedCardProps> = ({
     story,
     badge = "Editor's Choice",
     onPress,

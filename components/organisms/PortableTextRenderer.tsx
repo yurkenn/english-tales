@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback, FC, memo } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { PortableTextBlock } from '@portabletext/types';
@@ -22,7 +22,7 @@ interface PortableTextRendererProps {
     isFirstPage?: boolean;
 }
 
-export const PortableTextRenderer: React.FC<PortableTextRendererProps> = React.memo(({
+export const PortableTextRenderer: FC<PortableTextRendererProps> = memo(({
     content,
     fontSize,
     lineHeight,

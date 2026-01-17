@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,7 +9,7 @@ interface SurpriseMeButtonProps {
     onPress: () => void;
 }
 
-export const SurpriseMeButton: React.FC<SurpriseMeButtonProps> = ({ onPress }) => {
+export const SurpriseMeButton: FC<SurpriseMeButtonProps> = ({ onPress }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

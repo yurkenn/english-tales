@@ -2,7 +2,7 @@
  * Theme Context - React Context based theme system
  * Replaces react-native-unistyles for pure StyleSheet.create() usage
  */
-import React, { createContext, useContext, useMemo, ReactNode } from 'react';
+import { createContext, useContext, useMemo, ReactNode, FC } from 'react';
 import { useThemeStore, useIsDark, useThemeMode } from '@/store/themeStore';
 import {
     colors,
@@ -89,7 +89,7 @@ interface ThemeProviderProps {
     children: ReactNode;
 }
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
     const mode = useThemeMode();
     const isDark = useIsDark();
 

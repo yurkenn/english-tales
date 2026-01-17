@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, FC } from 'react'
 import { View, TouchableOpacity, Animated } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
@@ -16,7 +16,7 @@ interface FlashCardProps {
     autoFlip?: boolean
 }
 
-export const FlashCard: React.FC<FlashCardProps> = ({
+export const FlashCard: FC<FlashCardProps> = ({
     word,
     definition,
     example,

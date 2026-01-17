@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, FC } from 'react';
 import { Animated, View, ViewStyle, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 
@@ -9,7 +9,7 @@ interface SkeletonProps {
     style?: ViewStyle;
 }
 
-export const Skeleton: React.FC<SkeletonProps> = ({
+export const Skeleton: FC<SkeletonProps> = ({
     width = '100%',
     height = 20,
     borderRadius = 8,
@@ -55,7 +55,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
 };
 
 // Pre-built skeleton variants
-export const BookCardSkeleton: React.FC = () => {
+export const BookCardSkeleton: FC = () => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (
@@ -69,7 +69,7 @@ export const BookCardSkeleton: React.FC = () => {
     );
 };
 
-export const BookListItemSkeleton: React.FC = () => {
+export const BookListItemSkeleton: FC = () => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (
@@ -84,7 +84,7 @@ export const BookListItemSkeleton: React.FC = () => {
     );
 };
 
-export const StorySectionSkeleton: React.FC = () => {
+export const StorySectionSkeleton: FC = () => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (
@@ -102,7 +102,7 @@ export const StorySectionSkeleton: React.FC = () => {
     );
 };
 
-export const FeaturedCardSkeleton: React.FC = () => {
+export const FeaturedCardSkeleton: FC = () => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (

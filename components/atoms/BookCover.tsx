@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, FC } from 'react';
 import { View, StyleProp, ViewStyle, StyleSheet, ImageStyle } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { useTheme, Theme } from '@/theme';
@@ -22,7 +22,7 @@ interface BookCoverProps {
     priority?: 'low' | 'normal' | 'high';
 }
 
-export const BookCover: React.FC<BookCoverProps> = ({
+export const BookCover: FC<BookCoverProps> = ({
     source,
     width,
     height,

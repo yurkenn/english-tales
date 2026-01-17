@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,7 +10,7 @@ interface PopularStoryCardProps {
     onPress: () => void;
 }
 
-export const PopularStoryCard: React.FC<PopularStoryCardProps> = ({
+export const PopularStoryCard: FC<PopularStoryCardProps> = ({
     story,
     rank,
     onPress,

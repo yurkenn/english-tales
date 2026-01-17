@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, ScrollView, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -26,7 +26,7 @@ interface CommunityBuzzProps {
 
 const CARD_WIDTH = 180;
 
-export const CommunityBuzz: React.FC<CommunityBuzzProps> = ({ activities, onPressActivity }) => {
+export const CommunityBuzz: FC<CommunityBuzzProps> = ({ activities, onPressActivity }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

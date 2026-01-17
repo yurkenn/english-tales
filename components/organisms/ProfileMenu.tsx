@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -15,7 +15,7 @@ interface ProfileMenuProps {
     items: MenuItem[];
 }
 
-export const ProfileMenu: React.FC<ProfileMenuProps> = ({ items }) => {
+export const ProfileMenu: FC<ProfileMenuProps> = ({ items }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

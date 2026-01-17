@@ -217,4 +217,47 @@ export const queries = {
     "averageRating": math::avg(*[_type == "review" && story._ref == $storyId && isApproved == true].rating),
     "totalReviews": count(*[_type == "review" && story._ref == $storyId && isApproved == true])
   }`,
+
+  // User Stories (user-generated content)
+  userStoriesByAuthor: `*[_type == "userStory" && authorId == $authorId] | order(_updatedAt desc) {
+    _id,
+    authorId,
+    authorName,
+    authorAvatar,
+    title,
+    description,
+    coverImage,
+    "coverImageUrl": coverImage.asset->url,
+    difficulty,
+    "categories": categories[]->{_id, title, slug, color},
+    status,
+    isPublished,
+    submittedAt,
+    reviewerNotes,
+    "wordCount": length(pt::text(content)),
+    _createdAt,
+    _updatedAt
+  }`,
+
+  userStoryById: `*[_type == "userStory" && _id == $id][0] {
+    _id,
+    authorId,
+    authorName,
+    authorAvatar,
+    title,
+    description,
+    coverImage,
+    "coverImageUrl": coverImage.asset->url,
+    content,
+    difficulty,
+    "categories": categories[]->{_id, title, slug, color},
+    status,
+    isPublished,
+    submittedAt,
+    reviewedAt,
+    reviewerNotes,
+    "wordCount": length(pt::text(content)),
+    _createdAt,
+    _updatedAt
+  }`,
 };

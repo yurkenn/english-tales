@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 // Force reload: 1
 
 import { View, Text, TouchableOpacity, StyleSheet as RNStyleSheet } from 'react-native';
@@ -14,7 +14,7 @@ interface AuthorSectionProps {
     onPress?: () => void;
 }
 
-export const AuthorSection: React.FC<AuthorSectionProps> = ({
+export const AuthorSection: FC<AuthorSectionProps> = ({
     name,
     bio,
     onPress,

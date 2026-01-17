@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -32,7 +32,7 @@ const DIFFICULTY_CONFIG = {
     },
 };
 
-export const DifficultyCard: React.FC<DifficultyCardProps> = ({
+export const DifficultyCard: FC<DifficultyCardProps> = ({
     difficulty,
     storyCount,
     onPress,

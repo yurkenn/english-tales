@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, FC } from 'react';
 import { View, Text, TouchableOpacity, TextInput, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ interface EditProfileModalProps {
     onSave: (name: string) => Promise<void>;
 }
 
-export const EditProfileModal: React.FC<EditProfileModalProps> = ({
+export const EditProfileModal: FC<EditProfileModalProps> = ({
     visible,
     onClose,
     initialName,

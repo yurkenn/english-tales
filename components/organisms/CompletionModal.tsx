@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -17,7 +17,7 @@ interface CompletionModalProps {
     onContinue: () => void;
 }
 
-export const CompletionModal: React.FC<CompletionModalProps> = ({
+export const CompletionModal: FC<CompletionModalProps> = ({
     visible,
     storyTitle,
     readingTimeMinutes,

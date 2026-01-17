@@ -1,11 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, Switch , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import { haptics } from '@/utils/haptics';
 import type { SettingToggleProps } from '../organisms/settingsTypes';
 
-export const SettingToggle: React.FC<SettingToggleProps> = ({
+export const SettingToggle: FC<SettingToggleProps> = ({
     icon,
     label,
     value,

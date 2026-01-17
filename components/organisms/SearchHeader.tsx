@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,7 +10,7 @@ interface SearchHeaderProps {
     autoFocus?: boolean;
 }
 
-export const SearchHeader: React.FC<SearchHeaderProps> = ({
+export const SearchHeader: FC<SearchHeaderProps> = ({
     query,
     onQueryChange,
     onBack,

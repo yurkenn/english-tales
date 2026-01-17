@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
@@ -19,7 +19,7 @@ interface HighlightMenuProps {
 
 const COLORS: HighlightColor[] = ['yellow', 'green', 'blue', 'pink']
 
-export const HighlightMenu = React.memo(({
+export const HighlightMenu = memo(({
     visible,
     selectedText,
     onHighlight,

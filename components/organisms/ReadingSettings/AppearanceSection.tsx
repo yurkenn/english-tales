@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +12,7 @@ interface AppearanceSectionProps {
     onThemeChange: (theme: ReadingTheme) => void;
 }
 
-export const AppearanceSection: React.FC<AppearanceSectionProps> = ({
+export const AppearanceSection: FC<AppearanceSectionProps> = ({
     lineHeight,
     readingTheme,
     onLineHeightChange,

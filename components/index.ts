@@ -12,7 +12,6 @@ export {
     FeaturedCardSkeleton,
     HomeScreenSkeleton,
     LibraryScreenSkeleton,
-    DiscoverScreenSkeleton,
     CategoryScreenSkeleton,
     AuthorScreenSkeleton,
     StoryDetailScreenSkeleton,

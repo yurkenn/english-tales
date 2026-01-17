@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 
@@ -7,7 +7,7 @@ interface AuthHeaderProps {
     subtitle: string;
 }
 
-export const AuthHeader: React.FC<AuthHeaderProps> = ({ title, subtitle }) => {
+export const AuthHeader: FC<AuthHeaderProps> = ({ title, subtitle }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (

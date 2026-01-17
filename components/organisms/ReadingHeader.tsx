@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, memo } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -22,7 +22,7 @@ interface ReadingHeaderProps {
  * Header component for the reading screen.
  * Displays title, download status, and provides actions for closing and settings.
  */
-export const ReadingHeader: React.FC<ReadingHeaderProps> = React.memo(({
+export const ReadingHeader: FC<ReadingHeaderProps> = memo(({
     title,
     isDownloaded,
     onClose,

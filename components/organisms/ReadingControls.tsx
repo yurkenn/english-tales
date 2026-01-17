@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, memo } from 'react';
 import { View, Text, TouchableOpacity, Share, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -18,7 +18,7 @@ interface ReadingControlsProps {
     onAudioToggle: () => void;
 }
 
-export const ReadingControls: React.FC<ReadingControlsProps> = React.memo(({
+export const ReadingControls: FC<ReadingControlsProps> = memo(({
     fontSize,
     readingTheme,
     isInLibrary,

@@ -74,9 +74,54 @@
     },
     "tabs": {
         "home": "Beranda",
-        "discover": "Jelajahi",
+        "community": "Komunitas",
+        "write": "Menulis",
         "library": "Perpustakaan",
         "profile": "Profil"
+    },
+    "write": {
+        "title": "Menulis",
+        "newStory": "Cerita Baru",
+        "newStorySubtitle": "Mulai petualangan Anda berikutnya",
+        "drafts": "Draf",
+        "published": "Diterbitkan",
+        "all": "Semua",
+        "emptyTitle": "Buat cerita pertama Anda",
+        "emptyMessage": "Bagikan kreativitas Anda dengan pembaca di seluruh dunia!",
+        "startWriting": "Mulai menulis",
+        "wordCount": "{{count}} kata",
+        "lastEdited": "Terakhir diedit {{time}}",
+        "status": {
+            "draft": "Draf",
+            "pending": "Ditinjau",
+            "approved": "Disetujui",
+            "rejected": "Perlu perubahan",
+            "published": "Diterbitkan"
+        },
+        "editor": {
+            "titlePlaceholder": "Judul cerita",
+            "descriptionPlaceholder": "Tulis deskripsi singkat...",
+            "contentPlaceholder": "Pada zaman dahulu...",
+            "selectCategory": "Pilih kategori",
+            "selectDifficulty": "Pilih kesulitan",
+            "uploadCover": "Unggah sampul",
+            "preview": "Pratinjau",
+            "saveDraft": "Simpan draf",
+            "submitReview": "Ajukan tinjauan",
+            "autoSaved": "Tersimpan otomatis",
+            "saving": "Menyimpan...",
+            "detailsTitle": "Detail cerita",
+            "contentTitle": "Tulis cerita Anda",
+            "reviewTitle": "Detail akhir",
+            "minWords": "Minimal 50 kata diperlukan",
+            "summary": "Ringkasan",
+            "untitled": "Tanpa judul",
+            "permissionDenied": "Akses ke foto diperlukan.",
+            "savedTitle": "Draf tersimpan!",
+            "savedMessage": "Cerita Anda telah disimpan sebagai draf.",
+            "saveError": "Gagal menyimpan. Silakan coba lagi."
+        },
+        "loginRequired": "Silakan masuk untuk membuat cerita."
     },
     "profile": {
         "title": "Profil",
@@ -213,8 +258,14 @@
         },
         "tabs": {
             "stories": "Cerita",
+            "myStories": "Cerita saya",
             "vocabulary": "Kosakata"
-        }
+        },
+        "writeNewStory": "Tulis cerita baru",
+        "shareYourCreativity": "Bagikan kreativitas Anda dengan dunia",
+        "noMyStories": "Belum ada cerita",
+        "noMyStoriesMessage": "Mulai tulis cerita pertama Anda dan bagikan dengan pembaca!",
+        "startWriting": "Mulai menulis"
     },
     "vocabulary": {
         "title": "Pembangun Kosakata",

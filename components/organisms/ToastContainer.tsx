@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, Animated, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useToastStore, ToastType } from '@/store/toastStore';
 import { useEffect, useRef } from 'react';
 
-const ToastItem: React.FC<{
+const ToastItem: FC<{
     id: string;
     message: string;
     type: ToastType;
@@ -60,7 +60,7 @@ const ToastItem: React.FC<{
     );
 };
 
-export const ToastContainer: React.FC = () => {
+export const ToastContainer: FC = () => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const insets = useSafeAreaInsets();

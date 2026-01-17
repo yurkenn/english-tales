@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, FC } from 'react';
 import { Animated, Text, View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useAchievementsStore } from '@/store/achievementsStore';
 
-export const AchievementToast: React.FC = () => {
+export const AchievementToast: FC = () => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const { pendingUnlock, actions } = useAchievementsStore();

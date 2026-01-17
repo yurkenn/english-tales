@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 // Force reload: 1
 
 import { View, Text, StyleSheet as RNStyleSheet } from 'react-native';
@@ -10,7 +10,7 @@ interface StorySnippetProps {
     text: string;
 }
 
-export const StorySnippet: React.FC<StorySnippetProps> = ({ text }) => {
+export const StorySnippet: FC<StorySnippetProps> = ({ text }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const { t } = useTranslation();

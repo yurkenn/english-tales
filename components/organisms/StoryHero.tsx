@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 // Force reload: 3
 
 import { View, StyleSheet as RNStyleSheet, TouchableOpacity } from 'react-native';
@@ -14,7 +14,7 @@ interface StoryHeroProps {
     coverImageLqip?: string;
 }
 
-export const StoryHero: React.FC<StoryHeroProps & { storyId: string }> = ({
+export const StoryHero: FC<StoryHeroProps & { storyId: string }> = ({
     storyId,
     coverImage,
     coverImageLqip,

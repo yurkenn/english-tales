@@ -1,10 +1,10 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
 import type { SettingItemProps } from '../organisms/settingsTypes';
 
-export const SettingItem: React.FC<SettingItemProps> = ({
+export const SettingItem: FC<SettingItemProps> = ({
     icon,
     label,
     value,

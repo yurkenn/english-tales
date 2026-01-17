@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -7,7 +7,7 @@ interface LibraryAnonymousStateProps {
     onSignInPress: () => void;
 }
 
-export const LibraryAnonymousState: React.FC<LibraryAnonymousStateProps> = ({
+export const LibraryAnonymousState: FC<LibraryAnonymousStateProps> = ({
     onSignInPress,
 }) => {
     const { theme } = useTheme();

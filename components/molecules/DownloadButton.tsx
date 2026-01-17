@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { TouchableOpacity, Text, ActivityIndicator, View, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,7 +12,7 @@ interface DownloadButtonProps {
     compact?: boolean;
 }
 
-export const DownloadButton: React.FC<DownloadButtonProps> = ({
+export const DownloadButton: FC<DownloadButtonProps> = ({
     status,
     sizeBytes,
     onDownload,

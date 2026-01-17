@@ -74,9 +74,43 @@
     },
     "tabs": {
         "home": "Ana Sayfa",
-        "discover": "Keşfet",
+        "community": "Topluluk",
+        "write": "Yaz",
         "library": "Kitaplık",
         "profile": "Profil"
+    },
+    "write": {
+        "title": "Yaz",
+        "newStory": "Yeni Hikaye",
+        "newStorySubtitle": "Bir sonraki macerana başla",
+        "drafts": "Taslaklar",
+        "published": "Yayınlanan",
+        "all": "Tümü",
+        "emptyTitle": "İlk Hikayeni Başlat",
+        "emptyMessage": "Yaratıcılığını dünya genelindeki okuyucularla paylaş!",
+        "startWriting": "Yazmaya Başla",
+        "wordCount": "{{count}} kelime",
+        "lastEdited": "Son düzenleme {{time}}",
+        "status": {
+            "draft": "Taslak",
+            "pending": "İnceleniyor",
+            "approved": "Onaylandı",
+            "rejected": "Değişiklik Gerekli",
+            "published": "Yayında"
+        },
+        "editor": {
+            "titlePlaceholder": "Hikaye Başlığı",
+            "descriptionPlaceholder": "Kısa bir açıklama yaz...",
+            "contentPlaceholder": "Bir zamanlar...",
+            "selectCategory": "Kategori Seç",
+            "selectDifficulty": "Zorluk Seç",
+            "uploadCover": "Kapak Yükle",
+            "preview": "Önizleme",
+            "saveDraft": "Taslak Kaydet",
+            "submitReview": "İncelemeye Gönder",
+            "autoSaved": "Otomatik kaydedildi",
+            "saving": "Kaydediliyor..."
+        }
     },
     "profile": {
         "title": "Profil",
@@ -213,8 +247,14 @@
         },
         "tabs": {
             "stories": "Hikayeler",
+            "myStories": "Hikayelerim",
             "vocabulary": "Kelime Haznesi"
-        }
+        },
+        "writeNewStory": "Yeni Hikaye Yaz",
+        "shareYourCreativity": "Yaratıcılığınızı dünyayla paylaşın",
+        "noMyStories": "Henüz Hikaye Yok",
+        "noMyStoriesMessage": "İlk hikayenizi yazın ve okuyucularla paylaşın!",
+        "startWriting": "Yazmaya Başla"
     },
     "vocabulary": {
         "title": "Kelime Dağarcığı",
@@ -350,6 +390,7 @@
         "title": "Topluluk",
         "community": "Topluluk",
         "following": "Takip Edilenler",
+        "discover": "Keşfet",
         "findFriends": "Arkadaş Bul",
         "searchPlaceholder": "İsim veya e-posta ile ara...",
         "noUsersFound": "Kullanıcı bulunamadı",
@@ -408,6 +449,11 @@
             "deadlineExceeded": "İstek zaman aşımına uğradı. Lütfen tekrar deneyin.",
             "operationCancelled": "İşlem iptal edildi.",
             "dataLoss": "Veri kaydedilemedi. Lütfen tekrar deneyin.",
+            "loginRequired": "Hikaye oluşturmak için lütfen giriş yapın.",
+            "deletedMessage": "Hikaye başarıyla silindi.",
+            "deleteError": "Hikaye silinirken bir hata oluştu.",
+            "deleteConfirmTitle": "Hikayeyi Sil?",
+            "deleteConfirmMessage": "Bu işlem geri alınamaz. Bu hikayeyi silmek istediğinizden emin misiniz?",
             "unauthenticated": "Devam etmek için lütfen giriş yapın.",
             "invalidArgument": "Geçersiz giriş. Lütfen kontrol edip tekrar deneyin.",
             "objectNotFound": "Dosya bulunamadı.",

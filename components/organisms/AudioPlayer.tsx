@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,7 +11,7 @@ interface AudioPlayerProps {
     onStop: () => void;
 }
 
-export const AudioPlayer: React.FC<AudioPlayerProps> = ({
+export const AudioPlayer: FC<AudioPlayerProps> = ({
     isPlaying,
     isBuffering,
     onPlayPause,

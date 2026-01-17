@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Skeleton } from './BaseSkeleton';
 
-export const CommunityScreenSkeleton: React.FC = () => {
+export const CommunityScreenSkeleton: FC = () => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (

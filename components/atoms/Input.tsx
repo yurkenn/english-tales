@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, useState } from 'react';
 import { View, TextInput, TextInputProps, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,7 +11,7 @@ interface InputProps extends TextInputProps {
     onClear?: () => void;
 }
 
-export const Input: React.FC<InputProps> = ({
+export const Input: FC<InputProps> = ({
     label,
     icon,
     error,
@@ -21,7 +21,7 @@ export const Input: React.FC<InputProps> = ({
 }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
-    const [isFocused, setIsFocused] = React.useState(false);
+    const [isFocused, setIsFocused] = useState(false);
 
     return (
         <View style={styles.container}>

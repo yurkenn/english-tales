@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { RatingStars } from '../atoms';
@@ -13,7 +13,7 @@ interface ReviewCardProps {
     text: string;
 }
 
-export const ReviewCard: React.FC<ReviewCardProps> = ({
+export const ReviewCard: FC<ReviewCardProps> = ({
     userName,
     userAvatar,
     rating,

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -22,7 +22,7 @@ interface ReadingSettingsModalProps {
     onThemeChange: (theme: ReadingTheme) => void;
 }
 
-export const ReadingSettingsModal: React.FC<ReadingSettingsModalProps> = ({
+export const ReadingSettingsModal: FC<ReadingSettingsModalProps> = ({
     visible,
     fontSize,
     lineHeight,

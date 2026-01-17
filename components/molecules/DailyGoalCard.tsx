@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, useWindowDimensions, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +12,7 @@ interface DailyGoalCardProps {
     onPress?: () => void;
 }
 
-export const DailyGoalCard: React.FC<DailyGoalCardProps> = ({
+export const DailyGoalCard: FC<DailyGoalCardProps> = ({
     stats,
     onPress,
 }) => {

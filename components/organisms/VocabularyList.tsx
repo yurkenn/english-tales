@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, FC } from 'react';
 import { View, FlatList, Text , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { VocabularyItem } from '../molecules/VocabularyItem';
@@ -14,7 +14,7 @@ interface VocabularyListProps {
     onWordPress?: (word: SavedWord) => void;
 }
 
-export const VocabularyList: React.FC<VocabularyListProps> = ({ searchQuery = '', onWordPress }) => {
+export const VocabularyList: FC<VocabularyListProps> = ({ searchQuery = '', onWordPress }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

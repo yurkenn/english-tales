@@ -1,4 +1,4 @@
-import React, { memo, useMemo } from 'react';
+import { memo, useMemo, FC } from 'react';
 import { View, Text, TouchableOpacity, StyleProp, ViewStyle, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -15,7 +15,7 @@ interface RankedStoryCardProps {
  * Unified component for displaying ranked stories
  * Replaces PopularStoryCard and TrendingStoryCard
  */
-const RankedStoryCardComponent: React.FC<RankedStoryCardProps> = ({
+const RankedStoryCardComponent: FC<RankedStoryCardProps> = ({
     story,
     rank,
     onPress,

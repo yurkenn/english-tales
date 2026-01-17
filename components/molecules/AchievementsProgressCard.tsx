@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 import { View } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
@@ -17,7 +17,7 @@ const CATEGORIES: { key: AchievementCategory; label: string; color: string }[] =
     { key: 'social', label: 'Social', color: '#8B5CF6' },
 ]
 
-export const AchievementsProgressCard: React.FC<AchievementsProgressCardProps> = ({
+export const AchievementsProgressCard: FC<AchievementsProgressCardProps> = ({
     unlockedCount,
     totalCount,
 }) => {

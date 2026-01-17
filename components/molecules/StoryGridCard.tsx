@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo, FC } from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,7 +14,7 @@ interface StoryGridCardProps {
     onPress: () => void;
 }
 
-const StoryGridCardComponent: React.FC<StoryGridCardProps> = ({
+const StoryGridCardComponent: FC<StoryGridCardProps> = ({
     story,
     isInLibrary,
     onPress,

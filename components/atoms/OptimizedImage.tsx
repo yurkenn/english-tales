@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Image, ImageProps, ImageStyle, StyleProp, StyleSheet } from 'react-native';
 import { Image as ExpoImage, ImageProps as ExpoImageProps } from 'expo-image';
 import { useTheme } from '@/theme';
@@ -21,7 +21,7 @@ export interface OptimizedImageProps extends Omit<ExpoImageProps, 'source'> {
  * Optimized Image component using expo-image with fallback support
  * Provides better performance, caching, and placeholder support
  */
-export const OptimizedImage: React.FC<OptimizedImageProps> = ({
+export const OptimizedImage: FC<OptimizedImageProps> = ({
     source,
     placeholder,
     style,

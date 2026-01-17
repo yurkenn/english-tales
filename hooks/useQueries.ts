@@ -23,6 +23,11 @@ export const queryKeys = {
         byStory: (storyId: string) => ['reviews', storyId] as const,
         rating: (storyId: string) => ['reviews', storyId, 'rating'] as const,
     },
+    userStories: {
+        all: ['userStories'] as const,
+        byAuthor: (authorId: string) => ['userStories', 'author', authorId] as const,
+        byId: (id: string) => ['userStories', id] as const,
+    },
 };
 
 // Story Hooks
@@ -177,5 +182,31 @@ export const useCreateReview = () => {
                 queryKey: queryKeys.reviews.rating(variables.storyId),
             });
         },
+    });
+};
+
+// ─── User Story Hooks ────────────────────────────────────────────
+
+/**
+ * Fetch all stories by a specific author
+ */
+export const useUserStoriesByAuthor = (authorId: string | undefined) => {
+    return useQuery({
+        queryKey: queryKeys.userStories.byAuthor(authorId || ''),
+        queryFn: () => sanityClient.fetch(queries.userStoriesByAuthor, { authorId }),
+        enabled: !!authorId,
+        staleTime: 5 * 60 * 1000, // 5 minutes
+    });
+};
+
+/**
+ * Fetch a single user story by ID
+ */
+export const useUserStory = (id: string | undefined) => {
+    return useQuery({
+        queryKey: queryKeys.userStories.byId(id || ''),
+        queryFn: () => sanityClient.fetch(queries.userStoryById, { id }),
+        enabled: !!id,
+        staleTime: 2 * 60 * 1000, // 2 minutes
     });
 };

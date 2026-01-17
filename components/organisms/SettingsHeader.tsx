@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -8,7 +8,7 @@ interface SettingsHeaderProps {
     onBackPress: () => void;
 }
 
-export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
+export const SettingsHeader: FC<SettingsHeaderProps> = ({
     title,
     onBackPress,
 }) => {

@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useEffect } from 'react';
+import { useRef, useCallback, useEffect, memo } from 'react';
 import { View, TouchableOpacity, useWindowDimensions, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { PortableTextBlock } from '@portabletext/types';
@@ -25,7 +25,7 @@ interface PagedContentProps {
     highlights?: Highlight[];
 }
 
-export const PagedContent = React.memo(({
+export const PagedContent = memo(({
     pages,
     currentPage,
     onPageChange,

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect, FC } from 'react';
 import { View, TouchableOpacity, Linking, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme, semanticColors } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -30,7 +30,7 @@ interface ProfileHeaderProps {
     hasNavigationHeader?: boolean; // When true, reduces top padding since there's a header above
 }
 
-export const ProfileHeader: React.FC<ProfileHeaderProps> = ({
+export const ProfileHeader: FC<ProfileHeaderProps> = ({
     profile,
     isSelf,
     relationship,

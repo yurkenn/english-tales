@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import {
     View,
     Modal,
@@ -37,7 +37,7 @@ interface CreatePostModalProps {
 
 const MAX_CHARS = 500;
 
-export const CreatePostModal: React.FC<CreatePostModalProps> = ({
+export const CreatePostModal: FC<CreatePostModalProps> = ({
     visible,
     onClose,
     onSubmit,

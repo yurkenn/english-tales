@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 // Force reload: 1
 
 import { View, Text , StyleSheet } from 'react-native';
@@ -11,7 +11,7 @@ interface StoryMetaProps {
     difficulty: string;
 }
 
-export const StoryMeta: React.FC<StoryMetaProps> = ({
+export const StoryMeta: FC<StoryMetaProps> = ({
     readTime,
     wordCount,
     difficulty,

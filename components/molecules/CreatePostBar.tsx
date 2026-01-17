@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -15,7 +15,7 @@ interface CreatePostBarProps {
     onImagePress?: () => void;
 }
 
-export const CreatePostBar: React.FC<CreatePostBarProps> = ({
+export const CreatePostBar: FC<CreatePostBarProps> = ({
     userPhotoUrl,
     placeholder,
     onPress,

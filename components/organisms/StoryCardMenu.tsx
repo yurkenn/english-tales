@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, FC } from 'react';
 import { Modal, View, Text, TouchableOpacity, Animated, useWindowDimensions, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -22,7 +22,7 @@ interface StoryCardMenuProps {
 const MENU_WIDTH = 200;
 const MENU_OFFSET = 8;
 
-export const StoryCardMenu: React.FC<StoryCardMenuProps> = ({
+export const StoryCardMenu: FC<StoryCardMenuProps> = ({
     visible,
     onClose,
     position,

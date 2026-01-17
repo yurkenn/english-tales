@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ interface LibraryHeaderProps {
     onFilterPress: () => void;
 }
 
-export const LibraryHeader: React.FC<LibraryHeaderProps> = ({
+export const LibraryHeader: FC<LibraryHeaderProps> = ({
     filter,
     onSearchPress,
     onFilterPress,

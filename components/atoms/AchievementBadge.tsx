@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme, Theme } from '@/theme';
@@ -8,7 +8,7 @@ interface AchievementBadgeProps {
     title: string;
 }
 
-export const AchievementBadge: React.FC<AchievementBadgeProps> = ({ title }) => {
+export const AchievementBadge: FC<AchievementBadgeProps> = ({ title }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
 

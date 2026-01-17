@@ -74,9 +74,54 @@
     },
     "tabs": {
         "home": "Start",
-        "discover": "Entdecken",
+        "community": "Community",
+        "write": "Schreiben",
         "library": "Bibliothek",
         "profile": "Profil"
+    },
+    "write": {
+        "title": "Schreiben",
+        "newStory": "Neue Geschichte",
+        "newStorySubtitle": "Starte dein nächstes Abenteuer",
+        "drafts": "Entwürfe",
+        "published": "Veröffentlicht",
+        "all": "Alle",
+        "emptyTitle": "Starte deine erste Geschichte",
+        "emptyMessage": "Teile deine Kreativität mit Lesern auf der ganzen Welt!",
+        "startWriting": "Schreiben beginnen",
+        "wordCount": "{{count}} Wörter",
+        "lastEdited": "Zuletzt bearbeitet {{time}}",
+        "status": {
+            "draft": "Entwurf",
+            "pending": "Wird geprüft",
+            "approved": "Genehmigt",
+            "rejected": "Änderungen erforderlich",
+            "published": "Veröffentlicht"
+        },
+        "editor": {
+            "titlePlaceholder": "Titel der Geschichte",
+            "descriptionPlaceholder": "Schreibe eine kurze Beschreibung...",
+            "contentPlaceholder": "Es war einmal...",
+            "selectCategory": "Kategorien wählen",
+            "selectDifficulty": "Schwierigkeit wählen",
+            "uploadCover": "Cover hochladen",
+            "preview": "Vorschau",
+            "saveDraft": "Entwurf speichern",
+            "submitReview": "Zur Prüfung einreichen",
+            "autoSaved": "Automatisch gespeichert",
+            "saving": "Speichert...",
+            "detailsTitle": "Details zur Geschichte",
+            "contentTitle": "Schreibe deine Geschichte",
+            "reviewTitle": "Letzte Details",
+            "minWords": "Mindestens 50 Wörter erforderlich",
+            "summary": "Zusammenfassung",
+            "untitled": "Ohne Titel",
+            "permissionDenied": "Zugriff auf Fotos ist erforderlich.",
+            "savedTitle": "Entwurf gespeichert!",
+            "savedMessage": "Deine Geschichte wurde als Entwurf gespeichert.",
+            "saveError": "Fehler beim Speichern. Bitte versuche es erneut."
+        },
+        "loginRequired": "Bitte melde dich an, um Geschichten zu erstellen."
     },
     "profile": {
         "title": "Profil",
@@ -213,8 +258,14 @@
         },
         "tabs": {
             "stories": "Geschichten",
+            "myStories": "Meine Geschichten",
             "vocabulary": "Vokabular"
-        }
+        },
+        "writeNewStory": "Neue Geschichte schreiben",
+        "shareYourCreativity": "Teile deine Kreativität mit der Welt",
+        "noMyStories": "Noch keine Geschichten",
+        "noMyStoriesMessage": "Schreibe deine erste Geschichte und teile sie mit Lesern!",
+        "startWriting": "Schreiben beginnen"
     },
     "vocabulary": {
         "title": "Vokabeltrainer",

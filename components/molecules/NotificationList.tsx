@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { View, TouchableOpacity, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,7 +12,7 @@ interface NotificationListProps {
     isLoading?: boolean;
 }
 
-export const NotificationList: React.FC<NotificationListProps> = ({
+export const NotificationList: FC<NotificationListProps> = ({
     notifications,
     onNotificationPress,
     isLoading

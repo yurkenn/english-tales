@@ -42,8 +42,10 @@ export const ActionSheet = forwardRef<BottomSheet, ActionSheetProps>(
         );
 
         const handleOptionPress = (option: ActionSheetOption) => {
-            onClose();
-            setTimeout(() => option.onPress(), 300);
+            // Execute action first, then close sheet
+            option.onPress();
+            // Small delay for visual feedback before closing
+            setTimeout(() => onClose(), 150);
         };
 
         return (

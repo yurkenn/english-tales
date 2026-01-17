@@ -1,9 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Skeleton, BookCardSkeleton } from './BaseSkeleton';
 
-export const AuthorScreenSkeleton: React.FC = () => {
+export const AuthorScreenSkeleton: FC = () => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -21,7 +21,7 @@ interface FriendListItemProps {
     showDivider?: boolean;
 }
 
-export const FriendListItem: React.FC<FriendListItemProps> = ({
+export const FriendListItem: FC<FriendListItemProps> = ({
     friend,
     type,
     onAccept,

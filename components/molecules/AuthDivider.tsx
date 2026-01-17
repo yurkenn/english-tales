@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 
@@ -6,7 +6,7 @@ interface AuthDividerProps {
     text?: string;
 }
 
-export const AuthDivider: React.FC<AuthDividerProps> = ({ text = 'or continue with' }) => {
+export const AuthDivider: FC<AuthDividerProps> = ({ text = 'or continue with' }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     return (

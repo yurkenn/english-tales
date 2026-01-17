@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useRouter } from 'expo-router';
@@ -16,7 +16,7 @@ interface CommunityReplyCardProps {
     currentUserId?: string;
 }
 
-export const CommunityReplyCard: React.FC<CommunityReplyCardProps> = ({ reply, onLike, currentUserId }) => {
+export const CommunityReplyCard: FC<CommunityReplyCardProps> = ({ reply, onLike, currentUserId }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const router = useRouter();

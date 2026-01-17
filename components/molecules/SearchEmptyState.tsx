@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, ActivityIndicator , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -7,7 +7,7 @@ interface SearchEmptyStateProps {
     type: 'min-chars' | 'loading' | 'no-results';
 }
 
-export const SearchEmptyState: React.FC<SearchEmptyStateProps> = ({ type }) => {
+export const SearchEmptyState: FC<SearchEmptyStateProps> = ({ type }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
 

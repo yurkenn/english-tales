@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo, FC } from 'react'
 import { View, TouchableOpacity } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
@@ -31,7 +31,7 @@ interface VocabularyMilestoneCardProps {
     onDismiss?: () => void
 }
 
-export const VocabularyMilestoneCard: React.FC<VocabularyMilestoneCardProps> = ({ onDismiss }) => {
+export const VocabularyMilestoneCard: FC<VocabularyMilestoneCardProps> = ({ onDismiss }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const router = useRouter()

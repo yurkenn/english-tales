@@ -1,14 +1,14 @@
-import React from 'react';
+import { FC, ReactNode } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 
 interface SettingSectionProps {
     title: string;
     isDanger?: boolean;
-    children: React.ReactNode;
+    children: ReactNode;
 }
 
-export const SettingSection: React.FC<SettingSectionProps> = ({
+export const SettingSection: FC<SettingSectionProps> = ({
     title,
     isDanger,
     children,

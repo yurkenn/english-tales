@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, FC } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,7 +19,7 @@ interface QuizModalProps {
     onClose: (accuracy: number) => void;
 }
 
-export const QuizModal: React.FC<QuizModalProps> = ({ visible, questions, onClose }) => {
+export const QuizModal: FC<QuizModalProps> = ({ visible, questions, onClose }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

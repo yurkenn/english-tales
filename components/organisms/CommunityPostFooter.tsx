@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -18,7 +18,7 @@ interface CommunityPostFooterProps {
     replyAnimationStyle: any;
 }
 
-export const CommunityPostFooter: React.FC<CommunityPostFooterProps> = ({
+export const CommunityPostFooter: FC<CommunityPostFooterProps> = ({
     likes,
     replyCount,
     hasLiked,

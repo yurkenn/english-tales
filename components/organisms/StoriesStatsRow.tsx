@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme, semanticColors } from '@/theme';
 import { haptics } from '@/utils/haptics';
@@ -15,7 +15,7 @@ interface StoriesStatsRowProps {
     onFilterChange: (filter: DifficultyFilter) => void;
 }
 
-export const StoriesStatsRow: React.FC<StoriesStatsRowProps> = ({
+export const StoriesStatsRow: FC<StoriesStatsRowProps> = ({
     stats,
     activeFilter,
     onFilterChange,

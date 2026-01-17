@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -6,7 +7,7 @@ interface BrowseAllButtonProps {
     onPress: () => void;
 }
 
-export const BrowseAllButton: React.FC<BrowseAllButtonProps> = ({ onPress }) => {
+export const BrowseAllButton: FC<BrowseAllButtonProps> = ({ onPress }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
 

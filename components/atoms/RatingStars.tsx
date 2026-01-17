@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,7 +9,7 @@ interface RatingStarsProps {
     showEmpty?: boolean;
 }
 
-export const RatingStars: React.FC<RatingStarsProps> = ({
+export const RatingStars: FC<RatingStarsProps> = ({
     rating,
     size = 'sm',
     showEmpty = false,

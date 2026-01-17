@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme, Theme } from '@/theme';
@@ -10,7 +10,7 @@ interface StoryTagProps {
     onPress: () => void;
 }
 
-export const StoryTag: React.FC<StoryTagProps> = ({ title, onPress }) => {
+export const StoryTag: FC<StoryTagProps> = ({ title, onPress }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
 

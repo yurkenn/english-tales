@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { TouchableOpacity, Text, View, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import Animated, { FadeInDown, FadeOutUp } from 'react-native-reanimated';
@@ -12,7 +12,7 @@ interface ActiveFilterBadgeProps {
     onClear: () => void;
 }
 
-export const ActiveFilterBadge: React.FC<ActiveFilterBadgeProps> = ({
+export const ActiveFilterBadge: FC<ActiveFilterBadgeProps> = ({
     filterName,
     resultCount,
     onClear,

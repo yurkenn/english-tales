@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -24,7 +24,7 @@ interface ProfileCardProps {
     onSignInPress?: () => void;
 }
 
-export const ProfileCard: React.FC<ProfileCardProps> = ({
+export const ProfileCard: FC<ProfileCardProps> = ({
     photoURL,
     displayName,
     email,

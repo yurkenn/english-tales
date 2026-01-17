@@ -1,3 +1,4 @@
+import { FC, useState, useCallback } from 'react';
 import { View, TouchableOpacity, Image, ImageSourcePropType } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
@@ -174,7 +175,7 @@ const CommentItem = ({
     )
 }
 
-export const CommentThread: React.FC<CommentThreadProps> = ({
+export const CommentThread: FC<CommentThreadProps> = ({
     comments,
     currentUserId,
     onReply,

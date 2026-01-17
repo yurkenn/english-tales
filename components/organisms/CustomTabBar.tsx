@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, FC } from 'react';
 import { View, TouchableOpacity, LayoutChangeEvent, StyleSheet } from 'react-native';
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import { useTheme, Theme } from '@/theme';
@@ -23,7 +23,7 @@ const SPRING_CONFIG = {
     mass: 0.8,
 };
 
-export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, navigation }) => {
+export const CustomTabBar: FC<BottomTabBarProps> = ({ state, descriptors, navigation }) => {
     const { theme } = useTheme();
     const themedStyles = createStyles(theme);
     const { windowWidth } = useResponsiveGrid();
@@ -51,8 +51,8 @@ export const CustomTabBar: React.FC<BottomTabBarProps> = ({ state, descriptors, 
 
     const icons: Record<string, { name: keyof typeof Feather.glyphMap }> = {
         index: { name: 'home' },
-        discover: { name: 'compass' },
         community: { name: 'users' },
+        write: { name: 'edit-3' },
         library: { name: 'book-open' },
         profile: { name: 'user' },
     };

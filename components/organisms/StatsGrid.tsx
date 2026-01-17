@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -34,7 +34,7 @@ const getIconBg = (icon: string, theme: any): string => {
     }
 };
 
-export const StatsGrid: React.FC<StatsGridProps> = ({ stats }) => {
+export const StatsGrid: FC<StatsGridProps> = ({ stats }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const { cardWidth } = useResponsiveGrid();

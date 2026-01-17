@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { View, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Typography } from '../atoms/Typography';
@@ -13,7 +14,7 @@ interface FriendCircleProps {
     onPressFriend?: (friend: UserProfile) => void;
 }
 
-export const FriendCircle: React.FC<FriendCircleProps> = ({ friends, onPressAll, onPressFriend }) => {
+export const FriendCircle: FC<FriendCircleProps> = ({ friends, onPressAll, onPressFriend }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

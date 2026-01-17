@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo, FC } from 'react';
 import { View, Text , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { subDays, format, startOfDay, isSameDay } from 'date-fns';
@@ -8,7 +8,7 @@ interface ChartData {
     words: any[];
 }
 
-export const WordGrowthChart: React.FC<ChartData> = ({ words }) => {
+export const WordGrowthChart: FC<ChartData> = ({ words }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo, FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,7 +10,7 @@ interface TrendingStoryCardProps {
     onPress: () => void;
 }
 
-const TrendingStoryCardComponent: React.FC<TrendingStoryCardProps> = ({
+const TrendingStoryCardComponent: FC<TrendingStoryCardProps> = ({
     story,
     rank,
     onPress,

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
@@ -17,7 +17,7 @@ const LANGUAGES = [
     { code: 'fr', label: 'Français' },
 ];
 
-export const LanguageSection: React.FC<LanguageSectionProps> = ({
+export const LanguageSection: FC<LanguageSectionProps> = ({
     currentLanguage,
     onLanguageChange,
 }) => {

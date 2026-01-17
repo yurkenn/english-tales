@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect, FC } from 'react';
 import { StyleSheet, View, Dimensions } from 'react-native';
 import Animated, {
     useSharedValue,
@@ -17,7 +17,7 @@ interface AnimatedSplashScreenProps {
     onAnimationComplete: () => void;
 }
 
-export const AnimatedSplashScreen: React.FC<AnimatedSplashScreenProps> = ({
+export const AnimatedSplashScreen: FC<AnimatedSplashScreenProps> = ({
     onAnimationComplete,
 }) => {
     const containerOpacity = useSharedValue(1);

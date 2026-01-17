@@ -74,9 +74,54 @@
     },
     "tabs": {
         "home": "Home",
-        "discover": "Descobrir",
+        "community": "Comunidade",
+        "write": "Escrever",
         "library": "Biblioteca",
         "profile": "Perfil"
+    },
+    "write": {
+        "title": "Escrever",
+        "newStory": "Nova História",
+        "newStorySubtitle": "Comece sua próxima aventura",
+        "drafts": "Rascunhos",
+        "published": "Publicados",
+        "all": "Tudo",
+        "emptyTitle": "Crie sua primeira história",
+        "emptyMessage": "Compartilhe sua criatividade com leitores de todo o mundo!",
+        "startWriting": "Começar a escrever",
+        "wordCount": "{{count}} palavras",
+        "lastEdited": "Editado {{time}}",
+        "status": {
+            "draft": "Rascunho",
+            "pending": "Em revisão",
+            "approved": "Aprovado",
+            "rejected": "Mudanças necessárias",
+            "published": "Publicado"
+        },
+        "editor": {
+            "titlePlaceholder": "Título da história",
+            "descriptionPlaceholder": "Escreva uma breve descrição...",
+            "contentPlaceholder": "Era uma vez...",
+            "selectCategory": "Selecionar categorias",
+            "selectDifficulty": "Selecionar dificuldade",
+            "uploadCover": "Subir capa",
+            "preview": "Visualizar",
+            "saveDraft": "Salvar rascunho",
+            "submitReview": "Enviar para revisão",
+            "autoSaved": "Salvo auto",
+            "saving": "Salvando...",
+            "detailsTitle": "Detalhes da história",
+            "contentTitle": "Escreva sua história",
+            "reviewTitle": "Detalhes finais",
+            "minWords": "Mínimo de 50 palavras necessário",
+            "summary": "Resumo",
+            "untitled": "Sem título",
+            "permissionDenied": "Acesso às fotos é necessário.",
+            "savedTitle": "Rascunho salvo!",
+            "savedMessage": "Sua história foi salva como rascunho.",
+            "saveError": "Falha ao salvar. Tente novamente."
+        },
+        "loginRequired": "Por favor, entre para criar histórias."
     },
     "profile": {
         "title": "Perfil",
@@ -213,8 +258,14 @@
         },
         "tabs": {
             "stories": "Histórias",
+            "myStories": "Minhas histórias",
             "vocabulary": "Vocabulário"
-        }
+        },
+        "writeNewStory": "Escrever nova história",
+        "shareYourCreativity": "Compartilhe sua criatividade com o mundo",
+        "noMyStories": "Sem histórias ainda",
+        "noMyStoriesMessage": "Comece a escrever sua primeira história e compartilhe!",
+        "startWriting": "Começar a escrever"
     },
     "vocabulary": {
         "title": "Vocabulário",

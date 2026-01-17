@@ -74,9 +74,43 @@
     },
     "tabs": {
         "home": "Home",
-        "discover": "Discover",
+        "community": "Community",
+        "write": "Write",
         "library": "Library",
         "profile": "Profile"
+    },
+    "write": {
+        "title": "Write",
+        "newStory": "New Story",
+        "newStorySubtitle": "Start your next adventure",
+        "drafts": "Drafts",
+        "published": "Published",
+        "all": "All",
+        "emptyTitle": "Start Your First Story",
+        "emptyMessage": "Share your creativity with readers around the world!",
+        "startWriting": "Start Writing",
+        "wordCount": "{{count}} words",
+        "lastEdited": "Last edited {{time}}",
+        "status": {
+            "draft": "Draft",
+            "pending": "Under Review",
+            "approved": "Approved",
+            "rejected": "Needs Changes",
+            "published": "Published"
+        },
+        "editor": {
+            "titlePlaceholder": "Story Title",
+            "descriptionPlaceholder": "Write a short description...",
+            "contentPlaceholder": "Once upon a time...",
+            "selectCategory": "Select Categories",
+            "selectDifficulty": "Select Difficulty",
+            "uploadCover": "Upload Cover",
+            "preview": "Preview",
+            "saveDraft": "Save Draft",
+            "submitReview": "Submit for Review",
+            "autoSaved": "Auto-saved",
+            "saving": "Saving..."
+        }
     },
     "profile": {
         "title": "Profile",
@@ -213,8 +247,14 @@
         },
         "tabs": {
             "stories": "Stories",
+            "myStories": "My Stories",
             "vocabulary": "Vocabulary"
-        }
+        },
+        "writeNewStory": "Write New Story",
+        "shareYourCreativity": "Share your creativity with the world",
+        "noMyStories": "No Stories Yet",
+        "noMyStoriesMessage": "Start writing your first story and share it with readers!",
+        "startWriting": "Start Writing"
     },
     "vocabulary": {
         "title": "Vocabulary Builder",
@@ -350,6 +390,7 @@
         "title": "Community",
         "community": "Community",
         "following": "Following",
+        "discover": "Discover",
         "findFriends": "Find Friends",
         "searchPlaceholder": "Search by name or email...",
         "noUsersFound": "No users found",

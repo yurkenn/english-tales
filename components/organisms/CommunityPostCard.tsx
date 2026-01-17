@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -34,7 +34,7 @@ interface CommunityPostCardProps {
     index?: number;
 }
 
-export const CommunityPostCard: React.FC<CommunityPostCardProps> = ({
+export const CommunityPostCard: FC<CommunityPostCardProps> = ({
     post,
     currentUserId,
     onLike,

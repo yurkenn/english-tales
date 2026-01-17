@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useTranslation } from 'react-i18next';
@@ -16,7 +16,7 @@ const FONT_FAMILIES: { key: 'sans-serif' | 'serif'; label: string; preview: stri
     { key: 'serif', label: 'Serif', preview: 'Abc' },
 ];
 
-export const FontSection: React.FC<FontSectionProps> = ({
+export const FontSection: FC<FontSectionProps> = ({
     fontSize,
     fontFamily,
     onFontSizeChange,

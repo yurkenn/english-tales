@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef, FC } from 'react'
 import { View, Text, Animated } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
@@ -27,7 +27,7 @@ const formatDate = (date: Date | undefined): string => {
     })
 }
 
-export const AchievementCard: React.FC<AchievementCardProps> = ({ achievement, progress = 0 }) => {
+export const AchievementCard: FC<AchievementCardProps> = ({ achievement, progress = 0 }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const { cardWidth } = useResponsiveGrid()

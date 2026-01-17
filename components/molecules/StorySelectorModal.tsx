@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { View, Modal, TouchableOpacity, TextInput, FlatList, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -74,7 +74,7 @@ function createStyles(theme: Theme) {
     });
 }
 
-export const StorySelectorModal: React.FC<StorySelectorModalProps> = ({
+export const StorySelectorModal: FC<StorySelectorModalProps> = ({
     visible,
     onClose,
     onSelect,

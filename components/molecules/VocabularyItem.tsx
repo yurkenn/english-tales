@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,7 +10,7 @@ interface VocabularyItemProps {
     onPress?: (item: SavedWord) => void;
 }
 
-export const VocabularyItem: React.FC<VocabularyItemProps> = ({ item, onRemove, onPress }) => {
+export const VocabularyItem: FC<VocabularyItemProps> = ({ item, onRemove, onPress }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
 

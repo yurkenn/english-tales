@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef, FC } from 'react';
 import { View, Animated, Dimensions, StyleSheet } from 'react-native';
 import { semanticColors } from '@/theme';
 
@@ -13,7 +13,7 @@ interface ConfettiPieceProps {
     startX: number;
 }
 
-const ConfettiPiece: React.FC<ConfettiPieceProps> = ({ delay, color, startX }) => {
+const ConfettiPiece: FC<ConfettiPieceProps> = ({ delay, color, startX }) => {
     const translateY = useRef(new Animated.Value(-50)).current;
     const translateX = useRef(new Animated.Value(startX)).current;
     const rotate = useRef(new Animated.Value(0)).current;
@@ -81,7 +81,7 @@ interface ConfettiCelebrationProps {
     onComplete?: () => void;
 }
 
-export const ConfettiCelebration: React.FC<ConfettiCelebrationProps> = ({
+export const ConfettiCelebration: FC<ConfettiCelebrationProps> = ({
     visible,
     onComplete
 }) => {

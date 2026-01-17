@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, memo } from 'react';
 import { View, Text , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -23,7 +23,7 @@ interface ReadingProgressBarProps {
  * Progress bar component for the reading screen.
  * Visualizes reading progress and displays remaining time.
  */
-export const ReadingProgressBar: React.FC<ReadingProgressBarProps> = React.memo(({
+export const ReadingProgressBar: FC<ReadingProgressBarProps> = memo(({
     progress,
     estimatedReadTime,
     currentPage,

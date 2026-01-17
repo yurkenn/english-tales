@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import Animated, {
@@ -19,7 +19,7 @@ interface ReadingGoalRingProps {
  * A simple goal ring built with concentric Views and rotation.
  * This avoids new dependencies like react-native-svg.
  */
-export const ReadingGoalRing: React.FC<ReadingGoalRingProps> = ({
+export const ReadingGoalRing: FC<ReadingGoalRingProps> = ({
     progress,
     size = 48,
     strokeWidth = 4,

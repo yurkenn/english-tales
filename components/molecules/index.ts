@@ -63,3 +63,20 @@ export { StoryUnlockModal } from './StoryUnlockModal';
 export { StreakProtectionModal } from './StreakProtectionModal';
 export { TrialTimeline } from './TrialTimeline';
 export { OfflineBanner } from './OfflineBanner';
+export { DailyGoalCard } from './DailyGoalCard';
+
+// Settings sections
+export * from './settings';
+
+// Profile tabs
+export { ProfileMenuItem } from './ProfileMenuItem';
+export * from './profile';
+
+// Story detail
+export * from './story';
+
+// Library
+export * from './library';
+
+// Community
+export * from './community';

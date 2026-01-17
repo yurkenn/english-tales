@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -14,7 +14,7 @@ interface CheckpointProps {
     onComplete: () => void;
 }
 
-export const CheckpointItem: React.FC<CheckpointProps> = ({
+export const CheckpointItem: FC<CheckpointProps> = ({
     question,
     options,
     correctIndex,

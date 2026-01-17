@@ -74,9 +74,54 @@
     },
     "tabs": {
         "home": "ホーム",
-        "discover": "見つける",
+        "community": "コミュニティ",
+        "write": "書く",
         "library": "ライブラリ",
         "profile": "プロフィール"
+    },
+    "write": {
+        "title": "書く",
+        "newStory": "新しいストーリー",
+        "newStorySubtitle": "次の冒険を始めましょう",
+        "drafts": "下書き",
+        "published": "公開済み",
+        "all": "すべて",
+        "emptyTitle": "最初のストーリーを作成",
+        "emptyMessage": "あなたの創造性を世界中の読者と共有しましょう！",
+        "startWriting": "執筆を開始",
+        "wordCount": "{{count}} 単語",
+        "lastEdited": "最終編集 {{time}}",
+        "status": {
+            "draft": "下書き",
+            "pending": "審査中",
+            "approved": "承認済み",
+            "rejected": "要修正",
+            "published": "公開済み"
+        },
+        "editor": {
+            "titlePlaceholder": "ストーリーのタイトル",
+            "descriptionPlaceholder": "短い説明を書いてください...",
+            "contentPlaceholder": "昔々...",
+            "selectCategory": "カテゴリーを選択",
+            "selectDifficulty": "難易度を選択",
+            "uploadCover": "カバーをアップロード",
+            "preview": "プレビュー",
+            "saveDraft": "下書きを保存",
+            "submitReview": "審査に応募",
+            "autoSaved": "自動保存済み",
+            "saving": "保存中...",
+            "detailsTitle": "ストーリーの詳細",
+            "contentTitle": "ストーリーを書く",
+            "reviewTitle": "最終確認",
+            "minWords": "最小50単語必要です",
+            "summary": "概要",
+            "untitled": "無題",
+            "permissionDenied": "写真へのアクセス許可が必要です。",
+            "savedTitle": "下書きを保存しました！",
+            "savedMessage": "ストーリーが下書きとして保存されました。",
+            "saveError": "保存に失敗しました。もう一度お試しください。"
+        },
+        "loginRequired": "ストーリーを作成するにはサインインしてください。"
     },
     "profile": {
         "title": "プロフィール",
@@ -213,8 +258,14 @@
         },
         "tabs": {
             "stories": "ストーリー",
+            "myStories": "自分のストーリー",
             "vocabulary": "単語帳"
-        }
+        },
+        "writeNewStory": "新しいストーリーを書く",
+        "shareYourCreativity": "あなたの創造性を世界に共有しましょう",
+        "noMyStories": "ストーリーはまだありません",
+        "noMyStoriesMessage": "最初のストーリーを書いて、読者と共有しましょう！",
+        "startWriting": "執筆を開始"
     },
     "vocabulary": {
         "title": "単語ビルダー",

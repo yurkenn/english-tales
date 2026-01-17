@@ -1,246 +1,80 @@
-import React, { useMemo, useState, useCallback, useRef } from 'react'
-import { View, FlatList, RefreshControl, Text, Pressable, LayoutAnimation, Platform, UIManager } from 'react-native'
+import { useCallback } from 'react';
+import { View, FlatList, RefreshControl, StyleSheet, Platform, UIManager } from 'react-native';
 import { useTheme, Theme } from '@/theme';
-import { StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import BottomSheet from '@gorhom/bottom-sheet'
-import { useTranslation } from 'react-i18next'
+import { useRouter } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { useTranslation } from 'react-i18next';
+
 import {
     LibraryScreenSkeleton,
     EmptyState,
     StoryCardMenu,
-    StoryCardMenuItem,
     ConfirmationDialog,
     LibraryHeader,
     LibraryStatsRow,
     LibraryFilterBadge,
     LibraryBookCard,
     VocabularyItem,
-} from '@/components'
-import {
-    type LibraryItemWithProgress,
-    type FilterType,
-    FILTERS,
-} from '@/components/molecules/moleculeTypes'
-import { useAuthStore } from '@/store/authStore'
-import { useLibraryStore } from '@/store/libraryStore'
-import { useProgressStore } from '@/store/progressStore'
-import { useDownloadStore } from '@/store/downloadStore'
-import { useToastStore } from '@/store/toastStore'
-import { useVocabularyStore } from '@/store/vocabularyStore'
-import { haptics } from '@/utils/haptics'
-import { useResponsiveGrid } from '@/hooks/useResponsiveGrid'
-import { useResponsiveLayout } from '@/hooks/useResponsiveLayout'
+} from '@/components';
+import { SegmentTab, VocabQuizHeader } from '@/components/molecules/library';
 
-// Segmented Tab Component
-interface SegmentTabProps {
-    label: string
-    isActive: boolean
-    badge?: number
-    onPress: () => void
-}
-
-const SegmentTab = ({ label, isActive, badge, onPress }: SegmentTabProps) => {
-    const { theme } = useTheme();
-    const styles = createStyles(theme);
-    const handlePress = () => {
-        haptics.selection()
-        onPress()
-    }
-
-    return (
-        <Pressable
-            onPress={handlePress}
-            style={[styles.segment, isActive && styles.segmentActive]}
-            accessible
-            accessibilityRole="tab"
-            accessibilityLabel={badge ? `${label}, ${badge} items` : label}
-            accessibilityState={{ selected: isActive }}
-        >
-            <Text style={[styles.segmentText, isActive && styles.segmentTextActive]}>{label}</Text>
-            {badge !== undefined && badge > 0 && (
-                <View style={styles.badge}>
-                    <Text style={styles.badgeText}>{badge}</Text>
-                </View>
-            )}
-        </Pressable>
-    )
-}
+import { useAuthStore } from '@/store/authStore';
+import { useLibraryData, useLibraryActions } from '@/hooks';
+import { useResponsiveGrid } from '@/hooks/useResponsiveGrid';
 
 if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
-    UIManager.setLayoutAnimationEnabledExperimental(true)
+    UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
 export default function LibraryScreen() {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);
-    const router = useRouter()
-    const insets = useSafeAreaInsets()
-    const { windowWidth } = useResponsiveGrid()
-    const { containerPadding } = useResponsiveLayout()
-    const { user } = useAuthStore()
-    const { items: libraryItems, isLoading, actions: libraryActions } = useLibraryStore()
-    const { progressMap, actions: progressActions } = useProgressStore()
-    const { actions: downloadActions } = useDownloadStore()
+    const router = useRouter();
+    const insets = useSafeAreaInsets();
+    const { windowWidth } = useResponsiveGrid();
+    const { user } = useAuthStore();
 
-    // State
-    const [refreshing, setRefreshing] = useState(false)
-    const [filter, setFilter] = useState<FilterType>('all')
-    const [viewMode, setViewMode] = useState<'stories' | 'vocabulary'>('stories')
-    const [menuVisible, setMenuVisible] = useState(false)
-    const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 })
-    const [selectedItem, setSelectedItem] = useState<LibraryItemWithProgress | null>(null)
+    // Data
+    const {
+        libraryWithProgress,
+        stats,
+        wordList,
+        isLoading,
+        libraryActions,
+        progressActions,
+        vocabActions,
+    } = useLibraryData(user?.id);
 
-    // Refs
-    const buttonRefs = useRef<{ [key: string]: View | null }>({})
-    const removeFromLibraryDialogRef = useRef<BottomSheet>(null)
-    const deleteDownloadDialogRef = useRef<BottomSheet>(null)
+    // Actions  
+    const actions = useLibraryActions({
+        libraryWithProgress,
+        libraryActions,
+        windowWidth,
+    });
 
-    // Vocabulary data
-    const savedWordsForUser = useVocabularyStore((s) => s.savedWords[user?.id || ''] || {})
-    const vocabActions = useVocabularyStore((s) => s.actions)
-    const wordList = useMemo(
-        () => Object.values(savedWordsForUser).sort((a, b) => b.addedAt - a.addedAt),
-        [savedWordsForUser]
-    )
-
-    // Merge progress data with library items
-    const libraryWithProgress = useMemo<LibraryItemWithProgress[]>(() => {
-        return libraryItems.map((item) => ({
-            ...item,
-            progress: progressMap[item.storyId]
-                ? {
-                    percentage: progressMap[item.storyId].percentage,
-                    isCompleted: progressMap[item.storyId].isCompleted,
-                }
-                : undefined,
-        }))
-    }, [libraryItems, progressMap])
-
-    // Stats
-    const stats = useMemo(() => {
-        const total = libraryWithProgress.length
-        const completed = libraryWithProgress.filter((i) => i.progress?.isCompleted).length
-        const inProgress = libraryWithProgress.filter((i) => i.progress && !i.progress.isCompleted).length
-        return { total, completed, inProgress }
-    }, [libraryWithProgress])
-
-    // Filtered list
-    const filteredLibrary = useMemo(() => {
-        switch (filter) {
-            case 'completed':
-                return libraryWithProgress.filter((i) => i.progress?.isCompleted)
-            case 'in-progress':
-                return libraryWithProgress.filter((i) => i.progress && i.progress.percentage > 0 && !i.progress.isCompleted)
-            case 'not-started':
-                return libraryWithProgress.filter((i) => !i.progress || i.progress.percentage === 0)
-            default:
-                return libraryWithProgress
-        }
-    }, [libraryWithProgress, filter])
-
-    // Handlers
+    // Refresh handler
     const onRefresh = useCallback(async () => {
-        setRefreshing(true)
-        await Promise.all([libraryActions.fetchLibrary(), progressActions.fetchAllProgress()])
-        setRefreshing(false)
-    }, [libraryActions, progressActions])
-
-    const cycleFilter = useCallback(() => {
-        haptics.selection()
-        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
-        const currentIndex = FILTERS.indexOf(filter)
-        setFilter(FILTERS[(currentIndex + 1) % FILTERS.length])
-    }, [filter])
-
-    const handleStoryPress = useCallback((storyId: string) => router.push(`/story/${storyId}`), [router])
-    const handleReadPress = useCallback((storyId: string) => router.push(`/reading/${storyId}`), [router])
-
-    const handleMorePress = useCallback((item: LibraryItemWithProgress) => {
-        haptics.selection()
-        const buttonRef = buttonRefs.current[item.storyId]
-        if (buttonRef) {
-            buttonRef.measure((x, y, width, height, pageX, pageY) => {
-                setMenuPosition({ x: pageX + width, y: pageY })
-                setSelectedItem(item)
-                setMenuVisible(true)
-            })
-        } else {
-            setMenuPosition({ x: windowWidth - 220, y: 100 })
-            setSelectedItem(item)
-            setMenuVisible(true)
-        }
-    }, [windowWidth])
-
-    const handleMenuClose = useCallback(() => {
-        setMenuVisible(false)
-        setTimeout(() => setSelectedItem(null), 200)
-    }, [])
-
-    const getMenuItems = useCallback((): StoryCardMenuItem[] => {
-        if (!selectedItem) return []
-        const isDownloaded = downloadActions.isDownloaded(selectedItem.storyId)
-        const items: StoryCardMenuItem[] = []
-
-        if (isDownloaded) {
-            items.push({
-                label: t('library.menu.deleteDownload'),
-                icon: 'trash-outline',
-                destructive: true,
-                onPress: () => {
-                    haptics.selection()
-                    deleteDownloadDialogRef.current?.expand()
-                },
-            })
-        }
-
-        items.push({
-            label: t('library.menu.removeFromLibrary'),
-            icon: 'remove-circle-outline',
-            destructive: true,
-            onPress: () => {
-                haptics.selection()
-                removeFromLibraryDialogRef.current?.expand()
-            },
-        })
-
-        return items
-    }, [selectedItem, downloadActions, t])
-
-    // Dialog handlers
-    const handleRemoveFromLibrary = useCallback(async () => {
-        if (!selectedItem) return
-        await libraryActions.removeFromLibrary(selectedItem.storyId)
-        haptics.success()
-        removeFromLibraryDialogRef.current?.close()
-        useToastStore.getState().actions.success(t('common.save'))
-    }, [selectedItem, libraryActions, t])
-
-    const handleDeleteDownload = useCallback(async () => {
-        if (!selectedItem) return
-        await downloadActions.deleteDownload(selectedItem.storyId)
-        haptics.success()
-        deleteDownloadDialogRef.current?.close()
-        useToastStore.getState().actions.success(t('common.delete'))
-    }, [selectedItem, downloadActions, t])
+        actions.setRefreshing(true);
+        await Promise.all([libraryActions.fetchLibrary(), progressActions.fetchAllProgress()]);
+        actions.setRefreshing(false);
+    }, [libraryActions, progressActions, actions]);
 
     // Render items
     const renderLibraryItem = useCallback(
-        ({ item, index }: { item: LibraryItemWithProgress, index: number }) => (
+        ({ item, index }: { item: any; index: number }) => (
             <LibraryBookCard
                 item={item}
-                isDownloaded={downloadActions.isDownloaded(item.storyId)}
-                onPress={() => handleStoryPress(item.storyId)}
-                onReadPress={() => handleReadPress(item.storyId)}
-                onMorePress={() => handleMorePress(item)}
-                moreButtonRef={(ref: View | null) => { buttonRefs.current[item.storyId] = ref }}
+                isDownloaded={actions.downloadActions.isDownloaded(item.storyId)}
+                onPress={() => actions.handleStoryPress(item.storyId)}
+                onReadPress={() => actions.handleReadPress(item.storyId)}
+                onMorePress={() => actions.handleMorePress(item)}
+                moreButtonRef={(ref: any) => { actions.buttonRefs.current[item.storyId] = ref; }}
                 priority={index < 6 ? 'high' : 'normal'}
             />
         ),
-        [downloadActions, handleStoryPress, handleReadPress, handleMorePress]
-    )
+        [actions]
+    );
 
     const renderVocabularyItem = useCallback(
         ({ item }: { item: any }) => (
@@ -250,7 +84,7 @@ export default function LibraryScreen() {
             />
         ),
         [user?.id, vocabActions]
-    )
+    );
 
     // Loading state
     if (isLoading) {
@@ -258,63 +92,56 @@ export default function LibraryScreen() {
             <View style={[styles.container, { paddingTop: insets.top }]}>
                 <LibraryScreenSkeleton />
             </View>
-        )
+        );
     }
 
     return (
         <View style={styles.container}>
             <LibraryHeader
-                filter={filter}
+                filter={actions.filter}
                 onSearchPress={() => router.push('/search')}
-                onFilterPress={cycleFilter}
+                onFilterPress={actions.cycleFilter}
             />
 
             {/* Segmented Control */}
             <View style={styles.segmentedControl}>
                 <SegmentTab
                     label={t('library.tabs.stories') || 'Stories'}
-                    isActive={viewMode === 'stories'}
-                    onPress={() => {
-                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
-                        setViewMode('stories')
-                    }}
+                    isActive={actions.viewMode === 'stories'}
+                    onPress={() => actions.switchViewMode('stories')}
                 />
                 <SegmentTab
                     label={t('library.tabs.vocabulary') || 'Vocabulary'}
-                    isActive={viewMode === 'vocabulary'}
+                    isActive={actions.viewMode === 'vocabulary'}
                     badge={wordList.length}
-                    onPress={() => {
-                        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut)
-                        setViewMode('vocabulary')
-                    }}
+                    onPress={() => actions.switchViewMode('vocabulary')}
                 />
             </View>
 
-            {viewMode === 'stories' ? (
+            {actions.viewMode === 'stories' ? (
                 <>
-                    <LibraryFilterBadge filter={filter} onPress={cycleFilter} />
+                    <LibraryFilterBadge filter={actions.filter} onPress={actions.cycleFilter} />
                     <LibraryStatsRow total={stats.total} completed={stats.completed} inProgress={stats.inProgress} />
 
                     <FlatList
-                        data={filteredLibrary}
+                        data={actions.filteredLibrary}
                         keyExtractor={(item) => item.storyId}
                         renderItem={renderLibraryItem}
                         contentContainerStyle={styles.listContent}
                         showsVerticalScrollIndicator={false}
                         ItemSeparatorComponent={() => <View style={styles.separator} />}
-                        getItemLayout={(data, index) => ({
-                            length: 152, // Approximate height: 120px cover + 32px padding
-                            offset: 152 * index + (index * 16), // Add separator height
+                        getItemLayout={(_, index) => ({
+                            length: 152,
+                            offset: 152 * index + (index * 16),
                             index,
                         })}
                         removeClippedSubviews
                         initialNumToRender={10}
                         maxToRenderPerBatch={5}
                         windowSize={10}
-                        updateCellsBatchingPeriod={50}
                         refreshControl={
                             <RefreshControl
-                                refreshing={refreshing}
+                                refreshing={actions.refreshing}
                                 onRefresh={onRefresh}
                                 tintColor={theme.colors.primary}
                                 colors={[theme.colors.primary]}
@@ -323,38 +150,17 @@ export default function LibraryScreen() {
                         ListEmptyComponent={
                             <EmptyState
                                 icon="book-outline"
-                                title={filter === 'all' ? t('library.empty') : t('common.error')}
-                                message={filter === 'all' ? t('library.emptyMessage') : t('common.retry')}
-                                actionLabel={filter === 'all' ? t('library.discoverStories') : t('common.retry')}
-                                onAction={filter === 'all' ? () => router.push('/(tabs)/discover') : () => setFilter('all')}
+                                title={actions.filter === 'all' ? t('library.empty') : t('common.error')}
+                                message={actions.filter === 'all' ? t('library.emptyMessage') : t('common.retry')}
+                                actionLabel={actions.filter === 'all' ? t('library.discoverStories') : t('common.retry')}
+                                onAction={actions.filter === 'all' ? () => router.push('/') : () => actions.setFilter('all')}
                             />
                         }
                     />
                 </>
             ) : (
                 <>
-                    {/* Quiz Button Header for Vocabulary */}
-                    {wordList.length >= 3 && (
-                        <Pressable
-                            onPress={() => { haptics.medium(); router.push('/user/quiz') }}
-                            style={styles.quizHeader}
-                        >
-                            <View style={styles.quizHeaderContent}>
-                                <View style={styles.quizHeaderIcon}>
-                                    <Text style={{ fontSize: 18 }}>🎴</Text>
-                                </View>
-                                <View style={styles.quizHeaderText}>
-                                    <Text style={styles.quizHeaderTitle}>{t('library.quizTitle', 'Practice Quiz')}</Text>
-                                    <Text style={styles.quizHeaderSubtitle}>
-                                        {t('library.quizSubtitle', '{{count}} words to practice', { count: wordList.length })}
-                                    </Text>
-                                </View>
-                            </View>
-                            <View style={styles.quizHeaderArrow}>
-                                <Text style={{ fontSize: 20 }}>→</Text>
-                            </View>
-                        </Pressable>
-                    )}
+                    <VocabQuizHeader wordCount={wordList.length} />
                     <FlatList
                         data={wordList}
                         keyExtractor={(word) => word.id}
@@ -375,142 +181,62 @@ export default function LibraryScreen() {
                 </>
             )}
 
-            <StoryCardMenu visible={menuVisible} onClose={handleMenuClose} position={menuPosition} items={getMenuItems()} />
+            <StoryCardMenu visible={actions.menuVisible} onClose={actions.handleMenuClose} position={actions.menuPosition} items={actions.getMenuItems()} />
 
-            {/* Confirmation Dialogs - only render when selectedItem exists to prevent touch blocking */}
-            {selectedItem && (
+            {/* Confirmation Dialogs */}
+            {actions.selectedItem && (
                 <>
                     <ConfirmationDialog
-                        ref={removeFromLibraryDialogRef}
+                        ref={actions.removeDialogRef}
                         title={t('library.dialogs.removeTitle')}
-                        message={t('library.dialogs.removeMessage', { title: selectedItem.story.title })}
+                        message={t('library.dialogs.removeMessage', { title: actions.selectedItem.story.title })}
                         confirmLabel={t('common.delete')}
                         cancelLabel={t('common.cancel')}
                         destructive
                         icon="remove-circle-outline"
-                        onConfirm={handleRemoveFromLibrary}
-                        onCancel={() => removeFromLibraryDialogRef.current?.close()}
+                        onConfirm={actions.handleRemoveFromLibrary}
+                        onCancel={() => actions.removeDialogRef.current?.close()}
                     />
 
                     <ConfirmationDialog
-                        ref={deleteDownloadDialogRef}
+                        ref={actions.deleteDownloadDialogRef}
                         title={t('library.dialogs.deleteDownloadTitle')}
-                        message={t('library.dialogs.deleteDownloadMessage', { title: selectedItem.story.title })}
+                        message={t('library.dialogs.deleteDownloadMessage', { title: actions.selectedItem.story.title })}
                         confirmLabel={t('common.delete')}
                         cancelLabel={t('common.cancel')}
                         destructive
                         icon="trash-outline"
-                        onConfirm={handleDeleteDownload}
-                        onCancel={() => deleteDownloadDialogRef.current?.close()}
+                        onConfirm={actions.handleDeleteDownload}
+                        onCancel={() => actions.deleteDownloadDialogRef.current?.close()}
                     />
                 </>
             )}
         </View>
-    )
+    );
 }
 
-const createStyles = (theme: Theme) => StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: theme.colors.background,
-    },
-    listContent: {
-        paddingHorizontal: theme.spacing.lg,
-        paddingTop: theme.spacing.sm,
-        paddingBottom: theme.spacing.xxxxl * 2 + theme.spacing.xxl, // ~120
-    },
-    separator: {
-        height: theme.spacing.lg,
-    },
-    separatorSmall: {
-        height: theme.spacing.md,
-    },
-    segmentedControl: {
-        flexDirection: 'row',
-        paddingHorizontal: theme.spacing.lg,
-        paddingVertical: theme.spacing.md,
-        gap: theme.spacing.sm,
-    },
-    segment: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingVertical: theme.spacing.sm,
-        borderRadius: theme.radius.md,
-        backgroundColor: theme.colors.surface,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        ...theme.shadows.sm,
-    },
-    segmentActive: {
-        backgroundColor: theme.colors.primary,
-        borderColor: theme.colors.primary,
-        ...theme.shadows.md,
-    },
-    segmentText: {
-        fontSize: theme.typography.size.md,
-        fontWeight: '600',
-        color: theme.colors.textSecondary,
-    },
-    segmentTextActive: {
-        color: theme.colors.textInverse,
-    },
-    badge: {
-        marginLeft: theme.spacing.sm,
-        backgroundColor: 'rgba(255,255,255,0.25)',
-        paddingHorizontal: theme.spacing.sm,
-        paddingVertical: 1,
-        borderRadius: theme.radius.sm,
-        minWidth: 18,
-        alignItems: 'center',
-    },
-    badgeText: {
-        fontSize: theme.typography.size.xs,
-        fontWeight: 'bold',
-        color: theme.colors.textInverse,
-    },
-    quizHeader: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: theme.colors.surface,
-        marginHorizontal: theme.spacing.lg,
-        marginTop: theme.spacing.sm,
-        marginBottom: theme.spacing.sm,
-        padding: theme.spacing.md,
-        borderRadius: theme.radius.lg,
-        borderWidth: 1,
-        borderColor: theme.colors.borderLight,
-        ...theme.shadows.sm,
-    },
-    quizHeaderContent: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        gap: theme.spacing.md,
-    },
-    quizHeaderIcon: {
-        width: 40,
-        height: 40,
-        borderRadius: theme.radius.full,
-        backgroundColor: theme.colors.primary + '10',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    quizHeaderText: {
-        gap: theme.spacing.xxs,
-    },
-    quizHeaderTitle: {
-        fontSize: theme.typography.size.md,
-        fontWeight: '700',
-        color: theme.colors.text,
-    },
-    quizHeaderSubtitle: {
-        fontSize: theme.typography.size.xs,
-        color: theme.colors.textSecondary,
-    },
-    quizHeaderArrow: {
-        color: theme.colors.primary,
-        opacity: 0.5,
-    },
-});
+function createStyles(theme: Theme) {
+    return StyleSheet.create({
+        container: {
+            flex: 1,
+            backgroundColor: theme.colors.background,
+        },
+        listContent: {
+            paddingHorizontal: theme.spacing.lg,
+            paddingTop: theme.spacing.sm,
+            paddingBottom: theme.spacing.xxxxl * 2 + theme.spacing.xxl,
+        },
+        separator: {
+            height: theme.spacing.lg,
+        },
+        separatorSmall: {
+            height: theme.spacing.md,
+        },
+        segmentedControl: {
+            flexDirection: 'row',
+            paddingHorizontal: theme.spacing.lg,
+            paddingVertical: theme.spacing.md,
+            gap: theme.spacing.sm,
+        },
+    });
+}

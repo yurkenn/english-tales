@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 
@@ -9,7 +9,7 @@ interface StatBarProps {
     color?: string;
 }
 
-export const StatBar: React.FC<StatBarProps> = ({
+export const StatBar: FC<StatBarProps> = ({
     label,
     value,
     maxValue,
@@ -43,7 +43,7 @@ interface WeeklyChartProps {
     labels?: string[];
 }
 
-export const WeeklyChart: React.FC<WeeklyChartProps> = ({
+export const WeeklyChart: FC<WeeklyChartProps> = ({
     data,
     labels = ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
 }) => {

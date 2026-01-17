@@ -98,7 +98,7 @@ export function useReadingCompletion({
                 openReviewSheet()
             }, 500)
         } else {
-            router.push('/(tabs)/discover')
+            router.push('/')
         }
     }, [storyId, storyTitle, wordCount, progressActions, router, getReadingTimeMinutes, openReviewSheet])
 

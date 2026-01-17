@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
@@ -9,7 +9,7 @@ interface SectionHeaderProps {
     onActionPress?: () => void;
 }
 
-export const SectionHeader: React.FC<SectionHeaderProps> = ({
+export const SectionHeader: FC<SectionHeaderProps> = ({
     title,
     actionLabel = 'See All',
     onActionPress,

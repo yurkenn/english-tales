@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import Animated, { FadeIn } from 'react-native-reanimated';
@@ -11,7 +11,7 @@ interface FilteredEmptyStateProps {
     onClearFilter: () => void;
 }
 
-export const FilteredEmptyState: React.FC<FilteredEmptyStateProps> = ({
+export const FilteredEmptyState: FC<FilteredEmptyStateProps> = ({
     filterName,
     onClearFilter,
 }) => {

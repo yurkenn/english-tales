@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, Image, TouchableOpacity, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -24,7 +24,7 @@ const getGreeting = (t: any) => {
     return t('home.greeting_evening', 'Good Evening');
 };
 
-export const HomeHeader: React.FC<HomeHeaderProps> = ({
+export const HomeHeader: FC<HomeHeaderProps> = ({
     userName,
     userPhotoUrl,
     isAnonymous,

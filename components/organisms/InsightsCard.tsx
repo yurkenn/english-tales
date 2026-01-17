@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text , StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -10,7 +10,7 @@ interface InsightsCardProps {
     totalReadingTimeMs: number;
 }
 
-export const InsightsCard: React.FC<InsightsCardProps> = ({
+export const InsightsCard: FC<InsightsCardProps> = ({
     wordsLearned,
     averageAccuracy,
     totalReadingTimeMs

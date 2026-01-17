@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, useState } from 'react';
 import { View, Text, TextInput, TextInputProps, ViewStyle, StyleProp, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -24,7 +24,7 @@ export interface FormFieldProps extends TextInputProps {
 /**
  * Reusable form field component that includes a label, icon, and error handling.
  */
-export const FormField: React.FC<FormFieldProps> = ({
+export const FormField: FC<FormFieldProps> = ({
     label,
     icon,
     error,
@@ -36,7 +36,7 @@ export const FormField: React.FC<FormFieldProps> = ({
 }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
-    const [isPasswordVisible, setIsPasswordVisible] = React.useState(false);
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const hasError = !!error;
 
     const isSecure = textInputProps.secureTextEntry && !isPasswordVisible;

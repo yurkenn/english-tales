@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ interface SearchBarProps {
     onPress?: () => void;
 }
 
-export const SearchBar: React.FC<SearchBarProps> = ({
+export const SearchBar: FC<SearchBarProps> = ({
     placeholder = 'Search English stories...',
     value,
     onChangeText,

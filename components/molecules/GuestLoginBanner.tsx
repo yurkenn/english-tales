@@ -1,4 +1,4 @@
-import React from 'react'
+import { FC } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
@@ -13,7 +13,7 @@ interface GuestLoginBannerProps {
     onDismiss?: () => void
 }
 
-export const GuestLoginBanner: React.FC<GuestLoginBannerProps> = ({
+export const GuestLoginBanner: FC<GuestLoginBannerProps> = ({
     onSignInPress,
     onDismiss,
 }) => {

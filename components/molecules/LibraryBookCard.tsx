@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import { memo, FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -17,7 +17,7 @@ interface LibraryBookCardProps {
     priority?: 'low' | 'normal' | 'high';
 }
 
-const LibraryBookCardComponent: React.FC<LibraryBookCardProps> = ({
+const LibraryBookCardComponent: FC<LibraryBookCardProps> = ({
     item,
     isDownloaded,
     onPress,

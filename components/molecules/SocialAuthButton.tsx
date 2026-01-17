@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Text, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -23,7 +23,7 @@ const PROVIDER_CONFIG = {
     },
 };
 
-export const SocialAuthButton: React.FC<SocialAuthButtonProps> = ({
+export const SocialAuthButton: FC<SocialAuthButtonProps> = ({
     provider,
     onPress,
     disabled,

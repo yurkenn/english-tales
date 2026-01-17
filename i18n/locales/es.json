@@ -74,9 +74,54 @@
     },
     "tabs": {
         "home": "Inicio",
-        "discover": "Descubrir",
+        "community": "Comunidad",
+        "write": "Escribir",
         "library": "Biblioteca",
         "profile": "Perfil"
+    },
+    "write": {
+        "title": "Escribir",
+        "newStory": "Nueva Historia",
+        "newStorySubtitle": "Comienza tu próxima aventura",
+        "drafts": "Borradores",
+        "published": "Publicados",
+        "all": "Todo",
+        "emptyTitle": "Crea tu primera historia",
+        "emptyMessage": "¡Comparte tu creatividad con lectores de todo el mundo!",
+        "startWriting": "Empezar a escribir",
+        "wordCount": "{{count}} palabras",
+        "lastEdited": "Última edición {{time}}",
+        "status": {
+            "draft": "Borrador",
+            "pending": "En revisión",
+            "approved": "Aprobado",
+            "rejected": "Cambios necesarios",
+            "published": "Publicado"
+        },
+        "editor": {
+            "titlePlaceholder": "Título de la historia",
+            "descriptionPlaceholder": "Escribe una descripción corta...",
+            "contentPlaceholder": "Había una vez...",
+            "selectCategory": "Seleccionar categorías",
+            "selectDifficulty": "Seleccionar dificultad",
+            "uploadCover": "Subir portada",
+            "preview": "Previsualizar",
+            "saveDraft": "Guardar borrador",
+            "submitReview": "Enviar a revisión",
+            "autoSaved": "Autoguardado",
+            "saving": "Guardando...",
+            "detailsTitle": "Detalles de la historia",
+            "contentTitle": "Escribe tu historia",
+            "reviewTitle": "Detalles finales",
+            "minWords": "Mínimo 50 palabras requeridas",
+            "summary": "Resumen",
+            "untitled": "Sin título",
+            "permissionDenied": "Se requiere permiso para acceder a las fotos.",
+            "savedTitle": "¡Borrador guardado!",
+            "savedMessage": "Tu historia ha sido guardada como borrador.",
+            "saveError": "Error al guardar. Por favor, inténtalo de nuevo."
+        },
+        "loginRequired": "Inicia sesión para crear historias."
     },
     "profile": {
         "title": "Perfil",
@@ -213,8 +258,14 @@
         },
         "tabs": {
             "stories": "Historias",
+            "myStories": "Mis historias",
             "vocabulary": "Vocabulario"
-        }
+        },
+        "writeNewStory": "Escribir nueva historia",
+        "shareYourCreativity": "Comparte tu creatividad con el mundo",
+        "noMyStories": "Aún no hay historias",
+        "noMyStoriesMessage": "¡Comienza a escribir tu primera historia y compártela con los lectores!",
+        "startWriting": "Empezar a escribir"
     },
     "vocabulary": {
         "title": "Constructor de vocabulario",

@@ -74,9 +74,54 @@
     },
     "tabs": {
         "home": "홈",
-        "discover": "둘러보기",
+        "community": "커뮤니티",
+        "write": "쓰기",
         "library": "라이브러리",
         "profile": "프로필"
+    },
+    "write": {
+        "title": "쓰기",
+        "newStory": "새 이야기",
+        "newStorySubtitle": "다음 모험을 시작하세요",
+        "drafts": "임시 저장",
+        "published": "게시됨",
+        "all": "전체",
+        "emptyTitle": "첫 번째 이야기를 만들어보세요",
+        "emptyMessage": "전 세계 독자들과 당신의 창의력을 공유하세요!",
+        "startWriting": "쓰기 시작",
+        "wordCount": "{{count}} 단어",
+        "lastEdited": "최근 수정 {{time}}",
+        "status": {
+            "draft": "임시 저장",
+            "pending": "검토 중",
+            "approved": "승인됨",
+            "rejected": "수정 필요",
+            "published": "게시됨"
+        },
+        "editor": {
+            "titlePlaceholder": "이야기 제목",
+            "descriptionPlaceholder": "짧은 설명을 작성하세요...",
+            "contentPlaceholder": "옛날 옛적에...",
+            "selectCategory": "카테고리 선택",
+            "selectDifficulty": "난이도 선택",
+            "uploadCover": "커버 업로드",
+            "preview": "미리보기",
+            "saveDraft": "임시 저장",
+            "submitReview": "검토 요청",
+            "autoSaved": "자동 저장됨",
+            "saving": "저장 중...",
+            "detailsTitle": "이야기 상세 정보",
+            "contentTitle": "이야기 작성",
+            "reviewTitle": "최종 확인",
+            "minWords": "최소 50단어가 필요합니다",
+            "summary": "개요",
+            "untitled": "제목 없음",
+            "permissionDenied": "사진 접근 권한이 필요합니다.",
+            "savedTitle": "임시 저장 완료!",
+            "savedMessage": "이야기가 임시 저장되었습니다.",
+            "saveError": "저장 실패. 다시 시도해 주세요."
+        },
+        "loginRequired": "이야기를 만들려면 로그인하세요."
     },
     "profile": {
         "title": "프로필",
@@ -213,8 +258,14 @@
         },
         "tabs": {
             "stories": "이야기",
+            "myStories": "내 이야기",
             "vocabulary": "단어장"
-        }
+        },
+        "writeNewStory": "새 이야기 쓰기",
+        "shareYourCreativity": "당신의 창의력을 세계와 공유하세요",
+        "noMyStories": "아직 이야기가 없습니다",
+        "noMyStoriesMessage": "첫 번째 이야기를 쓰고 독자들과 공유해 보세요!",
+        "startWriting": "쓰기 시작"
     },
     "vocabulary": {
         "title": "내 단어장",

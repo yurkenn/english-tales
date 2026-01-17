@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Text as RNText, TextProps, TextStyle, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
@@ -22,7 +22,7 @@ interface TypographyProps extends TextProps {
     weight?: TextStyle['fontWeight'];
 }
 
-export const Typography: React.FC<TypographyProps> = ({
+export const Typography: FC<TypographyProps> = ({
     variant = 'body',
     color,
     align,

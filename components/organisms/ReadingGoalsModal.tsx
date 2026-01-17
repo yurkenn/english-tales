@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ interface ReadingGoalsModalProps {
 
 const GOAL_OPTIONS = [5, 10, 15, 20, 30];
 
-export const ReadingGoalsModal: React.FC<ReadingGoalsModalProps> = ({
+export const ReadingGoalsModal: FC<ReadingGoalsModalProps> = ({
     visible,
     onClose,
     currentGoal,

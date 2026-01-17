@@ -1,4 +1,4 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { Component, ErrorInfo, ReactNode, FC } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -63,7 +63,7 @@ interface ErrorFallbackProps {
     onReset: () => void;
 }
 
-const ErrorFallback: React.FC<ErrorFallbackProps> = ({ error, onReset }) => {
+const ErrorFallback: FC<ErrorFallbackProps> = ({ error, onReset }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

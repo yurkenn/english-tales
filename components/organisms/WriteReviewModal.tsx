@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, FC } from 'react';
 import { View, Text, Modal, TouchableOpacity, TextInput, ActivityIndicator, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,7 +12,7 @@ interface WriteReviewModalProps {
     storyTitle: string;
 }
 
-export const WriteReviewModal: React.FC<WriteReviewModalProps> = ({
+export const WriteReviewModal: FC<WriteReviewModalProps> = ({
     visible,
     onClose,
     onSubmit,

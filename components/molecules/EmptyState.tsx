@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -13,7 +13,7 @@ interface EmptyStateProps {
     onAction?: () => void;
 }
 
-export const EmptyState: React.FC<EmptyStateProps> = ({
+export const EmptyState: FC<EmptyStateProps> = ({
     icon,
     title,
     message,

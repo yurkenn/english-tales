@@ -1,0 +1,1 @@
+export { TrendingStoriesRibbon } from './TrendingStoriesRibbon';

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback, FC } from 'react';
 import {
     View,
     TextInput,
@@ -28,7 +28,7 @@ interface UserSearchModalProps {
     onClose: () => void;
 }
 
-export const UserSearchModal: React.FC<UserSearchModalProps> = ({ onClose }) => {
+export const UserSearchModal: FC<UserSearchModalProps> = ({ onClose }) => {
     const { t } = useTranslation();
     const { theme } = useTheme();
     const styles = createStyles(theme);

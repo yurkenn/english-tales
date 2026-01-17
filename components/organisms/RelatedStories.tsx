@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, useMemo } from 'react';
 // Force reload: 3
 
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet as RNStyleSheet } from 'react-native';
@@ -16,13 +16,13 @@ interface RelatedStoriesProps {
     currentStoryId: string;
 }
 
-export const RelatedStories: React.FC<RelatedStoriesProps> = ({ categoryId, currentStoryId }) => {
+export const RelatedStories: FC<RelatedStoriesProps> = ({ categoryId, currentStoryId }) => {
     const { theme } = useTheme();
     const styles = createStyles(theme);
     const router = useRouter();
     const { t } = useTranslation();
     const { data: stories, isLoading } = useStoriesByCategory(categoryId);
-    const relatedStories = React.useMemo(() => {
+    const relatedStories = useMemo(() => {
         if (!stories) return [];
         const mapped = mapSanityStories(stories);
         return mapped.filter((s) => s.id !== currentStoryId).slice(0, 5);

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 
@@ -8,7 +8,7 @@ interface LibraryStatsRowProps {
     inProgress: number;
 }
 
-export const LibraryStatsRow: React.FC<LibraryStatsRowProps> = ({
+export const LibraryStatsRow: FC<LibraryStatsRowProps> = ({
     total,
     completed,
     inProgress,

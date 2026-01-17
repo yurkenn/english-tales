@@ -74,9 +74,54 @@
     },
     "tabs": {
         "home": "Accueil",
-        "discover": "Découvrir",
+        "community": "Communauté",
+        "write": "Écrire",
         "library": "Bibliothèque",
         "profile": "Profil"
+    },
+    "write": {
+        "title": "Écrire",
+        "newStory": "Nouvelle Histoire",
+        "newStorySubtitle": "Commencez votre prochaine aventure",
+        "drafts": "Brouillons",
+        "published": "Publiés",
+        "all": "Tout",
+        "emptyTitle": "Créez votre première histoire",
+        "emptyMessage": "Partagez votre créativité avec des lecteurs du monde entier !",
+        "startWriting": "Commencer à écrire",
+        "wordCount": "{{count}} mots",
+        "lastEdited": "Mis à jour {{time}}",
+        "status": {
+            "draft": "Brouillon",
+            "pending": "En révision",
+            "approved": "Approuvé",
+            "rejected": "Modifications requises",
+            "published": "Publié"
+        },
+        "editor": {
+            "titlePlaceholder": "Titre de l'histoire",
+            "descriptionPlaceholder": "Écrivez une courte description...",
+            "contentPlaceholder": "Il était une fois...",
+            "selectCategory": "Choisir des catégories",
+            "selectDifficulty": "Choisir la difficulté",
+            "uploadCover": "Ajouter une couverture",
+            "preview": "Aperçu",
+            "saveDraft": "Enregistrer le brouillon",
+            "submitReview": "Soumettre pour révision",
+            "autoSaved": "Enregistré auto",
+            "saving": "Enregistrement...",
+            "detailsTitle": "Détails de l'histoire",
+            "contentTitle": "Écrivez votre histoire",
+            "reviewTitle": "Détails finaux",
+            "minWords": "Minimum 50 mots requis",
+            "summary": "Résumé",
+            "untitled": "Sans titre",
+            "permissionDenied": "L'accès aux photos est requis.",
+            "savedTitle": "Brouillon enregistré !",
+            "savedMessage": "Votre histoire a été enregistrée comme brouillon.",
+            "saveError": "Échec de l'enregistrement. Veuillez réessayer."
+        },
+        "loginRequired": "Veuillez vous connecter pour créer des histoires."
     },
     "profile": {
         "title": "Profil",
@@ -213,8 +258,14 @@
         },
         "tabs": {
             "stories": "Histoires",
+            "myStories": "Mes histoires",
             "vocabulary": "Vocabulaire"
-        }
+        },
+        "writeNewStory": "Écrire une nouvelle histoire",
+        "shareYourCreativity": "Partagez votre créativité avec le monde",
+        "noMyStories": "Pas encore d'histoires",
+        "noMyStoriesMessage": "Commencez à écrire votre première histoire et partagez-la !",
+        "startWriting": "Commencer à écrire"
     },
     "vocabulary": {
         "title": "Vocabulaire",

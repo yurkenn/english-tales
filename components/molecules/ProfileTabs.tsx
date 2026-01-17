@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -24,7 +24,7 @@ interface ProfileTabsProps {
     };
 }
 
-export const ProfileTabs: React.FC<ProfileTabsProps> = ({
+export const ProfileTabs: FC<ProfileTabsProps> = ({
     activeTab,
     onTabChange,
     counts,

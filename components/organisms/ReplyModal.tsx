@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, FC } from 'react';
 import {
     View,
     Modal,
@@ -20,7 +20,7 @@ interface ReplyModalProps {
     isSubmitting: boolean;
 }
 
-export const ReplyModal: React.FC<ReplyModalProps> = ({
+export const ReplyModal: FC<ReplyModalProps> = ({
     visible,
     onClose,
     onSubmit,

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { View, TouchableOpacity, Image, ImageSourcePropType, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -16,7 +16,7 @@ interface CommunityPostHeaderProps {
     onMorePress: () => void;
 }
 
-export const CommunityPostHeader: React.FC<CommunityPostHeaderProps> = ({
+export const CommunityPostHeader: FC<CommunityPostHeaderProps> = ({
     userName,
     userPhoto,
     timestamp,

@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Ionicons } from '@expo/vector-icons';
@@ -9,7 +10,7 @@ interface TermsCheckboxProps {
     error?: string;
 }
 
-export const TermsCheckbox: React.FC<TermsCheckboxProps> = ({
+export const TermsCheckbox: FC<TermsCheckboxProps> = ({
     checked,
     onToggle,
     error,

@@ -1,3 +1,4 @@
+import { FC } from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import Animated, {
@@ -48,7 +49,7 @@ function createStyles(theme: Theme) {
     });
 }
 
-export const GenreChip: React.FC<GenreChipProps> = ({
+export const GenreChip: FC<GenreChipProps> = ({
     label,
     isSelected = false,
     onPress,
