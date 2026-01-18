@@ -26,3 +26,4 @@ export { useStoryActions } from './useStoryActions';
 export { useLibraryData } from './useLibraryData';
 export { useLibraryActions } from './useLibraryActions';
 export { useCommunityHandlers } from './useCommunityHandlers';
+export { useUnifiedStoryData, type StorySource, type UnifiedStoryData } from './useUnifiedStoryData';

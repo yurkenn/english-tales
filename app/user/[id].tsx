@@ -365,6 +365,7 @@ const createStyles = (theme: Theme) => StyleSheet.create({
         paddingHorizontal: theme.spacing.lg,
         paddingBottom: theme.spacing.md,
         backgroundColor: theme.colors.background,
+        zIndex: 100,
     },
     backButton: {
         width: 44,

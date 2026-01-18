@@ -18,4 +18,5 @@ export { StoryTag } from './StoryTag';
 export { Input } from './Input';
 export { ProfileTabButton } from './ProfileTabButton';
 export { ProfileStatItem } from './ProfileStatItem';
+export { DifficultyBadge, getDifficultyColor, getDifficultyLabel } from './DifficultyBadge';
 

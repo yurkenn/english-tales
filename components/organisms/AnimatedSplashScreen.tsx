@@ -1,5 +1,5 @@
 import { useEffect, FC } from 'react';
-import { StyleSheet, View, Dimensions } from 'react-native';
+import { StyleSheet, useWindowDimensions } from 'react-native';
 import Animated, {
     useSharedValue,
     useAnimatedStyle,
@@ -9,7 +9,6 @@ import Animated, {
 } from 'react-native-reanimated';
 import { Image } from 'expo-image';
 
-const { width, height } = Dimensions.get('window');
 // Expo splash images are usually centered. We'll use the splash image directly
 // to ensure pixel-perfect match with the native splash.
 
@@ -20,6 +19,7 @@ interface AnimatedSplashScreenProps {
 export const AnimatedSplashScreen: FC<AnimatedSplashScreenProps> = ({
     onAnimationComplete,
 }) => {
+    const { width, height } = useWindowDimensions();
     const containerOpacity = useSharedValue(1);
     const contentScale = useSharedValue(1);
     const contentOpacity = useSharedValue(1);
@@ -64,7 +64,7 @@ export const AnimatedSplashScreen: FC<AnimatedSplashScreenProps> = ({
             <Animated.View style={[styles.content, animatedContentStyle]}>
                 <Image
                     source={require('../../assets/splash.png')}
-                    style={styles.splashImage}
+                    style={{ width, height }}
                     contentFit="contain"
                     priority="high"
                 />
@@ -86,9 +86,5 @@ const styles = StyleSheet.create({
         height: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    splashImage: {
-        width: width,
-        height: height,
     },
 });

@@ -3,7 +3,6 @@
     "name": "English Tales",
     "slug": "english-tales",
     "version": "1.1.0",
-    "newArchEnabled": true,
     "scheme": "english-tales",
     "platforms": [
       "android"
@@ -37,7 +36,8 @@
     ],
     "experiments": {
       "typedRoutes": true,
-      "tsconfigPaths": true
+      "tsconfigPaths": true,
+      "reactCompiler": true
     },
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -66,6 +66,8 @@ const createStyles = (theme: Theme) => StyleSheet.create({
         paddingHorizontal: theme.spacing.lg,
         paddingBottom: theme.spacing.sm,
         borderBottomWidth: 0, // Cleaner look
+        backgroundColor: theme.colors.background,
+        zIndex: 100,
     },
     button: {
         width: 44,

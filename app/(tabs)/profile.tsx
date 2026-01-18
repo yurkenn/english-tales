@@ -253,6 +253,8 @@ function createStyles(theme: Theme) {
             alignItems: 'center',
             paddingHorizontal: theme.spacing.lg,
             paddingBottom: theme.spacing.lg,
+            backgroundColor: theme.colors.background,
+            zIndex: 100,
         },
         headerTitle: {
             fontSize: theme.typography.size.xxxl,

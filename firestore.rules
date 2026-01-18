@@ -7,6 +7,12 @@ service cloud.firestore {
       allow write: if request.auth != null;
     }
     
+    // Replies collection - everyone can read, authenticated users can write
+    match /replies/{replyId} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    
     // Users collection - public read (for profiles), only owner can write own data
     match /users/{userId} {
       allow read: if true;
@@ -22,6 +28,40 @@ service cloud.firestore {
     match /reviews/{reviewId} {
       allow read: if true;
       allow write: if request.auth != null;
+    }
+    
+    // User Story Reviews collection - for community story reviews
+    match /userStoryReviews/{reviewId} {
+      allow read: if true;
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+    
+    // User Story Favorites collection - for community story favorites
+    match /userStoryFavorites/{favoriteId} {
+      allow read: if true;
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+    
+    // Author Followers collection
+    match /authorFollowers/{followId} {
+      allow read: if true;
+      allow create: if request.auth != null && request.resource.data.followerId == request.auth.uid;
+      allow delete: if request.auth != null && resource.data.followerId == request.auth.uid;
+    }
+    
+    // User Story Progress collection
+    match /userStoryProgress/{progressId} {
+      allow read: if request.auth != null && resource.data.userId == request.auth.uid;
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow update: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+    
+    // Content Reports collection
+    match /contentReports/{reportId} {
+      allow create: if request.auth != null && request.resource.data.reporterId == request.auth.uid;
+      allow read: if request.auth != null && resource.data.reporterId == request.auth.uid;
     }
     
     // Favorites collection - users can only manage their own favorites

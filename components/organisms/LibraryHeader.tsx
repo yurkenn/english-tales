@@ -64,6 +64,8 @@ const createStyles = (theme: Theme, containerPadding: number) => StyleSheet.crea
         justifyContent: 'space-between',
         paddingHorizontal: containerPadding,
         paddingBottom: theme.spacing.md,
+        backgroundColor: theme.colors.background,
+        zIndex: 100,
     },
     title: {
         fontSize: theme.typography.size.xxxl,

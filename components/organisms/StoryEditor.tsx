@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect, useMemo, FC } from 'react';
+import { useState, useCallback, useEffect, useMemo, FC, useRef } from 'react';
 import {
     View,
     ScrollView,
@@ -23,9 +23,12 @@ import { useCategories } from '@/hooks/useQueries';
 import { useResponsiveLayout } from '@/hooks/useResponsiveLayout';
 import { haptics } from '@/utils/haptics';
 import { createUserStory, updateUserStory, uploadImageAsset } from '@/services/sanity/mutations';
+import { RichTextEditor } from '@/components/organisms/RichTextEditor';
+import { htmlToPortableText, portableTextToHtml, getWordCount } from '@/utils/portableTextUtils';
 // import * as ImagePicker from 'expo-image-picker';
 
-type Step = 'details' | 'content' | 'review';
+type Step = 'details' | 'content' | 'preview' | 'review';
+type SaveStatus = 'idle' | 'saving' | 'saved' | 'error';
 
 const DIFFICULTY_OPTIONS = [
     { value: 'beginner', label: '🟢 Beginner', color: '#10B981' },
@@ -51,6 +54,8 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
     // State
     const [currentStep, setCurrentStep] = useState<Step>('details');
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [saveStatus, setSaveStatus] = useState<SaveStatus>('idle');
+    const saveTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     // Cover Image State
     // If edit mode and has cover image, show it
@@ -65,17 +70,18 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
     const [title, setTitle] = useState(initialStory?.title || (mode === 'create' ? draft.title : ''));
     const [description, setDescription] = useState(initialStory?.description || (mode === 'create' ? draft.description : ''));
 
-    // Content extraction from portable text
+    // Content extraction from portable text - convert to HTML for editor
     const initialContent = useMemo(() => {
         if (initialStory?.content && Array.isArray(initialStory.content)) {
-            return initialStory.content[0]?.children?.[0]?.text || '';
+            return portableTextToHtml(initialStory.content);
         }
         if (mode === 'create' && draft.content.length > 0) {
-            return draft.content[0]?.children?.[0]?.text || '';
+            return portableTextToHtml(draft.content);
         }
         return '';
     }, [initialStory, draft, mode]);
 
+    // Content is now HTML string
     const [content, setContent] = useState(initialContent);
     const [difficulty, setDifficulty] = useState<UserStory['difficulty'] | null>(
         initialStory?.difficulty || (mode === 'create' ? draft.difficulty : null)
@@ -87,9 +93,9 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
     // Fetch categories
     const { data: categories = [] } = useCategories();
 
-    // Word count
+    // Word count - extract from HTML
     const wordCount = useMemo(() => {
-        return content.trim().split(/\s+/).filter(Boolean).length;
+        return getWordCount(content);
     }, [content]);
 
     // Validation
@@ -101,30 +107,44 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
         switch (currentStep) {
             case 'details': return isDetailsValid;
             case 'content': return isContentValid;
+            case 'preview': return true; // Always can proceed from preview
             case 'review': return isReviewValid;
             default: return false;
         }
     }, [currentStep, isDetailsValid, isContentValid, isReviewValid]);
 
-    // Auto-save to DRAFT store ONLY in create mode
+    // Auto-save to DRAFT store ONLY in create mode with status indicator
     useEffect(() => {
         if (mode !== 'create') return;
-        const timer = setTimeout(() => {
+
+        // Clear previous timeout
+        if (saveTimeoutRef.current) {
+            clearTimeout(saveTimeoutRef.current);
+        }
+
+        setSaveStatus('saving');
+
+        saveTimeoutRef.current = setTimeout(() => {
+            const portableTextContent = htmlToPortableText(content);
             updateDraft({
                 title,
                 description,
-                content: content ? [{
-                    _type: 'block',
-                    children: [{ _type: 'span', text: content }],
-                    markDefs: [],
-                    style: 'normal',
-                }] : [],
+                content: portableTextContent,
                 difficulty: difficulty || undefined,
                 categoryIds: selectedCategories,
                 coverImageUri: coverImageUri && !coverImageUri.startsWith('http') ? coverImageUri : undefined,
             });
+            setSaveStatus('saved');
+
+            // Reset status after 2 seconds
+            setTimeout(() => setSaveStatus('idle'), 2000);
         }, 1000);
-        return () => clearTimeout(timer);
+
+        return () => {
+            if (saveTimeoutRef.current) {
+                clearTimeout(saveTimeoutRef.current);
+            }
+        };
     }, [title, description, content, difficulty, selectedCategories, coverImageUri, mode]);
 
     // Handlers
@@ -152,8 +172,10 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
             }
         } else if (currentStep === 'content') {
             setCurrentStep('details');
-        } else if (currentStep === 'review') {
+        } else if (currentStep === 'preview') {
             setCurrentStep('content');
+        } else if (currentStep === 'review') {
+            setCurrentStep('preview');
         }
     }, [currentStep, clearDraft, router, t, mode, title, content]);
 
@@ -162,9 +184,16 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
         if (currentStep === 'details') {
             setCurrentStep('content');
         } else if (currentStep === 'content') {
+            setCurrentStep('preview');
+        } else if (currentStep === 'preview') {
             setCurrentStep('review');
         }
     }, [currentStep]);
+
+    // Handle content change from RichTextEditor
+    const handleContentChange = useCallback((html: string) => {
+        setContent(html);
+    }, []);
 
     const handlePickImage = useCallback(async () => {
         haptics.selection();
@@ -231,25 +260,23 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
                 }
             }
 
+            // Determine the save status - only allow draft or pending for user actions
+            const saveStatusValue: 'draft' | 'pending' = status ||
+                (initialStory?.status === 'pending' ? 'pending' : 'draft');
+
             const storyData = {
                 title,
                 description,
-                content: [{
-                    _type: 'block',
-                    _key: `block-${Date.now()}`,
-                    children: [{ _type: 'span', _key: `span-${Date.now()}`, text: content }],
-                    markDefs: [],
-                    style: 'normal',
-                }],
+                content: htmlToPortableText(content),
                 difficulty: difficulty || 'beginner',
                 categoryIds: selectedCategories,
                 coverImageAssetId,
-                status: status || (initialStory?.status || 'draft'),
+                status: saveStatusValue,
             };
 
             if (mode === 'edit' && initialStory) {
                 const updatedStory = await updateUserStory(initialStory._id, storyData);
-                updateStory(updatedStory);
+                updateStory(initialStory._id, updatedStory);
                 Alert.alert(t('common.success', 'Success'), t('write.editor.savedTitle', 'Story Updated!'), [{ text: 'OK', onPress: () => router.back() }]);
             } else {
                 const newStory = await createUserStory(user.id, user.displayName || 'Anonymous', user.photoURL || undefined, storyData);
@@ -266,7 +293,7 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
         }
     }, [user, mode, initialStory, title, description, content, difficulty, selectedCategories, coverImageUri, addStory, updateStory, clearDraft, router, t]);
 
-    const steps: Step[] = ['details', 'content', 'review'];
+    const steps: Step[] = ['details', 'content', 'preview', 'review'];
     const currentStepIndex = steps.indexOf(currentStep);
 
     return (
@@ -310,6 +337,23 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
                 {/* Step 1: Details */}
                 {currentStep === 'details' && (
                     <View style={styles.stepContent}>
+                        {/* Reviewer Notes Alert */}
+                        {mode === 'edit' && initialStory?.reviewerNotes && (initialStory?.status === 'rejected' || initialStory?.status === 'revision_requested') && (
+                            <View style={styles.reviewerNotesAlert}>
+                                <View style={styles.reviewerNotesHeader}>
+                                    <Feather name="alert-circle" size={20} color="#EF4444" />
+                                    <Typography variant="label" style={styles.reviewerNotesTitle}>
+                                        {initialStory?.status === 'rejected'
+                                            ? t('write.editor.storyRejected', 'Story Rejected')
+                                            : t('write.editor.revisionRequested', 'Revision Requested')}
+                                    </Typography>
+                                </View>
+                                <Typography variant="body" style={styles.reviewerNotesText}>
+                                    {initialStory.reviewerNotes}
+                                </Typography>
+                            </View>
+                        )}
+
                         <Typography variant="h3" style={styles.stepTitle}>{t('write.editor.detailsTitle', 'Story Details')}</Typography>
                         <Pressable style={styles.coverPicker} onPress={handlePickImage} disabled={isImagePickerLoading}>
                             {coverImageUri ? (
@@ -369,20 +413,95 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
                                 <Typography variant="label" color={theme.colors.primary}>{wordCount} {t('common.words', 'words')}</Typography>
                             </View>
                         </View>
-                        <TextInput
-                            style={[styles.textInput, styles.contentEditor]}
-                            value={content}
-                            onChangeText={setContent}
+
+                        {/* Auto-save indicator */}
+                        {mode === 'create' && saveStatus !== 'idle' && (
+                            <View style={styles.autoSaveIndicator}>
+                                {saveStatus === 'saving' && (
+                                    <>
+                                        <ActivityIndicator size="small" color={theme.colors.textMuted} />
+                                        <Typography variant="caption" style={styles.autoSaveText}>
+                                            {t('write.editor.saving', 'Saving...')}
+                                        </Typography>
+                                    </>
+                                )}
+                                {saveStatus === 'saved' && (
+                                    <>
+                                        <Feather name="check-circle" size={14} color={theme.colors.success || '#10B981'} />
+                                        <Typography variant="caption" style={[styles.autoSaveText, { color: theme.colors.success || '#10B981' }]}>
+                                            {t('write.editor.saved', 'Saved')}
+                                        </Typography>
+                                    </>
+                                )}
+                            </View>
+                        )}
+
+                        <RichTextEditor
+                            initialContent={initialContent}
+                            onChange={handleContentChange}
                             placeholder={t('write.editor.contentPlaceholder', 'Once upon a time...')}
-                            placeholderTextColor={theme.colors.textMuted}
-                            multiline
-                            textAlignVertical="top"
+                            minHeight={350}
                         />
                         <Typography variant="caption" style={styles.hint}>{t('write.editor.minWords', 'Minimum 50 words required')}</Typography>
                     </View>
                 )}
 
-                {/* Step 3: Review */}
+                {/* Step 3: Preview */}
+                {currentStep === 'preview' && (
+                    <View style={styles.stepContent}>
+                        <Typography variant="h3" style={styles.stepTitle}>{t('write.editor.previewTitle', 'Preview Your Story')}</Typography>
+
+                        {/* Story Preview Card */}
+                        <View style={styles.previewCard}>
+                            {/* Cover Image */}
+                            {coverImageUri && (
+                                <Image source={{ uri: coverImageUri }} style={styles.previewCover} resizeMode="cover" />
+                            )}
+
+                            {/* Title & Description */}
+                            <View style={styles.previewContent}>
+                                <Typography variant="h2" style={styles.previewTitle}>{title || t('write.untitled', 'Untitled Story')}</Typography>
+                                <Typography variant="body" style={styles.previewDescription} numberOfLines={3}>
+                                    {description}
+                                </Typography>
+
+                                {/* Meta info */}
+                                <View style={styles.previewMeta}>
+                                    <View style={styles.previewMetaItem}>
+                                        <Feather name="file-text" size={14} color={theme.colors.textMuted} />
+                                        <Typography variant="caption" style={styles.previewMetaText}>
+                                            {wordCount} {t('common.words', 'words')}
+                                        </Typography>
+                                    </View>
+                                    {difficulty && (
+                                        <View style={styles.previewMetaItem}>
+                                            <Typography variant="caption" style={styles.previewMetaText}>
+                                                {DIFFICULTY_OPTIONS.find(d => d.value === difficulty)?.label}
+                                            </Typography>
+                                        </View>
+                                    )}
+                                </View>
+                            </View>
+                        </View>
+
+                        {/* Content Preview */}
+                        <View style={styles.contentPreviewContainer}>
+                            <Typography variant="label" style={styles.inputLabel}>{t('write.editor.contentPreview', 'Story Content')}</Typography>
+                            <ScrollView style={styles.contentPreview} nestedScrollEnabled>
+                                <Typography variant="body" style={styles.contentPreviewText}>
+                                    {content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 500)}
+                                    {content.length > 500 ? '...' : ''}
+                                </Typography>
+                            </ScrollView>
+                        </View>
+
+                        <Typography variant="caption" style={styles.hint}>
+                            {t('write.editor.previewHint', 'This is how your story will appear to readers')}
+                        </Typography>
+                    </View>
+                )}
+
+                {/* Step 4: Review */}
                 {currentStep === 'review' && (
                     <View style={styles.stepContent}>
                         <Typography variant="h3" style={styles.stepTitle}>{t('write.editor.reviewTitle', 'Final Details')}</Typography>
@@ -480,7 +599,7 @@ export const StoryEditor: FC<StoryEditorProps> = ({ initialStory, mode }) => {
 
 const createStyles = (theme: Theme) => StyleSheet.create({
     container: { flex: 1, backgroundColor: theme.colors.background },
-    header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingBottom: theme.spacing.md, borderBottomWidth: 1, borderBottomColor: theme.colors.borderLight },
+    header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingBottom: theme.spacing.md, borderBottomWidth: 1, borderBottomColor: theme.colors.borderLight, backgroundColor: theme.colors.background, zIndex: 100 },
     headerButton: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
     headerCenter: { flex: 1, alignItems: 'center' },
     headerTitle: { fontWeight: '600', color: theme.colors.text },
@@ -524,4 +643,24 @@ const createStyles = (theme: Theme) => StyleSheet.create({
     secondaryButton: { flexDirection: 'row', height: 56, backgroundColor: theme.colors.surface, borderRadius: theme.radius.xl, alignItems: 'center', justifyContent: 'center', gap: theme.spacing.sm, borderWidth: 1, borderColor: theme.colors.primary },
     secondaryButtonText: { color: theme.colors.primary, fontWeight: '600', fontSize: 16 },
     buttonDisabled: { opacity: 0.5 },
+    // Auto-save indicator
+    autoSaveIndicator: { flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end', gap: theme.spacing.xs, marginBottom: theme.spacing.sm },
+    autoSaveText: { color: theme.colors.textMuted, fontSize: 12 },
+    // Preview step styles
+    previewCard: { backgroundColor: theme.colors.surface, borderRadius: theme.radius.xl, overflow: 'hidden', borderWidth: 1, borderColor: theme.colors.borderLight, ...theme.shadows.md },
+    previewCover: { width: '100%', height: 200 },
+    previewContent: { padding: theme.spacing.lg },
+    previewTitle: { color: theme.colors.text, marginBottom: theme.spacing.sm },
+    previewDescription: { color: theme.colors.textMuted, lineHeight: 22 },
+    previewMeta: { flexDirection: 'row', flexWrap: 'wrap', gap: theme.spacing.md, marginTop: theme.spacing.md },
+    previewMetaItem: { flexDirection: 'row', alignItems: 'center', gap: theme.spacing.xs },
+    previewMetaText: { color: theme.colors.textMuted },
+    contentPreviewContainer: { marginTop: theme.spacing.lg },
+    contentPreview: { backgroundColor: theme.colors.surface, borderRadius: theme.radius.lg, padding: theme.spacing.md, maxHeight: 200, borderWidth: 1, borderColor: theme.colors.borderLight },
+    contentPreviewText: { color: theme.colors.text, lineHeight: 24 },
+    // Reviewer notes alert
+    reviewerNotesAlert: { backgroundColor: '#FEF2F2', borderRadius: theme.radius.lg, padding: theme.spacing.md, marginBottom: theme.spacing.lg, borderWidth: 1, borderColor: '#FECACA' },
+    reviewerNotesHeader: { flexDirection: 'row', alignItems: 'center', gap: theme.spacing.sm, marginBottom: theme.spacing.sm },
+    reviewerNotesTitle: { color: '#DC2626', fontWeight: '700' },
+    reviewerNotesText: { color: '#7F1D1D', lineHeight: 22 },
 });

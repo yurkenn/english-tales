@@ -163,6 +163,9 @@ export const radius = {
     full: 9999,
 } as const;
 
+// iOS continuous curve for smoother corners (Apple HIG)
+export const borderCurve = 'continuous' as const;
+
 export const typography = {
     fontFamily: {
         heading: 'Inter_600SemiBold', // Replaced Outfit with Inter for Apple-like uniformity
@@ -204,25 +207,13 @@ export const typography = {
 
 export const shadows = {
     sm: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.04,
-        shadowRadius: 2,
-        elevation: 2,
+        boxShadow: '0 1px 2px rgba(0, 0, 0, 0.04)',
     },
     md: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.08,
-        shadowRadius: 4,
-        elevation: 4,
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.08)',
     },
     lg: {
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.12,
-        shadowRadius: 8,
-        elevation: 8,
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.12)',
     },
 } as const;
 

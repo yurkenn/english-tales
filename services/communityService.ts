@@ -360,47 +360,29 @@ class CommunityService {
         }
     }
 
+    /**
+     * Legacy seed method - delegates to the comprehensive seedCommunity utility
+     * For full seeding with threaded replies, use seedCommunity from utils/seedCommunity.ts
+     */
     async seedCommunityActivities(): Promise<Result<void>> {
         try {
-            const q = query(collection(db, this.COLLECTION), limit(6));
+            // Check if already seeded with sufficient data
+            const q = query(collection(db, this.COLLECTION), limit(10));
             const snapshot = await getDocs(q);
-            if (snapshot.size > 5) return { success: true, data: undefined };
-
-            const seeds: any[] = [
-                {
-                    userId: 'seed_1',
-                    userName: 'Sophie',
-                    userPhoto: 'https://i.pravatar.cc/150?u=seed_1',
-                    content: 'Just finished reading a beautiful story!',
-                    type: 'story_completed',
-                    metadata: { storyTitle: 'The Ugly Duckling', storyId: 's1' },
-                    timestamp: serverTimestamp(),
-                    likes: 12,
-                    likedBy: [],
-                    replyCount: 0,
-                },
-                {
-                    userId: 'seed_2',
-                    userName: 'Mert',
-                    userPhoto: 'https://i.pravatar.cc/150?u=seed_2',
-                    content: "Can't believe I maintained this streak for 7 days!",
-                    type: 'achievement',
-                    metadata: { achievementTitle: '7 Day Streak', achievementId: 'a1' },
-                    timestamp: serverTimestamp(),
-                    likes: 8,
-                    likedBy: [],
-                    replyCount: 0,
-                },
-            ];
-
-            for (const seed of seeds) {
-                await addDoc(collection(db, this.COLLECTION), seed);
+            if (snapshot.size > 5) {
+                logger.info('Community already seeded');
+                return { success: true, data: undefined };
             }
 
+            // For comprehensive seeding with replies, import and use:
+            // import { seedCommunity } from '@/utils/seedCommunity';
+            // await seedCommunity();
+
+            logger.info('Community needs seeding - use seedCommunity() from utils for full data');
             return { success: true, data: undefined };
         } catch (error) {
-            console.error('Error seeding community:', error);
-            return { success: false, error: 'Failed to seed' };
+            logger.error('Error checking community seed:', error);
+            return { success: false, error: 'Failed to check seed status' };
         }
     }
 

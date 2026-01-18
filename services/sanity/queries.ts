@@ -219,7 +219,7 @@ export const queries = {
   }`,
 
   // User Stories (user-generated content)
-  userStoriesByAuthor: `*[_type == "userStory" && authorId == $authorId] | order(_updatedAt desc) {
+  userStoriesByAuthor: `*[_type == "userStory" && authorId == $authorId && isPublished == true && status == "approved"] | order(submittedAt desc) {
     _id,
     authorId,
     authorName,
@@ -230,13 +230,9 @@ export const queries = {
     "coverImageUrl": coverImage.asset->url,
     difficulty,
     "categories": categories[]->{_id, title, slug, color},
-    status,
-    isPublished,
     submittedAt,
-    reviewerNotes,
     "wordCount": length(pt::text(content)),
-    _createdAt,
-    _updatedAt
+    _createdAt
   }`,
 
   userStoryById: `*[_type == "userStory" && _id == $id][0] {
@@ -259,5 +255,39 @@ export const queries = {
     "wordCount": length(pt::text(content)),
     _createdAt,
     _updatedAt
+  }`,
+
+  // Published user stories - for discovery
+  publishedUserStories: `*[_type == "userStory" && isPublished == true && status == "approved"] | order(submittedAt desc) [0...20] {
+    _id,
+    authorId,
+    authorName,
+    authorAvatar,
+    title,
+    description,
+    coverImage,
+    "coverImageUrl": coverImage.asset->url,
+    difficulty,
+    "categories": categories[]->{_id, title, slug, color},
+    submittedAt,
+    "wordCount": length(pt::text(content)),
+    _createdAt
+  }`,
+
+  // Rising user stories - newest approved stories for home screen showcase
+  risingUserStories: `*[_type == "userStory" && isPublished == true && status == "approved"] | order(submittedAt desc) [0...6] {
+    _id,
+    authorId,
+    authorName,
+    authorAvatar,
+    title,
+    description,
+    coverImage,
+    "coverImageUrl": coverImage.asset->url,
+    difficulty,
+    "categories": categories[]->{_id, title, slug, color},
+    submittedAt,
+    "wordCount": length(pt::text(content)),
+    _createdAt
   }`,
 };

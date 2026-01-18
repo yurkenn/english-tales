@@ -1,8 +1,6 @@
-import { useEffect, useRef, FC } from 'react';
-import { View, Animated, Dimensions, StyleSheet } from 'react-native';
+import { useEffect, useRef, FC, useMemo } from 'react';
+import { View, Animated, StyleSheet, useWindowDimensions } from 'react-native';
 import { semanticColors } from '@/theme';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 // Use centralized celebration colors from theme tokens
 const CONFETTI_COLORS = semanticColors.celebration;
@@ -11,9 +9,10 @@ interface ConfettiPieceProps {
     delay: number;
     color: string;
     startX: number;
+    screenHeight: number;
 }
 
-const ConfettiPiece: FC<ConfettiPieceProps> = ({ delay, color, startX }) => {
+const ConfettiPiece: FC<ConfettiPieceProps> = ({ delay, color, startX, screenHeight }) => {
     const translateY = useRef(new Animated.Value(-50)).current;
     const translateX = useRef(new Animated.Value(startX)).current;
     const rotate = useRef(new Animated.Value(0)).current;
@@ -22,7 +21,7 @@ const ConfettiPiece: FC<ConfettiPieceProps> = ({ delay, color, startX }) => {
     useEffect(() => {
         const animation = Animated.parallel([
             Animated.timing(translateY, {
-                toValue: SCREEN_HEIGHT + 50,
+                toValue: screenHeight + 50,
                 duration: 3000 + Math.random() * 2000,
                 delay,
                 useNativeDriver: true,
@@ -47,7 +46,7 @@ const ConfettiPiece: FC<ConfettiPieceProps> = ({ delay, color, startX }) => {
             }),
         ]);
         animation.start();
-    }, [delay, startX, translateY, translateX, rotate, opacity]);
+    }, [delay, startX, screenHeight, translateY, translateX, rotate, opacity]);
 
     const spin = rotate.interpolate({
         inputRange: [0, 10],
@@ -85,14 +84,16 @@ export const ConfettiCelebration: FC<ConfettiCelebrationProps> = ({
     visible,
     onComplete
 }) => {
-    const pieces = useRef(
+    const { width: screenWidth, height: screenHeight } = useWindowDimensions();
+
+    const pieces = useMemo(() =>
         Array.from({ length: 100 }, (_, i) => ({
             id: i,
             delay: Math.random() * 1000,
             color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
-            startX: Math.random() * SCREEN_WIDTH,
-        }))
-    ).current;
+            startX: Math.random() * screenWidth,
+        })),
+        [screenWidth]);
 
     useEffect(() => {
         if (visible && onComplete) {
@@ -111,6 +112,7 @@ export const ConfettiCelebration: FC<ConfettiCelebrationProps> = ({
                     delay={piece.delay}
                     color={piece.color}
                     startX={piece.startX}
+                    screenHeight={screenHeight}
                 />
             ))}
         </View>

@@ -323,6 +323,8 @@ const createStyles = (theme: Theme) => StyleSheet.create({
         paddingBottom: 12,
         borderBottomWidth: 1,
         borderBottomColor: theme.colors.borderLight,
+        backgroundColor: theme.colors.background,
+        zIndex: 100,
     },
     headerButton: {
         width: 44,

@@ -134,6 +134,8 @@ const createStyles = (theme: Theme) => StyleSheet.create({
         paddingVertical: theme.spacing.md,
         borderBottomWidth: 1,
         borderBottomColor: theme.colors.border,
+        backgroundColor: theme.colors.background,
+        zIndex: 100,
     },
     backButton: {
         width: 40,

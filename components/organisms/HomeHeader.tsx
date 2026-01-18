@@ -87,6 +87,8 @@ const createStyles = (theme: Theme, containerPadding: number) => StyleSheet.crea
         paddingHorizontal: containerPadding,
         paddingTop: theme.spacing.md,
         paddingBottom: theme.spacing.sm,
+        backgroundColor: theme.colors.background,
+        zIndex: 100,
     },
     actionRow: {
         flexDirection: 'row',

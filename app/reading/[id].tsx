@@ -41,7 +41,11 @@ import {
     useAudioAssist,
     useReadingCompletion,
     useReadingControls,
+    useUnifiedStoryData,
+    type StorySource,
 } from '@/hooks';
+import { useUserStoryProgress } from '@/hooks/useUserStoryProgress';
+import { useUserStoryFavorite } from '@/hooks/useUserStoryFavorite';
 
 
 export default function ReadingScreen() {
@@ -51,7 +55,11 @@ export default function ReadingScreen() {
     const router = useRouter();
     const insets = useSafeAreaInsets();
     const { containerPadding } = useResponsiveLayout();
-    const { id } = useLocalSearchParams<{ id: string }>();
+    const { id, source } = useLocalSearchParams<{ id: string; source?: string }>();
+
+    // Determine story source (sanity or community)
+    const storySource: StorySource = source === 'community' ? 'community' : 'sanity';
+    const isCommunityStory = storySource === 'community';
 
     // Paywall
     const [showPaywallModal, setShowPaywallModal] = useState(false);
@@ -68,19 +76,28 @@ export default function ReadingScreen() {
         return state.highlights[user.id]?.[id] || [];
     });
 
-    const isDownloaded = id ? downloadActions.isDownloaded(id) : false;
+    const isDownloaded = !isCommunityStory && id ? downloadActions.isDownloaded(id) : false;
 
-    const { data: storyDoc, isLoading: loadingStory } = useStory(id || '');
+    // Use unified story data for community stories, original query for sanity stories
+    const { story: unifiedStory, isLoading: loadingUnified } = useUnifiedStoryData(
+        isCommunityStory ? id : undefined,
+        'community'
+    );
+    const { data: storyDoc, isLoading: loadingStory } = useStory(!isCommunityStory ? id || '' : '');
     const [downloadedContent, setDownloadedContent] = useState<PortableTextBlock[] | null>(null);
 
-    // Load offline content if available
+    // Community story progress tracking
+    const communityProgress = useUserStoryProgress(isCommunityStory ? id : undefined);
+    const communityFavorite = useUserStoryFavorite(isCommunityStory ? id : undefined);
+
+    // Load offline content if available (only for sanity stories)
     useEffect(() => {
-        if (id && isDownloaded) {
+        if (id && isDownloaded && !isCommunityStory) {
             downloadActions.fetchDownloadedContent(id).then(setDownloadedContent);
         }
-    }, [id, isDownloaded, downloadActions]);
+    }, [id, isDownloaded, downloadActions, isCommunityStory]);
 
-    const isLoading = loadingStory && !downloadedContent;
+    const isLoading = isCommunityStory ? loadingUnified : (loadingStory && !downloadedContent);
 
     useEffect(() => {
         analyticsService.logScreenView('ReadingScreen');
@@ -90,13 +107,15 @@ export default function ReadingScreen() {
     }, [id]);
 
     useEffect(() => {
-        if (!isLoading && storyDoc) {
+        const title = isCommunityStory ? unifiedStory?.title : storyDoc?.title;
+        if (!isLoading && title) {
             analyticsService.logEvent('story_content_loaded', {
                 story_id: id,
-                story_title: storyDoc.title
+                story_title: title,
+                source: storySource,
             });
         }
-    }, [isLoading, storyDoc, id]);
+    }, [isLoading, storyDoc, unifiedStory, id, isCommunityStory, storySource]);
 
     // Sync reading time on unmount - now handled by useReadingCompletion
     // (removed startTimeRef and manual tracking)
@@ -106,11 +125,14 @@ export default function ReadingScreen() {
         prefsActions.loadPrefs();
     }, [prefsActions]);
 
-    // Use cached content if downloaded
+    // Use cached content if downloaded, or unified story content for community stories
     const content = useMemo(() => {
+        if (isCommunityStory && unifiedStory?.content) {
+            return unifiedStory.content;
+        }
         if (downloadedContent) return downloadedContent;
         return storyDoc?.content as PortableTextBlock[] | undefined;
-    }, [downloadedContent, storyDoc]);
+    }, [isCommunityStory, unifiedStory, downloadedContent, storyDoc]);
 
     // Reading Controls - must come before usePageCalculation since it provides fontSize/lineHeight
     const {
@@ -135,15 +157,25 @@ export default function ReadingScreen() {
         setFontFamily,
     } = useReadingControls({
         storyId: id,
-        storyMeta: storyDoc ? {
-            id,
-            title: storyDoc.title,
-            coverImage: storyDoc.coverImage?.asset?.url,
-            author: storyDoc.author?.name,
-            description: storyDoc.description,
-            estimatedReadTime: storyDoc.estimatedReadTime,
-            level: storyDoc.level,
-        } : null,
+        storyMeta: isCommunityStory
+            ? (unifiedStory ? {
+                id,
+                title: unifiedStory.title,
+                coverImage: unifiedStory.coverImage,
+                author: unifiedStory.author,
+                description: unifiedStory.description,
+                estimatedReadTime: unifiedStory.estimatedReadTime,
+                level: unifiedStory.difficulty,
+            } : null)
+            : (storyDoc ? {
+                id,
+                title: storyDoc.title,
+                coverImage: storyDoc.coverImage?.asset?.url,
+                author: storyDoc.author?.name,
+                description: storyDoc.description,
+                estimatedReadTime: storyDoc.estimatedReadTime,
+                level: storyDoc.level,
+            } : null),
     });
 
     // Calculate pages from content
@@ -258,7 +290,17 @@ export default function ReadingScreen() {
         );
     }
 
-    if (!storyDoc) {
+    // Determine if we have a valid story
+    const hasStory = isCommunityStory ? !!unifiedStory : !!storyDoc;
+    const effectiveTitle = isCommunityStory ? unifiedStory?.title : storyDoc?.title;
+    const effectiveReadTime = isCommunityStory
+        ? unifiedStory?.estimatedReadTime || 5
+        : storyDoc?.estimatedReadTime || 5;
+    const effectiveWordCount = isCommunityStory
+        ? unifiedStory?.wordCount || 0
+        : storyDoc?.wordCount || 0;
+
+    if (!hasStory) {
         return (
             <View style={[styles.container, { paddingTop: insets.top }, styles.center]}>
                 <Text style={styles.errorText}>{t('reading.notFound')}</Text>
@@ -275,7 +317,7 @@ export default function ReadingScreen() {
         <View style={[styles.container, { paddingTop: insets.top, backgroundColor: currentTheme.bg }]}>
             <View style={{ zIndex: 100 }}>
                 <ReadingHeader
-                    title={storyDoc.title}
+                    title={effectiveTitle || ''}
                     isDownloaded={isDownloaded}
                     onClose={() => router.back()}
                     onSettings={openSettings}
@@ -283,7 +325,7 @@ export default function ReadingScreen() {
 
                 <ReadingProgressBar
                     progress={progress}
-                    estimatedReadTime={storyDoc.estimatedReadTime || 5}
+                    estimatedReadTime={effectiveReadTime}
                     currentPage={currentPage}
                     totalPages={totalPages}
                 />
@@ -332,7 +374,7 @@ export default function ReadingScreen() {
                     fontSize={fontSize}
                     readingTheme={readingTheme}
                     isInLibrary={isInLibrary}
-                    storyTitle={storyDoc.title}
+                    storyTitle={effectiveTitle || ''}
                     onFontDecrease={handleFontDecrease}
                     onFontIncrease={handleFontIncrease}
                     onThemeToggle={cycleReadingTheme}
@@ -352,24 +394,27 @@ export default function ReadingScreen() {
 
             <CompletionModal
                 visible={showCompletionModal}
-                storyTitle={storyDoc.title}
+                storyTitle={effectiveTitle || ''}
                 readingTimeMinutes={readingTimeMinutes}
-                wordCount={storyDoc.wordCount || 0}
+                wordCount={effectiveWordCount}
                 onComplete={handleMarkComplete}
                 onContinue={handleContinueHome}
             />
 
-            <QuizModal
-                visible={showQuizModal}
-                questions={storyDoc?.quiz as QuizQuestion[]}
-                onClose={handleQuizClose}
-            />
+            {/* Quiz Modal - only for Sanity stories with quiz */}
+            {!isCommunityStory && storyDoc?.quiz && storyDoc.quiz.length > 0 && (
+                <QuizModal
+                    visible={showQuizModal}
+                    questions={storyDoc.quiz as QuizQuestion[]}
+                    onClose={handleQuizClose}
+                />
+            )}
 
             {/* Write Review Sheet - conditional rendering to prevent touch blocking */}
             {isReviewSheetOpen && (
                 <WriteReviewSheet
                     ref={reviewSheetRef}
-                    storyTitle={storyDoc.title}
+                    storyTitle={effectiveTitle || ''}
                     initialRating={completionRating}
                     onClose={closeReviewSheet}
                     onSubmit={handleReviewSubmit}
@@ -397,7 +442,7 @@ export default function ReadingScreen() {
                     dictionaryData={dictionaryData}
                     isLoading={isWordLoading}
                     storyId={id}
-                    storyTitle={storyDoc.title}
+                    storyTitle={effectiveTitle}
                 />
             )}
 

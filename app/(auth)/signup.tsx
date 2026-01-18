@@ -179,7 +179,7 @@ const createStyles = (theme: Theme) => StyleSheet.create({
     backButton: {
         position: 'absolute',
         left: 20,
-        zIndex: 10,
+        zIndex: 100,
         width: 44,
         height: 44,
         alignItems: 'center',

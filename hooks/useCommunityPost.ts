@@ -53,11 +53,26 @@ export const useCommunityPost = (postId: string) => {
         }
     };
 
-    const handleAddReply = async (userId: string, userName: string, userPhoto: string | null, content: string) => {
+    const handleAddReply = async (
+        userId: string,
+        userName: string,
+        userPhoto: string | null,
+        content: string,
+        parentId: string | null = null,
+        depth: number = 0
+    ) => {
         if (!post) return;
         haptics.success();
 
-        const result = await communityService.addReply(post.id, userId, userName, userPhoto, content);
+        const result = await communityService.addReply(
+            post.id,
+            userId,
+            userName,
+            userPhoto,
+            content,
+            parentId,
+            depth
+        );
         if (result.success) {
             toast.success('Reply added!');
             fetchData();

@@ -9,7 +9,7 @@
  */
 
 import React, { memo, useCallback, useState, useEffect } from 'react'
-import { View, Text, TouchableOpacity, ActivityIndicator, Dimensions, Switch, Platform } from 'react-native'
+import { View, Text, TouchableOpacity, ActivityIndicator, Switch, Platform, useWindowDimensions } from 'react-native'
 import { useTheme, Theme } from '@/theme';
 import { StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next'
 import { haptics } from '@/utils/haptics'
 import Animated, { FadeInDown } from 'react-native-reanimated'
 
-const { width } = Dimensions.get('window')
+// Note: width is now obtained from useWindowDimensions inside the component
 
 interface OnboardingPaywallProps {
     onClose: () => void

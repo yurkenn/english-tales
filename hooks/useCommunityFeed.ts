@@ -61,7 +61,7 @@ export const useCommunityFeed = () => {
         setLoading(false);
         setRefreshing(false);
         setLoadingMore(false);
-    }, [lastDoc, toast]);
+    }, [filter, user, followingIds, lastDoc, toast]);
 
     const handleFilterChange = (newFilter: FeedFilter) => {
         setFilter(newFilter);

@@ -53,6 +53,8 @@ export interface UpdateUserStoryInput {
     status?: 'draft' | 'pending';
 }
 
+export type StoryStatus = 'draft' | 'pending' | 'published' | 'approved' | 'rejected' | 'revision_requested';
+
 interface DraftState {
     title: string;
     description: string;

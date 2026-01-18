@@ -150,7 +150,7 @@ const createStyles = (theme: Theme) => StyleSheet.create({
         position: 'absolute',
         top: 60,
         left: 20,
-        zIndex: 10,
+        zIndex: 100,
         width: 40,
         height: 40,
         alignItems: 'center',

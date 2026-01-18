@@ -58,6 +58,7 @@ const createStyles = (theme: Theme) => StyleSheet.create({
         paddingHorizontal: theme.spacing.xl,
         paddingBottom: theme.spacing.md,
         backgroundColor: theme.colors.background,
+        zIndex: 100,
     },
     title: {
         fontSize: theme.typography.size.xxxl,

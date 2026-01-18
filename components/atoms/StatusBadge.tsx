@@ -3,8 +3,7 @@ import { View, StyleSheet, ViewStyle } from 'react-native';
 import { useTheme, Theme } from '@/theme';
 import { Typography } from '@/components/atoms/Typography';
 import { useTranslation } from 'react-i18next';
-
-export type StoryStatus = 'draft' | 'pending' | 'published' | 'approved' | 'rejected';
+import { StoryStatus } from '@/store/userStoryStore';
 
 interface StatusBadgeProps {
     status: StoryStatus;
@@ -44,8 +43,8 @@ export const StatusBadge: FC<StatusBadgeProps> = ({ status, style }) => {
 };
 
 const createStyles = (theme: Theme, status: StoryStatus) => {
-    let color = theme.colors.textMuted;
-    let backgroundColor = theme.colors.borderLight;
+    let color: string = theme.colors.textMuted;
+    let backgroundColor: string = theme.colors.borderLight;
 
     switch (status) {
         case 'published':
@@ -58,6 +57,7 @@ const createStyles = (theme: Theme, status: StoryStatus) => {
             backgroundColor = '#F59E0B15';
             break;
         case 'rejected':
+        case 'revision_requested':
             color = '#EF4444'; // Red
             backgroundColor = '#EF444415';
             break;

@@ -296,12 +296,12 @@ export default function WriteScreen() {
                     options={[
                         {
                             label: t('common.edit', 'Edit'),
-                            icon: 'edit',
+                            icon: 'pencil',
                             onPress: () => handleStoryPress(selectedStoryId!),
                         },
                         {
                             label: t('common.delete', 'Delete'),
-                            icon: 'trash',
+                            icon: 'trash-outline',
                             onPress: handleDeletePress,
                             destructive: true,
                         },
@@ -339,6 +339,7 @@ function createStyles(theme: Theme) {
             paddingHorizontal: theme.spacing.lg,
             paddingBottom: theme.spacing.md,
             backgroundColor: theme.colors.background,
+            zIndex: 100,
         },
         headerTitle: {
             fontSize: theme.typography.size.xxxl,

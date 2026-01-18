@@ -21,7 +21,7 @@ import {
     FilteredEmptyState,
     VocabularyMilestoneCard,
 } from '@/components'
-import { useStories, useFeaturedStories, useCategories, useDailyPick } from '@/hooks/useQueries'
+import { useStories, useFeaturedStories, useCategories, useDailyPick, useRisingUserStories } from '@/hooks/useQueries'
 import { Story, CommunityPost } from '@/types'
 import { useAuthStore } from '@/store/authStore'
 import { useLibraryStore } from '@/store/libraryStore'
@@ -33,6 +33,7 @@ import { communityService } from '@/services/communityService'
 import { socialService } from '@/services/socialService'
 import { useRecommendations } from '@/hooks/useRecommendations'
 import { useResponsiveLayout } from '@/hooks/useResponsiveLayout'
+import { UserStoryShowcase } from '@/components/molecules/community'
 
 // Types - matches CommunityBuzz ActivityItem interface
 interface BuzzActivity {
@@ -136,6 +137,7 @@ export default function HomeScreen() {
     const { data: dailyPickData, isLoading: loadingDailyPick, refetch: refetchDailyPick } = useDailyPick()
     const { data: storiesData, isLoading: loadingStories, refetch: refetchStories, error: errorStories } = useStories()
     const { isLoading: loadingCategories, refetch: refetchCategories, error: errorCategories } = useCategories()
+    const { data: userStoriesData, refetch: refetchUserStories } = useRisingUserStories()
 
     // Library & Progress
     const { items: libraryItems } = useLibraryStore()
@@ -249,11 +251,11 @@ export default function HomeScreen() {
     const onRefresh = useCallback(async () => {
         setRefreshing(true)
         try {
-            await Promise.all([refetchCategories(), refetchFeatured(), refetchStories(), refetchDailyPick(), fetchBuzz()])
+            await Promise.all([refetchCategories(), refetchFeatured(), refetchStories(), refetchDailyPick(), refetchUserStories(), fetchBuzz()])
         } finally {
             setRefreshing(false)
         }
-    }, [refetchCategories, refetchFeatured, refetchStories, fetchBuzz])
+    }, [refetchCategories, refetchFeatured, refetchStories, refetchUserStories, fetchBuzz])
 
     // Render functions
     const renderBookCard = useCallback(
@@ -375,6 +377,22 @@ export default function HomeScreen() {
                                 <View style={[styles.sectionContent, { paddingHorizontal: containerPadding }]}>
                                     <FeaturedCard story={featuredStory} onPress={() => handleStoryPress(featuredStory.id)} />
                                 </View>
+                            </View>
+                        )}
+
+                        {/* Community Stories - User Generated Content */}
+                        {userStoriesData && userStoriesData.length > 0 && !isFilterActive && (
+                            <View style={styles.section}>
+                                <SectionHeader
+                                    title={t('home.communityStories', 'Community Stories')}
+                                    onActionPress={() => router.push('/community-stories')}
+                                />
+                                <UserStoryShowcase
+                                    stories={userStoriesData}
+                                    onStoryPress={(id) => router.push(`/user-story/${id}` as any)}
+                                    onSeeAllPress={() => router.push('/community-stories')}
+                                    containerPadding={containerPadding}
+                                />
                             </View>
                         )}
 

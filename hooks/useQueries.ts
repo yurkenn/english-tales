@@ -25,6 +25,8 @@ export const queryKeys = {
     },
     userStories: {
         all: ['userStories'] as const,
+        published: ['userStories', 'published'] as const,
+        rising: ['userStories', 'rising'] as const,
         byAuthor: (authorId: string) => ['userStories', 'author', authorId] as const,
         byId: (id: string) => ['userStories', id] as const,
     },
@@ -208,5 +210,27 @@ export const useUserStory = (id: string | undefined) => {
         queryFn: () => sanityClient.fetch(queries.userStoryById, { id }),
         enabled: !!id,
         staleTime: 2 * 60 * 1000, // 2 minutes
+    });
+};
+
+/**
+ * Fetch rising user stories for home screen showcase
+ */
+export const useRisingUserStories = () => {
+    return useQuery({
+        queryKey: queryKeys.userStories.rising,
+        queryFn: () => sanityClient.fetch(queries.risingUserStories),
+        staleTime: 10 * 60 * 1000, // 10 minutes
+    });
+};
+
+/**
+ * Fetch all published user stories for discovery page
+ */
+export const usePublishedUserStories = () => {
+    return useQuery({
+        queryKey: queryKeys.userStories.published,
+        queryFn: () => sanityClient.fetch(queries.publishedUserStories),
+        staleTime: 5 * 60 * 1000, // 5 minutes
     });
 };
