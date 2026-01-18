@@ -95,6 +95,7 @@ export interface Settings {
     dailyGoalMinutes: number;
     language: 'en' | 'tr' | 'es' | 'de' | 'fr';
     proficiencyLevel?: 'beginner' | 'intermediate' | 'advanced';
+    selectedCategories?: string[]; // Onboarding category preferences
 }
 
 // Community types

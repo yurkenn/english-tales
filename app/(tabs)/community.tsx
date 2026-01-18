@@ -22,7 +22,6 @@ import { useCommunityHandlers } from '@/hooks';
 import { useStories } from '@/hooks/useQueries';
 import { mapSanityStory } from '@/utils/storyMapper';
 import type { Story } from '@/types';
-import { clearAndReseedCommunity } from '@/utils/seedCommunity';
 
 const HEADER_HEIGHT = 120;
 
@@ -34,9 +33,6 @@ export default function CommunityTab() {
     const insets = useSafeAreaInsets();
     const { containerPadding } = useResponsiveLayout();
     const { user } = useAuthStore();
-
-    // Dev reseed state
-    const [isReseeding, setIsReseeding] = useState(false);
 
     // Trending stories data
     const { data: storiesData } = useStories();
@@ -53,20 +49,6 @@ export default function CommunityTab() {
         handleCreatePost,
         handleToggleLike,
     } = useCommunityFeed();
-
-    // Reseed handler - must be after handleRefresh is defined
-    const handleReseed = useCallback(async () => {
-        if (isReseeding) return;
-        setIsReseeding(true);
-        try {
-            await clearAndReseedCommunity();
-            handleRefresh();
-        } catch (error) {
-            console.error('Reseed failed:', error);
-        } finally {
-            setIsReseeding(false);
-        }
-    }, [isReseeding, handleRefresh]);
 
     // Handlers hook
     const handlers = useCommunityHandlers({
@@ -93,20 +75,6 @@ export default function CommunityTab() {
             <View style={[styles.header, { paddingTop: insets.top + 8, paddingHorizontal: containerPadding }]}>
                 <Typography variant="h2" style={styles.headerTitle}>{t('social.title', 'Community')}</Typography>
                 <View style={styles.headerButtons}>
-                    {/* DEV: Reseed Button - Remove for production */}
-                    {__DEV__ && (
-                        <Pressable
-                            style={[styles.headerActionBtn, { backgroundColor: theme.colors.warning }]}
-                            onPress={handleReseed}
-                            disabled={isReseeding}
-                        >
-                            {isReseeding ? (
-                                <ActivityIndicator size="small" color="#fff" />
-                            ) : (
-                                <Feather name="refresh-cw" size={20} color="#fff" />
-                            )}
-                        </Pressable>
-                    )}
                     <Pressable style={styles.headerActionBtn} onPress={handlers.openNotifications}>
                         <Feather name="bell" size={22} color={theme.colors.text} />
                         {handlers.unreadCount > 0 && <View style={styles.badge} />}

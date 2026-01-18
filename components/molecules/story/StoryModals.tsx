@@ -1,12 +1,10 @@
 import { FC, memo } from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 
-import {
-    WriteReviewSheet,
-    ConfirmationDialog,
-    StoryUnlockModal,
-    PaywallModal,
-} from '@/components';
+import { WriteReviewSheet } from '@/components/organisms/WriteReviewSheet';
+import { ConfirmationDialog } from '../ConfirmationDialog';
+import { StoryUnlockModal } from '../StoryUnlockModal';
+import { PaywallModal } from '@/components/organisms/PaywallModal';
 
 interface StoryModalsProps {
     // Write Review

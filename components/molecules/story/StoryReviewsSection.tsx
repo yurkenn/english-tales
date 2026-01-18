@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 import { useTheme, Theme } from '@/theme';
 
-import { ReviewCard } from '@/components';
+import { ReviewCard } from '../ReviewCard';
 
 interface Review {
     userName: string;

@@ -33,6 +33,8 @@ import { secureStorage } from '../services/storage';
 import { notificationService } from '@/services/notificationService';
 import { adService } from '@/services/ads';
 import { useSubscriptionStore } from '@/store/subscriptionStore';
+import { remoteConfigService } from '@/services/firebase/remoteConfigService';
+import { ratingService } from '@/services/ratingService';
 import { StatusBar } from 'expo-status-bar';
 import {
   AchievementToast,
@@ -150,6 +152,16 @@ export default function RootLayout() {
       // Initialize RevenueCat subscription store (fetches offerings and packages)
       useSubscriptionStore.getState().actions.initialize(user?.id).catch((err) => {
         console.warn('[Subscription] Failed to initialize:', err);
+      });
+
+      // Initialize Firebase Remote Config for A/B testing
+      remoteConfigService.initialize().catch((err) => {
+        console.warn('[RemoteConfig] Failed to initialize:', err);
+      });
+
+      // Initialize Rating service
+      ratingService.initialize().catch((err) => {
+        console.warn('[Rating] Failed to initialize:', err);
       });
     }
   }, [initialized]);
