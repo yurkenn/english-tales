@@ -33,6 +33,8 @@ Bu kanıt SMTP ve bir Gmail teslimatını kapsar; yeni hesap doğrulaması ve uy
 
 ## Yayına geçiş kapıları
 
+11 Ekim kontrolünde mevcut yayıncı adresiyle kayıt denemesi ve eski kurtarma kodunun doğrulama ekranında kullanılması tespit edildi. Ayrı test hesabı henüz oluşmadı. Uygulama mesajları, istek kabulü ile teslimatı ayıracak ve doğru e-posta konusunu gösterecek şekilde düzeltildi. Brevo açılma olayları gözlendi; kimlik doğrulama e-postalarında izleme ayarlarının kapatılması da yayın öncesinde kontrol edilmeli.
+
 1. Ücretsiz hesabın ve gönderenin doğrulanması; transactional gönderimin aktif olması.
 2. İki farklı posta sağlayıcısına teslimat, gerçek From adresi ve spam klasörü kontrolü.
 3. Yeni hesabın doğru kodla doğrulanması; yanlış, süresi geçmiş ve tekrar kullanılan kodun reddedilmesi.

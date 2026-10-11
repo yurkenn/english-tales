@@ -244,7 +244,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 mutableAccount.value=mutableAccount.value.copy(message=when((failure as? AuthFailure)?.code) {
                     "invalid_input" -> "Geçerli bir e-posta adresi gir."
                     "weak_password" -> "Parolan 8–128 karakter olmalı. Sunucunun parola koşullarını da karşılamalı."
-                    "invalid_code","otp_expired" -> "Kod geçersiz veya süresi dolmuş. Kontrol et ya da yeni kod iste."
+                    "invalid_code","otp_expired" -> if(mutableAccount.value.emailAction=="signup") "Doğrulama kodu geçersiz veya süresi dolmuş. E-posta doğrulama konulu son mesajı kullan; parola kurtarma kodu burada geçmez." else "Kurtarma kodu geçersiz veya süresi dolmuş. Parola kurtarma konulu son mesajı kullan ya da yeni kod iste."
                     "over_email_send_rate_limit","over_request_rate_limit" -> "Çok sık denedin. Bir süre sonra tekrar dene."
                     "same_password" -> "Öncekinden farklı bir parola belirle."
                     else -> "İşlem tamamlanamadı. Bilgilerini ve bağlantını kontrol edip tekrar dene."
@@ -259,7 +259,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun signUp(email: String,password: String)=emailOperation {
         val ready=auth.signUp(email,password)
         mutableAccount.value=mutableAccount.value.copy(emailAction=if(ready) "" else "signup",verificationEmail=email.trim(),
-            message=if(ready) "Hesap işlemi tamamlandı. E-posta ve parolanla giriş yapabilirsin." else "Doğrulama gerekiyorsa e-postana kod gönderildi. Gelen kutunu ve spam klasörünü kontrol et. Daha önce hesabın varsa giriş yapabilirsin.")
+            message=if(ready) "Hesap işlemi tamamlandı. E-posta ve parolanla giriş yapabilirsin." else "Kayıt isteği alındı. Yeni hesap için doğrulama e-postasını ve spam klasörünü kontrol et. Bu adresle zaten doğrulanmış hesabın varsa yeni kod gelmeyebilir; giriş ekranına dönüp giriş yapabilirsin.")
     }
     fun requestRecovery(email: String)=emailOperation {
         auth.requestRecovery(email)
@@ -272,7 +272,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             "recovery" -> auth.requestRecovery(state.verificationEmail)
             else -> throw AuthFailure("invalid_input")
         }
-        mutableAccount.value=mutableAccount.value.copy(message="Kod gönderimi istendi. Yeni e-postayı kontrol et; çok sık isteklerde bir süre beklemen gerekebilir.")
+        mutableAccount.value=mutableAccount.value.copy(message=if(state.emailAction=="signup") "Doğrulama kodu gönderimi istendi. Bu adresle zaten doğrulanmış hesabın varsa yeni e-posta gelmeyebilir; giriş ekranına dönüp giriş yap. Yeni hesap için gelen kutunu ve spam klasörünü kontrol et." else "Kurtarma kodu gönderimi istendi. Bu adrese bağlı hesap varsa yeni parola kurtarma e-postasını kontrol et; sık isteklerde bir süre beklemen gerekebilir.")
     }
     fun completeEmailCode(code: String,password: String)=emailOperation {
         val state=mutableAccount.value

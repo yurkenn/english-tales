@@ -38,3 +38,11 @@ Son beş dakika içinde açılmış, hâlâ geçerli bir oturum şartı kondu. G
 5. Herkese açık gizlilik ve hesap silme sayfası; uygulama ve mağaza bağlantıları.
 
 Bu kapılar tamamlanmadan sürüm mağaza adayı olarak işaretlenmez. Mevcut Android yapılandırması test Supabase projesini kullanır.
+
+## 11 Ekim: kayıt ve kurtarma kodunun karışması
+
+- Kullanıcının bildirdiği adres, üretimde zaten doğrulanmış yayıncı hesabına aitti. Ayrı test adresi için yeni Auth kullanıcısı bulunmadı.
+- Brevo kayıtlarında yalnızca 21:46'da gönderilmiş kurtarma e-postası ve onun teslim/açılma olayları vardı; yeni hesap doğrulama teslimatı yoktu.
+- Kayıt ve yeniden gönderim mesajları artık isteğin alındığını belirtir; e-postanın teslim edildiğini iddia etmez. Ekran, kayıt ve kurtarma için kullanılacak farklı e-posta konularını açıklar.
+- Düzeltme üretim bağlantılı geçici debug paketiyle derlendi ve ikinci emülatöre yüklendi. Yerel test bağlantısı geri yüklendikten sonra standart debug derlemesi de başarılı oldu.
+- Gerçek yeni hesap doğrulaması hâlâ bekliyor. İmzalı mağaza paketi bu metin değişiklikleri sonrası henüz yeniden üretilmedi.

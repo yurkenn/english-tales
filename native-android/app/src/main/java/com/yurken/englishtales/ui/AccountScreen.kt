@@ -75,7 +75,10 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
             if(state.userId==null || state.needsSignIn) {
                 if(state.emailAction.isNotEmpty()) {
                     Text(if(state.emailAction=="signup") "E-postanı doğrula" else "Yeni parolanı belirle",style=MaterialTheme.typography.titleMedium)
-                    Text("Kodun gönderildiği adres: ${state.verificationEmail}",fontSize=14.sp,color=TaleMuted)
+                    Text("İşlem yapılan e-posta: ${state.verificationEmail}",fontSize=14.sp,color=TaleMuted)
+                    Text(if(state.emailAction=="signup")
+                        "Yeni hesap için “English Tales — E-posta doğrulama kodun” konulu e-postadaki kodu kullan. Parola kurtarma kodu bu ekranda geçmez. Bu adresle zaten hesabın varsa yeni doğrulama e-postası gelmeyebilir; giriş ekranına dönüp giriş yap."
+                        else "“English Tales — Parola kurtarma kodun” konulu en son e-postadaki kodu kullan. Hesap oluşturma kodu bu ekranda geçmez.",fontSize=13.sp,color=TaleMuted)
                     OutlinedTextField(code,{code=it.filter(Char::isDigit).take(8)},label={Text("E-posta kodu")},singleLine=true,enabled=!state.busy,
                         keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.NumberPassword),modifier=Modifier.fillMaxWidth())
                     if(state.emailAction=="recovery") {
@@ -88,7 +91,7 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                         enabled=!state.busy && code.length in 6..8 && (state.emailAction=="signup" || (password.length in 8..128 && password==confirmation)),modifier=Modifier.fillMaxWidth()) {
                         Text(if(state.emailAction=="signup") "Doğrula ve giriş yap" else "Parolayı güncelle")
                     }
-                    TextButton(onClick=onResendCode,enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text("Yeni kod iste")}
+                    TextButton(onClick=onResendCode,enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(if(state.emailAction=="signup") "Doğrulama kodunu yeniden iste" else "Kurtarma kodunu yeniden iste")}
                     TextButton(onClick={password="";confirmation="";code="";onCancelCode()},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text("Giriş ekranına dön")}
                 } else {
                 GoogleSignInButton(!state.busy,onGoogle)
