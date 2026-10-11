@@ -82,7 +82,8 @@ class LearningStore(context: Context,val owner: LearningOwner=LearningOwner.Gues
     }
     fun updatePreferences(level: String, genre: String, goal: Int, name: String) {
         require(level in listOf("A1","A2","B1") && genre in listOf("Günlük yaşam","Macera","Gizem"))
-        dao.profile(profile().copy(level=level,genre=genre,goal=goal.coerceIn(1,3),name=name.trim().take(30).ifBlank {"Okuyucu"},dirty=true))
+        transferTransaction {db ->db.execSQL("UPDATE local_profile SET level=?,genre=?,goal=?,name=?,preferences_dirty=1 WHERE id=1",
+            arrayOf<Any?>(level,genre,goal.coerceIn(1,3),name.trim().take(30).ifBlank {"Okuyucu"}))}
     }
     fun startReading(storyId: String) {
         transaction {db ->
@@ -90,7 +91,7 @@ class LearningStore(context: Context,val owner: LearningOwner=LearningOwner.Gues
             recordEvent(db,"reader:$storyId:${LearningPolicy.dayKey(clock())}","reader_started",clock())
         }
     }
-    fun dismissReaderHint() { dao.profile(profile().copy(hintSeen=true)) }
+    fun dismissReaderHint() { writableDatabase.execSQL("UPDATE local_profile SET reader_hint_seen=1 WHERE id=1") }
     fun saveWords(ids: List<String>) {
         transaction {db ->
             ids.forEach {id ->

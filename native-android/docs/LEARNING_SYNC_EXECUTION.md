@@ -1,28 +1,28 @@
 # Hesap eşitlemesi: uygulama bağlantısı
 
-## Analiz ve kapsam
+## 11 Ekim 2026 analizi ve uygulanan değişiklikler
 
-Gönderici, tam hesap kopyası okuyucusu ve Room 6 atomik birleştirmesi ayrı ayrı hazırdı; uygulama bunları çağırmıyordu. Bu aşama onları tek yerel işlem sırasına bağlar. Şema veya canlı servis değişikliği gerekmez. Yayınlanabilir paket için gerçek hesap/ikinci cihaz kabul kapısı ayrı kalır.
+HTTP isteği artık yerel işlem sırasını bekletmez. Ağ işi ayrı Room bağlantısıyla çalışır; bağlantı yavaşken tercihler kaydedilebilir. Foreground ve WorkManager işleri kullanıcı kimliği başına tek kilitle eşgüdümlenir. Hesap değişimi, çıkış ve misafir aktarımı geç yanıtın uygulanmasını nesil kontrolüyle engeller.
 
-## İşlem sırası
+- İlk hesap kopyası yerel temel belirlenmeden önce alınır. Özgün olaylar aynı UUID ve gövdeyle yeniden teslim edilebilir; sonrasında tam kopya atomik uygulanır.
+- Profil tercihleri sunucudaki sürümle karşılaştırılarak yazılır. 40001 çakışması kalıcı gösterilir; kullanıcı cihazdaki veya hesaptaki tercihleri seçer. İstek sırasında yeni düzenleme, önceki isteğin onayıyla temizlenmez.
+- WorkManager ağ bağlantısı varken çalışır. Tek seferlik ve 15 dakikalık periyodik işler kullanıcıya bağlıdır; artan yeniden deneme kullanılır. Çıkışta o kullanıcının işleri iptal edilir. Android zorla durdurma ve pil kısıtları çalışmayı erteleyebilir; zorla durdurmadan sonra uygulama tekrar açılmalıdır.
+- Yerel profil güncellemeleri yalnızca ilgili alanları değiştirir; okuma ipucu veya son hikâye alanlarını ezmez.
+- Hesap ekranı son alınan kopyayı, bekleyen/bloke olayları ve tercih çakışması seçeneklerini gösterir. Kanıtı olmayan eski puanlar bu cihazda korunur.
 
-- Giriş, uygulamaya dönüş ve yerel değişiklikten sonra iki saniye bekleyip eşitlemeyi sıraya al. Aynı anda tek eşitleme çalışır.
-- Her sıra turunda en fazla bir özgün olay gönder. Son olaydan sonra hesap kopyasını ayrı turda al ve tek transaction içinde uygula. Diğer yerel işlemler ve hesap değişimi istekleri turlar arasında çalışabilir.
-- Sunucunun `applied=false` yanıtı teslimattır. Sunucu kabul edip yanıt kaybolursa aynı kimlik ve gövde tekrar gönderilir.
-- Hesap değişimi/çıkış/misafir aktarımı isteği, ağ yanıtını beklemeden mevcut eşitleme neslini geçersiz yapar. Geç yanıt yeni hesaba uygulanamaz. ViewModel kapatıldığında da kapsam iptal edilir.
-- Ağ hatası kuyruk kaydını korur; olayın mevcut artan bekleme süresine uyulur. Uygulama süreci yaşarken bir dakika sonra kontrol yapılır. 401 gönderim/alım hatası oturum doğrulamasını tetikler.
-- Veritabanına yalnızca mevcut IO işlem sırası erişir. HTTP çağrıları bu sırada bloklanır; bağlantı/okuma zaman aşımı sırasıyla 15/20 saniyedir. Zayıf ağda yerel kayıt işlemleri de yanıtı bekleyebilir. Kalıcı arka plan işinden önce ağın yerel işlem sırasından ayrılması değerlendirilmelidir.
+## Doğrulama
 
-## Hesap ekranı
+96 cihaz testi, 11 birim testi, debug/release Lint ve küçültülmüş imzalı APK/AAB derlemeleri geçti. Cihaz testleri 16 KiB x86_64 emülatörde çalıştırıldı. Yeni senaryolar: geciken HTTP sırasında yerel kaydetme, tercih sürümü/onayı, istek sırasında yeni düzenleme, iki yönde çakışma çözümü ve hesap kapsamlı ağ koşullu WorkManager işleri.
 
-Çalışma durumu, son uygulanan kopya zamanı, bekleyen/bloke kayıt sayısı ve elle tekrar deneme gösterilir. Eski geçmişin olay kanıtı bulunmayan puanı bu cihazda kalır; başka cihazlara taşındığı söylenmez. Profil tercihleri kirliyse veya çatışıyorsa bunun henüz tamamlanmadığı açıkça gösterilir. Hesap durumunun doğrulanması eşitleme alanlarını eski bir ekran kopyasıyla ezmez.
+Gerçek Google oturumunun bulunduğu emülatör önce şifre çözmeden yedeklendi; uygulama kaldırılmadan güncellendi. Test hizmetine 2 oturum, 10 kelime olayı ve 2 ilerleme olayı ulaştı. Yerel kuyrukta 14 teslim edilmiş olay, 0 kirli tercih ve 0 tercih çakışması var. Tercih sürümü 2; yerel 70 puan korunuyor. Bu kanıt mevcut cihazdaki gerçek gönderim/alımı kapsar; ikinci cihaz ve mağaza imzası testinin yerine geçmez.
+
+APK SHA256: 505ecbfd152a22623f11854e9b9a3a1412aa0747df78b8f7ee6e95b7356ddfc5.
+AAB SHA256: c62e2f84deb7f0caa9935fd704e5bddbe796603b22d95587a8dd64975783b9b6.
+Yükleme sertifikası, AAB imzası ve statik 16 KiB ZIP/ELF hizalaması doğrulandı. Paket hâlâ test hizmetine bağlı teknik adaydır.
 
 ## Açık kabul kapıları
 
-1. Gerçek Google oturumu → test hizmetinde olay → yeniden açılış → ikinci cihaz okuması. İzole fixture testleri bunun yerine geçmez.
-2. Tercih yazımı için version/CAS ve kullanıcı tarafından seçilen çakışma çözümü.
-3. Bilinmeyen/arşivlenmiş kelime kaynaklarının içerik çözümü.
-4. Kalıcı, ağ koşullu, hesap kapsamlı arka plan işinin eklenmesi. Mevcut dakika zamanlayıcısı uygulama öldürülünce devam etmez.
-5. Gerçek düşük sürüm/ARM64 cihaz, Play güncelleme ve mağaza imzalı Google girişi.
-
-Yeni testler ayrı cihaz veritabanları ve kontrollü taşıma katmanları kullanır. Gerçek kullanıcının oturum bilgileri okunmaz; verileri silinmez. Yeni hesap ekranı canlı hesapta görsel olarak ayrıca kontrol edilmelidir.
+1. Gerçek hesapla yeniden açılış sonrası aynı durumun korunması ve ikinci cihaz okuması.
+2. Bilinmeyen/arşivlenmiş kelime kaynaklarının içerik çözümü.
+3. Gerçek düşük sürüm/ARM64 cihaz, Play güncelleme ve mağaza imzalı Google girişi.
+4. Üretim kimlik doğrulama, içerik ve panel dağıtımının tamamlanması; bu projeye bağlı yeni adayın tekrar doğrulanması.

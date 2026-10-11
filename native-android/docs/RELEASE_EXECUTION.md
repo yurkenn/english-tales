@@ -66,3 +66,9 @@ Sonraki Android snapshot doğrulama aşamasında debug/release derlemeleri, 11 b
 - İmzalı AAB, mağaza beyanları ve beta; aynı release adayı üzerinde son kontrol.
 
 Bu kapılar kapanmadan uygulama mağazaya hazır sayılmaz.
+
+## Arka plan ve üretim temeli kontrol noktası — 11 Ekim 2026
+
+Yerel işlemleri bekletmeyen ağ eşitlemesi, sürüm kontrollü tercih yazımı, kullanıcı seçimiyle çakışma çözümü ve ağ koşullu WorkManager işleri tamamlandı. 96 cihaz testi, 11 birim testi, debug/release Lint ve imzalı APK/AAB kontrolleri başarılı. Gerçek Google hesabının 14 olayı test hizmetine teslim edildi; 70 yerel puan korundu. Önceki aday hash ve eksik tercih/arka plan ifadeleri tarihsel kayıttır; güncel kanıt LEARNING_SYNC_EXECUTION.md dosyasındadır.
+
+Kullanıcının oluşturduğu Frankfurt FREE üretim projesine şema ve taslak katalog kuruldu; otomatik RLS yardımcı işlevinin API erişimi kapatıldı. Üretim kurulumu henüz yayınlanmış uygulama anlamına gelmez. PRODUCTION_SETUP.md açık adımları izler.

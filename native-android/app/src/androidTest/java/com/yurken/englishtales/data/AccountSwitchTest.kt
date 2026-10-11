@@ -106,7 +106,7 @@ class AccountSwitchTest {
         },"https://fixture.supabase.co")
     }) {vm,http ->
         vm.signIn("a@example.invalid","fixture-password")
-        await {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && vm.state.value.displayName=="Bulut"}
+        await {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && vm.state.value.displayName=="Bulut" && !vm.account.value.sync.running}
         assertEquals("Bulut",vm.state.value.displayName)
         val last=vm.account.value.sync.lastSuccessAt
         vm.verifyAccount();await {vm.account.value.message.startsWith("Oturum")}
@@ -126,6 +126,21 @@ class AccountSwitchTest {
                 vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a}
                 assertNull(vm.account.value.sync.lastSuccessAt)
                 assertEquals("Okuyucu",vm.state.value.displayName)
+            }
+        } finally {release.countDown()}
+    }
+    @Test fun slowNetworkDoesNotBlockLocalPreferenceSave() {
+        val entered=CountDownLatch(1);val release=CountDownLatch(1)
+        try {
+            exercise({LearningAccountSync(LearningSyncTransport {_,_,token ->
+                entered.countDown();assertTrue(release.await(5,TimeUnit.SECONDS));remote(token.removePrefix("token-"))
+            },"https://fixture.supabase.co")}) {vm,http ->
+                vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a}
+                vm.syncNow();assertTrue(entered.await(5,TimeUnit.SECONDS))
+                vm.updatePreferences("A2","Macera",2,"Yerel")
+                await {vm.state.value.displayName=="Yerel"}
+                assertEquals(1L,release.count)
+                release.countDown()
             }
         } finally {release.countDown()}
     }

@@ -10,8 +10,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.channels.Channel
 import com.yurken.englishtales.BuildConfig
 
-class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore,private val cloudSync: LearningAccountSync?=null) : AndroidViewModel(application) {
-    constructor(application: Application):this(application,defaultAccountService(application),{LearningStore(application,it)},defaultLearningSync())
+class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore,private val cloudSync: LearningAccountSync?=null,private val background: Boolean=false) : AndroidViewModel(application) {
+    constructor(application: Application):this(application,LearningSyncRuntime.accounts(application),{LearningStore(application,it)},defaultLearningSync(),true)
     private var store = storeFactory(LearningOwner.Guest)
     private data class Mutation(val scope: Long?,val action: ()->Unit)
     private val mutations = Channel<Mutation>(Channel.UNLIMITED)
@@ -29,6 +29,14 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     val ready: StateFlow<Boolean> = mutableReady
 
     init {
+        if(background) viewModelScope.launch {
+            LearningSyncRuntime.updates.collect { (user,status) ->
+                if(mutableAccount.value.userId==user) mutations.trySend(Mutation(scope) {
+                    if(mutableAccount.value.userId==user && !mutableAccount.value.busy)
+                        mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store).copy(running=status.running,message=status.message),needsSignIn=auth.current==null)
+                })
+            }
+        }
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 try {
@@ -93,6 +101,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     })}
     private fun interruptSync() {
         syncEpoch++
+        if(background) LearningSyncRuntime.pause()
         mutableAccount.value=mutableAccount.value.copy(sync=mutableAccount.value.sync.copy(running=false))
     }
     // Only the actor accesses a store. Timers enqueue work without touching Room.
@@ -100,6 +109,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed) return
         syncTimer?.cancel()
         val expected=scope
+        if(background) LearningSyncRuntime.schedule(getApplication(),checkNotNull(mutableAccount.value.userId))
         syncTimer=viewModelScope.launch {
             kotlinx.coroutines.delay(waitMillis)
             if(scope==expected) syncNow()
@@ -113,37 +123,51 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         val expectedEpoch=syncEpoch
         val current={ !disposed && scope==expectedScope && syncEpoch==expectedEpoch }
         mutableAccount.value=mutableAccount.value.copy(sync=mutableAccount.value.sync.copy(running=true,message="Hesap geçmişin eşitleniyor…"))
-        fun enqueue() {
-            val accepted=mutations.trySend(Mutation(null) {
-                if(!current()) {syncing.set(false);return@Mutation}
+        viewModelScope.launch(Dispatchers.IO) {
+            try {LearningSyncLocks.withOwner(user) {
+                if(!current()) return@withOwner
                 try {
-                    val result=sync.step(store,auth,user,current)
-                    if(!current()) {syncing.set(false);return@Mutation}
-                    mutableState.value=store.snapshot()
-                    mutableAccount.value=mutableAccount.value.copy(sync=result.state,needsSignIn=auth.current==null)
-                    if(result.verifySession) verifyAccount()
-                    if(result.continueUpload) enqueue() else {
-                        syncing.set(false)
-                        scheduleSync(60_000)
+                    storeFactory(LearningOwner.Account(user)).use {syncStore ->
+                    var more=true
+                    while(more && current()) {
+                        val result=sync.step(syncStore,auth,user,current)
+                        if(!current()) break
+                        more=result.continueUpload
+                        mutations.trySend(Mutation(expectedScope) {
+                            if(current()) {
+                                val latest=sync.status(store)
+                                mutableAccount.value=mutableAccount.value.copy(sync=latest.copy(running=result.state.running,message=result.state.message),needsSignIn=auth.current==null)
+                            }
+                        })
+                        if(result.verifySession) verifyAccount()
+                        kotlinx.coroutines.yield()
+                    }
                     }
                 } catch (failure: Exception) {
-                    syncing.set(false)
-                    if(current()) {
+                    if(failure is kotlinx.coroutines.CancellationException) throw failure
+                    if(current()) mutations.trySend(Mutation(expectedScope) {
                         mutableAccount.value=mutableAccount.value.copy(needsSignIn=auth.current==null,
                             sync=sync.status(store).copy(message=if(auth.current==null) "Oturum sona erdi. Tekrar giriş yap." else "Eşitleme tamamlanamadı. Kayıtların cihazında korunuyor; tekrar deneyebilirsin."))
-                        scheduleSync(60_000)
                         if(failure is LearningSyncFailure && failure.status==401) verifyAccount()
-                    }
+                    })
                 }
-            })
-            if(accepted.isFailure) syncing.set(false)
+            }} finally {
+                syncing.set(false)
+                if(current()) mutations.trySend(Mutation(expectedScope) {scheduleSync(60_000)})
+            }
         }
-        enqueue()
+    }
+    fun resolvePreferences(useLocal: Boolean) {
+        if(mutableAccount.value.busy || mutableAccount.value.userId==null) return
+        interruptSync()
+        mutate {LearningPreferencesSync.resolve(store,useLocal);if(background) LearningSyncRuntime.resume()
+            mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store))}
     }
     private fun changeOwner(owner: LearningOwner,email: String="") {
         val next=storeFactory(owner)
         try {next.snapshot()} catch (failure: Exception) {next.close();throw failure}
         store.close();store=next;scope++;syncEpoch++
+        if(background) LearningSyncRuntime.resume()
         mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=scope)
         if(owner is LearningOwner.Account && cloudSync!=null) {
             val saved=cloudSync.status(store)
@@ -181,6 +205,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 })
             }
             refreshGuestTransfer()
+            if(background) LearningSyncRuntime.resume()
             scheduleSync()
         })
     }
@@ -203,12 +228,15 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     else -> "Giriş tamamlanamadı. Bilgilerini ve bağlantını kontrol et."
                 }
                 mutableAccount.value=mutableAccount.value.copy(busy=false,message=message)
+                if(background) LearningSyncRuntime.resume()
+                scheduleSync()
             }
         })
     }
     fun signOut() {
         if(mutableAccount.value.busy) return
         interruptSync()
+        if(background) mutableAccount.value.userId?.let {LearningSyncRuntime.cancel(getApplication(),it)}
         mutableAccount.value=mutableAccount.value.copy(busy=true,message="Çıkış yapılıyor…")
         mutations.trySend(Mutation(null) {
             val revoked=auth.signOut();changeOwner(LearningOwner.Guest)
@@ -231,6 +259,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 } catch (failure: Exception) {
                     if(auth.current!=null && auth.current?.userId!=store.owner.id) auth.clearLocal()
                     mutableAccount.value=mutableAccount.value.copy(busy=false,message="Google ile giriş tamamlanamadı. Bağlantını kontrol edip tekrar dene.")
+                    if(background) LearningSyncRuntime.resume()
+                    scheduleSync()
                 }
             })
         } catch (failure: Exception) {
@@ -240,7 +270,9 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 "google_no_account" -> "Google hesabı bulunamadı. Cihaza Google hesabı ekleyip tekrar dene."
                 else -> "Google hesap seçimi tamamlanamadı. Tekrar deneyebilirsin."
             })
+            if(background) LearningSyncRuntime.resume()
             if(failure is kotlinx.coroutines.CancellationException) throw failure
+            mutations.trySend(Mutation(expectedScope) {scheduleSync()})
         }
     }
     fun verifyAccount() {
@@ -273,10 +305,6 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         super.onCleared()
     }
 }
-
-private fun defaultAccountService(application: Application)=AccountService(
-    if(BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_")) AuthHttp(BuildConfig.SUPABASE_URL,BuildConfig.SUPABASE_PUBLISHABLE_KEY) else null,
-    EncryptedSessionStorage(application,BuildConfig.SUPABASE_URL))
 
 private fun defaultLearningSync(): LearningAccountSync? =
     if(BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))

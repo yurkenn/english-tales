@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.AccountState
 
 @Composable
-fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)->Unit,onSignOut: ()->Unit,onGoogle: ()->Unit={},onGuest: ()->Unit=onBack,onTransfer: ()->Unit={},onSync: ()->Unit={}) {
+fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)->Unit,onSignOut: ()->Unit,onGoogle: ()->Unit={},onGuest: ()->Unit=onBack,onTransfer: ()->Unit={},onSync: ()->Unit={},onResolvePreferences: (Boolean)->Unit={}) {
     var email by remember {mutableStateOf(state.email)}
     // Password is deliberately not rememberSaveable; process/rotation restoration must not persist it.
     var password by remember {mutableStateOf("")}
@@ -37,7 +37,11 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                         if(state.sync.pending>0) Text("${state.sync.pending} kayıt gönderilmeyi bekliyor.",fontSize=13.sp)
                         if(state.sync.blocked>0) Text("${state.sync.blocked} kayıt için kontrol gerekiyor. Yerel geçmiş korunuyor.",fontSize=13.sp)
                         if(state.sync.deviceOnlyPoints>0) Text("Eski geçmişindeki ${state.sync.deviceOnlyPoints} puan bu cihaza ait; diğer cihazlara aktarılmaz.",fontSize=13.sp,color=TaleMuted)
-                        if(state.sync.preferencesPending) Text(if(state.sync.preferencesConflict) "Profil ayarların farklı. Bu cihazdaki seçimlerin korunuyor; ayar eşitlemesi tamamlanmayı bekliyor." else "Profil ayarların şu anda bu cihazda korunuyor; ayar eşitlemesi tamamlanmayı bekliyor.",fontSize=13.sp,color=TaleMuted)
+                        if(state.sync.preferencesPending) Text(if(state.sync.preferencesConflict) "Başka cihazdaki profil tercihlerin farklı. Hangi tercihleri kullanmak istersin?" else "Profil tercihlerin gönderilmeyi bekliyor.",fontSize=13.sp,color=TaleMuted)
+                        if(state.sync.preferencesConflict) {
+                            OutlinedButton(onClick={onResolvePreferences(true)},enabled=!state.busy && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text("Bu cihazdaki tercihleri kullan")}
+                            OutlinedButton(onClick={onResolvePreferences(false)},enabled=!state.busy && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text("Hesaptaki tercihleri kullan")}
+                        }
                         OutlinedButton(onClick=onSync,enabled=!state.busy && !state.needsSignIn && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text("Şimdi eşitle")}
                     }
                 }

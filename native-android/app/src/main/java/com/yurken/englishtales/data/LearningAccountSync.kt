@@ -34,6 +34,13 @@ class LearningAccountSync(private val transport: LearningSyncTransport, private 
     }
 
     internal fun step(store: LearningStore, accounts: AccountService, user: String, current: () -> Boolean): LearningSyncStep {
+        if(store.cloudState()==null) {
+            val first=LearningSnapshotReader(transport,accounts).read(user,current)
+            store.reconcileCloud(first,source,current)
+            return LearningSyncStep(status(store).copy(running=true,message="Hesap geçmişin alındı…"),true)
+        }
+        if(LearningPreferencesSync.write(store,accounts,transport,current))
+            return LearningSyncStep(status(store).copy(running=true,message="Profil tercihlerin kaydedildi…"),true)
         val upload = LearningQueueSync(transport, accounts).upload(store, user, current, limit = 1)
         if (!current() || accounts.current?.userId != user) throw LearningSyncFailure("account_scope_changed")
         if (upload.stopped) return LearningSyncStep(status(store).copy(message = "Gönderim tamamlanamadı. Kayıtların cihazında; bağlantıyı ve oturumunu kontrol et."), false, upload.verifySession)
@@ -46,6 +53,8 @@ class LearningAccountSync(private val transport: LearningSyncTransport, private 
         return LearningSyncStep(state.copy(message = when {
             state.blocked > 0 -> "Bazı kayıtlar eşitlenemedi. Cihazındaki geçmiş korunuyor."
             state.pending > 0 -> "Hesap geçmişi alındı. Bekleyen kayıtlar yeniden denenecek."
+            state.preferencesConflict -> "Öğrenme kayıtların eşitlendi. Profil tercihlerin için seçim yap."
+            state.preferencesPending -> "Öğrenme kayıtların eşitlendi. Profil tercihlerin gönderilmeyi bekliyor."
             else -> "Öğrenme kayıtların eşitlendi."
         }), false)
     }

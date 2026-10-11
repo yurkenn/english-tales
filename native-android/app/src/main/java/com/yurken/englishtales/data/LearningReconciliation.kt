@@ -112,7 +112,8 @@ internal object LearningReconciliation {
                 profile.getString("genre") == p.genre && profile.getInt("goal") == p.goal
             if (dirty) {
                 val knownVersion = old?.let { if (it.isNull("preferences_version")) null else it.getLong("preferences_version") }
-                if (!equal && (knownVersion == null || knownVersion != p.version)) conflict = true
+                val untouched=p.version==1L && p.name=="Okuyucu" && p.level=="A1" && p.genre=="Günlük yaşam" && p.goal==1
+                if (!equal && ((knownVersion == null && !untouched) || (knownVersion!=null && knownVersion != p.version))) conflict = true
             } else {
                 db.execSQL("UPDATE local_profile SET name=?,level=?,genre=?,goal=?,onboarding_done=MAX(onboarding_done,?) WHERE id=1",
                     arrayOf<Any?>(p.name,p.level,p.genre,p.goal,if(p.version>1) 1 else 0))

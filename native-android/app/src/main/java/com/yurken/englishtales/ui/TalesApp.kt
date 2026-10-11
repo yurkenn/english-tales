@@ -89,7 +89,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
         }
         composable("settings") {LearningSettingsScreen(snapshot,onBack={nav.popBackStack()},onSave={level,genre,goal,name ->viewModel.updatePreferences(level,genre,goal,name);nav.popBackStack()})}
         composable("downloads") {ContentDownloadsScreen(content,onBack={nav.popBackStack()})}
-        composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onSync=viewModel::syncNow,onGuest={
+        composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onSync=viewModel::syncNow,onResolvePreferences=viewModel::resolvePreferences,onGuest={
             if(snapshot.onboardingDone) nav.popBackStack() else nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}
         })}
         composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::toggleWord) }

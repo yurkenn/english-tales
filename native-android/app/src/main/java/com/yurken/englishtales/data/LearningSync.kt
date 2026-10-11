@@ -33,6 +33,7 @@ class LearningSyncHttp(private val base: String, private val key: String) : Lear
             connection.setRequestProperty("apikey", key)
             connection.setRequestProperty("Authorization", "Bearer $token")
             connection.setRequestProperty("Content-Type", "application/json")
+            if(rpc=="save_learning_preferences") connection.setRequestProperty("Accept","application/vnd.pgrst.object+json")
             connection.doOutput = true
             connection.outputStream.use { it.write(body.toString().toByteArray(Charsets.UTF_8)) }
             val status = connection.responseCode

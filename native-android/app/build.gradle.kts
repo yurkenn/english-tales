@@ -96,11 +96,13 @@ dependencies {
     implementation("androidx.credentials:credentials-play-services-auth:1.6.0")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
     implementation("androidx.room:room-runtime:2.8.5")
+    implementation("androidx.work:work-runtime:2.10.1")
     ksp("androidx.room:room-compiler:2.8.5")
     debugImplementation("androidx.compose.ui:ui-tooling")
     testImplementation("junit:junit:4.13.2")
     if (!releaseDeviceProbe) {
         androidTestImplementation("androidx.test:runner:1.6.2")
         androidTestImplementation("androidx.test.ext:junit:1.2.1")
+        androidTestImplementation("androidx.work:work-testing:2.10.1")
     }
 }
