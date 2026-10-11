@@ -16,6 +16,14 @@ Migration CLI ile oluşturuldu; test projesine uygulanınca yerel dosyanın sür
 
 38 servis/istemci testi geçti. Yeni üç senaryo: anon/kimliksiz ret ve yazma yan etkisinin olmaması; iki hesap ayrımı, oturum kimliği, kelime silme ve revision/badge; 10.001 oturumun kısmi sonuç yerine reddi. Canlı test projesinde invoker/stable, anon=false, authenticated=true ve boş hesap kopyası doğrulandı. Yeni fonksiyon için advisor uyarısı yok. Eski 19 yetkili yazma RPC uyarısı, private audit INFO ve parola koruma uyarısı ayrı güvenlik incelemesinde kalıyor.
 
+## Android gönderim temeli — tamamlandı
+
+`LearningSyncHttp` yalnızca belirlenen öğrenme RPC'lerine HTTPS üzerinden gider; yönlendirmeleri takip etmez, yanıtı 4 MiB ile sınırlar, eksik/nesne olmayan/arkasında fazladan veri olan başarılı yanıtları reddeder. SQLSTATE sayısal kodları korunur; hata gövdesi ve token tanılama metnine girmez.
+
+`LearningQueueSync` hesap ve çağıranın oturum kapsamını gönderimden önce ve yanıttan sonra kontrol eder. Kalıcı kuyruktaki aynı UUID/gövde gönderilir. `applied` gerçek boolean olmalıdır; false da teslimattır. Ağ/kimlik/bozuk yanıt hatası yeniden denemede kalır; bilinen gövde/veri çakışmaları yerel geçmiş silinmeden blocked olur. Yerel puan değiştirilmez. Çalıştırıcının store'un sıralı IO akışını kullanması ve hesap nesli kontrolünü sağlaması gerekir. Henüz UI/otomatik arka plan işine bağlanmadı.
+
+16 KiB emülatörde 8 yeni test geçti: tekrar teslim, kayıp teslim yanıtı sonrası aynı gövdeyle deneme, kapsam değişimi, çıkış, gövde çakışması, bozuk başarı/401, yanlış hesap ve SQLSTATE ayrıştırma. Debug derleme, mevcut birim testleri ve lint geçti.
+
 ## Android birleştirme sırası — sıradaki uygulama
 
 1. Kendi UID'si, kaynak proje ve protokol sürümü doğrulanmış kopyayı bütünüyle ayrıştır; bozuk/eksik/büyük yanıtta yerel değişiklik yapma.
