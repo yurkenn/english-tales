@@ -26,7 +26,9 @@ internal object LearningSyncRuntime {
         return service?:AccountService(
             if(configured()) AuthHttp(BuildConfig.SUPABASE_URL,BuildConfig.SUPABASE_PUBLISHABLE_KEY) else null,
             EncryptedSessionStorage(context.applicationContext,BuildConfig.SUPABASE_URL)).also {account ->
-                runCatching {account.restore()}.onFailure {account.clearLocal()};service=account
+                runCatching {account.restore()}.onFailure {account.clearLocal()}
+                if(account.current?.userId in DeletedAccountCleanup.pending(context)) account.clearLocal()
+                service=account
             }
     }
     fun configured()=BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_")

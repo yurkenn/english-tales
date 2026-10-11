@@ -26,3 +26,7 @@ file_size_limit = "20MiB"
 [auth]
 enabled = true
 enable_anonymous_sign_ins = false
+
+[functions.delete-account]
+# The handler verifies the token with Auth and checks the live, recent session.
+verify_jwt = false

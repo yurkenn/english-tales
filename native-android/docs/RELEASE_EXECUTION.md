@@ -72,3 +72,11 @@ Bu kapılar kapanmadan uygulama mağazaya hazır sayılmaz.
 Yerel işlemleri bekletmeyen ağ eşitlemesi, sürüm kontrollü tercih yazımı, kullanıcı seçimiyle çakışma çözümü ve ağ koşullu WorkManager işleri tamamlandı. 96 cihaz testi, 11 birim testi, debug/release Lint ve imzalı APK/AAB kontrolleri başarılı. Gerçek Google hesabının 14 olayı test hizmetine teslim edildi; 70 yerel puan korundu. Önceki aday hash ve eksik tercih/arka plan ifadeleri tarihsel kayıttır; güncel kanıt LEARNING_SYNC_EXECUTION.md dosyasındadır.
 
 Kullanıcının oluşturduğu Frankfurt FREE üretim projesine şema ve taslak katalog kuruldu; otomatik RLS yardımcı işlevinin API erişimi kapatıldı. Üretim kurulumu henüz yayınlanmış uygulama anlamına gelmez. PRODUCTION_SETUP.md açık adımları izler.
+
+## Hesap işlemleri ve üretim katalog kontrol noktası — 11 Ekim 2026
+
+Üretimde altı hikâye ve 81 cümle gerçek yüklenmiş kapaklarla yayınlandı. Oturumsuz katalog erişimi ve yönetici/öğrenme erişiminin reddi doğrulandı. E-posta kayıt, OTP doğrulama, parola kurtarma ve onaylı hesap silme ekranları eklendi. Test/üretim silme işlevleri aktif; gerçek kişisel hesap silinmedi. Kalıcı yerel temizlik makbuzu uygulama yeniden açılışını kapsar ve diğer hesapların verilerini korur.
+
+106 cihaz testi, 46 backend testi, 11 birim testi, debug/release Lint ve içerik panelinin HTTP kontrolü başarılı. Sürüm 47 / 2.0.0 imza ve 16 KiB kontrollerinden geçti. APK SHA256: `e5ce54921a2f3e9e45766d3a02b738c347924263036aaa759e691f81c3dc292e`. AAB SHA256: `11f656b17c9365573db653f2263909ae3631f35982d1d223004e7afdff4feccd`. Paket hâlâ test hizmeti yapılandırmasını kullanır; üretim mağaza adayı değildir.
+
+Brevo Free kayıt ekranı kullanıcıya hazırlandı, Türkçe/İngilizce kod şablonları kaydedildi. SMTP bağlantısı ve teslimat bekleniyor. Diğer açık hesap kapıları ACCOUNT_LIFECYCLE_EXECUTION.md, gönderim adımları EMAIL_DELIVERY_SETUP.md içinde izlenir.

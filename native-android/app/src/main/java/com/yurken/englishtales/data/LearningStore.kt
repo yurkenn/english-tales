@@ -27,7 +27,7 @@ data class LearningSnapshot(
 }
 
 /** Calls are serialized on the ViewModel's IO dispatcher. IDs survive content updates. */
-class LearningStore(context: Context,val owner: LearningOwner=LearningOwner.Guest,private val clock: () -> Long = System::currentTimeMillis) : AutoCloseable {
+class LearningStore(private val context: Context,val owner: LearningOwner=LearningOwner.Guest,private val clock: () -> Long = System::currentTimeMillis) : AutoCloseable {
     private val database=LearningDatabase.open(context,owner)
     private val dao=database.offline()
     private val operations=LearningOperations(InstallationIdentity.get(context))
@@ -252,6 +252,19 @@ class LearningStore(context: Context,val owner: LearningOwner=LearningOwner.Gues
     private fun recordEvent(db: SupportSQLiteDatabase,id: String,name: String,now: Long): Boolean = db.insertWithOnConflict("engagement_events",null,ContentValues().apply {put("event_id",id);put("name",name);put("created_at",now)},SQLiteDatabase.CONFLICT_IGNORE)!=-1L
     private fun transaction(action: (SupportSQLiteDatabase)->Unit) {database.runInTransaction {action(writableDatabase)}}
     internal fun <T> transferTransaction(action: (SupportSQLiteDatabase)->T): T=database.runInTransaction<T> {action(writableDatabase)}
+    /** Call only after the service has confirmed deletion for this exact owner. */
+    fun eraseDeletedAccount() {
+        check(owner is LearningOwner.Account)
+        database.clearAllTables()
+        database.close()
+        check(context.deleteDatabase(owner.databaseName) || !context.getDatabasePath(owner.databaseName).exists()) {
+            "Deleted account database cleanup is pending"
+        }
+    }
+    fun forgetTransferTarget(user: String) {
+        check(owner is LearningOwner.Guest)
+        writableDatabase.execSQL("DELETE FROM guest_transfers WHERE target_user_id=?",arrayOf(LearningOwner.Account(user).id))
+    }
     override fun close() {database.close()}
 }
 

@@ -39,6 +39,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         }
         viewModelScope.launch(Dispatchers.IO) {
             try {
+                if(background) runCatching {DeletedAccountCleanup.clean(getApplication())}
                 try {
                     auth.restore()?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
                 } catch (_: Exception) {
@@ -233,6 +234,64 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             }
         })
     }
+    private fun emailOperation(action: ()->Unit) {
+        if(mutableAccount.value.busy) return
+        interruptSync()
+        mutableAccount.value=mutableAccount.value.copy(busy=true,message="İşlem yapılıyor…")
+        mutations.trySend(Mutation(scope) {
+            try {action()} catch(failure: Exception) {
+                if(auth.current!=null && auth.current?.userId!=store.owner.id) auth.clearLocal()
+                mutableAccount.value=mutableAccount.value.copy(message=when((failure as? AuthFailure)?.code) {
+                    "invalid_input" -> "Geçerli bir e-posta adresi gir."
+                    "weak_password" -> "Parolan 8–128 karakter olmalı. Sunucunun parola koşullarını da karşılamalı."
+                    "invalid_code","otp_expired" -> "Kod geçersiz veya süresi dolmuş. Kontrol et ya da yeni kod iste."
+                    "over_email_send_rate_limit","over_request_rate_limit" -> "Çok sık denedin. Bir süre sonra tekrar dene."
+                    "same_password" -> "Öncekinden farklı bir parola belirle."
+                    else -> "İşlem tamamlanamadı. Bilgilerini ve bağlantını kontrol edip tekrar dene."
+                })
+            } finally {
+                mutableAccount.value=mutableAccount.value.copy(busy=false)
+                if(background) LearningSyncRuntime.resume()
+                scheduleSync()
+            }
+        })
+    }
+    fun signUp(email: String,password: String)=emailOperation {
+        val ready=auth.signUp(email,password)
+        mutableAccount.value=mutableAccount.value.copy(emailAction=if(ready) "" else "signup",verificationEmail=email.trim(),
+            message=if(ready) "Hesap işlemi tamamlandı. E-posta ve parolanla giriş yapabilirsin." else "Doğrulama gerekiyorsa e-postana kod gönderildi. Gelen kutunu ve spam klasörünü kontrol et. Daha önce hesabın varsa giriş yapabilirsin.")
+    }
+    fun requestRecovery(email: String)=emailOperation {
+        auth.requestRecovery(email)
+        mutableAccount.value=mutableAccount.value.copy(emailAction="recovery",verificationEmail=email.trim(),message="Bu e-postaya bağlı bir hesap varsa kurtarma kodu gönderildi. Gelen kutunu ve spam klasörünü kontrol et.")
+    }
+    fun resendEmailCode()=emailOperation {
+        val state=mutableAccount.value
+        when(state.emailAction) {
+            "signup" -> auth.resendConfirmation(state.verificationEmail)
+            "recovery" -> auth.requestRecovery(state.verificationEmail)
+            else -> throw AuthFailure("invalid_input")
+        }
+        mutableAccount.value=mutableAccount.value.copy(message="Kod gönderimi istendi. Yeni e-postayı kontrol et; çok sık isteklerde bir süre beklemen gerekebilir.")
+    }
+    fun completeEmailCode(code: String,password: String)=emailOperation {
+        val state=mutableAccount.value
+        when(state.emailAction) {
+            "signup" -> {
+                val session=auth.confirmEmail(state.verificationEmail,code)
+                changeOwner(LearningOwner.Account(session.userId),session.email)
+                mutableAccount.value=mutableAccount.value.copy(message="E-postan doğrulandı ve giriş yapıldı.")
+            }
+            "recovery" -> {
+                auth.resetPassword(state.verificationEmail,code,password)
+                mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="Parolan güncellendi. Yeni parolanla giriş yapabilirsin.")
+            }
+            else -> throw AuthFailure("invalid_input")
+        }
+    }
+    fun cancelEmailCode() {
+        if(!mutableAccount.value.busy) mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="")
+    }
     fun signOut() {
         if(mutableAccount.value.busy) return
         interruptSync()
@@ -243,6 +302,41 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             viewModelScope.launch {runCatching {GoogleSignIn.clear(getApplication())}}
             mutableAccount.value=mutableAccount.value.copy(message=if(revoked) "Çıkış yapıldı. Misafir kayıtların açıldı." else "Bu cihazdan çıkış yapıldı. Sunucu oturumu bağlantı olmadığı için kapatılamadı.")
         })
+    }
+    fun deleteAccount() {
+        val user=mutableAccount.value.userId?:return
+        if(mutableAccount.value.busy || mutableAccount.value.needsSignIn) return
+        val expectedScope=scope
+        interruptSync()
+        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Hesabın siliniyor…")
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                LearningSyncLocks.withOwner(user) {
+                    if(disposed || scope!=expectedScope) return@withOwner
+                    auth.deleteAccount(user) {if(background) DeletedAccountCleanup.record(getApplication(),user)}
+                    if(background) LearningSyncRuntime.cancel(getApplication(),user)
+                    mutations.trySend(Mutation(expectedScope) {
+                        check(store.owner.id==user)
+                        val cleaned=runCatching {
+                            storeFactory(LearningOwner.Guest).use {it.forgetTransferTarget(user)}
+                            store.eraseDeletedAccount()
+                            if(background) DeletedAccountCleanup.complete(getApplication(),user)
+                        }.isSuccess
+                        changeOwner(LearningOwner.Guest)
+                        viewModelScope.launch {runCatching {GoogleSignIn.clear(getApplication())}}
+                        mutableAccount.value=mutableAccount.value.copy(message=if(cleaned) "Hesabın ve bu cihazdaki hesap kayıtların silindi. Misafir kayıtların ayrı korunuyor." else "Hesabın sunucuda silindi. Cihazdaki temizlik tamamlanamadı; uygulama yeniden açıldığında tekrar denenecek.")
+                    })
+                }
+            } catch(failure: Exception) {
+                if(failure is kotlinx.coroutines.CancellationException) throw failure
+                mutations.trySend(Mutation(expectedScope) {
+                    val again=(failure as? AuthFailure)?.code=="reauthentication_required"
+                    mutableAccount.value=mutableAccount.value.copy(busy=false,needsSignIn=again || auth.current==null,
+                        message=if(again) "Silme için yeniden giriş yapmalısın. Girişten sonra hesabını silmeyi tekrar seç." else "Silme tamamlanamadı veya sonucu doğrulanamadı. Cihazdaki kayıtların korunuyor; tekrar dene veya destek ile iletişime geç.")
+                    if(background) LearningSyncRuntime.resume()
+                })
+            }
+        }
     }
     suspend fun signInGoogle(acquire: suspend ()->GoogleIdentity) {
         if(mutableAccount.value.busy) return

@@ -58,6 +58,23 @@ beforeEach(async()=>{await db.exec('begin');clock=Date.parse((await db.query('se
 afterEach(async()=>{await db.exec('rollback; reset role');});
 after(async()=>{await db?.close();});
 
+test('account deletion authorization requires own live session created within five minutes',async()=>{
+  const own=randomUUID(),foreign=randomUUID(),expired=randomUUID(),old=randomUUID();
+  await db.query(`insert into auth.sessions(id,user_id,created_at,not_after) values ($1,$2,now(),null),($3,$4,now(),null),($5,$2,now(),now()-interval '1 minute'),($6,$2,now()-interval '6 minutes',null)`,[own,alice,foreign,bob,expired,old]);
+  const allowed=async(id)=>{await db.query("select set_config('request.jwt.claims',$1,true)",[JSON.stringify({session_id:id})]);return (await user(alice,'select public.authorize_account_deletion() allowed'))[0].allowed;};
+  assert.equal(await allowed(own),true);
+  for(const id of [foreign,expired,old,randomUUID(),'invalid']) assert.equal(await allowed(id),false);
+  await assert.rejects(anon('select public.authorize_account_deletion()'));
+  await db.query('delete from auth.sessions where id=$1',[own]);assert.equal(await allowed(own),false);
+});
+
+test('anonymous Auth users cannot authorize account deletion even with a fresh session',async()=>{
+  const id=randomUUID();await db.query('update auth.users set is_anonymous=true where id=$1',[alice]);
+  await db.query('insert into auth.sessions(id,user_id) values($1,$2)',[id,alice]);
+  await db.query("select set_config('request.jwt.claims',$1,true)",[JSON.stringify({session_id:id})]);
+  assert.equal((await user(alice,'select public.authorize_account_deletion() allowed'))[0].allowed,false);
+});
+
 test('learning snapshot is read-only, invoker scoped and rejects anonymous callers',async()=>{
   const before=(await db.query('select count(*)::int n from public.learning_profiles')).rows[0].n;
   const snapshot=(await user(alice,'select public.get_learning_snapshot() result'))[0].result;

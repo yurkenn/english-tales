@@ -24,6 +24,7 @@ class AccountSwitchTest {
     private class Fixture: AuthHttp("https://example.invalid","sb_publishable_test") {
         val a=UUID.randomUUID().toString();val b=UUID.randomUUID().toString()
         var entered: CountDownLatch?=null;var release: CountDownLatch?=null
+        var deletionError: String?=null
         override fun request(path: String,method: String,body: JSONObject?,token: String?): JSONObject = when {
             path=="/auth/v1/user" -> JSONObject().put("id",token!!.removePrefix("token-")).put("email","fixture@example.invalid")
             path.contains("grant_type=id_token") -> JSONObject().put("access_token","token-$a").put("refresh_token","refresh-$a").put("expires_in",3600)
@@ -33,6 +34,10 @@ class AccountSwitchTest {
                 JSONObject().put("access_token","token-$id").put("refresh_token","refresh-$id").put("expires_in",3600)
             }
             path.startsWith("/auth/v1/logout") -> JSONObject()
+            path=="/functions/v1/delete-account" -> {
+                deletionError?.let {throw AuthFailure(it,403)}
+                JSONObject().put("code","account_deleted").put("userId",token!!.removePrefix("token-"))
+            }
             else -> error("Unexpected request")
         }
     }
@@ -47,6 +52,7 @@ class AccountSwitchTest {
         val directory=File(target.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
         val context=object: ContextWrapper(target) {
             override fun getDatabasePath(name: String)=File(directory,name)
+            override fun deleteDatabase(name: String)=SQLiteDatabase.deleteDatabase(File(directory,name))
             override fun openOrCreateDatabase(name: String,mode: Int,factory: SQLiteDatabase.CursorFactory?)=SQLiteDatabase.openOrCreateDatabase(File(directory,name),factory)
             override fun openOrCreateDatabase(name: String,mode: Int,factory: SQLiteDatabase.CursorFactory?,handler: DatabaseErrorHandler?)=SQLiteDatabase.openOrCreateDatabase(File(directory,name).absolutePath,factory,handler)
         }
@@ -55,6 +61,25 @@ class AccountSwitchTest {
         holder.put("account-test",vm)
         try {await {vm.ready.value};block(vm,fixture)}
         finally {fixture.release?.countDown();instrumentation.runOnMainSync {holder.clear()}}
+    }
+    @Test fun acknowledgedDeletionErasesOnlyTargetAndRetainsGuestAndOtherAccount()=exercise {vm,http ->
+        vm.saveWords(listOf("morning"));await {"morning" in vm.state.value.savedWordIds}
+        vm.signIn("b@example.invalid","fixture-password");await {vm.state.value.ownerId==http.b}
+        vm.completeLesson(4,UUID.randomUUID().toString(),"choice",5,0);await {vm.state.value.points==20}
+        vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a}
+        vm.completeLesson(5,UUID.randomUUID().toString(),"choice",5,0);await {vm.state.value.points==25}
+        vm.deleteAccount();await {vm.state.value.ownerId=="guest" && !vm.account.value.busy}
+        assertEquals(setOf("morning"),vm.state.value.savedWordIds)
+        vm.signIn("b@example.invalid","fixture-password");await {vm.state.value.ownerId==http.b};assertEquals(20,vm.state.value.points)
+        // Fixture-only recreation with the same UID proves the removed database is empty.
+        vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a};assertEquals(0,vm.state.value.points)
+    }
+    @Test fun deletionWithoutFreshAuthenticationPreservesLocalAccount()=exercise {vm,http ->
+        vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a}
+        vm.completeLesson(5,UUID.randomUUID().toString(),"choice",5,0);await {vm.state.value.points==25}
+        http.deletionError="reauthentication_required"
+        vm.deleteAccount();await {vm.account.value.needsSignIn && !vm.account.value.busy}
+        assertEquals(http.a,vm.state.value.ownerId);assertEquals(25,vm.state.value.points)
     }
     @Test fun switchingAccountsAndGuestKeepsSeparateLearningData()=exercise {vm,http ->
         vm.saveWords(listOf("morning"));await {"morning" in vm.state.value.savedWordIds}

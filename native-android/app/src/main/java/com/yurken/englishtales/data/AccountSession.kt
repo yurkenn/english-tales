@@ -93,6 +93,49 @@ class AccountService(private val http: AuthHttp?,private val storage: SessionSto
     @Synchronized fun restore(): AccountSession? {current=storage.read();return current}
     @Synchronized fun clearLocal() {storage.clear();current=null}
     private fun transport()=http ?: throw AuthFailure("not_configured")
+    private fun checkedEmail(email: String): String = email.trim().also {
+        if(!android.util.Patterns.EMAIL_ADDRESS.matcher(it).matches()) throw AuthFailure("invalid_input")
+    }
+    private fun checkedPassword(password: String) {
+        if(password.length !in 8..128) throw AuthFailure("weak_password")
+    }
+    private fun verifyCode(email: String,code: String,type: String): AccountSession {
+        val address=checkedEmail(email)
+        if(!code.matches(Regex("[0-9]{6,8}"))) throw AuthFailure("invalid_code")
+        val session=validated(transport().request("/auth/v1/verify","POST",JSONObject().put("email",address).put("token",code).put("type",type)))
+        if(!session.email.equals(address,ignoreCase=true)) {
+            runCatching {transport().request("/auth/v1/logout?scope=local","POST",token=session.accessToken)}
+            throw AuthFailure("account_mismatch")
+        }
+        return session
+    }
+    /** Signup responses deliberately do not replace the current session. */
+    @Synchronized fun signUp(email: String,password: String): Boolean {
+        val address=checkedEmail(email);checkedPassword(password)
+        val response=transport().request("/auth/v1/signup","POST",JSONObject().put("email",address).put("password",password))
+        return response.optString("access_token").isNotBlank()
+    }
+    @Synchronized fun resendConfirmation(email: String) {
+        transport().request("/auth/v1/resend","POST",JSONObject().put("email",checkedEmail(email)).put("type","signup"))
+    }
+    @Synchronized fun confirmEmail(email: String,code: String): AccountSession {
+        val session=verifyCode(email,code,"signup")
+        storage.write(session);current=session;return session
+    }
+    @Synchronized fun requestRecovery(email: String) {
+        transport().request("/auth/v1/recover","POST",JSONObject().put("email",checkedEmail(email)))
+    }
+    /** Recovery credentials are never persisted or used to open another owner's database. */
+    @Synchronized fun resetPassword(email: String,code: String,password: String) {
+        checkedPassword(password)
+        val recovery=verifyCode(email,code,"recovery")
+        try {
+            val user=transport().request("/auth/v1/user","PUT",JSONObject().put("password",password),recovery.accessToken)
+            if(UUID.fromString(user.getString("id")).toString()!=recovery.userId) throw AuthFailure("account_mismatch")
+        } finally {
+            runCatching {transport().request("/auth/v1/logout?scope=local","POST",token=recovery.accessToken)}
+        }
+    }
     private fun validated(response: JSONObject,expectedUser: String?=null): AccountSession {
         val access=response.getString("access_token")
         val user=transport().request("/auth/v1/user","GET",token=access)
@@ -142,7 +185,14 @@ class AccountService(private val http: AuthHttp?,private val storage: SessionSto
         storage.clear();current=null
         return if(previous==null) true else runCatching {transport().request("/auth/v1/logout?scope=local","POST",token=previous.accessToken);true}.getOrDefault(false)
     }
+    @Synchronized fun deleteAccount(expectedUser: String,onConfirmed: ()->Unit={}) {
+        val token=accessToken(expectedUser)
+        val response=transport().request("/functions/v1/delete-account","POST",JSONObject().put("confirm",true),token)
+        if(response.optString("code")!="account_deleted" || response.optString("userId")!=expectedUser) throw AuthFailure("invalid_response")
+        onConfirmed()
+        storage.clear();current=null
+    }
 }
 
 data class AccountState(val userId: String?=null,val email: String="",val busy: Boolean=false,val message: String="",val needsSignIn: Boolean=false,val scope: Long=0,
-    val guestTransfer: GuestTransferPreview?=null,val sync: LearningSyncState=LearningSyncState())
+    val guestTransfer: GuestTransferPreview?=null,val sync: LearningSyncState=LearningSyncState(),val emailAction: String="",val verificationEmail: String="")
