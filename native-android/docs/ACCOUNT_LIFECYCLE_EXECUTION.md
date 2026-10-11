@@ -59,3 +59,11 @@ Bu kapılar tamamlanmadan sürüm mağaza adayı olarak işaretlenmez. Mevcut An
 - Üretim Auth günlüklerinde 19:14:47 UTC kurtarma isteği 200, 19:15:02 UTC kod doğrulaması 200 ve `user_modified` 200, geçici oturum çıkışı 204; 19:15:16 UTC test adresiyle parola girişi 200 görüldü.
 - Aynı parola isteği 422 / `same_password`, geçersiz veya tüketilmiş kurtarma kodu 403 / `otp_expired`, sık gönderim 429 / `over_email_send_rate_limit` ile reddedildi. Bunlar gerçek recovery akışına aittir; kayıt kodunun tüm olumsuz durumlarını doğrulamaz.
 - Gerçek parola değiştirme kapısı bu hesap için kapandı. Kontrollü hesap silme, eski oturumun reddi ve yerel temizlik bekliyor.
+
+## 11 Ekim 22:16: gerçek geçici hesap silme
+
+- Kullanıcı ayrı test hesabını uygulamadaki onayla sildi ve yeniden açılışta misafir akışının çalıştığını bildirdi.
+- Auth günlüğünde 19:16:24 UTC oturum kapatma 204 ve `user_deleted` 200 görüldü. Sonraki sorguda test kullanıcısı, kimlikleri ve oturumları sıfırdı.
+- Hesaba ait yedi öğrenme tablosunda kalan satır sayısı sıfır. Silmeden önce satır sayıları kaydedilmediğinden dolu öğrenme geçmişinin cascade ile temizlendiği bu denemeyle ayrıca kanıtlanmış sayılmaz.
+- Yayıncı hesabı doğrulanmış olarak yerinde ve altı gerçek hikâye kapağı korunmuş durumda. Test hesabının silme öncesi Storage sahipliği yoktu; yayıncı dosya sahipliği kapısı açık kalır.
+- Gerçek silme ve kullanıcı gözlemine göre misafir olarak yeniden açılma başarılı. Yerel dosyaların bağımsız incelemesi ve eski erişim tokenıyla gerçek olumsuz istek yapılmadı; test sonuçları bu sınırlarla değerlendirilir.

@@ -84,3 +84,7 @@ Brevo Free kayıt ekranı kullanıcıya hazırlandı, Türkçe/İngilizce kod ş
 ## Gerçek SMTP teslimatı — 11 Ekim 2026
 
 Hesap sahibi Brevo anahtarını üretim Supabase'e bağladı. İki OTP şablonu üretime kaydedildi ve önizlemeleri doğrulandı. Gerçek kurtarma isteği HTTP 200 döndü; Brevo saat 21:46 (İstanbul) Gmail'e Delivered kaydı gösterdi. Alan adı olmayan gönderen Brevo alanına çevrildi. SMTP teslimatı kanıtlandı; uygulama içindeki gerçek doğrulama/parola değiştirme testi ve diğer mağaza kapıları devam ediyor.
+
+## Gerçek e-posta hesap yaşam döngüsü — 11 Ekim 2026
+
+Ayrı üretim test hesabında kayıt ve kod doğrulaması 22:11, parola kurtarma/değiştirme ve yeni parolayla giriş 22:15, uygulamadan kalıcı hesap silme 22:16'da tamamlandı. Auth kayıtları başarılı işlemleri doğruladı; silinen hesabın kullanıcı/kimlik/oturum ve yedi öğrenme tablosundaki kayıt sayıları sıfır. Yayıncı hesabı ve altı kapak korundu. Yeniden açılışta girişin korunması ve silme sonrası misafir akışı kullanıcı tarafından bildirildi. Kanıt sınırları ve kalan güvenlik kontrolleri ACCOUNT_LIFECYCLE_EXECUTION.md içinde izlenir. İmzalı paket son ekran metni düzeltmeleri sonrası yeniden üretilmedi; üretim Google, herkese açık sayfalar, gönderen izleme ayarı ve diğer mağaza kapıları açık kalır.
