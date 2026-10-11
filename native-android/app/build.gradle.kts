@@ -68,6 +68,8 @@ android {
     }
 
     compileOptions {
+        // java.time parsing must also work on the supported Android 7 devices.
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -78,6 +80,7 @@ android {
 room { schemaDirectory("$projectDir/schemas") }
 
 dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     val composeBom = platform("androidx.compose:compose-bom:2025.05.00")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")

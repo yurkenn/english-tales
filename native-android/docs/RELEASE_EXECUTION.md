@@ -40,6 +40,10 @@ Git etiketi veritabanını veya Supabase'i geri döndürmez. Şema değişikliğ
 
 ## Kalan yayın kapıları
 
+Öğrenme gönderim temeli `checkpoint/learning-upload-20261011` (`c3c40d0`) ile GitHub'a gönderildi. Gönderici henüz otomatik/UI akışında çalışmıyor. Sunucu snapshot kontrol noktası `068f891` için [GitHub kontrolleri](https://github.com/yurkenn/english-tales/actions/runs/38144712469) başarılı.
+
+Sonraki Android snapshot doğrulama aşamasında debug/release derlemeleri, 11 birim testi ve iki Lint kontrolü geçti. İmzalı 47/2.0.0 paketleri yeniden üretildi; APK/AAB imzaları ve 16 KB statik hizalaması başarılı. Bu adayın APK SHA256 değeri `daf8fb84d91e0ffb435452414b88fad174df5098bde5dfa40777f022b47fb80a`, AAB SHA256 değeri `e5adbfd2840a84caa6a7d5ecfa93c0d447c3e7574200566d99a2db4a109aa759`. Bunlar önceki 16 KB kontrol noktası dosyalarının yerine yeni aday hash'leridir; yeni paket için Play dağıtım testi yapılmadı.
+
 16 KB aşaması `checkpoint/native-16kb-verified-20261011` (`6251a4b`) ile kaydedildi. [GitHub kontrolü](https://github.com/yurkenn/english-tales/actions/runs/38144231831) üç işte başarılı. Sonraki sunucu snapshot aşamasının [analizi ve açık Android kabul kapısı](CLOUD_RECONCILIATION_PLAN.md).
 
 - Canlı öğrenme gönderimi, sunucu durumunu alma ve iki cihaz eşitlemesi.

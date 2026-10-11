@@ -26,6 +26,12 @@ Migration CLI ile oluşturuldu; test projesine uygulanınca yerel dosyanın sür
 
 ## Android birleştirme sırası — sıradaki uygulama
 
+İlk maddenin ayrıştırma/okuma temeli tamamlandı: `LearningCloudSnapshot` tüm dizileri, protokol/UID, gerçek sayı/boolean tiplerini, UUID/tarih/saat dilimi, aralıkları ve tekrar eden kimlikleri doğrular. Boş yeni hesap, silinmiş kelime ve kaynak revision bilgisi korunur. `LearningSnapshotReader` çağrı ve yanıt çevresinde hesap neslini denetler. Hiçbir yerel tablo değiştirilmez; atomik uygulama hâlâ sıradadır.
+
+7 yeni kopya testi geçti. Mikro saniyeli sunucu zamanları milisaniye hassasiyetine doğru çevrilir; açık UTC/ofset zorunludur. Android 7 desteğini korumak için resmi core-library desugaring etkinleştirildi, `desugar_jdk_libs:2.1.5` sabitlendi. [Android rehberi](https://developer.android.com/studio/write/java8-support) ve [Google sürüm kaydı](https://github.com/google/desugar_jdk_libs/blob/master/CHANGELOG.md). Android 7 üzerinde cihaz çalışma kontrolü ayrıca yayın kapısıdır.
+
+Son derleme üzerinde bütün 61 cihaz testi 16 KiB emülatörde başarılı; 11 birim testi, debug/release Lint, imzalı APK/AAB ve statik paket doğrulaması da geçti. Gerçek hesaba kuyruk gönderimi veya sunucu verisini yerel tablolara uygulama bu testlerde yapılmadı.
+
 1. Kendi UID'si, kaynak proje ve protokol sürümü doğrulanmış kopyayı bütünüyle ayrıştır; bozuk/eksik/büyük yanıtta yerel değişiklik yapma.
 2. Tercihler için sunucu version değerini sakla; yerel kirli tercihleri koşullu yaz. Çakışmada kullanıcıya gösterilecek karar gerekir; yeni versiyonu alıp sessizce başka cihazın değişikliğini ezme.
 3. Kalıcı kuyruğu aynı UUID/gövdeyle gönder. `applied=false` başarılı teslimat; gövde çakışması karantinadır. SQLSTATE kodları Auth hata metnine düşürülmemeli. Oturum değişirse gönderim ve yerel ack durur.
