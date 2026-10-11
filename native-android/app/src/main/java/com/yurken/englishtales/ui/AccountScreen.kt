@@ -115,6 +115,7 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
             }
             if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
             if(state.message.isNotBlank()) Text(state.message,fontSize=14.sp,color=TaleMuted)
+            SupportLinks()
         }
     }
     if(confirmExit) AlertDialog(onDismissRequest={confirmExit=false},title={Text("Çıkış yapılsın mı?")},

@@ -115,6 +115,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             ReminderControls()
             Button(onClick={onSave(level,genre,goal,name)},modifier=Modifier.fillMaxWidth()) {Text("Değişiklikleri kaydet")}
             Text("İlerlemen bu cihazda saklanır. Uygulama verilerini silmek ilerlemeni de siler.",fontSize=12.sp,color=TaleMuted)
+            SupportLinks()
         }
     }
 }
