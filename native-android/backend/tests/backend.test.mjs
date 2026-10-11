@@ -360,6 +360,17 @@ test('account deletion cascades learning records while keeping published content
     assert.equal((await db.query(`select * from public.${table} where user_id=$1`,[alice])).rows.length,0);
   assert.equal((await anon('select * from public.stories')).length,6);
 });
+test('only the server can inventory files for account deletion, including unknown files',async()=>{
+  await db.query('update storage.objects set owner=$1,owner_id=$2 where name=(select storage_path from public.content_assets limit 1)',[publisher,publisher]);
+  await db.query("insert into storage.objects(bucket_id,name,owner_id) values('story-media','unknown.png',$1)",[publisher]);
+  await assert.rejects(user(publisher,'select public.account_owned_media_inventory($1)',[publisher]),/permission denied/);
+  await assert.rejects(anon('select public.account_owned_media_inventory($1)',[publisher]),/permission denied/);
+  await db.exec('set local role service_role');
+  const result=(await db.query('select public.account_owned_media_inventory($1) as media',[publisher])).rows[0].media;
+  const other=(await db.query('select public.account_owned_media_inventory($1) as media',[alice])).rows[0].media;
+  await db.exec('reset role');
+  assert.equal(result.length,2);assert.ok(result.some(row=>row.path==='unknown.png'&&row.assetId===null));assert.deepEqual(other,[]);
+});
 
 test('draft deletion is version checked, preserves published content and records the real actor',async()=>{
   const d=await admin(editor,'admin_create_draft',{story:'quiet-morning',source:revision});

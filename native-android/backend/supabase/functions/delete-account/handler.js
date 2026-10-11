@@ -30,6 +30,39 @@ export function createDeletionHandler({url,key,fetcher=fetch}) {
       const gate=await request('/rest/v1/rpc/authorize_account_deletion','POST',auth,{});
       if(!gate.ok) return reply(503,'deletion_unavailable');
       if(await gate.json()!==true) return reply(403,'reauthentication_required');
+      // Editorial media is shared catalog content, not reader account data.
+      // Re-upload identical verified bytes as the server through the supported
+      // Storage API so a publisher's Auth account can be deleted independently.
+      const inventory=async()=>{
+        const response=await request('/rest/v1/rpc/account_owned_media_inventory','POST','Bearer '+key,{p_user_id:user.id});
+        if(!response.ok)throw new Error('Media inventory unavailable');
+        return await response.json();
+      };
+      const media=await inventory();
+      if(!Array.isArray(media)||media.length>1000) return reply(503,'deletion_unavailable');
+      if(media.some(a=>a.bucket!=='story-media'||!uuid.test(a.assetId)||
+        !/^[a-f0-9]{64}$/.test(a.sha256)||!Number.isSafeInteger(a.byteSize)||a.byteSize<1||a.byteSize>20971520||
+        typeof a.path!=='string'||a.path.startsWith('/')||a.path.includes('..')||a.path.includes('\\')||
+        !['image/png','image/jpeg','image/webp','audio/mpeg','audio/mp4','audio/ogg'].includes(a.mimeType)))
+        return reply(503,'deletion_unavailable');
+      const hash=async bytes=>Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
+      const readMedia=async(a,path)=>{
+        const response=await fetcher(base+path,{method:'GET',headers:{apikey:key,Authorization:'Bearer '+key},redirect:'error',signal:AbortSignal.timeout(15000)});
+        if(!response.ok||Number(response.headers.get('Content-Length')||0)>a.byteSize)throw new Error('Media read failed');
+        const reader=response.body.getReader(),chunks=[];let size=0;
+        try{while(true){const {done,value}=await reader.read();if(done)break;size+=value.length;if(size>a.byteSize){await reader.cancel();throw new Error('Media size mismatch');}chunks.push(value);}}finally{reader.releaseLock();}
+        const bytes=new Uint8Array(size);let offset=0;for(const chunk of chunks){bytes.set(chunk,offset);offset+=chunk.length;}
+        if(size!==a.byteSize||await hash(bytes)!==a.sha256)throw new Error('Media checksum mismatch');
+        return bytes;
+      };
+      for(const asset of media){
+        const path='/storage/v1/object/story-media/'+asset.path.split('/').map(encodeURIComponent).join('/');
+        const bytes=await readMedia(asset,path);
+        const update=await fetcher(base+path,{method:'PUT',headers:{apikey:key,Authorization:'Bearer '+key,'Content-Type':asset.mimeType,'x-upsert':'true'},body:bytes,redirect:'error',signal:AbortSignal.timeout(15000)});
+        if(!update.ok)throw new Error('Media ownership transfer failed');
+        await readMedia(asset,path);
+      }
+      if(media.length&&(await inventory()).length!==0) return reply(503,'deletion_unavailable');
       // Revoke refresh sessions before deleting the account; all learning rows cascade.
       const revoke=await request('/auth/v1/logout?scope=global','POST',auth);
       if(!revoke.ok) return reply(503,'deletion_unavailable');
