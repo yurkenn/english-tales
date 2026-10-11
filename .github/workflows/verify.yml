@@ -1,0 +1,56 @@
+name: Verify native release preparation
+on:
+  push:
+    branches: [master, 'codex/**']
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  repository:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python tooling/verify_repository.py
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: native-android/backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.20.0'
+          cache: npm
+          cache-dependency-path: native-android/backend/package-lock.json
+      - run: npm ci --ignore-scripts --no-fund --no-audit
+      - run: npm test
+      - run: npm run test:admin
+  android:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: native-android
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+      - run: bash gradlew :app:assembleDebug :app:assembleDebugAndroidTest :app:testDebugUnitTest :app:lintDebug
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: android-verification
+          path: |
+            native-android/app/build/reports/tests/
+            native-android/app/build/reports/lint-results-debug.*
+          retention-days: 14

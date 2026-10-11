@@ -1,28 +1,14 @@
 # English Tales
 
-## Google Play Store link to download the app
+Yeni Android uygulaması Kotlin ve Jetpack Compose ile geliştirilir.
 
-https://play.google.com/store/apps/details?id=com.yurken.englishtales
+- [Android kurulumu ve doğrulama](native-android/README.md)
+- [Yayın yol haritası](native-android/docs/STORE_RELEASE_ROADMAP.md)
+- [İçerik servisi ve panel](native-android/backend/README.md)
+- [Geri dönüş ve kontrol noktaları](native-android/docs/RELEASE_EXECUTION.md)
 
-## Introduction
+## Proje yapısı
 
-This is a project to help people learn English by reading tales.
+`native-android/` uygulama, içerik varlıkları, panel ve Supabase migration dosyalarını içerir. `tooling/` depo kontrollerini içerir. Eski React Native/Sanity sürümü Git geçmişinde korunur; aktif derlemeye katılmaz.
 
-## Screenshots
-
-<div>
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/33022e1a-7149-4a88-8819-752b45645a20" width="222" height="480" />
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/1bb6e5b5-9161-4147-898c-b74646273fbd" width="222" height="480" />
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/05b52717-ebe3-4d86-9614-df49da50f472" width="222" height="480" />
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/98243e26-1988-4c23-baf7-6a34ff3aebbb" width="222" height="480" />
-<img src="https://github.com/yurkenn/english-tales/assets/69719126/4a173b9b-95ee-479b-9f22-55b73ceca700" width="222" height="480" />
-</div>
-
-## Features && How to use
-
-1. Download the app from the Google Play Store
-2. Open the app
-3. Choose the tale you want to read
-4. Read the tale
-5. Save the tale to your favorites
-6. Share the tale with your friends whatever you like
+Yeni sürüm henüz üretime yayımlanmadı. GitHub kontrol noktaları kaynak kodunu geri getirir; kullanıcı verisi veya canlı veritabanı değişikliklerini geri almaz.
