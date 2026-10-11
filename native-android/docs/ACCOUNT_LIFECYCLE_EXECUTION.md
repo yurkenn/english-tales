@@ -46,3 +46,9 @@ Bu kapılar tamamlanmadan sürüm mağaza adayı olarak işaretlenmez. Mevcut An
 - Kayıt ve yeniden gönderim mesajları artık isteğin alındığını belirtir; e-postanın teslim edildiğini iddia etmez. Ekran, kayıt ve kurtarma için kullanılacak farklı e-posta konularını açıklar.
 - Düzeltme üretim bağlantılı geçici debug paketiyle derlendi ve ikinci emülatöre yüklendi. Yerel test bağlantısı geri yüklendikten sonra standart debug derlemesi de başarılı oldu.
 - Gerçek yeni hesap doğrulaması hâlâ bekliyor. İmzalı mağaza paketi bu metin değişiklikleri sonrası henüz yeniden üretilmedi.
+
+## 11 Ekim 22:11: gerçek üretim kayıt doğrulaması
+
+- Ayrı test adresiyle hesap oluşturuldu; kullanıcı gelen kodla uygulamada işlemin başarılı olduğunu bildirdi.
+- Üretim Auth kaydı: oluşturma 19:11:41 UTC, doğrulama ve ilk giriş 19:11:53 UTC. `email_confirmed_at` ve `last_sign_in_at` dolu; gerçek kayıt, e-posta doğrulaması ve giriş sunucuda doğrulandı.
+- Önceki yeni hesap doğrulaması engeli bu hesap için kapandı. Yanlış/süresi geçmiş/tekrar kullanılan kayıt kodları, gerçek parola değişimi, yeniden açılış ve geçici hesap silme kontrolleri bekliyor.
