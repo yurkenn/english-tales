@@ -12,7 +12,8 @@
           "photosPermission": "English Tales needs access to your photos to update your profile picture.",
           "cameraPermission": "English Tales needs access to your camera to take profile pictures."
         }
-      ]
+      ],
+      "expo-asset"
     ],
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -21,7 +22,9 @@
       "backgroundColor": "#000000",
       "show_splash_screen": false
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.yurken.englishtales",
@@ -29,7 +32,9 @@
       "infoPlist": {
         "NSPhotoLibraryUsageDescription": "English Tales needs access to your photos to update your profile picture.",
         "NSCameraUsageDescription": "English Tales needs access to your camera to take profile pictures.",
-        "UIBackgroundModes": ["fetch"]
+        "UIBackgroundModes": [
+          "fetch"
+        ]
       }
     },
     "android": {
@@ -39,7 +44,11 @@
         "backgroundColor": "#161616"
       },
       "package": "com.yurken.englishtales",
-      "permissions": ["CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"]
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

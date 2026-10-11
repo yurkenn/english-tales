@@ -1,0 +1,751 @@
+{
+  "schemaVersion": 1,
+  "words": [
+    {
+      "id": "quiet",
+      "word": "quiet",
+      "translation": "sessiz",
+      "pronunciation": "/ˈkwaɪət/",
+      "example": "The street was quiet."
+    },
+    {
+      "id": "morning",
+      "word": "morning",
+      "translation": "sabah",
+      "pronunciation": "/ˈmɔːrnɪŋ/",
+      "example": "It was a bright morning."
+    },
+    {
+      "id": "bakery",
+      "word": "bakery",
+      "translation": "fırın",
+      "pronunciation": "/ˈbeɪkəri/",
+      "example": "The bakery opened early."
+    },
+    {
+      "id": "smile",
+      "word": "smile",
+      "translation": "gülümsemek",
+      "pronunciation": "/smaɪl/",
+      "example": "She gave him a warm smile."
+    },
+    {
+      "id": "bridge",
+      "word": "bridge",
+      "translation": "köprü",
+      "pronunciation": "/brɪdʒ/",
+      "example": "They crossed the bridge."
+    },
+    {
+      "id": "river",
+      "word": "river",
+      "translation": "nehir",
+      "pronunciation": "/ˈrɪvər/",
+      "example": "The river moved slowly."
+    },
+    {
+      "id": "boat",
+      "word": "boat",
+      "translation": "tekne",
+      "pronunciation": "/boʊt/",
+      "example": "A little boat floated away."
+    },
+    {
+      "id": "wind",
+      "word": "wind",
+      "translation": "rüzgâr",
+      "pronunciation": "/wɪnd/",
+      "example": "The wind carried the boat."
+    },
+    {
+      "id": "journey",
+      "word": "journey",
+      "translation": "yolculuk",
+      "pronunciation": "/ˈdʒɜːrni/",
+      "example": "Every journey starts somewhere."
+    },
+    {
+      "id": "map",
+      "word": "map",
+      "translation": "harita",
+      "pronunciation": "/mæp/",
+      "example": "The old map showed a path."
+    },
+    {
+      "id": "forest",
+      "word": "forest",
+      "translation": "orman",
+      "pronunciation": "/ˈfɔːrɪst/",
+      "example": "The forest was full of birds."
+    },
+    {
+      "id": "discover",
+      "word": "discover",
+      "translation": "keşfetmek",
+      "pronunciation": "/dɪˈskʌvər/",
+      "example": "They hoped to discover a new place."
+    },
+    {
+      "id": "path",
+      "word": "path",
+      "translation": "patika",
+      "pronunciation": "/pæθ/",
+      "example": "A narrow path led uphill."
+    },
+    {
+      "id": "return",
+      "word": "return",
+      "translation": "dönmek",
+      "pronunciation": "/rɪˈtɜːrn/",
+      "example": "They promised to return."
+    },
+    {
+      "id": "kind",
+      "word": "kind",
+      "translation": "nazik",
+      "pronunciation": "/kaɪnd/",
+      "example": "A kind stranger helped them."
+    },
+    {
+      "id": "window",
+      "word": "window",
+      "translation": "pencere",
+      "pronunciation": "/ˈwɪndoʊ/",
+      "example": "Anna looks out of her window."
+    },
+    {
+      "id": "rain",
+      "word": "rain",
+      "translation": "yağmur",
+      "pronunciation": "/reɪn/",
+      "example": "The rain stops."
+    },
+    {
+      "id": "umbrella",
+      "word": "umbrella",
+      "translation": "şemsiye",
+      "pronunciation": "/ʌmˈbrelə/",
+      "example": "She takes her red umbrella."
+    },
+    {
+      "id": "neighbor",
+      "word": "neighbor",
+      "translation": "komşu",
+      "pronunciation": "/ˈneɪbər/",
+      "example": "Her neighbor is outside."
+    },
+    {
+      "id": "coat",
+      "word": "coat",
+      "translation": "palto",
+      "pronunciation": "/koʊt/",
+      "example": "His coat is wet."
+    },
+    {
+      "id": "slowly",
+      "word": "slowly",
+      "translation": "yavaşça",
+      "pronunciation": "/ˈsloʊli/",
+      "example": "They walk slowly."
+    },
+    {
+      "id": "heavy",
+      "word": "heavy",
+      "translation": "ağır",
+      "pronunciation": "/ˈhevi/",
+      "example": "His bag is heavy."
+    },
+    {
+      "id": "share",
+      "word": "share",
+      "translation": "paylaşmak",
+      "pronunciation": "/ʃer/",
+      "example": "They share the cake."
+    },
+    {
+      "id": "village",
+      "word": "village",
+      "translation": "köy",
+      "pronunciation": "/ˈvɪlɪdʒ/",
+      "example": "They visited a small village."
+    },
+    {
+      "id": "market",
+      "word": "market",
+      "translation": "pazar",
+      "pronunciation": "/ˈmɑːrkɪt/",
+      "example": "The market was busy."
+    },
+    {
+      "id": "ticket",
+      "word": "ticket",
+      "translation": "bilet",
+      "pronunciation": "/ˈtɪkɪt/",
+      "example": "Sam found his ticket."
+    },
+    {
+      "id": "pocket",
+      "word": "pocket",
+      "translation": "cep",
+      "pronunciation": "/ˈpɑːkɪt/",
+      "example": "He put it in his pocket."
+    },
+    {
+      "id": "station",
+      "word": "station",
+      "translation": "istasyon",
+      "pronunciation": "/ˈsteɪʃən/",
+      "example": "They hurried to the station."
+    },
+    {
+      "id": "platform",
+      "word": "platform",
+      "translation": "peron",
+      "pronunciation": "/ˈplætfɔːrm/",
+      "example": "Lily waited on the platform."
+    },
+    {
+      "id": "bench",
+      "word": "bench",
+      "translation": "bank",
+      "pronunciation": "/bentʃ/",
+      "example": "The ticket was on a bench."
+    },
+    {
+      "id": "safely",
+      "word": "safely",
+      "translation": "güvenli bir şekilde",
+      "pronunciation": "/ˈseɪfli/",
+      "example": "He put the ticket safely in his pocket."
+    },
+    {
+      "id": "attic",
+      "word": "attic",
+      "translation": "tavan arası",
+      "pronunciation": "/ˈætɪk/",
+      "example": "Nora helped clear the attic."
+    },
+    {
+      "id": "chest",
+      "word": "chest",
+      "translation": "sandık",
+      "pronunciation": "/tʃest/",
+      "example": "She found a wooden chest."
+    },
+    {
+      "id": "envelope",
+      "word": "envelope",
+      "translation": "zarf",
+      "pronunciation": "/ˈenvəloʊp/",
+      "example": "The envelope was open."
+    },
+    {
+      "id": "promise",
+      "word": "promise",
+      "translation": "söz",
+      "pronunciation": "/ˈprɑːmɪs/",
+      "example": "The letter described a promise."
+    },
+    {
+      "id": "gate",
+      "word": "gate",
+      "translation": "bahçe kapısı",
+      "pronunciation": "/ɡeɪt/",
+      "example": "They met beside the gate."
+    },
+    {
+      "id": "memory",
+      "word": "memory",
+      "translation": "anı",
+      "pronunciation": "/ˈmeməri/",
+      "example": "The garden was only a memory."
+    },
+    {
+      "id": "seeds",
+      "word": "seeds",
+      "translation": "tohumlar",
+      "pronunciation": "/siːdz/",
+      "example": "They chose seeds at the shop."
+    },
+    {
+      "id": "valuable",
+      "word": "valuable",
+      "translation": "değerli",
+      "pronunciation": "/ˈvæljuəbəl/",
+      "example": "The letter was valuable to her."
+    }
+  ],
+  "stories": [
+    {
+      "id": "quiet-morning",
+      "title": "A Quiet Morning",
+      "author": "English Tales",
+      "level": "A1",
+      "genre": "Günlük yaşam",
+      "description": "Küçük bir kasabada başlayan sıcak bir karşılaşma.",
+      "coverKey": "cover_quiet_morning",
+      "sentences": [
+        {
+          "id": "qm-1",
+          "english": "It was a quiet morning in a small town.",
+          "turkish": "Küçük bir kasabada sessiz bir sabahtı."
+        },
+        {
+          "id": "qm-2",
+          "english": "Mia walked to the bakery before school.",
+          "turkish": "Mia okuldan önce fırına yürüdü."
+        },
+        {
+          "id": "qm-3",
+          "english": "The smell of fresh bread filled the street.",
+          "turkish": "Taze ekmek kokusu sokağı doldurdu."
+        },
+        {
+          "id": "qm-4",
+          "english": "An old man stood outside and looked at the sky.",
+          "turkish": "Yaşlı bir adam dışarıda durup gökyüzüne baktı."
+        },
+        {
+          "id": "qm-5",
+          "english": "Mia gave him a smile and said hello.",
+          "turkish": "Mia ona gülümsedi ve merhaba dedi."
+        },
+        {
+          "id": "qm-6",
+          "english": "He told her that today was his birthday.",
+          "turkish": "Adam ona bugün doğum günü olduğunu söyledi."
+        },
+        {
+          "id": "qm-7",
+          "english": "Mia bought two warm rolls and shared one with him.",
+          "turkish": "Mia iki sıcak ekmek aldı ve birini onunla paylaştı."
+        },
+        {
+          "id": "qm-8",
+          "english": "They talked until the town became busy.",
+          "turkish": "Kasaba hareketlenene kadar sohbet ettiler."
+        },
+        {
+          "id": "qm-9",
+          "english": "A small act of kindness made the morning special.",
+          "turkish": "Küçük bir iyilik sabahı özel kıldı."
+        }
+      ]
+    },
+    {
+      "id": "paper-boat",
+      "title": "The Paper Boat",
+      "author": "English Tales",
+      "level": "A2",
+      "genre": "Macera",
+      "description": "Bir kâğıt teknenin nehir üzerindeki yolculuğu.",
+      "coverKey": "cover_paper_boat",
+      "sentences": [
+        {
+          "id": "pb-1",
+          "english": "Leo made a little boat from a blue piece of paper.",
+          "turkish": "Leo mavi bir kâğıttan küçük bir tekne yaptı."
+        },
+        {
+          "id": "pb-2",
+          "english": "He carried it to the river near the old bridge.",
+          "turkish": "Onu eski köprünün yakınındaki nehre götürdü."
+        },
+        {
+          "id": "pb-3",
+          "english": "A gentle wind pushed the boat across the water.",
+          "turkish": "Hafif bir rüzgâr tekneyi suyun üzerinde itti."
+        },
+        {
+          "id": "pb-4",
+          "english": "Leo ran along the path to follow it.",
+          "turkish": "Leo onu takip etmek için patika boyunca koştu."
+        },
+        {
+          "id": "pb-5",
+          "english": "The boat passed a family of ducks.",
+          "turkish": "Tekne bir ördek ailesinin yanından geçti."
+        },
+        {
+          "id": "pb-6",
+          "english": "Then it stopped beside a stone at the riverbank.",
+          "turkish": "Sonra nehir kıyısındaki bir taşın yanında durdu."
+        },
+        {
+          "id": "pb-7",
+          "english": "A girl picked it up and wrote a message inside.",
+          "turkish": "Bir kız onu aldı ve içine bir mesaj yazdı."
+        },
+        {
+          "id": "pb-8",
+          "english": "The message said, Every journey starts somewhere.",
+          "turkish": "Mesajda, Her yolculuk bir yerden başlar, yazıyordu."
+        },
+        {
+          "id": "pb-9",
+          "english": "Leo smiled and let the boat continue its journey.",
+          "turkish": "Leo gülümsedi ve teknenin yolculuğuna devam etmesine izin verdi."
+        }
+      ]
+    },
+    {
+      "id": "lost-map",
+      "title": "The Lost Map",
+      "author": "English Tales",
+      "level": "B1",
+      "genre": "Gizem",
+      "description": "Ormanda bulunan eski bir haritanın sırrı.",
+      "coverKey": "cover_lost_map",
+      "sentences": [
+        {
+          "id": "lm-1",
+          "english": "Nora found an old map inside her grandfather's desk.",
+          "turkish": "Nora dedesinin masasının içinde eski bir harita buldu."
+        },
+        {
+          "id": "lm-2",
+          "english": "A red line crossed a forest and ended at a lake.",
+          "turkish": "Kırmızı bir çizgi ormanı geçip bir gölde bitiyordu."
+        },
+        {
+          "id": "lm-3",
+          "english": "She asked her friend Sam to explore the path with her.",
+          "turkish": "Arkadaşı Sam'den patikayı birlikte keşfetmesini istedi."
+        },
+        {
+          "id": "lm-4",
+          "english": "The forest was quiet except for birds in the trees.",
+          "turkish": "Orman, ağaçlardaki kuşlar dışında sessizdi."
+        },
+        {
+          "id": "lm-5",
+          "english": "Near the lake, they discovered a wooden box.",
+          "turkish": "Gölün yakınında ahşap bir kutu keşfettiler."
+        },
+        {
+          "id": "lm-6",
+          "english": "Inside was a photograph of their families many years ago.",
+          "turkish": "İçinde ailelerinin yıllar önce çekilmiş bir fotoğrafı vardı."
+        },
+        {
+          "id": "lm-7",
+          "english": "The map was not a guide to treasure.",
+          "turkish": "Harita bir hazine rehberi değildi."
+        },
+        {
+          "id": "lm-8",
+          "english": "It was a reminder of a friendship that had lasted for years.",
+          "turkish": "Yıllardır süren bir dostluğun hatırlatıcısıydı."
+        },
+        {
+          "id": "lm-9",
+          "english": "Nora and Sam promised to return the next summer.",
+          "turkish": "Nora ve Sam sonraki yaz geri dönmeye söz verdiler."
+        }
+      ]
+    },
+    {
+      "id": "red-umbrella",
+      "title": "The Red Umbrella",
+      "author": "English Tales",
+      "level": "A1",
+      "genre": "Günlük yaşam",
+      "description": "Yağmurlu bir günde paylaşılan şemsiye yeni bir dostluğa kapı açıyor.",
+      "coverKey": "cover_red_umbrella",
+      "sentences": [
+        {
+          "id": "red-umbrella-1",
+          "english": "Anna looks out of her window.",
+          "turkish": "Anna penceresinden dışarı bakar."
+        },
+        {
+          "id": "red-umbrella-2",
+          "english": "The sky is gray, and rain falls on the street.",
+          "turkish": "Gökyüzü gridir ve sokağa yağmur yağar."
+        },
+        {
+          "id": "red-umbrella-3",
+          "english": "She needs bread and milk from the shop.",
+          "turkish": "Dükkândan ekmek ve süt alması gerekir."
+        },
+        {
+          "id": "red-umbrella-4",
+          "english": "She takes her red umbrella and opens the door.",
+          "turkish": "Kırmızı şemsiyesini alır ve kapıyı açar."
+        },
+        {
+          "id": "red-umbrella-5",
+          "english": "Her neighbor, Mrs. Green, is outside.",
+          "turkish": "Komşusu Bayan Green dışarıdadır."
+        },
+        {
+          "id": "red-umbrella-6",
+          "english": "Her coat is wet, and she looks cold.",
+          "turkish": "Paltosu ıslaktır ve üşümüş görünür."
+        },
+        {
+          "id": "red-umbrella-7",
+          "english": "Anna walks over and says hello.",
+          "turkish": "Anna yanına yürür ve merhaba der."
+        },
+        {
+          "id": "red-umbrella-8",
+          "english": "Mrs. Green needs to go to the same shop.",
+          "turkish": "Bayan Green de aynı dükkâna gitmek zorundadır."
+        },
+        {
+          "id": "red-umbrella-9",
+          "english": "Anna holds the umbrella above them both.",
+          "turkish": "Anna şemsiyeyi ikisinin de üzerinde tutar."
+        },
+        {
+          "id": "red-umbrella-10",
+          "english": "They walk slowly along the street.",
+          "turkish": "Sokak boyunca yavaşça yürürler."
+        },
+        {
+          "id": "red-umbrella-11",
+          "english": "At the shop, Anna buys bread and milk.",
+          "turkish": "Dükkânda Anna ekmek ve süt alır."
+        },
+        {
+          "id": "red-umbrella-12",
+          "english": "Mrs. Green buys apples for a cake.",
+          "turkish": "Bayan Green kek yapmak için elma alır."
+        },
+        {
+          "id": "red-umbrella-13",
+          "english": "Her bag is heavy, so Anna helps her.",
+          "turkish": "Çantası ağırdır, bu yüzden Anna ona yardım eder."
+        },
+        {
+          "id": "red-umbrella-14",
+          "english": "On the way home, the rain stops.",
+          "turkish": "Eve dönerken yağmur durur."
+        },
+        {
+          "id": "red-umbrella-15",
+          "english": "A little bird sings in a tree.",
+          "turkish": "Küçük bir kuş ağaçta öter."
+        },
+        {
+          "id": "red-umbrella-16",
+          "english": "Mrs. Green invites Anna in for tea.",
+          "turkish": "Bayan Green, Anna’yı çay içmek için içeri davet eder."
+        },
+        {
+          "id": "red-umbrella-17",
+          "english": "They sit by the window and share the cake.",
+          "turkish": "Pencerenin yanına oturur ve keki paylaşırlar."
+        },
+        {
+          "id": "red-umbrella-18",
+          "english": "Anna has a new friend and a good story to tell.",
+          "turkish": "Anna’nın yeni bir arkadaşı ve anlatacak güzel bir hikâyesi vardır."
+        }
+      ]
+    },
+    {
+      "id": "last-train",
+      "title": "The Last Train",
+      "author": "English Tales",
+      "level": "A2",
+      "genre": "Macera",
+      "description": "Kaçırılmak üzere olan bir tren, iki arkadaş için beklenmedik bir yolculuğa dönüşüyor.",
+      "coverKey": "cover_last_train",
+      "sentences": [
+        {
+          "id": "last-train-1",
+          "english": "Sam and Lily spent the afternoon in a village near the mountains.",
+          "turkish": "Sam ve Lily öğleden sonrayı dağların yakınındaki bir köyde geçirdi."
+        },
+        {
+          "id": "last-train-2",
+          "english": "They visited a market and took photos of the old houses.",
+          "turkish": "Bir pazarı gezdiler ve eski evlerin fotoğraflarını çektiler."
+        },
+        {
+          "id": "last-train-3",
+          "english": "When the sky grew dark, Lily checked her watch.",
+          "turkish": "Hava karardığında Lily saatine baktı."
+        },
+        {
+          "id": "last-train-4",
+          "english": "The last train was due in twenty minutes.",
+          "turkish": "Son trenin gelmesine yirmi dakika vardı."
+        },
+        {
+          "id": "last-train-5",
+          "english": "They hurried to the station at the end of the village.",
+          "turkish": "Köyün sonundaki istasyona aceleyle gittiler."
+        },
+        {
+          "id": "last-train-6",
+          "english": "Sam reached into his pocket, but his ticket was missing.",
+          "turkish": "Sam elini cebine attı ama bileti yerinde değildi."
+        },
+        {
+          "id": "last-train-7",
+          "english": "He remembered putting it beside his camera at the market.",
+          "turkish": "Pazarda bileti fotoğraf makinesinin yanına koyduğunu hatırladı."
+        },
+        {
+          "id": "last-train-8",
+          "english": "Lily waited on the platform while Sam ran back.",
+          "turkish": "Sam geri koşarken Lily peronda bekledi."
+        },
+        {
+          "id": "last-train-9",
+          "english": "Most of the market stalls were already closed.",
+          "turkish": "Pazardaki tezgâhların çoğu çoktan kapanmıştı."
+        },
+        {
+          "id": "last-train-10",
+          "english": "A woman was packing the last box of flowers.",
+          "turkish": "Bir kadın son çiçek kutusunu hazırlıyordu."
+        },
+        {
+          "id": "last-train-11",
+          "english": "Sam asked her about the ticket, and she pointed to a bench.",
+          "turkish": "Sam kadına bileti sordu, kadın da bir bankı işaret etti."
+        },
+        {
+          "id": "last-train-12",
+          "english": "There it was, under a small stone.",
+          "turkish": "Bilet oradaydı, küçük bir taşın altındaydı."
+        },
+        {
+          "id": "last-train-13",
+          "english": "Sam thanked the woman and ran toward the station.",
+          "turkish": "Sam kadına teşekkür etti ve istasyona doğru koştu."
+        },
+        {
+          "id": "last-train-14",
+          "english": "He could hear the train coming around the hill.",
+          "turkish": "Trenin tepenin öbür yanından geldiğini duyabiliyordu."
+        },
+        {
+          "id": "last-train-15",
+          "english": "Lily waved from the platform as he arrived.",
+          "turkish": "Sam vardığında Lily perondan el salladı."
+        },
+        {
+          "id": "last-train-16",
+          "english": "They climbed aboard just before the doors closed.",
+          "turkish": "Kapılar kapanmadan hemen önce trene bindiler."
+        },
+        {
+          "id": "last-train-17",
+          "english": "Through the window, they watched the village lights disappear.",
+          "turkish": "Pencereden köyün ışıklarının gözden kayboluşunu izlediler."
+        },
+        {
+          "id": "last-train-18",
+          "english": "Sam put the ticket safely in his pocket and finally began to laugh.",
+          "turkish": "Sam bileti güvenli bir şekilde cebine koydu ve sonunda gülmeye başladı."
+        }
+      ]
+    },
+    {
+      "id": "attic-letter",
+      "title": "The Attic Letter",
+      "author": "English Tales",
+      "level": "B1",
+      "genre": "Gizem",
+      "description": "Tavan arasında bulunan eski bir mektup, ailede yıllardır anlatılmayan bir hikâyeyi ortaya çıkarıyor.",
+      "coverKey": "cover_attic_letter",
+      "sentences": [
+        {
+          "id": "attic-letter-1",
+          "english": "While helping her grandmother clear the attic, Nora found a small wooden chest beneath a pile of blankets.",
+          "turkish": "Nora, büyükannesinin tavan arasını toplamasına yardım ederken bir battaniye yığınının altında küçük bir ahşap sandık buldu."
+        },
+        {
+          "id": "attic-letter-2",
+          "english": "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front.",
+          "turkish": "İçinde bir fotoğraf, mavi bir kurdele ve ön yüzünde isim yazmayan bir zarf vardı."
+        },
+        {
+          "id": "attic-letter-3",
+          "english": "The envelope was open, so Nora carefully unfolded the letter inside.",
+          "turkish": "Zarf açıktı; Nora içindeki mektubu dikkatle açtı."
+        },
+        {
+          "id": "attic-letter-4",
+          "english": "It described a promise to meet beside the old garden gate on the first day of spring.",
+          "turkish": "Mektupta, baharın ilk günü eski bahçe kapısının yanında buluşmak için verilmiş bir söz anlatılıyordu."
+        },
+        {
+          "id": "attic-letter-5",
+          "english": "There was no signature, only a drawing of a tiny bird in the corner.",
+          "turkish": "İmza yoktu, yalnızca köşede küçük bir kuş çizimi vardı."
+        },
+        {
+          "id": "attic-letter-6",
+          "english": "Nora showed the letter to her grandmother, who became quiet when she saw the drawing.",
+          "turkish": "Nora mektubu büyükannesine gösterdi; büyükannesi çizimi görünce sessizleşti."
+        },
+        {
+          "id": "attic-letter-7",
+          "english": "After a moment, she explained that her childhood friend used to sign every message that way.",
+          "turkish": "Bir süre sonra çocukluk arkadaşının her mesajı bu şekilde imzaladığını açıkladı."
+        },
+        {
+          "id": "attic-letter-8",
+          "english": "They had planned to create a garden together, but her friend had moved away before spring arrived.",
+          "turkish": "Birlikte bir bahçe yapmayı planlamışlardı ama arkadaşı bahar gelmeden taşınmıştı."
+        },
+        {
+          "id": "attic-letter-9",
+          "english": "Although they had kept in touch for years, the garden had remained only a memory.",
+          "turkish": "Yıllarca iletişimde kalmalarına rağmen bahçe yalnızca bir anı olarak kalmıştı."
+        },
+        {
+          "id": "attic-letter-10",
+          "english": "Nora asked whether the old gate still existed.",
+          "turkish": "Nora eski bahçe kapısının hâlâ durup durmadığını sordu."
+        },
+        {
+          "id": "attic-letter-11",
+          "english": "Her grandmother led her outside, where climbing plants almost covered a narrow wooden gate.",
+          "turkish": "Büyükannesi onu dışarı çıkardı; dar ahşap kapı neredeyse tamamen sarmaşıklarla kaplıydı."
+        },
+        {
+          "id": "attic-letter-12",
+          "english": "Beyond it was a patch of empty ground that received sunlight for most of the day.",
+          "turkish": "Kapının ardında günün büyük bölümünde güneş alan boş bir toprak parçası vardı."
+        },
+        {
+          "id": "attic-letter-13",
+          "english": "Nora suggested planting a few flowers there before sending a photograph to the old friend.",
+          "turkish": "Nora eski arkadaşa bir fotoğraf göndermeden önce oraya birkaç çiçek dikmeyi önerdi."
+        },
+        {
+          "id": "attic-letter-14",
+          "english": "Over the following week, they cleared the ground and chose seeds at the local shop.",
+          "turkish": "Sonraki hafta boyunca toprağı temizlediler ve mahalledeki dükkândan tohum seçtiler."
+        },
+        {
+          "id": "attic-letter-15",
+          "english": "Her grandmother wrote a new letter and placed the original blue ribbon around it.",
+          "turkish": "Büyükannesi yeni bir mektup yazdı ve eski mavi kurdeleyi etrafına bağladı."
+        },
+        {
+          "id": "attic-letter-16",
+          "english": "A reply arrived a few days later, ending with the familiar drawing of a bird.",
+          "turkish": "Birkaç gün sonra bir cevap geldi; mektup tanıdık kuş çizimiyle bitiyordu."
+        },
+        {
+          "id": "attic-letter-17",
+          "english": "Her friend promised to visit when the first flowers opened.",
+          "turkish": "Arkadaşı ilk çiçekler açtığında ziyarete geleceğine söz verdi."
+        },
+        {
+          "id": "attic-letter-18",
+          "english": "Nora realized that the chest had held something more valuable than a secret: a chance to begin again.",
+          "turkish": "Nora sandığın bir sırdan daha değerli bir şey sakladığını fark etti: yeniden başlamak için bir fırsat."
+        }
+      ]
+    }
+  ]
+}

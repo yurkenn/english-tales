@@ -1,0 +1,55 @@
+package com.yurken.englishtales.ui
+
+import androidx.compose.foundation.*
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
+import com.yurken.englishtales.data.LearningSnapshot
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.yurken.englishtales.data.WordInfo
+
+@Composable
+fun FlashcardGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padding: PaddingValues,onWordReviewed: (String,Boolean)->Unit,onLessonComplete: (Int)->Unit,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot) {
+    var index by rememberSaveable(sessionId) {mutableIntStateOf(0)}
+    var revealed by rememberSaveable(sessionId) {mutableStateOf(false)}
+    var remembered by rememberSaveable(sessionId) {mutableIntStateOf(0)}
+    var finished by rememberSaveable(sessionId) {mutableStateOf(false)}
+    val context=LocalContext.current
+    val narrator=remember(context) {Narrator(context)}
+    DisposableEffect(narrator) {onDispose {narrator.close()}}
+    if(finished) {GameResult("${words.size} kelimeden $remembered tanesini hatırladın.",remembered*5,padding,onExit,onRestart,snapshot);return}
+    val word=words[index]
+    fun next(correct: Boolean) {
+        if(word.id in savedIds) onWordReviewed(word.id,correct)
+        if(correct) remembered++
+        if(index==words.lastIndex) {finished=true;onLessonComplete(remembered)} else {index++;revealed=false}
+    }
+    GameViewport(padding,550.dp) {
+        Box(Modifier.align(Alignment.Start)) { ReferenceIconButton("back","Alıştırmadan çık",onExit) }
+        Spacer(Modifier.weight(1f))
+        Column(Modifier.fillMaxWidth().height(360.dp).border(2.dp,TaleMint,RoundedCornerShape(10.dp)).clickable {revealed=true}.padding(24.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
+            Text(word.word,fontSize=23.sp,fontWeight=FontWeight.Bold)
+            Text(word.pronunciation,fontSize=13.sp,color=TaleMuted,modifier=Modifier.padding(vertical=10.dp))
+            Text(if(revealed) word.translation else "Anlamı görmek için dokun",fontSize=if(revealed) 20.sp else 13.sp,color=if(revealed) TaleInk else TaleMuted)
+            Box(Modifier.padding(top=20.dp).size(42.dp).background(TaleBlue,CircleShape).clickable {narrator.speak(word.word)},contentAlignment=Alignment.Center) {ReferenceIcon("volume",Color.White,Modifier.size(21.dp))}
+        }
+        Spacer(Modifier.weight(1f))
+        Row(horizontalArrangement=Arrangement.spacedBy(7.dp)) {words.forEachIndexed { i,_ -> Box(Modifier.size(5.dp).background(if(i==index) TaleBlue else TaleLine,CircleShape))}}
+        Spacer(Modifier.height(24.dp))
+        if(revealed) {
+            Row(horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+                OutlinedButton(onClick={next(false)},modifier=Modifier.weight(1f)) {Text("Tekrar et")}
+                Button(onClick={next(true)},modifier=Modifier.weight(1f)) {Text("Hatırladım")}
+            }
+        } else Button(onClick={revealed=true},modifier=Modifier.fillMaxWidth()) {Text("Öğren")}
+    }
+}

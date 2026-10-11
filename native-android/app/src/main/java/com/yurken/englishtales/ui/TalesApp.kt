@@ -1,0 +1,110 @@
+package com.yurken.englishtales.ui
+
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavType
+import androidx.navigation.compose.*
+import androidx.navigation.navArgument
+import com.yurken.englishtales.data.*
+import com.yurken.englishtales.BuildConfig
+import kotlinx.coroutines.launch
+
+@Composable
+fun TalesApp(viewModel: LearningViewModel = viewModel(),dailyPlanRequest: Long=0L) {
+    val account by viewModel.account.collectAsState()
+    key(account.scope) {TalesAccountApp(viewModel,dailyPlanRequest)}
+}
+
+@Composable
+private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long) {
+    val account by viewModel.account.collectAsState()
+    val content: ContentViewModel = viewModel()
+    val contentReady by content.ready.collectAsState()
+    val snapshot by viewModel.state.collectAsState()
+    val ready by viewModel.ready.collectAsState()
+    var selectedTab by rememberSaveable { mutableIntStateOf(0) }
+    var launchId by rememberSaveable {mutableStateOf<String?>(null)}
+    var launchWords by rememberSaveable {mutableStateOf(emptyList<String>())}
+    val lifecycle=androidx.lifecycle.compose.LocalLifecycleOwner.current.lifecycle
+    val context=androidx.compose.ui.platform.LocalContext.current
+    val uiScope=rememberCoroutineScope()
+    fun google() {uiScope.launch {viewModel.signInGoogle {GoogleSignIn.acquire(context,BuildConfig.GOOGLE_WEB_CLIENT_ID)}}}
+    DisposableEffect(lifecycle) {
+        val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> if(event==androidx.lifecycle.Lifecycle.Event.ON_RESUME) {viewModel.refresh();viewModel.verifyAccount();LearningReminders.schedule(context);if(content.ready.value) content.refresh()}}
+        lifecycle.addObserver(observer)
+        onDispose {lifecycle.removeObserver(observer)}
+    }
+    if(!ready || !contentReady || snapshot.ownerId!=(account.userId?:"guest")) { Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) { CircularProgressIndicator() }; return }
+    val startDestination=rememberSaveable {if(snapshot.onboardingDone) "main" else if(account.userId==null) "welcome" else "onboarding"}
+    val nav=rememberNavController()
+    fun dailyPlan() {selectedTab=0;nav.popBackStack("main",false)}
+    fun practice(ids: List<String>) {launchWords=ids;launchId=java.util.UUID.randomUUID().toString();selectedTab=2;nav.popBackStack("main",false)}
+    var handledRequest by rememberSaveable {mutableLongStateOf(0L)}
+    LaunchedEffect(dailyPlanRequest) {
+        if(dailyPlanRequest>0 && dailyPlanRequest!=handledRequest && snapshot.onboardingDone) {dailyPlan();handledRequest=dailyPlanRequest}
+    }
+    NavHost(navController=nav,startDestination=startDestination) {
+        composable("welcome") {WelcomeScreen(account,onGuest={nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}},onEmail={nav.navigate("account")},onGoogle=::google)}
+        composable("onboarding") { OnboardingScreen { level,genre,goal -> viewModel.completeOnboarding(level,genre,goal); nav.navigate("main") { popUpTo("onboarding") { inclusive=true } };LearningContent.recommendedStory(level,genre)?.let {nav.navigate("reader/${it.id}")} } }
+        composable("main") {
+            Column(Modifier.fillMaxSize()) {
+                if(selectedTab==1) ContentConnectionBar(content,onDownloads={nav.navigate("downloads")})
+                Box(Modifier.weight(1f)) {
+                    MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.readingPositions[id]?.revisionId?.takeIf {LearningContent.revision(it)!=null}; nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession)
+                }
+            }
+        }
+        composable("story/{storyId}",arguments=listOf(navArgument("storyId") { type=NavType.StringType })) { entry ->
+            LearningContent.storyById[entry.arguments?.getString("storyId")]?.let { story ->
+                StoryDetailScreen(story,snapshot.progressFor(story),onBack={nav.popBackStack()},onRead={nav.navigate("reader/${story.id}")},onListen={nav.navigate("reader/${story.id}?listen=true")},onTabSelected={selectedTab=it; nav.popBackStack("main",false)},content=content)
+            }
+        }
+        composable("reader/{storyId}?listen={listen}&revision={revision}",arguments=listOf(navArgument("storyId") {type=NavType.StringType},navArgument("listen") {type=NavType.BoolType;defaultValue=false},navArgument("revision") {type=NavType.StringType;defaultValue=""})) { entry ->
+            val storyId = entry.arguments?.getString("storyId")
+            val retainedRevision = entry.savedStateHandle.get<String>("reader_revision") ?: entry.arguments?.getString("revision")?.takeIf {it.isNotBlank()}
+            val initial = retainedRevision?.let(LearningContent::revision) ?: LearningContent.storyById[storyId]
+            var selectedStory by remember(entry) { mutableStateOf(initial?.takeIf { it.sentences.isNotEmpty() }) }
+            LaunchedEffect(entry) { if (selectedStory == null && initial != null) content.download(initial) { selectedStory = it } }
+            if (selectedStory == null) {
+                ContentDownloadScreen(content,initial,onBack={nav.popBackStack()},onReady={selectedStory=it})
+            }
+            selectedStory?.let { story ->
+                LaunchedEffect(story.revisionId) {entry.savedStateHandle["reader_revision"]=story.revisionId}
+                DisposableEffect(story) { LearningContent.pin(story); onDispose { LearningContent.unpin(story) } }
+                val sessionId=rememberSaveable(story.revisionId) {java.util.UUID.randomUUID().toString()}
+                LaunchedEffect(sessionId) {viewModel.startReading(story.id);viewModel.beginSession(sessionId,"reading",0,story.id)}
+                fun exit() {viewModel.abandonSession(sessionId);nav.popBackStack()}
+                androidx.activity.compose.BackHandler {exit()}
+                ReaderScreen(story,snapshot,onBack={exit()},onSaveWord=viewModel::toggleWord,onProgress={percent,sentence ->viewModel.updateProgress(story.id,percent,sentence)},autoListen=entry.arguments?.getBoolean("listen")==true,onComplete={millis ->viewModel.completeReading(story.id,sessionId,millis);nav.navigate("reading-result/${story.id}?revision=${story.revisionId}") {popUpTo(entry.destination.id) {inclusive=true}}},onHintDismiss={viewModel.dismissReaderHint()},sessionId=sessionId,onCheckpoint=viewModel::checkpointSession)
+            }
+        }
+        composable("reading-result/{storyId}?revision={revision}",arguments=listOf(navArgument("storyId") {type=NavType.StringType},navArgument("revision") {type=NavType.StringType;defaultValue=""})) {entry ->
+            androidx.activity.compose.BackHandler {dailyPlan()}
+            (entry.arguments?.getString("revision")?.let(LearningContent::revision) ?: LearningContent.storyById[entry.arguments?.getString("storyId")])?.let {story -> ReadingResultScreen(story,snapshot,onPractice={ids -> viewModel.saveWords(ids);practice(ids)},onDailyPlan=::dailyPlan) }
+        }
+        composable("settings") {LearningSettingsScreen(snapshot,onBack={nav.popBackStack()},onSave={level,genre,goal,name ->viewModel.updatePreferences(level,genre,goal,name);nav.popBackStack()})}
+        composable("downloads") {ContentDownloadsScreen(content,onBack={nav.popBackStack()})}
+        composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onGuest={
+            if(snapshot.onboardingDone) nav.popBackStack() else nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}
+        })}
+        composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::toggleWord) }
+    }
+}
+
+@Composable
+private fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit) {
+    var practicing by remember { mutableStateOf(false) }
+    Scaffold(containerColor=TaleBackground,bottomBar={ if(!practicing) TalesBottomBar(selectedTab,onTabSelected) }) { padding ->
+        when(selectedTab) {
+            0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice)
+            1 -> CatalogScreen(snapshot,onOpenStory,padding)
+            2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan)
+            else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)
+        }
+    }
+}

@@ -1,0 +1,23 @@
+-- Test-only Auth/Storage contracts. Hosted Auth, HTTP APIs, files and JWT signature
+-- verification are not emulated. Never apply this fixture to a Supabase project.
+create role anon nologin;
+create role authenticated nologin;
+create schema auth;
+create table auth.users(id uuid primary key, raw_user_meta_data jsonb not null default '{}');
+create function auth.uid() returns uuid language sql stable as $$
+    select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid;
+$$;
+grant usage on schema auth to anon, authenticated;
+grant execute on function auth.uid() to anon, authenticated;
+create schema storage;
+create table storage.buckets(id text primary key,name text not null,public boolean not null,file_size_limit bigint,allowed_mime_types text[]);
+create table storage.objects(id uuid primary key default gen_random_uuid(),bucket_id text references storage.buckets(id),name text not null,metadata jsonb not null default '{}',unique(bucket_id,name));
+alter table storage.objects enable row level security;
+grant usage on schema storage to anon,authenticated;
+grant select on storage.objects to anon;
+grant select,insert,update,delete on storage.objects to authenticated;
+insert into auth.users(id) values
+ ('11111111-1111-4111-8111-111111111111'),
+ ('22222222-2222-4222-8222-222222222222'),
+ ('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'),
+ ('bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb');

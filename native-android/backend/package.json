@@ -1,0 +1,14 @@
+{
+  "name": "english-tales-backend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "admin": "node --env-file-if-exists=.env.admin admin/server.mjs",
+    "test:admin": "node tools/verify-admin-http.mjs",
+    "catalog:export": "node tools/export-catalog.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.3.14"
+  }
+}
