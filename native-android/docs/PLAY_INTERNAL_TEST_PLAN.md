@@ -29,3 +29,11 @@ Mevcut iki emülatörde kişisel oturumlar var; debug ve Play sertifikaları far
 Yeni cihaz emulator-5558 üzerinde açıldı: sys.boot_completed=1, PAGE_SIZE=16384 ve English Tales paketi henüz kurulu değil. Play Store başlatıldı; hesabın eklenmesi, test katılımı, Play kurulumu ve uygulama Google girişinin kullanıcı tarafından tamamlanması istendi. Eski iki cihazın verileri temizlenmedi. Pre-launch report ekranında henüz rapor yok; ayarda test kimlik bilgileri sağlanmıyor. Misafir akışı test edilebilir; kişisel yayıncı parolası Google'ın crawler'ına verilmedi.
 
 Test katılım adresi: `https://play.google.com/apps/internaltest/4701713728242169635`. Bu adres herkese erişim vermez; seçili Google tester hesabı gerekir.
+
+## İlk mağaza kurulumu — 11 Ekim 23:27 TRT
+
+Kullanıcı teste katıldığını ancak eski uygulamayı aldığını bildirdi. emulator-5558 paket bilgisi Play Store kurulumunu doğruluyor: versionCode=46, versionName=1.1.0, minSdk=24, targetSdk=36; kurulum zamanı 20:21:08 UTC. Yeni 47 sürümü Console'da 23:11 TRT yayına çıkmış görünüyor. Güncel Console kontrolünde kanal Active, 47 Available to internal testers ve seçili tek kişilik listede doğru tester hesabı kayıtlı. Sunucu tarafında kanal veya tester kaydı hatası saptanmadı; cihazdaki aktif Play hesabı ve test katılım hesabının eşleşmesi henüz kullanıcı tarafından doğrulanmadı. Dağıtım gecikmesi olasılık, doğrulanmış kök neden değil.
+
+Test sürümü aynı paket ve mağaza sayfasını kullanır; ayrı uygulama aranmaz. Önce hesap eşleşmesi kontrol edilir, aynı sayfada Güncelle seçeneği beklenir. Eski 46 silinmez: 46→47 güncelleme kontrolü için korunur. Yerel APK yüklemek Play imzasıyla gerçek giriş testinin yerine geçmez. Mağazadan 47 kurulumu ve Google giriş/yeniden açılış kanıtı hâlâ açık.
+
+Gerçek 46 paketinde minimum Android API 24 görüldü. Önceki dahili 4 ile cihaz kaybı uyarısı, üretim 46'nın minimum API'sinin yükseltildiği anlamına gelmez.
