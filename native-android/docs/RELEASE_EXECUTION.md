@@ -80,3 +80,7 @@ Kullanıcının oluşturduğu Frankfurt FREE üretim projesine şema ve taslak k
 106 cihaz testi, 46 backend testi, 11 birim testi, debug/release Lint ve içerik panelinin HTTP kontrolü başarılı. Sürüm 47 / 2.0.0 imza ve 16 KiB kontrollerinden geçti. APK SHA256: `e5ce54921a2f3e9e45766d3a02b738c347924263036aaa759e691f81c3dc292e`. AAB SHA256: `11f656b17c9365573db653f2263909ae3631f35982d1d223004e7afdff4feccd`. Paket hâlâ test hizmeti yapılandırmasını kullanır; üretim mağaza adayı değildir.
 
 Brevo Free kayıt ekranı kullanıcıya hazırlandı, Türkçe/İngilizce kod şablonları kaydedildi. SMTP bağlantısı ve teslimat bekleniyor. Diğer açık hesap kapıları ACCOUNT_LIFECYCLE_EXECUTION.md, gönderim adımları EMAIL_DELIVERY_SETUP.md içinde izlenir.
+
+## Gerçek SMTP teslimatı — 11 Ekim 2026
+
+Hesap sahibi Brevo anahtarını üretim Supabase'e bağladı. İki OTP şablonu üretime kaydedildi ve önizlemeleri doğrulandı. Gerçek kurtarma isteği HTTP 200 döndü; Brevo saat 21:46 (İstanbul) Gmail'e Delivered kaydı gösterdi. Alan adı olmayan gönderen Brevo alanına çevrildi. SMTP teslimatı kanıtlandı; uygulama içindeki gerçek doğrulama/parola değiştirme testi ve diğer mağaza kapıları devam ediyor.

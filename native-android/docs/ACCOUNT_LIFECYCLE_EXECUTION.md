@@ -31,7 +31,7 @@ Son beş dakika içinde açılmış, hâlâ geçerli bir oturum şartı kondu. G
 
 ## Açık yayına geçiş kapıları
 
-1. Brevo ücretsiz SMTP bağlantısı ve gerçek doğrulama/kurtarma e-postalarının teslimatı. Şablonlar ve kurulum [EMAIL_DELIVERY_SETUP.md](EMAIL_DELIVERY_SETUP.md) içinde.
+1. Brevo ücretsiz SMTP bağlantısı ve Gmail'e gerçek kurtarma e-postası teslimatı tamamlandı. Yeni hesap doğrulaması, ikinci posta sağlayıcısı ve uygulama içinde gerçek parola değiştirme kontrolü bekliyor. Şablonlar ve kanıt [EMAIL_DELIVERY_SETUP.md](EMAIL_DELIVERY_SETUP.md) içinde.
 2. Üretim Google sağlayıcısı ve üretim hesabıyla gerçek giriş.
 3. Yayıncının sahip olduğu Storage dosyaları için silme öncesi sahiplik yönetimi. Supabase kullanıcı silmeyi dosya sahipliği nedeniyle reddedebilir; yayınlanmış hikâye kapakları silinmemeli.
 4. Geçici gerçek hesap ile yeniden giriş, silme, eski oturumun reddi ve yerel temizlik doğrulaması.

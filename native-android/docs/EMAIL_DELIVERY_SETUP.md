@@ -4,8 +4,11 @@
 
 Alan adı ve mevcut SMTP hesabı olmadığı için Brevo Free kurulumuna başlandı.
 Ücretsiz plan günlük 300 gönderim ve transactional SMTP içerir; ücretli plana geçilmez.
-Kayıt ekranı açıldı; yeni parola ve hizmet koşullarını hesap sahibi tamamlar.
-Henüz SMTP bağlantısı, teslimat veya gerçek doğrulama akışı başarılı sayılmıyor.
+Hesap sahibi kayıt, kimlik doğrulaması ve SMTP anahtarı bağlantısını tamamladı.
+Üretim Supabase SMTP bağlantısı kaydedildi; doğrulama ve kurtarma kodu şablonları üretime uygulandı.
+Gerçek `/auth/v1/recover` isteği 200 döndü. Brevo, 11 Ekim 2026 saat 21:46 (İstanbul) Gmail alıcısına **Delivered** kaydı gösterdi.
+Gönderen adresi `oguz.yurken@12431337.brevosend.com` olarak yeniden yazıldı. Gizli SMTP anahtarı okunmadı veya depoya kaydedilmedi.
+Bu kanıt SMTP ve bir Gmail teslimatını kapsar; yeni hesap doğrulaması ve uygulama içinde gerçek parola değişikliği henüz tamamlandı sayılmıyor.
 
 ## Bağlantı
 
