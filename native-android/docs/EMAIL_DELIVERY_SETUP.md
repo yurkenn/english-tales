@@ -37,6 +37,8 @@ Bu kanıt SMTP ve bir Gmail teslimatını kapsar; yeni hesap doğrulaması ve uy
 
 11 Ekim 22:11'de ayrı test hesabı oluşturuldu ve kullanıcı yeni e-postadaki kodla uygulamada giriş yaptı. Üretim Auth kaydında 19:11:41 UTC gönderim, 19:11:53 UTC doğrulama ve ilk giriş görüldü. Bu hesap için gerçek doğrulama akışı tamamlandı; ikinci posta sağlayıcısı ve gerçek parola değiştirme kontrolleri bekliyor.
 
+11 Ekim 22:15'te gerçek parola kurtarma da doğrulandı: kurtarma isteği, kod doğrulaması, kullanıcı güncellemesi, geçici oturumun kapatılması ve test adresiyle yeni parola girişi başarılı HTTP durumlarıyla sunucuda görüldü. Kullanıcı uygulamayı yeniden açınca akışın çalıştığını bildirdi. İkinci posta sağlayıcısı, kimlik doğrulama e-postalarında izleme ayarı ve kayıt kodlarının olumsuz senaryoları hâlâ bekliyor.
+
 1. Ücretsiz hesabın ve gönderenin doğrulanması; transactional gönderimin aktif olması.
 2. İki farklı posta sağlayıcısına teslimat, gerçek From adresi ve spam klasörü kontrolü.
 3. Yeni hesabın doğru kodla doğrulanması; yanlış, süresi geçmiş ve tekrar kullanılan kodun reddedilmesi.

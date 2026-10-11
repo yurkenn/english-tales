@@ -52,3 +52,10 @@ Bu kapılar tamamlanmadan sürüm mağaza adayı olarak işaretlenmez. Mevcut An
 - Ayrı test adresiyle hesap oluşturuldu; kullanıcı gelen kodla uygulamada işlemin başarılı olduğunu bildirdi.
 - Üretim Auth kaydı: oluşturma 19:11:41 UTC, doğrulama ve ilk giriş 19:11:53 UTC. `email_confirmed_at` ve `last_sign_in_at` dolu; gerçek kayıt, e-posta doğrulaması ve giriş sunucuda doğrulandı.
 - Önceki yeni hesap doğrulaması engeli bu hesap için kapandı. Yanlış/süresi geçmiş/tekrar kullanılan kayıt kodları, gerçek parola değişimi, yeniden açılış ve geçici hesap silme kontrolleri bekliyor.
+
+## 11 Ekim 22:15: gerçek parola kurtarma
+
+- Kullanıcı yeni parolayla giriş ve uygulamayı yeniden açma kontrolünün çalıştığını bildirdi. Yeniden açılış sonucu kullanıcı gözlemidir; bağımsız cihaz incelemesi yapılmadı.
+- Üretim Auth günlüklerinde 19:14:47 UTC kurtarma isteği 200, 19:15:02 UTC kod doğrulaması 200 ve `user_modified` 200, geçici oturum çıkışı 204; 19:15:16 UTC test adresiyle parola girişi 200 görüldü.
+- Aynı parola isteği 422 / `same_password`, geçersiz veya tüketilmiş kurtarma kodu 403 / `otp_expired`, sık gönderim 429 / `over_email_send_rate_limit` ile reddedildi. Bunlar gerçek recovery akışına aittir; kayıt kodunun tüm olumsuz durumlarını doğrulamaz.
+- Gerçek parola değiştirme kapısı bu hesap için kapandı. Kontrollü hesap silme, eski oturumun reddi ve yerel temizlik bekliyor.
