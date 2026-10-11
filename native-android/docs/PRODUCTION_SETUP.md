@@ -14,6 +14,6 @@ Altı hikâye ve 81 cümle sabit kaynak kimlikleriyle yüklendi. Kullanıcının
 
 - Play imzalı üretim Google testi. Native üretim Google girişi, yeni hesap doğrulaması, parola kurtarma/değiştirme ve geçici hesap silme gerçek işlemlerle doğrulandı.
 - Yayıncı medya sahipliği yönetimi; dolu geçmişin silinmesi ve eski tokenla gerçek olumsuz erişim kontrolü.
-- Uygulamanın üretim bağlantısı; yeni imzalı aday ve Play kabul testleri.
+- Play kabul testleri. Release üretim bağlantısını zorunlu kullanır; APK/AAB derlenmiş adres, imza ve 16 KB kontrolleri geçti. Ayrıntı PRODUCTION_PACKAGE_PLAN.md içinde.
 
 Üretim verisi yalnızca kaynak kodu etiketine dönerek geri alınamaz. FREE proje için otomatik yedek varmış gibi kabul edilmez; geri yükleme kanıtı ayrıca gereklidir.

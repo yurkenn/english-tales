@@ -18,4 +18,6 @@ Play'den indirilen genel uygulama sertifikası SHA-1: `4C:EE:8C:1D:40:26:8C:97:F
 
 SHA değerleri genel sertifika bilgisidir; özel anahtar değildir. Mağaza imzasıyla Google OAuth native istemcisinin mevcut kaydı doğrulandı. Debug girişin başarılı olması mağaza imzalı paket testinin yerine geçmez.
 
-Console'a yeni paket yüklenmedi; mağaza açıklaması/iletişim veya yayın durumu değiştirilmedi.
+Console'a yeni paket yüklenmedi; mağaza açıklaması/iletişim veya yayın durumu değiştirilmedi. Gizlilik adresi `https://englishtales-app.web.app/privacy` olarak kaydedildi; Console değişikliğin kaydedildiğini ve yayın genel bakışından incelemeye gönderilmesi gerektiğini gösterdi. Henüz incelemeye gönderilmedi.
+
+Sonraki kontrolde en yüksek kod tekrar 46 görüldü. Mevcut sürüm için açık politika sorunu ve tamamlanması beklenen beyan bulunmuyor; bu, yeni native sürümün incelenmiş olduğu anlamına gelmez. Eski veri beyanı yeni veri davranışına göre düzenleniyor.

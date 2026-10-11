@@ -13,6 +13,11 @@ val contentSettings = Properties().apply {
 }
 fun contentSetting(name: String): String = contentSettings.getProperty(name, "")
     .replace("\\", "\\\\").replace("\"", "\\\"")
+val productionSettings = Properties().apply {
+    rootProject.file("config/production.properties").inputStream().use { load(it) }
+}
+fun productionSetting(name: String): String = productionSettings.getProperty(name, "")
+    .replace("\\", "\\\\").replace("\"", "\\\"")
 val releaseSigning = Properties().apply {
     rootProject.file("signing.properties").takeIf {it.exists()}?.inputStream()?.use {load(it)}
 }
@@ -23,8 +28,8 @@ if(releaseRequested) {
         "Release signing is missing. Configure the private signing.properties file; debug signing is never used for release."
     }
     require(rootProject.file(releaseSigning.getProperty("storeFile")).isFile) {"Release keystore is missing"}
-    require(contentSettings.getProperty("SUPABASE_URL","").startsWith("https://") && contentSettings.getProperty("SUPABASE_PUBLISHABLE_KEY","").startsWith("sb_publishable_") && contentSettings.getProperty("GOOGLE_WEB_CLIENT_ID","").endsWith(".apps.googleusercontent.com")) {
-        "Release service settings are missing or invalid"
+    require(productionSettings.getProperty("SUPABASE_URL","") == "https://gtuangjukckpuerczfxd.supabase.co" && productionSettings.getProperty("SUPABASE_PUBLISHABLE_KEY","").startsWith("sb_publishable_") && productionSettings.getProperty("GOOGLE_WEB_CLIENT_ID","").endsWith(".apps.googleusercontent.com")) {
+        "Release must use the verified production service settings"
     }
 }
 
@@ -60,6 +65,10 @@ android {
     }
     buildTypes {
         release {
+            // A local debug/test configuration must never leak into a store package.
+            buildConfigField("String", "SUPABASE_URL", "\"${productionSetting("SUPABASE_URL")}\"")
+            buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${productionSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
+            buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${productionSetting("GOOGLE_WEB_CLIENT_ID")}\"")
             signingConfig=signingConfigs.findByName("upload")
             isMinifyEnabled = true
             isShrinkResources = true
