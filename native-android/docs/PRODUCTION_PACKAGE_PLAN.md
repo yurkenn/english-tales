@@ -21,4 +21,4 @@ Release APK/AAB ve Lint başarılı. İki paketin derlenmiş DEX dosyalarında �
 
 - APK SHA256: `3951afa2dc89516f26a40903b032e6220405e0c5d807f2690a2a55eafcda5662`
 - AAB SHA256: `1cba21d75b04bfe7e2ad33f5b0edd60d1f4dc3829e996a59f9ecdf897bc2a2df`
-- Sürüm: 47 / 2.0.0; Play'e henüz yüklenmedi.
+- Sürüm: 47 / 2.0.0; Play tarafından kabul edildi ve tek hesaplı dahili testte yayımlandı. Üretime yayımlanmadı; son ikonlu paket daha yüksek sürüm koduyla oluşturulacak.

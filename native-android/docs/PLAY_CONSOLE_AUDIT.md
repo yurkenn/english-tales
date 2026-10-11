@@ -21,3 +21,5 @@ SHA değerleri genel sertifika bilgisidir; özel anahtar değildir. Mağaza imza
 Console'a yeni paket yüklenmedi; mağaza açıklaması/iletişim veya yayın durumu değiştirilmedi. Gizlilik adresi `https://englishtales-app.web.app/privacy` olarak kaydedildi; Console değişikliğin kaydedildiğini ve yayın genel bakışından incelemeye gönderilmesi gerektiğini gösterdi. Henüz incelemeye gönderilmedi.
 
 Sonraki kontrolde en yüksek kod tekrar 46 görüldü. Mevcut sürüm için açık politika sorunu ve tamamlanması beklenen beyan bulunmuyor; bu, yeni native sürümün incelenmiş olduğu anlamına gelmez. Eski veri beyanı yeni veri davranışına göre düzenleniyor.
+
+11 Ekim 23:10 sonrası: üretim bağlantılı native 47 / 2.0.0 AAB Play'e yüklendi, beş dilde notla dahili testte yayımlandı. Kanal Active ve Available to internal testers gösteriyor. Eski 26 kişilik liste silinmeden kanal seçimi kaldırıldı; yalnızca uygulama sahibinin üretim Google hesabını içeren tek kişilik liste seçildi. Herkese açık üretim sürümü hâlâ 46. Native 47'nin Play imzasıyla gerçek kurulumu ve Google girişi bekleniyor. Minimum API değişikliği ve native sembol uyarıları PLAY_INTERNAL_TEST_PLAN.md dosyasında kayıtlı.
