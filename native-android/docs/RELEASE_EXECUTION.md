@@ -14,7 +14,15 @@
 
 İlk kontrol noktası: `checkpoint/native-local-transfer-20261011` (`b1f0bbd`), çalışan native uygulama/panel ve doğrulanmış yerel misafir aktarımı. 11 birim + 45 cihaz testi; 0 Lint hatası.
 
-İkinci kontrol noktası: `checkpoint/native-cleanup-ci-20261011` (`4452172`), eski yığının arşivlenmesi, yeni README ve GitHub Actions. Yerelde 35 servis/istemci testi, panel HTTP kontrolü ve release küçültme derlemesi geçti. İlk GitHub çalışmasında depo/servis başarılı; Android SDK kurucusu kaldırılmış `tools` paketini aradığı için başarısız oldu. Güncel kurucu ve açık paket listesiyle düzeltme uygulanıyor; yeşil sonuç görülmeden CI kapısı tamamlandı sayılmaz.
+İkinci kontrol noktası: `checkpoint/native-cleanup-ci-20261011` (`4452172`), eski yığının arşivlenmesi, yeni README ve GitHub Actions. Yerelde 35 servis/istemci testi, panel HTTP kontrolü ve release küçültme derlemesi geçti. İlk GitHub çalışmasındaki kaldırılmış SDK paketi sorunu `fb30a7a` ile düzeltildi. [38131794441](https://github.com/yurkenn/english-tales/actions/runs/38131794441) çalışmasında depo, servis ve Android kontrollerinin üçü de başarılı.
+
+## İmzalı paket aşaması
+
+Mevcut EAS yükleme anahtarı Play sertifikasıyla eşleşti. Sürüm 47 / 2.0.0 APK ve AAB, küçültme ve kaynak daraltmayla derlendi. APK sertifikası, AAB imzası ve APK ZIP 16 KB hizalaması doğrulandı. Özel imza dosyaları Git dışında tutulur; release görevi eksik imza veya servis ayarıyla durur.
+
+**Yayın engeli:** `graphics-path` 1.0.1 ve güncel kararlı 1.1.0 içindeki ARM64/X86_64 RELRO segmentleri sıkı 16 KB kontrolünü geçmiyor. `tooling/verify_release.py` bulguları yerel `app/build/outputs/release-verification.json` dosyasına yazar ve başarısız çıkış verir. [Android'in kontrol yöntemi](https://developer.android.com/guide/practices/page-sizes#check-relro) uygulanır; ZIP hizalamasının başarılı olması bu engeli kapatmaz. Uygun kütüphane/derleme çözümü ve gerçek 16 KB ortam testi tamamlanmalı.
+
+Bu paket test Supabase projesine bağlı teknik adaydır; üretim için tamamlanmış sayılmaz. Play tarafından üretilen APK'lar, eski 46 sürümü üzerine güncelleme ve mağaza imzasıyla Google girişi henüz doğrulanmadı.
 
 ## Temizlik analizi
 

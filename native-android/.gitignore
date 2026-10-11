@@ -4,6 +4,7 @@ build/
 **/build/
 local.properties
 supabase.properties
+signing.properties
 *.iml
 *.jks
 *.keystore

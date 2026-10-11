@@ -12,7 +12,9 @@
 - Mağazada kayıtlı destek e-postası: `oguz.yurken@gmail.com`.
 - Mağazada kayıtlı web sitesi: `https://englishtales-app.web.app`.
 
-Yerel eski Android klasörü, Downloads ve Masaüstü taramasında yalnızca debug keystore bulundu. Bu dosya mağazanın upload sertifikası değildir. EAS'ta saklanan eski yükleme anahtarı ayrıca araştırılmalı; anahtar sıfırlama veya yeni anahtar oluşturma yapılmadı.
+Expo `yurken / english-tales` projesindeki mevcut yükleme anahtarı indirildi. Sertifikası yukarıdaki Play upload SHA-1 değeriyle eşleşiyor; imzalı APK üzerinde ayrıca doğrulandı. Anahtar `C:/Users/yurken/.english-tales-release/upload-keystore.jks`, özel ayarlar ignored `native-android/signing.properties` içinde. Anahtar ve parolalar GitHub'a girmez. Anahtar sıfırlanmadı veya yeniden oluşturulmadı.
+
+Play'den indirilen genel uygulama sertifikası SHA-1: `4C:EE:8C:1D:40:26:8C:97:F4:CB:6B:5B:FE:DB:B1:F0:91:14:66:D1`. SHA-256 yukarıdaki değerle eşleşiyor. Google girişinin mağaza sürümü bu sertifikayla ayrıca yapılandırılmalıdır.
 
 SHA değerleri genel sertifika bilgisidir; özel anahtar değildir. Mağaza imzasıyla Google OAuth native istemcisi tanımlanmalıdır. Debug imza kaydı bunun yerine geçmez.
 

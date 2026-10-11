@@ -13,6 +13,19 @@ val contentSettings = Properties().apply {
 }
 fun contentSetting(name: String): String = contentSettings.getProperty(name, "")
     .replace("\\", "\\\\").replace("\"", "\\\"")
+val releaseSigning = Properties().apply {
+    rootProject.file("signing.properties").takeIf {it.exists()}?.inputStream()?.use {load(it)}
+}
+val releaseRequested=gradle.startParameter.taskNames.any {it.contains("Release",ignoreCase=true)}
+if(releaseRequested) {
+    require(listOf("storeFile","storePassword","keyAlias","keyPassword").all {releaseSigning.getProperty(it).orEmpty().isNotBlank()}) {
+        "Release signing is missing. Configure the private signing.properties file; debug signing is never used for release."
+    }
+    require(rootProject.file(releaseSigning.getProperty("storeFile")).isFile) {"Release keystore is missing"}
+    require(contentSettings.getProperty("SUPABASE_URL","").startsWith("https://") && contentSettings.getProperty("SUPABASE_PUBLISHABLE_KEY","").startsWith("sb_publishable_") && contentSettings.getProperty("GOOGLE_WEB_CLIENT_ID","").endsWith(".apps.googleusercontent.com")) {
+        "Release service settings are missing or invalid"
+    }
+}
 
 android {
     namespace = "com.yurken.englishtales"
@@ -32,8 +45,17 @@ android {
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")
     }
 
+    signingConfigs {
+        if(releaseSigning.getProperty("storeFile")!=null) create("upload") {
+            storeFile=rootProject.file(releaseSigning.getProperty("storeFile"))
+            storePassword=releaseSigning.getProperty("storePassword")
+            keyAlias=releaseSigning.getProperty("keyAlias")
+            keyPassword=releaseSigning.getProperty("keyPassword")
+        }
+    }
     buildTypes {
         release {
+            signingConfig=signingConfigs.findByName("upload")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -54,6 +76,8 @@ dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2025.05.00")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")
+    // Current stable path implementation. RELRO verification remains a release gate.
+    implementation("androidx.graphics:graphics-path:1.1.0")
     implementation("androidx.compose.foundation:foundation")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.ui:ui-tooling-preview")

@@ -8,7 +8,7 @@ import sys
 names=subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
 failures=[]
 for name in filter(None,names):
-    if re.search(r'(^|/)(node_modules|\.gradle|build)/|\.(jks|keystore|apk|aab|tar)$|(^|/)(supabase|local)\.properties$|(^|/)\.env($|\.(?!.*example$))',name):
+    if re.search(r'(^|/)(node_modules|\.gradle|build)/|\.(jks|keystore|apk|aab|tar)$|(^|/)(supabase|local|signing)\.properties$|(^|/)credentials\.(json|md)$|(^|/)\.env($|\.(?!.*example$))',name):
         failures.append((name,'private configuration or generated artifact'))
     data=subprocess.check_output(['git','show',':'+name])
     if b'\x00' in data:
