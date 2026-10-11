@@ -58,6 +58,59 @@ beforeEach(async()=>{await db.exec('begin');clock=Date.parse((await db.query('se
 afterEach(async()=>{await db.exec('rollback; reset role');});
 after(async()=>{await db?.close();});
 
+test('learning snapshot is read-only, invoker scoped and rejects anonymous callers',async()=>{
+  const before=(await db.query('select count(*)::int n from public.learning_profiles')).rows[0].n;
+  const snapshot=(await user(alice,'select public.get_learning_snapshot() result'))[0].result;
+  assert.equal(snapshot.userId,alice);
+  assert.equal(snapshot.schemaVersion,1);
+  assert.equal(snapshot.profile,null);
+  assert.deepEqual(snapshot.sessions,[]);
+  assert.deepEqual(snapshot.words,[]);
+  assert.deepEqual(snapshot.progress,[]);
+  assert.equal((await db.query('select count(*)::int n from public.learning_profiles')).rows[0].n,before);
+  await assert.rejects(anon('select public.get_learning_snapshot()'),/permission denied/);
+  await assert.rejects(user(null,'select public.get_learning_snapshot()'),/authentication_required/);
+  const fn=(await db.query("select prosecdef,provolatile,proconfig from pg_proc where oid='public.get_learning_snapshot()'::regprocedure")).rows[0];
+  assert.equal(fn.prosecdef,false);
+  assert.equal(fn.provolatile,'s');
+});
+
+test('snapshot includes acknowledged sessions, word tombstones, revisions and badges without leaking another account',async()=>{
+  const operation=session();
+  await rpc(alice,'submit_learning_session',operation);
+  await rpc(alice,'apply_word_event',word());
+  const removal=word({action:'remove',occurredAt:iso(0,1)});
+  await rpc(alice,'apply_word_event',removal);
+  await rpc(alice,'apply_progress_event',progress({percent:25}));
+  await rpc(bob,'submit_learning_session',session({correctAnswers:1}));
+  const snapshot=(await user(alice,'select public.get_learning_snapshot() result'))[0].result;
+  assert.equal(snapshot.sessions.length,1);
+  assert.equal(snapshot.sessions[0].id,operation.id);
+  assert.equal(snapshot.sessions[0].points,20);
+  assert.equal(snapshot.words.length,1);
+  assert.equal(snapshot.words[0].saved,false);
+  assert.equal(snapshot.words[0].last_event_id,removal.id);
+  assert.equal(snapshot.words[0].source_revision_id,revision);
+  assert.equal(snapshot.progress[0].percent,25);
+  assert.equal(snapshot.progress[0].revision_id,revision);
+  assert.ok(snapshot.badges.some(b=>b.badge_id==='first_practice'));
+  assert.equal(snapshot.profile.preferences_version,1);
+  assert.ok(!JSON.stringify(snapshot).includes(bob));
+  assert.ok(!('user_id' in snapshot.words[0]));
+  assert.ok(!('payload' in snapshot.sessions[0]));
+});
+
+test('snapshot refuses excessive history instead of returning a partial deletion baseline',async()=>{
+  await rpc(alice,'submit_learning_session',session());
+  await db.query(`insert into public.learning_sessions
+    select user_id,gen_random_uuid(),installation_id,kind,revision_id,story_id,started_at,finished_at,
+      active_seconds,correct_answers,question_count,study_day,study_timezone,counted,points,payload,received_at
+    from public.learning_sessions cross join generate_series(1,10000) where user_id=$1`,[alice]);
+  await assert.rejects(user(alice,'select public.get_learning_snapshot()'),/learning_snapshot_too_large/);
+  const bobSnapshot=(await user(bob,'select public.get_learning_snapshot() result'))[0].result;
+  assert.deepEqual(bobSnapshot.sessions,[]);
+});
+
 test('the exported catalog has six published stories, 81 sentences and repeatable stable IDs',async()=>{
   assert.equal((await anon('select * from public.stories')).length,6);
   assert.equal((await anon('select * from public.story_sentences')).length,81);

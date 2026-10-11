@@ -40,6 +40,8 @@ Git etiketi veritabanını veya Supabase'i geri döndürmez. Şema değişikliğ
 
 ## Kalan yayın kapıları
 
+16 KB aşaması `checkpoint/native-16kb-verified-20261011` (`6251a4b`) ile kaydedildi. [GitHub kontrolü](https://github.com/yurkenn/english-tales/actions/runs/38144231831) üç işte başarılı. Sonraki sunucu snapshot aşamasının [analizi ve açık Android kabul kapısı](CLOUD_RECONCILIATION_PLAN.md).
+
 - Canlı öğrenme gönderimi, sunucu durumunu alma ve iki cihaz eşitlemesi.
 - Yeni hesap/kurtarma/silme; erişilebilir gizlilik ve hesap silme sayfaları.
 - Üretim servis/panel dağıtımı, yedek geri yükleme ve güvenlik doğrulaması.
