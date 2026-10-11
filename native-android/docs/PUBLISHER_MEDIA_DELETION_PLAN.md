@@ -18,6 +18,8 @@ Yeni envanter RPC'si yalnızca mevcut sunucu rolüne açıktır; istemciler baş
 
 ## Geri dönüş
 
+Kontrol noktası: `44adb28`, `checkpoint/account-media-preservation-20261011`. [GitHub kontrolü](https://github.com/yurkenn/english-tales/actions/runs/38170419479) depo, backend ve Android işlerinde başarılı.
+
 Sunucu handler önceki sürüme döndürülebilir; yalnızca sunucuya açık read-only RPC kalabilir. Dosya aktarımı ortak medyanın içeriğini değiştirmez. Git geri dönüşü Auth silinmesini geri almaz.
 
 Kaynaklar: [Storage sahipliği](https://supabase.com/docs/guides/storage/security/ownership), [Storage metadata kuralları](https://supabase.com/docs/guides/storage/schema/design), [Auth veri yönetimi](https://supabase.com/docs/guides/auth/managing-user-data), [Storage update API](https://supabase.com/docs/reference/javascript/storage-from-update).

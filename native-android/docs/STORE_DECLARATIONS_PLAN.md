@@ -22,3 +22,7 @@ Kaynak: [Google Play veri güvenliği tanımları](https://support.google.com/go
 ## Cihaz testi sınırı
 
 Kullanıcı yalnızca emülatör kullanabildiğini bildirdi. Fiziksel telefon testi yapılmış sayılmaz; yerel emülatör ve Play cihaz raporları kullanılacak. Gerçek ARM64 telefonun bulunmaması gizlenmez veya sırf bu nedenle kullanıcıdan telefon alması istenmez.
+
+## Önizleme incelemesi — 11 Ekim 2026
+
+Eski giriş ekranında misafir seçeneği bulunmadı; eski 46 dağıtımı nedeniyle ad/e-posta/kimlik alanları şimdilik zorunlu beyanını koruyor. 47 tek aktif dağıtım olduğunda isteğe bağlı hesap kullanımı yeniden uygulanmalıdır. Önizlemede e-posta/kimlik güvenlik amaçları zaten seçili; kurulum kimliğine native eşitleme için App functionality eklendi ve taslak kaydedildi. Eski Analytics/Advertising amaçları eski artefaktın kapsamı netleşmeden kaldırılmadı. Performans kategorileri önizlemede görünmediği için ephemeral cevapları ayrıca denetlenmeli; SDK loglarının geçici olduğu varsayılmaz. Bu taslak henüz tam doğrulanmış veya incelemeye gönderilmiş değil.
