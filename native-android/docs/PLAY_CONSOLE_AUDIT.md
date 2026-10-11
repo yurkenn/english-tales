@@ -14,8 +14,8 @@
 
 Expo `yurken / english-tales` projesindeki mevcut yükleme anahtarı indirildi. Sertifikası yukarıdaki Play upload SHA-1 değeriyle eşleşiyor; imzalı APK üzerinde ayrıca doğrulandı. Anahtar `C:/Users/yurken/.english-tales-release/upload-keystore.jks`, özel ayarlar ignored `native-android/signing.properties` içinde. Anahtar ve parolalar GitHub'a girmez. Anahtar sıfırlanmadı veya yeniden oluşturulmadı.
 
-Play'den indirilen genel uygulama sertifikası SHA-1: `4C:EE:8C:1D:40:26:8C:97:F4:CB:6B:5B:FE:DB:B1:F0:91:14:66:D1`. SHA-256 yukarıdaki değerle eşleşiyor. Google girişinin mağaza sürümü bu sertifikayla ayrıca yapılandırılmalıdır.
+Play'den indirilen genel uygulama sertifikası SHA-1: `4C:EE:8C:1D:40:26:8C:97:F4:CB:6B:5B:FE:DB:B1:F0:91:14:66:D1`. SHA-256 yukarıdaki değerle eşleşiyor. Google Cloud `english-tales-77d32` projesinde mevcut `playconsole` Android istemcisi (`28104909219-65pi2o4535f2nv4iuasbhvn91tpnm456.apps.googleusercontent.com`) aynı paket/SHA-1 ile kayıtlı. Yeni istemci oluşturulmadı veya mevcut izinler değiştirilmedi. Native mağaza paketinden gerçek Google giriş denemesi hâlâ yapılmalıdır.
 
-SHA değerleri genel sertifika bilgisidir; özel anahtar değildir. Mağaza imzasıyla Google OAuth native istemcisi tanımlanmalıdır. Debug imza kaydı bunun yerine geçmez.
+SHA değerleri genel sertifika bilgisidir; özel anahtar değildir. Mağaza imzasıyla Google OAuth native istemcisinin mevcut kaydı doğrulandı. Debug girişin başarılı olması mağaza imzalı paket testinin yerine geçmez.
 
 Console'a yeni paket yüklenmedi; mağaza açıklaması/iletişim veya yayın durumu değiştirilmedi.

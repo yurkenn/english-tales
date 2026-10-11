@@ -24,6 +24,8 @@ Mevcut EAS yükleme anahtarı Play sertifikasıyla eşleşti. Sürüm 47 / 2.0.0
 
 Bu paket test Supabase projesine bağlı teknik adaydır; üretim için tamamlanmış sayılmaz. Play tarafından üretilen APK'lar, eski 46 sürümü üzerine güncelleme ve mağaza imzasıyla Google girişi henüz doğrulanmadı.
 
+Üçüncü kontrol noktası: `checkpoint/native-signing-audit-20261011` (`86268b4`). İmza ayarları, gizli dosya koruması ve hata veren 16 KB kontrolü kaydedildi. Güncel bağımlılıkla 11 birim + 45 cihaz testi geçti; debug/release Lint ve APK/AAB derlemesi başarılı. Cihaz testleri APK güncelleme üzerinden çalıştırıldı; gerçek Google oturumu için uygulama kaldırılmadı. Bu etiket başarılı mağaza adayı anlamına gelmez.
+
 ## Temizlik analizi
 
 Eski Expo/React Native/Sanity kaynakları yeni Android veya içerik panelinin bağımlılığı değildir. Eski kaynaklar ve yerel bağımlılıklar `C:/projects/english-tales-legacy-20261011/` içine taşındı. Bu arşiv yerel ayarlar içerebilir; GitHub'a yüklenmez. Eski kod ayrıca ilk Git kontrol noktasında korunur.

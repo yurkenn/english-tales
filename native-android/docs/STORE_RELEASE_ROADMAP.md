@@ -45,7 +45,7 @@ Android lint sonucu 0 hata ve 19 uyarı. Uyarılar tek tek değerlendirilmeli. D
 - Play Console'daki uygulama kaydı, üretim erişimi, geliştirici hesap türü ve açık politika/kimlik doğrulama bildirimlerini kontrol et.
 - `com.yurken.englishtales` paket adını mevcut kayıtla doğrula.
 - Play App Signing, yükleme sertifikası ve anahtarın erişilebilirliğini kontrol et. Anahtar/parola sohbet veya kaynak koduna konmaz.
-- Console'da kullanılmış en yüksek versionCode'u bul; projedeki geçici 4 değerini buna göre güncelle.
+- Console'da en yüksek versionCode 46 doğrulandı; native aday 47 / 2.0.0 olarak güncellendi. Yüklemeden hemen önce tekrar kontrol et.
 - Hedef ülkeler, desteklenecek diller, hedef yaş grubu, destek adresi ve ilk gelir modelini belirle. Çocuklara yönelik kapsam seçilirse içerik, SDK ve beyan planını ayrıca incele.
 - Eski React Native verilerini sıfırlama tercihini koru; mağazadaki eski sürümden yeni sürüme kurulumun sorunsuz gerçekleştiğini yine de test et.
 
