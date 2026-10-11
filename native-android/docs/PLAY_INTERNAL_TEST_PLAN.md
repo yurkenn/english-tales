@@ -37,3 +37,11 @@ Kullanıcı teste katıldığını ancak eski uygulamayı aldığını bildirdi.
 Test sürümü aynı paket ve mağaza sayfasını kullanır; ayrı uygulama aranmaz. Önce hesap eşleşmesi kontrol edilir, aynı sayfada Güncelle seçeneği beklenir. Eski 46 silinmez: 46→47 güncelleme kontrolü için korunur. Yerel APK yüklemek Play imzasıyla gerçek giriş testinin yerine geçmez. Mağazadan 47 kurulumu ve Google giriş/yeniden açılış kanıtı hâlâ açık.
 
 Gerçek 46 paketinde minimum Android API 24 görüldü. Önceki dahili 4 ile cihaz kaybı uyarısı, üretim 46'nın minimum API'sinin yükseltildiği anlamına gelmez.
+
+## Play imzalı paketle güncelleme — 11 Ekim 23:38 TRT
+
+Kullanıcı Play hesabını ogi311999 olarak doğruladı. Ayrı Play AVD kapanmıştı; yeniden başlatıldı. Medium_Phone_2 üzerinde de mağaza kurulumlu 46 görüldü; kişisel emülatörün verileri değiştirilmedi. Ayrı AVD'de de 46 kuruluydu. Console 47 için Available to internal testers, 19.243 cihaz ve 16 KB desteği gösteriyor; x86_64 destekli, gereken tek özellik faketouch. Dağıtım sorununun kök nedeni henüz saptanmadı.
+
+Beklerken Console → 47 → Downloads → Signed, universal APK indirildi. Dosya SHA256: `5ac55f64035497b2f22407a32695c1473e9d21804ab05416f74a14eef02654aa`. APK imza doğrulaması v2/v3 ve Google SourceStamp ile geçti. Sertifika SHA256 `13ef5910fd56b0a43f5d6578d2cc90271fe087c2a0baa6cc06a0b5f1056a3ba8`, SHA1 `4cee8c1d40268c97f4cb6b5bfedbb1f0911466d1`; kayıtlı Play uygulama imzasıyla eşleşiyor. min24, target36, dört ABI ve zipalign 16 KiB kontrolü geçti.
+
+Bu Google Play üretimi APK yalnızca ayrı emulator-5558'e geliştirme aracının update (-r) işlemiyle yüklendi; 46→47 güncelleme Success verdi. Son paket version47/name2.0.0; installerPackageName=null, dolayısıyla bu kurulum mağazadan otomatik dağıtım veya Play split APK testi sayılmaz. Medium_Phone_2 üzerinde mağaza kurulumlu 46 korunuyor. Uygulama açıldı; kullanıcıdan Google hesabıyla giriş ve yeniden açılışta oturum kontrolü istendi. İmza uyumlu güncelleme geçti; eski öğrenme verisinin taşınması ve Google giriş sonucu henüz doğrulanmadı.
