@@ -23,8 +23,9 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         minSdk = 24
         targetSdk = 36
-        // Confirm the highest code in Play Console before producing a release.
-        versionCode = 4
+        // Play Console latest uploaded/production code was 46 on 2026-10-11.
+        // Recheck before upload if another release is produced in parallel.
+        versionCode = 47
         versionName = "2.0.0"
         buildConfigField("String", "SUPABASE_URL", "\"${contentSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${contentSetting("SUPABASE_PUBLISHABLE_KEY")}\"")

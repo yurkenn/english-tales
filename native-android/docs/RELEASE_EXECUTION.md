@@ -14,6 +14,8 @@
 
 İlk kontrol noktası: `checkpoint/native-local-transfer-20261011` (`b1f0bbd`), çalışan native uygulama/panel ve doğrulanmış yerel misafir aktarımı. 11 birim + 45 cihaz testi; 0 Lint hatası.
 
+İkinci kontrol noktası: `checkpoint/native-cleanup-ci-20261011` (`4452172`), eski yığının arşivlenmesi, yeni README ve GitHub Actions. Yerelde 35 servis/istemci testi, panel HTTP kontrolü ve release küçültme derlemesi geçti. İlk GitHub çalışmasında depo/servis başarılı; Android SDK kurucusu kaldırılmış `tools` paketini aradığı için başarısız oldu. Güncel kurucu ve açık paket listesiyle düzeltme uygulanıyor; yeşil sonuç görülmeden CI kapısı tamamlandı sayılmaz.
+
 ## Temizlik analizi
 
 Eski Expo/React Native/Sanity kaynakları yeni Android veya içerik panelinin bağımlılığı değildir. Eski kaynaklar ve yerel bağımlılıklar `C:/projects/english-tales-legacy-20261011/` içine taşındı. Bu arşiv yerel ayarlar içerebilir; GitHub'a yüklenmez. Eski kod ayrıca ilk Git kontrol noktasında korunur.
