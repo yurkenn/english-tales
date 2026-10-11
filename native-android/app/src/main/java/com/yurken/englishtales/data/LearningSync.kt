@@ -73,7 +73,7 @@ class LearningSyncHttp(private val base: String, private val key: String) : Lear
     }
 }
 
-data class LearningUploadResult(val delivered: Int, val blocked: Int, val stopped: Boolean)
+data class LearningUploadResult(val delivered: Int, val blocked: Int, val stopped: Boolean, val verifySession: Boolean=false)
 
 /** Run on the store's serial IO actor. Scope guard must capture the caller's account generation. */
 class LearningQueueSync(private val transport: LearningSyncTransport, private val accounts: AccountService) {
@@ -103,7 +103,7 @@ class LearningQueueSync(private val transport: LearningSyncTransport, private va
                 if (!current()) return LearningUploadResult(delivered, blocked, true)
                 val permanent = failure.code in setOf("23505", "22023", "23503", "invalid_local_operation")
                 store.markUploadFailed(operation.id, expectedUser, failure.code, !permanent)
-                if (permanent) blocked++ else return LearningUploadResult(delivered, blocked, true)
+                if (permanent) blocked++ else return LearningUploadResult(delivered, blocked, true, failure.status==401)
             } catch (failure: AuthFailure) {
                 if (current()) store.markUploadFailed(operation.id, expectedUser, failure.code, true)
                 return LearningUploadResult(delivered, blocked, true)

@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.AccountState
 
 @Composable
-fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)->Unit,onSignOut: ()->Unit,onGoogle: ()->Unit={},onGuest: ()->Unit=onBack,onTransfer: ()->Unit={}) {
+fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)->Unit,onSignOut: ()->Unit,onGoogle: ()->Unit={},onGuest: ()->Unit=onBack,onTransfer: ()->Unit={},onSync: ()->Unit={}) {
     var email by remember {mutableStateOf(state.email)}
     // Password is deliberately not rememberSaveable; process/rotation restoration must not persist it.
     var password by remember {mutableStateOf("")}
@@ -27,7 +27,20 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
             Text(if(state.userId==null) "Öğrenmeye kendi hesabınla devam et" else "Hesap açık",fontSize=24.sp)
             if(state.userId!=null) {
                 Text(state.email,fontSize=16.sp,color=TaleBlue)
-                Text("Bu hesabın kayıtları ayrı tutulur. İstersen misafir ilerlemeni bu hesaba taşıyabilirsin. Cihazlar arası eşitleme henüz bağlı değil.",fontSize=14.sp,color=TaleMuted)
+                Text("Öğrenme kayıtların hesabın üzerinden eşitlenir. Misafir kayıtların bu cihazda ayrı kalır.",fontSize=14.sp,color=TaleMuted)
+                Card(Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+                        Text("Hesap eşitlemesi",style=MaterialTheme.typography.titleMedium)
+                        Text(state.sync.message,fontSize=14.sp)
+                        if(state.sync.running) LinearProgressIndicator(Modifier.fillMaxWidth())
+                        if(state.sync.lastSuccessAt!=null) Text("Son alınan kayıt: ${java.text.DateFormat.getDateTimeInstance(java.text.DateFormat.SHORT,java.text.DateFormat.SHORT).format(java.util.Date(state.sync.lastSuccessAt))}",fontSize=12.sp,color=TaleMuted)
+                        if(state.sync.pending>0) Text("${state.sync.pending} kayıt gönderilmeyi bekliyor.",fontSize=13.sp)
+                        if(state.sync.blocked>0) Text("${state.sync.blocked} kayıt için kontrol gerekiyor. Yerel geçmiş korunuyor.",fontSize=13.sp)
+                        if(state.sync.deviceOnlyPoints>0) Text("Eski geçmişindeki ${state.sync.deviceOnlyPoints} puan bu cihaza ait; diğer cihazlara aktarılmaz.",fontSize=13.sp,color=TaleMuted)
+                        if(state.sync.preferencesPending) Text(if(state.sync.preferencesConflict) "Profil ayarların farklı. Bu cihazdaki seçimlerin korunuyor; ayar eşitlemesi tamamlanmayı bekliyor." else "Profil ayarların şu anda bu cihazda korunuyor; ayar eşitlemesi tamamlanmayı bekliyor.",fontSize=13.sp,color=TaleMuted)
+                        OutlinedButton(onClick=onSync,enabled=!state.busy && !state.needsSignIn && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text("Şimdi eşitle")}
+                    }
+                }
                 state.guestTransfer?.let {guest ->
                     Card(Modifier.fillMaxWidth()) {
                         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
@@ -67,6 +80,6 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
         text={Text("Bu hesabın cihazdaki kayıtları korunur. Misafir olarak devam edeceksin.")},
         confirmButton={TextButton(onClick={confirmExit=false;onSignOut()}) {Text("Çıkış yap")}},dismissButton={TextButton(onClick={confirmExit=false}) {Text("Vazgeç")}})
     if(confirmTransfer) AlertDialog(onDismissRequest={confirmTransfer=false},title={Text("Misafir ilerlemen taşınsın mı?")},
-        text={Text("Misafir kelimelerin, okuma ilerlemen ve puanın bu hesabın cihazdaki kayıtlarına bir kez eklenir. Mevcut hesap ayarların korunur. Taşınan geçmiş misafir alanından çıkar; misafir olarak yeniden çalışmaya başlayabilirsin. Bulut eşitlemesi henüz bağlı değil.")},
+        text={Text("Misafir kelimelerin, okuma ilerlemen ve puanın bu hesabın cihazdaki kayıtlarına bir kez eklenir. Mevcut hesap ayarların korunur. Taşınan geçmiş misafir alanından çıkar. Gönderilebilen öğrenme kayıtları hesabına eşitlenir; eski puanlar bu cihazda korunur.")},
         confirmButton={TextButton(onClick={confirmTransfer=false;onTransfer()}) {Text("Bu hesaba aktar")}},dismissButton={TextButton(onClick={confirmTransfer=false}) {Text("Vazgeç")}})
 }

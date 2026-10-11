@@ -48,6 +48,8 @@ Kopyadaki kısa oturum satırı bütün değişmeyen gönderim gövdesini kanıt
 
 ## Entegrasyon sırası — sıradaki uygulama
 
+Güncelleme: uygulama çalıştırıcısı ve hesap ekranı bağlandı; [uygulanan sıra, testler ve açık kapılar](LEARNING_SYNC_EXECUTION.md). Mevcut akış özgün olayları birer sıra turunda gönderir ve ardından tam kopyayı alır. Tercihler yazılmaz; kirli/çelişen tercih korunur ve kullanıcıya gösterilir. Aşağıdaki sıra ilk planı ve sonraki kabul kapılarını kaydeder; canlı iki cihaz eşitlemesinin tamamlandığı anlamına gelmez.
+
 Önce tek hesap kapsamına bağlı bir çalıştırıcı: doğrulanmış oturum → tam kopya/atomik uygulama → özgün kuyruk RPC'leri → yeni tam kopya/uygulama. Gönderim başarısızsa bekleyen yerel görünüm korunmalı ve kullanıcıya durum gösterilmeli. Cihazda kalan eski puanlar ayrı açıklanmalı. Sonra tercih CAS yazımı ve açık çakışma çözümü, bilinmeyen kelime kaynağı, hesap değişimi/yeniden açılış ve gerçek ağ doğrulaması. Bu kapıdan sonra arka plan işi bağlanabilir.
 
 1. Kendi UID'si, kaynak proje ve protokol sürümü doğrulanmış kopyayı bütünüyle ayrıştır; bozuk/eksik/büyük yanıtta yerel değişiklik yapma.

@@ -1,6 +1,6 @@
 # Android ve servis veri sözleşmesi
 
-Bu sözleşme hazır veritabanı işlemlerini ve Android entegrasyonu için alınan kararları tanımlar. Android'in anonim katalog, metin/kelime ve kapak indirme bağlantısı tamamlandı; [içerik bağlantısı kaydı](../docs/REMOTE_CONTENT_PLAN.md). Hesap oturumları, kalıcı kuyruk, RPC gönderim katmanı, tam kopya ayrıştırma ve Room 6 atomik birleştirme hazırdır. Öğrenme çalıştırıcısı/UI ve arka plan işi henüz bağlı değildir; [güncel eşitleme analizi](../docs/CLOUD_RECONCILIATION_PLAN.md).
+Bu sözleşme hazır veritabanı işlemlerini ve Android entegrasyonu için alınan kararları tanımlar. Android'in anonim katalog, metin/kelime ve kapak indirme bağlantısı tamamlandı; [içerik bağlantısı kaydı](../docs/REMOTE_CONTENT_PLAN.md). Hesap oturumları, kalıcı kuyruk, RPC gönderim katmanı, tam kopya ayrıştırma, Room 6 atomik birleştirme ve uygulama çalıştırıcısı/UI bağlıdır. Gerçek hesap/ikinci cihaz, tercih CAS yazımı ve kalıcı arka plan işi açık kapılardır; [çalıştırma kaydı](../docs/LEARNING_SYNC_EXECUTION.md).
 
 ## İçerik kimliği ve yayın
 
@@ -41,7 +41,7 @@ Supabase RPC parametresi olay fonksiyonlarında **`p_event`** adını taşır: H
 
 ### Tercihler
 
-`get_learning_summary()` yoksa varsayılan profili oluşturur; başlangıç sürümü `1`, saat dilimi `UTC` olur. Android gerçek kullanıcı tercihlerini göndermeden öğrenme kaydı eşitlemeye başlamamalıdır.
+`get_learning_summary()` yoksa varsayılan profili oluşturur; başlangıç sürümü `1`, saat dilimi `UTC` olur. Mevcut çalıştırıcı öğrenme olaylarını özgün `studyTimezone` değeriyle gönderir; profil tercihlerini yazmaz. Kirli yerel tercihler korunur ve hesap ekranında bekleyen ayar olarak gösterilir. Sunucu profil hedefi/saat diliminin cihazdaki tercihlerle aynı olduğu varsayılmamalıdır; tercih CAS/çakışma adımı ve gerçek hesap kontrolü tamamlanmadan bu akış yayına hazır sayılmaz.
 
 `save_learning_preferences` parametreleri:
 

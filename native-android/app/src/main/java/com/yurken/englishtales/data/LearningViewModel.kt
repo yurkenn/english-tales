@@ -10,12 +10,16 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.channels.Channel
 import com.yurken.englishtales.BuildConfig
 
-class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore) : AndroidViewModel(application) {
-    constructor(application: Application):this(application,defaultAccountService(application),{LearningStore(application,it)})
+class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore,private val cloudSync: LearningAccountSync?=null) : AndroidViewModel(application) {
+    constructor(application: Application):this(application,defaultAccountService(application),{LearningStore(application,it)},defaultLearningSync())
     private var store = storeFactory(LearningOwner.Guest)
     private data class Mutation(val scope: Long?,val action: ()->Unit)
     private val mutations = Channel<Mutation>(Channel.UNLIMITED)
     @Volatile private var scope=0L
+    @Volatile private var syncEpoch=0L
+    @Volatile private var disposed=false
+    private val syncing=java.util.concurrent.atomic.AtomicBoolean(false)
+    private var syncTimer: kotlinx.coroutines.Job?=null
     private val mutableAccount=MutableStateFlow(AccountState())
     val account: StateFlow<AccountState> = mutableAccount
     private val verifying=java.util.concurrent.atomic.AtomicBoolean(false)
@@ -84,13 +88,69 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun saveWords(ids: List<String>) = mutate { store.saveWords(ids) }
     fun updatePreferences(level: String, genre: String, goal: Int, name: String) = mutate { store.updatePreferences(level,genre,goal,name) }
 
-    private fun mutate(action: () -> Unit) {mutations.trySend(Mutation(scope,action))}
+    private fun mutate(action: () -> Unit) {mutations.trySend(Mutation(scope) {
+        action();scheduleSync()
+    })}
+    private fun interruptSync() {
+        syncEpoch++
+        mutableAccount.value=mutableAccount.value.copy(sync=mutableAccount.value.sync.copy(running=false))
+    }
+    // Only the actor accesses a store. Timers enqueue work without touching Room.
+    private fun scheduleSync(waitMillis: Long=2_000) {
+        if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed) return
+        syncTimer?.cancel()
+        val expected=scope
+        syncTimer=viewModelScope.launch {
+            kotlinx.coroutines.delay(waitMillis)
+            if(scope==expected) syncNow()
+        }
+    }
+    fun syncNow() {
+        val user=mutableAccount.value.userId?:return
+        val sync=cloudSync?:return
+        if(disposed || mutableAccount.value.busy || mutableAccount.value.needsSignIn || !syncing.compareAndSet(false,true)) return
+        val expectedScope=scope
+        val expectedEpoch=syncEpoch
+        val current={ !disposed && scope==expectedScope && syncEpoch==expectedEpoch }
+        mutableAccount.value=mutableAccount.value.copy(sync=mutableAccount.value.sync.copy(running=true,message="Hesap geçmişin eşitleniyor…"))
+        fun enqueue() {
+            val accepted=mutations.trySend(Mutation(null) {
+                if(!current()) {syncing.set(false);return@Mutation}
+                try {
+                    val result=sync.step(store,auth,user,current)
+                    if(!current()) {syncing.set(false);return@Mutation}
+                    mutableState.value=store.snapshot()
+                    mutableAccount.value=mutableAccount.value.copy(sync=result.state,needsSignIn=auth.current==null)
+                    if(result.verifySession) verifyAccount()
+                    if(result.continueUpload) enqueue() else {
+                        syncing.set(false)
+                        scheduleSync(60_000)
+                    }
+                } catch (failure: Exception) {
+                    syncing.set(false)
+                    if(current()) {
+                        mutableAccount.value=mutableAccount.value.copy(needsSignIn=auth.current==null,
+                            sync=sync.status(store).copy(message=if(auth.current==null) "Oturum sona erdi. Tekrar giriş yap." else "Eşitleme tamamlanamadı. Kayıtların cihazında korunuyor; tekrar deneyebilirsin."))
+                        scheduleSync(60_000)
+                        if(failure is LearningSyncFailure && failure.status==401) verifyAccount()
+                    }
+                }
+            })
+            if(accepted.isFailure) syncing.set(false)
+        }
+        enqueue()
+    }
     private fun changeOwner(owner: LearningOwner,email: String="") {
         val next=storeFactory(owner)
         try {next.snapshot()} catch (failure: Exception) {next.close();throw failure}
-        store.close();store=next;scope++
+        store.close();store=next;scope++;syncEpoch++
         mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=scope)
+        if(owner is LearningOwner.Account && cloudSync!=null) {
+            val saved=cloudSync.status(store)
+            mutableAccount.value=mutableAccount.value.copy(sync=saved.copy(message=if(saved.lastSuccessAt==null) "Henüz eşitlenmedi." else "Son alınan hesap geçmişi cihazında korunuyor."))
+        }
         refreshGuestTransfer()
+        scheduleSync()
     }
     private fun refreshGuestTransfer() {
         val user=mutableAccount.value.userId?:return
@@ -104,13 +164,14 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun transferGuestProgress() {
         val user=mutableAccount.value.userId?:return
         if(mutableAccount.value.busy || mutableAccount.value.needsSignIn || mutableAccount.value.guestTransfer?.blocked==true) return
+        interruptSync()
         mutableAccount.value=mutableAccount.value.copy(busy=true,message="Misafir ilerlemen aktarılıyor…")
         mutations.trySend(Mutation(scope) {
             try {
                 check(store.owner.id==user)
                 storeFactory(LearningOwner.Guest).use {GuestTransfer.transfer(it,store)}
                 scope++
-                mutableAccount.value=mutableAccount.value.copy(busy=false,scope=scope,message="Misafir ilerlemen bu hesabın cihazdaki kayıtlarına aktarıldı. Bulut eşitlemesi henüz bağlı değil.")
+                mutableAccount.value=mutableAccount.value.copy(busy=false,scope=scope,message="Misafir ilerlemen hesabının cihazdaki kayıtlarına aktarıldı. Gönderilebilen kayıtlar eşitlenecek; eski puanlar bu cihazda korunur.")
             } catch (failure: Exception) {
                 mutableAccount.value=mutableAccount.value.copy(busy=false,message=when((failure as? GuestTransferFailure)?.code) {
                     "different_target" -> "Bekleyen aktarım başka hesabına ait. O hesaba giriş yaparak tamamlayabilirsin."
@@ -120,10 +181,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 })
             }
             refreshGuestTransfer()
+            scheduleSync()
         })
     }
     fun signIn(email: String,password: String) {
         if(mutableAccount.value.busy) return
+        interruptSync()
         mutableAccount.value=mutableAccount.value.copy(busy=true,message="Giriş yapılıyor…")
         mutations.trySend(Mutation(null) {
             try {
@@ -145,6 +208,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     }
     fun signOut() {
         if(mutableAccount.value.busy) return
+        interruptSync()
         mutableAccount.value=mutableAccount.value.copy(busy=true,message="Çıkış yapılıyor…")
         mutations.trySend(Mutation(null) {
             val revoked=auth.signOut();changeOwner(LearningOwner.Guest)
@@ -155,6 +219,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     suspend fun signInGoogle(acquire: suspend ()->GoogleIdentity) {
         if(mutableAccount.value.busy) return
         val expectedScope=scope
+        interruptSync()
         mutableAccount.value=mutableAccount.value.copy(busy=true,message="Google hesabını seç…")
         try {
             val identity=acquire()
@@ -182,20 +247,28 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         val expectedScope=scope
         if(mutableAccount.value.userId==null || !verifying.compareAndSet(false,true)) return
         viewModelScope.launch(Dispatchers.IO) {
-            var result: AccountState
+            var verifiedEmail: String?=null
+            var requiresSignIn=false
+            var resultMessage: String
             try {
                 val session=auth.verifyCurrent() ?: throw AuthFailure("sign_in_required")
-                result=mutableAccount.value.copy(email=session.email,message="Oturum doğrulandı. Bu hesaba ait yerel kayıtları kullanıyorsun.",needsSignIn=false)
+                verifiedEmail=session.email
+                resultMessage="Oturum doğrulandı."
             } catch (failure: Exception) {
-                result=mutableAccount.value.copy(needsSignIn=auth.current==null,message=if(auth.current==null) "Oturum sona erdi. Yerel kayıtların duruyor; tekrar giriş yap." else "Bağlantı kurulamadı. Bu hesabın cihazdaki kayıtları kullanılabilir.")
+                requiresSignIn=auth.current==null
+                resultMessage=if(requiresSignIn) "Oturum sona erdi. Yerel kayıtların duruyor; tekrar giriş yap." else "Bağlantı kurulamadı. Bu hesabın cihazdaki kayıtları kullanılabilir."
             } finally {verifying.set(false)}
             mutations.trySend(Mutation(expectedScope) {
-                if(!mutableAccount.value.busy) mutableAccount.value=result
+                if(!mutableAccount.value.busy) {
+                    mutableAccount.value=mutableAccount.value.copy(email=verifiedEmail?:mutableAccount.value.email,needsSignIn=requiresSignIn,message=resultMessage)
+                    scheduleSync()
+                }
             })
         }
     }
 
     override fun onCleared() {
+        disposed=true;syncEpoch++;syncTimer?.cancel()
         mutations.close()
         super.onCleared()
     }
@@ -204,3 +277,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
 private fun defaultAccountService(application: Application)=AccountService(
     if(BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_")) AuthHttp(BuildConfig.SUPABASE_URL,BuildConfig.SUPABASE_PUBLISHABLE_KEY) else null,
     EncryptedSessionStorage(application,BuildConfig.SUPABASE_URL))
+
+private fun defaultLearningSync(): LearningAccountSync? =
+    if(BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))
+        LearningAccountSync(LearningSyncHttp(BuildConfig.SUPABASE_URL,BuildConfig.SUPABASE_PUBLISHABLE_KEY),BuildConfig.SUPABASE_URL)
+    else null

@@ -41,7 +41,7 @@ class AccountSwitchTest {
         while(!predicate() && System.nanoTime()<deadline) Thread.sleep(20)
         assertTrue("Expected account state was not reached",predicate())
     }
-    private fun exercise(block: (LearningViewModel,Fixture)->Unit) {
+    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},block: (LearningViewModel,Fixture)->Unit) {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val target=instrumentation.targetContext
         val directory=File(target.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
@@ -51,7 +51,7 @@ class AccountSwitchTest {
             override fun openOrCreateDatabase(name: String,mode: Int,factory: SQLiteDatabase.CursorFactory?,handler: DatabaseErrorHandler?)=SQLiteDatabase.openOrCreateDatabase(File(directory,name).absolutePath,factory,handler)
         }
         val fixture=Fixture();val holder=ViewModelStore()
-        val vm=LearningViewModel(target.applicationContext as Application,AccountService(fixture,Memory()),{LearningStore(context,it)})
+        val vm=LearningViewModel(target.applicationContext as Application,AccountService(fixture,Memory()),{LearningStore(context,it)},syncFactory(fixture))
         holder.put("account-test",vm)
         try {await {vm.ready.value};block(vm,fixture)}
         finally {fixture.release?.countDown();instrumentation.runOnMainSync {holder.clear()}}
@@ -94,5 +94,39 @@ class AccountSwitchTest {
         assertTrue(vm.state.value.savedWordIds.isEmpty())
         vm.signOut();await {vm.state.value.ownerId=="guest"}
         assertEquals(setOf("morning"),vm.state.value.savedWordIds)
+    }
+    private fun remote(user: String): JSONObject {
+        val now=System.currentTimeMillis()
+        return LearningCloudSnapshot(user,now,CloudLearningProfile("Bulut","A2","Günlük yaşam",2,"UTC",3,now),
+            emptyList(),emptyList(),emptyList(),emptyList()).json()
+    }
+    @Test fun signInAutomaticallyPullsCloudAndPreservesSyncStatusDuringVerification()=exercise({http ->
+        LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+            assertEquals("get_learning_snapshot",rpc);remote(token.removePrefix("token-"))
+        },"https://fixture.supabase.co")
+    }) {vm,http ->
+        vm.signIn("a@example.invalid","fixture-password")
+        await {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && vm.state.value.displayName=="Bulut"}
+        assertEquals("Bulut",vm.state.value.displayName)
+        val last=vm.account.value.sync.lastSuccessAt
+        vm.verifyAccount();await {vm.account.value.message.startsWith("Oturum")}
+        assertEquals(last,vm.account.value.sync.lastSuccessAt)
+        assertFalse(vm.account.value.sync.running)
+    }
+    @Test fun signOutRequestInvalidatesAnInFlightSnapshotBeforeItReturns() {
+        val entered=CountDownLatch(1);val release=CountDownLatch(1)
+        try {
+            exercise({http ->LearningAccountSync(LearningSyncTransport {_,_,token ->
+                entered.countDown();assertTrue(release.await(5,TimeUnit.SECONDS));remote(token.removePrefix("token-"))
+            },"https://fixture.supabase.co")}) {vm,http ->
+                vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a}
+                vm.syncNow();assertTrue(entered.await(5,TimeUnit.SECONDS))
+                vm.signOut();assertFalse(vm.account.value.sync.running)
+                release.countDown();await {vm.state.value.ownerId=="guest"}
+                vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a}
+                assertNull(vm.account.value.sync.lastSuccessAt)
+                assertEquals("Okuyucu",vm.state.value.displayName)
+            }
+        } finally {release.countDown()}
     }
 }

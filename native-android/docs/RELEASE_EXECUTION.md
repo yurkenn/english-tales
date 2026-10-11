@@ -40,6 +40,12 @@ Git etiketi veritabanını veya Supabase'i geri döndürmez. Şema değişikliğ
 
 ## Kalan yayın kapıları
 
+Uygulama eşitleme bağlantısı eklendi: otomatik/elle tek hesap sırası, bir olay/tur, yeni kopya/atomik uygulama, hesap isteğinde geç yanıtı iptal etme, 401 oturum doğrulaması ve hesap ekranı durumları. [Analiz ve sınırlar](LEARNING_SYNC_EXECUTION.md). Önceki atomik birleştirme kontrol noktasının [GitHub çalışması](https://github.com/yurkenn/english-tales/actions/runs/38147594025) başarılı.
+
+Bu aşamada 87 cihaz testi (9 yeni), 11 birim testi, debug/release Lint ve imzalı APK/AAB derlemeleri başarılı. Kontrollü testlerde otomatik giriş/alım, çıkış esnasında geciken yanıt, 45+25=70, kayıp yanıtın aynı UUID ile tekrar teslimi, kuyruk turları, yanlış hesap kopyası, kirli tercihler ve 401 kontrol edildi. Yeni testte oturum süresi yanlışlıkla saniye cinsinden verilmişti; milisaniye olarak düzeltildi. Ayrıca iki ekran akışının yayınlanma sırası düzeltildi ve tam test paketi yeniden geçti.
+
+Güncel teknik aday APK SHA256 `6971f3293996eeb099ebec20a3d768a778e805ec7d4ea8693e40428a68bc01db`; AAB SHA256 `dc4acb8ab2a4cd2aba82dab20e92584137ece7d3d6c860e1090023369715a74a`. İmzalar ve statik 16 KB kontrolleri başarılı. Aşağıdaki eski aday hash'leri geçmiş aşamaların kaydıdır. Gerçek Google hesabıyla ağ/ikinci cihaz akışı, tercih yazımı ve kalıcı arka plan işi henüz doğrulanmadı/tamamlanmadı. Test hizmetine bağlı bu aday Play'e yüklenmedi.
+
 Atomik birleştirme aşaması: Room 6 ve veri silmeyen 5→6 geçişi, eski cihaz katkısı, tam kopya koruması ve misafir aktarımı sonrası yeniden temel hesaplama hazır. 78 cihaz testi, 11 birim testi, debug/release Lint ve yayın derlemeleri başarılı. [Ayrıntı ve açık entegrasyon kapıları](CLOUD_RECONCILIATION_PLAN.md).
 
 Bu aşamanın güncel imzalı adayları: APK SHA256 `c0c782e890d97b05ecd4910759c7732807f980b0c1dd28cf2bd41fcc585ae6d3`; AAB SHA256 `00b50247187954636d9b3621042630de2e98d9ba2720b2852ca58217fd0b6e21`. İmzalar ve statik 16 KB hizalaması doğrulandı. Paket hâlâ test hizmetine bağlı ve öğrenme çalıştırıcısı/UI henüz bağlı değil; mağazaya yüklenmedi. Önceki Android kopya ayrıştırma kontrol noktasının [GitHub çalışması](https://github.com/yurkenn/english-tales/actions/runs/38145684612) başarılı.
