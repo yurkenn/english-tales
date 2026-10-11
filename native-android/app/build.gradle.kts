@@ -17,6 +17,7 @@ val releaseSigning = Properties().apply {
     rootProject.file("signing.properties").takeIf {it.exists()}?.inputStream()?.use {load(it)}
 }
 val releaseRequested=gradle.startParameter.taskNames.any {it.contains("Release",ignoreCase=true)}
+val releaseDeviceProbe=providers.gradleProperty("releaseDeviceTest").orNull == "true"
 if(releaseRequested) {
     require(listOf("storeFile","storePassword","keyAlias","keyPassword").all {releaseSigning.getProperty(it).orEmpty().isNotBlank()}) {
         "Release signing is missing. Configure the private signing.properties file; debug signing is never used for release."
@@ -28,12 +29,16 @@ if(releaseRequested) {
 }
 
 android {
+    testBuildType = if (releaseDeviceProbe) "release" else "debug"
+    if (releaseDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/releaseProbe/java"))
     namespace = "com.yurken.englishtales"
     compileSdk = 36
 
     defaultConfig {
         applicationId = "com.yurken.englishtales"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = if (releaseDeviceProbe)
+            "com.yurken.englishtales.data.NativeAlignmentInstrumentation"
+        else "androidx.test.runner.AndroidJUnitRunner"
         minSdk = 24
         targetSdk = 36
         // Play Console latest uploaded/production code was 46 on 2026-10-11.
@@ -76,7 +81,7 @@ dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2025.05.00")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")
-    // Current stable path implementation. RELRO verification remains a release gate.
+    // Stable implementation; native ELF alignment is checked before publication.
     implementation("androidx.graphics:graphics-path:1.1.0")
     implementation("androidx.compose.foundation:foundation")
     implementation("androidx.compose.material3:material3")
@@ -91,6 +96,8 @@ dependencies {
     ksp("androidx.room:room-compiler:2.8.5")
     debugImplementation("androidx.compose.ui:ui-tooling")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test:runner:1.6.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    if (!releaseDeviceProbe) {
+        androidTestImplementation("androidx.test:runner:1.6.2")
+        androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    }
 }

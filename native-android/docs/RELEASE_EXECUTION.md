@@ -20,11 +20,11 @@
 
 Mevcut EAS yükleme anahtarı Play sertifikasıyla eşleşti. Sürüm 47 / 2.0.0 APK ve AAB, küçültme ve kaynak daraltmayla derlendi. APK sertifikası, AAB imzası ve APK ZIP 16 KB hizalaması doğrulandı. Özel imza dosyaları Git dışında tutulur; release görevi eksik imza veya servis ayarıyla durur.
 
-**Yayın engeli:** `graphics-path` 1.0.1 ve güncel kararlı 1.1.0 içindeki ARM64/X86_64 RELRO segmentleri sıkı 16 KB kontrolünü geçmiyor. `tooling/verify_release.py` bulguları yerel `app/build/outputs/release-verification.json` dosyasına yazar ve başarısız çıkış verir. [Android'in kontrol yöntemi](https://developer.android.com/guide/practices/page-sizes#check-relro) uygulanır; ZIP hizalamasının başarılı olması bu engeli kapatmaz. Uygun kütüphane/derleme çözümü ve gerçek 16 KB ortam testi tamamlanmalı.
+**16 KB kontrolü düzeltildi:** İlk aracımız geçerli RELRO/LOAD sınır eşleşmesini hata saydı. Android Studio'nun resmi prefix/suffix kurallarıyla düzeltildi; altı regresyon testi geçti. ARM64/X86_64 statik kontrol başarılı. Aynı küçültülmüş imzalı APK, 16 KB x86_64 emülatöründe açıldı (`pageSizeCompat=0`); ayrı imzalı probe kütüphaneyi doğrudan başarıyla yükledi. [Analiz, kanıt ve tekrar çalıştırma](PAGE_SIZE_VERIFICATION.md). ARM64 gerçek cihaz ve Play split APK testi hâlâ açık.
 
 Bu paket test Supabase projesine bağlı teknik adaydır; üretim için tamamlanmış sayılmaz. Play tarafından üretilen APK'lar, eski 46 sürümü üzerine güncelleme ve mağaza imzasıyla Google girişi henüz doğrulanmadı.
 
-Üçüncü kontrol noktası: `checkpoint/native-signing-audit-20261011` (`86268b4`). İmza ayarları, gizli dosya koruması ve hata veren 16 KB kontrolü kaydedildi. Güncel bağımlılıkla 11 birim + 45 cihaz testi geçti; debug/release Lint ve APK/AAB derlemesi başarılı. Cihaz testleri APK güncelleme üzerinden çalıştırıldı; gerçek Google oturumu için uygulama kaldırılmadı. Bu etiket başarılı mağaza adayı anlamına gelmez.
+Üçüncü kontrol noktası: `checkpoint/native-signing-audit-20261011` (`86268b4`). İmza ayarları, gizli dosya koruması ve ilk 16 KB kontrolü kaydedildi. İlk kontrolün yanlış hatası yukarıdaki sonraki aşamada düzeltildi. Güncel bağımlılıkla 11 birim + 45 cihaz testi geçti; debug/release Lint ve APK/AAB derlemesi başarılı. Cihaz testleri APK güncelleme üzerinden çalıştırıldı; gerçek Google oturumu için uygulama kaldırılmadı. Bu etiket başarılı mağaza adayı anlamına gelmez.
 
 ## Temizlik analizi
 

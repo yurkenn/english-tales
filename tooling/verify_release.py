@@ -1,5 +1,6 @@
 """Inspect a signed APK and its AAB; no passwords or signing configuration are read."""
-import argparse, hashlib, json, pathlib, struct, subprocess, zipfile
+import argparse, hashlib, json, pathlib, subprocess, zipfile
+from elf_alignment import check_elf64
 
 parser=argparse.ArgumentParser()
 parser.add_argument('--sdk',required=True)
@@ -22,27 +23,17 @@ signature=subprocess.run([str(tools/('apksigner.bat' if suffix else 'apksigner')
 assert 'ef07c97355fdf76314c7aa946efca444d72d4830' in signature.lower(), 'APK upload signer differs from Play Console'
 bundle=subprocess.run([str(pathlib.Path(args.jdk)/'bin'/('jarsigner'+suffix)),'-verify',str(aab)],capture_output=True,check=True).stdout.decode(errors='replace')
 assert 'jar verified.' in bundle, 'AAB signature verification failed'
+bundle_cert=subprocess.run([str(pathlib.Path(args.jdk)/'bin'/('keytool'+suffix)),'-printcert','-jarfile',str(aab)],capture_output=True,check=True).stdout.decode(errors='replace')
+assert 'ef:07:c9:73:55:fd:f7:63:14:c7:aa:94:6e:fc:a4:44:d7:2d:48:30' in bundle_cert.lower(), 'AAB upload signer differs from Play Console'
 libraries=[]
 alignment_errors=[]
-with zipfile.ZipFile(apk) as archive:
+with zipfile.ZipFile(apk) as archive, zipfile.ZipFile(aab) as bundle_archive:
     for name in archive.namelist():
         if not name.endswith('.so') or not name.startswith(('lib/arm64-v8a/','lib/x86_64/')):
             continue
         data=archive.read(name)
-        assert data[:6]==b'\x7fELF\x02\x01', 'Expected little-endian ELF64'
-        offset=struct.unpack_from('<Q',data,32)[0]
-        size,count=struct.unpack_from('<HH',data,54)
-        loads=[]
-        for index in range(count):
-            kind,flags,file_offset,address,physical,file_size,memory,alignment=struct.unpack_from('<IIQQQQQQ',data,offset+index*size)
-            if kind==1:
-                if alignment<16384: alignment_errors.append(name+' LOAD alignment')
-                if file_offset%16384!=address%16384: alignment_errors.append(name+' LOAD offset')
-                loads.append(alignment)
-            if kind==0x6474e552:
-                if (address+memory)%16384!=0:
-                    alignment_errors.append(name+f' RELRO end 0x{address+memory:x} is not 16KB aligned')
-        assert loads, 'ELF missing LOAD segments'
+        assert data == bundle_archive.read('base/'+name), 'APK and AAB native binary differs: '+name
+        alignment_errors.extend(name+' '+error for error in check_elf64(data))
         libraries.append(name)
 report={'versionCode':metadata['elements'][0]['versionCode'],'versionName':metadata['elements'][0]['versionName'],
         'apkSignerMatchesPlay':True,'aabSignatureVerified':True,'apkZipAlignment16KB':True,'elf64Libraries':libraries,

@@ -63,6 +63,8 @@ __tests__/
 
 # Build
 build/
+__pycache__/
+*.pyc
 
 # scripts
 scripts/
