@@ -3,6 +3,7 @@ package com.yurken.englishtales.data
 import org.json.JSONArray
 import org.json.JSONObject
 import java.time.LocalDate
+import java.time.Instant
 import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.util.UUID
@@ -15,13 +16,32 @@ data class CloudLearningWord(val id: String, val saved: Boolean, val state: Stri
     val dueAt: Long?, val intervalDays: Int, val successDay: String?, val eventId: String,
     val sourceRevisionId: String?, val updatedAt: Long)
 data class CloudLearningProgress(val revisionId: String, val storyId: String, val sentenceId: String,
-    val percent: Int, val eventAt: Long, val eventId: String, val updatedAt: Long)
+    val percent: Int, val eventAt: Long, val eventId: String, val updatedAt: Long,
+    val eventAtIso: String = Instant.ofEpochMilli(eventAt).toString())
 data class CloudLearningBadge(val id: String, val earnedAt: Long)
 
 /** Fully validated immutable input. Parsing has no database side effects. */
 data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val profile: CloudLearningProfile?,
     val sessions: List<CloudLearningSession>, val words: List<CloudLearningWord>,
-    val progress: List<CloudLearningProgress>, val badges: List<CloudLearningBadge>) {
+    val progress: List<CloudLearningProgress>, val badges: List<CloudLearningBadge>,
+    val capturedAtIso: String = Instant.ofEpochMilli(capturedAt).toString()) {
+    internal fun json(): JSONObject = JSONObject().put("schemaVersion", 1).put("userId", userId).put("capturedAt", capturedAtIso)
+        .put("profile", profile?.let { p -> JSONObject().put("display_name", p.name).put("level", p.level)
+            .put("preferred_genre", p.genre).put("daily_goal", p.goal).put("timezone", p.timezone)
+            .put("preferences_version", p.version).put("updated_at", Instant.ofEpochMilli(p.updatedAt).toString()) } ?: JSONObject.NULL)
+        .put("sessions", JSONArray().also { a -> sessions.forEach { s -> a.put(JSONObject().put("id", s.id).put("kind", s.kind)
+            .put("story_id", s.storyId ?: JSONObject.NULL).put("revision_id", s.revisionId ?: JSONObject.NULL).put("study_day", s.day)
+            .put("counted", s.counted).put("points", s.points).put("finished_at", Instant.ofEpochMilli(s.finishedAt).toString())) } })
+        .put("words", JSONArray().also { a -> words.forEach { w -> a.put(JSONObject().put("word_id", w.id).put("saved", w.saved)
+            .put("learning_state", w.state).put("correct_count", w.correctCount)
+            .put("next_review_at", w.dueAt?.let { Instant.ofEpochMilli(it).toString() } ?: JSONObject.NULL).put("interval_days", w.intervalDays)
+            .put("last_success_day", w.successDay ?: JSONObject.NULL).put("last_event_id", w.eventId)
+            .put("source_revision_id", w.sourceRevisionId ?: JSONObject.NULL).put("updated_at", Instant.ofEpochMilli(w.updatedAt).toString())) } })
+        .put("progress", JSONArray().also { a -> progress.forEach { p -> a.put(JSONObject().put("revision_id", p.revisionId)
+            .put("story_id", p.storyId).put("last_sentence_id", p.sentenceId).put("percent", p.percent).put("last_event_at", p.eventAtIso)
+            .put("last_event_id", p.eventId).put("updated_at", Instant.ofEpochMilli(p.updatedAt).toString())) } })
+        .put("badges", JSONArray().also { a -> badges.forEach { b -> a.put(JSONObject().put("badge_id", b.id)
+            .put("earned_at", Instant.ofEpochMilli(b.earnedAt).toString())) } })
     companion object {
         fun decode(json: JSONObject, expectedUser: String): LearningCloudSnapshot = try {
             require(json.toString().toByteArray(Charsets.UTF_8).size <= LearningSyncHttp.MAX_RESPONSE_BYTES)
@@ -61,14 +81,14 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
             val progress = rows(json, "progress", 5_000).map { p ->
                 CloudLearningProgress(uuid(text(p, "revision_id")), text(p, "story_id"), text(p, "last_sentence_id"),
                     number(p, "percent", 0, 100).toInt(), timestamp(text(p, "last_event_at")),
-                    uuid(text(p, "last_event_id")), timestamp(text(p, "updated_at")))
+                    uuid(text(p, "last_event_id")), timestamp(text(p, "updated_at")), text(p, "last_event_at"))
             }.also { unique(it.map { p -> p.revisionId }) }
             val badges = rows(json, "badges", 5).map { b ->
                 val id = text(b, "badge_id").also { require(it in setOf("first_story", "first_practice", "five_words", "three_day_streak", "seven_day_streak")) }
                 CloudLearningBadge(id, timestamp(text(b, "earned_at")))
             }.also { unique(it.map { b -> b.id }) }
             require(profile != null || (sessions.isEmpty() && words.isEmpty() && progress.isEmpty() && badges.isEmpty()))
-            LearningCloudSnapshot(user, captured, profile, sessions, words, progress, badges)
+            LearningCloudSnapshot(user, captured, profile, sessions, words, progress, badges, text(json, "capturedAt"))
         } catch (_: Exception) { throw LearningSyncFailure("invalid_snapshot") }
 
         private fun rows(json: JSONObject, field: String, limit: Int): List<JSONObject> {

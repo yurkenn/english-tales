@@ -24,13 +24,31 @@ Migration CLI ile oluşturuldu; test projesine uygulanınca yerel dosyanın sür
 
 16 KiB emülatörde 8 yeni test geçti: tekrar teslim, kayıp teslim yanıtı sonrası aynı gövdeyle deneme, kapsam değişimi, çıkış, gövde çakışması, bozuk başarı/401, yanlış hesap ve SQLSTATE ayrıştırma. Debug derleme, mevcut birim testleri ve lint geçti.
 
-## Android birleştirme sırası — sıradaki uygulama
+## Android kopya ayrıştırma — tamamlandı
 
-İlk maddenin ayrıştırma/okuma temeli tamamlandı: `LearningCloudSnapshot` tüm dizileri, protokol/UID, gerçek sayı/boolean tiplerini, UUID/tarih/saat dilimi, aralıkları ve tekrar eden kimlikleri doğrular. Boş yeni hesap, silinmiş kelime ve kaynak revision bilgisi korunur. `LearningSnapshotReader` çağrı ve yanıt çevresinde hesap neslini denetler. Hiçbir yerel tablo değiştirilmez; atomik uygulama hâlâ sıradadır.
+`LearningCloudSnapshot` tüm dizileri, protokol/UID, gerçek sayı/boolean tiplerini, UUID/tarih/saat dilimi, aralıkları ve tekrar eden kimlikleri doğrular. Boş yeni hesap, silinmiş kelime ve kaynak revision bilgisi korunur. `LearningSnapshotReader` çağrı ve yanıt çevresinde hesap neslini denetler. Ayrıştırmanın veritabanı yan etkisi yoktur.
 
 7 yeni kopya testi geçti. Mikro saniyeli sunucu zamanları milisaniye hassasiyetine doğru çevrilir; açık UTC/ofset zorunludur. Android 7 desteğini korumak için resmi core-library desugaring etkinleştirildi, `desugar_jdk_libs:2.1.5` sabitlendi. [Android rehberi](https://developer.android.com/studio/write/java8-support) ve [Google sürüm kaydı](https://github.com/google/desugar_jdk_libs/blob/master/CHANGELOG.md). Android 7 üzerinde cihaz çalışma kontrolü ayrıca yayın kapısıdır.
 
 Son derleme üzerinde bütün 61 cihaz testi 16 KiB emülatörde başarılı; 11 birim testi, debug/release Lint, imzalı APK/AAB ve statik paket doğrulaması da geçti. Gerçek hesaba kuyruk gönderimi veya sunucu verisini yerel tablolara uygulama bu testlerde yapılmadı.
+
+## Atomik yerel birleştirme — tamamlandı
+
+Room sürümü 6; 5→6 migration yalnızca `learning_cloud_state` tablosunu ekler. Önceki 1/2/3/4 sürümleri de veri silmeden bu sürüme gelir. Bu tabloda kaynak proje, tam sunucu kopyası, eski cihaz puan/günlerinin ayrı temeli, tercihler sürümü/çakışması ve uygulama zamanı saklanır. Kuyruk, aktarım makbuzları ve yerel oturum taslakları korunur.
+
+`LearningStore.reconcileCloud` bütün değişiklikleri tek transaction içinde uygular. İlk kopyadan önce yerel toplamdan modern kuyruk katkısı çıkarılarak cihaz geçmişi yakalanır. Toplam = cihaz temeli + sunucu oturumları + sunucuda henüz görülmeyen yerel oturumlar. Aynı oturum UUID'si ikinci ödül olmaz. Okuma aynı hikâye/günde sayılır; bilinen eski okuma anahtarları da tekrar sayılmaz. Günlük sayaçları bulunmayan eski seri, son gün/seri uzunluğu kanıtıyla yalnızca seri hesaplamasında korunur; sahte günlük oturum yazılmaz. Sonradan misafir aktarımı aynı transaction içinde cihaz temelini yeniden hesaplar; makbuz aynı aktarımı ikinci kez eklemez.
+
+Bekleyen/geciktirilmiş/karantinadaki kelime eylemi varsa mevcut yerel görünüm tutulur; gönderim ve yeni tam kopyadan sonra sunucunun zaman/UUID sırasındaki tekrar sonucu uygulanır. Bu ara görünüm iki cihazın nihai birleşimi değildir. Bekleyen silme geri açılmaz. Diğer kelimelerin `saved=false` kayıtları uygulanır; bilinmeyen/arşivlenmiş kelimeler ve kaynakları silinmez. Kaynağı henüz yüklenmemiş kelimenin kullanıcıya gösterilecek içeriğini çözmek hâlâ açık iştir. Aynı revision'da maksimum yüzde ve yeni olay imleci tutulur; farklı revision'a yüzde taşınmaz. Tüm sunucu revision'ları saklanan kopyada korunur. Başarılar birleştirilir. Kirli tercihler ezilmez; sürüm çakışması saklanır, çözüm UI'si/CAS yazımı sıradadır.
+
+Kaynak proje değişimi veya UID/kapsam uyuşmazlığı ret nedenidir. Kopya zamanı ve revision olay sırası karşılaştırmasında mikrosaniyeler ISO değerinde korunur; veritabanı/UI zamanları milisaniyedir. Eski kopya uygulanmaz. Sonraki kopyada önceden kabul edilmiş oturum/kelime/revision/başarı kaydı eksilirse, sabit oturum değişirse veya revision yüzdesi/tercih sürümü gerilerse bütün uygulama reddedilir. Hesap silme/servis sıfırlama için ayrı açık akış gerekir. Yazma hatası veya işlem içindeki kapsam değişimi tüm değişiklikleri geri alır.
+
+Kopyadaki kısa oturum satırı bütün değişmeyen gönderim gövdesini kanıtlamaz. Bu yüzden sadece toplamı tekilleştirir; kuyruğu teslim edildi işaretlemez. Asıl RPC'nin `applied=true/false` yanıtı gerekir. Böylece gövde çakışması kontrolü atlanmaz.
+
+17 yeni birleştirme testi ve mevcut testler dahil **78 cihaz testi** 16 KiB emülatörde geçti; 11 birim testi, debug/release Lint ve imzalı derlemeler başarılı. Senaryolar: 45+25=70, tekrar/reopen, iki cihaz deposu, bekleyen silme/tekrar takvimi, çoklu revision, tercihler çakışması, transaction/kapsam geri alma, eski/eksik/çelişkili kopya, misafir sonrası temel ve bulut silme önceliği, eski seri kanıtı, 5→6 migration. Test sabit saatinde iki oturumun UUID sırası rastgele olduğundan test verisini “son kayıt” ile seçmek yanlış kopya üretti; seçim özgün kimlikle düzeltildi ve bütün 78 test tekrar geçti. Bunlar izole veritabanları ve kontrollü sunucu kopyalarıyla yapıldı. Gerçek Google hesabı, ağ ve ikinci cihaz testi yerine geçmez.
+
+## Entegrasyon sırası — sıradaki uygulama
+
+Önce tek hesap kapsamına bağlı bir çalıştırıcı: doğrulanmış oturum → tam kopya/atomik uygulama → özgün kuyruk RPC'leri → yeni tam kopya/uygulama. Gönderim başarısızsa bekleyen yerel görünüm korunmalı ve kullanıcıya durum gösterilmeli. Cihazda kalan eski puanlar ayrı açıklanmalı. Sonra tercih CAS yazımı ve açık çakışma çözümü, bilinmeyen kelime kaynağı, hesap değişimi/yeniden açılış ve gerçek ağ doğrulaması. Bu kapıdan sonra arka plan işi bağlanabilir.
 
 1. Kendi UID'si, kaynak proje ve protokol sürümü doğrulanmış kopyayı bütünüyle ayrıştır; bozuk/eksik/büyük yanıtta yerel değişiklik yapma.
 2. Tercihler için sunucu version değerini sakla; yerel kirli tercihleri koşullu yaz. Çakışmada kullanıcıya gösterilecek karar gerekir; yeni versiyonu alıp sessizce başka cihazın değişikliğini ezme.

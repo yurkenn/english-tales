@@ -1,6 +1,6 @@
 # Android ve servis veri sözleşmesi
 
-Bu sözleşme hazır veritabanı işlemlerini ve Android entegrasyonu için alınan kararları tanımlar. Android'in anonim katalog, metin/kelime ve kapak indirme bağlantısı tamamlandı; [içerik bağlantısı kaydı](../docs/REMOTE_CONTENT_PLAN.md). Öğrenme gövdelerini oluşturan Room kayıtları ve kalıcı kuyruk hazırdır; hesap ve öğrenme RPC gönderimi henüz bağlanmadı.
+Bu sözleşme hazır veritabanı işlemlerini ve Android entegrasyonu için alınan kararları tanımlar. Android'in anonim katalog, metin/kelime ve kapak indirme bağlantısı tamamlandı; [içerik bağlantısı kaydı](../docs/REMOTE_CONTENT_PLAN.md). Hesap oturumları, kalıcı kuyruk, RPC gönderim katmanı, tam kopya ayrıştırma ve Room 6 atomik birleştirme hazırdır. Öğrenme çalıştırıcısı/UI ve arka plan işi henüz bağlı değildir; [güncel eşitleme analizi](../docs/CLOUD_RECONCILIATION_PLAN.md).
 
 ## İçerik kimliği ve yayın
 
@@ -20,7 +20,7 @@ Bu sözleşme hazır veritabanı işlemlerini ve Android entegrasyonu için alı
 
 Öğrenme tabloları yalnızca oturumun `auth.uid()` değeriyle okunur. İstek gövdesinde kullanıcı kimliği kabul edilmez. Normal kullanıcı doğrudan puan, seri, başarı veya ilerleme tablosunu yazamaz; işlemler aşağıdaki fonksiyonlardan geçer.
 
-Misafir kayıtları cihazda tutulur. Android Room katmanı `guest` ve her hesabın yerel verisini ayrı dosyada tutar; dosyanın sahip kaydı açılışta doğrulanır. Gönderim/teslim API'si beklenen hesapla eşleşir; misafir kuyruğunu gönderime açmaz. Hesap ekranı ve ilk hesap bağlama sırasında misafir kayıtlarının bir kez aktarılması henüz uygulanmadı.
+Misafir kayıtları cihazda tutulur. Android Room katmanı `guest` ve her hesabın yerel verisini ayrı dosyada tutar; dosyanın sahip kaydı açılışta doğrulanır. Gönderim/teslim API'si beklenen hesapla eşleşir; misafir kuyruğunu gönderime açmaz. Hesap ekranından seçilmiş hesaba tek seferlik misafir aktarımı, kalıcı günlük ve makbuzla uygulanmıştır. Bulut temeli oluşturulduktan sonraki aktarım da eski cihaz katkısını aynı transaction içinde günceller.
 
 `installationId`, yerel kurulumun rastgele UUID'sidir; reklam kimliği, e-posta veya cihaz seri numarası değildir. Kullanıcı kimliği yerine geçmez. Yeni kurulumda yenilenebilir; bir gönderim denemesinde değiştirilmez.
 

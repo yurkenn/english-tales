@@ -63,11 +63,20 @@ data class GuestImportRow(@PrimaryKey val id: String,@ColumnInfo(name="payload_h
     @ColumnInfo(name="legacy_points") val legacyPoints: Int,@ColumnInfo(name="legacy_lessons") val legacyLessons: Int,
     @ColumnInfo(name="legacy_days") val legacyDays: String,@ColumnInfo(name="imported_at") val importedAt: Long)
 
+@Entity(tableName="learning_cloud_state")
+data class LearningCloudStateRow(@PrimaryKey val id: Int=1, val source: String,
+    @ColumnInfo(name="snapshot_json") val snapshotJson: String,
+    @ColumnInfo(name="baseline_json") val baselineJson: String,
+    @ColumnInfo(name="preferences_version") val preferencesVersion: Long?,
+    @ColumnInfo(name="preferences_conflict") val preferencesConflict: Boolean,
+    @ColumnInfo(name="applied_at") val appliedAt: Long)
+
 @Dao
 interface OfflineLearningDao {
     @Query("SELECT * FROM local_profile WHERE id=1") fun profile(): LocalProfileRow?
     @Insert(onConflict=OnConflictStrategy.REPLACE) fun profile(profile: LocalProfileRow)
     @Query("SELECT * FROM local_identity WHERE id=1") fun identity(): LocalIdentityRow?
+    @Query("SELECT * FROM learning_cloud_state WHERE id=1") fun cloud(): LearningCloudStateRow?
     @Query("SELECT * FROM learning_outbox ORDER BY created_at,id") fun operations(): List<QueuedLearningOperation>
     @Query("SELECT * FROM learning_outbox WHERE state='pending' AND next_attempt_at<=:now ORDER BY created_at,id LIMIT :limit")
     fun pending(now: Long,limit: Int): List<QueuedLearningOperation>
@@ -92,7 +101,7 @@ sealed class LearningOwner(val id: String,val databaseName: String) {
 
 @Database(entities=[SavedWordRow::class,StoryProgressRow::class,LearningStatsRow::class,LearningDayRow::class,
     EngagementRow::class,BadgeRow::class,LocalProfileRow::class,LocalIdentityRow::class,QueuedLearningOperation::class,SessionDraftRow::class,
-    GuestTransferRow::class,GuestImportRow::class],version=5,exportSchema=true)
+    GuestTransferRow::class,GuestImportRow::class,LearningCloudStateRow::class],version=6,exportSchema=true)
 abstract class LearningDatabase: RoomDatabase() {
     abstract fun offline(): OfflineLearningDao
     companion object {
@@ -129,6 +138,9 @@ abstract class LearningDatabase: RoomDatabase() {
             return Room.databaseBuilder(context,LearningDatabase::class.java,owner.databaseName)
                 .addMigrations(*migrations.toTypedArray())
                 .addMigrations(object: Migration(4,5) {override fun migrate(db: SupportSQLiteDatabase) {createTransferTables(db)}})
+                .addMigrations(object: Migration(5,6) {override fun migrate(db: SupportSQLiteDatabase) {
+                    db.execSQL("CREATE TABLE learning_cloud_state(id INTEGER NOT NULL PRIMARY KEY,source TEXT NOT NULL,snapshot_json TEXT NOT NULL,baseline_json TEXT NOT NULL,preferences_version INTEGER,preferences_conflict INTEGER NOT NULL,applied_at INTEGER NOT NULL)")
+                }})
                 .addCallback(object: Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) { initialize(db,owner.id,initial);db.execSQL("INSERT INTO learning_stats(id) VALUES(1)") }
                     override fun onOpen(db: SupportSQLiteDatabase) {

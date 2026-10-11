@@ -100,7 +100,11 @@ object GuestTransfer {
                 .groupingBy {it.getString("event_id").takeLast(10)}.eachCount()
             // Account word history takes precedence, including tombstones in the outbox.
             val accountWordHistory=rows(db,"learning_outbox").objects().filter {it.getString("rpc")=="apply_word_event"}
-                .map {JSONObject(it.getString("payload")).getString("wordId")}.toSet()
+                .map {JSONObject(it.getString("payload")).getString("wordId")}.toMutableSet()
+            // Another device's cloud tombstone is account history too.
+            rows(db,"learning_cloud_state").objects().singleOrNull()?.let { cloud ->
+                JSONObject(cloud.getString("snapshot_json")).getJSONArray("words").objects().forEach {accountWordHistory+=it.getString("word_id")}
+            }
             root.getJSONArray("saved_words").objects().forEach {word ->
                 val key=word.getString("word_id")
                 if(key !in accountWordHistory && find(db,"saved_words","word_id",key)==null) insert(db,"saved_words",word)
@@ -160,6 +164,7 @@ object GuestTransfer {
             }
             drafts.forEach {insert(db,"session_drafts",it)}
             insert(db,"guest_imports",JSONObject().put("id",id).put("payload_hash",hash).put("legacy_points",legacyPoints).put("legacy_lessons",legacyLessons).put("legacy_days",legacyDays.toString()).put("imported_at",System.currentTimeMillis()))
+            LearningReconciliation.rebaseAfterGuestImport(db,target.owner.id)
             true
         }
     }

@@ -40,6 +40,12 @@ Git etiketi veritabanını veya Supabase'i geri döndürmez. Şema değişikliğ
 
 ## Kalan yayın kapıları
 
+Atomik birleştirme aşaması: Room 6 ve veri silmeyen 5→6 geçişi, eski cihaz katkısı, tam kopya koruması ve misafir aktarımı sonrası yeniden temel hesaplama hazır. 78 cihaz testi, 11 birim testi, debug/release Lint ve yayın derlemeleri başarılı. [Ayrıntı ve açık entegrasyon kapıları](CLOUD_RECONCILIATION_PLAN.md).
+
+Bu aşamanın güncel imzalı adayları: APK SHA256 `c0c782e890d97b05ecd4910759c7732807f980b0c1dd28cf2bd41fcc585ae6d3`; AAB SHA256 `00b50247187954636d9b3621042630de2e98d9ba2720b2852ca58217fd0b6e21`. İmzalar ve statik 16 KB hizalaması doğrulandı. Paket hâlâ test hizmetine bağlı ve öğrenme çalıştırıcısı/UI henüz bağlı değil; mağazaya yüklenmedi. Önceki Android kopya ayrıştırma kontrol noktasının [GitHub çalışması](https://github.com/yurkenn/english-tales/actions/runs/38145684612) başarılı.
+
+Room 6 açılmış cihazda eski Room 5 APK'ya dönmek veri silmeden çalışmaz. Kaynak geri alındığında Room 6 uyumluluğunu koruyan düzeltme gerekir; eski APK'yı zorla açmak veya downgrade için veriyi silmek doğru geri dönüş değildir. Play'e sürüm yüklendikten sonra düzeltme daha yüksek sürüm koduyla çıkarılmalıdır.
+
 Öğrenme gönderim temeli `checkpoint/learning-upload-20261011` (`c3c40d0`) ile GitHub'a gönderildi. Gönderici henüz otomatik/UI akışında çalışmıyor. Sunucu snapshot kontrol noktası `068f891` için [GitHub kontrolleri](https://github.com/yurkenn/english-tales/actions/runs/38144712469) başarılı.
 
 Sonraki Android snapshot doğrulama aşamasında debug/release derlemeleri, 11 birim testi ve iki Lint kontrolü geçti. İmzalı 47/2.0.0 paketleri yeniden üretildi; APK/AAB imzaları ve 16 KB statik hizalaması başarılı. Bu adayın APK SHA256 değeri `daf8fb84d91e0ffb435452414b88fad174df5098bde5dfa40777f022b47fb80a`, AAB SHA256 değeri `e5adbfd2840a84caa6a7d5ecfa93c0d447c3e7574200566d99a2db4a109aa759`. Bunlar önceki 16 KB kontrol noktası dosyalarının yerine yeni aday hash'leridir; yeni paket için Play dağıtım testi yapılmadı.

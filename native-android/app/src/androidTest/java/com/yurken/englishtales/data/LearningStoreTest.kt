@@ -114,7 +114,7 @@ class LearningStoreTest {
         store=LearningStore(context) {now}
         assertEquals(125,store.snapshot().points);assertEquals(88,store.snapshot().storyProgress["quiet-morning"])
         assertEquals("known",store.snapshot().wordStates["quiet"]);assertEquals(listOf("quiet"),store.snapshot().dueWordIds)
-        assertEquals(5,store.readableDatabase.version)
+        assertEquals(6,store.readableDatabase.version)
     }
 
     @Test fun versionOneMigrationKeepsExistingProgress() {
@@ -128,7 +128,7 @@ class LearningStoreTest {
         }
         store=LearningStore(context) {now}
         assertEquals(25,store.snapshot().points);assertEquals(44,store.snapshot().storyProgress["quiet-morning"])
-        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(5,store.readableDatabase.version)
+        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(6,store.readableDatabase.version)
         assertTrue(store.queuedOperations().isEmpty())
     }
 

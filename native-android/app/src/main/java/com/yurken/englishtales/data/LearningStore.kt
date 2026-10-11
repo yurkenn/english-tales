@@ -230,6 +230,9 @@ class LearningStore(context: Context,val owner: LearningOwner=LearningOwner.Gues
         dao.insert(QueuedLearningOperation(id,owner.id,rpc,payload.toString(),clock(),state=if(blockedReason==null) "pending" else "blocked",errorCode=blockedReason))
     }
     fun queuedOperations() = dao.operations()
+    internal fun reconcileCloud(snapshot: LearningCloudSnapshot, source: String, isCurrentScope: ()->Boolean): Boolean =
+        transferTransaction { db -> LearningReconciliation.apply(db,owner,snapshot,source,clock(),isCurrentScope) }
+    internal fun cloudState() = dao.cloud()
     fun pendingUploads(expectedAccount: String,limit: Int=50): List<QueuedLearningOperation> {
         if(owner !is LearningOwner.Account || owner.id!=expectedAccount) return emptyList()
         return dao.pending(clock(),limit.coerceIn(1,100))
