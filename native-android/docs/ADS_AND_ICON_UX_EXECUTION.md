@@ -1,6 +1,6 @@
 # Native reklam ve ikon UX uygulama kaydı
 
-13 Ekim 2026 · Başlangıç `58edfe3` · Kullanıcı [reklam etki haritasını](INTERSTITIAL_AD_MAP.md) ve [ikon analizinin](ICON_AUDIT.md) önceliklerini “Yapalım” diyerek onayladı. Kullanıcı yeni interstitial birimi olmadığını bildirdi.
+13 Ekim uygulaması / 14 Ekim 2026 AdMob doğrulaması · Başlangıç `58edfe3` · Kullanıcı [reklam etki haritasını](INTERSTITIAL_AD_MAP.md) ve [ikon analizinin](ICON_AUDIT.md) önceliklerini “Yapalım” diyerek onayladı. Kullanıcı yeni interstitial birimi olmadığını bildirdi; ardından hesabına giriş yaptı. English Tales mevcut App ID doğrulandı; Native_Study_Completion interstitial birimi `ca-app-pub-6012481599277383/4825278156` oluşturuldu. AdMob tarafında kullanıcı başına 3 gösterim / 24 saat sınırı kaydedildi. Mevcut uygulama kaydı `com.yurken.englishtales`, App verification: Verified ve Approval status: Ready olarak görüldü; hesap da reklam sunumuna onaylı. Avrupa/ABD gizlilik mesajları kontrol anında oluşturulmamıştı.
 
 ## Uygulanan davranış
 
@@ -41,9 +41,9 @@ Hikâye favorileri, doğrudan hikâyeyi açan web/deep link, avatar fotoğrafı 
 
 ## Canlı reklamı açmak için kalan işler
 
-`config/ads.properties`: ENABLED=false, boş interstitial kimliği, PUBLICATION_READY=false. Debug yalnız Google örnek App ID ve interstitial kullanır. Release controller oluşturmaz. Eski rewarded ID interstitial yerine kabul edilmez. Gerçek interstitial birimi doğrulanmadan, yayın hazırlığı işaretlenmeden ve özel release imzası olmadan release üretimi engellenir.
+`config/ads.properties`: ENABLED=false, doğrulanmış yeni interstitial kimliği, PUBLICATION_READY=false. Debug yalnız Google örnek App ID ve interstitial kullanır. Release controller oluşturmaz. Eski rewarded ID interstitial yerine kabul edilmez. Gerçek interstitial birimi doğrulanmadan, yayın hazırlığı işaretlenmeden ve özel release imzası olmadan release üretimi engellenir.
 
-1. AdMob hesabında mevcut English Tales App ID sahipliğini doğrula; Android interstitial birimi oluştur ve kimliğini yapılandır.
+1. Tamamlandı: AdMob hesabındaki English Tales App ID ve yeni Android interstitial birimi doğrulandı, kimlik yapılandırıldı.
 2. AdMob Privacy & messaging formunu yapılandır; UMP gerekli/gerekli değil/ağ hatası ve tercih değiştirme senaryolarını gerçek uygulama kaydıyla test et.
 3. Gizlilik politikasını ve app-ads.txt'yi canlı destek sitesine yayımla; developer website alan adını AdMob/Play kaydıyla eşleştir, tarama durumunu doğrula.
 4. Play Console Contains ads, Data safety, reklam kimliği ve hedef kitle beyanlarını bu SDK'nın fiili veri kullanımıyla eşleştir. Kodun genel kitle seçimi çocuk kullanımına ilişkin platform yükümlülüklerini otomatik olarak çözmez.
