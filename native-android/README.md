@@ -44,9 +44,11 @@ Hata ayıklama APK'sı `app/build/outputs/apk/debug/app-debug.apk` konumunda olu
 
 macOS/Linux: `bash gradlew :app:assembleDebug :app:testDebugUnitTest :app:lintDebug`. Cihaz/emülatör bağlıyken `bash gradlew :app:connectedDebugAndroidTest`.
 
-Kaynakta 23 JVM ve 120 cihaz testi tanımı bulunur. Yapılandırılmış uzak içerik testi gerçek ağdan okuma yapabilir; Auth testleri kontrollü yanıtlar kullanır. Test tanımı sayısı, çalıştırılan/geçen test sayısı değildir. CI cihaz APK'sını derler fakat bağlı cihaz testini çalıştırmaz. Entegrasyon testleri için kişisel verisi olmayan ayrı emülatör kullanın; Gradle uygulama APK'sını kurup kaldırabilir. Gerçek Google/e-posta, ikinci cihaz ve Play güncelleme kabulü ayrıca doğrulanmalıdır.
+Kaynakta 23 JVM ve 124 cihaz testi tanımı bulunur. Yapılandırılmış uzak içerik testi gerçek ağdan okuma yapabilir; Auth testleri kontrollü yanıtlar kullanır. Test tanımı sayısı, çalıştırılan/geçen test sayısı değildir. CI cihaz APK'sını derler fakat bağlı cihaz testini çalıştırmaz. Entegrasyon testleri için kişisel verisi olmayan ayrı emülatör kullanın; Gradle uygulama APK'sını kurup kaldırabilir. Gerçek Google/e-posta, ikinci cihaz ve Play güncelleme kabulü ayrıca doğrulanmalıdır.
 
 Test kimliğiyle native reklam ve ikon iyileştirmeleri: [uygulama ve yayın kapıları](docs/ADS_AND_ICON_UX_EXECUTION.md). Ağ gerektiren Google test reklamı ayrı çalıştırılır: `bash gradlew connectedDebugAndroidTest -PadDeviceTest=true -Pandroid.testInstrumentationRunnerArguments.class=com.yurken.englishtales.ads.GoogleTestAdProbe`. Üretim reklamları `config/ads.properties` içinde kapalıdır.
+
+Ana ekran odağı ve cihazda korunan okuma görünümü: [UX uygulama kaydı](docs/READING_HOME_UX_EXECUTION.md).
 
 ## Mimari ve sonraki işler
 

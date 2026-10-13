@@ -21,6 +21,8 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.ProgressBarRangeInfo
+import androidx.compose.ui.semantics.progressBarRangeInfo
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.platform.LocalDensity
@@ -64,7 +66,7 @@ fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Mod
 
 @Composable
 fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Color = TaleYellow) {
-    Box(modifier.height(6.dp).background(TaleLine,RoundedCornerShape(4.dp))) {
+    Box(modifier.semantics {progressBarRangeInfo=ProgressBarRangeInfo(progress.coerceIn(0f,1f),0f..1f)}.height(6.dp).background(TaleLine,RoundedCornerShape(4.dp))) {
         if(progress>0f) Box(Modifier.fillMaxWidth(progress.coerceIn(0f,1f)).height(6.dp).background(color,RoundedCornerShape(4.dp)))
     }
 }

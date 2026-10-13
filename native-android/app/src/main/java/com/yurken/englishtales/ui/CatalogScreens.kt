@@ -30,9 +30,10 @@ import com.yurken.englishtales.data.LearningSnapshot
 import com.yurken.englishtales.data.Story
 import com.yurken.englishtales.data.progressFor
 
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun StatsHeader(snapshot: LearningSnapshot) {
-    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
+    FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalArrangement=Arrangement.spacedBy(4.dp),maxItemsInEachRow=if(LocalDensity.current.fontScale>=1.5f) 2 else 4) {
         Text("🇺🇸",fontSize=29.sp)
         LearningInfoButton("study",snapshot.level,"İngilizce seviyen","Seçtiğin seviye ${snapshot.level}. Hikâye önerileri buna göre hazırlanır. Seviyeni Profilim → Ayarlar ekranından değiştirebilirsin.")
         LearningInfoButton("fire","${snapshot.streak}","Çalışma serin",streakExplanation(snapshot))
@@ -75,21 +76,14 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
         StatsHeader(snapshot)
         Spacer(Modifier.height(15.dp))
         DailyPlan(snapshot,onRead,onPractice)
+        Spacer(Modifier.height(24.dp))
+        OutlinedButton(onClick=onOpenWords,modifier=Modifier.padding(horizontal=16.dp).fillMaxWidth().heightIn(min=48.dp)) {
+            Text("Kelimelerim · ${snapshot.savedWordIds.size} kayıtlı kelime")
+        }
         WeeklyActivity(snapshot)
-        Spacer(Modifier.height(25.dp))
-        Row(Modifier.padding(horizontal=16.dp).fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
-            Text("Kelimelerin",fontSize=20.sp)
-            Text("Kelimelerim →",color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(onClick=onOpenWords).padding(8.dp))
-        }
-        Row(Modifier.padding(16.dp).fillMaxWidth().border(1.dp,TaleLine,RoundedCornerShape(10.dp)).clickable(onClick=onOpenWords).padding(18.dp),verticalAlignment=Alignment.CenterVertically) {
-            ReferenceIcon("study",TaleBlue,Modifier.size(35.dp))
-            Column(Modifier.weight(1f).padding(start=16.dp)) {
-                Text("${snapshot.savedWordIds.size} kelime",fontSize=20.sp,fontWeight=FontWeight.Bold)
-                Text("Öğrenmeye devam et",color=TaleMuted,fontSize=12.sp)
-            }
-            Text("→",color=TaleBlue,fontSize=24.sp)
-        }
+        Spacer(Modifier.height(16.dp))
         BookShelf("Senin için",stories,onOpenStory) { showAll=true }
+
     }
 }
 
