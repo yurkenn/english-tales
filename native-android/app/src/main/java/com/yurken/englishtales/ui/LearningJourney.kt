@@ -22,30 +22,49 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
     val position=snapshot.readingPositions[snapshot.lastStoryId]
     val resume=(position?.let {LearningContent.revision(it.revisionId)} ?: LearningContent.storyById[snapshot.lastStoryId])?.takeIf {snapshot.progressFor(it)<100}
     val next=resume?:LearningContent.recommendedStory(snapshot.level,snapshot.preferredGenre,LearningContent.stories.associate {it.id to snapshot.progressFor(it)})
-    Column(Modifier.padding(horizontal=16.dp).fillMaxWidth().border(1.dp,TaleLine,RoundedCornerShape(14.dp)).padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-        Row(verticalAlignment=Alignment.CenterVertically) {
-            Text("Bugünkü planın",fontSize=20.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
-            Text("${snapshot.todaySessions} / ${snapshot.dailyGoal}",color=TaleBlue,fontWeight=FontWeight.Bold)
+    Column(Modifier.padding(horizontal=16.dp).fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
+            Text("Bugünkü planın",style=MaterialTheme.typography.titleLarge,modifier=Modifier.weight(1f))
+            Text("${snapshot.todaySessions} / ${snapshot.dailyGoal} adım",color=TaleMuted,style=MaterialTheme.typography.labelLarge)
         }
         ReferenceProgress((snapshot.todaySessions.toFloat()/snapshot.dailyGoal).coerceAtMost(1f),Modifier.fillMaxWidth(),TaleBlue)
-        Text(if(snapshot.dailyGoalReached) "Hedef tamamlandı! Bugünkü emeğin kaydedildi. Yarın yeni bir adımla devam edebilirsin." else "Bir hikâye veya kısa bir kelime çalışması = 1 adım.",fontSize=12.sp,color=TaleMuted)
+        Text(if(snapshot.dailyGoalReached) "Hedef tamamlandı! İstersen okumaya devam edebilirsin."
+            else "Bir hikâye veya kısa bir kelime çalışması = 1 adım.",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+        if(next!=null) {
+            val progress=snapshot.progressFor(next)
+            Surface(shape=MaterialTheme.shapes.large,color=MaterialTheme.colorScheme.surface,
+                border=BorderStroke(1.dp,TaleLine),modifier=Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(20.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+                    Text(if(resume!=null) "Kaldığın hikâye" else if(progress==100) "Yeniden keşfet" else "Sıradaki hikâyen",
+                        style=MaterialTheme.typography.labelLarge,color=TaleBlue)
+                    Row(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalAlignment=Alignment.CenterVertically) {
+                        BookCover(next,Modifier.size(68.dp,100.dp))
+                        Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                            Text(next.title,style=MaterialTheme.typography.titleLarge)
+                            Text("${next.level} · ${next.genre}",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                            if(resume!=null) Text("%$progress tamamlandı",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                        }
+                    }
+                    if(resume!=null) ReferenceProgress(progress/100f,Modifier.fillMaxWidth(),TaleBlue)
+                    Button(onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
+                        Text(if(resume!=null) "Okumaya devam et" else if(progress==100) "Yeniden oku" else "Hikâyeye başla")
+                    }
+                }
+            }
+        } else Text("Yeni hikâyeler hazırlandığında burada görünecek.",color=TaleMuted)
         if(snapshot.dueWordIds.isNotEmpty()) {
-            PlanAction("${snapshot.dueWordIds.size} kelimeyi hatırla","Tekrar zamanı geldi", "review") {onPractice(snapshot.dueWordIds.take(5))}
+            val batch=snapshot.dueWordIds.take(5)
+            OutlinedButton(onClick={onPractice(batch)},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
+                Column(Modifier.padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
+                    Text("${batch.size} kelimeyi hatırla",style=MaterialTheme.typography.titleMedium)
+                    Text("${snapshot.dueWordIds.size} kelimenin tekrar zamanı geldi",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                }
+            }
         } else if(snapshot.savedWordIds.isNotEmpty()) {
-            Text("Tekrarların güncel ✓",fontSize=14.sp,color=TaleBlue)
-            snapshot.nextReviewAt?.let {at -> Text("Sonraki tekrar: ${SimpleDateFormat("d MMM, HH:mm",Locale.forLanguageTag("tr")).format(Date(at))}",fontSize=12.sp,color=TaleMuted)}
+            Text("Tekrarların güncel ✓",color=TaleMuted)
+            snapshot.nextReviewAt?.let {at -> Text("Sonraki tekrar: ${SimpleDateFormat("d MMM, HH:mm",Locale.forLanguageTag("tr")).format(Date(at))}",
+                style=MaterialTheme.typography.bodyMedium,color=TaleMuted)}
         }
-        if(next!=null) PlanAction(if(resume!=null) "Okumaya devam et" else "Sıradaki hikâyen",next.title+" · "+next.level,"read") {onRead(next.id)}
-        else Text("Yeni hikâyeler hazırlandığında burada görünecek.",color=TaleMuted,fontSize=14.sp)
-    }
-}
-
-@Composable
-private fun PlanAction(title: String,subtitle: String,icon: String,onClick: ()->Unit) {
-    Row(Modifier.fillMaxWidth().background(TaleBlue.copy(alpha=0.06f),RoundedCornerShape(10.dp)).clickable(onClick=onClick).padding(12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-        ReferenceIcon(icon,TaleBlue,Modifier.size(25.dp))
-        Column(Modifier.weight(1f)) {Text(title,fontSize=14.sp,fontWeight=FontWeight.Bold);Text(subtitle,fontSize=12.sp,color=TaleMuted)}
-        Text("›",color=TaleBlue,fontSize=24.sp)
     }
 }
 

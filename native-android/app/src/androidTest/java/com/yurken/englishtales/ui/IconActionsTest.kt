@@ -76,7 +76,9 @@ class IconActionsTest {
         compose.runOnIdle {assertTrue(active())}
         compose.onNodeWithText("Yeniden çalış").performClick()
         compose.runOnIdle {assertFalse(active());delayedContinue()}
-        compose.onNodeWithText(word.translation).assertIsDisplayed()
+        // Restart selects a fresh randomized batch; its first word need not be the old one.
+        compose.waitUntil(5_000) {started.isNotBlank() && started!=completed}
+        compose.onNodeWithText("Bir çeviri seçin").assertIsDisplayed()
         compose.onNodeWithText("Kelimelerle oyna").assertDoesNotExist()
     }
 }

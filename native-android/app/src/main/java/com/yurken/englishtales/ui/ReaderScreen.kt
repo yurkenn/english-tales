@@ -33,6 +33,9 @@ import androidx.compose.ui.window.PopupProperties
 import com.yurken.englishtales.data.*
 import java.util.Locale
 
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.CancellationException
+
 private const val SENTENCES_PER_PAGE=8
 
 internal class Narrator(context: Context) {
@@ -94,7 +97,7 @@ internal class Narrator(context: Context) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={}) {
+fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={},appearanceStore: ReadingPreferencesStore?=null) {
     val context=LocalContext.current
     val narrator=remember(context) { Narrator(context) }
     DisposableEffect(narrator) { onDispose { narrator.close() } }
@@ -105,8 +108,21 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
     var page by rememberSaveable(story.revisionId) { mutableIntStateOf((sentenceIndex?.div(SENTENCES_PER_PAGE)?:(((if(saved==100) 0 else saved)*story.sentences.size+99)/100/SENTENCES_PER_PAGE)).coerceIn(0,pageCount-1)) }
     val timer=rememberActiveLearningTime(sessionId,snapshot.activeSessionMillis[sessionId]?:0,true,onCheckpoint)
     var completed by rememberSaveable(sessionId) {mutableStateOf(false)}
-    var dark by rememberSaveable { mutableStateOf(false) }
-    var fontSize by rememberSaveable { mutableIntStateOf(17) }
+    val preferences=remember(context,appearanceStore) {appearanceStore?:ReadingPreferencesStore(context)}
+    var appearance by remember(preferences) {mutableStateOf(preferences.read())}
+    var appearanceError by remember {mutableStateOf<String?>(null)}
+    val scope=rememberCoroutineScope()
+    fun changeAppearance(change: (ReadingPreferences)->ReadingPreferences) {
+        scope.launch {
+            try {appearance=preferences.update(change);appearanceError=null}
+            catch(error: Exception) {
+                if(error is CancellationException) throw error
+                appearanceError="Okuma ayarı kaydedilemedi. Tekrar deneyebilirsin."
+            }
+        }
+    }
+    val dark=appearance.dark
+    val fontSize=appearance.fontSize
     var options by remember { mutableStateOf(false) }
     var selectedWord by remember { mutableStateOf<WordInfo?>(null) }
     var more by remember { mutableStateOf(false) }
@@ -115,6 +131,8 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
     val scroll=rememberScrollState()
     val background=if(dark) Color(0xFF080808) else Color.White
     val foreground=if(dark) Color.White else TaleInk
+    val accent=if(dark) Color(0xFF7DD3FC) else TaleBlue
+    val muted=if(dark) Color(0xFFB7C5D7) else TaleMuted
     LaunchedEffect(page) { scroll.scrollTo(0) }
     LaunchedEffect(autoListen) { if(autoListen) { narrator.speak(pageSentences.joinToString(" ") { it.english }) } }
     fun changePage(next: Int) {
@@ -125,53 +143,47 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
     }
     Box(Modifier.fillMaxSize().background(background).statusBarsPadding().navigationBarsPadding()) {
         Column(Modifier.fillMaxSize()) {
-            Row(Modifier.fillMaxWidth().height(52.dp).padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically) {
-                ReferenceIconButton("back","Geri",{narrator.stop();onBack()})
+            Row(Modifier.fillMaxWidth().heightIn(min=52.dp).padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically) {
+                ReferenceIconButton("back","Geri",{narrator.stop();onBack()},tint=accent)
                 Spacer(Modifier.weight(1f))
-                Box {
-                    Text("Aa",fontSize=25.sp,color=TaleBlue,modifier=Modifier.clickable { options=!options }.padding(9.dp))
-                    DropdownMenu(expanded=options,onDismissRequest={options=false},containerColor=background) {
-                        Row(Modifier.padding(8.dp),horizontalArrangement=Arrangement.spacedBy(20.dp)) {
-                            TextButton(onClick={fontSize=(fontSize-1).coerceAtLeast(14)}) { Text("A−") }
-                            TextButton(onClick={fontSize=(fontSize+1).coerceAtMost(28)}) { Text("A+") }
-                        }
-                        Row(Modifier.padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) { Text("Gece modu",color=foreground); Spacer(Modifier.width(18.dp)); Switch(checked=dark,onCheckedChange={dark=it}) }
-                    }
+                TextButton(onClick={options=true},colors=ButtonDefaults.textButtonColors(contentColor=accent),modifier=Modifier.semantics {contentDescription="Okuma görünümü"}) {
+                    Text("Aa",fontSize=22.sp)
                 }
                 Row(Modifier.heightIn(min=48.dp).semantics {contentDescription="Kelimelerim, ${snapshot.savedWordIds.size} kayıtlı kelime"}.clickable {narrator.stop();onOpenWords()}.background(if(dark) Color(0xFF222222) else TaleLine,RoundedCornerShape(8.dp)).padding(8.dp),verticalAlignment=Alignment.CenterVertically) {
-                    ReferenceIcon("cards",TaleMuted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=TaleMuted,fontSize=14.sp)
+                    ReferenceIcon("cards",muted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=muted,fontSize=14.sp)
                 }
             }
             Column(Modifier.weight(1f).verticalScroll(scroll).padding(start=24.dp,end=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                 if(!snapshot.readerHintSeen) {
-                    Column(Modifier.fillMaxWidth().background(TaleBlue.copy(alpha=0.08f),RoundedCornerShape(10.dp)).padding(12.dp)) {
-                        Text("Okurken öğren",fontWeight=FontWeight.Bold,fontSize=14.sp,color=TaleBlue)
+                    Column(Modifier.fillMaxWidth().background(accent.copy(alpha=0.08f),RoundedCornerShape(10.dp)).padding(12.dp)) {
+                        Text("Okurken öğren",fontWeight=FontWeight.Bold,fontSize=14.sp,color=accent)
                         Text("Altı çizili kelimeye dokun ve kaydet. Sağdaki simge cümleyi çevirir; kulaklık sayfayı seslendirir.",fontSize=12.sp,color=foreground)
-                        TextButton(onClick=onHintDismiss) { Text("Anladım") }
+                        TextButton(onClick=onHintDismiss,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text("Anladım") }
                     }
                 }
                 Text("${page+1}.",fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
                 pageSentences.forEach { sentence ->
                     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.Top,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                         val sentenceWords=if(story.vocabulary!=null) story.vocabulary.filter {it.id in story.sentenceWordIds.orEmpty()[sentence.id].orEmpty()} else LearningContent.words
-                        TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),sentenceWords) { selectedWord=it; more=false }
-                        Box(Modifier.size(32.dp).semantics { contentDescription=if(sentence.id in translations) "Çeviriyi gizle" else "Cümleyi çevir" }.clickable { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) TaleBlue else TaleMuted,Modifier.size(23.dp)) }
+                        TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),sentenceWords,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
+                        Box(Modifier.size(32.dp).semantics { contentDescription=if(sentence.id in translations) "Çeviriyi gizle" else "Cümleyi çevir" }.clickable { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
                     }
                     if(sentence.id in translations) Text(sentence.turkish,color=Color.White,fontSize=13.sp,lineHeight=19.sp,
                         modifier=Modifier.fillMaxWidth().padding(end=36.dp).background(TaleBlue,RoundedCornerShape(4.dp)).padding(10.dp))
                 }
             }
-            narrator.error?.let { Text(it,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
-            Text("${page+1} / $pageCount",color=TaleMuted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
+            narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
+            Text("${page+1} / $pageCount",color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
             Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
-                Slider(value=page.toFloat(),onValueChange={changePage(it.toInt())},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),TaleBlue) })
-                Box(Modifier.size(48.dp).semantics { contentDescription=if(narrator.speaking) "Seslendirmeyi durdur" else "Sayfayı dinle" }.clickable { if(narrator.speaking) { narrator.stop() } else { narrator.speak(pageSentences.joinToString(" ") {it.english}) } },contentAlignment=Alignment.Center) { if(narrator.speaking) Text("Ⅱ",color=TaleBlue,fontSize=25.sp) else ReferenceIcon("headphones",TaleBlue,Modifier.size(26.dp)) }
+                Slider(value=page.toFloat(),onValueChange={changePage(it.toInt())},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
+                Box(Modifier.size(48.dp).semantics { contentDescription=if(narrator.speaking) "Seslendirmeyi durdur" else "Sayfayı dinle" }.clickable { if(narrator.speaking) { narrator.stop() } else { narrator.speak(pageSentences.joinToString(" ") {it.english}) } },contentAlignment=Alignment.Center) { if(narrator.speaking) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
             }
             Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
-                TextButton(onClick={changePage(page-1)},enabled=page>0) { Text("‹ Önceki",fontSize=12.sp) }
-                TextButton(enabled=!completed,onClick={ if(page==pageCount-1) {completed=true;narrator.stop();onComplete(timer.pause())} else changePage(page+1) }) { Text(if(page==pageCount-1) "Bitir ✓" else "Sonraki ›",fontSize=12.sp) }
+                TextButton(onClick={changePage(page-1)},enabled=page>0,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text("‹ Önceki",fontSize=12.sp) }
+                TextButton(enabled=!completed,colors=ButtonDefaults.textButtonColors(contentColor=accent),onClick={ if(page==pageCount-1) {completed=true;narrator.stop();onComplete(timer.pause())} else changePage(page+1) }) { Text(if(page==pageCount-1) "Bitir ✓" else "Sonraki ›",fontSize=12.sp) }
             }
         }
+        if(options) ReaderAppearancePanel(appearance,appearanceError,onDismiss={options=false},onChange=::changeAppearance)
         selectedWord?.let { word ->
             Popup(alignment=Alignment.TopCenter,offset=IntOffset(0,130),onDismissRequest={selectedWord=null},properties=PopupProperties(focusable=true)) {
                 Column(Modifier.width(260.dp).border(1.dp,TaleMuted.copy(alpha=0.5f),RoundedCornerShape(12.dp)).background(Color.White,RoundedCornerShape(12.dp))) {
@@ -195,7 +207,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
 }
 
 @Composable
-private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,words: List<WordInfo>,onWord: (WordInfo)->Unit) {
+private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,words: List<WordInfo>,lineSpacing: Float=1.65f,onWord: (WordInfo)->Unit) {
     val byText=remember(words) {words.associateBy {it.word.lowercase(java.util.Locale.ROOT)}}
     val byId=remember(words) {words.associateBy {it.id}}
     val annotated=remember(sentence,fontSize,color,words) {
@@ -210,5 +222,5 @@ private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,
             append(sentence.english.substring(cursor))
         }
     }
-    ClickableText(text=annotated,modifier=modifier,style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*1.42f).sp,fontFamily=FontFamily.Serif,color=color),onClick={offset -> annotated.getStringAnnotations("word",offset,offset).firstOrNull()?.item?.let { byId[it]?.let(onWord) }})
+    ClickableText(text=annotated,modifier=modifier,style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,fontFamily=FontFamily.Serif,color=color),onClick={offset -> annotated.getStringAnnotations("word",offset,offset).firstOrNull()?.item?.let { byId[it]?.let(onWord) }})
 }

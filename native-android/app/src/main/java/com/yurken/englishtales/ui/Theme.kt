@@ -13,17 +13,17 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-val TaleBlue = Color(0xFF00A6EC)
+val TaleBlue = Color(0xFF006CA8)
 val TaleBlueDark = TaleBlue
 val TaleInk = Color(0xFF17181B)
-val TaleMuted = Color(0xFF9AA5B3)
+val TaleMuted = Color(0xFF596777)
 val TaleBackground = Color.White
-val TaleLine = Color(0xFFEEF2F5)
+val TaleLine = Color(0xFFE8EDF3)
 val TaleYellow = Color(0xFFFFCE00)
 val TaleCream = Color.White
 val TaleMint = Color(0xFFE0F5FF)
 val TaleNavy = Color(0xFF22242A)
-val TalePurple = Color(0xFFAC59F0)
+val TalePurple = Color(0xFF7846BD)
 
 private val taleColors = lightColorScheme(
     primary = TaleBlue,
@@ -37,6 +37,8 @@ private val taleColors = lightColorScheme(
     background = TaleBackground,
     onBackground = TaleInk,
     surface = Color.White,
+    surfaceTint = TaleBlue,
+    surfaceContainerLow = Color(0xFFF3F6FA),
     onSurface = TaleInk,
     outline = TaleLine
 )
@@ -46,7 +48,7 @@ private val taleTypography = Typography(
     headlineSmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 23.sp, lineHeight = 28.sp, fontWeight = FontWeight.Bold),
     titleLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 20.sp, lineHeight = 25.sp, fontWeight = FontWeight.Medium),
     titleMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 16.sp, lineHeight = 21.sp, fontWeight = FontWeight.SemiBold),
-    bodyLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 15.sp, lineHeight = 22.sp),
+    bodyLarge = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 16.sp, lineHeight = 24.sp),
     bodyMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 14.sp, lineHeight = 21.sp),
     bodySmall = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 12.sp, lineHeight = 18.sp),
     labelMedium = TextStyle(fontFamily = FontFamily.SansSerif, fontSize = 12.sp, lineHeight = 16.sp, fontWeight = FontWeight.SemiBold)
@@ -55,7 +57,7 @@ private val taleTypography = Typography(
 @Composable
 fun EnglishTalesTheme(content: @Composable () -> Unit) {
     MaterialTheme(colorScheme = taleColors, typography = taleTypography,
-        shapes = Shapes(extraSmall = RoundedCornerShape(4.dp), small = RoundedCornerShape(6.dp),
-            medium = RoundedCornerShape(10.dp), large = RoundedCornerShape(12.dp), extraLarge = RoundedCornerShape(6.dp)),
+        shapes = Shapes(extraSmall = RoundedCornerShape(6.dp), small = RoundedCornerShape(10.dp),
+            medium = RoundedCornerShape(14.dp), large = RoundedCornerShape(20.dp), extraLarge = RoundedCornerShape(24.dp)),
         content = content)
 }
