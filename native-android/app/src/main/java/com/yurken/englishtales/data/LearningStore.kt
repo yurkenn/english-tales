@@ -105,15 +105,21 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         }
     }
     fun toggleWord(wordId: String) {
-        transaction {db ->
-            require(wordId in LearningContent.wordById)
-            if(db.delete("saved_words","word_id=?",arrayOf(wordId))==0) {
-                db.insert("saved_words",SQLiteDatabase.CONFLICT_ABORT,ContentValues().apply {put("word_id",wordId)})
-                recordEvent(db,"save:$wordId:${LearningPolicy.dayKey(clock())}","word_saved",clock())
-                enqueueWord(wordId,"save",null,clock())
-            } else enqueueWord(wordId,"remove",null,clock())
-            unlockBadges(db,clock())
+        transaction {db -> setWordSaved(db,wordId,scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))==0)}
+    }
+    fun setWordSaved(wordId: String,saved: Boolean) = transaction {db ->setWordSaved(db,wordId,saved)}
+    private fun setWordSaved(db: SupportSQLiteDatabase,wordId: String,saved: Boolean) {
+        require(wordId in LearningContent.wordById)
+        if(saved) {
+            if(scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))>0) return
+            db.insert("saved_words",SQLiteDatabase.CONFLICT_ABORT,ContentValues().apply {put("word_id",wordId)})
+            recordEvent(db,"save:$wordId:${LearningPolicy.dayKey(clock())}","word_saved",clock())
+            enqueueWord(wordId,"save",null,clock())
+        } else {
+            if(db.delete("saved_words","word_id=?",arrayOf(wordId))==0) return
+            enqueueWord(wordId,"remove",null,clock())
         }
+        unlockBadges(db,clock())
     }
     fun reviewWord(wordId: String, correct: Boolean) {
         transaction {db ->
@@ -198,9 +204,10 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             "seven_day_streak" to (scalar(db,"SELECT streak FROM learning_stats WHERE id=1")>=7))
         conditions.filterValues {it}.keys.forEach {id ->db.insertWithOnConflict("earned_badges",null,ContentValues().apply {put("badge_id",id);put("earned_at",now)},SQLiteDatabase.CONFLICT_IGNORE)}
     }
-    fun beginSession(id: String,kind: String,questionCount: Int=0,storyId: String?=null,source: Story?=null) {
+    fun beginSession(id: String,kind: String,questionCount: Int=0,storyId: String?=null,source: Story?=null,startedAt: Long=clock()) {
         require((kind=="reading" && questionCount==0 && (source?.id==storyId || storyId in LearningContent.storyById)) || (kind in listOf("choice","card","match","spell") && questionCount in 1..5 && storyId==null))
-        dao.begin(SessionDraftRow(canonicalSessionId(id),kind,storyId,storyId?.let {source?.revisionId ?: LearningContent.storyById.getValue(it).revisionId},clock(),0,questionCount,"active"))
+        require(startedAt>=0)
+        dao.begin(SessionDraftRow(canonicalSessionId(id),kind,storyId,storyId?.let {source?.revisionId ?: LearningContent.storyById.getValue(it).revisionId},startedAt,0,questionCount,"active"))
     }
     fun checkpointSession(id: String,millis: Long) {require(millis>=0);dao.activeTime(canonicalSessionId(id),millis.coerceAtMost(86_400_000))}
     fun abandonSession(id: String) {dao.end(canonicalSessionId(id),"abandoned")}

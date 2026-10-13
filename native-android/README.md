@@ -44,9 +44,11 @@ Hata ayıklama APK'sı `app/build/outputs/apk/debug/app-debug.apk` konumunda olu
 
 macOS/Linux: `bash gradlew :app:assembleDebug :app:testDebugUnitTest :app:lintDebug`. Cihaz/emülatör bağlıyken `bash gradlew :app:connectedDebugAndroidTest`.
 
-Kaynakta 11 JVM ve 106 cihaz testi tanımı bulunur. Yapılandırılmış uzak içerik testi gerçek ağdan okuma yapabilir; Auth testleri kontrollü yanıtlar kullanır. Test tanımı sayısı, çalıştırılan/geçen test sayısı değildir. CI cihaz APK'sını derler fakat bağlı cihaz testini çalıştırmaz. Entegrasyon testleri için kişisel verisi olmayan ayrı emülatör kullanın; Gradle uygulama APK'sını kurup kaldırabilir. Gerçek Google/e-posta, ikinci cihaz ve Play güncelleme kabulü ayrıca doğrulanmalıdır.
+Kaynakta 17 JVM ve 117 cihaz testi tanımı bulunur. Yapılandırılmış uzak içerik testi gerçek ağdan okuma yapabilir; Auth testleri kontrollü yanıtlar kullanır. Test tanımı sayısı, çalıştırılan/geçen test sayısı değildir. CI cihaz APK'sını derler fakat bağlı cihaz testini çalıştırmaz. Entegrasyon testleri için kişisel verisi olmayan ayrı emülatör kullanın; Gradle uygulama APK'sını kurup kaldırabilir. Gerçek Google/e-posta, ikinci cihaz ve Play güncelleme kabulü ayrıca doğrulanmalıdır.
 
 ## Mimari ve sonraki işler
+
+Aktif hesaba uygun hatırlatıcı ve kalıcı kayıt hatası/yeniden deneme: [D03/D04 uygulama kaydı](docs/LEARNING_RELIABILITY_EXECUTION.md).
 
 Google/Play/imza ve önceki emülatör sonuçlarını anlatan aşağıdaki kayıtlar tarihsel kanıttır. Bu Mac'te release imzası hazır değildir. Güncel görevler [geliştirme haritasında](docs/DEVELOPMENT_ROADMAP.md), yeni özellikler [ürün planındadır](docs/PRODUCT_ROADMAP.md).
 
