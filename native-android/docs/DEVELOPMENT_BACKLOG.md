@@ -2,7 +2,7 @@
 
 > Başlangıç incelemesi: 13 Ekim 2026, native `357abed`. Satır numaraları bu snapshot içindir. GitHub geçişi sonrası güncel kaynak ve doğrulama durumu için [geçiş kaydı](NATIVE_MIGRATION.md) ve [ürün planı](PRODUCT_ROADMAP.md). Aşağıdaki inceleme sırasında test çalıştırılmadığına ilişkin ifadeler tarihsel inceleme kapsamını belirtir; yeni test sonuçları geçiş PR'ında kayıtlıdır.
 
-24 iş paketi · Durum: planlandı · Kaynak: 357abed · 13 Ekim 2026
+24 iş paketi · Durum: yürütülüyor · Kaynak: 357abed · 13 Ekim 2026
 
 [Ayrıntılı geliştirme haritası](DEVELOPMENT_ROADMAP.md) kabul ölçütlerini, dosya alanlarını ve dış kapıları içerir. Bağımlılık sırası yürütme planıdır; paketler bu görevde uygulanmadı.
 
@@ -11,8 +11,8 @@
 | D00 | A0 | P0 | Ortam, ürün sınırları ve başlangıç kanıtı | yok | Planlandı |
 | D01 | A0 | P1 | Dokümantasyonu mevcut sisteme eşitleme | D00 | Planlandı |
 | D02 | A0 | P0 | İzole ve gerçekten çalışan regresyon temeli | D00 | Planlandı |
-| D03 | A1 | P1 | Hesaba uygun günlük hatırlatıcı | D02 | Planlandı |
-| D04 | A1 | P1 | Başarısız kalıcı işlemi doğru ekranda gösterme | D02 | Planlandı |
+| D03 | A1 | P1 | Hesaba uygun günlük hatırlatıcı | D02 | Uygulandı; kabul: LEARNING_RELIABILITY_EXECUTION.md |
+| D04 | A1 | P1 | Başarısız kalıcı işlemi doğru ekranda gösterme | D02 | Uygulandı; kabul: LEARNING_RELIABILITY_EXECUTION.md |
 | D05 | A1 | P0 | İkinci cihazdaki bilinmeyen ve arşivlenmiş kelimeler | D00, D02 | Planlandı |
 | D06 | A1 | P1 | Çok sözcüklü ifade ve kelime eşleştirme tutarlılığı | D02, D05 | Planlandı |
 | D07 | A1 | P1 | Okuma/oyun oturumu ve TTS yaşam döngüsü | D02 | Planlandı |
@@ -36,3 +36,5 @@
 ## Kanıt kaydı şablonu
 
 Her iş için: başlangıç commit/build, ortam, kabul senaryosu, değişen dosyalar/sözleşme, run/pass/fail/skip, sonuç kanıtı, kalan sınır ve geri dönüş adımı. D16 kapsam seçilmeden zorunlu yayın işi değildir.
+
+D03/D04 uygulama ve regresyon kanıtı: [İlk güvenilirlik paketi](LEARNING_RELIABILITY_EXECUTION.md). Başlangıç haritası tarihsel snapshot olarak korunur.

@@ -19,11 +19,20 @@ import androidx.compose.ui.semantics.contentDescription
 import com.yurken.englishtales.MainActivity
 import com.yurken.englishtales.R
 import com.yurken.englishtales.data.LearningStore
+import com.yurken.englishtales.data.LearningOwner
+import com.yurken.englishtales.data.LearningReminderOwner
 import java.util.Calendar
 import java.util.Locale
 
 /** A user-selected, inexact daily reminder. No exact-alarm or network permission. */
 object LearningReminders {
+    internal fun deliver(context: Context, storeFactory: (LearningOwner)->LearningStore={LearningStore(context,it)},
+        show: ()->Unit={show(context)}) {
+        val owner=LearningReminderOwner.current(context) ?: return
+        storeFactory(owner).use { store ->
+            if(!store.snapshot().dailyGoalReached) LearningReminderOwner.ifCurrent(context,owner,show)
+        }
+    }
     private fun prefs(context: Context) = context.getSharedPreferences("reminders",Context.MODE_PRIVATE)
     fun enabled(context: Context) = prefs(context).getBoolean("enabled",false)
     fun hour(context: Context) = prefs(context).getInt("hour",19)
@@ -60,8 +69,14 @@ class LearningReminderReceiver: BroadcastReceiver() {
         val result=goAsync()
         Thread {
             try {
-                LearningStore(context).use {store -> if(!store.snapshot().dailyGoalReached) LearningReminders.show(context)}
-            } finally {LearningReminders.schedule(context);result.finish()}
+                LearningReminders.deliver(context)
+            } catch (_: Exception) {
+                // An unreadable account must not fall back to another owner's goal.
+            } finally {
+                try {LearningReminders.schedule(context)} catch (_: Exception) {
+                    // Scheduling failure must still release the broadcast without crashing.
+                } finally {result.finish()}
+            }
         }.start()
     }
 }

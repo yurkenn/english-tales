@@ -10,8 +10,10 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.channels.Channel
 import com.yurken.englishtales.BuildConfig
 
-class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore,private val cloudSync: LearningAccountSync?=null,private val background: Boolean=false) : AndroidViewModel(application) {
-    constructor(application: Application):this(application,LearningSyncRuntime.accounts(application),{LearningStore(application,it)},defaultLearningSync(),true)
+class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore,private val cloudSync: LearningAccountSync?=null,private val background: Boolean=false,
+    private val onOwnerChanged: (LearningOwner)->Unit={}, private val readSnapshot: (LearningStore)->LearningSnapshot={it.snapshot()}) : AndroidViewModel(application) {
+    constructor(application: Application):this(application,LearningSyncRuntime.accounts(application),{LearningStore(application,it)},defaultLearningSync(),true,
+        {LearningReminderOwner.select(application,it)})
     private var store = storeFactory(LearningOwner.Guest)
     private data class Mutation(val scope: Long?,val action: ()->Unit)
     private val mutations = Channel<Mutation>(Channel.UNLIMITED)
@@ -27,6 +29,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     val state: StateFlow<LearningSnapshot> = mutableState
     private val mutableReady = MutableStateFlow(false)
     val ready: StateFlow<Boolean> = mutableReady
+    private val writes = LearningWriteRecovery { mutableState.value=readSnapshot(store) }
+    val writeError: StateFlow<LearningWriteError?> = writes.error
 
     init {
         if(background) viewModelScope.launch {
@@ -46,14 +50,16 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     auth.clearLocal()
                     mutableAccount.value=mutableAccount.value.copy(message="Hesap kayıtları açılamadı. Misafir olarak devam edebilir, tekrar giriş yapabilirsin.")
                 }
+                onOwnerChanged(store.owner)
                 store.recordVisit();mutableState.value=store.snapshot();mutableReady.value=true
                 verifyAccount()
                 for(action in mutations) {
                     if(action.scope!=null && action.scope!=scope) continue
-                    try {action.action()} catch (_: Exception) {
+                    try {action.action()} catch (failure: Exception) {
+                        if(failure is kotlinx.coroutines.CancellationException) throw failure
                         mutableAccount.value=mutableAccount.value.copy(busy=false,message="İşlem tamamlanamadı. Kayıtların korunuyor.")
                     }
-                    mutableState.value=store.snapshot()
+                    writes.refresh()
                 }
             } finally {store.close()}
         }
@@ -65,8 +71,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         store.completeOnboarding(level, genre, goal)
     }
 
-    fun toggleWord(wordId: String) = mutate {
-        store.toggleWord(wordId)
+    fun toggleWord(wordId: String) {
+        var saved: Boolean?=null
+        mutate {
+            if(saved==null) saved=wordId !in store.snapshot().savedWordIds
+            store.setWordSaved(wordId,checkNotNull(saved))
+        }
     }
 
     fun reviewWord(wordId: String, correct: Boolean) = mutate {
@@ -88,7 +98,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     }
     fun beginSession(id: String,kind: String,questionCount: Int,storyId: String?) {
         val source=LearningContent.storyById[storyId]
-        mutate {store.beginSession(id,kind,questionCount,storyId,source)}
+        val startedAt=System.currentTimeMillis()
+        mutate {store.beginSession(id,kind,questionCount,storyId,source,startedAt)}
     }
     fun checkpointSession(id: String,millis: Long) = mutate {store.checkpointSession(id,millis)}
     fun abandonSession(id: String) = mutate {store.abandonSession(id)}
@@ -97,8 +108,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun saveWords(ids: List<String>) = mutate { store.saveWords(ids) }
     fun updatePreferences(level: String, genre: String, goal: Int, name: String) = mutate { store.updatePreferences(level,genre,goal,name) }
 
+    fun retryLearningWrites() {mutations.trySend(Mutation(scope) {
+        writes.retry();scheduleSync()
+    })}
+
     private fun mutate(action: () -> Unit) {mutations.trySend(Mutation(scope) {
-        action();scheduleSync()
+        if(writes.submit(action)) scheduleSync()
     })}
     private fun interruptSync() {
         syncEpoch++
@@ -168,6 +183,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         val next=storeFactory(owner)
         try {next.snapshot()} catch (failure: Exception) {next.close();throw failure}
         store.close();store=next;scope++;syncEpoch++
+        writes.reset()
+        onOwnerChanged(owner)
         if(background) LearningSyncRuntime.resume()
         mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=scope)
         if(owner is LearningOwner.Account && cloudSync!=null) {
