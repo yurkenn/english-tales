@@ -43,6 +43,8 @@ internal class Narrator(context: Context) {
     private var utteranceNumber = 0
     private var activeId: String? = null
     private val main = Handler(Looper.getMainLooper())
+    var preparing by mutableStateOf(false)
+        private set
     var speaking by mutableStateOf(false)
         private set
     var error by mutableStateOf<String?>(null)
@@ -65,6 +67,7 @@ internal class Narrator(context: Context) {
                     speaking = false
                     error = "Cihazın seslendirme motoru başlatılamadı."
                 }
+                preparing = false
                 pending = null
             }
         }
@@ -79,19 +82,19 @@ internal class Narrator(context: Context) {
 
     fun speak(text: String) {
         if (closed) return
-        if (!ready) { if (error == null) pending = text; return }
+        if (!ready) { if (error == null) {pending = text;preparing = true}; return }
         error = null
         activeId = "english-tales-${++utteranceNumber}"
         speaking = engine?.speak(text, TextToSpeech.QUEUE_FLUSH, null, activeId) == TextToSpeech.SUCCESS
         if (!speaking) error = "Seslendirme başlatılamadı."
     }
-    fun stop() { pending = null; activeId = null; engine?.stop(); speaking = false }
-    fun close() { closed = true; pending = null; activeId = null; engine?.shutdown(); main.removeCallbacksAndMessages(null) }
+    fun stop() { preparing = false; pending = null; activeId = null; engine?.stop(); speaking = false }
+    fun close() { preparing = false; closed = true; pending = null; activeId = null; engine?.shutdown(); main.removeCallbacksAndMessages(null) }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit) {
+fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={}) {
     val context=LocalContext.current
     val narrator=remember(context) { Narrator(context) }
     DisposableEffect(narrator) { onDispose { narrator.close() } }
@@ -135,7 +138,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                         Row(Modifier.padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) { Text("Gece modu",color=foreground); Spacer(Modifier.width(18.dp)); Switch(checked=dark,onCheckedChange={dark=it}) }
                     }
                 }
-                Row(Modifier.background(if(dark) Color(0xFF222222) else TaleLine,RoundedCornerShape(8.dp)).padding(8.dp),verticalAlignment=Alignment.CenterVertically) {
+                Row(Modifier.heightIn(min=48.dp).semantics {contentDescription="Kelimelerim, ${snapshot.savedWordIds.size} kayıtlı kelime"}.clickable {narrator.stop();onOpenWords()}.background(if(dark) Color(0xFF222222) else TaleLine,RoundedCornerShape(8.dp)).padding(8.dp),verticalAlignment=Alignment.CenterVertically) {
                     ReferenceIcon("cards",TaleMuted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=TaleMuted,fontSize=14.sp)
                 }
             }
@@ -175,7 +178,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                     Row(Modifier.fillMaxWidth().padding(16.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
                         ReferenceIconButton("volume","${word.word} kelimesini dinle",{narrator.speak(word.word)})
                         Text(word.word,fontSize=20.sp,fontWeight=FontWeight.Bold)
-                        ReferenceIcon("cards",TaleBlue,Modifier.size(25.dp))
+                        Text(if(word.id in snapshot.savedWordIds) "Kayıtlı ✓" else "Kaydedilmedi",fontSize=11.sp,color=TaleMuted)
                     }
                     Text(word.translation,fontSize=18.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(4.dp))
                     TextButton(onClick={more=!more},modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(if(more) word.pronunciation else "daha fazla göster",textDecoration=TextDecoration.Underline) }

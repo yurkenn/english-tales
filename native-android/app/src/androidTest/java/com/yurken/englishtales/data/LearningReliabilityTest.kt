@@ -80,9 +80,11 @@ class LearningReliabilityTest {
         vm.completeLesson(5,session,"choice",5,0)
         await {vm.writeError.value?.pendingCount==1}
         assertEquals(0,vm.state.value.points)
+        assertFalse(session in vm.completedSessions.value)
         LearningStore(context).use {it.writableDatabase.execSQL("DROP TRIGGER fail_points")}
         vm.retryLearningWrites()
         await {vm.writeError.value==null && vm.state.value.points==25}
+        assertEquals(setOf(session),vm.completedSessions.value)
         vm.retryLearningWrites();vm.completeLesson(5,session,"choice",5,0)
         await {vm.state.value.completedLessons==1}
         LearningStore(context).use {assertEquals(1,it.queuedOperations().count {event ->event.rpc=="submit_learning_session"})}
@@ -139,6 +141,7 @@ class LearningReliabilityTest {
         await {vm.state.value.ownerId!="guest" && !vm.account.value.busy}
         vm.retryLearningWrites();vm.refresh()
         assertNull(vm.writeError.value)
+        assertTrue(vm.completedSessions.value.isEmpty())
         LearningStore(context,LearningOwner.Account(vm.state.value.ownerId)).use {assertTrue(it.snapshot().savedWordIds.isEmpty())}
         assertEquals(vm.state.value.ownerId,LearningReminderOwner.current(context)?.id)
     }

@@ -77,10 +77,10 @@ fun EarnedBadges(snapshot: LearningSnapshot) {
 }
 
 @Composable
-fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (List<String>)->Unit,onDailyPlan: ()->Unit) {
+fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (List<String>)->Unit,onDailyPlan: ()->Unit,onBack: ()->Unit=onDailyPlan) {
     val words=remember(story.id) {LearningContent.wordsForStory(story).take(5)}
     Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
-        SimpleTopBar("Okuma tamamlandı",onDailyPlan)
+        SimpleTopBar("Okuma tamamlandı",onBack)
         Column(Modifier.padding(24.dp),verticalArrangement=Arrangement.spacedBy(18.dp),horizontalAlignment=Alignment.CenterHorizontally) {
             BookCover(story,Modifier.size(112.dp,164.dp))
             Text("Bir hikâye tamamladın!",fontSize=22.sp,fontWeight=FontWeight.Bold)
@@ -113,6 +113,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             PreferenceChoices(listOf("1 adım","2 adım","3 adım"),"$goal adım") {goal=it.first().digitToInt()}
             Text("Bir adım = tamamlanan bir hikâye veya kelime çalışması.",fontSize=12.sp,color=TaleMuted)
             ReminderControls()
+            com.yurken.englishtales.ads.AdPrivacyControls()
             Button(onClick={onSave(level,genre,goal,name)},modifier=Modifier.fillMaxWidth()) {Text("Değişiklikleri kaydet")}
             Text("İlerlemen bu cihazda saklanır. Uygulama verilerini silmek ilerlemeni de siler.",fontSize=12.sp,color=TaleMuted)
             SupportLinks()

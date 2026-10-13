@@ -17,7 +17,7 @@ import com.yurken.englishtales.data.*
 import kotlinx.coroutines.delay
 
 @Composable
-fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={}) {
+fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Boolean,()->Unit)->Unit={_,active,next ->if(active()) next()}) {
     val saved=LearningContent.words.filter {it.id in snapshot.savedWordIds}
     val supplemental=LearningContent.words.filter {it.id !in snapshot.savedWordIds}
     var mode by rememberSaveable { mutableStateOf("") }
@@ -27,7 +27,14 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var ids by rememberSaveable { mutableStateOf(emptyList<String>()) }
     var sessionKey by rememberSaveable { mutableStateOf("") }
     var session by rememberSaveable { mutableIntStateOf(0) }
-    fun exit(plan: Boolean=false) {onSessionAbandoned(sessionKey);mode="";if(plan) onDailyPlan()}
+    fun exit(plan: Boolean=false) {
+        val leave={onSessionAbandoned(sessionKey);mode="";if(plan) onDailyPlan()}
+        if(plan && finished) {
+            val expected=sessionKey
+            val active={sessionKey==expected && finished && mode.isNotEmpty()}
+            onCompletedExit(expected,active) {if(active()) leave()}
+        } else leave()
+    }
     BackHandler(enabled=mode.isNotEmpty()) {exit()}
     LaunchedEffect(mode) { onSessionActive(mode.isNotEmpty()) }
     DisposableEffect(Unit) { onDispose {onSessionActive(false)} }
@@ -64,7 +71,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var chosen by rememberSaveable(question,mode,session) { mutableStateOf(emptyList<Int>()) }
     val letterText=rememberSaveable(question,mode,session) {word.word.toList().shuffled().joinToString("")}
     val letters=letterText.toList()
-    val options=rememberSaveable(question,mode,session) {(listOf(word.translation)+LearningContent.words.filter {it.id!=word.id}.shuffled().take(3).map {it.translation}).shuffled()}
+    val options=rememberSaveable(question,mode,session) {(listOf(word.translation)+LearningContent.words.map {it.translation}.distinct().filter {it!=word.translation}.shuffled().take(3)).shuffled()}
     var advanceWrong by rememberSaveable(question,mode,session) {mutableStateOf(false)}
     val correct=answer==if(mode=="choice") word.translation else word.word
     LaunchedEffect(answer,advanceWrong) {

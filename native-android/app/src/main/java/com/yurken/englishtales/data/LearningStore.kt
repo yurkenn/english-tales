@@ -210,6 +210,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         dao.begin(SessionDraftRow(canonicalSessionId(id),kind,storyId,storyId?.let {source?.revisionId ?: LearningContent.storyById.getValue(it).revisionId},startedAt,0,questionCount,"active"))
     }
     fun checkpointSession(id: String,millis: Long) {require(millis>=0);dao.activeTime(canonicalSessionId(id),millis.coerceAtMost(86_400_000))}
+    fun sessionCompleted(id: String) = dao.session(canonicalSessionId(id))?.state=="completed"
     fun abandonSession(id: String) {dao.end(canonicalSessionId(id),"abandoned")}
     private fun prepareCompletion(id: String,kind: String,questions: Int,storyId: String?,activeMillis: Long,now: Long,source: Story?=null): SessionDraftRow? {
         beginSession(id,kind,questions,storyId,source)

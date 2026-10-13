@@ -31,6 +31,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     val ready: StateFlow<Boolean> = mutableReady
     private val writes = LearningWriteRecovery { mutableState.value=readSnapshot(store) }
     val writeError: StateFlow<LearningWriteError?> = writes.error
+    private val mutableCompletions=MutableStateFlow<Set<String>>(emptySet())
+    val completedSessions: StateFlow<Set<String>> = mutableCompletions
 
     init {
         if(background) viewModelScope.launch {
@@ -89,12 +91,18 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     }
 
     fun completeLesson(correctAnswers: Int, sessionId: String,kind: String,questionCount: Int,activeMillis: Long) = mutate {
+        val completed=store.sessionCompleted(sessionId)
         store.completeLesson(correctAnswers, sessionId,kind,questionCount,activeMillis)
+        if(!completed && store.sessionCompleted(sessionId)) mutableCompletions.value=(mutableCompletions.value+sessionId).toList().takeLast(256).toSet()
     }
 
     fun completeReading(storyId: String,sessionId: String,activeMillis: Long) {
         val source=LearningContent.storyById[storyId]
-        mutate {store.completeReading(storyId,sessionId,activeMillis,source)}
+        mutate {
+            val completed=store.sessionCompleted(sessionId)
+            store.completeReading(storyId,sessionId,activeMillis,source)
+            if(!completed && store.sessionCompleted(sessionId)) mutableCompletions.value=(mutableCompletions.value+sessionId).toList().takeLast(256).toSet()
+        }
     }
     fun beginSession(id: String,kind: String,questionCount: Int,storyId: String?) {
         val source=LearningContent.storyById[storyId]
@@ -184,6 +192,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         try {next.snapshot()} catch (failure: Exception) {next.close();throw failure}
         store.close();store=next;scope++;syncEpoch++
         writes.reset()
+        mutableCompletions.value=emptySet()
         onOwnerChanged(owner)
         if(background) LearningSyncRuntime.resume()
         mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=scope)
