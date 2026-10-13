@@ -17,7 +17,7 @@ import com.yurken.englishtales.data.*
 import kotlinx.coroutines.delay
 
 @Composable
-fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Unit)->Unit={_,next ->next()}) {
+fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Boolean,()->Unit)->Unit={_,active,next ->if(active()) next()}) {
     val saved=LearningContent.words.filter {it.id in snapshot.savedWordIds}
     val supplemental=LearningContent.words.filter {it.id !in snapshot.savedWordIds}
     var mode by rememberSaveable { mutableStateOf("") }
@@ -29,7 +29,11 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var session by rememberSaveable { mutableIntStateOf(0) }
     fun exit(plan: Boolean=false) {
         val leave={onSessionAbandoned(sessionKey);mode="";if(plan) onDailyPlan()}
-        if(plan && finished) onCompletedExit(sessionKey,leave) else leave()
+        if(plan && finished) {
+            val expected=sessionKey
+            val active={sessionKey==expected && finished && mode.isNotEmpty()}
+            onCompletedExit(expected,active) {if(active()) leave()}
+        } else leave()
     }
     BackHandler(enabled=mode.isNotEmpty()) {exit()}
     LaunchedEffect(mode) { onSessionActive(mode.isNotEmpty()) }

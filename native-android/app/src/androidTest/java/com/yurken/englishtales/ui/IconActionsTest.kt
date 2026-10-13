@@ -56,13 +56,15 @@ class IconActionsTest {
         LearningContent.initialize(InstrumentationRegistry.getInstrumentation().targetContext)
         val word=LearningContent.words.first()
         var boundary=0
+        var active: ()->Boolean={false}
+        var delayedContinue: ()->Unit={}
         var started=""
         var completed=""
         compose.setContent {EnglishTalesTheme {
             PracticeScreen(LearningSnapshot(savedWordIds=setOf(word.id)),
                 {_,id,_,_,_->completed=id},{_,_->},PaddingValues(),{id,_,_->started=id},{_,_->},{},
-                launchId="test",launchWordIds=listOf(word.id),onCompletedExit={id,next ->
-                    assertEquals(completed,id);boundary++;next()
+                launchId="test",launchWordIds=listOf(word.id),onCompletedExit={id,current,next ->
+                    assertEquals(completed,id);boundary++;active=current;delayedContinue=next
                 })
         }}
         compose.waitUntil(5_000) {started.isNotBlank()}
@@ -71,5 +73,10 @@ class IconActionsTest {
         assertEquals(0,boundary)
         compose.onNodeWithText("Günlük planıma dön").performClick()
         assertEquals(1,boundary)
+        compose.runOnIdle {assertTrue(active())}
+        compose.onNodeWithText("Yeniden çalış").performClick()
+        compose.runOnIdle {assertFalse(active());delayedContinue()}
+        compose.onNodeWithText(word.translation).assertIsDisplayed()
+        compose.onNodeWithText("Kelimelerle oyna").assertDoesNotExist()
     }
 }
