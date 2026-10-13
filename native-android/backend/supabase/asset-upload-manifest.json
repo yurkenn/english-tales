@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "9ae52d1e-a521-560d-ae81-f295f98ab7ad",
+      "bucket": "story-media",
+      "path": "covers/97e5be0a68f175eeab88d7cc12f244d09bdd68db830b8e3a8c46672b386a09c2.png",
+      "sha256": "97e5be0a68f175eeab88d7cc12f244d09bdd68db830b8e3a8c46672b386a09c2",
+      "byteSize": 2359321,
+      "source": "app/src/main/res/drawable-nodpi/cover_quiet_morning.png"
+    },
+    {
+      "id": "ea7d35c6-d561-5385-a2a4-e3ed42be4a31",
+      "bucket": "story-media",
+      "path": "covers/2cd99498b0133bf02f93ff0666842fed1498aaae2edff555db24f64ffeb1af7b.png",
+      "sha256": "2cd99498b0133bf02f93ff0666842fed1498aaae2edff555db24f64ffeb1af7b",
+      "byteSize": 2579160,
+      "source": "app/src/main/res/drawable-nodpi/cover_paper_boat.png"
+    },
+    {
+      "id": "f11f9a44-c5f4-5197-aa54-acd65d67a14b",
+      "bucket": "story-media",
+      "path": "covers/3ee25abcb1bf30d263f72402c24bf29c4e3deebe5db90499e1e55d62d7112f92.png",
+      "sha256": "3ee25abcb1bf30d263f72402c24bf29c4e3deebe5db90499e1e55d62d7112f92",
+      "byteSize": 2834568,
+      "source": "app/src/main/res/drawable-nodpi/cover_lost_map.png"
+    },
+    {
+      "id": "a6eba49f-7b47-57af-a6ed-b36c348bbd13",
+      "bucket": "story-media",
+      "path": "covers/870e515d353a11a795cbe1ad947d30f7ab8201c6d5469f244ffee6cf2fa8e3a1.png",
+      "sha256": "870e515d353a11a795cbe1ad947d30f7ab8201c6d5469f244ffee6cf2fa8e3a1",
+      "byteSize": 2835747,
+      "source": "app/src/main/res/drawable-nodpi/cover_red_umbrella.png"
+    },
+    {
+      "id": "51cedeb2-1239-596c-a185-669a28375f22",
+      "bucket": "story-media",
+      "path": "covers/ac1a56782106425b3351be7460e4b22e4ab69a30d973807f6d6c067fa0d38421.png",
+      "sha256": "ac1a56782106425b3351be7460e4b22e4ab69a30d973807f6d6c067fa0d38421",
+      "byteSize": 2234184,
+      "source": "app/src/main/res/drawable-nodpi/cover_last_train.png"
+    },
+    {
+      "id": "a89cf56f-deed-55ba-a361-91f539a73389",
+      "bucket": "story-media",
+      "path": "covers/7a277d276b06d267599c904832edab9ddab412d781077a97811bde477b9cda19.png",
+      "sha256": "7a277d276b06d267599c904832edab9ddab412d781077a97811bde477b9cda19",
+      "byteSize": 2279387,
+      "source": "app/src/main/res/drawable-nodpi/cover_attic_letter.png"
+    }
+  ]
+}

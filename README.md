@@ -1,46 +1,29 @@
-# English Tales 📚
+# English Tales
 
-Beautifully illustrated stories for English learners.
+Android uygulaması tamamen Kotlin ve Jetpack Compose ile geliştirilir. Aktif kaynak ağacında React Native, Expo veya JavaScript mobil çalışma zamanı bulunmaz.
 
-## 🚀 Modern Architecture
-This app is built with a focus on performance, maintainability, and developer experience.
+- [Android kurulumu ve doğrulama](native-android/README.md)
+- [Native geçişin kapsamı ve veri sınırları](native-android/docs/NATIVE_MIGRATION.md)
+- [Yeni özellikler ve kullanıcı deneyimi planı](native-android/docs/PRODUCT_ROADMAP.md)
+- [Aşamalı teknik geliştirme haritası](native-android/docs/DEVELOPMENT_ROADMAP.md)
+- [Geliştirme iş listesi](native-android/docs/DEVELOPMENT_BACKLOG.md)
+- [Yayın yol haritası](native-android/docs/STORE_RELEASE_ROADMAP.md)
+- [İçerik servisi ve panel](native-android/backend/README.md)
+- [Geri dönüş ve kontrol noktaları](native-android/docs/RELEASE_EXECUTION.md)
 
-- **Framework:** Expo (React Native) with Expo Router (File-based routing)
-- **Theming:** [react-native-unistyles](https://github.com/jpb06/react-native-unistyles) (Modern, type-safe, and high-performance)
-- **State Management:** [Zustand](https://github.com/pmndrs/zustand) (Lightweight and modular store management)
-- **Data Fetching:** [TanStack Query v5](https://tanstack.com/query/latest) (Declarative async data management)
-- **CMS:** [Sanity.io](https://www.sanity.io/) (Headless CMS for rich story content)
-- **Backend:** Firebase (Authentication and user data storage)
+## Proje yapısı
 
-## 🌍 Localization
-Fully prepared for multi-language support using `i18next`. Currently supporting:
-- English (Primary)
-- Turkish
-- Spanish
-- German
-- French
+`native-android/` uygulama, içerik varlıkları, panel ve Supabase migration dosyalarını içerir. `tooling/` depo kontrollerini içerir. Eski React Native/Sanity sürümü Git geçmişinde korunur; aktif derlemeye katılmaz.
 
-## 🛠️ Getting Started
+Yeni sürüm henüz üretime yayımlanmadı. GitHub kontrol noktaları kaynak kodunu geri getirir; kullanıcı verisi veya canlı veritabanı değişikliklerini geri almaz.
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+## Geliştirme
 
-2. **Environment Setup:**
-   Create a `.env` file with your Firebase and Sanity credentials.
+Android Studio'da `native-android/` klasörünü açın. JDK 17 ve Android SDK 36 ile:
 
-3. **Run the app:**
-   ```bash
-   npm run ios     # Run on iOS Simulator
-   npm run android # Run on Android Emulator
-   ```
-
-## 🧪 Testing
-Includes Unit and Component testing infrastructure.
-```bash
-npm test
+```sh
+cd native-android
+bash gradlew :app:assembleDebug :app:testDebugUnitTest :app:lintDebug
 ```
 
-## 📖 Architecture
-Detailed architecture overview is available in [ARCHITECTURE.md](./ARCHITECTURE.md).
+JavaScript yalnızca `native-android/backend/` içindeki içerik paneli ve servis araçlarında kullanılır; APK'nın kullanıcı arayüzü Compose'dur. GitHub Actions native Android ve backend kontrollerini çalıştırır; depo denetimi eski mobil kaynakların yeniden eklenmesini reddeder.

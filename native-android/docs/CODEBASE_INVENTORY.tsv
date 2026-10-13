@@ -1,0 +1,244 @@
+category	path	lines	map_status
+build-config-repository	.github/workflows/verify.yml	61	configuration-entry-mapped
+build-config-repository	.gitignore	71	configuration-entry-mapped
+build-config-repository	.vscode/settings.json	3	configuration-entry-mapped
+documentation-reference	README.md	14	historical-reference; runtime-proof-not-assumed
+build-config-repository	native-android/.gitignore	10	configuration-entry-mapped
+documentation-reference	native-android/ARCHITECTURE.md	45	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/CONTENT_GUIDE.md	37	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/PRODUCT_SPEC.md	40	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/README.md	63	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/UI_REFERENCE.md	29	historical-reference; runtime-proof-not-assumed
+build-config-repository	native-android/app/build.gradle.kts	117	configuration-entry-mapped
+build-config-repository	native-android/app/proguard-rules.pro	1	configuration-entry-mapped
+room-history-schema	native-android/app/schemas/com.yurken.englishtales.data.LearningDatabase/4.json	465	schema-table-inventory
+room-history-schema	native-android/app/schemas/com.yurken.englishtales.data.LearningDatabase/5.json	555	schema-table-inventory
+room-history-schema	native-android/app/schemas/com.yurken.englishtales.data.LearningDatabase/6.json	608	schema-table-inventory
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/AccountLifecycleTest.kt	102	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/AccountSessionTest.kt	120	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/AccountSwitchTest.kt	172	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/DeletedAccountCleanupTest.kt	41	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/GuestTransferTest.kt	152	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/LearningAccountSyncTest.kt	176	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/LearningCloudSnapshotTest.kt	96	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/LearningReconciliationTest.kt	246	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/LearningStoreTest.kt	233	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/LearningSyncTest.kt	124	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/LearningSyncWorkerTest.kt	36	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/NativePageSizeTest.kt	16	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/androidTest/java/com/yurken/englishtales/data/RemoteContentTest.kt	126	declaration-dependency-index; execution-unverified
+build-config-repository	native-android/app/src/main/AndroidManifest.xml	33	configuration-entry-mapped
+catalog-seed-manifest	native-android/app/src/main/assets/catalog/v1.json	751	consumer-generator-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/MainActivity.kt	42	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/AccountSession.kt	198	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/DeletedAccountCleanup.kt	25	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/ForegroundLearningClock.kt	10	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/GoogleIdentity.kt	40	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/GuestTransfer.kt	197	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningAccountSync.kt	61	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningCloudSnapshot.kt	135	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningContent.kt	118	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningDatabase.kt	175	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningOperations.kt	46	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningPolicy.kt	31	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningPreferencesSync.kt	74	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningReconciliation.kt	251	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningStore.kt	273	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningSync.kt	118	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningSyncRuntime.kt	85	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/LearningViewModel.kt	406	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/data/RemoteContent.kt	255	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/AccountScreen.kt	130	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/ActiveLearningTime.kt	33	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/BookCover.kt	61	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/CatalogScreens.kt	332	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/ContentDownload.kt	73	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/FlashcardGame.kt	55	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/LearningJourney.kt	130	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/LearningReminders.kt	96	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/MatchingGame.kt	56	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/OnboardingScreen.kt	91	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/PracticeScreen.kt	135	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/ReaderScreen.kt	211	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/ReferenceComponents.kt	112	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/SupportLinks.kt	24	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/TalesApp.kt	110	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/Theme.kt	61	source-flow-mapped
+android-runtime	native-android/app/src/main/java/com/yurken/englishtales/ui/WelcomeScreen.kt	54	source-flow-mapped
+android-resource	native-android/app/src/main/res/drawable-nodpi/cover_attic_letter.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/drawable-nodpi/cover_last_train.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/drawable-nodpi/cover_lost_map.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/drawable-nodpi/cover_paper_boat.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/drawable-nodpi/cover_quiet_morning.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/drawable-nodpi/cover_red_umbrella.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/drawable-nodpi/reading_guide.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/drawable/google_g.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/drawable/ic_notification.xml	3	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	5	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	5	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-hdpi/ic_launcher.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-mdpi/ic_launcher.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xhdpi/ic_launcher.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png	binary	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/values/colors.xml	3	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/values/strings.xml	3	runtime-reference-mapped; binary-semantics-not-reviewed
+android-resource	native-android/app/src/main/res/values/themes.xml	7	runtime-reference-mapped; binary-semantics-not-reviewed
+release-probe	native-android/app/src/releaseProbe/java/com/yurken/englishtales/data/NativeAlignmentInstrumentation.kt	30	source-flow-mapped
+android-tests	native-android/app/src/test/java/com/yurken/englishtales/data/ForegroundLearningClockTest.kt	20	declaration-dependency-index; execution-unverified
+android-tests	native-android/app/src/test/java/com/yurken/englishtales/data/LearningPolicyTest.kt	52	declaration-dependency-index; execution-unverified
+build-config-repository	native-android/backend/.gitignore	8	configuration-entry-mapped
+documentation-reference	native-android/backend/README.md	88	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/backend/SYNC_CONTRACT.md	155	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/backend/VERIFICATION.md	96	historical-reference; runtime-proof-not-assumed
+admin	native-android/backend/admin/README.md	54	documentation-context
+admin	native-android/backend/admin/api.js	65	source-flow-mapped
+admin	native-android/backend/admin/app.js	137	source-flow-mapped
+admin	native-android/backend/admin/favicon.svg	1	source-flow-mapped
+admin	native-android/backend/admin/index.html	2	source-flow-mapped
+admin	native-android/backend/admin/server.mjs	144	source-flow-mapped
+admin	native-android/backend/admin/styles.css	5	source-flow-mapped
+admin	native-android/backend/admin/workflow.js	21	source-flow-mapped
+build-config-repository	native-android/backend/package-lock.json	20	configuration-entry-mapped
+build-config-repository	native-android/backend/package.json	14	configuration-entry-mapped
+catalog-seed-manifest	native-android/backend/supabase/asset-upload-manifest.json	53	consumer-generator-mapped
+build-config-repository	native-android/backend/supabase/config.toml	32	configuration-entry-mapped
+edge-function	native-android/backend/supabase/functions/delete-account/handler.js	74	source-flow-mapped; live-state-unverified
+edge-function	native-android/backend/supabase/functions/delete-account/index.ts	6	source-flow-mapped; live-state-unverified
+backend-migration	native-android/backend/supabase/migrations/202610100001_content.sql	251	source-flow-mapped; live-state-unverified
+backend-migration	native-android/backend/supabase/migrations/202610100002_learning.sql	304	source-flow-mapped; live-state-unverified
+backend-migration	native-android/backend/supabase/migrations/202610100003_content_admin.sql	144	source-flow-mapped; live-state-unverified
+backend-migration	native-android/backend/supabase/migrations/202610100004_admin_completion.sql	185	source-flow-mapped; live-state-unverified
+backend-migration	native-android/backend/supabase/migrations/20261011134638_learning_snapshot.sql	52	source-flow-mapped; live-state-unverified
+backend-migration	native-android/backend/supabase/migrations/20261011151750_restrict_platform_helpers.sql	14	source-flow-mapped; live-state-unverified
+backend-migration	native-android/backend/supabase/migrations/20261011153145_account_deletion_authorization.sql	27	source-flow-mapped; live-state-unverified
+backend-migration	native-android/backend/supabase/migrations/20261011195136_account_media_deletion_inventory.sql	17	source-flow-mapped; live-state-unverified
+catalog-seed-manifest	native-android/backend/supabase/seed.sql	219	consumer-generator-mapped
+public-web-mail-template	native-android/backend/supabase/templates/confirmation.html	13	static-source-mapped; deployment-unverified
+public-web-mail-template	native-android/backend/supabase/templates/recovery.html	13	static-source-mapped; deployment-unverified
+backend-tests-fixture	native-android/backend/tests/account-deletion.test.mjs	76	source-contract-mapped; execution-unverified
+backend-tests-fixture	native-android/backend/tests/admin-client.test.mjs	70	source-contract-mapped; execution-unverified
+backend-tests-fixture	native-android/backend/tests/backend.test.mjs	426	source-contract-mapped; execution-unverified
+backend-tests-fixture	native-android/backend/tests/platform-fixture.sql	29	source-contract-mapped; execution-unverified
+operations-tool	native-android/backend/tools/export-catalog.mjs	46	source-flow-mapped
+operations-tool	native-android/backend/tools/verify-admin-http.mjs	57	source-flow-mapped
+operations-tool	native-android/backend/tools/verify-android-outbox.mjs	35	source-flow-mapped
+operations-tool	native-android/backend/tools/verify-content-restore.mjs	47	source-flow-mapped
+operations-tool	native-android/backend/tools/verify-hosted.mjs	17	source-flow-mapped
+build-config-repository	native-android/build.gradle.kts	7	configuration-entry-mapped
+build-config-repository	native-android/config/production.properties	4	configuration-entry-mapped
+documentation-reference	native-android/docs/ACCOUNT_LIFECYCLE_EXECUTION.md	69	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/ACCOUNT_SYNC_PLAN.md	55	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/ASSET_NOTES.md	10	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/CLOUD_RECONCILIATION_PLAN.md	72	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/CONTENT_ADMIN_PLAN.md	67	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/CONTENT_BACKUP_VERIFICATION.md	19	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/EMAIL_DELIVERY_SETUP.md	54	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/GUEST_GOOGLE_PLAN.md	46	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/GUEST_TRANSFER_PLAN.md	43	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/INTERNAL_RELEASE_NOTES.txt	15	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/LEARNING_JOURNEY.md	89	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/LEARNING_SYNC_EXECUTION.md	28	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/NEW_COVER_ASSETS.md	28	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/OFFLINE_DATA_PLAN.md	48	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/PAGE_SIZE_VERIFICATION.md	35	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/PLAY_CONSOLE_AUDIT.md	25	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/PLAY_INTERNAL_TEST_PLAN.md	47	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/PRODUCTION_PACKAGE_PLAN.md	24	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/PRODUCTION_SETUP.md	19	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/PUBLIC_RELEASE_OPERATIONS.md	46	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/PUBLISHER_MEDIA_DELETION_PLAN.md	25	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/RELEASE_EXECUTION.md	90	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/REMOTE_CONTENT_PLAN.md	64	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/STORE_DECLARATIONS_PLAN.md	28	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/STORE_RELEASE_ROADMAP.md	211	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/VERIFICATION.md	112	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/content-update-overview.jpg	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/learning-journey-overview.jpg	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/practice-overview.jpg	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-account-login.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-all-books.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-card-large-text-bottom.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-card-large-text-top.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-card-result.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-card.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-catalog-large-text.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-catalog.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-choice-large-text-bottom.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-choice-large-text-top.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-choice-result.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-choice.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-content-admin-mobile.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-content-admin.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-daily-plan-large-text-lower.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-daily-plan-large-text.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-daily-plan-upgrade.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-daily-plan.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-detail-large-text.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-detail.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-google-provider.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-guest-transfer-home.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-home.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-match-result.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-match.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-new-word-popup.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-offline-practice-result.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-onboarding-goal.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-onboarding.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-practice-answer-feedback.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-practice-daily-result.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-practice.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-profile-achievements.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-profile-journey.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-profile.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-reader-first-use.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-reader-large-text.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-reader-resume.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-reader.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-reading-result.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-red-umbrella-detail.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-red-umbrella-reader.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-red-umbrella-translation.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-reminder-denied.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-remote-download.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-remote-offline-reader.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-result-large-text.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-rotation-investigation.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-settings-journey.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-settings-reminder.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-spell-result.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-spell.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-welcome-guest-google.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-word-popup.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-words-large-text.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/preview-words.png	binary	historical-reference; runtime-proof-not-assumed
+documentation-reference	native-android/docs/reference-comparison.jpg	binary	historical-reference; runtime-proof-not-assumed
+build-config-repository	native-android/gradle.properties	4	configuration-entry-mapped
+build-config-repository	native-android/gradle/wrapper/gradle-wrapper.jar	binary	configuration-entry-mapped
+build-config-repository	native-android/gradle/wrapper/gradle-wrapper.properties	8	configuration-entry-mapped
+build-config-repository	native-android/gradlew	252	configuration-entry-mapped
+build-config-repository	native-android/gradlew.bat	94	configuration-entry-mapped
+build-config-repository	native-android/settings.gradle.kts	18	configuration-entry-mapped
+build-config-repository	native-android/signing.properties.example	5	configuration-entry-mapped
+build-config-repository	native-android/supabase.properties.example	5	configuration-entry-mapped
+public-web-mail-template	native-android/web/delete-account.html	1	static-source-mapped; deployment-unverified
+public-web-mail-template	native-android/web/index.html	1	static-source-mapped; deployment-unverified
+public-web-mail-template	native-android/web/privacy.html	1	static-source-mapped; deployment-unverified
+public-web-mail-template	native-android/web/styles.css	1	static-source-mapped; deployment-unverified
+operations-tool	tooling/backup_public_content.mjs	34	source-flow-mapped
+operations-tool	tooling/build_hosting.py	54	source-flow-mapped
+operations-tool	tooling/elf_alignment.py	43	source-flow-mapped
+operations-tool	tooling/test_elf_alignment.py	30	source-flow-mapped
+operations-tool	tooling/verify_native_package.py	16	source-flow-mapped
+operations-tool	tooling/verify_release.py	51	source-flow-mapped
+operations-tool	tooling/verify_repository.py	36	source-flow-mapped

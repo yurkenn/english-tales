@@ -1,0 +1,5 @@
+# Copy to signing.properties on the release machine only. Never commit the real file.
+storeFile=C:/Users/YOUR_USER/.english-tales-release/upload-keystore.jks
+storePassword=ENTER_LOCALLY
+keyAlias=EXISTING_UPLOAD_ALIAS
+keyPassword=ENTER_LOCALLY

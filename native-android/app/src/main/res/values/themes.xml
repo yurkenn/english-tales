@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.EnglishTales" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#F8FAFE</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">#F8FAFE</item>
+    </style>
+</resources>
