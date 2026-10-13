@@ -10,6 +10,8 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import com.yurken.englishtales.data.LearningSnapshot
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -40,8 +42,10 @@ fun FlashcardGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,pad
             Text(word.word,fontSize=23.sp,fontWeight=FontWeight.Bold)
             Text(word.pronunciation,fontSize=13.sp,color=TaleMuted,modifier=Modifier.padding(vertical=10.dp))
             Text(if(revealed) word.translation else "Anlamı görmek için dokun",fontSize=if(revealed) 20.sp else 13.sp,color=if(revealed) TaleInk else TaleMuted)
-            Box(Modifier.padding(top=20.dp).size(42.dp).background(TaleBlue,CircleShape).clickable {narrator.speak(word.word)},contentAlignment=Alignment.Center) {ReferenceIcon("volume",Color.White,Modifier.size(21.dp))}
+            Box(Modifier.padding(top=20.dp).size(48.dp).semantics {contentDescription=if(narrator.speaking || narrator.preparing) "Seslendirmeyi durdur" else "${word.word} kelimesini dinle"}.background(TaleBlue,CircleShape).clickable {if(narrator.speaking || narrator.preparing) narrator.stop() else narrator.speak(word.word)},contentAlignment=Alignment.Center) {if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=Color.White) else ReferenceIcon("volume",Color.White,Modifier.size(21.dp))}
         }
+        if(narrator.preparing) Text("Ses hazırlanıyor…",color=TaleMuted,fontSize=12.sp)
+        narrator.error?.let {Text(it,color=TaleMuted,fontSize=12.sp)}
         Spacer(Modifier.weight(1f))
         Row(horizontalArrangement=Arrangement.spacedBy(7.dp)) {words.forEachIndexed { i,_ -> Box(Modifier.size(5.dp).background(if(i==index) TaleBlue else TaleLine,CircleShape))}}
         Spacer(Modifier.height(24.dp))

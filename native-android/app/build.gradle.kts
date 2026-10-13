@@ -23,6 +23,16 @@ val releaseSigning = Properties().apply {
 }
 val releaseRequested=gradle.startParameter.taskNames.any {it.contains("Release",ignoreCase=true)}
 val releaseDeviceProbe=providers.gradleProperty("releaseDeviceTest").orNull == "true"
+val adDeviceProbe=providers.gradleProperty("adDeviceTest").orNull=="true"
+val adsSettings=Properties().apply {rootProject.file("config/ads.properties").inputStream().use {load(it)}}
+val adsEnabled=adsSettings.getProperty("ENABLED","false")=="true"
+val adsAppId=adsSettings.getProperty("APP_ID","")
+val adsUnitId=adsSettings.getProperty("INTERSTITIAL_UNIT_ID","")
+if(adsEnabled) {
+    require(adsAppId.matches(Regex("ca-app-pub-[0-9]{16}~[0-9]{10}"))) {"AdMob App ID is invalid"}
+    require(adsUnitId.matches(Regex("ca-app-pub-6012481599277383/[0-9]{10}")) && adsUnitId!="ca-app-pub-6012481599277383/6069329647") {"Configure a verified interstitial unit, not the old rewarded unit"}
+    require(adsSettings.getProperty("PUBLICATION_READY")=="true") {"Verify AdMob consent, publisher site and Play privacy declarations before enabling production ads"}
+}
 if(releaseRequested) {
     require(listOf("storeFile","storePassword","keyAlias","keyPassword").all {releaseSigning.getProperty(it).orEmpty().isNotBlank()}) {
         "Release signing is missing. Configure the private signing.properties file; debug signing is never used for release."
@@ -36,6 +46,7 @@ if(releaseRequested) {
 android {
     testBuildType = if (releaseDeviceProbe) "release" else "debug"
     if (releaseDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/releaseProbe/java"))
+    if(adDeviceProbe) sourceSets.getByName("androidTest").java.srcDir("src/adProbe/java")
     namespace = "com.yurken.englishtales"
     compileSdk = 36
 
@@ -53,6 +64,10 @@ android {
         buildConfigField("String", "SUPABASE_URL", "\"${contentSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${contentSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")
+        buildConfigField("boolean","ADS_ENABLED","true")
+        buildConfigField("String","ADMOB_APP_ID","\"ca-app-pub-3940256099942544~3347511713\"")
+        buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"ca-app-pub-3940256099942544/1033173712\"")
+        manifestPlaceholders["admobAppId"]="ca-app-pub-3940256099942544~3347511713"
     }
 
     signingConfigs {
@@ -65,6 +80,10 @@ android {
     }
     buildTypes {
         release {
+            buildConfigField("boolean","ADS_ENABLED",adsEnabled.toString())
+            buildConfigField("String","ADMOB_APP_ID","\"$adsAppId\"")
+            buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"$adsUnitId\"")
+            manifestPlaceholders["admobAppId"]=adsAppId
             // A local debug/test configuration must never leak into a store package.
             buildConfigField("String", "SUPABASE_URL", "\"${productionSetting("SUPABASE_URL")}\"")
             buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${productionSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
@@ -89,6 +108,8 @@ android {
 room { schemaDirectory("$projectDir/schemas") }
 
 dependencies {
+    implementation("com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.5.0")
+    implementation("com.google.android.ump:user-messaging-platform:4.0.0")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     val composeBom = platform("androidx.compose:compose-bom:2025.05.00")
     implementation(composeBom)

@@ -11,6 +11,8 @@ import androidx.activity.enableEdgeToEdge
 import com.yurken.englishtales.data.LearningContent
 import com.yurken.englishtales.ui.EnglishTalesTheme
 import com.yurken.englishtales.ui.TalesApp
+import androidx.compose.runtime.CompositionLocalProvider
+import com.yurken.englishtales.ads.*
 
 class MainActivity : ComponentActivity() {
     private var dailyPlanRequest by mutableLongStateOf(0L)
@@ -20,10 +22,11 @@ class MainActivity : ComponentActivity() {
         acceptReminder(intent)
         LearningContent.initialize(applicationContext)
         enableEdgeToEdge()
+        val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.None
         setContent {
-            EnglishTalesTheme {
+            CompositionLocalProvider(LocalCompletionAds provides ads) {EnglishTalesTheme {
                 TalesApp(dailyPlanRequest=dailyPlanRequest)
-            }
+            }}
         }
     }
     override fun onNewIntent(intent: Intent) {

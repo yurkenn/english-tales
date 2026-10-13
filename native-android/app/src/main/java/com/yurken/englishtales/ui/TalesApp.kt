@@ -28,6 +28,9 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
     val snapshot by viewModel.state.collectAsState()
     val ready by viewModel.ready.collectAsState()
     val writeError by viewModel.writeError.collectAsState()
+    val completions by viewModel.completedSessions.collectAsState()
+    val ads=com.yurken.englishtales.ads.LocalCompletionAds.current
+    LaunchedEffect(completions) {completions.forEach(ads::recordCompletion)}
     var selectedTab by rememberSaveable { mutableIntStateOf(0) }
     var launchId by rememberSaveable {mutableStateOf<String?>(null)}
     var launchWords by rememberSaveable {mutableStateOf(emptyList<String>())}
@@ -43,6 +46,13 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
     if(!ready || !contentReady || snapshot.ownerId!=(account.userId?:"guest")) { Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) { CircularProgressIndicator() }; return }
     val startDestination=rememberSaveable {if(snapshot.onboardingDone) "main" else if(account.userId==null) "welcome" else "onboarding"}
     val nav=rememberNavController()
+    fun completedExit(id: String, next: ()->Unit) {
+        val expected=account.scope
+        val entry=nav.currentBackStackEntry?.id
+        if(viewModel.account.value.scope!=expected) return
+        if(id !in viewModel.completedSessions.value || viewModel.writeError.value!=null) next()
+        else ads.afterCompletion(id,{viewModel.account.value.scope==expected && viewModel.writeError.value==null && nav.currentBackStackEntry?.id==entry},next)
+    }
     fun dailyPlan() {selectedTab=0;nav.popBackStack("main",false)}
     fun practice(ids: List<String>) {launchWords=ids;launchId=java.util.UUID.randomUUID().toString();selectedTab=2;nav.popBackStack("main",false)}
     var handledRequest by rememberSaveable {mutableLongStateOf(0L)}
@@ -57,7 +67,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
                 Column(Modifier.fillMaxSize()) {
                     if(selectedTab==1) ContentConnectionBar(content,onDownloads={nav.navigate("downloads")})
                     Box(Modifier.weight(1f)) {
-                        MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.readingPositions[id]?.revisionId?.takeIf {LearningContent.revision(it)!=null}; nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession)
+                        MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.readingPositions[id]?.revisionId?.takeIf {LearningContent.revision(it)!=null}; nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession,onCompletedExit=::completedExit)
                     }
                 }
             }
@@ -82,12 +92,12 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
                     LaunchedEffect(sessionId) {viewModel.startReading(story.id);viewModel.beginSession(sessionId,"reading",0,story.id)}
                     fun exit() {viewModel.abandonSession(sessionId);nav.popBackStack()}
                     androidx.activity.compose.BackHandler {exit()}
-                    ReaderScreen(story,snapshot,onBack={exit()},onSaveWord=viewModel::toggleWord,onProgress={percent,sentence ->viewModel.updateProgress(story.id,percent,sentence)},autoListen=entry.arguments?.getBoolean("listen")==true,onComplete={millis ->viewModel.completeReading(story.id,sessionId,millis);nav.navigate("reading-result/${story.id}?revision=${story.revisionId}") {popUpTo(entry.destination.id) {inclusive=true}}},onHintDismiss={viewModel.dismissReaderHint()},sessionId=sessionId,onCheckpoint=viewModel::checkpointSession)
+                    ReaderScreen(story,snapshot,onBack={exit()},onSaveWord=viewModel::toggleWord,onProgress={percent,sentence ->viewModel.updateProgress(story.id,percent,sentence)},autoListen=entry.arguments?.getBoolean("listen")==true && entry.savedStateHandle.get<Boolean>("reader_listen_handled")!=true,onComplete={millis ->viewModel.completeReading(story.id,sessionId,millis);nav.navigate("reading-result/${story.id}?revision=${story.revisionId}&session=$sessionId") {popUpTo(entry.destination.id) {inclusive=true}}},onHintDismiss={viewModel.dismissReaderHint()},sessionId=sessionId,onCheckpoint=viewModel::checkpointSession,onOpenWords={entry.savedStateHandle["reader_listen_handled"]=true;nav.navigate("words")})
                 }
             }
-            composable("reading-result/{storyId}?revision={revision}",arguments=listOf(navArgument("storyId") {type=NavType.StringType},navArgument("revision") {type=NavType.StringType;defaultValue=""})) {entry ->
+            composable("reading-result/{storyId}?revision={revision}&session={session}",arguments=listOf(navArgument("session") {type=NavType.StringType;defaultValue=""},navArgument("storyId") {type=NavType.StringType},navArgument("revision") {type=NavType.StringType;defaultValue=""})) {entry ->
                 androidx.activity.compose.BackHandler {dailyPlan()}
-                (entry.arguments?.getString("revision")?.let(LearningContent::revision) ?: LearningContent.storyById[entry.arguments?.getString("storyId")])?.let {story -> ReadingResultScreen(story,snapshot,onPractice={ids -> viewModel.saveWords(ids);practice(ids)},onDailyPlan=::dailyPlan) }
+                (entry.arguments?.getString("revision")?.let(LearningContent::revision) ?: LearningContent.storyById[entry.arguments?.getString("storyId")])?.let {story -> ReadingResultScreen(story,snapshot,onPractice={ids -> viewModel.saveWords(ids);practice(ids)},onDailyPlan={completedExit(entry.arguments?.getString("session").orEmpty(),::dailyPlan)},onBack=::dailyPlan) }
             }
             composable("settings") {LearningSettingsScreen(snapshot,onBack={nav.popBackStack()},onSave={level,genre,goal,name ->viewModel.updatePreferences(level,genre,goal,name);nav.popBackStack()})}
             composable("downloads") {ContentDownloadsScreen(content,onBack={nav.popBackStack()})}
@@ -100,13 +110,13 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
 }
 
 @Composable
-private fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit) {
+private fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Unit)->Unit) {
     var practicing by remember { mutableStateOf(false) }
     Scaffold(containerColor=TaleBackground,bottomBar={ if(!practicing) TalesBottomBar(selectedTab,onTabSelected) }) { padding ->
         when(selectedTab) {
             0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice)
             1 -> CatalogScreen(snapshot,onOpenStory,padding)
-            2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan)
+            2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit)
             else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)
         }
     }

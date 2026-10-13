@@ -34,18 +34,9 @@ import com.yurken.englishtales.data.progressFor
 fun StatsHeader(snapshot: LearningSnapshot) {
     Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
         Text("🇺🇸",fontSize=29.sp)
-        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(5.dp)) {
-            Text(snapshot.level,fontSize=14.sp,fontWeight=FontWeight.Bold)
-            ReferenceIcon("diamond",TalePurple,Modifier.size(29.dp))
-        }
-        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(6.dp)) {
-            Text("${snapshot.streak}",color=Color(0xFFFF8A00),fontWeight=FontWeight.Bold,fontSize=20.sp)
-            ReferenceIcon("fire",TaleYellow,Modifier.size(30.dp))
-        }
-        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(6.dp)) {
-            Text("${snapshot.points}",color=TaleYellow,fontWeight=FontWeight.Bold,fontSize=20.sp)
-            ReferenceIcon("bolt",TaleYellow,Modifier.size(27.dp))
-        }
+        LearningInfoButton("study",snapshot.level,"İngilizce seviyen","Seçtiğin seviye ${snapshot.level}. Hikâye önerileri buna göre hazırlanır. Seviyeni Profilim → Ayarlar ekranından değiştirebilirsin.")
+        LearningInfoButton("fire","${snapshot.streak}","Çalışma serin",streakExplanation(snapshot))
+        LearningInfoButton("diamond","${snapshot.points}","Puanların",pointsExplanation(snapshot))
     }
 }
 
@@ -195,7 +186,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                     Row(horizontalArrangement=Arrangement.spacedBy(4.dp)) {
                         ReferenceIconButton("read","Hikâyeyi oku",onRead)
                         ReferenceIconButton("share","Hikâyeyi paylaş",onClick={
-                            val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nEnglish Tales") }
+                            val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nEnglish Tales\nhttps://play.google.com/store/apps/details?id=com.yurken.englishtales") }
                             context.startActivity(android.content.Intent.createChooser(intent,"Hikâyeyi paylaş"))
                         })
                     }
@@ -229,17 +220,13 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
         OutlinedButton(onClick=onAccount,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {Text(if(snapshot.ownerId=="guest") "Hesabına giriş yap" else "Hesabını yönet")}
         ProfilePanel {
             Text("RÜTBE",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold)
-            Row(Modifier.fillMaxWidth().padding(top=16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(18.dp)) {
-                Box(Modifier.size(62.dp,85.dp).background(Color(0xFF244F98),RoundedCornerShape(4.dp)),contentAlignment=Alignment.Center) { Text("✦ ✦ ✦\n✦ ✦ ✦\n✦ ✦ ✦\n✦ ✦ ✦",color=TaleYellow,fontSize=13.sp,lineHeight=17.sp) }
-                Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-                    ReferenceProgress((snapshot.points%100)/100f,Modifier.fillMaxWidth())
-                    Text("⭐ ${snapshot.points%100}/100",fontSize=14.sp,fontWeight=FontWeight.Bold)
-                }
+            Column(Modifier.fillMaxWidth().padding(top=16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                RankProgress(snapshot.points)
             }
         }
         Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-            ProfilePanel(Modifier.weight(1f)) { Text("SERİ",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Row(Modifier.padding(top=20.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(18.dp)) { ReferenceIcon("fire",TaleYellow,Modifier.size(45.dp)); Text("${snapshot.streak}",fontSize=32.sp,fontWeight=FontWeight.Bold) } }
-            ProfilePanel(Modifier.weight(1f)) { Text("PUAN",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Row(Modifier.padding(top=20.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(18.dp)) { ReferenceIcon("diamond",TalePurple,Modifier.size(45.dp)); Text("${snapshot.points}",fontSize=28.sp,fontWeight=FontWeight.Bold) } }
+            ProfilePanel(Modifier.weight(1f)) { Text("SERİ",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("fire","${snapshot.streak}","Çalışma serin",streakExplanation(snapshot)) }
+            ProfilePanel(Modifier.weight(1f)) { Text("PUAN",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("diamond","${snapshot.points}","Puanların",pointsExplanation(snapshot)) }
         }
         ProfilePanel {
             Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) { Text("KELİMELER",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text("KELİMELERİM",color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(onClick=onOpenWords)) }

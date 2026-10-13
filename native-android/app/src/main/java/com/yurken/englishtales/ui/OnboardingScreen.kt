@@ -28,7 +28,7 @@ fun OnboardingScreen(onContinue: (String,String,Int)->Unit) {
     LaunchedEffect(step,scroll.maxValue) { scroll.animateScrollTo(scroll.maxValue) }
     Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding()) {
         Row(Modifier.fillMaxWidth().height(46.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically) {
-            Box(Modifier.size(36.dp).clickable(enabled=step>0) { step-- },contentAlignment=Alignment.Center) { ReferenceIcon("back",Color(0xFF515157),Modifier.size(20.dp)) }
+            if(step>0) Box(Modifier.size(48.dp).clickable { step-- },contentAlignment=Alignment.Center) { ReferenceIcon("back",Color(0xFF515157),Modifier.size(20.dp)) }
         }
         Column(Modifier.weight(1f).verticalScroll(scroll).padding(horizontal=16.dp,vertical=10.dp),verticalArrangement=Arrangement.spacedBy(13.dp)) {
             GuideBubble("Hi! 👋")
