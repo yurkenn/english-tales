@@ -4,7 +4,7 @@ Android, ilk açılışta `app/src/main/assets/catalog/v1.json` içindeki çevri
 
 ## Güncel paket
 
-50 hikâye, 1002 İngilizce/Türkçe cümle çifti ve 353 kelime (316 klasik paket + 37 kelime yoğunluğu pilotu, 15 Ekim 2026). A1: 18, A2: 18, B1: 14 hikâye. Bunların 44'ü kaynakları kontrol edilmiş klasiklerin seviyeli kısa uyarlamalarıdır. Mevcut altı özgün hikâyenin kimlikleri, metinleri ve kelime eşlemeleri korundu.
+50 hikâye, 1002 İngilizce/Türkçe cümle çifti ve 359 kelime/ifade (316 klasik paket + 37 kelime ve 6 ifade pilotu, 15 Ekim 2026). A1: 18, A2: 18, B1: 14 hikâye. Bunların 44'ü kaynakları kontrol edilmiş klasiklerin seviyeli kısa uyarlamalarıdır. Mevcut altı özgün hikâyenin kimlikleri, metinleri ve kelime eşlemeleri korundu.
 
 [Klasiklerin kaynak ve uyarlama kaydı](docs/PUBLIC_DOMAIN_CLASSICS.md) · [Makine tarafından okunabilen kaynaklar](backend/content/classic-sources.json).
 
@@ -15,7 +15,7 @@ Bu sayılar paketin içeriğini belirtir. Canlı ortamın yayın durumu, anonim 
 1. Yazarın ve kullanılan çevirinin hak durumunu, kaynak metni ve kapak haklarını kontrol et. Kaynak bağlantısını ve kullanılan baskı/çevirmeni kaydet.
 2. İngilizce/Türkçe cümleleri sabit kimliklerle hazırla; seviyeli uyarlamayı tam özgün metin gibi sunma. Yazar alanını gerçek yazara ayır.
 3. Kalıcı yeni hikâye/cümle/kelime kimlikleri kullan. Eski metni veya yayımlanmış revision'ı üzerine yazarak düzeltme; düzeltmeler yeni revision gerektirir.
-4. Ortak sözlük token bazlıdır; köke indirgeme yapmaz. Yeni kelimenin eski metinlerde bulunması eski hikâyelerin kelime çalışmalarını da değiştirebilir. Bu pakette yeni kelimeler eski altı metinde bulunmayan token'lardan seçildi. Yeni bir anlam mevcut kelime ID'sine yazılmamalıdır.
+4. Kelime ve ifadeler panel, yayın kontrolü, exporter ve Android'de aynı kuralla eşleşir: büyük/küçük harf yok sayılır, harf/rakam dışı her karakter ayırıcıdır, yalnız bütün sözcükler eşleşir. “picked up” ifadesi “picked-up” ile, “lion” kelimesi “lion's” ile eşleşir; “cat” “category” ile eşleşmez. Çakışmada soldan sağa en uzun öğe kazanır. Ortak sözlük köke indirgeme yapmaz. Yeni kelimenin eski metinlerde bulunması eski hikâyelerin kelime çalışmalarını da değiştirebilir. Bu pakette yeni kelimeler eski altı metinde bulunmayan token'lardan seçildi. Yeni bir anlam mevcut kelime ID'sine yazılmamalıdır.
 5. Kapağı `res/drawable-nodpi` altına ekle ve `BookCover.kt` eşlemesine dahil et. Görsel, 4096 px ve 6 MB indirme sınırlarına uymalı.
 6. `backend` içinde `npm run catalog:export` çalıştır. Bu, sabit kimlikli **taslak** SQL ve kapak checksum/yükleme manifesti üretir; mevcut revision'ı değiştirmez, dosya yüklemez ve hikâye yayımlamaz.
 7. `npm test`, `npm run test:admin`, Android derleme/lint ve ilgili emülatör akışlarını doğrula.

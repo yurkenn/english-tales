@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createClient} from '../admin/api.js';
-import {backup,readBackup,recoveryKey,occurs,invalidLinks} from '../admin/workflow.js';
+import {backup,readBackup,recoveryKey,occurs,invalidLinks,matchSpans} from '../admin/workflow.js';
 const config={mode:'cloud',url:'https://test.supabase.co',key:'sb_publishable_test'};
 const response=(value,status=200)=>new Response(status===204?null:JSON.stringify(value),{status,headers:{'Content-Type':'application/json'}});
 const session=(expires=3600)=>({user:{id:'user-a'},access_token:'access',refresh_token:'refresh',expires_in:expires});
@@ -58,6 +58,16 @@ test('whole word and phrase checks reject substrings and empty punctuation',()=>
   assert.equal(invalidLinks({sentences:[{id:'s',english:'quietly'}],words:[{id:'w',word:'quiet'}],links:[{sentence_id:'s',word_id:'w'}]}).length,1);
 });
 const doc={id:'revision',story_id:'story',edit_version:4,title:'Title',author:'Author',level:'A1',genre:'Macera',description:'Description',cover_asset_id:'current-cover',sentences:[{id:'s-1',english:'Hello',turkish:'Merhaba'}],words:[{id:'w-1',word:'hello',translation:'merhaba',pronunciation:'',example:''}],links:[{sentence_id:'s-1',word_id:'w-1'}]};
+test('phrase spans match Android: hyphens, apostrophes, longest entry first, whole tokens only',()=>{
+ const spans=(sentence,...words)=>matchSpans(sentence,words).map(m=>[m.word.id,sentence.slice(m.start,m.end)]);
+ const pickedUp={id:'picked-up',word:'picked up'},step={id:'step',word:'step'},stepByStep={id:'step-by-step',word:'step by step'};
+ assert.deepEqual(spans('A picked-up box.',pickedUp),[['picked-up','picked-up']]);
+ assert.deepEqual(spans('She picked flowers up.',pickedUp),[]);
+ assert.deepEqual(spans('The category is new.',{id:'cat',word:'cat'}),[]);
+ assert.deepEqual(spans("A lion's skin.",{id:'lion',word:'lion'}),[['lion','lion']]);
+ assert.deepEqual(spans('Step by step, she wins.',step,stepByStep),[['step-by-step','Step by step']]);
+ for(const [sentence,word] of [['A picked-up box.',pickedUp],["A lion's skin.",{word:'lion'}]])assert.equal(occurs(sentence,word.word),true);
+});
 test('recovery retains fresh version and media authority when importing a stale backup',()=>{
   const local=backup({...doc,title:'Local',edit_version:1,cover_asset_id:'old-cover'},config.url);
   const recovered=readBackup(JSON.stringify(local),doc,config.url);assert.equal(recovered.document.title,'Local');assert.equal(recovered.document.edit_version,4);assert.equal(recovered.document.cover_asset_id,'current-cover');

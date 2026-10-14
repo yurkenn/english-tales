@@ -69,11 +69,13 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     val word=words[question]
     var answer by rememberSaveable(question,mode,session) { mutableStateOf<String?>(null) }
     var chosen by rememberSaveable(question,mode,session) { mutableStateOf(emptyList<Int>()) }
-    val letterText=rememberSaveable(question,mode,session) {word.word.toList().shuffled().joinToString("")}
+    // Phrases are spelled without their spaces; a blank tile would be indistinguishable.
+    val spelling=word.word.filterNot(Char::isWhitespace)
+    val letterText=rememberSaveable(question,mode,session) {spelling.toList().shuffled().joinToString("")}
     val letters=letterText.toList()
     val options=rememberSaveable(question,mode,session) {(listOf(word.translation)+LearningContent.words.map {it.translation}.distinct().filter {it!=word.translation}.shuffled().take(3)).shuffled()}
     var advanceWrong by rememberSaveable(question,mode,session) {mutableStateOf(false)}
-    val correct=answer==if(mode=="choice") word.translation else word.word
+    val correct=answer==if(mode=="choice") word.translation else spelling
     LaunchedEffect(answer,advanceWrong) {
         if(answer!=null && (correct || advanceWrong)) {
             delay(if(correct) 700 else 0)
@@ -100,7 +102,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             }
         } else {
             Box(Modifier.weight(1f).fillMaxWidth(),contentAlignment=Alignment.Center) {
-                Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(word.word.length)},fontSize=20.sp,color=if(answer==null) TaleBlue else if(correct) Color(0xFF79BB46) else Color(0xFFED725F),modifier=Modifier.border(1.dp,TaleLine,RoundedCornerShape(5.dp)).padding(12.dp))
+                Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(spelling.length)},fontSize=20.sp,color=if(answer==null) TaleBlue else if(correct) Color(0xFF79BB46) else Color(0xFFED725F),modifier=Modifier.border(1.dp,TaleLine,RoundedCornerShape(5.dp)).padding(12.dp))
             }
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(vertical=24.dp),horizontalArrangement=Arrangement.Center) {
                 letters.forEachIndexed { i,c ->

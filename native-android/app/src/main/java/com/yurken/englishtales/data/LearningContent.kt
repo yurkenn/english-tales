@@ -31,7 +31,9 @@ private data class Catalog(
     val wordByText: Map<String, WordInfo>,
     val stories: List<Story>,
     val storyById: Map<String, Story>
-)
+) {
+    val phrases by lazy { PhraseMatcher.Index(words) }
+}
 
 fun LearningSnapshot.progressFor(story: Story): Int {
     val position=readingPositions[story.id]
@@ -50,6 +52,8 @@ object LearningContent {
     val words: List<WordInfo> get() = current().words
     val wordById: Map<String, WordInfo> get() = current().wordById
     val wordByText: Map<String, WordInfo> get() = current().wordByText
+    /** Every dictionary word and phrase, for bundled stories that have no per-sentence links. */
+    val phraseIndex: PhraseMatcher.Index get() = current().phrases
     val stories: List<Story> get() = current().stories
     val storyById: Map<String, Story> get() = current().storyById + pinned
 
@@ -91,10 +95,12 @@ object LearningContent {
         )
     }
 
-    fun wordsForStory(story: Story): List<WordInfo> = story.sentences.flatMap { sentence ->
+    /** Published stories use their editor links; bundled stories match the shared dictionary. */
+    fun wordsForSentence(story: Story, sentence: StorySentence): List<WordInfo> =
         if (story.vocabulary != null) story.vocabulary.filter { it.id in story.sentenceWordIds.orEmpty()[sentence.id].orEmpty() }
-        else Regex("[a-zA-Z']+").findAll(sentence.english).mapNotNull { wordByText[it.value.lowercase(java.util.Locale.ROOT)] }.toList()
-    }.distinctBy { it.id }
+        else PhraseMatcher.find(sentence.english, phraseIndex).map { it.word }.distinctBy { it.id }
+
+    fun wordsForStory(story: Story): List<WordInfo> = story.sentences.flatMap { wordsForSentence(story, it) }.distinctBy { it.id }
 
     fun revisionForWord(wordId: String): String? = (pinned.values + stories).firstOrNull { story -> wordsForStory(story).any {it.id==wordId} }?.revisionId ?: wordSources[wordId]
 

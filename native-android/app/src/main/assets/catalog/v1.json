@@ -2471,6 +2471,48 @@
       "translation": "saldırır",
       "pronunciation": "/əˈtæks/",
       "example": "The fox attacks the chickens."
+    },
+    {
+      "id": "wakes-up",
+      "word": "wakes up",
+      "translation": "uyanır",
+      "pronunciation": "/weɪks ʌp/",
+      "example": "He wakes up early every day."
+    },
+    {
+      "id": "falls-asleep",
+      "word": "falls asleep",
+      "translation": "uykuya dalar",
+      "pronunciation": "/fɔːlz əˈsliːp/",
+      "example": "The baby falls asleep in the car."
+    },
+    {
+      "id": "step-by-step",
+      "word": "step by step",
+      "translation": "adım adım",
+      "pronunciation": "/step baɪ step/",
+      "example": "We learn English step by step."
+    },
+    {
+      "id": "at-last",
+      "word": "at last",
+      "translation": "sonunda",
+      "pronunciation": "/æt læst/",
+      "example": "At last, the bus arrives."
+    },
+    {
+      "id": "again-and-again",
+      "word": "again and again",
+      "translation": "tekrar tekrar",
+      "pronunciation": "/əˈɡen ənd əˈɡen/",
+      "example": "She reads the letter again and again."
+    },
+    {
+      "id": "one-day",
+      "word": "one day",
+      "translation": "bir gün",
+      "pronunciation": "/wʌn deɪ/",
+      "example": "One day, I want to visit London."
     }
   ],
   "stories": [
