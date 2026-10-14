@@ -46,7 +46,7 @@ Boyut göreli: **S** küçük tek PR · **M** birkaç PR veya şema/test etkisi 
 |---|---|---|---|
 | 1.1 Gizlilik dostu çökme raporlama | Hataları kullanıcı şikâyeti beklemeden görmek | M | Sağlayıcı kararı (Crashlytics/Sentry/yalnız Play vitals). Gizlilik metni ve veri güvenliği beyanı güncellenir. |
 | 1.2 Asgari ürün ölçümü | “İlk hikâyeyi bitirdi”, “ertesi gün döndü”, “tekrar oturumu bitirdi” | M | 1.1 ile aynı karar; içerik metni, e-posta, öğrenme geçmişi loglanmaz (PRODUCT_ROADMAP §5). |
-| 1.3 D13 katalog sıralaması | Yeni hikâyeler gerçekten yeni görünür | S | Katalogda yayın tarihi alanı; exporter/panel uyumu. |
+| 1.3 D13 katalog sıralaması | Yeni hikâyeler gerçekten yeni görünür | S | **Uygulandı** (`codex/catalog-new-stories`): `stories.created_at` katalogla gelir, raf ilk yayın tarihine göre sıralanır; tarihsiz/gömülü içerikte eski katalog sırası korunur. Şema veya panel değişikliği gerekmedi. |
 | 1.4 D05 + D08 iki cihaz kabulü | Hesaplı kullanıcı kelime/ilerleme kaybetmez | M | Gerçek iki cihaz/emülatör; arşivli kaynak senaryosu. |
 | 1.5 D07 TTS yaşam döngüsü | Ekran değişiminde sesin takılmaması | S | — |
 

@@ -93,12 +93,12 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     var listMode by rememberSaveable { mutableStateOf("") }
     BackHandler(enabled=listMode.isNotBlank()) { listMode=""; search="" }
     val stories=LearningContent.stories
-    val filtered=stories.filter { story ->
+    val newest=LearningContent.newestStories(3)
+    val filtered=(if(listMode=="new") newest else stories).filter { story ->
         (listMode!="books" || (snapshot.progressFor(story))>0) &&
         (listMode !in listOf("Macera","Gizem","Günlük yaşam") || story.genre==listMode) &&
         (listMode!="adventure" || story.genre!="Günlük yaşam") &&
         (listMode!="level" || story.level==snapshot.level) &&
-        (listMode!="new" || story in stories.takeLast(3)) &&
         (search.isBlank() || story.title.contains(search,true) || story.description.contains(search,true))
     }
     Column(Modifier.fillMaxSize().padding(padding)) {
@@ -116,7 +116,7 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 if(stories.isNotEmpty()) ChallengeBanner { (stories.firstOrNull { it.level==snapshot.level } ?: stories.first()).let {onOpenStory(it.id)} }
                 else Text("Şu anda yayımlanmış hikâye yok.",modifier=Modifier.padding(16.dp),color=TaleMuted)
                 Spacer(Modifier.height(38.dp))
-                BookShelf("Yeni hikâyeler",stories.takeLast(3),onOpenStory) { listMode="new" }
+                BookShelf("Yeni hikâyeler",newest,onOpenStory) { listMode="new" }
                 Spacer(Modifier.height(30.dp))
                 BookShelf("Macera ve gizem",stories.filter { it.genre!="Günlük yaşam" },onOpenStory) { listMode="adventure" }
                 Spacer(Modifier.height(28.dp))
