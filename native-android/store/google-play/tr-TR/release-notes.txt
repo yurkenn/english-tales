@@ -1,0 +1,5 @@
+• A1, A2 ve B1 seviyelerinde 50 hikâye.
+• Yenilenen uygulama ikonu ve kitap arkadaşımız.
+• Daha akıcı native Android deneyimi.
+• Türkçe çeviri, kelime çalışmaları ve çevrimdışı okuma.
+• Okuma görünümü ve günlük öğrenme akışında iyileştirmeler.

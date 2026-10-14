@@ -34,12 +34,56 @@ private fun coverResource(key: String) = when(key) {
     "cover_attic_letter" -> R.drawable.cover_attic_letter
     "cover_paper_boat" -> R.drawable.cover_paper_boat
     "cover_lost_map" -> R.drawable.cover_lost_map
+    "cover_classic_tortoise_hare" -> R.drawable.cover_classic_tortoise_hare
+    "cover_classic_lion_mouse" -> R.drawable.cover_classic_lion_mouse
+    "cover_classic_fox_grapes" -> R.drawable.cover_classic_fox_grapes
+    "cover_classic_ants_grasshopper" -> R.drawable.cover_classic_ants_grasshopper
+    "cover_classic_red_riding_hood" -> R.drawable.cover_classic_red_riding_hood
+    "cover_classic_cinderella" -> R.drawable.cover_classic_cinderella
+    "cover_classic_bremen_musicians" -> R.drawable.cover_classic_bremen_musicians
+    "cover_classic_hansel_gretel" -> R.drawable.cover_classic_hansel_gretel
+    "cover_classic_happy_prince" -> R.drawable.cover_classic_happy_prince
+    "cover_classic_selfish_giant" -> R.drawable.cover_classic_selfish_giant
+    "cover_classic_gift_magi" -> R.drawable.cover_classic_gift_magi
+    "cover_classic_after_twenty_years" -> R.drawable.cover_classic_after_twenty_years
+    "cover_classic_crow_pitcher" -> R.drawable.cover_classic_crow_pitcher
+    "cover_classic_boy_cried_wolf" -> R.drawable.cover_classic_boy_cried_wolf
+    "cover_classic_town_country_mouse" -> R.drawable.cover_classic_town_country_mouse
+    "cover_classic_north_wind_sun" -> R.drawable.cover_classic_north_wind_sun
+    "cover_classic_golden_eggs" -> R.drawable.cover_classic_golden_eggs
+    "cover_classic_dog_shadow" -> R.drawable.cover_classic_dog_shadow
+    "cover_classic_fox_crow" -> R.drawable.cover_classic_fox_crow
+    "cover_classic_ant_dove" -> R.drawable.cover_classic_ant_dove
+    "cover_classic_bundle_sticks" -> R.drawable.cover_classic_bundle_sticks
+    "cover_classic_milkmaid_pail" -> R.drawable.cover_classic_milkmaid_pail
+    "cover_classic_dog_manger" -> R.drawable.cover_classic_dog_manger
+    "cover_classic_ass_lion_skin" -> R.drawable.cover_classic_ass_lion_skin
+    "cover_classic_snow_white" -> R.drawable.cover_classic_snow_white
+    "cover_classic_rapunzel" -> R.drawable.cover_classic_rapunzel
+    "cover_classic_sleeping_beauty" -> R.drawable.cover_classic_sleeping_beauty
+    "cover_classic_frog_prince" -> R.drawable.cover_classic_frog_prince
+    "cover_classic_rumpelstiltskin" -> R.drawable.cover_classic_rumpelstiltskin
+    "cover_classic_golden_goose" -> R.drawable.cover_classic_golden_goose
+    "cover_classic_elves_shoemaker" -> R.drawable.cover_classic_elves_shoemaker
+    "cover_classic_tom_thumb" -> R.drawable.cover_classic_tom_thumb
+    "cover_classic_wolf_seven_kids" -> R.drawable.cover_classic_wolf_seven_kids
+    "cover_classic_twelve_dancing_princesses" -> R.drawable.cover_classic_twelve_dancing_princesses
+    "cover_classic_brave_little_tailor" -> R.drawable.cover_classic_brave_little_tailor
+    "cover_classic_goose_girl" -> R.drawable.cover_classic_goose_girl
+    "cover_classic_ugly_duckling" -> R.drawable.cover_classic_ugly_duckling
+    "cover_classic_emperors_clothes" -> R.drawable.cover_classic_emperors_clothes
+    "cover_classic_thumbelina" -> R.drawable.cover_classic_thumbelina
+    "cover_classic_little_mermaid" -> R.drawable.cover_classic_little_mermaid
+    "cover_classic_snow_queen" -> R.drawable.cover_classic_snow_queen
+    "cover_classic_little_match_girl" -> R.drawable.cover_classic_little_match_girl
+    "cover_classic_steadfast_tin_soldier" -> R.drawable.cover_classic_steadfast_tin_soldier
+    "cover_classic_wild_swans" -> R.drawable.cover_classic_wild_swans
     else -> R.drawable.cover_quiet_morning
 }
 
 @Composable
 fun BookCover(story: Story, modifier: Modifier = Modifier) {
-    BoxWithConstraints(modifier.clip(RoundedCornerShape(10.dp))) {
+    BoxWithConstraints(modifier.clip(RoundedCornerShape(10.dp)).background(Color(0xFFF6F0E3))) {
         val compact=maxWidth<80.dp
         // Cover lettering is part of the artwork; the adjacent title follows system text size.
         val artworkScale=LocalDensity.current.fontScale
@@ -48,14 +92,15 @@ fun BookCover(story: Story, modifier: Modifier = Modifier) {
                 runCatching {android.graphics.BitmapFactory.decodeFile(path,android.graphics.BitmapFactory.Options().apply {inSampleSize=2})?.asImageBitmap()}.getOrNull()
             }}
         }.value
-        if(bitmap!=null) Image(bitmap,"${story.title} kitabının kapağı",Modifier.fillMaxSize(),contentScale=ContentScale.Crop)
-        else if(story.coverKey!="remote") Image(painterResource(coverResource(story.coverKey)),"${story.title} kitabının kapağı",Modifier.fillMaxSize(),contentScale=ContentScale.Crop)
+        if(bitmap!=null) Image(bitmap,"${story.title} kitabının kapağı",Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
+        else if(story.coverKey!="remote") Image(painterResource(coverResource(story.coverKey)),"${story.title} kitabının kapağı",Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
         else Box(Modifier.fillMaxSize().background(TaleBlue))
-        Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color.Black.copy(alpha=0.1f),Color.Transparent,Color.Black.copy(alpha=0.72f)))))
+        if(!compact) Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color.Black.copy(alpha=0.5f),Color.Transparent,Color.Black.copy(alpha=0.72f)))))
         if(!compact) Text("ENGLISH TALES",fontSize=(7/artworkScale).sp,letterSpacing=(1/artworkScale).sp,color=Color.White,modifier=Modifier.align(Alignment.TopStart).padding(8.dp))
         Text(story.level,color=TaleInk,fontWeight=FontWeight.ExtraBold,fontSize=((if(compact) 8 else 12)/artworkScale).sp,
             modifier=Modifier.align(Alignment.TopEnd).background(TaleYellow,RoundedCornerShape(bottomStart=5.dp)).padding(horizontal=if(compact) 4.dp else 7.dp,vertical=if(compact) 5.dp else 9.dp))
-        Text(story.title,color=Color.White,fontFamily=FontFamily.Serif,fontWeight=FontWeight.Bold,fontSize=((if(compact) 8 else 17)/artworkScale).sp,
-            lineHeight=((if(compact) 10 else 19)/artworkScale).sp,textAlign=TextAlign.Center,modifier=Modifier.align(Alignment.BottomCenter).padding(horizontal=7.dp,vertical=if(compact) 6.dp else 18.dp))
+        // Small list thumbnails have an adjacent, accessible title; avoid splitting tiny words on the artwork.
+        if(!compact) Text(story.title,color=Color.White,fontFamily=FontFamily.Serif,fontWeight=FontWeight.Bold,fontSize=(17/artworkScale).sp,
+            lineHeight=(19/artworkScale).sp,textAlign=TextAlign.Center,modifier=Modifier.align(Alignment.BottomCenter).padding(horizontal=7.dp,vertical=18.dp))
     }
 }

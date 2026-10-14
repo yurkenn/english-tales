@@ -57,9 +57,9 @@ android {
         else "androidx.test.runner.AndroidJUnitRunner"
         minSdk = 24
         targetSdk = 36
-        // Play Console latest uploaded/production code was 46 on 2026-10-11.
+        // Play Console: production 46, internal preview 47 verified on 2026-10-14.
         // Recheck before upload if another release is produced in parallel.
-        versionCode = 47
+        versionCode = 48
         versionName = "2.0.0"
         buildConfigField("String", "SUPABASE_URL", "\"${contentSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${contentSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
@@ -91,6 +91,9 @@ android {
             signingConfig=signingConfigs.findByName("upload")
             isMinifyEnabled = true
             isShrinkResources = true
+            // Bundles symbol tables for unstripped native code. The only current .so
+            // (AndroidX graphics-path) ships stripped, so Play's missing-symbols warning remains.
+            ndk { debugSymbolLevel = "SYMBOL_TABLE" }
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }

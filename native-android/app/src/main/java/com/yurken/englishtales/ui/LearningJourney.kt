@@ -101,7 +101,10 @@ fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (Lis
     Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar("Okuma tamamlandı",onBack)
         Column(Modifier.padding(24.dp),verticalArrangement=Arrangement.spacedBy(18.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-            BookCover(story,Modifier.size(112.dp,164.dp))
+            Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+                TalesMascot(MascotMood.Celebrate,Modifier.size(144.dp),animate=true)
+                BookCover(story,Modifier.size(64.dp,94.dp))
+            }
             Text("Bir hikâye tamamladın!",fontSize=22.sp,fontWeight=FontWeight.Bold)
             Text(story.title,fontSize=15.sp,color=TaleMuted)
             Text(if(snapshot.dailyGoalReached) "Günlük hedef tamamlandı ✓" else "Günlük hedef: ${snapshot.todaySessions} / ${snapshot.dailyGoal} adım",color=TaleBlue,fontWeight=FontWeight.Bold)

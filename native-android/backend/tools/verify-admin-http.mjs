@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import { randomUUID,createHash } from 'node:crypto';
 import { createServer } from 'node:net';
 
+const catalog=JSON.parse(await readFile(new URL('../../app/src/main/assets/catalog/v1.json',import.meta.url),'utf8'));
 const listener=createServer();listener.listen(0,'127.0.0.1');await once(listener,'listening');const port=listener.address().port;await new Promise(resolve=>listener.close(resolve));
 const origin=`http://127.0.0.1:${port}`,demoName=`admin-http-${randomUUID()}`;
 let child;
@@ -26,7 +27,7 @@ try {
   assert.equal((await fetch(`${origin}/api/rpc`,{method:'POST',headers:{'Content-Type':'text/plain'},body:'{}'})).status,415);
   await assert.rejects(rpc('arbitrary_sql',{query:'drop table public.stories'}),/operation_not_found/);
   assert.equal(await rpc('content_role'),'publisher');
-  const rows=await rpc('admin_catalog',{p_offset:0,p_limit:100});assert.equal(rows.length,6);
+  const rows=await rpc('admin_catalog',{p_offset:0,p_limit:100});assert.equal(rows.length,catalog.stories.length);
   const d=await rpc('admin_revision',{p_revision_id:rows.find(r=>r.story_id==='quiet-morning').id});
   const cover=await readFile(new URL('../../app/src/main/res/drawable-nodpi/cover_quiet_morning.png',import.meta.url));
   const id=randomUUID(),headers={Origin:origin,'Content-Type':'image/png','X-Asset-Id':id,'X-Kind':'cover'};

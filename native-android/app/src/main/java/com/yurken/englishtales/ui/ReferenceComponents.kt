@@ -14,6 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.RoundRect
+import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
@@ -40,24 +42,88 @@ fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Mod
                 val p = Path().apply { moveTo(points[0], points[1]); for(i in 2 until points.size step 2) lineTo(points[i],points[i+1]); if(fill) close() }
                 drawPath(p,tint,style=if(fill) androidx.compose.ui.graphics.drawscope.Fill else Stroke(1.8f,cap=StrokeCap.Round))
             }
+            // Keep white/disabled/night-mode icons monochrome; accent only the brand-blue variant.
+            val accent = if(tint == TaleBlue) TalePurple else tint
+            fun outline(p: Path, color: Color = tint) = drawPath(p,color,style=Stroke(1.8f,cap=StrokeCap.Round))
             when(kind) {
-                "study" -> { path(1f,7f,12f,3f,23f,7f,12f,11f,1f,7f,fill=true); path(5f,10f,5f,15f,12f,18f,19f,15f,19f,10f,12f,13f,fill=true); line(5f,21f,19f,21f) }
-                "read" -> { path(2f,3f,10.5f,6f,10.5f,22f,2f,18f,fill=true); path(13.5f,6f,22f,3f,22f,18f,13.5f,22f,fill=true) }
-                "play" -> { path(3f,2f,8f,3f,20f,16f,17f,19f,4f,7f,3f,2f,fill=true); path(21f,2f,16f,3f,4f,16f,7f,19f,20f,7f,21f,2f,fill=true); line(3f,18f,6f,21f); line(18f,21f,21f,18f) }
+                "study" -> {
+                    val notebook=Path().apply {
+                        fillType=PathFillType.EvenOdd
+                        addRoundRect(RoundRect(5f,2f,21f,22f,CornerRadius(2.5f)))
+                        moveTo(8f,12f);lineTo(10f,14f);lineTo(16f,7.5f);lineTo(18f,9.2f)
+                        lineTo(10f,18f);lineTo(6.5f,14f);close()
+                    }
+                    drawPath(notebook,tint)
+                    line(2f,7f,5.5f,7f);line(2f,17f,5.5f,17f)
+                }
+                "read" -> {
+                    outline(Path().apply {
+                        moveTo(12f,6f);cubicTo(9f,3f,5f,3f,2f,4f);lineTo(2f,19f)
+                        cubicTo(6f,18f,9f,19f,12f,21f);cubicTo(15f,19f,19f,18f,22f,19f)
+                        lineTo(22f,4f);cubicTo(21f,3.7f,20f,3.5f,19f,3.5f)
+                        moveTo(15f,4f);lineTo(12f,6f);lineTo(12f,21f)
+                    })
+                    drawPath(Path().apply {
+                        moveTo(15.5f,2.5f);lineTo(19f,2.5f);lineTo(19f,10f)
+                        lineTo(17.25f,8.5f);lineTo(15.5f,10f);close()
+                    },accent)
+                }
+                "play", "letters" -> {
+                    outline(Path().apply {
+                        moveTo(10f,6f);lineTo(10f,4f);quadraticTo(10f,2f,12f,2f)
+                        lineTo(20f,2f);quadraticTo(22f,2f,22f,4f);lineTo(22f,13f)
+                        quadraticTo(22f,15f,20f,15f);lineTo(17f,15f)
+                    })
+                    drawRoundRect(tint,Offset(2f,8f),Size(12f,14f),CornerRadius(2f),style=Stroke(1.8f))
+                    path(5f,18f,8f,12f,11f,18f);line(6f,16f,10f,16f)
+                    outline(Path().apply {
+                        moveTo(15f,5f);lineTo(15f,12f);lineTo(17f,12f)
+                        cubicTo(20f,12f,20f,8.5f,17f,8.5f);lineTo(15f,8.5f)
+                        moveTo(17f,8.5f);cubicTo(20f,8.5f,20f,5f,17f,5f);lineTo(15f,5f)
+                    })
+                }
                 "profile" -> { drawCircle(tint,4f,Offset(12f,6f)); val p=Path().apply { moveTo(3f,21f); cubicTo(3f,10f,21f,10f,21f,21f); close() }; drawPath(p,tint) }
                 "search" -> { drawCircle(tint,7f,Offset(10f,10f),style=Stroke(1.8f)); line(15f,15f,22f,22f) }
                 "review" -> { drawArc(tint,-70f,285f,false,Offset(3f,3f),Size(18f,18f),style=Stroke(1.8f)); path(18f,1f,22f,5f,17f,6f) }
                 "back" -> { path(14f,4f,6f,12f,14f,20f); line(6f,12f,22f,12f) }
                 "headphones" -> { drawArc(tint,180f,180f,false,Offset(3f,3f),Size(18f,20f),style=Stroke(2f)); drawRoundRect(tint,Offset(2f,12f),Size(4f,9f),CornerRadius(2f),style=Stroke(1.8f)); drawRoundRect(tint,Offset(18f,12f),Size(4f,9f),CornerRadius(2f),style=Stroke(1.8f)) }
                 "volume" -> { path(2f,9f,7f,9f,13f,4f,13f,20f,7f,15f,2f,15f,fill=true); drawArc(tint,-65f,130f,false,Offset(10f,5f),Size(10f,14f),style=Stroke(1.8f)); drawArc(tint,-65f,130f,false,Offset(10f,1f),Size(16f,22f),style=Stroke(1.8f)) }
-                "translate" -> { drawRoundRect(tint,Offset(1f,2f),Size(13f,15f),CornerRadius(1f),style=Stroke(1.5f)); drawRoundRect(tint,Offset(10f,9f),Size(13f,14f),CornerRadius(1f),style=Stroke(1.5f)); path(5f,13f,7f,6f,10f,13f); line(6f,11f,9f,11f); line(13f,13f,21f,13f); path(15f,13f,18f,19f,21f,16f) }
+                "translate" -> {
+                    outline(Path().apply {
+                        moveTo(5f,3f);lineTo(19f,3f);quadraticTo(22f,3f,22f,6f)
+                        lineTo(22f,16f);quadraticTo(22f,19f,19f,19f);lineTo(9f,19f)
+                        lineTo(4f,22f);lineTo(4f,18.8f);quadraticTo(2f,18f,2f,16f)
+                        lineTo(2f,6f);quadraticTo(2f,3f,5f,3f);close()
+                    })
+                    path(5f,14f,8f,7f,11f,14f);line(6f,12f,10f,12f)
+                    outline(Path().apply {
+                        moveTo(19f,8f);lineTo(14f,8f);lineTo(16f,6f)
+                        moveTo(14f,13f);lineTo(19f,13f);lineTo(17f,15f)
+                    },accent)
+                }
                 "bookmark" -> { path(5f,3f,19f,3f,19f,22f,12f,17f,5f,22f,5f,3f) }
                 "share" -> { line(6f,12f,18f,5f); line(6f,12f,18f,20f); drawCircle(tint,3f,Offset(5f,12f),style=Stroke(1.8f)); drawCircle(tint,3f,Offset(19f,4f),style=Stroke(1.8f)); drawCircle(tint,3f,Offset(19f,20f),style=Stroke(1.8f)) }
                 "cards" -> { drawRoundRect(tint,Offset(3f,3f),Size(11f,17f),CornerRadius(2f),style=Stroke(1.8f)); drawRoundRect(tint,Offset(10f,6f),Size(11f,17f),CornerRadius(2f),style=Stroke(1.8f)) }
                 "settings" -> { drawCircle(tint,7f,Offset(12f,12f),style=Stroke(2f)); drawCircle(tint,2.5f,Offset(12f,12f),style=Stroke(1.8f)); for(i in 0..7) { val a=i*Math.PI/4; line((12+8*kotlin.math.cos(a)).toFloat(),(12+8*kotlin.math.sin(a)).toFloat(),(12+11*kotlin.math.cos(a)).toFloat(),(12+11*kotlin.math.sin(a)).toFloat()) } }
                 "bolt" -> path(14f,1f,3f,14f,11f,14f,9f,23f,22f,9f,14f,9f,14f,1f,fill=true)
-                "fire" -> { val p=Path().apply { moveTo(12f,1f); cubicTo(10f,8f,2f,10f,4f,17f); cubicTo(6f,26f,23f,23f,21f,14f); lineTo(18f,7f); lineTo(16f,12f); close() }; drawPath(p,tint) }
-                "diamond" -> { path(12f,1f,23f,12f,12f,23f,1f,12f,12f,1f,fill=true); drawCircle(Color(0xFFE2B5FF),5f,Offset(12f,12f)); drawCircle(TaleYellow,2f,Offset(12f,12f)) }
+                "streak" -> {
+                    drawRoundRect(tint,Offset(3f,5f),Size(18f,17f),CornerRadius(2.5f),style=Stroke(1.8f))
+                    line(7f,2f,7f,7f);line(17f,2f,17f,7f);line(3f,10f,21f,10f)
+                    outline(Path().apply {moveTo(7f,16f);lineTo(10f,19f);lineTo(17f,13f)},accent)
+                }
+                "points" -> {
+                    val bookmark=Path().apply {
+                        fillType=PathFillType.EvenOdd
+                        moveTo(6f,2f);lineTo(18f,2f);quadraticTo(20f,2f,20f,4f)
+                        lineTo(20f,22f);lineTo(12f,18f);lineTo(4f,22f);lineTo(4f,4f)
+                        quadraticTo(4f,2f,6f,2f);close()
+                        moveTo(12f,5f);lineTo(13.5f,8.2f);lineTo(17f,8.7f)
+                        lineTo(14.5f,11.1f);lineTo(15.1f,14.5f);lineTo(12f,12.9f)
+                        lineTo(8.9f,14.5f);lineTo(9.5f,11.1f);lineTo(7f,8.7f)
+                        lineTo(10.5f,8.2f);close()
+                    }
+                    drawPath(bookmark,tint)
+                }
                 else -> { line(5f,12f,10f,17f); line(10f,17f,20f,5f) }
             }
         }

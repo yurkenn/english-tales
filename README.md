@@ -3,7 +3,9 @@
 Android uygulaması tamamen Kotlin ve Jetpack Compose ile geliştirilir. Aktif kaynak ağacında React Native, Expo veya JavaScript mobil çalışma zamanı bulunmaz.
 
 - [Android kurulumu ve doğrulama](native-android/README.md)
+- [Son çalışmalar ve güncel yayın durumu — 15 Ekim 2026](README_SON_DURUM.md)
 - [Native geçişin kapsamı ve veri sınırları](native-android/docs/NATIVE_MIGRATION.md)
+- [2.0 sonrası geliştirme haritası](native-android/docs/NEXT_PHASE_ROADMAP.md)
 - [Yeni özellikler ve kullanıcı deneyimi planı](native-android/docs/PRODUCT_ROADMAP.md)
 - [Aşamalı teknik geliştirme haritası](native-android/docs/DEVELOPMENT_ROADMAP.md)
 - [Geliştirme iş listesi](native-android/docs/DEVELOPMENT_BACKLOG.md)

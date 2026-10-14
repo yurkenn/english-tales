@@ -20,7 +20,7 @@ internal fun LearningInfoButton(kind: String, value: String, title: String, expl
         .clickable(role=Role.Button) {open=true}.padding(horizontal=4.dp),
         verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(5.dp)) {
         Text(value,fontWeight=FontWeight.Bold)
-        ReferenceIcon(kind,if(kind=="fire") TaleYellow else TaleBlue)
+        ReferenceIcon(kind,TaleBlue)
     }
     if(open) AlertDialog(onDismissRequest={open=false},title={Text(title)},text={Text(explanation)},
         confirmButton={TextButton(onClick={open=false}) {Text("Anladım")}})

@@ -1,0 +1,1717 @@
+{
+  "schemaVersion": 1,
+  "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+  "sourceUsagePolicyUrl": "https://www.gutenberg.org/policy/license.html",
+  "stories": [
+    {
+      "storyId": "classic-tortoise-hare",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Hare and the Tortoise",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "a018a0bca16b61d72d70606cbfefb801151f2ed0dbebd385af45df865d19d2d3",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/01hare.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_tortoise_hare",
+        "sourceSha256": "2d94125142ef649fdddd296a844ef899aaa62b52060434823e614f37a2308a64",
+        "assetSha256": "dd876dd7bcdabe6cb3888183d7da579b5e72b01379310824c566d6b936d32d64"
+      }
+    },
+    {
+      "storyId": "classic-lion-mouse",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Lion And The Mouse",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "8391c688a0490f6108f9299a10abdfd74f7a78f5b785a1a47be5ca0447d2f2df",
+      "cover": {
+        "kind": "Historical collection title page",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/002.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_lion_mouse",
+        "sourceSha256": "eca59c2a470467bc5dcf3dd22331a34b42ceb502f6f757ce07dbd668aec855e2",
+        "assetSha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4"
+      }
+    },
+    {
+      "storyId": "classic-fox-grapes",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Fox and the Grapes",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "4f687702d6082541aefa0763331a86eb3a163cb124d37f9eb3afc4528b8050f1",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/030-2.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_fox_grapes",
+        "sourceSha256": "372e5377a0b1b655667eb6758ec849ff2e5a558207f31cc9fe17f03f0a2c783c",
+        "assetSha256": "088729e3ae54b6f09faad898d2a9fce2625f00e3d70dc33de0364ffbc13f1419"
+      }
+    },
+    {
+      "storyId": "classic-ants-grasshopper",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Ants and the Grasshopper",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "dda6f0e0930b490982de4893687beaccf28285bceede4b3570dc28fda7e7b631",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/154.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_ants_grasshopper",
+        "sourceSha256": "27e84b016e2beb2205647e7fa6f46461b29aadd0bfde7e3b89694a7b505a2a61",
+        "assetSha256": "35dad3a75176a8ec44753b6239f5fa7a670ea2d4a9713ad69d3b8bb86dc787ff"
+      }
+    },
+    {
+      "storyId": "classic-red-riding-hood",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "Little Red-Cap",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "5d204c528fd23faa18bcf8995642820c18a1b1a049580c4f33bb0a4709019349",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-154.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_red_riding_hood",
+        "sourceSha256": "d1b37400fd7364bb30e65ec4da2815c6d0fd0d86eb36990fab75d8a6462c5ae1",
+        "assetSha256": "3e4243044fbc786aca0f2775679e25b4148a0d569c5f0d9e1bf84d44f4868a17"
+      }
+    },
+    {
+      "storyId": "classic-cinderella",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "Cinderella",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "6614ecc0f0ebecf94bc2bb13469e5a29b1f91896be8f17c1753f59ea9000d7c3",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-135.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_cinderella",
+        "sourceSha256": "36225041d7a386dd606cb09d44404bb40965622507b062765f5d40426ab0d69f",
+        "assetSha256": "7720bee19b152e477bdb09ffb33a66ea657d2191f0d73c675f4f2d3dcdcd6269"
+      }
+    },
+    {
+      "storyId": "classic-bremen-musicians",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "The Bremen Town-Musicians",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "624a606c9b860167912371c6a99abee4d229b56ed8a700d49ea045fc916ae1b3",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-155.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_bremen_musicians",
+        "sourceSha256": "df7c8b8fe7f36476472493f4f60b955082b2513a4a1c481bbc69a3df696841fd",
+        "assetSha256": "65e1033a6373ad895f49b2da65e58736815d14229129c96f43f7999122e4e0a7"
+      }
+    },
+    {
+      "storyId": "classic-hansel-gretel",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "Hansel and Grethel",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "c56a0cc05990f1e9b7abb6ca68e1a40ba20fc3f9fb8549c1929c5438e2b5992f",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-100.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_hansel_gretel",
+        "sourceSha256": "63753eb99a9255496596cfdf6221fe03ccff8f6bc9916889ebf655f9a95e3eb7",
+        "assetSha256": "185aa0da7094338db37fcff938b80e62425e15032cad033857cfcc7211520770"
+      }
+    },
+    {
+      "storyId": "classic-happy-prince",
+      "sourceCollection": "The Happy Prince, and Other Tales",
+      "sourceTitle": "The Happy Prince",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/902",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/902/pg902-images.html",
+      "authors": [
+        {
+          "name": "Oscar Wilde",
+          "deathYear": 1900
+        }
+      ],
+      "englishTranslator": null,
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "cf86e5677d951d4ce762bfcdd5b9fc58ac3cf913cf74af1a4e2dad9f07f4ed72",
+      "cover": {
+        "kind": "Historical collection cover",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/30120",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/30120/images/c_cover.jpg",
+        "illustrator": {
+          "name": "Charles Robinson",
+          "deathYear": 1937
+        },
+        "publicationYear": 1920,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_happy_prince",
+        "sourceSha256": "4c2a6002574228008d8c15022424912408f754764690a0f67ee6af670f429afa",
+        "assetSha256": "a3d461c45ae03679605e330edcb2815f191ca12626161497bfaf28a9b371a6db"
+      }
+    },
+    {
+      "storyId": "classic-selfish-giant",
+      "sourceCollection": "The Happy Prince, and Other Tales",
+      "sourceTitle": "The Selfish Giant",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/902",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/902/pg902-images.html",
+      "authors": [
+        {
+          "name": "Oscar Wilde",
+          "deathYear": 1900
+        }
+      ],
+      "englishTranslator": null,
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "a01e86f7727b2955bba784734e048180e68c60047b1a5b3fde067c7f528917af",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/30120",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/30120/images/c_plate64.jpg",
+        "illustrator": {
+          "name": "Charles Robinson",
+          "deathYear": 1937
+        },
+        "publicationYear": 1920,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_selfish_giant",
+        "sourceSha256": "43fb6b9fb11ecff40325ed9e1b06367e92aa34e23110daf4bf664cd3377fd42c",
+        "assetSha256": "0347d07340f77afc88a378b99aa639548fc78f9ff5afeeecbe33ffbfdb3e547e"
+      }
+    },
+    {
+      "storyId": "classic-gift-magi",
+      "sourceCollection": "The Four Million",
+      "sourceTitle": "The Gift of the Magi",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2776",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html",
+      "authors": [
+        {
+          "name": "O. Henry",
+          "deathYear": 1910
+        }
+      ],
+      "englishTranslator": null,
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "1ac8f92846cba18fd6294cff0faaaad1de2efe56f54b73232b8fa1679fbbe6b4",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_gift_magi"
+      }
+    },
+    {
+      "storyId": "classic-after-twenty-years",
+      "sourceCollection": "The Four Million",
+      "sourceTitle": "After Twenty Years",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2776",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html",
+      "authors": [
+        {
+          "name": "O. Henry",
+          "deathYear": 1910
+        }
+      ],
+      "englishTranslator": null,
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "f92f67f1cd507507640d2261b5239d3314d833ac0e17af0708f0e3361e7dd73a",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_after_twenty_years"
+      }
+    },
+    {
+      "storyId": "classic-crow-pitcher",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Crow and the Pitcher",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "ea849cf690a9cb1570c4407fde115990debd171d3b0221af7f34ae9f46196864",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/046.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_crow_pitcher",
+        "sourceSha256": "f215e34d4cfd08f75f0fc517e627d3afcdbc86b5fbbc5af2c1a1da77c38e73d0",
+        "assetSha256": "e15e505269f9af0df887d82a7206af9b726d1369a043d85751e7aef723c8e870"
+      }
+    },
+    {
+      "storyId": "classic-boy-cried-wolf",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Shepherd’s Boy and the Wolf",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "ef9964ee28b2b1767b2b19b9e04f1af856e0f9090036928be7a778f48d05a749",
+      "cover": {
+        "kind": "Historical collection title page",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/002.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_boy_cried_wolf",
+        "sourceSha256": "eca59c2a470467bc5dcf3dd22331a34b42ceb502f6f757ce07dbd668aec855e2",
+        "assetSha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4"
+      }
+    },
+    {
+      "storyId": "classic-town-country-mouse",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Town Mouse and the Country Mouse",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "0f87d5686e8dc1bf6d8cb1065198dc300c646de113f7e52cddcd709c16f41f43",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/141.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_town_country_mouse",
+        "sourceSha256": "ccd685c4a9a541ce0767ef343d686c92b7f6f0d052b3a94fd6e74ac3ccd90cbb",
+        "assetSha256": "a82723fd0f19adf03a62b7de3b66e97933faffc1339095453f6eab844887824e"
+      }
+    },
+    {
+      "storyId": "classic-north-wind-sun",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The North Wind and the Sun",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "1db3c09a51fc13dd0d01a4db6f427a61bd481dc860938e9c24a6932120c44fdd",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/048.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_north_wind_sun",
+        "sourceSha256": "4b29b2989a1bfdfd3f1279f186428666a7a89b2a3e6cebe336ff2ec4d84d809b",
+        "assetSha256": "948f75d6673bf5a76f569e3d0a705e52e43ad62f0229e3770e8cee2eff8cab47"
+      }
+    },
+    {
+      "storyId": "classic-golden-eggs",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Hen and the Golden Eggs",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "9aa3906df90edc514679b98378744e6218e76912330bfa5679da55b86d7276e0",
+      "cover": {
+        "kind": "Historical collection title page",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/002.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_golden_eggs",
+        "sourceSha256": "eca59c2a470467bc5dcf3dd22331a34b42ceb502f6f757ce07dbd668aec855e2",
+        "assetSha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4"
+      }
+    },
+    {
+      "storyId": "classic-dog-shadow",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Dog and the Shadow",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "5d6687ff4a5a840f903cb64aaa2ee84090b79189a104765aac7940324193b110",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/104.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_dog_shadow",
+        "sourceSha256": "d774ce00022ce04d8948fdb2a24bd028fc829437c3dd4fe900de723725d9ee36",
+        "assetSha256": "4f1520f88b6edc291a63e99f73b1698ada08606885cf0b9bb9a632b269cad97e"
+      }
+    },
+    {
+      "storyId": "classic-fox-crow",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Fox and the Crow",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "2ce33e194505f6a6f6b4e444687e91a1e8571b48f61aa96dc9daf9f34e7f68f4",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/036.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_fox_crow",
+        "sourceSha256": "b63774dc0761160935c5a85705457de5ff2f2a62f220914b3a18a1b92d8455c8",
+        "assetSha256": "35e89e5a3582d4d1954cb7d6b3e61d9a34cf2565dbc8cbc3b642aae061625ade"
+      }
+    },
+    {
+      "storyId": "classic-ant-dove",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Ant and the Dove",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "0bada11ddd9f16d10917fc2dc0d78afc9ae35aacc081d25b81dd8636fe9f0941",
+      "cover": {
+        "kind": "Historical collection title page",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/002.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_ant_dove",
+        "sourceSha256": "eca59c2a470467bc5dcf3dd22331a34b42ceb502f6f757ce07dbd668aec855e2",
+        "assetSha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4"
+      }
+    },
+    {
+      "storyId": "classic-bundle-sticks",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Father And His Sons",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "e6ec69f84c1e7f6a23c1159522e78b7984da59a1217d3f58c0b8b454357bb641",
+      "cover": {
+        "kind": "Historical collection title page",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/002.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_bundle_sticks",
+        "sourceSha256": "eca59c2a470467bc5dcf3dd22331a34b42ceb502f6f757ce07dbd668aec855e2",
+        "assetSha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4"
+      }
+    },
+    {
+      "storyId": "classic-milkmaid-pail",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Milk-Woman and Her Pail",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "dd531ba783d4674767bb220c74f9b8f9f2521b24516ac99af5bc85919e7d9c3c",
+      "cover": {
+        "kind": "Historical collection title page",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/002.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_milkmaid_pail",
+        "sourceSha256": "eca59c2a470467bc5dcf3dd22331a34b42ceb502f6f757ce07dbd668aec855e2",
+        "assetSha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4"
+      }
+    },
+    {
+      "storyId": "classic-dog-manger",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Dog in the Manger",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "b6b1da2d6ecab1c610b63a8372e8252f52d91fc728ee2e34bf33e7e83cd0961e",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/089.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_dog_manger",
+        "sourceSha256": "6fa9345ae94060eb1a209516c3f255d4bf364163a85ba405564fa95284fda114",
+        "assetSha256": "78c816982a225f0befe4026476ddf3bb4dccf19376166c73890573fea77fea37"
+      }
+    },
+    {
+      "storyId": "classic-ass-lion-skin",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Ass in the Lion’s Skin",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "0a2a7796164285f813492f66eb3eee56ea0ae8cab4c15467dca09c25f8b80fa1",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/11339",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/11339/images/082.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1912,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_ass_lion_skin",
+        "sourceSha256": "87ad48bbcf355a0631816b30c54e64150be2fee66b5cea9ffa4659ca6ba2c98f",
+        "assetSha256": "7e299c6edbee8eecb9bfb77538fbe1f3ae14f1e7f4b4c3cd4195c2698a8d3504"
+      }
+    },
+    {
+      "storyId": "classic-snow-white",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "53 Little Snow-white",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "dbf264d69088c9b84f6a7a2d11fcae8a54f79c7c77eddcd7d984bd2d0b457fa4",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-239.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_snow_white",
+        "sourceSha256": "8213c97672553d8a14d7afcf8aaa8deb5e18f9b59bac1175dd37c6b7d2754618",
+        "assetSha256": "b177b7d6bb2f7ef5f98357c1d51cc76c65a7db2c97b7818158d786a90aa799e3"
+      }
+    },
+    {
+      "storyId": "classic-rapunzel",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "12 Rapunzel",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "ee0c478c5df8369dc3f75bd2cc777da162bf0da47e2b2e753423b9318c632b90",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-086.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_rapunzel",
+        "sourceSha256": "0e12286945288e39a5af26a133fc7d223fb959a308193785bc1e78dfb1329eba",
+        "assetSha256": "5e722d1500b0b11701a760733a5f07858e6b12a9f8a231b1b81a6dc506932cad"
+      }
+    },
+    {
+      "storyId": "classic-sleeping-beauty",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "50 Briar-Rose",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "33173498852b896b5d765912e752fe5883850c15f6253c35b8236c2773b947f3",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-003.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_sleeping_beauty",
+        "sourceSha256": "db99fbc0ace41cefb50c94c2dd4b9a0d7dbefb7218d449f30c5ba7dbd8cd1178",
+        "assetSha256": "d209dd2eca30ff7454b9971020196eb0d97697e8fc8bf002bd1d830eb7c51dd8"
+      }
+    },
+    {
+      "storyId": "classic-frog-prince",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "1 The Frog-King, or Iron Henry",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "09df873fb37010fe3c745194bb4d6ba6d2b98b5c13387ff5921f930ff370ff27",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-043.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_frog_prince",
+        "sourceSha256": "b364ba6b46c460f30facf41418d92548b26820eda200201140fbe4824f88e690",
+        "assetSha256": "c9f482f3e16d48314a9ceae19ad08fc73cae9d5cde0a651a7e7f9f9372f42c7b"
+      }
+    },
+    {
+      "storyId": "classic-rumpelstiltskin",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "55 Rumpelstiltskin",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "bd7e4925a3e5ac3e9515f726f95a5eec4b78f061c941ff9e9774530502a8ab97",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-255.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_rumpelstiltskin",
+        "sourceSha256": "be2d34434b636bfd64299805ba0c73430662a347eba888b24608a547f6f8cb6a",
+        "assetSha256": "fac58bc6ac61711adf140a02251818d11a551ce1684ee7f00d3139cb38e93656"
+      }
+    },
+    {
+      "storyId": "classic-golden-goose",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "64 The Golden Goose",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "eb4772dfe55c8832a5a453239d67d891e08c4560bec7dd86a7df897523e7ce81",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-294.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_golden_goose",
+        "sourceSha256": "166f7be230f191ba8383f0d5971ab6059a656a0788bc2e5424bd095262265e6d",
+        "assetSha256": "83ee146f2517eca8b7e409d2ac278c5492f40da2730a2d4fdad122429a7fa577"
+      }
+    },
+    {
+      "storyId": "classic-elves-shoemaker",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "39 The Elves",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "6e290e783aec28133e31c252e45de65985a842bfb20283364b0b3d1c436dd45e",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-190.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_elves_shoemaker",
+        "sourceSha256": "d0dc44c2d229130859d9dd06127351520ee176045b3c4eae12be8e8cebde51ba",
+        "assetSha256": "cb1d19341adc5ca60ad7ee4065908e84f6b0ea8e0efa567bcea4de9712c2c975"
+      }
+    },
+    {
+      "storyId": "classic-tom-thumb",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "37 Thumbling",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "093d5787411f4ad5483f57af25dff78c724c3d10bcb7442b125dc059f57710a7",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-179.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_tom_thumb",
+        "sourceSha256": "d77dcd24876d0976cde836326a75285090a5dbf653a868e1fea2f5f59ab18115",
+        "assetSha256": "03ca5d1dcf86b287176a9db50ebffb00a236d06da7a3fcd5b6f7e0dd421f3d09"
+      }
+    },
+    {
+      "storyId": "classic-wolf-seven-kids",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "5 The Wolf and the Seven Little Kids",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "c03b9cb62daa68c99b988873d5e455041a2318fe6cb4615d05147647c08158ab",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-051.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_wolf_seven_kids",
+        "sourceSha256": "0e0b07aa26477f0c3f05f267b438e31dce0f7b43214120aa05db32ca2ea4881e",
+        "assetSha256": "f60c040b50fd8e6a381c3e5076b3ace04f3c483e230a362860702b3da3c7c970"
+      }
+    },
+    {
+      "storyId": "classic-twelve-dancing-princesses",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "133 The Shoes That Were Danced to Pieces",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "c3ac8e59026d1a29504414db48ab0baeec286ded812f2da8ee62780e1917d779",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Hansel_and_Grethal-Rackham-069.jpg",
+        "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Hansel_and_Grethal-Rackham-069.jpg",
+        "illustrator": {
+          "name": "Arthur Rackham",
+          "deathYear": 1939
+        },
+        "publicationYear": 1920,
+        "checkedOn": "2026-10-14",
+        "rights": "Source file marked public domain; illustrator life-plus-70 term expired in Turkey. Exact print edition not identified on file page.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_twelve_dancing_princesses",
+        "sourceSha256": "c9f654d6d5262fd5badb698d9065228c3437d5bd383ce88ce6f5a3cafef28c97",
+        "assetSha256": "85e02b892886ff3a8d3265d8582e30ec1c9d383b15b1ce57aa8ac69cc33c9e61"
+      }
+    },
+    {
+      "storyId": "classic-brave-little-tailor",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "20 The Valiant Little Tailor",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "c699c3769ec9bd5c7b69b627c7081f7befbd8e11d5ed3d9838db1284400353ea",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-126.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_brave_little_tailor",
+        "sourceSha256": "4bf311e2715d53cc193e317a097bfb601156e9e9620bcea2e26356f3794366e6",
+        "assetSha256": "f70e05d68f205556753ffa1574788c9784cd32665f654736362f99a78147ce0e"
+      }
+    },
+    {
+      "storyId": "classic-goose-girl",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "89 The Goose-Girl",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "72dc2f90d41a2274eb16d1624ef48acd3a4b3d48c3cdb494c09d46d796264b7a",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/19068",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/19068/images/illus-030.jpg",
+        "illustrator": {
+          "name": "Walter Crane",
+          "deathYear": 1915
+        },
+        "publicationYear": 1886,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_goose_girl",
+        "sourceSha256": "8f011244de8ac48cbbf31933e2066eee1f2a67bf91df9aba43789602cc7e0bb9",
+        "assetSha256": "4b83baab00a4f9d968f6d5ed61caf1c572edff78b545e2dc47fd35c0ee1e1726"
+      }
+    },
+    {
+      "storyId": "classic-ugly-duckling",
+      "sourceCollection": "Hans Andersen’s Fairy Tales (1888)",
+      "sourceTitle": "The_Ugly_Duckling",
+      "sourceUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales",
+      "sourceTextUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales/The_Ugly_Duckling",
+      "authors": [
+        {
+          "name": "Hans Christian Andersen",
+          "deathYear": 1875
+        }
+      ],
+      "englishTranslator": {
+        "name": "Susannah Mary Paull",
+        "deathYear": 1888
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourcePageTextSha256": "2bab91f640be71c6f3edd28ee2ad5e2435928fbe34ca37ee5b2085e3213b4491",
+      "sourceHashScope": "Downloaded source page text, including site navigation; source book title page identifies Mrs. H. B. Paull.",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Duckling_03.jpg",
+        "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/33/Duckling_03.jpg",
+        "illustrator": {
+          "name": "Vilhelm Pedersen",
+          "deathYear": 1859
+        },
+        "publicationYear": null,
+        "checkedOn": "2026-10-14",
+        "rights": "Source file marked public domain; illustrator life-plus-70 term expired in Turkey. Exact print edition not identified on file page.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_ugly_duckling",
+        "sourceSha256": "27bd9c06913f5ebf75972573b06da1b51cfe61fcc77fe09af52cb9dd43bbf499",
+        "assetSha256": "1e9cec68cbf4c7751cea327ded2017d36876409e2cf19002f5a8cb72afcf751f"
+      }
+    },
+    {
+      "storyId": "classic-emperors-clothes",
+      "sourceCollection": "Hans Andersen’s Fairy Tales (1888)",
+      "sourceTitle": "The_Emperor's_New_Clothes",
+      "sourceUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales",
+      "sourceTextUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales/The_Emperor%27s_New_Clothes",
+      "authors": [
+        {
+          "name": "Hans Christian Andersen",
+          "deathYear": 1875
+        }
+      ],
+      "englishTranslator": {
+        "name": "Susannah Mary Paull",
+        "deathYear": 1888
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourcePageTextSha256": "51a1d4a4bf4713bc7afdd626d24b07a2ac8793b529ab4f4c6d03f295a5dd4af9",
+      "sourceHashScope": "Downloaded source page text, including site navigation; source book title page identifies Mrs. H. B. Paull.",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/17860",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/17860/images/plate24.jpg",
+        "illustrator": {
+          "name": "Edmund Dulac",
+          "deathYear": 1953
+        },
+        "publicationYear": 1911,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_emperors_clothes",
+        "sourceSha256": "dc9c7902697eb9dafba060cea08de28f03df3bc9e2e676de067ea29efe446ebe",
+        "assetSha256": "12b0edafc788ca9c7be21fa1504734f95af4122bfd3c9f8f6f7d5ced7943d4bb"
+      }
+    },
+    {
+      "storyId": "classic-thumbelina",
+      "sourceCollection": "Hans Andersen’s Fairy Tales (1888)",
+      "sourceTitle": "Little_Tiny",
+      "sourceUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales",
+      "sourceTextUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales/Little_Tiny",
+      "authors": [
+        {
+          "name": "Hans Christian Andersen",
+          "deathYear": 1875
+        }
+      ],
+      "englishTranslator": {
+        "name": "Susannah Mary Paull",
+        "deathYear": 1888
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourcePageTextSha256": "255fbe337c4112b4c1a73be4d277527c85f3cdc119c07267f077f9d819ff3fd3",
+      "sourceHashScope": "Downloaded source page text, including site navigation; source book title page identifies Mrs. H. B. Paull.",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Calineczka_VP_ubt.jpeg",
+        "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Calineczka_VP_ubt.jpeg",
+        "illustrator": {
+          "name": "Vilhelm Pedersen",
+          "deathYear": 1859
+        },
+        "publicationYear": null,
+        "checkedOn": "2026-10-14",
+        "rights": "Source file marked public domain; illustrator life-plus-70 term expired in Turkey. Exact print edition not identified on file page.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_thumbelina",
+        "sourceSha256": "cd6c3c18bdf2a3737ad7c2076675b372290d4dc17edd05654b3da3e59fcbd9de",
+        "assetSha256": "413319e7fff1957116617c7995836db0ce7b7110497e94f06a0763f635daf7ea"
+      }
+    },
+    {
+      "storyId": "classic-little-mermaid",
+      "sourceCollection": "Hans Andersen’s Fairy Tales (1888)",
+      "sourceTitle": "The_Little_Mermaid",
+      "sourceUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales",
+      "sourceTextUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales/The_Little_Mermaid",
+      "authors": [
+        {
+          "name": "Hans Christian Andersen",
+          "deathYear": 1875
+        }
+      ],
+      "englishTranslator": {
+        "name": "Susannah Mary Paull",
+        "deathYear": 1888
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourcePageTextSha256": "bdbacbed37f52647766e3cfe576eb2c0815789e5547384ae9f9dc0fb758bec8b",
+      "sourceHashScope": "Downloaded source page text, including site navigation; source book title page identifies Mrs. H. B. Paull.",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/17860",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/17860/images/plate18.jpg",
+        "illustrator": {
+          "name": "Edmund Dulac",
+          "deathYear": 1953
+        },
+        "publicationYear": 1911,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_little_mermaid",
+        "sourceSha256": "5593c90e75a05f0ae9b434cff50321d6e639ba1121f7ffaf27933502b3ef9a32",
+        "assetSha256": "4306d8816977c1b413c077b2b9a4b71fa4fe0f4e624463a7c312d4d3e5c243ee"
+      }
+    },
+    {
+      "storyId": "classic-snow-queen",
+      "sourceCollection": "Hans Andersen’s Fairy Tales (1888)",
+      "sourceTitle": "The_Snow_Queen",
+      "sourceUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales",
+      "sourceTextUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales/The_Snow_Queen",
+      "authors": [
+        {
+          "name": "Hans Christian Andersen",
+          "deathYear": 1875
+        }
+      ],
+      "englishTranslator": {
+        "name": "Susannah Mary Paull",
+        "deathYear": 1888
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourcePageTextSha256": "2f8dab77b41df69cdf326201c46593709a6a52946c57f57d631f43d3ecb16985",
+      "sourceHashScope": "Downloaded source page text, including site navigation; source book title page identifies Mrs. H. B. Paull.",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://www.gutenberg.org/ebooks/17860",
+        "sourceImageUrl": "https://www.gutenberg.org/cache/epub/17860/images/plate08.jpg",
+        "illustrator": {
+          "name": "Edmund Dulac",
+          "deathYear": 1953
+        },
+        "publicationYear": 1911,
+        "checkedOn": "2026-10-14",
+        "rights": "Public domain in the source catalogue (USA); illustrator life-plus-70 term expired in Turkey.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_snow_queen",
+        "sourceSha256": "997b35c9bbe9829b8bc80c6d854a88c3f5c88bdd1c6c3d208c53ce606db92864",
+        "assetSha256": "45041aa73b2b004f61da4b26a14ea20d5c9a251efa2c141e83c5cd22a5d46c7a"
+      }
+    },
+    {
+      "storyId": "classic-little-match-girl",
+      "sourceCollection": "Hans Andersen’s Fairy Tales (1888)",
+      "sourceTitle": "The_Little_Match-seller",
+      "sourceUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales",
+      "sourceTextUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales/The_Little_Match-seller",
+      "authors": [
+        {
+          "name": "Hans Christian Andersen",
+          "deathYear": 1875
+        }
+      ],
+      "englishTranslator": {
+        "name": "Susannah Mary Paull",
+        "deathYear": 1888
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourcePageTextSha256": "7f5f399d20711a66c1b8db7b0f74ab0825bcf6183d2f74d74e93f5c497d30847",
+      "sourceHashScope": "Downloaded source page text, including site navigation; source book title page identifies Mrs. H. B. Paull.",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Match_Girl_01.jpg",
+        "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Match_Girl_01.jpg",
+        "illustrator": {
+          "name": "Vilhelm Pedersen",
+          "deathYear": 1859
+        },
+        "publicationYear": null,
+        "checkedOn": "2026-10-14",
+        "rights": "Source file marked public domain; illustrator life-plus-70 term expired in Turkey. Exact print edition not identified on file page.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_little_match_girl",
+        "sourceSha256": "c16379de472a30615451934f8def2f0f3af89f4bc49028845da71910285d75be",
+        "assetSha256": "05eb3b59b237fd2a1ae61a65a57806a156d7a799c6aced357331d14404dec3f2"
+      }
+    },
+    {
+      "storyId": "classic-steadfast-tin-soldier",
+      "sourceCollection": "Hans Andersen’s Fairy Tales (1888)",
+      "sourceTitle": "The_Brave_Tin_Soldier",
+      "sourceUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales",
+      "sourceTextUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales/The_Brave_Tin_Soldier",
+      "authors": [
+        {
+          "name": "Hans Christian Andersen",
+          "deathYear": 1875
+        }
+      ],
+      "englishTranslator": {
+        "name": "Susannah Mary Paull",
+        "deathYear": 1888
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourcePageTextSha256": "d4cc351ae88ef5ac11aa944ab8df80458bda2621ecc176db92430ebd5a39f906",
+      "sourceHashScope": "Downloaded source page text, including site navigation; source book title page identifies Mrs. H. B. Paull.",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Vilhelm_Pedersen%2C_DK2-0006%2C_ubt.jpeg",
+        "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/Vilhelm_Pedersen%2C_DK2-0006%2C_ubt.jpeg",
+        "illustrator": {
+          "name": "Vilhelm Pedersen",
+          "deathYear": 1859
+        },
+        "publicationYear": null,
+        "checkedOn": "2026-10-14",
+        "rights": "Source file marked public domain; illustrator life-plus-70 term expired in Turkey. Exact print edition not identified on file page.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_steadfast_tin_soldier",
+        "sourceSha256": "19f5d3fda7d16e0945a83288188f42d6e74a09493f3d77293eed49b9c73a3371",
+        "assetSha256": "c991e9dfa8ed5be003786d8d1da2f50fd815cca4b6e98edf8e5d558bb22be593"
+      }
+    },
+    {
+      "storyId": "classic-wild-swans",
+      "sourceCollection": "Hans Andersen’s Fairy Tales (1888)",
+      "sourceTitle": "The_Wild_Swans",
+      "sourceUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales",
+      "sourceTextUrl": "https://en.wikisource.org/wiki/Hans_Andersen%27s_Fairy_Tales/The_Wild_Swans",
+      "authors": [
+        {
+          "name": "Hans Christian Andersen",
+          "deathYear": 1875
+        }
+      ],
+      "englishTranslator": {
+        "name": "Susannah Mary Paull",
+        "deathYear": 1888
+      },
+      "sourceCopyrightStatement": "Public domain in the USA; author and identified translator life-plus-70 terms expired in Turkey.",
+      "turkeyAssessment": "Original author(s) and identified English translator died more than 70 years before 2026. No worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourcePageTextSha256": "62c6dd99e6d01677927a55641c53a02cedd06454dce862bed8d55405dcad0869",
+      "sourceHashScope": "Downloaded source page text, including site navigation; source book title page identifies Mrs. H. B. Paull.",
+      "cover": {
+        "kind": "Historical story illustration",
+        "sourcePageUrl": "https://commons.wikimedia.org/wiki/File:Vilhelm_Pedersen%2C_0k-01%2C_ubt.jpeg",
+        "sourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Vilhelm_Pedersen%2C_0k-01%2C_ubt.jpeg",
+        "illustrator": {
+          "name": "Vilhelm Pedersen",
+          "deathYear": 1859
+        },
+        "publicationYear": null,
+        "checkedOn": "2026-10-14",
+        "rights": "Source file marked public domain; illustrator life-plus-70 term expired in Turkey. Exact print edition not identified on file page.",
+        "conversion": "JPEG to PNG only; full source image retained, no AI reconstruction, recolouring, text removal or crop.",
+        "key": "cover_classic_wild_swans",
+        "sourceSha256": "72f9375aea362166b73bfe568bd71a6f6f5bc9585b9982078f97156277540068",
+        "assetSha256": "d9dc75ff532ecae511b8b3ef7ec5ad1fca7fc03acee440fc48646fe6805f0497"
+      }
+    }
+  ]
+}

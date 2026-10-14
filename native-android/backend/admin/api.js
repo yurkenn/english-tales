@@ -1,28 +1,51 @@
-// Sessions stay in memory. Draft recovery is separate from credentials.
-export function createClient({fetch:transport=globalThis.fetch,now=Date.now}={}) {
+// Access tokens stay in memory. Opt-in persistence stores only a rotating refresh token, scoped to the project.
+export function createClient({fetch:transport=globalThis.fetch,now=Date.now,storage=undefined}={}) {
   let config,session=null,refreshing=null,generation=0;
+  let remember=false;
+  try { if(storage===undefined) storage=globalThis.localStorage??null; } catch {storage=null;}
+  const sessionKey=()=>`english-tales:session:${config.url}`;
+  function forgetSession(){try{if(config?.url)storage?.removeItem(sessionKey());}catch{}}
+  function persistSession(){
+    if(!remember){forgetSession();return;}
+    try{if(!storage)throw new Error('storage_unavailable');storage.setItem(sessionKey(),session.refresh_token);}catch{throw new Error('Oturum bu tarayıcıda kaydedilemedi. Oturumu açık tut seçeneğini kapatıp tekrar deneyin.');}
+  }
   const blobs=new Map();
   const expired=()=>Object.assign(new Error('Oturum sona erdi. Tekrar giriş yapın; taslak yedeğiniz korunuyor.'),{code:'session_expired'});
   async function request(url,options={}) {
     const response=await transport(url,{signal:AbortSignal.timeout(30000),...options});
     if(!response.ok){let error;try{error=await response.json();}catch{error={message:`İstek başarısız (${response.status})`};}
-      if(response.status===401&&session){session=null;generation++;throw expired();}
+      if(response.status===401&&session){session=null;generation++;forgetSession();throw expired();}
       throw Object.assign(new Error(error.message||error.msg||error.error_description||error.error||'İşlem tamamlanamadı'),{status:response.status});}
     const text=await response.text();return text.trim()?JSON.parse(text):null;
   }
   const clearBlobs=()=>{for(const value of blobs.values())URL.revokeObjectURL(value);blobs.clear();};
   function retainMedia(assets){const keys=new Set(assets.filter(Boolean).map(a=>`${a.id}:${a.sha256}`));for(const [key,url] of blobs)if(!keys.has(key)){URL.revokeObjectURL(url);blobs.delete(key);}}
-  async function init(){config=await request('/api/config');return config;}
+  async function refreshSession(token) {
+    if(!refreshing){const current=generation;
+      refreshing=request(`${config.url}/auth/v1/token?grant_type=refresh_token`,{method:'POST',headers:{apikey:config.key,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:token})}).then(next=>{
+        if(current!==generation)throw expired();
+        if(!next.user?.id||!next.access_token||!next.refresh_token)throw new Error('Geçersiz oturum yanıtı.');
+        session={...next,expires_at:now()+next.expires_in*1000};persistSession();
+      }).catch(error=>{if(current===generation&&(error.status===400||error.status===401)){session=null;generation++;forgetSession();}throw error;}).finally(()=>{refreshing=null;});
+    }
+    await refreshing;
+  }
+  async function init(){
+    config=await request('/api/config');
+    if(config.mode==='cloud'){
+      let token;try{token=storage?.getItem(sessionKey());}catch{}
+      if(token){remember=true;try{await refreshSession(token);}catch(error){if(error.status!==400&&error.status!==401)throw error;}}
+    }
+    return config;
+  }
   const identity=()=>config?.mode==='demo'?'local-demo':session?.user?.id;
-  async function login(email,password){const current=++generation;const next=await request(`${config.url}/auth/v1/token?grant_type=password`,{method:'POST',headers:{apikey:config.key,'Content-Type':'application/json'},body:JSON.stringify({email,password})});if(current!==generation)throw expired();session={...next,expires_at:now()+next.expires_in*1000};}
-  async function logout(){const previous=session;session=null;generation++;clearBlobs();if(previous)await request(`${config.url}/auth/v1/logout`,{method:'POST',headers:{apikey:config.key,Authorization:`Bearer ${previous.access_token}`}});}
+  async function login(email,password,{remember:keep=false}={}){const current=++generation;const next=await request(`${config.url}/auth/v1/token?grant_type=password`,{method:'POST',headers:{apikey:config.key,'Content-Type':'application/json'},body:JSON.stringify({email,password})});if(current!==generation)throw expired();session={...next,expires_at:now()+next.expires_in*1000};remember=keep;persistSession();}
+  async function logout(){const previous=session;session=null;generation++;remember=false;forgetSession();clearBlobs();if(previous)await request(`${config.url}/auth/v1/logout`,{method:'POST',headers:{apikey:config.key,Authorization:`Bearer ${previous.access_token}`}});}
   async function headers(){
     if(config.mode==='demo')return {'Content-Type':'application/json'};
     if(!session)throw expired();
     if(session.expires_at<now()+60000){
-      if(!refreshing){const current=generation,token=session.refresh_token;
-        refreshing=request(`${config.url}/auth/v1/token?grant_type=refresh_token`,{method:'POST',headers:{apikey:config.key,'Content-Type':'application/json'},body:JSON.stringify({refresh_token:token})}).then(next=>{if(current!==generation)throw expired();session={...next,expires_at:now()+next.expires_in*1000};}).catch(error=>{if(error.status===400||error.status===401){session=null;generation++;throw expired();}throw error;}).finally(()=>{refreshing=null;});}
-      await refreshing;
+      await refreshSession(session.refresh_token);
     }
     if(!session)throw expired();
     return {apikey:config.key,Authorization:`Bearer ${session.access_token}`,'Content-Type':'application/json'};
@@ -34,7 +57,7 @@ export function createClient({fetch:transport=globalThis.fetch,now=Date.now}={})
     const cacheKey=`${asset.id}:${asset.sha256}`;if(blobs.has(cacheKey))return blobs.get(cacheKey);
     const h=await headers();delete h['Content-Type'];
     const response=await transport(`${config.url}/storage/v1/object/authenticated/story-media/${asset.storage_path}`,{headers:h,signal:AbortSignal.timeout(60000)});
-    if(response.status===401){session=null;generation++;throw expired();}
+    if(response.status===401){session=null;generation++;forgetSession();throw expired();}
     if(!response.ok)throw new Error('Medya indirilemedi. Dosyanın yüklenmesini ve erişim yetkisini kontrol edin.');
     const blob=await response.blob();if(blob.size!==Number(asset.byte_size)||await digest(blob)!==asset.sha256)throw new Error('Medya doğrulaması başarısız.');
     const result=URL.createObjectURL(blob);blobs.set(cacheKey,result);return result;
