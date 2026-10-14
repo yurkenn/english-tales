@@ -33,6 +33,11 @@ with zipfile.ZipFile(apk) as archive, zipfile.ZipFile(aab) as bundle_archive:
                        if name.startswith(prefix) and name.endswith('.dex'))
         assert b'https://gtuangjukckpuerczfxd.supabase.co' in dex, 'Production URL is missing from the compiled package'
         assert b'jukyylozahikjhtokayw.supabase.co' not in dex, 'Test service URL is present in a release package'
+    # Play rejects a release whose advertising ID declaration and manifest disagree.
+    assert b'com.google.android.gms.permission.AD_ID' in bundle_archive.read('base/manifest/AndroidManifest.xml'), 'AD_ID permission is missing from the AAB manifest'
+    # Reported, not required: prebuilt dependency libraries may already be stripped.
+    debug_symbols=sorted(name for name in bundle_archive.namelist()
+                         if name.startswith('BUNDLE-METADATA/com.android.tools.build.debugsymbols/'))
     for name in archive.namelist():
         if not name.endswith('.so') or not name.startswith(('lib/arm64-v8a/','lib/x86_64/')):
             continue
@@ -41,7 +46,7 @@ with zipfile.ZipFile(apk) as archive, zipfile.ZipFile(aab) as bundle_archive:
         alignment_errors.extend(name+' '+error for error in check_elf64(data))
         libraries.append(name)
 report={'versionCode':metadata['elements'][0]['versionCode'],'versionName':metadata['elements'][0]['versionName'],
-        'productionServiceVerified':True,'apkSignerMatchesPlay':True,'aabSignatureVerified':True,'apkZipAlignment16KB':True,'elf64Libraries':libraries,
+        'productionServiceVerified':True,'apkSignerMatchesPlay':True,'aabSignatureVerified':True,'apkZipAlignment16KB':True,'adIdPermission':True,'nativeDebugSymbols':debug_symbols,'elf64Libraries':libraries,
         'elf64AlignmentPassed':not alignment_errors,'alignmentErrors':alignment_errors,
         'apkSHA256':hashlib.sha256(apk.read_bytes()).hexdigest(),'aabSHA256':hashlib.sha256(aab.read_bytes()).hexdigest(),
         'limitation':'Static package inspection only; Play-generated split APKs and real 16KB devices still need testing.'}
