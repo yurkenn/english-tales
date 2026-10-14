@@ -1,0 +1,46 @@
+{
+  "icon-512.png": {
+    "width": 512,
+    "height": 512,
+    "bytes": 234170
+  },
+  "tr-TR/screenshots/01-welcome.png": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 262690
+  },
+  "tr-TR/screenshots/02-library.png": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 553649
+  },
+  "tr-TR/screenshots/03-reader.png": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 164878
+  },
+  "tr-TR/screenshots/04-vocabulary.png": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 82039
+  },
+  "tr-TR/screenshots/05-practice.png": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 114953
+  },
+  "tr-TR/screenshots/06-onboarding.png": {
+    "width": 1080,
+    "height": 1920,
+    "bytes": 221432
+  },
+  "featureGraphics": {
+    "locales": [
+      "en-US",
+      "tr-TR"
+    ],
+    "width": 1024,
+    "height": 500,
+    "uploadFormat": "JPEG"
+  }
+}

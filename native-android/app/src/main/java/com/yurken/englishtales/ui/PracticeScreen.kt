@@ -56,7 +56,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             ModeCard("Kelime kartları","Kelimeleri tanı ve dinle.","cards",Color(0xFFE3F6FF)) {start("card")}
             ModeCard("Bir çeviri seç","Doğru anlamı bul.","translate",Color(0xFFFFF6D5)) {start("choice")}
             ModeCard("Kelimeleri eşleştir","İngilizce ve Türkçe çiftleri bul.","play",Color(0xFFF0E5FF)) {start("match")}
-            ModeCard("Kelimeyi oluştur","Harfleri doğru sıraya koy.","study",Color(0xFFE9F7E2)) {start("spell")}
+            ModeCard("Kelimeyi oluştur","Harfleri doğru sıraya koy.","letters",Color(0xFFE9F7E2)) {start("spell")}
         }
         return
     }
@@ -84,7 +84,10 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     }
     GameViewport(padding) {
         GameHeader((question+1).toFloat()/words.size) {exit()}
-        Text(if(mode=="choice") "Bir çeviri seçin" else "Kelimeyi oluştur.",fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.fillMaxWidth().padding(vertical=12.dp))
+        Row(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
+            Text(if(mode=="choice") "Bir çeviri seçin" else "Kelimeyi oluştur.",fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+            TalesMascot(if(answer!=null && !correct) MascotMood.Support else MascotMood.Thinking,Modifier.size(52.dp))
+        }
         Box(Modifier.fillMaxWidth().weight(if(mode=="choice") 1f else 0.6f).background(Color(0xFFF8F8F8),RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {
             Text(if(mode=="choice") word.word else word.translation,fontSize=20.sp,fontWeight=FontWeight.Bold)
         }
@@ -107,6 +110,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             TextButton(onClick={chosen=emptyList()},enabled=answer==null,modifier=Modifier.align(Alignment.CenterHorizontally)) { Text("Temizle",fontSize=12.sp) }
         }
         if(answer!=null && !correct) {
+            Text("Her denemede öğreniyoruz.",fontSize=13.sp,color=TaleMuted)
             Text("Doğru cevap: ${if(mode=="choice") word.translation else word.word}",fontSize=14.sp,color=Color(0xFFE77458))
             Button(onClick={advanceWrong=true},modifier=Modifier.fillMaxWidth()) {Text("Anladım, devam et")}
         }
@@ -128,7 +132,7 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
         Text("⭐  Harika! $points puan kazandın!",color=Color.White,fontSize=14.sp,modifier=Modifier.fillMaxWidth().background(TalePurple,RoundedCornerShape(4.dp)).padding(12.dp))
         Spacer(Modifier.height(36.dp))
-        Text("🏆",fontSize=110.sp)
+        TalesMascot(MascotMood.Celebrate,Modifier.size(156.dp),animate=true)
         Spacer(Modifier.height(24.dp))
         Text("Çalışma tamamlandı",fontSize=25.sp,fontWeight=FontWeight.Light)
         Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(12.dp))

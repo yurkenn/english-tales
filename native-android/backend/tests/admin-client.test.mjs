@@ -68,3 +68,41 @@ test('backups cannot cross projects, revisions, or contain invalid links',()=>{
   assert.throws(()=>readBackup(text,{...doc,id:'other'},config.url),/başka/);
   const corrupt=backup({...doc,links:[{sentence_id:'unknown',word_id:'w-1'}]},config.url);assert.throws(()=>readBackup(JSON.stringify(corrupt),doc,config.url),/bağlantısı/);
 });
+
+const memoryStorage=()=>{const values=new Map();return {values,getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};};
+test('remembered login restores through a rotated refresh token without persisting password or access token',async()=>{
+  const storage=memoryStorage();let rotation=0;
+  const fetch=async(url,options)=>{
+    if(url==='/api/config')return response(config);
+    if(url.includes('password'))return response(session());
+    if(url.includes('refresh_token')){assert.equal(JSON.parse(options.body).refresh_token,rotation===0?'refresh':'refresh-1');rotation++;return response({...session(),refresh_token:`refresh-${rotation}`,access_token:`access-${rotation}`});}
+    return response('publisher');
+  };
+  const first=createClient({fetch,storage});await first.init();await first.login('editor@example.com','private-password',{remember:true});
+  assert.deepEqual([...storage.values.values()],['refresh']);
+  const second=createClient({fetch,storage});await second.init();assert.equal(second.identity(),'user-a');assert.deepEqual([...storage.values.values()],['refresh-1']);
+  const third=createClient({fetch,storage});await third.init();assert.equal(third.identity(),'user-a');assert.deepEqual([...storage.values.values()],['refresh-2']);
+  await third.logout();assert.equal(storage.values.size,0);const fourth=createClient({fetch,storage});await fourth.init();assert.equal(fourth.identity(),undefined);
+});
+test('expired remembered login is cleared and does not prevent a fresh sign-in',async()=>{
+  const storage=memoryStorage();storage.setItem(`english-tales:session:${config.url}`,'expired');
+  const client=createClient({storage,fetch:async url=>url==='/api/config'?response(config):url.includes('refresh_token')?response({message:'expired'},400):response(session())});
+  await client.init();assert.equal(client.identity(),undefined);assert.equal(storage.values.size,0);
+  await client.login('a','p',{remember:false});assert.equal(client.identity(),'user-a');assert.equal(storage.values.size,0);
+});
+test('logout during remembered renewal cannot re-create a persistent session',async()=>{
+  const storage=memoryStorage();let finish;
+  const client=createClient({storage,fetch:async url=>{
+    if(url==='/api/config')return response(config);
+    if(url.includes('password'))return response(session(0));
+    if(url.includes('refresh_token'))return new Promise(resolve=>{finish=resolve;});
+    return response(null,204);
+  }});
+  await client.init();await client.login('a','p',{remember:true});const pending=client.rpc('content_role');await client.logout();finish(response({...session(),refresh_token:'rotated'}));
+  await assert.rejects(pending,e=>e.code==='session_expired');assert.equal(storage.values.size,0);assert.equal(client.identity(),undefined);
+});
+test('temporary network failure preserves remembered login for a later retry',async()=>{
+  const storage=memoryStorage();storage.setItem(`english-tales:session:${config.url}`,'refresh');
+  const client=createClient({storage,fetch:async url=>url==='/api/config'?response(config):response({message:'unavailable'},503)});
+  await assert.rejects(client.init(),/unavailable/);assert.equal(storage.values.size,1);
+});

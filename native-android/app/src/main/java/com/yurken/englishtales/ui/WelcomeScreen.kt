@@ -39,7 +39,7 @@ fun WelcomeScreen(state: AccountState,onGuest: ()->Unit,onEmail: ()->Unit,onGoog
         horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(16.dp)) {
         Text("ENGLISH TALES",color=TaleBlue,fontSize=15.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp)
         Box(Modifier.fillMaxWidth().height(220.dp).clip(RoundedCornerShape(28.dp)).background(TaleMint),contentAlignment=Alignment.BottomCenter) {
-            Image(painterResource(R.drawable.reading_guide),null,Modifier.fillMaxHeight())
+            TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),animate=true)
         }
         Text("Her hikâyede\nbiraz daha İngilizce",style=MaterialTheme.typography.headlineMedium,textAlign=TextAlign.Center)
         Text("Kısa hikâyeler oku, yeni kelimeler keşfet. Her gün kendi hızında ilerle.",style=MaterialTheme.typography.bodyLarge,textAlign=TextAlign.Center,color=Color(0xFF626B78))

@@ -32,11 +32,11 @@ fun OnboardingScreen(onContinue: (String,String,Int)->Unit) {
         }
         Column(Modifier.weight(1f).verticalScroll(scroll).padding(horizontal=16.dp,vertical=10.dp),verticalArrangement=Arrangement.spacedBy(13.dp)) {
             GuideBubble("Hi! 👋")
-            GuideBubble("Merhaba! Ben senin okuma rehberinim. English Tales'e hoş geldin.")
+            GuideBubble("Merhaba! Ben senin okuma arkadaşınım. English Tales'e hoş geldin.")
             Row(Modifier.fillMaxWidth()) {
                 Spacer(Modifier.width(40.dp))
                 Box(Modifier.width(250.dp).height(170.dp).clip(RoundedCornerShape(10.dp)).background(Color(0xFFE5F5FA)),contentAlignment=Alignment.BottomCenter) {
-                    Image(painterResource(R.drawable.reading_guide),"Okuma rehberi",Modifier.fillMaxHeight(),contentScale=ContentScale.Fit)
+                    TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),description="Okuma rehberi",animate=true)
                 }
             }
             GuideBubble("Birlikte hikâyeler okuyup yeni kelimeler öğreneceğiz. Başlayalım mı?")
@@ -75,7 +75,7 @@ private fun ChoiceHint() { Box(Modifier.fillMaxWidth(),contentAlignment=Alignmen
 @Composable
 private fun GuideBubble(message: String) {
     Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(9.dp),verticalAlignment=Alignment.Top) {
-        Image(painterResource(R.drawable.reading_guide),null,Modifier.size(29.dp).clip(CircleShape).background(Color(0xFFFFEA78)),contentScale=ContentScale.Crop,alignment=Alignment.TopCenter)
+        Image(painterResource(R.drawable.mascot_avatar),null,Modifier.size(29.dp).clip(CircleShape).background(TaleMint),contentScale=ContentScale.Crop,alignment=Alignment.TopCenter)
         Text(message,fontSize=13.sp,lineHeight=18.sp,color=TaleInk,modifier=Modifier.widthIn(max=285.dp).background(TaleLine,RoundedCornerShape(topStart=4.dp,topEnd=7.dp,bottomStart=7.dp,bottomEnd=7.dp)).padding(horizontal=11.dp,vertical=9.dp))
     }
 }

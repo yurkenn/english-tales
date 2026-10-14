@@ -25,20 +25,22 @@ Ortak sözlük token tabanlıdır: yeni 192 kelime eski altı metinde bulunmaz; 
 - Depo kontrolü, altı ELF doğrulayıcı testi ve APK’daki iki native kütüphanenin hizalaması geçti.
 - [Grimm araması](preview-classics-search.png), [Andersen araması](preview-classics-andersen-search.png), [okuyucu](preview-classics-reader.png): hesap gerektirmeyen fixture ekranları, canlı yayın kanıtı değildir.
 
-## Sunucular ve yayın kapısı
+## Canlı yayın — 14 Ekim 2026
 
-Test (`jukyylozahikjhtokayw`) ve Production (`gtuangjukckpuerczfxd`) ortamlarına 32 yeni hikâye + 626 cümle **taslak** olarak aktarıldı. Her iki ortamda 50 hikâye kaydı ve altı canlı hikâye var; 44 klasik taslak. Production toplam 1002 cümle. Testte ayrıca önceden var olan ilave revision taslağı korunur.
+Production (`gtuangjukckpuerczfxd`) ortamında gerçek yayıncı hesabıyla içerik panelinden 44 klasik yayımlandı. Her taslak son katalog paketinin açıklama, EN/TR cümleleri, kelimeleri ve bağlantılarıyla kaydedildi. Kapaklar yeni UUID/hash yollarına `upsert=false` ile yüklendi, geri indirilerek boyut/SHA-256 doğrulandı ve incelenen `edit_version` üzerinden `admin_publish` çalıştırıldı.
 
-Bu genişletme öncesi ve sonrası altı canlı revision’ın `md5(string_agg(current_revision_id::text,',' order by id))` özeti aynı: `65c1291cb82b2739304e9f76e3da7e4a`. Önceki çalışmanın farklı birleştirme biçimindeki MD5’i ile kıyaslanmaz. Yeni seed ilk 18 revision’ı değiştirmez.
+- Production: **50 canlı hikâye, 0 taslak, 0 eksik kapak**.
+- Anonim API kontrolü: 50 canlı hikâye, 1002 EN/TR cümle çifti; 44 klasiğin metadata, kelime ve cümle bağlantıları gömülü katalogla aynı. 50 kapağın tamamı gerçek Storage üzerinden indirilip hash doğrulandı.
+- Mevcut altı hikâyenin revision özeti değişmedi: `65c1291cb82b2739304e9f76e3da7e4a`.
+- Yeniden çalıştırılabilir kontrol: panel çalışırken `node tools/verify-classic-publication.mjs`; yalnız anonim/publishable erişim kullanır. Sonuç: `backend/test-output/classic-publication-verification.json`.
+- Android canlı kontrolü geçti: Production’dan 50 metadata / 44 klasik yüklendi; Külkedisi ve Karlar Kraliçesi metin/kelime/kapakları indirildi, HTTP istemcisi olmayan yeni repository ile yeniden açıldı. [Canlı katalogdan gelen Külkedisi araması](preview-live-classics-search.png). Geçici doğrulama harness’i test sonrasında kaldırıldı.
+- Test ortamı (`jukyylozahikjhtokayw`) bu yayın çalışmasında değiştirilmedi; önceki taslaklar korunur.
+- Yayıncı rolü, parola veya RLS değiştirilmedi. Yayın geçmişi gerçek oturumun hesabına bağlıdır.
 
-İçerik paneli `http://127.0.0.1:4178` adresinde Production’a bağlı; bu çalışma sırasında giriş ekranında olduğu doğrulandı. Gerçek publisher oturumu yok. Yeni kapaklar henüz Storage’a yüklenmedi. Kimlik taklidi, parola/rol değişikliği veya RLS gevşetmesi yapılmadı.
+Önceki “44 klasik taslak” yayın engeli Production için giderildi. PR birleştirme ve mağaza dağıtımı ayrıca yapılmadı. Gerçek cihaz TTS dinlemesi bu çalışma kapsamında yeniden doğrulanmadı.
 
-Kalan işlemler:
+## İçerik panelinde hatırlanan oturum
 
-1. Gerçek editör/yayıncı hesabıyla panel girişi.
-2. İlk 12 klasik taslağını son paketin açıklama, kapak ve kelime bağlantılarıyla güncelle; 32 yeni taslağı da incele. Mevcut altı yayını değiştirme.
-3. Manifestteki 45 farklı kapak yolunu incele; eksik gerçek PNG’leri yeni dosya olarak yükle, geri indirip hash kontrolü yap. Eski kapağı kullanan yayımlanmış içerik korunur.
-4. Her klasiği incelenen `edit_version` ile gerçek publisher RPC’sinden yayımla.
-5. Anonim API’de 50 yayın, gerçek görsel indirme, Android’de yeni içerikle ağ kapalı yeniden açma ve gerçek TTS dinlemesini doğrula.
+İsteğe bağlı “Bu bilgisayarda oturumu açık tut” seçeneği eklendi. Parola ve erişim token'ı kalıcı kayda yazılmaz; yalnız proje bazında yenileme token'ı saklanır. Yenilemede dönen yeni token kaydı günceller. Çıkış veya geçersiz/iptal edilmiş oturum kaydı temizler; geçici ağ hatası kaydı silmez. Yeni özellik için bir kez bu seçenekle giriş yapılması gerekir.
 
-**PR taslak kalır; 44 klasiğin canlı revision’ları ve dosyaları hazır olmadan yeni APK dağıtılmamalı veya ana dala birleştirilmemeli.** Uzak katalog gömülü listeyi değiştirir; yayımlanmamış kelimeler sunucuda kullanılabilir kaynak revision bulamaz. Gömülü 50 hikâyenin hazır olması canlıda 50 hikâyenin yayımlandığı anlamına gelmez.
+Dört ek otomatik oturum testiyle backend toplam **57/57** geçti: yenileme ve rotasyon, geçersiz oturum, eşzamanlı çıkış ve ağ hatasında tekrar deneme.

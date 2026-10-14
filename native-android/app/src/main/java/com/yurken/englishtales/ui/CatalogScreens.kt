@@ -36,8 +36,8 @@ fun StatsHeader(snapshot: LearningSnapshot) {
     FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalArrangement=Arrangement.spacedBy(4.dp),maxItemsInEachRow=if(LocalDensity.current.fontScale>=1.5f) 2 else 4) {
         Text("🇺🇸",fontSize=29.sp)
         LearningInfoButton("study",snapshot.level,"İngilizce seviyen","Seçtiğin seviye ${snapshot.level}. Hikâye önerileri buna göre hazırlanır. Seviyeni Profilim → Ayarlar ekranından değiştirebilirsin.")
-        LearningInfoButton("fire","${snapshot.streak}","Çalışma serin",streakExplanation(snapshot))
-        LearningInfoButton("diamond","${snapshot.points}","Puanların",pointsExplanation(snapshot))
+        LearningInfoButton("streak","${snapshot.streak}","Çalışma serin",streakExplanation(snapshot))
+        LearningInfoButton("points","${snapshot.points}","Puanların",pointsExplanation(snapshot))
     }
 }
 
@@ -47,7 +47,7 @@ private fun ChallengeBanner(onClick: () -> Unit) {
         Text("okuma alışkanlığın burada başlar",fontSize=10.sp,fontWeight=FontWeight.Bold,color=Color(0xFF6C294F),
             modifier=Modifier.background(Color(0xFFFFE85A),RoundedCornerShape(topStart=9.dp,topEnd=9.dp)).padding(horizontal=9.dp,vertical=6.dp))
         Box(Modifier.fillMaxWidth().heightIn(min=126.dp).clip(RoundedCornerShape(topEnd=16.dp,bottomStart=16.dp,bottomEnd=16.dp)).background(Color(0xFFFFF58B)).clickable(onClick=onClick)) {
-            Image(painterResource(R.drawable.reading_guide),null,Modifier.align(Alignment.BottomEnd).width(104.dp).height(126.dp),contentScale=ContentScale.Crop,alignment=Alignment.TopCenter)
+            TalesMascot(MascotMood.Welcome,Modifier.align(Alignment.BottomEnd).width(104.dp).height(126.dp))
             Column(Modifier.fillMaxWidth(0.72f).padding(start=16.dp,top=14.dp,bottom=14.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
                 Text("Bir hikâye,\nyeni kelimeler",fontSize=19.sp,lineHeight=22.sp,fontWeight=FontWeight.Bold,color=Color(0xFF6C294F))
                 Text("Oku, dinle ve öğren",fontSize=12.sp,lineHeight=17.sp,color=Color(0xFF6C294F))
@@ -219,8 +219,8 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             }
         }
         Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-            ProfilePanel(Modifier.weight(1f)) { Text("SERİ",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("fire","${snapshot.streak}","Çalışma serin",streakExplanation(snapshot)) }
-            ProfilePanel(Modifier.weight(1f)) { Text("PUAN",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("diamond","${snapshot.points}","Puanların",pointsExplanation(snapshot)) }
+            ProfilePanel(Modifier.weight(1f)) { Text("SERİ",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("streak","${snapshot.streak}","Çalışma serin",streakExplanation(snapshot)) }
+            ProfilePanel(Modifier.weight(1f)) { Text("PUAN",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("points","${snapshot.points}","Puanların",pointsExplanation(snapshot)) }
         }
         ProfilePanel {
             Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) { Text("KELİMELER",fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text("KELİMELERİM",color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(onClick=onOpenWords)) }
@@ -283,7 +283,12 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
                     TextButton(onClick={onRemoveWord(word.id)},contentPadding=PaddingValues(4.dp)) { Text("Kaldır",fontSize=10.sp,color=TaleMuted) }
                 }
             }
-            if(words.isEmpty()) item { Text("Bu aşamada henüz kelime yok. Okurken kelimeleri kaydedebilirsin.",fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(8.dp)) }
+            if(words.isEmpty()) item {
+                Column(Modifier.fillMaxWidth().padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(12.dp)) {
+                    TalesMascot(MascotMood.Thinking,Modifier.size(140.dp))
+                    Text("Bu aşamada henüz kelime yok. Okurken kelimeleri kaydedebilirsin.",fontSize=14.sp,color=TaleMuted)
+                }
+            }
         }
     }
 }

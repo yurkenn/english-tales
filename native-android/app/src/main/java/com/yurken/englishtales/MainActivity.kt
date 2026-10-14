@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import com.yurken.englishtales.data.LearningContent
 import com.yurken.englishtales.ui.EnglishTalesTheme
 import com.yurken.englishtales.ui.TalesApp
+import com.yurken.englishtales.ui.YurkenBrandIntro
 import androidx.compose.runtime.CompositionLocalProvider
 import com.yurken.englishtales.ads.*
 
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
         val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.None
         setContent {
             CompositionLocalProvider(LocalCompletionAds provides ads) {EnglishTalesTheme {
-                TalesApp(dailyPlanRequest=dailyPlanRequest)
+                YurkenBrandIntro { TalesApp(dailyPlanRequest=dailyPlanRequest) }
             }}
         }
     }

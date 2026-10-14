@@ -13,7 +13,7 @@ metadata=json.loads((output/'apk/release/output-metadata.json').read_text())
 apk=output/'apk/release'/metadata['elements'][0]['outputFile']
 aab=output/'bundle/release/app-release.aab'
 assert metadata['applicationId']=='com.yurken.englishtales'
-assert metadata['elements'][0]['versionCode']>=47
+assert metadata['elements'][0]['versionCode']>=48
 assert not apk.name.endswith('unsigned.apk')
 tools=pathlib.Path(args.sdk)/'build-tools'/args.build_tools
 suffix='.exe' if __import__('os').name=='nt' else ''
