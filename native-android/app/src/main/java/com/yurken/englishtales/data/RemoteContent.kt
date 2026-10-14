@@ -88,8 +88,11 @@ object ContentCodec {
             require(parsed.any { s -> s.id == sentence } && vocabulary.any { w -> w.id == word })
             mapping.getOrPut(sentence) { mutableListOf() }.add(word)
         }
+        // Copied from stories.created_at during refresh; absent in downloaded revision files and older caches.
+        val addedAt = if (doc.isNull("story_created_at")) null
+            else java.time.OffsetDateTime.parse(doc.getString("story_created_at")).toInstant()
         return Story(id, doc.getString("title"), doc.getString("author"), doc.getString("level"), doc.getString("genre"),
-            doc.getString("description"), "remote", parsed, revision, coverFile, vocabulary, mapping)
+            doc.getString("description"), "remote", parsed, revision, coverFile, vocabulary, mapping, addedAt)
     }
     fun verify(bytes: ByteArray, asset: JSONObject) {
         require(bytes.size.toLong() == asset.getLong("byte_size")) { "İndirilen dosya eksik." }
@@ -141,9 +144,10 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         if (hasRemoteCatalog) {
             val stories = (0 until metadata.length()).map { i ->
                 val doc = metadata.getJSONObject(i); val revision = doc.getString("id")
-                downloaded[revision] ?: ContentCodec.story(doc).let { remote ->
-                    bundled[revision]?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null) } ?: remote
-                }
+                val remote = ContentCodec.story(doc)
+                downloaded[revision]?.copy(addedAt=remote.addedAt)
+                    ?: bundled[revision]?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null) }
+                    ?: remote
             }
             LearningContent.install(stories, historical.values.flatMap { it.vocabulary.orEmpty() })
         }
@@ -151,7 +155,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     suspend fun refresh() = lock.withLock {
         val remote = checkNotNull(http) { "İçerik bağlantısı yapılandırılmadı." }
         val next = withContext(Dispatchers.IO) {
-            val stories = remote.rows("stories", "select=id,current_revision_id&order=id.asc")
+            val stories = remote.rows("stories", "select=id,current_revision_id,created_at&order=id.asc")
             val result = JSONArray()
             val ids=(0 until stories.length()).map {UUID.fromString(stories.getJSONObject(it).getString("current_revision_id")).toString()}
             val revisionById=mutableMapOf<String,JSONObject>()
@@ -163,7 +167,8 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 val row = stories.getJSONObject(i)
                 val revision = UUID.fromString(row.getString("current_revision_id")).toString()
                 val doc = checkNotNull(revisionById[revision]) { "Katalog değişti. Yeniden dene." }
-                require(doc.getString("story_id") == row.getString("id")); ContentCodec.story(doc)
+                require(doc.getString("story_id") == row.getString("id"))
+                doc.put("story_created_at", row.opt("created_at") ?: JSONObject.NULL); ContentCodec.story(doc)
                 result.put(doc)
             }
             require((0 until result.length()).map {result.getJSONObject(it).getString("story_id")}.distinct().size==result.length()) {"Katalog değişti. Yeniden dene."}

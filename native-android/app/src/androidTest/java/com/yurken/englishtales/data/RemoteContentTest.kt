@@ -43,6 +43,7 @@ class RemoteContentTest {
         var fail=false
         var empty=false
         var revisionQueries=0
+        var createdAt: String?=null
         val doc=JSONObject().put("id",revision).put("story_id","remote-test").put("title","Remote test").put("author","English Tales")
             .put("level","A1").put("genre","Gizem").put("description","A test story").put("published_at","2026-10-11T00:00:00Z").put("cover_asset_id",assetId)
         override fun bytes(path: String,maxBytes: Long): ByteArray {
@@ -52,7 +53,7 @@ class RemoteContentTest {
             val offset=uri.getQueryParameter("offset")!!.toInt()
             val table=uri.lastPathSegment
             val rows=when(table) {
-                "stories" -> if(empty) emptyList() else listOf(JSONObject().put("id","remote-test").put("current_revision_id",revision))
+                "stories" -> if(empty) emptyList() else listOf(JSONObject().put("id","remote-test").put("current_revision_id",revision).also {row -> createdAt?.let {row.put("created_at",it)}})
                 "story_revisions" -> listOf(doc)
                 "story_sentences" -> (1..7).map {JSONObject().put("id","s-$it").put("position",it).put("english","A quiet day.").put("turkish","Sessiz bir gün.")}
                 "revision_words" -> listOf(JSONObject().put("id","fixture-quiet").put("word","quiet").put("translation","sessiz").put("pronunciation","quiet").put("example","A quiet day."))
@@ -75,6 +76,33 @@ class RemoteContentTest {
         val restart=ContentRepository(context,fixture); restart.restore()
         assertTrue(restart.isDownloaded(LearningContent.stories.single()))
         assertEquals(7,LearningContent.stories.single().sentences.size)
+    }
+    @Test fun firstPublicationDateSurvivesDownloadAndOfflineRestart()=runBlocking {
+        val fixture=Fixture().apply {createdAt="2026-10-14T09:47:44.123456+00:00"}
+        val expected=java.time.Instant.parse("2026-10-14T09:47:44.123456Z")
+        val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh()
+        assertEquals(expected,LearningContent.stories.single().addedAt)
+        repo.download(LearningContent.stories.single())
+        assertEquals(expected,LearningContent.stories.single().addedAt)
+        fixture.fail=true
+        ContentRepository(context,fixture).restore()
+        assertEquals(expected,LearningContent.stories.single().addedAt)
+    }
+    @Test fun missingCreationDateLeavesStoryUndated()=runBlocking {
+        val repo=ContentRepository(context,Fixture())
+        repo.restore(); repo.refresh()
+        assertNull(LearningContent.stories.single().addedAt)
+    }
+    @Test fun newestStoriesPreferAddedDateThenLaterCatalogPosition()=runBlocking {
+        fun story(id: String, addedAt: String?)=Story(id,id,"English Tales","A1","Gizem","","remote",listOf(StorySentence("s-1","A day.","Bir gün.")),
+            addedAt=addedAt?.let(java.time.Instant::parse))
+        withContext(Dispatchers.Main) {
+            LearningContent.install(listOf(story("old-undated",null),story("first-batch","2026-10-11T15:20:47Z"),
+                story("late-undated",null),story("classic-b","2026-10-14T09:47:44Z"),story("classic-a","2026-10-14T09:47:44Z")))
+        }
+        assertEquals(listOf("classic-a","classic-b","first-batch"),LearningContent.newestStories(3).map {it.id})
+        assertEquals(listOf("classic-a","classic-b","first-batch","late-undated","old-undated"),LearningContent.newestStories(10).map {it.id})
     }
     @Test fun corruptCoverDoesNotCommitDownload()=runBlocking {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)

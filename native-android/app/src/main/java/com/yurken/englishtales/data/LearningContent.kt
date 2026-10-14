@@ -20,7 +20,9 @@ data class Story(
     val revisionId: String = ContentRevisionIds.bundled(id),
     val coverFile: String? = null,
     val vocabulary: List<WordInfo>? = null,
-    val sentenceWordIds: Map<String, List<String>>? = null
+    val sentenceWordIds: Map<String, List<String>>? = null,
+    /** First publication of the story (not of this revision); null for bundled content. */
+    val addedAt: java.time.Instant? = null
 )
 
 private data class Catalog(
@@ -110,6 +112,11 @@ object LearningContent {
         val words = (current().words + historicalWords + stories.flatMap { it.vocabulary.orEmpty() }).associateBy { it.id }.values.toList()
         catalog = Catalog(words, words.associateBy { it.id }, words.associateBy { it.word.lowercase(java.util.Locale.ROOT) }, stories, stories.associateBy { it.id })
     }
+
+    /** Most recently added first. Undated stories keep catalog order, later entries counting as newer. */
+    fun newestStories(limit: Int): List<Story> = stories.withIndex()
+        .sortedWith(compareByDescending<IndexedValue<Story>> { it.value.addedAt }.thenByDescending { it.index })
+        .take(limit).map { it.value }
 
     fun recommendedStory(level: String, genre: String, progress: Map<String,Int> = emptyMap()): Story? =
         stories.sortedBy { (if(it.level==level) 0 else 4) + (if(it.genre==genre) 0 else 1) + (if(progress[it.id]==100) 2 else 0) }.firstOrNull()
