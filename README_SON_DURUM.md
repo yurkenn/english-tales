@@ -4,7 +4,7 @@ Son güncelleme: **15 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalı�
 
 ## Kısa durum
 
-Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 için imzalı APK ve AAB oluşturuldu ve statik paket kontrolleri geçti. Bu sürüm henüz Google Play'e yüklenmedi veya üretime gönderilmedi.**
+Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 üretim kanalına yüklendi ve mağaza güncellemesiyle birlikte 15 Ekim 2026'da Google incelemesine gönderildi. İnceleme sonucu henüz gelmedi.**
 
 ## Tamamlanan çalışmalar
 
@@ -92,7 +92,7 @@ Yerel çıktılar:
 - Mağaza metin/görsel taslakları ile canlı uygulama sürümü farklı aşamalardadır. Taslak kaydı yayın anlamına gelmez.
 - 15 Ekim 2026: 48 (2.0.0) AAB üretim kanalına yüklendi; 5 dilde sürüm notları girildi, %100 dağıtımla kaydedildi.
 - Play'in AD_ID hatası (beyan “kullanıyor”, eski aktif sürümlerde izin yok) bu sürüm için “Release without permission” ile geçildi; 48 paketinde AD_ID izni bulunuyor.
-- Sürüm ve mağaza değişiklikleri (20 değişiklik) Publishing overview'da. Managed publishing kapalı: onaylanınca otomatik yayımlanır.
+- 15 Ekim 2026: 20 değişiklik (48 sürümü + mağaza kaydı + gizlilik URL'si) Google incelemesine gönderildi; durum “Changes in review”. Managed publishing kapalı: onaylanınca otomatik ve %100 yayımlanır. İnceleme sonucu gelmeden “yayında” olarak işaretleme.
 
 ## Devam edilecek işler
 
