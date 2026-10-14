@@ -7,4 +7,3 @@ Create a polished Google Play feature graphic for English Tales, a story-based E
 ## İngilizce düzenleme
 
 Edit this English Tales store feature graphic: preserve the EXACT blue book mascot, layout, background, colors, main 'English Tales' title, proportions and spacing. Replace ONLY Turkish text with English. The subtitle must read exactly 'A little more English with every story'. The smaller bottom line must read exactly '50 stories · Read · Listen · Learn'. Keep subtitle readable in the left text area without touching mascot, allowing two lines if necessary. Keep same wide approximately 1024:500 aspect ratio. No other changes. Opaque background.
-

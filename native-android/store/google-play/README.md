@@ -1,4 +1,4 @@
-# Google Play mağaza paketi — 14 Ekim 2026
+# Google Play mağaza paketi — 15 Ekim 2026
 
 Uygulama: English Tales (`com.yurken.englishtales`). Yeni paket adayı: 48 / 2.0.0. Console’da Production 46 / 1.1.0 ve Internal testing 47 / 2.0.0 doğrulandı. Yüklemeden önce daha yüksek başka kod bulunmadığı yeniden kontrol edilmeli.
 
@@ -11,9 +11,9 @@ Uygulama: English Tales (`com.yurken.englishtales`). Yeni paket adayı: 48 / 2.0
 
 ## Yayın durumu
 
-Bu klasörün hazırlanması mağazaya yayın yapıldığı anlamına gelmez. İmzalı AAB için eski EAS yükleme anahtarı gerekiyor; bu Mac’te keystore veya signing.properties bulunmadı. Anahtarın bulunduğu `yurken/english-tales` EAS projesine Google geçiş anahtarı doğrulaması bekleniyor. Yeni anahtar oluşturulmadı.
+Bu klasörün hazırlanması mağazaya yayın yapıldığı anlamına gelmez. İmzalı 48 / 2.0.0 APK ve AAB, `yurken/english-tales` EAS projesinden indirilen eski yükleme anahtarıyla oluşturuldu (SHA-1 önceki Play kaydıyla eşleşti); yeni anahtar oluşturulmadı. AAB henüz Play'e yüklenmedi.
 
-Play Console’daki EN açıklamalar düzenleme formuna girildi; kaydetme/yükleme/doğrulama tamamlanmadan güncellenmiş sayfa veya yayın iddiasında bulunulmaz. Mac kilitli bildirimi alındı; kullanıcıdan kilit açma ve Expo girişi istendi.
+Yeni ikon, altı ekran görüntüsü, EN/TR tanıtım görselleri ve EN/TR açıklamalar Play Console taslağına kaydedildi. AI görsel beyanındaki “Label assets and submit” son adımı tamamlanmadı; yeni görsellerin herkese açık sayfada göründüğü doğrulanmadı. Güncel ayrıntılar: [son durum](../../../README_SON_DURUM.md).
 
 Üretim reklamları `config/ads.properties` içinde kapalıdır. Yayın beyanları son imzalı paketin gerçek davranışıyla eşleştirilmeli; test reklamı üretime açılmaz.
 
@@ -32,5 +32,5 @@ Yerleşik image_gen kullanıldı. Referans: `brand/english-tales/expressions/wel
 - Depo kontrolü ve 6 ELF doğrulayıcı regresyon testi geçti.
 - Kütüphane banner'ı da kitap maskotuna geçirildi; güncel ekran yeniden alındı.
 - İkon, 6 ekran görüntüsü ve iki tanıtım görselinin ölçü/boyutları doğrulandı (`asset-verification.json`). Gizlilik ve hesap silme sayfaları HTTP 200 döndü.
-- Release imzalama, AAB doğrulaması/yüklemesi, Play tarafından üretilen paket kontrolü ve üretim gönderimi **henüz yapılmadı**.
-- Mağaza formunda Save as draft denendi fakat kalıcı kayıt sonucu doğrulanamadı; mevcut canlı ikon/görsellerin değiştiği iddia edilmez.
+- İmzalı release APK/AAB derlemesi ve statik paket/imza kontrolleri başarılı (48 / 2.0.0).
+- AAB yüklemesi, Play tarafından üretilen paket kontrolü ve üretim gönderimi **henüz yapılmadı**; mevcut canlı ikon/görsellerin değiştiği iddia edilmez.
