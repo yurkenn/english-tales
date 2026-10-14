@@ -54,7 +54,7 @@ Boyut göreli: **S** küçük tek PR · **M** birkaç PR veya şema/test etkisi 
 
 | İş | Değer | Boyut | Bağımlılık |
 |---|---|---|---|
-| 2.1 Hikâye başına kelime/ifade yoğunluğunu artır | Daha zengin kelime defteri ve alıştırma havuzu (hedef: hikâye başına 12–20) | M | Panel + exporter; D06 ile birlikte. Yeni hikâye yazmadan içerik değeri artar. |
+| 2.1 Hikâye başına kelime/ifade yoğunluğunu artır | Daha zengin kelime defteri ve alıştırma havuzu (hedef: hikâye başına 12–20) | M | **Pilot paket içinde** (`codex/vocabulary-density-pilot`): 5 A1 klasiğine 37 kelime; 6–9 → 13–19 seçilebilir kelime. Yalnız tek kelime (ifadeler D06'ya bağlı). Canlı kullanıcılar için yeni revision'ların yayıncı panelinden yayımlanması gerekir. |
 | 2.2 D06 çok sözcüklü ifadeler | “pick up”, “once upon a time” gibi kalıplar doğru seçilir | M | Tokenizer, cümle-kelime bağlantıları, panel doğrulaması. |
 | 2.3 F01 zayıf kelime tekrarı | Hata yapılan kelimeler öne çıkar; kısa günlük tekrar | M | LearningPolicy + SQL `apply_word_event` birlikte. |
 | 2.4 F02 bağlamlı kelime defteri | Kaynak cümle, çeviri, hikâyeye dön, arama/filtre | M | D05 kaynak revizyonu çözümü. |

@@ -17,7 +17,7 @@ test('classic expansion preserves legacy texts, IDs, original vocabulary and inf
  for(const word of catalog.words.slice(39)) assert.ok(!oldTokens.has(word.word.toLowerCase()),`New word changes legacy links: ${word.word}`);
 });
 test('the reviewed classic package is complete, bilingual, level-balanced and traceable',()=>{
- assert.equal(catalog.schemaVersion,1);assert.equal(catalog.stories.length,50);assert.equal(catalog.words.length,316);
+ assert.equal(catalog.schemaVersion,1);assert.equal(catalog.stories.length,50);assert.equal(catalog.words.length,353);
  assert.equal(catalog.stories.reduce((n,s)=>n+s.sentences.length,0),1002);assert.equal(sources.stories.length,44);
  assert.equal(new Set(catalog.words.map(w=>w.id)).size,catalog.words.length);
  assert.equal(new Set(catalog.words.map(w=>w.word.toLowerCase())).size,catalog.words.length);
@@ -47,4 +47,15 @@ test('classics have verified PNGs, historical provenance, cover mappings and mat
   const asset=manifest.assets.find(a=>a.source.endsWith(`/${key}.png`));assert.ok(asset);assert.equal(asset.sha256,digest);assert.equal(asset.byteSize,bytes.length);
   assert.ok(coverCode.includes(`"${key}" -> R.drawable.${key}`));
  }
+});
+test('vocabulary density pilot: five A1 classics reach at least 13 selectable words with exact-token examples',()=>{
+ const pilot={'classic-tortoise-hare':16,'classic-lion-mouse':15,'classic-fox-grapes':14,'classic-dog-shadow':13,'classic-boy-cried-wolf':19};
+ const known=new Set(catalog.words.map(w=>w.word.toLowerCase()));
+ for(const [id,count] of Object.entries(pilot)){
+  const story=catalog.stories.find(s=>s.id===id);assert.equal(story.level,'A1');
+  const covered=[...tokens(story.sentences.map(s=>s.english).join(' '))].filter(t=>known.has(t));
+  assert.equal(covered.length,count,id);
+ }
+ // Pilot words are appended after the classic package; earlier IDs keep their positions.
+ assert.deepEqual(catalog.words.slice(316).map(w=>w.id).slice(0,3),['road','laughs','slow']);
 });

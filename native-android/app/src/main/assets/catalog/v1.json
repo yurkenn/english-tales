@@ -2212,6 +2212,265 @@
       "translation": "dokumak",
       "pronunciation": "/wiːv/",
       "example": "They kept the valuable materials and pretended to weave at empty looms."
+    },
+    {
+      "id": "road",
+      "word": "road",
+      "translation": "yol",
+      "pronunciation": "/roʊd/",
+      "example": "The road goes to the village."
+    },
+    {
+      "id": "laughs",
+      "word": "laughs",
+      "translation": "güler",
+      "pronunciation": "/læfs/",
+      "example": "She laughs at the funny story."
+    },
+    {
+      "id": "slow",
+      "word": "slow",
+      "translation": "yavaş",
+      "pronunciation": "/sloʊ/",
+      "example": "The old bus is very slow."
+    },
+    {
+      "id": "step",
+      "word": "step",
+      "translation": "adım",
+      "pronunciation": "/step/",
+      "example": "Take one step at a time."
+    },
+    {
+      "id": "ahead",
+      "word": "ahead",
+      "translation": "önde, ileride",
+      "pronunciation": "/əˈhed/",
+      "example": "The school is just ahead."
+    },
+    {
+      "id": "rest",
+      "word": "rest",
+      "translation": "dinlenme",
+      "pronunciation": "/rest/",
+      "example": "We need a short rest after the walk."
+    },
+    {
+      "id": "wins",
+      "word": "wins",
+      "translation": "kazanır",
+      "pronunciation": "/wɪnz/",
+      "example": "Our team wins the game."
+    },
+    {
+      "id": "catches",
+      "word": "catches",
+      "translation": "yakalar",
+      "pronunciation": "/ˈkætʃɪz/",
+      "example": "The cat catches a ball."
+    },
+    {
+      "id": "please",
+      "word": "please",
+      "translation": "lütfen",
+      "pronunciation": "/pliːz/",
+      "example": "Please open the window."
+    },
+    {
+      "id": "help",
+      "word": "help",
+      "translation": "yardım",
+      "pronunciation": "/help/",
+      "example": "Thank you for your help."
+    },
+    {
+      "id": "hunters",
+      "word": "hunters",
+      "translation": "avcılar",
+      "pronunciation": "/ˈhʌntərz/",
+      "example": "The hunters walk into the forest."
+    },
+    {
+      "id": "strong",
+      "word": "strong",
+      "translation": "güçlü, sağlam",
+      "pronunciation": "/strɔːŋ/",
+      "example": "This bag is strong."
+    },
+    {
+      "id": "roars",
+      "word": "roars",
+      "translation": "kükrer",
+      "pronunciation": "/rɔːrz/",
+      "example": "The big lion roars."
+    },
+    {
+      "id": "bites",
+      "word": "bites",
+      "translation": "ısırır",
+      "pronunciation": "/baɪts/",
+      "example": "The small dog bites the toy."
+    },
+    {
+      "id": "hungry",
+      "word": "hungry",
+      "translation": "aç",
+      "pronunciation": "/ˈhʌŋɡri/",
+      "example": "I am hungry after school."
+    },
+    {
+      "id": "sweet",
+      "word": "sweet",
+      "translation": "tatlı",
+      "pronunciation": "/swiːt/",
+      "example": "This cake is very sweet."
+    },
+    {
+      "id": "high",
+      "word": "high",
+      "translation": "yüksek",
+      "pronunciation": "/haɪ/",
+      "example": "The bird sits on a high wall."
+    },
+    {
+      "id": "jumps",
+      "word": "jumps",
+      "translation": "zıplar, sıçrar",
+      "pronunciation": "/dʒʌmps/",
+      "example": "The cat jumps onto the chair."
+    },
+    {
+      "id": "reach",
+      "word": "reach",
+      "translation": "ulaşmak, uzanmak",
+      "pronunciation": "/riːtʃ/",
+      "example": "I cannot reach the top shelf."
+    },
+    {
+      "id": "tries",
+      "word": "tries",
+      "translation": "dener",
+      "pronunciation": "/traɪz/",
+      "example": "He tries to open the door."
+    },
+    {
+      "id": "tired",
+      "word": "tired",
+      "translation": "yorgun",
+      "pronunciation": "/ˈtaɪərd/",
+      "example": "She is tired after work."
+    },
+    {
+      "id": "unkind",
+      "word": "unkind",
+      "translation": "kaba, kırıcı",
+      "pronunciation": "/ʌnˈkaɪnd/",
+      "example": "It was an unkind thing to say."
+    },
+    {
+      "id": "carries",
+      "word": "carries",
+      "translation": "taşır",
+      "pronunciation": "/ˈkæriz/",
+      "example": "He carries a big box."
+    },
+    {
+      "id": "pieces",
+      "word": "pieces",
+      "translation": "parçalar",
+      "pronunciation": "/ˈpiːsɪz/",
+      "example": "She cuts the bread into small pieces."
+    },
+    {
+      "id": "bigger",
+      "word": "bigger",
+      "translation": "daha büyük",
+      "pronunciation": "/ˈbɪɡər/",
+      "example": "My room is bigger than yours."
+    },
+    {
+      "id": "second",
+      "word": "second",
+      "translation": "ikinci",
+      "pronunciation": "/ˈsekənd/",
+      "example": "This is my second visit."
+    },
+    {
+      "id": "own",
+      "word": "own",
+      "translation": "kendi",
+      "pronunciation": "/oʊn/",
+      "example": "She has her own room."
+    },
+    {
+      "id": "nothing",
+      "word": "nothing",
+      "translation": "hiçbir şey",
+      "pronunciation": "/ˈnʌθɪŋ/",
+      "example": "There is nothing in the box."
+    },
+    {
+      "id": "much",
+      "word": "much",
+      "translation": "çok",
+      "pronunciation": "/mʌtʃ/",
+      "example": "Thank you very much."
+    },
+    {
+      "id": "boy",
+      "word": "boy",
+      "translation": "erkek çocuk, oğlan",
+      "pronunciation": "/bɔɪ/",
+      "example": "The boy plays in the park."
+    },
+    {
+      "id": "alone",
+      "word": "alone",
+      "translation": "yalnız",
+      "pronunciation": "/əˈloʊn/",
+      "example": "He walks home alone."
+    },
+    {
+      "id": "shouts",
+      "word": "shouts",
+      "translation": "bağırır",
+      "pronunciation": "/ʃaʊts/",
+      "example": "The teacher never shouts."
+    },
+    {
+      "id": "trick",
+      "word": "trick",
+      "translation": "oyun, numara",
+      "pronunciation": "/trɪk/",
+      "example": "The children play a trick on their friend."
+    },
+    {
+      "id": "frightened",
+      "word": "frightened",
+      "translation": "korkmuş",
+      "pronunciation": "/ˈfraɪtnd/",
+      "example": "The frightened cat hides under the bed."
+    },
+    {
+      "id": "nobody",
+      "word": "nobody",
+      "translation": "hiç kimse",
+      "pronunciation": "/ˈnoʊbədi/",
+      "example": "Nobody is at home today."
+    },
+    {
+      "id": "believe",
+      "word": "believe",
+      "translation": "inanmak",
+      "pronunciation": "/bɪˈliːv/",
+      "example": "I believe you."
+    },
+    {
+      "id": "attacks",
+      "word": "attacks",
+      "translation": "saldırır",
+      "pronunciation": "/əˈtæks/",
+      "example": "The fox attacks the chickens."
     }
   ],
   "stories": [
