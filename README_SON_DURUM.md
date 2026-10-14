@@ -42,8 +42,8 @@ Marka kaynakları: [English Tales](brand/english-tales/README.md), [maskot ifade
 - Türkçe ve İngilizce başlık, kısa/uzun açıklama ve sürüm notları hazırlandı.
 - Yeni ikon, altı ekran görüntüsü, İngilizce tanıtım görseli ve EN/TR açıklamalar Play Console taslağına kaydedildi. Türkçe tanıtım görseli ayrıca yüklenip Türkçe taslağa kaydedildi.
 - Form yeniden açılarak İngilizce taslağın kalıcı olduğu doğrulandı; Türkçe değişikliklerde “Your changes have been saved” sonucu görüldü.
-- İnceleme adımındaki AI görsel beyanı açıldı. Üretilen ikon ve iki tanıtım görseli seçildi; **“Label assets and submit” son adımı henüz tamamlanmadı**.
-- Eski Fransızca, Almanca ve İspanyolca mağaza yerelleştirmeleri mevcut; bu oturumda metinleri güncellenmedi. Son gönderimden önce eski özellik vaatleri ve görseller açısından kontrol edilmeli.
+- AI görsel beyanı tamamlandı: ikon ve iki tanıtım görseli “AI ile üretildi” olarak etiketlendi; gerçek ekran görüntüleri etiketlenmedi.
+- Fransızca, Almanca ve İspanyolca kayıtlardaki eski vaatler (topluluk, yazar takibi, TOEFL) kaldırıldı; metinler EN sürümünün çevirisiyle değiştirildi ve depoya eklendi.
 - Yeni mağaza görsellerinin herkese açık sayfada yayımlandığı henüz doğrulanmadı.
 
 Dosyalar: [Google Play mağaza paketi](native-android/store/google-play/README.md).
@@ -90,6 +90,9 @@ Yerel çıktılar:
 - Yeni aday: **48 / 2.0.0**.
 - Yeni üretim sürümü hazırlama formu açıldı; AAB yüklenmedi, sürüm notları girilmedi ve üretime gönderim yapılmadı.
 - Mağaza metin/görsel taslakları ile canlı uygulama sürümü farklı aşamalardadır. Taslak kaydı yayın anlamına gelmez.
+- 15 Ekim 2026: 48 (2.0.0) AAB üretim kanalına yüklendi; 5 dilde sürüm notları girildi, %100 dağıtımla kaydedildi.
+- Play'in AD_ID hatası (beyan “kullanıyor”, eski aktif sürümlerde izin yok) bu sürüm için “Release without permission” ile geçildi; 48 paketinde AD_ID izni bulunuyor.
+- Sürüm ve mağaza değişiklikleri (20 değişiklik) Publishing overview'da. Managed publishing kapalı: onaylanınca otomatik yayımlanır.
 
 ## Devam edilecek işler
 
@@ -103,6 +106,6 @@ Yerel çıktılar:
 
 ## Git kontrol noktası
 
-Bu kayıt hazırlanırken dal `codex/classic-story-library`, son yerel commit `c2c7550` (`feat: prepare branded native release and publish classic library`) idi. Son commit bu oturumda henüz uzak depoya gönderilmedi. Mağaza dosyalarının `store/` yerine `native-android/store/` altına taşınması ve bu durum belgesi `c2c7550` üzerine ayrı bir commit olarak eklendi; iki commit de henüz uzak depoya gönderilmedi.
+Bu kayıt hazırlanırken dal `codex/classic-story-library`, son yerel commit `c2c7550` (`feat: prepare branded native release and publish classic library`) idi. Mağaza dosyalarının `store/` yerine `native-android/store/` altına taşınması ve bu durum belgesi ayrı bir commit olarak eklendi; iki commit de uzak depoya gönderildi.
 
 Mevcut PR: [GitHub PR #6](https://github.com/yurkenn/english-tales/pull/6). PR'ın varlığı, yeni release'in üretime yayımlandığı anlamına gelmez.
