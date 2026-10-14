@@ -36,8 +36,8 @@ Boyut göreli: **S** küçük tek PR · **M** birkaç PR veya şema/test etkisi 
 | İş | Değer | Boyut | Not |
 |---|---|---|---|
 | 0.1 İnceleme sonucunu izle, yayında doğrula | 2.0'ın gerçekten kullanıcıya ulaşması | S | Play'in ürettiği split APK'larla bir cihazda güncelleme + ilerleme korunumu (status belgesi adım 6). |
-| 0.2 AD_ID beyanını sürümlerle eşitle | Sonraki sürümlerde aynı hatanın çıkmaması | S | 47 dahili test sürümünü 48 ile değiştir veya devre dışı bırak. |
-| 0.3 Native debug sembollerini AAB'ye ekle | Play'de okunabilir native çökme izi | S | `ndk.debugSymbolLevel = "SYMBOL_TABLE"`. |
+| 0.2 AD_ID beyanını sürümlerle eşitle | Sonraki sürümlerde aynı hatanın çıkmaması | S | **Kod tarafı yapıldı** (`codex/release-hygiene`): manifestte açık AD_ID izni, `verify_release.py` kontrolü. Play tarafı açık: 47 dahili test sürümünü 48 ile değiştir. |
+| 0.3 Native debug sembollerini AAB'ye ekle | Play'de okunabilir native çökme izi | S | **Ayar eklendi, uyarı kalır**: tek native kütüphane (AndroidX graphics-path) hazır derlenmiş ve sembolleri silinmiş geliyor; çıkarılacak sembol yok. Ayar ileride eklenecek native kod içindir. |
 | 0.4 Veri güvenliği / reklam beyanı denetimi | Politika uyumu | S | Üretimde reklam kapalı; beyanlar paketin gerçek davranışıyla karşılaştırılır. |
 
 ### Faz 1 — Görünürlük ve temel güvenilirlik
@@ -89,7 +89,7 @@ Boyut göreli: **S** küçük tek PR · **M** birkaç PR veya şema/test etkisi 
 
 ## 4. Önerilen ilk üç PR
 
-1. **Yayın hijyeni** — 0.2 + 0.3 + Gradle 9 uyarısı. Risk düşük, sonraki her sürümü kolaylaştırır.
+1. **Yayın hijyeni** — 0.2 + 0.3 + Gradle 9 uyarısı. Uygulandı: AGP 8.10.1 → 8.13.0 Gradle 9 uyarılarını kaldırdı.
 2. **Katalog doğruluğu** — 1.3 (D13): yayın tarihi alanı, “Yeni hikâyeler” rafı, testler.
 3. **Kelime yoğunluğu pilotu** — 2.1 + 2.2'nin ilk adımı: 5 A1 hikâyesinde kelime/ifade sayısını artır, oyun havuzu ve tekrar sonuçlarını doğrula, sonra 50 hikâyeye yay.
 

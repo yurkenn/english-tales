@@ -91,6 +91,9 @@ android {
             signingConfig=signingConfigs.findByName("upload")
             isMinifyEnabled = true
             isShrinkResources = true
+            // Bundles symbol tables for unstripped native code. The only current .so
+            // (AndroidX graphics-path) ships stripped, so Play's missing-symbols warning remains.
+            ndk { debugSymbolLevel = "SYMBOL_TABLE" }
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
