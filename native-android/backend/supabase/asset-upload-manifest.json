@@ -48,6 +48,102 @@
       "sha256": "7a277d276b06d267599c904832edab9ddab412d781077a97811bde477b9cda19",
       "byteSize": 2279387,
       "source": "app/src/main/res/drawable-nodpi/cover_attic_letter.png"
+    },
+    {
+      "id": "dcb0ed9a-842e-5eb2-ad72-238853d58de0",
+      "bucket": "story-media",
+      "path": "covers/72edd5908b3713f8f345aff35acb961b65706c237c03827fe838fc6c468f55ee.png",
+      "sha256": "72edd5908b3713f8f345aff35acb961b65706c237c03827fe838fc6c468f55ee",
+      "byteSize": 35050,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_tortoise_hare.png"
+    },
+    {
+      "id": "a88cbc3b-c2b1-54f1-a2e6-d3689baaac15",
+      "bucket": "story-media",
+      "path": "covers/942bd2d79f217efdeb07e5f469c43637a78278999626607ad2d0149af1bfbebc.png",
+      "sha256": "942bd2d79f217efdeb07e5f469c43637a78278999626607ad2d0149af1bfbebc",
+      "byteSize": 43022,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_lion_mouse.png"
+    },
+    {
+      "id": "64a62a72-1a19-5d14-ac64-fde1f1e738cd",
+      "bucket": "story-media",
+      "path": "covers/c7cda9e127376d05a0a83e772ad361bc2c2436075a7130de2479abf0e219dc08.png",
+      "sha256": "c7cda9e127376d05a0a83e772ad361bc2c2436075a7130de2479abf0e219dc08",
+      "byteSize": 37010,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_fox_grapes.png"
+    },
+    {
+      "id": "42ae2531-3afe-5b71-a902-0cb6f1aac3d0",
+      "bucket": "story-media",
+      "path": "covers/35ade5d11e3dc85bdbe970821fb32fc1557c0a93e2ed64ca33f7a9e5d9bff9bc.png",
+      "sha256": "35ade5d11e3dc85bdbe970821fb32fc1557c0a93e2ed64ca33f7a9e5d9bff9bc",
+      "byteSize": 34997,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_ants_grasshopper.png"
+    },
+    {
+      "id": "4de95f53-9101-5266-aeac-102ed03ff4cc",
+      "bucket": "story-media",
+      "path": "covers/5eab802f42d23748b3adc24a9f289739aa7b634fdf2bbe885bb79029cd3db11e.png",
+      "sha256": "5eab802f42d23748b3adc24a9f289739aa7b634fdf2bbe885bb79029cd3db11e",
+      "byteSize": 32344,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_red_riding_hood.png"
+    },
+    {
+      "id": "510b24af-1165-5e2c-ab41-5ebe4d7a4735",
+      "bucket": "story-media",
+      "path": "covers/9b9c638a988fbf5cb77bc6a85e7b895b7bfa453b71ed855be88fa51b1bced88a.png",
+      "sha256": "9b9c638a988fbf5cb77bc6a85e7b895b7bfa453b71ed855be88fa51b1bced88a",
+      "byteSize": 36248,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_cinderella.png"
+    },
+    {
+      "id": "e7ee5264-8f11-56af-a749-4dc5bcf1d41c",
+      "bucket": "story-media",
+      "path": "covers/d8554da24a3e8d1f9117f18cb9f7ae3912e345bbdfd50ae0f2ddbb1f9be81196.png",
+      "sha256": "d8554da24a3e8d1f9117f18cb9f7ae3912e345bbdfd50ae0f2ddbb1f9be81196",
+      "byteSize": 33625,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_bremen_musicians.png"
+    },
+    {
+      "id": "57761491-8b15-57f1-ab20-4d285a385627",
+      "bucket": "story-media",
+      "path": "covers/20597435ac8725209f0b1e34539ec4107bb5432a1e9ae6025b8dd86a6e5156b1.png",
+      "sha256": "20597435ac8725209f0b1e34539ec4107bb5432a1e9ae6025b8dd86a6e5156b1",
+      "byteSize": 32937,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_hansel_gretel.png"
+    },
+    {
+      "id": "e534fa87-4da0-5e63-a7ca-de19ded2ac57",
+      "bucket": "story-media",
+      "path": "covers/766b5dea04a12d37f195f08a113042d3b7530f6b8d5f9278e127ee42bbe828de.png",
+      "sha256": "766b5dea04a12d37f195f08a113042d3b7530f6b8d5f9278e127ee42bbe828de",
+      "byteSize": 31455,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_happy_prince.png"
+    },
+    {
+      "id": "94ed58ba-9818-566e-a127-5ff589484865",
+      "bucket": "story-media",
+      "path": "covers/a75ddc623cef192656c71f989375787db88f19e5746d23393f9a272ab06af5cb.png",
+      "sha256": "a75ddc623cef192656c71f989375787db88f19e5746d23393f9a272ab06af5cb",
+      "byteSize": 42013,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_selfish_giant.png"
+    },
+    {
+      "id": "8eff7469-3304-56e2-ac5f-6145e7eaf667",
+      "bucket": "story-media",
+      "path": "covers/8a2db50a7594cd69de0ef1cea4ed5bde7d9303cbbbb1a945bab420fce4c7e177.png",
+      "sha256": "8a2db50a7594cd69de0ef1cea4ed5bde7d9303cbbbb1a945bab420fce4c7e177",
+      "byteSize": 35859,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_gift_magi.png"
+    },
+    {
+      "id": "5443a02c-d2ad-5d38-ac61-b01a2a17d113",
+      "bucket": "story-media",
+      "path": "covers/b030a3740534593b7b27fcab2548ab1c2e1f91bc2c2b8489497b8b1ede9ac88a.png",
+      "sha256": "b030a3740534593b7b27fcab2548ab1c2e1f91bc2c2b8489497b8b1ede9ac88a",
+      "byteSize": 31204,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_after_twenty_years.png"
     }
   ]
 }

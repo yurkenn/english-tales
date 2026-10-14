@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+  "sourceUsagePolicyUrl": "https://www.gutenberg.org/policy/license.html",
+  "stories": [
+    {
+      "storyId": "classic-tortoise-hare",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Hare and the Tortoise",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "a018a0bca16b61d72d70606cbfefb801151f2ed0dbebd385af45df865d19d2d3",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_tortoise_hare"
+      }
+    },
+    {
+      "storyId": "classic-lion-mouse",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Lion And The Mouse",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "8391c688a0490f6108f9299a10abdfd74f7a78f5b785a1a47be5ca0447d2f2df",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_lion_mouse"
+      }
+    },
+    {
+      "storyId": "classic-fox-grapes",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Fox and the Grapes",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "4f687702d6082541aefa0763331a86eb3a163cb124d37f9eb3afc4528b8050f1",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_fox_grapes"
+      }
+    },
+    {
+      "storyId": "classic-ants-grasshopper",
+      "sourceCollection": "Three hundred Aesop’s fables",
+      "sourceTitle": "The Ants and the Grasshopper",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/21",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/21/pg21-images.html",
+      "authors": [
+        {
+          "name": "Aesop",
+          "deathYear": -565
+        }
+      ],
+      "englishTranslator": {
+        "name": "George Fyler Townsend",
+        "deathYear": 1900
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "dda6f0e0930b490982de4893687beaccf28285bceede4b3570dc28fda7e7b631",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_ants_grasshopper"
+      }
+    },
+    {
+      "storyId": "classic-red-riding-hood",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "Little Red-Cap",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "5d204c528fd23faa18bcf8995642820c18a1b1a049580c4f33bb0a4709019349",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_red_riding_hood"
+      }
+    },
+    {
+      "storyId": "classic-cinderella",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "Cinderella",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "6614ecc0f0ebecf94bc2bb13469e5a29b1f91896be8f17c1753f59ea9000d7c3",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_cinderella"
+      }
+    },
+    {
+      "storyId": "classic-bremen-musicians",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "The Bremen Town-Musicians",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "624a606c9b860167912371c6a99abee4d229b56ed8a700d49ea045fc916ae1b3",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_bremen_musicians"
+      }
+    },
+    {
+      "storyId": "classic-hansel-gretel",
+      "sourceCollection": "Household Tales by Brothers Grimm",
+      "sourceTitle": "Hansel and Grethel",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/5314",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/5314/pg5314-images.html",
+      "authors": [
+        {
+          "name": "Jacob Grimm",
+          "deathYear": 1863
+        },
+        {
+          "name": "Wilhelm Grimm",
+          "deathYear": 1859
+        }
+      ],
+      "englishTranslator": {
+        "name": "Margaret Hunt",
+        "deathYear": 1912
+      },
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "c56a0cc05990f1e9b7abb6ca68e1a40ba20fc3f9fb8549c1929c5438e2b5992f",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_hansel_gretel"
+      }
+    },
+    {
+      "storyId": "classic-happy-prince",
+      "sourceCollection": "The Happy Prince, and Other Tales",
+      "sourceTitle": "The Happy Prince",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/902",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/902/pg902-images.html",
+      "authors": [
+        {
+          "name": "Oscar Wilde",
+          "deathYear": 1900
+        }
+      ],
+      "englishTranslator": null,
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "cf86e5677d951d4ce762bfcdd5b9fc58ac3cf913cf74af1a4e2dad9f07f4ed72",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_happy_prince"
+      }
+    },
+    {
+      "storyId": "classic-selfish-giant",
+      "sourceCollection": "The Happy Prince, and Other Tales",
+      "sourceTitle": "The Selfish Giant",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/902",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/902/pg902-images.html",
+      "authors": [
+        {
+          "name": "Oscar Wilde",
+          "deathYear": 1900
+        }
+      ],
+      "englishTranslator": null,
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "a01e86f7727b2955bba784734e048180e68c60047b1a5b3fde067c7f528917af",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_selfish_giant"
+      }
+    },
+    {
+      "storyId": "classic-gift-magi",
+      "sourceCollection": "The Four Million",
+      "sourceTitle": "The Gift of the Magi",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2776",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html",
+      "authors": [
+        {
+          "name": "O. Henry",
+          "deathYear": 1910
+        }
+      ],
+      "englishTranslator": null,
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "1ac8f92846cba18fd6294cff0faaaad1de2efe56f54b73232b8fa1679fbbe6b4",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_gift_magi"
+      }
+    },
+    {
+      "storyId": "classic-after-twenty-years",
+      "sourceCollection": "The Four Million",
+      "sourceTitle": "After Twenty Years",
+      "sourceUrl": "https://www.gutenberg.org/ebooks/2776",
+      "sourceTextUrl": "https://www.gutenberg.org/cache/epub/2776/pg2776-images.html",
+      "authors": [
+        {
+          "name": "O. Henry",
+          "deathYear": 1910
+        }
+      ],
+      "englishTranslator": null,
+      "sourceCopyrightStatement": "Public domain in the USA",
+      "turkeyAssessment": "Original authors and the identified English translator died more than 70 years before 2026. Assessment uses the Turkish Ministry duration guidance; not a worldwide clearance claim.",
+      "adaptation": "Original graded English retelling and Turkish translation prepared for English Tales; abridged, not the complete source text.",
+      "checkedOn": "2026-10-14",
+      "sourceChapterSha256": "f92f67f1cd507507640d2261b5239d3314d833ac0e17af0708f0e3361e7dd73a",
+      "cover": {
+        "kind": "Original geometric illustration",
+        "generator": "backend/tools/generate-classic-covers.swift",
+        "key": "cover_classic_after_twenty_years"
+      }
+    }
+  ]
+}

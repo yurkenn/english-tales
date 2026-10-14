@@ -4,6 +4,7 @@ import { readFile, readdir } from 'node:fs/promises';
 import { randomUUID, createHash } from 'node:crypto';
 import { PGlite } from '@electric-sql/pglite';
 
+const catalog=JSON.parse(await readFile(new URL('../../app/src/main/assets/catalog/v1.json',import.meta.url),'utf8'));
 const publisher='11111111-1111-4111-8111-111111111111';
 const editor='22222222-2222-4222-8222-222222222222';
 const alice='aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa';
@@ -128,13 +129,13 @@ test('snapshot refuses excessive history instead of returning a partial deletion
   assert.deepEqual(bobSnapshot.sessions,[]);
 });
 
-test('the exported catalog has six published stories, 81 sentences and repeatable stable IDs',async()=>{
-  assert.equal((await anon('select * from public.stories')).length,6);
-  assert.equal((await anon('select * from public.story_sentences')).length,81);
+test('the exported catalog publishes every bundled story and sentence with repeatable stable IDs',async()=>{
+  assert.equal((await anon('select * from public.stories')).length,catalog.stories.length);
+  assert.equal((await anon('select * from public.story_sentences')).length,catalog.stories.reduce((sum,story)=>sum+story.sentences.length,0));
   const seed=await read('../supabase/seed.sql');
   await db.exec(seed.replace(/^begin;$/m,'').replace(/^commit;$/m,'')); // Keep the test transaction isolated.
-  assert.equal((await db.query('select count(*)::int as n from public.story_revisions')).rows[0].n,6);
-  assert.equal((await anon('select * from storage.objects')).length,6);
+  assert.equal((await db.query('select count(*)::int as n from public.story_revisions')).rows[0].n,catalog.stories.length);
+  assert.equal((await anon('select * from storage.objects')).length,catalog.stories.length);
 });
 test('draft metadata, sentences, words and media are hidden from readers',async()=>{
   const id=await draft();
@@ -262,7 +263,7 @@ test('admin role and content APIs require a real staff identity',async()=>{
   assert.equal(await admin(publisher,'content_role',{}),'publisher');
   assert.equal(await admin(editor,'content_role',{}),'editor');
   assert.equal(await admin(alice,'content_role',{}),null);
-  assert.equal((await admin(editor,'admin_catalog',{offset:0,limit:100})).length,6);
+  assert.equal((await admin(editor,'admin_catalog',{offset:0,limit:100})).length,catalog.stories.length);
   for(const name of ['admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish'])
     assert.equal((await db.query('select has_function_privilege(\'anon\',oid,\'execute\') as allowed from pg_proc where proname=$1',[name])).rows[0].allowed,false);
   await assert.rejects(admin(alice,'admin_catalog',{offset:0,limit:100}),/staff_required/);
@@ -358,7 +359,7 @@ test('account deletion cascades learning records while keeping published content
   await db.query('delete from auth.users where id=$1',[alice]);
   for(const table of ['learning_profiles','learning_sessions','word_events','user_word_state','progress_events','user_story_progress','user_badges'])
     assert.equal((await db.query(`select * from public.${table} where user_id=$1`,[alice])).rows.length,0);
-  assert.equal((await anon('select * from public.stories')).length,6);
+  assert.equal((await anon('select * from public.stories')).length,catalog.stories.length);
 });
 test('only the server can inventory files for account deletion, including unknown files',async()=>{
   await db.query('update storage.objects set owner=$1,owner_id=$2 where name=(select storage_path from public.content_assets limit 1)',[publisher,publisher]);

@@ -273,6 +273,601 @@
       "translation": "değerli",
       "pronunciation": "/ˈvæljuəbəl/",
       "example": "The letter was valuable to her."
+    },
+    {
+      "id": "hare",
+      "word": "hare",
+      "translation": "yaban tavşanı",
+      "pronunciation": "/heə(r)/",
+      "example": "The hare runs fast."
+    },
+    {
+      "id": "tortoise",
+      "word": "tortoise",
+      "translation": "kaplumbağa",
+      "pronunciation": "/ˈtɔːtəs/",
+      "example": "The tortoise keeps walking."
+    },
+    {
+      "id": "race",
+      "word": "race",
+      "translation": "yarış",
+      "pronunciation": "/reɪs/",
+      "example": "The race starts here."
+    },
+    {
+      "id": "finish",
+      "word": "finish",
+      "translation": "bitiş",
+      "pronunciation": "/ˈfɪnɪʃ/",
+      "example": "She reaches the finish line."
+    },
+    {
+      "id": "asleep",
+      "word": "asleep",
+      "translation": "uykuda",
+      "pronunciation": "/əˈsliːp/",
+      "example": "The hare is asleep."
+    },
+    {
+      "id": "steady",
+      "word": "steady",
+      "translation": "kararlı",
+      "pronunciation": "/ˈstedi/",
+      "example": "Slow and steady work brings results."
+    },
+    {
+      "id": "lion",
+      "word": "lion",
+      "translation": "aslan",
+      "pronunciation": "/ˈlaɪən/",
+      "example": "The lion sleeps under a tree."
+    },
+    {
+      "id": "mouse",
+      "word": "mouse",
+      "translation": "fare",
+      "pronunciation": "/maʊs/",
+      "example": "The mouse is very small."
+    },
+    {
+      "id": "paw",
+      "word": "paw",
+      "translation": "pençe",
+      "pronunciation": "/pɔː/",
+      "example": "The lion opens his paw."
+    },
+    {
+      "id": "ropes",
+      "word": "ropes",
+      "translation": "ipler",
+      "pronunciation": "/rəʊps/",
+      "example": "The ropes are strong."
+    },
+    {
+      "id": "teeth",
+      "word": "teeth",
+      "translation": "dişler",
+      "pronunciation": "/tiːθ/",
+      "example": "The mouse has sharp teeth."
+    },
+    {
+      "id": "sharp",
+      "word": "sharp",
+      "translation": "keskin",
+      "pronunciation": "/ʃɑːp/",
+      "example": "These teeth are sharp."
+    },
+    {
+      "id": "free",
+      "word": "free",
+      "translation": "özgür",
+      "pronunciation": "/friː/",
+      "example": "The lion is free again."
+    },
+    {
+      "id": "fox",
+      "word": "fox",
+      "translation": "tilki",
+      "pronunciation": "/fɒks/",
+      "example": "The fox sees some grapes."
+    },
+    {
+      "id": "grapes",
+      "word": "grapes",
+      "translation": "üzümler",
+      "pronunciation": "/ɡreɪps/",
+      "example": "The grapes are high on the vine."
+    },
+    {
+      "id": "vine",
+      "word": "vine",
+      "translation": "asma",
+      "pronunciation": "/vaɪn/",
+      "example": "A vine grows in the garden."
+    },
+    {
+      "id": "ripe",
+      "word": "ripe",
+      "translation": "olgun",
+      "pronunciation": "/raɪp/",
+      "example": "The fruit is ripe."
+    },
+    {
+      "id": "sour",
+      "word": "sour",
+      "translation": "ekşi",
+      "pronunciation": "/ˈsaʊə(r)/",
+      "example": "The fox calls the grapes sour."
+    },
+    {
+      "id": "disappointment",
+      "word": "disappointment",
+      "translation": "hayal kırıklığı",
+      "pronunciation": "/ˌdɪsəˈpɔɪntmənt/",
+      "example": "She hides her disappointment."
+    },
+    {
+      "id": "ants",
+      "word": "ants",
+      "translation": "karıncalar",
+      "pronunciation": "/ænts/",
+      "example": "The ants work together."
+    },
+    {
+      "id": "grain",
+      "word": "grain",
+      "translation": "tahıl",
+      "pronunciation": "/ɡreɪn/",
+      "example": "The ants store grain."
+    },
+    {
+      "id": "grasshopper",
+      "word": "grasshopper",
+      "translation": "çekirge",
+      "pronunciation": "/ˈɡrɑːshɒpə(r)/",
+      "example": "The grasshopper spends the summer singing."
+    },
+    {
+      "id": "store",
+      "word": "store",
+      "translation": "biriktirmek",
+      "pronunciation": "/stɔː(r)/",
+      "example": "The ants store food for winter."
+    },
+    {
+      "id": "winter",
+      "word": "winter",
+      "translation": "kış",
+      "pronunciation": "/ˈwɪntə(r)/",
+      "example": "Winter is cold."
+    },
+    {
+      "id": "dry",
+      "word": "dry",
+      "translation": "kurutmak",
+      "pronunciation": "/draɪ/",
+      "example": "They spread the grain out to dry."
+    },
+    {
+      "id": "supper",
+      "word": "supper",
+      "translation": "akşam yemeği",
+      "pronunciation": "/ˈsʌpə(r)/",
+      "example": "The animals eat their supper."
+    },
+    {
+      "id": "prepare",
+      "word": "prepare",
+      "translation": "hazırlanmak",
+      "pronunciation": "/prɪˈpeə(r)/",
+      "example": "We prepare for winter."
+    },
+    {
+      "id": "cap",
+      "word": "cap",
+      "translation": "başlık",
+      "pronunciation": "/kæp/",
+      "example": "The girl wears a red cap."
+    },
+    {
+      "id": "wolf",
+      "word": "wolf",
+      "translation": "kurt",
+      "pronunciation": "/wʊlf/",
+      "example": "The wolf runs to the house."
+    },
+    {
+      "id": "oak",
+      "word": "oak",
+      "translation": "meşe",
+      "pronunciation": "/əʊk/",
+      "example": "The house stands under oak trees."
+    },
+    {
+      "id": "hunter",
+      "word": "hunter",
+      "translation": "avcı",
+      "pronunciation": "/ˈhʌntə(r)/",
+      "example": "A hunter hears the noise."
+    },
+    {
+      "id": "belly",
+      "word": "belly",
+      "translation": "karın",
+      "pronunciation": "/ˈbeli/",
+      "example": "The wolf has a full belly."
+    },
+    {
+      "id": "scissors",
+      "word": "scissors",
+      "translation": "makas",
+      "pronunciation": "/ˈsɪzəz/",
+      "example": "He carefully uses the scissors."
+    },
+    {
+      "id": "warning",
+      "word": "warning",
+      "translation": "uyarı",
+      "pronunciation": "/ˈwɔːnɪŋ/",
+      "example": "She remembers her mother's warning."
+    },
+    {
+      "id": "hazel",
+      "word": "hazel",
+      "translation": "fındık",
+      "pronunciation": "/ˈheɪzl/",
+      "example": "A hazel tree grows there."
+    },
+    {
+      "id": "grave",
+      "word": "grave",
+      "translation": "mezar",
+      "pronunciation": "/ɡreɪv/",
+      "example": "She visits her mother's grave."
+    },
+    {
+      "id": "lentils",
+      "word": "lentils",
+      "translation": "mercimekler",
+      "pronunciation": "/ˈlentlz/",
+      "example": "The birds pick up the lentils."
+    },
+    {
+      "id": "ashes",
+      "word": "ashes",
+      "translation": "küller",
+      "pronunciation": "/ˈæʃɪz/",
+      "example": "She sits beside the ashes."
+    },
+    {
+      "id": "slipper",
+      "word": "slipper",
+      "translation": "ayakkabı",
+      "pronunciation": "/ˈslɪpə(r)/",
+      "example": "The golden slipper fits her."
+    },
+    {
+      "id": "pitch",
+      "word": "pitch",
+      "translation": "zift",
+      "pronunciation": "/pɪtʃ/",
+      "example": "Sticky pitch covers the stairs."
+    },
+    {
+      "id": "bride",
+      "word": "bride",
+      "translation": "gelin",
+      "pronunciation": "/braɪd/",
+      "example": "The prince hopes to find a bride."
+    },
+    {
+      "id": "festival",
+      "word": "festival",
+      "translation": "şenlik",
+      "pronunciation": "/ˈfestɪvl/",
+      "example": "The festival lasts three days."
+    },
+    {
+      "id": "donkey",
+      "word": "donkey",
+      "translation": "eşek",
+      "pronunciation": "/ˈdɒŋki/",
+      "example": "The donkey carries sacks."
+    },
+    {
+      "id": "sacks",
+      "word": "sacks",
+      "translation": "çuvallar",
+      "pronunciation": "/sæks/",
+      "example": "The sacks are too heavy."
+    },
+    {
+      "id": "musician",
+      "word": "musician",
+      "translation": "müzisyen",
+      "pronunciation": "/mjuˈzɪʃn/",
+      "example": "The donkey wants to be a musician."
+    },
+    {
+      "id": "rooster",
+      "word": "rooster",
+      "translation": "horoz",
+      "pronunciation": "/ˈruːstə(r)/",
+      "example": "The rooster sings loudly."
+    },
+    {
+      "id": "robbers",
+      "word": "robbers",
+      "translation": "haydutlar",
+      "pronunciation": "/ˈrɒbəz/",
+      "example": "The robbers leave the house."
+    },
+    {
+      "id": "scratched",
+      "word": "scratched",
+      "translation": "tırmaladı",
+      "pronunciation": "/skrætʃt/",
+      "example": "The cat scratched the robber."
+    },
+    {
+      "id": "monster",
+      "word": "monster",
+      "translation": "canavar",
+      "pronunciation": "/ˈmɒnstə(r)/",
+      "example": "The robber thinks he sees a monster."
+    },
+    {
+      "id": "pebbles",
+      "word": "pebbles",
+      "translation": "çakıl taşları",
+      "pronunciation": "/ˈpeblz/",
+      "example": "Hansel drops white pebbles."
+    },
+    {
+      "id": "crumbs",
+      "word": "crumbs",
+      "translation": "kırıntılar",
+      "pronunciation": "/krʌmz/",
+      "example": "Birds eat the bread crumbs."
+    },
+    {
+      "id": "witch",
+      "word": "witch",
+      "translation": "cadı",
+      "pronunciation": "/wɪtʃ/",
+      "example": "The old woman is a witch."
+    },
+    {
+      "id": "oven",
+      "word": "oven",
+      "translation": "fırın",
+      "pronunciation": "/ˈʌvn/",
+      "example": "The oven is hot."
+    },
+    {
+      "id": "barred",
+      "word": "barred",
+      "translation": "parmaklıklı",
+      "pronunciation": "/bɑːd/",
+      "example": "Hansel waits behind a barred door."
+    },
+    {
+      "id": "bone",
+      "word": "bone",
+      "translation": "kemik",
+      "pronunciation": "/bəʊn/",
+      "example": "He holds out a bone."
+    },
+    {
+      "id": "jewels",
+      "word": "jewels",
+      "translation": "mücevherler",
+      "pronunciation": "/ˈdʒuːəlz/",
+      "example": "They find jewels in the house."
+    },
+    {
+      "id": "statue",
+      "word": "statue",
+      "translation": "heykel",
+      "pronunciation": "/ˈstætʃuː/",
+      "example": "The statue stands above the city."
+    },
+    {
+      "id": "sapphires",
+      "word": "sapphires",
+      "translation": "safirler",
+      "pronunciation": "/ˈsæfaɪəz/",
+      "example": "The statue has sapphires for eyes."
+    },
+    {
+      "id": "ruby",
+      "word": "ruby",
+      "translation": "yakut",
+      "pronunciation": "/ˈruːbi/",
+      "example": "A ruby shines on his sword."
+    },
+    {
+      "id": "swallow",
+      "word": "swallow",
+      "translation": "kırlangıç",
+      "pronunciation": "/ˈswɒləʊ/",
+      "example": "The swallow flies across the city."
+    },
+    {
+      "id": "suffering",
+      "word": "suffering",
+      "translation": "acı",
+      "pronunciation": "/ˈsʌfərɪŋ/",
+      "example": "The Prince sees the people's suffering."
+    },
+    {
+      "id": "lead",
+      "word": "lead",
+      "translation": "kurşun",
+      "pronunciation": "/led/",
+      "example": "The statue's heart is made of lead."
+    },
+    {
+      "id": "precious",
+      "word": "precious",
+      "translation": "çok değerli",
+      "pronunciation": "/ˈpreʃəs/",
+      "example": "These are the most precious things."
+    },
+    {
+      "id": "angel",
+      "word": "angel",
+      "translation": "melek",
+      "pronunciation": "/ˈeɪndʒl/",
+      "example": "An angel chooses the heart and the bird."
+    },
+    {
+      "id": "giant",
+      "word": "giant",
+      "translation": "dev",
+      "pronunciation": "/ˈdʒaɪənt/",
+      "example": "The giant owns a garden."
+    },
+    {
+      "id": "selfish",
+      "word": "selfish",
+      "translation": "bencil",
+      "pronunciation": "/ˈselfɪʃ/",
+      "example": "The selfish giant builds a wall."
+    },
+    {
+      "id": "blossoms",
+      "word": "blossoms",
+      "translation": "ağaç çiçekleri",
+      "pronunciation": "/ˈblɒsəmz/",
+      "example": "White blossoms cover the tree."
+    },
+    {
+      "id": "frost",
+      "word": "frost",
+      "translation": "don",
+      "pronunciation": "/frɒst/",
+      "example": "Frost covers the empty garden."
+    },
+    {
+      "id": "knelt",
+      "word": "knelt",
+      "translation": "diz çöktü",
+      "pronunciation": "/nelt/",
+      "example": "The giant knelt before the child."
+    },
+    {
+      "id": "paradise",
+      "word": "paradise",
+      "translation": "cennet",
+      "pronunciation": "/ˈpærədaɪs/",
+      "example": "The child invites him to Paradise."
+    },
+    {
+      "id": "playground",
+      "word": "playground",
+      "translation": "oyun alanı",
+      "pronunciation": "/ˈpleɪɡraʊnd/",
+      "example": "The children miss their playground."
+    },
+    {
+      "id": "wages",
+      "word": "wages",
+      "translation": "ücret",
+      "pronunciation": "/ˈweɪdʒɪz/",
+      "example": "Jim's wages have fallen."
+    },
+    {
+      "id": "savings",
+      "word": "savings",
+      "translation": "birikim",
+      "pronunciation": "/ˈseɪvɪŋz/",
+      "example": "Della counts her savings."
+    },
+    {
+      "id": "inherited",
+      "word": "inherited",
+      "translation": "miras aldı",
+      "pronunciation": "/ɪnˈherɪtɪd/",
+      "example": "Jim inherited a gold watch."
+    },
+    {
+      "id": "platinum",
+      "word": "platinum",
+      "translation": "platin",
+      "pronunciation": "/ˈplætɪnəm/",
+      "example": "Della buys a platinum chain."
+    },
+    {
+      "id": "chain",
+      "word": "chain",
+      "translation": "zincir",
+      "pronunciation": "/tʃeɪn/",
+      "example": "The chain is for Jim's watch."
+    },
+    {
+      "id": "combs",
+      "word": "combs",
+      "translation": "taraklar",
+      "pronunciation": "/kəʊmz/",
+      "example": "Jim gives Della expensive combs."
+    },
+    {
+      "id": "possession",
+      "word": "possession",
+      "translation": "eşya",
+      "pronunciation": "/pəˈzeʃn/",
+      "example": "Each gives up a treasured possession."
+    },
+    {
+      "id": "gift",
+      "word": "gift",
+      "translation": "hediye",
+      "pronunciation": "/ɡɪft/",
+      "example": "Della wants to buy a gift."
+    },
+    {
+      "id": "appointment",
+      "word": "appointment",
+      "translation": "randevu",
+      "pronunciation": "/əˈpɔɪntmənt/",
+      "example": "Bob keeps an old appointment."
+    },
+    {
+      "id": "cigar",
+      "word": "cigar",
+      "translation": "puro",
+      "pronunciation": "/sɪˈɡɑː(r)/",
+      "example": "The man lights his cigar."
+    },
+    {
+      "id": "scar",
+      "word": "scar",
+      "translation": "yara izi",
+      "pronunciation": "/skɑː(r)/",
+      "example": "A small scar marks his face."
+    },
+    {
+      "id": "detective",
+      "word": "detective",
+      "translation": "dedektif",
+      "pronunciation": "/dɪˈtektɪv/",
+      "example": "The stranger is a detective."
+    },
+    {
+      "id": "arrest",
+      "word": "arrest",
+      "translation": "gözaltı",
+      "pronunciation": "/əˈrest/",
+      "example": "Bob is under arrest."
+    },
+    {
+      "id": "flame",
+      "word": "flame",
+      "translation": "alev",
+      "pronunciation": "/fleɪm/",
+      "example": "The flame lights his face."
     }
   ],
   "stories": [
@@ -744,6 +1339,1613 @@
           "id": "attic-letter-18",
           "english": "Nora realized that the chest had held something more valuable than a secret: a chance to begin again.",
           "turkish": "Nora sandığın bir sırdan daha değerli bir şey sakladığını fark etti: yeniden başlamak için bir fırsat."
+        }
+      ]
+    },
+    {
+      "id": "classic-tortoise-hare",
+      "title": "The Tortoise and the Hare",
+      "author": "Aesop",
+      "level": "A1",
+      "genre": "Macera",
+      "description": "Tavşan ve Kaplumbağa. Hızlı bir tavşan ile kararlı bir kaplumbağanın yarışı. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_tortoise_hare",
+      "sentences": [
+        {
+          "id": "cl-tortoise-hare-01",
+          "english": "A hare sees a tortoise on the road.",
+          "turkish": "Bir tavşan yolda bir kaplumbağa görür."
+        },
+        {
+          "id": "cl-tortoise-hare-02",
+          "english": "The hare laughs at the tortoise.",
+          "turkish": "Tavşan kaplumbağaya güler."
+        },
+        {
+          "id": "cl-tortoise-hare-03",
+          "english": "\"You are so slow!\" he says.",
+          "turkish": "\"Çok yavaşsın!\" der."
+        },
+        {
+          "id": "cl-tortoise-hare-04",
+          "english": "\"I can win a race,\" says the tortoise.",
+          "turkish": "\"Bir yarışı kazanabilirim,\" der kaplumbağa."
+        },
+        {
+          "id": "cl-tortoise-hare-05",
+          "english": "The hare laughs again, but he agrees.",
+          "turkish": "Tavşan yine güler ama kabul eder."
+        },
+        {
+          "id": "cl-tortoise-hare-06",
+          "english": "A fox shows them the finish line.",
+          "turkish": "Bir tilki onlara bitiş çizgisini gösterir."
+        },
+        {
+          "id": "cl-tortoise-hare-07",
+          "english": "The race starts, and the hare runs fast.",
+          "turkish": "Yarış başlar ve tavşan hızla koşar."
+        },
+        {
+          "id": "cl-tortoise-hare-08",
+          "english": "The tortoise walks slowly along the path.",
+          "turkish": "Kaplumbağa patikada yavaşça yürür."
+        },
+        {
+          "id": "cl-tortoise-hare-09",
+          "english": "The hare is far ahead.",
+          "turkish": "Tavşan çok öndedir."
+        },
+        {
+          "id": "cl-tortoise-hare-10",
+          "english": "\"I have time for a rest,\" he thinks.",
+          "turkish": "\"Dinlenmek için zamanım var,\" diye düşünür."
+        },
+        {
+          "id": "cl-tortoise-hare-11",
+          "english": "He lies down and falls asleep.",
+          "turkish": "Uzanır ve uykuya dalar."
+        },
+        {
+          "id": "cl-tortoise-hare-12",
+          "english": "The tortoise does not stop.",
+          "turkish": "Kaplumbağa durmaz."
+        },
+        {
+          "id": "cl-tortoise-hare-13",
+          "english": "Step by step, she reaches the finish line.",
+          "turkish": "Adım adım bitiş çizgisine ulaşır."
+        },
+        {
+          "id": "cl-tortoise-hare-14",
+          "english": "The hare wakes up and runs.",
+          "turkish": "Tavşan uyanır ve koşar."
+        },
+        {
+          "id": "cl-tortoise-hare-15",
+          "english": "But the tortoise is already there.",
+          "turkish": "Ama kaplumbağa çoktan oradadır."
+        },
+        {
+          "id": "cl-tortoise-hare-16",
+          "english": "Slow and steady work wins the race.",
+          "turkish": "Yavaş ve kararlı bir çaba yarışı kazandırır."
+        }
+      ]
+    },
+    {
+      "id": "classic-lion-mouse",
+      "title": "The Lion and the Mouse",
+      "author": "Aesop",
+      "level": "A1",
+      "genre": "Macera",
+      "description": "Aslan ve Fare. Küçük bir farenin büyük bir dostuna yardımı. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_lion_mouse",
+      "sentences": [
+        {
+          "id": "cl-lion-mouse-01",
+          "english": "A lion sleeps under a tree.",
+          "turkish": "Bir aslan ağacın altında uyur."
+        },
+        {
+          "id": "cl-lion-mouse-02",
+          "english": "A little mouse runs across his face.",
+          "turkish": "Küçük bir fare yüzünün üzerinden koşar."
+        },
+        {
+          "id": "cl-lion-mouse-03",
+          "english": "The lion wakes up and catches the mouse.",
+          "turkish": "Aslan uyanır ve fareyi yakalar."
+        },
+        {
+          "id": "cl-lion-mouse-04",
+          "english": "\"Please let me go,\" says the mouse.",
+          "turkish": "\"Lütfen beni bırak,\" der fare."
+        },
+        {
+          "id": "cl-lion-mouse-05",
+          "english": "\"One day, I can help you.\"",
+          "turkish": "\"Bir gün sana yardım edebilirim.\""
+        },
+        {
+          "id": "cl-lion-mouse-06",
+          "english": "The lion laughs at this little animal.",
+          "turkish": "Aslan bu küçük hayvana güler."
+        },
+        {
+          "id": "cl-lion-mouse-07",
+          "english": "But he opens his paw and lets her go.",
+          "turkish": "Ama pençesini açar ve onu bırakır."
+        },
+        {
+          "id": "cl-lion-mouse-08",
+          "english": "Later, hunters catch the lion.",
+          "turkish": "Daha sonra avcılar aslanı yakalar."
+        },
+        {
+          "id": "cl-lion-mouse-09",
+          "english": "They tie him to the ground with strong ropes.",
+          "turkish": "Onu sağlam iplerle yere bağlarlar."
+        },
+        {
+          "id": "cl-lion-mouse-10",
+          "english": "The lion cannot move, and he roars.",
+          "turkish": "Aslan hareket edemez ve kükrer."
+        },
+        {
+          "id": "cl-lion-mouse-11",
+          "english": "The mouse hears him and runs to help.",
+          "turkish": "Fare onu duyar ve yardıma koşar."
+        },
+        {
+          "id": "cl-lion-mouse-12",
+          "english": "Her teeth are small but sharp.",
+          "turkish": "Dişleri küçük ama keskindir."
+        },
+        {
+          "id": "cl-lion-mouse-13",
+          "english": "She bites through the ropes.",
+          "turkish": "İpleri kemirerek koparır."
+        },
+        {
+          "id": "cl-lion-mouse-14",
+          "english": "Now the lion is free.",
+          "turkish": "Artık aslan özgürdür."
+        },
+        {
+          "id": "cl-lion-mouse-15",
+          "english": "He thanks his tiny friend.",
+          "turkish": "Minicik dostuna teşekkür eder."
+        },
+        {
+          "id": "cl-lion-mouse-16",
+          "english": "Even a small friend can give great help.",
+          "turkish": "Küçük bir dost bile büyük bir yardımda bulunabilir."
+        }
+      ]
+    },
+    {
+      "id": "classic-fox-grapes",
+      "title": "The Fox and the Grapes",
+      "author": "Aesop",
+      "level": "A1",
+      "genre": "Macera",
+      "description": "Tilki ve Üzümler. Ulaşamadığı üzümler hakkında fikrini değiştiren bir tilki. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_fox_grapes",
+      "sentences": [
+        {
+          "id": "cl-fox-grapes-01",
+          "english": "A hungry fox walks past a garden.",
+          "turkish": "Aç bir tilki bir bahçenin yanından geçer."
+        },
+        {
+          "id": "cl-fox-grapes-02",
+          "english": "She sees some grapes on a vine.",
+          "turkish": "Bir asmada üzümler görür."
+        },
+        {
+          "id": "cl-fox-grapes-03",
+          "english": "The grapes are dark and ripe.",
+          "turkish": "Üzümler koyu renkli ve olgundur."
+        },
+        {
+          "id": "cl-fox-grapes-04",
+          "english": "\"Those grapes look sweet,\" she says.",
+          "turkish": "\"Şu üzümler tatlı görünüyor,\" der."
+        },
+        {
+          "id": "cl-fox-grapes-05",
+          "english": "She wants to eat them.",
+          "turkish": "Onları yemek ister."
+        },
+        {
+          "id": "cl-fox-grapes-06",
+          "english": "But the grapes are very high.",
+          "turkish": "Ama üzümler çok yüksektedir."
+        },
+        {
+          "id": "cl-fox-grapes-07",
+          "english": "The fox jumps into the air.",
+          "turkish": "Tilki havaya sıçrar."
+        },
+        {
+          "id": "cl-fox-grapes-08",
+          "english": "She cannot reach the grapes.",
+          "turkish": "Üzümlere ulaşamaz."
+        },
+        {
+          "id": "cl-fox-grapes-09",
+          "english": "She tries again and again.",
+          "turkish": "Tekrar tekrar dener."
+        },
+        {
+          "id": "cl-fox-grapes-10",
+          "english": "At last, she is tired.",
+          "turkish": "Sonunda yorulur."
+        },
+        {
+          "id": "cl-fox-grapes-11",
+          "english": "She turns away from the vine.",
+          "turkish": "Asmaya arkasını döner."
+        },
+        {
+          "id": "cl-fox-grapes-12",
+          "english": "\"Those grapes are sour,\" she says.",
+          "turkish": "\"Şu üzümler ekşi,\" der."
+        },
+        {
+          "id": "cl-fox-grapes-13",
+          "english": "\"They are not ripe at all.\"",
+          "turkish": "\"Hiç de olgun değiller.\""
+        },
+        {
+          "id": "cl-fox-grapes-14",
+          "english": "She walks away without any grapes.",
+          "turkish": "Hiç üzüm alamadan uzaklaşır."
+        },
+        {
+          "id": "cl-fox-grapes-15",
+          "english": "She hides her disappointment with unkind words.",
+          "turkish": "Hayal kırıklığını kırıcı sözlerle gizler."
+        }
+      ]
+    },
+    {
+      "id": "classic-ants-grasshopper",
+      "title": "The Ants and the Grasshopper",
+      "author": "Aesop",
+      "level": "A1",
+      "genre": "Macera",
+      "description": "Karıncalar ve Çekirge. Kış hazırlığı ile günü yaşama arasındaki farkı anlatan bir fabl. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_ants_grasshopper",
+      "sentences": [
+        {
+          "id": "cl-ants-grasshopper-01",
+          "english": "It is a bright winter day.",
+          "turkish": "Aydınlık bir kış günüdür."
+        },
+        {
+          "id": "cl-ants-grasshopper-02",
+          "english": "Some ants bring their grain outside.",
+          "turkish": "Birkaç karınca tahıllarını dışarı çıkarır."
+        },
+        {
+          "id": "cl-ants-grasshopper-03",
+          "english": "They spread it out to dry.",
+          "turkish": "Kuruması için onu yere sererler."
+        },
+        {
+          "id": "cl-ants-grasshopper-04",
+          "english": "A grasshopper comes along the path.",
+          "turkish": "Bir çekirge patikadan gelir."
+        },
+        {
+          "id": "cl-ants-grasshopper-05",
+          "english": "He is cold and hungry.",
+          "turkish": "Üşümüştür ve açtır."
+        },
+        {
+          "id": "cl-ants-grasshopper-06",
+          "english": "\"Please give me some food,\" he says.",
+          "turkish": "\"Lütfen bana biraz yiyecek verin,\" der."
+        },
+        {
+          "id": "cl-ants-grasshopper-07",
+          "english": "The ants look at him.",
+          "turkish": "Karıncalar ona bakar."
+        },
+        {
+          "id": "cl-ants-grasshopper-08",
+          "english": "\"Why did you not store food in summer?\" they ask.",
+          "turkish": "\"Yazın neden yiyecek biriktirmedin?\" diye sorarlar."
+        },
+        {
+          "id": "cl-ants-grasshopper-09",
+          "english": "\"I was busy singing,\" says the grasshopper.",
+          "turkish": "\"Şarkı söylemekle meşguldüm,\" der çekirge."
+        },
+        {
+          "id": "cl-ants-grasshopper-10",
+          "english": "\"I sang all day long.\"",
+          "turkish": "\"Bütün gün şarkı söyledim.\""
+        },
+        {
+          "id": "cl-ants-grasshopper-11",
+          "english": "The ants do not offer him any grain.",
+          "turkish": "Karıncalar ona hiç tahıl vermez."
+        },
+        {
+          "id": "cl-ants-grasshopper-12",
+          "english": "\"You sang in summer,\" they say.",
+          "turkish": "\"Yazın şarkı söyledin,\" derler."
+        },
+        {
+          "id": "cl-ants-grasshopper-13",
+          "english": "\"Now you can dance without supper.\"",
+          "turkish": "\"Şimdi de akşam yemeği yemeden dans edebilirsin.\""
+        },
+        {
+          "id": "cl-ants-grasshopper-14",
+          "english": "The grasshopper has nothing to eat.",
+          "turkish": "Çekirgenin yiyecek hiçbir şeyi yoktur."
+        },
+        {
+          "id": "cl-ants-grasshopper-15",
+          "english": "Summer is the time to prepare for winter.",
+          "turkish": "Yaz, kışa hazırlanma zamanıdır."
+        }
+      ]
+    },
+    {
+      "id": "classic-red-riding-hood",
+      "title": "Little Red Riding Hood",
+      "author": "Jacob and Wilhelm Grimm",
+      "level": "A2",
+      "genre": "Macera",
+      "description": "Kırmızı Başlıklı Kız. Büyükannesine giderken yoldan ayrılan bir kızın ormandaki macerası. A2 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_red_riding_hood",
+      "sentences": [
+        {
+          "id": "cl-red-riding-hood-01",
+          "english": "Everyone called the girl Little Red Riding Hood because of her red cap.",
+          "turkish": "Kırmızı başlığı yüzünden herkes kıza Kırmızı Başlıklı Kız derdi."
+        },
+        {
+          "id": "cl-red-riding-hood-02",
+          "english": "One day, her mother asked her to visit her sick grandmother.",
+          "turkish": "Bir gün annesi, hasta büyükannesini ziyaret etmesini istedi."
+        },
+        {
+          "id": "cl-red-riding-hood-03",
+          "english": "She gave the girl cake and a bottle of wine.",
+          "turkish": "Kıza kek ve bir şişe şarap verdi."
+        },
+        {
+          "id": "cl-red-riding-hood-04",
+          "english": "\"Stay on the path through the forest,\" her mother said.",
+          "turkish": "\"Ormandaki patikadan ayrılma,\" dedi annesi."
+        },
+        {
+          "id": "cl-red-riding-hood-05",
+          "english": "The girl promised to be careful and set off.",
+          "turkish": "Kız dikkatli olacağına söz verip yola çıktı."
+        },
+        {
+          "id": "cl-red-riding-hood-06",
+          "english": "On the way, a wolf asked where she was going.",
+          "turkish": "Yolda bir kurt nereye gittiğini sordu."
+        },
+        {
+          "id": "cl-red-riding-hood-07",
+          "english": "She told him about the little house under the oak trees.",
+          "turkish": "Ona meşe ağaçlarının altındaki küçük evi anlattı."
+        },
+        {
+          "id": "cl-red-riding-hood-08",
+          "english": "The wolf suggested picking flowers for her grandmother.",
+          "turkish": "Kurt, büyükannesi için çiçek toplamasını önerdi."
+        },
+        {
+          "id": "cl-red-riding-hood-09",
+          "english": "While she left the path, he ran straight to the house.",
+          "turkish": "Kız patikadan ayrılırken kurt doğruca eve koştu."
+        },
+        {
+          "id": "cl-red-riding-hood-10",
+          "english": "He pretended to be the girl, and the grandmother told him to come in.",
+          "turkish": "Kızmış gibi davrandı ve büyükanne ona içeri girmesini söyledi."
+        },
+        {
+          "id": "cl-red-riding-hood-11",
+          "english": "The wolf swallowed her, put on her cap, and lay in her bed.",
+          "turkish": "Kurt onu yuttu, başlığını taktı ve yatağına uzandı."
+        },
+        {
+          "id": "cl-red-riding-hood-12",
+          "english": "When the girl arrived, the door was open.",
+          "turkish": "Kız geldiğinde kapı açıktı."
+        },
+        {
+          "id": "cl-red-riding-hood-13",
+          "english": "Her grandmother looked very strange under the blankets.",
+          "turkish": "Büyükannesi battaniyelerin altında çok tuhaf görünüyordu."
+        },
+        {
+          "id": "cl-red-riding-hood-14",
+          "english": "\"What big ears you have!\" the girl said.",
+          "turkish": "\"Ne büyük kulakların var!\" dedi kız."
+        },
+        {
+          "id": "cl-red-riding-hood-15",
+          "english": "\"They help me hear you better,\" answered the wolf.",
+          "turkish": "\"Seni daha iyi duymamı sağlıyorlar,\" diye cevap verdi kurt."
+        },
+        {
+          "id": "cl-red-riding-hood-16",
+          "english": "The girl asked about his big eyes and large hands, too.",
+          "turkish": "Kız onun büyük gözlerini ve kocaman ellerini de sordu."
+        },
+        {
+          "id": "cl-red-riding-hood-17",
+          "english": "Then she noticed his enormous mouth.",
+          "turkish": "Sonra onun kocaman ağzını fark etti."
+        },
+        {
+          "id": "cl-red-riding-hood-18",
+          "english": "\"It helps me eat you!\" he cried, and swallowed her.",
+          "turkish": "\"Seni yememi sağlıyor!\" diye bağırdı ve onu yuttu."
+        },
+        {
+          "id": "cl-red-riding-hood-19",
+          "english": "Soon the wolf fell asleep and began to snore.",
+          "turkish": "Çok geçmeden kurt uykuya daldı ve horlamaya başladı."
+        },
+        {
+          "id": "cl-red-riding-hood-20",
+          "english": "A hunter passing the house heard the noise.",
+          "turkish": "Evin önünden geçen bir avcı gürültüyü duydu."
+        },
+        {
+          "id": "cl-red-riding-hood-21",
+          "english": "He found the wolf and thought the grandmother might still be alive.",
+          "turkish": "Kurdu buldu ve büyükannenin hâlâ hayatta olabileceğini düşündü."
+        },
+        {
+          "id": "cl-red-riding-hood-22",
+          "english": "He carefully cut open the sleeping wolf's belly with scissors.",
+          "turkish": "Uyuyan kurdun karnını makasla dikkatlice açtı."
+        },
+        {
+          "id": "cl-red-riding-hood-23",
+          "english": "The girl and her grandmother climbed out alive.",
+          "turkish": "Kız ile büyükannesi sağ olarak dışarı çıktı."
+        },
+        {
+          "id": "cl-red-riding-hood-24",
+          "english": "They filled the wolf's belly with stones, and he died when he tried to run.",
+          "turkish": "Kurdun karnını taşlarla doldurdular ve kurt koşmaya çalıştığında öldü."
+        },
+        {
+          "id": "cl-red-riding-hood-25",
+          "english": "The grandmother enjoyed her food, and the girl remembered her mother's warning.",
+          "turkish": "Büyükanne yemeğini afiyetle yedi ve kız annesinin uyarısını hatırladı."
+        },
+        {
+          "id": "cl-red-riding-hood-26",
+          "english": "On a later visit, another wolf tried to stop the girl.",
+          "turkish": "Daha sonraki bir ziyaretinde başka bir kurt kızı durdurmaya çalıştı."
+        },
+        {
+          "id": "cl-red-riding-hood-27",
+          "english": "This time, she went straight to her grandmother and told her everything.",
+          "turkish": "Bu kez doğruca büyükannesine gidip ona her şeyi anlattı."
+        },
+        {
+          "id": "cl-red-riding-hood-28",
+          "english": "They kept the door shut and filled a trough with water that smelled of sausages.",
+          "turkish": "Kapıyı kapalı tuttular ve bir yalağı sosis kokulu suyla doldurdular."
+        },
+        {
+          "id": "cl-red-riding-hood-29",
+          "english": "The wolf leaned down from the roof, fell into the water, and drowned.",
+          "turkish": "Kurt çatıdan aşağı eğildi, suya düştü ve boğuldu."
+        },
+        {
+          "id": "cl-red-riding-hood-30",
+          "english": "The girl went home safely after listening to good advice.",
+          "turkish": "Kız iyi öğütleri dinleyerek güvenle evine döndü."
+        }
+      ]
+    },
+    {
+      "id": "classic-cinderella",
+      "title": "Cinderella",
+      "author": "Jacob and Wilhelm Grimm",
+      "level": "A2",
+      "genre": "Macera",
+      "description": "Külkedisi. Grimm anlatısındaki fındık ağacı, yardımcı kuşlar ve altın ayakkabı. A2 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_cinderella",
+      "sentences": [
+        {
+          "id": "cl-cinderella-01",
+          "english": "After her mother died, a young girl lived with her father and his new family.",
+          "turkish": "Annesi öldükten sonra genç bir kız, babası ve onun yeni ailesiyle yaşadı."
+        },
+        {
+          "id": "cl-cinderella-02",
+          "english": "Her stepmother and stepsisters made her do all the hard work.",
+          "turkish": "Üvey annesi ile üvey kız kardeşleri bütün zor işleri ona yaptırıyordu."
+        },
+        {
+          "id": "cl-cinderella-03",
+          "english": "She slept beside the fire, so they called her Cinderella.",
+          "turkish": "Ocağın yanında uyuduğu için ona Külkedisi diyorlardı."
+        },
+        {
+          "id": "cl-cinderella-04",
+          "english": "When her father went away, she asked him for a branch.",
+          "turkish": "Babası yolculuğa çıktığında ondan bir dal istedi."
+        },
+        {
+          "id": "cl-cinderella-05",
+          "english": "She planted the hazel branch on her mother's grave.",
+          "turkish": "Fındık dalını annesinin mezarına dikti."
+        },
+        {
+          "id": "cl-cinderella-06",
+          "english": "It grew into a tree, and a white bird came to it.",
+          "turkish": "Dal bir ağaca dönüştü ve ağaca beyaz bir kuş geldi."
+        },
+        {
+          "id": "cl-cinderella-07",
+          "english": "The bird brought her things she wished for.",
+          "turkish": "Kuş ona dilediği şeyleri getiriyordu."
+        },
+        {
+          "id": "cl-cinderella-08",
+          "english": "One day, the king invited young women to a three-day festival.",
+          "turkish": "Bir gün kral genç kadınları üç günlük bir şenliğe davet etti."
+        },
+        {
+          "id": "cl-cinderella-09",
+          "english": "His son hoped to find a bride there.",
+          "turkish": "Oğlu orada evleneceği kişiyi bulmayı umuyordu."
+        },
+        {
+          "id": "cl-cinderella-10",
+          "english": "Cinderella wanted to go, but her stepmother gave her more work.",
+          "turkish": "Külkedisi gitmek istiyordu ama üvey annesi ona daha fazla iş verdi."
+        },
+        {
+          "id": "cl-cinderella-11",
+          "english": "Birds helped her pick lentils out of the ashes.",
+          "turkish": "Kuşlar küllerin arasından mercimekleri ayıklamasına yardım etti."
+        },
+        {
+          "id": "cl-cinderella-12",
+          "english": "Even then, her stepmother would not let her go.",
+          "turkish": "Buna rağmen üvey annesi gitmesine izin vermedi."
+        },
+        {
+          "id": "cl-cinderella-13",
+          "english": "Cinderella went to the hazel tree and asked for help.",
+          "turkish": "Külkedisi fındık ağacına gidip yardım istedi."
+        },
+        {
+          "id": "cl-cinderella-14",
+          "english": "The bird gave her a beautiful dress and fine slippers.",
+          "turkish": "Kuş ona güzel bir elbise ve zarif ayakkabılar verdi."
+        },
+        {
+          "id": "cl-cinderella-15",
+          "english": "At the palace, the prince danced only with her.",
+          "turkish": "Sarayda prens yalnızca onunla dans etti."
+        },
+        {
+          "id": "cl-cinderella-16",
+          "english": "She escaped before he could find out where she lived.",
+          "turkish": "Prens nerede yaşadığını öğrenemeden oradan kaçtı."
+        },
+        {
+          "id": "cl-cinderella-17",
+          "english": "She returned on the next two days in even finer dresses.",
+          "turkish": "Sonraki iki gün daha da güzel elbiselerle geri döndü."
+        },
+        {
+          "id": "cl-cinderella-18",
+          "english": "On the third evening, the prince put sticky pitch on the stairs.",
+          "turkish": "Üçüncü akşam prens merdivenlere yapışkan zift sürdü."
+        },
+        {
+          "id": "cl-cinderella-19",
+          "english": "As she hurried away, one golden slipper stuck there.",
+          "turkish": "Kız aceleyle uzaklaşırken altın ayakkabılarından biri oraya yapıştı."
+        },
+        {
+          "id": "cl-cinderella-20",
+          "english": "The prince said he would marry the woman whose foot fitted it.",
+          "turkish": "Prens, ayakkabı ayağına uyan kadınla evleneceğini söyledi."
+        },
+        {
+          "id": "cl-cinderella-21",
+          "english": "Each stepsister injured her foot to force it into the slipper.",
+          "turkish": "Üvey kız kardeşlerin her biri ayağını ayakkabıya zorla sokmak için yaraladı."
+        },
+        {
+          "id": "cl-cinderella-22",
+          "english": "But the birds warned the prince, and he discovered the blood.",
+          "turkish": "Ama kuşlar prensi uyardı ve prens kanı fark etti."
+        },
+        {
+          "id": "cl-cinderella-23",
+          "english": "At last, he insisted on seeing Cinderella.",
+          "turkish": "Sonunda Külkedisi'ni görmekte ısrar etti."
+        },
+        {
+          "id": "cl-cinderella-24",
+          "english": "She washed her face and tried on the golden slipper.",
+          "turkish": "Kız yüzünü yıkadı ve altın ayakkabıyı denedi."
+        },
+        {
+          "id": "cl-cinderella-25",
+          "english": "It fitted perfectly, and the prince recognized his dancing partner.",
+          "turkish": "Ayakkabı tam oldu ve prens dans ettiği kızı tanıdı."
+        },
+        {
+          "id": "cl-cinderella-26",
+          "english": "He took her away, with two white birds sitting on her shoulders.",
+          "turkish": "Omuzlarında iki beyaz kuş oturan kızı yanına alıp götürdü."
+        },
+        {
+          "id": "cl-cinderella-27",
+          "english": "At the wedding, the stepsisters tried to share Cinderella's good fortune.",
+          "turkish": "Düğünde üvey kız kardeşleri Külkedisi'nin mutluluğundan pay almaya çalıştı."
+        },
+        {
+          "id": "cl-cinderella-28",
+          "english": "The birds punished their cruelty by taking away their sight.",
+          "turkish": "Kuşlar onların görme yetisini alarak zalimliklerini cezalandırdı."
+        }
+      ]
+    },
+    {
+      "id": "classic-bremen-musicians",
+      "title": "The Bremen Town Musicians",
+      "author": "Jacob and Wilhelm Grimm",
+      "level": "A2",
+      "genre": "Macera",
+      "description": "Bremen Mızıkacıları. Yeni bir hayat arayan dört yaşlı hayvanın dayanışması. A2 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_bremen_musicians",
+      "sentences": [
+        {
+          "id": "cl-bremen-musicians-01",
+          "english": "An old donkey could no longer carry heavy sacks for his master.",
+          "turkish": "Yaşlı bir eşek artık sahibi için ağır çuvallar taşıyamıyordu."
+        },
+        {
+          "id": "cl-bremen-musicians-02",
+          "english": "Afraid of what would happen, he ran away toward Bremen.",
+          "turkish": "Başına geleceklerden korkarak Bremen'e doğru kaçtı."
+        },
+        {
+          "id": "cl-bremen-musicians-03",
+          "english": "He wanted to earn his living as a musician.",
+          "turkish": "Müzisyen olarak geçimini sağlamak istiyordu."
+        },
+        {
+          "id": "cl-bremen-musicians-04",
+          "english": "On the road, he met an old dog who had escaped from his master.",
+          "turkish": "Yolda sahibinden kaçmış yaşlı bir köpekle karşılaştı."
+        },
+        {
+          "id": "cl-bremen-musicians-05",
+          "english": "\"Come with me, and we can make music together,\" said the donkey.",
+          "turkish": "\"Benimle gel, birlikte müzik yapabiliriz,\" dedi eşek."
+        },
+        {
+          "id": "cl-bremen-musicians-06",
+          "english": "Next, they found a cat whose owner no longer wanted her.",
+          "turkish": "Sonra sahibinin artık istemediği bir kedi buldular."
+        },
+        {
+          "id": "cl-bremen-musicians-07",
+          "english": "She joined them, and soon they met a rooster on a gate.",
+          "turkish": "Kedi onlara katıldı ve çok geçmeden bir kapının üzerinde bir horozla karşılaştılar."
+        },
+        {
+          "id": "cl-bremen-musicians-08",
+          "english": "The rooster was going to become soup the next day.",
+          "turkish": "Horoz ertesi gün çorba yapılacaktı."
+        },
+        {
+          "id": "cl-bremen-musicians-09",
+          "english": "He agreed that being a musician was a much better plan.",
+          "turkish": "Müzisyen olmanın çok daha iyi bir plan olduğunu kabul etti."
+        },
+        {
+          "id": "cl-bremen-musicians-10",
+          "english": "By evening, the four animals were still far from Bremen.",
+          "turkish": "Akşam olduğunda dört hayvan hâlâ Bremen'den uzaktaydı."
+        },
+        {
+          "id": "cl-bremen-musicians-11",
+          "english": "They rested in a forest, where the rooster noticed a light.",
+          "turkish": "Bir ormanda dinlendiler ve horoz orada bir ışık fark etti."
+        },
+        {
+          "id": "cl-bremen-musicians-12",
+          "english": "Following it, they found a house full of robbers.",
+          "turkish": "Işığı takip ederek içi haydutlarla dolu bir ev buldular."
+        },
+        {
+          "id": "cl-bremen-musicians-13",
+          "english": "Through the window, the donkey saw a table covered with food.",
+          "turkish": "Eşek pencereden üzeri yiyeceklerle dolu bir masa gördü."
+        },
+        {
+          "id": "cl-bremen-musicians-14",
+          "english": "The hungry friends made a plan to frighten the robbers away.",
+          "turkish": "Aç dostlar haydutları korkutup kaçırmak için bir plan yaptı."
+        },
+        {
+          "id": "cl-bremen-musicians-15",
+          "english": "The dog climbed onto the donkey, and the cat climbed onto the dog.",
+          "turkish": "Köpek eşeğin, kedi de köpeğin üzerine çıktı."
+        },
+        {
+          "id": "cl-bremen-musicians-16",
+          "english": "The rooster stood on top of the cat.",
+          "turkish": "Horoz kedinin tepesinde durdu."
+        },
+        {
+          "id": "cl-bremen-musicians-17",
+          "english": "Together they made a terrible noise and burst through the window.",
+          "turkish": "Birlikte korkunç bir gürültü çıkarıp pencereden içeri daldılar."
+        },
+        {
+          "id": "cl-bremen-musicians-18",
+          "english": "Thinking a ghost had arrived, the robbers ran into the forest.",
+          "turkish": "Bir hayaletin geldiğini sanan haydutlar ormana kaçtı."
+        },
+        {
+          "id": "cl-bremen-musicians-19",
+          "english": "The animals ate their supper and found places to sleep.",
+          "turkish": "Hayvanlar akşam yemeklerini yedi ve uyuyacak yerler buldu."
+        },
+        {
+          "id": "cl-bremen-musicians-20",
+          "english": "After midnight, one robber returned to look inside.",
+          "turkish": "Gece yarısından sonra bir haydut içeri bakmak için döndü."
+        },
+        {
+          "id": "cl-bremen-musicians-21",
+          "english": "The cat scratched him, the dog bit him, and the donkey kicked him.",
+          "turkish": "Kedi onu tırmaladı, köpek ısırdı ve eşek tekmeledi."
+        },
+        {
+          "id": "cl-bremen-musicians-22",
+          "english": "Then the rooster called loudly from the roof.",
+          "turkish": "Sonra horoz çatıdan yüksek sesle öttü."
+        },
+        {
+          "id": "cl-bremen-musicians-23",
+          "english": "The frightened robber described a witch, an armed man, a monster, and a judge.",
+          "turkish": "Korkmuş haydut bir cadıdan, silahlı bir adamdan, bir canavardan ve bir yargıçtan söz etti."
+        },
+        {
+          "id": "cl-bremen-musicians-24",
+          "english": "None of the robbers dared to go back.",
+          "turkish": "Haydutların hiçbiri geri dönmeye cesaret edemedi."
+        },
+        {
+          "id": "cl-bremen-musicians-25",
+          "english": "The four friends liked their new home so much that they never left for Bremen.",
+          "turkish": "Dört dost yeni evlerini o kadar sevdi ki Bremen'e gitmek üzere bir daha yola çıkmadılar."
+        }
+      ]
+    },
+    {
+      "id": "classic-hansel-gretel",
+      "title": "Hansel and Gretel",
+      "author": "Jacob and Wilhelm Grimm",
+      "level": "A2",
+      "genre": "Macera",
+      "description": "Hansel ve Gretel. Ormanda bırakılan iki kardeşin cesaret ve zekâyla eve dönüşü. A2 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_hansel_gretel",
+      "sentences": [
+        {
+          "id": "cl-hansel-gretel-01",
+          "english": "Hansel and Gretel lived near a forest with their father and stepmother.",
+          "turkish": "Hansel ile Gretel, babaları ve üvey anneleriyle bir ormanın yakınında yaşıyordu."
+        },
+        {
+          "id": "cl-hansel-gretel-02",
+          "english": "The family had so little food that the stepmother wanted to leave the children in the forest.",
+          "turkish": "Ailenin yiyeceği o kadar azdı ki üvey anne çocukları ormanda bırakmak istedi."
+        },
+        {
+          "id": "cl-hansel-gretel-03",
+          "english": "Their father finally agreed, although it made him unhappy.",
+          "turkish": "Babaları, bu onu üzse de sonunda kabul etti."
+        },
+        {
+          "id": "cl-hansel-gretel-04",
+          "english": "Hansel heard the plan and filled his pocket with white pebbles.",
+          "turkish": "Hansel planı duydu ve cebini beyaz çakıl taşlarıyla doldurdu."
+        },
+        {
+          "id": "cl-hansel-gretel-05",
+          "english": "As they walked into the forest, he dropped the pebbles behind him.",
+          "turkish": "Ormana yürürlerken çakıl taşlarını arkasına bıraktı."
+        },
+        {
+          "id": "cl-hansel-gretel-06",
+          "english": "That night, the children followed the shining stones home.",
+          "turkish": "O gece çocuklar parlayan taşları izleyerek eve döndü."
+        },
+        {
+          "id": "cl-hansel-gretel-07",
+          "english": "When the family ran out of food again, their stepmother took them farther away.",
+          "turkish": "Ailenin yiyeceği yine tükenince üvey anneleri onları daha uzağa götürdü."
+        },
+        {
+          "id": "cl-hansel-gretel-08",
+          "english": "This time, Hansel could only drop bread crumbs on the path.",
+          "turkish": "Hansel bu kez patikaya yalnızca ekmek kırıntıları bırakabildi."
+        },
+        {
+          "id": "cl-hansel-gretel-09",
+          "english": "But birds ate the crumbs, and the children could not find their way back.",
+          "turkish": "Ama kuşlar kırıntıları yedi ve çocuklar dönüş yolunu bulamadı."
+        },
+        {
+          "id": "cl-hansel-gretel-10",
+          "english": "After wandering for days, they followed a white bird to a strange little house.",
+          "turkish": "Günlerce dolaştıktan sonra beyaz bir kuşu izleyerek tuhaf küçük bir eve ulaştılar."
+        },
+        {
+          "id": "cl-hansel-gretel-11",
+          "english": "Its walls were made of bread, its roof of cake, and its windows of sugar.",
+          "turkish": "Duvarları ekmekten, çatısı kekten, pencereleri ise şekerdendi."
+        },
+        {
+          "id": "cl-hansel-gretel-12",
+          "english": "The hungry children began to eat pieces of the house.",
+          "turkish": "Aç çocuklar evden parçalar yemeye başladı."
+        },
+        {
+          "id": "cl-hansel-gretel-13",
+          "english": "An old woman invited them in and gave them food and beds.",
+          "turkish": "Yaşlı bir kadın onları içeri davet edip yiyecek ve yatak verdi."
+        },
+        {
+          "id": "cl-hansel-gretel-14",
+          "english": "But she was a witch who wanted to eat them.",
+          "turkish": "Ama o, onları yemek isteyen bir cadıydı."
+        },
+        {
+          "id": "cl-hansel-gretel-15",
+          "english": "The next morning, she locked Hansel behind a barred door.",
+          "turkish": "Ertesi sabah Hansel'i demir parmaklıklı bir kapının arkasına kilitledi."
+        },
+        {
+          "id": "cl-hansel-gretel-16",
+          "english": "Gretel had to cook meals to make her brother fat.",
+          "turkish": "Gretel, kardeşini şişmanlatmak için yemekler pişirmek zorundaydı."
+        },
+        {
+          "id": "cl-hansel-gretel-17",
+          "english": "The witch could not see well and asked to feel Hansel's finger.",
+          "turkish": "Cadı iyi göremiyordu ve Hansel'in parmağını yoklamak istiyordu."
+        },
+        {
+          "id": "cl-hansel-gretel-18",
+          "english": "He held out a little bone instead, so she thought he was still thin.",
+          "turkish": "Hansel onun yerine küçük bir kemik uzattı, bu yüzden cadı onun hâlâ zayıf olduğunu sandı."
+        },
+        {
+          "id": "cl-hansel-gretel-19",
+          "english": "At last, the witch lost patience and decided to heat the oven.",
+          "turkish": "Sonunda cadının sabrı tükendi ve fırını ısıtmaya karar verdi."
+        },
+        {
+          "id": "cl-hansel-gretel-20",
+          "english": "She told Gretel to climb inside and check the heat.",
+          "turkish": "Gretel'e içeri girip sıcaklığı kontrol etmesini söyledi."
+        },
+        {
+          "id": "cl-hansel-gretel-21",
+          "english": "Gretel understood the danger and pretended not to know how.",
+          "turkish": "Gretel tehlikeyi anladı ve nasıl yapacağını bilmiyormuş gibi davrandı."
+        },
+        {
+          "id": "cl-hansel-gretel-22",
+          "english": "When the witch leaned in to show her, Gretel pushed her into the oven.",
+          "turkish": "Cadı ona göstermek için içeri eğildiğinde Gretel onu fırına itti."
+        },
+        {
+          "id": "cl-hansel-gretel-23",
+          "english": "She shut the door, and the witch died inside.",
+          "turkish": "Kapıyı kapattı ve cadı içeride öldü."
+        },
+        {
+          "id": "cl-hansel-gretel-24",
+          "english": "Gretel freed her brother, and they hugged each other.",
+          "turkish": "Gretel kardeşini kurtardı ve birbirlerine sarıldılar."
+        },
+        {
+          "id": "cl-hansel-gretel-25",
+          "english": "They found jewels in the house and filled their pockets.",
+          "turkish": "Evde mücevherler bulup ceplerini doldurdular."
+        },
+        {
+          "id": "cl-hansel-gretel-26",
+          "english": "On the way home, a duck carried them across some water, one at a time.",
+          "turkish": "Eve dönerken bir ördek onları suyun karşısına teker teker taşıdı."
+        },
+        {
+          "id": "cl-hansel-gretel-27",
+          "english": "Soon they recognized the forest and found their father's house.",
+          "turkish": "Çok geçmeden ormanı tanıdılar ve babalarının evini buldular."
+        },
+        {
+          "id": "cl-hansel-gretel-28",
+          "english": "Their stepmother had died, and their father welcomed them with joy.",
+          "turkish": "Üvey anneleri ölmüştü ve babaları onları sevinçle karşıladı."
+        },
+        {
+          "id": "cl-hansel-gretel-29",
+          "english": "The jewels ended their hunger, and the family lived happily together.",
+          "turkish": "Mücevherler açlıklarını sona erdirdi ve aile birlikte mutlu bir hayat sürdü."
+        }
+      ]
+    },
+    {
+      "id": "classic-happy-prince",
+      "title": "The Happy Prince",
+      "author": "Oscar Wilde",
+      "level": "B1",
+      "genre": "Günlük yaşam",
+      "description": "Mutlu Prens. Bir heykel ile bir kırlangıcın, şehrin yoksullarına yardım etmek için yaptıkları fedakârlık. B1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_happy_prince",
+      "sentences": [
+        {
+          "id": "cl-happy-prince-01",
+          "english": "High above the city stood a statue covered in thin leaves of gold.",
+          "turkish": "Şehrin yükseklerinde, ince altın yapraklarla kaplı bir heykel duruyordu."
+        },
+        {
+          "id": "cl-happy-prince-02",
+          "english": "Its eyes were blue sapphires, and a red ruby shone on its sword.",
+          "turkish": "Gözleri mavi safirlerdi ve kılıcında kırmızı bir yakut parlıyordu."
+        },
+        {
+          "id": "cl-happy-prince-03",
+          "english": "People admired the beautiful statue and called it the Happy Prince.",
+          "turkish": "İnsanlar güzel heykele hayran oluyor ve ona Mutlu Prens diyordu."
+        },
+        {
+          "id": "cl-happy-prince-04",
+          "english": "One evening, a swallow stopped at its feet on his way to Egypt.",
+          "turkish": "Bir akşam, Mısır'a gitmekte olan bir kırlangıç heykelin ayaklarının dibinde konakladı."
+        },
+        {
+          "id": "cl-happy-prince-05",
+          "english": "Drops fell on the bird, although there were no clouds in the sky.",
+          "turkish": "Gökyüzünde hiç bulut olmadığı hâlde kuşun üzerine damlalar düştü."
+        },
+        {
+          "id": "cl-happy-prince-06",
+          "english": "When he looked up, he realized that the Prince was crying.",
+          "turkish": "Yukarı baktığında Prens'in ağladığını fark etti."
+        },
+        {
+          "id": "cl-happy-prince-07",
+          "english": "While alive, the Prince had lived behind palace walls, far from other people's troubles.",
+          "turkish": "Prens hayattayken saray duvarlarının ardında, başkalarının dertlerinden uzakta yaşamıştı."
+        },
+        {
+          "id": "cl-happy-prince-08",
+          "english": "Now he could see the suffering that his comfortable life had hidden from him.",
+          "turkish": "Şimdi, rahat hayatının kendisinden gizlediği acıları görebiliyordu."
+        },
+        {
+          "id": "cl-happy-prince-09",
+          "english": "He asked the swallow to carry his ruby to a poor woman whose son was ill.",
+          "turkish": "Kırlangıçtan yakutunu, oğlu hasta olan yoksul bir kadına götürmesini istedi."
+        },
+        {
+          "id": "cl-happy-prince-10",
+          "english": "The bird wanted to leave for warmer lands, but agreed to stay one night.",
+          "turkish": "Kuş daha sıcak ülkelere gitmek istiyordu ama bir gece kalmayı kabul etti."
+        },
+        {
+          "id": "cl-happy-prince-11",
+          "english": "He left the ruby beside the woman's sewing things and cooled the boy with his wings.",
+          "turkish": "Yakutu kadının dikiş eşyalarının yanına bıraktı ve kanatlarıyla çocuğu serinletti."
+        },
+        {
+          "id": "cl-happy-prince-12",
+          "english": "When he returned, helping someone had made him feel strangely warm.",
+          "turkish": "Geri döndüğünde birine yardım etmek, içini tuhaf bir sıcaklıkla doldurmuştu."
+        },
+        {
+          "id": "cl-happy-prince-13",
+          "english": "The following night, the Prince noticed a young writer who had no food or fire.",
+          "turkish": "Ertesi gece Prens, yiyeceği ve yakacak ateşi olmayan genç bir yazar fark etti."
+        },
+        {
+          "id": "cl-happy-prince-14",
+          "english": "He asked the swallow to take one of his sapphire eyes to the writer.",
+          "turkish": "Kırlangıçtan safir gözlerinden birini yazara götürmesini istedi."
+        },
+        {
+          "id": "cl-happy-prince-15",
+          "english": "The bird was upset, but he carried out the Prince's request.",
+          "turkish": "Kuş üzülse de Prens'in isteğini yerine getirdi."
+        },
+        {
+          "id": "cl-happy-prince-16",
+          "english": "Next, the Prince saw a girl whose matches had fallen into the wet street.",
+          "turkish": "Sonra Prens, kibritleri ıslak sokağa düşmüş bir kız gördü."
+        },
+        {
+          "id": "cl-happy-prince-17",
+          "english": "Without money, she was afraid to return to her father.",
+          "turkish": "Para kazanamadığı için babasının yanına dönmekten korkuyordu."
+        },
+        {
+          "id": "cl-happy-prince-18",
+          "english": "The Prince gave her his second sapphire, even though this left him blind.",
+          "turkish": "Prens, kör kalmasına rağmen ikinci safirini de ona verdi."
+        },
+        {
+          "id": "cl-happy-prince-19",
+          "english": "The swallow decided to stay and become his eyes.",
+          "turkish": "Kırlangıç kalmaya ve onun gözleri olmaya karar verdi."
+        },
+        {
+          "id": "cl-happy-prince-20",
+          "english": "Each day, he flew over the city and described the hungry families he saw.",
+          "turkish": "Her gün şehrin üzerinde uçuyor ve gördüğü aç aileleri anlatıyordu."
+        },
+        {
+          "id": "cl-happy-prince-21",
+          "english": "The Prince told him to remove his gold leaves and give them to the poor.",
+          "turkish": "Prens ondan altın yapraklarını çıkarıp yoksullara vermesini istedi."
+        },
+        {
+          "id": "cl-happy-prince-22",
+          "english": "As the statue became dull and grey, children in the streets could finally buy bread.",
+          "turkish": "Heykel donuklaşıp grileşirken sokaklardaki çocuklar sonunda ekmek alabiliyordu."
+        },
+        {
+          "id": "cl-happy-prince-23",
+          "english": "Winter arrived, but the swallow refused to abandon his friend.",
+          "turkish": "Kış geldi ama kırlangıç dostunu terk etmeyi reddetti."
+        },
+        {
+          "id": "cl-happy-prince-24",
+          "english": "At last, weakened by the cold, he said goodbye and died at the Prince's feet.",
+          "turkish": "Sonunda soğuktan güçsüz düşerek veda etti ve Prens'in ayaklarının dibinde öldü."
+        },
+        {
+          "id": "cl-happy-prince-25",
+          "english": "At that moment, the statue's lead heart broke in two.",
+          "turkish": "O anda heykelin kurşun kalbi ikiye ayrıldı."
+        },
+        {
+          "id": "cl-happy-prince-26",
+          "english": "The next morning, the mayor saw only an ugly statue and ordered it taken down.",
+          "turkish": "Ertesi sabah belediye başkanı yalnızca çirkin bir heykel gördü ve indirilmesini emretti."
+        },
+        {
+          "id": "cl-happy-prince-27",
+          "english": "Workers melted the metal, but the broken heart would not melt.",
+          "turkish": "İşçiler metali eritti ama kırık kalp erimedi."
+        },
+        {
+          "id": "cl-happy-prince-28",
+          "english": "They threw it away beside the dead bird.",
+          "turkish": "Onu ölü kuşun yanına attılar."
+        },
+        {
+          "id": "cl-happy-prince-29",
+          "english": "God asked an angel to bring the two most precious things in the city.",
+          "turkish": "Tanrı bir melekten şehrin en değerli iki şeyini getirmesini istedi."
+        },
+        {
+          "id": "cl-happy-prince-30",
+          "english": "The angel chose the broken heart and the swallow, and God welcomed them into Paradise.",
+          "turkish": "Melek kırık kalbi ve kırlangıcı seçti; Tanrı da onları cennetine kabul etti."
+        }
+      ]
+    },
+    {
+      "id": "classic-selfish-giant",
+      "title": "The Selfish Giant",
+      "author": "Oscar Wilde",
+      "level": "B1",
+      "genre": "Macera",
+      "description": "Bencil Dev. Bahçesini çocuklara kapatan bir devin, paylaşmayı öğrenince değişen hayatı. B1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_selfish_giant",
+      "sentences": [
+        {
+          "id": "cl-selfish-giant-01",
+          "english": "Every afternoon, children played in a beautiful garden filled with peach trees.",
+          "turkish": "Çocuklar her öğleden sonra şeftali ağaçlarıyla dolu güzel bir bahçede oynuyordu."
+        },
+        {
+          "id": "cl-selfish-giant-02",
+          "english": "The garden belonged to a giant who had been away for seven years.",
+          "turkish": "Bahçe, yedi yıldır uzaklarda olan bir deve aitti."
+        },
+        {
+          "id": "cl-selfish-giant-03",
+          "english": "When he returned, he angrily ordered the children to leave.",
+          "turkish": "Geri döndüğünde çocuklara öfkeyle gitmelerini emretti."
+        },
+        {
+          "id": "cl-selfish-giant-04",
+          "english": "He built a high wall because he wanted the garden entirely for himself.",
+          "turkish": "Bahçeyi tamamen kendisine istediği için yüksek bir duvar ördü."
+        },
+        {
+          "id": "cl-selfish-giant-05",
+          "english": "The children missed their playground and wandered along the dusty road outside.",
+          "turkish": "Çocuklar oyun alanlarını özlüyor ve dışarıdaki tozlu yolda dolaşıyordu."
+        },
+        {
+          "id": "cl-selfish-giant-06",
+          "english": "Spring brought flowers and birds to every other garden.",
+          "turkish": "Bahar, diğer bütün bahçelere çiçekler ve kuşlar getirdi."
+        },
+        {
+          "id": "cl-selfish-giant-07",
+          "english": "Inside the giant's walls, however, winter refused to end.",
+          "turkish": "Ama devin duvarlarının içinde kış bitmek bilmiyordu."
+        },
+        {
+          "id": "cl-selfish-giant-08",
+          "english": "Snow, frost, and the north wind made themselves at home.",
+          "turkish": "Kar, don ve kuzey rüzgârı orayı evleri gibi benimsemişti."
+        },
+        {
+          "id": "cl-selfish-giant-09",
+          "english": "Neither summer nor autumn brought the giant any fruit.",
+          "turkish": "Ne yaz ne de sonbahar deve meyve getirdi."
+        },
+        {
+          "id": "cl-selfish-giant-10",
+          "english": "One morning, a bird's song drew him to the window.",
+          "turkish": "Bir sabah bir kuşun şarkısı onu pencereye çekti."
+        },
+        {
+          "id": "cl-selfish-giant-11",
+          "english": "Children had slipped through a hole in the wall and climbed into the trees.",
+          "turkish": "Çocuklar duvardaki bir delikten geçip ağaçlara tırmanmıştı."
+        },
+        {
+          "id": "cl-selfish-giant-12",
+          "english": "Wherever a child sat, blossoms appeared and birds began to sing.",
+          "turkish": "Bir çocuğun oturduğu her yerde çiçekler açıyor ve kuşlar şakımaya başlıyordu."
+        },
+        {
+          "id": "cl-selfish-giant-13",
+          "english": "Only one corner remained frozen, where a tiny boy could not reach a branch.",
+          "turkish": "Yalnızca küçücük bir çocuğun dala ulaşamadığı bir köşe donmuş hâlde kalmıştı."
+        },
+        {
+          "id": "cl-selfish-giant-14",
+          "english": "Seeing the boy's tears, the giant understood how selfish he had been.",
+          "turkish": "Çocuğun gözyaşlarını görünce dev ne kadar bencil davrandığını anladı."
+        },
+        {
+          "id": "cl-selfish-giant-15",
+          "english": "He went outside, but the frightened children ran away and winter returned.",
+          "turkish": "Dışarı çıktı ama korkmuş çocuklar kaçtı ve kış geri döndü."
+        },
+        {
+          "id": "cl-selfish-giant-16",
+          "english": "The little boy stayed because his tears prevented him from seeing the giant.",
+          "turkish": "Küçük çocuk kaldı çünkü gözyaşları devi görmesine engel oluyordu."
+        },
+        {
+          "id": "cl-selfish-giant-17",
+          "english": "Gently, the giant lifted him into the tree.",
+          "turkish": "Dev onu nazikçe kaldırıp ağaca yerleştirdi."
+        },
+        {
+          "id": "cl-selfish-giant-18",
+          "english": "Flowers immediately opened, and the boy hugged and kissed him.",
+          "turkish": "Çiçekler hemen açıldı ve çocuk ona sarılıp onu öptü."
+        },
+        {
+          "id": "cl-selfish-giant-19",
+          "english": "When the other children saw this, they came back with the spring.",
+          "turkish": "Diğer çocuklar bunu görünce baharla birlikte geri döndü."
+        },
+        {
+          "id": "cl-selfish-giant-20",
+          "english": "The giant knocked down the wall and gave them the garden to play in.",
+          "turkish": "Dev duvarı yıktı ve oynamaları için bahçeyi onlara verdi."
+        },
+        {
+          "id": "cl-selfish-giant-21",
+          "english": "From then on, he welcomed the children every afternoon.",
+          "turkish": "O günden sonra çocukları her öğleden sonra sevinçle karşıladı."
+        },
+        {
+          "id": "cl-selfish-giant-22",
+          "english": "But the little boy who had changed his heart did not return.",
+          "turkish": "Ama onun kalbini değiştiren küçük çocuk geri dönmedi."
+        },
+        {
+          "id": "cl-selfish-giant-23",
+          "english": "The giant often asked about him, although nobody knew where he lived.",
+          "turkish": "Kimse nerede yaşadığını bilmediği hâlde dev onu sık sık soruyordu."
+        },
+        {
+          "id": "cl-selfish-giant-24",
+          "english": "Years passed, and the giant grew too weak to join the children's games.",
+          "turkish": "Yıllar geçti ve dev çocukların oyunlarına katılamayacak kadar güçsüzleşti."
+        },
+        {
+          "id": "cl-selfish-giant-25",
+          "english": "He watched them from his chair, thinking they were more beautiful than any flowers.",
+          "turkish": "Onları koltuğundan izliyor, bütün çiçeklerden daha güzel olduklarını düşünüyordu."
+        },
+        {
+          "id": "cl-selfish-giant-26",
+          "english": "One winter morning, he saw the little boy beneath a tree covered in white blossoms.",
+          "turkish": "Bir kış sabahı küçük çocuğu beyaz çiçeklerle kaplı bir ağacın altında gördü."
+        },
+        {
+          "id": "cl-selfish-giant-27",
+          "english": "The giant ran to him and noticed marks on his hands and feet.",
+          "turkish": "Dev ona koştu ve ellerindeki ve ayaklarındaki izleri fark etti."
+        },
+        {
+          "id": "cl-selfish-giant-28",
+          "english": "Angry that someone had hurt the child, he asked who was responsible.",
+          "turkish": "Birinin çocuğa zarar vermesine öfkelenerek bunu kimin yaptığını sordu."
+        },
+        {
+          "id": "cl-selfish-giant-29",
+          "english": "The boy called the marks wounds of love, and the giant knelt before him.",
+          "turkish": "Çocuk izlere sevginin yaraları dedi ve dev onun önünde diz çöktü."
+        },
+        {
+          "id": "cl-selfish-giant-30",
+          "english": "Because the giant had once shared his garden, the child now invited him to Paradise.",
+          "turkish": "Dev bir zamanlar bahçesini paylaştığı için çocuk şimdi onu cennete davet ediyordu."
+        },
+        {
+          "id": "cl-selfish-giant-31",
+          "english": "That afternoon, the children found the giant dead beneath the tree, covered in white blossoms.",
+          "turkish": "O öğleden sonra çocuklar devi ağacın altında ölmüş, beyaz çiçeklerle kaplanmış hâlde buldu."
+        }
+      ]
+    },
+    {
+      "id": "classic-gift-magi",
+      "title": "The Gift of the Magi",
+      "author": "O. Henry",
+      "level": "B1",
+      "genre": "Günlük yaşam",
+      "description": "Noel Hediyesi. Birbirlerine hediye almak için en değerli eşyalarından vazgeçen Della ile Jim. B1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_gift_magi",
+      "sentences": [
+        {
+          "id": "cl-gift-magi-01",
+          "english": "On Christmas Eve, Della counted her savings for the third time.",
+          "turkish": "Noel arifesinde Della birikimini üçüncü kez saydı."
+        },
+        {
+          "id": "cl-gift-magi-02",
+          "english": "She had only one dollar and eighty-seven cents to buy a present for Jim.",
+          "turkish": "Jim'e bir hediye almak için yalnızca bir dolar seksen yedi senti vardı."
+        },
+        {
+          "id": "cl-gift-magi-03",
+          "english": "Their small flat was cheap, but their expenses had still been greater than expected.",
+          "turkish": "Küçük daireleri ucuzdu ama masrafları yine de beklediklerinden fazla olmuştu."
+        },
+        {
+          "id": "cl-gift-magi-04",
+          "english": "Jim's wages had fallen, and saving even a few pennies had been difficult.",
+          "turkish": "Jim'in ücreti düşmüştü ve birkaç sent biriktirmek bile zor olmuştu."
+        },
+        {
+          "id": "cl-gift-magi-05",
+          "english": "Della wanted to give her husband something worthy of her love.",
+          "turkish": "Della kocasına sevgisine layık bir şey vermek istiyordu."
+        },
+        {
+          "id": "cl-gift-magi-06",
+          "english": "The couple owned two things they were especially proud of.",
+          "turkish": "Çiftin özellikle gurur duyduğu iki şey vardı."
+        },
+        {
+          "id": "cl-gift-magi-07",
+          "english": "One was Jim's gold watch, inherited from his father and grandfather.",
+          "turkish": "Bunlardan biri, Jim'in babasından ve büyükbabasından kalan altın saatiydi."
+        },
+        {
+          "id": "cl-gift-magi-08",
+          "english": "The other was Della's beautiful brown hair, which fell below her knees.",
+          "turkish": "Diğeri, Della'nın dizlerinin aşağısına kadar uzanan güzel kahverengi saçlarıydı."
+        },
+        {
+          "id": "cl-gift-magi-09",
+          "english": "Looking in the mirror, Della suddenly knew how to buy her gift.",
+          "turkish": "Aynaya bakan Della, hediyesini nasıl alacağını birden anladı."
+        },
+        {
+          "id": "cl-gift-magi-10",
+          "english": "She hurried to a woman who bought and sold hair.",
+          "turkish": "Saç alıp satan bir kadına aceleyle gitti."
+        },
+        {
+          "id": "cl-gift-magi-11",
+          "english": "The woman offered twenty dollars, and Della agreed to have her hair cut.",
+          "turkish": "Kadın yirmi dolar teklif etti ve Della saçını kestirmeyi kabul etti."
+        },
+        {
+          "id": "cl-gift-magi-12",
+          "english": "For the next two hours, she searched the shops for the perfect present.",
+          "turkish": "Sonraki iki saat boyunca dükkânlarda kusursuz hediyeyi aradı."
+        },
+        {
+          "id": "cl-gift-magi-13",
+          "english": "Finally, she found a simple platinum chain for Jim's watch.",
+          "turkish": "Sonunda Jim'in saati için sade bir platin zincir buldu."
+        },
+        {
+          "id": "cl-gift-magi-14",
+          "english": "It cost twenty-one dollars, leaving her just eighty-seven cents.",
+          "turkish": "Zincir yirmi bir dolardı ve Della'nın elinde yalnızca seksen yedi sent kaldı."
+        },
+        {
+          "id": "cl-gift-magi-15",
+          "english": "At home, she curled her short hair and worried about Jim's reaction.",
+          "turkish": "Evde kısa saçlarını kıvırdı ve Jim'in tepkisi için endişelendi."
+        },
+        {
+          "id": "cl-gift-magi-16",
+          "english": "When he opened the door, he stood still and stared at her.",
+          "turkish": "Jim kapıyı açtığında olduğu yerde kalıp ona baktı."
+        },
+        {
+          "id": "cl-gift-magi-17",
+          "english": "Della explained that she had sold her hair because she wanted to give him a present.",
+          "turkish": "Della ona bir hediye vermek istediği için saçını sattığını açıkladı."
+        },
+        {
+          "id": "cl-gift-magi-18",
+          "english": "She reminded him that her hair would grow again.",
+          "turkish": "Saçının yeniden uzayacağını ona hatırlattı."
+        },
+        {
+          "id": "cl-gift-magi-19",
+          "english": "Jim hugged her and said that no haircut could make him love her less.",
+          "turkish": "Jim ona sarıldı ve hiçbir saç kesiminin sevgisini azaltamayacağını söyledi."
+        },
+        {
+          "id": "cl-gift-magi-20",
+          "english": "Then he handed her a package that explained his strange expression.",
+          "turkish": "Sonra ona, yüzündeki tuhaf ifadeyi açıklayan bir paket verdi."
+        },
+        {
+          "id": "cl-gift-magi-21",
+          "english": "Inside were the beautiful, expensive combs she had admired in a shop window.",
+          "turkish": "İçinde, bir dükkânın vitrininde hayranlıkla baktığı güzel ve pahalı taraklar vardı."
+        },
+        {
+          "id": "cl-gift-magi-22",
+          "english": "She held them close, although she no longer had long hair to wear them in.",
+          "turkish": "Artık onları takabileceği uzun saçları olmasa da tarakları bağrına bastı."
+        },
+        {
+          "id": "cl-gift-magi-23",
+          "english": "Trying to smile through her tears, she showed Jim the watch chain.",
+          "turkish": "Gözyaşlarının arasından gülümsemeye çalışarak Jim'e saat zincirini gösterdi."
+        },
+        {
+          "id": "cl-gift-magi-24",
+          "english": "She asked him to take out his watch so they could try it.",
+          "turkish": "Zinciri deneyebilmeleri için saatini çıkarmasını istedi."
+        },
+        {
+          "id": "cl-gift-magi-25",
+          "english": "Jim sat down and suggested putting their presents away for a while.",
+          "turkish": "Jim oturdu ve hediyelerini bir süreliğine kaldırmayı önerdi."
+        },
+        {
+          "id": "cl-gift-magi-26",
+          "english": "He had sold his watch to buy the combs.",
+          "turkish": "Tarakları almak için saatini satmıştı."
+        },
+        {
+          "id": "cl-gift-magi-27",
+          "english": "Each had given up a treasured possession to make the other happy.",
+          "turkish": "Her biri, diğerini mutlu etmek için çok değer verdiği bir eşyasından vazgeçmişti."
+        },
+        {
+          "id": "cl-gift-magi-28",
+          "english": "Their gifts could not be used just then, but their love had become clear.",
+          "turkish": "Hediyeleri o anda kullanılamıyordu ama sevgileri açıkça ortaya çıkmıştı."
+        },
+        {
+          "id": "cl-gift-magi-29",
+          "english": "The narrator compares them to the Magi, the wise visitors who brought gifts to the baby Jesus.",
+          "turkish": "Anlatıcı onları, bebek İsa'ya hediyeler getiren bilge ziyaretçiler olan Müneccimlere benzetir."
+        },
+        {
+          "id": "cl-gift-magi-30",
+          "english": "Although their choices might look foolish, he calls them the wisest of gift-givers.",
+          "turkish": "Seçimleri aptalca görünse de anlatıcı onları hediye verenlerin en bilgeleri olarak adlandırır."
+        }
+      ]
+    },
+    {
+      "id": "classic-after-twenty-years",
+      "title": "After Twenty Years",
+      "author": "O. Henry",
+      "level": "B1",
+      "genre": "Gizem",
+      "description": "Yirmi Yıl Sonra. Eski bir buluşma sözü, bir polis memurunu dostluk ile görevi arasında bırakır. B1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales.",
+      "coverKey": "cover_classic_after_twenty_years",
+      "sentences": [
+        {
+          "id": "cl-after-twenty-years-01",
+          "english": "It was almost ten on a cold, rainy night in New York.",
+          "turkish": "New York'ta soğuk ve yağmurlu bir gecede saat neredeyse ondu."
+        },
+        {
+          "id": "cl-after-twenty-years-02",
+          "english": "A policeman was checking the doors of shops along a quiet street.",
+          "turkish": "Bir polis memuru sessiz bir sokaktaki dükkânların kapılarını kontrol ediyordu."
+        },
+        {
+          "id": "cl-after-twenty-years-03",
+          "english": "In a dark doorway, he noticed a man waiting with an unlit cigar.",
+          "turkish": "Karanlık bir kapı aralığında, elinde yanmamış bir puroyla bekleyen bir adam fark etti."
+        },
+        {
+          "id": "cl-after-twenty-years-04",
+          "english": "The man quickly explained that he was keeping an appointment made twenty years earlier.",
+          "turkish": "Adam, yirmi yıl önce kararlaştırılan bir buluşma için geldiğini hemen açıkladı."
+        },
+        {
+          "id": "cl-after-twenty-years-05",
+          "english": "A restaurant had once stood there, and he had eaten his last dinner in New York inside it.",
+          "turkish": "Bir zamanlar orada bir restoran vardı ve adam New York'taki son akşam yemeğini orada yemişti."
+        },
+        {
+          "id": "cl-after-twenty-years-06",
+          "english": "His companion that evening had been his closest friend, Jimmy Wells.",
+          "turkish": "O akşamki arkadaşı, en yakın dostu Jimmy Wells'ti."
+        },
+        {
+          "id": "cl-after-twenty-years-07",
+          "english": "They had grown up together, almost like brothers.",
+          "turkish": "Neredeyse kardeş gibi birlikte büyümüşlerdi."
+        },
+        {
+          "id": "cl-after-twenty-years-08",
+          "english": "The next morning, the man had left for the West to seek his fortune.",
+          "turkish": "Ertesi sabah adam servetini aramak için Batı'ya gitmişti."
+        },
+        {
+          "id": "cl-after-twenty-years-09",
+          "english": "Jimmy had preferred to stay in the city he loved.",
+          "turkish": "Jimmy ise sevdiği şehirde kalmayı tercih etmişti."
+        },
+        {
+          "id": "cl-after-twenty-years-10",
+          "english": "Before parting, they had promised to meet at that exact place twenty years later.",
+          "turkish": "Ayrılmadan önce yirmi yıl sonra tam o yerde buluşmaya söz vermişlerdi."
+        },
+        {
+          "id": "cl-after-twenty-years-11",
+          "english": "They had exchanged letters for a while, but eventually lost contact.",
+          "turkish": "Bir süre mektuplaşmışlar ama sonunda haberleşmeyi kesmişlerdi."
+        },
+        {
+          "id": "cl-after-twenty-years-12",
+          "english": "Despite the silence, the waiting man was certain Jimmy would remember.",
+          "turkish": "Aradan geçen sessiz yıllara rağmen bekleyen adam, Jimmy'nin hatırlayacağından emindi."
+        },
+        {
+          "id": "cl-after-twenty-years-13",
+          "english": "He struck a match to light his cigar.",
+          "turkish": "Purosunu yakmak için bir kibrit çaktı."
+        },
+        {
+          "id": "cl-after-twenty-years-14",
+          "english": "The flame revealed a small scar near his eyebrow and a large diamond on his tie.",
+          "turkish": "Alev, kaşının yanındaki küçük bir yara izini ve kravatındaki büyük elması ortaya çıkardı."
+        },
+        {
+          "id": "cl-after-twenty-years-15",
+          "english": "He told the policeman that he had travelled a thousand miles for the meeting.",
+          "turkish": "Polise bu buluşma için bin mil yol geldiğini söyledi."
+        },
+        {
+          "id": "cl-after-twenty-years-16",
+          "english": "After wishing him luck, the officer continued down the street.",
+          "turkish": "Memur ona şans dileyip sokakta yürümeye devam etti."
+        },
+        {
+          "id": "cl-after-twenty-years-17",
+          "english": "About twenty minutes later, a tall man in a long coat arrived.",
+          "turkish": "Yaklaşık yirmi dakika sonra uzun paltolu, uzun boylu bir adam geldi."
+        },
+        {
+          "id": "cl-after-twenty-years-18",
+          "english": "He greeted the waiting man as Bob and behaved like an old friend.",
+          "turkish": "Bekleyen adama Bob diye seslendi ve eski bir dost gibi davrandı."
+        },
+        {
+          "id": "cl-after-twenty-years-19",
+          "english": "Believing Jimmy had finally come, Bob warmly took his hands.",
+          "turkish": "Jimmy'nin sonunda geldiğine inanan Bob, onun ellerini içtenlikle tuttu."
+        },
+        {
+          "id": "cl-after-twenty-years-20",
+          "english": "They walked together while Bob described his successful life in the West.",
+          "turkish": "Bob Batı'daki başarılı hayatını anlatırken birlikte yürüdüler."
+        },
+        {
+          "id": "cl-after-twenty-years-21",
+          "english": "Under the bright lights of a shop, Bob suddenly looked closely at the other's face.",
+          "turkish": "Bir dükkânın parlak ışıkları altında Bob birden diğer adamın yüzüne dikkatle baktı."
+        },
+        {
+          "id": "cl-after-twenty-years-22",
+          "english": "The shape of his nose was different, and Bob realized he was not Jimmy.",
+          "turkish": "Burnunun şekli farklıydı ve Bob onun Jimmy olmadığını fark etti."
+        },
+        {
+          "id": "cl-after-twenty-years-23",
+          "english": "The stranger explained that he was a plain-clothes detective.",
+          "turkish": "Yabancı, sivil bir dedektif olduğunu açıkladı."
+        },
+        {
+          "id": "cl-after-twenty-years-24",
+          "english": "Bob was wanted by the police in Chicago, and he was now under arrest.",
+          "turkish": "Bob Chicago polisi tarafından aranıyordu ve artık gözaltındaydı."
+        },
+        {
+          "id": "cl-after-twenty-years-25",
+          "english": "Before taking him to the station, the detective handed him a note from Jimmy Wells.",
+          "turkish": "Dedektif onu karakola götürmeden önce Jimmy Wells'ten bir not verdi."
+        },
+        {
+          "id": "cl-after-twenty-years-26",
+          "english": "In the note, Jimmy explained that he had reached their meeting place on time.",
+          "turkish": "Jimmy notta buluşma yerine zamanında geldiğini açıklıyordu."
+        },
+        {
+          "id": "cl-after-twenty-years-27",
+          "english": "He was the first policeman who had spoken to Bob in the doorway.",
+          "turkish": "Kapı aralığında Bob'la konuşan ilk polis oydu."
+        },
+        {
+          "id": "cl-after-twenty-years-28",
+          "english": "When the match lit Bob's face, Jimmy had recognized a man wanted in Chicago.",
+          "turkish": "Kibrit Bob'un yüzünü aydınlattığında Jimmy, Chicago'da aranan bir adamı tanımıştı."
+        },
+        {
+          "id": "cl-after-twenty-years-29",
+          "english": "Unable to arrest his old friend himself, he had asked another officer to do it.",
+          "turkish": "Eski dostunu kendisi gözaltına alamadığı için başka bir memurdan bunu yapmasını istemişti."
+        },
+        {
+          "id": "cl-after-twenty-years-30",
+          "english": "Bob's hand trembled as he finished reading the explanation.",
+          "turkish": "Bob açıklamayı okumayı bitirdiğinde eli titredi."
         }
       ]
     }

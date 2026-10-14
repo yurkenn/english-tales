@@ -34,6 +34,18 @@ private fun coverResource(key: String) = when(key) {
     "cover_attic_letter" -> R.drawable.cover_attic_letter
     "cover_paper_boat" -> R.drawable.cover_paper_boat
     "cover_lost_map" -> R.drawable.cover_lost_map
+    "cover_classic_tortoise_hare" -> R.drawable.cover_classic_tortoise_hare
+    "cover_classic_lion_mouse" -> R.drawable.cover_classic_lion_mouse
+    "cover_classic_fox_grapes" -> R.drawable.cover_classic_fox_grapes
+    "cover_classic_ants_grasshopper" -> R.drawable.cover_classic_ants_grasshopper
+    "cover_classic_red_riding_hood" -> R.drawable.cover_classic_red_riding_hood
+    "cover_classic_cinderella" -> R.drawable.cover_classic_cinderella
+    "cover_classic_bremen_musicians" -> R.drawable.cover_classic_bremen_musicians
+    "cover_classic_hansel_gretel" -> R.drawable.cover_classic_hansel_gretel
+    "cover_classic_happy_prince" -> R.drawable.cover_classic_happy_prince
+    "cover_classic_selfish_giant" -> R.drawable.cover_classic_selfish_giant
+    "cover_classic_gift_magi" -> R.drawable.cover_classic_gift_magi
+    "cover_classic_after_twenty_years" -> R.drawable.cover_classic_after_twenty_years
     else -> R.drawable.cover_quiet_morning
 }
 
@@ -55,7 +67,8 @@ fun BookCover(story: Story, modifier: Modifier = Modifier) {
         if(!compact) Text("ENGLISH TALES",fontSize=(7/artworkScale).sp,letterSpacing=(1/artworkScale).sp,color=Color.White,modifier=Modifier.align(Alignment.TopStart).padding(8.dp))
         Text(story.level,color=TaleInk,fontWeight=FontWeight.ExtraBold,fontSize=((if(compact) 8 else 12)/artworkScale).sp,
             modifier=Modifier.align(Alignment.TopEnd).background(TaleYellow,RoundedCornerShape(bottomStart=5.dp)).padding(horizontal=if(compact) 4.dp else 7.dp,vertical=if(compact) 5.dp else 9.dp))
-        Text(story.title,color=Color.White,fontFamily=FontFamily.Serif,fontWeight=FontWeight.Bold,fontSize=((if(compact) 8 else 17)/artworkScale).sp,
-            lineHeight=((if(compact) 10 else 19)/artworkScale).sp,textAlign=TextAlign.Center,modifier=Modifier.align(Alignment.BottomCenter).padding(horizontal=7.dp,vertical=if(compact) 6.dp else 18.dp))
+        // Small list thumbnails have an adjacent, accessible title; avoid splitting tiny words on the artwork.
+        if(!compact) Text(story.title,color=Color.White,fontFamily=FontFamily.Serif,fontWeight=FontWeight.Bold,fontSize=(17/artworkScale).sp,
+            lineHeight=(19/artworkScale).sp,textAlign=TextAlign.Center,modifier=Modifier.align(Alignment.BottomCenter).padding(horizontal=7.dp,vertical=18.dp))
     }
 }
