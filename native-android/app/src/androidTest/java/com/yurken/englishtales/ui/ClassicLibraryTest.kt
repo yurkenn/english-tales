@@ -23,7 +23,7 @@ class ClassicLibraryTest {
     @Test fun turkishClassicSearchFindsAndOpensTheCorrectStory() {
         LearningContent.initialize(context)
         val classics=LearningContent.stories.filter {it.id.startsWith("classic-")}
-        assertEquals(12,classics.size)
+        assertEquals(44,classics.size)
         classics.forEach {assertTrue("Missing study words: ${it.id}",LearningContent.wordsForStory(it).size>=6)}
         var opened=""
         compose.setContent {EnglishTalesTheme {CatalogScreen(LearningSnapshot(),{opened=it},PaddingValues())}}
@@ -36,6 +36,17 @@ class ClassicLibraryTest {
         compose.onNode(hasSetTextAction()).performTextReplacement("Mutlu Prens")
         compose.onAllNodesWithText("The Happy Prince").onLast().assertIsDisplayed()
         compose.onNodeWithText("Cinderella").assertDoesNotExist()
+        listOf(
+            Triple("Pamuk Prenses", "Snow White", "classic-snow-white"),
+            Triple("Rapunzel", "Rapunzel", "classic-rapunzel"),
+            Triple("Karlar Kraliçesi", "The Snow Queen", "classic-snow-queen"),
+            Triple("Çirkin Ördek Yavrusu", "The Ugly Duckling", "classic-ugly-duckling")
+        ).forEach { (query, title, id) ->
+            compose.onNode(hasSetTextAction()).performTextReplacement(query)
+            compose.onAllNodesWithText(title).onLast().assertIsDisplayed().performClick()
+            assertEquals(id, opened)
+        }
+        screenshot("andersen-search")
     }
 
     @Test fun classicTranslationWordSavingAndResumeUseTheNewStableSentenceIds() {

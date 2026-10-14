@@ -1,34 +1,44 @@
-# Klasik hikâye paketi — uygulama kaydı
+# 50 hikâyelik kütüphane — uygulama kaydı
 
-14 Ekim 2026. Kullanıcı 12 klasik ve seviyeli kısa uyarlama haritasını onayladı; bu çalışma için ek manuel harita kapısı yok.
+14 Ekim 2026. Yetkilendirilmiş geliştirmede bağımlılıklar değişikliğin kapsamına göre incelenir; rutin harita için manuel onay kapısı yoktur.
 
 ## Hazırlanan içerik
 
-- 12 yeni hikâye, 295 EN/TR cümle çifti, 85 yeni kelime ve 12 özgün geometrik kapak.
-- Paket toplamı 18 hikâye / 376 cümle çifti / 124 kelime. Her seviyede altı hikâye.
-- Eski altı hikâye, ilk 39 sözlük kaydı ve eski kelime eşlemeleri sabit regresyon kontrolleriyle korundu.
-- Gerçek yazarlar ve kısa uyarlama/çeviri kredileri uygulama açıklamalarında var. Kaynak metin ve çevirmen kayıtları [kaynak belgesinde](PUBLIC_DOMAIN_CLASSICS.md).
-- Kapak eşlemeleri ve taslak seed/medya manifesti güncellendi. Küçük kapaklarda bitişik başlık zaten bulunduğundan, görsel üzerindeki çok küçük ve kelimeyi bölen başlık kaldırıldı.
-- `CONTENT_GUIDE.md` aktif uzak katalog davranışına göre düzeltildi. “Yeni” rafının tarih yerine liste sırasına dayanması mevcut sınırlama olarak kaydedildi.
+- Paket **50 hikâye / 1002 EN/TR cümle çifti / 316 kelime**: altı mevcut özgün hikâye + 44 tanınmış klasik uyarlaması. Seviye dağılımı A1: 18, A2: 18, B1: 14.
+- Önceki 18 hikâyelik pakete bu genişletmede 32 yeni hikâye / 626 cümle çifti / 192 kelime eklendi. İlk altı hikâye ve ilk 39 kelime kayıtları sabit hash regresyonlarıyla korunur.
+- Yeni seçki: 12 Ezop fablı, 12 Grimm masalı, 8 Andersen masalı. Önceki dört Ezop, dört Grimm, iki Wilde ve iki O. Henry uyarlaması korunur.
+- 42 klasik için gerçek tarihî baskı görseli; iki O. Henry için özgün geometrik kapak. Bazıları kitap içi çizim veya ortak koleksiyonun iç başlık sayfasıdır; bağımsız ilk baskı kapağı diye sunulmaz. Kaynaklar, çizerler, ölüm yılları, kaynak/PNG hash’leri [manifestte](../backend/content/classic-sources.json), açıklama ve hak değerlendirmesi [kaynak kaydında](PUBLIC_DOMAIN_CLASSICS.md).
+- Bütün tarihî görseller kırpılmadan PNG’ye dönüştürüldü. Kaynakların tamamı temas sayfalarında incelendi; salt başlık yazısı içeren Grimm dosyaları gerçek hikâye çizimleriyle değiştirildi. `BookCover` tam görseli `Fit` ile gösterir. Yatay resimler boşluk bırakır; küçük kapaklarda bu boşluğu karartan dekoratif gradyan kullanılmaz.
 
-## Gerçek kontrol sonuçları
+## Bağımlılık ve kontrol kapsamı
 
-- 53 backend testi geçti: 33 SQL, 8 panel istemci, 9 hesap silme, 3 katalog regresyon/içerik/kapak testi.
-- Yerel HTTP panel testi geçti: dosya yükleme/geri indirme/hash, sürümlü kayıt/yayın, rol/sınır ve yeniden başlatma kalıcılığı.
-- 23 JVM testi; debug uygulama/test APK derlemesi ve lint geçti.
-- Ayrı `English_Tales_Native` emülatöründe 126 Android testi geçti, sıfır başarısız/atlanmış test. Son küçük kapak düzeltmesinden sonra ilgili iki klasik akış testi ve lint yeniden geçti.
-- Yeni akış testleri: Türkçe “Külkedisi” ve “Mutlu Prens” araması, doğru hikâyeye geçiş, İngilizce cümleyi Türkçeye çevirme, hare kelimesini seçip kaydetme, yeni sabit sentence ID ile ikinci sayfadan devam, tamamlanma.
-- Depo kontrolleri, altı ELF doğrulayıcı testi ve APK'daki iki 64-bit native kütüphanenin hizalaması geçti.
-- [Arama görüntüsü](preview-classics-search.png) · [Okuyucu görüntüsü](preview-classics-reader.png). Bunlar hesapsız test fixture ekranlarıdır; canlı yayının kanıtı değildir.
+`catalog/v1.json` → `LearningContent` → arama/kütüphane/okuyucu → kelime seçimi, sözlük, oyun çeldiricileri → `LearningStore` kuyruğu. Kapak anahtarları → `BookCover` drawable eşlemesi. `catalog:export` → idempotent taslak seed → medya hash manifesti → gerçek Storage yüklemesi ve publisher yayını. Uzak katalog yenilenince gömülü listeyi değiştirir; yalnız APK içeriğini büyütmek canlı yayını tamamlamaz.
 
-## Sunucu durumu ve kalan iş
+Ortak sözlük token tabanlıdır: yeni 192 kelime eski altı metinde bulunmaz; önceki klasiklerde yeni eşlemeler oluşabilir. Bu nedenle daha önce sunucuya aktarılan ilk 12 taslağın görsel/açıklama ve kelime bağlantıları son paketten yeniden incelenmelidir. Kaynağı olmayan geçmiş kelime testi gerçek `discover` kelimesinin sonsuza kadar hikâyesiz kalacağı varsayımından çıkarılıp açık bir geçmiş kelime fixture’ına geçirildi. İşlevsel kuyruk davranışı değiştirilmedi.
 
-Test (`jukyylozahikjhtokayw`) ve Production (`gtuangjukckpuerczfxd`) ortamlarına onaylı idempotent seed ile 12 yeni **taslak** hikâye ve 295 yeni cümle aktarıldı. Mevcut altı yayının revision kimlik özeti değişmedi: `ccbdb737f8ad7b512e7437bc7f5d1ef9`. Test ortamında ayrıca önceden var olan bir taslak korunuyor.
+## Doğrulama
 
-Production anonim HTTP kontrolü hâlâ **6 yayımlanmış hikâye** görüyor. Taslaklar kamuya açılmadı. Yönetici ve öğrenme uçları anonim isteği, katalog ise sahte tokenı reddetti.
+- 53 backend testi: SQL yetki/işlem, panel istemci, hesap silme ve katalog regresyonları geçti.
+- Panel HTTP entegrasyonu: gerçek dosya yükleme/indirme/hash, sürümlü kayıt/yayın, rol/sınır ve yeniden başlatma kalıcılığı geçti; yerel Auth fixture’ıdır, canlı yayın değildir.
+- 23 JVM ve ayrı `English_Tales_Native` emülatöründe 126 Android testi geçti; başarısız/atlanmış test yok. Derleme ve lint geçti. Son küçük kapak gradyan düzeltmesinden sonra ilgili iki klasik UI testi ve lint yeniden geçti.
+- Klasik UI akışları Türkçe Külkedisi, Mutlu Prens, Pamuk Prenses, Rapunzel, Karlar Kraliçesi ve Çirkin Ördek Yavrusu aramasını/doğru hikâye seçimini; çeviriyi, kelime kaydetmeyi, sabit sentence ID ile devam/tamamlanmayı doğrular.
+- Depo kontrolü, altı ELF doğrulayıcı testi ve APK’daki iki native kütüphanenin hizalaması geçti.
+- [Grimm araması](preview-classics-search.png), [Andersen araması](preview-classics-andersen-search.png), [okuyucu](preview-classics-reader.png): hesap gerektirmeyen fixture ekranları, canlı yayın kanıtı değildir.
 
-Mevcut panel `http://127.0.0.1:4178` adresinde Production'a bağlı ve gerçek publisher girişi bekliyor. Kimlik/rol taklidi, parola değiştirme, RLS gevşetme veya SQL ile sahte Storage dosyası oluşturma yapılmadı. Kapak dosyaları sunucuya henüz yüklenmedi; yalnız metadata/yerel manifest hazır. Kullanıcı mevcut yayıncı hesabıyla giriş yaptıktan sonra 12 gerçek PNG yüklenmeli, geri indirilen hash'leri kontrol edilmeli ve `admin_publish` çağrıları incelenen sürümlerle tamamlanmalı.
+## Sunucular ve yayın kapısı
 
-Canlı yayın sonrası anonim katalogda 18 hikâye, gerçek kapak indirmeleri ve Android'de yeni içeriğin ağ kapalı yeniden açılması doğrulanmalı. Bu pakette yeni metinlerle gerçek TTS dinleme kabulü henüz yapılmadı; mevcut TTS kodu değişmedi.
+Test (`jukyylozahikjhtokayw`) ve Production (`gtuangjukckpuerczfxd`) ortamlarına 32 yeni hikâye + 626 cümle **taslak** olarak aktarıldı. Her iki ortamda 50 hikâye kaydı ve altı canlı hikâye var; 44 klasik taslak. Production toplam 1002 cümle. Testte ayrıca önceden var olan ilave revision taslağı korunur.
 
-**Yayın kapısı:** Klasiklerin canlı revision'ları yayımlanmadan yeni APK kullanıcılara dağıtılmamalı ve PR ana dala birleştirilmemeli. Uzak katalog gömülü listeyi değiştirir; yayımlanmamış yeni yerel kelimelerin sunucu kaynak revision'ı henüz kullanılamaz. Bu yüzden paketin kod ve testleri hazır olsa da canlı yayına hazır olduğu iddia edilmez.
+Bu genişletme öncesi ve sonrası altı canlı revision’ın `md5(string_agg(current_revision_id::text,',' order by id))` özeti aynı: `65c1291cb82b2739304e9f76e3da7e4a`. Önceki çalışmanın farklı birleştirme biçimindeki MD5’i ile kıyaslanmaz. Yeni seed ilk 18 revision’ı değiştirmez.
+
+İçerik paneli `http://127.0.0.1:4178` adresinde Production’a bağlı; bu çalışma sırasında giriş ekranında olduğu doğrulandı. Gerçek publisher oturumu yok. Yeni kapaklar henüz Storage’a yüklenmedi. Kimlik taklidi, parola/rol değişikliği veya RLS gevşetmesi yapılmadı.
+
+Kalan işlemler:
+
+1. Gerçek editör/yayıncı hesabıyla panel girişi.
+2. İlk 12 klasik taslağını son paketin açıklama, kapak ve kelime bağlantılarıyla güncelle; 32 yeni taslağı da incele. Mevcut altı yayını değiştirme.
+3. Manifestteki 45 farklı kapak yolunu incele; eksik gerçek PNG’leri yeni dosya olarak yükle, geri indirip hash kontrolü yap. Eski kapağı kullanan yayımlanmış içerik korunur.
+4. Her klasiği incelenen `edit_version` ile gerçek publisher RPC’sinden yayımla.
+5. Anonim API’de 50 yayın, gerçek görsel indirme, Android’de yeni içerikle ağ kapalı yeniden açma ve gerçek TTS dinlemesini doğrula.
+
+**PR taslak kalır; 44 klasiğin canlı revision’ları ve dosyaları hazır olmadan yeni APK dağıtılmamalı veya ana dala birleştirilmemeli.** Uzak katalog gömülü listeyi değiştirir; yayımlanmamış kelimeler sunucuda kullanılabilir kaynak revision bulamaz. Gömülü 50 hikâyenin hazır olması canlıda 50 hikâyenin yayımlandığı anlamına gelmez.

@@ -199,8 +199,15 @@ class LearningStoreTest {
         } finally {listOf(a,b).forEach {target.deleteDatabase("${dbName}_${it.databaseName}")}}
     }
     @Test fun legacyWordsWithoutPublishedSourceAreHeldLocally() {
-        store.saveWords(listOf("discover"))
-        assertTrue(store.snapshot().savedWordIds.contains("discover"))
+        // A retained vocabulary record with no current or pinned source revision.
+        // Do not depend on a real word remaining absent as the library grows.
+        val retiredId="retired-word-verification"
+        LearningContent.install(LearningContent.stories, listOf(
+            WordInfo(retiredId,"retiredfixture","eski test kelimesi","/test/","Retired vocabulary fixture.")
+        ))
+        assertNull(LearningContent.revisionForWord(retiredId))
+        store.saveWords(listOf(retiredId))
+        assertTrue(store.snapshot().savedWordIds.contains(retiredId))
         assertEquals("blocked",store.queuedOperations().single().state)
         assertEquals("content_revision_unavailable",store.queuedOperations().single().errorCode)
     }

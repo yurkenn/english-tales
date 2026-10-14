@@ -4,7 +4,7 @@ Android, ilk açılışta `app/src/main/assets/catalog/v1.json` içindeki çevri
 
 ## Güncel paket
 
-18 hikâye, 376 İngilizce/Türkçe cümle çifti ve 124 kelime. A1, A2 ve B1 seviyelerinde altışar hikâye var. Bunların 12'si kaynakları kontrol edilmiş klasiklerin seviyeli kısa uyarlamalarıdır. Mevcut altı özgün hikâyenin kimlikleri, metinleri ve kelime eşlemeleri korundu.
+50 hikâye, 1002 İngilizce/Türkçe cümle çifti ve 316 kelime. A1: 18, A2: 18, B1: 14 hikâye. Bunların 44'ü kaynakları kontrol edilmiş klasiklerin seviyeli kısa uyarlamalarıdır. Mevcut altı özgün hikâyenin kimlikleri, metinleri ve kelime eşlemeleri korundu.
 
 [Klasiklerin kaynak ve uyarlama kaydı](docs/PUBLIC_DOMAIN_CLASSICS.md) · [Makine tarafından okunabilen kaynaklar](backend/content/classic-sources.json).
 

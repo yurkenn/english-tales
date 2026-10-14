@@ -17,16 +17,16 @@ test('classic expansion preserves legacy texts, IDs, original vocabulary and inf
  for(const word of catalog.words.slice(39)) assert.ok(!oldTokens.has(word.word.toLowerCase()),`New word changes legacy links: ${word.word}`);
 });
 test('the reviewed classic package is complete, bilingual, level-balanced and traceable',()=>{
- assert.equal(catalog.schemaVersion,1);assert.equal(catalog.stories.length,18);
- assert.equal(catalog.stories.reduce((n,s)=>n+s.sentences.length,0),376);assert.equal(sources.stories.length,12);
+ assert.equal(catalog.schemaVersion,1);assert.equal(catalog.stories.length,50);assert.equal(catalog.words.length,316);
+ assert.equal(catalog.stories.reduce((n,s)=>n+s.sentences.length,0),1002);assert.equal(sources.stories.length,44);
  assert.equal(new Set(catalog.words.map(w=>w.id)).size,catalog.words.length);
  assert.equal(new Set(catalog.words.map(w=>w.word.toLowerCase())).size,catalog.words.length);
- assert.equal(new Set(catalog.stories.map(s=>s.id)).size,18);
- for(const level of ['A1','A2','B1']) assert.equal(catalog.stories.filter(s=>s.level===level).length,6);
+ assert.equal(new Set(catalog.stories.map(s=>s.id)).size,50);
+ for(const [level,count] of Object.entries({A1:18,A2:18,B1:14})) assert.equal(catalog.stories.filter(s=>s.level===level).length,count);
  for(const source of sources.stories){
   const story=catalog.stories.find(s=>s.id===source.storyId);assert.ok(story);
   assert.ok(story.description.includes('kısa uyarlama'));assert.ok(story.description.includes('Türkçe çeviri: English Tales'));assert.notEqual(story.author,'English Tales');
-  assert.ok(source.sourceTextUrl.startsWith('https://www.gutenberg.org/cache/epub/'));assert.match(source.sourceChapterSha256,/^[a-f0-9]{64}$/);
+  assert.ok(['www.gutenberg.org','en.wikisource.org'].includes(new URL(source.sourceTextUrl).hostname));assert.match(source.sourceChapterSha256??source.sourcePageTextSha256,/^[a-f0-9]{64}$/);
   for(const author of [...source.authors,...(source.englishTranslator?[source.englishTranslator]:[])])assert.ok(author.deathYear<1956);
   const limits=story.level==='A1'?[12,18]:story.level==='A2'?[20,30]:[28,40];assert.ok(story.sentences.length>=limits[0]&&story.sentences.length<=limits[1]);
   assert.equal(new Set(story.sentences.map(s=>s.id)).size,story.sentences.length);
@@ -36,13 +36,14 @@ test('the reviewed classic package is complete, bilingual, level-balanced and tr
  // New vocabulary examples must demonstrate the exact selectable token (no implicit lemmatization).
  for(const word of catalog.words.slice(39)){assert.ok(word.translation.trim());assert.ok(word.pronunciation.trim());assert.ok(tokens(word.example).has(word.word.toLowerCase()),word.id);}
 });
-test('every classic has its own intact PNG, cover mapping and matching upload manifest',async()=>{
+test('classics have verified PNGs, historical provenance, cover mappings and matching upload checksums',async()=>{
  const manifest=JSON.parse(await read('../supabase/asset-upload-manifest.json'));
  const coverCode=String(await read('../../app/src/main/java/com/yurken/englishtales/ui/BookCover.kt'));const seen=new Set();
  for(const source of sources.stories){
   const key=source.cover.key,bytes=await read(`../../app/src/main/res/drawable-nodpi/${key}.png`);
-  assert.equal(bytes.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.equal(bytes.readUInt32BE(16),600);assert.equal(bytes.readUInt32BE(20),900);assert.ok(bytes.length<6*1024*1024);
-  const digest=createHash('sha256').update(bytes).digest('hex');assert.ok(!seen.has(digest));seen.add(digest);
+  assert.equal(bytes.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.ok(bytes.readUInt32BE(16)>0&&bytes.readUInt32BE(16)<=4096);assert.ok(bytes.readUInt32BE(20)>0&&bytes.readUInt32BE(20)<=4096);assert.ok(bytes.length<6*1024*1024);
+  const digest=createHash('sha256').update(bytes).digest('hex');if(seen.has(digest)) assert.equal(source.cover.kind,'Historical collection title page');seen.add(digest);
+  if(source.cover.kind.startsWith('Historical')) {assert.match(source.cover.sourceSha256,/^[a-f0-9]{64}$/);assert.equal(source.cover.assetSha256,digest);assert.ok(source.cover.illustrator.deathYear<1956);assert.ok(source.cover.sourceImageUrl.startsWith('https://'));assert.ok(source.cover.sourcePageUrl.startsWith('https://'));}
   const asset=manifest.assets.find(a=>a.source.endsWith(`/${key}.png`));assert.ok(asset);assert.equal(asset.sha256,digest);assert.equal(asset.byteSize,bytes.length);
   assert.ok(coverCode.includes(`"${key}" -> R.drawable.${key}`));
  }

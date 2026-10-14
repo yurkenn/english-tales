@@ -50,83 +50,83 @@
       "source": "app/src/main/res/drawable-nodpi/cover_attic_letter.png"
     },
     {
-      "id": "dcb0ed9a-842e-5eb2-ad72-238853d58de0",
+      "id": "77e5dc84-6237-5f91-a0be-adf590b918a0",
       "bucket": "story-media",
-      "path": "covers/72edd5908b3713f8f345aff35acb961b65706c237c03827fe838fc6c468f55ee.png",
-      "sha256": "72edd5908b3713f8f345aff35acb961b65706c237c03827fe838fc6c468f55ee",
-      "byteSize": 35050,
+      "path": "covers/dd876dd7bcdabe6cb3888183d7da579b5e72b01379310824c566d6b936d32d64.png",
+      "sha256": "dd876dd7bcdabe6cb3888183d7da579b5e72b01379310824c566d6b936d32d64",
+      "byteSize": 1166164,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_tortoise_hare.png"
     },
     {
-      "id": "a88cbc3b-c2b1-54f1-a2e6-d3689baaac15",
+      "id": "684e76af-b38a-585b-a1fd-f65f2641f8de",
       "bucket": "story-media",
-      "path": "covers/942bd2d79f217efdeb07e5f469c43637a78278999626607ad2d0149af1bfbebc.png",
-      "sha256": "942bd2d79f217efdeb07e5f469c43637a78278999626607ad2d0149af1bfbebc",
-      "byteSize": 43022,
+      "path": "covers/8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4.png",
+      "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
+      "byteSize": 383391,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_lion_mouse.png"
     },
     {
-      "id": "64a62a72-1a19-5d14-ac64-fde1f1e738cd",
+      "id": "3120776a-7e90-5450-a299-4a2d516b76da",
       "bucket": "story-media",
-      "path": "covers/c7cda9e127376d05a0a83e772ad361bc2c2436075a7130de2479abf0e219dc08.png",
-      "sha256": "c7cda9e127376d05a0a83e772ad361bc2c2436075a7130de2479abf0e219dc08",
-      "byteSize": 37010,
+      "path": "covers/088729e3ae54b6f09faad898d2a9fce2625f00e3d70dc33de0364ffbc13f1419.png",
+      "sha256": "088729e3ae54b6f09faad898d2a9fce2625f00e3d70dc33de0364ffbc13f1419",
+      "byteSize": 48781,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_fox_grapes.png"
     },
     {
-      "id": "42ae2531-3afe-5b71-a902-0cb6f1aac3d0",
+      "id": "050255a0-db07-5ffa-adb0-aafe54a91809",
       "bucket": "story-media",
-      "path": "covers/35ade5d11e3dc85bdbe970821fb32fc1557c0a93e2ed64ca33f7a9e5d9bff9bc.png",
-      "sha256": "35ade5d11e3dc85bdbe970821fb32fc1557c0a93e2ed64ca33f7a9e5d9bff9bc",
-      "byteSize": 34997,
+      "path": "covers/35dad3a75176a8ec44753b6239f5fa7a670ea2d4a9713ad69d3b8bb86dc787ff.png",
+      "sha256": "35dad3a75176a8ec44753b6239f5fa7a670ea2d4a9713ad69d3b8bb86dc787ff",
+      "byteSize": 84731,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_ants_grasshopper.png"
     },
     {
-      "id": "4de95f53-9101-5266-aeac-102ed03ff4cc",
+      "id": "040dd483-0307-5abf-a419-7d8bbbbf6ebb",
       "bucket": "story-media",
-      "path": "covers/5eab802f42d23748b3adc24a9f289739aa7b634fdf2bbe885bb79029cd3db11e.png",
-      "sha256": "5eab802f42d23748b3adc24a9f289739aa7b634fdf2bbe885bb79029cd3db11e",
-      "byteSize": 32344,
+      "path": "covers/3e4243044fbc786aca0f2775679e25b4148a0d569c5f0d9e1bf84d44f4868a17.png",
+      "sha256": "3e4243044fbc786aca0f2775679e25b4148a0d569c5f0d9e1bf84d44f4868a17",
+      "byteSize": 110869,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_red_riding_hood.png"
     },
     {
-      "id": "510b24af-1165-5e2c-ab41-5ebe4d7a4735",
+      "id": "efa27c15-cf1c-5bd9-a6c9-b9b8f503924e",
       "bucket": "story-media",
-      "path": "covers/9b9c638a988fbf5cb77bc6a85e7b895b7bfa453b71ed855be88fa51b1bced88a.png",
-      "sha256": "9b9c638a988fbf5cb77bc6a85e7b895b7bfa453b71ed855be88fa51b1bced88a",
-      "byteSize": 36248,
+      "path": "covers/7720bee19b152e477bdb09ffb33a66ea657d2191f0d73c675f4f2d3dcdcd6269.png",
+      "sha256": "7720bee19b152e477bdb09ffb33a66ea657d2191f0d73c675f4f2d3dcdcd6269",
+      "byteSize": 178037,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_cinderella.png"
     },
     {
-      "id": "e7ee5264-8f11-56af-a749-4dc5bcf1d41c",
+      "id": "9aa96897-87ed-5d19-af6e-f2b0dd83dc05",
       "bucket": "story-media",
-      "path": "covers/d8554da24a3e8d1f9117f18cb9f7ae3912e345bbdfd50ae0f2ddbb1f9be81196.png",
-      "sha256": "d8554da24a3e8d1f9117f18cb9f7ae3912e345bbdfd50ae0f2ddbb1f9be81196",
-      "byteSize": 33625,
+      "path": "covers/65e1033a6373ad895f49b2da65e58736815d14229129c96f43f7999122e4e0a7.png",
+      "sha256": "65e1033a6373ad895f49b2da65e58736815d14229129c96f43f7999122e4e0a7",
+      "byteSize": 177600,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_bremen_musicians.png"
     },
     {
-      "id": "57761491-8b15-57f1-ab20-4d285a385627",
+      "id": "78c0f2bd-e477-5dc3-a4b3-754d846fba0e",
       "bucket": "story-media",
-      "path": "covers/20597435ac8725209f0b1e34539ec4107bb5432a1e9ae6025b8dd86a6e5156b1.png",
-      "sha256": "20597435ac8725209f0b1e34539ec4107bb5432a1e9ae6025b8dd86a6e5156b1",
-      "byteSize": 32937,
+      "path": "covers/185aa0da7094338db37fcff938b80e62425e15032cad033857cfcc7211520770.png",
+      "sha256": "185aa0da7094338db37fcff938b80e62425e15032cad033857cfcc7211520770",
+      "byteSize": 181503,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_hansel_gretel.png"
     },
     {
-      "id": "e534fa87-4da0-5e63-a7ca-de19ded2ac57",
+      "id": "4d1b9680-a9f2-5be7-a1d9-83bea90baa6d",
       "bucket": "story-media",
-      "path": "covers/766b5dea04a12d37f195f08a113042d3b7530f6b8d5f9278e127ee42bbe828de.png",
-      "sha256": "766b5dea04a12d37f195f08a113042d3b7530f6b8d5f9278e127ee42bbe828de",
-      "byteSize": 31455,
+      "path": "covers/a3d461c45ae03679605e330edcb2815f191ca12626161497bfaf28a9b371a6db.png",
+      "sha256": "a3d461c45ae03679605e330edcb2815f191ca12626161497bfaf28a9b371a6db",
+      "byteSize": 456466,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_happy_prince.png"
     },
     {
-      "id": "94ed58ba-9818-566e-a127-5ff589484865",
+      "id": "a3654ad9-3af0-5de4-acbd-c43402382b96",
       "bucket": "story-media",
-      "path": "covers/a75ddc623cef192656c71f989375787db88f19e5746d23393f9a272ab06af5cb.png",
-      "sha256": "a75ddc623cef192656c71f989375787db88f19e5746d23393f9a272ab06af5cb",
-      "byteSize": 42013,
+      "path": "covers/0347d07340f77afc88a378b99aa639548fc78f9ff5afeeecbe33ffbfdb3e547e.png",
+      "sha256": "0347d07340f77afc88a378b99aa639548fc78f9ff5afeeecbe33ffbfdb3e547e",
+      "byteSize": 341154,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_selfish_giant.png"
     },
     {
@@ -144,6 +144,262 @@
       "sha256": "b030a3740534593b7b27fcab2548ab1c2e1f91bc2c2b8489497b8b1ede9ac88a",
       "byteSize": 31204,
       "source": "app/src/main/res/drawable-nodpi/cover_classic_after_twenty_years.png"
+    },
+    {
+      "id": "9f4fee92-7115-530b-acc6-01c15f80aa76",
+      "bucket": "story-media",
+      "path": "covers/e15e505269f9af0df887d82a7206af9b726d1369a043d85751e7aef723c8e870.png",
+      "sha256": "e15e505269f9af0df887d82a7206af9b726d1369a043d85751e7aef723c8e870",
+      "byteSize": 90708,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_crow_pitcher.png"
+    },
+    {
+      "id": "684e76af-b38a-585b-a1fd-f65f2641f8de",
+      "bucket": "story-media",
+      "path": "covers/8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4.png",
+      "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
+      "byteSize": 383391,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_boy_cried_wolf.png"
+    },
+    {
+      "id": "c9ca9855-543c-5f65-ac94-e6f910c1016e",
+      "bucket": "story-media",
+      "path": "covers/a82723fd0f19adf03a62b7de3b66e97933faffc1339095453f6eab844887824e.png",
+      "sha256": "a82723fd0f19adf03a62b7de3b66e97933faffc1339095453f6eab844887824e",
+      "byteSize": 120001,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_town_country_mouse.png"
+    },
+    {
+      "id": "321a5723-2a53-5b46-a831-021f240d5f9a",
+      "bucket": "story-media",
+      "path": "covers/948f75d6673bf5a76f569e3d0a705e52e43ad62f0229e3770e8cee2eff8cab47.png",
+      "sha256": "948f75d6673bf5a76f569e3d0a705e52e43ad62f0229e3770e8cee2eff8cab47",
+      "byteSize": 304031,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_north_wind_sun.png"
+    },
+    {
+      "id": "684e76af-b38a-585b-a1fd-f65f2641f8de",
+      "bucket": "story-media",
+      "path": "covers/8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4.png",
+      "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
+      "byteSize": 383391,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_golden_eggs.png"
+    },
+    {
+      "id": "3ae02e44-c3e6-50eb-a768-64f3ebc47bde",
+      "bucket": "story-media",
+      "path": "covers/4f1520f88b6edc291a63e99f73b1698ada08606885cf0b9bb9a632b269cad97e.png",
+      "sha256": "4f1520f88b6edc291a63e99f73b1698ada08606885cf0b9bb9a632b269cad97e",
+      "byteSize": 478551,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_dog_shadow.png"
+    },
+    {
+      "id": "ac864d31-6910-566d-a97d-ca0be86a85e0",
+      "bucket": "story-media",
+      "path": "covers/35e89e5a3582d4d1954cb7d6b3e61d9a34cf2565dbc8cbc3b642aae061625ade.png",
+      "sha256": "35e89e5a3582d4d1954cb7d6b3e61d9a34cf2565dbc8cbc3b642aae061625ade",
+      "byteSize": 480183,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_fox_crow.png"
+    },
+    {
+      "id": "684e76af-b38a-585b-a1fd-f65f2641f8de",
+      "bucket": "story-media",
+      "path": "covers/8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4.png",
+      "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
+      "byteSize": 383391,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_ant_dove.png"
+    },
+    {
+      "id": "684e76af-b38a-585b-a1fd-f65f2641f8de",
+      "bucket": "story-media",
+      "path": "covers/8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4.png",
+      "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
+      "byteSize": 383391,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_bundle_sticks.png"
+    },
+    {
+      "id": "684e76af-b38a-585b-a1fd-f65f2641f8de",
+      "bucket": "story-media",
+      "path": "covers/8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4.png",
+      "sha256": "8b6aecb6b0bcd466bbf00c27b58e109fecdf89ea45142125e5cd5473b4c70ba4",
+      "byteSize": 383391,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_milkmaid_pail.png"
+    },
+    {
+      "id": "f4d16f53-1c62-5f28-a5ff-14daf3ae7f28",
+      "bucket": "story-media",
+      "path": "covers/78c816982a225f0befe4026476ddf3bb4dccf19376166c73890573fea77fea37.png",
+      "sha256": "78c816982a225f0befe4026476ddf3bb4dccf19376166c73890573fea77fea37",
+      "byteSize": 139956,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_dog_manger.png"
+    },
+    {
+      "id": "8653b468-5ed8-564e-a6d2-003cfc7adbda",
+      "bucket": "story-media",
+      "path": "covers/7e299c6edbee8eecb9bfb77538fbe1f3ae14f1e7f4b4c3cd4195c2698a8d3504.png",
+      "sha256": "7e299c6edbee8eecb9bfb77538fbe1f3ae14f1e7f4b4c3cd4195c2698a8d3504",
+      "byteSize": 364633,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_ass_lion_skin.png"
+    },
+    {
+      "id": "30933df1-a5b9-54ac-a150-cf29c1ba9065",
+      "bucket": "story-media",
+      "path": "covers/b177b7d6bb2f7ef5f98357c1d51cc76c65a7db2c97b7818158d786a90aa799e3.png",
+      "sha256": "b177b7d6bb2f7ef5f98357c1d51cc76c65a7db2c97b7818158d786a90aa799e3",
+      "byteSize": 805255,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_snow_white.png"
+    },
+    {
+      "id": "98c31786-4e0c-5753-ab54-587ef53f6230",
+      "bucket": "story-media",
+      "path": "covers/5e722d1500b0b11701a760733a5f07858e6b12a9f8a231b1b81a6dc506932cad.png",
+      "sha256": "5e722d1500b0b11701a760733a5f07858e6b12a9f8a231b1b81a6dc506932cad",
+      "byteSize": 786211,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_rapunzel.png"
+    },
+    {
+      "id": "392bb09d-3da8-54a0-ae30-ea15fc3a4bcd",
+      "bucket": "story-media",
+      "path": "covers/d209dd2eca30ff7454b9971020196eb0d97697e8fc8bf002bd1d830eb7c51dd8.png",
+      "sha256": "d209dd2eca30ff7454b9971020196eb0d97697e8fc8bf002bd1d830eb7c51dd8",
+      "byteSize": 756562,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_sleeping_beauty.png"
+    },
+    {
+      "id": "88b03939-3b81-505b-a5f3-cf4040673f78",
+      "bucket": "story-media",
+      "path": "covers/c9f482f3e16d48314a9ceae19ad08fc73cae9d5cde0a651a7e7f9f9372f42c7b.png",
+      "sha256": "c9f482f3e16d48314a9ceae19ad08fc73cae9d5cde0a651a7e7f9f9372f42c7b",
+      "byteSize": 163350,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_frog_prince.png"
+    },
+    {
+      "id": "ee7d08f2-529a-51b3-a61d-6e8628b61536",
+      "bucket": "story-media",
+      "path": "covers/fac58bc6ac61711adf140a02251818d11a551ce1684ee7f00d3139cb38e93656.png",
+      "sha256": "fac58bc6ac61711adf140a02251818d11a551ce1684ee7f00d3139cb38e93656",
+      "byteSize": 174956,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_rumpelstiltskin.png"
+    },
+    {
+      "id": "2a5cfa24-38a2-566a-a7d9-a308f219e441",
+      "bucket": "story-media",
+      "path": "covers/83ee146f2517eca8b7e409d2ac278c5492f40da2730a2d4fdad122429a7fa577.png",
+      "sha256": "83ee146f2517eca8b7e409d2ac278c5492f40da2730a2d4fdad122429a7fa577",
+      "byteSize": 174540,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_golden_goose.png"
+    },
+    {
+      "id": "a7726b28-f8ae-581c-a4ed-f763f4ecaa52",
+      "bucket": "story-media",
+      "path": "covers/cb1d19341adc5ca60ad7ee4065908e84f6b0ea8e0efa567bcea4de9712c2c975.png",
+      "sha256": "cb1d19341adc5ca60ad7ee4065908e84f6b0ea8e0efa567bcea4de9712c2c975",
+      "byteSize": 173849,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_elves_shoemaker.png"
+    },
+    {
+      "id": "e5de9cc6-e52f-5639-a796-d3982c8cbdf0",
+      "bucket": "story-media",
+      "path": "covers/03ca5d1dcf86b287176a9db50ebffb00a236d06da7a3fcd5b6f7e0dd421f3d09.png",
+      "sha256": "03ca5d1dcf86b287176a9db50ebffb00a236d06da7a3fcd5b6f7e0dd421f3d09",
+      "byteSize": 170633,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_tom_thumb.png"
+    },
+    {
+      "id": "77c57ec2-a892-5e73-a290-5794f830fadb",
+      "bucket": "story-media",
+      "path": "covers/f60c040b50fd8e6a381c3e5076b3ace04f3c483e230a362860702b3da3c7c970.png",
+      "sha256": "f60c040b50fd8e6a381c3e5076b3ace04f3c483e230a362860702b3da3c7c970",
+      "byteSize": 166588,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_wolf_seven_kids.png"
+    },
+    {
+      "id": "343b1280-cedd-56a2-a022-9ce4d64bd38f",
+      "bucket": "story-media",
+      "path": "covers/85e02b892886ff3a8d3265d8582e30ec1c9d383b15b1ce57aa8ac69cc33c9e61.png",
+      "sha256": "85e02b892886ff3a8d3265d8582e30ec1c9d383b15b1ce57aa8ac69cc33c9e61",
+      "byteSize": 606964,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_twelve_dancing_princesses.png"
+    },
+    {
+      "id": "5674205c-95ef-584a-a0b2-8bcd456f0b03",
+      "bucket": "story-media",
+      "path": "covers/f70e05d68f205556753ffa1574788c9784cd32665f654736362f99a78147ce0e.png",
+      "sha256": "f70e05d68f205556753ffa1574788c9784cd32665f654736362f99a78147ce0e",
+      "byteSize": 172745,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_brave_little_tailor.png"
+    },
+    {
+      "id": "2413a828-c36a-52be-ab3e-c0d8bd07ca50",
+      "bucket": "story-media",
+      "path": "covers/4b83baab00a4f9d968f6d5ed61caf1c572edff78b545e2dc47fd35c0ee1e1726.png",
+      "sha256": "4b83baab00a4f9d968f6d5ed61caf1c572edff78b545e2dc47fd35c0ee1e1726",
+      "byteSize": 823839,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_goose_girl.png"
+    },
+    {
+      "id": "d986da99-d272-57b3-afd1-2123ef04194f",
+      "bucket": "story-media",
+      "path": "covers/1e9cec68cbf4c7751cea327ded2017d36876409e2cf19002f5a8cb72afcf751f.png",
+      "sha256": "1e9cec68cbf4c7751cea327ded2017d36876409e2cf19002f5a8cb72afcf751f",
+      "byteSize": 538823,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_ugly_duckling.png"
+    },
+    {
+      "id": "af68ad6b-a984-568e-abfc-e45573c3bc92",
+      "bucket": "story-media",
+      "path": "covers/12b0edafc788ca9c7be21fa1504734f95af4122bfd3c9f8f6f7d5ced7943d4bb.png",
+      "sha256": "12b0edafc788ca9c7be21fa1504734f95af4122bfd3c9f8f6f7d5ced7943d4bb",
+      "byteSize": 730146,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_emperors_clothes.png"
+    },
+    {
+      "id": "609c57fd-a918-549b-a31f-a6e828f0ad3b",
+      "bucket": "story-media",
+      "path": "covers/413319e7fff1957116617c7995836db0ce7b7110497e94f06a0763f635daf7ea.png",
+      "sha256": "413319e7fff1957116617c7995836db0ce7b7110497e94f06a0763f635daf7ea",
+      "byteSize": 271399,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_thumbelina.png"
+    },
+    {
+      "id": "81e70626-bcb6-50b3-a519-f893bfd5d093",
+      "bucket": "story-media",
+      "path": "covers/4306d8816977c1b413c077b2b9a4b71fa4fe0f4e624463a7c312d4d3e5c243ee.png",
+      "sha256": "4306d8816977c1b413c077b2b9a4b71fa4fe0f4e624463a7c312d4d3e5c243ee",
+      "byteSize": 751461,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_little_mermaid.png"
+    },
+    {
+      "id": "e78e751b-fd81-50df-aa0a-88e54c649ce5",
+      "bucket": "story-media",
+      "path": "covers/45041aa73b2b004f61da4b26a14ea20d5c9a251efa2c141e83c5cd22a5d46c7a.png",
+      "sha256": "45041aa73b2b004f61da4b26a14ea20d5c9a251efa2c141e83c5cd22a5d46c7a",
+      "byteSize": 505580,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_snow_queen.png"
+    },
+    {
+      "id": "0a726862-032e-5060-ac4d-9e23851a5810",
+      "bucket": "story-media",
+      "path": "covers/05eb3b59b237fd2a1ae61a65a57806a156d7a799c6aced357331d14404dec3f2.png",
+      "sha256": "05eb3b59b237fd2a1ae61a65a57806a156d7a799c6aced357331d14404dec3f2",
+      "byteSize": 411784,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_little_match_girl.png"
+    },
+    {
+      "id": "35bf611f-da57-5f84-ad2a-2b507e32421f",
+      "bucket": "story-media",
+      "path": "covers/c991e9dfa8ed5be003786d8d1da2f50fd815cca4b6e98edf8e5d558bb22be593.png",
+      "sha256": "c991e9dfa8ed5be003786d8d1da2f50fd815cca4b6e98edf8e5d558bb22be593",
+      "byteSize": 557651,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_steadfast_tin_soldier.png"
+    },
+    {
+      "id": "b6779dde-8649-57c2-a174-e78c4221ada7",
+      "bucket": "story-media",
+      "path": "covers/d9dc75ff532ecae511b8b3ef7ec5ad1fca7fc03acee440fc48646fe6805f0497.png",
+      "sha256": "d9dc75ff532ecae511b8b3ef7ec5ad1fca7fc03acee440fc48646fe6805f0497",
+      "byteSize": 341455,
+      "source": "app/src/main/res/drawable-nodpi/cover_classic_wild_swans.png"
     }
   ]
 }

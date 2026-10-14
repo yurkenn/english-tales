@@ -135,7 +135,7 @@ test('the exported catalog publishes every bundled story and sentence with repea
   const seed=await read('../supabase/seed.sql');
   await db.exec(seed.replace(/^begin;$/m,'').replace(/^commit;$/m,'')); // Keep the test transaction isolated.
   assert.equal((await db.query('select count(*)::int as n from public.story_revisions')).rows[0].n,catalog.stories.length);
-  assert.equal((await anon('select * from storage.objects')).length,catalog.stories.length);
+  assert.equal((await anon('select * from storage.objects')).length,new Set(JSON.parse(await read('../supabase/asset-upload-manifest.json')).assets.map(a=>a.path)).size);
 });
 test('draft metadata, sentences, words and media are hidden from readers',async()=>{
   const id=await draft();
