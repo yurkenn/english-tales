@@ -25,5 +25,5 @@ for (i,scene) in scenes.enumerated(){
   box(334,320,140,323,ink);poly([(334,643),(404,691),(474,643)],ink);box(355,333,98,276,accent.withAlphaComponent(0.22));line(197,335,197,669,gold,10);poly([(160,675),(234,675),(222,737),(172,737)],gold);box(155,738,85,10,gold);poly([(176,666),(215,666),(330,324),(61,324)],gold.withAlphaComponent(0.12));oval(356,481,46,49,ink);poly([(351,477),(327,344),(425,344),(399,479)],ink);oval(443,373,5,5,red)
  }
  NSGraphicsContext.restoreGraphicsState()
- let out=URL(fileURLWithPath:"app/src/main/res/drawable-nodpi/cover_classic_\(slug).png");try rep.representation(using:.png,properties:[:])!.write(to:out);print(out.lastPathComponent)
+ let out=URL(fileURLWithPath:"backend/content/covers/cover_classic_\(slug).png");try rep.representation(using:.png,properties:[:])!.write(to:out);print(out.lastPathComponent)
 }

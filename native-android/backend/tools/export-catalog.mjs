@@ -14,11 +14,11 @@ const lines = ['-- Generated from the native catalog. Drafts only; never changes
 const assets = [];
 for (const story of catalog.stories) {
   const revisionId = stableId(`${story.id}:revision:1`);
-  const bytes = await readFile(new URL(`../../app/src/main/res/drawable-nodpi/${story.coverKey}.png`, import.meta.url));
+  const bytes = await readFile(new URL(`../content/covers/${story.coverKey}.png`, import.meta.url));
   const sha = createHash('sha256').update(bytes).digest('hex');
   const assetId = stableId(`cover:${sha}`);
   const path = `covers/${sha}.png`;
-  assets.push({ id: assetId, bucket: 'story-media', path, sha256: sha, byteSize: bytes.length, source: `app/src/main/res/drawable-nodpi/${story.coverKey}.png` });
+  assets.push({ id: assetId, bucket: 'story-media', path, sha256: sha, byteSize: bytes.length, source: `backend/content/covers/${story.coverKey}.png` });
   lines.push(`insert into public.content_assets(id,kind,storage_path,sha256,byte_size,mime_type) values(${quote(assetId)},'cover',${quote(path)},${quote(sha)},${bytes.length},'image/png') on conflict do nothing;`);
   lines.push(`insert into public.stories(id) values(${quote(story.id)}) on conflict do nothing;`);
   lines.push(`do $seed$ begin if not exists(select 1 from public.story_revisions where id=${quote(revisionId)}) then`);

@@ -16,7 +16,7 @@ Bu sayılar paketin içeriğini belirtir. Canlı ortamın yayın durumu, anonim 
 2. İngilizce/Türkçe cümleleri sabit kimliklerle hazırla; seviyeli uyarlamayı tam özgün metin gibi sunma. Yazar alanını gerçek yazara ayır.
 3. Kalıcı yeni hikâye/cümle/kelime kimlikleri kullan. Eski metni veya yayımlanmış revision'ı üzerine yazarak düzeltme; düzeltmeler yeni revision gerektirir.
 4. Kelime ve ifadeler panel, yayın kontrolü, exporter ve Android'de aynı kuralla eşleşir: büyük/küçük harf yok sayılır, harf/rakam dışı her karakter ayırıcıdır, yalnız bütün sözcükler eşleşir. “picked up” ifadesi “picked-up” ile, “lion” kelimesi “lion's” ile eşleşir; “cat” “category” ile eşleşmez. Çakışmada soldan sağa en uzun öğe kazanır. Ortak sözlük köke indirgeme yapmaz. Yeni kelimenin eski metinlerde bulunması eski hikâyelerin kelime çalışmalarını da değiştirebilir. Bu pakette yeni kelimeler eski altı metinde bulunmayan token'lardan seçildi. Yeni bir anlam mevcut kelime ID'sine yazılmamalıdır.
-5. Kapağı `res/drawable-nodpi` altına ekle ve `BookCover.kt` eşlemesine dahil et. Görsel, 4096 px ve 6 MB indirme sınırlarına uymalı.
+5. Kapak kaynağını PNG olarak `backend/content/covers/` altına ekle, `python3 ../tooling/build_app_images.py` ile uygulamanın WebP kopyasını üret ve `BookCover.kt` eşlemesine dahil et. PNG, Storage yüklemesi ve checksum için kaynak kalır. Görsel, 4096 px ve 6 MB indirme sınırlarına uymalı.
 6. `backend` içinde `npm run catalog:export` çalıştır. Bu, sabit kimlikli **taslak** SQL ve kapak checksum/yükleme manifesti üretir; mevcut revision'ı değiştirmez, dosya yüklemez ve hikâye yayımlamaz.
 7. `npm test`, `npm run test:admin`, Android derleme/lint ve ilgili emülatör akışlarını doğrula.
 
