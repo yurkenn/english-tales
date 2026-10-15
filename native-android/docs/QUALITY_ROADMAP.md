@@ -8,12 +8,12 @@
 
 | Alan | Ölçüt | Hedef | Bugün | Nasıl ölçülür |
 |---|---|---|---|---|
-| Kararlılık | Kullanıcının fark ettiği çökme oranı | < %1,09 (Play kötü davranış eşiği), hedef < %0,5 | Crashlytics hazır (#18); 49 sürümüyle ölçülmeye başlar | Play vitals + çökme raporlama |
+| Kararlılık | Kullanıcının fark ettiği çökme oranı | < %1,09 (Play kötü davranış eşiği), hedef < %0,5 | Crashlytics ana dalda (#18); yeni mağaza sürümü ve yayın beyanları bekliyor | Play vitals + çökme raporlama |
 | Kararlılık | ANR oranı | < %0,47 (Play eşiği), hedef < %0,2 | Ölçülmüyor | Play vitals |
-| Performans | Soğuk açılış (orta sınıf cihaz, medyan) | < 1,5 sn | Ölçülmüyor; 322 KB katalog ana iş parçacığında | Macrobenchmark |
+| Performans | Soğuk açılış (orta sınıf cihaz, medyan) | < 1,5 sn | Katalog arka planda (#20); cihaz bazlı Macrobenchmark ölçümü bekliyor | Macrobenchmark |
 | Performans | Okuyucu sayfa geçişi takılma | < %5 yavaş kare | Ölçülmüyor | Macrobenchmark `FrameTimingMetric` |
-| Boyut | İndirme boyutu (release APK) | < 15 MB | 30,7 MB → 7,2 MB (#15) | `verify_release.py` |
-| Doğruluk | PR başına otomatik test | Birim + backend + cihaz testleri CI'da | Cihaz testleri yalnız yerel | GitHub Actions |
+| Boyut | İndirme boyutu (release APK) | < 15 MB | Birleşik APK 7,9 MB; AAB 11,18 MB (15 Ekim) | `verify_release.py` |
+| Doğruluk | PR başına otomatik test | Birim + backend + cihaz testleri CI'da | CI emülatörü: 139 test, 136 geçti / 3 koşullu atlandı | GitHub Actions |
 | Erişilebilirlik | Ana yolculuk TalkBack ile | Tamamlanabilir; etiketsiz etkileşim 0 | 18 etiket / 31 tıklanabilir | Kabul testi + lint |
 | Erişilebilirlik | Büyük yazı | fontScale 2.0'da kırpılma yok | Kısmi testler | Compose UI testleri |
 | Erişilebilirlik | Kontrast | ≥ 4.5:1 metin | Tema renkleri geçiyor, 80 sabit renk denetlenmedi | Renk denetimi |
@@ -21,7 +21,7 @@
 | İçerik | Paket = canlı | Fark 0 | Paket 359 / canlı 316 öğe | Yayın doğrulama aracı |
 | Öğrenme | İlk hikâyeyi bitirme, ertesi gün dönüş, tekrar tamamlama | Önce ölçüm, sonra hedef | Ölçülmüyor | Asgari ürün olayları |
 | Yayın | Kademeli dağıtım + otomatik doğrulama | Her sürüm %20 → %50 → %100 | %100 elle | Sürüm kontrol listesi |
-| Kod | Kullanım dışı API ve lint uyarısı | 0 | 3 → 0 (#19) | Derleme çıktısı |
+| Kod | Kullanım dışı API ve lint uyarısı | 0 | Kotlin 0 uyarı; debug lint 0 hata / 30 uyarı | Derleme çıktısı |
 
 ## 2. Fazlar
 
@@ -37,7 +37,7 @@
 | Q1.6 | Uygulama içi güncelleme + değerlendirme isteği | Esnek güncelleme; 3. tamamlanan hikâyeden sonra en fazla bir değerlendirme isteği | 1 |
 | Q1.7 | Reklam SDK uyarısı (`setTagForChildDirectedTreatment`) | Uyarı 0; reklam kapalıyken davranış değişmez | 0,5 |
 
-**Kapı Q1:** APK < 15 MB · CI'da tüm testler · derleme uyarısı 0 · ses odağı testleri. — Tüm maddeler PR'da; kapı #15–#21 birleşince geçilmiş olur.
+**Kapı Q1:** APK < 15 MB · CI'da tüm testler · derleme uyarısı 0 · ses odağı testleri. — **15 Ekim 2026: geçildi.** #15–#21 ana dala birleşti. Birleşik doğrulama ve sınırlar aşağıda kayıtlı.
 
 ### Q2 — Görünürlük ve yayın güvenliği · ~5–7 gün · karar: ölçüm sağlayıcısı
 
@@ -47,7 +47,7 @@
 | Q2.2 | Asgari ürün olayları (5–7 olay) | İlk hikâye bitti, ertesi gün dönüş, tekrar tamamlandı; içerik metni/e-posta yok | 1,5–2 |
 | Q2.3 | Macrobenchmark + baseline profile | Açılış ve sayfa geçişi ölçülür, profil pakette | 1–1,5 |
 | Q2.4 | Sürüm otomasyonu | CI'da imzalı AAB + `verify_release.py`; dahili kanala yükleme | 1,5–2 |
-| Q2.5 | Kademeli dağıtım kontrol listesi | %20 → %50 → %100; vitals eşiğinde durdurma | 0,5 |
+| Q2.5 | [Kademeli dağıtım kontrol listesi](STAGED_RELEASE.md) | %20 → %50 → %100; vitals eşiğinde durdurma | 0,5 |
 
 **Kapı Q2:** Çökme ve ANR görünür · açılış ölçülmüş · sürüm tek komutla doğrulanır.
 
@@ -114,11 +114,24 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 
 | İş | Durum | PR | Ölçülen sonuç |
 |---|---|---|---|
-| Q1.1 WebP kapaklar | İncelemede | [#15](https://github.com/yurkenn/english-tales/pull/15) | APK 30,7 → 7,2 MB; AAB 10,0 MB |
-| Q1.2 CI cihaz testleri | İncelemede | [#16](https://github.com/yurkenn/english-tales/pull/16) | İlk koşu ~2,5 dk; yapılandırmaya bağlı 2 test bulundu ve koşullu yapıldı |
-| Q1.3 TTS ses odağı | İncelemede | [#17](https://github.com/yurkenn/english-tales/pull/17) | Odak kaybında durur; her çıkışta odak bırakılır |
-| Q1.4 `LinkAnnotation` | İncelemede | [#19](https://github.com/yurkenn/english-tales/pull/19) | Kotlin derleme uyarısı 3 → 0 |
-| Q1.5 Kataloğu arka planda yükle | İncelemede | [#20](https://github.com/yurkenn/english-tales/pull/20) | Ana iş parçacığından 134–173 ms çıktı; debug soğuk açılış ~1,63 → ~1,50 sn |
-| Q1.6 Güncelleme + değerlendirme | İncelemede | [#21](https://github.com/yurkenn/english-tales/pull/21) | Esnek güncelleme (3 günde bir) + 3. hikâyeden sonra tek değerlendirme isteği |
-| Q1.7 Reklam SDK uyarısı | İncelemede | [#19](https://github.com/yurkenn/english-tales/pull/19) | Beyan korunarak gerekçeli bastırıldı |
-| Q2.1 Çökme raporlama | İncelemede | [#18](https://github.com/yurkenn/english-tales/pull/18) | Crashlytics; test çökmesi panelde göründü |
+| Q1.1 WebP kapaklar | Ana dala birleşti | [#15](https://github.com/yurkenn/english-tales/pull/15) | APK 30,7 → 7,2 MB; AAB 10,0 MB |
+| Q1.2 CI cihaz testleri | Ana dala birleşti | [#16](https://github.com/yurkenn/english-tales/pull/16) | İlk koşu ~2,5 dk; yapılandırmaya bağlı 2 test bulundu ve koşullu yapıldı |
+| Q1.3 TTS ses odağı | Ana dala birleşti | [#17](https://github.com/yurkenn/english-tales/pull/17) | Odak kaybında durur; her çıkışta odak bırakılır |
+| Q1.4 `LinkAnnotation` | Ana dala birleşti | [#19](https://github.com/yurkenn/english-tales/pull/19) | Kotlin derleme uyarısı 3 → 0 |
+| Q1.5 Kataloğu arka planda yükle | Ana dala birleşti | [#20](https://github.com/yurkenn/english-tales/pull/20) | Ana iş parçacığından 134–173 ms çıktı; debug soğuk açılış ~1,63 → ~1,50 sn |
+| Q1.6 Güncelleme + değerlendirme | Ana dala birleşti | [#21](https://github.com/yurkenn/english-tales/pull/21) | Esnek güncelleme (3 günde bir) + 3. hikâyeden sonra tek değerlendirme isteği |
+| Q1.7 Reklam SDK uyarısı | Ana dala birleşti | [#19](https://github.com/yurkenn/english-tales/pull/19) | Beyan korunarak gerekçeli bastırıldı |
+| Q2.1 Çökme raporlama | Kod birleşti; yayın beyanları açık | [#18](https://github.com/yurkenn/english-tales/pull/18) | Crashlytics; test çökmesi panelde göründü |
+| Q2.5 Kademeli yayın listesi | Hazır; bu belgeyle birlikte #22 | [#22](https://github.com/yurkenn/english-tales/pull/22) | %20 → %50 → %100; izleme, durdurma ve düzeltme kaydı |
+
+## 6. Birleşik doğrulama — 15 Ekim 2026
+
+- #14 yol haritası ve #15–#21 geliştirmeleri ana dala birleşti. #21 içinde katalog yükleme/güncelleme ekranı çakışması çözüldü. Activity yeniden oluşturulunca indirilmiş güncelleme yeniden bulunur; kapanmış örneğe gelen geç Play yanıtları yok sayılır. İki regresyon testi eklendi.
+- [Birleşik kaynak CI](https://github.com/yurkenn/english-tales/actions/runs/38740235486) ve [#21 PR CI](https://github.com/yurkenn/english-tales/actions/runs/38740408476) başarılı: repository, backend, Android ve android-device.
+- CI cihaz raporu: **139 test, 136 başarılı, 0 hata, 3 atlama**. İki `LearningSyncWorkerTest` ve canlı `RemoteContentTest` özel servis yapılandırması olmayan CI'da koşullu atlanır. Bunlar canlı eşitleme/indirme doğrulandı şeklinde yorumlanmaz.
+- Yerel birleşik doğrulama: **29 JVM / 61 backend testi başarılı**; admin HTTP uçtan uca kontrolü ve 6 ELF doğrulayıcı testi başarılı. Debug derlemesi ve lint geçti: **0 hata / 30 lint uyarısı**. Son in-process Kotlin derlemesinde derleyici uyarısı yok.
+- İmzalı APK **7,9 MB**, AAB **11,18 MB**. Üretim adresi, test adresinin dışlanması, Play upload sertifikası, APK/AAB imzası, APK ZIP ve ELF64 16 KB statik hizalama kontrolü başarılı. Bu, yeni sürüm koduyla yayımlanmış bir mağaza paketi değildir; yerel teknik kontrol 48 / 2.0.0 ile yapıldı. Sonraki yükleme Console'daki en yüksek koddan büyük olmalıdır.
+- Yerel emülatör sistem izinleri nedeniyle başlatılamadı; cihaz testleri GitHub emülatöründe yapıldı. Mevcut çalışma dizini ve özel ayarlar korundu; entegrasyon geçici kopyada doğrulandı.
+- Crashlytics mapping yükleme işi bu yerel paket kontrolünde çalıştırılmadı. Gerçek Play teslimatı, üretilen split paketler, gerçek 16 KB cihazı ve fiziksel ses kesintisi bu çalışmada yeniden doğrulanmadı.
+
+**Q2 hâlâ açık:** Q2.2 ürün olayları, Q2.3 Macrobenchmark/baseline profile ve Q2.4 imzalı CI/dahili kanal otomasyonu uygulanacak. Q2.1 kodu ve önceki test çökmesi kaydı hazır; [gizlilik yayını ve Play veri güvenliği beyanı](CRASH_REPORTING.md) yeni mağaza sürümünden önce tamamlanmalı. Q2.5 [kademeli yayın kontrol listesi](STAGED_RELEASE.md) hazırdır; Console dağıtımı veya otomatik izleme kurulmuş sayılmaz.

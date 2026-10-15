@@ -2,6 +2,16 @@
 
 Son güncelleme: **15 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
 
+## Kalite güncellemesi — 15 Ekim 2026
+
+Q1 geliştirmeleri (#15–#21) ve kalite yol haritası (#14) ana dala birleşti. Birleşik APK 7,9 MB / AAB 11,18 MB; 29 JVM ve 61 backend testi başarılı. GitHub emülatöründe 139 testten 136'sı geçti, özel servis yapılandırması gerektiren 3 test atlandı. Debug lint: 0 hata / 30 uyarı. İmza, üretim bağlantısı ve statik 16 KB kontrolleri geçti.
+
+Güncelleme bildiriminin Activity yeniden oluşturulunca kaybolması ve kapanmış ekrana gelen geç Play yanıtları düzeltildi. Crashlytics kodu ana dalda; gizlilik sayfası/Play beyanı ve yeni mağaza sürümü açık yayın adımlarıdır. Q2'nin ürün olayları, performans ölçümü ve sürüm otomasyonu işleri sıradadır.
+
+[Kalite yol haritası ve doğrulama sınırları](native-android/docs/QUALITY_ROADMAP.md) · [Kademeli yayın kontrol listesi](native-android/docs/STAGED_RELEASE.md).
+
+Aşağıdaki 48 / 2.0.0 mağaza başvurusu tarihsel son kayıttır; bu kalite çalışmasında Play Console durumu tekrar kontrol edilmedi ve yeni yayın yapılmadı.
+
 ## Kısa durum
 
 Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 üretim kanalına yüklendi ve mağaza güncellemesiyle birlikte 15 Ekim 2026'da Google incelemesine gönderildi. İnceleme sonucu henüz gelmedi.**
