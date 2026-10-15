@@ -42,7 +42,7 @@ test('classics have verified PNGs, historical provenance, cover mappings and mat
  const manifest=JSON.parse(await read('../supabase/asset-upload-manifest.json'));
  const coverCode=String(await read('../../app/src/main/java/com/yurken/englishtales/ui/BookCover.kt'));const seen=new Set();
  for(const source of sources.stories){
-  const key=source.cover.key,bytes=await read(`../../app/src/main/res/drawable-nodpi/${key}.png`);
+  const key=source.cover.key,bytes=await read(`../content/covers/${key}.png`);
   assert.equal(bytes.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.ok(bytes.readUInt32BE(16)>0&&bytes.readUInt32BE(16)<=4096);assert.ok(bytes.readUInt32BE(20)>0&&bytes.readUInt32BE(20)<=4096);assert.ok(bytes.length<6*1024*1024);
   const digest=createHash('sha256').update(bytes).digest('hex');if(seen.has(digest)) assert.equal(source.cover.kind,'Historical collection title page');seen.add(digest);
   if(source.cover.kind.startsWith('Historical')) {assert.match(source.cover.sourceSha256,/^[a-f0-9]{64}$/);assert.equal(source.cover.assetSha256,digest);assert.ok(source.cover.illustrator.deathYear<1956);assert.ok(source.cover.sourceImageUrl.startsWith('https://'));assert.ok(source.cover.sourcePageUrl.startsWith('https://'));}
@@ -67,4 +67,13 @@ test('pilot phrases are multi-word entries that occur in their A1 stories and wi
  const story=id=>catalog.stories.find(s=>s.id===id).sentences.map(s=>s.english);
  for(const [id,phrase] of [['classic-tortoise-hare','step by step'],['classic-tortoise-hare','wakes up'],['classic-fox-grapes','again and again'],['classic-fox-grapes','at last'],['classic-lion-mouse','one day']])
   assert.ok(story(id).some(x=>occurs(x,phrase)),`${phrase} in ${id}`);
+});
+test('every story cover ships as a small WebP while the PNG source stays outside the APK',async()=>{
+ for(const story of catalog.stories){
+  const webp=await read(`../../app/src/main/res/drawable-nodpi/${story.coverKey}.webp`);
+  assert.equal(webp.subarray(0,4).toString(),'RIFF',story.coverKey);assert.equal(webp.subarray(8,12).toString(),'WEBP',story.coverKey);
+  assert.ok(webp.length<300*1024,`${story.coverKey} is ${webp.length} bytes`);
+  await assert.rejects(read(`../../app/src/main/res/drawable-nodpi/${story.coverKey}.png`),story.coverKey);
+  assert.ok((await read(`../content/covers/${story.coverKey}.png`)).length>0,story.coverKey);
+ }
 });

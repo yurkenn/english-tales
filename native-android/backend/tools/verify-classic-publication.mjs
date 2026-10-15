@@ -20,7 +20,7 @@ for(const story of catalog.stories){
  const live=stories.find(s=>s.id===story.id);assert.ok(live?.current_revision_id,story.id);
  const revision=revisions.get(live.current_revision_id);assert.ok(revision?.published_at,story.id);
  const cover=assets.get(revision.cover_asset_id);assert.ok(cover,story.id);
- const expected=await readFile(new URL(`../../app/src/main/res/drawable-nodpi/${story.coverKey}.png`,import.meta.url));
+ const expected=await readFile(new URL(`../content/covers/${story.coverKey}.png`,import.meta.url));
  assert.equal(cover.sha256,createHash('sha256').update(expected).digest('hex'),story.id);
  const response=await fetch(`${base}/storage/v1/object/authenticated/story-media/${cover.storage_path}`,{headers});assert.equal(response.status,200,story.id);
  const bytes=Buffer.from(await response.arrayBuffer());assert.equal(bytes.length,Number(cover.byte_size),story.id);assert.equal(createHash('sha256').update(bytes).digest('hex'),cover.sha256,story.id);checkedCovers++;

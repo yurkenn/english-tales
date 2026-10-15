@@ -29,7 +29,7 @@ try {
   assert.equal(await rpc('content_role'),'publisher');
   const rows=await rpc('admin_catalog',{p_offset:0,p_limit:100});assert.equal(rows.length,catalog.stories.length);
   const d=await rpc('admin_revision',{p_revision_id:rows.find(r=>r.story_id==='quiet-morning').id});
-  const cover=await readFile(new URL('../../app/src/main/res/drawable-nodpi/cover_quiet_morning.png',import.meta.url));
+  const cover=await readFile(new URL('../content/covers/cover_quiet_morning.png',import.meta.url));
   const id=randomUUID(),headers={Origin:origin,'Content-Type':'image/png','X-Asset-Id':id,'X-Kind':'cover'};
   assert.equal((await fetch(`${origin}/api/media`,{method:'POST',headers:{...headers,Origin:'https://other.example'},body:cover})).status,403);
   assert.equal((await fetch(`${origin}/api/media`,{method:'POST',headers,body:Buffer.from('not a PNG')})).status,400);
