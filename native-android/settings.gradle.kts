@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "EnglishTalesNative"
-include(":app")
+include(":app", ":macrobenchmark")
