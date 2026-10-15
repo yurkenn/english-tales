@@ -10,11 +10,15 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.*
+import com.yurken.englishtales.R
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @Composable
 fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Boolean,()->Unit)->Unit={_,active,next ->if(active()) next()}) {
@@ -27,6 +31,15 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var ids by rememberSaveable { mutableStateOf(emptyList<String>()) }
     var sessionKey by rememberSaveable { mutableStateOf("") }
     var session by rememberSaveable { mutableIntStateOf(0) }
+    var gapQuestions by rememberSaveable(stateSaver=gapQuestionsSaver) { mutableStateOf(emptyList<GapQuestion>()) }
+    var gapUnavailable by rememberSaveable { mutableStateOf(false) }
+    val stories=LearningContent.stories
+    val dictionary=LearningContent.words
+    val gapPrompts by produceState<List<GapPrompt>?>(null,stories,dictionary) {
+        value=withContext(Dispatchers.Default) {SentenceGap.prompts(stories,dictionary)}
+        gapUnavailable=false
+    }
+    val sessionKind=if(mode=="cloze") SentenceGap.SESSION_KIND else mode
     fun exit(plan: Boolean=false) {
         val leave={onSessionAbandoned(sessionKey);mode="";if(plan) onDailyPlan()}
         if(plan && finished) {
@@ -39,14 +52,19 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     LaunchedEffect(mode) { onSessionActive(mode.isNotEmpty()) }
     DisposableEffect(Unit) { onDispose {onSessionActive(false)} }
     fun start(value: String, seeded: List<String> = emptyList()) {
+        if(value=="cloze") {
+            gapQuestions=SentenceGap.session(gapPrompts.orEmpty(),dictionary,snapshot.dueWordIds+saved.map {it.id},snapshot.level)
+            gapUnavailable=gapQuestions.isEmpty()
+            if(gapUnavailable) {if(mode.isNotEmpty()) exit();return}
+        }
         if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
         val priority=(seeded+snapshot.dueWordIds+saved.map {it.id}).distinct().mapNotNull(LearningContent.wordById::get)
         val pool=if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else (priority+supplemental.shuffled()).distinctBy {it.id}.take(5)
         sessionKey=java.util.UUID.randomUUID().toString()
-        session++; ids=pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
+        session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
     }
     LaunchedEffect(launchId) { if(launchId!=null) { start("choice",launchWordIds);onLaunchConsumed() } }
-    LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,mode,ids.size)}
+    LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,sessionKind,ids.size)}
     if(mode.isEmpty()) {
         Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())) {
             StatsHeader(snapshot)
@@ -55,6 +73,9 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             Spacer(Modifier.height(20.dp))
             ModeCard("Kelime kartları","Kelimeleri tanı ve dinle.","cards",Color(0xFFE3F6FF)) {start("card")}
             ModeCard("Bir çeviri seç","Doğru anlamı bul.","translate",Color(0xFFFFF6D5)) {start("choice")}
+            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",Color(0xFFE3F6FF),enabled=gapPrompts?.isNotEmpty()==true) {start("cloze")}
+            if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
+                modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             ModeCard("Kelimeleri eşleştir","İngilizce ve Türkçe çiftleri bul.","play",Color(0xFFF0E5FF)) {start("match")}
             ModeCard("Kelimeyi oluştur","Harfleri doğru sıraya koy.","letters",Color(0xFFE9F7E2)) {start("spell")}
         }
@@ -62,10 +83,16 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     }
     val words=ids.mapNotNull(LearningContent.wordById::get)
     val timer=rememberActiveLearningTime(sessionKey,snapshot.activeSessionMillis[sessionKey]?:0,!finished,onCheckpoint)
-    val complete: (Int)->Unit = {finished=true;onLessonComplete(it,sessionKey,mode,words.size,timer.pause())}
+    val count=if(mode=="cloze") gapQuestions.size else words.size
+    val complete: (Int)->Unit = {finished=true;onLessonComplete(it,sessionKey,sessionKind,count,timer.pause())}
     if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("card")},snapshot);return }
     if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("match")},snapshot);return }
-    if(finished) { GameResult("$correctCount / ${words.size} doğru",correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
+    if(finished) { GameResult("$correctCount / $count doğru",correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
+    if(mode=="cloze") {
+        SentenceGapGame(gapQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
+            onComplete={correctCount=it;complete(it)},onExit={exit()})
+        return
+    }
     val word=words[question]
     var answer by rememberSaveable(question,mode,session) { mutableStateOf<String?>(null) }
     var chosen by rememberSaveable(question,mode,session) { mutableStateOf(emptyList<Int>()) }
@@ -121,8 +148,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
 }
 
 @Composable
-private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,onClick: ()->Unit) {
-    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).border(1.dp,TaleLine,RoundedCornerShape(12.dp)).clickable(onClick=onClick).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,enabled: Boolean=true,onClick: ()->Unit) {
+    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).border(1.dp,TaleLine,RoundedCornerShape(12.dp)).clickable(enabled=enabled,onClick=onClick).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
         Box(Modifier.size(64.dp).background(color,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {ReferenceIcon(icon,TaleBlue,Modifier.size(34.dp))}
         Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(5.dp)) {Text(title,fontSize=16.sp,fontWeight=FontWeight.Bold);Text(subtitle,fontSize=12.sp,color=TaleMuted)}
         Text("›",color=TaleMuted,fontSize=22.sp)
