@@ -27,7 +27,26 @@ bundle_cert=subprocess.run([str(pathlib.Path(args.jdk)/'bin'/('keytool'+suffix))
 assert 'ef:07:c9:73:55:fd:f7:63:14:c7:aa:94:6e:fc:a4:44:d7:2d:48:30' in bundle_cert.lower(), 'AAB upload signer differs from Play Console'
 libraries=[]
 alignment_errors=[]
+profiles={}
+source_profiles=root/'native-android/app/src/main/generated/baselineProfiles'
+for name in ('baseline-prof.txt','startup-prof.txt'):
+    rules=(source_profiles/name).read_text().splitlines()
+    app_rules=[rule for rule in rules if 'Lcom/yurken/englishtales/' in rule]
+    assert app_rules, 'Application rules missing from source profile: '+name
+    profiles[name]={'rules':len(rules),'applicationRules':len(app_rules)}
+r8_profile=output.parent/'intermediates/r8_art_profile/release/minifyReleaseWithR8/baseline-prof.txt'
+assert 'Lcom/yurken/englishtales/MainActivity;' in r8_profile.read_text(), 'Application startup rules did not reach the release R8 profile'
+
 with zipfile.ZipFile(apk) as archive, zipfile.ZipFile(aab) as bundle_archive:
+    for label, package, prefix in (
+        ('apk',archive,'assets/dexopt/'),
+        ('aab',bundle_archive,'BUNDLE-METADATA/com.android.tools.build.profiles/'),
+    ):
+        profiles[label]={}
+        for name,magic in (('baseline.prof',b'pro\x00'),('baseline.profm',b'prm\x00')):
+            data=package.read(prefix+name)
+            assert len(data)>8 and data.startswith(magic), 'Invalid packaged profile: '+label+'/'+name
+            profiles[label][name]={'bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()}
     for package, prefix in ((archive, ''), (bundle_archive, 'base/dex/')):
         dex = b''.join(package.read(name) for name in package.namelist()
                        if name.startswith(prefix) and name.endswith('.dex'))
@@ -46,6 +65,7 @@ with zipfile.ZipFile(apk) as archive, zipfile.ZipFile(aab) as bundle_archive:
         alignment_errors.extend(name+' '+error for error in check_elf64(data))
         libraries.append(name)
 report={'versionCode':metadata['elements'][0]['versionCode'],'versionName':metadata['elements'][0]['versionName'],
+        'baselineProfilePackagingVerified':True,'baselineProfiles':profiles,
         'productionServiceVerified':True,'apkSignerMatchesPlay':True,'aabSignatureVerified':True,'apkZipAlignment16KB':True,'adIdPermission':True,'nativeDebugSymbols':debug_symbols,'elf64Libraries':libraries,
         'elf64AlignmentPassed':not alignment_errors,'alignmentErrors':alignment_errors,
         'apkSHA256':hashlib.sha256(apk.read_bytes()).hexdigest(),'aabSHA256':hashlib.sha256(aab.read_bytes()).hexdigest(),

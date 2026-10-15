@@ -27,7 +27,7 @@ bash gradlew :macrobenchmark:connectedPerformanceAndroidTest \
   -Pandroid.testInstrumentationRunnerArguments.class=com.yurken.englishtales.benchmark.StartupBenchmark
 ```
 
-Üretilen dosyalar `app/src/main/generated/baselineProfiles/` altına kopyalanır. Üretici bağımlılığı yalnız `performance` varyantındadır; `mergeIntoMain=true` ile aynı namespace'in release koduna da uygulanır ve R8 tarafından uyarlanır. `automaticGenerationDuringBuild=false`: sıradan debug/release derlemeleri cihaz açmaz. Üretilen profilleri kaynakla birlikte commit etmeden, release APK/AAB içindeki `assets/dexopt/baseline.prof` / `.profm` ve uygulama kurallarının R8 girdilerini doğrulamadan paketleme tamamlandı sayılmaz.
+Üretilen dosyalar `app/src/main/generated/baselineProfiles/` altına kopyalanır. Üretici bağımlılığı yalnız `performance` varyantındadır; `mergeIntoMain=true` ile aynı namespace'in release koduna da uygulanır ve R8 tarafından uyarlanır. `automaticGenerationDuringBuild=false`: sıradan debug/release derlemeleri cihaz açmaz. Üretilen profilleri kaynakla birlikte commit etmeden, release APK içindeki `assets/dexopt/baseline.prof` / `.profm`, AAB içindeki `BUNDLE-METADATA/com.android.tools.build.profiles/baseline.prof` / `.profm` ve uygulama kurallarının R8 girdilerini doğrulamadan paketleme tamamlandı sayılmaz.
 
 Emülatörde yalnız akış kontrolü için komutlara `-Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.suppressErrors=EMULATOR` ekle; ölçümde `-Pandroid.testInstrumentationRunnerArguments.performanceIterations=1` kullanılabilir. Bu bastırma varsayılan kaynak ayarında yoktur. Tek tekrar veya emülatör sayıları performans kazanımı/eşik olarak kullanılmaz.
 
