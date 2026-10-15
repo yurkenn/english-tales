@@ -1,11 +1,9 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.unit.DpSize
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.data.*
 import org.junit.Assert.assertEquals
@@ -14,14 +12,13 @@ import org.junit.Test
 
 class LibraryFiltersTest {
     @get:Rule val compose=createComposeRule()
-    // Filter chips sit in lazy horizontal rows; on a small phone a chip may be off screen or not composed yet.
     private fun chip(label: String): SemanticsNodeInteraction {
         val target=hasText(label) and isSelectable()
-        val rows=compose.onAllNodes(SemanticsMatcher.keyIsDefined(SemanticsProperties.HorizontalScrollAxisRange) and hasScrollToNodeAction())
-        val found=(0 until rows.fetchSemanticsNodes().size).any {
-            runCatching {rows[it].performScrollToNode(target)}.isSuccess
-        }
-        check(found) {"No filter row contains $label"}
+        // LazyRow does not compose off-screen chips on narrower CI devices.
+        val rows=compose.onAllNodes(hasScrollToIndexAction() and
+            SemanticsMatcher.keyIsDefined(SemanticsProperties.HorizontalScrollAxisRange))
+        val row=if(label in StoryFilters.levels || label=="Tüm seviyeler") rows.onFirst() else rows.onLast()
+        row.performScrollToNode(target)
         return compose.onNode(target)
     }
     private fun title(text: String)=compose.onAllNodesWithText(text).onFirst()
@@ -30,10 +27,7 @@ class LibraryFiltersTest {
         LearningContent.initialize(InstrumentationRegistry.getInstrumentation().targetContext)
         val snapshot=LearningSnapshot(storyProgress=mapOf("classic-tortoise-hare" to 40,"classic-snow-queen" to 100))
         var opened=""
-        // CI uses a small phone; force that size so the test behaves the same everywhere.
-        compose.setContent {DeviceConfigurationOverride(DeviceConfigurationOverride.ForcedSize(DpSize(320.dp,640.dp))) {
-            EnglishTalesTheme {CatalogScreen(snapshot,{opened=it},PaddingValues())}
-        }}
+        compose.setContent {EnglishTalesTheme {CatalogScreen(snapshot,{opened=it},PaddingValues())}}
         compose.onNodeWithText("Kategoriler").performScrollTo().performClick()
 
         chip("A1").performClick()
