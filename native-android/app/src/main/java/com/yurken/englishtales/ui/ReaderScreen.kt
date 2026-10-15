@@ -9,7 +9,6 @@ import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.text.ClickableText
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -19,7 +18,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextLinkStyles
+import androidx.compose.ui.text.withLink
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontFamily
@@ -225,18 +227,20 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
 @Composable
 private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,phrases: PhraseMatcher.Index,lineSpacing: Float=1.65f,onWord: (WordInfo)->Unit) {
     val matches=remember(sentence,phrases) {PhraseMatcher.find(sentence.english,phrases)}
-    val byId=remember(matches) {matches.associate {it.word.id to it.word}}
-    val annotated=remember(sentence,fontSize,color,matches) {
+    val currentOnWord by rememberUpdatedState(onWord)
+    // Each word/phrase is a link: tappable and exposed to accessibility services as its own element.
+    val annotated=remember(sentence,color,matches) {
         buildAnnotatedString {
             var cursor=0
             matches.forEach { match ->
                 append(sentence.english.substring(cursor,match.start))
-                pushStringAnnotation("word",match.word.id); pushStyle(SpanStyle(color=color,textDecoration=TextDecoration.Underline))
-                append(sentence.english.substring(match.start,match.end)); pop(); pop()
+                withLink(LinkAnnotation.Clickable(match.word.id,TextLinkStyles(SpanStyle(color=color,textDecoration=TextDecoration.Underline))) {currentOnWord(match.word)}) {
+                    append(sentence.english.substring(match.start,match.end))
+                }
                 cursor=match.end
             }
             append(sentence.english.substring(cursor))
         }
     }
-    ClickableText(text=annotated,modifier=modifier,style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,fontFamily=FontFamily.Serif,color=color),onClick={offset -> annotated.getStringAnnotations("word",offset,offset).firstOrNull()?.item?.let { byId[it]?.let(onWord) }})
+    Text(text=annotated,modifier=modifier,style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,fontFamily=FontFamily.Serif,color=color))
 }

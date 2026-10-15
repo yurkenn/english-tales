@@ -72,6 +72,9 @@ class NativeCompletionAds(private val activity: ComponentActivity): CompletionAd
                 initialization.withLock {
                     if(!initialized) {
                         withContext(Dispatchers.IO) {
+                            // The replacement AgeRestrictedTreatment has no explicit "not child-directed" value
+                            // (UNSPECIFIED/CHILD/TEEN), so switching would change the declared audience.
+                            @Suppress("DEPRECATION")
                             val requests=RequestConfiguration.Builder().setTagForChildDirectedTreatment(
                                 RequestConfiguration.TagForChildDirectedTreatment.TAG_FOR_CHILD_DIRECTED_TREATMENT_FALSE).build()
                             MobileAds.initialize(activity.applicationContext,InitializationConfig.Builder(BuildConfig.ADMOB_APP_ID)
