@@ -1,0 +1,10 @@
+<resources>
+    <string name="widget_name">Günlük okuma</string>
+    <string name="widget_description">Serini, bugünkü hedefini ve tekrar bekleyen kelimeleri gösterir.</string>
+    <string name="widget_streak">Seri: %1$d</string>
+    <string name="widget_goal">Bugünkü hedef: %1$d/%2$d</string>
+    <string name="widget_goal_done">Bugünkü hedef tamam ✓</string>
+    <string name="widget_due">Tekrar bekleyen kelime: %1$d</string>
+    <string name="widget_open">Günlük planı aç</string>
+    <string name="widget_empty">Bugünkü hikâyen seni bekliyor.</string>
+</resources>
