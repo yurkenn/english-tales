@@ -1,6 +1,7 @@
 package com.yurken.englishtales.analytics
 
 import android.content.Context
+import android.annotation.SuppressLint
 import android.os.Bundle
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.yurken.englishtales.BuildConfig
@@ -14,6 +15,7 @@ internal class PreferenceMetricsStorage(context: Context) : MetricsStorage {
         nextDayReported = prefs.getBoolean("next_day_reported", false),
         firstStoryReported = prefs.getBoolean("first_story_reported", false)
     )
+    @SuppressLint("UseKtx") // commit() Boolean is required: a failed consent write must never enable collection.
     override fun write(state: MetricsState): Boolean = prefs.edit().clear().apply {
         putBoolean("enabled", state.enabled)
         state.firstDay?.let { putLong("first_day", it) }

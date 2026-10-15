@@ -4,11 +4,12 @@
 
 ## Katılım ve veri sınırı
 
-- Ayarlar → Kullanım istatistikleri başlangıçta kapalı. Öğrenmek için açılması gerekmez. Tercih cihaz içindir, hesap tercihi olarak eşitlenmez.
+- Karşılamanın son adımında ve Ayarlar → Kullanım istatistikleri bölümünde seçilebilir; yeni cihazda başlangıçta kapalı. Öğrenmek için açılması gerekmez. Tercih cihaz içindir, hesap tercihi olarak eşitlenmez.
 - Manifestte collection ve analytics/ad storage, ad user data, ad personalization varsayılanları kapalıdır. Açık katılımdan sonra yalnız analytics storage açılır; reklam rızaları kapalı kalır. Analytics reklam kimliği toplama ve otomatik ekran adı raporlama kapalıdır. Mevcut reklam SDK'sının kendi veri davranışı bu ayardan ayrıdır.
 - Debug/test paketinde Analytics kalıcı deactivated ve transport kapalıdır. Testler Firebase'e ölçüm göndermez. Release, mevcut özel `google-services.json` ile derlenir.
 - Uygulamanın yedi özel olayına ad/e-posta, hesap/kurulum/oturum kimliği, hikâye/kelime kimliği, metin, cevap, puan veya serbest özellik eklenmez. Tek özel parametre `practice_completed.mode`: `choice`, `card`, `match`, `spell`.
 - Bu, anonim veya kimliksiz SDK anlamına gelmez. Firebase kendi app-instance ID'sini, uygulama/cihaz/işletim sistemi bilgilerini, yaklaşık ülke/bölgeyi ve otomatik `first_open`, `session_start`, `user_engagement` gibi olayları işleyebilir. SDK oturum tanımlayıcıları ekleyebilir; uygulamanın öğrenme oturum kimlikleri gönderilmez. Gizlilik kaynağı bu farkı açıklar.
+- Analytics açıkken Firebase bu olay adlarını ve sınırlı parametreleri Crashlytics hata kayıtlarında breadcrumb olarak da kullanabilir. Otomatik ekran adı raporu kapalıdır; özel olayların payload sınırı burada da korunur. Önceden oluşturulmuş hata kayıtlarını katılım düğmesi silmez.
 - Kapatma, SDK collection'ı durdurur, consent'i reddeder ve `resetAnalyticsData` ile yerel SDK verisini sıfırlar. Yerel cohort işaretleri temizlenir; eski öğrenme geçmişi sonradan yeniden gönderilmez. Önceden sunucuya ulaşmış olaylar bu işlemle sunucudan silinmiş sayılmaz.
 - Başarılı uygulama içi hesap silme bu cihazın katılımını da kapatır. Hesaplar Analytics kullanıcı kimliğiyle bağlanmaz. Çıkış/hesap değişimi cihaz tercihine dokunmaz.
 
@@ -40,7 +41,7 @@ Analytics teslimatı en iyi çaba esaslıdır. Kalıcı öğrenme commit'i ile F
 ## Doğrulama
 
 - 11 yeni JVM testi: kapalı katılım, yedi olay/parametre sınırı, UTC D1, yeniden açılış, gecikmiş dönüş, saat geriye alma, ilk hikâye tekilleştirme, vazgeçme, başarısız tercih/ziyaret kaydı ve SDK arızası.
-- Cihaz testleri: commit sonrası sinyal, rollback/yeniden deneme, tamamlanma tekilleştirme, transport hatasında korunan öğrenme, cihaz tercihinin kalıcılığı, açık/kapalı Switch ve kayıt hatası.
+- Cihaz testleri: commit sonrası sinyal, rollback/yeniden deneme, tamamlanma tekilleştirme, transport hatasında korunan öğrenme, cihaz tercihinin kalıcılığı, açık/kapalı Switch, kayıt hatası ve katılım zorunlu olmadan karşılamadan devam etme.
 - Manifest testi: debug'da SDK kapalı; default collection, reklam kimliği, ekran raporu ve tüm consent varsayılanları kapalı.
 - Güncel derleme/test kanıtları PR'a kaydedilir. Sahte transport testi canlı Firebase alımının kanıtı değildir.
 
@@ -59,3 +60,5 @@ Analytics teslimatı en iyi çaba esaslıdır. Kalıcı öğrenme commit'i ile F
 - [FirebaseAnalytics API](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics)
 - [GA Android veri beyanı](https://support.google.com/analytics/answer/11582702?hl=en)
 - [Otomatik toplanan olaylar](https://support.google.com/analytics/answer/9234069?hl=en-GB)
+
+- [Analytics olaylarının Crashlytics breadcrumb kaydına eklenmesi](https://firebase.google.com/docs/crashlytics/android/customize-crash-reports)
