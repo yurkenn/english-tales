@@ -64,7 +64,7 @@ Boyut göreli: **S** küçük tek PR · **M** birkaç PR veya şema/test etkisi 
 
 | İş | Değer | Boyut | Bağımlılık |
 |---|---|---|---|
-| 3.1 F03 kitaplık filtreleri | Seviye/tür/süre/okunmamış/indirilen | S–M | 1.3. |
+| 3.1 F03 kitaplık filtreleri | Seviye/tür/süre/okunmamış/indirilen | S–M | **Kısmen uygulandı** (`codex/library-filters`): liste görünümlerinde birleşebilen seviye + okuma durumu filtreleri ve temizleme. Süre filtresi için katalogda süre alanı, indirilenler için ContentViewModel bağlantısı gerekir. |
 | 3.2 Düzenli içerik akışı | Haftalık/iki haftalık yeni hikâye; B1'i 18'e çıkar, B2 pilotu | L | D14/D15 editör akışı; CONTENT_GUIDE. |
 | 3.3 F08 kayıtlı ses (pilot) | Dinleme becerisi; cümle vurgusu | L | Ses üretim/hak kararı, sürüme bağlı medya, çevrimdışı boyut. Önce 5 hikâyelik pilot. |
 | 3.4 F09 favoriler / okuma listesi | Kullanıcının kendi rafı | M | Room migration + eşitleme tombstone. |
