@@ -1,3 +1,4 @@
+import {questionDocument} from '../admin/workflow.js';
 import {createHash} from 'node:crypto';
 import {auditCatalog,auditSnapshot,bundledDocuments,publishedDocuments,compareDocuments,translationMap} from './content-audit-lib.mjs';
 import {translationEntries} from './export-catalog.mjs';
@@ -13,6 +14,7 @@ const byId=(a,b)=>a.id.localeCompare(b.id);
 export function draftDocument(doc){
   return {...pick(doc,['title','author','level','genre','description']),
     cover_asset_id:doc.cover_asset_id??null,audio_asset_id:doc.audio_asset_id??null,
+    questions:questionDocument(doc.questions),
     descriptions:translationMap(doc,doc.descriptions,doc.description),
     sentences:doc.sentences.map(row=>({...pick(row,['id','english','turkish']),
       translations:translationMap(doc,row.translations,row.turkish)})),
@@ -78,6 +80,7 @@ export function renderDraftReport(packet){
       for(const link of links)lines.push(`| ${action} | ${cell(link.sentence_id)} | ${cell(link.word_id)} | ${cell(doc.sentences.find(s=>s.id===link.sentence_id)?.english)} |`);
     lines.push('','| Çeviri türü | ID | Dil | Eski | Paket |','|---|---|---|---|---|');
     for(const t of c.translationChanges)lines.push(`| ${t.kind} | ${cell(t.id)} | ${cell(t.lang)} | ${cell(t.actual)} | ${cell(t.expected)} |`);
+    if(c.questionChanges.length)lines.push('',`Sorular paket listesiyle değiştirilir: ${old.questions.length} → ${d.questions.length}.`, '', '```json',JSON.stringify(d.questions,null,2),'```');
     lines.push('','Cümle örneği: '+cell(d.sentences[0]?.english));
   }
   return lines.join('\n')+'\n';
