@@ -110,6 +110,7 @@ fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (Lis
             Text("Bir hikâye tamamladın!",fontSize=22.sp,fontWeight=FontWeight.Bold)
             Text(story.title,fontSize=15.sp,color=TaleMuted)
             Text(if(snapshot.dailyGoalReached) "Günlük hedef tamamlandı ✓" else "Günlük hedef: ${snapshot.todaySessions} / ${snapshot.dailyGoal} adım",color=TaleBlue,fontWeight=FontWeight.Bold)
+            ComprehensionQuiz(story.id,story.questions)
             Text("Okuduğun kelimeleri şimdi hatırlamayı deneyelim. Kaydettiğin kelimeler daha sonra tekrar planına alınacak.",fontSize=14.sp,color=TaleMuted)
             words.forEach {word -> Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) {Text(word.word,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f));Text(word.translation,color=TaleMuted,modifier=Modifier.weight(1f))} }
             if(words.isNotEmpty()) Button(onClick={onPractice(words.map {it.id})},modifier=Modifier.fillMaxWidth(),shape=RoundedCornerShape(10.dp)) {Text("${words.size} kelimeyi kaydet ve çalış")}

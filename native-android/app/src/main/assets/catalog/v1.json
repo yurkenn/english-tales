@@ -2570,6 +2570,44 @@
           "english": "A small act of kindness made the morning special.",
           "turkish": "Küçük bir iyilik sabahı özel kıldı."
         }
+      ],
+      "questions": [
+        {
+          "id": "quiet-morning-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A small act of kindness",
+            "A lost birthday cake",
+            "A busy day at school",
+            "A trip to a big city"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "quiet-morning-q2",
+          "kind": "detail",
+          "prompt": "What did Mia buy at the bakery?",
+          "options": [
+            "Two warm rolls",
+            "A birthday cake",
+            "Milk and eggs",
+            "Some apples"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "quiet-morning-q3",
+          "kind": "inference",
+          "prompt": "Why did the morning become special for the old man?",
+          "options": [
+            "He found some money",
+            "He sold his bread",
+            "The town was very quiet",
+            "Someone was kind to him on his birthday"
+          ],
+          "answer": 3
+        }
       ]
     },
     {
@@ -2626,6 +2664,56 @@
           "english": "Leo smiled and let the boat continue its journey.",
           "turkish": "Leo gülümsedi ve teknenin yolculuğuna devam etmesine izin verdi."
         }
+      ],
+      "questions": [
+        {
+          "id": "paper-boat-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A paper boat's journey on a river",
+            "A girl who loses a letter",
+            "A family of ducks",
+            "A boy who builds a real boat"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "paper-boat-q2",
+          "kind": "detail",
+          "prompt": "What color was the paper Leo used?",
+          "options": [
+            "Blue",
+            "Red",
+            "White",
+            "Yellow"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "paper-boat-q3",
+          "kind": "detail",
+          "prompt": "What did the girl do with the boat?",
+          "options": [
+            "She took it home",
+            "She tore it",
+            "She gave it to the ducks",
+            "She wrote a message inside"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "paper-boat-q4",
+          "kind": "inference",
+          "prompt": "Why did Leo let the boat continue?",
+          "options": [
+            "He liked the idea that every journey goes on",
+            "The girl asked him to",
+            "He was tired of running",
+            "The boat was broken"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
@@ -2681,6 +2769,56 @@
           "id": "lm-9",
           "english": "Nora and Sam promised to return the next summer.",
           "turkish": "Nora ve Sam sonraki yaz geri dönmeye söz verdiler."
+        }
+      ],
+      "questions": [
+        {
+          "id": "lost-map-q1",
+          "kind": "main",
+          "prompt": "What did the map really lead to?",
+          "options": [
+            "A lost dog",
+            "Hidden treasure",
+            "A new house",
+            "A reminder of a long friendship"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "lost-map-q2",
+          "kind": "detail",
+          "prompt": "Where did Nora find the map?",
+          "options": [
+            "At the lake",
+            "In Sam's bag",
+            "Inside her grandfather's desk",
+            "In the forest"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "lost-map-q3",
+          "kind": "detail",
+          "prompt": "What was inside the wooden box?",
+          "options": [
+            "A letter from Sam",
+            "Gold coins",
+            "A photograph of their families",
+            "Another map"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "lost-map-q4",
+          "kind": "inference",
+          "prompt": "Why did Nora and Sam promise to return next summer?",
+          "options": [
+            "They forgot something",
+            "They wanted to keep the friendship tradition alive",
+            "They wanted to find treasure",
+            "Their parents told them to"
+          ],
+          "answer": 1
         }
       ]
     },
@@ -2783,6 +2921,44 @@
           "english": "Anna has a new friend and a good story to tell.",
           "turkish": "Anna’nın yeni bir arkadaşı ve anlatacak güzel bir hikâyesi vardır."
         }
+      ],
+      "questions": [
+        {
+          "id": "red-umbrella-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "Anna helps her neighbor and makes a friend",
+            "Mrs. Green bakes bread",
+            "Anna loses her umbrella",
+            "A bird builds a nest"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "red-umbrella-q2",
+          "kind": "detail",
+          "prompt": "What does Mrs. Green buy at the shop?",
+          "options": [
+            "Apples",
+            "Tea",
+            "Bread",
+            "Milk"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "red-umbrella-q3",
+          "kind": "inference",
+          "prompt": "Why does Anna hold the umbrella above them both?",
+          "options": [
+            "Anna wants to sing",
+            "The shop is closed",
+            "Mrs. Green is wet and cold",
+            "The umbrella is too big"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -2883,6 +3059,56 @@
           "id": "last-train-18",
           "english": "Sam put the ticket safely in his pocket and finally began to laugh.",
           "turkish": "Sam bileti güvenli bir şekilde cebine koydu ve sonunda gülmeye başladı."
+        }
+      ],
+      "questions": [
+        {
+          "id": "last-train-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "Buying flowers at a market",
+            "Finding a lost ticket just in time for the last train",
+            "Taking photos of mountains",
+            "Missing the last train"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "last-train-q2",
+          "kind": "detail",
+          "prompt": "Where was Sam's ticket?",
+          "options": [
+            "In his pocket",
+            "Under a stone on a bench",
+            "In Lily's bag",
+            "On the train"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "last-train-q3",
+          "kind": "detail",
+          "prompt": "Who helped Sam find the ticket?",
+          "options": [
+            "A woman packing flowers",
+            "The train driver",
+            "A police officer",
+            "Lily"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "last-train-q4",
+          "kind": "inference",
+          "prompt": "Why did Sam laugh at the end?",
+          "options": [
+            "He was relieved after the stressful run",
+            "He lost his camera",
+            "Lily told a joke",
+            "The train was funny"
+          ],
+          "answer": 0
         }
       ]
     },
@@ -2985,6 +3211,56 @@
           "english": "Nora realized that the chest had held something more valuable than a secret: a chance to begin again.",
           "turkish": "Nora sandığın bir sırdan daha değerli bir şey sakladığını fark etti: yeniden başlamak için bir fırsat."
         }
+      ],
+      "questions": [
+        {
+          "id": "attic-letter-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A grandmother who sells her house",
+            "An old letter that helps two friends begin again",
+            "A bird that delivers letters",
+            "A garden that is destroyed"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "attic-letter-q2",
+          "kind": "detail",
+          "prompt": "How did the letter writer sign every message?",
+          "options": [
+            "With a drawing of a tiny bird",
+            "With a blue ribbon",
+            "With a full name",
+            "With a flower"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "attic-letter-q3",
+          "kind": "detail",
+          "prompt": "What did Nora and her grandmother do with the empty ground?",
+          "options": [
+            "They left it alone",
+            "They planted flowers",
+            "They built a shed",
+            "They sold it"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "attic-letter-q4",
+          "kind": "inference",
+          "prompt": "Why did the grandmother become quiet when she saw the drawing?",
+          "options": [
+            "She was tired",
+            "She did not like birds",
+            "She could not read the letter",
+            "She recognized her childhood friend's sign"
+          ],
+          "answer": 3
+        }
       ]
     },
     {
@@ -3075,6 +3351,44 @@
           "id": "cl-tortoise-hare-16",
           "english": "Slow and steady work wins the race.",
           "turkish": "Yavaş ve kararlı bir çaba yarışı kazandırır."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-tortoise-hare-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Fast animals always win",
+            "Slow and steady work wins",
+            "Foxes are good judges",
+            "Rest is more important than work"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-tortoise-hare-q2",
+          "kind": "detail",
+          "prompt": "What does the hare do during the race?",
+          "options": [
+            "He runs away from the fox",
+            "He falls asleep",
+            "He loses the path",
+            "He helps the tortoise"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-tortoise-hare-q3",
+          "kind": "inference",
+          "prompt": "Why does the hare lose the race?",
+          "options": [
+            "He is too proud and stops to rest",
+            "The fox stops him",
+            "He is slower than the tortoise",
+            "He breaks his leg"
+          ],
+          "answer": 0
         }
       ]
     },
@@ -3167,6 +3481,44 @@
           "english": "Even a small friend can give great help.",
           "turkish": "Küçük bir dost bile büyük bir yardımda bulunabilir."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-lion-mouse-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Hunters are dangerous",
+            "Even a small friend can give great help",
+            "Lions are always kind",
+            "Big animals do not need help"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-lion-mouse-q2",
+          "kind": "detail",
+          "prompt": "How does the mouse help the lion?",
+          "options": [
+            "She calls other lions",
+            "She bites through the ropes",
+            "She fights the hunters",
+            "She brings him food"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-lion-mouse-q3",
+          "kind": "inference",
+          "prompt": "Why does the lion laugh at the mouse at first?",
+          "options": [
+            "He thinks she is too small to help him",
+            "She runs across his face",
+            "He is very happy",
+            "She tells a funny story"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
@@ -3253,6 +3605,44 @@
           "english": "She hides her disappointment with unkind words.",
           "turkish": "Hayal kırıklığını kırıcı sözlerle gizler."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-fox-grapes-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A garden full of animals",
+            "A fox who plants a vine",
+            "A fox who cannot get the grapes and calls them sour",
+            "A fox who shares grapes"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-fox-grapes-q2",
+          "kind": "detail",
+          "prompt": "Why can't the fox eat the grapes?",
+          "options": [
+            "They are sour",
+            "They are too high",
+            "She is not hungry",
+            "Someone takes them"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-fox-grapes-q3",
+          "kind": "inference",
+          "prompt": "Why does the fox say the grapes are sour?",
+          "options": [
+            "The gardener told her",
+            "They are green",
+            "She tasted them",
+            "She wants to hide her disappointment"
+          ],
+          "answer": 3
+        }
       ]
     },
     {
@@ -3338,6 +3728,44 @@
           "id": "cl-ants-grasshopper-15",
           "english": "Summer is the time to prepare for winter.",
           "turkish": "Yaz, kışa hazırlanma zamanıdır."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-ants-grasshopper-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Singing is a waste of time",
+            "Prepare in good times for hard times",
+            "Ants are unkind animals",
+            "Winter is better than summer"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-ants-grasshopper-q2",
+          "kind": "detail",
+          "prompt": "What did the grasshopper do in summer?",
+          "options": [
+            "He stored food",
+            "He slept",
+            "He helped the ants",
+            "He sang all day"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-ants-grasshopper-q3",
+          "kind": "inference",
+          "prompt": "Why don't the ants give him grain?",
+          "options": [
+            "They do not see him",
+            "They have no grain",
+            "He did not work to prepare for winter",
+            "He is too loud"
+          ],
+          "answer": 2
         }
       ]
     },
@@ -3500,6 +3928,56 @@
           "english": "The girl went home safely after listening to good advice.",
           "turkish": "Kız iyi öğütleri dinleyerek güvenle evine döndü."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-red-riding-hood-q1",
+          "kind": "main",
+          "prompt": "What lesson does the girl learn?",
+          "options": [
+            "Listen to good advice and stay on the path",
+            "Wolves are friendly",
+            "Never visit your grandmother",
+            "Flowers are dangerous"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-red-riding-hood-q2",
+          "kind": "detail",
+          "prompt": "What did the wolf suggest on the way?",
+          "options": [
+            "Picking flowers for her grandmother",
+            "Eating the cake",
+            "Running to the house",
+            "Going home"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-red-riding-hood-q3",
+          "kind": "detail",
+          "prompt": "Who saved the girl and her grandmother?",
+          "options": [
+            "A neighbor",
+            "Her mother",
+            "Another wolf",
+            "A hunter"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-red-riding-hood-q4",
+          "kind": "inference",
+          "prompt": "What did the girl do differently on her later visit?",
+          "options": [
+            "She stayed at home",
+            "She went straight to her grandmother and warned her",
+            "She brought a dog",
+            "She took a different road"
+          ],
+          "answer": 1
+        }
       ]
     },
     {
@@ -3651,6 +4129,56 @@
           "english": "The birds punished their cruelty by taking away their sight.",
           "turkish": "Kuşlar onların görme yetisini alarak zalimliklerini cezalandırdı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-cinderella-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "Birds that build a tree",
+            "A mistreated girl who is helped and marries a prince",
+            "A prince who loses his shoe",
+            "A stepmother who goes to a festival"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-cinderella-q2",
+          "kind": "detail",
+          "prompt": "What did Cinderella plant on her mother's grave?",
+          "options": [
+            "A hazel branch",
+            "An apple tree",
+            "Lentils",
+            "A rose"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-cinderella-q3",
+          "kind": "detail",
+          "prompt": "How did the prince keep one of her slippers?",
+          "options": [
+            "She gave it to him",
+            "He found it in the garden",
+            "He put sticky pitch on the stairs",
+            "A bird brought it"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-cinderella-q4",
+          "kind": "inference",
+          "prompt": "How did the prince know the stepsisters were lying?",
+          "options": [
+            "The birds warned him and he saw blood",
+            "Cinderella told him",
+            "The slipper was too small",
+            "The king saw them"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
@@ -3786,6 +4314,56 @@
           "id": "cl-bremen-musicians-25",
           "english": "The four friends liked their new home so much that they never left for Bremen.",
           "turkish": "Dört dost yeni evlerini o kadar sevdi ki Bremen'e gitmek üzere bir daha yola çıkmadılar."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-bremen-musicians-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "Four old animals who find a new home together",
+            "A donkey who becomes a famous singer",
+            "Robbers who live in Bremen",
+            "A farmer and his dog"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-bremen-musicians-q2",
+          "kind": "detail",
+          "prompt": "Why did the rooster join the group?",
+          "options": [
+            "He wanted to sing in Bremen",
+            "His owner gave him away",
+            "He was lost",
+            "He was going to become soup"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-bremen-musicians-q3",
+          "kind": "detail",
+          "prompt": "How did the animals frighten the robbers?",
+          "options": [
+            "They hid the food",
+            "They called the police",
+            "They set a fire",
+            "They stood on each other and made a terrible noise"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-bremen-musicians-q4",
+          "kind": "inference",
+          "prompt": "Why did the robber describe a witch and a monster?",
+          "options": [
+            "He wanted to trick the others",
+            "He was dreaming",
+            "He saw real monsters",
+            "He was confused and frightened in the dark"
+          ],
+          "answer": 3
         }
       ]
     },
@@ -3942,6 +4520,56 @@
           "id": "cl-hansel-gretel-29",
           "english": "The jewels ended their hunger, and the family lived happily together.",
           "turkish": "Mücevherler açlıklarını sona erdirdi ve aile birlikte mutlu bir hayat sürdü."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-hansel-gretel-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "Birds that eat bread",
+            "Two children who escape a witch and return home",
+            "A family that builds a candy house",
+            "A father who finds jewels"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-hansel-gretel-q2",
+          "kind": "detail",
+          "prompt": "How did the children find their way home the first time?",
+          "options": [
+            "They followed bread crumbs",
+            "They followed white pebbles",
+            "A duck showed them",
+            "Their father came"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-hansel-gretel-q3",
+          "kind": "detail",
+          "prompt": "How did Hansel trick the witch?",
+          "options": [
+            "He locked the door",
+            "He hid under the bed",
+            "He ate very little",
+            "He held out a little bone instead of his finger"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-hansel-gretel-q4",
+          "kind": "inference",
+          "prompt": "Why did the bread crumbs not help them?",
+          "options": [
+            "They were too small",
+            "Birds ate them",
+            "It rained",
+            "The stepmother took them"
+          ],
+          "answer": 1
         }
       ]
     },
@@ -4103,6 +4731,56 @@
           "id": "cl-happy-prince-30",
           "english": "The angel chose the broken heart and the swallow, and God welcomed them into Paradise.",
           "turkish": "Melek kırık kalbi ve kırlangıcı seçti; Tanrı da onları cennetine kabul etti."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-happy-prince-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A statue and a swallow who give everything to help the poor",
+            "A swallow who travels to Egypt",
+            "A prince who lives in a palace",
+            "A mayor who builds a new statue"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-happy-prince-q2",
+          "kind": "detail",
+          "prompt": "What did the swallow take to the poor woman?",
+          "options": [
+            "A sapphire",
+            "Gold leaves",
+            "The ruby from the sword",
+            "Bread"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-happy-prince-q3",
+          "kind": "detail",
+          "prompt": "Why did the Prince become blind?",
+          "options": [
+            "Workers damaged him",
+            "The swallow took his eyes away to give to the poor",
+            "He cried too much",
+            "He was struck by lightning"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-happy-prince-q4",
+          "kind": "inference",
+          "prompt": "Why did the swallow stay instead of flying to Egypt?",
+          "options": [
+            "The weather was good",
+            "He was too tired to fly",
+            "He became the Prince's eyes out of love and loyalty",
+            "He was lost"
+          ],
+          "answer": 2
         }
       ]
     },
@@ -4270,6 +4948,56 @@
           "english": "That afternoon, the children found the giant dead beneath the tree, covered in white blossoms.",
           "turkish": "O öğleden sonra çocuklar devi ağacın altında ölmüş, beyaz çiçeklerle kaplanmış hâlde buldu."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-selfish-giant-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A boy who grows peach trees",
+            "Children who build a wall",
+            "A selfish giant who learns to share his garden",
+            "Winter that never comes"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-selfish-giant-q2",
+          "kind": "detail",
+          "prompt": "What happened in the giant's garden after he built the wall?",
+          "options": [
+            "Children kept playing",
+            "Winter refused to end",
+            "It was always summer",
+            "The trees grew taller"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-selfish-giant-q3",
+          "kind": "detail",
+          "prompt": "What did the giant do after helping the little boy?",
+          "options": [
+            "He sold the garden",
+            "He knocked down the wall",
+            "He left the town",
+            "He built a higher wall"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-selfish-giant-q4",
+          "kind": "inference",
+          "prompt": "Why did spring return when the children came back?",
+          "options": [
+            "The wall was repaired",
+            "The giant planted new trees",
+            "The north wind left",
+            "Sharing and kindness changed the garden"
+          ],
+          "answer": 3
+        }
       ]
     },
     {
@@ -4430,6 +5158,56 @@
           "id": "cl-gift-magi-30",
           "english": "Although their choices might look foolish, he calls them the wisest of gift-givers.",
           "turkish": "Seçimleri aptalca görünse de anlatıcı onları hediye verenlerin en bilgeleri olarak adlandırır."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-gift-magi-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "Shopping on Christmas Eve",
+            "A couple who each give up a treasure for the other",
+            "A woman who buys an expensive watch",
+            "A man who loses his job"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-gift-magi-q2",
+          "kind": "detail",
+          "prompt": "What did Della sell to buy Jim's present?",
+          "options": [
+            "Her combs",
+            "Her watch",
+            "Her coat",
+            "Her hair"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-gift-magi-q3",
+          "kind": "detail",
+          "prompt": "What had Jim bought for Della?",
+          "options": [
+            "A mirror",
+            "A watch chain",
+            "Beautiful combs",
+            "A dress"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-gift-magi-q4",
+          "kind": "inference",
+          "prompt": "Why does the narrator call them the wisest gift-givers?",
+          "options": [
+            "They saved a lot of money",
+            "Their gifts showed great love, even if they could not use them",
+            "They bought the most expensive gifts",
+            "They kept their treasures"
+          ],
+          "answer": 1
         }
       ]
     },
@@ -4592,6 +5370,56 @@
           "english": "Bob's hand trembled as he finished reading the explanation.",
           "turkish": "Bob açıklamayı okumayı bitirdiğinde eli titredi."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-after-twenty-years-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A policeman who loses his job",
+            "A restaurant in New York",
+            "Two old friends meeting after twenty years in an unexpected way",
+            "A man who finds a diamond"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-after-twenty-years-q2",
+          "kind": "detail",
+          "prompt": "Who was the first policeman Bob spoke to?",
+          "options": [
+            "A stranger",
+            "The restaurant owner",
+            "Jimmy Wells",
+            "A detective from Chicago"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-after-twenty-years-q3",
+          "kind": "detail",
+          "prompt": "How did Bob know the tall man was not Jimmy?",
+          "options": [
+            "His voice was different",
+            "The shape of his nose was different",
+            "He wore a uniform",
+            "He was too young"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-after-twenty-years-q4",
+          "kind": "inference",
+          "prompt": "Why didn't Jimmy arrest Bob himself?",
+          "options": [
+            "He could not bring himself to arrest his old friend",
+            "He was off duty",
+            "He was not sure who Bob was",
+            "Bob ran away"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
@@ -4672,6 +5500,44 @@
           "id": "cl-crow-pitcher-14",
           "english": "A clever idea can solve a difficult problem.",
           "turkish": "Akıllıca bir fikir zor bir sorunu çözebilir."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-crow-pitcher-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Water is always easy to find",
+            "Crows cannot fly far",
+            "A clever idea can solve a difficult problem",
+            "Heavy things never move"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-crow-pitcher-q2",
+          "kind": "detail",
+          "prompt": "What does the crow put into the pitcher?",
+          "options": [
+            "Sticks",
+            "Bread",
+            "Pebbles",
+            "Leaves"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-crow-pitcher-q3",
+          "kind": "inference",
+          "prompt": "Why does the water rise?",
+          "options": [
+            "The crow pushes the pitcher",
+            "It starts to rain",
+            "Someone adds water",
+            "The pebbles take up space at the bottom"
+          ],
+          "answer": 3
         }
       ]
     },
@@ -4754,6 +5620,44 @@
           "english": "A liar can lose people's trust, even when he tells the truth.",
           "turkish": "Bir yalancı, doğruyu söylediğinde bile insanların güvenini kaybedebilir."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-boy-cried-wolf-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Sheep need a big field",
+            "Always shout when you are bored",
+            "Wolves are afraid of villagers",
+            "A liar can lose people's trust"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-boy-cried-wolf-q2",
+          "kind": "detail",
+          "prompt": "What happens when the real wolf comes?",
+          "options": [
+            "The boy catches the wolf",
+            "The villagers run to help",
+            "Nobody comes",
+            "The sheep run home"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-boy-cried-wolf-q3",
+          "kind": "inference",
+          "prompt": "Why don't the villagers come the last time?",
+          "options": [
+            "They do not hear him",
+            "They are asleep",
+            "They think he is lying again",
+            "They are afraid of the wolf"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -4834,6 +5738,44 @@
           "id": "cl-town-country-mouse-14",
           "english": "\"I prefer a simple meal and a safe home.\"",
           "turkish": "\"Ben basit bir yemeği ve güvenli bir evi tercih ederim.\""
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-town-country-mouse-q1",
+          "kind": "main",
+          "prompt": "What does the country mouse learn?",
+          "options": [
+            "A simple, safe life is better for him",
+            "He should move to town",
+            "Town food is the best",
+            "Cats are friendly"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-town-country-mouse-q2",
+          "kind": "detail",
+          "prompt": "What happens each time the mice try to eat in town?",
+          "options": [
+            "The town mouse eats everything",
+            "The food is cold",
+            "Someone comes in and they hide",
+            "The table breaks"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-town-country-mouse-q3",
+          "kind": "inference",
+          "prompt": "Why does the country mouse go home?",
+          "options": [
+            "He misses his family",
+            "He does not feel safe in town",
+            "The food is bad",
+            "He does not like his friend"
+          ],
+          "answer": 1
         }
       ]
     },
@@ -4916,6 +5858,44 @@
           "english": "Gentleness can succeed where force fails.",
           "turkish": "Nezaket, gücün başarısız olduğu yerde başarılı olabilir."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-north-wind-sun-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Travelers should wear coats",
+            "Strong wind is the best weapon",
+            "The Sun is always hot",
+            "Gentleness can succeed where force fails"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-north-wind-sun-q2",
+          "kind": "detail",
+          "prompt": "What does the traveler do when the Wind blows?",
+          "options": [
+            "He runs home",
+            "He sits down",
+            "He takes off his coat",
+            "He pulls his coat closer"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-north-wind-sun-q3",
+          "kind": "inference",
+          "prompt": "Why does the traveler take off his coat at the end?",
+          "options": [
+            "The Wind tells him to",
+            "The coat is wet",
+            "He feels warm in the sunshine",
+            "He wants to sleep"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -4987,6 +5967,44 @@
           "english": "His greed has taken away his good fortune.",
           "turkish": "Açgözlülüğü elindeki talihi yok etmiştir."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-golden-eggs-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Gold is hard to sell",
+            "Greed can take away good fortune",
+            "Be patient with animals",
+            "Hens are very valuable"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-golden-eggs-q2",
+          "kind": "detail",
+          "prompt": "What does the man find inside the hen?",
+          "options": [
+            "A lot of gold",
+            "A golden egg",
+            "A treasure map",
+            "Nothing special"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-golden-eggs-q3",
+          "kind": "inference",
+          "prompt": "Why does the man lose everything?",
+          "options": [
+            "He wants all the gold at once",
+            "The hen runs away",
+            "He sells the hen",
+            "A thief takes the eggs"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
@@ -5057,6 +6075,44 @@
           "id": "cl-dog-shadow-12",
           "english": "Wanting too much can make us lose what we have.",
           "turkish": "Çok fazlasını istemek, elimizdekini kaybetmemize yol açabilir."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-dog-shadow-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Wanting too much can make us lose what we have",
+            "Rivers are dangerous",
+            "Always look down on a bridge",
+            "Dogs should not eat meat"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-dog-shadow-q2",
+          "kind": "detail",
+          "prompt": "What does the dog see in the water?",
+          "options": [
+            "His own reflection",
+            "A fish",
+            "A piece of bread",
+            "Another real dog"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-dog-shadow-q3",
+          "kind": "inference",
+          "prompt": "Why does the dog lose his meat?",
+          "options": [
+            "He gives it away",
+            "He eats it",
+            "A bird takes it",
+            "He opens his mouth to take the other piece"
+          ],
+          "answer": 3
         }
       ]
     },
@@ -5139,6 +6195,44 @@
           "english": "Flattery is not always friendship.",
           "turkish": "Pohpohlamak her zaman dostluk değildir."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-fox-crow-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Always share your food",
+            "Flattery is not always friendship",
+            "Crows sing beautifully",
+            "Foxes can climb trees"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-fox-crow-q2",
+          "kind": "detail",
+          "prompt": "How does the fox get the meat?",
+          "options": [
+            "He climbs the tree",
+            "He asks politely",
+            "He waits until she sleeps",
+            "He praises the crow so she opens her beak"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-fox-crow-q3",
+          "kind": "inference",
+          "prompt": "Why does the crow open her beak?",
+          "options": [
+            "She is hungry",
+            "She wants to show her voice because she feels proud",
+            "She wants to give the fox the meat",
+            "She is afraid"
+          ],
+          "answer": 1
+        }
       ]
     },
     {
@@ -5214,6 +6308,44 @@
           "id": "cl-ant-dove-13",
           "english": "Both friends are safe because they help each other.",
           "turkish": "İki dost birbirlerine yardım ettikleri için güvendedir."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-ant-dove-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Doves are faster than ants",
+            "Friends are safe when they help each other",
+            "Hunters never give up",
+            "Rivers carry leaves"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-ant-dove-q2",
+          "kind": "detail",
+          "prompt": "How does the dove help the ant?",
+          "options": [
+            "He drops a leaf into the river",
+            "He carries her in his beak",
+            "He pushes her to the bank",
+            "He calls other birds"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-ant-dove-q3",
+          "kind": "inference",
+          "prompt": "Why does the ant bite the hunter?",
+          "options": [
+            "She does not like people",
+            "She wants to save the dove",
+            "She is hungry",
+            "She is afraid of him"
+          ],
+          "answer": 1
         }
       ]
     },
@@ -5291,6 +6423,44 @@
           "english": "People are stronger when they stand together.",
           "turkish": "İnsanlar birlikte durduklarında daha güçlüdür."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-bundle-sticks-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Arguments make you strong",
+            "People are stronger when they stand together",
+            "Sticks are easy to break",
+            "Fathers like to play games"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-bundle-sticks-q2",
+          "kind": "detail",
+          "prompt": "What can the sons do with single sticks?",
+          "options": [
+            "Nothing at all",
+            "Break them easily",
+            "Build a house",
+            "Make a fire"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-bundle-sticks-q3",
+          "kind": "inference",
+          "prompt": "Why does the father use a bundle of sticks?",
+          "options": [
+            "To make a fire",
+            "To sell the sticks",
+            "To show his sons the value of unity",
+            "To punish them"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -5367,6 +6537,44 @@
           "english": "Plans need care before they can become real.",
           "turkish": "Planların gerçekleşebilmesi için önce özen göstermek gerekir."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-milkmaid-pail-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Dresses are important",
+            "Milk is expensive",
+            "Chickens lay many eggs",
+            "Plans need care before they can become real"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-milkmaid-pail-q2",
+          "kind": "detail",
+          "prompt": "What does the milkmaid carry on her head?",
+          "options": [
+            "A pail of milk",
+            "Some chickens",
+            "A new dress",
+            "A basket of eggs"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-milkmaid-pail-q3",
+          "kind": "inference",
+          "prompt": "Why does the milk spill?",
+          "options": [
+            "The pail breaks",
+            "She moves her head while daydreaming",
+            "Someone pushes her",
+            "She trips on a stone"
+          ],
+          "answer": 1
+        }
       ]
     },
     {
@@ -5438,6 +6646,44 @@
           "english": "Keeping others from something we cannot use is selfish.",
           "turkish": "Kullanamadığımız bir şeyi başkalarından esirgemek bencilliktir."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-dog-manger-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Hay is good food for dogs",
+            "Dogs are good guards",
+            "Oxen should work less",
+            "Keeping others from something we cannot use is selfish"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-dog-manger-q2",
+          "kind": "detail",
+          "prompt": "What do the oxen want?",
+          "options": [
+            "To play with the dog",
+            "To eat the hay",
+            "To go home",
+            "To sleep"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-dog-manger-q3",
+          "kind": "inference",
+          "prompt": "Why is the dog's behavior strange?",
+          "options": [
+            "He is very hungry",
+            "He is not tired",
+            "He cannot eat hay himself",
+            "He likes the oxen"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -5508,6 +6754,44 @@
           "id": "cl-ass-lion-skin-12",
           "english": "A fine disguise cannot hide who we are forever.",
           "turkish": "Güzel bir kılık, kim olduğumuzu sonsuza kadar gizleyemez."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-ass-lion-skin-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "A fine disguise cannot hide who we are forever",
+            "Lions are the strongest animals",
+            "New clothes make you brave",
+            "Foxes are afraid of lions"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-ass-lion-skin-q2",
+          "kind": "detail",
+          "prompt": "How does the fox know the truth?",
+          "options": [
+            "She hears him bray",
+            "She sees his ears",
+            "Another animal tells her",
+            "She smells him"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-ass-lion-skin-q3",
+          "kind": "inference",
+          "prompt": "Why do the animals run away at first?",
+          "options": [
+            "He is very fast",
+            "They think he is a real lion",
+            "He shouts at them",
+            "It is getting dark"
+          ],
+          "answer": 1
         }
       ]
     },
@@ -5620,6 +6904,56 @@
           "english": "The queen came to the wedding, where she was punished for her cruelty.",
           "turkish": "Kraliçe düğüne geldi ve orada zalimliği yüzünden cezalandırıldı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-snow-white-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A jealous queen who tries to harm Snow White",
+            "A magic mirror that breaks",
+            "A prince who sells apples",
+            "Seven dwarfs who find gold"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-snow-white-q2",
+          "kind": "detail",
+          "prompt": "Who let Snow White escape into the forest?",
+          "options": [
+            "The king",
+            "The prince",
+            "The hunter",
+            "A dwarf"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-snow-white-q3",
+          "kind": "detail",
+          "prompt": "How did Snow White wake up?",
+          "options": [
+            "The dwarfs gave her medicine",
+            "A piece of apple came out of her throat",
+            "The prince kissed her",
+            "The queen said sorry"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-snow-white-q4",
+          "kind": "inference",
+          "prompt": "Why did the queen want to hurt Snow White?",
+          "options": [
+            "She was jealous of her beauty",
+            "Snow White was rude",
+            "The king told her to",
+            "Snow White stole her mirror"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
@@ -5730,6 +7064,56 @@
           "id": "cl-rapunzel-20",
           "english": "He took his family home to his kingdom, where they lived happily.",
           "turkish": "Ailesini krallığındaki evine götürdü ve orada mutlu yaşadılar."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-rapunzel-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A woman who grows a garden",
+            "An enchantress who sings",
+            "A girl kept in a tower who finds love and freedom",
+            "A prince who builds a tower"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-rapunzel-q2",
+          "kind": "detail",
+          "prompt": "How did people climb into the tower?",
+          "options": [
+            "Through a door",
+            "By stairs",
+            "By a silk ladder",
+            "Up Rapunzel's long hair"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-rapunzel-q3",
+          "kind": "detail",
+          "prompt": "How did the prince see again?",
+          "options": [
+            "The enchantress cured him",
+            "Rapunzel's tears fell into his eyes",
+            "A doctor helped him",
+            "He rested for a year"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-rapunzel-q4",
+          "kind": "inference",
+          "prompt": "Why did the enchantress cut off Rapunzel's hair?",
+          "options": [
+            "It was summer",
+            "The hair was too long",
+            "She learned about the prince's visits",
+            "Rapunzel asked her to"
+          ],
+          "answer": 2
         }
       ]
     },
@@ -5842,6 +7226,56 @@
           "english": "Soon, the prince and princess celebrated their wedding.",
           "turkish": "Çok geçmeden prens ile prenses düğünlerini kutladı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-sleeping-beauty-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A prince who grows flowers",
+            "A king who collects spindles",
+            "A curse that makes a princess sleep for a hundred years",
+            "Twelve wise women who argue"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-sleeping-beauty-q2",
+          "kind": "detail",
+          "prompt": "Why was the thirteenth wise woman angry?",
+          "options": [
+            "She was late",
+            "She did not like the king",
+            "She lost her gift",
+            "She was not invited"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-sleeping-beauty-q3",
+          "kind": "detail",
+          "prompt": "What happened to the hedge after a hundred years?",
+          "options": [
+            "It burned",
+            "It fell down",
+            "The thorns became flowers",
+            "It grew taller"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-sleeping-beauty-q4",
+          "kind": "inference",
+          "prompt": "Why didn't the king's order stop the curse?",
+          "options": [
+            "The king forgot",
+            "The wise women helped her",
+            "One old woman in a tower still had a spindle",
+            "The princess hid a spindle"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -5952,6 +7386,56 @@
           "id": "cl-frog-prince-20",
           "english": "As his master rode home free of the spell, the bands broke with joy.",
           "turkish": "Efendisi büyüden kurtulmuş olarak eve dönerken çemberler sevinçten kırıldı."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-frog-prince-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A king who loses a golden ball",
+            "A servant with an iron heart",
+            "A frog that lives in a palace forever",
+            "A princess who must keep a promise to a frog who is really a prince"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-frog-prince-q2",
+          "kind": "detail",
+          "prompt": "What did the frog bring back?",
+          "options": [
+            "A ring",
+            "A crown",
+            "Her golden ball",
+            "A key"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-frog-prince-q3",
+          "kind": "detail",
+          "prompt": "What did the king tell his daughter?",
+          "options": [
+            "To throw the frog in the well",
+            "To keep her promise",
+            "To call the guards",
+            "To send the frog away"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-frog-prince-q4",
+          "kind": "inference",
+          "prompt": "Why did the iron bands around Henry's heart break?",
+          "options": [
+            "The carriage hit a stone",
+            "He was angry",
+            "He was very happy that his master was free",
+            "He was injured"
+          ],
+          "answer": 2
         }
       ]
     },
@@ -6064,6 +7548,56 @@
           "english": "He stamped so violently that he tore himself apart, and the queen kept her baby.",
           "turkish": "Öyle şiddetle yere vurdu ki kendini parçaladı ve bebek kraliçede kaldı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-rumpelstiltskin-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A king who loses his gold",
+            "A little man who becomes king",
+            "A queen who saves her child by guessing a name",
+            "A miller who spins gold"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-rumpelstiltskin-q2",
+          "kind": "detail",
+          "prompt": "What did the little man ask for on the third night?",
+          "options": [
+            "Her first child",
+            "Her necklace",
+            "Gold",
+            "Her ring"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-rumpelstiltskin-q3",
+          "kind": "detail",
+          "prompt": "How did the queen learn his name?",
+          "options": [
+            "A messenger heard him singing it in the forest",
+            "She guessed it at once",
+            "The king found it",
+            "He told her"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-rumpelstiltskin-q4",
+          "kind": "inference",
+          "prompt": "Why was the miller's daughter in trouble at the start?",
+          "options": [
+            "She broke the spinning wheel",
+            "She lost her necklace",
+            "She stole gold",
+            "Her father boasted something untrue about her"
+          ],
+          "answer": 3
+        }
       ]
     },
     {
@@ -6174,6 +7708,56 @@
           "id": "cl-golden-goose-20",
           "english": "His kindness had brought him help when he needed it most.",
           "turkish": "İyiliği, en çok ihtiyaç duyduğu anda ona yardım getirmişti."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-golden-goose-q1",
+          "kind": "main",
+          "prompt": "What is the lesson of the story?",
+          "options": [
+            "Geese are dangerous",
+            "Kindness can bring help when you need it",
+            "Older brothers are always right",
+            "Never visit an inn"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-golden-goose-q2",
+          "kind": "detail",
+          "prompt": "What did the youngest brother find under the tree roots?",
+          "options": [
+            "A goose with golden feathers",
+            "A treasure chest",
+            "A ship",
+            "A little grey man"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-golden-goose-q3",
+          "kind": "detail",
+          "prompt": "What made the princess laugh?",
+          "options": [
+            "A dancing bear",
+            "The little grey man",
+            "A joke from the king",
+            "The goose and the long line of people stuck to it"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-golden-goose-q4",
+          "kind": "inference",
+          "prompt": "Why did the older brothers get hurt?",
+          "options": [
+            "They were not strong",
+            "They got lost",
+            "They refused to share their food",
+            "They cut the wrong tree"
+          ],
+          "answer": 2
         }
       ]
     },
@@ -6286,6 +7870,56 @@
           "english": "But the shoemaker's work continued to prosper, and he remembered their help.",
           "turkish": "Ama ayakkabıcının işleri iyi gitmeye devam etti ve onların yardımını unutmadı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-elves-shoemaker-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "Elves who secretly help a poor shoemaker",
+            "A wife who makes shoes",
+            "A shoemaker who sells clothes",
+            "Customers who do not pay"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-elves-shoemaker-q2",
+          "kind": "detail",
+          "prompt": "What did the shoemaker leave on the table the first evening?",
+          "options": [
+            "Cut leather",
+            "Finished shoes",
+            "Food",
+            "Money"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-elves-shoemaker-q3",
+          "kind": "detail",
+          "prompt": "How did the couple thank the elves?",
+          "options": [
+            "They paid them",
+            "They made them tiny clothes and shoes",
+            "They gave them a house",
+            "They wrote a letter"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-elves-shoemaker-q4",
+          "kind": "inference",
+          "prompt": "Why did the elves never return?",
+          "options": [
+            "They had their gifts and their work was done",
+            "The shoemaker locked the door",
+            "They lost the way",
+            "They were angry"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
@@ -6396,6 +8030,56 @@
           "id": "cl-tom-thumb-20",
           "english": "Safe at home, Tom said he had seen enough of the world for a while.",
           "turkish": "Evinde güvende olan Parmak Çocuk, bir süreliğine dünyayı yeterince gördüğünü söyledi."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-tom-thumb-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A parson who catches thieves",
+            "A wolf who loves his parents",
+            "A cow that can talk",
+            "The adventures of a very small but clever boy"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-tom-thumb-q2",
+          "kind": "detail",
+          "prompt": "How did Tom guide his father's horse?",
+          "options": [
+            "Sitting inside the horse's ear",
+            "Running ahead",
+            "From the cart",
+            "Holding the reins"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-tom-thumb-q3",
+          "kind": "detail",
+          "prompt": "How did Tom get out of the wolf?",
+          "options": [
+            "His parents killed the wolf and freed him",
+            "He climbed out",
+            "The wolf let him go",
+            "A hunter helped"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-tom-thumb-q4",
+          "kind": "inference",
+          "prompt": "Why did Tom tell his father to sell him?",
+          "options": [
+            "He did not like home",
+            "He wanted money",
+            "The strangers were kind",
+            "He knew he could escape and return"
+          ],
+          "answer": 3
         }
       ]
     },
@@ -6508,6 +8192,56 @@
           "english": "The mother and her seven children celebrated being together again.",
           "turkish": "Anne ile yedi yavrusu yeniden bir arada olmalarını kutladı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-wolf-seven-kids-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A wolf who tricks young goats and is defeated by their mother",
+            "A wolf who learns to sing",
+            "Seven goats who build a clock",
+            "A mother goat who gets lost"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-wolf-seven-kids-q2",
+          "kind": "detail",
+          "prompt": "How did the goats first recognize the wolf?",
+          "options": [
+            "By his rough voice",
+            "By his tail",
+            "By his smell",
+            "By his big ears"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-wolf-seven-kids-q3",
+          "kind": "detail",
+          "prompt": "Where did the youngest goat hide?",
+          "options": [
+            "In the oven",
+            "Under the bed",
+            "Behind the door",
+            "Inside the clock"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-wolf-seven-kids-q4",
+          "kind": "inference",
+          "prompt": "Why did the goats open the door the third time?",
+          "options": [
+            "The door was broken",
+            "The wolf's voice was soft and his paw looked white",
+            "Their mother told them to",
+            "They were hungry"
+          ],
+          "answer": 1
+        }
       ]
     },
     {
@@ -6618,6 +8352,56 @@
           "id": "cl-twelve-dancing-princesses-20",
           "english": "The soldier chose to marry the eldest princess and was promised the kingdom.",
           "turkish": "Asker en büyük prensesle evlenmeyi seçti ve krallık ona vaat edildi."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-twelve-dancing-princesses-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A woman who sells cloaks",
+            "A soldier who discovers where the princesses dance at night",
+            "Twelve princes who build boats",
+            "A king who loves shoes"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-twelve-dancing-princesses-q2",
+          "kind": "detail",
+          "prompt": "What did the old woman tell the soldier not to do?",
+          "options": [
+            "Follow them",
+            "Speak to the king",
+            "Drink the princesses' wine",
+            "Wear the cloak"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-twelve-dancing-princesses-q3",
+          "kind": "detail",
+          "prompt": "What did the soldier bring as proof?",
+          "options": [
+            "A shoe and a boat",
+            "A letter from a prince",
+            "Branches from three woods and a cup",
+            "A crown"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-twelve-dancing-princesses-q4",
+          "kind": "inference",
+          "prompt": "Why did the princes before the soldier fail?",
+          "options": [
+            "The king stopped them",
+            "They drank the wine and fell asleep",
+            "They were not brave",
+            "The door was locked"
+          ],
+          "answer": 1
         }
       ]
     },
@@ -6730,6 +8514,56 @@
           "english": "They fled in fear, and the clever tailor remained in the palace.",
           "turkish": "Korkuyla kaçtılar ve akıllı terzi sarayda kaldı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-brave-little-tailor-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A giant who becomes a tailor",
+            "A king who catches a unicorn",
+            "A princess who sews clothes",
+            "A small tailor who wins by being clever"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-brave-little-tailor-q2",
+          "kind": "detail",
+          "prompt": "What did 'Seven at one blow' really mean?",
+          "options": [
+            "Seven men",
+            "Seven trees",
+            "Seven flies",
+            "Seven giants"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-brave-little-tailor-q3",
+          "kind": "detail",
+          "prompt": "How did the tailor defeat the two giants?",
+          "options": [
+            "He gave them poison",
+            "He dropped stones so they fought each other",
+            "He called the king's soldiers",
+            "He fought them with a sword"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-brave-little-tailor-q4",
+          "kind": "inference",
+          "prompt": "Why did the giant think the tailor was strong?",
+          "options": [
+            "He misunderstood the words on his belt",
+            "He saw him lift a tree",
+            "He saw him fight",
+            "The king told him"
+          ],
+          "answer": 0
+        }
       ]
     },
     {
@@ -6840,6 +8674,56 @@
           "id": "cl-goose-girl-20",
           "english": "The real princess married the prince, and her stolen identity was restored.",
           "turkish": "Gerçek prenses prensle evlendi ve çalınan kimliğine yeniden kavuştu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-goose-girl-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A boy who looks after geese",
+            "A princess whose servant steals her place, until the truth comes out",
+            "A talking horse who becomes king",
+            "A queen who sews a cloth"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-goose-girl-q2",
+          "kind": "detail",
+          "prompt": "What was the name of the talking horse?",
+          "options": [
+            "Falada",
+            "Bremen",
+            "Conrad",
+            "Henry"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-goose-girl-q3",
+          "kind": "detail",
+          "prompt": "How did the old king learn the truth?",
+          "options": [
+            "The servant confessed",
+            "He listened while she spoke to an iron stove",
+            "Falada told him",
+            "Conrad told him"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-goose-girl-q4",
+          "kind": "inference",
+          "prompt": "Why couldn't the princess tell anyone her story?",
+          "options": [
+            "She was afraid of geese",
+            "Nobody spoke her language",
+            "She forgot it",
+            "She had been forced to promise not to"
+          ],
+          "answer": 3
         }
       ]
     },
@@ -6992,6 +8876,56 @@
           "english": "He had never dreamed that he could belong so completely.",
           "turkish": "Bir yere böylesine ait olabileceğini hiç hayal etmemişti."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-ugly-duckling-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A bird rejected for being different who grows into a swan",
+            "A farmer who keeps swans",
+            "A cat and a hen who travel",
+            "A duck who builds a nest"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-ugly-duckling-q2",
+          "kind": "detail",
+          "prompt": "What did the cat and the hen value?",
+          "options": [
+            "Swimming",
+            "Their own abilities, like purring and laying eggs",
+            "Flying",
+            "Music"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-ugly-duckling-q3",
+          "kind": "detail",
+          "prompt": "Who rescued the bird from the ice?",
+          "options": [
+            "A farmer",
+            "A swan",
+            "A hunter",
+            "A child"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-ugly-duckling-q4",
+          "kind": "inference",
+          "prompt": "How did the bird feel when he finally saw his reflection?",
+          "options": [
+            "Proud and unkind",
+            "Angry at the other ducks",
+            "Surprised and happy to belong",
+            "Afraid of the swans"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -7143,6 +9077,56 @@
           "english": "Behind him, the attendants still carried a train that did not exist.",
           "turkish": "Arkasında görevlileri, var olmayan bir eteği taşımaya devam ediyordu."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-emperors-clothes-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "People pretending to see clothes because they fear looking foolish",
+            "A procession that is cancelled",
+            "A child who becomes emperor",
+            "A tailor who makes beautiful cloth"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-emperors-clothes-q2",
+          "kind": "detail",
+          "prompt": "What did the swindlers say about their cloth?",
+          "options": [
+            "It changed color",
+            "It never wore out",
+            "It was very warm",
+            "Foolish or unfit people could not see it"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-emperors-clothes-q3",
+          "kind": "detail",
+          "prompt": "Who first said the emperor had no clothes?",
+          "options": [
+            "A child",
+            "A minister",
+            "The emperor",
+            "The swindlers"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-emperors-clothes-q4",
+          "kind": "inference",
+          "prompt": "Why did the ministers praise the invisible cloth?",
+          "options": [
+            "The emperor paid them",
+            "They were afraid of seeming stupid or unfit",
+            "They could really see it",
+            "They wanted to buy it"
+          ],
+          "answer": 1
+        }
       ]
     },
     {
@@ -7293,6 +9277,56 @@
           "id": "cl-thumbelina-28",
           "english": "The swallow flew home with the story of the little girl he had helped.",
           "turkish": "Kırlangıç, yardım ettiği küçük kızın hikâyesiyle evine uçtu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-thumbelina-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A toad who marries a prince",
+            "A swallow who builds a house",
+            "A mole who loves the sun",
+            "A tiny girl's journey to find a place where she belongs"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-thumbelina-q2",
+          "kind": "detail",
+          "prompt": "Where did Thumbelina sleep at first?",
+          "options": [
+            "In a walnut shell",
+            "In a shoe",
+            "In a nest",
+            "In a flower"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-thumbelina-q3",
+          "kind": "detail",
+          "prompt": "Who carried her to the warm country?",
+          "options": [
+            "The mole",
+            "A butterfly",
+            "A beetle",
+            "The swallow she had cared for"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-thumbelina-q4",
+          "kind": "inference",
+          "prompt": "Why did Thumbelina not want to marry the mole?",
+          "options": [
+            "The mouse did not like him",
+            "He was poor",
+            "She dreaded a life without the sun",
+            "He was too small"
+          ],
+          "answer": 2
         }
       ]
     },
@@ -7449,6 +9483,56 @@
           "id": "cl-little-mermaid-29",
           "english": "Invisible to the prince, she began a new life of service and hope.",
           "turkish": "Prense görünmeden, iyilik ve umutla dolu yeni bir hayata başladı."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-little-mermaid-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "Sisters who cut their hair for fun",
+            "A mermaid who gives up much for love and chooses not to harm the prince",
+            "A sea witch who wants a voice",
+            "A prince who becomes a fish"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-little-mermaid-q2",
+          "kind": "detail",
+          "prompt": "What price did the sea witch ask?",
+          "options": [
+            "Her beautiful voice",
+            "Her crown",
+            "Her hair",
+            "Her tail"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-little-mermaid-q3",
+          "kind": "detail",
+          "prompt": "Why couldn't the mermaid tell the prince the truth?",
+          "options": [
+            "She had no voice",
+            "She was not allowed on land",
+            "She forgot",
+            "He did not listen"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-little-mermaid-q4",
+          "kind": "inference",
+          "prompt": "Why did she throw the knife into the sea?",
+          "options": [
+            "She could not kill the person she loved",
+            "The knife was too heavy",
+            "The prince woke up",
+            "Her sisters asked her to"
+          ],
+          "answer": 0
         }
       ]
     },
@@ -7621,6 +9705,56 @@
           "english": "It was summer again, and the roses were in bloom.",
           "turkish": "Yeniden yaz gelmişti ve güller açmıştı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-snow-queen-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A reindeer that finds roses",
+            "Gerda's long journey to save Kay with her loving heart",
+            "A mirror that makes people beautiful",
+            "A robber girl who becomes a queen"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-snow-queen-q2",
+          "kind": "detail",
+          "prompt": "What changed Kay at the start?",
+          "options": [
+            "A cold winter",
+            "Pieces of a magic mirror in his eye and heart",
+            "The Snow Queen's sledge",
+            "An old woman's garden"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-snow-queen-q3",
+          "kind": "detail",
+          "prompt": "What did the wise Finnish woman say was Gerda's greatest strength?",
+          "options": [
+            "Her warm clothes",
+            "Her loving heart",
+            "Her reindeer",
+            "Her red shoes"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-snow-queen-q4",
+          "kind": "inference",
+          "prompt": "What finally freed Kay?",
+          "options": [
+            "Summer sunshine",
+            "The Snow Queen's kiss",
+            "Gerda's warm tears and familiar song",
+            "The robber girl's knife"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -7771,6 +9905,56 @@
           "id": "cl-little-match-girl-28",
           "english": "They could not see the visions that had comforted her during her final night.",
           "turkish": "Son gecesinde onu teselli eden hayalleri göremiyorlardı."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-little-match-girl-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A family dinner on New Year's Eve",
+            "A poor girl's last night, comforted by visions in the match light",
+            "A girl who sells many matches",
+            "A grandmother who buys matches"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-little-match-girl-q2",
+          "kind": "detail",
+          "prompt": "Why was the girl afraid to go home?",
+          "options": [
+            "Her house was far",
+            "It was too dark",
+            "She had no money and her father would beat her",
+            "She had lost her way"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-little-match-girl-q3",
+          "kind": "detail",
+          "prompt": "What did she see in the light of the first match?",
+          "options": [
+            "A Christmas tree",
+            "Her grandmother",
+            "A roast goose",
+            "A great iron stove"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-little-match-girl-q4",
+          "kind": "inference",
+          "prompt": "Why did she light all the remaining matches at once?",
+          "options": [
+            "Because they were wet",
+            "To sell them faster",
+            "To keep her grandmother with her",
+            "To warm the street"
+          ],
+          "answer": 2
         }
       ]
     },
@@ -7923,6 +10107,56 @@
           "english": "Only the dancer's burnt ornament remained beside it.",
           "turkish": "Yanında dansçının yalnızca yanmış süsü kalmıştı."
         }
+      ],
+      "questions": [
+        {
+          "id": "classic-steadfast-tin-soldier-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A goblin who rules the toys",
+            "A boy who loses all his toys",
+            "A one-legged tin soldier who stays steadfast through his adventures",
+            "A fish that eats paper boats"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-steadfast-tin-soldier-q2",
+          "kind": "detail",
+          "prompt": "Why did the last soldier have only one leg?",
+          "options": [
+            "He was broken",
+            "A rat bit him",
+            "There was not enough tin",
+            "He was made that way as a joke"
+          ],
+          "answer": 2
+        },
+        {
+          "id": "classic-steadfast-tin-soldier-q3",
+          "kind": "detail",
+          "prompt": "How did the soldier return to the same house?",
+          "options": [
+            "A fish that swallowed him was cooked there",
+            "The boy found him in the street",
+            "The rat brought him",
+            "A bird carried him"
+          ],
+          "answer": 0
+        },
+        {
+          "id": "classic-steadfast-tin-soldier-q4",
+          "kind": "inference",
+          "prompt": "What does the heart-shaped lump suggest?",
+          "options": [
+            "The boy wanted a heart",
+            "The fire was very small",
+            "He was made of gold",
+            "His love for the dancer lasted to the end"
+          ],
+          "answer": 3
+        }
       ]
     },
     {
@@ -8073,6 +10307,56 @@
           "id": "cl-wild-swans-28",
           "english": "The wood around her blossomed into roses, turning the place of death into a place of joy.",
           "turkish": "Çevresindeki odunlar güllere dönüştü; ölüm yeri bir sevinç yerine dönüştü."
+        }
+      ],
+      "questions": [
+        {
+          "id": "classic-wild-swans-q1",
+          "kind": "main",
+          "prompt": "What is the story mainly about?",
+          "options": [
+            "A king who hunts swans",
+            "Eleven princes who build a palace",
+            "A queen who weaves shirts",
+            "A sister who silently works to free her brothers from a spell"
+          ],
+          "answer": 3
+        },
+        {
+          "id": "classic-wild-swans-q2",
+          "kind": "detail",
+          "prompt": "What did Elisa have to weave the shirts from?",
+          "options": [
+            "Silk",
+            "Nettles",
+            "Roses",
+            "Wool"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-wild-swans-q3",
+          "kind": "detail",
+          "prompt": "Why did the youngest brother keep one wing?",
+          "options": [
+            "He wanted to fly",
+            "His sleeve was unfinished",
+            "He was the oldest",
+            "The spell was too strong"
+          ],
+          "answer": 1
+        },
+        {
+          "id": "classic-wild-swans-q4",
+          "kind": "inference",
+          "prompt": "Why didn't Elisa defend herself when she was accused?",
+          "options": [
+            "Speaking would bring death to her brothers",
+            "Nobody asked her",
+            "She was guilty",
+            "She did not understand the language"
+          ],
+          "answer": 0
         }
       ]
     }

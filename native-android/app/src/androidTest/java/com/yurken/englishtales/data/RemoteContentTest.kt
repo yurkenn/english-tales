@@ -44,6 +44,7 @@ class RemoteContentTest {
         var empty=false
         var revisionQueries=0
         var createdAt: String?=null
+        var questions=false
         val doc=JSONObject().put("id",revision).put("story_id","remote-test").put("title","Remote test").put("author","English Tales")
             .put("level","A1").put("genre","Gizem").put("description","A test story").put("published_at","2026-10-11T00:00:00Z").put("cover_asset_id",assetId)
         override fun bytes(path: String,maxBytes: Long): ByteArray {
@@ -60,6 +61,8 @@ class RemoteContentTest {
                 "sentence_words" -> listOf(JSONObject().put("sentence_id","s-1").put("word_id","fixture-quiet"))
                 "content_assets" -> listOf(JSONObject().put("id",assetId).put("kind","cover").put("mime_type","image/png").put("storage_path","test/cover.png").put("byte_size",cover.size)
                     .put("sha256",MessageDigest.getInstance("SHA-256").digest(cover).joinToString("") {"%02x".format(it)}))
+                "story_questions" -> {check(questions); listOf(JSONObject().put("id","q1").put("position",1).put("kind","main").put("prompt","Is it quiet?")
+                    .put("options",JSONArray(listOf("Yes","No"))).put("answer",0))}
                 else -> error("Unexpected table")
             }
             if(table=="story_sentences") revisionQueries++
@@ -76,6 +79,14 @@ class RemoteContentTest {
         val restart=ContentRepository(context,fixture); restart.restore()
         assertTrue(restart.isDownloaded(LearningContent.stories.single()))
         assertEquals(7,LearningContent.stories.single().sentences.size)
+    }
+    @Test fun downloadedQuestionsSurviveOfflineRestartAndAreOptional()=runBlocking {
+        val withQuestions=Fixture().apply {questions=true}; val repo=ContentRepository(context,withQuestions)
+        repo.restore(); repo.refresh()
+        assertEquals(listOf("q1"),repo.download(LearningContent.stories.single()).questions.map {it.id})
+        withQuestions.fail=true
+        ContentRepository(context,withQuestions).restore()
+        assertEquals("Is it quiet?",LearningContent.stories.single().questions.single().prompt)
     }
     @Test fun firstPublicationDateSurvivesDownloadAndOfflineRestart()=runBlocking {
         val fixture=Fixture().apply {createdAt="2026-10-14T09:47:44.123456+00:00"}
