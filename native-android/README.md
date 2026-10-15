@@ -18,7 +18,7 @@ Ekran görüntülerinden çıkarılan deneyim için [ürün taslağına](PRODUCT
 - İlk açılışta misafir/Google/e-posta seçimi; native Google hesap seçicisi ve Supabase ID token bağlantısı
 - Hesap ekranından tek seferlik yerel misafir aktarımı; kesinti sonrası devam ve tekrar puan koruması
 
-Paket içi katalog 50 hikâye ve 353 kelime içerir: altı özgün örnek hikâye ve eski kaynaklara dayanan 44 seviyeli klasik uyarlaması. [Kaynak/çeviri/kapak kayıtları](docs/PUBLIC_DOMAIN_CLASSICS.md) tutulur. EWA ekranlarındaki metinler veya görseller kullanılmadı.
+Paket içi katalog 50 hikâye ve 359 kelime/ifade içerir: altı özgün örnek hikâye ve eski kaynaklara dayanan 44 seviyeli klasik uyarlaması. [Kaynak/çeviri/kapak kayıtları](docs/PUBLIC_DOMAIN_CLASSICS.md) tutulur. EWA ekranlarındaki metinler veya görseller kullanılmadı.
 
 [İlk açılış ve düzenli öğrenme planı](docs/LEARNING_JOURNEY.md) · [Günlük plan ekranı](docs/preview-daily-plan.png) · [Okuma sonrası akış](docs/preview-reading-result.png)
 

@@ -248,8 +248,9 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','path','path','patika','/pæθ/','A narrow path led uphill.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','ahead','ahead','önde, ileride','/əˈhed/','The school is just ahead.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','rest','rest','dinlenme','/rest/','We need a short rest after the walk.');
-insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','asleep','asleep','uykuda','/əˈsliːp/','The hare is asleep.');
-insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','step','step','adım','/step/','Take one step at a time.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','falls-asleep','falls asleep','uykuya dalar','/fɔːlz əˈsliːp/','The baby falls asleep in the car.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','step-by-step','step by step','adım adım','/step baɪ step/','We learn English step by step.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','wakes-up','wakes up','uyanır','/weɪks ʌp/','He wakes up early every day.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','steady','steady','kararlı','/ˈstedi/','Slow and steady work brings results.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','wins','wins','kazanır','/wɪnz/','Our team wins the game.');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-01','hare');
@@ -273,11 +274,12 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-09','hare');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-09','ahead');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-10','rest');
-insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-11','asleep');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-11','falls-asleep');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-12','tortoise');
-insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-13','step');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-13','step-by-step');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-13','finish');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-14','hare');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-14','wakes-up');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-15','tortoise');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-16','slow');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4ee49bb8-ef6e-5556-a487-3a4bab5f2225','cl-tortoise-hare-16','steady');
@@ -306,8 +308,10 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.story_sentences(revision_id,id,position,english,turkish) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-16',16,'Even a small friend can give great help.','Küçük bir dost bile büyük bir yardımda bulunabilir.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','lion','lion','aslan','/ˈlaɪən/','The lion sleeps under a tree.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','mouse','mouse','fare','/maʊs/','The mouse is very small.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','wakes-up','wakes up','uyanır','/weɪks ʌp/','He wakes up early every day.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','catches','catches','yakalar','/ˈkætʃɪz/','The cat catches a ball.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','please','please','lütfen','/pliːz/','Please open the window.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','help','help','yardım','/help/','Thank you for your help.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','laughs','laughs','güler','/læfs/','She laughs at the funny story.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('b1f40817-d171-5b18-a1b0-3a2c91900725','paw','paw','pençe','/pɔː/','The lion opens his paw.');
@@ -322,10 +326,12 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-01','lion');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-02','mouse');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-03','lion');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-03','wakes-up');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-03','catches');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-03','mouse');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-04','please');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-04','mouse');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-05','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-05','help');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-06','lion');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('b1f40817-d171-5b18-a1b0-3a2c91900725','cl-lion-mouse-06','laughs');
@@ -375,6 +381,8 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','jumps','jumps','zıplar, sıçrar','/dʒʌmps/','The cat jumps onto the chair.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','reach','reach','ulaşmak, uzanmak','/riːtʃ/','I cannot reach the top shelf.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','tries','tries','dener','/traɪz/','He tries to open the door.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','again-and-again','again and again','tekrar tekrar','/əˈɡen ənd əˈɡen/','She reads the letter again and again.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','at-last','at last','sonunda','/æt læst/','At last, the bus arrives.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','tired','tired','yorgun','/ˈtaɪərd/','She is tired after work.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','sour','sour','ekşi','/ˈsaʊə(r)/','The fox calls the grapes sour.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','disappointment','disappointment','hayal kırıklığı','/ˌdɪsəˈpɔɪntmənt/','She hides her disappointment.');
@@ -394,6 +402,8 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','cl-fox-grapes-08','reach');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','cl-fox-grapes-08','grapes');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','cl-fox-grapes-09','tries');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','cl-fox-grapes-09','again-and-again');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','cl-fox-grapes-10','at-last');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','cl-fox-grapes-10','tired');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','cl-fox-grapes-11','vine');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fe29e7d7-30c1-5878-abdd-69cf1f612c5b','cl-fox-grapes-12','grapes');
@@ -491,6 +501,7 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.story_sentences(revision_id,id,position,english,turkish) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-29',29,'The wolf leaned down from the roof, fell into the water, and drowned.','Kurt çatıdan aşağı eğildi, suya düştü ve boğuldu.');
 insert into public.story_sentences(revision_id,id,position,english,turkish) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-30',30,'The girl went home safely after listening to good advice.','Kız iyi öğütleri dinleyerek güvenle evine döndü.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cap','cap','başlık','/kæp/','The girl wears a red cap.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','path','path','patika','/pæθ/','A narrow path led uphill.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','forest','forest','orman','/ˈfɔːrɪst/','The forest was full of birds.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','wolf','wolf','kurt','/wʊlf/','The wolf runs to the house.');
@@ -505,6 +516,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','warning','warning','uyarı','/ˈwɔːnɪŋ/','She remembers her mother''s warning.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','safely','safely','güvenli bir şekilde','/ˈseɪfli/','He put the ticket safely in his pocket.');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-01','cap');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-02','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-04','path');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-04','forest');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-06','wolf');
@@ -520,8 +532,10 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c31
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-19','asleep');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-20','hunter');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-21','wolf');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-22','wolf');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-22','belly');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-22','scissors');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-24','wolf');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-24','belly');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-25','food');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('d2c319e7-2f1a-5fd8-aeaf-76ad28675072','cl-red-riding-hood-25','warning');
@@ -564,6 +578,7 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','father','father','baba','/ˈfɑːðə(r)/','A father has several sons.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','hazel','hazel','fındık','/ˈheɪzl/','A hazel tree grows there.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','grave','grave','mezar','/ɡreɪv/','She visits her mother''s grave.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','king','king','kral','/kɪŋ/','After the queen died, the king married another woman.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','festival','festival','şenlik','/ˈfestɪvl/','The festival lasts three days.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','bride','bride','gelin','/braɪd/','The prince hopes to find a bride.');
@@ -576,12 +591,14 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','golden','golden','altın; altından','/ˈɡəʊldən/','Every day, she lays a golden egg.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','slipper','slipper','ayakkabı','/ˈslɪpə(r)/','The golden slipper fits her.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','force','force','güç; zor kullanma','/fɔːs/','The Sun wins without using force.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','at-last','at last','sonunda','/æt læst/','At last, the bus arrives.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','share','share','paylaşmak','/ʃer/','They share the cake.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','fortune','fortune','talih; servet','/ˈfɔːtʃuːn/','His greed has taken away his good fortune.');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-01','father');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-04','father');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-05','hazel');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-05','grave');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-08','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-08','king');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-08','festival');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-09','bride');
@@ -599,6 +616,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-21','force');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-21','slipper');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-22','prince');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-23','at-last');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-24','golden');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-24','slipper');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15','cl-cinderella-25','prince');
@@ -742,6 +760,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','barred','barred','parmaklıklı','/bɑːd/','Hansel waits behind a barred door.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','well','well','kuyu','/wel/','A princess loved to play with her golden ball near a deep well.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','bone','bone','kemik','/bəʊn/','He holds out a bone.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','at-last','at last','sonunda','/æt læst/','At last, the bus arrives.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','oven','oven','fırın','/ˈʌvn/','The oven is hot.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','jewels','jewels','mücevherler','/ˈdʒuːəlz/','They find jewels in the house.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','duck','duck','ördek','/dʌk/','A duck sat on her nest, waiting for the last and largest egg to hatch.');
@@ -768,6 +787,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-17','witch');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-17','well');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-18','bone');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-19','at-last');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-19','witch');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-19','oven');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-22','witch');
@@ -776,6 +796,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-25','jewels');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-26','duck');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-27','forest');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-27','father');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-28','father');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-29','jewels');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('35cf4e88-11a0-59a4-af98-d9273149f3ce','cl-hansel-gretel-29','hunger');
@@ -833,6 +854,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','blind','blind','kör','/blaɪnd/','Blind and unhappy, he wandered for years until he heard Rapunzel''s voice again.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','hungry','hungry','aç','/ˈhʌŋɡri/','I am hungry after school.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','winter','winter','kış','/ˈwɪntə(r)/','Winter is cold.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','at-last','at last','sonunda','/æt læst/','At last, the bus arrives.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','lead','lead','kurşun','/led/','The statue''s heart is made of lead.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','morning','morning','sabah','/ˈmɔːrnɪŋ/','It was a bright morning.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','angel','angel','melek','/ˈeɪndʒl/','An angel chooses the heart and the bird.');
@@ -857,6 +879,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-13','prince');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-13','food');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-14','swallow');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-15','prince');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-16','prince');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-16','matches');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-17','money');
@@ -872,6 +895,9 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-22','statue');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-23','winter');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-23','swallow');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-24','at-last');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-24','prince');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-25','statue');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-25','lead');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-26','morning');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('020a4ce1-c4d6-5be4-a923-3c9d3c4f071a','cl-happy-prince-26','statue');
@@ -941,6 +967,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-04','high');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-05','playground');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-05','road');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-07','giant');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-07','winter');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-08','frost');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-08','north');
@@ -952,6 +979,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-12','blossoms');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-13','boy');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-13','reach');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-14','boy');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-14','tears');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-14','giant');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a7478442-58f3-5bee-a55d-a63d103a107d','cl-selfish-giant-14','selfish');
@@ -1196,6 +1224,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','laughs','laughs','güler','/læfs/','She laughs at the funny story.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','trick','trick','oyun, numara','/trɪk/','The children play a trick on their friend.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','nothing','nothing','hiçbir şey','/ˈnʌθɪŋ/','There is nothing in the box.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','frightened','frightened','korkmuş','/ˈfraɪtnd/','The frightened cat hides under the bed.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','nobody','nobody','hiç kimse','/ˈnoʊbədi/','Nobody is at home today.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','believe','believe','inanmak','/bɪˈliːv/','I believe you.');
@@ -1219,6 +1248,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('212a8
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','cl-boy-cried-wolf-07','trick');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','cl-boy-cried-wolf-08','villagers');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','cl-boy-cried-wolf-08','nothing');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','cl-boy-cried-wolf-09','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','cl-boy-cried-wolf-09','wolf');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','cl-boy-cried-wolf-10','frightened');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('212a81c0-8dda-5e0f-a42e-fa434c880ae0','cl-boy-cried-wolf-10','boy');
@@ -1307,6 +1337,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','traveler','traveler','yolcu','/ˈtrævələ(r)/','They see a traveler on the road.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','road','road','yol','/roʊd/','The road goes to the village.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','coat','coat','palto','/koʊt/','His coat is wet.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','at-last','at last','sonunda','/æt læst/','At last, the bus arrives.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','wins','wins','kazanır','/wɪnz/','Our team wins the game.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','force','force','güç; zor kullanma','/fɔːs/','The Sun wins without using force.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','gentleness','gentleness','nezaket','/ˈdʒentlnəs/','Gentleness can succeed where force fails.');
@@ -1325,6 +1356,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('fcad5
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','cl-north-wind-sun-07','coat');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','cl-north-wind-sun-08','wind');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','cl-north-wind-sun-08','coat');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','cl-north-wind-sun-09','at-last');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','cl-north-wind-sun-09','wind');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','cl-north-wind-sun-10','sun');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('fcad5cc5-79f4-5fd9-ac9d-777449728200','cl-north-wind-sun-11','traveler');
@@ -1556,6 +1588,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('dfafbbfc-5ac2-5326-af9e-85626b020562','sons','sons','oğullar','/sʌnz/','A father has several sons.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('dfafbbfc-5ac2-5326-af9e-85626b020562','argue','argue','tartışmak','/ˈɑːɡjuː/','The North Wind and the Sun argue.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('dfafbbfc-5ac2-5326-af9e-85626b020562','peace','peace','barış; huzur','/piːs/','Their father wants them to live in peace.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('dfafbbfc-5ac2-5326-af9e-85626b020562','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('dfafbbfc-5ac2-5326-af9e-85626b020562','bundle','bundle','demet','/ˈbʌndl/','One day, he brings them a bundle of sticks.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('dfafbbfc-5ac2-5326-af9e-85626b020562','sticks','sticks','çubuklar','/stɪks/','One day, he brings them a bundle of sticks.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('dfafbbfc-5ac2-5326-af9e-85626b020562','break','break','kırmak','/breɪk/','"Try to break this bundle," he says.');
@@ -1570,6 +1603,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('dfafb
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('dfafbbfc-5ac2-5326-af9e-85626b020562','cl-bundle-sticks-02','argue');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('dfafbbfc-5ac2-5326-af9e-85626b020562','cl-bundle-sticks-03','father');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('dfafbbfc-5ac2-5326-af9e-85626b020562','cl-bundle-sticks-03','peace');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('dfafbbfc-5ac2-5326-af9e-85626b020562','cl-bundle-sticks-04','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('dfafbbfc-5ac2-5326-af9e-85626b020562','cl-bundle-sticks-04','bundle');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('dfafbbfc-5ac2-5326-af9e-85626b020562','cl-bundle-sticks-04','sticks');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('dfafbbfc-5ac2-5326-af9e-85626b020562','cl-bundle-sticks-05','break');
@@ -1654,10 +1688,11 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','dog','dog','köpek','/dɒɡ/','A dog carries a piece of meat in his mouth.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','manger','manger','yemlik','/ˈmeɪndʒə(r)/','A dog lies in a manger full of hay.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','hay','hay','kuru ot','/heɪ/','A dog lies in a manger full of hay.');
-insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','asleep','asleep','uykuda','/əˈsliːp/','The hare is asleep.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','falls-asleep','falls asleep','uykuya dalar','/fɔːlz əˈsliːp/','The baby falls asleep in the car.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','oxen','oxen','öküzler','/ˈɒksn/','Some oxen come back from their work.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','tired','tired','yorgun','/ˈtaɪərd/','She is tired after work.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','hungry','hungry','aç','/ˈhʌŋɡri/','I am hungry after school.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','wakes-up','wakes up','uyanır','/weɪks ʌp/','He wakes up early every day.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','bark','bark','havlamak','/bɑːk/','The dog wakes up and starts to bark.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','food','food','yiyecek','/fuːd/','He offers simple food from the fields.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('184110f8-c35f-5b57-a481-700e5142c774','selfish','selfish','bencil','/ˈselfɪʃ/','The selfish giant builds a wall.');
@@ -1665,12 +1700,13 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('18411
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-01','manger');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-01','hay');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-02','hay');
-insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-02','asleep');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-02','falls-asleep');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-03','oxen');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-04','tired');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-04','hungry');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-05','hay');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-06','dog');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-06','wakes-up');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-06','bark');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-07','oxen');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('184110f8-c35f-5b57-a481-700e5142c774','cl-dog-manger-08','dog');
@@ -1696,8 +1732,8 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.story_sentences(revision_id,id,position,english,turkish) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-11',11,'"Your clothes are a lion''s, but your voice is an ass''s," she says.','"Kıyafetin aslanınki ama sesin bir eşeğin," der.');
 insert into public.story_sentences(revision_id,id,position,english,turkish) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-12',12,'A fine disguise cannot hide who we are forever.','Güzel bir kılık, kim olduğumuzu sonsuza kadar gizleyemez.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','ass','ass','eşek','/æs/','An ass finds a lion''s skin.');
-insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','skin','skin','deri; post','/skɪn/','An ass finds a lion''s skin.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','lion','lion','aslan','/ˈlaɪən/','The lion sleeps under a tree.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','skin','skin','deri; post','/skɪn/','An ass finds a lion''s skin.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','animals','animals','hayvanlar','/ˈænɪmlz/','He walks around and frightens the animals.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','proud','proud','gururlu','/praʊd/','The crow feels proud.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','fox','fox','tilki','/fɒks/','The fox sees some grapes.');
@@ -1707,6 +1743,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','voice','voice','ses','/vɔɪs/','"You must have a beautiful voice, too."');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','disguise','disguise','kılık','/dɪsˈɡaɪz/','A fine disguise cannot hide who we are forever.');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-01','ass');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-01','lion');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-01','skin');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-03','lion');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-04','animals');
@@ -1717,7 +1754,9 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc2
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-09','mouth');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-09','brays');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-10','fox');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-11','lion');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-11','voice');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-11','ass');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('9ecc234b-1c7b-5147-a141-b50bbde9d3a7','cl-ass-lion-skin-12','disguise');
 end if; end $seed$;
 insert into public.content_assets(id,kind,storage_path,sha256,byte_size,mime_type) values('30933df1-a5b9-54ac-a150-cf29c1ba9065','cover','covers/b177b7d6bb2f7ef5f98357c1d51cc76c65a7db2c97b7818158d786a90aa799e3.png','b177b7d6bb2f7ef5f98357c1d51cc76c65a7db2c97b7818158d786a90aa799e3',805255,'image/png') on conflict do nothing;
@@ -1750,6 +1789,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','married','married','evlendi','/ˈmærid/','After the queen died, the king married another woman.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','magic','magic','sihirli','/ˈmædʒɪk/','The new queen asked her magic mirror who was the most beautiful.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','mirror','mirror','ayna','/ˈmɪrə(r)/','The new queen asked her magic mirror who was the most beautiful.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','hunter','hunter','avcı','/ˈhʌntə(r)/','A hunter hears the noise.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','forest','forest','orman','/ˈfɔːrɪst/','The forest was full of birds.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','asleep','asleep','uykuda','/əˈsliːp/','The hare is asleep.');
@@ -1767,6 +1807,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('ba893
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','cl-snow-white-03','magic');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','cl-snow-white-03','mirror');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','cl-snow-white-04','mirror');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','cl-snow-white-05','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','cl-snow-white-06','queen');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','cl-snow-white-06','hunter');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('ba89341b-aa17-5f66-ab80-ecb4f1239542','cl-snow-white-07','hunter');
@@ -1816,6 +1857,7 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','enchantress','enchantress','büyücü kadın','/ɪnˈtʃɑːntrəs/','The enchantress who owned the garden caught him on his next visit.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','tower','tower','kule','/ˈtaʊə(r)/','At twelve, Rapunzel was shut in a tower with no stairs or door.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','window','window','pencere','/ˈwɪndoʊ/','Anna looks out of her window.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','prince','prince','prens','/prɪns/','A prince saw her and asked to take the coffin with him.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','frightened','frightened','korkmuş','/ˈfraɪtnd/','The frightened cat hides under the bed.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','ladder','ladder','merdiven','/ˈlædə(r)/','They planned to make a ladder of silk so that she could escape.');
@@ -1831,12 +1873,14 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-06','tower');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-07','enchantress');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-08','window');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-09','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-09','prince');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-09','tower');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-10','enchantress');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-11','frightened');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-12','ladder');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-12','silk');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-13','prince');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-13','enchantress');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-15','prince');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('659a1edd-bad3-54d3-a03b-7ee99db8efa7','cl-rapunzel-15','enchantress');
@@ -1939,6 +1983,7 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('70e67693-3279-5f74-a92d-0c197068b4c9','princess','princess','prenses','/ˌprɪnˈses/','She arrived in anger and placed a curse on the princess.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('70e67693-3279-5f74-a92d-0c197068b4c9','golden','golden','altın; altından','/ˈɡəʊldən/','Every day, she lays a golden egg.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('70e67693-3279-5f74-a92d-0c197068b4c9','well','well','kuyu','/wel/','A princess loved to play with her golden ball near a deep well.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('70e67693-3279-5f74-a92d-0c197068b4c9','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('70e67693-3279-5f74-a92d-0c197068b4c9','frog','frog','kurbağa','/frɒɡ/','A frog offered to bring it back if she would become his friend.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('70e67693-3279-5f74-a92d-0c197068b4c9','plate','plate','tabak','/pleɪt/','He wanted to eat from her plate and sleep in her room.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('70e67693-3279-5f74-a92d-0c197068b4c9','king','king','kral','/kɪŋ/','After the queen died, the king married another woman.');
@@ -1956,6 +2001,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-01','princess');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-01','golden');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-01','well');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-02','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-03','frog');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-04','plate');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-05','frog');
@@ -1975,6 +2021,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-16','witch');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-16','frog');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-17','king');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-18','prince');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-18','loyal');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-18','servant');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('70e67693-3279-5f74-a92d-0c197068b4c9','cl-frog-prince-18','iron');
@@ -2170,6 +2217,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('4e7cf
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4e7cf420-c00f-5475-aab0-2ddd00378743','cl-elves-shoemaker-16','shoemaker');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4e7cf420-c00f-5475-aab0-2ddd00378743','cl-elves-shoemaker-17','leather');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4e7cf420-c00f-5475-aab0-2ddd00378743','cl-elves-shoemaker-18','elves');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('4e7cf420-c00f-5475-aab0-2ddd00378743','cl-elves-shoemaker-20','shoemaker');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('4e7cf420-c00f-5475-aab0-2ddd00378743','cl-elves-shoemaker-20','help');
 end if; end $seed$;
 insert into public.content_assets(id,kind,storage_path,sha256,byte_size,mime_type) values('e5de9cc6-e52f-5639-a796-d3982c8cbdf0','cover','covers/03ca5d1dcf86b287176a9db50ebffb00a236d06da7a3fcd5b6f7e0dd421f3d09.png','03ca5d1dcf86b287176a9db50ebffb00a236d06da7a3fcd5b6f7e0dd421f3d09',170633,'image/png') on conflict do nothing;
@@ -2199,10 +2247,11 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','bigger','bigger','daha büyük','/ˈbɪɡər/','My room is bigger than yours.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','thumb','thumb','başparmak','/θʌm/','A poor couple wished for a child, even one no bigger than a thumb.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','clever','clever','akıllı','/ˈklevə(r)/','A clever idea can solve a difficult problem.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','father','father','baba','/ˈfɑːðə(r)/','A father has several sons.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','strangers','strangers','yabancılar','/ˈstreɪndʒəz/','They warned her not to open the door to strangers.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cart','cart','at arabası','/kɑːt/','Two strangers saw the moving cart and wanted to buy the little boy.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','boy','boy','erkek çocuk, oğlan','/bɔɪ/','The boy plays in the park.');
-insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','father','father','baba','/ˈfɑːðə(r)/','A father has several sons.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','road','road','yol','/roʊd/','The road goes to the village.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','mouse','mouse','fare','/maʊs/','The mouse is very small.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','hole','hole','delik','/həʊl/','The mice run and hide in a hole.');
@@ -2225,6 +2274,8 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-01','thumb');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-02','thumb');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-03','clever');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-04','one-day');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-04','father');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-05','strangers');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-05','cart');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-05','boy');
@@ -2243,6 +2294,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-12','morning');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-12','hay');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-12','cow');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-13','cow');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-13','hay');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-14','frightened');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('83d8e1d1-155d-5dd4-a8ee-00baea5885cd','cl-tom-thumb-14','parson');
@@ -2376,6 +2428,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('7eac0
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('7eac003e-201f-56a6-ae8a-c50420a42e37','cl-twelve-dancing-princesses-10','gold');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('7eac003e-201f-56a6-ae8a-c50420a42e37','cl-twelve-dancing-princesses-11','proof');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('7eac003e-201f-56a6-ae8a-c50420a42e37','cl-twelve-dancing-princesses-13','soldier');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('7eac003e-201f-56a6-ae8a-c50420a42e37','cl-twelve-dancing-princesses-13','princess');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('7eac003e-201f-56a6-ae8a-c50420a42e37','cl-twelve-dancing-princesses-13','boat');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('7eac003e-201f-56a6-ae8a-c50420a42e37','cl-twelve-dancing-princesses-14','castle');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('7eac003e-201f-56a6-ae8a-c50420a42e37','cl-twelve-dancing-princesses-15','princesses');
@@ -2443,6 +2496,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('bca12
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bca12041-3bc4-537f-adb1-579f322db346','cl-brave-little-tailor-07','tailor');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bca12041-3bc4-537f-adb1-579f322db346','cl-brave-little-tailor-08','giant');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bca12041-3bc4-537f-adb1-579f322db346','cl-brave-little-tailor-08','alone');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('bca12041-3bc4-537f-adb1-579f322db346','cl-brave-little-tailor-09','tailor');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bca12041-3bc4-537f-adb1-579f322db346','cl-brave-little-tailor-09','king');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bca12041-3bc4-537f-adb1-579f322db346','cl-brave-little-tailor-10','king');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bca12041-3bc4-537f-adb1-579f322db346','cl-brave-little-tailor-10','princess');
@@ -2586,6 +2640,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','well','well','kuyu','/wel/','A princess loved to play with her golden ball near a deep well.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','animals','animals','hayvanlar','/ˈænɪmlz/','He walks around and frightens the animals.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','brothers','brothers','erkek kardeşler','/ˈbrʌðəz/','Three brothers went into the forest to cut wood, one after another.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','at-last','at last','sonunda','/æt læst/','At last, the bus arrives.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','nobody','nobody','hiç kimse','/ˈnoʊbədi/','Nobody is at home today.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','peace','peace','barış; huzur','/piːs/','Their father wants them to live in peace.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','hunters','hunters','avcılar','/ˈhʌntərz/','The hunters walk into the forest.');
@@ -2611,6 +2666,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce9
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-03','well');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-05','animals');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-05','brothers');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-06','at-last');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-06','nobody');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-07','peace');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-08','hunters');
@@ -2624,6 +2680,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce9
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-17','ice');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-18','ice');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-19','frightened');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-21','at-last');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-21','wings');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-21','strong');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c9ce94b2-5a45-597e-a124-a581d79e9b2e','cl-ugly-duckling-22','swans');
@@ -2668,6 +2725,7 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.story_sentences(revision_id,id,position,english,turkish) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-28',28,'Behind him, the attendants still carried a train that did not exist.','Arkasında görevlileri, var olmayan bir eteği taşımaya devam ediyordu.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('a81efb7a-4754-5d96-a4ff-867821e6242a','emperor','emperor','imparator','/ˈempərə(r)/','An emperor loved fine clothes more than anything else in his kingdom.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('a81efb7a-4754-5d96-a4ff-867821e6242a','much','much','çok','/mʌtʃ/','Thank you very much.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('a81efb7a-4754-5d96-a4ff-867821e6242a','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('a81efb7a-4754-5d96-a4ff-867821e6242a','swindlers','swindlers','dolandırıcılar','/ˈswɪndləz/','One day, two swindlers arrived and claimed to be extraordinary weavers.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('a81efb7a-4754-5d96-a4ff-867821e6242a','weavers','weavers','dokumacılar','/ˈwiːvəz/','One day, two swindlers arrived and claimed to be extraordinary weavers.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cloth','cloth','kumaş','/klɒθ/','He struck with a cloth and killed seven flies at once.');
@@ -2689,6 +2747,7 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('a81efb7a-4754-5d96-a4ff-867821e6242a','father','father','baba','/ˈfɑːðə(r)/','A father has several sons.');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-01','emperor');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-02','much');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-03','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-03','swindlers');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-03','weavers');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-04','cloth');
@@ -2706,6 +2765,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81ef
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-09','cloth');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-10','nothing');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-13','second');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-14','emperor');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-15','emperor');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-15','cloth');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('a81efb7a-4754-5d96-a4ff-867821e6242a','cl-emperors-clothes-17','swindlers');
@@ -2789,6 +2849,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('156d8
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('156d8f92-b9b4-5731-a5fe-217ed05b2ea4','cl-thumbelina-11','mouse');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('156d8f92-b9b4-5731-a5fe-217ed05b2ea4','cl-thumbelina-11','food');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('156d8f92-b9b4-5731-a5fe-217ed05b2ea4','cl-thumbelina-12','return');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('156d8f92-b9b4-5731-a5fe-217ed05b2ea4','cl-thumbelina-13','mouse');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('156d8f92-b9b4-5731-a5fe-217ed05b2ea4','cl-thumbelina-13','mole');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('156d8f92-b9b4-5731-a5fe-217ed05b2ea4','cl-thumbelina-15','swallow');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('156d8f92-b9b4-5731-a5fe-217ed05b2ea4','cl-thumbelina-17','winter');
@@ -2941,6 +3002,7 @@ insert into public.story_sentences(revision_id,id,position,english,turkish) valu
 insert into public.story_sentences(revision_id,id,position,english,turkish) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-32',32,'It was summer again, and the roses were in bloom.','Yeniden yaz gelmişti ve güller açmıştı.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','mirror','mirror','ayna','/ˈmɪrə(r)/','The new queen asked her magic mirror who was the most beautiful.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','pieces','pieces','parçalar','/ˈpiːsɪz/','She cuts the bread into small pieces.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','one-day','one day','bir gün','/wʌn deɪ/','One day, I want to visit London.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','winter','winter','kış','/ˈwɪntə(r)/','Winter is cold.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','sledge','sledge','kızak','/sledʒ/','During winter, he tied his little sledge to a larger one in the town square.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','queen','queen','kraliçe','/kwiːn/','A queen had a daughter with skin as white as snow and hair as black as ebony.');
@@ -2958,12 +3020,14 @@ insert into public.revision_words(revision_id,id,word,translation,pronunciation,
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','help','help','yardım','/help/','Thank you for your help.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','alone','alone','yalnız','/əˈloʊn/','He walks home alone.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','praying','praying','dua etme','/ˈpreɪɪŋ/','Gerda went on alone, praying as the snow around her became threatening shapes.');
+insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','at-last','at last','sonunda','/æt læst/','At last, the bus arrives.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','ice','ice','buz','/aɪs/','One night, he became exhausted and was trapped in the ice.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','eternity','eternity','sonsuzluk','/ɪˈtɜːnəti/','Kay sat arranging pieces of ice, trying to form the word eternity.');
 insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values('c8a1e704-196c-5104-a926-997c46877519','tears','tears','gözyaşları','/tɪəz/','Her tears fell into his eyes, and he could see once more.');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-01','mirror');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-02','mirror');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-02','pieces');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-05','one-day');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-05','pieces');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-05','mirror');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-07','winter');
@@ -2987,6 +3051,8 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-22','queen');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-24','alone');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-24','praying');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-25','at-last');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-25','queen');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-26','pieces');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-26','ice');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('c8a1e704-196c-5104-a926-997c46877519','cl-snow-queen-26','eternity');
@@ -3163,6 +3229,7 @@ insert into public.sentence_words(revision_id,sentence_id,word_id) values('bcd37
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bcd37c77-4d88-56a4-a84c-887326b3b99e','cl-steadfast-tin-soldier-27','servant');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bcd37c77-4d88-56a4-a84c-887326b3b99e','cl-steadfast-tin-soldier-27','tin');
 insert into public.sentence_words(revision_id,sentence_id,word_id) values('bcd37c77-4d88-56a4-a84c-887326b3b99e','cl-steadfast-tin-soldier-27','ashes');
+insert into public.sentence_words(revision_id,sentence_id,word_id) values('bcd37c77-4d88-56a4-a84c-887326b3b99e','cl-steadfast-tin-soldier-28','dancer');
 end if; end $seed$;
 insert into public.content_assets(id,kind,storage_path,sha256,byte_size,mime_type) values('b6779dde-8649-57c2-a174-e78c4221ada7','cover','covers/d9dc75ff532ecae511b8b3ef7ec5ad1fca7fc03acee440fc48646fe6805f0497.png','d9dc75ff532ecae511b8b3ef7ec5ad1fca7fc03acee440fc48646fe6805f0497',341455,'image/png') on conflict do nothing;
 insert into public.stories(id) values('classic-wild-swans') on conflict do nothing;

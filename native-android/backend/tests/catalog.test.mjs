@@ -2,22 +2,24 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {occurs} from '../admin/workflow.js';
 const read=p=>readFile(new URL(p,import.meta.url));
 const catalog=JSON.parse(await read('../../app/src/main/assets/catalog/v1.json'));
 const sources=JSON.parse(await read('../content/classic-sources.json'));
 const canonical=x=>Array.isArray(x)?x.map(canonical):x&&typeof x==='object'?Object.fromEntries(Object.keys(x).sort().map(k=>[k,canonical(x[k])])):x;
 const hash=x=>createHash('sha256').update(JSON.stringify(canonical(x))).digest('hex');
-const tokens=s=>new Set(s.toLowerCase().match(/[a-zA-Z']+/g)||[]);
+const tokens=s=>new Set(s.toLowerCase().match(/[\p{L}\p{N}]+/gu)||[]);
 const legacyIds=['quiet-morning','paper-boat','lost-map','red-umbrella','last-train','attic-letter'];
 const legacy=catalog.stories.filter(s=>legacyIds.includes(s.id));
 test('classic expansion preserves legacy texts, IDs, original vocabulary and inferred word links',()=>{
  assert.equal(hash(legacy),'ce53ac56dd089ab7db8a489596ea52755c0f6765c71b4b7dc3a3755bee5262be');
  assert.equal(hash(catalog.words.slice(0,39)),'d045b636ec9f046daa618fc847e510078e9982a32749c8581d978558ddc18c76');
  const oldTokens=tokens(legacy.flatMap(s=>s.sentences.map(x=>x.english)).join(' '));
- for(const word of catalog.words.slice(39)) assert.ok(!oldTokens.has(word.word.toLowerCase()),`New word changes legacy links: ${word.word}`);
+ const legacySentences=legacy.flatMap(s=>s.sentences.map(x=>x.english));
+ for(const word of catalog.words.slice(39)) assert.ok(!oldTokens.has(word.word.toLowerCase())&&!legacySentences.some(x=>occurs(x,word.word)),`New word changes legacy links: ${word.word}`);
 });
 test('the reviewed classic package is complete, bilingual, level-balanced and traceable',()=>{
- assert.equal(catalog.schemaVersion,1);assert.equal(catalog.stories.length,50);assert.equal(catalog.words.length,353);
+ assert.equal(catalog.schemaVersion,1);assert.equal(catalog.stories.length,50);assert.equal(catalog.words.length,359);
  assert.equal(catalog.stories.reduce((n,s)=>n+s.sentences.length,0),1002);assert.equal(sources.stories.length,44);
  assert.equal(new Set(catalog.words.map(w=>w.id)).size,catalog.words.length);
  assert.equal(new Set(catalog.words.map(w=>w.word.toLowerCase())).size,catalog.words.length);
@@ -34,7 +36,7 @@ test('the reviewed classic package is complete, bilingual, level-balanced and tr
   const all=tokens(story.sentences.map(s=>s.english).join(' '));assert.ok(catalog.words.filter(w=>all.has(w.word.toLowerCase())).length>=6,story.id);
  }
  // New vocabulary examples must demonstrate the exact selectable token (no implicit lemmatization).
- for(const word of catalog.words.slice(39)){assert.ok(word.translation.trim());assert.ok(word.pronunciation.trim());assert.ok(tokens(word.example).has(word.word.toLowerCase()),word.id);}
+ for(const word of catalog.words.slice(39)){assert.ok(word.translation.trim());assert.ok(word.pronunciation.trim());assert.ok(occurs(word.example,word.word),word.id);}
 });
 test('classics have verified PNGs, historical provenance, cover mappings and matching upload checksums',async()=>{
  const manifest=JSON.parse(await read('../supabase/asset-upload-manifest.json'));
@@ -58,4 +60,11 @@ test('vocabulary density pilot: five A1 classics reach at least 13 selectable wo
  }
  // Pilot words are appended after the classic package; earlier IDs keep their positions.
  assert.deepEqual(catalog.words.slice(316).map(w=>w.id).slice(0,3),['road','laughs','slow']);
+});
+test('pilot phrases are multi-word entries that occur in their A1 stories and win over single words',()=>{
+ const phrases=catalog.words.filter(w=>w.word.includes(' '));
+ assert.deepEqual(phrases.map(w=>w.id),['wakes-up','falls-asleep','step-by-step','at-last','again-and-again','one-day']);
+ const story=id=>catalog.stories.find(s=>s.id===id).sentences.map(s=>s.english);
+ for(const [id,phrase] of [['classic-tortoise-hare','step by step'],['classic-tortoise-hare','wakes up'],['classic-fox-grapes','again and again'],['classic-fox-grapes','at last'],['classic-lion-mouse','one day']])
+  assert.ok(story(id).some(x=>occurs(x,phrase)),`${phrase} in ${id}`);
 });

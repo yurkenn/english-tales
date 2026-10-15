@@ -1,5 +1,18 @@
 export const normalize=value=>String(value??'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 export const occurs=(sentence,word)=>Boolean(normalize(word))&&(` ${normalize(sentence)} `).includes(` ${normalize(word)} `);
+const tokens=value=>normalize(value).split(' ').filter(Boolean);
+// Mirrors Android PhraseMatcher: left to right, longest entry first, matched tokens are consumed.
+export function matchSpans(sentence,words){
+  const spans=[...String(sentence??'').matchAll(/[\p{L}\p{N}]+/gu)],keys=spans.map(m=>m[0].toLowerCase()),found=[];
+  const entries=words.map(word=>({word,parts:tokens(word.word)})).filter(e=>e.parts.length).sort((a,b)=>b.parts.length-a.parts.length);
+  for(let i=0;i<keys.length;){
+    const hit=entries.find(e=>e.parts.every((p,n)=>keys[i+n]===p));
+    if(!hit){i++;continue;}
+    const last=spans[i+hit.parts.length-1];found.push({word:hit.word,start:spans[i].index,end:last.index+last[0].length});i+=hit.parts.length;
+  }
+  return found;
+}
+export const matchWords=(sentence,words)=>matchSpans(sentence,words).map(m=>m.word);
 export function invalidLinks(doc){return doc.links.filter(link=>!occurs(doc.sentences.find(s=>s.id===link.sentence_id)?.english,doc.words.find(w=>w.id===link.word_id)?.word));}
 export function recoveryKey(project,user,revision){return `english-tales:draft:${encodeURIComponent(project)}:${user}:${revision}`;}
 export function backup(doc,project){return {format:'english-tales-draft',version:1,project,revisionId:doc.id,storyId:doc.story_id,editVersion:doc.edit_version,savedAt:new Date().toISOString(),document:doc};}

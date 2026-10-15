@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import { matchWords } from '../admin/workflow.js';
 
 const catalog = JSON.parse(await readFile(new URL('../../app/src/main/assets/catalog/v1.json', import.meta.url), 'utf8'));
 const quote = value => `'${String(value).replaceAll("'", "''")}'`;
@@ -8,7 +9,6 @@ export const stableId = value => {
   return `${hash.slice(0,8)}-${hash.slice(8,12)}-5${hash.slice(13,16)}-a${hash.slice(17,20)}-${hash.slice(20,32)}`;
 };
 if (catalog.schemaVersion !== 1) throw new Error('Unsupported bundled schema');
-const wordByText = new Map(catalog.words.map(word => [word.word.toLowerCase(), word]));
 if (new Set(catalog.stories.map(s => s.id)).size !== catalog.stories.length || new Set(catalog.words.map(w => w.id)).size !== catalog.words.length) throw new Error('Duplicate catalog IDs');
 const lines = ['-- Generated from the native catalog. Drafts only; never changes an existing revision.', 'begin;'];
 const assets = [];
@@ -30,10 +30,7 @@ for (const story of catalog.stories) {
     if (!sentence.english.trim() || !sentence.turkish.trim()) throw new Error(`Missing translation ${sentence.id}`);
     lines.push(`insert into public.story_sentences(revision_id,id,position,english,turkish) values(${quote(revisionId)},${quote(sentence.id)},${index+1},${quote(sentence.english)},${quote(sentence.turkish)});`);
     const sentenceWordIds = new Set();
-    for (const token of sentence.english.match(/[a-zA-Z']+/g) ?? []) {
-      const word = wordByText.get(token.toLowerCase());
-      if (word) { selected.set(word.id, word); sentenceWordIds.add(word.id); }
-    }
+    for (const word of matchWords(sentence.english, catalog.words)) { selected.set(word.id, word); sentenceWordIds.add(word.id); }
     for (const wordId of sentenceWordIds) links.push([revisionId, sentence.id, wordId]);
   }
   for (const word of selected.values()) lines.push(`insert into public.revision_words(revision_id,id,word,translation,pronunciation,example) values(${[revisionId,word.id,word.word,word.translation,word.pronunciation,word.example].map(quote).join(',')});`);

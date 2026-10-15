@@ -164,8 +164,8 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                 Text("${page+1}.",fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
                 pageSentences.forEach { sentence ->
                     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.Top,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-                        val sentenceWords=if(story.vocabulary!=null) story.vocabulary.filter {it.id in story.sentenceWordIds.orEmpty()[sentence.id].orEmpty()} else LearningContent.words
-                        TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),sentenceWords,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
+                        val phrases=if(story.vocabulary!=null) remember(story.revisionId,sentence.id) {PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence))} else LearningContent.phraseIndex
+                        TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
                         Box(Modifier.size(32.dp).semantics { contentDescription=if(sentence.id in translations) "Çeviriyi gizle" else "Cümleyi çevir" }.clickable { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
                     }
                     if(sentence.id in translations) Text(sentence.turkish,color=Color.White,fontSize=13.sp,lineHeight=19.sp,
@@ -207,17 +207,17 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
 }
 
 @Composable
-private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,words: List<WordInfo>,lineSpacing: Float=1.65f,onWord: (WordInfo)->Unit) {
-    val byText=remember(words) {words.associateBy {it.word.lowercase(java.util.Locale.ROOT)}}
-    val byId=remember(words) {words.associateBy {it.id}}
-    val annotated=remember(sentence,fontSize,color,words) {
+private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,phrases: PhraseMatcher.Index,lineSpacing: Float=1.65f,onWord: (WordInfo)->Unit) {
+    val matches=remember(sentence,phrases) {PhraseMatcher.find(sentence.english,phrases)}
+    val byId=remember(matches) {matches.associate {it.word.id to it.word}}
+    val annotated=remember(sentence,fontSize,color,matches) {
         buildAnnotatedString {
             var cursor=0
-            Regex("[\\p{L}']+").findAll(sentence.english).forEach { match ->
-                append(sentence.english.substring(cursor,match.range.first))
-                val word=byText[match.value.lowercase(java.util.Locale.ROOT)]
-                if(word!=null) { pushStringAnnotation("word",word.id); pushStyle(SpanStyle(color=color,textDecoration=TextDecoration.Underline)); append(match.value); pop(); pop() } else append(match.value)
-                cursor=match.range.last+1
+            matches.forEach { match ->
+                append(sentence.english.substring(cursor,match.start))
+                pushStringAnnotation("word",match.word.id); pushStyle(SpanStyle(color=color,textDecoration=TextDecoration.Underline))
+                append(sentence.english.substring(match.start,match.end)); pop(); pop()
+                cursor=match.end
             }
             append(sentence.english.substring(cursor))
         }
