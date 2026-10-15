@@ -1,0 +1,3213 @@
+{
+  "format": 1,
+  "generatedAt": "2026-10-15T20:33:23.520Z",
+  "sourceCommit": "65e41c281af103fad7787508cf095eed5ef6fcaf",
+  "sourceDirty": true,
+  "toolSHA256": "184a8b3db1e8bb09fb45bc6383cf0698e83972de2d2992912f1f16e990544f53",
+  "bundleSHA256": "e232547b7b23d1e187615287831c72b15efbb2c9994ba010b377173879094a11",
+  "snapshotSHA256": "b20f3bc635379f488fc38981396ee088deec171954938af3b3795184cc71e8db",
+  "snapshot": {
+    "project": "gtuangjukckpuerczfxd",
+    "createdAt": "2026-10-15T20:15:41.962Z",
+    "scope": "Reader-visible published content only; excludes Auth, learning records, drafts, archives, audit and service configuration",
+    "sourceTableCounts": {
+      "stories": 50,
+      "content_assets": 50,
+      "story_revisions": 50,
+      "story_sentences": 1002,
+      "revision_words": 622,
+      "sentence_words": 1118
+    }
+  },
+  "bundle": {
+    "summary": {
+      "stories": 50,
+      "uniqueTypes": 1871,
+      "coveredTypes": 362,
+      "typeCoveragePercent": 19.35,
+      "tokens": 10768,
+      "coveredTokens": 1343,
+      "tokenCoveragePercent": 12.47,
+      "sentences": 1002,
+      "vocabularyEntries": 771,
+      "distinctVocabularyIds": 358,
+      "dictionaryEntries": 359,
+      "links": 1312,
+      "errors": 0,
+      "warnings": 1
+    },
+    "levels": {
+      "A1": {
+        "stories": 18,
+        "uniqueTypes": 532,
+        "coveredTypes": 172,
+        "typeCoveragePercent": 32.33,
+        "tokens": 1751,
+        "coveredTokens": 389,
+        "tokenCoveragePercent": 22.22
+      },
+      "A2": {
+        "stories": 18,
+        "uniqueTypes": 979,
+        "coveredTypes": 169,
+        "typeCoveragePercent": 17.26,
+        "tokens": 4234,
+        "coveredTokens": 513,
+        "tokenCoveragePercent": 12.12
+      },
+      "B1": {
+        "stories": 14,
+        "uniqueTypes": 1212,
+        "coveredTypes": 184,
+        "typeCoveragePercent": 15.18,
+        "tokens": 4783,
+        "coveredTokens": 441,
+        "tokenCoveragePercent": 9.22
+      }
+    },
+    "unusedDictionaryIds": [
+      "kind"
+    ]
+  },
+  "live": {
+    "summary": {
+      "stories": 50,
+      "uniqueTypes": 1871,
+      "coveredTypes": 315,
+      "typeCoveragePercent": 16.84,
+      "tokens": 10768,
+      "coveredTokens": 1120,
+      "tokenCoveragePercent": 10.4,
+      "sentences": 1002,
+      "vocabularyEntries": 622,
+      "distinctVocabularyIds": 315,
+      "dictionaryEntries": null,
+      "links": 1118,
+      "errors": 0,
+      "warnings": 21
+    },
+    "levels": {
+      "B1": {
+        "stories": 14,
+        "uniqueTypes": 1212,
+        "coveredTypes": 161,
+        "typeCoveragePercent": 13.28,
+        "tokens": 4783,
+        "coveredTokens": 373,
+        "tokenCoveragePercent": 7.8
+      },
+      "A1": {
+        "stories": 18,
+        "uniqueTypes": 532,
+        "coveredTypes": 125,
+        "typeCoveragePercent": 23.5,
+        "tokens": 1751,
+        "coveredTokens": 293,
+        "tokenCoveragePercent": 16.73
+      },
+      "A2": {
+        "stories": 18,
+        "uniqueTypes": 979,
+        "coveredTypes": 151,
+        "typeCoveragePercent": 15.42,
+        "tokens": 4234,
+        "coveredTokens": 454,
+        "tokenCoveragePercent": 10.72
+      }
+    },
+    "issues": [
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-ass-lion-skin",
+        "sentenceId": "cl-ass-lion-skin-01",
+        "wordId": "lion"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-ass-lion-skin",
+        "sentenceId": "cl-ass-lion-skin-11",
+        "wordId": "lion"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-ass-lion-skin",
+        "sentenceId": "cl-ass-lion-skin-11",
+        "wordId": "ass"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-brave-little-tailor",
+        "sentenceId": "cl-brave-little-tailor-09",
+        "wordId": "tailor"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-elves-shoemaker",
+        "sentenceId": "cl-elves-shoemaker-20",
+        "wordId": "shoemaker"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-emperors-clothes",
+        "sentenceId": "cl-emperors-clothes-14",
+        "wordId": "emperor"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-frog-prince",
+        "sentenceId": "cl-frog-prince-18",
+        "wordId": "prince"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-hansel-gretel",
+        "sentenceId": "cl-hansel-gretel-27",
+        "wordId": "father"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-happy-prince",
+        "sentenceId": "cl-happy-prince-15",
+        "wordId": "prince"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-happy-prince",
+        "sentenceId": "cl-happy-prince-24",
+        "wordId": "prince"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-happy-prince",
+        "sentenceId": "cl-happy-prince-25",
+        "wordId": "statue"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-rapunzel",
+        "sentenceId": "cl-rapunzel-13",
+        "wordId": "prince"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-red-riding-hood",
+        "sentenceId": "cl-red-riding-hood-22",
+        "wordId": "wolf"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-red-riding-hood",
+        "sentenceId": "cl-red-riding-hood-24",
+        "wordId": "wolf"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-selfish-giant",
+        "sentenceId": "cl-selfish-giant-07",
+        "wordId": "giant"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-snow-queen",
+        "sentenceId": "cl-snow-queen-25",
+        "wordId": "queen"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-steadfast-tin-soldier",
+        "sentenceId": "cl-steadfast-tin-soldier-28",
+        "wordId": "dancer"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-thumbelina",
+        "sentenceId": "cl-thumbelina-13",
+        "wordId": "mouse"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-tom-thumb",
+        "sentenceId": "cl-tom-thumb-04",
+        "wordId": "father"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-tom-thumb",
+        "sentenceId": "cl-tom-thumb-13",
+        "wordId": "cow"
+      },
+      {
+        "severity": "warning",
+        "code": "unlinked_occurrence_review",
+        "storyId": "classic-twelve-dancing-princesses",
+        "sentenceId": "cl-twelve-dancing-princesses-13",
+        "wordId": "princess"
+      }
+    ]
+  },
+  "comparison": {
+    "equal": false,
+    "missingStoryIds": [],
+    "extraStoryIds": [],
+    "summary": {
+      "comparedStories": 50,
+      "comparedCovers": 50,
+      "metadataFieldDifferences": 0,
+      "sentenceDifferences": 0,
+      "missingRevisionWords": 151,
+      "extraRevisionWords": 2,
+      "modifiedRevisionWords": 0,
+      "missingLinks": 196,
+      "extraLinks": 2,
+      "coverMismatches": 0
+    },
+    "missingVocabularyIds": [
+      "again-and-again",
+      "ahead",
+      "alone",
+      "at-last",
+      "attacks",
+      "believe",
+      "bigger",
+      "bites",
+      "boy",
+      "carries",
+      "catches",
+      "falls-asleep",
+      "frightened",
+      "help",
+      "high",
+      "hungry",
+      "hunters",
+      "jumps",
+      "laughs",
+      "much",
+      "nobody",
+      "nothing",
+      "one-day",
+      "own",
+      "pieces",
+      "please",
+      "reach",
+      "rest",
+      "road",
+      "roars",
+      "second",
+      "shouts",
+      "slow",
+      "step",
+      "step-by-step",
+      "strong",
+      "sweet",
+      "tired",
+      "trick",
+      "tries",
+      "unkind",
+      "wakes-up",
+      "wins"
+    ],
+    "extraVocabularyIds": [],
+    "differingStories": [
+      {
+        "storyId": "classic-tortoise-hare",
+        "liveRevisionId": "4ee49bb8-ef6e-5556-a487-3a4bab5f2225",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "road",
+          "laughs",
+          "slow",
+          "ahead",
+          "rest",
+          "falls-asleep",
+          "step-by-step",
+          "wakes-up",
+          "wins"
+        ],
+        "extraWordIds": [
+          "asleep"
+        ],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-tortoise-hare-01",
+            "word_id": "road"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-02",
+            "word_id": "laughs"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-03",
+            "word_id": "slow"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-05",
+            "word_id": "laughs"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-09",
+            "word_id": "ahead"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-10",
+            "word_id": "rest"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-11",
+            "word_id": "falls-asleep"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-13",
+            "word_id": "step-by-step"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-14",
+            "word_id": "wakes-up"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-16",
+            "word_id": "slow"
+          },
+          {
+            "sentence_id": "cl-tortoise-hare-16",
+            "word_id": "wins"
+          }
+        ],
+        "extraLinks": [
+          {
+            "revision_id": "4ee49bb8-ef6e-5556-a487-3a4bab5f2225",
+            "sentence_id": "cl-tortoise-hare-11",
+            "word_id": "asleep"
+          }
+        ],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-lion-mouse",
+        "liveRevisionId": "b1f40817-d171-5b18-a1b0-3a2c91900725",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "wakes-up",
+          "catches",
+          "please",
+          "one-day",
+          "help",
+          "laughs",
+          "hunters",
+          "strong",
+          "roars",
+          "bites"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-lion-mouse-03",
+            "word_id": "wakes-up"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-03",
+            "word_id": "catches"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-04",
+            "word_id": "please"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-05",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-05",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-06",
+            "word_id": "laughs"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-08",
+            "word_id": "hunters"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-09",
+            "word_id": "strong"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-10",
+            "word_id": "roars"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-11",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-13",
+            "word_id": "bites"
+          },
+          {
+            "sentence_id": "cl-lion-mouse-16",
+            "word_id": "help"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-fox-grapes",
+        "liveRevisionId": "fe29e7d7-30c1-5878-abdd-69cf1f612c5b",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "hungry",
+          "sweet",
+          "high",
+          "jumps",
+          "reach",
+          "tries",
+          "again-and-again",
+          "at-last",
+          "tired",
+          "unkind"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-fox-grapes-01",
+            "word_id": "hungry"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-04",
+            "word_id": "sweet"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-06",
+            "word_id": "high"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-07",
+            "word_id": "jumps"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-08",
+            "word_id": "reach"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-09",
+            "word_id": "tries"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-09",
+            "word_id": "again-and-again"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-10",
+            "word_id": "at-last"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-10",
+            "word_id": "tired"
+          },
+          {
+            "sentence_id": "cl-fox-grapes-15",
+            "word_id": "unkind"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-ants-grasshopper",
+        "liveRevisionId": "69677981-6492-5f69-a83d-0048bc5d43f1",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "hungry",
+          "please",
+          "nothing"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-ants-grasshopper-05",
+            "word_id": "hungry"
+          },
+          {
+            "sentence_id": "cl-ants-grasshopper-06",
+            "word_id": "please"
+          },
+          {
+            "sentence_id": "cl-ants-grasshopper-14",
+            "word_id": "nothing"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-red-riding-hood",
+        "liveRevisionId": "d2c319e7-2f1a-5fd8-aeaf-76ad28675072",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "one-day",
+          "help"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-red-riding-hood-02",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-red-riding-hood-15",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-red-riding-hood-22",
+            "word_id": "wolf"
+          },
+          {
+            "sentence_id": "cl-red-riding-hood-24",
+            "word_id": "wolf"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-cinderella",
+        "liveRevisionId": "fea96f9e-51a6-5fe8-a06c-b47c3b1f3f15",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "one-day",
+          "help",
+          "at-last"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-cinderella-08",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-cinderella-13",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-cinderella-23",
+            "word_id": "at-last"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-bremen-musicians",
+        "liveRevisionId": "840fcdb2-5473-5bb2-a9cb-12b98959298b",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "road",
+          "much",
+          "hungry",
+          "frightened"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-bremen-musicians-04",
+            "word_id": "road"
+          },
+          {
+            "sentence_id": "cl-bremen-musicians-09",
+            "word_id": "much"
+          },
+          {
+            "sentence_id": "cl-bremen-musicians-14",
+            "word_id": "hungry"
+          },
+          {
+            "sentence_id": "cl-bremen-musicians-23",
+            "word_id": "frightened"
+          },
+          {
+            "sentence_id": "cl-bremen-musicians-25",
+            "word_id": "much"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-hansel-gretel",
+        "liveRevisionId": "35cf4e88-11a0-59a4-af98-d9273149f3ce",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "hungry",
+          "pieces",
+          "at-last"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-hansel-gretel-12",
+            "word_id": "hungry"
+          },
+          {
+            "sentence_id": "cl-hansel-gretel-12",
+            "word_id": "pieces"
+          },
+          {
+            "sentence_id": "cl-hansel-gretel-19",
+            "word_id": "at-last"
+          },
+          {
+            "sentence_id": "cl-hansel-gretel-27",
+            "word_id": "father"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-happy-prince",
+        "liveRevisionId": "020a4ce1-c4d6-5be4-a923-3c9d3c4f071a",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "high",
+          "boy",
+          "second",
+          "hungry",
+          "at-last"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-happy-prince-01",
+            "word_id": "high"
+          },
+          {
+            "sentence_id": "cl-happy-prince-11",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-happy-prince-15",
+            "word_id": "prince"
+          },
+          {
+            "sentence_id": "cl-happy-prince-18",
+            "word_id": "second"
+          },
+          {
+            "sentence_id": "cl-happy-prince-20",
+            "word_id": "hungry"
+          },
+          {
+            "sentence_id": "cl-happy-prince-24",
+            "word_id": "at-last"
+          },
+          {
+            "sentence_id": "cl-happy-prince-24",
+            "word_id": "prince"
+          },
+          {
+            "sentence_id": "cl-happy-prince-25",
+            "word_id": "statue"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-selfish-giant",
+        "liveRevisionId": "a7478442-58f3-5bee-a55d-a63d103a107d",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "high",
+          "road",
+          "boy",
+          "reach",
+          "frightened",
+          "nobody"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-selfish-giant-04",
+            "word_id": "high"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-05",
+            "word_id": "road"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-07",
+            "word_id": "giant"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-13",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-13",
+            "word_id": "reach"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-14",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-15",
+            "word_id": "frightened"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-16",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-18",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-22",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-23",
+            "word_id": "nobody"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-26",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-selfish-giant-29",
+            "word_id": "boy"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-crow-pitcher",
+        "liveRevisionId": "fbab0020-bf68-5e77-a635-e638cfdf599b",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "reach",
+          "tries"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-crow-pitcher-05",
+            "word_id": "reach"
+          },
+          {
+            "sentence_id": "cl-crow-pitcher-06",
+            "word_id": "tries"
+          },
+          {
+            "sentence_id": "cl-crow-pitcher-12",
+            "word_id": "reach"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-boy-cried-wolf",
+        "liveRevisionId": "212a81c0-8dda-5e0f-a42e-fa434c880ae0",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "boy",
+          "alone",
+          "shouts",
+          "help",
+          "laughs",
+          "trick",
+          "nothing",
+          "one-day",
+          "frightened",
+          "nobody",
+          "believe",
+          "attacks"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-boy-cried-wolf-01",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-02",
+            "word_id": "alone"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-03",
+            "word_id": "shouts"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-04",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-06",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-06",
+            "word_id": "laughs"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-07",
+            "word_id": "trick"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-08",
+            "word_id": "nothing"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-09",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-10",
+            "word_id": "frightened"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-10",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-10",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-11",
+            "word_id": "nobody"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-12",
+            "word_id": "believe"
+          },
+          {
+            "sentence_id": "cl-boy-cried-wolf-13",
+            "word_id": "attacks"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-north-wind-sun",
+        "liveRevisionId": "fcad5cc5-79f4-5fd9-ac9d-777449728200",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "road",
+          "at-last",
+          "wins"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-north-wind-sun-03",
+            "word_id": "road"
+          },
+          {
+            "sentence_id": "cl-north-wind-sun-09",
+            "word_id": "at-last"
+          },
+          {
+            "sentence_id": "cl-north-wind-sun-13",
+            "word_id": "wins"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-dog-shadow",
+        "liveRevisionId": "1215148a-d1eb-59b0-a74b-d61ae69588cb",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "carries",
+          "bigger",
+          "pieces",
+          "own",
+          "second",
+          "nothing",
+          "much"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-dog-shadow-01",
+            "word_id": "carries"
+          },
+          {
+            "sentence_id": "cl-dog-shadow-05",
+            "word_id": "bigger"
+          },
+          {
+            "sentence_id": "cl-dog-shadow-06",
+            "word_id": "pieces"
+          },
+          {
+            "sentence_id": "cl-dog-shadow-08",
+            "word_id": "own"
+          },
+          {
+            "sentence_id": "cl-dog-shadow-09",
+            "word_id": "carries"
+          },
+          {
+            "sentence_id": "cl-dog-shadow-10",
+            "word_id": "second"
+          },
+          {
+            "sentence_id": "cl-dog-shadow-11",
+            "word_id": "nothing"
+          },
+          {
+            "sentence_id": "cl-dog-shadow-12",
+            "word_id": "much"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-fox-crow",
+        "liveRevisionId": "dd1c39e1-75eb-572c-a4da-634c2adebaef",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "laughs"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-fox-crow-11",
+            "word_id": "laughs"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-ant-dove",
+        "liveRevisionId": "08e2642c-020a-58e7-a227-28cd678aae69",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "carries",
+          "bites",
+          "help"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-ant-dove-03",
+            "word_id": "carries"
+          },
+          {
+            "sentence_id": "cl-ant-dove-10",
+            "word_id": "bites"
+          },
+          {
+            "sentence_id": "cl-ant-dove-13",
+            "word_id": "help"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-bundle-sticks",
+        "liveRevisionId": "dfafbbfc-5ac2-5326-af9e-85626b020562",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "one-day",
+          "tries",
+          "nobody",
+          "strong",
+          "alone"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-bundle-sticks-04",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-bundle-sticks-06",
+            "word_id": "tries"
+          },
+          {
+            "sentence_id": "cl-bundle-sticks-06",
+            "word_id": "nobody"
+          },
+          {
+            "sentence_id": "cl-bundle-sticks-10",
+            "word_id": "strong"
+          },
+          {
+            "sentence_id": "cl-bundle-sticks-11",
+            "word_id": "alone"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-milkmaid-pail",
+        "liveRevisionId": "3f8d7e9c-8d0f-53b3-a770-2ff4127a2984",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "carries"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-milkmaid-pail-02",
+            "word_id": "carries"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-dog-manger",
+        "liveRevisionId": "184110f8-c35f-5b57-a481-700e5142c774",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "falls-asleep",
+          "tired",
+          "hungry",
+          "wakes-up"
+        ],
+        "extraWordIds": [
+          "asleep"
+        ],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-dog-manger-02",
+            "word_id": "falls-asleep"
+          },
+          {
+            "sentence_id": "cl-dog-manger-04",
+            "word_id": "tired"
+          },
+          {
+            "sentence_id": "cl-dog-manger-04",
+            "word_id": "hungry"
+          },
+          {
+            "sentence_id": "cl-dog-manger-06",
+            "word_id": "wakes-up"
+          }
+        ],
+        "extraLinks": [
+          {
+            "revision_id": "184110f8-c35f-5b57-a481-700e5142c774",
+            "sentence_id": "cl-dog-manger-02",
+            "word_id": "asleep"
+          }
+        ],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-ass-lion-skin",
+        "liveRevisionId": "9ecc234b-1c7b-5147-a141-b50bbde9d3a7",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "tries"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-ass-lion-skin-01",
+            "word_id": "lion"
+          },
+          {
+            "sentence_id": "cl-ass-lion-skin-08",
+            "word_id": "tries"
+          },
+          {
+            "sentence_id": "cl-ass-lion-skin-11",
+            "word_id": "lion"
+          },
+          {
+            "sentence_id": "cl-ass-lion-skin-11",
+            "word_id": "ass"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-snow-white",
+        "liveRevisionId": "ba89341b-aa17-5f66-ab80-ecb4f1239542",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "one-day"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-snow-white-05",
+            "word_id": "one-day"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-rapunzel",
+        "liveRevisionId": "659a1edd-bad3-54d3-a03b-7ee99db8efa7",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "one-day",
+          "frightened",
+          "boy"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-rapunzel-09",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-rapunzel-11",
+            "word_id": "frightened"
+          },
+          {
+            "sentence_id": "cl-rapunzel-13",
+            "word_id": "prince"
+          },
+          {
+            "sentence_id": "cl-rapunzel-18",
+            "word_id": "boy"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-frog-prince",
+        "liveRevisionId": "70e67693-3279-5f74-a92d-0c197068b4c9",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "one-day",
+          "rest",
+          "frightened"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-frog-prince-02",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-frog-prince-11",
+            "word_id": "rest"
+          },
+          {
+            "sentence_id": "cl-frog-prince-14",
+            "word_id": "frightened"
+          },
+          {
+            "sentence_id": "cl-frog-prince-18",
+            "word_id": "prince"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-rumpelstiltskin",
+        "liveRevisionId": "d6eab5e2-369f-5284-a532-d4bfcee0d0da",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "help",
+          "nothing",
+          "nobody"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-rumpelstiltskin-04",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-rumpelstiltskin-07",
+            "word_id": "nothing"
+          },
+          {
+            "sentence_id": "cl-rumpelstiltskin-17",
+            "word_id": "nobody"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-golden-goose",
+        "liveRevisionId": "250414d4-faff-5f5c-ac89-f9625e530d29",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "help"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-golden-goose-11",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-golden-goose-20",
+            "word_id": "help"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-elves-shoemaker",
+        "liveRevisionId": "4e7cf420-c00f-5475-aab0-2ddd00378743",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "help"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-elves-shoemaker-20",
+            "word_id": "shoemaker"
+          },
+          {
+            "sentence_id": "cl-elves-shoemaker-20",
+            "word_id": "help"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-tom-thumb",
+        "liveRevisionId": "83d8e1d1-155d-5dd4-a8ee-00baea5885cd",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "bigger",
+          "one-day",
+          "boy",
+          "road",
+          "help",
+          "frightened",
+          "hungry",
+          "much"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-tom-thumb-01",
+            "word_id": "bigger"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-04",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-04",
+            "word_id": "father"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-05",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-07",
+            "word_id": "road"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-09",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-13",
+            "word_id": "cow"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-14",
+            "word_id": "frightened"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-15",
+            "word_id": "hungry"
+          },
+          {
+            "sentence_id": "cl-tom-thumb-17",
+            "word_id": "much"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-wolf-seven-kids",
+        "liveRevisionId": "227e553c-63f2-503f-add8-1fdc0d9d86a1",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "frightened"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-wolf-seven-kids-10",
+            "word_id": "frightened"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-twelve-dancing-princesses",
+        "liveRevisionId": "7eac003e-201f-56a6-ae8a-c50420a42e37",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "nothing"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-twelve-dancing-princesses-04",
+            "word_id": "nothing"
+          },
+          {
+            "sentence_id": "cl-twelve-dancing-princesses-13",
+            "word_id": "princess"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-brave-little-tailor",
+        "liveRevisionId": "bca12041-3bc4-537f-adb1-579f322db346",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "high",
+          "alone"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-brave-little-tailor-07",
+            "word_id": "high"
+          },
+          {
+            "sentence_id": "cl-brave-little-tailor-08",
+            "word_id": "alone"
+          },
+          {
+            "sentence_id": "cl-brave-little-tailor-09",
+            "word_id": "tailor"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-goose-girl",
+        "liveRevisionId": "475180b3-60df-557e-a169-e971347843ae",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "help",
+          "boy",
+          "own"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-goose-girl-08",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-goose-girl-08",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-goose-girl-19",
+            "word_id": "own"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-ugly-duckling",
+        "liveRevisionId": "c9ce94b2-5a45-597e-a124-a581d79e9b2e",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "at-last",
+          "nobody",
+          "hunters",
+          "frightened",
+          "own",
+          "strong",
+          "unkind"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-ugly-duckling-06",
+            "word_id": "at-last"
+          },
+          {
+            "sentence_id": "cl-ugly-duckling-06",
+            "word_id": "nobody"
+          },
+          {
+            "sentence_id": "cl-ugly-duckling-08",
+            "word_id": "hunters"
+          },
+          {
+            "sentence_id": "cl-ugly-duckling-08",
+            "word_id": "frightened"
+          },
+          {
+            "sentence_id": "cl-ugly-duckling-10",
+            "word_id": "own"
+          },
+          {
+            "sentence_id": "cl-ugly-duckling-19",
+            "word_id": "frightened"
+          },
+          {
+            "sentence_id": "cl-ugly-duckling-21",
+            "word_id": "at-last"
+          },
+          {
+            "sentence_id": "cl-ugly-duckling-21",
+            "word_id": "strong"
+          },
+          {
+            "sentence_id": "cl-ugly-duckling-27",
+            "word_id": "unkind"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-emperors-clothes",
+        "liveRevisionId": "a81efb7a-4754-5d96-a4ff-867821e6242a",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "much",
+          "one-day",
+          "help",
+          "nothing",
+          "second",
+          "nobody"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-emperors-clothes-02",
+            "word_id": "much"
+          },
+          {
+            "sentence_id": "cl-emperors-clothes-03",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-emperors-clothes-06",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-emperors-clothes-10",
+            "word_id": "nothing"
+          },
+          {
+            "sentence_id": "cl-emperors-clothes-13",
+            "word_id": "second"
+          },
+          {
+            "sentence_id": "cl-emperors-clothes-14",
+            "word_id": "emperor"
+          },
+          {
+            "sentence_id": "cl-emperors-clothes-21",
+            "word_id": "nobody"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-thumbelina",
+        "liveRevisionId": "156d8f92-b9b4-5731-a5fe-217ed05b2ea4",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "alone",
+          "hungry",
+          "strong"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-thumbelina-09",
+            "word_id": "alone"
+          },
+          {
+            "sentence_id": "cl-thumbelina-10",
+            "word_id": "hungry"
+          },
+          {
+            "sentence_id": "cl-thumbelina-13",
+            "word_id": "mouse"
+          },
+          {
+            "sentence_id": "cl-thumbelina-17",
+            "word_id": "strong"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-little-mermaid",
+        "liveRevisionId": "4f3a3e1a-e254-5c1a-a2a8-d3b8a18c9797",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "step",
+          "help"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-little-mermaid-10",
+            "word_id": "step"
+          },
+          {
+            "sentence_id": "cl-little-mermaid-28",
+            "word_id": "help"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-snow-queen",
+        "liveRevisionId": "c8a1e704-196c-5104-a926-997c46877519",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "pieces",
+          "one-day",
+          "believe",
+          "help",
+          "alone",
+          "at-last"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-snow-queen-02",
+            "word_id": "pieces"
+          },
+          {
+            "sentence_id": "cl-snow-queen-05",
+            "word_id": "one-day"
+          },
+          {
+            "sentence_id": "cl-snow-queen-05",
+            "word_id": "pieces"
+          },
+          {
+            "sentence_id": "cl-snow-queen-10",
+            "word_id": "believe"
+          },
+          {
+            "sentence_id": "cl-snow-queen-22",
+            "word_id": "help"
+          },
+          {
+            "sentence_id": "cl-snow-queen-24",
+            "word_id": "alone"
+          },
+          {
+            "sentence_id": "cl-snow-queen-25",
+            "word_id": "at-last"
+          },
+          {
+            "sentence_id": "cl-snow-queen-25",
+            "word_id": "queen"
+          },
+          {
+            "sentence_id": "cl-snow-queen-26",
+            "word_id": "pieces"
+          },
+          {
+            "sentence_id": "cl-snow-queen-29",
+            "word_id": "pieces"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-little-match-girl",
+        "liveRevisionId": "6181a7f0-afba-5f73-ae82-6e72f9c5780a",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "alone",
+          "much",
+          "nobody"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-little-match-girl-02",
+            "word_id": "alone"
+          },
+          {
+            "sentence_id": "cl-little-match-girl-03",
+            "word_id": "much"
+          },
+          {
+            "sentence_id": "cl-little-match-girl-06",
+            "word_id": "nobody"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-steadfast-tin-soldier",
+        "liveRevisionId": "bcd37c77-4d88-56a4-a84c-887326b3b99e",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "boy",
+          "high"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-steadfast-tin-soldier-01",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-steadfast-tin-soldier-05",
+            "word_id": "high"
+          },
+          {
+            "sentence_id": "cl-steadfast-tin-soldier-11",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-steadfast-tin-soldier-24",
+            "word_id": "boy"
+          },
+          {
+            "sentence_id": "cl-steadfast-tin-soldier-28",
+            "word_id": "dancer"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      },
+      {
+        "storyId": "classic-wild-swans",
+        "liveRevisionId": "60e24bb4-83c3-5a1b-a45d-22826bcd3316",
+        "metadataFields": [],
+        "missingSentenceIds": [],
+        "extraSentenceIds": [],
+        "modifiedSentences": [],
+        "missingWordIds": [
+          "alone"
+        ],
+        "extraWordIds": [],
+        "modifiedWords": [],
+        "missingLinks": [
+          {
+            "sentence_id": "cl-wild-swans-05",
+            "word_id": "alone"
+          }
+        ],
+        "extraLinks": [],
+        "coverMismatch": false
+      }
+    ]
+  },
+  "media": {
+    "status": "verified",
+    "assets": 50
+  },
+  "editorialBacklogPreview": {
+    "A1": [
+      {
+        "token": "the",
+        "level": "A1",
+        "occurrences": 146,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-bundle-sticks",
+          "classic-crow-pitcher",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-milkmaid-pail",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "classic-town-country-mouse",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-02",
+            "english": "She slips and falls into the water."
+          },
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-03",
+            "english": "The current carries her away."
+          }
+        ]
+      },
+      {
+        "token": "a",
+        "level": "A1",
+        "occurrences": 74,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-bundle-sticks",
+          "classic-crow-pitcher",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-milkmaid-pail",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "classic-town-country-mouse",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-01",
+            "english": "An ant goes to a river to drink."
+          },
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-04",
+            "english": "A dove sees the ant from a tree."
+          }
+        ]
+      },
+      {
+        "token": "and",
+        "level": "A1",
+        "occurrences": 46,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-crow-pitcher",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-milkmaid-pail",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "classic-town-country-mouse",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-02",
+            "english": "She slips and falls into the water."
+          },
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-09",
+            "english": "The ant sees him and runs to his foot."
+          }
+        ]
+      },
+      {
+        "token": "he",
+        "level": "A1",
+        "occurrences": 46,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-bundle-sticks",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-fox-crow",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "classic-town-country-mouse",
+          "quiet-morning"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-05",
+            "english": "He drops a leaf into the river."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-05",
+            "english": "He is cold and hungry."
+          }
+        ]
+      },
+      {
+        "token": "to",
+        "level": "A1",
+        "occurrences": 39,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-bundle-sticks",
+          "classic-crow-pitcher",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-milkmaid-pail",
+          "classic-north-wind-sun",
+          "classic-town-country-mouse",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-01",
+            "english": "An ant goes to a river to drink."
+          },
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-08",
+            "english": "Later, a hunter gets ready to catch the dove."
+          }
+        ]
+      },
+      {
+        "token": "she",
+        "level": "A1",
+        "occurrences": 37,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ass-lion-skin",
+          "classic-crow-pitcher",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-milkmaid-pail",
+          "classic-tortoise-hare",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-02",
+            "english": "She slips and falls into the water."
+          },
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-07",
+            "english": "Soon, she reaches the bank safely."
+          }
+        ]
+      },
+      {
+        "token": "is",
+        "level": "A1",
+        "occurrences": 29,
+        "storyIds": [
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-bundle-sticks",
+          "classic-crow-pitcher",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "classic-town-country-mouse",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-01",
+            "english": "It is a bright winter day."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-05",
+            "english": "He is cold and hungry."
+          }
+        ]
+      },
+      {
+        "token": "her",
+        "level": "A1",
+        "occurrences": 24,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ass-lion-skin",
+          "classic-crow-pitcher",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-milkmaid-pail",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-03",
+            "english": "The current carries her away."
+          },
+          {
+            "storyId": "classic-ass-lion-skin",
+            "sentenceId": "cl-ass-lion-skin-08",
+            "english": "He tries to frighten her, too."
+          }
+        ]
+      },
+      {
+        "token": "his",
+        "level": "A1",
+        "occurrences": 21,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ass-lion-skin",
+          "classic-bundle-sticks",
+          "classic-dog-shadow",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-north-wind-sun",
+          "classic-town-country-mouse",
+          "quiet-morning"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-09",
+            "english": "The ant sees him and runs to his foot."
+          },
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-10",
+            "english": "She bites his heel."
+          }
+        ]
+      },
+      {
+        "token": "they",
+        "level": "A1",
+        "occurrences": 21,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-bundle-sticks",
+          "classic-dog-manger",
+          "classic-fox-grapes",
+          "classic-lion-mouse",
+          "classic-milkmaid-pail",
+          "classic-north-wind-sun",
+          "classic-town-country-mouse",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-13",
+            "english": "Both friends are safe because they help each other."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-03",
+            "english": "They spread it out to dry."
+          }
+        ]
+      },
+      {
+        "token": "can",
+        "level": "A1",
+        "occurrences": 17,
+        "storyIds": [
+          "classic-ants-grasshopper",
+          "classic-boy-cried-wolf",
+          "classic-bundle-sticks",
+          "classic-crow-pitcher",
+          "classic-dog-shadow",
+          "classic-lion-mouse",
+          "classic-milkmaid-pail",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "classic-town-country-mouse"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-13",
+            "english": "\"Now you can dance without supper.\""
+          },
+          {
+            "storyId": "classic-boy-cried-wolf",
+            "sentenceId": "cl-boy-cried-wolf-14",
+            "english": "A liar can lose people's trust, even when he tells the truth."
+          }
+        ]
+      },
+      {
+        "token": "him",
+        "level": "A1",
+        "occurrences": 17,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-dog-manger",
+          "classic-fox-crow",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-north-wind-sun",
+          "classic-town-country-mouse",
+          "quiet-morning"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-09",
+            "english": "The ant sees him and runs to his foot."
+          },
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-12",
+            "english": "The dove hears him and flies away."
+          }
+        ]
+      },
+      {
+        "token": "but",
+        "level": "A1",
+        "occurrences": 16,
+        "storyIds": [
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-bundle-sticks",
+          "classic-crow-pitcher",
+          "classic-dog-manger",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "classic-town-country-mouse"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ass-lion-skin",
+            "sentenceId": "cl-ass-lion-skin-09",
+            "english": "But he opens his mouth and brays."
+          },
+          {
+            "storyId": "classic-ass-lion-skin",
+            "sentenceId": "cl-ass-lion-skin-11",
+            "english": "\"Your clothes are a lion's, but your voice is an ass's,\" she says."
+          }
+        ]
+      },
+      {
+        "token": "says",
+        "level": "A1",
+        "occurrences": 16,
+        "storyIds": [
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-bundle-sticks",
+          "classic-dog-manger",
+          "classic-fox-crow",
+          "classic-fox-grapes",
+          "classic-lion-mouse",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "classic-town-country-mouse",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-06",
+            "english": "\"Please give me some food,\" he says."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-09",
+            "english": "\"I was busy singing,\" says the grasshopper."
+          }
+        ]
+      },
+      {
+        "token": "it",
+        "level": "A1",
+        "occurrences": 14,
+        "storyIds": [
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-bundle-sticks",
+          "classic-crow-pitcher",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-fox-crow",
+          "classic-milkmaid-pail",
+          "classic-town-country-mouse",
+          "quiet-morning"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-01",
+            "english": "It is a bright winter day."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-03",
+            "english": "They spread it out to dry."
+          }
+        ]
+      },
+      {
+        "token": "at",
+        "level": "A1",
+        "occurrences": 13,
+        "storyIds": [
+          "classic-ants-grasshopper",
+          "classic-ass-lion-skin",
+          "classic-boy-cried-wolf",
+          "classic-crow-pitcher",
+          "classic-dog-manger",
+          "classic-fox-grapes",
+          "classic-golden-eggs",
+          "classic-lion-mouse",
+          "classic-north-wind-sun",
+          "classic-tortoise-hare",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-07",
+            "english": "The ants look at him."
+          },
+          {
+            "storyId": "classic-ass-lion-skin",
+            "sentenceId": "cl-ass-lion-skin-10",
+            "english": "The fox knows that sound at once."
+          }
+        ]
+      },
+      {
+        "token": "are",
+        "level": "A1",
+        "occurrences": 12,
+        "storyIds": [
+          "classic-ant-dove",
+          "classic-ass-lion-skin",
+          "classic-bundle-sticks",
+          "classic-dog-manger",
+          "classic-fox-grapes",
+          "classic-lion-mouse",
+          "classic-tortoise-hare"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ant-dove",
+            "sentenceId": "cl-ant-dove-13",
+            "english": "Both friends are safe because they help each other."
+          },
+          {
+            "storyId": "classic-ass-lion-skin",
+            "sentenceId": "cl-ass-lion-skin-11",
+            "english": "\"Your clothes are a lion's, but your voice is an ass's,\" she says."
+          }
+        ]
+      },
+      {
+        "token": "of",
+        "level": "A1",
+        "occurrences": 12,
+        "storyIds": [
+          "classic-bundle-sticks",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-fox-crow",
+          "classic-milkmaid-pail",
+          "classic-town-country-mouse",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-bundle-sticks",
+            "sentenceId": "cl-bundle-sticks-04",
+            "english": "One day, he brings them a bundle of sticks."
+          },
+          {
+            "storyId": "classic-bundle-sticks",
+            "sentenceId": "cl-bundle-sticks-11",
+            "english": "\"Alone, each of you is easy to hurt.\""
+          }
+        ]
+      },
+      {
+        "token": "you",
+        "level": "A1",
+        "occurrences": 12,
+        "storyIds": [
+          "classic-ants-grasshopper",
+          "classic-bundle-sticks",
+          "classic-dog-manger",
+          "classic-fox-crow",
+          "classic-lion-mouse",
+          "classic-tortoise-hare"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-08",
+            "english": "\"Why did you not store food in summer?\" they ask."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-12",
+            "english": "\"You sang in summer,\" they say."
+          }
+        ]
+      },
+      {
+        "token": "in",
+        "level": "A1",
+        "occurrences": 11,
+        "storyIds": [
+          "classic-ants-grasshopper",
+          "classic-bundle-sticks",
+          "classic-dog-manger",
+          "classic-dog-shadow",
+          "classic-town-country-mouse",
+          "quiet-morning",
+          "red-umbrella"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-08",
+            "english": "\"Why did you not store food in summer?\" they ask."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-12",
+            "english": "\"You sang in summer,\" they say."
+          }
+        ]
+      }
+    ],
+    "A2": [
+      {
+        "token": "the",
+        "level": "A2",
+        "occurrences": 397,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train",
+          "paper-boat"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-04",
+            "english": "Then he set off to see the world, carrying cheese and a bird."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-06",
+            "english": "When the giant squeezed water from a stone, the tailor squeezed his cheese."
+          }
+        ]
+      },
+      {
+        "token": "and",
+        "level": "A2",
+        "occurrences": 157,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train",
+          "paper-boat"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-01",
+            "english": "A tailor was eating bread and jam when flies crowded around his meal."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-02",
+            "english": "He struck with a cloth and killed seven flies at once."
+          }
+        ]
+      },
+      {
+        "token": "a",
+        "level": "A2",
+        "occurrences": 148,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train",
+          "paper-boat"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-01",
+            "english": "A tailor was eating bread and jam when flies crowded around his meal."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-02",
+            "english": "He struck with a cloth and killed seven flies at once."
+          }
+        ]
+      },
+      {
+        "token": "to",
+        "level": "A2",
+        "occurrences": 125,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train",
+          "paper-boat"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-04",
+            "english": "Then he set off to see the world, carrying cheese and a bird."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-19",
+            "english": "When servants came to take him away, he pretended to sleep and boasted about his victories."
+          }
+        ]
+      },
+      {
+        "token": "her",
+        "level": "A2",
+        "occurrences": 112,
+        "storyIds": [
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-06",
+            "english": "Next, they found a cat whose owner no longer wanted her."
+          },
+          {
+            "storyId": "classic-cinderella",
+            "sentenceId": "cl-cinderella-01",
+            "english": "After her mother died, a young girl lived with her father and his new family."
+          }
+        ]
+      },
+      {
+        "token": "he",
+        "level": "A2",
+        "occurrences": 88,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train",
+          "paper-boat"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-02",
+            "english": "He struck with a cloth and killed seven flies at once."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-03",
+            "english": "Proud of himself, he made a belt that said, \"Seven at one blow.\""
+          }
+        ]
+      },
+      {
+        "token": "she",
+        "level": "A2",
+        "occurrences": 58,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-18",
+            "english": "One night, she heard him talking in his sleep about his old trade."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-07",
+            "english": "She joined them, and soon they met a rooster on a gate."
+          }
+        ]
+      },
+      {
+        "token": "his",
+        "level": "A2",
+        "occurrences": 57,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-wolf-seven-kids",
+          "last-train"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-01",
+            "english": "A tailor was eating bread and jam when flies crowded around his meal."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-05",
+            "english": "A giant read his belt and thought he had killed seven men."
+          }
+        ]
+      },
+      {
+        "token": "in",
+        "level": "A2",
+        "occurrences": 43,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-12",
+            "english": "He climbed above them and dropped stones on each in turn."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-15",
+            "english": "The tailor jumped behind a tree, and the charging animal's horn stuck in the trunk."
+          }
+        ]
+      },
+      {
+        "token": "of",
+        "level": "A2",
+        "occurrences": 39,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-wolf-seven-kids",
+          "last-train",
+          "paper-boat"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-03",
+            "english": "Proud of himself, he made a belt that said, \"Seven at one blow.\""
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-09",
+            "english": "News of the tailor's supposed strength reached a king."
+          }
+        ]
+      },
+      {
+        "token": "they",
+        "level": "A2",
+        "occurrences": 39,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids",
+          "last-train"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-13",
+            "english": "Each giant blamed the other, and they fought until both were dead."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-20",
+            "english": "They fled in fear, and the clever tailor remained in the palace."
+          }
+        ]
+      },
+      {
+        "token": "with",
+        "level": "A2",
+        "occurrences": 37,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-02",
+            "english": "He struck with a cloth and killed seven flies at once."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-17",
+            "english": "With every task complete, the tailor married the princess."
+          }
+        ]
+      },
+      {
+        "token": "him",
+        "level": "A2",
+        "occurrences": 34,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-10",
+            "english": "The king promised him land and a princess if he defeated two dangerous giants."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-18",
+            "english": "One night, she heard him talking in his sleep about his old trade."
+          }
+        ]
+      },
+      {
+        "token": "on",
+        "level": "A2",
+        "occurrences": 34,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-tom-thumb",
+          "last-train"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-12",
+            "english": "He climbed above them and dropped stones on each in turn."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-04",
+            "english": "On the road, he met an old dog who had escaped from his master."
+          }
+        ]
+      },
+      {
+        "token": "was",
+        "level": "A2",
+        "occurrences": 34,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-elves-shoemaker",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "last-train"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-01",
+            "english": "A tailor was eating bread and jam when flies crowded around his meal."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-08",
+            "english": "The rooster was going to become soup the next day."
+          }
+        ]
+      },
+      {
+        "token": "it",
+        "level": "A2",
+        "occurrences": 30,
+        "storyIds": [
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-wolf-seven-kids",
+          "last-train",
+          "paper-boat"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-12",
+            "english": "Following it, they found a house full of robbers."
+          },
+          {
+            "storyId": "classic-cinderella",
+            "sentenceId": "cl-cinderella-06",
+            "english": "It grew into a tree, and a white bird came to it."
+          }
+        ]
+      },
+      {
+        "token": "their",
+        "level": "A2",
+        "occurrences": 30,
+        "storyIds": [
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-golden-goose",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-19",
+            "english": "The animals ate their supper and found places to sleep."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-25",
+            "english": "The four friends liked their new home so much that they never left for Bremen."
+          }
+        ]
+      },
+      {
+        "token": "for",
+        "level": "A2",
+        "occurrences": 29,
+        "storyIds": [
+          "classic-bremen-musicians",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses",
+          "classic-wolf-seven-kids"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-01",
+            "english": "An old donkey could no longer carry heavy sacks for his master."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-25",
+            "english": "The four friends liked their new home so much that they never left for Bremen."
+          }
+        ]
+      },
+      {
+        "token": "had",
+        "level": "A2",
+        "occurrences": 27,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-bremen-musicians",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-goose-girl",
+          "classic-hansel-gretel",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-snow-white",
+          "classic-tom-thumb",
+          "classic-twelve-dancing-princesses"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-05",
+            "english": "A giant read his belt and thought he had killed seven men."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-04",
+            "english": "On the road, he met an old dog who had escaped from his master."
+          }
+        ]
+      },
+      {
+        "token": "when",
+        "level": "A2",
+        "occurrences": 23,
+        "storyIds": [
+          "classic-brave-little-tailor",
+          "classic-cinderella",
+          "classic-elves-shoemaker",
+          "classic-frog-prince",
+          "classic-golden-goose",
+          "classic-hansel-gretel",
+          "classic-rapunzel",
+          "classic-red-riding-hood",
+          "classic-rumpelstiltskin",
+          "classic-sleeping-beauty",
+          "classic-wolf-seven-kids",
+          "last-train"
+        ],
+        "examples": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-01",
+            "english": "A tailor was eating bread and jam when flies crowded around his meal."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-06",
+            "english": "When the giant squeezed water from a stone, the tailor squeezed his cheese."
+          }
+        ]
+      }
+    ]
+  }
+}

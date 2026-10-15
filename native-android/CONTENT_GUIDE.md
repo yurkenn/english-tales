@@ -10,6 +10,8 @@ Android, ilk açılışta `app/src/main/assets/catalog/v1.json` içindeki çevri
 
 Bu sayılar paketin içeriğini belirtir. Canlı ortamın yayın durumu, anonim API üzerinden ayrıca doğrulanmalıdır; `catalog:export` yayın yapmaz.
 
+[Q4 içerik denetimi ve tekrar çalıştırma](docs/CONTENT_QUALITY_AUDIT.md): `npm run content:audit` paket yapısını; anonim snapshot ile çalıştırıldığında etkin canlı revizyonları, kelime bağlantılarını, kapsama oranını ve medya baytlarını denetler. Sıkı yayın kontrolü için `--require-parity --min-coverage 60` kullanılır. Varsayılan yapısal kontrolün geçmesi bu iki hedefin sağlandığı anlamına gelmez.
+
 ## Yeni içerik hazırlama
 
 1. Yazarın ve kullanılan çevirinin hak durumunu, kaynak metni ve kapak haklarını kontrol et. Kaynak bağlantısını ve kullanılan baskı/çevirmeni kaydet.
