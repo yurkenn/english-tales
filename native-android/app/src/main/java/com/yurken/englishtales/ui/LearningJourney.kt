@@ -79,7 +79,7 @@ fun WeeklyActivity(snapshot: LearningSnapshot) {
         Text(stringResource(R.string.son_7_gun),fontSize=17.sp,fontWeight=FontWeight.Bold)
         Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(6.dp)) {
             snapshot.weeklyActivity.forEach {day -> Column(Modifier.weight(1f),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                Box(Modifier.fillMaxWidth().heightIn(min=38.dp).background(if(day.sessions>0) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).padding(vertical=9.dp),contentAlignment=Alignment.Center) {Text(if(day.sessions>0) "${day.sessions}" else "·",fontSize=14.sp,color=if(day.sessions>0) Color.White else TaleMuted)}
+                Box(Modifier.fillMaxWidth().heightIn(min=38.dp).background(if(day.sessions>0) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).padding(vertical=9.dp),contentAlignment=Alignment.Center) {Text(if(day.sessions>0) "${day.sessions}" else "·",fontSize=14.sp,color=if(day.sessions>0) TaleOnBlue else TaleMuted)}
                 Text(day.label,fontSize=10.sp,color=TaleMuted)
             } }
         }
@@ -92,8 +92,8 @@ fun EarnedBadges(snapshot: LearningSnapshot) {
     val labels=linkedMapOf("first_story" to stringResource(R.string.ilk_hikaye), "first_practice" to stringResource(R.string.ilk_calisma), "five_words" to stringResource(R.string.kelime_5), "three_day_streak" to stringResource(R.string.gunluk_seri_3), "seven_day_streak" to stringResource(R.string.gunluk_seri_7))
     Column(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
         Text(stringResource(R.string.basarilarin),fontSize=17.sp,fontWeight=FontWeight.Bold)
-        labels.forEach {(id,label) -> Row(Modifier.fillMaxWidth().background(if(id in snapshot.badges) Color(0xFFFFF6D5) else TaleLine,RoundedCornerShape(10.dp)).padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
-            Text(if(id in snapshot.badges) "★" else "☆",color=if(id in snapshot.badges) Color(0xFFB08000) else TaleMuted,fontSize=24.sp)
+        labels.forEach {(id,label) -> Row(Modifier.fillMaxWidth().background(if(id in snapshot.badges) LocalTaleColors.current.tileYellow else TaleLine,RoundedCornerShape(10.dp)).padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
+            Text(if(id in snapshot.badges) "★" else "☆",color=if(id in snapshot.badges) TaleGold else TaleMuted,fontSize=24.sp)
             Text(label,fontSize=14.sp,modifier=Modifier.weight(1f).padding(start=12.dp))
             Text(if(id in snapshot.badges) stringResource(R.string.kazanildi) else stringResource(R.string.sirada),color=TaleMuted,fontSize=11.sp)
         } }
@@ -103,7 +103,7 @@ fun EarnedBadges(snapshot: LearningSnapshot) {
 @Composable
 fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (List<String>)->Unit,onDailyPlan: ()->Unit,onBack: ()->Unit=onDailyPlan) {
     val words=remember(story.id) {LearningContent.wordsForStory(story).take(5)}
-    Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
+    Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar(stringResource(R.string.okuma_tamamlandi),onBack)
         Column(Modifier.padding(24.dp),verticalArrangement=Arrangement.spacedBy(18.dp),horizontalAlignment=Alignment.CenterHorizontally) {
             Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
@@ -133,7 +133,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
         PlacementScreen(onUseLevel={level=it;placement=false},onCancel={placement=false},fromSettings=true)
         return
     }
-    Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
+    Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar(stringResource(R.string.ayarlar),onBack)
         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(14.dp)) {
             OutlinedTextField(value=name,onValueChange={name=it.take(30)},label={Text(stringResource(R.string.adin))},singleLine=true,modifier=Modifier.fillMaxWidth())

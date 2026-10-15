@@ -56,7 +56,7 @@ fun SentenceGapGame(
     val correct=selected==prompt.wordId
     val scroll=rememberScrollState()
     LaunchedEffect(index) {scroll.scrollTo(0)}
-    Column(Modifier.fillMaxSize().padding(padding).background(Color.White).verticalScroll(scroll).padding(16.dp),
+    Column(Modifier.fillMaxSize().padding(padding).background(TaleBackground).verticalScroll(scroll).padding(16.dp),
         verticalArrangement=Arrangement.spacedBy(14.dp)) {
         Row(verticalAlignment=Alignment.CenterVertically) {
             ReferenceIconButton("back",stringResource(R.string.gap_exit),onExit)

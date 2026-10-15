@@ -73,13 +73,13 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             Text(stringResource(R.string.kelimelerle_oyna),fontSize=24.sp,fontWeight=FontWeight.Bold,modifier=Modifier.padding(horizontal=16.dp,vertical=20.dp))
             Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             Spacer(Modifier.height(20.dp))
-            ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),"cards",Color(0xFFE3F6FF)) {start("card")}
-            ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),"translate",Color(0xFFFFF6D5)) {start("choice")}
-            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",Color(0xFFE3F6FF),enabled=gapPrompts?.isNotEmpty()==true) {start("cloze")}
+            ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),"cards",LocalTaleColors.current.tileBlue) {start("card")}
+            ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),"translate",LocalTaleColors.current.tileYellow) {start("choice")}
+            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",LocalTaleColors.current.tileBlue,enabled=gapPrompts?.isNotEmpty()==true) {start("cloze")}
             if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
-            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),"play",Color(0xFFF0E5FF)) {start("match")}
-            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),"letters",Color(0xFFE9F7E2)) {start("spell")}
+            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),"play",LocalTaleColors.current.tilePurple) {start("match")}
+            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),"letters",LocalTaleColors.current.tileGreen) {start("spell")}
         }
         return
     }
@@ -119,7 +119,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             Text(if(mode=="choice") stringResource(R.string.bir_ceviri_secin) else stringResource(R.string.kelimeyi_olustur_2),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
             TalesMascot(if(answer!=null && !correct) MascotMood.Support else MascotMood.Thinking,Modifier.size(52.dp))
         }
-        Box(Modifier.fillMaxWidth().weight(if(mode=="choice") 1f else 0.6f).background(Color(0xFFF8F8F8),RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {
+        Box(Modifier.fillMaxWidth().weight(if(mode=="choice") 1f else 0.6f).background(TalePanel,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {
             Text(if(mode=="choice") word.word else word.translation,fontSize=20.sp,fontWeight=FontWeight.Bold)
         }
         if(mode=="choice") {
@@ -131,7 +131,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             }
         } else {
             Box(Modifier.weight(1f).fillMaxWidth(),contentAlignment=Alignment.Center) {
-                Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(spelling.length)},fontSize=20.sp,color=if(answer==null) TaleBlue else if(correct) Color(0xFF79BB46) else Color(0xFFED725F),modifier=Modifier.border(1.dp,TaleLine,RoundedCornerShape(5.dp)).padding(12.dp))
+                Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(spelling.length)},fontSize=20.sp,color=if(answer==null) TaleBlue else if(correct) TaleSuccess else TaleError,modifier=Modifier.border(1.dp,TaleLine,RoundedCornerShape(5.dp)).padding(12.dp))
             }
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(vertical=24.dp),horizontalArrangement=Arrangement.Center) {
                 letters.forEachIndexed { i,c ->
@@ -142,7 +142,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         }
         if(answer!=null && !correct) {
             Text(stringResource(R.string.her_denemede_ogreniyoruz),fontSize=13.sp,color=TaleMuted)
-            Text(stringResource(R.string.dogru_cevap, if(mode=="choice") word.translation else word.word),fontSize=14.sp,color=Color(0xFFE77458))
+            Text(stringResource(R.string.dogru_cevap, if(mode=="choice") word.translation else word.word),fontSize=14.sp,color=TaleError)
             Button(onClick={advanceWrong=true},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.anladim_devam_et))}
         }
         Spacer(Modifier.height(8.dp))
@@ -161,7 +161,7 @@ private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,en
 @Composable
 fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot?=null) {
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-        Text(stringResource(R.string.harika_puan_kazandin, points),color=Color.White,fontSize=14.sp,modifier=Modifier.fillMaxWidth().background(TalePurple,RoundedCornerShape(4.dp)).padding(12.dp))
+        Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=14.sp,modifier=Modifier.fillMaxWidth().background(TalePurple,RoundedCornerShape(4.dp)).padding(12.dp))
         Spacer(Modifier.height(36.dp))
         TalesMascot(MascotMood.Celebrate,Modifier.size(156.dp),animate=true)
         Spacer(Modifier.height(24.dp))

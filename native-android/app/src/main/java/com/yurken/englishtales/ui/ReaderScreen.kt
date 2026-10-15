@@ -151,76 +151,79 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
     val translations=remember(story.id) { mutableStateListOf<String>() }
     val pageSentences=story.sentences.drop(page*SENTENCES_PER_PAGE).take(SENTENCES_PER_PAGE)
     val scroll=rememberScrollState()
-    val background=if(dark) Color(0xFF080808) else Color.White
-    val foreground=if(dark) Color.White else TaleInk
-    val accent=if(dark) Color(0xFF7DD3FC) else TaleBlue
-    val muted=if(dark) Color(0xFFB7C5D7) else TaleMuted
-    LaunchedEffect(page) { scroll.scrollTo(0) }
-    LaunchedEffect(autoListen) { if(autoListen) { narrator.speak(pageSentences.joinToString(" ") { it.english }) } }
-    fun changePage(next: Int) {
-        val target=next.coerceIn(0,pageCount-1)
-        if(target==page) return
-        narrator.stop(); page=target
-        onProgress((page*SENTENCES_PER_PAGE*100/story.sentences.size).coerceAtMost(99),story.sentences[page*SENTENCES_PER_PAGE].id)
-    }
-    Box(Modifier.fillMaxSize().background(background).statusBarsPadding().navigationBarsPadding()) {
-        Column(Modifier.fillMaxSize()) {
-            Row(Modifier.fillMaxWidth().heightIn(min=52.dp).padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically) {
-                ReferenceIconButton("back",stringResource(R.string.geri),{narrator.stop();onBack()},tint=accent)
-                Spacer(Modifier.weight(1f))
-                TextButton(onClick={options=true},colors=ButtonDefaults.textButtonColors(contentColor=accent),modifier=Modifier.contentLabel(stringResource(R.string.okuma_gorunumu))) {
-                    Text(stringResource(R.string.aa),fontSize=22.sp)
-                }
-                Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.kelimelerim_kayitli_kelime_2, snapshot.savedWordIds.size)).clickable(role=Role.Button) {narrator.stop();onOpenWords()}.background(if(dark) Color(0xFF222222) else TaleLine,RoundedCornerShape(8.dp)).padding(8.dp),verticalAlignment=Alignment.CenterVertically) {
-                    ReferenceIcon("cards",muted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=muted,fontSize=14.sp)
-                }
-            }
-            Column(Modifier.weight(1f).verticalScroll(scroll).padding(start=24.dp,end=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                if(!snapshot.readerHintSeen) {
-                    Column(Modifier.fillMaxWidth().background(accent.copy(alpha=0.08f),RoundedCornerShape(10.dp)).padding(12.dp)) {
-                        Text(stringResource(R.string.okurken_ogren),fontWeight=FontWeight.Bold,fontSize=14.sp,color=accent)
-                        Text(stringResource(R.string.alti_cizili_kelimeye_dokun_ve),fontSize=12.sp,color=foreground)
-                        TextButton(onClick=onHintDismiss,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.anladim)) }
-                    }
-                }
-                Text("${page+1}.",fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
-                pageSentences.forEach { sentence ->
-                    Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.Top,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-                        val phrases=if(story.vocabulary!=null) remember(story.revisionId,sentence.id) {PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence))} else LearningContent.phraseIndex
-                        TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
-                        Box(Modifier.size(32.dp).contentLabel(if(sentence.id in translations) stringResource(R.string.ceviriyi_gizle) else stringResource(R.string.cumleyi_cevir)).clickable(role=Role.Button) { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
-                    }
-                    if(sentence.id in translations) Text(sentence.turkish,color=Color.White,fontSize=13.sp,lineHeight=19.sp,
-                        modifier=Modifier.fillMaxWidth().padding(end=36.dp).background(TaleBlue,RoundedCornerShape(4.dp)).padding(10.dp))
-                }
-            }
-            narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
-            Text("${page+1} / $pageCount",color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
-            Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
-                Slider(value=page.toFloat(),onValueChange={changePage(it.toInt())},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
-                Box(Modifier.size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { narrator.speak(pageSentences.joinToString(" ") {it.english}) } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
-            }
-            Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
-                TextButton(onClick={changePage(page-1)},enabled=page>0,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.onceki),fontSize=12.sp) }
-                TextButton(enabled=!completed,colors=ButtonDefaults.textButtonColors(contentColor=accent),onClick={ if(page==pageCount-1) {completed=true;narrator.stop();onComplete(timer.pause())} else changePage(page+1) }) { Text(if(page==pageCount-1) stringResource(R.string.bitir) else stringResource(R.string.sonraki),fontSize=12.sp) }
-            }
+    // The reader follows its own light/dark choice, independent of the system theme.
+    TaleColorTheme(if(dark) DarkTaleColors else LightTaleColors) {
+        val background=if(dark) Color(0xFF080808) else Color.White
+        val foreground=if(dark) Color.White else TaleInk
+        val accent=if(dark) Color(0xFF7DD3FC) else TaleBlue
+        val muted=if(dark) Color(0xFFB7C5D7) else TaleMuted
+        LaunchedEffect(page) { scroll.scrollTo(0) }
+        LaunchedEffect(autoListen) { if(autoListen) { narrator.speak(pageSentences.joinToString(" ") { it.english }) } }
+        fun changePage(next: Int) {
+            val target=next.coerceIn(0,pageCount-1)
+            if(target==page) return
+            narrator.stop(); page=target
+            onProgress((page*SENTENCES_PER_PAGE*100/story.sentences.size).coerceAtMost(99),story.sentences[page*SENTENCES_PER_PAGE].id)
         }
-        if(options) ReaderAppearancePanel(appearance,appearanceError,onDismiss={options=false},onChange=::changeAppearance)
-        selectedWord?.let { word ->
-            Popup(alignment=Alignment.TopCenter,offset=IntOffset(0,130),onDismissRequest={selectedWord=null},properties=PopupProperties(focusable=true)) {
-                Column(Modifier.width(260.dp).border(1.dp,TaleMuted.copy(alpha=0.5f),RoundedCornerShape(12.dp)).background(Color.White,RoundedCornerShape(12.dp))) {
-                    Row(Modifier.fillMaxWidth().padding(16.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
-                        ReferenceIconButton("volume",stringResource(R.string.kelimesini_dinle, word.word),{narrator.speak(word.word)})
-                        Text(word.word,fontSize=20.sp,fontWeight=FontWeight.Bold)
-                        Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kayitli) else stringResource(R.string.kaydedilmedi),fontSize=11.sp,color=TaleMuted)
+        Box(Modifier.fillMaxSize().background(background).statusBarsPadding().navigationBarsPadding()) {
+            Column(Modifier.fillMaxSize()) {
+                Row(Modifier.fillMaxWidth().heightIn(min=52.dp).padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically) {
+                    ReferenceIconButton("back",stringResource(R.string.geri),{narrator.stop();onBack()},tint=accent)
+                    Spacer(Modifier.weight(1f))
+                    TextButton(onClick={options=true},colors=ButtonDefaults.textButtonColors(contentColor=accent),modifier=Modifier.contentLabel(stringResource(R.string.okuma_gorunumu))) {
+                        Text(stringResource(R.string.aa),fontSize=22.sp)
                     }
-                    Text(word.translation,fontSize=18.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(4.dp))
-                    TextButton(onClick={more=!more},modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster),textDecoration=TextDecoration.Underline) }
-                    if(more) Text(word.example,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp))
-                    Row(Modifier.fillMaxWidth().background(TaleBlue,RoundedCornerShape(bottomStart=12.dp,bottomEnd=12.dp))) {
-                        Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { selectedWord=null },contentAlignment=Alignment.Center) { Text(stringResource(R.string.kapat),color=Color.White,fontSize=16.sp,fontWeight=FontWeight.Bold) }
-                        Box(Modifier.width(1.dp).height(28.dp).align(Alignment.CenterVertically).background(Color.White.copy(alpha=0.65f)))
-                        Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { onSaveWord(word.id); selectedWord=null },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=Color.White,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                    Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.kelimelerim_kayitli_kelime_2, snapshot.savedWordIds.size)).clickable(role=Role.Button) {narrator.stop();onOpenWords()}.background(if(dark) Color(0xFF222222) else TaleLine,RoundedCornerShape(8.dp)).padding(8.dp),verticalAlignment=Alignment.CenterVertically) {
+                        ReferenceIcon("cards",muted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=muted,fontSize=14.sp)
+                    }
+                }
+                Column(Modifier.weight(1f).verticalScroll(scroll).padding(start=24.dp,end=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+                    if(!snapshot.readerHintSeen) {
+                        Column(Modifier.fillMaxWidth().background(accent.copy(alpha=0.08f),RoundedCornerShape(10.dp)).padding(12.dp)) {
+                            Text(stringResource(R.string.okurken_ogren),fontWeight=FontWeight.Bold,fontSize=14.sp,color=accent)
+                            Text(stringResource(R.string.alti_cizili_kelimeye_dokun_ve),fontSize=12.sp,color=foreground)
+                            TextButton(onClick=onHintDismiss,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.anladim)) }
+                        }
+                    }
+                    Text("${page+1}.",fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
+                    pageSentences.forEach { sentence ->
+                        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.Top,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+                            val phrases=if(story.vocabulary!=null) remember(story.revisionId,sentence.id) {PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence))} else LearningContent.phraseIndex
+                            TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
+                            Box(Modifier.size(32.dp).contentLabel(if(sentence.id in translations) stringResource(R.string.ceviriyi_gizle) else stringResource(R.string.cumleyi_cevir)).clickable(role=Role.Button) { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
+                        }
+                        if(sentence.id in translations) Text(sentence.turkish,color=TaleOnBlue,fontSize=13.sp,lineHeight=19.sp,
+                            modifier=Modifier.fillMaxWidth().padding(end=36.dp).background(TaleBlue,RoundedCornerShape(4.dp)).padding(10.dp))
+                    }
+                }
+                narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
+                Text("${page+1} / $pageCount",color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
+                Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
+                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt())},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
+                    Box(Modifier.size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { narrator.speak(pageSentences.joinToString(" ") {it.english}) } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
+                }
+                Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
+                    TextButton(onClick={changePage(page-1)},enabled=page>0,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.onceki),fontSize=12.sp) }
+                    TextButton(enabled=!completed,colors=ButtonDefaults.textButtonColors(contentColor=accent),onClick={ if(page==pageCount-1) {completed=true;narrator.stop();onComplete(timer.pause())} else changePage(page+1) }) { Text(if(page==pageCount-1) stringResource(R.string.bitir) else stringResource(R.string.sonraki),fontSize=12.sp) }
+                }
+            }
+            if(options) ReaderAppearancePanel(appearance,appearanceError,onDismiss={options=false},onChange=::changeAppearance)
+            selectedWord?.let { word ->
+                Popup(alignment=Alignment.TopCenter,offset=IntOffset(0,130),onDismissRequest={selectedWord=null},properties=PopupProperties(focusable=true)) {
+                    Column(Modifier.width(260.dp).border(1.dp,TaleMuted.copy(alpha=0.5f),RoundedCornerShape(12.dp)).background(TaleSurface,RoundedCornerShape(12.dp))) {
+                        Row(Modifier.fillMaxWidth().padding(16.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
+                            ReferenceIconButton("volume",stringResource(R.string.kelimesini_dinle, word.word),{narrator.speak(word.word)})
+                            Text(word.word,fontSize=20.sp,fontWeight=FontWeight.Bold)
+                            Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kayitli) else stringResource(R.string.kaydedilmedi),fontSize=11.sp,color=TaleMuted)
+                        }
+                        Text(word.translation,fontSize=18.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(4.dp))
+                        TextButton(onClick={more=!more},modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster),textDecoration=TextDecoration.Underline) }
+                        if(more) Text(word.example,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp))
+                        Row(Modifier.fillMaxWidth().background(TaleBlue,RoundedCornerShape(bottomStart=12.dp,bottomEnd=12.dp))) {
+                            Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { selectedWord=null },contentAlignment=Alignment.Center) { Text(stringResource(R.string.kapat),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                            Box(Modifier.width(1.dp).height(28.dp).align(Alignment.CenterVertically).background(TaleOnBlue.copy(alpha=0.65f)))
+                            Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { onSaveWord(word.id); selectedWord=null },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                        }
                     }
                 }
             }
