@@ -8,7 +8,7 @@ Bu belge yeni bir sürüm için uygulanan kontrol listesidir. Play Console'da da
 
 - [ ] Ana dalın commit SHA'sını, sürüm adını ve sürüm kodunu kaydet. Sürüm kodu Console'daki en yüksek koddan büyük olmalı; yerel 48 paketini yeni güncelleme olarak tekrar kullanma.
 - [ ] Aynı commit için repository, backend, Android ve android-device işleri başarılı. Atlanan cihaz testlerini ve gerekçelerini kaydet.
-- [ ] İmzalı APK/AAB üret; `tooling/verify_release.py` başarılı. Rapor ve APK/AAB SHA-256 değerlerini sürüm kaydına ekle; APK < 15 MB.
+- [ ] İmzalı APK/AAB'yi [sürüm workflow'u](RELEASE_AUTOMATION.md) ile üret; `tooling/verify_release.py` başarılı. Rapor ve APK/AAB SHA-256 değerlerini sürüm kaydına ekle; APK < 15 MB.
 - [ ] Anahtar/parola ve özel Firebase dosyası yalnız özel makine/CI ayarlarında. R8 mapping yüklemesi ve ilgili Crashlytics sürüm eşleşmesi doğrulanmış.
 - [ ] Dahili kanalda Play'in ürettiği paketleri kur; eski üretim sürümünden güncellemede giriş, okuma konumu, kaydedilen kelimeler ve tekrar planı korunuyor.
 - [ ] Giriş → katalog → indirme → çevrimdışı okuma → kelime çalışması → sonuç → tekrar açılış kontrolü geçti. Ses odağı ve arka plana geçişte sesin durması kontrol edildi.
