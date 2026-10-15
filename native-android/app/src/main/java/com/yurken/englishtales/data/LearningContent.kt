@@ -57,8 +57,24 @@ object LearningContent {
     val stories: List<Story> get() = current().stories
     val storyById: Map<String, Story> get() = current().storyById + pinned
 
+    private val loadLock = Any()
+
+    /** True once the bundled catalog is installed; readable from composition. */
+    val ready: Boolean get() = catalog != null
+
+    /** Parses the bundled catalog off the main thread (~150 ms on an emulator); safe to call repeatedly. */
+    suspend fun load(context: Context) = kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.Default) { initialize(context) }
+
+    /** Blocking variant for callers that already run off the UI thread (stores, workers, tests). */
     fun initialize(context: Context) {
         if (catalog != null) return
+        synchronized(loadLock) { if (catalog == null) catalog = parse(context) }
+    }
+
+    @androidx.annotation.VisibleForTesting
+    internal fun resetForTest() = synchronized(loadLock) { catalog = null; pinned.clear(); historical.clear(); wordSources.clear() }
+
+    private fun parse(context: Context): Catalog {
         val json = context.assets.open("catalog/v1.json").bufferedReader(Charsets.UTF_8).use { it.readText() }
         val root = JSONObject(json)
         require(root.getInt("schemaVersion") == 1) { "Unsupported catalog schema" }
@@ -89,7 +105,7 @@ object LearningContent {
         require(parsedStories.isNotEmpty()) { "Catalog has no stories" }
         require(parsedStories.map { it.id }.distinct().size == parsedStories.size) { "Duplicate story ID" }
 
-        catalog = Catalog(
+        return Catalog(
             parsedWords, parsedWords.associateBy { it.id }, parsedWords.associateBy { it.word.lowercase() },
             parsedStories, parsedStories.associateBy { it.id }
         )

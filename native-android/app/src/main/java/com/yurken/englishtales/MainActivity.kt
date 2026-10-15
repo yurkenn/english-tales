@@ -14,6 +14,13 @@ import com.yurken.englishtales.ui.TalesApp
 import com.yurken.englishtales.ui.YurkenBrandIntro
 import androidx.compose.runtime.CompositionLocalProvider
 import com.yurken.englishtales.ads.*
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
     private var dailyPlanRequest by mutableLongStateOf(0L)
@@ -21,12 +28,16 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         dailyPlanRequest=savedInstanceState?.getLong("daily_plan_request")?:0L
         acceptReminder(intent)
-        LearningContent.initialize(applicationContext)
+        // The bundled catalog parses in the background while the brand intro is visible.
+        lifecycleScope.launch { LearningContent.load(applicationContext) }
         enableEdgeToEdge()
         val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.None
         setContent {
             CompositionLocalProvider(LocalCompletionAds provides ads) {EnglishTalesTheme {
-                YurkenBrandIntro { TalesApp(dailyPlanRequest=dailyPlanRequest) }
+                YurkenBrandIntro {
+                    if(LearningContent.ready) TalesApp(dailyPlanRequest=dailyPlanRequest)
+                    else Box(Modifier.fillMaxSize().background(Color.Black))
+                }
             }}
         }
     }
