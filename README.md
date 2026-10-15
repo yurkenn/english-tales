@@ -7,6 +7,7 @@ Android uygulaması tamamen Kotlin ve Jetpack Compose ile geliştirilir. Aktif k
 - [Native geçişin kapsamı ve veri sınırları](native-android/docs/NATIVE_MIGRATION.md)
 - [Kalite yol haritası](native-android/docs/QUALITY_ROADMAP.md)
 - [2.0 sonrası geliştirme haritası](native-android/docs/NEXT_PHASE_ROADMAP.md)
+- [Derin eksik haritası](native-android/docs/GAP_ANALYSIS.md)
 - [Yeni özellikler ve kullanıcı deneyimi planı](native-android/docs/PRODUCT_ROADMAP.md)
 - [Aşamalı teknik geliştirme haritası](native-android/docs/DEVELOPMENT_ROADMAP.md)
 - [Geliştirme iş listesi](native-android/docs/DEVELOPMENT_BACKLOG.md)
