@@ -14,5 +14,4 @@
     <string name="listen_next">Sonraki kelime</string>
     <string name="listen_finish">Sonucu gör</string>
     <string name="listen_exit">Alıştırmadan çık</string>
-    <string name="listen_result">%1$d / %2$d doğru</string>
 </resources>
