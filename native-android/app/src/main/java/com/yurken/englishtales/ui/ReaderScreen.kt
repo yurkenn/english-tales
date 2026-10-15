@@ -38,7 +38,7 @@ import kotlinx.coroutines.CancellationException
 
 private const val SENTENCES_PER_PAGE=8
 
-internal open class Narrator(context: Context) {
+internal open class Narrator(context: Context, private val focus: NarrationFocus = SystemNarrationFocus(context)) {
     private var engine: TextToSpeech? = null
     private var ready = false
     private var closed = false
@@ -54,10 +54,12 @@ internal open class Narrator(context: Context) {
         private set
 
     init {
+        focus.onLoss = { main.post { if (!closed) stop() } }
         engine = TextToSpeech(context) { result ->
             if (!closed) {
                 ready = result == TextToSpeech.SUCCESS
                 if (ready) {
+                    engine?.setAudioAttributes(NarrationFocus.attributes)
                     val language = engine?.setLanguage(Locale.US)
                     if (language == TextToSpeech.LANG_MISSING_DATA || language == TextToSpeech.LANG_NOT_SUPPORTED) {
                         ready = false
@@ -76,23 +78,24 @@ internal open class Narrator(context: Context) {
         }
         engine?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
             override fun onStart(id: String?) { main.post { if (!closed && id == activeId) speaking = true } }
-            override fun onDone(id: String?) { main.post { if (!closed && id == activeId) { speaking = false; activeId = null } } }
-            override fun onStop(id: String?, interrupted: Boolean) { main.post { if (!closed && id == activeId) { speaking = false; activeId = null } } }
+            override fun onDone(id: String?) { main.post { if (!closed && id == activeId) { speaking = false; activeId = null; focus.abandon() } } }
+            override fun onStop(id: String?, interrupted: Boolean) { main.post { if (!closed && id == activeId) { speaking = false; activeId = null; focus.abandon() } } }
             @Deprecated("Required callback for older Android engines")
-            override fun onError(id: String?) { main.post { if (!closed && id == activeId) { speaking = false; activeId = null; error = "Seslendirme tamamlanamadı." } } }
+            override fun onError(id: String?) { main.post { if (!closed && id == activeId) { speaking = false; activeId = null; focus.abandon(); error = "Seslendirme tamamlanamadı." } } }
         })
     }
 
     fun speak(text: String) {
         if (closed) return
         if (!ready) { if (error == null) {pending = text;preparing = true}; return }
+        if (!focus.request()) { error = "Ses şu anda başka bir uygulama tarafından kullanılıyor."; return }
         error = null
         activeId = "english-tales-${++utteranceNumber}"
         speaking = engine?.speak(text, TextToSpeech.QUEUE_FLUSH, null, activeId) == TextToSpeech.SUCCESS
-        if (!speaking) error = "Seslendirme başlatılamadı."
+        if (!speaking) { error = "Seslendirme başlatılamadı."; focus.abandon() }
     }
-    open fun stop() { preparing = false; pending = null; activeId = null; engine?.stop(); speaking = false }
-    fun close() { preparing = false; closed = true; pending = null; activeId = null; engine?.shutdown(); main.removeCallbacksAndMessages(null) }
+    open fun stop() { preparing = false; pending = null; activeId = null; engine?.stop(); speaking = false; focus.abandon() }
+    fun close() { preparing = false; closed = true; pending = null; activeId = null; engine?.shutdown(); focus.abandon(); main.removeCallbacksAndMessages(null) }
 }
 
 /** One narrator per screen: released on dispose and silenced when the app leaves the foreground. */
