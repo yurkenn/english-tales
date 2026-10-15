@@ -14,6 +14,10 @@ CLI ile GA4 bağlantısı ve Android stream doğrulandı. Analytics rapor/retent
 
 Aşağıdaki 48 / 2.0.0 mağaza başvurusu tarihsel son kayıttır; bu kalite çalışmasında Play Console durumu tekrar kontrol edilmedi ve yeni yayın yapılmadı.
 
+## Yeni özellik — kısa seviye testi
+
+Onboarding ve Profilim → Ayarlar’dan açılan dokuz soruluk A1–A2–B1 başlangıç önerisi eklendi. Test çevrimdışı çalışır; atlanabilir, cevaplar Analytics’e gönderilmez. Kullanıcı sonucu kabul etmeden seviye değişmez; Ayarlar’da ayrıca kaydetmek gerekir. [Puanlama, kayıt davranışı ve doğrulama kapsamı](native-android/docs/READING_PLACEMENT.md).
+
 ## Kısa durum
 
 Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 üretim kanalına yüklendi ve mağaza güncellemesiyle birlikte 15 Ekim 2026'da Google incelemesine gönderildi. İnceleme sonucu henüz gelmedi.**

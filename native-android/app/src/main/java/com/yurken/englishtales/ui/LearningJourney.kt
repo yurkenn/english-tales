@@ -9,10 +9,12 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.*
+import com.yurken.englishtales.R
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -123,12 +125,18 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
     var level by rememberSaveable {mutableStateOf(snapshot.level)}
     var genre by rememberSaveable {mutableStateOf(snapshot.preferredGenre)}
     var goal by rememberSaveable {mutableIntStateOf(snapshot.dailyGoal)}
+    var placement by rememberSaveable {mutableStateOf(false)}
+    if (placement) {
+        PlacementScreen(onUseLevel={level=it;placement=false},onCancel={placement=false},fromSettings=true)
+        return
+    }
     Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar("Ayarlar",onBack)
         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(14.dp)) {
             OutlinedTextField(value=name,onValueChange={name=it.take(30)},label={Text("Adın")},singleLine=true,modifier=Modifier.fillMaxWidth())
             Text("İngilizce seviyen",fontWeight=FontWeight.Bold)
             PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
+            OutlinedButton(onClick={placement=true},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.placement_entry))}
             Text("Sevdiğin hikâyeler",fontWeight=FontWeight.Bold)
             PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre) {genre=it}
             Text("Günlük hedefin",fontWeight=FontWeight.Bold)
