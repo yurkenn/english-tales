@@ -34,6 +34,13 @@ jobs:
       - run: npm ci --ignore-scripts --no-fund --no-audit
       - run: npm test
       - run: npm run test:admin
+      - run: npm run content:audit
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: content-audit
+          path: native-android/build/content-audit/
+          retention-days: 14
   android:
     runs-on: ubuntu-24.04
     defaults:
