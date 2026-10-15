@@ -6,6 +6,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
     id("androidx.room")
+    id("androidx.baselineprofile")
 }
 
 // Crashlytics needs the Firebase app config; without it (CI, forks) the SDK stays inactive.
@@ -113,6 +114,24 @@ android {
         }
     }
 
+    buildTypes.create("performance") {
+        initWith(buildTypes.getByName("release"))
+        applicationIdSuffix = ".benchmark"
+        versionNameSuffix = "-benchmark"
+        signingConfig = signingConfigs.getByName("debug")
+        matchingFallbacks += listOf("release")
+        isDebuggable = false
+        // Release optimization, isolated data, no production content traffic or telemetry.
+        buildConfigField("boolean", "ADS_ENABLED", "false")
+        buildConfigField("boolean", "PRODUCT_ANALYTICS_AVAILABLE", "false")
+        listOf("SUPABASE_URL", "SUPABASE_PUBLISHABLE_KEY", "GOOGLE_WEB_CLIENT_ID").forEach {
+            buildConfigField("String", it, "\"\"")
+        }
+        manifestPlaceholders["crashReportsEnabled"] = "false"
+        manifestPlaceholders["analyticsDeactivated"] = "true"
+        manifestPlaceholders["admobAppId"] = "ca-app-pub-3940256099942544~3347511713"
+    }
+
     compileOptions {
         // java.time parsing must also work on the supported Android 7 devices.
         isCoreLibraryDesugaringEnabled = true
@@ -123,9 +142,20 @@ android {
     buildFeatures { compose = true; buildConfig = true }
 }
 
+// Normal builds never require a device; generated profiles are reviewed separately.
+baselineProfile {
+    automaticGenerationDuringBuild = false
+    mergeIntoMain = true
+}
+tasks.matching { it.name.contains("Performance", ignoreCase = true) &&
+    (it.name.endsWith("GoogleServices") || it.name.startsWith("uploadCrashlytics")) }
+    .configureEach { enabled = false }
+
 room { schemaDirectory("$projectDir/schemas") }
 
 dependencies {
+    add(configurations.maybeCreate("performanceBaselineProfile").name, project(":macrobenchmark"))
+    implementation("androidx.profileinstaller:profileinstaller:1.4.1")
     implementation("com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.5.0")
     implementation("com.google.android.ump:user-messaging-platform:4.0.0")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")

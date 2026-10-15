@@ -1,5 +1,7 @@
 plugins {
     id("com.android.application") version "8.13.0" apply false
+    id("com.android.test") version "8.13.0" apply false
+    id("androidx.baselineprofile") version "1.4.1" apply false
     id("org.jetbrains.kotlin.android") version "2.1.20" apply false
     id("org.jetbrains.kotlin.plugin.compose") version "2.1.20" apply false
     id("com.google.devtools.ksp") version "2.1.20-1.0.32" apply false
