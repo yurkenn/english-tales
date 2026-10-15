@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.layout.*
+import com.yurken.englishtales.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -17,7 +19,7 @@ internal fun LearningWriteErrorBar(error: LearningWriteError?, onRetry: () -> Un
         Column(Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal=16.dp,vertical=8.dp)
             .semantics { liveRegion=LiveRegionMode.Polite }) {
             Text(error.message, color=MaterialTheme.colorScheme.onErrorContainer)
-            TextButton(onClick=onRetry) { Text("Tekrar dene") }
+            TextButton(onClick=onRetry) { Text(stringResource(R.string.tekrar_dene)) }
         }
     }
 }

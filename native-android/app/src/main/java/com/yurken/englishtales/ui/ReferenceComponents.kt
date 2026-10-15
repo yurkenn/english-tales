@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.Canvas
+import com.yurken.englishtales.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.rememberScrollState
@@ -139,7 +141,7 @@ fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Col
 
 @Composable
 fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
-    val tabs = listOf("Çalış" to "study", "Oku" to "read", "Oyna" to "play", "Profilim" to "profile")
+    val tabs = listOf(stringResource(R.string.calis) to "study", stringResource(R.string.oku_2) to "read", stringResource(R.string.oyna) to "play", stringResource(R.string.profilim) to "profile")
     val barHeight=56.dp+18.dp*(LocalDensity.current.fontScale-1f).coerceAtLeast(0f)
     Row(Modifier.fillMaxWidth().background(Color.White).navigationBarsPadding().height(barHeight)) {
         tabs.forEachIndexed { index,(label,kind) ->
@@ -174,7 +176,10 @@ fun GameViewport(padding: PaddingValues, minimumHeight: Dp = 450.dp, content: @C
 @Composable
 fun GameHeader(progress: Float, onExit: () -> Unit) {
     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(14.dp)) {
-        Box(Modifier.size(32.dp).clickable(onClick=onExit).semantics { contentDescription="Alıştırmadan çık" },contentAlignment=Alignment.Center) { Text("×",fontSize=25.sp,color=TaleMuted) }
+        Box(Modifier.size(32.dp).clickable(onClick=onExit).contentLabel(stringResource(R.string.alistirmadan_cik)),contentAlignment=Alignment.Center) { Text("×",fontSize=25.sp,color=TaleMuted) }
         ReferenceProgress(progress,Modifier.weight(1f))
     }
 }
+
+/** Screen reader label; the text is resolved in the calling composable. */
+internal fun Modifier.contentLabel(label: String) = semantics { contentDescription = label }
