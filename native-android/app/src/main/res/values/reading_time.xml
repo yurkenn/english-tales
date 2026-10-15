@@ -1,0 +1,8 @@
+<resources>
+    <string name="reading_minutes">~%1$d dk</string>
+    <string name="reading_minutes_description">Yaklaşık okuma süresi: %1$d dakika</string>
+    <string name="length_all">Her uzunluk</string>
+    <string name="length_short">Kısa · ≤ 2 dk</string>
+    <string name="length_medium">Orta · 3–5 dk</string>
+    <string name="length_long">Uzun · 6+ dk</string>
+</resources>

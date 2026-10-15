@@ -25,6 +25,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.R
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.res.stringResource
+import com.yurken.englishtales.data.ReadingTime
+import com.yurken.englishtales.data.ReadingLength
 import com.yurken.englishtales.data.LearningContent
 import com.yurken.englishtales.data.LearningSnapshot
 import com.yurken.englishtales.data.ReadingStatus
@@ -95,8 +100,9 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     var listMode by rememberSaveable { mutableStateOf("") }
     var levelFilter by rememberSaveable { mutableStateOf<String?>(null) }
     var statusFilter by rememberSaveable { mutableStateOf<ReadingStatus?>(null) }
-    val filters=StoryFilters(levelFilter,statusFilter)
-    fun leaveList() { listMode=""; search=""; levelFilter=null; statusFilter=null }
+    var lengthFilter by rememberSaveable { mutableStateOf<ReadingLength?>(null) }
+    val filters=StoryFilters(levelFilter,statusFilter,lengthFilter)
+    fun leaveList() { listMode=""; search=""; levelFilter=null; statusFilter=null; lengthFilter=null }
     BackHandler(enabled=listMode.isNotBlank()) { leaveList() }
     val stories=LearningContent.stories
     val newest=LearningContent.newestStories(3)
@@ -140,7 +146,8 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                     Box { if(search.isEmpty()) Text("Kitap ara",color=TaleMuted,fontSize=14.sp); inner() }
                 })
             }
-            LibraryFilters(filters,showLevels=listMode!="level",onLevel={levelFilter=it},onStatus={statusFilter=it}) { levelFilter=null; statusFilter=null }
+            LibraryFilters(filters,showLevels=listMode!="level",onLevel={levelFilter=it},onStatus={statusFilter=it},
+                lengths=stories.mapNotNull {ReadingLength.of(ReadingTime.minutes(it))}.distinct().sorted(),onLength={lengthFilter=it}) { levelFilter=null; statusFilter=null; lengthFilter=null }
             Text(if(listMode=="books") "OKUNANLAR" else "KİTAPLAR",fontSize=10.sp,letterSpacing=1.sp,color=TaleBlue,modifier=Modifier.fillMaxWidth().padding(18.dp))
             HorizontalDivider(color=TaleLine)
             LazyColumn(contentPadding=PaddingValues(16.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
@@ -153,7 +160,8 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: (String?)->Unit, onStatus: (ReadingStatus?)->Unit, onClear: ()->Unit) {
+private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: (String?)->Unit, onStatus: (ReadingStatus?)->Unit,
+    lengths: List<ReadingLength>, onLength: (ReadingLength?)->Unit, onClear: ()->Unit) {
     Column(Modifier.fillMaxWidth().padding(top=8.dp)) {
         if(showLevels) LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
             item { FilterChip(selected=filters.level==null,onClick={onLevel(null)},label={Text("Tüm seviyeler")}) }
@@ -162,6 +170,11 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
         LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
             item { FilterChip(selected=filters.status==null,onClick={onStatus(null)},label={Text("Tümü")}) }
             items(ReadingStatus.entries) { status -> FilterChip(selected=filters.status==status,onClick={onStatus(if(filters.status==status) null else status)},label={Text(status.label)}) }
+        }
+        // Only lengths that occur in the catalog are offered, so a chip never leads to an empty list by itself.
+        if(lengths.size>1) LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+            item { FilterChip(selected=filters.length==null,onClick={onLength(null)},label={Text(stringResource(R.string.length_all))}) }
+            items(lengths) { length -> FilterChip(selected=filters.length==length,onClick={onLength(if(filters.length==length) null else length)},label={Text(stringResource(length.label))}) }
         }
         if(filters.active) TextButton(onClick=onClear,modifier=Modifier.padding(horizontal=8.dp)) { Text("Filtreleri temizle") }
     }
@@ -182,6 +195,7 @@ private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String)
                 Text(story.author,color=TaleMuted,fontSize=11.sp,maxLines=1)
                 Spacer(Modifier.height(4.dp))
                 Text(story.title,fontSize=14.sp,lineHeight=20.sp,maxLines=2,overflow=TextOverflow.Ellipsis)
+                ReadingMinutes(story)
             }
         }
     }
@@ -200,6 +214,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                     Spacer(Modifier.height(8.dp)); Text(story.title,fontSize=20.sp,lineHeight=24.sp,fontWeight=FontWeight.Bold)
                     Spacer(Modifier.height(16.dp))
                     Text("▮▮▮  ${when(story.level){"A1"->"Kolay";"A2"->"Orta";else->"Zor"}}",color=if(story.level=="A1") TaleBlue else Color(0xFFFF6338),fontSize=14.sp)
+                    ReadingMinutes(story,Modifier.padding(top=4.dp))
                     Spacer(Modifier.height(16.dp))
                     Row(horizontalArrangement=Arrangement.spacedBy(4.dp)) {
                         ReferenceIconButton("read","Hikâyeyi oku",onRead)
@@ -323,6 +338,7 @@ private fun StoryCard(story: Story, progress: Int, onClick: () -> Unit) {
             Text(story.author,color=TaleMuted,fontSize=11.sp)
             Text(story.title,fontSize=15.sp,maxLines=2)
             Text("▮▮  ${story.level}",color=TaleBlue,fontSize=11.sp)
+            ReadingMinutes(story)
             if(progress>0) ReferenceProgress(progress/100f,Modifier.width(100.dp),TaleBlue)
         }
     }
@@ -338,3 +354,12 @@ fun SimpleTopBar(title: String, onBack: () -> Unit) {
 
 @Composable
 fun SectionTitle(title: String) { Text(title,fontSize=20.sp) }
+
+/** "~3 dk" under a story; nothing while the text is not downloaded. */
+@Composable
+internal fun ReadingMinutes(story: Story, modifier: Modifier = Modifier) {
+    val minutes=ReadingTime.minutes(story) ?: return
+    val description=stringResource(R.string.reading_minutes_description,minutes)
+    Text(stringResource(R.string.reading_minutes,minutes),color=TaleMuted,fontSize=11.sp,
+        modifier=modifier.semantics {contentDescription=description})
+}
