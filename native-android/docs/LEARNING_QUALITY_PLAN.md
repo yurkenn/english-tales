@@ -56,7 +56,7 @@ Sıra bağımlılığa göredir. Efor tek geliştirici için ideal gündür (tes
 | Q4.1 | Paket → taslak revizyon üretimi + yayın doğrulama (#33 denetiminin üstüne) | `content:audit --require-parity` canlıda geçer | #33 | 2–3 |
 | Q4.2 | Pilot revizyonları canlıya yayımla | 39 etkilenen hikâye eşit; denetim raporu ekte | Q4.1 + yayıncı onayı | 0,5 |
 | Q4.3a | **Dokunma sözlüğü altyapısı:** `glossary(lemma, sense_id, lang, gloss)`, `glossary_forms(form → lemma)`, okuyucuda bağlanmamış her tokene dokununca bağlama uygun anlam | Okuyucuda dokunulamayan token ≤ %2. "Listeme ekle" kişisel kelime oluşturur. Çevrimdışı çalışır. | Q4.0 | 4–5 |
-| Q4.3b | **Sözlük verisi üretimi:** önce makine taslağı, sonra editör onayı (§3.1) | 1.871 lemmanın tümünde TR karşılık. A1/A2 sözlüğün %100'ü, B1'in rastgele %20'si editörden geçmiş. Hata oranı kaydedilmiş. | Q4.3a + kaynak kararı | 2 geliştirme + 2–3 inceleme |
+| Q4.3b | **Sözlük verisi üretimi:** önce makine taslağı, sonra editör onayı (§3.1) | 1.871 lemmanın tümünde TR karşılık. İki model çapraz kontrolü yapılmış; anlaşmazlıklar ve rastgele %10 örneklem uygulama sahibince incelenmiş. Örneklem hata oranı kaydedilmiş; %5'i aşarsa örneklem genişletilir. | Q4.3a + kaynak kararı | 2 geliştirme + 2–3 inceleme |
 | Q4.3c | **Çalışma kelimesi seçimi:** her hikâyede seviyeye uygun 8–15 kelime | Hikâye başına liste. Seviye dışı kelime oranı raporlanır. | Q4.3b | 1 araç + 2 inceleme |
 | Q4.4 | Okuma süresi ve sözcük sayısı alanı + süre filtresi | Kartlarda "~3 dk". Filtre çalışır. | — | 1–1,5 |
 | Q4.5 | Tür yerine **etiket modeli** (masal, fabl, günlük yaşam, gizem, macera…), etiket adları dile göre | Sabit SQL listesi kalkar. Yeni etiket şema değişikliği gerektirmez. | Q4.0 | 1,5–2 |
@@ -72,7 +72,9 @@ Sıra bağımlılığa göredir. Efor tek geliştirici için ideal gündür (tes
 | **Bağlama göre makine taslağı + editör onayı** | Her geçiş için hikâyedeki anlam; öğrenciye uygun sade dil. Her yeni dil için aynı hat çalışır. | Hata riski; inceleme emeği gerekir; üretim maliyeti | **Önerilen anlam kaynağı.** Toplam metin küçük (~11 bin sözcük), maliyet düşük. Kalite editör örneklemesiyle ölçülür. |
 | Çevrimiçi çeviri API'si (anlık) | Sıfır içerik emeği | Çevrimdışı çalışmaz; gizlilik ve maliyet; kalite kontrolü yok | Önerilmez. Okuyucunun çevrimdışı olma vaadiyle çelişir. |
 
-**Öneri:** Çekimler (`forms`) Wiktionary türevinden, anlamlar bağlama göre makine taslağından gelsin, editör onayıyla yayımlansın. Her öğede `source` ve `reviewed_by` alanları tutulsun. Yayın denetimi A1/A2'de onaysız anlamı reddetsin.
+**Karar (16 Ekim 2026):** Çekimler (`forms`) Wiktionary türevinden gelir; lisans, kullanmadan önce doğrulanır. Anlamlar, Claude/Codex oturumlarında bağlama göre üretilen taslaktan gelir ve depoda sürümlü dosya olarak tutulur. Ek API anahtarı kullanılmaz.
+
+Taslağı bir model üretir, diğeri denetler. Uygulama sahibi anlaşmazlıkları ve rastgele %10 örneklemi inceler. Her öğede `source`, `checked_by` ve `reviewed` alanları tutulur. Yayın denetimi, çapraz kontrolden geçmemiş anlamı reddeder.
 
 ## 4. Q5 — Öğrenme kalitesi (ayrıntılı)
 
@@ -151,7 +153,11 @@ Q4.0 yapılmadan her dil bir şema projesine dönüşür. Bu yüzden **Q4.0 dil 
    - es-419 mağaza kaydında 3–5 anahtar kelime denenir ("aprender inglés con cuentos" gibi).
    - Başarı ölçütü (4–6 hafta): mağaza sayfası dönüşümü, ilk hikâyeyi bitirme ve ertesi gün dönüş, TR kullanıcılarına göre en az aynı seviyede.
 3. **L2 — Ölçeklendirme:** Pilot tutarsa pt-BR ve id eklenir. Ardından sağdan sola tasarım işiyle Arapça gelir.
-4. **Kalite kuralı:** Hiçbir dil, A1/A2 sözlüğü ve arayüzü anadili editörden geçmeden yayımlanmaz. `content:audit` her dil için tamlık raporu üretir.
+4. **Kalite kuralı (karar):**
+   - İspanyolca, iki model çapraz kontrolüyle hazırlanır: biri çevirir, diğeri denetler. Anlaşmazlıklar listelenir.
+   - İnsan kontrolü olmadığı için Latin Amerika kullanımlarında hata riski vardır. Bu yüzden ilk sürümde uygulama içinde "çeviri hatası bildir" seçeneği bulunur.
+   - Ölçeklendirmeden (L2) önce anadili bir kişiden en az örneklem kontrolü alınması önerilir.
+   - `content:audit` her dil için tamlık raporu üretir.
 
 ## 6. Bütünleşik sıra
 
@@ -166,16 +172,17 @@ Tahminler ideal gündür; içerik ve inceleme emeği ayrı yazılmıştır.
 | **5. Derinlik** | Q5.7 FSRS · Q5.8 basamaklar · Q4.5 etiketler · Q4.6 seviye denetimi · Q4.8 cümle sesi | Ölçüm verisi birikince ayar yapılır | 11–14 |
 | **Sürekli** | Q4.7 içerik hacmi (≥ 30 bin sözcük, B2 pilotu) | Ritim kararına bağlı | Hikâye başına 0,5–1 gün |
 
-## 7. Kararın gereken konular
+## 7. Kararlar (16 Ekim 2026)
 
-| Karar | Seçenekler | Öneri | Etkilediği işler |
-|---|---|---|---|
-| Sözlük anlam kaynağı | Wiktionary türevi · makine taslağı + editör · çevrimiçi API | Çekimler Wiktionary'den, anlamlar makine taslağı + editörden | Q4.3 |
-| Makine taslağı aracı ve bütçesi | Hangi model, kim çalıştırır, maliyet sınırı | Tek seferlik toplu üretim; üretilen veri depoda, sürümlü | Q4.3b, Q5.3, L1 |
-| Editör / anadili kontrolü | Kendin (TR) · gönüllü · ücretli | TR için sen; İspanyolca için ücretli anadili editör (2–4 gün) | Q4.3b, L1 |
-| İçerik hızı | Haftalık · iki haftada bir · aylık | İki haftada bir 1–2 hikâye veya bölüm | Q4.7 |
-| Mağaza DE/FR/ES kayıtları | Kaldır · İngilizce arayüze bağla | L0'da İngilizce arayüze bağla, es-ES'yi L1 ile değiştir | L0 |
-| İlk yeni dil | es-419 · pt-BR · id | es-419 | L1 |
+| Konu | Karar | Etkilediği işler |
+|---|---|---|
+| Sözlük anlam kaynağı | Çekimler Wiktionary türevinden (lisans doğrulanacak); anlamlar bağlama göre makine taslağından | Q4.3 |
+| Taslak üretimi | Claude/Codex oturumlarında; çıktılar depoda sürümlü dosya; ek API anahtarı yok | Q4.3b, Q5.3, L1 |
+| Türkçe kontrol | Örneklem: iki model çapraz kontrolü + uygulama sahibinin anlaşmazlıkları ve rastgele %10'u incelemesi; hata oranı %5'i aşarsa örneklem büyür | Q4.3b |
+| İspanyolca kontrol | İki model çapraz kontrolü; uygulama içinde çeviri hatası bildirimi; L2 öncesi anadili örneklemi önerilir | L1 |
+| İçerik hızı | İki haftada bir 1–2 hikâye veya bölüm | Q4.7 |
+| Mağaza DE/FR/ES kayıtları | Şimdi kaldırılır (Play Console'da uygulama sahibi yapar); İspanyolca destekle es-419 kaydı açılır | L0 |
+| İlk yeni dil | İspanyolca (es-419) | L1 |
 
 ## 8. Sınırlar
 
