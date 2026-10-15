@@ -2599,14 +2599,14 @@
         {
           "id": "quiet-morning-q3",
           "kind": "inference",
-          "prompt": "Why did the morning become special for the old man?",
+          "prompt": "What did Mia do to make the man's birthday morning special?",
           "options": [
-            "He found some money",
-            "He sold his bread",
-            "The town was very quiet",
-            "Someone was kind to him on his birthday"
+            "She gave him a birthday card",
+            "She shared a warm roll with him",
+            "She sang a birthday song for him",
+            "She brought a small cake for him"
           ],
-          "answer": 3
+          "answer": 1
         }
       ]
     },
@@ -2671,12 +2671,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A paper boat's journey on a river",
-            "A girl who loses a letter",
-            "A family of ducks",
-            "A boy who builds a real boat"
+            "A girl searches for her lost boat near a bridge",
+            "Two children race their paper boats across a pond",
+            "A boy makes paper boats to sell at a market",
+            "A boy follows his paper boat along a river"
           ],
-          "answer": 0
+          "answer": 3
         },
         {
           "id": "paper-boat-q2",
@@ -2705,12 +2705,12 @@
         {
           "id": "paper-boat-q4",
           "kind": "inference",
-          "prompt": "Why did Leo let the boat continue?",
+          "prompt": "What did Leo do after the girl wrote the message?",
           "options": [
-            "He liked the idea that every journey goes on",
-            "The girl asked him to",
-            "He was tired of running",
-            "The boat was broken"
+            "He let the boat move on",
+            "He took the boat back home",
+            "He put the boat on the bridge",
+            "He gave the boat to the girl"
           ],
           "answer": 0
         }
@@ -2775,14 +2775,14 @@
         {
           "id": "lost-map-q1",
           "kind": "main",
-          "prompt": "What did the map really lead to?",
+          "prompt": "What did the map really lead Nora and Sam to?",
           "options": [
-            "A lost dog",
-            "Hidden treasure",
-            "A new house",
-            "A reminder of a long friendship"
+            "A record of a journey their families had planned",
+            "A clue to valuable treasure hidden in the forest",
+            "A reminder of a friendship between their families",
+            "A plan for a house their families would build"
           ],
-          "answer": 3
+          "answer": 2
         },
         {
           "id": "lost-map-q2",
@@ -2811,12 +2811,12 @@
         {
           "id": "lost-map-q4",
           "kind": "inference",
-          "prompt": "Why did Nora and Sam promise to return next summer?",
+          "prompt": "What does the photograph suggest about Nora's and Sam's families?",
           "options": [
-            "They forgot something",
-            "They wanted to keep the friendship tradition alive",
-            "They wanted to find treasure",
-            "Their parents told them to"
+            "They had first met during that summer",
+            "They had known each other for years",
+            "They had never met before that summer",
+            "They had only heard about each other"
           ],
           "answer": 1
         }
@@ -2928,12 +2928,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
+            "Anna visits her teacher and borrows a book",
+            "Anna loses her umbrella and buys a new one",
             "Anna helps her neighbor and makes a friend",
-            "Mrs. Green bakes bread",
-            "Anna loses her umbrella",
-            "A bird builds a nest"
+            "Anna makes a cake and takes it to school"
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "id": "red-umbrella-q2",
@@ -2950,14 +2950,14 @@
         {
           "id": "red-umbrella-q3",
           "kind": "inference",
-          "prompt": "Why does Anna hold the umbrella above them both?",
+          "prompt": "How does Anna help Mrs. Green with her shopping?",
           "options": [
-            "Anna wants to sing",
-            "The shop is closed",
-            "Mrs. Green is wet and cold",
-            "The umbrella is too big"
+            "She helps with her heavy bag",
+            "She pays for all her apples",
+            "She finds her missing money",
+            "She brings her a shopping list"
           ],
-          "answer": 2
+          "answer": 0
         }
       ]
     },
@@ -3067,22 +3067,22 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "Buying flowers at a market",
-            "Finding a lost ticket just in time for the last train",
-            "Taking photos of mountains",
-            "Missing the last train"
+            "Buying flowers before the village market closes",
+            "Returning to the market for a missing camera",
+            "Missing a train and staying in the village",
+            "Finding a missing ticket and catching the train"
           ],
-          "answer": 1
+          "answer": 3
         },
         {
           "id": "last-train-q2",
           "kind": "detail",
-          "prompt": "Where was Sam's ticket?",
+          "prompt": "Where did Sam find his missing ticket at the market?",
           "options": [
-            "In his pocket",
-            "Under a stone on a bench",
-            "In Lily's bag",
-            "On the train"
+            "Inside a box beside the flowers",
+            "Under a small stone on a bench",
+            "Inside a bag behind a stall",
+            "Under his camera on a table"
           ],
           "answer": 1
         },
@@ -3101,14 +3101,14 @@
         {
           "id": "last-train-q4",
           "kind": "inference",
-          "prompt": "Why did Sam laugh at the end?",
+          "prompt": "Why did Sam most likely laugh after getting on the train?",
           "options": [
-            "He was relieved after the stressful run",
-            "He lost his camera",
-            "Lily told a joke",
-            "The train was funny"
+            "He was happy that Lily had found his camera",
+            "He was happy that the woman had joined them",
+            "He was happy that he had caught the train",
+            "He was happy that he had bought some flowers"
           ],
-          "answer": 0
+          "answer": 2
         }
       ]
     },
@@ -3218,12 +3218,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A grandmother who sells her house",
-            "An old letter that helps two friends begin again",
-            "A bird that delivers letters",
-            "A garden that is destroyed"
+            "An old letter helps two friends make a new start",
+            "An old letter helps a family recover some stolen money",
+            "An old letter helps a girl find a missing relative",
+            "An old letter helps a grandmother sell her empty garden"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "attic-letter-q2",
@@ -3240,14 +3240,14 @@
         {
           "id": "attic-letter-q3",
           "kind": "detail",
-          "prompt": "What did Nora and her grandmother do with the empty ground?",
+          "prompt": "What did Nora and her grandmother do over the following week?",
           "options": [
-            "They left it alone",
-            "They planted flowers",
-            "They built a shed",
-            "They sold it"
+            "They sold the ground and bought a smaller garden",
+            "They covered the ground and built a wooden shed",
+            "They dug up the flowers and planted peach trees",
+            "They cleared the ground and chose seeds at a shop"
           ],
-          "answer": 1
+          "answer": 3
         },
         {
           "id": "attic-letter-q4",
@@ -3357,12 +3357,12 @@
         {
           "id": "classic-tortoise-hare-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Fast animals always win",
-            "Slow and steady work wins",
-            "Foxes are good judges",
-            "Rest is more important than work"
+            "A hare helps a tortoise finish a long race",
+            "A tortoise wins a race while a hare sleeps",
+            "A fox wins a race against a fast hare",
+            "A tortoise stops a race to help a fox"
           ],
           "answer": 1
         },
@@ -3381,14 +3381,14 @@
         {
           "id": "classic-tortoise-hare-q3",
           "kind": "inference",
-          "prompt": "Why does the hare lose the race?",
+          "prompt": "What lets the tortoise pass the hare during the race?",
           "options": [
-            "He is too proud and stops to rest",
-            "The fox stops him",
-            "He is slower than the tortoise",
-            "He breaks his leg"
+            "The hare falls and hurts his leg",
+            "The hare goes down the wrong path",
+            "The hare stops and falls asleep",
+            "The hare waits to help the fox"
           ],
-          "answer": 0
+          "answer": 2
         }
       ]
     },
@@ -3486,14 +3486,14 @@
         {
           "id": "classic-lion-mouse-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Hunters are dangerous",
-            "Even a small friend can give great help",
-            "Lions are always kind",
-            "Big animals do not need help"
+            "A mouse helps a lion catch some food",
+            "A lion helps a mouse climb a tree",
+            "A mouse helps hunters catch a lion",
+            "A mouse helps a lion get free"
           ],
-          "answer": 1
+          "answer": 3
         },
         {
           "id": "classic-lion-mouse-q2",
@@ -3510,12 +3510,12 @@
         {
           "id": "classic-lion-mouse-q3",
           "kind": "inference",
-          "prompt": "Why does the lion laugh at the mouse at first?",
+          "prompt": "Why does the lion laugh when the mouse says she can help him?",
           "options": [
-            "He thinks she is too small to help him",
-            "She runs across his face",
-            "He is very happy",
-            "She tells a funny story"
+            "He thinks she is too small to help",
+            "He thinks she has told a funny story",
+            "He thinks she is asking him for food",
+            "He thinks she wants to play a game"
           ],
           "answer": 0
         }
@@ -3612,10 +3612,10 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A garden full of animals",
-            "A fox who plants a vine",
-            "A fox who cannot get the grapes and calls them sour",
-            "A fox who shares grapes"
+            "A fox who grows grapes in a garden",
+            "A fox who gives grapes to her friends",
+            "A fox who wants grapes she cannot get",
+            "A fox who takes grapes from a farmer"
           ],
           "answer": 2
         },
@@ -3636,12 +3636,12 @@
           "kind": "inference",
           "prompt": "Why does the fox say the grapes are sour?",
           "options": [
-            "The gardener told her",
-            "They are green",
-            "She tasted them",
-            "She wants to hide her disappointment"
+            "She eats one and finds it tastes bad",
+            "She feels bad because she cannot get them",
+            "She hears a gardener say they taste bad",
+            "She sees that all the grapes are green"
           ],
-          "answer": 3
+          "answer": 1
         }
       ]
     },
@@ -3734,14 +3734,14 @@
         {
           "id": "classic-ants-grasshopper-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Singing is a waste of time",
-            "Prepare in good times for hard times",
-            "Ants are unkind animals",
-            "Winter is better than summer"
+            "A grasshopper has no winter food after singing all summer",
+            "A grasshopper gives the ants food after a cold winter",
+            "Some ants lose their winter food after leaving it outside",
+            "Some ants ask a grasshopper to find food in summer"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "classic-ants-grasshopper-q2",
@@ -3758,14 +3758,14 @@
         {
           "id": "classic-ants-grasshopper-q3",
           "kind": "inference",
-          "prompt": "Why don't the ants give him grain?",
+          "prompt": "What do the ants say the grasshopper did instead of keeping food for winter?",
           "options": [
-            "They do not see him",
-            "They have no grain",
-            "He did not work to prepare for winter",
-            "He is too loud"
+            "He gave all his food to them",
+            "He slept through all the summer days",
+            "He travelled far away from his home",
+            "He spent all his time singing songs"
           ],
-          "answer": 2
+          "answer": 3
         }
       ]
     },
@@ -3933,14 +3933,14 @@
         {
           "id": "classic-red-riding-hood-q1",
           "kind": "main",
-          "prompt": "What lesson does the girl learn?",
+          "prompt": "Which sentence best describes the girl's visits to her grandmother?",
           "options": [
-            "Listen to good advice and stay on the path",
-            "Wolves are friendly",
-            "Never visit your grandmother",
-            "Flowers are dangerous"
+            "She gets lost twice and asks wolves to show her the way",
+            "She brings a hunter each time to keep her grandmother safe",
+            "She is tricked once, then follows her mother's advice next time",
+            "She finds an empty house, then takes her grandmother back home"
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "id": "classic-red-riding-hood-q2",
@@ -3969,12 +3969,12 @@
         {
           "id": "classic-red-riding-hood-q4",
           "kind": "inference",
-          "prompt": "What did the girl do differently on her later visit?",
+          "prompt": "What did the girl do differently when she met another wolf?",
           "options": [
-            "She stayed at home",
+            "She went back home and stayed with her mother",
             "She went straight to her grandmother and warned her",
-            "She brought a dog",
-            "She took a different road"
+            "She asked a hunter to walk through the forest",
+            "She picked flowers and waited beside the path"
           ],
           "answer": 1
         }
@@ -4136,12 +4136,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "Birds that build a tree",
-            "A mistreated girl who is helped and marries a prince",
-            "A prince who loses his shoe",
-            "A stepmother who goes to a festival"
+            "A girl finds help and marries a prince",
+            "A girl finds gold and buys a palace",
+            "A girl helps her sisters marry two princes",
+            "A girl leaves home to become a queen's servant"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "classic-cinderella-q2",
@@ -4158,26 +4158,26 @@
         {
           "id": "classic-cinderella-q3",
           "kind": "detail",
-          "prompt": "How did the prince keep one of her slippers?",
+          "prompt": "How did the prince get Cinderella's golden slipper?",
           "options": [
-            "She gave it to him",
-            "He found it in the garden",
-            "He put sticky pitch on the stairs",
-            "A bird brought it"
+            "He asked a bird to take it",
+            "He found it beside the garden tree",
+            "He caught it as she threw it",
+            "He made it stick to the stairs"
           ],
-          "answer": 2
+          "answer": 3
         },
         {
           "id": "classic-cinderella-q4",
           "kind": "inference",
-          "prompt": "How did the prince know the stepsisters were lying?",
+          "prompt": "What helped the prince discover the stepsisters' trick?",
           "options": [
-            "The birds warned him and he saw blood",
-            "Cinderella told him",
-            "The slipper was too small",
-            "The king saw them"
+            "Their father explained how they had hurt their feet",
+            "The king showed him their shoes beside the stairs",
+            "The birds warned him, and he saw the blood",
+            "Cinderella told him, and he found the other slipper"
           ],
-          "answer": 0
+          "answer": 2
         }
       ]
     },
@@ -4322,34 +4322,34 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "Four old animals who find a new home together",
-            "A donkey who becomes a famous singer",
-            "Robbers who live in Bremen",
-            "A farmer and his dog"
+            "Four animals become famous musicians after reaching Bremen",
+            "Four animals frighten away robbers and find a home",
+            "Four animals help their owners catch some dangerous robbers",
+            "Four animals build a new house outside Bremen"
           ],
-          "answer": 0
+          "answer": 1
         },
         {
           "id": "classic-bremen-musicians-q2",
           "kind": "detail",
-          "prompt": "Why did the rooster join the group?",
+          "prompt": "What was going to happen to the rooster the next day?",
           "options": [
-            "He wanted to sing in Bremen",
-            "His owner gave him away",
-            "He was lost",
-            "He was going to become soup"
+            "He was going to become soup",
+            "He was going to be sold",
+            "He was going to guard a house",
+            "He was going to carry sacks"
           ],
-          "answer": 3
+          "answer": 0
         },
         {
           "id": "classic-bremen-musicians-q3",
           "kind": "detail",
-          "prompt": "How did the animals frighten the robbers?",
+          "prompt": "How did the animals first frighten the robbers away?",
           "options": [
-            "They hid the food",
-            "They called the police",
-            "They set a fire",
-            "They stood on each other and made a terrible noise"
+            "They threw stones and broke down the door",
+            "They lit a fire and filled the house with smoke",
+            "They hid outside and called for the police",
+            "They climbed on each other and made loud noises"
           ],
           "answer": 3
         },
@@ -4528,12 +4528,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "Birds that eat bread",
-            "Two children who escape a witch and return home",
-            "A family that builds a candy house",
-            "A father who finds jewels"
+            "Two children build a forest house for their family",
+            "Two children help their father search for lost jewels",
+            "Two children escape a witch and return to their father",
+            "Two children help a witch find her missing birds"
           ],
-          "answer": 1
+          "answer": 2
         },
         {
           "id": "classic-hansel-gretel-q2",
@@ -4550,14 +4550,14 @@
         {
           "id": "classic-hansel-gretel-q3",
           "kind": "detail",
-          "prompt": "How did Hansel trick the witch?",
+          "prompt": "How did Hansel make the witch think he was still thin?",
           "options": [
-            "He locked the door",
-            "He hid under the bed",
-            "He ate very little",
-            "He held out a little bone instead of his finger"
+            "He hid most of his food under his bed",
+            "He held out a bone for her to feel",
+            "He asked Gretel to tell her he was ill",
+            "He made his clothes look much too big"
           ],
-          "answer": 3
+          "answer": 1
         },
         {
           "id": "classic-hansel-gretel-q4",
@@ -4739,22 +4739,22 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A statue and a swallow who give everything to help the poor",
-            "A swallow who travels to Egypt",
-            "A prince who lives in a palace",
-            "A mayor who builds a new statue"
+            "A statue and a bird give away riches to help others",
+            "A statue and a bird keep valuable jewels safe from thieves",
+            "A statue and a bird search for a prince's lost palace",
+            "A statue and a bird help a mayor build another city"
           ],
           "answer": 0
         },
         {
           "id": "classic-happy-prince-q2",
           "kind": "detail",
-          "prompt": "What did the swallow take to the poor woman?",
+          "prompt": "What did the swallow take to the woman whose son was ill?",
           "options": [
-            "A sapphire",
-            "Gold leaves",
-            "The ruby from the sword",
-            "Bread"
+            "A blue sapphire",
+            "Some gold leaves",
+            "A red ruby",
+            "Some fresh bread"
           ],
           "answer": 2
         },
@@ -4763,24 +4763,24 @@
           "kind": "detail",
           "prompt": "Why did the Prince become blind?",
           "options": [
-            "Workers damaged him",
-            "The swallow took his eyes away to give to the poor",
-            "He cried too much",
-            "He was struck by lightning"
+            "The workers broke his eyes while moving him",
+            "The winter wind cracked both of his eyes",
+            "He lost his eyes when the statue fell",
+            "He gave his eyes to people in need"
           ],
-          "answer": 1
+          "answer": 3
         },
         {
           "id": "classic-happy-prince-q4",
           "kind": "inference",
-          "prompt": "Why did the swallow stay instead of flying to Egypt?",
+          "prompt": "Why did the swallow decide to stay after the Prince became blind?",
           "options": [
-            "The weather was good",
-            "He was too tired to fly",
-            "He became the Prince's eyes out of love and loyalty",
-            "He was lost"
+            "He wanted to wait for other birds going south",
+            "He cared for the Prince and wanted to help",
+            "He hoped the mayor would build him a shelter",
+            "He needed to learn the way back to Egypt"
           ],
-          "answer": 2
+          "answer": 1
         }
       ]
     },
@@ -4955,24 +4955,24 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A boy who grows peach trees",
-            "Children who build a wall",
-            "A selfish giant who learns to share his garden",
-            "Winter that never comes"
+            "A giant leaves his garden to search for spring",
+            "A boy helps a giant build a stronger wall",
+            "A giant learns to share his garden with children",
+            "Children build a garden beside a giant's empty house"
           ],
           "answer": 2
         },
         {
           "id": "classic-selfish-giant-q2",
           "kind": "detail",
-          "prompt": "What happened in the giant's garden after he built the wall?",
+          "prompt": "What happened inside the garden while the children were kept out?",
           "options": [
-            "Children kept playing",
-            "Winter refused to end",
-            "It was always summer",
-            "The trees grew taller"
+            "Winter stayed through the other seasons",
+            "Summer lasted through the whole year",
+            "Spring returned earlier than anywhere else",
+            "Autumn brought more fruit than before"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "classic-selfish-giant-q3",
@@ -5166,12 +5166,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "Shopping on Christmas Eve",
-            "A couple who each give up a treasure for the other",
-            "A woman who buys an expensive watch",
-            "A man who loses his job"
+            "A couple save money by making their own Christmas gifts",
+            "A couple exchange expensive gifts for things they need more",
+            "A couple find valuable gifts that someone has left behind",
+            "A couple sell precious things to buy each other gifts"
           ],
-          "answer": 1
+          "answer": 3
         },
         {
           "id": "classic-gift-magi-q2",
@@ -5200,12 +5200,12 @@
         {
           "id": "classic-gift-magi-q4",
           "kind": "inference",
-          "prompt": "Why does the narrator call them the wisest gift-givers?",
+          "prompt": "Why does the narrator call Jim and Della wise gift-givers?",
           "options": [
-            "They saved a lot of money",
-            "Their gifts showed great love, even if they could not use them",
-            "They bought the most expensive gifts",
-            "They kept their treasures"
+            "They found useful presents without spending their savings",
+            "They showed love by giving up things they valued",
+            "They chose presents that their whole family could share",
+            "They bought gifts that increased the value of their treasures"
           ],
           "answer": 1
         }
@@ -5377,10 +5377,10 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A policeman who loses his job",
-            "A restaurant in New York",
-            "Two old friends meeting after twenty years in an unexpected way",
-            "A man who finds a diamond"
+            "Two friends open a restaurant where they once ate together",
+            "A policeman helps his friend recover a stolen diamond",
+            "A wanted man meets his old friend, now a policeman",
+            "Two friends travel west to search for a missing man"
           ],
           "answer": 2
         },
@@ -5411,12 +5411,12 @@
         {
           "id": "classic-after-twenty-years-q4",
           "kind": "inference",
-          "prompt": "Why didn't Jimmy arrest Bob himself?",
+          "prompt": "Why did Jimmy ask another officer to arrest Bob?",
           "options": [
-            "He could not bring himself to arrest his old friend",
-            "He was off duty",
-            "He was not sure who Bob was",
-            "Bob ran away"
+            "He found it too painful to arrest his friend",
+            "He was unsure whether Bob was the wanted man",
+            "He had finished work before reaching their meeting place",
+            "He had to follow Bob after he ran away"
           ],
           "answer": 0
         }
@@ -5506,14 +5506,14 @@
         {
           "id": "classic-crow-pitcher-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Water is always easy to find",
-            "Crows cannot fly far",
-            "A clever idea can solve a difficult problem",
-            "Heavy things never move"
+            "A crow breaks a pitcher to get some water",
+            "A crow calls a friend to move a pitcher",
+            "A crow waits for rain to fill a pitcher",
+            "A crow uses small stones to reach some water"
           ],
-          "answer": 2
+          "answer": 3
         },
         {
           "id": "classic-crow-pitcher-q2",
@@ -5530,14 +5530,14 @@
         {
           "id": "classic-crow-pitcher-q3",
           "kind": "inference",
-          "prompt": "Why does the water rise?",
+          "prompt": "What does the crow try before using the small stones?",
           "options": [
-            "The crow pushes the pitcher",
-            "It starts to rain",
-            "Someone adds water",
-            "The pebbles take up space at the bottom"
+            "She tries to drink from a cup",
+            "She tries to push the pitcher over",
+            "She tries to call another crow",
+            "She tries to carry the pitcher home"
           ],
-          "answer": 3
+          "answer": 1
         }
       ]
     },
@@ -5625,14 +5625,14 @@
         {
           "id": "classic-boy-cried-wolf-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Sheep need a big field",
-            "Always shout when you are bored",
-            "Wolves are afraid of villagers",
-            "A liar can lose people's trust"
+            "A boy catches a wolf after calling his friends",
+            "A boy finds his sheep after they run away",
+            "A boy tells lies, so people stop believing him",
+            "A boy scares a wolf by making loud noises"
           ],
-          "answer": 3
+          "answer": 2
         },
         {
           "id": "classic-boy-cried-wolf-q2",
@@ -5744,12 +5744,12 @@
         {
           "id": "classic-town-country-mouse-q1",
           "kind": "main",
-          "prompt": "What does the country mouse learn?",
+          "prompt": "What does the country mouse decide after visiting town?",
           "options": [
-            "A simple, safe life is better for him",
-            "He should move to town",
-            "Town food is the best",
-            "Cats are friendly"
+            "He wants a safe home with simple food",
+            "He wants to stay and enjoy the rich food",
+            "He wants to bring more mice to the town",
+            "He wants to find another house in the town"
           ],
           "answer": 0
         },
@@ -5863,12 +5863,12 @@
         {
           "id": "classic-north-wind-sun-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Travelers should wear coats",
-            "Strong wind is the best weapon",
-            "The Sun is always hot",
-            "Gentleness can succeed where force fails"
+            "The Wind and Sun help a traveler find his coat",
+            "The Wind wins a test by blowing away a coat",
+            "The Sun asks the Wind to warm a cold traveler",
+            "The Sun wins a test by warming a traveler"
           ],
           "answer": 3
         },
@@ -5887,14 +5887,14 @@
         {
           "id": "classic-north-wind-sun-q3",
           "kind": "inference",
-          "prompt": "Why does the traveler take off his coat at the end?",
+          "prompt": "What does the Sun do after the Wind stops?",
           "options": [
-            "The Wind tells him to",
-            "The coat is wet",
-            "He feels warm in the sunshine",
-            "He wants to sleep"
+            "He hides behind a cloud",
+            "He shines gently on the traveler",
+            "He asks the Wind to try again",
+            "He tells the traveler to go home"
           ],
-          "answer": 2
+          "answer": 1
         }
       ]
     },
@@ -5972,14 +5972,14 @@
         {
           "id": "classic-golden-eggs-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Gold is hard to sell",
-            "Greed can take away good fortune",
-            "Be patient with animals",
-            "Hens are very valuable"
+            "A man sells his special hen to buy more gold",
+            "A man loses his golden eggs when his hen escapes",
+            "A man wants more gold and kills his special hen",
+            "A man finds gold inside his hen and becomes richer"
           ],
-          "answer": 1
+          "answer": 2
         },
         {
           "id": "classic-golden-eggs-q2",
@@ -5996,12 +5996,12 @@
         {
           "id": "classic-golden-eggs-q3",
           "kind": "inference",
-          "prompt": "Why does the man lose everything?",
+          "prompt": "Why does the man kill his special hen?",
           "options": [
-            "He wants all the gold at once",
-            "The hen runs away",
-            "He sells the hen",
-            "A thief takes the eggs"
+            "He wants to get all the gold inside her",
+            "He thinks she has stopped laying golden eggs",
+            "He wants to sell her meat at the market",
+            "He thinks she has eaten all his other eggs"
           ],
           "answer": 0
         }
@@ -6081,38 +6081,38 @@
         {
           "id": "classic-dog-shadow-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Wanting too much can make us lose what we have",
-            "Rivers are dangerous",
-            "Always look down on a bridge",
-            "Dogs should not eat meat"
+            "A dog swims across a river to find his food",
+            "A dog gives his food to another dog on a bridge",
+            "A dog catches a fish while looking into a river",
+            "A dog loses his food while trying to get more"
           ],
-          "answer": 0
+          "answer": 3
         },
         {
           "id": "classic-dog-shadow-q2",
           "kind": "detail",
-          "prompt": "What does the dog see in the water?",
+          "prompt": "What does the dog really see when he looks into the water?",
           "options": [
-            "His own reflection",
-            "A fish",
-            "A piece of bread",
-            "Another real dog"
+            "A swimming fish",
+            "His own face",
+            "A second dog",
+            "A fallen bird"
           ],
-          "answer": 0
+          "answer": 1
         },
         {
           "id": "classic-dog-shadow-q3",
           "kind": "inference",
-          "prompt": "Why does the dog lose his meat?",
+          "prompt": "What makes the dog's meat fall into the river?",
           "options": [
-            "He gives it away",
-            "He eats it",
-            "A bird takes it",
-            "He opens his mouth to take the other piece"
+            "He drops it to help another dog",
+            "He jumps in to catch a fish",
+            "He opens his mouth to get more meat",
+            "He puts it down to drink some water"
           ],
-          "answer": 3
+          "answer": 2
         }
       ]
     },
@@ -6200,24 +6200,24 @@
         {
           "id": "classic-fox-crow-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Always share your food",
-            "Flattery is not always friendship",
-            "Crows sing beautifully",
-            "Foxes can climb trees"
+            "A fox uses kind words to take a crow's food",
+            "A fox climbs a tree to get a crow's food",
+            "A crow gives a fox food to help his family",
+            "A crow teaches a fox to sing for his food"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "classic-fox-crow-q2",
           "kind": "detail",
-          "prompt": "How does the fox get the meat?",
+          "prompt": "What does the crow do just before the meat falls?",
           "options": [
-            "He climbs the tree",
-            "He asks politely",
-            "He waits until she sleeps",
-            "He praises the crow so she opens her beak"
+            "She puts her food on another branch",
+            "She flies down to meet the fox",
+            "She closes her eyes and falls asleep",
+            "She opens her beak and makes a sound"
           ],
           "answer": 3
         },
@@ -6226,10 +6226,10 @@
           "kind": "inference",
           "prompt": "Why does the crow open her beak?",
           "options": [
-            "She is hungry",
-            "She wants to show her voice because she feels proud",
-            "She wants to give the fox the meat",
-            "She is afraid"
+            "She wants to give him her food",
+            "She wants him to hear her voice",
+            "She wants to ask him for water",
+            "She wants to tell him to leave"
           ],
           "answer": 1
         }
@@ -6314,14 +6314,14 @@
         {
           "id": "classic-ant-dove-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Doves are faster than ants",
-            "Friends are safe when they help each other",
-            "Hunters never give up",
-            "Rivers carry leaves"
+            "An ant and a dove look for a new home",
+            "An ant and a dove find food for a hunter",
+            "An ant and a dove each save the other",
+            "An ant and a dove build a nest together"
           ],
-          "answer": 1
+          "answer": 2
         },
         {
           "id": "classic-ant-dove-q2",
@@ -6428,14 +6428,14 @@
         {
           "id": "classic-bundle-sticks-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Arguments make you strong",
-            "People are stronger when they stand together",
-            "Sticks are easy to break",
-            "Fathers like to play games"
+            "A father uses sticks to show his sons they are stronger together",
+            "A father asks his sons to find sticks for a cooking fire",
+            "Some sons use sticks to build a new house for their father",
+            "Some sons sell sticks to buy food for their family"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "classic-bundle-sticks-q2",
@@ -6452,14 +6452,14 @@
         {
           "id": "classic-bundle-sticks-q3",
           "kind": "inference",
-          "prompt": "Why does the father use a bundle of sticks?",
+          "prompt": "What does the father want his sons to learn from the sticks?",
           "options": [
-            "To make a fire",
-            "To sell the sticks",
-            "To show his sons the value of unity",
-            "To punish them"
+            "They can earn money by selling sticks",
+            "They should collect wood before it gets cold",
+            "They can make a fire with dry sticks",
+            "They are stronger when they stay together"
           ],
-          "answer": 2
+          "answer": 3
         }
       ]
     },
@@ -6542,14 +6542,14 @@
         {
           "id": "classic-milkmaid-pail-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Dresses are important",
-            "Milk is expensive",
-            "Chickens lay many eggs",
-            "Plans need care before they can become real"
+            "A milkmaid sells her milk and buys a fine dress",
+            "A milkmaid dreams about money and drops her milk",
+            "A milkmaid buys some eggs and gives them away",
+            "A milkmaid loses her money while buying new clothes"
           ],
-          "answer": 3
+          "answer": 1
         },
         {
           "id": "classic-milkmaid-pail-q2",
@@ -6566,14 +6566,14 @@
         {
           "id": "classic-milkmaid-pail-q3",
           "kind": "inference",
-          "prompt": "Why does the milk spill?",
+          "prompt": "Why does the milk fall from the milkmaid's head?",
           "options": [
-            "The pail breaks",
-            "She moves her head while daydreaming",
-            "Someone pushes her",
-            "She trips on a stone"
+            "She walks into a low tree branch",
+            "She falls over a stone on the road",
+            "She moves her head as she dreams",
+            "She stops to pick up some money"
           ],
-          "answer": 1
+          "answer": 2
         }
       ]
     },
@@ -6651,14 +6651,14 @@
         {
           "id": "classic-dog-manger-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Hay is good food for dogs",
-            "Dogs are good guards",
-            "Oxen should work less",
-            "Keeping others from something we cannot use is selfish"
+            "A dog keeps hungry oxen away from their hay",
+            "A dog helps hungry oxen find some fresh hay",
+            "Some oxen take a sleeping dog's food away",
+            "Some oxen help a dog carry hay back home"
           ],
-          "answer": 3
+          "answer": 0
         },
         {
           "id": "classic-dog-manger-q2",
@@ -6675,14 +6675,14 @@
         {
           "id": "classic-dog-manger-q3",
           "kind": "inference",
-          "prompt": "Why is the dog's behavior strange?",
+          "prompt": "Why do the oxen find the dog's actions strange?",
           "options": [
-            "He is very hungry",
-            "He is not tired",
-            "He cannot eat hay himself",
-            "He likes the oxen"
+            "He has already eaten all the hay",
+            "He has brought the hay for them",
+            "He wants them to take the hay",
+            "He cannot eat the hay himself"
           ],
-          "answer": 2
+          "answer": 3
         }
       ]
     },
@@ -6760,26 +6760,26 @@
         {
           "id": "classic-ass-lion-skin-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "A fine disguise cannot hide who we are forever",
-            "Lions are the strongest animals",
-            "New clothes make you brave",
-            "Foxes are afraid of lions"
+            "An ass helps a fox find a lion in the forest",
+            "An ass looks like a lion, but his voice shows the truth",
+            "A fox wears a lion's skin to frighten a hungry ass",
+            "A lion teaches an ass how to frighten the other animals"
           ],
-          "answer": 0
+          "answer": 1
         },
         {
           "id": "classic-ass-lion-skin-q2",
           "kind": "detail",
-          "prompt": "How does the fox know the truth?",
+          "prompt": "How does the fox know the animal is an ass?",
           "options": [
-            "She hears him bray",
             "She sees his ears",
-            "Another animal tells her",
-            "She smells him"
+            "She sees his feet",
+            "She hears his voice",
+            "She hears his name"
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "id": "classic-ass-lion-skin-q3",
@@ -6911,10 +6911,10 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A jealous queen who tries to harm Snow White",
-            "A magic mirror that breaks",
-            "A prince who sells apples",
-            "Seven dwarfs who find gold"
+            "A queen tries to kill Snow White because of her beauty",
+            "Snow White helps a queen find her lost magic mirror",
+            "A prince saves seven dwarfs from a dangerous forest hunter",
+            "Seven dwarfs teach Snow White how to make magic apples"
           ],
           "answer": 0
         },
@@ -7072,12 +7072,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A woman who grows a garden",
-            "An enchantress who sings",
-            "A girl kept in a tower who finds love and freedom",
-            "A prince who builds a tower"
+            "A girl grows special plants that make a prince well",
+            "A girl builds a tower to hide from a prince",
+            "A girl uses her singing to become queen of a kingdom",
+            "A girl kept in a tower later finds her prince again"
           ],
-          "answer": 2
+          "answer": 3
         },
         {
           "id": "classic-rapunzel-q2",
@@ -7094,24 +7094,24 @@
         {
           "id": "classic-rapunzel-q3",
           "kind": "detail",
-          "prompt": "How did the prince see again?",
+          "prompt": "How did the prince become able to see again?",
           "options": [
-            "The enchantress cured him",
+            "A doctor put special medicine into his eyes",
             "Rapunzel's tears fell into his eyes",
-            "A doctor helped him",
-            "He rested for a year"
+            "The garden woman gave him a drink",
+            "Rapunzel washed his eyes with river water"
           ],
           "answer": 1
         },
         {
           "id": "classic-rapunzel-q4",
           "kind": "inference",
-          "prompt": "Why did the enchantress cut off Rapunzel's hair?",
+          "prompt": "Why did the woman cut off Rapunzel's hair?",
           "options": [
-            "It was summer",
-            "The hair was too long",
-            "She learned about the prince's visits",
-            "Rapunzel asked her to"
+            "Rapunzel had asked her to make it shorter",
+            "The prince had asked for it to make a ladder",
+            "She had discovered that the prince was visiting Rapunzel",
+            "She had found that it could not reach the ground"
           ],
           "answer": 2
         }
@@ -7233,12 +7233,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A prince who grows flowers",
-            "A king who collects spindles",
-            "A curse that makes a princess sleep for a hundred years",
-            "Twelve wise women who argue"
+            "A princess falls into a long sleep and later wakes",
+            "A princess searches for a castle hidden behind flowers",
+            "A king asks twelve women to find his missing daughter",
+            "A prince builds a castle for a sleeping king"
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "id": "classic-sleeping-beauty-q2",
@@ -7267,14 +7267,14 @@
         {
           "id": "classic-sleeping-beauty-q4",
           "kind": "inference",
-          "prompt": "Why didn't the king's order stop the curse?",
+          "prompt": "Why did the princess still find a spindle after the king ordered them destroyed?",
           "options": [
-            "The king forgot",
-            "The wise women helped her",
-            "One old woman in a tower still had a spindle",
-            "The princess hid a spindle"
+            "The king had allowed her to keep one",
+            "The wise women had brought one as a gift",
+            "The princess had hidden one in her room",
+            "An old woman still had one in the tower"
           ],
-          "answer": 2
+          "answer": 3
         }
       ]
     },
@@ -7394,12 +7394,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A king who loses a golden ball",
-            "A servant with an iron heart",
-            "A frog that lives in a palace forever",
-            "A princess who must keep a promise to a frog who is really a prince"
+            "A princess helps a king find a lost golden crown",
+            "A princess must keep her promise to a frog",
+            "A princess leaves her palace to live beside a well",
+            "A princess asks a servant to bring back her ball"
           ],
-          "answer": 3
+          "answer": 1
         },
         {
           "id": "classic-frog-prince-q2",
@@ -7430,10 +7430,10 @@
           "kind": "inference",
           "prompt": "Why did the iron bands around Henry's heart break?",
           "options": [
-            "The carriage hit a stone",
-            "He was angry",
-            "He was very happy that his master was free",
-            "He was injured"
+            "He was sad that his master was leaving",
+            "He was angry about the journey to the palace",
+            "He was happy that his master was free",
+            "He was frightened that his master would fall ill"
           ],
           "answer": 2
         }
@@ -7555,12 +7555,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A king who loses his gold",
-            "A little man who becomes king",
-            "A queen who saves her child by guessing a name",
-            "A miller who spins gold"
+            "A queen saves her child by learning a man's name",
+            "A king searches for someone who has stolen his gold",
+            "A miller teaches his daughter how to turn straw into gold",
+            "A little man helps a miller become a powerful king"
           ],
-          "answer": 2
+          "answer": 0
         },
         {
           "id": "classic-rumpelstiltskin-q2",
@@ -7577,26 +7577,26 @@
         {
           "id": "classic-rumpelstiltskin-q3",
           "kind": "detail",
-          "prompt": "How did the queen learn his name?",
+          "prompt": "How did the queen learn the little man's name?",
           "options": [
-            "A messenger heard him singing it in the forest",
-            "She guessed it at once",
-            "The king found it",
-            "He told her"
+            "The king found it written inside the palace",
+            "Her father remembered it from an earlier meeting",
+            "The little man told her while making gold",
+            "A messenger heard him singing it in the forest"
           ],
-          "answer": 0
+          "answer": 3
         },
         {
           "id": "classic-rumpelstiltskin-q4",
           "kind": "inference",
-          "prompt": "Why was the miller's daughter in trouble at the start?",
+          "prompt": "Why did the king's first order cause a problem for the miller's daughter?",
           "options": [
-            "She broke the spinning wheel",
-            "She lost her necklace",
-            "She stole gold",
-            "Her father boasted something untrue about her"
+            "She had lost the key to the room",
+            "She could not turn straw into gold",
+            "She had brought too little straw with her",
+            "She could not find her father's gold ring"
           ],
-          "answer": 3
+          "answer": 1
         }
       ]
     },
@@ -7714,14 +7714,14 @@
         {
           "id": "classic-golden-goose-q1",
           "kind": "main",
-          "prompt": "What is the lesson of the story?",
+          "prompt": "What is the story mainly about?",
           "options": [
-            "Geese are dangerous",
-            "Kindness can bring help when you need it",
-            "Older brothers are always right",
-            "Never visit an inn"
+            "An older brother sells a golden goose to buy a palace",
+            "A princess searches for a goose stolen from her garden",
+            "A kind young man gets magical help and marries a princess",
+            "A little grey man becomes king by making a princess laugh"
           ],
-          "answer": 1
+          "answer": 2
         },
         {
           "id": "classic-golden-goose-q2",
@@ -7740,24 +7740,24 @@
           "kind": "detail",
           "prompt": "What made the princess laugh?",
           "options": [
-            "A dancing bear",
-            "The little grey man",
-            "A joke from the king",
-            "The goose and the long line of people stuck to it"
+            "The goose with people stuck behind it",
+            "The little man dancing beside a tree",
+            "The two brothers telling jokes together",
+            "The king chasing geese through the city"
           ],
-          "answer": 3
+          "answer": 0
         },
         {
           "id": "classic-golden-goose-q4",
           "kind": "inference",
-          "prompt": "Why did the older brothers get hurt?",
+          "prompt": "How did the older brothers treat the little grey man?",
           "options": [
-            "They were not strong",
-            "They got lost",
-            "They refused to share their food",
-            "They cut the wrong tree"
+            "They asked him to carry their wood",
+            "They gave him all their food",
+            "They helped him find his way home",
+            "They refused to share their food"
           ],
-          "answer": 2
+          "answer": 3
         }
       ]
     },
@@ -7877,12 +7877,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "Elves who secretly help a poor shoemaker",
-            "A wife who makes shoes",
-            "A shoemaker who sells clothes",
-            "Customers who do not pay"
+            "Elves teach a shoemaker's wife how to make shoes",
+            "Elves secretly make shoes and help a poor shoemaker",
+            "A shoemaker makes clothes to sell instead of shoes",
+            "A shoemaker searches for customers who have not paid"
           ],
-          "answer": 0
+          "answer": 1
         },
         {
           "id": "classic-elves-shoemaker-q2",
@@ -7911,14 +7911,14 @@
         {
           "id": "classic-elves-shoemaker-q4",
           "kind": "inference",
-          "prompt": "Why did the elves never return?",
+          "prompt": "How did the elves react to the clothes and shoes?",
           "options": [
-            "They had their gifts and their work was done",
-            "The shoemaker locked the door",
-            "They lost the way",
-            "They were angry"
+            "They left the gifts on the table",
+            "They asked the couple for more leather",
+            "They put on the gifts and danced",
+            "They took the gifts to a customer"
           ],
-          "answer": 0
+          "answer": 2
         }
       ]
     },
@@ -8038,36 +8038,36 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A parson who catches thieves",
-            "A wolf who loves his parents",
-            "A cow that can talk",
-            "The adventures of a very small but clever boy"
+            "A tiny boy survives dangerous adventures and returns to his parents",
+            "A tiny boy helps two strangers catch thieves in a forest",
+            "A tiny boy leaves his parents to live with a friendly wolf",
+            "A tiny boy teaches his father's horse to speak to people"
           ],
-          "answer": 3
+          "answer": 0
         },
         {
           "id": "classic-tom-thumb-q2",
           "kind": "detail",
-          "prompt": "How did Tom guide his father's horse?",
+          "prompt": "Where did Tom sit while guiding his father's horse?",
           "options": [
-            "Sitting inside the horse's ear",
-            "Running ahead",
-            "From the cart",
-            "Holding the reins"
+            "On top of the moving cart",
+            "On his father's left shoulder",
+            "On the back of the horse",
+            "Inside one of the horse's ears"
           ],
-          "answer": 0
+          "answer": 3
         },
         {
           "id": "classic-tom-thumb-q3",
           "kind": "detail",
           "prompt": "How did Tom get out of the wolf?",
           "options": [
-            "His parents killed the wolf and freed him",
-            "He climbed out",
-            "The wolf let him go",
-            "A hunter helped"
+            "He climbed up and escaped through its mouth",
+            "His parents killed it and carefully freed him",
+            "A hunter caught it and made it free him",
+            "The wolf opened its mouth and let him leave"
           ],
-          "answer": 0
+          "answer": 1
         },
         {
           "id": "classic-tom-thumb-q4",
@@ -8199,12 +8199,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A wolf who tricks young goats and is defeated by their mother",
-            "A wolf who learns to sing",
-            "Seven goats who build a clock",
-            "A mother goat who gets lost"
+            "Young goats teach a wolf to speak like their mother",
+            "A mother goat builds a clock to protect her children",
+            "A wolf tricks young goats, but their mother saves them",
+            "A wolf helps young goats find their missing mother"
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "id": "classic-wolf-seven-kids-q2",
@@ -8233,14 +8233,14 @@
         {
           "id": "classic-wolf-seven-kids-q4",
           "kind": "inference",
-          "prompt": "Why did the goats open the door the third time?",
+          "prompt": "Why did the young goats believe the wolf on his third visit?",
           "options": [
-            "The door was broken",
-            "The wolf's voice was soft and his paw looked white",
-            "Their mother told them to",
-            "They were hungry"
+            "His voice was soft and his paw looked white",
+            "He wore their mother's coat and carried her basket",
+            "He gave their mother's name and brought some food",
+            "His voice was rough and his paw looked black"
           ],
-          "answer": 1
+          "answer": 0
         }
       ]
     },
@@ -8360,12 +8360,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A woman who sells cloaks",
-            "A soldier who discovers where the princesses dance at night",
-            "Twelve princes who build boats",
-            "A king who loves shoes"
+            "A soldier searches for a woman who has stolen his cloak",
+            "Twelve princes build boats to help a soldier cross a lake",
+            "A king asks his daughters to find a missing soldier",
+            "A soldier discovers where twelve princesses secretly dance at night"
           ],
-          "answer": 1
+          "answer": 3
         },
         {
           "id": "classic-twelve-dancing-princesses-q2",
@@ -8394,12 +8394,12 @@
         {
           "id": "classic-twelve-dancing-princesses-q4",
           "kind": "inference",
-          "prompt": "Why did the princes before the soldier fail?",
+          "prompt": "Why did the soldier probably pour away the wine before pretending to sleep?",
           "options": [
-            "The king stopped them",
-            "They drank the wine and fell asleep",
-            "They were not brave",
-            "The door was locked"
+            "He wanted to keep some wine for the king",
+            "He thought the wine might make him fall asleep",
+            "He planned to offer the wine to the youngest princess",
+            "He needed an empty cup to hide the branches"
           ],
           "answer": 1
         }
@@ -8521,12 +8521,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A giant who becomes a tailor",
-            "A king who catches a unicorn",
-            "A princess who sews clothes",
-            "A small tailor who wins by being clever"
+            "A tailor teaches a giant how to make clothes",
+            "A tailor helps a king find a missing unicorn",
+            "A tailor wins difficult tasks by using clever tricks",
+            "A tailor searches for a princess who has disappeared"
           ],
-          "answer": 3
+          "answer": 2
         },
         {
           "id": "classic-brave-little-tailor-q2",
@@ -8555,12 +8555,12 @@
         {
           "id": "classic-brave-little-tailor-q4",
           "kind": "inference",
-          "prompt": "Why did the giant think the tailor was strong?",
+          "prompt": "Why did the words on the tailor's belt impress the giant?",
           "options": [
-            "He misunderstood the words on his belt",
-            "He saw him lift a tree",
-            "He saw him fight",
-            "The king told him"
+            "He thought the tailor had killed seven men",
+            "He thought the tailor had caught seven unicorns",
+            "He thought the tailor had carried seven trees",
+            "He thought the tailor had defeated seven kings"
           ],
           "answer": 0
         }
@@ -8682,12 +8682,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A boy who looks after geese",
-            "A princess whose servant steals her place, until the truth comes out",
-            "A talking horse who becomes king",
-            "A queen who sews a cloth"
+            "A princess helps a boy find geese stolen from the palace",
+            "A talking horse helps a servant become ruler of a kingdom",
+            "A queen travels far to find her daughter's missing horse",
+            "A servant takes a princess's place until the truth comes out"
           ],
-          "answer": 1
+          "answer": 3
         },
         {
           "id": "classic-goose-girl-q2",
@@ -8704,12 +8704,12 @@
         {
           "id": "classic-goose-girl-q3",
           "kind": "detail",
-          "prompt": "How did the old king learn the truth?",
+          "prompt": "How did the old king learn what had happened to the princess?",
           "options": [
-            "The servant confessed",
-            "He listened while she spoke to an iron stove",
-            "Falada told him",
-            "Conrad told him"
+            "The servant told him what she had done",
+            "He heard the princess talking to a stove",
+            "He read a letter from the princess's mother",
+            "Conrad told him what happened on the journey"
           ],
           "answer": 1
         },
@@ -8883,24 +8883,24 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A bird rejected for being different who grows into a swan",
-            "A farmer who keeps swans",
-            "A cat and a hen who travel",
-            "A duck who builds a nest"
+            "A farmer raises young swans and teaches them how to fly",
+            "A duck leads the farmyard animals to a safer new home",
+            "A lonely young bird grows into a swan and finds acceptance",
+            "A cat and a hen leave home to search for friends"
           ],
-          "answer": 0
+          "answer": 2
         },
         {
           "id": "classic-ugly-duckling-q2",
           "kind": "detail",
-          "prompt": "What did the cat and the hen value?",
+          "prompt": "How did the cat and hen judge the young bird?",
           "options": [
-            "Swimming",
-            "Their own abilities, like purring and laying eggs",
-            "Flying",
-            "Music"
+            "By whether he could do the things they could",
+            "By whether he could bring food to the cottage",
+            "By whether he could swim faster than the ducks",
+            "By whether he could behave politely during meals"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "classic-ugly-duckling-q3",
@@ -9084,24 +9084,24 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "People pretending to see clothes because they fear looking foolish",
-            "A procession that is cancelled",
-            "A child who becomes emperor",
-            "A tailor who makes beautiful cloth"
+            "People cancel a parade because the emperor loses his clothes",
+            "A child becomes emperor after finding some valuable hidden cloth",
+            "A tailor makes beautiful clothes that change colour in sunlight",
+            "People pretend to see clothes because they fear looking foolish"
           ],
-          "answer": 0
+          "answer": 3
         },
         {
           "id": "classic-emperors-clothes-q2",
           "kind": "detail",
-          "prompt": "What did the swindlers say about their cloth?",
+          "prompt": "According to the two men, who could not see their cloth?",
           "options": [
-            "It changed color",
-            "It never wore out",
-            "It was very warm",
-            "Foolish or unfit people could not see it"
+            "People who had never worn expensive clothes",
+            "People who were stupid or bad at their jobs",
+            "People who had no money to buy silk",
+            "People who disliked the emperor or his officials"
           ],
-          "answer": 3
+          "answer": 1
         },
         {
           "id": "classic-emperors-clothes-q3",
@@ -9118,14 +9118,14 @@
         {
           "id": "classic-emperors-clothes-q4",
           "kind": "inference",
-          "prompt": "Why did the ministers praise the invisible cloth?",
+          "prompt": "Why did the officials say the cloth was wonderful?",
           "options": [
-            "The emperor paid them",
-            "They were afraid of seeming stupid or unfit",
-            "They could really see it",
-            "They wanted to buy it"
+            "They hoped to receive some of the cloth as payment",
+            "They saw real cloth that the emperor could not see",
+            "They feared looking stupid or bad at their jobs",
+            "They wanted the emperor to wear their favourite colours"
           ],
-          "answer": 1
+          "answer": 2
         }
       ]
     },
@@ -9285,12 +9285,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A toad who marries a prince",
-            "A swallow who builds a house",
-            "A mole who loves the sun",
-            "A tiny girl's journey to find a place where she belongs"
+            "A tiny girl faces difficulties before finding a happy home",
+            "A tiny girl helps a toad find a prince to marry",
+            "A tiny girl builds a house for a swallow and mouse",
+            "A tiny girl teaches a mole to enjoy the sunlight"
           ],
-          "answer": 3
+          "answer": 0
         },
         {
           "id": "classic-thumbelina-q2",
@@ -9307,12 +9307,12 @@
         {
           "id": "classic-thumbelina-q3",
           "kind": "detail",
-          "prompt": "Who carried her to the warm country?",
+          "prompt": "Who carried Thumbelina to the warm country?",
           "options": [
             "The mole",
-            "A butterfly",
-            "A beetle",
-            "The swallow she had cared for"
+            "The butterfly",
+            "The beetle",
+            "The swallow"
           ],
           "answer": 3
         },
@@ -9321,12 +9321,12 @@
           "kind": "inference",
           "prompt": "Why did Thumbelina not want to marry the mole?",
           "options": [
-            "The mouse did not like him",
-            "He was poor",
-            "She dreaded a life without the sun",
-            "He was too small"
+            "She wanted a husband who had more money",
+            "She wanted to live where she could enjoy sunlight",
+            "She wanted to stay because the mouse disliked him",
+            "She wanted someone smaller than herself to marry"
           ],
-          "answer": 2
+          "answer": 1
         }
       ]
     },
@@ -9491,12 +9491,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "Sisters who cut their hair for fun",
-            "A mermaid who gives up much for love and chooses not to harm the prince",
-            "A sea witch who wants a voice",
-            "A prince who becomes a fish"
+            "A mermaid helps her sisters escape from a dangerous sea witch",
+            "A mermaid helps a prince become king of the underwater world",
+            "A mermaid gives up much for love but refuses to kill",
+            "A mermaid takes a princess's place and marries a human prince"
           ],
-          "answer": 1
+          "answer": 2
         },
         {
           "id": "classic-little-mermaid-q2",
@@ -9712,46 +9712,46 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A reindeer that finds roses",
-            "Gerda's long journey to save Kay with her loving heart",
-            "A mirror that makes people beautiful",
-            "A robber girl who becomes a queen"
+            "Gerda travels far and saves Kay through her love",
+            "Gerda follows a reindeer to find roses for her garden",
+            "Kay searches for a mirror that will make him beautiful",
+            "A robber girl helps Gerda become the next Snow Queen"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "classic-snow-queen-q2",
           "kind": "detail",
-          "prompt": "What changed Kay at the start?",
+          "prompt": "What first caused Kay to become cruel?",
           "options": [
-            "A cold winter",
-            "Pieces of a magic mirror in his eye and heart",
-            "The Snow Queen's sledge",
-            "An old woman's garden"
+            "A spell hidden in the winter snow",
+            "A ride through town on the Queen's sledge",
+            "Flowers growing in an old woman's garden",
+            "Mirror pieces entering his eye and heart"
           ],
-          "answer": 1
+          "answer": 3
         },
         {
           "id": "classic-snow-queen-q3",
           "kind": "detail",
-          "prompt": "What did the wise Finnish woman say was Gerda's greatest strength?",
+          "prompt": "Who told the reindeer that Gerda's loving heart was her greatest strength?",
           "options": [
-            "Her warm clothes",
-            "Her loving heart",
-            "Her reindeer",
-            "Her red shoes"
+            "The woman with the garden",
+            "The wise Finnish woman",
+            "The princess in the palace",
+            "The girl with the robbers"
           ],
           "answer": 1
         },
         {
           "id": "classic-snow-queen-q4",
           "kind": "inference",
-          "prompt": "What finally freed Kay?",
+          "prompt": "What helped Kay recover from the effects of the broken mirror?",
           "options": [
-            "Summer sunshine",
-            "The Snow Queen's kiss",
-            "Gerda's warm tears and familiar song",
-            "The robber girl's knife"
+            "The Snow Queen's kisses and her cold palace",
+            "The Finnish woman's words and the reindeer's visit",
+            "Gerda's warm tears and her familiar song",
+            "The princess's gifts and the robber girl's kindness"
           ],
           "answer": 2
         }
@@ -9913,24 +9913,24 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A family dinner on New Year's Eve",
-            "A poor girl's last night, comforted by visions in the match light",
-            "A girl who sells many matches",
-            "A grandmother who buys matches"
+            "A dying girl imagines warmth and love in match light",
+            "A lost girl finds her family after searching snowy streets",
+            "A poor girl sells enough matches to buy a warm home",
+            "A lonely girl finds work in her grandmother's busy shop"
           ],
-          "answer": 1
+          "answer": 0
         },
         {
           "id": "classic-little-match-girl-q2",
           "kind": "detail",
           "prompt": "Why was the girl afraid to go home?",
           "options": [
-            "Her house was far",
-            "It was too dark",
-            "She had no money and her father would beat her",
-            "She had lost her way"
+            "She thought her father had already left",
+            "She had forgotten which street she lived on",
+            "She feared the carriages outside her house",
+            "Her father would beat her for bringing no money"
           ],
-          "answer": 2
+          "answer": 3
         },
         {
           "id": "classic-little-match-girl-q3",
@@ -9947,14 +9947,14 @@
         {
           "id": "classic-little-match-girl-q4",
           "kind": "inference",
-          "prompt": "Why did she light all the remaining matches at once?",
+          "prompt": "Why did the girl light all the remaining matches together?",
           "options": [
-            "Because they were wet",
-            "To sell them faster",
-            "To keep her grandmother with her",
-            "To warm the street"
+            "To make the Christmas tree appear again",
+            "To keep her grandmother near her",
+            "To bring back the table of food",
+            "To see the warm iron stove again"
           ],
-          "answer": 2
+          "answer": 1
         }
       ]
     },
@@ -10114,10 +10114,10 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A goblin who rules the toys",
-            "A boy who loses all his toys",
-            "A one-legged tin soldier who stays steadfast through his adventures",
-            "A fish that eats paper boats"
+            "A tin soldier leaves his owner to find a new home",
+            "A tin soldier leads a group of toys against a goblin",
+            "A tin soldier faces danger while thinking of a paper dancer",
+            "A tin soldier helps a lost boy find his way home"
           ],
           "answer": 2
         },
@@ -10136,24 +10136,24 @@
         {
           "id": "classic-steadfast-tin-soldier-q3",
           "kind": "detail",
-          "prompt": "How did the soldier return to the same house?",
+          "prompt": "How did the soldier return to the house where his journey began?",
           "options": [
-            "A fish that swallowed him was cooked there",
-            "The boy found him in the street",
-            "The rat brought him",
-            "A bird carried him"
+            "He was carried there inside a fish",
+            "The boy found him beside the street",
+            "The rat brought him through a passage",
+            "The two boys carried his boat back"
           ],
           "answer": 0
         },
         {
           "id": "classic-steadfast-tin-soldier-q4",
           "kind": "inference",
-          "prompt": "What does the heart-shaped lump suggest?",
+          "prompt": "What shape did the soldier's tin form after he melted?",
           "options": [
-            "The boy wanted a heart",
-            "The fire was very small",
-            "He was made of gold",
-            "His love for the dancer lasted to the end"
+            "A star",
+            "A circle",
+            "A square",
+            "A heart"
           ],
           "answer": 3
         }
@@ -10315,12 +10315,12 @@
           "kind": "main",
           "prompt": "What is the story mainly about?",
           "options": [
-            "A king who hunts swans",
-            "Eleven princes who build a palace",
-            "A queen who weaves shirts",
-            "A sister who silently works to free her brothers from a spell"
+            "A king searches for eleven swans that have disappeared",
+            "A girl saves her brothers by making shirts in silence",
+            "Eleven princes build a palace for their younger sister",
+            "A queen makes magic shirts to protect her children"
           ],
-          "answer": 3
+          "answer": 1
         },
         {
           "id": "classic-wild-swans-q2",
@@ -10349,14 +10349,14 @@
         {
           "id": "classic-wild-swans-q4",
           "kind": "inference",
-          "prompt": "Why didn't Elisa defend herself when she was accused?",
+          "prompt": "Why didn't Elisa explain that she had done nothing wrong?",
           "options": [
-            "Speaking would bring death to her brothers",
-            "Nobody asked her",
-            "She was guilty",
-            "She did not understand the language"
+            "She wanted to speak only after her father arrived",
+            "She hoped the adviser would explain everything for her",
+            "She knew her brothers would die if she spoke",
+            "She did not know that people thought she was a witch"
           ],
-          "answer": 0
+          "answer": 2
         }
       ]
     }
