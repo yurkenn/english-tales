@@ -59,6 +59,28 @@ Mevcut Firebase CLI oturumu proje bağlantısını okumaya ve Hosting yayınına
 
 Rapor okuması için `analytics.readonly`, boyut/ayar değişikliği için ayrıca `analytics.edit` kapsamı gerekir. [Google Cloud CLI belgesi](https://docs.cloud.google.com/sdk/gcloud/reference/auth/application-default/login), Google Cloud dışındaki kapsamlar için kendi OAuth Client ID dosyasıyla `--client-id-file` kullanılmasını ister. Kullanıcının Google yetkilendirmesi olmadan bu kapsamlar eklenmiş sayılmaz. Kimlik bilgileri depoya veya belgelere eklenmez.
 
+## CLI ile devam
+
+`tooling/analytics_cli.py` Google Cloud CLI ve Python 3 standart kütüphanesini kullanır. Varsayılan hedef property `400061574`, Android stream `6404716366`; başka hedef için `--property` ve `--stream` birlikte belirtilebilir.
+
+1. [Projenin OAuth istemcileri sayfasında](https://console.cloud.google.com/auth/clients?project=english-tales-77d32) **Create client → Desktop app** seç. Gerekirse projenin OAuth uygulama/audience ayarlarını tamamla ve test kullanıcısı olarak kendi Google hesabını ekle. JSON dosyasını Git dışında, örneğin Downloads altında tut; içeriğini sohbete yapıştırma. Android/Web istemci JSON'u veya servis hesabı anahtarı bu akışın yerine geçmez.
+2. Google Cloud CLI kurulu bir terminalde aşağıdaki komutları çalıştır. `login` Google onay sayfasını yerel tarayıcıda açar. `--allow-edit`, yalnız `mode` boyutunu ekleme işi için Analytics düzenleme kapsamını da ister; yalnız okuma için bu bayrağı kaldır.
+
+```sh
+python3 tooling/analytics_cli.py --config-dir /tmp/english-tales-analytics-auth login \
+  --client-id-file "$HOME/Downloads/client_secret_DESKTOP.json" --allow-edit
+python3 tooling/analytics_cli.py --config-dir /tmp/english-tales-analytics-auth inspect
+python3 tooling/analytics_cli.py --config-dir /tmp/english-tales-analytics-auth ensure-practice-mode
+```
+
+Dosya adı örnektir; indirilen gerçek dosyanın yolunu kullan. `gcloud` PATH üzerinde değilse alt komuttan önce `--gcloud /tam/yol/gcloud` belirt. Seçilen dizin yalnız bu iş için olmalıdır; Git checkout'u içinde olamaz ve izinleri 0700 yapılır. İzole gcloud dizinindeki ADC dosyası yenileme kimlik bilgisi içerir; paylaşma veya commit etme. `/tmp` temizlenince yeniden giriş gerekebilir. İş bitince aynı dizinle `gcloud auth application-default revoke` kullanarak bu oturumu geri çekebilirsin.
+
+`inspect` property, retention ve stream metadata'sını okur; Realtime olay sayılarını yalnız Android stream'ine filtreler. Retention/reklam/veri paylaşımı ayarlarını değiştirmez. Boş Realtime sonucu başarılı alım veya kapalı katılım kanıtı değildir. `mode` event boyutu Realtime API'de desteklenmez; parametreyi DebugView'da, işlenmiş kırılımı standart raporda doğrula. `ensure-practice-mode`, tüm boyut sayfalarını kontrol eder ve yalnız mevcut EVENT `mode` yoksa oluşturur; önceki okuma başarısız olursa yazma yapmaz. Diğer panel raporları/cohort kurulmuş sayılmaz.
+
+Google API `SERVICE_DISABLED` yanıtı verirse proje yöneticisi Analytics Admin API ve Analytics Data API'yi etkinleştirmelidir. `ACCESS_TOKEN_SCOPE_INSUFFICIENT` için ilgili kapsamla tekrar `login`; `PERMISSION_DENIED` için ayrıca GA property rolünü kontrol et. Araç Google'ın ham hata mesajını veya erişim token'ını yazdırmaz.
+
+Yerel doğrulama: `python3 -m unittest discover -s tooling -p 'test_analytics_cli.py' -v` (6 test). Sahte API testleri canlı OAuth/Analytics kabulünün yerine geçmez.
+
 ## Birincil kaynaklar
 
 - [Firebase: veri toplama ve reklam kimliği ayarları](https://firebase.google.com/docs/analytics/android/configure-data-collection)

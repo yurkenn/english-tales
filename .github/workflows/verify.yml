@@ -18,6 +18,7 @@ jobs:
           python-version: '3.13'
       - run: python tooling/verify_repository.py
       - run: python tooling/test_elf_alignment.py
+      - run: python -m unittest discover -s tooling -p 'test_analytics_cli.py' -v
   backend:
     runs-on: ubuntu-24.04
     defaults:
