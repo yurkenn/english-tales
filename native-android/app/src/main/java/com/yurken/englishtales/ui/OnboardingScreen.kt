@@ -13,6 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -24,6 +25,11 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
     var level by rememberSaveable { mutableStateOf("") }
     var genre by rememberSaveable { mutableStateOf("") }
     var goal by rememberSaveable { mutableIntStateOf(1) }
+    var placement by rememberSaveable { mutableStateOf(false) }
+    if (placement) {
+        PlacementScreen(onUseLevel = { level=it; step=2; placement=false }, onCancel = { placement=false })
+        return
+    }
     val scroll=rememberScrollState()
     LaunchedEffect(step,scroll.maxValue) { scroll.animateScrollTo(scroll.maxValue) }
     Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding()) {
@@ -47,6 +53,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
                 if(step==1) {
                     ChoiceHint()
                     listOf("A1" to "Yeni başlıyorum","A2" to "Biraz okuyabiliyorum","B1" to "Rahatça okuyorum").forEach { (value,label) -> ReplyChoice(label) {level=value;step=2} }
+                    ReplyChoice(stringResource(R.string.placement_entry)) { placement=true }
                 }
             }
             if(step>=2) {

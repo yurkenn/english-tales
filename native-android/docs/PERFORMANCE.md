@@ -48,7 +48,7 @@ Yerel smoke kaydı: profilsiz TTID 1.666,61 ms; profil zorunlu TTID 1.447,20 ms.
 
 İmzalı `48 / 2.0.0` APK ve AAB yeniden üretildi. `tooling/verify_release.py` kaynak uygulama kurallarını, release R8 profilinde `MainActivity` kuralını, APK/AAB profil başlıklarını, imzaları, üretim adresini/test adresinin dışlanmasını, AD_ID iznini ve statik ZIP/ELF64 16 KB hizalamasını doğruladı. Her iki pakette `baseline.prof` 8.612 bayt, `baseline.profm` 489 bayt. AAB SHA-256: `d8a341d27497870f74089c60a30b654f28af03f8195bbaeb4edb7a86b84d874c`.
 
-Bu yerel paket kontrolü Play yüklemesi değildir; Crashlytics mapping yüklemesi çalıştırılmadı. PR ve güncel CI sonuçları: [#26](https://github.com/yurkenn/english-tales/pull/26/checks). CI cihaz raporları mevcut uygulama testleri ile üç Macrobenchmark senaryosunu ayrı XML/JSON dosyalarında saklar.
+Bu yerel paket kontrolü Play yüklemesi değildir; Crashlytics mapping yüklemesi çalıştırılmadı. [#26](https://github.com/yurkenn/english-tales/pull/26) `43a4e49` ile ana dala birleşti. [Son commit PR CI](https://github.com/yurkenn/english-tales/actions/runs/38784142455) başarılı: 41 JVM testi; cihazda 147 uygulama testi, 144 başarılı / 3 koşullu atlama; Macrobenchmark 3/3 başarılı. Lint 0 hata / 31 uyarı. CI cihaz raporları mevcut uygulama testleri ile üç Macrobenchmark senaryosunu ayrı XML/JSON dosyalarında saklar.
 
 ## Açık kabul adımları
 - Aynı fiziksel cihaz/OS/ısı koşullarında en az varsayılan 5 tekrarla None/Require TTID ve gezinme kare yüzdeliklerini karşılaştır; TTFD doğrulamasını tamamla.

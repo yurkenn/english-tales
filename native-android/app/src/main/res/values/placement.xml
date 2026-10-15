@@ -1,0 +1,24 @@
+<resources>
+    <string name="placement_title">Kısa seviye testi</string>
+    <string name="placement_entry">Seviyemi kısa testle bul</string>
+    <string name="placement_intro">9 soru · Yaklaşık 2–3 dakika</string>
+    <string name="placement_explanation">Kısa İngilizce cümleler okuyup cevap seçeceksin. Bilmediğin soruyu geçebilirsin; süre sınırı yok.</string>
+    <string name="placement_scope">Sonuç, A1–B1 hikâyeleri için başlangıç önerisidir. Resmî bir dil yeterlilik sonucu değildir. Cevapların bu cihazdan gönderilmez.</string>
+    <string name="placement_start">Teste başla</string>
+    <string name="placement_manual">Seviyeyi kendim seçeceğim</string>
+    <string name="placement_progress">Soru %1$d / %2$d</string>
+    <string name="placement_complete_sentence">Cümleyi tamamla.</string>
+    <string name="placement_read_question">Metni oku ve soruyu cevapla.</string>
+    <string name="placement_unknown">Bilmiyorum</string>
+    <string name="placement_next">Sonraki soru</string>
+    <string name="placement_finish">Önerimi gör</string>
+    <string name="placement_result">Başlangıç önerin: %1$s</string>
+    <string name="placement_result_description">Bu seviyedeki hikâyelerle başlayabilirsin. Kolay veya zor gelirse Ayarlar’dan seviyeni değiştirebilirsin.</string>
+    <string name="placement_score">%1$s soruları: %2$d / 3 doğru</string>
+    <string name="placement_use">%1$s ile devam et</string>
+    <string name="placement_settings_hint">Öneriyi seçtikten sonra seviyeni güncellemek için Ayarlar’da değişiklikleri kaydet.</string>
+    <string name="placement_cancel_title">Testten çıkılsın mı?</string>
+    <string name="placement_cancel_message">Bu denemenin cevapları silinecek. Seçtiğin seviye değişmeyecek.</string>
+    <string name="placement_cancel_confirm">Testten çık</string>
+    <string name="placement_cancel_keep">Teste dön</string>
+</resources>
