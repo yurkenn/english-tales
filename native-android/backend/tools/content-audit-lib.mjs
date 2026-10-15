@@ -86,7 +86,7 @@ export function auditDocuments(documents,{source='bundle',dictionary=[]}={}){
     }
     for(const word of doc.words)if(!used.has(word.id))issue('warning','unlinked_word',doc.id,{wordId:word.id});
     const group=emptyStats();group.stories=1;
-    const levelKey=doc.level??'unknown';
+    const levelKey=['A1','A2','B1'].includes(doc.level)?doc.level:'unknown';
     const level=levels[levelKey]??=emptyStats();level.stories++;
     for(const [index,sentence] of doc.sentences.entries()){
       if(!text(sentence.id).trim())issue('error','missing_sentence_id',doc.id);

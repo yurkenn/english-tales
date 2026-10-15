@@ -113,9 +113,11 @@ test('coverage and parity release gates are explicit and cannot pass on a missin
 });
 
 test('missing metadata remains an actionable report and does not crash backlog aggregation',()=>{
-  const c=catalog();delete c.stories[0].level;
-  const report=auditCatalog(c);
-  assert.ok(report.summary.errors>0);assert.ok(report.levels.unknown);
+  for(const value of [undefined,'__proto__','invalid']){
+    const c=catalog();c.stories[0].level=value;
+    const report=auditCatalog(c);
+    assert.ok(report.summary.errors>0);assert.ok(report.levels.unknown);
+  }
   assert.throws(()=>auditSnapshot({format:2}),/Unsupported/);
 });
 
