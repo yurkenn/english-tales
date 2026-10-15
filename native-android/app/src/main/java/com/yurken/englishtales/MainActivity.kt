@@ -36,7 +36,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.None
         val play=PlayStoreFeatures(this).also {this.play=it}
-        if(savedInstanceState==null) play.checkForUpdate()
         setContent {
             CompositionLocalProvider(LocalCompletionAds provides ads,LocalPlayStoreFeatures provides play) {EnglishTalesTheme {
                 Box(Modifier.fillMaxSize()) {
@@ -48,6 +47,10 @@ class MainActivity : ComponentActivity() {
                 }
             }}
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        play?.checkForUpdate()
     }
     override fun onDestroy() {
         play?.dispose()

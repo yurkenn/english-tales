@@ -34,17 +34,21 @@ class PlayStoreFeatures(
     private val prefs: SharedPreferences = activity.getSharedPreferences("play_store_features", Context.MODE_PRIVATE),
     private val clock: () -> Long = System::currentTimeMillis
 ) {
+    private var disposed = false
+
     var updateReady by mutableStateOf(false)
         private set
 
     private val launcher: ActivityResultLauncher<IntentSenderRequest> =
         activity.activityResultRegistry.register("play-flexible-update", ActivityResultContracts.StartIntentSenderForResult()) {}
-    private val listener = InstallStateUpdatedListener { state -> if (state.installStatus() == InstallStatus.DOWNLOADED) updateReady = true }
+    private val listener = InstallStateUpdatedListener { state -> if (!disposed && state.installStatus() == InstallStatus.DOWNLOADED) updateReady = true }
 
     init { updates.registerListener(listener) }
 
     fun checkForUpdate() {
+        if (disposed) return
         updates.appUpdateInfo.addOnSuccessListener { info ->
+            if (disposed) return@addOnSuccessListener
             if (info.installStatus() == InstallStatus.DOWNLOADED) { updateReady = true; return@addOnSuccessListener }
             if (info.updateAvailability() != UpdateAvailability.UPDATE_AVAILABLE || !info.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE)) return@addOnSuccessListener
             val version = info.availableVersionCode()
@@ -55,15 +59,17 @@ class PlayStoreFeatures(
         }
     }
 
-    fun completeUpdate() { updates.completeUpdate() }
+    fun completeUpdate() { if (!disposed) updates.completeUpdate() }
 
     fun onStoryFinished(finishedStories: Int) {
-        if (finishedStories < REVIEW_AFTER_STORIES || prefs.getBoolean(KEY_REVIEW_REQUESTED, false)) return
+        if (disposed || finishedStories < REVIEW_AFTER_STORIES || prefs.getBoolean(KEY_REVIEW_REQUESTED, false)) return
         prefs.edit().putBoolean(KEY_REVIEW_REQUESTED, true).apply()
-        reviews.requestReviewFlow().addOnSuccessListener { info -> runCatching { reviews.launchReviewFlow(activity, info) } }
+        reviews.requestReviewFlow().addOnSuccessListener { info -> if (!disposed) runCatching { reviews.launchReviewFlow(activity, info) } }
     }
 
     fun dispose() {
+        if (disposed) return
+        disposed = true
         updates.unregisterListener(listener)
         launcher.unregister()
     }

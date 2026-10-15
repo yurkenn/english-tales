@@ -6,6 +6,9 @@ import androidx.activity.ComponentActivity
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
 import com.google.android.gms.tasks.Task
+import com.google.android.gms.tasks.TaskCompletionSource
+import com.google.android.play.core.appupdate.AppUpdateInfo
+import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.testing.FakeAppUpdateManager
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManager
@@ -71,4 +74,37 @@ class PlayStoreFeaturesTest {
             assertTrue(s.updates.isInstallSplashScreenVisible)
         }
     }
+    @Test fun downloadedUpdateIsRecoveredAfterActivityRecreation() = features { s, step ->
+        step { s.updates.setUpdateAvailable(49); s.play.checkForUpdate() }
+        step { s.updates.userAcceptsUpdate(); s.updates.downloadStarts(); s.updates.downloadCompletes() }
+        assertTrue(s.play.updateReady)
+        lateinit var recreated: PlayStoreFeatures
+        step { s.play.dispose() }
+        scenario.onActivity { activity -> recreated = PlayStoreFeatures(activity, s.updates, s.reviews, prefs) }
+        try {
+            step { recreated.checkForUpdate() }
+            assertTrue("downloaded update must survive activity recreation", recreated.updateReady)
+        } finally { step { recreated.dispose() } }
+    }
+
+    @Test fun pendingUpdateResultCannotLaunchAfterDisposal() {
+        val result = TaskCompletionSource<AppUpdateInfo>()
+        lateinit var fake: FakeAppUpdateManager
+        lateinit var play: PlayStoreFeatures
+        scenario.onActivity { activity ->
+            fake = FakeAppUpdateManager(activity)
+            fake.setUpdateAvailable(49)
+            val delayed = object : AppUpdateManager by fake {
+                override fun getAppUpdateInfo(): Task<AppUpdateInfo> = result.task
+            }
+            play = PlayStoreFeatures(activity, delayed, FakeReviewManager(activity), prefs)
+            play.checkForUpdate()
+            play.dispose()
+        }
+        instrumentation.runOnMainSync { fake.appUpdateInfo.addOnSuccessListener { result.setResult(it) } }
+        instrumentation.waitForIdleSync()
+        assertFalse("late update result must not launch a destroyed activity", fake.isConfirmationDialogVisible)
+        assertFalse(prefs.contains("update_prompted_version"))
+    }
+
 }
