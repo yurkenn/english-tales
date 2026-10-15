@@ -66,6 +66,34 @@ class LearningStoreTest {
         assertTrue(snapshot.badges.containsAll(listOf("first_story","first_practice")))
         store.readableDatabase.rawQuery("SELECT COUNT(*) FROM engagement_events WHERE name='daily_goal_reached'",null).use {assertTrue(it.moveToFirst());assertEquals(1,it.getInt(0))}
     }
+    @Test fun sentenceGapKeepsExistingChoicePayloadAndAwardsTheGoalOnlyOnce() {
+        val questions=SentenceGap.session(SentenceGap.prompts(LearningContent.stories,LearningContent.words),LearningContent.words,emptyList(),"A1")
+        assertEquals(5,questions.size)
+        store.completeOnboarding("A1","Günlük yaşam",1)
+        store.saveWords(questions.map {it.prompt.wordId})
+        val session=UUID.randomUUID().toString()
+        store.beginSession(session,SentenceGap.SESSION_KIND,questions.size)
+        now+=30_000
+        questions.forEachIndexed {i,q ->store.reviewWord(q.prompt.wordId,i!=0)}
+        repeat(2) {store.completeLesson(4,session,SentenceGap.SESSION_KIND,questions.size,30_000)}
+        val snapshot=store.snapshot()
+        assertEquals(20,snapshot.points)
+        assertEquals(1,snapshot.todaySessions)
+        assertEquals(1,snapshot.completedLessons)
+        assertTrue(snapshot.dailyGoalReached)
+        assertEquals("learning",snapshot.wordStates[questions.first().prompt.wordId])
+        assertEquals("reviewing",snapshot.wordStates[questions.last().prompt.wordId])
+        val operations=store.queuedOperations().filter {it.rpc=="submit_learning_session"}
+        assertEquals(1,operations.size)
+        val payload=JSONObject(operations.single().payload)
+        assertEquals("choice",payload.getString("kind"))
+        assertEquals(5,payload.getInt("questionCount"))
+        assertEquals(4,payload.getInt("correctAnswers"))
+        assertFalse(payload.has("sentence"))
+        store.readableDatabase.rawQuery("SELECT COUNT(*) FROM engagement_events WHERE name='daily_goal_reached'",null).use {
+            assertTrue(it.moveToFirst());assertEquals(1,it.getInt(0))
+        }
+    }
     @Test fun activityRollsOverAndStreakExpires() {
         store.completeLesson(3,"one")
         now+=LearningPolicy.DAY_MS

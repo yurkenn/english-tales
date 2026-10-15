@@ -125,7 +125,8 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q2.2 Ürün olayları | Kod hazır; canlı kabul açık | Bu değişiklik | Yedi olay, varsayılan kapalı katılım, sabit payload ve D1 cohort |
 | Q2.3 Performans altyapısı | Ana dala birleşti; fiziksel kabul açık | [#26](https://github.com/yurkenn/english-tales/pull/26) | Profil üretimi 2/2, Macrobenchmark 3/3; imzalı APK/AAB profil doğrulaması geçti; [kanıt ve CI](PERFORMANCE.md) |
 | Q2.5 Kademeli yayın listesi | Hazır; bu belgeyle birlikte #22 | [#22](https://github.com/yurkenn/english-tales/pull/22) | %20 → %50 → %100; izleme, durdurma ve düzeltme kaydı |
-| Q5.4 Seviye yerleştirme | Uygulandı; özellik doğrulaması | Ayrı özellik dalı | Onboarding/Ayarlar’da dokuz soru, A1–B1 başlangıç önerisi; [kapsam](READING_PLACEMENT.md) |
+| Q5.1 Bağlamlı boşluk doldurma | Uygulandı; özellik doğrulaması | Bu özellik | Mevcut hikâye cümlelerinden seçmeli soru; puan/oturum sözleşmesi korunur; [kapsam](SENTENCE_GAP.md) |
+| Q5.4 Seviye yerleştirme | Ana dala birleşti | [#27](https://github.com/yurkenn/english-tales/pull/27) | Onboarding/Ayarlar’da dokuz soru, A1–B1 başlangıç önerisi; [kapsam](READING_PLACEMENT.md) |
 
 ## 6. Birleşik doğrulama — 15 Ekim 2026
 

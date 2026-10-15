@@ -18,6 +18,10 @@ Aşağıdaki 48 / 2.0.0 mağaza başvurusu tarihsel son kayıttır; bu kalite ç
 
 Onboarding ve Profilim → Ayarlar’dan açılan dokuz soruluk A1–A2–B1 başlangıç önerisi eklendi. Test çevrimdışı çalışır; atlanabilir, cevaplar Analytics’e gönderilmez. Kullanıcı sonucu kabul etmeden seviye değişmez; Ayarlar’da ayrıca kaydetmek gerekir. [Puanlama, kayıt davranışı ve doğrulama kapsamı](native-android/docs/READING_PLACEMENT.md).
 
+## Yeni özellik — cümlede boşluk doldurma
+
+Oyna ekranına hikâye cümlesi, Türkçe ipucu ve dört İngilizce seçenekle çalışan yeni alıştırma eklendi. En fazla beş farklı kelime; tekrar zamanı gelen/kaydedilen kelimeler ve seviye öncelikli. Tamamlanan oturum mevcut puan, günlük hedef ve kelime tekrarı yolunu kullanır. [Soru üretimi, durum koruması ve kayıt sözleşmesi](native-android/docs/SENTENCE_GAP.md). Bu özellik için Play yüklemesi yapılmadı.
+
 ## Kısa durum
 
 Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 üretim kanalına yüklendi ve mağaza güncellemesiyle birlikte 15 Ekim 2026'da Google incelemesine gönderildi. İnceleme sonucu henüz gelmedi.**
