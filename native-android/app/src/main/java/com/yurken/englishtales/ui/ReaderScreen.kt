@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import android.content.Context
+import androidx.compose.ui.semantics.Role
 import com.yurken.englishtales.R
 import androidx.compose.ui.res.stringResource
 import android.speech.tts.TextToSpeech
@@ -170,7 +171,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                 TextButton(onClick={options=true},colors=ButtonDefaults.textButtonColors(contentColor=accent),modifier=Modifier.contentLabel(stringResource(R.string.okuma_gorunumu))) {
                     Text(stringResource(R.string.aa),fontSize=22.sp)
                 }
-                Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.kelimelerim_kayitli_kelime_2, snapshot.savedWordIds.size)).clickable {narrator.stop();onOpenWords()}.background(if(dark) Color(0xFF222222) else TaleLine,RoundedCornerShape(8.dp)).padding(8.dp),verticalAlignment=Alignment.CenterVertically) {
+                Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.kelimelerim_kayitli_kelime_2, snapshot.savedWordIds.size)).clickable(role=Role.Button) {narrator.stop();onOpenWords()}.background(if(dark) Color(0xFF222222) else TaleLine,RoundedCornerShape(8.dp)).padding(8.dp),verticalAlignment=Alignment.CenterVertically) {
                     ReferenceIcon("cards",muted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=muted,fontSize=14.sp)
                 }
             }
@@ -187,7 +188,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.Top,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                         val phrases=if(story.vocabulary!=null) remember(story.revisionId,sentence.id) {PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence))} else LearningContent.phraseIndex
                         TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
-                        Box(Modifier.size(32.dp).contentLabel(if(sentence.id in translations) stringResource(R.string.ceviriyi_gizle) else stringResource(R.string.cumleyi_cevir)).clickable { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
+                        Box(Modifier.size(32.dp).contentLabel(if(sentence.id in translations) stringResource(R.string.ceviriyi_gizle) else stringResource(R.string.cumleyi_cevir)).clickable(role=Role.Button) { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
                     }
                     if(sentence.id in translations) Text(sentence.turkish,color=Color.White,fontSize=13.sp,lineHeight=19.sp,
                         modifier=Modifier.fillMaxWidth().padding(end=36.dp).background(TaleBlue,RoundedCornerShape(4.dp)).padding(10.dp))
@@ -197,7 +198,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
             Text("${page+1} / $pageCount",color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
             Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
                 Slider(value=page.toFloat(),onValueChange={changePage(it.toInt())},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
-                Box(Modifier.size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { narrator.speak(pageSentences.joinToString(" ") {it.english}) } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
+                Box(Modifier.size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { narrator.speak(pageSentences.joinToString(" ") {it.english}) } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
             }
             Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
                 TextButton(onClick={changePage(page-1)},enabled=page>0,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.onceki),fontSize=12.sp) }
@@ -217,9 +218,9 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                     TextButton(onClick={more=!more},modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster),textDecoration=TextDecoration.Underline) }
                     if(more) Text(word.example,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp))
                     Row(Modifier.fillMaxWidth().background(TaleBlue,RoundedCornerShape(bottomStart=12.dp,bottomEnd=12.dp))) {
-                        Box(Modifier.weight(1f).height(45.dp).clickable { selectedWord=null },contentAlignment=Alignment.Center) { Text(stringResource(R.string.kapat),color=Color.White,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                        Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { selectedWord=null },contentAlignment=Alignment.Center) { Text(stringResource(R.string.kapat),color=Color.White,fontSize=16.sp,fontWeight=FontWeight.Bold) }
                         Box(Modifier.width(1.dp).height(28.dp).align(Alignment.CenterVertically).background(Color.White.copy(alpha=0.65f)))
-                        Box(Modifier.weight(1f).height(45.dp).clickable { onSaveWord(word.id); selectedWord=null },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=Color.White,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                        Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { onSaveWord(word.id); selectedWord=null },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=Color.White,fontSize=16.sp,fontWeight=FontWeight.Bold) }
                     }
                 }
             }

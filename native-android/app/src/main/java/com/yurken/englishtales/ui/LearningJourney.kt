@@ -1,6 +1,9 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.*
+import androidx.compose.foundation.selection.selectableGroup
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
@@ -154,8 +157,8 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
 
 @Composable
 private fun PreferenceChoices(options: List<String>,selected: String,onSelect: (String)->Unit) {
-    Column(verticalArrangement=Arrangement.spacedBy(6.dp)) {options.forEach {value ->
-        Row(Modifier.fillMaxWidth().border(1.dp,if(value==selected) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).clickable {onSelect(value)}.padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
+    Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(6.dp)) {options.forEach {value ->
+        Row(Modifier.fillMaxWidth().border(1.dp,if(value==selected) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).selectable(selected=value==selected,role=Role.RadioButton) {onSelect(value)}.padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
             Text(value,fontSize=14.sp,modifier=Modifier.weight(1f));if(value==selected) Text("✓",color=TaleBlue)
         }
     } }

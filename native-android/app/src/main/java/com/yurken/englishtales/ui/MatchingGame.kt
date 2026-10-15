@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.*
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.ui.semantics.Role
 import com.yurken.englishtales.R
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
@@ -54,5 +56,5 @@ fun MatchingGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padd
 @Composable
 private fun MatchCard(label: String,selected: Boolean,matched: Boolean,modifier: Modifier,onClick: ()->Unit) {
     val color=when {matched->Color(0xFF9BCC72);selected->TaleBlue;else->TaleLine}
-    Box(modifier.border(if(selected||matched) 2.dp else 1.dp,color,RoundedCornerShape(12.dp)).clickable(enabled=!matched,onClick=onClick).padding(8.dp),contentAlignment=Alignment.Center) {Text(label,fontSize=14.sp,fontWeight=FontWeight.Medium)}
+    Box(modifier.border(if(selected||matched) 2.dp else 1.dp,color,RoundedCornerShape(12.dp)).selectable(selected=selected||matched,enabled=!matched,role=Role.Button,onClick=onClick).padding(8.dp),contentAlignment=Alignment.Center) {Text(label,fontSize=14.sp,fontWeight=FontWeight.Medium)}
 }

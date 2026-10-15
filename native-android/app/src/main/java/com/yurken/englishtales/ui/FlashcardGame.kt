@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.*
+import androidx.compose.ui.semantics.Role
 import com.yurken.englishtales.R
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
@@ -39,11 +40,11 @@ fun FlashcardGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,pad
     GameViewport(padding,550.dp) {
         Box(Modifier.align(Alignment.Start)) { ReferenceIconButton("back",stringResource(R.string.alistirmadan_cik),onExit) }
         Spacer(Modifier.weight(1f))
-        Column(Modifier.fillMaxWidth().height(360.dp).border(2.dp,TaleMint,RoundedCornerShape(10.dp)).clickable {revealed=true}.padding(24.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
+        Column(Modifier.fillMaxWidth().height(360.dp).border(2.dp,TaleMint,RoundedCornerShape(10.dp)).clickable(role=Role.Button) {revealed=true}.padding(24.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
             Text(word.word,fontSize=23.sp,fontWeight=FontWeight.Bold)
             Text(word.pronunciation,fontSize=13.sp,color=TaleMuted,modifier=Modifier.padding(vertical=10.dp))
             Text(if(revealed) word.translation else stringResource(R.string.anlami_gormek_icin_dokun),fontSize=if(revealed) 20.sp else 13.sp,color=if(revealed) TaleInk else TaleMuted)
-            Box(Modifier.padding(top=20.dp).size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.kelimesini_dinle, word.word)).background(TaleBlue,CircleShape).clickable {if(narrator.speaking || narrator.preparing) narrator.stop() else narrator.speak(word.word)},contentAlignment=Alignment.Center) {if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=Color.White) else ReferenceIcon("volume",Color.White,Modifier.size(21.dp))}
+            Box(Modifier.padding(top=20.dp).size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.kelimesini_dinle, word.word)).background(TaleBlue,CircleShape).clickable(role=Role.Button) {if(narrator.speaking || narrator.preparing) narrator.stop() else narrator.speak(word.word)},contentAlignment=Alignment.Center) {if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=Color.White) else ReferenceIcon("volume",Color.White,Modifier.size(21.dp))}
         }
         if(narrator.preparing) Text(stringResource(R.string.ses_hazirlaniyor),color=TaleMuted,fontSize=12.sp)
         narrator.error?.let {Text(it,color=TaleMuted,fontSize=12.sp)}

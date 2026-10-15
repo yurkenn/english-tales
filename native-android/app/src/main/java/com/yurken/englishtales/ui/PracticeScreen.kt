@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -125,7 +127,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             options.forEach { option ->
                 val selected=answer==option
                 val color=if(selected) {if(correct) Color(0xFF8CC65C) else Color(0xFFFF866D)} else TaleLine
-                Box(Modifier.fillMaxWidth().heightIn(min=50.dp).border(if(selected) 2.dp else 1.dp,color,RoundedCornerShape(10.dp)).clickable(enabled=answer==null) {answer=option}.padding(horizontal=12.dp,vertical=8.dp),contentAlignment=Alignment.Center) {Text(option,fontSize=14.sp,fontWeight=FontWeight.Medium)}
+                Box(Modifier.fillMaxWidth().heightIn(min=50.dp).border(if(selected) 2.dp else 1.dp,color,RoundedCornerShape(10.dp)).selectable(selected=selected,enabled=answer==null,role=Role.RadioButton) {answer=option}.padding(horizontal=12.dp,vertical=8.dp),contentAlignment=Alignment.Center) {Text(option,fontSize=14.sp,fontWeight=FontWeight.Medium)}
             }
         } else {
             Box(Modifier.weight(1f).fillMaxWidth(),contentAlignment=Alignment.Center) {
@@ -133,7 +135,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             }
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(vertical=24.dp),horizontalArrangement=Arrangement.Center) {
                 letters.forEachIndexed { i,c ->
-                    Box(Modifier.padding(3.dp).size(36.dp,48.dp).border(if(i in chosen) 2.dp else 1.dp,if(i in chosen) TaleBlue else TaleLine,RoundedCornerShape(6.dp)).clickable(enabled=answer==null && i !in chosen) {chosen=chosen+i;if(chosen.size==letters.size) answer=chosen.joinToString("") {letters[it].toString()}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=16.sp)}
+                    Box(Modifier.padding(3.dp).size(36.dp,48.dp).border(if(i in chosen) 2.dp else 1.dp,if(i in chosen) TaleBlue else TaleLine,RoundedCornerShape(6.dp)).clickable(enabled=answer==null && i !in chosen,role=Role.Button) {chosen=chosen+i;if(chosen.size==letters.size) answer=chosen.joinToString("") {letters[it].toString()}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=16.sp)}
                 }
             }
             TextButton(onClick={chosen=emptyList()},enabled=answer==null,modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(stringResource(R.string.temizle),fontSize=12.sp) }
@@ -149,7 +151,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
 
 @Composable
 private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,enabled: Boolean=true,onClick: ()->Unit) {
-    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).border(1.dp,TaleLine,RoundedCornerShape(12.dp)).clickable(enabled=enabled,onClick=onClick).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).border(1.dp,TaleLine,RoundedCornerShape(12.dp)).clickable(enabled=enabled,role=Role.Button,onClick=onClick).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
         Box(Modifier.size(64.dp).background(color,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {ReferenceIcon(icon,TaleBlue,Modifier.size(34.dp))}
         Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(5.dp)) {Text(title,fontSize=16.sp,fontWeight=FontWeight.Bold);Text(subtitle,fontSize=12.sp,color=TaleMuted)}
         Text("›",color=TaleMuted,fontSize=22.sp)
