@@ -1,4 +1,4 @@
-import {matchSpans, normalize, occurs} from '../admin/workflow.js';
+import {matchSpans, normalize, occurs, validSupportLanguage} from '../admin/workflow.js';
 
 const text=value=>typeof value==='string'?value:'';
 const tokens=value=>[...text(value).matchAll(/[\p{L}\p{N}]+/gu)].map(m=>({key:m[0].toLowerCase(),start:m.index,end:m.index+m[0].length}));
@@ -30,15 +30,42 @@ export function publishedDocuments(snapshot){
   if(snapshot.format!==1||!snapshot.tables) throw Error('Unsupported public content snapshot');
   for(const table of ['stories','story_revisions','story_sentences','revision_words','sentence_words','content_assets'])
     if(!Array.isArray(snapshot.tables[table])) throw Error(`Snapshot table missing: ${table}`);
+  const translationTables=['sentence_translations','word_translations','revision_texts'];
+  const translationTablesPresent=translationTables.some(name=>snapshot.tables[name]!==undefined);
+  if(translationTablesPresent)for(const name of translationTables)
+    if(!Array.isArray(snapshot.tables[name]))throw Error(`Snapshot table missing: ${name}`);
   const t=snapshot.tables,revisions=new Map(t.story_revisions.map(r=>[r.id,r]));
   return t.stories.filter(s=>!s.is_archived&&s.current_revision_id).map(story=>{
     const revision=revisions.get(story.current_revision_id);
     return {...revision,id:story.id,revisionId:story.current_revision_id,
+      translationTablesPresent,
+      ...(translationTablesPresent?{descriptions:Object.fromEntries(t.revision_texts.filter(r=>r.revision_id===story.current_revision_id).map(r=>[r.lang,r.description]))}:{}),
       revisionMissing:!revision,revisionWrongOwner:revision&&revision.story_id!==story.id,
-      sentences:t.story_sentences.filter(s=>s.revision_id===story.current_revision_id).sort((a,b)=>a.position-b.position),
-      words:t.revision_words.filter(w=>w.revision_id===story.current_revision_id),
+      sentences:t.story_sentences.filter(s=>s.revision_id===story.current_revision_id).map(s=>({...s,...(translationTablesPresent?{translations:Object.fromEntries(t.sentence_translations.filter(r=>r.revision_id===s.revision_id&&r.sentence_id===s.id).map(r=>[r.lang,r.text]))}:{})})).sort((a,b)=>a.position-b.position),
+      words:t.revision_words.filter(w=>w.revision_id===story.current_revision_id).map(w=>({...w,...(translationTablesPresent?{translations:Object.fromEntries(t.word_translations.filter(r=>r.revision_id===w.revision_id&&r.word_id===w.id).map(r=>[r.lang,r.translation]))}:{})})),
       links:t.sentence_words.filter(l=>l.revision_id===story.current_revision_id)};
   });
+}
+
+export function translationCompleteness(documents){
+  const languages=new Set(['tr']);
+  for(const doc of documents)for(const map of [doc.descriptions,...doc.sentences.map(s=>s.translations),...doc.words.map(w=>w.translations)])
+    for(const lang of Object.keys(map??{}))languages.add(lang);
+  const result={};
+  for(const lang of sorted(languages)){
+    const counts={missingSentences:0,missingWords:0,missingDescriptions:0};
+    for(const doc of documents){
+      const missing=(map,legacy)=>{
+        const value=lang==='tr'&&!doc.translationTablesPresent?legacy:map?.[lang];
+        return Boolean(!text(value).trim()||(lang==='tr'&&((map?.tr!==undefined&&map.tr!==legacy)||(doc.translationTablesPresent&&value!==legacy))));
+      };
+      counts.missingSentences+=doc.sentences.filter(s=>missing(s.translations,s.turkish)).length;
+      counts.missingWords+=doc.words.filter(w=>missing(w.translations,w.translation)).length;
+      counts.missingDescriptions+=Number(missing(doc.descriptions,doc.description));
+    }
+    result[lang]={...counts,complete:Object.values(counts).every(n=>n===0)};
+  }
+  return result;
 }
 
 /** Actual selectable spans, including phrases, with no stemming or stop-word removal. */
@@ -117,7 +144,7 @@ export function auditDocuments(documents,{source='bundle',dictionary=[]}={}){
   }
   const backlog=[...missing.values()].filter(entry=>!levels[entry.level].covered.has(entry.token)).map(entry=>({...entry,storyIds:sorted(entry.storyIds)}))
     .sort((a,b)=>String(a.level).localeCompare(String(b.level))||b.occurrences-a.occurrences||a.token.localeCompare(b.token));
-  return {source,summary:{...stats(all),sentences:documents.reduce((n,d)=>n+d.sentences.length,0),
+  return {source,translations:translationCompleteness(documents),summary:{...stats(all),sentences:documents.reduce((n,d)=>n+d.sentences.length,0),
     vocabularyEntries:documents.reduce((n,d)=>n+d.words.length,0),distinctVocabularyIds:new Set(documents.flatMap(d=>d.words.map(w=>w.id))).size,
     dictionaryEntries:source==='bundle'?dictionary.length:null,links:documents.reduce((n,d)=>n+d.links.length,0),
     errors:issues.filter(i=>i.severity==='error').length,warnings:issues.filter(i=>i.severity==='warning').length},
@@ -187,11 +214,16 @@ export function auditSnapshot(snapshot){
 }
 
 /** Strict release gates are opt-in; an audit never labels known drift or low coverage as fixed. */
-export function acceptance({bundle,live,comparison},{requireParity=false,minCoverage=null}={}){
+export function acceptance({bundle,live,comparison},{requireParity=false,minCoverage=null,requireLang=null}={}){
   const failures=[];
   if(bundle.summary.errors)failures.push('bundle_structure');
   if(live?.summary.errors)failures.push('live_structure');
   if(requireParity&&!comparison?.equal)failures.push('bundle_live_parity');
+  if(requireLang!==null){
+    if(!validSupportLanguage(requireLang))throw Error('Geçersiz destek dili');
+    for(const report of [bundle,...(live?[live]:[])])
+      if(!report.translations?.[requireLang]?.complete)failures.push(`${report.source}_${requireLang}_translations`);
+  }
   if(minCoverage!==null){
     if(!Number.isFinite(minCoverage)||minCoverage<0||minCoverage>100)throw Error('Coverage threshold must be between 0 and 100');
     for(const report of [bundle,...(live?[live]:[])])for(const level of ['A1','A2'])

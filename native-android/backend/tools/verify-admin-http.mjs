@@ -36,10 +36,15 @@ try {
   const response=await fetch(`${origin}/api/media`,{method:'POST',headers,body:cover});assert.equal(response.status,200);const asset=await response.json();
   const downloaded=Buffer.from(await (await fetch(`${origin}/media/${id}`)).arrayBuffer());assert.deepEqual(downloaded,cover);assert.equal(asset.sha256,createHash('sha256').update(downloaded).digest('hex'));
   assert.equal((await fetch(`${origin}/api/media`,{method:'POST',headers,body:cover})).status,400);
-  const saved=await rpc('admin_save_draft',{p_revision_id:d.id,p_expected_version:d.edit_version,p_document:{...d,title:'HTTP verified story',cover_asset_id:id}});
+  let saved=await rpc('admin_save_draft',{p_revision_id:d.id,p_expected_version:d.edit_version,p_document:{...d,title:'HTTP verified story',cover_asset_id:id,descriptions:{...d.descriptions,'es-419':'Descripción'}}});
   await assert.rejects(rpc('admin_save_draft',{p_revision_id:d.id,p_expected_version:d.edit_version,p_document:d}),/draft_version_conflict/);
+  await assert.rejects(rpc('admin_publish',{p_revision_id:d.id,p_expected_version:saved.edit_version}),/revision_translations_incomplete: lang=es-419/);
+  for(const row of saved.sentences)row.translations['es-419']='Texto de ejemplo';
+  for(const row of saved.words)row.translations['es-419']='Significado';
+  saved=await rpc('admin_save_draft',{p_revision_id:d.id,p_expected_version:saved.edit_version,p_document:saved});
   await rpc('admin_publish',{p_revision_id:d.id,p_expected_version:saved.edit_version});
   const clone=await rpc('admin_create_draft',{p_story_id:d.story_id,p_source_id:d.id});assert.equal(clone.revision,2);assert.equal(clone.sentences[0].id,d.sentences[0].id);
+  assert.deepEqual(clone.descriptions,saved.descriptions);assert.deepEqual(clone.sentences.map(s=>s.translations),saved.sentences.map(s=>s.translations));assert.deepEqual(clone.words.map(w=>w.translations),saved.words.map(w=>w.translations));
   await rpc('admin_archive',{p_story_id:d.story_id,p_archived:true,p_expected_revision:d.id});
   assert.equal((await rpc('admin_revision',{p_revision_id:d.id})).is_archived,true);
   await assert.rejects(rpc('admin_delete_draft',{p_revision_id:clone.id,p_expected_version:clone.edit_version-1}),/draft_version_conflict/);
@@ -53,6 +58,7 @@ try {
   assert.equal((await remove(orphanId)).status,200);assert.equal((await fetch(`${origin}/media/${orphanId}`)).status,404);
   await stop();await start();
   const restored=await rpc('admin_revision',{p_revision_id:d.id});assert.equal(restored.title,'HTTP verified story');assert.equal(restored.cover_asset_id,id);assert.equal(restored.is_archived,true);assert.ok(restored.published_at);
+  assert.deepEqual(restored.descriptions,saved.descriptions);assert.deepEqual(restored.sentences.map(s=>s.translations),saved.sentences.map(s=>s.translations));
   assert.deepEqual(Buffer.from(await(await fetch(`${origin}/media/${id}`)).arrayBuffer()),cover);
-  console.log('PASS: origin boundaries, RPC allowlist, real cover upload/hash/download, duplicate upload rejection, atomic save/conflict, publication/clone/archive, draft deletion/audit, unused media cleanup/reference protection, process restart persistence. Local Auth fixture only; no hosted Supabase requests.');
+  console.log('GEÇTİ: origin sınırları, RPC izin listesi, kapak yükleme/hash/indirme, yinelenen yükleme reddi, atomik kayıt/sürüm çakışması, eksik dilde yayın reddi, tamamlanan çevirilerin yayını/kopyalanması/arşivi, taslak silme/geçmiş, kullanılmayan medya temizliği ve yeniden başlatmada çevirilerin korunması. Yerel Auth fixture kullanıldı; canlı Supabase isteği yapılmadı.');
 }finally{await stop();}
