@@ -51,6 +51,9 @@ class MainActivity : ComponentActivity() {
     override fun onResume() {
         super.onResume()
         play?.checkForUpdate()
+        lifecycleScope.launch(kotlinx.coroutines.Dispatchers.IO) {
+            com.yurken.englishtales.analytics.ProductAnalytics.get(applicationContext).onForeground()
+        }
     }
     override fun onDestroy() {
         play?.dispose()

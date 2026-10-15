@@ -340,6 +340,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 LearningSyncLocks.withOwner(user) {
                     if(disposed || scope!=expectedScope) return@withOwner
                     auth.deleteAccount(user) {if(background) DeletedAccountCleanup.record(getApplication(),user)}
+                    if(background) runCatching {com.yurken.englishtales.analytics.ProductAnalytics.get(getApplication()).setConsent(false)}
                     if(background) LearningSyncRuntime.cancel(getApplication(),user)
                     mutations.trySend(Mutation(expectedScope) {
                         check(store.owner.id==user)

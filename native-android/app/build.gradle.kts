@@ -78,6 +78,8 @@ android {
         manifestPlaceholders["admobAppId"]="ca-app-pub-3940256099942544~3347511713"
         // Debug and test builds never send crash reports.
         manifestPlaceholders["crashReportsEnabled"]="false"
+        manifestPlaceholders["analyticsDeactivated"]="true"
+        buildConfigField("boolean","PRODUCT_ANALYTICS_AVAILABLE","false")
     }
 
     signingConfigs {
@@ -95,6 +97,8 @@ android {
             buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"$adsUnitId\"")
             manifestPlaceholders["admobAppId"]=adsAppId
             manifestPlaceholders["crashReportsEnabled"]=firebaseConfigured.toString()
+            manifestPlaceholders["analyticsDeactivated"]=(!firebaseConfigured).toString()
+            buildConfigField("boolean","PRODUCT_ANALYTICS_AVAILABLE",firebaseConfigured.toString())
             // A local debug/test configuration must never leak into a store package.
             buildConfigField("String", "SUPABASE_URL", "\"${productionSetting("SUPABASE_URL")}\"")
             buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${productionSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
@@ -127,6 +131,7 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
     implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-analytics")
     val composeBom = platform("androidx.compose:compose-bom:2025.05.00")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")

@@ -6,7 +6,7 @@ Son güncelleme: **15 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalı�
 
 Q1 geliştirmeleri (#15–#21) ve kalite yol haritası (#14) ana dala birleşti. Birleşik APK 7,9 MB / AAB 11,18 MB; 29 JVM ve 61 backend testi başarılı. GitHub emülatöründe 139 testten 136'sı geçti, özel servis yapılandırması gerektiren 3 test atlandı. Debug lint: 0 hata / 30 uyarı. İmza, üretim bağlantısı ve statik 16 KB kontrolleri geçti.
 
-Güncelleme bildiriminin Activity yeniden oluşturulunca kaybolması ve kapanmış ekrana gelen geç Play yanıtları düzeltildi. Crashlytics kodu ana dalda; gizlilik sayfası/Play beyanı ve yeni mağaza sürümü açık yayın adımlarıdır. Q2'nin ürün olayları, performans ölçümü ve sürüm otomasyonu işleri sıradadır.
+Güncelleme bildiriminin Activity yeniden oluşturulunca kaybolması ve kapanmış ekrana gelen geç Play yanıtları düzeltildi. Crashlytics kodu ana dalda; gizlilik sayfası/Play beyanı ve yeni mağaza sürümü açık yayın adımlarıdır. Q2.2 için yedi ürün olayı ve Ayarlar’da başlangıçta kapalı “Kullanım istatistikleri” seçeneği eklendi. Katılım geri çekilebilir; ad/e-posta, içerik kimliği/metni ve cevaplar özel olaylara eklenmez. [Firebase Analytics canlı kabulü ve yayın adımları](native-android/docs/PRODUCT_ANALYTICS.md) açık; performans ölçümü ve sürüm otomasyonu sıradadır.
 
 [Kalite yol haritası ve doğrulama sınırları](native-android/docs/QUALITY_ROADMAP.md) · [Kademeli yayın kontrol listesi](native-android/docs/STAGED_RELEASE.md).
 
