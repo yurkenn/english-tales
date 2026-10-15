@@ -122,6 +122,7 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q1.6 Güncelleme + değerlendirme | Ana dala birleşti | [#21](https://github.com/yurkenn/english-tales/pull/21) | Esnek güncelleme (3 günde bir) + 3. hikâyeden sonra tek değerlendirme isteği |
 | Q1.7 Reklam SDK uyarısı | Ana dala birleşti | [#19](https://github.com/yurkenn/english-tales/pull/19) | Beyan korunarak gerekçeli bastırıldı |
 | Q2.1 Çökme raporlama | Kod birleşti; yayın beyanları açık | [#18](https://github.com/yurkenn/english-tales/pull/18) | Crashlytics; test çökmesi panelde göründü |
+| Q2.2 Ürün olayları | Kod hazır; canlı kabul açık | Bu değişiklik | Yedi olay, varsayılan kapalı katılım, sabit payload ve D1 cohort |
 | Q2.5 Kademeli yayın listesi | Hazır; bu belgeyle birlikte #22 | [#22](https://github.com/yurkenn/english-tales/pull/22) | %20 → %50 → %100; izleme, durdurma ve düzeltme kaydı |
 
 ## 6. Birleşik doğrulama — 15 Ekim 2026
@@ -134,4 +135,4 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 - Yerel emülatör sistem izinleri nedeniyle başlatılamadı; cihaz testleri GitHub emülatöründe yapıldı. Mevcut çalışma dizini ve özel ayarlar korundu; entegrasyon geçici kopyada doğrulandı.
 - Crashlytics mapping yükleme işi bu yerel paket kontrolünde çalıştırılmadı. Gerçek Play teslimatı, üretilen split paketler, gerçek 16 KB cihazı ve fiziksel ses kesintisi bu çalışmada yeniden doğrulanmadı.
 
-**Q2 hâlâ açık:** Q2.2 ürün olayları, Q2.3 Macrobenchmark/baseline profile ve Q2.4 imzalı CI/dahili kanal otomasyonu uygulanacak. Q2.1 kodu ve önceki test çökmesi kaydı hazır; [gizlilik yayını ve Play veri güvenliği beyanı](CRASH_REPORTING.md) yeni mağaza sürümünden önce tamamlanmalı. Q2.5 [kademeli yayın kontrol listesi](STAGED_RELEASE.md) hazırdır; Console dağıtımı veya otomatik izleme kurulmuş sayılmaz.
+**Q2 hâlâ açık:** Q2.2 ürün olayları [isteğe bağlı Analytics katmanında](PRODUCT_ANALYTICS.md) uygulandı; canlı panel kabulü açık. Q2.3 Macrobenchmark/baseline profile ve Q2.4 imzalı CI/dahili kanal otomasyonu uygulanacak. Q2.1 kodu ve önceki test çökmesi kaydı hazır; [gizlilik yayını ve Play veri güvenliği beyanı](CRASH_REPORTING.md) yeni mağaza sürümünden önce tamamlanmalı. Q2.5 [kademeli yayın kontrol listesi](STAGED_RELEASE.md) hazırdır; Console dağıtımı veya otomatik izleme kurulmuş sayılmaz.

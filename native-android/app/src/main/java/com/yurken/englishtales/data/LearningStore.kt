@@ -9,6 +9,7 @@ import java.util.UUID
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import com.yurken.englishtales.analytics.*
 
 data class LearningSnapshot(
     val savedWordIds: Set<String> = emptySet(),
@@ -28,6 +29,8 @@ data class LearningSnapshot(
 
 /** Calls are serialized on the ViewModel's IO dispatcher. IDs survive content updates. */
 class LearningStore(private val context: Context,val owner: LearningOwner=LearningOwner.Guest,private val clock: () -> Long = System::currentTimeMillis) : AutoCloseable {
+    internal var onProductSignal: (LearningSignal) -> Unit = { ProductAnalytics.get(context).record(it) }
+    private fun productSignal(signal: LearningSignal) { runCatching { onProductSignal(signal) } }
     private val database=LearningDatabase.open(context,owner)
     private val dao=database.offline()
     private val operations=LearningOperations(InstallationIdentity.get(context))
@@ -74,11 +77,13 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
+        var newlyCompleted=false
         transaction {db ->
             updatePreferences(level,genre,goal,profile().name)
             dao.profile(profile().copy(onboarding=true))
-            recordEvent(db,"onboarding_completed","onboarding_completed",clock())
+            newlyCompleted=recordEvent(db,"onboarding_completed","onboarding_completed",clock())
         }
+        if(newlyCompleted) productSignal(LearningSignal.OnboardingCompleted)
     }
     fun updatePreferences(level: String, genre: String, goal: Int, name: String) {
         require(level in listOf("A1","A2","B1") && genre in listOf("Günlük yaşam","Macera","Gizem"))
@@ -86,10 +91,12 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             arrayOf<Any?>(level,genre,goal.coerceIn(1,3),name.trim().take(30).ifBlank {"Okuyucu"}))}
     }
     fun startReading(storyId: String) {
+        var newlyStarted=false
         transaction {db ->
             dao.profile(profile().copy(lastStory=storyId))
-            recordEvent(db,"reader:$storyId:${LearningPolicy.dayKey(clock())}","reader_started",clock())
+            newlyStarted=recordEvent(db,"reader:$storyId:${LearningPolicy.dayKey(clock())}","reader_started",clock())
         }
+        if(newlyStarted) productSignal(LearningSignal.StoryStarted)
     }
     fun dismissReaderHint() { writableDatabase.execSQL("UPDATE local_profile SET reader_hint_seen=1 WHERE id=1") }
     fun saveWords(ids: List<String>) {
@@ -157,31 +164,39 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     }
     fun completeReading(storyId: String,sessionId: String=UUID.randomUUID().toString(),activeMillis: Long=0,source: Story?=null) {
         val now=clock();val today=LearningPolicy.dayKey(now)
+        var newlyCompleted=false
+        var firstForLearner=false
         transaction {db ->
             val id=canonicalSessionId(sessionId)
             val draft=prepareCompletion(id,"reading",0,storyId,activeMillis,now,source)?:return@transaction
             val story=source?:LearningContent.storyById.getValue(storyId)
             updateProgress(db,storyId,100,story.sentences.last().id,story)
-            if(recordEvent(db,"read:$storyId:$today","reading_completed",now)) recordSession(db,now,0,true)
+            firstForLearner=scalar(db,"SELECT COUNT(*) FROM engagement_events WHERE name='reading_completed'")==0
+            newlyCompleted=recordEvent(db,"read:$storyId:$today","reading_completed",now)
+            if(newlyCompleted) recordSession(db,now,0,true)
             enqueueSession(draft,0,now);dao.end(id,"completed")
             unlockBadges(db,now)
         }
+        if(newlyCompleted) productSignal(LearningSignal.StoryCompleted(firstForLearner))
     }
     fun completeLesson(correctAnswers: Int, sessionId: String,kind: String="choice",questionCount: Int=5,activeMillis: Long=0) {
         require(kind in listOf("choice","card","match","spell") && questionCount in 1..5 && correctAnswers in 0..questionCount)
         val now=clock()
+        var newlyCompleted=false
         transaction {db ->
             val id=canonicalSessionId(sessionId)
             // A legacy completion has no recoverable timing/answers; do not invent a cloud session.
             if(dao.session(id)==null && scalar(db,"SELECT COUNT(*) FROM engagement_events WHERE event_id=?",arrayOf("lesson:$sessionId"))>0) return@transaction
             val draft=prepareCompletion(id,kind,questionCount,null,activeMillis,now)?:return@transaction
-            if(recordEvent(db,"lesson:$sessionId","practice_completed",now)) {
+            newlyCompleted=recordEvent(db,"lesson:$sessionId","practice_completed",now)
+            if(newlyCompleted) {
                 db.execSQL("UPDATE learning_stats SET completed_lessons=completed_lessons+1 WHERE id=1")
                 recordSession(db,now,correctAnswers.coerceIn(0,5)*5,false)
             }
             enqueueSession(draft,correctAnswers,now);dao.end(id,"completed")
             unlockBadges(db,now)
         }
+        if(newlyCompleted) productSignal(LearningSignal.PracticeCompleted(PracticeMode.fromStorage(kind)))
     }
     private fun recordSession(db: SupportSQLiteDatabase, now: Long, points: Int, reading: Boolean) {
         val today=LearningPolicy.dayKey(now)

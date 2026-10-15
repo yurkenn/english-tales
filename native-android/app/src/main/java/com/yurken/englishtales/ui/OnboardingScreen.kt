@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.R
 
 @Composable
-fun OnboardingScreen(onContinue: (String,String,Int)->Unit) {
+fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.englishtales.analytics.AnalyticsControls() },onContinue: (String,String,Int)->Unit) {
     var step by rememberSaveable { mutableIntStateOf(0) }
     var level by rememberSaveable { mutableStateOf("") }
     var genre by rememberSaveable { mutableStateOf("") }
@@ -62,6 +62,7 @@ fun OnboardingScreen(onContinue: (String,String,Int)->Unit) {
             if(step>=4) {
                 ReplyBubble("Günde $goal adım")
                 GuideBubble("Sana ${level} seviyesinde bir hikâye hazırladım. Altı çizili kelimelere dokunarak anlamlarını görebilirsin.")
+                analyticsControls()
                 ReplyChoice("İlk hikâyeme başla") { onContinue(level,genre,goal) }
             }
             Spacer(Modifier.height(12.dp))

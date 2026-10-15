@@ -136,6 +136,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             Text("Bir adım = tamamlanan bir hikâye veya kelime çalışması.",fontSize=12.sp,color=TaleMuted)
             ReminderControls()
             com.yurken.englishtales.ads.AdPrivacyControls()
+            com.yurken.englishtales.analytics.AnalyticsControls()
             Button(onClick={onSave(level,genre,goal,name)},modifier=Modifier.fillMaxWidth()) {Text("Değişiklikleri kaydet")}
             Text("İlerlemen bu cihazda saklanır. Uygulama verilerini silmek ilerlemeni de siler.",fontSize=12.sp,color=TaleMuted)
             SupportLinks()

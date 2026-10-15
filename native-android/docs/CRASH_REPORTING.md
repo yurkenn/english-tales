@@ -10,14 +10,14 @@ Firebase Crashlytics seçildi:
 - Google Play hizmetleri uygulamada zaten var (Google girişi, reklam); reklam kimliği gerektirmez.
 - Yalnız Play vitals bu kurulum sayısında veri üretmiyor. Sentry ayrı hesap, Supabase üzerinde kendi çözümümüz ~2–3 gün ek iş ve bakım gerektirirdi.
 
-Firebase Analytics eklenmedi; ürün olayları (Q2.2) ayrı karardır.
+Q2.2 kapsamında Firebase Analytics kullanıcı seçimiyle eklendi; başlangıçta kapalıdır. [Ürün ölçümleri](PRODUCT_ANALYTICS.md).
 
 ## Davranış
 
 - Raporlar yalnız `google-services.json` ile derlenen **release** paketlerinden gider (`firebase_crashlytics_collection_enabled` manifest yer tutucusu). Debug/test derlemeleri hiçbir zaman göndermez; `CrashReportingConfigTest` bunu doğrular.
-- `firebase_analytics_collection_deactivated=true`.
+- Debug/test paketlerinde `firebase_analytics_collection_deactivated=true`; release paketinde Analytics ayrıca açık kullanıcı katılımı gerektirir.
 - Release derlemesi `app/google-services.json` yoksa durur; mağaza paketleri çökme raporsuz çıkmaz. CI ve fork'lar dosya olmadan debug derlemeye devam eder.
-- Yeni izin yok. İşlenen veri: hata izi, uygulama sürümü, cihaz modeli, Android sürümü, rastgele Firebase kurulum kimliği, oturum zamanları. E-posta, hikâye metni ve öğrenme geçmişi eklenmez.
+- Yeni izin yok. İşlenen veri: hata izi, uygulama sürümü, cihaz modeli, Android sürümü, rastgele Firebase kurulum kimliği, oturum zamanları. E-posta, hikâye/kelime metni ve yanıt içeriği eklenmez. Kullanıcı Analytics katılımını açmışsa SDK, sınırlı olay adlarını ve çalışma modunu Crashlytics breadcrumb kayıtlarına da ekleyebilir; kapatmak önceden oluşmuş hata kayıtlarını sunucudan silmez. [Firebase breadcrumb davranışı](https://firebase.google.com/docs/crashlytics/android/customize-crash-reports).
 
 ## Kurulum
 
