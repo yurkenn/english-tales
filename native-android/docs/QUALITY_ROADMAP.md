@@ -8,7 +8,7 @@
 
 | Alan | Ölçüt | Hedef | Bugün | Nasıl ölçülür |
 |---|---|---|---|---|
-| Kararlılık | Kullanıcının fark ettiği çökme oranı | < %1,09 (Play kötü davranış eşiği), hedef < %0,5 | Ölçülmüyor | Play vitals + çökme raporlama |
+| Kararlılık | Kullanıcının fark ettiği çökme oranı | < %1,09 (Play kötü davranış eşiği), hedef < %0,5 | Crashlytics hazır (#18); 49 sürümüyle ölçülmeye başlar | Play vitals + çökme raporlama |
 | Kararlılık | ANR oranı | < %0,47 (Play eşiği), hedef < %0,2 | Ölçülmüyor | Play vitals |
 | Performans | Soğuk açılış (orta sınıf cihaz, medyan) | < 1,5 sn | Ölçülmüyor; 322 KB katalog ana iş parçacığında | Macrobenchmark |
 | Performans | Okuyucu sayfa geçişi takılma | < %5 yavaş kare | Ölçülmüyor | Macrobenchmark `FrameTimingMetric` |
@@ -21,7 +21,7 @@
 | İçerik | Paket = canlı | Fark 0 | Paket 359 / canlı 316 öğe | Yayın doğrulama aracı |
 | Öğrenme | İlk hikâyeyi bitirme, ertesi gün dönüş, tekrar tamamlama | Önce ölçüm, sonra hedef | Ölçülmüyor | Asgari ürün olayları |
 | Yayın | Kademeli dağıtım + otomatik doğrulama | Her sürüm %20 → %50 → %100 | %100 elle | Sürüm kontrol listesi |
-| Kod | Kullanım dışı API ve lint uyarısı | 0 | 2 Kotlin deprecation | Derleme çıktısı |
+| Kod | Kullanım dışı API ve lint uyarısı | 0 | 3 → 0 (#19) | Derleme çıktısı |
 
 ## 2. Fazlar
 
@@ -37,7 +37,7 @@
 | Q1.6 | Uygulama içi güncelleme + değerlendirme isteği | Esnek güncelleme; 3. tamamlanan hikâyeden sonra en fazla bir değerlendirme isteği | 1 |
 | Q1.7 | Reklam SDK uyarısı (`setTagForChildDirectedTreatment`) | Uyarı 0; reklam kapalıyken davranış değişmez | 0,5 |
 
-**Kapı Q1:** APK < 15 MB · CI'da tüm testler · derleme uyarısı 0 · ses odağı testleri.
+**Kapı Q1:** APK < 15 MB · CI'da tüm testler · derleme uyarısı 0 · ses odağı testleri. — Tüm maddeler PR'da; kapı #15–#21 birleşince geçilmiş olur.
 
 ### Q2 — Görünürlük ve yayın güvenliği · ~5–7 gün · karar: ölçüm sağlayıcısı
 
@@ -117,7 +117,8 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q1.1 WebP kapaklar | İncelemede | [#15](https://github.com/yurkenn/english-tales/pull/15) | APK 30,7 → 7,2 MB; AAB 10,0 MB |
 | Q1.2 CI cihaz testleri | İncelemede | [#16](https://github.com/yurkenn/english-tales/pull/16) | İlk koşu ~2,5 dk; yapılandırmaya bağlı 2 test bulundu ve koşullu yapıldı |
 | Q1.3 TTS ses odağı | İncelemede | [#17](https://github.com/yurkenn/english-tales/pull/17) | Odak kaybında durur; her çıkışta odak bırakılır |
-| Q1.4 `LinkAnnotation` | Sırada | — | — |
-| Q1.5 Kataloğu arka planda yükle | Sırada | — | — |
-| Q1.6 Güncelleme + değerlendirme | Sırada | — | — |
-| Q1.7 Reklam SDK uyarısı | Sırada | — | — |
+| Q1.4 `LinkAnnotation` | İncelemede | [#19](https://github.com/yurkenn/english-tales/pull/19) | Kotlin derleme uyarısı 3 → 0 |
+| Q1.5 Kataloğu arka planda yükle | İncelemede | [#20](https://github.com/yurkenn/english-tales/pull/20) | Ana iş parçacığından 134–173 ms çıktı; debug soğuk açılış ~1,63 → ~1,50 sn |
+| Q1.6 Güncelleme + değerlendirme | İncelemede | [#21](https://github.com/yurkenn/english-tales/pull/21) | Esnek güncelleme (3 günde bir) + 3. hikâyeden sonra tek değerlendirme isteği |
+| Q1.7 Reklam SDK uyarısı | İncelemede | [#19](https://github.com/yurkenn/english-tales/pull/19) | Beyan korunarak gerekçeli bastırıldı |
+| Q2.1 Çökme raporlama | İncelemede | [#18](https://github.com/yurkenn/english-tales/pull/18) | Crashlytics; test çökmesi panelde göründü |
