@@ -19,13 +19,19 @@ Firebase Analytics eklenmedi; ürün olayları (Q2.2) ayrı karardır.
 - Release derlemesi `app/google-services.json` yoksa durur; mağaza paketleri çökme raporsuz çıkmaz. CI ve fork'lar dosya olmadan debug derlemeye devam eder.
 - Yeni izin yok. İşlenen veri: hata izi, uygulama sürümü, cihaz modeli, Android sürümü, rastgele Firebase kurulum kimliği, oturum zamanları. E-posta, hikâye metni ve öğrenme geçmişi eklenmez.
 
-## Kurulum (bir kez)
+## Kurulum
 
-1. Firebase konsolunda proje oluştur (Google Analytics kapalı).
-2. Android uygulaması ekle: `com.yurken.englishtales`.
-3. `google-services.json` dosyasını `native-android/app/` altına koy ve commit et (gizli değildir; anahtar paket adıyla sınırlıdır).
-4. Crashlytics sayfasında “Enable”.
-5. Release derlemesinden sonra test için cihazda bir çökme üret ve panelde gör.
+Firebase projesi `english-tales-77d32`; Android uygulaması `com.yurken.englishtales` zaten kayıtlı (App ID `1:28104909219:android:d260e093436283f95a7a16`), Crashlytics etkin.
+
+`google-services.json` Git'e girmez (`.gitignore`): içindeki Android API anahtarı şu an uygulama kısıtlamasız ve PR'larda GitGuardian taraması var. Release derleyen makinede bir kez:
+
+```bash
+firebase apps:sdkconfig ANDROID 1:28104909219:android:d260e093436283f95a7a16 --project english-tales-77d32 -o native-android/app/google-services.json
+```
+
+Release derlemesi mapping dosyasını Crashlytics'e yükler (`uploadCrashlyticsMappingFileRelease`); hata izleri panelde çözülmüş görünür.
+
+**Önerilen güvenlik adımı:** Google Cloud → Credentials → “Android key (auto created by Firebase)” anahtarını `com.yurken.englishtales` paketi ve Play imza SHA-1'leriyle sınırla.
 
 ## Yayın öncesi yapılacaklar
 
