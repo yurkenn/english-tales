@@ -16,6 +16,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.*
 import com.yurken.englishtales.R
+import com.yurken.englishtales.data.ListeningQuiz
+import com.yurken.englishtales.data.ListeningQuestion
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -33,13 +35,14 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var session by rememberSaveable { mutableIntStateOf(0) }
     var gapQuestions by rememberSaveable(stateSaver=gapQuestionsSaver) { mutableStateOf(emptyList<GapQuestion>()) }
     var gapUnavailable by rememberSaveable { mutableStateOf(false) }
+    var listenQuestions by rememberSaveable(stateSaver=listeningQuestionsSaver) { mutableStateOf(emptyList<ListeningQuestion>()) }
     val stories=LearningContent.stories
     val dictionary=LearningContent.words
     val gapPrompts by produceState<List<GapPrompt>?>(null,stories,dictionary) {
         value=withContext(Dispatchers.Default) {SentenceGap.prompts(stories,dictionary)}
         gapUnavailable=false
     }
-    val sessionKind=if(mode=="cloze") SentenceGap.SESSION_KIND else mode
+    val sessionKind=when(mode) {"cloze"->SentenceGap.SESSION_KIND;"listen"->ListeningQuiz.SESSION_KIND;else->mode}
     fun exit(plan: Boolean=false) {
         val leave={onSessionAbandoned(sessionKey);mode="";if(plan) onDailyPlan()}
         if(plan && finished) {
@@ -62,6 +65,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         val pool=if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else (priority+supplemental.shuffled()).distinctBy {it.id}.take(5)
         sessionKey=java.util.UUID.randomUUID().toString()
         session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
+        if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(LearningContent.wordById::get),dictionary)
     }
     LaunchedEffect(launchId) { if(launchId!=null) { start("choice",launchWordIds);onLaunchConsumed() } }
     LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,sessionKind,ids.size)}
@@ -76,6 +80,11 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",Color(0xFFE3F6FF),enabled=gapPrompts?.isNotEmpty()==true) {start("cloze")}
             if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
+            // Probes the device voice; the mode is offered only when English speech works.
+            val voice=rememberNarrator()
+            if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),"headphones",Color(0xFFE3F6FF),enabled=voice.available==true) {start("listen")}
+            if(voice.available!=true) Text(stringResource(if(voice.available==null) R.string.listen_preparing else R.string.listen_unavailable),
+                modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             ModeCard("Kelimeleri eşleştir","İngilizce ve Türkçe çiftleri bul.","play",Color(0xFFF0E5FF)) {start("match")}
             ModeCard("Kelimeyi oluştur","Harfleri doğru sıraya koy.","letters",Color(0xFFE9F7E2)) {start("spell")}
         }
@@ -88,6 +97,11 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("card")},snapshot);return }
     if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("match")},snapshot);return }
     if(finished) { GameResult("$correctCount / $count doğru",correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
+    if(mode=="listen") {
+        ListeningGame(listenQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
+            onComplete={correctCount=it;complete(it)},onExit={exit()})
+        return
+    }
     if(mode=="cloze") {
         SentenceGapGame(gapQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
             onComplete={correctCount=it;complete(it)},onExit={exit()})
