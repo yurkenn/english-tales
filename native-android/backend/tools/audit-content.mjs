@@ -60,9 +60,9 @@ export function renderReport(result){
     const c=result.comparison;
     lines.push('','## Paket / etkin yayın farkı','',`Eşit: ${c.equal?'evet':'hayır'} · Farklı hikâye: ${c.differingStories.length} · Eksik hikâye: ${c.missingStoryIds.length} · Fazla hikâye: ${c.extraStoryIds.length}`,
       '',`Canlıda eksik kelime ID’leri (${c.missingVocabularyIds.length}): ${c.missingVocabularyIds.map(cell).join(', ')||'yok'}`,'',
-      '| Hikâye | Bilgi farkı | Cümle farkı | Eksik/fazla kelime | Değişen kelime | Eksik/fazla bağlantı | Kapak farkı |',
-      '|---|---:|---:|---:|---:|---:|---|');
-    for(const d of c.differingStories)lines.push(`| ${cell(d.storyId)} | ${d.metadataFields.length} | ${d.missingSentenceIds.length+d.extraSentenceIds.length+d.modifiedSentences.length} | ${d.missingWordIds.length}/${d.extraWordIds.length} | ${d.modifiedWords.length} | ${d.missingLinks.length}/${d.extraLinks.length} | ${d.coverMismatch?'var':'yok'} |`);
+      '| Hikâye | Bilgi farkı | Cümle farkı | Eksik/fazla kelime | Değişen kelime | Eksik/fazla bağlantı | Çeviri farkı | Kapak farkı |',
+      '|---|---:|---:|---:|---:|---:|---:|---|');
+    for(const d of c.differingStories)lines.push(`| ${cell(d.storyId)} | ${d.metadataFields.length} | ${d.missingSentenceIds.length+d.extraSentenceIds.length+d.modifiedSentences.length} | ${d.missingWordIds.length}/${d.extraWordIds.length} | ${d.modifiedWords.length} | ${d.missingLinks.length}/${d.extraLinks.length} | ${d.translationChanges.length} | ${d.coverMismatch?'var':'yok'} |`);
     lines.push('',`Canlı snapshot: ${result.live.snapshot.createdAt} · Medya: ${result.media.status} (${result.media.assets??0})`);
   }
   lines.push('','## Editör inceleme sırası','',
@@ -81,7 +81,7 @@ export function renderReport(result){
   return lines.join('\n');
 }
 
-export async function main(args=process.argv.slice(2)){
+export async function main(args=process.argv.slice(2),sources={}){
   const options={output:path.join(root,'native-android/build/content-audit'),snapshot:null,skipMedia:false,requireParity:false,minCoverage:null,requireLang:null};
   for(let i=0;i<args.length;i++){
     const arg=args[i];
@@ -98,7 +98,7 @@ export async function main(args=process.argv.slice(2)){
     }else throw Error(`Unknown argument: ${arg}`);
   }
   if((options.requireParity||options.skipMedia)&&!options.snapshot)throw Error('--require-parity/--skip-media requires --snapshot');
-  const bundlePath=path.join(root,'native-android/app/src/main/assets/catalog/v1.json');
+  const bundlePath=sources.bundlePath??path.join(root,'native-android/app/src/main/assets/catalog/v1.json');
   const bytes=await readFile(bundlePath),catalog=JSON.parse(bytes),docs=bundledDocuments(catalog);
   let sourceCommit=null,sourceDirty=null;
   try{
@@ -110,7 +110,7 @@ export async function main(args=process.argv.slice(2)){
   if(options.snapshot){
     const snapshotBytes=await readFile(options.snapshot),snapshot=JSON.parse(snapshotBytes);
     result.snapshotSHA256=sha(snapshotBytes);result.live=auditSnapshot(snapshot);
-    result.comparison=compareDocuments(docs,publishedDocuments(snapshot),{snapshot,manifest:await json(path.join(root,'native-android/backend/supabase/asset-upload-manifest.json'))});
+    result.comparison=compareDocuments(docs,publishedDocuments(snapshot),{snapshot,manifest:await json(sources.assetManifestPath??path.join(root,'native-android/backend/supabase/asset-upload-manifest.json'))});
     try{result.media=options.skipMedia?{status:'skipped'}:await verifySnapshotMedia(snapshot,options.snapshot);}
     catch(error){result.media={status:'failed',error:error.message};}
   }

@@ -30,6 +30,43 @@ Bu sayılar paketin içeriğini belirtir. Canlı ortamın yayın durumu, anonim 
 
 [İçerik stüdyosu](backend/admin/README.md), gerçek editör/yayıncı hesabı ve mevcut RPC'ler kullanılır. Editör taslak düzenler; yayınlama publisher rolüne aittir.
 
+### Q4.1 — mevcut yayını paketten yeni taslağa taşıma
+
+`content:drafts`, etkin yayın ile paket arasındaki farklar için tekrar çalıştırılabilir inceleme paketi üretir. Varsayılanı **ağ kullanmayan dry-run** işlemidir. `--apply` yalnız taslak oluşturur/kaydeder; aracın RPC izin listesinde `admin_publish` bulunmaz. Yayını insan yayıncı panelde tamamlar.
+
+1. Depo kökünde `env -u NODE_USE_SYSTEM_CA node tooling/backup_public_content.mjs` ile anonim snapshot al. Çıktıdaki `catalog.json` ve yanındaki `media/` dizinini birlikte sakla. Bu komut operatörün canlı ortamda çalıştıracağı salt okunur adımdır; yerel testler canlıya bağlanmaz.
+2. `native-android/backend/` içinde aşağıdaki ilk iki komutu çalıştır. `<önce>` snapshot'ın `catalog.json` dosyasıdır. Aynı inceleme için aynı `--output` dizinini kullan.
+
+   ```sh
+   env -u NODE_USE_SYSTEM_CA npm run content:audit -- --snapshot <önce> --require-lang tr
+   env -u NODE_USE_SYSTEM_CA npm run content:drafts -- --snapshot <önce> --output ../build/content-drafts-q41
+   ```
+
+3. Çıktıdaki `review.md`, `manifest.json` ve `stories/*.json` dosyalarını incele. Raporda hikâye başına eklenen/çıkarılan/güncellenen kelimeler, anlam ve örnekleri; eklenen/çıkarılan bağlantılar ve cümleleri; dil farkları bulunur. İki fazla `asleep` satırı yeni taslakta uzun `falls asleep` ifadesi lehine çıkarılır. **Eski yayın ve öğrenme geçmişi korunur.** Çeviri haritaları paketi birebir izler; pakette olmayan ek diller de yalnız yeni taslaktan çıkarılır. Payload'ı elle düzenlemek uygulamanın girdisi değildir; değişiklik gerekiyorsa kaynak paketi düzeltip yeni çıktı dizininde tekrar incele.
+4. İnsan editörün geçerli oturumunu **bütün Git çalışma ağaçlarının dışında**, erişimi `chmod 600` olan bir JSON dosyasında hazırla. Dosya en fazla 1 MB olmalıdır. Şema: `{"access_token":"<editörün erişim tokenı>","publishable_key":"sb_publishable_<proje anahtarı>"}`. `publishable_key` yerine `SUPABASE_PUBLISHABLE_KEY` ortam değişkeni de kullanılabilir. Token yalnız dosyadan okunur; komut satırına, rapora veya Git'e yazılmaz. Oturum yenileme/hesaba giriş araç tarafından yapılmaz.
+5. İncelenen aynı girdiler ve çıktı diziniyle uygula. URL, snapshot'ın `project` değeriyle eşleşen `https://<project>.supabase.co` kökü olmalıdır. Yerel testler için localhost HTTP desteklenir; özel alan adları desteklenmez.
+
+   ```sh
+   env -u NODE_USE_SYSTEM_CA npm run content:drafts -- --snapshot <önce> --output ../build/content-drafts-q41 --apply --url https://<project>.supabase.co --session-file <Git-dışındaki-oturum.json>
+   ```
+
+6. Panelde oluşturulan taslakları, kelime/ifade önizlemesini, destek dillerini ve yayın kontrollerini tekrar incele. **Publisher**, panelde incelediği güncel `edit_version` ile yayımlar. `apply-results.json` taslak ID/sürüm numaralarını ve kaydetme/atlama durumunu içerir; yayın kanıtı değildir.
+7. Depo kökünden yeniden snapshot al. Ardından backend içinde yeni `<sonra>` dosyasıyla doğrula:
+
+   ```sh
+   env -u NODE_USE_SYSTEM_CA npm run content:audit -- --snapshot <sonra> --require-parity --require-lang tr --output ../build/content-audit-after-q41
+   ```
+
+   Başarı, etkin yayınların paketle eşitliğini, Türkçe bütünlüğünü ve snapshot medya baytlarını doğrular. `--skip-media` sıkı eşitlik kabulünü geçemez. `--min-coverage 60` ayrı Q4 hedefidir; paket eşitliği bu hedefi sağlamaz.
+
+Manifest snapshot, paket, kapak manifesti ve araç kaynaklarının SHA-256 özetlerini içerir. `--bundle` ve `--asset-manifest` seçenekleri yerel fixture/alternatif kaynak doğrulaması içindir; varsayılanlar depodaki paket ve exporter manifestidir. Girdi/araç özeti değişirse aynı çıktı dizinine uygulama reddedilir; yeni snapshot ve yeni çıktı diziniyle tekrar incele. Taslakların `p_revision_id` ve `p_expected_version` alanları dosyada `null` şablondur; uygulama `admin_create_draft`/`admin_revision` yanıtındaki gerçek ID ve güncel sürümü `admin_save_draft` çağrısına koyar.
+
+Uygulama, **bütün etkin snapshot hikâyelerinin** canlı `current_revision_id`, `edit_version`, arşiv ve içerik durumunu ilk yazmadan önce kontrol eder; kayma varsa durur. Açık taslak hedef paketle eşitse yazmadan atlanır. Kaynak yayının birebir kopyasıysa (kesilmiş uygulamadan kalan kopya dahil) kaydedilir; farklı bir editoryal taslak veya birden çok açık taslak varsa hiçbirini ezmez. Eksik/fazla hikâye ve kapak farkı otomatik giderilmez; raporda uygulama engelidir. Kapak ve ses ID'leri korunur; medya yüklenmez.
+
+Her hikâyenin kaydı mevcut RPC içinde atomiktir; tüm hikâyeler birlikte tek işlem değildir. Kontrol oluşturma/kayıt çevresinde tekrarlanır ve taslak kaydı `edit_version` ile korunur. Ayrı RPC'ler yayıncıyı bütün çalışma boyunca kilitlemez: eşzamanlı yayın nedeniyle geç fark edilen kayma veya ağ kesintisi daha önce kaydedilmiş/yeni kopyalanmış taslak bırakabilir. `apply-results.json` tamamlanan adımları tutar; hata halinde paneli inceleyip aynı komutu tekrar çalıştır. İlk kontrolde bulunan kayma/çatışma hiç yazma yapmaz. Eski snapshot ile yayın sonrası yeniden uygulama reddedilir; yeni snapshot gerekir.
+
+Snapshot'ın altı eski tablosu desteklenir; Türkçe eski alanlardan hesaplanır. Dokuz tabloluk snapshot'ta üç çeviri tablosu da bulunmalıdır ve gerçek satırlar esas alınır ([sözleşme](backend/TRANSLATION_CONTRACT.md)). Mevcut `tooling/backup_public_content.mjs` altı tablo toplar; yeni dil tablolarının bağımsız doğrulaması için bu üç tablonun da sayfalı anonim çıktısını içeren snapshot gerekir. Altı tabloluk kaynakta görünmeyen canlı ek diller varsa uygulama içerik kayması olarak durur; eksik kaynakla editörün çevirileri silinmez.
+
 1. Test ortamında yeni taslağı oluştur veya onaylı seed ile ilk revision'ı hazırla.
 2. Cümleleri, çevirileri, kelimeleri ve kelime–cümle bağlantılarını incele.
 3. Kapağı Storage API ile yeni bir UUID/hash yoluna `upsert=false` kullanarak yükle; geri indirip boyutunu ve SHA-256 özetini kontrol et. SQL ile `storage.objects` satırı eklemek dosya yüklemek değildir.
