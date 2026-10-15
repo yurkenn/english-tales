@@ -47,11 +47,17 @@ Analytics teslimatı en iyi çaba esaslıdır. Kalıcı öğrenme commit'i ile F
 
 ## Açık canlı kabul ve yayın adımları
 
-1. `english-tales-77d32` projesinde GA4 bağlantısını ve `com.yurken.englishtales` Android stream'ini doğrula. Bu çalışmada Console erişimi izin denetiminde reddedildi; başka erişim yoluyla aşılmadı.
+1. **CLI ile doğrulandı (15 Ekim 2026):** `english-tales-77d32` projesi GA4 property `400061574` ile bağlı; mevcut Android app `1:28104909219:android:d260e093436283f95a7a16`, Android stream `6404716366`. Console erişimi reddedildikten sonra kullanıcı CLI kullanımını ayrıca istedi; Firebase Management API `analyticsDetails` HTTP 200 döndürdü. Yeniden bağlantı kurulmadı.
 2. Yeni sürüm kodlu release'i kontrollü test cihazına kur. Katılım kapalıyken özel olay yok; açıkken yukarıdaki olaylar DebugView/Realtime'da beklenen şekilde görünür. Kapattıktan sonra yeni olay yok. Test debug özelliğini cihazda kapat.
 3. GA retention/data-sharing ayarlarını gözden geçir; reklam bağlantısı/personalization açma. `mode` boyutunu ve gerekli dönüşüm/cohort raporlarını kaydet. Bu ayarlar değiştirilmiş veya canlı oranlar ölçülmüş sayılmaz.
-4. Güncellenmiş `web/privacy.html` kaynağını yayımla ve URL içeriğini doğrula; Play Data Safety formunu gerçek SDK davranışıyla karşılaştır (product interactions, device/other IDs, approximate location ve isteğe bağlı analytics kullanımı dahil). Mevcut Crashlytics beyan kapısını da tamamla.
+4. **Gizlilik yayını tamamlandı (15 Ekim 2026):** Firebase CLI ile yalnız `englishtales-app` Hosting sitesi yayımlandı. [Canlı gizlilik sayfası](https://englishtales-app.web.app/privacy) HTTP 200; içerik kaynakla byte düzeyinde aynı, SHA-256 `cfd590deb6668fe699ab70811459244c19740743ed5b44da6038bd4fe9bc7c9b`. Play Data Safety formunu gerçek SDK davranışıyla karşılaştır (product interactions, device/other IDs, approximate location ve isteğe bağlı analytics kullanımı dahil). Mevcut Crashlytics beyan kapısını da tamamla.
 5. [Kademeli yayın kontrol listesini](STAGED_RELEASE.md) uygula. İmzalı yerel teknik paket mağaza dağıtımı değildir.
+
+## CLI yetki sınırı
+
+Mevcut Firebase CLI oturumu proje bağlantısını okumaya ve Hosting yayınına yetiyor. GA Admin property/retention ve GA Data Realtime çağrıları ise HTTP 403 `ACCESS_TOKEN_SCOPE_INSUFFICIENT` döndürdü. Bu sonuç Analytics property erişiminin reddedildiğini veya olay bulunmadığını kanıtlamaz; mevcut OAuth token kapsamı rapor API'leri için yetersizdir. Retention, `mode` custom dimension ve canlı olay kabulü henüz doğrulanmadı.
+
+Rapor okuması için `analytics.readonly`, boyut/ayar değişikliği için ayrıca `analytics.edit` kapsamı gerekir. [Google Cloud CLI belgesi](https://docs.cloud.google.com/sdk/gcloud/reference/auth/application-default/login), Google Cloud dışındaki kapsamlar için kendi OAuth Client ID dosyasıyla `--client-id-file` kullanılmasını ister. Kullanıcının Google yetkilendirmesi olmadan bu kapsamlar eklenmiş sayılmaz. Kimlik bilgileri depoya veya belgelere eklenmez.
 
 ## Birincil kaynaklar
 
