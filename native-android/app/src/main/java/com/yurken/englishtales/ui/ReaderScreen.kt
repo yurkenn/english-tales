@@ -38,7 +38,7 @@ import kotlinx.coroutines.CancellationException
 
 private const val SENTENCES_PER_PAGE=8
 
-internal class Narrator(context: Context) {
+internal open class Narrator(context: Context) {
     private var engine: TextToSpeech? = null
     private var ready = false
     private var closed = false
@@ -91,16 +91,29 @@ internal class Narrator(context: Context) {
         speaking = engine?.speak(text, TextToSpeech.QUEUE_FLUSH, null, activeId) == TextToSpeech.SUCCESS
         if (!speaking) error = "Seslendirme başlatılamadı."
     }
-    fun stop() { preparing = false; pending = null; activeId = null; engine?.stop(); speaking = false }
+    open fun stop() { preparing = false; pending = null; activeId = null; engine?.stop(); speaking = false }
     fun close() { preparing = false; closed = true; pending = null; activeId = null; engine?.shutdown(); main.removeCallbacksAndMessages(null) }
+}
+
+/** One narrator per screen: released on dispose and silenced when the app leaves the foreground. */
+@Composable
+internal fun rememberNarrator(factory: (Context) -> Narrator = ::Narrator): Narrator {
+    val context = LocalContext.current
+    val narrator = remember(context) { factory(context) }
+    val lifecycle = androidx.lifecycle.compose.LocalLifecycleOwner.current.lifecycle
+    DisposableEffect(narrator, lifecycle) {
+        val observer = androidx.lifecycle.LifecycleEventObserver { _, event -> if (event == androidx.lifecycle.Lifecycle.Event.ON_STOP) narrator.stop() }
+        lifecycle.addObserver(observer)
+        onDispose { lifecycle.removeObserver(observer); narrator.close() }
+    }
+    return narrator
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={},appearanceStore: ReadingPreferencesStore?=null) {
     val context=LocalContext.current
-    val narrator=remember(context) { Narrator(context) }
-    DisposableEffect(narrator) { onDispose { narrator.close() } }
+    val narrator=rememberNarrator()
     val pageCount=(story.sentences.size+SENTENCES_PER_PAGE-1)/SENTENCES_PER_PAGE
     val saved=snapshot.progressFor(story)
     val position=snapshot.readingPositions[story.id]?.takeIf {it.revisionId==story.revisionId}
@@ -176,7 +189,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
             Text("${page+1} / $pageCount",color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
             Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
                 Slider(value=page.toFloat(),onValueChange={changePage(it.toInt())},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
-                Box(Modifier.size(48.dp).semantics { contentDescription=if(narrator.speaking) "Seslendirmeyi durdur" else "Sayfayı dinle" }.clickable { if(narrator.speaking) { narrator.stop() } else { narrator.speak(pageSentences.joinToString(" ") {it.english}) } },contentAlignment=Alignment.Center) { if(narrator.speaking) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
+                Box(Modifier.size(48.dp).semantics { contentDescription=if(narrator.speaking || narrator.preparing) "Seslendirmeyi durdur" else "Sayfayı dinle" }.clickable { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { narrator.speak(pageSentences.joinToString(" ") {it.english}) } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
             }
             Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
                 TextButton(onClick={changePage(page-1)},enabled=page>0,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text("‹ Önceki",fontSize=12.sp) }
