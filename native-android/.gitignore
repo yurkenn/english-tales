@@ -5,6 +5,8 @@ build/
 local.properties
 supabase.properties
 signing.properties
+# Firebase app config (contains the Android API key); fetch with `firebase apps:sdkconfig`, see docs/CRASH_REPORTING.md
+app/google-services.json
 *.iml
 *.jks
 *.keystore
