@@ -1,6 +1,6 @@
 # Performans altyapısı — Q2.3
 
-15 Ekim 2026. Macrobenchmark senaryoları ve profil üreticisi eklendi. Son emülatör ölçüm koşusunun sonucu ve geçici dizinde üretilen profil dosyaları bu checkpoint'te henüz yeniden doğrulanmadı. **Fiziksel cihazda hızlanma ölçüldüğü veya Q2.3'ün tamamlandığı iddia edilmez.**
+15 Ekim 2026. Macrobenchmark senaryoları, kaynak Baseline/Startup Profile dosyaları ve release paketleme kontrolü eklendi. Profiller kalıcı depoda `77535d1` commit'inde kayıtlı. **Fiziksel cihazda hızlanma ölçüldüğü veya Q2.3'ün tamamlandığı iddia edilmez.**
 
 ## İzole uygulama
 
@@ -33,12 +33,25 @@ Emülatörde yalnız akış kontrolü için komutlara `-Pandroid.testInstrumenta
 
 CI, mevcut uygulama cihaz testlerinden sonra üç ölçüm senaryosunu birer kez çalıştırır. JSON/Perfetto ve test raporları `android-device-tests` artefaktına eklenir. Yerel çıktılar `macrobenchmark/build/outputs/connected_android_test_additional_output/` altında tutulur. Raporla birlikte commit, cihaz/OS, varyant, iterasyon ve compilation mode kaydedilmelidir.
 
-## Açık kabul adımları
+## Doğrulama kaydı
 
-1. Kaynak profillerini kalıcı çalışma dizininde üret veya doğrulanmış kayıttan kurtar ve commit et.
-2. Son kaynakla üç emülatör ölçüm senaryosunu ve CI kontrollerini doğrula.
-3. İmzalı release paketinde profil ve mevcut yayın kontrollerini doğrula; bu bir Play yüklemesi değildir.
-4. Aynı fiziksel cihaz/OS/ısı koşullarında en az varsayılan 5 tekrarla None/Require TTID ve gezinme kare yüzdeliklerini karşılaştır; TTFD doğrulamasını tamamla.
+Kaynak `77535d1`; API 36 ARM64 `English_Tales_Native` emülatörü. Profil üretimi **2/2**, optimize edilmiş `performance` paketinde Macrobenchmark **3/3** başarılı; hata/atlama yok. Her ölçüm senaryosu bir tekrar, `suppressErrors=EMULATOR` ile çalıştı. Profil zorunlu soğuk açılış ve sekme gezinmesi `Partial(Require)`, profilsiz açılış `None` kullanır.
+
+| Kaynak profil | Toplam kural | Uygulama kuralı |
+|---|---:|---:|
+| `baseline-prof.txt` | 20.988 | 1.122 |
+| `startup-prof.txt` | 17.787 | 855 |
+
+Yerel smoke kaydı: profilsiz TTID 1.666,61 ms; profil zorunlu TTID 1.447,20 ms. Gezinmede 73 kare; CPU kare süresi P50 27,75 / P95 80,16 ms. **Tek tekrarlı emülatör sayıları hızlanma veya hedef kabulü değildir.** Ham JSON, Perfetto izleri ve test XML'leri Gradle çıktılarında; cihaz/kaynak özeti ve komut günlükleri Git dışı `native-android/build/performance-evidence/` altında saklanır.
+
+## İmzalı paket doğrulaması
+
+İmzalı `48 / 2.0.0` APK ve AAB yeniden üretildi. `tooling/verify_release.py` kaynak uygulama kurallarını, release R8 profilinde `MainActivity` kuralını, APK/AAB profil başlıklarını, imzaları, üretim adresini/test adresinin dışlanmasını, AD_ID iznini ve statik ZIP/ELF64 16 KB hizalamasını doğruladı. Her iki pakette `baseline.prof` 8.612 bayt, `baseline.profm` 489 bayt. AAB SHA-256: `d8a341d27497870f74089c60a30b654f28af03f8195bbaeb4edb7a86b84d874c`.
+
+Bu yerel paket kontrolü Play yüklemesi değildir; Crashlytics mapping yüklemesi çalıştırılmadı. PR ve güncel CI sonuçları: [#26](https://github.com/yurkenn/english-tales/pull/26/checks). CI cihaz raporları mevcut uygulama testleri ile üç Macrobenchmark senaryosunu ayrı XML/JSON dosyalarında saklar.
+
+## Açık kabul adımları
+- Aynı fiziksel cihaz/OS/ısı koşullarında en az varsayılan 5 tekrarla None/Require TTID ve gezinme kare yüzdeliklerini karşılaştır; TTFD doğrulamasını tamamla.
 
 ## Kaynaklar
 
