@@ -143,10 +143,10 @@ fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Col
 @Composable
 fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
     val tabs = listOf(stringResource(R.string.calis) to "study", stringResource(R.string.oku_2) to "read", stringResource(R.string.oyna) to "play", stringResource(R.string.profilim) to "profile")
-    val barHeight=56.dp+18.dp*(LocalDensity.current.fontScale-1f).coerceAtLeast(0f)
-    Row(Modifier.fillMaxWidth().background(TaleSurface).navigationBarsPadding().height(barHeight)) {
+    // Grows with the label instead of clipping it at large font sizes.
+    Row(Modifier.fillMaxWidth().background(TaleSurface).navigationBarsPadding().heightIn(min=56.dp).height(IntrinsicSize.Min)) {
         tabs.forEachIndexed { index,(label,kind) ->
-            Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=selected==index }.clickable(role=Role.Tab) { onSelect(index) }.padding(top=7.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(3.dp)) {
+            Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=selected==index }.clickable(role=Role.Tab) { onSelect(index) }.padding(top=7.dp,bottom=6.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(3.dp)) {
                 ReferenceIcon(kind,if(selected==index) TaleBlue else TaleMuted,Modifier.size(22.dp))
                 Text(label,color=if(selected==index) TaleBlue else TaleMuted,fontSize=11.sp,fontWeight=if(selected==index) FontWeight.SemiBold else FontWeight.Normal)
             }
@@ -184,3 +184,7 @@ fun GameHeader(progress: Float, onExit: () -> Unit) {
 
 /** Screen reader label; the text is resolved in the calling composable. */
 internal fun Modifier.contentLabel(label: String) = semantics { contentDescription = label }
+
+/** Side-by-side items stack once system text is large (fontScale >= 1.5), so words are not split. */
+@Composable
+internal fun sideBySide(items: Int) = if(LocalDensity.current.fontScale>=1.5f) 1 else items

@@ -114,9 +114,9 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     Column(Modifier.fillMaxSize().padding(padding)) {
         if(listMode.isBlank()) {
             StatsHeader(snapshot)
-            Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=10.dp),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+            FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=10.dp),horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=sideBySide(2)) {
                 listOf(stringResource(R.string.arama) to "search",stringResource(R.string.kitaplarim) to "read").forEachIndexed { i,(label,icon) ->
-                    Row(Modifier.weight(1f).height(36.dp).background(TaleLine,RoundedCornerShape(7.dp)).clickable(role=Role.Button) { listMode=if(i==0) "search" else "books" },horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
+                    Row(Modifier.weight(1f).heightIn(min=48.dp).background(TaleLine,RoundedCornerShape(7.dp)).clickable(role=Role.Button) { listMode=if(i==0) "search" else "books" },horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
                         ReferenceIcon(icon,TaleInk,Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text(label,fontSize=14.sp,fontWeight=FontWeight.Medium)
                     }
                 }
@@ -173,7 +173,7 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
 @Composable
 private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String) -> Unit, onAll: () -> Unit) {
     Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
-        Text(title,fontSize=20.sp,modifier=Modifier.weight(1f),maxLines=1,overflow=TextOverflow.Ellipsis)
+        Text(title,fontSize=20.sp,modifier=Modifier.weight(1f).padding(end=8.dp))
         Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=11.sp,fontWeight=FontWeight.Bold,modifier=Modifier.background(TaleLine,RoundedCornerShape(20.dp)).clickable(role=Role.Button,onClick=onAll).padding(horizontal=9.dp,vertical=6.dp))
     }
     Spacer(Modifier.height(22.dp))
@@ -196,7 +196,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding()) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState())) {
             SimpleTopBar("",onBack)
-            Row(Modifier.fillMaxWidth().padding(start=24.dp,end=24.dp,top=32.dp,bottom=24.dp),horizontalArrangement=Arrangement.spacedBy(24.dp)) {
+            FlowRow(Modifier.fillMaxWidth().padding(start=24.dp,end=24.dp,top=32.dp,bottom=24.dp),horizontalArrangement=Arrangement.spacedBy(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
                 Box { BookCover(story,Modifier.size(140.dp,200.dp)); if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(106.dp).padding(bottom=7.dp)) }
                 Column(Modifier.weight(1f).heightIn(min=200.dp),verticalArrangement=Arrangement.SpaceBetween) {
                     Text(story.author,color=TaleMuted,fontSize=13.sp)
@@ -213,7 +213,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                     }
                 }
             }
-            Row(Modifier.padding(horizontal=24.dp).fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+            FlowRow(Modifier.padding(horizontal=24.dp).fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(12.dp),maxItemsInEachRow=sideBySide(2)) {
                 Button(onClick=onRead,shape=RoundedCornerShape(5.dp),contentPadding=PaddingValues(horizontal=8.dp,vertical=12.dp),modifier=Modifier.weight(1f).heightIn(min=48.dp)) { ReferenceIcon("read",TaleOnBlue,Modifier.size(21.dp)); Spacer(Modifier.width(10.dp)); Text(if(progress in 1..99) stringResource(R.string.devam) else stringResource(R.string.oku),letterSpacing=1.sp) }
                 Button(onClick=onListen,shape=RoundedCornerShape(5.dp),contentPadding=PaddingValues(horizontal=8.dp,vertical=12.dp),modifier=Modifier.weight(1f).heightIn(min=48.dp)) { ReferenceIcon("headphones",TaleOnBlue,Modifier.size(21.dp)); Spacer(Modifier.width(10.dp)); Text(stringResource(R.string.dinle),letterSpacing=1.sp) }
             }
@@ -237,7 +237,7 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             Text(snapshot.displayName,fontWeight=FontWeight.Bold,fontSize=16.sp)
             Text(stringResource(R.string.seviyesi, snapshot.level, snapshot.preferredGenre),color=TaleBlue,fontSize=12.sp)
         }
-        Button(onClick=onOpenWords,modifier=Modifier.fillMaxWidth().height(48.dp),shape=RoundedCornerShape(12.dp)) { ReferenceIcon("study",TaleOnBlue); Spacer(Modifier.width(12.dp)); Text(stringResource(R.string.kelimelerim),fontSize=16.sp) }
+        Button(onClick=onOpenWords,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp),shape=RoundedCornerShape(12.dp)) { ReferenceIcon("study",TaleOnBlue); Spacer(Modifier.width(12.dp)); Text(stringResource(R.string.kelimelerim),fontSize=16.sp) }
         OutlinedButton(onClick=onAccount,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {Text(if(snapshot.ownerId=="guest") stringResource(R.string.hesabina_giris_yap) else stringResource(R.string.hesabini_yonet))}
         ProfilePanel {
             Text(stringResource(R.string.rutbe),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold)
@@ -245,15 +245,15 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
                 RankProgress(snapshot.points)
             }
         }
-        Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+        FlowRow(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
             ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.seri),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("streak","${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot)) }
             ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.puan),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("points","${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot)) }
         }
         ProfilePanel {
-            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) { Text(stringResource(R.string.kelimeler),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text(stringResource(R.string.kelimelerim_2),color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(role=Role.Button,onClick=onOpenWords)) }
+            FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween,verticalArrangement=Arrangement.spacedBy(8.dp)) { Text(stringResource(R.string.kelimeler),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text(stringResource(R.string.kelimelerim_2),color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(role=Role.Button,onClick=onOpenWords)) }
             Button(onClick=onOpenWords,modifier=Modifier.fillMaxWidth().padding(top=18.dp),shape=RoundedCornerShape(24.dp)) { Text(stringResource(R.string.ogren, snapshot.savedWordIds.size)) }
         }
-        Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+        FlowRow(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
             ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.hikayeler),fontSize=12.sp,fontWeight=FontWeight.Bold); Text("${snapshot.storyProgress.count {it.value==100}}",fontSize=30.sp,color=TaleBlue,modifier=Modifier.padding(top=14.dp)); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
             ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.alistirmalar),fontSize=12.sp,fontWeight=FontWeight.Bold); Text("${snapshot.completedLessons}",fontSize=30.sp,color=TalePurple,modifier=Modifier.padding(top=14.dp)); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }
         }
@@ -333,9 +333,9 @@ private fun StoryCard(story: Story, progress: Int, onClick: () -> Unit) {
 
 @Composable
 fun SimpleTopBar(title: String, onBack: () -> Unit) {
-    Row(Modifier.fillMaxWidth().height(54.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically) {
+    Row(Modifier.fillMaxWidth().heightIn(min=54.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically) {
         ReferenceIconButton("back",stringResource(R.string.geri),onBack,if(title.isEmpty()) TaleInk else TaleBlue)
-        Text(title,modifier=Modifier.padding(start=4.dp),fontSize=20.sp,maxLines=1)
+        Text(title,modifier=Modifier.weight(1f).padding(start=4.dp),fontSize=20.sp)
     }
 }
 
