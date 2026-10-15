@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.R
 import com.yurken.englishtales.data.LearningContent
 import com.yurken.englishtales.data.LearningSnapshot
+import com.yurken.englishtales.data.ReadingStatus
+import com.yurken.englishtales.data.StoryFilters
 import com.yurken.englishtales.data.Story
 import com.yurken.englishtales.data.progressFor
 
@@ -91,7 +93,11 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
 fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, padding: PaddingValues) {
     var search by rememberSaveable { mutableStateOf("") }
     var listMode by rememberSaveable { mutableStateOf("") }
-    BackHandler(enabled=listMode.isNotBlank()) { listMode=""; search="" }
+    var levelFilter by rememberSaveable { mutableStateOf<String?>(null) }
+    var statusFilter by rememberSaveable { mutableStateOf<ReadingStatus?>(null) }
+    val filters=StoryFilters(levelFilter,statusFilter)
+    fun leaveList() { listMode=""; search=""; levelFilter=null; statusFilter=null }
+    BackHandler(enabled=listMode.isNotBlank()) { leaveList() }
     val stories=LearningContent.stories
     val newest=LearningContent.newestStories(3)
     val filtered=(if(listMode=="new") newest else stories).filter { story ->
@@ -99,7 +105,8 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
         (listMode !in listOf("Macera","Gizem","Günlük yaşam") || story.genre==listMode) &&
         (listMode!="adventure" || story.genre!="Günlük yaşam") &&
         (listMode!="level" || story.level==snapshot.level) &&
-        (search.isBlank() || story.title.contains(search,true) || story.description.contains(search,true))
+        (search.isBlank() || story.title.contains(search,true) || story.description.contains(search,true)) &&
+        filters.matches(story,snapshot.progressFor(story))
     }
     Column(Modifier.fillMaxSize().padding(padding)) {
         if(listMode.isBlank()) {
@@ -127,19 +134,36 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 }
             }
         } else {
-            SimpleTopBar(if(listMode=="books") "Kitaplarım" else if(listMode=="search") "Arama" else if(listMode=="new") "Yeni hikâyeler" else if(listMode=="level") "${snapshot.level} kitapları" else if(listMode=="adventure") "Macera ve gizem" else if(listMode=="all") "Kitaplar" else listMode) { listMode=""; search="" }
+            SimpleTopBar(if(listMode=="books") "Kitaplarım" else if(listMode=="search") "Arama" else if(listMode=="new") "Yeni hikâyeler" else if(listMode=="level") "${snapshot.level} kitapları" else if(listMode=="adventure") "Macera ve gizem" else if(listMode=="all") "Kitaplar" else listMode) { leaveList() }
             if(listMode!="books") {
                 BasicTextField(value=search,onValueChange={search=it},singleLine=true,modifier=Modifier.fillMaxWidth().padding(horizontal=16.dp).background(TaleLine,RoundedCornerShape(6.dp)).padding(12.dp),decorationBox={ inner ->
                     Box { if(search.isEmpty()) Text("Kitap ara",color=TaleMuted,fontSize=14.sp); inner() }
                 })
             }
+            LibraryFilters(filters,showLevels=listMode!="level",onLevel={levelFilter=it},onStatus={statusFilter=it}) { levelFilter=null; statusFilter=null }
             Text(if(listMode=="books") "OKUNANLAR" else "KİTAPLAR",fontSize=10.sp,letterSpacing=1.sp,color=TaleBlue,modifier=Modifier.fillMaxWidth().padding(18.dp))
             HorizontalDivider(color=TaleLine)
             LazyColumn(contentPadding=PaddingValues(16.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
                 items(filtered,key={it.id}) { story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }
-                if(filtered.isEmpty()) item { Text(if(listMode=="books") "Okumaya başladığın kitaplar burada görünecek." else "Kitap bulunamadı.",color=TaleMuted,fontSize=14.sp) }
+                if(filtered.isEmpty()) item { Text(if(filters.active) "Bu filtrelere uyan kitap yok." else if(listMode=="books") "Okumaya başladığın kitaplar burada görünecek." else "Kitap bulunamadı.",color=TaleMuted,fontSize=14.sp) }
             }
         }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: (String?)->Unit, onStatus: (ReadingStatus?)->Unit, onClear: ()->Unit) {
+    Column(Modifier.fillMaxWidth().padding(top=8.dp)) {
+        if(showLevels) LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+            item { FilterChip(selected=filters.level==null,onClick={onLevel(null)},label={Text("Tüm seviyeler")}) }
+            items(StoryFilters.levels) { level -> FilterChip(selected=filters.level==level,onClick={onLevel(if(filters.level==level) null else level)},label={Text(level)}) }
+        }
+        LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+            item { FilterChip(selected=filters.status==null,onClick={onStatus(null)},label={Text("Tümü")}) }
+            items(ReadingStatus.entries) { status -> FilterChip(selected=filters.status==status,onClick={onStatus(if(filters.status==status) null else status)},label={Text(status.label)}) }
+        }
+        if(filters.active) TextButton(onClick=onClear,modifier=Modifier.padding(horizontal=8.dp)) { Text("Filtreleri temizle") }
     }
 }
 
