@@ -95,6 +95,17 @@ class ProductMetricsTest {
         storage.fail = false; metrics.onForeground(); metrics.onForeground()
         assertEquals(2, sink.count(ProductEvent.VISIT)); assertEquals(1, sink.count(ProductEvent.NEXT_DAY_RETURN))
     }
+    @Test fun failedWithdrawalCanBeRetriedAndStaysDisabledAfterRestart() {
+        val metrics = metrics(); metrics.setConsent(true)
+        storage.fail = true
+        assertFalse(metrics.setConsent(false)); assertFalse(metrics.enabled)
+        assertEquals(false, sink.consent.last())
+        storage.fail = false
+        assertTrue(metrics.setConsent(false)); assertFalse(storage.state.enabled)
+        val sent = sink.events.size
+        metrics().onForeground()
+        assertEquals(sent, sink.events.size); assertEquals(false, sink.consent.last())
+    }
     @Test fun brokenTransportNeverBlocksLearningOrConsentWithdrawal() {
         val metrics = metrics(); sink.fail = true
         assertTrue(metrics.setConsent(true))

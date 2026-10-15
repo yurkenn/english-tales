@@ -40,7 +40,7 @@ Analytics teslimatı en iyi çaba esaslıdır. Kalıcı öğrenme commit'i ile F
 
 ## Doğrulama
 
-- 11 yeni JVM testi: kapalı katılım, yedi olay/parametre sınırı, UTC D1, yeniden açılış, gecikmiş dönüş, saat geriye alma, ilk hikâye tekilleştirme, vazgeçme, başarısız tercih/ziyaret kaydı ve SDK arızası.
+- 12 yeni JVM testi: kapalı katılım, yedi olay/parametre sınırı, UTC D1, yeniden açılış, gecikmiş dönüş, saat geriye alma, ilk hikâye tekilleştirme, vazgeçme, başarısız tercih/ziyaret kaydı, başarısız geri çekmenin tekrar kaydedilmesi ve SDK arızası.
 - Cihaz testleri: commit sonrası sinyal, rollback/yeniden deneme, tamamlanma tekilleştirme, transport hatasında korunan öğrenme, cihaz tercihinin kalıcılığı, açık/kapalı Switch, kayıt hatası ve katılım zorunlu olmadan karşılamadan devam etme.
 - Manifest testi: debug'da SDK kapalı; default collection, reklam kimliği, ekran raporu ve tüm consent varsayılanları kapalı.
 - Güncel derleme/test kanıtları PR'a kaydedilir. Sahte transport testi canlı Firebase alımının kanıtı değildir.

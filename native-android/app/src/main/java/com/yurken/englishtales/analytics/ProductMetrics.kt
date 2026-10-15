@@ -51,7 +51,7 @@ internal class ProductMetrics(
     init { runCatching { transport.setEnabled(state.enabled) } }
 
     @Synchronized fun setConsent(enabled: Boolean): Boolean {
-        if (state.enabled == enabled) return true
+        if (state.enabled && enabled) return true
         if (!enabled) {
             // Stop collection before clearing local cohort markers. Never replay them on re-enabling.
             runCatching { transport.setEnabled(false) }
