@@ -6,6 +6,7 @@ parser=argparse.ArgumentParser()
 parser.add_argument('--sdk',required=True)
 parser.add_argument('--jdk',required=True)
 parser.add_argument('--build-tools',default='36.0.0')
+parser.add_argument('--expected-version-code',type=int,help='CI: the version code the build was asked to produce')
 args=parser.parse_args()
 root=pathlib.Path(__file__).resolve().parents[1]
 output=root/'native-android/app/build/outputs'
@@ -15,6 +16,9 @@ aab=output/'bundle/release/app-release.aab'
 assert metadata['applicationId']=='com.yurken.englishtales'
 assert metadata['elements'][0]['versionCode']>=48
 assert not apk.name.endswith('unsigned.apk')
+if args.expected_version_code is not None:
+    assert metadata['elements'][0]['versionCode']==args.expected_version_code, 'Built version code differs from the requested one'
+assert apk.stat().st_size<15*1024*1024, 'Release APK exceeds the 15 MB quality target'
 tools=pathlib.Path(args.sdk)/'build-tools'/args.build_tools
 suffix='.exe' if __import__('os').name=='nt' else ''
 align=subprocess.run([str(tools/('zipalign'+suffix)),'-c','-P','16','4',str(apk)],capture_output=True,check=True)
@@ -68,6 +72,7 @@ report={'versionCode':metadata['elements'][0]['versionCode'],'versionName':metad
         'baselineProfilePackagingVerified':True,'baselineProfiles':profiles,
         'productionServiceVerified':True,'apkSignerMatchesPlay':True,'aabSignatureVerified':True,'apkZipAlignment16KB':True,'adIdPermission':True,'nativeDebugSymbols':debug_symbols,'elf64Libraries':libraries,
         'elf64AlignmentPassed':not alignment_errors,'alignmentErrors':alignment_errors,
+        'apkBytes':apk.stat().st_size,'aabBytes':aab.stat().st_size,
         'apkSHA256':hashlib.sha256(apk.read_bytes()).hexdigest(),'aabSHA256':hashlib.sha256(aab.read_bytes()).hexdigest(),
         'limitation':'Static package inspection only; Play-generated split APKs and real 16KB devices still need testing.'}
 path=output/'release-verification.json'

@@ -68,8 +68,9 @@ android {
         targetSdk = 36
         // Play Console: production 46, internal preview 47 verified on 2026-10-14.
         // Recheck before upload if another release is produced in parallel.
-        versionCode = 48
-        versionName = "2.0.0"
+        // The release workflow passes -PreleaseVersionCode/-PreleaseVersionName.
+        versionCode = providers.gradleProperty("releaseVersionCode").orNull?.toInt() ?: 48
+        versionName = providers.gradleProperty("releaseVersionName").orNull ?: "2.0.0"
         buildConfigField("String", "SUPABASE_URL", "\"${contentSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${contentSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")
