@@ -8,6 +8,13 @@ plugins {
     id("androidx.room")
 }
 
+// Crashlytics needs the Firebase app config; without it (CI, forks) the SDK stays inactive.
+val firebaseConfigured=file("google-services.json").isFile
+if(firebaseConfigured) {
+    apply(plugin="com.google.gms.google-services")
+    apply(plugin="com.google.firebase.crashlytics")
+}
+
 val contentSettings = Properties().apply {
     rootProject.file("supabase.properties").takeIf { it.exists() }?.inputStream()?.use { load(it) }
 }
@@ -38,6 +45,7 @@ if(releaseRequested) {
         "Release signing is missing. Configure the private signing.properties file; debug signing is never used for release."
     }
     require(rootProject.file(releaseSigning.getProperty("storeFile")).isFile) {"Release keystore is missing"}
+    require(firebaseConfigured) {"Store builds report crashes: add app/google-services.json from the Firebase project"}
     require(productionSettings.getProperty("SUPABASE_URL","") == "https://gtuangjukckpuerczfxd.supabase.co" && productionSettings.getProperty("SUPABASE_PUBLISHABLE_KEY","").startsWith("sb_publishable_") && productionSettings.getProperty("GOOGLE_WEB_CLIENT_ID","").endsWith(".apps.googleusercontent.com")) {
         "Release must use the verified production service settings"
     }
@@ -68,6 +76,8 @@ android {
         buildConfigField("String","ADMOB_APP_ID","\"ca-app-pub-3940256099942544~3347511713\"")
         buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"ca-app-pub-3940256099942544/1033173712\"")
         manifestPlaceholders["admobAppId"]="ca-app-pub-3940256099942544~3347511713"
+        // Debug and test builds never send crash reports.
+        manifestPlaceholders["crashReportsEnabled"]="false"
     }
 
     signingConfigs {
@@ -84,6 +94,7 @@ android {
             buildConfigField("String","ADMOB_APP_ID","\"$adsAppId\"")
             buildConfigField("String","ADMOB_INTERSTITIAL_ID","\"$adsUnitId\"")
             manifestPlaceholders["admobAppId"]=adsAppId
+            manifestPlaceholders["crashReportsEnabled"]=firebaseConfigured.toString()
             // A local debug/test configuration must never leak into a store package.
             buildConfigField("String", "SUPABASE_URL", "\"${productionSetting("SUPABASE_URL")}\"")
             buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${productionSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
@@ -114,6 +125,8 @@ dependencies {
     implementation("com.google.android.libraries.ads.mobile.sdk:ads-mobile-sdk:1.5.0")
     implementation("com.google.android.ump:user-messaging-platform:4.0.0")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    implementation("com.google.firebase:firebase-crashlytics")
     val composeBom = platform("androidx.compose:compose-bom:2025.05.00")
     implementation(composeBom)
     implementation("androidx.compose.ui:ui")
