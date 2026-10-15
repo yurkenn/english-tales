@@ -6,7 +6,7 @@ Son güncelleme: **15 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalı�
 
 Q1 geliştirmeleri (#15–#21) ve kalite yol haritası (#14) ana dala birleşti. Birleşik APK 7,9 MB / AAB 11,18 MB; 29 JVM ve 61 backend testi başarılı. GitHub emülatöründe 139 testten 136'sı geçti, özel servis yapılandırması gerektiren 3 test atlandı. Debug lint: 0 hata / 30 uyarı. İmza, üretim bağlantısı ve statik 16 KB kontrolleri geçti.
 
-Güncelleme bildiriminin Activity yeniden oluşturulunca kaybolması ve kapanmış ekrana gelen geç Play yanıtları düzeltildi. Crashlytics kodu ana dalda; gizlilik sayfası/Play beyanı ve yeni mağaza sürümü açık yayın adımlarıdır. Q2'nin ürün olayları, performans ölçümü ve sürüm otomasyonu işleri sürmektedir; tamamlandıkları iddia edilmez.
+Güncelleme bildiriminin Activity yeniden oluşturulunca kaybolması ve kapanmış ekrana gelen geç Play yanıtları düzeltildi. Crashlytics kodu ana dalda; gizlilik sayfası/Play beyanı ve yeni mağaza sürümü açık yayın adımlarıdır. Q2'nin ürün olayları, performans ölçümü ve sürüm otomasyonu işleri sıradadır.
 
 [Kalite yol haritası ve doğrulama sınırları](native-android/docs/QUALITY_ROADMAP.md) · [Kademeli yayın kontrol listesi](native-android/docs/STAGED_RELEASE.md).
 

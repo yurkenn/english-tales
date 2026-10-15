@@ -122,7 +122,6 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q1.6 Güncelleme + değerlendirme | Ana dala birleşti | [#21](https://github.com/yurkenn/english-tales/pull/21) | Esnek güncelleme (3 günde bir) + 3. hikâyeden sonra tek değerlendirme isteği |
 | Q1.7 Reklam SDK uyarısı | Ana dala birleşti | [#19](https://github.com/yurkenn/english-tales/pull/19) | Beyan korunarak gerekçeli bastırıldı |
 | Q2.1 Çökme raporlama | Kod birleşti; yayın beyanları açık | [#18](https://github.com/yurkenn/english-tales/pull/18) | Crashlytics; test çökmesi panelde göründü |
-
 | Q2.5 Kademeli yayın listesi | Hazır; bu belgeyle birlikte #22 | [#22](https://github.com/yurkenn/english-tales/pull/22) | %20 → %50 → %100; izleme, durdurma ve düzeltme kaydı |
 
 ## 6. Birleşik doğrulama — 15 Ekim 2026
