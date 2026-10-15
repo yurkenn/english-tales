@@ -4,7 +4,7 @@
 
 ## Soru üretimi
 
-Her soru gerçek hikâye başlığını/seviyesini, bir boşluk bırakılmış İngilizce cümleyi, Türkçe kelime ipucunu ve dört İngilizce seçeneği gösterir. Bu bir serbest dilbilgisi değerlendirmesi değildir: hedef, ipucuna karşılık gelen sözlük kelimesi/ifadesidir. “Kontrol et” sonrası özgün tam cümle ve doğru/yanlış geri bildirimi görünür; kullanıcı sonraki cümleye kendi geçer.
+Her soru seviyeyi, bir boşluk bırakılmış İngilizce cümleyi, Türkçe kelime ipucunu ve dört İngilizce seçeneği gösterir. Kaynak hikâyenin adı, başlık hedef kelimeyi ele vermesin diye yalnız cevap kontrol edildikten sonra görünür. Bu bir serbest dilbilgisi değerlendirmesi değildir: hedef, ipucuna karşılık gelen sözlük kelimesi/ifadesidir. “Kontrol et” sonrası özgün tam cümle ve doğru/yanlış geri bildirimi görünür; kullanıcı sonraki cümleye kendi geçer.
 
 - Yayınlanmış içerikte editörün cümle-kelime bağlantıları kullanılır; paket içerikte mevcut `PhraseMatcher` sözlüğü kullanılır. Yarım kelime eşleşmez; uzun ifadeler önceliklidir ve özgün noktalama korunur.
 - 12–240 karakter, en az dört token içeren cümleler seçilir. Hedefin ikinci kez görünerek cevabı ele verdiği cümleler, önceden boşluk işareti içeren metinler ve boş anlamlar dışarıda kalır.
@@ -21,6 +21,6 @@ Oturum başında cümle, kaynak revizyonu, hedef ve seçenek sırası dondurulur
 
 ## Doğrulama
 
-JVM testleri token/ifade sınırlarını, noktalama korumasını, tekrar eden cevapların elenmesini, editör bağlantılarını, seçenek benzersizliğini, seviye/tekrar önceliğini ve yetersiz içeriği kapsar. Compose testleri yanlış/doğru cevap, cevap zorunluluğu, durum kurtarma, fontScale 2.0, yarım bırakma, menüden beş soruluk oturum tamamlama/yeniden başlatma ve metni olmayan katalog akışını kapsar. İzole SQLite testi, mevcut `choice` RPC payload'ını ve tekrarlanan tamamlamada tek puan/günlük hedef kaydını doğrular.
+JVM testleri token/ifade sınırlarını, noktalama korumasını, tekrar eden cevapların elenmesini, editör bağlantılarını, seçenek benzersizliğini, seviye/tekrar önceliğini ve yetersiz içeriği kapsar. Compose testleri başlıktan cevap sızıntısının engellenmesini, yanlış/doğru cevap, cevap zorunluluğu, durum kurtarma, fontScale 2.0, yarım bırakma, menüden beş soruluk oturum tamamlama/yeniden başlatma ve metni olmayan katalog akışını kapsar. İzole SQLite testi, mevcut `choice` RPC payload'ını ve tekrarlanan tamamlamada tek puan/günlük hedef kaydını doğrular.
 
 Yerel kabul: API 36 ARM64 emülatöründe **22/22 cihaz testi**, **54/54 JVM testi** başarılı. Debug derleme/lint geçti: 0 hata / 30 yerel uyarı. CI bütün cihaz paketini ve mevcut üç Macrobenchmark senaryosunu ayrıca çalıştırır. Play yüklemesi yapılmadı.

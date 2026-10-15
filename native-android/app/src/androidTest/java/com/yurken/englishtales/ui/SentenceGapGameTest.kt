@@ -23,7 +23,7 @@ class SentenceGapGameTest {
         val text=if(long) "Maya noticed a small $word beside the garden gate while she was walking home from school with her brother on a quiet afternoon, and they stopped for a moment to watch it play in the sunshine."
             else "Maya saw a small $word near the garden."
         val start=text.indexOf(word)
-        return GapQuestion(GapPrompt(word,word,"ipucu-$word",text,start,start+word.length,"Maya's garden","revision-1","sentence-$word","A1"),
+        return GapQuestion(GapPrompt(word,word,"ipucu-$word",text,start,start+word.length,"The Cat and the Garden","revision-1","sentence-$word","A1"),
             listOf("cat","dog","bird","fish").map {GapOption(it,it)})
     }
     private fun click(text: String) {compose.onNodeWithText(text).performScrollTo().performClick();compose.waitForIdle()}
@@ -33,10 +33,13 @@ class SentenceGapGameTest {
         val completions=mutableListOf<Int>()
         compose.setContent {EnglishTalesTheme {SentenceGapGame(listOf(fixture(),fixture("dog")),1,PaddingValues(),
             {id,correct ->answers+=id to correct},completions::add,{})}}
+        compose.onNodeWithText("The Cat and the Garden · A1").assertDoesNotExist()
+        compose.onNodeWithText("Hikâyeden bir cümle · A1").assertExists()
         compose.onNodeWithText("Kontrol et").performScrollTo().assertIsNotEnabled()
         click("dog");click("Kontrol et")
         compose.onNodeWithText("Birlikte öğrenelim. Doğru cevap: cat").assertExists()
         compose.onNodeWithText(fixture().prompt.sentence).assertExists()
+        compose.onNodeWithText("The Cat and the Garden · A1").assertExists()
         compose.onNodeWithText("cat").assertIsNotEnabled()
         compose.runOnIdle {assertTrue(answers.isEmpty());assertTrue(completions.isEmpty())}
         click("Sonraki cümle")

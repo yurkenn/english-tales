@@ -64,7 +64,9 @@ fun SentenceGapGame(
         }
         LinearProgressIndicator(progress={index.toFloat()/questions.size},modifier=Modifier.fillMaxWidth())
         Text(stringResource(R.string.gap_instruction),style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.Bold)
-        Text(stringResource(R.string.gap_source,prompt.storyTitle,prompt.level),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+        // A title such as 'The Fox and the Grapes' must not give away the missing word.
+        Text(if(checked) stringResource(R.string.gap_source,prompt.storyTitle,prompt.level) else stringResource(R.string.gap_source_pending,prompt.level),
+            style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
         Surface(color=TaleLine,shape=RoundedCornerShape(12.dp)) {
             Text(if(checked) prompt.sentence else prompt.masked,style=MaterialTheme.typography.bodyLarge,modifier=Modifier.fillMaxWidth().padding(20.dp))
         }
