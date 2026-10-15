@@ -5,6 +5,7 @@ import androidx.work.*
 import androidx.work.testing.TestListenableWorkerBuilder
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
+import org.junit.Assume.assumeTrue
 import org.junit.Test
 import java.util.UUID
 import java.util.concurrent.TimeUnit
@@ -16,6 +17,8 @@ class LearningSyncWorkerTest {
         assertEquals(ListenableWorker.Result.failure(),worker.doWork())
     }
     @Test fun anotherAccountJobDoesNotUseCurrentCredentialsOrCreateItsDatabase()=runBlocking {
+        // Without a configured service the worker deliberately retries; this case needs supabase.properties.
+        assumeTrue(LearningSyncRuntime.configured())
         val user=UUID.randomUUID().toString()
         val file=context.getDatabasePath(LearningOwner.Account(user).databaseName)
         val worker=TestListenableWorkerBuilder<LearningSyncWorker>(context).setInputData(workDataOf("user" to user)).build()
@@ -23,6 +26,7 @@ class LearningSyncWorkerTest {
         assertFalse(file.exists())
     }
     @Test fun repeatedSchedulingKeepsOneNetworkConstrainedPeriodicJob() {
+        assumeTrue(LearningSyncRuntime.configured())
         val user=UUID.randomUUID().toString();val manager=WorkManager.getInstance(context)
         try {
             LearningSyncRuntime.schedule(context,user);LearningSyncRuntime.schedule(context,user)
