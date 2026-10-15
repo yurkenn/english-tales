@@ -97,6 +97,9 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
             }
             composable("reading-result/{storyId}?revision={revision}&session={session}",arguments=listOf(navArgument("session") {type=NavType.StringType;defaultValue=""},navArgument("storyId") {type=NavType.StringType},navArgument("revision") {type=NavType.StringType;defaultValue=""})) {entry ->
                 androidx.activity.compose.BackHandler {dailyPlan()}
+                val play=com.yurken.englishtales.play.LocalPlayStoreFeatures.current
+                val finished=snapshot.storyProgress.values.count {it>=100}
+                LaunchedEffect(finished) {play?.onStoryFinished(finished)}
                 (entry.arguments?.getString("revision")?.let(LearningContent::revision) ?: LearningContent.storyById[entry.arguments?.getString("storyId")])?.let {story -> ReadingResultScreen(story,snapshot,onPractice={ids -> viewModel.saveWords(ids);practice(ids)},onDailyPlan={completedExit(entry.arguments?.getString("session").orEmpty(),{true},::dailyPlan)},onBack=::dailyPlan) }
             }
             composable("settings") {LearningSettingsScreen(snapshot,onBack={nav.popBackStack()},onSave={level,genre,goal,name ->viewModel.updatePreferences(level,genre,goal,name);nav.popBackStack()})}

@@ -21,8 +21,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
+import com.yurken.englishtales.play.*
+import androidx.compose.ui.Alignment
 
 class MainActivity : ComponentActivity() {
+    private var play: PlayStoreFeatures? = null
     private var dailyPlanRequest by mutableLongStateOf(0L)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,14 +35,26 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch { LearningContent.load(applicationContext) }
         enableEdgeToEdge()
         val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.None
+        val play=PlayStoreFeatures(this).also {this.play=it}
         setContent {
-            CompositionLocalProvider(LocalCompletionAds provides ads) {EnglishTalesTheme {
-                YurkenBrandIntro {
-                    if(LearningContent.ready) TalesApp(dailyPlanRequest=dailyPlanRequest)
-                    else Box(Modifier.fillMaxSize().background(Color.Black))
+            CompositionLocalProvider(LocalCompletionAds provides ads,LocalPlayStoreFeatures provides play) {EnglishTalesTheme {
+                Box(Modifier.fillMaxSize()) {
+                    YurkenBrandIntro {
+                        if(LearningContent.ready) TalesApp(dailyPlanRequest=dailyPlanRequest)
+                        else Box(Modifier.fillMaxSize().background(Color.Black))
+                    }
+                    if(play.updateReady) UpdateReadyBar(onRestart=play::completeUpdate,modifier=Modifier.align(Alignment.BottomCenter))
                 }
             }}
         }
+    }
+    override fun onResume() {
+        super.onResume()
+        play?.checkForUpdate()
+    }
+    override fun onDestroy() {
+        play?.dispose()
+        super.onDestroy()
     }
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
