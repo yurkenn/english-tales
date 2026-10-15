@@ -12,7 +12,7 @@
 | Kararlılık | ANR oranı | < %0,47 (Play eşiği), hedef < %0,2 | Ölçülmüyor | Play vitals |
 | Performans | Soğuk açılış (orta sınıf cihaz, medyan) | < 1,5 sn | Ölçülmüyor; 322 KB katalog ana iş parçacığında | Macrobenchmark |
 | Performans | Okuyucu sayfa geçişi takılma | < %5 yavaş kare | Ölçülmüyor | Macrobenchmark `FrameTimingMetric` |
-| Boyut | İndirme boyutu (release APK) | < 15 MB | 30,7 MB | `verify_release.py` |
+| Boyut | İndirme boyutu (release APK) | < 15 MB | 30,7 MB → 7,2 MB (#15) | `verify_release.py` |
 | Doğruluk | PR başına otomatik test | Birim + backend + cihaz testleri CI'da | Cihaz testleri yalnız yerel | GitHub Actions |
 | Erişilebilirlik | Ana yolculuk TalkBack ile | Tamamlanabilir; etiketsiz etkileşim 0 | 18 etiket / 31 tıklanabilir | Kabul testi + lint |
 | Erişilebilirlik | Büyük yazı | fontScale 2.0'da kırpılma yok | Kısmi testler | Compose UI testleri |
@@ -112,6 +112,12 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 
 ## 5. İlerleme
 
-| İş | Durum | PR |
-|---|---|---|
-| Q1.1 WebP kapaklar | Başladı | — |
+| İş | Durum | PR | Ölçülen sonuç |
+|---|---|---|---|
+| Q1.1 WebP kapaklar | İncelemede | [#15](https://github.com/yurkenn/english-tales/pull/15) | APK 30,7 → 7,2 MB; AAB 10,0 MB |
+| Q1.2 CI cihaz testleri | İncelemede | [#16](https://github.com/yurkenn/english-tales/pull/16) | İlk koşu ~2,5 dk; yapılandırmaya bağlı 2 test bulundu ve koşullu yapıldı |
+| Q1.3 TTS ses odağı | İncelemede | [#17](https://github.com/yurkenn/english-tales/pull/17) | Odak kaybında durur; her çıkışta odak bırakılır |
+| Q1.4 `LinkAnnotation` | Sırada | — | — |
+| Q1.5 Kataloğu arka planda yükle | Sırada | — | — |
+| Q1.6 Güncelleme + değerlendirme | Sırada | — | — |
+| Q1.7 Reklam SDK uyarısı | Sırada | — | — |
