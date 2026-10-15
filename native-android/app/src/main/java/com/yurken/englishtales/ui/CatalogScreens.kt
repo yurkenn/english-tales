@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.R
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.res.stringResource
@@ -359,7 +360,7 @@ fun SectionTitle(title: String) { Text(title,fontSize=20.sp) }
 @Composable
 internal fun ReadingMinutes(story: Story, modifier: Modifier = Modifier) {
     val minutes=ReadingTime.minutes(story) ?: return
-    val description=stringResource(R.string.reading_minutes_description,minutes)
+    val description=pluralStringResource(R.plurals.reading_minutes_description,minutes,minutes)
     Text(stringResource(R.string.reading_minutes,minutes),color=TaleMuted,fontSize=11.sp,
         modifier=modifier.semantics {contentDescription=description})
 }
