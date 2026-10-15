@@ -270,9 +270,7 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
     var selectedStage by rememberSaveable { mutableStateOf("learning") }
     val stages=listOf(Triple("learning","Öğreniyorum",TaleBlue),Triple("reviewing","Tekrar ediyorum",Color(0xFF7BCC3A)),Triple("known","Biliyorum",TalePurple))
     val words=LearningContent.words.filter { it.id in snapshot.savedWordIds && (snapshot.wordStates[it.id]?:"learning")==selectedStage }
-    val context=LocalContext.current
-    val narrator=remember(context) { Narrator(context) }
-    DisposableEffect(narrator) { onDispose { narrator.close() } }
+    val narrator=rememberNarrator()
     Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding()) {
         SimpleTopBar("Kelimelerim",onBack)
         if(LocalDensity.current.fontScale>1.4f) {

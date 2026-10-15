@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -25,11 +24,11 @@ fun FlashcardGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,pad
     var revealed by rememberSaveable(sessionId) {mutableStateOf(false)}
     var remembered by rememberSaveable(sessionId) {mutableIntStateOf(0)}
     var finished by rememberSaveable(sessionId) {mutableStateOf(false)}
-    val context=LocalContext.current
-    val narrator=remember(context) {Narrator(context)}
-    DisposableEffect(narrator) {onDispose {narrator.close()}}
+    val narrator=rememberNarrator()
     if(finished) {GameResult("${words.size} kelimeden $remembered tanesini hatırladın.",remembered*5,padding,onExit,onRestart,snapshot);return}
     val word=words[index]
+    // A previous card's word must not keep playing over the next one.
+    LaunchedEffect(word.id) {narrator.stop()}
     fun next(correct: Boolean) {
         if(word.id in savedIds) onWordReviewed(word.id,correct)
         if(correct) remembered++
