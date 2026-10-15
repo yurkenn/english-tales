@@ -60,7 +60,7 @@
 | Q3.3 | Uygulama geneli koyu tema | 80 sabit rengin tema token'larına taşınması; kontrast ≥ 4.5 | 2–3 |
 | Q3.4 | Büyük yazı ve küçük ekran testleri | fontScale 2.0'da ana ekranlar kırpılmasız | 1 |
 
-**Kapı Q3:** TalkBack yolculuğu · koyu tema · metinler kaynakta. — **15 Ekim 2026: kod tarafı tamam, kapı açık.** Q3.1–Q3.4 yığılı PR'lar #30–#33; otomatik denetimler yerel emülatörde geçti. Kapanış için gerçek TalkBack ile ana yolculuğun elle kaydı ve PR'ların CI + birleştirmesi gerekir.
+**Kapı Q3:** TalkBack yolculuğu · koyu tema · metinler kaynakta. — **15 Ekim 2026: kod tarafı tamam, kapı açık.** Q3.1–Q3.4 yığılı PR'lar #30, #31, #32 ve #34; otomatik denetimler yerel emülatörde geçti. Kapanış için gerçek TalkBack ile ana yolculuğun elle kaydı ve PR'ların CI + birleştirmesi gerekir.
 
 ### Q4 — İçerik kalitesi · ~8–12 gün · karar: sözlük kaynağı
 
