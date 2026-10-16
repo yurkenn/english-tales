@@ -14,7 +14,7 @@ import java.util.Locale
 class Glossary(entries: Map<String, String>, private val forms: Map<String, String>, words: Collection<WordInfo>) {
     data class Entry(val lemma: String, val gloss: String)
 
-    private val byLemma: Map<String, Entry> = buildMap {
+    private val byLemma: Map<String, Entry> = buildMap<String, Entry> {
         entries.forEach { (lemma, gloss) -> if (gloss.isNotBlank()) put(lemma.lowercase(Locale.ROOT), Entry(lemma.lowercase(Locale.ROOT), gloss)) }
         // A reviewed learning word wins over a glossary draft for the same lemma.
         words.forEach { word -> PhraseMatcher.tokens(word.word).singleOrNull()?.let { put(it, Entry(it, word.translation)) } }
@@ -43,13 +43,12 @@ class Glossary(entries: Map<String, String>, private val forms: Map<String, Stri
     /** Lookup-only words share the popup with learning words; this id marks them as not savable. */
     fun asWord(token: String, entry: Entry) = WordInfo(ID_PREFIX + entry.lemma, token, entry.gloss, "", "")
 
-    /** The dictionary form behind a lookup-only word ("walked" → "walk"). */
-    fun lemmaOf(word: WordInfo) = word.id.removePrefix(ID_PREFIX)
-
     companion object {
         const val ID_PREFIX = "glossary:"
         private val TOKEN = Regex("[\\p{L}\\p{N}]+")
         fun isLookupOnly(word: WordInfo) = word.id.startsWith(ID_PREFIX)
+        /** The dictionary form behind a lookup-only word ("walked" → "walk"). */
+        fun lemmaOf(word: WordInfo) = word.id.removePrefix(ID_PREFIX)
 
         /** `glossary/<lang>.json`: `{"schemaVersion":1,"lang":"tr","entries":[{"lemma","gloss",…}],"forms":{"went":"go"}}`. */
         fun parse(json: String): Pair<Map<String, String>, Map<String, String>> {

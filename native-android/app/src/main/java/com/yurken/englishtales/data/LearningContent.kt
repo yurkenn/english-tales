@@ -158,7 +158,7 @@ object LearningContent {
         require(root.getInt("schemaVersion") == 1) { "Unsupported catalog schema" }
         glossarySource = try {
             Glossary.parse(context.assets.open("glossary/${SupportLanguage.code}.json").bufferedReader(Charsets.UTF_8).use { it.readText() })
-        } catch (_: java.io.FileNotFoundException) { emptyMap<String, String>() to emptyMap() }
+        } catch (missing: java.io.FileNotFoundException) { emptyMap<String, String>() to emptyMap() }
 
         val wordArray = root.getJSONArray("words")
         val parsedWords = (0 until wordArray.length()).map { index ->
