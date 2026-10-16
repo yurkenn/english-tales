@@ -55,6 +55,10 @@ data class SessionDraftRow(@PrimaryKey val id: String, val kind: String,
     @ColumnInfo(name="started_at") val startedAt: Long, @ColumnInfo(name="active_millis") val activeMillis: Long,
     @ColumnInfo(name="question_count") val questionCount: Int, val state: String)
 
+/** F09: the learner's own shelf of stories, separate from saved words. Kept per owner database. */
+@Entity(tableName="favorite_stories")
+data class FavoriteStoryRow(@PrimaryKey @ColumnInfo(name="story_id") val storyId: String,@ColumnInfo(name="added_at") val addedAt: Long)
+
 @Entity(tableName="guest_transfers")
 data class GuestTransferRow(@PrimaryKey val id: String,@ColumnInfo(name="target_user_id") val target: String,
     val payload: String,val state: String,@ColumnInfo(name="created_at") val createdAt: Long)
@@ -101,7 +105,7 @@ sealed class LearningOwner(val id: String,val databaseName: String) {
 
 @Database(entities=[SavedWordRow::class,StoryProgressRow::class,LearningStatsRow::class,LearningDayRow::class,
     EngagementRow::class,BadgeRow::class,LocalProfileRow::class,LocalIdentityRow::class,QueuedLearningOperation::class,SessionDraftRow::class,
-    GuestTransferRow::class,GuestImportRow::class,LearningCloudStateRow::class],version=6,exportSchema=true)
+    GuestTransferRow::class,GuestImportRow::class,LearningCloudStateRow::class,FavoriteStoryRow::class],version=7,exportSchema=true)
 abstract class LearningDatabase: RoomDatabase() {
     abstract fun offline(): OfflineLearningDao
     companion object {
@@ -140,6 +144,9 @@ abstract class LearningDatabase: RoomDatabase() {
                 .addMigrations(object: Migration(4,5) {override fun migrate(db: SupportSQLiteDatabase) {createTransferTables(db)}})
                 .addMigrations(object: Migration(5,6) {override fun migrate(db: SupportSQLiteDatabase) {
                     db.execSQL("CREATE TABLE learning_cloud_state(id INTEGER NOT NULL PRIMARY KEY,source TEXT NOT NULL,snapshot_json TEXT NOT NULL,baseline_json TEXT NOT NULL,preferences_version INTEGER,preferences_conflict INTEGER NOT NULL,applied_at INTEGER NOT NULL)")
+                }})
+                .addMigrations(object: Migration(6,7) {override fun migrate(db: SupportSQLiteDatabase) {
+                    db.execSQL("CREATE TABLE favorite_stories(story_id TEXT NOT NULL PRIMARY KEY,added_at INTEGER NOT NULL)")
                 }})
                 .addCallback(object: Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) { initialize(db,owner.id,initial);db.execSQL("INSERT INTO learning_stats(id) VALUES(1)") }

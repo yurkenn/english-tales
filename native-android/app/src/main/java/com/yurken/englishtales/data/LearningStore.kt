@@ -24,7 +24,9 @@ data class LearningSnapshot(
     val readingPositions: Map<String,ReadingPosition> = emptyMap(), val activeSessionMillis: Map<String,Long> = emptyMap(),
     val ownerId: String = "guest",
     /** F01: saved, not yet known words missed recently, most troublesome first ([ReviewFocus]). */
-    val weakWordIds: List<String> = emptyList()
+    val weakWordIds: List<String> = emptyList(),
+    /** F09: favorite story IDs, most recently added first. Archived stories may stay listed here. */
+    val favoriteStoryIds: List<String> = emptyList()
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
 }
@@ -58,6 +60,8 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val misses=mutableListOf<Pair<String,Long>>()
         db.rawQuery("SELECT event_id,created_at FROM engagement_events WHERE name='word_missed'",null).use {c -> while(c.moveToNext()) misses+=c.getString(0) to c.getLong(1)}
         val weak=ReviewFocus.weak(misses,states,now)
+        val favorites=mutableListOf<String>()
+        db.rawQuery("SELECT story_id FROM favorite_stories ORDER BY added_at DESC,story_id",null).use {c -> while(c.moveToNext()) favorites+=c.getString(0)}
         val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
         db.rawQuery("SELECT story_id,percent,revision_id,sentence_id FROM story_progress",null).use { c -> while(c.moveToNext()) {
             progress[c.getString(0)]=c.getInt(1)
@@ -79,7 +83,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
@@ -132,6 +136,11 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             enqueueWord(wordId,"remove",null,clock())
         }
         unlockBadges(db,clock())
+    }
+    fun setFavorite(storyId: String,favorite: Boolean) = transaction {db ->
+        require(storyId.matches(Regex("[a-z0-9][a-z0-9_-]{0,79}")))
+        if(favorite) db.insert("favorite_stories",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("story_id",storyId);put("added_at",clock())})
+        else db.delete("favorite_stories","story_id=?",arrayOf(storyId))
     }
     fun reviewWord(wordId: String, correct: Boolean) {
         transaction {db ->

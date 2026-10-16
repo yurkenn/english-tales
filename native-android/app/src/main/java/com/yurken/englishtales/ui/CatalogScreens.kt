@@ -100,6 +100,7 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
 }
 
 private const val TAG_LIST = "tag:"
+private const val FAVORITES = "favorites"
 
 @Composable
 fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, padding: PaddingValues) {
@@ -119,6 +120,7 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     val categories=stories.flatMap(StoryTag::of).distinctBy { it.id }.sortedBy { LearningContent.tagOrder.indexOf(it.id).let { i -> if(i<0) Int.MAX_VALUE else i } }
     val filtered=(if(listMode=="new") newest else stories).filter { story ->
         (listMode!="books" || (snapshot.progressFor(story))>0) &&
+        (listMode!=FAVORITES || story.id in snapshot.favoriteStoryIds) &&
         (!listMode.startsWith(TAG_LIST) || StoryTag.of(story).any { it.id==listMode.removePrefix(TAG_LIST) }) &&
         (listMode!="adventure" || story.genre!="Günlük yaşam") &&
         (listMode!="level" || story.level==snapshot.level) &&
@@ -146,12 +148,13 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 Spacer(Modifier.height(28.dp))
                 BookShelf(stringResource(R.string.seviyene_uygun),stories.filter { it.level==snapshot.level },onOpenStory) { listMode="level" }
                 Spacer(Modifier.height(22.dp))
-                (listOf(stringResource(R.string.kategoriler) to "all")+categories.map { it.name to TAG_LIST+it.id }).forEach { (label,key) ->
+                val favoriteCount=stories.count { it.id in snapshot.favoriteStoryIds }
+                (listOf(stringResource(R.string.kategoriler) to "all")+(if(favoriteCount>0) listOf(stringResource(R.string.favorites_title,favoriteCount) to FAVORITES) else emptyList())+categories.map { it.name to TAG_LIST+it.id }).forEach { (label,key) ->
                     Row(Modifier.fillMaxWidth().clickable(role=Role.Button) { listMode=key }.padding(horizontal=18.dp,vertical=14.dp),horizontalArrangement=Arrangement.SpaceBetween) { Text(label,fontSize=14.sp); Text("›",color=TaleMuted) }
                 }
             }
         } else {
-            SimpleTopBar(if(listMode=="books") stringResource(R.string.kitaplarim) else if(listMode=="search") stringResource(R.string.arama) else if(listMode=="new") stringResource(R.string.yeni_hikayeler) else if(listMode=="level") stringResource(R.string.kitaplari, snapshot.level) else if(listMode=="adventure") stringResource(R.string.macera_ve_gizem) else if(listMode=="all") stringResource(R.string.kitaplar) else categories.firstOrNull { TAG_LIST+it.id==listMode }?.name ?: stringResource(R.string.kitaplar)) { leaveList() }
+            SimpleTopBar(if(listMode=="books") stringResource(R.string.kitaplarim) else if(listMode=="search") stringResource(R.string.arama) else if(listMode=="new") stringResource(R.string.yeni_hikayeler) else if(listMode=="level") stringResource(R.string.kitaplari, snapshot.level) else if(listMode=="adventure") stringResource(R.string.macera_ve_gizem) else if(listMode=="all") stringResource(R.string.kitaplar) else if(listMode==FAVORITES) stringResource(R.string.favorites_title,filtered.size) else categories.firstOrNull { TAG_LIST+it.id==listMode }?.name ?: stringResource(R.string.kitaplar)) { leaveList() }
             if(listMode!="books") {
                 BasicTextField(value=search,onValueChange={search=it},singleLine=true,modifier=Modifier.fillMaxWidth().padding(horizontal=16.dp).background(TaleLine,RoundedCornerShape(6.dp)).padding(12.dp),decorationBox={ inner ->
                     Box { if(search.isEmpty()) Text(stringResource(R.string.kitap_ara),color=TaleMuted,fontSize=14.sp); inner() }
@@ -163,7 +166,8 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
             Text(if(listMode=="books") stringResource(R.string.okunanlar) else stringResource(R.string.kitaplar_2),fontSize=10.sp,letterSpacing=1.sp,color=TaleBlue,modifier=Modifier.fillMaxWidth().padding(18.dp))
             HorizontalDivider(color=TaleLine)
             LazyColumn(contentPadding=PaddingValues(16.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
-                items(filtered,key={it.id}) { story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }
+                // Favorites read most recently added first; other lists keep catalog order.
+                items(if(listMode==FAVORITES) filtered.sortedBy { snapshot.favoriteStoryIds.indexOf(it.id) } else filtered,key={it.id}) { story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }
                 if(filtered.isEmpty()) item { Text(if(filters.active) stringResource(R.string.bu_filtrelere_uyan_kitap_yok) else if(listMode=="books") stringResource(R.string.okumaya_basladigin_kitaplar_burada_gorunecek) else stringResource(R.string.kitap_bulunamadi),color=TaleMuted,fontSize=14.sp) }
             }
         }
@@ -218,7 +222,8 @@ private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String)
 }
 
 @Composable
-fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: () -> Unit, onListen: () -> Unit, onTabSelected: (Int) -> Unit, content: com.yurken.englishtales.data.ContentViewModel? = null) {
+fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: () -> Unit, onListen: () -> Unit, onTabSelected: (Int) -> Unit, content: com.yurken.englishtales.data.ContentViewModel? = null,
+    favorite: Boolean = false, onToggleFavorite: (() -> Unit)? = null) {
     val context=LocalContext.current
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding()) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState())) {
@@ -234,6 +239,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                     Spacer(Modifier.height(16.dp))
                     Row(horizontalArrangement=Arrangement.spacedBy(4.dp)) {
                         ReferenceIconButton("read",stringResource(R.string.hikayeyi_oku),onRead)
+                        onToggleFavorite?.let { toggle -> ReferenceIconButton("bookmark",stringResource(if(favorite) R.string.favorite_remove else R.string.favorite_add),toggle,if(favorite) TaleWarm else TaleBlue) }
                         ReferenceIconButton("share",stringResource(R.string.hikayeyi_paylas),onClick={
                             val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nEnglish Tales\nhttps://play.google.com/store/apps/details?id=com.yurken.englishtales") }
                             context.startActivity(android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
