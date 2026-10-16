@@ -78,9 +78,7 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
     if(showAll) {
         Column(Modifier.fillMaxSize().padding(padding)) {
             SimpleTopBar(stringResource(R.string.senin_icin)) { showAll=false }
-            LazyColumn(contentPadding=PaddingValues(16.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
-                items(stories,key={it.id}) { story -> StoryCard(story,snapshot.progressFor(story)) {onOpenStory(story.id)} }
-            }
+            StoryList(stories,{ story -> StoryCard(story,snapshot.progressFor(story)) {onOpenStory(story.id)} })
         }
         return
     }
@@ -165,10 +163,9 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 offerOffline=stories.any {!StoryFilters.readableOffline(it)},onOffline={offlineFilter=it}) { clearFilters() }
             Text(if(listMode=="books") stringResource(R.string.okunanlar) else stringResource(R.string.kitaplar_2),fontSize=10.sp,letterSpacing=1.sp,color=TaleBlue,modifier=Modifier.fillMaxWidth().padding(18.dp))
             HorizontalDivider(color=TaleLine)
-            LazyColumn(contentPadding=PaddingValues(16.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
-                // Favorites read most recently added first; other lists keep catalog order.
-                items(if(listMode==FAVORITES) filtered.sortedBy { snapshot.favoriteStoryIds.indexOf(it.id) } else filtered,key={it.id}) { story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }
-                if(filtered.isEmpty()) item { Text(if(filters.active) stringResource(R.string.bu_filtrelere_uyan_kitap_yok) else if(listMode=="books") stringResource(R.string.okumaya_basladigin_kitaplar_burada_gorunecek) else stringResource(R.string.kitap_bulunamadi),color=TaleMuted,fontSize=14.sp) }
+            // Favorites read most recently added first; other lists keep catalog order.
+            StoryList(if(listMode==FAVORITES) filtered.sortedBy { snapshot.favoriteStoryIds.indexOf(it.id) } else filtered,{ story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }) {
+                Text(if(filters.active) stringResource(R.string.bu_filtrelere_uyan_kitap_yok) else if(listMode=="books") stringResource(R.string.okumaya_basladigin_kitaplar_burada_gorunecek) else stringResource(R.string.kitap_bulunamadi),color=TaleMuted,fontSize=14.sp)
             }
         }
     }
@@ -226,7 +223,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
     favorite: Boolean = false, onToggleFavorite: (() -> Unit)? = null) {
     val context=LocalContext.current
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding()) {
-        Column(Modifier.weight(1f).verticalScroll(rememberScrollState())) {
+        Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth)) {
             SimpleTopBar("",onBack)
             FlowRow(Modifier.fillMaxWidth().padding(start=24.dp,end=24.dp,top=32.dp,bottom=24.dp),horizontalArrangement=Arrangement.spacedBy(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
                 Box { BookCover(story,Modifier.size(140.dp,200.dp)); if(progress>0) ReferenceProgress(progress/100f,Modifier.align(Alignment.BottomCenter).width(106.dp).padding(bottom=7.dp)) }
@@ -261,7 +258,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
 
 @Composable
 fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: PaddingValues, onSettings: ()->Unit,onAccount: ()->Unit={}) {
-    Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
+    Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth).padding(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
         Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
             Text(stringResource(R.string.profilim),fontSize=20.sp,fontWeight=FontWeight.Bold)
             ReferenceIconButton("settings",stringResource(R.string.ayarlar),onSettings)
@@ -308,7 +305,8 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
     val stages=listOf(Triple("learning",stringResource(R.string.ogreniyorum),TaleBlue),Triple("reviewing",stringResource(R.string.tekrar_ediyorum),Color(0xFF7BCC3A)),Triple("known",stringResource(R.string.biliyorum),TalePurple))
     val words=LearningContent.words.filter { it.id in snapshot.savedWordIds && (snapshot.wordStates[it.id]?:"learning")==selectedStage }
     val narrator=rememberNarrator()
-    Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding()) {
+    // The background spans the screen; the word list keeps a readable width on tablets.
+    Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().centeredWidth(ContentWidth)) {
         SimpleTopBar(stringResource(R.string.kelimelerim),onBack)
         if(LocalDensity.current.fontScale>1.4f) {
             Column(Modifier.padding(horizontal=12.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
