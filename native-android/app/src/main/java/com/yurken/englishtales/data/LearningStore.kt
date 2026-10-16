@@ -30,7 +30,9 @@ data class LearningSnapshot(
     /** Saved glossary words (Q4.3a); learning words come from [LearningContent]. */
     val personalWords: Map<String, WordInfo> = emptyMap(),
     /** Q5.5: stage per dictionary form the learner has met. */
-    val wordStages: Map<String, WordStage> = emptyMap()
+    val wordStages: Map<String, WordStage> = emptyMap(),
+    /** Q5.10: running words of the stories finished in the last seven days (a re-read on another day counts again). */
+    val weeklyWordsRead: Int = 0
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
     val knownWordCount get() = wordStages.count {it.value==WordStage.KNOWN}
@@ -75,6 +77,12 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val savedLemmas=saved.mapNotNull {id -> (LearningContent.wordById[id]?:personal[id])?.let(WordKnowledge::lemmaOf)?.let {it to (states[id]?:"learning")}}
             .groupBy({it.first},{it.second}).mapValues {(_,s) -> listOf("known","reviewing","learning").first {it in s}}
         val stages=WordKnowledge.stages(reads,lookups,savedLemmas)
+        var weeklyWords=0
+        db.rawQuery("SELECT event_id FROM engagement_events WHERE name='reading_completed' AND created_at>CAST(? AS INTEGER)",arrayOf((now-7*LearningPolicy.DAY_MS).toString())).use {c ->
+            while(c.moveToNext()) LearningContent.storyById[c.getString(0).removePrefix("read:").substringBeforeLast(':')]?.let {story ->
+                weeklyWords+=story.sentences.sumOf {s -> PhraseMatcher.tokens(s.english).count {t -> t.any(Char::isLetter)}}
+            }
+        }
         val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
         db.rawQuery("SELECT story_id,percent,revision_id,sentence_id FROM story_progress",null).use { c -> while(c.moveToNext()) {
             progress[c.getString(0)]=c.getInt(1)
@@ -96,7 +104,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false

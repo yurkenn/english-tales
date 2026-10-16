@@ -28,10 +28,12 @@ import java.util.Locale
 /** A user-selected, inexact daily reminder. No exact-alarm or network permission. */
 object LearningReminders {
     internal fun deliver(context: Context, storeFactory: (LearningOwner)->LearningStore={LearningStore(context,it)},
-        show: ()->Unit={show(context)}) {
+        show: (Int)->Unit={show(context,it)}) {
         val owner=LearningReminderOwner.current(context) ?: return
         storeFactory(owner).use { store ->
-            if(!store.snapshot().dailyGoalReached) LearningReminderOwner.ifCurrent(context,owner,show)
+            val snapshot=store.snapshot()
+            // Q5.10: the reminder names the reviews that are actually waiting.
+            if(!snapshot.dailyGoalReached) LearningReminderOwner.ifCurrent(context,owner) {show(snapshot.dueWordIds.size)}
         }
     }
     private fun prefs(context: Context) = context.getSharedPreferences("reminders",Context.MODE_PRIVATE)
@@ -52,7 +54,7 @@ object LearningReminders {
         val next=Calendar.getInstance().apply {set(Calendar.HOUR_OF_DAY,hour(context));set(Calendar.MINUTE,minute(context));set(Calendar.SECOND,0);set(Calendar.MILLISECOND,0);if(timeInMillis<=System.currentTimeMillis()) add(Calendar.DAY_OF_YEAR,1)}
         manager.set(AlarmManager.RTC_WAKEUP,next.timeInMillis,pending(context))
     }
-    fun show(context: Context) {
+    fun show(context: Context,dueWords: Int=0) {
         if(!enabled(context) || !allowed(context)) return
         val manager=context.getSystemService(NotificationManager::class.java)
         if(Build.VERSION.SDK_INT>=26) manager.createNotificationChannel(NotificationChannel("daily_learning",context.getString(R.string.gunluk_ogrenme_hatirlaticisi),NotificationManager.IMPORTANCE_DEFAULT))
@@ -60,7 +62,7 @@ object LearningReminders {
         @Suppress("DEPRECATION")
         val builder=if(Build.VERSION.SDK_INT>=26) Notification.Builder(context,"daily_learning") else Notification.Builder(context)
         manager.notify(71,builder.setSmallIcon(R.drawable.ic_notification).setContentTitle(context.getString(R.string.bugunku_hikayen_seni_bekliyor))
-            .setContentText(context.getString(R.string.kisa_bir_okuma_veya_kelime)).setContentIntent(open).setAutoCancel(true).build())
+            .setContentText(if(dueWords>0) context.resources.getQuantityString(R.plurals.reminder_due_words,dueWords,dueWords) else context.getString(R.string.kisa_bir_okuma_veya_kelime)).setContentIntent(open).setAutoCancel(true).build())
     }
 }
 

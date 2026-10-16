@@ -93,6 +93,8 @@ fun WeeklyActivity(snapshot: LearningSnapshot) {
             } }
         }
         Text(stringResource(R.string.gun_calistin_adim_tamamladin, snapshot.weeklyActivity.count {it.sessions>0}, snapshot.weeklyActivity.sumOf {it.sessions}),fontSize=12.sp,color=TaleMuted)
+        // Q5.10: what the week's reading added up to, from the stories actually finished.
+        if(snapshot.weeklyWordsRead>0 || snapshot.knownWordCount>0) Text(stringResource(R.string.weekly_reading_summary,snapshot.weeklyWordsRead,snapshot.knownWordCount),fontSize=12.sp,color=TaleMuted)
     }
 }
 
