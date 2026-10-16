@@ -40,6 +40,10 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var listenQuestions by rememberSaveable(stateSaver=listeningQuestionsSaver) { mutableStateOf(emptyList<ListeningQuestion>()) }
     var orderQuestions by rememberSaveable(stateSaver=orderQuestionsSaver) { mutableStateOf(emptyList<OrderQuestion>()) }
     var ladderModes by rememberSaveable { mutableStateOf(emptyList<String>()) }
+    // Q5.8: 0 = per-word drills, 1 = context questions, 2 = listening.
+    var ladderStep by rememberSaveable { mutableIntStateOf(0) }
+    // Known once the menu has probed the English voice; until then the ladder has no listening rung.
+    var voiceReady by remember { mutableStateOf(false) }
     val stories=LearningContent.stories
     val dictionary=LearningContent.words
     val gapPrompts by produceState<List<GapPrompt>?>(null,stories,dictionary) {
@@ -74,8 +78,16 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         val pool=if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else (priority+supplemental.shuffled()).distinctBy {it.id}.take(5)
         sessionKey=java.util.UUID.randomUUID().toString()
         session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else if(value=="order" || value=="dictation") orderQuestions.map {it.sentenceId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
-        // Q5.8: each word gets the drill that fits its stage.
-        if(value=="ladder") ladderModes=PracticeLadder.modes(ids,snapshot.wordStates)
+        // Q5.8: each word gets the drill that fits its stage, and the session climbs from word drills to games.
+        if(value=="ladder") {
+            val candidates=SentenceGap.session(gapPrompts.orEmpty().filter {it.wordId in ids},dictionary,ids,snapshot.level)
+            val plan=PracticeLadder.plan(ids,snapshot.wordStates,snapshot.wordStability,candidates.map {it.prompt.wordId}.toSet(),voiceReady)
+            ids=plan.map {it.first};ladderModes=plan.map {it.second}
+            val context=plan.filter {it.second==PracticeLadder.CONTEXT}.map {it.first}.toSet()
+            gapQuestions=candidates.filter {it.prompt.wordId in context}
+            listenQuestions=ListeningQuiz.questions(plan.filter {it.second==PracticeLadder.LISTEN}.mapNotNull {snapshot.wordFor(it.first)},dictionary)
+            ladderStep=if(ladderModes.any(PracticeLadder::isWordDrill)) 0 else if(gapQuestions.isNotEmpty()) 1 else 2
+        }
         if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(snapshot::wordFor),dictionary)
     }
     // The daily plan's review uses the ladder, so each due word gets the drill that fits its stage (Q5.8).
@@ -96,6 +108,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             // Probes the device voice; the mode is offered only when English speech works.
             val voice=rememberNarrator()
+            LaunchedEffect(voice.available) {voiceReady=voice.available==true}
             if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),"headphones",LocalTaleColors.current.tileBlue,enabled=voice.available==true) {start("listen")}
             // Dictation needs a voice too; it appears only once English speech is known to work.
             if(voice.available==true && orderCandidates.isNotEmpty()) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),"headphones",LocalTaleColors.current.tileYellow) {start("dictation")}
@@ -132,6 +145,23 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             onComplete={correctCount=it;complete(it)},onExit={exit()})
         return
     }
+    // The ladder's games follow its per-word drills; a step with no questions is skipped.
+    fun nextLadderStep(from: Int) {
+        var step=from+1
+        if(step==1 && gapQuestions.isEmpty()) step=2
+        if(step==2 && listenQuestions.isEmpty()) step=3
+        if(step==3) {finished=true;complete(correctCount)} else ladderStep=step
+    }
+    if(mode=="ladder" && ladderStep==1) {
+        SentenceGapGame(gapQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
+            onComplete={correctCount+=it;nextLadderStep(1)},onExit={exit()})
+        return
+    }
+    if(mode=="ladder" && ladderStep==2) {
+        ListeningGame(listenQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
+            onComplete={correctCount+=it;nextLadderStep(2)},onExit={exit()})
+        return
+    }
     val word=words[question]
     // In the ladder each question has its own drill; other modes use one drill for the whole session.
     val drill=if(mode=="ladder") ladderModes.getOrElse(question) {PracticeLadder.RECOGNISE} else mode
@@ -149,11 +179,12 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             delay(if(correct) 700 else 0)
             if(correct) correctCount++
             if(word.id in snapshot.savedWordIds) onWordReviewed(word.id,correct)
-            if(question==words.lastIndex) {finished=true;complete(correctCount)} else question++
+            val lastDrill=if(mode=="ladder") ladderModes.count(PracticeLadder::isWordDrill)-1 else words.lastIndex
+            if(question==lastDrill) {if(mode=="ladder") nextLadderStep(0) else {finished=true;complete(correctCount)}} else question++
         }
     }
     GameViewport(padding) {
-        GameHeader((question+1).toFloat()/words.size) {exit()}
+        GameHeader((question+1).toFloat()/(if(mode=="ladder") ladderModes.count(PracticeLadder::isWordDrill).coerceAtLeast(1) else words.size)) {exit()}
         Row(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
             Text(if(drill=="choice") stringResource(R.string.bir_ceviri_secin) else stringResource(R.string.kelimeyi_olustur_2),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
             TalesMascot(if(answer!=null && !correct) MascotMood.Support else MascotMood.Thinking,Modifier.size(52.dp))
