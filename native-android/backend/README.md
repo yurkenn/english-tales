@@ -40,6 +40,8 @@ npm test
 npm run content:audit
 ```
 
+Canlı kelime farkını taslak revizyonlarla kapatmak için `npm run content:revisions` ([Q4.1 akışı ve sıra şartı](../docs/CONTENT_QUALITY_AUDIT.md#revizyon-eşitleme-aracı-q41--16-ekim-2026)).
+
 Paket/canlı içerik karşılaştırması, gerçek seçilebilir kelime kapsamı, medya kontrolü ve yayın öncesi sıkı eşikler: [Q4 içerik denetimi](../docs/CONTENT_QUALITY_AUDIT.md). Araç taslak veya yayın oluşturmaz; yalnız yerel rapor ve inceleme paketi yazar.
 
 Emülatörün ürettiği gerçek işlem gövdelerini yerel sunucu sözleşmesiyle kontrol etmek için:
