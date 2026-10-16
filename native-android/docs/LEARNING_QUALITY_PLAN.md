@@ -62,7 +62,7 @@ Sıra bağımlılığa göredir. Efor tek geliştirici için ideal gündür (tes
 | Q4.5 | Tür yerine **etiket modeli** (masal, fabl, günlük yaşam, gizem, macera…), etiket adları dile göre | Sabit SQL listesi kalkar. Yeni etiket şema değişikliği gerektirmez. | Q4.0 | 1,5–2 |
 | Q4.6 | **Seviye profili denetimi:** her hikâye için cümle uzunluğu, sıklık bandı dışı sözcük oranı ve yeni kelime yoğunluğu | `content:audit` raporunda seviye başına eşikler; aykırı hikâyeler listelenir | Q4.3a | 1,5 |
 | Q4.7 | **İçerik hacmi:** A1/A2'ye bölümlü (3–5 bölüm) daha uzun hikâyeler. B1'i 20'ye çıkarma. B2 pilotu (5 hikâye). | Toplam ≥ 30.000 sözcük; A1 medyanı ≥ 250 sözcük (bölümlerle) | Q4.6 araçları + içerik hızı kararı | Hikâye başına 0,5–1 gün |
-| Q4.8 | Cümle cümle seslendirme ve vurgulu takip (`onRangeStart`) | Okunan cümle vurgulanır. Cümleye dokununca o cümle okunur. | — | 1,5–2 |
+| Q4.8 | Cümle cümle seslendirme ve vurgulu takip | Okunan cümle vurgulanır. Cümleye basılı tutunca o cümleden okunur (kelime dokunma korunur). | — | 1,5–2 |
 
 ### 3.1 Sözlük verisi nereden gelecek (karar)
 
