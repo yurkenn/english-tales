@@ -116,7 +116,7 @@ AI destekli açıklama veya konuşma pratiği; topluluk hikâyeleri (F12); iOS (
 1. **0.1 + 0.6** — 48'in inceleme sonucunu doğrula; onaylanınca veri güvenliği beyanı, release secret'ları ve CI'dan 49 adayı.
 2. **0.5 genişletilmiş** — 39 hikâyelik paket/canlı farkı için revizyon taslakları; beş A1 pilotu ilk yayın grubu ([içerik denetimi](CONTENT_QUALITY_AUDIT.md)).
 3. **Q3 kapısı** — gerçek TalkBack ile ana yolculuğun elle kaydı.
-4. **2.3 F01 zayıf kelime tekrarı** — yeni kelime yoğunluğundan sonra öğrenme döngüsünün en büyük kazancı.
+4. **2.3 F01 zayıf kelime tekrarı** — ilk aşama [#46](https://github.com/yurkenn/english-tales/pull/46)'da (yerel yanlış kaydı ve öncelik).
 
 ## 7. Senin kararın gereken konular
 
