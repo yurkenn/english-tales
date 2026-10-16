@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weak_words_practice">Zorlandığın %1$d kelimeyi çalış</string>
+    <string name="weak_words_summary">Son 30 günde yanlış yanıtladığın kelimeler önce gelir.</string>
+    <string name="weak_words_count">%1$d kelimede zorlanıyorsun; tekrarlarda önce onlar gelir.</string>
+</resources>

@@ -118,6 +118,19 @@ class LearningStoreTest {
         assertEquals("learning",store.snapshot().wordStates["quiet"])
         assertEquals(now+600000,store.snapshot().nextReviewAt)
     }
+    @Test fun missedWordsComeFirstUntilKnownOrForgotten() {
+        store.saveWords(listOf("quiet","morning"))
+        assertEquals(emptyList<String>(),store.snapshot().weakWordIds)
+        store.reviewWord("morning",false);store.reviewWord("morning",false)
+        now+=LearningPolicy.DAY_MS
+        store.reviewWord("morning",false);store.reviewWord("quiet",false)
+        // Two missed days outrank one; the same day counts once.
+        assertEquals(listOf("morning","quiet"),store.snapshot().weakWordIds)
+        store.close();store=LearningStore(context) {now}
+        assertEquals(listOf("morning","quiet"),store.snapshot().weakWordIds)
+        now+=(ReviewFocus.WINDOW_DAYS+1)*LearningPolicy.DAY_MS
+        assertEquals(emptyList<String>(),store.snapshot().weakWordIds)
+    }
     @Test fun progressDoesNotRegressAndPreferencesPersist() {
         store.updateProgress("quiet-morning",88);store.updateProgress("quiet-morning",10)
         store.updatePreferences("B1","Gizem",3,"Ada")

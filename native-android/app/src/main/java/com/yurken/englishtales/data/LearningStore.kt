@@ -22,7 +22,9 @@ data class LearningSnapshot(
     val weeklyActivity: List<DailyActivity> = emptyList(), val badges: Set<String> = emptySet(),
     val lastStoryId: String? = null, val readerHintSeen: Boolean = false, val displayName: String = "Okuyucu",
     val readingPositions: Map<String,ReadingPosition> = emptyMap(), val activeSessionMillis: Map<String,Long> = emptyMap(),
-    val ownerId: String = "guest"
+    val ownerId: String = "guest",
+    /** F01: saved, not yet known words missed recently, most troublesome first ([ReviewFocus]). */
+    val weakWordIds: List<String> = emptyList()
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
 }
@@ -53,6 +55,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
                 if(at<=now) due+=id else if(nextDue==null || at<nextDue!!) nextDue=at
             }
         }
+        val misses=mutableListOf<Pair<String,Long>>()
+        db.rawQuery("SELECT event_id,created_at FROM engagement_events WHERE name='word_missed'",null).use {c -> while(c.moveToNext()) misses+=c.getString(0) to c.getLong(1)}
+        val weak=ReviewFocus.weak(misses,states,now)
         val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
         db.rawQuery("SELECT story_id,percent,revision_id,sentence_id FROM story_progress",null).use { c -> while(c.moveToNext()) {
             progress[c.getString(0)]=c.getInt(1)
@@ -74,7 +79,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
@@ -133,6 +138,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             db.rawQuery("SELECT correct_count,last_review_day,next_review_at FROM saved_words WHERE word_id=?",arrayOf(wordId)).use {c ->
                 if(c.moveToFirst()) {
                     enqueueWord(wordId,"review",correct,clock())
+                    if(!correct) recordEvent(db,ReviewFocus.missEventId(wordId,LearningPolicy.dayKey(clock())),"word_missed",clock())
                     val plan=LearningPolicy.review(c.getInt(0),correct,c.getString(1),c.getLong(2),clock())
                     if(plan!=null) db.update("saved_words",ContentValues().apply {
                         put("correct_count",plan.correctCount);put("learning_state",plan.state);put("interval_days",plan.intervalDays);put("next_review_at",plan.dueAt);put("last_review_day",plan.successfulDay)
