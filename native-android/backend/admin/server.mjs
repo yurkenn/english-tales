@@ -49,7 +49,7 @@ const operations={
   admin_publish:['p_revision_id','p_expected_version'],set_story_archived:['p_story_id','p_archived'],
   admin_history:['p_story_id','p_before_id'],admin_delete_draft:['p_revision_id','p_expected_version'],
   admin_archive:['p_story_id','p_archived','p_expected_revision'],admin_unused_media:['p_before_id'],
-  admin_reserve_media_delete:['p_asset_id'],admin_finalize_media_delete:['p_asset_id']
+  admin_reserve_media_delete:['p_asset_id'],admin_finalize_media_delete:['p_asset_id'],admin_tags:[]
 };
 let queue=Promise.resolve();
 function serialized(fn) { const next=queue.then(fn); queue=next.catch(()=>{}); return next; }

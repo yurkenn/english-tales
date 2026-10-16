@@ -94,7 +94,7 @@ object ContentCodec {
             else java.time.OffsetDateTime.parse(doc.getString("story_created_at")).toInstant()
         return Story(id, doc.getString("title"), doc.getString("author"), doc.getString("level"), doc.getString("genre"),
             SupportLanguage.pick(doc, "descriptions", "description"), "remote", parsed, revision, coverFile, vocabulary, mapping, addedAt,
-            StoryQuestion.parse(doc.optJSONArray("questions")))
+            StoryQuestion.parse(doc.optJSONArray("questions")), StoryTag.parse(doc.optJSONArray("tags")))
     }
     fun verify(bytes: ByteArray, asset: JSONObject) {
         require(bytes.size.toLong() == asset.getLong("byte_size")) { "İndirilen dosya eksik." }
@@ -158,9 +158,9 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             val stories = (0 until metadata.length()).map { i ->
                 val doc = metadata.getJSONObject(i); val revision = doc.getString("id")
                 val remote = ContentCodec.story(doc)
-                downloaded[revision]?.copy(addedAt=remote.addedAt)
+                downloaded[revision]?.let { it.copy(addedAt=remote.addedAt,tags=it.tags.ifEmpty { remote.tags }) }
                     ?: (bundled[revision] ?: bundledByStory[remote.id]?.takeIf { bundledText[revision] == fingerprint(it) })
-                        ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null,questions=bundled.questions) }
+                        ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null,questions=bundled.questions,tags=remote.tags.ifEmpty { bundled.tags }) }
                     ?: remote
             }
             LearningContent.install(stories, historical.values.flatMap { it.vocabulary.orEmpty() })
@@ -174,11 +174,13 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             val result = JSONArray()
             val ids=(0 until stories.length()).map {UUID.fromString(stories.getJSONObject(it).getString("current_revision_id")).toString()}
             val revisionById=mutableMapOf<String,JSONObject>()
+            val tagVocabulary=tagVocabulary(remote, lang)
             for(batch in ids.chunked(100)) {
                 val revisions=remote.rows("story_revisions","select=*&id=in.(${batch.joinToString(",")})&published_at=not.is.null&order=id.asc")
                 for(j in 0 until revisions.length()) revisions.getJSONObject(j).let {revisionById[it.getString("id")]=it}
                 remote.optionalRows("revision_texts","select=revision_id,description&revision_id=in.(${batch.joinToString(",")})&lang=eq.$lang&order=revision_id.asc")
                     ?.forEachObject {revisionById[it.getString("revision_id")]?.put("descriptions",JSONObject().put(lang,it.getString("description")))}
+                attachTags(remote, tagVocabulary, batch) { revisionById[it] }
             }
             for (i in 0 until stories.length()) {
                 val row = stories.getJSONObject(i)
@@ -217,8 +219,26 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         }
         if (changed) atomic(bundledTextIndex, JSONObject().apply { bundledText.forEach { (revision, text) -> put(revision, text) } }.toString().toByteArray(Charsets.UTF_8))
     }
+    /** Tag ids in vocabulary order with their names; empty on servers without tag tables (Q4.5). */
+    private fun tagVocabulary(remote: ContentHttp, lang: String): List<Pair<String, String>> {
+        val order = remote.optionalRows("content_tags", "select=id,position&order=position.asc", 100) ?: return emptyList()
+        val names = mutableMapOf<String, String>()
+        for (code in listOf(SupportLanguage.DEFAULT, lang).distinct())
+            remote.optionalRows("tag_names", "select=tag_id,name&lang=eq.$code&order=tag_id.asc", 100)?.forEachObject { names[it.getString("tag_id")] = it.getString("name") }
+        return (0 until order.length()).map { order.getJSONObject(it).getString("id").let { id -> id to (names[id] ?: id) } }
+    }
+    /** Stores each revision's tags as `[{id, name}]` in vocabulary order, so caches and downloads keep them offline. */
+    private fun attachTags(remote: ContentHttp, vocabulary: List<Pair<String, String>>, revisions: List<String>, doc: (String) -> JSONObject?) {
+        if (vocabulary.isEmpty()) return
+        val rows = remote.optionalRows("revision_tags", "select=revision_id,tag_id&revision_id=in.(${revisions.joinToString(",")})&order=revision_id.asc,tag_id.asc", 1000) ?: return
+        val byRevision = mutableMapOf<String, MutableSet<String>>()
+        rows.forEachObject { byRevision.getOrPut(it.getString("revision_id")) { mutableSetOf() }.add(it.getString("tag_id")) }
+        for (revision in revisions) doc(revision)?.put("tags", JSONArray().apply {
+            vocabulary.filter { it.first in byRevision[revision].orEmpty() }.forEach { (id, name) -> put(JSONObject().put("id", id).put("name", name)) }
+        })
+    }
     /** Translation tables are newer than the first releases; until a server has them, the legacy Turkish columns are used. */
-    private fun ContentHttp.optionalRows(table: String, query: String) = runCatching { rows(table, query) }.getOrNull()
+    private fun ContentHttp.optionalRows(table: String, query: String, pageSize: Int = 5) = runCatching { rows(table, query, pageSize) }.getOrNull()
     private fun JSONArray.forEachObject(action: (JSONObject) -> Unit) = (0 until length()).forEach { action(getJSONObject(it)) }
     /** Stores each row's text as `translations.{lang}` on the matching item, which [ContentCodec] reads first. */
     private fun attach(items: JSONArray, rows: JSONArray, key: String, field: String, lang: String) {
@@ -251,6 +271,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             // Comprehension questions are newer than the first servers; their absence never blocks a download.
             runCatching { remote.rows("story_questions", "select=id,position,kind,prompt,options,answer&revision_id=eq.$revision&order=position.asc") }
                 .getOrNull()?.let { doc.put("questions", it) }
+            attachTags(remote, tagVocabulary(remote, lang), listOf(revision)) { id -> doc.takeIf { id == revision } }
             val assetId = UUID.fromString(doc.getString("cover_asset_id")).toString()
             val assets = remote.rows("content_assets", "select=*&id=eq.$assetId&order=id.asc")
             require(assets.length() == 1)

@@ -14,6 +14,16 @@ export async function exportCatalog(catalog, {readCover = key => readFile(new UR
   if (new Set(catalog.stories.map(s => s.id)).size !== catalog.stories.length || new Set(catalog.words.map(w => w.id)).size !== catalog.words.length) throw new Error('Duplicate catalog IDs');
   const lines = ['-- Generated from the native catalog. Drafts only; never changes an existing revision.', 'begin;'];
   const assets = [];
+  const tagIds = new Set();
+  for (const [index, tag] of (catalog.tags ?? []).entries()) {
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(tag?.id ?? '') || tagIds.has(tag.id)) throw new Error(`Invalid tag: ${tag?.id}`);
+    tagIds.add(tag.id);
+    lines.push(`insert into public.content_tags(id,position) values(${quote(tag.id)},${index + 1}) on conflict(id) do nothing;`);
+    for (const [lang, name] of Object.entries(tag.names ?? {})) {
+      if (!validSupportLanguage(lang) || typeof name !== 'string' || !name.trim()) throw new Error(`Invalid tag name: ${tag.id}/${lang}`);
+      lines.push(`insert into public.tag_names(tag_id,lang,name) values(${[tag.id, lang, name].map(quote).join(',')}) on conflict(tag_id,lang) do nothing;`);
+    }
+  }
   for (const story of catalog.stories) {
     const errors=questionErrors(story.questions===undefined?[]:story.questions);
     if(errors.length)throw new Error(`Invalid questions in ${story.id}: ${errors.join(' ')}`);
@@ -29,6 +39,10 @@ export async function exportCatalog(catalog, {readCover = key => readFile(new UR
     lines.push(`insert into public.story_revisions(id,story_id,revision,title,author,level,genre,description,cover_asset_id) values(${[revisionId,story.id].map(quote).join(',')},1,${[story.title,story.author,story.level,story.genre,story.description,assetId].map(quote).join(',')});`);
     for (const [lang, description] of translationEntries(story.descriptions, story.description, story.id))
       lines.push(`insert into public.revision_texts(revision_id,lang,description) values(${[revisionId,lang,description].map(quote).join(',')}) on conflict(revision_id,lang) do update set description=excluded.description;`);
+    for (const tag of story.tags ?? []) {
+      if (!tagIds.has(tag)) throw new Error(`Unknown tag in ${story.id}: ${tag}`);
+      lines.push(`insert into public.revision_tags(revision_id,tag_id) values(${quote(revisionId)},${quote(tag)});`);
+    }
     for(const [index,q] of (story.questions??[]).entries())
       lines.push(`insert into public.story_questions(revision_id,id,position,kind,prompt,options,answer) values(${quote(revisionId)},${quote(q.id)},${index+1},${quote(q.kind)},${quote(q.prompt)},array[${q.options.map(quote).join(',')} ]::text[],${q.answer});`);
     const selected = new Map();

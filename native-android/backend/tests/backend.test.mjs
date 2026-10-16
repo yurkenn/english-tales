@@ -244,7 +244,7 @@ test('an authenticated database role without a user identity cannot access learn
 });
 test('all application tables have RLS and privileged functions have a fixed search path and explicit grants',async()=>{
   const tables=(await db.query("select c.relname,c.relrowsecurity from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r'")).rows;
-  assert.equal(tables.length,17);
+  assert.equal(tables.length,20);
   assert.ok(tables.every(t=>t.relrowsecurity));
   const functions=(await db.query("select n.nspname,p.proname,p.proconfig,p.oid,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as user_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','private') and p.proname in ('publish_story_revision','set_story_archived','save_learning_preferences','submit_learning_session','apply_word_event','apply_progress_event','get_learning_summary','lock_learning_user','learning_summary','unlock_learning_badges','guard_revision_child','guard_revision','guard_asset','bump_revision_version','bump_child_version','content_role','admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish','admin_history','admin_delete_draft','admin_archive','admin_unused_media','admin_reserve_media_delete','admin_finalize_media_delete','record_content_action','audit_content_change','check_learning_links','guard_revision_media','bump_media_revisions','sync_legacy_translation','guard_turkish_translation','check_revision_translations','save_translation_maps','check_revision_questions')")).rows;
   assert.equal(functions.length,37);
@@ -273,7 +273,7 @@ test('translation migration backfills published history and drafts without chang
     const directory=new URL('../supabase/migrations/',import.meta.url);
     const names=(await readdir(directory)).sort(),latest='20261016090000_translation_tables.sql';
     for(const name of names.filter(n=>n<latest))await old.exec(await readFile(new URL(name,directory),'utf8'));
-    await old.exec(await read('../supabase/seed.sql').then(s=>s.split('\n').filter(line=>!line.startsWith('insert into public.sentence_translations')&&!line.startsWith('insert into public.word_translations')&&!line.startsWith('insert into public.revision_texts')).join('\n')));
+    await old.exec(await read('../supabase/seed.sql').then(s=>s.split('\n').filter(line=>!['sentence_translations','word_translations','revision_texts','story_questions','content_tags','tag_names','revision_tags'].some(table=>line.startsWith(`insert into public.${table}`))).join('\n')));
     await old.query('update public.story_revisions set published_at=now() where id=$1',[revision]);
     await old.exec("insert into public.stories(id) values('empty-draft'); insert into public.story_revisions(story_id,revision,level,genre) values('empty-draft',1,'A1','Macera')");
     const legacy=async()=>Promise.all(['story_revisions','story_sentences','revision_words'].map(async table=>(await old.query(`select * from public.${table} order by ${table==='story_revisions'?'id':'revision_id,id'}`)).rows));
@@ -680,4 +680,53 @@ test('admin question round-trip replaces by display order, keeps omitted lists, 
   await putQuestion(copy.id);await admin(editor,'admin_delete_draft',{p_revision_id:copy.id,p_expected_version:(await admin(editor,'admin_revision',{p_revision_id:copy.id})).edit_version});
   assert.equal((await db.query('select count(*)::int n from public.story_questions where revision_id=$1',[copy.id])).rows[0].n,0);
   assert.equal((await anon('select id from public.story_questions where revision_id=$1',[id])).length,2);
+});
+
+test('tags are a public vocabulary that only publishers change, and revisions carry their tags',async()=>{
+  assert.deepEqual((await anon('select id from public.content_tags order by position')).map(t=>t.id),['masal','fabl','macera','gunluk-yasam','gizem']);
+  assert.equal((await anon("select name from public.tag_names where tag_id='gunluk-yasam' and lang='tr'"))[0].name,'Günlük yaşam');
+  assert.deepEqual((await anon('select tag_id from public.revision_tags where revision_id=$1',[revision])).map(t=>t.tag_id),['gunluk-yasam']);
+  const aesop=stableId('classic-tortoise-hare:revision:1');
+  assert.deepEqual((await anon('select tag_id from public.revision_tags where revision_id=$1 order by tag_id',[aesop])).map(t=>t.tag_id),['fabl','macera']);
+  await assert.rejects(anon("insert into public.content_tags values('kisa',9)"),/permission denied/);
+  await assert.rejects(user(editor,"insert into public.content_tags values('kisa',9)"),/row-level security/);
+  await user(publisher,"insert into public.content_tags values('kisa',9)");
+  await user(publisher,"insert into public.tag_names values('kisa','tr','Kısa')");
+  assert.equal((await anon("select count(*)::int n from public.tag_names where tag_id='kisa'"))[0].n,1);
+  // Published tags are outside the editor's write policy, and the trigger guards direct writes too.
+  await user(editor,'delete from public.revision_tags where revision_id=$1',[revision]);
+  assert.equal((await anon('select count(*)::int n from public.revision_tags where revision_id=$1',[revision]))[0].n,1);
+  await assert.rejects(db.query("insert into public.revision_tags values($1,'gizem')",[revision]),/published_revision_is_immutable/);
+});
+test('drafts copy tags, saves replace them, and unknown tags are rejected',async()=>{
+  const d=await admin(editor,'admin_create_draft',{story:'classic-tortoise-hare',source:stableId('classic-tortoise-hare:revision:1')});
+  assert.deepEqual(d.tags,['fabl','macera']);
+  const saved=await admin(editor,'admin_save_draft',{id:d.id,version:d.edit_version,document:JSON.stringify({...d,tags:['masal','gizem','masal']})},['uuid','integer','jsonb']);
+  assert.deepEqual(saved.tags,['masal','gizem']);assert.ok(saved.edit_version>d.edit_version);
+  const untouched=await admin(editor,'admin_save_draft',{id:d.id,version:saved.edit_version,document:JSON.stringify((({tags,...rest})=>rest)(saved))},['uuid','integer','jsonb']);
+  assert.deepEqual(untouched.tags,['masal','gizem'],'older panels that omit tags keep them');
+  for(const tags of [['unknown'],'masal',[1]])
+    await assert.rejects(admin(editor,'admin_save_draft',{id:d.id,version:untouched.edit_version,document:JSON.stringify({...untouched,tags})},['uuid','integer','jsonb']),/tags_invalid/);
+  assert.deepEqual((await admin(editor,'admin_revision',{id:d.id})).tags,['masal','gizem']);
+});
+test('tag migration backfills every revision from its genre and classic source',async()=>{
+  const old=new PGlite();await old.waitReady;
+  try{
+    await old.exec(await read('./platform-fixture.sql'));
+    const directory=new URL('../supabase/migrations/',import.meta.url),latest='20261016110000_story_tags.sql';
+    for(const name of (await readdir(directory)).sort().filter(n=>n<latest))await old.exec(await readFile(new URL(name,directory),'utf8'));
+    await old.exec(`insert into public.stories(id) values('a'),('b'),('c');
+      insert into public.story_revisions(story_id,revision,author,level,genre,published_at) values('a',1,'Aesop','A1','Macera',now());
+      insert into public.story_revisions(story_id,revision,author,level,genre) values('b',1,'Hans Christian Andersen','A2','Günlük yaşam'),('c',1,'O. Henry','B1','Gizem')`);
+    await old.exec(await readFile(new URL(latest,directory),'utf8'));
+    const tags=(await old.query("select r.story_id,string_agg(t.tag_id,',' order by c.position) tags from public.revision_tags t join public.story_revisions r on r.id=t.revision_id join public.content_tags c on c.id=t.tag_id group by r.story_id order by r.story_id")).rows;
+    assert.deepEqual(tags,[{story_id:'a',tags:'fabl,macera'},{story_id:'b',tags:'masal,gunluk-yasam'},{story_id:'c',tags:'gizem'}]);
+  }finally{await old.close();}
+});
+test('the panel tag list needs a staff role and keeps vocabulary order with localized names',async()=>{
+  const tags=await admin(editor,'admin_tags',{});
+  assert.deepEqual(tags.map(t=>t.id),['masal','fabl','macera','gunluk-yasam','gizem']);
+  assert.equal(tags.find(t=>t.id==='fabl').names.tr,'Fabl');
+  await assert.rejects(admin(alice,'admin_tags',{}),/staff_required/);
+  await assert.rejects(anon('select public.admin_tags()'),/permission denied/);
 });

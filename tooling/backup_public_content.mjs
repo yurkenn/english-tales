@@ -8,7 +8,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const coreTables=['stories','content_assets','story_revisions','story_sentences','revision_words','sentence_words'];
 const translations=['sentence_translations','word_translations','revision_texts'];
 const orders={story_sentences:'revision_id,id',revision_words:'revision_id,id',sentence_words:'revision_id,sentence_id,word_id',
-  sentence_translations:'revision_id,sentence_id,lang',word_translations:'revision_id,word_id,lang',revision_texts:'revision_id,lang',story_questions:'revision_id,position'};
+  sentence_translations:'revision_id,sentence_id,lang',word_translations:'revision_id,word_id,lang',revision_texts:'revision_id,lang',story_questions:'revision_id,position',revision_tags:'revision_id,tag_id'};
 const signature=stories=>JSON.stringify(stories.map(s=>[s.id,s.current_revision_id,s.is_archived]).sort((a,b)=>a[0].localeCompare(b[0])));
 
 /** Importing this module never reads credentials, writes files or opens a connection. */
@@ -45,7 +45,7 @@ export async function backupPublicContent({settings,parent,fetchImpl=fetch,now=(
   }
   const tables={};
   for(const table of coreTables)tables[table]=await rows(table);
-  for(const table of [...translations,'story_questions']){
+  for(const table of [...translations,'story_questions','revision_tags']){
     const result=await rows(table,{optional:true});
     if(result!==undefined)tables[table]=result;
   }
