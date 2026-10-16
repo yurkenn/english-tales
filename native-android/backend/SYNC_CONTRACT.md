@@ -140,6 +140,16 @@ Cümle belirtilen sürüme ait olmalıdır. Tamamlanma yüzdesi 0–100 arasınd
 - `get_learning_snapshot` `favorites` alanında `{story_id, favorite, updated_at}` döner; çıkarılan favori `favorite=false` olarak kalır (tombstone).
 - İstemci gönderilmemiş favori işlemlerini korur; sunucu oynatınca anlık görüntü yerel durumu belirler. `favorites` alanı olmayan eski sunucularda yerel favorilere dokunulmaz. Hikâye arşivlense de favori kaydı kalır; ekranlar yalnız açılabilen hikâyeleri listeler.
 
+### Kişisel kelimeler (Q4.3a)
+
+Okuyucuda sözlükten kaydedilen kelimeler `apply_word_event` ile gider; kimlikleri `glossary:<lemma>` biçimindedir (lemma yalnız harf/rakam).
+
+- `storyRevisionId` `null` olmalıdır; bu kelimeler bir hikâye revizyonuna bağlı değildir.
+- `save` olayı ek olarak `word` (1–100 karakter) ve `gloss` (1–1000 karakter) taşır. `review` ve `remove` olayları ile öğrenme kelimesi olayları bu alanları taşıyamaz (`invalid_word_payload`).
+- Tekrar planı öğrenme kelimeleriyle aynıdır. Metin `user_personal_words` tablosunda tutulur; geç yüklenen eski bir kayıt daha yeni anlamın üzerine yazmaz.
+- `get_learning_snapshot` `words` satırında bu kelimeler için `word` ve `gloss` alanlarını da döner. İstemci metni olmayan bir kişisel kelimeyi yok sayar; kaldırılan kelimenin yerel metnini siler.
+- Sunucu bu sözleşmeden önceki sürümdeyse kişisel kelime olayları reddedilir; bu yüzden migration, uygulama sürümünden önce yayımlanmalıdır.
+
 ## Seri, hedef ve saat dilimi
 
 Seri yalnızca sayılan, tamamlanan öğrenme günlerinden hesaplanır. Son etkin gün bugün veya dün değilse seri 0'dır. Sadece uygulamayı açmak öğrenme adımı değildir. Geç ulaşan çevrimdışı günler ardışık gün geçmişini tamamlayabilir. Kazanılan başarılar daha sonra serinin düşmesiyle silinmez.

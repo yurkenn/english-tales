@@ -144,7 +144,7 @@ class LearningStoreTest {
         store.setFavorite("archived-story",true)
         assertEquals(listOf("archived-story","quiet-morning"),store.snapshot().favoriteStoryIds)
     }
-    @Test fun glossaryWordsArePractisedLocallyAndNeverQueued() {
+    @Test fun glossaryWordsArePractisedAndSyncWithTheirText() {
         val walked=WordInfo("glossary:walk","walk","yürümek","","")
         store.savePersonalWord(walked)
         var snapshot=store.snapshot()
@@ -155,8 +155,13 @@ class LearningStoreTest {
         store.close();store=LearningStore(context) {now}
         snapshot=store.snapshot()
         assertEquals("reviewing",snapshot.wordStates["glossary:walk"])
-        // Personal words do not reach the server until it can accept them.
-        assertTrue(store.queuedOperations().none {"glossary:" in it.payload})
+        // The save carries the word and meaning without a story revision; the review carries neither.
+        val events=store.queuedOperations().filter {it.rpc=="apply_word_event"}.map {JSONObject(it.payload)}
+        assertEquals(listOf("save","review"),events.map {it.getString("action")})
+        assertTrue(events.all {it.isNull("storyRevisionId") && it.getString("wordId")=="glossary:walk"})
+        assertEquals("walk",events[0].getString("word"));assertEquals("yürümek",events[0].getString("gloss"))
+        assertFalse(events[1].has("word") || events[1].has("gloss"))
+        assertTrue(store.queuedOperations().all {it.errorCode==null})
         store.setWordSaved("glossary:walk",false)
         snapshot=store.snapshot()
         assertFalse("glossary:walk" in snapshot.savedWordIds);assertTrue(snapshot.personalWords.isEmpty())

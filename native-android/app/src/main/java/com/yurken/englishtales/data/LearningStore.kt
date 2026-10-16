@@ -270,9 +270,14 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     }
     private fun canonicalSessionId(id: String) = runCatching {UUID.fromString(id).toString()}.getOrElse {ContentRevisionIds.stable("local-session:$id")}
     private fun enqueueWord(wordId: String,action: String,correct: Boolean?,now: Long) {
-        // Glossary words stay on this device until the server knows personal words (Q4.3a, next step).
-        if(Glossary.isLookupOnly(wordId)) return
-        val id=UUID.randomUUID().toString();val revision=LearningContent.revisionForWord(wordId)
+        val id=UUID.randomUUID().toString()
+        // Saved glossary words have no story revision; their save carries the word and meaning (Q4.3a).
+        if(Glossary.isLookupOnly(wordId)) {
+            val text=if(action!="save") null else writableDatabase.query("SELECT word,gloss FROM personal_words WHERE word_id=?",arrayOf(wordId)).use {c -> if(c.moveToFirst()) c.getString(0) to c.getString(1) else null}
+            enqueue(id,"apply_word_event",operations.word(id,null,wordId,action,correct,now,text))
+            return
+        }
+        val revision=LearningContent.revisionForWord(wordId)
         enqueue(id,"apply_word_event",operations.word(id,revision,wordId,action,correct,now),if(revision==null) "content_revision_unavailable" else null)
     }
     private fun enqueueSession(draft: SessionDraftRow,correct: Int,now: Long) {

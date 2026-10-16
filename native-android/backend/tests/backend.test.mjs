@@ -244,7 +244,7 @@ test('an authenticated database role without a user identity cannot access learn
 });
 test('all application tables have RLS and privileged functions have a fixed search path and explicit grants',async()=>{
   const tables=(await db.query("select c.relname,c.relrowsecurity from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r'")).rows;
-  assert.equal(tables.length,22);
+  assert.equal(tables.length,23);
   assert.ok(tables.every(t=>t.relrowsecurity));
   const functions=(await db.query("select n.nspname,p.proname,p.proconfig,p.oid,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as user_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','private') and p.proname in ('publish_story_revision','set_story_archived','save_learning_preferences','submit_learning_session','apply_word_event','apply_progress_event','get_learning_summary','lock_learning_user','learning_summary','unlock_learning_badges','guard_revision_child','guard_revision','guard_asset','bump_revision_version','bump_child_version','content_role','admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish','admin_history','admin_delete_draft','admin_archive','admin_unused_media','admin_reserve_media_delete','admin_finalize_media_delete','record_content_action','audit_content_change','check_learning_links','guard_revision_media','bump_media_revisions','sync_legacy_translation','guard_turkish_translation','check_revision_translations','save_translation_maps','check_revision_questions')")).rows;
   assert.equal(functions.length,37);
@@ -753,4 +753,38 @@ test('the learning snapshot carries favorites and their tombstones only to their
   assert.deepEqual((await user(bob,'select public.get_learning_snapshot() as s'))[0].s.favorites,[]);
   assert.deepEqual(await user(bob,'select * from public.user_story_favorites'),[]);
   await assert.rejects(user(alice,"insert into public.user_story_favorites values($1,'x',true,now(),$2)",[alice,randomUUID()]),/permission denied/);
+});
+
+const personal=(extra={})=>word({storyRevisionId:null,wordId:'glossary:walk',word:'walk',gloss:'yürümek',...extra});
+test('saved glossary words sync without a story revision and keep the newest meaning',async()=>{
+  const save=personal({occurredAt:iso(0,-60)});
+  assert.equal((await rpc(alice,'apply_word_event',save)).applied,true);
+  assert.equal((await rpc(alice,'apply_word_event',save)).applied,false);
+  // An older save uploaded later does not overwrite the newer meaning.
+  await rpc(alice,'apply_word_event',personal({gloss:'yürüyüş',occurredAt:iso(0,-30)}));
+  await rpc(alice,'apply_word_event',personal({gloss:'eski',occurredAt:iso(0,-90)}));
+  let snapshot=(await user(alice,'select public.get_learning_snapshot() as s'))[0].s;
+  const walk=snapshot.words.find(w=>w.word_id==='glossary:walk');
+  assert.equal(walk.saved,true);assert.equal(walk.word,'walk');assert.equal(walk.gloss,'yürüyüş');assert.equal(walk.source_revision_id,null);
+  // Learning words carry no text; reviews and removals carry no text either.
+  assert.equal(snapshot.words.find(w=>w.word_id==='quiet'),undefined);
+  await rpc(alice,'apply_word_event',word());
+  snapshot=(await user(alice,'select public.get_learning_snapshot() as s'))[0].s;
+  assert.equal('gloss' in snapshot.words.find(w=>w.word_id==='quiet'),false);
+  const review=personal({action:'review',correct:true,word:undefined,gloss:undefined,occurredAt:iso(0,-1)});
+  delete review.word;delete review.gloss;
+  assert.equal((await rpc(alice,'apply_word_event',review)).wordState.saved,true);
+  const remove={...review,id:randomUUID(),action:'remove',occurredAt:iso()};delete remove.correct;
+  assert.equal((await rpc(alice,'apply_word_event',remove)).wordState.saved,false);
+  assert.deepEqual((await user(bob,'select public.get_learning_snapshot() as s'))[0].s.words,[]);
+  assert.deepEqual(await user(bob,'select * from public.user_personal_words'),[]);
+});
+test('glossary word events are validated and cannot borrow learning-word rules',async()=>{
+  for(const invalid of [personal({word:''}),personal({gloss:'   '}),personal({wordId:'glossary:two words'}),personal({wordId:'glossary:'}),
+    personal({storyRevisionId:revision}),personal({gloss:'x'.repeat(1001)}),word({word:'quiet',gloss:'sessiz'}),
+    {...personal({action:'remove'}),correct:undefined}])
+    await assert.rejects(rpc(alice,'apply_word_event',JSON.parse(JSON.stringify(invalid))),/invalid_word_payload/);
+  // A learning word still needs its published revision.
+  await assert.rejects(rpc(alice,'apply_word_event',word({storyRevisionId:null})),/published_word_required|invalid input syntax|null value|word_events_revision_or_glossary/);
+  await assert.rejects(user(alice,"insert into public.user_personal_words values($1,'glossary:x','x','y',now())",[alice]),/permission denied/);
 });

@@ -118,6 +118,19 @@ class LearningReconciliationTest {
         apply(local,cloud().copy(favorites=favorites))
         assertFalse("quiet-morning" in local.snapshot().favoriteStoryIds)
     }
+    @Test fun savedGlossaryWordsArriveWithTheirTextAndLeaveWithTheirRemoval() {
+        val local=store()
+        val walk=word("glossary:walk",true,null).copy(word="walk",gloss="yürümek")
+        // A glossary word without text (a malformed or older server row) is ignored rather than shown blank.
+        apply(local,cloud(words=listOf(walk.copy(word=null,gloss=null))))
+        assertFalse("glossary:walk" in local.snapshot().savedWordIds)
+        apply(local,cloud(words=listOf(walk)))
+        assertEquals("yürümek",local.snapshot().personalWords["glossary:walk"]?.translation)
+        assertTrue("glossary:walk" in local.snapshot().savedWordIds)
+        assertEquals("yürümek",JSONObject(local.cloudState()!!.snapshotJson).getJSONArray("words").getJSONObject(0).getString("gloss"))
+        apply(local,cloud(words=listOf(walk.copy(saved=false))))
+        assertFalse("glossary:walk" in local.snapshot().savedWordIds);assertTrue(local.snapshot().personalWords.isEmpty())
+    }
     @Test fun pendingReviewKeepsScheduleUntilDeliveryAndNextSnapshot() {
         val local=store();local.saveWords(listOf("quiet"));local.reviewWord("quiet",true)
         val before=local.snapshot().nextReviewAt
