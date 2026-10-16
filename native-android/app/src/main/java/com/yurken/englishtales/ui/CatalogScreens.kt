@@ -105,8 +105,10 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     var levelFilter by rememberSaveable { mutableStateOf<String?>(null) }
     var statusFilter by rememberSaveable { mutableStateOf<ReadingStatus?>(null) }
     var lengthFilter by rememberSaveable { mutableStateOf<ReadingLength?>(null) }
-    val filters=StoryFilters(levelFilter,statusFilter,lengthFilter)
-    fun leaveList() { listMode=""; search=""; levelFilter=null; statusFilter=null; lengthFilter=null }
+    var offlineFilter by rememberSaveable { mutableStateOf(false) }
+    val filters=StoryFilters(levelFilter,statusFilter,lengthFilter,offlineFilter)
+    fun clearFilters() { levelFilter=null; statusFilter=null; lengthFilter=null; offlineFilter=false }
+    fun leaveList() { listMode=""; search=""; clearFilters() }
     BackHandler(enabled=listMode.isNotBlank()) { leaveList() }
     val stories=LearningContent.stories
     val newest=LearningContent.newestStories(3)
@@ -151,7 +153,8 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 })
             }
             LibraryFilters(filters,showLevels=listMode!="level",onLevel={levelFilter=it},onStatus={statusFilter=it},
-                lengths=stories.mapNotNull {ReadingLength.of(ReadingTime.minutes(it))}.distinct().sorted(),onLength={lengthFilter=it}) { levelFilter=null; statusFilter=null; lengthFilter=null }
+                lengths=stories.mapNotNull {ReadingLength.of(ReadingTime.minutes(it))}.distinct().sorted(),onLength={lengthFilter=it},
+                offerOffline=stories.any {!StoryFilters.readableOffline(it)},onOffline={offlineFilter=it}) { clearFilters() }
             Text(if(listMode=="books") stringResource(R.string.okunanlar) else stringResource(R.string.kitaplar_2),fontSize=10.sp,letterSpacing=1.sp,color=TaleBlue,modifier=Modifier.fillMaxWidth().padding(18.dp))
             HorizontalDivider(color=TaleLine)
             LazyColumn(contentPadding=PaddingValues(16.dp),verticalArrangement=Arrangement.spacedBy(18.dp)) {
@@ -165,7 +168,7 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: (String?)->Unit, onStatus: (ReadingStatus?)->Unit,
-    lengths: List<ReadingLength>, onLength: (ReadingLength?)->Unit, onClear: ()->Unit) {
+    lengths: List<ReadingLength>, onLength: (ReadingLength?)->Unit, offerOffline: Boolean, onOffline: (Boolean)->Unit, onClear: ()->Unit) {
     Column(Modifier.fillMaxWidth().padding(top=8.dp)) {
         if(showLevels) LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
             item { FilterChip(selected=filters.level==null,onClick={onLevel(null)},label={Text(stringResource(R.string.tum_seviyeler))}) }
@@ -179,6 +182,10 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
         if(lengths.size>1) LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
             item { FilterChip(selected=filters.length==null,onClick={onLength(null)},label={Text(stringResource(R.string.length_all))}) }
             items(lengths) { length -> FilterChip(selected=filters.length==length,onClick={onLength(if(filters.length==length) null else length)},label={Text(stringResource(length.label))}) }
+        }
+        // Offered only while some story still needs a download; otherwise the chip would change nothing.
+        if(offerOffline || filters.offlineOnly) Row(Modifier.padding(horizontal=16.dp)) {
+            FilterChip(selected=filters.offlineOnly,onClick={onOffline(!filters.offlineOnly)},label={Text(stringResource(R.string.offline_ready))})
         }
         if(filters.active) TextButton(onClick=onClear,modifier=Modifier.padding(horizontal=8.dp)) { Text(stringResource(R.string.filtreleri_temizle)) }
     }

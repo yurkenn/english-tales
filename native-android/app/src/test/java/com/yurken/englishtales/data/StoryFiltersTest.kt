@@ -29,4 +29,15 @@ class StoryFiltersTest {
         assertEquals(ReadingStatus.InProgress, ReadingStatus.of(99))
         assertEquals(ReadingStatus.Finished, ReadingStatus.of(100))
     }
+
+    @Test fun offlineFilterKeepsStoriesWhoseTextIsOnTheDevice() {
+        val text = listOf(StorySentence("s-1", "A day.", "Bir gün."))
+        val onDevice = story("downloaded", "A1").copy(sentences = text)
+        val shelf = listOf(onDevice to 0, story("remote", "A1") to 0, story("remote-b1", "B1") to 0)
+        fun ids(filters: StoryFilters) = shelf.filter { (story, progress) -> filters.matches(story, progress) }.map { it.first.id }
+        assertTrue(StoryFilters(offlineOnly = true).active)
+        assertEquals(listOf("downloaded"), ids(StoryFilters(offlineOnly = true)))
+        assertEquals(emptyList<String>(), ids(StoryFilters(level = "B1", offlineOnly = true)))
+        assertEquals(listOf("downloaded", "remote", "remote-b1"), ids(StoryFilters()))
+    }
 }
