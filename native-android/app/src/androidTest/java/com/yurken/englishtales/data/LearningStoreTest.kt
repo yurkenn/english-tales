@@ -187,6 +187,15 @@ class LearningStoreTest {
         // Reading a story again does not count twice.
         assertEquals(snapshot.knownWordCount,store.also {it.completeReading(first.id)}.snapshot().knownWordCount)
     }
+    @Test fun weeklyWordsCountFinishedStoriesOfTheLastSevenDays() {
+        val story=LearningContent.stories.first()
+        val words=story.sentences.sumOf {s -> PhraseMatcher.tokens(s.english).count {t -> t.any(Char::isLetter)}}
+        assertEquals(0,store.snapshot().weeklyWordsRead)
+        store.completeReading(story.id)
+        assertEquals(words,store.snapshot().weeklyWordsRead)
+        now+=8*LearningPolicy.DAY_MS
+        assertEquals(0,store.snapshot().weeklyWordsRead)
+    }
     @Test fun progressDoesNotRegressAndPreferencesPersist() {
         store.updateProgress("quiet-morning",88);store.updateProgress("quiet-morning",10)
         store.updatePreferences("B1","Gizem",3,"Ada")

@@ -155,6 +155,15 @@ class LearningReliabilityTest {
         assertFalse(shown)
     }
 
+    @Test fun reminderNamesTheReviewsThatAreDue() {
+        val context=isolated();val account=LearningOwner.Account(UUID.randomUUID().toString())
+        LearningStore(context,account).use {it.saveWords(LearningContent.words.take(3).map {w -> w.id})}
+        LearningReminderOwner.select(context,account)
+        var due=-1
+        LearningReminders.deliver(context,show={due=it})
+        assertEquals(3,due)
+    }
+
     @Test fun incompleteAccountReceivesReminderEvenWhenGuestGoalIsComplete() {
         val context=isolated();val account=LearningOwner.Account(UUID.randomUUID().toString())
         LearningStore(context).use {it.completeLesson(5,UUID.randomUUID().toString(),"choice",5,0)}
