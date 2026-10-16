@@ -82,7 +82,7 @@ class RemoteContentTest {
                 "stories" -> listOf(JSONObject().put("id",story.id).put("current_revision_id",revision))
                 "story_revisions" -> revisions.filter {it.getString("id") in ids("id")!!}
                 "story_sentences" -> ids("revision_id")!!.flatMap {id -> story.sentences.mapIndexed {i,s ->
-                    JSONObject().put("revision_id",id).put("id",s.id).put("position",i+1).put("english",if(editedText&&i==0) s.english+" Again." else s.english).put("turkish",s.turkish)}}
+                    JSONObject().put("revision_id",id).put("id",s.id).put("position",i+1).put("english",if(editedText&&i==0) s.english+" Again." else s.english).put("turkish",s.component3())}}
                 else -> error("Unexpected table")
             }
             val offset=uri.getQueryParameter("offset")!!.toInt(); val limit=uri.getQueryParameter("limit")!!.toInt()

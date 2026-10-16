@@ -111,7 +111,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private val bundledTextIndex = AtomicFile(File(directory, "bundled-text.index"))
     private val bundledText = mutableMapOf<String, String>()
     private fun fingerprint(story: Story) = MessageDigest.getInstance("SHA-256")
-        .digest(story.sentences.joinToString("\n") { "${it.id}\u0000${it.english}\u0000${it.turkish}" }.toByteArray(Charsets.UTF_8))
+        .digest(story.sentences.toString().toByteArray(Charsets.UTF_8))
         .joinToString("") { "%02x".format(it) }
     private var metadata = JSONArray()
     private var hasRemoteCatalog = false

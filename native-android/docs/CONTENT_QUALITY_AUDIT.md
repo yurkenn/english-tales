@@ -73,31 +73,16 @@ CI backend işi paket denetimini çalıştırır ve `content-audit` artefaktın�
 3. Onaylanan yeni revizyonları yayınladıktan sonra yeni anonim snapshot ile sıkı eşitlik kontrolünü tekrarla.
 4. Ardından A1/A2 kapsamını %60'a çıkarmak için bağlamlı sözlük genişletmesini ayrı içerik çalışması olarak uygula. Hazır 43 ID'nin yayını dahi paket A1/A2 oranlarını %60'a çıkarmaz.
 
-## Revizyon eşitleme aracı (Q4.1) — 16 Ekim 2026
+## Revizyonlardan önce uygulama (Q4.1 ön şartı) — 16 Ekim 2026
 
-**Önce uygulama.** Canlı klasikler gömülü paketle aynı revizyon kimliğini (`<hikâye>:revision:1`) kullanır. 49 öncesi uygulamada yeni bir revizyon yayımlamak o hikâyede okuma ilerlemesini sıfırlar ve metni indirme gerektiren uzak hikâyeye çevirir. Bu değişiklikle uygulama:
+Canlı klasikler gömülü paketle aynı revizyon kimliğini (`<hikâye>:revision:1`) kullanır. Bu düzeltme olmadan yeni bir revizyon yayımlamak uygulamada o hikâyenin okuma ilerlemesini sıfırlar ve metni indirme gerektiren uzak hikâyeye çevirir. Uygulama artık:
 
 - okuma konumunu, cümle kimliği yeni revizyonda da varsa korur (`ReadingPosition.carriesTo`);
 - metni ve kapağı gömülü hikâyeyle aynı olan yeni yayını tanır ve çevrimdışı gömülü metinden açar. Yayınlanmış revizyonlar değişmediği için sonuç revizyon başına `bundled-text.index` dosyasında saklanır; paket metni değişirse kayıt geçersiz olur.
 
-Bu yüzden **revizyonlar, bu değişikliği içeren sürüm (49) yayımlanıp kullanıcıların çoğu güncelledikten sonra** yayımlanmalıdır. Eski sürümde kalan kullanıcılar etkilenen hikâyelerde ilerlemeyi sıfırdan görür.
+Taslak üretimi ve yayın sonrası eşitlik kontrolü [#40](https://github.com/yurkenn/english-tales/pull/40) (`npm run content:drafts`) ile gelir. **Taslaklar, bu düzeltmeyi içeren sürüm (49) yayımlanıp kullanıcıların çoğu güncelledikten sonra yayımlanmalıdır**; eski sürümde kalanlar etkilenen hikâyelerde ilerlemeyi sıfırdan görür.
 
-**Araç** (`native-android/backend/`):
-
-```sh
-node tooling/backup_public_content.mjs                     # depo kökünde, salt okunur snapshot
-npm run content:revisions -- plan --snapshot <snapshot>/catalog.json --pilot
-node --env-file=.env.admin tools/sync-revisions.mjs apply --plan ../build/content-revisions/plan.json
-# panelde incele, sonra yayıncı hesabıyla:
-node --env-file=.env.admin tools/sync-revisions.mjs apply --plan ../build/content-revisions/plan.json --publish
-```
-
-- `plan` yalnız kelime ve bağlantıları paketten alır; metin, bilgiler, kapak ve ses canlı revizyondan kopyalanır. Metni veya bilgisi farklı hikâyeler `blocked` listesine düşer ve editöre kalır. `--pilot` beş A1 pilotunu, `--stories a,b` seçili hikâyeleri, parametresiz kullanım bütün farkları planlar.
-- `apply`, `ET_STAFF_EMAIL` / `ET_STAFF_PASSWORD` ile panelin RPC'lerini çağırır: `admin_create_draft` (canlı revizyondan kopya) → `admin_save_draft`. Başkasının düzenlediği taslağın üzerine yazmaz (`existing_draft_conflict`); snapshot'tan sonra canlı revizyon değiştiyse atlar (`stale_base`). Yeniden çalıştırmak güvenlidir. `--publish` yayıncı rolü ister ve ayrıca açıkça verilmelidir.
-- Yayın sonrası `verify-classic-publication.mjs` artık bütün hikâyeleri ortak eşleyiciyle (`matchSpans`) paketle karşılaştırır; eski regex kuralı kaldırıldı. Ayrıca yeni snapshot ile `npm run content:audit -- --snapshot … --require-parity` çalıştırılır.
-- `classic-tortoise-hare` ve `classic-dog-manger` planında `asleep` kelimesi kaldırılır (`falls asleep` ifadesi kazanır). Eski revizyon ve öğrenme geçmişi silinmez; yayından önce panelde gözden geçir.
-
-Doğrulama: `tests/revision-sync.test.mjs` gerçek migration'lar ve seed üzerinde planı, editör taslağını, yeniden çalıştırmayı, yayıncı yayınını, sonrasındaki eşitliği, düzenlenmiş taslak ve kaymış canlı revizyon korumasını sınar (5/5; backend toplam 79/79). Uygulama değişikliği için `RevisionProgressTest` (JVM) ve `RemoteContentTest` içinde iki cihaz testi eklendi; bu ortamda Android SDK olmadığından yalnız CI'da çalışır. Canlı servise bu çalışmada erişilemedi; snapshot, taslak veya yayın yapılmadı.
+Doğrulama: `RevisionProgressTest` (JVM) ve `RemoteContentTest` içinde iki cihaz testi. Bu ortamda Android SDK olmadığından yalnız CI'da çalışır.
 
 ## Doğrulama
 
