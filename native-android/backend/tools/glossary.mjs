@@ -2,6 +2,7 @@
 //   node tools/glossary.mjs build   -> writes app/src/main/assets/glossary/tr.json
 //   node tools/glossary.mjs check   -> fails when the app asset is not what build would write
 //   node tools/glossary.mjs sample  -> prints the deterministic 10% review sample
+//   node tools/glossary.mjs disputed -> prints entries the cross-check disagreed with, for owner review
 import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 
@@ -20,6 +21,7 @@ export function validate(doc){
     if(seen.has(e.lemma))errors.push(`duplicate:${e.lemma}`);seen.add(e.lemma);
     if(typeof e.gloss!=='string'||!e.gloss.trim()||e.gloss.length>200)errors.push(`gloss:${e.lemma}`);
     if(typeof e.source!=='string'||!e.source)errors.push(`source:${e.lemma}`);
+    if(e.disputed===true&&(typeof e.suggestion!=='string'||!e.suggestion.trim()))errors.push(`suggestion:${e.lemma}`);
   }
   for(const [form,lemma] of Object.entries(doc.forms??{}))if(form!==form.toLowerCase()||lemma!==lemma.toLowerCase()||form===lemma)errors.push(`form:${form}`);
   return errors;
@@ -46,5 +48,6 @@ if(import.meta.url===`file://${process.argv[1]}`){
   if(command==='build'){const out=build(doc);await writeFile(asset,serialize(out));console.log(`${out.entries.length}/${doc.entries.length} entries published`);}
   else if(command==='check'){if(await readFile(asset,'utf8')!==serialize(build(doc))){console.error('App glossary is stale: run npm run glossary:build');process.exit(1);}console.log('App glossary matches the reviewed drafts');}
   else if(command==='sample')for(const e of sample(doc))console.log(`${e.lemma}\t${e.gloss}\t${e.example}${e.disputed?`\tDISPUTED: ${e.suggestion??''} (${e.note??''})`:''}`);
-  else{console.error('usage: node tools/glossary.mjs build|check|sample');process.exit(2);}
+  else if(command==='disputed')for(const e of doc.entries.filter(e=>e.disputed&&!e.reviewed))console.log(`${e.lemma}\t${e.gloss}\t-> ${e.suggestion}\t${e.note??''}\t${e.example}`);
+  else{console.error('usage: node tools/glossary.mjs build|check|sample|disputed');process.exit(2);}
 }
