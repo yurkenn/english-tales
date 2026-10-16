@@ -8,6 +8,23 @@ const linkKey=link=>JSON.stringify([link.sentence_id,link.word_id]);
 const fields=['title','author','level','genre','description'];
 const wordFields=['word','translation','pronunciation','example'];
 const emptyStats=()=>({types:new Set(),covered:new Set(),tokens:0,coveredTokens:0,stories:0});
+export const translationMap=(doc,map,legacy)=>doc.translationTablesPresent?{...map}:{...map,tr:legacy};
+export function translationChanges(expected,actual){
+  const changes=[];
+  const check=(kind,id,left,right)=>{
+    for(const lang of sorted(new Set([...Object.keys(left),...Object.keys(right)])))
+      if(left[lang]!==right[lang])changes.push({kind,id,lang,expected:left[lang]??null,actual:right[lang]??null});
+  };
+  check('description',expected.id,translationMap(expected,expected.descriptions,expected.description),translationMap(actual,actual.descriptions,actual.description));
+  for(const [kind,rows,field] of [['sentence','sentences','turkish'],['word','words','translation']]){
+    const byId=new Map(actual[rows].map(row=>[row.id,row]));
+    for(const row of expected[rows]){
+      const other=byId.get(row.id);if(!other)continue;
+      check(kind,row.id,translationMap(expected,row.translations,row[field]),translationMap(actual,other.translations,other[field]));
+    }
+  }
+  return changes;
+}
 const stats=group=>({stories:group.stories,uniqueTypes:group.types.size,coveredTypes:group.covered.size,
   typeCoveragePercent:percent(group.covered.size,group.types.size),tokens:group.tokens,coveredTokens:group.coveredTokens,
   tokenCoveragePercent:percent(group.coveredTokens,group.tokens)});
@@ -170,6 +187,7 @@ export function compareDocuments(bundle,live,{manifest,snapshot}={}){
       extraWordIds:actual.words.filter(w=>!wordIds.has(w.id)).map(w=>w.id),
       modifiedWords:expected.words.filter(w=>wordMap.has(w.id)).map(w=>({id:w.id,fields:fieldsChanged(w,wordMap.get(w.id),wordFields)})).filter(w=>w.fields.length),
       missingLinks:expected.links.filter(link=>!actualLinks.has(linkKey(link))),extraLinks:actual.links.filter(link=>!expectedLinks.has(linkKey(link))),
+      translationChanges:translationChanges(expected,actual),
       coverMismatch:manifest&&snapshot?(!cover||!activeCover||cover.sha256!==activeCover.sha256||cover.byteSize!==Number(activeCover.byte_size)):null};
     if(diff.coverMismatch||Object.entries(diff).some(([key,value])=>Array.isArray(value)&&value.length))differences.push(diff);
   }
@@ -181,6 +199,7 @@ export function compareDocuments(bundle,live,{manifest,snapshot}={}){
       sentenceDifferences:differences.reduce((n,d)=>n+d.missingSentenceIds.length+d.extraSentenceIds.length+d.modifiedSentences.length,0),
       missingRevisionWords:differences.reduce((n,d)=>n+d.missingWordIds.length,0),extraRevisionWords:differences.reduce((n,d)=>n+d.extraWordIds.length,0),
       modifiedRevisionWords:differences.reduce((n,d)=>n+d.modifiedWords.length,0),
+      translationChanges:differences.reduce((n,d)=>n+d.translationChanges.length,0),
       missingLinks:differences.reduce((n,d)=>n+d.missingLinks.length,0),extraLinks:differences.reduce((n,d)=>n+d.extraLinks.length,0),
       coverMismatches:differences.filter(d=>d.coverMismatch).length},
     missingVocabularyIds:sorted([...bundleWords].filter(id=>!liveWords.has(id))),extraVocabularyIds:sorted([...liveWords].filter(id=>!bundleWords.has(id))),
