@@ -17,8 +17,9 @@ class LibraryFiltersTest {
         // LazyRow does not compose off-screen chips on narrower CI devices.
         val rows=compose.onAllNodes(hasScrollToIndexAction() and
             SemanticsMatcher.keyIsDefined(SemanticsProperties.HorizontalScrollAxisRange))
-        val row=if(label in StoryFilters.levels || label=="Tüm seviyeler") rows.onFirst() else rows.onLast()
-        row.performScrollToNode(target)
+        // Level, status and length chips each have their own row; use the one that holds the chip.
+        val found=(0 until rows.fetchSemanticsNodes().size).any {runCatching {rows[it].performScrollToNode(target)}.isSuccess}
+        check(found) {"No filter row contains $label"}
         return compose.onNode(target)
     }
     private fun title(text: String)=compose.onAllNodesWithText(text).onFirst()
