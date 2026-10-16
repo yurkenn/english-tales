@@ -26,7 +26,7 @@ import kotlinx.coroutines.withContext
 
 @Composable
 fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Boolean,()->Unit)->Unit={_,active,next ->if(active()) next()}) {
-    val saved=LearningContent.words.filter {it.id in snapshot.savedWordIds}
+    val saved=snapshot.savedWordList()
     val supplemental=LearningContent.words.filter {it.id !in snapshot.savedWordIds}
     var mode by rememberSaveable { mutableStateOf("") }
     var question by rememberSaveable { mutableIntStateOf(0) }
@@ -63,11 +63,11 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             if(gapUnavailable) {if(mode.isNotEmpty()) exit();return}
         }
         if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
-        val priority=ReviewFocus.order(seeded,snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}).mapNotNull(LearningContent.wordById::get)
+        val priority=ReviewFocus.order(seeded,snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}).mapNotNull(snapshot::wordFor)
         val pool=if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else (priority+supplemental.shuffled()).distinctBy {it.id}.take(5)
         sessionKey=java.util.UUID.randomUUID().toString()
         session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
-        if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(LearningContent.wordById::get),dictionary)
+        if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(snapshot::wordFor),dictionary)
     }
     LaunchedEffect(launchId) { if(launchId!=null) { start("choice",launchWordIds);onLaunchConsumed() } }
     LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,sessionKind,ids.size)}
@@ -93,7 +93,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         }
         return
     }
-    val words=ids.mapNotNull(LearningContent.wordById::get)
+    val words=ids.mapNotNull(snapshot::wordFor)
     val timer=rememberActiveLearningTime(sessionKey,snapshot.activeSessionMillis[sessionKey]?:0,!finished,onCheckpoint)
     val count=if(mode=="cloze") gapQuestions.size else words.size
     val complete: (Int)->Unit = {finished=true;onLessonComplete(it,sessionKey,sessionKind,count,timer.pause())}

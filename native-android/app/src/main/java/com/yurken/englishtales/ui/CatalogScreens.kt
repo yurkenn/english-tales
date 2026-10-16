@@ -36,6 +36,7 @@ import com.yurken.englishtales.data.ReadingTime
 import com.yurken.englishtales.data.ReadingLength
 import com.yurken.englishtales.data.LearningContent
 import com.yurken.englishtales.data.LearningSnapshot
+import com.yurken.englishtales.data.savedWordList
 import com.yurken.englishtales.data.ReadingStatus
 import com.yurken.englishtales.data.StoryFilters
 import com.yurken.englishtales.data.Story
@@ -303,7 +304,7 @@ private fun ProfilePanel(modifier: Modifier = Modifier, content: @Composable Col
 fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWord: (String) -> Unit) {
     var selectedStage by rememberSaveable { mutableStateOf("learning") }
     val stages=listOf(Triple("learning",stringResource(R.string.ogreniyorum),TaleBlue),Triple("reviewing",stringResource(R.string.tekrar_ediyorum),Color(0xFF7BCC3A)),Triple("known",stringResource(R.string.biliyorum),TalePurple))
-    val words=LearningContent.words.filter { it.id in snapshot.savedWordIds && (snapshot.wordStates[it.id]?:"learning")==selectedStage }
+    val words=snapshot.savedWordList().filter { (snapshot.wordStates[it.id]?:"learning")==selectedStage }
     val narrator=rememberNarrator()
     // The background spans the screen; the word list keeps a readable width on tablets.
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().centeredWidth(ContentWidth)) {

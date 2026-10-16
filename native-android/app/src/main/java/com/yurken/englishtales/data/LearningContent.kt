@@ -89,6 +89,11 @@ private data class Catalog(
     val glossary by lazy { LearningContent.glossarySource.let { (entries, forms) -> Glossary(entries, forms, words) } }
 }
 
+/** A learning word or one of the learner's saved glossary words. */
+fun LearningSnapshot.wordFor(id: String): WordInfo? = LearningContent.wordById[id] ?: personalWords[id]
+/** Saved words in dictionary order, then saved glossary words in the order they were added. */
+fun LearningSnapshot.savedWordList(): List<WordInfo> = (LearningContent.words+personalWords.values).filter {it.id in savedWordIds}
+
 /** Sentence IDs are stable across revisions, so a position carries over while its sentence still exists. */
 fun ReadingPosition.carriesTo(story: Story) = revisionId==story.revisionId || story.sentences.any {it.id==sentenceId}
 

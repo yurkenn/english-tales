@@ -47,6 +47,12 @@ class GuestTransferTest {
         guest.updateProgress("quiet-morning",88)
         guest.completeLesson(4,UUID.randomUUID().toString())
     }
+    @Test fun savedGlossaryWordsMoveWithTheirMeaning() {
+        seed();guest.savePersonalWord(WordInfo("glossary:walk","walk","yürümek","",""))
+        assertTrue(GuestTransfer.transfer(guest,target))
+        assertEquals("yürümek",target.snapshot().personalWords["glossary:walk"]?.translation)
+        assertTrue("glossary:walk" in target.snapshot().savedWordIds)
+    }
     @Test fun mergesOnceAndPreservesExactOperationsAndAccountPreferences() {
         seed();target.completeOnboarding("B1","Gizem",2)
         val before=guest.queuedOperations()
@@ -131,9 +137,9 @@ class GuestTransferTest {
         assertEquals(20,target.snapshot().points)
     }
     @Test fun versionFourMigrationPreservesGuestHistory() {
-        seed();guest.writableDatabase.execSQL("DROP TABLE guest_transfers");guest.writableDatabase.execSQL("DROP TABLE guest_imports");guest.writableDatabase.execSQL("DROP TABLE learning_cloud_state");guest.writableDatabase.execSQL("DROP TABLE favorite_stories")
+        seed();guest.writableDatabase.execSQL("DROP TABLE guest_transfers");guest.writableDatabase.execSQL("DROP TABLE guest_imports");guest.writableDatabase.execSQL("DROP TABLE learning_cloud_state");guest.writableDatabase.execSQL("DROP TABLE favorite_stories");guest.writableDatabase.execSQL("DROP TABLE personal_words")
         guest.writableDatabase.version=4;guest.close();guest=open(LearningOwner.Guest)
-        assertEquals(7,guest.readableDatabase.version);assertEquals(20,guest.snapshot().points)
+        assertEquals(8,guest.readableDatabase.version);assertEquals(20,guest.snapshot().points)
         assertEquals(2,guest.snapshot().savedWordIds.size);assertNotNull(GuestTransfer.preview(guest,user))
     }
     @Test fun progressKeepsMaximumWithinRevisionAndNewestAcrossRevisions() {

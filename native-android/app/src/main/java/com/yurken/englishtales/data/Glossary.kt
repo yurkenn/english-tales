@@ -46,7 +46,8 @@ class Glossary(entries: Map<String, String>, private val forms: Map<String, Stri
     companion object {
         const val ID_PREFIX = "glossary:"
         private val TOKEN = Regex("[\\p{L}\\p{N}]+")
-        fun isLookupOnly(word: WordInfo) = word.id.startsWith(ID_PREFIX)
+        fun isLookupOnly(word: WordInfo) = isLookupOnly(word.id)
+        fun isLookupOnly(wordId: String) = wordId.startsWith(ID_PREFIX)
         /** The dictionary form behind a lookup-only word ("walked" → "walk"). */
         fun lemmaOf(word: WordInfo) = word.id.removePrefix(ID_PREFIX)
 
