@@ -72,13 +72,14 @@ object ContentCodec {
         require(doc.getString("title").isNotBlank())
         val sentences = doc.optJSONArray("sentences") ?: JSONArray()
         val parsed = (0 until sentences.length()).map { i -> sentences.getJSONObject(i).let {
-            require(it.getString("english").isNotBlank() && it.getString("turkish").isNotBlank())
-            StorySentence(it.getString("id"), it.getString("english"), it.getString("turkish"))
+            val translation = SupportLanguage.pick(it, "translations", "turkish")
+            require(it.getString("english").isNotBlank() && translation.isNotBlank())
+            StorySentence(it.getString("id"), it.getString("english"), translation)
         } }
         require(parsed.map { it.id }.distinct().size == parsed.size)
         val words = doc.optJSONArray("words") ?: JSONArray()
         val vocabulary = (0 until words.length()).map { i -> words.getJSONObject(i).let {
-            WordInfo(it.getString("id"), it.getString("word"), it.getString("translation"), it.getString("pronunciation"), it.getString("example"))
+            WordInfo(it.getString("id"), it.getString("word"), SupportLanguage.pick(it, "translations", "translation"), it.getString("pronunciation"), it.getString("example"))
         } }
         require(vocabulary.map { it.id }.distinct().size == vocabulary.size)
         val links = doc.optJSONArray("links") ?: JSONArray()
@@ -92,7 +93,7 @@ object ContentCodec {
         val addedAt = if (doc.isNull("story_created_at")) null
             else java.time.OffsetDateTime.parse(doc.getString("story_created_at")).toInstant()
         return Story(id, doc.getString("title"), doc.getString("author"), doc.getString("level"), doc.getString("genre"),
-            doc.getString("description"), "remote", parsed, revision, coverFile, vocabulary, mapping, addedAt)
+            SupportLanguage.pick(doc, "descriptions", "description"), "remote", parsed, revision, coverFile, vocabulary, mapping, addedAt)
     }
     fun verify(bytes: ByteArray, asset: JSONObject) {
         require(bytes.size.toLong() == asset.getLong("byte_size")) { "İndirilen dosya eksik." }
@@ -155,6 +156,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     suspend fun refresh() = lock.withLock {
         val remote = checkNotNull(http) { "İçerik bağlantısı yapılandırılmadı." }
         val next = withContext(Dispatchers.IO) {
+            val lang = SupportLanguage.code
             val stories = remote.rows("stories", "select=id,current_revision_id,created_at&order=id.asc")
             val result = JSONArray()
             val ids=(0 until stories.length()).map {UUID.fromString(stories.getJSONObject(it).getString("current_revision_id")).toString()}
@@ -162,6 +164,8 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             for(batch in ids.chunked(100)) {
                 val revisions=remote.rows("story_revisions","select=*&id=in.(${batch.joinToString(",")})&published_at=not.is.null&order=id.asc")
                 for(j in 0 until revisions.length()) revisions.getJSONObject(j).let {revisionById[it.getString("id")]=it}
+                remote.optionalRows("revision_texts","select=revision_id,description&revision_id=in.(${batch.joinToString(",")})&lang=eq.$lang&order=revision_id.asc")
+                    ?.forEachObject {revisionById[it.getString("revision_id")]?.put("descriptions",JSONObject().put(lang,it.getString("description")))}
             }
             for (i in 0 until stories.length()) {
                 val row = stories.getJSONObject(i)
@@ -177,6 +181,15 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         }
         metadata = next; hasRemoteCatalog = true; publish()
     }
+    /** Translation tables are newer than the first releases; until a server has them, the legacy Turkish columns are used. */
+    private fun ContentHttp.optionalRows(table: String, query: String) = runCatching { rows(table, query) }.getOrNull()
+    private fun JSONArray.forEachObject(action: (JSONObject) -> Unit) = (0 until length()).forEach { action(getJSONObject(it)) }
+    /** Stores each row's text as `translations.{lang}` on the matching item, which [ContentCodec] reads first. */
+    private fun attach(items: JSONArray, rows: JSONArray, key: String, field: String, lang: String) {
+        val byId = mutableMapOf<String, String>()
+        rows.forEachObject { byId[it.getString(key)] = it.getString(field) }
+        items.forEachObject { item -> byId[item.getString("id")]?.let { item.put("translations", JSONObject().put(lang, it)) } }
+    }
     fun isDownloaded(story: Story) = story.revisionId in downloaded
     fun downloads(): List<Story> = downloaded.values.distinctBy {it.id}.sortedBy {it.title}
     suspend fun download(story: Story): Story = lock.withLock {
@@ -187,8 +200,17 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             val rows = remote.rows("story_revisions", "select=*&id=eq.$revision&published_at=not.is.null&order=id.asc")
             require(rows.length() == 1) { "Hikâye şu anda indirilemiyor." }
             val doc = rows.getJSONObject(0)
-            doc.put("sentences", remote.rows("story_sentences", "select=*&revision_id=eq.$revision&order=position.asc"))
-            doc.put("words", remote.rows("revision_words", "select=*&revision_id=eq.$revision&order=id.asc"))
+            val lang = SupportLanguage.code
+            val sentences = remote.rows("story_sentences", "select=*&revision_id=eq.$revision&order=position.asc")
+            val words = remote.rows("revision_words", "select=*&revision_id=eq.$revision&order=id.asc")
+            remote.optionalRows("sentence_translations", "select=sentence_id,text&revision_id=eq.$revision&lang=eq.$lang&order=sentence_id.asc")
+                ?.let { attach(sentences, it, "sentence_id", "text", lang) }
+            remote.optionalRows("word_translations", "select=word_id,translation&revision_id=eq.$revision&lang=eq.$lang&order=word_id.asc")
+                ?.let { attach(words, it, "word_id", "translation", lang) }
+            remote.optionalRows("revision_texts", "select=revision_id,description&revision_id=eq.$revision&lang=eq.$lang&order=revision_id.asc")
+                ?.forEachObject { doc.put("descriptions", JSONObject().put(lang, it.getString("description"))) }
+            doc.put("sentences", sentences)
+            doc.put("words", words)
             doc.put("links", remote.rows("sentence_words", "select=*&revision_id=eq.$revision&order=sentence_id.asc,word_id.asc"))
             val assetId = UUID.fromString(doc.getString("cover_asset_id")).toString()
             val assets = remote.rows("content_assets", "select=*&id=eq.$assetId&order=id.asc")

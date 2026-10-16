@@ -192,7 +192,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                             TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
                             Box(Modifier.size(32.dp).contentLabel(if(sentence.id in translations) stringResource(R.string.ceviriyi_gizle) else stringResource(R.string.cumleyi_cevir)).clickable(role=Role.Button) { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
                         }
-                        if(sentence.id in translations) Text(sentence.turkish,color=TaleOnBlue,fontSize=13.sp,lineHeight=19.sp,
+                        if(sentence.id in translations) Text(sentence.translation,color=TaleOnBlue,fontSize=13.sp,lineHeight=19.sp,
                             modifier=Modifier.fillMaxWidth().padding(end=36.dp).background(TaleBlue,RoundedCornerShape(4.dp)).padding(10.dp))
                     }
                 }
