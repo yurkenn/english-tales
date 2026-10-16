@@ -81,6 +81,15 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         }
     }
 
+    /** Saves or removes a glossary word from the reader (Q4.3a). */
+    fun toggleGlossaryWord(word: WordInfo) {
+        var saved: Boolean?=null
+        mutate {
+            if(saved==null) saved=word.id !in store.snapshot().savedWordIds
+            if(checkNotNull(saved)) store.savePersonalWord(word) else store.setWordSaved(word.id,false)
+        }
+    }
+
     fun toggleFavorite(storyId: String) {
         var favorite: Boolean?=null
         mutate {

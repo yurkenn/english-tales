@@ -26,7 +26,9 @@ data class LearningSnapshot(
     /** F01: saved, not yet known words missed recently, most troublesome first ([ReviewFocus]). */
     val weakWordIds: List<String> = emptyList(),
     /** F09: favorite story IDs, most recently added first. Archived stories may stay listed here. */
-    val favoriteStoryIds: List<String> = emptyList()
+    val favoriteStoryIds: List<String> = emptyList(),
+    /** Saved glossary words (Q4.3a); learning words come from [LearningContent]. */
+    val personalWords: Map<String, WordInfo> = emptyMap()
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
 }
@@ -62,6 +64,8 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val weak=ReviewFocus.weak(misses,states,now)
         val favorites=mutableListOf<String>()
         db.rawQuery("SELECT story_id FROM favorite_stories ORDER BY added_at DESC,story_id",null).use {c -> while(c.moveToNext()) favorites+=c.getString(0)}
+        val personal=linkedMapOf<String,WordInfo>()
+        db.rawQuery("SELECT word_id,word,gloss FROM personal_words ORDER BY added_at,word_id",null).use {c -> while(c.moveToNext()) personal[c.getString(0)]=WordInfo(c.getString(0),c.getString(1),c.getString(2),"","")}
         val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
         db.rawQuery("SELECT story_id,percent,revision_id,sentence_id FROM story_progress",null).use { c -> while(c.moveToNext()) {
             progress[c.getString(0)]=c.getInt(1)
@@ -83,7 +87,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
@@ -124,14 +128,24 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         transaction {db -> setWordSaved(db,wordId,scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))==0)}
     }
     fun setWordSaved(wordId: String,saved: Boolean) = transaction {db ->setWordSaved(db,wordId,saved)}
+    /** Saves a glossary word with its meaning, so it can be practised like a learning word (Q4.3a). */
+    fun savePersonalWord(word: WordInfo) = transaction {db ->
+        require(Glossary.isLookupOnly(word) && word.word.isNotBlank() && word.translation.isNotBlank())
+        db.insert("personal_words",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {
+            put("word_id",word.id);put("word",word.word.take(100));put("gloss",word.translation.take(1000));put("added_at",clock())
+        })
+        setWordSaved(db,word.id,true)
+    }
     private fun setWordSaved(db: SupportSQLiteDatabase,wordId: String,saved: Boolean) {
-        require(wordId in LearningContent.wordById)
+        val personal=Glossary.isLookupOnly(wordId)
+        require(if(personal) scalar(db,"SELECT COUNT(*) FROM personal_words WHERE word_id=?",arrayOf(wordId))>0 else wordId in LearningContent.wordById)
         if(saved) {
             if(scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))>0) return
             db.insert("saved_words",SQLiteDatabase.CONFLICT_ABORT,ContentValues().apply {put("word_id",wordId)})
             recordEvent(db,"save:$wordId:${LearningPolicy.dayKey(clock())}","word_saved",clock())
             enqueueWord(wordId,"save",null,clock())
         } else {
+            if(personal) db.delete("personal_words","word_id=?",arrayOf(wordId))
             if(db.delete("saved_words","word_id=?",arrayOf(wordId))==0) return
             enqueueWord(wordId,"remove",null,clock())
         }
@@ -256,6 +270,8 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     }
     private fun canonicalSessionId(id: String) = runCatching {UUID.fromString(id).toString()}.getOrElse {ContentRevisionIds.stable("local-session:$id")}
     private fun enqueueWord(wordId: String,action: String,correct: Boolean?,now: Long) {
+        // Glossary words stay on this device until the server knows personal words (Q4.3a, next step).
+        if(Glossary.isLookupOnly(wordId)) return
         val id=UUID.randomUUID().toString();val revision=LearningContent.revisionForWord(wordId)
         enqueue(id,"apply_word_event",operations.word(id,revision,wordId,action,correct,now),if(revision==null) "content_revision_unavailable" else null)
     }

@@ -144,6 +144,26 @@ class LearningStoreTest {
         store.setFavorite("archived-story",true)
         assertEquals(listOf("archived-story","quiet-morning"),store.snapshot().favoriteStoryIds)
     }
+    @Test fun glossaryWordsArePractisedLocallyAndNeverQueued() {
+        val walked=WordInfo("glossary:walk","walk","yürümek","","")
+        store.savePersonalWord(walked)
+        var snapshot=store.snapshot()
+        assertTrue("glossary:walk" in snapshot.savedWordIds);assertEquals(walked,snapshot.personalWords["glossary:walk"])
+        assertEquals(walked,snapshot.wordFor("glossary:walk"));assertTrue(walked in snapshot.savedWordList())
+        assertTrue("glossary:walk" in snapshot.dueWordIds)
+        store.reviewWord("glossary:walk",true)
+        store.close();store=LearningStore(context) {now}
+        snapshot=store.snapshot()
+        assertEquals("reviewing",snapshot.wordStates["glossary:walk"])
+        // Personal words do not reach the server until it can accept them.
+        assertTrue(store.queuedOperations().none {"glossary:" in it.payload})
+        store.setWordSaved("glossary:walk",false)
+        snapshot=store.snapshot()
+        assertFalse("glossary:walk" in snapshot.savedWordIds);assertTrue(snapshot.personalWords.isEmpty())
+        // Only glossary ids with a meaning can be saved this way; unknown ids are still refused.
+        assertThrows(IllegalArgumentException::class.java) {store.savePersonalWord(WordInfo("walk","walk","yürümek","",""))}
+        assertThrows(IllegalArgumentException::class.java) {store.setWordSaved("glossary:unknown",true)}
+    }
     @Test fun progressDoesNotRegressAndPreferencesPersist() {
         store.updateProgress("quiet-morning",88);store.updateProgress("quiet-morning",10)
         store.updatePreferences("B1","Gizem",3,"Ada")
@@ -168,7 +188,7 @@ class LearningStoreTest {
         store=LearningStore(context) {now}
         assertEquals(125,store.snapshot().points);assertEquals(88,store.snapshot().storyProgress["quiet-morning"])
         assertEquals("known",store.snapshot().wordStates["quiet"]);assertEquals(listOf("quiet"),store.snapshot().dueWordIds)
-        assertEquals(7,store.readableDatabase.version)
+        assertEquals(8,store.readableDatabase.version)
     }
 
     @Test fun versionOneMigrationKeepsExistingProgress() {
@@ -182,7 +202,7 @@ class LearningStoreTest {
         }
         store=LearningStore(context) {now}
         assertEquals(25,store.snapshot().points);assertEquals(44,store.snapshot().storyProgress["quiet-morning"])
-        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(7,store.readableDatabase.version)
+        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(8,store.readableDatabase.version)
         assertTrue(store.queuedOperations().isEmpty())
     }
 
