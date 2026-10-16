@@ -244,7 +244,7 @@ test('an authenticated database role without a user identity cannot access learn
 });
 test('all application tables have RLS and privileged functions have a fixed search path and explicit grants',async()=>{
   const tables=(await db.query("select c.relname,c.relrowsecurity from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r'")).rows;
-  assert.equal(tables.length,23);
+  assert.equal(tables.length,26);
   assert.ok(tables.every(t=>t.relrowsecurity));
   const functions=(await db.query("select n.nspname,p.proname,p.proconfig,p.oid,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as user_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','private') and p.proname in ('publish_story_revision','set_story_archived','save_learning_preferences','submit_learning_session','apply_word_event','apply_progress_event','get_learning_summary','lock_learning_user','learning_summary','unlock_learning_badges','guard_revision_child','guard_revision','guard_asset','bump_revision_version','bump_child_version','content_role','admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish','admin_history','admin_delete_draft','admin_archive','admin_unused_media','admin_reserve_media_delete','admin_finalize_media_delete','record_content_action','audit_content_change','check_learning_links','guard_revision_media','bump_media_revisions','sync_legacy_translation','guard_turkish_translation','check_revision_translations','save_translation_maps','check_revision_questions')")).rows;
   assert.equal(functions.length,37);
@@ -787,4 +787,29 @@ test('glossary word events are validated and cannot borrow learning-word rules',
   // A learning word still needs its published revision.
   await assert.rejects(rpc(alice,'apply_word_event',word({storyRevisionId:null})),/published_word_required|invalid input syntax|null value|word_events_revision_or_glossary/);
   await assert.rejects(user(alice,"insert into public.user_personal_words values($1,'glossary:x','x','y',now())",[alice]),/permission denied/);
+});
+
+const lemmaEvent=(extra={})=>({id:randomUUID(),installationId:installation,kind:'read',storyId:'quiet-morning',lemmas:['quiet','morning'],occurredAt:iso(),...extra});
+test('known-word history syncs as grow-only sets and replays idempotently',async()=>{
+  const read=lemmaEvent();
+  assert.equal((await rpc(alice,'apply_lemma_event',read)).applied,true);
+  assert.equal((await rpc(alice,'apply_lemma_event',read)).applied,false);
+  await assert.rejects(rpc(alice,'apply_lemma_event',{...read,lemmas:['other']}),/operation_id_payload_conflict/);
+  await rpc(alice,'apply_lemma_event',lemmaEvent({storyId:'paper-boat',lemmas:['quiet','boat','quiet']}));
+  await rpc(alice,'apply_lemma_event',lemmaEvent({kind:'lookup',storyId:undefined,lemmas:['boat'],occurredAt:iso(0,-10)}));
+  await rpc(alice,'apply_lemma_event',lemmaEvent({kind:'lookup',storyId:undefined,lemmas:['boat'],occurredAt:iso(0,-60)}));
+  const snapshot=(await user(alice,'select public.get_learning_snapshot() as s'))[0].s;
+  assert.deepEqual(snapshot.lemmaReads.map(r=>[r.story_id,r.lemma]),[['paper-boat','boat'],['paper-boat','quiet'],['quiet-morning','morning'],['quiet-morning','quiet']]);
+  assert.deepEqual(snapshot.lemmaLookups,['boat']);
+  assert.equal((await user(alice,"select looked_up_at from public.user_lemma_lookups"))[0].looked_up_at.toISOString(),new Date(iso(0,-60)).toISOString());
+  const bob_=(await user(bob,'select public.get_learning_snapshot() as s'))[0].s;
+  assert.deepEqual([bob_.lemmaReads,bob_.lemmaLookups],[[],[]]);
+});
+test('known-word events are validated and the tables are read-only to users',async()=>{
+  for(const invalid of [lemmaEvent({lemmas:[]}),lemmaEvent({lemmas:['two words']}),lemmaEvent({lemmas:[1]}),lemmaEvent({kind:'seen'}),
+    lemmaEvent({storyId:undefined}),lemmaEvent({kind:'lookup'}),lemmaEvent({kind:'lookup',storyId:undefined,lemmas:['a','b']}),lemmaEvent({extra:1})])
+    await assert.rejects(rpc(alice,'apply_lemma_event',JSON.parse(JSON.stringify(invalid))),/invalid_lemma_payload/);
+  await assert.rejects(rpc(alice,'apply_lemma_event',lemmaEvent({occurredAt:iso(1)})),/invalid_event_time/);
+  await assert.rejects(user(alice,"insert into public.user_lemma_reads values($1,'x','y')",[alice]),/permission denied/);
+  await assert.rejects(anon('select public.apply_lemma_event($1::jsonb)',[JSON.stringify(lemmaEvent())]),/permission denied/);
 });

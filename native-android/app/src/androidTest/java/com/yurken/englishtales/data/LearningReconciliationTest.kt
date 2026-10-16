@@ -131,6 +131,17 @@ class LearningReconciliationTest {
         apply(local,cloud(words=listOf(walk.copy(saved=false))))
         assertFalse("glossary:walk" in local.snapshot().savedWordIds);assertTrue(local.snapshot().personalWords.isEmpty())
     }
+    @Test fun readingHistoryFromTheAccountIsAddedToThisDevice() {
+        val local=store()
+        local.writableDatabase.execSQL("INSERT INTO lemma_reads(lemma,story_id) VALUES('local','quiet-morning')")
+        // An older server sends no history: nothing local changes.
+        apply(local,cloud())
+        assertEquals(setOf("local"),local.snapshot().wordStages.keys)
+        apply(local,cloud().copy(lemmaReads=listOf("quiet" to "quiet-morning","quiet" to "paper-boat","local" to "paper-boat"),lemmaLookups=listOf("boat")))
+        val stages=local.snapshot().wordStages
+        assertEquals(WordStage.KNOWN,stages["quiet"]);assertEquals(WordStage.KNOWN,stages["local"]);assertEquals(WordStage.LOOKED_UP,stages["boat"])
+        assertTrue(JSONObject(local.cloudState()!!.snapshotJson).has("lemmaReads"))
+    }
     @Test fun pendingReviewKeepsScheduleUntilDeliveryAndNextSnapshot() {
         val local=store();local.saveWords(listOf("quiet"));local.reviewWord("quiet",true)
         val before=local.snapshot().nextReviewAt

@@ -14,6 +14,10 @@ enum class WordStage { SEEN, LOOKED_UP, SAVED, REVIEWING, KNOWN }
 object WordKnowledge {
     const val IMPLICIT_STORIES = 2
 
+    private val ascii = Regex("[a-z0-9]{1,100}")
+    /** Only plain ASCII forms travel to the account, so a server collation never rejects a whole event. */
+    fun syncable(lemma: String) = ascii.matches(lemma)
+
     fun lemma(token: String): String = LearningContent.glossary.lookup(token)?.lemma ?: token.lowercase(Locale.ROOT)
 
     /** Dictionary forms of every word-like token in [text]; numbers alone are skipped. */
