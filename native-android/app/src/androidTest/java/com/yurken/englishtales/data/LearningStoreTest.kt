@@ -156,11 +156,12 @@ class LearningStoreTest {
         snapshot=store.snapshot()
         assertEquals("reviewing",snapshot.wordStates["glossary:walk"])
         // The save carries the word and meaning without a story revision; the review carries neither.
-        val events=store.queuedOperations().filter {it.rpc=="apply_word_event"}.map {JSONObject(it.payload)}
-        assertEquals(listOf("save","review"),events.map {it.getString("action")})
-        assertTrue(events.all {it.isNull("storyRevisionId") && it.getString("wordId")=="glossary:walk"})
-        assertEquals("walk",events[0].getString("word"));assertEquals("yürümek",events[0].getString("gloss"))
-        assertFalse(events[1].has("word") || events[1].has("gloss"))
+        // Both events share the test clock, so the queue order is not meaningful; look them up by action.
+        val events=store.queuedOperations().filter {it.rpc=="apply_word_event"}.map {JSONObject(it.payload)}.associateBy {it.getString("action")}
+        assertEquals(setOf("save","review"),events.keys)
+        assertTrue(events.values.all {it.isNull("storyRevisionId") && it.getString("wordId")=="glossary:walk"})
+        assertEquals("walk",events.getValue("save").getString("word"));assertEquals("yürümek",events.getValue("save").getString("gloss"))
+        assertFalse(events.getValue("review").has("word") || events.getValue("review").has("gloss"))
         assertTrue(store.queuedOperations().all {it.errorCode==null})
         store.setWordSaved("glossary:walk",false)
         snapshot=store.snapshot()
