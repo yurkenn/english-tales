@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -68,16 +70,16 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     if(mode.isEmpty()) {
         Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())) {
             StatsHeader(snapshot)
-            Text("Kelimelerle oyna",fontSize=24.sp,fontWeight=FontWeight.Bold,modifier=Modifier.padding(horizontal=16.dp,vertical=20.dp))
-            Text(if(saved.isEmpty()) "Başlamak için örnek kelimeler hazır." else "${snapshot.dueWordIds.size} kelimenin tekrar zamanı geldi.",fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
+            Text(stringResource(R.string.kelimelerle_oyna),fontSize=24.sp,fontWeight=FontWeight.Bold,modifier=Modifier.padding(horizontal=16.dp,vertical=20.dp))
+            Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             Spacer(Modifier.height(20.dp))
-            ModeCard("Kelime kartları","Kelimeleri tanı ve dinle.","cards",Color(0xFFE3F6FF)) {start("card")}
-            ModeCard("Bir çeviri seç","Doğru anlamı bul.","translate",Color(0xFFFFF6D5)) {start("choice")}
-            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",Color(0xFFE3F6FF),enabled=gapPrompts?.isNotEmpty()==true) {start("cloze")}
+            ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),"cards",LocalTaleColors.current.tileBlue) {start("card")}
+            ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),"translate",LocalTaleColors.current.tileYellow) {start("choice")}
+            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",LocalTaleColors.current.tileBlue,enabled=gapPrompts?.isNotEmpty()==true) {start("cloze")}
             if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
-            ModeCard("Kelimeleri eşleştir","İngilizce ve Türkçe çiftleri bul.","play",Color(0xFFF0E5FF)) {start("match")}
-            ModeCard("Kelimeyi oluştur","Harfleri doğru sıraya koy.","letters",Color(0xFFE9F7E2)) {start("spell")}
+            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),"play",LocalTaleColors.current.tilePurple) {start("match")}
+            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),"letters",LocalTaleColors.current.tileGreen) {start("spell")}
         }
         return
     }
@@ -87,7 +89,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     val complete: (Int)->Unit = {finished=true;onLessonComplete(it,sessionKey,sessionKind,count,timer.pause())}
     if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("card")},snapshot);return }
     if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("match")},snapshot);return }
-    if(finished) { GameResult("$correctCount / $count doğru",correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
+    if(finished) { GameResult(stringResource(R.string.dogru, correctCount, count),correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
     if(mode=="cloze") {
         SentenceGapGame(gapQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
             onComplete={correctCount=it;complete(it)},onExit={exit()})
@@ -114,10 +116,10 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     GameViewport(padding) {
         GameHeader((question+1).toFloat()/words.size) {exit()}
         Row(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
-            Text(if(mode=="choice") "Bir çeviri seçin" else "Kelimeyi oluştur.",fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+            Text(if(mode=="choice") stringResource(R.string.bir_ceviri_secin) else stringResource(R.string.kelimeyi_olustur_2),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
             TalesMascot(if(answer!=null && !correct) MascotMood.Support else MascotMood.Thinking,Modifier.size(52.dp))
         }
-        Box(Modifier.fillMaxWidth().weight(if(mode=="choice") 1f else 0.6f).background(Color(0xFFF8F8F8),RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {
+        Box(Modifier.fillMaxWidth().weight(if(mode=="choice") 1f else 0.6f).background(TalePanel,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {
             Text(if(mode=="choice") word.word else word.translation,fontSize=20.sp,fontWeight=FontWeight.Bold)
         }
         if(mode=="choice") {
@@ -125,23 +127,23 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             options.forEach { option ->
                 val selected=answer==option
                 val color=if(selected) {if(correct) Color(0xFF8CC65C) else Color(0xFFFF866D)} else TaleLine
-                Box(Modifier.fillMaxWidth().heightIn(min=50.dp).border(if(selected) 2.dp else 1.dp,color,RoundedCornerShape(10.dp)).clickable(enabled=answer==null) {answer=option}.padding(horizontal=12.dp,vertical=8.dp),contentAlignment=Alignment.Center) {Text(option,fontSize=14.sp,fontWeight=FontWeight.Medium)}
+                Box(Modifier.fillMaxWidth().heightIn(min=50.dp).border(if(selected) 2.dp else 1.dp,color,RoundedCornerShape(10.dp)).selectable(selected=selected,enabled=answer==null,role=Role.RadioButton) {answer=option}.padding(horizontal=12.dp,vertical=8.dp),contentAlignment=Alignment.Center) {Text(option,fontSize=14.sp,fontWeight=FontWeight.Medium)}
             }
         } else {
             Box(Modifier.weight(1f).fillMaxWidth(),contentAlignment=Alignment.Center) {
-                Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(spelling.length)},fontSize=20.sp,color=if(answer==null) TaleBlue else if(correct) Color(0xFF79BB46) else Color(0xFFED725F),modifier=Modifier.border(1.dp,TaleLine,RoundedCornerShape(5.dp)).padding(12.dp))
+                Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(spelling.length)},fontSize=20.sp,color=if(answer==null) TaleBlue else if(correct) TaleSuccess else TaleError,modifier=Modifier.border(1.dp,TaleLine,RoundedCornerShape(5.dp)).padding(12.dp))
             }
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(vertical=24.dp),horizontalArrangement=Arrangement.Center) {
                 letters.forEachIndexed { i,c ->
-                    Box(Modifier.padding(3.dp).size(36.dp,48.dp).border(if(i in chosen) 2.dp else 1.dp,if(i in chosen) TaleBlue else TaleLine,RoundedCornerShape(6.dp)).clickable(enabled=answer==null && i !in chosen) {chosen=chosen+i;if(chosen.size==letters.size) answer=chosen.joinToString("") {letters[it].toString()}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=16.sp)}
+                    Box(Modifier.padding(3.dp).size(36.dp,48.dp).border(if(i in chosen) 2.dp else 1.dp,if(i in chosen) TaleBlue else TaleLine,RoundedCornerShape(6.dp)).clickable(enabled=answer==null && i !in chosen,role=Role.Button) {chosen=chosen+i;if(chosen.size==letters.size) answer=chosen.joinToString("") {letters[it].toString()}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=16.sp)}
                 }
             }
-            TextButton(onClick={chosen=emptyList()},enabled=answer==null,modifier=Modifier.align(Alignment.CenterHorizontally)) { Text("Temizle",fontSize=12.sp) }
+            TextButton(onClick={chosen=emptyList()},enabled=answer==null,modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(stringResource(R.string.temizle),fontSize=12.sp) }
         }
         if(answer!=null && !correct) {
-            Text("Her denemede öğreniyoruz.",fontSize=13.sp,color=TaleMuted)
-            Text("Doğru cevap: ${if(mode=="choice") word.translation else word.word}",fontSize=14.sp,color=Color(0xFFE77458))
-            Button(onClick={advanceWrong=true},modifier=Modifier.fillMaxWidth()) {Text("Anladım, devam et")}
+            Text(stringResource(R.string.her_denemede_ogreniyoruz),fontSize=13.sp,color=TaleMuted)
+            Text(stringResource(R.string.dogru_cevap, if(mode=="choice") word.translation else word.word),fontSize=14.sp,color=TaleError)
+            Button(onClick={advanceWrong=true},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.anladim_devam_et))}
         }
         Spacer(Modifier.height(8.dp))
     }
@@ -149,7 +151,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
 
 @Composable
 private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,enabled: Boolean=true,onClick: ()->Unit) {
-    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).border(1.dp,TaleLine,RoundedCornerShape(12.dp)).clickable(enabled=enabled,onClick=onClick).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).border(1.dp,TaleLine,RoundedCornerShape(12.dp)).clickable(enabled=enabled,role=Role.Button,onClick=onClick).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
         Box(Modifier.size(64.dp).background(color,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {ReferenceIcon(icon,TaleBlue,Modifier.size(34.dp))}
         Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(5.dp)) {Text(title,fontSize=16.sp,fontWeight=FontWeight.Bold);Text(subtitle,fontSize=12.sp,color=TaleMuted)}
         Text("›",color=TaleMuted,fontSize=22.sp)
@@ -159,17 +161,17 @@ private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,en
 @Composable
 fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot?=null) {
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-        Text("⭐  Harika! $points puan kazandın!",color=Color.White,fontSize=14.sp,modifier=Modifier.fillMaxWidth().background(TalePurple,RoundedCornerShape(4.dp)).padding(12.dp))
+        Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=14.sp,modifier=Modifier.fillMaxWidth().background(TalePurple,RoundedCornerShape(4.dp)).padding(12.dp))
         Spacer(Modifier.height(36.dp))
         TalesMascot(MascotMood.Celebrate,Modifier.size(156.dp),animate=true)
         Spacer(Modifier.height(24.dp))
-        Text("Çalışma tamamlandı",fontSize=25.sp,fontWeight=FontWeight.Light)
+        Text(stringResource(R.string.calisma_tamamlandi),fontSize=25.sp,fontWeight=FontWeight.Light)
         Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(12.dp))
         snapshot?.let {
-            Text(if(it.dailyGoalReached) "Günlük hedefin tamamlandı ✓" else "Bugünkü hedef: ${it.todaySessions} / ${it.dailyGoal} adım",color=TaleBlue,fontSize=14.sp,modifier=Modifier.padding(12.dp))
+            Text(if(it.dailyGoalReached) stringResource(R.string.gunluk_hedefin_tamamlandi) else stringResource(R.string.bugunku_hedef_adim, it.todaySessions, it.dailyGoal),color=TaleBlue,fontSize=14.sp,modifier=Modifier.padding(12.dp))
             if(it.completedLessons==1 && !LearningReminders.enabled(androidx.compose.ui.platform.LocalContext.current)) ReminderControls()
         }
-        Button(onClick=onExit,shape=RoundedCornerShape(24.dp)) {Text("Günlük planıma dön")}
-        TextButton(onClick=onRestart) {Text("Yeniden çalış",fontSize=12.sp)}
+        Button(onClick=onExit,shape=RoundedCornerShape(24.dp)) {Text(stringResource(R.string.gunluk_planima_don))}
+        TextButton(onClick=onRestart) {Text(stringResource(R.string.yeniden_calis),fontSize=12.sp)}
     }
 }
