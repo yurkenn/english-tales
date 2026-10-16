@@ -1,0 +1,17 @@
+<resources>
+    <string name="listen_mode">Dinle ve anlamını seç</string>
+    <string name="listen_subtitle">İngilizce kelimeyi dinle, doğru anlamı bul.</string>
+    <string name="listen_preparing">Ses hazırlanıyor…</string>
+    <string name="listen_unavailable">Bu cihazda İngilizce seslendirme yok. Ayarlar → Erişilebilirlik → Metin okuma çıkışı bölümünden İngilizce ses verisi indirebilirsin.</string>
+    <string name="listen_instruction">Dinle ve doğru anlamı seç.</string>
+    <string name="listen_progress">Kelime %1$d / %2$d</string>
+    <string name="listen_play">Kelimeyi dinle</string>
+    <string name="listen_replay">Tekrar dinle</string>
+    <string name="listen_stop">Seslendirmeyi durdur</string>
+    <string name="listen_check">Kontrol et</string>
+    <string name="listen_correct">Doğru! Duyduğun kelime: %1$s</string>
+    <string name="listen_incorrect">Duyduğun kelime: %1$s (%2$s)</string>
+    <string name="listen_next">Sonraki kelime</string>
+    <string name="listen_finish">Sonucu gör</string>
+    <string name="listen_exit">Alıştırmadan çık</string>
+</resources>

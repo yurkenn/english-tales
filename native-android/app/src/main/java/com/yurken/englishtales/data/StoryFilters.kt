@@ -14,10 +14,12 @@ enum class ReadingStatus(val label: String) {
 }
 
 /** Library filters combine with AND; a null value means "all". */
-data class StoryFilters(val level: String? = null, val status: ReadingStatus? = null) {
-    val active: Boolean get() = level != null || status != null
+data class StoryFilters(val level: String? = null, val status: ReadingStatus? = null, val length: ReadingLength? = null) {
+    val active: Boolean get() = level != null || status != null || length != null
+    /** A story whose length is not known yet never matches a length filter. */
     fun matches(story: Story, progress: Int): Boolean =
-        (level == null || story.level == level) && (status == null || ReadingStatus.of(progress) == status)
+        (level == null || story.level == level) && (status == null || ReadingStatus.of(progress) == status) &&
+            (length == null || ReadingLength.of(ReadingTime.minutes(story)) == length)
 
     companion object {
         val levels = listOf("A1", "A2", "B1")

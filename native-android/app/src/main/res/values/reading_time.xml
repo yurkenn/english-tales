@@ -1,0 +1,12 @@
+<resources>
+    <string name="reading_minutes">~%1$d dk</string>
+    <!-- Turkish has one form; languages such as Spanish need "other" vs "one". -->
+    <plurals name="reading_minutes_description">
+        <item quantity="one">Yaklaşık okuma süresi: %1$d dakika</item>
+        <item quantity="other">Yaklaşık okuma süresi: %1$d dakika</item>
+    </plurals>
+    <string name="length_all">Her uzunluk</string>
+    <string name="length_short">Kısa · ≤ 2 dk</string>
+    <string name="length_medium">Orta · 3–5 dk</string>
+    <string name="length_long">Uzun · 6+ dk</string>
+</resources>
