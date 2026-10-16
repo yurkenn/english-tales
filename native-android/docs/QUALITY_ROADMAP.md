@@ -156,6 +156,7 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q4.0 Çeviri tabloları | Ana dala birleşti | [#37](https://github.com/yurkenn/english-tales/pull/37), [#36](https://github.com/yurkenn/english-tales/pull/36) | Cümle/kelime/açıklama çevirileri dil koduyla ayrı tablolarda; uygulama Türkçeyi bunlardan okur |
 | Q4.1 Taslak revizyon aracı | Ana dala birleşti | [#40](https://github.com/yurkenn/english-tales/pull/40) | Paket ile canlı farkından taslak paketi üretir; yayın 49'dan sonra |
 | Q4.3a Dokunma sözlüğü (1. adım) | Ana dala birleşti | [#53](https://github.com/yurkenn/english-tales/pull/53) | Okuyucuda öğrenme kelimesi olmayan her bilinen kelime dokunulur: çevrimdışı sözlük (`glossary/tr.json`) + düzenli çekim kuralları + 153 düzensiz biçim. Öğrenme kelimeleri altı çizili ve kaydedilebilir kalır; sözlük kelimesi yalnız anlam gösterir. Paket metninde dokunulabilir token %12,0 → %13,4 (asıl artış Q4.3b verisiyle). Kişisel kelime kaydı 2. adımda |
+| Q4.3b Sözlük anlam taslakları | PR açık | [#68](https://github.com/yurkenn/english-tales/pull/68) | Paket hikâyelerindeki 1.407 sözlük biçiminden öğrenme kelimesi olmayan 1.098’i için Türkçe anlam taslağı (`backend/content/glossary/tr.json`, kaynak: Claude taslağı, örnek cümle ve geçiş sayısıyla). `npm run glossary:build` yalnız çapraz kontrolden geçmiş (`checkedBy`) ve itiraz edilmişse incelenmiş girişleri uygulamaya alır; şu an 0. `glossary:sample` %10 inceleme örneklemini verir (121) |
 | Q4.3a Kişisel kelimeler (2. adım) | Ana dala birleşti | [#54](https://github.com/yurkenn/english-tales/pull/54) | Sözlük kelimesi okuyucudan "Öğren" ile sözlük biçimi ve anlamıyla kaydedilir (`personal_words`, Room sürüm 8); Kelimelerim ve tüm alıştırmalar onu öğrenme kelimesi gibi kullanır, tekrar aralıkları aynı. Misafir aktarımı taşır. Hesap eşitlemesi 3. adımda |
 | Q4.3a Kişisel kelime eşitlemesi (3. adım) | Ana dala birleşti | [#55](https://github.com/yurkenn/english-tales/pull/55) | `apply_word_event` revizyonsuz `glossary:` kimliklerini kabul eder; kaydetme kelime ve anlamı taşır, `user_personal_words` en yeni anlamı tutar, `get_learning_snapshot` metni döner. Uygulama olayı kuyruğa koyar; uzlaştırma kişisel kelimeyi metniyle kurar veya kaldırır. Migration 16 Ekim’de canlıya uygulandı; 49 cihaz eşitleme kabulü açık |
 | Q4.4 Okuma süresi + süre filtresi | Ana dala birleşti | [#42](https://github.com/yurkenn/english-tales/pull/42) | Kartlarda "~N dk"; kitaplıkta yalnız katalogda bulunan süre aralıkları filtre olarak sunulur |
@@ -179,6 +180,24 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q5.9 Dikte | Ana dala birleşti | [#58](https://github.com/yurkenn/english-tales/pull/58) | "Dinle ve yaz": aynı kısa hikâye cümleleri seslendirilir, öğrenen yazar; büyük/küçük harf ve noktalama sayılmaz, her farklı/eksik/fazla sözcük sayılır. Cihazda İngilizce ses yoksa mod görünmez; oturum `choice` |
 | Q5.4 Seviye yerleştirme | Ana dala birleşti | [#27](https://github.com/yurkenn/english-tales/pull/27) | Onboarding/Ayarlar’da dokuz soru, A1–B1 başlangıç önerisi; [kapsam](READING_PLACEMENT.md) |
 | Q6 Ana ekran widget'ı | Ana dala birleşti | [#39](https://github.com/yurkenn/english-tales/pull/39) | Glance widget'ı: seri, günlük hedef ve tekrarı gelen kelime sayısı; dokununca günlük plan açılır. App Links alan adı seçildi; ayrı uygulama yönlendirmesi açık |
+
+## 5a. Kalan işler ve yayın sırası — 16 Ekim 2026
+
+Karar gerektirmeyen kod işleri tamamlandı (#45–#65). Kalanlar uygulama sahibinin kararını veya emeğini bekliyor:
+
+| İş | Neden bekliyor |
+|---|---|
+| Q4.2 Pilot revizyonları canlıya yayımla | Canlı panel/Supabase yayını; "yayına al" onayı |
+| Q4.3b Sözlük anlamları | Taslaklar hazır (#68, 1.098 lemma). Yayına girmesi için ikinci model çapraz kontrolü (`checkedBy`) ve uygulama sahibinin %10 örneklem incelemesi (`npm run glossary:sample`) gerekir |
+| Q4.3c Hikâye başına çalışma kelimesi seçimi | Q4.3b verisine bağlı; editör incelemesi |
+| Q4.7 İçerik hacmi (bölümlü hikâyeler, B1/B2) | İçerik üretimi ve editör onayı (iki haftada 1–2 hikâye kararı) |
+| L0 İngilizce arayüz | Arayüz İngilizceyken destek dilinin (çevirilerin) ne olacağı ürün kararı |
+| Q6 App Links | Alan adı `englishtales-app.web.app` seçildi ve `assetlinks.json` yayında (#67); uygulama içi bağlantı yönlendirmesi açık |
+| Q2 ölçüm sağlayıcısı, gelir modeli, kayıtlı ses | Ürün kararları |
+
+**Yayın sırası (canlıya alırken):** Sunucu migration'ları uygulama sürümünden önce uygulanmalı, çünkü yeni uygulama bu RPC ve alanları kullanır:
+`20261016090000_translation_tables` → `20261016100000_story_questions` → `20261016110000_story_tags` → `20261016120000_story_favorites` → `20261016130000_personal_words` → `20261016140000_known_words` → `20261016150000_fsrs`.
+16 Ekim 2026'da bu yedi migration canlıya uygulandı (#67, [son durum](../../README_SON_DURUM.md)). FSRS geçişi eski uygulamalarla uyumludur (`interval_days` eski kademelerde kalır). Kişisel kelime ve bilinen kelime olayları eski sunucuda reddedilir, bu yüzden sıra önemlidir.
 
 ## 6. Birleşik doğrulama — 15 Ekim 2026
 
