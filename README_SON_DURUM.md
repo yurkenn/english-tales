@@ -2,6 +2,12 @@
 
 Son güncelleme: **16 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
 
+## Hesap ve yayın kurulumu — 16 Ekim 2026
+
+Canlı Play Console’da **48 / 2.0.0 üretimde %100** olarak doğrulandı. GitHub `release` ortamı ve beş zorunlu secret kuruldu; **49 / 2.1.0** için [ilk yüklemesiz CI çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı. Play’e yeni paket yüklenmedi. Altı 16 Ekim migration’ı onayla canlıya uygulandı; 144 backend testi, yayın yedeğinin yerel geri yüklemesi, içerik bütünlüğü ve RLS kontrolleri geçti. Data safety güncellendi ve Google incelemesine gönderildi. `englishtales-app.web.app` için assetlinks.json yayımlandı, Google `linked: true` doğruladı. [Kanıtlar, migration eşlemesi ve kalan işler](senin-adimlarin.md).
+
+TalkBack telefon kabulü, isteğe bağlı Play servis hesabı/dahili kanal yüklemesi, Analytics canlı olay kabulü ve uygulama içi App Links yönlendirmesi açık. Aşağıdaki önceki tarihli yayın notları tarihseldir; güncel durum için yukarıdaki kayıt esas alınır.
+
 ## Erişilebilirlik ve içerik denetimi — 16 Ekim 2026
 
 Q3 erişilebilirlik/yerelleştirme işleri ana dala birleşti: 306 ekran metni `strings.xml`'e taşındı (#30), TalkBack rol ve etiketleri eklendi (#31), uygulama geneli koyu tema (#32) ve fontScale 2.0 / küçük ekran düzeni (#34). Otomatik denetimler (`AccessibilityAuditTest`, `TaleColorsContrastTest`, `DarkThemeTest`, `LargeTextLayoutTest`) eklendi. Q3 kapısının kapanması için gerçek TalkBack ile ana yolculuğun elle kaydı gerekir.
@@ -32,7 +38,7 @@ Oyna ekranına hikâye cümlesi, Türkçe ipucu ve dört İngilizce seçenekle �
 
 ## Kısa durum
 
-Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 üretim kanalına yüklendi ve mağaza güncellemesiyle birlikte 15 Ekim 2026'da Google incelemesine gönderildi. İnceleme sonucu henüz gelmedi.**
+Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 üretimde %100 yayımlandı; bu durum 16 Ekim 2026’da Console’dan doğrulandı. 49 / 2.1.0 yalnız CI adayıdır.**
 
 ## Tamamlanan çalışmalar
 

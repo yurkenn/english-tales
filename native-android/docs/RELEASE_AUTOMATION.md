@@ -23,7 +23,7 @@ Depo herkese açık olduğu için imzalı paketler ve mapping dosyası artifact 
 
 ## Bir kez yapılacak kurulum (uygulama sahibi)
 
-Gizli değerler yalnız GitHub `release` ortamına girilir; depoya veya loglara yazılmaz. Ortama **Required reviewers** eklemek önerilir. Böylece her çalışma, gizli değerler açılmadan önce onay bekler.
+Gizli değerler yalnız GitHub `release` ortamına girilir; depoya veya loglara yazılmaz. Ortama **Required reviewers** eklemek önerilir. Böylece her çalışma, gizli değerler açılmadan önce onay bekler. 16 Ekim kurulumunda ortam yalnız `master` dalını kabul eder; başka dal denemesi için ortam politikasını ayrıca gözden geçirmek gerekir.
 
 | Secret | İçerik |
 |---|---|
@@ -74,5 +74,5 @@ Play aynı sürüm kodunu ikinci kez kabul etmez. Yüklemesiz bir deneme yüklem
 ## Doğrulama ve sınırlar
 
 - Yerelde `-PreleaseVersionCode=49` ile imzalı APK/AAB üretildi (`-x uploadCrashlyticsMappingFileRelease`). `verify_release.py --expected-version-code 49` geçti: APK 8,0 MB, AAB 11,5 MB. `--expected-version-code 50` beklendiği gibi başarısız oldu. Parametresiz derleme 48 / 2.0.0 olarak kaldı.
-- Workflow GitHub'da henüz çalıştırılmadı: gizli değerler ve `release` ortamı kurulmadan çalışmaz. İlk gerçek çalıştırma, CI'da imza, Crashlytics mapping yüklemesi ve Play yüklemesinin kanıtı olacaktır.
+- **16 Ekim 2026:** `release` ortamı ve beş zorunlu secret kuruldu. Ortam yalnız `master` dalına açık ve `yurkenn` required reviewer. İlk yüklemesiz [GitHub çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı: commit `0c7ac02c0551ed3b0edf9297bfdfdd1cf872a9f9`, **49 / 2.1.0**, imzalı APK/AAB, `uploadCrashlyticsMappingFileRelease` ve paket doğrulaması geçti. APK 9.307.385 bayt, AAB 13.387.779 bayt. [Doğrulama raporu](release-evidence/2026-10-16-ci-49.json). Play yükleme adımı atlandı; `PLAY_SERVICE_ACCOUNT_JSON` kurulmadı. Bu sonuç dahili kanal veya üretim yayını değildir. [Güncel hesap adımları](../../senin-adimlarin.md).
 - Statik paket denetimi; Play'in ürettiği split APK'lar, gerçek 16 KB cihaz ve eski sürümden güncelleme [kademeli yayın listesinde](STAGED_RELEASE.md) ayrıca doğrulanır.

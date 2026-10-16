@@ -2,8 +2,9 @@
 
 Android uygulaması tamamen Kotlin ve Jetpack Compose ile geliştirilir. Aktif kaynak ağacında React Native, Expo veya JavaScript mobil çalışma zamanı bulunmaz.
 
+- [Hesap ve yayın adımlarının güncel durumu](senin-adimlarin.md)
 - [Android kurulumu ve doğrulama](native-android/README.md)
-- [Son çalışmalar ve güncel yayın durumu — 15 Ekim 2026](README_SON_DURUM.md)
+- [Son çalışmalar ve güncel yayın durumu — 16 Ekim 2026](README_SON_DURUM.md)
 - [Native geçişin kapsamı ve veri sınırları](native-android/docs/NATIVE_MIGRATION.md)
 - [Kalite yol haritası](native-android/docs/QUALITY_ROADMAP.md)
 - [2.0 sonrası geliştirme haritası](native-android/docs/NEXT_PHASE_ROADMAP.md)
@@ -19,7 +20,7 @@ Android uygulaması tamamen Kotlin ve Jetpack Compose ile geliştirilir. Aktif k
 
 `native-android/` uygulama, içerik varlıkları, panel ve Supabase migration dosyalarını içerir. `tooling/` depo kontrollerini içerir. Eski React Native/Sanity sürümü Git geçmişinde korunur; aktif derlemeye katılmaz.
 
-Yeni sürüm henüz üretime yayımlanmadı. GitHub kontrol noktaları kaynak kodunu geri getirir; kullanıcı verisi veya canlı veritabanı değişikliklerini geri almaz.
+48 / 2.0.0 üretimde %100 yayımlandı; 49 / 2.1.0 CI adayı Play’e yüklenmedi. GitHub kontrol noktaları kaynak kodunu geri getirir; kullanıcı verisi veya canlı veritabanı değişikliklerini geri almaz.
 
 ## Geliştirme
 
