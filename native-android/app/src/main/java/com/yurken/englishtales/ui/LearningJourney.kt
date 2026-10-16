@@ -58,11 +58,20 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
             }
         } else Text(stringResource(R.string.yeni_hikayeler_hazirlandiginda_burada_gorunecek),color=TaleMuted)
         if(snapshot.dueWordIds.isNotEmpty()) {
-            val batch=snapshot.dueWordIds.take(5)
+            val batch=ReviewFocus.order(emptyList(),snapshot.weakWordIds.filter {it in snapshot.dueWordIds},snapshot.dueWordIds,emptyList()).take(5)
             OutlinedButton(onClick={onPractice(batch)},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
                 Column(Modifier.padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
                     Text(stringResource(R.string.kelimeyi_hatirla, batch.size),style=MaterialTheme.typography.titleMedium)
                     Text(stringResource(R.string.kelimenin_tekrar_zamani_geldi, snapshot.dueWordIds.size),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                }
+            }
+        } else if(snapshot.weakWordIds.isNotEmpty()) {
+            // Early practice: LearningPolicy ignores correct answers before the due time, so mastery is not inflated.
+            val batch=snapshot.weakWordIds.take(5)
+            OutlinedButton(onClick={onPractice(batch)},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
+                Column(Modifier.padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
+                    Text(stringResource(R.string.weak_words_practice, batch.size),style=MaterialTheme.typography.titleMedium)
+                    Text(stringResource(R.string.weak_words_summary),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
                 }
             }
         } else if(snapshot.savedWordIds.isNotEmpty()) {

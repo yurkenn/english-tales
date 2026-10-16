@@ -55,12 +55,12 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     DisposableEffect(Unit) { onDispose {onSessionActive(false)} }
     fun start(value: String, seeded: List<String> = emptyList()) {
         if(value=="cloze") {
-            gapQuestions=SentenceGap.session(gapPrompts.orEmpty(),dictionary,snapshot.dueWordIds+saved.map {it.id},snapshot.level)
+            gapQuestions=SentenceGap.session(gapPrompts.orEmpty(),dictionary,ReviewFocus.order(emptyList(),snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}),snapshot.level)
             gapUnavailable=gapQuestions.isEmpty()
             if(gapUnavailable) {if(mode.isNotEmpty()) exit();return}
         }
         if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
-        val priority=(seeded+snapshot.dueWordIds+saved.map {it.id}).distinct().mapNotNull(LearningContent.wordById::get)
+        val priority=ReviewFocus.order(seeded,snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}).mapNotNull(LearningContent.wordById::get)
         val pool=if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else (priority+supplemental.shuffled()).distinctBy {it.id}.take(5)
         sessionKey=java.util.UUID.randomUUID().toString()
         session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
@@ -72,6 +72,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             StatsHeader(snapshot)
             Text(stringResource(R.string.kelimelerle_oyna),fontSize=24.sp,fontWeight=FontWeight.Bold,modifier=Modifier.padding(horizontal=16.dp,vertical=20.dp))
             Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
+            if(snapshot.weakWordIds.isNotEmpty()) Text(stringResource(R.string.weak_words_count, snapshot.weakWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp,vertical=4.dp))
             Spacer(Modifier.height(20.dp))
             ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),"cards",LocalTaleColors.current.tileBlue) {start("card")}
             ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),"translate",LocalTaleColors.current.tileYellow) {start("choice")}
