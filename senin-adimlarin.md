@@ -58,10 +58,10 @@ Uygulama: `com.yurken.englishtales`; SHA-256 `13:EF:59:10:FD:56:B0:A4:3F:5D:65:7
 
 Planlanan paylaşım adresi `https://englishtales-app.web.app/story/{id}`. Android manifest intent-filter, gelen bağlantıyı hikâyeye yönlendirme ve uygulama kurulu değilken web karşılığı bu çalışmada eklenmedi; uçtan uca paylaşım tamamlandı sayılmaz. [Android ilişkilendirme belgesi](https://developer.android.com/training/app-links/configure-assetlinks).
 
-## 5. TalkBack — kullanıcı testi sorunsuz, paket sürümü bekleniyor
+## 5. TalkBack — mağaza sürümü 48 sorunsuz, Q3 adayı bekliyor
 
-- [x] 16 Ekim 2026: kullanıcı telefonda TalkBack ile açılış → kitaplık → hikâye → okuma → kelime kaydetme → alıştırma yolunu denediğini ve sorun görmediğini bildirdi. Kaynak: bu sohbetteki “Denedim, sorun yok” yanıtı.
-- [ ] Denenen paket sürümü/commit henüz belirtilmedi. Yeni erişilebilirlik değişikliklerini içeren 49 adayı veya güncel geliştirme APK’sıyla yapıldığı doğrulanınca **Q3 kapısı kapatılabilir**; mağazadaki 48 için sonuç tek başına yeterli değildir. Cihaz/Android/TalkBack sürümü kaydedilmedi; bağımsız test kaydı varmış gibi sunulmaz.
+- [x] 16 Ekim 2026: kullanıcı telefonda TalkBack ile açılış → kitaplık → hikâye → okuma → kelime kaydetme → alıştırma yolunu denediğini ve sorun görmediğini bildirdi. Denenen paket: **mağazadaki 48 / 2.0.0** (kullanıcı tarafından ayrıca doğrulandı). Kaynak: bu sohbetteki kullanıcı yanıtları.
+- [ ] Yeni erişilebilirlik değişikliklerini içeren 49 adayı veya güncel geliştirme APK’sında aynı yolculuk henüz denenmedi. **Q3 kapısı açık**; 48 için sorunsuz sonuç yeni kodun kabulü değildir. Cihaz/Android/TalkBack sürümü kaydedilmedi; bağımsız test kaydı varmış gibi sunulmaz.
 
 ## Play sürümü
 
