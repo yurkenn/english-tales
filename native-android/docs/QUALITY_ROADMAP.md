@@ -126,6 +126,7 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q2.3 Performans altyapısı | Ana dala birleşti; fiziksel kabul açık | [#26](https://github.com/yurkenn/english-tales/pull/26) | Profil üretimi 2/2, Macrobenchmark 3/3; imzalı APK/AAB profil doğrulaması geçti; [kanıt ve CI](PERFORMANCE.md) |
 | Q2.4 Sürüm otomasyonu | Kod hazır; GitHub secret'ları ve ilk CI çalıştırması açık | Bu değişiklik | Elle tetiklenen imzalı APK/AAB + `verify_release.py` (sürüm kodu, APK < 15 MB) + isteğe bağlı dahili kanal yüklemesi; yerel 49 adayı doğrulandı; [kurulum](RELEASE_AUTOMATION.md) |
 | Q2.5 Kademeli yayın listesi | Hazır; bu belgeyle birlikte #22 | [#22](https://github.com/yurkenn/english-tales/pull/22) | %20 → %50 → %100; izleme, durdurma ve düzeltme kaydı |
+| Q3.1 Metinler kaynakta | Bu değişiklik | — | 306 ekran metni `strings.xml`'e taşındı (UI, reklam/analiz tercihleri, güncelleme çubuğu, bildirim); sözcük içeren sabit `Text("…")` 0 ve `verify_repository.py` bunu korur. Tür adları (Günlük yaşam/Macera/Gizem) saklanan veri değeri olduğundan ve ViewModel hata mesajları henüz kaynakta değil |
 | Q5.1 Bağlamlı boşluk doldurma | Ana dala birleşti | [#28](https://github.com/yurkenn/english-tales/pull/28) | Mevcut hikâye cümlelerinden seçmeli soru; puan/oturum sözleşmesi korunur; [kapsam](SENTENCE_GAP.md) |
 | Q5.4 Seviye yerleştirme | Ana dala birleşti | [#27](https://github.com/yurkenn/english-tales/pull/27) | Onboarding/Ayarlar’da dokuz soru, A1–B1 başlangıç önerisi; [kapsam](READING_PLACEMENT.md) |
 

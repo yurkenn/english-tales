@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.*
+import com.yurken.englishtales.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -23,10 +25,10 @@ fun MatchingGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padd
     var matched by rememberSaveable(sessionId) {mutableStateOf(emptyList<String>())}
     var mistakes by rememberSaveable(sessionId) {mutableIntStateOf(0)}
     var finished by rememberSaveable(sessionId) {mutableStateOf(false)}
-    if(finished) {GameResult("${words.size} kelime · $mistakes hata",(words.size-mistakes).coerceAtLeast(0)*5,padding,onExit,onRestart,snapshot);return}
+    if(finished) {GameResult(stringResource(R.string.kelime_hata, words.size, mistakes),(words.size-mistakes).coerceAtLeast(0)*5,padding,onExit,onRestart,snapshot);return}
     GameViewport(padding) {
         GameHeader(matched.size.toFloat()/words.size,onExit)
-        Text("Kelimeleri eşleştirin",fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.fillMaxWidth().padding(vertical=12.dp))
+        Text(stringResource(R.string.kelimeleri_eslestirin),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.fillMaxWidth().padding(vertical=12.dp))
         Row(Modifier.fillMaxWidth().weight(1f),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
             Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                 words.forEach { word -> MatchCard(word.word,selected==word.id,word.id in matched,Modifier.fillMaxWidth().weight(1f)) { if(word.id !in matched) selected=word.id } }

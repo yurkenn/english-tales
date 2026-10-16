@@ -37,40 +37,40 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
             if(step>0) Box(Modifier.size(48.dp).clickable { step-- },contentAlignment=Alignment.Center) { ReferenceIcon("back",Color(0xFF515157),Modifier.size(20.dp)) }
         }
         Column(Modifier.weight(1f).verticalScroll(scroll).padding(horizontal=16.dp,vertical=10.dp),verticalArrangement=Arrangement.spacedBy(13.dp)) {
-            GuideBubble("Hi! 👋")
-            GuideBubble("Merhaba! Ben senin okuma arkadaşınım. English Tales'e hoş geldin.")
+            GuideBubble(stringResource(R.string.hi))
+            GuideBubble(stringResource(R.string.merhaba_ben_senin_okuma_arkadasinim))
             Row(Modifier.fillMaxWidth()) {
                 Spacer(Modifier.width(40.dp))
                 Box(Modifier.width(250.dp).height(170.dp).clip(RoundedCornerShape(10.dp)).background(Color(0xFFE5F5FA)),contentAlignment=Alignment.BottomCenter) {
-                    TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),description="Okuma rehberi",animate=true)
+                    TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),description=stringResource(R.string.okuma_rehberi),animate=true)
                 }
             }
-            GuideBubble("Birlikte hikâyeler okuyup yeni kelimeler öğreneceğiz. Başlayalım mı?")
-            if(step==0) ReplyChoice("Başlayalım") { step=1 }
+            GuideBubble(stringResource(R.string.birlikte_hikayeler_okuyup_yeni_kelimeler))
+            if(step==0) ReplyChoice(stringResource(R.string.baslayalim)) { step=1 }
             if(step>=1) {
-                ReplyBubble("Başlayalım")
-                GuideBubble("Harika seçim! 🙌 İngilizce seviyeni nasıl değerlendiriyorsun?")
+                ReplyBubble(stringResource(R.string.baslayalim))
+                GuideBubble(stringResource(R.string.harika_secim_ingilizce_seviyeni_nasil))
                 if(step==1) {
                     ChoiceHint()
-                    listOf("A1" to "Yeni başlıyorum","A2" to "Biraz okuyabiliyorum","B1" to "Rahatça okuyorum").forEach { (value,label) -> ReplyChoice(label) {level=value;step=2} }
+                    listOf("A1" to stringResource(R.string.yeni_basliyorum),"A2" to stringResource(R.string.biraz_okuyabiliyorum),"B1" to stringResource(R.string.rahatca_okuyorum)).forEach { (value,label) -> ReplyChoice(label) {level=value;step=2} }
                     ReplyChoice(stringResource(R.string.placement_entry)) { placement=true }
                 }
             }
             if(step>=2) {
                 ReplyBubble(level)
-                GuideBubble("Okumayı sever misin? 📚 Hangi tür hikâyeler ilgini çekiyor?")
+                GuideBubble(stringResource(R.string.okumayi_sever_misin_hangi_tur))
                 if(step==2) { ChoiceHint(); listOf("Günlük yaşam","Macera","Gizem").forEach { choice -> ReplyChoice(choice) {genre=choice;step=3} } }
             }
             if(step>=3) {
                 ReplyBubble(genre)
-                GuideBubble("Her gün ne kadar çalışmak istersin? Bir adım, bir hikâye ya da kısa bir kelime çalışmasıdır. Hedefini sonra değiştirebilirsin.")
-                if(step==3) listOf(1 to "Günde 1 adım · Rahat başlangıç",2 to "Günde 2 adım · Düzenli çalışma",3 to "Günde 3 adım · Yoğun çalışma").forEach { (value,label) -> ReplyChoice(label) {goal=value;step=4} }
+                GuideBubble(stringResource(R.string.her_gun_ne_kadar_calismak))
+                if(step==3) listOf(1 to stringResource(R.string.gunde_1_adim_rahat_baslangic),2 to stringResource(R.string.gunde_2_adim_duzenli_calisma),3 to stringResource(R.string.gunde_3_adim_yogun_calisma)).forEach { (value,label) -> ReplyChoice(label) {goal=value;step=4} }
             }
             if(step>=4) {
-                ReplyBubble("Günde $goal adım")
-                GuideBubble("Sana ${level} seviyesinde bir hikâye hazırladım. Altı çizili kelimelere dokunarak anlamlarını görebilirsin.")
+                ReplyBubble(stringResource(R.string.gunde_adim, goal))
+                GuideBubble(stringResource(R.string.sana_seviyesinde_bir_hikaye_hazirladim, level))
                 analyticsControls()
-                ReplyChoice("İlk hikâyeme başla") { onContinue(level,genre,goal) }
+                ReplyChoice(stringResource(R.string.ilk_hikayeme_basla)) { onContinue(level,genre,goal) }
             }
             Spacer(Modifier.height(12.dp))
         }
@@ -78,7 +78,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
 }
 
 @Composable
-private fun ChoiceHint() { Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) { Text("Cevap seç",fontSize=10.sp,color=TaleMuted,modifier=Modifier.padding(end=5.dp)) } }
+private fun ChoiceHint() { Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) { Text(stringResource(R.string.cevap_sec),fontSize=10.sp,color=TaleMuted,modifier=Modifier.padding(end=5.dp)) } }
 
 @Composable
 private fun GuideBubble(message: String) {

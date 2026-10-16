@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.Image
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
@@ -28,7 +29,7 @@ fun GoogleSignInButton(enabled: Boolean,onClick: ()->Unit) {
         colors=ButtonDefaults.outlinedButtonColors(containerColor=Color.White,contentColor=Color(0xFF1F1F1F))) {
         Image(painterResource(R.drawable.google_g),null,Modifier.size(20.dp))
         Spacer(Modifier.width(12.dp))
-        Text("Google ile devam et",fontSize=15.sp,fontWeight=FontWeight.Medium)
+        Text(stringResource(R.string.google_ile_devam_et),fontSize=15.sp,fontWeight=FontWeight.Medium)
     }
 }
 
@@ -37,17 +38,17 @@ fun WelcomeScreen(state: AccountState,onGuest: ()->Unit,onEmail: ()->Unit,onGoog
     androidx.activity.compose.BackHandler(enabled=state.busy) {}
     Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal=24.dp,vertical=24.dp),
         horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(16.dp)) {
-        Text("ENGLISH TALES",color=TaleBlue,fontSize=15.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp)
+        Text(stringResource(R.string.english_tales),color=TaleBlue,fontSize=15.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp)
         Box(Modifier.fillMaxWidth().height(220.dp).clip(RoundedCornerShape(28.dp)).background(TaleMint),contentAlignment=Alignment.BottomCenter) {
             TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),animate=true)
         }
-        Text("Her hikâyede\nbiraz daha İngilizce",style=MaterialTheme.typography.headlineMedium,textAlign=TextAlign.Center)
-        Text("Kısa hikâyeler oku, yeni kelimeler keşfet. Her gün kendi hızında ilerle.",style=MaterialTheme.typography.bodyLarge,textAlign=TextAlign.Center,color=Color(0xFF626B78))
+        Text(stringResource(R.string.her_hikayede_nbiraz_daha_ingilizce),style=MaterialTheme.typography.headlineMedium,textAlign=TextAlign.Center)
+        Text(stringResource(R.string.kisa_hikayeler_oku_yeni_kelimeler),style=MaterialTheme.typography.bodyLarge,textAlign=TextAlign.Center,color=Color(0xFF626B78))
         Spacer(Modifier.height(8.dp))
         GoogleSignInButton(!state.busy,onGoogle)
-        OutlinedButton(onClick=onEmail,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=52.dp),shape=RoundedCornerShape(14.dp)) {Text("E-posta ile giriş yap")}
-        Button(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=52.dp),shape=RoundedCornerShape(14.dp)) {Text("Misafir olarak başla")}
-        Text("Hesap açmadan başlayabilirsin. Misafir ilerlemen bu cihazda saklanır.",style=MaterialTheme.typography.bodySmall,color=Color(0xFF626B78),textAlign=TextAlign.Center)
+        OutlinedButton(onClick=onEmail,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=52.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.e_posta_ile_giris_yap))}
+        Button(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=52.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.misafir_olarak_basla))}
+        Text(stringResource(R.string.hesap_acmadan_baslayabilirsin_misafir_ilerlemen),style=MaterialTheme.typography.bodySmall,color=Color(0xFF626B78),textAlign=TextAlign.Center)
         if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         if(state.message.isNotBlank()) Text(state.message,style=MaterialTheme.typography.bodyMedium,color=Color(0xFF626B78),textAlign=TextAlign.Center)
     }
