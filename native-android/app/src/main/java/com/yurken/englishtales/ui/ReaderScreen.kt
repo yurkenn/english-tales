@@ -172,7 +172,8 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
             onProgress((page*SENTENCES_PER_PAGE*100/story.sentences.size).coerceAtMost(99),story.sentences[page*SENTENCES_PER_PAGE].id)
         }
         Box(Modifier.fillMaxSize().background(background).statusBarsPadding().navigationBarsPadding()) {
-            Column(Modifier.fillMaxSize()) {
+            // On tablets and in landscape the page keeps a book-like line length instead of spanning the screen.
+            Column(Modifier.fillMaxHeight().centeredWidth(ReadingWidth)) {
                 Row(Modifier.fillMaxWidth().heightIn(min=52.dp).padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically) {
                     ReferenceIconButton("back",stringResource(R.string.geri),{narrator.stop();onBack()},tint=accent)
                     Spacer(Modifier.weight(1f))
