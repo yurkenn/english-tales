@@ -86,6 +86,7 @@ private data class Catalog(
     val storyById: Map<String, Story>
 ) {
     val phrases by lazy { PhraseMatcher.Index(words) }
+    val glossary by lazy { LearningContent.glossarySource.let { (entries, forms) -> Glossary(entries, forms, words) } }
 }
 
 /** Sentence IDs are stable across revisions, so a position carries over while its sentence still exists. */
@@ -117,6 +118,8 @@ object LearningContent {
     val wordByText: Map<String, WordInfo> get() = current().wordByText
     /** Every dictionary word and phrase, for bundled stories that have no per-sentence links. */
     val phraseIndex: PhraseMatcher.Index get() = current().phrases
+    /** Lookup for every other token (Q4.3a); learning words of the current catalog are part of it. */
+    val glossary: Glossary get() = current().glossary
     val stories: List<Story> get() = current().stories
     val storyById: Map<String, Story> get() = current().storyById + pinned
 
@@ -128,6 +131,10 @@ object LearningContent {
 
     /** Bundled tag vocabulary order; tags only known from the server sort after these. */
     @Volatile var tagOrder: List<String> = emptyList()
+        private set
+
+    /** Bundled `glossary/<lang>.json`, kept across remote catalog installs; empty when the file is absent. */
+    @Volatile internal var glossarySource: Pair<Map<String, String>, Map<String, String>> = emptyMap<String, String>() to emptyMap()
         private set
 
     /** True once the bundled catalog is installed; readable from composition. */
@@ -149,6 +156,9 @@ object LearningContent {
         val json = context.assets.open("catalog/v1.json").bufferedReader(Charsets.UTF_8).use { it.readText() }
         val root = JSONObject(json)
         require(root.getInt("schemaVersion") == 1) { "Unsupported catalog schema" }
+        glossarySource = try {
+            Glossary.parse(context.assets.open("glossary/${SupportLanguage.code}.json").bufferedReader(Charsets.UTF_8).use { it.readText() })
+        } catch (missing: java.io.FileNotFoundException) { emptyMap<String, String>() to emptyMap() }
 
         val wordArray = root.getJSONArray("words")
         val parsedWords = (0 until wordArray.length()).map { index ->
