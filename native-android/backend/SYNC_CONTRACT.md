@@ -112,6 +112,14 @@ Doğru cevap ancak zamanı geldiyse ve aynı gün daha önce başarılı tekrar 
 
 Kelimeyi başka cihazda göstermek için metin kaynağı, o kelimenin geçmişindeki yayımlanmış revision ile eşlenmelidir. Sadece kelime kimliğini ekrana yazmak yeterli değildir. Arşivlenen kaynak daha önce indirilmemişse uygulama anlaşılır bir içerik durumu sunmalıdır.
 
+#### FSRS zamanlaması (Q5.7)
+
+- Tekrar aralığını FSRS-5 belirler (`backend/tools/fsrs.mjs`, Android `Fsrs`, SQL `private.fsrs_review`; üçü `tests/fixtures/fsrs-vectors.csv` ile sabitlenir). Doğru = Good, yanlış = Again.
+- Yanlış cevap yine 10 dakika sonra gelir. Erken veya aynı gün verilen doğru cevap yine hiçbir şeyi değiştirmez.
+- `user_word_state` `stability`, `difficulty` ve `last_reviewed_at` alanlarını taşır. "known" durumu kararlılık ≥ 21 gündür.
+- **Uyumluluk:** `interval_days` eski uygulamaların doğruladığı kademelerde (0/1/3/7/14/30) kalır ve FSRS aralığının altındaki en yakın kademedir. Gerçek takvim `next_review_at`'tir.
+- Taşıma: mevcut kayıtlar kararlılık = aralık (en az 0,4), zorluk = 5 ile başlar. Bir kelimenin sonraki olayı bütün geçmişini FSRS ile yeniden oynatır.
+
 ### Okuma konumu
 
 `apply_progress_event(p_event)`:

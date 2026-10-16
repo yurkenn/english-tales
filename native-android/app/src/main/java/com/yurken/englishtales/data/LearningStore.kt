@@ -185,13 +185,15 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     }
     fun reviewWord(wordId: String, correct: Boolean) {
         transaction {db ->
-            db.rawQuery("SELECT correct_count,last_review_day,next_review_at FROM saved_words WHERE word_id=?",arrayOf(wordId)).use {c ->
+            db.rawQuery("SELECT correct_count,last_review_day,next_review_at,stability,difficulty,last_reviewed_at FROM saved_words WHERE word_id=?",arrayOf(wordId)).use {c ->
                 if(c.moveToFirst()) {
                     enqueueWord(wordId,"review",correct,clock())
                     if(!correct) recordEvent(db,ReviewFocus.missEventId(wordId,LearningPolicy.dayKey(clock())),"word_missed",clock())
-                    val plan=LearningPolicy.review(c.getInt(0),correct,c.getString(1),c.getLong(2),clock())
+                    val memory=if(c.isNull(3) || c.isNull(4)) null else Fsrs.Memory(c.getDouble(3),c.getDouble(4))
+                    val plan=LearningPolicy.review(c.getInt(0),correct,c.getString(1),c.getLong(2),clock(),memory,if(c.isNull(5)) null else c.getLong(5))
                     if(plan!=null) db.update("saved_words",ContentValues().apply {
                         put("correct_count",plan.correctCount);put("learning_state",plan.state);put("interval_days",plan.intervalDays);put("next_review_at",plan.dueAt);put("last_review_day",plan.successfulDay)
+                        put("stability",plan.memory?.stability);put("difficulty",plan.memory?.difficulty);put("last_reviewed_at",plan.reviewedAt)
                     },"word_id=?",arrayOf(wordId))
                 }
             }

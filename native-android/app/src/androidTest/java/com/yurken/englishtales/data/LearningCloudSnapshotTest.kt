@@ -58,6 +58,16 @@ class LearningCloudSnapshotTest {
         rejected(full().also { it.getJSONObject("profile").put("preferences_version", "3") })
         rejected(empty().put("capturedAt", "2026-10-11T10:00:00"))
     }
+    @Test fun fsrsMemoryIsReadWhenPresentAndOptionalForOlderServers() {
+        assertNull(LearningCloudSnapshot.decode(full(), user).words.single().stability)
+        val json = full().also { it.getJSONArray("words").getJSONObject(0).put("stability", 10.73).put("difficulty", 5)
+            .put("last_reviewed_at", time) }
+        val word = LearningCloudSnapshot.decode(json, user).words.single()
+        assertEquals(10.73, word.stability!!, 1e-12);assertEquals(5.0, word.difficulty!!, 1e-12);assertEquals(LearningCloudSnapshot.decode(json, user).capturedAt, word.lastReviewedAt)
+        assertEquals(10.73, LearningCloudSnapshot.decode(LearningCloudSnapshot.decode(json, user).json(), user).words.single().stability!!, 1e-12)
+        rejected(full().also { it.getJSONArray("words").getJSONObject(0).put("stability", 1).put("difficulty", 11) })
+        rejected(full().also { it.getJSONArray("words").getJSONObject(0).put("stability", -1).put("difficulty", 5) })
+    }
     @Test fun oversizedArrayIsRejectedAsWhole() {
         val json = full()
         val word = json.getJSONArray("words").getJSONObject(0)

@@ -478,16 +478,35 @@ test('preference versions protect changes made on another device',async()=>{
   assert.equal(profile.display_name,'Ada');assert.equal(profile.preferences_version,2);
   await assert.rejects(user(alice,"select public.save_learning_preferences(2,'Ada','A2','Macera',3,'Not/AZone')"),/invalid_timezone/);
 });
-test('scheduled reviews use 1/3/7 day intervals, ignore early repeats and reset after mistakes',async()=>{
-  await rpc(alice,'apply_word_event',word({occurredAt:iso(-20)}));
+test('scheduled reviews follow FSRS-5, keep legacy interval buckets, ignore early repeats and reset after mistakes',async()=>{
+  const {review,intervalDays}=await import('../tools/fsrs.mjs');
+  await rpc(alice,'apply_word_event',word({occurredAt:iso(-40)}));
   const answer=(days,seconds=1,correct=true)=>word({action:'review',correct,occurredAt:iso(days,seconds)});
-  let result=await rpc(alice,'apply_word_event',answer(-20));assert.equal(result.wordState.interval_days,1);
-  result=await rpc(alice,'apply_word_event',answer(-20,30));assert.equal(result.wordState.correct_count,1);
-  result=await rpc(alice,'apply_word_event',answer(-19));assert.equal(result.wordState.interval_days,3);
-  result=await rpc(alice,'apply_word_event',answer(-16));assert.equal(result.wordState.interval_days,7);assert.equal(result.wordState.learning_state,'known');
-  result=await rpc(alice,'apply_word_event',answer(-16,60,false));assert.equal(result.wordState.correct_count,0);assert.equal(result.wordState.learning_state,'learning');
-  result=await rpc(alice,'apply_word_event',answer(-16,120));assert.equal(result.wordState.correct_count,0);
-  result=await rpc(alice,'apply_word_event',answer(-16,660));assert.equal(result.wordState.correct_count,1);
+  const bucket=d=>[30,14,7,3,1].find(b=>b<=d)??1;
+  const check=(result,memory,lastDays,reviewDays)=>{
+    const w=result.wordState;
+    assert.ok(Math.abs(w.stability-memory.s)<1e-9&&Math.abs(w.difficulty-memory.d)<1e-9,JSON.stringify(w));
+    assert.equal(w.interval_days,bucket(intervalDays(memory.s)));
+    assert.equal(new Date(w.next_review_at).getTime(),new Date(iso(lastDays,1)).getTime()+intervalDays(memory.s)*86400000);
+    assert.equal(w.learning_state,memory.s>=21?'known':'reviewing');
+    return lastDays+intervalDays(memory.s);
+  };
+  let memory=review(null,true,0);
+  let due=check(await rpc(alice,'apply_word_event',answer(-40)),memory,-40);
+  // A same-day repeat and an early answer change nothing.
+  assert.equal((await rpc(alice,'apply_word_event',answer(-40,30))).wordState.correct_count,1);
+  assert.equal((await rpc(alice,'apply_word_event',answer(due-1))).wordState.correct_count,1);
+  memory=review(memory,true,due-(-40));let last=due;
+  due=check(await rpc(alice,'apply_word_event',answer(due)),memory,due);
+  memory=review(memory,true,due-last);
+  check(await rpc(alice,'apply_word_event',answer(due)),memory,due);
+  let result=await rpc(alice,'apply_word_event',answer(due,60,false));
+  assert.equal(result.wordState.correct_count,0);assert.equal(result.wordState.learning_state,'learning');assert.equal(result.wordState.interval_days,0);
+  result=await rpc(alice,'apply_word_event',answer(due,120));assert.equal(result.wordState.correct_count,0);
+  result=await rpc(alice,'apply_word_event',answer(due,660));assert.equal(result.wordState.correct_count,1);
+  // Removing the word forgets its memory.
+  result=await rpc(alice,'apply_word_event',word({action:'remove',occurredAt:iso(due,700)}));
+  assert.equal(result.wordState.stability,null);assert.equal(result.wordState.difficulty,null);
 });
 test('late offline saves cannot resurrect a removed word; replayed answers stay idempotent',async()=>{
   const save=word({occurredAt:iso(0,-120)}),review=word({action:'review',correct:true,occurredAt:iso(0,-100)}),remove=word({action:'remove',occurredAt:iso(0,-30)});

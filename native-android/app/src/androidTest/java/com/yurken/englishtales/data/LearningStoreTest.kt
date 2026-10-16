@@ -111,9 +111,15 @@ class LearningStoreTest {
         assertEquals(listOf("morning"),store.snapshot().dueWordIds)
         store.close();store=LearningStore(context) {now}
         assertEquals("reviewing",store.snapshot().wordStates["quiet"])
+        // Q5.7: FSRS spaces the next review from the memory left by the first answer.
+        val first=Fsrs.review(null,true,0.0)
         now+=LearningPolicy.DAY_MS
         store.reviewWord("quiet",true)
-        assertEquals(now+3*LearningPolicy.DAY_MS,store.snapshot().nextReviewAt)
+        assertEquals("an early answer changes nothing",now-LearningPolicy.DAY_MS+Fsrs.intervalDays(first.stability)*LearningPolicy.DAY_MS,store.snapshot().nextReviewAt)
+        now+=(Fsrs.intervalDays(first.stability)-1)*LearningPolicy.DAY_MS
+        store.reviewWord("quiet",true)
+        val second=Fsrs.review(first,true,Fsrs.intervalDays(first.stability).toDouble())
+        assertEquals(now+Fsrs.intervalDays(second.stability)*LearningPolicy.DAY_MS,store.snapshot().nextReviewAt)
         store.reviewWord("quiet",false)
         assertEquals("learning",store.snapshot().wordStates["quiet"])
         assertEquals(now+600000,store.snapshot().nextReviewAt)
@@ -227,7 +233,7 @@ class LearningStoreTest {
         store=LearningStore(context) {now}
         assertEquals(125,store.snapshot().points);assertEquals(88,store.snapshot().storyProgress["quiet-morning"])
         assertEquals("known",store.snapshot().wordStates["quiet"]);assertEquals(listOf("quiet"),store.snapshot().dueWordIds)
-        assertEquals(9,store.readableDatabase.version)
+        assertEquals(10,store.readableDatabase.version)
     }
 
     @Test fun versionOneMigrationKeepsExistingProgress() {
@@ -241,7 +247,7 @@ class LearningStoreTest {
         }
         store=LearningStore(context) {now}
         assertEquals(25,store.snapshot().points);assertEquals(44,store.snapshot().storyProgress["quiet-morning"])
-        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(9,store.readableDatabase.version)
+        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(10,store.readableDatabase.version)
         assertTrue(store.queuedOperations().isEmpty())
     }
 

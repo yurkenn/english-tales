@@ -14,7 +14,10 @@ data class SavedWordRow(@PrimaryKey @ColumnInfo(name="word_id") val id: String,
     @ColumnInfo(name="correct_count",defaultValue="0") val count: Int=0,
     @ColumnInfo(name="next_review_at",defaultValue="0") val dueAt: Long=0,
     @ColumnInfo(name="interval_days",defaultValue="0") val interval: Int=0,
-    @ColumnInfo(name="last_review_day") val successfulDay: String?=null)
+    @ColumnInfo(name="last_review_day") val successfulDay: String?=null,
+    /** Q5.7 FSRS memory; null until the word is first answered. */
+    val stability: Double?=null, val difficulty: Double?=null,
+    @ColumnInfo(name="last_reviewed_at") val lastReviewedAt: Long?=null)
 @Entity(tableName="story_progress")
 data class StoryProgressRow(@PrimaryKey @ColumnInfo(name="story_id") val id: String, val percent: Int,
     @ColumnInfo(name="revision_id") val revisionId: String?=null,
@@ -115,7 +118,7 @@ sealed class LearningOwner(val id: String,val databaseName: String) {
 
 @Database(entities=[SavedWordRow::class,StoryProgressRow::class,LearningStatsRow::class,LearningDayRow::class,
     EngagementRow::class,BadgeRow::class,LocalProfileRow::class,LocalIdentityRow::class,QueuedLearningOperation::class,SessionDraftRow::class,
-    GuestTransferRow::class,GuestImportRow::class,LearningCloudStateRow::class,FavoriteStoryRow::class,PersonalWordRow::class,LemmaReadRow::class,LemmaLookupRow::class],version=9,exportSchema=true)
+    GuestTransferRow::class,GuestImportRow::class,LearningCloudStateRow::class,FavoriteStoryRow::class,PersonalWordRow::class,LemmaReadRow::class,LemmaLookupRow::class],version=10,exportSchema=true)
 abstract class LearningDatabase: RoomDatabase() {
     abstract fun offline(): OfflineLearningDao
     companion object {
@@ -164,6 +167,13 @@ abstract class LearningDatabase: RoomDatabase() {
                 .addMigrations(object: Migration(8,9) {override fun migrate(db: SupportSQLiteDatabase) {
                     db.execSQL("CREATE TABLE lemma_reads(lemma TEXT NOT NULL,story_id TEXT NOT NULL,PRIMARY KEY(lemma,story_id))")
                     db.execSQL("CREATE TABLE lemma_lookups(lemma TEXT NOT NULL PRIMARY KEY,looked_up_at INTEGER NOT NULL)")
+                }})
+                .addMigrations(object: Migration(9,10) {override fun migrate(db: SupportSQLiteDatabase) {
+                    val columns=db.query("PRAGMA table_info(saved_words)").use {c -> buildSet {while(c.moveToNext()) add(c.getString(c.getColumnIndexOrThrow("name")))}}
+                    for((column,type) in listOf("stability" to "REAL","difficulty" to "REAL","last_reviewed_at" to "INTEGER"))
+                        if(column !in columns) db.execSQL("ALTER TABLE saved_words ADD COLUMN $column $type")
+                    // Q5.7: words reviewed before FSRS start from their current interval.
+                    db.execSQL("UPDATE saved_words SET stability=MAX(interval_days,0.4),difficulty=5 WHERE stability IS NULL AND interval_days>0")
                 }})
                 .addCallback(object: Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) { initialize(db,owner.id,initial);db.execSQL("INSERT INTO learning_stats(id) VALUES(1)") }

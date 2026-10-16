@@ -106,6 +106,7 @@ internal object LearningReconciliation {
                 replace(db,"saved_words",ContentValues().apply {
                     put("word_id",w.id);put("learning_state",w.state);put("correct_count",w.correctCount)
                     put("next_review_at",w.dueAt ?: 0);put("interval_days",w.intervalDays);put("last_review_day",w.successDay)
+                    put("stability",w.stability);put("difficulty",w.difficulty);put("last_reviewed_at",w.lastReviewedAt)
                 })
             }
         }
