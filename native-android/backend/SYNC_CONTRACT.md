@@ -131,6 +131,15 @@ Cümle belirtilen sürüme ait olmalıdır. Tamamlanma yüzdesi 0–100 arasınd
 
 İlk uygulamada görünür cümle değiştiğinde yazılmalı; gereksiz her piksel kaydırması için ağ kaydı oluşturulmamalıdır. Tekrar teslimatta yalnızca `applied=false`, yeni kayıtta `applied=true` ve `progress` döner.
 
+### Favoriler (F09b)
+
+`apply_favorite_event(p_event)` · alanlar: `id`, `installationId`, `storyId`, `favorite` (boolean), `occurredAt`.
+
+- Aynı `id` aynı içerikle tekrar gelirse `applied=false` döner; farklı içerikle `operation_id_payload_conflict`.
+- Her hikâyenin durumu, `(occurred_at, id)` sırasına göre en son olaydır. Geç yüklenen eski bir ekleme, daha yeni bir çıkarmayı geri getirmez.
+- `get_learning_snapshot` `favorites` alanında `{story_id, favorite, updated_at}` döner; çıkarılan favori `favorite=false` olarak kalır (tombstone).
+- İstemci gönderilmemiş favori işlemlerini korur; sunucu oynatınca anlık görüntü yerel durumu belirler. `favorites` alanı olmayan eski sunucularda yerel favorilere dokunulmaz. Hikâye arşivlense de favori kaydı kalır; ekranlar yalnız açılabilen hikâyeleri listeler.
+
 ## Seri, hedef ve saat dilimi
 
 Seri yalnızca sayılan, tamamlanan öğrenme günlerinden hesaplanır. Son etkin gün bugün veya dün değilse seri 0'dır. Sadece uygulamayı açmak öğrenme adımı değildir. Geç ulaşan çevrimdışı günler ardışık gün geçmişini tamamlayabilir. Kazanılan başarılar daha sonra serinin düşmesiyle silinmez.

@@ -98,6 +98,26 @@ class LearningReconciliationTest {
         assertEquals(3,JSONObject(local.cloudState()!!.snapshotJson).getJSONArray("words").length())
         assertTrue(local.queuedOperations().all { it.state=="pending" })
     }
+    @Test fun favoritesFollowTheAccountWhilePendingTapsAndOldServersAreRespected() {
+        val local=store()
+        local.setFavorite("quiet-morning",true);local.setFavorite("quiet-morning",true)
+        assertEquals(1,local.queuedOperations().count { it.rpc=="apply_favorite_event" })
+        local.writableDatabase.execSQL("INSERT INTO favorite_stories(story_id,added_at) VALUES('lost-map',0),('device-only',0)")
+        val favorites=listOf(CloudStoryFavorite("quiet-morning",false,now),CloudStoryFavorite("lost-map",false,now),CloudStoryFavorite("paper-boat",true,now))
+        // A server that predates favorite sync sends no list: nothing local changes.
+        apply(local,cloud())
+        assertEquals(setOf("quiet-morning","lost-map","device-only"),local.snapshot().favoriteStoryIds.toSet())
+        apply(local,cloud().copy(favorites=favorites))
+        // The unsent add wins over the cloud tombstone; other tombstones remove, cloud adds arrive.
+        assertEquals(setOf("quiet-morning","device-only","paper-boat"),local.snapshot().favoriteStoryIds.toSet())
+        assertTrue(JSONObject(local.cloudState()!!.snapshotJson).has("favorites"))
+        val op=local.queuedOperations().single { it.rpc=="apply_favorite_event" }
+        assertEquals(JSONObject().put("storyId","quiet-morning").put("favorite",true).toString(),
+            JSONObject(op.payload).let { JSONObject().put("storyId",it.getString("storyId")).put("favorite",it.getBoolean("favorite")).toString() })
+        assertTrue(local.markDelivered(op.id,user))
+        apply(local,cloud().copy(favorites=favorites))
+        assertFalse("quiet-morning" in local.snapshot().favoriteStoryIds)
+    }
     @Test fun pendingReviewKeepsScheduleUntilDeliveryAndNextSnapshot() {
         val local=store();local.saveWords(listOf("quiet"));local.reviewWord("quiet",true)
         val before=local.snapshot().nextReviewAt

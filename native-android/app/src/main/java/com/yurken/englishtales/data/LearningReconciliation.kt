@@ -101,6 +101,13 @@ internal object LearningReconciliation {
                 put("next_review_at",w.dueAt ?: 0);put("interval_days",w.intervalDays);put("last_review_day",w.successDay)
             })
         }
+        // Favorites follow the same rule: unsent local changes win until the server has replayed them.
+        val protectedFavorites = operations.filter { it.getString("rpc") == "apply_favorite_event" && it.getString("state") != "delivered" }
+            .map { JSONObject(it.getString("payload")).getString("storyId") }.toSet()
+        cloud.favorites?.filter { it.storyId !in protectedFavorites }?.forEach { f ->
+            if (!f.favorite) db.delete("favorite_stories","story_id=?",arrayOf(f.storyId))
+            else db.insert("favorite_stories",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("story_id",f.storyId);put("added_at",f.updatedAt)})
+        }
         mergeProgress(db,cloud,operations)
         cloud.badges.forEach { b -> db.execSQL("INSERT OR IGNORE INTO earned_badges(badge_id,earned_at) VALUES(?,?)",arrayOf<Any?>(b.id,b.earnedAt)) }
 
