@@ -35,9 +35,19 @@ private data class Catalog(
     val phrases by lazy { PhraseMatcher.Index(words) }
 }
 
+/** Sentence IDs are stable across revisions, so a position carries over while its sentence still exists. */
+fun ReadingPosition.carriesTo(story: Story) = revisionId==story.revisionId || story.sentences.any {it.id==sentenceId}
+
+/** The saved older revision to reopen, or null when the current revision continues the position. */
+fun LearningSnapshot.resumeRevision(storyId: String): String? {
+    val position=readingPositions[storyId] ?: return null
+    if(LearningContent.storyById[storyId]?.let(position::carriesTo)==true) return null
+    return position.revisionId.takeIf {LearningContent.revision(it)!=null}
+}
+
 fun LearningSnapshot.progressFor(story: Story): Int {
     val position=readingPositions[story.id]
-    if(position!=null && position.revisionId!=story.revisionId) return 0
+    if(position!=null && !position.carriesTo(story)) return 0
     if(position==null && story.revisionId!=ContentRevisionIds.bundled(story.id)) return 0
     return storyProgress[story.id]?:0
 }
@@ -59,6 +69,10 @@ object LearningContent {
 
     private val loadLock = Any()
 
+    /** The packaged stories, unchanged after a remote catalog is installed. */
+    @Volatile private var bundled: List<Story>? = null
+    val bundledStories: List<Story> get() = checkNotNull(bundled) { "LearningContent.initialize must run before UI" }
+
     /** True once the bundled catalog is installed; readable from composition. */
     val ready: Boolean get() = catalog != null
 
@@ -68,11 +82,11 @@ object LearningContent {
     /** Blocking variant for callers that already run off the UI thread (stores, workers, tests). */
     fun initialize(context: Context) {
         if (catalog != null) return
-        synchronized(loadLock) { if (catalog == null) catalog = parse(context) }
+        synchronized(loadLock) { if (catalog == null) catalog = parse(context).also { bundled = it.stories } }
     }
 
     @androidx.annotation.VisibleForTesting
-    internal fun resetForTest() = synchronized(loadLock) { catalog = null; pinned.clear(); historical.clear(); wordSources.clear() }
+    internal fun resetForTest() = synchronized(loadLock) { catalog = null; bundled = null; pinned.clear(); historical.clear(); wordSources.clear() }
 
     private fun parse(context: Context): Catalog {
         val json = context.assets.open("catalog/v1.json").bufferedReader(Charsets.UTF_8).use { it.readText() }

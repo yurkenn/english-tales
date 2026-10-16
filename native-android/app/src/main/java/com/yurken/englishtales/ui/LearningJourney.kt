@@ -25,7 +25,7 @@ import java.util.Locale
 @Composable
 fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (List<String>)->Unit) {
     val position=snapshot.readingPositions[snapshot.lastStoryId]
-    val resume=(position?.let {LearningContent.revision(it.revisionId)} ?: LearningContent.storyById[snapshot.lastStoryId])?.takeIf {snapshot.progressFor(it)<100}
+    val resume=(position?.let {p -> LearningContent.storyById[snapshot.lastStoryId]?.takeIf {p.carriesTo(it)} ?: LearningContent.revision(p.revisionId)} ?: LearningContent.storyById[snapshot.lastStoryId])?.takeIf {snapshot.progressFor(it)<100}
     val next=resume?:LearningContent.recommendedStory(snapshot.level,snapshot.preferredGenre,LearningContent.stories.associate {it.id to snapshot.progressFor(it)})
     Column(Modifier.padding(horizontal=16.dp).fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(16.dp)) {
         Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
