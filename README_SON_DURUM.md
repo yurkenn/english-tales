@@ -1,6 +1,14 @@
 # English Tales — son çalışmalar ve yayın durumu
 
-Son güncelleme: **15 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
+Son güncelleme: **16 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
+
+## Erişilebilirlik ve içerik denetimi — 16 Ekim 2026
+
+Q3 erişilebilirlik/yerelleştirme işleri ana dala birleşti: 306 ekran metni `strings.xml`'e taşındı (#30), TalkBack rol ve etiketleri eklendi (#31), uygulama geneli koyu tema (#32) ve fontScale 2.0 / küçük ekran düzeni (#34). Otomatik denetimler (`AccessibilityAuditTest`, `TaleColorsContrastTest`, `DarkThemeTest`, `LargeTextLayoutTest`) eklendi. Q3 kapısının kapanması için gerçek TalkBack ile ana yolculuğun elle kaydı gerekir.
+
+[İçerik denetimi](native-android/docs/CONTENT_QUALITY_AUDIT.md) (#33) paket ile canlı yayını karşılaştırır. 50 hikâye ve 1.002 cümle eşleşiyor; ancak 43 kelime/ifade ID'si canlıda yok ve 39 hikâye etkileniyor. A1/A2 sözlük kapsaması hedefin (%60) altında: canlıda A1 %23,5, A2 %15,4. Bu çalışma canlı veriyi değiştirmedi.
+
+Bu güncellemede Play Console durumu kontrol edilmedi ve yeni yayın yapılmadı. 48 / 2.0.0 inceleme sonucu belgelenmedi; #7 sonrası uygulama değişiklikleri kullanıcıya bir sonraki sürümle (49) ulaşacak. Takip: [kalite yol haritası](native-android/docs/QUALITY_ROADMAP.md).
 
 ## Kalite güncellemesi — 15 Ekim 2026
 
