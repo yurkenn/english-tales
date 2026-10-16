@@ -74,7 +74,8 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
             composable("story/{storyId}",arguments=listOf(navArgument("storyId") { type=NavType.StringType })) { entry ->
                 LearningContent.storyById[entry.arguments?.getString("storyId")]?.let { story ->
                     StoryDetailScreen(story,snapshot.progressFor(story),onBack={nav.popBackStack()},onRead={nav.navigate("reader/${story.id}")},onListen={nav.navigate("reader/${story.id}?listen=true")},onTabSelected={selectedTab=it; nav.popBackStack("main",false)},content=content,
-                        favorite=story.id in snapshot.favoriteStoryIds,onToggleFavorite={viewModel.toggleFavorite(story.id)})
+                        favorite=story.id in snapshot.favoriteStoryIds,onToggleFavorite={viewModel.toggleFavorite(story.id)},
+                        newWords=if(snapshot.knownWordCount>0) remember(story.revisionId,snapshot.wordStages) {StoryDifficulty.estimate(story,snapshot.wordStages)}?.newWords else null)
                 }
             }
             composable("reader/{storyId}?listen={listen}&revision={revision}",arguments=listOf(navArgument("storyId") {type=NavType.StringType},navArgument("listen") {type=NavType.BoolType;defaultValue=false},navArgument("revision") {type=NavType.StringType;defaultValue=""})) { entry ->

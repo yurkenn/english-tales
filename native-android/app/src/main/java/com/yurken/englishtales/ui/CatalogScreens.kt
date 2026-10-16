@@ -38,6 +38,7 @@ import com.yurken.englishtales.data.LearningContent
 import com.yurken.englishtales.data.LearningSnapshot
 import com.yurken.englishtales.data.savedWordList
 import com.yurken.englishtales.data.WordStage
+import com.yurken.englishtales.data.StoryDifficulty
 import com.yurken.englishtales.data.ReadingStatus
 import com.yurken.englishtales.data.StoryFilters
 import com.yurken.englishtales.data.Story
@@ -74,7 +75,9 @@ private fun ChallengeBanner(onClick: () -> Unit) {
 
 @Composable
 fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpenWords: () -> Unit, padding: PaddingValues, onRead: (String)->Unit, onPractice: (List<String>)->Unit) {
-    val stories=LearningContent.stories.sortedByDescending { it.level==snapshot.level }
+    // Q5.6: unfinished stories at the learner's level that they can read most comfortably come first.
+    val catalog=LearningContent.stories
+    val stories=remember(catalog,snapshot) {StoryDifficulty.recommended(catalog,snapshot)}
     var showAll by rememberSaveable { mutableStateOf(false) }
     BackHandler(enabled=showAll) { showAll=false }
     if(showAll) {
@@ -222,7 +225,7 @@ private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String)
 
 @Composable
 fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: () -> Unit, onListen: () -> Unit, onTabSelected: (Int) -> Unit, content: com.yurken.englishtales.data.ContentViewModel? = null,
-    favorite: Boolean = false, onToggleFavorite: (() -> Unit)? = null) {
+    favorite: Boolean = false, onToggleFavorite: (() -> Unit)? = null, newWords: Int? = null) {
     val context=LocalContext.current
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding()) {
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth)) {
@@ -235,6 +238,8 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                     Spacer(Modifier.height(16.dp))
                     Text("▮▮▮  "+stringResource(when(story.level){"A1"->R.string.zorluk_kolay;"A2"->R.string.zorluk_orta;else->R.string.zorluk_zor}),color=if(story.level=="A1") TaleBlue else TaleWarm,fontSize=14.sp)
                     ReadingMinutes(story,Modifier.padding(top=4.dp))
+                    // Q5.6: shown once the learner has known words, so a new learner is not told "120 new words".
+                    newWords?.let { Text(pluralStringResource(R.plurals.story_new_words,it,it),color=TaleMuted,fontSize=11.sp,modifier=Modifier.padding(top=4.dp)) }
                     Spacer(Modifier.height(16.dp))
                     Row(horizontalArrangement=Arrangement.spacedBy(4.dp)) {
                         ReferenceIconButton("read",stringResource(R.string.hikayeyi_oku),onRead)
