@@ -6,11 +6,11 @@ Son güncelleme: **16 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalı�
 
 Canlı Play Console’da **48 / 2.0.0 üretimde %100** olarak doğrulandı. GitHub `release` ortamı ve beş zorunlu secret kuruldu; **49 / 2.1.0** için [ilk yüklemesiz CI çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı. Play’e yeni paket yüklenmedi. Altı 16 Ekim migration’ı onayla canlıya uygulandı; 144 backend testi, yayın yedeğinin yerel geri yüklemesi, içerik bütünlüğü ve RLS kontrolleri geçti. Data safety güncellendi ve Google incelemesine gönderildi. `englishtales-app.web.app` için assetlinks.json yayımlandı, Google `linked: true` doğruladı. [Kanıtlar, migration eşlemesi ve kalan işler](senin-adimlarin.md).
 
-TalkBack telefon kabulü, isteğe bağlı Play servis hesabı/dahili kanal yüklemesi, Analytics canlı olay kabulü ve uygulama içi App Links yönlendirmesi açık. Aşağıdaki önceki tarihli yayın notları tarihseldir; güncel durum için yukarıdaki kayıt esas alınır.
+Kullanıcı 16 Ekim’de telefonda TalkBack yolculuğunu sorunsuz tamamladığını bildirdi; Q3 kapanışı için denenen paketin yeni erişilebilirlik kodunu içerdiği doğrulanmalı. İsteğe bağlı Play servis hesabı/dahili kanal yüklemesi, Analytics canlı olay kabulü ve uygulama içi App Links yönlendirmesi açık. Aşağıdaki önceki tarihli yayın notları tarihseldir; güncel durum için yukarıdaki kayıt esas alınır.
 
 ## Erişilebilirlik ve içerik denetimi — 16 Ekim 2026
 
-Q3 erişilebilirlik/yerelleştirme işleri ana dala birleşti: 306 ekran metni `strings.xml`'e taşındı (#30), TalkBack rol ve etiketleri eklendi (#31), uygulama geneli koyu tema (#32) ve fontScale 2.0 / küçük ekran düzeni (#34). Otomatik denetimler (`AccessibilityAuditTest`, `TaleColorsContrastTest`, `DarkThemeTest`, `LargeTextLayoutTest`) eklendi. Q3 kapısının kapanması için gerçek TalkBack ile ana yolculuğun elle kaydı gerekir.
+Q3 erişilebilirlik/yerelleştirme işleri ana dala birleşti: 306 ekran metni `strings.xml`'e taşındı (#30), TalkBack rol ve etiketleri eklendi (#31), uygulama geneli koyu tema (#32) ve fontScale 2.0 / küçük ekran düzeni (#34). Otomatik denetimler (`AccessibilityAuditTest`, `TaleColorsContrastTest`, `DarkThemeTest`, `LargeTextLayoutTest`) eklendi. Kullanıcı gerçek TalkBack ile ana yolculuğu sorunsuz denediğini bildirdi; Q3 kapısı için paket sürümü doğrulaması bekleniyor.
 
 [İçerik denetimi](native-android/docs/CONTENT_QUALITY_AUDIT.md) (#33) paket ile canlı yayını karşılaştırır. 50 hikâye ve 1.002 cümle eşleşiyor; ancak 43 kelime/ifade ID'si canlıda yok ve 39 hikâye etkileniyor. A1/A2 sözlük kapsaması hedefin (%60) altında: canlıda A1 %23,5, A2 %15,4. Bu çalışma canlı veriyi değiştirmedi.
 

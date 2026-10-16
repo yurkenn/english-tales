@@ -8,7 +8,7 @@
 - [x] Mevcut Play yükleme anahtarının SHA-1 değeri doğrulandı: `EF:07:C9:73:55:FD:F7:63:14:C7:AA:94:6E:FC:A4:44:D7:2D:48:30`.
 - [x] Beş zorunlu ortam secret'ı kaydedildi: `ANDROID_UPLOAD_KEYSTORE_BASE64`, `ANDROID_UPLOAD_STORE_PASSWORD`, `ANDROID_UPLOAD_KEY_ALIAS`, `ANDROID_UPLOAD_KEY_PASSWORD`, `GOOGLE_SERVICES_JSON_BASE64`. Özel değerler kaynaklara veya rapora eklenmedi.
 - [x] İlk yüklemesiz [GitHub çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı: **49 / 2.1.0**, commit `0c7ac02c0551ed3b0edf9297bfdfdd1cf872a9f9`. İmzalı APK/AAB, Crashlytics mapping yükleme görevi ve statik paket doğrulaması geçti.
-- [ ] İsteğe bağlı `PLAY_SERVICE_ACCOUNT_JSON` ve otomatik dahili kanal yüklemesi kurulmadı. Bu çalışma Play'e APK/AAB yüklemedi.
+- [ ] İsteğe bağlı `PLAY_SERVICE_ACCOUNT_JSON` ve otomatik dahili kanal yüklemesi kurulmadı. Kullanıcı amacı hakkında açıklama istedi; kurulum tercihi henüz verilmedi. Bu çalışma Play'e APK/AAB yüklemedi.
 
 APK **9.307.385 bayt**, AAB **13.387.779 bayt**. APK SHA-256 `6edd637535ad6d99746720918842ca451b668b05116dd0a6970bd536bdfae07c`; AAB SHA-256 `ad787b1a715462a9fe9fb63e1bb4b4c0ce4fbe80327793b599a6f07dbe5e8e39`. [Rapor](native-android/docs/release-evidence/2026-10-16-ci-49.json), [kurulum ve kullanım](native-android/docs/RELEASE_AUTOMATION.md).
 
@@ -58,9 +58,10 @@ Uygulama: `com.yurken.englishtales`; SHA-256 `13:EF:59:10:FD:56:B0:A4:3F:5D:65:7
 
 Planlanan paylaşım adresi `https://englishtales-app.web.app/story/{id}`. Android manifest intent-filter, gelen bağlantıyı hikâyeye yönlendirme ve uygulama kurulu değilken web karşılığı bu çalışmada eklenmedi; uçtan uca paylaşım tamamlandı sayılmaz. [Android ilişkilendirme belgesi](https://developer.android.com/training/app-links/configure-assetlinks).
 
-## 5. TalkBack — gerçek telefon kontrolü bekliyor
+## 5. TalkBack — kullanıcı testi sorunsuz, paket sürümü bekleniyor
 
-- [ ] Telefonda TalkBack açıkken açılış → kitaplık → hikâye → okuma → kelime kaydetme → alıştırma yolculuğu için kullanıcı sonucu henüz alınmadı. **Q3 kapısı açık.** Otomatik erişilebilirlik testleri bu kabulün yerine geçmez.
+- [x] 16 Ekim 2026: kullanıcı telefonda TalkBack ile açılış → kitaplık → hikâye → okuma → kelime kaydetme → alıştırma yolunu denediğini ve sorun görmediğini bildirdi. Kaynak: bu sohbetteki “Denedim, sorun yok” yanıtı.
+- [ ] Denenen paket sürümü/commit henüz belirtilmedi. Yeni erişilebilirlik değişikliklerini içeren 49 adayı veya güncel geliştirme APK’sıyla yapıldığı doğrulanınca **Q3 kapısı kapatılabilir**; mağazadaki 48 için sonuç tek başına yeterli değildir. Cihaz/Android/TalkBack sürümü kaydedilmedi; bağımsız test kaydı varmış gibi sunulmaz.
 
 ## Play sürümü
 
