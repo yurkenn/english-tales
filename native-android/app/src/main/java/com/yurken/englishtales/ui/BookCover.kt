@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import androidx.annotation.DrawableRes
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -92,11 +93,11 @@ fun BookCover(story: Story, modifier: Modifier = Modifier) {
                 runCatching {android.graphics.BitmapFactory.decodeFile(path,android.graphics.BitmapFactory.Options().apply {inSampleSize=2})?.asImageBitmap()}.getOrNull()
             }}
         }.value
-        if(bitmap!=null) Image(bitmap,"${story.title} kitabının kapağı",Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
-        else if(story.coverKey!="remote") Image(painterResource(coverResource(story.coverKey)),"${story.title} kitabının kapağı",Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
+        if(bitmap!=null) Image(bitmap,stringResource(R.string.kitabinin_kapagi, story.title),Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
+        else if(story.coverKey!="remote") Image(painterResource(coverResource(story.coverKey)),stringResource(R.string.kitabinin_kapagi, story.title),Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
         else Box(Modifier.fillMaxSize().background(TaleBlue))
         if(!compact) Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color.Black.copy(alpha=0.5f),Color.Transparent,Color.Black.copy(alpha=0.72f)))))
-        if(!compact) Text("ENGLISH TALES",fontSize=(7/artworkScale).sp,letterSpacing=(1/artworkScale).sp,color=Color.White,modifier=Modifier.align(Alignment.TopStart).padding(8.dp))
+        if(!compact) Text(stringResource(R.string.english_tales),fontSize=(7/artworkScale).sp,letterSpacing=(1/artworkScale).sp,color=Color.White,modifier=Modifier.align(Alignment.TopStart).padding(8.dp))
         Text(story.level,color=TaleInk,fontWeight=FontWeight.ExtraBold,fontSize=((if(compact) 8 else 12)/artworkScale).sp,
             modifier=Modifier.align(Alignment.TopEnd).background(TaleYellow,RoundedCornerShape(bottomStart=5.dp)).padding(horizontal=if(compact) 4.dp else 7.dp,vertical=if(compact) 5.dp else 9.dp))
         // Small list thumbnails have an adjacent, accessible title; avoid splitting tiny words on the artwork.

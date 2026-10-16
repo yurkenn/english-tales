@@ -61,11 +61,11 @@ internal fun ListeningGame(
         Text(stringResource(R.string.listen_instruction), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         val playLabel = stringResource(if (playing) R.string.listen_stop else if (index == 0 && !checked && selected == null) R.string.listen_play else R.string.listen_replay)
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Box(Modifier.size(88.dp).background(TaleBlue, CircleShape).semantics { contentDescription = playLabel }
+            Box(Modifier.size(88.dp).background(TaleBlue, CircleShape).contentLabel(playLabel)
                 .clickable(role = Role.Button) { if (playing) narrator.stop() else narrator.speak(question.word) },
                 contentAlignment = Alignment.Center) {
-                if (playing) Text("Ⅱ", color = Color.White, style = MaterialTheme.typography.headlineSmall)
-                else ReferenceIcon("volume", Color.White, Modifier.size(36.dp))
+                if (playing) Text("Ⅱ", color = TaleOnBlue, style = MaterialTheme.typography.headlineSmall)
+                else ReferenceIcon("volume", TaleOnBlue, Modifier.size(36.dp))
             }
             if (narrator.preparing) Text(stringResource(R.string.listen_preparing), color = TaleMuted, style = MaterialTheme.typography.bodySmall)
             narrator.error?.let { Text(it, color = TaleMuted, style = MaterialTheme.typography.bodySmall) }
