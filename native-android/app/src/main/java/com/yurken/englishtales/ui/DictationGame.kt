@@ -1,5 +1,6 @@
 package com.yurken.englishtales.ui
 
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -47,11 +48,11 @@ internal fun DictationGame(
             ReferenceIconButton("back", stringResource(R.string.gap_exit), { narrator.stop(); onExit() })
             Text(stringResource(R.string.gap_progress, index + 1, questions.size), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
         }
-        LinearProgressIndicator(progress = { index.toFloat() / questions.size }, modifier = Modifier.fillMaxWidth())
+        QuizProgress(index.toFloat() / questions.size)
         Text(stringResource(R.string.dictation_instruction), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         val playLabel = stringResource(if (playing) R.string.listen_stop else R.string.dictation_play)
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Box(Modifier.size(88.dp).background(TaleBlue, CircleShape).contentLabel(playLabel)
+            Box(Modifier.size(88.dp).pulseWhile(playing).background(TaleBlue, CircleShape).contentLabel(playLabel)
                 .clickable(role = Role.Button) { if (playing) narrator.stop() else narrator.speak(question.sentence) },
                 contentAlignment = Alignment.Center) {
                 if (playing) Text("Ⅱ", color = TaleOnBlue, style = MaterialTheme.typography.headlineSmall)
@@ -63,13 +64,10 @@ internal fun DictationGame(
         OutlinedTextField(value = typed, onValueChange = { if (!checked) typed = it.take(300) }, enabled = !checked,
             label = { Text(stringResource(R.string.dictation_field)) }, modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences))
-        if (checked) Text(
-            if (result.correct) stringResource(R.string.dictation_correct, question.sentence)
-            else pluralStringResource(R.plurals.dictation_incorrect, result.wrongWords, result.wrongWords, question.sentence),
-            style = MaterialTheme.typography.bodyLarge,
-            modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite },
-        )
-        Button(enabled = typed.isNotBlank() && !advanced, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp), onClick = {
+        AnswerFeedback(checked, result.correct, if (result.correct) stringResource(R.string.dictation_correct, question.sentence)
+            else pluralStringResource(R.plurals.dictation_incorrect, result.wrongWords, result.wrongWords, question.sentence))
+        Button(enabled = typed.isNotBlank() && !advanced, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
+            colors = if (checked && result.correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(), onClick = {
             if (!checked) checked = true
             else if (!advanced) {
                 advanced = true

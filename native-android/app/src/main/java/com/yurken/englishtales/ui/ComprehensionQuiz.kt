@@ -39,8 +39,11 @@ internal fun ComprehensionQuiz(storyId: String, questions: List<StoryQuestion>, 
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
             Text(stringResource(R.string.quiz_title), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
             if (finished) {
+                val alerts = LocalTaleAlerts.current
+                val perfect = stringResource(R.string.alert_quiz_perfect)
+                LaunchedEffect(attempt) { if (correctCount == questions.size) alerts.reward(perfect) }
                 Text(stringResource(R.string.quiz_result, correctCount, questions.size), style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
+                    modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite }.popOn(1))
                 best?.let { Text(stringResource(R.string.quiz_best, it.correct, it.total), color = TaleMuted) }
                 OutlinedButton(onClick = { attempt++ }, modifier = Modifier.fillMaxWidth()) { Text(stringResource(R.string.quiz_retry)) }
                 return@Column
@@ -53,18 +56,11 @@ internal fun ComprehensionQuiz(storyId: String, questions: List<StoryQuestion>, 
             Text(question.prompt, style = MaterialTheme.typography.titleMedium)
             Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 question.options.forEachIndexed { i, option ->
-                    Row(Modifier.fillMaxWidth().border(1.dp, if (selected == i) TaleBlue else TaleLine, RoundedCornerShape(10.dp))
-                        .selectable(selected = selected == i, enabled = !checked, role = Role.RadioButton, onClick = { selected = i }).padding(12.dp),
-                        verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                        RadioButton(selected = selected == i, onClick = null, enabled = !checked)
-                        Text(option, style = MaterialTheme.typography.bodyLarge)
-                    }
+                    AnswerOption(option, selected == i, optionState(selected == i, checked, i == question.answer), !checked, { selected = i })
                 }
             }
-            if (checked) Text(
-                if (selected == question.answer) stringResource(R.string.quiz_correct)
-                else stringResource(R.string.quiz_incorrect, question.options[question.answer]),
-                style = MaterialTheme.typography.bodyLarge, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite })
+            AnswerFeedback(checked, selected == question.answer, if (selected == question.answer) stringResource(R.string.quiz_correct)
+                else stringResource(R.string.quiz_incorrect, question.options[question.answer]))
             Button(enabled = selected != null, modifier = Modifier.fillMaxWidth(), onClick = {
                 if (!checked) {
                     checked = true

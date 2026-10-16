@@ -55,7 +55,7 @@ fun PlacementScreen(onUseLevel: (String) -> Unit, onCancel: () -> Unit, fromSett
                     }
                     complete -> {
                         val result = remember(answers) { ReadingPlacement.recommend(answers) }
-                        TalesMascot(MascotMood.Celebrate, Modifier.size(120.dp).align(Alignment.CenterHorizontally))
+                        TalesMascot(MascotMood.Celebrate, Modifier.size(120.dp).align(Alignment.CenterHorizontally), animate = true)
                         Text(stringResource(R.string.placement_result, result.level), style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                         Text(stringResource(R.string.placement_result_description), style = MaterialTheme.typography.bodyLarge)
                         ReadingPlacement.levels.forEach { level ->
@@ -71,26 +71,17 @@ fun PlacementScreen(onUseLevel: (String) -> Unit, onCancel: () -> Unit, fromSett
                     else -> {
                         val question = ReadingPlacement.questions[answers.size]
                         Text(stringResource(R.string.placement_progress, answers.size + 1, ReadingPlacement.questions.size), style = MaterialTheme.typography.labelLarge, color = TaleBlue)
-                        LinearProgressIndicator(progress = { answers.size.toFloat() / ReadingPlacement.questions.size }, modifier = Modifier.fillMaxWidth())
+                        QuizProgress(answers.size.toFloat() / ReadingPlacement.questions.size)
                         Text(stringResource(if (question.prompt.isEmpty()) R.string.placement_complete_sentence else R.string.placement_read_question), style = MaterialTheme.typography.titleMedium)
                         Surface(color = TaleLine, shape = RoundedCornerShape(12.dp)) {
                             Text(question.passage, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.fillMaxWidth().padding(18.dp))
                         }
                         if (question.prompt.isNotEmpty()) Text(question.prompt, style = MaterialTheme.typography.titleMedium)
                         Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                            (question.options.indices.toList() + -1).forEach { option ->
+                            (question.options.indices.toList() + -1).forEachIndexed { i, option ->
                                 val chosen = selected == option
-                                Row(
-                                    Modifier.fillMaxWidth()
-                                        .border(1.dp, if (chosen) TaleBlue else TaleLine, RoundedCornerShape(10.dp))
-                                        .selectable(selected = chosen, role = Role.RadioButton, onClick = { selected = option })
-                                        .padding(12.dp),
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.spacedBy(10.dp),
-                                ) {
-                                    RadioButton(selected = chosen, onClick = null)
-                                    Text(if (option == -1) stringResource(R.string.placement_unknown) else question.options[option], style = MaterialTheme.typography.bodyLarge)
-                                }
+                                AnswerOption(if (option == -1) stringResource(R.string.placement_unknown) else question.options[option], chosen,
+                                    if (chosen) OptionState.Selected else OptionState.Idle, true, { selected = option }, Modifier.appearIn(i))
                             }
                         }
                         Button(
@@ -104,11 +95,14 @@ fun PlacementScreen(onUseLevel: (String) -> Unit, onCancel: () -> Unit, fromSett
             }
         }
     }
-    if (confirmExit) AlertDialog(
+    if (confirmExit) TaleDialog(
+        title = stringResource(R.string.placement_cancel_title),
+        text = stringResource(R.string.placement_cancel_message),
+        confirmLabel = stringResource(R.string.placement_cancel_keep),
+        onConfirm = { confirmExit = false },
         onDismissRequest = { confirmExit = false },
-        title = { Text(stringResource(R.string.placement_cancel_title)) },
-        text = { Text(stringResource(R.string.placement_cancel_message)) },
-        confirmButton = { TextButton(onClick = onCancel) { Text(stringResource(R.string.placement_cancel_confirm)) } },
-        dismissButton = { TextButton(onClick = { confirmExit = false }) { Text(stringResource(R.string.placement_cancel_keep)) } },
+        dismissLabel = stringResource(R.string.placement_cancel_confirm),
+        onDismiss = onCancel,
+        mood = MascotMood.Support,
     )
 }

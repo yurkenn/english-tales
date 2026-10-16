@@ -62,7 +62,7 @@ fun SentenceGapGame(
             ReferenceIconButton("back",stringResource(R.string.gap_exit),onExit)
             Text(stringResource(R.string.gap_progress,index+1,questions.size),modifier=Modifier.weight(1f),style=MaterialTheme.typography.titleMedium)
         }
-        LinearProgressIndicator(progress={index.toFloat()/questions.size},modifier=Modifier.fillMaxWidth())
+        QuizProgress(index.toFloat()/questions.size)
         Text(stringResource(R.string.gap_instruction),style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.Bold)
         // A title such as 'The Fox and the Grapes' must not give away the missing word.
         Text(if(checked) stringResource(R.string.gap_source,prompt.storyTitle,prompt.level) else stringResource(R.string.gap_source_pending,prompt.level),
@@ -72,21 +72,13 @@ fun SentenceGapGame(
         }
         Text(stringResource(R.string.gap_hint,prompt.translation),style=MaterialTheme.typography.bodyLarge,color=TaleBlue)
         Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(8.dp)) {
-            question.options.forEach { option ->
-                Row(Modifier.fillMaxWidth().border(1.dp,if(selected==option.wordId) TaleBlue else TaleLine,RoundedCornerShape(10.dp))
-                    .selectable(selected=selected==option.wordId,enabled=!checked,role=Role.RadioButton,onClick={selected=option.wordId}).padding(12.dp),
-                    verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(10.dp)) {
-                    RadioButton(selected=selected==option.wordId,onClick=null,enabled=!checked)
-                    Text(option.label,style=MaterialTheme.typography.bodyLarge)
-                }
+            question.options.forEachIndexed { i,option ->
+                AnswerOption(option.label,selected==option.wordId,optionState(selected==option.wordId,checked,option.wordId==prompt.wordId),!checked,{selected=option.wordId},Modifier.appearIn(i))
             }
         }
-        if(checked) Text(
-            if(correct) stringResource(R.string.gap_correct) else stringResource(R.string.gap_incorrect,prompt.answer),
-            style=MaterialTheme.typography.bodyLarge,
-            modifier=Modifier.semantics {liveRegion=LiveRegionMode.Polite},
-        )
-        Button(enabled=selected!=null && !advanced,modifier=Modifier.fillMaxWidth(),onClick={
+        AnswerFeedback(checked,correct,if(correct) stringResource(R.string.gap_correct) else stringResource(R.string.gap_incorrect,prompt.answer))
+        Button(enabled=selected!=null && !advanced,modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp),
+            colors=if(checked && correct) ButtonDefaults.buttonColors(containerColor=TaleSuccess,contentColor=TaleSurface) else ButtonDefaults.buttonColors(),onClick={
             if(!checked) checked=true
             else if(!advanced) {
                 advanced=true

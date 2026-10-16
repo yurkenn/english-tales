@@ -14,7 +14,9 @@ import androidx.compose.ui.unit.sp
 fun SupportLinks() {
     val uriHandler=LocalUriHandler.current
     var error by remember {mutableStateOf(false)}
-    fun open(url: String) {error=runCatching {uriHandler.openUri(url)}.isFailure}
+    val alerts=LocalTaleAlerts.current
+    val failed=stringResource(R.string.alert_link_failed)
+    fun open(url: String) {error=runCatching {uriHandler.openUri(url)}.isFailure;if(error) alerts.error(failed)}
     Column(verticalArrangement=Arrangement.spacedBy(4.dp)) {
         HorizontalDivider()
         Text(stringResource(R.string.yardim_ve_gizlilik),style=MaterialTheme.typography.titleMedium)

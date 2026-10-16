@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.background
 import com.yurken.englishtales.R
 import androidx.compose.ui.res.stringResource
 import androidx.compose.material3.*
@@ -15,11 +16,10 @@ import com.yurken.englishtales.data.LearningWriteError
 @Composable
 internal fun LearningWriteErrorBar(error: LearningWriteError?, onRetry: () -> Unit) {
     if (error == null) return
-    Surface(color=MaterialTheme.colorScheme.errorContainer) {
-        Column(Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal=16.dp,vertical=8.dp)
-            .semantics { liveRegion=LiveRegionMode.Polite }) {
-            Text(error.message, color=MaterialTheme.colorScheme.onErrorContainer)
-            TextButton(onClick=onRetry) { Text(stringResource(R.string.tekrar_dene)) }
+    // Stays until the writes succeed; the retry sits next to the message so the way out is obvious.
+    Box(Modifier.fillMaxWidth().background(TaleBackground).statusBarsPadding().padding(horizontal=12.dp,vertical=8.dp)) {
+        TaleNotice(error.message,TaleAlertKind.Error) {
+            TextButton(onClick=onRetry) { Text(stringResource(R.string.tekrar_dene),fontWeight=androidx.compose.ui.text.font.FontWeight.Bold) }
         }
     }
 }

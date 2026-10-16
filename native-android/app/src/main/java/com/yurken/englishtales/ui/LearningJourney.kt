@@ -38,7 +38,7 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
         if(next!=null) {
             val progress=snapshot.progressFor(next)
             Surface(shape=MaterialTheme.shapes.large,color=MaterialTheme.colorScheme.surface,
-                border=BorderStroke(1.dp,TaleLine),modifier=Modifier.fillMaxWidth()) {
+                border=BorderStroke(1.dp,TaleLine),shadowElevation=2.dp,modifier=Modifier.fillMaxWidth().appearIn(1)) {
                 Column(Modifier.padding(20.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
                     Text(if(resume!=null) stringResource(R.string.kaldigin_hikaye) else if(progress==100) stringResource(R.string.yeniden_kesfet) else stringResource(R.string.siradaki_hikayen),
                         style=MaterialTheme.typography.labelLarge,color=TaleBlue)
@@ -51,7 +51,7 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
                         }
                     }
                     if(resume!=null) ReferenceProgress(progress/100f,Modifier.fillMaxWidth(),TaleBlue)
-                    Button(onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
+                    Button(onClick={onRead(next.id)},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {
                         Text(if(resume!=null) stringResource(R.string.okumaya_devam_et) else if(progress==100) stringResource(R.string.yeniden_oku) else stringResource(R.string.hikayeye_basla))
                     }
                 }
@@ -59,21 +59,13 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
         } else Text(stringResource(R.string.yeni_hikayeler_hazirlandiginda_burada_gorunecek),color=TaleMuted)
         if(snapshot.dueWordIds.isNotEmpty()) {
             val batch=ReviewFocus.order(emptyList(),snapshot.weakWordIds.filter {it in snapshot.dueWordIds},snapshot.dueWordIds,emptyList()).take(5)
-            OutlinedButton(onClick={onPractice(batch)},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
-                Column(Modifier.padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
-                    Text(stringResource(R.string.kelimeyi_hatirla, batch.size),style=MaterialTheme.typography.titleMedium)
-                    Text(stringResource(R.string.kelimenin_tekrar_zamani_geldi, snapshot.dueWordIds.size),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
-                }
-            }
+            PlanActionRow("review",LocalTaleColors.current.tilePurple,stringResource(R.string.kelimeyi_hatirla, batch.size),
+                stringResource(R.string.kelimenin_tekrar_zamani_geldi, snapshot.dueWordIds.size)) {onPractice(batch)}
         } else if(snapshot.weakWordIds.isNotEmpty()) {
             // Early practice: LearningPolicy ignores correct answers before the due time, so mastery is not inflated.
             val batch=snapshot.weakWordIds.take(5)
-            OutlinedButton(onClick={onPractice(batch)},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
-                Column(Modifier.padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
-                    Text(stringResource(R.string.weak_words_practice, batch.size),style=MaterialTheme.typography.titleMedium)
-                    Text(stringResource(R.string.weak_words_summary),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
-                }
-            }
+            PlanActionRow("review",LocalTaleColors.current.tileYellow,stringResource(R.string.weak_words_practice, batch.size),
+                stringResource(R.string.weak_words_summary)) {onPractice(batch)}
         } else if(snapshot.savedWordIds.isNotEmpty()) {
             Text(stringResource(R.string.tekrarlarin_guncel),color=TaleMuted)
             snapshot.nextReviewAt?.let {at -> Text(stringResource(R.string.sonraki_tekrar, SimpleDateFormat("d MMM, HH:mm",Locale.forLanguageTag("tr")).format(Date(at))),
@@ -82,15 +74,37 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
     }
 }
 
+/** A tappable plan step: tinted icon, title and reason, with a chevron; sinks a little while pressed. */
+@Composable
+private fun PlanActionRow(icon: String,tint: Color,title: String,subtitle: String,onClick: ()->Unit) {
+    Row(Modifier.fillMaxWidth().appearIn(2).heightIn(min=64.dp).background(TaleSurface,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp))
+        .pressScale(onClick=onClick).padding(horizontal=14.dp,vertical=12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+        Box(Modifier.size(40.dp).background(tint,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) { ReferenceIcon(icon,TaleBlue,Modifier.size(22.dp)) }
+        Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(2.dp)) {
+            Text(title,style=MaterialTheme.typography.titleMedium,color=TaleBlue)
+            Text(subtitle,style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+        }
+        ReferenceIcon("next",TaleMuted,Modifier.size(18.dp))
+    }
+}
+
 @Composable
 fun WeeklyActivity(snapshot: LearningSnapshot) {
     Column(Modifier.fillMaxWidth().padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
         Text(stringResource(R.string.son_7_gun),fontSize=17.sp,fontWeight=FontWeight.Bold)
         Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(6.dp)) {
-            snapshot.weeklyActivity.forEach {day -> Column(Modifier.weight(1f),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                Box(Modifier.fillMaxWidth().heightIn(min=38.dp).background(if(day.sessions>0) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).padding(vertical=9.dp),contentAlignment=Alignment.Center) {Text(if(day.sessions>0) "${day.sessions}" else "·",fontSize=14.sp,color=if(day.sessions>0) TaleOnBlue else TaleMuted)}
-                Text(day.label,fontSize=10.sp,color=TaleMuted)
-            } }
+            snapshot.weeklyActivity.forEachIndexed {i,day ->
+                // Today is outlined so the learner sees where the week stands; empty days stay quiet instead of showing a dot.
+                val today=i==snapshot.weeklyActivity.lastIndex
+                val active=day.sessions>0
+                Column(Modifier.weight(1f).appearIn(i),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(8.dp)) {
+                    Box(Modifier.fillMaxWidth().height(40.dp).background(if(active) TaleBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(12.dp))
+                        .then(if(today) Modifier.border(2.dp,if(active) TaleInk.copy(alpha=0.25f) else TaleBlue,RoundedCornerShape(12.dp)) else Modifier),contentAlignment=Alignment.Center) {
+                        if(active) Text("${day.sessions}",fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleOnBlue)
+                    }
+                    Text(if(today) stringResource(R.string.weekly_today) else day.label,fontSize=10.sp,fontWeight=if(today) FontWeight.Bold else FontWeight.Normal,color=if(today) TaleBlue else TaleMuted,maxLines=1)
+                }
+            }
         }
         Text(stringResource(R.string.gun_calistin_adim_tamamladin, snapshot.weeklyActivity.count {it.sessions>0}, snapshot.weeklyActivity.sumOf {it.sessions}),fontSize=12.sp,color=TaleMuted)
         // Q5.10: what the week's reading added up to, from the stories actually finished.
@@ -103,8 +117,10 @@ fun EarnedBadges(snapshot: LearningSnapshot) {
     val labels=linkedMapOf("first_story" to stringResource(R.string.ilk_hikaye), "first_practice" to stringResource(R.string.ilk_calisma), "five_words" to stringResource(R.string.kelime_5), "three_day_streak" to stringResource(R.string.gunluk_seri_3), "seven_day_streak" to stringResource(R.string.gunluk_seri_7))
     Column(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
         Text(stringResource(R.string.basarilarin),fontSize=17.sp,fontWeight=FontWeight.Bold)
-        labels.forEach {(id,label) -> Row(Modifier.fillMaxWidth().background(if(id in snapshot.badges) LocalTaleColors.current.tileYellow else TaleLine,RoundedCornerShape(10.dp)).padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
-            Text(if(id in snapshot.badges) "★" else "☆",color=if(id in snapshot.badges) TaleGold else TaleMuted,fontSize=24.sp)
+        labels.entries.forEachIndexed {i,(id,label) -> Row(Modifier.fillMaxWidth().appearIn(i).background(if(id in snapshot.badges) LocalTaleColors.current.tileYellow else TaleLine.copy(alpha=0.6f),RoundedCornerShape(14.dp)).padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
+            Box(Modifier.size(36.dp).background(if(id in snapshot.badges) TaleYellow else TaleSurface,androidx.compose.foundation.shape.CircleShape),contentAlignment=Alignment.Center) {
+                ReferenceIcon("star",if(id in snapshot.badges) TaleGold else TaleLine,Modifier.size(20.dp).then(if(id in snapshot.badges) Modifier.popOn(1) else Modifier))
+            }
             Text(label,fontSize=14.sp,modifier=Modifier.weight(1f).padding(start=12.dp))
             Text(if(id in snapshot.badges) stringResource(R.string.kazanildi) else stringResource(R.string.sirada),color=TaleMuted,fontSize=11.sp)
         } }
@@ -114,23 +130,27 @@ fun EarnedBadges(snapshot: LearningSnapshot) {
 @Composable
 fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (List<String>)->Unit,onDailyPlan: ()->Unit,onBack: ()->Unit=onDailyPlan) {
     val words=remember(story.id) {LearningContent.wordsForStory(story).take(5)}
+    Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState())) {
         SimpleTopBar(stringResource(R.string.okuma_tamamlandi),onBack)
         Column(Modifier.padding(24.dp),verticalArrangement=Arrangement.spacedBy(18.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-            Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+            Row(Modifier.appearIn(0),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
                 TalesMascot(MascotMood.Celebrate,Modifier.size(144.dp),animate=true)
-                BookCover(story,Modifier.size(64.dp,94.dp))
+                BookCover(story,Modifier.size(64.dp,94.dp).popOn(1))
             }
-            Text(stringResource(R.string.bir_hikaye_tamamladin),fontSize=22.sp,fontWeight=FontWeight.Bold)
-            Text(story.title,fontSize=15.sp,color=TaleMuted)
-            Text(if(snapshot.dailyGoalReached) stringResource(R.string.gunluk_hedef_tamamlandi) else stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleBlue,fontWeight=FontWeight.Bold)
+            Text(stringResource(R.string.bir_hikaye_tamamladin),fontSize=22.sp,fontWeight=FontWeight.Bold,modifier=Modifier.appearIn(1))
+            Text(story.title,fontSize=15.sp,color=TaleMuted,modifier=Modifier.appearIn(2))
+            Text(if(snapshot.dailyGoalReached) stringResource(R.string.gunluk_hedef_tamamlandi) else stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleBlue,fontWeight=FontWeight.Bold,
+                modifier=Modifier.appearIn(3).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(20.dp)).padding(horizontal=14.dp,vertical=6.dp))
             ComprehensionQuiz(story.id,story.questions)
             Text(stringResource(R.string.okudugun_kelimeleri_simdi_hatirlamayi_deneyelim),fontSize=14.sp,color=TaleMuted)
             words.forEach {word -> FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(8.dp),maxItemsInEachRow=sideBySide(2)) {Text(word.word,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f));Text(word.translation,color=TaleMuted,modifier=Modifier.weight(1f))} }
-            if(words.isNotEmpty()) Button(onClick={onPractice(words.map {it.id})},modifier=Modifier.fillMaxWidth(),shape=RoundedCornerShape(10.dp)) {Text(stringResource(R.string.kelimeyi_kaydet_ve_calis, words.size))}
+            if(words.isNotEmpty()) Button(onClick={onPractice(words.map {it.id})},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.kelimeyi_kaydet_ve_calis, words.size))}
             TextButton(onClick=onDailyPlan) {Text(stringResource(R.string.gunluk_planima_don))}
             if(snapshot.todayReadings==1) ReminderControls()
         }
+    }
+    ConfettiBurst(Modifier.fillMaxSize(),story.id)
     }
 }
 
@@ -160,7 +180,9 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             ReminderControls()
             com.yurken.englishtales.ads.AdPrivacyControls()
             com.yurken.englishtales.analytics.AnalyticsControls()
-            Button(onClick={onSave(level,genre,goal,name)},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.degisiklikleri_kaydet))}
+            val alerts=LocalTaleAlerts.current
+            val savedText=stringResource(R.string.alert_settings_saved)
+            Button(onClick={onSave(level,genre,goal,name);alerts.success(savedText)},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.degisiklikleri_kaydet))}
             Text(stringResource(R.string.ilerlemen_bu_cihazda_saklanir_uygulama),fontSize=12.sp,color=TaleMuted)
             SupportLinks()
         }

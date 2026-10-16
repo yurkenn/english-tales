@@ -1,5 +1,8 @@
 package com.yurken.englishtales.ui
 
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.animateContentSize
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.ui.semantics.Role
@@ -47,7 +50,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         gapUnavailable=false
     }
     val orderCandidates=remember(stories) {SentenceOrder.candidates(stories)}
-    val sessionKind=when(mode) {"cloze"->SentenceGap.SESSION_KIND;"listen"->ListeningQuiz.SESSION_KIND;"order"->SentenceOrder.SESSION_KIND;"dictation"->Dictation.SESSION_KIND;"ladder"->PracticeLadder.SESSION_KIND;else->mode}
+    fun kindOf(value: String)=when(value) {"cloze"->SentenceGap.SESSION_KIND;"listen"->ListeningQuiz.SESSION_KIND;"order"->SentenceOrder.SESSION_KIND;"dictation"->Dictation.SESSION_KIND;"ladder"->PracticeLadder.SESSION_KIND;else->value}
+    val sessionKind=kindOf(mode)
     fun exit(plan: Boolean=false) {
         val leave={onSessionAbandoned(sessionKey);mode="";if(plan) onDailyPlan()}
         if(plan && finished) {
@@ -80,7 +84,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     }
     // The daily plan's review uses the ladder, so each due word gets the drill that fits its stage (Q5.8).
     LaunchedEffect(launchId) { if(launchId!=null) { start("ladder",launchWordIds);onLaunchConsumed() } }
-    LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,sessionKind,ids.size)}
+    // The kind is read from the live mode: a value captured in an earlier frame could still be empty and the store would reject it.
+    LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,kindOf(mode),ids.size)}
     if(mode.isEmpty()) {
         Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())) {
             StatsHeader(snapshot)
@@ -88,22 +93,22 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             if(snapshot.weakWordIds.isNotEmpty()) Text(stringResource(R.string.weak_words_count, snapshot.weakWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp,vertical=4.dp))
             Spacer(Modifier.height(20.dp))
-            ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),"review",LocalTaleColors.current.tilePurple) {start("ladder")}
-            ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),"cards",LocalTaleColors.current.tileBlue) {start("card")}
-            ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),"translate",LocalTaleColors.current.tileYellow) {start("choice")}
-            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",LocalTaleColors.current.tileBlue,enabled=gapPrompts?.isNotEmpty()==true) {start("cloze")}
+            ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),"review",LocalTaleColors.current.tilePurple,index=1) {start("ladder")}
+            ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),"cards",LocalTaleColors.current.tileBlue,index=2) {start("card")}
+            ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),"translate",LocalTaleColors.current.tileYellow,index=3) {start("choice")}
+            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",LocalTaleColors.current.tileBlue,enabled=gapPrompts?.isNotEmpty()==true,index=4) {start("cloze")}
             if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             // Probes the device voice; the mode is offered only when English speech works.
             val voice=rememberNarrator()
-            if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),"headphones",LocalTaleColors.current.tileBlue,enabled=voice.available==true) {start("listen")}
+            if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),"headphones",LocalTaleColors.current.tileBlue,enabled=voice.available==true,index=5) {start("listen")}
             // Dictation needs a voice too; it appears only once English speech is known to work.
-            if(voice.available==true && orderCandidates.isNotEmpty()) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),"headphones",LocalTaleColors.current.tileYellow) {start("dictation")}
+            if(voice.available==true && orderCandidates.isNotEmpty()) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),"headphones",LocalTaleColors.current.tileYellow,index=4) {start("dictation")}
             if(voice.available!=true) Text(stringResource(if(voice.available==null) R.string.listen_preparing else R.string.listen_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
-            if(orderCandidates.isNotEmpty()) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),"read",LocalTaleColors.current.tileGreen) {start("order")}
-            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),"play",LocalTaleColors.current.tilePurple) {start("match")}
-            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),"letters",LocalTaleColors.current.tileGreen) {start("spell")}
+            if(orderCandidates.isNotEmpty()) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),"read",LocalTaleColors.current.tileGreen,index=5) {start("order")}
+            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),"play",LocalTaleColors.current.tilePurple,index=6) {start("match")}
+            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),"letters",LocalTaleColors.current.tileGreen,index=7) {start("spell")}
         }
         return
     }
@@ -163,35 +168,38 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         }
         if(drill=="choice") {
             Spacer(Modifier.height(8.dp))
-            options.forEach { option ->
-                val selected=answer==option
-                val color=if(selected) {if(correct) Color(0xFF8CC65C) else Color(0xFFFF866D)} else TaleLine
-                Box(Modifier.fillMaxWidth().heightIn(min=50.dp).border(if(selected) 2.dp else 1.dp,color,RoundedCornerShape(10.dp)).selectable(selected=selected,enabled=answer==null,role=Role.RadioButton) {answer=option}.padding(horizontal=12.dp,vertical=8.dp),contentAlignment=Alignment.Center) {Text(option,fontSize=14.sp,fontWeight=FontWeight.Medium)}
+            options.forEachIndexed { i,option ->
+                // The right translation lights up green as soon as any choice is made.
+                AnswerOption(option,answer==option,optionState(answer==option,answer!=null,option==word.translation),answer==null,{answer=option},Modifier.appearIn(i))
             }
         } else {
             Box(Modifier.weight(1f).fillMaxWidth(),contentAlignment=Alignment.Center) {
-                Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(spelling.length)},fontSize=20.sp,color=if(answer==null) TaleBlue else if(correct) TaleSuccess else TaleError,modifier=Modifier.border(1.dp,TaleLine,RoundedCornerShape(5.dp)).padding(12.dp))
+                var shakes by remember(question,session) {mutableIntStateOf(0)}
+                var pops by remember(question,session) {mutableIntStateOf(0)}
+                LaunchedEffect(answer) {if(answer!=null) {if(correct) pops++ else shakes++}}
+                Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(spelling.length)},fontSize=22.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp,color=if(answer==null) TaleBlue else if(correct) TaleSuccess else TaleError,
+                    modifier=Modifier.shakeOn(shakes).popOn(pops).border(2.dp,if(answer==null) TaleLine else if(correct) TaleSuccess else TaleError,RoundedCornerShape(12.dp)).padding(horizontal=18.dp,vertical=12.dp).animateContentSize())
             }
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(vertical=24.dp),horizontalArrangement=Arrangement.Center) {
                 letters.forEachIndexed { i,c ->
-                    Box(Modifier.padding(3.dp).size(36.dp,48.dp).border(if(i in chosen) 2.dp else 1.dp,if(i in chosen) TaleBlue else TaleLine,RoundedCornerShape(6.dp)).clickable(enabled=answer==null && i !in chosen,role=Role.Button) {chosen=chosen+i;if(chosen.size==letters.size) answer=chosen.joinToString("") {letters[it].toString()}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=16.sp)}
+                    val used=i in chosen
+                    val tileAlpha by animateFloatAsState(if(used) 0.35f else 1f,label="tile")
+                    Box(Modifier.padding(3.dp).size(38.dp,50.dp).graphicsLayer {alpha=tileAlpha}.background(if(used) TaleLine else TaleSurface,RoundedCornerShape(10.dp)).border(if(used) 2.dp else 1.5.dp,if(used) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).pressScale(enabled=answer==null && !used) {chosen=chosen+i;if(chosen.size==letters.size) answer=chosen.joinToString("") {letters[it].toString()}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=17.sp,fontWeight=FontWeight.Bold)}
                 }
             }
             TextButton(onClick={chosen=emptyList()},enabled=answer==null,modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(stringResource(R.string.temizle),fontSize=12.sp) }
         }
-        if(answer!=null && !correct) {
-            Text(stringResource(R.string.her_denemede_ogreniyoruz),fontSize=13.sp,color=TaleMuted)
-            Text(stringResource(R.string.dogru_cevap, if(drill=="choice") word.translation else word.word),fontSize=14.sp,color=TaleError)
-            Button(onClick={advanceWrong=true},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.anladim_devam_et))}
-        }
+        AnswerFeedback(answer!=null,correct,if(correct) stringResource(R.string.feedback_correct_title)
+            else stringResource(R.string.her_denemede_ogreniyoruz)+" "+stringResource(R.string.dogru_cevap, if(drill=="choice") word.translation else word.word))
+        if(answer!=null && !correct) Button(onClick={advanceWrong=true},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.anladim_devam_et))}
         Spacer(Modifier.height(8.dp))
     }
 }
 
 @Composable
-private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,enabled: Boolean=true,onClick: ()->Unit) {
-    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).border(1.dp,TaleLine,RoundedCornerShape(12.dp)).clickable(enabled=enabled,role=Role.Button,onClick=onClick).padding(16.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-        Box(Modifier.size(64.dp).background(color,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {ReferenceIcon(icon,TaleBlue,Modifier.size(34.dp))}
+private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,enabled: Boolean=true,index: Int=0,onClick: ()->Unit) {
+    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).appearIn(index).background(TaleSurface,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp)).pressScale(enabled=enabled,onClick=onClick).padding(14.dp).graphicsLayer {alpha=if(enabled) 1f else 0.5f},verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
+        Box(Modifier.size(60.dp).background(color,RoundedCornerShape(16.dp)),contentAlignment=Alignment.Center) {ReferenceIcon(icon,TaleBlue,Modifier.size(32.dp))}
         Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(5.dp)) {Text(title,fontSize=16.sp,fontWeight=FontWeight.Bold);Text(subtitle,fontSize=12.sp,color=TaleMuted)}
         Text("›",color=TaleMuted,fontSize=22.sp)
     }
@@ -199,18 +207,23 @@ private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,en
 
 @Composable
 fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot?=null) {
+    Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
-        Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=14.sp,modifier=Modifier.fillMaxWidth().background(TalePurple,RoundedCornerShape(4.dp)).padding(12.dp))
-        Spacer(Modifier.height(36.dp))
-        TalesMascot(MascotMood.Celebrate,Modifier.size(156.dp),animate=true)
-        Spacer(Modifier.height(24.dp))
-        Text(stringResource(R.string.calisma_tamamlandi),fontSize=25.sp,fontWeight=FontWeight.Light)
-        Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(12.dp))
+        Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=14.sp,fontWeight=FontWeight.SemiBold,modifier=Modifier.fillMaxWidth().appearIn(0).background(TalePurple,RoundedCornerShape(14.dp)).padding(14.dp))
+        Spacer(Modifier.height(28.dp))
+        TalesMascot(MascotMood.Celebrate,Modifier.size(156.dp).appearIn(1),animate=true)
+        Spacer(Modifier.height(16.dp))
+        // The points count up like a scoreboard; the earned amount is the final value.
+        AnimatedCounter(points,Modifier.appearIn(2),style=MaterialTheme.typography.displaySmall.copy(fontWeight=FontWeight.Bold),color=TalePurple,prefix="+")
+        Text(stringResource(R.string.calisma_tamamlandi),fontSize=25.sp,fontWeight=FontWeight.SemiBold,modifier=Modifier.appearIn(3))
+        Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(12.dp).appearIn(4))
         snapshot?.let {
             Text(if(it.dailyGoalReached) stringResource(R.string.gunluk_hedefin_tamamlandi) else stringResource(R.string.bugunku_hedef_adim, it.todaySessions, it.dailyGoal),color=TaleBlue,fontSize=14.sp,modifier=Modifier.padding(12.dp))
             if(it.completedLessons==1 && !LearningReminders.enabled(androidx.compose.ui.platform.LocalContext.current)) ReminderControls()
         }
-        Button(onClick=onExit,shape=RoundedCornerShape(24.dp)) {Text(stringResource(R.string.gunluk_planima_don))}
-        TextButton(onClick=onRestart) {Text(stringResource(R.string.yeniden_calis),fontSize=12.sp)}
+        Button(onClick=onExit,shape=RoundedCornerShape(14.dp),modifier=Modifier.fillMaxWidth().heightIn(min=50.dp).appearIn(5)) {Text(stringResource(R.string.gunluk_planima_don))}
+        TextButton(onClick=onRestart) {Text(stringResource(R.string.yeniden_calis),fontSize=13.sp)}
+    }
+    ConfettiBurst(Modifier.fillMaxSize(),subtitle)
     }
 }

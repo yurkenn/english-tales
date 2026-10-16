@@ -18,7 +18,7 @@ fun ContentConnectionBar(content: ContentViewModel,onDownloads: ()->Unit) {
     Row(Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
         Text(status.message, fontSize=12.sp, color=TaleMuted, modifier=Modifier.weight(1f))
         TextButton(onClick=onDownloads) {Text(stringResource(R.string.indirilenler))}
-        TextButton(onClick=content::refresh,enabled=!status.busy) { Text(stringResource(R.string.yenile)) }
+        TextButton(onClick={content.refresh(userInitiated=true)},enabled=!status.busy) { Text(stringResource(R.string.yenile)) }
     }
 }
 

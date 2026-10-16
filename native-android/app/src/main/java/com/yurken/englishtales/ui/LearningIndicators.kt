@@ -18,14 +18,17 @@ import com.yurken.englishtales.data.LearningSnapshot
 @Composable
 internal fun LearningInfoButton(kind: String, value: String, title: String, explanation: String) {
     var open by remember {mutableStateOf(false)}
+    // A changed value (new points, a longer streak) pops once so the gain is noticed.
+    var last by remember {mutableStateOf(value)}
+    var bumps by remember {mutableIntStateOf(0)}
+    LaunchedEffect(value) {if(value!=last) {bumps++;last=value}}
     Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.bilgi, title, value))
         .clickable(role=Role.Button) {open=true}.padding(horizontal=4.dp),
         verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(5.dp)) {
-        Text(value,fontWeight=FontWeight.Bold)
-        ReferenceIcon(kind,TaleBlue)
+        Text(value,fontWeight=FontWeight.Bold,modifier=Modifier.popOn(bumps))
+        ReferenceIcon(kind,TaleBlue,Modifier.size(23.dp).popOn(bumps))
     }
-    if(open) AlertDialog(onDismissRequest={open=false},title={Text(title)},text={Text(explanation)},
-        confirmButton={TextButton(onClick={open=false}) {Text(stringResource(R.string.anladim))}})
+    if(open) TaleDialog(title,explanation,stringResource(R.string.anladim),onConfirm={open=false},onDismissRequest={open=false},mood=MascotMood.Welcome)
 }
 
 @Composable
