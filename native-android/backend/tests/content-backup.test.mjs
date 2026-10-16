@@ -38,10 +38,10 @@ function fakeFetch(tables,{missing=[],failure,mutate,page,corrupt=false}={}){
 }
 async function temporary(fn){const parent=await mkdtemp(path.join(tmpdir(),'content-backup-'));try{return await fn(parent);}finally{await rm(parent,{recursive:true,force:true});}}
 
-test('anonymous snapshot collects all ten tables and verifies media; audit and draft tools use actual translations/questions',async()=>temporary(async parent=>{
+test('anonymous snapshot collects all eleven tables and verifies media; audit and draft tools use actual translations/questions',async()=>temporary(async parent=>{
   const {catalog,manifest,snapshot}=await fixture(),fake=fakeFetch(snapshot.tables);
   const {directory,snapshot:result}=await backupPublicContent({settings,parent,now,...fake});
-  assert.equal(Object.keys(result.tables).length,10);assert.deepEqual(result.tables,snapshot.tables);
+  assert.equal(Object.keys(result.tables).length,11);assert.deepEqual(result.tables,snapshot.tables);
   assert.deepEqual(JSON.parse(await readFile(path.join(directory,'catalog.json'),'utf8')),result);
   assert.deepEqual(await readFile(path.join(directory,'media',result.tables.content_assets[0].id)),bytes);
   assert.equal(auditSnapshot(result).summary.errors,0);
@@ -49,13 +49,13 @@ test('anonymous snapshot collects all ten tables and verifies media; audit and d
   result.tables.story_questions[0].answer=1;result.tables.revision_texts[0].description='Changed';
   const packet=generateDrafts(catalog,result,manifest);assert.equal(packet.drafts.length,1);
   assert.equal(packet.drafts[0].changes.questionChanges.length,1);assert.ok(packet.drafts[0].changes.translationChanges.length);
-  for(const [table,order] of Object.entries({sentence_translations:'revision_id,sentence_id,lang',word_translations:'revision_id,word_id,lang',revision_texts:'revision_id,lang',story_questions:'revision_id,position'}))
+  for(const [table,order] of Object.entries({sentence_translations:'revision_id,sentence_id,lang',word_translations:'revision_id,word_id,lang',revision_texts:'revision_id,lang',story_questions:'revision_id,position',revision_tags:'revision_id,tag_id'}))
     assert.equal(fake.calls.find(u=>u.pathname.endsWith('/'+table)).searchParams.get('order'),order);
 }));
 
 test('pre-migration six-table snapshot omits unavailable extensions and remains readable by audit/drafts',async()=>temporary(async parent=>{
   const {catalog,manifest,snapshot}=await fixture();
-  const missing=['sentence_translations','word_translations','revision_texts','story_questions'];
+  const missing=['sentence_translations','word_translations','revision_texts','story_questions','revision_tags'];
   const {snapshot:result}=await backupPublicContent({settings,parent,now,...fakeFetch(snapshot.tables,{missing})});
   assert.equal(Object.keys(result.tables).length,6);assert.equal(auditSnapshot(result).translations.tr.complete,true);
   const packet=generateDrafts(catalog,result,manifest);assert.equal(packet.drafts.length,1);
@@ -64,7 +64,7 @@ test('pre-migration six-table snapshot omits unavailable extensions and remains 
 }));
 
 test('snapshot paginates every extension with deterministic composite ordering and enforces the row limit',async()=>{
-  const {snapshot}=await fixture(),extensions=['sentence_translations','word_translations','revision_texts','story_questions'];
+  const {snapshot}=await fixture(),extensions=['sentence_translations','word_translations','revision_texts','story_questions','revision_tags'];
   await temporary(async parent=>{
     const fake=fakeFetch(snapshot.tables,{page:(table,offset)=>extensions.includes(table)?Array.from({length:offset===0?500:1},(_,i)=>({fixture:i+offset})):snapshot.tables[table]});
     const {snapshot:result}=await backupPublicContent({settings,parent,now,...fake});

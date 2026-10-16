@@ -207,3 +207,15 @@ test('CLI writes inspectable reports before rejecting an unmet coverage gate and
     assert.match(renderReport(report),/Anlamsal|anlamsal/);
   }finally{await rm(dir,{recursive:true,force:true});}
 });
+
+test('tag parity compares the tag set and ignores snapshots taken before tags existed',()=>{
+  const c=catalog();c.stories[0].tags=['masal','macera'];
+  const s=snapshot(c);s.tables.revision_tags=[{revision_id:revisionId,tag_id:'macera'},{revision_id:revisionId,tag_id:'masal'}];
+  assert.equal(compareDocuments(bundledDocuments(c),publishedDocuments(s)).equal,true,'order does not matter');
+  s.tables.revision_tags.pop();
+  const d=compareDocuments(bundledDocuments(c),publishedDocuments(s));
+  assert.equal(d.equal,false);assert.deepEqual(d.differingStories[0].tagChanges,[{expected:['macera','masal'],actual:['macera']}]);
+  assert.equal(d.summary.tagDifferences,1);
+  delete s.tables.revision_tags;
+  assert.equal(compareDocuments(bundledDocuments(c),publishedDocuments(s)).equal,true,'unknown live tags are not drift');
+});

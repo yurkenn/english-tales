@@ -45,7 +45,7 @@ export function readBackup(text,doc,project){
   }
   if(d.questions!==undefined&&questionErrors(d.questions).length)throw new Error(questionErrors(d.questions).join(' '));
   if(d.links.some(l=>!sentences.has(l.sentence_id)||!words.has(l.word_id)))throw new Error('Yedek kelime bağlantısı geçersiz.');
-  return {data,document:{...doc,...Object.fromEntries(['title','author','level','genre','description','sentences','words','links',...(d.questions!==undefined?['questions']:[]),...(d.descriptions?['descriptions']:[])].map(k=>[k,d[k]]))}};
+  return {data,document:{...doc,...Object.fromEntries(['title','author','level','genre','description','sentences','words','links',...(d.questions!==undefined?['questions']:[]),...(Array.isArray(d.tags)?['tags']:[]),...(d.descriptions?['descriptions']:[])].map(k=>[k,d[k]]))}};
 }
 
 // Shared by the panel, exporter and offline audit; array order defines position.

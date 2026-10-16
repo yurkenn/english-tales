@@ -47,6 +47,7 @@ class RemoteContentTest {
         var questions=false
         /** Servers without the Q4.0 translation tables answer those queries with an error. */
         var translationTables=false
+        var tagTables=false
         val doc=JSONObject().put("id",revision).put("story_id","remote-test").put("title","Remote test").put("author","English Tales")
             .put("level","A1").put("genre","Gizem").put("description","A test story").put("published_at","2026-10-11T00:00:00Z").put("cover_asset_id",assetId)
         override fun bytes(path: String,maxBytes: Long): ByteArray {
@@ -68,6 +69,9 @@ class RemoteContentTest {
                 "sentence_translations" -> {check(translationTables && uri.getQueryParameter("lang")=="eq.tr"); (1..7).map {JSONObject().put("sentence_id","s-$it").put("text","Tablodan gelen çeviri $it.")}}
                 "word_translations" -> {check(translationTables); listOf(JSONObject().put("word_id","fixture-quiet").put("translation","sakin"))}
                 "revision_texts" -> {check(translationTables); listOf(JSONObject().put("revision_id",revision).put("description","Tablodan gelen açıklama"))}
+                "content_tags" -> {check(tagTables); listOf(JSONObject().put("id","masal").put("position",1),JSONObject().put("id","gizem").put("position",2))}
+                "tag_names" -> {check(tagTables); if(uri.getQueryParameter("lang")=="eq.tr") listOf(JSONObject().put("tag_id","masal").put("name","Masal"),JSONObject().put("tag_id","gizem").put("name","Gizem")) else emptyList()}
+                "revision_tags" -> {check(tagTables); listOf(JSONObject().put("revision_id",revision).put("tag_id","gizem"),JSONObject().put("revision_id",revision).put("tag_id","masal"))}
                 else -> error("Unexpected table")
             }
             if(table=="story_sentences") revisionQueries++
@@ -145,6 +149,20 @@ class RemoteContentTest {
         ContentRepository(context,fixture).restore()
         assertEquals("Tablodan gelen çeviri 7.",LearningContent.stories.single().sentences.last().translation)
         assertEquals("Tablodan gelen açıklama",LearningContent.stories.single().description)
+    }
+    @Test fun tagsFollowVocabularyOrderAndSurviveOfflineRestart()=runBlocking {
+        val fixture=Fixture().apply {tagTables=true}; val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh()
+        val tags=listOf(StoryTag("masal","Masal"),StoryTag("gizem","Gizem"))
+        assertEquals(tags,LearningContent.stories.single().tags)
+        assertEquals(tags,repo.download(LearningContent.stories.single()).tags)
+        fixture.fail=true
+        ContentRepository(context,fixture).restore()
+        assertEquals(tags,LearningContent.stories.single().tags)
+    }
+    @Test fun serversWithoutTagTablesFallBackToTheGenre()=runBlocking {
+        val repo=ContentRepository(context,Fixture()); repo.restore(); repo.refresh()
+        assertEquals(listOf(StoryTag("gizem","Gizem")),StoryTag.of(LearningContent.stories.single()))
     }
     @Test fun serversWithoutTranslationTablesUseLegacyTurkishColumns()=runBlocking {
         val repo=ContentRepository(context,Fixture())

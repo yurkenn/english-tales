@@ -1,5 +1,37 @@
 {
   "schemaVersion": 1,
+  "tags": [
+    {
+      "id": "masal",
+      "names": {
+        "tr": "Masal"
+      }
+    },
+    {
+      "id": "fabl",
+      "names": {
+        "tr": "Fabl"
+      }
+    },
+    {
+      "id": "macera",
+      "names": {
+        "tr": "Macera"
+      }
+    },
+    {
+      "id": "gunluk-yasam",
+      "names": {
+        "tr": "Günlük yaşam"
+      }
+    },
+    {
+      "id": "gizem",
+      "names": {
+        "tr": "Gizem"
+      }
+    }
+  ],
   "words": [
     {
       "id": "quiet",
@@ -2608,6 +2640,9 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "gunluk-yasam"
       ]
     },
     {
@@ -2714,6 +2749,9 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "macera"
       ]
     },
     {
@@ -2820,6 +2858,9 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "gizem"
       ]
     },
     {
@@ -2959,6 +3000,9 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "gunluk-yasam"
       ]
     },
     {
@@ -3110,6 +3154,9 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "macera"
       ]
     },
     {
@@ -3261,6 +3308,9 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "gizem"
       ]
     },
     {
@@ -3390,6 +3440,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -3519,6 +3573,10 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -3643,6 +3701,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -3767,6 +3829,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -3978,6 +4044,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -4179,6 +4249,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -4365,6 +4439,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -4571,6 +4649,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -4782,6 +4864,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "masal",
+        "gunluk-yasam"
       ]
     },
     {
@@ -4998,6 +5084,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -5209,6 +5299,9 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "gunluk-yasam"
       ]
     },
     {
@@ -5420,6 +5513,9 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "gizem"
       ]
     },
     {
@@ -5539,6 +5635,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -5658,6 +5758,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "fabl",
+        "gunluk-yasam"
       ]
     },
     {
@@ -5777,6 +5881,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -5896,6 +6004,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -6005,6 +6117,10 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "fabl",
+        "gunluk-yasam"
       ]
     },
     {
@@ -6114,6 +6230,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -6233,6 +6353,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -6347,6 +6471,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -6461,6 +6589,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "fabl",
+        "gunluk-yasam"
       ]
     },
     {
@@ -6575,6 +6707,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "fabl",
+        "gunluk-yasam"
       ]
     },
     {
@@ -6684,6 +6820,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -6793,6 +6933,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "fabl",
+        "macera"
       ]
     },
     {
@@ -6954,6 +7098,10 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -7115,6 +7263,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -7276,6 +7428,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -7437,6 +7593,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -7598,6 +7758,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "masal",
+        "gizem"
       ]
     },
     {
@@ -7759,6 +7923,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -7920,6 +8088,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "masal",
+        "gunluk-yasam"
       ]
     },
     {
@@ -8081,6 +8253,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -8242,6 +8418,10 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -8403,6 +8583,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "masal",
+        "gizem"
       ]
     },
     {
@@ -8564,6 +8748,10 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -8725,6 +8913,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "masal",
+        "gizem"
       ]
     },
     {
@@ -8926,6 +9118,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -9127,6 +9323,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "masal",
+        "gunluk-yasam"
       ]
     },
     {
@@ -9328,6 +9528,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -9534,6 +9738,10 @@
           ],
           "answer": 0
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -9755,6 +9963,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -9956,6 +10168,10 @@
           ],
           "answer": 1
         }
+      ],
+      "tags": [
+        "masal",
+        "gunluk-yasam"
       ]
     },
     {
@@ -10157,6 +10373,10 @@
           ],
           "answer": 3
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     },
     {
@@ -10358,6 +10578,10 @@
           ],
           "answer": 2
         }
+      ],
+      "tags": [
+        "masal",
+        "macera"
       ]
     }
   ]

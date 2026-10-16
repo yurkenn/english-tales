@@ -51,4 +51,13 @@ class LibraryFiltersTest {
         compose.onNodeWithText("Kategoriler").performScrollTo().performClick()
         chip("Tümü").assertIsSelected()
     }
+    @Test fun tagCategoriesListOnlyTheirStories() {
+        LearningContent.initialize(InstrumentationRegistry.getInstrumentation().targetContext)
+        compose.setContent {EnglishTalesTheme {CatalogScreen(LearningSnapshot(),{},PaddingValues())}}
+        // Tag categories (Q4.5) replace the fixed genre list; genres stay as tags.
+        for(category in listOf("Masal","Fabl")) compose.onNodeWithText(category).performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText("Fabl").performScrollTo().performClick()
+        title("The Tortoise and the Hare").assertIsDisplayed()
+        compose.onNodeWithText("The Snow Queen").assertDoesNotExist()
+    }
 }

@@ -39,7 +39,7 @@ export function bundledDocuments(catalog){
       for(const id of new Set(matched.map(m=>m.word.id))) links.push({sentence_id:s.id,word_id:id});
       return {...s,position:index+1};
     });
-    return {...story,questions:Array.isArray(story.questions)?story.questions.map((q,i)=>({...q,position:i+1})):story.questions===undefined?[]:story.questions,revisionId:null,sentences,words:[...words.values()],links};
+    return {...story,tags:Array.isArray(story.tags)?story.tags:[],questions:Array.isArray(story.questions)?story.questions.map((q,i)=>({...q,position:i+1})):story.questions===undefined?[]:story.questions,revisionId:null,sentences,words:[...words.values()],links};
   });
 }
 
@@ -52,11 +52,14 @@ export function publishedDocuments(snapshot){
   if(translationTablesPresent)for(const name of translationTables)
     if(!Array.isArray(snapshot.tables[name]))throw Error(`Snapshot table missing: ${name}`);
   if(snapshot.tables.story_questions!==undefined&&!Array.isArray(snapshot.tables.story_questions))throw Error('Snapshot table invalid: story_questions');
+  if(snapshot.tables.revision_tags!==undefined&&!Array.isArray(snapshot.tables.revision_tags))throw Error('Snapshot table invalid: revision_tags');
   const t=snapshot.tables,revisions=new Map(t.story_revisions.map(r=>[r.id,r]));
   return t.stories.filter(s=>!s.is_archived&&s.current_revision_id).map(story=>{
     const revision=revisions.get(story.current_revision_id);
     return {...revision,id:story.id,revisionId:story.current_revision_id,
       translationTablesPresent,
+      // Snapshots taken before Q4.5 have no tag table; their tags are unknown rather than empty.
+      tags:t.revision_tags?t.revision_tags.filter(r=>r.revision_id===story.current_revision_id).map(r=>r.tag_id):undefined,
       questions:(t.story_questions??[]).filter(q=>q.revision_id===story.current_revision_id).sort((a,b)=>a.position-b.position),
       ...(translationTablesPresent?{descriptions:Object.fromEntries(t.revision_texts.filter(r=>r.revision_id===story.current_revision_id).map(r=>[r.lang,r.description]))}:{}),
       revisionMissing:!revision,revisionWrongOwner:revision&&revision.story_id!==story.id,
@@ -196,6 +199,7 @@ export function compareDocuments(bundle,live,{manifest,snapshot}={}){
       missingLinks:expected.links.filter(link=>!actualLinks.has(linkKey(link))),extraLinks:actual.links.filter(link=>!expectedLinks.has(linkKey(link))),
       questionChanges:JSON.stringify(questionDocument(expected.questions))===JSON.stringify(questionDocument(actual.questions))?[]:[{expected:questionDocument(expected.questions),actual:questionDocument(actual.questions)}],
       translationChanges:translationChanges(expected,actual),
+      tagChanges:actual.tags===undefined||sorted(expected.tags??[]).join()===sorted(actual.tags).join()?[]:[{expected:sorted(expected.tags??[]),actual:sorted(actual.tags)}],
       coverMismatch:manifest&&snapshot?(!cover||!activeCover||cover.sha256!==activeCover.sha256||cover.byteSize!==Number(activeCover.byte_size)):null};
     if(diff.coverMismatch||Object.entries(diff).some(([key,value])=>Array.isArray(value)&&value.length))differences.push(diff);
   }
@@ -208,6 +212,7 @@ export function compareDocuments(bundle,live,{manifest,snapshot}={}){
       missingRevisionWords:differences.reduce((n,d)=>n+d.missingWordIds.length,0),extraRevisionWords:differences.reduce((n,d)=>n+d.extraWordIds.length,0),
       modifiedRevisionWords:differences.reduce((n,d)=>n+d.modifiedWords.length,0),
       questionDifferences:differences.filter(d=>d.questionChanges.length).length,
+      tagDifferences:differences.filter(d=>d.tagChanges.length).length,
       translationChanges:differences.reduce((n,d)=>n+d.translationChanges.length,0),
       missingLinks:differences.reduce((n,d)=>n+d.missingLinks.length,0),extraLinks:differences.reduce((n,d)=>n+d.extraLinks.length,0),
       coverMismatches:differences.filter(d=>d.coverMismatch).length},

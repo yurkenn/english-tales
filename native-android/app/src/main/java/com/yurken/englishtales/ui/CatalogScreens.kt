@@ -39,6 +39,7 @@ import com.yurken.englishtales.data.LearningSnapshot
 import com.yurken.englishtales.data.ReadingStatus
 import com.yurken.englishtales.data.StoryFilters
 import com.yurken.englishtales.data.Story
+import com.yurken.englishtales.data.StoryTag
 import com.yurken.englishtales.data.progressFor
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -98,6 +99,8 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
     }
 }
 
+private const val TAG_LIST = "tag:"
+
 @Composable
 fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, padding: PaddingValues) {
     var search by rememberSaveable { mutableStateOf("") }
@@ -112,9 +115,11 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     BackHandler(enabled=listMode.isNotBlank()) { leaveList() }
     val stories=LearningContent.stories
     val newest=LearningContent.newestStories(3)
+    // Categories come from the stories' tags (Q4.5), so a new tag needs no app release.
+    val categories=stories.flatMap(StoryTag::of).distinctBy { it.id }.sortedBy { LearningContent.tagOrder.indexOf(it.id).let { i -> if(i<0) Int.MAX_VALUE else i } }
     val filtered=(if(listMode=="new") newest else stories).filter { story ->
         (listMode!="books" || (snapshot.progressFor(story))>0) &&
-        (listMode !in listOf("Macera","Gizem","Günlük yaşam") || story.genre==listMode) &&
+        (!listMode.startsWith(TAG_LIST) || StoryTag.of(story).any { it.id==listMode.removePrefix(TAG_LIST) }) &&
         (listMode!="adventure" || story.genre!="Günlük yaşam") &&
         (listMode!="level" || story.level==snapshot.level) &&
         (search.isBlank() || story.title.contains(search,true) || story.description.contains(search,true)) &&
@@ -141,12 +146,12 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 Spacer(Modifier.height(28.dp))
                 BookShelf(stringResource(R.string.seviyene_uygun),stories.filter { it.level==snapshot.level },onOpenStory) { listMode="level" }
                 Spacer(Modifier.height(22.dp))
-                listOf(stringResource(R.string.kategoriler) to "all","Günlük yaşam" to "Günlük yaşam","Macera" to "Macera","Gizem" to "Gizem").forEach { (label,key) ->
+                (listOf(stringResource(R.string.kategoriler) to "all")+categories.map { it.name to TAG_LIST+it.id }).forEach { (label,key) ->
                     Row(Modifier.fillMaxWidth().clickable(role=Role.Button) { listMode=key }.padding(horizontal=18.dp,vertical=14.dp),horizontalArrangement=Arrangement.SpaceBetween) { Text(label,fontSize=14.sp); Text("›",color=TaleMuted) }
                 }
             }
         } else {
-            SimpleTopBar(if(listMode=="books") stringResource(R.string.kitaplarim) else if(listMode=="search") stringResource(R.string.arama) else if(listMode=="new") stringResource(R.string.yeni_hikayeler) else if(listMode=="level") stringResource(R.string.kitaplari, snapshot.level) else if(listMode=="adventure") stringResource(R.string.macera_ve_gizem) else if(listMode=="all") stringResource(R.string.kitaplar) else listMode) { leaveList() }
+            SimpleTopBar(if(listMode=="books") stringResource(R.string.kitaplarim) else if(listMode=="search") stringResource(R.string.arama) else if(listMode=="new") stringResource(R.string.yeni_hikayeler) else if(listMode=="level") stringResource(R.string.kitaplari, snapshot.level) else if(listMode=="adventure") stringResource(R.string.macera_ve_gizem) else if(listMode=="all") stringResource(R.string.kitaplar) else categories.firstOrNull { TAG_LIST+it.id==listMode }?.name ?: stringResource(R.string.kitaplar)) { leaveList() }
             if(listMode!="books") {
                 BasicTextField(value=search,onValueChange={search=it},singleLine=true,modifier=Modifier.fillMaxWidth().padding(horizontal=16.dp).background(TaleLine,RoundedCornerShape(6.dp)).padding(12.dp),decorationBox={ inner ->
                     Box { if(search.isEmpty()) Text(stringResource(R.string.kitap_ara),color=TaleMuted,fontSize=14.sp); inner() }

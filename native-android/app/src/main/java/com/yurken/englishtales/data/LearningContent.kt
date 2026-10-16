@@ -41,8 +41,24 @@ data class Story(
     /** First publication of the story (not of this revision); null for bundled content. */
     val addedAt: java.time.Instant? = null,
     /** English comprehension questions shown after reading (Q5.3); empty when the story has none. */
-    val questions: List<StoryQuestion> = emptyList()
+    val questions: List<StoryQuestion> = emptyList(),
+    /** Library categories (Q4.5) in vocabulary order; empty when the source predates tags. */
+    val tags: List<StoryTag> = emptyList()
 )
+
+/** A library category such as a fairy tale or fable; [name] is in the support language. */
+data class StoryTag(val id: String, val name: String) {
+    companion object {
+        private val genreTags = mapOf("Macera" to "macera", "Gizem" to "gizem", "Günlük yaşam" to "gunluk-yasam")
+        /** Stories from servers or caches without tags fall back to their genre, which every story has. */
+        fun of(story: Story): List<StoryTag> = story.tags.ifEmpty { listOf(StoryTag(genreTags[story.genre] ?: story.genre, story.genre)) }
+        /** Reads `[{id, name}]` (revision documents) or `["id"]` with [names] (the bundled catalog). */
+        fun parse(array: org.json.JSONArray?, names: Map<String, String> = emptyMap()): List<StoryTag> = (0 until (array?.length() ?: 0)).mapNotNull { i ->
+            array!!.optJSONObject(i)?.let { StoryTag(it.optString("id"), it.optString("name").ifBlank { names[it.optString("id")] ?: it.optString("id") }) }
+                ?: array.optString(i).takeIf { it.isNotBlank() }?.let { StoryTag(it, names[it] ?: it) }
+        }.filter { it.id.isNotBlank() }.distinctBy { it.id }
+    }
+}
 
 /** A multiple-choice comprehension question; [answer] indexes [options]. */
 data class StoryQuestion(val id: String, val kind: String, val prompt: String, val options: List<String>, val answer: Int) {
@@ -110,6 +126,10 @@ object LearningContent {
     @Volatile private var bundled: List<Story>? = null
     val bundledStories: List<Story> get() = checkNotNull(bundled) { "LearningContent.initialize must run before UI" }
 
+    /** Bundled tag vocabulary order; tags only known from the server sort after these. */
+    @Volatile var tagOrder: List<String> = emptyList()
+        private set
+
     /** True once the bundled catalog is installed; readable from composition. */
     val ready: Boolean get() = catalog != null
 
@@ -137,6 +157,12 @@ object LearningContent {
         }
         require(parsedWords.map { it.id }.distinct().size == parsedWords.size) { "Duplicate word ID" }
 
+        val tagArray = root.optJSONArray("tags") ?: org.json.JSONArray()
+        val tagNames = (0 until tagArray.length()).associate { i -> tagArray.getJSONObject(i).let { tag ->
+            val names = tag.optJSONObject("names")
+            tag.getString("id") to (names?.optString(SupportLanguage.code)?.takeIf { it.isNotBlank() } ?: names?.optString(SupportLanguage.DEFAULT)?.takeIf { it.isNotBlank() } ?: tag.getString("id"))
+        } }
+        tagOrder = tagNames.keys.toList()
         val storyArray = root.getJSONArray("stories")
         val parsedStories = (0 until storyArray.length()).map { index ->
             val item = storyArray.getJSONObject(index)
@@ -150,7 +176,8 @@ object LearningContent {
             Story(
                 item.getString("id"), item.getString("title"), item.getString("author"),
                 item.getString("level"), item.getString("genre"), SupportLanguage.pick(item, "descriptions", "description"),
-                item.getString("coverKey"), sentences, questions = StoryQuestion.parse(item.optJSONArray("questions"))
+                item.getString("coverKey"), sentences, questions = StoryQuestion.parse(item.optJSONArray("questions")),
+                tags = StoryTag.parse(item.optJSONArray("tags"), tagNames)
             )
         }
         require(parsedStories.isNotEmpty()) { "Catalog has no stories" }
