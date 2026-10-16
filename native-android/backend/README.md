@@ -22,11 +22,13 @@ Misafir kullanıcı internetsiz öğrenmeye başlayacak. Buluta öğrenme kaydı
 - `supabase/migrations/202610100002_learning.sql`: Tercihler, öğrenme oturumları, kelime olayları, okuma konumu, puan, günlük hedef ve başarılar.
 - `supabase/migrations/202610100003_content_admin.sql`: Güvenli personel rolü, taslak oluşturma/kopyalama, atomik kaydetme, düzenleme sayacı ve yayın kontrolü.
 - `supabase/migrations/202610100004_admin_completion.sql`: İçerik işlem geçmişi, sürüm kontrollü taslak silme/arşivleme, kelime-cümle uyumu, kullanılmayan medya için güvenli silme rezervasyonu.
+- `supabase/migrations/20261016090000_translation_tables.sql`: Destek dili tabloları, tüm revision'lardan Türkçe aktarımı, eski alanlarla tetikleyici üzerinden eşitleme, dil bütünlüğüyle yayın kontrolü ve dil haritalarını koruyan yönetim RPC'leri.
 - `admin/`: Türkçe içerik paneli. Kalıcı yerel deneme + gerçek Supabase oturum/API adaptörü. [Panel kullanımı](admin/README.md).
 - `supabase/seed.sql`: Altı hikâye ve 81 cümle çifti. **Yalnızca taslak oluşturur.** Mevcut sürümleri değiştirmez; medya dosyalarını yüklemez.
 - `supabase/asset-upload-manifest.json`: Altı kapağın kaynak yolu, hedef yolu, SHA-256 özeti ve bayt boyutu.
 - `tests/`: Gerçek PostgreSQL motorunda erişim ve öğrenme kuralları. Auth ve Storage için yalnızca test tabloları kullanılır.
 - [Uygulama ve eşitleme sözleşmesi](SYNC_CONTRACT.md): Android entegrasyonunun takip edeceği kurallar.
+- [Destek dili sözleşmesi](TRANSLATION_CONTRACT.md): `sentence_translations`, `word_translations`, `revision_texts`; anonim sayfalama, Türkçe uyumluluğu ve ek dil kuralları. Panelde destek dili seçilir; eski Türkçe alanlar kaynak olarak korunur. Taslak kopyalama/kaydetme ek dilleri korur.
 - [Doğrulama kaydı](VERIFICATION.md): Yapılan kontroller ve canlı ortamda kalan işler.
 
 ## Yerel kontrolleri çalıştırma
@@ -38,9 +40,12 @@ npm ci --ignore-scripts --no-fund --no-audit
 npm run catalog:export
 npm test
 npm run content:audit
+npm run content:audit -- --require-lang tr
 ```
 
 Paket/canlı içerik karşılaştırması, gerçek seçilebilir kelime kapsamı, medya kontrolü ve yayın öncesi sıkı eşikler: [Q4 içerik denetimi](../docs/CONTENT_QUALITY_AUDIT.md). Araç taslak veya yayın oluşturmaz; yalnız yerel rapor ve inceleme paketi yazar.
+
+Denetim raporunda her destek dili için eksik cümle/kelime/açıklama sayıları bulunur. `--require-lang <lang>` istenen dil bütün katalogda tam değilse başarısız olur. Mevcut JSON kataloğu değişmeden kullanılabilir; exporter eski alanlardan `tr`, isteğe bağlı `translations`/`descriptions` haritalarından ek dil satırları üretir. Boş eski taslak alanları aktarımda satır oluşturmaz; yayın için tamamlanmaları gerekir.
 
 Emülatörün ürettiği gerçek işlem gövdelerini yerel sunucu sözleşmesiyle kontrol etmek için:
 
@@ -57,7 +62,7 @@ Supabase CLI ve Docker kurulursa, bu klasörde `supabase start` ile ayrı bir ye
 ## Canlı kurulum sırası
 
 1. Uygulamaya ait Supabase projesini ve bölgesini belirle; önce deneme ortamını kullan. `config.toml` içindeki `english-tales` yerel ortam adıdır, canlı proje kimliği değildir.
-2. Dört migration dosyasını sırayla uygula. Data API'de yalnızca `public` şemasını aç; `private` şemasını açma. Mevcut bucket/policy varsa çakışmaları önce incele.
+2. Migration dosyalarını zaman damgası sırasıyla uygula. Data API'de yalnızca `public` şemasını aç; `private` şemasını açma. Mevcut bucket/policy varsa çakışmaları önce incele.
 3. `seed.sql` ile taslakları aktar. Yeni içerik düzeltmeleri için yeni sürüm oluştur; seed'i değiştirerek yayımlanmış metni güncelleme.
 4. Gerçek Auth hesabını oluştur; doğrulanmış kullanıcı UUID'sine editör veya yayıncı rolünü güvenilir yönetim bağlantısından ata. Rol verme işlemi uygulamaya veya kullanıcı profil bilgisine bırakılmaz.
 5. Kapakları **Storage API üzerinden**, mevcut dosyayı ezmeden yükle. Kaynak ve geri indirilen dosyanın boyutunu ve SHA-256 özetini karşılaştır. Panel yeni UUID/hash yolu oluşturur ve taslağı bu doğrulanmış dosyaya bağlar; manifest kaynaklarını karşılaştırma için sakla. `storage.objects` tablosuna elle kayıt eklemek dosya yüklemez.

@@ -7,6 +7,7 @@
     "test:admin": "node tools/verify-admin-http.mjs",
     "catalog:export": "node tools/export-catalog.mjs",
     "content:audit": "node tools/audit-content.mjs",
+    "content:drafts": "node tools/content-drafts.mjs",
     "test": "node --test tests/*.test.mjs"
   },
   "devDependencies": {

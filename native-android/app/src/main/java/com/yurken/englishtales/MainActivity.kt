@@ -55,6 +55,11 @@ class MainActivity : ComponentActivity() {
             com.yurken.englishtales.analytics.ProductAnalytics.get(applicationContext).onForeground()
         }
     }
+    override fun onStop() {
+        super.onStop()
+        // The learner returns to the home screen; show the progress they just made.
+        lifecycleScope.launch {com.yurken.englishtales.widget.LearningWidget.refresh(applicationContext)}
+    }
     override fun onDestroy() {
         play?.dispose()
         super.onDestroy()
