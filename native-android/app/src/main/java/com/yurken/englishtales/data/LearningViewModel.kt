@@ -81,6 +81,14 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         }
     }
 
+    fun toggleFavorite(storyId: String) {
+        var favorite: Boolean?=null
+        mutate {
+            if(favorite==null) favorite=storyId !in store.snapshot().favoriteStoryIds
+            store.setFavorite(storyId,checkNotNull(favorite))
+        }
+    }
+
     fun reviewWord(wordId: String, correct: Boolean) = mutate {
         store.reviewWord(wordId, correct)
     }

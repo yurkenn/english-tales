@@ -131,6 +131,19 @@ class LearningStoreTest {
         now+=(ReviewFocus.WINDOW_DAYS+1)*LearningPolicy.DAY_MS
         assertEquals(emptyList<String>(),store.snapshot().weakWordIds)
     }
+    @Test fun favoritesKeepNewestFirstAcrossReopenAndRemoval() {
+        store.setFavorite("quiet-morning",true)
+        now+=1000
+        store.setFavorite("paper-boat",true);store.setFavorite("quiet-morning",true)
+        assertEquals(listOf("paper-boat","quiet-morning"),store.snapshot().favoriteStoryIds)
+        store.close();store=LearningStore(context) {now}
+        assertEquals(listOf("paper-boat","quiet-morning"),store.snapshot().favoriteStoryIds)
+        store.setFavorite("paper-boat",false)
+        assertEquals(listOf("quiet-morning"),store.snapshot().favoriteStoryIds)
+        // A story that later leaves the catalog stays a harmless ID; screens only list stories they can open.
+        store.setFavorite("archived-story",true)
+        assertEquals(listOf("archived-story","quiet-morning"),store.snapshot().favoriteStoryIds)
+    }
     @Test fun progressDoesNotRegressAndPreferencesPersist() {
         store.updateProgress("quiet-morning",88);store.updateProgress("quiet-morning",10)
         store.updatePreferences("B1","Gizem",3,"Ada")
@@ -155,7 +168,7 @@ class LearningStoreTest {
         store=LearningStore(context) {now}
         assertEquals(125,store.snapshot().points);assertEquals(88,store.snapshot().storyProgress["quiet-morning"])
         assertEquals("known",store.snapshot().wordStates["quiet"]);assertEquals(listOf("quiet"),store.snapshot().dueWordIds)
-        assertEquals(6,store.readableDatabase.version)
+        assertEquals(7,store.readableDatabase.version)
     }
 
     @Test fun versionOneMigrationKeepsExistingProgress() {
@@ -169,7 +182,7 @@ class LearningStoreTest {
         }
         store=LearningStore(context) {now}
         assertEquals(25,store.snapshot().points);assertEquals(44,store.snapshot().storyProgress["quiet-morning"])
-        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(6,store.readableDatabase.version)
+        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(7,store.readableDatabase.version)
         assertTrue(store.queuedOperations().isEmpty())
     }
 

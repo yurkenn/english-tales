@@ -17,7 +17,7 @@ class GuestTransferFailure(val code: String): Exception("Guest transfer could no
 
 /** Cross-database saga: claim/reset source, atomic target import, acknowledge source. */
 object GuestTransfer {
-    private val tables=listOf("saved_words","story_progress","learning_stats","learning_days","engagement_events","earned_badges","local_profile","learning_outbox","session_drafts")
+    private val tables=listOf("saved_words","story_progress","learning_stats","learning_days","engagement_events","earned_badges","local_profile","learning_outbox","session_drafts","favorite_stories")
     private fun rows(db: SupportSQLiteDatabase,table: String): JSONArray {
         val result=JSONArray()
         db.query("SELECT * FROM $table").use {c -> while(c.moveToNext()) {
@@ -126,6 +126,8 @@ object GuestTransfer {
             }
             guestEvents.forEach {insert(db,"engagement_events",it,SQLiteDatabase.CONFLICT_IGNORE)}
             root.getJSONArray("earned_badges").objects().forEach {insert(db,"earned_badges",it,SQLiteDatabase.CONFLICT_IGNORE)}
+            // Payloads written before F09 have no favorites; the account keeps its own when both have one.
+            root.optJSONArray("favorite_stories")?.objects()?.forEach {insert(db,"favorite_stories",it,SQLiteDatabase.CONFLICT_IGNORE)}
             val guestStats=root.getJSONArray("learning_stats").getJSONObject(0)
             val oldStats=rows(db,"learning_stats").getJSONObject(0)
             oldStats.put("points",sum(oldStats.getInt("points"),guestStats.getInt("points")))
