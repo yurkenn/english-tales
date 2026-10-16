@@ -14,9 +14,9 @@
 | Performans | Okuyucu sayfa geçişi takılma | < %5 yavaş kare | Ölçülmüyor | Macrobenchmark `FrameTimingMetric` |
 | Boyut | İndirme boyutu (release APK) | < 15 MB | Birleşik APK 7,9 MB; AAB 11,18 MB (15 Ekim) | `verify_release.py` |
 | Doğruluk | PR başına otomatik test | Birim + backend + cihaz testleri CI'da | CI emülatörü: 139 test, 136 geçti / 3 koşullu atlandı | GitHub Actions |
-| Erişilebilirlik | Ana yolculuk TalkBack ile | Tamamlanabilir; etiketsiz etkileşim 0 | 18 etiket / 31 tıklanabilir | Kabul testi + lint |
-| Erişilebilirlik | Büyük yazı | fontScale 2.0'da kırpılma yok | Kısmi testler | Compose UI testleri |
-| Erişilebilirlik | Kontrast | ≥ 4.5:1 metin | Tema renkleri geçiyor, 80 sabit renk denetlenmedi | Renk denetimi |
+| Erişilebilirlik | Ana yolculuk TalkBack ile | Tamamlanabilir; etiketsiz etkileşim 0 | On ana ekranda etiketsiz/rolsüz eylem 0 (`AccessibilityAuditTest`); gerçek TalkBack ile elle yolculuk kaydı yok | Kabul testi + lint |
+| Erişilebilirlik | Büyük yazı | fontScale 2.0'da kırpılma yok | 320×640 dp, fontScale 2.0'da on ana ekranda kesilen veya bölünen metin 0 (`LargeTextLayoutTest`) | Compose UI testleri |
+| Erişilebilirlik | Kontrast | ≥ 4.5:1 metin | İki temada 38 metin/zemin çifti ≥ 4.5:1 (`TaleColorsContrastTest`); kalan sabit renkler kendi içinde eşleşen çiftler | Renk denetimi |
 | İçerik | Sözlük kapsaması (A1/A2 benzersiz sözcük) | ≥ %60 | %19 (tüm katalog) | Katalog testi |
 | İçerik | Paket = canlı | Fark 0 | Paket 359 / canlı 316 öğe | Yayın doğrulama aracı |
 | Öğrenme | İlk hikâyeyi bitirme, ertesi gün dönüş, tekrar tamamlama | Önce ölçüm, sonra hedef | Ölçülmüyor | Asgari ürün olayları |
@@ -60,7 +60,7 @@
 | Q3.3 | Uygulama geneli koyu tema | 80 sabit rengin tema token'larına taşınması; kontrast ≥ 4.5 | 2–3 |
 | Q3.4 | Büyük yazı ve küçük ekran testleri | fontScale 2.0'da ana ekranlar kırpılmasız | 1 |
 
-**Kapı Q3:** TalkBack yolculuğu · koyu tema · metinler kaynakta.
+**Kapı Q3:** TalkBack yolculuğu · koyu tema · metinler kaynakta. — **15 Ekim 2026: kod tarafı tamam, kapı açık.** Q3.1–Q3.4 yığılı PR'lar #30, #31, #32 ve #34; otomatik denetimler yerel emülatörde geçti. Kapanış için gerçek TalkBack ile ana yolculuğun elle kaydı ve PR'ların CI + birleştirmesi gerekir.
 
 ### Q4 — İçerik kalitesi · ~8–12 gün · karar: sözlük kaynağı
 
@@ -128,6 +128,10 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q2.3 Performans altyapısı | Ana dala birleşti; fiziksel kabul açık | [#26](https://github.com/yurkenn/english-tales/pull/26) | Profil üretimi 2/2, Macrobenchmark 3/3; imzalı APK/AAB profil doğrulaması geçti; [kanıt ve CI](PERFORMANCE.md) |
 | Q2.4 Sürüm otomasyonu | Kod hazır; GitHub secret'ları ve ilk CI çalıştırması açık | Bu değişiklik | Elle tetiklenen imzalı APK/AAB + `verify_release.py` (sürüm kodu, APK < 15 MB) + isteğe bağlı dahili kanal yüklemesi; yerel 49 adayı doğrulandı; [kurulum](RELEASE_AUTOMATION.md) |
 | Q2.5 Kademeli yayın listesi | Hazır; bu belgeyle birlikte #22 | [#22](https://github.com/yurkenn/english-tales/pull/22) | %20 → %50 → %100; izleme, durdurma ve düzeltme kaydı |
+| Q3.1 Metinler kaynakta | Bu değişiklik | — | 306 ekran metni `strings.xml`'e taşındı (UI, reklam/analiz tercihleri, güncelleme çubuğu, bildirim); sözcük içeren sabit `Text("…")` 0 ve `verify_repository.py` bunu korur. Tür adları (Günlük yaşam/Macera/Gizem) saklanan veri değeri olduğundan ve ViewModel hata mesajları henüz kaynakta değil |
+| Q3.2 TalkBack rol/etiket | Bu değişiklik | — | 24 özel tıklanabilir öğeye rol eklendi (seçim kartları `selectable` + `selectableGroup`); ikonlu geri düğmesine etiket, alıştırma kapatma hedefi 32 → 48 dp. `AccessibilityAuditTest` on ana ekranda etiketsiz veya rolsüz eylem bırakmaz (yerel emülatör 10/10). Kelime bağlantıları cümle metninin bağlantıları olarak okunur. Gerçek TalkBack ile elle yolculuk kaydı yok |
+| Q3.3 Koyu tema | Bu değişiklik | — | `Tale*` renkleri açık/koyu paletten gelir (`TaleColors`); sistem koyu temasında uygulama, Material bileşenleri ve pencere koyu. Sabit renkler yalnız kendi içinde eşleşen yerlerde kaldı (kapak, afiş, Google düğmesi, marka girişi, geri bildirim kenarlıkları). Açık temada 4.5:1 altındaki metin renkleri düzeltildi (ör. hata 2,98 → 6,5, seviye 2,96 → 5,2). `TaleColorsContrastTest` iki temada 38 metin/zemin çiftini, `DarkThemeTest` sekiz ekranı denetler (yerel emülatör 8/8). Okuyucu kendi açık/koyu seçimini korur. Önizleme: [Çalış](preview-dark-study.png), [Katalog](preview-dark-catalog.png), [Oyna](preview-dark-practice.png) |
+| Q3.4 Büyük yazı ve küçük ekran | Bu değişiklik | — | `LargeTextLayoutTest` 320×640 dp ve fontScale 2.0'da on ana ekranı tarar: satır kaybı, üç nokta, taşma ve kelime ortasından bölünme 0 (yerel emülatör 10/10). Alt menü, katalog düğmeleri, üst çubuk ve Kelimelerim düğmesi yazıyla büyür; yan yana öğeler fontScale ≥ 1,5'te alt alta geçer. Önizleme: [Katalog](preview-large-text-catalog.png), [Hikâye](preview-large-text-storyDetail.png) |
 | Q5.1 Bağlamlı boşluk doldurma | Ana dala birleşti | [#28](https://github.com/yurkenn/english-tales/pull/28) | Mevcut hikâye cümlelerinden seçmeli soru; puan/oturum sözleşmesi korunur; [kapsam](SENTENCE_GAP.md) |
 | Q5.4 Seviye yerleştirme | Ana dala birleşti | [#27](https://github.com/yurkenn/english-tales/pull/27) | Onboarding/Ayarlar’da dokuz soru, A1–B1 başlangıç önerisi; [kapsam](READING_PLACEMENT.md) |
 

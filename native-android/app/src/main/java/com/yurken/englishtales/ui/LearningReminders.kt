@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import android.Manifest
+import androidx.compose.ui.res.stringResource
 import android.app.*
 import android.content.*
 import android.content.pm.PackageManager
@@ -54,12 +55,12 @@ object LearningReminders {
     fun show(context: Context) {
         if(!enabled(context) || !allowed(context)) return
         val manager=context.getSystemService(NotificationManager::class.java)
-        if(Build.VERSION.SDK_INT>=26) manager.createNotificationChannel(NotificationChannel("daily_learning","Günlük öğrenme hatırlatıcısı",NotificationManager.IMPORTANCE_DEFAULT))
+        if(Build.VERSION.SDK_INT>=26) manager.createNotificationChannel(NotificationChannel("daily_learning",context.getString(R.string.gunluk_ogrenme_hatirlaticisi),NotificationManager.IMPORTANCE_DEFAULT))
         val open=PendingIntent.getActivity(context,72,Intent(context,MainActivity::class.java).putExtra("daily_plan_request",System.currentTimeMillis()).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         @Suppress("DEPRECATION")
         val builder=if(Build.VERSION.SDK_INT>=26) Notification.Builder(context,"daily_learning") else Notification.Builder(context)
-        manager.notify(71,builder.setSmallIcon(R.drawable.ic_notification).setContentTitle("Bugünkü hikâyen seni bekliyor")
-            .setContentText("Kısa bir okuma veya kelime tekrarıyla günlük hedefini tamamla.").setContentIntent(open).setAutoCancel(true).build())
+        manager.notify(71,builder.setSmallIcon(R.drawable.ic_notification).setContentTitle(context.getString(R.string.bugunku_hikayen_seni_bekliyor))
+            .setContentText(context.getString(R.string.kisa_bir_okuma_veya_kelime)).setContentIntent(open).setAutoCancel(true).build())
     }
 }
 
@@ -92,11 +93,11 @@ fun ReminderControls() {
         enabled=granted && LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute)
     }
     Column(Modifier.fillMaxWidth().padding(vertical=12.dp)) {
-        Text("Kendi saatinde hatırlat",fontSize=16.sp)
-        Text("İsteğe bağlıdır. Günlük hedefini tamamladıysan bildirim gönderilmez.",fontSize=12.sp,color=TaleMuted)
+        Text(stringResource(R.string.kendi_saatinde_hatirlat),fontSize=16.sp)
+        Text(stringResource(R.string.istege_baglidir_gunluk_hedefini_tamamladiysan),fontSize=12.sp,color=TaleMuted)
         Row(Modifier.fillMaxWidth(),verticalAlignment=androidx.compose.ui.Alignment.CenterVertically) {
             TextButton(onClick={TimePickerDialog(context,{_,h,m ->hour=h;minute=m;LearningReminders.configure(context,enabled,h,m)},hour,minute,true).show()},modifier=Modifier.weight(1f)) {Text(String.format(Locale.getDefault(),"%02d:%02d",hour,minute))}
-            Switch(checked=enabled,modifier=Modifier.semantics {contentDescription="Günlük hatırlatıcı"},onCheckedChange={value ->
+            Switch(checked=enabled,modifier=Modifier.contentLabel(stringResource(R.string.gunluk_hatirlatici)),onCheckedChange={value ->
                 denied=false
                 if(!value) {enabled=false;LearningReminders.configure(context,false)}
                 else if(Build.VERSION.SDK_INT>=33 && context.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)!=PackageManager.PERMISSION_GRANTED) permission.launch(Manifest.permission.POST_NOTIFICATIONS)
@@ -104,8 +105,8 @@ fun ReminderControls() {
             })
         }
         if(denied || (enabled && !LearningReminders.allowed(context))) {
-            Text("Bildirim izni kapalı. Dilersen cihaz ayarlarından açabilirsin.",fontSize=12.sp,color=TaleMuted)
-            TextButton(onClick={val intent=if(android.os.Build.VERSION.SDK_INT>=26) Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(android.provider.Settings.EXTRA_APP_PACKAGE,context.packageName) else Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,android.net.Uri.parse("package:${context.packageName}"));context.startActivity(intent)}) {Text("Bildirim ayarlarını aç")}
+            Text(stringResource(R.string.bildirim_izni_kapali_dilersen_cihaz),fontSize=12.sp,color=TaleMuted)
+            TextButton(onClick={val intent=if(android.os.Build.VERSION.SDK_INT>=26) Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(android.provider.Settings.EXTRA_APP_PACKAGE,context.packageName) else Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,android.net.Uri.parse("package:${context.packageName}"));context.startActivity(intent)}) {Text(stringResource(R.string.bildirim_ayarlarini_ac))}
         }
     }
 }

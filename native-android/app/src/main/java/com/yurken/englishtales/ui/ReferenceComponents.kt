@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.Canvas
+import com.yurken.englishtales.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.rememberScrollState
@@ -35,6 +37,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Modifier.size(23.dp)) {
+    val themedAccent = if(tint == TaleBlue) TalePurple else tint
     Canvas(modifier) {
         scale(size.width / 24f, size.height / 24f, pivot = Offset.Zero) {
             fun line(x1: Float, y1: Float, x2: Float, y2: Float) = drawLine(tint, Offset(x1,y1), Offset(x2,y2), 1.8f, StrokeCap.Round)
@@ -43,7 +46,7 @@ fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Mod
                 drawPath(p,tint,style=if(fill) androidx.compose.ui.graphics.drawscope.Fill else Stroke(1.8f,cap=StrokeCap.Round))
             }
             // Keep white/disabled/night-mode icons monochrome; accent only the brand-blue variant.
-            val accent = if(tint == TaleBlue) TalePurple else tint
+            val accent = themedAccent
             fun outline(p: Path, color: Color = tint) = drawPath(p,color,style=Stroke(1.8f,cap=StrokeCap.Round))
             when(kind) {
                 "study" -> {
@@ -139,11 +142,11 @@ fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Col
 
 @Composable
 fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
-    val tabs = listOf("Çalış" to "study", "Oku" to "read", "Oyna" to "play", "Profilim" to "profile")
-    val barHeight=56.dp+18.dp*(LocalDensity.current.fontScale-1f).coerceAtLeast(0f)
-    Row(Modifier.fillMaxWidth().background(Color.White).navigationBarsPadding().height(barHeight)) {
+    val tabs = listOf(stringResource(R.string.calis) to "study", stringResource(R.string.oku_2) to "read", stringResource(R.string.oyna) to "play", stringResource(R.string.profilim) to "profile")
+    // Grows with the label instead of clipping it at large font sizes.
+    Row(Modifier.fillMaxWidth().background(TaleSurface).navigationBarsPadding().heightIn(min=56.dp).height(IntrinsicSize.Min)) {
         tabs.forEachIndexed { index,(label,kind) ->
-            Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=selected==index }.clickable(role=Role.Tab) { onSelect(index) }.padding(top=7.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(3.dp)) {
+            Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=selected==index }.clickable(role=Role.Tab) { onSelect(index) }.padding(top=7.dp,bottom=6.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(3.dp)) {
                 ReferenceIcon(kind,if(selected==index) TaleBlue else TaleMuted,Modifier.size(22.dp))
                 Text(label,color=if(selected==index) TaleBlue else TaleMuted,fontSize=11.sp,fontWeight=if(selected==index) FontWeight.SemiBold else FontWeight.Normal)
             }
@@ -174,7 +177,14 @@ fun GameViewport(padding: PaddingValues, minimumHeight: Dp = 450.dp, content: @C
 @Composable
 fun GameHeader(progress: Float, onExit: () -> Unit) {
     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(14.dp)) {
-        Box(Modifier.size(32.dp).clickable(onClick=onExit).semantics { contentDescription="Alıştırmadan çık" },contentAlignment=Alignment.Center) { Text("×",fontSize=25.sp,color=TaleMuted) }
+        Box(Modifier.size(48.dp).clickable(role=Role.Button,onClick=onExit).contentLabel(stringResource(R.string.alistirmadan_cik)),contentAlignment=Alignment.Center) { Text("×",fontSize=25.sp,color=TaleMuted) }
         ReferenceProgress(progress,Modifier.weight(1f))
     }
 }
+
+/** Screen reader label; the text is resolved in the calling composable. */
+internal fun Modifier.contentLabel(label: String) = semantics { contentDescription = label }
+
+/** Side-by-side items stack once system text is large (fontScale >= 1.5), so words are not split. */
+@Composable
+internal fun sideBySide(items: Int) = if(LocalDensity.current.fontScale>=1.5f) 1 else items

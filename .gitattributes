@@ -1,1 +1,2 @@
 native-android/app/src/main/generated/baselineProfiles/*.txt linguist-generated=true
+native-android/docs/content-audit/*.json linguist-generated=true

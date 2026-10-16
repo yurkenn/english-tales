@@ -3,6 +3,7 @@ package com.yurken.englishtales.ui
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.data.*
 import org.junit.Assert.assertEquals
@@ -11,7 +12,15 @@ import org.junit.Test
 
 class LibraryFiltersTest {
     @get:Rule val compose=createComposeRule()
-    private fun chip(label: String)=compose.onNode(hasText(label) and isSelectable())
+    private fun chip(label: String): SemanticsNodeInteraction {
+        val target=hasText(label) and isSelectable()
+        // LazyRow does not compose off-screen chips on narrower CI devices.
+        val rows=compose.onAllNodes(hasScrollToIndexAction() and
+            SemanticsMatcher.keyIsDefined(SemanticsProperties.HorizontalScrollAxisRange))
+        val row=if(label in StoryFilters.levels || label=="Tüm seviyeler") rows.onFirst() else rows.onLast()
+        row.performScrollToNode(target)
+        return compose.onNode(target)
+    }
     private fun title(text: String)=compose.onAllNodesWithText(text).onFirst()
 
     @Test fun levelAndStatusFiltersCombineClearAndResetWhenLeavingTheList() {
