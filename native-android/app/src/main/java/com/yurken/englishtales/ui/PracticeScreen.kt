@@ -39,6 +39,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var gapUnavailable by rememberSaveable { mutableStateOf(false) }
     var listenQuestions by rememberSaveable(stateSaver=listeningQuestionsSaver) { mutableStateOf(emptyList<ListeningQuestion>()) }
     var orderQuestions by rememberSaveable(stateSaver=orderQuestionsSaver) { mutableStateOf(emptyList<OrderQuestion>()) }
+    var ladderModes by rememberSaveable { mutableStateOf(emptyList<String>()) }
     val stories=LearningContent.stories
     val dictionary=LearningContent.words
     val gapPrompts by produceState<List<GapPrompt>?>(null,stories,dictionary) {
@@ -46,7 +47,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         gapUnavailable=false
     }
     val orderCandidates=remember(stories) {SentenceOrder.candidates(stories)}
-    val sessionKind=when(mode) {"cloze"->SentenceGap.SESSION_KIND;"listen"->ListeningQuiz.SESSION_KIND;"order"->SentenceOrder.SESSION_KIND;"dictation"->Dictation.SESSION_KIND;else->mode}
+    val sessionKind=when(mode) {"cloze"->SentenceGap.SESSION_KIND;"listen"->ListeningQuiz.SESSION_KIND;"order"->SentenceOrder.SESSION_KIND;"dictation"->Dictation.SESSION_KIND;"ladder"->PracticeLadder.SESSION_KIND;else->mode}
     fun exit(plan: Boolean=false) {
         val leave={onSessionAbandoned(sessionKey);mode="";if(plan) onDailyPlan()}
         if(plan && finished) {
@@ -73,9 +74,12 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         val pool=if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else (priority+supplemental.shuffled()).distinctBy {it.id}.take(5)
         sessionKey=java.util.UUID.randomUUID().toString()
         session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else if(value=="order" || value=="dictation") orderQuestions.map {it.sentenceId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
+        // Q5.8: each word gets the drill that fits its stage.
+        if(value=="ladder") ladderModes=PracticeLadder.modes(ids,snapshot.wordStates)
         if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(snapshot::wordFor),dictionary)
     }
-    LaunchedEffect(launchId) { if(launchId!=null) { start("choice",launchWordIds);onLaunchConsumed() } }
+    // The daily plan's review uses the ladder, so each due word gets the drill that fits its stage (Q5.8).
+    LaunchedEffect(launchId) { if(launchId!=null) { start("ladder",launchWordIds);onLaunchConsumed() } }
     LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,sessionKind,ids.size)}
     if(mode.isEmpty()) {
         Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())) {
@@ -84,6 +88,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             if(snapshot.weakWordIds.isNotEmpty()) Text(stringResource(R.string.weak_words_count, snapshot.weakWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp,vertical=4.dp))
             Spacer(Modifier.height(20.dp))
+            ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),"review",LocalTaleColors.current.tilePurple) {start("ladder")}
             ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),"cards",LocalTaleColors.current.tileBlue) {start("card")}
             ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),"translate",LocalTaleColors.current.tileYellow) {start("choice")}
             ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",LocalTaleColors.current.tileBlue,enabled=gapPrompts?.isNotEmpty()==true) {start("cloze")}
@@ -128,15 +133,17 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         return
     }
     val word=words[question]
-    var answer by rememberSaveable(question,mode,session) { mutableStateOf<String?>(null) }
-    var chosen by rememberSaveable(question,mode,session) { mutableStateOf(emptyList<Int>()) }
+    // In the ladder each question has its own drill; other modes use one drill for the whole session.
+    val drill=if(mode=="ladder") ladderModes.getOrElse(question) {PracticeLadder.RECOGNISE} else mode
+    var answer by rememberSaveable(question,drill,session) { mutableStateOf<String?>(null) }
+    var chosen by rememberSaveable(question,drill,session) { mutableStateOf(emptyList<Int>()) }
     // Phrases are spelled without their spaces; a blank tile would be indistinguishable.
     val spelling=word.word.filterNot(Char::isWhitespace)
-    val letterText=rememberSaveable(question,mode,session) {spelling.toList().shuffled().joinToString("")}
+    val letterText=rememberSaveable(question,drill,session) {spelling.toList().shuffled().joinToString("")}
     val letters=letterText.toList()
-    val options=rememberSaveable(question,mode,session) {(listOf(word.translation)+LearningContent.words.map {it.translation}.distinct().filter {it!=word.translation}.shuffled().take(3)).shuffled()}
-    var advanceWrong by rememberSaveable(question,mode,session) {mutableStateOf(false)}
-    val correct=answer==if(mode=="choice") word.translation else spelling
+    val options=rememberSaveable(question,drill,session) {(listOf(word.translation)+LearningContent.words.map {it.translation}.distinct().filter {it!=word.translation}.shuffled().take(3)).shuffled()}
+    var advanceWrong by rememberSaveable(question,drill,session) {mutableStateOf(false)}
+    val correct=answer==if(drill=="choice") word.translation else spelling
     LaunchedEffect(answer,advanceWrong) {
         if(answer!=null && (correct || advanceWrong)) {
             delay(if(correct) 700 else 0)
@@ -148,13 +155,13 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     GameViewport(padding) {
         GameHeader((question+1).toFloat()/words.size) {exit()}
         Row(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
-            Text(if(mode=="choice") stringResource(R.string.bir_ceviri_secin) else stringResource(R.string.kelimeyi_olustur_2),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+            Text(if(drill=="choice") stringResource(R.string.bir_ceviri_secin) else stringResource(R.string.kelimeyi_olustur_2),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
             TalesMascot(if(answer!=null && !correct) MascotMood.Support else MascotMood.Thinking,Modifier.size(52.dp))
         }
-        Box(Modifier.fillMaxWidth().weight(if(mode=="choice") 1f else 0.6f).background(TalePanel,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {
-            Text(if(mode=="choice") word.word else word.translation,fontSize=20.sp,fontWeight=FontWeight.Bold)
+        Box(Modifier.fillMaxWidth().weight(if(drill=="choice") 1f else 0.6f).background(TalePanel,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {
+            Text(if(drill=="choice") word.word else word.translation,fontSize=20.sp,fontWeight=FontWeight.Bold)
         }
-        if(mode=="choice") {
+        if(drill=="choice") {
             Spacer(Modifier.height(8.dp))
             options.forEach { option ->
                 val selected=answer==option
@@ -174,7 +181,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         }
         if(answer!=null && !correct) {
             Text(stringResource(R.string.her_denemede_ogreniyoruz),fontSize=13.sp,color=TaleMuted)
-            Text(stringResource(R.string.dogru_cevap, if(mode=="choice") word.translation else word.word),fontSize=14.sp,color=TaleError)
+            Text(stringResource(R.string.dogru_cevap, if(drill=="choice") word.translation else word.word),fontSize=14.sp,color=TaleError)
             Button(onClick={advanceWrong=true},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.anladim_devam_et))}
         }
         Spacer(Modifier.height(8.dp))
