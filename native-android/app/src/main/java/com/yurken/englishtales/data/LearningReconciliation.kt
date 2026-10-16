@@ -109,6 +109,9 @@ internal object LearningReconciliation {
                 })
             }
         }
+        // Q5.5: reading history only grows, so the account's rows are simply added to this device's.
+        cloud.lemmaReads?.forEach { (lemma, story) -> db.insert("lemma_reads",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("lemma",lemma);put("story_id",story)}) }
+        cloud.lemmaLookups?.forEach { lemma -> db.insert("lemma_lookups",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("lemma",lemma);put("looked_up_at",now)}) }
         // Favorites follow the same rule: unsent local changes win until the server has replayed them.
         val protectedFavorites = operations.filter { it.getString("rpc") == "apply_favorite_event" && it.getString("state") != "delivered" }
             .map { JSONObject(it.getString("payload")).getString("storyId") }.toSet()

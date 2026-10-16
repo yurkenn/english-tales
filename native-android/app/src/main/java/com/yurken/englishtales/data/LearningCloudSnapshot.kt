@@ -30,7 +30,10 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
     val progress: List<CloudLearningProgress>, val badges: List<CloudLearningBadge>,
     val capturedAtIso: String = Instant.ofEpochMilli(capturedAt).toString(),
     /** Null when the server predates favorite sync: local favorites are then left as they are. */
-    val favorites: List<CloudStoryFavorite>? = null) {
+    val favorites: List<CloudStoryFavorite>? = null,
+    /** Q5.5 reading history as (lemma, storyId); null when the server predates known-word sync. */
+    val lemmaReads: List<Pair<String, String>>? = null,
+    val lemmaLookups: List<String>? = null) {
     internal fun json(): JSONObject = JSONObject().put("schemaVersion", 1).put("userId", userId).put("capturedAt", capturedAtIso)
         .put("profile", profile?.let { p -> JSONObject().put("display_name", p.name).put("level", p.level)
             .put("preferred_genre", p.genre).put("daily_goal", p.goal).put("timezone", p.timezone)
@@ -51,6 +54,8 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
             .put("earned_at", Instant.ofEpochMilli(b.earnedAt).toString())) } })
         .also { root -> favorites?.let { list -> root.put("favorites", JSONArray().also { a -> list.forEach { f -> a.put(JSONObject()
             .put("story_id", f.storyId).put("favorite", f.favorite).put("updated_at", Instant.ofEpochMilli(f.updatedAt).toString())) } }) } }
+        .also { root -> lemmaReads?.let { list -> root.put("lemmaReads", JSONArray().also { a -> list.forEach { (lemma, story) -> a.put(JSONObject().put("lemma", lemma).put("story_id", story)) } }) } }
+        .also { root -> lemmaLookups?.let { list -> root.put("lemmaLookups", JSONArray(list)) } }
     companion object {
         fun decode(json: JSONObject, expectedUser: String): LearningCloudSnapshot = try {
             require(json.toString().toByteArray(Charsets.UTF_8).size <= LearningSyncHttp.MAX_RESPONSE_BYTES)
@@ -101,8 +106,16 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
                 CloudStoryFavorite(text(f, "story_id", 80).also { require(it.matches(Regex("[a-z0-9][a-z0-9_-]{0,79}"))) },
                     boolean(f, "favorite"), timestamp(text(f, "updated_at")))
             }.also { unique(it.map { f -> f.storyId }) }
-            require(profile != null || (sessions.isEmpty() && words.isEmpty() && progress.isEmpty() && badges.isEmpty() && favorites.isNullOrEmpty()))
-            LearningCloudSnapshot(user, captured, profile, sessions, words, progress, badges, text(json, "capturedAt"), favorites)
+            val lemma = Regex("[\\p{L}\\p{N}]{1,100}")
+            val lemmaReads = if (!json.has("lemmaReads")) null else rows(json, "lemmaReads", 50_000).map { r ->
+                text(r, "lemma", 100).also { require(it.matches(lemma)) } to text(r, "story_id", 80).also { require(it.matches(Regex("[a-z0-9][a-z0-9_-]{0,79}"))) }
+            }
+            val lemmaLookups = if (!json.has("lemmaLookups")) null else json.getJSONArray("lemmaLookups").let { a ->
+                require(a.length() <= 20_000); List(a.length()) { (a.get(it) as String).also { l -> require(l.matches(lemma)) } }
+            }
+            require(profile != null || (sessions.isEmpty() && words.isEmpty() && progress.isEmpty() && badges.isEmpty() && favorites.isNullOrEmpty()
+                && lemmaReads.isNullOrEmpty() && lemmaLookups.isNullOrEmpty()))
+            LearningCloudSnapshot(user, captured, profile, sessions, words, progress, badges, text(json, "capturedAt"), favorites, lemmaReads, lemmaLookups)
         } catch (_: Exception) { throw LearningSyncFailure("invalid_snapshot") }
 
         private fun rows(json: JSONObject, field: String, limit: Int): List<JSONObject> {

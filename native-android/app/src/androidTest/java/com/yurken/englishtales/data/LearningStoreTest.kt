@@ -186,6 +186,13 @@ class LearningStoreTest {
         assertEquals(WordStage.LOOKED_UP,snapshot.wordStages[word]);assertEquals(WordStage.KNOWN,snapshot.wordStages[other])
         // Reading a story again does not count twice.
         assertEquals(snapshot.knownWordCount,store.also {it.completeReading(first.id)}.snapshot().knownWordCount)
+        // Each first finish and each first lookup travels once; repeats queue nothing.
+        val events=store.queuedOperations().filter {it.rpc=="apply_lemma_event"}.map {JSONObject(it.payload)}
+        assertEquals(listOf("lookup","read","read"),events.map {it.getString("kind")}.sorted())
+        assertEquals(setOf(first.id,second.id),events.filter {it.getString("kind")=="read"}.map {it.getString("storyId")}.toSet())
+        assertEquals(word,events.single {it.getString("kind")=="lookup"}.getJSONArray("lemmas").getString(0))
+        store.recordLookup(WordInfo("glossary:$word",word,"x","",""))
+        assertEquals(3,store.queuedOperations().count {it.rpc=="apply_lemma_event"})
     }
     @Test fun weeklyWordsCountFinishedStoriesOfTheLastSevenDays() {
         val story=LearningContent.stories.first()

@@ -33,6 +33,9 @@ internal class LearningOperations(private val installationId: String) {
         .put("storyRevisionId",revisionId?:JSONObject.NULL).put("wordId",wordId).put("action",action)
         .put("correct",correct?:JSONObject.NULL).put("occurredAt",iso(now)).put("studyTimezone",TimeZone.getDefault().id)
         .also {payload -> text?.let {(word,gloss) -> payload.put("word",word).put("gloss",gloss)}}
+    fun lemmas(id: String,storyId: String?,lemmas: Collection<String>,now: Long) = base(id)
+        .put("kind",if(storyId==null) "lookup" else "read").also {if(storyId!=null) it.put("storyId",storyId)}
+        .put("lemmas",org.json.JSONArray(lemmas.sorted())).put("occurredAt",iso(now))
     fun favorite(id: String,storyId: String,favorite: Boolean,now: Long) = base(id)
         .put("storyId",storyId).put("favorite",favorite).put("occurredAt",iso(now))
     fun progress(id: String,story: Story,sentenceId: String,percent: Int,now: Long) = base(id)

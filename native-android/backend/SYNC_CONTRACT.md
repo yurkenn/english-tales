@@ -150,6 +150,15 @@ Okuyucuda sözlükten kaydedilen kelimeler `apply_word_event` ile gider; kimlikl
 - `get_learning_snapshot` `words` satırında bu kelimeler için `word` ve `gloss` alanlarını da döner. İstemci metni olmayan bir kişisel kelimeyi yok sayar; kaldırılan kelimenin yerel metnini siler.
 - Sunucu bu sözleşmeden önceki sürümdeyse kişisel kelime olayları reddedilir; bu yüzden migration, uygulama sürümünden önce yayımlanmalıdır.
 
+### Bilinen kelime geçmişi (Q5.5)
+
+`apply_lemma_event(p_event)` · alanlar: `id`, `installationId`, `kind` (`read` | `lookup`), `storyId` (yalnız `read`), `lemmas` (1–3000 sözlük biçimi; `lookup`'ta tam 1), `occurredAt`.
+
+- Bir hikâye ilk kez bittiğinde içindeki sözlük biçimleri `read` olarak, okurken açılan kelime `lookup` olarak gider. Uygulama yalnız ASCII (`[a-z0-9]`) biçimleri gönderir.
+- Aynı `id` aynı içerikle tekrar gelirse `applied=false`; farklı içerikle `operation_id_payload_conflict`.
+- `user_lemma_reads (lemma, story_id)` ve `user_lemma_lookups (lemma)` yalnız büyüyen kümelerdir; silme yoktur. Bakılma zamanı en erken olanıdır.
+- `get_learning_snapshot` `lemmaReads` (`{lemma, story_id}`) ve `lemmaLookups` (dizi) döner. İstemci bunları yerel kümeye ekler (birleşim). Alanları olmayan eski sunucuda yerel geçmişe dokunulmaz.
+
 ## Seri, hedef ve saat dilimi
 
 Seri yalnızca sayılan, tamamlanan öğrenme günlerinden hesaplanır. Son etkin gün bugün veya dün değilse seri 0'dır. Sadece uygulamayı açmak öğrenme adımı değildir. Geç ulaşan çevrimdışı günler ardışık gün geçmişini tamamlayabilir. Kazanılan başarılar daha sonra serinin düşmesiyle silinmez.

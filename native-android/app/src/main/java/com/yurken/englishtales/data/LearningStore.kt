@@ -171,7 +171,10 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     /** Q5.5: the learner opened a word while reading; a single-word lookup keeps it out of "known" for now. */
     fun recordLookup(word: WordInfo) {
         val lemma=WordKnowledge.lemmaOf(word)?:return
-        writableDatabase.insert("lemma_lookups",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("lemma",lemma);put("looked_up_at",clock())})
+        transaction {db ->
+            if(db.insert("lemma_lookups",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("lemma",lemma);put("looked_up_at",clock())})!=-1L && WordKnowledge.syncable(lemma))
+                UUID.randomUUID().toString().let {op -> enqueue(op,"apply_lemma_event",operations.lemmas(op,null,listOf(lemma),clock()))}
+        }
     }
     fun setFavorite(storyId: String,favorite: Boolean) = transaction {db ->
         require(storyId.matches(Regex("[a-z0-9][a-z0-9_-]{0,79}")))
@@ -225,9 +228,11 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             val story=source?:LearningContent.storyById.getValue(storyId)
             updateProgress(db,storyId,100,story.sentences.last().id,story)
             // Q5.5: every word form of the finished story counts as read once per story.
-            story.sentences.flatMap {WordKnowledge.lemmas(it.english)}.toSet().forEach {lemma ->
-                db.insert("lemma_reads",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("lemma",lemma);put("story_id",storyId)})
-            }
+            val lemmas=story.sentences.flatMap {WordKnowledge.lemmas(it.english)}.toSet()
+            val added=lemmas.count {lemma -> db.insert("lemma_reads",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("lemma",lemma);put("story_id",storyId)})!=-1L}
+            // Only a story's first finish travels; a re-read adds nothing to the account's history.
+            val syncable=lemmas.filter(WordKnowledge::syncable)
+            if(added>0 && syncable.isNotEmpty() && syncable.size<=3000) {val op=UUID.randomUUID().toString();enqueue(op,"apply_lemma_event",operations.lemmas(op,storyId,syncable,now))}
             firstForLearner=scalar(db,"SELECT COUNT(*) FROM engagement_events WHERE name='reading_completed'")==0
             newlyCompleted=recordEvent(db,"read:$storyId:$today","reading_completed",now)
             if(newlyCompleted) recordSession(db,now,0,true)
