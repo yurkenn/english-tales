@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.*
+import androidx.compose.ui.semantics.Role
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -34,7 +35,7 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
     LaunchedEffect(step,scroll.maxValue) { scroll.animateScrollTo(scroll.maxValue) }
     Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding()) {
         Row(Modifier.fillMaxWidth().height(46.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically) {
-            if(step>0) Box(Modifier.size(48.dp).clickable { step-- },contentAlignment=Alignment.Center) { ReferenceIcon("back",Color(0xFF515157),Modifier.size(20.dp)) }
+            if(step>0) Box(Modifier.size(48.dp).contentLabel(stringResource(R.string.geri)).clickable(role=Role.Button) { step-- },contentAlignment=Alignment.Center) { ReferenceIcon("back",Color(0xFF515157),Modifier.size(20.dp)) }
         }
         Column(Modifier.weight(1f).verticalScroll(scroll).padding(horizontal=16.dp,vertical=10.dp),verticalArrangement=Arrangement.spacedBy(13.dp)) {
             GuideBubble(stringResource(R.string.hi))
@@ -94,6 +95,6 @@ private fun ReplyBubble(message: String) { Box(Modifier.fillMaxWidth(),contentAl
 @Composable
 private fun ReplyChoice(label: String,onClick: ()->Unit) {
     Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) {
-        Text(label,fontSize=13.sp,color=Color.White,fontWeight=FontWeight.Medium,modifier=Modifier.background(TaleBlue,RoundedCornerShape(7.dp)).clickable(onClick=onClick).padding(horizontal=14.dp,vertical=10.dp))
+        Text(label,fontSize=13.sp,color=Color.White,fontWeight=FontWeight.Medium,modifier=Modifier.background(TaleBlue,RoundedCornerShape(7.dp)).clickable(role=Role.Button,onClick=onClick).padding(horizontal=14.dp,vertical=10.dp))
     }
 }

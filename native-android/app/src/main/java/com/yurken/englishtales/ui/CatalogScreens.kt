@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.*
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -49,7 +51,7 @@ private fun ChallengeBanner(onClick: () -> Unit) {
     Column(Modifier.padding(horizontal=16.dp)) {
         Text(stringResource(R.string.okuma_aliskanligin_burada_baslar),fontSize=10.sp,fontWeight=FontWeight.Bold,color=Color(0xFF6C294F),
             modifier=Modifier.background(Color(0xFFFFE85A),RoundedCornerShape(topStart=9.dp,topEnd=9.dp)).padding(horizontal=9.dp,vertical=6.dp))
-        Box(Modifier.fillMaxWidth().heightIn(min=126.dp).clip(RoundedCornerShape(topEnd=16.dp,bottomStart=16.dp,bottomEnd=16.dp)).background(Color(0xFFFFF58B)).clickable(onClick=onClick)) {
+        Box(Modifier.fillMaxWidth().heightIn(min=126.dp).clip(RoundedCornerShape(topEnd=16.dp,bottomStart=16.dp,bottomEnd=16.dp)).background(Color(0xFFFFF58B)).clickable(role=Role.Button,onClick=onClick)) {
             TalesMascot(MascotMood.Welcome,Modifier.align(Alignment.BottomEnd).width(104.dp).height(126.dp))
             Column(Modifier.fillMaxWidth(0.72f).padding(start=16.dp,top=14.dp,bottom=14.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
                 Text(stringResource(R.string.bir_hikaye_nyeni_kelimeler),fontSize=19.sp,lineHeight=22.sp,fontWeight=FontWeight.Bold,color=Color(0xFF6C294F))
@@ -114,7 +116,7 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
             StatsHeader(snapshot)
             Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=10.dp),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
                 listOf(stringResource(R.string.arama) to "search",stringResource(R.string.kitaplarim) to "read").forEachIndexed { i,(label,icon) ->
-                    Row(Modifier.weight(1f).height(36.dp).background(TaleLine,RoundedCornerShape(7.dp)).clickable { listMode=if(i==0) "search" else "books" },horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
+                    Row(Modifier.weight(1f).height(36.dp).background(TaleLine,RoundedCornerShape(7.dp)).clickable(role=Role.Button) { listMode=if(i==0) "search" else "books" },horizontalArrangement=Arrangement.Center,verticalAlignment=Alignment.CenterVertically) {
                         ReferenceIcon(icon,TaleInk,Modifier.size(18.dp)); Spacer(Modifier.width(8.dp)); Text(label,fontSize=14.sp,fontWeight=FontWeight.Medium)
                     }
                 }
@@ -131,7 +133,7 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 BookShelf(stringResource(R.string.seviyene_uygun),stories.filter { it.level==snapshot.level },onOpenStory) { listMode="level" }
                 Spacer(Modifier.height(22.dp))
                 listOf(stringResource(R.string.kategoriler) to "all","Günlük yaşam" to "Günlük yaşam","Macera" to "Macera","Gizem" to "Gizem").forEach { (label,key) ->
-                    Row(Modifier.fillMaxWidth().clickable { listMode=key }.padding(horizontal=18.dp,vertical=14.dp),horizontalArrangement=Arrangement.SpaceBetween) { Text(label,fontSize=14.sp); Text("›",color=TaleMuted) }
+                    Row(Modifier.fillMaxWidth().clickable(role=Role.Button) { listMode=key }.padding(horizontal=18.dp,vertical=14.dp),horizontalArrangement=Arrangement.SpaceBetween) { Text(label,fontSize=14.sp); Text("›",color=TaleMuted) }
                 }
             }
         } else {
@@ -172,12 +174,12 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
 private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String) -> Unit, onAll: () -> Unit) {
     Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
         Text(title,fontSize=20.sp,modifier=Modifier.weight(1f),maxLines=1,overflow=TextOverflow.Ellipsis)
-        Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=11.sp,fontWeight=FontWeight.Bold,modifier=Modifier.background(TaleLine,RoundedCornerShape(20.dp)).clickable(onClick=onAll).padding(horizontal=9.dp,vertical=6.dp))
+        Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=11.sp,fontWeight=FontWeight.Bold,modifier=Modifier.background(TaleLine,RoundedCornerShape(20.dp)).clickable(role=Role.Button,onClick=onAll).padding(horizontal=9.dp,vertical=6.dp))
     }
     Spacer(Modifier.height(22.dp))
     LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
         items(stories,key={it.id}) { story ->
-            Column(Modifier.width(130.dp).clickable { onOpenStory(story.id) }) {
+            Column(Modifier.width(130.dp).clickable(role=Role.Button) { onOpenStory(story.id) }) {
                 BookCover(story,Modifier.size(130.dp,190.dp))
                 Spacer(Modifier.height(9.dp))
                 Text(story.author,color=TaleMuted,fontSize=11.sp,maxLines=1)
@@ -248,7 +250,7 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.puan),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); LearningInfoButton("points","${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot)) }
         }
         ProfilePanel {
-            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) { Text(stringResource(R.string.kelimeler),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text(stringResource(R.string.kelimelerim_2),color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(onClick=onOpenWords)) }
+            Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) { Text(stringResource(R.string.kelimeler),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text(stringResource(R.string.kelimelerim_2),color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(role=Role.Button,onClick=onOpenWords)) }
             Button(onClick=onOpenWords,modifier=Modifier.fillMaxWidth().padding(top=18.dp),shape=RoundedCornerShape(24.dp)) { Text(stringResource(R.string.ogren, snapshot.savedWordIds.size)) }
         }
         Row(horizontalArrangement=Arrangement.spacedBy(16.dp)) {
@@ -277,7 +279,7 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
         if(LocalDensity.current.fontScale>1.4f) {
             Column(Modifier.padding(horizontal=12.dp,vertical=12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
                 stages.forEach { (stage,label,color) ->
-                    Row(Modifier.fillMaxWidth().heightIn(min=64.dp).border(if(stage==selectedStage) 3.dp else 2.dp,color.copy(alpha=0.25f),RoundedCornerShape(12.dp)).clickable {selectedStage=stage}.padding(12.dp),
+                    Row(Modifier.fillMaxWidth().heightIn(min=64.dp).border(if(stage==selectedStage) 3.dp else 2.dp,color.copy(alpha=0.25f),RoundedCornerShape(12.dp)).selectable(selected=stage==selectedStage,role=Role.Tab) {selectedStage=stage}.padding(12.dp),
                         verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                         ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",color,Modifier.size(26.dp))
                         Text(label,fontSize=13.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
@@ -287,7 +289,7 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
             }
         } else Row(Modifier.padding(horizontal=12.dp,vertical=12.dp).height(IntrinsicSize.Min),horizontalArrangement=Arrangement.spacedBy(5.dp)) {
             stages.forEach { (stage,label,color) ->
-                Column(Modifier.weight(1f).fillMaxHeight().heightIn(min=118.dp).border(if(stage==selectedStage) 3.dp else 2.dp,color.copy(alpha=0.18f),RoundedCornerShape(16.dp)).clickable { selectedStage=stage }.padding(11.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+                Column(Modifier.weight(1f).fillMaxHeight().heightIn(min=118.dp).border(if(stage==selectedStage) 3.dp else 2.dp,color.copy(alpha=0.18f),RoundedCornerShape(16.dp)).selectable(selected=stage==selectedStage,role=Role.Tab) { selectedStage=stage }.padding(11.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
                     Box(Modifier.height(30.dp),contentAlignment=Alignment.CenterStart) {
                         ReferenceIcon(if(stage=="learning") "study" else if(stage=="reviewing") "review" else "check",color,Modifier.size(23.dp))
                     }
@@ -318,7 +320,7 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
 
 @Composable
 private fun StoryCard(story: Story, progress: Int, onClick: () -> Unit) {
-    Row(Modifier.fillMaxWidth().clickable(onClick=onClick),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+    Row(Modifier.fillMaxWidth().clickable(role=Role.Button,onClick=onClick),horizontalArrangement=Arrangement.spacedBy(12.dp)) {
         BookCover(story,Modifier.size(54.dp,76.dp))
         Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(4.dp)) {
             Text(story.author,color=TaleMuted,fontSize=11.sp)

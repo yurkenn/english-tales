@@ -176,7 +176,7 @@ fun GameViewport(padding: PaddingValues, minimumHeight: Dp = 450.dp, content: @C
 @Composable
 fun GameHeader(progress: Float, onExit: () -> Unit) {
     Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(14.dp)) {
-        Box(Modifier.size(32.dp).clickable(onClick=onExit).contentLabel(stringResource(R.string.alistirmadan_cik)),contentAlignment=Alignment.Center) { Text("×",fontSize=25.sp,color=TaleMuted) }
+        Box(Modifier.size(48.dp).clickable(role=Role.Button,onClick=onExit).contentLabel(stringResource(R.string.alistirmadan_cik)),contentAlignment=Alignment.Center) { Text("×",fontSize=25.sp,color=TaleMuted) }
         ReferenceProgress(progress,Modifier.weight(1f))
     }
 }
