@@ -1,11 +1,12 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {mkdtemp,mkdir,writeFile,rm,readFile} from 'node:fs/promises';
+import {readFileSync} from 'node:fs';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
-import {auditCatalog,auditSnapshot,bundledDocuments,publishedDocuments,compareDocuments,acceptance} from '../tools/content-audit-lib.mjs';
+import {auditCatalog,auditSnapshot,bundledDocuments,publishedDocuments,compareDocuments,acceptance,levelProfile} from '../tools/content-audit-lib.mjs';
 import {verifySnapshotMedia,revisionProposals,renderReport} from '../tools/audit-content.mjs';
 
 const assetId='11111111-1111-4111-a111-111111111111';
@@ -218,4 +219,31 @@ test('tag parity compares the tag set and ignores snapshots taken before tags ex
   assert.equal(d.summary.tagDifferences,1);
   delete s.tables.revision_tags;
   assert.equal(compareDocuments(bundledDocuments(c),publishedDocuments(s)).equal,true,'unknown live tags are not drift');
+});
+
+test('level profile flags a story that is unusually hard for its own level and checks level order',()=>{
+  const story=(id,level,sentences)=>({id,level,sentences:sentences.map((english,i)=>({id:`${id}-${i}`,english}))});
+  const plain=['The cat sat.','The dog ran.','A cat and a dog.'];
+  const docs=[1,2,3,4].map(i=>story(`a1-${i}`,'A1',plain))
+    .concat([story('a1-long','A1',['The cat that the old dog saw near the red house by the river sat on the mat all day long.',...plain])])
+    .concat([1,2,3,4].map(i=>story(`a2-${i}`,'A2',['The small cat sat on the warm mat today.','The brown dog ran to the old park quickly.'])));
+  const profile=levelProfile(docs,{band:5});
+  assert.equal(profile.levels.A1.stories,5);assert.equal(profile.levels.A2.stories,4);
+  assert.equal(profile.levels.A1.meanSentenceTokens.median,3.7);
+  const long=profile.outliers.filter(o=>o.storyId==='a1-long').map(o=>o.metric);
+  assert.ok(long.includes('longestSentenceTokens')&&long.includes('meanSentenceTokens'),JSON.stringify(profile.outliers));
+  assert.ok(profile.outliers.every(o=>o.storyId==='a1-long'));
+  // Too few B1 stories: medians are reported but no limit is invented.
+  assert.equal(levelProfile([...docs,story('b1','B1',plain)]).levels.B1.meanSentenceTokens.limit,null);
+  // A2 reads longer than A1 here, so sentence length is in order; a B1 story shorter than A2 is reported.
+  assert.ok(!profile.orderIssues.some(i=>i.metric==='meanSentenceTokens'));
+  const reversed=levelProfile([...docs,...[1,2,3,4].map(i=>story(`b1-${i}`,'B1',['Go.','Stop.']))]);
+  assert.ok(reversed.orderIssues.some(i=>i.metric==='meanSentenceTokens'&&i.lower==='A2'&&i.upper==='B1'));
+});
+test('the bundled catalog audit carries a level profile for every level',()=>{
+  const catalog=JSON.parse(readFileSync(new URL('../../app/src/main/assets/catalog/v1.json',import.meta.url)));
+  const profile=auditCatalog(catalog).levelProfile;
+  for(const level of ['A1','A2','B1'])assert.ok(profile.levels[level].stories>=4&&profile.levels[level].meanSentenceTokens.limit>0);
+  assert.equal(profile.stories.length,catalog.stories.length);
+  assert.ok(profile.levels.A1.meanSentenceTokens.median<profile.levels.B1.meanSentenceTokens.median);
 });

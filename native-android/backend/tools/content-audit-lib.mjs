@@ -91,6 +91,61 @@ export function translationCompleteness(documents){
 }
 
 /** Actual selectable spans, including phrases, with no stemming or stop-word removal. */
+const LEVELS=['A1','A2','B1'];
+const quartiles=values=>{
+  const v=[...values].sort((a,b)=>a-b),at=q=>{const i=(v.length-1)*q,lo=Math.floor(i),hi=Math.ceil(i);return v[lo]+(v[hi]-v[lo])*(i-lo);};
+  return {q1:at(0.25),median:at(0.5),q3:at(0.75)};
+};
+const round1=n=>Math.round(n*10)/10;
+/** Moving-average type/token ratio: unlike a plain ratio it does not fall just because a story is longer. */
+const mattr=(keys,window=50)=>{
+  if(keys.length<=window)return keys.length?new Set(keys).size/keys.length:0;
+  const counts=new Map();let distinct=0,sum=0;
+  keys.forEach((key,i)=>{
+    counts.set(key,(counts.get(key)??0)+1);if(counts.get(key)===1)distinct++;
+    if(i>=window){const old=keys[i-window];counts.set(old,counts.get(old)-1);if(counts.get(old)===0)distinct--;}
+    if(i>=window-1)sum+=distinct/window;
+  });
+  return sum/(keys.length-window+1);
+};
+/**
+ * Q4.6 level profile: per story sentence length, lexical variety (MATTR, 50-token window) and the share of tokens outside the catalog's
+ * most frequent [band] tokens. Limits are data-driven per level (Q3 + 1.5 × IQR over that level's stories, at
+ * least 4 stories), so a story is flagged when it is unusually hard for its own level; level medians should rise
+ * A1 → A2 → B1. The band is the catalog's own token frequency, not an external CEFR list.
+ */
+export function levelProfile(documents,{band=500,minStories=4}={}){
+  const frequency=new Map();
+  for(const doc of documents)for(const sentence of doc.sentences)for(const t of tokens(sentence.english))frequency.set(t.key,(frequency.get(t.key)??0)+1);
+  const common=new Set([...frequency].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,band).map(([key])=>key));
+  const metrics=['meanSentenceTokens','longestSentenceTokens','lexicalVariety','rareTokenPercent'];
+  const stories=documents.filter(d=>LEVELS.includes(d.level)&&d.sentences.length).map(doc=>{
+    const lengths=doc.sentences.map(s=>tokens(s.english).length),all=doc.sentences.flatMap(s=>tokens(s.english).map(t=>t.key));
+    const total=all.length||1;
+    return {id:doc.id,level:doc.level,tokens:all.length,sentences:doc.sentences.length,
+      meanSentenceTokens:round1(all.length/doc.sentences.length),longestSentenceTokens:Math.max(...lengths),
+      lexicalVariety:round1(mattr(all)*100),rareTokenPercent:round1(all.filter(k=>!common.has(k)).length/total*100)};
+  });
+  const levels={},outliers=[];
+  for(const level of LEVELS){
+    const group=stories.filter(s=>s.level===level);
+    levels[level]={stories:group.length,...Object.fromEntries(metrics.map(metric=>{
+      if(!group.length)return [metric,null];
+      const q=quartiles(group.map(s=>s[metric]));
+      const limit=group.length>=minStories?round1(q.q3+1.5*(q.q3-q.q1)):null;
+      if(limit!=null)for(const s of group)if(s[metric]>limit)outliers.push({storyId:s.id,level,metric,value:s[metric],limit});
+      return [metric,{median:round1(q.median),limit}];
+    }))};
+  }
+  // A harder level should not read easier than the one below it.
+  const orderIssues=[];
+  for(const metric of metrics)for(let i=1;i<LEVELS.length;i++){
+    const lower=levels[LEVELS[i-1]][metric]?.median,upper=levels[LEVELS[i]][metric]?.median;
+    if(lower!=null&&upper!=null&&lower>upper)orderIssues.push({metric,lower:LEVELS[i-1],upper:LEVELS[i],lowerMedian:lower,upperMedian:upper});
+  }
+  outliers.sort((a,b)=>a.level.localeCompare(b.level)||a.storyId.localeCompare(b.storyId)||a.metric.localeCompare(b.metric));
+  return {band,minStories,levels,stories,outliers,orderIssues};
+}
 export function auditDocuments(documents,{source='bundle',dictionary=[]}={}){
   const issues=[],stories=[],levels={},all=emptyStats(),missing=new Map();
   const issue=(severity,code,storyId,details={})=>issues.push({severity,code,storyId,...details});
@@ -171,7 +226,7 @@ export function auditDocuments(documents,{source='bundle',dictionary=[]}={}){
   }
   const backlog=[...missing.values()].filter(entry=>!levels[entry.level].covered.has(entry.token)).map(entry=>({...entry,storyIds:sorted(entry.storyIds)}))
     .sort((a,b)=>String(a.level).localeCompare(String(b.level))||b.occurrences-a.occurrences||a.token.localeCompare(b.token));
-  return {source,storiesWithoutQuestions:stories.filter(s=>s.questions===0).map(s=>s.id),translations:translationCompleteness(documents),summary:{...stats(all),sentences:documents.reduce((n,d)=>n+d.sentences.length,0),
+  return {source,levelProfile:levelProfile(documents),storiesWithoutQuestions:stories.filter(s=>s.questions===0).map(s=>s.id),translations:translationCompleteness(documents),summary:{...stats(all),sentences:documents.reduce((n,d)=>n+d.sentences.length,0),
     vocabularyEntries:documents.reduce((n,d)=>n+d.words.length,0),distinctVocabularyIds:new Set(documents.flatMap(d=>d.words.map(w=>w.id))).size,
     dictionaryEntries:source==='bundle'?dictionary.length:null,links:documents.reduce((n,d)=>n+d.links.length,0),
     errors:issues.filter(i=>i.severity==='error').length,warnings:issues.filter(i=>i.severity==='warning').length},

@@ -77,6 +77,17 @@ export function renderReport(result){
     for(const [level,counts] of Object.entries(report.levels))lines.push(`| ${report.source} | ${level} | ${counts.storiesWithThreeQuestions} | ${counts.stories} |`);
   for(const report of [result.bundle,...(result.live?[result.live]:[])])
     lines.push('',`${report.source} — sorusuz hikâyeler: ${report.storiesWithoutQuestions.map(cell).join(', ')||'yok'}`);
+  lines.push('','## Seviye profili (Q4.6)','',
+    'Ölçüler: ortalama ve en uzun cümle (token), sözcük çeşitliliği (MATTR, 50 token pencere, %), katalogun en sık '+target.levelProfile.band+' token’ı dışındaki token payı (%). Sınır her seviyenin kendi hikâyelerinden hesaplanır: Q3 + 1,5 × IQR (en az '+target.levelProfile.minStories+' hikâye). Bu bir CEFR listesi değildir; aykırı hikâye editör incelemesi içindir.','',
+    '| Seviye | Hikâye | Ort. cümle (medyan / sınır) | En uzun cümle | Çeşitlilik | Seyrek token % |','|---|---:|---|---|---|---|');
+  for(const [level,p] of Object.entries(target.levelProfile.levels)){
+    const m=key=>p[key]?`${p[key].median} / ${p[key].limit??'—'}`:'—';
+    lines.push(`| ${level} | ${p.stories} | ${m('meanSentenceTokens')} | ${m('longestSentenceTokens')} | ${m('lexicalVariety')} | ${m('rareTokenPercent')} |`);
+  }
+  lines.push('','| Hikâye | Seviye | Ölçü | Değer | Sınır |','|---|---|---|---:|---:|');
+  for(const o of target.levelProfile.outliers)lines.push(`| ${cell(o.storyId)} | ${o.level} | ${o.metric} | ${o.value} | ${o.limit} |`);
+  if(!target.levelProfile.outliers.length)lines.push('| — | — | aykırı hikâye yok | — | — |');
+  lines.push('',`Seviye sırası: ${target.levelProfile.orderIssues.map(i=>`${i.metric} medyanı ${i.lower} (${i.lowerMedian}) > ${i.upper} (${i.upperMedian})`).join('; ')||'her ölçüde A1 ≤ A2 ≤ B1'}`);
   lines.push('','## Destek dili bütünlüğü','','| Kaynak | Dil | Eksik cümle | Eksik kelime | Eksik açıklama | Tam |','|---|---|---:|---:|---:|---|');
   for(const report of [result.bundle,...(result.live?[result.live]:[])])for(const [lang,counts] of Object.entries(report.translations??{}))
     lines.push(`| ${report.source} | ${cell(lang)} | ${counts.missingSentences} | ${counts.missingWords} | ${counts.missingDescriptions} | ${counts.complete?'evet':'hayır'} |`);
