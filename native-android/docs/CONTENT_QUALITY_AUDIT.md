@@ -139,3 +139,19 @@ npm run content:audit -- --snapshot <catalog.json> --min-questions 3
 Snapshot aracı artık temel altı tablo + üç çeviri tablosu + `story_questions` olmak üzere 10 tabloyu anonim olarak toplar. Bileşik sıralama, 500’lük sayfalar, 20.000 satır sınırı, medya hash/boyut ve başlangıç/son katalog imzası kontrolleri devam eder. Eski altı tabloluk dosyalar ve soru tablosuz dokuz tabloluk dosyalar okunur. Üç çeviri tablosu birlikte bulunmalıdır; `story_questions` bağımsızdır. Bulunmayan soru tablosu boş liste sayılır; uygulama sırasında canlıda görünmeyen ekstra sorular/diller içerik kayması olarak reddedilir.
 
 Yerel testler SQL kısıtlarını, RLS/immutability/sürüm artışını, admin kayıt/kopyasını, exporter/draft/parity işlemlerini, soru alt sınırını ve 6/10 tabloluk snapshot’ları sahte yanıtlarla doğrular. `test:admin` localhost gerektirir; sandbox `listen EPERM 127.0.0.1` verirse HTTP/tarayıcı doğrulaması tamamlanmış sayılmaz. Canlı servis veya Android çalışma zamanı bu backend doğrulamasının parçası değildir.
+
+## Q4.6 — seviye profili (16 Ekim 2026, paket)
+
+`npm run content:audit` artık her hikâye için ortalama ve en uzun cümle uzunluğunu, sözcük çeşitliliğini (MATTR, 50 token pencere) ve katalogun en sık 500 token’ı dışında kalan token payını ölçer. Her seviyenin sınırı kendi hikâyelerinden hesaplanır (Q3 + 1,5 × IQR, en az 4 hikâye). Rapor `## Seviye profili` bölümünde aykırı hikâyeleri ve seviye sırası sorunlarını listeler. Bu bir yayın kapısı değil, editör inceleme listesidir.
+
+| Seviye | Hikâye | Ort. cümle medyanı / sınır | En uzun cümle | Çeşitlilik | Seyrek token % |
+|---|---:|---|---|---|---|
+| A1 | 18 | 7,3 / 9,1 | 10 / 14 | 72,8 / 84,1 | 23,3 / 33,8 |
+| A2 | 18 | 11,5 / 14 | 15 / 19 | 77,1 / 83,1 | 18,8 / 31,1 |
+| B1 | 14 | 12,7 / 14,3 | 17 / 19,5 | 78,9 / 83,9 | 22,2 / 32 |
+
+Aykırı hikâyeler: `classic-ass-lion-skin` (A1, en uzun cümle 15 token), `quiet-morning` (A1, çeşitlilik 85,9), `classic-twelve-dancing-princesses` (A2, çeşitlilik 83,3), `attic-letter` (B1, ortalama cümle 14,7).
+
+Seviye sırası: cümle uzunluğu ve çeşitlilik A1 → A2 → B1 yönünde artıyor. Seyrek token payında A1 (%23,3) A2’den (%18,8) yüksek. Muhtemel neden: A1 hikâyelerindeki özel adlar ve katalogda bir kez geçen somut adlar. Ölçü köke indirgemez ve özel adları ayırmaz. Q4.3b sözlük verisi geldikten sonra lemma tabanlı bant ile yeniden bakılmalı.
+
+**Sınırlar:** Sıklık bandı katalogun kendisinden hesaplanır, harici bir CEFR veya sıklık listesi değildir. Sınırlar göreli olduğu için her seviyede birkaç aykırı hikâye beklenir; düzeltme kararı editörün.
