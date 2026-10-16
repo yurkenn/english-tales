@@ -248,7 +248,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                             .semantics { customActions=listOf(CustomAccessibilityAction(listenLabel) { listen(index); true }) },
                             verticalAlignment=Alignment.Top,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
                             val phrases=if(story.vocabulary!=null) remember(story.revisionId,sentence.id) {PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence))} else LearningContent.phraseIndex
-                            TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
+                            TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,LearningContent.glossary,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false }
                             Box(Modifier.size(32.dp).contentLabel(if(sentence.id in translations) stringResource(R.string.ceviriyi_gizle) else stringResource(R.string.cumleyi_cevir)).clickable(role=Role.Button) { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
                         }
                         if(sentence.id in translations) Text(sentence.translation,color=TaleOnBlue,fontSize=13.sp,lineHeight=19.sp,
@@ -270,18 +270,24 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
             selectedWord?.let { word ->
                 Popup(alignment=Alignment.TopCenter,offset=IntOffset(0,130),onDismissRequest={selectedWord=null},properties=PopupProperties(focusable=true)) {
                     Column(Modifier.width(260.dp).border(1.dp,TaleMuted.copy(alpha=0.5f),RoundedCornerShape(12.dp)).background(TaleSurface,RoundedCornerShape(12.dp))) {
+                        val lookupOnly=Glossary.isLookupOnly(word)
+                        val lemma=Glossary.lemmaOf(word)
                         Row(Modifier.fillMaxWidth().padding(16.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
                             ReferenceIconButton("volume",stringResource(R.string.kelimesini_dinle, word.word),{narrator.speak(word.word)})
                             Text(word.word,fontSize=20.sp,fontWeight=FontWeight.Bold)
-                            Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kayitli) else stringResource(R.string.kaydedilmedi),fontSize=11.sp,color=TaleMuted)
+                            Text(if(lookupOnly) stringResource(R.string.glossary_label) else if(word.id in snapshot.savedWordIds) stringResource(R.string.kayitli) else stringResource(R.string.kaydedilmedi),fontSize=11.sp,color=TaleMuted)
                         }
+                        if(lookupOnly && !lemma.equals(word.word,ignoreCase=true)) Text(stringResource(R.string.glossary_lemma,lemma),fontSize=13.sp,color=TaleMuted,modifier=Modifier.align(Alignment.CenterHorizontally))
                         Text(word.translation,fontSize=18.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(4.dp))
-                        TextButton(onClick={more=!more},modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster),textDecoration=TextDecoration.Underline) }
+                        if(word.pronunciation.isNotBlank() || word.example.isNotBlank()) TextButton(onClick={more=!more},modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster),textDecoration=TextDecoration.Underline) }
                         if(more) Text(word.example,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp))
                         Row(Modifier.fillMaxWidth().background(TaleBlue,RoundedCornerShape(bottomStart=12.dp,bottomEnd=12.dp))) {
                             Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { selectedWord=null },contentAlignment=Alignment.Center) { Text(stringResource(R.string.kapat),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
-                            Box(Modifier.width(1.dp).height(28.dp).align(Alignment.CenterVertically).background(TaleOnBlue.copy(alpha=0.65f)))
-                            Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { onSaveWord(word.id); selectedWord=null },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                            // Lookup-only words cannot be saved until personal words sync (Q4.3a, second step).
+                            if(!lookupOnly) {
+                                Box(Modifier.width(1.dp).height(28.dp).align(Alignment.CenterVertically).background(TaleOnBlue.copy(alpha=0.65f)))
+                                Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { onSaveWord(word.id); selectedWord=null },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                            }
                         }
                     }
                 }
@@ -291,19 +297,24 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
 }
 
 @Composable
-private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,phrases: PhraseMatcher.Index,lineSpacing: Float=1.65f,onWord: (WordInfo)->Unit) {
+private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,phrases: PhraseMatcher.Index,glossary: Glossary?=null,lineSpacing: Float=1.65f,onWord: (WordInfo)->Unit) {
     val matches=remember(sentence,phrases) {PhraseMatcher.find(sentence.english,phrases)}
+    // Learning words are underlined and savable; every other known word is a plain-looking lookup link (Q4.3a).
+    val links=remember(sentence,matches,glossary) {
+        (matches.map {Triple(it.start,it.end,it.word)}+glossary?.spans(sentence.english,matches).orEmpty().map {Triple(it.start,it.end,it.word)}).sortedBy {it.first}
+    }
     val currentOnWord by rememberUpdatedState(onWord)
     // Each word/phrase is a link: tappable and exposed to accessibility services as its own element.
-    val annotated=remember(sentence,color,matches) {
+    val annotated=remember(sentence,color,links) {
         buildAnnotatedString {
             var cursor=0
-            matches.forEach { match ->
-                append(sentence.english.substring(cursor,match.start))
-                withLink(LinkAnnotation.Clickable(match.word.id,TextLinkStyles(SpanStyle(color=color,textDecoration=TextDecoration.Underline))) {currentOnWord(match.word)}) {
-                    append(sentence.english.substring(match.start,match.end))
+            links.forEach { (start,end,word) ->
+                append(sentence.english.substring(cursor,start))
+                val style=if(Glossary.isLookupOnly(word)) SpanStyle(color=color) else SpanStyle(color=color,textDecoration=TextDecoration.Underline)
+                withLink(LinkAnnotation.Clickable(word.id+"@"+start,TextLinkStyles(style)) {currentOnWord(word)}) {
+                    append(sentence.english.substring(start,end))
                 }
-                cursor=match.end
+                cursor=end
             }
             append(sentence.english.substring(cursor))
         }
