@@ -1,10 +1,24 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createClient} from '../admin/api.js';
-import {backup,readBackup,recoveryKey,occurs,invalidLinks,matchSpans} from '../admin/workflow.js';
+import {backup,readBackup,recoveryKey,occurs,invalidLinks,matchSpans,supportLanguages,supportValue,setSupportValue,supportCompleteness} from '../admin/workflow.js';
 const config={mode:'cloud',url:'https://test.supabase.co',key:'sb_publishable_test'};
 const response=(value,status=200)=>new Response(status===204?null:JSON.stringify(value),{status,headers:{'Content-Type':'application/json'}});
 const session=(expires=3600)=>({user:{id:'user-a'},access_token:'access',refresh_token:'refresh',expires_in:expires});
+test('panel language editing and preview preserve legacy Turkish and backup maps',()=>{
+  const doc={id:'rev',story_id:'story',edit_version:1,title:'Title',author:'Author',level:'A1',genre:'Macera',description:'Açıklama',sentences:[{id:'s1',english:'Quiet.',turkish:'Sessiz.'}],words:[{id:'quiet',word:'quiet',translation:'sessiz',pronunciation:'',example:''}],links:[{sentence_id:'s1',word_id:'quiet'}]};
+  assert.deepEqual(supportLanguages(doc),['tr']);assert.equal(supportValue(doc.sentences[0],'turkish','tr'),'Sessiz.');
+  setSupportValue(doc,'description','es-419','Descripción');setSupportValue(doc.sentences[0],'turkish','es-419','Tranquilo.');setSupportValue(doc.words[0],'translation','es-419','tranquilo');
+  assert.deepEqual(supportLanguages(doc),['es-419','tr']);assert.equal(doc.sentences[0].turkish,'Sessiz.');
+  assert.equal(supportValue(doc.sentences[0],'turkish','es-419'),'Tranquilo.');
+  assert.deepEqual(supportCompleteness(doc,'es-419'),{missingSentences:0,missingWords:0,missingDescriptions:0});
+  assert.deepEqual(readBackup(JSON.stringify(backup(doc,'local')),structuredClone(doc),'local').document,doc);
+  const bad=structuredClone(doc);bad.descriptions={es:123};assert.throws(()=>readBackup(JSON.stringify(backup(bad,'local')),doc,'local'),/çeviri haritası/);
+  setSupportValue(doc.sentences[0],'turkish','es-419',' ');assert.equal(doc.sentences[0].translations['es-419'],undefined);
+  assert.equal(supportCompleteness(doc,'es-419').missingSentences,1);
+  setSupportValue(doc.sentences[0],'turkish','tr','Yeni');assert.equal(doc.sentences[0].turkish,'Yeni');
+  assert.throws(()=>setSupportValue(doc,'description','en-us','Text'),/Geçersiz/);
+});
 test('concurrent requests share one refresh and use the renewed credential',async()=>{
   let clock=0,refreshes=0;const seen=[];
   const client=createClient({now:()=>clock,fetch:async(url,options)=>{

@@ -1,4 +1,4 @@
-import {matchSpans, normalize, occurs} from '../admin/workflow.js';
+import {matchSpans, normalize, occurs, validSupportLanguage, questionErrors, questionDocument} from '../admin/workflow.js';
 
 const text=value=>typeof value==='string'?value:'';
 const tokens=value=>[...text(value).matchAll(/[\p{L}\p{N}]+/gu)].map(m=>({key:m[0].toLowerCase(),start:m.index,end:m.index+m[0].length}));
@@ -8,6 +8,23 @@ const linkKey=link=>JSON.stringify([link.sentence_id,link.word_id]);
 const fields=['title','author','level','genre','description'];
 const wordFields=['word','translation','pronunciation','example'];
 const emptyStats=()=>({types:new Set(),covered:new Set(),tokens:0,coveredTokens:0,stories:0});
+export const translationMap=(doc,map,legacy)=>doc.translationTablesPresent?{...map}:{...map,tr:legacy};
+export function translationChanges(expected,actual){
+  const changes=[];
+  const check=(kind,id,left,right)=>{
+    for(const lang of sorted(new Set([...Object.keys(left),...Object.keys(right)])))
+      if(left[lang]!==right[lang])changes.push({kind,id,lang,expected:left[lang]??null,actual:right[lang]??null});
+  };
+  check('description',expected.id,translationMap(expected,expected.descriptions,expected.description),translationMap(actual,actual.descriptions,actual.description));
+  for(const [kind,rows,field] of [['sentence','sentences','turkish'],['word','words','translation']]){
+    const byId=new Map(actual[rows].map(row=>[row.id,row]));
+    for(const row of expected[rows]){
+      const other=byId.get(row.id);if(!other)continue;
+      check(kind,row.id,translationMap(expected,row.translations,row[field]),translationMap(actual,other.translations,other[field]));
+    }
+  }
+  return changes;
+}
 const stats=group=>({stories:group.stories,uniqueTypes:group.types.size,coveredTypes:group.covered.size,
   typeCoveragePercent:percent(group.covered.size,group.types.size),tokens:group.tokens,coveredTokens:group.coveredTokens,
   tokenCoveragePercent:percent(group.coveredTokens,group.tokens)});
@@ -22,7 +39,7 @@ export function bundledDocuments(catalog){
       for(const id of new Set(matched.map(m=>m.word.id))) links.push({sentence_id:s.id,word_id:id});
       return {...s,position:index+1};
     });
-    return {...story,revisionId:null,sentences,words:[...words.values()],links};
+    return {...story,questions:Array.isArray(story.questions)?story.questions.map((q,i)=>({...q,position:i+1})):story.questions===undefined?[]:story.questions,revisionId:null,sentences,words:[...words.values()],links};
   });
 }
 
@@ -30,15 +47,44 @@ export function publishedDocuments(snapshot){
   if(snapshot.format!==1||!snapshot.tables) throw Error('Unsupported public content snapshot');
   for(const table of ['stories','story_revisions','story_sentences','revision_words','sentence_words','content_assets'])
     if(!Array.isArray(snapshot.tables[table])) throw Error(`Snapshot table missing: ${table}`);
+  const translationTables=['sentence_translations','word_translations','revision_texts'];
+  const translationTablesPresent=translationTables.some(name=>snapshot.tables[name]!==undefined);
+  if(translationTablesPresent)for(const name of translationTables)
+    if(!Array.isArray(snapshot.tables[name]))throw Error(`Snapshot table missing: ${name}`);
+  if(snapshot.tables.story_questions!==undefined&&!Array.isArray(snapshot.tables.story_questions))throw Error('Snapshot table invalid: story_questions');
   const t=snapshot.tables,revisions=new Map(t.story_revisions.map(r=>[r.id,r]));
   return t.stories.filter(s=>!s.is_archived&&s.current_revision_id).map(story=>{
     const revision=revisions.get(story.current_revision_id);
     return {...revision,id:story.id,revisionId:story.current_revision_id,
+      translationTablesPresent,
+      questions:(t.story_questions??[]).filter(q=>q.revision_id===story.current_revision_id).sort((a,b)=>a.position-b.position),
+      ...(translationTablesPresent?{descriptions:Object.fromEntries(t.revision_texts.filter(r=>r.revision_id===story.current_revision_id).map(r=>[r.lang,r.description]))}:{}),
       revisionMissing:!revision,revisionWrongOwner:revision&&revision.story_id!==story.id,
-      sentences:t.story_sentences.filter(s=>s.revision_id===story.current_revision_id).sort((a,b)=>a.position-b.position),
-      words:t.revision_words.filter(w=>w.revision_id===story.current_revision_id),
+      sentences:t.story_sentences.filter(s=>s.revision_id===story.current_revision_id).map(s=>({...s,...(translationTablesPresent?{translations:Object.fromEntries(t.sentence_translations.filter(r=>r.revision_id===s.revision_id&&r.sentence_id===s.id).map(r=>[r.lang,r.text]))}:{})})).sort((a,b)=>a.position-b.position),
+      words:t.revision_words.filter(w=>w.revision_id===story.current_revision_id).map(w=>({...w,...(translationTablesPresent?{translations:Object.fromEntries(t.word_translations.filter(r=>r.revision_id===w.revision_id&&r.word_id===w.id).map(r=>[r.lang,r.translation]))}:{})})),
       links:t.sentence_words.filter(l=>l.revision_id===story.current_revision_id)};
   });
+}
+
+export function translationCompleteness(documents){
+  const languages=new Set(['tr']);
+  for(const doc of documents)for(const map of [doc.descriptions,...doc.sentences.map(s=>s.translations),...doc.words.map(w=>w.translations)])
+    for(const lang of Object.keys(map??{}))languages.add(lang);
+  const result={};
+  for(const lang of sorted(languages)){
+    const counts={missingSentences:0,missingWords:0,missingDescriptions:0};
+    for(const doc of documents){
+      const missing=(map,legacy)=>{
+        const value=lang==='tr'&&!doc.translationTablesPresent?legacy:map?.[lang];
+        return Boolean(!text(value).trim()||(lang==='tr'&&((map?.tr!==undefined&&map.tr!==legacy)||(doc.translationTablesPresent&&value!==legacy))));
+      };
+      counts.missingSentences+=doc.sentences.filter(s=>missing(s.translations,s.turkish)).length;
+      counts.missingWords+=doc.words.filter(w=>missing(w.translations,w.translation)).length;
+      counts.missingDescriptions+=Number(missing(doc.descriptions,doc.description));
+    }
+    result[lang]={...counts,complete:Object.values(counts).every(n=>n===0)};
+  }
+  return result;
 }
 
 /** Actual selectable spans, including phrases, with no stemming or stop-word removal. */
@@ -57,6 +103,9 @@ export function auditDocuments(documents,{source='bundle',dictionary=[]}={}){
   }
   for(const doc of documents){
     const before=issues.length;
+    const questions=doc.questions===undefined?[]:doc.questions,questionIssues=questionErrors(questions,{positions:true});
+    for(const message of questionIssues)issue('error','invalid_question',doc.id,{message});
+    const validQuestions=Array.isArray(questions)?questions.filter((q,i)=>!questionErrors([q]).length&&q.position===i+1&&questions.filter(other=>other?.id===q.id).length===1).length:0;
     if(doc.revisionMissing)issue('error','missing_current_revision',doc.id,{revisionId:doc.revisionId});
     if(doc.revisionWrongOwner)issue('error','wrong_revision_owner',doc.id,{revisionId:doc.revisionId});
     if(source==='live'&&!doc.published_at)issue('error','unpublished_current_revision',doc.id);
@@ -88,6 +137,7 @@ export function auditDocuments(documents,{source='bundle',dictionary=[]}={}){
     const group=emptyStats();group.stories=1;
     const levelKey=['A1','A2','B1'].includes(doc.level)?doc.level:'unknown';
     const level=levels[levelKey]??=emptyStats();level.stories++;
+    level.storiesWithThreeQuestions=(level.storiesWithThreeQuestions??0)+Number(validQuestions>=3);
     for(const [index,sentence] of doc.sentences.entries()){
       if(!text(sentence.id).trim())issue('error','missing_sentence_id',doc.id);
       if(sentence.position!==index+1)issue('error','non_contiguous_position',doc.id,{sentenceId:sentence.id,position:sentence.position,expected:index+1});
@@ -113,15 +163,16 @@ export function auditDocuments(documents,{source='bundle',dictionary=[]}={}){
     }
     all.stories++;
     stories.push({id:doc.id,title:doc.title,level:doc.level,revisionId:doc.revisionId,sentences:doc.sentences.length,
+      questions:Array.isArray(questions)?questions.length:0,validQuestions,
       vocabularyEntries:doc.words.length,links:doc.links.length,...stats(group),issueCount:issues.length-before});
   }
   const backlog=[...missing.values()].filter(entry=>!levels[entry.level].covered.has(entry.token)).map(entry=>({...entry,storyIds:sorted(entry.storyIds)}))
     .sort((a,b)=>String(a.level).localeCompare(String(b.level))||b.occurrences-a.occurrences||a.token.localeCompare(b.token));
-  return {source,summary:{...stats(all),sentences:documents.reduce((n,d)=>n+d.sentences.length,0),
+  return {source,storiesWithoutQuestions:stories.filter(s=>s.questions===0).map(s=>s.id),translations:translationCompleteness(documents),summary:{...stats(all),sentences:documents.reduce((n,d)=>n+d.sentences.length,0),
     vocabularyEntries:documents.reduce((n,d)=>n+d.words.length,0),distinctVocabularyIds:new Set(documents.flatMap(d=>d.words.map(w=>w.id))).size,
     dictionaryEntries:source==='bundle'?dictionary.length:null,links:documents.reduce((n,d)=>n+d.links.length,0),
     errors:issues.filter(i=>i.severity==='error').length,warnings:issues.filter(i=>i.severity==='warning').length},
-    levels:Object.fromEntries(Object.entries(levels).map(([key,value])=>[key,stats(value)])),stories,issues,backlog};
+    levels:Object.fromEntries(Object.entries(levels).map(([key,value])=>[key,{...stats(value),storiesWithThreeQuestions:value.storiesWithThreeQuestions??0}])),stories,issues,backlog};
 }
 
 export function compareDocuments(bundle,live,{manifest,snapshot}={}){
@@ -143,6 +194,8 @@ export function compareDocuments(bundle,live,{manifest,snapshot}={}){
       extraWordIds:actual.words.filter(w=>!wordIds.has(w.id)).map(w=>w.id),
       modifiedWords:expected.words.filter(w=>wordMap.has(w.id)).map(w=>({id:w.id,fields:fieldsChanged(w,wordMap.get(w.id),wordFields)})).filter(w=>w.fields.length),
       missingLinks:expected.links.filter(link=>!actualLinks.has(linkKey(link))),extraLinks:actual.links.filter(link=>!expectedLinks.has(linkKey(link))),
+      questionChanges:JSON.stringify(questionDocument(expected.questions))===JSON.stringify(questionDocument(actual.questions))?[]:[{expected:questionDocument(expected.questions),actual:questionDocument(actual.questions)}],
+      translationChanges:translationChanges(expected,actual),
       coverMismatch:manifest&&snapshot?(!cover||!activeCover||cover.sha256!==activeCover.sha256||cover.byteSize!==Number(activeCover.byte_size)):null};
     if(diff.coverMismatch||Object.entries(diff).some(([key,value])=>Array.isArray(value)&&value.length))differences.push(diff);
   }
@@ -154,6 +207,8 @@ export function compareDocuments(bundle,live,{manifest,snapshot}={}){
       sentenceDifferences:differences.reduce((n,d)=>n+d.missingSentenceIds.length+d.extraSentenceIds.length+d.modifiedSentences.length,0),
       missingRevisionWords:differences.reduce((n,d)=>n+d.missingWordIds.length,0),extraRevisionWords:differences.reduce((n,d)=>n+d.extraWordIds.length,0),
       modifiedRevisionWords:differences.reduce((n,d)=>n+d.modifiedWords.length,0),
+      questionDifferences:differences.filter(d=>d.questionChanges.length).length,
+      translationChanges:differences.reduce((n,d)=>n+d.translationChanges.length,0),
       missingLinks:differences.reduce((n,d)=>n+d.missingLinks.length,0),extraLinks:differences.reduce((n,d)=>n+d.extraLinks.length,0),
       coverMismatches:differences.filter(d=>d.coverMismatch).length},
     missingVocabularyIds:sorted([...bundleWords].filter(id=>!liveWords.has(id))),extraVocabularyIds:sorted([...liveWords].filter(id=>!bundleWords.has(id))),
@@ -187,11 +242,21 @@ export function auditSnapshot(snapshot){
 }
 
 /** Strict release gates are opt-in; an audit never labels known drift or low coverage as fixed. */
-export function acceptance({bundle,live,comparison},{requireParity=false,minCoverage=null}={}){
+export function acceptance({bundle,live,comparison},{requireParity=false,minCoverage=null,requireLang=null,minQuestions=null}={}){
   const failures=[];
   if(bundle.summary.errors)failures.push('bundle_structure');
   if(live?.summary.errors)failures.push('live_structure');
   if(requireParity&&!comparison?.equal)failures.push('bundle_live_parity');
+  if(minQuestions!==null){
+    if(!Number.isSafeInteger(minQuestions)||minQuestions<0)throw Error('Soru alt sınırı sıfır veya pozitif bir tam sayı olmalı.');
+    for(const report of [bundle,...(live?[live]:[])])
+      if(report.stories.some(s=>s.validQuestions<minQuestions))failures.push(`${report.source}_min_questions`);
+  }
+  if(requireLang!==null){
+    if(!validSupportLanguage(requireLang))throw Error('Geçersiz destek dili');
+    for(const report of [bundle,...(live?[live]:[])])
+      if(!report.translations?.[requireLang]?.complete)failures.push(`${report.source}_${requireLang}_translations`);
+  }
   if(minCoverage!==null){
     if(!Number.isFinite(minCoverage)||minCoverage<0||minCoverage>100)throw Error('Coverage threshold must be between 0 and 100');
     for(const report of [bundle,...(live?[live]:[])])for(const level of ['A1','A2'])

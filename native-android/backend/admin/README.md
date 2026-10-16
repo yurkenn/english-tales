@@ -52,3 +52,8 @@ npm run test:admin
 ```
 
 İlk komut 27 SQL erişim/veri testi ve 8 istemci/kurtarma testini çalıştırır. İkinci komut ayrı yerel süreçte gerçek dosya yükleme/indirme, kayıt, çakışma, yayın, yeni sürüm, arşiv, taslak silme/işlem geçmişi, dosya temizliği ve yeniden başlatma kalıcılığını sınar. `node --env-file=.env.admin tools/verify-hosted.mjs` gerçek projede anon erişim sınırlarını ve katalog durumunu kontrol eder. Deneme Auth fixture'ı bulut JWT doğrulamasını temsil etmez. Ayrıntılar [doğrulama kaydında](../VERIFICATION.md).
+## Destek dili
+
+Editörde **Destek dili** seçimi açıklamayı, cümle çevirisini, kelime karşılığını ve okuyucu önizlemesini değiştirir. **Yeni dil kodu** alanına `es-419` gibi bir kod yazıp **Dil ekle** ile seçin. İlk dolu alan kaydedildiğinde dil taslağa eklenir; o revision'ın bütün cümle, kelime ve açıklamalarını tamamlamadan yayın yapılamaz. İngilizce metin, telaffuz ve örnek bütün dillerde ortaktır. Türkçe eski alanlardan düzenlenir ve `tr` satırına otomatik eşitlenir.
+
+Yayın kontrolünde tüm dillerin eksik sayıları görünür. Taslak kopyalama, kaydetme ve JSON yedekleri ek dilleri korur. Bir ek dil alanını boşaltmak o çeviri anahtarını kaldırır; diğer alanları doluysa dilin yayını eksik kalır. API haritaları ve erişim ayrıntıları: [Destek dili sözleşmesi](../TRANSLATION_CONTRACT.md).

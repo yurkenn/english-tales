@@ -64,6 +64,8 @@
 
 ### Q4 — İçerik kalitesi · ~8–12 gün · karar: sözlük kaynağı
 
+Ayrıntılı plan, iki katmanlı sözlük kararı ve dil genişlemesi: [içerik, öğrenme ve dil planı](LEARNING_QUALITY_PLAN.md).
+
 | # | İş | Kabul ölçütü | Efor |
 |---|---|---|---|
 | Q4.1 | Paketten taslak revizyon üretimi + yayın doğrulama | Paket ve canlı farkı 0; doğrulama aracı yeni kuralla | 2–3 |

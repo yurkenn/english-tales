@@ -61,7 +61,7 @@ class ClassicLibraryTest {
                 onHintDismiss={},sessionId="classic-reader-$mount",onCheckpoint={_,_->})}
         }}
         compose.onAllNodesWithContentDescription("Cümleyi çevir").onFirst().performClick()
-        compose.onNodeWithText(story.sentences.first().turkish).assertIsDisplayed()
+        compose.onNodeWithText(story.sentences.first().translation).assertIsDisplayed()
         val sentence=compose.onNodeWithText(story.sentences.first().english)
         val layouts=mutableListOf<TextLayoutResult>()
         sentence.performSemanticsAction(SemanticsActions.GetTextLayoutResult) {it(layouts)}
