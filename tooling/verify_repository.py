@@ -24,6 +24,10 @@ for name in filter(None,names):
         content=data.decode('utf-8-sig')
     except UnicodeDecodeError:
         continue
+    # Screen text lives in strings.xml so it can be reviewed and translated (Q3.1).
+    template=r'\$\{(?:[^{}]|\{[^{}]*\})*\}'
+    if name.startswith('native-android/app/src/main/java/') and name.endswith('.kt') and any(re.search(r'[A-Za-zÇĞİÖŞÜçğıöşü]{2}',re.sub(template+r'|\$\w+','',literal)) for literal in re.findall(r'\bText\(\s*"((?:'+template+r'|[^"\\\n])*)"',content)):
+        failures.append((name,'hard-coded screen text; move it to res/values/strings.xml'))
     if re.search(r'^(<<<<<<< |=======\s*$|>>>>>>> )',content,re.M):
         failures.append((name,'unresolved merge conflict'))
     if re.search(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|\b(?:ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{40,}|sb_secret_[A-Za-z0-9_-]{20,})',content):

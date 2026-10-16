@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.layout.*
+import com.yurken.englishtales.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -15,10 +17,10 @@ fun SupportLinks() {
     fun open(url: String) {error=runCatching {uriHandler.openUri(url)}.isFailure}
     Column(verticalArrangement=Arrangement.spacedBy(4.dp)) {
         HorizontalDivider()
-        Text("Yardım ve gizlilik",style=MaterialTheme.typography.titleMedium)
-        TextButton(onClick={open("https://englishtales-app.web.app/privacy")},modifier=Modifier.fillMaxWidth()) {Text("Gizlilik politikası")}
-        TextButton(onClick={open("https://englishtales-app.web.app/delete-account")},modifier=Modifier.fillMaxWidth()) {Text("Hesap ve veri silme bilgileri")}
-        TextButton(onClick={open("mailto:oguz.yurken@gmail.com?subject=English%20Tales%20Destek")},modifier=Modifier.fillMaxWidth()) {Text("Destek ve içerik hatası bildirimi")}
-        if(error) Text("Bağlantı açılamadı. Tarayıcından englishtales-app.web.app adresini açabilir veya oguz.yurken@gmail.com adresine yazabilirsin.",fontSize=13.sp,color=TaleMuted)
+        Text(stringResource(R.string.yardim_ve_gizlilik),style=MaterialTheme.typography.titleMedium)
+        TextButton(onClick={open("https://englishtales-app.web.app/privacy")},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.gizlilik_politikasi))}
+        TextButton(onClick={open("https://englishtales-app.web.app/delete-account")},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.hesap_ve_veri_silme_bilgileri))}
+        TextButton(onClick={open("mailto:oguz.yurken@gmail.com?subject=English%20Tales%20Destek")},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.destek_ve_icerik_hatasi_bildirimi))}
+        if(error) Text(stringResource(R.string.baglanti_acilamadi_tarayicindan_englishtales_app),fontSize=13.sp,color=TaleMuted)
     }
 }

@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.layout.*
+import com.yurken.englishtales.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
@@ -27,104 +29,104 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
     var confirmTransfer by remember {mutableStateOf(false)}
     androidx.activity.compose.BackHandler(enabled=state.busy) {}
     Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding()) {
-        SimpleTopBar("Hesabın") {if(!state.busy) onBack()}
+        SimpleTopBar(stringResource(R.string.hesabin)) {if(!state.busy) onBack()}
         Column(Modifier.weight(1f).verticalScroll(rememberScrollState()).imePadding().padding(24.dp),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-            Text(if(state.userId==null) "Öğrenmeye kendi hesabınla devam et" else "Hesap açık",fontSize=24.sp)
+            Text(if(state.userId==null) stringResource(R.string.ogrenmeye_kendi_hesabinla_devam_et) else stringResource(R.string.hesap_acik),fontSize=24.sp)
             if(state.userId!=null) {
                 Text(state.email,fontSize=16.sp,color=TaleBlue)
-                Text("Öğrenme kayıtların hesabın üzerinden eşitlenir. Misafir kayıtların bu cihazda ayrı kalır.",fontSize=14.sp,color=TaleMuted)
+                Text(stringResource(R.string.ogrenme_kayitlarin_hesabin_uzerinden_esitlenir),fontSize=14.sp,color=TaleMuted)
                 Card(Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                        Text("Hesap eşitlemesi",style=MaterialTheme.typography.titleMedium)
+                        Text(stringResource(R.string.hesap_esitlemesi),style=MaterialTheme.typography.titleMedium)
                         Text(state.sync.message,fontSize=14.sp)
                         if(state.sync.running) LinearProgressIndicator(Modifier.fillMaxWidth())
-                        if(state.sync.lastSuccessAt!=null) Text("Son alınan kayıt: ${java.text.DateFormat.getDateTimeInstance(java.text.DateFormat.SHORT,java.text.DateFormat.SHORT).format(java.util.Date(state.sync.lastSuccessAt))}",fontSize=12.sp,color=TaleMuted)
-                        if(state.sync.pending>0) Text("${state.sync.pending} kayıt gönderilmeyi bekliyor.",fontSize=13.sp)
-                        if(state.sync.blocked>0) Text("${state.sync.blocked} kayıt için kontrol gerekiyor. Yerel geçmiş korunuyor.",fontSize=13.sp)
-                        if(state.sync.deviceOnlyPoints>0) Text("Eski geçmişindeki ${state.sync.deviceOnlyPoints} puan bu cihaza ait; diğer cihazlara aktarılmaz.",fontSize=13.sp,color=TaleMuted)
-                        if(state.sync.preferencesPending) Text(if(state.sync.preferencesConflict) "Başka cihazdaki profil tercihlerin farklı. Hangi tercihleri kullanmak istersin?" else "Profil tercihlerin gönderilmeyi bekliyor.",fontSize=13.sp,color=TaleMuted)
+                        if(state.sync.lastSuccessAt!=null) Text(stringResource(R.string.son_alinan_kayit, java.text.DateFormat.getDateTimeInstance(java.text.DateFormat.SHORT,java.text.DateFormat.SHORT).format(java.util.Date(state.sync.lastSuccessAt))),fontSize=12.sp,color=TaleMuted)
+                        if(state.sync.pending>0) Text(stringResource(R.string.kayit_gonderilmeyi_bekliyor, state.sync.pending),fontSize=13.sp)
+                        if(state.sync.blocked>0) Text(stringResource(R.string.kayit_icin_kontrol_gerekiyor_yerel, state.sync.blocked),fontSize=13.sp)
+                        if(state.sync.deviceOnlyPoints>0) Text(stringResource(R.string.eski_gecmisindeki_puan_bu_cihaza, state.sync.deviceOnlyPoints),fontSize=13.sp,color=TaleMuted)
+                        if(state.sync.preferencesPending) Text(if(state.sync.preferencesConflict) stringResource(R.string.baska_cihazdaki_profil_tercihlerin_farkli) else stringResource(R.string.profil_tercihlerin_gonderilmeyi_bekliyor),fontSize=13.sp,color=TaleMuted)
                         if(state.sync.preferencesConflict) {
-                            OutlinedButton(onClick={onResolvePreferences(true)},enabled=!state.busy && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text("Bu cihazdaki tercihleri kullan")}
-                            OutlinedButton(onClick={onResolvePreferences(false)},enabled=!state.busy && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text("Hesaptaki tercihleri kullan")}
+                            OutlinedButton(onClick={onResolvePreferences(true)},enabled=!state.busy && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.bu_cihazdaki_tercihleri_kullan))}
+                            OutlinedButton(onClick={onResolvePreferences(false)},enabled=!state.busy && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.hesaptaki_tercihleri_kullan))}
                         }
-                        OutlinedButton(onClick=onSync,enabled=!state.busy && !state.needsSignIn && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text("Şimdi eşitle")}
+                        OutlinedButton(onClick=onSync,enabled=!state.busy && !state.needsSignIn && !state.sync.running,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.simdi_esitle))}
                     }
                 }
                 state.guestTransfer?.let {guest ->
                     Card(Modifier.fillMaxWidth()) {
                         Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                            Text("Misafir ilerlemen",style=MaterialTheme.typography.titleMedium)
-                            Text("${guest.words} kelime · ${guest.points} puan · ${guest.stories} hikâye",fontSize=14.sp)
-                            if(guest.blocked) Text("Yarıda kalan aktarım başka hesabına ait. Tamamlamak için ilgili hesaba giriş yap.",fontSize=14.sp)
+                            Text(stringResource(R.string.misafir_ilerlemen),style=MaterialTheme.typography.titleMedium)
+                            Text(stringResource(R.string.kelime_puan_hikaye, guest.words, guest.points, guest.stories),fontSize=14.sp)
+                            if(guest.blocked) Text(stringResource(R.string.yarida_kalan_aktarim_baska_hesabina),fontSize=14.sp)
                             else Button(onClick={confirmTransfer=true},enabled=!state.busy && !state.needsSignIn,modifier=Modifier.fillMaxWidth()) {
-                                Text(if(guest.pending) "Aktarımı tamamla" else "Bu hesaba aktar")
+                                Text(if(guest.pending) stringResource(R.string.aktarimi_tamamla) else stringResource(R.string.bu_hesaba_aktar))
                             }
                         }
                     }
                 }
-                OutlinedButton(onClick={confirmExit=true},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text("Bu cihazdan çıkış yap")}
-                TextButton(onClick={confirmDelete=true},enabled=!state.busy && !state.needsSignIn,modifier=Modifier.fillMaxWidth()) {Text("Hesabımı sil",color=MaterialTheme.colorScheme.error)}
+                OutlinedButton(onClick={confirmExit=true},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.bu_cihazdan_cikis_yap))}
+                TextButton(onClick={confirmDelete=true},enabled=!state.busy && !state.needsSignIn,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.hesabimi_sil),color=MaterialTheme.colorScheme.error)}
                 if(!state.needsSignIn) {
                     GoogleSignInButton(!state.busy,onGoogle)
-                    Text("Google hesabınla da giriş yapabilirsin. Hesapların kayıtları ayrı korunur.",fontSize=13.sp,color=TaleMuted)
+                    Text(stringResource(R.string.google_hesabinla_da_giris_yapabilirsin),fontSize=13.sp,color=TaleMuted)
                 }
-                if(state.needsSignIn) Text("Kayıtlarına erişimi doğrulamak için tekrar giriş yap.",color=TaleMuted)
+                if(state.needsSignIn) Text(stringResource(R.string.kayitlarina_erisimi_dogrulamak_icin_tekrar),color=TaleMuted)
             } else {
-                Text("Google ile devam edebilir veya e-posta hesabı oluşturabilirsin. Misafir ilerlemen cihazında ayrı kalır; girişten sonra aktarımı seçebilirsin.",fontSize=14.sp,color=TaleMuted)
+                Text(stringResource(R.string.google_ile_devam_edebilir_veya),fontSize=14.sp,color=TaleMuted)
             }
             if(state.userId==null || state.needsSignIn) {
                 if(state.emailAction.isNotEmpty()) {
-                    Text(if(state.emailAction=="signup") "E-postanı doğrula" else "Yeni parolanı belirle",style=MaterialTheme.typography.titleMedium)
-                    Text("İşlem yapılan e-posta: ${state.verificationEmail}",fontSize=14.sp,color=TaleMuted)
+                    Text(if(state.emailAction=="signup") stringResource(R.string.e_postani_dogrula) else stringResource(R.string.yeni_parolani_belirle),style=MaterialTheme.typography.titleMedium)
+                    Text(stringResource(R.string.islem_yapilan_e_posta, state.verificationEmail),fontSize=14.sp,color=TaleMuted)
                     Text(if(state.emailAction=="signup")
-                        "Yeni hesap için “English Tales — E-posta doğrulama kodun” konulu e-postadaki kodu kullan. Parola kurtarma kodu bu ekranda geçmez. Bu adresle zaten hesabın varsa yeni doğrulama e-postası gelmeyebilir; giriş ekranına dönüp giriş yap."
-                        else "“English Tales — Parola kurtarma kodun” konulu en son e-postadaki kodu kullan. Hesap oluşturma kodu bu ekranda geçmez.",fontSize=13.sp,color=TaleMuted)
-                    OutlinedTextField(code,{code=it.filter(Char::isDigit).take(8)},label={Text("E-posta kodu")},singleLine=true,enabled=!state.busy,
+                        stringResource(R.string.yeni_hesap_icin_english_tales)
+                        else stringResource(R.string.english_tales_parola_kurtarma_kodun),fontSize=13.sp,color=TaleMuted)
+                    OutlinedTextField(code,{code=it.filter(Char::isDigit).take(8)},label={Text(stringResource(R.string.e_posta_kodu))},singleLine=true,enabled=!state.busy,
                         keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.NumberPassword),modifier=Modifier.fillMaxWidth())
                     if(state.emailAction=="recovery") {
-                        OutlinedTextField(password,{password=it},label={Text("Yeni parola (en az 8 karakter)")},singleLine=true,enabled=!state.busy,
+                        OutlinedTextField(password,{password=it},label={Text(stringResource(R.string.yeni_parola_en_az_8))},singleLine=true,enabled=!state.busy,
                             visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.Password),modifier=Modifier.fillMaxWidth())
-                        OutlinedTextField(confirmation,{confirmation=it},label={Text("Yeni parolayı tekrar yaz")},singleLine=true,enabled=!state.busy,
+                        OutlinedTextField(confirmation,{confirmation=it},label={Text(stringResource(R.string.yeni_parolayi_tekrar_yaz))},singleLine=true,enabled=!state.busy,
                             visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.Password),modifier=Modifier.fillMaxWidth())
                     }
                     Button(onClick={val submitted=password;val submittedCode=code;password="";confirmation="";code="";onCompleteCode(submittedCode,submitted)},
                         enabled=!state.busy && code.length in 6..8 && (state.emailAction=="signup" || (password.length in 8..128 && password==confirmation)),modifier=Modifier.fillMaxWidth()) {
-                        Text(if(state.emailAction=="signup") "Doğrula ve giriş yap" else "Parolayı güncelle")
+                        Text(if(state.emailAction=="signup") stringResource(R.string.dogrula_ve_giris_yap) else stringResource(R.string.parolayi_guncelle))
                     }
-                    TextButton(onClick=onResendCode,enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(if(state.emailAction=="signup") "Doğrulama kodunu yeniden iste" else "Kurtarma kodunu yeniden iste")}
-                    TextButton(onClick={password="";confirmation="";code="";onCancelCode()},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text("Giriş ekranına dön")}
+                    TextButton(onClick=onResendCode,enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(if(state.emailAction=="signup") stringResource(R.string.dogrulama_kodunu_yeniden_iste) else stringResource(R.string.kurtarma_kodunu_yeniden_iste))}
+                    TextButton(onClick={password="";confirmation="";code="";onCancelCode()},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.giris_ekranina_don))}
                 } else {
                 GoogleSignInButton(!state.busy,onGoogle)
-                Text(when(mode) {"signup"->"E-posta hesabı oluştur";"recovery"->"Parolanı kurtar";else->"veya e-posta ile giriş yap"},color=TaleMuted,fontSize=13.sp)
-                OutlinedTextField(email,{email=it},label={Text("E-posta")},singleLine=true,enabled=!state.busy,
+                Text(when(mode) {"signup"->stringResource(R.string.e_posta_hesabi_olustur);"recovery"->stringResource(R.string.parolani_kurtar);else->stringResource(R.string.veya_e_posta_ile_giris)},color=TaleMuted,fontSize=13.sp)
+                OutlinedTextField(email,{email=it},label={Text(stringResource(R.string.e_posta))},singleLine=true,enabled=!state.busy,
                     keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.Email),modifier=Modifier.fillMaxWidth())
-                if(mode!="recovery") OutlinedTextField(password,{password=it},label={Text(if(mode=="signup") "Parola (en az 8 karakter)" else "Parola")},singleLine=true,enabled=!state.busy,
+                if(mode!="recovery") OutlinedTextField(password,{password=it},label={Text(if(mode=="signup") stringResource(R.string.parola_en_az_8_karakter) else stringResource(R.string.parola))},singleLine=true,enabled=!state.busy,
                     visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.Password),modifier=Modifier.fillMaxWidth())
-                if(mode=="signup") OutlinedTextField(confirmation,{confirmation=it},label={Text("Parolayı tekrar yaz")},singleLine=true,enabled=!state.busy,
+                if(mode=="signup") OutlinedTextField(confirmation,{confirmation=it},label={Text(stringResource(R.string.parolayi_tekrar_yaz))},singleLine=true,enabled=!state.busy,
                     visualTransformation=PasswordVisualTransformation(),keyboardOptions=KeyboardOptions(keyboardType=KeyboardType.Password),modifier=Modifier.fillMaxWidth())
                 Button(onClick={val submitted=password;password="";confirmation="";when(mode) {"signup"->onSignUp(email,submitted);"recovery"->onRecovery(email);else->onSignIn(email,submitted)}},
                     enabled=!state.busy && email.isNotBlank() && when(mode) {"signup"->password.length in 8..128 && password==confirmation;"recovery"->true;else->password.isNotEmpty()},modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {
-                    Text(when(mode) {"signup"->"Hesap oluştur";"recovery"->"Kurtarma kodu gönder";else->"Giriş yap"})
+                    Text(when(mode) {"signup"->stringResource(R.string.hesap_olustur);"recovery"->stringResource(R.string.kurtarma_kodu_gonder);else->stringResource(R.string.giris_yap)})
                 }
                 if(mode=="signin") {
-                    TextButton(onClick={password="";confirmation="";mode="signup"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text("Yeni hesap oluştur")}
-                    TextButton(onClick={password="";confirmation="";mode="recovery"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text("Parolamı unuttum")}
-                } else TextButton(onClick={password="";confirmation="";mode="signin"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text("Giriş ekranına dön")}
+                    TextButton(onClick={password="";confirmation="";mode="signup"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.yeni_hesap_olustur))}
+                    TextButton(onClick={password="";confirmation="";mode="recovery"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.parolami_unuttum))}
+                } else TextButton(onClick={password="";confirmation="";mode="signin"},enabled=!state.busy,modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.giris_ekranina_don))}
                 }
-                if(state.userId==null) OutlinedButton(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {Text("Misafir olarak devam et")}
+                if(state.userId==null) OutlinedButton(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {Text(stringResource(R.string.misafir_olarak_devam_et))}
             }
             if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
             if(state.message.isNotBlank()) Text(state.message,fontSize=14.sp,color=TaleMuted)
             SupportLinks()
         }
     }
-    if(confirmExit) AlertDialog(onDismissRequest={confirmExit=false},title={Text("Çıkış yapılsın mı?")},
-        text={Text("Bu hesabın cihazdaki kayıtları korunur. Misafir olarak devam edeceksin.")},
-        confirmButton={TextButton(onClick={confirmExit=false;onSignOut()}) {Text("Çıkış yap")}},dismissButton={TextButton(onClick={confirmExit=false}) {Text("Vazgeç")}})
-    if(confirmTransfer) AlertDialog(onDismissRequest={confirmTransfer=false},title={Text("Misafir ilerlemen taşınsın mı?")},
-        text={Text("Misafir kelimelerin, okuma ilerlemen ve puanın bu hesabın cihazdaki kayıtlarına bir kez eklenir. Mevcut hesap ayarların korunur. Taşınan geçmiş misafir alanından çıkar. Gönderilebilen öğrenme kayıtları hesabına eşitlenir; eski puanlar bu cihazda korunur.")},
-        confirmButton={TextButton(onClick={confirmTransfer=false;onTransfer()}) {Text("Bu hesaba aktar")}},dismissButton={TextButton(onClick={confirmTransfer=false}) {Text("Vazgeç")}})
-    if(confirmDelete) AlertDialog(onDismissRequest={confirmDelete=false},title={Text("Hesabın kalıcı olarak silinsin mi?")},
-        text={Text("${state.email}\n\nHesabın, sunucudaki öğrenme geçmişin ve bu cihazdaki hesap kayıtların silinir. Gönderilmeyi bekleyen hesap kayıtları da silinir. Bu işlem geri alınamaz. Misafir kayıtların ayrı kalır. Silmeden önce yeniden giriş yapman istenebilir.")},
-        confirmButton={TextButton(onClick={confirmDelete=false;onDeleteAccount()}) {Text("Hesabımı kalıcı olarak sil",color=MaterialTheme.colorScheme.error)}},dismissButton={TextButton(onClick={confirmDelete=false}) {Text("Vazgeç")}})
+    if(confirmExit) AlertDialog(onDismissRequest={confirmExit=false},title={Text(stringResource(R.string.cikis_yapilsin_mi))},
+        text={Text(stringResource(R.string.bu_hesabin_cihazdaki_kayitlari_korunur))},
+        confirmButton={TextButton(onClick={confirmExit=false;onSignOut()}) {Text(stringResource(R.string.cikis_yap))}},dismissButton={TextButton(onClick={confirmExit=false}) {Text(stringResource(R.string.vazgec))}})
+    if(confirmTransfer) AlertDialog(onDismissRequest={confirmTransfer=false},title={Text(stringResource(R.string.misafir_ilerlemen_tasinsin_mi))},
+        text={Text(stringResource(R.string.misafir_kelimelerin_okuma_ilerlemen_ve))},
+        confirmButton={TextButton(onClick={confirmTransfer=false;onTransfer()}) {Text(stringResource(R.string.bu_hesaba_aktar))}},dismissButton={TextButton(onClick={confirmTransfer=false}) {Text(stringResource(R.string.vazgec))}})
+    if(confirmDelete) AlertDialog(onDismissRequest={confirmDelete=false},title={Text(stringResource(R.string.hesabin_kalici_olarak_silinsin_mi))},
+        text={Text(stringResource(R.string.n_nhesabin_sunucudaki_ogrenme_gecmisin, state.email))},
+        confirmButton={TextButton(onClick={confirmDelete=false;onDeleteAccount()}) {Text(stringResource(R.string.hesabimi_kalici_olarak_sil),color=MaterialTheme.colorScheme.error)}},dismissButton={TextButton(onClick={confirmDelete=false}) {Text(stringResource(R.string.vazgec))}})
 }
