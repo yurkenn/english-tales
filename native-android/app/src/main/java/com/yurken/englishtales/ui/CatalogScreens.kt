@@ -37,6 +37,7 @@ import com.yurken.englishtales.data.ReadingLength
 import com.yurken.englishtales.data.LearningContent
 import com.yurken.englishtales.data.LearningSnapshot
 import com.yurken.englishtales.data.savedWordList
+import com.yurken.englishtales.data.WordStage
 import com.yurken.englishtales.data.ReadingStatus
 import com.yurken.englishtales.data.StoryFilters
 import com.yurken.englishtales.data.Story
@@ -284,6 +285,14 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
         ProfilePanel {
             FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween,verticalArrangement=Arrangement.spacedBy(8.dp)) { Text(stringResource(R.string.kelimeler),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold); Text(stringResource(R.string.kelimelerim_2),color=TaleBlue,fontSize=12.sp,modifier=Modifier.clickable(role=Role.Button,onClick=onOpenWords)) }
             Button(onClick=onOpenWords,modifier=Modifier.fillMaxWidth().padding(top=18.dp),shape=RoundedCornerShape(24.dp)) { Text(stringResource(R.string.ogren, snapshot.savedWordIds.size)) }
+        }
+        // Q5.5: how many words the learner knows, from practice and from reading.
+        ProfilePanel {
+            Text(stringResource(R.string.known_words_title),fontSize=12.sp,letterSpacing=1.sp,fontWeight=FontWeight.Bold)
+            Text("${snapshot.knownWordCount}",fontSize=30.sp,color=TaleBlue,modifier=Modifier.padding(top=10.dp))
+            Text(stringResource(R.string.known_words_detail,snapshot.wordStages.count {it.value==WordStage.SEEN || it.value==WordStage.LOOKED_UP},
+                snapshot.wordStages.count {it.value==WordStage.SAVED || it.value==WordStage.REVIEWING}),fontSize=12.sp,color=TaleMuted)
+            Text(stringResource(R.string.known_words_explanation),fontSize=12.sp,color=TaleMuted,modifier=Modifier.padding(top=6.dp))
         }
         FlowRow(horizontalArrangement=Arrangement.spacedBy(16.dp),verticalArrangement=Arrangement.spacedBy(16.dp),maxItemsInEachRow=sideBySide(2)) {
             ProfilePanel(Modifier.weight(1f)) { Text(stringResource(R.string.hikayeler),fontSize=12.sp,fontWeight=FontWeight.Bold); Text("${snapshot.storyProgress.count {it.value==100}}",fontSize=30.sp,color=TaleBlue,modifier=Modifier.padding(top=14.dp)); Text(stringResource(R.string.tamamlandi),fontSize=12.sp,color=TaleMuted) }

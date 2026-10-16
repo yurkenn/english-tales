@@ -137,9 +137,9 @@ class GuestTransferTest {
         assertEquals(20,target.snapshot().points)
     }
     @Test fun versionFourMigrationPreservesGuestHistory() {
-        seed();guest.writableDatabase.execSQL("DROP TABLE guest_transfers");guest.writableDatabase.execSQL("DROP TABLE guest_imports");guest.writableDatabase.execSQL("DROP TABLE learning_cloud_state");guest.writableDatabase.execSQL("DROP TABLE favorite_stories");guest.writableDatabase.execSQL("DROP TABLE personal_words")
+        seed();guest.writableDatabase.execSQL("DROP TABLE guest_transfers");guest.writableDatabase.execSQL("DROP TABLE guest_imports");guest.writableDatabase.execSQL("DROP TABLE learning_cloud_state");guest.writableDatabase.execSQL("DROP TABLE favorite_stories");guest.writableDatabase.execSQL("DROP TABLE personal_words");guest.writableDatabase.execSQL("DROP TABLE lemma_reads");guest.writableDatabase.execSQL("DROP TABLE lemma_lookups")
         guest.writableDatabase.version=4;guest.close();guest=open(LearningOwner.Guest)
-        assertEquals(8,guest.readableDatabase.version);assertEquals(20,guest.snapshot().points)
+        assertEquals(9,guest.readableDatabase.version);assertEquals(20,guest.snapshot().points)
         assertEquals(2,guest.snapshot().savedWordIds.size);assertNotNull(GuestTransfer.preview(guest,user))
     }
     @Test fun progressKeepsMaximumWithinRevisionAndNewestAcrossRevisions() {

@@ -28,9 +28,12 @@ data class LearningSnapshot(
     /** F09: favorite story IDs, most recently added first. Archived stories may stay listed here. */
     val favoriteStoryIds: List<String> = emptyList(),
     /** Saved glossary words (Q4.3a); learning words come from [LearningContent]. */
-    val personalWords: Map<String, WordInfo> = emptyMap()
+    val personalWords: Map<String, WordInfo> = emptyMap(),
+    /** Q5.5: stage per dictionary form the learner has met. */
+    val wordStages: Map<String, WordStage> = emptyMap()
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
+    val knownWordCount get() = wordStages.count {it.value==WordStage.KNOWN}
 }
 
 /** Calls are serialized on the ViewModel's IO dispatcher. IDs survive content updates. */
@@ -66,6 +69,12 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         db.rawQuery("SELECT story_id FROM favorite_stories ORDER BY added_at DESC,story_id",null).use {c -> while(c.moveToNext()) favorites+=c.getString(0)}
         val personal=linkedMapOf<String,WordInfo>()
         db.rawQuery("SELECT word_id,word,gloss FROM personal_words ORDER BY added_at,word_id",null).use {c -> while(c.moveToNext()) personal[c.getString(0)]=WordInfo(c.getString(0),c.getString(1),c.getString(2),"","")}
+        val reads=mutableMapOf<String,Int>();val lookups=mutableSetOf<String>()
+        db.rawQuery("SELECT lemma,COUNT(*) FROM lemma_reads GROUP BY lemma",null).use {c -> while(c.moveToNext()) reads[c.getString(0)]=c.getInt(1)}
+        db.rawQuery("SELECT lemma FROM lemma_lookups",null).use {c -> while(c.moveToNext()) lookups+=c.getString(0)}
+        val savedLemmas=saved.mapNotNull {id -> (LearningContent.wordById[id]?:personal[id])?.let(WordKnowledge::lemmaOf)?.let {it to (states[id]?:"learning")}}
+            .groupBy({it.first},{it.second}).mapValues {(_,s) -> listOf("known","reviewing","learning").first {it in s}}
+        val stages=WordKnowledge.stages(reads,lookups,savedLemmas)
         val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
         db.rawQuery("SELECT story_id,percent,revision_id,sentence_id FROM story_progress",null).use { c -> while(c.moveToNext()) {
             progress[c.getString(0)]=c.getInt(1)
@@ -87,7 +96,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
@@ -151,6 +160,11 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         }
         unlockBadges(db,clock())
     }
+    /** Q5.5: the learner opened a word while reading; a single-word lookup keeps it out of "known" for now. */
+    fun recordLookup(word: WordInfo) {
+        val lemma=WordKnowledge.lemmaOf(word)?:return
+        writableDatabase.insert("lemma_lookups",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("lemma",lemma);put("looked_up_at",clock())})
+    }
     fun setFavorite(storyId: String,favorite: Boolean) = transaction {db ->
         require(storyId.matches(Regex("[a-z0-9][a-z0-9_-]{0,79}")))
         val changed=if(favorite) db.insert("favorite_stories",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("story_id",storyId);put("added_at",clock())})!=-1L
@@ -202,6 +216,10 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             val draft=prepareCompletion(id,"reading",0,storyId,activeMillis,now,source)?:return@transaction
             val story=source?:LearningContent.storyById.getValue(storyId)
             updateProgress(db,storyId,100,story.sentences.last().id,story)
+            // Q5.5: every word form of the finished story counts as read once per story.
+            story.sentences.flatMap {WordKnowledge.lemmas(it.english)}.toSet().forEach {lemma ->
+                db.insert("lemma_reads",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("lemma",lemma);put("story_id",storyId)})
+            }
             firstForLearner=scalar(db,"SELECT COUNT(*) FROM engagement_events WHERE name='reading_completed'")==0
             newlyCompleted=recordEvent(db,"read:$storyId:$today","reading_completed",now)
             if(newlyCompleted) recordSession(db,now,0,true)

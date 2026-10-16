@@ -235,10 +235,10 @@ class LearningReconciliationTest {
         local.updatePreferences("B1","Gizem",3,"Yerel")
         val before=local.queuedOperations()
         local.writableDatabase.execSQL("INSERT INTO guest_imports VALUES('receipt','hash',45,2,'{}',?)",arrayOf(now))
-        local.writableDatabase.execSQL("DROP TABLE learning_cloud_state");local.writableDatabase.execSQL("DROP TABLE favorite_stories");local.writableDatabase.execSQL("DROP TABLE personal_words")
+        local.writableDatabase.execSQL("DROP TABLE learning_cloud_state");local.writableDatabase.execSQL("DROP TABLE favorite_stories");local.writableDatabase.execSQL("DROP TABLE personal_words");local.writableDatabase.execSQL("DROP TABLE lemma_reads");local.writableDatabase.execSQL("DROP TABLE lemma_lookups")
         local.writableDatabase.version=5
         local.close();local=store()
-        assertEquals(8,local.readableDatabase.version);assertEquals(25,local.snapshot().points)
+        assertEquals(9,local.readableDatabase.version);assertEquals(25,local.snapshot().points)
         assertEquals("Yerel",local.snapshot().displayName);assertEquals(before,local.queuedOperations())
         local.readableDatabase.query("SELECT legacy_points FROM guest_imports WHERE id='receipt'").use { c -> assertTrue(c.moveToFirst());assertEquals(45,c.getInt(0)) }
         assertNull(local.cloudState())

@@ -90,6 +90,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         }
     }
 
+    fun recordLookup(word: WordInfo) = mutate {store.recordLookup(word)}
+
     fun toggleFavorite(storyId: String) {
         var favorite: Boolean?=null
         mutate {
