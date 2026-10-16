@@ -8,7 +8,7 @@
 - [x] Mevcut Play yükleme anahtarının SHA-1 değeri doğrulandı: `EF:07:C9:73:55:FD:F7:63:14:C7:AA:94:6E:FC:A4:44:D7:2D:48:30`.
 - [x] Beş zorunlu ortam secret'ı kaydedildi: `ANDROID_UPLOAD_KEYSTORE_BASE64`, `ANDROID_UPLOAD_STORE_PASSWORD`, `ANDROID_UPLOAD_KEY_ALIAS`, `ANDROID_UPLOAD_KEY_PASSWORD`, `GOOGLE_SERVICES_JSON_BASE64`. Özel değerler kaynaklara veya rapora eklenmedi.
 - [x] İlk yüklemesiz [GitHub çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı: **49 / 2.1.0**, commit `0c7ac02c0551ed3b0edf9297bfdfdd1cf872a9f9`. İmzalı APK/AAB, Crashlytics mapping yükleme görevi ve statik paket doğrulaması geçti.
-- [ ] İsteğe bağlı `PLAY_SERVICE_ACCOUNT_JSON` ve otomatik dahili kanal yüklemesi kurulmadı. Kullanıcı amacı hakkında açıklama istedi; kurulum tercihi henüz verilmedi. Bu çalışma Play'e APK/AAB yüklemedi.
+- [ ] İsteğe bağlı `PLAY_SERVICE_ACCOUNT_JSON` ve otomatik dahili kanal yüklemesi kurulmadı. Kullanıcı amacı hakkında açıklama istedi; kurulum tercihi henüz verilmedi. İlk CI çalışması Play’e yükleme yapmadı; daha yeni 49 paketi aşağıdaki kayıt kapsamında Console’dan elle yayımlandı.
 
 APK **9.307.385 bayt**, AAB **13.387.779 bayt**. APK SHA-256 `6edd637535ad6d99746720918842ca451b668b05116dd0a6970bd536bdfae07c`; AAB SHA-256 `ad787b1a715462a9fe9fb63e1bb4b4c0ce4fbe80327793b599a6f07dbe5e8e39`. [Rapor](native-android/docs/release-evidence/2026-10-16-ci-49.json), [kurulum ve kullanım](native-android/docs/RELEASE_AUTOMATION.md).
 
@@ -73,8 +73,14 @@ Planlanan paylaşım adresi `https://englishtales-app.web.app/story/{id}`. Andro
 
 ## Play sürümü
 
-16 Ekim canlı Console kontrolü: **48 / 2.0.0**, “Available on Google Play Production”, dağıtım **%100**, yayın tarihi 15 Ekim. **49 / 2.1.0 yalnız CI'da doğrulanmış adaydır; Play'e yüklenmedi.** Data safety incelemesi uygulama sürümü yayınıyla karıştırılmamalıdır.
+16 Ekim canlı Console kontrolü: **48 / 2.0.0**, “Available on Google Play Production”, dağıtım **%100**, yayın tarihi 15 Ekim. **49 / 2.1.0, 16 Ekim 2026 saat 23:38’de dahili testte yayımlandı; yalnız seçili test hesabına açık. Üretim sürümü 48 olarak kaldı.** Data safety incelemesi uygulama sürümü yayınıyla karıştırılmamalıdır.
 
-## 49 dahili test yüklemesi — devam ediyor
+## 49 dahili test yüklemesi — tamamlandı
 
-Son kaynaklı paket hazır ve yerel doğrulama geçti. Play dahili test taslağı oluşturuldu, 5 dilde sürüm notları girildi. Mevcut tek kişilik tester listesi korundu. AAB yükleme denemesi Chrome ChatGPT eklentisinin “Allow access to file URLs” izni kapalı olduğu için durdu; kullanıcıdan izin ayarını açması istendi. **Henüz AAB yüklenmedi veya dahili kanal yayımlanmadı.**
+Kullanıcı Chrome eklentisinin dosya iznini açtıktan sonra doğrulanmış AAB Console’dan yüklendi ve **16 Ekim 2026, 23:38 TRT** tarihinde dahili testte “Save and publish” ile yayımlandı. Kanal **Active**, sürüm **Available to internal testers**, sürüm adı `49 (2.1.0) internal validation`. Mevcut tek kişilik tester listesi korundu; yeni hesaplara erişim verilmedi. Beş dilde sürüm notları ve pakete bağlı ReTrace mapping dosyası doğrulandı.
+
+[Play sürüm kaydı](https://play.google.com/console/u/0/developers/7726521495392867100/app/4972425450856153810/tracks/4701713728242169635/releases/5/details) · [Test katılım bağlantısı](https://play.google.com/apps/internaltest/4701713728242169635) · [Yayın kanıtı](native-android/docs/release-evidence/2026-10-16-internal-49-play.json).
+
+Play önizlemesinde engelleyici hata yok; tek uyarı, mevcut native kütüphanelerin debug sembollerinin bulunmaması. ReTrace mapping ekli olduğundan Java/Kotlin sembol çözümü bununla karıştırılmamalıdır. Önceki dahili 47’ye göre destekten çıkan cihaz 0; yeni kurulum boyutu önizlemede 8,13 MB. Üretim 48’den gerçek telefon güncellemesi veya 16 KB cihaz çalışma zamanı testi henüz yapılmadı. Play, görünürlüğün genellikle bir saat içinde oluştuğunu ve daha uzun sürebileceğini belirtiyor.
+
+Paketin içerdiği master `a14fa5f` için [CI](https://github.com/yurkenn/english-tales/actions/runs/38960839360) repository, backend, Android ve android-device işlerinin tümünde başarılı. Telefon testinde aynı yetkili Google hesabını kullanarak mevcut uygulamanın üzerine güncelle; sürümün **2.1.0 / 49** olduğunu doğrula. Bundan sonra TalkBack ve 48→49 veri koruma kabulü kaydedilebilir.
