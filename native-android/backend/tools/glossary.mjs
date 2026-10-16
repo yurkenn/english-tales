@@ -25,11 +25,14 @@ export function validate(doc){
   return errors;
 }
 
+/** Nothing ships until the owner has signed off the 10% sample (`sampleApprovedBy`). */
+export const sampleApproved=doc=>typeof doc.sampleApprovedBy==='string'&&doc.sampleApprovedBy.trim()!=='';
+
 export function build(doc){
   const errors=validate(doc);if(errors.length)throw Error(`Invalid glossary: ${errors.slice(0,10).join(', ')}`);
   return {schemaVersion:1,lang:doc.lang,
     source:'Built by tools/glossary.mjs from backend/content/glossary/tr.json: cross-checked entries only.',
-    entries:doc.entries.filter(publishable).map(({lemma,gloss})=>({lemma,gloss})),forms:doc.forms};
+    entries:sampleApproved(doc)?doc.entries.filter(publishable).map(({lemma,gloss})=>({lemma,gloss})):[],forms:doc.forms};
 }
 
 /** Every tenth entry by a stable hash of the lemma, so the sample does not drift as drafts are edited. */
@@ -42,6 +45,6 @@ if(import.meta.url===`file://${process.argv[1]}`){
   const command=process.argv[2];
   if(command==='build'){const out=build(doc);await writeFile(asset,serialize(out));console.log(`${out.entries.length}/${doc.entries.length} entries published`);}
   else if(command==='check'){if(await readFile(asset,'utf8')!==serialize(build(doc))){console.error('App glossary is stale: run npm run glossary:build');process.exit(1);}console.log('App glossary matches the reviewed drafts');}
-  else if(command==='sample')for(const e of sample(doc))console.log(`${e.lemma}\t${e.gloss}\t${e.example}`);
+  else if(command==='sample')for(const e of sample(doc))console.log(`${e.lemma}\t${e.gloss}\t${e.example}${e.disputed?`\tDISPUTED: ${e.suggestion??''} (${e.note??''})`:''}`);
   else{console.error('usage: node tools/glossary.mjs build|check|sample');process.exit(2);}
 }
