@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.clickable
+import com.yurken.englishtales.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -16,29 +18,31 @@ import com.yurken.englishtales.data.LearningSnapshot
 @Composable
 internal fun LearningInfoButton(kind: String, value: String, title: String, explanation: String) {
     var open by remember {mutableStateOf(false)}
-    Row(Modifier.heightIn(min=48.dp).semantics {contentDescription="$title: $value, bilgi"}
+    Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.bilgi, title, value))
         .clickable(role=Role.Button) {open=true}.padding(horizontal=4.dp),
         verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(5.dp)) {
         Text(value,fontWeight=FontWeight.Bold)
         ReferenceIcon(kind,TaleBlue)
     }
     if(open) AlertDialog(onDismissRequest={open=false},title={Text(title)},text={Text(explanation)},
-        confirmButton={TextButton(onClick={open=false}) {Text("Anladım")}})
+        confirmButton={TextButton(onClick={open=false}) {Text(stringResource(R.string.anladim))}})
 }
 
+@Composable
 internal fun streakExplanation(snapshot: LearningSnapshot) =
-    "Şu an ${snapshot.streak} günlük çalışma serin var. Bir hikâye veya alıştırma tamamlayarak çalıştığın günü kaydedersin. Ardışık günlerde çalışmak seriyi sürdürür; yalnızca uygulamayı açmak yeterli değildir."
+    stringResource(R.string.su_an_gunluk_calisma_serin, snapshot.streak)
 
+@Composable
 internal fun pointsExplanation(snapshot: LearningSnapshot) =
-    "Toplam ${snapshot.points} puanın var. Kelime alıştırmasındaki her doğru cevap 5 puan kazandırır. Aynı çalışma tekrar kaydedilerek ikinci kez puan vermez. Puan para veya harcanan enerji değildir."
+    stringResource(R.string.toplam_puanin_var_kelime_alistirmasindaki, snapshot.points)
 
 @Composable
 internal fun RankProgress(points: Int) {
     val safe=points.coerceAtLeast(0)
     val rank=safe/100+1
     val progress=safe%100
-    Text("Okuyucu $rank",fontWeight=FontWeight.Bold)
+    Text(stringResource(R.string.okuyucu, rank),fontWeight=FontWeight.Bold)
     ReferenceProgress(progress/100f,Modifier.fillMaxWidth())
-    Text("${100-progress} puan sonra Okuyucu ${rank+1}",color=TaleMuted)
-    Text("Her 100 puan bir okuma rütbesidir. Rütbe, İngilizce seviyenden ayrıdır.",style=MaterialTheme.typography.bodySmall,color=TaleMuted)
+    Text(stringResource(R.string.puan_sonra_okuyucu, 100-progress, rank+1),color=TaleMuted)
+    Text(stringResource(R.string.her_100_puan_bir_okuma),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
 }
