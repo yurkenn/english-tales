@@ -156,12 +156,30 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q5.6 Kişisel zorluk ve öneri | Ana dala birleşti | [#60](https://github.com/yurkenn/english-tales/pull/60) | Hikâye sayfasında "Bu hikâyede ~N yeni kelime" (öğrenen en az bir kelime bildiğinde). Çalış ekranındaki "Senin için" rafı: bitmemiş hikâyeler, seviyen ve okurun bildiği sözcük oranı (kapsama) yüksek olanlar önce. Kapsama, bilinen kelime modeline (Q5.5) dayanır |
 | Q5.10 İlerleme ve geri bildirim | Ana dala birleşti | [#61](https://github.com/yurkenn/english-tales/pull/61) | Hatırlatıcı, tekrar zamanı gelen kelime varsa sayısını söyler ("Tekrar zamanı gelen 3 kelimen var"). Son 7 gün kartı: bu hafta bitirilen hikâyelerdeki sözcük sayısı ve bilinen kelime sayısı. Hepsi cihazdaki gerçek veriden |
 | Q5.7 FSRS (1. adım: çekirdek + simülasyon) | Ana dala birleşti | [#64](https://github.com/yurkenn/english-tales/pull/64) | FSRS-5 JS referansı ve Kotlin modeli, 28 adımlık ortak vektörle eşit. Simülasyon (20 tohum, 200 kelime, 120 gün): aynı akılda tutmayla %11 daha az tekrar, son ayın günlük yükü 13,3 → 9,3. Zamanlama henüz değişmedi; Android + SQL geçişi 2. adımda. [Ayrıntı](FSRS_PLAN.md) |
-| Q5.7 FSRS (2. adım: geçiş) | PR açık | [#65](https://github.com/yurkenn/english-tales/pull/65) | Tekrar aralığını artık FSRS-5 belirler: uygulama (`LearningPolicy`, Room 10) ve sunucu (`apply_word_event` oynatımı, `private.fsrs_review`) aynı vektörlerle eşit. "Biliyorum" = kararlılık ≥ 21 gün. Eski uygulamalar için `interval_days` kademelerde kalır. Migration uygulama sürümünden önce yayımlanmalı |
+| Q5.7 FSRS (2. adım: geçiş) | Ana dala birleşti | [#65](https://github.com/yurkenn/english-tales/pull/65) | Tekrar aralığını artık FSRS-5 belirler: uygulama (`LearningPolicy`, Room 10) ve sunucu (`apply_word_event` oynatımı, `private.fsrs_review`) aynı vektörlerle eşit. "Biliyorum" = kararlılık ≥ 21 gün. Eski uygulamalar için `interval_days` kademelerde kalır. Migration uygulama sürümünden önce yayımlanmalı |
 | Q5.8 Alıştırma basamakları (1. adım) | Ana dala birleşti | [#62](https://github.com/yurkenn/english-tales/pull/62) | "Akıllı tekrar" ve günlük plandaki tekrar: öğrenilmekte olan kelime anlam seçme (tanıma), tekrara geçmiş kelime harflerden kurma (hatırlama) sorusuyla gelir. Bağlam ve dinleme ayrı modlar olarak kalır; basamaklar FSRS (Q5.7) ile inceltilecek |
 | Q5.9 Cümle kurma | Ana dala birleşti | [#57](https://github.com/yurkenn/english-tales/pull/57) | Oyna ekranında yeni mod: hikâyedeki 4–10 sözcüklük bir cümlenin karışık sözcüklerini doğru sıraya koy; Türkçe anlamı ipucu, seçilen sözcük geri alınabilir, tekrar eden sözcükler birbirinin yerine geçer. Seviyendeki cümleler önce; oturum `choice` olarak sayılır |
 | Q5.9 Dikte | Ana dala birleşti | [#58](https://github.com/yurkenn/english-tales/pull/58) | "Dinle ve yaz": aynı kısa hikâye cümleleri seslendirilir, öğrenen yazar; büyük/küçük harf ve noktalama sayılmaz, her farklı/eksik/fazla sözcük sayılır. Cihazda İngilizce ses yoksa mod görünmez; oturum `choice` |
 | Q5.4 Seviye yerleştirme | Ana dala birleşti | [#27](https://github.com/yurkenn/english-tales/pull/27) | Onboarding/Ayarlar’da dokuz soru, A1–B1 başlangıç önerisi; [kapsam](READING_PLACEMENT.md) |
 | Q6 Ana ekran widget'ı | Ana dala birleşti | [#39](https://github.com/yurkenn/english-tales/pull/39) | Glance widget'ı: seri, günlük hedef ve tekrarı gelen kelime sayısı; dokununca günlük plan açılır. App Links paylaşım alan adı kararı bekliyor |
+
+## 5a. Kalan işler ve yayın sırası — 16 Ekim 2026
+
+Karar gerektirmeyen kod işleri tamamlandı (#45–#65). Kalanlar uygulama sahibinin kararını veya emeğini bekliyor:
+
+| İş | Neden bekliyor |
+|---|---|
+| Q4.2 Pilot revizyonları canlıya yayımla | Canlı panel/Supabase yayını; "yayına al" onayı |
+| Q4.3b Sözlük anlamları (~1.900 lemma) | Taslak üretilebilir, ama karar gereği iki model çapraz kontrolü ve uygulama sahibinin %10 örneklem incelemesi gerekir; Wiktionary lisansı doğrulanmalı |
+| Q4.3c Hikâye başına çalışma kelimesi seçimi | Q4.3b verisine bağlı; editör incelemesi |
+| Q4.7 İçerik hacmi (bölümlü hikâyeler, B1/B2) | İçerik üretimi ve editör onayı (iki haftada 1–2 hikâye kararı) |
+| L0 İngilizce arayüz | Arayüz İngilizceyken destek dilinin (çevirilerin) ne olacağı ürün kararı |
+| Q6 App Links | Paylaşım alan adı kararı |
+| Q2 ölçüm sağlayıcısı, gelir modeli, kayıtlı ses | Ürün kararları |
+
+**Yayın sırası (canlıya alırken):** Sunucu migration'ları uygulama sürümünden önce uygulanmalı, çünkü yeni uygulama bu RPC ve alanları kullanır:
+`20261016090000_translation_tables` → `20261016100000_story_questions` → `20261016110000_story_tags` → `20261016120000_story_favorites` → `20261016130000_personal_words` → `20261016140000_known_words` → `20261016150000_fsrs`.
+Canlıda hangilerinin uygulandığı yayın öncesi kontrol edilmelidir. FSRS geçişi eski uygulamalarla uyumludur (`interval_days` eski kademelerde kalır). Kişisel kelime ve bilinen kelime olayları eski sunucuda reddedilir, bu yüzden sıra önemlidir.
 
 ## 6. Birleşik doğrulama — 15 Ekim 2026
 
