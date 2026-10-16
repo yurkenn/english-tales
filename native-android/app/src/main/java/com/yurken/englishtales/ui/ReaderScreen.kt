@@ -58,6 +58,9 @@ internal open class Narrator(context: Context, private val focus: NarrationFocus
         private set
     var error by mutableStateOf<String?>(null)
         private set
+    /** Null until the engine has started; false when no English voice can be used on this device. */
+    var available by mutableStateOf<Boolean?>(null)
+        private set
 
     init {
         focus.onLoss = { main.post { if (!closed) stop() } }
@@ -71,12 +74,15 @@ internal open class Narrator(context: Context, private val focus: NarrationFocus
                         ready = false
                         speaking = false
                         error = appContext.getString(R.string.cihazin_ingilizce_ses_verisi_hazir)
+                        available = false
                     } else {
+                        available = true
                         pending?.let { speak(it) }
                     }
                 } else {
                     speaking = false
                     error = appContext.getString(R.string.cihazin_seslendirme_motoru_baslatilamadi)
+                    available = false
                 }
                 preparing = false
                 pending = null
