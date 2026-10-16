@@ -95,11 +95,19 @@ internal object LearningReconciliation {
             .filter { it.optString("error_code") != "account_word_precedence" }
             .map { JSONObject(it.getString("payload")).getString("wordId") }.toSet()
         cloud.words.filter { it.id !in protectedWords }.forEach { w ->
-            if (!w.saved) db.delete("saved_words","word_id=?",arrayOf(w.id))
-            else replace(db,"saved_words",ContentValues().apply {
-                put("word_id",w.id);put("learning_state",w.state);put("correct_count",w.correctCount)
-                put("next_review_at",w.dueAt ?: 0);put("interval_days",w.intervalDays);put("last_review_day",w.successDay)
-            })
+            // A glossary word arrives with its text; without it this app cannot show or practise it.
+            val personal = Glossary.isLookupOnly(w.id)
+            if (personal && w.saved && (w.word.isNullOrBlank() || w.gloss.isNullOrBlank())) return@forEach
+            if (!w.saved) {
+                db.delete("saved_words","word_id=?",arrayOf(w.id))
+                if (personal) db.delete("personal_words","word_id=?",arrayOf(w.id))
+            } else {
+                if (personal) replace(db,"personal_words",ContentValues().apply {put("word_id",w.id);put("word",w.word);put("gloss",w.gloss);put("added_at",w.updatedAt)})
+                replace(db,"saved_words",ContentValues().apply {
+                    put("word_id",w.id);put("learning_state",w.state);put("correct_count",w.correctCount)
+                    put("next_review_at",w.dueAt ?: 0);put("interval_days",w.intervalDays);put("last_review_day",w.successDay)
+                })
+            }
         }
         // Favorites follow the same rule: unsent local changes win until the server has replayed them.
         val protectedFavorites = operations.filter { it.getString("rpc") == "apply_favorite_event" && it.getString("state") != "delivered" }

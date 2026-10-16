@@ -14,7 +14,9 @@ data class CloudLearningSession(val id: String, val kind: String, val storyId: S
     val day: String, val counted: Boolean, val points: Int, val finishedAt: Long)
 data class CloudLearningWord(val id: String, val saved: Boolean, val state: String, val correctCount: Int,
     val dueAt: Long?, val intervalDays: Int, val successDay: String?, val eventId: String,
-    val sourceRevisionId: String?, val updatedAt: Long)
+    val sourceRevisionId: String?, val updatedAt: Long,
+    /** Saved glossary words (Q4.3a) carry their text; learning words come from the catalog. */
+    val word: String? = null, val gloss: String? = null)
 data class CloudLearningProgress(val revisionId: String, val storyId: String, val sentenceId: String,
     val percent: Int, val eventAt: Long, val eventId: String, val updatedAt: Long,
     val eventAtIso: String = Instant.ofEpochMilli(eventAt).toString())
@@ -40,7 +42,8 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
             .put("learning_state", w.state).put("correct_count", w.correctCount)
             .put("next_review_at", w.dueAt?.let { Instant.ofEpochMilli(it).toString() } ?: JSONObject.NULL).put("interval_days", w.intervalDays)
             .put("last_success_day", w.successDay ?: JSONObject.NULL).put("last_event_id", w.eventId)
-            .put("source_revision_id", w.sourceRevisionId ?: JSONObject.NULL).put("updated_at", Instant.ofEpochMilli(w.updatedAt).toString())) } })
+            .put("source_revision_id", w.sourceRevisionId ?: JSONObject.NULL).put("updated_at", Instant.ofEpochMilli(w.updatedAt).toString())
+            .also { o -> if (w.word != null && w.gloss != null) o.put("word", w.word).put("gloss", w.gloss) }) } })
         .put("progress", JSONArray().also { a -> progress.forEach { p -> a.put(JSONObject().put("revision_id", p.revisionId)
             .put("story_id", p.storyId).put("last_sentence_id", p.sentenceId).put("percent", p.percent).put("last_event_at", p.eventAtIso)
             .put("last_event_id", p.eventId).put("updated_at", Instant.ofEpochMilli(p.updatedAt).toString())) } })
@@ -82,7 +85,8 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
                 val interval = number(w, "interval_days", 0, 30).toInt().also { require(it in setOf(0, 1, 3, 7, 14, 30)) }
                 CloudLearningWord(text(w, "word_id"), boolean(w, "saved"), state, number(w, "correct_count", 0, 100).toInt(),
                     nullableText(w, "next_review_at")?.let(::timestamp), interval, nullableText(w, "last_success_day")?.let(::day),
-                    uuid(text(w, "last_event_id")), nullableText(w, "source_revision_id")?.let(::uuid), timestamp(text(w, "updated_at")))
+                    uuid(text(w, "last_event_id")), nullableText(w, "source_revision_id")?.let(::uuid), timestamp(text(w, "updated_at")),
+                    if (w.has("word") && !w.isNull("word")) text(w, "word", 100) else null, if (w.has("gloss") && !w.isNull("gloss")) text(w, "gloss", 1000) else null)
             }.also { unique(it.map { w -> w.id }) }
             val progress = rows(json, "progress", 5_000).map { p ->
                 CloudLearningProgress(uuid(text(p, "revision_id")), text(p, "story_id"), text(p, "last_sentence_id"),
