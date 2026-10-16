@@ -244,10 +244,10 @@ test('an authenticated database role without a user identity cannot access learn
 });
 test('all application tables have RLS and privileged functions have a fixed search path and explicit grants',async()=>{
   const tables=(await db.query("select c.relname,c.relrowsecurity from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r'")).rows;
-  assert.equal(tables.length,13);
+  assert.equal(tables.length,16);
   assert.ok(tables.every(t=>t.relrowsecurity));
-  const functions=(await db.query("select n.nspname,p.proname,p.proconfig,p.oid,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as user_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','private') and p.proname in ('publish_story_revision','set_story_archived','save_learning_preferences','submit_learning_session','apply_word_event','apply_progress_event','get_learning_summary','lock_learning_user','learning_summary','unlock_learning_badges','guard_revision_child','guard_revision','guard_asset','bump_revision_version','bump_child_version','content_role','admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish','admin_history','admin_delete_draft','admin_archive','admin_unused_media','admin_reserve_media_delete','admin_finalize_media_delete','record_content_action','audit_content_change','check_learning_links','guard_revision_media','bump_media_revisions')")).rows;
-  assert.equal(functions.length,32);
+  const functions=(await db.query("select n.nspname,p.proname,p.proconfig,p.oid,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as user_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','private') and p.proname in ('publish_story_revision','set_story_archived','save_learning_preferences','submit_learning_session','apply_word_event','apply_progress_event','get_learning_summary','lock_learning_user','learning_summary','unlock_learning_badges','guard_revision_child','guard_revision','guard_asset','bump_revision_version','bump_child_version','content_role','admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish','admin_history','admin_delete_draft','admin_archive','admin_unused_media','admin_reserve_media_delete','admin_finalize_media_delete','record_content_action','audit_content_change','check_learning_links','guard_revision_media','bump_media_revisions','sync_legacy_translation','guard_turkish_translation','check_revision_translations','save_translation_maps')")).rows;
+  assert.equal(functions.length,36);
   for(const fn of functions) {
     assert.ok(fn.proconfig?.includes('search_path=""'),fn.proname);
     assert.equal(fn.anon_execute,false,fn.proname);
@@ -259,6 +259,174 @@ const admin=async(id,name,args,types)=>{
   const values=Object.values(args),placeholders=values.map((_,i)=>`$${i+1}${types?.[i]?`::${types[i]}`:''}`).join(',');
   return (await user(id,`select public.${name}(${placeholders}) as result`,values))[0].result;
 };
+const translationTables=['sentence_translations','word_translations','revision_texts'];
+async function extraLanguage(id,lang='es-419'){
+  await user(editor,'insert into public.sentence_translations select revision_id,id,$2,turkish from public.story_sentences where revision_id=$1',[id,lang]);
+  await user(editor,'insert into public.word_translations select revision_id,id,$2,translation from public.revision_words where revision_id=$1',[id,lang]);
+  await user(editor,'insert into public.revision_texts select id,$2,description from public.story_revisions where id=$1',[id,lang]);
+}
+
+test('translation migration backfills published history and drafts without changing legacy values or edit versions',async()=>{
+  const old=new PGlite();await old.waitReady;
+  try{
+    await old.exec(await read('./platform-fixture.sql'));
+    const directory=new URL('../supabase/migrations/',import.meta.url);
+    const names=(await readdir(directory)).sort(),latest='20261016090000_translation_tables.sql';
+    for(const name of names.filter(n=>n<latest))await old.exec(await readFile(new URL(name,directory),'utf8'));
+    await old.exec(await read('../supabase/seed.sql').then(s=>s.split('\n').filter(line=>!line.startsWith('insert into public.sentence_translations')&&!line.startsWith('insert into public.word_translations')&&!line.startsWith('insert into public.revision_texts')).join('\n')));
+    await old.query('update public.story_revisions set published_at=now() where id=$1',[revision]);
+    await old.exec("insert into public.stories(id) values('empty-draft'); insert into public.story_revisions(story_id,revision,level,genre) values('empty-draft',1,'A1','Macera')");
+    const legacy=async()=>Promise.all(['story_revisions','story_sentences','revision_words'].map(async table=>(await old.query(`select * from public.${table} order by ${table==='story_revisions'?'id':'revision_id,id'}`)).rows));
+    const before=await legacy();
+    await old.exec(await readFile(new URL(latest,directory),'utf8'));
+    assert.deepEqual(await legacy(),before);
+    for(const [table,parent,key,field,target] of [['sentence_translations','story_sentences','s.id','turkish','text'],['word_translations','revision_words','s.id','translation','translation'],['revision_texts','story_revisions','s.id','description','description']]){
+      const parentRevision=parent==='story_revisions'?'s.id':'s.revision_id',childKey=table==='revision_texts'?'':` and t.${table==='sentence_translations'?'sentence_id':'word_id'}=${key}`;
+      assert.equal((await old.query(`select count(*)::int n from public.${parent} s left join public.${table} t on t.revision_id=${parentRevision}${childKey} and t.lang='tr' where btrim(s.${field})<>'' and t.${target} is distinct from s.${field}`)).rows[0].n,0);
+      assert.equal((await old.query(`select count(*)::int n from public.${table}`)).rows[0].n,(await old.query(`select count(*)::int n from public.${parent} where btrim(${field})<>''`)).rows[0].n);
+    }
+  }finally{await old.close();}
+});
+
+test('translation RLS exposes paginated published projections and hides draft and archived rows',async()=>{
+  const id=await draft();
+  for(const table of translationTables){
+    assert.equal((await anon(`select * from public.${table} where revision_id=$1`,[id])).length,0);
+    assert.equal((await user(alice,`select * from public.${table} where revision_id=$1`,[id])).length,0);
+    assert.ok((await user(editor,`select * from public.${table} where revision_id=$1`,[id])).length>0);
+  }
+  for(const [table,columns,key] of [['sentence_translations','sentence_id,text','sentence_id'],['word_translations','word_id,translation','word_id'],['revision_texts','revision_id,description','revision_id']]){
+    const all=await anon(`select ${columns} from public.${table} where revision_id in ($1,$2) and lang='tr' order by ${key} asc`,[revision,id]);
+    const pages=[];
+    for(let offset=0;offset<all.length;offset+=2)pages.push(...await anon(`select ${columns} from public.${table} where revision_id in ($1,$2) and lang='tr' order by ${key} asc limit 2 offset $3`,[revision,id,offset]));
+    assert.deepEqual(pages,all);assert.ok(all.length>0);
+    assert.equal((await anon(`select * from public.${table} where revision_id=$1 and lang='xx'`,[revision])).length,0);
+  }
+  await user(publisher,"select public.set_story_archived('quiet-morning',true)");
+  for(const table of translationTables)assert.equal((await anon(`select * from public.${table} where revision_id=$1`,[revision])).length,0);
+});
+
+test('translation writes require staff, validate language and text, freeze publications and advance review versions',async()=>{
+  const id=await draft();
+  for(const [table,columns,values] of [['sentence_translations','sentence_id,lang,text',"'qm-1','es','Texto'"],['word_translations','word_id,lang,translation',"'quiet','es','Texto'"],['revision_texts','lang,description',"'es','Texto'"]]){
+    for(const role of ['anon',alice]){
+      const request=(sql,args)=>role==='anon'?anon(sql,args):user(role,sql,args);
+      await assert.rejects(request(`insert into public.${table}(revision_id,${columns}) values($1,${values})`,[id]),/permission denied|row-level security/);
+      if(role==='anon')for(const sql of [`update public.${table} set lang='xx' where revision_id=$1`,`delete from public.${table} where revision_id=$1`])await assert.rejects(request(sql,[id]),/permission denied/);
+      else for(const sql of [`update public.${table} set lang='xx' where revision_id=$1 returning *`,`delete from public.${table} where revision_id=$1 returning *`])assert.deepEqual(await request(sql,[id]),[]);
+    }
+    const before=(await admin(editor,'admin_revision',{id})).edit_version;
+    await user(editor,`insert into public.${table}(revision_id,${columns}) values($1,${values})`,[id]);
+    assert.ok((await admin(editor,'admin_revision',{id})).edit_version>before);
+    await assert.rejects(admin(publisher,'admin_publish',{id,version:before}),/draft_version_conflict/);
+    await db.exec('savepoint frozen_translation');
+    await assert.rejects(db.query(`insert into public.${table}(revision_id,${columns}) values($1,${values})`,[revision]),/published_revision_is_immutable/);
+    await db.exec('rollback to savepoint frozen_translation; release savepoint frozen_translation');
+    for(const sql of [`update public.${table} set lang='es' where revision_id=$1`,`delete from public.${table} where revision_id=$1`]){
+      await db.exec('savepoint frozen_translation');
+      await assert.rejects(db.query(sql,[revision]),/published_revision_is_immutable/);
+      await db.exec('rollback to savepoint frozen_translation; release savepoint frozen_translation');
+    }
+    for(const lang of ['TR','es-4190','es-419\n','en-us',''])await assert.rejects(user(editor,`insert into public.${table}(revision_id,${columns}) values($1,${values.replace("'es'",'$2')})`,[id,lang]),/check constraint/);
+    await assert.rejects(user(editor,`insert into public.${table}(revision_id,${columns}) values($1,${values.replace("'es'","'de'").replace("'Texto'","' '")})`,[id]),/check constraint/);
+    await assert.rejects(user(editor,`insert into public.${table}(revision_id,${columns}) values($1,${values.replace("'es'","'de'").replace("'Texto'",'null')})`,[id]),/not-null constraint/);
+  }
+  await assert.rejects(user(editor,"insert into public.sentence_translations values($1,'missing','es','Texto')",[id]),/foreign key/);
+  await assert.rejects(user(editor,"insert into public.word_translations values($1,'missing','es','Texto')",[id]),/foreign key/);
+});
+
+test('legacy Turkish edits dual-write all three tables and reject divergent direct Turkish writes',async()=>{
+  const id=await draft();
+  for(const [parent,key,field,table,target,childKey] of [['story_sentences','id','turkish','sentence_translations','text','sentence_id'],['revision_words','id','translation','word_translations','translation','word_id'],['story_revisions','id','description','revision_texts','description',null]]){
+    const rowKey=parent==='story_revisions'?id:parent==='story_sentences'?'qm-1':'quiet';
+    const where=parent==='story_revisions'?'id=$1':`revision_id=$1 and ${key}=$2`,params=parent==='story_revisions'?[id]:[id,rowKey];
+    await user(editor,`update public.${parent} set ${field}='Yeni Türkçe' where ${where}`,params);
+    const childWhere=`revision_id=$1 and lang='tr'${childKey?` and ${childKey}=$2`:''}`;
+    assert.equal((await user(editor,`select ${target} value from public.${table} where ${childWhere}`,params))[0].value,'Yeni Türkçe');
+    await assert.rejects(user(editor,`update public.${table} set ${target}='Farklı' where ${childWhere}`,params),/turkish_translation_must_match_legacy/);
+    await user(editor,`update public.${parent} set ${field}='' where ${where}`,params);
+    assert.deepEqual(await user(editor,`select * from public.${table} where ${childWhere}`,params),[]);
+    await user(editor,`update public.${parent} set ${field}='Tamamlandı' where ${where}`,params);
+    assert.equal((await user(editor,`select ${target} value from public.${table} where ${childWhere}`,params))[0].value,'Tamamlandı');
+  }
+});
+
+test('both publication paths reject missing Turkish rows and mismatches without changing the current revision',async()=>{
+  const id=await draft();
+  for(const table of translationTables){
+    await user(editor,`delete from public.${table} where revision_id=$1 and lang='tr'`,[id]);
+    const d=await admin(editor,'admin_revision',{id});
+    await assert.rejects(admin(publisher,'admin_publish',{id,version:d.edit_version}),/revision_translations_incomplete: lang=tr/);
+    await assert.rejects(user(publisher,'select public.publish_story_revision($1)',[id]),/revision_translations_incomplete: lang=tr/);
+    if(table==='sentence_translations')await db.query("insert into public.sentence_translations select revision_id,id,'tr',turkish from public.story_sentences where revision_id=$1",[id]);
+    if(table==='word_translations')await db.query("insert into public.word_translations select revision_id,id,'tr',translation from public.revision_words where revision_id=$1",[id]);
+    if(table==='revision_texts')await db.query("insert into public.revision_texts select id,'tr',description from public.story_revisions where id=$1",[id]);
+  }
+  for(const [table,trigger,field] of [['sentence_translations','turkish_sentence_translation','text'],['word_translations','turkish_word_translation','translation'],['revision_texts','turkish_revision_text','description']]){
+    await db.exec(`savepoint corrupt_translation; alter table public.${table} disable trigger ${trigger}`);
+    await db.query(`update public.${table} set ${field}='Corrupt fixture' where revision_id=$1 and lang='tr'`,[id]);
+    await db.exec(`alter table public.${table} enable trigger ${trigger}`);
+    await assert.rejects(user(publisher,'select public.publish_story_revision($1)',[id]),/revision_translations_incomplete: lang=tr/);
+    await db.exec('rollback to savepoint corrupt_translation; release savepoint corrupt_translation');
+  }
+  assert.equal((await anon("select current_revision_id from public.stories where id='quiet-morning'"))[0].current_revision_id,revision);
+});
+
+test('a language started in any translation table must be complete before publication',async()=>{
+  const id=await draft();
+  for(const [table,values] of [['sentence_translations',"$1,'qm-1','es-419','Texto'"],['word_translations',"$1,'quiet','es-419','Texto'"],['revision_texts',"$1,'es-419','Texto'"]]){
+    await user(editor,`insert into public.${table} values(${values})`,[id]);
+    await assert.rejects(user(publisher,'select public.publish_story_revision($1)',[id]),/revision_translations_incomplete: lang=es-419, sentences=\d+, words=\d+, description=\d+/);
+    await user(editor,`delete from public.${table} where revision_id=$1 and lang='es-419'`,[id]);
+  }
+  await extraLanguage(id);
+  const current=await admin(editor,'admin_revision',{id});
+  assert.equal(await admin(publisher,'admin_publish',{id,version:current.edit_version}),id);
+  for(const table of translationTables)assert.ok((await anon(`select * from public.${table} where revision_id=$1 and lang='es-419'`,[id])).length>0);
+});
+
+test('admin maps save atomically, survive legacy clients and cloning, and cascade with deleted entities',async()=>{
+  const d=await admin(editor,'admin_create_draft',{story:'quiet-morning',source:revision});
+  await extraLanguage(d.id);
+  let current=await admin(editor,'admin_revision',{id:d.id});
+  assert.ok(current.descriptions['es-419']);assert.ok(current.sentences[0].translations['es-419']);assert.ok(current.words[0].translations['es-419']);
+  const oldClient=structuredClone(current);delete oldClient.descriptions;
+  for(const row of [...oldClient.sentences,...oldClient.words])delete row.translations;
+  oldClient.description='Yeni açıklama';oldClient.sentences[0].turkish='Yeni cümle';oldClient.words[0].translation='Yeni anlam';
+  const save=doc=>admin(editor,'admin_save_draft',{id:d.id,version:current.edit_version,document:JSON.stringify(doc)},['uuid','integer','jsonb']);
+  const preserved=await save(oldClient);
+  assert.equal(preserved.descriptions['es-419'],current.descriptions['es-419']);
+  assert.equal(preserved.sentences[0].translations['es-419'],current.sentences[0].translations['es-419']);
+  assert.equal(preserved.words[0].translations['es-419'],current.words[0].translations['es-419']);
+  assert.equal(preserved.descriptions.tr,oldClient.description);assert.equal(preserved.sentences[0].translations.tr,'Yeni cümle');assert.equal(preserved.words[0].translations.tr,'Yeni anlam');
+  current=preserved;
+  for(const invalid of [null,[],{es:12},{es:''},{'en-us':'Text'}]){
+    const bad=structuredClone(current);bad.sentences[0].translations=invalid;
+    await assert.rejects(save(bad),/translation_map_invalid|check constraint/);
+    assert.deepEqual(await admin(editor,'admin_revision',{id:d.id}),current);
+  }
+  const changed=structuredClone(current);changed.sentences[0].translations['es-419']='Revisado';
+  changed.descriptions['es-419']='Descripción revisada';changed.words[0].translations['es-419']='Significado revisado';
+  current=await save(changed);
+  assert.equal(current.sentences[0].translations['es-419'],'Revisado');
+  assert.equal(current.descriptions['es-419'],'Descripción revisada');assert.equal(current.words[0].translations['es-419'],'Significado revisado');
+  const removed=structuredClone(current);removed.descriptions={};for(const row of [...removed.sentences,...removed.words])row.translations={};
+  const cleared=await save(removed);
+  assert.deepEqual(cleared.descriptions,{tr:current.description});
+  assert.ok([...cleared.sentences,...cleared.words].every(row=>Object.keys(row.translations).join(',')==='tr'));
+  const restored=await admin(editor,'admin_save_draft',{id:d.id,version:cleared.edit_version,document:JSON.stringify(current)},['uuid','integer','jsonb']);
+  current=restored;
+  await admin(publisher,'admin_publish',{id:d.id,version:current.edit_version});
+  const clone=await admin(editor,'admin_create_draft',{story:'quiet-morning',source:d.id});
+  assert.deepEqual(clone.descriptions,current.descriptions);assert.deepEqual(clone.sentences.map(s=>s.translations),current.sentences.map(s=>s.translations));assert.deepEqual(clone.words.map(w=>w.translations),current.words.map(w=>w.translations));
+  await user(editor,"delete from public.story_sentences where revision_id=$1 and id='qm-1'",[clone.id]);
+  assert.deepEqual(await user(editor,"select * from public.sentence_translations where revision_id=$1 and sentence_id='qm-1'",[clone.id]),[]);
+  await user(editor,"delete from public.revision_words where revision_id=$1 and id='quiet'",[clone.id]);
+  assert.deepEqual(await user(editor,"select * from public.word_translations where revision_id=$1 and word_id='quiet'",[clone.id]),[]);
+  const latest=await admin(editor,'admin_revision',{id:clone.id});
+  await admin(editor,'admin_delete_draft',{id:clone.id,version:latest.edit_version});
+  for(const table of translationTables)assert.equal((await db.query(`select * from public.${table} where revision_id=$1`,[clone.id])).rows.length,0);
+});
 test('admin role and content APIs require a real staff identity',async()=>{
   assert.equal(await admin(publisher,'content_role',{}),'publisher');
   assert.equal(await admin(editor,'content_role',{}),'editor');

@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
+import {validSupportLanguage} from '../admin/workflow.js';
 import {auditCatalog,auditSnapshot,bundledDocuments,publishedDocuments,compareDocuments,acceptance} from './content-audit-lib.mjs';
 
 const root=fileURLToPath(new URL('../../../',import.meta.url));
@@ -71,6 +72,9 @@ export function renderReport(result){
     lines.push('',`### ${level} — ilk 20`,'','| Token | Geçiş | Hikâye sayısı |','|---|---:|---:|');
     for(const row of target.backlog.filter(r=>r.level===level).slice(0,20))lines.push(`| ${cell(row.token)} | ${row.occurrences} | ${row.storyIds.length} |`);
   }
+  lines.push('','## Destek dili bütünlüğü','','| Kaynak | Dil | Eksik cümle | Eksik kelime | Eksik açıklama | Tam |','|---|---|---:|---:|---:|---|');
+  for(const report of [result.bundle,...(result.live?[result.live]:[])])for(const [lang,counts] of Object.entries(report.translations??{}))
+    lines.push(`| ${report.source} | ${cell(lang)} | ${counts.missingSentences} | ${counts.missingWords} | ${counts.missingDescriptions} | ${counts.complete?'evet':'hayır'} |`);
   lines.push('','## Kontrol sonucu','',`İstenen kontroller: ${result.acceptance.passed?'geçti':'geçmedi'} · ${result.acceptance.failures.join(', ')||'yapısal hata yok'}`,
     '',`Bundle’da kullanılmayan sözlük ID’leri: ${result.bundle.unusedDictionaryIds.join(', ')||'yok'}`,
     '', 'Eksik/boş çeviri, yanlış kelime bağlantısı, yinelenen kimlik ve bozuk sıra yapısal hatadır. Bağlanmamış sözlük geçişleri ve birebir eş örnek çeviriler editör inceleme uyarısıdır; anlamsal çeviri doğruluğu otomatik kontrol edilmiş sayılmaz.','');
@@ -78,18 +82,19 @@ export function renderReport(result){
 }
 
 export async function main(args=process.argv.slice(2)){
-  const options={output:path.join(root,'native-android/build/content-audit'),snapshot:null,skipMedia:false,requireParity:false,minCoverage:null};
+  const options={output:path.join(root,'native-android/build/content-audit'),snapshot:null,skipMedia:false,requireParity:false,minCoverage:null,requireLang:null};
   for(let i=0;i<args.length;i++){
     const arg=args[i];
-    if(['--output','--snapshot','--min-coverage'].includes(arg)){
+    if(['--output','--snapshot','--min-coverage','--require-lang'].includes(arg)){
       const value=args[++i];if(!value||value.startsWith('--'))throw Error(`Missing value: ${arg}`);
       if(arg==='--output')options.output=path.resolve(value);
       if(arg==='--snapshot')options.snapshot=path.resolve(value);
+      if(arg==='--require-lang')options.requireLang=value;
       if(arg==='--min-coverage')options.minCoverage=Number(value);
     }else if(arg==='--require-parity')options.requireParity=true;
     else if(arg==='--skip-media')options.skipMedia=true;
     else if(arg==='--help'){
-      console.log('node tools/audit-content.mjs [--snapshot <backup/catalog.json>] [--output <directory>] [--require-parity] [--min-coverage <0..100>] [--skip-media]');return;
+      console.log('node tools/audit-content.mjs [--snapshot <backup/catalog.json>] [--output <directory>] [--require-parity] [--min-coverage <0..100>] [--skip-media] [--require-lang <lang>]');return;
     }else throw Error(`Unknown argument: ${arg}`);
   }
   if((options.requireParity||options.skipMedia)&&!options.snapshot)throw Error('--require-parity/--skip-media requires --snapshot');
@@ -108,6 +113,11 @@ export async function main(args=process.argv.slice(2)){
     result.comparison=compareDocuments(docs,publishedDocuments(snapshot),{snapshot,manifest:await json(path.join(root,'native-android/backend/supabase/asset-upload-manifest.json'))});
     try{result.media=options.skipMedia?{status:'skipped'}:await verifySnapshotMedia(snapshot,options.snapshot);}
     catch(error){result.media={status:'failed',error:error.message};}
+  }
+  if(options.requireLang){
+    if(!validSupportLanguage(options.requireLang))throw Error('Geçersiz destek dili');
+    for(const report of [result.bundle,...(result.live?[result.live]:[])])
+      report.translations[options.requireLang]??={missingSentences:report.summary.sentences,missingWords:report.summary.vocabularyEntries,missingDescriptions:report.summary.stories,complete:false};
   }
   result.acceptance=acceptance(result,options);
   if(result.media?.status==='failed'||(options.requireParity&&result.media?.status!=='verified')){

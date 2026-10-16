@@ -12,6 +12,10 @@ Bu sayılar paketin içeriğini belirtir. Canlı ortamın yayın durumu, anonim 
 
 [Q4 içerik denetimi ve tekrar çalıştırma](docs/CONTENT_QUALITY_AUDIT.md): `npm run content:audit` paket yapısını; anonim snapshot ile çalıştırıldığında etkin canlı revizyonları, kelime bağlantılarını, kapsama oranını ve medya baytlarını denetler. Sıkı yayın kontrolü için `--require-parity --min-coverage 60` kullanılır. Varsayılan yapısal kontrolün geçmesi bu iki hedefin sağlandığı anlamına gelmez.
 
+[Destek dili sözleşmesi](backend/TRANSLATION_CONTRACT.md): Türkçe eski alanlarda korunur ve `tr` çeviri satırlarıyla aynı işlemde eşitlenir. Yeni diller cümlede/kelimede `translations`, hikâyede `descriptions` haritasıyla hazırlanabilir. Exporter eski alanlardan her zaman `tr` üretir; ek haritaları da taslağa aktarır. Panelde destek dili seçilerek açıklama, cümle çevirisi ve kelime karşılığı düzenlenir. İngilizce içerik bütün dillerde ortaktır.
+
+`npm run content:audit -- --require-lang tr` Türkçe bütünlüğünü zorunlu tutar; örneğin `--require-lang es-419` o dilin bütün etkin katalogdaki cümle, kelime ve açıklamalarını ister. Raporda dil başına eksik sayıları bulunur. Yayın kontrolü revision'a eklenmiş her dilin o revision'da tam olmasını ister; hiç eklenmemiş bir dil yayını engellemez. Boş taslak alanı çeviri satırı üretmez ve yayınlanana kadar tamamlanmalıdır.
+
 ## Yeni içerik hazırlama
 
 1. Yazarın ve kullanılan çevirinin hak durumunu, kaynak metni ve kapak haklarını kontrol et. Kaynak bağlantısını ve kullanılan baskı/çevirmeni kaydet.
@@ -29,7 +33,7 @@ Bu sayılar paketin içeriğini belirtir. Canlı ortamın yayın durumu, anonim 
 1. Test ortamında yeni taslağı oluştur veya onaylı seed ile ilk revision'ı hazırla.
 2. Cümleleri, çevirileri, kelimeleri ve kelime–cümle bağlantılarını incele.
 3. Kapağı Storage API ile yeni bir UUID/hash yoluna `upsert=false` kullanarak yükle; geri indirip boyutunu ve SHA-256 özetini kontrol et. SQL ile `storage.objects` satırı eklemek dosya yüklemek değildir.
-4. İncelenen `edit_version` ile `admin_publish` çağrısını gerçek publisher oturumundan yap. Yayın kontrolü eksik çeviri, bozuk sıra, geçersiz kelime bağlantısı ve yüklenmemiş kapağı reddeder.
+4. İncelenen `edit_version` ile `admin_publish` çağrısını gerçek publisher oturumundan yap. Yayın kontrolü eksik `tr` veya ek dil çevirisini, eski alanla uyuşmayan Türkçeyi, bozuk sırayı, geçersiz kelime bağlantısını ve yüklenmemiş kapağı reddeder. Her dilin bütün cümle, kelime ve açıklamalarını tamamla.
 5. Aynı paketi Production'da yayımla. Eski hikâyeleri ve yayımlanmış revision'ları koru; personel kimliği taklit etme veya RLS'yi kaldırma.
 6. Anonim katalogda hikâyelerin görünmesini, yeni içeriğin indirilmesini ve kapak hash'lerini doğrula. Android'de arama, okuma/çeviri, kelime kaydetme, TTS, ilerleme ve ağ kapalı yeniden açmayı kontrol et.
 
