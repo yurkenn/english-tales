@@ -1,0 +1,16 @@
+<resources>
+    <string name="quiz_title">Anladın mı?</string>
+    <string name="quiz_intro">Hikâyeyle ilgili kısa sorular. Puanını etkilemez.</string>
+    <string name="quiz_progress">Soru %1$d / %2$d</string>
+    <string name="quiz_kind_main">Ana fikir</string>
+    <string name="quiz_kind_detail">Ayrıntı</string>
+    <string name="quiz_kind_inference">Çıkarım</string>
+    <string name="quiz_check">Kontrol et</string>
+    <string name="quiz_correct">Doğru!</string>
+    <string name="quiz_incorrect">Doğru cevap: %1$s</string>
+    <string name="quiz_next">Sonraki soru</string>
+    <string name="quiz_finish">Bitir</string>
+    <string name="quiz_result">Sonuç: %1$d/%2$d</string>
+    <string name="quiz_best">En iyi sonucun: %1$d/%2$d</string>
+    <string name="quiz_retry">Tekrar dene</string>
+</resources>

@@ -39,8 +39,28 @@ data class Story(
     val vocabulary: List<WordInfo>? = null,
     val sentenceWordIds: Map<String, List<String>>? = null,
     /** First publication of the story (not of this revision); null for bundled content. */
-    val addedAt: java.time.Instant? = null
+    val addedAt: java.time.Instant? = null,
+    /** English comprehension questions shown after reading (Q5.3); empty when the story has none. */
+    val questions: List<StoryQuestion> = emptyList()
 )
+
+/** A multiple-choice comprehension question; [answer] indexes [options]. */
+data class StoryQuestion(val id: String, val kind: String, val prompt: String, val options: List<String>, val answer: Int) {
+    companion object {
+        /** Reads `questions` from a bundled story or a downloaded revision; invalid entries are dropped. */
+        fun parse(array: org.json.JSONArray?): List<StoryQuestion> = (0 until (array?.length() ?: 0)).mapNotNull { i ->
+            runCatching {
+                val item = array!!.getJSONObject(i)
+                val raw = item.getJSONArray("options")
+                val options = (0 until raw.length()).map { raw.getString(it) }
+                val question = StoryQuestion(item.getString("id"), item.getString("kind"), item.getString("prompt"), options, item.getInt("answer"))
+                question.takeIf { it.isValid() }
+            }.getOrNull()
+        }
+    }
+    fun isValid() = kind in setOf("main", "detail", "inference") && prompt.isNotBlank() && options.size in 2..4 &&
+        options.all { it.isNotBlank() } && options.map { it.trim().lowercase() }.distinct().size == options.size && answer in options.indices
+}
 
 private data class Catalog(
     val words: List<WordInfo>,
@@ -130,7 +150,7 @@ object LearningContent {
             Story(
                 item.getString("id"), item.getString("title"), item.getString("author"),
                 item.getString("level"), item.getString("genre"), SupportLanguage.pick(item, "descriptions", "description"),
-                item.getString("coverKey"), sentences
+                item.getString("coverKey"), sentences, questions = StoryQuestion.parse(item.optJSONArray("questions"))
             )
         }
         require(parsedStories.isNotEmpty()) { "Catalog has no stories" }

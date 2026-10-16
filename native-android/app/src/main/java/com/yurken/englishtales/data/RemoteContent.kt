@@ -93,7 +93,8 @@ object ContentCodec {
         val addedAt = if (doc.isNull("story_created_at")) null
             else java.time.OffsetDateTime.parse(doc.getString("story_created_at")).toInstant()
         return Story(id, doc.getString("title"), doc.getString("author"), doc.getString("level"), doc.getString("genre"),
-            SupportLanguage.pick(doc, "descriptions", "description"), "remote", parsed, revision, coverFile, vocabulary, mapping, addedAt)
+            SupportLanguage.pick(doc, "descriptions", "description"), "remote", parsed, revision, coverFile, vocabulary, mapping, addedAt,
+            StoryQuestion.parse(doc.optJSONArray("questions")))
     }
     fun verify(bytes: ByteArray, asset: JSONObject) {
         require(bytes.size.toLong() == asset.getLong("byte_size")) { "İndirilen dosya eksik." }
@@ -159,7 +160,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 val remote = ContentCodec.story(doc)
                 downloaded[revision]?.copy(addedAt=remote.addedAt)
                     ?: (bundled[revision] ?: bundledByStory[remote.id]?.takeIf { bundledText[revision] == fingerprint(it) })
-                        ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null) }
+                        ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null,questions=bundled.questions) }
                     ?: remote
             }
             LearningContent.install(stories, historical.values.flatMap { it.vocabulary.orEmpty() })
@@ -247,6 +248,9 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             doc.put("sentences", sentences)
             doc.put("words", words)
             doc.put("links", remote.rows("sentence_words", "select=*&revision_id=eq.$revision&order=sentence_id.asc,word_id.asc"))
+            // Comprehension questions are newer than the first servers; their absence never blocks a download.
+            runCatching { remote.rows("story_questions", "select=id,position,kind,prompt,options,answer&revision_id=eq.$revision&order=position.asc") }
+                .getOrNull()?.let { doc.put("questions", it) }
             val assetId = UUID.fromString(doc.getString("cover_asset_id")).toString()
             val assets = remote.rows("content_assets", "select=*&id=eq.$assetId&order=id.asc")
             require(assets.length() == 1)

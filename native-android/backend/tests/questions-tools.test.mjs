@@ -89,7 +89,8 @@ test('audit min-questions CLI writes Turkish reports, fails for bundle or snapsh
     report=await auditMain(['--output',dir,'--snapshot',snapshotPath,'--skip-media','--min-questions','1'],sources);
     assert.deepEqual(report.acceptance.failures,['live_min_questions']);process.exitCode=0;
     const tool=new URL('../tools/audit-content.mjs',import.meta.url).pathname;
-    const result=spawnSync(process.execPath,[tool,'--output',dir,'--min-questions','3'],{encoding:'utf8'});
+    // The bundle carries 3–4 questions per story (Q5.3), so 5 is a real shortage.
+    const result=spawnSync(process.execPath,[tool,'--output',dir,'--min-questions','5'],{encoding:'utf8'});
     assert.equal(result.status,1,result.stderr);
     report=JSON.parse(await readFile(path.join(dir,'audit.json')));assert.ok(report.acceptance.failures.includes('bundle_min_questions'));
     assert.equal(spawnSync(process.execPath,[tool,'--min-questions'],{encoding:'utf8'}).status,1);
