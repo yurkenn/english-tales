@@ -114,7 +114,7 @@ fun ReadingResultScreen(story: Story,snapshot: LearningSnapshot,onPractice: (Lis
             Text(story.title,fontSize=15.sp,color=TaleMuted)
             Text(if(snapshot.dailyGoalReached) stringResource(R.string.gunluk_hedef_tamamlandi) else stringResource(R.string.gunluk_hedef_adim, snapshot.todaySessions, snapshot.dailyGoal),color=TaleBlue,fontWeight=FontWeight.Bold)
             Text(stringResource(R.string.okudugun_kelimeleri_simdi_hatirlamayi_deneyelim),fontSize=14.sp,color=TaleMuted)
-            words.forEach {word -> Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.SpaceBetween) {Text(word.word,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f));Text(word.translation,color=TaleMuted,modifier=Modifier.weight(1f))} }
+            words.forEach {word -> FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(8.dp),maxItemsInEachRow=sideBySide(2)) {Text(word.word,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f));Text(word.translation,color=TaleMuted,modifier=Modifier.weight(1f))} }
             if(words.isNotEmpty()) Button(onClick={onPractice(words.map {it.id})},modifier=Modifier.fillMaxWidth(),shape=RoundedCornerShape(10.dp)) {Text(stringResource(R.string.kelimeyi_kaydet_ve_calis, words.size))}
             TextButton(onClick=onDailyPlan) {Text(stringResource(R.string.gunluk_planima_don))}
             if(snapshot.todayReadings==1) ReminderControls()
