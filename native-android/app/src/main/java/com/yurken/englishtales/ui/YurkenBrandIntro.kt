@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import androidx.activity.compose.LocalActivity
+import androidx.compose.ui.res.stringResource
 import androidx.core.view.WindowCompat
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.foundation.Image
@@ -45,12 +46,12 @@ internal fun YurkenBrandScreen(onContinue: () -> Unit) {
     }
     Box(
         Modifier.fillMaxSize().background(Color.Black)
-            .clickable(onClickLabel = "Uygulamaya geç", onClick = onContinue),
+            .clickable(onClickLabel = stringResource(R.string.uygulamaya_gec), onClick = onContinue),
         contentAlignment = Alignment.Center
     ) {
         Image(
             painterResource(R.drawable.yurken_wordmark),
-            contentDescription = "Yurken",
+            contentDescription = stringResource(R.string.yurken),
             modifier = Modifier.padding(horizontal = 40.dp).widthIn(max = 192.dp).fillMaxWidth().aspectRatio(112f / 87f)
         )
     }

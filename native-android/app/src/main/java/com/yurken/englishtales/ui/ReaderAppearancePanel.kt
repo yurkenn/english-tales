@@ -1,6 +1,8 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.background
+import com.yurken.englishtales.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -25,34 +27,34 @@ internal fun ReaderAppearancePanel(settings: ReadingPreferences,error: String?,o
         CompositionLocalProvider(LocalDensity provides density) {Column(Modifier.fillMaxWidth().padding(horizontal=24.dp)) {
             Column(Modifier.weight(1f,fill=false).verticalScroll(rememberScrollState()),
                 verticalArrangement=Arrangement.spacedBy(16.dp)) {
-                Text("Okuma görünümü",style=MaterialTheme.typography.titleLarge)
-                Text("Seçimlerin bu cihazda korunur.",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
-                Text("Yazı boyutu",style=MaterialTheme.typography.titleMedium)
+                Text(stringResource(R.string.okuma_gorunumu),style=MaterialTheme.typography.titleLarge)
+                Text(stringResource(R.string.secimlerin_bu_cihazda_korunur),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                Text(stringResource(R.string.yazi_boyutu),style=MaterialTheme.typography.titleMedium)
                 FlowRow(horizontalArrangement=Arrangement.spacedBy(12.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
                     OutlinedButton(enabled=settings.fontSize>14,onClick={onChange {it.copy(fontSize=it.fontSize-1)}},
-                        modifier=Modifier.semantics {contentDescription="Yazıyı küçült"}) {Text("A−")}
-                    Text("${settings.fontSize} punto",modifier=Modifier.padding(vertical=14.dp))
+                        modifier=Modifier.contentLabel(stringResource(R.string.yaziyi_kucult))) {Text("A−")}
+                    Text(stringResource(R.string.punto, settings.fontSize),modifier=Modifier.padding(vertical=14.dp))
                     OutlinedButton(enabled=settings.fontSize<28,onClick={onChange {it.copy(fontSize=it.fontSize+1)}},
-                        modifier=Modifier.semantics {contentDescription="Yazıyı büyüt"}) {Text("A+")}
+                        modifier=Modifier.contentLabel(stringResource(R.string.yaziyi_buyut))) {Text("A+")}
                 }
-                Text("Satır aralığı",style=MaterialTheme.typography.titleMedium)
+                Text(stringResource(R.string.satir_araligi),style=MaterialTheme.typography.titleMedium)
                 FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
                     ReadingSpacing.entries.forEach {value -> FilterChip(selected=settings.spacing==value,
-                        onClick={onChange {it.copy(spacing=value)}},label={Text(value.label)},leadingIcon={if(settings.spacing==value) Text("✓")})}
+                        onClick={onChange {it.copy(spacing=value)}},label={Text(stringResource(value.label))},leadingIcon={if(settings.spacing==value) Text("✓")})}
                 }
-                Text("Tema",style=MaterialTheme.typography.titleMedium)
+                Text(stringResource(R.string.tema),style=MaterialTheme.typography.titleMedium)
                 FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
-                    FilterChip(selected=!settings.dark,onClick={onChange {it.copy(dark=false)}},label={Text("Açık")},leadingIcon={if(!settings.dark) Text("✓")})
-                    FilterChip(selected=settings.dark,onClick={onChange {it.copy(dark=true)}},label={Text("Koyu")},leadingIcon={if(settings.dark) Text("✓")})
+                    FilterChip(selected=!settings.dark,onClick={onChange {it.copy(dark=false)}},label={Text(stringResource(R.string.acik))},leadingIcon={if(!settings.dark) Text("✓")})
+                    FilterChip(selected=settings.dark,onClick={onChange {it.copy(dark=true)}},label={Text(stringResource(R.string.koyu))},leadingIcon={if(settings.dark) Text("✓")})
                 }
-                Text("A little reading, every day.",fontFamily=FontFamily.Serif,fontSize=settings.fontSize.sp,
+                Text(stringResource(R.string.a_little_reading_every_day),fontFamily=FontFamily.Serif,fontSize=settings.fontSize.sp,
                     lineHeight=(settings.fontSize*settings.spacing.multiplier).sp,
                     color=if(settings.dark) Color(0xFFF1F5F9) else TaleInk,
                     modifier=Modifier.fillMaxWidth().background(if(settings.dark) Color(0xFF17212B) else TaleLine,
                         MaterialTheme.shapes.medium).padding(20.dp))
                 error?.let {Text(it,color=MaterialTheme.colorScheme.error,style=MaterialTheme.typography.bodyMedium)}
             }
-            Button(onClick=onDismiss,modifier=Modifier.fillMaxWidth().padding(top=16.dp).heightIn(min=48.dp)) {Text("Okumaya dön")}
+            Button(onClick=onDismiss,modifier=Modifier.fillMaxWidth().padding(top=16.dp).heightIn(min=48.dp)) {Text(stringResource(R.string.okumaya_don))}
             Spacer(Modifier.height(16.dp))
         }}
     }

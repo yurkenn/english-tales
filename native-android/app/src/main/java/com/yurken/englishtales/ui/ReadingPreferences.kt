@@ -1,13 +1,15 @@
 package com.yurken.englishtales.ui
 
 import android.content.Context
+import com.yurken.englishtales.R
+import androidx.annotation.StringRes
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 
-enum class ReadingSpacing(val label: String,val multiplier: Float) {
-    COMPACT("Sıkı",1.4f),COMFORTABLE("Rahat",1.65f),SPACIOUS("Geniş",1.9f)
+enum class ReadingSpacing(@StringRes val label: Int,val multiplier: Float) {
+    COMPACT(R.string.siki,1.4f),COMFORTABLE(R.string.rahat,1.65f),SPACIOUS(R.string.genis,1.9f)
 }
 
 data class ReadingPreferences(val dark: Boolean=false,val fontSize: Int=17,
