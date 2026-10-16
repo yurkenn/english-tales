@@ -24,6 +24,56 @@ function snapshot(bundle=catalog()){
   }};
 }
 
+test('per-language completeness counts every revision and all three translation kinds without changing default gates',()=>{
+  const c=catalog();c.stories.push({...structuredClone(c.stories[0]),id:'second'});
+  c.stories[0].sentences[0].translations={'es-419':'Texto'};
+  const bundle=auditCatalog(c);
+  assert.deepEqual(bundle.translations.tr,{missingSentences:0,missingWords:0,missingDescriptions:0,complete:true});
+  assert.deepEqual(bundle.translations['es-419'],{missingSentences:1,missingWords:2,missingDescriptions:2,complete:false});
+  assert.equal(acceptance({bundle}).passed,true);
+  assert.deepEqual(acceptance({bundle},{requireLang:'es-419'}).failures,['bundle_es-419_translations']);
+  assert.equal(acceptance({bundle},{requireLang:'tr'}).passed,true);
+  assert.equal(acceptance({bundle},{requireLang:'de'}).passed,false);
+  assert.throws(()=>acceptance({bundle},{requireLang:'en-us'}),/Geçersiz/);
+});
+
+test('snapshot translation tables are authoritative while old snapshots retain the legacy Turkish fallback',()=>{
+  const s=snapshot();assert.equal(auditSnapshot(s).translations.tr.complete,true);
+  s.tables.sentence_translations=[];s.tables.word_translations=[];s.tables.revision_texts=[];
+  let report=auditSnapshot(s);
+  assert.deepEqual(report.translations.tr,{missingSentences:1,missingWords:1,missingDescriptions:1,complete:false});
+  for(const lang of ['tr','es-419']){
+    s.tables.sentence_translations.push({revision_id:revisionId,sentence_id:'s1',lang,text:s.tables.story_sentences[0].turkish});
+    s.tables.word_translations.push({revision_id:revisionId,word_id:'picked-up',lang,translation:s.tables.revision_words[0].translation});
+    s.tables.revision_texts.push({revision_id:revisionId,lang,description:s.tables.story_revisions[0].description});
+  }
+  report=auditSnapshot(s);assert.equal(report.translations.tr.complete,true);assert.equal(report.translations['es-419'].complete,true);
+  s.tables.sentence_translations.find(t=>t.lang==='tr').text='Mismatch';
+  assert.equal(auditSnapshot(s).translations.tr.missingSentences,1);
+  delete s.tables.word_translations;assert.throws(()=>auditSnapshot(s),/Snapshot table missing: word_translations/);
+});
+
+test('audit CLI require-lang reports counts then fails for partial or absent languages and accepts complete Turkish',async()=>{
+  const dir=await mkdtemp(path.join(tmpdir(),'english-tales-audit-lang-'));
+  const tool=new URL('../tools/audit-content.mjs',import.meta.url);
+  const run=(...args)=>spawnSync(process.execPath,[tool.pathname,'--output',dir,...args],{encoding:'utf8'});
+  try{
+    assert.equal(run('--require-lang','tr').status,0);
+    const missing=run('--require-lang','es-419');assert.equal(missing.status,1,missing.stderr);
+    let report=JSON.parse(await readFile(path.join(dir,'audit.json')));
+    assert.deepEqual(report.bundle.translations['es-419'],{missingSentences:1002,missingWords:report.bundle.summary.vocabularyEntries,missingDescriptions:50,complete:false});
+    assert.match(await readFile(path.join(dir,'report.md'),'utf8'),/Destek dili bütünlüğü/);
+    const s=snapshot();s.tables.sentence_translations=[{revision_id:revisionId,sentence_id:'s1',lang:'es-419',text:'Texto'}];s.tables.word_translations=[];s.tables.revision_texts=[];
+    const file=path.join(dir,'catalog.json');await writeFile(file,JSON.stringify(s));
+    assert.equal(run('--snapshot',file,'--skip-media','--require-lang','es-419').status,1);
+    report=JSON.parse(await readFile(path.join(dir,'audit.json')));
+    assert.deepEqual(report.live.translations['es-419'],{missingSentences:0,missingWords:1,missingDescriptions:1,complete:false});
+    assert.ok(report.acceptance.failures.includes('live_es-419_translations'));
+    const invalid=run('--require-lang','en-us');assert.equal(invalid.status,1);assert.match(invalid.stderr,/Geçersiz/);
+    assert.equal(run('--require-lang').status,1);
+  }finally{await rm(dir,{recursive:true,force:true});}
+});
+
 test('phrase coverage counts actual consumed tokens and never stems or matches substrings',()=>{
   const c=catalog();c.words.push(word('up'),word('cat'),word('pick'));
   const report=auditCatalog(c);

@@ -7,7 +7,24 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 
 data class WordInfo(val id: String, val word: String, val translation: String, val pronunciation: String, val example: String)
-data class StorySentence(val id: String, val english: String, val turkish: String)
+/** [translation] is in the reader's support language ([SupportLanguage]); the story text is always English. */
+data class StorySentence(val id: String, val english: String, val translation: String)
+
+/** Language of the translations shown next to the English content (Q4.0). Only Turkish ships today. */
+object SupportLanguage {
+    const val DEFAULT = "tr"
+    val code: String get() = DEFAULT
+
+    /**
+     * Reads [lang] from an optional per-language map (`{"tr": "…"}`), falling back to the legacy
+     * Turkish field that older catalogs, caches and released servers still provide.
+     */
+    fun pick(item: JSONObject, mapKey: String, legacyKey: String, lang: String = code): String {
+        item.optJSONObject(mapKey)?.optString(lang)?.takeIf { it.isNotBlank() }?.let { return it }
+        require(lang == DEFAULT) { "Missing $lang translation" }
+        return item.getString(legacyKey)
+    }
+}
 data class Story(
     val id: String,
     val title: String,
@@ -102,7 +119,7 @@ object LearningContent {
         val wordArray = root.getJSONArray("words")
         val parsedWords = (0 until wordArray.length()).map { index ->
             val item = wordArray.getJSONObject(index)
-            WordInfo(item.getString("id"), item.getString("word"), item.getString("translation"), item.getString("pronunciation"), item.getString("example"))
+            WordInfo(item.getString("id"), item.getString("word"), SupportLanguage.pick(item, "translations", "translation"), item.getString("pronunciation"), item.getString("example"))
         }
         require(parsedWords.map { it.id }.distinct().size == parsedWords.size) { "Duplicate word ID" }
 
@@ -112,13 +129,13 @@ object LearningContent {
             val sentenceArray = item.getJSONArray("sentences")
             val sentences = (0 until sentenceArray.length()).map { sentenceIndex ->
                 val sentence = sentenceArray.getJSONObject(sentenceIndex)
-                StorySentence(sentence.getString("id"), sentence.getString("english"), sentence.getString("turkish"))
+                StorySentence(sentence.getString("id"), sentence.getString("english"), SupportLanguage.pick(sentence, "translations", "turkish"))
             }
             require(sentences.isNotEmpty()) { "Story has no sentences" }
             require(sentences.map { it.id }.distinct().size == sentences.size) { "Duplicate sentence ID" }
             Story(
                 item.getString("id"), item.getString("title"), item.getString("author"),
-                item.getString("level"), item.getString("genre"), item.getString("description"),
+                item.getString("level"), item.getString("genre"), SupportLanguage.pick(item, "descriptions", "description"),
                 item.getString("coverKey"), sentences, questions = StoryQuestion.parse(item.optJSONArray("questions"))
             )
         }

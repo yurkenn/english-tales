@@ -66,6 +66,41 @@ npm run content:audit -- --snapshot <snapshot-dizini>/catalog.json --require-par
 
 CI backend işi paket denetimini çalıştırır ve `content-audit` artefaktını saklar. **Yeşil CI yalnız yapısal kabulü gösterir; Q4 eşitlik/kapsama kapısı geçilmiş sayılmaz.** Canlı sorgu ve anahtar CI'ye eklenmedi.
 
+## Q4.1 — taslak uygulama ve yayın sonrası kontrol
+
+16 Ekim 2026'da `npm run content:drafts` eklendi. Yukarıdaki 15 Ekim ölçümü tarihli canlı kanıttır; bu geliştirme canlı servise bağlanmaz ve o açıkları canlıda kapatmış sayılmaz. `revision-proposals.json` yerel öneri olarak kalır; yeni araç doğrudan snapshot + paket girdilerinden yönetici RPC yükleri üretir.
+
+Tam oturum/dosya biçimi ve hata sonrası devam adımları [içerik kılavuzunda](../CONTENT_GUIDE.md#q41--mevcut-yayını-paketten-yeni-taslağa-taşıma). Operatör sırası:
+
+1. Depo kökünde `env -u NODE_USE_SYSTEM_CA node tooling/backup_public_content.mjs` ile `<önce>/catalog.json` ve medya dosyalarını al.
+2. Backend içinde dry-run üret:
+
+   ```sh
+   env -u NODE_USE_SYSTEM_CA npm run content:drafts -- --snapshot <önce>/catalog.json --output ../build/content-drafts-q41
+   ```
+
+3. `review.md` içindeki hikâye/kelime/bağlantı/çeviri farklarını, örnekleri ve **iki asleep çıkarımını** incele. `manifest.json` girdi/araç SHA-256 özetlerini, kaynak yayın ID/`edit_version` değerlerini ve hikâye dosyalarının yollarını tutar. `stories/*.json` dosyaları `admin_create_draft` kaynağı ve `admin_save_draft` belge şablonudur. Paket cümle/kelime kimlikleri korunur; yeni revizyon UUID'si sunucudan gelir.
+4. İnsan editörün Git dışındaki `chmod 600` JSON oturum dosyasıyla aynı girdileri uygula:
+
+   ```sh
+   env -u NODE_USE_SYSTEM_CA npm run content:drafts -- --snapshot <önce>/catalog.json --output ../build/content-drafts-q41 --apply --url https://<project>.supabase.co --session-file <oturum.json>
+   ```
+
+5. Yayıncı panelde taslakları inceler ve yayımlar. Araç **hiçbir koşulda yayın RPC'sini çağırmaz**. `apply-results.json` kaydedilen/atlanmış taslakları gösterir, etkin yayın değişikliğini göstermez.
+6. Yeni anonim `<sonra>` snapshot'ını medya dosyalarıyla al; backend içinde yayın doğrulamasını çalıştır:
+
+   ```sh
+   env -u NODE_USE_SYSTEM_CA npm run content:audit -- --snapshot <sonra>/catalog.json --require-parity --require-lang tr --output ../build/content-audit-after-q41
+   ```
+
+`--apply` verilmezse araç oturum dosyasını okumaz ve ağ isteği yapmaz. Uygulama öncesi tüm etkin hikâyeler için ID/sürüm/arşiv/içerik kayması kontrol edilir. Paketle eşdeğer açık taslak yazmadan atlanır; kaynak yayının birebir kopyası güvenle tamamlanabilir. Farklı editoryal taslak korunur ve işlem durur. Kaynak, paket veya araç hash'i değişirse aynı çıktı dizini kullanılamaz; yeni bir dizinde yeniden inceleme gerekir. Eksik/fazla hikâye ve medya farkı raporda engeldir; araç bunları otomatik oluşturmaz/silmez/yüklemez. Kayıtlar hikâye bazında atomiktir; bir kesintiden önce kaydedilmiş taslaklar geri alınmaz. Kontroller RPC'ler arasında yayıncıyı kilitlemez; geç fark edilen kaymada kalan taslaklar panelde incelenir ve yeni snapshot ile ilerlenir.
+
+Yeni taslağın kelimeleri, bağlantıları ve çeviri haritaları paketi birebir izler. Pakette olmayan ek dil yalnız yeni taslaktan çıkarılır; eski yayında kalır. `asleep`/`falls asleep` kararı da aynı biçimde yalnız yeni revizyonu etkiler. Eşitlik denetimi artık ek dil haritalarının **metin farklarını ve fazla dilleri** de sayar; yalnız doluluk yeterli değildir. Altı tabloluk eski snapshot Türkçeyi eski alanlardan doğrular; üç yeni çeviri tablosu mevcutsa gerçek satırlar esas alınır. Snapshot aracı artık bu üç tabloyu ve soru tablosunu da toplar; bağımsız dil doğrulaması gerçek çeviri satırlarını içeren snapshot gerektirir. Kaynakta görünmeyen canlı diller/sorular uygulamada içerik kayması olarak reddedilir.
+
+Yerel fixture doğrulaması: eksik kelime, eksik cümle bağlantısı ve iki ifade/kelime değişimi; dry-run'da ağ/RPC yokluğu; snapshot kayması ve editoryal taslak çatışmasında yazmadan ret; kesilmiş kopyadan devam; eşzamanlı sürüm çatışması; eşdeğer taslağı tekrar uygulamada atlama; token'ın yalnız HTTP başlığında taşınması ve hata metinlerinde gizlenmesi test edilir. Gerçek migration/RPC'lerle editör taslağı kaydedilir; publisher fixture yayımladıktan sonra `--require-parity --require-lang tr` denetimi medya kontrolüyle geçer. Ayrıca gerçek 50 hikâyelik pakete eşit bir snapshot fixture'ı aynı seçeneklerle gerçek CLI'dan geçirilir. Bunlar canlı Auth/PostgREST veya gerçek yayın kanıtı değildir.
+
+16 Ekim yerel sonuçları: backend içinde `env -u NODE_USE_SYSTEM_CA npm test` **97/97 geçti** (87 mevcut + 10 yeni test). `--apply` komut giriş noktası, HTTP istek biçimini yerel PostgreSQL RPC'lerine yönlendiren ağsız test adaptörüyle çalıştırıldı; gerçek token doğrulaması yapılmadı. `env -u NODE_USE_SYSTEM_CA npm run test:admin` **exit 1** verdi: sandbox `127.0.0.1` üzerinde dinlemeyi `EPERM` ile engelledi; admin HTTP uçtan uca kontrolü bu ortamda çalıştırılamadı. `git diff --check` geçti. Canlı servise istek, yayın, commit veya push yapılmadı.
+
 ## Sonraki içerik işi
 
 1. 39 hikâyenin değişiklik paketini gözden geçir; beş A1 pilotunu ilk yayın grubu olarak ayır. Her mevcut yayın için yeni revizyon taslağı gerekir. `catalog:export` sabit ilk revision mevcutsa atladığı için eski yayını bu yolla güncellemez.
@@ -73,6 +108,23 @@ CI backend işi paket denetimini çalıştırır ve `content-audit` artefaktın�
 3. Onaylanan yeni revizyonları yayınladıktan sonra yeni anonim snapshot ile sıkı eşitlik kontrolünü tekrarla.
 4. Ardından A1/A2 kapsamını %60'a çıkarmak için bağlamlı sözlük genişletmesini ayrı içerik çalışması olarak uygula. Hazır 43 ID'nin yayını dahi paket A1/A2 oranlarını %60'a çıkarmaz.
 
-## Doğrulama
+## 15 Ekim doğrulaması
 
 **74 backend testi** (13 yeni denetim testi dahil) ve admin HTTP uçtan uca kontrolü başarılı. Negatif testler eksik çeviri, bozuk sıra/bağlantı, yanlış revizyon sahibi, eksik revizyon, medya bozulması ve yetersiz kapsamanın reddedildiğini doğruladı. Yerel sıkı kontrol exit 1 verdi; anonim canlı snapshot ve 50 medya dosyası başarıyla okundu. Bu çalışma canlı veri, şema, yayın veya kullanıcı kayıtlarını değiştirmedi. Q4 bütünü henüz tamamlanmadı.
+
+
+## Q5.3 — soru kalitesi ve genişletilmiş snapshot
+
+[Soru sözleşmesi](../backend/QUESTIONS_CONTRACT.md), revizyon başına isteğe bağlı İngilizce anlama sorularını tanımlar. `content:audit` raporunda her seviyede en az üç geçerli sorusu bulunan hikâye sayısı ve sorusuz hikâyelerin ID listesi vardır. Geçersiz kimlik/tür/metin/seçenek/yanıt ve bozuk sıra yapısal hatadır. Soru sayısı varsayılan kabul koşulu değildir.
+
+```sh
+cd native-android/backend
+npm run content:audit -- --min-questions 3
+npm run content:audit -- --snapshot <catalog.json> --min-questions 3
+```
+
+`--min-questions` sıfır veya pozitif tam sayı alır. Pakette veya verilen snapshot’ın etkin hikâyelerinden birinde daha az geçerli soru varsa rapor yazılır ve komut 1 döner. Bu kontrol, soruların anlamsal doğruluğunu veya bütün pakete içerik eklendiğini kanıtlamaz. Paket/canlı eşitliği artık soru listesini de karşılaştırır; `content:drafts` hedef listeyi paketten alır ve inceleme raporuna koyar.
+
+Snapshot aracı artık temel altı tablo + üç çeviri tablosu + `story_questions` olmak üzere 10 tabloyu anonim olarak toplar. Bileşik sıralama, 500’lük sayfalar, 20.000 satır sınırı, medya hash/boyut ve başlangıç/son katalog imzası kontrolleri devam eder. Eski altı tabloluk dosyalar ve soru tablosuz dokuz tabloluk dosyalar okunur. Üç çeviri tablosu birlikte bulunmalıdır; `story_questions` bağımsızdır. Bulunmayan soru tablosu boş liste sayılır; uygulama sırasında canlıda görünmeyen ekstra sorular/diller içerik kayması olarak reddedilir.
+
+Yerel testler SQL kısıtlarını, RLS/immutability/sürüm artışını, admin kayıt/kopyasını, exporter/draft/parity işlemlerini, soru alt sınırını ve 6/10 tabloluk snapshot’ları sahte yanıtlarla doğrular. `test:admin` localhost gerektirir; sandbox `listen EPERM 127.0.0.1` verirse HTTP/tarayıcı doğrulaması tamamlanmış sayılmaz. Canlı servis veya Android çalışma zamanı bu backend doğrulamasının parçası değildir.
