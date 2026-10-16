@@ -2,7 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { matchWords, validSupportLanguage } from '../admin/workflow.js';
+import { matchWords, validSupportLanguage, questionErrors } from '../admin/workflow.js';
 
 const quote = value => `'${String(value).replaceAll("'", "''")}'`;
 export const stableId = value => {
@@ -15,6 +15,8 @@ export async function exportCatalog(catalog, {readCover = key => readFile(new UR
   const lines = ['-- Generated from the native catalog. Drafts only; never changes an existing revision.', 'begin;'];
   const assets = [];
   for (const story of catalog.stories) {
+    const errors=questionErrors(story.questions===undefined?[]:story.questions);
+    if(errors.length)throw new Error(`Invalid questions in ${story.id}: ${errors.join(' ')}`);
     const revisionId = stableId(`${story.id}:revision:1`);
     const bytes = await readCover(story.coverKey);
     const sha = createHash('sha256').update(bytes).digest('hex');
@@ -27,6 +29,8 @@ export async function exportCatalog(catalog, {readCover = key => readFile(new UR
     lines.push(`insert into public.story_revisions(id,story_id,revision,title,author,level,genre,description,cover_asset_id) values(${[revisionId,story.id].map(quote).join(',')},1,${[story.title,story.author,story.level,story.genre,story.description,assetId].map(quote).join(',')});`);
     for (const [lang, description] of translationEntries(story.descriptions, story.description, story.id))
       lines.push(`insert into public.revision_texts(revision_id,lang,description) values(${[revisionId,lang,description].map(quote).join(',')}) on conflict(revision_id,lang) do update set description=excluded.description;`);
+    for(const [index,q] of (story.questions??[]).entries())
+      lines.push(`insert into public.story_questions(revision_id,id,position,kind,prompt,options,answer) values(${quote(revisionId)},${quote(q.id)},${index+1},${quote(q.kind)},${quote(q.prompt)},array[${q.options.map(quote).join(',')} ]::text[],${q.answer});`);
     const selected = new Map();
     const links = [];
     if (!story.sentences.length || new Set(story.sentences.map(s => s.id)).size !== story.sentences.length) throw new Error(`Invalid sentences in ${story.id}`);

@@ -15,13 +15,14 @@ export function catalogFixture(){
 export function snapshotFixture(catalog,manifest){
   const tables={stories:[],story_revisions:[],story_sentences:[],revision_words:[],sentence_words:[],
     content_assets:[...new Map(manifest.assets.map(a=>[a.id,{id:a.id,kind:'cover',mime_type:'image/png',storage_path:a.path,sha256:a.sha256,byte_size:a.byteSize}])).values()],
-    sentence_translations:[],word_translations:[],revision_texts:[]};
+    sentence_translations:[],word_translations:[],revision_texts:[],story_questions:[]};
   for(const [index,d] of bundledDocuments(catalog).entries()){
     const id=`22222222-2222-4222-a222-${String(index+1).padStart(12,'0')}`;
     const cover=manifest.assets.find(a=>a.source.endsWith(`/${d.coverKey}.png`));
     tables.stories.push({id:d.id,current_revision_id:id,is_archived:false});
     tables.story_revisions.push({id,story_id:d.id,edit_version:1,published_at:'2026-10-16T00:00:00Z',cover_asset_id:cover.id,
       ...Object.fromEntries(['title','author','level','genre','description'].map(k=>[k,d[k]]))});
+    tables.story_questions.push(...(d.questions??[]).map(q=>({...q,revision_id:id})));
     tables.story_sentences.push(...d.sentences.map(s=>({...s,revision_id:id})));
     tables.revision_words.push(...d.words.map(w=>({...w,revision_id:id})));
     tables.sentence_words.push(...d.links.map(l=>({...l,revision_id:id})));

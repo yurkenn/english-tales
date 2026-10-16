@@ -95,7 +95,7 @@ Tam oturum/dosya biçimi ve hata sonrası devam adımları [içerik kılavuzunda
 
 `--apply` verilmezse araç oturum dosyasını okumaz ve ağ isteği yapmaz. Uygulama öncesi tüm etkin hikâyeler için ID/sürüm/arşiv/içerik kayması kontrol edilir. Paketle eşdeğer açık taslak yazmadan atlanır; kaynak yayının birebir kopyası güvenle tamamlanabilir. Farklı editoryal taslak korunur ve işlem durur. Kaynak, paket veya araç hash'i değişirse aynı çıktı dizini kullanılamaz; yeni bir dizinde yeniden inceleme gerekir. Eksik/fazla hikâye ve medya farkı raporda engeldir; araç bunları otomatik oluşturmaz/silmez/yüklemez. Kayıtlar hikâye bazında atomiktir; bir kesintiden önce kaydedilmiş taslaklar geri alınmaz. Kontroller RPC'ler arasında yayıncıyı kilitlemez; geç fark edilen kaymada kalan taslaklar panelde incelenir ve yeni snapshot ile ilerlenir.
 
-Yeni taslağın kelimeleri, bağlantıları ve çeviri haritaları paketi birebir izler. Pakette olmayan ek dil yalnız yeni taslaktan çıkarılır; eski yayında kalır. `asleep`/`falls asleep` kararı da aynı biçimde yalnız yeni revizyonu etkiler. Eşitlik denetimi artık ek dil haritalarının **metin farklarını ve fazla dilleri** de sayar; yalnız doluluk yeterli değildir. Altı tabloluk eski snapshot Türkçeyi eski alanlardan doğrular; üç yeni çeviri tablosu mevcutsa gerçek satırlar esas alınır. Mevcut snapshot aracı bu üç tabloyu toplamadığı için ek dil tablolarının bağımsız yayın doğrulaması dokuz tabloluk snapshot gerektirir. Kaynakta görünmeyen canlı diller uygulamada içerik kayması olarak reddedilir.
+Yeni taslağın kelimeleri, bağlantıları ve çeviri haritaları paketi birebir izler. Pakette olmayan ek dil yalnız yeni taslaktan çıkarılır; eski yayında kalır. `asleep`/`falls asleep` kararı da aynı biçimde yalnız yeni revizyonu etkiler. Eşitlik denetimi artık ek dil haritalarının **metin farklarını ve fazla dilleri** de sayar; yalnız doluluk yeterli değildir. Altı tabloluk eski snapshot Türkçeyi eski alanlardan doğrular; üç yeni çeviri tablosu mevcutsa gerçek satırlar esas alınır. Snapshot aracı artık bu üç tabloyu ve soru tablosunu da toplar; bağımsız dil doğrulaması gerçek çeviri satırlarını içeren snapshot gerektirir. Kaynakta görünmeyen canlı diller/sorular uygulamada içerik kayması olarak reddedilir.
 
 Yerel fixture doğrulaması: eksik kelime, eksik cümle bağlantısı ve iki ifade/kelime değişimi; dry-run'da ağ/RPC yokluğu; snapshot kayması ve editoryal taslak çatışmasında yazmadan ret; kesilmiş kopyadan devam; eşzamanlı sürüm çatışması; eşdeğer taslağı tekrar uygulamada atlama; token'ın yalnız HTTP başlığında taşınması ve hata metinlerinde gizlenmesi test edilir. Gerçek migration/RPC'lerle editör taslağı kaydedilir; publisher fixture yayımladıktan sonra `--require-parity --require-lang tr` denetimi medya kontrolüyle geçer. Ayrıca gerçek 50 hikâyelik pakete eşit bir snapshot fixture'ı aynı seçeneklerle gerçek CLI'dan geçirilir. Bunlar canlı Auth/PostgREST veya gerçek yayın kanıtı değildir.
 
@@ -111,3 +111,20 @@ Yerel fixture doğrulaması: eksik kelime, eksik cümle bağlantısı ve iki ifa
 ## 15 Ekim doğrulaması
 
 **74 backend testi** (13 yeni denetim testi dahil) ve admin HTTP uçtan uca kontrolü başarılı. Negatif testler eksik çeviri, bozuk sıra/bağlantı, yanlış revizyon sahibi, eksik revizyon, medya bozulması ve yetersiz kapsamanın reddedildiğini doğruladı. Yerel sıkı kontrol exit 1 verdi; anonim canlı snapshot ve 50 medya dosyası başarıyla okundu. Bu çalışma canlı veri, şema, yayın veya kullanıcı kayıtlarını değiştirmedi. Q4 bütünü henüz tamamlanmadı.
+
+
+## Q5.3 — soru kalitesi ve genişletilmiş snapshot
+
+[Soru sözleşmesi](../backend/QUESTIONS_CONTRACT.md), revizyon başına isteğe bağlı İngilizce anlama sorularını tanımlar. `content:audit` raporunda her seviyede en az üç geçerli sorusu bulunan hikâye sayısı ve sorusuz hikâyelerin ID listesi vardır. Geçersiz kimlik/tür/metin/seçenek/yanıt ve bozuk sıra yapısal hatadır. Soru sayısı varsayılan kabul koşulu değildir.
+
+```sh
+cd native-android/backend
+npm run content:audit -- --min-questions 3
+npm run content:audit -- --snapshot <catalog.json> --min-questions 3
+```
+
+`--min-questions` sıfır veya pozitif tam sayı alır. Pakette veya verilen snapshot’ın etkin hikâyelerinden birinde daha az geçerli soru varsa rapor yazılır ve komut 1 döner. Bu kontrol, soruların anlamsal doğruluğunu veya bütün pakete içerik eklendiğini kanıtlamaz. Paket/canlı eşitliği artık soru listesini de karşılaştırır; `content:drafts` hedef listeyi paketten alır ve inceleme raporuna koyar.
+
+Snapshot aracı artık temel altı tablo + üç çeviri tablosu + `story_questions` olmak üzere 10 tabloyu anonim olarak toplar. Bileşik sıralama, 500’lük sayfalar, 20.000 satır sınırı, medya hash/boyut ve başlangıç/son katalog imzası kontrolleri devam eder. Eski altı tabloluk dosyalar ve soru tablosuz dokuz tabloluk dosyalar okunur. Üç çeviri tablosu birlikte bulunmalıdır; `story_questions` bağımsızdır. Bulunmayan soru tablosu boş liste sayılır; uygulama sırasında canlıda görünmeyen ekstra sorular/diller içerik kayması olarak reddedilir.
+
+Yerel testler SQL kısıtlarını, RLS/immutability/sürüm artışını, admin kayıt/kopyasını, exporter/draft/parity işlemlerini, soru alt sınırını ve 6/10 tabloluk snapshot’ları sahte yanıtlarla doğrular. `test:admin` localhost gerektirir; sandbox `listen EPERM 127.0.0.1` verirse HTTP/tarayıcı doğrulaması tamamlanmış sayılmaz. Canlı servis veya Android çalışma zamanı bu backend doğrulamasının parçası değildir.

@@ -43,6 +43,28 @@ export function readBackup(text,doc,project){
     if(map===undefined)continue;
     if(!map||typeof map!=='object'||Array.isArray(map)||Object.entries(map).some(([lang,value])=>!validSupportLanguage(lang)||typeof value!=='string'||!value.trim()))throw new Error('Yedek çeviri haritası geçersiz.');
   }
+  if(d.questions!==undefined&&questionErrors(d.questions).length)throw new Error(questionErrors(d.questions).join(' '));
   if(d.links.some(l=>!sentences.has(l.sentence_id)||!words.has(l.word_id)))throw new Error('Yedek kelime bağlantısı geçersiz.');
-  return {data,document:{...doc,...Object.fromEntries(['title','author','level','genre','description','sentences','words','links',...(d.descriptions?['descriptions']:[])].map(k=>[k,d[k]]))}};
+  return {data,document:{...doc,...Object.fromEntries(['title','author','level','genre','description','sentences','words','links',...(d.questions!==undefined?['questions']:[]),...(d.descriptions?['descriptions']:[])].map(k=>[k,d[k]]))}};
 }
+
+// Shared by the panel, exporter and offline audit; array order defines position.
+export function questionErrors(questions,{positions=false}={}){
+  if(!Array.isArray(questions))return ['Soru listesi bir dizi olmalı.'];
+  const errors=[],ids=new Set();
+  for(const [i,q] of questions.entries()){
+    const label=`${i+1}. soru`;
+    if(!q||typeof q!=='object'){errors.push(`${label}: Soru bilgileri geçersiz.`);continue;}
+    if(typeof q.id!=='string'||[...q.id].length<1||[...q.id].length>100||ids.has(q.id))errors.push(`${label}: Kimlik 1–100 karakter olmalı ve yinelenmemeli.`);
+    ids.add(q.id);
+    if(!['main','detail','inference'].includes(q.kind))errors.push(`${label}: Tür main, detail veya inference olmalı.`);
+    if(typeof q.prompt!=='string'||!q.prompt.trim())errors.push(`${label}: İngilizce soru metni boş olamaz.`);
+    const validOptions=Array.isArray(q.options)&&q.options.length>=2&&q.options.length<=4&&q.options.every(o=>typeof o==='string'&&o.trim());
+    if(!validOptions)errors.push(`${label}: 2–4 dolu seçenek gerekli.`);
+    else if(new Set(q.options.map(o=>o.trim().toLowerCase())).size!==q.options.length)errors.push(`${label}: Seçenekler büyük/küçük harf ve kenar boşlukları yok sayıldığında farklı olmalı.`);
+    if(!Number.isInteger(q.answer)||q.answer<0||!Array.isArray(q.options)||q.answer>=q.options.length)errors.push(`${label}: Doğru yanıt mevcut bir seçeneğin sıfır tabanlı indeksi olmalı.`);
+    if(positions&&q.position!==i+1)errors.push(`${label}: Sıralar 1’den başlayarak kesintisiz olmalı.`);
+  }
+  return errors;
+}
+export const questionDocument=questions=>(questions??[]).map(({id,kind,prompt,options,answer})=>({id,kind,prompt,options,answer}));

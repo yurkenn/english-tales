@@ -37,7 +37,7 @@ export function revisionProposals(bundle,comparison){
         metadata:Object.fromEntries(['title','author','level','genre','description','coverKey'].map(k=>[k,d[k]])),
         sentences:d.sentences.map(({id,position,english,turkish})=>({id,position,english,turkish})),
         words:d.words.map(({id,word,translation,pronunciation,example})=>({id,word,translation,pronunciation,example})),
-        links:d.links,changes:diff};
+        questions:d.questions,links:d.links,changes:diff};
     })};
 }
 
@@ -60,9 +60,9 @@ export function renderReport(result){
     const c=result.comparison;
     lines.push('','## Paket / etkin yayın farkı','',`Eşit: ${c.equal?'evet':'hayır'} · Farklı hikâye: ${c.differingStories.length} · Eksik hikâye: ${c.missingStoryIds.length} · Fazla hikâye: ${c.extraStoryIds.length}`,
       '',`Canlıda eksik kelime ID’leri (${c.missingVocabularyIds.length}): ${c.missingVocabularyIds.map(cell).join(', ')||'yok'}`,'',
-      '| Hikâye | Bilgi farkı | Cümle farkı | Eksik/fazla kelime | Değişen kelime | Eksik/fazla bağlantı | Çeviri farkı | Kapak farkı |',
-      '|---|---:|---:|---:|---:|---:|---:|---|');
-    for(const d of c.differingStories)lines.push(`| ${cell(d.storyId)} | ${d.metadataFields.length} | ${d.missingSentenceIds.length+d.extraSentenceIds.length+d.modifiedSentences.length} | ${d.missingWordIds.length}/${d.extraWordIds.length} | ${d.modifiedWords.length} | ${d.missingLinks.length}/${d.extraLinks.length} | ${d.translationChanges.length} | ${d.coverMismatch?'var':'yok'} |`);
+      '| Hikâye | Bilgi farkı | Cümle farkı | Eksik/fazla kelime | Değişen kelime | Eksik/fazla bağlantı | Çeviri farkı | Soru farkı | Kapak farkı |',
+      '|---|---:|---:|---:|---:|---:|---:|---:|---|');
+    for(const d of c.differingStories)lines.push(`| ${cell(d.storyId)} | ${d.metadataFields.length} | ${d.missingSentenceIds.length+d.extraSentenceIds.length+d.modifiedSentences.length} | ${d.missingWordIds.length}/${d.extraWordIds.length} | ${d.modifiedWords.length} | ${d.missingLinks.length}/${d.extraLinks.length} | ${d.translationChanges.length} | ${d.questionChanges.length} | ${d.coverMismatch?'var':'yok'} |`);
     lines.push('',`Canlı snapshot: ${result.live.snapshot.createdAt} · Medya: ${result.media.status} (${result.media.assets??0})`);
   }
   lines.push('','## Editör inceleme sırası','',
@@ -72,6 +72,11 @@ export function renderReport(result){
     lines.push('',`### ${level} — ilk 20`,'','| Token | Geçiş | Hikâye sayısı |','|---|---:|---:|');
     for(const row of target.backlog.filter(r=>r.level===level).slice(0,20))lines.push(`| ${cell(row.token)} | ${row.occurrences} | ${row.storyIds.length} |`);
   }
+  lines.push('','## İngilizce anlama soruları','','| Kaynak | Seviye | En az 3 geçerli sorulu hikâye | Toplam hikâye |','|---|---|---:|---:|');
+  for(const report of [result.bundle,...(result.live?[result.live]:[])])
+    for(const [level,counts] of Object.entries(report.levels))lines.push(`| ${report.source} | ${level} | ${counts.storiesWithThreeQuestions} | ${counts.stories} |`);
+  for(const report of [result.bundle,...(result.live?[result.live]:[])])
+    lines.push('',`${report.source} — sorusuz hikâyeler: ${report.storiesWithoutQuestions.map(cell).join(', ')||'yok'}`);
   lines.push('','## Destek dili bütünlüğü','','| Kaynak | Dil | Eksik cümle | Eksik kelime | Eksik açıklama | Tam |','|---|---|---:|---:|---:|---|');
   for(const report of [result.bundle,...(result.live?[result.live]:[])])for(const [lang,counts] of Object.entries(report.translations??{}))
     lines.push(`| ${report.source} | ${cell(lang)} | ${counts.missingSentences} | ${counts.missingWords} | ${counts.missingDescriptions} | ${counts.complete?'evet':'hayır'} |`);
@@ -82,19 +87,20 @@ export function renderReport(result){
 }
 
 export async function main(args=process.argv.slice(2),sources={}){
-  const options={output:path.join(root,'native-android/build/content-audit'),snapshot:null,skipMedia:false,requireParity:false,minCoverage:null,requireLang:null};
+  const options={output:path.join(root,'native-android/build/content-audit'),snapshot:null,skipMedia:false,requireParity:false,minCoverage:null,requireLang:null,minQuestions:null};
   for(let i=0;i<args.length;i++){
     const arg=args[i];
-    if(['--output','--snapshot','--min-coverage','--require-lang'].includes(arg)){
+    if(['--output','--snapshot','--min-coverage','--require-lang','--min-questions'].includes(arg)){
       const value=args[++i];if(!value||value.startsWith('--'))throw Error(`Missing value: ${arg}`);
       if(arg==='--output')options.output=path.resolve(value);
       if(arg==='--snapshot')options.snapshot=path.resolve(value);
       if(arg==='--require-lang')options.requireLang=value;
+      if(arg==='--min-questions')options.minQuestions=Number(value);
       if(arg==='--min-coverage')options.minCoverage=Number(value);
     }else if(arg==='--require-parity')options.requireParity=true;
     else if(arg==='--skip-media')options.skipMedia=true;
     else if(arg==='--help'){
-      console.log('node tools/audit-content.mjs [--snapshot <backup/catalog.json>] [--output <directory>] [--require-parity] [--min-coverage <0..100>] [--skip-media] [--require-lang <lang>]');return;
+      console.log('node tools/audit-content.mjs [--snapshot <backup/catalog.json>] [--output <directory>] [--require-parity] [--min-coverage <0..100>] [--skip-media] [--require-lang <lang>] [--min-questions <n>]');return;
     }else throw Error(`Unknown argument: ${arg}`);
   }
   if((options.requireParity||options.skipMedia)&&!options.snapshot)throw Error('--require-parity/--skip-media requires --snapshot');

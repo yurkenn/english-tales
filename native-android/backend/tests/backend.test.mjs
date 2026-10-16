@@ -244,10 +244,10 @@ test('an authenticated database role without a user identity cannot access learn
 });
 test('all application tables have RLS and privileged functions have a fixed search path and explicit grants',async()=>{
   const tables=(await db.query("select c.relname,c.relrowsecurity from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r'")).rows;
-  assert.equal(tables.length,16);
+  assert.equal(tables.length,17);
   assert.ok(tables.every(t=>t.relrowsecurity));
-  const functions=(await db.query("select n.nspname,p.proname,p.proconfig,p.oid,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as user_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','private') and p.proname in ('publish_story_revision','set_story_archived','save_learning_preferences','submit_learning_session','apply_word_event','apply_progress_event','get_learning_summary','lock_learning_user','learning_summary','unlock_learning_badges','guard_revision_child','guard_revision','guard_asset','bump_revision_version','bump_child_version','content_role','admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish','admin_history','admin_delete_draft','admin_archive','admin_unused_media','admin_reserve_media_delete','admin_finalize_media_delete','record_content_action','audit_content_change','check_learning_links','guard_revision_media','bump_media_revisions','sync_legacy_translation','guard_turkish_translation','check_revision_translations','save_translation_maps')")).rows;
-  assert.equal(functions.length,36);
+  const functions=(await db.query("select n.nspname,p.proname,p.proconfig,p.oid,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as user_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','private') and p.proname in ('publish_story_revision','set_story_archived','save_learning_preferences','submit_learning_session','apply_word_event','apply_progress_event','get_learning_summary','lock_learning_user','learning_summary','unlock_learning_badges','guard_revision_child','guard_revision','guard_asset','bump_revision_version','bump_child_version','content_role','admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish','admin_history','admin_delete_draft','admin_archive','admin_unused_media','admin_reserve_media_delete','admin_finalize_media_delete','record_content_action','audit_content_change','check_learning_links','guard_revision_media','bump_media_revisions','sync_legacy_translation','guard_turkish_translation','check_revision_translations','save_translation_maps','check_revision_questions')")).rows;
+  assert.equal(functions.length,37);
   for(const fn of functions) {
     assert.ok(fn.proconfig?.includes('search_path=""'),fn.proname);
     assert.equal(fn.anon_execute,false,fn.proname);
@@ -592,4 +592,92 @@ test('media deletion reserves unused assets, protects draft attachments and fini
   assert.equal((await user(editor,'delete from storage.objects where name=$1 returning *',[path])).length,1);
   await admin(editor,'admin_finalize_media_delete',{id:asset});await admin(editor,'admin_finalize_media_delete',{id:asset});
   assert.equal((await db.query('select * from public.content_assets where id=$1',[asset])).rows.length,0);
+});
+
+const question=(extra={})=>({id:'q1',kind:'main',prompt:'What happens?',options:['A quiet morning.','A noisy night.'],answer:0,...extra});
+async function putQuestion(id,q=question(),position=1){
+  return user(editor,'insert into public.story_questions(revision_id,id,position,kind,prompt,options,answer) values($1,$2,$3,$4,$5,$6,$7)',[id,q.id,position,q.kind,q.prompt,q.options,q.answer]);
+}
+for(const [name,change] of Object.entries({
+  'bad kind':{kind:'vocabulary'},'one option':{options:['Only']},'five options':{options:['a','b','c','d','e']},
+  'duplicate options':{options:['YES','yes']},'trimmed duplicate options':{options:['yes',' YES ']},
+  'blank option':{options:['a',' ']},'null option':{options:['a',null]},'whitespace option':{options:['a','\t\n']},'empty prompt':{prompt:' '},'whitespace prompt':{prompt:'\t\n'},
+  'answer beyond options':{answer:2},'negative answer':{answer:-1},'empty ID':{id:''},'long ID':{id:'q'.repeat(101)}
+}))test(`question constraints reject ${name}`,async()=>{
+  const id=await draft();await assert.rejects(putQuestion(id,question(change)),/check constraint/);
+  assert.equal((await user(editor,'select count(*)::int n from public.story_questions where revision_id=$1',[id]))[0].n,0);
+});
+
+test('question keys, positions, option dimensions and FK use revision-child constraints',async()=>{
+  const id=await draft();await putQuestion(id);
+  await assert.rejects(putQuestion(id,question(),2),/unique constraint/);
+  await assert.rejects(putQuestion(id,question({id:'q2'}),1),/unique constraint/);
+  await assert.rejects(putQuestion(id,question({id:'q2'}),0),/check constraint/);
+  await db.exec('savepoint missing_revision');
+  await assert.rejects(db.query("insert into public.story_questions values($1,'q',1,'main','?',array['a','b'],0)",[randomUUID()]),/foreign key constraint/);
+  await db.exec('rollback to savepoint missing_revision; release savepoint missing_revision');
+  await assert.rejects(putQuestion(id,question({id:'q2',options:[['a','b'],['c','d']]}),2),/check constraint/);
+  await putQuestion(id,question({id:'spaces and punctuation!'}),2);
+});
+
+test('question RLS hides drafts, rejects anon writes and ordinary users, and advances draft review versions',async()=>{
+  const id=await draft(),version=async()=>(await db.query('select edit_version from public.story_revisions where id=$1',[id])).rows[0].edit_version;
+  const start=await version();await putQuestion(id);assert.ok(await version()>start);
+  assert.deepEqual(await anon('select * from public.story_questions where revision_id=$1',[id]),[]);
+  assert.deepEqual(await user(alice,'select * from public.story_questions where revision_id=$1',[id]),[]);
+  await assert.rejects(anon("insert into public.story_questions values($1,'x',2,'main','?',array['a','b'],0)",[id]),/permission denied/);
+  await assert.rejects(anon('update public.story_questions set answer=1 where revision_id=$1',[id]),/permission denied/);
+  await assert.rejects(anon('delete from public.story_questions where revision_id=$1',[id]),/permission denied/);
+  await assert.rejects(user(alice,"insert into public.story_questions values($1,'x',2,'main','?',array['a','b'],0)",[id]),/row-level security/);
+  assert.deepEqual(await user(alice,"update public.story_questions set prompt='Changed' where revision_id=$1 returning id",[id]),[]);
+  const inserted=await version();await user(editor,"update public.story_questions set prompt='Why?' where revision_id=$1",[id]);assert.ok(await version()>inserted);
+  const updated=await version();await user(editor,'delete from public.story_questions where revision_id=$1',[id]);assert.ok(await version()>updated);
+});
+
+for(const method of ['publish_story_revision','admin_publish'])test(`${method} rejects non-contiguous questions then publishes ordered JSON arrays; archives hide questions`,async()=>{
+  const id=await draft();await putQuestion(id,question(),2);
+  const publish=async()=>method==='admin_publish'?admin(publisher,method,{p_revision_id:id,p_expected_version:(await admin(editor,'admin_revision',{p_revision_id:id})).edit_version}):user(publisher,'select public.publish_story_revision($1)',[id]);
+  await assert.rejects(publish(),/questions_non_contiguous/);
+  assert.equal((await db.query('select current_revision_id from public.stories where id=$1',['quiet-morning'])).rows[0].current_revision_id,revision);
+  await user(editor,'update public.story_questions set position=1 where revision_id=$1',[id]);await publish();
+  const rows=await anon('select id,position,kind,prompt,options,answer from public.story_questions where revision_id=$1 order by position asc limit 1 offset 0',[id]);
+  assert.deepEqual(rows,[{...question(),position:1}]);
+  assert.deepEqual(await anon('select id from public.story_questions where revision_id=$1 order by position limit 1 offset 1',[id]),[]);
+  await user(publisher,"select public.set_story_archived('quiet-morning',true)");
+  assert.deepEqual(await anon('select * from public.story_questions where revision_id=$1',[id]),[]);
+});
+
+test('published questions are immutable even for the database owner and staff cannot move rows into a publication',async()=>{
+  const id=await draft();await putQuestion(id);await user(publisher,'select public.publish_story_revision($1)',[id]);
+  for(const sql of ["update public.story_questions set prompt='Changed' where revision_id=$1",'delete from public.story_questions where revision_id=$1',"insert into public.story_questions values($1,'q2',2,'main','?',array['a','b'],0)"]){
+    await db.exec('savepoint owner_write');
+    await assert.rejects(db.query(sql,[id]),/published_revision_is_immutable/);
+    await db.exec('rollback to savepoint owner_write; release savepoint owner_write');
+  }
+  assert.deepEqual(await user(editor,"update public.story_questions set prompt='Changed' where revision_id=$1 returning id",[id]),[]);
+  const next=await admin(editor,'admin_create_draft',{p_story_id:'quiet-morning',p_source_id:id});
+  await assert.rejects(user(editor,'update public.story_questions set revision_id=$1 where revision_id=$2',[id,next.id]),/published_revision_is_immutable|row-level security/);
+});
+
+test('admin question round-trip replaces by display order, keeps omitted lists, clears empty lists and copies publications',async()=>{
+  const id=await draft();let d=await admin(editor,'admin_revision',{p_revision_id:id});assert.deepEqual(d.questions,[]);
+  const save=async document=>admin(editor,'admin_save_draft',{p_revision_id:id,p_expected_version:d.edit_version,p_document:JSON.stringify(document)},[null,null,'jsonb']);
+  d=await save({...d,questions:[question({id:'q2',kind:'inference',answer:1}),question()]});
+  assert.deepEqual(d.questions.map(({revision_id,position,...q})=>q),[question({id:'q2',kind:'inference',answer:1}),question()]);
+  assert.deepEqual(d.questions.map(q=>q.position),[1,2]);
+  const kept=structuredClone(d);delete kept.questions;d=await save(kept);assert.equal(d.questions.length,2);
+  for(const questions of [null,{},[question({options:[1,2]})],[question({answer:'0'})],[question({answer:0.5})],[question({kind:'bad'})],[question(),question()]]){
+    await assert.rejects(save({...d,questions}));
+    assert.deepEqual((await admin(editor,'admin_revision',{p_revision_id:id})).questions,d.questions);
+  }
+  const stale=d.edit_version;d=await save(d);
+  await assert.rejects(admin(editor,'admin_save_draft',{p_revision_id:id,p_expected_version:stale,p_document:JSON.stringify({...d,questions:[]})},[null,null,'jsonb']),/draft_version_conflict/);
+  await user(publisher,'select public.publish_story_revision($1)',[id]);
+  const copy=await admin(editor,'admin_create_draft',{p_story_id:'quiet-morning',p_source_id:id});
+  assert.deepEqual(copy.questions.map(({revision_id,...q})=>q),d.questions.map(({revision_id,...q})=>q));
+  const cleared=await admin(editor,'admin_save_draft',{p_revision_id:copy.id,p_expected_version:copy.edit_version,p_document:JSON.stringify({...copy,questions:[]})},[null,null,'jsonb']);
+  assert.deepEqual(cleared.questions,[]);
+  await putQuestion(copy.id);await admin(editor,'admin_delete_draft',{p_revision_id:copy.id,p_expected_version:(await admin(editor,'admin_revision',{p_revision_id:copy.id})).edit_version});
+  assert.equal((await db.query('select count(*)::int n from public.story_questions where revision_id=$1',[copy.id])).rows[0].n,0);
+  assert.equal((await anon('select id from public.story_questions where revision_id=$1',[id])).length,2);
 });

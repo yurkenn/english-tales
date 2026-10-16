@@ -129,7 +129,7 @@ async function publicSnapshot(){
   const tables={};
   await db.exec('savepoint snapshot; set local role anon');
   await db.query("select set_config('request.jwt.claim.sub','',true)");
-  for(const table of ['stories','story_revisions','story_sentences','revision_words','sentence_words','content_assets','sentence_translations','word_translations','revision_texts'])tables[table]=(await db.query(`select * from public.${table}`)).rows;
+  for(const table of ['stories','story_revisions','story_sentences','revision_words','sentence_words','content_assets','sentence_translations','word_translations','revision_texts','story_questions'])tables[table]=(await db.query(`select * from public.${table}`)).rows;
   await db.exec('reset role; release savepoint snapshot');
   return {format:1,project:'local-fixture',createdAt:new Date().toISOString(),tables};
 }
@@ -263,4 +263,26 @@ test('the actual audit CLI accepts a full bundled-catalog parity fixture, author
     const report=JSON.parse(await readFile(path.join(dir,'audit/audit.json')));
     assert.equal(report.comparison.equal,true);assert.equal(report.acceptance.passed,true);assert.equal(report.live.translations.tr.complete,true);
   }finally{await rm(dir,{recursive:true,force:true});}
+});
+
+
+test('question drafts apply through real RPCs, resume idempotently, preserve history and detect question drift before writes',async()=>{
+  const c=catalogFixture();
+  c.stories[0].questions=[{id:'hare-q',kind:'inference',prompt:'Why does the hare stop?',options:['He feels safe.','He is lost.'],answer:0}];
+  const before=await publicSnapshot(),packet=generateDrafts(c,before,manifest);
+  const first=await applyDrafts(packet,{apply:true,rpc});
+  assert.ok(first.stories.every(s=>s.status==='saved'));
+  const plan=first.stories.find(s=>s.storyId===c.stories[0].id),draft=await rpc('admin_revision',{p_revision_id:plan.revisionId});
+  assert.deepEqual(draft.questions.map(({revision_id,position,...q})=>q),c.stories[0].questions);
+  const again=await applyDrafts(packet,{apply:true,rpc});assert.ok(again.stories.every(s=>s.status==='skipped-equivalent'));
+  assert.deepEqual((await publicSnapshot()).tables,before.tables);
+  for(const result of first.stories)await rpcAs(publisher,'admin_publish',{p_revision_id:result.revisionId,p_expected_version:result.editVersion});
+  const after=await publicSnapshot();assert.equal(compareDocuments(bundledDocuments(c),publishedDocuments(after)).equal,true);
+  for(const guard of packet.guards)assert.deepEqual((await rpc('admin_revision',{p_revision_id:guard.currentRevisionId})).questions,[]);
+  const stale=structuredClone(after);stale.tables.story_questions[0].answer=1;
+  calls=[];await assert.rejects(applyDrafts(generateDrafts(c,stale,manifest),{apply:true,rpc}),/snapshot_content_drift/);
+  assert.ok(!calls.some(c=>['admin_create_draft','admin_save_draft'].includes(c.name)));
+  const legacy=structuredClone(after);delete legacy.tables.story_questions;
+  calls=[];await assert.rejects(applyDrafts(generateDrafts(c,legacy,manifest),{apply:true,rpc}),/snapshot_content_drift/);
+  assert.ok(!calls.some(c=>['admin_create_draft','admin_save_draft'].includes(c.name)));
 });

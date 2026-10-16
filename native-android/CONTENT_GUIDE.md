@@ -16,6 +16,14 @@ Bu sayılar paketin içeriğini belirtir. Canlı ortamın yayın durumu, anonim 
 
 `npm run content:audit -- --require-lang tr` Türkçe bütünlüğünü zorunlu tutar; örneğin `--require-lang es-419` o dilin bütün etkin katalogdaki cümle, kelime ve açıklamalarını ister. Raporda dil başına eksik sayıları bulunur. Yayın kontrolü revision'a eklenmiş her dilin o revision'da tam olmasını ister; hiç eklenmemiş bir dil yayını engellemez. Boş taslak alanı çeviri satırı üretmez ve yayınlanana kadar tamamlanmalıdır.
 
+## İngilizce anlama soruları (Q5.3)
+
+[Soru sözleşmesi](backend/QUESTIONS_CONTRACT.md): hikâyede isteğe bağlı `questions: [{id,kind,prompt,options,answer}]` dizisi kullanılır. Soru ve seçenekler İngilizcedir; destek diline göre açıklama/çeviri yoktur. `kind`: `main`, `detail`, `inference`; 2–4 dolu ve farklı seçenek, sıfır tabanlı doğru yanıt indeksi gerekir. Kalıcı soru kimliklerini koru. Dizi sırası exporter tarafından `position=index+1` yapılır. Eski sorusuz revizyonlar geçerlidir.
+
+Panelde **Anlama soruları** sekmesinde listeyi düzenle; doğru seçenek panelde 1–4, API’de 0–3’tür. Yayın kontrolü kesintisiz sıra ister. `content:drafts` soru farkları için yeni taslak üretir; hedef liste paketi izler. Pakette sorular yoksa hedef taslak listesi boştur; eski yayın değişmez. Admin API’sinde alanın verilmemesi ise mevcut listeyi korur, `[]` temizler.
+
+`npm run content:audit -- --min-questions 3` her hikâyede en az üç geçerli soru ister; snapshot verilirse hem paket hem etkin snapshot hikâyeleri denetlenir. Rapor seviye başına ≥3 geçerli sorulu hikâyeleri ve sorusuz hikâye ID’lerini listeler. Varsayılan denetim minimum soru sayısı dayatmaz. Soruların metne uygunluğunu ve İngilizcesini editör ayrıca kontrol eder.
+
 ## Yeni içerik hazırlama
 
 1. Yazarın ve kullanılan çevirinin hak durumunu, kaynak metni ve kapak haklarını kontrol et. Kaynak bağlantısını ve kullanılan baskı/çevirmeni kaydet.
@@ -65,7 +73,7 @@ Uygulama, **bütün etkin snapshot hikâyelerinin** canlı `current_revision_id`
 
 Her hikâyenin kaydı mevcut RPC içinde atomiktir; tüm hikâyeler birlikte tek işlem değildir. Kontrol oluşturma/kayıt çevresinde tekrarlanır ve taslak kaydı `edit_version` ile korunur. Ayrı RPC'ler yayıncıyı bütün çalışma boyunca kilitlemez: eşzamanlı yayın nedeniyle geç fark edilen kayma veya ağ kesintisi daha önce kaydedilmiş/yeni kopyalanmış taslak bırakabilir. `apply-results.json` tamamlanan adımları tutar; hata halinde paneli inceleyip aynı komutu tekrar çalıştır. İlk kontrolde bulunan kayma/çatışma hiç yazma yapmaz. Eski snapshot ile yayın sonrası yeniden uygulama reddedilir; yeni snapshot gerekir.
 
-Snapshot'ın altı eski tablosu desteklenir; Türkçe eski alanlardan hesaplanır. Dokuz tabloluk snapshot'ta üç çeviri tablosu da bulunmalıdır ve gerçek satırlar esas alınır ([sözleşme](backend/TRANSLATION_CONTRACT.md)). Mevcut `tooling/backup_public_content.mjs` altı tablo toplar; yeni dil tablolarının bağımsız doğrulaması için bu üç tablonun da sayfalı anonim çıktısını içeren snapshot gerekir. Altı tabloluk kaynakta görünmeyen canlı ek diller varsa uygulama içerik kayması olarak durur; eksik kaynakla editörün çevirileri silinmez.
+Snapshot’ın altı eski tablosu desteklenir; Türkçe eski alanlardan, eksik soru tablosu boş listeden hesaplanır. `tooling/backup_public_content.mjs` artık üç çeviri tablosunu ve `story_questions` tablosunu da anonim sayfalama ile toplar (toplam 10 tablo). Çeviri grubunda üç tablo birlikte bulunmalıdır; sorular bağımsız isteğe bağlı uzantıdır. Mevcut tablolarda gerçek satırlar esas alınır ([çeviri sözleşmesi](backend/TRANSLATION_CONTRACT.md), [soru sözleşmesi](backend/QUESTIONS_CONTRACT.md)). Araç eski sunucuda yalnız tablo-bulunamadı yanıtında uzantıyı atlar; izin/ağ hatalarını gizlemez. Eski snapshot’ta görünmeyen canlı ek dil veya soru varsa uygulama içerik kayması olarak durur; eksik kaynakla editör içeriği silinmez.
 
 1. Test ortamında yeni taslağı oluştur veya onaylı seed ile ilk revision'ı hazırla.
 2. Cümleleri, çevirileri, kelimeleri ve kelime–cümle bağlantılarını incele.
