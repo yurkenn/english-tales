@@ -33,16 +33,16 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
     }
     val scroll=rememberScrollState()
     LaunchedEffect(step,scroll.maxValue) { scroll.animateScrollTo(scroll.maxValue) }
-    Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding()) {
+    Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding()) {
         Row(Modifier.fillMaxWidth().height(46.dp).padding(horizontal=12.dp),verticalAlignment=Alignment.CenterVertically) {
-            if(step>0) Box(Modifier.size(48.dp).contentLabel(stringResource(R.string.geri)).clickable(role=Role.Button) { step-- },contentAlignment=Alignment.Center) { ReferenceIcon("back",Color(0xFF515157),Modifier.size(20.dp)) }
+            if(step>0) Box(Modifier.size(48.dp).contentLabel(stringResource(R.string.geri)).clickable(role=Role.Button) { step-- },contentAlignment=Alignment.Center) { ReferenceIcon("back",TaleInk,Modifier.size(20.dp)) }
         }
         Column(Modifier.weight(1f).verticalScroll(scroll).padding(horizontal=16.dp,vertical=10.dp),verticalArrangement=Arrangement.spacedBy(13.dp)) {
             GuideBubble(stringResource(R.string.hi))
             GuideBubble(stringResource(R.string.merhaba_ben_senin_okuma_arkadasinim))
             Row(Modifier.fillMaxWidth()) {
                 Spacer(Modifier.width(40.dp))
-                Box(Modifier.width(250.dp).height(170.dp).clip(RoundedCornerShape(10.dp)).background(Color(0xFFE5F5FA)),contentAlignment=Alignment.BottomCenter) {
+                Box(Modifier.width(250.dp).height(170.dp).clip(RoundedCornerShape(10.dp)).background(LocalTaleColors.current.tileBlue),contentAlignment=Alignment.BottomCenter) {
                     TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),description=stringResource(R.string.okuma_rehberi),animate=true)
                 }
             }
@@ -90,11 +90,11 @@ private fun GuideBubble(message: String) {
 }
 
 @Composable
-private fun ReplyBubble(message: String) { Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) { Text(message,fontSize=13.sp,color=Color.White,modifier=Modifier.background(TaleBlue,RoundedCornerShape(7.dp)).padding(horizontal=12.dp,vertical=9.dp)) } }
+private fun ReplyBubble(message: String) { Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) { Text(message,fontSize=13.sp,color=TaleOnBlue,modifier=Modifier.background(TaleBlue,RoundedCornerShape(7.dp)).padding(horizontal=12.dp,vertical=9.dp)) } }
 
 @Composable
 private fun ReplyChoice(label: String,onClick: ()->Unit) {
     Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) {
-        Text(label,fontSize=13.sp,color=Color.White,fontWeight=FontWeight.Medium,modifier=Modifier.background(TaleBlue,RoundedCornerShape(7.dp)).clickable(role=Role.Button,onClick=onClick).padding(horizontal=14.dp,vertical=10.dp))
+        Text(label,fontSize=13.sp,color=TaleOnBlue,fontWeight=FontWeight.Medium,modifier=Modifier.background(TaleBlue,RoundedCornerShape(7.dp)).clickable(role=Role.Button,onClick=onClick).padding(horizontal=14.dp,vertical=10.dp))
     }
 }

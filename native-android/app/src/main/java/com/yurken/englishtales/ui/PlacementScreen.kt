@@ -35,7 +35,7 @@ fun PlacementScreen(onUseLevel: (String) -> Unit, onCancel: () -> Unit, fromSett
     fun exit() { if (started && !complete) confirmExit = true else onCancel() }
     BackHandler { exit() }
 
-    Column(Modifier.fillMaxSize().background(Color.White).statusBarsPadding().navigationBarsPadding()) {
+    Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding()) {
         SimpleTopBar(stringResource(R.string.placement_title), ::exit)
         key(started, answers.size) {
             Column(

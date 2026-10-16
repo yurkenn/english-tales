@@ -44,7 +44,7 @@ fun FlashcardGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,pad
             Text(word.word,fontSize=23.sp,fontWeight=FontWeight.Bold)
             Text(word.pronunciation,fontSize=13.sp,color=TaleMuted,modifier=Modifier.padding(vertical=10.dp))
             Text(if(revealed) word.translation else stringResource(R.string.anlami_gormek_icin_dokun),fontSize=if(revealed) 20.sp else 13.sp,color=if(revealed) TaleInk else TaleMuted)
-            Box(Modifier.padding(top=20.dp).size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.kelimesini_dinle, word.word)).background(TaleBlue,CircleShape).clickable(role=Role.Button) {if(narrator.speaking || narrator.preparing) narrator.stop() else narrator.speak(word.word)},contentAlignment=Alignment.Center) {if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=Color.White) else ReferenceIcon("volume",Color.White,Modifier.size(21.dp))}
+            Box(Modifier.padding(top=20.dp).size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.kelimesini_dinle, word.word)).background(TaleBlue,CircleShape).clickable(role=Role.Button) {if(narrator.speaking || narrator.preparing) narrator.stop() else narrator.speak(word.word)},contentAlignment=Alignment.Center) {if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=TaleOnBlue) else ReferenceIcon("volume",TaleOnBlue,Modifier.size(21.dp))}
         }
         if(narrator.preparing) Text(stringResource(R.string.ses_hazirlaniyor),color=TaleMuted,fontSize=12.sp)
         narrator.error?.let {Text(it,color=TaleMuted,fontSize=12.sp)}

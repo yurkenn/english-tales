@@ -37,6 +37,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Modifier.size(23.dp)) {
+    val themedAccent = if(tint == TaleBlue) TalePurple else tint
     Canvas(modifier) {
         scale(size.width / 24f, size.height / 24f, pivot = Offset.Zero) {
             fun line(x1: Float, y1: Float, x2: Float, y2: Float) = drawLine(tint, Offset(x1,y1), Offset(x2,y2), 1.8f, StrokeCap.Round)
@@ -45,7 +46,7 @@ fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Mod
                 drawPath(p,tint,style=if(fill) androidx.compose.ui.graphics.drawscope.Fill else Stroke(1.8f,cap=StrokeCap.Round))
             }
             // Keep white/disabled/night-mode icons monochrome; accent only the brand-blue variant.
-            val accent = if(tint == TaleBlue) TalePurple else tint
+            val accent = themedAccent
             fun outline(p: Path, color: Color = tint) = drawPath(p,color,style=Stroke(1.8f,cap=StrokeCap.Round))
             when(kind) {
                 "study" -> {
@@ -143,7 +144,7 @@ fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Col
 fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
     val tabs = listOf(stringResource(R.string.calis) to "study", stringResource(R.string.oku_2) to "read", stringResource(R.string.oyna) to "play", stringResource(R.string.profilim) to "profile")
     val barHeight=56.dp+18.dp*(LocalDensity.current.fontScale-1f).coerceAtLeast(0f)
-    Row(Modifier.fillMaxWidth().background(Color.White).navigationBarsPadding().height(barHeight)) {
+    Row(Modifier.fillMaxWidth().background(TaleSurface).navigationBarsPadding().height(barHeight)) {
         tabs.forEachIndexed { index,(label,kind) ->
             Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=selected==index }.clickable(role=Role.Tab) { onSelect(index) }.padding(top=7.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(3.dp)) {
                 ReferenceIcon(kind,if(selected==index) TaleBlue else TaleMuted,Modifier.size(22.dp))
