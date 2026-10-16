@@ -139,8 +139,10 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     }
     fun setFavorite(storyId: String,favorite: Boolean) = transaction {db ->
         require(storyId.matches(Regex("[a-z0-9][a-z0-9_-]{0,79}")))
-        if(favorite) db.insert("favorite_stories",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("story_id",storyId);put("added_at",clock())})
-        else db.delete("favorite_stories","story_id=?",arrayOf(storyId))
+        val changed=if(favorite) db.insert("favorite_stories",SQLiteDatabase.CONFLICT_IGNORE,ContentValues().apply {put("story_id",storyId);put("added_at",clock())})!=-1L
+            else db.delete("favorite_stories","story_id=?",arrayOf(storyId))>0
+        // F09b: only real changes travel to the account, so repeated taps do not queue duplicates.
+        if(changed) {val id=UUID.randomUUID().toString();enqueue(id,"apply_favorite_event",operations.favorite(id,storyId,favorite,clock()))}
     }
     fun reviewWord(wordId: String, correct: Boolean) {
         transaction {db ->

@@ -19,12 +19,16 @@ data class CloudLearningProgress(val revisionId: String, val storyId: String, va
     val percent: Int, val eventAt: Long, val eventId: String, val updatedAt: Long,
     val eventAtIso: String = Instant.ofEpochMilli(eventAt).toString())
 data class CloudLearningBadge(val id: String, val earnedAt: Long)
+/** F09b: a removed favorite is kept as `favorite=false` so other devices drop it too. */
+data class CloudStoryFavorite(val storyId: String, val favorite: Boolean, val updatedAt: Long)
 
 /** Fully validated immutable input. Parsing has no database side effects. */
 data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val profile: CloudLearningProfile?,
     val sessions: List<CloudLearningSession>, val words: List<CloudLearningWord>,
     val progress: List<CloudLearningProgress>, val badges: List<CloudLearningBadge>,
-    val capturedAtIso: String = Instant.ofEpochMilli(capturedAt).toString()) {
+    val capturedAtIso: String = Instant.ofEpochMilli(capturedAt).toString(),
+    /** Null when the server predates favorite sync: local favorites are then left as they are. */
+    val favorites: List<CloudStoryFavorite>? = null) {
     internal fun json(): JSONObject = JSONObject().put("schemaVersion", 1).put("userId", userId).put("capturedAt", capturedAtIso)
         .put("profile", profile?.let { p -> JSONObject().put("display_name", p.name).put("level", p.level)
             .put("preferred_genre", p.genre).put("daily_goal", p.goal).put("timezone", p.timezone)
@@ -42,6 +46,8 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
             .put("last_event_id", p.eventId).put("updated_at", Instant.ofEpochMilli(p.updatedAt).toString())) } })
         .put("badges", JSONArray().also { a -> badges.forEach { b -> a.put(JSONObject().put("badge_id", b.id)
             .put("earned_at", Instant.ofEpochMilli(b.earnedAt).toString())) } })
+        .also { root -> favorites?.let { list -> root.put("favorites", JSONArray().also { a -> list.forEach { f -> a.put(JSONObject()
+            .put("story_id", f.storyId).put("favorite", f.favorite).put("updated_at", Instant.ofEpochMilli(f.updatedAt).toString())) } }) } }
     companion object {
         fun decode(json: JSONObject, expectedUser: String): LearningCloudSnapshot = try {
             require(json.toString().toByteArray(Charsets.UTF_8).size <= LearningSyncHttp.MAX_RESPONSE_BYTES)
@@ -87,8 +93,12 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
                 val id = text(b, "badge_id").also { require(it in setOf("first_story", "first_practice", "five_words", "three_day_streak", "seven_day_streak")) }
                 CloudLearningBadge(id, timestamp(text(b, "earned_at")))
             }.also { unique(it.map { b -> b.id }) }
-            require(profile != null || (sessions.isEmpty() && words.isEmpty() && progress.isEmpty() && badges.isEmpty()))
-            LearningCloudSnapshot(user, captured, profile, sessions, words, progress, badges, text(json, "capturedAt"))
+            val favorites = if (!json.has("favorites")) null else rows(json, "favorites", 5_000).map { f ->
+                CloudStoryFavorite(text(f, "story_id", 80).also { require(it.matches(Regex("[a-z0-9][a-z0-9_-]{0,79}"))) },
+                    boolean(f, "favorite"), timestamp(text(f, "updated_at")))
+            }.also { unique(it.map { f -> f.storyId }) }
+            require(profile != null || (sessions.isEmpty() && words.isEmpty() && progress.isEmpty() && badges.isEmpty() && favorites.isNullOrEmpty()))
+            LearningCloudSnapshot(user, captured, profile, sessions, words, progress, badges, text(json, "capturedAt"), favorites)
         } catch (_: Exception) { throw LearningSyncFailure("invalid_snapshot") }
 
         private fun rows(json: JSONObject, field: String, limit: Int): List<JSONObject> {

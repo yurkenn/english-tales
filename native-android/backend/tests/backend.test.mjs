@@ -244,7 +244,7 @@ test('an authenticated database role without a user identity cannot access learn
 });
 test('all application tables have RLS and privileged functions have a fixed search path and explicit grants',async()=>{
   const tables=(await db.query("select c.relname,c.relrowsecurity from pg_catalog.pg_class c join pg_catalog.pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r'")).rows;
-  assert.equal(tables.length,20);
+  assert.equal(tables.length,22);
   assert.ok(tables.every(t=>t.relrowsecurity));
   const functions=(await db.query("select n.nspname,p.proname,p.proconfig,p.oid,has_function_privilege('anon',p.oid,'execute') as anon_execute,has_function_privilege('authenticated',p.oid,'execute') as user_execute from pg_catalog.pg_proc p join pg_catalog.pg_namespace n on n.oid=p.pronamespace where n.nspname in ('public','private') and p.proname in ('publish_story_revision','set_story_archived','save_learning_preferences','submit_learning_session','apply_word_event','apply_progress_event','get_learning_summary','lock_learning_user','learning_summary','unlock_learning_badges','guard_revision_child','guard_revision','guard_asset','bump_revision_version','bump_child_version','content_role','admin_catalog','admin_revision','admin_create_draft','admin_save_draft','admin_publish','admin_history','admin_delete_draft','admin_archive','admin_unused_media','admin_reserve_media_delete','admin_finalize_media_delete','record_content_action','audit_content_change','check_learning_links','guard_revision_media','bump_media_revisions','sync_legacy_translation','guard_turkish_translation','check_revision_translations','save_translation_maps','check_revision_questions')")).rows;
   assert.equal(functions.length,37);
@@ -729,4 +729,28 @@ test('the panel tag list needs a staff role and keeps vocabulary order with loca
   assert.equal(tags.find(t=>t.id==='fabl').names.tr,'Fabl');
   await assert.rejects(admin(alice,'admin_tags',{}),/staff_required/);
   await assert.rejects(anon('select public.admin_tags()'),/permission denied/);
+});
+const favorite=(extra={})=>({id:randomUUID(),installationId:installation,storyId:'quiet-morning',favorite:true,occurredAt:iso(),...extra});
+test('favorite events are idempotent and the latest event per story wins across devices',async()=>{
+  const add=favorite({occurredAt:iso(0,-60)});
+  assert.equal((await rpc(alice,'apply_favorite_event',add)).applied,true);
+  assert.equal((await rpc(alice,'apply_favorite_event',add)).applied,false);
+  await assert.rejects(rpc(alice,'apply_favorite_event',{...add,favorite:false}),/operation_id_payload_conflict/);
+  const remove=favorite({installationId:randomUUID(),favorite:false,occurredAt:iso()});
+  assert.equal((await rpc(alice,'apply_favorite_event',remove)).favorite.favorite,false);
+  // A late upload of an older add from another device does not resurrect the story.
+  const late=await rpc(alice,'apply_favorite_event',favorite({occurredAt:iso(0,-30)}));
+  assert.equal(late.favorite.favorite,false);assert.equal(late.favorite.last_event_id,remove.id);
+  for(const invalid of [{...favorite(),favorite:'yes'},{...favorite(),extra:1},{...favorite(),storyId:'Bad Id'},{...favorite(),occurredAt:iso(1)}])
+    await assert.rejects(rpc(alice,'apply_favorite_event',invalid),/invalid_favorite_payload|invalid_event_time|check constraint/);
+  await assert.rejects(anon('select public.apply_favorite_event($1::jsonb)',[JSON.stringify(favorite())]),/permission denied/);
+});
+test('the learning snapshot carries favorites and their tombstones only to their owner',async()=>{
+  await rpc(alice,'apply_favorite_event',favorite({storyId:'paper-boat'}));
+  await rpc(alice,'apply_favorite_event',favorite({storyId:'lost-map',favorite:false}));
+  const snapshot=(await user(alice,'select public.get_learning_snapshot() as s'))[0].s;
+  assert.deepEqual(snapshot.favorites.map(f=>[f.story_id,f.favorite]),[['lost-map',false],['paper-boat',true]]);
+  assert.deepEqual((await user(bob,'select public.get_learning_snapshot() as s'))[0].s.favorites,[]);
+  assert.deepEqual(await user(bob,'select * from public.user_story_favorites'),[]);
+  await assert.rejects(user(alice,"insert into public.user_story_favorites values($1,'x',true,now(),$2)",[alice,randomUUID()]),/permission denied/);
 });

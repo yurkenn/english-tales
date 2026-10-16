@@ -32,6 +32,8 @@ internal class LearningOperations(private val installationId: String) {
     fun word(id: String,revisionId: String?,wordId: String,action: String,correct: Boolean?,now: Long) = base(id)
         .put("storyRevisionId",revisionId?:JSONObject.NULL).put("wordId",wordId).put("action",action)
         .put("correct",correct?:JSONObject.NULL).put("occurredAt",iso(now)).put("studyTimezone",TimeZone.getDefault().id)
+    fun favorite(id: String,storyId: String,favorite: Boolean,now: Long) = base(id)
+        .put("storyId",storyId).put("favorite",favorite).put("occurredAt",iso(now))
     fun progress(id: String,story: Story,sentenceId: String,percent: Int,now: Long) = base(id)
         .put("storyRevisionId",story.revisionId).put("sentenceId",sentenceId).put("percent",percent).put("occurredAt",iso(now))
     fun session(draft: SessionDraftRow,correct: Int,now: Long) = base(draft.id)
