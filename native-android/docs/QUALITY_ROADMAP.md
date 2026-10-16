@@ -1,26 +1,43 @@
 # English Tales — kalite yol haritası
 
-15 Ekim 2026 · **Yenileme: 16 Ekim 2026, master `fd2b5e4`** · İlk kaynak: master `8bef30b` · Dayanak: [derin eksik haritası](GAP_ANALYSIS.md), [geliştirme haritası](NEXT_PHASE_ROADMAP.md).
+15 Ekim 2026 · **Yenileme: 16 Ekim 2026, 23:38 TRT dahili yayın kaydı; paket kaynağı `6f48040`, içerdiği master `a14fa5f`** · İlk kaynak: master `8bef30b` · Dayanak: [derin eksik haritası](GAP_ANALYSIS.md), [geliştirme haritası](NEXT_PHASE_ROADMAP.md).
 
 “Kaliteli” burada ölçülebilir hedefler demektir. Her faz bir **kalite kapısıyla** biter; kapı geçilmeden sonraki faz “tamam” sayılmaz. Efor tahminleri tek geliştirici için **ideal geliştirme günü**dür (test ve doğrulama dahil, inceleme bekleme hariç); belirsizlik yüksek olan işlerde aralık verilir. Bunlar plan tahminidir, teslim vaadi değildir.
+
+## Güncel durum — 16 Ekim 2026
+
+[Hesap ve yayın kaydı](../../senin-adimlarin.md), [paket doğrulaması](release-evidence/2026-10-16-internal-49-package.json) ve [Play yayın kanıtı](release-evidence/2026-10-16-internal-49-play.json) bu tablonun dayanağıdır. Kaynak/doküman güncellemeleri [PR #67](https://github.com/yurkenn/english-tales/pull/67) üzerinde; PR hâlâ taslak ve ana dala birleşmedi. Canlı servis ve dahili yayın işlemleri ise tamamlandı.
+
+| Alan | Tamamlanan | Açık kabul / sonraki iş |
+|---|---|---|
+| Play sürümleri | Üretim **48 / 2.0.0, %100**; **49 / 2.1.0** dahili testte Active / Available to internal testers (23:38 TRT) | 49’un telefona Play’den teslimi, 48→49 güncelleme ve ilerleme korunması; 49 üretim yayını yapılmadı |
+| Q2.4 Paket üretimi | Beş zorunlu secret, master ile sınırlı `release` ortamı ve required reviewer; ilk imzalı CI çalışması başarılı | Play yüklemesi bu kez **elle** yapıldı. Servis hesabıyla otomatik dahili kanal yüklemesi **isteğe bağlı ve kurulmadı**; tam otomasyon tamamlandı sayılmaz |
+| Q2.1 / Q2.2 Veri beyanları | Data safety güncellendi ve Google incelemesine gönderildi; gizlilik sayfası yayımlandı; Crashlytics mapping yükleme görevi başarılı | Google onayı / yeni beyanın görünürlüğü; Analytics kapalı–açık–kapalı canlı olay kabulü ve GA ayarları |
+| Canlı veri tabanı | Çeviriler, sorular, etiketler, favoriler, kişisel kelimeler, bilinen kelimeler ve ayrıca onaylanan FSRS: **7 migration canlıda** | 49’da hesap eşitlemesinin gerçek cihazda doğrulanması; migration’lar yeniden uygulanmamalı |
+| Q5.7 FSRS | #65 birleşti; canlı migration `20261016202236`; 28 SQL vektörü referansla aynı; mevcut dört kelime kaydının eski alanları ve olayları korundu | Gerçek kullanımda tekrar planı / cihazlar arası uyum gözlemi; simülasyon saha sonucu sayılmaz |
+| Q3 TalkBack | Kullanıcı **48 / 2.0.0** ile yolculuğu sorunsuz denedi | **49 / 2.1.0** ile aynı yolculuk ve cihaz/sürüm kaydı; **Q3 kapısı açık** |
+| Q6 App Links | `englishtales-app.web.app` seçildi; Play app signing sertifikasıyla assetlinks.json yayımlandı; Google `linked: true` | Android intent-filter, hikâyeye yönlendirme ve uygulama kurulu değilken web karşılığı; paylaşım henüz uçtan uca çalışmıyor |
+| Doğrulama | Yerel **94 release JVM / 144 backend** testi; imza, üretim bağlantısı, profil ve statik 16 KB kontrolleri; master CI cihaz işi dahil başarılı | Play split paketleri, fiziksel cihaz / gerçek 16 KB çalışma zamanı, Google girişi ve veri koruma kabulü |
+
+**Öncelik sırası:** 49’u mevcut uygulamanın üzerine Play’den güncelle → giriş, ilerleme, çevrimdışı okuma ve hesap eşitlemesini kontrol et → 49’da TalkBack yolculuğunu kaydet → canlı ölçüm ve yayın kabulünü tamamla → [kademeli üretim yayın kontrolünü](STAGED_RELEASE.md) uygula. İçerik eşitliği/kapsama ve App Links uygulama tarafı ayrı açık işlerdir; otomatik Play yüklemesi mevcut elle yayın yolunu engellemez. Daha sonraki farklı paket için 49’u tekrar kullanma; en yüksek Play sürüm kodunu kontrol ederek **en az 50** seç.
 
 ## 1. Kalite hedefleri
 
 | Alan | Ölçüt | Hedef | Bugün | Nasıl ölçülür |
 |---|---|---|---|---|
-| Kararlılık | Kullanıcının fark ettiği çökme oranı | < %1,09 (Play kötü davranış eşiği), hedef < %0,5 | Crashlytics ana dalda (#18); yeni mağaza sürümü ve yayın beyanları bekliyor | Play vitals + çökme raporlama |
+| Kararlılık | Kullanıcının fark ettiği çökme oranı | < %1,09 (Play kötü davranış eşiği), hedef < %0,5 | Crashlytics 49 dahili paketinde; Data safety incelemeye gönderildi, canlı metrikler/Google onayı açık | Play vitals + çökme raporlama |
 | Kararlılık | ANR oranı | < %0,47 (Play eşiği), hedef < %0,2 | Ölçülmüyor | Play vitals |
 | Performans | Soğuk açılış (orta sınıf cihaz, medyan) | < 1,5 sn | Katalog arka planda (#20); cihaz bazlı Macrobenchmark ölçümü bekliyor | Macrobenchmark |
 | Performans | Okuyucu sayfa geçişi takılma | < %5 yavaş kare | Ölçülmüyor | Macrobenchmark `FrameTimingMetric` |
-| Boyut | İndirme boyutu (release APK) | < 15 MB | Birleşik APK 7,9 MB; AAB 11,18 MB (15 Ekim) | `verify_release.py` |
-| Doğruluk | PR başına otomatik test | Birim + backend + cihaz testleri CI'da | CI emülatörü: 139 test, 136 geçti / 3 koşullu atlandı | GitHub Actions |
+| Boyut | İndirme boyutu (release APK) | < 15 MB | 49: APK 9.323.769 bayt (~8,89 MiB); AAB 13.391.538 bayt; Play yeni kurulum önizlemesi 8,13 MB | `verify_release.py` |
+| Doğruluk | PR başına otomatik test | Birim + backend + cihaz testleri CI'da | 49 kaynak master CI: repository/backend/Android/android-device başarılı; yerel 94 release JVM + 144 backend testi geçti | GitHub Actions |
 | Erişilebilirlik | Ana yolculuk TalkBack ile | Tamamlanabilir; etiketsiz etkileşim 0 | On ana ekranda etiketsiz/rolsüz eylem 0 (`AccessibilityAuditTest`); 16 Ekim kullanıcı TalkBack testi mağazadaki 48 / 2.0.0 için sorunsuz; yeni Q3 paketi denenmeli | Kabul testi + lint |
 | Erişilebilirlik | Büyük yazı | fontScale 2.0'da kırpılma yok | 320×640 dp, fontScale 2.0'da on ana ekranda kesilen veya bölünen metin 0 (`LargeTextLayoutTest`) | Compose UI testleri |
 | Erişilebilirlik | Kontrast | ≥ 4.5:1 metin | İki temada 38 metin/zemin çifti ≥ 4.5:1 (`TaleColorsContrastTest`); kalan sabit renkler kendi içinde eşleşen çiftler | Renk denetimi |
 | İçerik | Sözlük kapsaması (A1/A2 benzersiz sözcük) | ≥ %60 | Paket A1 %32,3 · A2 %17,3; canlı A1 %23,5 · A2 %15,4 ([#33](CONTENT_QUALITY_AUDIT.md)) | Katalog testi |
 | İçerik | Paket = canlı | Fark 0 | Hikâye sözlük ID'si paket 358 / canlı 315; 39 hikâyede fark | Yayın doğrulama aracı |
 | Öğrenme | İlk hikâyeyi bitirme, ertesi gün dönüş, tekrar tamamlama | Önce ölçüm, sonra hedef | Ölçülmüyor | Asgari ürün olayları |
-| Yayın | Kademeli dağıtım + otomatik doğrulama | Her sürüm %20 → %50 → %100 | %100 elle | Sürüm kontrol listesi |
+| Yayın | Kademeli dağıtım + otomatik doğrulama | Her sürüm %20 → %50 → %100 | 48 üretim %100; 49 dahili testte elle yayımlandı; imza/paket kontrolleri otomatik | Sürüm kontrol listesi |
 | Kod | Kullanım dışı API ve lint uyarısı | 0 | Kotlin 0 uyarı; debug lint 0 hata / 30 uyarı | Derleme çıktısı |
 
 ## 2. Fazlar
@@ -60,7 +77,7 @@
 | Q3.3 | Uygulama geneli koyu tema | 80 sabit rengin tema token'larına taşınması; kontrast ≥ 4.5 | 2–3 |
 | Q3.4 | Büyük yazı ve küçük ekran testleri | fontScale 2.0'da ana ekranlar kırpılmasız | 1 |
 
-**Kapı Q3:** TalkBack yolculuğu · koyu tema · metinler kaynakta. — **16 Ekim 2026: kod birleşti, kapı açık.** Q3.1–Q3.4 #30, #31, #32 ve #34 ile ana dala birleşti. Kullanıcı 16 Ekim’de gerçek telefonda ana TalkBack yolculuğunu sorunsuz tamamladığını ve **mağazadaki 48 / 2.0.0** paketini denediğini doğruladı. Yeni erişilebilirlik kodunu içeren 49 adayı/güncel geliştirme APK’sında kabul yapılmadığından kapı açık; cihaz ve TalkBack sürümü belirtilmedi.
+**Kapı Q3:** TalkBack yolculuğu · koyu tema · metinler kaynakta. — **16 Ekim 2026: kod birleşti, kapı açık.** Q3.1–Q3.4 #30, #31, #32 ve #34 ile ana dala birleşti. Kullanıcı 16 Ekim’de gerçek telefonda ana TalkBack yolculuğunu sorunsuz tamamladığını ve **mağazadaki 48 / 2.0.0** paketini denediğini doğruladı. Yeni erişilebilirlik kodunu içeren, artık dahili testteki 49 paketinde kabul yapılmadığından kapı açık; cihaz ve TalkBack sürümü belirtilmedi.
 
 ### Q4 — İçerik kalitesi · ~8–12 gün · karar: sözlük kaynağı
 
@@ -100,7 +117,7 @@ App Links ile paylaşılan hikâyenin uygulamada açılması (2–3) · ana ekra
 | Q3 | 6–9 | — |
 | Q4 | 8–12 | Sözlük kaynağı |
 | Q5 | 8–12 | — |
-| Q6 | 5–8 | Paylaşım alan adı |
+| Q6 | 5–8 | Alan adı seçildi; uygulama yönlendirmesi açık |
 | **Toplam** | **38–56** | |
 
 Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başlar; Q2 için sağlayıcı kararı Q1 sürerken verilmelidir.
@@ -123,10 +140,10 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q1.5 Kataloğu arka planda yükle | Ana dala birleşti | [#20](https://github.com/yurkenn/english-tales/pull/20) | Ana iş parçacığından 134–173 ms çıktı; debug soğuk açılış ~1,63 → ~1,50 sn |
 | Q1.6 Güncelleme + değerlendirme | Ana dala birleşti | [#21](https://github.com/yurkenn/english-tales/pull/21) | Esnek güncelleme (3 günde bir) + 3. hikâyeden sonra tek değerlendirme isteği |
 | Q1.7 Reklam SDK uyarısı | Ana dala birleşti | [#19](https://github.com/yurkenn/english-tales/pull/19) | Beyan korunarak gerekçeli bastırıldı |
-| Q2.1 Çökme raporlama | Kod birleşti; yayın beyanları açık | [#18](https://github.com/yurkenn/english-tales/pull/18) | Crashlytics; test çökmesi panelde göründü |
+| Q2.1 Çökme raporlama | Kod ve mapping hazır; Data safety incelemede | [#18](https://github.com/yurkenn/english-tales/pull/18) | Crashlytics; önceki test çökmesi panelde göründü. 49 mapping yüklemesi geçti; Data safety incelemeye gönderildi, Google onayı ve yeni paket canlı kabulü açık |
 | Q2.2 Ürün olayları | Ana dala birleşti; canlı kabul açık | [#23](https://github.com/yurkenn/english-tales/pull/23) | Yedi olay, varsayılan kapalı katılım, sabit payload ve D1 cohort |
 | Q2.3 Performans altyapısı | Ana dala birleşti; fiziksel kabul açık | [#26](https://github.com/yurkenn/english-tales/pull/26) | Profil üretimi 2/2, Macrobenchmark 3/3; imzalı APK/AAB profil doğrulaması geçti; [kanıt ve CI](PERFORMANCE.md) |
-| Q2.4 Sürüm otomasyonu | İmzalı GitHub CI doğrulandı; dahili kanal yüklemesi açık | [#29](https://github.com/yurkenn/english-tales/pull/29) | Elle tetiklenen imzalı APK/AAB + `verify_release.py` (sürüm kodu, APK < 15 MB) + isteğe bağlı dahili kanal yüklemesi; yerel 49 adayı ve [ilk GitHub çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) doğrulandı; beş zorunlu secret hazır, Play servis hesabı/yükleme açık; [kurulum](RELEASE_AUTOMATION.md) |
+| Q2.4 Sürüm otomasyonu | CI üretim/doğrulama geçti; dahili yayın elle tamamlandı; otomatik yükleme açık | [#29](https://github.com/yurkenn/english-tales/pull/29), [#67](https://github.com/yurkenn/english-tales/pull/67) | [İlk imzalı CI çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı; beş zorunlu secret ve ortam korumaları hazır. Güncel 49 paketi 23:38 TRT’de Console’dan dahili testte yayımlandı. `PLAY_SERVICE_ACCOUNT_JSON` ve workflow ile yükleme kurulmadı; [kanıt](../../senin-adimlarin.md), [kurulum](RELEASE_AUTOMATION.md) |
 | Q2.5 Kademeli yayın listesi | Hazır; bu belgeyle birlikte #22 | [#22](https://github.com/yurkenn/english-tales/pull/22) | %20 → %50 → %100; izleme, durdurma ve düzeltme kaydı |
 | Q3.1 Metinler kaynakta | Ana dala birleşti | [#30](https://github.com/yurkenn/english-tales/pull/30) | 306 ekran metni `strings.xml`'e taşındı (UI, reklam/analiz tercihleri, güncelleme çubuğu, bildirim); sözcük içeren sabit `Text("…")` 0 ve `verify_repository.py` bunu korur. Tür adları (Günlük yaşam/Macera/Gizem) saklanan veri değeri olduğundan ve ViewModel hata mesajları henüz kaynakta değil |
 | Q3.2 TalkBack rol/etiket | Ana dala birleşti | [#31](https://github.com/yurkenn/english-tales/pull/31) | 24 özel tıklanabilir öğeye rol eklendi (seçim kartları `selectable` + `selectableGroup`); ikonlu geri düğmesine etiket, alıştırma kapatma hedefi 32 → 48 dp. `AccessibilityAuditTest` on ana ekranda etiketsiz veya rolsüz eylem bırakmaz (yerel emülatör 10/10). Kelime bağlantıları cümle metninin bağlantıları olarak okunur. 16 Ekim kullanıcı TalkBack testi mağazadaki 48 / 2.0.0 için sorunsuz; yeni Q3 paketi denenmeli |
@@ -140,7 +157,7 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q4.1 Taslak revizyon aracı | Ana dala birleşti | [#40](https://github.com/yurkenn/english-tales/pull/40) | Paket ile canlı farkından taslak paketi üretir; yayın 49'dan sonra |
 | Q4.3a Dokunma sözlüğü (1. adım) | Ana dala birleşti | [#53](https://github.com/yurkenn/english-tales/pull/53) | Okuyucuda öğrenme kelimesi olmayan her bilinen kelime dokunulur: çevrimdışı sözlük (`glossary/tr.json`) + düzenli çekim kuralları + 153 düzensiz biçim. Öğrenme kelimeleri altı çizili ve kaydedilebilir kalır; sözlük kelimesi yalnız anlam gösterir. Paket metninde dokunulabilir token %12,0 → %13,4 (asıl artış Q4.3b verisiyle). Kişisel kelime kaydı 2. adımda |
 | Q4.3a Kişisel kelimeler (2. adım) | Ana dala birleşti | [#54](https://github.com/yurkenn/english-tales/pull/54) | Sözlük kelimesi okuyucudan "Öğren" ile sözlük biçimi ve anlamıyla kaydedilir (`personal_words`, Room sürüm 8); Kelimelerim ve tüm alıştırmalar onu öğrenme kelimesi gibi kullanır, tekrar aralıkları aynı. Misafir aktarımı taşır. Hesap eşitlemesi 3. adımda |
-| Q4.3a Kişisel kelime eşitlemesi (3. adım) | Ana dala birleşti | [#55](https://github.com/yurkenn/english-tales/pull/55) | `apply_word_event` revizyonsuz `glossary:` kimliklerini kabul eder; kaydetme kelime ve anlamı taşır, `user_personal_words` en yeni anlamı tutar, `get_learning_snapshot` metni döner. Uygulama olayı kuyruğa koyar; uzlaştırma kişisel kelimeyi metniyle kurar veya kaldırır. Migration uygulama sürümünden önce yayımlanmalı |
+| Q4.3a Kişisel kelime eşitlemesi (3. adım) | Ana dala birleşti | [#55](https://github.com/yurkenn/english-tales/pull/55) | `apply_word_event` revizyonsuz `glossary:` kimliklerini kabul eder; kaydetme kelime ve anlamı taşır, `user_personal_words` en yeni anlamı tutar, `get_learning_snapshot` metni döner. Uygulama olayı kuyruğa koyar; uzlaştırma kişisel kelimeyi metniyle kurar veya kaldırır. Migration 16 Ekim’de canlıya uygulandı; 49 cihaz eşitleme kabulü açık |
 | Q4.4 Okuma süresi + süre filtresi | Ana dala birleşti | [#42](https://github.com/yurkenn/english-tales/pull/42) | Kartlarda "~N dk"; kitaplıkta yalnız katalogda bulunan süre aralıkları filtre olarak sunulur |
 | Q4.6 Seviye profili denetimi | Ana dala birleşti | [#56](https://github.com/yurkenn/english-tales/pull/56) | `content:audit` her hikâye için cümle uzunluğu, MATTR çeşitliliği ve katalog sıklık bandı dışı token payını ölçer; seviye başına Q3 + 1,5 × IQR sınırı, aykırı 4 hikâye ve 1 seviye sırası bulgusu. [Sonuçlar](CONTENT_QUALITY_AUDIT.md) |
 | Q4.8 Cümle cümle seslendirme | Ana dala birleşti | [#52](https://github.com/yurkenn/english-tales/pull/52) | Sayfa her cümle ayrı bir seslendirme olarak sıraya girer; okunan cümle vurgulanır. Cümleye basılı tutmak (TalkBack'te "Bu cümleden itibaren dinle" eylemi) o cümleden okutur. Kelime dokunma ve çeviri aynen çalışır |
@@ -152,16 +169,16 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q5.2 Dinleyip seçme | Ana dala birleşti | [#38](https://github.com/yurkenn/english-tales/pull/38) | TTS ile kelimeyi dinleyip seçme; ses yoksa mod gizlenir |
 | Q5.3 Anlama soruları | Ana dala birleşti | [#41](https://github.com/yurkenn/english-tales/pull/41), [#43](https://github.com/yurkenn/english-tales/pull/43) | `story_questions` (ana fikir/ayrıntı/çıkarım, 2–4 seçenek) şema, panel ve araçlarda; okuma sonrası anlama soruları |
 | Q5.5 Bilinen kelime modeli (1. adım) | Ana dala birleşti | [#59](https://github.com/yurkenn/english-tales/pull/59) | Biten hikâyelerde okunan sözlük biçimleri ve okurken bakılan kelimeler cihazda tutulur (Room 9). Aşamalar: görüldü, bakıldı, kaydedildi, tekrar ediliyor, biliniyor. Biliniyor = tekrarda "biliyorum" ya da en az 2 biten hikâyede okunup hiç bakılmamış. Profilde bilinen kelime sayısı |
-| Q5.5 Bilinen kelime eşitlemesi (2. adım) | Ana dala birleşti | [#63](https://github.com/yurkenn/english-tales/pull/63) | `apply_lemma_event` (okuma/bakma), `user_lemma_reads` ve `user_lemma_lookups` yalnız büyüyen kümeler; `get_learning_snapshot` ikisini döner, uygulama birleşimle ekler. Hikâyenin ilk bitişi ve kelimenin ilk açılışı birer olay; tekrarlar kuyruğa girmez. Migration uygulama sürümünden önce yayımlanmalı |
+| Q5.5 Bilinen kelime eşitlemesi (2. adım) | Ana dala birleşti | [#63](https://github.com/yurkenn/english-tales/pull/63) | `apply_lemma_event` (okuma/bakma), `user_lemma_reads` ve `user_lemma_lookups` yalnız büyüyen kümeler; `get_learning_snapshot` ikisini döner, uygulama birleşimle ekler. Hikâyenin ilk bitişi ve kelimenin ilk açılışı birer olay; tekrarlar kuyruğa girmez. Migration 16 Ekim’de canlıya uygulandı; 49 cihaz eşitleme kabulü açık |
 | Q5.6 Kişisel zorluk ve öneri | Ana dala birleşti | [#60](https://github.com/yurkenn/english-tales/pull/60) | Hikâye sayfasında "Bu hikâyede ~N yeni kelime" (öğrenen en az bir kelime bildiğinde). Çalış ekranındaki "Senin için" rafı: bitmemiş hikâyeler, seviyen ve okurun bildiği sözcük oranı (kapsama) yüksek olanlar önce. Kapsama, bilinen kelime modeline (Q5.5) dayanır |
 | Q5.10 İlerleme ve geri bildirim | Ana dala birleşti | [#61](https://github.com/yurkenn/english-tales/pull/61) | Hatırlatıcı, tekrar zamanı gelen kelime varsa sayısını söyler ("Tekrar zamanı gelen 3 kelimen var"). Son 7 gün kartı: bu hafta bitirilen hikâyelerdeki sözcük sayısı ve bilinen kelime sayısı. Hepsi cihazdaki gerçek veriden |
-| Q5.7 FSRS (1. adım: çekirdek + simülasyon) | Ana dala birleşti | [#64](https://github.com/yurkenn/english-tales/pull/64) | FSRS-5 JS referansı ve Kotlin modeli, 28 adımlık ortak vektörle eşit. Simülasyon (20 tohum, 200 kelime, 120 gün): aynı akılda tutmayla %11 daha az tekrar, son ayın günlük yükü 13,3 → 9,3. Zamanlama henüz değişmedi; Android + SQL geçişi 2. adımda. [Ayrıntı](FSRS_PLAN.md) |
-| Q5.7 FSRS (2. adım: geçiş) | PR açık | [#65](https://github.com/yurkenn/english-tales/pull/65) | Tekrar aralığını artık FSRS-5 belirler: uygulama (`LearningPolicy`, Room 10) ve sunucu (`apply_word_event` oynatımı, `private.fsrs_review`) aynı vektörlerle eşit. "Biliyorum" = kararlılık ≥ 21 gün. Eski uygulamalar için `interval_days` kademelerde kalır. Migration uygulama sürümünden önce yayımlanmalı |
+| Q5.7 FSRS (1. adım: çekirdek + simülasyon) | Ana dala birleşti | [#64](https://github.com/yurkenn/english-tales/pull/64) | FSRS-5 JS referansı ve Kotlin modeli, 28 adımlık ortak vektörle eşit. Simülasyon (20 tohum, 200 kelime, 120 gün): aynı akılda tutmayla %11 daha az tekrar, son ayın günlük yükü 13,3 → 9,3. Bu ilk aşama tek başına zamanlamayı değiştirmedi; sonraki #65 geçişi aşağıda canlı uygulama kaydıyla tamamlandı. [Ayrıntı](FSRS_PLAN.md) |
+| Q5.7 FSRS (2. adım: geçiş) | Ana dala birleşti; sunucu canlıda, 49 dahili testte | [#65](https://github.com/yurkenn/english-tales/pull/65) | Tekrar aralığını artık FSRS-5 belirler: uygulama (`LearningPolicy`, Room 10) ve sunucu (`apply_word_event` oynatımı, `private.fsrs_review`) aynı vektörlerle eşit. "Biliyorum" = kararlılık ≥ 21 gün. Eski uygulamalar için `interval_days` kademelerde kalır. Migration 16 Ekim’de canlıya uygulandı; 49 cihaz eşitleme kabulü açık |
 | Q5.8 Alıştırma basamakları (1. adım) | Ana dala birleşti | [#62](https://github.com/yurkenn/english-tales/pull/62) | "Akıllı tekrar" ve günlük plandaki tekrar: öğrenilmekte olan kelime anlam seçme (tanıma), tekrara geçmiş kelime harflerden kurma (hatırlama) sorusuyla gelir. Bağlam ve dinleme ayrı modlar olarak kalır; basamaklar FSRS (Q5.7) ile inceltilecek |
 | Q5.9 Cümle kurma | Ana dala birleşti | [#57](https://github.com/yurkenn/english-tales/pull/57) | Oyna ekranında yeni mod: hikâyedeki 4–10 sözcüklük bir cümlenin karışık sözcüklerini doğru sıraya koy; Türkçe anlamı ipucu, seçilen sözcük geri alınabilir, tekrar eden sözcükler birbirinin yerine geçer. Seviyendeki cümleler önce; oturum `choice` olarak sayılır |
 | Q5.9 Dikte | Ana dala birleşti | [#58](https://github.com/yurkenn/english-tales/pull/58) | "Dinle ve yaz": aynı kısa hikâye cümleleri seslendirilir, öğrenen yazar; büyük/küçük harf ve noktalama sayılmaz, her farklı/eksik/fazla sözcük sayılır. Cihazda İngilizce ses yoksa mod görünmez; oturum `choice` |
 | Q5.4 Seviye yerleştirme | Ana dala birleşti | [#27](https://github.com/yurkenn/english-tales/pull/27) | Onboarding/Ayarlar’da dokuz soru, A1–B1 başlangıç önerisi; [kapsam](READING_PLACEMENT.md) |
-| Q6 Ana ekran widget'ı | Ana dala birleşti | [#39](https://github.com/yurkenn/english-tales/pull/39) | Glance widget'ı: seri, günlük hedef ve tekrarı gelen kelime sayısı; dokununca günlük plan açılır. App Links paylaşım alan adı kararı bekliyor |
+| Q6 Ana ekran widget'ı | Ana dala birleşti | [#39](https://github.com/yurkenn/english-tales/pull/39) | Glance widget'ı: seri, günlük hedef ve tekrarı gelen kelime sayısı; dokununca günlük plan açılır. App Links alan adı seçildi; ayrı uygulama yönlendirmesi açık |
 
 ## 6. Birleşik doğrulama — 15 Ekim 2026
 
@@ -173,4 +190,17 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 - Yerel emülatör sistem izinleri nedeniyle başlatılamadı; cihaz testleri GitHub emülatöründe yapıldı. Mevcut çalışma dizini ve özel ayarlar korundu; entegrasyon geçici kopyada doğrulandı.
 - Crashlytics mapping yükleme işi bu yerel paket kontrolünde çalıştırılmadı. Gerçek Play teslimatı, üretilen split paketler, gerçek 16 KB cihazı ve fiziksel ses kesintisi bu çalışmada yeniden doğrulanmadı.
 
-**Q2 hâlâ açık:** Q2.2 ürün olayları [isteğe bağlı Analytics katmanında](PRODUCT_ANALYTICS.md) uygulandı; canlı panel kabulü açık. Q2.3 [Macrobenchmark/Baseline Profile altyapısı](PERFORMANCE.md) eklendi; kaynak profilleri kalıcı depoya kaydedildi, yerel üç senaryo ve imzalı APK/AAB profil kontrolleri geçti. PR #26 CI kontrolleri başarılı ve ana dala birleşti; fiziksel cihaz karşılaştırması ve TTFD açık. Q2.4 [imzalı CI/dahili kanal otomasyonu](RELEASE_AUTOMATION.md) eklendi; `release` ortamı, beş zorunlu secret ve 49 / 2.1.0 için ilk yüklemesiz GitHub çalıştırması 16 Ekim’de tamamlandı; Play servis hesabı ve dahili kanal yüklemesi açık. Q2.1 kodu ve önceki test çökmesi kaydı hazır; gizlilik yayını CLI ile tamamlandı; [Play veri güvenliği beyanı](CRASH_REPORTING.md) 16 Ekim’de güncellendi ve incelemeye gönderildi; Google onayı bekleniyor. Q2.5 [kademeli yayın kontrol listesi](STAGED_RELEASE.md) hazırdır; Console dağıtımı veya otomatik izleme kurulmuş sayılmaz.
+## 7. Güncel kabul sırası ve açık kapılar
+
+- [x] 49 için imzalı paket, 94 release JVM / 144 backend testi ve kaynak master CI; yedi migration’ın canlı uygulaması.
+- [x] 49’un mevcut tek kişilik listeye **elle** dahili yayını; [test bağlantısı](https://play.google.com/apps/internaltest/4701713728242169635).
+- [ ] **Telefon kabulü:** Play’den 48→49 güncelle; sürüm 2.1.0 / 49’u doğrula. Giriş/yeniden açılış, okuma konumu, kaydedilen kelimeler/tekrar planı, favoriler ve kişisel/bilinen kelime eşitlemesi korunmalı; çevrimdışı okuma ve ses kesintileri denenmeli. Play split paketleri ve gerçek 16 KB cihaz kontrolü ayrı kaydedilmeli.
+- [ ] **Q3:** 49’da açılış → kitaplık → hikâye → okuma → kelime kaydetme → alıştırma yolunu TalkBack ile tamamla; 48 için alınan olumlu sonucu 49’a taşıma.
+- [ ] **Q2.1/Q2.2:** Data safety inceleme sonucunu doğrula; yeni paket Crashlytics/ANR görünürlüğü, Analytics katılımı kapalı/açık/tekrar kapalı alım kontrolü ve GA retention / `mode` boyutu / cohort ayarlarını tamamla.
+- [ ] **Q2.3:** Fiziksel cihaz performans karşılaştırması ve TTFD. Mevcut Macrobenchmark ve paket profil kontrolü bunların yerine geçmez.
+- [ ] **49 üretim kararı:** [Kademeli yayın kabulü](STAGED_RELEASE.md), güncelleme/veri koruma ve ölçüm kontrollerinden sonra %20 → %50 → %100. 49 şu an yalnız dahili kanalda; üretim 48.
+- [ ] **Q4:** Paket–canlı içerik farkı, A1/A2 kapsama ≥ %60, içerik revizyon yayını ve yeniden denetim. Şema migration’larının uygulanması yeni sözlük/soru içeriklerinin yayımlandığı anlamına gelmez.
+- [ ] **Q6 App Links:** Web ilişkilendirmesi hazır; uygulama rotası ve web karşılığı tamamlanıp kurulu/kurulu değil senaryoları denenmeli.
+- [ ] **İsteğe bağlı:** Yalnız test kanalına yetkili Play servis hesabı + `PLAY_SERVICE_ACCOUNT_JSON`; workflow’un otomatik yükleme yolunu ayrıca doğrula. Elle dahili yayın başarılı olduğu için bu bir paket üretim veya elle yükleme engeli değildir.
+
+**Q2 ve Q3 açık kalır.** Otomatik teknik paket doğrulaması ile elle Play yayını, Console’daki dahili erişim ile gerçek telefon kabulü ayrı kaydedilir. PR #67 kaynak/doküman kaydıdır; birleşmesi tek başına üretim yayını değildir.

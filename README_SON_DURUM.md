@@ -2,6 +2,10 @@
 
 Son güncelleme: **16 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
 
+## Güncel yol haritası
+
+[Tamamlananlar ve sıralı kabul listesi](native-android/docs/QUALITY_ROADMAP.md#7-güncel-kabul-sırası-ve-açık-kapılar) 49 dahili yayınına göre güncellendi. Sıradaki ana iş gerçek telefonda **48→49 güncelleme, veri koruma ve 49 TalkBack kabulü**. Canlı ölçüm/Google veri beyanı onayı, fiziksel performans ve üretim yayın kabulü açık. Otomatik paket doğrulaması hazır; Play’e bu yükleme elle yapıldı, tam yükleme otomasyonu isteğe bağlı olarak açık. [Ayrıntılı kayıt](senin-adimlarin.md).
+
 ## Hesap ve yayın kurulumu — 16 Ekim 2026
 
 Canlı Play Console’da **48 / 2.0.0 üretimde %100** olarak doğrulandı. GitHub `release` ortamı ve beş zorunlu secret kuruldu; **49 / 2.1.0** için [ilk yüklemesiz CI çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı. Daha yeni kaynak commit `6f48040` ile hazırlanan 49 paketi 16 Ekim 23:38 TRT’de dahili testte yayımlandı; üretim 48 olarak kaldı. İlk altı migration’a ek olarak FSRS migration’ı da ayrı onayla canlıya uygulandı; 144 backend testi, yayın yedeğinin yerel geri yüklemesi, içerik bütünlüğü ve RLS kontrolleri geçti. Data safety güncellendi ve Google incelemesine gönderildi. `englishtales-app.web.app` için assetlinks.json yayımlandı, Google `linked: true` doğruladı. [Kanıtlar, migration eşlemesi ve kalan işler](senin-adimlarin.md).
