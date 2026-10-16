@@ -10,7 +10,6 @@ import androidx.compose.ui.test.getBoundsInRoot
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.test.platform.app.InstrumentationRegistry
@@ -51,15 +50,16 @@ class TabletLayoutTest {
 
     @Test fun readerCentresTheTextColumnOnWideScreens() {
         val story=LearningContent.stories.first {it.sentences.size>1}
-        show(DpSize(1280.dp,800.dp)) {
+        val screen=DpSize(1280.dp,800.dp)
+        show(screen) {
             ReaderScreen(story,snapshot,onBack={},onSaveWord={},onProgress={_,_->},onComplete={},onHintDismiss={},
                 sessionId="tablet",onCheckpoint={_,_->},onOpenWords={})
         }
-        val root=compose.onRoot().getBoundsInRoot()
         val sentence=compose.onNodeWithText(story.sentences.first().english,substring=true).getBoundsInRoot()
         assertTrue("text column is capped: $sentence",sentence.right-sentence.left<=ReadingWidth)
-        // Centred: the empty margins on both sides are about the same.
-        val left=sentence.left-root.left; val right=root.right-sentence.right
+        // Centred: the empty margins on both sides are about the same. The forced size, not the emulator window
+        // (onRoot), is the screen the content was laid out on.
+        val left=sentence.left; val right=screen.width-sentence.right
         assertTrue("left=$left right=$right",left>200.dp && right>200.dp)
     }
 
