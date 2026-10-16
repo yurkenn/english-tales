@@ -1,6 +1,19 @@
 # English Tales — 2.0 sonrası geliştirme haritası
 
-İlk sürüm: 15 Ekim 2026 (`b1ae829`). **Yenileme: 15 Ekim 2026, master `8bef30b` + #12.** Durum: öneri; “Tamamlananlar” dışındaki işler uygulanmadı.
+İlk sürüm: 15 Ekim 2026 (`b1ae829`). Yenileme: 15 Ekim 2026, master `8bef30b` + #12. **Durum notu: 16 Ekim 2026, master `fd2b5e4`.**
+
+> **16 Ekim 2026 durum notu.** Bu belgeden sonra #13–#34 ana dala birleşti. Günlük takip artık [kalite yol haritasındadır](QUALITY_ROADMAP.md); aşağıdaki §1–§5 15 Ekim tarihli kayıt olarak korunur. Bu haritadaki işlerden kapananlar:
+>
+> | İş | Sonuç | PR |
+> |---|---|---|
+> | 1.1 Çökme raporlama | Crashlytics kodu birleşti; Play veri güvenliği beyanı açık | [#18](https://github.com/yurkenn/english-tales/pull/18) |
+> | 1.2 Asgari ürün ölçümü | Yedi olay, varsayılan kapalı katılım; canlı panel kabulü açık | [#23](https://github.com/yurkenn/english-tales/pull/23) |
+> | 1.6 TTS ses odağı | Odak kaybında durur, odak bırakılır | [#17](https://github.com/yurkenn/english-tales/pull/17) |
+> | 4.3 Metinler `strings.xml`'de + D12 | 306 metin kaynakta; TalkBack rol/etiket, koyu tema, büyük yazı | [#30](https://github.com/yurkenn/english-tales/pull/30), [#31](https://github.com/yurkenn/english-tales/pull/31), [#32](https://github.com/yurkenn/english-tales/pull/32), [#34](https://github.com/yurkenn/english-tales/pull/34) |
+> | Kotlin uyarıları (§4.7) | `ClickableText` → `LinkAnnotation`; reklam SDK uyarısı gerekçeli bastırıldı | [#19](https://github.com/yurkenn/english-tales/pull/19) |
+> | Ek: seviye testi, cümlede boşluk doldurma | Bu haritada yoktu; kalite haritası Q5.4 ve Q5.1 | [#27](https://github.com/yurkenn/english-tales/pull/27), [#28](https://github.com/yurkenn/english-tales/pull/28) |
+>
+> Paket/canlı farkının boyutu da değişti: [içerik denetimi](CONTENT_QUALITY_AUDIT.md) (#33) farkın yalnız beş pilotta değil **39 hikâyede** olduğunu gösterdi; 0.5 bu kapsamla ele alınır. Açık kalanlar: 0.1–0.6 dış adımlar, 1.4, 2.1b, 2.3–2.5, 3.1b–3.5, 4.1, 4.2, 4.4–4.6.
 
 Bu harita 48 / 2.0.0 sürümünün Google incelemesine gönderildiği noktadan başlar. Önceki planlar ([ürün planı](PRODUCT_ROADMAP.md), [24 iş paketi](DEVELOPMENT_BACKLOG.md)) geçerliliğini korur; bu belge onları bugünkü kod ve Play verisiyle önceliklendirir.
 
@@ -98,10 +111,12 @@ AI destekli açıklama veya konuşma pratiği; topluluk hikâyeleri (F12); iOS (
 
 ## 6. Önerilen sıradaki işler
 
-1. **0.5 + 0.6** — pilot revizyonlarını canlıya al ve 48 onaylanınca 49 adayını hazırla (dış onaylarla).
-2. **1.6 TTS ses odağı** — küçük, #11'i tamamlar.
-3. **4.3 + D12 ilk dilim** — okuyucu ve kitaplık metinlerini `strings.xml`'e taşı, TalkBack etiketlerini tamamla.
-4. **2.3 F01 zayıf kelime tekrarı** — yeni kelime yoğunluğundan sonra öğrenme döngüsünün en büyük kazancı.
+*16 Ekim güncellemesi: 15 Ekim listesindeki 2. ve 3. madde kapandı (#17, #30–#34).*
+
+1. **0.1 + 0.6** — 48'in inceleme sonucunu doğrula; onaylanınca veri güvenliği beyanı, release secret'ları ve CI'dan 49 adayı.
+2. **0.5 genişletilmiş** — 39 hikâyelik paket/canlı farkı için revizyon taslakları; beş A1 pilotu ilk yayın grubu ([içerik denetimi](CONTENT_QUALITY_AUDIT.md)).
+3. **Q3 kapısı** — gerçek TalkBack ile ana yolculuğun elle kaydı.
+4. **2.3 F01 zayıf kelime tekrarı** — ilk aşama [#46](https://github.com/yurkenn/english-tales/pull/46)'da (yerel yanlış kaydı ve öncelik).
 
 ## 7. Senin kararın gereken konular
 

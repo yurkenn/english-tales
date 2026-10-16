@@ -48,11 +48,11 @@ open class ContentHttp(private val base: String, private val key: String) {
             }
         } finally { connection.disconnect() }
     }
-    fun rows(table: String, query: String): JSONArray {
+    fun rows(table: String, query: String, pageSize: Int = 5): JSONArray {
         val all = JSONArray(); var offset = 0
-        // A small page also exercises pagination with the initial six stories.
+        // A small default page also exercises pagination with the initial six stories.
         while (true) {
-            val page = JSONArray(String(bytes("/rest/v1/$table?$query&limit=5&offset=$offset", 2_000_000), Charsets.UTF_8))
+            val page = JSONArray(String(bytes("/rest/v1/$table?$query&limit=$pageSize&offset=$offset", 2_000_000), Charsets.UTF_8))
             for (i in 0 until page.length()) all.put(page.getJSONObject(i))
             if (page.length() == 0) return all
             offset += page.length()
@@ -107,7 +107,14 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private val directory = File(context.filesDir, "published-content").apply { mkdirs() }
     private val index = AtomicFile(File(directory, "catalog.json"))
     private val lock = Mutex()
-    private val bundled = LearningContent.stories.associateBy { it.revisionId }
+    private val bundled = LearningContent.bundledStories.associateBy { it.revisionId }
+    private val bundledByStory = LearningContent.bundledStories.associateBy { it.id }
+    /** Newer published revisions (immutable) whose text and cover match the bundled story; they still open offline. */
+    private val bundledTextIndex = AtomicFile(File(directory, "bundled-text.index"))
+    private val bundledText = mutableMapOf<String, String>()
+    private fun fingerprint(story: Story) = MessageDigest.getInstance("SHA-256")
+        .digest(story.sentences.toString().toByteArray(Charsets.UTF_8))
+        .joinToString("") { "%02x".format(it) }
     private var metadata = JSONArray()
     private var hasRemoteCatalog = false
     private val downloaded = mutableMapOf<String, Story>()
@@ -123,6 +130,10 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 val candidate = JSONArray(read(index))
                 for (i in 0 until candidate.length()) ContentCodec.story(candidate.getJSONObject(i))
                 metadata = candidate; hasRemoteCatalog = true
+            }
+            runCatching {
+                val saved = JSONObject(read(bundledTextIndex))
+                for (key in saved.keys()) bundledText[UUID.fromString(key).toString()] = saved.getString(key)
             }
             directory.listFiles().orEmpty().filter { it.name.endsWith(".json") && it.name != "catalog.json" }.forEach { file ->
                 runCatching {
@@ -148,7 +159,8 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 val doc = metadata.getJSONObject(i); val revision = doc.getString("id")
                 val remote = ContentCodec.story(doc)
                 downloaded[revision]?.copy(addedAt=remote.addedAt)
-                    ?: bundled[revision]?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null,questions=bundled.questions) }
+                    ?: (bundled[revision] ?: bundledByStory[remote.id]?.takeIf { bundledText[revision] == fingerprint(it) })
+                        ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null,questions=bundled.questions) }
                     ?: remote
             }
             LearningContent.install(stories, historical.values.flatMap { it.vocabulary.orEmpty() })
@@ -178,9 +190,32 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             }
             require((0 until result.length()).map {result.getJSONObject(it).getString("story_id")}.distinct().size==result.length()) {"Katalog değişti. Yeniden dene."}
             atomic(index, result.toString().toByteArray(Charsets.UTF_8))
+            // Best effort: on failure these stories only need a download, as before.
+            runCatching { matchBundledText(remote, result) }
             result
         }
         metadata = next; hasRemoteCatalog = true; publish()
+    }
+    private fun matchBundledText(remote: ContentHttp, catalog: JSONArray) {
+        val docs = (0 until catalog.length()).map { catalog.getJSONObject(it) }
+        val current = docs.map { it.getString("id") }.toSet()
+        var changed = bundledText.keys.retainAll(current)
+        val candidates = docs.filter { doc -> val revision = doc.getString("id")
+            revision !in downloaded && revision !in bundled && revision !in bundledText && doc.getString("story_id") in bundledByStory }
+        for (batch in candidates.chunked(50)) {
+            val bundledIds = batch.map { ContentRevisionIds.bundled(it.getString("story_id")) }
+            val covers = remote.rows("story_revisions", "select=id,cover_asset_id&id=in.(${bundledIds.joinToString(",")})&published_at=not.is.null&order=id.asc", 100)
+            val coverByRevision = (0 until covers.length()).associate { covers.getJSONObject(it).let { row -> row.getString("id") to row.getString("cover_asset_id") } }
+            val rows = remote.rows("story_sentences", "select=revision_id,id,english,turkish&revision_id=in.(${batch.joinToString(",") { it.getString("id") }})&order=revision_id.asc,position.asc", 1000)
+            val sentences = (0 until rows.length()).map { rows.getJSONObject(it) }.groupBy({ it.getString("revision_id") }) {
+                StorySentence(it.getString("id"), it.getString("english"), it.getString("turkish")) }
+            for (doc in batch) {
+                val revision = doc.getString("id"); val story = bundledByStory.getValue(doc.getString("story_id"))
+                val sameCover = coverByRevision[ContentRevisionIds.bundled(story.id)]?.let { it == doc.optString("cover_asset_id") } == true
+                if (sameCover && sentences[revision] == story.sentences) { bundledText[revision] = fingerprint(story); changed = true }
+            }
+        }
+        if (changed) atomic(bundledTextIndex, JSONObject().apply { bundledText.forEach { (revision, text) -> put(revision, text) } }.toString().toByteArray(Charsets.UTF_8))
     }
     /** Translation tables are newer than the first releases; until a server has them, the legacy Turkish columns are used. */
     private fun ContentHttp.optionalRows(table: String, query: String) = runCatching { rows(table, query) }.getOrNull()

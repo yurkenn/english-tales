@@ -108,6 +108,17 @@ Yerel fixture doğrulaması: eksik kelime, eksik cümle bağlantısı ve iki ifa
 3. Onaylanan yeni revizyonları yayınladıktan sonra yeni anonim snapshot ile sıkı eşitlik kontrolünü tekrarla.
 4. Ardından A1/A2 kapsamını %60'a çıkarmak için bağlamlı sözlük genişletmesini ayrı içerik çalışması olarak uygula. Hazır 43 ID'nin yayını dahi paket A1/A2 oranlarını %60'a çıkarmaz.
 
+## Revizyonlardan önce uygulama (Q4.1 ön şartı) — 16 Ekim 2026
+
+Canlı klasikler gömülü paketle aynı revizyon kimliğini (`<hikâye>:revision:1`) kullanır. Bu düzeltme olmadan yeni bir revizyon yayımlamak uygulamada o hikâyenin okuma ilerlemesini sıfırlar ve metni indirme gerektiren uzak hikâyeye çevirir. Uygulama artık:
+
+- okuma konumunu, cümle kimliği yeni revizyonda da varsa korur (`ReadingPosition.carriesTo`);
+- metni ve kapağı gömülü hikâyeyle aynı olan yeni yayını tanır ve çevrimdışı gömülü metinden açar. Yayınlanmış revizyonlar değişmediği için sonuç revizyon başına `bundled-text.index` dosyasında saklanır; paket metni değişirse kayıt geçersiz olur.
+
+Taslak üretimi ve yayın sonrası eşitlik kontrolü `npm run content:drafts` ([#40](https://github.com/yurkenn/english-tales/pull/40), ana dalda) ile yapılır. **Taslaklar, bu düzeltmeyi içeren sürüm (49) yayımlanıp kullanıcıların çoğu güncelledikten sonra yayımlanmalıdır**; eski sürümde kalanlar etkilenen hikâyelerde ilerlemeyi sıfırdan görür.
+
+Doğrulama: `RevisionProgressTest` (JVM) ve `RemoteContentTest` içinde iki cihaz testi. Bu ortamda Android SDK olmadığından yalnız CI'da çalışır.
+
 ## 15 Ekim doğrulaması
 
 **74 backend testi** (13 yeni denetim testi dahil) ve admin HTTP uçtan uca kontrolü başarılı. Negatif testler eksik çeviri, bozuk sıra/bağlantı, yanlış revizyon sahibi, eksik revizyon, medya bozulması ve yetersiz kapsamanın reddedildiğini doğruladı. Yerel sıkı kontrol exit 1 verdi; anonim canlı snapshot ve 50 medya dosyası başarıyla okundu. Bu çalışma canlı veri, şema, yayın veya kullanıcı kayıtlarını değiştirmedi. Q4 bütünü henüz tamamlanmadı.

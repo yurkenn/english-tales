@@ -58,6 +58,8 @@ class LearningWriteUiTest {
             LearningStore(context).use {it.writableDatabase.execSQL("DROP TRIGGER fail_save")}
             compose.onNodeWithText("Tekrar dene").performClick()
             compose.waitUntil(5_000) {vm.writeError.value==null && word in vm.state.value.savedWordIds}
+            // The cleared error reaches the bar on the next recomposition, not with the state change itself.
+            compose.waitUntil(5_000) {compose.onAllNodesWithText("Tekrar dene").fetchSemanticsNodes().isEmpty()}
             compose.onNodeWithText("Tekrar dene").assertDoesNotExist()
         } finally {
             InstrumentationRegistry.getInstrumentation().runOnMainSync {holder.clear()}
