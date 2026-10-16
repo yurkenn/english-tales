@@ -1,0 +1,58 @@
+{
+  "versionCode": 49,
+  "versionName": "2.1.0",
+  "baselineProfilePackagingVerified": true,
+  "baselineProfiles": {
+    "baseline-prof.txt": {
+      "rules": 20988,
+      "applicationRules": 1122
+    },
+    "startup-prof.txt": {
+      "rules": 17787,
+      "applicationRules": 855
+    },
+    "apk": {
+      "baseline.prof": {
+        "bytes": 8915,
+        "sha256": "ea6bae451b5c8c9e7a73d8b3bb29ec2e9e7ca572e8d1021ffeaf162fb3e01e0e"
+      },
+      "baseline.profm": {
+        "bytes": 530,
+        "sha256": "c0a9e5298dfa047490932d2b233d538dca8142a22bc4ac35c5823cca87035fa4"
+      }
+    },
+    "aab": {
+      "baseline.prof": {
+        "bytes": 8915,
+        "sha256": "ea6bae451b5c8c9e7a73d8b3bb29ec2e9e7ca572e8d1021ffeaf162fb3e01e0e"
+      },
+      "baseline.profm": {
+        "bytes": 530,
+        "sha256": "c0a9e5298dfa047490932d2b233d538dca8142a22bc4ac35c5823cca87035fa4"
+      }
+    }
+  },
+  "productionServiceVerified": true,
+  "apkSignerMatchesPlay": true,
+  "aabSignatureVerified": true,
+  "apkZipAlignment16KB": true,
+  "adIdPermission": true,
+  "nativeDebugSymbols": [],
+  "elf64Libraries": [
+    "lib/arm64-v8a/libandroidx.graphics.path.so",
+    "lib/x86_64/libandroidx.graphics.path.so"
+  ],
+  "elf64AlignmentPassed": true,
+  "alignmentErrors": [],
+  "apkBytes": 9323769,
+  "aabBytes": 13391538,
+  "apkSHA256": "941ac95434dbf0574c1bb16cbfaf2efff8c5f93b4e0b3beabc5e7517affb7291",
+  "aabSHA256": "2e0433d6341d3d35d7f9cdf868428865a9d9422af52ae39f95e4cc734f19b88b",
+  "limitation": "Static package inspection only; Play-generated split APKs and real 16KB devices still need testing.",
+  "sourceCommit": "6f4804098f715353f2ddab01b7678618451e035a",
+  "masterCommit": "a14fa5f1ec2d5c82ac03038320c3c6b79c396472",
+  "backendTestsPassed": 144,
+  "releaseUnitTests": 94,
+  "releaseUnitTestFailures": 0,
+  "scope": "Local signed package verification; Play upload status is recorded separately in senin-adimlarin.md"
+}

@@ -48,6 +48,14 @@ Doğrulama:
 - Yeni **13 tabloda RLS açık** ve policy var. Kişisel tabloları `anon` okuyamaz. `apply_favorite_event`, `apply_lemma_event`, `apply_word_event`, `admin_tags` ve snapshot için anonim EXECUTE kapalı. Kullanıcı kimliği olmayan authenticated oturumda kişisel kayıtlar görünmüyor; üç yazma RPC'si ve snapshot çağrısı reddediliyor (rollback edilen canlı kontrol, test hesabı oluşturulmadı).
 - Advisor'da yeni RLS eksikliği yok. Authenticated SECURITY DEFINER uyarısı 19 → 22: yeni `admin_tags`, `apply_favorite_event`, `apply_lemma_event` kasıtlı RPC'lerdir; staff/kullanıcı kontrolü ve boş search_path vardır. [Advisor açıklaması](https://supabase.com/docs/guides/database/database-linter?lint=0029_authenticated_security_definer_function_executable). Önceden var olan private tablo policy bilgi kayıtları ve [leaked password protection uyarısı](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection) değişmedi.
 
+## Ek migration — FSRS (49 hazırlığı)
+
+16 Ekim’de son ana dala birleşen `20261016150000_fsrs.sql`, kullanıcıdan bu sohbette ayrıca açık onay alındıktan sonra canlıya uygulandı. Canlı geçmiş: **20261016202236 / fsrs**. Etkilenen dört `user_word_state` kaydı ve önceki `apply_word_event` fonksiyonu ignored `native-android/build/release-setup/pre-fsrs-backup.json` içine, 0600 dosya izniyle kaydedildi; kişisel satırlar Git’e eklenmedi.
+
+Dört kayıt için yeni başlangıç değerleri doğrulandı. Yeni sütunlar çıkarılarak hesaplanan eski satır özeti aynı kaldı; dört kelime olayının sayısı ve özeti değişmedi. Canlı SQL’de **28 FSRS vektörü** referansla eşleşti (aralık farkı 0; en büyük kararlılık farkı 1,34e-15 altında). Backend **144/144**, release JVM **94/94** geçti. Security advisor bulguları öncekiyle aynı.
+
+Yeni yerel **49 / 2.1.0** adayının kaynak commit’i `6f4804098f715353f2ddab01b7678618451e035a` (master `a14fa5f` ve bu kurulum kayıtları). İmzalı APK/AAB üretildi; imza, üretim bağlantısı, baseline profile, AD_ID ve statik 16 KB denetimleri geçti. [Paket raporu](native-android/docs/release-evidence/2026-10-16-internal-49-package.json). Bu paket önceki CI adayından farklıdır; güncel AAB SHA-256 `2e0433d6341d3d35d7f9cdf868428865a9d9422af52ae39f95e4cc734f19b88b`.
+
 ## 4. App Links alan adı — web ilişkilendirmesi hazır
 
 - [x] Kullanıcı `englishtales-app.web.app` seçti.
@@ -66,3 +74,7 @@ Planlanan paylaşım adresi `https://englishtales-app.web.app/story/{id}`. Andro
 ## Play sürümü
 
 16 Ekim canlı Console kontrolü: **48 / 2.0.0**, “Available on Google Play Production”, dağıtım **%100**, yayın tarihi 15 Ekim. **49 / 2.1.0 yalnız CI'da doğrulanmış adaydır; Play'e yüklenmedi.** Data safety incelemesi uygulama sürümü yayınıyla karıştırılmamalıdır.
+
+## 49 dahili test yüklemesi — devam ediyor
+
+Son kaynaklı paket hazır ve yerel doğrulama geçti. Play dahili test taslağı oluşturuldu, 5 dilde sürüm notları girildi. Mevcut tek kişilik tester listesi korundu. AAB yükleme denemesi Chrome ChatGPT eklentisinin “Allow access to file URLs” izni kapalı olduğu için durdu; kullanıcıdan izin ayarını açması istendi. **Henüz AAB yüklenmedi veya dahili kanal yayımlanmadı.**

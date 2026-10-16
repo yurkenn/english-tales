@@ -25,3 +25,7 @@ FSRS aynı akılda tutmayla yaklaşık %11 daha az tekrar ister. Son ayın günl
 2. Eski kayıtlar şöyle taşınır: kararlılık = mevcut aralık (en az 0,4), zorluk = 5.
 3. `apply_word_event` olay oynatımında FSRS kullanılır. Android `LearningPolicy.review` aynı vektörlerle test edilir.
 4. "known" durumu kararlılık ≥ 21 gün olur; Q5.5 ve Q5.8 bu durumu kullanmaya devam eder.
+
+## Canlı uygulama — 16 Ekim 2026
+
+Kullanıcının ayrı açık onayıyla `20261016150000_fsrs.sql` üretime uygulandı (canlı migration `20261016202236 / fsrs`). Dört mevcut kelime durumunun önceki alanları ve dört olay kaydı korundu; yeni başlangıç değerleri denetlendi. Önceki durum/fonksiyon özel yerel yedeğe alındı. 28 canlı SQL vektöründe aralık farkı 0; backend 144/144 ve release JVM 94/94 geçti. Bu sonuç, telefonda güncelleme/ilerleme koruma testinin yerine geçmez. [49 paket hazırlığı ve yayın kaydı](../../senin-adimlarin.md).
