@@ -38,13 +38,15 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var gapQuestions by rememberSaveable(stateSaver=gapQuestionsSaver) { mutableStateOf(emptyList<GapQuestion>()) }
     var gapUnavailable by rememberSaveable { mutableStateOf(false) }
     var listenQuestions by rememberSaveable(stateSaver=listeningQuestionsSaver) { mutableStateOf(emptyList<ListeningQuestion>()) }
+    var orderQuestions by rememberSaveable(stateSaver=orderQuestionsSaver) { mutableStateOf(emptyList<OrderQuestion>()) }
     val stories=LearningContent.stories
     val dictionary=LearningContent.words
     val gapPrompts by produceState<List<GapPrompt>?>(null,stories,dictionary) {
         value=withContext(Dispatchers.Default) {SentenceGap.prompts(stories,dictionary)}
         gapUnavailable=false
     }
-    val sessionKind=when(mode) {"cloze"->SentenceGap.SESSION_KIND;"listen"->ListeningQuiz.SESSION_KIND;else->mode}
+    val orderCandidates=remember(stories) {SentenceOrder.candidates(stories)}
+    val sessionKind=when(mode) {"cloze"->SentenceGap.SESSION_KIND;"listen"->ListeningQuiz.SESSION_KIND;"order"->SentenceOrder.SESSION_KIND;else->mode}
     fun exit(plan: Boolean=false) {
         val leave={onSessionAbandoned(sessionKey);mode="";if(plan) onDailyPlan()}
         if(plan && finished) {
@@ -62,11 +64,15 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             gapUnavailable=gapQuestions.isEmpty()
             if(gapUnavailable) {if(mode.isNotEmpty()) exit();return}
         }
+        if(value=="order") {
+            orderQuestions=SentenceOrder.session(orderCandidates,snapshot.level)
+            if(orderQuestions.isEmpty()) {if(mode.isNotEmpty()) exit();return}
+        }
         if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
         val priority=ReviewFocus.order(seeded,snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}).mapNotNull(snapshot::wordFor)
         val pool=if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else (priority+supplemental.shuffled()).distinctBy {it.id}.take(5)
         sessionKey=java.util.UUID.randomUUID().toString()
-        session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
+        session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else if(value=="order") orderQuestions.map {it.sentenceId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
         if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(snapshot::wordFor),dictionary)
     }
     LaunchedEffect(launchId) { if(launchId!=null) { start("choice",launchWordIds);onLaunchConsumed() } }
@@ -88,6 +94,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),"headphones",LocalTaleColors.current.tileBlue,enabled=voice.available==true) {start("listen")}
             if(voice.available!=true) Text(stringResource(if(voice.available==null) R.string.listen_preparing else R.string.listen_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
+            if(orderCandidates.isNotEmpty()) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),"read",LocalTaleColors.current.tileGreen) {start("order")}
             ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),"play",LocalTaleColors.current.tilePurple) {start("match")}
             ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),"letters",LocalTaleColors.current.tileGreen) {start("spell")}
         }
@@ -95,7 +102,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     }
     val words=ids.mapNotNull(snapshot::wordFor)
     val timer=rememberActiveLearningTime(sessionKey,snapshot.activeSessionMillis[sessionKey]?:0,!finished,onCheckpoint)
-    val count=if(mode=="cloze") gapQuestions.size else words.size
+    val count=if(mode=="cloze") gapQuestions.size else if(mode=="order") orderQuestions.size else words.size
     val complete: (Int)->Unit = {finished=true;onLessonComplete(it,sessionKey,sessionKind,count,timer.pause())}
     if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("card")},snapshot);return }
     if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("match")},snapshot);return }
@@ -103,6 +110,10 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     if(mode=="listen") {
         ListeningGame(listenQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
             onComplete={correctCount=it;complete(it)},onExit={exit()})
+        return
+    }
+    if(mode=="order") {
+        SentenceOrderGame(orderQuestions,session,padding,onComplete={correctCount=it;complete(it)},onExit={exit()})
         return
     }
     if(mode=="cloze") {
