@@ -19,9 +19,9 @@ FSRS aynı akılda tutmayla yaklaşık %11 daha az tekrar ister. Son ayın günl
 
 **Sınır:** Sanal öğrenenin belleği FSRS modeliyle üretildiği için sonuç FSRS lehine eğilimlidir. Bu bir saha ölçümü değildir; geçişten sonra gerçek doğru oranı ve günlük yük izlenmelidir.
 
-## 2. adım: geçiş (plan)
+## 2. adım: geçiş (#65)
 
-1. `user_word_state` ve yerel `saved_words` tablolarına `stability` ve `difficulty` eklenir; `interval_days` kısıtı kaldırılır.
+1. `user_word_state` ve yerel `saved_words` tablolarına `stability`, `difficulty` ve `last_reviewed_at` eklenir. Sunucuda `interval_days` eski uygulamalar için kademelerde kalır; gerçek takvim `next_review_at`.
 2. Eski kayıtlar şöyle taşınır: kararlılık = mevcut aralık (en az 0,4), zorluk = 5.
 3. `apply_word_event` olay oynatımında FSRS kullanılır. Android `LearningPolicy.review` aynı vektörlerle test edilir.
 4. "known" durumu kararlılık ≥ 21 gün olur; Q5.5 ve Q5.8 bu durumu kullanmaya devam eder.

@@ -16,7 +16,9 @@ data class CloudLearningWord(val id: String, val saved: Boolean, val state: Stri
     val dueAt: Long?, val intervalDays: Int, val successDay: String?, val eventId: String,
     val sourceRevisionId: String?, val updatedAt: Long,
     /** Saved glossary words (Q4.3a) carry their text; learning words come from the catalog. */
-    val word: String? = null, val gloss: String? = null)
+    val word: String? = null, val gloss: String? = null,
+    /** Q5.7 FSRS memory; null from servers before FSRS or for words never answered. */
+    val stability: Double? = null, val difficulty: Double? = null, val lastReviewedAt: Long? = null)
 data class CloudLearningProgress(val revisionId: String, val storyId: String, val sentenceId: String,
     val percent: Int, val eventAt: Long, val eventId: String, val updatedAt: Long,
     val eventAtIso: String = Instant.ofEpochMilli(eventAt).toString())
@@ -46,7 +48,9 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
             .put("next_review_at", w.dueAt?.let { Instant.ofEpochMilli(it).toString() } ?: JSONObject.NULL).put("interval_days", w.intervalDays)
             .put("last_success_day", w.successDay ?: JSONObject.NULL).put("last_event_id", w.eventId)
             .put("source_revision_id", w.sourceRevisionId ?: JSONObject.NULL).put("updated_at", Instant.ofEpochMilli(w.updatedAt).toString())
-            .also { o -> if (w.word != null && w.gloss != null) o.put("word", w.word).put("gloss", w.gloss) }) } })
+            .also { o -> if (w.word != null && w.gloss != null) o.put("word", w.word).put("gloss", w.gloss) }
+            .also { o -> if (w.stability != null && w.difficulty != null) o.put("stability", w.stability).put("difficulty", w.difficulty)
+                .put("last_reviewed_at", w.lastReviewedAt?.let { Instant.ofEpochMilli(it).toString() } ?: JSONObject.NULL) }) } })
         .put("progress", JSONArray().also { a -> progress.forEach { p -> a.put(JSONObject().put("revision_id", p.revisionId)
             .put("story_id", p.storyId).put("last_sentence_id", p.sentenceId).put("percent", p.percent).put("last_event_at", p.eventAtIso)
             .put("last_event_id", p.eventId).put("updated_at", Instant.ofEpochMilli(p.updatedAt).toString())) } })
@@ -91,7 +95,9 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
                 CloudLearningWord(text(w, "word_id"), boolean(w, "saved"), state, number(w, "correct_count", 0, 100).toInt(),
                     nullableText(w, "next_review_at")?.let(::timestamp), interval, nullableText(w, "last_success_day")?.let(::day),
                     uuid(text(w, "last_event_id")), nullableText(w, "source_revision_id")?.let(::uuid), timestamp(text(w, "updated_at")),
-                    if (w.has("word") && !w.isNull("word")) text(w, "word", 100) else null, if (w.has("gloss") && !w.isNull("gloss")) text(w, "gloss", 1000) else null)
+                    if (w.has("word") && !w.isNull("word")) text(w, "word", 100) else null, if (w.has("gloss") && !w.isNull("gloss")) text(w, "gloss", 1000) else null,
+                    real(w, "stability", 0.0, 1e6), real(w, "difficulty", 1.0, 10.0),
+                    if (w.has("last_reviewed_at") && !w.isNull("last_reviewed_at")) timestamp(text(w, "last_reviewed_at")) else null)
             }.also { unique(it.map { w -> w.id }) }
             val progress = rows(json, "progress", 5_000).map { p ->
                 CloudLearningProgress(uuid(text(p, "revision_id")), text(p, "story_id"), text(p, "last_sentence_id"),
@@ -129,6 +135,9 @@ data class LearningCloudSnapshot(val userId: String, val capturedAt: Long, val p
         private fun nullableText(json: JSONObject, field: String): String? =
             if (json.get(field) === JSONObject.NULL) null else text(json, field)
         private fun boolean(json: JSONObject, field: String) = json.get(field) as Boolean
+        /** An optional finite number in [min, max]; absent or null reads as null. */
+        private fun real(json: JSONObject, field: String, min: Double, max: Double): Double? =
+            if (!json.has(field) || json.isNull(field)) null else (json.get(field) as Number).toDouble().also { require(it.isFinite() && it >= min && it <= max) }
         private fun number(json: JSONObject, field: String, min: Long, max: Long): Long {
             val value = json.get(field)
             require(value is Int || value is Long)
