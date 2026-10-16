@@ -63,6 +63,12 @@ data class FavoriteStoryRow(@PrimaryKey @ColumnInfo(name="story_id") val storyId
 @Entity(tableName="personal_words")
 data class PersonalWordRow(@PrimaryKey @ColumnInfo(name="word_id") val wordId: String,val word: String,val gloss: String,@ColumnInfo(name="added_at") val addedAt: Long)
 
+/** Q5.5: the dictionary forms read in each finished story, and those the learner looked up while reading. */
+@Entity(tableName="lemma_reads",primaryKeys=["lemma","story_id"])
+data class LemmaReadRow(val lemma: String,@ColumnInfo(name="story_id") val storyId: String)
+@Entity(tableName="lemma_lookups")
+data class LemmaLookupRow(@PrimaryKey val lemma: String,@ColumnInfo(name="looked_up_at") val lookedUpAt: Long)
+
 @Entity(tableName="guest_transfers")
 data class GuestTransferRow(@PrimaryKey val id: String,@ColumnInfo(name="target_user_id") val target: String,
     val payload: String,val state: String,@ColumnInfo(name="created_at") val createdAt: Long)
@@ -109,7 +115,7 @@ sealed class LearningOwner(val id: String,val databaseName: String) {
 
 @Database(entities=[SavedWordRow::class,StoryProgressRow::class,LearningStatsRow::class,LearningDayRow::class,
     EngagementRow::class,BadgeRow::class,LocalProfileRow::class,LocalIdentityRow::class,QueuedLearningOperation::class,SessionDraftRow::class,
-    GuestTransferRow::class,GuestImportRow::class,LearningCloudStateRow::class,FavoriteStoryRow::class,PersonalWordRow::class],version=8,exportSchema=true)
+    GuestTransferRow::class,GuestImportRow::class,LearningCloudStateRow::class,FavoriteStoryRow::class,PersonalWordRow::class,LemmaReadRow::class,LemmaLookupRow::class],version=9,exportSchema=true)
 abstract class LearningDatabase: RoomDatabase() {
     abstract fun offline(): OfflineLearningDao
     companion object {
@@ -154,6 +160,10 @@ abstract class LearningDatabase: RoomDatabase() {
                 }})
                 .addMigrations(object: Migration(7,8) {override fun migrate(db: SupportSQLiteDatabase) {
                     db.execSQL("CREATE TABLE personal_words(word_id TEXT NOT NULL PRIMARY KEY,word TEXT NOT NULL,gloss TEXT NOT NULL,added_at INTEGER NOT NULL)")
+                }})
+                .addMigrations(object: Migration(8,9) {override fun migrate(db: SupportSQLiteDatabase) {
+                    db.execSQL("CREATE TABLE lemma_reads(lemma TEXT NOT NULL,story_id TEXT NOT NULL,PRIMARY KEY(lemma,story_id))")
+                    db.execSQL("CREATE TABLE lemma_lookups(lemma TEXT NOT NULL PRIMARY KEY,looked_up_at INTEGER NOT NULL)")
                 }})
                 .addCallback(object: Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) { initialize(db,owner.id,initial);db.execSQL("INSERT INTO learning_stats(id) VALUES(1)") }

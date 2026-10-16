@@ -170,6 +170,23 @@ class LearningStoreTest {
         assertThrows(IllegalArgumentException::class.java) {store.savePersonalWord(WordInfo("walk","walk","yürümek","",""))}
         assertThrows(IllegalArgumentException::class.java) {store.setWordSaved("glossary:unknown",true)}
     }
+    @Test fun wordsReadInTwoFinishedStoriesBecomeKnownUnlessLookedUp() {
+        val (first,second)=LearningContent.stories.take(2)
+        val shared=first.sentences.flatMap {WordKnowledge.lemmas(it.english)}.toSet() intersect second.sentences.flatMap {WordKnowledge.lemmas(it.english)}.toSet()
+        val word=shared.first();val other=shared.drop(1).first()
+        store.completeReading(first.id)
+        assertEquals(WordStage.SEEN,store.snapshot().wordStages[word])
+        store.completeReading(second.id);store.completeReading(second.id)
+        var snapshot=store.snapshot()
+        assertEquals(WordStage.KNOWN,snapshot.wordStages[word]);assertTrue(snapshot.knownWordCount>=shared.size)
+        // Looking a word up while reading takes it out of "known" until it is practised.
+        store.recordLookup(WordInfo("glossary:$word",word,"x","",""))
+        store.close();store=LearningStore(context) {now}
+        snapshot=store.snapshot()
+        assertEquals(WordStage.LOOKED_UP,snapshot.wordStages[word]);assertEquals(WordStage.KNOWN,snapshot.wordStages[other])
+        // Reading a story again does not count twice.
+        assertEquals(snapshot.knownWordCount,store.also {it.completeReading(first.id)}.snapshot().knownWordCount)
+    }
     @Test fun progressDoesNotRegressAndPreferencesPersist() {
         store.updateProgress("quiet-morning",88);store.updateProgress("quiet-morning",10)
         store.updatePreferences("B1","Gizem",3,"Ada")
@@ -194,7 +211,7 @@ class LearningStoreTest {
         store=LearningStore(context) {now}
         assertEquals(125,store.snapshot().points);assertEquals(88,store.snapshot().storyProgress["quiet-morning"])
         assertEquals("known",store.snapshot().wordStates["quiet"]);assertEquals(listOf("quiet"),store.snapshot().dueWordIds)
-        assertEquals(8,store.readableDatabase.version)
+        assertEquals(9,store.readableDatabase.version)
     }
 
     @Test fun versionOneMigrationKeepsExistingProgress() {
@@ -208,7 +225,7 @@ class LearningStoreTest {
         }
         store=LearningStore(context) {now}
         assertEquals(25,store.snapshot().points);assertEquals(44,store.snapshot().storyProgress["quiet-morning"])
-        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(8,store.readableDatabase.version)
+        assertEquals("learning",store.snapshot().wordStates["quiet"]);assertEquals(9,store.readableDatabase.version)
         assertTrue(store.queuedOperations().isEmpty())
     }
 
