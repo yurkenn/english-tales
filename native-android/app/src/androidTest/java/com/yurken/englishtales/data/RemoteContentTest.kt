@@ -71,6 +71,47 @@ class RemoteContentTest {
             return JSONArray(rows.drop(offset).take(5)).toString().toByteArray()
         }
     }
+    /** A bundled story whose live story now points at a newer published revision. */
+    private class RevisionFixture(val story: Story, val editedText: Boolean=false, val newCover: Boolean=false): ContentHttp("https://example.invalid","sb_publishable_test") {
+        val revision=UUID.randomUUID().toString()
+        val cover=UUID.randomUUID().toString()
+        var fail=false
+        private fun doc(id: String,coverId: String)=JSONObject().put("id",id).put("story_id",story.id).put("title",story.title).put("author",story.author)
+            .put("level",story.level).put("genre",story.genre).put("description",story.description).put("published_at","2026-10-16T00:00:00Z").put("cover_asset_id",coverId)
+        private val revisions=listOf(doc(story.revisionId,cover),doc(revision,if(newCover) UUID.randomUUID().toString() else cover))
+        override fun bytes(path: String,maxBytes: Long): ByteArray {
+            check(!fail) {"Simulated network failure"}
+            val uri=android.net.Uri.parse("https://example.invalid$path")
+            fun ids(name: String)=uri.getQueryParameter(name)?.removePrefix("in.(")?.removePrefix("eq.")?.removeSuffix(")")?.split(",")?.toSet()
+            val rows=when(uri.lastPathSegment) {
+                "stories" -> listOf(JSONObject().put("id",story.id).put("current_revision_id",revision))
+                "story_revisions" -> revisions.filter {it.getString("id") in ids("id")!!}
+                "story_sentences" -> ids("revision_id")!!.flatMap {id -> story.sentences.mapIndexed {i,s ->
+                    JSONObject().put("revision_id",id).put("id",s.id).put("position",i+1).put("english",if(editedText&&i==0) s.english+" Again." else s.english).put("turkish",s.component3())}}
+                else -> error("Unexpected table")
+            }
+            val offset=uri.getQueryParameter("offset")!!.toInt(); val limit=uri.getQueryParameter("limit")!!.toInt()
+            return JSONArray(rows.drop(offset).take(limit)).toString().toByteArray()
+        }
+    }
+    @Test fun newerRevisionWithBundledTextStaysReadableOffline()=runBlocking {
+        val story=original.first(); val fixture=RevisionFixture(story)
+        val repo=ContentRepository(context,fixture); repo.restore(); repo.refresh()
+        val current=LearningContent.storyById.getValue(story.id)
+        assertEquals(fixture.revision,current.revisionId); assertEquals(story.sentences,current.sentences)
+        assertFalse(repo.isDownloaded(current))
+        fixture.fail=true
+        ContentRepository(context,fixture).restore()
+        assertEquals(story.sentences,LearningContent.storyById.getValue(story.id).sentences)
+    }
+    @Test fun newerRevisionWithChangedTextOrCoverNeedsDownload()=runBlocking {
+        for(fixture in listOf(RevisionFixture(original.first(),editedText=true),RevisionFixture(original.first(),newCover=true))) {
+            File(directory,"published-content").deleteRecursively()
+            val repo=ContentRepository(context,fixture); repo.restore(); repo.refresh()
+            val current=LearningContent.storyById.getValue(fixture.story.id)
+            assertEquals(fixture.revision,current.revisionId); assertTrue(current.sentences.isEmpty())
+        }
+    }
     @Test fun paginatedDownloadSurvivesOfflineRestart()=runBlocking {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)
         repo.restore(); repo.refresh()
