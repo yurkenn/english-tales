@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "lang": "tr",
- "source": "Irregular English forms (hand-written list). Meanings arrive with Q4.3b; until then learning words supply them.",
+ "source": "Built by tools/glossary.mjs from backend/content/glossary/tr.json: cross-checked entries only.",
  "entries": [],
  "forms": {
   "am": "be",
