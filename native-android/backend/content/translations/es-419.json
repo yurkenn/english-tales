@@ -44,7 +44,7 @@
   "station": "estación",
   "platform": "andén",
   "bench": "banca, banco",
-  "safely": "de forma segura",
+  "safely": "a salvo, de forma segura",
   "attic": "ático, desván",
   "chest": "baúl, cofre",
   "envelope": "sobre",
@@ -61,7 +61,7 @@
   "steady": "constante",
   "lion": "león",
   "mouse": "ratón",
-  "paw": "pata, garra",
+  "paw": "zarpa, pata",
   "ropes": "cuerdas",
   "teeth": "dientes",
   "sharp": "afilado",
@@ -151,7 +151,7 @@
   "liar": "mentiroso",
   "truth": "verdad",
   "trust": "confianza",
-  "country": "campo; país",
+  "country": "campo",
   "meal": "comida",
   "dinner": "cena",
   "mice": "ratones",
@@ -460,7 +460,7 @@
     "last-train-15": "Lily lo saludó con la mano desde el andén cuando él llegó.",
     "last-train-16": "Subieron justo antes de que se cerraran las puertas.",
     "last-train-17": "Por la ventana, vieron desaparecer las luces del pueblo.",
-    "last-train-18": "Sam guardó el boleto de forma segura en su bolsillo y por fin empezó a reír."
+    "last-train-18": "Sam guardó el boleto a salvo en su bolsillo y por fin empezó a reír."
    }
   },
   "attic-letter": {
@@ -516,7 +516,7 @@
     "cl-lion-mouse-04": "\"Por favor, déjame ir\", dice la ratoncita.",
     "cl-lion-mouse-05": "\"Algún día puedo ayudarte.\"",
     "cl-lion-mouse-06": "El león se ríe de este animalito.",
-    "cl-lion-mouse-07": "Pero abre la garra y la deja ir.",
+    "cl-lion-mouse-07": "Pero abre la zarpa y la deja ir.",
     "cl-lion-mouse-08": "Más tarde, unos cazadores atrapan al león.",
     "cl-lion-mouse-09": "Lo atan al suelo con cuerdas fuertes.",
     "cl-lion-mouse-10": "El león no puede moverse, y ruge.",
@@ -694,7 +694,7 @@
     "cl-hansel-gretel-23": "Cerró la puerta, y la bruja murió adentro.",
     "cl-hansel-gretel-24": "Gretel liberó a su hermano, y se abrazaron.",
     "cl-hansel-gretel-25": "Encontraron joyas en la casa y se llenaron los bolsillos.",
-    "cl-hansel-gretel-26": "De camino a casa, una pata los llevó al otro lado de un río, uno a la vez.",
+    "cl-hansel-gretel-26": "De camino a casa, una pata los llevó al otro lado del agua, uno a la vez.",
     "cl-hansel-gretel-27": "Pronto reconocieron el bosque y encontraron la casa de su padre.",
     "cl-hansel-gretel-28": "Su madrastra había muerto, y su padre los recibió con alegría.",
     "cl-hansel-gretel-29": "Las joyas acabaron con su hambre, y la familia vivió feliz junta."
@@ -738,7 +738,7 @@
   "classic-selfish-giant": {
    "description": "El gigante egoísta. La vida de un gigante que cierra su jardín a los niños y cambia cuando aprende a compartir. Adaptación breve de nivel B1. Adaptación: English Tales. Imagen histórica: Charles Robinson; ilustración interior del libro, no es una portada aparte de primera edición.",
    "sentences": {
-    "cl-selfish-giant-01": "Todas las tardes, unos niños jugaban en un hermoso jardín lleno de duraznos.",
+    "cl-selfish-giant-01": "Todas las tardes, unos niños jugaban en un hermoso jardín lleno de durazneros.",
     "cl-selfish-giant-02": "El jardín era de un gigante que había estado fuera durante siete años.",
     "cl-selfish-giant-03": "Cuando regresó, les ordenó a los niños con enojo que se fueran.",
     "cl-selfish-giant-04": "Construyó un muro alto porque quería el jardín solo para él.",
@@ -904,7 +904,7 @@
     "cl-north-wind-sun-01": "El Viento del Norte y el Sol discuten.",
     "cl-north-wind-sun-02": "Cada uno cree que es el más fuerte.",
     "cl-north-wind-sun-03": "Ven a un viajero en el camino.",
-    "cl-north-wind-sun-04": "Lleva un abrigo caliente.",
+    "cl-north-wind-sun-04": "Lleva un abrigo grueso.",
     "cl-north-wind-sun-05": "\"Hagamos que se quite el abrigo\", dice el Viento.",
     "cl-north-wind-sun-06": "El Viento sopla tan fuerte como puede.",
     "cl-north-wind-sun-07": "El viajero se ajusta más el abrigo.",
@@ -1427,7 +1427,7 @@
   "classic-thumbelina": {
    "description": "Pulgarcita. El viaje de una niña diminuta entre sapos, topos y una golondrina. Adaptación breve de nivel B1. Adaptación: English Tales. Imagen histórica: Vilhelm Pedersen; ilustración interior del libro, no es una portada aparte de primera edición.",
    "sentences": {
-    "cl-thumbelina-01": "Una mujer que deseaba mucho tener una hija recibió de un hada una semilla de cebada especial.",
+    "cl-thumbelina-01": "Una mujer que deseaba mucho tener un hijo recibió de un hada una semilla de cebada especial.",
     "cl-thumbelina-02": "Cuando la plantó, se abrió una flor y apareció una niña no más alta que un pulgar.",
     "cl-thumbelina-03": "Llamó a la niña Pulgarcita y le hizo una cama en una cáscara de nuez.",
     "cl-thumbelina-04": "Una noche, una sapa se llevó a la niña dormida para casarla con su hijo.",

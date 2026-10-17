@@ -162,7 +162,7 @@
   "traveler": "pengembara, musafir",
   "argue": "berdebat",
   "stronger": "lebih kuat",
-  "force": "kekuatan, paksaan",
+  "force": "kekuatan, paksaan, kekerasan",
   "gentleness": "kelembutan",
   "hen": "ayam betina",
   "golden": "emas",
@@ -181,7 +181,7 @@
   "voice": "suara",
   "proud": "bangga",
   "sense": "akal sehat",
-  "flattery": "rayuan, pujian kosong",
+  "flattery": "sanjungan, pujian kosong",
   "ant": "semut",
   "dove": "burung merpati",
   "current": "arus",
@@ -318,7 +318,7 @@
   "hunger": "kelaparan",
   "tin": "timah",
   "dancer": "penari",
-  "goblin": "jin, goblin",
+  "goblin": "goblin, makhluk kecil jahat",
   "gutter": "selokan, talang",
   "rat": "tikus got",
   "passport": "paspor",
@@ -727,12 +727,12 @@
     "cl-happy-prince-22": "Saat patung itu menjadi kusam dan kelabu, anak-anak di jalan akhirnya bisa membeli roti.",
     "cl-happy-prince-23": "Musim dingin tiba, tetapi burung layang-layang menolak meninggalkan sahabatnya.",
     "cl-happy-prince-24": "Akhirnya, karena lemah akibat kedinginan, ia mengucapkan selamat tinggal dan mati di kaki Pangeran.",
-    "cl-happy-prince-25": "Pada saat itu, jantung timah patung itu terbelah dua.",
+    "cl-happy-prince-25": "Pada saat itu, hati timah patung itu terbelah dua.",
     "cl-happy-prince-26": "Keesokan paginya, wali kota hanya melihat patung yang jelek dan memerintahkan agar patung itu diturunkan.",
-    "cl-happy-prince-27": "Para pekerja melelehkan logamnya, tetapi jantung yang patah itu tidak mau meleleh.",
+    "cl-happy-prince-27": "Para pekerja melelehkan logamnya, tetapi hati yang patah itu tidak mau meleleh.",
     "cl-happy-prince-28": "Mereka membuangnya di samping burung yang mati itu.",
     "cl-happy-prince-29": "Tuhan meminta seorang malaikat membawakan dua benda yang paling berharga di kota itu.",
-    "cl-happy-prince-30": "Malaikat itu memilih jantung yang patah dan burung layang-layang, dan Tuhan menyambut mereka di surga."
+    "cl-happy-prince-30": "Malaikat itu memilih hati yang patah dan burung layang-layang, dan Tuhan menyambut mereka di surga."
    }
   },
   "classic-selfish-giant": {
@@ -967,7 +967,7 @@
     "cl-fox-crow-11": "Rubah memungutnya dan tertawa.",
     "cl-fox-crow-12": "\"Kamu memang punya suara, tetapi kamu perlu lebih banyak akal sehat,\" katanya.",
     "cl-fox-crow-13": "Burung gagak itu melihat rubah pergi membawa makanannya.",
-    "cl-fox-crow-14": "Rayuan tidak selalu berarti persahabatan."
+    "cl-fox-crow-14": "Sanjungan tidak selalu berarti persahabatan."
    }
   },
   "classic-ant-dove": {
@@ -1154,8 +1154,8 @@
     "cl-frog-prince-16": "Ia menjelaskan bahwa seorang penyihir telah mengubahnya menjadi katak.",
     "cl-frog-prince-17": "Raja setuju bahwa keduanya sebaiknya menikah.",
     "cl-frog-prince-18": "Sebuah kereta kuda datang bersama pelayan setia sang pangeran, Henry si Besi.",
-    "cl-frog-prince-19": "Henry telah memasang gelang-gelang besi di sekeliling hatinya karena kesedihannya.",
-    "cl-frog-prince-20": "Saat tuannya pulang dengan kereta, terbebas dari sihir, gelang-gelang itu patah karena gembira."
+    "cl-frog-prince-19": "Henry telah memasang lingkaran-lingkaran besi di sekeliling hatinya karena kesedihannya.",
+    "cl-frog-prince-20": "Saat tuannya pulang dengan kereta, terbebas dari sihir, lingkaran-lingkaran itu patah karena gembira."
    }
   },
   "classic-rumpelstiltskin": {
@@ -1240,7 +1240,7 @@
     "cl-tom-thumb-02": "Keinginan mereka terkabul, dan mereka menamai anak mungil mereka Si Jempol.",
     "cl-tom-thumb-03": "Meskipun ia tidak pernah bertambah tinggi, ia cerdik dan penuh semangat.",
     "cl-tom-thumb-04": "Suatu hari, ia mengarahkan kuda ayahnya sambil duduk di dalam telinga kuda itu.",
-    "cl-tom-thumb-05": "Dua orang asing melihat gerobak yang berjalan sendiri itu dan ingin membeli anak kecil itu.",
+    "cl-tom-thumb-05": "Dua orang asing melihat gerobak yang sedang bergerak itu dan ingin membeli anak kecil itu.",
     "cl-tom-thumb-06": "Si Jempol menyuruh ayahnya menerima tawaran itu karena ia tahu cara melarikan diri.",
     "cl-tom-thumb-07": "Di jalan, ia bersembunyi di lubang tikus dan menunggu sampai orang-orang asing itu pergi.",
     "cl-tom-thumb-08": "Malam itu, ia bertemu dua pencuri yang berencana merampok rumah seorang pendeta.",
@@ -1425,7 +1425,7 @@
    }
   },
   "classic-thumbelina": {
-   "description": "Thumbelina. Perjalanan seorang gadis mungil bersama katak, tikus mondok, dan seekor burung layang-layang. Adaptasi singkat tingkat B1. Adaptasi: English Tales. Gambar historis: Vilhelm Pedersen; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
+   "description": "Thumbelina. Perjalanan seorang gadis mungil bersama kodok, tikus mondok, dan seekor burung layang-layang. Adaptasi singkat tingkat B1. Adaptasi: English Tales. Gambar historis: Vilhelm Pedersen; ilustrasi di dalam buku, bukan sampul edisi pertama tersendiri.",
    "sentences": {
     "cl-thumbelina-01": "Seorang wanita yang mendambakan anak menerima sebutir benih jelai istimewa dari seorang peri.",
     "cl-thumbelina-02": "Ketika ia menanamnya, sekuntum bunga mekar dan tampaklah seorang gadis yang tidak lebih tinggi dari ibu jari.",
@@ -1571,7 +1571,7 @@
     "cl-steadfast-tin-soldier-05": "Ia mengangkat satu kakinya begitu tinggi sehingga prajurit itu mengira ia juga hanya berkaki satu.",
     "cl-steadfast-tin-soldier-06": "Prajurit itu mengaguminya dari balik sebuah kotak kecil dan bermimpi menjadi pendampingnya.",
     "cl-steadfast-tin-soldier-07": "Pada malam hari, mainan-mainan menjadi hidup, tetapi prajurit dan penari itu tetap diam tak bergerak.",
-    "cl-steadfast-tin-soldier-08": "Sesosok jin di dalam kotak memperingatkan prajurit itu agar tidak memandangi sang penari.",
+    "cl-steadfast-tin-soldier-08": "Sesosok goblin di dalam kotak memperingatkan prajurit itu agar tidak memandangi sang penari.",
     "cl-steadfast-tin-soldier-09": "Keesokan harinya, seseorang meletakkan prajurit itu di ambang jendela.",
     "cl-steadfast-tin-soldier-10": "Jendela itu tiba-tiba terbuka, dan ia jatuh ke jalan di bawah.",
     "cl-steadfast-tin-soldier-11": "Anak laki-laki itu dan pelayannya mencarinya, tetapi prajurit yang pendiam itu tidak berseru.",
