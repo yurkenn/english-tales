@@ -47,6 +47,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         }
         viewModelScope.launch(Dispatchers.IO) {
             try {
+                // Restore (with its deleted-account check) before cleanup consumes the pending receipts.
+                if(background) LearningSyncRuntime.ensureRestored(getApplication())
                 if(background) runCatching {DeletedAccountCleanup.clean(getApplication())}
                 try {
                     auth.restore()?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
