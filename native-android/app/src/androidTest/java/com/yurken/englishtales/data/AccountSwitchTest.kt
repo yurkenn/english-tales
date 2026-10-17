@@ -134,7 +134,10 @@ class AccountSwitchTest {
         await {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && vm.state.value.displayName=="Bulut" && !vm.account.value.sync.running}
         assertEquals("Bulut",vm.state.value.displayName)
         val last=vm.account.value.sync.lastSuccessAt
-        vm.verifyAccount();await {vm.account.value.message.startsWith("Oturum")}
+        val verifiedMessage=com.yurken.englishtales.AppLanguage.wrap(
+            InstrumentationRegistry.getInstrumentation().targetContext.applicationContext
+        ).getString(com.yurken.englishtales.R.string.account_message_session_verified)
+        vm.verifyAccount();await {vm.account.value.message==verifiedMessage}
         assertEquals(last,vm.account.value.sync.lastSuccessAt)
         assertFalse(vm.account.value.sync.running)
     }
