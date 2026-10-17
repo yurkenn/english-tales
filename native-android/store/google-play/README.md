@@ -34,3 +34,13 @@ Yerleşik image_gen kullanıldı. Referans: `brand/english-tales/expressions/wel
 - İkon, 6 ekran görüntüsü ve iki tanıtım görselinin ölçü/boyutları doğrulandı (`asset-verification.json`). Gizlilik ve hesap silme sayfaları HTTP 200 döndü.
 - İmzalı release APK/AAB derlemesi ve statik paket/imza kontrolleri başarılı (48 / 2.0.0).
 - AAB yüklemesi, Play tarafından üretilen paket kontrolü ve üretim gönderimi **henüz yapılmadı**; mevcut canlı ikon/görsellerin değiştiği iddia edilmez.
+
+## Mağaza dilleri — 17 Ekim 2026
+
+Mağaza kayıtları uygulamanın destek dilleriyle eşleşir: `tr-TR`, `en-US` (varsayılan) ve "10 yeni dil" kapsamındaki `es-419`, `pt-BR`, `id`, `ar`, `vi`, `hi-IN`, `ru-RU`, `bn-BD`, `ur`, `th`. `es-ES`, İspanya için `es-419` ile aynı metni taşır. `de-DE` ve `fr-FR` kaldırıldı; uygulama bu dillerde çeviri sunmuyor.
+
+- Her yeni dilin kaydı, o dilin çeviri içeriği uygulamada açıldığı sürümle birlikte Play Console'a eklenir; önce eklenmez. Metinler o dilde çeviri olduğunu söylediği için erken yayın yanıltıcı olur.
+- Yayından önce her metni o dili ana dili olarak konuşan biri okumalı.
+- Sınırlar: başlık 30, kısa açıklama 80, uzun açıklama 4000, sürüm notu 500 karakter.
+- Ekran görüntüleri şimdilik yalnız `tr-TR` için var; her dil açıldığında o dilin arayüzüyle yeniden alınır.
+- Yeni diller açılınca `en-US` uzun açıklamasındaki "Turkish" ifadeleri genişletilmeli.
