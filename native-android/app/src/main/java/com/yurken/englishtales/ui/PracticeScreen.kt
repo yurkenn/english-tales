@@ -79,7 +79,11 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         }
         if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
         val priority=ReviewFocus.order(seeded,snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}).mapNotNull(snapshot::wordFor)
-        val pool=if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else (priority+supplemental.shuffled()).distinctBy {it.id}.take(5)
+        // Seeded words can be missing from the loaded content (a synced account offline on a new phone); fall back to the usual mix.
+        val pool=(if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else emptyList())
+            .ifEmpty {(priority+supplemental.shuffled()).distinctBy {it.id}.take(5)}
+        val sentenceMode=value=="cloze" || value=="order" || value=="dictation"
+        if(!sentenceMode && pool.isEmpty()) {if(mode.isNotEmpty()) exit();return}
         sessionKey=java.util.UUID.randomUUID().toString()
         session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else if(value=="order" || value=="dictation") orderQuestions.map {it.sentenceId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
         // Q5.8: each word gets the drill that fits its stage, and the session climbs from word drills to games.
@@ -167,7 +171,9 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             onComplete={correctCount+=it;nextLadderStep(2)},onExit={exit()})
         return
     }
-    val word=words[question]
+    // A sync can remove a word mid-session; the session then ends with what was answered.
+    val word=words.getOrNull(question)
+    if(word==null) {LaunchedEffect(session) {if(!finished) {finished=true;complete(correctCount)}};return}
     // In the ladder each question has its own drill; other modes use one drill for the whole session.
     val drill=if(mode=="ladder") ladderModes.getOrElse(question) {PracticeLadder.RECOGNISE} else mode
     var answer by rememberSaveable(question,drill,session) { mutableStateOf<String?>(null) }
