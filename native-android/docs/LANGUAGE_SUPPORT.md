@@ -11,6 +11,7 @@ Claude'un PR açıklamasındaki açık iş, Kotlin içinde kalan kullanıcı mes
 - Hesap giriş/çıkış, doğrulama/kurtarma, misafir aktarımı, hesap silme ve Google giriş mesajlarını dil kaynaklarına taşır.
 - Ön ve arka plandaki eşitleme, indirme ve reklam gizliliği sonuçlarını yerelleştirir.
 - Kalıcı kayıt hatalarını ekrandaki güncel dilde çözülen kaynak kimlikleriyle gösterir.
+- Günlük hedef seçimini çevrilmiş metnin biçimine bağlamaz; İngilizcede tekil “1 step” varsayılan olarak doğru seçilir ve hedef seçenek sırasından kaydedilir.
 - Onboarding, ayarlar ve günlük plandaki tür adlarını; kütüphane okuma filtrelerini çevirir. Veritabanındaki tür değerleri değişmez.
 - Hesap ekranındaki son eşitleme tarihini arayüz diliyle biçimlendirir.
 - Türkçe öncelikli dil listesinde ikinci sıradaki İngilizcenin `values-en` kaynakları üzerinden Türkçeyi geçersiz kılmasını önler; kaynak çözümü tek seçili arayüz diliyle yapılır.

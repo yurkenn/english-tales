@@ -24,19 +24,22 @@ class EnglishUiTest {
             setLocales(LocaleList(Locale.ENGLISH))
         })
         var savedGenre = ""
+        var savedGoal = 0
         compose.setContent {
             val resultOwner = checkNotNull(LocalActivityResultRegistryOwner.current)
             CompositionLocalProvider(LocalActivityResultRegistryOwner provides resultOwner, LocalContext provides context,
                 LocalConfiguration provides context.resources.configuration) {
                 EnglishTalesTheme {
-                    LearningSettingsScreen(LearningSnapshot(), {}, { _, genre, _, _ -> savedGenre = genre })
+                    LearningSettingsScreen(LearningSnapshot(), {}, { _, genre, goal, _ -> savedGenre = genre; savedGoal = goal })
                 }
             }
         }
         compose.onNodeWithText("Daily life").performScrollTo().assertIsDisplayed()
         compose.onNodeWithText("Mystery").performScrollTo().performClick()
         compose.onNodeWithText("Gizem").assertDoesNotExist()
+        compose.onNode(hasText("1 step") and isSelectable()).performScrollTo().assertIsSelected()
+        compose.onNode(hasText("2 steps") and isSelectable()).performScrollTo().performClick().assertIsSelected()
         compose.onNodeWithText("Save changes").performScrollTo().performClick()
-        compose.runOnIdle { assertEquals("Gizem", savedGenre) }
+        compose.runOnIdle { assertEquals("Gizem", savedGenre); assertEquals(2, savedGoal) }
     }
 }

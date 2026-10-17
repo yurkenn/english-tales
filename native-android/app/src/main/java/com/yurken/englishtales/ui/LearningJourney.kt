@@ -176,7 +176,8 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             Text(stringResource(R.string.sevdigin_hikayeler),fontWeight=FontWeight.Bold)
             PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
             Text(stringResource(R.string.gunluk_hedefin),fontWeight=FontWeight.Bold)
-            PreferenceChoices(listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3)),stringResource(R.string.adim_2, goal)) {goal=it.first().digitToInt()}
+            val goalOptions=listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3))
+            PreferenceChoices(goalOptions,goalOptions[goal.coerceIn(1,3)-1]) {goal=goalOptions.indexOf(it)+1}
             Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted)
             ReminderControls()
             com.yurken.englishtales.ads.AdPrivacyControls()
