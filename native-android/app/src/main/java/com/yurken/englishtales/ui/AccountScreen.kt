@@ -116,17 +116,14 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                 if(state.userId==null) OutlinedButton(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {Text(stringResource(R.string.misafir_olarak_devam_et))}
             }
             if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-            if(state.message.isNotBlank()) Text(state.message,fontSize=14.sp,color=TaleMuted)
+            TaleNotice(state.message)
             SupportLinks()
         }
     }
-    if(confirmExit) AlertDialog(onDismissRequest={confirmExit=false},title={Text(stringResource(R.string.cikis_yapilsin_mi))},
-        text={Text(stringResource(R.string.bu_hesabin_cihazdaki_kayitlari_korunur))},
-        confirmButton={TextButton(onClick={confirmExit=false;onSignOut()}) {Text(stringResource(R.string.cikis_yap))}},dismissButton={TextButton(onClick={confirmExit=false}) {Text(stringResource(R.string.vazgec))}})
-    if(confirmTransfer) AlertDialog(onDismissRequest={confirmTransfer=false},title={Text(stringResource(R.string.misafir_ilerlemen_tasinsin_mi))},
-        text={Text(stringResource(R.string.misafir_kelimelerin_okuma_ilerlemen_ve))},
-        confirmButton={TextButton(onClick={confirmTransfer=false;onTransfer()}) {Text(stringResource(R.string.bu_hesaba_aktar))}},dismissButton={TextButton(onClick={confirmTransfer=false}) {Text(stringResource(R.string.vazgec))}})
-    if(confirmDelete) AlertDialog(onDismissRequest={confirmDelete=false},title={Text(stringResource(R.string.hesabin_kalici_olarak_silinsin_mi))},
-        text={Text(stringResource(R.string.n_nhesabin_sunucudaki_ogrenme_gecmisin, state.email))},
-        confirmButton={TextButton(onClick={confirmDelete=false;onDeleteAccount()}) {Text(stringResource(R.string.hesabimi_kalici_olarak_sil),color=MaterialTheme.colorScheme.error)}},dismissButton={TextButton(onClick={confirmDelete=false}) {Text(stringResource(R.string.vazgec))}})
+    if(confirmExit) TaleDialog(stringResource(R.string.cikis_yapilsin_mi),stringResource(R.string.bu_hesabin_cihazdaki_kayitlari_korunur),
+        stringResource(R.string.cikis_yap),onConfirm={confirmExit=false;onSignOut()},onDismissRequest={confirmExit=false},dismissLabel=stringResource(R.string.vazgec))
+    if(confirmTransfer) TaleDialog(stringResource(R.string.misafir_ilerlemen_tasinsin_mi),stringResource(R.string.misafir_kelimelerin_okuma_ilerlemen_ve),
+        stringResource(R.string.bu_hesaba_aktar),onConfirm={confirmTransfer=false;onTransfer()},onDismissRequest={confirmTransfer=false},dismissLabel=stringResource(R.string.vazgec),mood=MascotMood.Welcome)
+    if(confirmDelete) TaleDialog(stringResource(R.string.hesabin_kalici_olarak_silinsin_mi),stringResource(R.string.n_nhesabin_sunucudaki_ogrenme_gecmisin, state.email),
+        stringResource(R.string.hesabimi_kalici_olarak_sil),onConfirm={confirmDelete=false;onDeleteAccount()},onDismissRequest={confirmDelete=false},dismissLabel=stringResource(R.string.vazgec),destructive=true)
 }

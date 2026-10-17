@@ -83,18 +83,19 @@ private fun ChoiceHint() { Box(Modifier.fillMaxWidth(),contentAlignment=Alignmen
 
 @Composable
 private fun GuideBubble(message: String) {
-    Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(9.dp),verticalAlignment=Alignment.Top) {
+    // New messages fade up into the chat, like a conversation.
+    Row(Modifier.fillMaxWidth().appearIn(),horizontalArrangement=Arrangement.spacedBy(9.dp),verticalAlignment=Alignment.Top) {
         Image(painterResource(R.drawable.mascot_avatar),null,Modifier.size(29.dp).clip(CircleShape).background(TaleMint),contentScale=ContentScale.Crop,alignment=Alignment.TopCenter)
-        Text(message,fontSize=13.sp,lineHeight=18.sp,color=TaleInk,modifier=Modifier.widthIn(max=285.dp).background(TaleLine,RoundedCornerShape(topStart=4.dp,topEnd=7.dp,bottomStart=7.dp,bottomEnd=7.dp)).padding(horizontal=11.dp,vertical=9.dp))
+        Text(message,fontSize=14.sp,lineHeight=19.sp,color=TaleInk,modifier=Modifier.widthIn(max=285.dp).background(TaleLine,RoundedCornerShape(topStart=4.dp,topEnd=14.dp,bottomStart=14.dp,bottomEnd=14.dp)).padding(horizontal=13.dp,vertical=10.dp))
     }
 }
 
 @Composable
-private fun ReplyBubble(message: String) { Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) { Text(message,fontSize=13.sp,color=TaleOnBlue,modifier=Modifier.background(TaleBlue,RoundedCornerShape(7.dp)).padding(horizontal=12.dp,vertical=9.dp)) } }
+private fun ReplyBubble(message: String) { Box(Modifier.fillMaxWidth().appearIn(),contentAlignment=Alignment.CenterEnd) { Text(message,fontSize=14.sp,color=TaleOnBlue,modifier=Modifier.background(TaleBlue,RoundedCornerShape(topStart=14.dp,topEnd=4.dp,bottomStart=14.dp,bottomEnd=14.dp)).padding(horizontal=13.dp,vertical=10.dp)) } }
 
 @Composable
 private fun ReplyChoice(label: String,onClick: ()->Unit) {
-    Box(Modifier.fillMaxWidth(),contentAlignment=Alignment.CenterEnd) {
-        Text(label,fontSize=13.sp,color=TaleOnBlue,fontWeight=FontWeight.Medium,modifier=Modifier.background(TaleBlue,RoundedCornerShape(7.dp)).clickable(role=Role.Button,onClick=onClick).padding(horizontal=14.dp,vertical=10.dp))
+    Box(Modifier.fillMaxWidth().appearIn(1),contentAlignment=Alignment.CenterEnd) {
+        Text(label,fontSize=14.sp,color=TaleOnBlue,fontWeight=FontWeight.SemiBold,modifier=Modifier.pressScale(onClick=onClick).background(TaleBlue,RoundedCornerShape(14.dp)).padding(horizontal=16.dp,vertical=12.dp))
     }
 }

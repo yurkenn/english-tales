@@ -1,5 +1,6 @@
 package com.yurken.englishtales.ui
 
+import androidx.compose.runtime.remember
 import androidx.compose.foundation.Canvas
 import com.yurken.englishtales.R
 import androidx.compose.ui.res.stringResource
@@ -127,6 +128,27 @@ fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Mod
                     }
                     drawPath(bookmark,tint)
                 }
+                "flame" -> drawPath(Path().apply {
+                    moveTo(12f,2f);cubicTo(13.2f,6f,18f,8.2f,18f,13.5f);cubicTo(18f,17.5f,15.3f,21f,12f,21f)
+                    cubicTo(8.7f,21f,6f,17.5f,6f,13.5f);cubicTo(6f,10.5f,7.8f,8.7f,9f,7.5f);cubicTo(9.4f,9.5f,10.4f,10.6f,12f,11.1f)
+                    cubicTo(11.5f,7.6f,10.8f,4.5f,12f,2f);close()
+                },tint)
+                "star" -> path(12f,2f,15f,8.6f,22f,9.3f,16.8f,14.1f,18.3f,21f,12f,17.5f,5.7f,21f,7.2f,14.1f,2f,9.3f,9f,8.6f,fill=true)
+                "close" -> { drawLine(tint,Offset(6f,6f),Offset(18f,18f),2.6f,StrokeCap.Round); drawLine(tint,Offset(18f,6f),Offset(6f,18f),2.6f,StrokeCap.Round) }
+                "info" -> { drawLine(tint,Offset(12f,11f),Offset(12f,18f),2.6f,StrokeCap.Round); drawCircle(tint,1.7f,Offset(12f,6.5f)) }
+                "warning" -> { drawLine(tint,Offset(12f,5f),Offset(12f,13f),2.6f,StrokeCap.Round); drawCircle(tint,1.7f,Offset(12f,18f)) }
+                "gamepad" -> {
+                    drawRoundRect(tint,Offset(2f,7f),Size(20f,12f),CornerRadius(5f),style=Stroke(1.8f))
+                    line(8f,11f,8f,15f);line(6f,13f,10f,13f)
+                    drawCircle(accent,1.3f,Offset(15.5f,12f));drawCircle(tint,1.3f,Offset(18f,14.5f))
+                }
+                "play_arrow" -> path(7f,4f,20f,12f,7f,20f,fill=true)
+                "pause" -> { drawRoundRect(tint,Offset(6f,4f),Size(4f,16f),CornerRadius(1.5f)); drawRoundRect(tint,Offset(14f,4f),Size(4f,16f),CornerRadius(1.5f)) }
+                "next" -> { path(9f,5f,16f,12f,9f,19f) }
+                "prev" -> { path(15f,5f,8f,12f,15f,19f) }
+                "download" -> { line(12f,3f,12f,15f); path(7f,10f,12f,15f,17f,10f); line(4f,20f,20f,20f) }
+                "refresh" -> { drawArc(tint,30f,300f,false,Offset(4f,4f),Size(16f,16f),style=Stroke(1.8f,cap=StrokeCap.Round)); path(20f,3f,20f,9f,14f,9f) }
+                "lock" -> { drawRoundRect(tint,Offset(5f,10f),Size(14f,11f),CornerRadius(2f),style=Stroke(1.8f)); drawArc(tint,180f,180f,false,Offset(8f,4f),Size(8f,12f),style=Stroke(1.8f)) }
                 else -> { line(5f,12f,10f,17f); line(10f,17f,20f,5f) }
             }
         }
@@ -135,8 +157,12 @@ fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Mod
 
 @Composable
 fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Color = TaleYellow) {
-    Box(modifier.semantics {progressBarRangeInfo=ProgressBarRangeInfo(progress.coerceIn(0f,1f),0f..1f)}.height(6.dp).background(TaleLine,RoundedCornerShape(4.dp))) {
-        if(progress>0f) Box(Modifier.fillMaxWidth(progress.coerceIn(0f,1f)).height(6.dp).background(color,RoundedCornerShape(4.dp)))
+    // Fills smoothly from empty on first show and glides on every change.
+    val target=progress.coerceIn(0f,1f)
+    val shown=remember {androidx.compose.animation.core.Animatable(0f)}
+    androidx.compose.runtime.LaunchedEffect(target) {shown.animateTo(target,androidx.compose.animation.core.tween(TaleMotion.emphasized*2,easing=androidx.compose.animation.core.FastOutSlowInEasing))}
+    Box(modifier.semantics {progressBarRangeInfo=ProgressBarRangeInfo(target,0f..1f)}.height(6.dp).background(TaleLine,RoundedCornerShape(4.dp))) {
+        if(shown.value>0f) Box(Modifier.fillMaxWidth(shown.value).height(6.dp).background(color,RoundedCornerShape(4.dp)))
     }
 }
 

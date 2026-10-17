@@ -13,6 +13,8 @@ import androidx.navigation.navArgument
 import com.yurken.englishtales.data.*
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.launch
+import androidx.compose.ui.res.stringResource
+import com.yurken.englishtales.R
 
 /** Q6: a shared story link to open; [at] tells two taps on the same link apart. */
 data class StoryLinkRequest(val storyId: String,val at: Long)
@@ -72,8 +74,28 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         nav.popBackStack("main",false)
         if(request.storyId in LearningContent.storyById) nav.navigate("story/${request.storyId}") else selectedTab=1
     }
+    val alerts=remember {TaleAlerts()}
+    val writeRecovered=stringResource(R.string.alert_write_recovered)
+    // A failed write stays in the error bar with its retry; recovering from it is confirmed, so the learner knows nothing was lost.
+    var hadWriteError by remember {mutableStateOf(false)}
+    LaunchedEffect(writeError) {
+        if(writeError!=null) hadWriteError=true
+        else if(hadWriteError) {alerts.success(writeRecovered);hadWriteError=false}
+    }
+    LaunchedEffect(content) {content.events.collect {event -> if(event.success) alerts.success(event.message) else alerts.error(event.message)}}
+    // Celebrate the moments that keep a learner coming back: the daily goal and a growing streak.
+    val goalText=stringResource(R.string.alert_daily_goal)
+    val streakText=stringResource(R.string.alert_streak,snapshot.streak)
+    var seenGoal by rememberSaveable {mutableStateOf(snapshot.dailyGoalReached)}
+    var seenStreak by rememberSaveable {mutableIntStateOf(snapshot.streak)}
+    LaunchedEffect(snapshot.dailyGoalReached,snapshot.streak) {
+        if(snapshot.dailyGoalReached && !seenGoal) alerts.reward(goalText)
+        else if(snapshot.streak>seenStreak && snapshot.streak>=2) alerts.reward(streakText)
+        seenGoal=snapshot.dailyGoalReached;seenStreak=snapshot.streak
+    }
+    TaleAlertHost(alerts) {
     LearningWriteHost(writeError,viewModel::retryLearningWrites) {
-        NavHost(navController=nav,startDestination=startDestination) {
+        NavHost(navController=nav,startDestination=startDestination,enterTransition={taleEnter},exitTransition={taleExit},popEnterTransition={talepopEnter},popExitTransition={talePopExit}) {
             composable("welcome") {WelcomeScreen(account,onGuest={nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}},onEmail={nav.navigate("account")},onGoogle=::google)}
             composable("onboarding") { OnboardingScreen { level,genre,goal -> viewModel.completeOnboarding(level,genre,goal); nav.navigate("main") { popUpTo("onboarding") { inclusive=true } };LearningContent.recommendedStory(level,genre)?.let {nav.navigate("reader/${it.id}")} } }
             composable("main") {
@@ -125,17 +147,19 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::toggleWord) }
         }
     }
+    }
 }
 
 @Composable
 private fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit) {
     var practicing by remember { mutableStateOf(false) }
     Scaffold(containerColor=TaleBackground,bottomBar={ if(!practicing) TalesBottomBar(selectedTab,onTabSelected) }) { padding ->
-        when(selectedTab) {
+        // Tabs cross-fade instead of cutting; the practice tab keeps its running session state.
+        TaleSwitch(selectedTab) { tab -> when(tab) {
             0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice)
             1 -> CatalogScreen(snapshot,onOpenStory,padding)
             2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit)
             else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)
-        }
+        } }
     }
 }

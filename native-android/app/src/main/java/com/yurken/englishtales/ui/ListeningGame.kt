@@ -57,11 +57,11 @@ internal fun ListeningGame(
             ReferenceIconButton("back", stringResource(R.string.listen_exit), { narrator.stop(); onExit() })
             Text(stringResource(R.string.listen_progress, index + 1, questions.size), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
         }
-        LinearProgressIndicator(progress = { index.toFloat() / questions.size }, modifier = Modifier.fillMaxWidth())
+        QuizProgress(index.toFloat() / questions.size)
         Text(stringResource(R.string.listen_instruction), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         val playLabel = stringResource(if (playing) R.string.listen_stop else if (index == 0 && !checked && selected == null) R.string.listen_play else R.string.listen_replay)
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Box(Modifier.size(88.dp).background(TaleBlue, CircleShape).contentLabel(playLabel)
+            Box(Modifier.size(88.dp).pulseWhile(playing).background(TaleBlue, CircleShape).contentLabel(playLabel)
                 .clickable(role = Role.Button) { if (playing) narrator.stop() else narrator.speak(question.word) },
                 contentAlignment = Alignment.Center) {
                 if (playing) Text("Ⅱ", color = TaleOnBlue, style = MaterialTheme.typography.headlineSmall)
@@ -71,22 +71,14 @@ internal fun ListeningGame(
             narrator.error?.let { Text(it, color = TaleMuted, style = MaterialTheme.typography.bodySmall) }
         }
         Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-            question.options.forEach { option ->
-                Row(Modifier.fillMaxWidth().border(1.dp, if (selected == option) TaleBlue else TaleLine, RoundedCornerShape(10.dp))
-                    .selectable(selected = selected == option, enabled = !checked, role = Role.RadioButton, onClick = { selected = option }).padding(12.dp),
-                    verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                    RadioButton(selected = selected == option, onClick = null, enabled = !checked)
-                    Text(option, style = MaterialTheme.typography.bodyLarge)
-                }
+            question.options.forEachIndexed { i, option ->
+                AnswerOption(option, selected == option, optionState(selected == option, checked, option == question.answer), !checked, { selected = option }, Modifier.appearIn(i))
             }
         }
-        if (checked) Text(
-            if (correct) stringResource(R.string.listen_correct, question.word)
-            else stringResource(R.string.listen_incorrect, question.word, question.answer),
-            style = MaterialTheme.typography.bodyLarge,
-            modifier = Modifier.semantics { liveRegion = LiveRegionMode.Polite },
-        )
-        Button(enabled = selected != null && !advanced, modifier = Modifier.fillMaxWidth(), onClick = {
+        AnswerFeedback(checked, correct, if (correct) stringResource(R.string.listen_correct, question.word)
+            else stringResource(R.string.listen_incorrect, question.word, question.answer))
+        Button(enabled = selected != null && !advanced, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
+            colors = if (checked && correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(), onClick = {
             if (!checked) checked = true
             else if (!advanced) {
                 advanced = true

@@ -8,6 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
@@ -23,6 +25,9 @@ import java.security.MessageDigest
 import java.util.UUID
 
 data class ContentStatus(val busy: Boolean = false, val message: String = "", val downloading: String? = null)
+
+/** One finished content action, so the UI can confirm it or say clearly that it failed. */
+data class ContentEvent(val success: Boolean, val message: String)
 
 /** Anonymous, read-only access. Only a publishable key is accepted, never a service key. */
 open class ContentHttp(private val base: String, private val key: String) {
@@ -315,28 +320,35 @@ class ContentViewModel(application: Application) : AndroidViewModel(application)
     private val mutableReady = MutableStateFlow(false)
     val ready = mutableReady.asStateFlow()
     init { viewModelScope.launch { try {repository.restore()} finally {mutableReady.value=true}; refresh() } }
-    fun refresh() {
+    private val mutableEvents = MutableSharedFlow<ContentEvent>(extraBufferCapacity = 4)
+    /** Outcomes of downloads, removals and refreshes the learner asked for; background refreshes stay silent. */
+    val events = mutableEvents.asSharedFlow()
+    private fun finish(status: ContentStatus, success: Boolean, announce: Boolean = true) {
+        mutableStatus.value = status
+        if (announce) mutableEvents.tryEmit(ContentEvent(success, status.message))
+    }
+    fun refresh(userInitiated: Boolean = false) {
         if (mutableStatus.value.busy) return
         mutableStatus.value = ContentStatus(busy = true, message = "Hikâyeler güncelleniyor…")
         viewModelScope.launch {
-            mutableStatus.value = try { repository.refresh(); ContentStatus(message = "Hikâyeler güncel") }
-            catch (_: Exception) { ContentStatus(message = "Güncelleme yapılamadı. Cihazdaki hikâyeler kullanılabilir.") }
+            try { repository.refresh(); finish(ContentStatus(message = "Hikâyeler güncel"), true, userInitiated) }
+            catch (_: Exception) { finish(ContentStatus(message = "Güncelleme yapılamadı. Cihazdaki hikâyeler kullanılabilir."), false, userInitiated) }
         }
     }
     fun download(story: Story, onReady: (Story) -> Unit = {}) {
         if (mutableStatus.value.busy) return
         mutableStatus.value = ContentStatus(true, "Hikâye indiriliyor…", story.id)
         viewModelScope.launch {
-            try { val ready = repository.download(story); mutableStatus.value = ContentStatus(message = "Çevrimdışı okumaya hazır"); onReady(ready) }
-            catch (_: Exception) { mutableStatus.value = ContentStatus(message = "İndirme tamamlanamadı. Bağlantını kontrol edip yeniden dene.") }
+            try { val ready = repository.download(story); finish(ContentStatus(message = "Çevrimdışı okumaya hazır"), true); onReady(ready) }
+            catch (_: Exception) { finish(ContentStatus(message = "İndirme tamamlanamadı. Bağlantını kontrol edip yeniden dene."), false) }
         }
     }
     fun removeDownload(story: Story) {
         if(mutableStatus.value.busy) return
         mutableStatus.value=ContentStatus(busy=true)
         viewModelScope.launch {
-            mutableStatus.value=try {repository.removeDownload(story);ContentStatus(message="İndirme kaldırıldı. Öğrendiğin kelimeler korundu.")}
-            catch (_: Exception) {ContentStatus(message="İndirme kaldırılamadı. Yeniden dene.")}
+            try {repository.removeDownload(story);finish(ContentStatus(message="İndirme kaldırıldı. Öğrendiğin kelimeler korundu."),true)}
+            catch (_: Exception) {finish(ContentStatus(message="İndirme kaldırılamadı. Yeniden dene."),false)}
         }
     }
 }

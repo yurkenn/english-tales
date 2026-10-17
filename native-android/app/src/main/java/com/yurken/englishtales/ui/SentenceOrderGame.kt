@@ -1,5 +1,6 @@
 package com.yurken.englishtales.ui
 
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -46,12 +47,14 @@ fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: Pad
             ReferenceIconButton("back",stringResource(R.string.gap_exit),onExit)
             Text(stringResource(R.string.gap_progress,index+1,questions.size),modifier=Modifier.weight(1f),style=MaterialTheme.typography.titleMedium)
         }
-        LinearProgressIndicator(progress={index.toFloat()/questions.size},modifier=Modifier.fillMaxWidth())
+        QuizProgress(index.toFloat()/questions.size)
         Text(stringResource(R.string.order_instruction),style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.Bold)
         Text(stringResource(R.string.order_source,question.storyTitle,question.level),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
         Text(stringResource(R.string.order_hint,question.translation),style=MaterialTheme.typography.bodyLarge,color=TaleBlue)
         // The sentence being built; each placed word can be taken back until the answer is checked.
-        Surface(color=TaleLine,shape=RoundedCornerShape(12.dp),modifier=Modifier.fillMaxWidth()) {
+        var shakes by remember(index) {mutableIntStateOf(0)}
+        LaunchedEffect(checked) {if(checked && !correct) shakes++}
+        Surface(color=if(checked) (if(correct) LocalTaleColors.current.tileGreen else TaleError.copy(alpha=0.10f)) else TaleLine,shape=RoundedCornerShape(14.dp),modifier=Modifier.fillMaxWidth().shakeOn(shakes).animateContentSize()) {
             if(chosen.isEmpty()) Text(stringResource(R.string.order_answer_empty),color=TaleMuted,modifier=Modifier.padding(20.dp))
             else FlowRow(Modifier.padding(12.dp),horizontalArrangement=Arrangement.spacedBy(6.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
                 chosen.forEachIndexed { position,tile ->
@@ -66,12 +69,9 @@ fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: Pad
                 if(tile !in chosen) OutlinedButton(enabled=!checked,onClick={chosen=chosen+tile},modifier=Modifier.heightIn(min=48.dp)) { Text(word) }
             }
         }
-        if(checked) Text(
-            if(correct) stringResource(R.string.order_correct,question.sentence) else stringResource(R.string.order_incorrect,question.sentence),
-            style=MaterialTheme.typography.bodyLarge,
-            modifier=Modifier.semantics {liveRegion=LiveRegionMode.Polite},
-        )
-        Button(enabled=chosen.size==question.tiles.size && !advanced,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp),onClick={
+        AnswerFeedback(checked,correct,if(correct) stringResource(R.string.order_correct,question.sentence) else stringResource(R.string.order_incorrect,question.sentence))
+        Button(enabled=chosen.size==question.tiles.size && !advanced,modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp),
+            colors=if(checked && correct) ButtonDefaults.buttonColors(containerColor=TaleSuccess,contentColor=TaleSurface) else ButtonDefaults.buttonColors(),onClick={
             if(!checked) checked=true
             else if(!advanced) {
                 advanced=true

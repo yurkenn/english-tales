@@ -1,5 +1,9 @@
 package com.yurken.englishtales.ui
 
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.ui.semantics.Role
@@ -27,23 +31,26 @@ fun MatchingGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padd
     var matched by rememberSaveable(sessionId) {mutableStateOf(emptyList<String>())}
     var mistakes by rememberSaveable(sessionId) {mutableIntStateOf(0)}
     var finished by rememberSaveable(sessionId) {mutableStateOf(false)}
+    // The last wrong pair shakes; each mistake bumps the tick so the same pair can shake again.
+    var wrongPair by remember(sessionId) {mutableStateOf<Pair<String,String>?>(null)}
+    var wrongTick by remember(sessionId) {mutableIntStateOf(0)}
     if(finished) {GameResult(stringResource(R.string.kelime_hata, words.size, mistakes),(words.size-mistakes).coerceAtLeast(0)*5,padding,onExit,onRestart,snapshot);return}
     GameViewport(padding) {
         GameHeader(matched.size.toFloat()/words.size,onExit)
         Text(stringResource(R.string.kelimeleri_eslestirin),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.fillMaxWidth().padding(vertical=12.dp))
         Row(Modifier.fillMaxWidth().weight(1f),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
             Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                words.forEach { word -> MatchCard(word.word,selected==word.id,word.id in matched,Modifier.fillMaxWidth().weight(1f)) { if(word.id !in matched) selected=word.id } }
+                words.forEachIndexed { i,word -> MatchCard(word.word,selected==word.id,word.id in matched,if(wrongPair?.first==word.id) wrongTick else 0,Modifier.fillMaxWidth().weight(1f).appearIn(i)) { if(word.id !in matched) selected=word.id } }
             }
             Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(10.dp)) {
-                translations.forEach { word -> MatchCard(word.translation,false,word.id in matched,Modifier.fillMaxWidth().weight(1f)) {
+                translations.forEachIndexed { i,word -> MatchCard(word.translation,false,word.id in matched,if(wrongPair?.second==word.id) wrongTick else 0,Modifier.fillMaxWidth().weight(1f).appearIn(i+1)) {
                     val current=selected
                     if(current!=null && word.id !in matched) {
                         if(current==word.id) {
                             matched=matched+word.id
                             if(word.id in savedIds) onWordReviewed(word.id,true)
                             if(matched.size==words.size) {finished=true;onLessonComplete((words.size-mistakes).coerceAtLeast(0))}
-                        } else {mistakes++;if(current in savedIds) onWordReviewed(current,false)}
+                        } else {mistakes++;wrongPair=current to word.id;wrongTick++;if(current in savedIds) onWordReviewed(current,false)}
                         selected=null
                     }
                 } }
@@ -54,7 +61,14 @@ fun MatchingGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padd
 }
 
 @Composable
-private fun MatchCard(label: String,selected: Boolean,matched: Boolean,modifier: Modifier,onClick: ()->Unit) {
-    val color=when {matched->Color(0xFF9BCC72);selected->TaleBlue;else->TaleLine}
-    Box(modifier.border(if(selected||matched) 2.dp else 1.dp,color,RoundedCornerShape(12.dp)).selectable(selected=selected||matched,enabled=!matched,role=Role.Button,onClick=onClick).padding(8.dp),contentAlignment=Alignment.Center) {Text(label,fontSize=14.sp,fontWeight=FontWeight.Medium)}
+private fun MatchCard(label: String,selected: Boolean,matched: Boolean,shakeTick: Int,modifier: Modifier,onClick: ()->Unit) {
+    val c=LocalTaleColors.current
+    val color by animateColorAsState(when {matched->c.success;selected->c.blue;else->c.line},label="matchBorder")
+    val fill by animateColorAsState(when {matched->c.tileGreen;selected->c.mint;else->c.surface},label="matchFill")
+    val fade by animateFloatAsState(if(matched) 0.55f else 1f,tween(TaleMotion.emphasized),label="matchFade")
+    var pops by remember {mutableIntStateOf(0)}
+    LaunchedEffect(matched) {if(matched) pops++}
+    Box(modifier.shakeOn(shakeTick).popOn(pops).graphicsLayer {alpha=fade}.background(fill,RoundedCornerShape(14.dp)).border(if(selected||matched) 2.dp else 1.5.dp,color,RoundedCornerShape(14.dp)).selectable(selected=selected||matched,enabled=!matched,role=Role.Button,onClick=onClick).padding(8.dp),contentAlignment=Alignment.Center) {
+        Text(label,fontSize=15.sp,fontWeight=if(selected||matched) FontWeight.Bold else FontWeight.Medium,textAlign=androidx.compose.ui.text.style.TextAlign.Center)
+    }
 }

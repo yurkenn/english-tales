@@ -91,19 +91,26 @@ fun ReminderControls() {
     var hour by remember {mutableIntStateOf(LearningReminders.hour(context))}
     var minute by remember {mutableIntStateOf(LearningReminders.minute(context))}
     var denied by remember {mutableStateOf(false)}
+    val alerts=LocalTaleAlerts.current
+    // Every change is confirmed, and a missing permission is said plainly rather than failing silently.
+    fun announce(on: Boolean,refused: Boolean) {
+        if(refused) alerts.show(context.getString(R.string.alert_reminder_denied),TaleAlertKind.Warning)
+        else if(on) alerts.success(context.getString(R.string.alert_reminder_on,String.format(Locale.getDefault(),"%02d:%02d",hour,minute)))
+        else alerts.show(context.getString(R.string.alert_reminder_off),TaleAlertKind.Info)
+    }
     val permission=rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) {granted ->
-        enabled=granted && LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute)
+        enabled=granted && LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute);announce(enabled,denied)
     }
     Column(Modifier.fillMaxWidth().padding(vertical=12.dp)) {
         Text(stringResource(R.string.kendi_saatinde_hatirlat),fontSize=16.sp)
         Text(stringResource(R.string.istege_baglidir_gunluk_hedefini_tamamladiysan),fontSize=12.sp,color=TaleMuted)
         Row(Modifier.fillMaxWidth(),verticalAlignment=androidx.compose.ui.Alignment.CenterVertically) {
-            TextButton(onClick={TimePickerDialog(context,{_,h,m ->hour=h;minute=m;LearningReminders.configure(context,enabled,h,m)},hour,minute,true).show()},modifier=Modifier.weight(1f)) {Text(String.format(Locale.getDefault(),"%02d:%02d",hour,minute))}
+            TextButton(onClick={TimePickerDialog(context,{_,h,m ->hour=h;minute=m;LearningReminders.configure(context,enabled,h,m);if(enabled) announce(true,false)},hour,minute,true).show()},modifier=Modifier.weight(1f)) {Text(String.format(Locale.getDefault(),"%02d:%02d",hour,minute))}
             Switch(checked=enabled,modifier=Modifier.contentLabel(stringResource(R.string.gunluk_hatirlatici)),onCheckedChange={value ->
                 denied=false
-                if(!value) {enabled=false;LearningReminders.configure(context,false)}
+                if(!value) {enabled=false;LearningReminders.configure(context,false);announce(false,false)}
                 else if(Build.VERSION.SDK_INT>=33 && context.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS)!=PackageManager.PERMISSION_GRANTED) permission.launch(Manifest.permission.POST_NOTIFICATIONS)
-                else {enabled=LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute)}
+                else {enabled=LearningReminders.allowed(context);denied=!enabled;LearningReminders.configure(context,enabled,hour,minute);announce(enabled,denied)}
             })
         }
         if(denied || (enabled && !LearningReminders.allowed(context))) {

@@ -1,5 +1,9 @@
 package com.yurken.englishtales.ui
 
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.draw.shadow
+import androidx.compose.animation.core.*
+import androidx.compose.animation.*
 import android.content.Context
 import androidx.compose.ui.semantics.Role
 import com.yurken.englishtales.R
@@ -180,6 +184,10 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
     val preferences=remember(context,appearanceStore) {appearanceStore?:ReadingPreferencesStore(context)}
     var appearance by remember(preferences) {mutableStateOf(preferences.read())}
     var appearanceError by remember {mutableStateOf<String?>(null)}
+    val alerts=LocalTaleAlerts.current
+    fun savedText(word: String)=context.getString(R.string.alert_word_saved,word)
+    fun removedText(word: String)=context.getString(R.string.alert_word_removed,word)
+    LaunchedEffect(appearanceError) {appearanceError?.let(alerts::error)}
     val scope=rememberCoroutineScope()
     fun changeAppearance(change: (ReadingPreferences)->ReadingPreferences) {
         scope.launch {
@@ -231,7 +239,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                 }
                 Column(Modifier.weight(1f).verticalScroll(scroll).padding(start=24.dp,end=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                     if(!snapshot.readerHintSeen) {
-                        Column(Modifier.fillMaxWidth().background(accent.copy(alpha=0.08f),RoundedCornerShape(10.dp)).padding(12.dp)) {
+                        Column(Modifier.fillMaxWidth().appearIn().background(accent.copy(alpha=0.08f),RoundedCornerShape(14.dp)).border(1.dp,accent.copy(alpha=0.25f),RoundedCornerShape(14.dp)).padding(14.dp)) {
                             Text(stringResource(R.string.okurken_ogren),fontWeight=FontWeight.Bold,fontSize=14.sp,color=accent)
                             Text(stringResource(R.string.alti_cizili_kelimeye_dokun_ve),fontSize=12.sp,color=foreground)
                             Text(stringResource(R.string.listen_from_sentence_hint),fontSize=12.sp,color=foreground)
@@ -240,10 +248,11 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                     }
                     Text("${page+1}.",fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
                     val listenLabel=stringResource(R.string.listen_from_sentence)
-                    pageSentences.forEachIndexed { index,sentence ->
+                    pageSentences.forEachIndexed { index,sentence -> key(page,sentence.id) {
                         // Long press (or the accessibility action) reads the page aloud from this sentence.
-                        Row(Modifier.fillMaxWidth()
-                            .background(if(index==readingIndex) accent.copy(alpha=0.14f) else Color.Transparent,RoundedCornerShape(6.dp))
+                        val highlight by animateColorAsState(if(index==readingIndex) accent.copy(alpha=0.16f) else Color.Transparent,tween(TaleMotion.standard),label="reading")
+                        Row(Modifier.fillMaxWidth().appearIn(index)
+                            .background(highlight,RoundedCornerShape(8.dp))
                             .pointerInput(page,index) { detectTapGestures(onLongPress={ listen(index) }) }
                             .semantics { customActions=listOf(CustomAccessibilityAction(listenLabel) { listen(index); true }) },
                             verticalAlignment=Alignment.Top,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
@@ -251,15 +260,17 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                             TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,LearningContent.glossary,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false; onLookup(it) }
                             Box(Modifier.size(32.dp).contentLabel(if(sentence.id in translations) stringResource(R.string.ceviriyi_gizle) else stringResource(R.string.cumleyi_cevir)).clickable(role=Role.Button) { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
                         }
-                        if(sentence.id in translations) Text(sentence.translation,color=TaleOnBlue,fontSize=13.sp,lineHeight=19.sp,
-                            modifier=Modifier.fillMaxWidth().padding(end=36.dp).background(TaleBlue,RoundedCornerShape(4.dp)).padding(10.dp))
-                    }
+                        AnimatedVisibility(sentence.id in translations,enter=fadeIn(tween(TaleMotion.standard))+expandVertically(tween(TaleMotion.standard)),exit=fadeOut(tween(TaleMotion.quick))+shrinkVertically(tween(TaleMotion.quick))) {
+                            Text(sentence.translation,color=TaleOnBlue,fontSize=14.sp,lineHeight=20.sp,
+                                modifier=Modifier.fillMaxWidth().padding(end=36.dp).background(TaleBlue,RoundedCornerShape(topStart=4.dp,topEnd=14.dp,bottomStart=14.dp,bottomEnd=14.dp)).padding(12.dp))
+                        }
+                    } }
                 }
                 narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
                 Text("${page+1} / $pageCount",color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
                 Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
                     Slider(value=page.toFloat(),onValueChange={changePage(it.toInt())},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
-                    Box(Modifier.size(48.dp).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { listen() } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
+                    Box(Modifier.size(48.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { listen() } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
                 }
                 Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
                     TextButton(onClick={changePage(page-1)},enabled=page>0,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.onceki),fontSize=12.sp) }
@@ -269,7 +280,13 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
             if(options) ReaderAppearancePanel(appearance,appearanceError,onDismiss={options=false},onChange=::changeAppearance)
             selectedWord?.let { word ->
                 Popup(alignment=Alignment.TopCenter,offset=IntOffset(0,130),onDismissRequest={selectedWord=null},properties=PopupProperties(focusable=true)) {
-                    Column(Modifier.width(260.dp).border(1.dp,TaleMuted.copy(alpha=0.5f),RoundedCornerShape(12.dp)).background(TaleSurface,RoundedCornerShape(12.dp))) {
+                    // The word card springs open from where the learner tapped.
+                    val still=reduceMotion()
+                    val open=remember(word.id) {Animatable(if(still) 1f else 0.85f)}
+                    LaunchedEffect(word.id) {open.animateTo(1f,spring(dampingRatio=0.6f,stiffness=Spring.StiffnessMedium))}
+                    // Padding inside the popup window leaves room for the shadow instead of clipping it into a grey box.
+                    Column(Modifier.padding(16.dp).width(272.dp).graphicsLayer {scaleX=open.value;scaleY=open.value;alpha=((open.value-0.85f)/0.15f).coerceIn(0f,1f)}
+                        .shadow(14.dp,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp)).background(TaleSurface,RoundedCornerShape(16.dp))) {
                         val lookupOnly=Glossary.isLookupOnly(word)
                         val lemma=Glossary.lemmaOf(word)
                         Row(Modifier.fillMaxWidth().padding(16.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
@@ -281,11 +298,15 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                         Text(word.translation,fontSize=18.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(4.dp))
                         if(word.pronunciation.isNotBlank() || word.example.isNotBlank()) TextButton(onClick={more=!more},modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster),textDecoration=TextDecoration.Underline) }
                         if(more) Text(word.example,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp))
-                        Row(Modifier.fillMaxWidth().background(TaleBlue,RoundedCornerShape(bottomStart=12.dp,bottomEnd=12.dp))) {
+                        Row(Modifier.fillMaxWidth().background(TaleBlue,RoundedCornerShape(bottomStart=16.dp,bottomEnd=16.dp))) {
                             Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { selectedWord=null },contentAlignment=Alignment.Center) { Text(stringResource(R.string.kapat),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
                             Box(Modifier.width(1.dp).height(28.dp).align(Alignment.CenterVertically).background(TaleOnBlue.copy(alpha=0.65f)))
                             // A glossary word is saved in its dictionary form with its meaning (Q4.3a).
-                            Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) { if(lookupOnly) onSaveGlossaryWord(WordInfo(word.id,lemma,word.translation,"","")) else onSaveWord(word.id); selectedWord=null },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                            Box(Modifier.weight(1f).height(45.dp).clickable(role=Role.Button) {
+                                val wasSaved=word.id in snapshot.savedWordIds
+                                if(lookupOnly) onSaveGlossaryWord(WordInfo(word.id,lemma,word.translation,"","")) else onSaveWord(word.id); selectedWord=null
+                                if(wasSaved) alerts.show(removedText(word.word),TaleAlertKind.Info) else alerts.success(savedText(if(lookupOnly) lemma else word.word))
+                            },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
                         }
                     }
                 }
