@@ -194,7 +194,7 @@ class AccountSwitchTest {
                 await(20) {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
                 hold.set(true);vm.syncNow();assertTrue(entered.await(10,TimeUnit.SECONDS))
                 val before=uploads.get()
-                vm.toggleWord("during");await {"during" in vm.state.value.savedWordIds}
+                vm.toggleWord("morning");await {"morning" in vm.state.value.savedWordIds}
                 Thread.sleep(2_500)
                 release.countDown()
                 await(15) {uploads.get()>before}
