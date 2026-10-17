@@ -117,7 +117,11 @@ fun ReminderControls() {
         }
         if(denied || (enabled && !LearningReminders.allowed(context))) {
             Text(stringResource(R.string.bildirim_izni_kapali_dilersen_cihaz),fontSize=12.sp,color=TaleMuted)
-            TextButton(onClick={val intent=if(android.os.Build.VERSION.SDK_INT>=26) Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(android.provider.Settings.EXTRA_APP_PACKAGE,context.packageName) else Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,android.net.Uri.parse("package:${context.packageName}"));context.startActivity(intent)}) {Text(stringResource(R.string.bildirim_ayarlarini_ac))}
+            TextButton(onClick={
+                val details=Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,android.net.Uri.parse("package:${context.packageName}"))
+                if(android.os.Build.VERSION.SDK_INT>=26) SafeIntents.startFirst(context,Intent(android.provider.Settings.ACTION_APP_NOTIFICATION_SETTINGS).putExtra(android.provider.Settings.EXTRA_APP_PACKAGE,context.packageName),details)
+                else SafeIntents.startFirst(context,details)
+            }) {Text(stringResource(R.string.bildirim_ayarlarini_ac))}
         }
     }
 }

@@ -90,6 +90,16 @@ class LearningReliabilityTest {
         LearningStore(context).use {assertEquals(1,it.queuedOperations().count {event ->event.rpc=="submit_learning_session"})}
     }
 
+    @Test fun failingDatabaseAtStartupStillOpensTheAppWithRetry()=exercise(setup={
+        it.writableDatabase.execSQL("CREATE TRIGGER fail_visit BEFORE INSERT ON engagement_events BEGIN SELECT RAISE(ABORT,'fixture'); END")
+    }) {vm,context ->
+        assertTrue(vm.ready.value)
+        await {vm.writeError.value?.pendingCount==1}
+        LearningStore(context).use {it.writableDatabase.execSQL("DROP TRIGGER fail_visit")}
+        vm.retryLearningWrites()
+        await {vm.writeError.value==null}
+    }
+
     @Test fun snapshotFailureShowsErrorWithoutTogglingSavedWordAgain() {
         val failRead=AtomicBoolean(false)
         exercise(read={check(!failRead.get());it.snapshot()}) {vm,context ->

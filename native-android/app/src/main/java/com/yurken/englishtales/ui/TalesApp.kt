@@ -17,7 +17,17 @@ import androidx.compose.ui.res.stringResource
 import com.yurken.englishtales.R
 
 /** Q6: a shared story link to open; [at] tells two taps on the same link apart. */
-data class StoryLinkRequest(val storyId: String,val at: Long)
+data class StoryLinkRequest(val storyId: String,val at: Long) {
+    /** A link waiting for onboarding must survive rotation and process death, or the shared story is lost. */
+    fun save(state: android.os.Bundle) {state.putString(KEY_ID,storyId);state.putLong(KEY_AT,at)}
+    companion object {
+        private const val KEY_ID="story_link_id"
+        private const val KEY_AT="story_link_at"
+        fun restore(state: android.os.Bundle?): StoryLinkRequest?=
+            state?.getString(KEY_ID)?.takeIf {com.yurken.englishtales.data.StoryLinks.storyId(com.yurken.englishtales.data.StoryLinks.url(it))==it}
+                ?.let {StoryLinkRequest(it,state.getLong(KEY_AT))}
+    }
+}
 
 @Composable
 fun TalesApp(viewModel: LearningViewModel = viewModel(),dailyPlanRequest: Long=0L,storyLinkRequest: StoryLinkRequest?=null,onStoryLinkHandled: (StoryLinkRequest)->Unit={}) {
@@ -44,11 +54,11 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     val uiScope=rememberCoroutineScope()
     fun google() {uiScope.launch {viewModel.signInGoogle {GoogleSignIn.acquire(context,BuildConfig.GOOGLE_WEB_CLIENT_ID)}}}
     DisposableEffect(lifecycle) {
-        val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> if(event==androidx.lifecycle.Lifecycle.Event.ON_RESUME) {viewModel.refresh();viewModel.verifyAccount();LearningReminders.schedule(context);if(content.ready.value) content.refresh()}}
+        val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> if(event==androidx.lifecycle.Lifecycle.Event.ON_RESUME) {viewModel.refresh();viewModel.verifyAccount();LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}}
         lifecycle.addObserver(observer)
         onDispose {lifecycle.removeObserver(observer)}
     }
-    if(!ready || !contentReady || snapshot.ownerId!=(account.userId?:"guest")) { Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) { CircularProgressIndicator() }; return }
+    if(!ready || !contentReady || snapshot.ownerId!=(account.userId?:"guest")) { Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) { TaleLoading() }; return }
     val startDestination=rememberSaveable {if(snapshot.onboardingDone) "main" else if(account.userId==null) "welcome" else "onboarding"}
     val nav=rememberNavController()
     fun completedExit(id: String, active: ()->Boolean, next: ()->Unit) {

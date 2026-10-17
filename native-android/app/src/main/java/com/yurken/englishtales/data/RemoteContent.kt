@@ -1,11 +1,11 @@
 package com.yurken.englishtales.data
 
+import com.yurken.englishtales.R
 import android.app.Application
 import android.content.Context
 import android.util.AtomicFile
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.yurken.englishtales.R
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -158,10 +158,10 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         }
         publish()
     }
-    private suspend fun publish() = withContext(Dispatchers.Main) {
-        historical.values.forEach(LearningContent::retain)
-        if (hasRemoteCatalog) {
-            val stories = (0 until metadata.length()).map { i ->
+    private suspend fun publish() {
+        // Parsing every catalog document is heavy for a large catalog; only the install touches the UI thread.
+        val stories = if (!hasRemoteCatalog) null else withContext(Dispatchers.Default) {
+            (0 until metadata.length()).map { i ->
                 val doc = metadata.getJSONObject(i); val revision = doc.getString("id")
                 val remote = ContentCodec.story(doc)
                 downloaded[revision]?.let { it.copy(addedAt=remote.addedAt,tags=it.tags.ifEmpty { remote.tags }) }
@@ -169,7 +169,11 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                         ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null,questions=bundled.questions,tags=remote.tags.ifEmpty { bundled.tags }) }
                     ?: remote
             }
-            LearningContent.install(stories, historical.values.flatMap { it.vocabulary.orEmpty() })
+        }
+        val retained = historical.values.toList()
+        withContext(Dispatchers.Main) {
+            retained.forEach(LearningContent::retain)
+            if (stories != null) LearningContent.install(stories, retained.flatMap { it.vocabulary.orEmpty() })
         }
     }
     suspend fun refresh() = lock.withLock {
@@ -312,6 +316,12 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     }
 }
 
+internal object ContentRefreshPolicy {
+    const val MIN_INTERVAL_MILLIS = 15 * 60_000L
+    /** A failed or never-run refresh is always stale, so the next return retries it. */
+    fun isStale(lastSuccessAt: Long?, now: Long): Boolean = lastSuccessAt == null || now - lastSuccessAt >= MIN_INTERVAL_MILLIS || now < lastSuccessAt
+}
+
 class ContentViewModel(application: Application) : AndroidViewModel(application) {
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
     private val http = if (BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))
@@ -329,11 +339,16 @@ class ContentViewModel(application: Application) : AndroidViewModel(application)
         mutableStatus.value = status
         if (announce) mutableEvents.tryEmit(ContentEvent(success, status.message))
     }
+    private var lastRefreshAt: Long? = null
+    /** Returning to the app refreshes the catalog at most every [ContentRefreshPolicy.MIN_INTERVAL_MILLIS]. */
+    fun refreshIfStale(now: Long = android.os.SystemClock.elapsedRealtime()) {
+        if (ContentRefreshPolicy.isStale(lastRefreshAt, now)) refresh()
+    }
     fun refresh(userInitiated: Boolean = false) {
         if (mutableStatus.value.busy) return
         mutableStatus.value = ContentStatus(busy = true, message = text(R.string.content_message_refreshing))
         viewModelScope.launch {
-            try { repository.refresh(); finish(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
+            try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finish(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
             catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
         }
     }

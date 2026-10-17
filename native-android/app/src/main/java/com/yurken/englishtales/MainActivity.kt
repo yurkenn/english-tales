@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
         dailyPlanRequest=savedInstanceState?.getLong("daily_plan_request")?:0L
         acceptReminder(intent)
         // A recreated activity gets its original intent again; the shared link was already opened then.
-        if(savedInstanceState==null) acceptStoryLink(intent)
+        if(savedInstanceState==null) acceptStoryLink(intent) else storyLinkRequest=StoryLinkRequest.restore(savedInstanceState)
         // The bundled catalog parses in the background while the brand intro is visible.
         lifecycleScope.launch { LearningContent.load(applicationContext) }
         enableEdgeToEdge()
@@ -88,6 +88,7 @@ class MainActivity : ComponentActivity() {
     }
     override fun onSaveInstanceState(outState: Bundle) {
         outState.putLong("daily_plan_request",dailyPlanRequest)
+        storyLinkRequest?.save(outState)
         super.onSaveInstanceState(outState)
     }
 }

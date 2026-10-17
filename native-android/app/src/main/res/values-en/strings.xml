@@ -300,4 +300,5 @@
     <string name="zorluk_kolay">Easy</string>
     <string name="zorluk_orta">Medium</string>
     <string name="zorluk_zor">Hard</string>
+    <string name="yukleniyor">Loading…</string>
 </resources>

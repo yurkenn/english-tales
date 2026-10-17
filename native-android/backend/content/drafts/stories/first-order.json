@@ -1,0 +1,288 @@
+{
+ "status": "draft",
+ "source": "claude-draft-2026-10-17",
+ "reviewedBy": null,
+ "story": {
+  "id": "first-order",
+  "title": "The First Big Order",
+  "author": "English Tales",
+  "level": "B1",
+  "genre": "Günlük yaşam",
+  "description": "Şehirdeki kalabalık bir fırında işe yeni başlayan Elif, ilk büyük siparişte pahalı bir hata yapar; ama deneyimli bir iş arkadaşının yardımıyla bu hata beklenmedik bir başarıya dönüşür.",
+  "coverKey": "cover_first_order",
+  "tags": [
+   "gunluk-yasam"
+  ],
+  "sentences": [
+   {
+    "id": "fo-1",
+    "english": "Elif started her new job at Sunrise Bakery on a cold Monday morning.",
+    "turkish": "Elif, soğuk bir pazartesi sabahı Sunrise Fırını'nda yeni işine başladı."
+   },
+   {
+    "id": "fo-2",
+    "english": "The bakery was on the busiest street in the city, and it opened at six.",
+    "turkish": "Fırın şehrin en kalabalık caddesindeydi ve sabah altıda açılıyordu."
+   },
+   {
+    "id": "fo-3",
+    "english": "She was excited, but she was also very nervous.",
+    "turkish": "Heyecanlıydı ama aynı zamanda çok gergindi."
+   },
+   {
+    "id": "fo-4",
+    "english": "Her manager, Mr. Kaplan, gave her an apron and a long list of rules.",
+    "turkish": "Müdürü Bay Kaplan ona bir önlük ve uzun bir kural listesi verdi."
+   },
+   {
+    "id": "fo-5",
+    "english": "“Always read every order twice,” he said.",
+    "turkish": "“Her siparişi mutlaka iki kez oku,” dedi."
+   },
+   {
+    "id": "fo-6",
+    "english": "An older woman named Nur showed her how to use the ovens.",
+    "turkish": "Nur adında yaşça büyük bir kadın ona fırınları nasıl kullanacağını gösterdi."
+   },
+   {
+    "id": "fo-7",
+    "english": "Nur had worked at the bakery for twenty years, and she smiled at everyone.",
+    "turkish": "Nur yirmi yıldır bu fırında çalışıyordu ve herkese gülümserdi."
+   },
+   {
+    "id": "fo-8",
+    "english": "On Thursday, a customer called and ordered cakes for a company party.",
+    "turkish": "Perşembe günü bir müşteri aradı ve bir şirket partisi için kek sipariş etti."
+   },
+   {
+    "id": "fo-9",
+    "english": "She wanted forty small lemon cakes for Friday at noon.",
+    "turkish": "Cuma öğlen için kırk küçük limonlu kek istiyordu."
+   },
+   {
+    "id": "fo-10",
+    "english": "Elif wrote the order quickly because three people were waiting at the counter.",
+    "turkish": "Tezgâhta üç kişi beklediği için Elif siparişi aceleyle yazdı."
+   },
+   {
+    "id": "fo-11",
+    "english": "That evening, she baked forty chocolate cakes instead of lemon ones.",
+    "turkish": "O akşam limonlu kek yerine kırk tane çikolatalı kek pişirdi."
+   },
+   {
+    "id": "fo-12",
+    "english": "She only noticed the mistake the next morning, when she read the order again.",
+    "turkish": "Hatayı ancak ertesi sabah, siparişi yeniden okuduğunda fark etti."
+   },
+   {
+    "id": "fo-13",
+    "english": "Her face went red, and her hands started to shake.",
+    "turkish": "Yüzü kıpkırmızı oldu ve elleri titremeye başladı."
+   },
+   {
+    "id": "fo-14",
+    "english": "The delivery was in four hours, and there was no time to start again.",
+    "turkish": "Teslimata dört saat vardı ve baştan başlamaya zaman yoktu."
+   },
+   {
+    "id": "fo-15",
+    "english": "“I've ruined everything,” she told Nur.",
+    "turkish": "“Her şeyi mahvettim,” dedi Nur'a."
+   },
+   {
+    "id": "fo-16",
+    "english": "“Mr. Kaplan will be so angry with me.”",
+    "turkish": "“Bay Kaplan bana çok kızacak.”"
+   },
+   {
+    "id": "fo-17",
+    "english": "Nur looked at the cakes for a long moment and then laughed softly.",
+    "turkish": "Nur bir süre keklere baktı, sonra usulca güldü."
+   },
+   {
+    "id": "fo-18",
+    "english": "“Mistakes happen to everyone,” she said.",
+    "turkish": "“Hata herkesin başına gelir,” dedi."
+   },
+   {
+    "id": "fo-19",
+    "english": "“Let's think about this together.”",
+    "turkish": "“Gel, bunu birlikte düşünelim.”"
+   },
+   {
+    "id": "fo-20",
+    "english": "She took some fresh lemons from the fridge and began to make a light lemon cream.",
+    "turkish": "Buzdolabından birkaç taze limon aldı ve hafif bir limon kreması yapmaya başladı."
+   },
+   {
+    "id": "fo-21",
+    "english": "Then she showed Elif how to put a little cream on top of each cake.",
+    "turkish": "Sonra Elif'e her kekin üstüne biraz krema koymayı gösterdi."
+   },
+   {
+    "id": "fo-22",
+    "english": "They added thin pieces of lemon peel, and the cakes looked beautiful.",
+    "turkish": "Üstlerine ince limon kabuğu parçaları eklediler ve kekler harika göründü."
+   },
+   {
+    "id": "fo-23",
+    "english": "Elif felt a little more confident as she worked.",
+    "turkish": "Elif çalıştıkça kendini biraz daha özgüvenli hissetti."
+   },
+   {
+    "id": "fo-24",
+    "english": "At eleven o'clock, she called the customer to apologise and explain what had happened.",
+    "turkish": "Saat on birde müşteriyi arayıp özür diledi ve neler olduğunu anlattı."
+   },
+   {
+    "id": "fo-25",
+    "english": "The woman was quiet for a few seconds.",
+    "turkish": "Kadın birkaç saniye sessiz kaldı."
+   },
+   {
+    "id": "fo-26",
+    "english": "“Bring them, and we'll see,” she finally said.",
+    "turkish": "Sonunda “Getirin, bakalım,” dedi."
+   },
+   {
+    "id": "fo-27",
+    "english": "Elif and Nur carried the boxes to the office together.",
+    "turkish": "Elif ile Nur kutuları ofise birlikte taşıdılar."
+   },
+   {
+    "id": "fo-28",
+    "english": "At the party, people tried the cakes and asked for more.",
+    "turkish": "Partide insanlar kekleri tattı ve daha fazlasını istedi."
+   },
+   {
+    "id": "fo-29",
+    "english": "The next week, the same customer called again.",
+    "turkish": "Ertesi hafta aynı müşteri yeniden aradı."
+   },
+   {
+    "id": "fo-30",
+    "english": "“We'd like sixty of your chocolate lemon cakes, please,” she said.",
+    "turkish": "“Çikolatalı limonlu keklerinizden altmış tane istiyoruz, lütfen,” dedi."
+   },
+   {
+    "id": "fo-31",
+    "english": "Mr. Kaplan was surprised and decided to add the new cake to the menu.",
+    "turkish": "Bay Kaplan çok şaşırdı ve yeni keki menüye eklemeye karar verdi."
+   },
+   {
+    "id": "fo-32",
+    "english": "He called it “Elif's Mistake,” and it soon became a favourite with customers.",
+    "turkish": "Kekin adını “Elif'in Hatası” koydu ve kek kısa sürede müşterilerin gözdesi oldu."
+   },
+   {
+    "id": "fo-33",
+    "english": "Elif still read every order twice.",
+    "turkish": "Elif hâlâ her siparişi iki kez okuyordu."
+   },
+   {
+    "id": "fo-34",
+    "english": "But now she knew that a bad day could sometimes become a good one.",
+    "turkish": "Ama artık kötü bir günün bazen iyi bir güne dönüşebileceğini biliyordu."
+   },
+   {
+    "id": "fo-35",
+    "english": "She also knew that kind colleagues make a difficult job much easier.",
+    "turkish": "Nazik iş arkadaşlarının zor bir işi çok daha kolaylaştırdığını da biliyordu."
+   }
+  ],
+  "questions": [
+   {
+    "id": "first-order-q1",
+    "kind": "main",
+    "prompt": "What is the story mainly about?",
+    "options": [
+     "A woman who opens her own bakery in the city",
+     "A new worker who turns a mistake into a success with a colleague's help",
+     "A customer who complains about a bakery's bad cakes",
+     "A manager who teaches his workers many rules"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "first-order-q2",
+    "kind": "detail",
+    "prompt": "What kind of cakes did the customer order?",
+    "options": [
+     "Chocolate cakes",
+     "Vanilla cakes",
+     "Lemon cakes",
+     "Apple cakes"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "first-order-q3",
+    "kind": "detail",
+    "prompt": "How long had Nur worked at the bakery?",
+    "options": [
+     "Two years",
+     "Ten years",
+     "Fifteen years",
+     "Twenty years"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "first-order-q4",
+    "kind": "inference",
+    "prompt": "Why did Mr. Kaplan probably call the new cake “Elif's Mistake”?",
+    "options": [
+     "Because the cake was born from Elif's error and became a happy story",
+     "Because he wanted to punish Elif in front of customers",
+     "Because Elif asked him to use her name",
+     "Because the customers did not like the new cake"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "words": [
+  {
+   "id": "nervous",
+   "word": "nervous",
+   "translation": "gergin, endişeli",
+   "pronunciation": "/ˈnɝːvəs/",
+   "example": "I always feel nervous before an exam."
+  },
+  {
+   "id": "customer",
+   "word": "customer",
+   "translation": "müşteri",
+   "pronunciation": "/ˈkʌstəmɚ/",
+   "example": "The shop gave every customer a free coffee."
+  },
+  {
+   "id": "mistake",
+   "word": "mistake",
+   "translation": "hata",
+   "pronunciation": "/mɪˈsteɪk/",
+   "example": "Don't worry, it was only a small mistake."
+  },
+  {
+   "id": "delivery",
+   "word": "delivery",
+   "translation": "teslimat",
+   "pronunciation": "/dɪˈlɪvɚi/",
+   "example": "The delivery of my new sofa is on Tuesday."
+  },
+  {
+   "id": "confident",
+   "word": "confident",
+   "translation": "özgüvenli, kendinden emin",
+   "pronunciation": "/ˈkɑːnfɪdənt/",
+   "example": "After a lot of practice, he felt confident on stage."
+  },
+  {
+   "id": "apologise",
+   "word": "apologise",
+   "translation": "özür dilemek",
+   "pronunciation": "/əˈpɑːlədʒaɪz/",
+   "example": "You should apologise to your sister for shouting."
+  }
+ ]
+}

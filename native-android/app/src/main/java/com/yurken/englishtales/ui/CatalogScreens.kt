@@ -259,7 +259,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                         }
                         ReferenceIconButton("share",stringResource(R.string.hikayeyi_paylas),onClick={
                             val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nEnglish Tales\n${StoryLinks.url(story.id)}") }
-                            context.startActivity(android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
+                            SafeIntents.startFirst(context,android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
                         })
                     }
                 }
