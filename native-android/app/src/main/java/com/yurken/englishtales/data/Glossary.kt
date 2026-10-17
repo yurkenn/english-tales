@@ -17,7 +17,7 @@ class Glossary(entries: Map<String, String>, private val forms: Map<String, Stri
     private val byLemma: Map<String, Entry> = buildMap<String, Entry> {
         entries.forEach { (lemma, gloss) -> if (gloss.isNotBlank()) put(lemma.lowercase(Locale.ROOT), Entry(lemma.lowercase(Locale.ROOT), gloss)) }
         // A reviewed learning word wins over a glossary draft for the same lemma.
-        words.forEach { word -> PhraseMatcher.tokens(word.word).singleOrNull()?.let { put(it, Entry(it, word.translation)) } }
+        words.forEach { word -> if (word.translation.isNotBlank()) PhraseMatcher.tokens(word.word).singleOrNull()?.let { put(it, Entry(it, word.translation)) } }
     }
 
     val size: Int get() = byLemma.size
