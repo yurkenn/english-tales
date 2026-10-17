@@ -30,9 +30,10 @@ fun ContentDownloadsScreen(content: ContentViewModel,onBack: ()->Unit) {
         SimpleTopBar(stringResource(R.string.indirilen_hikayeler),onBack)
         Text(stringResource(R.string.hikaye_indirmeyi_kaldirmak_okuma_ilerlemeni, downloads.size),modifier=Modifier.padding(16.dp),fontSize=14.sp,color=TaleMuted)
         androidx.compose.foundation.lazy.LazyColumn(Modifier.weight(1f)) {
+            if(downloads.isEmpty()) item {TaleEmptyState(stringResource(R.string.henuz_indirilen_hikaye_yok))}
             items(downloads.size) {index ->
                 val story=downloads[index]
-                Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
+                Row(Modifier.fillMaxWidth().appearIn(index).padding(horizontal=16.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
                     Text(story.title,modifier=Modifier.weight(1f))
                     TextButton(onClick={content.removeDownload(story)},enabled=!status.busy) {Text(stringResource(R.string.kaldir))}
                 }

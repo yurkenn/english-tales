@@ -122,6 +122,7 @@
     <string name="indirilenler">İndirilenler</string>
     <string name="yenile">Yenile</string>
     <string name="indirilen_hikayeler">İndirilen hikâyeler</string>
+    <string name="henuz_indirilen_hikaye_yok">Henüz indirdiğin hikâye yok. Bir hikâyenin sayfasından çevrimdışı okumak için indirebilirsin.</string>
     <string name="hikaye_indirmeyi_kaldirmak_okuma_ilerlemeni">%1$s hikâye · İndirmeyi kaldırmak okuma ilerlemeni ve öğrendiğin kelimeleri silmez.</string>
     <string name="cevrimdisi_okumaya_hazir">Çevrimdışı okumaya hazır ✓</string>
     <string name="indirmeyi_kaldir">İndirmeyi kaldır</string>
