@@ -125,6 +125,25 @@ class LearningAccountSyncTest {
         assertTrue(result.verifySession);assertFalse(result.continueUpload)
         assertEquals(1,result.state.pending);assertEquals(25,store.snapshot().points)
     }
+    @Test fun statusCountsMatchQueueSemanticsWithManyDeliveredRows()=exercise {store,_,_ ->
+        val payload=JSONObject().put("fixture","x".repeat(512)).toString()
+        fun row(state: String,code: String?,retryAt: Long=0) = store.writableDatabase.execSQL(
+            "INSERT INTO learning_outbox(id,owner_id,rpc,payload,created_at,state,attempts,next_attempt_at,error_code,delivered_at) VALUES(?,?,?,?,?,?,?,?,?,?)",
+            arrayOf(UUID.randomUUID().toString(),store.owner.id,"apply_word_event",payload,1L,state,0,retryAt,code,if(state=="delivered") 1L else null))
+        val db=store.writableDatabase;db.beginTransaction()
+        try {
+            repeat(2_000) {row("delivered",null)}
+            repeat(3) {row("pending",null)};row("pending","invalid_response",Long.MAX_VALUE)
+            repeat(2) {row("blocked",null)};row("blocked","invalid_payload")
+            repeat(4) {row("blocked","account_word_precedence")}
+            db.setTransactionSuccessful()
+        } finally {db.endTransaction()}
+        val queue=store.queuedOperations()
+        val status=LearningAccountSync(LearningSyncTransport {_,_,_ ->error("No network in status")},"https://fixture.supabase.co").status(store)
+        assertEquals(queue.count {it.state=="pending"},status.pending)
+        assertEquals(queue.count {it.state=="blocked" && it.errorCode!="account_word_precedence"},status.blocked)
+        assertEquals(4,status.pending);assertEquals(3,status.blocked)
+    }
     private fun preferenceResponse(store: LearningStore,body: JSONObject)=cloud(store).getJSONObject("profile")
         .put("user_id",store.owner.id).put("display_name",body.getString("p_name")).put("level",body.getString("p_level"))
         .put("preferred_genre",body.getString("p_genre")).put("daily_goal",body.getInt("p_goal"))

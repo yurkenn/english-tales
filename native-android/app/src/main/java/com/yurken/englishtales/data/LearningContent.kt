@@ -2,6 +2,7 @@ package com.yurken.englishtales.data
 
 import android.content.Context
 import org.json.JSONObject
+import kotlinx.coroutines.launch
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
@@ -85,9 +86,24 @@ private data class Catalog(
     val stories: List<Story>,
     val storyById: Map<String, Story>
 ) {
-    val phrases by lazy { PhraseMatcher.Index(words) }
+    /** Thread that built [phrases]; lets tests check that the pre-warm ran off the installing thread. */
+    @Volatile var phrasesBuiltOn: Thread? = null
+        private set
+    // Synchronized lazies: the pre-warm and a reader racing it build each value once and share it.
+    val phrases by lazy { PhraseMatcher.Index(words).also { phrasesBuiltOn = Thread.currentThread() } }
     val glossary by lazy { LearningContent.glossarySource.let { (entries, forms) -> Glossary(entries, forms, words) } }
+    /** Revision of the first story, in catalog order, that teaches each word; built once instead of per word event. */
+    val wordRevisions: Map<String, String> by lazy {
+        HashMap<String, String>().also { map -> stories.forEach { story -> storyWords(story, phrases).forEach { map.putIfAbsent(it.id, story.revisionId) } } }
+    }
 }
+
+private fun sentenceWords(story: Story, sentence: StorySentence, phrases: PhraseMatcher.Index): List<WordInfo> =
+    if (story.vocabulary != null) story.vocabulary.filter { it.id in story.sentenceWordIds.orEmpty()[sentence.id].orEmpty() }
+    else PhraseMatcher.find(sentence.english, phrases).map { it.word }.distinctBy { it.id }
+
+private fun storyWords(story: Story, phrases: PhraseMatcher.Index): List<WordInfo> =
+    story.sentences.flatMap { sentenceWords(story, it, phrases) }.distinctBy { it.id }
 
 /** A learning word or one of the learner's saved glossary words. */
 fun LearningSnapshot.wordFor(id: String): WordInfo? = LearningContent.wordById[id] ?: personalWords[id]
@@ -126,9 +142,32 @@ object LearningContent {
     /** Lookup for every other token (Q4.3a); learning words of the current catalog are part of it. */
     val glossary: Glossary get() = current().glossary
     val stories: List<Story> get() = current().stories
-    val storyById: Map<String, Story> get() = current().storyById + pinned
+    val storyById: Map<String, Story> get() = current().storyById.let { if (pinned.isEmpty()) it else it + pinned }
 
     private val loadLock = Any()
+
+    /** Background work that builds the reader's lookups before the first reader composition needs them. */
+    private val prewarmScope = kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.SupervisorJob() + kotlinx.coroutines.Dispatchers.Default)
+
+    /** The pre-warm of the latest installed catalog; tests join it. */
+    @Volatile internal var prewarmJob: kotlinx.coroutines.Job? = null
+        private set
+
+    @Volatile private var prewarmTarget: Catalog? = null
+
+    /**
+     * Builds the phrase index and glossary of [target] on [kotlinx.coroutines.Dispatchers.Default], so the
+     * first reader composition finds them ready. Idempotent: the values are per-catalog synchronized lazies,
+     * so a newer install brings its own and a pre-warm of a replaced catalog is skipped.
+     */
+    private fun prewarm(target: Catalog) {
+        prewarmTarget = target
+        prewarmJob = prewarmScope.launch {
+            if (prewarmTarget !== target) return@launch
+            // A failure here must not crash the app; the reader builds (and reports) it on first use as before.
+            runCatching { target.phrases; target.glossary }
+        }
+    }
 
     /** The packaged stories, unchanged after a remote catalog is installed. */
     @Volatile private var bundled: List<Story>? = null
@@ -151,8 +190,19 @@ object LearningContent {
     /** Blocking variant for callers that already run off the UI thread (stores, workers, tests). */
     fun initialize(context: Context) {
         if (catalog != null) return
-        synchronized(loadLock) { if (catalog == null) catalog = parse(context).also { bundled = it.stories } }
+        synchronized(loadLock) { if (catalog == null) parse(context).let { catalog = it; bundled = it.stories; prewarm(it) } }
     }
+
+    /** Installs a catalog without the bundled assets, for JVM tests that have no [Context]. */
+    @androidx.annotation.VisibleForTesting
+    internal fun initializeForTest(words: List<WordInfo>, stories: List<Story>) = synchronized(loadLock) {
+        Catalog(words, words.associateBy { it.id }, words.associateBy { it.word.lowercase(java.util.Locale.ROOT) }, stories, stories.associateBy { it.id })
+            .let { catalog = it; bundled = it.stories; prewarm(it) }
+    }
+
+    /** Thread that built the current catalog's phrase index, or null while it is not built yet. */
+    @androidx.annotation.VisibleForTesting
+    internal fun phraseIndexBuiltOn(): Thread? = current().phrasesBuiltOn
 
     @androidx.annotation.VisibleForTesting
     internal fun resetForTest() = synchronized(loadLock) { catalog = null; bundled = null; pinned.clear(); historical.clear(); wordSources.clear() }
@@ -205,13 +255,17 @@ object LearningContent {
     }
 
     /** Published stories use their editor links; bundled stories match the shared dictionary. */
-    fun wordsForSentence(story: Story, sentence: StorySentence): List<WordInfo> =
-        if (story.vocabulary != null) story.vocabulary.filter { it.id in story.sentenceWordIds.orEmpty()[sentence.id].orEmpty() }
-        else PhraseMatcher.find(sentence.english, phraseIndex).map { it.word }.distinctBy { it.id }
+    fun wordsForSentence(story: Story, sentence: StorySentence): List<WordInfo> = sentenceWords(story, sentence, phraseIndex)
 
-    fun wordsForStory(story: Story): List<WordInfo> = story.sentences.flatMap { wordsForSentence(story, it) }.distinctBy { it.id }
+    fun wordsForStory(story: Story): List<WordInfo> = storyWords(story, phraseIndex)
 
-    fun revisionForWord(wordId: String): String? = (pinned.values + stories).firstOrNull { story -> wordsForStory(story).any {it.id==wordId} }?.revisionId ?: wordSources[wordId]
+    /** Pinned revisions win, then the first catalog story that teaches the word, then a retained older revision. */
+    fun revisionForWord(wordId: String): String? = pinned.values.firstOrNull { story -> wordsForStory(story).any {it.id==wordId} }?.revisionId
+        ?: current().wordRevisions[wordId] ?: wordSources[wordId]
+
+    /** The original linear scan, kept so tests can check [revisionForWord] against it. */
+    @androidx.annotation.VisibleForTesting
+    internal fun revisionForWordByScan(wordId: String): String? = (pinned.values + stories).firstOrNull { story -> wordsForStory(story).any {it.id==wordId} }?.revisionId ?: wordSources[wordId]
 
     fun retain(story: Story) {
         historical[story.revisionId] = story
@@ -225,7 +279,8 @@ object LearningContent {
     /** Publish on the main thread; keep learned vocabulary from previous content revisions. */
     fun install(stories: List<Story>, historicalWords: List<WordInfo> = emptyList()) {
         val words = (current().words + historicalWords + stories.flatMap { it.vocabulary.orEmpty() }).associateBy { it.id }.values.toList()
-        catalog = Catalog(words, words.associateBy { it.id }, words.associateBy { it.word.lowercase(java.util.Locale.ROOT) }, stories, stories.associateBy { it.id })
+        Catalog(words, words.associateBy { it.id }, words.associateBy { it.word.lowercase(java.util.Locale.ROOT) }, stories, stories.associateBy { it.id })
+            .let { catalog = it; prewarm(it) }
     }
 
     /** Most recently added first. Undated stories keep catalog order, later entries counting as newer. */

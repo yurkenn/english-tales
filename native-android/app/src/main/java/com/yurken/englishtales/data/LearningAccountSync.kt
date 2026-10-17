@@ -21,14 +21,13 @@ data class LearningSyncStep(val state: LearningSyncState, val continueUpload: Bo
 /** One upload per actor turn lets queued local edits and account changes run between requests. */
 class LearningAccountSync(private val transport: LearningSyncTransport, private val source: String) {
     internal fun status(store: LearningStore): LearningSyncState {
-        val queue = store.queuedOperations()
         val cloud = store.cloudState()
         val dirty = store.readableDatabase.query("SELECT preferences_dirty FROM local_profile WHERE id=1").use {
             it.moveToFirst() && it.getInt(0) != 0
         }
         return LearningSyncState(
-            pending = queue.count { it.state == "pending" },
-            blocked = queue.count { it.state == "blocked" && it.errorCode != "account_word_precedence" },
+            pending = store.pendingOperationCount(),
+            blocked = store.blockedOperationCount(),
             lastSuccessAt = cloud?.appliedAt,
             deviceOnlyPoints = cloud?.let { JSONObject(it.baselineJson).getInt("points") } ?: 0,
             preferencesPending = dirty,

@@ -47,6 +47,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         }
         viewModelScope.launch(Dispatchers.IO) {
             try {
+                // Restore (with its deleted-account check) before cleanup consumes the pending receipts.
+                if(background) LearningSyncRuntime.ensureRestored(getApplication())
                 if(background) runCatching {DeletedAccountCleanup.clean(getApplication())}
                 try {
                     auth.restore()?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
@@ -131,7 +133,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         val startedAt=System.currentTimeMillis()
         mutate {store.beginSession(id,kind,questionCount,storyId,source,startedAt)}
     }
-    fun checkpointSession(id: String,millis: Long) = mutate {store.checkpointSession(id,millis)}
+    // Checkpoints only touch session_drafts (no outbox row), so they must not wake cloud sync every few seconds.
+    fun checkpointSession(id: String,millis: Long) = mutate(sync=false) {store.checkpointSession(id,millis)}
     fun abandonSession(id: String) = mutate {store.abandonSession(id)}
     fun startReading(storyId: String) = mutate { store.startReading(storyId) }
     fun dismissReaderHint() = mutate { store.dismissReaderHint() }
@@ -142,8 +145,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         writes.retry();scheduleSync()
     })}
 
-    private fun mutate(action: () -> Unit) {mutations.trySend(Mutation(scope) {
-        if(writes.submit(action)) scheduleSync()
+    private fun mutate(sync: Boolean=true,action: () -> Unit) {mutations.trySend(Mutation(scope) {
+        if(writes.submit(action) && sync) scheduleSync()
     })}
     private fun interruptSync() {
         syncEpoch++

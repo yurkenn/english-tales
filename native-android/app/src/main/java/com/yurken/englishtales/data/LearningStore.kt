@@ -248,8 +248,10 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         }
         if(newlyCompleted) productSignal(LearningSignal.StoryCompleted(firstForLearner))
     }
-    fun completeLesson(correctAnswers: Int, sessionId: String,kind: String="choice",questionCount: Int=5,activeMillis: Long=0) {
-        require(kind in listOf("choice","card","match","spell") && questionCount in 1..5 && correctAnswers in 0..questionCount)
+    fun completeLesson(answered: Int, sessionId: String,kind: String="choice",questionCount: Int=5,activeMillis: Long=0) {
+        require(kind in listOf("choice","card","match","spell") && questionCount in 1..5 && answered>=0)
+        // An over-count must not wedge the write queue; the server only accepts 0..questionCount.
+        val correctAnswers=answered.coerceAtMost(questionCount)
         val now=clock()
         var newlyCompleted=false
         transaction {db ->
@@ -330,6 +332,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         dao.insert(QueuedLearningOperation(id,owner.id,rpc,payload.toString(),clock(),state=if(blockedReason==null) "pending" else "blocked",errorCode=blockedReason))
     }
     fun queuedOperations() = dao.operations()
+    internal fun pendingOperationCount() = dao.pendingCount()
+    /** Blocked rows the learner can act on; account word precedence is resolved by the account, not shown. */
+    internal fun blockedOperationCount() = dao.blockedCount()
     internal fun reconcileCloud(snapshot: LearningCloudSnapshot, source: String, isCurrentScope: ()->Boolean): Boolean =
         transferTransaction { db -> LearningReconciliation.apply(db,owner,snapshot,source,clock(),isCurrentScope) }
     internal fun cloudState() = dao.cloud()

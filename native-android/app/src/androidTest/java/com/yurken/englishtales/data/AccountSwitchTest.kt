@@ -141,6 +141,26 @@ class AccountSwitchTest {
         assertEquals(last,vm.account.value.sync.lastSuccessAt)
         assertFalse(vm.account.value.sync.running)
     }
+    @Test fun activeTimeCheckpointsStayLocalWhileRealWritesStillSync() {
+        // Counts every RPC so a checkpoint can neither pull a snapshot nor upload anything.
+        val rpcs=java.util.concurrent.atomic.AtomicInteger()
+        exercise({LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+            rpcs.incrementAndGet();if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else JSONObject().put("applied",true)
+        },"https://fixture.supabase.co")}) {vm,http ->
+            vm.signIn("a@example.invalid","fixture-password")
+            await {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
+            val session=UUID.randomUUID().toString();val signedIn=rpcs.get()
+            vm.beginSession(session,"choice",5,null)
+            await {rpcs.get()>signedIn && !vm.account.value.sync.running}
+            Thread.sleep(2_500);await {!vm.account.value.sync.running}
+            val settled=rpcs.get()
+            repeat(4) {vm.checkpointSession(session,(it+1)*1_000L);Thread.sleep(1_000)}
+            Thread.sleep(3_000)
+            assertEquals(settled,rpcs.get())
+            vm.toggleWord("quiet");await {"quiet" in vm.state.value.savedWordIds}
+            await {rpcs.get()>settled}
+        }
+    }
     @Test fun signOutRequestInvalidatesAnInFlightSnapshotBeforeItReturns() {
         val entered=CountDownLatch(1);val release=CountDownLatch(1)
         try {
