@@ -19,7 +19,10 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private var store = storeFactory(LearningOwner.Guest)
     private data class Mutation(val scope: Long?,val action: ()->Unit)
     private val mutations = Channel<Mutation>(Channel.UNLIMITED)
+    // scope is the owner generation: it changes only with the store. Learning writes are stamped under this lock so an owner switch can drain them first.
     @Volatile private var scope=0L
+    private val stamping=Any()
+    private var switching=false
     @Volatile private var syncEpoch=0L
     @Volatile private var disposed=false
     private val syncing=java.util.concurrent.atomic.AtomicBoolean(false)
@@ -61,16 +64,16 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 // A failing database must not crash every launch: the write bar offers a retry instead.
                 writes.submit {store.recordVisit()};writes.refresh();mutableReady.value=true
                 verifyAccount()
-                for(action in mutations) {
-                    if(action.scope!=null && action.scope!=scope) continue
-                    try {action.action()} catch (failure: Exception) {
-                        if(failure is kotlinx.coroutines.CancellationException) throw failure
-                        mutableAccount.value=mutableAccount.value.copy(busy=false,message=text(R.string.account_message_action_failed),messageTone=MessageTone.Error)
-                    }
-                    writes.refresh()
-                }
+                for(action in mutations) if(action.scope==null || action.scope==scope) execute(action)
             } finally {store.close()}
         }
+    }
+    private fun execute(action: Mutation) {
+        try {action.action()} catch (failure: Exception) {
+            if(failure is kotlinx.coroutines.CancellationException) throw failure
+            mutableAccount.value=mutableAccount.value.copy(busy=false,message=text(R.string.account_message_action_failed),messageTone=MessageTone.Error)
+        }
+        writes.refresh()
     }
 
     fun refresh() = mutate {store.recordVisit()}
@@ -142,13 +145,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun saveWords(ids: List<String>) = mutate { store.saveWords(ids) }
     fun updatePreferences(level: String, genre: String, goal: Int, name: String) = mutate { store.updatePreferences(level,genre,goal,name) }
 
-    fun retryLearningWrites() {mutations.trySend(Mutation(scope) {
-        writes.retry();scheduleSync()
-    })}
+    fun retryLearningWrites() = enqueue {writes.retry();scheduleSync()}
 
-    private fun mutate(sync: Boolean=true,action: () -> Unit) {mutations.trySend(Mutation(scope) {
+    private fun mutate(sync: Boolean=true,action: () -> Unit) = enqueue {
         if(writes.submit(action) && sync) scheduleSync()
-    })}
+    }
+    private fun enqueue(action: ()->Unit) {synchronized(stamping) {mutations.trySend(Mutation(scope,action))}}
     private fun interruptSync() {
         syncEpoch++
         if(background) LearningSyncRuntime.pause()
@@ -156,7 +158,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     }
     // Only the actor accesses a store. Timers enqueue work without touching Room.
     private fun scheduleSync(waitMillis: Long=2_000) {
-        if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed) return
+        if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed || switching) return
         syncTimer?.cancel()
         val expected=scope
         if(background) LearningSyncRuntime.schedule(getApplication(),checkNotNull(mutableAccount.value.userId))
@@ -216,12 +218,22 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private fun changeOwner(owner: LearningOwner,email: String="") {
         val next=storeFactory(owner)
         try {next.snapshot()} catch (failure: Exception) {next.close();throw failure}
-        store.close();store=next;scope++;syncEpoch++
+        // Writes queued under the old owner belong to it: apply them before switching instead of dropping them.
+        val unscoped=mutableListOf<Mutation>()
+        switching=true
+        try {
+            while(true) {
+                val queued=synchronized(stamping) {mutations.tryReceive().getOrNull().also {if(it==null) {store.close();store=next;scope++}}}?:break
+                if(queued.scope==null) unscoped+=queued else if(queued.scope==scope) execute(queued)
+            }
+        } finally {switching=false}
+        unscoped.forEach {mutations.trySend(it)}
+        syncEpoch++
         writes.reset()
         mutableCompletions.value=emptySet()
         onOwnerChanged(owner)
         if(background) LearningSyncRuntime.resume()
-        mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=scope)
+        mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=mutableAccount.value.scope+1)
         if(owner is LearningOwner.Account && cloudSync!=null) {
             val saved=cloudSync.status(store)
             mutableAccount.value=mutableAccount.value.copy(sync=saved.copy(message=if(saved.lastSuccessAt==null) text(R.string.account_message_not_synced) else text(R.string.account_message_history_kept),tone=MessageTone.Info))
@@ -247,8 +259,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             try {
                 check(store.owner.id==user)
                 storeFactory(LearningOwner.Guest).use {GuestTransfer.transfer(it,store)}
-                scope++
-                mutableAccount.value=mutableAccount.value.copy(busy=false,scope=scope,message=text(R.string.account_message_guest_transferred),messageTone=MessageTone.Success)
+                // Same owner: remount the UI, but keep the owner generation so writes queued during the transfer still land.
+                mutableAccount.value=mutableAccount.value.copy(busy=false,scope=mutableAccount.value.scope+1,message=text(R.string.account_message_guest_transferred),messageTone=MessageTone.Success)
             } catch (failure: Exception) {
                 mutableAccount.value=mutableAccount.value.copy(busy=false,messageTone=MessageTone.Error,message=when((failure as? GuestTransferFailure)?.code) {
                     "different_target" -> text(R.string.account_message_transfer_other_account)
