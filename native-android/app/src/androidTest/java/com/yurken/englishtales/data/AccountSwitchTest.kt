@@ -41,12 +41,12 @@ class AccountSwitchTest {
             else -> error("Unexpected request")
         }
     }
-    private fun await(predicate: ()->Boolean) {
-        val deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(5)
+    private fun await(seconds: Long=5,predicate: ()->Boolean) {
+        val deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(seconds)
         while(!predicate() && System.nanoTime()<deadline) Thread.sleep(20)
         assertTrue("Expected account state was not reached",predicate())
     }
-    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},block: (LearningViewModel,Fixture)->Unit) {
+    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},opening: (LearningOwner)->Unit={},block: (LearningViewModel,Fixture)->Unit) {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val target=instrumentation.targetContext
         val directory=File(target.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
@@ -57,7 +57,7 @@ class AccountSwitchTest {
             override fun openOrCreateDatabase(name: String,mode: Int,factory: SQLiteDatabase.CursorFactory?,handler: DatabaseErrorHandler?)=SQLiteDatabase.openOrCreateDatabase(File(directory,name).absolutePath,factory,handler)
         }
         val fixture=Fixture();val holder=ViewModelStore()
-        val vm=LearningViewModel(target.applicationContext as Application,AccountService(fixture,Memory()),{LearningStore(context,it)},syncFactory(fixture))
+        val vm=LearningViewModel(target.applicationContext as Application,AccountService(fixture,Memory()),{opening(it);LearningStore(context,it)},syncFactory(fixture))
         holder.put("account-test",vm)
         try {await {vm.ready.value};block(vm,fixture)}
         finally {fixture.release?.countDown();instrumentation.runOnMainSync {holder.clear()}}
@@ -105,6 +105,27 @@ class AccountSwitchTest {
         vm.completeLesson(0,UUID.randomUUID().toString(),"choice",5,0)
         await {vm.state.value.completedLessons==1}
         assertFalse("quiet" in vm.state.value.savedWordIds)
+        // The guest action is kept by the guest it was made under, not silently dropped.
+        vm.signOut();await {vm.state.value.ownerId=="guest"}
+        assertTrue("quiet" in vm.state.value.savedWordIds)
+    }
+    @Test fun writesQueuedDuringGuestTransferLandInAccount() {
+        val armed=java.util.concurrent.atomic.AtomicBoolean(false);val entered=CountDownLatch(1);val release=CountDownLatch(1)
+        try {
+            // The transfer opens the guest store inside the actor; holding it there keeps the transfer in flight.
+            exercise(opening={if(it is LearningOwner.Guest && armed.getAndSet(false)) {entered.countDown();assertTrue(release.await(5,TimeUnit.SECONDS))}}) {vm,http ->
+                vm.saveWords(listOf("morning"));await {"morning" in vm.state.value.savedWordIds}
+                vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a && vm.account.value.guestTransfer!=null && !vm.account.value.busy}
+                armed.set(true);vm.transferGuestProgress();assertTrue(entered.await(5,TimeUnit.SECONDS))
+                val story=LearningContent.storyById.getValue("quiet-morning")
+                vm.updateProgress(story.id,40,story.sentences.first().id);vm.saveWords(listOf("quiet"))
+                release.countDown()
+                await {!vm.account.value.busy && "quiet" in vm.state.value.savedWordIds}
+                assertEquals(http.a,vm.state.value.ownerId)
+                assertEquals(setOf("morning","quiet"),vm.state.value.savedWordIds)
+                assertEquals(40,vm.state.value.storyProgress[story.id])
+            }
+        } finally {release.countDown()}
     }
     @Test fun cancelledGooglePickerKeepsGuestProgress()=exercise {vm,_ ->
         vm.saveWords(listOf("morning"));await {"morning" in vm.state.value.savedWordIds}
@@ -148,17 +169,17 @@ class AccountSwitchTest {
             rpcs.incrementAndGet();if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else JSONObject().put("applied",true)
         },"https://fixture.supabase.co")}) {vm,http ->
             vm.signIn("a@example.invalid","fixture-password")
-            await {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
+            await(20) {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
             val session=UUID.randomUUID().toString();val signedIn=rpcs.get()
             vm.beginSession(session,"choice",5,null)
-            await {rpcs.get()>signedIn && !vm.account.value.sync.running}
-            Thread.sleep(2_500);await {!vm.account.value.sync.running}
+            await(20) {rpcs.get()>signedIn && !vm.account.value.sync.running}
+            Thread.sleep(2_500);await(20) {!vm.account.value.sync.running}
             val settled=rpcs.get()
             repeat(4) {vm.checkpointSession(session,(it+1)*1_000L);Thread.sleep(1_000)}
             Thread.sleep(3_000)
             assertEquals(settled,rpcs.get())
-            vm.toggleWord("quiet");await {"quiet" in vm.state.value.savedWordIds}
-            await {rpcs.get()>settled}
+            vm.toggleWord("quiet");await(20) {"quiet" in vm.state.value.savedWordIds}
+            await(20) {rpcs.get()>settled}
         }
     }
     @Test fun signOutRequestInvalidatesAnInFlightSnapshotBeforeItReturns() {

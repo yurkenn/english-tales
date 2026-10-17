@@ -85,7 +85,9 @@ object ContentCodec {
         require(parsed.map { it.id }.distinct().size == parsed.size)
         val words = doc.optJSONArray("words") ?: JSONArray()
         val vocabulary = (0 until words.length()).map { i -> words.getJSONObject(i).let {
-            WordInfo(it.getString("id"), it.getString("word"), SupportLanguage.pick(it, "translations", "translation"), it.getString("pronunciation"), it.getString("example"))
+            val translation = SupportLanguage.pick(it, "translations", "translation")
+            require(translation.isNotBlank())
+            WordInfo(it.getString("id"), it.getString("word"), translation, it.getString("pronunciation"), it.getString("example"))
         } }
         require(vocabulary.map { it.id }.distinct().size == vocabulary.size)
         val links = doc.optJSONArray("links") ?: JSONArray()

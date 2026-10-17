@@ -24,7 +24,10 @@ import com.yurken.englishtales.R
 import com.yurken.englishtales.data.ListeningQuiz
 import com.yurken.englishtales.data.ListeningQuestion
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 @Composable
@@ -55,7 +58,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         value=withContext(Dispatchers.Default) {SentenceGap.prompts(stories,dictionary)}
         gapUnavailable=false
     }
-    val orderCandidates=remember(stories) {SentenceOrder.candidates(stories)}
+    val orderCandidates by produceState<List<OrderQuestion>?>(null,stories) {value=withContext(Dispatchers.Default) {SentenceOrder.candidates(stories)}}
     fun kindOf(value: String)=when(value) {"cloze"->SentenceGap.SESSION_KIND;"listen"->ListeningQuiz.SESSION_KIND;"order"->SentenceOrder.SESSION_KIND;"dictation"->Dictation.SESSION_KIND;"ladder"->PracticeLadder.SESSION_KIND;else->value}
     val sessionKind=kindOf(mode)
     fun exit(plan: Boolean=false) {
@@ -69,28 +72,34 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     BackHandler(enabled=mode.isNotEmpty()) {exit()}
     LaunchedEffect(mode) { onSessionActive(mode.isNotEmpty()) }
     DisposableEffect(Unit) { onDispose {onSessionActive(false)} }
-    fun start(value: String, seeded: List<String> = emptyList()) {
+    val scope=rememberCoroutineScope()
+    var startJob by remember { mutableStateOf<Job?>(null) }
+    // Gap sessions scan the whole dictionary, so they are built on Default; every other step stays on Main.
+    suspend fun gapSession(prompts: List<GapPrompt>, priority: List<String>, level: String)=withContext(Dispatchers.Default) {SentenceGap.session(prompts,dictionary,priority,level)}
+    suspend fun begin(value: String, seeded: List<String>) {
         if(value=="cloze") {
-            gapQuestions=SentenceGap.session(gapPrompts.orEmpty(),dictionary,ReviewFocus.order(emptyList(),snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}),snapshot.level)
+            gapQuestions=gapSession(gapPrompts.orEmpty(),ReviewFocus.order(emptyList(),snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}),snapshot.level)
             gapUnavailable=gapQuestions.isEmpty()
             if(gapUnavailable) {if(mode.isNotEmpty()) exit();return}
         }
         if(value=="order" || value=="dictation") {
-            orderQuestions=SentenceOrder.session(orderCandidates,snapshot.level)
+            orderQuestions=SentenceOrder.session(orderCandidates.orEmpty(),snapshot.level)
             if(orderQuestions.isEmpty()) {if(mode.isNotEmpty()) exit();return}
         }
-        if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
         val priority=ReviewFocus.order(seeded,snapshot.weakWordIds,snapshot.dueWordIds,saved.map {it.id}).mapNotNull(snapshot::wordFor)
         // Seeded words can be missing from the loaded content (a synced account offline on a new phone); fall back to the usual mix.
         val pool=(if(seeded.isNotEmpty()) priority.take(seeded.size.coerceIn(1,5)) else emptyList())
             .ifEmpty {(priority+supplemental.shuffled()).distinctBy {it.id}.take(5)}
+        val drawn=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else if(value=="order" || value=="dictation") orderQuestions.map {it.sentenceId} else pool.shuffled().map {it.id}
+        // Built before any session state changes, so the previous screen stays intact until the new one is ready.
+        val candidates=if(value=="ladder" && pool.isNotEmpty()) gapSession(gapPrompts.orEmpty().filter {it.wordId in drawn},drawn,snapshot.level) else emptyList()
+        if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
         val sentenceMode=value=="cloze" || value=="order" || value=="dictation"
         if(!sentenceMode && pool.isEmpty()) {if(mode.isNotEmpty()) exit();return}
         sessionKey=java.util.UUID.randomUUID().toString()
-        session++; ids=if(value=="cloze") gapQuestions.map {it.prompt.wordId} else if(value=="order" || value=="dictation") orderQuestions.map {it.sentenceId} else pool.shuffled().map {it.id};mode=value;question=0;correctCount=0;finished=false
+        session++; ids=drawn;mode=value;question=0;correctCount=0;finished=false
         // Q5.8: each word gets the drill that fits its stage, and the session climbs from word drills to games.
         if(value=="ladder") {
-            val candidates=SentenceGap.session(gapPrompts.orEmpty().filter {it.wordId in ids},dictionary,ids,snapshot.level)
             val plan=PracticeLadder.plan(ids,snapshot.wordStates,snapshot.wordStability,candidates.map {it.prompt.wordId}.toSet(),voiceReady)
             ids=plan.map {it.first};ladderModes=plan.map {it.second}
             val context=plan.filter {it.second==PracticeLadder.CONTEXT}.map {it.first}.toSet()
@@ -100,6 +109,11 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         }
         if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(snapshot::wordFor),dictionary)
         sessionCount=ids.size
+    }
+    // Undispatched: modes without a gap session start in this frame, as before. A start already building is not doubled.
+    fun start(value: String, seeded: List<String> = emptyList()) {
+        if(startJob?.isActive==true) return
+        startJob=scope.launch(start=CoroutineStart.UNDISPATCHED) {begin(value,seeded)}
     }
     // The daily plan's review uses the ladder, so each due word gets the drill that fits its stage (Q5.8).
     LaunchedEffect(launchId) { if(launchId!=null) { start("ladder",launchWordIds);onLaunchConsumed() } }
@@ -123,10 +137,10 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             LaunchedEffect(voice.available) {voiceReady=voice.available==true}
             if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),"headphones",LocalTaleColors.current.tileBlue,enabled=voice.available==true,index=5) {start("listen")}
             // Dictation needs a voice too; it appears only once English speech is known to work.
-            if(voice.available==true && orderCandidates.isNotEmpty()) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),"headphones",LocalTaleColors.current.tileYellow,index=4) {start("dictation")}
+            if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),"headphones",LocalTaleColors.current.tileYellow,enabled=orderCandidates!=null,index=4) {start("dictation")}
             if(voice.available!=true) Text(stringResource(if(voice.available==null) R.string.listen_preparing else R.string.listen_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
-            if(orderCandidates.isNotEmpty()) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),"read",LocalTaleColors.current.tileGreen,index=5) {start("order")}
+            if(orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),"read",LocalTaleColors.current.tileGreen,enabled=orderCandidates!=null,index=5) {start("order")}
             ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),"play",LocalTaleColors.current.tilePurple,index=6) {start("match")}
             ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),"letters",LocalTaleColors.current.tileGreen,index=7) {start("spell")}
         }

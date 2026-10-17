@@ -5,8 +5,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.semantics.SemanticsProperties
 import androidx.compose.ui.semantics.getOrNull
-import androidx.compose.ui.test.hasClickAction
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.unit.dp
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.data.*
 import org.junit.Assert.*
@@ -39,6 +40,30 @@ class AccessibilityAuditTest {
     @Test fun practice() = audit {PracticeScreen(snapshot,{_,_,_,_,_->},{_,_->},PaddingValues(),{_,_,_->},{_,_->},{})}
     @Test fun settings() = audit {LearningSettingsScreen(snapshot,{},{_,_,_,_->})}
     @Test fun onboarding() = audit {OnboardingScreen(analyticsControls={}) {_,_,_->}}
+
+    // Q3.2: small targets get 48dp layout bounds, not only Compose's automatic touch-slop expansion.
+    @Test fun readerTouchTargets() {
+        compose.setContent {EnglishTalesTheme {ReaderScreen(story,snapshot,onBack={},onSaveWord={},onProgress={_,_->},
+            onComplete={},onHintDismiss={},sessionId="audit-size",onCheckpoint={_,_->},onOpenWords={})}}
+        compose.onAllNodesWithContentDescription("Cümleyi çevir").assertAllAtLeast48dp()
+        compose.onAllNodes(hasClickAction() and SemanticsMatcher("word link") {node -> node.config.any {it.key.name=="LinkTestMarker"}})
+            .onFirst().performClick()
+        compose.onNodeWithText("Kapat").assertAtLeast48dp()
+        compose.onNode(hasText("Öğren") or hasText("Kaldır")).assertAtLeast48dp()
+    }
+
+    @Test fun shelfSeeAllTouchTarget() {
+        compose.setContent {EnglishTalesTheme {StudyScreen(snapshot,{},{},PaddingValues(),{},{})}}
+        compose.onAllNodesWithText("Tümünü gör").assertAllAtLeast48dp()
+    }
+
+    private fun SemanticsNodeInteraction.assertAtLeast48dp() {assertWidthIsAtLeast(48.dp).assertHeightIsAtLeast(48.dp)}
+
+    private fun SemanticsNodeInteractionCollection.assertAllAtLeast48dp() {
+        val count=fetchSemanticsNodes().size
+        assertTrue("No targets found",count>0)
+        repeat(count) {get(it).assertAtLeast48dp()}
+    }
 
     private fun audit(screen: @Composable () -> Unit) {
         compose.setContent {EnglishTalesTheme {screen()}}
