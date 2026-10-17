@@ -167,6 +167,35 @@ class LearningReconciliationTest {
         assertEquals(newer.revisionId,local.snapshot().readingPositions[original.id]!!.revisionId)
         assertEquals(2,JSONObject(local.cloudState()!!.snapshotJson).getJSONArray("progress").length())
     }
+    private data class ProgressCase(val name: String, val sameRevision: Boolean, val pending: Boolean, val remotePercent: Int,
+        val remoteAt: Long, val remoteEventId: String, val percent: Int, val sentence: String, val keepsLocalRevision: Boolean)
+    @Test fun progressMergeKeepsPendingOtherRevisionAndTakesMaxOnTheSameRevision() {
+        val story=LearningContent.storyById.getValue("quiet-morning")
+        val low="00000000-0000-0000-0000-000000000000";val high="ffffffff-ffff-ffff-ffff-ffffffffffff"
+        listOf(
+            ProgressCase("pending local on another revision is kept",false,true,25,now+60_000,low,88,"qm-8",true),
+            ProgressCase("pending local on another revision is kept even when remote is further",false,true,100,now+60_000,high,88,"qm-8",true),
+            ProgressCase("delivered local on another revision yields to the server",false,false,25,now+60_000,low,25,"remote-sentence",false),
+            ProgressCase("same revision: local higher and later",true,true,40,now-60_000,low,88,"qm-8",true),
+            ProgressCase("same revision: remote higher and later",true,true,95,now+60_000,low,95,"remote-sentence",true),
+            ProgressCase("same revision: local higher, remote later moves only the cursor",true,true,40,now+60_000,low,88,"remote-sentence",true),
+            ProgressCase("same revision: remote higher, local later keeps local cursor",true,true,95,now-60_000,low,95,"qm-8",true),
+            ProgressCase("same revision: equal time, local id wins over a lower event id",true,true,40,now,low,88,"qm-8",true),
+            ProgressCase("same revision: equal time, a higher event id wins the cursor",true,true,40,now,high,88,"remote-sentence",true),
+            ProgressCase("same revision delivered: server projection is used",true,false,40,now+60_000,low,40,"remote-sentence",true),
+        ).forEachIndexed { index,c ->
+            val local=store("progress-$index");local.updateProgress(story.id,88,"qm-8",story)
+            if(!c.pending) local.queuedOperations().forEach { assertTrue(c.name,local.markDelivered(it.id,user)) }
+            val revision=if(c.sameRevision) story.revisionId else UUID.randomUUID().toString()
+            val remote=CloudLearningProgress(revision,story.id,"remote-sentence",c.remotePercent,c.remoteAt,c.remoteEventId,c.remoteAt)
+            assertTrue(c.name,apply(local,cloud(progress=listOf(remote))))
+            val position=local.snapshot().readingPositions.getValue(story.id)
+            assertEquals(c.name,c.percent,local.snapshot().storyProgress[story.id])
+            assertEquals(c.name,c.sentence,position.sentenceId)
+            assertEquals(c.name,if(c.keepsLocalRevision) story.revisionId else revision,position.revisionId)
+            assertEquals(c.name,1,JSONObject(local.cloudState()!!.snapshotJson).getJSONArray("progress").length())
+        }
+    }
     @Test fun dirtyPreferencesArePreservedAndRemoteVersionConflictIsRecorded() {
         val local=store();local.updatePreferences("B1","Gizem",3,"Yerel")
         local.dismissReaderHint();local.startReading("quiet-morning")
