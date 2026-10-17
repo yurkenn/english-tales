@@ -98,6 +98,10 @@ interface OfflineLearningDao {
     @Query("SELECT * FROM learning_outbox WHERE state='pending' AND next_attempt_at<=:now ORDER BY created_at,id LIMIT :limit")
     fun pending(now: Long,limit: Int): List<QueuedLearningOperation>
     @Query("SELECT * FROM learning_outbox WHERE id=:id") fun operation(id: String): QueuedLearningOperation?
+    /** Counts for sync status; delivered rows stay in the outbox, so status must not load them. */
+    @Query("SELECT COUNT(*) FROM learning_outbox WHERE state='pending'") fun pendingCount(): Int
+    @Query("SELECT COUNT(*) FROM learning_outbox WHERE state='blocked' AND (error_code IS NULL OR error_code!='account_word_precedence')")
+    fun blockedCount(): Int
     @Insert fun insert(operation: QueuedLearningOperation)
     @Query("UPDATE learning_outbox SET state='delivered',delivered_at=:now,error_code=NULL WHERE id=:id AND owner_id=:owner AND state='pending'")
     fun delivered(id: String,owner: String,now: Long): Int
