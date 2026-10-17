@@ -76,6 +76,33 @@ class LearningWriteRecoveryTest {
         assertNull(recovery.error.value)
     }
 
+    @Test fun rejectedWriteIsDroppedInsteadOfBlockingLaterWrites() {
+        val rejected=mutableListOf<Exception>()
+        val recorded=mutableListOf<Int>()
+        val recovery=LearningWriteRecovery({rejected+=it}) {}
+        assertFalse(recovery.submit {require(false) {"blank translation"}})
+        assertTrue(recovery.submit {recorded+=2})
+        assertEquals(listOf(2),recorded)
+        assertEquals(1,rejected.size)
+        assertNull(recovery.error.value)
+    }
+
+    @Test fun retryDropsARejectedHeadAndRunsTheRest() {
+        var unavailable=true
+        val rejected=mutableListOf<Exception>()
+        val recorded=mutableListOf<Int>()
+        val recovery=LearningWriteRecovery({rejected+=it}) {}
+        recovery.submit {check(!unavailable);recorded+=0}
+        recovery.submit {throw IllegalArgumentException("blank translation")}
+        recovery.submit {recorded+=2}
+        assertEquals(3,recovery.error.value?.pendingCount)
+        unavailable=false
+        recovery.retry()
+        assertEquals(listOf(0,2),recorded)
+        assertTrue(rejected.single() is IllegalArgumentException)
+        assertNull(recovery.error.value)
+    }
+
     @Test fun cancellationIsNotAnErrorThatCanBeRetried() {
         val recovery=LearningWriteRecovery {}
         try {

@@ -46,4 +46,11 @@ class GlossaryTest {
         val g = Glossary(mapOf("walk" to "yürüyüş (taslak)"), emptyMap(), listOf(walk))
         assertEquals("yürümek", g.lookup("walk")?.gloss)
     }
+
+    @Test fun aBlankLearningWordTranslationAddsNoEntry() {
+        val blank = WordInfo("lamp", "lamp", " ", "", "")
+        assertNull(Glossary(emptyMap(), emptyMap(), listOf(blank)).lookup("lamp"))
+        // A blank learning word never hides a usable glossary meaning.
+        assertEquals("lamba", Glossary(mapOf("lamp" to "lamba"), emptyMap(), listOf(blank)).lookup("lamp")?.gloss)
+    }
 }

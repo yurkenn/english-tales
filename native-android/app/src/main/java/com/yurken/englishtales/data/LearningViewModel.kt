@@ -31,7 +31,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     val state: StateFlow<LearningSnapshot> = mutableState
     private val mutableReady = MutableStateFlow(false)
     val ready: StateFlow<Boolean> = mutableReady
-    private val writes = LearningWriteRecovery { mutableState.value=readSnapshot(store) }
+    // A rejected write is dropped (retrying cannot fix it) and reported like any other failed action.
+    private val writes = LearningWriteRecovery({mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_action_failed),messageTone=MessageTone.Error)}) { mutableState.value=readSnapshot(store) }
     val writeError: StateFlow<LearningWriteError?> = writes.error
     private val mutableCompletions=MutableStateFlow<Set<String>>(emptySet())
     val completedSessions: StateFlow<Set<String>> = mutableCompletions

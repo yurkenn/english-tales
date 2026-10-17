@@ -6,8 +6,12 @@ import kotlinx.coroutines.flow.StateFlow
 
 data class LearningWriteError(val pendingCount: Int, @androidx.annotation.StringRes val messageRes: Int)
 
-/** Actor-confined: retain failed writes in order, separately from failed reads. */
-internal class LearningWriteRecovery(private val read: () -> Unit) {
+/**
+ * Actor-confined: retain failed writes in order, separately from failed reads. A write rejected by
+ * validation (IllegalArgumentException) fails the same way on every retry, so it is dropped and
+ * reported through [rejected] instead of blocking every later write.
+ */
+internal class LearningWriteRecovery(private val rejected: (Exception) -> Unit = {}, private val read: () -> Unit) {
     private val pending = ArrayDeque<() -> Unit>()
     private var readFailed = false
     private val mutableError = MutableStateFlow<LearningWriteError?>(null)
@@ -24,7 +28,7 @@ internal class LearningWriteRecovery(private val read: () -> Unit) {
             true
         } catch (failure: Exception) {
             if (failure is kotlinx.coroutines.CancellationException) throw failure
-            pending.addLast(action)
+            if (failure is IllegalArgumentException) rejected(failure) else pending.addLast(action)
             publish()
             false
         }
@@ -51,8 +55,10 @@ internal class LearningWriteRecovery(private val read: () -> Unit) {
                 pending.first().invoke()
             } catch (failure: Exception) {
                 if (failure is kotlinx.coroutines.CancellationException) throw failure
-                publish()
-                return
+                if (failure !is IllegalArgumentException) { publish(); return }
+                pending.removeFirst()
+                rejected(failure)
+                continue
             }
             // A committed write must never be replayed because its snapshot failed.
             pending.removeFirst()
