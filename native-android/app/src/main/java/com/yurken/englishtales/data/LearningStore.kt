@@ -32,7 +32,9 @@ data class LearningSnapshot(
     /** Q5.5: stage per dictionary form the learner has met. */
     val wordStages: Map<String, WordStage> = emptyMap(),
     /** Q5.10: running words of the stories finished in the last seven days (a re-read on another day counts again). */
-    val weeklyWordsRead: Int = 0
+    val weeklyWordsRead: Int = 0,
+    /** Q5.8: FSRS stability in days per saved word; words not yet reviewed under FSRS are absent. */
+    val wordStability: Map<String, Double> = emptyMap()
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
     val knownWordCount get() = wordStages.count {it.value==WordStage.KNOWN}
@@ -58,9 +60,11 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     fun snapshot(): LearningSnapshot {
         val now=clock();val today=LearningPolicy.dayKey(now);val db=readableDatabase
         val saved=linkedSetOf<String>();val states=mutableMapOf<String,String>();val due=mutableListOf<String>();var nextDue: Long?=null
-        db.rawQuery("SELECT word_id,learning_state,next_review_at FROM saved_words ORDER BY next_review_at,word_id",null).use { c ->
+        val stability=mutableMapOf<String,Double>()
+        db.rawQuery("SELECT word_id,learning_state,next_review_at,stability FROM saved_words ORDER BY next_review_at,word_id",null).use { c ->
             while(c.moveToNext()) {
                 val id=c.getString(0); val at=c.getLong(2);saved+=id;states[id]=c.getString(1)
+                if(!c.isNull(3)) stability[id]=c.getDouble(3)
                 if(at<=now) due+=id else if(nextDue==null || at<nextDue!!) nextDue=at
             }
         }
@@ -104,7 +108,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords,stability)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
