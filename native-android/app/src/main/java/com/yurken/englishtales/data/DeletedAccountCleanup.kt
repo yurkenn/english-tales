@@ -17,6 +17,7 @@ internal object DeletedAccountCleanup {
         for(user in pending(context)) {
             val owner=LearningOwner.Account(user)
             LearningStore(context,LearningOwner.Guest).use {it.forgetTransferTarget(user)}
+            LearningDatabase.detach(context,owner)
             val path=context.getDatabasePath(owner.databaseName)
             check(!path.exists() || context.deleteDatabase(owner.databaseName))
             complete(context,user)

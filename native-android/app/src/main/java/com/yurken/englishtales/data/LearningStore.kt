@@ -45,7 +45,8 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     internal fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(context).getString(id)
     internal var onProductSignal: (LearningSignal) -> Unit = { ProductAnalytics.get(context).record(it) }
     private fun productSignal(signal: LearningSignal) { runCatching { onProductSignal(signal) } }
-    private val database=LearningDatabase.open(context,owner)
+    private val database=LearningDatabase.acquire(context,owner)
+    private val closed=java.util.concurrent.atomic.AtomicBoolean()
     private val dao=database.offline()
     private val operations=LearningOperations(InstallationIdentity.get(context))
     val readableDatabase: SupportSQLiteDatabase get() = database.openHelper.readableDatabase
@@ -360,7 +361,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     fun eraseDeletedAccount() {
         check(owner is LearningOwner.Account)
         database.clearAllTables()
-        database.close()
+        LearningDatabase.detach(context,owner);close()
         check(context.deleteDatabase(owner.databaseName) || !context.getDatabasePath(owner.databaseName).exists()) {
             "Deleted account database cleanup is pending"
         }
@@ -369,7 +370,8 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         check(owner is LearningOwner.Guest)
         writableDatabase.execSQL("DELETE FROM guest_transfers WHERE target_user_id=?",arrayOf(LearningOwner.Account(user).id))
     }
-    override fun close() {database.close()}
+    /** Idempotent: releases this store's hold on the shared database once. */
+    override fun close() {if(closed.compareAndSet(false,true)) LearningDatabase.release(database)}
 }
 
 internal fun SupportSQLiteDatabase.rawQuery(sql: String,args: Array<String>?) = query(sql,args?:emptyArray())

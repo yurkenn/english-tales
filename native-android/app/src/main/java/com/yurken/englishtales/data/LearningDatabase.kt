@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase
 import androidx.room.*
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
+import java.io.File
+import java.util.IdentityHashMap
 import java.util.UUID
 
 @Entity(tableName="saved_words")
@@ -126,7 +128,35 @@ sealed class LearningOwner(val id: String,val databaseName: String) {
 abstract class LearningDatabase: RoomDatabase() {
     abstract fun offline(): OfflineLearningDao
     companion object {
-        fun open(context: Context,owner: LearningOwner): LearningDatabase {
+        private class Lease(val path: String,var holders: Int)
+        private val shared=HashMap<String,LearningDatabase>()
+        private val leases=IdentityHashMap<LearningDatabase,Lease>()
+        /** One Room instance per database file in the process: separate instances on one file contend for SQLite locks
+         *  and their invalidation trackers miss each other's writes. Every acquire is paired with one [release]. */
+        fun acquire(context: Context,owner: LearningOwner): LearningDatabase {
+            val path=context.getDatabasePath(owner.databaseName).absolutePath
+            synchronized(shared) {
+                shared[path]?.let {db ->
+                    // A file deleted under an opened instance must not be served again; its holders keep it until they release.
+                    if(db.isOpen && !File(path).exists()) shared.remove(path) else {checkNotNull(leases[db]).holders++;return db}
+                }
+                return build(context,owner).also {shared[path]=it;leases[it]=Lease(path,1)}
+            }
+        }
+        /** The last holder closes the instance; the next acquire builds a fresh one. */
+        fun release(db: LearningDatabase) {
+            synchronized(shared) {
+                val lease=leases[db]?:return
+                if(--lease.holders>0) return
+                leases.remove(db);if(shared[lease.path]===db) shared.remove(lease.path)
+            }
+            db.close()
+        }
+        /** Before deleting an owner's file: later acquires build a new instance instead of reusing this one. */
+        fun detach(context: Context,owner: LearningOwner) {
+            synchronized(shared) {shared.remove(context.getDatabasePath(owner.databaseName).absolutePath)}
+        }
+        private fun build(context: Context,owner: LearningOwner): LearningDatabase {
             val preferences=context.getSharedPreferences("learning_preferences",Context.MODE_PRIVATE)
             val initial=if(owner is LearningOwner.Guest) LocalProfileRow(
                 name=preferences.getString("display_name","Okuyucu")?:"Okuyucu",
