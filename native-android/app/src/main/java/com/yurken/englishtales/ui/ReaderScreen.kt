@@ -284,7 +284,8 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                     val still=reduceMotion()
                     val open=remember(word.id) {Animatable(if(still) 1f else 0.85f)}
                     LaunchedEffect(word.id) {open.animateTo(1f,spring(dampingRatio=0.6f,stiffness=Spring.StiffnessMedium))}
-                    Column(Modifier.width(272.dp).graphicsLayer {scaleX=open.value;scaleY=open.value;alpha=((open.value-0.85f)/0.15f).coerceIn(0f,1f)}
+                    // Padding inside the popup window leaves room for the shadow instead of clipping it into a grey box.
+                    Column(Modifier.padding(16.dp).width(272.dp).graphicsLayer {scaleX=open.value;scaleY=open.value;alpha=((open.value-0.85f)/0.15f).coerceIn(0f,1f)}
                         .shadow(14.dp,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp)).background(TaleSurface,RoundedCornerShape(16.dp))) {
                         val lookupOnly=Glossary.isLookupOnly(word)
                         val lemma=Glossary.lemmaOf(word)

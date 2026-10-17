@@ -12,11 +12,9 @@
     <string name="alert_reminder_off">Hatırlatıcı kapatıldı</string>
     <string name="alert_reminder_denied">Bildirim izni olmadan hatırlatıcı çalışamaz</string>
     <string name="alert_write_recovered">Bekleyen kayıtların kaydedildi</string>
-    <string name="alert_share_failed">Paylaşım açılamadı</string>
     <string name="alert_link_failed">Bağlantı açılamadı</string>
     <string name="alert_quiz_perfect">Hepsi doğru! Hikâyeyi çok iyi anlamışsın.</string>
     <string name="feedback_correct_title">Doğru!</string>
     <string name="feedback_wrong_title">Neredeyse!</string>
-    <string name="result_points">+%1$d puan</string>
     <string name="weekly_today">Bugün</string>
 </resources>

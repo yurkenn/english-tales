@@ -160,9 +160,6 @@ internal fun TaleDialog(
     }
 }
 
-/** A tappable card that sinks slightly while pressed; the shared touch feedback of list items and tiles. */
-fun Modifier.pressable(role: Role = Role.Button, enabled: Boolean = true, onClick: () -> Unit): Modifier = this.then(Modifier.pressScale(enabled, role, onClick))
-
 /** An inline message that stays on screen (sync state, account results, a failed save) in the alert colors. */
 @Composable
 internal fun TaleNotice(text: String, kind: TaleAlertKind = TaleAlertKind.Info, modifier: Modifier = Modifier, action: (@Composable () -> Unit)? = null) {

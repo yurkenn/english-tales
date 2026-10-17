@@ -9,7 +9,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.ui.semantics.Role
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.Text
@@ -160,15 +159,6 @@ internal fun <T> TaleSwitch(target: T, modifier: Modifier = Modifier, content: @
     }, label = "switch") { content(it) }
 }
 
-/** Keeps a decorative layer above content without taking touches. */
-@Composable
-internal fun Celebration(key: Any, content: @Composable () -> Unit) {
-    Box { content(); ConfettiBurst(Modifier.fillMaxSize(), key) }
-}
-
-internal suspend fun Animatable<Float, AnimationVector1D>.bounce() {
-    animateTo(-10f, tween(140)); animateTo(0f, TaleMotion.spring)
-}
 
 /** Scales the element down a little while pressed and runs [onClick]; keeps the platform ripple. */
 fun Modifier.pressScale(enabled: Boolean = true, role: Role = Role.Button, onClick: () -> Unit): Modifier = composed {
