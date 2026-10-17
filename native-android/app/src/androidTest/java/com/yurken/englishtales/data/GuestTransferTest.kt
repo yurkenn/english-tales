@@ -136,6 +136,24 @@ class GuestTransferTest {
         try {GuestTransfer.import(target,changed);fail()} catch(e: GuestTransferFailure) {assertEquals("payload_conflict",e.code)}
         assertEquals(20,target.snapshot().points)
     }
+    @Test fun permanentImportConflictGivesTheGuestItsHistoryBack() {
+        val session=UUID.randomUUID().toString()
+        guest.completeOnboarding("A2","Macera",3);guest.saveWords(listOf("quiet","morning"));guest.updateProgress("quiet-morning",88);guest.completeLesson(4,session)
+        target.writableDatabase.execSQL("INSERT INTO engagement_events(event_id,name,created_at) VALUES(?,'practice_completed',1)",arrayOf("lesson:$session"))
+        val before=guest.snapshot();val operations=guest.queuedOperations();val preview=GuestTransfer.preview(guest,user)
+        try {GuestTransfer.transfer(guest,target);fail()} catch(e: GuestTransferFailure) {assertEquals("operation_conflict",e.code)}
+        assertEquals(before,guest.snapshot());assertEquals(operations,guest.queuedOperations())
+        assertEquals(preview,GuestTransfer.preview(guest,user));assertEquals(0,count(guest,"guest_transfers"))
+        assertEquals(0,target.snapshot().points);assertEquals(0,count(target,"guest_imports"))
+    }
+    @Test fun transientImportFailureKeepsTheClaimForRetry() {
+        seed();target.writableDatabase.execSQL("CREATE TEMP TRIGGER fail_transfer BEFORE INSERT ON guest_imports BEGIN SELECT RAISE(ABORT,'test_failure'); END")
+        try {GuestTransfer.transfer(guest,target);fail()} catch(e: RuntimeException) {assertFalse(e is GuestTransferFailure)}
+        assertTrue(GuestTransfer.preview(guest,user)!!.pending);assertEquals(0,guest.snapshot().points)
+        target.writableDatabase.execSQL("DROP TRIGGER fail_transfer")
+        assertTrue(GuestTransfer.transfer(guest,target));assertEquals(20,target.snapshot().points)
+        assertNull(GuestTransfer.preview(guest,user))
+    }
     @Test fun versionFourMigrationPreservesGuestHistory() {
         seed();guest.writableDatabase.execSQL("DROP TABLE guest_transfers");guest.writableDatabase.execSQL("DROP TABLE guest_imports");guest.writableDatabase.execSQL("DROP TABLE learning_cloud_state");guest.writableDatabase.execSQL("DROP TABLE favorite_stories");guest.writableDatabase.execSQL("DROP TABLE personal_words");guest.writableDatabase.execSQL("DROP TABLE lemma_reads");guest.writableDatabase.execSQL("DROP TABLE lemma_lookups")
         guest.writableDatabase.version=4;guest.close();guest=open(LearningOwner.Guest)

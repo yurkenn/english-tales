@@ -176,7 +176,39 @@ object GuestTransfer {
     }
     fun transfer(source: LearningStore,target: LearningStore): Boolean {
         val claim=claim(source,target.owner.id)?:return false
-        val applied=import(target,claim);acknowledge(source,claim);return applied
+        val applied=try {import(target,claim)} catch(failure: Exception) {
+            // The import rolled back. A conflict or invalid total fails the same way on every retry, so give the guest
+            // its history back; anything else (disk full, I/O) keeps the claim for the next attempt.
+            if(failure is GuestTransferFailure && failure.code!="payload_conflict" || failure is IllegalArgumentException)
+                runCatching {release(source,claim)}.exceptionOrNull()?.let(failure::addSuppressed)
+            throw failure
+        }
+        acknowledge(source,claim);return applied
+    }
+    /** Undoes a pending claim: restores its payload to the guest tables and drops it. Guest rows written since the claim win. */
+    fun release(source: LearningStore,claim: String) {
+        require(source.owner is LearningOwner.Guest)
+        val data=JSONObject(claim)
+        source.transferTransaction {db ->
+            val stored=pending(db)?.takeIf {it.getString("id")==data.getString("id") && it.getString("target")==data.getString("target")}?:return@transferTransaction
+            val root=JSONObject(stored.getString("payload"))
+            tables.filter {it!="local_profile" && it!="learning_stats" && it!="learning_days"}.forEach {table ->
+                root.optJSONArray(table)?.objects()?.forEach {insert(db,table,it,SQLiteDatabase.CONFLICT_IGNORE)}
+            }
+            root.getJSONArray("learning_days").objects().forEach {day ->
+                find(db,"learning_days","day",day.getString("day"))?.let {day.put("sessions",sum(it.getInt("sessions"),day.getInt("sessions"))).put("readings",sum(it.getInt("readings"),day.getInt("readings")))}
+                insert(db,"learning_days",day,SQLiteDatabase.CONFLICT_REPLACE)
+            }
+            val saved=root.getJSONArray("learning_stats").getJSONObject(0);val now=rows(db,"learning_stats").getJSONObject(0)
+            val newer=if(now.isNull("last_study_day") || !saved.isNull("last_study_day") && saved.getString("last_study_day")>=now.getString("last_study_day")) saved else now
+            saved.put("points",sum(saved.getInt("points"),now.getInt("points"))).put("completed_lessons",sum(saved.getInt("completed_lessons"),now.getInt("completed_lessons")))
+                .put("streak",newer.getInt("streak")).put("last_study_day",newer.get("last_study_day"))
+            insert(db,"learning_stats",saved,SQLiteDatabase.CONFLICT_REPLACE)
+            root.getJSONArray("local_profile").objects().singleOrNull()?.let {
+                db.execSQL("UPDATE local_profile SET last_story_id=COALESCE(last_story_id,?) WHERE id=1",arrayOf<Any?>(if(it.isNull("last_story_id")) null else it.getString("last_story_id")))
+            }
+            db.execSQL("DELETE FROM guest_transfers WHERE id=? AND state='pending'",arrayOf(stored.getString("id")))
+        }
     }
     private fun sum(a: Int,b: Int): Int=(a.toLong()+b).also {require(it in 0..Int.MAX_VALUE.toLong())}.toInt()
     private fun eventDay(event: JSONObject): String {
