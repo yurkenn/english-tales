@@ -37,6 +37,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var finished by rememberSaveable { mutableStateOf(false) }
     var ids by rememberSaveable { mutableStateOf(emptyList<String>()) }
     var sessionKey by rememberSaveable { mutableStateOf("") }
+    // Frozen at start: a sync can drop a word mid-session, but the store expects the count the session began with.
+    var sessionCount by rememberSaveable { mutableIntStateOf(0) }
     var session by rememberSaveable { mutableIntStateOf(0) }
     var gapQuestions by rememberSaveable(stateSaver=gapQuestionsSaver) { mutableStateOf(emptyList<GapQuestion>()) }
     var gapUnavailable by rememberSaveable { mutableStateOf(false) }
@@ -97,11 +99,12 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             ladderStep=if(ladderModes.any(PracticeLadder::isWordDrill)) 0 else if(gapQuestions.isNotEmpty()) 1 else 2
         }
         if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(snapshot::wordFor),dictionary)
+        sessionCount=ids.size
     }
     // The daily plan's review uses the ladder, so each due word gets the drill that fits its stage (Q5.8).
     LaunchedEffect(launchId) { if(launchId!=null) { start("ladder",launchWordIds);onLaunchConsumed() } }
     // The kind is read from the live mode: a value captured in an earlier frame could still be empty and the store would reject it.
-    LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,kindOf(mode),ids.size)}
+    LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,kindOf(mode),sessionCount)}
     if(mode.isEmpty()) {
         Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState())) {
             StatsHeader(snapshot)
@@ -131,8 +134,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     }
     val words=ids.mapNotNull(snapshot::wordFor)
     val timer=rememberActiveLearningTime(sessionKey,snapshot.activeSessionMillis[sessionKey]?:0,!finished,onCheckpoint)
-    val count=if(mode=="cloze") gapQuestions.size else if(mode=="order" || mode=="dictation") orderQuestions.size else words.size
-    val complete: (Int)->Unit = {finished=true;onLessonComplete(it,sessionKey,sessionKind,count,timer.pause())}
+    val count=sessionCount
+    val complete: (Int)->Unit = {finished=true;onLessonComplete(it.coerceIn(0,count),sessionKey,sessionKind,count,timer.pause())}
     if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("card")},snapshot);return }
     if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("match")},snapshot);return }
     if(finished) { GameResult(stringResource(R.string.dogru, correctCount, count),correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
