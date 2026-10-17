@@ -59,12 +59,13 @@ open class AuthHttp(private val base: String,private val key: String) {
 
 interface SessionStorage {fun read(): AccountSession?;fun write(session: AccountSession);fun clear()}
 
-class EncryptedSessionStorage(private val context: Context,project: String): SessionStorage {
+class EncryptedSessionStorage(private val context: Context,project: String,private val keyOverride: (()->SecretKey)?=null): SessionStorage {
     private val namespace=MessageDigest.getInstance("SHA-256").digest(project.toByteArray()).take(12).joinToString("") {"%02x".format(it)}
     private val alias="english_tales_session_$namespace"
     private val file by lazy {AtomicFile(File(context.filesDir,"account-$namespace.enc"))}
     private val aad=project.toByteArray(Charsets.UTF_8)
     private fun key(): SecretKey {
+        keyOverride?.let {return it()}
         val store=KeyStore.getInstance("AndroidKeyStore").apply {load(null)}
         (store.getKey(alias,null) as? SecretKey)?.let {return it}
         return KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES,"AndroidKeyStore").apply {
@@ -72,13 +73,15 @@ class EncryptedSessionStorage(private val context: Context,project: String): Ses
                 .setBlockModes(KeyProperties.BLOCK_MODE_GCM).setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE).build())
         }.generateKey()
     }
-    @Synchronized override fun read(): AccountSession? = try {
-        val encrypted=file.openRead().use {it.readBytes()}
-        require(encrypted.size in 30..262_144 && encrypted[0]==1.toByte())
+    /** Deletes the file only when it is provably corrupt; keystore and I/O failures can be transient, so they throw and keep it. */
+    @Synchronized override fun read(): AccountSession? {
+        val encrypted=try {file.openRead().use {it.readBytes()}} catch (_: java.io.FileNotFoundException) {return null}
+        if(encrypted.size !in 30..262_144 || encrypted[0]!=1.toByte()) {file.delete();return null}
         val cipher=Cipher.getInstance("AES/GCM/NoPadding")
         cipher.init(Cipher.DECRYPT_MODE,key(),GCMParameterSpec(128,encrypted.copyOfRange(1,13)));cipher.updateAAD(aad)
-        AccountSession.decode(JSONObject(String(cipher.doFinal(encrypted.copyOfRange(13,encrypted.size)),Charsets.UTF_8)))
-    } catch (_: Exception) {file.delete();null}
+        val plain=try {cipher.doFinal(encrypted.copyOfRange(13,encrypted.size))} catch (_: javax.crypto.AEADBadTagException) {file.delete();return null}
+        return try {AccountSession.decode(JSONObject(String(plain,Charsets.UTF_8)))} catch (_: Exception) {file.delete();null}
+    }
     @Synchronized override fun write(session: AccountSession) {
         val cipher=Cipher.getInstance("AES/GCM/NoPadding");cipher.init(Cipher.ENCRYPT_MODE,key());cipher.updateAAD(aad)
         val bytes=byteArrayOf(1)+cipher.iv+cipher.doFinal(session.json().toString().toByteArray(Charsets.UTF_8))
