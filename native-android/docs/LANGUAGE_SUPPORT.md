@@ -6,6 +6,8 @@
 
 Uygulama arayüzü Türkçe ve İngilizce sunulur. Android 13 ve üzerindeki uygulama dili seçimi sistem ayarlarındadır; desteklenmeyen cihaz dilleri İngilizceye döner. Hikâye, sözlük ve kategori içeriğinin destek dili hâlâ Türkçedir (`SupportLanguage.code == "tr"`). İngilizce arayüz, İngilizce açıklama/kelime çevirisi kataloğu bulunduğu anlamına gelmez.
 
+İçerik destek dili uygulama açılırken cihaz dillerinden seçilir: `SupportLanguage.enabled` içindeki ilk eşleşen dil kullanılır, yoksa Türkçe. `es-*` cihazları `es-419`, `pt-*` cihazları `pt-BR` çevirisini alır. Bugün listede yalnız `tr` vardır. 10 dilin taslakları `backend/content/translations/<lang>.json` içindedir; bir dil, kataloğun tamamı o dilde yayımlandıktan sonra listeye eklenir. Eklemeden önce, önceki dilde önbelleğe alınmış uzak katalog ve indirilmiş hikâyelerin yeni dilde yeniden yüklenmesi sağlanmalıdır.
+
 Claude'un PR açıklamasındaki açık iş, Kotlin içinde kalan kullanıcı mesajlarıydı. Devam çalışması:
 
 - Hesap giriş/çıkış, doğrulama/kurtarma, misafir aktarımı, hesap silme ve Google giriş mesajlarını dil kaynaklarına taşır.
