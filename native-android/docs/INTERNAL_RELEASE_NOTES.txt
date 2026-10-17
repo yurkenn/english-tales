@@ -1,15 +1,9 @@
 <en-US>
 Native Android preview with a redesigned reading experience, Turkish sentence translations, saved vocabulary and practice activities. Continue as a guest or sign in with Google or email. Signed-in learning progress syncs across devices. Account verification, password recovery and account deletion are available.
 </en-US>
-<de-DE>
-Native Android-Testversion mit neuem Leseerlebnis, türkischen Satzübersetzungen, gespeicherten Vokabeln und Übungen. Als Gast fortfahren oder mit Google bzw. E-Mail anmelden. Der Lernfortschritt angemeldeter Nutzer wird zwischen Geräten synchronisiert. Kontobestätigung, Passwortwiederherstellung und Kontolöschung sind verfügbar.
-</de-DE>
 <es-ES>
 Versión de prueba nativa de Android con una experiencia de lectura renovada, traducciones de frases al turco, vocabulario guardado y ejercicios. Continúa como invitado o inicia sesión con Google o correo electrónico. El progreso de aprendizaje se sincroniza entre dispositivos al iniciar sesión. Incluye verificación de cuenta, recuperación de contraseña y eliminación de cuenta.
 </es-ES>
-<fr-FR>
-Version de test Android native avec une nouvelle expérience de lecture, des traductions de phrases en turc, du vocabulaire enregistré et des exercices. Continuez en tant qu’invité ou connectez-vous avec Google ou par e-mail. La progression des comptes connectés est synchronisée entre les appareils. Vérification du compte, récupération du mot de passe et suppression du compte disponibles.
-</fr-FR>
 <tr-TR>
 Yeni okuma tasarımıyla native Android test sürümü. Türkçe cümle çevirileri, kaydedilen kelimeler ve çalışma etkinlikleri. Misafir olarak devam edebilir, Google veya e-posta ile giriş yapabilirsin. Hesaplı öğrenme ilerlemesi cihazlar arasında eşitlenir. Hesap doğrulama, parola kurtarma ve hesap silme işlemleri kullanılabilir.
 </tr-TR>
