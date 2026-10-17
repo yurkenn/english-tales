@@ -217,7 +217,7 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
 private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String) -> Unit, onAll: () -> Unit) {
     Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
         Text(title,fontSize=20.sp,modifier=Modifier.weight(1f).padding(end=8.dp))
-        Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=11.sp,fontWeight=FontWeight.Bold,modifier=Modifier.pressScale(onClick=onAll).background(TaleLine,RoundedCornerShape(20.dp)).padding(horizontal=9.dp,vertical=6.dp))
+        Text(stringResource(R.string.tumunu_gor),color=TaleBlue,fontSize=11.sp,fontWeight=FontWeight.Bold,modifier=Modifier.pressScale(onClick=onAll).minimumInteractiveComponentSize().background(TaleLine,RoundedCornerShape(20.dp)).padding(horizontal=9.dp,vertical=6.dp))
     }
     Spacer(Modifier.height(22.dp))
     LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(16.dp)) {
