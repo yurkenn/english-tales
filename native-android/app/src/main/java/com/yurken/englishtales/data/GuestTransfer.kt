@@ -99,8 +99,9 @@ object GuestTransfer {
             val duplicateReads=guestEvents.filter {it.getString("event_id").startsWith("read:") && it.getString("event_id") in accountEvents}
                 .groupingBy {it.getString("event_id").takeLast(10)}.eachCount()
             // Account word history takes precedence, including tombstones in the outbox.
-            val accountWordHistory=rows(db,"learning_outbox").objects().filter {it.getString("rpc")=="apply_word_event"}
-                .map {JSONObject(it.getString("payload")).getString("wordId")}.toMutableSet()
+            // Pruned delivered word events are still listed by the stored cloud snapshot below.
+            val accountWordHistory=db.query("SELECT payload FROM learning_outbox WHERE rpc='apply_word_event'").use {c ->
+                buildList {while(c.moveToNext()) add(JSONObject(c.getString(0)).getString("wordId"))}}.toMutableSet()
             // Another device's cloud tombstone is account history too.
             rows(db,"learning_cloud_state").objects().singleOrNull()?.let { cloud ->
                 JSONObject(cloud.getString("snapshot_json")).getJSONArray("words").objects().forEach {accountWordHistory+=it.getString("word_id")}

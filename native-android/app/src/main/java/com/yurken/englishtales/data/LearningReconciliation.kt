@@ -55,8 +55,8 @@ internal object LearningReconciliation {
                 (former.profile!=null && checkNotNull(cloud.profile).version < former.profile.version))
                 throw LearningSyncFailure("learning_snapshot_inconsistent")
         }
-        val operations = rows(db,"learning_outbox")
-        require(operations.all { it.getString("owner_id") == owner.id })
+        db.query("SELECT COUNT(*) FROM learning_outbox WHERE owner_id!=?",arrayOf(owner.id)).use { c -> require(c.moveToFirst() && c.getInt(0)==0) }
+        val operations = outbox(db)
         val totals = totals(db, cloud, operations)
         val baseline = old?.let { JSONObject(it.getString("baseline_json")) }
             ?: captureBaseline(db, totals(db,null,operations))
@@ -151,6 +151,7 @@ internal object LearningReconciliation {
             db.execSQL("INSERT OR IGNORE INTO engagement_events(event_id,name,created_at) VALUES(?,?,?)",
                 arrayOf<Any?>(id,if(s.kind=="reading") "reading_completed" else "practice_completed",s.finishedAt))
         }
+        prune(db, cloud)
         scope() // A scope change inside any write causes the whole caller transaction to roll back.
         return true
     }
@@ -159,7 +160,7 @@ internal object LearningReconciliation {
     fun rebaseAfterGuestImport(db: SupportSQLiteDatabase, owner: String) {
         val old = rows(db,"learning_cloud_state").singleOrNull() ?: return
         val cloud = LearningCloudSnapshot.decode(JSONObject(old.getString("snapshot_json")),owner)
-        val baseline = captureBaseline(db,totals(db,cloud,rows(db,"learning_outbox")))
+        val baseline = captureBaseline(db,totals(db,cloud,outbox(db)))
         val former = JSONObject(old.getString("baseline_json"))
         baseline.put("archive",former.getJSONObject("archive"))
         baseline.put("knownActiveDays",JSONArray((baseline.getJSONArray("knownActiveDays").strings()+former.getJSONArray("knownActiveDays").strings()).distinct()))
@@ -170,6 +171,25 @@ internal object LearningReconciliation {
         db.execSQL("UPDATE learning_stats SET streak=?,last_study_day=? WHERE id=1",arrayOf<Any?>(streak,last))
     }
 
+    /** Only the rows reconciliation reads: every session (totals need ones the cloud lacks) and unsent
+     *  word, favorite and progress events (they protect local state). Delivered non-session rows are never read. */
+    private fun outbox(db: SupportSQLiteDatabase) = rows(db,"learning_outbox",
+        "WHERE rpc='submit_learning_session' OR (state!='delivered' AND rpc IN ('apply_word_event','apply_favorite_event','apply_progress_event'))")
+    /** Delivered rows the accepted snapshot has confirmed are no longer read by anything, so they are deleted.
+     *  A delivered session stays until the snapshot lists its id: until then it alone counts its points.
+     *  A delivered word event stays until the snapshot lists its word: GuestTransfer reads both as account word history. */
+    private fun prune(db: SupportSQLiteDatabase, cloud: LearningCloudSnapshot) {
+        val sessions = cloud.sessions.map { it.id }.toSet();val words = cloud.words.map { it.id }.toSet()
+        val confirmed = db.query("SELECT id,rpc,payload FROM learning_outbox WHERE state='delivered' AND rpc IN ('submit_learning_session','apply_word_event')").use { c ->
+            buildList { while(c.moveToNext()) {
+                val ok = if(c.getString(1)=="submit_learning_session") c.getString(0) in sessions
+                    else runCatching { JSONObject(c.getString(2)).getString("wordId") in words }.getOrDefault(false)
+                if(ok) add(c.getString(0))
+            } }
+        }
+        confirmed.forEach { db.delete("learning_outbox","id=? AND state='delivered'",arrayOf(it)) }
+        db.execSQL("DELETE FROM learning_outbox WHERE state='delivered' AND rpc NOT IN ('submit_learning_session','apply_word_event')")
+    }
     private fun localSessions(db: SupportSQLiteDatabase, operations: List<JSONObject>): List<Session> {
         val drafts = rows(db,"session_drafts").associateBy { it.getString("id") }
         return operations.filter { it.getString("rpc") == "submit_learning_session" }.map { row ->
@@ -260,7 +280,7 @@ internal object LearningReconciliation {
         }
     }
     private fun replace(db: SupportSQLiteDatabase, table: String, values: ContentValues) = db.insert(table,SQLiteDatabase.CONFLICT_REPLACE,values)
-    private fun rows(db: SupportSQLiteDatabase, table: String): List<JSONObject> = db.query("SELECT * FROM $table").use { c ->
+    private fun rows(db: SupportSQLiteDatabase, table: String, where: String=""): List<JSONObject> = db.query("SELECT * FROM $table $where").use { c ->
         buildList { while(c.moveToNext()) add(JSONObject().also { row -> c.columnNames.forEachIndexed { i,name ->
             row.put(name,when(c.getType(i)) { Cursor.FIELD_TYPE_NULL -> JSONObject.NULL;Cursor.FIELD_TYPE_INTEGER -> c.getLong(i);else -> c.getString(i) })
         } }) }
