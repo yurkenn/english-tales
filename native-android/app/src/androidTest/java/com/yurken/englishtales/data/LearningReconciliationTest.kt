@@ -254,6 +254,25 @@ class LearningReconciliationTest {
         local.readableDatabase.query("SELECT legacy_points FROM guest_imports WHERE id='receipt'").use { c -> assertTrue(c.moveToFirst());assertEquals(45,c.getInt(0)) }
         assertNull(local.cloudState())
     }
+    // The 48 → 49 upgrade: a real v9 table has no FSRS columns, so the ADD COLUMN and backfill path runs.
+    @Test fun versionNineMigrationSeedsFsrsFromTheOldInterval() {
+        var local=store();local.saveWords(listOf("quiet","morning"))
+        val due=now+86_400_000L
+        local.writableDatabase.execSQL("UPDATE saved_words SET interval_days=7,learning_state='reviewing',next_review_at=? WHERE word_id='quiet'",arrayOf(due))
+        local.writableDatabase.execSQL("UPDATE saved_words SET interval_days=0 WHERE word_id='morning'")
+        for(column in listOf("stability","difficulty","last_reviewed_at")) local.writableDatabase.execSQL("ALTER TABLE saved_words DROP COLUMN $column")
+        local.writableDatabase.version=9
+        local.close();local=store()
+        assertEquals(10,local.readableDatabase.version)
+        local.readableDatabase.query("SELECT word_id,stability,difficulty,next_review_at,learning_state FROM saved_words ORDER BY word_id").use { c ->
+            assertTrue(c.moveToNext());assertEquals("morning",c.getString(0));assertTrue(c.isNull(1));assertTrue(c.isNull(2))
+            assertTrue(c.moveToNext());assertEquals("quiet",c.getString(0))
+            assertEquals(7.0,c.getDouble(1),0.0);assertEquals(5.0,c.getDouble(2),0.0)
+            assertEquals(due,c.getLong(3));assertEquals("reviewing",c.getString(4))
+            assertFalse(c.moveToNext())
+        }
+        assertEquals(7.0,local.snapshot().wordStability.getValue("quiet"),0.0)
+    }
     @Test fun incompleteLaterSnapshotCannotErasePreviouslyAcceptedHistory() {
         val local=store();local.completeLesson(5,UUID.randomUUID().toString())
         apply(local,cloud(listOf(session(local)),words=listOf(word("quiet",true))))
