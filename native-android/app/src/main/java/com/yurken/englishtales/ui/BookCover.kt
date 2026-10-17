@@ -9,6 +9,9 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.produceState
+import android.graphics.BitmapFactory
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -82,16 +85,47 @@ private fun coverResource(key: String) = when(key) {
     else -> R.drawable.cover_quiet_morning
 }
 
+private const val COVER_FALLBACK_PX=1024
+
+/**
+ * Largest power-of-two [BitmapFactory.Options.inSampleSize] that still leaves the decoded image at least
+ * as large as a [ContentScale.Fit] rendering into a dstW x dstH slot (covering either side is enough).
+ */
+internal fun sampleSizeFor(srcW: Int, srcH: Int, dstW: Int, dstH: Int): Int {
+    if(srcW<=0||srcH<=0||dstW<=0||dstH<=0) return 1
+    var sample=1
+    while(srcW/(sample*2)>=dstW||srcH/(sample*2)>=dstH) sample*=2
+    return sample
+}
+
+/** Process-wide decoded covers so list items that scroll back in do not decode again. */
+private object CoverBitmaps {
+    private val cache=object : android.util.LruCache<String,ImageBitmap>((Runtime.getRuntime().maxMemory()/16).coerceIn(1L,Int.MAX_VALUE.toLong()).toInt()) {
+        override fun sizeOf(key: String, value: ImageBitmap)=value.asAndroidBitmap().allocationByteCount
+    }
+    private fun key(path: String, width: Int, height: Int)="$path@${width}x$height"
+    fun get(path: String, width: Int, height: Int): ImageBitmap?=cache.get(key(path,width,height))
+    fun load(path: String, width: Int, height: Int): ImageBitmap?=if(width<=0||height<=0) null else get(path,width,height) ?: runCatching {
+        val bounds=BitmapFactory.Options().apply {inJustDecodeBounds=true}
+        BitmapFactory.decodeFile(path,bounds)
+        if(bounds.outWidth<=0||bounds.outHeight<=0) return@runCatching null
+        val options=BitmapFactory.Options().apply {inSampleSize=sampleSizeFor(bounds.outWidth,bounds.outHeight,width,height)}
+        BitmapFactory.decodeFile(path,options)?.asImageBitmap()
+    }.getOrNull()?.also {cache.put(key(path,width,height),it)}
+}
+
 @Composable
 fun BookCover(story: Story, modifier: Modifier = Modifier) {
     BoxWithConstraints(modifier.clip(RoundedCornerShape(10.dp)).background(Color(0xFFF6F0E3))) {
         val compact=maxWidth<80.dp
         // Cover lettering is part of the artwork; the adjacent title follows system text size.
         val artworkScale=LocalDensity.current.fontScale
-        val bitmap=produceState<androidx.compose.ui.graphics.ImageBitmap?>(null,story.coverFile) {
-            value=withContext(Dispatchers.IO) {story.coverFile?.let {path ->
-                runCatching {android.graphics.BitmapFactory.decodeFile(path,android.graphics.BitmapFactory.Options().apply {inSampleSize=2})?.asImageBitmap()}.getOrNull()
-            }}
+        // Decode for the slot's pixel size; unbounded slots fall back to a sane ceiling.
+        val targetWidth=if(constraints.hasBoundedWidth) constraints.maxWidth else COVER_FALLBACK_PX
+        val targetHeight=if(constraints.hasBoundedHeight) constraints.maxHeight else COVER_FALLBACK_PX
+        val bitmap=produceState(story.coverFile?.let {CoverBitmaps.get(it,targetWidth,targetHeight)},story.coverFile,targetWidth,targetHeight) {
+            // produceState keeps its holder across key changes, so always replace the value for the new key.
+            value=story.coverFile?.let {path -> CoverBitmaps.get(path,targetWidth,targetHeight) ?: withContext(Dispatchers.IO) {CoverBitmaps.load(path,targetWidth,targetHeight)}}
         }.value
         if(bitmap!=null) Image(bitmap,stringResource(R.string.kitabinin_kapagi, story.title),Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
         else if(story.coverKey!="remote") Image(painterResource(coverResource(story.coverKey)),stringResource(R.string.kitabinin_kapagi, story.title),Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
