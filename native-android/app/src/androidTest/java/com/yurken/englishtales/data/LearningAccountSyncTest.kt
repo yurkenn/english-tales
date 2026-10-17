@@ -59,7 +59,9 @@ class LearningAccountSyncTest {
         assertEquals(listOf("submit_learning_session","get_learning_snapshot"),calls)
         assertEquals(70,store.snapshot().points)
         sync.step(store,account,store.owner.id) {true}
-        assertEquals(70,store.snapshot().points);assertEquals("delivered",store.queuedOperations().single().state)
+        assertEquals(70,store.snapshot().points)
+        // The snapshot lists the delivered session, so its outbox row is pruned.
+        assertTrue(store.queuedOperations().isEmpty())
     }
     @Test fun batchesYieldAndPullOnlyAfterDueQueueDrains()=exercise {store,account,_ ->
         repeat(2) {store.completeLesson(5,UUID.randomUUID().toString())}

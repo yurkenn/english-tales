@@ -41,8 +41,9 @@ class LearningReconciliationTest {
     private fun cloud(sessions: List<CloudLearningSession> = emptyList(),words: List<CloudLearningWord> = emptyList(),
                       progress: List<CloudLearningProgress> = emptyList(),captured: String=capture) =
         LearningCloudSnapshot(user,OffsetDateTime.parse(captured).toInstant().toEpochMilli(),profile(),sessions,words,progress,emptyList(),captured)
-    private fun session(store: LearningStore, excluding: Set<String> = emptySet()): CloudLearningSession {
-        val row = store.queuedOperations().single { it.rpc=="submit_learning_session" && it.id !in excluding }
+    private fun session(store: LearningStore, excluding: Set<String> = emptySet()) =
+        session(store.queuedOperations().single { it.rpc=="submit_learning_session" && it.id !in excluding })
+    private fun session(row: QueuedLearningOperation): CloudLearningSession {
         val p = JSONObject(row.payload)
         val finish = OffsetDateTime.parse(p.getString("finishedAt"))
         val revision = if(p.isNull("storyRevisionId")) null else p.getString("storyRevisionId")
@@ -166,6 +167,35 @@ class LearningReconciliationTest {
         assertEquals(25,local.snapshot().storyProgress[original.id])
         assertEquals(newer.revisionId,local.snapshot().readingPositions[original.id]!!.revisionId)
         assertEquals(2,JSONObject(local.cloudState()!!.snapshotJson).getJSONArray("progress").length())
+    }
+    private data class ProgressCase(val name: String, val sameRevision: Boolean, val pending: Boolean, val remotePercent: Int,
+        val remoteAt: Long, val remoteEventId: String, val percent: Int, val sentence: String, val keepsLocalRevision: Boolean)
+    @Test fun progressMergeKeepsPendingOtherRevisionAndTakesMaxOnTheSameRevision() {
+        val story=LearningContent.storyById.getValue("quiet-morning")
+        val low="00000000-0000-0000-0000-000000000000";val high="ffffffff-ffff-ffff-ffff-ffffffffffff"
+        listOf(
+            ProgressCase("pending local on another revision is kept",false,true,25,now+60_000,low,88,"qm-8",true),
+            ProgressCase("pending local on another revision is kept even when remote is further",false,true,100,now+60_000,high,88,"qm-8",true),
+            ProgressCase("delivered local on another revision yields to the server",false,false,25,now+60_000,low,25,"remote-sentence",false),
+            ProgressCase("same revision: local higher and later",true,true,40,now-60_000,low,88,"qm-8",true),
+            ProgressCase("same revision: remote higher and later",true,true,95,now+60_000,low,95,"remote-sentence",true),
+            ProgressCase("same revision: local higher, remote later moves only the cursor",true,true,40,now+60_000,low,88,"remote-sentence",true),
+            ProgressCase("same revision: remote higher, local later keeps local cursor",true,true,95,now-60_000,low,95,"qm-8",true),
+            ProgressCase("same revision: equal time, local id wins over a lower event id",true,true,40,now,low,88,"qm-8",true),
+            ProgressCase("same revision: equal time, a higher event id wins the cursor",true,true,40,now,high,88,"remote-sentence",true),
+            ProgressCase("same revision delivered: server projection is used",true,false,40,now+60_000,low,40,"remote-sentence",true),
+        ).forEachIndexed { index,c ->
+            val local=store("progress-$index");local.updateProgress(story.id,88,"qm-8",story)
+            if(!c.pending) local.queuedOperations().forEach { assertTrue(c.name,local.markDelivered(it.id,user)) }
+            val revision=if(c.sameRevision) story.revisionId else UUID.randomUUID().toString()
+            val remote=CloudLearningProgress(revision,story.id,"remote-sentence",c.remotePercent,c.remoteAt,c.remoteEventId,c.remoteAt)
+            assertTrue(c.name,apply(local,cloud(progress=listOf(remote))))
+            val position=local.snapshot().readingPositions.getValue(story.id)
+            assertEquals(c.name,c.percent,local.snapshot().storyProgress[story.id])
+            assertEquals(c.name,c.sentence,position.sentenceId)
+            assertEquals(c.name,if(c.keepsLocalRevision) story.revisionId else revision,position.revisionId)
+            assertEquals(c.name,1,JSONObject(local.cloudState()!!.snapshotJson).getJSONArray("progress").length())
+        }
     }
     @Test fun dirtyPreferencesArePreservedAndRemoteVersionConflictIsRecorded() {
         val local=store();local.updatePreferences("B1","Gizem",3,"Yerel")
@@ -292,6 +322,42 @@ class LearningReconciliationTest {
         val lowered=runCatching { apply(local,cloud(listOf(s),progress=listOf(p.copy(percent=25)))) }
         assertEquals("learning_snapshot_inconsistent",(lowered.exceptionOrNull() as LearningSyncFailure).code)
         assertEquals(before,local.snapshot())
+    }
+    @Test fun reconcilePrunesOnlyDeliveredRowsTheSnapshotConfirmsAndKeepsTotals() {
+        val local=store();val story=LearningContent.storyById.getValue("quiet-morning")
+        local.writableDatabase.execSQL("UPDATE learning_stats SET points=points+45 WHERE id=1")
+        assertTrue(apply(local,cloud()))
+        repeat(20) { local.completeLesson(5,UUID.randomUUID().toString()) }
+        local.completeReading(story.id);local.saveWords(listOf("quiet","morning"));local.setFavorite(story.id,true)
+        val confirmed=local.queuedOperations().filter { it.rpc=="submit_learning_session" }.map { session(it) }
+        assertEquals(21,confirmed.size)
+        assertTrue(local.queuedOperations().any { it.rpc=="apply_lemma_event" } && local.queuedOperations().any { it.rpc=="apply_progress_event" })
+        val late=UUID.randomUUID().toString();local.completeLesson(5,late)
+        local.queuedOperations().forEach { assertTrue(local.markDelivered(it.id,user)) }
+        val pending=UUID.randomUUID().toString();local.completeLesson(5,pending)
+        val morning=local.queuedOperations().single { it.rpc=="apply_word_event" && JSONObject(it.payload).getString("wordId")=="morning" }.id
+        val before=local.snapshot()
+        assertEquals(45+22*25,before.points);assertEquals(22,before.completedLessons)
+        fun same() { val after=local.snapshot()
+            assertEquals(before.points,after.points);assertEquals(before.completedLessons,after.completedLessons);assertEquals(before.streak,after.streak)
+            assertEquals(before.todaySessions,after.todaySessions);assertEquals(before.todayReadings,after.todayReadings)
+            assertEquals(before.storyProgress,after.storyProgress);assertEquals(before.readingPositions,after.readingPositions)
+            assertEquals(before.favoriteStoryIds,after.favoriteStoryIds);assertEquals(before.badges,after.badges)
+            assertEquals(45,JSONObject(local.cloudState()!!.baselineJson).getInt("points")) }
+        // The snapshot was read before the late lesson and the "morning" save reached the server.
+        val remote=cloud(confirmed,words=listOf(word("quiet",true)))
+        assertTrue(apply(local,remote));same()
+        // Kept: a delivered session and word the snapshot does not list yet, and the unsent lesson.
+        assertEquals(setOf(late,morning,pending),local.queuedOperations().map { it.id }.toSet())
+        assertEquals("pending",local.queuedOperations().single { it.id==pending }.state)
+        assertTrue(apply(local,remote));same()
+        val lateSession=session(local.queuedOperations().single { it.id==late })
+        assertTrue(apply(local,cloud(confirmed+lateSession,words=listOf(word("quiet",true)),captured="2026-10-11T12:00:00Z")));same()
+        assertEquals(setOf(morning,pending),local.queuedOperations().map { it.id }.toSet())
+        // A pruned word event is still account history: the stored snapshot lists it.
+        val guest=store("guest",LearningOwner.Guest);guest.saveWords(listOf("quiet"))
+        assertTrue(GuestTransfer.transfer(guest,local));same()
+        assertEquals("account_word_precedence",local.queuedOperations().single { it.rpc=="apply_word_event" && JSONObject(it.payload).getString("wordId")=="quiet" }.errorCode)
     }
     @Test fun knownLegacyStreakSurvivesWithoutFabricatingDailySessions() {
         val local=store()

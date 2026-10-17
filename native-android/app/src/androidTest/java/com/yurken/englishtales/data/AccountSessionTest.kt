@@ -6,8 +6,10 @@ import org.json.JSONObject
 import org.junit.Assert.*
 import org.junit.Test
 import java.io.File
+import java.security.KeyStoreException
 import java.util.UUID
 import java.util.concurrent.Executors
+import javax.crypto.KeyGenerator
 
 class AccountSessionTest {
     private class MemoryStorage: SessionStorage {
@@ -60,6 +62,42 @@ class AccountSessionTest {
             storage.write(session);storage.clear();assertNull(storage.read())
             assertFalse(session.toString().contains(session.accessToken))
         } finally {storage.clear();directory.deleteRecursively()}
+    }
+    @Test fun transientKeystoreFailureKeepsSessionButCorruptionDeletesIt() {
+        val target=InstrumentationRegistry.getInstrumentation().targetContext
+        val directory=File(target.cacheDir,"auth-test-${UUID.randomUUID()}").apply {mkdirs()}
+        val context=object: ContextWrapper(target) {override fun getFilesDir()=directory}
+        val key=KeyGenerator.getInstance("AES").apply {init(256)}.generateKey();var failures=0
+        val storage=EncryptedSessionStorage(context,"https://vault-${UUID.randomUUID()}.invalid") {
+            if(failures>0) {failures--;throw KeyStoreException("Simulated locked keystore")};key
+        }
+        try {
+            val session=AccountSession(UUID.randomUUID().toString(),"fixture@example.invalid","private-access-token","private-refresh-token",123_456)
+            storage.write(session);val file=directory.listFiles()!!.single();failures=1
+            val service=AccountService(null,storage) {1_000_000}
+            assertTrue(runCatching {service.restore()}.exceptionOrNull() is KeyStoreException)
+            assertTrue(file.exists());assertNull(service.current)
+            assertEquals(session,service.restore())
+            val bytes=file.readBytes();bytes[bytes.size-1]=(bytes[bytes.size-1].toInt() xor 1).toByte();file.writeBytes(bytes)
+            assertNull(service.restore());assertFalse(file.exists())
+        } finally {storage.clear();directory.deleteRecursively()}
+    }
+    @Test fun syncRuntimeRetriesRestoreInsteadOfSigningOutAfterTransientFailure() {
+        val context=InstrumentationRegistry.getInstrumentation().targetContext
+        val session=AccountSession(UUID.randomUUID().toString(),"fixture@example.invalid","fixture-access","fixture-refresh",Long.MAX_VALUE)
+        var failures=1
+        val storage=object: SessionStorage {
+            var value: AccountSession?=session
+            override fun read(): AccountSession? {if(failures>0) {failures--;throw KeyStoreException("Simulated locked keystore")};return value}
+            override fun write(session: AccountSession) {value=session}
+            override fun clear() {value=null}
+        }
+        LearningSyncRuntime.resetForTest {storage}
+        try {
+            assertNull(LearningSyncRuntime.ensureRestored(context).current)
+            assertFalse(LearningSyncRuntime.restored);assertEquals(session,storage.value)
+            assertEquals(session,LearningSyncRuntime.ensureRestored(context).current);assertTrue(LearningSyncRuntime.restored)
+        } finally {LearningSyncRuntime.resetForTest()}
     }
     @Test fun verifiedSignInRestoresSameOwner() {
         val fixture=Fixture();val storage=MemoryStorage()

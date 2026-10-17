@@ -55,7 +55,11 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 if(background) LearningSyncRuntime.ensureRestored(getApplication())
                 if(background) runCatching {DeletedAccountCleanup.clean(getApplication())}
                 try {
-                    auth.restore()?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
+                    // A failed read keeps the stored session (keystore or I/O errors can pass; storage removes corrupt files itself).
+                    val session=try {auth.restore()} catch (_: Exception) {
+                        mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error);auth.current
+                    }
+                    session?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
                 } catch (_: Exception) {
                     auth.clearLocal()
                     mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error)
