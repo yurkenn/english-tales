@@ -31,5 +31,9 @@ class ReadingPreferencesStore(context: Context,name: String="reading_appearance"
             next
         }
     }
-    companion object {private val lock=Mutex()}
+    companion object {
+        private val lock=Mutex()
+        /** Loads the preferences file off the main thread, so the reader's first [read] is served from memory. */
+        suspend fun warm(context: Context,name: String="reading_appearance") {withContext(Dispatchers.IO) {ReadingPreferencesStore(context,name).read()}}
+    }
 }

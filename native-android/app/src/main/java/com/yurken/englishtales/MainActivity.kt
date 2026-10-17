@@ -41,6 +41,8 @@ class MainActivity : ComponentActivity() {
         if(savedInstanceState==null) acceptStoryLink(intent) else storyLinkRequest=StoryLinkRequest.restore(savedInstanceState)
         // The bundled catalog parses in the background while the brand intro is visible.
         lifecycleScope.launch { LearningContent.load(applicationContext) }
+        // The reader reads its appearance during its first composition; load that file in the background now.
+        lifecycleScope.launch { com.yurken.englishtales.ui.ReadingPreferencesStore.warm(applicationContext) }
         enableEdgeToEdge()
         val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.Disabled(this)
         val play=PlayStoreFeatures(this).also {this.play=it}
