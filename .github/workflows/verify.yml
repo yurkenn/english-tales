@@ -95,6 +95,22 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
       - run: bash gradlew :app:assembleDebug :app:assembleDebugAndroidTest
+      - name: Download emulator system image
+        # The emulator runner downloads the image once and fails the job on a corrupt archive
+        # ("Error on ZipFile unknown archive"). Fetch it here with retries; the runner then finds it installed.
+        run: |
+          sdkmanager="$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager"
+          image="$ANDROID_HOME/system-images/android-34/google_apis/x86_64"
+          yes | "$sdkmanager" --licenses > /dev/null || true
+          for attempt in 1 2 3; do
+            if "$sdkmanager" --install 'system-images;android-34;google_apis;x86_64' > /dev/null && [ -f "$image/system.img" ]; then
+              exit 0
+            fi
+            echo "::warning::System image download failed (attempt $attempt of 3)"
+            rm -rf "$image"
+            sleep $((attempt * 15))
+          done
+          exit 1
       - uses: reactivecircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d # v2.38.0
         with:
           api-level: 34

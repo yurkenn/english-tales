@@ -90,3 +90,9 @@ Yerel doğrulama: `python3 -m unittest discover -s tooling -p 'test_analytics_cl
 - [Otomatik toplanan olaylar](https://support.google.com/analytics/answer/9234069?hl=en-GB)
 
 - [Analytics olaylarının Crashlytics breadcrumb kaydına eklenmesi](https://firebase.google.com/docs/crashlytics/android/customize-crash-reports)
+
+## 16 Ekim 2026 yayın beyanı
+
+Play Data safety güncellendi: App interactions ve IP bağlantısından türetilen Approximate location, toplanıyor/paylaşılmıyor, geçici işlenmiyor, kullanıcı seçimine bağlı ve Analytics amaçlı. Device or other IDs ile mevcut hesap verisi beyanları korundu. Form Google incelemesine gönderildi; “Changes in review” görüldü. Bu, canlı Analytics olay kabulü veya GA ayarlarının tamamlandığı anlamına gelmez.
+
+Gizlilik sayfasının eski “Firebase Analytics kullanılmaz” ifadesi isteğe bağlı katılım davranışına göre düzeltildi; favori, kişisel kelime ve bilinen kelime eşitlemesi açıklandı. Yalnız `englishtales-app` Firebase Hosting sitesi yayımlandı. Canlı `/privacy` HTTP 200 ve kaynakla aynı: SHA-256 `7e476c602964e1b77d558a997cb7806e594ecf2002d7c4dd275f31161c89c9ae`. [Güncel hesap adımları](../../senin-adimlarin.md).

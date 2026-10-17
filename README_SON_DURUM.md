@@ -2,9 +2,19 @@
 
 Son güncelleme: **16 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
 
+## Güncel yol haritası
+
+[Tamamlananlar ve sıralı kabul listesi](native-android/docs/QUALITY_ROADMAP.md#7-güncel-kabul-sırası-ve-açık-kapılar) 49 dahili yayınına göre güncellendi. Sıradaki ana iş gerçek telefonda **48→49 güncelleme, veri koruma ve 49 TalkBack kabulü**. Canlı ölçüm/Google veri beyanı onayı, fiziksel performans ve üretim yayın kabulü açık. Otomatik paket doğrulaması hazır; Play’e bu yükleme elle yapıldı, tam yükleme otomasyonu isteğe bağlı olarak açık. [Ayrıntılı kayıt](senin-adimlarin.md).
+
+## Hesap ve yayın kurulumu — 16 Ekim 2026
+
+Canlı Play Console’da **48 / 2.0.0 üretimde %100** olarak doğrulandı. GitHub `release` ortamı ve beş zorunlu secret kuruldu; **49 / 2.1.0** için [ilk yüklemesiz CI çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı. Daha yeni kaynak commit `6f48040` ile hazırlanan 49 paketi 16 Ekim 23:38 TRT’de dahili testte yayımlandı; üretim 48 olarak kaldı. İlk altı migration’a ek olarak FSRS migration’ı da ayrı onayla canlıya uygulandı; 144 backend testi, yayın yedeğinin yerel geri yüklemesi, içerik bütünlüğü ve RLS kontrolleri geçti. Data safety güncellendi ve Google incelemesine gönderildi. `englishtales-app.web.app` için assetlinks.json yayımlandı, Google `linked: true` doğruladı. [Kanıtlar, migration eşlemesi ve kalan işler](senin-adimlarin.md).
+
+Kullanıcı 16 Ekim’de mağazadaki **48 / 2.0.0** paketinde TalkBack yolculuğunu sorunsuz tamamladığını bildirdi; Q3 kapanışı için yeni erişilebilirlik kodunu içeren paketin testi hâlâ gerekli. Dahili kanal elle yüklemesi tamamlandı. İsteğe bağlı servis hesabıyla otomatik Play yüklemesi, Analytics canlı olay kabulü ve uygulama içi App Links yönlendirmesi açık. Aşağıdaki önceki tarihli yayın notları tarihseldir; güncel durum için yukarıdaki kayıt esas alınır.
+
 ## Erişilebilirlik ve içerik denetimi — 16 Ekim 2026
 
-Q3 erişilebilirlik/yerelleştirme işleri ana dala birleşti: 306 ekran metni `strings.xml`'e taşındı (#30), TalkBack rol ve etiketleri eklendi (#31), uygulama geneli koyu tema (#32) ve fontScale 2.0 / küçük ekran düzeni (#34). Otomatik denetimler (`AccessibilityAuditTest`, `TaleColorsContrastTest`, `DarkThemeTest`, `LargeTextLayoutTest`) eklendi. Q3 kapısının kapanması için gerçek TalkBack ile ana yolculuğun elle kaydı gerekir.
+Q3 erişilebilirlik/yerelleştirme işleri ana dala birleşti: 306 ekran metni `strings.xml`'e taşındı (#30), TalkBack rol ve etiketleri eklendi (#31), uygulama geneli koyu tema (#32) ve fontScale 2.0 / küçük ekran düzeni (#34). Otomatik denetimler (`AccessibilityAuditTest`, `TaleColorsContrastTest`, `DarkThemeTest`, `LargeTextLayoutTest`) eklendi. Kullanıcı mağazadaki 48 / 2.0.0 ile ana TalkBack yolculuğunu sorunsuz denediğini bildirdi; Q3 değişikliklerini içeren yeni paket testi bekleniyor.
 
 [İçerik denetimi](native-android/docs/CONTENT_QUALITY_AUDIT.md) (#33) paket ile canlı yayını karşılaştırır. 50 hikâye ve 1.002 cümle eşleşiyor; ancak 43 kelime/ifade ID'si canlıda yok ve 39 hikâye etkileniyor. A1/A2 sözlük kapsaması hedefin (%60) altında: canlıda A1 %23,5, A2 %15,4. Bu çalışma canlı veriyi değiştirmedi.
 
@@ -32,7 +42,7 @@ Oyna ekranına hikâye cümlesi, Türkçe ipucu ve dört İngilizce seçenekle �
 
 ## Kısa durum
 
-Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 üretim kanalına yüklendi ve mağaza güncellemesiyle birlikte 15 Ekim 2026'da Google incelemesine gönderildi. İnceleme sonucu henüz gelmedi.**
+Uygulama Kotlin ve Jetpack Compose ile native Android olarak geliştiriliyor. Kütüphanedeki **50 hikâye canlı içerik servisinde yayımlandı**. Yeni marka, maskot ve mağaza paketi hazır. **48 / 2.0.0 üretimde %100 yayımlandı; bu durum 16 Ekim 2026’da Console’dan doğrulandı. 49 / 2.1.0 yalnız dahili testte yayımlandı.**
 
 ## Tamamlanan çalışmalar
 

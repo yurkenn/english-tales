@@ -6,7 +6,7 @@
 >
 > | İş | Sonuç | PR |
 > |---|---|---|
-> | 1.1 Çökme raporlama | Crashlytics kodu birleşti; Play veri güvenliği beyanı açık | [#18](https://github.com/yurkenn/english-tales/pull/18) |
+> | 1.1 Çökme raporlama | Crashlytics kodu birleşti; veri güvenliği 16 Ekim’de incelemeye gönderildi, onay açık | [#18](https://github.com/yurkenn/english-tales/pull/18) |
 > | 1.2 Asgari ürün ölçümü | Yedi olay, varsayılan kapalı katılım; canlı panel kabulü açık | [#23](https://github.com/yurkenn/english-tales/pull/23) |
 > | 1.6 TTS ses odağı | Odak kaybında durur, odak bırakılır | [#17](https://github.com/yurkenn/english-tales/pull/17) |
 > | 4.3 Metinler `strings.xml`'de + D12 | 306 metin kaynakta; TalkBack rol/etiket, koyu tema, büyük yazı | [#30](https://github.com/yurkenn/english-tales/pull/30), [#31](https://github.com/yurkenn/english-tales/pull/31), [#32](https://github.com/yurkenn/english-tales/pull/32), [#34](https://github.com/yurkenn/english-tales/pull/34) |
@@ -17,7 +17,13 @@
 
 Bu harita 48 / 2.0.0 sürümünün Google incelemesine gönderildiği noktadan başlar. Önceki planlar ([ürün planı](PRODUCT_ROADMAP.md), [24 iş paketi](DEVELOPMENT_BACKLOG.md)) geçerliliğini korur; bu belge onları bugünkü kod ve Play verisiyle önceliklendirir.
 
-## 1. Bugünkü durum
+## Son yayın güncellemesi — 16 Ekim 2026
+
+Üretim **48 / 2.0.0**, yeni **49 / 2.1.0** ise 23:38 TRT itibarıyla yalnız dahili testte. Yedi migration (FSRS dahil) canlıya uygulandı. İmzalı paket üretimi/doğrulaması otomatik, bu dahili kanal yüklemesi **elle** yapıldı; servis hesabıyla otomatik yükleme kurulmadı. Data safety incelemeye gönderildi. App Links alan adı `englishtales-app.web.app` seçildi ve web ilişkilendirmesi yayımlandı; Android yönlendirmesi açık.
+
+Sıradaki işler: 49’da telefon güncellemesi/ilerleme ve TalkBack kabulü, canlı Analytics ve yayın kontrolleri. Q4 içerik eşitliği/kapsama ve Q6 App Links uygulama tarafı ayrıca açık. [Güncel kalite yol haritası ve kabul sırası](QUALITY_ROADMAP.md#7-güncel-kabul-sırası-ve-açık-kapılar) · [kanıtlı yayın kaydı](../../senin-adimlarin.md). Aşağıdaki 15 Ekim gözlem ve plan tabloları **tarihsel başlangıç durumudur**; güncel tamamlanma durumları için kalite haritası esas alınır.
+
+## 1. Başlangıç durumu — 15 Ekim 2026
 
 | Alan | Gözlem | Kaynak |
 |---|---|---|
