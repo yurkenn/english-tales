@@ -19,8 +19,12 @@ def build():
         shutil.rmtree(OUTPUT)
     PUBLIC.mkdir(parents=True)
     for source in WEB.iterdir():
-        if source.is_file():
+        if source.is_file() and not source.name.startswith('.'):
             shutil.copy2(source, PUBLIC / source.name)
+    # Android fetches this exact HTTPS path; keep the public certificate statement.
+    associations = PUBLIC / '.well-known'
+    associations.mkdir()
+    shutil.copy2(WEB / '.well-known' / 'assetlinks.json', associations / 'assetlinks.json')
     studio = PUBLIC / 'studio'
     studio.mkdir()
     admin = ROOT / 'native-android' / 'backend' / 'admin'
@@ -41,7 +45,9 @@ def build():
         {'key': 'Cache-Control', 'value': 'no-cache'},
     ]
     config = {'hosting': {'site': 'englishtales-app', 'public': 'public',
-              'ignore': ['firebase.json', '**/.*'],
+              # PUBLIC is assembled from explicit public sources above. Do not
+              # exclude dot-directories: that would hide /.well-known/assetlinks.json.
+              'ignore': ['firebase.json'],
               'headers': [{'source': '**', 'headers': headers}],
               'rewrites': [{'source': '/api/config', 'destination': '/api/config.json'},
                            {'source': '/privacy', 'destination': '/privacy.html'},

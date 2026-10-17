@@ -37,3 +37,7 @@ Release derlemesi mapping dosyasını Crashlytics'e yükler (`uploadCrashlyticsM
 
 - Canlı gizlilik sayfası 15 Ekim 2026 tarihinde Firebase CLI ile yayımlandı; [kaynak eşleşmesi ve yayın kanıtı](PRODUCT_ANALYTICS.md) kaydedildi.
 - Play veri güvenliği formu: “Crash logs” ve “Diagnostics” toplanır, paylaşılmaz, isteğe bağlı değildir; amaç “App functionality”/“Analytics”. “Device or other IDs” (Firebase kurulum kimliği).
+
+## 16 Ekim 2026 güncellemesi
+
+Play Data safety formunda Crash logs ve Diagnostics: toplanıyor, paylaşılmıyor, geçici işlenmiyor, zorunlu, amaç App functionality olarak kaydedildi. Device or other IDs beyanı kontrol edildi; mevcut hesap beyanları korundu. Değişiklik Google incelemesine gönderildi; Console “Changes in review” gösterdi (hızlı kontroller sürüyordu). İnceleme onayı veya mağazada görünürlük henüz doğrulanmadı. İlk [49 / 2.1.0 CI çalışmasında](https://github.com/yurkenn/english-tales/actions/runs/38959199613) Crashlytics mapping yükleme görevi başarılı. [Hesap adımlarının güncel durumu](../../senin-adimlarin.md).
