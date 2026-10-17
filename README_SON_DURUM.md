@@ -1,16 +1,20 @@
 # English Tales — son çalışmalar ve yayın durumu
 
-Son güncelleme: **16 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
+Son güncelleme: **17 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
 
 ## Güncel yol haritası
 
 [Tamamlananlar ve sıralı kabul listesi](native-android/docs/QUALITY_ROADMAP.md#7-güncel-kabul-sırası-ve-açık-kapılar) 49 dahili yayınına göre güncellendi. Sıradaki ana iş gerçek telefonda **48→49 güncelleme, veri koruma ve 49 TalkBack kabulü**. Canlı ölçüm/Google veri beyanı onayı, fiziksel performans ve üretim yayın kabulü açık. Otomatik paket doğrulaması hazır; Play’e bu yükleme elle yapıldı, tam yükleme otomasyonu isteğe bağlı olarak açık. [Ayrıntılı kayıt](senin-adimlarin.md).
 
+## Birleştirmeler — 17 Ekim 2026
+
+Yayın kurulumu kaydı (#67), emülatör imajı indirmesini tekrar deneyen CI düzeltmesi (#70), alıştırma basamaklarının ikinci adımı (#74, Q5.8) ve App Links uygulama yönlendirmesi (#72, Q6) ana dala birleşti; ana dal CI'ı yeşil. Dahili testteki 49 bu değişiklikleri içermez; bunlar **en az 50** sürüm koduyla yeni pakette kullanıcıya ulaşır. App Links için `story.html` web karşılığının Hosting'e yayımlanması ve kurulu/kurulu değil cihaz denemesi açık.
+
 ## Hesap ve yayın kurulumu — 16 Ekim 2026
 
 Canlı Play Console’da **48 / 2.0.0 üretimde %100** olarak doğrulandı. GitHub `release` ortamı ve beş zorunlu secret kuruldu; **49 / 2.1.0** için [ilk yüklemesiz CI çalışması](https://github.com/yurkenn/english-tales/actions/runs/38959199613) başarılı. Daha yeni kaynak commit `6f48040` ile hazırlanan 49 paketi 16 Ekim 23:38 TRT’de dahili testte yayımlandı; üretim 48 olarak kaldı. İlk altı migration’a ek olarak FSRS migration’ı da ayrı onayla canlıya uygulandı; 144 backend testi, yayın yedeğinin yerel geri yüklemesi, içerik bütünlüğü ve RLS kontrolleri geçti. Data safety güncellendi ve Google incelemesine gönderildi. `englishtales-app.web.app` için assetlinks.json yayımlandı, Google `linked: true` doğruladı. [Kanıtlar, migration eşlemesi ve kalan işler](senin-adimlarin.md).
 
-Kullanıcı 16 Ekim’de mağazadaki **48 / 2.0.0** paketinde TalkBack yolculuğunu sorunsuz tamamladığını bildirdi; Q3 kapanışı için yeni erişilebilirlik kodunu içeren paketin testi hâlâ gerekli. Dahili kanal elle yüklemesi tamamlandı. İsteğe bağlı servis hesabıyla otomatik Play yüklemesi, Analytics canlı olay kabulü ve uygulama içi App Links yönlendirmesi açık. Aşağıdaki önceki tarihli yayın notları tarihseldir; güncel durum için yukarıdaki kayıt esas alınır.
+Kullanıcı 16 Ekim’de mağazadaki **48 / 2.0.0** paketinde TalkBack yolculuğunu sorunsuz tamamladığını bildirdi; Q3 kapanışı için yeni erişilebilirlik kodunu içeren paketin testi hâlâ gerekli. Dahili kanal elle yüklemesi tamamlandı. İsteğe bağlı servis hesabıyla otomatik Play yüklemesi, Analytics canlı olay kabulü açık; App Links yönlendirmesi 17 Ekim'de ana dala girdi (#72). Aşağıdaki önceki tarihli yayın notları tarihseldir; güncel durum için yukarıdaki kayıt esas alınır.
 
 ## Erişilebilirlik ve içerik denetimi — 16 Ekim 2026
 
