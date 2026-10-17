@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
 import com.yurken.englishtales.R
+import com.yurken.englishtales.data.AccountState
+import com.yurken.englishtales.data.MessageTone
 import kotlinx.coroutines.delay
 
 /** What an in-app alert is about; drives its color, icon and how long it stays. */
@@ -176,4 +178,24 @@ internal fun TaleNotice(text: String, kind: TaleAlertKind = TaleAlertKind.Info, 
             action?.invoke()
         }
     }
+}
+
+internal val MessageTone.alertKind: TaleAlertKind get() = when(this) {
+    MessageTone.Success -> TaleAlertKind.Success
+    MessageTone.Warning -> TaleAlertKind.Warning
+    MessageTone.Error -> TaleAlertKind.Error
+    else -> TaleAlertKind.Info
+}
+
+/** An account result in its own colors; a new success or failure also slides in as an alert, since the notice may be scrolled off screen. */
+@Composable
+internal fun AccountMessage(state: AccountState) {
+    val alerts = LocalTaleAlerts.current
+    // Starts from the message already shown, so returning to the screen does not replay an old result.
+    var announced by remember { mutableStateOf(state.message) }
+    LaunchedEffect(state.message, state.messageTone) {
+        if(state.message != announced && (state.messageTone == MessageTone.Success || state.messageTone == MessageTone.Error)) alerts.show(state.message, state.messageTone.alertKind)
+        announced = state.message
+    }
+    TaleNotice(state.message, state.messageTone.alertKind)
 }

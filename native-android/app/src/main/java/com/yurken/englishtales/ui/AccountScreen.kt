@@ -116,7 +116,7 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                 if(state.userId==null) OutlinedButton(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=48.dp)) {Text(stringResource(R.string.misafir_olarak_devam_et))}
             }
             if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-            TaleNotice(state.message)
+            AccountMessage(state)
             SupportLinks()
         }
     }

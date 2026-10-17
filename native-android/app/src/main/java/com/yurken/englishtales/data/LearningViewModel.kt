@@ -50,7 +50,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     auth.restore()?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
                 } catch (_: Exception) {
                     auth.clearLocal()
-                    mutableAccount.value=mutableAccount.value.copy(message="Hesap kayıtları açılamadı. Misafir olarak devam edebilir, tekrar giriş yapabilirsin.")
+                    mutableAccount.value=mutableAccount.value.copy(message="Hesap kayıtları açılamadı. Misafir olarak devam edebilir, tekrar giriş yapabilirsin.",messageTone=MessageTone.Error)
                 }
                 onOwnerChanged(store.owner)
                 store.recordVisit();mutableState.value=store.snapshot();mutableReady.value=true
@@ -59,7 +59,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     if(action.scope!=null && action.scope!=scope) continue
                     try {action.action()} catch (failure: Exception) {
                         if(failure is kotlinx.coroutines.CancellationException) throw failure
-                        mutableAccount.value=mutableAccount.value.copy(busy=false,message="İşlem tamamlanamadı. Kayıtların korunuyor.")
+                        mutableAccount.value=mutableAccount.value.copy(busy=false,message="İşlem tamamlanamadı. Kayıtların korunuyor.",messageTone=MessageTone.Error)
                     }
                     writes.refresh()
                 }
@@ -228,22 +228,22 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             val preview=storeFactory(LearningOwner.Guest).use {GuestTransfer.preview(it,user)}
             mutableAccount.value=mutableAccount.value.copy(guestTransfer=preview)
         } catch (_: Exception) {
-            mutableAccount.value=mutableAccount.value.copy(guestTransfer=null,message="Misafir geçmişi şu anda okunamadı. Hesabın açık; kayıtların cihazında korunuyor.")
+            mutableAccount.value=mutableAccount.value.copy(guestTransfer=null,message="Misafir geçmişi şu anda okunamadı. Hesabın açık; kayıtların cihazında korunuyor.",messageTone=MessageTone.Warning)
         }
     }
     fun transferGuestProgress() {
         val user=mutableAccount.value.userId?:return
         if(mutableAccount.value.busy || mutableAccount.value.needsSignIn || mutableAccount.value.guestTransfer?.blocked==true) return
         interruptSync()
-        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Misafir ilerlemen aktarılıyor…")
+        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Misafir ilerlemen aktarılıyor…",messageTone=MessageTone.Progress)
         mutations.trySend(Mutation(scope) {
             try {
                 check(store.owner.id==user)
                 storeFactory(LearningOwner.Guest).use {GuestTransfer.transfer(it,store)}
                 scope++
-                mutableAccount.value=mutableAccount.value.copy(busy=false,scope=scope,message="Misafir ilerlemen hesabının cihazdaki kayıtlarına aktarıldı. Gönderilebilen kayıtlar eşitlenecek; eski puanlar bu cihazda korunur.")
+                mutableAccount.value=mutableAccount.value.copy(busy=false,scope=scope,message="Misafir ilerlemen hesabının cihazdaki kayıtlarına aktarıldı. Gönderilebilen kayıtlar eşitlenecek; eski puanlar bu cihazda korunur.",messageTone=MessageTone.Success)
             } catch (failure: Exception) {
-                mutableAccount.value=mutableAccount.value.copy(busy=false,message=when((failure as? GuestTransferFailure)?.code) {
+                mutableAccount.value=mutableAccount.value.copy(busy=false,messageTone=MessageTone.Error,message=when((failure as? GuestTransferFailure)?.code) {
                     "different_target" -> "Bekleyen aktarım başka hesabına ait. O hesaba giriş yaparak tamamlayabilirsin."
                     "operation_conflict","payload_conflict" -> "Kayıtlar çakıştığı için aktarım durduruldu. Misafir geçmişin aktarım günlüğünde korunuyor."
                     "snapshot_too_large" -> "Misafir geçmişi aktarım sınırını aşıyor. Kayıtların cihazında korunuyor."
@@ -258,12 +258,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun signIn(email: String,password: String) {
         if(mutableAccount.value.busy) return
         interruptSync()
-        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Giriş yapılıyor…")
+        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Giriş yapılıyor…",messageTone=MessageTone.Progress)
         mutations.trySend(Mutation(null) {
             try {
                 val session=auth.signIn(email,password)
                 changeOwner(LearningOwner.Account(session.userId),session.email)
-                mutableAccount.value=mutableAccount.value.copy(message="Giriş yapıldı. Bu hesabın cihazdaki kayıtları açıldı.")
+                mutableAccount.value=mutableAccount.value.copy(message="Giriş yapıldı. Bu hesabın cihazdaki kayıtları açıldı.",messageTone=MessageTone.Success)
             } catch (failure: Exception) {
                 if(auth.current!=null && auth.current?.userId!=store.owner.id) auth.clearLocal()
                 val message=when((failure as? AuthFailure)?.code) {
@@ -273,7 +273,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     "not_configured" -> "Hesap bağlantısı yapılandırılmadı."
                     else -> "Giriş tamamlanamadı. Bilgilerini ve bağlantını kontrol et."
                 }
-                mutableAccount.value=mutableAccount.value.copy(busy=false,message=message)
+                mutableAccount.value=mutableAccount.value.copy(busy=false,message=message,messageTone=MessageTone.Error)
                 if(background) LearningSyncRuntime.resume()
                 scheduleSync()
             }
@@ -282,11 +282,11 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private fun emailOperation(action: ()->Unit) {
         if(mutableAccount.value.busy) return
         interruptSync()
-        mutableAccount.value=mutableAccount.value.copy(busy=true,message="İşlem yapılıyor…")
+        mutableAccount.value=mutableAccount.value.copy(busy=true,message="İşlem yapılıyor…",messageTone=MessageTone.Progress)
         mutations.trySend(Mutation(scope) {
             try {action()} catch(failure: Exception) {
                 if(auth.current!=null && auth.current?.userId!=store.owner.id) auth.clearLocal()
-                mutableAccount.value=mutableAccount.value.copy(message=when((failure as? AuthFailure)?.code) {
+                mutableAccount.value=mutableAccount.value.copy(messageTone=MessageTone.Error,message=when((failure as? AuthFailure)?.code) {
                     "invalid_input" -> "Geçerli bir e-posta adresi gir."
                     "weak_password" -> "Parolan 8–128 karakter olmalı. Sunucunun parola koşullarını da karşılamalı."
                     "invalid_code","otp_expired" -> if(mutableAccount.value.emailAction=="signup") "Doğrulama kodu geçersiz veya süresi dolmuş. E-posta doğrulama konulu son mesajı kullan; parola kurtarma kodu burada geçmez." else "Kurtarma kodu geçersiz veya süresi dolmuş. Parola kurtarma konulu son mesajı kullan ya da yeni kod iste."
@@ -304,11 +304,11 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun signUp(email: String,password: String)=emailOperation {
         val ready=auth.signUp(email,password)
         mutableAccount.value=mutableAccount.value.copy(emailAction=if(ready) "" else "signup",verificationEmail=email.trim(),
-            message=if(ready) "Hesap işlemi tamamlandı. E-posta ve parolanla giriş yapabilirsin." else "Kayıt isteği alındı. Yeni hesap için doğrulama e-postasını ve spam klasörünü kontrol et. Bu adresle zaten doğrulanmış hesabın varsa yeni kod gelmeyebilir; giriş ekranına dönüp giriş yapabilirsin.")
+            message=if(ready) "Hesap işlemi tamamlandı. E-posta ve parolanla giriş yapabilirsin." else "Kayıt isteği alındı. Yeni hesap için doğrulama e-postasını ve spam klasörünü kontrol et. Bu adresle zaten doğrulanmış hesabın varsa yeni kod gelmeyebilir; giriş ekranına dönüp giriş yapabilirsin.",messageTone=if(ready) MessageTone.Success else MessageTone.Info)
     }
     fun requestRecovery(email: String)=emailOperation {
         auth.requestRecovery(email)
-        mutableAccount.value=mutableAccount.value.copy(emailAction="recovery",verificationEmail=email.trim(),message="Bu e-postaya bağlı bir hesap varsa kurtarma kodu gönderildi. Gelen kutunu ve spam klasörünü kontrol et.")
+        mutableAccount.value=mutableAccount.value.copy(emailAction="recovery",verificationEmail=email.trim(),message="Bu e-postaya bağlı bir hesap varsa kurtarma kodu gönderildi. Gelen kutunu ve spam klasörünü kontrol et.",messageTone=MessageTone.Info)
     }
     fun resendEmailCode()=emailOperation {
         val state=mutableAccount.value
@@ -317,7 +317,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             "recovery" -> auth.requestRecovery(state.verificationEmail)
             else -> throw AuthFailure("invalid_input")
         }
-        mutableAccount.value=mutableAccount.value.copy(message=if(state.emailAction=="signup") "Doğrulama kodu gönderimi istendi. Bu adresle zaten doğrulanmış hesabın varsa yeni e-posta gelmeyebilir; giriş ekranına dönüp giriş yap. Yeni hesap için gelen kutunu ve spam klasörünü kontrol et." else "Kurtarma kodu gönderimi istendi. Bu adrese bağlı hesap varsa yeni parola kurtarma e-postasını kontrol et; sık isteklerde bir süre beklemen gerekebilir.")
+        mutableAccount.value=mutableAccount.value.copy(message=if(state.emailAction=="signup") "Doğrulama kodu gönderimi istendi. Bu adresle zaten doğrulanmış hesabın varsa yeni e-posta gelmeyebilir; giriş ekranına dönüp giriş yap. Yeni hesap için gelen kutunu ve spam klasörünü kontrol et." else "Kurtarma kodu gönderimi istendi. Bu adrese bağlı hesap varsa yeni parola kurtarma e-postasını kontrol et; sık isteklerde bir süre beklemen gerekebilir.",messageTone=MessageTone.Info)
     }
     fun completeEmailCode(code: String,password: String)=emailOperation {
         val state=mutableAccount.value
@@ -325,27 +325,27 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             "signup" -> {
                 val session=auth.confirmEmail(state.verificationEmail,code)
                 changeOwner(LearningOwner.Account(session.userId),session.email)
-                mutableAccount.value=mutableAccount.value.copy(message="E-postan doğrulandı ve giriş yapıldı.")
+                mutableAccount.value=mutableAccount.value.copy(message="E-postan doğrulandı ve giriş yapıldı.",messageTone=MessageTone.Success)
             }
             "recovery" -> {
                 auth.resetPassword(state.verificationEmail,code,password)
-                mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="Parolan güncellendi. Yeni parolanla giriş yapabilirsin.")
+                mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="Parolan güncellendi. Yeni parolanla giriş yapabilirsin.",messageTone=MessageTone.Success)
             }
             else -> throw AuthFailure("invalid_input")
         }
     }
     fun cancelEmailCode() {
-        if(!mutableAccount.value.busy) mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="")
+        if(!mutableAccount.value.busy) mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="",messageTone=MessageTone.Info)
     }
     fun signOut() {
         if(mutableAccount.value.busy) return
         interruptSync()
         if(background) mutableAccount.value.userId?.let {LearningSyncRuntime.cancel(getApplication(),it)}
-        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Çıkış yapılıyor…")
+        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Çıkış yapılıyor…",messageTone=MessageTone.Progress)
         mutations.trySend(Mutation(null) {
             val revoked=auth.signOut();changeOwner(LearningOwner.Guest)
             viewModelScope.launch {runCatching {GoogleSignIn.clear(getApplication())}}
-            mutableAccount.value=mutableAccount.value.copy(message=if(revoked) "Çıkış yapıldı. Misafir kayıtların açıldı." else "Bu cihazdan çıkış yapıldı. Sunucu oturumu bağlantı olmadığı için kapatılamadı.")
+            mutableAccount.value=mutableAccount.value.copy(message=if(revoked) "Çıkış yapıldı. Misafir kayıtların açıldı." else "Bu cihazdan çıkış yapıldı. Sunucu oturumu bağlantı olmadığı için kapatılamadı.",messageTone=if(revoked) MessageTone.Success else MessageTone.Warning)
         })
     }
     fun deleteAccount() {
@@ -353,7 +353,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         if(mutableAccount.value.busy || mutableAccount.value.needsSignIn) return
         val expectedScope=scope
         interruptSync()
-        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Hesabın siliniyor…")
+        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Hesabın siliniyor…",messageTone=MessageTone.Progress)
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 LearningSyncLocks.withOwner(user) {
@@ -370,7 +370,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                         }.isSuccess
                         changeOwner(LearningOwner.Guest)
                         viewModelScope.launch {runCatching {GoogleSignIn.clear(getApplication())}}
-                        mutableAccount.value=mutableAccount.value.copy(message=if(cleaned) "Hesabın ve bu cihazdaki hesap kayıtların silindi. Misafir kayıtların ayrı korunuyor." else "Hesabın sunucuda silindi. Cihazdaki temizlik tamamlanamadı; uygulama yeniden açıldığında tekrar denenecek.")
+                        mutableAccount.value=mutableAccount.value.copy(message=if(cleaned) "Hesabın ve bu cihazdaki hesap kayıtların silindi. Misafir kayıtların ayrı korunuyor." else "Hesabın sunucuda silindi. Cihazdaki temizlik tamamlanamadı; uygulama yeniden açıldığında tekrar denenecek.",messageTone=if(cleaned) MessageTone.Success else MessageTone.Warning)
                     })
                 }
             } catch(failure: Exception) {
@@ -378,7 +378,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 mutations.trySend(Mutation(expectedScope) {
                     val again=(failure as? AuthFailure)?.code=="reauthentication_required"
                     mutableAccount.value=mutableAccount.value.copy(busy=false,needsSignIn=again || auth.current==null,
-                        message=if(again) "Silme için yeniden giriş yapmalısın. Girişten sonra hesabını silmeyi tekrar seç." else "Silme tamamlanamadı veya sonucu doğrulanamadı. Cihazdaki kayıtların korunuyor; tekrar dene veya destek ile iletişime geç.")
+                        message=if(again) "Silme için yeniden giriş yapmalısın. Girişten sonra hesabını silmeyi tekrar seç." else "Silme tamamlanamadı veya sonucu doğrulanamadı. Cihazdaki kayıtların korunuyor; tekrar dene veya destek ile iletişime geç.",messageTone=if(again) MessageTone.Warning else MessageTone.Error)
                     if(background) LearningSyncRuntime.resume()
                 })
             }
@@ -388,23 +388,23 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         if(mutableAccount.value.busy) return
         val expectedScope=scope
         interruptSync()
-        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Google hesabını seç…")
+        mutableAccount.value=mutableAccount.value.copy(busy=true,message="Google hesabını seç…",messageTone=MessageTone.Progress)
         try {
             val identity=acquire()
             mutations.trySend(Mutation(expectedScope) {
                 try {
                     val session=auth.signInGoogle(identity)
                     changeOwner(LearningOwner.Account(session.userId),session.email)
-                    mutableAccount.value=mutableAccount.value.copy(message="Google hesabınla giriş yapıldı.")
+                    mutableAccount.value=mutableAccount.value.copy(message="Google hesabınla giriş yapıldı.",messageTone=MessageTone.Success)
                 } catch (failure: Exception) {
                     if(auth.current!=null && auth.current?.userId!=store.owner.id) auth.clearLocal()
-                    mutableAccount.value=mutableAccount.value.copy(busy=false,message="Google ile giriş tamamlanamadı. Bağlantını kontrol edip tekrar dene.")
+                    mutableAccount.value=mutableAccount.value.copy(busy=false,message="Google ile giriş tamamlanamadı. Bağlantını kontrol edip tekrar dene.",messageTone=MessageTone.Error)
                     if(background) LearningSyncRuntime.resume()
                     scheduleSync()
                 }
             })
         } catch (failure: Exception) {
-            if(scope==expectedScope) mutableAccount.value=mutableAccount.value.copy(busy=false,message=when((failure as? AuthFailure)?.code) {
+            if(scope==expectedScope) mutableAccount.value=mutableAccount.value.copy(busy=false,messageTone=if((failure as? AuthFailure)?.code=="google_cancelled") MessageTone.Info else MessageTone.Error,message=when((failure as? AuthFailure)?.code) {
                 "google_cancelled" -> "Google girişi iptal edildi. Kayıtların korunuyor."
                 "google_not_configured" -> "Google girişi henüz kullanıma açılmadı. Misafir veya e-posta ile devam edebilirsin."
                 "google_no_account" -> "Google hesabı bulunamadı. Cihaza Google hesabı ekleyip tekrar dene."
@@ -432,7 +432,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             } finally {verifying.set(false)}
             mutations.trySend(Mutation(expectedScope) {
                 if(!mutableAccount.value.busy) {
-                    mutableAccount.value=mutableAccount.value.copy(email=verifiedEmail?:mutableAccount.value.email,needsSignIn=requiresSignIn,message=resultMessage)
+                    mutableAccount.value=mutableAccount.value.copy(email=verifiedEmail?:mutableAccount.value.email,needsSignIn=requiresSignIn,message=resultMessage,messageTone=if(requiresSignIn) MessageTone.Warning else MessageTone.Info)
                     scheduleSync()
                 }
             })
