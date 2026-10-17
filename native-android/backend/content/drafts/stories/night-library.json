@@ -1,0 +1,283 @@
+{
+ "status": "draft",
+ "source": "claude-draft-2026-10-17",
+ "reviewedBy": null,
+ "story": {
+  "id": "night-library",
+  "title": "The Notes in the Night Library",
+  "author": "English Tales",
+  "level": "B1",
+  "genre": "Gizem",
+  "description": "Sahil kasabasında gece çalışan bir kütüphaneci, iade edilen kitaplardaki kurşun kalem notlarının izini sürerek unutulmuş bir hikâyeyi gün yüzüne çıkarır.",
+  "coverKey": "cover_night_library",
+  "tags": [
+   "gizem"
+  ],
+  "sentences": [
+   {
+    "id": "nl-1",
+    "english": "Nora worked the night shift at the small library in Port Elm, a quiet town by the sea.",
+    "turkish": "Nora, deniz kenarındaki sakin bir kasaba olan Port Elm'deki küçük kütüphanede gece vardiyasında çalışıyordu."
+   },
+   {
+    "id": "nl-2",
+    "english": "Every night, she checked the books in the return box.",
+    "turkish": "Her gece iade kutusundaki kitapları kontrol ederdi."
+   },
+   {
+    "id": "nl-3",
+    "english": "One cold evening in November, she noticed something strange in an old book about boats.",
+    "turkish": "Kasım ayında soğuk bir akşam, teknelerle ilgili eski bir kitapta tuhaf bir şey fark etti."
+   },
+   {
+    "id": "nl-4",
+    "english": "Someone had written a short note in pencil on the last page.",
+    "turkish": "Biri son sayfaya kurşun kalemle kısa bir not yazmıştı."
+   },
+   {
+    "id": "nl-5",
+    "english": "It said, “Look for the green door near the harbour.”",
+    "turkish": "Notta “Limanın yakınındaki yeşil kapıyı ara.” yazıyordu."
+   },
+   {
+    "id": "nl-6",
+    "english": "Nora smiled, because she thought it was a child's game.",
+    "turkish": "Nora gülümsedi, çünkü bunun bir çocuk oyunu olduğunu düşündü."
+   },
+   {
+    "id": "nl-7",
+    "english": "But the next night, another returned book had a note too.",
+    "turkish": "Ama ertesi gece, iade edilen başka bir kitapta da bir not vardı."
+   },
+   {
+    "id": "nl-8",
+    "english": "This one said, “The light keeper's daughter never left.”",
+    "turkish": "Bu seferki notta “Deniz feneri bekçisinin kızı hiç gitmedi.” yazıyordu."
+   },
+   {
+    "id": "nl-9",
+    "english": "Nora felt a little suspicious, so she started to keep the notes in a folder.",
+    "turkish": "Nora biraz şüphelendi, bu yüzden notları bir dosyada saklamaya başladı."
+   },
+   {
+    "id": "nl-10",
+    "english": "Over two weeks, she found seven notes in seven different books.",
+    "turkish": "İki hafta içinde yedi farklı kitapta yedi not buldu."
+   },
+   {
+    "id": "nl-11",
+    "english": "All of them were written in the same careful handwriting.",
+    "turkish": "Hepsi aynı özenli el yazısıyla yazılmıştı."
+   },
+   {
+    "id": "nl-12",
+    "english": "She realised that the books were all about the history of Port Elm.",
+    "turkish": "Kitapların hepsinin Port Elm'in tarihiyle ilgili olduğunu fark etti."
+   },
+   {
+    "id": "nl-13",
+    "english": "One morning after work, she walked down to the harbour.",
+    "turkish": "Bir sabah işten sonra limana kadar yürüdü."
+   },
+   {
+    "id": "nl-14",
+    "english": "Behind the fish market, she found an old building with a green door.",
+    "turkish": "Balık pazarının arkasında yeşil kapılı eski bir bina buldu."
+   },
+   {
+    "id": "nl-15",
+    "english": "It was the town's first lighthouse office, closed for many years.",
+    "turkish": "Burası kasabanın ilk deniz feneri ofisiydi ve uzun yıllardır kapalıydı."
+   },
+   {
+    "id": "nl-16",
+    "english": "An old man was sitting on a bench outside it.",
+    "turkish": "Binanın önündeki bir bankta yaşlı bir adam oturuyordu."
+   },
+   {
+    "id": "nl-17",
+    "english": "“Are you the one who reads my notes?” he asked with a smile.",
+    "turkish": "“Notlarımı okuyan kişi sen misin?” diye gülümseyerek sordu."
+   },
+   {
+    "id": "nl-18",
+    "english": "His name was Walter, and he was eighty-four years old.",
+    "turkish": "Adı Walter'dı ve seksen dört yaşındaydı."
+   },
+   {
+    "id": "nl-19",
+    "english": "He explained that his mother had been the daughter of the last light keeper.",
+    "turkish": "Annesinin son deniz feneri bekçisinin kızı olduğunu anlattı."
+   },
+   {
+    "id": "nl-20",
+    "english": "People in town once spread a rumour that she ran away with a sailor.",
+    "turkish": "Bir zamanlar kasabadakiler onun bir denizciyle kaçtığına dair bir söylenti yaymıştı."
+   },
+   {
+    "id": "nl-21",
+    "english": "“That isn't true,” Walter said quietly.",
+    "turkish": "“Bu doğru değil,” dedi Walter sessizce."
+   },
+   {
+    "id": "nl-22",
+    "english": "“She stayed here all her life and saved many fishermen during storms.”",
+    "turkish": "“Bütün hayatı boyunca burada kaldı ve fırtınalarda pek çok balıkçının hayatını kurtardı.”"
+   },
+   {
+    "id": "nl-23",
+    "english": "Nobody remembered her name anymore, and Walter wanted to change that.",
+    "turkish": "Artık kimse onun adını hatırlamıyordu ve Walter bunu değiştirmek istiyordu."
+   },
+   {
+    "id": "nl-24",
+    "english": "He could not climb the library steps, so his grandson returned the books.",
+    "turkish": "Kütüphanenin merdivenlerini çıkamıyordu, bu yüzden kitapları torunu iade etmişti."
+   },
+   {
+    "id": "nl-25",
+    "english": "“I hoped a curious person would follow the notes,” he said.",
+    "turkish": "“Meraklı birinin notların peşinden gelmesini umuyordum,” dedi."
+   },
+   {
+    "id": "nl-26",
+    "english": "Nora listened for an hour while the sea moved behind them.",
+    "turkish": "Arkalarında deniz dalgalanırken Nora bir saat boyunca onu dinledi."
+   },
+   {
+    "id": "nl-27",
+    "english": "Then she had an idea.",
+    "turkish": "Sonra aklına bir fikir geldi."
+   },
+   {
+    "id": "nl-28",
+    "english": "That winter, she collected old photos and letters from Walter and his neighbours.",
+    "turkish": "O kış, Walter'dan ve komşularından eski fotoğraflar ve mektuplar topladı."
+   },
+   {
+    "id": "nl-29",
+    "english": "In March, the library opened a small exhibition called “The Keeper's Daughter.”",
+    "turkish": "Mart ayında kütüphane “Bekçinin Kızı” adında küçük bir sergi açtı."
+   },
+   {
+    "id": "nl-30",
+    "english": "Hundreds of people came to see the pictures and read her story.",
+    "turkish": "Yüzlerce kişi fotoğrafları görmeye ve onun hikâyesini okumaya geldi."
+   },
+   {
+    "id": "nl-31",
+    "english": "Many old fishermen shared memories of the brave woman with the lamp.",
+    "turkish": "Birçok yaşlı balıkçı, elinde fenerle dolaşan o cesur kadına dair anılarını paylaştı."
+   },
+   {
+    "id": "nl-32",
+    "english": "Walter sat in the front row on the first day, holding his mother's photo.",
+    "turkish": "Walter ilk gün, elinde annesinin fotoğrafıyla ön sırada oturdu."
+   },
+   {
+    "id": "nl-33",
+    "english": "After that, Nora still worked nights and checked every returned book.",
+    "turkish": "Bundan sonra da Nora geceleri çalışmaya ve iade edilen her kitabı kontrol etmeye devam etti."
+   },
+   {
+    "id": "nl-34",
+    "english": "Sometimes she found a new pencil note, but now it only said, “Thank you.”",
+    "turkish": "Bazen kurşun kalemle yazılmış yeni bir not buluyordu, ama artık notta yalnızca “Teşekkürler.” yazıyordu."
+   }
+  ],
+  "questions": [
+   {
+    "id": "night-library-q1",
+    "kind": "main",
+    "prompt": "What is the story mainly about?",
+    "options": [
+     "A librarian who catches a thief at night",
+     "A librarian who follows pencil notes and helps the town remember a forgotten woman",
+     "An old man who wants to sell an old lighthouse office",
+     "A fisherman who gets lost in a storm"
+    ],
+    "answer": 1
+   },
+   {
+    "id": "night-library-q2",
+    "kind": "detail",
+    "prompt": "Where did Nora find the building with the green door?",
+    "options": [
+     "Next to the library",
+     "Inside the lighthouse",
+     "Behind the fish market",
+     "On a boat in the harbour"
+    ],
+    "answer": 2
+   },
+   {
+    "id": "night-library-q3",
+    "kind": "detail",
+    "prompt": "Who returned the books with the notes to the library?",
+    "options": [
+     "Walter himself",
+     "A sailor",
+     "Nora's neighbour",
+     "Walter's grandson"
+    ],
+    "answer": 3
+   },
+   {
+    "id": "night-library-q4",
+    "kind": "inference",
+    "prompt": "Why did Walter use notes in books instead of simply telling someone his story?",
+    "options": [
+     "He wanted a curious person to discover the story, and he could not easily visit the library",
+     "He was afraid of Nora and the other librarians",
+     "He wanted to play a joke on the whole town",
+     "He did not know where the library was"
+    ],
+    "answer": 0
+   }
+  ]
+ },
+ "words": [
+  {
+   "id": "noticed",
+   "word": "noticed",
+   "translation": "fark etti",
+   "pronunciation": "/ˈnoʊtɪst/",
+   "example": "He noticed a small cat under the car."
+  },
+  {
+   "id": "harbour",
+   "word": "harbour",
+   "translation": "liman",
+   "pronunciation": "/ˈhɑːrbər/",
+   "example": "The small boats stayed in the harbour during the storm."
+  },
+  {
+   "id": "suspicious",
+   "word": "suspicious",
+   "translation": "şüpheli, kuşkulu",
+   "pronunciation": "/səˈspɪʃəs/",
+   "example": "The guard became suspicious when the man ran away."
+  },
+  {
+   "id": "realised",
+   "word": "realised",
+   "translation": "fark etti, anladı",
+   "pronunciation": "/ˈriːəlaɪzd/",
+   "example": "She realised she had left her keys at home."
+  },
+  {
+   "id": "rumour",
+   "word": "rumour",
+   "translation": "söylenti, dedikodu",
+   "pronunciation": "/ˈruːmər/",
+   "example": "There is a rumour that the café will close next month."
+  },
+  {
+   "id": "exhibition",
+   "word": "exhibition",
+   "translation": "sergi",
+   "pronunciation": "/ˌɛksɪˈbɪʃən/",
+   "example": "We visited a photo exhibition at the museum on Sunday."
+  }
+ ]
+}
