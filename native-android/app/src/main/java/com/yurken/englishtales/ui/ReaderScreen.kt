@@ -179,6 +179,16 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
     val position=snapshot.readingPositions[story.id]?.takeIf {it.carriesTo(story)}
     val sentenceIndex=position?.let {p ->story.sentences.indexOfFirst {it.id==p.sentenceId}}?.takeIf {it>=0}
     var page by rememberSaveable(story.revisionId) { mutableIntStateOf((sentenceIndex?.div(SENTENCES_PER_PAGE)?:(((if(saved==100) 0 else saved)*story.sentences.size+99)/100/SENTENCES_PER_PAGE)).coerceIn(0,pageCount-1)) }
+    // Scrubbing the slider only moves the page on screen; the position is reported once the drag ends,
+    // so a long scrub writes one progress event instead of one per page crossed.
+    var reportedPage by rememberSaveable(story.revisionId) { mutableIntStateOf(page) }
+    fun reportProgress() {
+        if(page==reportedPage) return
+        reportedPage=page
+        onProgress((page*SENTENCES_PER_PAGE*100/story.sentences.size).coerceAtMost(99),story.sentences[page*SENTENCES_PER_PAGE].id)
+    }
+    val flushProgress by rememberUpdatedState({ reportProgress() })
+    DisposableEffect(story.revisionId) { onDispose { flushProgress() } }
     val timer=rememberActiveLearningTime(sessionId,snapshot.activeSessionMillis[sessionId]?:0,true,onCheckpoint)
     var completed by rememberSaveable(sessionId) {mutableStateOf(false)}
     val preferences=remember(context,appearanceStore) {appearanceStore?:ReadingPreferencesStore(context)}
@@ -218,11 +228,11 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
         fun listen(from: Int=0) { narrationFrom=from; narrator.speakAll(pageSentences.drop(from).map { it.english }) }
         val readingIndex=narrator.spokenIndex?.let { narrationFrom+it }
         LaunchedEffect(autoListen) { if(autoListen) listen() }
-        fun changePage(next: Int) {
+        fun changePage(next: Int,report: Boolean=true) {
             val target=next.coerceIn(0,pageCount-1)
             if(target==page) return
             narrator.stop(); page=target
-            onProgress((page*SENTENCES_PER_PAGE*100/story.sentences.size).coerceAtMost(99),story.sentences[page*SENTENCES_PER_PAGE].id)
+            if(report) reportProgress()
         }
         Box(Modifier.fillMaxSize().background(background).statusBarsPadding().navigationBarsPadding()) {
             // On tablets and in landscape the page keeps a book-like line length instead of spanning the screen.
@@ -269,7 +279,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                 narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
                 Text("${page+1} / $pageCount",color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
                 Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
-                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt())},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
+                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
                     Box(Modifier.size(48.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { listen() } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
                 }
                 Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
