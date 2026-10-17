@@ -10,7 +10,9 @@ data class LearningSyncState(
     val lastSuccessAt: Long? = null,
     val deviceOnlyPoints: Int = 0,
     val preferencesPending: Boolean = false,
-    val preferencesConflict: Boolean = false
+    val preferencesConflict: Boolean = false,
+    /** How [message] reads; a running sync is shown as progress whatever its tone. */
+    val tone: MessageTone = MessageTone.Info
 )
 
 data class LearningSyncStep(val state: LearningSyncState, val continueUpload: Boolean, val verifySession: Boolean=false)
@@ -43,7 +45,7 @@ class LearningAccountSync(private val transport: LearningSyncTransport, private 
             return LearningSyncStep(status(store).copy(running=true,message="Profil tercihlerin kaydedildi…"),true)
         val upload = LearningQueueSync(transport, accounts).upload(store, user, current, limit = 1)
         if (!current() || accounts.current?.userId != user) throw LearningSyncFailure("account_scope_changed")
-        if (upload.stopped) return LearningSyncStep(status(store).copy(message = "Gönderim tamamlanamadı. Kayıtların cihazında; bağlantıyı ve oturumunu kontrol et."), false, upload.verifySession)
+        if (upload.stopped) return LearningSyncStep(status(store).copy(message = "Gönderim tamamlanamadı. Kayıtların cihazında; bağlantıyı ve oturumunu kontrol et.", tone = MessageTone.Error), false, upload.verifySession)
         // Pull on a separate actor turn even after the final upload.
         if (upload.delivered + upload.blocked > 0 || store.pendingUploads(user, 1).isNotEmpty())
             return LearningSyncStep(status(store).copy(running = true, message = "Kayıtların gönderiliyor…"), true)
@@ -56,6 +58,10 @@ class LearningAccountSync(private val transport: LearningSyncTransport, private 
             state.preferencesConflict -> "Öğrenme kayıtların eşitlendi. Profil tercihlerin için seçim yap."
             state.preferencesPending -> "Öğrenme kayıtların eşitlendi. Profil tercihlerin gönderilmeyi bekliyor."
             else -> "Öğrenme kayıtların eşitlendi."
+        }, tone = when {
+            state.blocked > 0 || state.preferencesConflict -> MessageTone.Warning
+            state.pending > 0 || state.preferencesPending -> MessageTone.Info
+            else -> MessageTone.Success
         }), false)
     }
 }
