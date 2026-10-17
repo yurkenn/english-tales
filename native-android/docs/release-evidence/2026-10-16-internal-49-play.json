@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-16",
+  "timeZone": "Europe/Istanbul",
+  "publishedAtLocal": "2026-10-16T23:38:00+03:00",
+  "packageName": "com.yurken.englishtales",
+  "versionCode": 49,
+  "versionName": "2.1.0",
+  "releaseName": "49 (2.1.0) internal validation",
+  "track": "internal",
+  "trackId": "4701713728242169635",
+  "releaseId": "5",
+  "trackStatus": "Active",
+  "releaseStatus": "Available to internal testers",
+  "uploadMethod": "Manual Play Console; existing authenticated owner session",
+  "sourceCommit": "6f4804098f715353f2ddab01b7678618451e035a",
+  "aabSHA256": "2e0433d6341d3d35d7f9cdf868428865a9d9422af52ae39f95e4cc734f19b88b",
+  "testerAccess": "Existing single-account list preserved",
+  "releaseNoteLanguages": 5,
+  "retraceMappingAttached": true,
+  "blockingErrors": 0,
+  "warnings": [
+    "Native debug symbols not uploaded"
+  ],
+  "devicesNoLongerSupportedVsPreviousInternalRelease": 0,
+  "productionVersionCodeUnchanged": 48,
+  "sourceMasterCI": "https://github.com/yurkenn/english-tales/actions/runs/38960839360",
+  "sourceMasterCIConclusion": "success",
+  "testJoinUrl": "https://play.google.com/apps/internaltest/4701713728242169635",
+  "limits": [
+    "Console publication proof; device delivery can lag",
+    "Phone update, data preservation, TalkBack and real 16KB runtime tests remain pending"
+  ]
+}

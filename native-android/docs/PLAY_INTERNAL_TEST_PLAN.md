@@ -45,3 +45,11 @@ Kullanıcı Play hesabını ogi311999 olarak doğruladı. Ayrı Play AVD kapanm�
 Beklerken Console → 47 → Downloads → Signed, universal APK indirildi. Dosya SHA256: `5ac55f64035497b2f22407a32695c1473e9d21804ab05416f74a14eef02654aa`. APK imza doğrulaması v2/v3 ve Google SourceStamp ile geçti. Sertifika SHA256 `13ef5910fd56b0a43f5d6578d2cc90271fe087c2a0baa6cc06a0b5f1056a3ba8`, SHA1 `4cee8c1d40268c97f4cb6b5bfedbb1f0911466d1`; kayıtlı Play uygulama imzasıyla eşleşiyor. min24, target36, dört ABI ve zipalign 16 KiB kontrolü geçti.
 
 Bu Google Play üretimi APK yalnızca ayrı emulator-5558'e geliştirme aracının update (-r) işlemiyle yüklendi; 46→47 güncelleme Success verdi. Son paket version47/name2.0.0; installerPackageName=null, dolayısıyla bu kurulum mağazadan otomatik dağıtım veya Play split APK testi sayılmaz. Medium_Phone_2 üzerinde mağaza kurulumlu 46 korunuyor. Uygulama açıldı; kullanıcıdan Google hesabıyla giriş ve yeniden açılışta oturum kontrolü istendi. İmza uyumlu güncelleme geçti; eski öğrenme verisinin taşınması ve Google giriş sonucu henüz doğrulanmadı.
+
+## 49 / 2.1.0 dahili yayını — 16 Ekim 2026, 23:38 TRT
+
+Kaynak `6f4804098f715353f2ddab01b7678618451e035a` (master `a14fa5f` dahil). Yerel imzalı APK/AAB, 94 JVM ve 144 backend testi, imza/üretim adresi/baseline profile/AD_ID/statik 16 KB kontrolleri geçti. Kaynak master CI cihaz işi dahil başarılı. AAB SHA-256 `2e0433d6341d3d35d7f9cdf868428865a9d9422af52ae39f95e4cc734f19b88b`.
+
+Kullanıcı Chrome dosya iznini açtıktan sonra AAB, beş dilde notla dahili kanala elle yüklendi ve yayımlandı. Console **Active / Available to internal testers** gösteriyor. Tek kişilik mevcut test listesi korundu. ReTrace mapping dosyası pakete bağlı. Tek uyarı native debug symbols; engelleyici hata ve önceki dahili 47’ye göre cihaz kaybı yok. Üretim kanalı 48 olarak kaldı.
+
+[Teste katıl](https://play.google.com/apps/internaltest/4701713728242169635). Yetkili Google hesabıyla aynı uygulama sayfasında güncelleme yapılmalı; 48 silinmemeli. Play görünürlüğü gecikebilir. 49’un gerçek telefona Play’den kurulumu, Google girişi, ilerleme korunması, çevrimdışı okuma, TalkBack ve 16 KB çalışma zamanı kabulü henüz kaydedilmedi. [Tam yayın kaydı](../../senin-adimlarin.md).
