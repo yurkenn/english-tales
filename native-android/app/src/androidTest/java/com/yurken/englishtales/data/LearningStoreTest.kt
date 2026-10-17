@@ -66,6 +66,16 @@ class LearningStoreTest {
         assertTrue(snapshot.badges.containsAll(listOf("first_story","first_practice")))
         store.readableDatabase.rawQuery("SELECT COUNT(*) FROM engagement_events WHERE name='daily_goal_reached'",null).use {assertTrue(it.moveToFirst());assertEquals(1,it.getInt(0))}
     }
+    @Test fun anOverCountedPracticeIsClampedInsteadOfWedgingTheWriteQueue() {
+        val session=UUID.randomUUID().toString()
+        store.beginSession(session,"choice",3)
+        now+=30_000
+        store.completeLesson(5,session,"choice",3,10_000)
+        assertEquals(1,store.snapshot().completedLessons)
+        val payload=JSONObject(store.queuedOperations().single {it.rpc=="submit_learning_session"}.payload)
+        assertEquals(3,payload.getInt("questionCount"));assertEquals(3,payload.getInt("correctAnswers"))
+        assertThrows(IllegalArgumentException::class.java) {store.completeLesson(-1,UUID.randomUUID().toString())}
+    }
     @Test fun sentenceGapKeepsExistingChoicePayloadAndAwardsTheGoalOnlyOnce() {
         val questions=SentenceGap.session(SentenceGap.prompts(LearningContent.stories,LearningContent.words),LearningContent.words,emptyList(),"A1")
         assertEquals(5,questions.size)
