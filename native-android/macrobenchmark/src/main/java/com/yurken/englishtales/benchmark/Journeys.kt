@@ -42,11 +42,24 @@ private fun UiDevice.choose(text: String) {
         findObjects(By.text(java.util.regex.Pattern.compile(".+"))).map { it.text })
 }
 
+/** The guest action can start below the fold on a small English welcome screen. */
+internal fun UiDevice.requireReadyEntry(): androidx.test.uiautomator.UiObject2 {
+    val selector=By.text(java.util.regex.Pattern.compile("Misafir olarak başla|Çalış|Start as guest|Practice"))
+    var entry=wait(Until.findObject(selector),5_000)
+    repeat(4) {
+        if(entry==null) {
+            swipe(displayWidth/2,displayHeight*3/4,displayWidth/2,displayHeight/3,20)
+            entry=wait(Until.findObject(selector),2_000)
+        }
+    }
+    return checkNotNull(entry) {"App did not become ready; visible=" +
+        findObjects(By.text(java.util.regex.Pattern.compile(".+"))).map {it.text}}
+}
+
 /** Only the isolated benchmark package is installed/cleared by this module. */
 internal fun MacrobenchmarkScope.prepareReturningGuest() {
     startActivityAndWait()
-    val entry = checkNotNull(device.wait(Until.findObject(By.text(
-        java.util.regex.Pattern.compile("Misafir olarak başla|Çalış|Start as guest|Practice"))), 15_000)) { "App did not become ready" }
+    val entry = device.requireReadyEntry()
     if (entry.text in listOf("Misafir olarak başla", "Start as guest")) {
         entry.click()
         device.choose("Başlayalım")

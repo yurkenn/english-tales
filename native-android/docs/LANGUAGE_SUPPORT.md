@@ -23,7 +23,7 @@ Claude'un PR açıklamasındaki açık iş, Kotlin içinde kalan kullanıcı mes
 
 `AppLocalizationTest` Türkçe/İngilizce kaynak seçimini, İspanyolca cihaz için İngilizce geri dönüşünü ve gerçek hesap ViewModel'inin yapılandırılmamış bağlantı hatasını kontrol eder. `EnglishUiTest`, İngilizce “Mystery” seçiminin mevcut “Gizem” kayıt değerini kaydettiğini doğrular. Mevcut Türkçe arayüz, kayıt güvenilirliği ve eşitleme testleri regresyon kapsamındadır. `TalesTestRunner`, eski testlerin Türkçe beklentilerini cihazın sistem dilinden bağımsız olarak sabitler; uygulamanın dil seçimini yalnız test kurulumu sırasında Türkçe yapar. İngilizce testler kendi yerel kaynak bağlamını kullanır. Bu, #87 ilk CI turunda İngilizce emülatörde görülen dil kaynaklı test hatalarını da kapsar.
 
-Performans ve başlangıç profili gezinmesi de Türkçe/İngilizce etiketleri kabul eder; İngilizce sistem dili olan cihazda Türkçe metin bekleyip takılmaz.
+Performans ve başlangıç profili gezinmesi de Türkçe/İngilizce etiketleri kabul eder; küçük İngilizce karşılama ekranında görünür alanın altında kalan misafir düğmesine önce kaydırır; İngilizce sistem dili olan cihazda Türkçe metin bekleyip takılmaz.
 
 ## Sonraki dil aşaması
 
