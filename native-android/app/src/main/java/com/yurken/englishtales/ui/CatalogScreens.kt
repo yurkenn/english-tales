@@ -177,7 +177,7 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
             HorizontalDivider(color=TaleLine)
             // Favorites read most recently added first; other lists keep catalog order.
             StoryList(if(listMode==FAVORITES) filtered.sortedBy { snapshot.favoriteStoryIds.indexOf(it.id) } else filtered,{ story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }) {
-                Text(if(filters.active) stringResource(R.string.bu_filtrelere_uyan_kitap_yok) else if(listMode=="books") stringResource(R.string.okumaya_basladigin_kitaplar_burada_gorunecek) else stringResource(R.string.kitap_bulunamadi),color=TaleMuted,fontSize=14.sp)
+                TaleEmptyState(if(filters.active) stringResource(R.string.bu_filtrelere_uyan_kitap_yok) else if(listMode=="books") stringResource(R.string.okumaya_basladigin_kitaplar_burada_gorunecek) else stringResource(R.string.kitap_bulunamadi),mascotSize=120)
             }
         }
     }
@@ -371,10 +371,7 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
                 }
             }
             if(words.isEmpty()) item {
-                Column(Modifier.fillMaxWidth().padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(12.dp)) {
-                    TalesMascot(MascotMood.Thinking,Modifier.size(140.dp).appearIn(),animate=true)
-                    Text(stringResource(R.string.bu_asamada_henuz_kelime_yok),fontSize=14.sp,color=TaleMuted)
-                }
+                TaleEmptyState(stringResource(R.string.bu_asamada_henuz_kelime_yok))
             }
         }
     }
