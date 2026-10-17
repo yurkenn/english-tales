@@ -125,10 +125,13 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
     fun leaveList() { listMode=""; search=""; clearFilters() }
     BackHandler(enabled=listMode.isNotBlank()) { leaveList() }
     val stories=LearningContent.stories
-    val newest=LearningContent.newestStories(3)
+    // Derived lists are remembered so typing in the search field does not re-derive the whole catalog;
+    // each key list names every input its block reads (progressFor reads readingPositions and storyProgress).
+    val newest=remember(stories) { LearningContent.newestStories(3) }
     // Categories come from the stories' tags (Q4.5), so a new tag needs no app release.
-    val categories=stories.flatMap(StoryTag::of).distinctBy { it.id }.sortedBy { LearningContent.tagOrder.indexOf(it.id).let { i -> if(i<0) Int.MAX_VALUE else i } }
-    val filtered=(if(listMode=="new") newest else stories).filter { story ->
+    val tagOrder=LearningContent.tagOrder
+    val categories=remember(stories,tagOrder) { stories.flatMap(StoryTag::of).distinctBy { it.id }.sortedBy { tagOrder.indexOf(it.id).let { i -> if(i<0) Int.MAX_VALUE else i } } }
+    val filtered=remember(stories,newest,listMode,search,filters,snapshot.readingPositions,snapshot.storyProgress,snapshot.favoriteStoryIds,snapshot.level) { (if(listMode=="new") newest else stories).filter { story ->
         (listMode!="books" || (snapshot.progressFor(story))>0) &&
         (listMode!=FAVORITES || story.id in snapshot.favoriteStoryIds) &&
         (!listMode.startsWith(TAG_LIST) || StoryTag.of(story).any { it.id==listMode.removePrefix(TAG_LIST) }) &&
@@ -136,7 +139,7 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
         (listMode!="level" || story.level==snapshot.level) &&
         (search.isBlank() || story.title.contains(search,true) || story.description.contains(search,true)) &&
         filters.matches(story,snapshot.progressFor(story))
-    }
+    } }
     Column(Modifier.fillMaxSize().padding(padding)) {
         if(listMode.isBlank()) {
             StatsHeader(snapshot)
@@ -171,12 +174,13 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 })
             }
             LibraryFilters(filters,showLevels=listMode!="level",onLevel={levelFilter=it},onStatus={statusFilter=it},
-                lengths=stories.mapNotNull {ReadingLength.of(ReadingTime.minutes(it))}.distinct().sorted(),onLength={lengthFilter=it},
-                offerOffline=stories.any {!StoryFilters.readableOffline(it)},onOffline={offlineFilter=it}) { clearFilters() }
+                lengths=remember(stories) { stories.mapNotNull {ReadingLength.of(ReadingTime.minutes(it))}.distinct().sorted() },onLength={lengthFilter=it},
+                offerOffline=remember(stories) { stories.any {!StoryFilters.readableOffline(it)} },onOffline={offlineFilter=it}) { clearFilters() }
             Text(if(listMode=="books") stringResource(R.string.okunanlar) else stringResource(R.string.kitaplar_2),fontSize=10.sp,letterSpacing=1.sp,color=TaleBlue,modifier=Modifier.fillMaxWidth().padding(18.dp))
             HorizontalDivider(color=TaleLine)
             // Favorites read most recently added first; other lists keep catalog order.
-            StoryList(if(listMode==FAVORITES) filtered.sortedBy { snapshot.favoriteStoryIds.indexOf(it.id) } else filtered,{ story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }) {
+            val shown=remember(filtered,listMode,snapshot.favoriteStoryIds) { if(listMode==FAVORITES) filtered.sortedBy { snapshot.favoriteStoryIds.indexOf(it.id) } else filtered }
+            StoryList(shown,{ story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }) {
                 TaleEmptyState(if(filters.active) stringResource(R.string.bu_filtrelere_uyan_kitap_yok) else if(listMode=="books") stringResource(R.string.okumaya_basladigin_kitaplar_burada_gorunecek) else stringResource(R.string.kitap_bulunamadi),mascotSize=120)
             }
         }
