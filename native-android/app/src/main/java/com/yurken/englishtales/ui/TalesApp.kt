@@ -14,14 +14,17 @@ import com.yurken.englishtales.data.*
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.launch
 
+/** Q6: a shared story link to open; [at] tells two taps on the same link apart. */
+data class StoryLinkRequest(val storyId: String,val at: Long)
+
 @Composable
-fun TalesApp(viewModel: LearningViewModel = viewModel(),dailyPlanRequest: Long=0L) {
+fun TalesApp(viewModel: LearningViewModel = viewModel(),dailyPlanRequest: Long=0L,storyLinkRequest: StoryLinkRequest?=null,onStoryLinkHandled: (StoryLinkRequest)->Unit={}) {
     val account by viewModel.account.collectAsState()
-    key(account.scope) {TalesAccountApp(viewModel,dailyPlanRequest)}
+    key(account.scope) {TalesAccountApp(viewModel,dailyPlanRequest,storyLinkRequest,onStoryLinkHandled)}
 }
 
 @Composable
-private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long) {
+private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,storyLinkRequest: StoryLinkRequest?,onStoryLinkHandled: (StoryLinkRequest)->Unit) {
     val account by viewModel.account.collectAsState()
     val content: ContentViewModel = viewModel()
     val contentReady by content.ready.collectAsState()
@@ -58,6 +61,16 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long)
     var handledRequest by rememberSaveable {mutableLongStateOf(0L)}
     LaunchedEffect(dailyPlanRequest) {
         if(dailyPlanRequest>0 && dailyPlanRequest!=handledRequest && snapshot.onboardingDone) {dailyPlan();handledRequest=dailyPlanRequest}
+    }
+    // Q6: a shared link opens its story page; a story this catalog does not have opens the library instead.
+    // A learner still in onboarding sees the link once onboarding is done.
+    // The request is cleared once handled, so switching accounts does not open it again.
+    LaunchedEffect(storyLinkRequest,snapshot.onboardingDone) {
+        val request=storyLinkRequest?:return@LaunchedEffect
+        if(!snapshot.onboardingDone) return@LaunchedEffect
+        onStoryLinkHandled(request)
+        nav.popBackStack("main",false)
+        if(request.storyId in LearningContent.storyById) nav.navigate("story/${request.storyId}") else selectedTab=1
     }
     LearningWriteHost(writeError,viewModel::retryLearningWrites) {
         NavHost(navController=nav,startDestination=startDestination) {

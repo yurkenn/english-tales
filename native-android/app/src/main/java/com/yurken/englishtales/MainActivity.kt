@@ -5,10 +5,13 @@ import android.content.Intent
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableLongStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.yurken.englishtales.data.LearningContent
+import com.yurken.englishtales.data.StoryLinks
+import com.yurken.englishtales.ui.StoryLinkRequest
 import com.yurken.englishtales.ui.EnglishTalesTheme
 import com.yurken.englishtales.ui.TalesApp
 import com.yurken.englishtales.ui.YurkenBrandIntro
@@ -27,10 +30,13 @@ import androidx.compose.ui.Alignment
 class MainActivity : ComponentActivity() {
     private var play: PlayStoreFeatures? = null
     private var dailyPlanRequest by mutableLongStateOf(0L)
+    private var storyLinkRequest by mutableStateOf<StoryLinkRequest?>(null)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dailyPlanRequest=savedInstanceState?.getLong("daily_plan_request")?:0L
         acceptReminder(intent)
+        // A recreated activity gets its original intent again; the shared link was already opened then.
+        if(savedInstanceState==null) acceptStoryLink(intent)
         // The bundled catalog parses in the background while the brand intro is visible.
         lifecycleScope.launch { LearningContent.load(applicationContext) }
         enableEdgeToEdge()
@@ -40,7 +46,7 @@ class MainActivity : ComponentActivity() {
             CompositionLocalProvider(LocalCompletionAds provides ads,LocalPlayStoreFeatures provides play) {EnglishTalesTheme {
                 Box(Modifier.fillMaxSize()) {
                     YurkenBrandIntro {
-                        if(LearningContent.ready) TalesApp(dailyPlanRequest=dailyPlanRequest)
+                        if(LearningContent.ready) TalesApp(dailyPlanRequest=dailyPlanRequest,storyLinkRequest=storyLinkRequest,onStoryLinkHandled={if(storyLinkRequest==it) storyLinkRequest=null})
                         else Box(Modifier.fillMaxSize().background(Color.Black))
                     }
                     if(play.updateReady) UpdateReadyBar(onRestart=play::completeUpdate,modifier=Modifier.align(Alignment.BottomCenter))
@@ -68,6 +74,11 @@ class MainActivity : ComponentActivity() {
         super.onNewIntent(intent)
         setIntent(intent)
         acceptReminder(intent)
+        acceptStoryLink(intent)
+    }
+    private fun acceptStoryLink(intent: Intent) {
+        if(intent.action!=Intent.ACTION_VIEW) return
+        StoryLinks.storyId(intent.dataString)?.let {storyLinkRequest=StoryLinkRequest(it,System.currentTimeMillis())}
     }
     private fun acceptReminder(intent: Intent) {
         intent.getLongExtra("daily_plan_request",0L).takeIf {it>0}?.let {dailyPlanRequest=it}
