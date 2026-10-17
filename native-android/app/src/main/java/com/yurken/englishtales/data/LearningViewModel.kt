@@ -53,7 +53,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     mutableAccount.value=mutableAccount.value.copy(message="Hesap kayıtları açılamadı. Misafir olarak devam edebilir, tekrar giriş yapabilirsin.")
                 }
                 onOwnerChanged(store.owner)
-                store.recordVisit();mutableState.value=store.snapshot();mutableReady.value=true
+                // A failing database must not crash every launch: the write bar offers a retry instead.
+                writes.submit {store.recordVisit()};writes.refresh();mutableReady.value=true
                 verifyAccount()
                 for(action in mutations) {
                     if(action.scope!=null && action.scope!=scope) continue
