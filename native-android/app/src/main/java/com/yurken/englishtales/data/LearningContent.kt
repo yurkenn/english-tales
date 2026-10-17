@@ -13,7 +13,23 @@ data class StorySentence(val id: String, val english: String, val translation: S
 /** Language of the translations shown next to the English content (Q4.0). Only Turkish ships today. */
 object SupportLanguage {
     const val DEFAULT = "tr"
-    val code: String get() = DEFAULT
+    /**
+     * Content languages the whole catalog is published in. Drafts for more languages live in
+     * backend/content/translations; a code joins this list only once every story carries it.
+     */
+    val enabled = listOf(DEFAULT)
+    /** Device languages served by one regional translation. */
+    private val regional = mapOf("es" to "es-419", "pt" to "pt-BR")
+
+    /** The first device language with a published translation, else Turkish. */
+    fun resolve(preferred: List<java.util.Locale>, available: List<String> = enabled): String =
+        preferred.firstNotNullOfOrNull { locale -> (regional[locale.language] ?: locale.language).takeIf { it in available } } ?: DEFAULT
+
+    /** Fixed for the process so the catalog, caches and downloads never mix languages. */
+    val code: String by lazy {
+        val locales = android.os.LocaleList.getDefault()
+        resolve((0 until locales.size()).map { locales.get(it) })
+    }
 
     /**
      * Reads [lang] from an optional per-language map (`{"tr": "…"}`), falling back to the legacy
