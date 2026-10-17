@@ -8,8 +8,9 @@ const asset=readFileSync(new URL('../../app/src/main/assets/glossary/tr.json',im
 
 test('glossary drafts are well formed and the app asset is exactly what the review gate allows',()=>{
   assert.deepEqual(validate(doc),[]);
-  // Every draft has been cross-checked by a second model.
+  // Every draft has been cross-checked by a second model, and every dispute is resolved.
   assert.ok(doc.entries.every(e=>e.checkedBy));
+  assert.ok(doc.entries.every(e=>!e.disputed||e.reviewed));
   assert.ok(doc.entries.length>1000);
   assert.equal(asset,serialize(build(doc)));
   // Until the owner signs off the review sample, no draft meaning reaches learners.
@@ -28,6 +29,7 @@ test('only cross-checked entries ship, and disputed ones only after owner review
   assert.match(validate({...doc,entries:[e,e]}).join(),/duplicate:walk/);
   assert.match(validate({...doc,entries:[{...e,lemma:'Walk'}]}).join(),/lemma:Walk/);
   assert.match(validate({...doc,entries:[{...e,disputed:true}]}).join(),/suggestion:walk/);
+  assert.deepEqual(validate({...doc,entries:[{...e,disputed:true,reviewed:true}]}),[]);
 });
 test('the owner review sample is a stable tenth of the drafts',()=>{
   const picked=sample(doc);

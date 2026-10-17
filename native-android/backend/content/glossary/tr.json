@@ -650,15 +650,16 @@
   },
   {
    "lemma": "apart",
-   "gloss": "ayrı",
+   "gloss": "parçalara (ayrılmış)",
    "occurrences": 2,
    "example": "He stamped so violently that he tore himself apart, and the queen kept her baby.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "parçalara (ayrılmış)",
-   "note": "\"tore himself apart\" = in pieces; \"ayrı\" misleads"
+   "reviewed": true,
+   "note": "\"tore himself apart\" = in pieces; \"ayrı\" misleads",
+   "draftGloss": "ayrı",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "appearance",
@@ -882,15 +883,16 @@
   },
   {
    "lemma": "bands",
-   "gloss": "bantlar; gruplar",
+   "gloss": "çemberler, kayışlar",
    "occurrences": 2,
    "example": "Henry had placed iron bands around his heart because of his sorrow.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "çemberler, kayışlar",
-   "note": "iron bands around heart = hoops/straps, not groups"
+   "reviewed": true,
+   "note": "iron bands around heart = hoops/straps, not groups",
+   "draftGloss": "bantlar; gruplar",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "bars",
@@ -1144,15 +1146,16 @@
   },
   {
    "lemma": "bitterly",
-   "gloss": "acı acı",
+   "gloss": "dondurucu derecede, çok",
    "occurrences": 1,
    "example": "Winter grew bitterly cold, and he swam to keep a small patch of water from freezing.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "dondurucu derecede, çok",
-   "note": "\"bitterly cold\" = extremely cold; \"acı acı\" is wrong sense"
+   "reviewed": true,
+   "note": "\"bitterly cold\" = extremely cold; \"acı acı\" is wrong sense",
+   "draftGloss": "acı acı",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "black",
@@ -1216,15 +1219,16 @@
   },
   {
    "lemma": "blow",
-   "gloss": "üflemek; esmek",
+   "gloss": "darbe, vuruş",
    "occurrences": 4,
    "example": "Proud of himself, he made a belt that said, \"Seven at one blow.\"",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "darbe, vuruş",
-   "note": "noun sense in \"at one blow\""
+   "reviewed": true,
+   "note": "noun sense in \"at one blow\"",
+   "draftGloss": "üflemek; esmek",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "blue",
@@ -1518,15 +1522,16 @@
   },
   {
    "lemma": "call",
-   "gloss": "seslenmek; çağırmak",
+   "gloss": "çağrı; seslenmek",
    "occurrences": 14,
    "example": "He watched how the enchantress entered, then tried the same call.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "çağrı; seslenmek",
-   "note": "noun use in example"
+   "reviewed": true,
+   "note": "noun use in example",
+   "draftGloss": "seslenmek; çağırmak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "camera",
@@ -1900,15 +1905,16 @@
   },
   {
    "lemma": "clear",
-   "gloss": "açık, berrak",
+   "gloss": "boşaltmak; açık",
    "occurrences": 3,
    "example": "While helping her grandmother clear the attic, Nora found a small wooden chest beneath a pile of blankets.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "boşaltmak; açık",
-   "note": "verb sense in example = empty out"
+   "reviewed": true,
+   "note": "verb sense in example = empty out",
+   "draftGloss": "açık, berrak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "clerk",
@@ -2142,15 +2148,16 @@
   },
   {
    "lemma": "cooled",
-   "gloss": "soğudu",
+   "gloss": "serinletti",
    "occurrences": 1,
    "example": "He left the ruby beside the woman's sewing things and cooled the boy with his wings.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "serinletti",
-   "note": "transitive here (cooled the boy), not 'got cold'"
+   "reviewed": true,
+   "note": "transitive here (cooled the boy), not 'got cold'",
+   "draftGloss": "soğudu",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "corner",
@@ -2304,15 +2311,16 @@
   },
   {
    "lemma": "curled",
-   "gloss": "kıvrıldı; kıvırcık",
+   "gloss": "kıvırdı",
    "occurrences": 1,
    "example": "At home, she curled her short hair and worried about Jim's reaction.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "kıvırdı",
-   "note": "verb 'curled her hair' = kıvırdı; gloss gives intransitive/adjective"
+   "reviewed": true,
+   "note": "verb 'curled her hair' = kıvırdı; gloss gives intransitive/adjective",
+   "draftGloss": "kıvrıldı; kıvırcık",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "customer",
@@ -2776,15 +2784,16 @@
   },
   {
    "lemma": "draw",
-   "gloss": "çizmek",
+   "gloss": "çekmek (kendine doğru)",
    "occurrences": 3,
    "example": "One morning, a bird's song drew him to the window.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "çekmek (kendine doğru)",
-   "note": "example 'drew him to the window' means attracted/pulled, not to sketch"
+   "reviewed": true,
+   "note": "example 'drew him to the window' means attracted/pulled, not to sketch",
+   "draftGloss": "çizmek",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "drawing",
@@ -2868,15 +2877,16 @@
   },
   {
    "lemma": "due",
-   "gloss": "-den dolayı; vadesi gelen",
+   "gloss": "(zamanı) gelmiş, gelmesi beklenen",
    "occurrences": 1,
    "example": "The last train was due in twenty minutes.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "(zamanı) gelmiş, gelmesi beklenen",
-   "note": "'was due' = expected to arrive; gloss sense is misleading"
+   "reviewed": true,
+   "note": "'was due' = expected to arrive; gloss sense is misleading",
+   "draftGloss": "-den dolayı; vadesi gelen",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "dull",
@@ -2990,15 +3000,16 @@
   },
   {
    "lemma": "either",
-   "gloss": "ya ... ya da",
+   "gloss": "de (olumsuzda), ... da değil",
    "occurrences": 1,
    "example": "When the emperor visited the workshop, he could not see any cloth either.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "de (olumsuzda), ... da değil",
-   "note": "'not ... either' = neither/also not, not 'ya ... ya da'"
+   "reviewed": true,
+   "note": "'not ... either' = neither/also not, not 'ya ... ya da'",
+   "draftGloss": "ya ... ya da",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "eldest",
@@ -3282,15 +3293,16 @@
   },
   {
    "lemma": "exchange",
-   "gloss": "değiş tokuş etmek",
+   "gloss": "karşılığında; takas",
    "occurrences": 3,
    "example": "A little man appeared and offered to help in exchange for her necklace.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "karşılığında; takas",
-   "note": "'in exchange for' is a noun use, not a verb"
+   "reviewed": true,
+   "note": "'in exchange for' is a noun use, not a verb",
+   "draftGloss": "değiş tokuş etmek",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "exhausted",
@@ -3854,15 +3866,16 @@
   },
   {
    "lemma": "float",
-   "gloss": "yüzmek (suda)",
+   "gloss": "su üstünde kalmak, sürüklenmek",
    "occurrences": 1,
    "example": "Fish heard her crying and bit through the stem so that she could float away.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "su üstünde kalmak, sürüklenmek",
-   "note": "'yüzmek' means swim; float away = drift"
+   "reviewed": true,
+   "note": "'yüzmek' means swim; float away = drift",
+   "draftGloss": "yüzmek (suda)",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "flock",
@@ -3956,15 +3969,16 @@
   },
   {
    "lemma": "for",
-   "gloss": "için",
+   "gloss": "için; -ın dışında (except for)",
    "occurrences": 83,
    "example": "The forest was quiet except for birds in the trees.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "için; -ın dışında (except for)",
-   "note": "example uses 'except for', not purpose sense"
+   "reviewed": true,
+   "note": "example uses 'except for', not purpose sense",
+   "draftGloss": "için",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "forever",
@@ -3988,15 +4002,16 @@
   },
   {
    "lemma": "form",
-   "gloss": "şekil; biçim",
+   "gloss": "oluşturmak; şekil",
    "occurrences": 2,
    "example": "Kay sat arranging pieces of ice, trying to form the word eternity.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "oluşturmak; şekil",
-   "note": "verb use in example"
+   "reviewed": true,
+   "note": "verb use in example",
+   "draftGloss": "şekil; biçim",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "four",
@@ -4020,15 +4035,16 @@
   },
   {
    "lemma": "freezing",
-   "gloss": "dondurucu",
+   "gloss": "donma; dondurucu",
    "occurrences": 1,
    "example": "Winter grew bitterly cold, and he swam to keep a small patch of water from freezing.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "donma; dondurucu",
-   "note": "example is gerund 'from freezing' (verb), not adjective"
+   "reviewed": true,
+   "note": "example is gerund 'from freezing' (verb), not adjective",
+   "draftGloss": "dondurucu",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "fresh",
@@ -4172,15 +4188,16 @@
   },
   {
    "lemma": "gaze",
-   "gloss": "bakış",
+   "gloss": "dik dik bakmak; bakış",
    "occurrences": 1,
    "example": "Neither said a word, but he continued to gaze at her.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "dik dik bakmak; bakış",
-   "note": "verb use in example"
+   "reviewed": true,
+   "note": "verb use in example",
+   "draftGloss": "bakış",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "gentle",
@@ -4214,15 +4231,16 @@
   },
   {
    "lemma": "get",
-   "gloss": "almak; olmak",
+   "gloss": "almak; olmak; ulaşmak, geçmek",
    "occurrences": 2,
    "example": "Many princes tried to get through, but the thorns trapped them.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "almak; olmak; ulaşmak, geçmek",
-   "note": "'get through' sense missing"
+   "reviewed": true,
+   "note": "'get through' sense missing",
+   "draftGloss": "almak; olmak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "ghost",
@@ -4676,15 +4694,16 @@
   },
   {
    "lemma": "heat",
-   "gloss": "sıcaklık",
+   "gloss": "ısıtmak; sıcaklık",
    "occurrences": 3,
    "example": "At last, the witch lost patience and decided to heat the oven.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "ısıtmak; sıcaklık",
-   "note": "verb use in example"
+   "reviewed": true,
+   "note": "verb use in example",
+   "draftGloss": "sıcaklık",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "hedge",
@@ -5158,27 +5177,29 @@
   },
   {
    "lemma": "interested",
-   "gloss": "ilgili",
+   "gloss": "ilgilenen, ilgi duyan",
    "occurrences": 1,
    "example": "The mouse's wealthy neighbour, a mole, became interested in marrying her.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "ilgilenen, ilgi duyan",
-   "note": "'ilgili' means related/relevant"
+   "reviewed": true,
+   "note": "'ilgili' means related/relevant",
+   "draftGloss": "ilgili",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "interrupted",
-   "gloss": "böldü",
+   "gloss": "kesintiye uğramış, yarım kalmış",
    "occurrences": 1,
    "example": "The whole castle woke up and continued its interrupted day.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "kesintiye uğramış, yarım kalmış",
-   "note": "adjective use in example"
+   "reviewed": true,
+   "note": "adjective use in example",
+   "draftGloss": "böldü",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "into",
@@ -5452,15 +5473,16 @@
   },
   {
    "lemma": "knocked",
-   "gloss": "(kapıyı) çaldı",
+   "gloss": "yıktı (knock down); (kapıyı) çaldı",
    "occurrences": 4,
    "example": "The giant knocked down the wall and gave them the garden to play in.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "yıktı (knock down); (kapıyı) çaldı",
-   "note": "example is 'knocked down the wall'"
+   "reviewed": true,
+   "note": "example is 'knocked down the wall'",
+   "draftGloss": "(kapıyı) çaldı",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "know",
@@ -5794,15 +5816,16 @@
   },
   {
    "lemma": "lonely",
-   "gloss": "yalnız",
+   "gloss": "ıssız, kimsesiz",
    "occurrences": 2,
    "example": "The angry woman cut off her hair and sent her to a lonely wilderness.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "ıssız, kimsesiz",
-   "note": "Here 'lonely' describes a remote place, not a lonely person"
+   "reviewed": true,
+   "note": "Here 'lonely' describes a remote place, not a lonely person",
+   "draftGloss": "yalnız",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "long",
@@ -5816,15 +5839,16 @@
   },
   {
    "lemma": "look",
-   "gloss": "bakmak",
+   "gloss": "görünmek; bakmak",
    "occurrences": 22,
    "example": "\"Those grapes look sweet,\" she says.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "görünmek; bakmak",
-   "note": "'look sweet' means 'appear', not 'gaze'"
+   "reviewed": true,
+   "note": "'look sweet' means 'appear', not 'gaze'",
+   "draftGloss": "bakmak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "loosened",
@@ -6618,15 +6642,16 @@
   },
   {
    "lemma": "off",
-   "gloss": "-den uzak; kapalı",
+   "gloss": "yola (çıkmak); kapalı",
    "occurrences": 9,
    "example": "The girl promised to be careful and set off.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "yola (çıkmak); kapalı",
-   "note": "'set off' = depart; gloss misses the sense"
+   "reviewed": true,
+   "note": "'set off' = depart; gloss misses the sense",
+   "draftGloss": "-den uzak; kapalı",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "offer",
@@ -6830,15 +6855,16 @@
   },
   {
    "lemma": "over",
-   "gloss": "üzerinde; bitti",
+   "gloss": "yanına (doğru); üzerinde",
    "occurrences": 9,
    "example": "Anna walks over and says hello.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "yanına (doğru); üzerinde",
-   "note": "'walks over' = approaches; 'bitti' not the sense"
+   "reviewed": true,
+   "note": "'walks over' = approaches; 'bitti' not the sense",
+   "draftGloss": "üzerinde; bitti",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "overhead",
@@ -6942,15 +6968,16 @@
   },
   {
    "lemma": "partner",
-   "gloss": "ortak",
+   "gloss": "(dans) partneri, eş",
    "occurrences": 1,
    "example": "It fitted perfectly, and the prince recognized his dancing partner.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "(dans) partneri, eş",
-   "note": "'ortak' suggests business partner"
+   "reviewed": true,
+   "note": "'ortak' suggests business partner",
+   "draftGloss": "ortak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "passage",
@@ -7164,15 +7191,16 @@
   },
   {
    "lemma": "plain",
-   "gloss": "sade",
+   "gloss": "sivil (giyimli); sade",
    "occurrences": 1,
    "example": "The stranger explained that he was a plain-clothes detective.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "sivil (giyimli); sade",
-   "note": "'plain-clothes' means sivil"
+   "reviewed": true,
+   "note": "'plain-clothes' means sivil",
+   "draftGloss": "sade",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "plan",
@@ -7276,15 +7304,16 @@
   },
   {
    "lemma": "position",
-   "gloss": "konum",
+   "gloss": "görev, makam",
    "occurrences": 1,
    "example": "It was invisible to anyone who was foolish or unfit for a position.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "görev, makam",
-   "note": "Here means a post/office, not location"
+   "reviewed": true,
+   "note": "Here means a post/office, not location",
+   "draftGloss": "konum",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "poured",
@@ -7918,15 +7947,16 @@
   },
   {
    "lemma": "rolls",
-   "gloss": "çörekler; yuvarlanır",
+   "gloss": "küçük ekmekler, yuvarlak ekmekler",
    "occurrences": 1,
    "example": "Mia bought two warm rolls and shared one with him.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "küçük ekmekler, yuvarlak ekmekler",
-   "note": "rolls here are bread rolls; çörek is a sweet bun"
+   "reviewed": true,
+   "note": "rolls here are bread rolls; çörek is a sweet bun",
+   "draftGloss": "çörekler; yuvarlanır",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "roof",
@@ -8100,27 +8130,29 @@
   },
   {
    "lemma": "scarcely",
-   "gloss": "ancak, zorlukla",
+   "gloss": "neredeyse hiç, güçlükle",
    "occurrences": 1,
    "example": "And the poor home was scarcely warmer than the street.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "neredeyse hiç, güçlükle",
-   "note": "gloss 'ancak' misleads; means hardly"
+   "reviewed": true,
+   "note": "gloss 'ancak' misleads; means hardly",
+   "draftGloss": "ancak, zorlukla",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "scattered",
-   "gloss": "dağıttı",
+   "gloss": "saçıldı, dağıldı",
    "occurrences": 1,
    "example": "When the mirror broke, tiny pieces scattered across the world.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "saçıldı, dağıldı",
-   "note": "intransitive in example; 'dağıttı' is transitive"
+   "reviewed": true,
+   "note": "intransitive in example; 'dağıttı' is transitive",
+   "draftGloss": "dağıttı",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "school",
@@ -8274,15 +8306,16 @@
   },
   {
    "lemma": "set",
-   "gloss": "koymak; (güneş) batmak",
+   "gloss": "koymak; yola çıkmak (set off); (güneş) batmak",
    "occurrences": 3,
    "example": "The girl promised to be careful and set off.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "koymak; yola çıkmak (set off); (güneş) batmak",
-   "note": "example is 'set off' = start a journey"
+   "reviewed": true,
+   "note": "example is 'set off' = start a journey",
+   "draftGloss": "koymak; (güneş) batmak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "seven",
@@ -8476,15 +8509,16 @@
   },
   {
    "lemma": "shut",
-   "gloss": "kapatmak",
+   "gloss": "kapalı; kapatmak",
    "occurrences": 4,
    "example": "They kept the door shut and filled a trough with water that smelled of sausages.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "kapalı; kapatmak",
-   "note": "adjective in example"
+   "reviewed": true,
+   "note": "adjective in example",
+   "draftGloss": "kapatmak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "sick",
@@ -8948,15 +8982,16 @@
   },
   {
    "lemma": "squeeze",
-   "gloss": "sıkmak",
+   "gloss": "sıkışarak geçmek; sıkmak",
    "occurrences": 4,
    "example": "They asked him to squeeze through the bars and help them.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "sıkışarak geçmek; sıkmak",
-   "note": "sense is squeeze through, not press"
+   "reviewed": true,
+   "note": "sense is squeeze through, not press",
+   "draftGloss": "sıkmak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "stairs",
@@ -9240,15 +9275,16 @@
   },
   {
    "lemma": "strike",
-   "gloss": "vurmak; (saat) çalmak",
+   "gloss": "çakmak (kibrit); vurmak",
    "occurrences": 4,
    "example": "He struck a match to light his cigar.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "çakmak (kibrit); vurmak",
-   "note": "example sense is striking a match"
+   "reviewed": true,
+   "note": "example sense is striking a match",
+   "draftGloss": "vurmak; (saat) çalmak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "stumbled",
@@ -9372,39 +9408,42 @@
   },
   {
    "lemma": "supposed",
-   "gloss": "-mesi gereken",
+   "gloss": "sözde",
    "occurrences": 1,
    "example": "News of the tailor's supposed strength reached a king.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "sözde",
-   "note": "'supposed strength' means alleged/so-called"
+   "reviewed": true,
+   "note": "'supposed strength' means alleged/so-called",
+   "draftGloss": "-mesi gereken",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "surprise",
-   "gloss": "sürpriz",
+   "gloss": "şaşkınlık",
    "occurrences": 1,
    "example": "The oxen look at him in surprise.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "şaşkınlık",
-   "note": "In the example it means astonishment, not a surprise gift/event"
+   "reviewed": true,
+   "note": "In the example it means astonishment, not a surprise gift/event",
+   "draftGloss": "sürpriz",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "surrounded",
-   "gloss": "kuşattı",
+   "gloss": "çevrili, çevrelenmiş",
    "occurrences": 1,
    "example": "Thumbelina woke on a water-lily leaf, surrounded by water.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "çevrili, çevrelenmiş",
-   "note": "Participle 'surrounded by'; 'kuşattı' is an active past verb (besieged)"
+   "reviewed": true,
+   "note": "Participle 'surrounded by'; 'kuşattı' is an active past verb (besieged)",
+   "draftGloss": "kuşattı",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "suspected",
@@ -9438,15 +9477,16 @@
   },
   {
    "lemma": "take",
-   "gloss": "almak",
+   "gloss": "götürmek, almak",
    "occurrences": 25,
    "example": "He asked the swallow to take one of his sapphire eyes to the writer.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "götürmek, almak",
-   "note": "Example sense is carry/bring to a place"
+   "reviewed": true,
+   "note": "Example sense is carry/bring to a place",
+   "draftGloss": "almak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "talked",
@@ -9980,15 +10020,16 @@
   },
   {
    "lemma": "touch",
-   "gloss": "dokunmak",
+   "gloss": "iletişimde olmak (kept in touch)",
    "occurrences": 4,
    "example": "Although they had kept in touch for years, the garden had remained only a memory.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "iletişimde olmak (kept in touch)",
-   "note": "Example is the idiom 'keep in touch', not physically touching"
+   "reviewed": true,
+   "note": "Example is the idiom 'keep in touch', not physically touching",
+   "draftGloss": "dokunmak",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "toward",
@@ -10022,15 +10063,16 @@
   },
   {
    "lemma": "trade",
-   "gloss": "ticaret; takas etmek",
+   "gloss": "meslek, zanaat",
    "occurrences": 2,
    "example": "One night, she heard him talking in his sleep about his old trade.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "meslek, zanaat",
-   "note": "Example means occupation/craft, not commerce or barter"
+   "reviewed": true,
+   "note": "Example means occupation/craft, not commerce or barter",
+   "draftGloss": "ticaret; takas etmek",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "train",
@@ -10574,15 +10616,16 @@
   },
   {
    "lemma": "watch",
-   "gloss": "izlemek",
+   "gloss": "kol saati; izlemek",
    "occurrences": 14,
    "example": "When the sky grew dark, Lily checked her watch.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "kol saati; izlemek",
-   "note": "Example is the noun 'wristwatch'"
+   "reviewed": true,
+   "note": "Example is the noun 'wristwatch'",
+   "draftGloss": "izlemek",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "water",
@@ -11016,15 +11059,16 @@
   },
   {
    "lemma": "wood",
-   "gloss": "tahta; orman",
+   "gloss": "odun; ahşap; orman",
    "occurrences": 4,
    "example": "Three brothers went into the forest to cut wood, one after another.",
    "source": "claude-draft-2026-10-16",
    "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
    "disputed": true,
-   "reviewed": false,
-   "suggestion": "odun; ahşap; orman",
-   "note": "'cut wood' means firewood/timber; 'tahta' is wrong sense"
+   "reviewed": true,
+   "note": "'cut wood' means firewood/timber; 'tahta' is wrong sense",
+   "draftGloss": "tahta; orman",
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
   },
   {
    "lemma": "wooden",

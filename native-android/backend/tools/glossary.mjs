@@ -21,7 +21,7 @@ export function validate(doc){
     if(seen.has(e.lemma))errors.push(`duplicate:${e.lemma}`);seen.add(e.lemma);
     if(typeof e.gloss!=='string'||!e.gloss.trim()||e.gloss.length>200)errors.push(`gloss:${e.lemma}`);
     if(typeof e.source!=='string'||!e.source)errors.push(`source:${e.lemma}`);
-    if(e.disputed===true&&(typeof e.suggestion!=='string'||!e.suggestion.trim()))errors.push(`suggestion:${e.lemma}`);
+    if(e.disputed===true&&e.reviewed!==true&&(typeof e.suggestion!=='string'||!e.suggestion.trim()))errors.push(`suggestion:${e.lemma}`);
   }
   for(const [form,lemma] of Object.entries(doc.forms??{}))if(form!==form.toLowerCase()||lemma!==lemma.toLowerCase()||form===lemma)errors.push(`form:${form}`);
   return errors;
