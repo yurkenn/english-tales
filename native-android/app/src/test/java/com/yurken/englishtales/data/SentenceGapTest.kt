@@ -78,4 +78,41 @@ class SentenceGapTest {
         assertTrue(SentenceGap.session(prompts,words,emptyList(),"A1").isEmpty())
         assertTrue(SentenceGap.session(emptyList(),words,emptyList(),"A1").isEmpty())
     }
+
+    @Test fun precomputedDictionaryKeysKeepSessionsIdentical() {
+        // The pre-change session, with keys recomputed per dictionary word for every prompt.
+        fun key(text: String)=PhraseMatcher.tokens(text).joinToString(" ")
+        fun meaning(text: String)=text.trim().lowercase(java.util.Locale.ROOT)
+        fun reference(prompts: List<GapPrompt>, dictionary: List<WordInfo>, priorityIds: List<String>, level: String, random: Random): List<GapQuestion> {
+            val priority=priorityIds.toSet()
+            return prompts.shuffled(random).sortedWith(compareBy<GapPrompt> {if(it.wordId in priority) 0 else 1}.thenBy {if(it.level==level) 0 else 1})
+                .distinctBy {key(it.word)}.asSequence().mapNotNull {prompt ->
+                    val distractors=dictionary.filter {it.id!=prompt.wordId && key(it.word).isNotEmpty() && key(it.word)!=key(prompt.word) &&
+                        it.translation.isNotBlank() && meaning(it.translation)!=meaning(prompt.translation)}
+                        .shuffled(random).distinctBy {key(it.word)}.distinctBy {meaning(it.translation)}.take(3)
+                    if(distractors.size!=3) null else GapQuestion(prompt,(listOf(GapOption(prompt.wordId,prompt.word))+distractors.map {GapOption(it.id,it.word)}).shuffled(random))
+                }.take(5).toList()
+        }
+        // Duplicate spellings, case variants, shared and blank meanings, and words with no tokens.
+        val dictionary=(1..3000).map {i ->when(i%11) {
+            0->word("w$i","Word${i/2}","anlam-${i/3}")
+            1->word("w$i","word${i/2}"," ANLAM-${i/3} ")
+            2->word("w$i","w$i","  ")
+            3->word("w$i","--","anlam-$i")
+            4->word("w$i","look after $i","bakmak-$i")
+            else->word("w$i","word$i","anlam-$i")
+        }}
+        val prompts=dictionary.filter {it.word.any(Char::isLetter)}.take(400).mapIndexed {i,w ->
+            GapPrompt(w.id,w.word,w.translation,"She found ${w.word} near the tree.",10,10+w.word.length,"t","r$i","s$i",if(i%3==0) "B1" else "A1")
+        }
+        val priority=dictionary.shuffled(Random(7)).take(40).map {it.id}
+        listOf(1,2,3,42,1234).forEach {seed ->
+            listOf(prompts,prompts.take(3),prompts.filter {it.wordId in priority}).forEach {sample ->
+                listOf(dictionary,dictionary.take(5)).forEach {dict ->
+                    assertEquals(reference(sample,dict,priority,"A1",Random(seed)),SentenceGap.session(sample,dict,priority,"A1",Random(seed)))
+                }
+            }
+        }
+        assertEquals(5,SentenceGap.session(prompts,dictionary,priority,"A1",Random(1)).size)
+    }
 }

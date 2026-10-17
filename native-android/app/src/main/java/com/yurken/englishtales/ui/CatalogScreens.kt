@@ -47,6 +47,8 @@ import com.yurken.englishtales.data.StoryFilters
 import com.yurken.englishtales.data.Story
 import com.yurken.englishtales.data.StoryTag
 import com.yurken.englishtales.data.progressFor
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
@@ -80,7 +82,8 @@ private fun ChallengeBanner(onClick: () -> Unit) {
 fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpenWords: () -> Unit, padding: PaddingValues, onRead: (String)->Unit, onPractice: (List<String>)->Unit) {
     // Q5.6: unfinished stories at the learner's level that they can read most comfortably come first.
     val catalog=LearningContent.stories
-    val stories=remember(catalog,snapshot) {StoryDifficulty.recommended(catalog,snapshot)}
+    // Ranking tokenizes stories on first use and reruns on every snapshot change, so it runs on Default; the last order stays until the next is ready.
+    val stories by produceState(emptyList<Story>(),catalog,snapshot) {value=withContext(Dispatchers.Default) {StoryDifficulty.recommended(catalog,snapshot)}}
     var showAll by rememberSaveable { mutableStateOf(false) }
     BackHandler(enabled=showAll) { showAll=false }
     if(showAll) {

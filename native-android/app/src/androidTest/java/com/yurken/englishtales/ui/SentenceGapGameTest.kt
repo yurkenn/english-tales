@@ -106,6 +106,8 @@ class SentenceGapGameTest {
             compose.onAllNodesWithText("Cümlede boşluk doldur").fetchSemanticsNodes().singleOrNull()?.config?.contains(SemanticsProperties.Disabled)==false
         }
         click("Cümlede boşluk doldur")
+        // The session is built off the main thread, which the idle check does not track.
+        compose.waitUntil(5_000) {compose.onAllNodes(hasText("İpucu:",substring=true)).fetchSemanticsNodes().isNotEmpty()}
         repeat(5) {index ->
             val hint=compose.onNode(hasText("İpucu:",substring=true)).fetchSemanticsNode().config[SemanticsProperties.Text].joinToString("") {it.text}.removePrefix("İpucu: ")
             val word=LearningContent.words.first {it.translation==hint && compose.onAllNodesWithText(it.word).fetchSemanticsNodes().isNotEmpty()}
@@ -122,6 +124,7 @@ class SentenceGapGameTest {
             assertTrue(reviews.all {it.second})
         }
         click("Yeniden çalış")
+        compose.waitUntil(5_000) {starts.size==2}
         compose.runOnIdle {assertEquals(2,starts.size);assertNotEquals(starts[0].first,starts[1].first)}
         compose.onNodeWithContentDescription("Alıştırmadan çık").performScrollTo().performClick()
         compose.onNodeWithText("Kelimelerle oyna").assertExists()

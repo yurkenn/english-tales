@@ -75,6 +75,8 @@ class IconActionsTest {
         assertEquals(1,boundary)
         compose.runOnIdle {assertTrue(active())}
         compose.onNodeWithText("Yeniden çalış").performClick()
+        // The ladder's gap questions are built off the main thread, which the idle check does not track.
+        compose.waitUntil(5_000) {!active()}
         compose.runOnIdle {assertFalse(active());delayedContinue()}
         // Restart selects a fresh randomized batch; its first word need not be the old one.
         compose.waitUntil(5_000) {started.isNotBlank() && started!=completed}
