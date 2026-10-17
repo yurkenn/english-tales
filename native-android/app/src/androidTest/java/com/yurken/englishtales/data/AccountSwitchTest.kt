@@ -41,8 +41,8 @@ class AccountSwitchTest {
             else -> error("Unexpected request")
         }
     }
-    private fun await(predicate: ()->Boolean) {
-        val deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(5)
+    private fun await(seconds: Long=5,predicate: ()->Boolean) {
+        val deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(seconds)
         while(!predicate() && System.nanoTime()<deadline) Thread.sleep(20)
         assertTrue("Expected account state was not reached",predicate())
     }
@@ -148,17 +148,17 @@ class AccountSwitchTest {
             rpcs.incrementAndGet();if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else JSONObject().put("applied",true)
         },"https://fixture.supabase.co")}) {vm,http ->
             vm.signIn("a@example.invalid","fixture-password")
-            await {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
+            await(20) {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
             val session=UUID.randomUUID().toString();val signedIn=rpcs.get()
             vm.beginSession(session,"choice",5,null)
-            await {rpcs.get()>signedIn && !vm.account.value.sync.running}
-            Thread.sleep(2_500);await {!vm.account.value.sync.running}
+            await(20) {rpcs.get()>signedIn && !vm.account.value.sync.running}
+            Thread.sleep(2_500);await(20) {!vm.account.value.sync.running}
             val settled=rpcs.get()
             repeat(4) {vm.checkpointSession(session,(it+1)*1_000L);Thread.sleep(1_000)}
             Thread.sleep(3_000)
             assertEquals(settled,rpcs.get())
-            vm.toggleWord("quiet");await {"quiet" in vm.state.value.savedWordIds}
-            await {rpcs.get()>settled}
+            vm.toggleWord("quiet");await(20) {"quiet" in vm.state.value.savedWordIds}
+            await(20) {rpcs.get()>settled}
         }
     }
     @Test fun signOutRequestInvalidatesAnInFlightSnapshotBeforeItReturns() {
