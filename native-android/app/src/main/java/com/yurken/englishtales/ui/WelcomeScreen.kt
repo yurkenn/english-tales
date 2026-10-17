@@ -52,6 +52,6 @@ fun WelcomeScreen(state: AccountState,onGuest: ()->Unit,onEmail: ()->Unit,onGoog
         Button(onClick=onGuest,enabled=!state.busy,modifier=Modifier.fillMaxWidth().heightIn(min=52.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.misafir_olarak_basla))}
         Text(stringResource(R.string.hesap_acmadan_baslayabilirsin_misafir_ilerlemen),style=MaterialTheme.typography.bodySmall,color=TaleMuted,textAlign=TextAlign.Center)
         if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
-        TaleNotice(state.message)
+        AccountMessage(state)
     }
 }

@@ -195,4 +195,7 @@ class AccountService(private val http: AuthHttp?,private val storage: SessionSto
 }
 
 data class AccountState(val userId: String?=null,val email: String="",val busy: Boolean=false,val message: String="",val needsSignIn: Boolean=false,val scope: Long=0,
-    val guestTransfer: GuestTransferPreview?=null,val sync: LearningSyncState=LearningSyncState(),val emailAction: String="",val verificationEmail: String="")
+    val guestTransfer: GuestTransferPreview?=null,val sync: LearningSyncState=LearningSyncState(),val emailAction: String="",val verificationEmail: String="",val messageTone: MessageTone=MessageTone.Info)
+
+/** How an account [AccountState.message] reads: the screen colors it so a failure never looks like a success. */
+enum class MessageTone {Info,Progress,Success,Warning,Error}
