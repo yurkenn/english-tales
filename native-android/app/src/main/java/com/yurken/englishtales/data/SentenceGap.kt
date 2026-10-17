@@ -54,15 +54,16 @@ object SentenceGap {
         random: Random = Random.Default,
     ): List<GapQuestion> {
         val priority = priorityWordIds.toSet()
+        // Keys are tokenized once per word, not once per word per prompt.
+        val keyed = dictionary.mapNotNull { w -> wordKey(w.word).takeIf { it.isNotEmpty() && w.translation.isNotBlank() }?.let { Triple(w, it, meaningKey(w.translation)) } }
         return prompts.shuffled(random)
             .sortedWith(compareBy<GapPrompt> { if (it.wordId in priority) 0 else 1 }.thenBy { if (it.level == level) 0 else 1 })
             .distinctBy { wordKey(it.word) }
             .asSequence()
             .mapNotNull { prompt ->
-                val distractors = dictionary.filter {
-                    it.id != prompt.wordId && wordKey(it.word).isNotEmpty() && wordKey(it.word) != wordKey(prompt.word) &&
-                        it.translation.isNotBlank() && meaningKey(it.translation) != meaningKey(prompt.translation)
-                }.shuffled(random).distinctBy { wordKey(it.word) }.distinctBy { meaningKey(it.translation) }.take(3)
+                val key = wordKey(prompt.word); val meaning = meaningKey(prompt.translation)
+                val distractors = keyed.filter { (w, k, m) -> w.id != prompt.wordId && k != key && m != meaning }
+                    .shuffled(random).distinctBy { it.second }.distinctBy { it.third }.take(3).map { it.first }
                 // Never start a question with an incomplete set of answer choices.
                 if (distractors.size != 3) null else GapQuestion(prompt,
                     (listOf(GapOption(prompt.wordId, prompt.word)) + distractors.map { GapOption(it.id, it.word) }).shuffled(random))
