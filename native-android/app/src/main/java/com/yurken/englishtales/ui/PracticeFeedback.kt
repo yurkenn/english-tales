@@ -14,6 +14,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.Role
@@ -88,7 +90,9 @@ internal fun AnswerFeedback(visible: Boolean, correct: Boolean, message: String,
         exit = fadeOut(tween(TaleMotion.quick)) + shrinkVertically(tween(TaleMotion.quick))) {
         val accent = if (correct) c.success else c.error
         var pops by remember { mutableIntStateOf(0) }
-        LaunchedEffect(Unit) { pops++ }
+        val haptics = LocalHapticFeedback.current
+        // A short confirm or reject tick lets the verdict land even before the eyes reach the panel.
+        LaunchedEffect(Unit) { pops++; haptics.performHapticFeedback(if (correct) HapticFeedbackType.Confirm else HapticFeedbackType.Reject) }
         Row(Modifier.fillMaxWidth().background(if (correct) c.tileGreen else c.error.copy(alpha = 0.10f), RoundedCornerShape(16.dp))
             .border(1.5.dp, accent.copy(alpha = 0.5f), RoundedCornerShape(16.dp)).padding(14.dp)
             .semantics(mergeDescendants = true) { liveRegion = LiveRegionMode.Polite },

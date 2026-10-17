@@ -15,6 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.Role
@@ -76,8 +78,15 @@ fun TaleAlertHost(alerts: TaleAlerts = remember { TaleAlerts() }, content: @Comp
         Box(Modifier.fillMaxSize()) {
             content()
             val alert = alerts.current
+            val haptics = LocalHapticFeedback.current
             LaunchedEffect(alert?.id) {
                 if (alert != null) {
+                    // Wins and failures get a matching tick; neutral notes stay silent.
+                    when (alert.kind) {
+                        TaleAlertKind.Success, TaleAlertKind.Reward -> haptics.performHapticFeedback(HapticFeedbackType.Confirm)
+                        TaleAlertKind.Error -> haptics.performHapticFeedback(HapticFeedbackType.Reject)
+                        else -> Unit
+                    }
                     delay(if (alert.kind == TaleAlertKind.Error) 4500 else 2800)
                     if (alerts.current?.id == alert.id) alerts.dismiss()
                 }
