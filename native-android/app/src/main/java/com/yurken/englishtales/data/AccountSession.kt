@@ -59,10 +59,10 @@ open class AuthHttp(private val base: String,private val key: String) {
 
 interface SessionStorage {fun read(): AccountSession?;fun write(session: AccountSession);fun clear()}
 
-class EncryptedSessionStorage(context: Context,project: String): SessionStorage {
+class EncryptedSessionStorage(private val context: Context,project: String): SessionStorage {
     private val namespace=MessageDigest.getInstance("SHA-256").digest(project.toByteArray()).take(12).joinToString("") {"%02x".format(it)}
     private val alias="english_tales_session_$namespace"
-    private val file=AtomicFile(File(context.filesDir,"account-$namespace.enc"))
+    private val file by lazy {AtomicFile(File(context.filesDir,"account-$namespace.enc"))}
     private val aad=project.toByteArray(Charsets.UTF_8)
     private fun key(): SecretKey {
         val store=KeyStore.getInstance("AndroidKeyStore").apply {load(null)}

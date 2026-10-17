@@ -14,7 +14,7 @@ internal object LearningReminderOwner {
         val selected = prefs(context).getString("learning_owner", null)
         return if (selected == null) {
             // Existing installs have no owner preference until the first app launch.
-            LearningSyncRuntime.accounts(context).current?.userId?.let { LearningOwner.Account(it) }
+            LearningSyncRuntime.ensureRestored(context).current?.userId?.let { LearningOwner.Account(it) }
                 ?: LearningOwner.Guest
         } else if (selected == "guest") LearningOwner.Guest
         else runCatching { LearningOwner.Account(selected) }.getOrNull()
