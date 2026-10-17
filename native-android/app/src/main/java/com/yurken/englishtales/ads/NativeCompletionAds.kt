@@ -1,5 +1,6 @@
 package com.yurken.englishtales.ads
 
+import com.yurken.englishtales.R
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -50,8 +51,8 @@ class NativeCompletionAds(private val activity: ComponentActivity): CompletionAd
         fun finish(error: Boolean) {
             privacyBusy=false
             if(!activity.isDestroyed) {
-                onMessage?.invoke(if(error) "Gizlilik bilgisi alınamadı. Daha sonra tekrar deneyebilirsin."
-                    else "Reklam gizlilik bilgisi güncellendi.")
+                onMessage?.invoke(if(error) activity.getString(R.string.ad_message_privacy_unavailable)
+                    else activity.getString(R.string.ad_message_privacy_updated))
                 initializeIfAllowed()
             }
         }
@@ -161,7 +162,7 @@ class NativeCompletionAds(private val activity: ComponentActivity): CompletionAd
         when(consent.privacyOptionsRequirementStatus) {
             ConsentInformation.PrivacyOptionsRequirementStatus.UNKNOWN -> {gatherConsent(onMessage);return}
             ConsentInformation.PrivacyOptionsRequirementStatus.NOT_REQUIRED -> {
-                onMessage("Bu cihazda ek reklam gizlilik formu gerekmiyor.");return
+                onMessage(activity.getString(R.string.ad_message_form_not_required));return
             }
             else -> Unit
         }
@@ -169,7 +170,7 @@ class NativeCompletionAds(private val activity: ComponentActivity): CompletionAd
         fun finish(error: Boolean) {
             privacyBusy=false
             if(!activity.isDestroyed) {
-                onMessage(if(!error) "Reklam gizlilik tercihlerin güncellendi." else "Tercihler açılamadı. Daha sonra tekrar deneyebilirsin.")
+                onMessage(if(!error) activity.getString(R.string.ad_message_preferences_updated) else activity.getString(R.string.ad_message_preferences_unavailable))
                 initializeIfAllowed()
             }
         }

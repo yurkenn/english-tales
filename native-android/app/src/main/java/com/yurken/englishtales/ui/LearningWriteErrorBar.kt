@@ -18,7 +18,7 @@ internal fun LearningWriteErrorBar(error: LearningWriteError?, onRetry: () -> Un
     if (error == null) return
     // Stays until the writes succeed; the retry sits next to the message so the way out is obvious.
     Box(Modifier.fillMaxWidth().background(TaleBackground).statusBarsPadding().padding(horizontal=12.dp,vertical=8.dp)) {
-        TaleNotice(error.message,TaleAlertKind.Error) {
+        TaleNotice(stringResource(error.messageRes),TaleAlertKind.Error) {
             TextButton(onClick=onRetry) { Text(stringResource(R.string.tekrar_dene),fontWeight=androidx.compose.ui.text.font.FontWeight.Bold) }
         }
     }

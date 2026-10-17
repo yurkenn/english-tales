@@ -1,0 +1,17 @@
+<resources>
+    <string name="gap_mode">Fill the gap in the sentence</string>
+    <string name="gap_subtitle">Find the right word in a story sentence.</string>
+    <string name="gap_preparing">Preparing story sentences…</string>
+    <string name="gap_unavailable">There are no suitable sentences for this practice. Try again with stories you have downloaded.</string>
+    <string name="gap_instruction">Fill the gap using the hint.</string>
+    <string name="gap_hint">Hint: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">A sentence from a story · %1$s</string>
+    <string name="gap_progress">Sentence %1$d / %2$d</string>
+    <string name="gap_check">Check</string>
+    <string name="gap_correct">Correct! You completed the sentence.</string>
+    <string name="gap_incorrect">Let\'s learn it together. Correct answer: %1$s</string>
+    <string name="gap_next">Next sentence</string>
+    <string name="gap_finish">See result</string>
+    <string name="gap_exit">Leave practice</string>
+</resources>

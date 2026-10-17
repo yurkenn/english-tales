@@ -1,5 +1,6 @@
 package com.yurken.englishtales.data
 
+import com.yurken.englishtales.R
 import android.app.Application
 import android.content.Context
 import android.util.AtomicFile
@@ -322,6 +323,7 @@ internal object ContentRefreshPolicy {
 }
 
 class ContentViewModel(application: Application) : AndroidViewModel(application) {
+    private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
     private val http = if (BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))
         ContentHttp(BuildConfig.SUPABASE_URL, BuildConfig.SUPABASE_PUBLISHABLE_KEY) else null
     val repository = ContentRepository(application, http)
@@ -344,26 +346,26 @@ class ContentViewModel(application: Application) : AndroidViewModel(application)
     }
     fun refresh(userInitiated: Boolean = false) {
         if (mutableStatus.value.busy) return
-        mutableStatus.value = ContentStatus(busy = true, message = "Hikâyeler güncelleniyor…")
+        mutableStatus.value = ContentStatus(busy = true, message = text(R.string.content_message_refreshing))
         viewModelScope.launch {
-            try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finish(ContentStatus(message = "Hikâyeler güncel"), true, userInitiated) }
-            catch (_: Exception) { finish(ContentStatus(message = "Güncelleme yapılamadı. Cihazdaki hikâyeler kullanılabilir."), false, userInitiated) }
+            try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finish(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
+            catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
         }
     }
     fun download(story: Story, onReady: (Story) -> Unit = {}) {
         if (mutableStatus.value.busy) return
-        mutableStatus.value = ContentStatus(true, "Hikâye indiriliyor…", story.id)
+        mutableStatus.value = ContentStatus(true, text(R.string.content_message_downloading), story.id)
         viewModelScope.launch {
-            try { val ready = repository.download(story); finish(ContentStatus(message = "Çevrimdışı okumaya hazır"), true); onReady(ready) }
-            catch (_: Exception) { finish(ContentStatus(message = "İndirme tamamlanamadı. Bağlantını kontrol edip yeniden dene."), false) }
+            try { val ready = repository.download(story); finish(ContentStatus(message = text(R.string.content_message_downloaded)), true); onReady(ready) }
+            catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_download_failed)), false) }
         }
     }
     fun removeDownload(story: Story) {
         if(mutableStatus.value.busy) return
         mutableStatus.value=ContentStatus(busy=true)
         viewModelScope.launch {
-            try {repository.removeDownload(story);finish(ContentStatus(message="İndirme kaldırıldı. Öğrendiğin kelimeler korundu."),true)}
-            catch (_: Exception) {finish(ContentStatus(message="İndirme kaldırılamadı. Yeniden dene."),false)}
+            try {repository.removeDownload(story);finish(ContentStatus(message=text(R.string.content_message_download_removed)),true)}
+            catch (_: Exception) {finish(ContentStatus(message=text(R.string.content_message_remove_failed)),false)}
         }
     }
 }

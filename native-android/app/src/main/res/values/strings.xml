@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">English Tales</string>
+    <string name="app_name" translatable="false">English Tales</string>
     <string name="hesabin">Hesabın</string>
     <string name="ogrenmeye_kendi_hesabinla_devam_et">Öğrenmeye kendi hesabınla devam et</string>
     <string name="hesap_acik">Hesap açık</string>
@@ -60,7 +60,7 @@
     <string name="n_nhesabin_sunucudaki_ogrenme_gecmisin">%1$s\n\nHesabın, sunucudaki öğrenme geçmişin ve bu cihazdaki hesap kayıtların silinir. Gönderilmeyi bekleyen hesap kayıtları da silinir. Bu işlem geri alınamaz. Misafir kayıtların ayrı kalır. Silmeden önce yeniden giriş yapman istenebilir.</string>
     <string name="hesabimi_kalici_olarak_sil">Hesabımı kalıcı olarak sil</string>
     <string name="kitabinin_kapagi">%1$s kitabının kapağı</string>
-    <string name="english_tales">ENGLISH TALES</string>
+    <string name="english_tales" translatable="false">ENGLISH TALES</string>
     <string name="ingilizce_seviyen">İngilizce seviyen</string>
     <string name="sectigin_seviye_hikaye_onerileri_buna">Seçtiğin seviye %1$s. Hikâye önerileri buna göre hazırlanır. Seviyeni Profilim → Ayarlar ekranından değiştirebilirsin.</string>
     <string name="calisma_serin">Çalışma serin</string>
@@ -200,7 +200,7 @@
     <string name="tekrar_dene">Tekrar dene</string>
     <string name="kelime_hata">%1$s kelime · %2$s hata</string>
     <string name="kelimeleri_eslestirin">Kelimeleri eşleştirin</string>
-    <string name="hi">Hi! 👋</string>
+    <string name="hi" translatable="false">Hi! 👋</string>
     <string name="merhaba_ben_senin_okuma_arkadasinim">Merhaba! Ben senin okuma arkadaşınım. English Tales\'e hoş geldin.</string>
     <string name="okuma_rehberi">Okuma rehberi</string>
     <string name="birlikte_hikayeler_okuyup_yeni_kelimeler">Birlikte hikâyeler okuyup yeni kelimeler öğreneceğiz. Başlayalım mı?</string>
@@ -250,7 +250,7 @@
     <string name="tema">Tema</string>
     <string name="acik">Açık</string>
     <string name="koyu">Koyu</string>
-    <string name="a_little_reading_every_day">A little reading, every day.</string>
+    <string name="a_little_reading_every_day" translatable="false">A little reading, every day.</string>
     <string name="okumaya_don">Okumaya dön</string>
     <string name="cihazin_ingilizce_ses_verisi_hazir">Cihazın İngilizce ses verisi hazır değil.</string>
     <string name="cihazin_seslendirme_motoru_baslatilamadi">Cihazın seslendirme motoru başlatılamadı.</string>
@@ -258,7 +258,7 @@
     <string name="ses_su_anda_baska_bir">Ses şu anda başka bir uygulama tarafından kullanılıyor.</string>
     <string name="seslendirme_baslatilamadi">Seslendirme başlatılamadı.</string>
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">Okuma ayarı kaydedilemedi. Tekrar deneyebilirsin.</string>
-    <string name="aa">Aa</string>
+    <string name="aa" translatable="false">Aa</string>
     <string name="kelimelerim_kayitli_kelime_2">Kelimelerim, %1$s kayıtlı kelime</string>
     <string name="okurken_ogren">Okurken öğren</string>
     <string name="alti_cizili_kelimeye_dokun_ve">Altı çizili kelimeye dokun ve kaydet. Sağdaki simge cümleyi çevirir; kulaklık sayfayı seslendirir.</string>
@@ -290,7 +290,7 @@
     <string name="misafir_olarak_basla">Misafir olarak başla</string>
     <string name="hesap_acmadan_baslayabilirsin_misafir_ilerlemen">Hesap açmadan başlayabilirsin. Misafir ilerlemen bu cihazda saklanır.</string>
     <string name="uygulamaya_gec">Uygulamaya geç</string>
-    <string name="yurken">Yurken</string>
+    <string name="yurken" translatable="false">Yurken</string>
     <string name="reklam_tercihleri">Reklam tercihleri</string>
     <string name="reklamlar_yalnizca_tamamlanan_calismalarin_ardindan">Reklamlar yalnızca tamamlanan çalışmaların ardından, sınırlı sıklıkta gösterilir.</string>
     <string name="bu_surumde_reklam_gosterimi_kapali">Bu sürümde reklam gösterimi kapalı.</string>

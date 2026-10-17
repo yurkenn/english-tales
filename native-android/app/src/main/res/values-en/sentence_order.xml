@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="order_mode">Build the sentence</string>
+    <string name="order_subtitle">Put the story sentence in the right order</string>
+    <string name="order_instruction">Tap the words to build the sentence</string>
+    <string name="order_hint">Meaning: %1$s</string>
+    <string name="order_answer_empty">Choose the words in order</string>
+    <string name="order_remove">Remove %1$s from the sentence</string>
+    <string name="order_correct">Correct! %1$s</string>
+    <string name="order_incorrect">Correct: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

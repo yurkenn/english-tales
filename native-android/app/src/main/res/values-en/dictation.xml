@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dictation_mode">Listen and write</string>
+    <string name="dictation_subtitle">Write the story sentence as you hear it</string>
+    <string name="dictation_instruction">Write the sentence you hear</string>
+    <string name="dictation_field">Sentence</string>
+    <string name="dictation_play">Listen to the sentence</string>
+    <string name="dictation_correct">Correct! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="one">%1$d word is different. Correct: %2$s</item>
+        <item quantity="other">%1$d words are different. Correct: %2$s</item>
+    </plurals>
+</resources>

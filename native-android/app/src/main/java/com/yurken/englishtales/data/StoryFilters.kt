@@ -1,8 +1,8 @@
 package com.yurken.englishtales.data
 
 /** Reading state shown in the library filters; progress is the snapshot percentage for the story. */
-enum class ReadingStatus(val label: String) {
-    Unread("Okunmamış"), InProgress("Devam eden"), Finished("Bitti");
+enum class ReadingStatus {
+    Unread, InProgress, Finished;
 
     companion object {
         fun of(progress: Int): ReadingStatus = when {

@@ -60,10 +60,10 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
             if(step>=2) {
                 ReplyBubble(level)
                 GuideBubble(stringResource(R.string.okumayi_sever_misin_hangi_tur))
-                if(step==2) { ChoiceHint(); listOf("Günlük yaşam","Macera","Gizem").forEach { choice -> ReplyChoice(choice) {genre=choice;step=3} } }
+                if(step==2) { ChoiceHint(); listOf("Günlük yaşam","Macera","Gizem").forEach { choice -> ReplyChoice(genreLabel(choice)) {genre=choice;step=3} } }
             }
             if(step>=3) {
-                ReplyBubble(genre)
+                ReplyBubble(genreLabel(genre))
                 GuideBubble(stringResource(R.string.her_gun_ne_kadar_calismak))
                 if(step==3) listOf(1 to stringResource(R.string.gunde_1_adim_rahat_baslangic),2 to stringResource(R.string.gunde_2_adim_duzenli_calisma),3 to stringResource(R.string.gunde_3_adim_yogun_calisma)).forEach { (value,label) -> ReplyChoice(label) {goal=value;step=4} }
             }

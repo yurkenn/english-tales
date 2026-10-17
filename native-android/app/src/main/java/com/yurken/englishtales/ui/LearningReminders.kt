@@ -1,5 +1,6 @@
 package com.yurken.englishtales.ui
 
+import com.yurken.englishtales.AppLanguage
 import android.Manifest
 import androidx.compose.ui.res.stringResource
 import android.app.*
@@ -54,7 +55,8 @@ object LearningReminders {
         val next=Calendar.getInstance().apply {set(Calendar.HOUR_OF_DAY,hour(context));set(Calendar.MINUTE,minute(context));set(Calendar.SECOND,0);set(Calendar.MILLISECOND,0);if(timeInMillis<=System.currentTimeMillis()) add(Calendar.DAY_OF_YEAR,1)}
         manager.set(AlarmManager.RTC_WAKEUP,next.timeInMillis,pending(context))
     }
-    fun show(context: Context,dueWords: Int=0) {
+    fun show(base: Context,dueWords: Int=0) {
+        val context=AppLanguage.wrap(base)
         if(!enabled(context) || !allowed(context)) return
         val manager=context.getSystemService(NotificationManager::class.java)
         if(Build.VERSION.SDK_INT>=26) manager.createNotificationChannel(NotificationChannel("daily_learning",context.getString(R.string.gunluk_ogrenme_hatirlaticisi),NotificationManager.IMPORTANCE_DEFAULT))

@@ -7,13 +7,24 @@ import androidx.test.uiautomator.Until
 
 internal const val TARGET = "com.yurken.englishtales.benchmark"
 
+// Both shipped UI languages use the same journey; unsupported device languages fall back to English.
+private val english = mapOf(
+    "Çalış" to "Practice", "Oku" to "Read", "Arama" to "Search", "Kitap ara" to "Search books",
+    "Oyna" to "Play", "Kelimelerle oyna" to "Play with words", "Profilim" to "My profile",
+    "Kelimelerim" to "My words", "Başlayalım" to "Let's start", "Yeni başlıyorum" to "I'm just starting",
+    "Günlük yaşam" to "Daily life", "Günde 1 adım · Rahat başlangıç" to "1 step a day · Easy start",
+    "İlk hikâyeme başla" to "Start my first story"
+)
+private fun textSelector(text: String) = By.text(java.util.regex.Pattern.compile(
+    (listOf(text) + listOfNotNull(english[text])).joinToString("|") {java.util.regex.Pattern.quote(it)}))
+
 internal fun UiDevice.requireText(text: String) =
-    checkNotNull(wait(Until.findObject(By.text(text)), 15_000)) { "Missing UI text: $text" }
+    checkNotNull(wait(Until.findObject(textSelector(text)), 15_000)) { "Missing UI text: $text" }
 
 private fun UiDevice.deviceIdle() = waitForIdle(2_000)
 
 private fun UiDevice.choose(text: String) {
-    val selector = By.text(text).clickable(true)
+    val selector = textSelector(text).clickable(true)
     repeat(12) {
         deviceIdle()
         val item = wait(Until.findObject(selector), 700)
@@ -31,19 +42,32 @@ private fun UiDevice.choose(text: String) {
         findObjects(By.text(java.util.regex.Pattern.compile(".+"))).map { it.text })
 }
 
+/** The guest action can start below the fold on a small English welcome screen. */
+internal fun UiDevice.requireReadyEntry(): androidx.test.uiautomator.UiObject2 {
+    val selector=By.text(java.util.regex.Pattern.compile("Misafir olarak başla|Çalış|Start as guest|Practice"))
+    var entry=wait(Until.findObject(selector),5_000)
+    repeat(4) {
+        if(entry==null) {
+            swipe(displayWidth/2,displayHeight*3/4,displayWidth/2,displayHeight/3,20)
+            entry=wait(Until.findObject(selector),2_000)
+        }
+    }
+    return checkNotNull(entry) {"App did not become ready; visible=" +
+        findObjects(By.text(java.util.regex.Pattern.compile(".+"))).map {it.text}}
+}
+
 /** Only the isolated benchmark package is installed/cleared by this module. */
 internal fun MacrobenchmarkScope.prepareReturningGuest() {
     startActivityAndWait()
-    val entry = checkNotNull(device.wait(Until.findObject(By.text(
-        java.util.regex.Pattern.compile("Misafir olarak başla|Çalış"))), 15_000)) { "App did not become ready" }
-    if (entry.text == "Misafir olarak başla") {
+    val entry = device.requireReadyEntry()
+    if (entry.text in listOf("Misafir olarak başla", "Start as guest")) {
         entry.click()
         device.choose("Başlayalım")
         device.choose("Yeni başlıyorum")
         device.choose("Günlük yaşam")
         device.choose("Günde 1 adım · Rahat başlangıç")
         device.choose("İlk hikâyeme başla")
-        check(device.wait(Until.hasObject(By.desc("Okuma görünümü")), 15_000)) { "Reader did not open" }
+        check(device.wait(Until.hasObject(By.desc(java.util.regex.Pattern.compile("Okuma görünümü|Reading view"))), 15_000)) { "Reader did not open" }
         device.pressBack()
     }
     device.requireText("Çalış")

@@ -1,9 +1,10 @@
 package com.yurken.englishtales.data
 
+import com.yurken.englishtales.R
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-data class LearningWriteError(val pendingCount: Int, val message: String)
+data class LearningWriteError(val pendingCount: Int, @androidx.annotation.StringRes val messageRes: Int)
 
 /** Actor-confined: retain failed writes in order, separately from failed reads. */
 internal class LearningWriteRecovery(private val read: () -> Unit) {
@@ -70,9 +71,9 @@ internal class LearningWriteRecovery(private val read: () -> Unit) {
     private fun publish() {
         mutableError.value = when {
             pending.isNotEmpty() -> LearningWriteError(pending.size,
-                "Bazı değişiklikler henüz kaydedilemedi. Uygulamayı kapatmadan veya hesap değiştirmeden tekrar dene.")
+                R.string.write_error_pending_changes)
             readFailed -> LearningWriteError(0,
-                "Kayıtlar ekrana yüklenemedi. Görünümü yenilemek için tekrar dene.")
+                R.string.write_error_snapshot)
             else -> null
         }
     }

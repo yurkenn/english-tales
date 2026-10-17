@@ -63,7 +63,7 @@ android {
         applicationId = "com.yurken.englishtales"
         testInstrumentationRunner = if (releaseDeviceProbe)
             "com.yurken.englishtales.data.NativeAlignmentInstrumentation"
-        else "androidx.test.runner.AndroidJUnitRunner"
+        else "com.yurken.englishtales.TalesTestRunner"
         minSdk = 24
         targetSdk = 36
         // Play Console: production 46, internal preview 47 verified on 2026-10-14.
@@ -141,6 +141,10 @@ android {
     }
     kotlinOptions { jvmTarget = "17" }
     buildFeatures { compose = true; buildConfig = true }
+    // Lists the res/values-* languages in the system per-app language picker (Android 13+).
+    androidResources { generateLocaleConfig = true }
+    // New strings can land in Turkish first; translations follow per language without breaking the build.
+    lint { warning += "MissingTranslation" }
 }
 
 // Normal builds never require a device; generated profiles are reviewed separately.

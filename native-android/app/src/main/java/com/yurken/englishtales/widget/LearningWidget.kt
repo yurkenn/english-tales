@@ -1,5 +1,6 @@
 package com.yurken.englishtales.widget
 
+import com.yurken.englishtales.AppLanguage
 import android.content.Context
 import android.content.Intent
 import androidx.compose.runtime.Composable
@@ -68,7 +69,7 @@ class LearningWidgetReceiver : GlanceAppWidgetReceiver() {
 
 @Composable
 internal fun WidgetContent(summary: WidgetSummary?) {
-    val context = LocalContext.current
+    val context = AppLanguage.wrap(LocalContext.current)
     // Same entry as the daily reminder: the app opens on today's plan.
     val open = Intent(context, MainActivity::class.java)
         .putExtra("daily_plan_request", System.currentTimeMillis())

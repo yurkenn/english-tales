@@ -1,0 +1,11 @@
+<resources>
+    <string name="reading_minutes">~%1$d min</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="one">Estimated reading time: %1$d minute</item>
+        <item quantity="other">Estimated reading time: %1$d minutes</item>
+    </plurals>
+    <string name="length_all">Any length</string>
+    <string name="length_short">Short · ≤ 2 min</string>
+    <string name="length_medium">Medium · 3–5 min</string>
+    <string name="length_long">Long · 6+ min</string>
+</resources>
