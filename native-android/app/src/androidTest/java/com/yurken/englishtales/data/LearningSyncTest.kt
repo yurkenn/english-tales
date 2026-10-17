@@ -112,6 +112,81 @@ class LearningSyncTest {
         assertTrue(sync.upload(store, UUID.randomUUID().toString(), { true }).stopped)
         assertEquals("pending", store.queuedOperations().single().state)
     }
+    @Test fun permanentServerCodesAreBlockedWhileTheRestOfTheQueueIsDelivered() = listOf("23505" to 409, "22023" to 400, "23503" to 409).forEach { (code, status) ->
+        exercise { store, accounts, _ ->
+            store.completeLesson(4, UUID.randomUUID().toString())
+            val rejected = store.queuedOperations().first().id
+            val sent = mutableListOf<String>()
+            val sync = LearningQueueSync(LearningSyncTransport { _, body, _ ->
+                val id = body.getJSONObject("p_event").getString("id"); sent += id
+                if (id == rejected) throw LearningSyncFailure(code, status)
+                JSONObject().put("applied", true)
+            }, accounts)
+            assertEquals(code, LearningUploadResult(1, 1, false), sync.upload(store, store.owner.id, { true }))
+            val event = store.queuedOperations().single { it.id == rejected }
+            assertEquals(code, "blocked", event.state); assertEquals(code, event.errorCode); assertEquals(1, event.attempts)
+            assertEquals(code, LearningUploadResult(0, 0, false), sync.upload(store, store.owner.id, { true }))
+            assertEquals(code, 2, sent.size)
+        }
+    }
+    @Test fun corruptLocalOperationsAreBlockedWithoutBeingSent() = listOf(
+        "get_learning_snapshot" to { id: String -> JSONObject().put("id", id).toString() },
+        "apply_word_event" to { _: String -> "{" },
+        "apply_word_event" to { _: String -> JSONObject().put("id", UUID.randomUUID().toString()).toString() },
+    ).forEach { (rpc, payload) ->
+        exercise { store, accounts, _ ->
+            store.queuedOperations().forEach { store.markDelivered(it.id, store.owner.id) }
+            val id = UUID.randomUUID().toString()
+            store.writableDatabase.execSQL("INSERT INTO learning_outbox(id,owner_id,rpc,payload,created_at,state,attempts,next_attempt_at) VALUES(?,?,?,?,0,'pending',0,0)",
+                arrayOf<Any?>(id, store.owner.id, rpc, payload(id)))
+            val sync = LearningQueueSync(LearningSyncTransport { _, _, _ -> error("Must not send") }, accounts)
+            assertEquals(rpc, LearningUploadResult(0, 1, false), sync.upload(store, store.owner.id, { true }))
+            val event = store.queuedOperations().single { it.id == id }
+            assertEquals("blocked", event.state); assertEquals("invalid_local_operation", event.errorCode)
+        }
+    }
+    @Test fun onlyUnauthorizedRetryableFailureAsksToVerifyTheSession() = listOf(
+        LearningSyncFailure("PGRST301", 401) to true, LearningSyncFailure("PGRST303", 401) to true,
+        LearningSyncFailure("http_rejected", 403) to false, LearningSyncFailure("http_rejected", 500) to false,
+        LearningSyncFailure("http_rejected", 503) to false, LearningSyncFailure("invalid_response") to false,
+    ).forEach { (failure, verify) ->
+        exercise { store, accounts, _ ->
+            val sync = LearningQueueSync(LearningSyncTransport { _, _, _ -> throw failure }, accounts)
+            val label = "${failure.code}/${failure.status}"
+            assertEquals(label, LearningUploadResult(0, 0, true, verify), sync.upload(store, store.owner.id, { true }))
+            val event = store.queuedOperations().single()
+            assertEquals(label, "pending", event.state); assertEquals(failure.code, event.errorCode)
+            assertEquals(label, event.createdAt + 30_000, event.nextAttemptAt)
+        }
+    }
+    @Test fun networkFailureSchedulesBackoffAndDoesNotResendBeforeItIsDue() = exercise { store, accounts, advance ->
+        var calls = 0
+        val sync = LearningQueueSync(LearningSyncTransport { _, _, _ -> calls++; throw IOException("Fixture offline") }, accounts)
+        assertEquals(LearningUploadResult(0, 0, true, false), sync.upload(store, store.owner.id, { true }))
+        val first = store.queuedOperations().single()
+        assertEquals("pending", first.state); assertEquals("network_unavailable", first.errorCode)
+        assertEquals(1, first.attempts); assertEquals(first.createdAt + 30_000, first.nextAttemptAt)
+        assertEquals(LearningUploadResult(0, 0, false), sync.upload(store, store.owner.id, { true }))
+        assertEquals(1, calls)
+        advance()
+        assertTrue(sync.upload(store, store.owner.id, { true }).stopped)
+        val second = store.queuedOperations().single()
+        assertEquals(2, calls); assertEquals(2, second.attempts)
+        assertEquals(first.createdAt + 60_000 + 60_000, second.nextAttemptAt)
+    }
+    @Test fun failureBackoffDoublesThenStaysCappedForAnyAttemptCount() = listOf(
+        0 to 30_000L, 1 to 60_000L, 5 to 960_000L, 10 to 30_720_000L, 11 to 61_440_000L,
+        12 to 61_440_000L, 31 to 61_440_000L, 63 to 61_440_000L, 64 to 61_440_000L, Int.MAX_VALUE to 61_440_000L,
+    ).forEach { (attempts, delay) ->
+        exercise { store, _, _ ->
+            val event = store.queuedOperations().single()
+            store.writableDatabase.execSQL("UPDATE learning_outbox SET attempts=? WHERE id=?", arrayOf<Any?>(attempts, event.id))
+            assertTrue(store.markUploadFailed(event.id, store.owner.id, "network_unavailable", true))
+            val retry = store.queuedOperations().single().nextAttemptAt - event.createdAt
+            assertEquals("attempts=$attempts", delay, retry)
+            assertTrue(retry in 1..86_400_000L)
+        }
+    }
     @Test fun responseDecoderPreservesSqlStateAndRejectsIncompleteObjects() {
         val conflict = runCatching { LearningSyncHttp.decode(409, "{\"code\":\"23505\",\"message\":\"private data\"}") }.exceptionOrNull() as LearningSyncFailure
         assertEquals("23505", conflict.code)
