@@ -1,6 +1,7 @@
 package com.yurken.englishtales
 
 import android.os.Bundle
+import android.content.Context
 import android.content.Intent
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
@@ -28,6 +29,7 @@ import com.yurken.englishtales.play.*
 import androidx.compose.ui.Alignment
 
 class MainActivity : ComponentActivity() {
+    override fun attachBaseContext(newBase: Context) = super.attachBaseContext(AppLanguage.wrap(newBase))
     private var play: PlayStoreFeatures? = null
     private var dailyPlanRequest by mutableLongStateOf(0L)
     private var storyLinkRequest by mutableStateOf<StoryLinkRequest?>(null)

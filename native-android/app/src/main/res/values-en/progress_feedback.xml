@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="reminder_due_words">
+        <item quantity="one">You have %1$d word ready for review. A few minutes is enough.</item>
+        <item quantity="other">You have %1$d words ready for review. A few minutes is enough.</item>
+    </plurals>
+    <string name="weekly_reading_summary">This week you read ~%1$d words · %2$d known words</string>
+</resources>

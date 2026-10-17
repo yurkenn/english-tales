@@ -1,0 +1,10 @@
+<resources>
+    <string name="widget_name">Daily reading</string>
+    <string name="widget_description">Shows your streak, today\'s goal and words waiting for review.</string>
+    <string name="widget_streak">Streak: %1$d</string>
+    <string name="widget_goal">Today\'s goal: %1$d/%2$d</string>
+    <string name="widget_goal_done">Today\'s goal done ✓</string>
+    <string name="widget_due">Words to review: %1$d</string>
+    <string name="widget_open">Open daily plan</string>
+    <string name="widget_empty">Today\'s story is waiting for you.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weak_words_practice">Practice your %1$d tricky words</string>
+    <string name="weak_words_summary">Words you answered wrong in the last 30 days come first.</string>
+    <string name="weak_words_count">You\'re struggling with %1$d words; they come first in reviews.</string>
+</resources>

@@ -1,0 +1,24 @@
+<resources>
+    <string name="placement_title">Quick level test</string>
+    <string name="placement_entry">Find my level with a quick test</string>
+    <string name="placement_intro">9 questions · About 2–3 minutes</string>
+    <string name="placement_explanation">You\'ll read short English sentences and choose answers. You can skip questions you don\'t know; there is no time limit.</string>
+    <string name="placement_scope">The result is a starting suggestion for A1–B1 stories. It is not an official language proficiency result. Your answers are not sent from this device.</string>
+    <string name="placement_start">Start the test</string>
+    <string name="placement_manual">I\'ll choose my level myself</string>
+    <string name="placement_progress">Question %1$d / %2$d</string>
+    <string name="placement_complete_sentence">Complete the sentence.</string>
+    <string name="placement_read_question">Read the text and answer the question.</string>
+    <string name="placement_unknown">I don\'t know</string>
+    <string name="placement_next">Next question</string>
+    <string name="placement_finish">See my suggestion</string>
+    <string name="placement_result">Suggested starting level: %1$s</string>
+    <string name="placement_result_description">You can start with stories at this level. If they feel too easy or too hard, you can change your level in Settings.</string>
+    <string name="placement_score">%1$s questions: %2$d / 3 correct</string>
+    <string name="placement_use">Continue with %1$s</string>
+    <string name="placement_settings_hint">After choosing the suggestion, save your changes in Settings to update your level.</string>
+    <string name="placement_cancel_title">Leave the test?</string>
+    <string name="placement_cancel_message">Answers from this attempt will be deleted. Your selected level won\'t change.</string>
+    <string name="placement_cancel_confirm">Leave test</string>
+    <string name="placement_cancel_keep">Back to test</string>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="listen_mode">Listen and pick the meaning</string>
+    <string name="listen_subtitle">Listen to the English word and find the right meaning.</string>
+    <string name="listen_preparing">Preparing audio…</string>
+    <string name="listen_unavailable">This device has no English voice. You can download English voice data in Settings → Accessibility → Text-to-speech output.</string>
+    <string name="listen_instruction">Listen and pick the right meaning.</string>
+    <string name="listen_progress">Word %1$d / %2$d</string>
+    <string name="listen_play">Listen to the word</string>
+    <string name="listen_replay">Listen again</string>
+    <string name="listen_stop">Stop audio</string>
+    <string name="listen_check">Check</string>
+    <string name="listen_correct">Correct! The word you heard: %1$s</string>
+    <string name="listen_incorrect">The word you heard: %1$s (%2$s)</string>
+    <string name="listen_next">Next word</string>
+    <string name="listen_finish">See result</string>
+    <string name="listen_exit">Leave practice</string>
+</resources>

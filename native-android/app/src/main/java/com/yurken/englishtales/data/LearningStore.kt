@@ -1,5 +1,6 @@
 package com.yurken.englishtales.data
 
+import com.yurken.englishtales.AppLanguage
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -8,7 +9,6 @@ import org.json.JSONObject
 import java.util.UUID
 import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Locale
 import com.yurken.englishtales.analytics.*
 
 data class LearningSnapshot(
@@ -101,7 +101,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val week=(6 downTo 0).map { offset ->
             val calendar=Calendar.getInstance().apply {timeInMillis=now;add(Calendar.DAY_OF_YEAR,-offset)}
             val key=LearningPolicy.dayKey(calendar.timeInMillis)
-            DailyActivity(key,SimpleDateFormat("EE",Locale.forLanguageTag("tr")).format(calendar.time).take(2),days[key]?.first?:0)
+            DailyActivity(key,SimpleDateFormat("EE",AppLanguage.locale(context)).format(calendar.time).take(2),days[key]?.first?:0)
         }
         val badges=mutableSetOf<String>()
         db.rawQuery("SELECT badge_id FROM earned_badges",null).use {c -> while(c.moveToNext()) badges+=c.getString(0)}

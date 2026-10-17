@@ -1,0 +1,16 @@
+<resources>
+    <string name="quiz_title">Did you get it?</string>
+    <string name="quiz_intro">A few short questions about the story. They don\'t affect your points.</string>
+    <string name="quiz_progress">Question %1$d / %2$d</string>
+    <string name="quiz_kind_main">Main idea</string>
+    <string name="quiz_kind_detail">Detail</string>
+    <string name="quiz_kind_inference">Inference</string>
+    <string name="quiz_check">Check</string>
+    <string name="quiz_correct">Correct!</string>
+    <string name="quiz_incorrect">Correct answer: %1$s</string>
+    <string name="quiz_next">Next question</string>
+    <string name="quiz_finish">Finish</string>
+    <string name="quiz_result">Result: %1$d/%2$d</string>
+    <string name="quiz_best">Your best result: %1$d/%2$d</string>
+    <string name="quiz_retry">Try again</string>
+</resources>

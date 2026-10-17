@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alert_dismiss">Dismiss alert</string>
+    <string name="alert_word_saved">“%1$s” added to your words</string>
+    <string name="alert_word_removed">“%1$s” removed from your words</string>
+    <string name="alert_favorite_added">Added to your favorites</string>
+    <string name="alert_favorite_removed">Removed from your favorites</string>
+    <string name="alert_settings_saved">Your settings were saved</string>
+    <string name="alert_daily_goal">You reached your daily goal. Great job!</string>
+    <string name="alert_streak">%1$d-day streak! Come back tomorrow to keep it going.</string>
+    <string name="alert_reminder_on">Reminder set for %1$s every day</string>
+    <string name="alert_reminder_off">Reminder turned off</string>
+    <string name="alert_reminder_denied">The reminder can\'t work without notification permission</string>
+    <string name="alert_write_recovered">Your pending records were saved</string>
+    <string name="alert_link_failed">Couldn\'t open the link</string>
+    <string name="alert_quiz_perfect">All correct! You understood the story really well.</string>
+    <string name="feedback_correct_title">Correct!</string>
+    <string name="feedback_wrong_title">Almost!</string>
+    <string name="weekly_today">Today</string>
+</resources>

@@ -1,5 +1,7 @@
 package com.yurken.englishtales.ui
 
+import androidx.compose.ui.platform.LocalContext
+import com.yurken.englishtales.AppLanguage
 import androidx.compose.foundation.*
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.selection.selectable
@@ -20,7 +22,6 @@ import com.yurken.englishtales.data.*
 import com.yurken.englishtales.R
 import java.text.SimpleDateFormat
 import java.util.Date
-import java.util.Locale
 
 @Composable
 fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (List<String>)->Unit) {
@@ -68,7 +69,7 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
                 stringResource(R.string.weak_words_summary)) {onPractice(batch)}
         } else if(snapshot.savedWordIds.isNotEmpty()) {
             Text(stringResource(R.string.tekrarlarin_guncel),color=TaleMuted)
-            snapshot.nextReviewAt?.let {at -> Text(stringResource(R.string.sonraki_tekrar, SimpleDateFormat("d MMM, HH:mm",Locale.forLanguageTag("tr")).format(Date(at))),
+            snapshot.nextReviewAt?.let {at -> Text(stringResource(R.string.sonraki_tekrar, SimpleDateFormat("d MMM, HH:mm",AppLanguage.locale(LocalContext.current)).format(Date(at))),
                 style=MaterialTheme.typography.bodyMedium,color=TaleMuted)}
         }
     }

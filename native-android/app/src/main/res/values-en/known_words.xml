@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="known_words_title">Known words</string>
+    <string name="known_words_detail">%1$d read but not known yet · %2$d in review</string>
+    <string name="known_words_explanation">Counts words that reached “I know it” in review and words you read without looking up in at least two finished stories.</string>
+</resources>
