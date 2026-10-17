@@ -21,7 +21,8 @@ internal object LearningSyncLocks {
 internal object LearningSyncRuntime {
     private var service: AccountService?=null
     private val restoring=Any()
-    @Volatile private var restored=false
+    /** False until a restore succeeds; a transient keystore failure keeps the session file and is retried by the next caller. */
+    @Volatile var restored=false;private set
     private val encrypted: (Context)->SessionStorage={EncryptedSessionStorage(it.applicationContext,BuildConfig.SUPABASE_URL)}
     private var storage=encrypted
     val generation=AtomicLong()
@@ -35,9 +36,9 @@ internal object LearningSyncRuntime {
         val account=accounts(context)
         if(!restored) synchronized(restoring) {
             if(!restored) {
-                runCatching {account.restore()}.onFailure {account.clearLocal()}
+                val read=runCatching {account.restore()}.isSuccess
                 if(account.current?.userId in DeletedAccountCleanup.pending(context)) account.clearLocal()
-                restored=true
+                restored=read
             }
         }
         return account
@@ -69,7 +70,7 @@ class LearningSyncWorker(context: Context,parameters: WorkerParameters): Corouti
         val user=inputData.getString("user")?:return@withContext Result.failure()
         if(!LearningSyncRuntime.configured() || LearningSyncRuntime.paused) return@withContext Result.retry()
         val auth=LearningSyncRuntime.ensureRestored(applicationContext)
-        if(auth.current?.userId!=user) return@withContext Result.success()
+        if(auth.current?.userId!=user) return@withContext if(LearningSyncRuntime.restored) Result.success() else Result.retry()
         val generation=LearningSyncRuntime.generation.get()
         val current={ !isStopped && !LearningSyncRuntime.paused && LearningSyncRuntime.generation.get()==generation && auth.current?.userId==user }
         LearningSyncLocks.withOwner(user) {
