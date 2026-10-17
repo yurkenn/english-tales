@@ -17,7 +17,17 @@ import androidx.compose.ui.res.stringResource
 import com.yurken.englishtales.R
 
 /** Q6: a shared story link to open; [at] tells two taps on the same link apart. */
-data class StoryLinkRequest(val storyId: String,val at: Long)
+data class StoryLinkRequest(val storyId: String,val at: Long) {
+    /** A link waiting for onboarding must survive rotation and process death, or the shared story is lost. */
+    fun save(state: android.os.Bundle) {state.putString(KEY_ID,storyId);state.putLong(KEY_AT,at)}
+    companion object {
+        private const val KEY_ID="story_link_id"
+        private const val KEY_AT="story_link_at"
+        fun restore(state: android.os.Bundle?): StoryLinkRequest?=
+            state?.getString(KEY_ID)?.takeIf {com.yurken.englishtales.data.StoryLinks.storyId(com.yurken.englishtales.data.StoryLinks.url(it))==it}
+                ?.let {StoryLinkRequest(it,state.getLong(KEY_AT))}
+    }
+}
 
 @Composable
 fun TalesApp(viewModel: LearningViewModel = viewModel(),dailyPlanRequest: Long=0L,storyLinkRequest: StoryLinkRequest?=null,onStoryLinkHandled: (StoryLinkRequest)->Unit={}) {
