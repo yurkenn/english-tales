@@ -52,7 +52,9 @@ def build():
               'rewrites': [{'source': '/api/config', 'destination': '/api/config.json'},
                            {'source': '/privacy', 'destination': '/privacy.html'},
                            {'source': '/delete-account', 'destination': '/delete-account.html'},
-                           {'source': '/studio', 'destination': '/studio/index.html'}]}}
+                           {'source': '/studio', 'destination': '/studio/index.html'},
+                           # Q6: shared story links; the app opens them when installed, otherwise this page.
+                           {'source': '/story/**', 'destination': '/story.html'}]}}
     (OUTPUT / 'firebase.json').write_text(json.dumps(config, indent=2), encoding='utf-8')
     print(f'Public site built: {PUBLIC}')
 

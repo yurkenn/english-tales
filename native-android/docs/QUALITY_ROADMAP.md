@@ -16,7 +16,7 @@
 | Canlı veri tabanı | Çeviriler, sorular, etiketler, favoriler, kişisel kelimeler, bilinen kelimeler ve ayrıca onaylanan FSRS: **7 migration canlıda** | 49’da hesap eşitlemesinin gerçek cihazda doğrulanması; migration’lar yeniden uygulanmamalı |
 | Q5.7 FSRS | #65 birleşti; canlı migration `20261016202236`; 28 SQL vektörü referansla aynı; mevcut dört kelime kaydının eski alanları ve olayları korundu | Gerçek kullanımda tekrar planı / cihazlar arası uyum gözlemi; simülasyon saha sonucu sayılmaz |
 | Q3 TalkBack | Kullanıcı **48 / 2.0.0** ile yolculuğu sorunsuz denedi | **49 / 2.1.0** ile aynı yolculuk ve cihaz/sürüm kaydı; **Q3 kapısı açık** |
-| Q6 App Links | `englishtales-app.web.app` seçildi; Play app signing sertifikasıyla assetlinks.json yayımlandı; Google `linked: true` | Android intent-filter, hikâyeye yönlendirme ve uygulama kurulu değilken web karşılığı; paylaşım henüz uçtan uca çalışmıyor |
+| Q6 App Links | `englishtales-app.web.app` seçildi; Play app signing sertifikasıyla assetlinks.json yayımlandı; Google `linked: true` | Uygulama tarafı (#72) ana dalda; `story.html` web karşılığının Hosting yayını ve 49'dan sonraki pakette kurulu/kurulu değil denemesi açık |
 | Doğrulama | Yerel **94 release JVM / 144 backend** testi; imza, üretim bağlantısı, profil ve statik 16 KB kontrolleri; master CI cihaz işi dahil başarılı | Play split paketleri, fiziksel cihaz / gerçek 16 KB çalışma zamanı, Google girişi ve veri koruma kabulü |
 
 **Öncelik sırası:** 49’u mevcut uygulamanın üzerine Play’den güncelle → giriş, ilerleme, çevrimdışı okuma ve hesap eşitlemesini kontrol et → 49’da TalkBack yolculuğunu kaydet → canlı ölçüm ve yayın kabulünü tamamla → [kademeli üretim yayın kontrolünü](STAGED_RELEASE.md) uygula. İçerik eşitliği/kapsama ve App Links uygulama tarafı ayrı açık işlerdir; otomatik Play yüklemesi mevcut elle yayın yolunu engellemez. Daha sonraki farklı paket için 49’u tekrar kullanma; en yüksek Play sürüm kodunu kontrol ederek **en az 50** seç.
@@ -181,7 +181,8 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q5.9 Cümle kurma | Ana dala birleşti | [#57](https://github.com/yurkenn/english-tales/pull/57) | Oyna ekranında yeni mod: hikâyedeki 4–10 sözcüklük bir cümlenin karışık sözcüklerini doğru sıraya koy; Türkçe anlamı ipucu, seçilen sözcük geri alınabilir, tekrar eden sözcükler birbirinin yerine geçer. Seviyendeki cümleler önce; oturum `choice` olarak sayılır |
 | Q5.9 Dikte | Ana dala birleşti | [#58](https://github.com/yurkenn/english-tales/pull/58) | "Dinle ve yaz": aynı kısa hikâye cümleleri seslendirilir, öğrenen yazar; büyük/küçük harf ve noktalama sayılmaz, her farklı/eksik/fazla sözcük sayılır. Cihazda İngilizce ses yoksa mod görünmez; oturum `choice` |
 | Q5.4 Seviye yerleştirme | Ana dala birleşti | [#27](https://github.com/yurkenn/english-tales/pull/27) | Onboarding/Ayarlar’da dokuz soru, A1–B1 başlangıç önerisi; [kapsam](READING_PLACEMENT.md) |
-| Q6 Ana ekran widget'ı | Ana dala birleşti | [#39](https://github.com/yurkenn/english-tales/pull/39) | Glance widget'ı: seri, günlük hedef ve tekrarı gelen kelime sayısı; dokununca günlük plan açılır. App Links alan adı seçildi; ayrı uygulama yönlendirmesi açık |
+| Q6 Ana ekran widget'ı | Ana dala birleşti | [#39](https://github.com/yurkenn/english-tales/pull/39) | Glance widget'ı: seri, günlük hedef ve tekrarı gelen kelime sayısı; dokununca günlük plan açılır. App Links ayrı satırda |
+| Q6 App Links | Ana dala birleşti | [#72](https://github.com/yurkenn/english-tales/pull/72) | Paylaşılan bağlantı `https://englishtales-app.web.app/story/{id}`; manifestte `autoVerify` ile yalnız `/story/` yolu. Uygulama yüklüyse hikâye sayfası açılır, katalogda olmayan hikâye kitaplığı açar, onboarding bitmeden gelen bağlantı onboarding'den sonra açılır. Uygulama yoksa `story.html` Play bağlantısı gösterir (Hosting yayını ayrı adım). `StoryLinksTest`, `StoryLinkIntentTest` |
 
 ## 5a. Kalan işler ve yayın sırası — 16 Ekim 2026
 
@@ -194,7 +195,7 @@ Karar gerektirmeyen kod işleri tamamlandı (#45–#65). Kalanlar uygulama sahib
 | Q4.3c Hikâye başına çalışma kelimesi seçimi | Q4.3b verisine bağlı; editör incelemesi |
 | Q4.7 İçerik hacmi (bölümlü hikâyeler, B1/B2) | İçerik üretimi ve editör onayı (iki haftada 1–2 hikâye kararı) |
 | L0 İngilizce arayüz | Arayüz İngilizceyken destek dilinin (çevirilerin) ne olacağı ürün kararı |
-| Q6 App Links | Alan adı `englishtales-app.web.app` seçildi ve `assetlinks.json` yayında (#67); uygulama içi bağlantı yönlendirmesi açık |
+| Q6 App Links | Alan adı `englishtales-app.web.app` seçildi ve `assetlinks.json` yayında (#67); uygulama yönlendirmesi ana dalda (#72); `story.html` Hosting yayını ve cihaz denemesi açık |
 | Q2 ölçüm sağlayıcısı, gelir modeli, kayıtlı ses | Ürün kararları |
 
 **Yayın sırası (canlıya alırken):** Sunucu migration'ları uygulama sürümünden önce uygulanmalı, çünkü yeni uygulama bu RPC ve alanları kullanır:
@@ -221,7 +222,7 @@ Karar gerektirmeyen kod işleri tamamlandı (#45–#65). Kalanlar uygulama sahib
 - [ ] **Q2.3:** Fiziksel cihaz performans karşılaştırması ve TTFD. Mevcut Macrobenchmark ve paket profil kontrolü bunların yerine geçmez.
 - [ ] **49 üretim kararı:** [Kademeli yayın kabulü](STAGED_RELEASE.md), güncelleme/veri koruma ve ölçüm kontrollerinden sonra %20 → %50 → %100. 49 şu an yalnız dahili kanalda; üretim 48.
 - [ ] **Q4:** Paket–canlı içerik farkı, A1/A2 kapsama ≥ %60, içerik revizyon yayını ve yeniden denetim. Şema migration’larının uygulanması yeni sözlük/soru içeriklerinin yayımlandığı anlamına gelmez.
-- [ ] **Q6 App Links:** Web ilişkilendirmesi hazır; uygulama rotası ve web karşılığı tamamlanıp kurulu/kurulu değil senaryoları denenmeli.
+- [ ] **Q6 App Links:** Web ilişkilendirmesi ve uygulama rotası (#72) hazır; `story.html` Hosting'e yayımlanıp 49'dan sonraki pakette kurulu/kurulu değil senaryoları denenmeli.
 - [ ] **İsteğe bağlı:** Yalnız test kanalına yetkili Play servis hesabı + `PLAY_SERVICE_ACCOUNT_JSON`; workflow’un otomatik yükleme yolunu ayrıca doğrula. Elle dahili yayın başarılı olduğu için bu bir paket üretim veya elle yükleme engeli değildir.
 
 **Q2 ve Q3 açık kalır.** Otomatik teknik paket doğrulaması ile elle Play yayını, Console’daki dahili erişim ile gerçek telefon kabulü ayrı kaydedilir. PR #67 kaynak/doküman kaydıdır; birleşmesi tek başına üretim yayını değildir.

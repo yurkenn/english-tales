@@ -37,6 +37,7 @@ import androidx.compose.ui.res.stringResource
 import com.yurken.englishtales.data.ReadingTime
 import com.yurken.englishtales.data.ReadingLength
 import com.yurken.englishtales.data.LearningContent
+import com.yurken.englishtales.data.StoryLinks
 import com.yurken.englishtales.data.LearningSnapshot
 import com.yurken.englishtales.data.savedWordList
 import com.yurken.englishtales.data.WordStage
@@ -257,7 +258,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                             },if(favorite) TaleWarm else TaleBlue)
                         }
                         ReferenceIconButton("share",stringResource(R.string.hikayeyi_paylas),onClick={
-                            val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nEnglish Tales\nhttps://play.google.com/store/apps/details?id=com.yurken.englishtales") }
+                            val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nEnglish Tales\n${StoryLinks.url(story.id)}") }
                             context.startActivity(android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
                         })
                     }

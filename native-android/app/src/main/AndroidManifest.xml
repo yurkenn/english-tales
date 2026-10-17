@@ -47,6 +47,13 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <!-- Q6: shared story links open here; verified by /.well-known/assetlinks.json on the same host. -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="englishtales-app.web.app" android:pathPrefix="/story/" />
+            </intent-filter>
         </activity>
     </application>
 </manifest>
