@@ -6,10 +6,15 @@ interface CompletionAds {
     fun recordCompletion(id: String)
     fun afterCompletion(id: String, isCurrent: ()->Boolean, onContinue: ()->Unit)
     fun privacyOptions(onMessage: (String)->Unit)
+    class Disabled(private val context: android.content.Context): CompletionAds by None {
+        override fun privacyOptions(onMessage: (String)->Unit) {
+            onMessage(context.getString(com.yurken.englishtales.R.string.ads_disabled_message))
+        }
+    }
     object None: CompletionAds {
         override fun recordCompletion(id: String) {}
         override fun afterCompletion(id: String,isCurrent: ()->Boolean,onContinue: ()->Unit) {if(isCurrent()) onContinue()}
-        override fun privacyOptions(onMessage: (String)->Unit) {onMessage("Bu sürümde reklamlar kapalı.")}
+        override fun privacyOptions(onMessage: (String)->Unit) {onMessage("")}
     }
 }
 val LocalCompletionAds=staticCompositionLocalOf<CompletionAds> {CompletionAds.None}

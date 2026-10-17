@@ -7,6 +7,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.platform.LocalContext
+import com.yurken.englishtales.AppLanguage
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.KeyboardType
@@ -38,9 +40,9 @@ fun AccountScreen(state: AccountState,onBack: ()->Unit,onSignIn: (String,String)
                 Card(Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                         Text(stringResource(R.string.hesap_esitlemesi),style=MaterialTheme.typography.titleMedium)
-                        Text(state.sync.message,fontSize=14.sp)
+                        Text(state.sync.message.ifEmpty { stringResource(R.string.sync_message_not_started) },fontSize=14.sp)
                         if(state.sync.running) LinearProgressIndicator(Modifier.fillMaxWidth())
-                        if(state.sync.lastSuccessAt!=null) Text(stringResource(R.string.son_alinan_kayit, java.text.DateFormat.getDateTimeInstance(java.text.DateFormat.SHORT,java.text.DateFormat.SHORT).format(java.util.Date(state.sync.lastSuccessAt))),fontSize=12.sp,color=TaleMuted)
+                        if(state.sync.lastSuccessAt!=null) Text(stringResource(R.string.son_alinan_kayit, java.text.DateFormat.getDateTimeInstance(java.text.DateFormat.SHORT,java.text.DateFormat.SHORT,AppLanguage.locale(LocalContext.current)).format(java.util.Date(state.sync.lastSuccessAt))),fontSize=12.sp,color=TaleMuted)
                         if(state.sync.pending>0) Text(stringResource(R.string.kayit_gonderilmeyi_bekliyor, state.sync.pending),fontSize=13.sp)
                         if(state.sync.blocked>0) Text(stringResource(R.string.kayit_icin_kontrol_gerekiyor_yerel, state.sync.blocked),fontSize=13.sp)
                         if(state.sync.deviceOnlyPoints>0) Text(stringResource(R.string.eski_gecmisindeki_puan_bu_cihaza, state.sync.deviceOnlyPoints),fontSize=13.sp,color=TaleMuted)

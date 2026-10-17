@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
         // The bundled catalog parses in the background while the brand intro is visible.
         lifecycleScope.launch { LearningContent.load(applicationContext) }
         enableEdgeToEdge()
-        val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.None
+        val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.Disabled(this)
         val play=PlayStoreFeatures(this).also {this.play=it}
         setContent {
             CompositionLocalProvider(LocalCompletionAds provides ads,LocalPlayStoreFeatures provides play) {EnglishTalesTheme {

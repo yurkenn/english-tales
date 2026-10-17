@@ -42,6 +42,7 @@ data class LearningSnapshot(
 
 /** Calls are serialized on the ViewModel's IO dispatcher. IDs survive content updates. */
 class LearningStore(private val context: Context,val owner: LearningOwner=LearningOwner.Guest,private val clock: () -> Long = System::currentTimeMillis) : AutoCloseable {
+    internal fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(context).getString(id)
     internal var onProductSignal: (LearningSignal) -> Unit = { ProductAnalytics.get(context).record(it) }
     private fun productSignal(signal: LearningSignal) { runCatching { onProductSignal(signal) } }
     private val database=LearningDatabase.open(context,owner)

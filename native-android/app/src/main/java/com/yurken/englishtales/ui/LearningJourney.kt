@@ -47,7 +47,7 @@ fun DailyPlan(snapshot: LearningSnapshot,onRead: (String)->Unit,onPractice: (Lis
                         BookCover(next,Modifier.size(68.dp,100.dp))
                         Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(8.dp)) {
                             Text(next.title,style=MaterialTheme.typography.titleLarge)
-                            Text("${next.level} · ${next.genre}",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
+                            Text("${next.level} · ${genreLabel(next.genre)}",style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
                             if(resume!=null) Text(stringResource(R.string.tamamlandi_2, progress),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
                         }
                     }
@@ -174,7 +174,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             PreferenceChoices(listOf("A1","A2","B1"),level) {level=it}
             OutlinedButton(onClick={placement=true},modifier=Modifier.fillMaxWidth()) {Text(stringResource(R.string.placement_entry))}
             Text(stringResource(R.string.sevdigin_hikayeler),fontWeight=FontWeight.Bold)
-            PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre) {genre=it}
+            PreferenceChoices(listOf("Günlük yaşam","Macera","Gizem"),genre,label={genreLabel(it)}) {genre=it}
             Text(stringResource(R.string.gunluk_hedefin),fontWeight=FontWeight.Bold)
             PreferenceChoices(listOf(stringResource(R.string.adim_secenek_1),stringResource(R.string.adim_secenek_2),stringResource(R.string.adim_secenek_3)),stringResource(R.string.adim_2, goal)) {goal=it.first().digitToInt()}
             Text(stringResource(R.string.bir_adim_tamamlanan_bir_hikaye),fontSize=12.sp,color=TaleMuted)
@@ -191,10 +191,10 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
 }
 
 @Composable
-private fun PreferenceChoices(options: List<String>,selected: String,onSelect: (String)->Unit) {
+private fun PreferenceChoices(options: List<String>,selected: String,label: @Composable (String)->String = {it},onSelect: (String)->Unit) {
     Column(Modifier.selectableGroup(),verticalArrangement=Arrangement.spacedBy(6.dp)) {options.forEach {value ->
         Row(Modifier.fillMaxWidth().border(1.dp,if(value==selected) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).selectable(selected=value==selected,role=Role.RadioButton) {onSelect(value)}.padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
-            Text(value,fontSize=14.sp,modifier=Modifier.weight(1f));if(value==selected) Text("✓",color=TaleBlue)
+            Text(label(value),fontSize=14.sp,modifier=Modifier.weight(1f));if(value==selected) Text("✓",color=TaleBlue)
         }
     } }
 }

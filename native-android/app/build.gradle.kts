@@ -63,7 +63,7 @@ android {
         applicationId = "com.yurken.englishtales"
         testInstrumentationRunner = if (releaseDeviceProbe)
             "com.yurken.englishtales.data.NativeAlignmentInstrumentation"
-        else "androidx.test.runner.AndroidJUnitRunner"
+        else "com.yurken.englishtales.TalesTestRunner"
         minSdk = 24
         targetSdk = 36
         // Play Console: production 46, internal preview 47 verified on 2026-10-14.

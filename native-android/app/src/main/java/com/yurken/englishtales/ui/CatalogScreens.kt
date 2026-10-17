@@ -194,7 +194,7 @@ private fun LibraryFilters(filters: StoryFilters, showLevels: Boolean, onLevel: 
         }
         LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
             item { FilterChip(selected=filters.status==null,onClick={onStatus(null)},label={Text(stringResource(R.string.tumu))}) }
-            items(ReadingStatus.entries) { status -> FilterChip(selected=filters.status==status,onClick={onStatus(if(filters.status==status) null else status)},label={Text(status.label)}) }
+            items(ReadingStatus.entries) { status -> FilterChip(selected=filters.status==status,onClick={onStatus(if(filters.status==status) null else status)},label={Text(readingStatusLabel(status))}) }
         }
         // Only lengths that occur in the catalog are offered, so a chip never leads to an empty list by itself.
         if(lengths.size>1) LazyRow(contentPadding=PaddingValues(horizontal=16.dp),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
@@ -270,7 +270,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
             }
             Text(story.description,modifier=Modifier.padding(horizontal=24.dp,vertical=26.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
             content?.let { ContentDownloadAction(it,story) }
-            Text(stringResource(R.string.seviyesinde_hikayesi_cumleleri_cevirerek_oku, story.level, story.genre.lowercase()),modifier=Modifier.padding(horizontal=24.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
+            Text(stringResource(R.string.seviyesinde_hikayesi_cumleleri_cevirerek_oku, story.level, genreLabel(story.genre)),modifier=Modifier.padding(horizontal=24.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
         }
         TalesBottomBar(1,onTabSelected)
     }

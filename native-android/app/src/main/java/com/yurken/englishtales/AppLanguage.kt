@@ -20,11 +20,15 @@ object AppLanguage {
 
     fun locale(context: Context): Locale = resolve(context.resources.configuration.locales.toList())
 
-    /** [context] whose resources use English when none of the configured languages is supported. */
+    /**
+     * Resolve one UI locale before loading resources. Turkish lives in the unqualified set, so a
+     * secondary English locale must not outrank it by matching the explicit values-en directory.
+     */
     fun wrap(context: Context): Context {
         val locales = context.resources.configuration.locales.toList()
-        if (locales.any { it.language in supported }) return context
-        val config = Configuration(context.resources.configuration).apply { setLocales(LocaleList(fallback)) }
+        val selected = resolve(locales)
+        if (locales.size == 1 && locales.first() == selected) return context
+        val config = Configuration(context.resources.configuration).apply { setLocales(LocaleList(selected)) }
         return context.createConfigurationContext(config)
     }
 

@@ -1,5 +1,6 @@
 package com.yurken.englishtales.data
 
+import com.yurken.englishtales.R
 import android.content.Context
 import androidx.work.*
 import com.yurken.englishtales.BuildConfig
@@ -71,12 +72,12 @@ class LearningSyncWorker(context: Context,parameters: WorkerParameters): Corouti
                         if(result.verifySession) auth.verifyCurrent()
                         if(!result.continueUpload) return@withOwner if(result.state.pending>0) Result.retry() else Result.success()
                     }
-                    LearningSyncRuntime.updates.tryEmit(user to sync.status(store).copy(message="Gönderim sırada; kalan kayıtlar arka planda yeniden denenecek."))
+                    LearningSyncRuntime.updates.tryEmit(user to sync.status(store).copy(message=com.yurken.englishtales.AppLanguage.wrap(applicationContext).getString(R.string.sync_background_upload_queued)))
                     Result.retry()
                 }
             } catch(failure: Exception) {
                 if(failure is kotlinx.coroutines.CancellationException) throw failure
-                if(current()) LearningSyncRuntime.updates.tryEmit(user to LearningSyncState(message="Eşitleme tamamlanamadı. Kayıtların korunuyor; bağlantı geldiğinde yeniden denenecek."))
+                if(current()) LearningSyncRuntime.updates.tryEmit(user to LearningSyncState(message=com.yurken.englishtales.AppLanguage.wrap(applicationContext).getString(R.string.sync_background_retry)))
                 if(current() && failure is LearningSyncFailure && failure.status==401) runCatching {auth.verifyCurrent()}
                 if(auth.current?.userId!=user || !current()) Result.success() else Result.retry()
             }
