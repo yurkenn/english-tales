@@ -13,7 +13,12 @@ import org.junit.Test
 class ReaderSliderProgressTest {
     @get:Rule val compose=createComposeRule()
     private val context get()=InstrumentationRegistry.getInstrumentation().targetContext
-    private val story by lazy {LearningContent.initialize(context);LearningContent.stories.maxBy {it.sentences.size}}
+    // The bundled catalog's stories are short, so repeat the longest one's sentences until it spans six pages.
+    private val story by lazy {
+        LearningContent.initialize(context)
+        val base=LearningContent.stories.maxBy {it.sentences.size}
+        base.copy(sentences=List(48) {i->base.sentences[i%base.sentences.size].let {it.copy(id="${it.id}-$i")}})
+    }
     private val pageCount get()=(story.sentences.size+7)/8
     private val reports=mutableListOf<Pair<Int,String>>()
     private val slider get()=compose.onNode(SemanticsMatcher.keyIsDefined(SemanticsActions.SetProgress))
