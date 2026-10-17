@@ -14,6 +14,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.geometry.CornerRadius
@@ -170,13 +173,30 @@ fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Col
 fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
     val tabs = listOf(stringResource(R.string.calis) to "study", stringResource(R.string.oku_2) to "read", stringResource(R.string.oyna) to "play", stringResource(R.string.profilim) to "profile")
     // Grows with the label instead of clipping it at large font sizes.
-    Row(Modifier.fillMaxWidth().background(TaleSurface).navigationBarsPadding().heightIn(min=56.dp).height(IntrinsicSize.Min)) {
+    Column(Modifier.fillMaxWidth().background(TaleSurface).navigationBarsPadding()) {
+    Box(Modifier.fillMaxWidth().height(1.dp).background(TaleLine))
+    Row(Modifier.fillMaxWidth().heightIn(min=56.dp).height(IntrinsicSize.Min)) {
         tabs.forEachIndexed { index,(label,kind) ->
-            Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=selected==index }.clickable(role=Role.Tab) { onSelect(index) }.padding(top=7.dp,bottom=6.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(3.dp)) {
-                ReferenceIcon(kind,if(selected==index) TaleBlue else TaleMuted,Modifier.size(22.dp))
-                Text(label,color=if(selected==index) TaleBlue else TaleMuted,fontSize=11.sp,fontWeight=if(selected==index) FontWeight.SemiBold else FontWeight.Normal)
+            val active=selected==index
+            // The chosen tab's colour glides over and a soft pill grows behind its icon, so the switch reads as motion.
+            val tint by androidx.compose.animation.animateColorAsState(if(active) TaleBlue else TaleMuted,androidx.compose.animation.core.tween(TaleMotion.standard),label="tab")
+            val pill by androidx.compose.animation.core.animateFloatAsState(if(active) 1f else 0f,TaleMotion.spring,label="pill")
+            var pops by remember { androidx.compose.runtime.mutableIntStateOf(0) }
+            androidx.compose.runtime.LaunchedEffect(active) { if(active) pops++ }
+            val pillColor=LocalTaleColors.current.tileBlue
+            Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=active }.clickable(role=Role.Tab) { onSelect(index) }.padding(top=6.dp,bottom=6.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(2.dp)) {
+                Box(Modifier.size(52.dp,28.dp).drawBehind {
+                    if(pill>0f) {
+                        val w=size.width*(0.5f+0.5f*pill)
+                        drawRoundRect(pillColor.copy(alpha=pill.coerceIn(0f,1f)),Offset((size.width-w)/2f,0f),Size(w,size.height),CornerRadius(size.height/2f))
+                    }
+                }.popOn(pops),contentAlignment=Alignment.Center) {
+                    ReferenceIcon(kind,tint,Modifier.size(22.dp))
+                }
+                Text(label,color=tint,fontSize=11.sp,fontWeight=if(active) FontWeight.SemiBold else FontWeight.Normal)
             }
         }
+    }
     }
 }
 
