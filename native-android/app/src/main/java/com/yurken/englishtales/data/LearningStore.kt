@@ -85,7 +85,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         var weeklyWords=0
         db.rawQuery("SELECT event_id FROM engagement_events WHERE name='reading_completed' AND created_at>CAST(? AS INTEGER)",arrayOf((now-7*LearningPolicy.DAY_MS).toString())).use {c ->
             while(c.moveToNext()) LearningContent.storyById[c.getString(0).removePrefix("read:").substringBeforeLast(':')]?.let {story ->
-                weeklyWords+=story.sentences.sumOf {s -> PhraseMatcher.tokens(s.english).count {t -> t.any(Char::isLetter)}}
+                weeklyWords+=storyWordCounts.getOrPut(story.revisionId) {story.sentences.sumOf {s -> PhraseMatcher.tokens(s.english).count {t -> t.any(Char::isLetter)}}}
             }
         }
         val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
@@ -149,6 +149,8 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     fun toggleWord(wordId: String) {
         transaction {db -> setWordSaved(db,wordId,scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))==0)}
     }
+    fun isWordSaved(wordId: String) = scalar(readableDatabase,"SELECT EXISTS(SELECT 1 FROM saved_words WHERE word_id=?)",arrayOf(wordId))==1
+    fun isFavorite(storyId: String) = scalar(readableDatabase,"SELECT EXISTS(SELECT 1 FROM favorite_stories WHERE story_id=?)",arrayOf(storyId))==1
     fun setWordSaved(wordId: String,saved: Boolean) = transaction {db ->setWordSaved(db,wordId,saved)}
     /** Saves a glossary word with its meaning, so it can be practised like a learning word (Q4.3a). */
     fun savePersonalWord(word: WordInfo) = transaction {db ->
@@ -295,7 +297,11 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         require(startedAt>=0)
         dao.begin(SessionDraftRow(canonicalSessionId(id),kind,storyId,storyId?.let {source?.revisionId ?: LearningContent.storyById.getValue(it).revisionId},startedAt,0,questionCount,"active"))
     }
-    fun checkpointSession(id: String,millis: Long) {require(millis>=0);dao.activeTime(canonicalSessionId(id),millis.coerceAtMost(86_400_000))}
+    /** Returns the stored active time while the session is active, keyed like [LearningSnapshot.activeSessionMillis]. */
+    fun checkpointSession(id: String,millis: Long): Pair<String,Long>? {
+        require(millis>=0);val key=canonicalSessionId(id);dao.activeTime(key,millis.coerceAtMost(86_400_000))
+        return dao.session(key)?.takeIf {it.state=="active"}?.let {key to it.activeMillis}
+    }
     fun sessionCompleted(id: String) = dao.session(canonicalSessionId(id))?.state=="completed"
     fun abandonSession(id: String) {dao.end(canonicalSessionId(id),"abandoned")}
     private fun prepareCompletion(id: String,kind: String,questions: Int,storyId: String?,activeMillis: Long,now: Long,source: Story?=null): SessionDraftRow? {
@@ -371,6 +377,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     }
     override fun close() {database.close()}
 }
+
+/** Q5.10: running words per story revision; a revision's sentences never change, so the weekly count need not re-tokenize them. */
+private val storyWordCounts=java.util.concurrent.ConcurrentHashMap<String,Int>()
 
 internal fun SupportSQLiteDatabase.rawQuery(sql: String,args: Array<String>?) = query(sql,args?:emptyArray())
 internal fun SupportSQLiteDatabase.insertWithOnConflict(table: String,@Suppress("UNUSED_PARAMETER") nullColumnHack: String?,values: ContentValues,conflict: Int) = insert(table,conflict,values)
