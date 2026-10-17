@@ -87,7 +87,18 @@ private data class Catalog(
 ) {
     val phrases by lazy { PhraseMatcher.Index(words) }
     val glossary by lazy { LearningContent.glossarySource.let { (entries, forms) -> Glossary(entries, forms, words) } }
+    /** Revision of the first story, in catalog order, that teaches each word; built once instead of per word event. */
+    val wordRevisions: Map<String, String> by lazy {
+        HashMap<String, String>().also { map -> stories.forEach { story -> storyWords(story, phrases).forEach { map.putIfAbsent(it.id, story.revisionId) } } }
+    }
 }
+
+private fun sentenceWords(story: Story, sentence: StorySentence, phrases: PhraseMatcher.Index): List<WordInfo> =
+    if (story.vocabulary != null) story.vocabulary.filter { it.id in story.sentenceWordIds.orEmpty()[sentence.id].orEmpty() }
+    else PhraseMatcher.find(sentence.english, phrases).map { it.word }.distinctBy { it.id }
+
+private fun storyWords(story: Story, phrases: PhraseMatcher.Index): List<WordInfo> =
+    story.sentences.flatMap { sentenceWords(story, it, phrases) }.distinctBy { it.id }
 
 /** A learning word or one of the learner's saved glossary words. */
 fun LearningSnapshot.wordFor(id: String): WordInfo? = LearningContent.wordById[id] ?: personalWords[id]
@@ -126,7 +137,7 @@ object LearningContent {
     /** Lookup for every other token (Q4.3a); learning words of the current catalog are part of it. */
     val glossary: Glossary get() = current().glossary
     val stories: List<Story> get() = current().stories
-    val storyById: Map<String, Story> get() = current().storyById + pinned
+    val storyById: Map<String, Story> get() = current().storyById.let { if (pinned.isEmpty()) it else it + pinned }
 
     private val loadLock = Any()
 
@@ -205,13 +216,17 @@ object LearningContent {
     }
 
     /** Published stories use their editor links; bundled stories match the shared dictionary. */
-    fun wordsForSentence(story: Story, sentence: StorySentence): List<WordInfo> =
-        if (story.vocabulary != null) story.vocabulary.filter { it.id in story.sentenceWordIds.orEmpty()[sentence.id].orEmpty() }
-        else PhraseMatcher.find(sentence.english, phraseIndex).map { it.word }.distinctBy { it.id }
+    fun wordsForSentence(story: Story, sentence: StorySentence): List<WordInfo> = sentenceWords(story, sentence, phraseIndex)
 
-    fun wordsForStory(story: Story): List<WordInfo> = story.sentences.flatMap { wordsForSentence(story, it) }.distinctBy { it.id }
+    fun wordsForStory(story: Story): List<WordInfo> = storyWords(story, phraseIndex)
 
-    fun revisionForWord(wordId: String): String? = (pinned.values + stories).firstOrNull { story -> wordsForStory(story).any {it.id==wordId} }?.revisionId ?: wordSources[wordId]
+    /** Pinned revisions win, then the first catalog story that teaches the word, then a retained older revision. */
+    fun revisionForWord(wordId: String): String? = pinned.values.firstOrNull { story -> wordsForStory(story).any {it.id==wordId} }?.revisionId
+        ?: current().wordRevisions[wordId] ?: wordSources[wordId]
+
+    /** The original linear scan, kept so tests can check [revisionForWord] against it. */
+    @androidx.annotation.VisibleForTesting
+    internal fun revisionForWordByScan(wordId: String): String? = (pinned.values + stories).firstOrNull { story -> wordsForStory(story).any {it.id==wordId} }?.revisionId ?: wordSources[wordId]
 
     fun retain(story: Story) {
         historical[story.revisionId] = story
