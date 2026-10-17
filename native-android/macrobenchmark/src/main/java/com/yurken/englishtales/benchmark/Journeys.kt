@@ -9,7 +9,7 @@ internal const val TARGET = "com.yurken.englishtales.benchmark"
 
 // Both shipped UI languages use the same journey; unsupported device languages fall back to English.
 private val english = mapOf(
-    "Çalış" to "Practice", "Oku" to "READ", "Arama" to "Search", "Kitap ara" to "Search books",
+    "Çalış" to "Practice", "Oku" to "Read", "Arama" to "Search", "Kitap ara" to "Search books",
     "Oyna" to "Play", "Kelimelerle oyna" to "Play with words", "Profilim" to "My profile",
     "Kelimelerim" to "My words", "Başlayalım" to "Let's start", "Yeni başlıyorum" to "I'm just starting",
     "Günlük yaşam" to "Daily life", "Günde 1 adım · Rahat başlangıç" to "1 step a day · Easy start",
