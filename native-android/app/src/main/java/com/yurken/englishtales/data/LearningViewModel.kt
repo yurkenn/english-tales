@@ -39,7 +39,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             LearningSyncRuntime.updates.collect { (user,status) ->
                 if(mutableAccount.value.userId==user) mutations.trySend(Mutation(scope) {
                     if(mutableAccount.value.userId==user && !mutableAccount.value.busy)
-                        mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store).copy(running=status.running,message=status.message),needsSignIn=auth.current==null)
+                        mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store).copy(running=status.running,message=status.message,tone=status.tone),needsSignIn=auth.current==null)
                 })
             }
         }
@@ -166,7 +166,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         val expectedScope=scope
         val expectedEpoch=syncEpoch
         val current={ !disposed && scope==expectedScope && syncEpoch==expectedEpoch }
-        mutableAccount.value=mutableAccount.value.copy(sync=mutableAccount.value.sync.copy(running=true,message="Hesap geçmişin eşitleniyor…"))
+        mutableAccount.value=mutableAccount.value.copy(sync=mutableAccount.value.sync.copy(running=true,message="Hesap geçmişin eşitleniyor…",tone=MessageTone.Info))
         viewModelScope.launch(Dispatchers.IO) {
             try {LearningSyncLocks.withOwner(user) {
                 if(!current()) return@withOwner
@@ -180,7 +180,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                         mutations.trySend(Mutation(expectedScope) {
                             if(current()) {
                                 val latest=sync.status(store)
-                                mutableAccount.value=mutableAccount.value.copy(sync=latest.copy(running=result.state.running,message=result.state.message),needsSignIn=auth.current==null)
+                                mutableAccount.value=mutableAccount.value.copy(sync=latest.copy(running=result.state.running,message=result.state.message,tone=result.state.tone),needsSignIn=auth.current==null)
                             }
                         })
                         if(result.verifySession) verifyAccount()
@@ -191,7 +191,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     if(failure is kotlinx.coroutines.CancellationException) throw failure
                     if(current()) mutations.trySend(Mutation(expectedScope) {
                         mutableAccount.value=mutableAccount.value.copy(needsSignIn=auth.current==null,
-                            sync=sync.status(store).copy(message=if(auth.current==null) "Oturum sona erdi. Tekrar giriş yap." else "Eşitleme tamamlanamadı. Kayıtların cihazında korunuyor; tekrar deneyebilirsin."))
+                            sync=sync.status(store).copy(message=if(auth.current==null) "Oturum sona erdi. Tekrar giriş yap." else "Eşitleme tamamlanamadı. Kayıtların cihazında korunuyor; tekrar deneyebilirsin.",tone=MessageTone.Error))
                         if(failure is LearningSyncFailure && failure.status==401) verifyAccount()
                     })
                 }
@@ -218,7 +218,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=scope)
         if(owner is LearningOwner.Account && cloudSync!=null) {
             val saved=cloudSync.status(store)
-            mutableAccount.value=mutableAccount.value.copy(sync=saved.copy(message=if(saved.lastSuccessAt==null) "Henüz eşitlenmedi." else "Son alınan hesap geçmişi cihazında korunuyor."))
+            mutableAccount.value=mutableAccount.value.copy(sync=saved.copy(message=if(saved.lastSuccessAt==null) "Henüz eşitlenmedi." else "Son alınan hesap geçmişi cihazında korunuyor.",tone=MessageTone.Info))
         }
         refreshGuestTransfer()
         scheduleSync()

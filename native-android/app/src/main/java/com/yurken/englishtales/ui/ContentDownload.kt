@@ -65,7 +65,7 @@ fun ContentDownloadScreen(content: ContentViewModel,story: Story?,onBack: ()->Un
     Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding()) {
         SimpleTopBar(story?.title ?: stringResource(R.string.hikaye),onBack)
         Column(Modifier.fillMaxWidth().weight(1f).padding(24.dp),verticalArrangement=Arrangement.Center,horizontalAlignment=Alignment.CenterHorizontally) {
-            if(status.busy) CircularProgressIndicator()
+            if(status.busy) TaleLoading(mascotSize=96)
             Spacer(Modifier.height(20.dp))
             Text(status.message.ifBlank { stringResource(R.string.hikayeyi_indirerek_okumaya_baslayabilirsin) })
             Spacer(Modifier.height(16.dp))

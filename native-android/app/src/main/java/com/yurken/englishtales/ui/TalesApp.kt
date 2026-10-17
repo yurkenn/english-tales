@@ -58,7 +58,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         lifecycle.addObserver(observer)
         onDispose {lifecycle.removeObserver(observer)}
     }
-    if(!ready || !contentReady || snapshot.ownerId!=(account.userId?:"guest")) { Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) { CircularProgressIndicator() }; return }
+    if(!ready || !contentReady || snapshot.ownerId!=(account.userId?:"guest")) { Box(Modifier.fillMaxSize(),contentAlignment=Alignment.Center) { TaleLoading() }; return }
     val startDestination=rememberSaveable {if(snapshot.onboardingDone) "main" else if(account.userId==null) "welcome" else "onboarding"}
     val nav=rememberNavController()
     fun completedExit(id: String, active: ()->Boolean, next: ()->Unit) {

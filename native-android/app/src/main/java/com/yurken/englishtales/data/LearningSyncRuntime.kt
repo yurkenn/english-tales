@@ -76,7 +76,7 @@ class LearningSyncWorker(context: Context,parameters: WorkerParameters): Corouti
                 }
             } catch(failure: Exception) {
                 if(failure is kotlinx.coroutines.CancellationException) throw failure
-                if(current()) LearningSyncRuntime.updates.tryEmit(user to LearningSyncState(message="Eşitleme tamamlanamadı. Kayıtların korunuyor; bağlantı geldiğinde yeniden denenecek."))
+                if(current()) LearningSyncRuntime.updates.tryEmit(user to LearningSyncState(message="Eşitleme tamamlanamadı. Kayıtların korunuyor; bağlantı geldiğinde yeniden denenecek.",tone=MessageTone.Error))
                 if(current() && failure is LearningSyncFailure && failure.status==401) runCatching {auth.verifyCurrent()}
                 if(auth.current?.userId!=user || !current()) Result.success() else Result.retry()
             }
