@@ -20,7 +20,7 @@ class BaselineProfileGenerator {
         includeInStartupProfile = true,
         profileBlock = {
             startActivityAndWait()
-            check(device.wait(Until.hasObject(By.text(Pattern.compile("Misafir olarak başla|Çalış"))), 15_000))
+            check(device.wait(Until.hasObject(By.text(Pattern.compile("Misafir olarak başla|Çalış|Start as guest|Practice"))), 15_000))
         },
     )
 
