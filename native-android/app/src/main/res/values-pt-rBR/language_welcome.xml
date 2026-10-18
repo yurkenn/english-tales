@@ -1,0 +1,8 @@
+<resources>
+    <string name="first_language_title">Em qual idioma vamos começar?</string>
+    <string name="first_language_description">Escolha o idioma dos menus e das traduções. As histórias continuam em inglês.</string>
+    <string name="first_language_english_note">Os menus ficarão em inglês. Por enquanto, as traduções das histórias estão em turco.</string>
+    <string name="first_language_continue">Continuar em %1$s</string>
+    <string name="first_language_later">Você pode alterar isso depois em Configurações.</string>
+    <string name="first_language_suggested">Idioma do seu dispositivo</string>
+</resources>

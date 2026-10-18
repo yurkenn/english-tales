@@ -1,0 +1,8 @@
+<resources>
+    <string name="first_language_title">کس زبان میں شروع کریں؟</string>
+    <string name="first_language_description">مینو اور کہانیوں کے ترجمے کی زبان چنیں۔ کہانیاں انگریزی میں ہی رہیں گی۔</string>
+    <string name="first_language_english_note">مینو انگریزی میں ہوں گے۔ کہانیوں کے ترجمے فی الحال ترکی میں دستیاب ہیں۔</string>
+    <string name="first_language_continue">%1$s میں جاری رکھیں</string>
+    <string name="first_language_later">آپ بعد میں ترتیبات سے زبان بدل سکتے ہیں۔</string>
+    <string name="first_language_suggested">آپ کے آلے کی زبان</string>
+</resources>

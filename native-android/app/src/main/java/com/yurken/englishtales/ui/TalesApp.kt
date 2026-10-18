@@ -34,7 +34,12 @@ fun TalesApp(viewModel: LearningViewModel = viewModel(),dailyPlanRequest: Long=0
     val account by viewModel.account.collectAsState()
     // Saved quiz options contain translated text; never restore a previous language's unfinished quiz.
     // The account ViewModel and its pending learning writes remain outside this UI key.
-    key(account.scope, SupportLanguage.code) {TalesAccountApp(viewModel,dailyPlanRequest,storyLinkRequest,onStoryLinkHandled)}
+    val snapshot by viewModel.state.collectAsState()
+    val ready by viewModel.ready.collectAsState()
+    if (!ready || snapshot.ownerId != (account.userId ?: "guest")) { Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { TaleLoading() }; return }
+    FirstLanguageGate(snapshot.onboardingDone) {
+        key(account.scope, SupportLanguage.code) {TalesAccountApp(viewModel,dailyPlanRequest,storyLinkRequest,onStoryLinkHandled)}
+    }
 }
 
 @Composable

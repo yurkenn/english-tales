@@ -37,6 +37,14 @@ object AppLanguage {
         return if (legacy.isNotEmpty()) resolve(listOf(Locale.forLanguageTag(legacy))) else resolve(context.resources.configuration.locales.toList())
     }
 
+    /** This device has completed the language welcome, independent of account or learning records. */
+    fun hasConfirmedChoice(context: Context): Boolean =
+        context.getSharedPreferences("app_language", Context.MODE_PRIVATE).getBoolean("confirmed", false)
+
+    fun confirmChoice(context: Context) {
+        check(context.getSharedPreferences("app_language", Context.MODE_PRIVATE).edit().putBoolean("confirmed", true).commit())
+    }
+
     fun selection(context: Context): String = if (Build.VERSION.SDK_INT >= 33)
         context.getSystemService(android.app.LocaleManager::class.java).applicationLocales.toLanguageTags()
     else context.getSharedPreferences("app_language", Context.MODE_PRIVATE).getString("tag", "").orEmpty()
