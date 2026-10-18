@@ -1,4 +1,12 @@
-# Google Play mağaza paketi — 15 Ekim 2026
+# Google Play mağaza paketi
+
+## 19 Ekim 2026 — ASO / SEO taslağı
+
+Önerilen yeni varsayılan ad **Learn English: Yurken Stories**, Türkçe **İngilizce Hikâyeler: Yurken**. 10 yeni dil + EN/TR için 13 mağaza kaydının başlık ve açıklamaları hazırlandı (`es-ES`, `es-419` kopyası). [Kaynaklı araştırma, yayın koşulları ve ölçüm planı](../aso/2026-10-19/RESEARCH.md); [metinler](../aso/2026-10-19/metadata.json); [SEO içerik taslağı](../aso/2026-10-19/seo-copy.json).
+
+**Yayınlanmadı.** Metinler çok dilli üretim paketi ve koordineli yeniden adlandırma için taslaktır. Uygulama içi marka, yerel ekran görüntüleri, gerçek üretim dil desteği ve ana dil incelemesi tamamlanmadan Console'a uygulanmamalı. Web sayfaları henüz oluşturulmadı. Aşağıdaki 15 Ekim notları tarihsel durumdur; güncel üretim sürümü kanıtı olarak kullanılmamalı.
+
+## 15 Ekim 2026 — Önceki paket notları
 
 Uygulama: English Tales (`com.yurken.englishtales`). Yeni paket adayı: 48 / 2.0.0. Console’da Production 46 / 1.1.0 ve Internal testing 47 / 2.0.0 doğrulandı. Yüklemeden önce daha yüksek başka kod bulunmadığı yeniden kontrol edilmeli.
 
@@ -43,4 +51,4 @@ Mağaza kayıtları uygulamanın destek dilleriyle eşleşir: `tr-TR`, `en-US` (
 - Yayından önce her metni o dili ana dili olarak konuşan biri okumalı.
 - Sınırlar: başlık 30, kısa açıklama 80, uzun açıklama 4000, sürüm notu 500 karakter.
 - Ekran görüntüleri şimdilik yalnız `tr-TR` için var; her dil açıldığında o dilin arayüzüyle yeniden alınır.
-- Yeni diller açılınca `en-US` uzun açıklamasındaki "Turkish" ifadeleri genişletilmeli.
+- 19 Ekim taslağında EN açıklaması 11 hikâye çevirisi dilini listeler; İngilizce arayüzde Türkçe hikâye çevirisi kullanıldığı ayrıca belirtilir. Bu vaatler üretim sürümüyle eşleştirilmelidir.

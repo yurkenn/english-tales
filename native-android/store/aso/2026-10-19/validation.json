@@ -1,0 +1,282 @@
+{
+  "date": "2026-10-19",
+  "status": "passed",
+  "scope": "Static copy limits, NFC, file-to-JSON parity and content-brief structure only; no publication or native-speaker approval.",
+  "storeLocaleCount": 13,
+  "seoBriefPageCount": 12,
+  "checks": [
+    {
+      "locale": "en-US",
+      "field": "title",
+      "codepoints": 29,
+      "utf16Units": 29,
+      "limit": 30
+    },
+    {
+      "locale": "en-US",
+      "field": "short",
+      "codepoints": 73,
+      "utf16Units": 73,
+      "limit": 80
+    },
+    {
+      "locale": "en-US",
+      "field": "full",
+      "codepoints": 1523,
+      "utf16Units": 1523,
+      "limit": 4000
+    },
+    {
+      "locale": "tr-TR",
+      "field": "title",
+      "codepoints": 27,
+      "utf16Units": 27,
+      "limit": 30
+    },
+    {
+      "locale": "tr-TR",
+      "field": "short",
+      "codepoints": 69,
+      "utf16Units": 69,
+      "limit": 80
+    },
+    {
+      "locale": "tr-TR",
+      "field": "full",
+      "codepoints": 1437,
+      "utf16Units": 1437,
+      "limit": 4000
+    },
+    {
+      "locale": "es-419",
+      "field": "title",
+      "codepoints": 28,
+      "utf16Units": 28,
+      "limit": 30
+    },
+    {
+      "locale": "es-419",
+      "field": "short",
+      "codepoints": 73,
+      "utf16Units": 73,
+      "limit": 80
+    },
+    {
+      "locale": "es-419",
+      "field": "full",
+      "codepoints": 1500,
+      "utf16Units": 1500,
+      "limit": 4000
+    },
+    {
+      "locale": "pt-BR",
+      "field": "title",
+      "codepoints": 28,
+      "utf16Units": 28,
+      "limit": 30
+    },
+    {
+      "locale": "pt-BR",
+      "field": "short",
+      "codepoints": 71,
+      "utf16Units": 71,
+      "limit": 80
+    },
+    {
+      "locale": "pt-BR",
+      "field": "full",
+      "codepoints": 1426,
+      "utf16Units": 1426,
+      "limit": 4000
+    },
+    {
+      "locale": "id",
+      "field": "title",
+      "codepoints": 29,
+      "utf16Units": 29,
+      "limit": 30
+    },
+    {
+      "locale": "id",
+      "field": "short",
+      "codepoints": 76,
+      "utf16Units": 76,
+      "limit": 80
+    },
+    {
+      "locale": "id",
+      "field": "full",
+      "codepoints": 1414,
+      "utf16Units": 1414,
+      "limit": 4000
+    },
+    {
+      "locale": "ar",
+      "field": "title",
+      "codepoints": 30,
+      "utf16Units": 30,
+      "limit": 30
+    },
+    {
+      "locale": "ar",
+      "field": "short",
+      "codepoints": 67,
+      "utf16Units": 67,
+      "limit": 80
+    },
+    {
+      "locale": "ar",
+      "field": "full",
+      "codepoints": 1128,
+      "utf16Units": 1128,
+      "limit": 4000
+    },
+    {
+      "locale": "vi",
+      "field": "title",
+      "codepoints": 28,
+      "utf16Units": 28,
+      "limit": 30
+    },
+    {
+      "locale": "vi",
+      "field": "short",
+      "codepoints": 70,
+      "utf16Units": 70,
+      "limit": 80
+    },
+    {
+      "locale": "vi",
+      "field": "full",
+      "codepoints": 1264,
+      "utf16Units": 1264,
+      "limit": 4000
+    },
+    {
+      "locale": "hi-IN",
+      "field": "title",
+      "codepoints": 25,
+      "utf16Units": 25,
+      "limit": 30
+    },
+    {
+      "locale": "hi-IN",
+      "field": "short",
+      "codepoints": 75,
+      "utf16Units": 75,
+      "limit": 80
+    },
+    {
+      "locale": "hi-IN",
+      "field": "full",
+      "codepoints": 1291,
+      "utf16Units": 1291,
+      "limit": 4000
+    },
+    {
+      "locale": "ru-RU",
+      "field": "title",
+      "codepoints": 27,
+      "utf16Units": 27,
+      "limit": 30
+    },
+    {
+      "locale": "ru-RU",
+      "field": "short",
+      "codepoints": 69,
+      "utf16Units": 69,
+      "limit": 80
+    },
+    {
+      "locale": "ru-RU",
+      "field": "full",
+      "codepoints": 1448,
+      "utf16Units": 1448,
+      "limit": 4000
+    },
+    {
+      "locale": "bn-BD",
+      "field": "title",
+      "codepoints": 26,
+      "utf16Units": 26,
+      "limit": 30
+    },
+    {
+      "locale": "bn-BD",
+      "field": "short",
+      "codepoints": 66,
+      "utf16Units": 66,
+      "limit": 80
+    },
+    {
+      "locale": "bn-BD",
+      "field": "full",
+      "codepoints": 1233,
+      "utf16Units": 1233,
+      "limit": 4000
+    },
+    {
+      "locale": "ur",
+      "field": "title",
+      "codepoints": 26,
+      "utf16Units": 26,
+      "limit": 30
+    },
+    {
+      "locale": "ur",
+      "field": "short",
+      "codepoints": 69,
+      "utf16Units": 69,
+      "limit": 80
+    },
+    {
+      "locale": "ur",
+      "field": "full",
+      "codepoints": 1275,
+      "utf16Units": 1275,
+      "limit": 4000
+    },
+    {
+      "locale": "th",
+      "field": "title",
+      "codepoints": 30,
+      "utf16Units": 30,
+      "limit": 30
+    },
+    {
+      "locale": "th",
+      "field": "short",
+      "codepoints": 60,
+      "utf16Units": 60,
+      "limit": 80
+    },
+    {
+      "locale": "th",
+      "field": "full",
+      "codepoints": 1148,
+      "utf16Units": 1148,
+      "limit": 4000
+    },
+    {
+      "locale": "es-ES",
+      "field": "title",
+      "codepoints": 28,
+      "utf16Units": 28,
+      "limit": 30
+    },
+    {
+      "locale": "es-ES",
+      "field": "short",
+      "codepoints": 73,
+      "utf16Units": 73,
+      "limit": 80
+    },
+    {
+      "locale": "es-ES",
+      "field": "full",
+      "codepoints": 1500,
+      "utf16Units": 1500,
+      "limit": 4000
+    }
+  ]
+}

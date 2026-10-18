@@ -1,0 +1,76 @@
+{
+  "observedDate": "2026-10-19",
+  "method": "Native-language web searches of indexed public Google Play listings and developer pages; not authenticated country Play search ranks or search-volume data.",
+  "evidence": [
+    {
+      "locale": "es-419",
+      "query": "site:play.google.com/store/apps \"aprender inglés\" cuentos historias",
+      "intent": "Inglés con historias; cuentos en inglés",
+      "source": "https://play.google.com/store/apps/details?hl=es_MX&id=com.softuniverse.learning_english_conversation_short_stories_audio_books",
+      "observation": "Aprender Inglés Con Historias adı zaten kullanılıyor; hikâyeyle öğrenme vaadi anlaşılır ancak tek başına ayırt edici değil."
+    },
+    {
+      "locale": "pt-BR",
+      "query": "site:play.google.com/store/apps \"aprender inglês\" histórias leitura",
+      "intent": "inglês com histórias; leitura em inglês",
+      "source": "https://play.google.com/store/apps/details?hl=pt_BR&id=co.playlingo.readable",
+      "observation": "Readable yerel başlığında Histórias em inglês kullanıyor; okuma ve kelime öğrenme birlikte sunuluyor."
+    },
+    {
+      "locale": "id",
+      "query": "site:play.google.com/store/apps \"belajar bahasa inggris\" cerita",
+      "intent": "belajar bahasa Inggris; cerita bahasa Inggris",
+      "source": "https://play.google.com/store/apps/details?hl=id&id=com.david.android.languageswitch",
+      "observation": "Beelinguapp yerel dilde Bahasa Inggris ve çift dilli okuma yaklaşımını kullanıyor; çocuk hikâyesi aramaları da aynı sorgulara karışıyor."
+    },
+    {
+      "locale": "ar",
+      "query": "site:play.google.com/store/apps \"تعلم الإنجليزية\" قصص",
+      "intent": "تعلم الإنجليزية بالقصص",
+      "source": "https://play.google.com/store/apps/details?hl=ar&id=com.book.stoiresEnglich",
+      "observation": "Storio yerel başlığında İngilizceyi hikâyelerle öğrenme niyetini açıkça belirtiyor; Arapça çeviri somut bir fayda."
+    },
+    {
+      "locale": "vi",
+      "query": "site:play.google.com/store/apps \"học tiếng Anh\" \"truyện\"",
+      "intent": "học tiếng Anh qua truyện; luyện đọc tiếng Anh",
+      "source": "https://play.google.com/store/apps/details?hl=vi&id=com.btl.app.truyensongngu",
+      "observation": "Truyện Song Ngữ çift dilli hikâye niyetini gösteriyor. Ayrı Monkey Stories sonucu çocuklara odaklı; bu ürünün vaadini çocuk kursuna çevirmiyoruz."
+    },
+    {
+      "locale": "hi-IN",
+      "query": "site:play.google.com/store/apps \"अंग्रेजी\" \"कहानियां\"",
+      "intent": "अंग्रेजी कहानियाँ; अंग्रेजी पढ़ना",
+      "source": "https://play.google.com/store/apps/details?hl=hi&id=co.playlingo.readable",
+      "observation": "Readable Hintçe başlığında İngilizce hikâyeler ifadesini kullanıyor; seviye ve kelime pratiğiyle açıklamada ayrışabiliriz."
+    },
+    {
+      "locale": "ru-RU",
+      "query": "site:play.google.com/store/apps/details \"английский\" \"чтение\" рассказы приложение",
+      "intent": "английский рассказы; чтение на английском",
+      "source": "https://play.google.com/store/apps/details?hl=ru&id=co.playlingo.readable",
+      "observation": "Readable Английские истории ifadesini kullanıyor; рассказы kısa hikâye biçimini açıklayan uygun editoryal alternatif."
+    },
+    {
+      "locale": "bn-BD",
+      "query": "\"ইংরেজি\" \"গল্প\" অ্যাপ গুগল প্লে",
+      "intent": "গল্পে ইংরেজি শিখুন; ইংরেজি গল্প",
+      "source": "https://play.google.com/store/apps/details?hl=bn&id=com.ysft.bonglish",
+      "observation": "Bonglish İngilizce öğrenme içinde hikâye ve kelime yaklaşımını sunuyor. Genel hikâye derlemeleri de sonuçlara karışıyor; öğrenme fiilini başlıkta tutuyoruz."
+    },
+    {
+      "locale": "ur",
+      "query": "site:play.google.com/store/apps/details \"انگریزی\" \"کہانیاں\"",
+      "intent": "کہانیوں سے انگریزی; انگریزی سیکھیں",
+      "source": "https://play.google.com/store/apps/details?hl=ur&id=com.palmdev.expressenglish",
+      "observation": "Yerel kayıt İngilizce öğrenme ve çift dilli kitap/hikâye okumasını birleştiriyor. Başlıkta hikâyeyle İngilizce ilişkisi korunuyor."
+    },
+    {
+      "locale": "th",
+      "query": "site:play.google.com/store/apps/details \"เรียนภาษาอังกฤษ\" \"เรื่องสั้น\"",
+      "intent": "เรียนภาษาอังกฤษ เรื่องสั้น",
+      "source": "https://play.google.com/store/apps/details?hl=th&id=com.wnativeslearn.wnativeslearn",
+      "observation": "Seviyeli hikâye kaydında เรื่องสั้น kısa hikâye ifadesi kullanılıyor; yalnız çocuk masalı çağrışımı taşıyan konumlandırmayı seçmiyoruz."
+    }
+  ]
+}
