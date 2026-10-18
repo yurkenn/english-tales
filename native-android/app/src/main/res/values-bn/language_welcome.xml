@@ -1,0 +1,8 @@
+<resources>
+    <string name="first_language_title">কোন ভাষায় শুরু করবেন?</string>
+    <string name="first_language_description">মেনু ও গল্পের অনুবাদের ভাষা বেছে নিন। গল্পগুলো ইংরেজিতেই থাকবে।</string>
+    <string name="first_language_english_note">মেনু ইংরেজিতে থাকবে। গল্পের অনুবাদ বর্তমানে তুর্কি ভাষায় পাওয়া যায়।</string>
+    <string name="first_language_continue">%1$s ভাষায় এগিয়ে যান</string>
+    <string name="first_language_later">পরে সেটিংস থেকে ভাষা বদলাতে পারবেন।</string>
+    <string name="first_language_suggested">আপনার ডিভাইসের ভাষা</string>
+</resources>

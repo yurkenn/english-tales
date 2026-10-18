@@ -22,7 +22,7 @@ class FirstLaunchJourneyTest {
     /** Everything a first launch would not have; other tests use isolated contexts, so nothing is restored. */
     private fun freshInstall() {
         context.databaseList().filter {it.startsWith("english_tales") && it.endsWith(".db")}.forEach {context.deleteDatabase(it)}
-        listOf("learning_preferences","reminders","product_metrics_v1","reading_appearance","comprehension","ad_frequency",
+        listOf("app_language","learning_preferences","reminders","product_metrics_v1","reading_appearance","comprehension","ad_frequency",
             "play_store_features","deleted-account-cleanup").forEach {context.getSharedPreferences(it,0).edit().clear().commit()}
         LearningSyncRuntime.accounts(context).clearLocal()
         File(context.filesDir,"published-content").deleteRecursively()
@@ -47,6 +47,9 @@ class FirstLaunchJourneyTest {
         try {
             // Brand intro: skip it when it is still showing; it also continues on its own.
             runCatching {compose.onNodeWithContentDescription(text(R.string.yurken)).performClick()}
+            waitFor(hasTestTag("language_continue"))
+            compose.onNodeWithTag("language_continue").performClick()
+            assertTrue(AppLanguage.hasConfirmedChoice(context))
             val guest=text(R.string.misafir_olarak_basla)
             waitFor(hasText(guest))
             compose.onNodeWithText(guest).performScrollTo().performClick()

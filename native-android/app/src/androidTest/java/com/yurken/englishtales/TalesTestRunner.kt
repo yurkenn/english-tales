@@ -29,6 +29,8 @@ class TalesTestRunner : AndroidJUnitRunner() {
             @Suppress("DEPRECATION")
             resources.updateConfiguration(config, resources.displayMetrics)
         }
+        // Existing journeys exercise learning; FirstLaunchJourneyTest explicitly resets this gate.
+        AppLanguage.confirmChoice(targetContext)
         super.onStart()
     }
 }

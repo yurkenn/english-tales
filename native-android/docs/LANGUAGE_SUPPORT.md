@@ -23,9 +23,15 @@
 
 İspanyolca bölgesel varyantları es-419’a, Portekizce varyantları pt-BR’ye eşlenir. Desteklenmeyen arayüz dilleri İngilizceye döner. İngilizce öğrenilen dildir: hikâyelerin İngilizce cümleleri, soru/cevap bankaları, telaffuz ve İngilizce örnekler çevrilmez.
 
+## İlk açılışta dil seçimi
+
+19 Ekim devamı: öğrenme profili henüz oluşturulmamış yeni kullanıcı, karşılama/giriş ekranından önce tam ekran dil seçimini görür. Dil adları kendi yazımlarıyla ve İngilizce adlarıyla listelenir; önerilen seçenek öne alınır. Seçim metinleri ve ekran yönünü anında önizler. Sabit alt düğme onaylanana kadar uygulamanın dili değişmez. İngilizce arayüz seçeneğinde hikâye çevirilerinin hâlâ Türkçe olduğu ayrıca belirtilir.
+
+Onay `app_language/confirmed` cihaz tercihinde tutulur; hesaplara, kelimelere veya okuma konumlarına dokunmaz. Onboarding’i tamamlamış mevcut kullanıcıların akışı kesilmez ve tekrar sorulmaz. Onaydan sonraki Activity yeniden oluşturulması seçimi tekrar açmaz; paylaşılan hikâye bağlantısı beklemeye devam eder. Ayarlar ve karşılama ekranındaki dil düğmesi aynı tam ekran seçiciyi açar; buradan sistem dilini izlemeye dönülebilir. Seçici kapatılırsa önizleme kaydedilmez.
+
 ## Kapsam ve çevrimdışı davranış
 
-Her yeni dilde 50 hikâyenin açıklaması, 1.002 cümle, 359 öğrenme kelimesi, 5 kategori ve 3 tür çevirisi bulunur. Arayüzde her dil için 528 kaynak kimliği vardır; bu sayı çoğul kaynakları birer kimlik olarak sayar. Hesap/eşitleme/hata mesajları, bildirim ve widget kaynakları da bu kapsamın içindedir.
+Her yeni dilde 50 hikâyenin açıklaması, 1.002 cümle, 359 öğrenme kelimesi, 5 kategori ve 3 tür çevirisi bulunur. Arayüzde her dil için 534 kaynak kimliği vardır; bu sayı çoğul kaynakları birer kimlik olarak sayar. Hesap/eşitleme/hata mesajları, bildirim ve widget kaynakları da bu kapsamın içindedir.
 
 `tooling/build_translations.py` çeviri taslaklarını kimlik ve tamlık kontrolünden geçirip paket içi `catalog/v1.json` haritalarına ekler. Eski Türkçe alanlar, İngilizce metinler, hikâye/kelime kimlikleri, kapaklar ve revision kimlikleri korunur. Mevcut backend exporter ve editör bu dil haritalarını zaten destekler.
 
