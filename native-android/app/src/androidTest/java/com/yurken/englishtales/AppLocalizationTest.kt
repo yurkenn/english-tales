@@ -47,6 +47,16 @@ class AppLocalizationTest {
         }
     }
 
+    @Test fun legacyIndonesianLocaleKeepsUiAndContentInIndonesian() {
+        for (tag in listOf("id", "in", "id-ID", "in-ID")) {
+            val selected = Locale.forLanguageTag(tag)
+            assertEquals("id", AppLanguage.languageCode(selected))
+            assertEquals("id", SupportLanguage.resolve(listOf(selected, Locale.forLanguageTag("tr"))))
+            val localized = AppLanguage.wrap(context(tag))
+            assertEquals("Pengaturan", localized.getString(R.string.ayarlar))
+        }
+    }
+
     @Test fun accountFailureUsesTheApplicationLocaleWithoutChangingLearningData() {
         for (language in listOf("en", "tr", "es-MX")) {
             val localized = context(language)

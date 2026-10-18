@@ -11,6 +11,14 @@ class AppLanguageTest {
         assertEquals("es-419", AppLanguage.resolve(listOf(Locale.forLanguageTag("es-MX"), Locale.forLanguageTag("tr"))).toLanguageTag())
     }
 
+    @Test fun indonesianLegacyAndCanonicalTagsShareOneLanguageCode() {
+        for (tag in listOf("id", "in", "id-ID", "in-ID")) {
+            val locale = Locale.forLanguageTag(tag)
+            assertEquals("id", AppLanguage.languageCode(locale))
+            assertEquals(locale, AppLanguage.resolve(listOf(locale, Locale.ENGLISH)))
+        }
+    }
+
     @Test fun unsupportedDevicesGetEnglishInsteadOfTurkish() {
         assertEquals(Locale.ENGLISH, AppLanguage.resolve(listOf(Locale.forLanguageTag("de-DE"), Locale.forLanguageTag("fr-FR"))))
         assertEquals(Locale.ENGLISH, AppLanguage.resolve(emptyList()))

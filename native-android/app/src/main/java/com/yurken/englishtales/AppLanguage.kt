@@ -16,10 +16,16 @@ object AppLanguage {
     val supported = listOf("tr", "en", "es", "pt", "id", "ar", "vi", "hi", "ru", "bn", "ur", "th")
     val fallback: Locale = Locale.ENGLISH
 
+    /** Android through API 34 can return the legacy Indonesian code `in` from Locale.language. */
+    internal fun languageCode(locale: Locale): String = when (locale.language) {
+        "in" -> "id"
+        else -> locale.language
+    }
+
     /** The first device/app language the app ships, or the English fallback. */
     fun resolve(preferred: List<Locale>): Locale {
-        val selected = preferred.firstOrNull { it.language in supported } ?: return fallback
-        return when (selected.language) {
+        val selected = preferred.firstOrNull { languageCode(it) in supported } ?: return fallback
+        return when (languageCode(selected)) {
             "es" -> Locale.forLanguageTag("es-419")
             "pt" -> Locale.forLanguageTag("pt-BR")
             else -> selected
@@ -37,7 +43,7 @@ object AppLanguage {
 
     /** Android 13 owns the per-app setting; older Android versions keep only a device-local preference. */
     fun select(context: Context, tag: String) {
-        require(tag.isEmpty() || Locale.forLanguageTag(tag).language in supported)
+        require(tag.isEmpty() || languageCode(Locale.forLanguageTag(tag)) in supported)
         if (Build.VERSION.SDK_INT >= 33) {
             context.getSystemService(android.app.LocaleManager::class.java).applicationLocales = LocaleList.forLanguageTags(tag)
         } else {

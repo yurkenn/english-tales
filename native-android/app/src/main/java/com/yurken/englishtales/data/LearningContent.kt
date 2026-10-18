@@ -17,7 +17,7 @@ object SupportLanguage {
     val enabled = listOf(DEFAULT, "es-419", "pt-BR", "id", "ar", "vi", "hi", "ru", "bn", "ur", "th")
     fun resolve(preferred: List<java.util.Locale>, available: List<String> = enabled): String =
         preferred.firstNotNullOfOrNull { locale ->
-            (when (locale.language) { "es" -> "es-419"; "pt" -> "pt-BR"; else -> locale.language }).takeIf { it in available }
+            (when (val language = com.yurken.englishtales.AppLanguage.languageCode(locale)) { "es" -> "es-419"; "pt" -> "pt-BR"; else -> language }).takeIf { it in available }
         } ?: DEFAULT
 
     @Volatile var code: String = DEFAULT

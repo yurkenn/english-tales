@@ -56,6 +56,17 @@ Bu kontroller ana dili konuşan bir uzmanın dil incelemesinin yerini almaz. Öz
 
 Yerel test raporları `native-android/build/localization-*` ve `app/build/reports/` altındadır. GitHub’daki #90 PR’ı kendiliğinden birleştirilmedi; bu dal onun çevirilerini uygulamaya entegre eder. Yeni APK’nın kullanıcıya ulaşması için normal imzalı yayın süreci gereklidir; bu çalışma Play’e paket yüklemez.
 
+## 18 Ekim devam kontrolü
+
+İngilizce temelini tamamlayan #87 birleştirildi. On dil entegrasyonu #115 üzerinde inceleniyor; mağaza yayını ayrı aşamadır.
+
+İlk CI turundaki iki sorun düzeltildi:
+
+- Android 14 ve önceki sürümlerde `Locale.language` Endonezce için eski `in` kodunu döndürebilir. Arayüz seçimi, seçim doğrulaması ve içerik dili çözümü bunu aynı `id` koduna eşler. `id`/`in` ve bölgesel varyantlar JVM ve cihaz regresyon testlerinde kapsanır.
+- Eksik dil denetimi testi artık uygulamanın büyüyen katalog paketine bağlı değildir. Sabit, yalnız Türkçe içeren küçük bir katalog üzerinde eksik İspanyolca ve kısmi sunucu çevirileri için reddi kontrol eder.
+
+Yerel backend testleri 149/149 ve yönetim panelinin HTTP akışı geçti. Bunlar yerel fixture kontrolleridir; canlı içerik veya Play yayını yapılmadı. Android 14 dil gerilemesi için son kabul kanıtı PR'ın güncel `android-device` CI sonucudur.
+
 ## Görsel kontroller
 
 Android 15 emülatöründe doğrulanan Arapça cümle kurma ve Urduca okuyucu:

@@ -13,6 +13,11 @@ class SupportLanguageResolveTest {
         assertEquals("tr", SupportLanguage.resolve(emptyList()))
     }
 
+    @Test fun legacyIndonesianLocaleUsesTheCanonicalContentCode() {
+        assertEquals("id", SupportLanguage.resolve(locales("in-ID", "tr")))
+        assertEquals("id", SupportLanguage.resolve(locales("id-ID")))
+    }
+
     @Test fun regionalVariantsShareOneTranslationInPreferenceOrder() {
         val available = listOf("tr", "es-419", "pt-BR", "ar")
         assertEquals("es-419", SupportLanguage.resolve(locales("es-ES", "tr"), available))
