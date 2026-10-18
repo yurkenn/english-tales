@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d دقيقة</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="zero">مدة القراءة التقديرية بالدقائق: %1$d</item>
+        <item quantity="one">مدة القراءة التقديرية بالدقائق: %1$d</item>
+        <item quantity="two">مدة القراءة التقديرية بالدقائق: %1$d</item>
+        <item quantity="few">مدة القراءة التقديرية بالدقائق: %1$d</item>
+        <item quantity="many">مدة القراءة التقديرية بالدقائق: %1$d</item>
+        <item quantity="other">مدة القراءة التقديرية بالدقائق: %1$d</item>
+    </plurals>
+    <string name="length_all">أي طول</string>
+    <string name="length_short">قصير · ≥ 2 دقيقة</string>
+    <string name="length_medium">متوسطة · 3-5 دقائق</string>
+    <string name="length_long">طويلة · 6+ دقيقة</string>
+</resources>

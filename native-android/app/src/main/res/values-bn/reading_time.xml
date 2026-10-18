@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d মিনিট</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="one">পড়ার আনুমানিক সময়, মিনিটে: %1$d</item>
+        <item quantity="other">পড়ার আনুমানিক সময়, মিনিটে: %1$d</item>
+    </plurals>
+    <string name="length_all">যেকোনো দৈর্ঘ্য</string>
+    <string name="length_short">সংক্ষিপ্ত · ≤ 2 মিনিট</string>
+    <string name="length_medium">মাঝারি · 3-5 মিনিট</string>
+    <string name="length_long">দীর্ঘ · 6+ মিনিট</string>
+</resources>

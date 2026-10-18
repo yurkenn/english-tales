@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="dictation_mode">Dengarkan dan tulis</string>
+    <string name="dictation_subtitle">Tulislah kalimat cerita sesuai dengan yang Anda dengar</string>
+    <string name="dictation_instruction">Tulislah kalimat yang Anda dengar</string>
+    <string name="dictation_field">Kalimat</string>
+    <string name="dictation_play">Dengarkan kalimatnya</string>
+    <string name="dictation_correct">Benar! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="other">Kata yang berbeda: %1$d. Kalimat yang benar: %2$s</item>
+    </plurals>
+</resources>

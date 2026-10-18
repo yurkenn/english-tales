@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">सीखे हुए शब्द</string>
+    <string name="known_words_detail">पढ़े हैं, अभी सीखे नहीं: %1$d · दोहराए जा रहे हैं: %2$d</string>
+    <string name="known_words_explanation">इसमें वे शब्द शामिल हैं जिनके लिए दोहराते समय आपने “मुझे आता है” चुना, और वे शब्द जिन्हें आपने कम से कम दो पूरी की गई कहानियों में अर्थ देखे बिना पढ़ा।</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">Thực hành các từ khó %1$d của bạn</string>
+    <string name="weak_words_summary">Những từ bạn trả lời sai trong 30 ngày qua sẽ được ưu tiên trước.</string>
+    <string name="weak_words_count">Số từ bạn còn gặp khó khăn: %1$d. Những từ này sẽ được ưu tiên khi ôn tập.</string>
+</resources>

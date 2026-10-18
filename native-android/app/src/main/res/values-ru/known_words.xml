@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">Выученные слова</string>
+    <string name="known_words_detail">Прочитано, но ещё не выучено: %1$d · На повторении: %2$d</string>
+    <string name="known_words_explanation">Учитываются слова, для которых вы выбрали «Знаю» при повторении, и слова, прочитанные без поиска значения как минимум в двух законченных историях.</string>
+</resources>

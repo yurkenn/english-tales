@@ -11,10 +11,22 @@ data class WordInfo(val id: String, val word: String, val translation: String, v
 /** [translation] is in the reader's support language ([SupportLanguage]); the story text is always English. */
 data class StorySentence(val id: String, val english: String, val translation: String)
 
-/** Language of the translations shown next to the English content (Q4.0). Only Turkish ships today. */
+/** Language of the translations shown next to the English content; English is always the lesson language. */
 object SupportLanguage {
     const val DEFAULT = "tr"
-    val code: String get() = DEFAULT
+    val enabled = listOf(DEFAULT, "es-419", "pt-BR", "id", "ar", "vi", "hi", "ru", "bn", "ur", "th")
+    fun resolve(preferred: List<java.util.Locale>, available: List<String> = enabled): String =
+        preferred.firstNotNullOfOrNull { locale ->
+            (when (locale.language) { "es" -> "es-419"; "pt" -> "pt-BR"; else -> locale.language }).takeIf { it in available }
+        } ?: DEFAULT
+
+    @Volatile var code: String = DEFAULT
+        private set
+
+    internal fun configure(context: Context) {
+        // Use the same selected locale as the UI, including Android's per-app setting.
+        code = resolve(listOf(com.yurken.englishtales.AppLanguage.locale(context)))
+    }
 
     /**
      * Reads [lang] from an optional per-language map (`{"tr": "…"}`), falling back to the legacy
@@ -22,6 +34,13 @@ object SupportLanguage {
      */
     fun pick(item: JSONObject, mapKey: String, legacyKey: String, lang: String = code): String {
         item.optJSONObject(mapKey)?.optString(lang)?.takeIf { it.isNotBlank() }?.let { return it }
+        ContentTranslations.pick(item, mapKey, legacyKey, lang)?.let { return it }
+        // New/edited server text without a matching translation stays English, never an unrelated old translation.
+        if (lang != DEFAULT) return when (legacyKey) {
+            "turkish" -> item.getString("english")
+            "translation" -> item.getString("word")
+            else -> ContentTranslations.descriptionFallback
+        }
         require(lang == DEFAULT) { "Missing $lang translation" }
         return item.getString(legacyKey)
     }
@@ -52,10 +71,17 @@ data class StoryTag(val id: String, val name: String) {
     companion object {
         private val genreTags = mapOf("Macera" to "macera", "Gizem" to "gizem", "Günlük yaşam" to "gunluk-yasam")
         /** Stories from servers or caches without tags fall back to their genre, which every story has. */
-        fun of(story: Story): List<StoryTag> = story.tags.ifEmpty { listOf(StoryTag(genreTags[story.genre] ?: story.genre, story.genre)) }
+        fun of(story: Story): List<StoryTag> = story.tags.ifEmpty {
+            val id = genreTags[story.genre] ?: story.genre
+            listOf(StoryTag(id, ContentTranslations.tag(id, story.genre)))
+        }
         /** Reads `[{id, name}]` (revision documents) or `["id"]` with [names] (the bundled catalog). */
         fun parse(array: org.json.JSONArray?, names: Map<String, String> = emptyMap()): List<StoryTag> = (0 until (array?.length() ?: 0)).mapNotNull { i ->
-            array!!.optJSONObject(i)?.let { StoryTag(it.optString("id"), it.optString("name").ifBlank { names[it.optString("id")] ?: it.optString("id") }) }
+            array!!.optJSONObject(i)?.let {
+                val id = it.optString("id")
+                val name = it.optString("name").ifBlank { names[id] ?: id }
+                StoryTag(id, if (it.optString("lang") == SupportLanguage.code) name else ContentTranslations.tag(id, name))
+            }
                 ?: array.optString(i).takeIf { it.isNotBlank() }?.let { StoryTag(it, names[it] ?: it) }
         }.filter { it.id.isNotBlank() }.distinctBy { it.id }
     }
@@ -145,6 +171,7 @@ object LearningContent {
     val storyById: Map<String, Story> get() = current().storyById.let { if (pinned.isEmpty()) it else it + pinned }
 
     private val loadLock = Any()
+    @Volatile private var loadedLanguage: String? = null
 
     /** Background work that builds the reader's lookups before the first reader composition needs them. */
     private val prewarmScope = kotlinx.coroutines.CoroutineScope(kotlinx.coroutines.SupervisorJob() + kotlinx.coroutines.Dispatchers.Default)
@@ -189,8 +216,12 @@ object LearningContent {
 
     /** Blocking variant for callers that already run off the UI thread (stores, workers, tests). */
     fun initialize(context: Context) {
-        if (catalog != null) return
-        synchronized(loadLock) { if (catalog == null) parse(context).let { catalog = it; bundled = it.stories; prewarm(it) } }
+        synchronized(loadLock) {
+            SupportLanguage.configure(context)
+            if (catalog != null && loadedLanguage == SupportLanguage.code) return
+            pinned.clear(); historical.clear(); wordSources.clear()
+            parse(context).let { catalog = it; bundled = it.stories; loadedLanguage = SupportLanguage.code; prewarm(it) }
+        }
     }
 
     /** Installs a catalog without the bundled assets, for JVM tests that have no [Context]. */
@@ -205,12 +236,13 @@ object LearningContent {
     internal fun phraseIndexBuiltOn(): Thread? = current().phrasesBuiltOn
 
     @androidx.annotation.VisibleForTesting
-    internal fun resetForTest() = synchronized(loadLock) { catalog = null; bundled = null; pinned.clear(); historical.clear(); wordSources.clear() }
+    internal fun resetForTest() = synchronized(loadLock) { catalog = null; bundled = null; loadedLanguage = null; pinned.clear(); historical.clear(); wordSources.clear() }
 
     private fun parse(context: Context): Catalog {
         val json = context.assets.open("catalog/v1.json").bufferedReader(Charsets.UTF_8).use { it.readText() }
         val root = JSONObject(json)
         require(root.getInt("schemaVersion") == 1) { "Unsupported catalog schema" }
+        ContentTranslations.install(root, SupportLanguage.code, com.yurken.englishtales.AppLanguage.wrap(context).getString(com.yurken.englishtales.R.string.content_untranslated_description))
         glossarySource = try {
             Glossary.parse(context.assets.open("glossary/${SupportLanguage.code}.json").bufferedReader(Charsets.UTF_8).use { it.readText() })
         } catch (missing: java.io.FileNotFoundException) { emptyMap<String, String>() to emptyMap() }

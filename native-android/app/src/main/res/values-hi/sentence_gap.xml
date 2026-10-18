@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="gap_mode">वाक्य में रिक्त स्थान भरें</string>
+    <string name="gap_subtitle">कहानी के वाक्य में सही शब्द ढूँढ़ें।</string>
+    <string name="gap_preparing">कहानी के वाक्य तैयार किये जा रहे हैं…</string>
+    <string name="gap_unavailable">इस अभ्यास के लिए कोई उपयुक्त वाक्य नहीं हैं। आपके द्वारा डाउनलोड की गई कहानियों के साथ पुनः प्रयास करें।</string>
+    <string name="gap_instruction">संकेत का उपयोग करके रिक्त स्थान भरें.</string>
+    <string name="gap_hint">संकेत: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">एक कहानी से एक वाक्य · %1$s</string>
+    <string name="gap_progress">वाक्य %1$d / %2$d</string>
+    <string name="gap_check">जाँच करना</string>
+    <string name="gap_correct">सही! आपने वाक्य पूरा कर लिया.</string>
+    <string name="gap_incorrect">आइए इसे एक साथ सीखें। सही उत्तर: %1$s</string>
+    <string name="gap_next">अगला वाक्य</string>
+    <string name="gap_finish">परिणाम देखें</string>
+    <string name="gap_exit">अभ्यास छोड़ो</string>
+</resources>

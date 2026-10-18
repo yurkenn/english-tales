@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="story_new_words">
+        <item quantity="zero">عدد الكلمات الجديدة في هذه القصة: %1$d تقريبًا</item>
+        <item quantity="one">عدد الكلمات الجديدة في هذه القصة: %1$d تقريبًا</item>
+        <item quantity="two">عدد الكلمات الجديدة في هذه القصة: %1$d تقريبًا</item>
+        <item quantity="few">عدد الكلمات الجديدة في هذه القصة: %1$d تقريبًا</item>
+        <item quantity="many">عدد الكلمات الجديدة في هذه القصة: %1$d تقريبًا</item>
+        <item quantity="other">عدد الكلمات الجديدة في هذه القصة: %1$d تقريبًا</item>
+    </plurals>
+</resources>

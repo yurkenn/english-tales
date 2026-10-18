@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="alert_dismiss">تجاهل التنبيه</string>
+    <string name="alert_word_saved">تمت إضافة \"%1$s\" إلى كلماتك</string>
+    <string name="alert_word_removed">تمت إزالة \"%1$s\" من كلماتك</string>
+    <string name="alert_favorite_added">تمت إضافتها إلى المفضلة لديك</string>
+    <string name="alert_favorite_removed">تمت إزالتها من المفضلة لديك</string>
+    <string name="alert_settings_saved">تم حفظ إعداداتك</string>
+    <string name="alert_daily_goal">لقد وصلت إلى هدفك اليومي. عمل عظيم!</string>
+    <string name="alert_streak">أيام التعلّم المتتالية: %1$d. عُد غدًا لتستمر.</string>
+    <string name="alert_reminder_on">تم تعيين تذكير لـ %1$s كل يوم</string>
+    <string name="alert_reminder_off">تم إيقاف التذكير</string>
+    <string name="alert_reminder_denied">لا يمكن أن يعمل التذكير بدون إذن الإشعار</string>
+    <string name="alert_write_recovered">تم حفظ سجلاتك المعلقة</string>
+    <string name="alert_link_failed">تعذر فتح الرابط</string>
+    <string name="alert_quiz_perfect">كل الحق! لقد فهمت القصة جيدًا.</string>
+    <string name="feedback_correct_title">صحيح!</string>
+    <string name="feedback_wrong_title">حاول مرة أخرى!</string>
+    <string name="weekly_today">اليوم</string>
+</resources>

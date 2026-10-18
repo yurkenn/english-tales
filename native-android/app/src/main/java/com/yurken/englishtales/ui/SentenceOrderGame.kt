@@ -54,6 +54,7 @@ fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: Pad
         // The sentence being built; each placed word can be taken back until the answer is checked.
         var shakes by remember(index) {mutableIntStateOf(0)}
         LaunchedEffect(checked) {if(checked && !correct) shakes++}
+        CompositionLocalProvider(androidx.compose.ui.platform.LocalLayoutDirection provides androidx.compose.ui.unit.LayoutDirection.Ltr) {
         Surface(color=if(checked) (if(correct) LocalTaleColors.current.tileGreen else TaleError.copy(alpha=0.10f)) else TaleLine,shape=RoundedCornerShape(14.dp),modifier=Modifier.fillMaxWidth().shakeOn(shakes).animateContentSize()) {
             if(chosen.isEmpty()) Text(stringResource(R.string.order_answer_empty),color=TaleMuted,modifier=Modifier.padding(20.dp))
             else FlowRow(Modifier.padding(12.dp),horizontalArrangement=Arrangement.spacedBy(6.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
@@ -69,7 +70,8 @@ fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: Pad
                 if(tile !in chosen) OutlinedButton(enabled=!checked,onClick={chosen=chosen+tile},modifier=Modifier.heightIn(min=48.dp)) { Text(word) }
             }
         }
-        AnswerFeedback(checked,correct,if(correct) stringResource(R.string.order_correct,question.sentence) else stringResource(R.string.order_incorrect,question.sentence))
+        }
+        AnswerFeedback(checked,correct,if(correct) stringResource(R.string.order_correct,englishArgument(question.sentence)) else stringResource(R.string.order_incorrect,englishArgument(question.sentence)))
         Button(enabled=chosen.size==question.tiles.size && !advanced,modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp),
             colors=if(checked && correct) ButtonDefaults.buttonColors(containerColor=TaleSuccess,contentColor=TaleSurface) else ButtonDefaults.buttonColors(),onClick={
             if(!checked) checked=true

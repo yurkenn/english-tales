@@ -33,6 +33,7 @@ class MainActivity : ComponentActivity() {
     private var play: PlayStoreFeatures? = null
     private var dailyPlanRequest by mutableLongStateOf(0L)
     private var storyLinkRequest by mutableStateOf<StoryLinkRequest?>(null)
+    private var contentLoaded by mutableStateOf(false)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         dailyPlanRequest=savedInstanceState?.getLong("daily_plan_request")?:0L
@@ -40,7 +41,7 @@ class MainActivity : ComponentActivity() {
         // A recreated activity gets its original intent again; the shared link was already opened then.
         if(savedInstanceState==null) acceptStoryLink(intent) else storyLinkRequest=StoryLinkRequest.restore(savedInstanceState)
         // The bundled catalog parses in the background while the brand intro is visible.
-        lifecycleScope.launch { LearningContent.load(applicationContext) }
+        lifecycleScope.launch { LearningContent.load(applicationContext); contentLoaded = true }
         // The reader reads its appearance during its first composition; load that file in the background now.
         lifecycleScope.launch { com.yurken.englishtales.ui.ReadingPreferencesStore.warm(applicationContext) }
         enableEdgeToEdge()
@@ -50,7 +51,7 @@ class MainActivity : ComponentActivity() {
             CompositionLocalProvider(LocalCompletionAds provides ads,LocalPlayStoreFeatures provides play) {EnglishTalesTheme {
                 Box(Modifier.fillMaxSize()) {
                     YurkenBrandIntro {
-                        if(LearningContent.ready) TalesApp(dailyPlanRequest=dailyPlanRequest,storyLinkRequest=storyLinkRequest,onStoryLinkHandled={if(storyLinkRequest==it) storyLinkRequest=null})
+                        if(contentLoaded) TalesApp(dailyPlanRequest=dailyPlanRequest,storyLinkRequest=storyLinkRequest,onStoryLinkHandled={if(storyLinkRequest==it) storyLinkRequest=null})
                         else Box(Modifier.fillMaxSize().background(Color.Black))
                     }
                     if(play.updateReady) UpdateReadyBar(onRestart=play::completeUpdate,modifier=Modifier.align(Alignment.BottomCenter))

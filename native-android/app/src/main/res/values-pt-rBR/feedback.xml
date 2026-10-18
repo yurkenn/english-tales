@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="alert_dismiss">Ignorar alerta</string>
+    <string name="alert_word_saved">“%1$s” adicionado às suas palavras</string>
+    <string name="alert_word_removed">“%1$s” removido de suas palavras</string>
+    <string name="alert_favorite_added">Adicionado aos seus favoritos</string>
+    <string name="alert_favorite_removed">Removido dos seus favoritos</string>
+    <string name="alert_settings_saved">Suas configurações foram salvas</string>
+    <string name="alert_daily_goal">Você atingiu sua meta diária. Ótimo trabalho!</string>
+    <string name="alert_streak">Sequência de estudo (dias): %1$d. Volte amanhã para continuar.</string>
+    <string name="alert_reminder_on">Lembrete definido para %1$s todos os dias</string>
+    <string name="alert_reminder_off">Lembrete desativado</string>
+    <string name="alert_reminder_denied">O lembrete não funciona sem permissão de notificação</string>
+    <string name="alert_write_recovered">Seus registros pendentes foram salvos</string>
+    <string name="alert_link_failed">Não foi possível abrir o link</string>
+    <string name="alert_quiz_perfect">Tudo correto! Você entendeu muito bem a história.</string>
+    <string name="feedback_correct_title">Correto!</string>
+    <string name="feedback_wrong_title">Quase!</string>
+    <string name="weekly_today">Hoje</string>
+</resources>

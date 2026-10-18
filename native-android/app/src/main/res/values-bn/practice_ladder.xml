@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ladder_mode">স্মার্ট দোহরানো</string>
+    <string name="ladder_subtitle">নতুন শব্দ চিনুন, আপনি যা শিখেছেন তা মনে করুন</string>
+</resources>

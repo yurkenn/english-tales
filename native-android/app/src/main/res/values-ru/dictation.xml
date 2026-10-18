@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="dictation_mode">Слушай и пиши</string>
+    <string name="dictation_subtitle">Напишите предложение рассказа так, как вы его слышите.</string>
+    <string name="dictation_instruction">Напишите предложение, которое вы слышите</string>
+    <string name="dictation_field">Предложение</string>
+    <string name="dictation_play">Послушайте предложение</string>
+    <string name="dictation_correct">Правильный! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="one">Количество отличающихся слов: %1$d. Правильное предложение: %2$s</item>
+        <item quantity="few">Количество отличающихся слов: %1$d. Правильное предложение: %2$s</item>
+        <item quantity="many">Количество отличающихся слов: %1$d. Правильное предложение: %2$s</item>
+        <item quantity="other">Количество отличающихся слов: %1$d. Правильное предложение: %2$s</item>
+    </plurals>
+</resources>

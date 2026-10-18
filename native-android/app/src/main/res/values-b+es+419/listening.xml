@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_mode">Escucha y elige el significado.</string>
+    <string name="listen_subtitle">Escuche la palabra en inglés y encuentre el significado correcto.</string>
+    <string name="listen_preparing">Preparando audio…</string>
+    <string name="listen_unavailable">Este dispositivo no tiene voz en inglés. Puede descargar datos de voz en inglés en Configuración → Accesibilidad → Salida de texto a voz.</string>
+    <string name="listen_instruction">Escuche y elija el significado correcto.</string>
+    <string name="listen_progress">Palabra %1$d / %2$d</string>
+    <string name="listen_play">escucha la palabra</string>
+    <string name="listen_replay">Escucha de nuevo</string>
+    <string name="listen_stop">Detener audio</string>
+    <string name="listen_check">Controlar</string>
+    <string name="listen_correct">¡Correcto! La palabra que escuchaste: %1$s</string>
+    <string name="listen_incorrect">La palabra que escuchaste: %1$s (%2$s)</string>
+    <string name="listen_next">siguiente palabra</string>
+    <string name="listen_finish">Ver resultado</string>
+    <string name="listen_exit">dejar la práctica</string>
+</resources>

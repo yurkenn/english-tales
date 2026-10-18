@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="reminder_due_words">
+        <item quantity="other">Số từ đã đến lúc ôn tập: %1$d. Chỉ cần vài phút.</item>
+    </plurals>
+    <string name="weekly_reading_summary">Tuần này: ~%1$d từ đã đọc · Số từ đã biết: %2$d</string>
+</resources>

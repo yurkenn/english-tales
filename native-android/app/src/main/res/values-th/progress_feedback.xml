@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="reminder_due_words">
+        <item quantity="other">คำศัพท์ที่ถึงเวลาทบทวน: %1$d คำ ใช้เวลาเพียงไม่กี่นาที</item>
+    </plurals>
+    <string name="weekly_reading_summary">สัปดาห์นี้อ่านประมาณ %1$d คำ · คำศัพท์ที่รู้แล้ว: %2$d คำ</string>
+</resources>

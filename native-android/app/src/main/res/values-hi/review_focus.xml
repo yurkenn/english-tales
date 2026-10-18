@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">अपने %1$d ट्रिकी शब्दों का अभ्यास करें</string>
+    <string name="weak_words_summary">पिछले 30 दिनों में आपके द्वारा गलत उत्तर दिए गए शब्द पहले आते हैं।</string>
+    <string name="weak_words_count">मुश्किल लगने वाले शब्द: %1$d। दोहराते समय ये पहले आएँगे।</string>
+</resources>

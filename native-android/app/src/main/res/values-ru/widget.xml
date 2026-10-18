@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">Ежедневное чтение</string>
+    <string name="widget_description">Показывает дни занятий подряд, цель на сегодня и слова для повторения.</string>
+    <string name="widget_streak">Дней подряд: %1$d</string>
+    <string name="widget_goal">Цель на сегодня: %1$d/%2$d</string>
+    <string name="widget_goal_done">Цель на сегодня достигнута ✓</string>
+    <string name="widget_due">Слов для повторения: %1$d</string>
+    <string name="widget_open">Открыть ежедневный план</string>
+    <string name="widget_empty">Сегодняшняя история ждет вас.</string>
+</resources>

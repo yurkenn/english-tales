@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">اختبار المستوى السريع</string>
+    <string name="placement_entry">اكتشف مستواي من خلال اختبار سريع</string>
+    <string name="placement_intro">9 أسئلة · حوالي 2-3 دقائق</string>
+    <string name="placement_explanation">ستقرأ جملًا إنجليزية قصيرة وتختار الإجابات. يمكنك تخطي الأسئلة التي لا تعرفها. ليس هناك حد زمني.</string>
+    <string name="placement_scope">والنتيجة هي اقتراح بداية لقصص A1 – B1. إنها ليست نتيجة رسمية لإتقان اللغة. لا يتم إرسال إجاباتك من هذا الجهاز.</string>
+    <string name="placement_start">ابدأ الاختبار</string>
+    <string name="placement_manual">سأختار مستواي بنفسي</string>
+    <string name="placement_progress">سؤال ⁦%1$d / %2$d⁩</string>
+    <string name="placement_complete_sentence">أكمل الجملة.</string>
+    <string name="placement_read_question">اقرأ النص وأجب عن السؤال.</string>
+    <string name="placement_unknown">لا أعرف</string>
+    <string name="placement_next">السؤال التالي</string>
+    <string name="placement_finish">انظر اقتراحي</string>
+    <string name="placement_result">مستوى البداية المقترح: %1$s</string>
+    <string name="placement_result_description">يمكنك البدء بقصص على هذا المستوى. إذا شعرت أنها سهلة للغاية أو صعبة للغاية، فيمكنك تغيير مستواك في الإعدادات.</string>
+    <string name="placement_score">أسئلة %1$s: ⁦%2$d / 3⁩ صحيحة</string>
+    <string name="placement_use">المتابعة بالمستوى %1$s</string>
+    <string name="placement_settings_hint">بعد اختيار الاقتراح، احفظ تغييراتك في الإعدادات لتحديث مستواك.</string>
+    <string name="placement_cancel_title">ترك الاختبار؟</string>
+    <string name="placement_cancel_message">سيتم حذف الإجابات من هذه المحاولة. لن يتغير المستوى الذي اخترته.</string>
+    <string name="placement_cancel_confirm">ترك الاختبار</string>
+    <string name="placement_cancel_keep">العودة إلى الاختبار</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d mnt</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="other">Perkiraan waktu baca dalam menit: %1$d</item>
+    </plurals>
+    <string name="length_all">Berapa pun panjangnya</string>
+    <string name="length_short">Pendek · ≤ 2 menit</string>
+    <string name="length_medium">Sedang · 3–5 menit</string>
+    <string name="length_long">Panjang · 6+ mnt</string>
+</resources>

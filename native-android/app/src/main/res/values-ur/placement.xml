@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">فوری سطح کا ٹیسٹ</string>
+    <string name="placement_entry">فوری ٹیسٹ کے ساتھ میری سطح تلاش کریں۔</string>
+    <string name="placement_intro">9 سوالات · تقریباً 2-3 منٹ</string>
+    <string name="placement_explanation">آپ انگریزی کے مختصر جملے پڑھیں گے اور جوابات کا انتخاب کریں گے۔ آپ ان سوالات کو چھوڑ سکتے ہیں جو آپ نہیں جانتے ہیں۔ کوئی وقت کی حد نہیں ہے.</string>
+    <string name="placement_scope">نتیجہ A1–B1 کہانیوں کے لیے ایک ابتدائی تجویز ہے۔ یہ سرکاری زبان کی مہارت کا نتیجہ نہیں ہے۔ آپ کے جوابات اس آلہ سے نہیں بھیجے گئے ہیں۔</string>
+    <string name="placement_start">ٹیسٹ شروع کریں۔</string>
+    <string name="placement_manual">میں اپنی سطح کا انتخاب خود کروں گا۔</string>
+    <string name="placement_progress">سوال ⁦%1$d / %2$d⁩</string>
+    <string name="placement_complete_sentence">جملہ مکمل کریں۔</string>
+    <string name="placement_read_question">متن پڑھیں اور سوال کا جواب دیں۔</string>
+    <string name="placement_unknown">میں نہیں جانتا</string>
+    <string name="placement_next">اگلا سوال</string>
+    <string name="placement_finish">میری تجویز دیکھیں</string>
+    <string name="placement_result">تجویز کردہ ابتدائی سطح: %1$s</string>
+    <string name="placement_result_description">آپ اس سطح پر کہانیوں کے ساتھ شروع کر سکتے ہیں۔ اگر وہ بہت آسان یا بہت مشکل محسوس کرتے ہیں، تو آپ ترتیبات میں اپنا لیول تبدیل کر سکتے ہیں۔</string>
+    <string name="placement_score">%1$s سوالات: ⁦%2$d / 3⁩ درست</string>
+    <string name="placement_use">%1$s کے ساتھ جاری رکھیں</string>
+    <string name="placement_settings_hint">تجویز کو منتخب کرنے کے بعد، اپنی سطح کو اپ ڈیٹ کرنے کے لیے ترتیبات میں اپنی تبدیلیاں محفوظ کریں۔</string>
+    <string name="placement_cancel_title">ٹیسٹ چھوڑ دیں؟</string>
+    <string name="placement_cancel_message">اس کوشش کے جوابات حذف کر دیے جائیں گے۔ آپ کی منتخب کردہ سطح تبدیل نہیں ہوگی۔</string>
+    <string name="placement_cancel_confirm">ٹیسٹ چھوڑ دو</string>
+    <string name="placement_cancel_keep">ٹیسٹ پر واپس جائیں۔</string>
+</resources>

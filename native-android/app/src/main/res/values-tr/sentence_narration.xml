@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <string name="listen_from_sentence">Bu cümleden itibaren dinle</string>
+    <string name="listen_from_sentence_hint">Bir cümleye basılı tutarsan sayfa o cümleden okunur; okunan cümle vurgulanır.</string>
+</resources>

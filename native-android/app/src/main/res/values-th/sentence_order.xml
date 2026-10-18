@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="order_mode">สร้างประโยค</string>
+    <string name="order_subtitle">เรียงประโยคเรื่องให้ถูกต้องตามลำดับ</string>
+    <string name="order_instruction">แตะคำเพื่อสร้างประโยค</string>
+    <string name="order_hint">ความหมาย: %1$s</string>
+    <string name="order_answer_empty">เลือกคำตามลำดับ</string>
+    <string name="order_remove">ลบ %1$s ออกจากประโยค</string>
+    <string name="order_correct">ถูกต้อง! %1$s</string>
+    <string name="order_incorrect">ถูกต้อง: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

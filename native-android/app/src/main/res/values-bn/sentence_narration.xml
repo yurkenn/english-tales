@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_from_sentence">এই বাক্য থেকে শুনুন</string>
+    <string name="listen_from_sentence_hint">সেখান থেকে পৃষ্ঠাটি পড়তে একটি বাক্য টিপুন এবং ধরে রাখুন; পড়া হচ্ছে বাক্য হাইলাইট করা হয়.</string>
+</resources>

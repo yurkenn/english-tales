@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ladder_mode">स्मार्ट दोहराव</string>
+    <string name="ladder_subtitle">नए शब्दों को पहचानें, जो सीखा उसे याद करें</string>
+</resources>

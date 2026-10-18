@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="order_mode">वाक्य बनाइये</string>
+    <string name="order_subtitle">कहानी के वाक्य को सही क्रम में रखें</string>
+    <string name="order_instruction">वाक्य बनाने के लिए शब्दों को टैप करें</string>
+    <string name="order_hint">अर्थ: %1$s</string>
+    <string name="order_answer_empty">शब्दों को क्रम से चुनें</string>
+    <string name="order_remove">वाक्य से %1$s हटायें</string>
+    <string name="order_correct">सही! %1$s</string>
+    <string name="order_incorrect">सही: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

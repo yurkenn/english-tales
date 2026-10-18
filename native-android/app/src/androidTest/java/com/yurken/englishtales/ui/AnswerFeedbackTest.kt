@@ -8,8 +8,12 @@ import com.yurken.englishtales.R
 import org.junit.Rule
 import org.junit.Test
 
+@OptIn(androidx.compose.ui.test.ExperimentalTestApi::class)
 class AnswerFeedbackTest {
-    @get:Rule val compose = createComposeRule()
+    // CI disables system animations; the regression specifically needs the intermediate exit frames.
+    @get:Rule val compose = createComposeRule(effectContext = object : androidx.compose.ui.MotionDurationScale {
+        override val scaleFactor = 1f
+    })
 
     @Test fun correctVerdictStaysCorrectWhileExiting() = checkExit(correct = true)
 

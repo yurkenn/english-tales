@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_mode">Nghe và chọn nghĩa</string>
+    <string name="listen_subtitle">Nghe từ tiếng Anh và tìm nghĩa đúng.</string>
+    <string name="listen_preparing">Đang chuẩn bị âm thanh…</string>
+    <string name="listen_unavailable">Thiết bị này không có giọng nói tiếng Anh. Bạn có thể tải xuống dữ liệu giọng nói tiếng Anh trong Cài đặt → Hỗ trợ → Đầu ra chuyển văn bản thành giọng nói.</string>
+    <string name="listen_instruction">Nghe và chọn nghĩa đúng.</string>
+    <string name="listen_progress">Từ %1$d / %2$d</string>
+    <string name="listen_play">Hãy nghe lời</string>
+    <string name="listen_replay">Nghe lại</string>
+    <string name="listen_stop">Dừng âm thanh</string>
+    <string name="listen_check">Kiểm tra</string>
+    <string name="listen_correct">Chính xác! Từ bạn đã nghe: %1$s</string>
+    <string name="listen_incorrect">Từ bạn đã nghe: %1$s (%2$s)</string>
+    <string name="listen_next">Từ tiếp theo</string>
+    <string name="listen_finish">Xem kết quả</string>
+    <string name="listen_exit">Nghỉ tập</string>
+</resources>

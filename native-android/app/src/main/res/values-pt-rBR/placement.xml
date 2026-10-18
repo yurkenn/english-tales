@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">Teste de nível rápido</string>
+    <string name="placement_entry">Encontre meu nível com um teste rápido</string>
+    <string name="placement_intro">9 perguntas · Cerca de 2–3 minutos</string>
+    <string name="placement_explanation">Você lerá frases curtas em inglês e escolherá as respostas. Você pode pular perguntas que não conhece; não há limite de tempo.</string>
+    <string name="placement_scope">O resultado é uma sugestão inicial para histórias A1–B1. Não é um resultado oficial de proficiência no idioma. Suas respostas não são enviadas deste dispositivo.</string>
+    <string name="placement_start">Comece o teste</string>
+    <string name="placement_manual">Eu mesmo escolherei meu nível</string>
+    <string name="placement_progress">Pergunta %1$d / %2$d</string>
+    <string name="placement_complete_sentence">Complete a frase.</string>
+    <string name="placement_read_question">Leia o texto e responda à questão.</string>
+    <string name="placement_unknown">Não sei</string>
+    <string name="placement_next">Próxima pergunta</string>
+    <string name="placement_finish">Veja minha sugestão</string>
+    <string name="placement_result">Nível inicial sugerido: %1$s</string>
+    <string name="placement_result_description">Você pode começar com histórias neste nível. Se parecerem muito fáceis ou muito difíceis, você pode alterar seu nível em Configurações.</string>
+    <string name="placement_score">Perguntas %1$s: %2$d / 3 correto</string>
+    <string name="placement_use">Continuar com %1$s</string>
+    <string name="placement_settings_hint">Após escolher a sugestão, salve as alterações nas Configurações para atualizar seu nível.</string>
+    <string name="placement_cancel_title">Sair do teste?</string>
+    <string name="placement_cancel_message">As respostas desta tentativa serão excluídas. O nível selecionado não mudará.</string>
+    <string name="placement_cancel_confirm">Sair do teste</string>
+    <string name="placement_cancel_keep">Voltar ao teste</string>
+</resources>

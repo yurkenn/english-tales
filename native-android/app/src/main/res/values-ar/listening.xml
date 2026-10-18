@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_mode">استمع واختر المعنى</string>
+    <string name="listen_subtitle">الاستماع إلى الكلمة الإنجليزية والعثور على المعنى الصحيح.</string>
+    <string name="listen_preparing">جارٍ تحضير الصوت…</string>
+    <string name="listen_unavailable">هذا الجهاز ليس لديه صوت باللغة الإنجليزية. يمكنك تنزيل البيانات الصوتية باللغة الإنجليزية من خلال الإعدادات ← إمكانية الوصول ← إخراج تحويل النص إلى كلام.</string>
+    <string name="listen_instruction">استمع واختر المعنى الصحيح.</string>
+    <string name="listen_progress">كلمة ⁦%1$d / %2$d⁩</string>
+    <string name="listen_play">استمع للكلمة</string>
+    <string name="listen_replay">استمع مرة أخرى</string>
+    <string name="listen_stop">إيقاف الصوت</string>
+    <string name="listen_check">يفحص</string>
+    <string name="listen_correct">صحيح! الكلمة التي سمعتها: %1$s</string>
+    <string name="listen_incorrect">الكلمة التي سمعتها: %1$s (%2$s)</string>
+    <string name="listen_next">الكلمة التالية</string>
+    <string name="listen_finish">انظر النتيجة</string>
+    <string name="listen_exit">ترك الممارسة</string>
+</resources>

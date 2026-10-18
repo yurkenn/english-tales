@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="dictation_mode">सुनो और लिखो</string>
+    <string name="dictation_subtitle">कहानी का वाक्य सुनते ही उसे लिखें</string>
+    <string name="dictation_instruction">जो वाक्य आप सुनते हैं उसे लिखें</string>
+    <string name="dictation_field">वाक्य</string>
+    <string name="dictation_play">वाक्य सुनो</string>
+    <string name="dictation_correct">सही! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="one">अलग शब्दों की संख्या: %1$d। सही वाक्य: %2$s</item>
+        <item quantity="other">अलग शब्दों की संख्या: %1$d। सही वाक्य: %2$s</item>
+    </plurals>
+</resources>

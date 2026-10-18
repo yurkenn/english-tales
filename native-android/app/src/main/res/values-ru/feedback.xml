@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="alert_dismiss">Скрыть оповещение</string>
+    <string name="alert_word_saved">К вашим словам добавлено «%1$s»</string>
+    <string name="alert_word_removed">«%1$s» удалено из ваших слов</string>
+    <string name="alert_favorite_added">Добавлено в избранное</string>
+    <string name="alert_favorite_removed">Удалено из избранного</string>
+    <string name="alert_settings_saved">Ваши настройки сохранены</string>
+    <string name="alert_daily_goal">Вы достигли своей ежедневной цели. Отличная работа!</string>
+    <string name="alert_streak">Дней занятий подряд: %1$d. Возвращайтесь завтра, чтобы продолжить.</string>
+    <string name="alert_reminder_on">Напоминание для %1$s каждый день</string>
+    <string name="alert_reminder_off">Напоминание отключено</string>
+    <string name="alert_reminder_denied">Напоминание не может работать без разрешения на уведомление.</string>
+    <string name="alert_write_recovered">Ваши ожидающие записи сохранены.</string>
+    <string name="alert_link_failed">Не удалось открыть ссылку</string>
+    <string name="alert_quiz_perfect">Все правильно! Вы очень хорошо поняли эту историю.</string>
+    <string name="feedback_correct_title">Верно!</string>
+    <string name="feedback_wrong_title">Почти!</string>
+    <string name="weekly_today">Сегодня</string>
+</resources>

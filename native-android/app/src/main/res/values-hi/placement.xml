@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">त्वरित स्तर का परीक्षण</string>
+    <string name="placement_entry">एक त्वरित परीक्षण के साथ मेरा स्तर ज्ञात करें</string>
+    <string name="placement_intro">9 प्रश्न · लगभग 2-3 मिनट</string>
+    <string name="placement_explanation">आप छोटे अंग्रेजी वाक्य पढ़ेंगे और उत्तर चुनेंगे। आप उन प्रश्नों को छोड़ सकते हैं जिन्हें आप नहीं जानते हैं; कोई सीमा नहीं है।</string>
+    <string name="placement_scope">परिणाम A1–B1 कहानियों के लिए एक प्रारंभिक सुझाव है। यह आधिकारिक भाषा दक्षता परिणाम नहीं है। आपके उत्तर इस उपकरण से नहीं भेजे जाते हैं.</string>
+    <string name="placement_start">परीक्षण प्रारंभ करें</string>
+    <string name="placement_manual">मैं अपना स्तर स्वयं चुनूंगा</string>
+    <string name="placement_progress">प्रश्न %1$d / %2$d</string>
+    <string name="placement_complete_sentence">वाक्य पूरा करो।</string>
+    <string name="placement_read_question">पाठ पढ़ें और प्रश्न का उत्तर दें।</string>
+    <string name="placement_unknown">मुझें नहीं पता</string>
+    <string name="placement_next">अगला सवाल</string>
+    <string name="placement_finish">मेरा सुझाव देखें</string>
+    <string name="placement_result">सुझाया गया प्रारंभिक स्तर: %1$s</string>
+    <string name="placement_result_description">आप इस स्तर की कहानियों से शुरुआत कर सकते हैं। यदि वे बहुत आसान या बहुत कठिन लगते हैं, तो आप सेटिंग्स में अपना स्तर बदल सकते हैं।</string>
+    <string name="placement_score">%1$s प्रश्न: %2$d / 3 सही</string>
+    <string name="placement_use">%1$s के साथ जारी रखें</string>
+    <string name="placement_settings_hint">सुझाव चुनने के बाद, अपने स्तर को अपडेट करने के लिए सेटिंग्स में अपने परिवर्तन सहेजें।</string>
+    <string name="placement_cancel_title">परीक्षा छोड़ें?</string>
+    <string name="placement_cancel_message">इस प्रयास के उत्तर हटा दिए जाएंगे. आपका चयनित स्तर नहीं बदलेगा.</string>
+    <string name="placement_cancel_confirm">परीक्षण छोड़ो</string>
+    <string name="placement_cancel_keep">परीक्षण पर वापस जाएँ</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="gap_mode">املأ الفراغ في الجملة</string>
+    <string name="gap_subtitle">العثور على الكلمة الصحيحة في جملة القصة.</string>
+    <string name="gap_preparing">تحضير الجمل القصصية…</string>
+    <string name="gap_unavailable">لا توجد جمل مناسبة لهذه الممارسة. حاول مرة أخرى باستخدام القصص التي قمت بتنزيلها.</string>
+    <string name="gap_instruction">املأ الفجوة باستخدام التلميح.</string>
+    <string name="gap_hint">تلميح: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">جملة من قصة · %1$s</string>
+    <string name="gap_progress">الجملة ⁦%1$d / %2$d⁩</string>
+    <string name="gap_check">يفحص</string>
+    <string name="gap_correct">صحيح! لقد أكملت الجملة.</string>
+    <string name="gap_incorrect">دعونا نتعلم ذلك معا. الإجابة الصحيحة: %1$s</string>
+    <string name="gap_next">الجملة التالية</string>
+    <string name="gap_finish">انظر النتيجة</string>
+    <string name="gap_exit">ترك الممارسة</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">Palavras que você já sabe</string>
+    <string name="known_words_detail">Lidas, mas ainda não aprendidas: %1$d · Em revisão: %2$d</string>
+    <string name="known_words_explanation">Conta as palavras que você marcou como “Já sei” na revisão e as que leu sem consultar o significado em pelo menos duas histórias concluídas.</string>
+</resources>

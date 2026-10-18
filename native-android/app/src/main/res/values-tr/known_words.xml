@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <string name="known_words_title">Bilinen kelimeler</string>
+    <string name="known_words_detail">%1$d okunup henüz bilinmeyen · %2$d tekrar ediliyor</string>
+    <string name="known_words_explanation">Tekrarda “biliyorum” aşamasına gelen kelimeler ve en az iki bitirdiğin hikâyede okuyup hiç bakmadığın kelimeler sayılır.</string>
+</resources>

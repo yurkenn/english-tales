@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">đọc hàng ngày</string>
+    <string name="widget_description">Hiển thị chuỗi của bạn, mục tiêu ngày hôm nay và các từ đang chờ xem xét.</string>
+    <string name="widget_streak">Vệt: %1$d</string>
+    <string name="widget_goal">Mục tiêu hôm nay: %1$d/%2$d</string>
+    <string name="widget_goal_done">Mục tiêu hôm nay đã hoàn thành ✓</string>
+    <string name="widget_due">Từ cần đánh giá: %1$d</string>
+    <string name="widget_open">Mở kế hoạch hàng ngày</string>
+    <string name="widget_empty">Câu chuyện hôm nay đang chờ đợi bạn.</string>
+</resources>

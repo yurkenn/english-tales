@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="content_untranslated_description">Lee este cuento en inglés y practica su vocabulario.</string>
+    <string name="app_language_title">Idioma de la aplicación</string>
+    <string name="app_language_description">Elija la interfaz y el idioma de traducción de la historia. La aplicación se reinicia cuando cambia el idioma; su progreso guardado se mantiene.</string>
+    <string name="app_language_system">Idioma del sistema</string>
+    <string name="app_language_current">Idioma de la aplicación: %1$s</string>
+    <string name="henuz_indirilen_hikaye_yok">Aún no hay historias descargadas.</string>
+</resources>

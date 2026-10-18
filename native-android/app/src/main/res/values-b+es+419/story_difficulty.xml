@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="story_new_words">
+        <item quantity="one">Palabras nuevas en esta historia: ~%1$d</item>
+        <item quantity="many">Palabras nuevas en esta historia: ~%1$d</item>
+        <item quantity="other">Palabras nuevas en esta historia: ~%1$d</item>
+    </plurals>
+</resources>

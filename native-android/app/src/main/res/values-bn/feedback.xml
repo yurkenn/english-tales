@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="alert_dismiss">সতর্কতা খারিজ করুন</string>
+    <string name="alert_word_saved">আপনার কথায় \"%1$s\" যোগ হয়েছে</string>
+    <string name="alert_word_removed">আপনার শব্দ থেকে \"%1$s\" মুছে ফেলা হয়েছে</string>
+    <string name="alert_favorite_added">আপনার পছন্দসই যোগ করা হয়েছে</string>
+    <string name="alert_favorite_removed">আপনার প্রিয় থেকে সরানো হয়েছে</string>
+    <string name="alert_settings_saved">আপনার সেটিংস সংরক্ষণ করা হয়েছে</string>
+    <string name="alert_daily_goal">আপনি আপনার দৈনন্দিন লক্ষ্যে পৌঁছেছেন। দারুণ কাজ!</string>
+    <string name="alert_streak">টানা %1$d দিন শিখেছ! চালিয়ে যেতে আগামীকাল আবার এসো।</string>
+    <string name="alert_reminder_on">%1$s প্রতিদিনের জন্য অনুস্মারক সেট করা হয়েছে</string>
+    <string name="alert_reminder_off">অনুস্মারক বন্ধ করা হয়েছে৷</string>
+    <string name="alert_reminder_denied">অনুস্মারক বিজ্ঞপ্তি অনুমতি ছাড়া কাজ করতে পারে না</string>
+    <string name="alert_write_recovered">আপনার মুলতুবি রেকর্ড সংরক্ষণ করা হয়েছে</string>
+    <string name="alert_link_failed">লিঙ্কটি খুলতে পারিনি</string>
+    <string name="alert_quiz_perfect">সব ঠিক! আপনি গল্পটি সত্যিই ভাল বুঝতে পেরেছেন।</string>
+    <string name="feedback_correct_title">সঠিক!</string>
+    <string name="feedback_wrong_title">আবার চেষ্টা করো!</string>
+    <string name="weekly_today">আজ</string>
+</resources>

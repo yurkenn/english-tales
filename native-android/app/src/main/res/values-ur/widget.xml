@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">روزانہ پڑھنا</string>
+    <string name="widget_description">آپ کا سلسلہ، آج کا مقصد اور نظرثانی کے منتظر الفاظ دکھاتا ہے۔</string>
+    <string name="widget_streak">مسلسل دن: %1$d</string>
+    <string name="widget_goal">آج کا مقصد: ⁦%1$d/%2$d⁩</string>
+    <string name="widget_goal_done">آج کا مقصد ہو گیا ✓</string>
+    <string name="widget_due">دہرانے کے لیے الفاظ: %1$d</string>
+    <string name="widget_open">روزانہ منصوبہ کھولیں۔</string>
+    <string name="widget_empty">آج کی کہانی آپ کی منتظر ہے۔</string>
+</resources>

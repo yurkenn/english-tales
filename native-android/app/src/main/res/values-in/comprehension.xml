@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="quiz_title">Apakah kamu mengerti?</string>
+    <string name="quiz_intro">Beberapa pertanyaan singkat tentang cerita tersebut. Itu tidak mempengaruhi poin Anda.</string>
+    <string name="quiz_progress">Pertanyaan %1$d / %2$d</string>
+    <string name="quiz_kind_main">Ide utama</string>
+    <string name="quiz_kind_detail">Detil</string>
+    <string name="quiz_kind_inference">Kesimpulan</string>
+    <string name="quiz_check">Memeriksa</string>
+    <string name="quiz_correct">Benar!</string>
+    <string name="quiz_incorrect">Jawaban yang benar: %1$s</string>
+    <string name="quiz_next">Pertanyaan berikutnya</string>
+    <string name="quiz_finish">Menyelesaikan</string>
+    <string name="quiz_result">Hasil: %1$d/%2$d</string>
+    <string name="quiz_best">Hasil terbaik Anda: %1$d/%2$d</string>
+    <string name="quiz_retry">Coba lagi</string>
+</resources>

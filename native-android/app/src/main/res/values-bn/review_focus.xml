@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">আপনার %1$d চতুর শব্দগুলি অনুশীলন করুন</string>
+    <string name="weak_words_summary">আপনি গত 30 দিনে ভুল উত্তর দিয়েছেন প্রথম শব্দ.</string>
+    <string name="weak_words_count">কঠিন লাগছে এমন শব্দ: %1$d। দোহরানোর সময় এগুলো আগে আসবে।</string>
+</resources>
