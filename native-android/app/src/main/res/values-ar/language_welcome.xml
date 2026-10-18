@@ -1,0 +1,8 @@
+<resources>
+    <string name="first_language_title">بأي لغة نبدأ؟</string>
+    <string name="first_language_description">اختر لغة القوائم وترجمات القصص. ستبقى القصص باللغة الإنجليزية.</string>
+    <string name="first_language_english_note">ستكون القوائم باللغة الإنجليزية. ترجمات القصص متاحة حاليًا باللغة التركية.</string>
+    <string name="first_language_continue">المتابعة بلغة %1$s</string>
+    <string name="first_language_later">يمكنك تغيير اللغة لاحقًا في الإعدادات.</string>
+    <string name="first_language_suggested">لغة جهازك</string>
+</resources>

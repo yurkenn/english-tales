@@ -1,0 +1,8 @@
+<resources>
+    <string name="first_language_title">Mau mulai dalam bahasa apa?</string>
+    <string name="first_language_description">Pilih bahasa menu dan terjemahan cerita. Cerita tetap dalam bahasa Inggris.</string>
+    <string name="first_language_english_note">Menu akan menggunakan bahasa Inggris. Terjemahan cerita saat ini tersedia dalam bahasa Turki.</string>
+    <string name="first_language_continue">Lanjutkan dalam %1$s</string>
+    <string name="first_language_later">Kamu bisa mengubahnya nanti di Pengaturan.</string>
+    <string name="first_language_suggested">Bahasa perangkatmu</string>
+</resources>

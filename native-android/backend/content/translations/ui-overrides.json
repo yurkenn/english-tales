@@ -22,7 +22,13 @@
     "weak_words_count": "Palabras que te cuestan: %1$d. Aparecerán primero en los repasos.",
     "kelimenin_tekrar_zamani_geldi": "Palabras listas para repasar: %1$s",
     "kelimenin_tekrar_zamani_geldi_2": "Palabras listas para repasar: %1$s.",
-    "weekly_reading_summary": "Esta semana: ~%1$d palabras leídas · Palabras que ya sabes: %2$d"
+    "weekly_reading_summary": "Esta semana: ~%1$d palabras leídas · Palabras que ya sabes: %2$d",
+    "first_language_title": "¿En qué idioma empezamos?",
+    "first_language_description": "Elige el idioma de los menús y las traducciones. Las historias seguirán en inglés.",
+    "first_language_english_note": "Los menús estarán en inglés. Por ahora, las traducciones de las historias están en turco.",
+    "first_language_continue": "Continuar en %1$s",
+    "first_language_later": "Puedes cambiarlo después en Ajustes.",
+    "first_language_suggested": "Idioma de tu dispositivo"
   },
   "pt-BR": {
     "feedback_correct_title": "Correto!",
@@ -47,7 +53,13 @@
     "weak_words_count": "Palavras em que você tem dificuldade: %1$d. Elas aparecem primeiro nas revisões.",
     "kelimenin_tekrar_zamani_geldi": "Palavras prontas para revisar: %1$s",
     "kelimenin_tekrar_zamani_geldi_2": "Palavras prontas para revisar: %1$s.",
-    "weekly_reading_summary": "Nesta semana: ~%1$d palavras lidas · Palavras que você já sabe: %2$d"
+    "weekly_reading_summary": "Nesta semana: ~%1$d palavras lidas · Palavras que você já sabe: %2$d",
+    "first_language_title": "Em qual idioma vamos começar?",
+    "first_language_description": "Escolha o idioma dos menus e das traduções. As histórias continuam em inglês.",
+    "first_language_english_note": "Os menus ficarão em inglês. Por enquanto, as traduções das histórias estão em turco.",
+    "first_language_continue": "Continuar em %1$s",
+    "first_language_later": "Você pode alterar isso depois em Configurações.",
+    "first_language_suggested": "Idioma do seu dispositivo"
   },
   "id": {
     "feedback_correct_title": "Benar!",
@@ -72,7 +84,13 @@
     "weak_words_count": "Kata yang masih sulit: %1$d. Kata-kata ini didahulukan saat mengulang.",
     "kelimenin_tekrar_zamani_geldi": "Kata yang siap diulang: %1$s",
     "kelimenin_tekrar_zamani_geldi_2": "Kata yang siap diulang: %1$s.",
-    "weekly_reading_summary": "Minggu ini: ~%1$d kata dibaca · Kata yang dikuasai: %2$d"
+    "weekly_reading_summary": "Minggu ini: ~%1$d kata dibaca · Kata yang dikuasai: %2$d",
+    "first_language_title": "Mau mulai dalam bahasa apa?",
+    "first_language_description": "Pilih bahasa menu dan terjemahan cerita. Cerita tetap dalam bahasa Inggris.",
+    "first_language_english_note": "Menu akan menggunakan bahasa Inggris. Terjemahan cerita saat ini tersedia dalam bahasa Turki.",
+    "first_language_continue": "Lanjutkan dalam %1$s",
+    "first_language_later": "Kamu bisa mengubahnya nanti di Pengaturan.",
+    "first_language_suggested": "Bahasa perangkatmu"
   },
   "ar": {
     "feedback_correct_title": "صحيح!",
@@ -108,7 +126,13 @@
     "widget_streak": "أيام متتالية: %1$d",
     "widget_description": "يعرض أيام التعلّم المتتالية وهدف اليوم والكلمات التي حان وقت مراجعتها.",
     "google_ile_devam_et": "المتابعة باستخدام Google",
-    "placement_use": "المتابعة بالمستوى %1$s"
+    "placement_use": "المتابعة بالمستوى %1$s",
+    "first_language_title": "بأي لغة نبدأ؟",
+    "first_language_description": "اختر لغة القوائم وترجمات القصص. ستبقى القصص باللغة الإنجليزية.",
+    "first_language_english_note": "ستكون القوائم باللغة الإنجليزية. ترجمات القصص متاحة حاليًا باللغة التركية.",
+    "first_language_continue": "المتابعة بلغة %1$s",
+    "first_language_later": "يمكنك تغيير اللغة لاحقًا في الإعدادات.",
+    "first_language_suggested": "لغة جهازك"
   },
   "vi": {
     "feedback_correct_title": "Chính xác!",
@@ -133,7 +157,13 @@
     "weak_words_count": "Số từ bạn còn gặp khó khăn: %1$d. Những từ này sẽ được ưu tiên khi ôn tập.",
     "kelimenin_tekrar_zamani_geldi": "Số từ đã đến lúc ôn tập: %1$s",
     "kelimenin_tekrar_zamani_geldi_2": "Số từ đã đến lúc ôn tập: %1$s.",
-    "weekly_reading_summary": "Tuần này: ~%1$d từ đã đọc · Số từ đã biết: %2$d"
+    "weekly_reading_summary": "Tuần này: ~%1$d từ đã đọc · Số từ đã biết: %2$d",
+    "first_language_title": "Bạn muốn bắt đầu bằng ngôn ngữ nào?",
+    "first_language_description": "Chọn ngôn ngữ cho menu và bản dịch. Các câu chuyện vẫn bằng tiếng Anh.",
+    "first_language_english_note": "Menu sẽ bằng tiếng Anh. Bản dịch câu chuyện hiện bằng tiếng Thổ Nhĩ Kỳ.",
+    "first_language_continue": "Tiếp tục bằng %1$s",
+    "first_language_later": "Bạn có thể đổi sau trong Cài đặt.",
+    "first_language_suggested": "Ngôn ngữ thiết bị của bạn"
   },
   "hi": {
     "feedback_correct_title": "सही!",
@@ -158,7 +188,13 @@
     "weak_words_count": "मुश्किल लगने वाले शब्द: %1$d। दोहराते समय ये पहले आएँगे।",
     "kelimenin_tekrar_zamani_geldi": "दोहराने के लिए तैयार शब्द: %1$s",
     "kelimenin_tekrar_zamani_geldi_2": "दोहराने के लिए तैयार शब्द: %1$s।",
-    "weekly_reading_summary": "इस सप्ताह पढ़े गए शब्द: लगभग %1$d · सीखे हुए शब्द: %2$d"
+    "weekly_reading_summary": "इस सप्ताह पढ़े गए शब्द: लगभग %1$d · सीखे हुए शब्द: %2$d",
+    "first_language_title": "किस भाषा में शुरू करें?",
+    "first_language_description": "मेन्यू और कहानियों के अनुवाद की भाषा चुनें। कहानियाँ अंग्रेज़ी में ही रहेंगी।",
+    "first_language_english_note": "मेन्यू अंग्रेज़ी में होंगे। कहानियों के अनुवाद अभी तुर्की में उपलब्ध हैं।",
+    "first_language_continue": "%1$s में जारी रखें",
+    "first_language_later": "आप बाद में सेटिंग में इसे बदल सकते हैं।",
+    "first_language_suggested": "आपके डिवाइस की भाषा"
   },
   "ru": {
     "feedback_correct_title": "Верно!",
@@ -190,7 +226,13 @@
     "widget_streak": "Дней подряд: %1$d",
     "widget_due": "Слов для повторения: %1$d",
     "widget_description": "Показывает дни занятий подряд, цель на сегодня и слова для повторения.",
-    "kisa_bir_okuma_veya_kelime": "Достигните дневной цели: прочитайте короткую историю или повторите слова."
+    "kisa_bir_okuma_veya_kelime": "Достигните дневной цели: прочитайте короткую историю или повторите слова.",
+    "first_language_title": "На каком языке начнём?",
+    "first_language_description": "Выберите язык меню и переводов. Сами истории останутся на английском.",
+    "first_language_english_note": "Меню будет на английском. Переводы историй пока доступны на турецком.",
+    "first_language_continue": "Продолжить на языке: %1$s",
+    "first_language_later": "Позже язык можно изменить в настройках.",
+    "first_language_suggested": "Язык вашего устройства"
   },
   "bn": {
     "feedback_correct_title": "সঠিক!",
@@ -215,7 +257,13 @@
     "weak_words_count": "কঠিন লাগছে এমন শব্দ: %1$d। দোহরানোর সময় এগুলো আগে আসবে।",
     "kelimenin_tekrar_zamani_geldi": "দোহরানোর সময় হয়েছে এমন শব্দ: %1$s",
     "kelimenin_tekrar_zamani_geldi_2": "দোহরানোর সময় হয়েছে এমন শব্দ: %1$s।",
-    "weekly_reading_summary": "এই সপ্তাহে পড়েছ: প্রায় %1$d শব্দ · শেখা শব্দ: %2$d"
+    "weekly_reading_summary": "এই সপ্তাহে পড়েছ: প্রায় %1$d শব্দ · শেখা শব্দ: %2$d",
+    "first_language_title": "কোন ভাষায় শুরু করবেন?",
+    "first_language_description": "মেনু ও গল্পের অনুবাদের ভাষা বেছে নিন। গল্পগুলো ইংরেজিতেই থাকবে।",
+    "first_language_english_note": "মেনু ইংরেজিতে থাকবে। গল্পের অনুবাদ বর্তমানে তুর্কি ভাষায় পাওয়া যায়।",
+    "first_language_continue": "%1$s ভাষায় এগিয়ে যান",
+    "first_language_later": "পরে সেটিংস থেকে ভাষা বদলাতে পারবেন।",
+    "first_language_suggested": "আপনার ডিভাইসের ভাষা"
   },
   "ur": {
     "feedback_correct_title": "درست!",
@@ -247,7 +295,13 @@
     "weekly_reading_summary": "اس ہفتے پڑھے گئے الفاظ: تقریباً %1$d · سیکھے ہوئے الفاظ: %2$d",
     "su_an_gunluk_calisma_serin": "مسلسل سیکھنے کے دن: %1$s۔ کہانی یا مشق مکمل کرنے پر دن شمار ہوتا ہے۔ یہ سلسلہ برقرار رکھنے کے لیے ہر روز سیکھیں؛ صرف ایپ کھولنا کافی نہیں۔",
     "widget_streak": "مسلسل دن: %1$d",
-    "widget_due": "دہرانے کے لیے الفاظ: %1$d"
+    "widget_due": "دہرانے کے لیے الفاظ: %1$d",
+    "first_language_title": "کس زبان میں شروع کریں؟",
+    "first_language_description": "مینو اور کہانیوں کے ترجمے کی زبان چنیں۔ کہانیاں انگریزی میں ہی رہیں گی۔",
+    "first_language_english_note": "مینو انگریزی میں ہوں گے۔ کہانیوں کے ترجمے فی الحال ترکی میں دستیاب ہیں۔",
+    "first_language_continue": "%1$s میں جاری رکھیں",
+    "first_language_later": "آپ بعد میں ترتیبات سے زبان بدل سکتے ہیں۔",
+    "first_language_suggested": "آپ کے آلے کی زبان"
   },
   "th": {
     "feedback_correct_title": "ถูกต้อง!",
@@ -272,6 +326,12 @@
     "weak_words_count": "คำศัพท์ที่ยังยากสำหรับคุณ: %1$d คำ คำเหล่านี้จะมาก่อนในการทบทวน",
     "kelimenin_tekrar_zamani_geldi": "คำศัพท์ที่ถึงเวลาทบทวน: %1$s คำ",
     "kelimenin_tekrar_zamani_geldi_2": "คำศัพท์ที่ถึงเวลาทบทวน: %1$s คำ",
-    "weekly_reading_summary": "สัปดาห์นี้อ่านประมาณ %1$d คำ · คำศัพท์ที่รู้แล้ว: %2$d คำ"
+    "weekly_reading_summary": "สัปดาห์นี้อ่านประมาณ %1$d คำ · คำศัพท์ที่รู้แล้ว: %2$d คำ",
+    "first_language_title": "เริ่มต้นด้วยภาษาอะไรดี?",
+    "first_language_description": "เลือกภาษาของเมนูและคำแปล เรื่องราวจะยังคงเป็นภาษาอังกฤษ",
+    "first_language_english_note": "เมนูจะเป็นภาษาอังกฤษ ขณะนี้คำแปลเรื่องราวมีเฉพาะภาษาตุรกี",
+    "first_language_continue": "ดำเนินการต่อในภาษา %1$s",
+    "first_language_later": "คุณเปลี่ยนภาษาได้ภายหลังในการตั้งค่า",
+    "first_language_suggested": "ภาษาของอุปกรณ์คุณ"
   }
 }

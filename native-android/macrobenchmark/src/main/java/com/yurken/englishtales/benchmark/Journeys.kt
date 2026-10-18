@@ -45,7 +45,11 @@ private fun UiDevice.choose(text: String) {
 /** The guest action can start below the fold on a small English welcome screen. */
 internal fun UiDevice.requireReadyEntry(): androidx.test.uiautomator.UiObject2 {
     val selector=By.text(java.util.regex.Pattern.compile("Misafir olarak başla|Çalış|Start as guest|Practice"))
-    var entry=wait(Until.findObject(selector),5_000)
+    var entry=wait(Until.findObject(selector),1_000)
+    if(entry==null) {
+        wait(Until.findObject(By.res("language_continue")),5_000)?.click()
+        entry=wait(Until.findObject(selector),5_000)
+    }
     repeat(4) {
         if(entry==null) {
             swipe(displayWidth/2,displayHeight*3/4,displayWidth/2,displayHeight/3,20)

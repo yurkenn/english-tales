@@ -1,0 +1,8 @@
+<resources>
+    <string name="first_language_title">Bạn muốn bắt đầu bằng ngôn ngữ nào?</string>
+    <string name="first_language_description">Chọn ngôn ngữ cho menu và bản dịch. Các câu chuyện vẫn bằng tiếng Anh.</string>
+    <string name="first_language_english_note">Menu sẽ bằng tiếng Anh. Bản dịch câu chuyện hiện bằng tiếng Thổ Nhĩ Kỳ.</string>
+    <string name="first_language_continue">Tiếp tục bằng %1$s</string>
+    <string name="first_language_later">Bạn có thể đổi sau trong Cài đặt.</string>
+    <string name="first_language_suggested">Ngôn ngữ thiết bị của bạn</string>
+</resources>

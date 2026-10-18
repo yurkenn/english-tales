@@ -76,7 +76,7 @@ class MultilingualUiTest {
         compose.onNodeWithText(localized.getString(R.string.misafir_olarak_basla)).performScrollTo().assertIsDisplayed()
         screenshot("es-welcome")
         val selected = appLanguages.firstOrNull { it.first == AppLanguage.selection(localized) }?.second ?: localized.getString(R.string.app_language_system)
-        compose.onNodeWithText(localized.getString(R.string.app_language_current, selected)).performScrollTo().performClick()
+        compose.onNodeWithContentDescription(localized.getString(R.string.app_language_current, selected)).performScrollTo().performClick()
         compose.onNode(hasScrollToNodeAction()).performScrollToNode(hasText("اردو"))
         compose.onNodeWithText("اردو").assertIsDisplayed()
     }
