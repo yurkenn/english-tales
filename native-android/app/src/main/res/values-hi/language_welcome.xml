@@ -1,0 +1,8 @@
+<resources>
+    <string name="first_language_title">किस भाषा में शुरू करें?</string>
+    <string name="first_language_description">मेन्यू और कहानियों के अनुवाद की भाषा चुनें। कहानियाँ अंग्रेज़ी में ही रहेंगी।</string>
+    <string name="first_language_english_note">मेन्यू अंग्रेज़ी में होंगे। कहानियों के अनुवाद अभी तुर्की में उपलब्ध हैं।</string>
+    <string name="first_language_continue">%1$s में जारी रखें</string>
+    <string name="first_language_later">आप बाद में सेटिंग में इसे बदल सकते हैं।</string>
+    <string name="first_language_suggested">आपके डिवाइस की भाषा</string>
+</resources>
