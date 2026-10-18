@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="quiz_title">Вы поняли?</string>
+    <string name="quiz_intro">Несколько коротких вопросов по сюжету. Они не влияют на ваши баллы.</string>
+    <string name="quiz_progress">Вопрос %1$d / %2$d</string>
+    <string name="quiz_kind_main">Основная идея</string>
+    <string name="quiz_kind_detail">Деталь</string>
+    <string name="quiz_kind_inference">Вывод</string>
+    <string name="quiz_check">Проверять</string>
+    <string name="quiz_correct">Правильный!</string>
+    <string name="quiz_incorrect">Правильный ответ: %1$s</string>
+    <string name="quiz_next">Следующий вопрос</string>
+    <string name="quiz_finish">Заканчивать</string>
+    <string name="quiz_result">Результат: %1$d/%2$d</string>
+    <string name="quiz_best">Ваш лучший результат: %1$d/%2$d</string>
+    <string name="quiz_retry">Попробуйте еще раз</string>
+</resources>

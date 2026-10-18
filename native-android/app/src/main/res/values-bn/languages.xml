@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="content_untranslated_description">এই ইংরেজি গল্পটি পড়ুন এবং এর শব্দভান্ডার অনুশীলন করুন।</string>
+    <string name="app_language_title">অ্যাপের ভাষা</string>
+    <string name="app_language_description">ইন্টারফেস এবং গল্প অনুবাদ ভাষা চয়ন করুন. ভাষা পরিবর্তন হলে অ্যাপটি পুনরায় চালু হয়; আপনার সংরক্ষিত অগ্রগতি রাখা হয়.</string>
+    <string name="app_language_system">সিস্টেম ভাষা</string>
+    <string name="app_language_current">অ্যাপের ভাষা: %1$s</string>
+    <string name="henuz_indirilen_hikaye_yok">এখনও কোন ডাউনলোড করা গল্প.</string>
+</resources>

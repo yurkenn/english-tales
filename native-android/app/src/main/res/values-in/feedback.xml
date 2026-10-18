@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="alert_dismiss">Tutup peringatan</string>
+    <string name="alert_word_saved">“%1$s” ditambahkan ke kata-kata Anda</string>
+    <string name="alert_word_removed">“%1$s” dihapus dari kata-kata Anda</string>
+    <string name="alert_favorite_added">Ditambahkan ke favorit Anda</string>
+    <string name="alert_favorite_removed">Dihapus dari favorit Anda</string>
+    <string name="alert_settings_saved">Pengaturan Anda telah disimpan</string>
+    <string name="alert_daily_goal">Anda mencapai tujuan harian Anda. Kerja bagus!</string>
+    <string name="alert_streak">Belajar %1$d hari berturut-turut! Kembali besok untuk melanjutkan.</string>
+    <string name="alert_reminder_on">Pengingat disetel untuk %1$s setiap hari</string>
+    <string name="alert_reminder_off">Pengingat dimatikan</string>
+    <string name="alert_reminder_denied">Pengingat tidak dapat berfungsi tanpa izin pemberitahuan</string>
+    <string name="alert_write_recovered">Catatan Anda yang tertunda telah disimpan</string>
+    <string name="alert_link_failed">Tidak dapat membuka tautannya</string>
+    <string name="alert_quiz_perfect">Semuanya benar! Anda memahami ceritanya dengan sangat baik.</string>
+    <string name="feedback_correct_title">Benar!</string>
+    <string name="feedback_wrong_title">Hampir benar!</string>
+    <string name="weekly_today">Hari ini</string>
+</resources>

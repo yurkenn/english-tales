@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <string name="order_mode">Cümleyi kur</string>
+    <string name="order_subtitle">Hikâye cümlesini doğru sıraya koy</string>
+    <string name="order_instruction">Sözcüklere dokunarak cümleyi kur</string>
+    <string name="order_hint">Anlamı: %1$s</string>
+    <string name="order_answer_empty">Sözcükleri sırayla seç</string>
+    <string name="order_remove">%1$s sözcüğünü cümleden çıkar</string>
+    <string name="order_correct">Doğru! %1$s</string>
+    <string name="order_incorrect">Doğrusu: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

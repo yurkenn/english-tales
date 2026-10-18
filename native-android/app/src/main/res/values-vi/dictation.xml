@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="dictation_mode">Nghe và viết</string>
+    <string name="dictation_subtitle">Viết câu chuyện khi bạn nghe thấy nó</string>
+    <string name="dictation_instruction">Viết câu bạn nghe được</string>
+    <string name="dictation_field">Câu</string>
+    <string name="dictation_play">Nghe câu</string>
+    <string name="dictation_correct">Chính xác! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="other">Số từ khác biệt: %1$d. Câu đúng: %2$s</item>
+    </plurals>
+</resources>

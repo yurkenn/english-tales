@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ladder_mode">Умное повторение</string>
+    <string name="ladder_subtitle">Узнавайте новые слова, вспоминайте, что вы узнали</string>
+</resources>

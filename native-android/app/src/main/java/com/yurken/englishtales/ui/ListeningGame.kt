@@ -75,8 +75,8 @@ internal fun ListeningGame(
                 AnswerOption(option, selected == option, optionState(selected == option, checked, option == question.answer), !checked, { selected = option }, Modifier.appearIn(i))
             }
         }
-        AnswerFeedback(checked, correct, if (correct) stringResource(R.string.listen_correct, question.word)
-            else stringResource(R.string.listen_incorrect, question.word, question.answer))
+        AnswerFeedback(checked, correct, if (correct) stringResource(R.string.listen_correct, englishArgument(question.word))
+            else stringResource(R.string.listen_incorrect, englishArgument(question.word), question.answer))
         Button(enabled = selected != null && !advanced, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
             colors = if (checked && correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(), onClick = {
             if (!checked) checked = true

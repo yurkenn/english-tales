@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="glossary_label">Từ điển</string>
+    <string name="glossary_lemma">Dạng từ điển: %1$s</string>
+</resources>

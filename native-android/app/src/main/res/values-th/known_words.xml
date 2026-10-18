@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">คำศัพท์ที่รู้แล้ว</string>
+    <string name="known_words_detail">อ่านแล้วแต่ยังไม่รู้: %1$d คำ · กำลังทบทวน: %2$d คำ</string>
+    <string name="known_words_explanation">นับคำศัพท์ที่คุณเลือก “รู้แล้ว” ระหว่างทบทวน และคำที่คุณอ่านโดยไม่เปิดดูความหมายในเรื่องที่อ่านจบอย่างน้อยสองเรื่อง</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="order_mode">Xây dựng câu</string>
+    <string name="order_subtitle">Sắp xếp câu chuyện theo đúng thứ tự</string>
+    <string name="order_instruction">Nhấn vào các từ để xây dựng câu</string>
+    <string name="order_hint">Ý nghĩa: %1$s</string>
+    <string name="order_answer_empty">Chọn các từ theo thứ tự</string>
+    <string name="order_remove">Xóa %1$s khỏi câu</string>
+    <string name="order_correct">Chính xác! %1$s</string>
+    <string name="order_incorrect">Đúng: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

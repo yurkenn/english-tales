@@ -32,13 +32,16 @@ data class StoryLinkRequest(val storyId: String,val at: Long) {
 @Composable
 fun TalesApp(viewModel: LearningViewModel = viewModel(),dailyPlanRequest: Long=0L,storyLinkRequest: StoryLinkRequest?=null,onStoryLinkHandled: (StoryLinkRequest)->Unit={}) {
     val account by viewModel.account.collectAsState()
-    key(account.scope) {TalesAccountApp(viewModel,dailyPlanRequest,storyLinkRequest,onStoryLinkHandled)}
+    // Saved quiz options contain translated text; never restore a previous language's unfinished quiz.
+    // The account ViewModel and its pending learning writes remain outside this UI key.
+    key(account.scope, SupportLanguage.code) {TalesAccountApp(viewModel,dailyPlanRequest,storyLinkRequest,onStoryLinkHandled)}
 }
 
 @Composable
 private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,storyLinkRequest: StoryLinkRequest?,onStoryLinkHandled: (StoryLinkRequest)->Unit) {
     val account by viewModel.account.collectAsState()
-    val content: ContentViewModel = viewModel()
+    val content: ContentViewModel = viewModel(key = "content-${SupportLanguage.code}")
+    LaunchedEffect(content) { if (content.ready.value) content.restoreLanguage() }
     val contentReady by content.ready.collectAsState()
     val snapshot by viewModel.state.collectAsState()
     val ready by viewModel.ready.collectAsState()

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <string name="alert_dismiss">Uyarıyı kapat</string>
+    <string name="alert_word_saved">“%1$s” kelimelerine eklendi</string>
+    <string name="alert_word_removed">“%1$s” kelimelerinden çıkarıldı</string>
+    <string name="alert_favorite_added">Favorilerine eklendi</string>
+    <string name="alert_favorite_removed">Favorilerinden çıkarıldı</string>
+    <string name="alert_settings_saved">Ayarların kaydedildi</string>
+    <string name="alert_daily_goal">Günlük hedefini tamamladın, harika gidiyorsun!</string>
+    <string name="alert_streak">%1$d günlük seri! Yarın da gel, seriyi koru.</string>
+    <string name="alert_reminder_on">Hatırlatıcı her gün %1$s için kuruldu</string>
+    <string name="alert_reminder_off">Hatırlatıcı kapatıldı</string>
+    <string name="alert_reminder_denied">Bildirim izni olmadan hatırlatıcı çalışamaz</string>
+    <string name="alert_write_recovered">Bekleyen kayıtların kaydedildi</string>
+    <string name="alert_link_failed">Bağlantı açılamadı</string>
+    <string name="alert_quiz_perfect">Hepsi doğru! Hikâyeyi çok iyi anlamışsın.</string>
+    <string name="feedback_correct_title">Doğru!</string>
+    <string name="feedback_wrong_title">Neredeyse!</string>
+    <string name="weekly_today">Bugün</string>
+</resources>

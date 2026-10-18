@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">تدرب على كلماتك الصعبة %1$d</string>
+    <string name="weak_words_summary">الكلمات التي أجبت عليها بشكل خاطئ في آخر 30 يومًا تأتي أولاً.</string>
+    <string name="weak_words_count">عدد الكلمات التي تصعب عليك: %1$d. ستظهر أولًا في المراجعات.</string>
+</resources>

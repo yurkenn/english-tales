@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="dictation_mode">শুনুন এবং লিখুন</string>
+    <string name="dictation_subtitle">আপনি এটি শুনতে গল্প বাক্য লিখুন</string>
+    <string name="dictation_instruction">আপনি যে বাক্যটি শুনছেন তা লিখুন</string>
+    <string name="dictation_field">বাক্য</string>
+    <string name="dictation_play">বাক্যটি শুনুন</string>
+    <string name="dictation_correct">সঠিক! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="one">আলাদা শব্দের সংখ্যা: %1$d। সঠিক বাক্য: %2$s</item>
+        <item quantity="other">আলাদা শব্দের সংখ্যা: %1$d। সঠিক বাক্য: %2$s</item>
+    </plurals>
+</resources>

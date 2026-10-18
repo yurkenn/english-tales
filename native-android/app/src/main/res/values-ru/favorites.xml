@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="favorite_add">Добавить в избранное</string>
+    <string name="favorite_remove">Удалить из избранного</string>
+    <string name="favorites_title">Мои любимые (%1$d)</string>
+</resources>

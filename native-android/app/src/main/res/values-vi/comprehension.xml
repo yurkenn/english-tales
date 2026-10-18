@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="quiz_title">Bạn có nhận được nó không?</string>
+    <string name="quiz_intro">Một số câu hỏi ngắn về câu chuyện. Chúng không ảnh hưởng đến điểm của bạn.</string>
+    <string name="quiz_progress">Câu hỏi %1$d/%2$d</string>
+    <string name="quiz_kind_main">Ý chính</string>
+    <string name="quiz_kind_detail">Chi tiết</string>
+    <string name="quiz_kind_inference">suy luận</string>
+    <string name="quiz_check">Kiểm tra</string>
+    <string name="quiz_correct">Chính xác!</string>
+    <string name="quiz_incorrect">Câu trả lời đúng: %1$s</string>
+    <string name="quiz_next">Câu hỏi tiếp theo</string>
+    <string name="quiz_finish">Hoàn thành</string>
+    <string name="quiz_result">Kết quả: %1$d/%2$d</string>
+    <string name="quiz_best">Kết quả tốt nhất của bạn: %1$d/%2$d</string>
+    <string name="quiz_retry">Thử lại</string>
+</resources>

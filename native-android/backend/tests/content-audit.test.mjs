@@ -57,12 +57,16 @@ test('snapshot translation tables are authoritative while old snapshots retain t
 test('audit CLI require-lang reports counts then fails for partial or absent languages and accepts complete Turkish',async()=>{
   const dir=await mkdtemp(path.join(tmpdir(),'english-tales-audit-lang-'));
   const tool=new URL('../tools/audit-content.mjs',import.meta.url);
-  const run=(...args)=>spawnSync(process.execPath,[tool.pathname,'--output',dir,...args],{encoding:'utf8'});
+  const fixture=path.join(dir,'bundle.json');
+  // Keep the missing-language case independent of the languages shipped in the real catalog.
+  const script=`import {main} from ${JSON.stringify(tool.href)}; await main(process.argv.slice(1), {bundlePath:${JSON.stringify(fixture)}});`;
+  const run=(...args)=>spawnSync(process.execPath,['--input-type=module','-e',script,'--','--output',dir,...args],{encoding:'utf8'});
   try{
+    await writeFile(fixture,JSON.stringify(catalog()));
     assert.equal(run('--require-lang','tr').status,0);
     const missing=run('--require-lang','es-419');assert.equal(missing.status,1,missing.stderr);
     let report=JSON.parse(await readFile(path.join(dir,'audit.json')));
-    assert.deepEqual(report.bundle.translations['es-419'],{missingSentences:1002,missingWords:report.bundle.summary.vocabularyEntries,missingDescriptions:50,complete:false});
+    assert.deepEqual(report.bundle.translations['es-419'],{missingSentences:1,missingWords:1,missingDescriptions:1,complete:false});
     assert.match(await readFile(path.join(dir,'report.md'),'utf8'),/Destek dili bütünlüğü/);
     const s=snapshot();s.tables.sentence_translations=[{revision_id:revisionId,sentence_id:'s1',lang:'es-419',text:'Texto'}];s.tables.word_translations=[];s.tables.revision_texts=[];
     const file=path.join(dir,'catalog.json');await writeFile(file,JSON.stringify(s));

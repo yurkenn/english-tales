@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">Palabras que ya sabes</string>
+    <string name="known_words_detail">Leídas pero aún no aprendidas: %1$d · En repaso: %2$d</string>
+    <string name="known_words_explanation">Cuenta las palabras que marcaste como «Ya la sé» al repasar y las que leíste sin consultar su significado en al menos dos historias terminadas.</string>
+</resources>

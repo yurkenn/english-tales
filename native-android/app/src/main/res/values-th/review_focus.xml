@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">ฝึกฝนคำศัพท์ที่ยุ่งยาก %1$d ของคุณ</string>
+    <string name="weak_words_summary">คำที่คุณตอบผิดในช่วง 30 วันที่ผ่านมามาก่อน</string>
+    <string name="weak_words_count">คำศัพท์ที่ยังยากสำหรับคุณ: %1$d คำ คำเหล่านี้จะมาก่อนในการทบทวน</string>
+</resources>

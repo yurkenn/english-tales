@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="dictation_mode">استمع واكتب</string>
+    <string name="dictation_subtitle">اكتب جملة القصة كما تسمعها</string>
+    <string name="dictation_instruction">اكتب الجملة التي تسمعها</string>
+    <string name="dictation_field">جملة</string>
+    <string name="dictation_play">استمع إلى الجملة</string>
+    <string name="dictation_correct">صحيح! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="zero">عدد الكلمات المختلفة: %1$d. الجملة الصحيحة: %2$s</item>
+        <item quantity="one">عدد الكلمات المختلفة: %1$d. الجملة الصحيحة: %2$s</item>
+        <item quantity="two">عدد الكلمات المختلفة: %1$d. الجملة الصحيحة: %2$s</item>
+        <item quantity="few">عدد الكلمات المختلفة: %1$d. الجملة الصحيحة: %2$s</item>
+        <item quantity="many">عدد الكلمات المختلفة: %1$d. الجملة الصحيحة: %2$s</item>
+        <item quantity="other">عدد الكلمات المختلفة: %1$d. الجملة الصحيحة: %2$s</item>
+    </plurals>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">Prueba de nivel rápida</string>
+    <string name="placement_entry">Encuentra mi nivel con una prueba rápida</string>
+    <string name="placement_intro">9 preguntas · Alrededor de 2 a 3 minutos</string>
+    <string name="placement_explanation">Leerás oraciones cortas en inglés y elegirás respuestas. Puede omitir preguntas que no sepa; no hay límite de tiempo.</string>
+    <string name="placement_scope">El resultado es una sugerencia inicial para las historias A1–B1. No es un resultado oficial de dominio del idioma. Tus respuestas no se envían desde este dispositivo.</string>
+    <string name="placement_start">Iniciar la prueba</string>
+    <string name="placement_manual">Yo mismo elegiré mi nivel.</string>
+    <string name="placement_progress">Pregunta %1$d / %2$d</string>
+    <string name="placement_complete_sentence">Completa la frase.</string>
+    <string name="placement_read_question">Lee el texto y responde la pregunta.</string>
+    <string name="placement_unknown">No sé</string>
+    <string name="placement_next">Siguiente pregunta</string>
+    <string name="placement_finish">ver mi sugerencia</string>
+    <string name="placement_result">Nivel inicial sugerido: %1$s</string>
+    <string name="placement_result_description">Puedes comenzar con historias en este nivel. Si te parecen demasiado fáciles o demasiado difíciles, puedes cambiar tu nivel en Configuración.</string>
+    <string name="placement_score">Preguntas %1$s: %2$d / 3 correctas</string>
+    <string name="placement_use">Continuar con %1$s</string>
+    <string name="placement_settings_hint">Después de elegir la sugerencia, guarde los cambios en Configuración para actualizar su nivel.</string>
+    <string name="placement_cancel_title">¿Dejar la prueba?</string>
+    <string name="placement_cancel_message">Se eliminarán las respuestas de este intento. El nivel seleccionado no cambiará.</string>
+    <string name="placement_cancel_confirm">dejar la prueba</string>
+    <string name="placement_cancel_keep">Volver a la prueba</string>
+</resources>

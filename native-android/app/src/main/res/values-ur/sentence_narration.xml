@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_from_sentence">اس جملے سے سنیں۔</string>
+    <string name="listen_from_sentence_hint">وہاں سے صفحہ پڑھنے کے لیے ایک جملہ کو دبائیں اور تھامیں؛ پڑھے جانے والے جملے کو نمایاں کیا گیا ہے۔</string>
+</resources>

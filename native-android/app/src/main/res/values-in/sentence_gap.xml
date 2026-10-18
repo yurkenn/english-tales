@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="gap_mode">Isilah celah dalam kalimat tersebut</string>
+    <string name="gap_subtitle">Temukan kata yang tepat dalam kalimat cerita.</string>
+    <string name="gap_preparing">Menyiapkan kalimat cerita…</string>
+    <string name="gap_unavailable">Tidak ada kalimat yang cocok untuk latihan ini. Coba lagi dengan cerita yang telah Anda unduh.</string>
+    <string name="gap_instruction">Isi celahnya menggunakan petunjuk.</string>
+    <string name="gap_hint">Petunjuk: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">Sebuah kalimat dari sebuah cerita · %1$s</string>
+    <string name="gap_progress">Kalimat %1$d / %2$d</string>
+    <string name="gap_check">Memeriksa</string>
+    <string name="gap_correct">Benar! Anda menyelesaikan kalimatnya.</string>
+    <string name="gap_incorrect">Mari kita pelajari bersama. Jawaban yang benar: %1$s</string>
+    <string name="gap_next">Kalimat berikutnya</string>
+    <string name="gap_finish">Lihat hasilnya</string>
+    <string name="gap_exit">Tinggalkan latihan</string>
+</resources>

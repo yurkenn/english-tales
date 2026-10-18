@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d мин.</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="one">Примерное время чтения в минутах: %1$d</item>
+        <item quantity="few">Примерное время чтения в минутах: %1$d</item>
+        <item quantity="many">Примерное время чтения в минутах: %1$d</item>
+        <item quantity="other">Примерное время чтения в минутах: %1$d</item>
+    </plurals>
+    <string name="length_all">Любая длина</string>
+    <string name="length_short">Короткий · ≤ 2 мин.</string>
+    <string name="length_medium">Средний · 3–5 мин.</string>
+    <string name="length_long">Длинный · 6+ мин</string>
+</resources>

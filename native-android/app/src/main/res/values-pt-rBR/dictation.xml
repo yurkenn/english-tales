@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="dictation_mode">Ouça e escreva</string>
+    <string name="dictation_subtitle">Escreva a frase da história conforme você a ouve</string>
+    <string name="dictation_instruction">Escreva a frase que você ouve</string>
+    <string name="dictation_field">Frase</string>
+    <string name="dictation_play">Ouça a frase</string>
+    <string name="dictation_correct">Correto! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="one">Palavras diferentes: %1$d. Frase correta: %2$s</item>
+        <item quantity="many">Palavras diferentes: %1$d. Frase correta: %2$s</item>
+        <item quantity="other">Palavras diferentes: %1$d. Frase correta: %2$s</item>
+    </plurals>
+</resources>

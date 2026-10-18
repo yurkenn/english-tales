@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_from_sentence">इस वाक्य से सुनिए</string>
+    <string name="listen_from_sentence_hint">पृष्ठ को वहां से पढ़ने के लिए किसी वाक्य को दबाकर रखें; पढ़ा जा रहा वाक्य हाइलाइट किया गया है।</string>
+</resources>

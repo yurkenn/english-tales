@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">दैनिक पढ़ना</string>
+    <string name="widget_description">आपकी प्रवृत्ति, आज के लक्ष्य और समीक्षा की प्रतीक्षा कर रहे शब्दों को दर्शाता है।</string>
+    <string name="widget_streak">स्ट्रीक: %1$d</string>
+    <string name="widget_goal">आज का लक्ष्य: %1$d/%2$d</string>
+    <string name="widget_goal_done">आज का लक्ष्य पूरा ✓</string>
+    <string name="widget_due">समीक्षा के लिए शब्द: %1$d</string>
+    <string name="widget_open">दैनिक योजना खोलें</string>
+    <string name="widget_empty">आज की कहानी आपका इंतज़ार कर रही है.</string>
+</resources>

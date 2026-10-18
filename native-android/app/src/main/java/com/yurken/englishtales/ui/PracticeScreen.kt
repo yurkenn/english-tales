@@ -234,6 +234,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
                 Text(chosen.joinToString("") {letters[it].toString()}.ifBlank {"_ ".repeat(spelling.length)},fontSize=22.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp,color=if(answer==null) TaleBlue else if(correct) TaleSuccess else TaleError,
                     modifier=Modifier.shakeOn(shakes).popOn(pops).border(2.dp,if(answer==null) TaleLine else if(correct) TaleSuccess else TaleError,RoundedCornerShape(12.dp)).padding(horizontal=18.dp,vertical=12.dp).animateContentSize())
             }
+            CompositionLocalProvider(androidx.compose.ui.platform.LocalLayoutDirection provides androidx.compose.ui.unit.LayoutDirection.Ltr) {
             Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()).padding(vertical=24.dp),horizontalArrangement=Arrangement.Center) {
                 letters.forEachIndexed { i,c ->
                     val used=i in chosen
@@ -241,10 +242,11 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
                     Box(Modifier.padding(3.dp).size(38.dp,50.dp).graphicsLayer {alpha=tileAlpha}.background(if(used) TaleLine else TaleSurface,RoundedCornerShape(10.dp)).border(if(used) 2.dp else 1.5.dp,if(used) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).pressScale(enabled=answer==null && !used) {chosen=chosen+i;if(chosen.size==letters.size) answer=chosen.joinToString("") {letters[it].toString()}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=17.sp,fontWeight=FontWeight.Bold)}
                 }
             }
+            }
             TextButton(onClick={chosen=emptyList()},enabled=answer==null,modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(stringResource(R.string.temizle),fontSize=12.sp) }
         }
         AnswerFeedback(answer!=null,correct,if(correct) stringResource(R.string.feedback_correct_title)
-            else stringResource(R.string.her_denemede_ogreniyoruz)+" "+stringResource(R.string.dogru_cevap, if(drill=="choice") word.translation else word.word))
+            else stringResource(R.string.her_denemede_ogreniyoruz)+" "+stringResource(R.string.dogru_cevap, if(drill=="choice") word.translation else englishArgument(word.word)))
         if(answer!=null && !correct) Button(onClick={advanceWrong=true},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.anladim_devam_et))}
         Spacer(Modifier.height(8.dp))
     }

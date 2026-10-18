@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <string name="dictation_mode">Dinle ve yaz</string>
+    <string name="dictation_subtitle">Hikâye cümlesini duyduğun gibi yaz</string>
+    <string name="dictation_instruction">Duyduğun cümleyi yaz</string>
+    <string name="dictation_field">Cümle</string>
+    <string name="dictation_play">Cümleyi dinle</string>
+    <string name="dictation_correct">Doğru! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="one">%1$d sözcük farklı. Doğrusu: %2$s</item>
+        <item quantity="other">%1$d sözcük farklı. Doğrusu: %2$s</item>
+    </plurals>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">দ্রুত স্তরের পরীক্ষা</string>
+    <string name="placement_entry">একটি দ্রুত পরীক্ষা দিয়ে আমার স্তর খুঁজুন</string>
+    <string name="placement_intro">9টি প্রশ্ন · প্রায় 2-3 মিনিট</string>
+    <string name="placement_explanation">আপনি ছোট ইংরেজি বাক্য পড়বেন এবং উত্তর বেছে নেবেন। আপনি জানেন না এমন প্রশ্নগুলি এড়িয়ে যেতে পারেন; কোন সময় সীমা নেই।</string>
+    <string name="placement_scope">ফলাফল হল A1–B1 গল্পগুলির জন্য একটি শুরুর পরামর্শ৷ এটি একটি সরকারী ভাষা দক্ষতা ফলাফল নয়. আপনার উত্তর এই ডিভাইস থেকে পাঠানো হয় না.</string>
+    <string name="placement_start">পরীক্ষা শুরু করুন</string>
+    <string name="placement_manual">আমি আমার লেভেল নিজেই বেছে নেব</string>
+    <string name="placement_progress">প্রশ্ন %1$d / %2$d</string>
+    <string name="placement_complete_sentence">বাক্যটি সম্পূর্ণ করুন।</string>
+    <string name="placement_read_question">পাঠ্যটি পড়ুন এবং প্রশ্নের উত্তর দিন।</string>
+    <string name="placement_unknown">আমি জানি না</string>
+    <string name="placement_next">পরবর্তী প্রশ্ন</string>
+    <string name="placement_finish">আমার পরামর্শ দেখুন</string>
+    <string name="placement_result">প্রস্তাবিত শুরু স্তর: %1$s</string>
+    <string name="placement_result_description">আপনি এই স্তরে গল্প দিয়ে শুরু করতে পারেন। যদি সেগুলি খুব সহজ বা খুব কঠিন মনে হয়, আপনি সেটিংসে আপনার স্তর পরিবর্তন করতে পারেন৷</string>
+    <string name="placement_score">%1$s প্রশ্ন: %2$d/3 সঠিক</string>
+    <string name="placement_use">%1$s দিয়ে চালিয়ে যান</string>
+    <string name="placement_settings_hint">প্রস্তাবনা বেছে নেওয়ার পরে, আপনার স্তর আপডেট করতে সেটিংসে আপনার পরিবর্তনগুলি সংরক্ষণ করুন৷</string>
+    <string name="placement_cancel_title">পরীক্ষা ছেড়ে দাও?</string>
+    <string name="placement_cancel_message">এই প্রচেষ্টা থেকে উত্তর মুছে ফেলা হবে. আপনার নির্বাচিত স্তর পরিবর্তন হবে না.</string>
+    <string name="placement_cancel_confirm">পরীক্ষা ছেড়ে দিন</string>
+    <string name="placement_cancel_keep">পরীক্ষায় ফিরে যান</string>
+</resources>

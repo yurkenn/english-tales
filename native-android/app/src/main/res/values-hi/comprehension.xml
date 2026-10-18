@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="quiz_title">क्या आपको मिला</string>
+    <string name="quiz_intro">कहानी के बारे में कुछ छोटे प्रश्न. वे आपकी बातों को प्रभावित नहीं करते.</string>
+    <string name="quiz_progress">प्रश्न %1$d / %2$d</string>
+    <string name="quiz_kind_main">मुख्य विचार</string>
+    <string name="quiz_kind_detail">विवरण</string>
+    <string name="quiz_kind_inference">अनुमान</string>
+    <string name="quiz_check">जाँच करना</string>
+    <string name="quiz_correct">सही!</string>
+    <string name="quiz_incorrect">सही उत्तर: %1$s</string>
+    <string name="quiz_next">अगला सवाल</string>
+    <string name="quiz_finish">खत्म करना</string>
+    <string name="quiz_result">परिणाम: %1$d/%2$d</string>
+    <string name="quiz_best">आपका सर्वोत्तम परिणाम: %1$d/%2$d</string>
+    <string name="quiz_retry">पुनः प्रयास करें</string>
+</resources>

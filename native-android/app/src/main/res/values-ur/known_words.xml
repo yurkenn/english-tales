@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">سیکھے ہوئے الفاظ</string>
+    <string name="known_words_detail">پڑھے ہیں مگر ابھی سیکھے نہیں: %1$d · دہرائے جا رہے ہیں: %2$d</string>
+    <string name="known_words_explanation">اس میں وہ الفاظ گنے جاتے ہیں جن کے لیے دہراتے وقت آپ نے «مجھے آتا ہے» منتخب کیا، اور وہ الفاظ جو آپ نے کم از کم دو مکمل کہانیوں میں معنی دیکھے بغیر پڑھے۔</string>
+</resources>

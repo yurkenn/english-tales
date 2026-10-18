@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="reminder_due_words">
+        <item quantity="one">दोहराने के लिए तैयार शब्द: %1$d। कुछ मिनट ही काफ़ी हैं।</item>
+        <item quantity="other">दोहराने के लिए तैयार शब्द: %1$d। कुछ मिनट ही काफ़ी हैं।</item>
+    </plurals>
+    <string name="weekly_reading_summary">इस सप्ताह पढ़े गए शब्द: लगभग %1$d · सीखे हुए शब्द: %2$d</string>
+</resources>

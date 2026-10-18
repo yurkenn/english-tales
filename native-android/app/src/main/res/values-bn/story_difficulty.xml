@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="story_new_words">
+        <item quantity="one">এই গল্পে নতুন শব্দ: প্রায় %1$d</item>
+        <item quantity="other">এই গল্পে নতুন শব্দ: প্রায় %1$d</item>
+    </plurals>
+</resources>

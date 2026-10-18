@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="reminder_due_words">
+        <item quantity="one">Palabras listas para repasar: %1$d. Unos minutos bastan.</item>
+        <item quantity="many">Palabras listas para repasar: %1$d. Unos minutos bastan.</item>
+        <item quantity="other">Palabras listas para repasar: %1$d. Unos minutos bastan.</item>
+    </plurals>
+    <string name="weekly_reading_summary">Esta semana: ~%1$d palabras leídas · Palabras que ya sabes: %2$d</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d mín.</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="one">Tiempo estimado de lectura en minutos: %1$d</item>
+        <item quantity="many">Tiempo estimado de lectura en minutos: %1$d</item>
+        <item quantity="other">Tiempo estimado de lectura en minutos: %1$d</item>
+    </plurals>
+    <string name="length_all">cualquier longitud</string>
+    <string name="length_short">Corto · ≤ 2 min</string>
+    <string name="length_medium">Medio · 3–5 minutos</string>
+    <string name="length_long">Largo · 6+ minutos</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">Bacaan harian</string>
+    <string name="widget_description">Tunjukkan pukulan Anda, tujuan hari ini, dan kata-kata yang menunggu untuk ditinjau.</string>
+    <string name="widget_streak">Garis: %1$d</string>
+    <string name="widget_goal">Sasaran hari ini: %1$d/%2$d</string>
+    <string name="widget_goal_done">Tujuan hari ini selesai ✓</string>
+    <string name="widget_due">Kata-kata untuk diulas: %1$d</string>
+    <string name="widget_open">Buka paket harian</string>
+    <string name="widget_empty">Cerita hari ini menunggumu.</string>
+</resources>

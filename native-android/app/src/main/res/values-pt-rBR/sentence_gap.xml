@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="gap_mode">Preencha a lacuna na frase</string>
+    <string name="gap_subtitle">Encontre a palavra certa em uma frase de história.</string>
+    <string name="gap_preparing">Preparando frases de histórias…</string>
+    <string name="gap_unavailable">Não existem frases adequadas para esta prática. Tente novamente com as histórias que você baixou.</string>
+    <string name="gap_instruction">Preencha a lacuna usando a dica.</string>
+    <string name="gap_hint">Dica: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">Uma frase de uma história · %1$s</string>
+    <string name="gap_progress">Sentença %1$d / %2$d</string>
+    <string name="gap_check">Verificar</string>
+    <string name="gap_correct">Correto! Você completou a frase.</string>
+    <string name="gap_incorrect">Vamos aprender juntos. Resposta correta: %1$s</string>
+    <string name="gap_next">Próxima frase</string>
+    <string name="gap_finish">Ver resultado</string>
+    <string name="gap_exit">Sair do treino</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d phút</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="other">Thời gian đọc ước tính theo phút: %1$d</item>
+    </plurals>
+    <string name="length_all">Bất kỳ chiều dài nào</string>
+    <string name="length_short">Ngắn · 2 phút</string>
+    <string name="length_medium">Trung bình · 3–5 phút</string>
+    <string name="length_long">Dài · 6+ phút</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="quiz_title">আপনি এটা পেয়েছেন?</string>
+    <string name="quiz_intro">গল্প সম্পর্কে কয়েকটি ছোট প্রশ্ন। তারা আপনার পয়েন্ট প্রভাবিত করে না.</string>
+    <string name="quiz_progress">প্রশ্ন %1$d / %2$d</string>
+    <string name="quiz_kind_main">মূল ধারণা</string>
+    <string name="quiz_kind_detail">বিস্তারিত</string>
+    <string name="quiz_kind_inference">অনুমান</string>
+    <string name="quiz_check">চেক করুন</string>
+    <string name="quiz_correct">সঠিক!</string>
+    <string name="quiz_incorrect">সঠিক উত্তর: %1$s</string>
+    <string name="quiz_next">পরবর্তী প্রশ্ন</string>
+    <string name="quiz_finish">শেষ করুন</string>
+    <string name="quiz_result">ফলাফল: %1$d/%2$d</string>
+    <string name="quiz_best">আপনার সেরা ফলাফল: %1$d/%2$d</string>
+    <string name="quiz_retry">আবার চেষ্টা করুন</string>
+</resources>

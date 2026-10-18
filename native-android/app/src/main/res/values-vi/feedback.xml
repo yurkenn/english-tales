@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="alert_dismiss">Loại bỏ cảnh báo</string>
+    <string name="alert_word_saved">“%1$s” đã được thêm vào lời nói của bạn</string>
+    <string name="alert_word_removed">“%1$s” đã bị xóa khỏi lời nói của bạn</string>
+    <string name="alert_favorite_added">Đã thêm vào mục yêu thích của bạn</string>
+    <string name="alert_favorite_removed">Đã xóa khỏi mục yêu thích của bạn</string>
+    <string name="alert_settings_saved">Cài đặt của bạn đã được lưu</string>
+    <string name="alert_daily_goal">Bạn đã đạt được mục tiêu hàng ngày của mình. Làm tốt lắm!</string>
+    <string name="alert_streak">Bạn đã học liên tục %1$d ngày! Hãy quay lại vào ngày mai để tiếp tục.</string>
+    <string name="alert_reminder_on">Đặt lời nhắc cho %1$s mỗi ngày</string>
+    <string name="alert_reminder_off">Đã tắt lời nhắc</string>
+    <string name="alert_reminder_denied">Lời nhắc không thể hoạt động nếu không có quyền thông báo</string>
+    <string name="alert_write_recovered">Hồ sơ đang chờ xử lý của bạn đã được lưu</string>
+    <string name="alert_link_failed">Không thể mở liên kết</string>
+    <string name="alert_quiz_perfect">Tất cả đều đúng! Bạn đã hiểu rất rõ câu chuyện.</string>
+    <string name="feedback_correct_title">Chính xác!</string>
+    <string name="feedback_wrong_title">Gần đúng rồi!</string>
+    <string name="weekly_today">Hôm nay</string>
+</resources>

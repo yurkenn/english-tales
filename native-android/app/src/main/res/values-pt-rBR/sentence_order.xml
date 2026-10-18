@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="order_mode">Construa a frase</string>
+    <string name="order_subtitle">Coloque a frase da história na ordem certa</string>
+    <string name="order_instruction">Toque nas palavras para construir a frase</string>
+    <string name="order_hint">Significado: %1$s</string>
+    <string name="order_answer_empty">Escolha as palavras em ordem</string>
+    <string name="order_remove">Remova %1$s da frase</string>
+    <string name="order_correct">Correto! %1$s</string>
+    <string name="order_incorrect">Correto: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

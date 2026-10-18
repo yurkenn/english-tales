@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">Быстрый тест уровня</string>
+    <string name="placement_entry">Определите мой уровень с помощью быстрого теста</string>
+    <string name="placement_intro">9 вопросов · Около 2–3 минут</string>
+    <string name="placement_explanation">Вы будете читать короткие английские предложения и выбирать ответы. Вы можете пропускать вопросы, которые не знаете; нет ограничения по времени.</string>
+    <string name="placement_scope">Результатом является стартовое предложение для историй A1–B1. Это не официальный результат владения языком. Ваши ответы не отправляются с этого устройства.</string>
+    <string name="placement_start">Начать тест</string>
+    <string name="placement_manual">Я сам выберу свой уровень</string>
+    <string name="placement_progress">Вопрос %1$d / %2$d</string>
+    <string name="placement_complete_sentence">Закончите предложение.</string>
+    <string name="placement_read_question">Прочитайте текст и ответьте на вопрос.</string>
+    <string name="placement_unknown">Я не знаю</string>
+    <string name="placement_next">Следующий вопрос</string>
+    <string name="placement_finish">Смотрите мое предложение</string>
+    <string name="placement_result">Рекомендуемый начальный уровень: %1$s.</string>
+    <string name="placement_result_description">Вы можете начать с историй на этом уровне. Если они кажутся вам слишком простыми или слишком сложными, вы можете изменить свой уровень в настройках.</string>
+    <string name="placement_score">%1$s вопросы: %2$d / 3 правильных</string>
+    <string name="placement_use">Продолжить с %1$s</string>
+    <string name="placement_settings_hint">Выбрав предложение, сохраните изменения в настройках, чтобы обновить свой уровень.</string>
+    <string name="placement_cancel_title">Оставить тест?</string>
+    <string name="placement_cancel_message">Ответы этой попытки будут удалены. Выбранный вами уровень не изменится.</string>
+    <string name="placement_cancel_confirm">Выйти из теста</string>
+    <string name="placement_cancel_keep">Вернуться к тесту</string>
+</resources>

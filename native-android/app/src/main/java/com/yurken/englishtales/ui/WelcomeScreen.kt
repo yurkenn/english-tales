@@ -53,5 +53,6 @@ fun WelcomeScreen(state: AccountState,onGuest: ()->Unit,onEmail: ()->Unit,onGoog
         Text(stringResource(R.string.hesap_acmadan_baslayabilirsin_misafir_ilerlemen),style=MaterialTheme.typography.bodySmall,color=TaleMuted,textAlign=TextAlign.Center)
         if(state.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
         AccountMessage(state)
+        if (!state.busy) LanguageControls()
     }
 }

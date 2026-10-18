@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">শেখা শব্দ</string>
+    <string name="known_words_detail">পড়েছ কিন্তু এখনও শেখোনি: %1$d · দোহরাচ্ছ: %2$d</string>
+    <string name="known_words_explanation">দোহরানোর সময় যেসব শব্দে “জানি” বেছেছ এবং অন্তত দুটি শেষ করা গল্পে অর্থ না দেখেই যেসব শব্দ পড়েছ, সেগুলো এখানে গণনা করা হয়।</string>
+</resources>

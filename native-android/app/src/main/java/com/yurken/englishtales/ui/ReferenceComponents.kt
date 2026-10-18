@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.geometry.Offset
@@ -42,7 +43,8 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun ReferenceIcon(kind: String, tint: Color = TaleBlue, modifier: Modifier = Modifier.size(23.dp)) {
     val themedAccent = if(tint == TaleBlue) TalePurple else tint
-    Canvas(modifier) {
+    val mirror = androidx.compose.ui.platform.LocalLayoutDirection.current == androidx.compose.ui.unit.LayoutDirection.Rtl && kind in setOf("back", "next", "chevron")
+    Canvas(if (mirror) modifier.then(Modifier.graphicsLayer { scaleX = -1f }) else modifier) {
         scale(size.width / 24f, size.height / 24f, pivot = Offset.Zero) {
             fun line(x1: Float, y1: Float, x2: Float, y2: Float) = drawLine(tint, Offset(x1,y1), Offset(x2,y2), 1.8f, StrokeCap.Round)
             fun path(vararg points: Float, fill: Boolean = false) {

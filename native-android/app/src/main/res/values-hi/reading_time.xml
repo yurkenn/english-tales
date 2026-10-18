@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d मि</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="one">पढ़ने का अनुमानित समय, मिनट में: %1$d</item>
+        <item quantity="other">पढ़ने का अनुमानित समय, मिनट में: %1$d</item>
+    </plurals>
+    <string name="length_all">कोई भी लम्बाई</string>
+    <string name="length_short">लघु · ≤ 2 मिनट</string>
+    <string name="length_medium">मध्यम · 3-5 मिनट</string>
+    <string name="length_long">लम्बा · 6+ मिनट</string>
+</resources>

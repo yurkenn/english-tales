@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">Практикуйте свои сложные слова %1$d</string>
+    <string name="weak_words_summary">Слова, на которые вы ответили неправильно за последние 30 дней, идут первыми.</string>
+    <string name="weak_words_count">Слов, вызывающих затруднения: %1$d. Они будут первыми в повторении.</string>
+</resources>

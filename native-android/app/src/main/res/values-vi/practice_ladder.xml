@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="ladder_mode">Ôn tập thông minh</string>
+    <string name="ladder_subtitle">Nhận biết từ mới, nhớ lại những gì đã học</string>
+</resources>

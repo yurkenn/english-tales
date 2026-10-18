@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_mode">ฟังและเลือกความหมาย</string>
+    <string name="listen_subtitle">ฟังคำภาษาอังกฤษและค้นหาความหมายที่ถูกต้อง</string>
+    <string name="listen_preparing">กำลังเตรียมเสียง…</string>
+    <string name="listen_unavailable">อุปกรณ์นี้ไม่มีเสียงภาษาอังกฤษ คุณสามารถดาวน์โหลดข้อมูลเสียงภาษาอังกฤษได้ในการตั้งค่า → การเข้าถึง → เอาต์พุตข้อความเป็นคำพูด</string>
+    <string name="listen_instruction">ฟังและเลือกความหมายที่ถูกต้อง</string>
+    <string name="listen_progress">เวิร์ด %1$d / %2$d</string>
+    <string name="listen_play">ฟังคำ</string>
+    <string name="listen_replay">ฟังอีกครั้ง</string>
+    <string name="listen_stop">หยุดเสียง</string>
+    <string name="listen_check">ตรวจสอบ</string>
+    <string name="listen_correct">ถูกต้อง! คำที่คุณได้ยิน: %1$s</string>
+    <string name="listen_incorrect">คำที่คุณได้ยิน: %1$s (%2$s)</string>
+    <string name="listen_next">คำถัดไป</string>
+    <string name="listen_finish">เห็นผล</string>
+    <string name="listen_exit">ลาไปปฏิบัติ</string>
+</resources>

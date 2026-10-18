@@ -1,0 +1,8 @@
+<resources>
+    <string name="content_untranslated_description">Read this English story and practice its vocabulary.</string>
+    <string name="app_language_title">App language</string>
+    <string name="app_language_description">Choose the interface and story translation language. The app restarts when the language changes; your saved progress is kept.</string>
+    <string name="app_language_system">System language</string>
+    <string name="app_language_current">App language: %1$s</string>
+    <string name="henuz_indirilen_hikaye_yok">No downloaded stories yet.</string>
+</resources>

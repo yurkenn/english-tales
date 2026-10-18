@@ -76,7 +76,7 @@ fun SentenceGapGame(
                 AnswerOption(option.label,selected==option.wordId,optionState(selected==option.wordId,checked,option.wordId==prompt.wordId),!checked,{selected=option.wordId},Modifier.appearIn(i))
             }
         }
-        AnswerFeedback(checked,correct,if(correct) stringResource(R.string.gap_correct) else stringResource(R.string.gap_incorrect,prompt.answer))
+        AnswerFeedback(checked,correct,if(correct) stringResource(R.string.gap_correct) else stringResource(R.string.gap_incorrect,englishArgument(prompt.answer)))
         Button(enabled=selected!=null && !advanced,modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp),
             colors=if(checked && correct) ButtonDefaults.buttonColors(containerColor=TaleSuccess,contentColor=TaleSurface) else ButtonDefaults.buttonColors(),onClick={
             if(!checked) checked=true

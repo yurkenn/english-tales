@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_mode">सुनें और अर्थ चुनें</string>
+    <string name="listen_subtitle">अंग्रेजी शब्द सुनें और सही अर्थ खोजें।</string>
+    <string name="listen_preparing">ऑडियो तैयार किया जा रहा है…</string>
+    <string name="listen_unavailable">इस डिवाइस में कोई अंग्रेजी आवाज नहीं है. आप सेटिंग्स → एक्सेसिबिलिटी → टेक्स्ट-टू-स्पीच आउटपुट में अंग्रेजी वॉयस डेटा डाउनलोड कर सकते हैं।</string>
+    <string name="listen_instruction">सुनें और सही अर्थ चुनें.</string>
+    <string name="listen_progress">शब्द %1$d / %2$d</string>
+    <string name="listen_play">शब्द सुनो</string>
+    <string name="listen_replay">फिर से सुनो</string>
+    <string name="listen_stop">ऑडियो बंद करो</string>
+    <string name="listen_check">जाँच करना</string>
+    <string name="listen_correct">सही! आपने जो शब्द सुना: %1$s</string>
+    <string name="listen_incorrect">आपने जो शब्द सुना: %1$s (%2$s)</string>
+    <string name="listen_next">अगला शब्द</string>
+    <string name="listen_finish">परिणाम देखें</string>
+    <string name="listen_exit">अभ्यास छोड़ो</string>
+</resources>
