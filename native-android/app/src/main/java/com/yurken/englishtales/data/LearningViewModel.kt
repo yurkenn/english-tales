@@ -26,6 +26,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     @Volatile private var syncEpoch=0L
     @Volatile private var disposed=false
     private val syncing=java.util.concurrent.atomic.AtomicBoolean(false)
+    // A sync requested while one is running may land after that run read the outbox; it reruns shortly instead of waiting a minute.
+    private val syncAgain=java.util.concurrent.atomic.AtomicBoolean(false)
     private var syncTimer: kotlinx.coroutines.Job?=null
     private val mutableAccount=MutableStateFlow(AccountState())
     val account: StateFlow<AccountState> = mutableAccount
@@ -174,7 +176,9 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun syncNow() {
         val user=mutableAccount.value.userId?:return
         val sync=cloudSync?:return
-        if(disposed || mutableAccount.value.busy || mutableAccount.value.needsSignIn || !syncing.compareAndSet(false,true)) return
+        if(disposed || mutableAccount.value.busy || mutableAccount.value.needsSignIn) return
+        if(!syncing.compareAndSet(false,true)) {syncAgain.set(true);return}
+        syncAgain.set(false)
         val expectedScope=scope
         val expectedEpoch=syncEpoch
         val current={ !disposed && scope==expectedScope && syncEpoch==expectedEpoch }
@@ -209,7 +213,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 }
             }} finally {
                 syncing.set(false)
-                if(current()) mutations.trySend(Mutation(expectedScope) {scheduleSync(60_000)})
+                val again=syncAgain.getAndSet(false)
+                if(current()) mutations.trySend(Mutation(expectedScope) {scheduleSync(if(again) 2_000 else 60_000)})
             }
         }
     }
