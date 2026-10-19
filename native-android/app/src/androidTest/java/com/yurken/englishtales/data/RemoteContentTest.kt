@@ -57,7 +57,7 @@ class RemoteContentTest {
         @Volatile var gate: java.util.concurrent.CountDownLatch?=null
         /** Holds downloads at their first request until released. */
         @Volatile var downloadGate: java.util.concurrent.CountDownLatch?=null
-        /** Single-revision downloads that reached the network. */
+        /** First pages of single-revision downloads; the terminal empty page is not another download. */
         @Volatile var downloads=0
         val doc=JSONObject().put("id",revision).put("story_id","remote-test").put("title","Remote test").put("author","English Tales")
             .put("level","A1").put("genre","Gizem").put("description","A test story").put("published_at","2026-10-11T00:00:00Z").put("cover_asset_id",assetId)
@@ -68,7 +68,7 @@ class RemoteContentTest {
             val offset=uri.getQueryParameter("offset")!!.toInt()
             val table=uri.lastPathSegment
             if(table=="stories") gate?.let {check(it.await(10,java.util.concurrent.TimeUnit.SECONDS))}
-            if(table=="story_revisions" && uri.getQueryParameter("id")!!.startsWith("eq.")) {downloads++; downloadGate?.let {check(it.await(10,java.util.concurrent.TimeUnit.SECONDS))}}
+            if(table=="story_revisions" && uri.getQueryParameter("id")!!.startsWith("eq.") && offset==0) {downloads++; downloadGate?.let {check(it.await(10,java.util.concurrent.TimeUnit.SECONDS))}}
             val rows=when(table) {
                 "stories" -> if(empty) emptyList() else listOf(JSONObject().put("id","remote-test").put("current_revision_id",revision).also {row -> createdAt?.let {row.put("created_at",it)}})
                 "story_revisions" -> listOf(doc)
