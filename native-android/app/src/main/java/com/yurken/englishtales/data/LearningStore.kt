@@ -86,7 +86,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         var weeklyWords=0
         db.rawQuery("SELECT event_id FROM engagement_events WHERE name='reading_completed' AND created_at>CAST(? AS INTEGER)",arrayOf((now-7*LearningPolicy.DAY_MS).toString())).use {c ->
             while(c.moveToNext()) LearningContent.storyById[c.getString(0).removePrefix("read:").substringBeforeLast(':')]?.let {story ->
-                weeklyWords+=story.sentences.sumOf {s -> PhraseMatcher.tokens(s.english).count {t -> t.any(Char::isLetter)}}
+                weeklyWords+=storyWordCounts.getOrPut(story.revisionId) {story.sentences.sumOf {s -> PhraseMatcher.tokens(s.english).count {t -> t.any(Char::isLetter)}}}
             }
         }
         val progress=mutableMapOf<String,Int>();val positions=mutableMapOf<String,ReadingPosition>()
@@ -115,7 +115,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
         transaction {db ->
-            updatePreferences(level,genre,goal,profile().name)
+            // Re-confirming an already onboarded profile (e.g. a cloud profile pulled mid-onboarding) is not an edit, so it cannot overwrite or conflict with the account's.
+            val p=profile()
+            if(!p.onboarding || p.level!=level || p.genre!=genre || p.goal!=goal.coerceIn(1,3)) updatePreferences(level,genre,goal,p.name)
             dao.profile(profile().copy(onboarding=true))
             newlyCompleted=recordEvent(db,"onboarding_completed","onboarding_completed",clock())
         }
@@ -150,6 +152,8 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     fun toggleWord(wordId: String) {
         transaction {db -> setWordSaved(db,wordId,scalar(db,"SELECT COUNT(*) FROM saved_words WHERE word_id=?",arrayOf(wordId))==0)}
     }
+    fun isWordSaved(wordId: String) = scalar(readableDatabase,"SELECT EXISTS(SELECT 1 FROM saved_words WHERE word_id=?)",arrayOf(wordId))==1
+    fun isFavorite(storyId: String) = scalar(readableDatabase,"SELECT EXISTS(SELECT 1 FROM favorite_stories WHERE story_id=?)",arrayOf(storyId))==1
     fun setWordSaved(wordId: String,saved: Boolean) = transaction {db ->setWordSaved(db,wordId,saved)}
     /** Saves a glossary word with its meaning, so it can be practised like a learning word (Q4.3a). */
     fun savePersonalWord(word: WordInfo) = transaction {db ->
@@ -296,7 +300,11 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         require(startedAt>=0)
         dao.begin(SessionDraftRow(canonicalSessionId(id),kind,storyId,storyId?.let {source?.revisionId ?: LearningContent.storyById.getValue(it).revisionId},startedAt,0,questionCount,"active"))
     }
-    fun checkpointSession(id: String,millis: Long) {require(millis>=0);dao.activeTime(canonicalSessionId(id),millis.coerceAtMost(86_400_000))}
+    /** Returns the stored active time while the session is active, keyed like [LearningSnapshot.activeSessionMillis]. */
+    fun checkpointSession(id: String,millis: Long): Pair<String,Long>? {
+        require(millis>=0);val key=canonicalSessionId(id);dao.activeTime(key,millis.coerceAtMost(86_400_000))
+        return dao.session(key)?.takeIf {it.state=="active"}?.let {key to it.activeMillis}
+    }
     fun sessionCompleted(id: String) = dao.session(canonicalSessionId(id))?.state=="completed"
     fun abandonSession(id: String) {dao.end(canonicalSessionId(id),"abandoned")}
     private fun prepareCompletion(id: String,kind: String,questions: Int,storyId: String?,activeMillis: Long,now: Long,source: Story?=null): SessionDraftRow? {
@@ -353,6 +361,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             dao.failed(id,owner.id,clock()+delay,code,if(retryable) "pending" else "blocked")==1
         }
     }
+    /** The request never reached the service, so the row stays due shortly after connectivity returns. */
+    fun markUploadOffline(id: String,expectedAccount: String): Boolean =
+        owner is LearningOwner.Account && owner.id==expectedAccount && dao.deferred(id,owner.id,clock()+30_000L,"network_unavailable")==1
     private fun scalar(db: SupportSQLiteDatabase,sql: String,args: Array<String>?=null) = db.rawQuery(sql,args).use {if(it.moveToFirst()) it.getInt(0) else 0}
     private fun recordEvent(db: SupportSQLiteDatabase,id: String,name: String,now: Long): Boolean = db.insertWithOnConflict("engagement_events",null,ContentValues().apply {put("event_id",id);put("name",name);put("created_at",now)},SQLiteDatabase.CONFLICT_IGNORE)!=-1L
     private fun transaction(action: (SupportSQLiteDatabase)->Unit) {database.runInTransaction {action(writableDatabase)}}
@@ -373,6 +384,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     /** Idempotent: releases this store's hold on the shared database once. */
     override fun close() {if(closed.compareAndSet(false,true)) LearningDatabase.release(database)}
 }
+
+/** Q5.10: running words per story revision; a revision's sentences never change, so the weekly count need not re-tokenize them. */
+private val storyWordCounts=java.util.concurrent.ConcurrentHashMap<String,Int>()
 
 internal fun SupportSQLiteDatabase.rawQuery(sql: String,args: Array<String>?) = query(sql,args?:emptyArray())
 internal fun SupportSQLiteDatabase.insertWithOnConflict(table: String,@Suppress("UNUSED_PARAMETER") nullColumnHack: String?,values: ContentValues,conflict: Int) = insert(table,conflict,values)

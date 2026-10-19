@@ -27,14 +27,18 @@ import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.WordInfo
 
 @Composable
-fun FlashcardGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padding: PaddingValues,onWordReviewed: (String,Boolean)->Unit,onLessonComplete: (Int)->Unit,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot) {
+fun FlashcardGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padding: PaddingValues,onWordReviewed: (String,Boolean)->Unit,onLessonComplete: (Int)->Unit,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot,onDone: ()->Unit=onExit) {
+    // Frozen at start: a sync can drop a saved word mid-session, and the deck must not shrink under the current card.
+    val words=remember(sessionId) {liveWords}
     var index by rememberSaveable(sessionId) {mutableIntStateOf(0)}
     var revealed by rememberSaveable(sessionId) {mutableStateOf(false)}
     var remembered by rememberSaveable(sessionId) {mutableIntStateOf(0)}
     var finished by rememberSaveable(sessionId) {mutableStateOf(false)}
     val narrator=rememberNarrator()
-    if(finished) {GameResult(stringResource(R.string.kelimeden_tanesini_hatirladin, words.size, remembered),remembered*5,padding,onExit,onRestart,snapshot);return}
-    val word=words[index]
+    if(finished) {GameResult(stringResource(R.string.kelimeden_tanesini_hatirladin, words.size, remembered),remembered*5,padding,onDone,onRestart,snapshot);return}
+    // After recreation the deck is rebuilt from the live list, which may be shorter; the session then ends with what was answered.
+    val word=words.getOrNull(index)
+    if(word==null) {LaunchedEffect(sessionId) {if(!finished) {finished=true;onLessonComplete(remembered)}};return}
     // A previous card's word must not keep playing over the next one.
     LaunchedEffect(word.id) {narrator.stop()}
     fun next(correct: Boolean) {

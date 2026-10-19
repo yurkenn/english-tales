@@ -4,7 +4,10 @@ import android.content.ContextWrapper
 import android.graphics.Bitmap
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.BuildConfig
+import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
@@ -42,12 +45,16 @@ class RemoteContentTest {
         var corrupted=false
         var fail=false
         var empty=false
-        var revisionQueries=0
+        var sentenceCount=7
+        /** Successful REST requests per table. */
+        val requests=mutableMapOf<String,Int>()
         var createdAt: String?=null
         var questions=false
         /** Servers without the Q4.0 translation tables answer those queries with an error. */
         var translationTables=false
         var tagTables=false
+        /** Holds catalog refreshes at their first request until released. */
+        @Volatile var gate: java.util.concurrent.CountDownLatch?=null
         val doc=JSONObject().put("id",revision).put("story_id","remote-test").put("title","Remote test").put("author","English Tales")
             .put("level","A1").put("genre","Gizem").put("description","A test story").put("published_at","2026-10-11T00:00:00Z").put("cover_asset_id",assetId)
         override fun bytes(path: String,maxBytes: Long): ByteArray {
@@ -56,10 +63,11 @@ class RemoteContentTest {
             val uri=android.net.Uri.parse("https://example.invalid$path")
             val offset=uri.getQueryParameter("offset")!!.toInt()
             val table=uri.lastPathSegment
+            if(table=="stories") gate?.let {check(it.await(10,java.util.concurrent.TimeUnit.SECONDS))}
             val rows=when(table) {
                 "stories" -> if(empty) emptyList() else listOf(JSONObject().put("id","remote-test").put("current_revision_id",revision).also {row -> createdAt?.let {row.put("created_at",it)}})
                 "story_revisions" -> listOf(doc)
-                "story_sentences" -> (1..7).map {JSONObject().put("id","s-$it").put("position",it).put("english","A quiet day.").put("turkish","Sessiz bir gün.")}
+                "story_sentences" -> (1..sentenceCount).map {JSONObject().put("id","s-$it").put("position",it).put("english","A quiet day.").put("turkish","Sessiz bir gün.")}
                 "revision_words" -> listOf(JSONObject().put("id","fixture-quiet").put("word","quiet").put("translation","sessiz").put("pronunciation","quiet").put("example","A quiet day."))
                 "sentence_words" -> listOf(JSONObject().put("sentence_id","s-1").put("word_id","fixture-quiet"))
                 "content_assets" -> listOf(JSONObject().put("id",assetId).put("kind","cover").put("mime_type","image/png").put("storage_path","test/cover.png").put("byte_size",cover.size)
@@ -74,8 +82,10 @@ class RemoteContentTest {
                 "revision_tags" -> {check(tagTables); listOf(JSONObject().put("revision_id",revision).put("tag_id","gizem"),JSONObject().put("revision_id",revision).put("tag_id","masal"))}
                 else -> error("Unexpected table")
             }
-            if(table=="story_sentences") revisionQueries++
-            return JSONArray(rows.drop(offset).take(5)).toString().toByteArray()
+            requests[table!!]=(requests[table]?:0)+1
+            // Like PostgREST, a page never exceeds the server's max_rows.
+            val limit=minOf(uri.getQueryParameter("limit")!!.toInt(),ContentHttp.PAGE_SIZE)
+            return JSONArray(rows.drop(offset).take(limit)).toString().toByteArray()
         }
     }
     /** A bundled story whose live story now points at a newer published revision. */
@@ -83,6 +93,7 @@ class RemoteContentTest {
         val revision=UUID.randomUUID().toString()
         val cover=UUID.randomUUID().toString()
         var fail=false
+        val requests=mutableMapOf<String,Int>()
         private fun doc(id: String,coverId: String)=JSONObject().put("id",id).put("story_id",story.id).put("title",story.title).put("author",story.author)
             .put("level",story.level).put("genre",story.genre).put("description",story.description).put("published_at","2026-10-16T00:00:00Z").put("cover_asset_id",coverId)
         private val revisions=listOf(doc(story.revisionId,cover),doc(revision,if(newCover) UUID.randomUUID().toString() else cover))
@@ -90,6 +101,7 @@ class RemoteContentTest {
             check(!fail) {"Simulated network failure"}
             val uri=android.net.Uri.parse("https://example.invalid$path")
             fun ids(name: String)=uri.getQueryParameter(name)?.removePrefix("in.(")?.removePrefix("eq.")?.removeSuffix(")")?.split(",")?.toSet()
+            uri.lastPathSegment?.let {requests[it]=(requests[it]?:0)+1}
             val rows=when(uri.lastPathSegment) {
                 "stories" -> listOf(JSONObject().put("id",story.id).put("current_revision_id",revision))
                 "story_revisions" -> revisions.filter {it.getString("id") in ids("id")!!}
@@ -119,16 +131,63 @@ class RemoteContentTest {
             assertEquals(fixture.revision,current.revisionId); assertTrue(current.sentences.isEmpty())
         }
     }
+    @Test fun changedTextIsCheckedOnceAcrossRefreshesAndRestarts()=runBlocking {
+        val fixture=RevisionFixture(original.first(),editedText=true)
+        val repo=ContentRepository(context,fixture); repo.restore(); repo.refresh()
+        val checked=fixture.requests.getValue("story_sentences"); assertTrue(checked>0)
+        repo.refresh(); ContentRepository(context,fixture).apply {restore(); refresh()}
+        assertEquals(checked,fixture.requests["story_sentences"])
+        assertTrue(LearningContent.storyById.getValue(fixture.story.id).sentences.isEmpty())
+    }
     @Test fun paginatedDownloadSurvivesOfflineRestart()=runBlocking {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)
         repo.restore(); repo.refresh()
         val downloaded=repo.download(LearningContent.stories.single())
-        assertEquals(7,downloaded.sentences.size); assertEquals(3,fixture.revisionQueries)
+        assertEquals(7,downloaded.sentences.size); assertEquals(2,fixture.requests["story_sentences"])
         assertEquals(listOf("fixture-quiet"),LearningContent.wordsForStory(downloaded).map {it.id})
         fixture.fail=true
         val restart=ContentRepository(context,fixture); restart.restore()
         assertTrue(restart.isDownloaded(LearningContent.stories.single()))
         assertEquals(7,LearningContent.stories.single().sentences.size)
+    }
+    @Test fun downloadStateReadsStayConsistentWhileRestoreAndRemovalRun()=runBlocking {
+        val fixture=Fixture(); val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh()
+        val story=LearningContent.stories.single(); repo.download(story)
+        // The UI reads these on Main without the repository lock; restore and removal write on other threads.
+        val restoring=java.util.concurrent.atomic.AtomicBoolean(true); val running=java.util.concurrent.atomic.AtomicBoolean(true)
+        val failure=java.util.concurrent.atomic.AtomicReference<Throwable>()
+        val reader=Thread {
+            try { while(running.get()) {
+                val list=repo.downloads(); val present=repo.isDownloaded(story)
+                // A downloaded story never disappears while restore only re-reads it from disk.
+                if(restoring.get()) { check(present) {"restore exposed a partial map"}; check(list.map {it.id}==listOf(story.id)) }
+            } } catch(t: Throwable) { failure.set(t) }
+        }.apply {start()}
+        try {
+            repeat(20) { repo.restore() }
+            restoring.set(false)
+            repeat(5) { repo.removeDownload(story); repo.download(story); repo.restore() }
+        } finally { running.set(false); reader.join(2_000) }
+        failure.get()?.let {throw AssertionError("Concurrent read failed",it)}
+        assertTrue(repo.isDownloaded(story))
+    }
+    @Test fun downloadFetchesEachTableInFullPages()=runBlocking {
+        val fixture=Fixture().apply {sentenceCount=2_503}; val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh(); fixture.requests.clear()
+        assertEquals(2_503,repo.download(LearningContent.stories.single()).sentences.size)
+        // ceil(2503/1000) pages plus the empty page that ends the table.
+        assertEquals(4,fixture.requests["story_sentences"])
+        assertEquals(mapOf("story_revisions" to 2,"revision_words" to 2,"sentence_words" to 2,"content_assets" to 2),fixture.requests-"story_sentences")
+    }
+    @Test fun smallPagesEndOnlyAtAnEmptyPage() {
+        val fixture=Fixture(); val query="select=*&revision_id=eq.${fixture.revision}&order=position.asc"
+        // A short page may be a server cap, not the end, so pagination continues to an empty page.
+        val rows=fixture.rows("story_sentences",query,5)
+        assertEquals((1..7).map {"s-$it"},(0 until rows.length()).map {rows.getJSONObject(it).getString("id")})
+        assertEquals(3,fixture.requests["story_sentences"])
+        fixture.sentenceCount=10; fixture.requests.clear()
+        assertEquals(10,fixture.rows("story_sentences",query,5).length()); assertEquals(3,fixture.requests["story_sentences"])
     }
     @Test fun downloadedQuestionsSurviveOfflineRestartAndAreOptional()=runBlocking {
         val withQuestions=Fixture().apply {questions=true}; val repo=ContentRepository(context,withQuestions)
@@ -206,6 +265,53 @@ class RemoteContentTest {
         assertFalse(repo.isDownloaded(LearningContent.stories.single()))
         assertEquals(0,LearningContent.stories.single().sentences.size)
         assertFalse(File(directory,"published-content/${fixture.revision}.json").exists())
+    }
+    @Test fun readerDownloadDuringRefreshWaitsInsteadOfBeingDropped()=runBlocking {
+        val fixture=Fixture(); val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh()
+        val story=LearningContent.stories.single(); assertFalse(repo.isDownloaded(story))
+        val gate=java.util.concurrent.CountDownLatch(1); fixture.gate=gate
+        val app=InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as android.app.Application
+        val ready=kotlinx.coroutines.CompletableDeferred<Story>(); var calls=0
+        val model=withContext(Dispatchers.Main) {ContentViewModel(app,repo)}
+        // The ViewModel's start-up refresh is now held at the network.
+        withTimeout(10_000) {model.status.first {it.busy && it.downloading==null}}
+        withContext(Dispatchers.Main) {
+            model.download(story) {calls++; ready.complete(it)}
+            model.download(story) {calls++}
+            assertEquals(story.id,model.status.value.downloading); assertTrue(model.status.value.busy)
+        }
+        gate.countDown()
+        val opened=withTimeout(10_000) {ready.await()}
+        assertEquals(7,opened.sentences.size); assertTrue(repo.isDownloaded(story))
+        withContext(Dispatchers.Main) {
+            assertEquals(1,calls)
+            assertFalse(model.status.value.busy); assertNull(model.status.value.downloading)
+        }
+    }
+    @Test fun sharedLinkToNewStoryWaitsForRunningRefresh()=runBlocking {
+        val fixture=Fixture(); val gate=java.util.concurrent.CountDownLatch(1); fixture.gate=gate
+        val app=InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as android.app.Application
+        val model=withContext(Dispatchers.Main) {ContentViewModel(app,ContentRepository(context,fixture))}
+        // Ready comes from the cached catalog, which predates the shared story; the start-up refresh is held at the network.
+        withTimeout(10_000) {model.ready.first {it}; model.status.first {it.busy}}
+        assertFalse("remote-test" in LearningContent.storyById)
+        val opened=async(Dispatchers.Main) {StoryLinks.resolve("remote-test",{it in LearningContent.storyById}) {model.awaitRefresh()}}
+        kotlinx.coroutines.delay(200); assertFalse(opened.isCompleted)
+        gate.countDown()
+        assertTrue(withTimeout(10_000) {opened.await()})
+        // One refresh reads the stories page and the empty page that ends pagination; a second refresh would make it 4.
+        assertEquals(2,fixture.requests["stories"])
+    }
+    @Test fun sharedLinkRefreshesAFreshCatalogOnceAndFallsBackOffline()=runBlocking {
+        val fixture=Fixture().apply {empty=true}
+        val app=InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as android.app.Application
+        val model=withContext(Dispatchers.Main) {ContentViewModel(app,ContentRepository(context,fixture))}
+        withTimeout(10_000) {model.status.first {!it.busy && it.message.isNotEmpty()}}
+        fixture.fail=true
+        assertFalse(withContext(Dispatchers.Main) {withTimeout(10_000) {StoryLinks.resolve("remote-test",{it in LearningContent.storyById}) {model.awaitRefresh()}}})
+        fixture.fail=false; fixture.empty=false
+        assertTrue(withContext(Dispatchers.Main) {withTimeout(10_000) {StoryLinks.resolve("remote-test",{it in LearningContent.storyById}) {model.awaitRefresh()}}})
     }
     @Test fun failedRefreshKeepsWorkingContentAndReaderPin()=runBlocking {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)

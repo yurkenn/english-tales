@@ -51,6 +51,16 @@ import kotlinx.coroutines.CancellationException
 
 private const val SENTENCES_PER_PAGE=8
 
+/** The page the reader opens on. A finished story starts over: completion stores its last sentence as the position. */
+internal fun initialReaderPage(story: Story, snapshot: LearningSnapshot): Int {
+    val pageCount=(story.sentences.size+SENTENCES_PER_PAGE-1)/SENTENCES_PER_PAGE
+    val saved=snapshot.progressFor(story)
+    if(saved==100) return 0
+    val position=snapshot.readingPositions[story.id]?.takeIf {it.carriesTo(story)}
+    val sentenceIndex=position?.let {p ->story.sentences.indexOfFirst {it.id==p.sentenceId}}?.takeIf {it>=0}
+    return (sentenceIndex?.div(SENTENCES_PER_PAGE)?:((saved*story.sentences.size+99)/100/SENTENCES_PER_PAGE)).coerceIn(0,(pageCount-1).coerceAtLeast(0))
+}
+
 /**
  * Utterance bookkeeping for one narration: a list of sentences is queued as one utterance each, so the
  * engine reports which sentence is being read. Only the newest batch counts; callbacks from a flushed
@@ -141,7 +151,7 @@ internal open class Narrator(context: Context, private val focus: NarrationFocus
     fun speak(text: String) = speakAll(listOf(text))
 
     /** Reads [texts] one after another as separate utterances, so [spokenIndex] follows the reading. */
-    fun speakAll(texts: List<String>) {
+    open fun speakAll(texts: List<String>) {
         if (closed || texts.isEmpty()) return
         if (!ready) { if (error == null) {pending = texts;preparing = true}; return }
         if (!focus.request()) { error = appContext.getString(R.string.ses_su_anda_baska_bir); return }
@@ -171,14 +181,11 @@ internal fun rememberNarrator(factory: (Context) -> Narrator = ::Narrator): Narr
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={},appearanceStore: ReadingPreferencesStore?=null,onSaveGlossaryWord: (WordInfo)->Unit={},onLookup: (WordInfo)->Unit={}) {
+internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={},appearanceStore: ReadingPreferencesStore?=null,onSaveGlossaryWord: (WordInfo)->Unit={},onLookup: (WordInfo)->Unit={},narratorFactory: (Context)->Narrator=::Narrator) {
     val context=LocalContext.current
-    val narrator=rememberNarrator()
+    val narrator=rememberNarrator(narratorFactory)
     val pageCount=(story.sentences.size+SENTENCES_PER_PAGE-1)/SENTENCES_PER_PAGE
-    val saved=snapshot.progressFor(story)
-    val position=snapshot.readingPositions[story.id]?.takeIf {it.carriesTo(story)}
-    val sentenceIndex=position?.let {p ->story.sentences.indexOfFirst {it.id==p.sentenceId}}?.takeIf {it>=0}
-    var page by rememberSaveable(story.revisionId) { mutableIntStateOf((sentenceIndex?.div(SENTENCES_PER_PAGE)?:(((if(saved==100) 0 else saved)*story.sentences.size+99)/100/SENTENCES_PER_PAGE)).coerceIn(0,pageCount-1)) }
+    var page by rememberSaveable(story.revisionId) { mutableIntStateOf(initialReaderPage(story,snapshot)) }
     // Scrubbing the slider only moves the page on screen; the position is reported once the drag ends,
     // so a long scrub writes one progress event instead of one per page crossed.
     var reportedPage by rememberSaveable(story.revisionId) { mutableIntStateOf(page) }
@@ -227,7 +234,9 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
         var narrationFrom by remember { mutableIntStateOf(0) }
         fun listen(from: Int=0) { narrationFrom=from; narrator.speakAll(pageSentences.drop(from).map { it.english }) }
         val readingIndex=narrator.spokenIndex?.let { narrationFrom+it }
-        LaunchedEffect(autoListen) { if(autoListen) listen() }
+        // Starts once per reader visit: a rotation or restore must not restart speech the learner paused.
+        var autoListened by rememberSaveable(story.revisionId) { mutableStateOf(false) }
+        LaunchedEffect(autoListen) { if(autoListen && !autoListened) { autoListened=true;listen() } }
         fun changePage(next: Int,report: Boolean=true) {
             val target=next.coerceIn(0,pageCount-1)
             if(target==page) return

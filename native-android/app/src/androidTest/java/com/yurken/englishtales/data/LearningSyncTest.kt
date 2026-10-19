@@ -58,7 +58,7 @@ class LearningSyncTest {
             JSONObject().put("applied", false)
         }, accounts)
         assertTrue(sync.upload(store, store.owner.id, { true }).stopped)
-        assertEquals(1, store.queuedOperations().single().attempts)
+        assertEquals(0, store.queuedOperations().single().attempts)
         assertEquals(0, sync.upload(store, store.owner.id, { true }).delivered)
         advance()
         assertEquals(1, sync.upload(store, store.owner.id, { true }).delivered)
@@ -159,20 +159,39 @@ class LearningSyncTest {
             assertEquals(label, event.createdAt + 30_000, event.nextAttemptAt)
         }
     }
-    @Test fun networkFailureSchedulesBackoffAndDoesNotResendBeforeItIsDue() = exercise { store, accounts, advance ->
+    @Test fun networkFailureSchedulesShortRetryAndDoesNotResendBeforeItIsDue() = exercise { store, accounts, advance ->
         var calls = 0
         val sync = LearningQueueSync(LearningSyncTransport { _, _, _ -> calls++; throw IOException("Fixture offline") }, accounts)
         assertEquals(LearningUploadResult(0, 0, true, false), sync.upload(store, store.owner.id, { true }))
         val first = store.queuedOperations().single()
         assertEquals("pending", first.state); assertEquals("network_unavailable", first.errorCode)
-        assertEquals(1, first.attempts); assertEquals(first.createdAt + 30_000, first.nextAttemptAt)
+        assertEquals(0, first.attempts); assertEquals(first.createdAt + 30_000, first.nextAttemptAt)
         assertEquals(LearningUploadResult(0, 0, false), sync.upload(store, store.owner.id, { true }))
         assertEquals(1, calls)
         advance()
         assertTrue(sync.upload(store, store.owner.id, { true }).stopped)
         val second = store.queuedOperations().single()
-        assertEquals(2, calls); assertEquals(2, second.attempts)
-        assertEquals(first.createdAt + 60_000 + 60_000, second.nextAttemptAt)
+        assertEquals(2, calls); assertEquals(0, second.attempts)
+        assertEquals(first.createdAt + 60_000 + 30_000, second.nextAttemptAt)
+    }
+    @Test fun repeatedOfflineFailuresDoNotDelayDeliveryAfterReconnecting() = exercise { store, accounts, advance ->
+        var online = false
+        val sync = LearningQueueSync(LearningSyncTransport { _, _, _ ->
+            if (!online) throw IOException("Fixture offline")
+            JSONObject().put("applied", true)
+        }, accounts)
+        val createdAt = store.queuedOperations().single().createdAt
+        repeat(5) {
+            advance()
+            assertTrue(sync.upload(store, store.owner.id, { true }).stopped)
+        }
+        val waiting = store.queuedOperations().single()
+        assertEquals(0, waiting.attempts); assertEquals("network_unavailable", waiting.errorCode)
+        assertEquals(createdAt + 5 * 60_000 + 30_000, waiting.nextAttemptAt)
+        online = true
+        advance()
+        assertEquals(LearningUploadResult(1, 0, false), sync.upload(store, store.owner.id, { true }))
+        assertEquals("delivered", store.queuedOperations().single().state)
     }
     @Test fun failureBackoffDoublesThenStaysCappedForAnyAttemptCount() = listOf(
         0 to 30_000L, 1 to 60_000L, 5 to 960_000L, 10 to 30_720_000L, 11 to 61_440_000L,

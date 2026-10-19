@@ -17,4 +17,11 @@ object StoryLinks {
         if (segments.size != 2 || segments[0] != "story") return null
         return segments[1].takeIf(storyId::matches)
     }
+
+    /** Whether a linked story can open: one this catalog lacks waits for a single refresh, which may have just published it. */
+    suspend fun resolve(storyId: String, known: (String) -> Boolean, refresh: suspend () -> Unit): Boolean {
+        if (known(storyId)) return true
+        refresh()
+        return known(storyId)
+    }
 }

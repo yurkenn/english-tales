@@ -66,6 +66,15 @@ class LearningStoreTest {
         assertTrue(snapshot.badges.containsAll(listOf("first_story","first_practice")))
         store.readableDatabase.rawQuery("SELECT COUNT(*) FROM engagement_events WHERE name='daily_goal_reached'",null).use {assertTrue(it.moveToFirst());assertEquals(1,it.getInt(0))}
     }
+    @Test fun reconfirmingTheOnboardedProfileDoesNotMarkPreferencesForUpload() {
+        fun dirty()=store.readableDatabase.rawQuery("SELECT preferences_dirty FROM local_profile WHERE id=1",null).use {it.moveToFirst();it.getInt(0)}
+        // A first onboarding is always the learner's own choice, even when it matches the defaults.
+        store.completeOnboarding("A1","Günlük yaşam",1);assertEquals(1,dirty())
+        store.writableDatabase.execSQL("UPDATE local_profile SET level='B1',genre='Gizem',goal=3,preferences_dirty=0 WHERE id=1")
+        store.completeOnboarding("B1","Gizem",3);assertEquals(0,dirty())
+        assertTrue(store.snapshot().onboardingDone);assertEquals("B1",store.snapshot().level)
+        store.completeOnboarding("A2","Gizem",3);assertEquals(1,dirty());assertEquals("A2",store.snapshot().level)
+    }
     @Test fun anOverCountedPracticeIsClampedInsteadOfWedgingTheWriteQueue() {
         val session=UUID.randomUUID().toString()
         store.beginSession(session,"choice",3)

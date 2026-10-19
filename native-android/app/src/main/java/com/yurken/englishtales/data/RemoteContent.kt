@@ -8,6 +8,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -54,9 +55,9 @@ open class ContentHttp(private val base: String, private val key: String) {
             }
         } finally { connection.disconnect() }
     }
-    fun rows(table: String, query: String, pageSize: Int = 5): JSONArray {
+    /** Only an empty page ends the table, so a server that caps pages below [pageSize] still returns every row. */
+    fun rows(table: String, query: String, pageSize: Int = PAGE_SIZE): JSONArray {
         val all = JSONArray(); var offset = 0
-        // A small default page also exercises pagination with the initial six stories.
         while (true) {
             val page = JSONArray(String(bytes("/rest/v1/$table?$query&limit=$pageSize&offset=$offset", 2_000_000), Charsets.UTF_8))
             for (i in 0 until page.length()) all.put(page.getJSONObject(i))
@@ -64,6 +65,10 @@ open class ContentHttp(private val base: String, private val key: String) {
             offset += page.length()
             require(offset <= 20_000) { "Katalog sınırı aşıldı." }
         }
+    }
+    companion object {
+        /** PostgREST `max_rows` (backend/supabase/config.toml, also the hosted default); a larger page gains nothing. */
+        const val PAGE_SIZE = 1000
     }
 }
 
@@ -121,12 +126,16 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     /** Newer published revisions (immutable) whose text and cover match the bundled story; they still open offline. */
     private val bundledTextIndex = AtomicFile(File(directory, "bundled-text.index"))
     private val bundledText = mutableMapOf<String, String>()
+    /** Revisions already checked and found to differ from the bundled story with this fingerprint, so refresh skips them. */
+    private val bundledMismatchIndex = AtomicFile(File(directory, "bundled-mismatch.index"))
+    private val bundledMismatch = mutableMapOf<String, String>()
     private fun fingerprint(story: Story) = MessageDigest.getInstance("SHA-256")
         .digest(story.sentences.map { it.id to it.english }.toString().toByteArray(Charsets.UTF_8))
         .joinToString("") { "%02x".format(it) }
     private var metadata = JSONArray()
     private var hasRemoteCatalog = false
-    private val downloaded = mutableMapOf<String, Story>()
+    /** Replaced whole under [lock], never mutated: the UI reads it on Main without the lock (isDownloaded/downloads). */
+    @Volatile private var downloaded: Map<String, Story> = emptyMap()
     private val historical = mutableMapOf<String, Story>()
     private fun atomic(file: AtomicFile, bytes: ByteArray) {
         val output = file.startWrite()
@@ -135,7 +144,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private fun read(file: AtomicFile) = file.openRead().use { String(it.readBytes(), Charsets.UTF_8) }
     suspend fun restore() = lock.withLock {
         withContext(Dispatchers.IO) {
-            downloaded.clear(); historical.clear(); bundledText.clear()
+            val restored = mutableMapOf<String, Story>(); historical.clear(); bundledText.clear(); bundledMismatch.clear()
             metadata = JSONArray(); hasRemoteCatalog = false
             runCatching {
                 val candidate = JSONArray(read(index))
@@ -145,6 +154,10 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             runCatching {
                 val saved = JSONObject(read(bundledTextIndex))
                 for (key in saved.keys()) bundledText[UUID.fromString(key).toString()] = saved.getString(key)
+            }
+            runCatching {
+                val saved = JSONObject(read(bundledMismatchIndex))
+                for (key in saved.keys()) bundledMismatch[UUID.fromString(key).toString()] = saved.getString(key)
             }
             directory.listFiles().orEmpty().filter { it.name.endsWith(".json") && it.name != "catalog.json" }.forEach { file ->
                 runCatching {
@@ -156,10 +169,11 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                     val cover = File(directory, "$revision.cover")
                     ContentCodec.verify(cover.readBytes(), asset)
                     val story = ContentCodec.story(doc, cover.absolutePath)
-                    require(story.sentences.isNotEmpty()); downloaded[story.revisionId] = story
+                    require(story.sentences.isNotEmpty()); restored[story.revisionId] = story
                 }
             }
-            directory.listFiles().orEmpty().filter {it.name.endsWith(".cover") && it.name.removeSuffix(".cover") !in downloaded}.forEach {it.delete()}
+            downloaded = restored
+            directory.listFiles().orEmpty().filter {it.name.endsWith(".cover") && it.name.removeSuffix(".cover") !in restored}.forEach {it.delete()}
         }
         publish()
     }
@@ -219,8 +233,10 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         val docs = (0 until catalog.length()).map { catalog.getJSONObject(it) }
         val current = docs.map { it.getString("id") }.toSet()
         var changed = bundledText.keys.retainAll(current)
+        var missed = bundledMismatch.keys.retainAll(current)
         val candidates = docs.filter { doc -> val revision = doc.getString("id")
-            revision !in downloaded && revision !in bundled && revision !in bundledText && doc.getString("story_id") in bundledByStory }
+            revision !in downloaded && revision !in bundled && revision !in bundledText && doc.getString("story_id") in bundledByStory &&
+                bundledMismatch[revision] != fingerprint(bundledByStory.getValue(doc.getString("story_id"))) }
         for (batch in candidates.chunked(50)) {
             val bundledIds = batch.map { ContentRevisionIds.bundled(it.getString("story_id")) }
             val covers = remote.rows("story_revisions", "select=id,cover_asset_id&id=in.(${bundledIds.joinToString(",")})&published_at=not.is.null&order=id.asc", 100)
@@ -233,10 +249,12 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 val sameCover = coverByRevision[ContentRevisionIds.bundled(story.id)]?.let { it == doc.optString("cover_asset_id") } == true
                 if (sameCover && sentences[revision]?.map { it.id to it.english } == story.sentences.map { it.id to it.english }) {
                     bundledText[revision] = fingerprint(story); changed = true
-                }
+                    if (bundledMismatch.remove(revision) != null) missed = true
+                } else { bundledMismatch[revision] = fingerprint(story); missed = true }
             }
         }
         if (changed) atomic(bundledTextIndex, JSONObject().apply { bundledText.forEach { (revision, text) -> put(revision, text) } }.toString().toByteArray(Charsets.UTF_8))
+        if (missed) atomic(bundledMismatchIndex, JSONObject().apply { bundledMismatch.forEach { (revision, text) -> put(revision, text) } }.toString().toByteArray(Charsets.UTF_8))
     }
     /** Tag ids in vocabulary order with their names; empty on servers without tag tables (Q4.5). */
     private fun tagVocabulary(remote: ContentHttp, lang: String): List<Pair<String, String>> {
@@ -260,7 +278,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         })
     }
     /** Translation tables are newer than the first releases; until a server has them, the legacy Turkish columns are used. */
-    private fun ContentHttp.optionalRows(table: String, query: String, pageSize: Int = 5) = runCatching { rows(table, query, pageSize) }.getOrNull()
+    private fun ContentHttp.optionalRows(table: String, query: String, pageSize: Int = ContentHttp.PAGE_SIZE) = runCatching { rows(table, query, pageSize) }.getOrNull()
     private fun JSONArray.forEachObject(action: (JSONObject) -> Unit) = (0 until length()).forEach { action(getJSONObject(it)) }
     /** Stores each row's text as `translations.{lang}` on the matching item, which [ContentCodec] reads first. */
     private fun attach(items: JSONArray, rows: JSONArray, key: String, field: String, lang: String) {
@@ -315,7 +333,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             atomic(AtomicFile(File(directory, "$revision.json")), doc.toString().toByteArray(Charsets.UTF_8))
             parsed
         }
-        downloaded[result.revisionId] = result; historical[result.revisionId] = result; publish(); result
+        downloaded = downloaded + (result.revisionId to result); historical[result.revisionId] = result; publish(); result
     }
     suspend fun removeDownload(story: Story) = lock.withLock {
         // Keep the small text archive as the source for already learned vocabulary.
@@ -324,7 +342,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 require(!File(directory,"${saved.revisionId}.cover").exists() || File(directory,"${saved.revisionId}.cover").delete())
             }
         }
-        downloaded.entries.removeAll {it.value.id == story.id}; publish()
+        downloaded = downloaded.filterValues {it.id != story.id}; publish()
     }
 }
 
@@ -334,11 +352,11 @@ internal object ContentRefreshPolicy {
     fun isStale(lastSuccessAt: Long?, now: Long): Boolean = lastSuccessAt == null || now - lastSuccessAt >= MIN_INTERVAL_MILLIS || now < lastSuccessAt
 }
 
-class ContentViewModel(application: Application) : AndroidViewModel(application) {
+class ContentViewModel internal constructor(application: Application, val repository: ContentRepository) : AndroidViewModel(application) {
+    constructor(application: Application) : this(application, ContentRepository(application,
+        if (BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))
+            ContentHttp(BuildConfig.SUPABASE_URL, BuildConfig.SUPABASE_PUBLISHABLE_KEY) else null))
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
-    private val http = if (BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))
-        ContentHttp(BuildConfig.SUPABASE_URL, BuildConfig.SUPABASE_PUBLISHABLE_KEY) else null
-    val repository = ContentRepository(application, http)
     private val mutableStatus = MutableStateFlow(ContentStatus())
     val status = mutableStatus.asStateFlow()
     private val mutableReady = MutableStateFlow(false)
@@ -360,16 +378,29 @@ class ContentViewModel(application: Application) : AndroidViewModel(application)
     fun refreshIfStale(now: Long = android.os.SystemClock.elapsedRealtime()) {
         if (ContentRefreshPolicy.isStale(lastRefreshAt, now)) refresh()
     }
+    private var refreshing = false
+    /** A download queued behind this refresh owns the status, so the refresh only announces its outcome. */
+    private fun finishRefresh(status: ContentStatus, success: Boolean, announce: Boolean) {
+        refreshing = false
+        if (mutableStatus.value.downloading == null) finish(status, success, announce)
+        else if (announce) mutableEvents.tryEmit(ContentEvent(success, status.message))
+    }
+    private var refreshJob: Job? = null
+    /** Waits for the running refresh, or runs one now; a shared link to a just-published story needs the newest catalog. */
+    suspend fun awaitRefresh() { (refreshJob?.takeIf { it.isActive } ?: run { refresh(); refreshJob?.takeIf { it.isActive } })?.join() }
     fun refresh(userInitiated: Boolean = false) {
         if (mutableStatus.value.busy) return
+        refreshing = true
         mutableStatus.value = ContentStatus(busy = true, message = text(R.string.content_message_refreshing))
-        viewModelScope.launch {
-            try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finish(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
-            catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
+        refreshJob = viewModelScope.launch {
+            try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finishRefresh(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
+            catch (_: Exception) { finishRefresh(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
         }
     }
+    /** Waits behind a running refresh (the repository lock serialises them); one download runs at a time. */
     fun download(story: Story, onReady: (Story) -> Unit = {}) {
-        if (mutableStatus.value.busy) return
+        val current = mutableStatus.value
+        if (current.downloading != null || (current.busy && !refreshing)) return
         mutableStatus.value = ContentStatus(true, text(R.string.content_message_downloading), story.id)
         viewModelScope.launch {
             try { val ready = repository.download(story); finish(ContentStatus(message = text(R.string.content_message_downloaded)), true); onReady(ready) }

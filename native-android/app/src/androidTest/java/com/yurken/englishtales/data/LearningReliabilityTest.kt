@@ -40,7 +40,7 @@ class LearningReliabilityTest {
         override fun clear() {saved=null}
     }
     private fun exercise(setup: (LearningStore)->Unit={},read: (LearningStore)->LearningSnapshot={it.snapshot()},
-        block: (LearningViewModel,Context)->Unit) {
+        sync: LearningAccountSync?=null,background: Boolean=false,block: (LearningViewModel,Context)->Unit) {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val context=isolated()
         val http=object: AuthHttp("https://example.invalid","sb_publishable_fixture") {
@@ -53,11 +53,30 @@ class LearningReliabilityTest {
         }
         val holder=ViewModelStore()
         val vm=LearningViewModel(context.applicationContext as Application,AccountService(http,Memory()),
-            {LearningStore(context,it).also {store ->if(it is LearningOwner.Guest) setup(store)}},
+            {LearningStore(context,it).also {store ->if(it is LearningOwner.Guest) setup(store)}},sync,background,
             onOwnerChanged={LearningReminderOwner.select(context,it)},readSnapshot=read)
         holder.put("reliability",vm)
         try {await {vm.ready.value};block(vm,context)}
         finally {instrumentation.runOnMainSync {holder.clear()}}
+    }
+
+    @Test fun resolvingPreferencesBehindAHeldWriteStillResumesBackgroundSync() {
+        LearningSyncRuntime.resetForTest {Memory()}
+        var user: String?=null
+        try {
+            // An offline cloud keeps the fixture local; the worker must not stay paused while the resolve waits behind the failed write.
+            exercise(sync=LearningAccountSync(LearningSyncTransport {_,_,_ ->throw LearningSyncFailure("offline")},"https://fixture.supabase.co"),background=true) {vm,context ->
+                vm.signIn("fixture@example.invalid","fixture-password");await {vm.account.value.userId!=null && !vm.account.value.busy}
+                user=vm.account.value.userId
+                LearningStore(context,LearningOwner.Account(user!!)).use {it.writableDatabase.execSQL("CREATE TRIGGER fail_save BEFORE INSERT ON saved_words BEGIN SELECT RAISE(ABORT,'fixture'); END")}
+                vm.toggleWord("morning");await {vm.writeError.value?.pendingCount==1}
+                vm.resolvePreferences(true)
+                await {vm.writeError.value?.pendingCount==2 && !LearningSyncRuntime.paused}
+            }
+        } finally {
+            LearningSyncRuntime.paused=false;LearningSyncRuntime.resetForTest()
+            if(LearningSyncRuntime.configured()) user?.let {LearningSyncRuntime.cancel(InstrumentationRegistry.getInstrumentation().targetContext,it)}
+        }
     }
 
     @Test fun rolledBackWordSaveAndLaterSaveRecoverInOrder()=exercise(setup={
@@ -113,6 +132,31 @@ class LearningReliabilityTest {
         }
     }
 
+    @Test fun checkpointsPatchActiveTimeWithoutReReadingTheSnapshot() {
+        val reads=java.util.concurrent.atomic.AtomicInteger()
+        exercise(read={reads.incrementAndGet();it.snapshot()}) {vm,context ->
+            val session=UUID.randomUUID().toString()
+            vm.beginSession(session,"choice",5,null)
+            await {session in vm.state.value.activeSessionMillis}
+            val before=reads.get()
+            repeat(10) {vm.checkpointSession(session,(it+1)*1_000L)}
+            await {vm.state.value.activeSessionMillis[session]==10_000L}
+            assertEquals(before,reads.get())
+            LearningStore(context).use {assertEquals(it.snapshot().activeSessionMillis,vm.state.value.activeSessionMillis)}
+            vm.toggleWord("morning")
+            await {"morning" in vm.state.value.savedWordIds}
+            assertEquals(before+1,reads.get())
+        }
+    }
+
+    @Test fun membershipTogglesStillFlipSavedWordsAndFavorites()=exercise {vm,_ ->
+        val glossary=WordInfo("glossary:walk","walk","yürümek","","")
+        vm.toggleWord("morning");vm.toggleGlossaryWord(glossary);vm.toggleFavorite("fixture-story")
+        await {vm.state.value.savedWordIds==setOf("morning","glossary:walk") && vm.state.value.favoriteStoryIds==listOf("fixture-story")}
+        vm.toggleWord("morning");vm.toggleGlossaryWord(glossary);vm.toggleFavorite("fixture-story")
+        await {vm.state.value.savedWordIds.isEmpty() && vm.state.value.favoriteStoryIds.isEmpty() && vm.state.value.personalWords.isEmpty()}
+    }
+
     @Test fun failedSessionStartRetainsOriginalTimeWhenLaterCompletionIsRetried()=exercise(setup={
         it.writableDatabase.execSQL("CREATE TRIGGER fail_start BEFORE INSERT ON session_drafts BEGIN SELECT RAISE(ABORT,'fixture'); END")
     }) {vm,context ->
@@ -143,15 +187,46 @@ class LearningReliabilityTest {
         }
     }
 
+    @Test fun repeatedRemoveFromMyWordsKeepsTheWordRemovedAndQueuesOneRemove()=exercise(setup={it.saveWords(listOf("morning"));it.reviewWord("morning",true)}) {vm,context ->
+        val glossary=WordInfo("glossary:walk","walk","yürümek","","")
+        vm.toggleGlossaryWord(glossary);await {"glossary:walk" in vm.state.value.savedWordIds}
+        assertEquals("reviewing",vm.state.value.wordStates["morning"])
+        vm.removeWord("morning");vm.removeWord("morning");vm.removeWord("glossary:walk");vm.removeWord("glossary:walk")
+        // Mutations run in order, so this save landing means every remove above has run.
+        vm.toggleWord("quiet");await {"quiet" in vm.state.value.savedWordIds}
+        assertEquals(setOf("quiet"),vm.state.value.savedWordIds);assertNull(vm.writeError.value);assertTrue(vm.state.value.personalWords.isEmpty())
+        LearningStore(context).use {store ->
+            val events=store.queuedOperations().filter {it.rpc=="apply_word_event"}.map {JSONObject(it.payload)}
+            for(word in listOf("morning","glossary:walk")) assertEquals(1,events.count {it.getString("wordId")==word && it.getString("action")=="remove"})
+            assertEquals(1,events.count {it.getString("wordId")=="morning" && it.getString("action")=="save"})
+        }
+    }
+
+    @Test fun toggleWordFlipsBackOnASecondTapSoMyWordsMustNotUseIt()=exercise(setup={it.saveWords(listOf("morning"));it.reviewWord("morning",true)}) {vm,_ ->
+        vm.toggleWord("morning");vm.toggleWord("morning")
+        vm.toggleWord("quiet");await {"quiet" in vm.state.value.savedWordIds}
+        // The re-save starts the word over, which is why the My Words screen calls removeWord instead.
+        assertEquals("learning",vm.state.value.wordStates["morning"])
+    }
+
     @Test fun failedGuestWriteCannotBeRetriedIntoAnotherAccount()=exercise(setup={
-        it.writableDatabase.execSQL("CREATE TRIGGER fail_save BEFORE INSERT ON saved_words BEGIN SELECT RAISE(ABORT,'fixture'); END")
+        it.writableDatabase.execSQL("CREATE TRIGGER IF NOT EXISTS fail_save BEFORE INSERT ON saved_words BEGIN SELECT RAISE(ABORT,'fixture'); END")
     }) {vm,context ->
-        vm.toggleWord("morning");await {vm.writeError.value!=null}
+        vm.toggleWord("morning");vm.toggleWord("quiet");await {vm.writeError.value?.pendingCount==2}
+        // A switch while writes are held must neither drop them nor carry them into the account.
+        vm.signIn("fixture@example.invalid","fixture-password")
+        await {!vm.account.value.busy}
+        val pending=com.yurken.englishtales.AppLanguage.wrap(context.applicationContext).getString(com.yurken.englishtales.R.string.write_error_pending_changes)
+        assertEquals("guest",vm.state.value.ownerId);assertNull(vm.account.value.userId)
+        assertEquals(pending,vm.account.value.message)
+        assertEquals(2,vm.writeError.value?.pendingCount)
+        LearningStore(context).use {it.writableDatabase.execSQL("DROP TRIGGER fail_save")}
         vm.signIn("fixture@example.invalid","fixture-password")
         await {vm.state.value.ownerId!="guest" && !vm.account.value.busy}
         vm.retryLearningWrites();vm.refresh()
         assertNull(vm.writeError.value)
         assertTrue(vm.completedSessions.value.isEmpty())
+        LearningStore(context).use {assertEquals(setOf("morning","quiet"),it.snapshot().savedWordIds)}
         LearningStore(context,LearningOwner.Account(vm.state.value.ownerId)).use {assertTrue(it.snapshot().savedWordIds.isEmpty())}
         assertEquals(vm.state.value.ownerId,LearningReminderOwner.current(context)?.id)
     }
