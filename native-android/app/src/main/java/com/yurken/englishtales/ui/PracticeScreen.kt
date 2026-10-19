@@ -96,7 +96,6 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
         val sentenceMode=value=="cloze" || value=="order" || value=="dictation"
         if(!sentenceMode && pool.isEmpty()) {if(mode.isNotEmpty()) exit();return}
-        sessionKey=java.util.UUID.randomUUID().toString()
         session++; ids=drawn;mode=value;question=0;correctCount=0;finished=false
         // Q5.8: each word gets the drill that fits its stage, and the session climbs from word drills to games.
         if(value=="ladder") {
@@ -109,6 +108,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         }
         if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(snapshot::wordFor),dictionary)
         sessionCount=ids.size
+        // Written last: the start effect keys on it and reads the count, so it must never see a new key with the old count.
+        sessionKey=java.util.UUID.randomUUID().toString()
     }
     // Undispatched: modes without a gap session start in this frame, as before. A start already building is not doubled.
     fun start(value: String, seeded: List<String> = emptyList()) {
