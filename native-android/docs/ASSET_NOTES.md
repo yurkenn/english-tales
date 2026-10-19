@@ -27,3 +27,9 @@ Onaylanan tasarıma göre `ReferenceComponents.kt` Canvas çizimleri yenilendi: 
 - ReadingResultScreen ve GameResult kutlayan ifadeyi kullanır. SavedWordsScreen boş aşamalarda düşünen ifadeyi kullanır. Çeviri/yazım çalışmasının başlığında düşünen, yanlış cevapta destekleyici ifade görünür.
 - Karşılama ve kutlama hareketleri bir kez çalışır; okuma metninde veya cevap beklerken sürekli animasyon yoktur. Açıklayıcı metnin yanındaki görseller dekoratiftir.
 - Puan, kayıt, reklam sınırı ve soru ilerleme kuralları değiştirilmez.
+
+## 19 Ekim 2026 ikon seti
+
+- Elle çizilen Canvas ikonlarının yerine [Phosphor Icons](https://phosphoricons.com) 2.1.1 geldi (MIT lisansı, telif: Phosphor Icons). Ek kütüphane yok; kullanılan SVG'ler `res/drawable/ic_ph_*.xml` vektörlerine çevrildi.
+- Ağırlıklar: özellik ikonları duotone, yön ve araç ikonları regular, rozet içindeki küçük işaretler bold, seçili alt sekme fill.
+- Tek giriş noktası `ReferenceIcon(kind, …)`; yeni ikon için ilgili SVG aynı biçimde vektöre çevrilip eşlemeye eklenir.
