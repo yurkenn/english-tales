@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.WordInfo
 
 @Composable
-fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padding: PaddingValues,onWordReviewed: (String,Boolean)->Unit,onLessonComplete: (Int)->Unit,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot) {
+fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padding: PaddingValues,onWordReviewed: (String,Boolean)->Unit,onLessonComplete: (Int)->Unit,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot,onDone: ()->Unit=onExit) {
     // Frozen at start: a sync can drop a saved word mid-session, and a matched pair must not vanish from the board.
     val words=remember(sessionId) {liveWords}
     val translationIds=rememberSaveable(sessionId) {words.shuffled().map {it.id}}
@@ -36,7 +36,7 @@ fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,
     // The last wrong pair shakes; each mistake bumps the tick so the same pair can shake again.
     var wrongPair by remember(sessionId) {mutableStateOf<Pair<String,String>?>(null)}
     var wrongTick by remember(sessionId) {mutableIntStateOf(0)}
-    if(finished) {GameResult(stringResource(R.string.kelime_hata, words.size, mistakes),(words.size-mistakes).coerceAtLeast(0)*5,padding,onExit,onRestart,snapshot);return}
+    if(finished) {GameResult(stringResource(R.string.kelime_hata, words.size, mistakes),(words.size-mistakes).coerceAtLeast(0)*5,padding,onDone,onRestart,snapshot);return}
     // Completion counts only this board's words; after recreation the live list may have lost some, even a matched one.
     val done=words.all {it.id in matched}
     if(done) {LaunchedEffect(sessionId) {if(!finished) {finished=true;onLessonComplete((words.size-mistakes).coerceAtLeast(0))}};return}

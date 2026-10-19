@@ -169,8 +169,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     val timer=rememberActiveLearningTime(sessionKey,snapshot.activeSessionMillis[sessionKey]?:0,!finished,onCheckpoint)
     val count=sessionCount
     val complete: (Int)->Unit = {finished=true;onLessonComplete(it.coerceIn(0,count),sessionKey,sessionKind,count,timer.pause())}
-    if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("card")},snapshot);return }
-    if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("match")},snapshot);return }
+    if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit()},{start("card")},snapshot,onDone={exit(true)});return }
+    if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit()},{start("match")},snapshot,onDone={exit(true)});return }
     if(finished) { GameResult(stringResource(R.string.dogru, correctCount, count),correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
     if(mode=="listen") {
         ListeningGame(listenQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
