@@ -126,6 +126,9 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     /** Newer published revisions (immutable) whose text and cover match the bundled story; they still open offline. */
     private val bundledTextIndex = AtomicFile(File(directory, "bundled-text.index"))
     private val bundledText = mutableMapOf<String, String>()
+    /** Revisions already checked and found to differ from the bundled story with this fingerprint, so refresh skips them. */
+    private val bundledMismatchIndex = AtomicFile(File(directory, "bundled-mismatch.index"))
+    private val bundledMismatch = mutableMapOf<String, String>()
     private fun fingerprint(story: Story) = MessageDigest.getInstance("SHA-256")
         .digest(story.sentences.map { it.id to it.english }.toString().toByteArray(Charsets.UTF_8))
         .joinToString("") { "%02x".format(it) }
@@ -140,7 +143,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private fun read(file: AtomicFile) = file.openRead().use { String(it.readBytes(), Charsets.UTF_8) }
     suspend fun restore() = lock.withLock {
         withContext(Dispatchers.IO) {
-            downloaded.clear(); historical.clear(); bundledText.clear()
+            downloaded.clear(); historical.clear(); bundledText.clear(); bundledMismatch.clear()
             metadata = JSONArray(); hasRemoteCatalog = false
             runCatching {
                 val candidate = JSONArray(read(index))
@@ -150,6 +153,10 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             runCatching {
                 val saved = JSONObject(read(bundledTextIndex))
                 for (key in saved.keys()) bundledText[UUID.fromString(key).toString()] = saved.getString(key)
+            }
+            runCatching {
+                val saved = JSONObject(read(bundledMismatchIndex))
+                for (key in saved.keys()) bundledMismatch[UUID.fromString(key).toString()] = saved.getString(key)
             }
             directory.listFiles().orEmpty().filter { it.name.endsWith(".json") && it.name != "catalog.json" }.forEach { file ->
                 runCatching {
@@ -224,8 +231,10 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         val docs = (0 until catalog.length()).map { catalog.getJSONObject(it) }
         val current = docs.map { it.getString("id") }.toSet()
         var changed = bundledText.keys.retainAll(current)
+        var missed = bundledMismatch.keys.retainAll(current)
         val candidates = docs.filter { doc -> val revision = doc.getString("id")
-            revision !in downloaded && revision !in bundled && revision !in bundledText && doc.getString("story_id") in bundledByStory }
+            revision !in downloaded && revision !in bundled && revision !in bundledText && doc.getString("story_id") in bundledByStory &&
+                bundledMismatch[revision] != fingerprint(bundledByStory.getValue(doc.getString("story_id"))) }
         for (batch in candidates.chunked(50)) {
             val bundledIds = batch.map { ContentRevisionIds.bundled(it.getString("story_id")) }
             val covers = remote.rows("story_revisions", "select=id,cover_asset_id&id=in.(${bundledIds.joinToString(",")})&published_at=not.is.null&order=id.asc", 100)
@@ -238,10 +247,12 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 val sameCover = coverByRevision[ContentRevisionIds.bundled(story.id)]?.let { it == doc.optString("cover_asset_id") } == true
                 if (sameCover && sentences[revision]?.map { it.id to it.english } == story.sentences.map { it.id to it.english }) {
                     bundledText[revision] = fingerprint(story); changed = true
-                }
+                    if (bundledMismatch.remove(revision) != null) missed = true
+                } else { bundledMismatch[revision] = fingerprint(story); missed = true }
             }
         }
         if (changed) atomic(bundledTextIndex, JSONObject().apply { bundledText.forEach { (revision, text) -> put(revision, text) } }.toString().toByteArray(Charsets.UTF_8))
+        if (missed) atomic(bundledMismatchIndex, JSONObject().apply { bundledMismatch.forEach { (revision, text) -> put(revision, text) } }.toString().toByteArray(Charsets.UTF_8))
     }
     /** Tag ids in vocabulary order with their names; empty on servers without tag tables (Q4.5). */
     private fun tagVocabulary(remote: ContentHttp, lang: String): List<Pair<String, String>> {
