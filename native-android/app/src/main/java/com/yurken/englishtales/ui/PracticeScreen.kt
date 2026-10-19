@@ -27,8 +27,12 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.CoroutineStart
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withTimeoutOrNull
 import kotlinx.coroutines.withContext
+
+private const val VOICE_PROBE_WAIT_MS=2_000L
 
 @Composable
 fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Boolean,()->Unit)->Unit={_,active,next ->if(active()) next()}) {
@@ -52,6 +56,9 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     var ladderStep by rememberSaveable { mutableIntStateOf(0) }
     // Known once the menu has probed the English voice; until then the ladder has no listening rung.
     var voiceReady by remember { mutableStateOf(false) }
+    var voiceProbed by remember { mutableStateOf(false) }
+    // The launch that started the current session, so a restored screen does not start it again.
+    var launchedId by rememberSaveable { mutableStateOf<String?>(null) }
     val stories=LearningContent.stories
     val dictionary=LearningContent.words
     val gapPrompts by produceState<List<GapPrompt>?>(null,stories,dictionary) {
@@ -116,7 +123,19 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         startJob=scope.launch(start=CoroutineStart.UNDISPATCHED) {begin(value,seeded)}
     }
     // The daily plan's review uses the ladder, so each due word gets the drill that fits its stage (Q5.8).
-    LaunchedEffect(launchId) { if(launchId!=null) { start("ladder",launchWordIds);onLaunchConsumed() } }
+    // It waits for the sentence prompts and the voice probe, else every context and listening rung would fall back to recall.
+    LaunchedEffect(launchId) {
+        if(launchId==null) return@LaunchedEffect
+        if(launchId!=launchedId) {
+            val key=sessionKey
+            snapshotFlow {gapPrompts!=null}.first {it}
+            // A device whose voice is slow to answer still starts, without the listening rung.
+            withTimeoutOrNull(VOICE_PROBE_WAIT_MS) {snapshotFlow {voiceProbed}.first {it}}
+            // A session the learner started while this waited is kept.
+            if(sessionKey==key) {launchedId=launchId;start("ladder",launchWordIds)}
+        }
+        onLaunchConsumed()
+    }
     // The kind is read from the live mode: a value captured in an earlier frame could still be empty and the store would reject it.
     LaunchedEffect(sessionKey) {if(sessionKey.isNotEmpty() && mode.isNotEmpty() && !finished) onSessionStart(sessionKey,kindOf(mode),sessionCount)}
     if(mode.isEmpty()) {
@@ -134,7 +153,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             // Probes the device voice; the mode is offered only when English speech works.
             val voice=rememberNarrator()
-            LaunchedEffect(voice.available) {voiceReady=voice.available==true}
+            LaunchedEffect(voice.available) {voiceReady=voice.available==true;if(voice.available!=null) voiceProbed=true}
             if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),"headphones",LocalTaleColors.current.tileBlue,enabled=voice.available==true,index=5) {start("listen")}
             // Dictation needs a voice too; it appears only once English speech is known to work.
             if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),"headphones",LocalTaleColors.current.tileYellow,enabled=orderCandidates!=null,index=4) {start("dictation")}
