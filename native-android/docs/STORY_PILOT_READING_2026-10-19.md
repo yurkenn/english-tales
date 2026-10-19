@@ -2,162 +2,7 @@
 
 **İnceleme taslaklarıdır; uygulamaya veya canlı kataloğa yayımlanmadı.** İngilizce ve Türkçe metinler birlikte okunabilir. Seviye etiketleri hedef seviyedir; bağımsız CEFR onayı anlamına gelmez.
 
-Yeni hikâyeler tarihî kamu malı kaynaklardan yeniden anlatıldı; çağdaş uyarlama/çeviri ve görseller kullanılmadı. Diğer 10 destek dili, yeni kapaklar ve insan editör incelemesi henüz tamamlanmadı.
-
-## The Three Little Pigs · A1
-
-294 İngilizce sözcük · 37 cümle · 10 çalışma kelimesi · 4 soru
-
-Kaynak: [English Fairy Tales — The Story of the Three Little Pigs](https://www.gutenberg.org/ebooks/7439). Traditional English tale; collected by Joseph Jacobs.
-
-| English | Türkçe |
-|---|---|
-| Three little pigs leave their mother’s home. | Üç küçük domuzcuk annelerinin evinden ayrılır. |
-| They want to build homes near the wood. | Koruluğun yakınına evler yapmak isterler. |
-| The first pig sees a man with some straw. | İlk domuzcuk, yanında biraz saman olan bir adam görür. |
-| "May I have some straw?" the pig asks. | Domuzcuk, "Biraz saman alabilir miyim?" diye sorar. |
-| The man gives him a big bundle. | Adam ona büyük bir demet verir. |
-| The pig makes a small house with the straw. | Domuzcuk samanla küçük bir ev yapar. |
-| His house is ready before lunch. | Evi öğle yemeğinden önce hazırdır. |
-| Now he has time to sit in the sun. | Artık güneşte oturmak için zamanı vardır. |
-| The second pig makes a house with sticks. | İkinci domuzcuk dallardan bir ev yapar. |
-| He puts the long sticks beside each other. | Uzun dalları yan yana koyar. |
-| "My house is ready too!" he calls. | "Benim evim de hazır!" diye seslenir. |
-| The third pig chooses bricks for his house. | Üçüncü domuzcuk evi için tuğla seçer. |
-| The bricks are heavy, and the work is slow. | Tuğlalar ağırdır ve iş yavaş ilerler. |
-| He builds the walls and adds a strong door. | Duvarları yapar ve sağlam bir kapı ekler. |
-| His brothers come to watch him work. | Kardeşleri onu çalışırken izlemeye gelir. |
-| "Come and play with us," they say. | "Gel bizimle oyna," derler. |
-| "First, I must finish my house," he says. | "Önce evimi bitirmeliyim," der. |
-| That evening, a wolf comes out of the wood. | O akşam koruluktan bir kurt çıkar. |
-| He knocks on the first pig’s door. | İlk domuzcuğun kapısını çalar. |
-| "Open the door," he says. | "Kapıyı aç," der. |
-| The pig sees the wolf and stays inside. | Domuzcuk kurdu görür ve içeride kalır. |
-| The wolf blows hard, and the straw house falls. | Kurt kuvvetle üfler ve saman ev yıkılır. |
-| The first pig runs to his brother’s house. | İlk domuzcuk kardeşinin evine koşar. |
-| But the wolf follows him to the house of sticks. | Ama kurt onu dallardan yapılmış eve kadar takip eder. |
-| He blows again, and that house falls too. | Yeniden üfler ve o ev de yıkılır. |
-| The two pigs run to the house of bricks. | İki domuzcuk tuğla eve koşar. |
-| Their brother opens the door and lets them in. | Kardeşleri kapıyı açar ve onları içeri alır. |
-| Then he closes it, and they wait together. | Sonra kapıyı kapatır ve birlikte beklerler. |
-| The wolf knocks, but nobody opens the door. | Kurt kapıyı çalar ama kimse açmaz. |
-| He takes a big breath and blows very hard. | Derin bir nefes alır ve çok kuvvetli üfler. |
-| The walls do not move. | Duvarlar kıpırdamaz. |
-| He tries once more, but the house stays strong. | Bir kez daha dener ama ev sağlam kalır. |
-| At last, the tired wolf goes away. | Sonunda yorgun kurt uzaklaşır. |
-| The three pigs look out of the window. | Üç domuzcuk pencereden dışarı bakar. |
-| They are safe inside the warm house. | Sıcak evin içinde güvendedirler. |
-| "Thank you for helping us," the brothers say. | Kardeşleri, "Bize yardım ettiğin için teşekkür ederiz," der. |
-| "Tomorrow, we can build together," says the third pig. | Üçüncü domuzcuk, "Yarın birlikte ev yapabiliriz," der. |
-
-**Çalışma kelimeleri:** **straw**: saman · **sticks**: çubuklar · **wolf**: kurt · **strong**: güçlü, sağlam · **safe**: güvenli · **build**: inşa etmek, yapmak · **bricks**: tuğlalar · **door**: kapı · **blows**: üfler · **knocks**: kapıyı çalar
-
-**Anlama soruları**
-
-1. What is the story mainly about?
-   - A. Three pigs look for food in the wood.
-   - B. Three pigs build homes and escape a wolf.
-   - C. Three pigs help a wolf build a home.
-   - D. Three pigs leave their homes to visit a market.
-2. What does the third pig use to build his house?
-   - A. Straw
-   - B. Long sticks
-   - C. Bricks
-   - D. Wooden boxes
-3. Why do the two brothers run to the third pig’s house?
-   - A. They know his house is strong.
-   - B. They want to leave the wolf a meal.
-   - C. They want to carry the bricks away.
-   - D. They know that his house is empty.
-4. Why does the third pig finish his house before playing?
-   - A. He does not like his brothers.
-   - B. He wants the wolf to visit him.
-   - C. He thinks straw is too heavy to carry.
-   - D. He wants to have a safe home first.
-
-**Yanıt anahtarı:** 1: B, 2: C, 3: A, 4: D
-
-Editör notları: A1 target: short present-tense clauses, repeated building materials and asking for things. Abridged with a deliberately softened ending: all pigs survive and the wolf leaves; the source’s deaths, later tricks and chimney episode are omitted. Reading sections are editorial groupings, not a claim that chapter navigation has been implemented.
-
-## Goldilocks and the Three Bears · A2
-
-351 İngilizce sözcük · 37 cümle · 10 çalışma kelimesi · 5 soru
-
-Kaynak: [English Fairy Tales — The Story of the Three Bears](https://www.gutenberg.org/ebooks/17034). Traditional tale; retold by Flora Annie Steel.
-
-| English | Türkçe |
-|---|---|
-| Three bears lived in a small house in the wood. | Üç ayı koruluktaki küçük bir evde yaşıyordu. |
-| There was a large bear, a middle-sized bear and a little bear. | Büyük bir ayı, orta boy bir ayı ve küçük bir ayı vardı. |
-| Each bear had a bowl, a chair and a bed. | Her ayının bir kâsesi, bir sandalyesi ve bir yatağı vardı. |
-| One morning, they made porridge for breakfast. | Bir sabah kahvaltı için yulaf lapası yaptılar. |
-| The porridge was too hot, so they went for a walk. | Lapa çok sıcaktı, bu yüzden yürüyüşe çıktılar. |
-| While they were away, a girl called Goldilocks came along the path. | Onlar dışarıdayken Goldilocks adında bir kız patikadan geldi. |
-| She was tired and hungry after walking through the wood. | Korulukta yürüdükten sonra yorulmuş ve acıkmıştı. |
-| She looked through the window and saw three bowls on a table. | Pencereden baktı ve masanın üstünde üç kâse gördü. |
-| She knocked, but nobody answered. | Kapıyı çaldı ama kimse cevap vermedi. |
-| Instead of waiting, she opened the door and walked inside. | Beklemek yerine kapıyı açıp içeri girdi. |
-| First, she tried the porridge in the large bowl. | Önce büyük kâsedeki lapayı denedi. |
-| It was too hot to eat. | Yenmeyecek kadar sıcaktı. |
-| The porridge in the middle-sized bowl was too cold. | Orta boy kâsedeki lapa çok soğuktu. |
-| But the little bear’s porridge was just right. | Ama küçük ayının lapası tam kıvamındaydı. |
-| Goldilocks ate it until the little bowl was empty. | Goldilocks küçük kâse boşalana kadar lapayı yedi. |
-| Then she wanted to rest her tired legs. | Sonra yorgun bacaklarını dinlendirmek istedi. |
-| The large chair was too hard, and the middle-sized chair was too soft. | Büyük sandalye çok sertti, orta boy sandalye ise çok yumuşaktı. |
-| She sat in the little chair and smiled. | Küçük sandalyeye oturdu ve gülümsedi. |
-| But the chair broke under her, and she fell to the floor. | Ama sandalye altında kırıldı ve yere düştü. |
-| Goldilocks got up and went upstairs to look for a bed. | Goldilocks kalktı ve bir yatak bulmak için üst kata çıktı. |
-| She tried the two larger beds, but neither felt comfortable. | Daha büyük olan iki yatağı denedi ama ikisi de rahat gelmedi. |
-| The little bed was just right, so she lay down. | Küçük yatak tam ona göreydi, o da uzandı. |
-| Soon she was fast asleep. | Kısa süre sonra derin bir uykuya daldı. |
-| When the bears returned, they noticed the spoons in their porridge. | Ayılar döndüğünde lapalarındaki kaşıkları fark ettiler. |
-| The little bear looked into his bowl and found nothing. | Küçük ayı kâsesine baktı ve içinde hiçbir şey bulamadı. |
-| "Someone has eaten my breakfast!" he cried. | "Birisi kahvaltımı yemiş!" diye bağırdı. |
-| Next, the bears went to their chairs. | Sonra ayılar sandalyelerinin yanına gitti. |
-| The little bear’s chair lay broken on the floor. | Küçük ayının sandalyesi yerde kırılmış halde duruyordu. |
-| The bears looked at each other and went upstairs. | Ayılar birbirlerine baktı ve üst kata çıktı. |
-| There they found Goldilocks sleeping in the little bed. | Orada Goldilocks’u küçük yatakta uyurken buldular. |
-| The large bear spoke, but Goldilocks did not wake up. | Büyük ayı konuştu ama Goldilocks uyanmadı. |
-| Then the little bear called out beside his bed. | Sonra küçük ayı yatağının yanında seslendi. |
-| Goldilocks opened her eyes and saw the three bears watching her. | Goldilocks gözlerini açtı ve üç ayının kendisini izlediğini gördü. |
-| She was so frightened that she jumped out of the bed. | O kadar korktu ki yataktan fırladı. |
-| The window was open, and she climbed out through it. | Pencere açıktı, o da pencereden dışarı çıktı. |
-| She ran away into the wood without looking back. | Arkasına bakmadan koruluğa doğru koşup uzaklaştı. |
-| The bears never saw Goldilocks in their house again. | Ayılar Goldilocks’u bir daha evlerinde hiç görmedi. |
-
-**Çalışma kelimeleri:** **frightened**: korkmuş · **window**: pencere · **bowl**: kâse · **porridge**: yulaf lapası · **chair**: sandalye · **hard**: sert · **soft**: yumuşak · **empty**: boş · **comfortable**: rahat · **upstairs**: üst kata, üst katta
-
-**Anlama soruları**
-
-1. What is the story mainly about?
-   - A. A girl helps three bears make their breakfast.
-   - B. Three bears visit a girl and repair her chair.
-   - C. A girl uses the bears’ things while they are away.
-   - D. Three bears get lost while looking for their house.
-2. Why do the bears leave their house in the morning?
-   - A. Their porridge needs time to cool.
-   - B. They want to buy a new bed.
-   - C. They need to find Goldilocks.
-   - D. Their chairs are all broken.
-3. What happens when Goldilocks sits in the little chair?
-   - A. It turns out to be too hard.
-   - B. It breaks, and she falls down.
-   - C. It moves closer to the window.
-   - D. It wakes the bears upstairs.
-4. Why do the bears continue looking upstairs?
-   - A. They want to bring breakfast to their beds.
-   - B. They hear Goldilocks ask them for help.
-   - C. They are too tired to repair the chair.
-   - D. The changed bowls and broken chair suggest a visitor.
-5. What could Goldilocks have done to avoid this problem?
-   - A. Eat from the larger bowl instead.
-   - B. Choose a chair that was harder.
-   - C. Wait outside until she could ask permission.
-   - D. Close the window before she went to sleep.
-
-**Yanıt anahtarı:** 1: C, 2: A, 3: B, 4: D, 5: C
-
-Editör notları: A2 target: past narrative, contrasts, repeated objects and simple cause/effect. Retains the bears’ large/middle/little sizes and the historical hot/cold porridge sequence; does not invent named franchise characters. Omits the source’s speculation about injury and punishment after the escape. Reading sections are editorial groupings, not implemented chapter navigation.
+**Güncel odak: yalnız mevcut beş hikâye.** İki yeni klasik taslağı aşağıda beklemeye alınmış olarak korunur. A Quiet Morning’in 10 ek dilde yeni cümle ve kelime çevirileri dolu; insan dil incelemesi açık. Diğer dört revizyonun ek çevirileri henüz tamamlanmadı.
 
 ## A Quiet Morning · A1
 
@@ -199,17 +44,17 @@ Editör notları: A2 target: past narrative, contrasts, repeated objects and sim
    - C. A busy day at school
    - D. A trip to a big city
 2. What did Mia buy at the bakery?
-   - A. Two warm rolls
-   - B. A birthday cake
-   - C. Milk and eggs
+   - A. A birthday cake
+   - B. Milk and eggs
+   - C. Two warm rolls
    - D. Some apples
 3. Why does Mia buy a second roll?
-   - A. She wants to give the man a birthday breakfast.
-   - B. She needs to carry bread to her classroom.
+   - A. She needs to carry bread to her classroom.
+   - B. She wants to give the man a birthday breakfast.
    - C. She wants to feed an animal in the street.
    - D. She plans to keep both rolls for tomorrow.
 
-**Yanıt anahtarı:** 1: A, 2: A, 3: A
+**Yanıt anahtarı:** 1: A, 2: C, 3: B
 
 Editör notları: Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone. Keeps all legacy sentence IDs and wording; adds short A1-target turns. A1 is a target for editorial review, not formal CEFR certification.
 
@@ -452,3 +297,161 @@ Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses
 
 Editör notları: Adds the mouse’s fear, recognition of the call and return of kindness. Keeps the original lesson without turning the inference question into a direct quotation.
 
+# Beklemede — yeni hikâyeler
+
+Yeni hikâye çalışması şimdilik durduruldu. Aşağıdaki önceki taslaklar aktif paketin parçası değildir.
+
+## The Three Little Pigs · A1
+
+294 İngilizce sözcük · 37 cümle · 10 çalışma kelimesi · 4 soru
+
+Kaynak: [English Fairy Tales — The Story of the Three Little Pigs](https://www.gutenberg.org/ebooks/7439). Traditional English tale; collected by Joseph Jacobs.
+
+| English | Türkçe |
+|---|---|
+| Three little pigs leave their mother’s home. | Üç küçük domuzcuk annelerinin evinden ayrılır. |
+| They want to build homes near the wood. | Koruluğun yakınına evler yapmak isterler. |
+| The first pig sees a man with some straw. | İlk domuzcuk, yanında biraz saman olan bir adam görür. |
+| "May I have some straw?" the pig asks. | Domuzcuk, "Biraz saman alabilir miyim?" diye sorar. |
+| The man gives him a big bundle. | Adam ona büyük bir demet verir. |
+| The pig makes a small house with the straw. | Domuzcuk samanla küçük bir ev yapar. |
+| His house is ready before lunch. | Evi öğle yemeğinden önce hazırdır. |
+| Now he has time to sit in the sun. | Artık güneşte oturmak için zamanı vardır. |
+| The second pig makes a house with sticks. | İkinci domuzcuk dallardan bir ev yapar. |
+| He puts the long sticks beside each other. | Uzun dalları yan yana koyar. |
+| "My house is ready too!" he calls. | "Benim evim de hazır!" diye seslenir. |
+| The third pig chooses bricks for his house. | Üçüncü domuzcuk evi için tuğla seçer. |
+| The bricks are heavy, and the work is slow. | Tuğlalar ağırdır ve iş yavaş ilerler. |
+| He builds the walls and adds a strong door. | Duvarları yapar ve sağlam bir kapı ekler. |
+| His brothers come to watch him work. | Kardeşleri onu çalışırken izlemeye gelir. |
+| "Come and play with us," they say. | "Gel bizimle oyna," derler. |
+| "First, I must finish my house," he says. | "Önce evimi bitirmeliyim," der. |
+| That evening, a wolf comes out of the wood. | O akşam koruluktan bir kurt çıkar. |
+| He knocks on the first pig’s door. | İlk domuzcuğun kapısını çalar. |
+| "Open the door," he says. | "Kapıyı aç," der. |
+| The pig sees the wolf and stays inside. | Domuzcuk kurdu görür ve içeride kalır. |
+| The wolf blows hard, and the straw house falls. | Kurt kuvvetle üfler ve saman ev yıkılır. |
+| The first pig runs to his brother’s house. | İlk domuzcuk kardeşinin evine koşar. |
+| But the wolf follows him to the house of sticks. | Ama kurt onu dallardan yapılmış eve kadar takip eder. |
+| He blows again, and that house falls too. | Yeniden üfler ve o ev de yıkılır. |
+| The two pigs run to the house of bricks. | İki domuzcuk tuğla eve koşar. |
+| Their brother opens the door and lets them in. | Kardeşleri kapıyı açar ve onları içeri alır. |
+| Then he closes it, and they wait together. | Sonra kapıyı kapatır ve birlikte beklerler. |
+| The wolf knocks, but nobody opens the door. | Kurt kapıyı çalar ama kimse açmaz. |
+| He takes a big breath and blows very hard. | Derin bir nefes alır ve çok kuvvetli üfler. |
+| The walls do not move. | Duvarlar kıpırdamaz. |
+| He tries once more, but the house stays strong. | Bir kez daha dener ama ev sağlam kalır. |
+| At last, the tired wolf goes away. | Sonunda yorgun kurt uzaklaşır. |
+| The three pigs look out of the window. | Üç domuzcuk pencereden dışarı bakar. |
+| They are safe inside the warm house. | Sıcak evin içinde güvendedirler. |
+| "Thank you for helping us," the brothers say. | Kardeşleri, "Bize yardım ettiğin için teşekkür ederiz," der. |
+| "Tomorrow, we can build together," says the third pig. | Üçüncü domuzcuk, "Yarın birlikte ev yapabiliriz," der. |
+
+**Çalışma kelimeleri:** **straw**: saman · **sticks**: çubuklar · **wolf**: kurt · **strong**: güçlü, sağlam · **safe**: güvenli · **build**: inşa etmek, yapmak · **bricks**: tuğlalar · **door**: kapı · **blows**: üfler · **knocks**: kapıyı çalar
+
+**Anlama soruları**
+
+1. What is the story mainly about?
+   - A. Three pigs look for food in the wood.
+   - B. Three pigs build homes and escape a wolf.
+   - C. Three pigs help a wolf build a home.
+   - D. Three pigs leave their homes to visit a market.
+2. What does the third pig use to build his house?
+   - A. Straw
+   - B. Long sticks
+   - C. Bricks
+   - D. Wooden boxes
+3. Why do the two brothers run to the third pig’s house?
+   - A. They know his house is strong.
+   - B. They want to leave the wolf a meal.
+   - C. They want to carry the bricks away.
+   - D. They know that his house is empty.
+4. Why does the third pig finish his house before playing?
+   - A. He does not like his brothers.
+   - B. He wants the wolf to visit him.
+   - C. He thinks straw is too heavy to carry.
+   - D. He wants to have a safe home first.
+
+**Yanıt anahtarı:** 1: B, 2: C, 3: A, 4: D
+
+Editör notları: A1 target: short present-tense clauses, repeated building materials and asking for things. Abridged with a deliberately softened ending: all pigs survive and the wolf leaves; the source’s deaths, later tricks and chimney episode are omitted. Reading sections are editorial groupings, not a claim that chapter navigation has been implemented.
+
+## Goldilocks and the Three Bears · A2
+
+351 İngilizce sözcük · 37 cümle · 10 çalışma kelimesi · 5 soru
+
+Kaynak: [English Fairy Tales — The Story of the Three Bears](https://www.gutenberg.org/ebooks/17034). Traditional tale; retold by Flora Annie Steel.
+
+| English | Türkçe |
+|---|---|
+| Three bears lived in a small house in the wood. | Üç ayı koruluktaki küçük bir evde yaşıyordu. |
+| There was a large bear, a middle-sized bear and a little bear. | Büyük bir ayı, orta boy bir ayı ve küçük bir ayı vardı. |
+| Each bear had a bowl, a chair and a bed. | Her ayının bir kâsesi, bir sandalyesi ve bir yatağı vardı. |
+| One morning, they made porridge for breakfast. | Bir sabah kahvaltı için yulaf lapası yaptılar. |
+| The porridge was too hot, so they went for a walk. | Lapa çok sıcaktı, bu yüzden yürüyüşe çıktılar. |
+| While they were away, a girl called Goldilocks came along the path. | Onlar dışarıdayken Goldilocks adında bir kız patikadan geldi. |
+| She was tired and hungry after walking through the wood. | Korulukta yürüdükten sonra yorulmuş ve acıkmıştı. |
+| She looked through the window and saw three bowls on a table. | Pencereden baktı ve masanın üstünde üç kâse gördü. |
+| She knocked, but nobody answered. | Kapıyı çaldı ama kimse cevap vermedi. |
+| Instead of waiting, she opened the door and walked inside. | Beklemek yerine kapıyı açıp içeri girdi. |
+| First, she tried the porridge in the large bowl. | Önce büyük kâsedeki lapayı denedi. |
+| It was too hot to eat. | Yenmeyecek kadar sıcaktı. |
+| The porridge in the middle-sized bowl was too cold. | Orta boy kâsedeki lapa çok soğuktu. |
+| But the little bear’s porridge was just right. | Ama küçük ayının lapası tam kıvamındaydı. |
+| Goldilocks ate it until the little bowl was empty. | Goldilocks küçük kâse boşalana kadar lapayı yedi. |
+| Then she wanted to rest her tired legs. | Sonra yorgun bacaklarını dinlendirmek istedi. |
+| The large chair was too hard, and the middle-sized chair was too soft. | Büyük sandalye çok sertti, orta boy sandalye ise çok yumuşaktı. |
+| She sat in the little chair and smiled. | Küçük sandalyeye oturdu ve gülümsedi. |
+| But the chair broke under her, and she fell to the floor. | Ama sandalye altında kırıldı ve yere düştü. |
+| Goldilocks got up and went upstairs to look for a bed. | Goldilocks kalktı ve bir yatak bulmak için üst kata çıktı. |
+| She tried the two larger beds, but neither felt comfortable. | Daha büyük olan iki yatağı denedi ama ikisi de rahat gelmedi. |
+| The little bed was just right, so she lay down. | Küçük yatak tam ona göreydi, o da uzandı. |
+| Soon she was fast asleep. | Kısa süre sonra derin bir uykuya daldı. |
+| When the bears returned, they noticed the spoons in their porridge. | Ayılar döndüğünde lapalarındaki kaşıkları fark ettiler. |
+| The little bear looked into his bowl and found nothing. | Küçük ayı kâsesine baktı ve içinde hiçbir şey bulamadı. |
+| "Someone has eaten my breakfast!" he cried. | "Birisi kahvaltımı yemiş!" diye bağırdı. |
+| Next, the bears went to their chairs. | Sonra ayılar sandalyelerinin yanına gitti. |
+| The little bear’s chair lay broken on the floor. | Küçük ayının sandalyesi yerde kırılmış halde duruyordu. |
+| The bears looked at each other and went upstairs. | Ayılar birbirlerine baktı ve üst kata çıktı. |
+| There they found Goldilocks sleeping in the little bed. | Orada Goldilocks’u küçük yatakta uyurken buldular. |
+| The large bear spoke, but Goldilocks did not wake up. | Büyük ayı konuştu ama Goldilocks uyanmadı. |
+| Then the little bear called out beside his bed. | Sonra küçük ayı yatağının yanında seslendi. |
+| Goldilocks opened her eyes and saw the three bears watching her. | Goldilocks gözlerini açtı ve üç ayının kendisini izlediğini gördü. |
+| She was so frightened that she jumped out of the bed. | O kadar korktu ki yataktan fırladı. |
+| The window was open, and she climbed out through it. | Pencere açıktı, o da pencereden dışarı çıktı. |
+| She ran away into the wood without looking back. | Arkasına bakmadan koruluğa doğru koşup uzaklaştı. |
+| The bears never saw Goldilocks in their house again. | Ayılar Goldilocks’u bir daha evlerinde hiç görmedi. |
+
+**Çalışma kelimeleri:** **frightened**: korkmuş · **window**: pencere · **bowl**: kâse · **porridge**: yulaf lapası · **chair**: sandalye · **hard**: sert · **soft**: yumuşak · **empty**: boş · **comfortable**: rahat · **upstairs**: üst kata, üst katta
+
+**Anlama soruları**
+
+1. What is the story mainly about?
+   - A. A girl helps three bears make their breakfast.
+   - B. Three bears visit a girl and repair her chair.
+   - C. A girl uses the bears’ things while they are away.
+   - D. Three bears get lost while looking for their house.
+2. Why do the bears leave their house in the morning?
+   - A. Their porridge needs time to cool.
+   - B. They want to buy a new bed.
+   - C. They need to find Goldilocks.
+   - D. Their chairs are all broken.
+3. What happens when Goldilocks sits in the little chair?
+   - A. It turns out to be too hard.
+   - B. It breaks, and she falls down.
+   - C. It moves closer to the window.
+   - D. It wakes the bears upstairs.
+4. Why do the bears continue looking upstairs?
+   - A. They want to bring breakfast to their beds.
+   - B. They hear Goldilocks ask them for help.
+   - C. They are too tired to repair the chair.
+   - D. The changed bowls and broken chair suggest a visitor.
+5. What could Goldilocks have done to avoid this problem?
+   - A. Eat from the larger bowl instead.
+   - B. Choose a chair that was harder.
+   - C. Wait outside until she could ask permission.
+   - D. Close the window before she went to sleep.
+
+**Yanıt anahtarı:** 1: C, 2: A, 3: B, 4: D, 5: C
+
+Editör notları: A2 target: past narrative, contrasts, repeated objects and simple cause/effect. Retains the bears’ large/middle/little sizes and the historical hot/cold porridge sequence; does not invent named franchise characters. Omits the source’s speculation about injury and punishment after the escape. Reading sections are editorial groupings, not implemented chapter navigation.

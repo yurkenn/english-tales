@@ -50,7 +50,7 @@ const {createHash}=await import('node:crypto');
 const canonical=value=>Array.isArray(value)?value.map(canonical):value&&typeof value==='object'?Object.fromEntries(Object.keys(value).sort().map(key=>[key,canonical(value[key])])):value;
 const digest=value=>createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');
 
-test('revision pilot preserves its base identity and flags untranslated added sentences',()=>{
+test('revision pilot preserves its base identity and accurately reports translation coverage',()=>{
   assert.equal(revisions.length,5);
   for(const doc of revisions){
     const original=catalog.stories.find(s=>s.id===doc.baseStoryId),s=doc.story;
@@ -66,8 +66,17 @@ test('revision pilot preserves its base identity and flags untranslated added se
     const added=s.sentences.filter(x=>!originalIds.has(x.id));
     assert.ok(added.length>0);
     assert.deepEqual(doc.translationReadiness.newSentenceIds,added.map(x=>x.id));
-    assert.deepEqual(doc.translationReadiness.completeLanguages,['tr']);
-    assert.equal(doc.translationReadiness.pendingLanguages.length,10);
+    const readiness=doc.translationReadiness;
+    const actualComplete=readiness.requiredLanguages.filter(lang=>{
+      const present=v=>typeof v==='string'&&v.trim().length>0;
+      return present(lang==='tr'?s.description:s.descriptions?.[lang])
+        &&s.sentences.every(x=>present(lang==='tr'?x.turkish:x.translations?.[lang]))
+        &&doc.words.every(w=>present(lang==='tr'?w.translation:w.translations?.[lang]));
+    });
+    assert.deepEqual(readiness.completeLanguages,actualComplete,`${s.id}: inaccurate language completion`);
+    assert.deepEqual(readiness.pendingLanguages,readiness.requiredLanguages.filter(l=>!actualComplete.includes(l)));
+    assert.equal(new Set(readiness.requiredLanguages).size,readiness.requiredLanguages.length);
+    assert.ok(readiness.requiredLanguages.includes('tr'));
     assert.ok(doc.publicationBlockers.length>0);
     for(const x of added)assert.ok(x.english.trim()&&x.turkish.trim());
     assert.deepEqual(questionErrors(s.questions),[]);
@@ -122,5 +131,19 @@ test('new classic retellings record historical sources and remain separate from 
       assert.equal(start,next);assert.ok(end>=start);next=end+1;
     }
     assert.equal(next,d.story.sentences.length);
+  }
+});
+
+
+test('quiet-morning translations cover the complete revised story and preserve the language review boundary',()=>{
+  const d=revisions.find(d=>d.story.id==='quiet-morning');
+  assert.equal(d.translationReadiness.completeLanguages.length,11);
+  assert.deepEqual(d.translationReadiness.pendingLanguages,[]);
+  assert.deepEqual(d.translationReadiness.reviewedLanguages,[]);
+  assert.equal(d.reviewedBy,null);
+  assert.ok(d.publicationBlockers.some(x=>x.includes('Human language review')));
+  for(const sentence of d.story.sentences){
+    assert.equal(Object.keys(sentence.translations).length,10,sentence.id);
+    for(const value of Object.values(sentence.translations))assert.ok(value.trim()!==sentence.english.trim(),sentence.id);
   }
 });

@@ -8,7 +8,9 @@
   "editorialNotes": [
     "Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone.",
     "Keeps all legacy sentence IDs and wording; adds short A1-target turns.",
-    "A1 is a target for editorial review, not formal CEFR certification."
+    "A1 is a target for editorial review, not formal CEFR certification.",
+    "Added fourteen sentences and six new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
+    "Correct answers are distributed across positions A, C and B in the three comprehension questions."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -25,7 +27,17 @@
       "th"
     ],
     "completeLanguages": [
-      "tr"
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
     ],
     "unchangedTranslationsPreserved": true,
     "newSentenceIds": [
@@ -44,18 +56,9 @@
       "quiet-morning-pilot-08-02",
       "quiet-morning-pilot-08-03"
     ],
-    "pendingLanguages": [
-      "es-419",
-      "pt-BR",
-      "id",
-      "ar",
-      "vi",
-      "hi",
-      "ru",
-      "bn",
-      "ur",
-      "th"
-    ]
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; not native-speaker-approved"
   },
   "story": {
     "id": "quiet-morning",
@@ -103,12 +106,36 @@
       {
         "id": "quiet-morning-pilot-02-01",
         "english": "She had time to buy breakfast.",
-        "turkish": "Kahvaltı almak için zamanı vardı."
+        "turkish": "Kahvaltı almak için zamanı vardı.",
+        "translations": {
+          "es-419": "Tenía tiempo para comprar algo para desayunar.",
+          "pt-BR": "Ela tinha tempo para comprar algo para o café da manhã.",
+          "id": "Ia masih punya waktu untuk membeli sarapan.",
+          "ar": "كان لديها وقت لشراء فطورها.",
+          "vi": "Cô bé có thời gian để mua đồ ăn sáng.",
+          "hi": "उसके पास नाश्ता खरीदने का समय था।",
+          "ru": "У неё было время купить себе завтрак.",
+          "bn": "নাশতা কেনার সময় তার হাতে ছিল।",
+          "ur": "اس کے پاس ناشتہ خریدنے کا وقت تھا۔",
+          "th": "เธอมีเวลาซื้ออาหารเช้า"
+        }
       },
       {
         "id": "quiet-morning-pilot-02-02",
         "english": "Her school bag was on her back.",
-        "turkish": "Okul çantası sırtındaydı."
+        "turkish": "Okul çantası sırtındaydı.",
+        "translations": {
+          "es-419": "Llevaba la mochila escolar en la espalda.",
+          "pt-BR": "Sua mochila escolar estava nas costas.",
+          "id": "Tas sekolahnya berada di punggungnya.",
+          "ar": "كانت حقيبتها المدرسية على ظهرها.",
+          "vi": "Cặp sách của cô bé đeo trên lưng.",
+          "hi": "उसका स्कूल का बस्ता उसकी पीठ पर था।",
+          "ru": "На спине у неё был школьный рюкзак.",
+          "bn": "তার স্কুলের ব্যাগটি পিঠে ছিল।",
+          "ur": "اس کا اسکول کا بستہ اس کی پیٹھ پر تھا۔",
+          "th": "กระเป๋านักเรียนของเธออยู่บนหลัง"
+        }
       },
       {
         "id": "qm-3",
@@ -147,12 +174,36 @@
       {
         "id": "quiet-morning-pilot-04-01",
         "english": "He had a small bag, but no bread.",
-        "turkish": "Küçük bir çantası vardı ama ekmeği yoktu."
+        "turkish": "Küçük bir çantası vardı ama ekmeği yoktu.",
+        "translations": {
+          "es-419": "Él tenía una bolsa pequeña, pero no tenía pan.",
+          "pt-BR": "Ele tinha uma sacola pequena, mas não tinha pão.",
+          "id": "Pria itu membawa tas kecil, tetapi tidak membawa roti.",
+          "ar": "كانت معه حقيبة صغيرة، لكن لم يكن معه خبز.",
+          "vi": "Ông có một chiếc túi nhỏ nhưng không có bánh mì.",
+          "hi": "उनके पास एक छोटा थैला था, लेकिन ब्रेड नहीं थी।",
+          "ru": "У него была маленькая сумка, но хлеба не было.",
+          "bn": "তাঁর কাছে একটা ছোট ব্যাগ ছিল, কিন্তু রুটি ছিল না।",
+          "ur": "ان کے پاس ایک چھوٹا سا تھیلا تھا، لیکن ڈبل روٹی نہیں تھی۔",
+          "th": "เขามีกระเป๋าใบเล็ก แต่ไม่มีขนมปัง"
+        }
       },
       {
         "id": "quiet-morning-pilot-04-02",
         "english": "Mia stopped beside the door.",
-        "turkish": "Mia kapının yanında durdu."
+        "turkish": "Mia kapının yanında durdu.",
+        "translations": {
+          "es-419": "Mia se detuvo junto a la puerta.",
+          "pt-BR": "Mia parou ao lado da porta.",
+          "id": "Mia berhenti di samping pintu.",
+          "ar": "توقفت ميا بجانب الباب.",
+          "vi": "Mia dừng lại bên cửa.",
+          "hi": "मिया दरवाज़े के पास रुकी।",
+          "ru": "Миа остановилась у двери.",
+          "bn": "মিয়া দরজার পাশে থামল।",
+          "ur": "میا دروازے کے پاس رک گئی۔",
+          "th": "มีอาหยุดข้างประตู"
+        }
       },
       {
         "id": "qm-5",
@@ -191,22 +242,70 @@
       {
         "id": "quiet-morning-pilot-06-01",
         "english": "\"Happy birthday!\" Mia said.",
-        "turkish": "Mia, \"Doğum gününüz kutlu olsun!\" dedi."
+        "turkish": "Mia, \"Doğum gününüz kutlu olsun!\" dedi.",
+        "translations": {
+          "es-419": "«¡Feliz cumpleaños!», dijo Mia.",
+          "pt-BR": "— Feliz aniversário! — disse Mia.",
+          "id": "“Selamat ulang tahun!” kata Mia.",
+          "ar": "قالت ميا: «عيد ميلاد سعيد!»",
+          "vi": "“Chúc ông sinh nhật vui vẻ!” Mia nói.",
+          "hi": "“जन्मदिन मुबारक हो!” मिया ने कहा।",
+          "ru": "«С днём рождения!» — сказала Миа.",
+          "bn": "“শুভ জন্মদিন!” মিয়া বলল।",
+          "ur": "“سالگرہ مبارک ہو!” میا نے کہا۔",
+          "th": "“สุขสันต์วันเกิดค่ะ!” มีอาพูด"
+        }
       },
       {
         "id": "quiet-morning-pilot-06-02",
         "english": "\"Are you waiting for someone?\" she asked.",
-        "turkish": "\"Birini mi bekliyorsunuz?\" diye sordu."
+        "turkish": "\"Birini mi bekliyorsunuz?\" diye sordu.",
+        "translations": {
+          "es-419": "«¿Está esperando a alguien?», preguntó.",
+          "pt-BR": "— O senhor está esperando alguém? — perguntou ela.",
+          "id": "“Bapak sedang menunggu seseorang?” tanyanya.",
+          "ar": "سألت: «هل تنتظر أحدًا؟»",
+          "vi": "“Ông đang đợi ai ạ?” cô bé hỏi.",
+          "hi": "“क्या आप किसी का इंतज़ार कर रहे हैं?” उसने पूछा।",
+          "ru": "«Вы кого-то ждёте?» — спросила она.",
+          "bn": "“আপনি কি কারও জন্য অপেক্ষা করছেন?” সে জিজ্ঞেস করল।",
+          "ur": "“کیا آپ کسی کا انتظار کر رہے ہیں؟” اس نے پوچھا۔",
+          "th": "“คุณกำลังรอใครอยู่หรือคะ” เธอถาม"
+        }
       },
       {
         "id": "quiet-morning-pilot-06-03",
         "english": "\"My daughter,\" he said.",
-        "turkish": "Adam, \"Kızımı,\" dedi."
+        "turkish": "Adam, \"Kızımı,\" dedi.",
+        "translations": {
+          "es-419": "«A mi hija», dijo él.",
+          "pt-BR": "— Minha filha — disse ele.",
+          "id": "“Anak perempuan saya,” jawab pria itu.",
+          "ar": "قال: «ابنتي».",
+          "vi": "“Con gái ông,” ông nói.",
+          "hi": "“अपनी बेटी का,” उन्होंने कहा।",
+          "ru": "«Мою дочь», — сказал он.",
+          "bn": "“আমার মেয়ের জন্য,” তিনি বললেন।",
+          "ur": "“اپنی بیٹی کا،” انہوں نے کہا۔",
+          "th": "“ลูกสาวของฉัน” เขาพูด"
+        }
       },
       {
         "id": "quiet-morning-pilot-06-04",
         "english": "\"She comes here every Friday.\"",
-        "turkish": "\"Her cuma buraya gelir.\""
+        "turkish": "\"Her cuma buraya gelir.\"",
+        "translations": {
+          "es-419": "«Viene aquí todos los viernes».",
+          "pt-BR": "— Ela vem aqui toda sexta-feira.",
+          "id": "“Dia datang ke sini setiap hari Jumat.”",
+          "ar": "«إنها تأتي إلى هنا كل يوم جمعة».",
+          "vi": "“Thứ Sáu nào con bé cũng đến đây.”",
+          "hi": "“वह हर शुक्रवार यहाँ आती है।”",
+          "ru": "«Она приходит сюда каждую пятницу».",
+          "bn": "“সে প্রতি শুক্রবার এখানে আসে।”",
+          "ur": "“وہ ہر جمعے یہاں آتی ہے۔”",
+          "th": "“เธอมาที่นี่ทุกวันศุกร์”"
+        }
       },
       {
         "id": "qm-7",
@@ -228,17 +327,53 @@
       {
         "id": "quiet-morning-pilot-07-01",
         "english": "\"This one is for you,\" she said.",
-        "turkish": "\"Bu sizin için,\" dedi."
+        "turkish": "\"Bu sizin için,\" dedi.",
+        "translations": {
+          "es-419": "«Este es para usted», dijo ella.",
+          "pt-BR": "— Este é para o senhor — disse ela.",
+          "id": "“Yang ini untuk Bapak,” kata Mia.",
+          "ar": "قالت: «هذا لك».",
+          "vi": "“Cái này dành cho ông ạ,” cô bé nói.",
+          "hi": "“यह आपके लिए है,” उसने कहा।",
+          "ru": "«Это для вас», — сказала она.",
+          "bn": "“এটা আপনার জন্য,” সে বলল।",
+          "ur": "“یہ آپ کے لیے ہے،” اس نے کہا۔",
+          "th": "“ชิ้นนี้สำหรับคุณค่ะ” เธอพูด"
+        }
       },
       {
         "id": "quiet-morning-pilot-07-02",
         "english": "The man smiled and took the bread.",
-        "turkish": "Adam gülümsedi ve ekmeği aldı."
+        "turkish": "Adam gülümsedi ve ekmeği aldı.",
+        "translations": {
+          "es-419": "El hombre sonrió y tomó el pan.",
+          "pt-BR": "O homem sorriu e pegou o pão.",
+          "id": "Pria itu tersenyum dan mengambil roti itu.",
+          "ar": "ابتسم الرجل وأخذ الخبز.",
+          "vi": "Ông mỉm cười và nhận lấy bánh mì.",
+          "hi": "बुज़ुर्ग मुस्कुराए और उन्होंने ब्रेड ले ली।",
+          "ru": "Мужчина улыбнулся и взял хлеб.",
+          "bn": "লোকটি হেসে রুটিটা নিলেন।",
+          "ur": "بزرگ مسکرائے اور ڈبل روٹی لے لی۔",
+          "th": "ชายคนนั้นยิ้มและรับขนมปัง"
+        }
       },
       {
         "id": "quiet-morning-pilot-07-03",
         "english": "\"Thank you for my birthday breakfast!\" he said.",
-        "turkish": "\"Doğum günü kahvaltım için teşekkür ederim!\" dedi."
+        "turkish": "\"Doğum günü kahvaltım için teşekkür ederim!\" dedi.",
+        "translations": {
+          "es-419": "«¡Gracias por mi desayuno de cumpleaños!», dijo él.",
+          "pt-BR": "— Obrigado pelo meu café da manhã de aniversário! — disse ele.",
+          "id": "“Terima kasih atas sarapan ulang tahun saya!” katanya.",
+          "ar": "قال: «شكرًا على فطور عيد ميلادي!»",
+          "vi": "“Cảm ơn cháu vì bữa sáng mừng sinh nhật của ông!” ông nói.",
+          "hi": "“मेरे जन्मदिन के नाश्ते के लिए धन्यवाद!” उन्होंने कहा।",
+          "ru": "«Спасибо за завтрак в мой день рождения!» — сказал он.",
+          "bn": "“আমার জন্মদিনের নাশতার জন্য ধন্যবাদ!” তিনি বললেন।",
+          "ur": "“میری سالگرہ کے ناشتے کے لیے شکریہ!” انہوں نے کہا۔",
+          "th": "“ขอบใจสำหรับอาหารเช้าในวันเกิดของฉันนะ!” เขาพูด"
+        }
       },
       {
         "id": "qm-8",
@@ -260,17 +395,53 @@
       {
         "id": "quiet-morning-pilot-08-01",
         "english": "Then a woman came around the corner.",
-        "turkish": "Sonra bir kadın köşeyi dönüp geldi."
+        "turkish": "Sonra bir kadın köşeyi dönüp geldi.",
+        "translations": {
+          "es-419": "Entonces una mujer dobló la esquina.",
+          "pt-BR": "Então uma mulher apareceu ao virar a esquina.",
+          "id": "Lalu seorang wanita muncul dari tikungan.",
+          "ar": "ثم ظهرت امرأة من خلف زاوية الشارع.",
+          "vi": "Rồi một người phụ nữ đi vòng qua góc phố.",
+          "hi": "तभी एक महिला गली के मोड़ से आई।",
+          "ru": "Потом из-за угла вышла женщина.",
+          "bn": "তারপর একজন মহিলা রাস্তার মোড় ঘুরে এলেন।",
+          "ur": "پھر ایک عورت گلی کے موڑ سے آئی۔",
+          "th": "จากนั้นผู้หญิงคนหนึ่งก็เดินเลี้ยวมาจากหัวมุมถนน"
+        }
       },
       {
         "id": "quiet-morning-pilot-08-02",
         "english": "\"Here is my daughter,\" the man said.",
-        "turkish": "Adam, \"İşte kızım,\" dedi."
+        "turkish": "Adam, \"İşte kızım,\" dedi.",
+        "translations": {
+          "es-419": "«Aquí está mi hija», dijo el hombre.",
+          "pt-BR": "— Aqui está minha filha — disse o homem.",
+          "id": "“Ini anak perempuan saya,” kata pria itu.",
+          "ar": "قال الرجل: «ها هي ابنتي».",
+          "vi": "“Con gái ông đến rồi,” ông nói.",
+          "hi": "“मेरी बेटी आ गई,” बुज़ुर्ग ने कहा।",
+          "ru": "«А вот и моя дочь», — сказал мужчина.",
+          "bn": "“ওই তো আমার মেয়ে,” লোকটি বললেন।",
+          "ur": "“یہ میری بیٹی آ گئی،” بزرگ نے کہا۔",
+          "th": "“ลูกสาวของฉันมาแล้ว” ชายคนนั้นพูด"
+        }
       },
       {
         "id": "quiet-morning-pilot-08-03",
         "english": "Mia waved and walked to school.",
-        "turkish": "Mia el salladı ve okula yürüdü."
+        "turkish": "Mia el salladı ve okula yürüdü.",
+        "translations": {
+          "es-419": "Mia saludó con la mano y caminó a la escuela.",
+          "pt-BR": "Mia acenou e foi a pé para a escola.",
+          "id": "Mia melambaikan tangan lalu berjalan ke sekolah.",
+          "ar": "لوّحت ميا بيدها ومشت إلى المدرسة.",
+          "vi": "Mia vẫy tay rồi đi bộ đến trường.",
+          "hi": "मिया ने हाथ हिलाया और पैदल स्कूल चली गई।",
+          "ru": "Миа помахала рукой и пошла в школу.",
+          "bn": "মিয়া হাত নেড়ে হেঁটে স্কুলে গেল।",
+          "ur": "میا نے ہاتھ ہلایا اور پیدل اسکول چلی گئی۔",
+          "th": "มีอาโบกมือแล้วเดินไปโรงเรียน"
+        }
       },
       {
         "id": "qm-9",
@@ -308,24 +479,24 @@
         "kind": "detail",
         "prompt": "What did Mia buy at the bakery?",
         "options": [
-          "Two warm rolls",
           "A birthday cake",
           "Milk and eggs",
+          "Two warm rolls",
           "Some apples"
         ],
-        "answer": 0
+        "answer": 2
       },
       {
         "id": "quiet-morning-q3",
         "kind": "inference",
         "prompt": "Why does Mia buy a second roll?",
         "options": [
-          "She wants to give the man a birthday breakfast.",
           "She needs to carry bread to her classroom.",
+          "She wants to give the man a birthday breakfast.",
           "She wants to feed an animal in the street.",
           "She plans to keep both rolls for tomorrow."
         ],
-        "answer": 0
+        "answer": 1
       }
     ],
     "tags": [
@@ -426,42 +597,114 @@
       "word": "birthday",
       "translation": "doğum günü",
       "pronunciation": "/ˈbɜːrθdeɪ/",
-      "example": "Today is my birthday."
+      "example": "Today is my birthday.",
+      "translations": {
+        "es-419": "cumpleaños",
+        "pt-BR": "aniversário",
+        "id": "ulang tahun",
+        "ar": "عيد ميلاد",
+        "vi": "sinh nhật",
+        "hi": "जन्मदिन",
+        "ru": "день рождения",
+        "bn": "জন্মদিন",
+        "ur": "سالگرہ",
+        "th": "วันเกิด"
+      }
     },
     {
       "id": "pilot-quiet-morning-warm",
       "word": "warm",
       "translation": "ılık, sıcak",
       "pronunciation": "/wɔːrm/",
-      "example": "The bread is warm."
+      "example": "The bread is warm.",
+      "translations": {
+        "es-419": "tibio, cálido",
+        "pt-BR": "morno, quentinho",
+        "id": "hangat",
+        "ar": "دافئ",
+        "vi": "ấm",
+        "hi": "गरम",
+        "ru": "тёплый",
+        "bn": "উষ্ণ",
+        "ur": "گرم",
+        "th": "อุ่น"
+      }
     },
     {
       "id": "pilot-quiet-morning-bread",
       "word": "bread",
       "translation": "ekmek",
       "pronunciation": "/bred/",
-      "example": "I buy bread for breakfast."
+      "example": "I buy bread for breakfast.",
+      "translations": {
+        "es-419": "pan",
+        "pt-BR": "pão",
+        "id": "roti",
+        "ar": "خبز",
+        "vi": "bánh mì",
+        "hi": "ब्रेड",
+        "ru": "хлеб",
+        "bn": "রুটি",
+        "ur": "ڈبل روٹی",
+        "th": "ขนมปัง"
+      }
     },
     {
       "id": "pilot-quiet-morning-daughter",
       "word": "daughter",
       "translation": "kız evlat",
       "pronunciation": "/ˈdɔːtər/",
-      "example": "His daughter comes every Friday."
+      "example": "His daughter comes every Friday.",
+      "translations": {
+        "es-419": "hija",
+        "pt-BR": "filha",
+        "id": "anak perempuan",
+        "ar": "ابنة",
+        "vi": "con gái",
+        "hi": "बेटी",
+        "ru": "дочь",
+        "bn": "মেয়ে",
+        "ur": "بیٹی",
+        "th": "ลูกสาว"
+      }
     },
     {
       "id": "pilot-quiet-morning-breakfast",
       "word": "breakfast",
       "translation": "kahvaltı",
       "pronunciation": "/ˈbrekfəst/",
-      "example": "This bread is for breakfast."
+      "example": "This bread is for breakfast.",
+      "translations": {
+        "es-419": "desayuno",
+        "pt-BR": "café da manhã",
+        "id": "sarapan",
+        "ar": "فطور",
+        "vi": "bữa sáng",
+        "hi": "नाश्ता",
+        "ru": "завтрак",
+        "bn": "নাশতা",
+        "ur": "ناشتہ",
+        "th": "อาหารเช้า"
+      }
     },
     {
       "id": "pilot-quiet-morning-waiting",
       "word": "waiting",
       "translation": "bekliyor",
       "pronunciation": "/ˈweɪtɪŋ/",
-      "example": "He is waiting for his daughter."
+      "example": "He is waiting for his daughter.",
+      "translations": {
+        "es-419": "esperando",
+        "pt-BR": "esperando",
+        "id": "sedang menunggu",
+        "ar": "ينتظر",
+        "vi": "đang đợi",
+        "hi": "इंतज़ार कर रहा है",
+        "ru": "ожидающий, ждёт",
+        "bn": "অপেক্ষা করছে",
+        "ur": "انتظار کر رہا ہے",
+        "th": "กำลังรอ"
+      }
     }
   ],
   "studyWordIds": [
@@ -489,7 +732,7 @@
   ],
   "publicationBlockers": [
     "Human editorial and level review pending.",
-    "New sentences require ten support-language translations and review.",
-    "New revision, study-word integration and publisher validation required."
+    "New revision, study-word integration and publisher validation required.",
+    "Human language review across all eleven support languages remains pending."
   ]
 }

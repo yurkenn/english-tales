@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "updatedOn": "2026-10-19",
+  "focus": "existing-stories-only",
+  "activeRevisionStoryIds": [
+    "quiet-morning",
+    "paper-boat",
+    "last-train",
+    "classic-tortoise-hare",
+    "classic-lion-mouse"
+  ],
+  "deferredNewStoryIds": [
+    "classic-three-little-pigs",
+    "classic-goldilocks-three-bears"
+  ],
+  "reason": "User paused adding new stories and requested focusing on the existing catalog. Existing new-story drafts are preserved for later.",
+  "nextTranslationStoryId": "paper-boat",
+  "publicationStatus": "No live content publication."
+}
