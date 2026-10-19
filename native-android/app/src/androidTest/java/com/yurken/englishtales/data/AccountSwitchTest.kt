@@ -220,6 +220,24 @@ class AccountSwitchTest {
             }
         } finally {release.countDown()}
     }
+    @Test fun stoppedAppCancelsTheForegroundSyncTimerAndStartingSyncsAgain() {
+        val rpcs=java.util.concurrent.atomic.AtomicInteger()
+        exercise({LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+            rpcs.incrementAndGet();if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else JSONObject().put("applied",true)
+        },"https://fixture.supabase.co")}) {vm,http ->
+            vm.signIn("a@example.invalid","fixture-password")
+            await(20) {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
+            // The write arms the 2 s timer; stopping right after must cancel it, and a write while stopped must not arm a new one.
+            vm.toggleWord("quiet");vm.setForeground(false)
+            await {"quiet" in vm.state.value.savedWordIds}
+            val stopped=rpcs.get()
+            vm.toggleWord("morning");await {"morning" in vm.state.value.savedWordIds}
+            Thread.sleep(4_000)
+            assertEquals(stopped,rpcs.get())
+            vm.setForeground(true)
+            await(15) {rpcs.get()>stopped}
+        }
+    }
     @Test fun signOutRequestInvalidatesAnInFlightSnapshotBeforeItReturns() {
         val entered=CountDownLatch(1);val release=CountDownLatch(1)
         try {

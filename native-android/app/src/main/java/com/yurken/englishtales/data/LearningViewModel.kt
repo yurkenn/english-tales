@@ -30,6 +30,9 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private val syncAgain=java.util.concurrent.atomic.AtomicBoolean(false)
     private var syncTimer: kotlinx.coroutines.Job?=null
     private var syncDue=0L to -1L
+    // The minute-cadence timer runs only while the app is started; once stopped, the WorkManager jobs scheduleSync enqueues keep background sync.
+    // Starts true so a ViewModel used without an activity lifecycle (tests) keeps syncing.
+    @Volatile private var foreground=true
     private val mutableAccount=MutableStateFlow(AccountState())
     val account: StateFlow<AccountState> = mutableAccount
     private val verifying=java.util.concurrent.atomic.AtomicBoolean(false)
@@ -180,6 +183,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed || switching) return
         val expected=scope
         if(background) LearningSyncRuntime.schedule(getApplication(),checkNotNull(mutableAccount.value.userId))
+        if(!foreground) return
         // A finished sync's minute-later reschedule must not push back a sooner run a write asked for just before it ended.
         val due=System.nanoTime()/1_000_000+waitMillis
         if(syncTimer?.isActive==true && syncDue.second==expected && syncDue.first<=due) return
@@ -187,8 +191,13 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         syncDue=due to expected
         syncTimer=viewModelScope.launch {
             kotlinx.coroutines.delay(waitMillis)
-            if(scope==expected) syncNow()
+            if(scope==expected && foreground) syncNow()
         }
+    }
+    /** Activity ON_START/ON_STOP: stopping cancels the pending foreground sync timer, starting syncs shortly. */
+    fun setForeground(started: Boolean) {
+        foreground=started
+        enqueue(refresh=false) {if(started) scheduleSync() else {syncTimer?.cancel();syncTimer=null}}
     }
     fun syncNow() {
         val user=mutableAccount.value.userId?:return
