@@ -65,7 +65,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> when(event) {
             androidx.lifecycle.Lifecycle.Event.ON_START -> viewModel.setForeground(true)
             androidx.lifecycle.Lifecycle.Event.ON_STOP -> viewModel.setForeground(false)
-            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {viewModel.refresh();viewModel.verifyAccount();LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
+            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {viewModel.refresh();viewModel.verifyAccount(5*60_000);LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
             else -> {}
         }}
         lifecycle.addObserver(observer)

@@ -50,14 +50,14 @@ internal object LearningSyncRuntime {
     fun sync()=LearningAccountSync(LearningSyncHttp(BuildConfig.SUPABASE_URL,BuildConfig.SUPABASE_PUBLISHABLE_KEY),BuildConfig.SUPABASE_URL)
     fun pause() {paused=true;generation.incrementAndGet()}
     fun resume() {paused=false}
-    fun schedule(context: Context,user: String) {
+    /** [now] also enqueues a one-time run; the periodic job alone is the backstop while the app syncs in the foreground. */
+    fun schedule(context: Context,user: String,now: Boolean=true) {
         if(!configured()) return
         val manager=WorkManager.getInstance(context)
         val constraints=Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
         val data=workDataOf("user" to user)
-        val request=OneTimeWorkRequestBuilder<LearningSyncWorker>().setInputData(data).setConstraints(constraints)
-            .setBackoffCriteria(BackoffPolicy.EXPONENTIAL,30,TimeUnit.SECONDS).addTag("learning:$user").build()
-        manager.enqueueUniqueWork("learning-once:$user",ExistingWorkPolicy.KEEP,request)
+        if(now) manager.enqueueUniqueWork("learning-once:$user",ExistingWorkPolicy.KEEP,OneTimeWorkRequestBuilder<LearningSyncWorker>().setInputData(data)
+            .setConstraints(constraints).setBackoffCriteria(BackoffPolicy.EXPONENTIAL,30,TimeUnit.SECONDS).addTag("learning:$user").build())
         val periodic=PeriodicWorkRequestBuilder<LearningSyncWorker>(15,TimeUnit.MINUTES).setInputData(data).setConstraints(constraints)
             .setBackoffCriteria(BackoffPolicy.EXPONENTIAL,30,TimeUnit.SECONDS).addTag("learning:$user").build()
         manager.enqueueUniquePeriodicWork("learning-periodic:$user",ExistingPeriodicWorkPolicy.KEEP,periodic)

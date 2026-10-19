@@ -14,7 +14,9 @@ import com.yurken.englishtales.BuildConfig
 class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore,private val cloudSync: LearningAccountSync?=null,private val background: Boolean=false,
     private val onOwnerChanged: (LearningOwner)->Unit={}, private val readSnapshot: (LearningStore)->LearningSnapshot={it.snapshot()},
     // Cancels a departed account's WorkManager jobs; its worker only uploads while that account is signed in, and signing back in reschedules them.
-    private val retireSync: (String)->Unit={if(background) LearningSyncRuntime.cancel(application,it)}) : AndroidViewModel(application) {
+    private val retireSync: (String)->Unit={if(background) LearningSyncRuntime.cancel(application,it)},
+    // (user, upload now): the periodic job is always kept as the backstop; the one-time job only runs while the in-app timer cannot.
+    private val scheduleWork: (String,Boolean)->Unit={user,now -> if(background) LearningSyncRuntime.schedule(application,user,now)}) : AndroidViewModel(application) {
     constructor(application: Application):this(application,LearningSyncRuntime.accounts(application),{LearningStore(application,it)},defaultLearningSync(),true,
         {LearningReminderOwner.select(application,it)})
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
@@ -32,12 +34,14 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private val syncAgain=java.util.concurrent.atomic.AtomicBoolean(false)
     private var syncTimer: kotlinx.coroutines.Job?=null
     private var syncDue=0L to -1L
-    // The minute-cadence timer runs only while the app is started; once stopped, the WorkManager jobs scheduleSync enqueues keep background sync.
+    // The minute-cadence timer runs only while the app is started; once stopped, the one-time WorkManager job takes over pending uploads.
+    // While started only the 15-minute periodic job stays enqueued, so a process killed right after a write still uploads it.
     // Starts true so a ViewModel used without an activity lifecycle (tests) keeps syncing.
     @Volatile private var foreground=true
     private val mutableAccount=MutableStateFlow(AccountState())
     val account: StateFlow<AccountState> = mutableAccount
     private val verifying=java.util.concurrent.atomic.AtomicBoolean(false)
+    @Volatile private var verifiedAt=-1L to 0L
     private val mutableState = MutableStateFlow(LearningSnapshot())
     val state: StateFlow<LearningSnapshot> = mutableState
     private val mutableReady = MutableStateFlow(false)
@@ -91,7 +95,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         if(action.refresh) writes.refresh()
     }
 
-    fun refresh() = mutate {store.recordVisit()}
+    // A visit only writes local events and badges (no outbox row), so resuming the app does not start a sync.
+    fun refresh() = mutate(sync=false) {store.recordVisit()}
 
     fun completeOnboarding(level: String, genre: String, goal: Int) = mutate {
         store.completeOnboarding(level, genre, goal)
@@ -184,7 +189,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private fun scheduleSync(waitMillis: Long=2_000) {
         if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed || switching) return
         val expected=scope
-        if(background) LearningSyncRuntime.schedule(getApplication(),checkNotNull(mutableAccount.value.userId))
+        scheduleWork(checkNotNull(mutableAccount.value.userId),!foreground)
         if(!foreground) return
         // A finished sync's minute-later reschedule must not push back a sooner run a write asked for just before it ended.
         val due=System.nanoTime()/1_000_000+waitMillis
@@ -196,10 +201,16 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             if(scope==expected && foreground) syncNow()
         }
     }
-    /** Activity ON_START/ON_STOP: stopping cancels the pending foreground sync timer, starting syncs shortly. */
+    /** Activity ON_START/ON_STOP: stopping cancels the pending foreground sync timer and hands unsent writes to WorkManager, starting syncs shortly. */
     fun setForeground(started: Boolean) {
         foreground=started
-        enqueue(refresh=false) {if(started) scheduleSync() else {syncTimer?.cancel();syncTimer=null}}
+        enqueue(refresh=false) {
+            if(started) scheduleSync() else {
+                syncTimer?.cancel();syncTimer=null
+                // An unreadable outbox is handed over too: a spare worker run costs less than a lost write.
+                if(cloudSync!=null && mutableAccount.value.userId!=null && runCatching {cloudSync.status(store).let {it.pending>0 || it.preferencesPending}}.getOrDefault(true)) scheduleSync()
+            }
+        }
     }
     fun syncNow() {
         val user=mutableAccount.value.userId?:return
@@ -496,8 +507,11 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             mutations.trySend(Mutation(expectedScope) {scheduleSync()})
         }
     }
-    fun verifyAccount() {
+    /** [fresherThanMillis] skips the request when this owner was verified that recently (app resumes after dialogs, pickers and ads). */
+    fun verifyAccount(fresherThanMillis: Long=0) {
         val expectedScope=scope
+        val now=System.nanoTime()/1_000_000
+        if(fresherThanMillis>0 && verifiedAt.first==expectedScope && now-verifiedAt.second<fresherThanMillis) return
         if(mutableAccount.value.userId==null || !verifying.compareAndSet(false,true)) return
         viewModelScope.launch(Dispatchers.IO) {
             var verifiedEmail: String?=null
@@ -506,6 +520,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             try {
                 val session=auth.verifyCurrent() ?: throw AuthFailure("sign_in_required")
                 verifiedEmail=session.email
+                verifiedAt=expectedScope to System.nanoTime()/1_000_000
                 resultMessage=text(R.string.account_message_session_verified)
             } catch (failure: Exception) {
                 requiresSignIn=auth.current==null
