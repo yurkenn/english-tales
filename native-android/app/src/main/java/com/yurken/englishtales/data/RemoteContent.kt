@@ -8,6 +8,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -371,11 +372,14 @@ class ContentViewModel internal constructor(application: Application, val reposi
         if (mutableStatus.value.downloading == null) finish(status, success, announce)
         else if (announce) mutableEvents.tryEmit(ContentEvent(success, status.message))
     }
+    private var refreshJob: Job? = null
+    /** Waits for the running refresh, or runs one now; a shared link to a just-published story needs the newest catalog. */
+    suspend fun awaitRefresh() { (refreshJob?.takeIf { it.isActive } ?: run { refresh(); refreshJob?.takeIf { it.isActive } })?.join() }
     fun refresh(userInitiated: Boolean = false) {
         if (mutableStatus.value.busy) return
         refreshing = true
         mutableStatus.value = ContentStatus(busy = true, message = text(R.string.content_message_refreshing))
-        viewModelScope.launch {
+        refreshJob = viewModelScope.launch {
             try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finishRefresh(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
             catch (_: Exception) { finishRefresh(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
         }
