@@ -1,10 +1,18 @@
 # English Tales — son çalışmalar ve yayın durumu
 
-Son güncelleme: **17 Ekim 2026** (Türkiye saati). Bu dosya, tamamlanan çalışmaları ve devam edilecek yayın adımlarını kaydeder.
+Son güncelleme: **19 Ekim 2026, 19:48 TRT**.
 
-## Güncel yol haritası
+## Güncel yayın durumu — 50 / 2.2.0
 
-[Tamamlananlar ve sıralı kabul listesi](native-android/docs/QUALITY_ROADMAP.md#7-güncel-kabul-sırası-ve-açık-kapılar) 49 dahili yayınına göre güncellendi. Sıradaki ana iş gerçek telefonda **48→49 güncelleme, veri koruma ve 49 TalkBack kabulü**. Canlı ölçüm/Google veri beyanı onayı, fiziksel performans ve üretim yayın kabulü açık. Otomatik paket doğrulaması hazır; Play’e bu yükleme elle yapıldı, tam yükleme otomasyonu isteğe bağlı olarak açık. [Ayrıntılı kayıt](senin-adimlarin.md).
+**Üretim başvurusu gönderildi; henüz canlı yayın doğrulanmadı.** Console “Changes in review” gösteriyor ve Google hızlı kontrolleri çalışıyor. Yeni paket, %100 dağıtım, Yurken Stories markası, 13 mağaza dili, güncel EN/TR ekran görüntüleri ve reklam beyanı birlikte başvuruda. Yönetilen yayın kapalı olduğundan onaydan sonra otomatik yayımlanır. Son canlı üretim 48 / 2.0.0, dahili test 49 / 2.1.0.
+
+Güncel Claude düzeltmeleri ile #71, #117, #118, #140, #141, #142, #143 ve #144 birleşti. İlgisiz eski Expo test taslağı #1 açık bırakıldı. 130 Android release birim testi, 154 backend testi, hedefli cihaz testleri (47 toplam, 1 atlama, 0 hata) ve lint (0 hata) geçti. İmzalı yerel 49→50 güncellemesinde kayıtlar korundu. Destek sitesindeki `/story/quiet-morning` 404 sorunu giderildi; gizlilik ve hesap silme sayfaları erişilebilir.
+
+Fiziksel cihazda **Play üzerinden 48→50 güncelleme, kayıt koruma, TalkBack, performans ve canlı ölçüm kabulü** açık. Google-imzalı universal APK’da sertifika ve App Links alan adı doğrulandı; Play hesabı olmayan emülatör tam Play kullanıcı yolculuğunu doğrulamaya yetmedi. SEO dil sayfaları hâlâ içerik taslağı; yeni hikâye/kelime içeriği yayımlanmadı.
+
+[Ayrıntılı 50 yayın kaydı](native-android/docs/RELEASE_50_STATUS.md) · [Makine okunabilir paket ve başvuru kanıtı](native-android/docs/release-evidence/2026-10-19-production-50.json)
+
+Aşağıdaki tarihli notlar geçmiş kayıtlardır.
 
 ## Birleştirmeler — 17 Ekim 2026
 

@@ -1,10 +1,12 @@
 # Google Play mağaza paketi
 
-## 19 Ekim 2026 — ASO / SEO taslağı
+## 19 Ekim 2026 — Üretim başvurusu gönderildi
 
-Önerilen yeni varsayılan ad **Learn English: Yurken Stories**, Türkçe **İngilizce Hikâyeler: Yurken**. 10 yeni dil + EN/TR için 13 mağaza kaydının başlık ve açıklamaları hazırlandı (`es-ES`, `es-419` kopyası). [Kaynaklı araştırma, yayın koşulları ve ölçüm planı](../aso/2026-10-19/RESEARCH.md); [metinler](../aso/2026-10-19/metadata.json); [SEO içerik taslağı](../aso/2026-10-19/seo-copy.json).
+Yeni varsayılan ad **Learn English: Yurken Stories**, Türkçe **İngilizce Hikâyeler: Yurken**. 13 mağaza dili, yeni EN/TR native ekran görüntüleri ve `feature-graphic-v50.jpg`, 50 / 2.2.0 üretim paketiyle birlikte **19:48 TRT’de** gönderildi. Console “Changes in review” gösteriyor; hızlı kontroller sürüyor. %100 dağıtım seçildi, yönetilen yayın kapalı. **Henüz canlı yayın doğrulanmadı.**
 
-**Yayınlanmadı.** Metinler çok dilli üretim paketi ve koordineli yeniden adlandırma için taslaktır. Uygulama içi marka, yerel ekran görüntüleri, gerçek üretim dil desteği ve ana dil incelemesi tamamlanmadan Console'a uygulanmamalı. Web sayfaları henüz oluşturulmadı. Aşağıdaki 15 Ekim notları tarihsel durumdur; güncel üretim sürümü kanıtı olarak kullanılmamalı.
+İkon, tanıtım görseli ve AI çizimleri içeren native ekran görüntülerinin AI etiketleri kaydedildi. Üretim reklamı kapalı; reklam beyanı “No”. Güncel dosyalar: `en-US/screenshots-v50/01-library.png` ile `04-practice.png` arasındaki dört görüntü; `tr-TR/screenshots-v50/` içindeki üç görüntü. `00-language.png` yalnız referanstır. Diğer mağaza dilleri EN varsayılan görsellerini kullanır. Ana dil konuşuru onayı alındığı iddia edilmez.
+
+[Ayrıntılı yayın durumu](../../docs/RELEASE_50_STATUS.md) · [Araştırma ve ölçüm planı](../aso/2026-10-19/RESEARCH.md) · [Metinler](../aso/2026-10-19/metadata.json). SEO dil sayfaları hâlâ içerik taslağıdır. Aşağıdaki 15 Ekim bilgileri tarihseldir; güncel yayın kanıtı olarak kullanılmamalı.
 
 ## 15 Ekim 2026 — Önceki paket notları
 
