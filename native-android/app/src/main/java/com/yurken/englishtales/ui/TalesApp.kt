@@ -87,6 +87,10 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     LaunchedEffect(dailyPlanRequest) {
         if(dailyPlanRequest>0 && dailyPlanRequest!=handledRequest && snapshot.onboardingDone) {dailyPlan();handledRequest=dailyPlanRequest}
     }
+    // A returning account opens on onboarding before its first cloud pull; once the pulled profile marks it onboarded, leave without rewriting its preferences.
+    LaunchedEffect(snapshot.onboardingDone) {
+        if(snapshot.onboardingDone && nav.currentDestination?.route=="onboarding") nav.navigate("main") {popUpTo("onboarding") {inclusive=true}}
+    }
     // Q6: a shared link opens its story page; a story this catalog does not have opens the library instead.
     // A learner still in onboarding sees the link once onboarding is done.
     // The request is cleared once handled, so switching accounts does not open it again.

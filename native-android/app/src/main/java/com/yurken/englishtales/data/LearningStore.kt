@@ -115,7 +115,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false
         transaction {db ->
-            updatePreferences(level,genre,goal,profile().name)
+            // Re-confirming an already onboarded profile (e.g. a cloud profile pulled mid-onboarding) is not an edit, so it cannot overwrite or conflict with the account's.
+            val p=profile()
+            if(!p.onboarding || p.level!=level || p.genre!=genre || p.goal!=goal.coerceIn(1,3)) updatePreferences(level,genre,goal,p.name)
             dao.profile(profile().copy(onboarding=true))
             newlyCompleted=recordEvent(db,"onboarding_completed","onboarding_completed",clock())
         }
