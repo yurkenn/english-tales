@@ -46,7 +46,7 @@ class AccountSwitchTest {
         while(!predicate() && System.nanoTime()<deadline) Thread.sleep(20)
         assertTrue("Expected account state was not reached",predicate())
     }
-    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},opening: (LearningOwner)->Unit={},retired: MutableList<String>?=null,block: (LearningViewModel,Fixture)->Unit) {
+    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},opening: (LearningOwner)->Unit={},retired: MutableList<String>?=null,scheduled: MutableList<Pair<String,Boolean>>?=null,block: (LearningViewModel,Fixture)->Unit) {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val target=instrumentation.targetContext
         val directory=File(target.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
@@ -58,7 +58,7 @@ class AccountSwitchTest {
         }
         val fixture=Fixture();val holder=ViewModelStore()
         val vm=LearningViewModel(target.applicationContext as Application,AccountService(fixture,Memory()),{opening(it);LearningStore(context,it)},syncFactory(fixture),
-            retireSync={user -> retired?.let {synchronized(it) {it.add(user)}}})
+            retireSync={user -> retired?.let {synchronized(it) {it.add(user)}}},scheduleWork={user,now -> scheduled?.let {synchronized(it) {it.add(user to now)}}})
         holder.put("account-test",vm)
         try {await {vm.ready.value};block(vm,fixture)}
         finally {fixture.release?.countDown();instrumentation.runOnMainSync {holder.clear()}}
@@ -267,6 +267,26 @@ class AccountSwitchTest {
             assertEquals(stopped,rpcs.get())
             vm.setForeground(true)
             await(15) {rpcs.get()>stopped}
+        }
+    }
+    /** The in-app timer alone syncs a started app; the one-time worker is enqueued only once it stops with unsent writes, and a resume visit syncs nothing. */
+    @Test fun foregroundSyncDoesNotAlsoEnqueueTheOneTimeWorker() {
+        val rpcs=java.util.concurrent.atomic.AtomicInteger();val uploads=java.util.concurrent.atomic.AtomicInteger()
+        val scheduled=java.util.Collections.synchronizedList(mutableListOf<Pair<String,Boolean>>())
+        exercise({LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+            rpcs.incrementAndGet();if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else {uploads.incrementAndGet();JSONObject().put("applied",true)}
+        },"https://fixture.supabase.co")},scheduled=scheduled) {vm,http ->
+            vm.signIn("a@example.invalid","fixture-password")
+            await(20) {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
+            vm.toggleWord("morning");await(15) {uploads.get()>0 && vm.account.value.sync.pending==0 && !vm.account.value.sync.running}
+            assertTrue(synchronized(scheduled) {scheduled.isNotEmpty() && scheduled.none {it.second}})
+            // A verification or rerun queued during the first sync may still fire its 2 s timer; wait until requests stop.
+            var settled: Int
+            do {settled=rpcs.get();Thread.sleep(3_000)} while(rpcs.get()!=settled)
+            vm.refresh();Thread.sleep(4_000)
+            assertEquals(settled,rpcs.get())
+            vm.toggleWord("quiet");vm.setForeground(false)
+            await {synchronized(scheduled) {(http.a to true) in scheduled}}
         }
     }
     @Test fun signOutRequestInvalidatesAnInFlightSnapshotBeforeItReturns() {
