@@ -134,7 +134,8 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         .joinToString("") { "%02x".format(it) }
     private var metadata = JSONArray()
     private var hasRemoteCatalog = false
-    private val downloaded = mutableMapOf<String, Story>()
+    /** Replaced whole under [lock], never mutated: the UI reads it on Main without the lock (isDownloaded/downloads). */
+    @Volatile private var downloaded: Map<String, Story> = emptyMap()
     private val historical = mutableMapOf<String, Story>()
     private fun atomic(file: AtomicFile, bytes: ByteArray) {
         val output = file.startWrite()
@@ -143,7 +144,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private fun read(file: AtomicFile) = file.openRead().use { String(it.readBytes(), Charsets.UTF_8) }
     suspend fun restore() = lock.withLock {
         withContext(Dispatchers.IO) {
-            downloaded.clear(); historical.clear(); bundledText.clear(); bundledMismatch.clear()
+            val restored = mutableMapOf<String, Story>(); historical.clear(); bundledText.clear(); bundledMismatch.clear()
             metadata = JSONArray(); hasRemoteCatalog = false
             runCatching {
                 val candidate = JSONArray(read(index))
@@ -168,10 +169,11 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                     val cover = File(directory, "$revision.cover")
                     ContentCodec.verify(cover.readBytes(), asset)
                     val story = ContentCodec.story(doc, cover.absolutePath)
-                    require(story.sentences.isNotEmpty()); downloaded[story.revisionId] = story
+                    require(story.sentences.isNotEmpty()); restored[story.revisionId] = story
                 }
             }
-            directory.listFiles().orEmpty().filter {it.name.endsWith(".cover") && it.name.removeSuffix(".cover") !in downloaded}.forEach {it.delete()}
+            downloaded = restored
+            directory.listFiles().orEmpty().filter {it.name.endsWith(".cover") && it.name.removeSuffix(".cover") !in restored}.forEach {it.delete()}
         }
         publish()
     }
@@ -331,7 +333,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             atomic(AtomicFile(File(directory, "$revision.json")), doc.toString().toByteArray(Charsets.UTF_8))
             parsed
         }
-        downloaded[result.revisionId] = result; historical[result.revisionId] = result; publish(); result
+        downloaded = downloaded + (result.revisionId to result); historical[result.revisionId] = result; publish(); result
     }
     suspend fun removeDownload(story: Story) = lock.withLock {
         // Keep the small text archive as the source for already learned vocabulary.
@@ -340,7 +342,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 require(!File(directory,"${saved.revisionId}.cover").exists() || File(directory,"${saved.revisionId}.cover").delete())
             }
         }
-        downloaded.entries.removeAll {it.value.id == story.id}; publish()
+        downloaded = downloaded.filterValues {it.id != story.id}; publish()
     }
 }
 

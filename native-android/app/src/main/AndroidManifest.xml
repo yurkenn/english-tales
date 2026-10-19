@@ -37,6 +37,8 @@
         <receiver android:name=".widget.LearningWidgetReceiver" android:exported="false" android:label="@string/widget_name">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/learning_widget_info" />
         </receiver>

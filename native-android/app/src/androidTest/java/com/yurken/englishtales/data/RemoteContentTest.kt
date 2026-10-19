@@ -150,6 +150,28 @@ class RemoteContentTest {
         assertTrue(restart.isDownloaded(LearningContent.stories.single()))
         assertEquals(7,LearningContent.stories.single().sentences.size)
     }
+    @Test fun downloadStateReadsStayConsistentWhileRestoreAndRemovalRun()=runBlocking {
+        val fixture=Fixture(); val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh()
+        val story=LearningContent.stories.single(); repo.download(story)
+        // The UI reads these on Main without the repository lock; restore and removal write on other threads.
+        val restoring=java.util.concurrent.atomic.AtomicBoolean(true); val running=java.util.concurrent.atomic.AtomicBoolean(true)
+        val failure=java.util.concurrent.atomic.AtomicReference<Throwable>()
+        val reader=Thread {
+            try { while(running.get()) {
+                val list=repo.downloads(); val present=repo.isDownloaded(story)
+                // A downloaded story never disappears while restore only re-reads it from disk.
+                if(restoring.get()) { check(present) {"restore exposed a partial map"}; check(list.map {it.id}==listOf(story.id)) }
+            } } catch(t: Throwable) { failure.set(t) }
+        }.apply {start()}
+        try {
+            repeat(20) { repo.restore() }
+            restoring.set(false)
+            repeat(5) { repo.removeDownload(story); repo.download(story); repo.restore() }
+        } finally { running.set(false); reader.join(2_000) }
+        failure.get()?.let {throw AssertionError("Concurrent read failed",it)}
+        assertTrue(repo.isDownloaded(story))
+    }
     @Test fun downloadFetchesEachTableInFullPages()=runBlocking {
         val fixture=Fixture().apply {sentenceCount=2_503}; val repo=ContentRepository(context,fixture)
         repo.restore(); repo.refresh(); fixture.requests.clear()
