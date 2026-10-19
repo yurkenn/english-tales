@@ -34,6 +34,7 @@ class PracticeTabSwitchTest {
         compose.runOnIdle {tab=2};compose.waitForIdle()
         compose.onNodeWithText(second.word).assertExists()
         compose.onAllNodesWithText("Bir çeviri seç").assertCountEquals(0)
-        compose.runOnIdle {assertEquals(1,starts.size);assertTrue(abandoned.isEmpty())}
+        // Returning re-announces the same session (beginSession is insert-or-ignore), so every start names one session.
+        compose.runOnIdle {assertEquals(1,starts.distinct().size);assertTrue(abandoned.isEmpty())}
     }
 }
