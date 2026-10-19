@@ -1,6 +1,9 @@
 package com.yurken.englishtales.data
 
+import android.app.Application
 import android.content.ContextWrapper
+import android.database.sqlite.SQLiteFullException
+import androidx.lifecycle.ViewModelStore
 import androidx.test.platform.app.InstrumentationRegistry
 import org.json.JSONObject
 import org.junit.Assert.*
@@ -98,6 +101,25 @@ class AccountSessionTest {
             assertFalse(LearningSyncRuntime.restored);assertEquals(session,storage.value)
             assertEquals(session,LearningSyncRuntime.ensureRestored(context).current);assertTrue(LearningSyncRuntime.restored)
         } finally {LearningSyncRuntime.resetForTest()}
+    }
+    @Test fun localDatabaseFailureDuringRestoreKeepsSession() {
+        val context=LearningReliabilityTest().isolated()
+        val session=AccountSession(UUID.randomUUID().toString(),"fixture@example.invalid","fixture-access","fixture-refresh",Long.MAX_VALUE)
+        val storage=MemoryStorage().apply {value=session};val service=AccountService(null,storage)
+        val holder=ViewModelStore()
+        val vm=LearningViewModel(context.applicationContext as Application,service,{
+            if(it is LearningOwner.Account) throw SQLiteFullException("Simulated full disk");LearningStore(context,it)
+        })
+        holder.put("restore",vm)
+        try {
+            val deadline=System.nanoTime()+5_000_000_000L
+            while(!vm.ready.value && System.nanoTime()<deadline) Thread.sleep(20)
+            assertTrue(vm.ready.value)
+            assertEquals(session,storage.value);assertEquals(session,service.current)
+            assertEquals("guest",vm.state.value.ownerId)
+            val failed=com.yurken.englishtales.AppLanguage.wrap(context.applicationContext).getString(com.yurken.englishtales.R.string.account_message_restore_failed)
+            assertEquals(failed,vm.account.value.message)
+        } finally {InstrumentationRegistry.getInstrumentation().runOnMainSync {holder.clear()}}
     }
     @Test fun verifiedSignInRestoresSameOwner() {
         val fixture=Fixture();val storage=MemoryStorage()

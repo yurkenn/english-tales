@@ -61,9 +61,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     val session=try {auth.restore()} catch (_: Exception) {
                         mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error);auth.current
                     }
-                    session?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
+                    session?.let {
+                        // Only a session naming no valid account is discarded; a database or disk error keeps it for the next launch.
+                        val owner=try {LearningOwner.Account(it.userId)} catch (failure: IllegalArgumentException) {auth.clearLocal();throw failure}
+                        changeOwner(owner,it.email)
+                    }
                 } catch (_: Exception) {
-                    auth.clearLocal()
                     mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error)
                 }
                 onOwnerChanged(store.owner)
