@@ -46,19 +46,24 @@ class AccountSwitchTest {
         while(!predicate() && System.nanoTime()<deadline) Thread.sleep(20)
         assertTrue("Expected account state was not reached",predicate())
     }
-    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},opening: (LearningOwner)->Unit={},retired: MutableList<String>?=null,scheduled: MutableList<Pair<String,Boolean>>?=null,block: (LearningViewModel,Fixture)->Unit) {
+    // remember: the production owner memory (reminder owner and deletion receipts), isolated in this directory's preferences; a launch reuses directory and fixture.
+    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},opening: (LearningOwner)->Unit={},retired: MutableList<String>?=null,scheduled: MutableList<Pair<String,Boolean>>?=null,
+        remember: Boolean=false,at: File?=null,fixture: Fixture=Fixture(),block: (LearningViewModel,Fixture)->Unit) {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val target=instrumentation.targetContext
-        val directory=File(target.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
+        val directory=at ?: File(target.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
         val context=object: ContextWrapper(target) {
+            override fun getSharedPreferences(name: String,mode: Int)=target.getSharedPreferences("${directory.name}-$name",mode)
             override fun getDatabasePath(name: String)=File(directory,name)
             override fun deleteDatabase(name: String)=SQLiteDatabase.deleteDatabase(File(directory,name))
             override fun openOrCreateDatabase(name: String,mode: Int,factory: SQLiteDatabase.CursorFactory?)=SQLiteDatabase.openOrCreateDatabase(File(directory,name),factory)
             override fun openOrCreateDatabase(name: String,mode: Int,factory: SQLiteDatabase.CursorFactory?,handler: DatabaseErrorHandler?)=SQLiteDatabase.openOrCreateDatabase(File(directory,name).absolutePath,factory,handler)
         }
-        val fixture=Fixture();val holder=ViewModelStore()
+        val holder=ViewModelStore()
         val vm=LearningViewModel(target.applicationContext as Application,AccountService(fixture,Memory()),{opening(it);LearningStore(context,it)},syncFactory(fixture),
-            retireSync={user -> retired?.let {synchronized(it) {it.add(user)}}},scheduleWork={user,now -> scheduled?.let {synchronized(it) {it.add(user to now)}}})
+            onOwnerChanged={if(remember) LearningReminderOwner.select(context,it)},
+            retireSync={user -> retired?.let {synchronized(it) {it.add(user)}}},scheduleWork={user,now -> scheduled?.let {synchronized(it) {it.add(user to now)}}},
+            rememberedAccount={if(remember) LearningReminderOwner.account(context) else null})
         holder.put("account-test",vm)
         try {await {vm.ready.value};block(vm,fixture)}
         finally {fixture.release?.countDown();instrumentation.runOnMainSync {holder.clear()}}
@@ -74,6 +79,50 @@ class AccountSwitchTest {
         vm.signIn("b@example.invalid","fixture-password");await {vm.state.value.ownerId==http.b};assertEquals(20,vm.state.value.points)
         // Fixture-only recreation with the same UID proves the removed database is empty.
         vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a};assertEquals(0,vm.state.value.points)
+    }
+    // Each launch starts with an empty session store, as after a revoked or expired session cleared it.
+    @Test fun launchAfterExpiredSessionReopensRememberedAccountAskingToSignIn() {
+        val directory=File(InstrumentationRegistry.getInstrumentation().targetContext.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
+        val http=Fixture()
+        exercise(remember=true,at=directory,fixture=http) {vm,_ ->
+            vm.saveWords(listOf("morning"));await {"morning" in vm.state.value.savedWordIds}
+            vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a && !vm.account.value.busy}
+            vm.completeLesson(5,UUID.randomUUID().toString(),"choice",5,0);await {vm.state.value.points==25}
+        }
+        exercise(remember=true,at=directory,fixture=http) {vm,_ ->
+            assertEquals(http.a,vm.state.value.ownerId);assertEquals(25,vm.state.value.points)
+            assertEquals(http.a,vm.account.value.userId);assertTrue(vm.account.value.needsSignIn)
+            // Same account resumes in place.
+            vm.signIn("a@example.invalid","fixture-password");await {!vm.account.value.busy && !vm.account.value.needsSignIn}
+            assertEquals(http.a,vm.state.value.ownerId);assertEquals(25,vm.state.value.points)
+        }
+        exercise(remember=true,at=directory,fixture=http) {vm,_ ->
+            await {vm.account.value.needsSignIn};assertEquals(http.a,vm.state.value.ownerId)
+            // Another account still switches owners and is offered the guest history.
+            vm.signIn("b@example.invalid","fixture-password");await {vm.state.value.ownerId==http.b && !vm.account.value.busy}
+            assertEquals(0,vm.state.value.points);assertFalse(vm.account.value.needsSignIn);assertNotNull(vm.account.value.guestTransfer)
+            vm.signOut();await {vm.state.value.ownerId=="guest" && !vm.account.value.busy}
+        }
+        // Signing out forgets the account: the next launch is Guest.
+        exercise(remember=true,at=directory,fixture=http) {vm,_ ->
+            assertEquals("guest",vm.state.value.ownerId);assertNull(vm.account.value.userId);assertEquals(setOf("morning"),vm.state.value.savedWordIds)
+        }
+    }
+    @Test fun launchAfterAcknowledgedDeletionDoesNotReopenAccount() {
+        val directory=File(InstrumentationRegistry.getInstrumentation().targetContext.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
+        val http=Fixture()
+        exercise(remember=true,at=directory,fixture=http) {vm,_ ->
+            vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a && !vm.account.value.busy}
+            vm.completeLesson(5,UUID.randomUUID().toString(),"choice",5,0);await {vm.state.value.points==25}
+        }
+        // The process died after the server confirmed deletion but before local cleanup ran.
+        val prefs=object: ContextWrapper(InstrumentationRegistry.getInstrumentation().targetContext) {
+            override fun getSharedPreferences(name: String,mode: Int)=baseContext.getSharedPreferences("${directory.name}-$name",mode)
+        }
+        DeletedAccountCleanup.record(prefs,http.a)
+        exercise(remember=true,at=directory,fixture=http) {vm,_ ->
+            assertEquals("guest",vm.state.value.ownerId);assertNull(vm.account.value.userId);assertFalse(vm.account.value.needsSignIn)
+        }
     }
     @Test fun deletionWithoutFreshAuthenticationPreservesLocalAccount()=exercise {vm,http ->
         vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a}
