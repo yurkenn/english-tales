@@ -40,7 +40,7 @@ class LearningReliabilityTest {
         override fun clear() {saved=null}
     }
     private fun exercise(setup: (LearningStore)->Unit={},read: (LearningStore)->LearningSnapshot={it.snapshot()},
-        block: (LearningViewModel,Context)->Unit) {
+        sync: LearningAccountSync?=null,background: Boolean=false,block: (LearningViewModel,Context)->Unit) {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val context=isolated()
         val http=object: AuthHttp("https://example.invalid","sb_publishable_fixture") {
@@ -53,11 +53,30 @@ class LearningReliabilityTest {
         }
         val holder=ViewModelStore()
         val vm=LearningViewModel(context.applicationContext as Application,AccountService(http,Memory()),
-            {LearningStore(context,it).also {store ->if(it is LearningOwner.Guest) setup(store)}},
+            {LearningStore(context,it).also {store ->if(it is LearningOwner.Guest) setup(store)}},sync,background,
             onOwnerChanged={LearningReminderOwner.select(context,it)},readSnapshot=read)
         holder.put("reliability",vm)
         try {await {vm.ready.value};block(vm,context)}
         finally {instrumentation.runOnMainSync {holder.clear()}}
+    }
+
+    @Test fun resolvingPreferencesBehindAHeldWriteStillResumesBackgroundSync() {
+        LearningSyncRuntime.resetForTest {Memory()}
+        var user: String?=null
+        try {
+            // An offline cloud keeps the fixture local; the worker must not stay paused while the resolve waits behind the failed write.
+            exercise(sync=LearningAccountSync(LearningSyncTransport {_,_,_ ->throw LearningSyncFailure("offline")},"https://fixture.supabase.co"),background=true) {vm,context ->
+                vm.signIn("fixture@example.invalid","fixture-password");await {vm.account.value.userId!=null && !vm.account.value.busy}
+                user=vm.account.value.userId
+                LearningStore(context,LearningOwner.Account(user!!)).use {it.writableDatabase.execSQL("CREATE TRIGGER fail_save BEFORE INSERT ON saved_words BEGIN SELECT RAISE(ABORT,'fixture'); END")}
+                vm.toggleWord("morning");await {vm.writeError.value?.pendingCount==1}
+                vm.resolvePreferences(true)
+                await {vm.writeError.value?.pendingCount==2 && !LearningSyncRuntime.paused}
+            }
+        } finally {
+            LearningSyncRuntime.paused=false;LearningSyncRuntime.resetForTest()
+            if(LearningSyncRuntime.configured()) user?.let {LearningSyncRuntime.cancel(InstrumentationRegistry.getInstrumentation().targetContext,it)}
+        }
     }
 
     @Test fun rolledBackWordSaveAndLaterSaveRecoverInOrder()=exercise(setup={

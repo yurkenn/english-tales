@@ -235,8 +235,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun resolvePreferences(useLocal: Boolean) {
         if(mutableAccount.value.busy || mutableAccount.value.userId==null) return
         interruptSync()
-        mutate {LearningPreferencesSync.resolve(store,useLocal);if(background) LearningSyncRuntime.resume()
-            mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store))}
+        // Background sync resumes even when the resolve is held behind a failed write or fails itself; otherwise every worker run retries forever.
+        enqueue {
+            val resolved=try {writes.submit {LearningPreferencesSync.resolve(store,useLocal)}} finally {if(background) LearningSyncRuntime.resume()}
+            try {mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store))} catch (_: Exception) {}
+            if(resolved) scheduleSync()
+        }
     }
     private fun holdsWrites() = (writes.error.value?.pendingCount?:0)>0
     // Held writes target the current store; retry them there, since after a switch they would land in the other owner.
