@@ -169,14 +169,23 @@ class LearningReliabilityTest {
     }
 
     @Test fun failedGuestWriteCannotBeRetriedIntoAnotherAccount()=exercise(setup={
-        it.writableDatabase.execSQL("CREATE TRIGGER fail_save BEFORE INSERT ON saved_words BEGIN SELECT RAISE(ABORT,'fixture'); END")
+        it.writableDatabase.execSQL("CREATE TRIGGER IF NOT EXISTS fail_save BEFORE INSERT ON saved_words BEGIN SELECT RAISE(ABORT,'fixture'); END")
     }) {vm,context ->
-        vm.toggleWord("morning");await {vm.writeError.value!=null}
+        vm.toggleWord("morning");vm.toggleWord("quiet");await {vm.writeError.value?.pendingCount==2}
+        // A switch while writes are held must neither drop them nor carry them into the account.
+        vm.signIn("fixture@example.invalid","fixture-password")
+        await {!vm.account.value.busy}
+        val pending=com.yurken.englishtales.AppLanguage.wrap(context.applicationContext).getString(com.yurken.englishtales.R.string.write_error_pending_changes)
+        assertEquals("guest",vm.state.value.ownerId);assertNull(vm.account.value.userId)
+        assertEquals(pending,vm.account.value.message)
+        assertEquals(2,vm.writeError.value?.pendingCount)
+        LearningStore(context).use {it.writableDatabase.execSQL("DROP TRIGGER fail_save")}
         vm.signIn("fixture@example.invalid","fixture-password")
         await {vm.state.value.ownerId!="guest" && !vm.account.value.busy}
         vm.retryLearningWrites();vm.refresh()
         assertNull(vm.writeError.value)
         assertTrue(vm.completedSessions.value.isEmpty())
+        LearningStore(context).use {assertEquals(setOf("morning","quiet"),it.snapshot().savedWordIds)}
         LearningStore(context,LearningOwner.Account(vm.state.value.ownerId)).use {assertTrue(it.snapshot().savedWordIds.isEmpty())}
         assertEquals(vm.state.value.ownerId,LearningReminderOwner.current(context)?.id)
     }

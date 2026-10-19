@@ -201,6 +201,25 @@ class AccountSwitchTest {
             }
         } finally {release.countDown()}
     }
+    @Test fun writeJustBeforeASyncFinishesIsNotPushedBackAMinute() {
+        val hold=java.util.concurrent.atomic.AtomicBoolean(false);val entered=CountDownLatch(1);val release=CountDownLatch(1)
+        val uploads=java.util.concurrent.atomic.AtomicInteger()
+        try {
+            exercise({LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+                if(hold.getAndSet(false)) {entered.countDown();assertTrue(release.await(10,TimeUnit.SECONDS))}
+                if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else {uploads.incrementAndGet();JSONObject().put("applied",true)}
+            },"https://fixture.supabase.co")}) {vm,http ->
+                vm.signIn("a@example.invalid","fixture-password")
+                await(20) {vm.state.value.ownerId==http.a && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
+                // Holds the final snapshot read, so the sync ends right after the write and before the write's own timer fires.
+                hold.set(true);vm.syncNow();assertTrue(entered.await(10,TimeUnit.SECONDS))
+                val before=uploads.get()
+                vm.toggleWord("morning");await {"morning" in vm.state.value.savedWordIds}
+                release.countDown()
+                await(15) {uploads.get()>before}
+            }
+        } finally {release.countDown()}
+    }
     @Test fun signOutRequestInvalidatesAnInFlightSnapshotBeforeItReturns() {
         val entered=CountDownLatch(1);val release=CountDownLatch(1)
         try {

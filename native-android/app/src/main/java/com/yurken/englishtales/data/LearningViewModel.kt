@@ -29,6 +29,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // A sync requested while one is running may land after that run read the outbox; it reruns shortly instead of waiting a minute.
     private val syncAgain=java.util.concurrent.atomic.AtomicBoolean(false)
     private var syncTimer: kotlinx.coroutines.Job?=null
+    private var syncDue=0L to -1L
     private val mutableAccount=MutableStateFlow(AccountState())
     val account: StateFlow<AccountState> = mutableAccount
     private val verifying=java.util.concurrent.atomic.AtomicBoolean(false)
@@ -61,9 +62,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     val session=try {auth.restore()} catch (_: Exception) {
                         mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error);auth.current
                     }
-                    session?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
+                    session?.let {
+                        // Only a session naming no valid account is discarded; a database or disk error keeps it for the next launch.
+                        val owner=try {LearningOwner.Account(it.userId)} catch (failure: IllegalArgumentException) {auth.clearLocal();throw failure}
+                        changeOwner(owner,it.email)
+                    }
                 } catch (_: Exception) {
-                    auth.clearLocal()
                     mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error)
                 }
                 onOwnerChanged(store.owner)
@@ -171,9 +175,13 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // Only the actor accesses a store. Timers enqueue work without touching Room.
     private fun scheduleSync(waitMillis: Long=2_000) {
         if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed || switching) return
-        syncTimer?.cancel()
         val expected=scope
         if(background) LearningSyncRuntime.schedule(getApplication(),checkNotNull(mutableAccount.value.userId))
+        // A finished sync's minute-later reschedule must not push back a sooner run a write asked for just before it ended.
+        val due=System.nanoTime()/1_000_000+waitMillis
+        if(syncTimer?.isActive==true && syncDue.second==expected && syncDue.first<=due) return
+        syncTimer?.cancel()
+        syncDue=due to expected
         syncTimer=viewModelScope.launch {
             kotlinx.coroutines.delay(waitMillis)
             if(scope==expected) syncNow()
@@ -230,7 +238,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         mutate {LearningPreferencesSync.resolve(store,useLocal);if(background) LearningSyncRuntime.resume()
             mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store))}
     }
-    private fun changeOwner(owner: LearningOwner,email: String="") {
+    private fun holdsWrites() = (writes.error.value?.pendingCount?:0)>0
+    // Held writes target the current store; retry them there, since after a switch they would land in the other owner.
+    private fun releaseHeldWrites(): Boolean {if(holdsWrites()) writes.retry();return !holdsWrites()}
+    private fun requireSavedWrites() {if(!releaseHeldWrites()) throw AuthFailure("pending_local_writes")}
+    private fun changeOwner(owner: LearningOwner,email: String="",discardHeld: Boolean=false) {
+        if(!discardHeld) requireSavedWrites()
         val next=storeFactory(owner)
         try {next.snapshot()} catch (failure: Exception) {next.close();throw failure}
         // Writes queued under the old owner belong to it: apply them before switching instead of dropping them.
@@ -238,11 +251,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         switching=true
         try {
             while(true) {
-                val queued=synchronized(stamping) {mutations.tryReceive().getOrNull().also {if(it==null) {store.close();store=next;scope++}}}?:break
+                val queued=synchronized(stamping) {mutations.tryReceive().getOrNull().also {if(it==null && (discardHeld || !holdsWrites())) {store.close();store=next;scope++}}}
+                if(queued==null) {if(store===next) break;requireSavedWrites();continue}
                 if(queued.scope==null) unscoped+=queued else if(queued.scope==scope) execute(queued)
             }
-        } finally {switching=false}
-        unscoped.forEach {mutations.trySend(it)}
+        } catch (failure: Exception) {if(store!==next) next.close();throw failure}
+        finally {switching=false;unscoped.forEach {mutations.trySend(it)}}
         syncEpoch++
         writes.reset()
         mutableCompletions.value=emptySet()
@@ -295,6 +309,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         mutableAccount.value=mutableAccount.value.copy(busy=true,message=text(R.string.account_message_signing_in),messageTone=MessageTone.Progress)
         mutations.trySend(Mutation(null) {
             try {
+                requireSavedWrites()
                 val session=auth.signIn(email,password)
                 changeOwner(LearningOwner.Account(session.userId),session.email)
                 mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_signed_in),messageTone=MessageTone.Success)
@@ -305,6 +320,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     "invalid_credentials" -> text(R.string.account_message_invalid_credentials)
                     "email_not_confirmed" -> text(R.string.account_message_email_unconfirmed)
                     "not_configured" -> text(R.string.account_message_not_configured)
+                    "pending_local_writes" -> text(R.string.write_error_pending_changes)
                     else -> text(R.string.account_message_sign_in_failed)
                 }
                 mutableAccount.value=mutableAccount.value.copy(busy=false,message=message,messageTone=MessageTone.Error)
@@ -326,6 +342,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     "invalid_code","otp_expired" -> if(mutableAccount.value.emailAction=="signup") text(R.string.account_message_verification_code_invalid) else text(R.string.account_message_recovery_code_invalid)
                     "over_email_send_rate_limit","over_request_rate_limit" -> text(R.string.account_message_rate_limited)
                     "same_password" -> text(R.string.account_message_password_unchanged)
+                    "pending_local_writes" -> text(R.string.write_error_pending_changes)
                     else -> text(R.string.account_message_request_failed)
                 })
             } finally {
@@ -357,6 +374,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         val state=mutableAccount.value
         when(state.emailAction) {
             "signup" -> {
+                requireSavedWrites()
                 val session=auth.confirmEmail(state.verificationEmail,code)
                 changeOwner(LearningOwner.Account(session.userId),session.email)
                 mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_email_verified),messageTone=MessageTone.Success)
@@ -376,7 +394,13 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         interruptSync()
         if(background) mutableAccount.value.userId?.let {LearningSyncRuntime.cancel(getApplication(),it)}
         mutableAccount.value=mutableAccount.value.copy(busy=true,message=text(R.string.account_message_signing_out),messageTone=MessageTone.Progress)
-        mutations.trySend(Mutation(null) {
+        mutations.trySend(Mutation(null) signOut@{
+            // Unsaved writes block the switch before the session is revoked, so the account keeps them.
+            if(!releaseHeldWrites()) {
+                mutableAccount.value=mutableAccount.value.copy(busy=false,message=text(R.string.write_error_pending_changes),messageTone=MessageTone.Error)
+                if(background) LearningSyncRuntime.resume()
+                scheduleSync();return@signOut
+            }
             val revoked=auth.signOut();changeOwner(LearningOwner.Guest)
             viewModelScope.launch {runCatching {GoogleSignIn.clear(getApplication())}}
             mutableAccount.value=mutableAccount.value.copy(message=if(revoked) text(R.string.account_message_signed_out) else text(R.string.account_message_signed_out_offline),messageTone=if(revoked) MessageTone.Success else MessageTone.Warning)
@@ -402,7 +426,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                             store.eraseDeletedAccount()
                             if(background) DeletedAccountCleanup.complete(getApplication(),user)
                         }.isSuccess
-                        changeOwner(LearningOwner.Guest)
+                        // The account is gone; writes still held for it have nowhere to land.
+                        changeOwner(LearningOwner.Guest,discardHeld=true)
                         viewModelScope.launch {runCatching {GoogleSignIn.clear(getApplication())}}
                         mutableAccount.value=mutableAccount.value.copy(message=if(cleaned) text(R.string.account_message_deleted) else text(R.string.account_message_cleanup_pending),messageTone=if(cleaned) MessageTone.Success else MessageTone.Warning)
                     })
@@ -427,12 +452,14 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             val identity=acquire()
             mutations.trySend(Mutation(expectedScope) {
                 try {
+                    requireSavedWrites()
                     val session=auth.signInGoogle(identity)
                     changeOwner(LearningOwner.Account(session.userId),session.email)
                     mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_google_signed_in),messageTone=MessageTone.Success)
                 } catch (failure: Exception) {
                     if(auth.current!=null && auth.current?.userId!=store.owner.id) auth.clearLocal()
-                    mutableAccount.value=mutableAccount.value.copy(busy=false,message=text(R.string.account_message_google_failed),messageTone=MessageTone.Error)
+                    mutableAccount.value=mutableAccount.value.copy(busy=false,messageTone=MessageTone.Error,
+                        message=if((failure as? AuthFailure)?.code=="pending_local_writes") text(R.string.write_error_pending_changes) else text(R.string.account_message_google_failed))
                     if(background) LearningSyncRuntime.resume()
                     scheduleSync()
                 }
