@@ -162,6 +162,21 @@ class AccountSwitchTest {
         assertEquals(last,vm.account.value.sync.lastSuccessAt)
         assertFalse(vm.account.value.sync.running)
     }
+    /** A returning account on a new device: its pulled cloud profile finishes onboarding, and nothing writes its preferences back. */
+    @Test fun signInWithACloudProfileMarksOnboardingDoneWithoutSavingPreferences() {
+        val rpcs=java.util.Collections.synchronizedList(mutableListOf<String>())
+        exercise({LearningAccountSync(LearningSyncTransport {rpc,_,token ->
+            rpcs+=rpc;if(rpc=="get_learning_snapshot") remote(token.removePrefix("token-")) else JSONObject().put("applied",true)
+        },"https://fixture.supabase.co")}) {vm,http ->
+            vm.signIn("a@example.invalid","fixture-password")
+            await(20) {vm.state.value.onboardingDone && vm.account.value.sync.lastSuccessAt!=null && !vm.account.value.sync.running}
+            assertEquals("A2",vm.state.value.level);assertEquals(2,vm.state.value.dailyGoal)
+            // Confirming the same answers in a late onboarding screen is not an edit either.
+            vm.completeOnboarding("A2","Günlük yaşam",2);vm.syncNow()
+            Thread.sleep(2_500);await(20) {!vm.account.value.sync.running}
+            assertFalse(rpcs.toString(),"save_learning_preferences" in rpcs)
+        }
+    }
     @Test fun activeTimeCheckpointsStayLocalWhileRealWritesStillSync() {
         // Counts every RPC so a checkpoint can neither pull a snapshot nor upload anything.
         val rpcs=java.util.concurrent.atomic.AtomicInteger()
