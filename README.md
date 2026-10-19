@@ -4,8 +4,9 @@ Android uygulaması tamamen Kotlin ve Jetpack Compose ile geliştirilir. Aktif k
 
 - [Hesap ve yayın adımlarının güncel durumu](senin-adimlarin.md)
 - [Android kurulumu ve doğrulama](native-android/README.md)
-- [Son çalışmalar ve güncel yayın durumu — 16 Ekim 2026](README_SON_DURUM.md)
+- [Son çalışmalar ve güncel yayın durumu](README_SON_DURUM.md)
 - [Native geçişin kapsamı ve veri sınırları](native-android/docs/NATIVE_MIGRATION.md)
+- [Aktif 90 günlük yol haritası](native-android/docs/ROADMAP_2026_Q4.md)
 - [Kalite yol haritası](native-android/docs/QUALITY_ROADMAP.md)
 - [2.0 sonrası geliştirme haritası](native-android/docs/NEXT_PHASE_ROADMAP.md)
 - [Derin eksik haritası](native-android/docs/GAP_ANALYSIS.md)

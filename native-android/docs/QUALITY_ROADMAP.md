@@ -1,3 +1,5 @@
+> **19 Ekim 2026:** Aktif öncelik ve gelecek planı [90 günlük yol haritasında](ROADMAP_2026_Q4.md). Bu belgedeki eski durum/süre tabloları tarihsel ve teknik referanstır; yayın durumu için [50 kaydı](RELEASE_50_STATUS.md) esas alınır.
+
 # English Tales — kalite yol haritası
 
 15 Ekim 2026 · **Yenileme: 16 Ekim 2026, 23:38 TRT dahili yayın kaydı; paket kaynağı `6f48040`, içerdiği master `a14fa5f`** · İlk kaynak: master `8bef30b` · Dayanak: [derin eksik haritası](GAP_ANALYSIS.md), [geliştirme haritası](NEXT_PHASE_ROADMAP.md).

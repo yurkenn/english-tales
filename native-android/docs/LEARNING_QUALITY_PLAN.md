@@ -1,3 +1,5 @@
+> **19 Ekim 2026:** Aktif öncelik ve gelecek planı [90 günlük yol haritasında](ROADMAP_2026_Q4.md). Bu belgedeki eski durum/süre tabloları tarihsel ve teknik referanstır; yayın durumu için [50 kaydı](RELEASE_50_STATUS.md) esas alınır.
+
 # İçerik, öğrenme ve dil genişlemesi planı
 
 16 Ekim 2026 · Kaynak: master `5682f1c`, paket kataloğu, [#33 içerik denetimi](https://github.com/yurkenn/english-tales/pull/33) · Kapsam: [kalite yol haritası](QUALITY_ROADMAP.md) Q4 ve Q5'in ayrıntılandırılması ve yeni bir **dil genişlemesi (L)** hattı. Bu bir plandır; hiçbir madde uygulanmadı.

@@ -2,6 +2,8 @@
 
 Son güncelleme: **19 Ekim 2026, 19:48 TRT**.
 
+Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/docs/ROADMAP_2026_Q4.md).
+
 ## Güncel yayın durumu — 50 / 2.2.0
 
 **Üretim başvurusu gönderildi; henüz canlı yayın doğrulanmadı.** Console “Changes in review” gösteriyor ve Google hızlı kontrolleri çalışıyor. Yeni paket, %100 dağıtım, Yurken Stories markası, 13 mağaza dili, güncel EN/TR ekran görüntüleri ve reklam beyanı birlikte başvuruda. Yönetilen yayın kapalı olduğundan onaydan sonra otomatik yayımlanır. Son canlı üretim 48 / 2.0.0, dahili test 49 / 2.1.0.

@@ -1,3 +1,5 @@
+> **19 Ekim 2026:** Aktif öncelik ve gelecek planı [90 günlük yol haritasında](ROADMAP_2026_Q4.md). Bu belgedeki eski durum/süre tabloları tarihsel ve teknik referanstır; yayın durumu için [50 kaydı](RELEASE_50_STATUS.md) esas alınır.
+
 # English Tales — Google Play yayın yol haritası
 
 11 Ekim 2026 · Mevcut proje incelemesine dayalı plan

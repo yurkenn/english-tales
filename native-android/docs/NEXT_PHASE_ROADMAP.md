@@ -1,3 +1,5 @@
+> **19 Ekim 2026:** Aktif öncelik ve gelecek planı [90 günlük yol haritasında](ROADMAP_2026_Q4.md). Bu belgedeki eski durum/süre tabloları tarihsel ve teknik referanstır; yayın durumu için [50 kaydı](RELEASE_50_STATUS.md) esas alınır.
+
 # English Tales — 2.0 sonrası geliştirme haritası
 
 İlk sürüm: 15 Ekim 2026 (`b1ae829`). Yenileme: 15 Ekim 2026, master `8bef30b` + #12. **Durum notu: 16 Ekim 2026, master `fd2b5e4`.**
