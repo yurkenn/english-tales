@@ -1,0 +1,950 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "codex-story-quality-pilot-2026-10-19",
+  "reviewedBy": null,
+  "baseStoryId": "paper-boat",
+  "baseStorySHA256": "d8479c0d479a83b00857e481f5d8be77da2936d532fba13bc8ff9b29076364eb",
+  "editorialNotes": [
+    "Clarifies the boat’s position at a low bank and introduces the girl once, at her first action.",
+    "Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs.",
+    "Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections.",
+    "The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation.",
+    "AI editorial pass: explicitly launches the boat before the wind moves it; the children then stay back from the edge. Added launch sentence has draft translations in all support languages.",
+    "Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": false,
+    "newSentenceIds": [
+      "paper-boat-pilot-01-01",
+      "paper-boat-pilot-01-02",
+      "paper-boat-pilot-02-01",
+      "paper-boat-pilot-02-03",
+      "paper-boat-pilot-02-02",
+      "paper-boat-pilot-06-01",
+      "paper-boat-pilot-06-02",
+      "paper-boat-pilot-06-03",
+      "paper-boat-pilot-08-01",
+      "paper-boat-pilot-08-02",
+      "paper-boat-pilot-08-03",
+      "paper-boat-pilot-09-01",
+      "paper-boat-pilot-09-02",
+      "paper-boat-pilot-09-03",
+      "paper-boat-pilot-09-04",
+      "paper-boat-pilot-09-05",
+      "paper-boat-pilot-09-06",
+      "paper-boat-pilot-09-07"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; not native-speaker-approved"
+  },
+  "story": {
+    "id": "paper-boat",
+    "title": "The Paper Boat",
+    "author": "English Tales",
+    "level": "A2",
+    "genre": "Macera",
+    "description": "Bir kâğıt teknenin nehir üzerindeki yolculuğu.",
+    "coverKey": "cover_paper_boat",
+    "sentences": [
+      {
+        "id": "pb-1",
+        "english": "Leo made a little boat from a blue piece of paper.",
+        "turkish": "Leo mavi bir kâğıttan küçük bir tekne yaptı.",
+        "translations": {
+          "es-419": "Leo hizo un barquito con un pedazo de papel azul.",
+          "pt-BR": "Leo fez um barquinho com um pedaço de papel azul.",
+          "id": "Leo membuat perahu kecil dari selembar kertas biru.",
+          "ar": "صنع ليو قاربًا صغيرًا من قطعة ورق زرقاء.",
+          "vi": "Leo làm một chiếc thuyền nhỏ từ một tờ giấy màu xanh.",
+          "hi": "लियो ने नीले काग़ज़ के एक टुकड़े से एक छोटी नाव बनाई।",
+          "ru": "Лео сделал маленький кораблик из синего листа бумаги.",
+          "bn": "লিও এক টুকরো নীল কাগজ দিয়ে একটা ছোট নৌকা বানাল।",
+          "ur": "لیو نے نیلے کاغذ کے ایک ٹکڑے سے ایک چھوٹی سی کشتی بنائی۔",
+          "th": "ลีโอพับเรือลำเล็กจากกระดาษสีฟ้าแผ่นหนึ่ง"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-01-01",
+        "english": "He folded the corners carefully and pressed them flat.",
+        "turkish": "Köşeleri dikkatle katladı ve bastırarak düzleştirdi.",
+        "translations": {
+          "es-419": "Dobló las esquinas con cuidado y las presionó para aplanarlas.",
+          "pt-BR": "Ele dobrou os cantos com cuidado e os apertou para deixá-los planos.",
+          "id": "Ia melipat sudut-sudutnya dengan hati-hati lalu menekannya hingga rata.",
+          "ar": "طوى الزوايا بعناية وضغط عليها حتى أصبحت مسطحة.",
+          "vi": "Cậu cẩn thận gấp các góc rồi miết cho phẳng.",
+          "hi": "उसने कोनों को सावधानी से मोड़ा और दबाकर सपाट किया।",
+          "ru": "Он аккуратно сложил уголки и прижал их, чтобы они стали плоскими.",
+          "bn": "সে যত্ন করে কোণগুলো ভাঁজ করল আর চেপে সমান করল।",
+          "ur": "اس نے احتیاط سے کونے موڑے اور دبا کر ہموار کیے۔",
+          "th": "เขาพับมุมอย่างระมัดระวังแล้วกดให้แบน"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-01-02",
+        "english": "The boat was small enough to fit in his hand.",
+        "turkish": "Tekne eline sığacak kadar küçüktü.",
+        "translations": {
+          "es-419": "El barco era lo bastante pequeño para caber en su mano.",
+          "pt-BR": "O barco era pequeno o bastante para caber na mão dele.",
+          "id": "Perahu itu cukup kecil untuk muat di tangannya.",
+          "ar": "كان القارب صغيرًا بما يكفي ليتسع في يده.",
+          "vi": "Chiếc thuyền đủ nhỏ để nằm gọn trong tay cậu.",
+          "hi": "नाव इतनी छोटी थी कि उसके हाथ में समा सकती थी।",
+          "ru": "Кораблик был достаточно маленьким, чтобы поместиться у него в руке.",
+          "bn": "নৌকাটা এত ছোট ছিল যে তার হাতের মধ্যে ধরে যেত।",
+          "ur": "کشتی اتنی چھوٹی تھی کہ اس کے ہاتھ میں سما سکتی تھی۔",
+          "th": "เรือมีขนาดเล็กพอที่จะวางในมือของเขาได้"
+        }
+      },
+      {
+        "id": "pb-2",
+        "english": "He carried it to the river near the old bridge.",
+        "turkish": "Onu eski köprünün yakınındaki nehre götürdü.",
+        "translations": {
+          "es-419": "Lo llevó al río, cerca del viejo puente.",
+          "pt-BR": "Ele o levou até o rio, perto da ponte velha.",
+          "id": "Ia membawanya ke sungai di dekat jembatan tua.",
+          "ar": "حمله إلى النهر قرب الجسر القديم.",
+          "vi": "Cậu mang nó ra con sông gần cây cầu cũ.",
+          "hi": "वह उसे पुराने पुल के पास नदी तक ले गया।",
+          "ru": "Он отнёс его к реке у старого моста.",
+          "bn": "সে সেটা পুরোনো সেতুর কাছে নদীতে নিয়ে গেল।",
+          "ur": "وہ اسے پرانے پل کے پاس دریا تک لے گیا۔",
+          "th": "เขาถือมันไปที่แม่น้ำใกล้สะพานเก่า"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-02-01",
+        "english": "His younger sister walked beside him on the dry path.",
+        "turkish": "Küçük kız kardeşi kuru patikada yanında yürüdü.",
+        "translations": {
+          "es-419": "Su hermana menor caminaba a su lado por el sendero seco.",
+          "pt-BR": "Sua irmã mais nova caminhava ao seu lado pela trilha seca.",
+          "id": "Adik perempuannya berjalan di sampingnya di jalan setapak yang kering.",
+          "ar": "مشت أخته الصغرى بجانبه على الممرّ الجاف.",
+          "vi": "Em gái cậu đi bên cạnh trên lối mòn khô ráo.",
+          "hi": "उसकी छोटी बहन सूखी पगडंडी पर उसके साथ चल रही थी।",
+          "ru": "Его младшая сестра шла рядом с ним по сухой тропинке.",
+          "bn": "তার ছোট বোন শুকনো পথ ধরে তার পাশে হাঁটছিল।",
+          "ur": "اس کی چھوٹی بہن خشک پگڈنڈی پر اس کے ساتھ چل رہی تھی۔",
+          "th": "น้องสาวเดินข้างเขาบนทางเดินที่แห้ง"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-02-03",
+        "english": "Leo put the boat in the water from a low step.",
+        "turkish": "Leo alçak bir basamaktan tekneyi suya bıraktı.",
+        "translations": {
+          "es-419": "Leo puso el barco en el agua desde un escalón bajo.",
+          "pt-BR": "Leo colocou o barco na água a partir de um degrau baixo.",
+          "id": "Leo meletakkan perahu itu di air dari anak tangga yang rendah.",
+          "ar": "وضع ليو القارب في الماء من درجة منخفضة.",
+          "vi": "Leo đặt chiếc thuyền xuống nước từ một bậc thềm thấp.",
+          "hi": "लियो ने एक नीची सीढ़ी से नाव को पानी में रखा।",
+          "ru": "Лео спустил кораблик на воду с низкой ступеньки.",
+          "bn": "লিও একটা নিচু ধাপ থেকে নৌকাটা জলে রাখল।",
+          "ur": "لیو نے ایک نچلے زینے سے کشتی پانی میں رکھی۔",
+          "th": "ลีโอวางเรือลงในน้ำจากขั้นบันไดเตี้ย ๆ"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-02-02",
+        "english": "Then they stepped back from the edge of the water.",
+        "turkish": "Sonra suyun kenarından geri çekildiler.",
+        "translations": {
+          "es-419": "Luego se alejaron de la orilla del agua.",
+          "pt-BR": "Depois, eles se afastaram da beira da água.",
+          "id": "Lalu mereka mundur dari tepi air.",
+          "ar": "ثم ابتعدا عن حافة الماء.",
+          "vi": "Sau đó, hai anh em lùi ra xa mép nước.",
+          "hi": "फिर वे पानी के किनारे से पीछे हट गए।",
+          "ru": "Потом они отошли от края воды.",
+          "bn": "তারপর তারা জলের কিনারা থেকে সরে এল।",
+          "ur": "پھر وہ پانی کے کنارے سے پیچھے ہٹ گئے۔",
+          "th": "จากนั้นทั้งสองก็ถอยห่างจากขอบน้ำ"
+        }
+      },
+      {
+        "id": "pb-3",
+        "english": "A gentle wind pushed the boat across the water.",
+        "turkish": "Hafif bir rüzgâr tekneyi suyun üzerinde itti.",
+        "translations": {
+          "es-419": "Un viento suave empujó el barco por el agua.",
+          "pt-BR": "Um vento suave empurrou o barco pela água.",
+          "id": "Angin sepoi-sepoi mendorong perahu itu melintasi air.",
+          "ar": "دفعت ريح خفيفة القارب عبر الماء.",
+          "vi": "Một làn gió nhẹ đẩy chiếc thuyền trôi trên mặt nước.",
+          "hi": "हल्की हवा ने नाव को पानी पर आगे धकेल दिया।",
+          "ru": "Лёгкий ветер погнал кораблик по воде.",
+          "bn": "মৃদু বাতাস নৌকাটাকে জলের ওপর দিয়ে ঠেলে নিয়ে গেল।",
+          "ur": "ہلکی ہوا نے کشتی کو پانی کے پار دھکیل دیا۔",
+          "th": "ลมอ่อน ๆ พัดเรือให้ลอยไปบนผิวน้ำ"
+        }
+      },
+      {
+        "id": "pb-4",
+        "english": "Leo ran along the path to follow it.",
+        "turkish": "Leo onu takip etmek için patika boyunca koştu.",
+        "translations": {
+          "es-419": "Leo corrió por el sendero para seguirlo.",
+          "pt-BR": "Leo correu pela trilha para segui-lo.",
+          "id": "Leo berlari di sepanjang jalan setapak untuk mengikutinya.",
+          "ar": "ركض ليو على الممرّ ليتبعه.",
+          "vi": "Leo chạy dọc theo lối mòn để đuổi theo nó.",
+          "hi": "लियो उसके पीछे-पीछे पगडंडी पर दौड़ा।",
+          "ru": "Лео побежал по тропинке, чтобы не отставать от него.",
+          "bn": "লিও সেটার পিছু নিতে পথ ধরে দৌড়াল।",
+          "ur": "لیو اس کے پیچھے پیچھے پگڈنڈی پر دوڑا۔",
+          "th": "ลีโอวิ่งไปตามทางเดินเพื่อตามมันไป"
+        }
+      },
+      {
+        "id": "pb-5",
+        "english": "The boat passed a family of ducks.",
+        "turkish": "Tekne bir ördek ailesinin yanından geçti.",
+        "translations": {
+          "es-419": "El barco pasó junto a una familia de patos.",
+          "pt-BR": "O barco passou por uma família de patos.",
+          "id": "Perahu itu melewati sekeluarga bebek.",
+          "ar": "مرّ القارب بجانب عائلة من البط.",
+          "vi": "Chiếc thuyền trôi qua một gia đình vịt.",
+          "hi": "नाव बत्तखों के एक परिवार के पास से गुज़री।",
+          "ru": "Кораблик проплыл мимо утиного семейства.",
+          "bn": "নৌকাটা একদল হাঁসের পাশ দিয়ে চলে গেল।",
+          "ur": "کشتی بطخوں کے ایک خاندان کے پاس سے گزری۔",
+          "th": "เรือลอยผ่านครอบครัวเป็ดครอบครัวหนึ่ง"
+        }
+      },
+      {
+        "id": "pb-6",
+        "english": "Then it stopped beside a stone at the riverbank.",
+        "turkish": "Sonra nehir kıyısındaki bir taşın yanında durdu.",
+        "translations": {
+          "es-419": "Luego se detuvo junto a una piedra en la orilla del río.",
+          "pt-BR": "Depois, parou ao lado de uma pedra na margem do rio.",
+          "id": "Lalu perahu itu berhenti di samping sebuah batu di tepi sungai.",
+          "ar": "ثم توقّف بجانب حجر على ضفة النهر.",
+          "vi": "Rồi nó dừng lại bên một hòn đá ở bờ sông.",
+          "hi": "फिर वह नदी के किनारे एक पत्थर के पास रुक गई।",
+          "ru": "Потом он остановился у камня на берегу реки.",
+          "bn": "তারপর সেটা নদীর তীরে একটা পাথরের পাশে থেমে গেল।",
+          "ur": "پھر وہ دریا کے کنارے ایک پتھر کے پاس رک گئی۔",
+          "th": "แล้วมันก็หยุดอยู่ข้างก้อนหินริมฝั่งแม่น้ำ"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-06-01",
+        "english": "\"It cannot move,\" Leo said to his sister.",
+        "turkish": "Leo kız kardeşine, \"Hareket edemiyor,\" dedi.",
+        "translations": {
+          "es-419": "«No puede moverse», le dijo Leo a su hermana.",
+          "pt-BR": "— Ele não consegue se mover — disse Leo à irmã.",
+          "id": "“Perahunya tidak bisa bergerak,” kata Leo kepada adiknya.",
+          "ar": "قال ليو لأخته: «لا يستطيع القارب التحرّك».",
+          "vi": "“Nó không trôi được,” Leo nói với em gái.",
+          "hi": "“यह आगे नहीं बढ़ सकती,” लियो ने अपनी बहन से कहा।",
+          "ru": "«Он не может двигаться», — сказал Лео сестре.",
+          "bn": "“এটা নড়তে পারছে না,” লিও তার বোনকে বলল।",
+          "ur": "“یہ آگے نہیں بڑھ سکتی،” لیو نے اپنی بہن سے کہا۔",
+          "th": "“มันไปต่อไม่ได้” ลีโอบอกน้องสาว"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-06-02",
+        "english": "He looked along the path for help.",
+        "turkish": "Yardım bulmak için patika boyunca etrafına baktı.",
+        "translations": {
+          "es-419": "Miró a lo largo del sendero en busca de ayuda.",
+          "pt-BR": "Ele olhou ao longo da trilha em busca de ajuda.",
+          "id": "Ia melihat sepanjang jalan setapak untuk mencari bantuan.",
+          "ar": "نظر على امتداد الممرّ بحثًا عن المساعدة.",
+          "vi": "Cậu nhìn dọc lối mòn để tìm người giúp.",
+          "hi": "उसने मदद के लिए पगडंडी पर इधर-उधर देखा।",
+          "ru": "Он посмотрел вдоль тропинки в поисках помощи.",
+          "bn": "সে সাহায্যের জন্য পথ বরাবর তাকাল।",
+          "ur": "اس نے مدد کے لیے پگڈنڈی پر ادھر ادھر دیکھا۔",
+          "th": "เขามองไปตามทางเดินเพื่อหาคนช่วย"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-06-03",
+        "english": "The boat was close to the low bank.",
+        "turkish": "Tekne alçak kıyıya yakındı.",
+        "translations": {
+          "es-419": "El barco estaba cerca de la parte baja de la orilla.",
+          "pt-BR": "O barco estava perto da parte baixa da margem.",
+          "id": "Perahu itu berada dekat tepi sungai yang rendah.",
+          "ar": "كان القارب قريبًا من الجزء المنخفض من الضفة.",
+          "vi": "Chiếc thuyền ở gần chỗ bờ sông thấp.",
+          "hi": "नाव नदी के निचले किनारे के पास थी।",
+          "ru": "Кораблик был рядом с низким берегом.",
+          "bn": "নৌকাটা নিচু পাড়ের কাছে ছিল।",
+          "ur": "کشتی دریا کے نچلے کنارے کے قریب تھی۔",
+          "th": "เรืออยู่ใกล้ริมตลิ่งที่ต่ำ"
+        }
+      },
+      {
+        "id": "pb-7",
+        "english": "A girl picked it up and wrote a message inside.",
+        "turkish": "Bir kız onu aldı ve içine bir mesaj yazdı.",
+        "translations": {
+          "es-419": "Una niña lo recogió y escribió un mensaje adentro.",
+          "pt-BR": "Uma menina o pegou e escreveu uma mensagem dentro dele.",
+          "id": "Seorang anak perempuan memungutnya dan menulis pesan di dalamnya.",
+          "ar": "التقطته فتاة وكتبت رسالة بداخله.",
+          "vi": "Một cô bé nhặt nó lên và viết một lời nhắn vào bên trong.",
+          "hi": "एक लड़की ने उसे उठाया और उसके अंदर एक संदेश लिखा।",
+          "ru": "Одна девочка подняла его и написала внутри записку.",
+          "bn": "একটা মেয়ে সেটা তুলে নিল আর ভেতরে একটা বার্তা লিখল।",
+          "ur": "ایک لڑکی نے اسے اٹھایا اور اس کے اندر ایک پیغام لکھا۔",
+          "th": "เด็กผู้หญิงคนหนึ่งหยิบมันขึ้นมาและเขียนข้อความไว้ข้างใน"
+        }
+      },
+      {
+        "id": "pb-8",
+        "english": "The message said, \"Every journey starts somewhere.\"",
+        "turkish": "Mesajda \"Her yolculuk bir yerden başlar.\" yazıyordu.",
+        "translations": {
+          "es-419": "El mensaje decía: «Todo viaje empieza en algún lugar».",
+          "pt-BR": "A mensagem dizia: \"Toda viagem começa em algum lugar.\"",
+          "id": "Pesan itu berbunyi, “Setiap perjalanan dimulai dari suatu tempat.”",
+          "ar": "قالت الرسالة: «كل رحلة تبدأ من مكان ما».",
+          "vi": "Lời nhắn viết: “Mọi hành trình đều bắt đầu từ một nơi nào đó.”",
+          "hi": "संदेश में लिखा था: “हर सफ़र कहीं न कहीं से शुरू होता है।”",
+          "ru": "В записке было: «Каждое путешествие с чего-то начинается».",
+          "bn": "বার্তায় লেখা ছিল, “প্রতিটি যাত্রা কোথাও না কোথাও থেকে শুরু হয়।”",
+          "ur": "پیغام میں لکھا تھا: «ہر سفر کہیں نہ کہیں سے شروع ہوتا ہے۔»",
+          "th": "ข้อความนั้นเขียนว่า “ทุกการเดินทางย่อมมีจุดเริ่มต้น”"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-08-01",
+        "english": "\"Where will it go next?\" she asked.",
+        "turkish": "\"Şimdi nereye gidecek?\" diye sordu.",
+        "translations": {
+          "es-419": "«¿Adónde irá ahora?», preguntó ella.",
+          "pt-BR": "— Para onde ele vai agora? — perguntou ela.",
+          "id": "“Ke mana perahu ini akan pergi selanjutnya?” tanyanya.",
+          "ar": "سألت: «إلى أين سيذهب بعد ذلك؟»",
+          "vi": "“Tiếp theo nó sẽ trôi đến đâu?” cô bé hỏi.",
+          "hi": "“अब यह कहाँ जाएगी?” उसने पूछा।",
+          "ru": "«Куда он поплывёт дальше?» — спросила она.",
+          "bn": "“এরপর এটা কোথায় যাবে?” মেয়েটি জিজ্ঞেস করল।",
+          "ur": "“اب یہ کہاں جائے گی؟” اس نے پوچھا۔",
+          "th": "“ต่อไปมันจะไปไหน” เธอถาม"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-08-02",
+        "english": "\"To that tree,\" said Leo, pointing along the bank.",
+        "turkish": "Leo kıyı boyunca işaret ederek, \"Şu ağaca,\" dedi.",
+        "translations": {
+          "es-419": "«Hasta aquel árbol», dijo Leo, señalando a lo largo de la orilla.",
+          "pt-BR": "— Até aquela árvore — disse Leo, apontando ao longo da margem.",
+          "id": "“Ke pohon itu,” kata Leo sambil menunjuk sepanjang tepi sungai.",
+          "ar": "قال ليو مشيرًا على امتداد الضفة: «إلى تلك الشجرة».",
+          "vi": "“Đến cái cây kia,” Leo nói và chỉ dọc theo bờ sông.",
+          "hi": "“उस पेड़ तक,” लियो ने किनारे के साथ-साथ इशारा करते हुए कहा।",
+          "ru": "«К тому дереву», — сказал Лео, показывая вдоль берега.",
+          "bn": "“ওই গাছটা পর্যন্ত,” লিও পাড় বরাবর আঙুল দেখিয়ে বলল।",
+          "ur": "“اس درخت تک،” لیو نے کنارے کے ساتھ ساتھ اشارہ کرتے ہوئے کہا۔",
+          "th": "“ไปถึงต้นไม้นั้น” ลีโอพูดพร้อมชี้ไปตามริมฝั่ง"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-08-03",
+        "english": "The girl put the boat back in the water.",
+        "turkish": "Kız tekneyi yeniden suya bıraktı.",
+        "translations": {
+          "es-419": "La niña volvió a poner el barco en el agua.",
+          "pt-BR": "A menina colocou o barco de volta na água.",
+          "id": "Anak perempuan itu menaruh perahu itu kembali ke air.",
+          "ar": "أعادت الفتاة القارب إلى الماء.",
+          "vi": "Cô bé đặt chiếc thuyền trở lại mặt nước.",
+          "hi": "लड़की ने नाव को फिर से पानी में रख दिया।",
+          "ru": "Девочка снова опустила кораблик на воду.",
+          "bn": "মেয়েটি নৌকাটা আবার জলে নামিয়ে দিল।",
+          "ur": "لڑکی نے کشتی دوبارہ پانی میں رکھ دی۔",
+          "th": "เด็กผู้หญิงวางเรือกลับลงไปในน้ำ"
+        }
+      },
+      {
+        "id": "pb-9",
+        "english": "Leo smiled and let the boat continue its journey.",
+        "turkish": "Leo gülümsedi ve teknenin yolculuğuna devam etmesine izin verdi.",
+        "translations": {
+          "es-419": "Leo sonrió y dejó que el barco siguiera su viaje.",
+          "pt-BR": "Leo sorriu e deixou o barco continuar sua viagem.",
+          "id": "Leo tersenyum dan membiarkan perahu itu melanjutkan perjalanannya.",
+          "ar": "ابتسم ليو وترك القارب يكمل رحلته.",
+          "vi": "Leo mỉm cười và để chiếc thuyền tiếp tục hành trình của nó.",
+          "hi": "लियो मुस्कुराया और उसने नाव को अपना सफ़र जारी रखने दिया।",
+          "ru": "Лео улыбнулся и отпустил кораблик дальше в путь.",
+          "bn": "লিও হাসল আর নৌকাটাকে আবার তার যাত্রায় ভাসিয়ে দিল।",
+          "ur": "لیو مسکرایا اور کشتی کو اپنا سفر جاری رکھنے دیا۔",
+          "th": "ลีโอยิ้มและปล่อยให้เรือเดินทางต่อไป"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-09-01",
+        "english": "The three children followed it from the path.",
+        "turkish": "Üç çocuk tekneyi patikadan takip etti.",
+        "translations": {
+          "es-419": "Los tres niños lo siguieron desde el sendero.",
+          "pt-BR": "As três crianças o acompanharam pela trilha.",
+          "id": "Ketiga anak itu mengikutinya dari jalan setapak.",
+          "ar": "تبع الأطفال الثلاثة القارب من الممرّ.",
+          "vi": "Ba đứa trẻ đi theo chiếc thuyền từ trên lối mòn.",
+          "hi": "तीनों बच्चे पगडंडी से उसके साथ-साथ चले।",
+          "ru": "Трое детей шли за корабликом по тропинке.",
+          "bn": "তিনটি শিশু পথ ধরে নৌকাটার পিছু নিল।",
+          "ur": "تینوں بچے پگڈنڈی سے اس کے پیچھے چلتے رہے۔",
+          "th": "เด็กทั้งสามเดินตามเรือไปบนทางเดิน"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-09-02",
+        "english": "Near the tree, it stopped in shallow water.",
+        "turkish": "Ağacın yakınında, sığ suda durdu.",
+        "translations": {
+          "es-419": "Cerca del árbol, se detuvo en agua poco profunda.",
+          "pt-BR": "Perto da árvore, ele parou na água rasa.",
+          "id": "Di dekat pohon, perahu itu berhenti di air dangkal.",
+          "ar": "توقف قرب الشجرة في مياه ضحلة.",
+          "vi": "Gần cái cây, nó dừng lại ở chỗ nước nông.",
+          "hi": "पेड़ के पास वह उथले पानी में रुक गई।",
+          "ru": "Возле дерева он остановился на мелководье.",
+          "bn": "গাছটার কাছে অগভীর জলে সেটা থেমে গেল।",
+          "ur": "درخت کے پاس وہ کم گہرے پانی میں رک گئی۔",
+          "th": "ใกล้ต้นไม้ เรือหยุดอยู่ในน้ำตื้น"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-09-03",
+        "english": "Leo reached down from the bank and picked it up.",
+        "turkish": "Leo kıyıdan eğilerek tekneyi aldı.",
+        "translations": {
+          "es-419": "Leo se inclinó desde la orilla y lo recogió.",
+          "pt-BR": "Leo se inclinou da margem e o pegou.",
+          "id": "Leo membungkuk dari tepi sungai dan mengambilnya.",
+          "ar": "انحنى ليو من الضفة والتقطه.",
+          "vi": "Leo cúi xuống từ bờ sông và nhặt nó lên.",
+          "hi": "लियो ने किनारे से नीचे झुककर उसे उठा लिया।",
+          "ru": "Лео наклонился с берега и поднял его.",
+          "bn": "লিও পাড় থেকে ঝুঁকে সেটা তুলে নিল।",
+          "ur": "لیو نے کنارے سے نیچے جھک کر اسے اٹھا لیا۔",
+          "th": "ลีโอก้มลงจากริมฝั่งแล้วหยิบเรือขึ้นมา"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-09-04",
+        "english": "He did not leave the wet paper in the river.",
+        "turkish": "Islak kâğıdı nehirde bırakmadı.",
+        "translations": {
+          "es-419": "No dejó el papel mojado en el río.",
+          "pt-BR": "Ele não deixou o papel molhado no rio.",
+          "id": "Ia tidak meninggalkan kertas basah itu di sungai.",
+          "ar": "لم يترك الورق المبلل في النهر.",
+          "vi": "Cậu không để mảnh giấy ướt lại dưới sông.",
+          "hi": "उसने गीला काग़ज़ नदी में नहीं छोड़ा।",
+          "ru": "Он не оставил мокрую бумагу в реке.",
+          "bn": "সে ভেজা কাগজটা নদীতে ফেলে রাখল না।",
+          "ur": "اس نے گیلا کاغذ دریا میں نہیں چھوڑا۔",
+          "th": "เขาไม่ได้ทิ้งกระดาษเปียกไว้ในแม่น้ำ"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-09-05",
+        "english": "\"Will you make another boat tomorrow?\" asked the girl.",
+        "turkish": "Kız, \"Yarın bir tekne daha yapacak mısın?\" diye sordu.",
+        "translations": {
+          "es-419": "«¿Harás otro barco mañana?», preguntó la niña.",
+          "pt-BR": "— Você vai fazer outro barco amanhã? — perguntou a menina.",
+          "id": "“Besok kamu akan membuat perahu lagi?” tanya anak perempuan itu.",
+          "ar": "سألت الفتاة: «هل ستصنع قاربًا آخر غدًا؟»",
+          "vi": "“Ngày mai bạn có làm một chiếc thuyền nữa không?” cô bé hỏi.",
+          "hi": "“क्या तुम कल एक और नाव बनाओगे?” लड़की ने पूछा।",
+          "ru": "«Ты сделаешь ещё один кораблик завтра?» — спросила девочка.",
+          "bn": "“তুমি কি কাল আরেকটা নৌকা বানাবে?” মেয়েটি জিজ্ঞেস করল।",
+          "ur": "“کیا تم کل ایک اور کشتی بناؤ گے؟” لڑکی نے پوچھا۔",
+          "th": "“พรุ่งนี้เธอจะทำเรืออีกลำไหม” เด็กผู้หญิงถาม"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-09-06",
+        "english": "\"Yes,\" said Leo, \"and you can bring yours.\"",
+        "turkish": "Leo, \"Evet, sen de kendininkini getirebilirsin,\" dedi.",
+        "translations": {
+          "es-419": "«Sí», dijo Leo, «y tú puedes traer el tuyo».",
+          "pt-BR": "— Sim — disse Leo —, e você pode trazer o seu.",
+          "id": "“Ya,” kata Leo, “dan kamu bisa membawa perahumu.”",
+          "ar": "قال ليو: «نعم، ويمكنك أن تحضري قاربك».",
+          "vi": "“Có,” Leo nói, “và bạn có thể mang thuyền của bạn đến.”",
+          "hi": "“हाँ,” लियो ने कहा, “और तुम अपनी नाव ला सकती हो।”",
+          "ru": "«Да, — сказал Лео, — и ты можешь принести свой».",
+          "bn": "“হ্যাঁ,” লিও বলল, “আর তুমি তোমারটাও আনতে পারো।”",
+          "ur": "“ہاں،” لیو نے کہا، “اور تم اپنی کشتی لا سکتی ہو۔”",
+          "th": "“ทำสิ” ลีโอตอบ “แล้วเธอก็เอาเรือของเธอมาด้วยได้นะ”"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-09-07",
+        "english": "He carried the little boat home to dry.",
+        "turkish": "Küçük tekneyi kuruması için eve taşıdı.",
+        "translations": {
+          "es-419": "Llevó el barquito a casa para que se secara.",
+          "pt-BR": "Ele levou o barquinho para casa para secar.",
+          "id": "Ia membawa perahu kecil itu pulang untuk dikeringkan.",
+          "ar": "حمل القارب الصغير إلى البيت ليجفّ.",
+          "vi": "Cậu mang chiếc thuyền nhỏ về nhà để hong khô.",
+          "hi": "वह छोटी नाव को सुखाने के लिए घर ले गया।",
+          "ru": "Он отнёс маленький кораблик домой, чтобы высушить его.",
+          "bn": "সে ছোট নৌকাটা শুকোনোর জন্য বাড়ি নিয়ে গেল।",
+          "ur": "وہ چھوٹی کشتی کو سکھانے کے لیے گھر لے گیا۔",
+          "th": "เขานำเรือลำเล็กกลับบ้านไปผึ่งให้แห้ง"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "paper-boat-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A girl searches for her lost boat near a bridge",
+          "Two children race their paper boats across a pond",
+          "A boy makes paper boats to sell at a market",
+          "A boy follows his paper boat along a river"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "paper-boat-q2",
+        "kind": "detail",
+        "prompt": "What color was the paper Leo used?",
+        "options": [
+          "Blue",
+          "Red",
+          "White",
+          "Yellow"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "paper-boat-q3",
+        "kind": "detail",
+        "prompt": "What did the girl do with the boat?",
+        "options": [
+          "She took it home",
+          "She tore it",
+          "She gave it to the ducks",
+          "She wrote a message inside"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "paper-boat-q4",
+        "kind": "inference",
+        "prompt": "Why will the children probably meet again?",
+        "options": [
+          "They must look for a missing duck.",
+          "They want to repair the old bridge.",
+          "They plan to bring their paper boats.",
+          "They need to take the same bus home."
+        ],
+        "answer": 2
+      }
+    ],
+    "tags": [
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "El viaje de un barco de papel por el río.",
+      "pt-BR": "A viagem de um barquinho de papel pelo rio.",
+      "id": "Perjalanan sebuah perahu kertas di sungai.",
+      "ar": "رحلة قارب من الورق على النهر.",
+      "vi": "Hành trình của một chiếc thuyền giấy trên dòng sông.",
+      "hi": "काग़ज़ की एक नाव का नदी पर सफ़र।",
+      "ru": "Путешествие бумажного кораблика по реке.",
+      "bn": "কাগজের একটা নৌকার নদীপথে যাত্রা।",
+      "ur": "کاغذ کی ایک کشتی کا دریا پر سفر۔",
+      "th": "การเดินทางของเรือกระดาษลำหนึ่งบนแม่น้ำ"
+    }
+  },
+  "words": [
+    {
+      "id": "boat",
+      "word": "boat",
+      "translation": "tekne",
+      "pronunciation": "/boʊt/",
+      "example": "A little boat floated away.",
+      "translations": {
+        "es-419": "barco, bote",
+        "pt-BR": "barco",
+        "id": "perahu",
+        "ar": "قارب",
+        "vi": "con thuyền",
+        "hi": "नाव",
+        "ru": "лодка, кораблик",
+        "bn": "নৌকা",
+        "ur": "کشتی",
+        "th": "เรือ"
+      }
+    },
+    {
+      "id": "river",
+      "word": "river",
+      "translation": "nehir",
+      "pronunciation": "/ˈrɪvər/",
+      "example": "The river moved slowly.",
+      "translations": {
+        "es-419": "río",
+        "pt-BR": "rio",
+        "id": "sungai",
+        "ar": "نهر",
+        "vi": "dòng sông",
+        "hi": "नदी",
+        "ru": "река",
+        "bn": "নদী",
+        "ur": "دریا",
+        "th": "แม่น้ำ"
+      }
+    },
+    {
+      "id": "bridge",
+      "word": "bridge",
+      "translation": "köprü",
+      "pronunciation": "/brɪdʒ/",
+      "example": "They crossed the bridge.",
+      "translations": {
+        "es-419": "puente",
+        "pt-BR": "ponte",
+        "id": "jembatan",
+        "ar": "جسر",
+        "vi": "cây cầu",
+        "hi": "पुल",
+        "ru": "мост",
+        "bn": "সেতু, সাঁকো",
+        "ur": "پل",
+        "th": "สะพาน"
+      }
+    },
+    {
+      "id": "wind",
+      "word": "wind",
+      "translation": "rüzgâr",
+      "pronunciation": "/wɪnd/",
+      "example": "The wind carried the boat.",
+      "translations": {
+        "es-419": "viento",
+        "pt-BR": "vento",
+        "id": "angin",
+        "ar": "ريح",
+        "vi": "gió",
+        "hi": "हवा",
+        "ru": "ветер",
+        "bn": "বাতাস, হাওয়া",
+        "ur": "ہوا",
+        "th": "ลม"
+      }
+    },
+    {
+      "id": "journey",
+      "word": "journey",
+      "translation": "yolculuk",
+      "pronunciation": "/ˈdʒɜːrni/",
+      "example": "Every journey starts somewhere.",
+      "translations": {
+        "es-419": "viaje",
+        "pt-BR": "viagem, jornada",
+        "id": "perjalanan",
+        "ar": "رحلة",
+        "vi": "chuyến đi, hành trình",
+        "hi": "सफ़र, यात्रा",
+        "ru": "путешествие, поездка",
+        "bn": "যাত্রা, সফর",
+        "ur": "سفر",
+        "th": "การเดินทาง"
+      }
+    },
+    {
+      "id": "path",
+      "word": "path",
+      "translation": "patika",
+      "pronunciation": "/pæθ/",
+      "example": "A narrow path led uphill.",
+      "translations": {
+        "es-419": "sendero, camino",
+        "pt-BR": "trilha, caminho",
+        "id": "jalan setapak",
+        "ar": "ممرّ، درب",
+        "vi": "lối mòn, con đường nhỏ",
+        "hi": "पगडंडी, रास्ता",
+        "ru": "тропинка, дорожка",
+        "bn": "পথ, সরু রাস্তা",
+        "ur": "پگڈنڈی، راستہ",
+        "th": "ทางเดิน"
+      }
+    },
+    {
+      "id": "pilot-paper-boat-folded",
+      "word": "folded",
+      "translation": "katladı",
+      "pronunciation": "/ˈfoʊldɪd/",
+      "example": "He folded the paper carefully.",
+      "translations": {
+        "es-419": "dobló",
+        "pt-BR": "dobrou",
+        "id": "melipat",
+        "ar": "طوى",
+        "vi": "đã gấp",
+        "hi": "मोड़ा",
+        "ru": "сложил",
+        "bn": "ভাঁজ করল",
+        "ur": "موڑا",
+        "th": "พับแล้ว"
+      }
+    },
+    {
+      "id": "pilot-paper-boat-shallow",
+      "word": "shallow",
+      "translation": "sığ",
+      "pronunciation": "/ˈʃæloʊ/",
+      "example": "The boat stops in shallow water.",
+      "translations": {
+        "es-419": "poco profundo",
+        "pt-BR": "raso",
+        "id": "dangkal",
+        "ar": "ضحل",
+        "vi": "nông",
+        "hi": "उथला",
+        "ru": "мелкий, неглубокий",
+        "bn": "অগভীর",
+        "ur": "کم گہرا",
+        "th": "ตื้น"
+      }
+    },
+    {
+      "id": "pilot-paper-boat-carefully",
+      "word": "carefully",
+      "translation": "dikkatle",
+      "pronunciation": "/ˈkerfəli/",
+      "example": "She carries it carefully.",
+      "translations": {
+        "es-419": "con cuidado",
+        "pt-BR": "com cuidado",
+        "id": "dengan hati-hati",
+        "ar": "بعناية",
+        "vi": "cẩn thận",
+        "hi": "सावधानी से",
+        "ru": "осторожно, аккуратно",
+        "bn": "যত্ন করে",
+        "ur": "احتیاط سے",
+        "th": "อย่างระมัดระวัง"
+      }
+    },
+    {
+      "id": "pilot-paper-boat-message",
+      "word": "message",
+      "translation": "mesaj",
+      "pronunciation": "/ˈmesɪdʒ/",
+      "example": "She writes a message inside.",
+      "translations": {
+        "es-419": "mensaje",
+        "pt-BR": "mensagem",
+        "id": "pesan",
+        "ar": "رسالة",
+        "vi": "lời nhắn",
+        "hi": "संदेश",
+        "ru": "сообщение",
+        "bn": "বার্তা",
+        "ur": "پیغام",
+        "th": "ข้อความ"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "boat",
+    "river",
+    "bridge",
+    "wind",
+    "journey",
+    "path",
+    "pilot-paper-boat-folded",
+    "pilot-paper-boat-shallow",
+    "pilot-paper-boat-carefully",
+    "pilot-paper-boat-message"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "paper-boat-q1",
+      "sentenceIds": [
+        "pb-1",
+        "pb-2",
+        "pb-4",
+        "pb-9"
+      ],
+      "rationale": "Leo makes the boat and follows its river journey; the new ending completes that journey."
+    },
+    {
+      "questionId": "paper-boat-q2",
+      "sentenceIds": [
+        "pb-1"
+      ],
+      "rationale": "The paper is explicitly blue."
+    },
+    {
+      "questionId": "paper-boat-q3",
+      "sentenceIds": [
+        "pb-7"
+      ],
+      "rationale": "The girl writes a message inside the boat."
+    },
+    {
+      "questionId": "paper-boat-q4",
+      "sentenceIds": [
+        "paper-boat-pilot-09-05",
+        "paper-boat-pilot-09-06"
+      ],
+      "rationale": "Their question and invitation support a future meeting, rather than merely repeating the last action."
+    }
+  ],
+  "publicationBlockers": [
+    "Human editorial and level review pending after AI-assisted corrections.",
+    "Fresh live source snapshot and publisher validation required; local reader/save/review contract verified.",
+    "Human language review across all eleven support languages remains pending."
+  ],
+  "editorialReview": {
+    "type": "ai-assisted",
+    "reviewer": "Codex",
+    "reviewedOn": "2026-10-19",
+    "status": "completed-with-corrections",
+    "scope": [
+      "English narrative continuity",
+      "English/Turkish alignment",
+      "eleven-language text and glossary consistency",
+      "all comprehension answer keys and source evidence",
+      "target-level risks"
+    ],
+    "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
+    "humanApproval": false,
+    "nativeSpeakerApproval": false,
+    "secondReview": {
+      "reviewer": "Claude Code",
+      "model": "claude-opus-5-5",
+      "type": "ai-assisted",
+      "reviewedOn": "2026-10-19",
+      "report": "../../../../docs/STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md",
+      "humanApproval": false,
+      "nativeSpeakerApproval": false
+    }
+  },
+  "legacySentenceCorrections": [
+    {
+      "sentenceId": "pb-8",
+      "field": "english",
+      "before": "The message said, Every journey starts somewhere.",
+      "after": "The message said, \"Every journey starts somewhere.\"",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "turkish",
+      "before": "Mesajda, Her yolculuk bir yerden başlar, yazıyordu.",
+      "after": "Mesajda \"Her yolculuk bir yerden başlar.\" yazıyordu.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.es-419",
+      "before": "El mensaje decía: Todo viaje empieza en algún lugar.",
+      "after": "El mensaje decía: «Todo viaje empieza en algún lugar».",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.pt-BR",
+      "before": "A mensagem dizia: Toda viagem começa em algum lugar.",
+      "after": "A mensagem dizia: \"Toda viagem começa em algum lugar.\"",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.id",
+      "before": "Pesan itu berbunyi, Setiap perjalanan dimulai dari suatu tempat.",
+      "after": "Pesan itu berbunyi, “Setiap perjalanan dimulai dari suatu tempat.”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.ar",
+      "before": "قالت الرسالة: كل رحلة تبدأ من مكان ما.",
+      "after": "قالت الرسالة: «كل رحلة تبدأ من مكان ما».",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.vi",
+      "before": "Lời nhắn viết: Mọi hành trình đều bắt đầu từ một nơi nào đó.",
+      "after": "Lời nhắn viết: “Mọi hành trình đều bắt đầu từ một nơi nào đó.”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.hi",
+      "before": "संदेश में लिखा था: हर सफ़र कहीं न कहीं से शुरू होता है।",
+      "after": "संदेश में लिखा था: “हर सफ़र कहीं न कहीं से शुरू होता है।”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.bn",
+      "before": "বার্তায় লেখা ছিল, প্রতিটি যাত্রা কোথাও না কোথাও থেকে শুরু হয়।",
+      "after": "বার্তায় লেখা ছিল, “প্রতিটি যাত্রা কোথাও না কোথাও থেকে শুরু হয়।”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.ur",
+      "before": "پیغام میں لکھا تھا: ہر سفر کہیں نہ کہیں سے شروع ہوتا ہے۔",
+      "after": "پیغام میں لکھا تھا: «ہر سفر کہیں نہ کہیں سے شروع ہوتا ہے۔»",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.th",
+      "before": "ข้อความนั้นเขียนว่า ทุกการเดินทางย่อมมีจุดเริ่มต้น",
+      "after": "ข้อความนั้นเขียนว่า “ทุกการเดินทางย่อมมีจุดเริ่มต้น”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    }
+  ]
+}

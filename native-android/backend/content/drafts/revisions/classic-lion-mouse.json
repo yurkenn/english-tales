@@ -1,0 +1,836 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "codex-story-quality-pilot-2026-10-19",
+  "reviewedBy": null,
+  "baseStoryId": "classic-lion-mouse",
+  "baseStorySHA256": "4b3f723d7a9924eb2ba8cc4448688a608b96f5987944d4ea96ff2da95472dc7c",
+  "editorialNotes": [
+    "Adds the mouse’s fear, recognition of the call and return of kindness.",
+    "Keeps the original lesson without turning the inference question into a direct quotation.",
+    "Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections.",
+    "AI editorial pass: seven added Urdu sentences retain the female mouse established in the legacy Urdu text; simplifies the added inference answer for supported A1 reading.",
+    "Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "unchangedTranslationsPreserved": false,
+    "newSentenceIds": [
+      "classic-lion-mouse-pilot-03-01",
+      "classic-lion-mouse-pilot-06-01",
+      "classic-lion-mouse-pilot-06-02",
+      "classic-lion-mouse-pilot-10-01",
+      "classic-lion-mouse-pilot-11-01",
+      "classic-lion-mouse-pilot-11-02",
+      "classic-lion-mouse-pilot-13-01",
+      "classic-lion-mouse-pilot-13-02",
+      "classic-lion-mouse-pilot-15-01",
+      "classic-lion-mouse-pilot-15-02"
+    ],
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; not native-speaker-approved"
+  },
+  "story": {
+    "id": "classic-lion-mouse",
+    "title": "The Lion and the Mouse",
+    "author": "Aesop",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Aslan ve Fare. Küçük bir farenin büyük bir dostuna yardımı. A1 düzeyinde kısa uyarlama. Uyarlama ve Türkçe çeviri: English Tales. Tarihî görsel: Arthur Rackham; koleksiyonun iç başlık sayfası, ayrı bir ilk baskı kapağı değildir.",
+    "coverKey": "cover_classic_lion_mouse",
+    "sentences": [
+      {
+        "id": "cl-lion-mouse-01",
+        "english": "A lion sleeps under a tree.",
+        "turkish": "Bir aslan ağacın altında uyur.",
+        "translations": {
+          "es-419": "Un león duerme debajo de un árbol.",
+          "pt-BR": "Um leão dorme debaixo de uma árvore.",
+          "id": "Seekor singa tidur di bawah pohon.",
+          "ar": "ينام أسد تحت شجرة.",
+          "vi": "Một con sư tử ngủ dưới gốc cây.",
+          "hi": "एक शेर पेड़ के नीचे सो रहा है।",
+          "ru": "Лев спит под деревом.",
+          "bn": "একটা সিংহ গাছের নিচে ঘুমায়।",
+          "ur": "ایک شیر درخت کے نیچے سو رہا ہے۔",
+          "th": "สิงโตตัวหนึ่งนอนหลับอยู่ใต้ต้นไม้"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-02",
+        "english": "A little mouse runs across his face.",
+        "turkish": "Küçük bir fare yüzünün üzerinden koşar.",
+        "translations": {
+          "es-419": "Una ratoncita le corre por la cara.",
+          "pt-BR": "Um ratinho passa correndo pelo rosto dele.",
+          "id": "Seekor tikus kecil berlari melintasi wajahnya.",
+          "ar": "تركض فأرة صغيرة على وجهه.",
+          "vi": "Một cô chuột nhỏ chạy ngang qua mặt nó.",
+          "hi": "एक छोटा चूहा उसके चेहरे पर से दौड़ता हुआ जाता है।",
+          "ru": "Маленькая мышка пробегает по его морде.",
+          "bn": "একটা ছোট্ট ইঁদুর তার মুখের ওপর দিয়ে দৌড়ে যায়।",
+          "ur": "ایک ننھی چوہیا اس کے منہ پر سے دوڑ کر گزرتی ہے۔",
+          "th": "หนูตัวเล็ก ๆ วิ่งผ่านหน้าของเขา"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-03",
+        "english": "The lion wakes up and catches the mouse.",
+        "turkish": "Aslan uyanır ve fareyi yakalar.",
+        "translations": {
+          "es-419": "El león se despierta y atrapa a la ratoncita.",
+          "pt-BR": "O leão acorda e pega o ratinho.",
+          "id": "Singa itu bangun dan menangkap tikus itu.",
+          "ar": "يستيقظ الأسد ويمسك الفأرة.",
+          "vi": "Sư tử thức dậy và bắt được chuột.",
+          "hi": "शेर जाग जाता है और चूहे को पकड़ लेता है।",
+          "ru": "Лев просыпается и ловит мышку.",
+          "bn": "সিংহ জেগে ওঠে আর ইঁদুরটাকে ধরে ফেলে।",
+          "ur": "شیر جاگ جاتا ہے اور چوہیا کو پکڑ لیتا ہے۔",
+          "th": "สิงโตตื่นขึ้นและจับหนูไว้"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-03-01",
+        "english": "The mouse is afraid of his big teeth.",
+        "turkish": "Fare onun büyük dişlerinden korkar.",
+        "translations": {
+          "es-419": "La ratoncita tiene miedo de sus grandes dientes.",
+          "pt-BR": "O ratinho tem medo dos dentes grandes do leão.",
+          "id": "Tikus takut pada gigi besar singa.",
+          "ar": "تخاف الفأرة من أسنان الأسد الكبيرة.",
+          "vi": "Chuột sợ những chiếc răng to của sư tử.",
+          "hi": "चूहा शेर के बड़े दाँतों से डरता है।",
+          "ru": "Мышка боится его больших зубов.",
+          "bn": "ইঁদুর সিংহের বড় দাঁতগুলোকে ভয় পায়।",
+          "ur": "چوہیا شیر کے بڑے دانتوں سے ڈرتی ہے۔",
+          "th": "หนูกลัวฟันซี่ใหญ่ของสิงโต"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-04",
+        "english": "\"Please let me go,\" says the mouse.",
+        "turkish": "\"Lütfen beni bırak,\" der fare.",
+        "translations": {
+          "es-419": "\"Por favor, déjame ir\", dice la ratoncita.",
+          "pt-BR": "— Por favor, me solte — diz o ratinho.",
+          "id": "\"Tolong lepaskan aku,\" kata tikus.",
+          "ar": "تقول الفأرة: «من فضلك، دعني أذهب.»",
+          "vi": "\"Xin hãy thả tôi ra,\" chuột nói.",
+          "hi": "\"कृपया मुझे जाने दो,\" चूहा कहता है।",
+          "ru": "«Пожалуйста, отпусти меня», — говорит мышка.",
+          "bn": "\"দয়া করে আমাকে ছেড়ে দাও,\" ইঁদুর বলে।",
+          "ur": "\"براہِ کرم مجھے جانے دو،\" چوہیا کہتی ہے۔",
+          "th": "\"ได้โปรดปล่อยฉันไปเถอะ\" หนูพูด"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-05",
+        "english": "\"One day, I can help you.\"",
+        "turkish": "\"Bir gün sana yardım edebilirim.\"",
+        "translations": {
+          "es-419": "\"Algún día puedo ayudarte.\"",
+          "pt-BR": "— Um dia, eu posso ajudar você.",
+          "id": "\"Suatu hari, aku bisa menolongmu.\"",
+          "ar": "«ذات يوم، أستطيع أن أساعدك.»",
+          "vi": "\"Một ngày nào đó, tôi có thể giúp ông.\"",
+          "hi": "\"एक दिन मैं तुम्हारी मदद कर सकता हूँ।\"",
+          "ru": "«Однажды я смогу тебе помочь».",
+          "bn": "\"একদিন আমি তোমাকে সাহায্য করতে পারব।\"",
+          "ur": "\"ایک دن میں تمہاری مدد کر سکتی ہوں۔\"",
+          "th": "\"สักวันหนึ่ง ฉันจะช่วยท่านได้\""
+        }
+      },
+      {
+        "id": "cl-lion-mouse-06",
+        "english": "The lion laughs at this little animal.",
+        "turkish": "Aslan bu küçük hayvana güler.",
+        "translations": {
+          "es-419": "El león se ríe de este animalito.",
+          "pt-BR": "O leão ri desse animalzinho.",
+          "id": "Singa menertawakan hewan kecil ini.",
+          "ar": "يضحك الأسد من هذا الحيوان الصغير.",
+          "vi": "Sư tử bật cười trước con vật bé nhỏ này.",
+          "hi": "शेर इस छोटे-से जानवर पर हँसता है।",
+          "ru": "Лев смеётся над этим маленьким зверьком.",
+          "bn": "সিংহ এই ছোট্ট প্রাণীটার কথায় হাসে।",
+          "ur": "شیر اس ننھے سے جانور کی بات پر ہنستا ہے۔",
+          "th": "สิงโตหัวเราะเยาะสัตว์ตัวเล็กตัวนี้"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-06-01",
+        "english": "\"You are so small,\" he says.",
+        "turkish": "\"Sen çok küçüksün,\" der.",
+        "translations": {
+          "es-419": "«Eres muy pequeña», dice el león.",
+          "pt-BR": "— Você é tão pequeno — diz o leão.",
+          "id": "“Kamu kecil sekali,” kata singa.",
+          "ar": "يقول الأسد: «أنت صغيرة جدًا».",
+          "vi": "“Cô nhỏ bé quá,” sư tử nói.",
+          "hi": "“तुम बहुत छोटे हो,” शेर कहता है।",
+          "ru": "«Ты такая маленькая», — говорит лев.",
+          "bn": "“তুমি এত ছোট,” সিংহ বলে।",
+          "ur": "“تم بہت چھوٹی ہو،” شیر کہتا ہے۔",
+          "th": "“เธอตัวเล็กมาก” สิงโตพูด"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-06-02",
+        "english": "\"How can you help a lion?\"",
+        "turkish": "\"Bir aslana nasıl yardım edebilirsin?\"",
+        "translations": {
+          "es-419": "«¿Cómo puedes ayudar a un león?»",
+          "pt-BR": "— Como pode ajudar um leão?",
+          "id": "“Bagaimana kamu bisa membantu seekor singa?”",
+          "ar": "«كيف يمكنك أن تساعدي أسدًا؟»",
+          "vi": "“Làm sao cô có thể giúp một con sư tử?”",
+          "hi": "“तुम एक शेर की मदद कैसे कर सकते हो?”",
+          "ru": "«Как ты можешь помочь льву?»",
+          "bn": "“তুমি একটা সিংহকে কীভাবে সাহায্য করবে?”",
+          "ur": "“تم ایک شیر کی مدد کیسے کر سکتی ہو؟”",
+          "th": "“เธอจะช่วยสิงโตได้อย่างไร”"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-07",
+        "english": "But he opens his paw and lets her go.",
+        "turkish": "Ama pençesini açar ve onu bırakır.",
+        "translations": {
+          "es-419": "Pero abre la zarpa y la deja ir.",
+          "pt-BR": "Mas ele abre a pata e o deixa ir.",
+          "id": "Tetapi ia membuka cakarnya dan melepaskan tikus itu.",
+          "ar": "لكنه يفتح كفّه ويتركها تذهب.",
+          "vi": "Nhưng nó mở bàn chân ra và thả chuột đi.",
+          "hi": "लेकिन वह अपना पंजा खोलता है और उसे जाने देता है।",
+          "ru": "Но он раскрывает лапу и отпускает её.",
+          "bn": "তবু সে থাবা খুলে তাকে ছেড়ে দেয়।",
+          "ur": "لیکن وہ اپنا پنجہ کھولتا ہے اور اسے جانے دیتا ہے۔",
+          "th": "แต่เขาก็แบอุ้งเท้าและปล่อยเธอไป"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-08",
+        "english": "Later, hunters catch the lion.",
+        "turkish": "Daha sonra avcılar aslanı yakalar.",
+        "translations": {
+          "es-419": "Más tarde, unos cazadores atrapan al león.",
+          "pt-BR": "Mais tarde, uns caçadores capturam o leão.",
+          "id": "Kemudian, para pemburu menangkap singa itu.",
+          "ar": "لاحقًا، يمسك الصيّادون بالأسد.",
+          "vi": "Về sau, những người thợ săn bắt được sư tử.",
+          "hi": "बाद में शिकारी शेर को पकड़ लेते हैं।",
+          "ru": "Позже охотники ловят льва.",
+          "bn": "পরে শিকারিরা সিংহটাকে ধরে ফেলে।",
+          "ur": "بعد میں شکاری شیر کو پکڑ لیتے ہیں۔",
+          "th": "ต่อมา นายพรานจับสิงโตได้"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-09",
+        "english": "They tie him to the ground with strong ropes.",
+        "turkish": "Onu sağlam iplerle yere bağlarlar.",
+        "translations": {
+          "es-419": "Lo atan al suelo con cuerdas fuertes.",
+          "pt-BR": "Eles o amarram ao chão com cordas fortes.",
+          "id": "Mereka mengikatnya ke tanah dengan tali yang kuat.",
+          "ar": "يربطونه إلى الأرض بحبال قوية.",
+          "vi": "Họ trói nó xuống đất bằng những sợi dây thừng chắc chắn.",
+          "hi": "वे उसे मज़बूत रस्सियों से ज़मीन पर बाँध देते हैं।",
+          "ru": "Они привязывают его к земле крепкими верёвками.",
+          "bn": "তারা মজবুত দড়ি দিয়ে তাকে মাটির সঙ্গে বেঁধে রাখে।",
+          "ur": "وہ اسے مضبوط رسیوں سے زمین سے باندھ دیتے ہیں۔",
+          "th": "พวกเขามัดเขาไว้กับพื้นด้วยเชือกที่เหนียวแน่น"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-10",
+        "english": "The lion cannot move, and he roars.",
+        "turkish": "Aslan hareket edemez ve kükrer.",
+        "translations": {
+          "es-419": "El león no puede moverse, y ruge.",
+          "pt-BR": "O leão não consegue se mexer e ruge.",
+          "id": "Singa tidak bisa bergerak, dan ia mengaum.",
+          "ar": "لا يستطيع الأسد أن يتحرّك، فيزأر.",
+          "vi": "Sư tử không thể cử động, và nó gầm lên.",
+          "hi": "शेर हिल नहीं पाता, और वह दहाड़ता है।",
+          "ru": "Лев не может пошевелиться и рычит.",
+          "bn": "সিংহ নড়তে পারে না, তাই সে গর্জন করে।",
+          "ur": "شیر ہل نہیں سکتا، اور وہ دھاڑتا ہے۔",
+          "th": "สิงโตขยับตัวไม่ได้ เขาจึงคำราม"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-10-01",
+        "english": "He pulls hard, but the ropes do not break.",
+        "turkish": "Kuvvetle asılır ama ipler kopmaz.",
+        "translations": {
+          "es-419": "Tira con fuerza, pero las cuerdas no se rompen.",
+          "pt-BR": "Ele puxa com força, mas as cordas não se rompem.",
+          "id": "Singa menarik kuat-kuat, tetapi tali-talinya tidak putus.",
+          "ar": "يشدّ بقوة، لكن الحبال لا تنقطع.",
+          "vi": "Sư tử ra sức kéo, nhưng những sợi dây không đứt.",
+          "hi": "शेर ज़ोर से खींचता है, लेकिन रस्सियाँ नहीं टूटतीं।",
+          "ru": "Он сильно тянет, но верёвки не рвутся.",
+          "bn": "সিংহ জোরে টানে, কিন্তু দড়িগুলো ছেঁড়ে না।",
+          "ur": "شیر زور سے کھینچتا ہے، لیکن رسیاں نہیں ٹوٹتیں۔",
+          "th": "สิงโตดึงอย่างแรง แต่เชือกไม่ขาด"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-11",
+        "english": "The mouse hears him and runs to help.",
+        "turkish": "Fare onu duyar ve yardıma koşar.",
+        "translations": {
+          "es-419": "La ratoncita lo oye y corre a ayudarlo.",
+          "pt-BR": "O ratinho o ouve e corre para ajudar.",
+          "id": "Tikus mendengarnya dan berlari untuk menolong.",
+          "ar": "تسمعه الفأرة وتركض لتساعده.",
+          "vi": "Chuột nghe thấy và chạy đến giúp.",
+          "hi": "चूहा उसकी आवाज़ सुनता है और मदद के लिए दौड़ता है।",
+          "ru": "Мышка слышит его и бежит на помощь.",
+          "bn": "ইঁদুর তার গর্জন শুনে সাহায্য করতে ছুটে আসে।",
+          "ur": "چوہیا اس کی آواز سنتی ہے اور مدد کے لیے دوڑتی ہے۔",
+          "th": "หนูได้ยินเสียงเขาและรีบวิ่งไปช่วย"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-11-01",
+        "english": "\"I know that voice,\" she thinks.",
+        "turkish": "\"Bu sesi tanıyorum,\" diye düşünür.",
+        "translations": {
+          "es-419": "«Conozco esa voz», piensa la ratoncita.",
+          "pt-BR": "— Conheço essa voz — pensa o ratinho.",
+          "id": "“Aku mengenal suara itu,” pikir tikus.",
+          "ar": "تفكر الفأرة: «أعرف هذا الصوت».",
+          "vi": "“Mình biết giọng nói đó,” chuột nghĩ.",
+          "hi": "“मैं इस आवाज़ को पहचानता हूँ,” चूहा सोचता है।",
+          "ru": "«Я знаю этот голос», — думает мышка.",
+          "bn": "“আমি এই গলাটা চিনি,” ইঁদুর ভাবে।",
+          "ur": "“میں اس آواز کو پہچانتی ہوں،” چوہیا سوچتی ہے۔",
+          "th": "“ฉันจำเสียงนี้ได้” หนูคิด"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-11-02",
+        "english": "She finds the lion beside a tree.",
+        "turkish": "Aslanı bir ağacın yanında bulur.",
+        "translations": {
+          "es-419": "Encuentra al león junto a un árbol.",
+          "pt-BR": "Ele encontra o leão ao lado de uma árvore.",
+          "id": "Ia menemukan singa di samping pohon.",
+          "ar": "تجد الأسد بجانب شجرة.",
+          "vi": "Chuột tìm thấy sư tử bên một cái cây.",
+          "hi": "उसे शेर एक पेड़ के पास मिलता है।",
+          "ru": "Она находит льва рядом с деревом.",
+          "bn": "সে একটা গাছের পাশে সিংহকে খুঁজে পায়।",
+          "ur": "اسے شیر ایک درخت کے پاس ملتا ہے۔",
+          "th": "หนูพบสิงโตอยู่ข้างต้นไม้"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-12",
+        "english": "Her teeth are small but sharp.",
+        "turkish": "Dişleri küçük ama keskindir.",
+        "translations": {
+          "es-419": "Sus dientes son pequeños pero afilados.",
+          "pt-BR": "Os dentes do ratinho são pequenos, mas afiados.",
+          "id": "Giginya kecil tetapi tajam.",
+          "ar": "أسنانها صغيرة لكنها حادّة.",
+          "vi": "Răng của cô nhỏ nhưng sắc.",
+          "hi": "उसके दाँत छोटे हैं, लेकिन तेज़ हैं।",
+          "ru": "Зубы у неё маленькие, но острые.",
+          "bn": "তার দাঁত ছোট, কিন্তু ধারালো।",
+          "ur": "اس کے دانت چھوٹے مگر تیز ہیں۔",
+          "th": "ฟันของเธอเล็กแต่แหลมคม"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-13",
+        "english": "She bites through the ropes.",
+        "turkish": "İpleri kemirerek koparır.",
+        "translations": {
+          "es-419": "Muerde las cuerdas hasta romperlas.",
+          "pt-BR": "Ele rói as cordas até cortá-las.",
+          "id": "Ia menggigit tali-tali itu sampai putus.",
+          "ar": "تقضم الحبال حتى تقطعها.",
+          "vi": "Cô cắn đứt những sợi dây thừng.",
+          "hi": "वह रस्सियों को काट देता है।",
+          "ru": "Она перегрызает верёвки.",
+          "bn": "সে কামড়ে কামড়ে দড়িগুলো কেটে ফেলে।",
+          "ur": "وہ کاٹ کاٹ کر رسیاں توڑ دیتی ہے۔",
+          "th": "เธอกัดเชือกจนขาด"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-13-01",
+        "english": "She works until the last rope breaks.",
+        "turkish": "Son ip de kopana kadar uğraşır.",
+        "translations": {
+          "es-419": "Trabaja hasta que se rompe la última cuerda.",
+          "pt-BR": "Ele trabalha até a última corda se romper.",
+          "id": "Ia terus bekerja sampai tali terakhir putus.",
+          "ar": "تواصل العمل حتى ينقطع الحبل الأخير.",
+          "vi": "Chuột làm việc cho đến khi sợi dây cuối cùng đứt ra.",
+          "hi": "वह आखिरी रस्सी टूटने तक काम करता रहता है।",
+          "ru": "Она работает, пока не лопается последняя верёвка.",
+          "bn": "শেষ দড়িটা ছেঁড়া পর্যন্ত সে কাজ করে যায়।",
+          "ur": "وہ آخری رسی ٹوٹنے تک کام کرتی رہتی ہے۔",
+          "th": "หนูทำงานต่อไปจนเชือกเส้นสุดท้ายขาด"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-13-02",
+        "english": "The lion can move his legs again.",
+        "turkish": "Aslan bacaklarını yeniden hareket ettirebilir.",
+        "translations": {
+          "es-419": "El león puede mover las patas otra vez.",
+          "pt-BR": "O leão consegue mexer as pernas novamente.",
+          "id": "Singa bisa menggerakkan kakinya lagi.",
+          "ar": "يستطيع الأسد تحريك ساقيه من جديد.",
+          "vi": "Sư tử có thể cử động chân trở lại.",
+          "hi": "शेर फिर से अपने पैर हिला सकता है।",
+          "ru": "Лев снова может двигать лапами.",
+          "bn": "সিংহ আবার তার পা নাড়াতে পারে।",
+          "ur": "شیر پھر سے اپنی ٹانگیں ہلا سکتا ہے۔",
+          "th": "สิงโตขยับขาได้อีกครั้ง"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-14",
+        "english": "Now the lion is free.",
+        "turkish": "Artık aslan özgürdür.",
+        "translations": {
+          "es-419": "Ahora el león es libre.",
+          "pt-BR": "Agora o leão está livre.",
+          "id": "Sekarang singa itu bebas.",
+          "ar": "الآن الأسد حرّ.",
+          "vi": "Giờ đây sư tử đã được tự do.",
+          "hi": "अब शेर आज़ाद है।",
+          "ru": "Теперь лев свободен.",
+          "bn": "এখন সিংহ মুক্ত।",
+          "ur": "اب شیر آزاد ہے۔",
+          "th": "ตอนนี้สิงโตเป็นอิสระแล้ว"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-15",
+        "english": "He thanks his tiny friend.",
+        "turkish": "Minicik dostuna teşekkür eder.",
+        "translations": {
+          "es-419": "Le da las gracias a su pequeña amiga.",
+          "pt-BR": "Ele agradece ao seu amiguinho.",
+          "id": "Ia berterima kasih kepada sahabat mungilnya.",
+          "ar": "يشكر صديقته الصغيرة.",
+          "vi": "Nó cảm ơn người bạn bé nhỏ của mình.",
+          "hi": "वह अपने नन्हे दोस्त को धन्यवाद देता है।",
+          "ru": "Он благодарит свою крошечную подругу.",
+          "bn": "সে তার ছোট্ট বন্ধুকে ধন্যবাদ দেয়।",
+          "ur": "وہ اپنی ننھی دوست کا شکریہ ادا کرتا ہے۔",
+          "th": "เขาขอบคุณเพื่อนตัวจิ๋วของเขา"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-15-01",
+        "english": "\"You helped me before,\" says the mouse.",
+        "turkish": "Fare, \"Daha önce sen bana yardım ettin,\" der.",
+        "translations": {
+          "es-419": "«Tú me ayudaste antes», dice la ratoncita.",
+          "pt-BR": "— Você me ajudou antes — diz o ratinho.",
+          "id": "“Kamu pernah membantuku,” kata tikus.",
+          "ar": "تقول الفأرة: «لقد ساعدتني من قبل».",
+          "vi": "“Trước đây ông đã giúp tôi,” chuột nói.",
+          "hi": "“पहले तुमने मेरी मदद की थी,” चूहा कहता है।",
+          "ru": "«Раньше ты помог мне», — говорит мышка.",
+          "bn": "“আগে তুমি আমাকে সাহায্য করেছিলে,” ইঁদুর বলে।",
+          "ur": "“پہلے تم نے میری مدد کی تھی،” چوہیا کہتی ہے۔",
+          "th": "“เมื่อก่อนท่านเคยช่วยฉันไว้” หนูพูด"
+        }
+      },
+      {
+        "id": "classic-lion-mouse-pilot-15-02",
+        "english": "\"Now I can help you.\"",
+        "turkish": "\"Şimdi ben sana yardım edebilirim.\"",
+        "translations": {
+          "es-419": "«Ahora puedo ayudarte yo».",
+          "pt-BR": "— Agora eu posso ajudar você.",
+          "id": "“Sekarang aku bisa membantumu.”",
+          "ar": "«والآن أستطيع مساعدتك».",
+          "vi": "“Bây giờ tôi có thể giúp ông.”",
+          "hi": "“अब मैं तुम्हारी मदद कर सकता हूँ।”",
+          "ru": "«Теперь я могу помочь тебе».",
+          "bn": "“এখন আমি তোমাকে সাহায্য করতে পারি।”",
+          "ur": "“اب میں تمہاری مدد کر سکتی ہوں۔”",
+          "th": "“ตอนนี้ฉันช่วยท่านได้แล้ว”"
+        }
+      },
+      {
+        "id": "cl-lion-mouse-16",
+        "english": "Even a small friend can give great help.",
+        "turkish": "Küçük bir dost bile büyük bir yardımda bulunabilir.",
+        "translations": {
+          "es-419": "Hasta un amigo pequeño puede dar una gran ayuda.",
+          "pt-BR": "Até um amigo pequeno pode dar uma grande ajuda.",
+          "id": "Bahkan teman yang kecil pun bisa memberi bantuan besar.",
+          "ar": "حتى الصديق الصغير يستطيع أن يقدّم مساعدة كبيرة.",
+          "vi": "Ngay cả một người bạn nhỏ bé cũng có thể giúp đỡ rất nhiều.",
+          "hi": "एक छोटा दोस्त भी बड़ी मदद कर सकता है।",
+          "ru": "Даже маленький друг может очень сильно помочь.",
+          "bn": "ছোট বন্ধুও অনেক বড় সাহায্য করতে পারে।",
+          "ur": "ایک چھوٹا دوست بھی بڑی مدد کر سکتا ہے۔",
+          "th": "แม้แต่เพื่อนตัวเล็กก็ช่วยเหลือได้มาก"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-lion-mouse-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A mouse helps a lion catch some food",
+          "A lion helps a mouse climb a tree",
+          "A mouse helps hunters catch a lion",
+          "A mouse helps a lion get free"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-lion-mouse-q2",
+        "kind": "detail",
+        "prompt": "How does the mouse help the lion?",
+        "options": [
+          "She calls other lions",
+          "She bites through the ropes",
+          "She fights the hunters",
+          "She brings him food"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-lion-mouse-q3",
+        "kind": "inference",
+        "prompt": "What does the lion learn about the mouse?",
+        "options": [
+          "She needs a bigger friend to break the ropes.",
+          "She is small, but she can help him.",
+          "She wants to catch him for the hunters.",
+          "She can carry him away from the tree."
+        ],
+        "answer": 1
+      }
+    ],
+    "tags": [
+      "fabl",
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "El león y el ratón. La ayuda de una ratoncita a un gran amigo. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; portadilla interior de la colección, no es una portada aparte de primera edición.",
+      "pt-BR": "O leão e o rato. A ajuda de um ratinho a um grande amigo. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; folha de rosto interna da coleção, não é uma capa separada de primeira edição.",
+      "id": "Singa dan Tikus. Bantuan seekor tikus kecil untuk sahabatnya yang besar. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; halaman judul bagian dalam koleksi, bukan sampul edisi pertama tersendiri.",
+      "ar": "الأسد والفأر. فأرة صغيرة تساعد صديقًا كبيرًا. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ صفحة العنوان الداخلية للمجموعة، وليست غلافًا منفصلًا للطبعة الأولى.",
+      "vi": "Sư tử và Chuột. Một cô chuột nhỏ giúp đỡ người bạn to lớn của mình. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; trang tiêu đề bên trong tuyển tập, không phải bìa riêng của ấn bản đầu tiên.",
+      "hi": "शेर और चूहा। एक छोटे चूहे ने अपने बड़े दोस्त की मदद की। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; संग्रह का अंदरूनी शीर्षक पृष्ठ, पहले संस्करण का अलग कवर नहीं।",
+      "ru": "Лев и мышь. Как маленькая мышка помогла большому другу. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренний титульный лист сборника, а не отдельная обложка первого издания.",
+      "bn": "সিংহ আর ইঁদুর। এক ছোট্ট ইঁদুর তার বড় বন্ধুকে সাহায্য করে। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; সংকলনের ভেতরের শিরোনাম পাতা, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
+      "ur": "شیر اور چوہا۔ ایک ننھی چوہیا نے اپنے بڑے دوست کی مدد کی۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ مجموعے کا اندرونی عنوان صفحہ، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "th": "ราชสีห์กับหนู: หนูตัวเล็ก ๆ ช่วยเหลือเพื่อนตัวใหญ่ ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; หน้าชื่อเรื่องด้านในของหนังสือรวมเรื่อง ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
+    }
+  },
+  "words": [
+    {
+      "id": "lion",
+      "word": "lion",
+      "translation": "aslan",
+      "pronunciation": "/ˈlaɪən/",
+      "example": "The lion sleeps under a tree.",
+      "translations": {
+        "es-419": "león",
+        "pt-BR": "leão",
+        "id": "singa",
+        "ar": "أسد",
+        "vi": "sư tử",
+        "hi": "शेर",
+        "ru": "лев",
+        "bn": "সিংহ",
+        "ur": "شیر",
+        "th": "สิงโต"
+      }
+    },
+    {
+      "id": "mouse",
+      "word": "mouse",
+      "translation": "fare",
+      "pronunciation": "/maʊs/",
+      "example": "The mouse is very small.",
+      "translations": {
+        "es-419": "ratón",
+        "pt-BR": "rato, camundongo",
+        "id": "tikus",
+        "ar": "فأر",
+        "vi": "chuột",
+        "hi": "चूहा",
+        "ru": "мышь, мышка",
+        "bn": "ইঁদুর",
+        "ur": "چوہا",
+        "th": "หนู"
+      }
+    },
+    {
+      "id": "paw",
+      "word": "paw",
+      "translation": "pençe",
+      "pronunciation": "/pɔː/",
+      "example": "The lion opens his paw.",
+      "translations": {
+        "es-419": "zarpa, pata",
+        "pt-BR": "pata",
+        "id": "cakar, kaki (hewan)",
+        "ar": "مخلب، كفّ الحيوان",
+        "vi": "bàn chân (thú)",
+        "hi": "पंजा",
+        "ru": "лапа",
+        "bn": "থাবা",
+        "ur": "پنجہ",
+        "th": "อุ้งเท้า"
+      }
+    },
+    {
+      "id": "ropes",
+      "word": "ropes",
+      "translation": "ipler",
+      "pronunciation": "/rəʊps/",
+      "example": "The ropes are strong.",
+      "translations": {
+        "es-419": "cuerdas",
+        "pt-BR": "cordas",
+        "id": "tali",
+        "ar": "حبال",
+        "vi": "dây thừng",
+        "hi": "रस्सियाँ",
+        "ru": "верёвки",
+        "bn": "দড়ি",
+        "ur": "رسیاں",
+        "th": "เชือก"
+      }
+    },
+    {
+      "id": "teeth",
+      "word": "teeth",
+      "translation": "dişler",
+      "pronunciation": "/tiːθ/",
+      "example": "The mouse has sharp teeth.",
+      "translations": {
+        "es-419": "dientes",
+        "pt-BR": "dentes",
+        "id": "gigi",
+        "ar": "أسنان",
+        "vi": "răng",
+        "hi": "दाँत",
+        "ru": "зубы",
+        "bn": "দাঁত",
+        "ur": "دانت",
+        "th": "ฟัน"
+      }
+    },
+    {
+      "id": "sharp",
+      "word": "sharp",
+      "translation": "keskin",
+      "pronunciation": "/ʃɑːp/",
+      "example": "These teeth are sharp.",
+      "translations": {
+        "es-419": "afilado",
+        "pt-BR": "afiado",
+        "id": "tajam",
+        "ar": "حادّ",
+        "vi": "sắc, nhọn",
+        "hi": "तेज़, नुकीला",
+        "ru": "острый",
+        "bn": "ধারালো",
+        "ur": "تیز، نوکیلا",
+        "th": "แหลมคม"
+      }
+    },
+    {
+      "id": "free",
+      "word": "free",
+      "translation": "özgür",
+      "pronunciation": "/friː/",
+      "example": "The lion is free again.",
+      "translations": {
+        "es-419": "libre",
+        "pt-BR": "livre",
+        "id": "bebas",
+        "ar": "حرّ",
+        "vi": "tự do",
+        "hi": "आज़ाद",
+        "ru": "свободный",
+        "bn": "মুক্ত, স্বাধীন",
+        "ur": "آزاد",
+        "th": "เป็นอิสระ"
+      }
+    },
+    {
+      "id": "help",
+      "word": "help",
+      "translation": "yardım",
+      "pronunciation": "/help/",
+      "example": "Thank you for your help.",
+      "translations": {
+        "es-419": "ayuda",
+        "pt-BR": "ajuda",
+        "id": "bantuan",
+        "ar": "مساعدة",
+        "vi": "sự giúp đỡ",
+        "hi": "मदद",
+        "ru": "помощь; помогать",
+        "bn": "সাহায্য",
+        "ur": "مدد",
+        "th": "ความช่วยเหลือ"
+      }
+    },
+    {
+      "id": "voice",
+      "word": "voice",
+      "translation": "ses",
+      "pronunciation": "/vɔɪs/",
+      "example": "\"You must have a beautiful voice, too.\"",
+      "translations": {
+        "es-419": "voz",
+        "pt-BR": "voz",
+        "id": "suara",
+        "ar": "صوت",
+        "vi": "giọng nói, giọng hát",
+        "hi": "आवाज़",
+        "ru": "голос",
+        "bn": "গলা, কণ্ঠস্বর",
+        "ur": "آواز",
+        "th": "เสียง"
+      }
+    },
+    {
+      "id": "pilot-classic-lion-mouse-afraid",
+      "word": "afraid",
+      "translation": "korkmuş",
+      "pronunciation": "/əˈfreɪd/",
+      "example": "The mouse is afraid.",
+      "translations": {
+        "es-419": "con miedo, asustado",
+        "pt-BR": "com medo",
+        "id": "takut",
+        "ar": "خائف",
+        "vi": "sợ hãi",
+        "hi": "डरा हुआ",
+        "ru": "испуганный, боится",
+        "bn": "ভীত, ভয় পাচ্ছে",
+        "ur": "ڈرا ہوا",
+        "th": "กลัว"
+      }
+    }
+  ],
+  "studyWordIds": [
+    "lion",
+    "mouse",
+    "paw",
+    "ropes",
+    "teeth",
+    "sharp",
+    "free",
+    "help",
+    "voice",
+    "pilot-classic-lion-mouse-afraid"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-lion-mouse-q1",
+      "sentenceIds": [
+        "cl-lion-mouse-07",
+        "cl-lion-mouse-13",
+        "cl-lion-mouse-14"
+      ],
+      "rationale": "The lion releases the mouse, and the mouse later frees him."
+    },
+    {
+      "questionId": "classic-lion-mouse-q2",
+      "sentenceIds": [
+        "cl-lion-mouse-13"
+      ],
+      "rationale": "The mouse bites through the ropes."
+    },
+    {
+      "questionId": "classic-lion-mouse-q3",
+      "sentenceIds": [
+        "cl-lion-mouse-06",
+        "cl-lion-mouse-13",
+        "cl-lion-mouse-14"
+      ],
+      "rationale": "Contrasts his initial belief with the mouse’s successful help."
+    }
+  ],
+  "publicationBlockers": [
+    "Human editorial and level review pending after AI-assisted corrections.",
+    "Fresh live source snapshot and publisher validation required; local reader/save/review contract verified.",
+    "Human language review across all eleven support languages remains pending."
+  ],
+  "editorialReview": {
+    "type": "ai-assisted",
+    "reviewer": "Codex",
+    "reviewedOn": "2026-10-19",
+    "status": "completed-with-corrections",
+    "scope": [
+      "English narrative continuity",
+      "English/Turkish alignment",
+      "eleven-language text and glossary consistency",
+      "all comprehension answer keys and source evidence",
+      "target-level risks"
+    ],
+    "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
+    "humanApproval": false,
+    "nativeSpeakerApproval": false,
+    "secondReview": {
+      "reviewer": "Claude Code",
+      "model": "claude-opus-5-5",
+      "type": "ai-assisted",
+      "reviewedOn": "2026-10-19",
+      "report": "../../../../docs/STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md",
+      "humanApproval": false,
+      "nativeSpeakerApproval": false
+    }
+  },
+  "legacySentenceCorrections": [
+    {
+      "sentenceId": "cl-lion-mouse-12",
+      "field": "translations.pt-BR",
+      "before": "Os dentes dele são pequenos, mas afiados.",
+      "after": "Os dentes do ratinho são pequenos, mas afiados.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    }
+  ]
+}

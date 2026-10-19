@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-19T19:00:46.409934+00:00",
+  "baseCommit": "bff4dddb42624fdc311b635120f27fa64aa662dd",
+  "status": "ai-editorial-review-completed-not-human-approved-not-published",
+  "reviewer": "Codex",
+  "claudeReview": "not-performed-Mac-locked",
+  "stories": [
+    {
+      "storyId": "quiet-morning",
+      "draftSHA256": "1fa66c91659199a0d7078fce357dca50a3b6700d5c94183debba192c0fbd640e",
+      "documentSHA256": "9ea328991c0b4e7c73e724ad4931f0e74fda87602bbb29d92c6a123844eccc02",
+      "studyWords": 10
+    },
+    {
+      "storyId": "paper-boat",
+      "draftSHA256": "eb7119294e0200b6b7f3e5ced259840fa764151df0ca5341dea199682c46c55d",
+      "documentSHA256": "3937e8939b6ebae9a960726872872251e74c7b45f363f945af751492cf994ceb",
+      "studyWords": 10
+    },
+    {
+      "storyId": "last-train",
+      "draftSHA256": "eb5a464f8cf5e6210ade98f7d82182aebf2c8755ac53cad54250e859d82db844",
+      "documentSHA256": "d86e810186e3490dca4ad7b0f5af45d446fa76bc86b218b956f3c7ed1a091d5e",
+      "studyWords": 10
+    },
+    {
+      "storyId": "classic-tortoise-hare",
+      "draftSHA256": "30f51f784e5a23824b2406d39efd6bc11a8cc7d39a86040e1a8bb5835d68597b",
+      "documentSHA256": "8c7854b133a50bcc28b597b95564b7b72208fba7d67f0956ccdaf381ebb92195",
+      "studyWords": 10
+    },
+    {
+      "storyId": "classic-lion-mouse",
+      "draftSHA256": "270f2d1a4a40714ed7c5791b4f4d8c2ab5abf2292d21fd271319da0d8e141bb6",
+      "documentSHA256": "c1b987bf05fdfb8ee6a2e9b9b647cb910565b8a19c2776c73756bd750e203086",
+      "studyWords": 10
+    }
+  ],
+  "newSentences": 62,
+  "newSentenceAdditionalLanguageTranslations": 620,
+  "newWordRecords": 14,
+  "newWordAdditionalLanguageGlosses": 140,
+  "backend": {
+    "tests": 165,
+    "failures": 0,
+    "skipped": 0,
+    "logSHA256": "2110166680ac30a32b13de0653f6d8dc3167f5e51540dd0b84cf9c8140058baf"
+  },
+  "android": {
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "avd": "English_Tales_Language_Test",
+    "api": 36,
+    "fixtureSHA256": "7b5e72ae46a48828ed5574397bbdb34f4c45c293a31068579079a6025a41a550",
+    "resultXmlSHA256": "80ee4c11a7353e6943f9cba534e8503a12bf168f98747fc4250c4004f9047466",
+    "coverage": "single fixture, configured support language, local reader/save/review contract only"
+  },
+  "requireReviewedGate": {
+    "exitCode": 1,
+    "message": "Human editorial/language review pending: quiet-morning"
+  },
+  "sourceCatalogSHA256": "c60367cf6bb7681f9d3d4bc1636dc5c370dcaa4622de8e68263ba6d25ada72a0",
+  "productionRuntimeChanged": false,
+  "liveContentChanged": false,
+  "humanApproval": false,
+  "nativeSpeakerApproval": false,
+  "cefrCertification": false
+}
