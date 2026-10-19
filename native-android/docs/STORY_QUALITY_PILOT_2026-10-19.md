@@ -6,7 +6,9 @@ Durum: **Aktif çalışma yalnız 5 mevcut hikâyede.** Kullanıcı yeni hikâye
 
 ## Mevcut hikâyelerde ilerleme
 
-**A Quiet Morning:** 14 yeni cümlenin 10 ek dilde 140 çevirisi ve 6 yeni çalışma kelimesinin 60 karşılığı hazırlandı. Türkçe dahil 11 dilde metin alanları dolu. `reviewedLanguages: []`; hiçbir dil için insan veya ana dil konuşuru onayı verilmiş sayılmıyor. Diğer dört revizyonun yeni bölümleri hâlâ yalnız İngilizce/Türkçe. Sıradaki çeviri işi **The Paper Boat**. Yeni çalışma listeleri henüz okuyucu/tekrar akışına bağlanmadı.
+**Beş mevcut revizyonun tamamında 11 destek dili için metin alanları dolu.** Toplam 60 yeni cümlenin 10 ek dilde **600 çevirisi**, 13 yeni çalışma kelimesinin **130 karşılığı** hazırlandı. Bu tur The Paper Boat, The Last Train, The Tortoise and the Hare ve The Lion and the Mouse tamamlandı. Yeni klasikler beklemede kaldı.
+
+Her hikâyede `reviewedLanguages: []`; hiçbir dil için insan veya ana dil konuşuru onayı verilmiş sayılmıyor. **17 anlama sorusunun tamamı** için kaynak cümle ve yanıt gerekçesi kaydedildi. The Paper Boat’ta kız karakterin tekrar tanıtılması giderildi; küçük kız kardeşin yaşı kaynak ve çevirilerde açıkça aynı ifade edildi. Yeni çalışma listeleri henüz okuyucu/tekrar akışına bağlanmadı.
 
 [50 mevcut hikâyenin yapısal/editoryal başlangıç raporu](EXISTING_STORY_BASELINE_2026-10-19.md). Bu rapor paket içindir; canlı eşitliği veya seviye onayı değildir.
 
@@ -25,7 +27,7 @@ Durum: **Aktif çalışma yalnız 5 mevcut hikâyede.** Kullanıcı yeni hikâye
 ## Yapılan editoryal değişiklikler
 
 - **A Quiet Morning:** beklenen kişi, doğum günü diyaloğu ve karşılaşmanın sonu somutlaştırıldı.
-- **The Paper Boat:** kızın tekneye nereden eriştiği açıklandı; arkadaşlık daveti ve teknenin sudan geri alınması eklendi.
+- **The Paper Boat:** teknenin alçak kıyıya yakınlığı ve kızın bir kez tanıtılması netleştirildi; arkadaşlık daveti ve teknenin sudan geri alınması eklendi.
 - **The Last Train:** biletin bırakıldığı yer, üstündeki taş ve son treni kaçırmanın sonucu açıklandı.
 - **The Tortoise and the Hare:** başlangıç/bitiş yeri ile tavşanın yanlış güven duygusu görünür hale getirildi.
 - **The Lion and the Mouse:** korku, sesin tanınması ve iyiliğin karşılığının olaylarla anlatımı güçlendirildi.
@@ -42,7 +44,7 @@ Mevcut cümlelerin kimlikleri, metinleri ve çeviri haritaları korunur; yeni c�
 ## Yayına geçmeden kalan gerçek işler
 
 1. İnsan editörün anlam, doğallık, hedef seviye, kelime listesi ve soru yanıtlarını incelemesi. `reviewedBy` şu an boş; onay taklit edilmedi.
-2. A Quiet Morning için 11 dilde insan dil incelemesi; kalan dört mevcut revizyonun yeni cümle/kelimeleri için 10 ek dil çevirisi ve incelemesi. Yeni klasiklerin çevirileri beklemede. Eski çeviriler yeni İngilizce için kopyalanıp tamamlandı sayılmadı.
+2. Beş mevcut revizyonun 11 dilde insan dil incelemesi. Tüm metin alanlarının dolu olması dil onayı değildir. Yeni klasiklerin çevirileri beklemede. Eski çeviriler yeni İngilizce için kopyalanıp tamamlandı sayılmadı.
 3. Mevcut hikâyeler için onaylı revizyon ve çalışma listesi entegrasyonu. Önceki yeni klasiklerin kapak/hak/çeviri işleri beklemededir; aktif görev değildir.
 4. Onaylı mevcut hikâye revizyonlarını stüdyoda doğrulamak. Sonra yayın kapsamı içinde publisher yayını ve anonim katalog/paket/çevrimdışı kabulü.
 

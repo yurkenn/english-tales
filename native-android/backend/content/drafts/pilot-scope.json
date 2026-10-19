@@ -14,6 +14,14 @@
     "classic-goldilocks-three-bears"
   ],
   "reason": "User paused adding new stories and requested focusing on the existing catalog. Existing new-story drafts are preserved for later.",
-  "nextTranslationStoryId": "paper-boat",
-  "publicationStatus": "No live content publication."
+  "nextTranslationStoryId": null,
+  "publicationStatus": "No live content publication.",
+  "languageDraftsCompleteStoryIds": [
+    "quiet-morning",
+    "paper-boat",
+    "last-train",
+    "classic-tortoise-hare",
+    "classic-lion-mouse"
+  ],
+  "nextStep": "Editorial and language review, then integrate approved study lists with versioned reader and practice contracts."
 }

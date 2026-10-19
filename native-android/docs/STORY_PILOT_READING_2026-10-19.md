@@ -2,7 +2,7 @@
 
 **İnceleme taslaklarıdır; uygulamaya veya canlı kataloğa yayımlanmadı.** İngilizce ve Türkçe metinler birlikte okunabilir. Seviye etiketleri hedef seviyedir; bağımsız CEFR onayı anlamına gelmez.
 
-**Güncel odak: yalnız mevcut beş hikâye.** İki yeni klasik taslağı aşağıda beklemeye alınmış olarak korunur. A Quiet Morning’in 10 ek dilde yeni cümle ve kelime çevirileri dolu; insan dil incelemesi açık. Diğer dört revizyonun ek çevirileri henüz tamamlanmadı.
+**Güncel odak: yalnız mevcut beş hikâye.** Beş revizyonun da 11 destek dilindeki metin alanları dolu; insan editör ve dil incelemesi açık. Önceki iki yeni klasik taslağı beklemede korunur.
 
 ## A Quiet Morning · A1
 
@@ -56,7 +56,7 @@
 
 **Yanıt anahtarı:** 1: A, 2: C, 3: B
 
-Editör notları: Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone. Keeps all legacy sentence IDs and wording; adds short A1-target turns. A1 is a target for editorial review, not formal CEFR certification.
+Editör notları: Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone. Keeps all legacy sentence IDs and wording; adds short A1-target turns. A1 is a target for editorial review, not formal CEFR certification. Added fourteen sentences and six new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. Correct answers are distributed across positions A, C and B in the three comprehension questions.
 
 ## The Paper Boat · A2
 
@@ -68,15 +68,15 @@ Editör notları: Adds a concrete conversation and a completed encounter instead
 | He folded the corners carefully and pressed them flat. | Köşeleri dikkatle katladı ve bastırarak düzleştirdi. |
 | The boat was small enough to fit in his hand. | Tekne eline sığacak kadar küçüktü. |
 | He carried it to the river near the old bridge. | Onu eski köprünün yakınındaki nehre götürdü. |
-| His sister walked beside him on the dry path. | Kız kardeşi kuru patikada yanında yürüdü. |
+| His younger sister walked beside him on the dry path. | Küçük kız kardeşi kuru patikada yanında yürüdü. |
 | They stayed away from the edge of the water. | Suyun kenarından uzak durdular. |
 | A gentle wind pushed the boat across the water. | Hafif bir rüzgâr tekneyi suyun üzerinde itti. |
 | Leo ran along the path to follow it. | Leo onu takip etmek için patika boyunca koştu. |
 | The boat passed a family of ducks. | Tekne bir ördek ailesinin yanından geçti. |
 | Then it stopped beside a stone at the riverbank. | Sonra nehir kıyısındaki bir taşın yanında durdu. |
 | "It cannot move," Leo said to his sister. | Leo kız kardeşine, "Hareket edemiyor," dedi. |
-| A girl on the path heard him. | Patikadaki bir kız onu duydu. |
-| She could reach the boat from the low bank. | Alçak kıyıdan tekneye uzanabiliyordu. |
+| He looked along the path for help. | Yardım bulmak için patika boyunca etrafına baktı. |
+| The boat was close to the low bank. | Tekne alçak kıyıya yakındı. |
 | A girl picked it up and wrote a message inside. | Bir kız onu aldı ve içine bir mesaj yazdı. |
 | The message said, Every journey starts somewhere. | Mesajda, Her yolculuk bir yerden başlar, yazıyordu. |
 | "Where will it go next?" she asked. | "Şimdi nereye gidecek?" diye sordu. |
@@ -117,7 +117,7 @@ Editör notları: Adds a concrete conversation and a completed encounter instead
 
 **Yanıt anahtarı:** 1: D, 2: A, 3: D, 4: C
 
-Editör notları: Clarifies where the girl stands and how the boat can be reached. Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs.
+Editör notları: Clarifies the boat’s position at a low bank and introduces the girl once, at her first action. Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation.
 
 ## The Last Train · A2
 
@@ -180,7 +180,7 @@ Editör notları: Clarifies where the girl stands and how the boat can be reache
 
 **Yanıt anahtarı:** 1: D, 2: B, 3: A, 4: B
 
-Editör notları: Makes the camera/ticket location explicit before the ticket goes missing. Explains the stone and the cost of missing the train; preserves the original ending.
+Editör notları: Makes the camera/ticket location explicit before the ticket goes missing. Explains the stone and the cost of missing the train; preserves the original ending. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.
 
 ## The Tortoise and the Hare · A1
 
@@ -238,7 +238,7 @@ Editör notları: Makes the camera/ticket location explicit before the ticket go
 
 **Yanıt anahtarı:** 1: B, 2: B, 3: A
 
-Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied.
+Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.
 
 ## The Lion and the Mouse · A1
 
@@ -295,7 +295,7 @@ Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses
 
 **Yanıt anahtarı:** 1: D, 2: B, 3: B
 
-Editör notları: Adds the mouse’s fear, recognition of the call and return of kindness. Keeps the original lesson without turning the inference question into a direct quotation.
+Editör notları: Adds the mouse’s fear, recognition of the call and return of kindness. Keeps the original lesson without turning the inference question into a direct quotation. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.
 
 # Beklemede — yeni hikâyeler
 

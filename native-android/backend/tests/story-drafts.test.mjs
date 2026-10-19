@@ -135,15 +135,17 @@ test('new classic retellings record historical sources and remain separate from 
 });
 
 
-test('quiet-morning translations cover the complete revised story and preserve the language review boundary',()=>{
-  const d=revisions.find(d=>d.story.id==='quiet-morning');
-  assert.equal(d.translationReadiness.completeLanguages.length,11);
-  assert.deepEqual(d.translationReadiness.pendingLanguages,[]);
-  assert.deepEqual(d.translationReadiness.reviewedLanguages,[]);
-  assert.equal(d.reviewedBy,null);
-  assert.ok(d.publicationBlockers.some(x=>x.includes('Human language review')));
-  for(const sentence of d.story.sentences){
-    assert.equal(Object.keys(sentence.translations).length,10,sentence.id);
-    for(const value of Object.values(sentence.translations))assert.ok(value.trim()!==sentence.english.trim(),sentence.id);
+test('all five existing story drafts are multilingual with complete question evidence and pending human review',()=>{
+  for(const d of revisions){
+    assert.equal(d.translationReadiness.completeLanguages.length,11);
+    assert.deepEqual(d.translationReadiness.pendingLanguages,[]);
+    assert.deepEqual(d.translationReadiness.reviewedLanguages,[]);
+    assert.equal(d.reviewedBy,null);
+    assert.ok(d.publicationBlockers.some(x=>x.includes('Human language review')));
+    for(const sentence of d.story.sentences){
+      assert.equal(Object.keys(sentence.translations).length,10,sentence.id);
+      for(const value of Object.values(sentence.translations))assert.ok(value.trim()!==sentence.english.trim(),sentence.id);
+    }
+    assert.deepEqual(d.questionEvidence.map(e=>e.questionId),d.story.questions.map(q=>q.id));
   }
 });

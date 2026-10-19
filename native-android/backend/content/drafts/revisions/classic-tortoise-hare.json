@@ -7,7 +7,8 @@
   "baseStorySHA256": "96eda22c975f956dc02e353c4c1315b2c323e11db44d412bc9bdf6c3e371790a",
   "editorialNotes": [
     "Adds spatial clarity and the hare’s mistaken reasoning.",
-    "Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied."
+    "Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied.",
+    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -24,7 +25,17 @@
       "th"
     ],
     "completeLanguages": [
-      "tr"
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
     ],
     "unchangedTranslationsPreserved": true,
     "newSentenceIds": [
@@ -40,18 +51,9 @@
       "classic-tortoise-hare-pilot-15-02",
       "classic-tortoise-hare-pilot-15-03"
     ],
-    "pendingLanguages": [
-      "es-419",
-      "pt-BR",
-      "id",
-      "ar",
-      "vi",
-      "hi",
-      "ru",
-      "bn",
-      "ur",
-      "th"
-    ]
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; not native-speaker-approved"
   },
   "story": {
     "id": "classic-tortoise-hare",
@@ -133,7 +135,19 @@
       {
         "id": "classic-tortoise-hare-pilot-04-01",
         "english": "\"Can you race with me today?\" she asks.",
-        "turkish": "\"Bugün benimle yarışır mısın?\" diye sorar."
+        "turkish": "\"Bugün benimle yarışır mısın?\" diye sorar.",
+        "translations": {
+          "es-419": "«¿Puedes competir conmigo hoy?», pregunta la tortuga.",
+          "pt-BR": "— Você pode correr comigo hoje? — pergunta a tartaruga.",
+          "id": "“Bisakah kamu berlomba denganku hari ini?” tanya kura-kura.",
+          "ar": "تسأل السلحفاة: «هل يمكنك أن تتسابق معي اليوم؟»",
+          "vi": "“Hôm nay bạn có thể chạy đua với tôi không?” rùa hỏi.",
+          "hi": "“क्या तुम आज मेरे साथ दौड़ लगाओगे?” कछुआ पूछता है।",
+          "ru": "«Ты можешь сегодня со мной посоревноваться?» — спрашивает черепаха.",
+          "bn": "“আজ তুমি কি আমার সঙ্গে দৌড়াবে?” কচ্ছপ জিজ্ঞেস করে।",
+          "ur": "“کیا تم آج میرے ساتھ دوڑ لگاؤ گے؟” کچھوا پوچھتا ہے۔",
+          "th": "“วันนี้เธอแข่งวิ่งกับฉันได้ไหม” เต่าถาม"
+        }
       },
       {
         "id": "cl-tortoise-hare-05",
@@ -172,12 +186,36 @@
       {
         "id": "classic-tortoise-hare-pilot-06-01",
         "english": "\"Start here and finish by that tree,\" says the fox.",
-        "turkish": "Tilki, \"Buradan başlayın ve şu ağacın yanında bitirin,\" der."
+        "turkish": "Tilki, \"Buradan başlayın ve şu ağacın yanında bitirin,\" der.",
+        "translations": {
+          "es-419": "«Empiecen aquí y terminen junto a aquel árbol», dice el zorro.",
+          "pt-BR": "— Comecem aqui e terminem ao lado daquela árvore — diz a raposa.",
+          "id": "“Mulai di sini dan selesai di dekat pohon itu,” kata rubah.",
+          "ar": "يقول الثعلب: «ابدآ هنا وانتهيا عند تلك الشجرة».",
+          "vi": "“Bắt đầu ở đây và về đích bên cái cây kia,” cáo nói.",
+          "hi": "“यहाँ से शुरू करो और उस पेड़ के पास दौड़ पूरी करो,” लोमड़ी कहती है।",
+          "ru": "«Начинайте здесь, а финишируйте у того дерева», — говорит лиса.",
+          "bn": "“এখান থেকে শুরু করো আর ওই গাছের কাছে শেষ করো,” শিয়াল বলে।",
+          "ur": "“یہاں سے شروع کرو اور اس درخت کے پاس ختم کرو،” لومڑی کہتی ہے۔",
+          "th": "“เริ่มตรงนี้ แล้วไปเข้าเส้นชัยข้างต้นไม้นั้น” สุนัขจิ้งจอกพูด"
+        }
       },
       {
         "id": "classic-tortoise-hare-pilot-06-02",
         "english": "Both animals look at the tree.",
-        "turkish": "İki hayvan da ağaca bakar."
+        "turkish": "İki hayvan da ağaca bakar.",
+        "translations": {
+          "es-419": "Los dos animales miran el árbol.",
+          "pt-BR": "Os dois animais olham para a árvore.",
+          "id": "Kedua hewan itu melihat ke arah pohon.",
+          "ar": "ينظر الحيوانان إلى الشجرة.",
+          "vi": "Cả hai con vật nhìn về phía cái cây.",
+          "hi": "दोनों जानवर पेड़ की ओर देखते हैं।",
+          "ru": "Оба зверя смотрят на дерево.",
+          "bn": "দুটি প্রাণী গাছটার দিকে তাকায়।",
+          "ur": "دونوں جانور درخت کی طرف دیکھتے ہیں۔",
+          "th": "สัตว์ทั้งสองมองไปที่ต้นไม้"
+        }
       },
       {
         "id": "cl-tortoise-hare-07",
@@ -233,12 +271,36 @@
       {
         "id": "classic-tortoise-hare-pilot-09-01",
         "english": "He looks back at the small tortoise.",
-        "turkish": "Dönüp küçük kaplumbağaya bakar."
+        "turkish": "Dönüp küçük kaplumbağaya bakar.",
+        "translations": {
+          "es-419": "La liebre mira hacia atrás, a la pequeña tortuga.",
+          "pt-BR": "A lebre olha para trás, para a pequena tartaruga.",
+          "id": "Kelinci menoleh ke belakang, ke arah kura-kura kecil itu.",
+          "ar": "ينظر الأرنب إلى الخلف نحو السلحفاة الصغيرة.",
+          "vi": "Thỏ nhìn lại phía sau, về phía cô rùa nhỏ.",
+          "hi": "खरगोश पीछे मुड़कर छोटे कछुए को देखता है।",
+          "ru": "Заяц оглядывается на маленькую черепаху.",
+          "bn": "খরগোশ পিছন ফিরে ছোট কচ্ছপটার দিকে তাকায়।",
+          "ur": "خرگوش پیچھے مڑ کر چھوٹے کچھوے کو دیکھتا ہے۔",
+          "th": "กระต่ายหันกลับไปมองเต่าตัวเล็ก"
+        }
       },
       {
         "id": "classic-tortoise-hare-pilot-09-02",
         "english": "\"She cannot catch me,\" he says.",
-        "turkish": "\"Bana yetişemez,\" der."
+        "turkish": "\"Bana yetişemez,\" der.",
+        "translations": {
+          "es-419": "«No puede alcanzarme», dice la liebre.",
+          "pt-BR": "— Ela não consegue me alcançar — diz a lebre.",
+          "id": "“Dia tidak bisa menyusulku,” kata kelinci.",
+          "ar": "يقول الأرنب: «لا تستطيع اللحاق بي».",
+          "vi": "“Cô ấy không thể đuổi kịp mình,” thỏ nói.",
+          "hi": "“यह मुझे नहीं पकड़ सकता,” खरगोश कहता है।",
+          "ru": "«Она не сможет меня догнать», — говорит заяц.",
+          "bn": "“ও আমাকে ধরতে পারবে না,” খরগোশ বলে।",
+          "ur": "“یہ مجھے نہیں پکڑ سکتا،” خرگوش کہتا ہے۔",
+          "th": "“เธอตามฉันไม่ทันหรอก” กระต่ายพูด"
+        }
       },
       {
         "id": "cl-tortoise-hare-10",
@@ -277,7 +339,19 @@
       {
         "id": "classic-tortoise-hare-pilot-11-01",
         "english": "The path is quiet under the warm sun.",
-        "turkish": "Ilık güneşin altında patika sessizdir."
+        "turkish": "Ilık güneşin altında patika sessizdir.",
+        "translations": {
+          "es-419": "El sendero está tranquilo bajo el sol cálido.",
+          "pt-BR": "A trilha está tranquila sob o sol quentinho.",
+          "id": "Jalan setapak itu tenang di bawah sinar matahari yang hangat.",
+          "ar": "الممرّ هادئ تحت أشعة الشمس الدافئة.",
+          "vi": "Lối mòn yên tĩnh dưới nắng ấm.",
+          "hi": "गुनगुनी धूप में पगडंडी शांत है।",
+          "ru": "На тропинке тихо под тёплым солнцем.",
+          "bn": "উষ্ণ রোদে পথটা শান্ত।",
+          "ur": "گرم دھوپ میں پگڈنڈی پُرسکون ہے۔",
+          "th": "ทางเดินเงียบสงบท่ามกลางแสงแดดอุ่น ๆ"
+        }
       },
       {
         "id": "cl-tortoise-hare-12",
@@ -299,12 +373,36 @@
       {
         "id": "classic-tortoise-hare-pilot-12-01",
         "english": "She sees the hare beside the path.",
-        "turkish": "Patikanın yanında tavşanı görür."
+        "turkish": "Patikanın yanında tavşanı görür.",
+        "translations": {
+          "es-419": "La tortuga ve a la liebre junto al sendero.",
+          "pt-BR": "A tartaruga vê a lebre ao lado da trilha.",
+          "id": "Kura-kura melihat kelinci di samping jalan setapak.",
+          "ar": "ترى السلحفاة الأرنب بجانب الممرّ.",
+          "vi": "Rùa nhìn thấy thỏ bên lối mòn.",
+          "hi": "कछुआ पगडंडी के पास खरगोश को देखता है।",
+          "ru": "Черепаха видит зайца рядом с тропинкой.",
+          "bn": "কচ্ছপ পথের পাশে খরগোশকে দেখতে পায়।",
+          "ur": "کچھوا پگڈنڈی کے پاس خرگوش کو دیکھتا ہے۔",
+          "th": "เต่าเห็นกระต่ายอยู่ข้างทางเดิน"
+        }
       },
       {
         "id": "classic-tortoise-hare-pilot-12-02",
         "english": "She walks past him without a rest.",
-        "turkish": "Dinlenmeden yanından yürüyüp geçer."
+        "turkish": "Dinlenmeden yanından yürüyüp geçer.",
+        "translations": {
+          "es-419": "Pasa caminando a su lado sin descansar.",
+          "pt-BR": "Ela passa pela lebre sem parar para descansar.",
+          "id": "Ia berjalan melewati kelinci tanpa beristirahat.",
+          "ar": "تمشي متجاوزةً إياه دون أن تستريح.",
+          "vi": "Rùa đi qua chỗ thỏ mà không dừng nghỉ.",
+          "hi": "वह बिना आराम किए उसके पास से आगे निकल जाता है।",
+          "ru": "Она проходит мимо него, не останавливаясь на отдых.",
+          "bn": "সে বিশ্রাম না নিয়ে খরগোশের পাশ কাটিয়ে এগিয়ে যায়।",
+          "ur": "وہ آرام کیے بغیر اس کے پاس سے آگے گزر جاتا ہے۔",
+          "th": "เต่าเดินผ่านกระต่ายไปโดยไม่หยุดพัก"
+        }
       },
       {
         "id": "cl-tortoise-hare-13",
@@ -360,17 +458,53 @@
       {
         "id": "classic-tortoise-hare-pilot-15-01",
         "english": "The fox stands beside her at the tree.",
-        "turkish": "Tilki ağacın yanında onunla birlikte durur."
+        "turkish": "Tilki ağacın yanında onunla birlikte durur.",
+        "translations": {
+          "es-419": "El zorro está junto a la tortuga, al lado del árbol.",
+          "pt-BR": "A raposa fica ao lado da tartaruga, perto da árvore.",
+          "id": "Rubah berdiri di samping kura-kura di dekat pohon.",
+          "ar": "يقف الثعلب بجانب السلحفاة عند الشجرة.",
+          "vi": "Cáo đứng cạnh rùa bên cái cây.",
+          "hi": "लोमड़ी पेड़ के पास कछुए के साथ खड़ी है।",
+          "ru": "Лиса стоит рядом с черепахой у дерева.",
+          "bn": "শিয়াল গাছটার কাছে কচ্ছপের পাশে দাঁড়ায়।",
+          "ur": "لومڑی درخت کے پاس کچھوے کے ساتھ کھڑی ہے۔",
+          "th": "สุนัขจิ้งจอกยืนข้างเต่าที่ต้นไม้"
+        }
       },
       {
         "id": "classic-tortoise-hare-pilot-15-02",
         "english": "The hare looks at the long path behind him.",
-        "turkish": "Tavşan arkasındaki uzun patikaya bakar."
+        "turkish": "Tavşan arkasındaki uzun patikaya bakar.",
+        "translations": {
+          "es-419": "La liebre mira el largo sendero que queda detrás.",
+          "pt-BR": "A lebre olha para a longa trilha que ficou para trás.",
+          "id": "Kelinci melihat jalan setapak yang panjang di belakangnya.",
+          "ar": "ينظر الأرنب إلى الممرّ الطويل خلفه.",
+          "vi": "Thỏ nhìn con đường dài phía sau mình.",
+          "hi": "खरगोश अपने पीछे की लंबी पगडंडी को देखता है।",
+          "ru": "Заяц смотрит на длинную тропинку позади себя.",
+          "bn": "খরগোশ তার পিছনে পড়ে থাকা লম্বা পথটার দিকে তাকায়।",
+          "ur": "خرگوش اپنے پیچھے کی لمبی پگڈنڈی کو دیکھتا ہے۔",
+          "th": "กระต่ายมองทางเดินยาวที่อยู่ข้างหลัง"
+        }
       },
       {
         "id": "classic-tortoise-hare-pilot-15-03",
         "english": "\"Next time, I will keep going,\" he says.",
-        "turkish": "\"Bir dahaki sefere devam edeceğim,\" der."
+        "turkish": "\"Bir dahaki sefere devam edeceğim,\" der.",
+        "translations": {
+          "es-419": "«La próxima vez seguiré avanzando», dice la liebre.",
+          "pt-BR": "— Da próxima vez, vou continuar — diz a lebre.",
+          "id": "“Lain kali, aku akan terus berjalan,” kata kelinci.",
+          "ar": "يقول الأرنب: «في المرة القادمة سأواصل التقدّم».",
+          "vi": "“Lần sau, tôi sẽ tiếp tục đi,” thỏ nói.",
+          "hi": "“अगली बार मैं चलता रहूँगा,” खरगोश कहता है।",
+          "ru": "«В следующий раз я буду двигаться дальше», — говорит заяц.",
+          "bn": "“পরের বার আমি এগিয়ে চলব,” খরগোশ বলে।",
+          "ur": "“اگلی بار میں آگے بڑھتا رہوں گا،” خرگوش کہتا ہے۔",
+          "th": "“คราวหน้าฉันจะเดินหน้าต่อไป” กระต่ายพูด"
+        }
       },
       {
         "id": "cl-tortoise-hare-16",
@@ -651,6 +785,23 @@
   ],
   "questionEvidence": [
     {
+      "questionId": "classic-tortoise-hare-q1",
+      "sentenceIds": [
+        "cl-tortoise-hare-07",
+        "cl-tortoise-hare-11",
+        "cl-tortoise-hare-13",
+        "cl-tortoise-hare-15"
+      ],
+      "rationale": "The hare sleeps during the race, and the tortoise reaches the finish first."
+    },
+    {
+      "questionId": "classic-tortoise-hare-q2",
+      "sentenceIds": [
+        "cl-tortoise-hare-11"
+      ],
+      "rationale": "The hare lies down and falls asleep."
+    },
+    {
       "questionId": "classic-tortoise-hare-q3",
       "sentenceIds": [
         "cl-tortoise-hare-09",
@@ -662,7 +813,7 @@
   ],
   "publicationBlockers": [
     "Human editorial and level review pending.",
-    "New sentences require ten support-language translations and review.",
-    "New revision, study-word integration and publisher validation required."
+    "New revision, study-word integration and publisher validation required.",
+    "Human language review across all eleven support languages remains pending."
   ]
 }

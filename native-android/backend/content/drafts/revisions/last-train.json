@@ -7,7 +7,8 @@
   "baseStorySHA256": "0a1416136dc389fda16f7fdcecfb358233a9816c807bf90229b850498ea51eac",
   "editorialNotes": [
     "Makes the camera/ticket location explicit before the ticket goes missing.",
-    "Explains the stone and the cost of missing the train; preserves the original ending."
+    "Explains the stone and the cost of missing the train; preserves the original ending.",
+    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -24,7 +25,17 @@
       "th"
     ],
     "completeLanguages": [
-      "tr"
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
     ],
     "unchangedTranslationsPreserved": true,
     "newSentenceIds": [
@@ -38,18 +49,9 @@
       "last-train-pilot-15-01",
       "last-train-pilot-15-02"
     ],
-    "pendingLanguages": [
-      "es-419",
-      "pt-BR",
-      "id",
-      "ar",
-      "vi",
-      "hi",
-      "ru",
-      "bn",
-      "ur",
-      "th"
-    ]
+    "pendingLanguages": [],
+    "reviewedLanguages": [],
+    "reviewStatus": "AI-assisted translation drafts; not native-speaker-approved"
   },
   "story": {
     "id": "last-train",
@@ -97,12 +99,36 @@
       {
         "id": "last-train-pilot-02-01",
         "english": "At one stall, Sam stopped to photograph a row of flowers.",
-        "turkish": "Sam bir tezgahta bir sıra çiçeğin fotoğrafını çekmek için durdu."
+        "turkish": "Sam bir tezgahta bir sıra çiçeğin fotoğrafını çekmek için durdu.",
+        "translations": {
+          "es-419": "En un puesto, Sam se detuvo para fotografiar una fila de flores.",
+          "pt-BR": "Em uma barraca, Sam parou para fotografar uma fileira de flores.",
+          "id": "Di salah satu kios, Sam berhenti untuk memotret deretan bunga.",
+          "ar": "عند أحد الأكشاك، توقف سام ليلتقط صورة لصفّ من الزهور.",
+          "vi": "Ở một quầy hàng, Sam dừng lại để chụp một hàng hoa.",
+          "hi": "एक दुकान पर सैम फूलों की एक कतार की तस्वीर लेने के लिए रुका।",
+          "ru": "У одного прилавка Сэм остановился, чтобы сфотографировать ряд цветов.",
+          "bn": "একটি দোকানে স্যাম এক সারি ফুলের ছবি তুলতে থামল।",
+          "ur": "ایک دکان پر سیم پھولوں کی ایک قطار کی تصویر لینے کے لیے رکا۔",
+          "th": "ที่แผงขายของแห่งหนึ่ง แซมหยุดถ่ายรูปดอกไม้ที่เรียงเป็นแถว"
+        }
       },
       {
         "id": "last-train-pilot-02-02",
         "english": "He put his camera and ticket on a bench.",
-        "turkish": "Fotoğraf makinesini ve biletini bir bankın üstüne koydu."
+        "turkish": "Fotoğraf makinesini ve biletini bir bankın üstüne koydu.",
+        "translations": {
+          "es-419": "Puso su cámara y su boleto en una banca.",
+          "pt-BR": "Ele colocou a câmera e a passagem em um banco.",
+          "id": "Ia meletakkan kamera dan tiketnya di sebuah bangku.",
+          "ar": "وضع كاميرته وتذكرته على مقعد.",
+          "vi": "Cậu đặt máy ảnh và vé lên một chiếc ghế dài.",
+          "hi": "उसने अपना कैमरा और टिकट एक बेंच पर रखा।",
+          "ru": "Он положил фотоаппарат и билет на скамейку.",
+          "bn": "সে তার ক্যামেরা আর টিকিট একটা বেঞ্চে রাখল।",
+          "ur": "اس نے اپنا کیمرا اور ٹکٹ ایک بینچ پر رکھا۔",
+          "th": "เขาวางกล้องกับตั๋วไว้บนม้านั่ง"
+        }
       },
       {
         "id": "last-train-3",
@@ -141,7 +167,19 @@
       {
         "id": "last-train-pilot-04-01",
         "english": "The next train would not leave until the following morning.",
-        "turkish": "Bir sonraki tren ertesi sabaha kadar kalkmayacaktı."
+        "turkish": "Bir sonraki tren ertesi sabaha kadar kalkmayacaktı.",
+        "translations": {
+          "es-419": "El siguiente tren no saldría hasta la mañana siguiente.",
+          "pt-BR": "O próximo trem só partiria na manhã seguinte.",
+          "id": "Kereta berikutnya baru akan berangkat keesokan paginya.",
+          "ar": "لم يكن القطار التالي سيغادر حتى صباح اليوم التالي.",
+          "vi": "Chuyến tàu tiếp theo phải đến sáng hôm sau mới khởi hành.",
+          "hi": "अगली ट्रेन अगली सुबह से पहले नहीं चलने वाली थी।",
+          "ru": "Следующий поезд отправлялся только на следующее утро.",
+          "bn": "পরের ট্রেন পরদিন সকাল পর্যন্ত ছাড়বে না।",
+          "ur": "اگلی ٹرین اگلی صبح سے پہلے روانہ نہیں ہونی تھی۔",
+          "th": "รถไฟขบวนถัดไปจะไม่ออกจนกว่าจะถึงเช้าวันรุ่งขึ้น"
+        }
       },
       {
         "id": "last-train-5",
@@ -214,12 +252,36 @@
       {
         "id": "last-train-pilot-08-01",
         "english": "\"I will wait beside the station clock,\" she called.",
-        "turkish": "\"İstasyon saatinin yanında bekleyeceğim,\" diye seslendi."
+        "turkish": "\"İstasyon saatinin yanında bekleyeceğim,\" diye seslendi.",
+        "translations": {
+          "es-419": "«Te esperaré junto al reloj de la estación», gritó ella.",
+          "pt-BR": "— Vou esperar ao lado do relógio da estação — ela gritou.",
+          "id": "“Aku akan menunggu di samping jam stasiun,” seru Lily.",
+          "ar": "نادت: «سأنتظرك بجانب ساعة المحطة».",
+          "vi": "“Tớ sẽ đợi cạnh đồng hồ nhà ga,” Lily gọi.",
+          "hi": "“मैं स्टेशन की घड़ी के पास इंतज़ार करूँगी,” उसने आवाज़ दी।",
+          "ru": "«Я буду ждать у вокзальных часов», — крикнула она.",
+          "bn": "“আমি স্টেশনের ঘড়ির পাশে অপেক্ষা করব,” সে ডেকে বলল।",
+          "ur": "“میں اسٹیشن کی گھڑی کے پاس انتظار کروں گی،” اس نے آواز دی۔",
+          "th": "“ฉันจะรอข้างนาฬิกาของสถานี” เธอตะโกนบอก"
+        }
       },
       {
         "id": "last-train-pilot-08-02",
         "english": "Sam knew exactly where to find her.",
-        "turkish": "Sam onu nerede bulacağını tam olarak biliyordu."
+        "turkish": "Sam onu nerede bulacağını tam olarak biliyordu.",
+        "translations": {
+          "es-419": "Sam sabía exactamente dónde encontrarla.",
+          "pt-BR": "Sam sabia exatamente onde encontrá-la.",
+          "id": "Sam tahu persis di mana ia bisa menemukan Lily.",
+          "ar": "كان سام يعرف بالضبط أين يجدها.",
+          "vi": "Sam biết chính xác có thể tìm Lily ở đâu.",
+          "hi": "सैम को ठीक-ठीक पता था कि वह उसे कहाँ मिलेगी।",
+          "ru": "Сэм точно знал, где её найти.",
+          "bn": "স্যাম ঠিক জানত কোথায় তাকে খুঁজে পাবে।",
+          "ur": "سیم کو بالکل معلوم تھا کہ وہ اسے کہاں ملے گی۔",
+          "th": "แซมรู้แน่ชัดว่าจะไปหาเธอได้ที่ไหน"
+        }
       },
       {
         "id": "last-train-9",
@@ -292,12 +354,36 @@
       {
         "id": "last-train-pilot-12-01",
         "english": "\"The wind was blowing it away,\" the woman explained.",
-        "turkish": "Kadın, \"Rüzgâr onu uçuruyordu,\" diye açıkladı."
+        "turkish": "Kadın, \"Rüzgâr onu uçuruyordu,\" diye açıkladı.",
+        "translations": {
+          "es-419": "«El viento se lo estaba llevando», explicó la mujer.",
+          "pt-BR": "— O vento estava levando a passagem — explicou a mulher.",
+          "id": "“Angin hampir menerbangkan tiket itu,” jelas wanita itu.",
+          "ar": "شرحت المرأة: «كانت الريح تحمل التذكرة بعيدًا».",
+          "vi": "“Gió đang thổi bay tấm vé,” người phụ nữ giải thích.",
+          "hi": "“हवा टिकट को उड़ा रही थी,” महिला ने समझाया।",
+          "ru": "«Ветер уносил билет», — объяснила женщина.",
+          "bn": "“হাওয়ায় টিকিটটা উড়ে যাচ্ছিল,” মহিলা বুঝিয়ে বললেন।",
+          "ur": "“ہوا ٹکٹ کو اڑا رہی تھی،” عورت نے سمجھایا۔",
+          "th": "“ลมกำลังพัดตั๋วปลิวไป” ผู้หญิงคนนั้นอธิบาย"
+        }
       },
       {
         "id": "last-train-pilot-12-02",
         "english": "\"I put the stone there to keep it safe.\"",
-        "turkish": "\"Güvende tutmak için taşı üstüne koydum.\""
+        "turkish": "\"Güvende tutmak için taşı üstüne koydum.\"",
+        "translations": {
+          "es-419": "«Puse la piedra ahí para que no se perdiera».",
+          "pt-BR": "— Coloquei a pedra ali para protegê-la.",
+          "id": "“Saya menaruh batu di sana supaya tiketnya tetap aman.”",
+          "ar": "«وضعت الحجر هناك لأحافظ عليها».",
+          "vi": "“Cô đặt viên đá ở đó để giữ tấm vé an toàn.”",
+          "hi": "“मैंने उसे सुरक्षित रखने के लिए वहाँ पत्थर रख दिया।”",
+          "ru": "«Я положила сверху камень, чтобы он не улетел».",
+          "bn": "“টিকিটটা যাতে হারিয়ে না যায়, তাই ওখানে পাথরটা রেখেছিলাম।”",
+          "ur": "“میں نے اسے محفوظ رکھنے کے لیے وہاں پتھر رکھ دیا تھا۔”",
+          "th": "“ฉันเลยวางหินไว้ตรงนั้นเพื่อให้ตั๋วอยู่ปลอดภัย”"
+        }
       },
       {
         "id": "last-train-13",
@@ -353,12 +439,36 @@
       {
         "id": "last-train-pilot-15-01",
         "english": "She was still standing beside the clock.",
-        "turkish": "Hâlâ saatin yanında duruyordu."
+        "turkish": "Hâlâ saatin yanında duruyordu.",
+        "translations": {
+          "es-419": "Ella seguía de pie junto al reloj.",
+          "pt-BR": "Ela ainda estava de pé ao lado do relógio.",
+          "id": "Lily masih berdiri di samping jam.",
+          "ar": "كانت لا تزال واقفة بجانب الساعة.",
+          "vi": "Lily vẫn đang đứng cạnh đồng hồ.",
+          "hi": "वह अब भी घड़ी के पास खड़ी थी।",
+          "ru": "Она всё ещё стояла рядом с часами.",
+          "bn": "সে তখনও ঘড়ির পাশে দাঁড়িয়ে ছিল।",
+          "ur": "وہ اب بھی گھڑی کے پاس کھڑی تھی۔",
+          "th": "เธอยังคงยืนอยู่ข้างนาฬิกา"
+        }
       },
       {
         "id": "last-train-pilot-15-02",
         "english": "Sam held up the ticket so she could see it.",
-        "turkish": "Sam bileti görebilmesi için havaya kaldırdı."
+        "turkish": "Sam bileti görebilmesi için havaya kaldırdı.",
+        "translations": {
+          "es-419": "Sam levantó el boleto para que ella pudiera verlo.",
+          "pt-BR": "Sam levantou a passagem para que ela pudesse vê-la.",
+          "id": "Sam mengangkat tiket itu agar Lily bisa melihatnya.",
+          "ar": "رفع سام التذكرة حتى تتمكن من رؤيتها.",
+          "vi": "Sam giơ tấm vé lên để Lily có thể nhìn thấy.",
+          "hi": "सैम ने टिकट ऊपर उठाया ताकि वह उसे देख सके।",
+          "ru": "Сэм поднял билет, чтобы она могла его увидеть.",
+          "bn": "স্যাম টিকিটটা উঁচু করে ধরল, যাতে সে দেখতে পায়।",
+          "ur": "سیم نے ٹکٹ اوپر اٹھایا تاکہ وہ اسے دیکھ سکے۔",
+          "th": "แซมชูตั๋วขึ้นให้เธอมองเห็น"
+        }
       },
       {
         "id": "last-train-16",
@@ -636,14 +746,38 @@
       "word": "missing",
       "translation": "kayıp, yerinde olmayan",
       "pronunciation": "/ˈmɪsɪŋ/",
-      "example": "His ticket is missing."
+      "example": "His ticket is missing.",
+      "translations": {
+        "es-419": "perdido, que no está",
+        "pt-BR": "perdido, que não está no lugar",
+        "id": "hilang",
+        "ar": "مفقود",
+        "vi": "bị mất",
+        "hi": "गुम, लापता",
+        "ru": "пропавший",
+        "bn": "হারিয়ে গেছে",
+        "ur": "گم، لاپتا",
+        "th": "หายไป"
+      }
     },
     {
       "id": "pilot-last-train-hurried",
       "word": "hurried",
       "translation": "aceleyle gitti",
       "pronunciation": "/ˈhɜːrid/",
-      "example": "They hurried to the station."
+      "example": "They hurried to the station.",
+      "translations": {
+        "es-419": "se apresuraron",
+        "pt-BR": "foram depressa",
+        "id": "bergegas",
+        "ar": "أسرعوا",
+        "vi": "vội đi",
+        "hi": "जल्दी से गए",
+        "ru": "поспешили",
+        "bn": "তাড়াতাড়ি গেল",
+        "ur": "جلدی سے گئے",
+        "th": "รีบไป"
+      }
     }
   ],
   "studyWordIds": [
@@ -660,6 +794,31 @@
   ],
   "questionEvidence": [
     {
+      "questionId": "last-train-q1",
+      "sentenceIds": [
+        "last-train-6",
+        "last-train-12",
+        "last-train-16"
+      ],
+      "rationale": "A missing ticket is found and the friends board the last train."
+    },
+    {
+      "questionId": "last-train-q2",
+      "sentenceIds": [
+        "last-train-11",
+        "last-train-12"
+      ],
+      "rationale": "The woman points to the bench, where the ticket lies under a stone."
+    },
+    {
+      "questionId": "last-train-q3",
+      "sentenceIds": [
+        "last-train-10",
+        "last-train-11"
+      ],
+      "rationale": "The woman packing flowers directs Sam to the ticket."
+    },
+    {
       "questionId": "last-train-q4",
       "sentenceIds": [
         "last-train-4",
@@ -671,7 +830,7 @@
   ],
   "publicationBlockers": [
     "Human editorial and level review pending.",
-    "New sentences require ten support-language translations and review.",
-    "New revision, study-word integration and publisher validation required."
+    "New revision, study-word integration and publisher validation required.",
+    "Human language review across all eleven support languages remains pending."
   ]
 }

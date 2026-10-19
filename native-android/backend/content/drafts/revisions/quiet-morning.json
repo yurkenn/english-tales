@@ -721,6 +721,22 @@
   ],
   "questionEvidence": [
     {
+      "questionId": "quiet-morning-q1",
+      "sentenceIds": [
+        "qm-5",
+        "qm-7",
+        "qm-9"
+      ],
+      "rationale": "Mia greets the man and shares bread; the closing sentence identifies the small act of kindness."
+    },
+    {
+      "questionId": "quiet-morning-q2",
+      "sentenceIds": [
+        "qm-7"
+      ],
+      "rationale": "The purchase is explicitly two warm rolls."
+    },
+    {
       "questionId": "quiet-morning-q3",
       "sentenceIds": [
         "qm-6",
