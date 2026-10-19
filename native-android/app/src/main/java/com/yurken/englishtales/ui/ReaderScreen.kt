@@ -151,7 +151,7 @@ internal open class Narrator(context: Context, private val focus: NarrationFocus
     fun speak(text: String) = speakAll(listOf(text))
 
     /** Reads [texts] one after another as separate utterances, so [spokenIndex] follows the reading. */
-    fun speakAll(texts: List<String>) {
+    open fun speakAll(texts: List<String>) {
         if (closed || texts.isEmpty()) return
         if (!ready) { if (error == null) {pending = texts;preparing = true}; return }
         if (!focus.request()) { error = appContext.getString(R.string.ses_su_anda_baska_bir); return }
@@ -181,9 +181,9 @@ internal fun rememberNarrator(factory: (Context) -> Narrator = ::Narrator): Narr
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={},appearanceStore: ReadingPreferencesStore?=null,onSaveGlossaryWord: (WordInfo)->Unit={},onLookup: (WordInfo)->Unit={}) {
+internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={},appearanceStore: ReadingPreferencesStore?=null,onSaveGlossaryWord: (WordInfo)->Unit={},onLookup: (WordInfo)->Unit={},narratorFactory: (Context)->Narrator=::Narrator) {
     val context=LocalContext.current
-    val narrator=rememberNarrator()
+    val narrator=rememberNarrator(narratorFactory)
     val pageCount=(story.sentences.size+SENTENCES_PER_PAGE-1)/SENTENCES_PER_PAGE
     var page by rememberSaveable(story.revisionId) { mutableIntStateOf(initialReaderPage(story,snapshot)) }
     // Scrubbing the slider only moves the page on screen; the position is reported once the drag ends,
@@ -234,7 +234,9 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
         var narrationFrom by remember { mutableIntStateOf(0) }
         fun listen(from: Int=0) { narrationFrom=from; narrator.speakAll(pageSentences.drop(from).map { it.english }) }
         val readingIndex=narrator.spokenIndex?.let { narrationFrom+it }
-        LaunchedEffect(autoListen) { if(autoListen) listen() }
+        // Starts once per reader visit: a rotation or restore must not restart speech the learner paused.
+        var autoListened by rememberSaveable(story.revisionId) { mutableStateOf(false) }
+        LaunchedEffect(autoListen) { if(autoListen && !autoListened) { autoListened=true;listen() } }
         fun changePage(next: Int,report: Boolean=true) {
             val target=next.coerceIn(0,pageCount-1)
             if(target==page) return
