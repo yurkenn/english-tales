@@ -12,7 +12,10 @@
     "glossary:build": "node tools/glossary.mjs build",
     "glossary:check": "node tools/glossary.mjs check",
     "glossary:sample": "node tools/glossary.mjs sample",
-    "glossary:disputed": "node tools/glossary.mjs disputed"
+    "glossary:disputed": "node tools/glossary.mjs disputed",
+    "study-words:write": "node tools/study-words.mjs write",
+    "study-words:check": "node tools/study-words.mjs check",
+    "study-words:report": "node tools/study-words.mjs report"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3.14"
