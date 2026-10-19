@@ -1,5 +1,7 @@
 # Beş mevcut hikâye — editoryal ve dil tutarlılığı incelemesi
 
+**İlk inceleme kaydı:** Daha sonra Claude CLI ile bağımsız ikinci inceleme tamamlandı ve ek düzeltmeler yapıldı. Güncel içerik sayıları ve eski cümle düzeltmeleri için [ikinci inceleme raporuna](STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md) bakın. Aşağıdaki ilk tur bulguları tarihsel kayıttır.
+
 19 Ekim 2026 · Codex tarafından **AI destekli inceleme ve düzeltmeler tamamlandı**. Bu kayıt insan editör, ana dil konuşuru veya bağımsız CEFR onayı değildir. `reviewedBy: null` ve `reviewedLanguages: []` korundu. Canlı yayın yapılmadı.
 
 İnceleme; beş hikâyenin İngilizce anlatısını, Türkçe karşılığını, 10 ek dildeki cümle/açıklama/çalışma kelimesi alanlarını ve 17 anlama sorusunun doğru yanıtı ile kaynak cümlelerini kapsadı. Kontrol edilen konular: olay sırası, eşyanın/karakterin takibi, çeviride eklenen veya kaybolan anlam, kişi/yer adları, yerel dilbilgisel cinsiyet, kelimenin cümledeki isim/fiil kullanımı ve hedef seviyedeki okuma yükü.

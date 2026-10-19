@@ -60,7 +60,25 @@ test('revision pilot preserves its base identity and accurately reports translat
     assert.equal(doc.status,'draft');assert.equal(doc.reviewedBy,null);
     const revised=new Map(s.sentences.map(x=>[x.id,x]));
     assert.equal(revised.size,s.sentences.length);
-    for(const sentence of original.sentences)assert.deepEqual(revised.get(sentence.id),sentence,`${s.id}: legacy sentence changed`);
+    // Explicit editorial corrections may update text, never identity. Every changed
+    // legacy field must retain its exact source and replacement for review.
+    const corrections=doc.legacySentenceCorrections??[],used=new Set();
+    for(const sentence of original.sentences){
+      const expected=structuredClone(sentence);
+      for(const correction of corrections.filter(c=>c.sentenceId===sentence.id)){
+        const key=`${correction.sentenceId}:${correction.field}`;
+        assert.ok(!used.has(key),`${s.id}: duplicate correction`);used.add(key);
+        assert.match(correction.field,/^(english|turkish|translations\.(es-419|pt-BR|id|ar|vi|hi|ru|bn|ur|th))$/);
+        assert.ok(correction.reason?.trim()&&correction.after?.trim(),`${s.id}: undocumented correction`);
+        assert.notEqual(correction.before,correction.after,`${s.id}: empty correction`);
+        const parts=correction.field.split('.'),field=parts.pop();
+        const parent=parts.reduce((value,key)=>value[key],expected);
+        assert.equal(parent[field],correction.before,`${s.id}: stale correction source`);
+        parent[field]=correction.after;
+      }
+      assert.deepEqual(revised.get(sentence.id),expected,`${s.id}: unrecorded legacy sentence change`);
+    }
+    assert.equal(used.size,corrections.length,`${s.id}: correction refers to an unknown legacy sentence`);
     assert.deepEqual(s.questions.map(q=>q.id),original.questions.map(q=>q.id),`${s.id}: question identity changed`);
     const originalIds=new Set(original.sentences.map(x=>x.id));
     const added=s.sentences.filter(x=>!originalIds.has(x.id));

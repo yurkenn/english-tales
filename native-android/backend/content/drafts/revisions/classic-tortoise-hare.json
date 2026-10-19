@@ -8,8 +8,9 @@
   "editorialNotes": [
     "Adds spatial clarity and the hare’s mistaken reasoning.",
     "Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied.",
-    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
-    "AI editorial pass: simplifies an inference distractor for supported A1 reading; local grammatical gender in translations is not forced to match English pronouns."
+    "Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections.",
+    "AI editorial pass: simplifies an inference distractor for supported A1 reading; local grammatical gender in translations is not forced to match English pronouns.",
+    "Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -38,7 +39,7 @@
       "ur",
       "th"
     ],
-    "unchangedTranslationsPreserved": true,
+    "unchangedTranslationsPreserved": false,
     "newSentenceIds": [
       "classic-tortoise-hare-pilot-04-01",
       "classic-tortoise-hare-pilot-06-01",
@@ -105,7 +106,7 @@
         "turkish": "\"Çok yavaşsın!\" der.",
         "translations": {
           "es-419": "\"¡Eres muy lenta!\", dice.",
-          "pt-BR": "— Você é muito lenta! — diz ela.",
+          "pt-BR": "— Você é muito lenta! — diz a lebre.",
           "id": "\"Kamu lambat sekali!\" katanya.",
           "ar": "يقول: «أنتِ بطيئة جدًا!»",
           "vi": "\"Cô chậm quá!\" thỏ nói.",
@@ -196,7 +197,7 @@
           "vi": "“Bắt đầu ở đây và về đích bên cái cây kia,” cáo nói.",
           "hi": "“यहाँ से शुरू करो और उस पेड़ के पास दौड़ पूरी करो,” लोमड़ी कहती है।",
           "ru": "«Начинайте здесь, а финишируйте у того дерева», — говорит лиса.",
-          "bn": "“এখান থেকে শুরু করো আর ওই গাছের কাছে শেষ করো,” শিয়াল বলে।",
+          "bn": "“এখান থেকে শুরু করো আর ওই গাছের কাছে শেষ করো,” শেয়াল বলে।",
           "ur": "“یہاں سے شروع کرو اور اس درخت کے پاس ختم کرو،” لومڑی کہتی ہے۔",
           "th": "“เริ่มตรงนี้ แล้วไปเข้าเส้นชัยข้างต้นไม้นั้น” สุนัขจิ้งจอกพูด"
         }
@@ -309,7 +310,7 @@
         "turkish": "\"Dinlenmek için zamanım var,\" diye düşünür.",
         "translations": {
           "es-419": "\"Tengo tiempo para descansar\", piensa.",
-          "pt-BR": "\"Tenho tempo para descansar\", ela pensa.",
+          "pt-BR": "\"Tenho tempo para descansar\", pensa a lebre.",
           "id": "\"Aku punya waktu untuk beristirahat,\" pikirnya.",
           "ar": "يفكّر: «لديّ وقت لأستريح.»",
           "vi": "\"Mình còn thời gian để nghỉ một chút,\" chú nghĩ.",
@@ -325,8 +326,8 @@
         "english": "He lies down and falls asleep.",
         "turkish": "Uzanır ve uykuya dalar.",
         "translations": {
-          "es-419": "Se acuesta y se queda dormida.",
-          "pt-BR": "Ela se deita e cai no sono.",
+          "es-419": "La liebre se acuesta y se queda dormida.",
+          "pt-BR": "A lebre se deita e cai no sono.",
           "id": "Ia berbaring dan tertidur.",
           "ar": "يستلقي ويغفو.",
           "vi": "Chú nằm xuống và ngủ thiếp đi.",
@@ -468,7 +469,7 @@
           "vi": "Cáo đứng cạnh rùa bên cái cây.",
           "hi": "लोमड़ी पेड़ के पास कछुए के साथ खड़ी है।",
           "ru": "Лиса стоит рядом с черепахой у дерева.",
-          "bn": "শিয়াল গাছটার কাছে কচ্ছপের পাশে দাঁড়ায়।",
+          "bn": "শেয়াল গাছটার কাছে কচ্ছপের পাশে দাঁড়ায়।",
           "ur": "لومڑی درخت کے پاس کچھوے کے ساتھ کھڑی ہے۔",
           "th": "สุนัขจิ้งจอกยืนข้างเต่าที่ต้นไม้"
         }
@@ -831,6 +832,45 @@
     ],
     "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
     "humanApproval": false,
-    "nativeSpeakerApproval": false
-  }
+    "nativeSpeakerApproval": false,
+    "secondReview": {
+      "reviewer": "Claude Code",
+      "model": "claude-opus-5-5",
+      "type": "ai-assisted",
+      "reviewedOn": "2026-10-19",
+      "report": "../../../../docs/STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md",
+      "humanApproval": false,
+      "nativeSpeakerApproval": false
+    }
+  },
+  "legacySentenceCorrections": [
+    {
+      "sentenceId": "cl-tortoise-hare-03",
+      "field": "translations.pt-BR",
+      "before": "— Você é muito lenta! — diz ela.",
+      "after": "— Você é muito lenta! — diz a lebre.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "cl-tortoise-hare-10",
+      "field": "translations.pt-BR",
+      "before": "\"Tenho tempo para descansar\", ela pensa.",
+      "after": "\"Tenho tempo para descansar\", pensa a lebre.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "cl-tortoise-hare-11",
+      "field": "translations.es-419",
+      "before": "Se acuesta y se queda dormida.",
+      "after": "La liebre se acuesta y se queda dormida.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "cl-tortoise-hare-11",
+      "field": "translations.pt-BR",
+      "before": "Ela se deita e cai no sono.",
+      "after": "A lebre se deita e cai no sono.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    }
+  ]
 }

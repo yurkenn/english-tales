@@ -25,5 +25,5 @@
   ],
   "nextStep": "Human editorial/language acceptance of AI-reviewed drafts; fresh live revision/snapshot guards and publisher acceptance. Local reader/save/review contract verified.",
   "localIntegration": "preview adapter and Android fixture verified; no production catalog or live content change",
-  "aiEditorialReview": "completed with corrections; human/native-speaker approval remains pending"
+  "aiEditorialReview": "Codex review plus independent Claude second review completed; accepted corrections applied; human/native-speaker approval remains pending"
 }

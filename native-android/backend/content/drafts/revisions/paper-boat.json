@@ -8,9 +8,10 @@
   "editorialNotes": [
     "Clarifies the boat’s position at a low bank and introduces the girl once, at her first action.",
     "Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs.",
-    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
+    "Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections.",
     "The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation.",
-    "AI editorial pass: explicitly launches the boat before the wind moves it; the children then stay back from the edge. Added launch sentence has draft translations in all support languages."
+    "AI editorial pass: explicitly launches the boat before the wind moves it; the children then stay back from the edge. Added launch sentence has draft translations in all support languages.",
+    "Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -39,7 +40,7 @@
       "ur",
       "th"
     ],
-    "unchangedTranslationsPreserved": true,
+    "unchangedTranslationsPreserved": false,
     "newSentenceIds": [
       "paper-boat-pilot-01-01",
       "paper-boat-pilot-01-02",
@@ -51,6 +52,7 @@
       "paper-boat-pilot-06-03",
       "paper-boat-pilot-08-01",
       "paper-boat-pilot-08-02",
+      "paper-boat-pilot-08-03",
       "paper-boat-pilot-09-01",
       "paper-boat-pilot-09-02",
       "paper-boat-pilot-09-03",
@@ -176,19 +178,19 @@
       },
       {
         "id": "paper-boat-pilot-02-02",
-        "english": "They stayed away from the edge of the water.",
-        "turkish": "Suyun kenarından uzak durdular.",
+        "english": "Then they stepped back from the edge of the water.",
+        "turkish": "Sonra suyun kenarından geri çekildiler.",
         "translations": {
-          "es-419": "Se mantuvieron alejados de la orilla del agua.",
-          "pt-BR": "Eles ficaram longe da beira da água.",
-          "id": "Mereka menjauh dari tepi air.",
-          "ar": "بقيا بعيدين عن حافة الماء.",
-          "vi": "Hai anh em tránh xa mép nước.",
-          "hi": "वे पानी के किनारे से दूर रहे।",
-          "ru": "Они держались подальше от края воды.",
-          "bn": "তারা জলের কিনারা থেকে দূরে থাকল।",
-          "ur": "وہ پانی کے کنارے سے دور رہے۔",
-          "th": "ทั้งสองอยู่ห่างจากขอบน้ำ"
+          "es-419": "Luego se alejaron de la orilla del agua.",
+          "pt-BR": "Depois, eles se afastaram da beira da água.",
+          "id": "Lalu mereka mundur dari tepi air.",
+          "ar": "ثم ابتعدا عن حافة الماء.",
+          "vi": "Sau đó, hai anh em lùi ra xa mép nước.",
+          "hi": "फिर वे पानी के किनारे से पीछे हट गए।",
+          "ru": "Потом они отошли от края воды.",
+          "bn": "তারপর তারা জলের কিনারা থেকে সরে এল।",
+          "ur": "پھر وہ پانی کے کنارے سے پیچھے ہٹ گئے۔",
+          "th": "จากนั้นทั้งสองก็ถอยห่างจากขอบน้ำ"
         }
       },
       {
@@ -329,19 +331,19 @@
       },
       {
         "id": "pb-8",
-        "english": "The message said, Every journey starts somewhere.",
-        "turkish": "Mesajda, Her yolculuk bir yerden başlar, yazıyordu.",
+        "english": "The message said, \"Every journey starts somewhere.\"",
+        "turkish": "Mesajda \"Her yolculuk bir yerden başlar.\" yazıyordu.",
         "translations": {
-          "es-419": "El mensaje decía: Todo viaje empieza en algún lugar.",
-          "pt-BR": "A mensagem dizia: Toda viagem começa em algum lugar.",
-          "id": "Pesan itu berbunyi, Setiap perjalanan dimulai dari suatu tempat.",
-          "ar": "قالت الرسالة: كل رحلة تبدأ من مكان ما.",
-          "vi": "Lời nhắn viết: Mọi hành trình đều bắt đầu từ một nơi nào đó.",
-          "hi": "संदेश में लिखा था: हर सफ़र कहीं न कहीं से शुरू होता है।",
+          "es-419": "El mensaje decía: «Todo viaje empieza en algún lugar».",
+          "pt-BR": "A mensagem dizia: \"Toda viagem começa em algum lugar.\"",
+          "id": "Pesan itu berbunyi, “Setiap perjalanan dimulai dari suatu tempat.”",
+          "ar": "قالت الرسالة: «كل رحلة تبدأ من مكان ما».",
+          "vi": "Lời nhắn viết: “Mọi hành trình đều bắt đầu từ một nơi nào đó.”",
+          "hi": "संदेश में लिखा था: “हर सफ़र कहीं न कहीं से शुरू होता है।”",
           "ru": "В записке было: «Каждое путешествие с чего-то начинается».",
-          "bn": "বার্তায় লেখা ছিল, প্রতিটি যাত্রা কোথাও না কোথাও থেকে শুরু হয়।",
-          "ur": "پیغام میں لکھا تھا: ہر سفر کہیں نہ کہیں سے شروع ہوتا ہے۔",
-          "th": "ข้อความนั้นเขียนว่า ทุกการเดินทางย่อมมีจุดเริ่มต้น"
+          "bn": "বার্তায় লেখা ছিল, “প্রতিটি যাত্রা কোথাও না কোথাও থেকে শুরু হয়।”",
+          "ur": "پیغام میں لکھا تھا: «ہر سفر کہیں نہ کہیں سے شروع ہوتا ہے۔»",
+          "th": "ข้อความนั้นเขียนว่า “ทุกการเดินทางย่อมมีจุดเริ่มต้น”"
         }
       },
       {
@@ -371,11 +373,28 @@
           "id": "“Ke pohon itu,” kata Leo sambil menunjuk sepanjang tepi sungai.",
           "ar": "قال ليو مشيرًا على امتداد الضفة: «إلى تلك الشجرة».",
           "vi": "“Đến cái cây kia,” Leo nói và chỉ dọc theo bờ sông.",
-          "hi": "“उस पेड़ तक,” लियो ने किनारे की ओर इशारा करते हुए कहा।",
+          "hi": "“उस पेड़ तक,” लियो ने किनारे के साथ-साथ इशारा करते हुए कहा।",
           "ru": "«К тому дереву», — сказал Лео, показывая вдоль берега.",
           "bn": "“ওই গাছটা পর্যন্ত,” লিও পাড় বরাবর আঙুল দেখিয়ে বলল।",
-          "ur": "“اس درخت تک،” لیو نے کنارے کی طرف اشارہ کرتے ہوئے کہا۔",
+          "ur": "“اس درخت تک،” لیو نے کنارے کے ساتھ ساتھ اشارہ کرتے ہوئے کہا۔",
           "th": "“ไปถึงต้นไม้นั้น” ลีโอพูดพร้อมชี้ไปตามริมฝั่ง"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-08-03",
+        "english": "The girl put the boat back in the water.",
+        "turkish": "Kız tekneyi yeniden suya bıraktı.",
+        "translations": {
+          "es-419": "La niña volvió a poner el barco en el agua.",
+          "pt-BR": "A menina colocou o barco de volta na água.",
+          "id": "Anak perempuan itu menaruh perahu itu kembali ke air.",
+          "ar": "أعادت الفتاة القارب إلى الماء.",
+          "vi": "Cô bé đặt chiếc thuyền trở lại mặt nước.",
+          "hi": "लड़की ने नाव को फिर से पानी में रख दिया।",
+          "ru": "Девочка снова опустила кораблик на воду.",
+          "bn": "মেয়েটি নৌকাটা আবার জলে নামিয়ে দিল।",
+          "ur": "لڑکی نے کشتی دوبارہ پانی میں رکھ دی۔",
+          "th": "เด็กผู้หญิงวางเรือกลับลงไปในน้ำ"
         }
       },
       {
@@ -838,6 +857,94 @@
     ],
     "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
     "humanApproval": false,
-    "nativeSpeakerApproval": false
-  }
+    "nativeSpeakerApproval": false,
+    "secondReview": {
+      "reviewer": "Claude Code",
+      "model": "claude-opus-5-5",
+      "type": "ai-assisted",
+      "reviewedOn": "2026-10-19",
+      "report": "../../../../docs/STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md",
+      "humanApproval": false,
+      "nativeSpeakerApproval": false
+    }
+  },
+  "legacySentenceCorrections": [
+    {
+      "sentenceId": "pb-8",
+      "field": "english",
+      "before": "The message said, Every journey starts somewhere.",
+      "after": "The message said, \"Every journey starts somewhere.\"",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "turkish",
+      "before": "Mesajda, Her yolculuk bir yerden başlar, yazıyordu.",
+      "after": "Mesajda \"Her yolculuk bir yerden başlar.\" yazıyordu.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.es-419",
+      "before": "El mensaje decía: Todo viaje empieza en algún lugar.",
+      "after": "El mensaje decía: «Todo viaje empieza en algún lugar».",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.pt-BR",
+      "before": "A mensagem dizia: Toda viagem começa em algum lugar.",
+      "after": "A mensagem dizia: \"Toda viagem começa em algum lugar.\"",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.id",
+      "before": "Pesan itu berbunyi, Setiap perjalanan dimulai dari suatu tempat.",
+      "after": "Pesan itu berbunyi, “Setiap perjalanan dimulai dari suatu tempat.”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.ar",
+      "before": "قالت الرسالة: كل رحلة تبدأ من مكان ما.",
+      "after": "قالت الرسالة: «كل رحلة تبدأ من مكان ما».",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.vi",
+      "before": "Lời nhắn viết: Mọi hành trình đều bắt đầu từ một nơi nào đó.",
+      "after": "Lời nhắn viết: “Mọi hành trình đều bắt đầu từ một nơi nào đó.”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.hi",
+      "before": "संदेश में लिखा था: हर सफ़र कहीं न कहीं से शुरू होता है।",
+      "after": "संदेश में लिखा था: “हर सफ़र कहीं न कहीं से शुरू होता है।”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.bn",
+      "before": "বার্তায় লেখা ছিল, প্রতিটি যাত্রা কোথাও না কোথাও থেকে শুরু হয়।",
+      "after": "বার্তায় লেখা ছিল, “প্রতিটি যাত্রা কোথাও না কোথাও থেকে শুরু হয়।”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.ur",
+      "before": "پیغام میں لکھا تھا: ہر سفر کہیں نہ کہیں سے شروع ہوتا ہے۔",
+      "after": "پیغام میں لکھا تھا: «ہر سفر کہیں نہ کہیں سے شروع ہوتا ہے۔»",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "pb-8",
+      "field": "translations.th",
+      "before": "ข้อความนั้นเขียนว่า ทุกการเดินทางย่อมมีจุดเริ่มต้น",
+      "after": "ข้อความนั้นเขียนว่า “ทุกการเดินทางย่อมมีจุดเริ่มต้น”",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    }
+  ]
 }

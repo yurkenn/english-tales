@@ -2,7 +2,7 @@
 
 **İnceleme taslaklarıdır; uygulamaya veya canlı kataloğa yayımlanmadı.** İngilizce ve Türkçe metinler birlikte okunabilir. Seviye etiketleri hedef seviyedir; bağımsız CEFR onayı anlamına gelmez.
 
-**Güncel odak: yalnız mevcut beş hikâye.** Beş revizyonun da 11 destek dilindeki metin alanları dolu. AI destekli editoryal/dil tutarlılığı incelemesi ve düzeltmeleri tamamlandı; insan ve ana dil konuşuru onayı verilmedi. Önceki iki yeni klasik taslağı beklemede korunur. [İnceleme raporu](STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md).
+**Güncel odak: yalnız mevcut beş hikâye.** Beş revizyonun da 11 destek dilindeki metin alanları dolu. Codex ve Claude ile iki AI incelemesi ve doğrulanan düzeltmeler tamamlandı; insan ve ana dil konuşuru onayı verilmedi. Önceki iki yeni klasik taslağı beklemede korunur. [İlk inceleme](STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md) · [Claude ikinci inceleme ve kararlar](STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md).
 
 ## A Quiet Morning · A1
 
@@ -56,11 +56,11 @@
 
 **Yanıt anahtarı:** 1: A, 2: C, 3: B
 
-Editör notları: Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone. Keeps all legacy sentence IDs and wording; adds short A1-target turns. A1 is a target for editorial review, not formal CEFR certification. Added fourteen sentences and seven new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. Correct answers are distributed across positions A, C and B in the three comprehension questions. AI editorial pass: the noun in gave him a smile has its own pilot identity and noun glosses in all eleven languages. The existing global smile record is unchanged. The added inference question uses the past tense consistently.
+Editör notları: Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone. Keeps all legacy sentence IDs and wording; adds short A1-target turns. A1 is a target for editorial review, not formal CEFR certification. Added fourteen sentences and seven new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections. Correct answers are distributed across positions A, C and B in the three comprehension questions. AI editorial pass: the noun in gave him a smile has its own pilot identity and noun glosses in all eleven languages. The existing global smile record is unchanged. The added inference question uses the past tense consistently. Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned.
 
 ## The Paper Boat · A2
 
-229 İngilizce sözcük · 26 cümle · 10 çalışma kelimesi · 4 soru
+239 İngilizce sözcük · 27 cümle · 10 çalışma kelimesi · 4 soru
 
 | English | Türkçe |
 |---|---|
@@ -70,7 +70,7 @@ Editör notları: Adds a concrete conversation and a completed encounter instead
 | He carried it to the river near the old bridge. | Onu eski köprünün yakınındaki nehre götürdü. |
 | His younger sister walked beside him on the dry path. | Küçük kız kardeşi kuru patikada yanında yürüdü. |
 | Leo put the boat in the water from a low step. | Leo alçak bir basamaktan tekneyi suya bıraktı. |
-| They stayed away from the edge of the water. | Suyun kenarından uzak durdular. |
+| Then they stepped back from the edge of the water. | Sonra suyun kenarından geri çekildiler. |
 | A gentle wind pushed the boat across the water. | Hafif bir rüzgâr tekneyi suyun üzerinde itti. |
 | Leo ran along the path to follow it. | Leo onu takip etmek için patika boyunca koştu. |
 | The boat passed a family of ducks. | Tekne bir ördek ailesinin yanından geçti. |
@@ -79,9 +79,10 @@ Editör notları: Adds a concrete conversation and a completed encounter instead
 | He looked along the path for help. | Yardım bulmak için patika boyunca etrafına baktı. |
 | The boat was close to the low bank. | Tekne alçak kıyıya yakındı. |
 | A girl picked it up and wrote a message inside. | Bir kız onu aldı ve içine bir mesaj yazdı. |
-| The message said, Every journey starts somewhere. | Mesajda, Her yolculuk bir yerden başlar, yazıyordu. |
+| The message said, "Every journey starts somewhere." | Mesajda "Her yolculuk bir yerden başlar." yazıyordu. |
 | "Where will it go next?" she asked. | "Şimdi nereye gidecek?" diye sordu. |
 | "To that tree," said Leo, pointing along the bank. | Leo kıyı boyunca işaret ederek, "Şu ağaca," dedi. |
+| The girl put the boat back in the water. | Kız tekneyi yeniden suya bıraktı. |
 | Leo smiled and let the boat continue its journey. | Leo gülümsedi ve teknenin yolculuğuna devam etmesine izin verdi. |
 | The three children followed it from the path. | Üç çocuk tekneyi patikadan takip etti. |
 | Near the tree, it stopped in shallow water. | Ağacın yakınında, sığ suda durdu. |
@@ -118,7 +119,7 @@ Editör notları: Adds a concrete conversation and a completed encounter instead
 
 **Yanıt anahtarı:** 1: D, 2: A, 3: D, 4: C
 
-Editör notları: Clarifies the boat’s position at a low bank and introduces the girl once, at her first action. Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation. AI editorial pass: explicitly launches the boat before the wind moves it; the children then stay back from the edge. Added launch sentence has draft translations in all support languages.
+Editör notları: Clarifies the boat’s position at a low bank and introduces the girl once, at her first action. Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs. Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections. The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation. AI editorial pass: explicitly launches the boat before the wind moves it; the children then stay back from the edge. Added launch sentence has draft translations in all support languages. Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned.
 
 ## The Last Train · A2
 
@@ -128,7 +129,7 @@ Editör notları: Clarifies the boat’s position at a low bank and introduces t
 |---|---|
 | Sam and Lily spent the afternoon in a village near the mountains. | Sam ve Lily öğleden sonrayı dağların yakınındaki bir köyde geçirdi. |
 | They visited a market and took photos of the old houses. | Bir pazarı gezdiler ve eski evlerin fotoğraflarını çektiler. |
-| At one stall, Sam stopped to photograph a row of flowers. | Sam bir tezgahta bir sıra çiçeğin fotoğrafını çekmek için durdu. |
+| At one stall, Sam stopped to photograph a row of flowers. | Sam bir tezgâhta bir sıra çiçeğin fotoğrafını çekmek için durdu. |
 | He put his camera and ticket on a bench. | Fotoğraf makinesini ve biletini bir bankın üstüne koydu. |
 | He picked up his camera but left the ticket behind. | Fotoğraf makinesini aldı ama bileti orada unuttu. |
 | When the sky grew dark, Lily checked her watch. | Hava karardığında Lily saatine baktı. |
@@ -182,7 +183,7 @@ Editör notları: Clarifies the boat’s position at a low bank and introduces t
 
 **Yanıt anahtarı:** 1: D, 2: B, 3: A, 4: B
 
-Editör notları: Makes the camera/ticket location explicit before the ticket goes missing. Explains the stone and the cost of missing the train; preserves the original ending. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. AI editorial pass: Sam takes his camera but leaves his ticket on the bench, resolving the camera continuity gap without changing legacy sentences. New Urdu sentences use the legacy name spelling سام consistently.
+Editör notları: Makes the camera/ticket location explicit before the ticket goes missing. Explains the stone and the cost of missing the train; preserves the original ending. Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections. AI editorial pass: Sam takes his camera but leaves his ticket on the bench, resolving the camera continuity gap without changing legacy sentences. New Urdu sentences use the legacy name spelling سام consistently. Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned.
 
 ## The Tortoise and the Hare · A1
 
@@ -240,7 +241,7 @@ Editör notları: Makes the camera/ticket location explicit before the ticket go
 
 **Yanıt anahtarı:** 1: B, 2: B, 3: A
 
-Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. AI editorial pass: simplifies an inference distractor for supported A1 reading; local grammatical gender in translations is not forced to match English pronouns.
+Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied. Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections. AI editorial pass: simplifies an inference distractor for supported A1 reading; local grammatical gender in translations is not forced to match English pronouns. Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned.
 
 ## The Lion and the Mouse · A1
 
@@ -297,7 +298,7 @@ Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses
 
 **Yanıt anahtarı:** 1: D, 2: B, 3: B
 
-Editör notları: Adds the mouse’s fear, recognition of the call and return of kindness. Keeps the original lesson without turning the inference question into a direct quotation. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. AI editorial pass: seven added Urdu sentences retain the female mouse established in the legacy Urdu text; simplifies the added inference answer for supported A1 reading.
+Editör notları: Adds the mouse’s fear, recognition of the call and return of kindness. Keeps the original lesson without turning the inference question into a direct quotation. Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections. AI editorial pass: seven added Urdu sentences retain the female mouse established in the legacy Urdu text; simplifies the added inference answer for supported A1 reading. Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned.
 
 # Beklemede — yeni hikâyeler
 

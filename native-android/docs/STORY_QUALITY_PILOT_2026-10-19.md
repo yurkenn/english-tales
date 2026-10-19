@@ -6,7 +6,7 @@ Durum: **Aktif çalışma yalnız 5 mevcut hikâyede.** Kullanıcı yeni hikâye
 
 ## Mevcut hikâyelerde ilerleme
 
-**Beş mevcut revizyonun tamamında 11 destek dili için metin alanları dolu.** Toplam 62 yeni cümlenin 10 ek dilde **620 çevirisi**, 14 yeni çalışma kelimesinin **140 karşılığı** hazırlandı. AI destekli editoryal/dil tutarlılığı incelemesinde teknenin suya bırakılması ve fotoğraf makinesinin geri alınması açıklandı; isim olan smile için ayrı anlam kimliği ve Urduca tutarlılık düzeltmeleri yapıldı. [İnceleme raporu](STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md). Yeni klasikler beklemede kaldı.
+**Beş mevcut revizyonun tamamında 11 destek dili için metin alanları dolu.** Toplam 63 yeni cümlenin 10 ek dilde **630 çevirisi**, 14 yeni çalışma kelimesinin **140 karşılığı** hazırlandı. AI destekli editoryal/dil tutarlılığı incelemesinde teknenin suya bırakılması ve fotoğraf makinesinin geri alınması açıklandı; isim olan smile için ayrı anlam kimliği ve Urduca tutarlılık düzeltmeleri yapıldı. [İnceleme raporu](STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md). Yeni klasikler beklemede kaldı.
 
 Her hikâyede `reviewedLanguages: []`; hiçbir dil için insan veya ana dil konuşuru onayı verilmiş sayılmıyor. **17 anlama sorusunun tamamı** için kaynak cümle ve yanıt gerekçesi kaydedildi. The Paper Boat’ta kız karakterin tekrar tanıtılması giderildi; küçük kız kardeşin yaşı kaynak ve çevirilerde açıkça aynı ifade edildi. Seçilen listeler mevcut okuyucu/tekrar sözleşmesine yerel önizleme aracıyla bağlandı ve Android test varlığında doğrulandı. Üretim kataloğuna veya canlı içeriğe aktarılmadı. [Entegrasyon ve tekrar çalıştırma kaydı](STORY_PILOT_INTEGRATION.md).
 
@@ -17,7 +17,7 @@ Her hikâyede `reviewedLanguages: []`; hiçbir dil için insan veya ana dil konu
 | Hikâye | Seviye hedefi | Eski → yeni sözcük | Çalışma kelimesi | Soru |
 |---|---|---|---|---|
 | [A Quiet Morning](../backend/content/drafts/revisions/quiet-morning.json) | A1 | 76 → 164 | 10 | 3 |
-| [The Paper Boat](../backend/content/drafts/revisions/paper-boat.json) | A2 | 80 → 229 | 10 | 4 |
+| [The Paper Boat](../backend/content/drafts/revisions/paper-boat.json) | A2 | 80 → 239 | 10 | 4 |
 | [The Last Train](../backend/content/drafts/revisions/last-train.json) | A2 | 172 → 263 | 10 | 4 |
 | [The Tortoise and the Hare](../backend/content/drafts/revisions/classic-tortoise-hare.json) | A1 | 108 → 192 | 10 | 3 |
 | [The Lion and the Mouse](../backend/content/drafts/revisions/classic-lion-mouse.json) | A1 | 108 → 176 | 10 | 3 |
@@ -32,7 +32,7 @@ Her hikâyede `reviewedLanguages: []`; hiçbir dil için insan veya ana dil konu
 - **The Tortoise and the Hare:** başlangıç/bitiş yeri ile tavşanın yanlış güven duygusu görünür hale getirildi.
 - **The Lion and the Mouse:** korku, sesin tanınması ve iyiliğin karşılığının olaylarla anlatımı güçlendirildi.
 
-Mevcut cümlelerin kimlikleri, metinleri ve çeviri haritaları korunur; yeni cümleler yeni kimliklerle taslak revizyona eklenir. Anlama sorularının kalıcı kimlikleri korunur; çıkarım sorusu neden/sonuç değerlendirecek şekilde iyileştirildi. Her hikâyeye 10 çalışma kelimesi önerildi. Mevcut kelime kimliklerine yeni anlam yazılmadı. Listelerin yerel okuyucu/tekrar sözleşmesi doğrulandı; canlı revizyon entegrasyonu henüz yapılmadı.
+Mevcut cümle kimlikleri korunur; yeni cümleler yeni kimliklerle eklenir. İkinci AI incelemesinde düzeltilen 23 eski cümle alanı (çeviriler ve alıntı noktalaması), eski/yeni değer ve gerekçesiyle `legacySentenceCorrections` içinde kaydedildi. Kayıtsız eski cümle değişiklikleri testte reddedilir. Anlama sorularının kalıcı kimlikleri korunur; çıkarım sorusu neden/sonuç değerlendirecek şekilde iyileştirildi. Her hikâyeye 10 çalışma kelimesi önerildi. Mevcut kelime kimliklerine yeni anlam yazılmadı. Listelerin yerel okuyucu/tekrar sözleşmesi doğrulandı; canlı revizyon entegrasyonu henüz yapılmadı.
 
 ## Yeni klasiklerin kaynakları — beklemede
 
@@ -44,7 +44,7 @@ Mevcut cümlelerin kimlikleri, metinleri ve çeviri haritaları korunur; yeni c�
 ## Yayına geçmeden kalan gerçek işler
 
 1. İnsan editörün anlam, doğallık, hedef seviye, kelime listesi ve soru yanıtlarını incelemesi. `reviewedBy` şu an boş; onay taklit edilmedi.
-2. Beş mevcut revizyonun 11 dilde insan dil incelemesi. Tüm metin alanlarının dolu olması dil onayı değildir. Yeni klasiklerin çevirileri beklemede. Eski çeviriler yeni İngilizce için kopyalanıp tamamlandı sayılmadı.
+2. Beş mevcut revizyonun 11 dilde insan dil incelemesi. Tüm metin alanlarının dolu olması dil onayı değildir. Yeni klasiklerin çevirileri beklemede. Eski çeviriler yeni İngilizce için kopyalanıp tamamlandı sayılmadı. [Claude ikinci inceleme kararları](STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md).
 3. Mevcut hikâyeler için onaylı revizyon ve çalışma listesi entegrasyonu. Önceki yeni klasiklerin kapak/hak/çeviri işleri beklemededir; aktif görev değildir.
 4. Onaylı mevcut hikâye revizyonlarını stüdyoda doğrulamak. Sonra yayın kapsamı içinde publisher yayını ve anonim katalog/paket/çevrimdışı kabulü.
 

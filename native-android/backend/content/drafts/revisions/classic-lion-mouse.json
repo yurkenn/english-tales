@@ -8,8 +8,9 @@
   "editorialNotes": [
     "Adds the mouse’s fear, recognition of the call and return of kindness.",
     "Keeps the original lesson without turning the inference question into a direct quotation.",
-    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
-    "AI editorial pass: seven added Urdu sentences retain the female mouse established in the legacy Urdu text; simplifies the added inference answer for supported A1 reading."
+    "Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections.",
+    "AI editorial pass: seven added Urdu sentences retain the female mouse established in the legacy Urdu text; simplifies the added inference answer for supported A1 reading.",
+    "Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -38,7 +39,7 @@
       "ur",
       "th"
     ],
-    "unchangedTranslationsPreserved": true,
+    "unchangedTranslationsPreserved": false,
     "newSentenceIds": [
       "classic-lion-mouse-pilot-03-01",
       "classic-lion-mouse-pilot-06-01",
@@ -359,7 +360,7 @@
         "turkish": "Dişleri küçük ama keskindir.",
         "translations": {
           "es-419": "Sus dientes son pequeños pero afilados.",
-          "pt-BR": "Os dentes dele são pequenos, mas afiados.",
+          "pt-BR": "Os dentes do ratinho são pequenos, mas afiados.",
           "id": "Giginya kecil tetapi tajam.",
           "ar": "أسنانها صغيرة لكنها حادّة.",
           "vi": "Răng của cô nhỏ nhưng sắc.",
@@ -469,7 +470,7 @@
           "ru": "«Раньше ты помог мне», — говорит мышка.",
           "bn": "“আগে তুমি আমাকে সাহায্য করেছিলে,” ইঁদুর বলে।",
           "ur": "“پہلے تم نے میری مدد کی تھی،” چوہیا کہتی ہے۔",
-          "th": "“เมื่อก่อนเธอช่วยฉันไว้” หนูพูด"
+          "th": "“เมื่อก่อนท่านเคยช่วยฉันไว้” หนูพูด"
         }
       },
       {
@@ -486,7 +487,7 @@
           "ru": "«Теперь я могу помочь тебе».",
           "bn": "“এখন আমি তোমাকে সাহায্য করতে পারি।”",
           "ur": "“اب میں تمہاری مدد کر سکتی ہوں۔”",
-          "th": "“ตอนนี้ฉันช่วยเธอได้แล้ว”"
+          "th": "“ตอนนี้ฉันช่วยท่านได้แล้ว”"
         }
       },
       {
@@ -550,15 +551,15 @@
       "macera"
     ],
     "descriptions": {
-      "es-419": "El león y el ratón. La ayuda de un ratoncito a un gran amigo. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; portadilla interior de la colección, no es una portada aparte de primera edición.",
+      "es-419": "El león y el ratón. La ayuda de una ratoncita a un gran amigo. Adaptación breve de nivel A1. Adaptación: English Tales. Imagen histórica: Arthur Rackham; portadilla interior de la colección, no es una portada aparte de primera edición.",
       "pt-BR": "O leão e o rato. A ajuda de um ratinho a um grande amigo. Adaptação curta de nível A1. Adaptação: English Tales. Imagem histórica: Arthur Rackham; folha de rosto interna da coleção, não é uma capa separada de primeira edição.",
       "id": "Singa dan Tikus. Bantuan seekor tikus kecil untuk sahabatnya yang besar. Adaptasi singkat tingkat A1. Adaptasi: English Tales. Gambar historis: Arthur Rackham; halaman judul bagian dalam koleksi, bukan sampul edisi pertama tersendiri.",
       "ar": "الأسد والفأر. فأرة صغيرة تساعد صديقًا كبيرًا. اقتباس قصير بمستوى A1. الاقتباس: English Tales. صورة تاريخية: آرثر راكهام؛ صفحة العنوان الداخلية للمجموعة، وليست غلافًا منفصلًا للطبعة الأولى.",
-      "vi": "Sư tử và Chuột. Một chú chuột nhỏ giúp đỡ người bạn to lớn của mình. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; trang tiêu đề bên trong tuyển tập, không phải bìa riêng của ấn bản đầu tiên.",
+      "vi": "Sư tử và Chuột. Một cô chuột nhỏ giúp đỡ người bạn to lớn của mình. Bản phóng tác ngắn trình độ A1. Phóng tác: English Tales. Hình ảnh lịch sử: Arthur Rackham; trang tiêu đề bên trong tuyển tập, không phải bìa riêng của ấn bản đầu tiên.",
       "hi": "शेर और चूहा। एक छोटे चूहे ने अपने बड़े दोस्त की मदद की। A1 स्तर का छोटा रूपांतरण। रूपांतरण: English Tales। ऐतिहासिक चित्र: Arthur Rackham; संग्रह का अंदरूनी शीर्षक पृष्ठ, पहले संस्करण का अलग कवर नहीं।",
       "ru": "Лев и мышь. Как маленькая мышка помогла большому другу. Краткая адаптация уровня A1. Адаптация: English Tales. Историческое изображение: Артур Рэкхем; внутренний титульный лист сборника, а не отдельная обложка первого издания.",
       "bn": "সিংহ আর ইঁদুর। এক ছোট্ট ইঁদুর তার বড় বন্ধুকে সাহায্য করে। A1 স্তরের ছোট রূপান্তর। রূপান্তর: English Tales। ঐতিহাসিক ছবি: Arthur Rackham; সংকলনের ভেতরের শিরোনাম পাতা, প্রথম সংস্করণের আলাদা প্রচ্ছদ নয়।",
-      "ur": "شیر اور چوہا۔ ایک ننھے چوہے نے اپنے بڑے دوست کی مدد کی۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ مجموعے کا اندرونی عنوان صفحہ، پہلے ایڈیشن کا الگ سرورق نہیں۔",
+      "ur": "شیر اور چوہا۔ ایک ننھی چوہیا نے اپنے بڑے دوست کی مدد کی۔ A1 سطح کی مختصر ماخوذ کہانی۔ ترتیب: English Tales۔ تاریخی تصویر: Arthur Rackham؛ مجموعے کا اندرونی عنوان صفحہ، پہلے ایڈیشن کا الگ سرورق نہیں۔",
       "th": "ราชสีห์กับหนู: หนูตัวเล็ก ๆ ช่วยเหลือเพื่อนตัวใหญ่ ฉบับดัดแปลงสั้น ๆ ระดับ A1 ดัดแปลงโดย English Tales ภาพเก่าทางประวัติศาสตร์: Arthur Rackham; หน้าชื่อเรื่องด้านในของหนังสือรวมเรื่อง ไม่ใช่ปกแยกของฉบับพิมพ์ครั้งแรก"
     }
   },
@@ -812,6 +813,24 @@
     ],
     "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
     "humanApproval": false,
-    "nativeSpeakerApproval": false
-  }
+    "nativeSpeakerApproval": false,
+    "secondReview": {
+      "reviewer": "Claude Code",
+      "model": "claude-opus-5-5",
+      "type": "ai-assisted",
+      "reviewedOn": "2026-10-19",
+      "report": "../../../../docs/STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md",
+      "humanApproval": false,
+      "nativeSpeakerApproval": false
+    }
+  },
+  "legacySentenceCorrections": [
+    {
+      "sentenceId": "cl-lion-mouse-12",
+      "field": "translations.pt-BR",
+      "before": "Os dentes dele são pequenos, mas afiados.",
+      "after": "Os dentes do ratinho são pequenos, mas afiados.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    }
+  ]
 }

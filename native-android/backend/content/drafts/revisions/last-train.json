@@ -8,8 +8,9 @@
   "editorialNotes": [
     "Makes the camera/ticket location explicit before the ticket goes missing.",
     "Explains the stone and the cost of missing the train; preserves the original ending.",
-    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
-    "AI editorial pass: Sam takes his camera but leaves his ticket on the bench, resolving the camera continuity gap without changing legacy sentences. New Urdu sentences use the legacy name spelling سام consistently."
+    "Added sentences and new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections.",
+    "AI editorial pass: Sam takes his camera but leaves his ticket on the bench, resolving the camera continuity gap without changing legacy sentences. New Urdu sentences use the legacy name spelling سام consistently.",
+    "Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -38,7 +39,7 @@
       "ur",
       "th"
     ],
-    "unchangedTranslationsPreserved": true,
+    "unchangedTranslationsPreserved": false,
     "newSentenceIds": [
       "last-train-pilot-02-01",
       "last-train-pilot-02-02",
@@ -61,7 +62,7 @@
     "author": "English Tales",
     "level": "A2",
     "genre": "Macera",
-    "description": "Kaçırılmak üzere olan bir tren, iki arkadaş için beklenmedik bir yolculuğa dönüşüyor.",
+    "description": "Kaybolan bir bilet, iki arkadaşı son treni yakalamak için zamanla yarıştırır.",
     "coverKey": "cover_last_train",
     "sentences": [
       {
@@ -75,7 +76,7 @@
           "ar": "قضى سام وليلي فترة بعد الظهر في قرية قرب الجبال.",
           "vi": "Sam và Lily dành cả buổi chiều ở một ngôi làng gần núi.",
           "hi": "सैम और लिली ने दोपहर पहाड़ों के पास एक गाँव में बिताई।",
-          "ru": "Сэм и Лили провели день в деревне у подножия гор.",
+          "ru": "Сэм и Лили провели вторую половину дня в деревне недалеко от гор.",
           "bn": "স্যাম আর লিলি পাহাড়ের কাছের একটা গ্রামে বিকেলটা কাটাল।",
           "ur": "سام اور للی نے دوپہر پہاڑوں کے پاس ایک گاؤں میں گزاری۔",
           "th": "แซมกับลิลลี่ใช้เวลาช่วงบ่ายในหมู่บ้านแห่งหนึ่งใกล้ภูเขา"
@@ -101,7 +102,7 @@
       {
         "id": "last-train-pilot-02-01",
         "english": "At one stall, Sam stopped to photograph a row of flowers.",
-        "turkish": "Sam bir tezgahta bir sıra çiçeğin fotoğrafını çekmek için durdu.",
+        "turkish": "Sam bir tezgâhta bir sıra çiçeğin fotoğrafını çekmek için durdu.",
         "translations": {
           "es-419": "En un puesto, Sam se detuvo para fotografiar una fila de flores.",
           "pt-BR": "Em uma barraca, Sam parou para fotografar uma fileira de flores.",
@@ -396,7 +397,7 @@
           "pt-BR": "— Coloquei a pedra ali para protegê-la.",
           "id": "“Saya menaruh batu di sana supaya tiketnya tetap aman.”",
           "ar": "«وضعت الحجر هناك لأحافظ عليها».",
-          "vi": "“Cô đặt viên đá ở đó để giữ tấm vé an toàn.”",
+          "vi": "“Bà đã đặt viên đá ở đó để giữ tấm vé an toàn.”",
           "hi": "“मैंने उसे सुरक्षित रखने के लिए वहाँ पत्थर रख दिया।”",
           "ru": "«Я положила сверху камень, чтобы он не улетел».",
           "bn": "“টিকিটটা যাতে হারিয়ে না যায়, তাই ওখানে পাথরটা রেখেছিলাম।”",
@@ -595,16 +596,16 @@
       "macera"
     ],
     "descriptions": {
-      "es-419": "Un tren que están a punto de perder se convierte en un viaje inesperado para dos amigos.",
-      "pt-BR": "Um trem que eles estão prestes a perder se transforma em uma viagem inesperada para dois amigos.",
-      "id": "Kereta yang hampir terlewat berubah menjadi perjalanan tak terduga bagi dua sahabat.",
-      "ar": "قطار يوشكان أن يفوّتاه يتحوّل إلى رحلة غير متوقّعة لصديقين.",
-      "vi": "Suýt lỡ chuyến tàu, hai người bạn có một hành trình bất ngờ.",
-      "hi": "छूटने वाली एक ट्रेन दो दोस्तों के लिए एक अनोखा सफ़र बन जाती है।",
-      "ru": "Поезд, на который чуть не опоздали, превращается для двух друзей в неожиданное путешествие.",
-      "bn": "প্রায় ফসকে যাওয়া একটা ট্রেন দুই বন্ধুর জন্য এক অপ্রত্যাশিত যাত্রা হয়ে ওঠে।",
-      "ur": "چھوٹنے والی ایک ٹرین دو دوستوں کے لیے ایک انوکھا سفر بن جاتی ہے۔",
-      "th": "รถไฟที่เกือบจะตกกลายเป็นการเดินทางที่ไม่คาดคิดของเพื่อนสองคน"
+      "es-419": "Un boleto perdido pone a dos amigos a correr contra el reloj para alcanzar el último tren.",
+      "pt-BR": "Uma passagem perdida faz dois amigos correrem contra o tempo para pegar o último trem.",
+      "id": "Tiket yang hilang membuat dua sahabat berpacu dengan waktu untuk mengejar kereta terakhir.",
+      "ar": "تذكرة مفقودة تجعل صديقين يسابقان الوقت للحاق بالقطار الأخير.",
+      "vi": "Một tấm vé bị bỏ quên khiến hai người bạn phải chạy đua với thời gian để kịp chuyến tàu cuối.",
+      "hi": "एक खोया हुआ टिकट दो दोस्तों को आख़िरी ट्रेन पकड़ने के लिए समय से होड़ करने पर मजबूर कर देता है।",
+      "ru": "Потерянный билет заставляет двух друзей бороться со временем, чтобы успеть на последний поезд.",
+      "bn": "একটা হারানো টিকিটের জন্য দুই বন্ধুকে শেষ ট্রেন ধরতে সময়ের সঙ্গে পাল্লা দিতে হয়।",
+      "ur": "ایک گم شدہ ٹکٹ کی وجہ سے دو دوستوں کو آخری ٹرین پکڑنے کے لیے وقت سے مقابلہ کرنا پڑتا ہے۔",
+      "th": "ตั๋วที่หายไปทำให้เพื่อนสองคนต้องแข่งกับเวลาเพื่อให้ทันรถไฟเที่ยวสุดท้าย"
     }
   },
   "words": [
@@ -866,6 +867,24 @@
     ],
     "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
     "humanApproval": false,
-    "nativeSpeakerApproval": false
-  }
+    "nativeSpeakerApproval": false,
+    "secondReview": {
+      "reviewer": "Claude Code",
+      "model": "claude-opus-5-5",
+      "type": "ai-assisted",
+      "reviewedOn": "2026-10-19",
+      "report": "../../../../docs/STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md",
+      "humanApproval": false,
+      "nativeSpeakerApproval": false
+    }
+  },
+  "legacySentenceCorrections": [
+    {
+      "sentenceId": "last-train-1",
+      "field": "translations.ru",
+      "before": "Сэм и Лили провели день в деревне у подножия гор.",
+      "after": "Сэм и Лили провели вторую половину дня в деревне недалеко от гор.",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    }
+  ]
 }

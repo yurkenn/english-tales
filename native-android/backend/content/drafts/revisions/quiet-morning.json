@@ -9,9 +9,10 @@
     "Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone.",
     "Keeps all legacy sentence IDs and wording; adds short A1-target turns.",
     "A1 is a target for editorial review, not formal CEFR certification.",
-    "Added fourteen sentences and seven new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
+    "Added fourteen sentences and seven new study words have draft translations in all ten additional support languages; legacy sentence IDs and global word records are preserved; any corrected legacy sentence fields are itemized in legacySentenceCorrections.",
     "Correct answers are distributed across positions A, C and B in the three comprehension questions.",
-    "AI editorial pass: the noun in gave him a smile has its own pilot identity and noun glosses in all eleven languages. The existing global smile record is unchanged. The added inference question uses the past tense consistently."
+    "AI editorial pass: the noun in gave him a smile has its own pilot identity and noun glosses in all eleven languages. The existing global smile record is unchanged. The added inference question uses the past tense consistently.",
+    "Independent Claude review completed; accepted content corrections are recorded in STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md. No human or native-speaker approval assigned."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -40,7 +41,7 @@
       "ur",
       "th"
     ],
-    "unchangedTranslationsPreserved": true,
+    "unchangedTranslationsPreserved": false,
     "newSentenceIds": [
       "quiet-morning-pilot-02-01",
       "quiet-morning-pilot-02-02",
@@ -216,10 +217,10 @@
           "id": "Mia tersenyum kepadanya dan menyapanya.",
           "ar": "ابتسمت له ميا وألقت عليه التحية.",
           "vi": "Mia mỉm cười với ông và chào ông.",
-          "hi": "मिया ने उसकी ओर देखकर मुस्कान दी और नमस्ते कहा।",
+          "hi": "मिया उन्हें देखकर मुस्कुराई और उसने नमस्ते कहा।",
           "ru": "Миа улыбнулась ему и поздоровалась.",
           "bn": "মিয়া তাঁর দিকে তাকিয়ে হাসল আর হ্যালো বলল।",
-          "ur": "میا نے اسے مسکراہٹ دی اور سلام کیا۔",
+          "ur": "میا انہیں دیکھ کر مسکرائی اور سلام کیا۔",
           "th": "มีอายิ้มให้เขาและกล่าวทักทาย"
         }
       },
@@ -233,10 +234,10 @@
           "id": "Pria itu bercerita bahwa hari ini adalah hari ulang tahunnya.",
           "ar": "أخبرها أن اليوم هو يوم ميلاده.",
           "vi": "Ông kể với cô rằng hôm nay là sinh nhật của ông.",
-          "hi": "उसने मिया को बताया कि आज उसका जन्मदिन है।",
+          "hi": "उन्होंने मिया को बताया कि आज उनका जन्मदिन है।",
           "ru": "Он сказал ей, что сегодня у него день рождения.",
           "bn": "তিনি মিয়াকে বললেন যে আজ তাঁর জন্মদিন।",
-          "ur": "اس نے میا کو بتایا کہ آج اس کی سالگرہ ہے۔",
+          "ur": "انہوں نے میا کو بتایا کہ آج ان کی سالگرہ ہے۔",
           "th": "เขาบอกเธอว่าวันนี้เป็นวันเกิดของเขา"
         }
       },
@@ -300,7 +301,7 @@
           "pt-BR": "— Ela vem aqui toda sexta-feira.",
           "id": "“Dia datang ke sini setiap hari Jumat.”",
           "ar": "«إنها تأتي إلى هنا كل يوم جمعة».",
-          "vi": "“Thứ Sáu nào con bé cũng đến đây.”",
+          "vi": "Thứ Sáu nào con gái ông cũng đến đây.",
           "hi": "“वह हर शुक्रवार यहाँ आती है।”",
           "ru": "«Она приходит сюда каждую пятницу».",
           "bn": "“সে প্রতি শুক্রবার এখানে আসে।”",
@@ -318,10 +319,10 @@
           "id": "Mia membeli dua roti hangat dan berbagi satu dengannya.",
           "ar": "اشترت ميا كعكتين دافئتين من الخبز وتقاسمت واحدة معه.",
           "vi": "Mia mua hai chiếc bánh mì nóng và chia cho ông một chiếc.",
-          "hi": "मिया ने दो गरम बन खरीदे और एक उसके साथ बाँटा।",
+          "hi": "मिया ने दो गरम बन खरीदे और एक उनके साथ बाँटा।",
           "ru": "Миа купила две тёплые булочки и одной поделилась с ним.",
           "bn": "মিয়া দুটো গরম রোল কিনল আর একটা তাঁর সঙ্গে ভাগ করে নিল।",
-          "ur": "میا نے دو گرم بن خریدے اور ایک اس کے ساتھ بانٹ لیا۔",
+          "ur": "میا نے دو گرم بن خریدے اور ایک ان کے ساتھ بانٹ لیا۔",
           "th": "มีอาซื้อขนมปังก้อนอุ่น ๆ สองก้อนและแบ่งให้เขาหนึ่งก้อน"
         }
       },
@@ -766,6 +767,59 @@
     ],
     "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
     "humanApproval": false,
-    "nativeSpeakerApproval": false
-  }
+    "nativeSpeakerApproval": false,
+    "secondReview": {
+      "reviewer": "Claude Code",
+      "model": "claude-opus-5-5",
+      "type": "ai-assisted",
+      "reviewedOn": "2026-10-19",
+      "report": "../../../../docs/STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md",
+      "humanApproval": false,
+      "nativeSpeakerApproval": false
+    }
+  },
+  "legacySentenceCorrections": [
+    {
+      "sentenceId": "qm-5",
+      "field": "translations.hi",
+      "before": "मिया ने उसकी ओर देखकर मुस्कान दी और नमस्ते कहा।",
+      "after": "मिया उन्हें देखकर मुस्कुराई और उसने नमस्ते कहा।",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "qm-5",
+      "field": "translations.ur",
+      "before": "میا نے اسے مسکراہٹ دی اور سلام کیا۔",
+      "after": "میا انہیں دیکھ کر مسکرائی اور سلام کیا۔",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "qm-6",
+      "field": "translations.hi",
+      "before": "उसने मिया को बताया कि आज उसका जन्मदिन है।",
+      "after": "उन्होंने मिया को बताया कि आज उनका जन्मदिन है।",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "qm-6",
+      "field": "translations.ur",
+      "before": "اس نے میا کو بتایا کہ آج اس کی سالگرہ ہے۔",
+      "after": "انہوں نے میا کو بتایا کہ آج ان کی سالگرہ ہے۔",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "qm-7",
+      "field": "translations.hi",
+      "before": "मिया ने दो गरम बन खरीदे और एक उसके साथ बाँटा।",
+      "after": "मिया ने दो गरम बन खरीदे और एक उनके साथ बाँटा।",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    },
+    {
+      "sentenceId": "qm-7",
+      "field": "translations.ur",
+      "before": "میا نے دو گرم بن خریدے اور ایک اس کے ساتھ بانٹ لیا۔",
+      "after": "میا نے دو گرم بن خریدے اور ایک ان کے ساتھ بانٹ لیا۔",
+      "reason": "Second AI review: explicit referent/register/meaning or quoted-text punctuation; see companion review report."
+    }
+  ]
 }
