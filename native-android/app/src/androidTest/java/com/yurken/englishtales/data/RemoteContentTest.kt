@@ -55,6 +55,10 @@ class RemoteContentTest {
         var tagTables=false
         /** Holds catalog refreshes at their first request until released. */
         @Volatile var gate: java.util.concurrent.CountDownLatch?=null
+        /** Holds downloads at their first request until released. */
+        @Volatile var downloadGate: java.util.concurrent.CountDownLatch?=null
+        /** Single-revision downloads that reached the network. */
+        @Volatile var downloads=0
         val doc=JSONObject().put("id",revision).put("story_id","remote-test").put("title","Remote test").put("author","English Tales")
             .put("level","A1").put("genre","Gizem").put("description","A test story").put("published_at","2026-10-11T00:00:00Z").put("cover_asset_id",assetId)
         override fun bytes(path: String,maxBytes: Long): ByteArray {
@@ -64,6 +68,7 @@ class RemoteContentTest {
             val offset=uri.getQueryParameter("offset")!!.toInt()
             val table=uri.lastPathSegment
             if(table=="stories") gate?.let {check(it.await(10,java.util.concurrent.TimeUnit.SECONDS))}
+            if(table=="story_revisions" && uri.getQueryParameter("id")!!.startsWith("eq.")) {downloads++; downloadGate?.let {check(it.await(10,java.util.concurrent.TimeUnit.SECONDS))}}
             val rows=when(table) {
                 "stories" -> if(empty) emptyList() else listOf(JSONObject().put("id","remote-test").put("current_revision_id",revision).also {row -> createdAt?.let {row.put("created_at",it)}})
                 "story_revisions" -> listOf(doc)
@@ -275,8 +280,34 @@ class RemoteContentTest {
         val opened=withTimeout(10_000) {ready.await()}
         assertEquals(7,opened.sentences.size); assertTrue(repo.isDownloaded(story))
         withContext(Dispatchers.Main) {
-            assertEquals(1,calls)
+            // Both callers get the story from the one download.
+            assertEquals(2,calls); assertEquals(1,fixture.downloads)
             assertFalse(model.status.value.busy); assertNull(model.status.value.downloading)
+        }
+    }
+    @Test fun readerRecreatedMidDownloadStillOpensTheStory()=runBlocking {
+        val fixture=Fixture(); val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh()
+        val story=LearningContent.stories.single(); assertFalse(repo.isDownloaded(story))
+        val app=InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as android.app.Application
+        val model=withContext(Dispatchers.Main) {ContentViewModel(app,repo)}
+        withTimeout(10_000) {model.status.first {!it.busy && it.message.isNotEmpty()}}
+        val gate=java.util.concurrent.CountDownLatch(1); fixture.downloadGate=gate
+        val ready=kotlinx.coroutines.CompletableDeferred<Story>(); var stale=0
+        // The first reader is disposed (rotation, or Back and Read again) while its download is held at the network.
+        withContext(Dispatchers.Main) {model.download(story) {stale++}}
+        withTimeout(10_000) {model.status.first {it.downloading==story.id}}
+        withContext(Dispatchers.Main) {model.download(story) {ready.complete(it)}}
+        gate.countDown()
+        val opened=withTimeout(10_000) {ready.await()}
+        assertEquals(7,opened.sentences.size); assertTrue(repo.isDownloaded(story))
+        withContext(Dispatchers.Main) {
+            assertEquals(1,stale); assertEquals(1,fixture.downloads)
+            assertFalse(model.status.value.busy); assertNull(model.status.value.downloading)
+            // A later reader for the same story is not left joined to the finished download.
+            var again: Story?=null; model.download(story) {again=it}
+            withTimeout(10_000) {model.status.first {!it.busy}}
+            assertEquals(7,again?.sentences?.size)
         }
     }
     @Test fun sharedLinkToNewStoryWaitsForRunningRefresh()=runBlocking {

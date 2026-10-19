@@ -386,13 +386,18 @@ class ContentViewModel internal constructor(application: Application, val reposi
             catch (_: Exception) { finishRefresh(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
         }
     }
+    /** Callers waiting on the running download, by revision; a reader recreated mid-download joins instead of being dropped. */
+    private val waiting = mutableMapOf<String, MutableList<(Story) -> Unit>>()
     /** Waits behind a running refresh (the repository lock serialises them); one download runs at a time. */
     fun download(story: Story, onReady: (Story) -> Unit = {}) {
+        waiting[story.revisionId]?.let { it += onReady; return }
         val current = mutableStatus.value
         if (current.downloading != null || (current.busy && !refreshing)) return
         mutableStatus.value = ContentStatus(true, text(R.string.content_message_downloading), story.id)
+        val callbacks = mutableListOf(onReady).also { waiting[story.revisionId] = it }
         viewModelScope.launch {
-            try { val ready = repository.download(story); finish(ContentStatus(message = text(R.string.content_message_downloaded)), true); onReady(ready) }
+            try { val ready = try { repository.download(story) } finally { waiting.remove(story.revisionId) }
+                finish(ContentStatus(message = text(R.string.content_message_downloaded)), true); callbacks.forEach { it(ready) } }
             catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_download_failed)), false) }
         }
     }
