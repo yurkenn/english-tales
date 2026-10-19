@@ -132,7 +132,7 @@ class RemoteContentTest {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)
         repo.restore(); repo.refresh()
         val downloaded=repo.download(LearningContent.stories.single())
-        assertEquals(7,downloaded.sentences.size); assertEquals(1,fixture.requests["story_sentences"])
+        assertEquals(7,downloaded.sentences.size); assertEquals(2,fixture.requests["story_sentences"])
         assertEquals(listOf("fixture-quiet"),LearningContent.wordsForStory(downloaded).map {it.id})
         fixture.fail=true
         val restart=ContentRepository(context,fixture); restart.restore()
@@ -143,17 +143,17 @@ class RemoteContentTest {
         val fixture=Fixture().apply {sentenceCount=2_503}; val repo=ContentRepository(context,fixture)
         repo.restore(); repo.refresh(); fixture.requests.clear()
         assertEquals(2_503,repo.download(LearningContent.stories.single()).sentences.size)
-        // ceil(2503/1000) pages; the short last page ends pagination without an extra empty request.
-        assertEquals(3,fixture.requests["story_sentences"])
-        assertEquals(mapOf("story_revisions" to 1,"revision_words" to 1,"sentence_words" to 1,"content_assets" to 1),fixture.requests-"story_sentences")
+        // ceil(2503/1000) pages plus the empty page that ends the table.
+        assertEquals(4,fixture.requests["story_sentences"])
+        assertEquals(mapOf("story_revisions" to 2,"revision_words" to 2,"sentence_words" to 2,"content_assets" to 2),fixture.requests-"story_sentences")
     }
-    @Test fun smallPagesStopAfterTheLastPartialPage() {
+    @Test fun smallPagesEndOnlyAtAnEmptyPage() {
         val fixture=Fixture(); val query="select=*&revision_id=eq.${fixture.revision}&order=position.asc"
+        // A short page may be a server cap, not the end, so pagination continues to an empty page.
         val rows=fixture.rows("story_sentences",query,5)
         assertEquals((1..7).map {"s-$it"},(0 until rows.length()).map {rows.getJSONObject(it).getString("id")})
-        assertEquals(2,fixture.requests["story_sentences"])
+        assertEquals(3,fixture.requests["story_sentences"])
         fixture.sentenceCount=10; fixture.requests.clear()
-        // A full last page needs one empty page to confirm the end.
         assertEquals(10,fixture.rows("story_sentences",query,5).length()); assertEquals(3,fixture.requests["story_sentences"])
     }
     @Test fun downloadedQuestionsSurviveOfflineRestartAndAreOptional()=runBlocking {
