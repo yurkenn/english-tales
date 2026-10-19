@@ -194,7 +194,7 @@ Karar gerektirmeyen kod işleri tamamlandı (#45–#65). Kalanlar uygulama sahib
 | İş | Neden bekliyor |
 |---|---|
 | Q4.2 Pilot revizyonları canlıya yayımla | Canlı panel/Supabase yayını; "yayına al" onayı |
-| Q4.3b Sözlük anlamları | Taslaklar (#68), çapraz kontrol (#73) ve itirazların çözümü (#78) tamam. Yayına girmesi için yalnız sahibinin %10 örneklem incelemesi (`npm run glossary:sample`, 121) ve `sampleApprovedBy` onayı kaldı |
+| Q4.3b Sözlük anlamları | 19 Ekim 2026: sahibi %10 örneklemi onayladı (`sampleApprovedBy`); 1.098 anlam uygulamanın sözlüğüne girdi. Kullanıcılara bir sonraki mağaza sürümüyle ulaşır; anlamlar yalnız Türkçe |
 | Q4.3c Hikâye başına çalışma kelimesi seçimi | Araç ve öneri listesi hazır (#142); editörün hikâye başına 8–15 kelimeyi onaylaması ve uygulamaya bağlama adımı gerekir (sözlük onayından sonra) |
 | Q4.7 İçerik hacmi (bölümlü hikâyeler, B1/B2) | İlk iki B1 taslağı hazır (#84); editör onayı, kapak ve katalog yayını gerekir. Sonraki taslaklar iki haftada 1–2 hikâye ritmiyle |
 | L0 İngilizce arayüz | Arayüz İngilizceyken destek dilinin (çevirilerin) ne olacağı ürün kararı |

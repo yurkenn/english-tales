@@ -2,7 +2,4400 @@
  "schemaVersion": 1,
  "lang": "tr",
  "source": "Built by tools/glossary.mjs from backend/content/glossary/tr.json: cross-checked entries only.",
- "entries": [],
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "bir"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "terk etmek"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "yetenekler"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "(araca) binmiş"
+  },
+  {
+   "lemma": "about",
+   "gloss": "hakkında; yaklaşık"
+  },
+  {
+   "lemma": "above",
+   "gloss": "üstünde"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "kabul etmek"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "yanlışlıkla"
+  },
+  {
+   "lemma": "across",
+   "gloss": "karşıya; boyunca"
+  },
+  {
+   "lemma": "act",
+   "gloss": "davranmak; eylem"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "ekler"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "hayran kaldı"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "hayranlıkla bakan"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "itiraf etmek"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "tavsiye"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "korkmuş"
+  },
+  {
+   "lemma": "after",
+   "gloss": "sonra"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "öğleden sonra"
+  },
+  {
+   "lemma": "again",
+   "gloss": "tekrar"
+  },
+  {
+   "lemma": "against",
+   "gloss": "karşı"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "önce"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "kabul etti"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "kabul eder"
+  },
+  {
+   "lemma": "air",
+   "gloss": "hava"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "canlı, hayatta"
+  },
+  {
+   "lemma": "all",
+   "gloss": "hepsi, bütün"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "izin verdi"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "neredeyse"
+  },
+  {
+   "lemma": "along",
+   "gloss": "boyunca"
+  },
+  {
+   "lemma": "already",
+   "gloss": "çoktan"
+  },
+  {
+   "lemma": "also",
+   "gloss": "ayrıca"
+  },
+  {
+   "lemma": "although",
+   "gloss": "-e rağmen"
+  },
+  {
+   "lemma": "always",
+   "gloss": "her zaman"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "şaşkın"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "şaşırtıcı"
+  },
+  {
+   "lemma": "among",
+   "gloss": "arasında"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "miktarlar"
+  },
+  {
+   "lemma": "an",
+   "gloss": "bir"
+  },
+  {
+   "lemma": "and",
+   "gloss": "ve"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "öfke"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "kızgın"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "hayvan"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "another",
+   "gloss": "başka bir"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "cevap verdi"
+  },
+  {
+   "lemma": "any",
+   "gloss": "herhangi; hiç"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "artık"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "kimse; herhangi biri"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "herhangi bir şey"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "parçalara (ayrılmış)"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "görünüş"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "göründü, belirdi"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "elma"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "yaklaştı"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "silahlı"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "kollar"
+  },
+  {
+   "lemma": "around",
+   "gloss": "etrafında"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "düzenleyen"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "vardı, geldi"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "varır"
+  },
+  {
+   "lemma": "as",
+   "gloss": "gibi; -ken"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "sormak; istemek"
+  },
+  {
+   "lemma": "at",
+   "gloss": "-de/-da"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "saldırdı"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "hizmetliler"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "sonbahar"
+  },
+  {
+   "lemma": "away",
+   "gloss": "uzağa; uzakta"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "beceriksiz"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "bebek"
+  },
+  {
+   "lemma": "back",
+   "gloss": "geri; sırt"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "çanta"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "top; balo"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "çemberler, kayışlar"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "çubuklar; parmaklıklar"
+  },
+  {
+   "lemma": "be",
+   "gloss": "olmak"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "dövmek; yenmek"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "güzel"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "güzellik"
+  },
+  {
+   "lemma": "because",
+   "gloss": "çünkü"
+  },
+  {
+   "lemma": "become",
+   "gloss": "olmak, dönüşmek"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "yatak"
+  },
+  {
+   "lemma": "before",
+   "gloss": "önce"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "yalvardı"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "başlamak"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "davrandı"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "arkasında"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "ait olmak"
+  },
+  {
+   "lemma": "below",
+   "gloss": "aşağıda"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "eğilmek"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "altında"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "yanında"
+  },
+  {
+   "lemma": "between",
+   "gloss": "arasında"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "ötesinde"
+  },
+  {
+   "lemma": "big",
+   "gloss": "büyük"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "kuş"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "doğum günü"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "parça; ısırdı"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "ısırmak"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "dondurucu derecede, çok"
+  },
+  {
+   "lemma": "black",
+   "gloss": "siyah"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "suçladı"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "battaniyeler"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "kan"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "çiçek açmak"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "çiçek açtı"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "darbe, vuruş"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "mavi"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "övündü"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "body",
+   "gloss": "vücut"
+  },
+  {
+   "lemma": "born",
+   "gloss": "doğmuş"
+  },
+  {
+   "lemma": "both",
+   "gloss": "ikisi de"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "şişe"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "dip, alt"
+  },
+  {
+   "lemma": "box",
+   "gloss": "kutu"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "dal"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "ekmek"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(özel ad) Bremen"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "yaban gülü dikeni"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "damat"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "parlak"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "parlaklık"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "getirmek"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "erkek kardeş"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "kahverengi"
+  },
+  {
+   "lemma": "build",
+   "gloss": "inşa etmek"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "yanmak"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "yanmış"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "patlamak"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "meşgul"
+  },
+  {
+   "lemma": "but",
+   "gloss": "ama"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "kelebek"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "satın almak"
+  },
+  {
+   "lemma": "by",
+   "gloss": "yanında; tarafından"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "pasta, kek"
+  },
+  {
+   "lemma": "call",
+   "gloss": "çağrı; seslenmek"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "fotoğraf makinesi"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "kamp"
+  },
+  {
+   "lemma": "can",
+   "gloss": "-ebilmek"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "mumlar"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "-emez"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "yakalamak"
+  },
+  {
+   "lemma": "care",
+   "gloss": "özen; önemsemek"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "dikkatli"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "araba (at arabası)"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "taşımak"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "kedi"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "yakalamak"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "neden oldu"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "neden olan"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "kutladı"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "kutlayan"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "kutlama"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "sent"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "emin; belirli"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "sandalye"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "şans, fırsat"
+  },
+  {
+   "lemma": "change",
+   "gloss": "değiştirmek; değişim"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "saldıran"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "kovaladı"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "ucuz"
+  },
+  {
+   "lemma": "check",
+   "gloss": "kontrol etmek"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "peynir"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(özel ad) Chicago"
+  },
+  {
+   "lemma": "child",
+   "gloss": "çocuk"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "çocukluk"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "seçim"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "seçmek"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Noel"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "kilise mezarlığı"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(özel ad) Külkedisi"
+  },
+  {
+   "lemma": "city",
+   "gloss": "şehir"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "iddia etti"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "boşaltmak; açık"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "kâtip, memur"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "tırmanmak"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "saat"
+  },
+  {
+   "lemma": "close",
+   "gloss": "kapatmak; yakın"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "bulutlar"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "soğuk"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "toplamak"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "renkler"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "tarak"
+  },
+  {
+   "lemma": "come",
+   "gloss": "gelmek"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "rahat"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "rahatça"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "teselli etti"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "yol arkadaşı"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "karşılaştırır"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "şikâyet etti"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "tamamlamak; tam"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "karışıklık"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "iletişim"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "devam etmek"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "ikna etti; emin"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "aşçı; pişirmek"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "serinletti"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "köşe"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "tutmak (fiyat); maliyet"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "kulübe"
+  },
+  {
+   "lemma": "could",
+   "gloss": "-ebildi; -ebilirdi"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "saydı"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "sayısız"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "çift"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "kaplı; örttü"
+  },
+  {
+   "lemma": "create",
+   "gloss": "yaratmak"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "eleştirdi"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "geçti"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "kalabalık"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "zalim"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "zalimlik"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "ağlamak"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "kıvırdı"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "müşteri"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "kesmek"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "dans etmek"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "tehlike"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "tehlikeli"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "cesaret etmek"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "karanlık"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "kız evlat"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "şafak"
+  },
+  {
+   "lemma": "day",
+   "gloss": "gün"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "gün ışığı"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "ölü"
+  },
+  {
+   "lemma": "death",
+   "gloss": "ölüm"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "hilekâr"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "karar verdi"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "karar verir"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "işler, davranışlar"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "derin"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "yenmek"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "savunmak"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "narin"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "lezzetli"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "sevinç, keyif"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "talep etti"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "inkâr etmek"
+  },
+  {
+   "lemma": "described",
+   "gloss": "anlattı, tarif etti"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "masa (çalışma)"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "umutsuzluk"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "çaresizce"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "-e rağmen"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "yok etti"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "elmas"
+  },
+  {
+   "lemma": "die",
+   "gloss": "ölmek"
+  },
+  {
+   "lemma": "died",
+   "gloss": "öldü"
+  },
+  {
+   "lemma": "different",
+   "gloss": "farklı"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "zor"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "kaybolmak"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "uzak"
+  },
+  {
+   "lemma": "do",
+   "gloss": "yapmak"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "dolar"
+  },
+  {
+   "lemma": "door",
+   "gloss": "kapı"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "kapı aralığı"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "hamur"
+  },
+  {
+   "lemma": "down",
+   "gloss": "aşağı"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "akıntı yönünde"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "çekmek (kendine doğru)"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "çizim"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "korktu"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "hayal etti, rüya gördü"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "rüyalar; hayaller"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "içmek"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "sürücü"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "düşürmek; damla"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "boğuldu"
+  },
+  {
+   "lemma": "due",
+   "gloss": "(zamanı) gelmiş, gelmesi beklenen"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "donuk; sıkıcı"
+  },
+  {
+   "lemma": "during",
+   "gloss": "boyunca, sırasında"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "tozlu"
+  },
+  {
+   "lemma": "each",
+   "gloss": "her bir"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "kulak"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "daha önce"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "kolay"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "yemek"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "abanoz"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(özel ad) Mısır"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "seksen"
+  },
+  {
+   "lemma": "either",
+   "gloss": "de (olumsuzda), ... da değil"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "en büyük"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "on bir"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "else",
+   "gloss": "başka"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "kucakladı"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "boş"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "büyülü"
+  },
+  {
+   "lemma": "end",
+   "gloss": "son"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "tehlikeye atan"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "enerji"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "keyif aldı"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "devasa"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "yeterli"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "girmek"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "hevesli"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "tamamen"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "giriş"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "kaçmak"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "özellikle"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "arife (Noel arifesi)"
+  },
+  {
+   "lemma": "even",
+   "gloss": "bile"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "sonunda"
+  },
+  {
+   "lemma": "every",
+   "gloss": "her"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "herkes"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "her şey"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "her yerde"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "tam, kesin"
+  },
+  {
+   "lemma": "except",
+   "gloss": "hariç"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "karşılığında; takas"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "bitkin"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "var olmak"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "bekledi; beklenen"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "bekleyerek"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "masraflar"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "pahalı"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "açıklamak"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "açıklama"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "keşfetmek"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "ifade"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "olağanüstü"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "göz"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "kaş"
+  },
+  {
+   "lemma": "face",
+   "gloss": "yüz"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "soldu"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "başaramadı"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "başarısız olur"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "düşmek"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "düşen"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "düşer; şelale"
+  },
+  {
+   "lemma": "false",
+   "gloss": "sahte, yanlış"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "tanıdık"
+  },
+  {
+   "lemma": "family",
+   "gloss": "aile"
+  },
+  {
+   "lemma": "far",
+   "gloss": "uzak"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "çiftçi"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "çiftlik avlusu"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "hızlı"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "bağladı"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "şişman; yağ"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "kusurlar"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "korku"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "beslemek"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "hissetmek"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "duygu"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "getirdi"
+  },
+  {
+   "lemma": "few",
+   "gloss": "birkaç"
+  },
+  {
+   "lemma": "field",
+   "gloss": "tarla"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "vahşi"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "on beş"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "on beşinci"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "kavga etmek"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "doldurdu; dolu"
+  },
+  {
+   "lemma": "final",
+   "gloss": "son"
+  },
+  {
+   "lemma": "find",
+   "gloss": "bulmak"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "iyi; ince"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "parmak"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "Fin, Finli"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "ateş"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "sıkıca"
+  },
+  {
+   "lemma": "first",
+   "gloss": "ilk"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "balık"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "uydu, oldu (beden)"
+  },
+  {
+   "lemma": "five",
+   "gloss": "beş"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "düz; daire"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "kaçtı"
+  },
+  {
+   "lemma": "float",
+   "gloss": "su üstünde kalmak, sürüklenmek"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "sürü"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "zemin; kat"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "çiçek"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "uçmak"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "takip etmek"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "takipçiler"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "düşkün"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "aptalca"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "ayak"
+  },
+  {
+   "lemma": "for",
+   "gloss": "için; -ın dışında (except for)"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "sonsuza dek"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "unutmak"
+  },
+  {
+   "lemma": "form",
+   "gloss": "oluşturmak; şekil"
+  },
+  {
+   "lemma": "four",
+   "gloss": "dört"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "donmak"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "donma; dondurucu"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "taze"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "arkadaş"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "arkadaşlık"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "korkutmak"
+  },
+  {
+   "lemma": "from",
+   "gloss": "-den/-dan"
+  },
+  {
+   "lemma": "front",
+   "gloss": "ön"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "meyve"
+  },
+  {
+   "lemma": "full",
+   "gloss": "dolu"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "eğlence"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "öfkeli"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "kazanmak"
+  },
+  {
+   "lemma": "games",
+   "gloss": "oyunlar"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "bahçe"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "toplamak"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "dik dik bakmak; bakış"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "nazik"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "nazikçe"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "get",
+   "gloss": "almak; olmak; ulaşmak, geçmek"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "hayalet"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "kız"
+  },
+  {
+   "lemma": "give",
+   "gloss": "vermek"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "verenler"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "cam; bardak"
+  },
+  {
+   "lemma": "go",
+   "gloss": "gitmek"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "keçi"
+  },
+  {
+   "lemma": "god",
+   "gloss": "tanrı"
+  },
+  {
+   "lemma": "going",
+   "gloss": "gidiyor"
+  },
+  {
+   "lemma": "good",
+   "gloss": "iyi"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "hoşça kal, veda"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "zarif"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "görkemli"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "büyükbaba, dede"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "büyükanne, nine"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "gri"
+  },
+  {
+   "lemma": "great",
+   "gloss": "büyük; harika"
+  },
+  {
+   "lemma": "green",
+   "gloss": "yeşil"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "selamladı"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "gri"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "yer, zemin"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "büyümek"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "tahmin etmek"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "rehber; yol göstermek"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "silah"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "(rüzgâr) esinti"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "saç"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "saç kesimi"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "salonlar"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "el"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "asmak"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "olmak, meydana gelmek"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "mutluluk"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "mutlu"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "sert; zor"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "sert"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "şapka"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "yumurtadan çıkmak"
+  },
+  {
+   "lemma": "have",
+   "gloss": "sahip olmak; -si olmak"
+  },
+  {
+   "lemma": "he",
+   "gloss": "o (erkek)"
+  },
+  {
+   "lemma": "head",
+   "gloss": "baş, kafa"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "duymak"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "kalp"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "ısıtmak; sıcaklık"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "çit"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "merhaba"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "yardımcılar"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "her",
+   "gloss": "onun (kadın); onu"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "kendisi; kendini (kadın)"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "saklandı; sakladı"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "saklanmak"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "tepe"
+  },
+  {
+   "lemma": "him",
+   "gloss": "onu, ona (erkek)"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "kendisi; kendini"
+  },
+  {
+   "lemma": "his",
+   "gloss": "onun (erkek)"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "tutmak"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "tutar"
+  },
+  {
+   "lemma": "home",
+   "gloss": "ev; eve"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "başlık"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "umut; ummak"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "boynuz"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "dehşete düşmüş"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "at"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "saatler"
+  },
+  {
+   "lemma": "house",
+   "gloss": "ev"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "ev işi"
+  },
+  {
+   "lemma": "how",
+   "gloss": "nasıl"
+  },
+  {
+   "lemma": "however",
+   "gloss": "ancak"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "sarıldı"
+  },
+  {
+   "lemma": "human",
+   "gloss": "insan"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "yüz (100)"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "astı; asılı"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "acele etti"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "incitmek; yaralı"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "koca, eş"
+  },
+  {
+   "lemma": "i",
+   "gloss": "ben"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "fikir"
+  },
+  {
+   "lemma": "if",
+   "gloss": "eğer"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "hasta"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "hayalî"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "hayal etti"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "hemen"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "ölümsüz"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "imkânsız"
+  },
+  {
+   "lemma": "in",
+   "gloss": "içinde; -de/-da"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "yaralı"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "içeride; içine"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "ısrar etti"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "incelemek"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "yerine"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "ilgilenen, ilgi duyan"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "kesintiye uğramış, yarım kalmış"
+  },
+  {
+   "lemma": "into",
+   "gloss": "içine"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "davet etti"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "davet eder"
+  },
+  {
+   "lemma": "it",
+   "gloss": "o (cansız/hayvan)"
+  },
+  {
+   "lemma": "its",
+   "gloss": "onun (cansız/hayvan)"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "reçel"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "kıskanç"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(özel ad) İsa"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "job",
+   "gloss": "iş"
+  },
+  {
+   "lemma": "join",
+   "gloss": "katılmak"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "şaka yaptı"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "sevinç"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "yargıç; yargılamak"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "zıpladı, atladı"
+  },
+  {
+   "lemma": "just",
+   "gloss": "sadece; tam"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "tutmak; saklamak"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "tekmeledi"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "öldürmek"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "iyilik"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "krallık"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "öptü"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "öpücükler"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "mutfak"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "dizler"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "yıktı (knock down); (kapıyı) çaldı"
+  },
+  {
+   "lemma": "know",
+   "gloss": "bilmek"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "bağcıklar"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "göl"
+  },
+  {
+   "lemma": "land",
+   "gloss": "toprak, ülke; inmek"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(özel ad) Laponya"
+  },
+  {
+   "lemma": "large",
+   "gloss": "büyük"
+  },
+  {
+   "lemma": "last",
+   "gloss": "son; sonuncu"
+  },
+  {
+   "lemma": "later",
+   "gloss": "sonra"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "gülmek"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "yattı; koymak"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "eğildi, yaslandı"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "öğrendi"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "öğrenme"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "ayrılmak; bırakmak"
+  },
+  {
+   "lemma": "left",
+   "gloss": "gitti, ayrıldı; sol"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "bacak"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "ödünç vermek"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "ders"
+  },
+  {
+   "lemma": "let",
+   "gloss": "izin vermek; -sin"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "mektup; harf"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "yalanlar; yatar"
+  },
+  {
+   "lemma": "life",
+   "gloss": "hayat"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "kaldırmak"
+  },
+  {
+   "lemma": "light",
+   "gloss": "ışık; hafif"
+  },
+  {
+   "lemma": "like",
+   "gloss": "gibi; sevmek"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(özel ad); zambak"
+  },
+  {
+   "lemma": "line",
+   "gloss": "çizgi; sıra"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "dinlemek"
+  },
+  {
+   "lemma": "little",
+   "gloss": "küçük; biraz"
+  },
+  {
+   "lemma": "live",
+   "gloss": "yaşamak"
+  },
+  {
+   "lemma": "local",
+   "gloss": "yerel"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "kilitledi; kilitli"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "ıssız, kimsesiz"
+  },
+  {
+   "lemma": "long",
+   "gloss": "uzun"
+  },
+  {
+   "lemma": "look",
+   "gloss": "görünmek; bakmak"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "gevşetti"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "kaybetmek"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "yüksek sesli"
+  },
+  {
+   "lemma": "love",
+   "gloss": "sevmek; sevgi"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "indirdi"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "şans"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "topak"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(özel ad) Müneccimler"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "make",
+   "gloss": "yapmak"
+  },
+  {
+   "lemma": "man",
+   "gloss": "adam"
+  },
+  {
+   "lemma": "many",
+   "gloss": "birçok"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "izler, işaretler"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "evlilik"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "evlenmek"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "bataklık"
+  },
+  {
+   "lemma": "master",
+   "gloss": "efendi, usta"
+  },
+  {
+   "lemma": "match",
+   "gloss": "kibrit; eşleşmek"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "malzemeler"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "önemliydi"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "belediye başkanı"
+  },
+  {
+   "lemma": "me",
+   "gloss": "beni, bana"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "kaba; anlamına gelmek"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "buluşmak, tanışmak"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "erimek"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "dağınıklık"
+  },
+  {
+   "lemma": "message",
+   "gloss": "mesaj"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "ulak, haberci"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "metal"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "gece yarısı"
+  },
+  {
+   "lemma": "might",
+   "gloss": "-ebilir"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "mil"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "süt"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "bakan"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "dakikalar"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "özledi; kaçırdı"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "kayıp"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "alay etmek"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "an"
+  },
+  {
+   "lemma": "more",
+   "gloss": "daha"
+  },
+  {
+   "lemma": "most",
+   "gloss": "en; çoğu"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "anne"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "dağlar"
+  },
+  {
+   "lemma": "move",
+   "gloss": "hareket etmek; taşınmak"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "hareket"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "Bayan"
+  },
+  {
+   "lemma": "music",
+   "gloss": "müzik"
+  },
+  {
+   "lemma": "must",
+   "gloss": "-meli"
+  },
+  {
+   "lemma": "my",
+   "gloss": "benim"
+  },
+  {
+   "lemma": "name",
+   "gloss": "ad, isim"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "anlatıcı"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "dar"
+  },
+  {
+   "lemma": "near",
+   "gloss": "yakın"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "yakında"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "boyunlar"
+  },
+  {
+   "lemma": "need",
+   "gloss": "ihtiyaç duymak"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "iğneler"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "komşu"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "ne ... ne de"
+  },
+  {
+   "lemma": "net",
+   "gloss": "ağ"
+  },
+  {
+   "lemma": "never",
+   "gloss": "asla"
+  },
+  {
+   "lemma": "new",
+   "gloss": "yeni"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "yeni gelen"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "gazete"
+  },
+  {
+   "lemma": "next",
+   "gloss": "sonraki; yanında"
+  },
+  {
+   "lemma": "night",
+   "gloss": "gece"
+  },
+  {
+   "lemma": "no",
+   "gloss": "hayır; hiç"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "gürültü"
+  },
+  {
+   "lemma": "none",
+   "gloss": "hiçbiri"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "ne de"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "burun"
+  },
+  {
+   "lemma": "not",
+   "gloss": "değil"
+  },
+  {
+   "lemma": "note",
+   "gloss": "not"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "fark etti"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "fark eder"
+  },
+  {
+   "lemma": "now",
+   "gloss": "şimdi"
+  },
+  {
+   "lemma": "of",
+   "gloss": "-in/-ın; -den"
+  },
+  {
+   "lemma": "off",
+   "gloss": "yola (çıkmak); kapalı"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "teklif etmek"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "memur; subay"
+  },
+  {
+   "lemma": "official",
+   "gloss": "resmî; yetkili"
+  },
+  {
+   "lemma": "often",
+   "gloss": "sık sık"
+  },
+  {
+   "lemma": "old",
+   "gloss": "yaşlı; eski"
+  },
+  {
+   "lemma": "on",
+   "gloss": "üzerinde; -de"
+  },
+  {
+   "lemma": "once",
+   "gloss": "bir zamanlar; bir kez"
+  },
+  {
+   "lemma": "one",
+   "gloss": "bir; biri"
+  },
+  {
+   "lemma": "only",
+   "gloss": "sadece"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "üzerine"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "ileri"
+  },
+  {
+   "lemma": "open",
+   "gloss": "açmak; açık"
+  },
+  {
+   "lemma": "or",
+   "gloss": "veya"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "emretti"
+  },
+  {
+   "lemma": "original",
+   "gloss": "asıl, orijinal"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "süs"
+  },
+  {
+   "lemma": "other",
+   "gloss": "diğer, başka"
+  },
+  {
+   "lemma": "out",
+   "gloss": "dışarı"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "kıyafet"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "dışarıda"
+  },
+  {
+   "lemma": "over",
+   "gloss": "yanına (doğru); üzerinde"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "tepede"
+  },
+  {
+   "lemma": "package",
+   "gloss": "paket"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "paketleme"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "acı"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "acı veren"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "çift"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "saray"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "kâğıt"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "anne baba"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "ayrılık"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "(dans) partneri, eş"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "geçit"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "geçti"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "geçen"
+  },
+  {
+   "lemma": "past",
+   "gloss": "geçmiş; geçerek"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "yama; parça"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "sabır"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "ödemek"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "ödeme"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "şeftali"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "çakıl taşı"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "kuruşlar"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "mükemmel"
+  },
+  {
+   "lemma": "person",
+   "gloss": "kişi"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "ikna etti"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "fotoğraf"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "fotoğraflar"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "toplamak; seçmek"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "parça"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "güvercinler"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "yığın"
+  },
+  {
+   "lemma": "place",
+   "gloss": "yer"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "sivil (giyimli); sade"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "plan"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "dikti"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "dikim"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "bitkiler"
+  },
+  {
+   "lemma": "play",
+   "gloss": "oynamak"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "daldı"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "gösterdi; sivri"
+  },
+  {
+   "lemma": "police",
+   "gloss": "polis"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "polis"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "fakir; zavallı"
+  },
+  {
+   "lemma": "position",
+   "gloss": "görev, makam"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "döktü"
+  },
+  {
+   "lemma": "power",
+   "gloss": "güç"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "güçlü"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "tercih etmek"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "hazırlıklar"
+  },
+  {
+   "lemma": "present",
+   "gloss": "hediye; şimdiki"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "-mış gibi yaptı"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "engelledi"
+  },
+  {
+   "lemma": "price",
+   "gloss": "fiyat"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "batırmak"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "hapishane"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "refaha ermek"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "korumak"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "kanıtlamak"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "çekmek"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "cezalandırdı"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "ceza"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "mırlamak"
+  },
+  {
+   "lemma": "push",
+   "gloss": "itmek"
+  },
+  {
+   "lemma": "put",
+   "gloss": "koymak"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "hızlıca"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "yağmurlu"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "tepki"
+  },
+  {
+   "lemma": "read",
+   "gloss": "okumak"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "hazır"
+  },
+  {
+   "lemma": "real",
+   "gloss": "gerçek"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "fark etti, anladı"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "neden"
+  },
+  {
+   "lemma": "received",
+   "gloss": "aldı"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "yakın zamanda"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "tanımak"
+  },
+  {
+   "lemma": "red",
+   "gloss": "kırmızı"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "reddetmek"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "reddetti"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "reddedilme"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "kaldı"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "kalan"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "söz"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "dikkate değer"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "hatırlamak"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "hatırlattı"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "hatırlatıcı"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "çıkarmak"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "tekrarladı"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "cevap"
+  },
+  {
+   "lemma": "report",
+   "gloss": "rapor; bildirmek"
+  },
+  {
+   "lemma": "request",
+   "gloss": "istek"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "kurtarıcı"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "sorumlu"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "restoran"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "eski haline getirdi"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "ortaya çıkarmak"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "ödül"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "kurdele"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "binmek"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "binme"
+  },
+  {
+   "lemma": "right",
+   "gloss": "doğru; sağ"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "yükselir; doğar"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "nehir kıyısı"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "kızartmak; kızarmış"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "soymak"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "soyguncu, haydut"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "küçük ekmekler, yuvarlak ekmekler"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "çatı"
+  },
+  {
+   "lemma": "room",
+   "gloss": "oda"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "kökler"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "gül; yükseldi"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "pürüzlü; sert"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "run",
+   "gloss": "koşmak"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "koştu, acele etti"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s: -in/-ın iyelik eki)"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "üzüntü"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "same",
+   "gloss": "aynı"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "safir"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "sosisler"
+  },
+  {
+   "lemma": "save",
+   "gloss": "kurtarmak; biriktirmek"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "biriktirme"
+  },
+  {
+   "lemma": "say",
+   "gloss": "söylemek, demek"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "neredeyse hiç, güçlükle"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "saçıldı, dağıldı"
+  },
+  {
+   "lemma": "school",
+   "gloss": "okul"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "deniz"
+  },
+  {
+   "lemma": "search",
+   "gloss": "aramak"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "sır; gizli"
+  },
+  {
+   "lemma": "see",
+   "gloss": "görmek"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "tohum"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "aramak"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "göründü"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "görünür"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "yakaladı"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "satmak"
+  },
+  {
+   "lemma": "send",
+   "gloss": "göndermek"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "gönderme"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "cümle; ceza"
+  },
+  {
+   "lemma": "service",
+   "gloss": "hizmet"
+  },
+  {
+   "lemma": "set",
+   "gloss": "koymak; yola çıkmak (set off); (güneş) batmak"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "yedi"
+  },
+  {
+   "lemma": "several",
+   "gloss": "birkaç"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "dikti"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "dikiş"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "şekil"
+  },
+  {
+   "lemma": "she",
+   "gloss": "o (kadın)"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "kabuk"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "parlamak"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "parlar"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "parlayan"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "gemi"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "ayakkabı"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "dükkân"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "kıyı"
+  },
+  {
+   "lemma": "short",
+   "gloss": "kısa"
+  },
+  {
+   "lemma": "should",
+   "gloss": "-meli"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "omuzlar"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "bağırdı"
+  },
+  {
+   "lemma": "show",
+   "gloss": "göstermek"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "kapalı; kapatmak"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "hasta"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "görüş; manzara"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "işaret; imzalamak"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "imza"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "sessiz"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "gümüş"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "basit"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "saf kişi"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "şarkı söylemek"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "batmak; lavabo"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "kız kardeş"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "oturmak"
+  },
+  {
+   "lemma": "six",
+   "gloss": "altı"
+  },
+  {
+   "lemma": "size",
+   "gloss": "boyut"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "gökyüzü"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "uyumak"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "kol (giysi)"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "kaydı"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "kayar"
+  },
+  {
+   "lemma": "small",
+   "gloss": "küçük"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "koku; koklamak"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "horlamak"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "kar"
+  },
+  {
+   "lemma": "so",
+   "gloss": "bu yüzden; öyle"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "yumuşak"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "yumuşamak"
+  },
+  {
+   "lemma": "some",
+   "gloss": "biraz; bazı"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "biri"
+  },
+  {
+   "lemma": "something",
+   "gloss": "bir şey"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "bir yerde"
+  },
+  {
+   "lemma": "son",
+   "gloss": "oğul"
+  },
+  {
+   "lemma": "song",
+   "gloss": "şarkı"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "yakında"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "keder"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "kederle"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "ses"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "çorba"
+  },
+  {
+   "lemma": "space",
+   "gloss": "boşluk; uzay"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "konuşmak"
+  },
+  {
+   "lemma": "special",
+   "gloss": "özel"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "harcamak; geçirmek"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "döker"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "ruh"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "yaymak"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "ilkbahar; kaynak"
+  },
+  {
+   "lemma": "square",
+   "gloss": "meydan; kare"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "sıkışarak geçmek; sıkmak"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "merdiven"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "tezgâhlar"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "ayağını yere vurdu"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "ayakta durmak"
+  },
+  {
+   "lemma": "star",
+   "gloss": "yıldız"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "başlar"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "kalmak"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "çalmak"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "sap"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "üvey anne"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "üvey kız kardeş"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "sopa; yapışmak"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "yapışkan"
+  },
+  {
+   "lemma": "still",
+   "gloss": "hâlâ"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "dikti"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "mide, karın"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "taş"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "durmak"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "fırtına"
+  },
+  {
+   "lemma": "story",
+   "gloss": "hikâye"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "düz, dosdoğru"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "tel (saç teli)"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "tuhaf"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "yabancı"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "dere"
+  },
+  {
+   "lemma": "street",
+   "gloss": "sokak"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "güç"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "uzandı, gerdi"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "çakmak (kibrit); vurmak"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "tökezledi"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "aptal"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "başarmak"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "başarılı"
+  },
+  {
+   "lemma": "such",
+   "gloss": "öyle; böyle"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "aniden"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "şeker"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "önerdi"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "yaz"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "güneş ışığı"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "gün doğumu"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "gün batımı"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "sözde"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "şaşkınlık"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "çevrili, çevrelenmiş"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "şüphelendi"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "kılıç"
+  },
+  {
+   "lemma": "table",
+   "gloss": "masa"
+  },
+  {
+   "lemma": "take",
+   "gloss": "götürmek, almak"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "konuştu"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "konuşan; konuşma"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "uzun boylu"
+  },
+  {
+   "lemma": "task",
+   "gloss": "görev"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "çay"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "gözyaşı; yırtmak"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "anlatmak, söylemek"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "on"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "korkunç"
+  },
+  {
+   "lemma": "than",
+   "gloss": "-den (daha)"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "teşekkür etmek"
+  },
+  {
+   "lemma": "that",
+   "gloss": "şu, o; ki"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(belirli tanımlık; çoğu zaman çevrilmez)"
+  },
+  {
+   "lemma": "their",
+   "gloss": "onların"
+  },
+  {
+   "lemma": "them",
+   "gloss": "onları, onlara"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "kendileri"
+  },
+  {
+   "lemma": "then",
+   "gloss": "sonra; o zaman"
+  },
+  {
+   "lemma": "there",
+   "gloss": "orada"
+  },
+  {
+   "lemma": "these",
+   "gloss": "bunlar"
+  },
+  {
+   "lemma": "they",
+   "gloss": "onlar"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "kalın, sık"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "hırsız"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "ince; zayıf"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "şey"
+  },
+  {
+   "lemma": "think",
+   "gloss": "düşünmek"
+  },
+  {
+   "lemma": "third",
+   "gloss": "üçüncü"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "on üç"
+  },
+  {
+   "lemma": "this",
+   "gloss": "bu"
+  },
+  {
+   "lemma": "those",
+   "gloss": "şunlar"
+  },
+  {
+   "lemma": "though",
+   "gloss": "gerçi; rağmen"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "düşündü; düşünce"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "bin"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "iplik"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "tehdit etti"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "tehditkâr"
+  },
+  {
+   "lemma": "three",
+   "gloss": "üç"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "boğaz"
+  },
+  {
+   "lemma": "through",
+   "gloss": "içinden; boyunca"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "boyunca"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "atmak"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(özel ad) Parmak Kız"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "bağlamak"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "bağladı; bağlı"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "sıkıca"
+  },
+  {
+   "lemma": "time",
+   "gloss": "zaman; kez"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "minik"
+  },
+  {
+   "lemma": "to",
+   "gloss": "-e/-a; için"
+  },
+  {
+   "lemma": "today",
+   "gloss": "bugün"
+  },
+  {
+   "lemma": "together",
+   "gloss": "birlikte"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(özel ad)"
+  },
+  {
+   "lemma": "too",
+   "gloss": "de/da; çok"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "diş"
+  },
+  {
+   "lemma": "top",
+   "gloss": "üst; tepe"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "iletişimde olmak (kept in touch)"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "-e doğru"
+  },
+  {
+   "lemma": "town",
+   "gloss": "kasaba"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "oyuncak"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "meslek, zanaat"
+  },
+  {
+   "lemma": "train",
+   "gloss": "tren"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "yolculuk etmek"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "yolculuk etti"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "hazine"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "davrandı"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "ağaç"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "titredi"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "dertler"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "yalak"
+  },
+  {
+   "lemma": "true",
+   "gloss": "doğru, gerçek"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "gövde; hortum"
+  },
+  {
+   "lemma": "try",
+   "gloss": "denemek, çalışmak"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "dönmek; sıra"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "on iki"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "yirmi"
+  },
+  {
+   "lemma": "two",
+   "gloss": "iki"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "çirkin"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "-emeyen"
+  },
+  {
+   "lemma": "under",
+   "gloss": "altında"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "yer altı"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "anlamak"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "bitmemiş"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "uygun olmayan"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "açtı (katlanmış şeyi)"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "mutsuz"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "aksine"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "ışıksız"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "çözer"
+  },
+  {
+   "lemma": "until",
+   "gloss": "-e kadar"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "alışılmadık"
+  },
+  {
+   "lemma": "up",
+   "gloss": "yukarı"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "üzgün"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "üst kat"
+  },
+  {
+   "lemma": "us",
+   "gloss": "bizi, bize"
+  },
+  {
+   "lemma": "use",
+   "gloss": "kullanmak"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "faydalı"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "uçsuz bucaksız"
+  },
+  {
+   "lemma": "very",
+   "gloss": "çok"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "zaferler"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "şiddetle"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "ziyaret etmek"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "ziyaretçiler"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "bekledi"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "bekliyor"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "uyanmak"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "yürümek"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "duvar"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "dolaştı"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "dolaşan"
+  },
+  {
+   "lemma": "want",
+   "gloss": "istemek"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "gardırop"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "sıcak, ılık"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "uyardı"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "yıkadı"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "kol saati; izlemek"
+  },
+  {
+   "lemma": "water",
+   "gloss": "su"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "el salladı"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "dalgalar"
+  },
+  {
+   "lemma": "way",
+   "gloss": "yol; şekil"
+  },
+  {
+   "lemma": "we",
+   "gloss": "biz"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "zayıf"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "zayıfladı"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "zengin"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "giymek"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "düğün"
+  },
+  {
+   "lemma": "week",
+   "gloss": "hafta"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "karşıladı"
+  },
+  {
+   "lemma": "west",
+   "gloss": "batı"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "ıslak"
+  },
+  {
+   "lemma": "what",
+   "gloss": "ne"
+  },
+  {
+   "lemma": "when",
+   "gloss": "-dığında; ne zaman"
+  },
+  {
+   "lemma": "where",
+   "gloss": "nerede; -dığı yer"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "nereye ... olursa"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "-ip -mediği"
+  },
+  {
+   "lemma": "which",
+   "gloss": "hangi; -en"
+  },
+  {
+   "lemma": "while",
+   "gloss": "-ken"
+  },
+  {
+   "lemma": "white",
+   "gloss": "beyaz"
+  },
+  {
+   "lemma": "who",
+   "gloss": "kim; -en (kişi)"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "kim ... olursa"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "bütün"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "kimin"
+  },
+  {
+   "lemma": "why",
+   "gloss": "neden"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "kötü kalpli"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "eş, karı"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "vahşi"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "ıssız doğa"
+  },
+  {
+   "lemma": "will",
+   "gloss": "-ecek; irade"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "isteyerek"
+  },
+  {
+   "lemma": "win",
+   "gloss": "kazanmak"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "pencere pervazı"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "şarap"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "kanat"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "bilge"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "dilemek; dilek"
+  },
+  {
+   "lemma": "with",
+   "gloss": "ile, -le"
+  },
+  {
+   "lemma": "without",
+   "gloss": "-sız, olmadan"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "kadın"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "harika"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "odun; ahşap; orman"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "tahta, ahşap"
+  },
+  {
+   "lemma": "word",
+   "gloss": "kelime; söz"
+  },
+  {
+   "lemma": "work",
+   "gloss": "çalışmak; iş"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "işçiler"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "atölye"
+  },
+  {
+   "lemma": "world",
+   "gloss": "dünya"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "endişeli"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "layık"
+  },
+  {
+   "lemma": "would",
+   "gloss": "-ecekti; -erdi"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "yaralar"
+  },
+  {
+   "lemma": "write",
+   "gloss": "yazmak"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "yazar"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "yanlış"
+  },
+  {
+   "lemma": "year",
+   "gloss": "yıl"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "henüz; yine de"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(özel ad) York"
+  },
+  {
+   "lemma": "you",
+   "gloss": "sen; siz"
+  },
+  {
+   "lemma": "young",
+   "gloss": "genç"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "genç"
+  },
+  {
+   "lemma": "your",
+   "gloss": "senin"
+  }
+ ],
  "forms": {
   "am": "be",
   "are": "be",
