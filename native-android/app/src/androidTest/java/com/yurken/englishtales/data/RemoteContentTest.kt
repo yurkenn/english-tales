@@ -5,6 +5,8 @@ import android.graphics.Bitmap
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.withTimeout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
@@ -48,6 +50,8 @@ class RemoteContentTest {
         /** Servers without the Q4.0 translation tables answer those queries with an error. */
         var translationTables=false
         var tagTables=false
+        /** Holds catalog refreshes at their first request until released. */
+        @Volatile var gate: java.util.concurrent.CountDownLatch?=null
         val doc=JSONObject().put("id",revision).put("story_id","remote-test").put("title","Remote test").put("author","English Tales")
             .put("level","A1").put("genre","Gizem").put("description","A test story").put("published_at","2026-10-11T00:00:00Z").put("cover_asset_id",assetId)
         override fun bytes(path: String,maxBytes: Long): ByteArray {
@@ -56,6 +60,7 @@ class RemoteContentTest {
             val uri=android.net.Uri.parse("https://example.invalid$path")
             val offset=uri.getQueryParameter("offset")!!.toInt()
             val table=uri.lastPathSegment
+            if(table=="stories") gate?.let {check(it.await(10,java.util.concurrent.TimeUnit.SECONDS))}
             val rows=when(table) {
                 "stories" -> if(empty) emptyList() else listOf(JSONObject().put("id","remote-test").put("current_revision_id",revision).also {row -> createdAt?.let {row.put("created_at",it)}})
                 "story_revisions" -> listOf(doc)
@@ -206,6 +211,29 @@ class RemoteContentTest {
         assertFalse(repo.isDownloaded(LearningContent.stories.single()))
         assertEquals(0,LearningContent.stories.single().sentences.size)
         assertFalse(File(directory,"published-content/${fixture.revision}.json").exists())
+    }
+    @Test fun readerDownloadDuringRefreshWaitsInsteadOfBeingDropped()=runBlocking {
+        val fixture=Fixture(); val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh()
+        val story=LearningContent.stories.single(); assertFalse(repo.isDownloaded(story))
+        val gate=java.util.concurrent.CountDownLatch(1); fixture.gate=gate
+        val app=InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as android.app.Application
+        val ready=kotlinx.coroutines.CompletableDeferred<Story>(); var calls=0
+        val model=withContext(Dispatchers.Main) {ContentViewModel(app,repo)}
+        // The ViewModel's start-up refresh is now held at the network.
+        withTimeout(10_000) {model.status.first {it.busy && it.downloading==null}}
+        withContext(Dispatchers.Main) {
+            model.download(story) {calls++; ready.complete(it)}
+            model.download(story) {calls++}
+            assertEquals(story.id,model.status.value.downloading); assertTrue(model.status.value.busy)
+        }
+        gate.countDown()
+        val opened=withTimeout(10_000) {ready.await()}
+        assertEquals(7,opened.sentences.size); assertTrue(repo.isDownloaded(story))
+        withContext(Dispatchers.Main) {
+            assertEquals(1,calls)
+            assertFalse(model.status.value.busy); assertNull(model.status.value.downloading)
+        }
     }
     @Test fun failedRefreshKeepsWorkingContentAndReaderPin()=runBlocking {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)

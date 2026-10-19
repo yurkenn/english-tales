@@ -103,6 +103,9 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         }
     }
 
+    // My Words only removes: a repeated tap must not re-save the word with fresh review progress (a glossary word's second remove would also fail its lookup).
+    fun removeWord(wordId: String) = mutate {if(store.isWordSaved(wordId)) store.setWordSaved(wordId,false)}
+
     /** Saves or removes a glossary word from the reader (Q4.3a). */
     fun toggleGlossaryWord(word: WordInfo) {
         var saved: Boolean?=null
