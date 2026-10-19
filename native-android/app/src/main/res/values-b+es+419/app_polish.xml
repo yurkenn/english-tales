@@ -12,4 +12,10 @@
     <string name="empty_clear_search">Borrar búsqueda</string>
     <string name="empty_words_hint">Aún no tienes palabras guardadas. Toca una palabra mientras lees y guárdala; aparecerá aquí.</string>
     <string name="theme_system">Ajuste del teléfono</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Toca una palabra para ver su significado y guardarla si quieres.</string>
+    <string name="reader_hint_sentence">Mantén presionada una oración para ver su traducción. Mientras se lee la página en voz alta, mantenerla presionada continúa la lectura desde ahí.</string>
+    <string name="reader_hint_swipe">Desliza a la izquierda o a la derecha para cambiar de página.</string>
+    <string name="page_translate">Traducir página</string>
+    <string name="page_translate_hide">Ocultar traducción de la página</string>
 </resources>

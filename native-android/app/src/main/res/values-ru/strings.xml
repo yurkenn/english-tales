@@ -257,7 +257,6 @@
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">Не удалось сохранить настройки чтения. Вы можете попробовать еще раз.</string>
     <string name="kelimelerim_kayitli_kelime_2">Мои слова, %1$s сохранил слова</string>
     <string name="okurken_ogren">Учитесь, пока читаете</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">Коснитесь подчеркнутого слова и сохраните его. Значок справа переводит предложение; наушники прочитали страницу вслух.</string>
     <string name="ceviriyi_gizle">Скрыть перевод</string>
     <string name="cumleyi_cevir">Перевести предложение</string>
     <string name="sayfayi_dinle">Прослушать страницу</string>

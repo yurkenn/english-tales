@@ -12,4 +12,10 @@
     <string name="empty_clear_search">খোঁজ মুছুন</string>
     <string name="empty_words_hint">এখনও কোনো শব্দ সংরক্ষণ করা হয়নি। পড়ার সময় একটি শব্দে ট্যাপ করে সংরক্ষণ করুন; এটি এখানে দেখা যাবে।</string>
     <string name="theme_system">ফোনের সেটিং</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">কোনো শব্দে ট্যাপ করে অর্থ দেখুন, চাইলে সংরক্ষণ করুন।</string>
+    <string name="reader_hint_sentence">কোনো বাক্যে চেপে ধরে রাখুন, অনুবাদ দেখা যাবে। পৃষ্ঠা পড়ে শোনানোর সময় চেপে ধরলে সেই বাক্য থেকে পড়া চলবে।</string>
+    <string name="reader_hint_swipe">পৃষ্ঠা বদলাতে বাঁয়ে বা ডানে সোয়াইপ করুন।</string>
+    <string name="page_translate">পৃষ্ঠা অনুবাদ করুন</string>
+    <string name="page_translate_hide">পৃষ্ঠার অনুবাদ লুকান</string>
 </resources>

@@ -12,4 +12,10 @@
     <string name="empty_clear_search">Clear search</string>
     <string name="empty_words_hint">No saved words yet. Tap a word while reading and save it; it will appear here.</string>
     <string name="theme_system">Device setting</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Tap a word to see its meaning and save it if you like.</string>
+    <string name="reader_hint_sentence">Press and hold a sentence to see its translation. While the page is read aloud, holding a sentence continues the reading from there.</string>
+    <string name="reader_hint_swipe">Swipe left or right to turn the page.</string>
+    <string name="page_translate">Translate page</string>
+    <string name="page_translate_hide">Hide page translation</string>
 </resources>

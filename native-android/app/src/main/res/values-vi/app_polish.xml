@@ -12,4 +12,10 @@
     <string name="empty_clear_search">Xóa tìm kiếm</string>
     <string name="empty_words_hint">Chưa có từ nào được lưu. Chạm vào một từ khi đọc và lưu lại; từ đó sẽ xuất hiện ở đây.</string>
     <string name="theme_system">Theo cài đặt máy</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Chạm vào một từ để xem nghĩa và lưu lại nếu muốn.</string>
+    <string name="reader_hint_sentence">Nhấn giữ một câu để xem bản dịch. Khi trang đang được đọc to, nhấn giữ một câu sẽ đọc tiếp từ câu đó.</string>
+    <string name="reader_hint_swipe">Vuốt sang trái hoặc phải để lật trang.</string>
+    <string name="page_translate">Dịch trang</string>
+    <string name="page_translate_hide">Ẩn bản dịch trang</string>
 </resources>

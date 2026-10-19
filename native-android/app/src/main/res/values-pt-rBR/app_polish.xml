@@ -12,4 +12,10 @@
     <string name="empty_clear_search">Limpar busca</string>
     <string name="empty_words_hint">Você ainda não salvou palavras. Toque em uma palavra enquanto lê e salve; ela aparecerá aqui.</string>
     <string name="theme_system">Ajuste do celular</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Toque em uma palavra para ver o significado e salvá-la se quiser.</string>
+    <string name="reader_hint_sentence">Toque e segure uma frase para ver a tradução. Enquanto a página é lida em voz alta, segurar uma frase continua a leitura a partir dela.</string>
+    <string name="reader_hint_swipe">Deslize para a esquerda ou para a direita para virar a página.</string>
+    <string name="page_translate">Traduzir página</string>
+    <string name="page_translate_hide">Ocultar tradução da página</string>
 </resources>

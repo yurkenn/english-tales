@@ -12,4 +12,10 @@
     <string name="empty_clear_search">تلاش صاف کریں</string>
     <string name="empty_words_hint">ابھی کوئی لفظ محفوظ نہیں۔ پڑھتے ہوئے کسی لفظ کو چھو کر محفوظ کریں؛ وہ یہاں نظر آئے گا۔</string>
     <string name="theme_system">فون کی ترتیب</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">کسی لفظ کو چھو کر اس کا مطلب دیکھیں اور چاہیں تو محفوظ کریں۔</string>
+    <string name="reader_hint_sentence">کسی جملے کو دبا کر رکھیں، اس کا ترجمہ کھل جائے گا۔ صفحہ پڑھ کر سنائے جانے کے دوران دبا کر رکھنے سے پڑھائی اسی جملے سے جاری رہے گی۔</string>
+    <string name="reader_hint_swipe">صفحہ بدلنے کے لیے دائیں یا بائیں سوائپ کریں۔</string>
+    <string name="page_translate">صفحے کا ترجمہ کریں</string>
+    <string name="page_translate_hide">صفحے کا ترجمہ چھپائیں</string>
 </resources>

@@ -12,4 +12,10 @@
     <string name="empty_clear_search">Hapus pencarian</string>
     <string name="empty_words_hint">Belum ada kata tersimpan. Ketuk kata saat membaca lalu simpan; kata itu akan muncul di sini.</string>
     <string name="theme_system">Pengaturan ponsel</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Ketuk kata untuk melihat artinya dan simpan bila mau.</string>
+    <string name="reader_hint_sentence">Tekan lama kalimat untuk melihat terjemahannya. Saat halaman dibacakan, menekan lama kalimat melanjutkan bacaan dari sana.</string>
+    <string name="reader_hint_swipe">Geser ke kiri atau ke kanan untuk membalik halaman.</string>
+    <string name="page_translate">Terjemahkan halaman</string>
+    <string name="page_translate_hide">Sembunyikan terjemahan halaman</string>
 </resources>

@@ -256,7 +256,6 @@
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">The reading setting couldn\'t be saved. You can try again.</string>
     <string name="kelimelerim_kayitli_kelime_2">My words, %1$s saved words</string>
     <string name="okurken_ogren">Learn while you read</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">Tap an underlined word and save it. The icon on the right translates the sentence; the headphones read the page aloud.</string>
     <string name="ceviriyi_gizle">Hide translation</string>
     <string name="cumleyi_cevir">Translate sentence</string>
     <string name="sayfayi_dinle">Listen to the page</string>

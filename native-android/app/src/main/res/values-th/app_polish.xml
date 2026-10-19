@@ -12,4 +12,10 @@
     <string name="empty_clear_search">ล้างการค้นหา</string>
     <string name="empty_words_hint">ยังไม่มีคำที่บันทึก แตะคำขณะอ่านแล้วบันทึก คำนั้นจะแสดงที่นี่</string>
     <string name="theme_system">ตามการตั้งค่าโทรศัพท์</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">แตะคำเพื่อดูความหมาย และบันทึกไว้ได้ถ้าต้องการ</string>
+    <string name="reader_hint_sentence">กดค้างที่ประโยคเพื่อดูคำแปล ขณะที่กำลังอ่านออกเสียง การกดค้างจะอ่านต่อจากประโยคนั้น</string>
+    <string name="reader_hint_swipe">ปัดซ้ายหรือขวาเพื่อเปลี่ยนหน้า</string>
+    <string name="page_translate">แปลทั้งหน้า</string>
+    <string name="page_translate_hide">ซ่อนคำแปลของหน้า</string>
 </resources>

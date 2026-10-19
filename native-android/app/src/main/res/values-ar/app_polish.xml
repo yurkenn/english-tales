@@ -12,4 +12,10 @@
     <string name="empty_clear_search">مسح البحث</string>
     <string name="empty_words_hint">لا توجد كلمات محفوظة بعد. المس كلمة أثناء القراءة واحفظها؛ وستظهر هنا.</string>
     <string name="theme_system">إعداد الهاتف</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">المس كلمة لترى معناها واحفظها إن أردت.</string>
+    <string name="reader_hint_sentence">اضغط مطولًا على جملة لترى ترجمتها. أثناء قراءة الصفحة بصوت عالٍ، يتابع الضغط المطوّل القراءة من تلك الجملة.</string>
+    <string name="reader_hint_swipe">اسحب يمينًا أو يسارًا لتقليب الصفحة.</string>
+    <string name="page_translate">ترجمة الصفحة</string>
+    <string name="page_translate_hide">إخفاء ترجمة الصفحة</string>
 </resources>

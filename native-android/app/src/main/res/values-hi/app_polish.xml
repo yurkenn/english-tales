@@ -12,4 +12,10 @@
     <string name="empty_clear_search">खोज साफ़ करें</string>
     <string name="empty_words_hint">अभी कोई शब्द सहेजा नहीं गया। पढ़ते समय किसी शब्द को छूकर सहेजें; वह यहाँ दिखेगा।</string>
     <string name="theme_system">फ़ोन की सेटिंग</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">किसी शब्द को छूकर उसका अर्थ देखें और चाहें तो सहेजें।</string>
+    <string name="reader_hint_sentence">किसी वाक्य को दबाकर रखें, उसका अनुवाद दिखेगा। पेज पढ़कर सुनाए जाते समय दबाकर रखने पर पढ़ना उसी वाक्य से आगे चलेगा।</string>
+    <string name="reader_hint_swipe">पेज बदलने के लिए बाएँ या दाएँ स्वाइप करें।</string>
+    <string name="page_translate">पेज का अनुवाद करें</string>
+    <string name="page_translate_hide">पेज का अनुवाद छिपाएँ</string>
 </resources>

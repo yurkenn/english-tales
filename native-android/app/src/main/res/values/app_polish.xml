@@ -12,4 +12,10 @@
     <string name="empty_clear_search">Aramayı temizle</string>
     <string name="empty_words_hint">Henüz kayıtlı kelimen yok. Okurken bir kelimeye dokun ve kaydet; burada toplanır.</string>
     <string name="theme_system">Telefon ayarı</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Bir kelimeye dokun: anlamını gör, istersen kaydet.</string>
+    <string name="reader_hint_sentence">Cümleye basılı tut: çevirisi açılır. Sayfa okunurken basılı tutarsan okuma o cümleden sürer.</string>
+    <string name="reader_hint_swipe">Sayfa çevirmek için sağa ya da sola kaydır.</string>
+    <string name="page_translate">Sayfayı çevir</string>
+    <string name="page_translate_hide">Sayfa çevirisini gizle</string>
 </resources>

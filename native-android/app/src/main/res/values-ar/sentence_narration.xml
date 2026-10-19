@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="listen_from_sentence">استمع من هذه الجملة</string>
-    <string name="listen_from_sentence_hint">اضغط مع الاستمرار على جملة لقراءة الصفحة من هناك؛ يتم تسليط الضوء على الجملة التي تتم قراءتها.</string>
 </resources>

@@ -262,7 +262,6 @@
     <string name="aa" translatable="false">Aa</string>
     <string name="kelimelerim_kayitli_kelime_2">Kelimelerim, %1$s kayıtlı kelime</string>
     <string name="okurken_ogren">Okurken öğren</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">Altı çizili kelimeye dokun ve kaydet. Sağdaki simge cümleyi çevirir; kulaklık sayfayı seslendirir.</string>
     <string name="ceviriyi_gizle">Çeviriyi gizle</string>
     <string name="cumleyi_cevir">Cümleyi çevir</string>
     <string name="sayfayi_dinle">Sayfayı dinle</string>
