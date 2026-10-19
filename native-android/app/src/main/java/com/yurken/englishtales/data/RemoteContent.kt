@@ -54,16 +54,20 @@ open class ContentHttp(private val base: String, private val key: String) {
             }
         } finally { connection.disconnect() }
     }
-    fun rows(table: String, query: String, pageSize: Int = 5): JSONArray {
+    /** A page shorter than [pageSize] is the last one, so the page must not exceed the server's cap. */
+    fun rows(table: String, query: String, pageSize: Int = PAGE_SIZE): JSONArray {
         val all = JSONArray(); var offset = 0
-        // A small default page also exercises pagination with the initial six stories.
         while (true) {
             val page = JSONArray(String(bytes("/rest/v1/$table?$query&limit=$pageSize&offset=$offset", 2_000_000), Charsets.UTF_8))
             for (i in 0 until page.length()) all.put(page.getJSONObject(i))
-            if (page.length() == 0) return all
             offset += page.length()
             require(offset <= 20_000) { "Katalog sınırı aşıldı." }
+            if (page.length() < pageSize) return all
         }
+    }
+    companion object {
+        /** PostgREST `max_rows` (backend/supabase/config.toml, also the hosted default); a larger page would be cut short. */
+        const val PAGE_SIZE = 1000
     }
 }
 
@@ -260,7 +264,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         })
     }
     /** Translation tables are newer than the first releases; until a server has them, the legacy Turkish columns are used. */
-    private fun ContentHttp.optionalRows(table: String, query: String, pageSize: Int = 5) = runCatching { rows(table, query, pageSize) }.getOrNull()
+    private fun ContentHttp.optionalRows(table: String, query: String, pageSize: Int = ContentHttp.PAGE_SIZE) = runCatching { rows(table, query, pageSize) }.getOrNull()
     private fun JSONArray.forEachObject(action: (JSONObject) -> Unit) = (0 until length()).forEach { action(getJSONObject(it)) }
     /** Stores each row's text as `translations.{lang}` on the matching item, which [ContentCodec] reads first. */
     private fun attach(items: JSONArray, rows: JSONArray, key: String, field: String, lang: String) {

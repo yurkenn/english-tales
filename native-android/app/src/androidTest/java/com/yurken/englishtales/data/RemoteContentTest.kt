@@ -44,7 +44,9 @@ class RemoteContentTest {
         var corrupted=false
         var fail=false
         var empty=false
-        var revisionQueries=0
+        var sentenceCount=7
+        /** Successful REST requests per table. */
+        val requests=mutableMapOf<String,Int>()
         var createdAt: String?=null
         var questions=false
         /** Servers without the Q4.0 translation tables answer those queries with an error. */
@@ -64,7 +66,7 @@ class RemoteContentTest {
             val rows=when(table) {
                 "stories" -> if(empty) emptyList() else listOf(JSONObject().put("id","remote-test").put("current_revision_id",revision).also {row -> createdAt?.let {row.put("created_at",it)}})
                 "story_revisions" -> listOf(doc)
-                "story_sentences" -> (1..7).map {JSONObject().put("id","s-$it").put("position",it).put("english","A quiet day.").put("turkish","Sessiz bir gün.")}
+                "story_sentences" -> (1..sentenceCount).map {JSONObject().put("id","s-$it").put("position",it).put("english","A quiet day.").put("turkish","Sessiz bir gün.")}
                 "revision_words" -> listOf(JSONObject().put("id","fixture-quiet").put("word","quiet").put("translation","sessiz").put("pronunciation","quiet").put("example","A quiet day."))
                 "sentence_words" -> listOf(JSONObject().put("sentence_id","s-1").put("word_id","fixture-quiet"))
                 "content_assets" -> listOf(JSONObject().put("id",assetId).put("kind","cover").put("mime_type","image/png").put("storage_path","test/cover.png").put("byte_size",cover.size)
@@ -79,8 +81,10 @@ class RemoteContentTest {
                 "revision_tags" -> {check(tagTables); listOf(JSONObject().put("revision_id",revision).put("tag_id","gizem"),JSONObject().put("revision_id",revision).put("tag_id","masal"))}
                 else -> error("Unexpected table")
             }
-            if(table=="story_sentences") revisionQueries++
-            return JSONArray(rows.drop(offset).take(5)).toString().toByteArray()
+            requests[table!!]=(requests[table]?:0)+1
+            // Like PostgREST, a page never exceeds the server's max_rows.
+            val limit=minOf(uri.getQueryParameter("limit")!!.toInt(),ContentHttp.PAGE_SIZE)
+            return JSONArray(rows.drop(offset).take(limit)).toString().toByteArray()
         }
     }
     /** A bundled story whose live story now points at a newer published revision. */
@@ -128,12 +132,29 @@ class RemoteContentTest {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)
         repo.restore(); repo.refresh()
         val downloaded=repo.download(LearningContent.stories.single())
-        assertEquals(7,downloaded.sentences.size); assertEquals(3,fixture.revisionQueries)
+        assertEquals(7,downloaded.sentences.size); assertEquals(1,fixture.requests["story_sentences"])
         assertEquals(listOf("fixture-quiet"),LearningContent.wordsForStory(downloaded).map {it.id})
         fixture.fail=true
         val restart=ContentRepository(context,fixture); restart.restore()
         assertTrue(restart.isDownloaded(LearningContent.stories.single()))
         assertEquals(7,LearningContent.stories.single().sentences.size)
+    }
+    @Test fun downloadFetchesEachTableInFullPages()=runBlocking {
+        val fixture=Fixture().apply {sentenceCount=2_503}; val repo=ContentRepository(context,fixture)
+        repo.restore(); repo.refresh(); fixture.requests.clear()
+        assertEquals(2_503,repo.download(LearningContent.stories.single()).sentences.size)
+        // ceil(2503/1000) pages; the short last page ends pagination without an extra empty request.
+        assertEquals(3,fixture.requests["story_sentences"])
+        assertEquals(mapOf("story_revisions" to 1,"revision_words" to 1,"sentence_words" to 1,"content_assets" to 1),fixture.requests-"story_sentences")
+    }
+    @Test fun smallPagesStopAfterTheLastPartialPage() {
+        val fixture=Fixture(); val query="select=*&revision_id=eq.${fixture.revision}&order=position.asc"
+        val rows=fixture.rows("story_sentences",query,5)
+        assertEquals((1..7).map {"s-$it"},(0 until rows.length()).map {rows.getJSONObject(it).getString("id")})
+        assertEquals(2,fixture.requests["story_sentences"])
+        fixture.sentenceCount=10; fixture.requests.clear()
+        // A full last page needs one empty page to confirm the end.
+        assertEquals(10,fixture.rows("story_sentences",query,5).length()); assertEquals(3,fixture.requests["story_sentences"])
     }
     @Test fun downloadedQuestionsSurviveOfflineRestartAndAreOptional()=runBlocking {
         val withQuestions=Fixture().apply {questions=true}; val repo=ContentRepository(context,withQuestions)
