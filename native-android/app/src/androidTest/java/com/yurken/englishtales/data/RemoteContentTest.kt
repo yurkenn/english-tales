@@ -93,6 +93,7 @@ class RemoteContentTest {
         val revision=UUID.randomUUID().toString()
         val cover=UUID.randomUUID().toString()
         var fail=false
+        val requests=mutableMapOf<String,Int>()
         private fun doc(id: String,coverId: String)=JSONObject().put("id",id).put("story_id",story.id).put("title",story.title).put("author",story.author)
             .put("level",story.level).put("genre",story.genre).put("description",story.description).put("published_at","2026-10-16T00:00:00Z").put("cover_asset_id",coverId)
         private val revisions=listOf(doc(story.revisionId,cover),doc(revision,if(newCover) UUID.randomUUID().toString() else cover))
@@ -100,6 +101,7 @@ class RemoteContentTest {
             check(!fail) {"Simulated network failure"}
             val uri=android.net.Uri.parse("https://example.invalid$path")
             fun ids(name: String)=uri.getQueryParameter(name)?.removePrefix("in.(")?.removePrefix("eq.")?.removeSuffix(")")?.split(",")?.toSet()
+            uri.lastPathSegment?.let {requests[it]=(requests[it]?:0)+1}
             val rows=when(uri.lastPathSegment) {
                 "stories" -> listOf(JSONObject().put("id",story.id).put("current_revision_id",revision))
                 "story_revisions" -> revisions.filter {it.getString("id") in ids("id")!!}
@@ -128,6 +130,14 @@ class RemoteContentTest {
             val current=LearningContent.storyById.getValue(fixture.story.id)
             assertEquals(fixture.revision,current.revisionId); assertTrue(current.sentences.isEmpty())
         }
+    }
+    @Test fun changedTextIsCheckedOnceAcrossRefreshesAndRestarts()=runBlocking {
+        val fixture=RevisionFixture(original.first(),editedText=true)
+        val repo=ContentRepository(context,fixture); repo.restore(); repo.refresh()
+        val checked=fixture.requests.getValue("story_sentences"); assertTrue(checked>0)
+        repo.refresh(); ContentRepository(context,fixture).apply {restore(); refresh()}
+        assertEquals(checked,fixture.requests["story_sentences"])
+        assertTrue(LearningContent.storyById.getValue(fixture.story.id).sentences.isEmpty())
     }
     @Test fun paginatedDownloadSurvivesOfflineRestart()=runBlocking {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)
