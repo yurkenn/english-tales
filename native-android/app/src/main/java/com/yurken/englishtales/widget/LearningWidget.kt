@@ -1,6 +1,10 @@
 package com.yurken.englishtales.widget
 
 import com.yurken.englishtales.AppLanguage
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import androidx.compose.runtime.Composable
@@ -33,7 +37,10 @@ import com.yurken.englishtales.R
 import com.yurken.englishtales.data.LearningReminderOwner
 import com.yurken.englishtales.data.LearningSnapshot
 import com.yurken.englishtales.data.LearningStore
+import java.util.Calendar
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /** What the widget shows; null fields mean "nothing to say" rather than zero. */
@@ -63,8 +70,52 @@ class LearningWidget : GlanceAppWidget() {
     }
 }
 
+/**
+ * No periodic updates (updatePeriodMillis=0): the numbers change when the learner uses the app, which
+ * refreshes on onStop, or when the day rolls over, which is one inexact, non-wakeup alarm per day.
+ */
 class LearningWidgetReceiver : GlanceAppWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = LearningWidget()
+
+    // Sent when a widget is added, after boot (which clears alarms) and after an app update.
+    override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
+        super.onUpdate(context, appWidgetManager, appWidgetIds)
+        LearningWidgetDay.schedule(context)
+    }
+    override fun onDisabled(context: Context) {
+        super.onDisabled(context)
+        LearningWidgetDay.cancel(context)
+    }
+    override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action !in LearningWidgetDay.actions) return super.onReceive(context, intent)
+        // A new day, or a clock or time zone change, moves the streak, today's goal and due reviews.
+        LearningWidgetDay.schedule(context)
+        val result = goAsync()
+        CoroutineScope(Dispatchers.Default).launch { try { LearningWidget.refresh(context) } finally { result.finish() } }
+    }
+}
+
+internal object LearningWidgetDay {
+    const val ACTION = "com.yurken.englishtales.WIDGET_NEW_DAY"
+    val actions = setOf(ACTION, Intent.ACTION_TIME_CHANGED, Intent.ACTION_TIMEZONE_CHANGED)
+
+    /** Local start of the next day, plus a minute so the snapshot is read after midnight. */
+    fun nextDayStart(now: Long, calendar: Calendar = Calendar.getInstance()): Long = calendar.apply {
+        timeInMillis = now; add(Calendar.DAY_OF_YEAR, 1)
+        set(Calendar.HOUR_OF_DAY, 0); set(Calendar.MINUTE, 1); set(Calendar.SECOND, 0); set(Calendar.MILLISECOND, 0)
+    }.timeInMillis
+
+    private fun pending(context: Context) = PendingIntent.getBroadcast(context, 73,
+        Intent(context, LearningWidgetReceiver::class.java).setAction(ACTION), PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+
+    fun schedule(context: Context) {
+        val ids = runCatching { AppWidgetManager.getInstance(context)
+            .getAppWidgetIds(ComponentName(context, LearningWidgetReceiver::class.java)) }.getOrNull()
+        if (ids == null || ids.isEmpty()) return cancel(context)
+        // RTC, not RTC_WAKEUP, and inexact: a sleeping phone is not woken; it fires when the phone next wakes.
+        context.getSystemService(AlarmManager::class.java).set(AlarmManager.RTC, nextDayStart(System.currentTimeMillis()), pending(context))
+    }
+    fun cancel(context: Context) = context.getSystemService(AlarmManager::class.java).cancel(pending(context))
 }
 
 @Composable

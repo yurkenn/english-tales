@@ -51,6 +51,16 @@ import kotlinx.coroutines.CancellationException
 
 private const val SENTENCES_PER_PAGE=8
 
+/** The page the reader opens on. A finished story starts over: completion stores its last sentence as the position. */
+internal fun initialReaderPage(story: Story, snapshot: LearningSnapshot): Int {
+    val pageCount=(story.sentences.size+SENTENCES_PER_PAGE-1)/SENTENCES_PER_PAGE
+    val saved=snapshot.progressFor(story)
+    if(saved==100) return 0
+    val position=snapshot.readingPositions[story.id]?.takeIf {it.carriesTo(story)}
+    val sentenceIndex=position?.let {p ->story.sentences.indexOfFirst {it.id==p.sentenceId}}?.takeIf {it>=0}
+    return (sentenceIndex?.div(SENTENCES_PER_PAGE)?:((saved*story.sentences.size+99)/100/SENTENCES_PER_PAGE)).coerceIn(0,(pageCount-1).coerceAtLeast(0))
+}
+
 /**
  * Utterance bookkeeping for one narration: a list of sentences is queued as one utterance each, so the
  * engine reports which sentence is being read. Only the newest batch counts; callbacks from a flushed
@@ -175,10 +185,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
     val context=LocalContext.current
     val narrator=rememberNarrator()
     val pageCount=(story.sentences.size+SENTENCES_PER_PAGE-1)/SENTENCES_PER_PAGE
-    val saved=snapshot.progressFor(story)
-    val position=snapshot.readingPositions[story.id]?.takeIf {it.carriesTo(story)}
-    val sentenceIndex=position?.let {p ->story.sentences.indexOfFirst {it.id==p.sentenceId}}?.takeIf {it>=0}
-    var page by rememberSaveable(story.revisionId) { mutableIntStateOf((sentenceIndex?.div(SENTENCES_PER_PAGE)?:(((if(saved==100) 0 else saved)*story.sentences.size+99)/100/SENTENCES_PER_PAGE)).coerceIn(0,pageCount-1)) }
+    var page by rememberSaveable(story.revisionId) { mutableIntStateOf(initialReaderPage(story,snapshot)) }
     // Scrubbing the slider only moves the page on screen; the position is reported once the drag ends,
     // so a long scrub writes one progress event instead of one per page crossed.
     var reportedPage by rememberSaveable(story.revisionId) { mutableIntStateOf(page) }
