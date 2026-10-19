@@ -1,0 +1,128 @@
+{
+  "recordedAt": "2026-10-19T11:27:33.893839+00:00",
+  "status": "prepared-for-production-review",
+  "productionBefore": {
+    "versionCode": 48,
+    "versionName": "2.0.0",
+    "rollout": 1.0
+  },
+  "internalBefore": {
+    "versionCode": 49,
+    "versionName": "2.1.0"
+  },
+  "candidate": {
+    "versionCode": 50,
+    "versionName": "2.2.0",
+    "baselineProfilePackagingVerified": true,
+    "baselineProfiles": {
+      "baseline-prof.txt": {
+        "rules": 20988,
+        "applicationRules": 1122
+      },
+      "startup-prof.txt": {
+        "rules": 17787,
+        "applicationRules": 855
+      },
+      "apk": {
+        "baseline.prof": {
+          "bytes": 9006,
+          "sha256": "0ad24ecc3d607b1cfbc0b74ee1a0c08f845b18c5f71232a61736787c658d4ff6"
+        },
+        "baseline.profm": {
+          "bytes": 518,
+          "sha256": "1fa48aa1686a2c1e4da49d277d618101beea38c34621890c5027612f29096e7f"
+        }
+      },
+      "aab": {
+        "baseline.prof": {
+          "bytes": 9006,
+          "sha256": "0ad24ecc3d607b1cfbc0b74ee1a0c08f845b18c5f71232a61736787c658d4ff6"
+        },
+        "baseline.profm": {
+          "bytes": 518,
+          "sha256": "1fa48aa1686a2c1e4da49d277d618101beea38c34621890c5027612f29096e7f"
+        }
+      }
+    },
+    "productionServiceVerified": true,
+    "apkSignerMatchesPlay": true,
+    "aabSignatureVerified": true,
+    "apkZipAlignment16KB": true,
+    "adIdPermission": true,
+    "nativeDebugSymbols": [],
+    "elf64Libraries": [
+      "lib/arm64-v8a/libandroidx.graphics.path.so",
+      "lib/x86_64/libandroidx.graphics.path.so"
+    ],
+    "elf64AlignmentPassed": true,
+    "alignmentErrors": [],
+    "apkBytes": 10460550,
+    "aabBytes": 14312303,
+    "apkSHA256": "e2a517269a5e123a18d4906fee0a2cb1f35a4731f7ba1541140c23905408b748",
+    "aabSHA256": "729b9b3c66626efd71315f5d933732f58d6ffa8821be6b9ec54343d6f802c5f9",
+    "limitation": "Static package inspection only; Play-generated split APKs and real 16KB devices still need testing."
+  },
+  "validatedAppMainTree": "b1e33392eb373f773e1dc45595644c31c46bed27",
+  "sourceCommit": null,
+  "playSubmission": {
+    "releaseId": "21",
+    "track": "production",
+    "submittedAt": null
+  },
+  "verification": {
+    "releaseJvmTests": 130,
+    "releaseJvmFailures": 0,
+    "backendTests": 154,
+    "backendFailures": 0,
+    "targetedDeviceTests": 47,
+    "targetedDeviceSkipped": 1,
+    "targetedDeviceFailures": 0,
+    "lintErrors": 0,
+    "lintWarnings": 68,
+    "fullCi": "https://github.com/yurkenn/english-tales/actions/runs/39239785432",
+    "upgrade": {
+      "fromVersionCode": 49,
+      "toVersionCode": 50,
+      "fromVersionName": "2.1.0",
+      "savedWord": "shepherd",
+      "savedWordCountRetained": 1,
+      "levelRetained": "A1",
+      "lastStoryRetained": "The Boy Who Cried Wolf",
+      "reviewCompleted": true,
+      "pointsAfterReview": 5,
+      "dailyGoalRecorded": true,
+      "onboardingRepeated": false
+    }
+  },
+  "hosting": {
+    "site": "englishtales-app",
+    "project": "english-tales-77d32",
+    "deployed": true,
+    "http200": [
+      "/story/quiet-morning",
+      "/privacy",
+      "/delete-account",
+      "/.well-known/assetlinks.json"
+    ],
+    "assetLinksUnchanged": true
+  },
+  "listing": {
+    "storeLocales": 13,
+    "uiLanguages": 12,
+    "storyTranslationLanguages": 11,
+    "adsDeclaration": "No",
+    "reviewCredentials": "existing values preserved; guest instructions updated",
+    "nativeSpeakerApprovalClaimed": false,
+    "localizedScreenshots": [
+      "en-US",
+      "tr-TR"
+    ],
+    "otherLocalesUseDefaultScreenshots": true
+  },
+  "limitations": [
+    "Static 16 KB validation; no new physical 16 KB device or Play split-package acceptance.",
+    "Signed local 49-to-50 upgrade, not a physical phone update from production 48.",
+    "SEO language pages remain content briefs.",
+    "Study-word proposals were not published as live content."
+  ]
+}
