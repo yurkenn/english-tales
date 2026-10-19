@@ -68,7 +68,8 @@ internal fun ThemeControls() {
     val context = LocalContext.current
     Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(6.dp)) {
         Text(stringResource(R.string.tema), fontWeight = FontWeight.Bold)
-        Row(Modifier.selectableGroup(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        // Wraps onto a second line at large text sizes instead of clipping the last chip.
+        FlowRow(Modifier.selectableGroup(), horizontalArrangement = Arrangement.spacedBy(8.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             AppThemeMode.entries.forEach { option ->
                 FilterChip(selected = AppTheme.mode == option, onClick = { AppTheme.select(context, option) },
                     label = { Text(stringResource(option.label)) },
