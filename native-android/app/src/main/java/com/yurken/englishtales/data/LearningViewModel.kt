@@ -12,7 +12,9 @@ import kotlinx.coroutines.channels.Channel
 import com.yurken.englishtales.BuildConfig
 
 class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore,private val cloudSync: LearningAccountSync?=null,private val background: Boolean=false,
-    private val onOwnerChanged: (LearningOwner)->Unit={}, private val readSnapshot: (LearningStore)->LearningSnapshot={it.snapshot()}) : AndroidViewModel(application) {
+    private val onOwnerChanged: (LearningOwner)->Unit={}, private val readSnapshot: (LearningStore)->LearningSnapshot={it.snapshot()},
+    // Cancels a departed account's WorkManager jobs; its worker only uploads while that account is signed in, and signing back in reschedules them.
+    private val retireSync: (String)->Unit={if(background) LearningSyncRuntime.cancel(application,it)}) : AndroidViewModel(application) {
     constructor(application: Application):this(application,LearningSyncRuntime.accounts(application),{LearningStore(application,it)},defaultLearningSync(),true,
         {LearningReminderOwner.select(application,it)})
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
@@ -260,6 +262,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private fun requireSavedWrites() {if(!releaseHeldWrites()) throw AuthFailure("pending_local_writes")}
     private fun changeOwner(owner: LearningOwner,email: String="",discardHeld: Boolean=false) {
         if(!discardHeld) requireSavedWrites()
+        val previous=(store.owner as? LearningOwner.Account)?.id
         val next=storeFactory(owner)
         try {next.snapshot()} catch (failure: Exception) {next.close();throw failure}
         // Writes queued under the old owner belong to it: apply them before switching instead of dropping them.
@@ -277,6 +280,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         writes.reset()
         mutableCompletions.value=emptySet()
         onOwnerChanged(owner)
+        if(previous!=null && previous!=owner.id) retireSync(previous)
         if(background) LearningSyncRuntime.resume()
         mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=mutableAccount.value.scope+1)
         if(owner is LearningOwner.Account && cloudSync!=null) {

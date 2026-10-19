@@ -4,6 +4,7 @@ import android.content.ContextWrapper
 import android.graphics.Bitmap
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.BuildConfig
+import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withTimeout
@@ -255,6 +256,30 @@ class RemoteContentTest {
             assertEquals(1,calls)
             assertFalse(model.status.value.busy); assertNull(model.status.value.downloading)
         }
+    }
+    @Test fun sharedLinkToNewStoryWaitsForRunningRefresh()=runBlocking {
+        val fixture=Fixture(); val gate=java.util.concurrent.CountDownLatch(1); fixture.gate=gate
+        val app=InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as android.app.Application
+        val model=withContext(Dispatchers.Main) {ContentViewModel(app,ContentRepository(context,fixture))}
+        // Ready comes from the cached catalog, which predates the shared story; the start-up refresh is held at the network.
+        withTimeout(10_000) {model.ready.first {it}; model.status.first {it.busy}}
+        assertFalse("remote-test" in LearningContent.storyById)
+        val opened=async(Dispatchers.Main) {StoryLinks.resolve("remote-test",{it in LearningContent.storyById}) {model.awaitRefresh()}}
+        kotlinx.coroutines.delay(200); assertFalse(opened.isCompleted)
+        gate.countDown()
+        assertTrue(withTimeout(10_000) {opened.await()})
+        // One refresh reads the stories page and the empty page that ends pagination; a second refresh would make it 4.
+        assertEquals(2,fixture.requests["stories"])
+    }
+    @Test fun sharedLinkRefreshesAFreshCatalogOnceAndFallsBackOffline()=runBlocking {
+        val fixture=Fixture().apply {empty=true}
+        val app=InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as android.app.Application
+        val model=withContext(Dispatchers.Main) {ContentViewModel(app,ContentRepository(context,fixture))}
+        withTimeout(10_000) {model.status.first {!it.busy && it.message.isNotEmpty()}}
+        fixture.fail=true
+        assertFalse(withContext(Dispatchers.Main) {withTimeout(10_000) {StoryLinks.resolve("remote-test",{it in LearningContent.storyById}) {model.awaitRefresh()}}})
+        fixture.fail=false; fixture.empty=false
+        assertTrue(withContext(Dispatchers.Main) {withTimeout(10_000) {StoryLinks.resolve("remote-test",{it in LearningContent.storyById}) {model.awaitRefresh()}}})
     }
     @Test fun failedRefreshKeepsWorkingContentAndReaderPin()=runBlocking {
         val fixture=Fixture(); val repo=ContentRepository(context,fixture)

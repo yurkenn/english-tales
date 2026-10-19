@@ -46,7 +46,7 @@ class AccountSwitchTest {
         while(!predicate() && System.nanoTime()<deadline) Thread.sleep(20)
         assertTrue("Expected account state was not reached",predicate())
     }
-    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},opening: (LearningOwner)->Unit={},block: (LearningViewModel,Fixture)->Unit) {
+    private fun exercise(syncFactory: (Fixture)->LearningAccountSync?={null},opening: (LearningOwner)->Unit={},retired: MutableList<String>?=null,block: (LearningViewModel,Fixture)->Unit) {
         val instrumentation=InstrumentationRegistry.getInstrumentation()
         val target=instrumentation.targetContext
         val directory=File(target.cacheDir,"account-switch-${UUID.randomUUID()}").apply {mkdirs()}
@@ -57,7 +57,8 @@ class AccountSwitchTest {
             override fun openOrCreateDatabase(name: String,mode: Int,factory: SQLiteDatabase.CursorFactory?,handler: DatabaseErrorHandler?)=SQLiteDatabase.openOrCreateDatabase(File(directory,name).absolutePath,factory,handler)
         }
         val fixture=Fixture();val holder=ViewModelStore()
-        val vm=LearningViewModel(target.applicationContext as Application,AccountService(fixture,Memory()),{opening(it);LearningStore(context,it)},syncFactory(fixture))
+        val vm=LearningViewModel(target.applicationContext as Application,AccountService(fixture,Memory()),{opening(it);LearningStore(context,it)},syncFactory(fixture),
+            retireSync={user -> retired?.let {synchronized(it) {it.add(user)}}})
         holder.put("account-test",vm)
         try {await {vm.ready.value};block(vm,fixture)}
         finally {fixture.release?.countDown();instrumentation.runOnMainSync {holder.clear()}}
@@ -80,6 +81,21 @@ class AccountSwitchTest {
         http.deletionError="reauthentication_required"
         vm.deleteAccount();await {vm.account.value.needsSignIn && !vm.account.value.busy}
         assertEquals(http.a,vm.state.value.ownerId);assertEquals(25,vm.state.value.points)
+    }
+    @Test fun switchingToAnotherAccountRetiresOnlyThePreviousAccountsBackgroundSync() {
+        val retired=mutableListOf<String>()
+        fun seen()=synchronized(retired) {retired.toList()}
+        exercise(retired=retired) {vm,http ->
+            vm.signIn("a@example.invalid","fixture-password");await {vm.state.value.ownerId==http.a && !vm.account.value.busy}
+            assertTrue(seen().isEmpty())
+            // Same account signing in again (e.g. after its session expired) keeps its periodic job.
+            vm.signIn("a@example.invalid","fixture-password");await {!vm.account.value.busy}
+            assertTrue(seen().isEmpty())
+            vm.signIn("b@example.invalid","fixture-password");await {vm.state.value.ownerId==http.b && !vm.account.value.busy}
+            assertEquals(listOf(http.a),seen())
+            vm.signOut();await {vm.state.value.ownerId=="guest" && !vm.account.value.busy}
+            assertEquals(listOf(http.a,http.b),seen())
+        }
     }
     @Test fun switchingAccountsAndGuestKeepsSeparateLearningData()=exercise {vm,http ->
         vm.saveWords(listOf("morning"));await {"morning" in vm.state.value.savedWordIds}
