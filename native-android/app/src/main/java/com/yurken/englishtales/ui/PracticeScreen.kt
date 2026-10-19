@@ -103,7 +103,6 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
         val sentenceMode=value=="cloze" || value=="order" || value=="dictation"
         if(!sentenceMode && pool.isEmpty()) {if(mode.isNotEmpty()) exit();return}
-        sessionKey=java.util.UUID.randomUUID().toString()
         session++; ids=drawn;mode=value;question=0;correctCount=0;finished=false
         // Q5.8: each word gets the drill that fits its stage, and the session climbs from word drills to games.
         if(value=="ladder") {
@@ -116,6 +115,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         }
         if(value=="listen") listenQuestions=ListeningQuiz.questions(ids.mapNotNull(snapshot::wordFor),dictionary)
         sessionCount=ids.size
+        // Written last: the start effect keys on it and reads the count, so it must never see a new key with the old count.
+        sessionKey=java.util.UUID.randomUUID().toString()
     }
     // Undispatched: modes without a gap session start in this frame, as before. A start already building is not doubled.
     fun start(value: String, seeded: List<String> = emptyList()) {
@@ -169,8 +170,8 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     val timer=rememberActiveLearningTime(sessionKey,snapshot.activeSessionMillis[sessionKey]?:0,!finished,onCheckpoint)
     val count=sessionCount
     val complete: (Int)->Unit = {finished=true;onLessonComplete(it.coerceIn(0,count),sessionKey,sessionKind,count,timer.pause())}
-    if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("card")},snapshot);return }
-    if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit(true)},{start("match")},snapshot);return }
+    if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit()},{start("card")},snapshot,onDone={exit(true)});return }
+    if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit()},{start("match")},snapshot,onDone={exit(true)});return }
     if(finished) { GameResult(stringResource(R.string.dogru, correctCount, count),correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
     if(mode=="listen") {
         ListeningGame(listenQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
