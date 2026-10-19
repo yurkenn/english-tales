@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Library header captions, today's line in the week, empty-screen actions and the app theme choice. -->
+    <string name="stat_language">Английский</string>
+    <string name="stat_level">Уровень</string>
+    <string name="stat_streak">Серия</string>
+    <string name="stat_points">Очки</string>
+    <string name="weekly_today_done">Цель на сегодня выполнена.</string>
+    <string name="weekly_today_progress">Сегодня: %1$d из %2$d шагов</string>
+    <string name="weekly_today_pending">Сегодня ещё ничего. Одна история или короткое повторение сохранят серию.</string>
+    <string name="empty_browse_stories">Смотреть истории</string>
+    <string name="empty_clear_search">Очистить поиск</string>
+    <string name="empty_words_hint">Сохранённых слов пока нет. Нажмите на слово во время чтения и сохраните его — оно появится здесь.</string>
+    <string name="theme_system">Как в телефоне</string>
+</resources>

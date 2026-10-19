@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Library header captions, today's line in the week, empty-screen actions and the app theme choice. -->
+    <string name="stat_language">Inglés</string>
+    <string name="stat_level">Nivel</string>
+    <string name="stat_streak">Racha</string>
+    <string name="stat_points">Puntos</string>
+    <string name="weekly_today_done">Cumpliste tu meta de hoy.</string>
+    <string name="weekly_today_progress">Hoy: %1$d de %2$d pasos</string>
+    <string name="weekly_today_pending">Todavía nada hoy. Una historia o un repaso corto mantiene tu racha.</string>
+    <string name="empty_browse_stories">Explorar historias</string>
+    <string name="empty_clear_search">Borrar búsqueda</string>
+    <string name="empty_words_hint">Aún no tienes palabras guardadas. Toca una palabra mientras lees y guárdala; aparecerá aquí.</string>
+    <string name="theme_system">Ajuste del teléfono</string>
+</resources>

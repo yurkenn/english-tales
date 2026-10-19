@@ -175,6 +175,8 @@ fun ReferenceProgress(progress: Float, modifier: Modifier = Modifier, color: Col
 fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
     val tabs = listOf(stringResource(R.string.calis) to "study", stringResource(R.string.oku_2) to "read", stringResource(R.string.oyna) to "play", stringResource(R.string.profilim) to "profile")
     // Grows with the label instead of clipping it at large font sizes.
+    // A light tick confirms a tab change; tapping the open tab again stays silent.
+    val haptics=androidx.compose.ui.platform.LocalHapticFeedback.current
     Column(Modifier.fillMaxWidth().background(TaleSurface).navigationBarsPadding()) {
     Box(Modifier.fillMaxWidth().height(1.dp).background(TaleLine))
     Row(Modifier.fillMaxWidth().heightIn(min=56.dp).height(IntrinsicSize.Min)) {
@@ -186,7 +188,7 @@ fun TalesBottomBar(selected: Int, onSelect: (Int) -> Unit) {
             var pops by remember { androidx.compose.runtime.mutableIntStateOf(0) }
             androidx.compose.runtime.LaunchedEffect(active) { if(active) pops++ }
             val pillColor=LocalTaleColors.current.tileBlue
-            Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=active }.clickable(role=Role.Tab) { onSelect(index) }.padding(top=6.dp,bottom=6.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(2.dp)) {
+            Column(Modifier.weight(1f).fillMaxHeight().semantics { this.selected=active }.clickable(role=Role.Tab) { if(!active) haptics.performHapticFeedback(androidx.compose.ui.hapticfeedback.HapticFeedbackType.SegmentTick); onSelect(index) }.padding(top=6.dp,bottom=6.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(2.dp)) {
                 Box(Modifier.size(52.dp,28.dp).drawBehind {
                     if(pill>0f) {
                         val w=size.width*(0.5f+0.5f*pill)

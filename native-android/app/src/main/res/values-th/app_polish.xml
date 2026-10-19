@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Library header captions, today's line in the week, empty-screen actions and the app theme choice. -->
+    <string name="stat_language">ภาษาอังกฤษ</string>
+    <string name="stat_level">ระดับ</string>
+    <string name="stat_streak">ต่อเนื่อง</string>
+    <string name="stat_points">คะแนน</string>
+    <string name="weekly_today_done">คุณทำเป้าหมายวันนี้สำเร็จแล้ว</string>
+    <string name="weekly_today_progress">วันนี้: %1$d จาก %2$d ขั้น</string>
+    <string name="weekly_today_pending">วันนี้ยังไม่ได้เรียน อ่านหนึ่งเรื่องหรือทบทวนสั้น ๆ เพื่อรักษาความต่อเนื่อง</string>
+    <string name="empty_browse_stories">ดูเรื่องทั้งหมด</string>
+    <string name="empty_clear_search">ล้างการค้นหา</string>
+    <string name="empty_words_hint">ยังไม่มีคำที่บันทึก แตะคำขณะอ่านแล้วบันทึก คำนั้นจะแสดงที่นี่</string>
+    <string name="theme_system">ตามการตั้งค่าโทรศัพท์</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Library header captions, today's line in the week, empty-screen actions and the app theme choice. -->
+    <string name="stat_language">English</string>
+    <string name="stat_level">Level</string>
+    <string name="stat_streak">Streak</string>
+    <string name="stat_points">Points</string>
+    <string name="weekly_today_done">You reached today\'s goal.</string>
+    <string name="weekly_today_progress">Today: %1$d of %2$d steps</string>
+    <string name="weekly_today_pending">Nothing yet today. One story or a short review keeps your streak going.</string>
+    <string name="empty_browse_stories">Browse stories</string>
+    <string name="empty_clear_search">Clear search</string>
+    <string name="empty_words_hint">No saved words yet. Tap a word while reading and save it; it will appear here.</string>
+    <string name="theme_system">Device setting</string>
+</resources>
