@@ -23,5 +23,6 @@
     "classic-tortoise-hare",
     "classic-lion-mouse"
   ],
-  "nextStep": "Editorial and language review, then integrate approved study lists with versioned reader and practice contracts."
+  "nextStep": "Human editorial/language review; fresh live revision/snapshot guards and publisher acceptance. Local reader/save/review contract is verified with isolated fixtures.",
+  "localIntegration": "preview adapter and Android fixture verified; no production catalog or live content change"
 }

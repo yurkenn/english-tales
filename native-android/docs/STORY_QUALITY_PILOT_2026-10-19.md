@@ -8,7 +8,7 @@ Durum: **Aktif çalışma yalnız 5 mevcut hikâyede.** Kullanıcı yeni hikâye
 
 **Beş mevcut revizyonun tamamında 11 destek dili için metin alanları dolu.** Toplam 60 yeni cümlenin 10 ek dilde **600 çevirisi**, 13 yeni çalışma kelimesinin **130 karşılığı** hazırlandı. Bu tur The Paper Boat, The Last Train, The Tortoise and the Hare ve The Lion and the Mouse tamamlandı. Yeni klasikler beklemede kaldı.
 
-Her hikâyede `reviewedLanguages: []`; hiçbir dil için insan veya ana dil konuşuru onayı verilmiş sayılmıyor. **17 anlama sorusunun tamamı** için kaynak cümle ve yanıt gerekçesi kaydedildi. The Paper Boat’ta kız karakterin tekrar tanıtılması giderildi; küçük kız kardeşin yaşı kaynak ve çevirilerde açıkça aynı ifade edildi. Yeni çalışma listeleri henüz okuyucu/tekrar akışına bağlanmadı.
+Her hikâyede `reviewedLanguages: []`; hiçbir dil için insan veya ana dil konuşuru onayı verilmiş sayılmıyor. **17 anlama sorusunun tamamı** için kaynak cümle ve yanıt gerekçesi kaydedildi. The Paper Boat’ta kız karakterin tekrar tanıtılması giderildi; küçük kız kardeşin yaşı kaynak ve çevirilerde açıkça aynı ifade edildi. Seçilen listeler mevcut okuyucu/tekrar sözleşmesine yerel önizleme aracıyla bağlandı ve Android test varlığında doğrulandı. Üretim kataloğuna veya canlı içeriğe aktarılmadı. [Entegrasyon ve tekrar çalıştırma kaydı](STORY_PILOT_INTEGRATION.md).
 
 [50 mevcut hikâyenin yapısal/editoryal başlangıç raporu](EXISTING_STORY_BASELINE_2026-10-19.md). Bu rapor paket içindir; canlı eşitliği veya seviye onayı değildir.
 
@@ -53,4 +53,4 @@ Mevcut cümlelerin kimlikleri, metinleri ve çeviri haritaları korunur; yeni c�
 - Odaklı 6 içerik testi geçti: taslak şeması, katalogdan ayrılık, eski cümle/kelime/soru kimliklerinin korunması, 8–15 çalışma kelimesi sınırı ve gerçek metinde eşleşme, soru kaynak cümleleri, kaynak hak metadatası, kesintisiz okuma bölümleri.
 - Testler İngilizce/Türkçe anlam doğruluğunu veya CEFR seviyesini ispatlamaz; bunlar editör/pilot kabulüdür.
 - `catalog/v1.json`, aktif kaynak listesi, canlı veriler, mevcut 10 dil dosyası ve uygulama paketi değiştirilmedi. 50 sürümünün üretim incelemesi bu içerik paketinden bağımsız sürüyor.
-- Backend testlerinin tamamı geçti: **158 test, 0 hata, 0 atlama**. Yeni uygulama paketi üretilmedi; runtime kaynağı değişmedi.
+- Backend testlerinin tamamı geçti: **165 test, 0 hata, 0 atlama**. Ayrıca Android test APK’sında 3/3 entegrasyon testi geçti. Debug ve test paketleri derlendi; üretim runtime kaynağı/katalog değişmedi.
