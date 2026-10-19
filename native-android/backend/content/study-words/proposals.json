@@ -1,0 +1,7831 @@
+{
+ "schemaVersion": 1,
+ "status": "proposal",
+ "reviewedBy": null,
+ "bands": {
+  "A1": 0.25,
+  "A2": 0.5,
+  "B1": 0.8
+ },
+ "min": 8,
+ "max": 15,
+ "stories": [
+  {
+   "storyId": "quiet-morning",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 4,
+   "proposed": [
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "share",
+     "translation": "paylaşmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 342,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "small",
+     "translation": "küçük",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 142,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "town",
+     "translation": "kasaba",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 348,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "bread",
+     "translation": "ekmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 252,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stand",
+     "translation": "ayakta durmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 220,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "filled",
+     "translation": "doldurdu; dolu",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 207,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "warm",
+     "translation": "sıcak, ılık",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 199,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "outside",
+     "translation": "dışarıda",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 194,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "until",
+     "translation": "-e kadar",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 11,
+     "rank": 161,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "street",
+     "translation": "sokak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 159,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "buy",
+     "translation": "satın almak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 130,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "walk",
+     "translation": "yürümek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 14,
+     "rank": 109,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "before",
+     "translation": "önce",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 15,
+     "rank": 85,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "old",
+     "translation": "yaşlı; eski",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 14,
+     "rank": 81,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 39,
+   "outOfLevel": [
+    "act",
+    "bakery",
+    "birthday",
+    "busy",
+    "fresh",
+    "hello",
+    "kindness",
+    "quiet",
+    "rolls",
+    "school"
+   ]
+  },
+  {
+   "storyId": "paper-boat",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 6,
+   "proposed": [
+    {
+     "lemma": "boat",
+     "translation": "tekne",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 4,
+     "rank": 166,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "journey",
+     "translation": "yolculuk",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 378,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "path",
+     "translation": "patika",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 283,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "smile",
+     "translation": "gülümsemek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 494,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "river",
+     "translation": "nehir",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 341,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "wind",
+     "translation": "rüzgâr",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 248,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "duck",
+     "translation": "ördek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 448,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "bridge",
+     "translation": "köprü",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 681,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "passed",
+     "translation": "geçti",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 391,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "message",
+     "translation": "mesaj",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 582,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stop",
+     "translation": "durmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 293,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "starts",
+     "translation": "başlar",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 498,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "continue",
+     "translation": "devam etmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 255,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "along",
+     "translation": "boyunca",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 250,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "pick",
+     "translation": "toplamak; seçmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 479,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 9.1,
+   "outOfLevel": [
+    "gentle",
+    "riverbank",
+    "somewhere",
+    "write"
+   ]
+  },
+  {
+   "storyId": "lost-map",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 5,
+   "proposed": [
+    {
+     "lemma": "forest",
+     "translation": "orman",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 121,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "quiet",
+     "translation": "sessiz",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 394,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "path",
+     "translation": "patika",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 283,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "discover",
+     "translation": "keşfetmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 258,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "map",
+     "translation": "harita",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 786,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "year",
+     "translation": "yıl",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 147,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "inside",
+     "translation": "içeride; içine",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 17,
+     "rank": 64,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "end",
+     "translation": "son",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 317,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "summer",
+     "translation": "yaz",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 295,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "red",
+     "translation": "kırmızı",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 285,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "family",
+     "translation": "aile",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 233,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "lake",
+     "translation": "göl",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 576,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "near",
+     "translation": "yakın",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 11,
+     "rank": 172,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 0,
+   "outOfLevel": []
+  },
+  {
+   "storyId": "red-umbrella",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 8,
+   "proposed": [
+    {
+     "lemma": "window",
+     "translation": "pencere",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 181,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "share",
+     "translation": "paylaşmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 342,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "rain",
+     "translation": "yağmur",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 601,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "umbrella",
+     "translation": "şemsiye",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 886,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "coat",
+     "translation": "palto",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 228,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "green",
+     "translation": "yeşil",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 371,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "shop",
+     "translation": "dükkân",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 4,
+     "rank": 243,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "bread",
+     "translation": "ekmek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 252,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "need",
+     "translation": "ihtiyaç duymak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 390,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "street",
+     "translation": "sokak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 7,
+     "rank": 159,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "buy",
+     "translation": "satın almak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 130,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cake",
+     "translation": "pasta, kek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 436,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "above",
+     "translation": "üstünde",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 352,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "walk",
+     "translation": "yürümek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 14,
+     "rank": 109,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 38.2,
+   "outOfLevel": [
+    "green",
+    "cake",
+    "milk",
+    "need",
+    "rain",
+    "umbrella",
+    "apple",
+    "bag",
+    "gray",
+    "heavy"
+   ]
+  },
+  {
+   "storyId": "last-train",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 9,
+   "proposed": [
+    {
+     "lemma": "village",
+     "translation": "köy",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 514,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "market",
+     "translation": "pazar",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 471,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "ticket",
+     "translation": "bilet",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 636,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "station",
+     "translation": "istasyon",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 626,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "safely",
+     "translation": "güvenli bir şekilde",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 483,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "pocket",
+     "translation": "cep",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 480,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "platform",
+     "translation": "peron",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 817,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "window",
+     "translation": "pencere",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 181,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "lily",
+     "translation": "(özel ad); zambak",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 384,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "put",
+     "translation": "koymak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 196,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "watch",
+     "translation": "kol saati; izlemek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 127,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "last",
+     "translation": "son; sonuncu",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 16,
+     "rank": 74,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "run",
+     "translation": "koşmak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 15,
+     "rank": 70,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "woman",
+     "translation": "kadın",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 15,
+     "rank": 41,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 17,
+   "outOfLevel": [
+    "platform",
+    "bench",
+    "camera",
+    "due",
+    "hill",
+    "minutes",
+    "missing",
+    "mountains",
+    "packing",
+    "photos"
+   ]
+  },
+  {
+   "storyId": "attic-letter",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 9,
+   "proposed": [
+    {
+     "lemma": "gate",
+     "translation": "bahçe kapısı",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 3,
+     "rank": 368,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "quiet",
+     "translation": "sessiz",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 394,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "friend",
+     "translation": "arkadaş",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 11,
+     "rank": 80,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "envelope",
+     "translation": "zarf",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 731,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "chest",
+     "translation": "sandık",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 692,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "valuable",
+     "translation": "değerli",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 891,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "grandmother",
+     "translation": "büyükanne, nine",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 4,
+     "rank": 98,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "lead",
+     "translation": "kurşun",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 781,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "attic",
+     "translation": "tavan arası",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 1,
+     "rank": 930,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "garden",
+     "translation": "bahçe",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 6,
+     "rank": 122,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "old",
+     "translation": "yaşlı; eski",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 14,
+     "rank": 81,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "first",
+     "translation": "ilk",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 7,
+     "rank": 208,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "flower",
+     "translation": "çiçek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 135,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 9.8,
+   "outOfLevel": [
+    "local",
+    "memory",
+    "narrow",
+    "original",
+    "pile",
+    "planting",
+    "reply",
+    "seeds",
+    "sending",
+    "sign"
+   ]
+  },
+  {
+   "storyId": "classic-tortoise-hare",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 16,
+   "proposed": [
+    {
+     "lemma": "tortoise",
+     "translation": "kaplumbağa",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 1,
+     "rank": 347,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hare",
+     "translation": "yaban tavşanı",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 1,
+     "rank": 323,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "finish",
+     "translation": "bitiş",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 320,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "laughs",
+     "translation": "güler",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 382,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "race",
+     "translation": "yarış",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 482,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "step",
+     "translation": "adım",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 405,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "path",
+     "translation": "patika",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 283,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "fox",
+     "translation": "tilki",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 263,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "slow",
+     "translation": "yavaş",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 849,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "line",
+     "translation": "çizgi; sıra",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 470,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "run",
+     "translation": "koşmak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 15,
+     "rank": 70,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stop",
+     "translation": "durmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 293,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "show",
+     "translation": "göstermek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 289,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 42.9,
+   "outOfLevel": [
+    "race",
+    "laughs",
+    "line",
+    "slow",
+    "step",
+    "agrees",
+    "ahead",
+    "already",
+    "far",
+    "fast"
+   ]
+  },
+  {
+   "storyId": "classic-lion-mouse",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 15,
+   "proposed": [
+    {
+     "lemma": "lion",
+     "translation": "aslan",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 2,
+     "rank": 214,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mouse",
+     "translation": "fare",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 4,
+     "rank": 139,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "free",
+     "translation": "özgür",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 321,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "ropes",
+     "translation": "ipler",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 834,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "let",
+     "translation": "izin vermek; -sin",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 153,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "small",
+     "translation": "küçük",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 142,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "friend",
+     "translation": "arkadaş",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 11,
+     "rank": 80,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "run",
+     "translation": "koşmak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 15,
+     "rank": 70,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tiny",
+     "translation": "minik",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 300,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cannot",
+     "translation": "-emez",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 253,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "across",
+     "translation": "karşıya; boyunca",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 224,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "wake",
+     "translation": "uyanmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 222,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "move",
+     "translation": "hareket etmek; taşınmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 11,
+     "rank": 171,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "later",
+     "translation": "sonra",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 170,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 31.6,
+   "outOfLevel": [
+    "ropes",
+    "animal",
+    "bites",
+    "catch",
+    "catches",
+    "face",
+    "great",
+    "ground",
+    "hunters",
+    "laughs"
+   ]
+  },
+  {
+   "storyId": "classic-fox-grapes",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 14,
+   "proposed": [
+    {
+     "lemma": "grapes",
+     "translation": "üzümler",
+     "source": "learning-word",
+     "occurrences": 7,
+     "stories": 1,
+     "rank": 267,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "fox",
+     "translation": "tilki",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 263,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hungry",
+     "translation": "aç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 234,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "ripe",
+     "translation": "olgun",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 832,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "vine",
+     "translation": "asma",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 892,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "air",
+     "translation": "hava",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 354,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "word",
+     "translation": "kelime; söz",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 351,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "walk",
+     "translation": "yürümek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 14,
+     "rank": 109,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dark",
+     "translation": "karanlık",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 314,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "turn",
+     "translation": "dönmek; sıra",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 301,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cannot",
+     "translation": "-emez",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 253,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "without",
+     "translation": "-sız, olmadan",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 13,
+     "rank": 146,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "garden",
+     "translation": "bahçe",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 122,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "eat",
+     "translation": "yemek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 13,
+     "rank": 79,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 34.1,
+   "outOfLevel": [
+    "ripe",
+    "vine",
+    "disappointment",
+    "hid",
+    "high",
+    "jumps",
+    "past",
+    "sour",
+    "sweet",
+    "tired"
+   ]
+  },
+  {
+   "storyId": "classic-ants-grasshopper",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 13,
+   "proposed": [
+    {
+     "lemma": "winter",
+     "translation": "kış",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 201,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "ants",
+     "translation": "karıncalar",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 526,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "grasshopper",
+     "translation": "çekirge",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 563,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nothing",
+     "translation": "hiçbir şey",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 332,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "path",
+     "translation": "patika",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 283,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hungry",
+     "translation": "aç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 234,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "grain",
+     "translation": "tahıl",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 756,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "summer",
+     "translation": "yaz",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 5,
+     "rank": 295,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sing",
+     "translation": "şarkı söylemek",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 6,
+     "rank": 244,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "along",
+     "translation": "boyunca",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 250,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dance",
+     "translation": "dans etmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 230,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "long",
+     "translation": "uzun",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 215,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "outside",
+     "translation": "dışarıda",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 194,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cold",
+     "translation": "soğuk",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 168,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 31.3,
+   "outOfLevel": [
+    "ants",
+    "grasshopper",
+    "grain",
+    "bright",
+    "busy",
+    "dry",
+    "prepare",
+    "spread",
+    "store",
+    "supper"
+   ]
+  },
+  {
+   "storyId": "classic-red-riding-hood",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 14,
+   "proposed": [
+    {
+     "lemma": "wolf",
+     "translation": "kurt",
+     "source": "learning-word",
+     "occurrences": 10,
+     "stories": 4,
+     "rank": 58,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "grandmother",
+     "translation": "büyükanne, nine",
+     "source": "glossary-draft",
+     "occurrences": 8,
+     "stories": 4,
+     "rank": 98,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "path",
+     "translation": "patika",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 283,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "swallow",
+     "translation": "kırlangıç",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 116,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "safely",
+     "translation": "güvenli bir şekilde",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 483,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cap",
+     "translation": "başlık",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 685,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "belly",
+     "translation": "karın",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 431,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "forest",
+     "translation": "orman",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 121,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mouth",
+     "translation": "ağız",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 474,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hunter",
+     "translation": "avcı",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 376,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mother",
+     "translation": "anne",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 5,
+     "rank": 138,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 11.6,
+   "outOfLevel": [
+    "straight",
+    "bottle",
+    "careful",
+    "drowned",
+    "ear",
+    "enjoyed",
+    "enormous",
+    "everything",
+    "leaned",
+    "noise"
+   ]
+  },
+  {
+   "storyId": "classic-cinderella",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 17,
+   "proposed": [
+    {
+     "lemma": "bird",
+     "translation": "kuş",
+     "source": "glossary-draft",
+     "occurrences": 7,
+     "stories": 10,
+     "rank": 43,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "slipper",
+     "translation": "ayakkabı",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 402,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "golden",
+     "translation": "altın; altından",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 264,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "father",
+     "translation": "baba",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 90,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dress",
+     "translation": "elbise",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 363,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "share",
+     "translation": "paylaşmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 342,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "discover",
+     "translation": "keşfetmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 258,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hazel",
+     "translation": "fındık",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 763,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "fortune",
+     "translation": "talih; servet",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 558,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "force",
+     "translation": "güç; zor kullanma",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 458,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "ashes",
+     "translation": "küller",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 664,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "bride",
+     "translation": "gelin",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 311,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 14,
+   "outOfLevel": [
+    "fitted",
+    "hazel",
+    "festival",
+    "finer",
+    "grave",
+    "hard",
+    "injured",
+    "insisted",
+    "lentils",
+    "partner"
+   ]
+  },
+  {
+   "storyId": "classic-bremen-musicians",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 21,
+   "proposed": [
+    {
+     "lemma": "rooster",
+     "translation": "horoz",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 1,
+     "rank": 400,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "donkey",
+     "translation": "eşek",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 1,
+     "rank": 362,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "robbers",
+     "translation": "haydutlar",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 398,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dog",
+     "translation": "köpek",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 3,
+     "rank": 131,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "window",
+     "translation": "pencere",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 181,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "forest",
+     "translation": "orman",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 121,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "animals",
+     "translation": "hayvanlar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 426,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "road",
+     "translation": "yol",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 397,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "musician",
+     "translation": "müzisyen",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 796,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "hungry",
+     "translation": "aç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 234,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "heavy",
+     "translation": "ağır",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 460,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "frightened",
+     "translation": "korkmuş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 210,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "witch",
+     "translation": "cadı",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 202,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "rest",
+     "translation": "dinlenme",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 606,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 14,
+   "outOfLevel": [
+    "four",
+    "musician",
+    "armed",
+    "burst",
+    "ghost",
+    "judge",
+    "kicked",
+    "midnight",
+    "monster",
+    "music"
+   ]
+  },
+  {
+   "storyId": "classic-hansel-gretel",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 18,
+   "proposed": [
+    {
+     "lemma": "witch",
+     "translation": "cadı",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 5,
+     "rank": 202,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "forest",
+     "translation": "orman",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 8,
+     "rank": 121,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "father",
+     "translation": "baba",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 9,
+     "rank": 90,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "free",
+     "translation": "özgür",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 321,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "path",
+     "translation": "patika",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 283,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "meal",
+     "translation": "öğün",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 279,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "well",
+     "translation": "kuyu",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 517,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "pocket",
+     "translation": "cep",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 480,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "pebbles",
+     "translation": "çakıl taşları",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 478,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "jewels",
+     "translation": "mücevherler",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 774,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "oven",
+     "translation": "fırın",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 806,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "hungry",
+     "translation": "aç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 234,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "crumbs",
+     "translation": "kırıntılar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 707,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "window",
+     "translation": "pencere",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 181,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 10.8,
+   "outOfLevel": [
+    "jewels",
+    "oven",
+    "barred",
+    "bone",
+    "danger",
+    "fat",
+    "happily",
+    "hunger",
+    "leaned",
+    "locked"
+   ]
+  },
+  {
+   "storyId": "classic-happy-prince",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 24,
+   "proposed": [
+    {
+     "lemma": "swallow",
+     "translation": "kırlangıç",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 6,
+     "rank": 116,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "statue",
+     "translation": "heykel",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 1,
+     "rank": 404,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "break",
+     "translation": "kırmak",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 8,
+     "rank": 148,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "gold",
+     "translation": "altın",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 151,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "leaf",
+     "translation": "yaprak",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 273,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "ruby",
+     "translation": "yakut",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 610,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "high",
+     "translation": "yüksek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 375,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hungry",
+     "translation": "aç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 234,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "winter",
+     "translation": "kış",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 201,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "father",
+     "translation": "baba",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 90,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "boy",
+     "translation": "erkek çocuk, oğlan",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 86,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 6,
+   "outOfLevel": [
+    "mayor",
+    "metal",
+    "precious",
+    "request",
+    "sapphires",
+    "sewing",
+    "shine",
+    "strangely",
+    "sword",
+    "troubles"
+   ]
+  },
+  {
+   "storyId": "classic-selfish-giant",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 21,
+   "proposed": [
+    {
+     "lemma": "giant",
+     "translation": "dev",
+     "source": "learning-word",
+     "occurrences": 13,
+     "stories": 2,
+     "rank": 72,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "boy",
+     "translation": "erkek çocuk, oğlan",
+     "source": "learning-word",
+     "occurrences": 7,
+     "stories": 7,
+     "rank": 86,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "winter",
+     "translation": "kış",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 6,
+     "rank": 201,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "garden",
+     "translation": "bahçe",
+     "source": "glossary-draft",
+     "occurrences": 6,
+     "stories": 6,
+     "rank": 122,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tears",
+     "translation": "gözyaşları",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 346,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tree",
+     "translation": "ağaç",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 11,
+     "rank": 83,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "blossoms",
+     "translation": "ağaç çiçekleri",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 535,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "road",
+     "translation": "yol",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 397,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "high",
+     "translation": "yüksek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 375,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "share",
+     "translation": "paylaşmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 342,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nobody",
+     "translation": "hiç kimse",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 282,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "wall",
+     "translation": "duvar",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 6,
+     "rank": 223,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "frightened",
+     "translation": "korkmuş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 210,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 4,
+   "outOfLevel": [
+    "knelt",
+    "peach",
+    "playground",
+    "prevented",
+    "responsible",
+    "slipped",
+    "weak",
+    "wounds"
+   ]
+  },
+  {
+   "storyId": "classic-gift-magi",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 15,
+   "proposed": [
+    {
+     "lemma": "hair",
+     "translation": "saç",
+     "source": "glossary-draft",
+     "occurrences": 7,
+     "stories": 5,
+     "rank": 105,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "gift",
+     "translation": "hediye",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 369,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "watch",
+     "translation": "kol saati; izlemek",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 9,
+     "rank": 127,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "proud",
+     "translation": "gururlu",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 393,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tears",
+     "translation": "gözyaşları",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 346,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "window",
+     "translation": "pencere",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 181,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "gold",
+     "translation": "altın",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 151,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "buy",
+     "translation": "satın almak",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 8,
+     "rank": 130,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "smile",
+     "translation": "gülümsemek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 494,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "father",
+     "translation": "baba",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 90,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "combs",
+     "translation": "taraklar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 699,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "chain",
+     "translation": "zincir",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 689,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "inherited",
+     "translation": "miras aldı",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 1,
+     "rank": 1140,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sell",
+     "translation": "satmak",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 5,
+     "rank": 288,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mirror",
+     "translation": "ayna",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 281,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 8.9,
+   "outOfLevel": [
+    "knees",
+    "narrator",
+    "package",
+    "pennies",
+    "platinum",
+    "possession",
+    "reaction",
+    "reminded",
+    "saving",
+    "savings"
+   ]
+  },
+  {
+   "storyId": "classic-after-twenty-years",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 14,
+   "proposed": [
+    {
+     "lemma": "man",
+     "translation": "adam",
+     "source": "glossary-draft",
+     "occurrences": 7,
+     "stories": 9,
+     "rank": 51,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "quiet",
+     "translation": "sessiz",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 394,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "finish",
+     "translation": "bitiş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 320,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "believe",
+     "translation": "inanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 251,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cloth",
+     "translation": "kumaş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 88,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dinner",
+     "translation": "akşam yemeği",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 446,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "detective",
+     "translation": "dedektif",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 718,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cigar",
+     "translation": "puro",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 694,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "arrest",
+     "translation": "gözaltı",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 663,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "coat",
+     "translation": "palto",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 228,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "fortune",
+     "translation": "talih; servet",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 558,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "brothers",
+     "translation": "erkek kardeşler",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 167,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 9.4,
+   "outOfLevel": [
+    "luck",
+    "miles",
+    "nose",
+    "parting",
+    "plain",
+    "police",
+    "rainy",
+    "restaurant",
+    "scar",
+    "seek"
+   ]
+  },
+  {
+   "storyId": "classic-crow-pitcher",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 12,
+   "proposed": [
+    {
+     "lemma": "crow",
+     "translation": "karga",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 3,
+     "rank": 204,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "pitcher",
+     "translation": "sürahi",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 593,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "beak",
+     "translation": "gaga",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 531,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "pebbles",
+     "translation": "çakıl taşları",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 478,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "water",
+     "translation": "su",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 16,
+     "rank": 62,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "drink",
+     "translation": "içmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 259,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cannot",
+     "translation": "-emez",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 253,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "drop",
+     "translation": "düşürmek; damla",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 232,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "put",
+     "translation": "koymak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 196,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "near",
+     "translation": "yakın",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 11,
+     "rank": 172,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "move",
+     "translation": "hareket etmek; taşınmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 11,
+     "rank": 171,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "now",
+     "translation": "şimdi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 156,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "fly",
+     "translation": "uçmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 150,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "house",
+     "translation": "ev",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 73,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 50,
+   "outOfLevel": [
+    "pitcher",
+    "beak",
+    "pebbles",
+    "adds",
+    "bottom",
+    "clever",
+    "difficult",
+    "heavy",
+    "idea",
+    "notices"
+   ]
+  },
+  {
+   "storyId": "classic-boy-cried-wolf",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 19,
+   "proposed": [
+    {
+     "lemma": "wolf",
+     "translation": "kurt",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 4,
+     "rank": 58,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "villagers",
+     "translation": "köylüler",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 1,
+     "rank": 515,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "boy",
+     "translation": "erkek çocuk, oğlan",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 7,
+     "rank": 86,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nothing",
+     "translation": "hiçbir şey",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 332,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nobody",
+     "translation": "hiç kimse",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 282,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "believe",
+     "translation": "inanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 251,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "alone",
+     "translation": "yalnız",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 249,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "frightened",
+     "translation": "korkmuş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 210,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sheep",
+     "translation": "koyunlar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 841,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "come",
+     "translation": "gelmek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 20,
+     "rank": 49,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "lose",
+     "translation": "kaybetmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 277,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "person",
+     "translation": "kişi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 175,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "near",
+     "translation": "yakın",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 11,
+     "rank": 172,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "later",
+     "translation": "sonra",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 170,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 41.7,
+   "outOfLevel": [
+    "villagers",
+    "sheep",
+    "anymore",
+    "arrives",
+    "attacks",
+    "fun",
+    "laughs",
+    "liar",
+    "play",
+    "real"
+   ]
+  },
+  {
+   "storyId": "classic-town-country-mouse",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 10,
+   "proposed": [
+    {
+     "lemma": "mouse",
+     "translation": "fare",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 4,
+     "rank": 139,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "meal",
+     "translation": "öğün",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 279,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "country",
+     "translation": "kır; ülke",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 443,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "town",
+     "translation": "kasaba",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 3,
+     "rank": 348,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hide",
+     "translation": "saklanmak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 190,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "simple",
+     "translation": "basit",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 492,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "fine",
+     "translation": "iyi; ince",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 319,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "friend",
+     "translation": "arkadaş",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 11,
+     "rank": 80,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "come",
+     "translation": "gelmek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 20,
+     "rank": 49,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "leave",
+     "translation": "ayrılmak; bırakmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 274,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "enter",
+     "translation": "girmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 260,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "another",
+     "translation": "başka bir",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 203,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "follow",
+     "translation": "takip etmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 189,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "person",
+     "translation": "kişi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 175,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 33.3,
+   "outOfLevel": [
+    "country",
+    "simple",
+    "decides",
+    "dinner",
+    "field",
+    "full",
+    "happy",
+    "hole",
+    "invites",
+    "prefer"
+   ]
+  },
+  {
+   "storyId": "classic-north-wind-sun",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 11,
+   "proposed": [
+    {
+     "lemma": "wind",
+     "translation": "rüzgâr",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 4,
+     "rank": 248,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "coat",
+     "translation": "palto",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 4,
+     "rank": 228,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sun",
+     "translation": "güneş",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 3,
+     "rank": 410,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "force",
+     "translation": "güç; zor kullanma",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 458,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "traveler",
+     "translation": "yolcu",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 640,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "warm",
+     "translation": "sıcak, ılık",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 199,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "blow",
+     "translation": "darbe, vuruş",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 433,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "feel",
+     "translation": "hissetmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 318,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "take",
+     "translation": "götürmek, almak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 18,
+     "rank": 56,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stop",
+     "translation": "durmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 293,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stay",
+     "translation": "kalmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 245,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "wear",
+     "translation": "giymek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 350,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "soon",
+     "translation": "yakında",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 178,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "now",
+     "translation": "şimdi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 156,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "let",
+     "translation": "izin vermek; -sin",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 153,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 47.1,
+   "outOfLevel": [
+    "sun",
+    "traveler",
+    "blow",
+    "force",
+    "argue",
+    "closer",
+    "fails",
+    "gently",
+    "hard",
+    "harder"
+   ]
+  },
+  {
+   "storyId": "classic-golden-eggs",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 8,
+   "proposed": [
+    {
+     "lemma": "hen",
+     "translation": "tavuk",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 374,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "gold",
+     "translation": "altın",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 6,
+     "rank": 151,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "golden",
+     "translation": "altın; altından",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 264,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "eggs",
+     "translation": "yumurtalar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 364,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "egg",
+     "translation": "yumurta",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 552,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "man",
+     "translation": "adam",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 9,
+     "rank": 51,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "inside",
+     "translation": "içeride; içine",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 17,
+     "rank": 64,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "take",
+     "translation": "götürmek, almak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 18,
+     "rank": 56,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sell",
+     "translation": "satmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 288,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "good",
+     "translation": "iyi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 265,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "like",
+     "translation": "gibi; sevmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 213,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "kill",
+     "translation": "öldürmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 212,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "now",
+     "translation": "şimdi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 156,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "think",
+     "translation": "düşünmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 15,
+     "rank": 93,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "look",
+     "translation": "görünmek; bakmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 19,
+     "rank": 68,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 41.5,
+   "outOfLevel": [
+    "hen",
+    "egg",
+    "eggs",
+    "body",
+    "decides",
+    "enough",
+    "fortune",
+    "greed",
+    "lay",
+    "rich"
+   ]
+  },
+  {
+   "storyId": "classic-dog-shadow",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 13,
+   "proposed": [
+    {
+     "lemma": "dog",
+     "translation": "köpek",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 3,
+     "rank": 131,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "meat",
+     "translation": "et",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 280,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "river",
+     "translation": "nehir",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 341,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "carries",
+     "translation": "taşır",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 439,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "mouth",
+     "translation": "ağız",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 474,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "second",
+     "translation": "ikinci",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 485,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "nothing",
+     "translation": "hiçbir şey",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 332,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "piece",
+     "translation": "parça",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 5,
+     "rank": 217,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "pieces",
+     "translation": "parçalar",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 338,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "himself",
+     "translation": "kendisi; kendini",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 324,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "both",
+     "translation": "ikisi de",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 309,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "water",
+     "translation": "su",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 16,
+     "rank": 62,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "lose",
+     "translation": "kaybetmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 277,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "falls",
+     "translation": "düşer; şelale",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 261,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "across",
+     "translation": "karşıya; boyunca",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 224,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 22.2,
+   "outOfLevel": [
+    "carries",
+    "mouth",
+    "second",
+    "bigger",
+    "bridge",
+    "reflection",
+    "seems"
+   ]
+  },
+  {
+   "storyId": "classic-fox-crow",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 12,
+   "proposed": [
+    {
+     "lemma": "crow",
+     "translation": "karga",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 3,
+     "rank": 204,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "voice",
+     "translation": "ses",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 6,
+     "rank": 180,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "meat",
+     "translation": "et",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 280,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "fox",
+     "translation": "tilki",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 263,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "meal",
+     "translation": "öğün",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 279,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "beautiful",
+     "translation": "güzel",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 118,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "feel",
+     "translation": "hissetmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 318,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "show",
+     "translation": "göstermek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 289,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "want",
+     "translation": "istemek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 22,
+     "rank": 42,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "leave",
+     "translation": "ayrılmak; bırakmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 274,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "falls",
+     "translation": "düşer; şelale",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 261,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cannot",
+     "translation": "-emez",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 253,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "piece",
+     "translation": "parça",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 217,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "branch",
+     "translation": "dal",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 310,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sit",
+     "translation": "oturmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 11,
+     "rank": 177,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 27.7,
+   "outOfLevel": [
+    "always",
+    "beak",
+    "feathers",
+    "friendship",
+    "ground",
+    "laughs",
+    "loud",
+    "need",
+    "pick",
+    "praise"
+   ]
+  },
+  {
+   "storyId": "classic-ant-dove",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 14,
+   "proposed": [
+    {
+     "lemma": "ant",
+     "translation": "karınca",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 1,
+     "rank": 427,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "river",
+     "translation": "nehir",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 341,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "leaf",
+     "translation": "yaprak",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 273,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dove",
+     "translation": "güvercin",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 548,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "hunter",
+     "translation": "avcı",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 376,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "drop",
+     "translation": "düşürmek; damla",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 232,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "both",
+     "translation": "ikisi de",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 309,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "falls",
+     "translation": "düşer; şelale",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 261,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "drink",
+     "translation": "içmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 259,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cry",
+     "translation": "ağlamak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 229,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "foot",
+     "translation": "ayak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 209,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "soon",
+     "translation": "yakında",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 178,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "later",
+     "translation": "sonra",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 170,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 45.7,
+   "outOfLevel": [
+    "ant",
+    "dove",
+    "hunter",
+    "bank",
+    "bites",
+    "carries",
+    "catch",
+    "current",
+    "get",
+    "heel"
+   ]
+  },
+  {
+   "storyId": "classic-bundle-sticks",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 13,
+   "proposed": [
+    {
+     "lemma": "father",
+     "translation": "baba",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 9,
+     "rank": 90,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "break",
+     "translation": "kırmak",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 8,
+     "rank": 148,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "bundle",
+     "translation": "demet",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 1,
+     "rank": 435,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "nobody",
+     "translation": "hiç kimse",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 282,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "alone",
+     "translation": "yalnız",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 249,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sons",
+     "translation": "oğullar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 621,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "sticks",
+     "translation": "çubuklar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 857,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "son",
+     "translation": "oğul",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 291,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "together",
+     "translation": "birlikte",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 143,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hurt",
+     "translation": "incitmek; yaralı",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 326,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stand",
+     "translation": "ayakta durmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 220,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "like",
+     "translation": "gibi; sevmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 213,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "person",
+     "translation": "kişi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 175,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "now",
+     "translation": "şimdi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 156,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "live",
+     "translation": "yaşamak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 13,
+     "rank": 106,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 45.8,
+   "outOfLevel": [
+    "bundle",
+    "sons",
+    "sticks",
+    "argue",
+    "easily",
+    "easy",
+    "lesson",
+    "listen",
+    "often",
+    "peace"
+   ]
+  },
+  {
+   "storyId": "classic-milkmaid-pail",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 10,
+   "proposed": [
+    {
+     "lemma": "money",
+     "translation": "para",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 4,
+     "rank": 330,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "chickens",
+     "translation": "tavuklar",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 540,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "dress",
+     "translation": "elbise",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 363,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "eggs",
+     "translation": "yumurtalar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 364,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "imagines",
+     "translation": "hayal eder",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 769,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "pail",
+     "translation": "kova",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 807,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "cloth",
+     "translation": "kumaş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 88,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "head",
+     "translation": "baş, kafa",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 4,
+     "rank": 269,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "buy",
+     "translation": "satın almak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 130,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "real",
+     "translation": "gerçek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 395,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "think",
+     "translation": "düşünmek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 15,
+     "rank": 93,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "fine",
+     "translation": "iyi; ince",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 319,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "disappear",
+     "translation": "kaybolmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 315,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "turn",
+     "translation": "dönmek; sıra",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 301,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sell",
+     "translation": "satmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 288,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 53.1,
+   "outOfLevel": [
+    "chickens",
+    "dress",
+    "eggs",
+    "imagines",
+    "milk",
+    "pail",
+    "real",
+    "admiring",
+    "care",
+    "carries"
+   ]
+  },
+  {
+   "storyId": "classic-dog-manger",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 10,
+   "proposed": [
+    {
+     "lemma": "hay",
+     "translation": "kuru ot",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 268,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dog",
+     "translation": "köpek",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 3,
+     "rank": 131,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "oxen",
+     "translation": "öküzler",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 589,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "hungry",
+     "translation": "aç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 234,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "eat",
+     "translation": "yemek",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 13,
+     "rank": 79,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cannot",
+     "translation": "-emez",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 253,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "himself",
+     "translation": "kendisi; kendini",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 324,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stop",
+     "translation": "durmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 293,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "something",
+     "translation": "bir şey",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 290,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "come",
+     "translation": "gelmek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 20,
+     "rank": 49,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "want",
+     "translation": "istemek",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 22,
+     "rank": 42,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "falls",
+     "translation": "düşer; şelale",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 261,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "wake",
+     "translation": "uyanmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 222,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 30.2,
+   "outOfLevel": [
+    "oxen",
+    "bark",
+    "full",
+    "lies",
+    "manger",
+    "selfish",
+    "soft",
+    "starts",
+    "surprise",
+    "tired"
+   ]
+  },
+  {
+   "storyId": "classic-ass-lion-skin",
+   "level": "A1",
+   "band": 357,
+   "currentLearningWords": 11,
+   "proposed": [
+    {
+     "lemma": "fox",
+     "translation": "tilki",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 263,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "ass",
+     "translation": "eşek",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 529,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "lion",
+     "translation": "aslan",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 214,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "voice",
+     "translation": "ses",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 180,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cloth",
+     "translation": "kumaş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 88,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "fine",
+     "translation": "iyi; ince",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 319,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "feel",
+     "translation": "hissetmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 318,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cannot",
+     "translation": "-emez",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 253,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "frighten",
+     "translation": "korkutmak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 559,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "like",
+     "translation": "gibi; sevmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 213,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "put",
+     "translation": "koymak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 196,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "know",
+     "translation": "bilmek",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 191,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hide",
+     "translation": "saklanmak",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 190,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "around",
+     "translation": "etrafında",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 184,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "now",
+     "translation": "şimdi",
+     "source": "glossary-draft",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 156,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 41,
+   "outOfLevel": [
+    "ass",
+    "frighten",
+    "animals",
+    "big",
+    "body",
+    "brays",
+    "disguise",
+    "forever",
+    "mouth",
+    "proud"
+   ]
+  },
+  {
+   "storyId": "classic-snow-white",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 14,
+   "proposed": [
+    {
+     "lemma": "queen",
+     "translation": "kraliçe",
+     "source": "learning-word",
+     "occurrences": 7,
+     "stories": 6,
+     "rank": 82,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "white",
+     "translation": "beyaz",
+     "source": "glossary-draft",
+     "occurrences": 6,
+     "stories": 7,
+     "rank": 102,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dwarfs",
+     "translation": "cüceler",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 1,
+     "rank": 449,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "snow",
+     "translation": "kar",
+     "source": "glossary-draft",
+     "occurrences": 6,
+     "stories": 4,
+     "rank": 158,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mirror",
+     "translation": "ayna",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 3,
+     "rank": 281,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "married",
+     "translation": "evlendi",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 192,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hunter",
+     "translation": "avcı",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 376,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "poisoned",
+     "translation": "zehirli",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 818,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "coffin",
+     "translation": "tabut",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 697,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "servant",
+     "translation": "hizmetçi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 176,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "forest",
+     "translation": "orman",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 121,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "strangers",
+     "translation": "yabancılar",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 628,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 13.6,
+   "outOfLevel": [
+    "laces",
+    "poisoned",
+    "ebony",
+    "glass",
+    "jealous",
+    "loosened",
+    "magic",
+    "punished",
+    "seller",
+    "skin"
+   ]
+  },
+  {
+   "storyId": "classic-rapunzel",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 13,
+   "proposed": [
+    {
+     "lemma": "enchantress",
+     "translation": "büyücü kadın",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 1,
+     "rank": 316,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tower",
+     "translation": "kule",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 413,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tears",
+     "translation": "gözyaşları",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 346,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "frightened",
+     "translation": "korkmuş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 210,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "window",
+     "translation": "pencere",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 181,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "voice",
+     "translation": "ses",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 180,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hair",
+     "translation": "saç",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 5,
+     "rank": 105,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "boy",
+     "translation": "erkek çocuk, oğlan",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 86,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "blind",
+     "translation": "kör",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 677,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "thorns",
+     "translation": "dikenler",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 506,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "take",
+     "translation": "götürmek, almak",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 18,
+     "rank": 56,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "woman",
+     "translation": "kadın",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 15,
+     "rank": 41,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "long",
+     "translation": "uzun",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 215,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 11.9,
+   "outOfLevel": [
+    "accidentally",
+    "despair",
+    "happily",
+    "husband",
+    "injured",
+    "jumped",
+    "ladder",
+    "lonely",
+    "silk",
+    "twins"
+   ]
+  },
+  {
+   "storyId": "classic-sleeping-beauty",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 11,
+   "proposed": [
+    {
+     "lemma": "princess",
+     "translation": "prenses",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 8,
+     "rank": 55,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "castle",
+     "translation": "şato",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 3,
+     "rank": 254,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "thorns",
+     "translation": "dikenler",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 506,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "spindle",
+     "translation": "iğ",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 623,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "trap",
+     "translation": "tuzak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 509,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "curse",
+     "translation": "lanet",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 710,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "queen",
+     "translation": "kraliçe",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 82,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "woman",
+     "translation": "kadın",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 15,
+     "rank": 41,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "invited",
+     "translation": "davet etti",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 5,
+     "rank": 272,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tower",
+     "translation": "kule",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 413,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sleep",
+     "translation": "uyumak",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 157,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "year",
+     "translation": "yıl",
+     "source": "glossary-draft",
+     "occurrences": 2,
+     "stories": 9,
+     "rank": 147,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 13.8,
+   "outOfLevel": [
+    "anger",
+    "celebration",
+    "delight",
+    "destroyed",
+    "die",
+    "fifteen",
+    "fifteenth",
+    "get",
+    "interrupted",
+    "kissed"
+   ]
+  },
+  {
+   "storyId": "classic-frog-prince",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 17,
+   "proposed": [
+    {
+     "lemma": "frog",
+     "translation": "kurbağa",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 1,
+     "rank": 322,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "princess",
+     "translation": "prenses",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 8,
+     "rank": 55,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "iron",
+     "translation": "demir",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 463,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "free",
+     "translation": "özgür",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 321,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "well",
+     "translation": "kuyu",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 517,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "golden",
+     "translation": "altın; altından",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 264,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "plate",
+     "translation": "tabak",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 816,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "frightened",
+     "translation": "korkmuş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 210,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dinner",
+     "translation": "akşam yemeği",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 446,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "witch",
+     "translation": "cadı",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 202,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "servant",
+     "translation": "hizmetçi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 176,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "break",
+     "translation": "kırmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 148,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "rest",
+     "translation": "dinlenme",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 606,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 11.8,
+   "outOfLevel": [
+    "plate",
+    "deep",
+    "fetched",
+    "floor",
+    "insisted",
+    "loyal",
+    "really",
+    "ride",
+    "sorrow",
+    "spell"
+   ]
+  },
+  {
+   "storyId": "classic-rumpelstiltskin",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 16,
+   "proposed": [
+    {
+     "lemma": "gold",
+     "translation": "altın",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 6,
+     "rank": 151,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "queen",
+     "translation": "kraliçe",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 6,
+     "rank": 82,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "straw",
+     "translation": "saman",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 629,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "name",
+     "translation": "ad, isim",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 8,
+     "rank": 124,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "man",
+     "translation": "adam",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 9,
+     "rank": 51,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tears",
+     "translation": "gözyaşları",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 346,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nothing",
+     "translation": "hiçbir şey",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 332,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nobody",
+     "translation": "hiç kimse",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 282,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "spin",
+     "translation": "eğirmek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 855,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "married",
+     "translation": "evlendi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 192,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "rich",
+     "translation": "zengin",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 607,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "forest",
+     "translation": "orman",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 121,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 18.5,
+   "outOfLevel": [
+    "guess",
+    "spin",
+    "collect",
+    "deep",
+    "else",
+    "everywhere",
+    "furious",
+    "messenger",
+    "messengers",
+    "miller"
+   ]
+  },
+  {
+   "storyId": "classic-golden-goose",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 17,
+   "proposed": [
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "goose",
+     "translation": "kaz",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 3,
+     "rank": 266,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "man",
+     "translation": "adam",
+     "source": "glossary-draft",
+     "occurrences": 6,
+     "stories": 9,
+     "rank": 51,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "share",
+     "translation": "paylaşmak",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 342,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "princess",
+     "translation": "prenses",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 55,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "feathers",
+     "translation": "tüyler",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 454,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "brothers",
+     "translation": "erkek kardeşler",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 167,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "meal",
+     "translation": "öğün",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 279,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "golden",
+     "translation": "altın; altından",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 264,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "married",
+     "translation": "evlendi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 192,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "forest",
+     "translation": "orman",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 121,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 11.1,
+   "outOfLevel": [
+    "amounts",
+    "clerk",
+    "farmer",
+    "fast",
+    "followers",
+    "impossible",
+    "inn",
+    "older",
+    "roots",
+    "steal"
+   ]
+  },
+  {
+   "storyId": "classic-elves-shoemaker",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 10,
+   "proposed": [
+    {
+     "lemma": "leather",
+     "translation": "deri",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 1,
+     "rank": 383,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "shoemaker",
+     "translation": "ayakkabıcı",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 1,
+     "rank": 488,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cloth",
+     "translation": "kumaş",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 88,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "finish",
+     "translation": "bitiş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 320,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "discover",
+     "translation": "keşfetmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 258,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "shoe",
+     "translation": "ayakkabı",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 3,
+     "rank": 242,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "elves",
+     "translation": "cinler",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 730,
+     "aboveLevel": true
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "coat",
+     "translation": "palto",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 228,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "shirts",
+     "translation": "gömlekler",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 616,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "gift",
+     "translation": "hediye",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 369,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "left",
+     "translation": "gitti, ayrıldı; sol",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 12,
+     "rank": 114,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "pair",
+     "translation": "çift",
+     "source": "glossary-draft",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 475,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 17.8,
+   "outOfLevel": [
+    "elves",
+    "wife",
+    "amazed",
+    "comfortably",
+    "customer",
+    "delight",
+    "helpers",
+    "midnight",
+    "pay",
+    "perfect"
+   ]
+  },
+  {
+   "storyId": "classic-tom-thumb",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 25,
+   "proposed": [
+    {
+     "lemma": "wolf",
+     "translation": "kurt",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 4,
+     "rank": 58,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "father",
+     "translation": "baba",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 9,
+     "rank": 90,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cow",
+     "translation": "inek",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 544,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hay",
+     "translation": "kuru ot",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 268,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "road",
+     "translation": "yol",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 397,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "thumb",
+     "translation": "başparmak",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 635,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "strangers",
+     "translation": "yabancılar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 628,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "parson",
+     "translation": "papaz",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 590,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "free",
+     "translation": "özgür",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 321,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "meal",
+     "translation": "öğün",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 279,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hungry",
+     "translation": "aç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 234,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "frightened",
+     "translation": "korkmuş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 210,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "clever",
+     "translation": "akıllı",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 441,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "voice",
+     "translation": "ses",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 180,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "servant",
+     "translation": "hizmetçi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 176,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 13.9,
+   "outOfLevel": [
+    "parents",
+    "shouted",
+    "stomach",
+    "thief",
+    "bars",
+    "cart",
+    "ear",
+    "energy",
+    "guide",
+    "persuaded"
+   ]
+  },
+  {
+   "storyId": "classic-wolf-seven-kids",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 13,
+   "proposed": [
+    {
+     "lemma": "wolf",
+     "translation": "kurt",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 4,
+     "rank": 58,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "voice",
+     "translation": "ses",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 6,
+     "rank": 180,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "paw",
+     "translation": "pençe",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 477,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mother",
+     "translation": "anne",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 5,
+     "rank": 138,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "goats",
+     "translation": "keçiler",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 561,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "well",
+     "translation": "kuyu",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 517,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "believe",
+     "translation": "inanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 251,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "heavy",
+     "translation": "ağır",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 460,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "frightened",
+     "translation": "korkmuş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 210,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "belly",
+     "translation": "karın",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 431,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "window",
+     "translation": "pencere",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 181,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "swallow",
+     "translation": "kırlangıç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 116,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "food",
+     "translation": "yiyecek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 97,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 14,
+   "outOfLevel": [
+    "rough",
+    "six",
+    "chalk",
+    "clock",
+    "dough",
+    "drowned",
+    "everything",
+    "flour",
+    "goat",
+    "mess"
+   ]
+  },
+  {
+   "storyId": "classic-twelve-dancing-princesses",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 16,
+   "proposed": [
+    {
+     "lemma": "soldier",
+     "translation": "asker",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 2,
+     "rank": 108,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "princess",
+     "translation": "prenses",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 8,
+     "rank": 55,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "princesses",
+     "translation": "prensesler",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 598,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "boat",
+     "translation": "tekne",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 166,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nothing",
+     "translation": "hiçbir şey",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 332,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "discover",
+     "translation": "keşfetmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 258,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cup",
+     "translation": "kadeh",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 708,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cloak",
+     "translation": "pelerin",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 696,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "step",
+     "translation": "adım",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 405,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "gold",
+     "translation": "altın",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 151,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "break",
+     "translation": "kırmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 148,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 9.9,
+   "outOfLevel": [
+    "eldest",
+    "brightly",
+    "deny",
+    "diamond",
+    "learned",
+    "locked",
+    "poured",
+    "proof",
+    "reward",
+    "silver"
+   ]
+  },
+  {
+   "storyId": "classic-brave-little-tailor",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 16,
+   "proposed": [
+    {
+     "lemma": "tailor",
+     "translation": "terzi",
+     "source": "learning-word",
+     "occurrences": 8,
+     "stories": 1,
+     "rank": 246,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "giant",
+     "translation": "dev",
+     "source": "learning-word",
+     "occurrences": 7,
+     "stories": 2,
+     "rank": 72,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "princess",
+     "translation": "prenses",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 55,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "proud",
+     "translation": "gururlu",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 393,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "high",
+     "translation": "yüksek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 375,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "meal",
+     "translation": "öğün",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 279,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "trap",
+     "translation": "tuzak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 509,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "alone",
+     "translation": "yalnız",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 249,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "clever",
+     "translation": "akıllı",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 441,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "belt",
+     "translation": "kemer",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 670,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "married",
+     "translation": "evlendi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 192,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "servant",
+     "translation": "hizmetçi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 176,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 15.9,
+   "outOfLevel": [
+    "blamed",
+    "boar",
+    "capture",
+    "chapel",
+    "charging",
+    "dangerous",
+    "defeat",
+    "fight",
+    "fled",
+    "horn"
+   ]
+  },
+  {
+   "storyId": "classic-goose-girl",
+   "level": "A2",
+   "band": 714,
+   "currentLearningWords": 22,
+   "proposed": [
+    {
+     "lemma": "princess",
+     "translation": "prenses",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 8,
+     "rank": 55,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "servant",
+     "translation": "hizmetçi",
+     "source": "learning-word",
+     "occurrences": 5,
+     "stories": 6,
+     "rank": 176,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "cloth",
+     "translation": "kumaş",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 8,
+     "rank": 88,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "bride",
+     "translation": "gelin",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 3,
+     "rank": 311,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "promise",
+     "translation": "söz",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 10,
+     "rank": 125,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "truth",
+     "translation": "gerçek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 511,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "finish",
+     "translation": "bitiş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 320,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "golden",
+     "translation": "altın; altından",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 264,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dinner",
+     "translation": "akşam yemeği",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 446,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "married",
+     "translation": "evlendi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 192,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "journey",
+     "translation": "yolculuk",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 378,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "boy",
+     "translation": "erkek çocuk, oğlan",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 86,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "queen",
+     "translation": "kraliçe",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 82,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 16.2,
+   "outOfLevel": [
+    "false",
+    "punishment",
+    "bend",
+    "complained",
+    "deceitful",
+    "distant",
+    "failed",
+    "hang",
+    "harsh",
+    "hat"
+   ]
+  },
+  {
+   "storyId": "classic-ugly-duckling",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 25,
+   "proposed": [
+    {
+     "lemma": "bird",
+     "translation": "kuş",
+     "source": "glossary-draft",
+     "occurrences": 6,
+     "stories": 10,
+     "rank": 43,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "frightened",
+     "translation": "korkmuş",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 210,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "swans",
+     "translation": "kuğular",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 345,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "swim",
+     "translation": "yüzmek",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 630,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "duck",
+     "translation": "ördek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 448,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "wings",
+     "translation": "kanatlar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 419,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "proud",
+     "translation": "gururlu",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 393,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nobody",
+     "translation": "hiç kimse",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 282,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "discover",
+     "translation": "keşfetmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 258,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "believe",
+     "translation": "inanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 251,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "winter",
+     "translation": "kış",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 201,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "break",
+     "translation": "kırmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 148,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "well",
+     "translation": "kuyu",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 517,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 6.5,
+   "outOfLevel": [
+    "largest",
+    "lowered",
+    "marsh",
+    "mattered",
+    "necks",
+    "nest",
+    "newcomer",
+    "overhead",
+    "powerful",
+    "purr"
+   ]
+  },
+  {
+   "storyId": "classic-emperors-clothes",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 21,
+   "proposed": [
+    {
+     "lemma": "cloth",
+     "translation": "kumaş",
+     "source": "learning-word",
+     "occurrences": 8,
+     "stories": 8,
+     "rank": 88,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "emperor",
+     "translation": "imparator",
+     "source": "learning-word",
+     "occurrences": 9,
+     "stories": 1,
+     "rank": 205,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nothing",
+     "translation": "hiçbir şey",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 332,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nobody",
+     "translation": "hiç kimse",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 282,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "praise",
+     "translation": "övmek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 596,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "gold",
+     "translation": "altın",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 151,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "swindlers",
+     "translation": "dolandırıcılar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 868,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "father",
+     "translation": "baba",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 90,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "through",
+     "translation": "içinden; boyunca",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 14,
+     "rank": 76,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "procession",
+     "translation": "geçit töreni",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 821,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "money",
+     "translation": "para",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 330,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "invisible",
+     "translation": "görünmez",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 574,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 10.6,
+   "outOfLevel": [
+    "inspect",
+    "job",
+    "joked",
+    "looms",
+    "materials",
+    "needles",
+    "official",
+    "officials",
+    "position",
+    "reason"
+   ]
+  },
+  {
+   "storyId": "classic-thumbelina",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 22,
+   "proposed": [
+    {
+     "lemma": "swallow",
+     "translation": "kırlangıç",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 6,
+     "rank": 116,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mouse",
+     "translation": "fare",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 4,
+     "rank": 139,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "beetle",
+     "translation": "böcek",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 1,
+     "rank": 430,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "winter",
+     "translation": "kış",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 201,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "flower",
+     "translation": "çiçek",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 6,
+     "rank": 135,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "leaf",
+     "translation": "yaprak",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 4,
+     "rank": 273,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mole",
+     "translation": "köstebek",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 584,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "wings",
+     "translation": "kanatlar",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 419,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "discover",
+     "translation": "keşfetmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 258,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "alone",
+     "translation": "yalnız",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 249,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hungry",
+     "translation": "aç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 234,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "strong",
+     "translation": "güçlü, sağlam",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 500,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "toad",
+     "translation": "kara kurbağası",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 879,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 5.9,
+   "outOfLevel": [
+    "interested",
+    "marriage",
+    "seed",
+    "seized",
+    "shell",
+    "size",
+    "stem",
+    "surrounded",
+    "underground",
+    "walnut"
+   ]
+  },
+  {
+   "storyId": "classic-little-mermaid",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 21,
+   "proposed": [
+    {
+     "lemma": "mermaid",
+     "translation": "deniz kızı",
+     "source": "learning-word",
+     "occurrences": 6,
+     "stories": 1,
+     "rank": 329,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "sea",
+     "translation": "deniz",
+     "source": "glossary-draft",
+     "occurrences": 6,
+     "stories": 3,
+     "rank": 218,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "witch",
+     "translation": "cadı",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 202,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "voice",
+     "translation": "ses",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 180,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "soul",
+     "translation": "ruh",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 495,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "return",
+     "translation": "dönmek",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 16,
+     "rank": 65,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "bride",
+     "translation": "gelin",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 311,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "believe",
+     "translation": "inanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 251,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "married",
+     "translation": "evlendi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 192,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "asleep",
+     "translation": "uykuda",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 10,
+     "rank": 165,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "break",
+     "translation": "kırmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 148,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "potion",
+     "translation": "iksir",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 1,
+     "rank": 819,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "princess",
+     "translation": "prenses",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 55,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 5.3,
+   "outOfLevel": [
+    "movement",
+    "pain",
+    "price",
+    "rescuer",
+    "service",
+    "storm",
+    "sunrise",
+    "surface",
+    "tail",
+    "waves"
+   ]
+  },
+  {
+   "storyId": "classic-snow-queen",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 22,
+   "proposed": [
+    {
+     "lemma": "pieces",
+     "translation": "parçalar",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 3,
+     "rank": 338,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "queen",
+     "translation": "kraliçe",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 6,
+     "rank": 82,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "free",
+     "translation": "özgür",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 5,
+     "rank": 321,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "mirror",
+     "translation": "ayna",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 3,
+     "rank": 281,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "heart",
+     "translation": "kalp",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 6,
+     "rank": 137,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "princess",
+     "translation": "prenses",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 55,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "help",
+     "translation": "yardım",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 17,
+     "rank": 45,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "woman",
+     "translation": "kadın",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 15,
+     "rank": 41,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reindeer",
+     "translation": "ren geyiği",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 604,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tears",
+     "translation": "gözyaşları",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 346,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "believe",
+     "translation": "inanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 251,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "alone",
+     "translation": "yalnız",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 249,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "winter",
+     "translation": "kış",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 201,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "married",
+     "translation": "evlendi",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 192,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "break",
+     "translation": "kırmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 148,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 5.7,
+   "outOfLevel": [
+    "kisses",
+    "larger",
+    "lend",
+    "pigeons",
+    "praying",
+    "recently",
+    "scattered",
+    "sledge",
+    "square",
+    "thought"
+   ]
+  },
+  {
+   "storyId": "classic-little-match-girl",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 18,
+   "proposed": [
+    {
+     "lemma": "light",
+     "translation": "ışık; hafif",
+     "source": "glossary-draft",
+     "occurrences": 6,
+     "stories": 5,
+     "rank": 154,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "matches",
+     "translation": "kibritler",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 2,
+     "rank": 385,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stove",
+     "translation": "soba",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 3,
+     "rank": 407,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "supper",
+     "translation": "akşam yemeği",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 503,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nobody",
+     "translation": "hiç kimse",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 282,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "goose",
+     "translation": "kaz",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 266,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "alone",
+     "translation": "yalnız",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 249,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "smile",
+     "translation": "gülümsemek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 494,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "morning",
+     "translation": "sabah",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 107,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "father",
+     "translation": "baba",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 90,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "money",
+     "translation": "para",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 330,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "match",
+     "translation": "kibrit; eşleşmek",
+     "source": "glossary-draft",
+     "occurrences": 5,
+     "stories": 2,
+     "rank": 278,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "grandmother",
+     "translation": "büyükanne, nine",
+     "source": "glossary-draft",
+     "occurrences": 4,
+     "stories": 4,
+     "rank": 98,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "iron",
+     "translation": "demir",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 463,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "hunger",
+     "translation": "açlık",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 2,
+     "rank": 766,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 2.3,
+   "outOfLevel": [
+    "remaining",
+    "scarcely",
+    "stretched",
+    "visions"
+   ]
+  },
+  {
+   "storyId": "classic-steadfast-tin-soldier",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 19,
+   "proposed": [
+    {
+     "lemma": "soldier",
+     "translation": "asker",
+     "source": "learning-word",
+     "occurrences": 11,
+     "stories": 2,
+     "rank": 108,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "dancer",
+     "translation": "dansçı",
+     "source": "learning-word",
+     "occurrences": 7,
+     "stories": 2,
+     "rank": 231,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "boy",
+     "translation": "erkek çocuk, oğlan",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 7,
+     "rank": 86,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "boat",
+     "translation": "tekne",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 4,
+     "rank": 166,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "servant",
+     "translation": "hizmetçi",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 6,
+     "rank": 176,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "tin",
+     "translation": "kalay",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 637,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "high",
+     "translation": "yüksek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 375,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "discover",
+     "translation": "keşfetmek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 258,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "castle",
+     "translation": "şato",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 3,
+     "rank": 254,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "believe",
+     "translation": "inanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 251,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "window",
+     "translation": "pencere",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 9,
+     "rank": 181,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "swallow",
+     "translation": "kırlangıç",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 6,
+     "rank": 116,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "journey",
+     "translation": "yolculuk",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 4,
+     "rank": 378,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "single",
+     "translation": "tek",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 618,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "stove",
+     "translation": "soba",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 3,
+     "rank": 407,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 5.1,
+   "outOfLevel": [
+    "lump",
+    "newspaper",
+    "ornament",
+    "passport",
+    "plunged",
+    "rat",
+    "rushed",
+    "sink",
+    "windowsill"
+   ]
+  },
+  {
+   "storyId": "classic-wild-swans",
+   "level": "B1",
+   "band": 1142,
+   "currentLearningWords": 25,
+   "proposed": [
+    {
+     "lemma": "brothers",
+     "translation": "erkek kardeşler",
+     "source": "learning-word",
+     "occurrences": 7,
+     "stories": 4,
+     "rank": 167,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "king",
+     "translation": "kral",
+     "source": "learning-word",
+     "occurrences": 4,
+     "stories": 12,
+     "rank": 44,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "queen",
+     "translation": "kraliçe",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 6,
+     "rank": 82,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "married",
+     "translation": "evlendi",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 192,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "forest",
+     "translation": "orman",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 8,
+     "rank": 121,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "silence",
+     "translation": "sessizlik",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 491,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "swans",
+     "translation": "kuğular",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 2,
+     "rank": 345,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "nettles",
+     "translation": "ısırgan otları",
+     "source": "learning-word",
+     "occurrences": 3,
+     "stories": 1,
+     "rank": 586,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "finish",
+     "translation": "bitiş",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 320,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "weave",
+     "translation": "dokumak",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 645,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "alone",
+     "translation": "yalnız",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 7,
+     "rank": 249,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "shirts",
+     "translation": "gömlekler",
+     "source": "learning-word",
+     "occurrences": 2,
+     "stories": 2,
+     "rank": 616,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "witch",
+     "translation": "cadı",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 5,
+     "rank": 202,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "break",
+     "translation": "kırmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 8,
+     "rank": 148,
+     "aboveLevel": false
+    },
+    {
+     "lemma": "reach",
+     "translation": "ulaşmak, uzanmak",
+     "source": "learning-word",
+     "occurrences": 1,
+     "stories": 12,
+     "rank": 141,
+     "aboveLevel": false
+    }
+   ],
+   "enough": true,
+   "outOfLevelPercent": 3.4,
+   "outOfLevel": [
+    "net",
+    "painful",
+    "prison",
+    "rejected",
+    "sadness",
+    "wing"
+   ]
+  }
+ ]
+}
