@@ -14,8 +14,9 @@ import org.junit.Test
 class ReaderAutoListenTest {
     @get:Rule val compose=createComposeRule()
 
+    // Records requests without speaking: the real engine replays a request queued before it was ready, which is not a restart.
     private class CountingNarrator(context: Context,private val calls: MutableList<List<String>>) : Narrator(context) {
-        override fun speakAll(texts: List<String>) {calls+=texts;super.speakAll(texts)}
+        override fun speakAll(texts: List<String>) {calls+=texts}
     }
 
     @Test fun recreatingTheReaderDoesNotRestartAutoListen() {
