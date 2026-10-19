@@ -359,6 +359,9 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
             dao.failed(id,owner.id,clock()+delay,code,if(retryable) "pending" else "blocked")==1
         }
     }
+    /** The request never reached the service, so the row stays due shortly after connectivity returns. */
+    fun markUploadOffline(id: String,expectedAccount: String): Boolean =
+        owner is LearningOwner.Account && owner.id==expectedAccount && dao.deferred(id,owner.id,clock()+30_000L,"network_unavailable")==1
     private fun scalar(db: SupportSQLiteDatabase,sql: String,args: Array<String>?=null) = db.rawQuery(sql,args).use {if(it.moveToFirst()) it.getInt(0) else 0}
     private fun recordEvent(db: SupportSQLiteDatabase,id: String,name: String,now: Long): Boolean = db.insertWithOnConflict("engagement_events",null,ContentValues().apply {put("event_id",id);put("name",name);put("created_at",now)},SQLiteDatabase.CONFLICT_IGNORE)!=-1L
     private fun transaction(action: (SupportSQLiteDatabase)->Unit) {database.runInTransaction {action(writableDatabase)}}

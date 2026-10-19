@@ -109,6 +109,9 @@ interface OfflineLearningDao {
     fun delivered(id: String,owner: String,now: Long): Int
     @Query("UPDATE learning_outbox SET attempts=attempts+1,next_attempt_at=:retryAt,error_code=:code,state=:state WHERE id=:id AND owner_id=:owner AND state='pending'")
     fun failed(id: String,owner: String,retryAt: Long,code: String,state: String): Int
+    /** Connectivity failures are not delivery attempts: no attempt count, no growing backoff. */
+    @Query("UPDATE learning_outbox SET next_attempt_at=:retryAt,error_code=:code WHERE id=:id AND owner_id=:owner AND state='pending'")
+    fun deferred(id: String,owner: String,retryAt: Long,code: String): Int
     @Query("SELECT * FROM session_drafts WHERE id=:id") fun session(id: String): SessionDraftRow?
     @Insert(onConflict=OnConflictStrategy.IGNORE) fun begin(session: SessionDraftRow): Long
     @Query("UPDATE session_drafts SET active_millis=MAX(active_millis,:millis) WHERE id=:id AND state IN ('active','abandoned')")
