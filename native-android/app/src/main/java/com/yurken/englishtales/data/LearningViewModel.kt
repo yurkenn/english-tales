@@ -18,9 +18,11 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // (user, upload now): the periodic job is always kept as the backstop; the one-time job only runs while the in-app timer cannot.
     private val scheduleWork: (String,Boolean)->Unit={user,now -> if(background) LearningSyncRuntime.schedule(application,user,now)},
     // The email-code step outlives process death (the user leaves for the mail app); in memory unless the app passes durable storage.
-    private val pendingCode: PendingEmailCode=PendingEmailCode.memory()) : AndroidViewModel(application) {
+    private val pendingCode: PendingEmailCode=PendingEmailCode.memory(),
+    // The account a launch without a session reopens (asking to sign in again) instead of falling back to Guest.
+    private val rememberedAccount: ()->LearningOwner.Account?={null}) : AndroidViewModel(application) {
     constructor(application: Application):this(application,LearningSyncRuntime.accounts(application),{LearningStore(application,it)},defaultLearningSync(),true,
-        {LearningReminderOwner.select(application,it)},pendingCode=PendingEmailCode.prefs(application))
+        {LearningReminderOwner.select(application,it)},pendingCode=PendingEmailCode.prefs(application),rememberedAccount={LearningReminderOwner.account(application)})
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
     private var store = storeFactory(LearningOwner.Guest)
     private data class Mutation(val scope: Long?,val refresh: Boolean=true,val action: ()->Unit)
@@ -74,11 +76,12 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     val session=try {auth.restore()} catch (_: Exception) {
                         mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error);auth.current
                     }
-                    session?.let {
+                    if(session!=null) {
                         // Only a session naming no valid account is discarded; a database or disk error keeps it for the next launch.
-                        val owner=try {LearningOwner.Account(it.userId)} catch (failure: IllegalArgumentException) {auth.clearLocal();throw failure}
-                        changeOwner(owner,it.email)
-                    }
+                        val owner=try {LearningOwner.Account(session.userId)} catch (failure: IllegalArgumentException) {auth.clearLocal();throw failure}
+                        changeOwner(owner,session.email)
+                    // An expired or revoked session keeps its learner's data and scope, as it does in-process; only sign-out or deletion returns to Guest.
+                    } else rememberedAccount()?.let {changeOwner(it,needsSignIn=true)}
                 } catch (_: Exception) {
                     mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error)
                 }
@@ -276,7 +279,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // Held writes target the current store; retry them there, since after a switch they would land in the other owner.
     private fun releaseHeldWrites(): Boolean {if(holdsWrites()) writes.retry();return !holdsWrites()}
     private fun requireSavedWrites() {if(!releaseHeldWrites()) throw AuthFailure("pending_local_writes")}
-    private fun changeOwner(owner: LearningOwner,email: String="",discardHeld: Boolean=false) {
+    private fun changeOwner(owner: LearningOwner,email: String="",discardHeld: Boolean=false,needsSignIn: Boolean=false) {
         if(!discardHeld) requireSavedWrites()
         val previous=(store.owner as? LearningOwner.Account)?.id
         val next=storeFactory(owner)
@@ -300,7 +303,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         if(background) LearningSyncRuntime.resume()
         // An owner change ends any open email-code step (verified sign-up, sign-in, sign-out, deletion).
         if(mutableAccount.value.emailAction.isNotEmpty()) pendingCode.clear()
-        mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=mutableAccount.value.scope+1)
+        mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,needsSignIn=needsSignIn,scope=mutableAccount.value.scope+1)
         if(owner is LearningOwner.Account && cloudSync!=null) {
             val saved=cloudSync.status(store)
             mutableAccount.value=mutableAccount.value.copy(sync=saved.copy(message=if(saved.lastSuccessAt==null) text(R.string.account_message_not_synced) else text(R.string.account_message_history_kept),tone=MessageTone.Info))

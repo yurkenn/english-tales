@@ -20,6 +20,10 @@ internal object LearningReminderOwner {
         else runCatching { LearningOwner.Account(selected) }.getOrNull()
     }
 
+    /** The selected account whose local data still exists and is not being deleted: a launch without a session reopens it. */
+    @Synchronized fun account(context: Context): LearningOwner.Account? = (current(context) as? LearningOwner.Account)
+        ?.takeIf { it.id !in DeletedAccountCleanup.pending(context) && context.getDatabasePath(it.databaseName).exists() }
+
     @Synchronized fun ifCurrent(context: Context, owner: LearningOwner, action: () -> Unit) {
         if (current(context)?.id == owner.id) action()
     }
