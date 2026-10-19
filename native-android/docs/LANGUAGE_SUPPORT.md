@@ -1,30 +1,82 @@
-# Dil desteği — L0 devam kaydı
+# Dil desteği — 10 yeni dil
 
-17 Ekim 2026 · Başlangıç: Claude'un [#87](https://github.com/yurkenn/english-tales/pull/87) çalışması (`bdf8197`).
+18 Ekim 2026 · Çeviri kaynağı: Claude’un #90 çalışması (`8523eb3`). Uygulama entegrasyonu `codex/complete-ten-languages` dalındadır.
 
-## Mevcut kapsam
+## Kullanım
 
-Uygulama arayüzü Türkçe ve İngilizce sunulur. Android 13 ve üzerindeki uygulama dili seçimi sistem ayarlarındadır; desteklenmeyen cihaz dilleri İngilizceye döner. Hikâye, sözlük ve kategori içeriğinin destek dili hâlâ Türkçedir (`SupportLanguage.code == "tr"`). İngilizce arayüz, İngilizce açıklama/kelime çevirisi kataloğu bulunduğu anlamına gelmez.
+İlk açılış ve Ayarlar ekranındaki **Uygulama dili** düğmesinden dil seçilir. Sistem dili seçeneği cihazın tercih sırasını izler. Android 13+ üzerinde uygulamanın sistem dil ayarıyla aynı LocaleManager kaydı kullanılır; Android 7–12’de yalnız bu cihaza ait tercih tutulur ve Activity yeniden oluşturulurken ViewModel/yazma kuyruğu korunur. Dil değişiminde öğrenme veritabanı, hesap, kaydedilen kelime kimlikleri, favoriler ve okuma konumları değiştirilmez. Dil değişince gezinme yeniden başlar; eski dildeki yarım bir alıştırmanın seçenekleri yeni dilde geri yüklenmez. Hesap ViewModel’i ve bekleyen yazma kuyruğu bu arayüz sıfırlamasının dışında kalır.
 
-Claude'un PR açıklamasındaki açık iş, Kotlin içinde kalan kullanıcı mesajlarıydı. Devam çalışması:
+| Dil | İçerik kodu | Arayüz kaynağı |
+| --- | --- | --- |
+| Türkçe | tr | values + üretilen values-tr |
+| İngilizce arayüz | Türkçe destek içeriği | values-en |
+| Latin Amerika İspanyolcası | es-419 | values-b+es+419 |
+| Brezilya Portekizcesi | pt-BR | values-pt-rBR |
+| Endonezce | id | values-in (Android’in eski kaynak kodu) |
+| Arapça | ar | values-ar |
+| Vietnamca | vi | values-vi |
+| Hintçe | hi | values-hi |
+| Rusça | ru | values-ru |
+| Bengalce | bn | values-bn |
+| Urduca | ur | values-ur |
+| Tayca | th | values-th |
 
-- Hesap giriş/çıkış, doğrulama/kurtarma, misafir aktarımı, hesap silme ve Google giriş mesajlarını dil kaynaklarına taşır.
-- Ön ve arka plandaki eşitleme, indirme ve reklam gizliliği sonuçlarını yerelleştirir.
-- Kalıcı kayıt hatalarını ekrandaki güncel dilde çözülen kaynak kimlikleriyle gösterir.
-- Günlük hedef seçimini çevrilmiş metnin biçimine bağlamaz; İngilizcede tekil “1 step” varsayılan olarak doğru seçilir ve hedef seçenek sırasından kaydedilir.
-- Onboarding, ayarlar ve günlük plandaki tür adlarını; kütüphane okuma filtrelerini çevirir. Veritabanındaki tür değerleri değişmez.
-- Hesap ekranındaki son eşitleme tarihini arayüz diliyle biçimlendirir.
-- Türkçe öncelikli dil listesinde ikinci sıradaki İngilizcenin `values-en` kaynakları üzerinden Türkçeyi geçersiz kılmasını önler; kaynak çözümü tek seçili arayüz diliyle yapılır.
-- `values/status_messages.xml` ve `values-en/status_messages.xml` dosyalarına eşleşen 88 metin ekler.
+İspanyolca bölgesel varyantları es-419’a, Portekizce varyantları pt-BR’ye eşlenir. Desteklenmeyen arayüz dilleri İngilizceye döner. İngilizce öğrenilen dildir: hikâyelerin İngilizce cümleleri, soru/cevap bankaları, telaffuz ve İngilizce örnekler çevrilmez.
 
-İçerik doğrulamasındaki teknik istisnalar kullanıcıya doğrudan gösterilmez; indirme/güncelleme hatası yerelleştirilmiş genel mesajla sunulur. Veritabanı değerleri, sunucu alanları ve hikâye metinleri arayüz metni gibi çevrilmez.
+## İlk açılışta dil seçimi
+
+19 Ekim devamı: öğrenme profili henüz oluşturulmamış yeni kullanıcı, karşılama/giriş ekranından önce tam ekran dil seçimini görür. Dil adları kendi yazımlarıyla ve İngilizce adlarıyla listelenir; önerilen seçenek öne alınır. Seçim metinleri ve ekran yönünü anında önizler. Sabit alt düğme onaylanana kadar uygulamanın dili değişmez. İngilizce arayüz seçeneğinde hikâye çevirilerinin hâlâ Türkçe olduğu ayrıca belirtilir.
+
+Onay `app_language/confirmed` cihaz tercihinde tutulur; hesaplara, kelimelere veya okuma konumlarına dokunmaz. Onboarding’i tamamlamış mevcut kullanıcıların akışı kesilmez ve tekrar sorulmaz. Onaydan sonraki Activity yeniden oluşturulması seçimi tekrar açmaz; paylaşılan hikâye bağlantısı beklemeye devam eder. Ayarlar ve karşılama ekranındaki dil düğmesi aynı tam ekran seçiciyi açar; buradan sistem dilini izlemeye dönülebilir. Seçici kapatılırsa önizleme kaydedilmez.
+
+## Kapsam ve çevrimdışı davranış
+
+Her yeni dilde 50 hikâyenin açıklaması, 1.002 cümle, 359 öğrenme kelimesi, 5 kategori ve 3 tür çevirisi bulunur. Arayüzde her dil için 534 kaynak kimliği vardır; bu sayı çoğul kaynakları birer kimlik olarak sayar. Hesap/eşitleme/hata mesajları, bildirim ve widget kaynakları da bu kapsamın içindedir.
+
+`tooling/build_translations.py` çeviri taslaklarını kimlik ve tamlık kontrolünden geçirip paket içi `catalog/v1.json` haritalarına ekler. Eski Türkçe alanlar, İngilizce metinler, hikâye/kelime kimlikleri, kapaklar ve revision kimlikleri korunur. Mevcut backend exporter ve editör bu dil haritalarını zaten destekler.
+
+Canlı sunucunun ilgili dildeki çevirisi önceliklidir. Bulunmuyorsa `ContentTranslations` paket çevirisini **kaynak metni birebir eşleşen** içerikte kullanır. Böylece mevcut 50 canlı hikâye, üretimdeki değişmez revision’ları yeniden yayımlamadan yeni dillerde okunabilir. 18 Ekim kontrolünde 50 açıklamanın, 1.002 İngilizce cümlenin ve sunucudaki 622 revision-kelime satırının kaynakları paketle eşleşti.
+
+Eski indirilmiş belgeler ve katalog her geri yüklemede seçili dilde çözülür. Ham belgeler, kapaklar ve indirme kimlikleri değiştirilmez. Eski dilde başlamış bir içerik isteğinin yeni dildeki kataloğu kurmasına izin verilmez. Paketle eşleşmeyen yeni/düzenlenmiş bir içerik henüz çevrilmemişse İngilizce kaynak gösterilir; açıklama için seçili dilde genel bir metin kullanılır. Sunucu çevirisi eklendiğinde o metin öncelik kazanır. Yeni içerik yayımlayan editör her açık dilin çevirilerini de tamamlamalıdır.
+
+Paket içi ek genel sözlük için mevcut Q4.3b inceleme kapısı korunur; 1.098 taslak sözlük anlamı bu değişiklikle otomatik yayımlanmaz. Mevcut 359 öğrenme kelimesinin anlamları ve alıştırmaları her yeni dilde çalışır. Kullanıcının kendi kaydettiği kişisel sözlük anlamları kullanıcı verisi olarak korunur.
+
+Türkçe kaynaklar `sync_turkish_resources.py` ile ayrıca `values-tr` içine eşlenir; böylece Android’in Türkçeden sonraki İngilizceyi açık kaynak eşleşmesi nedeniyle seçmesi önlenir. CI bu eşlemenin ve 10 dilin kapsamının güncel olduğunu kontrol eder.
+
+Arapça ve Urduca ekranlar sağdan sola yerleşir. İngilizce okuyucu metni, dikte giriş alanı, cümle sıralama ve harf oluşturma alanları soldan sağa kalır; geri/ileri ikonları ekran yönünü izler. İngilizce cevap değişkenleri ve sayısal kesirler yön izolasyonu kullanır; örneğin sayfa 1/2 ve “The cat sat.” cümlesinin noktalaması ters dönmez. Play’den yüklenen uygulamada da bütün diller çevrimdışı seçilebilsin diye AAB dil parçalama kapatılmıştır.
+
+## Çeviri niteliği ve kaynakları
+
+Hikâye/kelime taslakları Claude tarafından oluşturulmuş ve ikinci modelle karşılaştırılmıştır; kendi `source` alanları korunur. Yeni arayüz metinleri mevcut İngilizce kaynaklardan makine çevirisiyle hazırlanmıştır; biçim değişkenleri/marka adları korunmuş, temel eylemler, cevap geribildirimi ve sayısal çoğul metinleri ayrıca düzenlenmiştir. `ui-overrides.json` bu düzenlemelerin kalıcı kaynağıdır. `translate_ui.py` yalnız açıkça çalıştırılan bir yazım aracıdır; uygulama veya normal derleme çeviri servisine bağlanmaz, kullanıcı verisi göndermez.
+
+Bu kontroller ana dili konuşan bir uzmanın dil incelemesinin yerini almaz. Özellikle Hintçe/Urduca hitap ve üslup ile yeni arayüz çevirileri mağaza yayını öncesi editör incelemesine sunulmalıdır. Böyle bir inceleme yapılmış gibi bir onay veya `reviewedBy` eklenmedi.
 
 ## Doğrulama
 
-`AppLocalizationTest` Türkçe/İngilizce kaynak seçimini, İspanyolca cihaz için İngilizce geri dönüşünü ve gerçek hesap ViewModel'inin yapılandırılmamış bağlantı hatasını kontrol eder. `EnglishUiTest`, İngilizce “Mystery” seçiminin mevcut “Gizem” kayıt değerini kaydettiğini doğrular. Mevcut Türkçe arayüz, kayıt güvenilirliği ve eşitleme testleri regresyon kapsamındadır. `TalesTestRunner`, eski testlerin Türkçe beklentilerini cihazın sistem dilinden bağımsız olarak sabitler; uygulamanın dil seçimini yalnız test kurulumu sırasında Türkçe yapar. İngilizce testler kendi yerel kaynak bağlamını kullanır. Bu, #87 ilk CI turunda İngilizce emülatörde görülen dil kaynaklı test hatalarını da kapsar.
+- `python tooling/build_translations.py --check`
+- `python tooling/verify_localization.py`: her dilde kaynak kapsamı, bozuk metin, printf argümanları, çoğul kategorileri ve içerik tamlığı.
+- `AppLanguageTest`, `SupportLanguageResolveTest`: tercih sırası, bölgesel eşleme, bilinmeyen dil ve dil listesi.
+- `MultilingualContentTest`: tüm dil paketleri, çevrimdışı eski indirme/dosya koruması, sunucu çevirisi önceliği, kaynak değişince eski çevirinin reddi, eski dil isteğinin yeni kataloğu ezmemesi ve öğrenme verisinin korunması.
+- `MultilingualUiTest`: 10 dilde biçimlendirme/çoğullar, İspanyolca ilk açılış ve dil seçici, Arapça cümle sırası, Urduca okuyucu ve Tayca misafir girişi. Ekran görüntüleri test uygulamasının dış dosyalar alanına yazılır.
+- Mevcut TR/EN yerelleştirme, uzak içerik ve cevap animasyonu testleri regresyon kapsamındadır.
 
-Performans ve başlangıç profili gezinmesi de Türkçe/İngilizce etiketleri kabul eder; küçük İngilizce karşılama ekranında görünür alanın altında kalan misafir düğmesine önce kaydırır; İngilizce sistem dili olan cihazda Türkçe metin bekleyip takılmaz.
+Yerel test raporları `native-android/build/localization-*` ve `app/build/reports/` altındadır. GitHub’daki #90 PR’ı kendiliğinden birleştirilmedi; bu dal onun çevirilerini uygulamaya entegre eder. Yeni APK’nın kullanıcıya ulaşması için normal imzalı yayın süreci gereklidir; bu çalışma Play’e paket yüklemez.
 
-## Sonraki dil aşaması
+## 18 Ekim devam kontrolü
 
-L0 yalnızca İngilizce arayüz temelidir. On yeni dil tamamlanmış değildir. [Öğrenme ve dil planındaki](LEARNING_QUALITY_PLAN.md#5-dil-genişlemesi-l-hattı) L1, İspanyolca pilotunu öngörür: arayüzün yanında cümle/kelime çevirileri, açıklamalar, kategori adları, sözlük ve mağaza metinleri gerekir. Çeviri taslakları ile editör incelemesi ayrı aşamalardır; bu çalışma canlı içerik veya mağaza yayını yapmaz.
+İngilizce temelini tamamlayan #87 birleştirildi. On dil entegrasyonu #115 üzerinde inceleniyor; mağaza yayını ayrı aşamadır.
+
+İlk CI turundaki iki sorun düzeltildi:
+
+- Android 14 ve önceki sürümlerde `Locale.language` Endonezce için eski `in` kodunu döndürebilir. Arayüz seçimi, seçim doğrulaması ve içerik dili çözümü bunu aynı `id` koduna eşler. `id`/`in` ve bölgesel varyantlar JVM ve cihaz regresyon testlerinde kapsanır.
+- Eksik dil denetimi testi artık uygulamanın büyüyen katalog paketine bağlı değildir. Sabit, yalnız Türkçe içeren küçük bir katalog üzerinde eksik İspanyolca ve kısmi sunucu çevirileri için reddi kontrol eder.
+
+Yerel backend testleri 149/149 ve yönetim panelinin HTTP akışı geçti. Bunlar yerel fixture kontrolleridir; canlı içerik veya Play yayını yapılmadı. Android 14 dil gerilemesi için son kabul kanıtı PR'ın güncel `android-device` CI sonucudur.
+
+## Görsel kontroller
+
+Android 15 emülatöründe doğrulanan Arapça cümle kurma ve Urduca okuyucu:
+
+| Arapça — İngilizce kelime sırası ve noktalama | Urduca — İngilizce kaynak, çeviri ve 1/2 sayfa sayacı |
+| --- | --- |
+| ![Arapça alıştırma](language-previews/ar-order.png) | ![Urduca okuyucu](language-previews/ur-reader.png) |

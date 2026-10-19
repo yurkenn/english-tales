@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="content_untranslated_description">Đọc câu chuyện tiếng Anh này và thực hành từ vựng của nó.</string>
+    <string name="app_language_title">Ngôn ngữ ứng dụng</string>
+    <string name="app_language_description">Lựa chọn giao diện và ngôn ngữ dịch truyện. Ứng dụng khởi động lại khi ngôn ngữ thay đổi; tiến trình đã lưu của bạn được lưu giữ.</string>
+    <string name="app_language_system">Ngôn ngữ hệ thống</string>
+    <string name="app_language_current">Ngôn ngữ ứng dụng: %1$s</string>
+    <string name="henuz_indirilen_hikaye_yok">Chưa có câu chuyện nào được tải xuống.</string>
+</resources>

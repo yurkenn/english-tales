@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="order_mode">Bangun kalimatnya</string>
+    <string name="order_subtitle">Susunlah kalimat cerita dalam urutan yang benar</string>
+    <string name="order_instruction">Ketuk kata-kata untuk menyusun kalimat</string>
+    <string name="order_hint">Artinya: %1$s</string>
+    <string name="order_answer_empty">Pilih kata-kata secara berurutan</string>
+    <string name="order_remove">Hapus %1$s dari kalimat</string>
+    <string name="order_correct">Benar! %1$s</string>
+    <string name="order_incorrect">Benar: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

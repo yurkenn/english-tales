@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">Kiểm tra trình độ nhanh</string>
+    <string name="placement_entry">Tìm trình độ của tôi bằng bài kiểm tra nhanh</string>
+    <string name="placement_intro">9 câu hỏi · Khoảng 2–3 phút</string>
+    <string name="placement_explanation">Bạn sẽ đọc những câu tiếng Anh ngắn và chọn câu trả lời. Bạn có thể bỏ qua những câu hỏi bạn không biết; không có giới hạn thời gian.</string>
+    <string name="placement_scope">Kết quả là gợi ý khởi đầu cho các câu chuyện A1–B1. Đây không phải là kết quả trình độ ngôn ngữ chính thức. Câu trả lời của bạn không được gửi từ thiết bị này.</string>
+    <string name="placement_start">Bắt đầu bài kiểm tra</string>
+    <string name="placement_manual">Tôi sẽ tự chọn cấp độ của mình</string>
+    <string name="placement_progress">Câu hỏi %1$d/%2$d</string>
+    <string name="placement_complete_sentence">Hoàn thành câu.</string>
+    <string name="placement_read_question">Đọc đoạn văn và trả lời câu hỏi.</string>
+    <string name="placement_unknown">Tôi không biết</string>
+    <string name="placement_next">Câu hỏi tiếp theo</string>
+    <string name="placement_finish">Xem đề xuất của tôi</string>
+    <string name="placement_result">Mức khởi đầu đề xuất: %1$s</string>
+    <string name="placement_result_description">Bạn có thể bắt đầu với những câu chuyện ở cấp độ này. Nếu cảm thấy quá dễ hoặc quá khó, bạn có thể thay đổi cấp độ của mình trong Cài đặt.</string>
+    <string name="placement_score">Câu hỏi %1$s: %2$d/3 đúng</string>
+    <string name="placement_use">Tiếp tục với %1$s</string>
+    <string name="placement_settings_hint">Sau khi chọn đề xuất, hãy lưu các thay đổi trong Cài đặt để cập nhật cấp độ của bạn.</string>
+    <string name="placement_cancel_title">Rời khỏi bài kiểm tra?</string>
+    <string name="placement_cancel_message">Các câu trả lời từ lần thử này sẽ bị xóa. Cấp độ bạn đã chọn sẽ không thay đổi.</string>
+    <string name="placement_cancel_confirm">Rời khỏi bài kiểm tra</string>
+    <string name="placement_cancel_keep">Quay lại để kiểm tra</string>
+</resources>

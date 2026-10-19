@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="gap_mode">বাক্যের শূন্যস্থান পূরণ কর</string>
+    <string name="gap_subtitle">একটি গল্প বাক্যে সঠিক শব্দ খুঁজুন।</string>
+    <string name="gap_preparing">গল্পের বাক্য প্রস্তুত করা হচ্ছে…</string>
+    <string name="gap_unavailable">এই অনুশীলনের জন্য কোন উপযুক্ত বাক্য নেই। আপনার ডাউনলোড করা গল্পের সাথে আবার চেষ্টা করুন।</string>
+    <string name="gap_instruction">ইঙ্গিত ব্যবহার করে শূন্যস্থান পূরণ করুন।</string>
+    <string name="gap_hint">ইঙ্গিত: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">একটি গল্প থেকে একটি বাক্য · %1$s</string>
+    <string name="gap_progress">বাক্য %1$d / %2$d</string>
+    <string name="gap_check">চেক করুন</string>
+    <string name="gap_correct">সঠিক! আপনি বাক্য সম্পূর্ণ করেছেন।</string>
+    <string name="gap_incorrect">আসুন একসাথে শিখি। সঠিক উত্তর: %1$s</string>
+    <string name="gap_next">পরবর্তী বাক্য</string>
+    <string name="gap_finish">ফলাফল দেখুন</string>
+    <string name="gap_exit">অনুশীলন ছেড়ে দিন</string>
+</resources>

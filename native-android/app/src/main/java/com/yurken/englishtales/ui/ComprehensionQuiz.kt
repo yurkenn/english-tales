@@ -60,7 +60,7 @@ internal fun ComprehensionQuiz(storyId: String, questions: List<StoryQuestion>, 
                 }
             }
             AnswerFeedback(checked, selected == question.answer, if (selected == question.answer) stringResource(R.string.quiz_correct)
-                else stringResource(R.string.quiz_incorrect, question.options[question.answer]))
+                else stringResource(R.string.quiz_incorrect, englishArgument(question.options[question.answer])))
             Button(enabled = selected != null, modifier = Modifier.fillMaxWidth(), onClick = {
                 if (!checked) {
                     checked = true

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="quiz_title">¿Lo entendiste?</string>
+    <string name="quiz_intro">Algunas preguntas breves sobre la historia. No afectan tus puntos.</string>
+    <string name="quiz_progress">Pregunta %1$d / %2$d</string>
+    <string name="quiz_kind_main">Idea principal</string>
+    <string name="quiz_kind_detail">Detalle</string>
+    <string name="quiz_kind_inference">Inferencia</string>
+    <string name="quiz_check">Controlar</string>
+    <string name="quiz_correct">¡Correcto!</string>
+    <string name="quiz_incorrect">Respuesta correcta: %1$s</string>
+    <string name="quiz_next">Siguiente pregunta</string>
+    <string name="quiz_finish">Finalizar</string>
+    <string name="quiz_result">Resultado: %1$d/%2$d</string>
+    <string name="quiz_best">Tu mejor resultado: %1$d/%2$d</string>
+    <string name="quiz_retry">Intentar otra vez</string>
+</resources>

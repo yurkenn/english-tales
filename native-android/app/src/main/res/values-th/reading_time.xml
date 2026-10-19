@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d ขั้นต่ำ</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="other">เวลาอ่านโดยประมาณเป็นนาที: %1$d</item>
+    </plurals>
+    <string name="length_all">ความยาวเท่าใดก็ได้</string>
+    <string name="length_short">สั้น · ≤ 2 นาที</string>
+    <string name="length_medium">ปานกลาง · 3–5 นาที</string>
+    <string name="length_long">ยาว · 6+ นาที</string>
+</resources>

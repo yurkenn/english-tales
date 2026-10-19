@@ -11,10 +11,12 @@ const hash=x=>createHash('sha256').update(JSON.stringify(canonical(x))).digest('
 const tokens=s=>new Set(s.toLowerCase().match(/[\p{L}\p{N}]+/gu)||[]);
 const legacyIds=['quiet-morning','paper-boat','lost-map','red-umbrella','last-train','attic-letter'];
 // Comprehension questions (Q5.3) and tags (Q4.5) are added content; the legacy text, IDs and links must stay identical.
-const legacy=catalog.stories.filter(s=>legacyIds.includes(s.id)).map(({questions,tags,...story})=>story);
+const legacy=catalog.stories.filter(s=>legacyIds.includes(s.id)).map(({questions,tags,descriptions,...story})=>({
+ ...story,sentences:story.sentences.map(({translations,...sentence})=>sentence)
+}));
 test('classic expansion preserves legacy texts, IDs, original vocabulary and inferred word links',()=>{
  assert.equal(hash(legacy),'ce53ac56dd089ab7db8a489596ea52755c0f6765c71b4b7dc3a3755bee5262be');
- assert.equal(hash(catalog.words.slice(0,39)),'d045b636ec9f046daa618fc847e510078e9982a32749c8581d978558ddc18c76');
+ assert.equal(hash(catalog.words.slice(0,39).map(({translations,...word})=>word)),'d045b636ec9f046daa618fc847e510078e9982a32749c8581d978558ddc18c76');
  const oldTokens=tokens(legacy.flatMap(s=>s.sentences.map(x=>x.english)).join(' '));
  const legacySentences=legacy.flatMap(s=>s.sentences.map(x=>x.english));
  for(const word of catalog.words.slice(39)) assert.ok(!oldTokens.has(word.word.toLowerCase())&&!legacySentences.some(x=>occurs(x,word.word)),`New word changes legacy links: ${word.word}`);

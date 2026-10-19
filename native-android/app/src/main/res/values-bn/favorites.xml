@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="favorite_add">পছন্দসই যোগ করুন</string>
+    <string name="favorite_remove">প্রিয় থেকে সরান</string>
+    <string name="favorites_title">আমার প্রিয় (%1$d)</string>
+</resources>

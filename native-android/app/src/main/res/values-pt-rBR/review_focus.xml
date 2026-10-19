@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">Pratique suas palavras complicadas %1$d</string>
+    <string name="weak_words_summary">As palavras que você respondeu errado nos últimos 30 dias vêm primeiro.</string>
+    <string name="weak_words_count">Palavras em que você tem dificuldade: %1$d. Elas aparecem primeiro nas revisões.</string>
+</resources>

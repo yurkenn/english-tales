@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="order_mode">بناء الجملة</string>
+    <string name="order_subtitle">ضع جملة القصة بالترتيب الصحيح</string>
+    <string name="order_instruction">اضغط على الكلمات لبناء الجملة</string>
+    <string name="order_hint">المعنى: %1$s</string>
+    <string name="order_answer_empty">اختر الكلمات بالترتيب</string>
+    <string name="order_remove">إزالة %1$s من الجملة</string>
+    <string name="order_correct">صحيح! %1$s</string>
+    <string name="order_incorrect">الصحيح: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

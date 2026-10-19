@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">Latih kata-kata rumit %1$d Anda</string>
+    <string name="weak_words_summary">Kata-kata yang salah Anda jawab dalam 30 hari terakhir didahulukan.</string>
+    <string name="weak_words_count">Kata yang masih sulit: %1$d. Kata-kata ini didahulukan saat mengulang.</string>
+</resources>

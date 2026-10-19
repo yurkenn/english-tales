@@ -112,6 +112,7 @@ object ContentCodec {
 }
 
 class ContentRepository(context: Context, private val http: ContentHttp?) {
+    private val language = SupportLanguage.code
     private val directory = File(context.filesDir, "published-content").apply { mkdirs() }
     private val index = AtomicFile(File(directory, "catalog.json"))
     private val lock = Mutex()
@@ -121,7 +122,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private val bundledTextIndex = AtomicFile(File(directory, "bundled-text.index"))
     private val bundledText = mutableMapOf<String, String>()
     private fun fingerprint(story: Story) = MessageDigest.getInstance("SHA-256")
-        .digest(story.sentences.toString().toByteArray(Charsets.UTF_8))
+        .digest(story.sentences.map { it.id to it.english }.toString().toByteArray(Charsets.UTF_8))
         .joinToString("") { "%02x".format(it) }
     private var metadata = JSONArray()
     private var hasRemoteCatalog = false
@@ -134,6 +135,8 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private fun read(file: AtomicFile) = file.openRead().use { String(it.readBytes(), Charsets.UTF_8) }
     suspend fun restore() = lock.withLock {
         withContext(Dispatchers.IO) {
+            downloaded.clear(); historical.clear(); bundledText.clear()
+            metadata = JSONArray(); hasRemoteCatalog = false
             runCatching {
                 val candidate = JSONArray(read(index))
                 for (i in 0 until candidate.length()) ContentCodec.story(candidate.getJSONObject(i))
@@ -161,6 +164,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         publish()
     }
     private suspend fun publish() {
+        if (language != SupportLanguage.code) return
         // Parsing every catalog document is heavy for a large catalog; only the install touches the UI thread.
         val stories = if (!hasRemoteCatalog) null else withContext(Dispatchers.Default) {
             (0 until metadata.length()).map { i ->
@@ -174,6 +178,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         }
         val retained = historical.values.toList()
         withContext(Dispatchers.Main) {
+            if (language != SupportLanguage.code) return@withContext
             retained.forEach(LearningContent::retain)
             if (stories != null) LearningContent.install(stories, retained.flatMap { it.vocabulary.orEmpty() })
         }
@@ -226,7 +231,9 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
             for (doc in batch) {
                 val revision = doc.getString("id"); val story = bundledByStory.getValue(doc.getString("story_id"))
                 val sameCover = coverByRevision[ContentRevisionIds.bundled(story.id)]?.let { it == doc.optString("cover_asset_id") } == true
-                if (sameCover && sentences[revision] == story.sentences) { bundledText[revision] = fingerprint(story); changed = true }
+                if (sameCover && sentences[revision]?.map { it.id to it.english } == story.sentences.map { it.id to it.english }) {
+                    bundledText[revision] = fingerprint(story); changed = true
+                }
             }
         }
         if (changed) atomic(bundledTextIndex, JSONObject().apply { bundledText.forEach { (revision, text) -> put(revision, text) } }.toString().toByteArray(Charsets.UTF_8))
@@ -235,8 +242,11 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
     private fun tagVocabulary(remote: ContentHttp, lang: String): List<Pair<String, String>> {
         val order = remote.optionalRows("content_tags", "select=id,position&order=position.asc", 100) ?: return emptyList()
         val names = mutableMapOf<String, String>()
-        for (code in listOf(SupportLanguage.DEFAULT, lang).distinct())
+        for (code in listOf(SupportLanguage.DEFAULT, lang).distinct()) {
+            if (code == lang && lang != SupportLanguage.DEFAULT)
+                (0 until order.length()).forEach { i -> order.getJSONObject(i).getString("id").let { names[it] = ContentTranslations.tag(it, names[it] ?: it) } }
             remote.optionalRows("tag_names", "select=tag_id,name&lang=eq.$code&order=tag_id.asc", 100)?.forEachObject { names[it.getString("tag_id")] = it.getString("name") }
+        }
         return (0 until order.length()).map { order.getJSONObject(it).getString("id").let { id -> id to (names[id] ?: id) } }
     }
     /** Stores each revision's tags as `[{id, name}]` in vocabulary order, so caches and downloads keep them offline. */
@@ -246,7 +256,7 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
         val byRevision = mutableMapOf<String, MutableSet<String>>()
         rows.forEachObject { byRevision.getOrPut(it.getString("revision_id")) { mutableSetOf() }.add(it.getString("tag_id")) }
         for (revision in revisions) doc(revision)?.put("tags", JSONArray().apply {
-            vocabulary.filter { it.first in byRevision[revision].orEmpty() }.forEach { (id, name) -> put(JSONObject().put("id", id).put("name", name)) }
+            vocabulary.filter { it.first in byRevision[revision].orEmpty() }.forEach { (id, name) -> put(JSONObject().put("id", id).put("name", name).put("lang", SupportLanguage.code)) }
         })
     }
     /** Translation tables are newer than the first releases; until a server has them, the legacy Turkish columns are used. */
@@ -334,6 +344,10 @@ class ContentViewModel(application: Application) : AndroidViewModel(application)
     private val mutableReady = MutableStateFlow(false)
     val ready = mutableReady.asStateFlow()
     init { viewModelScope.launch { try {repository.restore()} finally {mutableReady.value=true}; refresh() } }
+    /** A retained language-specific ViewModel restores raw documents again when its screen returns. */
+    fun restoreLanguage() {
+        viewModelScope.launch { repository.restore(); refreshIfStale() }
+    }
     private val mutableEvents = MutableSharedFlow<ContentEvent>(extraBufferCapacity = 4)
     /** Outcomes of downloads, removals and refreshes the learner asked for; background refreshes stay silent. */
     val events = mutableEvents.asSharedFlow()

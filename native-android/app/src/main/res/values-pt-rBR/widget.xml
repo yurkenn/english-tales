@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">Leitura diária</string>
+    <string name="widget_description">Mostra sua sequência, gol de hoje e palavras aguardando revisão.</string>
+    <string name="widget_streak">Sequência: %1$d</string>
+    <string name="widget_goal">Meta de hoje: %1$d/%2$d</string>
+    <string name="widget_goal_done">Meta de hoje cumprida ✓</string>
+    <string name="widget_due">Palavras para revisar: %1$d</string>
+    <string name="widget_open">Plano diário aberto</string>
+    <string name="widget_empty">A história de hoje está esperando por você.</string>
+</resources>

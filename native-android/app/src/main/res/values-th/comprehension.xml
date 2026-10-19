@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="quiz_title">คุณได้รับมัน?</string>
+    <string name="quiz_intro">คำถามสั้น ๆ สองสามข้อเกี่ยวกับเรื่องราว ไม่ส่งผลต่อคะแนนของคุณ</string>
+    <string name="quiz_progress">สอบถาม %1$d / %2$d</string>
+    <string name="quiz_kind_main">แนวคิดหลัก</string>
+    <string name="quiz_kind_detail">รายละเอียด</string>
+    <string name="quiz_kind_inference">การอนุมาน</string>
+    <string name="quiz_check">ตรวจสอบ</string>
+    <string name="quiz_correct">ถูกต้อง!</string>
+    <string name="quiz_incorrect">คำตอบที่ถูกต้อง: %1$s</string>
+    <string name="quiz_next">คำถามต่อไป</string>
+    <string name="quiz_finish">เสร็จ</string>
+    <string name="quiz_result">ผลลัพธ์: %1$d/%2$d</string>
+    <string name="quiz_best">ผลลัพธ์ที่ดีที่สุดของคุณ: %1$d/%2$d</string>
+    <string name="quiz_retry">ลองอีกครั้ง</string>
+</resources>

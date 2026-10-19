@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="content_untranslated_description">اس انگریزی کہانی کو پڑھیں اور اس کے الفاظ پر عمل کریں۔</string>
+    <string name="app_language_title">ایپ کی زبان</string>
+    <string name="app_language_description">انٹرفیس اور کہانی کے ترجمہ کی زبان کا انتخاب کریں۔ زبان تبدیل ہونے پر ایپ دوبارہ شروع ہوتی ہے۔ آپ کی محفوظ کردہ پیشرفت رکھی گئی ہے۔</string>
+    <string name="app_language_system">سسٹم کی زبان</string>
+    <string name="app_language_current">ایپ کی زبان: %1$s</string>
+    <string name="henuz_indirilen_hikaye_yok">ابھی تک کوئی ڈاؤن لوڈ کردہ کہانیاں نہیں۔</string>
+</resources>

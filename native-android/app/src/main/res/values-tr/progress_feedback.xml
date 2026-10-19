@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <plurals name="reminder_due_words">
+        <item quantity="one">Tekrar zamanı gelen %1$d kelimen var. Birkaç dakika yeter.</item>
+        <item quantity="other">Tekrar zamanı gelen %1$d kelimen var. Birkaç dakika yeter.</item>
+    </plurals>
+    <string name="weekly_reading_summary">Bu hafta ~%1$d sözcük okudun · %2$d bilinen kelime</string>
+</resources>

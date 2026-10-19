@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="reminder_due_words">
+        <item quantity="other">Kata yang siap diulang: %1$d. Beberapa menit sudah cukup.</item>
+    </plurals>
+    <string name="weekly_reading_summary">Minggu ini: ~%1$d kata dibaca · Kata yang dikuasai: %2$d</string>
+</resources>

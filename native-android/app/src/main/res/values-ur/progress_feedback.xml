@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="reminder_due_words">
+        <item quantity="one">دہرانے کے لیے تیار الفاظ: %1$d۔ چند منٹ کافی ہیں۔</item>
+        <item quantity="other">دہرانے کے لیے تیار الفاظ: %1$d۔ چند منٹ کافی ہیں۔</item>
+    </plurals>
+    <string name="weekly_reading_summary">اس ہفتے پڑھے گئے الفاظ: تقریباً %1$d · سیکھے ہوئے الفاظ: %2$d</string>
+</resources>

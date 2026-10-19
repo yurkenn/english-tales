@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">প্রতিদিন পড়া</string>
+    <string name="widget_description">আপনার স্ট্রীক দেখায়, আজকের লক্ষ্য এবং শব্দ পর্যালোচনার জন্য অপেক্ষা করছে।</string>
+    <string name="widget_streak">স্ট্রীক: %1$d</string>
+    <string name="widget_goal">আজকের লক্ষ্য: %1$d/%2$d</string>
+    <string name="widget_goal_done">আজকের লক্ষ্য সম্পন্ন ✓</string>
+    <string name="widget_due">পর্যালোচনা করার শব্দ: %1$d</string>
+    <string name="widget_open">দৈনিক পরিকল্পনা খুলুন</string>
+    <string name="widget_empty">আজকের গল্পটি আপনার জন্য অপেক্ষা করছে।</string>
+</resources>

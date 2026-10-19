@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">การอ่านรายวัน</string>
+    <string name="widget_description">แสดงแนวของคุณ เป้าหมายของวันนี้ และคำพูดที่รอการตรวจสอบ</string>
+    <string name="widget_streak">สตรีค: %1$d</string>
+    <string name="widget_goal">เป้าหมายวันนี้: %1$d/%2$d</string>
+    <string name="widget_goal_done">เป้าหมายวันนี้สำเร็จ ✓</string>
+    <string name="widget_due">คำที่ต้องรีวิว: %1$d</string>
+    <string name="widget_open">เปิดแผนรายวัน</string>
+    <string name="widget_empty">เรื่องราวของวันนี้กำลังรอคุณอยู่</string>
+</resources>

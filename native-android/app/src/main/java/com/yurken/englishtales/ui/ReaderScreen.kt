@@ -256,7 +256,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                             TextButton(onClick=onHintDismiss,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.anladim)) }
                         }
                     }
-                    Text("${page+1}.",fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
+                    Text("${page+1}.",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
                     val listenLabel=stringResource(R.string.listen_from_sentence)
                     pageSentences.forEachIndexed { index,sentence -> key(page,sentence.id) {
                         // Long press (or the accessibility action) reads the page aloud from this sentence.
@@ -277,7 +277,7 @@ fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, o
                     } }
                 }
                 narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
-                Text("${page+1} / $pageCount",color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
+                Text("${page+1} / $pageCount",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
                 Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
                     Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
                     Box(Modifier.size(48.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { listen() } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
@@ -348,5 +348,6 @@ private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,
             append(sentence.english.substring(cursor))
         }
     }
-    Text(text=annotated,modifier=modifier,style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,fontFamily=FontFamily.Serif,color=color))
+    Text(text=annotated,modifier=modifier,style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,fontFamily=FontFamily.Serif,color=color,
+        textDirection=androidx.compose.ui.text.style.TextDirection.Ltr,textAlign=androidx.compose.ui.text.style.TextAlign.Left))
 }

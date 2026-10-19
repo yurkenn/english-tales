@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="gap_mode">Заполните пробел в предложении</string>
+    <string name="gap_subtitle">Найдите нужное слово в предложении рассказа.</string>
+    <string name="gap_preparing">Подготовка предложений по рассказу…</string>
+    <string name="gap_unavailable">Для этой практики нет подходящих предложений. Попробуйте еще раз с загруженными вами историями.</string>
+    <string name="gap_instruction">Заполните пробел, используя подсказку.</string>
+    <string name="gap_hint">Подсказка: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">Предложение из рассказа · %1$s</string>
+    <string name="gap_progress">Предложение %1$d / %2$d</string>
+    <string name="gap_check">Проверять</string>
+    <string name="gap_correct">Правильный! Вы завершили предложение.</string>
+    <string name="gap_incorrect">Давайте научимся этому вместе. Правильный ответ: %1$s</string>
+    <string name="gap_next">Следующее предложение</string>
+    <string name="gap_finish">Посмотреть результат</string>
+    <string name="gap_exit">Оставить практику</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">Kata yang sudah dikuasai</string>
+    <string name="known_words_detail">Sudah dibaca, belum dikuasai: %1$d · Sedang diulang: %2$d</string>
+    <string name="known_words_explanation">Menghitung kata yang ditandai “Sudah tahu” saat mengulang serta kata yang dibaca tanpa melihat artinya dalam setidaknya dua cerita yang diselesaikan.</string>
+</resources>

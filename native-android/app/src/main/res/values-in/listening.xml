@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_mode">Dengarkan dan pilih artinya</string>
+    <string name="listen_subtitle">Dengarkan kata bahasa Inggris dan temukan arti yang tepat.</string>
+    <string name="listen_preparing">Mempersiapkan audio…</string>
+    <string name="listen_unavailable">Perangkat ini tidak memiliki suara bahasa Inggris. Anda dapat mengunduh data suara bahasa Inggris di Pengaturan → Aksesibilitas → Output Text-to-speech.</string>
+    <string name="listen_instruction">Dengarkan dan pilih makna yang tepat.</string>
+    <string name="listen_progress">Kata %1$d / %2$d</string>
+    <string name="listen_play">Dengarkan kata itu</string>
+    <string name="listen_replay">Dengarkan lagi</string>
+    <string name="listen_stop">Hentikan audio</string>
+    <string name="listen_check">Memeriksa</string>
+    <string name="listen_correct">Benar! Kata yang Anda dengar: %1$s</string>
+    <string name="listen_incorrect">Kata yang Anda dengar: %1$s (%2$s)</string>
+    <string name="listen_next">Kata selanjutnya</string>
+    <string name="listen_finish">Lihat hasilnya</string>
+    <string name="listen_exit">Tinggalkan latihan</string>
+</resources>

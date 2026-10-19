@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="order_mode">Постройте предложение</string>
+    <string name="order_subtitle">Расставьте предложения рассказа в правильном порядке</string>
+    <string name="order_instruction">Нажимайте на слова, чтобы построить предложение</string>
+    <string name="order_hint">Значение: %1$s</string>
+    <string name="order_answer_empty">Выбери слова по порядку</string>
+    <string name="order_remove">Уберите %1$s из предложения.</string>
+    <string name="order_correct">Правильный! %1$s</string>
+    <string name="order_incorrect">Правильно: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

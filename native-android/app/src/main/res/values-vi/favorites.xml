@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="favorite_add">Thêm vào mục yêu thích</string>
+    <string name="favorite_remove">Xóa khỏi mục yêu thích</string>
+    <string name="favorites_title">Yêu thích của tôi (%1$d)</string>
+</resources>

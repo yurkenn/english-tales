@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_mode">Слушайте и выбирайте смысл</string>
+    <string name="listen_subtitle">Послушайте английское слово и найдите правильное значение.</string>
+    <string name="listen_preparing">Подготовка аудио…</string>
+    <string name="listen_unavailable">Это устройство не имеет английского голоса. Вы можете скачать английские голосовые данные в «Настройки» → «Специальные возможности» → «Преобразование текста в речь».</string>
+    <string name="listen_instruction">Послушайте и выберите правильное значение.</string>
+    <string name="listen_progress">Слово %1$d / %2$d</string>
+    <string name="listen_play">Послушайте слово</string>
+    <string name="listen_replay">Послушай еще раз</string>
+    <string name="listen_stop">Остановить звук</string>
+    <string name="listen_check">Проверять</string>
+    <string name="listen_correct">Правильный! Слово, которое вы услышали: %1$s</string>
+    <string name="listen_incorrect">Слово, которое вы услышали: %1$s (%2$s)</string>
+    <string name="listen_next">Следующее слово</string>
+    <string name="listen_finish">Посмотреть результат</string>
+    <string name="listen_exit">Оставить практику</string>
+</resources>

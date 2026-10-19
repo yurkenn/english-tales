@@ -143,6 +143,8 @@ android {
     buildFeatures { compose = true; buildConfig = true }
     // Lists the res/values-* languages in the system per-app language picker (Android 13+).
     androidResources { generateLocaleConfig = true }
+    // Every language remains available offline when selected inside a Play-installed app.
+    bundle { language { enableSplit = false } }
     // New strings can land in Turkish first; translations follow per language without breaking the build.
     lint { warning += "MissingTranslation" }
 }

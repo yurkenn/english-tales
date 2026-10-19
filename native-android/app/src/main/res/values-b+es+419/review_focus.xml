@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">Practica tus palabras engañosas %1$d</string>
+    <string name="weak_words_summary">Las palabras que respondiste mal en los últimos 30 días son lo primero.</string>
+    <string name="weak_words_count">Palabras que te cuestan: %1$d. Aparecerán primero en los repasos.</string>
+</resources>

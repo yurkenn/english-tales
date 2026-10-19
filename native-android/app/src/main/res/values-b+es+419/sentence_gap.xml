@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="gap_mode">Llena el vacío en la oración.</string>
+    <string name="gap_subtitle">Encuentra la palabra correcta en la oración de una historia.</string>
+    <string name="gap_preparing">Preparando oraciones de cuentos…</string>
+    <string name="gap_unavailable">No existen sentencias adecuadas para esta práctica. Vuelve a intentarlo con las historias que has descargado.</string>
+    <string name="gap_instruction">Llena el espacio usando la pista.</string>
+    <string name="gap_hint">Pista: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">Una frase de un cuento · %1$s</string>
+    <string name="gap_progress">Sentencia %1$d / %2$d</string>
+    <string name="gap_check">Controlar</string>
+    <string name="gap_correct">¡Correcto! Completaste la frase.</string>
+    <string name="gap_incorrect">Aprendamoslo juntos. Respuesta correcta: %1$s</string>
+    <string name="gap_next">siguiente frase</string>
+    <string name="gap_finish">Ver resultado</string>
+    <string name="gap_exit">dejar la práctica</string>
+</resources>

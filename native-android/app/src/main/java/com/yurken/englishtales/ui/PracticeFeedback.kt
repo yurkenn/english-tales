@@ -85,9 +85,15 @@ private fun OptionBadge(state: OptionState, color: Color) {
 @Composable
 internal fun AnswerFeedback(visible: Boolean, correct: Boolean, message: String, modifier: Modifier = Modifier) {
     val c = LocalTaleColors.current
+    // The next question resets its answer before this panel's exit animation finishes.
+    // Keep the last visible verdict and explanation together until the panel has left.
+    var lastFeedback by remember { mutableStateOf(correct to message) }
+    val feedback = if (visible) correct to message else lastFeedback
+    SideEffect { if (visible) lastFeedback = feedback }
     AnimatedVisibility(visible, modifier,
         enter = fadeIn(tween(TaleMotion.quick)) + slideInVertically(spring(dampingRatio = 0.75f, stiffness = Spring.StiffnessMediumLow)) { it / 2 } + expandVertically(tween(TaleMotion.standard)),
         exit = fadeOut(tween(TaleMotion.quick)) + shrinkVertically(tween(TaleMotion.quick))) {
+        val (correct, message) = feedback
         val accent = if (correct) c.success else c.error
         var pops by remember { mutableIntStateOf(0) }
         val haptics = LocalHapticFeedback.current

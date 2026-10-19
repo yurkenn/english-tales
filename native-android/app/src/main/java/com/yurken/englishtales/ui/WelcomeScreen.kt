@@ -40,7 +40,10 @@ fun WelcomeScreen(state: AccountState,onGuest: ()->Unit,onEmail: ()->Unit,onGoog
     androidx.activity.compose.BackHandler(enabled=state.busy) {}
     Column(Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().verticalScroll(rememberScrollState()).padding(horizontal=24.dp,vertical=24.dp),
         horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(16.dp)) {
-        Text(stringResource(R.string.english_tales),color=TaleBlue,fontSize=15.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp)
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+            Text(stringResource(R.string.english_tales),color=TaleBlue,fontSize=15.sp,fontWeight=FontWeight.Bold,letterSpacing=2.sp,modifier=Modifier.weight(1f))
+            if (!state.busy) LanguageControls(compact = true)
+        }
         Box(Modifier.fillMaxWidth().height(220.dp).clip(RoundedCornerShape(28.dp)).background(TaleMint),contentAlignment=Alignment.BottomCenter) {
             TalesMascot(MascotMood.Welcome,Modifier.fillMaxHeight(),animate=true)
         }

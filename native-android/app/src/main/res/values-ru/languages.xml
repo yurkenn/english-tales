@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="content_untranslated_description">Прочтите эту английскую историю и попрактикуйтесь в ее словарном запасе.</string>
+    <string name="app_language_title">Язык приложения</string>
+    <string name="app_language_description">Выберите интерфейс и язык перевода истории. Приложение перезапускается при смене языка; ваш сохраненный прогресс сохраняется.</string>
+    <string name="app_language_system">Системный язык</string>
+    <string name="app_language_current">Язык приложения: %1$s</string>
+    <string name="henuz_indirilen_hikaye_yok">Загруженных историй пока нет.</string>
+</resources>

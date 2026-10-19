@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="order_mode">বাক্য গঠন করুন</string>
+    <string name="order_subtitle">গল্প বাক্যটিকে সঠিক ক্রমে রাখুন</string>
+    <string name="order_instruction">বাক্য তৈরি করতে শব্দগুলিতে আলতো চাপুন</string>
+    <string name="order_hint">অর্থ: %1$s</string>
+    <string name="order_answer_empty">ক্রমানুসারে শব্দ চয়ন করুন</string>
+    <string name="order_remove">বাক্য থেকে %1$s সরান</string>
+    <string name="order_correct">সঠিক! %1$s</string>
+    <string name="order_incorrect">সঠিক: %1$s</string>
+    <string name="order_source">%1$s · %2$s</string>
+</resources>

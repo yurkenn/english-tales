@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="listen_from_sentence">Послушайте это предложение</string>
+    <string name="listen_from_sentence_hint">Нажмите и удерживайте предложение, чтобы прочитать страницу оттуда; читаемое предложение выделяется.</string>
+</resources>

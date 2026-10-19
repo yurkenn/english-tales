@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">Từ đã biết</string>
+    <string name="known_words_detail">Đã đọc nhưng chưa thuộc: %1$d · Đang ôn tập: %2$d</string>
+    <string name="known_words_explanation">Đếm các từ bạn đã chọn “Đã biết” khi ôn tập và các từ bạn đọc mà không tra nghĩa trong ít nhất hai truyện đã đọc xong.</string>
+</resources>

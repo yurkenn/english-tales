@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="weak_words_practice">اپنے %1$d مشکل الفاظ کی مشق کریں۔</string>
+    <string name="weak_words_summary">پچھلے 30 دنوں میں جن الفاظ کا آپ نے غلط جواب دیا وہ پہلے آتے ہیں۔</string>
+    <string name="weak_words_count">مشکل لگنے والے الفاظ: %1$d۔ دہرانے کے دوران یہ پہلے آئیں گے۔</string>
+</resources>

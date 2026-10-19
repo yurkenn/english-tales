@@ -63,9 +63,10 @@ internal fun DictationGame(
         }
         OutlinedTextField(value = typed, onValueChange = { if (!checked) typed = it.take(300) }, enabled = !checked,
             label = { Text(stringResource(R.string.dictation_field)) }, modifier = Modifier.fillMaxWidth(),
+            textStyle = LocalTextStyle.current.copy(textDirection = androidx.compose.ui.text.style.TextDirection.Ltr),
             keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences))
-        AnswerFeedback(checked, result.correct, if (result.correct) stringResource(R.string.dictation_correct, question.sentence)
-            else pluralStringResource(R.plurals.dictation_incorrect, result.wrongWords, result.wrongWords, question.sentence))
+        AnswerFeedback(checked, result.correct, if (result.correct) stringResource(R.string.dictation_correct, englishArgument(question.sentence))
+            else pluralStringResource(R.plurals.dictation_incorrect, result.wrongWords, result.wrongWords, englishArgument(question.sentence)))
         Button(enabled = typed.isNotBlank() && !advanced, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
             colors = if (checked && result.correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(), onClick = {
             if (!checked) checked = true

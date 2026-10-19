@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="alert_dismiss">ยกเลิกการแจ้งเตือน</string>
+    <string name="alert_word_saved">เพิ่ม “%1$s” ในคำพูดของคุณ</string>
+    <string name="alert_word_removed">“%1$s” ถูกลบออกจากคำพูดของคุณ</string>
+    <string name="alert_favorite_added">เพิ่มในรายการโปรดของคุณ</string>
+    <string name="alert_favorite_removed">ลบออกจากรายการโปรดของคุณแล้ว</string>
+    <string name="alert_settings_saved">บันทึกการตั้งค่าของคุณแล้ว</string>
+    <string name="alert_daily_goal">คุณบรรลุเป้าหมายรายวันแล้ว เยี่ยมมาก!</string>
+    <string name="alert_streak">คุณเรียนต่อเนื่อง %1$d วันแล้ว! กลับมาเรียนต่อพรุ่งนี้</string>
+    <string name="alert_reminder_on">เตือนความจำสำหรับ %1$s ทุกวัน</string>
+    <string name="alert_reminder_off">ปิดการช่วยเตือนแล้ว</string>
+    <string name="alert_reminder_denied">การแจ้งเตือนไม่สามารถทำงานได้หากไม่ได้รับอนุญาตจากการแจ้งเตือน</string>
+    <string name="alert_write_recovered">บันทึกที่รอดำเนินการของคุณได้รับการบันทึกไว้แล้ว</string>
+    <string name="alert_link_failed">ไม่สามารถเปิดลิงก์ได้</string>
+    <string name="alert_quiz_perfect">ถูกต้องทั้งหมด! คุณเข้าใจเรื่องราวนี้ดีจริงๆ</string>
+    <string name="feedback_correct_title">ถูกต้อง!</string>
+    <string name="feedback_wrong_title">เกือบถูกแล้ว!</string>
+    <string name="weekly_today">วันนี้</string>
+</resources>

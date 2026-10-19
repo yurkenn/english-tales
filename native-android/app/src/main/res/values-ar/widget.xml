@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">القراءة اليومية</string>
+    <string name="widget_description">يعرض أيام التعلّم المتتالية وهدف اليوم والكلمات التي حان وقت مراجعتها.</string>
+    <string name="widget_streak">أيام متتالية: %1$d</string>
+    <string name="widget_goal">هدف اليوم: ⁦%1$d/%2$d⁩</string>
+    <string name="widget_goal_done">تم تحقيق هدف اليوم ✓</string>
+    <string name="widget_due">كلمات للمراجعة: %1$d</string>
+    <string name="widget_open">فتح الخطة اليومية</string>
+    <string name="widget_empty">قصة اليوم في انتظاركم.</string>
+</resources>

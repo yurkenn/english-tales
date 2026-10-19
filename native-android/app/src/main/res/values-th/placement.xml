@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">การทดสอบระดับอย่างรวดเร็ว</string>
+    <string name="placement_entry">ค้นหาระดับของฉันด้วยการทดสอบอย่างรวดเร็ว</string>
+    <string name="placement_intro">คำถาม 9 ข้อ · ประมาณ 2–3 นาที</string>
+    <string name="placement_explanation">คุณจะอ่านประโยคภาษาอังกฤษสั้น ๆ และเลือกคำตอบ คุณสามารถข้ามคำถามที่คุณไม่รู้ได้ ไม่มีการจำกัดเวลา</string>
+    <string name="placement_scope">ผลลัพธ์คือข้อเสนอแนะเริ่มต้นสำหรับเรื่องราว A1–B1 ไม่ใช่ผลการวัดความสามารถทางภาษาอย่างเป็นทางการ คำตอบของคุณไม่ได้ส่งจากอุปกรณ์นี้</string>
+    <string name="placement_start">เริ่มการทดสอบ</string>
+    <string name="placement_manual">ฉันจะเลือกระดับของฉันเอง</string>
+    <string name="placement_progress">สอบถาม %1$d / %2$d</string>
+    <string name="placement_complete_sentence">เติมประโยคให้สมบูรณ์</string>
+    <string name="placement_read_question">อ่านข้อความแล้วตอบคำถาม</string>
+    <string name="placement_unknown">ฉันไม่รู้</string>
+    <string name="placement_next">คำถามต่อไป</string>
+    <string name="placement_finish">ดูข้อเสนอแนะของฉัน</string>
+    <string name="placement_result">ระดับเริ่มต้นที่แนะนำ: %1$s</string>
+    <string name="placement_result_description">คุณสามารถเริ่มต้นด้วยเรื่องราวในระดับนี้ หากพวกเขารู้สึกว่าง่ายหรือยากเกินไป คุณสามารถเปลี่ยนระดับได้ในการตั้งค่า</string>
+    <string name="placement_score">คำถาม %1$s: %2$d / 3 ถูกต้อง</string>
+    <string name="placement_use">ต่อด้วย %1$s</string>
+    <string name="placement_settings_hint">หลังจากเลือกคำแนะนำแล้ว ให้บันทึกการเปลี่ยนแปลงในการตั้งค่าเพื่ออัปเดตระดับของคุณ</string>
+    <string name="placement_cancel_title">ออกจากการทดสอบ?</string>
+    <string name="placement_cancel_message">คำตอบจากความพยายามนี้จะถูกลบ ระดับที่คุณเลือกจะไม่เปลี่ยนแปลง</string>
+    <string name="placement_cancel_confirm">ออกจากการทดสอบ</string>
+    <string name="placement_cancel_keep">กลับไปทดสอบ</string>
+</resources>

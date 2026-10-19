@@ -23,7 +23,7 @@ class AppLocalizationTest {
     @Test fun statusMessagesAndFiltersFollowTheUiLocale() {
         val english = AppLanguage.wrap(context("en"))
         val turkish = AppLanguage.wrap(context("tr"))
-        val fallback = AppLanguage.wrap(context("es-MX"))
+        val fallback = AppLanguage.wrap(context("de-DE"))
         val samples = listOf(R.string.account_message_not_configured, R.string.sync_message_complete,
             R.string.content_message_download_failed, R.string.write_error_pending_changes, R.string.ad_message_privacy_unavailable,
             R.string.genre_daily_life, R.string.reading_status_finished)
@@ -37,12 +37,23 @@ class AppLocalizationTest {
 
     @Test fun secondaryEnglishDoesNotOverrideTurkishOrUnsupportedLanguageResolution() {
         val target = instrumentation.targetContext
-        for (tags in listOf("tr,en-US", "es-MX,tr,en-US", "en-GB,tr")) {
+        for (tags in listOf("tr,en-US", "de-DE,tr,en-US", "en-GB,tr")) {
             val configured = target.createConfigurationContext(Configuration(target.resources.configuration).apply {
                 setLocales(LocaleList.forLanguageTags(tags))
             })
             val expected = if (tags.startsWith("en")) "Daily life" else "Günlük yaşam"
             assertEquals(expected, AppLanguage.wrap(configured).getString(R.string.genre_daily_life))
+            assertEquals(expected, configured.getString(R.string.genre_daily_life))
+        }
+    }
+
+    @Test fun legacyIndonesianLocaleKeepsUiAndContentInIndonesian() {
+        for (tag in listOf("id", "in", "id-ID", "in-ID")) {
+            val selected = Locale.forLanguageTag(tag)
+            assertEquals("id", AppLanguage.languageCode(selected))
+            assertEquals("id", SupportLanguage.resolve(listOf(selected, Locale.forLanguageTag("tr"))))
+            val localized = AppLanguage.wrap(context(tag))
+            assertEquals("Pengaturan", localized.getString(R.string.ayarlar))
         }
     }
 

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="quiz_title">هل حصلت عليه؟</string>
+    <string name="quiz_intro">بعض الأسئلة القصيرة حول القصة. أنها لا تؤثر على النقاط الخاصة بك.</string>
+    <string name="quiz_progress">سؤال ⁦%1$d / %2$d⁩</string>
+    <string name="quiz_kind_main">الفكرة الرئيسية</string>
+    <string name="quiz_kind_detail">التفاصيل</string>
+    <string name="quiz_kind_inference">الاستدلال</string>
+    <string name="quiz_check">يفحص</string>
+    <string name="quiz_correct">صحيح!</string>
+    <string name="quiz_incorrect">الإجابة الصحيحة: %1$s</string>
+    <string name="quiz_next">السؤال التالي</string>
+    <string name="quiz_finish">ينهي</string>
+    <string name="quiz_result">النتيجة: ⁦%1$d/%2$d⁩</string>
+    <string name="quiz_best">أفضل نتيجة لك: ⁦%1$d/%2$d⁩</string>
+    <string name="quiz_retry">حاول ثانية</string>
+</resources>

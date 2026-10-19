@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="known_words_title">الكلمات التي تعرفها</string>
+    <string name="known_words_detail">كلمات قرأتها ولم تتقنها بعد: %1$d · قيد المراجعة: %2$d</string>
+    <string name="known_words_explanation">يشمل الكلمات التي اخترت لها «أعرفها» أثناء المراجعة، والكلمات التي قرأتها دون البحث عن معناها في قصتين مكتملتين على الأقل.</string>
+</resources>

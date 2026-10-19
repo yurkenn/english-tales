@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="gap_mode">เติมช่องว่างในประโยค</string>
+    <string name="gap_subtitle">ค้นหาคำที่เหมาะสมในประโยคเรื่อง</string>
+    <string name="gap_preparing">กำลังเตรียมประโยคเรื่อง…</string>
+    <string name="gap_unavailable">ไม่มีประโยคที่เหมาะสมสำหรับการปฏิบัตินี้ ลองอีกครั้งด้วยเรื่องราวที่คุณดาวน์โหลดไว้</string>
+    <string name="gap_instruction">เติมช่องว่างโดยใช้คำใบ้</string>
+    <string name="gap_hint">คำแนะนำ: %1$s</string>
+    <string name="gap_source">%1$s · %2$s</string>
+    <string name="gap_source_pending">ประโยคจากเรื่องราว · %1$s</string>
+    <string name="gap_progress">ประโยค %1$d / %2$d</string>
+    <string name="gap_check">ตรวจสอบ</string>
+    <string name="gap_correct">ถูกต้อง! คุณจบประโยคแล้ว</string>
+    <string name="gap_incorrect">มาเรียนรู้มันด้วยกัน คำตอบที่ถูกต้อง: %1$s</string>
+    <string name="gap_next">ประโยคถัดไป</string>
+    <string name="gap_finish">เห็นผล</string>
+    <string name="gap_exit">ลาไปปฏิบัติ</string>
+</resources>

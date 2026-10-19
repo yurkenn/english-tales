@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="favorite_add">เพิ่มในรายการโปรด</string>
+    <string name="favorite_remove">ลบออกจากรายการโปรด</string>
+    <string name="favorites_title">รายการโปรดของฉัน (%1$d)</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="favorite_add">أضف إلى المفضلة</string>
+    <string name="favorite_remove">إزالة من المفضلة</string>
+    <string name="favorites_title">المفضلة (%1$d)</string>
+</resources>

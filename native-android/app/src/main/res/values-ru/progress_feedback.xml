@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="reminder_due_words">
+        <item quantity="one">Слов для повторения: %1$d. Достаточно нескольких минут.</item>
+        <item quantity="few">Слов для повторения: %1$d. Достаточно нескольких минут.</item>
+        <item quantity="many">Слов для повторения: %1$d. Достаточно нескольких минут.</item>
+        <item quantity="other">Слов для повторения: %1$d. Достаточно нескольких минут.</item>
+    </plurals>
+    <string name="weekly_reading_summary">Прочитано за неделю: ~%1$d слов · Выучено слов: %2$d</string>
+</resources>

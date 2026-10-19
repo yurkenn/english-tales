@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="placement_title">Tes tingkat cepat</string>
+    <string name="placement_entry">Temukan level saya dengan tes cepat</string>
+    <string name="placement_intro">9 pertanyaan · Sekitar 2–3 menit</string>
+    <string name="placement_explanation">Anda akan membaca kalimat pendek bahasa Inggris dan memilih jawaban. Anda dapat melewatkan pertanyaan yang tidak Anda ketahui; tidak ada batasan waktu.</string>
+    <string name="placement_scope">Hasilnya adalah saran awal untuk cerita A1–B1. Ini bukan hasil kemahiran bahasa resmi. Jawaban Anda tidak dikirim dari perangkat ini.</string>
+    <string name="placement_start">Mulai tesnya</string>
+    <string name="placement_manual">Saya akan memilih level saya sendiri</string>
+    <string name="placement_progress">Pertanyaan %1$d / %2$d</string>
+    <string name="placement_complete_sentence">Lengkapi kalimatnya.</string>
+    <string name="placement_read_question">Baca teksnya dan jawab pertanyaannya.</string>
+    <string name="placement_unknown">Saya tidak tahu</string>
+    <string name="placement_next">Pertanyaan berikutnya</string>
+    <string name="placement_finish">Lihat saran saya</string>
+    <string name="placement_result">Level awal yang disarankan: %1$s</string>
+    <string name="placement_result_description">Anda bisa mulai dengan cerita di level ini. Jika dirasa terlalu mudah atau terlalu sulit, Anda dapat mengubah level Anda di Pengaturan.</string>
+    <string name="placement_score">Pertanyaan %1$s: %2$d / 3 benar</string>
+    <string name="placement_use">Lanjutkan dengan %1$s</string>
+    <string name="placement_settings_hint">Setelah memilih saran, simpan perubahan Anda di Pengaturan untuk memperbarui level Anda.</string>
+    <string name="placement_cancel_title">Tinggalkan tes?</string>
+    <string name="placement_cancel_message">Jawaban dari upaya ini akan dihapus. Level yang Anda pilih tidak akan berubah.</string>
+    <string name="placement_cancel_confirm">Tinggalkan tes</string>
+    <string name="placement_cancel_keep">Kembali ke tes</string>
+</resources>

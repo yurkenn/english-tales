@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="reading_minutes">~%1$d منٹ</string>
+    <plurals name="reading_minutes_description">
+        <item quantity="one">پڑھنے کا تخمینی وقت، منٹ میں: %1$d</item>
+        <item quantity="other">پڑھنے کا تخمینی وقت، منٹ میں: %1$d</item>
+    </plurals>
+    <string name="length_all">کوئی بھی لمبائی</string>
+    <string name="length_short">مختصر · ≤ 2 منٹ</string>
+    <string name="length_medium">درمیانہ · 3–5 منٹ</string>
+    <string name="length_long">طویل · 6+ منٹ</string>
+</resources>

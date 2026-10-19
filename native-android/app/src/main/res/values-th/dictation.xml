@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="dictation_mode">ฟังและเขียน</string>
+    <string name="dictation_subtitle">เขียนประโยคเรื่องราวตามที่คุณได้ยิน</string>
+    <string name="dictation_instruction">เขียนประโยคที่คุณได้ยิน</string>
+    <string name="dictation_field">ประโยค</string>
+    <string name="dictation_play">ฟังประโยค</string>
+    <string name="dictation_correct">ถูกต้อง! %1$s</string>
+    <plurals name="dictation_incorrect">
+        <item quantity="other">จำนวนคำที่ต่างกัน: %1$d คำ ประโยคที่ถูกต้อง: %2$s</item>
+    </plurals>
+</resources>

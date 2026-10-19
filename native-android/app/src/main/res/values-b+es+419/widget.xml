@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_name">Lectura diaria</string>
+    <string name="widget_description">Muestra tu racha, el objetivo de hoy y las palabras pendientes de revisión.</string>
+    <string name="widget_streak">Racha: %1$d</string>
+    <string name="widget_goal">Objetivo de hoy: %1$d/%2$d</string>
+    <string name="widget_goal_done">Objetivo de hoy cumplido ✓</string>
+    <string name="widget_due">Palabras para repasar: %1$d</string>
+    <string name="widget_open">Plan diario abierto</string>
+    <string name="widget_empty">La historia de hoy te está esperando.</string>
+</resources>
