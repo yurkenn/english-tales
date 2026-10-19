@@ -162,7 +162,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onSync=viewModel::syncNow,onResolvePreferences=viewModel::resolvePreferences,onSignUp=viewModel::signUp,onRecovery=viewModel::requestRecovery,onCompleteCode=viewModel::completeEmailCode,onResendCode=viewModel::resendEmailCode,onCancelCode=viewModel::cancelEmailCode,onDeleteAccount=viewModel::deleteAccount,onGuest={
                 if(snapshot.onboardingDone) nav.popBackStack() else nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}
             })}
-            composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::toggleWord) }
+            composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord) }
         }
     }
     }

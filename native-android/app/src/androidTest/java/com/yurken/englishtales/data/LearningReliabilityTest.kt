@@ -187,6 +187,28 @@ class LearningReliabilityTest {
         }
     }
 
+    @Test fun repeatedRemoveFromMyWordsKeepsTheWordRemovedAndQueuesOneRemove()=exercise(setup={it.saveWords(listOf("morning"));it.reviewWord("morning",true)}) {vm,context ->
+        val glossary=WordInfo("glossary:walk","walk","yürümek","","")
+        vm.toggleGlossaryWord(glossary);await {"glossary:walk" in vm.state.value.savedWordIds}
+        assertEquals("reviewing",vm.state.value.wordStates["morning"])
+        vm.removeWord("morning");vm.removeWord("morning");vm.removeWord("glossary:walk");vm.removeWord("glossary:walk")
+        // Mutations run in order, so this save landing means every remove above has run.
+        vm.toggleWord("quiet");await {"quiet" in vm.state.value.savedWordIds}
+        assertEquals(setOf("quiet"),vm.state.value.savedWordIds);assertNull(vm.writeError.value);assertTrue(vm.state.value.personalWords.isEmpty())
+        LearningStore(context).use {store ->
+            val events=store.queuedOperations().filter {it.rpc=="apply_word_event"}.map {JSONObject(it.payload)}
+            for(word in listOf("morning","glossary:walk")) assertEquals(1,events.count {it.getString("wordId")==word && it.getString("action")=="remove"})
+            assertEquals(1,events.count {it.getString("wordId")=="morning" && it.getString("action")=="save"})
+        }
+    }
+
+    @Test fun toggleWordFlipsBackOnASecondTapSoMyWordsMustNotUseIt()=exercise(setup={it.saveWords(listOf("morning"));it.reviewWord("morning",true)}) {vm,_ ->
+        vm.toggleWord("morning");vm.toggleWord("morning")
+        vm.toggleWord("quiet");await {"quiet" in vm.state.value.savedWordIds}
+        // The re-save starts the word over, which is why the My Words screen calls removeWord instead.
+        assertEquals("learning",vm.state.value.wordStates["morning"])
+    }
+
     @Test fun failedGuestWriteCannotBeRetriedIntoAnotherAccount()=exercise(setup={
         it.writableDatabase.execSQL("CREATE TRIGGER IF NOT EXISTS fail_save BEFORE INSERT ON saved_words BEGIN SELECT RAISE(ABORT,'fixture'); END")
     }) {vm,context ->
