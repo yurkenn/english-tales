@@ -29,7 +29,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // A sync requested while one is running may land after that run read the outbox; it reruns shortly instead of waiting a minute.
     private val syncAgain=java.util.concurrent.atomic.AtomicBoolean(false)
     private var syncTimer: kotlinx.coroutines.Job?=null
-    private var syncDue=0L to -1
+    private var syncDue=0L to -1L
     private val mutableAccount=MutableStateFlow(AccountState())
     val account: StateFlow<AccountState> = mutableAccount
     private val verifying=java.util.concurrent.atomic.AtomicBoolean(false)
