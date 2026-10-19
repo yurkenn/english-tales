@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.saveable.rememberSaveableStateHolder
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -62,7 +63,12 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     val uiScope=rememberCoroutineScope()
     fun google() {uiScope.launch {viewModel.signInGoogle {GoogleSignIn.acquire(context,BuildConfig.GOOGLE_WEB_CLIENT_ID)}}}
     DisposableEffect(lifecycle) {
-        val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> if(event==androidx.lifecycle.Lifecycle.Event.ON_RESUME) {viewModel.refresh();viewModel.verifyAccount();LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}}
+        val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> when(event) {
+            androidx.lifecycle.Lifecycle.Event.ON_START -> viewModel.setForeground(true)
+            androidx.lifecycle.Lifecycle.Event.ON_STOP -> viewModel.setForeground(false)
+            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {viewModel.refresh();viewModel.verifyAccount(5*60_000);LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
+            else -> {}
+        }}
         lifecycle.addObserver(observer)
         onDispose {lifecycle.removeObserver(observer)}
     }
@@ -82,15 +88,21 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     LaunchedEffect(dailyPlanRequest) {
         if(dailyPlanRequest>0 && dailyPlanRequest!=handledRequest && snapshot.onboardingDone) {dailyPlan();handledRequest=dailyPlanRequest}
     }
+    // A returning account opens on onboarding before its first cloud pull; once the pulled profile marks it onboarded, leave without rewriting its preferences.
+    LaunchedEffect(snapshot.onboardingDone) {
+        if(snapshot.onboardingDone && nav.currentDestination?.route=="onboarding") nav.navigate("main") {popUpTo("onboarding") {inclusive=true}}
+    }
     // Q6: a shared link opens its story page; a story this catalog does not have opens the library instead.
+    // An unknown story waits for one catalog refresh first, since a cached catalog may predate a newly published story.
     // A learner still in onboarding sees the link once onboarding is done.
     // The request is cleared once handled, so switching accounts does not open it again.
     LaunchedEffect(storyLinkRequest,snapshot.onboardingDone) {
         val request=storyLinkRequest?:return@LaunchedEffect
         if(!snapshot.onboardingDone) return@LaunchedEffect
+        val found=StoryLinks.resolve(request.storyId,{it in LearningContent.storyById}) {content.awaitRefresh()}
         onStoryLinkHandled(request)
         nav.popBackStack("main",false)
-        if(request.storyId in LearningContent.storyById) nav.navigate("story/${request.storyId}") else selectedTab=1
+        if(found) nav.navigate("story/${request.storyId}") else selectedTab=1
     }
     val alerts=remember {TaleAlerts()}
     val writeRecovered=stringResource(R.string.alert_write_recovered)
@@ -162,22 +174,24 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onSync=viewModel::syncNow,onResolvePreferences=viewModel::resolvePreferences,onSignUp=viewModel::signUp,onRecovery=viewModel::requestRecovery,onCompleteCode=viewModel::completeEmailCode,onResendCode=viewModel::resendEmailCode,onCancelCode=viewModel::cancelEmailCode,onDeleteAccount=viewModel::deleteAccount,onGuest={
                 if(snapshot.onboardingDone) nav.popBackStack() else nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}
             })}
-            composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::toggleWord) }
+            composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord) }
         }
     }
     }
 }
 
 @Composable
-private fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit) {
+internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit) {
     var practicing by remember { mutableStateOf(false) }
+    // Each tab keeps its saved state while another tab is shown: a reminder or widget tap mid-practice must not drop the session.
+    val tabs=rememberSaveableStateHolder()
     Scaffold(containerColor=TaleBackground,bottomBar={ if(!practicing) TalesBottomBar(selectedTab,onTabSelected) }) { padding ->
         // Tabs cross-fade instead of cutting; the practice tab keeps its running session state.
-        TaleSwitch(selectedTab) { tab -> when(tab) {
+        TaleSwitch(selectedTab) { tab -> tabs.SaveableStateProvider(tab) { when(tab) {
             0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice)
             1 -> CatalogScreen(snapshot,onOpenStory,padding)
             2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit)
             else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)
-        } }
+        } } }
     }
 }

@@ -12,12 +12,18 @@ import kotlinx.coroutines.channels.Channel
 import com.yurken.englishtales.BuildConfig
 
 class LearningViewModel(application: Application,private val auth: AccountService,private val storeFactory: (LearningOwner)->LearningStore,private val cloudSync: LearningAccountSync?=null,private val background: Boolean=false,
-    private val onOwnerChanged: (LearningOwner)->Unit={}, private val readSnapshot: (LearningStore)->LearningSnapshot={it.snapshot()}) : AndroidViewModel(application) {
+    private val onOwnerChanged: (LearningOwner)->Unit={}, private val readSnapshot: (LearningStore)->LearningSnapshot={it.snapshot()},
+    // Cancels a departed account's WorkManager jobs; its worker only uploads while that account is signed in, and signing back in reschedules them.
+    private val retireSync: (String)->Unit={if(background) LearningSyncRuntime.cancel(application,it)},
+    // (user, upload now): the periodic job is always kept as the backstop; the one-time job only runs while the in-app timer cannot.
+    private val scheduleWork: (String,Boolean)->Unit={user,now -> if(background) LearningSyncRuntime.schedule(application,user,now)},
+    // The email-code step outlives process death (the user leaves for the mail app); in memory unless the app passes durable storage.
+    private val pendingCode: PendingEmailCode=PendingEmailCode.memory()) : AndroidViewModel(application) {
     constructor(application: Application):this(application,LearningSyncRuntime.accounts(application),{LearningStore(application,it)},defaultLearningSync(),true,
-        {LearningReminderOwner.select(application,it)})
+        {LearningReminderOwner.select(application,it)},pendingCode=PendingEmailCode.prefs(application))
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
     private var store = storeFactory(LearningOwner.Guest)
-    private data class Mutation(val scope: Long?,val action: ()->Unit)
+    private data class Mutation(val scope: Long?,val refresh: Boolean=true,val action: ()->Unit)
     private val mutations = Channel<Mutation>(Channel.UNLIMITED)
     // scope is the owner generation: it changes only with the store. Learning writes are stamped under this lock so an owner switch can drain them first.
     @Volatile private var scope=0L
@@ -29,9 +35,15 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // A sync requested while one is running may land after that run read the outbox; it reruns shortly instead of waiting a minute.
     private val syncAgain=java.util.concurrent.atomic.AtomicBoolean(false)
     private var syncTimer: kotlinx.coroutines.Job?=null
+    private var syncDue=0L to -1L
+    // The minute-cadence timer runs only while the app is started; once stopped, the one-time WorkManager job takes over pending uploads.
+    // While started only the 15-minute periodic job stays enqueued, so a process killed right after a write still uploads it.
+    // Starts true so a ViewModel used without an activity lifecycle (tests) keeps syncing.
+    @Volatile private var foreground=true
     private val mutableAccount=MutableStateFlow(AccountState())
     val account: StateFlow<AccountState> = mutableAccount
     private val verifying=java.util.concurrent.atomic.AtomicBoolean(false)
+    @Volatile private var verifiedAt=-1L to 0L
     private val mutableState = MutableStateFlow(LearningSnapshot())
     val state: StateFlow<LearningSnapshot> = mutableState
     private val mutableReady = MutableStateFlow(false)
@@ -56,16 +68,21 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 // Restore (with its deleted-account check) before cleanup consumes the pending receipts.
                 if(background) LearningSyncRuntime.ensureRestored(getApplication())
                 if(background) runCatching {DeletedAccountCleanup.clean(getApplication())}
+                val pending=runCatching {pendingCode.restore()}.getOrNull()
                 try {
                     // A failed read keeps the stored session (keystore or I/O errors can pass; storage removes corrupt files itself).
                     val session=try {auth.restore()} catch (_: Exception) {
                         mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error);auth.current
                     }
-                    session?.let {changeOwner(LearningOwner.Account(it.userId),it.email)}
+                    session?.let {
+                        // Only a session naming no valid account is discarded; a database or disk error keeps it for the next launch.
+                        val owner=try {LearningOwner.Account(it.userId)} catch (failure: IllegalArgumentException) {auth.clearLocal();throw failure}
+                        changeOwner(owner,it.email)
+                    }
                 } catch (_: Exception) {
-                    auth.clearLocal()
                     mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error)
                 }
+                pending?.let {(action,email) -> mutableAccount.value=mutableAccount.value.copy(emailAction=action,verificationEmail=email)}
                 onOwnerChanged(store.owner)
                 // A failing database must not crash every launch: the write bar offers a retry instead.
                 writes.submit {store.recordVisit()};writes.refresh();mutableReady.value=true
@@ -79,10 +96,11 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             if(failure is kotlinx.coroutines.CancellationException) throw failure
             mutableAccount.value=mutableAccount.value.copy(busy=false,message=text(R.string.account_message_action_failed),messageTone=MessageTone.Error)
         }
-        writes.refresh()
+        if(action.refresh) writes.refresh()
     }
 
-    fun refresh() = mutate {store.recordVisit()}
+    // A visit only writes local events and badges (no outbox row), so resuming the app does not start a sync.
+    fun refresh() = mutate(sync=false) {store.recordVisit()}
 
     fun completeOnboarding(level: String, genre: String, goal: Int) = mutate {
         store.completeOnboarding(level, genre, goal)
@@ -91,16 +109,19 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun toggleWord(wordId: String) {
         var saved: Boolean?=null
         mutate {
-            if(saved==null) saved=wordId !in store.snapshot().savedWordIds
+            if(saved==null) saved=!store.isWordSaved(wordId)
             store.setWordSaved(wordId,checkNotNull(saved))
         }
     }
+
+    // My Words only removes: a repeated tap must not re-save the word with fresh review progress (a glossary word's second remove would also fail its lookup).
+    fun removeWord(wordId: String) = mutate {if(store.isWordSaved(wordId)) store.setWordSaved(wordId,false)}
 
     /** Saves or removes a glossary word from the reader (Q4.3a). */
     fun toggleGlossaryWord(word: WordInfo) {
         var saved: Boolean?=null
         mutate {
-            if(saved==null) saved=word.id !in store.snapshot().savedWordIds
+            if(saved==null) saved=!store.isWordSaved(word.id)
             if(checkNotNull(saved)) store.savePersonalWord(word) else store.setWordSaved(word.id,false)
         }
     }
@@ -110,7 +131,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun toggleFavorite(storyId: String) {
         var favorite: Boolean?=null
         mutate {
-            if(favorite==null) favorite=storyId !in store.snapshot().favoriteStoryIds
+            if(favorite==null) favorite=!store.isFavorite(storyId)
             store.setFavorite(storyId,checkNotNull(favorite))
         }
     }
@@ -143,8 +164,14 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         val startedAt=System.currentTimeMillis()
         mutate {store.beginSession(id,kind,questionCount,storyId,source,startedAt)}
     }
-    // Checkpoints only touch session_drafts (no outbox row), so they must not wake cloud sync every few seconds.
-    fun checkpointSession(id: String,millis: Long) = mutate(sync=false) {store.checkpointSession(id,millis)}
+    // Checkpoints only touch session_drafts (no outbox row), so they must not wake cloud sync or re-read the whole snapshot every few seconds:
+    // only activeSessionMillis changes. A held-back or rejected checkpoint still refreshes, as every other write does.
+    fun checkpointSession(id: String,millis: Long) = enqueue(refresh=false) {
+        var active: Pair<String,Long>?=null
+        if(writes.submit {active=store.checkpointSession(id,millis)}) active?.let {(key,value) ->
+            mutableState.value=mutableState.value.let {it.copy(activeSessionMillis=it.activeSessionMillis+(key to value))}}
+        else writes.refresh()
+    }
     fun abandonSession(id: String) = mutate {store.abandonSession(id)}
     fun startReading(storyId: String) = mutate { store.startReading(storyId) }
     fun dismissReaderHint() = mutate { store.dismissReaderHint() }
@@ -156,7 +183,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private fun mutate(sync: Boolean=true,action: () -> Unit) = enqueue {
         if(writes.submit(action) && sync) scheduleSync()
     }
-    private fun enqueue(action: ()->Unit) {synchronized(stamping) {mutations.trySend(Mutation(scope,action))}}
+    private fun enqueue(refresh: Boolean=true,action: ()->Unit) {synchronized(stamping) {mutations.trySend(Mutation(scope,refresh,action))}}
     private fun interruptSync() {
         syncEpoch++
         if(background) LearningSyncRuntime.pause()
@@ -165,12 +192,29 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // Only the actor accesses a store. Timers enqueue work without touching Room.
     private fun scheduleSync(waitMillis: Long=2_000) {
         if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed || switching) return
-        syncTimer?.cancel()
         val expected=scope
-        if(background) LearningSyncRuntime.schedule(getApplication(),checkNotNull(mutableAccount.value.userId))
+        scheduleWork(checkNotNull(mutableAccount.value.userId),!foreground)
+        if(!foreground) return
+        // A finished sync's minute-later reschedule must not push back a sooner run a write asked for just before it ended.
+        val due=System.nanoTime()/1_000_000+waitMillis
+        if(syncTimer?.isActive==true && syncDue.second==expected && syncDue.first<=due) return
+        syncTimer?.cancel()
+        syncDue=due to expected
         syncTimer=viewModelScope.launch {
             kotlinx.coroutines.delay(waitMillis)
-            if(scope==expected) syncNow()
+            if(scope==expected && foreground) syncNow()
+        }
+    }
+    /** Activity ON_START/ON_STOP: stopping cancels the pending foreground sync timer and hands unsent writes to WorkManager, starting syncs shortly. */
+    fun setForeground(started: Boolean) {
+        foreground=started
+        enqueue(refresh=false) {
+            if(started) scheduleSync() else {
+                syncTimer?.cancel();syncTimer=null
+                // An unreadable outbox is handed over too: a spare worker run costs less than a lost write.
+                val sync=cloudSync
+                if(sync!=null && mutableAccount.value.userId!=null && runCatching {sync.status(store).let {it.pending>0 || it.preferencesPending}}.getOrDefault(true)) scheduleSync()
+            }
         }
     }
     fun syncNow() {
@@ -221,10 +265,20 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun resolvePreferences(useLocal: Boolean) {
         if(mutableAccount.value.busy || mutableAccount.value.userId==null) return
         interruptSync()
-        mutate {LearningPreferencesSync.resolve(store,useLocal);if(background) LearningSyncRuntime.resume()
-            mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store))}
+        // Background sync resumes even when the resolve is held behind a failed write or fails itself; otherwise every worker run retries forever.
+        enqueue {
+            val resolved=try {writes.submit {LearningPreferencesSync.resolve(store,useLocal)}} finally {if(background) LearningSyncRuntime.resume()}
+            try {mutableAccount.value=mutableAccount.value.copy(sync=checkNotNull(cloudSync).status(store))} catch (_: Exception) {}
+            if(resolved) scheduleSync()
+        }
     }
-    private fun changeOwner(owner: LearningOwner,email: String="") {
+    private fun holdsWrites() = (writes.error.value?.pendingCount?:0)>0
+    // Held writes target the current store; retry them there, since after a switch they would land in the other owner.
+    private fun releaseHeldWrites(): Boolean {if(holdsWrites()) writes.retry();return !holdsWrites()}
+    private fun requireSavedWrites() {if(!releaseHeldWrites()) throw AuthFailure("pending_local_writes")}
+    private fun changeOwner(owner: LearningOwner,email: String="",discardHeld: Boolean=false) {
+        if(!discardHeld) requireSavedWrites()
+        val previous=(store.owner as? LearningOwner.Account)?.id
         val next=storeFactory(owner)
         try {next.snapshot()} catch (failure: Exception) {next.close();throw failure}
         // Writes queued under the old owner belong to it: apply them before switching instead of dropping them.
@@ -232,16 +286,20 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         switching=true
         try {
             while(true) {
-                val queued=synchronized(stamping) {mutations.tryReceive().getOrNull().also {if(it==null) {store.close();store=next;scope++}}}?:break
+                val queued=synchronized(stamping) {mutations.tryReceive().getOrNull().also {if(it==null && (discardHeld || !holdsWrites())) {store.close();store=next;scope++}}}
+                if(queued==null) {if(store===next) break;requireSavedWrites();continue}
                 if(queued.scope==null) unscoped+=queued else if(queued.scope==scope) execute(queued)
             }
-        } finally {switching=false}
-        unscoped.forEach {mutations.trySend(it)}
+        } catch (failure: Exception) {if(store!==next) next.close();throw failure}
+        finally {switching=false;unscoped.forEach {mutations.trySend(it)}}
         syncEpoch++
         writes.reset()
         mutableCompletions.value=emptySet()
         onOwnerChanged(owner)
+        if(previous!=null && previous!=owner.id) retireSync(previous)
         if(background) LearningSyncRuntime.resume()
+        // An owner change ends any open email-code step (verified sign-up, sign-in, sign-out, deletion).
+        if(mutableAccount.value.emailAction.isNotEmpty()) pendingCode.clear()
         mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=mutableAccount.value.scope+1)
         if(owner is LearningOwner.Account && cloudSync!=null) {
             val saved=cloudSync.status(store)
@@ -289,6 +347,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         mutableAccount.value=mutableAccount.value.copy(busy=true,message=text(R.string.account_message_signing_in),messageTone=MessageTone.Progress)
         mutations.trySend(Mutation(null) {
             try {
+                requireSavedWrites()
                 val session=auth.signIn(email,password)
                 changeOwner(LearningOwner.Account(session.userId),session.email)
                 mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_signed_in),messageTone=MessageTone.Success)
@@ -299,6 +358,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     "invalid_credentials" -> text(R.string.account_message_invalid_credentials)
                     "email_not_confirmed" -> text(R.string.account_message_email_unconfirmed)
                     "not_configured" -> text(R.string.account_message_not_configured)
+                    "pending_local_writes" -> text(R.string.write_error_pending_changes)
                     else -> text(R.string.account_message_sign_in_failed)
                 }
                 mutableAccount.value=mutableAccount.value.copy(busy=false,message=message,messageTone=MessageTone.Error)
@@ -320,6 +380,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                     "invalid_code","otp_expired" -> if(mutableAccount.value.emailAction=="signup") text(R.string.account_message_verification_code_invalid) else text(R.string.account_message_recovery_code_invalid)
                     "over_email_send_rate_limit","over_request_rate_limit" -> text(R.string.account_message_rate_limited)
                     "same_password" -> text(R.string.account_message_password_unchanged)
+                    "pending_local_writes" -> text(R.string.write_error_pending_changes)
                     else -> text(R.string.account_message_request_failed)
                 })
             } finally {
@@ -331,11 +392,13 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     }
     fun signUp(email: String,password: String)=emailOperation {
         val ready=auth.signUp(email,password)
+        if(ready) pendingCode.clear() else pendingCode.save("signup",email.trim())
         mutableAccount.value=mutableAccount.value.copy(emailAction=if(ready) "" else "signup",verificationEmail=email.trim(),
             message=if(ready) text(R.string.account_message_signup_complete) else text(R.string.account_message_signup_requested),messageTone=if(ready) MessageTone.Success else MessageTone.Info)
     }
     fun requestRecovery(email: String)=emailOperation {
         auth.requestRecovery(email)
+        pendingCode.save("recovery",email.trim())
         mutableAccount.value=mutableAccount.value.copy(emailAction="recovery",verificationEmail=email.trim(),message=text(R.string.account_message_recovery_requested),messageTone=MessageTone.Info)
     }
     fun resendEmailCode()=emailOperation {
@@ -345,32 +408,43 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             "recovery" -> auth.requestRecovery(state.verificationEmail)
             else -> throw AuthFailure("invalid_input")
         }
+        pendingCode.save(state.emailAction,state.verificationEmail)
         mutableAccount.value=mutableAccount.value.copy(message=if(state.emailAction=="signup") text(R.string.account_message_verification_resent) else text(R.string.account_message_recovery_resent),messageTone=MessageTone.Info)
     }
     fun completeEmailCode(code: String,password: String)=emailOperation {
         val state=mutableAccount.value
         when(state.emailAction) {
             "signup" -> {
+                requireSavedWrites()
                 val session=auth.confirmEmail(state.verificationEmail,code)
                 changeOwner(LearningOwner.Account(session.userId),session.email)
                 mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_email_verified),messageTone=MessageTone.Success)
             }
             "recovery" -> {
                 auth.resetPassword(state.verificationEmail,code,password)
+                pendingCode.clear()
                 mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message=text(R.string.account_message_password_updated),messageTone=MessageTone.Success)
             }
             else -> throw AuthFailure("invalid_input")
         }
     }
     fun cancelEmailCode() {
-        if(!mutableAccount.value.busy) mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="",messageTone=MessageTone.Info)
+        if(mutableAccount.value.busy) return
+        pendingCode.clear()
+        mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="",messageTone=MessageTone.Info)
     }
     fun signOut() {
         if(mutableAccount.value.busy) return
         interruptSync()
         if(background) mutableAccount.value.userId?.let {LearningSyncRuntime.cancel(getApplication(),it)}
         mutableAccount.value=mutableAccount.value.copy(busy=true,message=text(R.string.account_message_signing_out),messageTone=MessageTone.Progress)
-        mutations.trySend(Mutation(null) {
+        mutations.trySend(Mutation(null) signOut@{
+            // Unsaved writes block the switch before the session is revoked, so the account keeps them.
+            if(!releaseHeldWrites()) {
+                mutableAccount.value=mutableAccount.value.copy(busy=false,message=text(R.string.write_error_pending_changes),messageTone=MessageTone.Error)
+                if(background) LearningSyncRuntime.resume()
+                scheduleSync();return@signOut
+            }
             val revoked=auth.signOut();changeOwner(LearningOwner.Guest)
             viewModelScope.launch {runCatching {GoogleSignIn.clear(getApplication())}}
             mutableAccount.value=mutableAccount.value.copy(message=if(revoked) text(R.string.account_message_signed_out) else text(R.string.account_message_signed_out_offline),messageTone=if(revoked) MessageTone.Success else MessageTone.Warning)
@@ -396,7 +470,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                             store.eraseDeletedAccount()
                             if(background) DeletedAccountCleanup.complete(getApplication(),user)
                         }.isSuccess
-                        changeOwner(LearningOwner.Guest)
+                        // The account is gone; writes still held for it have nowhere to land.
+                        changeOwner(LearningOwner.Guest,discardHeld=true)
                         viewModelScope.launch {runCatching {GoogleSignIn.clear(getApplication())}}
                         mutableAccount.value=mutableAccount.value.copy(message=if(cleaned) text(R.string.account_message_deleted) else text(R.string.account_message_cleanup_pending),messageTone=if(cleaned) MessageTone.Success else MessageTone.Warning)
                     })
@@ -421,12 +496,14 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             val identity=acquire()
             mutations.trySend(Mutation(expectedScope) {
                 try {
+                    requireSavedWrites()
                     val session=auth.signInGoogle(identity)
                     changeOwner(LearningOwner.Account(session.userId),session.email)
                     mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_google_signed_in),messageTone=MessageTone.Success)
                 } catch (failure: Exception) {
                     if(auth.current!=null && auth.current?.userId!=store.owner.id) auth.clearLocal()
-                    mutableAccount.value=mutableAccount.value.copy(busy=false,message=text(R.string.account_message_google_failed),messageTone=MessageTone.Error)
+                    mutableAccount.value=mutableAccount.value.copy(busy=false,messageTone=MessageTone.Error,
+                        message=if((failure as? AuthFailure)?.code=="pending_local_writes") text(R.string.write_error_pending_changes) else text(R.string.account_message_google_failed))
                     if(background) LearningSyncRuntime.resume()
                     scheduleSync()
                 }
@@ -443,8 +520,11 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             mutations.trySend(Mutation(expectedScope) {scheduleSync()})
         }
     }
-    fun verifyAccount() {
+    /** [fresherThanMillis] skips the request when this owner was verified that recently (app resumes after dialogs, pickers and ads). */
+    fun verifyAccount(fresherThanMillis: Long=0) {
         val expectedScope=scope
+        val now=System.nanoTime()/1_000_000
+        if(fresherThanMillis>0 && verifiedAt.first==expectedScope && now-verifiedAt.second<fresherThanMillis) return
         if(mutableAccount.value.userId==null || !verifying.compareAndSet(false,true)) return
         viewModelScope.launch(Dispatchers.IO) {
             var verifiedEmail: String?=null
@@ -453,6 +533,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             try {
                 val session=auth.verifyCurrent() ?: throw AuthFailure("sign_in_required")
                 verifiedEmail=session.email
+                verifiedAt=expectedScope to System.nanoTime()/1_000_000
                 resultMessage=text(R.string.account_message_session_verified)
             } catch (failure: Exception) {
                 requiresSignIn=auth.current==null

@@ -109,7 +109,7 @@ class LearningQueueSync(private val transport: LearningSyncTransport, private va
                 if (current()) store.markUploadFailed(operation.id, expectedUser, failure.code, true)
                 return LearningUploadResult(delivered, blocked, true)
             } catch (_: IOException) {
-                if (current()) store.markUploadFailed(operation.id, expectedUser, "network_unavailable", true)
+                if (current()) store.markUploadOffline(operation.id, expectedUser)
                 return LearningUploadResult(delivered, blocked, true)
             }
         }

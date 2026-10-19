@@ -24,7 +24,9 @@ import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.WordInfo
 
 @Composable
-fun MatchingGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padding: PaddingValues,onWordReviewed: (String,Boolean)->Unit,onLessonComplete: (Int)->Unit,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot) {
+fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padding: PaddingValues,onWordReviewed: (String,Boolean)->Unit,onLessonComplete: (Int)->Unit,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot,onDone: ()->Unit=onExit) {
+    // Frozen at start: a sync can drop a saved word mid-session, and a matched pair must not vanish from the board.
+    val words=remember(sessionId) {liveWords}
     val translationIds=rememberSaveable(sessionId) {words.shuffled().map {it.id}}
     val translations=translationIds.mapNotNull {id -> words.find {it.id==id}}
     var selected by rememberSaveable(sessionId) {mutableStateOf<String?>(null)}
@@ -34,9 +36,12 @@ fun MatchingGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padd
     // The last wrong pair shakes; each mistake bumps the tick so the same pair can shake again.
     var wrongPair by remember(sessionId) {mutableStateOf<Pair<String,String>?>(null)}
     var wrongTick by remember(sessionId) {mutableIntStateOf(0)}
-    if(finished) {GameResult(stringResource(R.string.kelime_hata, words.size, mistakes),(words.size-mistakes).coerceAtLeast(0)*5,padding,onExit,onRestart,snapshot);return}
+    if(finished) {GameResult(stringResource(R.string.kelime_hata, words.size, mistakes),(words.size-mistakes).coerceAtLeast(0)*5,padding,onDone,onRestart,snapshot);return}
+    // Completion counts only this board's words; after recreation the live list may have lost some, even a matched one.
+    val done=words.all {it.id in matched}
+    if(done) {LaunchedEffect(sessionId) {if(!finished) {finished=true;onLessonComplete((words.size-mistakes).coerceAtLeast(0))}};return}
     GameViewport(padding) {
-        GameHeader(matched.size.toFloat()/words.size,onExit)
+        GameHeader(words.count {it.id in matched}.toFloat()/words.size,onExit)
         Text(stringResource(R.string.kelimeleri_eslestirin),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.fillMaxWidth().padding(vertical=12.dp))
         Row(Modifier.fillMaxWidth().weight(1f),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
             Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(10.dp)) {
@@ -49,7 +54,7 @@ fun MatchingGame(words: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padd
                         if(current==word.id) {
                             matched=matched+word.id
                             if(word.id in savedIds) onWordReviewed(word.id,true)
-                            if(matched.size==words.size) {finished=true;onLessonComplete((words.size-mistakes).coerceAtLeast(0))}
+                            if(words.all {it.id in matched}) {finished=true;onLessonComplete((words.size-mistakes).coerceAtLeast(0))}
                         } else {mistakes++;wrongPair=current to word.id;wrongTick++;if(current in savedIds) onWordReviewed(current,false)}
                         selected=null
                     }

@@ -56,7 +56,7 @@
 
 **Kapı Q1:** APK < 15 MB · CI'da tüm testler · derleme uyarısı 0 · ses odağı testleri. — **15 Ekim 2026: geçildi.** #15–#21 ana dala birleşti. Birleşik doğrulama ve sınırlar aşağıda kayıtlı.
 
-### Q2 — Görünürlük ve yayın güvenliği · ~5–7 gün · karar: ölçüm sağlayıcısı
+### Q2 — Görünürlük ve yayın güvenliği · ~5–7 gün · karar: ölçüm sağlayıcısı (17 Ekim 2026: Firebase Analytics)
 
 | # | İş | Kabul ölçütü | Efor |
 |---|---|---|---|
@@ -113,7 +113,7 @@ App Links ile paylaşılan hikâyenin uygulamada açılması (2–3) · ana ekra
 | Faz | Efor (ideal gün) | Karar |
 |---|---|---|
 | Q1 | 6–8 | — |
-| Q2 | 5–7 | Ölçüm sağlayıcısı |
+| Q2 | 5–7 | Ölçüm sağlayıcısı — karar verildi: Firebase Analytics |
 | Q3 | 6–9 | — |
 | Q4 | 8–12 | Sözlük kaynağı |
 | Q5 | 8–12 | — |
@@ -159,7 +159,7 @@ Sıra: Q1 → Q2 → (Q3 ve Q4 paralel) → Q5 → Q6. Q1 karar beklemeden başl
 | Q4.3b Sözlük anlam taslakları | Ana dala birleşti | [#68](https://github.com/yurkenn/english-tales/pull/68) | Paket hikâyelerindeki 1.407 sözlük biçiminden öğrenme kelimesi olmayan 1.098’i için Türkçe anlam taslağı (`backend/content/glossary/tr.json`, kaynak: Claude taslağı, örnek cümle ve geçiş sayısıyla). `npm run glossary:build` yalnız çapraz kontrolden geçmiş (`checkedBy`) ve itiraz edilmişse incelenmiş girişleri uygulamaya alır; şu an 0. `glossary:sample` %10 inceleme örneklemini verir (121) |
 | Q4.3b Sözlük çapraz kontrolü | Ana dala birleşti | [#73](https://github.com/yurkenn/english-tales/pull/73) | 1.098 taslağın tamamı ikinci bir modelle (Claude Sonnet) örnek cümlesine göre kontrol edildi (`checkedBy`); 44’ü itirazlı ve önerili (`suggestion`, `note`). Uygulamaya hiçbir şey girmez: sahibi %10 örneklemi (`npm run glossary:sample`) ve itirazlıları (`npm run glossary:disputed`) inceleyip `sampleApprovedBy` alanını doldurana kadar `glossary:build` boş liste üretir |
 | Q4.3b İtirazların çözümü | Ana dala birleşti | [#78](https://github.com/yurkenn/english-tales/pull/78) | Sahip kararıyla 44 itirazlı girişte çapraz kontrolün önerisi anlam oldu (`reviewed`, `reviewedBy`; eski taslak `draftGloss` alanında). Yayın kapısı (`sampleApprovedBy`) hâlâ kapalı: sahibi %10 örneklemi (`npm run glossary:sample`) inceleyip onaylayınca sözlük uygulamaya girer |
-| Q4.7a B1 hikâye taslakları | PR açık | [#84](https://github.com/yurkenn/english-tales/pull/84) | Sahip kararıyla iki özgün B1 taslağı (`backend/content/drafts/stories/`): *The Notes in the Night Library* (Gizem, 34 cümle/396 sözcük) ve *The First Big Order* (Günlük yaşam, 35 cümle/387 sözcük); Türkçe çeviri, 4 soru (main/detail/inference), 6’şar yeni kelime. `status: draft`, katalogda değil; editör onayı (`reviewedBy`) ve kapak sonrası yayımlanır. `tests/story-drafts.test.mjs` biçim, kimlik çakışması ve uzunluk sınırlarını denetler |
+| Q4.7a B1 hikâye taslakları | Ana dala birleşti | [#84](https://github.com/yurkenn/english-tales/pull/84) | Sahip kararıyla iki özgün B1 taslağı (`backend/content/drafts/stories/`): *The Notes in the Night Library* (Gizem, 34 cümle/396 sözcük) ve *The First Big Order* (Günlük yaşam, 35 cümle/387 sözcük); Türkçe çeviri, 4 soru (main/detail/inference), 6’şar yeni kelime. `status: draft`, katalogda değil; editör onayı (`reviewedBy`) ve kapak sonrası yayımlanır. `tests/story-drafts.test.mjs` biçim, kimlik çakışması ve uzunluk sınırlarını denetler |
 | Q4.3a Kişisel kelimeler (2. adım) | Ana dala birleşti | [#54](https://github.com/yurkenn/english-tales/pull/54) | Sözlük kelimesi okuyucudan "Öğren" ile sözlük biçimi ve anlamıyla kaydedilir (`personal_words`, Room sürüm 8); Kelimelerim ve tüm alıştırmalar onu öğrenme kelimesi gibi kullanır, tekrar aralıkları aynı. Misafir aktarımı taşır. Hesap eşitlemesi 3. adımda |
 | Q4.3a Kişisel kelime eşitlemesi (3. adım) | Ana dala birleşti | [#55](https://github.com/yurkenn/english-tales/pull/55) | `apply_word_event` revizyonsuz `glossary:` kimliklerini kabul eder; kaydetme kelime ve anlamı taşır, `user_personal_words` en yeni anlamı tutar, `get_learning_snapshot` metni döner. Uygulama olayı kuyruğa koyar; uzlaştırma kişisel kelimeyi metniyle kurar veya kaldırır. Migration 16 Ekim’de canlıya uygulandı; 49 cihaz eşitleme kabulü açık |
 | Q4.4 Okuma süresi + süre filtresi | Ana dala birleşti | [#42](https://github.com/yurkenn/english-tales/pull/42) | Kartlarda "~N dk"; kitaplıkta yalnız katalogda bulunan süre aralıkları filtre olarak sunulur |
@@ -198,7 +198,7 @@ Karar gerektirmeyen kod işleri tamamlandı (#45–#65). Kalanlar uygulama sahib
 | Q4.7 İçerik hacmi (bölümlü hikâyeler, B1/B2) | İlk iki B1 taslağı hazır (#84); editör onayı, kapak ve katalog yayını gerekir. Sonraki taslaklar iki haftada 1–2 hikâye ritmiyle |
 | L0 İngilizce arayüz | Arayüz İngilizceyken destek dilinin (çevirilerin) ne olacağı ürün kararı |
 | Q6 App Links | Alan adı `englishtales-app.web.app` seçildi ve `assetlinks.json` yayında (#67); uygulama yönlendirmesi ana dalda (#72); `story.html` Hosting yayını ve cihaz denemesi açık |
-| Q2 ölçüm sağlayıcısı, gelir modeli, kayıtlı ses | Ürün kararları |
+| Q2 ölçüm sağlayıcısı, gelir modeli, kayıtlı ses | **Karar verildi (17 Ekim 2026, uygulama sahibi):** ölçüm Firebase Analytics ile sürer (Q2.2’deki yedi olay, varsayılan kapalı katılım; yeni bağımlılık yok); ses cihaz TTS’i ile kalır (kayıtlı/üretilmiş ses yok); gelir yalnız mevcut tamamlama reklamları (abonelik/premium yok). Açık kalan: Q2.2 canlı kabulü ve GA ayarları (Console işi) |
 
 **Yayın sırası (canlıya alırken):** Sunucu migration'ları uygulama sürümünden önce uygulanmalı, çünkü yeni uygulama bu RPC ve alanları kullanır:
 `20261016090000_translation_tables` → `20261016100000_story_questions` → `20261016110000_story_tags` → `20261016120000_story_favorites` → `20261016130000_personal_words` → `20261016140000_known_words` → `20261016150000_fsrs`.
