@@ -1,0 +1,156 @@
+{
+  "status": "content-brief-not-live-pages",
+  "canonicalOrigin": null,
+  "pages": [
+    {
+      "storeLocale": "en-US",
+      "htmlLang": "en",
+      "hreflang": "en",
+      "proposedPath": "/learn-english/en/",
+      "title": "Learn English through short stories | Yurken",
+      "h1": "Learn English through short stories",
+      "metaDescription": "Read A1-B1 English stories, explore translations and review useful words.",
+      "intro": "Build your English reading habit with short stories at A1, A2 and B1 levels. Read a story, check sentence translations and return to useful words in your review plan.",
+      "primaryQuery": "learn English with stories",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=en_US"
+    },
+    {
+      "storeLocale": "tr-TR",
+      "htmlLang": "tr",
+      "hreflang": "tr",
+      "proposedPath": "/learn-english/tr/",
+      "title": "Hikâyelerle İngilizce öğren | Yurken",
+      "h1": "Hikâyelerle İngilizce öğren",
+      "metaDescription": "Çevirili A1-B1 hikâyelerle İngilizce oku, kelime kaydet ve tekrar et.",
+      "intro": "İngilizce öğrenirken seviyene uygun kısa hikâyeler oku. A1, A2 ve B1 düzeyindeki metinleri Türkçe cümle çevirileriyle anla; yeni kelimeleri kaydedip tekrar ederek okuma alışkanlığını geliştir.",
+      "primaryQuery": "ingilizce hikaye",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=tr_TR"
+    },
+    {
+      "storeLocale": "es-419",
+      "htmlLang": "es",
+      "hreflang": "es",
+      "proposedPath": "/learn-english/es/",
+      "title": "Aprende inglés leyendo historias cortas | Yurken",
+      "h1": "Aprende inglés leyendo historias cortas",
+      "metaDescription": "Aprende inglés con historias A1-B1, traducciones y repaso de vocabulario.",
+      "intro": "Aprende inglés a tu ritmo con historias cortas de nivel A1, A2 y B1. Lee, consulta la traducción al español y guarda palabras útiles para repasarlas después.",
+      "primaryQuery": "aprender inglés con historias",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=es_419"
+    },
+    {
+      "storeLocale": "pt-BR",
+      "htmlLang": "pt-BR",
+      "hreflang": "pt-BR",
+      "proposedPath": "/learn-english/pt-br/",
+      "title": "Aprenda inglês lendo histórias curtas | Yurken",
+      "h1": "Aprenda inglês lendo histórias curtas",
+      "metaDescription": "Aprenda inglês com histórias A1-B1, traduções e revisão de vocabulário.",
+      "intro": "Pratique inglês no seu ritmo com histórias curtas dos níveis A1, A2 e B1. Leia, consulte a tradução em português e salve palavras úteis para revisar depois.",
+      "primaryQuery": "aprender inglês com histórias",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=pt_BR"
+    },
+    {
+      "storeLocale": "id",
+      "htmlLang": "id",
+      "hreflang": "id",
+      "proposedPath": "/learn-english/id/",
+      "title": "Belajar bahasa Inggris lewat cerita pendek | Yurken",
+      "h1": "Belajar bahasa Inggris lewat cerita pendek",
+      "metaDescription": "Belajar bahasa Inggris lewat cerita A1-B1, terjemahan, dan latihan kosakata.",
+      "intro": "Latih kemampuan membaca bahasa Inggris dengan cerita pendek tingkat A1, A2, dan B1. Baca, lihat terjemahan bahasa Indonesia, lalu simpan kata yang ingin kamu ulangi.",
+      "primaryQuery": "belajar bahasa Inggris lewat cerita",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=id"
+    },
+    {
+      "storeLocale": "ar",
+      "htmlLang": "ar",
+      "hreflang": "ar",
+      "proposedPath": "/learn-english/ar/",
+      "title": "تعلّم الإنجليزية من خلال قصص قصيرة | Yurken",
+      "h1": "تعلّم الإنجليزية من خلال قصص قصيرة",
+      "metaDescription": "اقرأ قصصًا إنجليزية بمستويات A1-B1 مع ترجمة عربية ومراجعة للمفردات.",
+      "intro": "تدرّب على قراءة الإنجليزية بقصص قصيرة بمستويات A1 وA2 وB1. اقرأ، واطّلع على الترجمة العربية، واحفظ كلمات مفيدة لمراجعتها لاحقًا.",
+      "primaryQuery": "تعلم الإنجليزية بالقصص",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=ar"
+    },
+    {
+      "storeLocale": "vi",
+      "htmlLang": "vi",
+      "hreflang": "vi",
+      "proposedPath": "/learn-english/vi/",
+      "title": "Học tiếng Anh qua những câu chuyện ngắn | Yurken",
+      "h1": "Học tiếng Anh qua những câu chuyện ngắn",
+      "metaDescription": "Học tiếng Anh qua truyện A1-B1, bản dịch tiếng Việt và ôn tập từ vựng.",
+      "intro": "Luyện đọc tiếng Anh với truyện ngắn ở trình độ A1, A2 và B1. Đọc truyện, xem bản dịch tiếng Việt rồi lưu những từ hữu ích để ôn tập sau.",
+      "primaryQuery": "học tiếng Anh qua truyện",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=vi"
+    },
+    {
+      "storeLocale": "hi-IN",
+      "htmlLang": "hi",
+      "hreflang": "hi",
+      "proposedPath": "/learn-english/hi/",
+      "title": "छोटी कहानियों से अंग्रेजी सीखें | Yurken",
+      "h1": "छोटी कहानियों से अंग्रेजी सीखें",
+      "metaDescription": "हिंदी अनुवाद के साथ A1-B1 अंग्रेजी कहानियाँ पढ़ें और शब्दों का अभ्यास करें।",
+      "intro": "A1, A2 और B1 स्तर की छोटी कहानियों से अंग्रेजी पढ़ने का अभ्यास करें। कहानी पढ़ें, हिंदी अनुवाद देखें और उपयोगी शब्दों को बाद में दोहराने के लिए सहेजें।",
+      "primaryQuery": "कहानियों से अंग्रेजी सीखें",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=hi_IN"
+    },
+    {
+      "storeLocale": "ru-RU",
+      "htmlLang": "ru",
+      "hreflang": "ru",
+      "proposedPath": "/learn-english/ru/",
+      "title": "Учите английский по коротким рассказам | Yurken",
+      "h1": "Учите английский по коротким рассказам",
+      "metaDescription": "Учите английский: рассказы A1-B1, перевод и повторение полезных слов.",
+      "intro": "Практикуйте чтение на английском с короткими рассказами уровней A1, A2 и B1. Читайте, смотрите перевод на русский и сохраняйте полезные слова для повторения.",
+      "primaryQuery": "английский по рассказам",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=ru_RU"
+    },
+    {
+      "storeLocale": "bn-BD",
+      "htmlLang": "bn",
+      "hreflang": "bn",
+      "proposedPath": "/learn-english/bn/",
+      "title": "ছোট গল্প পড়ে ইংরেজি শিখুন | Yurken",
+      "h1": "ছোট গল্প পড়ে ইংরেজি শিখুন",
+      "metaDescription": "বাংলা অনুবাদসহ A1-B1 ইংরেজি গল্প পড়ুন ও দরকারি শব্দের চর্চা করুন।",
+      "intro": "A1, A2 ও B1 স্তরের ছোট গল্প দিয়ে ইংরেজি পড়ার চর্চা করুন। গল্প পড়ুন, বাংলা অনুবাদ দেখুন এবং পরে চর্চার জন্য দরকারি শব্দ সংরক্ষণ করুন।",
+      "primaryQuery": "গল্পে গল্পে ইংরেজি শেখা",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=bn_BD"
+    },
+    {
+      "storeLocale": "ur",
+      "htmlLang": "ur",
+      "hreflang": "ur",
+      "proposedPath": "/learn-english/ur/",
+      "title": "مختصر کہانیاں پڑھ کر انگریزی سیکھیں | Yurken",
+      "h1": "مختصر کہانیاں پڑھ کر انگریزی سیکھیں",
+      "metaDescription": "اردو ترجمے کے ساتھ A1-B1 انگریزی کہانیاں پڑھیں اور الفاظ کی مشق کریں۔",
+      "intro": "A1، A2 اور B1 سطح کی مختصر کہانیوں سے انگریزی پڑھنے کی مشق کریں۔ کہانی پڑھیں، اردو ترجمہ دیکھیں اور مفید الفاظ بعد میں دہرانے کے لیے محفوظ کریں۔",
+      "primaryQuery": "کہانیوں سے انگریزی سیکھیں",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=ur"
+    },
+    {
+      "storeLocale": "th",
+      "htmlLang": "th",
+      "hreflang": "th",
+      "proposedPath": "/learn-english/th/",
+      "title": "เรียนภาษาอังกฤษผ่านเรื่องสั้น | Yurken",
+      "h1": "เรียนภาษาอังกฤษผ่านเรื่องสั้น",
+      "metaDescription": "เรียนอังกฤษผ่านเรื่องสั้น A1-B1 พร้อมคำแปลไทยและทบทวนคำศัพท์",
+      "intro": "ฝึกอ่านภาษาอังกฤษด้วยเรื่องสั้นระดับ A1, A2 และ B1 อ่านเรื่อง ดูคำแปลไทย และบันทึกคำที่มีประโยชน์ไว้ทบทวนภายหลัง",
+      "primaryQuery": "เรียนภาษาอังกฤษผ่านเรื่องสั้น",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.yurken.englishtales&hl=th"
+    }
+  ],
+  "notes": [
+    "Verify the actual hosting origin before generating canonical URLs or a sitemap.",
+    "Use es for the shared Latin American Spanish SEO page; Play es-419 is a different locale system.",
+    "Use reciprocal hreflang and self-canonical URLs on substantive translated pages; do not canonicalize every language to English.",
+    "Preserve privacy, account deletion, app links, assetlinks and app-ads.txt paths."
+  ]
+}
