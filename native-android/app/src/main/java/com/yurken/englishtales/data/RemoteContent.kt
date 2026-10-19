@@ -334,11 +334,11 @@ internal object ContentRefreshPolicy {
     fun isStale(lastSuccessAt: Long?, now: Long): Boolean = lastSuccessAt == null || now - lastSuccessAt >= MIN_INTERVAL_MILLIS || now < lastSuccessAt
 }
 
-class ContentViewModel(application: Application) : AndroidViewModel(application) {
+class ContentViewModel internal constructor(application: Application, val repository: ContentRepository) : AndroidViewModel(application) {
+    constructor(application: Application) : this(application, ContentRepository(application,
+        if (BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))
+            ContentHttp(BuildConfig.SUPABASE_URL, BuildConfig.SUPABASE_PUBLISHABLE_KEY) else null))
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
-    private val http = if (BuildConfig.SUPABASE_URL.isNotBlank() && BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))
-        ContentHttp(BuildConfig.SUPABASE_URL, BuildConfig.SUPABASE_PUBLISHABLE_KEY) else null
-    val repository = ContentRepository(application, http)
     private val mutableStatus = MutableStateFlow(ContentStatus())
     val status = mutableStatus.asStateFlow()
     private val mutableReady = MutableStateFlow(false)
@@ -360,16 +360,26 @@ class ContentViewModel(application: Application) : AndroidViewModel(application)
     fun refreshIfStale(now: Long = android.os.SystemClock.elapsedRealtime()) {
         if (ContentRefreshPolicy.isStale(lastRefreshAt, now)) refresh()
     }
+    private var refreshing = false
+    /** A download queued behind this refresh owns the status, so the refresh only announces its outcome. */
+    private fun finishRefresh(status: ContentStatus, success: Boolean, announce: Boolean) {
+        refreshing = false
+        if (mutableStatus.value.downloading == null) finish(status, success, announce)
+        else if (announce) mutableEvents.tryEmit(ContentEvent(success, status.message))
+    }
     fun refresh(userInitiated: Boolean = false) {
         if (mutableStatus.value.busy) return
+        refreshing = true
         mutableStatus.value = ContentStatus(busy = true, message = text(R.string.content_message_refreshing))
         viewModelScope.launch {
-            try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finish(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
-            catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
+            try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finishRefresh(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
+            catch (_: Exception) { finishRefresh(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
         }
     }
+    /** Waits behind a running refresh (the repository lock serialises them); one download runs at a time. */
     fun download(story: Story, onReady: (Story) -> Unit = {}) {
-        if (mutableStatus.value.busy) return
+        val current = mutableStatus.value
+        if (current.downloading != null || (current.busy && !refreshing)) return
         mutableStatus.value = ContentStatus(true, text(R.string.content_message_downloading), story.id)
         viewModelScope.launch {
             try { val ready = repository.download(story); finish(ContentStatus(message = text(R.string.content_message_downloaded)), true); onReady(ready) }
