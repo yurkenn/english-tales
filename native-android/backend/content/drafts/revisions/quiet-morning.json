@@ -1,0 +1,495 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "codex-story-quality-pilot-2026-10-19",
+  "reviewedBy": null,
+  "baseStoryId": "quiet-morning",
+  "baseStorySHA256": "cc654ceb8cb0e9fb2f6f2c84ea8129a74de6358568f024ff4be8265c7055975a",
+  "editorialNotes": [
+    "Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone.",
+    "Keeps all legacy sentence IDs and wording; adds short A1-target turns.",
+    "A1 is a target for editorial review, not formal CEFR certification."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "quiet-morning-pilot-02-01",
+      "quiet-morning-pilot-02-02",
+      "quiet-morning-pilot-04-01",
+      "quiet-morning-pilot-04-02",
+      "quiet-morning-pilot-06-01",
+      "quiet-morning-pilot-06-02",
+      "quiet-morning-pilot-06-03",
+      "quiet-morning-pilot-06-04",
+      "quiet-morning-pilot-07-01",
+      "quiet-morning-pilot-07-02",
+      "quiet-morning-pilot-07-03",
+      "quiet-morning-pilot-08-01",
+      "quiet-morning-pilot-08-02",
+      "quiet-morning-pilot-08-03"
+    ],
+    "pendingLanguages": [
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ]
+  },
+  "story": {
+    "id": "quiet-morning",
+    "title": "A Quiet Morning",
+    "author": "English Tales",
+    "level": "A1",
+    "genre": "Günlük yaşam",
+    "description": "Küçük bir kasabada başlayan sıcak bir karşılaşma.",
+    "coverKey": "cover_quiet_morning",
+    "sentences": [
+      {
+        "id": "qm-1",
+        "english": "It was a quiet morning in a small town.",
+        "turkish": "Küçük bir kasabada sessiz bir sabahtı.",
+        "translations": {
+          "es-419": "Era una mañana tranquila en un pueblo pequeño.",
+          "pt-BR": "Era uma manhã tranquila em uma cidadezinha.",
+          "id": "Pagi itu tenang di sebuah kota kecil.",
+          "ar": "كان صباحًا هادئًا في بلدة صغيرة.",
+          "vi": "Đó là một buổi sáng yên tĩnh ở một thị trấn nhỏ.",
+          "hi": "एक छोटे शहर में वह एक शांत सुबह थी।",
+          "ru": "Было тихое утро в маленьком городке.",
+          "bn": "একটা ছোট শহরে সেদিন ছিল এক শান্ত সকাল।",
+          "ur": "ایک چھوٹے سے قصبے میں وہ ایک پرسکون صبح تھی۔",
+          "th": "เป็นเช้าที่เงียบสงบในเมืองเล็ก ๆ แห่งหนึ่ง"
+        }
+      },
+      {
+        "id": "qm-2",
+        "english": "Mia walked to the bakery before school.",
+        "turkish": "Mia okuldan önce fırına yürüdü.",
+        "translations": {
+          "es-419": "Mia caminó a la panadería antes de la escuela.",
+          "pt-BR": "Mia foi a pé até a padaria antes da escola.",
+          "id": "Mia berjalan ke toko roti sebelum sekolah.",
+          "ar": "مشت ميا إلى المخبز قبل المدرسة.",
+          "vi": "Mia đi bộ đến tiệm bánh mì trước giờ học.",
+          "hi": "मिया स्कूल से पहले पैदल बेकरी गई।",
+          "ru": "Перед школой Миа пошла в пекарню.",
+          "bn": "স্কুলের আগে মিয়া হেঁটে বেকারিতে গেল।",
+          "ur": "میا اسکول سے پہلے پیدل بیکری گئی۔",
+          "th": "มีอาเดินไปร้านเบเกอรี่ก่อนไปโรงเรียน"
+        }
+      },
+      {
+        "id": "quiet-morning-pilot-02-01",
+        "english": "She had time to buy breakfast.",
+        "turkish": "Kahvaltı almak için zamanı vardı."
+      },
+      {
+        "id": "quiet-morning-pilot-02-02",
+        "english": "Her school bag was on her back.",
+        "turkish": "Okul çantası sırtındaydı."
+      },
+      {
+        "id": "qm-3",
+        "english": "The smell of fresh bread filled the street.",
+        "turkish": "Taze ekmek kokusu sokağı doldurdu.",
+        "translations": {
+          "es-419": "El olor a pan fresco llenaba la calle.",
+          "pt-BR": "O cheiro de pão fresco enchia a rua.",
+          "id": "Aroma roti segar memenuhi jalan.",
+          "ar": "ملأت رائحة الخبز الطازج الشارع.",
+          "vi": "Mùi bánh mì mới nướng lan khắp con phố.",
+          "hi": "ताज़ी ब्रेड की खुशबू पूरी गली में फैली थी।",
+          "ru": "Запах свежего хлеба наполнил улицу.",
+          "bn": "টাটকা রুটির গন্ধে রাস্তা ভরে গিয়েছিল।",
+          "ur": "تازہ ڈبل روٹی کی خوشبو پوری گلی میں پھیلی ہوئی تھی۔",
+          "th": "กลิ่นขนมปังอบใหม่ลอยไปทั่วถนน"
+        }
+      },
+      {
+        "id": "qm-4",
+        "english": "An old man stood outside and looked at the sky.",
+        "turkish": "Yaşlı bir adam dışarıda durup gökyüzüne baktı.",
+        "translations": {
+          "es-419": "Un hombre mayor estaba parado afuera y miraba el cielo.",
+          "pt-BR": "Um senhor de idade estava parado do lado de fora, olhando para o céu.",
+          "id": "Seorang pria tua berdiri di luar dan memandang langit.",
+          "ar": "كان رجل عجوز يقف في الخارج وينظر إلى السماء.",
+          "vi": "Một ông cụ đứng bên ngoài và ngước nhìn bầu trời.",
+          "hi": "एक बूढ़ा आदमी बाहर खड़ा होकर आसमान को देख रहा था।",
+          "ru": "У входа стоял пожилой мужчина и смотрел на небо.",
+          "bn": "একজন বয়স্ক লোক বাইরে দাঁড়িয়ে আকাশের দিকে তাকিয়ে ছিলেন।",
+          "ur": "ایک بوڑھا آدمی باہر کھڑا آسمان کو دیکھ رہا تھا۔",
+          "th": "ชายชราคนหนึ่งยืนอยู่ข้างนอกและมองขึ้นไปบนท้องฟ้า"
+        }
+      },
+      {
+        "id": "quiet-morning-pilot-04-01",
+        "english": "He had a small bag, but no bread.",
+        "turkish": "Küçük bir çantası vardı ama ekmeği yoktu."
+      },
+      {
+        "id": "quiet-morning-pilot-04-02",
+        "english": "Mia stopped beside the door.",
+        "turkish": "Mia kapının yanında durdu."
+      },
+      {
+        "id": "qm-5",
+        "english": "Mia gave him a smile and said hello.",
+        "turkish": "Mia ona gülümsedi ve merhaba dedi.",
+        "translations": {
+          "es-419": "Mia le sonrió y lo saludó.",
+          "pt-BR": "Mia sorriu para ele e disse olá.",
+          "id": "Mia tersenyum kepadanya dan menyapanya.",
+          "ar": "ابتسمت له ميا وألقت عليه التحية.",
+          "vi": "Mia mỉm cười với ông và chào ông.",
+          "hi": "मिया ने उसकी ओर देखकर मुस्कान दी और नमस्ते कहा।",
+          "ru": "Миа улыбнулась ему и поздоровалась.",
+          "bn": "মিয়া তাঁর দিকে তাকিয়ে হাসল আর হ্যালো বলল।",
+          "ur": "میا نے اسے مسکراہٹ دی اور سلام کیا۔",
+          "th": "มีอายิ้มให้เขาและกล่าวทักทาย"
+        }
+      },
+      {
+        "id": "qm-6",
+        "english": "He told her that today was his birthday.",
+        "turkish": "Adam ona bugün doğum günü olduğunu söyledi.",
+        "translations": {
+          "es-419": "Él le dijo que ese día era su cumpleaños.",
+          "pt-BR": "Ele contou a ela que aquele dia era o seu aniversário.",
+          "id": "Pria itu bercerita bahwa hari ini adalah hari ulang tahunnya.",
+          "ar": "أخبرها أن اليوم هو يوم ميلاده.",
+          "vi": "Ông kể với cô rằng hôm nay là sinh nhật của ông.",
+          "hi": "उसने मिया को बताया कि आज उसका जन्मदिन है।",
+          "ru": "Он сказал ей, что сегодня у него день рождения.",
+          "bn": "তিনি মিয়াকে বললেন যে আজ তাঁর জন্মদিন।",
+          "ur": "اس نے میا کو بتایا کہ آج اس کی سالگرہ ہے۔",
+          "th": "เขาบอกเธอว่าวันนี้เป็นวันเกิดของเขา"
+        }
+      },
+      {
+        "id": "quiet-morning-pilot-06-01",
+        "english": "\"Happy birthday!\" Mia said.",
+        "turkish": "Mia, \"Doğum gününüz kutlu olsun!\" dedi."
+      },
+      {
+        "id": "quiet-morning-pilot-06-02",
+        "english": "\"Are you waiting for someone?\" she asked.",
+        "turkish": "\"Birini mi bekliyorsunuz?\" diye sordu."
+      },
+      {
+        "id": "quiet-morning-pilot-06-03",
+        "english": "\"My daughter,\" he said.",
+        "turkish": "Adam, \"Kızımı,\" dedi."
+      },
+      {
+        "id": "quiet-morning-pilot-06-04",
+        "english": "\"She comes here every Friday.\"",
+        "turkish": "\"Her cuma buraya gelir.\""
+      },
+      {
+        "id": "qm-7",
+        "english": "Mia bought two warm rolls and shared one with him.",
+        "turkish": "Mia iki sıcak ekmek aldı ve birini onunla paylaştı.",
+        "translations": {
+          "es-419": "Mia compró dos panecillos calientes y compartió uno con él.",
+          "pt-BR": "Mia comprou dois pãezinhos quentes e dividiu um com ele.",
+          "id": "Mia membeli dua roti hangat dan berbagi satu dengannya.",
+          "ar": "اشترت ميا كعكتين دافئتين من الخبز وتقاسمت واحدة معه.",
+          "vi": "Mia mua hai chiếc bánh mì nóng và chia cho ông một chiếc.",
+          "hi": "मिया ने दो गरम बन खरीदे और एक उसके साथ बाँटा।",
+          "ru": "Миа купила две тёплые булочки и одной поделилась с ним.",
+          "bn": "মিয়া দুটো গরম রোল কিনল আর একটা তাঁর সঙ্গে ভাগ করে নিল।",
+          "ur": "میا نے دو گرم بن خریدے اور ایک اس کے ساتھ بانٹ لیا۔",
+          "th": "มีอาซื้อขนมปังก้อนอุ่น ๆ สองก้อนและแบ่งให้เขาหนึ่งก้อน"
+        }
+      },
+      {
+        "id": "quiet-morning-pilot-07-01",
+        "english": "\"This one is for you,\" she said.",
+        "turkish": "\"Bu sizin için,\" dedi."
+      },
+      {
+        "id": "quiet-morning-pilot-07-02",
+        "english": "The man smiled and took the bread.",
+        "turkish": "Adam gülümsedi ve ekmeği aldı."
+      },
+      {
+        "id": "quiet-morning-pilot-07-03",
+        "english": "\"Thank you for my birthday breakfast!\" he said.",
+        "turkish": "\"Doğum günü kahvaltım için teşekkür ederim!\" dedi."
+      },
+      {
+        "id": "qm-8",
+        "english": "They talked until the town became busy.",
+        "turkish": "Kasaba hareketlenene kadar sohbet ettiler.",
+        "translations": {
+          "es-419": "Hablaron hasta que el pueblo se llenó de gente.",
+          "pt-BR": "Eles conversaram até a cidade ficar movimentada.",
+          "id": "Mereka mengobrol sampai kota itu menjadi ramai.",
+          "ar": "تحدّثا حتى امتلأت البلدة بالناس.",
+          "vi": "Họ trò chuyện cho đến khi thị trấn trở nên nhộn nhịp.",
+          "hi": "वे तब तक बातें करते रहे जब तक शहर में चहल-पहल नहीं हो गई।",
+          "ru": "Они разговаривали, пока на улицах городка не стало людно.",
+          "bn": "শহরে ভিড় না হওয়া পর্যন্ত তারা গল্প করল।",
+          "ur": "وہ تب تک باتیں کرتے رہے جب تک قصبے میں چہل پہل نہ ہو گئی۔",
+          "th": "พวกเขาคุยกันจนเมืองเริ่มคึกคัก"
+        }
+      },
+      {
+        "id": "quiet-morning-pilot-08-01",
+        "english": "Then a woman came around the corner.",
+        "turkish": "Sonra bir kadın köşeyi dönüp geldi."
+      },
+      {
+        "id": "quiet-morning-pilot-08-02",
+        "english": "\"Here is my daughter,\" the man said.",
+        "turkish": "Adam, \"İşte kızım,\" dedi."
+      },
+      {
+        "id": "quiet-morning-pilot-08-03",
+        "english": "Mia waved and walked to school.",
+        "turkish": "Mia el salladı ve okula yürüdü."
+      },
+      {
+        "id": "qm-9",
+        "english": "A small act of kindness made the morning special.",
+        "turkish": "Küçük bir iyilik sabahı özel kıldı.",
+        "translations": {
+          "es-419": "Un pequeño acto de bondad hizo que la mañana fuera especial.",
+          "pt-BR": "Um pequeno gesto de gentileza deixou a manhã especial.",
+          "id": "Sebuah kebaikan kecil membuat pagi itu istimewa.",
+          "ar": "جعل عمل صغير من اللطف ذلك الصباح مميّزًا.",
+          "vi": "Một việc tốt nhỏ đã khiến buổi sáng ấy trở nên đặc biệt.",
+          "hi": "दया के एक छोटे-से काम ने उस सुबह को ख़ास बना दिया।",
+          "ru": "Маленький добрый поступок сделал это утро особенным.",
+          "bn": "দয়ার একটা ছোট্ট কাজ সকালটাকে বিশেষ করে তুলল।",
+          "ur": "مہربانی کے ایک چھوٹے سے کام نے اس صبح کو خاص بنا دیا۔",
+          "th": "ความใจดีเล็ก ๆ น้อย ๆ ทำให้เช้าวันนั้นพิเศษ"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "quiet-morning-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A small act of kindness",
+          "A lost birthday cake",
+          "A busy day at school",
+          "A trip to a big city"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "quiet-morning-q2",
+        "kind": "detail",
+        "prompt": "What did Mia buy at the bakery?",
+        "options": [
+          "Two warm rolls",
+          "A birthday cake",
+          "Milk and eggs",
+          "Some apples"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "quiet-morning-q3",
+        "kind": "inference",
+        "prompt": "Why does Mia buy a second roll?",
+        "options": [
+          "She wants to give the man a birthday breakfast.",
+          "She needs to carry bread to her classroom.",
+          "She wants to feed an animal in the street.",
+          "She plans to keep both rolls for tomorrow."
+        ],
+        "answer": 0
+      }
+    ],
+    "tags": [
+      "gunluk-yasam"
+    ],
+    "descriptions": {
+      "es-419": "Un encuentro cálido que comienza en un pueblo pequeño.",
+      "pt-BR": "Um encontro caloroso que começa em uma cidadezinha.",
+      "id": "Pertemuan hangat yang dimulai di sebuah kota kecil.",
+      "ar": "لقاء دافئ يبدأ في بلدة صغيرة.",
+      "vi": "Một cuộc gặp gỡ ấm áp bắt đầu ở một thị trấn nhỏ.",
+      "hi": "एक छोटे शहर में शुरू होने वाली एक प्यारी-सी मुलाक़ात।",
+      "ru": "Тёплая встреча, которая начинается в маленьком городке.",
+      "bn": "একটা ছোট শহরে শুরু হওয়া এক উষ্ণ সাক্ষাৎ।",
+      "ur": "ایک چھوٹے سے قصبے میں شروع ہونے والی ایک پیاری سی ملاقات۔",
+      "th": "การพบกันอันอบอุ่นที่เริ่มต้นในเมืองเล็ก ๆ"
+    }
+  },
+  "words": [
+    {
+      "id": "quiet",
+      "word": "quiet",
+      "translation": "sessiz",
+      "pronunciation": "/ˈkwaɪət/",
+      "example": "The street was quiet.",
+      "translations": {
+        "es-419": "tranquilo, silencioso",
+        "pt-BR": "tranquilo, silencioso",
+        "id": "tenang, sepi",
+        "ar": "هادئ، صامت",
+        "vi": "yên tĩnh, im lặng",
+        "hi": "शांत, चुप",
+        "ru": "тихий, спокойный",
+        "bn": "শান্ত, চুপচাপ",
+        "ur": "پرسکون، خاموش",
+        "th": "เงียบ, สงบ"
+      }
+    },
+    {
+      "id": "morning",
+      "word": "morning",
+      "translation": "sabah",
+      "pronunciation": "/ˈmɔːrnɪŋ/",
+      "example": "It was a bright morning.",
+      "translations": {
+        "es-419": "mañana",
+        "pt-BR": "manhã",
+        "id": "pagi",
+        "ar": "صباح",
+        "vi": "buổi sáng",
+        "hi": "सुबह",
+        "ru": "утро",
+        "bn": "সকাল",
+        "ur": "صبح",
+        "th": "ตอนเช้า"
+      }
+    },
+    {
+      "id": "bakery",
+      "word": "bakery",
+      "translation": "fırın",
+      "pronunciation": "/ˈbeɪkəri/",
+      "example": "The bakery opened early.",
+      "translations": {
+        "es-419": "panadería",
+        "pt-BR": "padaria",
+        "id": "toko roti",
+        "ar": "مخبز",
+        "vi": "tiệm bánh mì",
+        "hi": "बेकरी, नानबाई की दुकान",
+        "ru": "пекарня",
+        "bn": "বেকারি, রুটির দোকান",
+        "ur": "بیکری، نان بائی کی دکان",
+        "th": "ร้านเบเกอรี่, ร้านขนมปัง"
+      }
+    },
+    {
+      "id": "smile",
+      "word": "smile",
+      "translation": "gülümsemek",
+      "pronunciation": "/smaɪl/",
+      "example": "She gave him a warm smile.",
+      "translations": {
+        "es-419": "sonrisa",
+        "pt-BR": "sorriso",
+        "id": "senyum",
+        "ar": "ابتسامة؛ يبتسم",
+        "vi": "nụ cười; mỉm cười",
+        "hi": "मुस्कान; मुस्कुराना",
+        "ru": "улыбка; улыбаться",
+        "bn": "হাসি; হাসা",
+        "ur": "مسکراہٹ؛ مسکرانا",
+        "th": "รอยยิ้ม; ยิ้ม"
+      }
+    },
+    {
+      "id": "pilot-quiet-morning-birthday",
+      "word": "birthday",
+      "translation": "doğum günü",
+      "pronunciation": "/ˈbɜːrθdeɪ/",
+      "example": "Today is my birthday."
+    },
+    {
+      "id": "pilot-quiet-morning-warm",
+      "word": "warm",
+      "translation": "ılık, sıcak",
+      "pronunciation": "/wɔːrm/",
+      "example": "The bread is warm."
+    },
+    {
+      "id": "pilot-quiet-morning-bread",
+      "word": "bread",
+      "translation": "ekmek",
+      "pronunciation": "/bred/",
+      "example": "I buy bread for breakfast."
+    },
+    {
+      "id": "pilot-quiet-morning-daughter",
+      "word": "daughter",
+      "translation": "kız evlat",
+      "pronunciation": "/ˈdɔːtər/",
+      "example": "His daughter comes every Friday."
+    },
+    {
+      "id": "pilot-quiet-morning-breakfast",
+      "word": "breakfast",
+      "translation": "kahvaltı",
+      "pronunciation": "/ˈbrekfəst/",
+      "example": "This bread is for breakfast."
+    },
+    {
+      "id": "pilot-quiet-morning-waiting",
+      "word": "waiting",
+      "translation": "bekliyor",
+      "pronunciation": "/ˈweɪtɪŋ/",
+      "example": "He is waiting for his daughter."
+    }
+  ],
+  "studyWordIds": [
+    "quiet",
+    "morning",
+    "bakery",
+    "smile",
+    "pilot-quiet-morning-birthday",
+    "pilot-quiet-morning-warm",
+    "pilot-quiet-morning-bread",
+    "pilot-quiet-morning-daughter",
+    "pilot-quiet-morning-breakfast",
+    "pilot-quiet-morning-waiting"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "quiet-morning-q3",
+      "sentenceIds": [
+        "qm-6",
+        "qm-7",
+        "quiet-morning-pilot-07-03"
+      ],
+      "rationale": "The birthday and sharing connect to the later thank-you; the answer requires linking these facts."
+    }
+  ],
+  "publicationBlockers": [
+    "Human editorial and level review pending.",
+    "New sentences require ten support-language translations and review.",
+    "New revision, study-word integration and publisher validation required."
+  ]
+}

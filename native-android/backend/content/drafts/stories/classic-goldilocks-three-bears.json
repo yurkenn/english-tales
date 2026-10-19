@@ -1,0 +1,468 @@
+{
+  "status": "draft",
+  "source": "codex-public-domain-retelling-2026-10-19",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Traditional tale; retold by Flora Annie Steel",
+    "sourceCollection": "English Fairy Tales",
+    "sourceTitle": "The Story of the Three Bears",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/17034",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/17034/pg17034-images.html",
+    "identifiedContributor": {
+      "name": "Flora Annie Steel",
+      "role": "historical reteller",
+      "deathYear": 1929
+    },
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-19",
+    "adaptation": "New graded English retelling and Turkish translation from the identified historical version. Modern translations and illustrations are not used.",
+    "turkeyAssessment": "Identified historical reteller died more than 70 years before 2026; Ministry duration guidance checked. This is not worldwide territorial clearance.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceChapterSha256": "43b4a71d91e2960f3b33b8dab44bf1e08a6390b12843224aacb78557a9f0cedc",
+    "chapterHashFormat": "HTML tags removed; entities decoded; whitespace collapsed with Python split/join; includes chapter heading."
+  },
+  "editorialNotes": [
+    "A2 target: past narrative, contrasts, repeated objects and simple cause/effect.",
+    "Retains the bears’ large/middle/little sizes and the historical hot/cold porridge sequence; does not invent named franchise characters.",
+    "Omits the source’s speculation about injury and punishment after the escape.",
+    "Reading sections are editorial groupings, not implemented chapter navigation."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr"
+    ],
+    "pendingLanguages": [
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ]
+  },
+  "readingSections": [
+    {
+      "title": "An empty house",
+      "firstSentenceId": "cl-goldilocks-01",
+      "lastSentenceId": "cl-goldilocks-10"
+    },
+    {
+      "title": "Trying the bears’ things",
+      "firstSentenceId": "cl-goldilocks-11",
+      "lastSentenceId": "cl-goldilocks-23"
+    },
+    {
+      "title": "The bears return",
+      "firstSentenceId": "cl-goldilocks-24",
+      "lastSentenceId": "cl-goldilocks-37"
+    }
+  ],
+  "story": {
+    "id": "classic-goldilocks-three-bears",
+    "title": "Goldilocks and the Three Bears",
+    "author": "Traditional tale; retold by Flora Annie Steel",
+    "level": "A2",
+    "genre": "Macera",
+    "description": "Ormandaki boş bir eve giren Goldilocks, üç ayının eşyalarını dener. Ayılar eve döndüğünde geride bıraktığı izleri bulur. A2 hedefli seviyeli kısa uyarlama. İngilizce uyarlama ve Türkçe çeviri: Yurken Stories. Tam kaynak metin değildir.",
+    "coverKey": "cover_classic_goldilocks_three_bears",
+    "tags": [
+      "masal"
+    ],
+    "sentences": [
+      {
+        "id": "cl-goldilocks-01",
+        "english": "Three bears lived in a small house in the wood.",
+        "turkish": "Üç ayı koruluktaki küçük bir evde yaşıyordu."
+      },
+      {
+        "id": "cl-goldilocks-02",
+        "english": "There was a large bear, a middle-sized bear and a little bear.",
+        "turkish": "Büyük bir ayı, orta boy bir ayı ve küçük bir ayı vardı."
+      },
+      {
+        "id": "cl-goldilocks-03",
+        "english": "Each bear had a bowl, a chair and a bed.",
+        "turkish": "Her ayının bir kâsesi, bir sandalyesi ve bir yatağı vardı."
+      },
+      {
+        "id": "cl-goldilocks-04",
+        "english": "One morning, they made porridge for breakfast.",
+        "turkish": "Bir sabah kahvaltı için yulaf lapası yaptılar."
+      },
+      {
+        "id": "cl-goldilocks-05",
+        "english": "The porridge was too hot, so they went for a walk.",
+        "turkish": "Lapa çok sıcaktı, bu yüzden yürüyüşe çıktılar."
+      },
+      {
+        "id": "cl-goldilocks-06",
+        "english": "While they were away, a girl called Goldilocks came along the path.",
+        "turkish": "Onlar dışarıdayken Goldilocks adında bir kız patikadan geldi."
+      },
+      {
+        "id": "cl-goldilocks-07",
+        "english": "She was tired and hungry after walking through the wood.",
+        "turkish": "Korulukta yürüdükten sonra yorulmuş ve acıkmıştı."
+      },
+      {
+        "id": "cl-goldilocks-08",
+        "english": "She looked through the window and saw three bowls on a table.",
+        "turkish": "Pencereden baktı ve masanın üstünde üç kâse gördü."
+      },
+      {
+        "id": "cl-goldilocks-09",
+        "english": "She knocked, but nobody answered.",
+        "turkish": "Kapıyı çaldı ama kimse cevap vermedi."
+      },
+      {
+        "id": "cl-goldilocks-10",
+        "english": "Instead of waiting, she opened the door and walked inside.",
+        "turkish": "Beklemek yerine kapıyı açıp içeri girdi."
+      },
+      {
+        "id": "cl-goldilocks-11",
+        "english": "First, she tried the porridge in the large bowl.",
+        "turkish": "Önce büyük kâsedeki lapayı denedi."
+      },
+      {
+        "id": "cl-goldilocks-12",
+        "english": "It was too hot to eat.",
+        "turkish": "Yenmeyecek kadar sıcaktı."
+      },
+      {
+        "id": "cl-goldilocks-13",
+        "english": "The porridge in the middle-sized bowl was too cold.",
+        "turkish": "Orta boy kâsedeki lapa çok soğuktu."
+      },
+      {
+        "id": "cl-goldilocks-14",
+        "english": "But the little bear’s porridge was just right.",
+        "turkish": "Ama küçük ayının lapası tam kıvamındaydı."
+      },
+      {
+        "id": "cl-goldilocks-15",
+        "english": "Goldilocks ate it until the little bowl was empty.",
+        "turkish": "Goldilocks küçük kâse boşalana kadar lapayı yedi."
+      },
+      {
+        "id": "cl-goldilocks-16",
+        "english": "Then she wanted to rest her tired legs.",
+        "turkish": "Sonra yorgun bacaklarını dinlendirmek istedi."
+      },
+      {
+        "id": "cl-goldilocks-17",
+        "english": "The large chair was too hard, and the middle-sized chair was too soft.",
+        "turkish": "Büyük sandalye çok sertti, orta boy sandalye ise çok yumuşaktı."
+      },
+      {
+        "id": "cl-goldilocks-18",
+        "english": "She sat in the little chair and smiled.",
+        "turkish": "Küçük sandalyeye oturdu ve gülümsedi."
+      },
+      {
+        "id": "cl-goldilocks-19",
+        "english": "But the chair broke under her, and she fell to the floor.",
+        "turkish": "Ama sandalye altında kırıldı ve yere düştü."
+      },
+      {
+        "id": "cl-goldilocks-20",
+        "english": "Goldilocks got up and went upstairs to look for a bed.",
+        "turkish": "Goldilocks kalktı ve bir yatak bulmak için üst kata çıktı."
+      },
+      {
+        "id": "cl-goldilocks-21",
+        "english": "She tried the two larger beds, but neither felt comfortable.",
+        "turkish": "Daha büyük olan iki yatağı denedi ama ikisi de rahat gelmedi."
+      },
+      {
+        "id": "cl-goldilocks-22",
+        "english": "The little bed was just right, so she lay down.",
+        "turkish": "Küçük yatak tam ona göreydi, o da uzandı."
+      },
+      {
+        "id": "cl-goldilocks-23",
+        "english": "Soon she was fast asleep.",
+        "turkish": "Kısa süre sonra derin bir uykuya daldı."
+      },
+      {
+        "id": "cl-goldilocks-24",
+        "english": "When the bears returned, they noticed the spoons in their porridge.",
+        "turkish": "Ayılar döndüğünde lapalarındaki kaşıkları fark ettiler."
+      },
+      {
+        "id": "cl-goldilocks-25",
+        "english": "The little bear looked into his bowl and found nothing.",
+        "turkish": "Küçük ayı kâsesine baktı ve içinde hiçbir şey bulamadı."
+      },
+      {
+        "id": "cl-goldilocks-26",
+        "english": "\"Someone has eaten my breakfast!\" he cried.",
+        "turkish": "\"Birisi kahvaltımı yemiş!\" diye bağırdı."
+      },
+      {
+        "id": "cl-goldilocks-27",
+        "english": "Next, the bears went to their chairs.",
+        "turkish": "Sonra ayılar sandalyelerinin yanına gitti."
+      },
+      {
+        "id": "cl-goldilocks-28",
+        "english": "The little bear’s chair lay broken on the floor.",
+        "turkish": "Küçük ayının sandalyesi yerde kırılmış halde duruyordu."
+      },
+      {
+        "id": "cl-goldilocks-29",
+        "english": "The bears looked at each other and went upstairs.",
+        "turkish": "Ayılar birbirlerine baktı ve üst kata çıktı."
+      },
+      {
+        "id": "cl-goldilocks-30",
+        "english": "There they found Goldilocks sleeping in the little bed.",
+        "turkish": "Orada Goldilocks’u küçük yatakta uyurken buldular."
+      },
+      {
+        "id": "cl-goldilocks-31",
+        "english": "The large bear spoke, but Goldilocks did not wake up.",
+        "turkish": "Büyük ayı konuştu ama Goldilocks uyanmadı."
+      },
+      {
+        "id": "cl-goldilocks-32",
+        "english": "Then the little bear called out beside his bed.",
+        "turkish": "Sonra küçük ayı yatağının yanında seslendi."
+      },
+      {
+        "id": "cl-goldilocks-33",
+        "english": "Goldilocks opened her eyes and saw the three bears watching her.",
+        "turkish": "Goldilocks gözlerini açtı ve üç ayının kendisini izlediğini gördü."
+      },
+      {
+        "id": "cl-goldilocks-34",
+        "english": "She was so frightened that she jumped out of the bed.",
+        "turkish": "O kadar korktu ki yataktan fırladı."
+      },
+      {
+        "id": "cl-goldilocks-35",
+        "english": "The window was open, and she climbed out through it.",
+        "turkish": "Pencere açıktı, o da pencereden dışarı çıktı."
+      },
+      {
+        "id": "cl-goldilocks-36",
+        "english": "She ran away into the wood without looking back.",
+        "turkish": "Arkasına bakmadan koruluğa doğru koşup uzaklaştı."
+      },
+      {
+        "id": "cl-goldilocks-37",
+        "english": "The bears never saw Goldilocks in their house again.",
+        "turkish": "Ayılar Goldilocks’u bir daha evlerinde hiç görmedi."
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-goldilocks-three-bears-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "A girl helps three bears make their breakfast.",
+          "Three bears visit a girl and repair her chair.",
+          "A girl uses the bears’ things while they are away.",
+          "Three bears get lost while looking for their house."
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-goldilocks-three-bears-q2",
+        "kind": "detail",
+        "prompt": "Why do the bears leave their house in the morning?",
+        "options": [
+          "Their porridge needs time to cool.",
+          "They want to buy a new bed.",
+          "They need to find Goldilocks.",
+          "Their chairs are all broken."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-goldilocks-three-bears-q3",
+        "kind": "detail",
+        "prompt": "What happens when Goldilocks sits in the little chair?",
+        "options": [
+          "It turns out to be too hard.",
+          "It breaks, and she falls down.",
+          "It moves closer to the window.",
+          "It wakes the bears upstairs."
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-goldilocks-three-bears-q4",
+        "kind": "inference",
+        "prompt": "Why do the bears continue looking upstairs?",
+        "options": [
+          "They want to bring breakfast to their beds.",
+          "They hear Goldilocks ask them for help.",
+          "They are too tired to repair the chair.",
+          "The changed bowls and broken chair suggest a visitor."
+        ],
+        "answer": 3
+      },
+      {
+        "id": "classic-goldilocks-three-bears-q5",
+        "kind": "inference",
+        "prompt": "What could Goldilocks have done to avoid this problem?",
+        "options": [
+          "Eat from the larger bowl instead.",
+          "Choose a chair that was harder.",
+          "Wait outside until she could ask permission.",
+          "Close the window before she went to sleep."
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "bowl",
+      "word": "bowl",
+      "translation": "kâse",
+      "pronunciation": "/boʊl/",
+      "example": "The porridge is in a little bowl."
+    },
+    {
+      "id": "porridge",
+      "word": "porridge",
+      "translation": "yulaf lapası",
+      "pronunciation": "/ˈpɔːrɪdʒ/",
+      "example": "The porridge is too hot."
+    },
+    {
+      "id": "chair",
+      "word": "chair",
+      "translation": "sandalye",
+      "pronunciation": "/tʃer/",
+      "example": "She sits in the little chair."
+    },
+    {
+      "id": "hard",
+      "word": "hard",
+      "translation": "sert",
+      "pronunciation": "/hɑːrd/",
+      "example": "The large chair is too hard."
+    },
+    {
+      "id": "soft",
+      "word": "soft",
+      "translation": "yumuşak",
+      "pronunciation": "/sɔːft/",
+      "example": "This chair is too soft."
+    },
+    {
+      "id": "empty",
+      "word": "empty",
+      "translation": "boş",
+      "pronunciation": "/ˈempti/",
+      "example": "The little bowl is empty."
+    },
+    {
+      "id": "comfortable",
+      "word": "comfortable",
+      "translation": "rahat",
+      "pronunciation": "/ˈkʌmftəbəl/",
+      "example": "The little bed feels comfortable."
+    },
+    {
+      "id": "upstairs",
+      "word": "upstairs",
+      "translation": "üst kata, üst katta",
+      "pronunciation": "/ˌʌpˈsterz/",
+      "example": "The bears go upstairs."
+    }
+  ],
+  "existingStudyWordIds": [
+    "frightened",
+    "window"
+  ],
+  "studyWordIds": [
+    "frightened",
+    "window",
+    "bowl",
+    "porridge",
+    "chair",
+    "hard",
+    "soft",
+    "empty",
+    "comfortable",
+    "upstairs"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-goldilocks-three-bears-q1",
+      "sentenceIds": [
+        "cl-goldilocks-05",
+        "cl-goldilocks-10",
+        "cl-goldilocks-15",
+        "cl-goldilocks-19",
+        "cl-goldilocks-30"
+      ],
+      "rationale": "The main sequence is the uninvited visit, not a single bowl or chair."
+    },
+    {
+      "questionId": "classic-goldilocks-three-bears-q2",
+      "sentenceIds": [
+        "cl-goldilocks-04",
+        "cl-goldilocks-05"
+      ],
+      "rationale": "The departure is explicitly linked to hot porridge."
+    },
+    {
+      "questionId": "classic-goldilocks-three-bears-q3",
+      "sentenceIds": [
+        "cl-goldilocks-18",
+        "cl-goldilocks-19"
+      ],
+      "rationale": "Only the broken-chair outcome appears in the text."
+    },
+    {
+      "questionId": "classic-goldilocks-three-bears-q4",
+      "sentenceIds": [
+        "cl-goldilocks-24",
+        "cl-goldilocks-25",
+        "cl-goldilocks-28",
+        "cl-goldilocks-29"
+      ],
+      "rationale": "The reader combines the clues that someone has entered."
+    },
+    {
+      "questionId": "classic-goldilocks-three-bears-q5",
+      "sentenceIds": [
+        "cl-goldilocks-09",
+        "cl-goldilocks-10",
+        "cl-goldilocks-19",
+        "cl-goldilocks-33",
+        "cl-goldilocks-34"
+      ],
+      "rationale": "The unanswered knock and uninvited entry cause the later trouble."
+    }
+  ],
+  "publicationBlockers": [
+    "Human editorial and target-level review pending.",
+    "Ten support-language translations and review pending.",
+    "Cover artwork, rights record and asset mapping pending.",
+    "Publisher revision creation, validation and publication pending."
+  ]
+}

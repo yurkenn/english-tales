@@ -1,0 +1,677 @@
+{
+  "status": "draft",
+  "kind": "revision",
+  "source": "codex-story-quality-pilot-2026-10-19",
+  "reviewedBy": null,
+  "baseStoryId": "last-train",
+  "baseStorySHA256": "0a1416136dc389fda16f7fdcecfb358233a9816c807bf90229b850498ea51eac",
+  "editorialNotes": [
+    "Makes the camera/ticket location explicit before the ticket goes missing.",
+    "Explains the stone and the cost of missing the train; preserves the original ending."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr"
+    ],
+    "unchangedTranslationsPreserved": true,
+    "newSentenceIds": [
+      "last-train-pilot-02-01",
+      "last-train-pilot-02-02",
+      "last-train-pilot-04-01",
+      "last-train-pilot-08-01",
+      "last-train-pilot-08-02",
+      "last-train-pilot-12-01",
+      "last-train-pilot-12-02",
+      "last-train-pilot-15-01",
+      "last-train-pilot-15-02"
+    ],
+    "pendingLanguages": [
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ]
+  },
+  "story": {
+    "id": "last-train",
+    "title": "The Last Train",
+    "author": "English Tales",
+    "level": "A2",
+    "genre": "Macera",
+    "description": "Kaçırılmak üzere olan bir tren, iki arkadaş için beklenmedik bir yolculuğa dönüşüyor.",
+    "coverKey": "cover_last_train",
+    "sentences": [
+      {
+        "id": "last-train-1",
+        "english": "Sam and Lily spent the afternoon in a village near the mountains.",
+        "turkish": "Sam ve Lily öğleden sonrayı dağların yakınındaki bir köyde geçirdi.",
+        "translations": {
+          "es-419": "Sam y Lily pasaron la tarde en un pueblo cerca de las montañas.",
+          "pt-BR": "Sam e Lily passaram a tarde em uma vila perto das montanhas.",
+          "id": "Sam dan Lily menghabiskan sore di sebuah desa dekat pegunungan.",
+          "ar": "قضى سام وليلي فترة بعد الظهر في قرية قرب الجبال.",
+          "vi": "Sam và Lily dành cả buổi chiều ở một ngôi làng gần núi.",
+          "hi": "सैम और लिली ने दोपहर पहाड़ों के पास एक गाँव में बिताई।",
+          "ru": "Сэм и Лили провели день в деревне у подножия гор.",
+          "bn": "স্যাম আর লিলি পাহাড়ের কাছের একটা গ্রামে বিকেলটা কাটাল।",
+          "ur": "سام اور للی نے دوپہر پہاڑوں کے پاس ایک گاؤں میں گزاری۔",
+          "th": "แซมกับลิลลี่ใช้เวลาช่วงบ่ายในหมู่บ้านแห่งหนึ่งใกล้ภูเขา"
+        }
+      },
+      {
+        "id": "last-train-2",
+        "english": "They visited a market and took photos of the old houses.",
+        "turkish": "Bir pazarı gezdiler ve eski evlerin fotoğraflarını çektiler.",
+        "translations": {
+          "es-419": "Visitaron un mercado y tomaron fotos de las casas antiguas.",
+          "pt-BR": "Eles visitaram uma feira e tiraram fotos das casas antigas.",
+          "id": "Mereka mengunjungi pasar dan memotret rumah-rumah tua.",
+          "ar": "زارا سوقًا والتقطا صورًا للبيوت القديمة.",
+          "vi": "Họ đi thăm chợ và chụp ảnh những ngôi nhà cổ.",
+          "hi": "वे एक बाज़ार गए और पुराने घरों की तस्वीरें लीं।",
+          "ru": "Они побывали на рынке и сфотографировали старые дома.",
+          "bn": "তারা একটা বাজারে ঘুরল আর পুরোনো বাড়িগুলোর ছবি তুলল।",
+          "ur": "وہ ایک بازار گئے اور پرانے گھروں کی تصویریں کھینچیں۔",
+          "th": "พวกเขาไปเที่ยวตลาดและถ่ายรูปบ้านเก่า ๆ"
+        }
+      },
+      {
+        "id": "last-train-pilot-02-01",
+        "english": "At one stall, Sam stopped to photograph a row of flowers.",
+        "turkish": "Sam bir tezgahta bir sıra çiçeğin fotoğrafını çekmek için durdu."
+      },
+      {
+        "id": "last-train-pilot-02-02",
+        "english": "He put his camera and ticket on a bench.",
+        "turkish": "Fotoğraf makinesini ve biletini bir bankın üstüne koydu."
+      },
+      {
+        "id": "last-train-3",
+        "english": "When the sky grew dark, Lily checked her watch.",
+        "turkish": "Hava karardığında Lily saatine baktı.",
+        "translations": {
+          "es-419": "Cuando el cielo se oscureció, Lily miró su reloj.",
+          "pt-BR": "Quando o céu escureceu, Lily olhou o relógio.",
+          "id": "Ketika langit mulai gelap, Lily melihat jam tangannya.",
+          "ar": "عندما أظلمت السماء، نظرت ليلي إلى ساعتها.",
+          "vi": "Khi trời bắt đầu tối, Lily xem đồng hồ.",
+          "hi": "जब आसमान में अँधेरा होने लगा, तो लिली ने अपनी घड़ी देखी।",
+          "ru": "Когда небо потемнело, Лили посмотрела на часы.",
+          "bn": "আকাশ অন্ধকার হয়ে এলে লিলি তার ঘড়ি দেখল।",
+          "ur": "جب آسمان پر اندھیرا چھانے لگا تو للی نے اپنی گھڑی دیکھی۔",
+          "th": "เมื่อท้องฟ้าเริ่มมืด ลิลลี่ก็ดูนาฬิกา"
+        }
+      },
+      {
+        "id": "last-train-4",
+        "english": "The last train was due in twenty minutes.",
+        "turkish": "Son trenin gelmesine yirmi dakika vardı.",
+        "translations": {
+          "es-419": "El último tren debía llegar en veinte minutos.",
+          "pt-BR": "O último trem chegaria em vinte minutos.",
+          "id": "Kereta terakhir akan tiba dua puluh menit lagi.",
+          "ar": "كان موعد القطار الأخير بعد عشرين دقيقة.",
+          "vi": "Chuyến tàu cuối cùng sẽ đến trong hai mươi phút nữa.",
+          "hi": "आख़िरी ट्रेन बीस मिनट में आने वाली थी।",
+          "ru": "Последний поезд должен был прийти через двадцать минут.",
+          "bn": "শেষ ট্রেনটা আসার কথা আর বিশ মিনিট পরে।",
+          "ur": "آخری ٹرین بیس منٹ میں آنے والی تھی۔",
+          "th": "รถไฟเที่ยวสุดท้ายจะมาถึงในอีกยี่สิบนาที"
+        }
+      },
+      {
+        "id": "last-train-pilot-04-01",
+        "english": "The next train would not leave until the following morning.",
+        "turkish": "Bir sonraki tren ertesi sabaha kadar kalkmayacaktı."
+      },
+      {
+        "id": "last-train-5",
+        "english": "They hurried to the station at the end of the village.",
+        "turkish": "Köyün sonundaki istasyona aceleyle gittiler.",
+        "translations": {
+          "es-419": "Se apresuraron hacia la estación, al final del pueblo.",
+          "pt-BR": "Eles correram até a estação, no fim da vila.",
+          "id": "Mereka bergegas ke stasiun di ujung desa.",
+          "ar": "أسرعا إلى المحطة في طرف القرية.",
+          "vi": "Họ vội vã đến nhà ga ở cuối làng.",
+          "hi": "वे जल्दी-जल्दी गाँव के आख़िर में बने स्टेशन की ओर गए।",
+          "ru": "Они поспешили на станцию на краю деревни.",
+          "bn": "তারা তাড়াতাড়ি গ্রামের শেষ মাথার স্টেশনের দিকে গেল।",
+          "ur": "وہ جلدی جلدی گاؤں کے آخر میں واقع اسٹیشن کی طرف گئے۔",
+          "th": "พวกเขารีบไปที่สถานีซึ่งอยู่สุดหมู่บ้าน"
+        }
+      },
+      {
+        "id": "last-train-6",
+        "english": "Sam reached into his pocket, but his ticket was missing.",
+        "turkish": "Sam elini cebine attı ama bileti yerinde değildi.",
+        "translations": {
+          "es-419": "Sam metió la mano en el bolsillo, pero su boleto no estaba.",
+          "pt-BR": "Sam pôs a mão no bolso, mas a passagem não estava lá.",
+          "id": "Sam merogoh sakunya, tetapi tiketnya tidak ada.",
+          "ar": "مدّ سام يده إلى جيبه، لكن تذكرته كانت مفقودة.",
+          "vi": "Sam thò tay vào túi, nhưng tấm vé của cậu đã biến mất.",
+          "hi": "सैम ने अपनी जेब में हाथ डाला, लेकिन उसका टिकट गायब था।",
+          "ru": "Сэм сунул руку в карман, но билета там не было.",
+          "bn": "স্যাম পকেটে হাত দিল, কিন্তু তার টিকিটটা নেই।",
+          "ur": "سام نے اپنی جیب میں ہاتھ ڈالا، لیکن اس کا ٹکٹ غائب تھا۔",
+          "th": "แซมล้วงกระเป๋า แต่ตั๋วของเขาหายไป"
+        }
+      },
+      {
+        "id": "last-train-7",
+        "english": "He remembered putting it beside his camera at the market.",
+        "turkish": "Pazarda bileti fotoğraf makinesinin yanına koyduğunu hatırladı.",
+        "translations": {
+          "es-419": "Recordó que lo había puesto junto a su cámara en el mercado.",
+          "pt-BR": "Ele se lembrou de tê-la deixado ao lado da câmera, na feira.",
+          "id": "Ia ingat telah menaruhnya di samping kameranya di pasar.",
+          "ar": "تذكّر أنه وضعها بجانب الكاميرا في السوق.",
+          "vi": "Cậu nhớ ra mình đã đặt nó cạnh máy ảnh ở chợ.",
+          "hi": "उसे याद आया कि उसने उसे बाज़ार में अपने कैमरे के पास रखा था।",
+          "ru": "Он вспомнил, что положил его рядом с фотоаппаратом на рынке.",
+          "bn": "তার মনে পড়ল, বাজারে সে টিকিটটা ক্যামেরার পাশে রেখেছিল।",
+          "ur": "اسے یاد آیا کہ اس نے ٹکٹ بازار میں اپنے کیمرے کے پاس رکھا تھا۔",
+          "th": "เขานึกได้ว่าวางมันไว้ข้างกล้องถ่ายรูปที่ตลาด"
+        }
+      },
+      {
+        "id": "last-train-8",
+        "english": "Lily waited on the platform while Sam ran back.",
+        "turkish": "Sam geri koşarken Lily peronda bekledi.",
+        "translations": {
+          "es-419": "Lily esperó en el andén mientras Sam regresaba corriendo.",
+          "pt-BR": "Lily esperou na plataforma enquanto Sam voltava correndo.",
+          "id": "Lily menunggu di peron sementara Sam berlari kembali.",
+          "ar": "انتظرت ليلي على الرصيف بينما ركض سام عائدًا.",
+          "vi": "Lily đợi ở sân ga trong khi Sam chạy quay lại.",
+          "hi": "लिली प्लेटफ़ॉर्म पर इंतज़ार करती रही और सैम वापस दौड़ा।",
+          "ru": "Лили ждала на платформе, а Сэм побежал обратно.",
+          "bn": "স্যাম দৌড়ে ফিরে গেল, আর লিলি প্ল্যাটফর্মে অপেক্ষা করল।",
+          "ur": "للی پلیٹ فارم پر انتظار کرتی رہی اور سام واپس دوڑا۔",
+          "th": "ลิลลี่รออยู่ที่ชานชาลาขณะที่แซมวิ่งกลับไป"
+        }
+      },
+      {
+        "id": "last-train-pilot-08-01",
+        "english": "\"I will wait beside the station clock,\" she called.",
+        "turkish": "\"İstasyon saatinin yanında bekleyeceğim,\" diye seslendi."
+      },
+      {
+        "id": "last-train-pilot-08-02",
+        "english": "Sam knew exactly where to find her.",
+        "turkish": "Sam onu nerede bulacağını tam olarak biliyordu."
+      },
+      {
+        "id": "last-train-9",
+        "english": "Most of the market stalls were already closed.",
+        "turkish": "Pazardaki tezgâhların çoğu çoktan kapanmıştı.",
+        "translations": {
+          "es-419": "La mayoría de los puestos del mercado ya estaban cerrados.",
+          "pt-BR": "A maioria das barracas da feira já estava fechada.",
+          "id": "Sebagian besar kios di pasar sudah tutup.",
+          "ar": "كانت معظم أكشاك السوق قد أُغلقت.",
+          "vi": "Phần lớn các sạp hàng ở chợ đã đóng cửa.",
+          "hi": "बाज़ार की ज़्यादातर दुकानें पहले ही बंद हो चुकी थीं।",
+          "ru": "Большинство прилавков на рынке уже закрылись.",
+          "bn": "বাজারের বেশির ভাগ দোকান ততক্ষণে বন্ধ হয়ে গিয়েছিল।",
+          "ur": "بازار کے زیادہ تر اسٹال پہلے ہی بند ہو چکے تھے۔",
+          "th": "แผงร้านในตลาดส่วนใหญ่ปิดไปแล้ว"
+        }
+      },
+      {
+        "id": "last-train-10",
+        "english": "A woman was packing the last box of flowers.",
+        "turkish": "Bir kadın son çiçek kutusunu hazırlıyordu.",
+        "translations": {
+          "es-419": "Una mujer estaba empacando la última caja de flores.",
+          "pt-BR": "Uma mulher estava guardando a última caixa de flores.",
+          "id": "Seorang wanita sedang mengemas kotak bunga terakhir.",
+          "ar": "كانت امرأة تحزم آخر صندوق من الزهور.",
+          "vi": "Một người phụ nữ đang đóng thùng hoa cuối cùng.",
+          "hi": "एक औरत फूलों का आख़िरी डिब्बा पैक कर रही थी।",
+          "ru": "Одна женщина упаковывала последнюю коробку цветов.",
+          "bn": "একজন মহিলা ফুলের শেষ বাক্সটা গোছাচ্ছিলেন।",
+          "ur": "ایک عورت پھولوں کا آخری ڈبہ باندھ رہی تھی۔",
+          "th": "ผู้หญิงคนหนึ่งกำลังเก็บดอกไม้กล่องสุดท้าย"
+        }
+      },
+      {
+        "id": "last-train-11",
+        "english": "Sam asked her about the ticket, and she pointed to a bench.",
+        "turkish": "Sam kadına bileti sordu, kadın da bir bankı işaret etti.",
+        "translations": {
+          "es-419": "Sam le preguntó por el boleto, y ella señaló una banca.",
+          "pt-BR": "Sam perguntou a ela sobre a passagem, e ela apontou para um banco.",
+          "id": "Sam bertanya kepadanya tentang tiket itu, dan wanita itu menunjuk ke sebuah bangku.",
+          "ar": "سألها سام عن التذكرة، فأشارت إلى مقعد.",
+          "vi": "Sam hỏi bà về tấm vé, và bà chỉ tay về phía một chiếc ghế dài.",
+          "hi": "सैम ने उससे टिकट के बारे में पूछा, और उसने एक बेंच की ओर इशारा किया।",
+          "ru": "Сэм спросил её о билете, и она указала на скамейку.",
+          "bn": "স্যাম তাঁকে টিকিটের কথা জিজ্ঞেস করল, আর তিনি একটা বেঞ্চের দিকে দেখালেন।",
+          "ur": "سام نے اس سے ٹکٹ کے بارے میں پوچھا، اور اس نے ایک بینچ کی طرف اشارہ کیا۔",
+          "th": "แซมถามเธอเรื่องตั๋ว และเธอก็ชี้ไปที่ม้านั่ง"
+        }
+      },
+      {
+        "id": "last-train-12",
+        "english": "There it was, under a small stone.",
+        "turkish": "Bilet oradaydı, küçük bir taşın altındaydı.",
+        "translations": {
+          "es-419": "Ahí estaba, debajo de una piedra pequeña.",
+          "pt-BR": "Lá estava ela, debaixo de uma pedrinha.",
+          "id": "Tiket itu ada di sana, di bawah sebuah batu kecil.",
+          "ar": "وهناك كانت، تحت حجر صغير.",
+          "vi": "Nó nằm ngay đó, dưới một hòn đá nhỏ.",
+          "hi": "टिकट वहीं था, एक छोटे पत्थर के नीचे।",
+          "ru": "Вот он — под маленьким камешком.",
+          "bn": "এই তো টিকিটটা, একটা ছোট পাথরের নিচে।",
+          "ur": "ٹکٹ وہیں تھا، ایک چھوٹے سے پتھر کے نیچے۔",
+          "th": "ตั๋วอยู่ตรงนั้นเอง ใต้ก้อนหินก้อนเล็ก ๆ"
+        }
+      },
+      {
+        "id": "last-train-pilot-12-01",
+        "english": "\"The wind was blowing it away,\" the woman explained.",
+        "turkish": "Kadın, \"Rüzgâr onu uçuruyordu,\" diye açıkladı."
+      },
+      {
+        "id": "last-train-pilot-12-02",
+        "english": "\"I put the stone there to keep it safe.\"",
+        "turkish": "\"Güvende tutmak için taşı üstüne koydum.\""
+      },
+      {
+        "id": "last-train-13",
+        "english": "Sam thanked the woman and ran toward the station.",
+        "turkish": "Sam kadına teşekkür etti ve istasyona doğru koştu.",
+        "translations": {
+          "es-419": "Sam le dio las gracias a la mujer y corrió hacia la estación.",
+          "pt-BR": "Sam agradeceu à mulher e correu em direção à estação.",
+          "id": "Sam berterima kasih kepada wanita itu dan berlari menuju stasiun.",
+          "ar": "شكر سام المرأة وركض نحو المحطة.",
+          "vi": "Sam cảm ơn người phụ nữ và chạy về phía nhà ga.",
+          "hi": "सैम ने औरत को धन्यवाद दिया और स्टेशन की ओर दौड़ा।",
+          "ru": "Сэм поблагодарил женщину и побежал к станции.",
+          "bn": "স্যাম মহিলাকে ধন্যবাদ দিয়ে স্টেশনের দিকে দৌড়াল।",
+          "ur": "سام نے عورت کا شکریہ ادا کیا اور اسٹیشن کی طرف دوڑا۔",
+          "th": "แซมขอบคุณผู้หญิงคนนั้นและวิ่งไปที่สถานี"
+        }
+      },
+      {
+        "id": "last-train-14",
+        "english": "He could hear the train coming around the hill.",
+        "turkish": "Trenin tepenin öbür yanından geldiğini duyabiliyordu.",
+        "translations": {
+          "es-419": "Podía oír el tren que venía rodeando la colina.",
+          "pt-BR": "Ele conseguia ouvir o trem contornando a colina.",
+          "id": "Ia bisa mendengar kereta datang dari balik bukit.",
+          "ar": "كان يسمع القطار قادمًا من وراء التل.",
+          "vi": "Cậu có thể nghe thấy tiếng tàu đang vòng qua ngọn đồi.",
+          "hi": "उसे पहाड़ी के पीछे से आती ट्रेन की आवाज़ सुनाई दे रही थी।",
+          "ru": "Он слышал, как из-за холма приближается поезд.",
+          "bn": "সে পাহাড় ঘুরে ট্রেন আসার শব্দ শুনতে পাচ্ছিল।",
+          "ur": "اسے پہاڑی کے گرد آتی ہوئی ٹرین کی آواز سنائی دے رہی تھی۔",
+          "th": "เขาได้ยินเสียงรถไฟกำลังแล่นอ้อมเนินเขามา"
+        }
+      },
+      {
+        "id": "last-train-15",
+        "english": "Lily waved from the platform as he arrived.",
+        "turkish": "Sam vardığında Lily perondan el salladı.",
+        "translations": {
+          "es-419": "Lily lo saludó con la mano desde el andén cuando él llegó.",
+          "pt-BR": "Lily acenou da plataforma quando ele chegou.",
+          "id": "Lily melambai dari peron ketika Sam tiba.",
+          "ar": "لوّحت ليلي من الرصيف عندما وصل.",
+          "vi": "Lily vẫy tay từ sân ga khi cậu đến nơi.",
+          "hi": "जब वह पहुँचा, तो लिली ने प्लेटफ़ॉर्म से हाथ हिलाया।",
+          "ru": "Когда он прибежал, Лили помахала ему с платформы.",
+          "bn": "সে পৌঁছাতেই লিলি প্ল্যাটফর্ম থেকে হাত নাড়ল।",
+          "ur": "جب وہ پہنچا تو للی نے پلیٹ فارم سے ہاتھ ہلایا۔",
+          "th": "ลิลลี่โบกมือจากชานชาลาเมื่อเขามาถึง"
+        }
+      },
+      {
+        "id": "last-train-pilot-15-01",
+        "english": "She was still standing beside the clock.",
+        "turkish": "Hâlâ saatin yanında duruyordu."
+      },
+      {
+        "id": "last-train-pilot-15-02",
+        "english": "Sam held up the ticket so she could see it.",
+        "turkish": "Sam bileti görebilmesi için havaya kaldırdı."
+      },
+      {
+        "id": "last-train-16",
+        "english": "They climbed aboard just before the doors closed.",
+        "turkish": "Kapılar kapanmadan hemen önce trene bindiler.",
+        "translations": {
+          "es-419": "Subieron justo antes de que se cerraran las puertas.",
+          "pt-BR": "Eles subiram no trem logo antes de as portas se fecharem.",
+          "id": "Mereka naik ke kereta tepat sebelum pintunya tertutup.",
+          "ar": "صعدا إلى القطار قبل أن تُغلق الأبواب بلحظة.",
+          "vi": "Họ bước lên tàu ngay trước khi cửa đóng lại.",
+          "hi": "दरवाज़े बंद होने से ठीक पहले वे ट्रेन में चढ़ गए।",
+          "ru": "Они сели в вагон прямо перед тем, как закрылись двери.",
+          "bn": "দরজা বন্ধ হওয়ার ঠিক আগে তারা ট্রেনে উঠে পড়ল।",
+          "ur": "دروازے بند ہونے سے ذرا پہلے وہ ٹرین میں سوار ہو گئے۔",
+          "th": "พวกเขาขึ้นรถไฟทันก่อนที่ประตูจะปิด"
+        }
+      },
+      {
+        "id": "last-train-17",
+        "english": "Through the window, they watched the village lights disappear.",
+        "turkish": "Pencereden köyün ışıklarının gözden kayboluşunu izlediler.",
+        "translations": {
+          "es-419": "Por la ventana, vieron desaparecer las luces del pueblo.",
+          "pt-BR": "Pela janela, viram as luzes da vila desaparecerem.",
+          "id": "Dari jendela, mereka melihat lampu-lampu desa menghilang.",
+          "ar": "من النافذة، شاهدا أضواء القرية تختفي.",
+          "vi": "Qua cửa sổ, họ nhìn những ánh đèn của ngôi làng khuất dần.",
+          "hi": "खिड़की से उन्होंने गाँव की रोशनियों को ग़ायब होते देखा।",
+          "ru": "Через окно они смотрели, как исчезают огни деревни.",
+          "bn": "জানালা দিয়ে তারা দেখল গ্রামের আলোগুলো মিলিয়ে যাচ্ছে।",
+          "ur": "کھڑکی سے انہوں نے گاؤں کی روشنیوں کو غائب ہوتے دیکھا۔",
+          "th": "พวกเขามองผ่านหน้าต่าง เห็นแสงไฟของหมู่บ้านค่อย ๆ หายไป"
+        }
+      },
+      {
+        "id": "last-train-18",
+        "english": "Sam put the ticket safely in his pocket and finally began to laugh.",
+        "turkish": "Sam bileti güvenli bir şekilde cebine koydu ve sonunda gülmeye başladı.",
+        "translations": {
+          "es-419": "Sam guardó el boleto a salvo en su bolsillo y por fin empezó a reír.",
+          "pt-BR": "Sam guardou a passagem no bolso, bem segura, e finalmente começou a rir.",
+          "id": "Sam menyimpan tiket itu dengan aman di sakunya dan akhirnya mulai tertawa.",
+          "ar": "وضع سام التذكرة في جيبه بأمان، وأخيرًا بدأ يضحك.",
+          "vi": "Sam cất tấm vé cẩn thận vào túi và cuối cùng cũng bật cười.",
+          "hi": "सैम ने टिकट सँभालकर अपनी जेब में रखा और आख़िरकार हँसने लगा।",
+          "ru": "Сэм надёжно убрал билет в карман и наконец рассмеялся.",
+          "bn": "স্যাম টিকিটটা নিরাপদে পকেটে রাখল আর অবশেষে হাসতে শুরু করল।",
+          "ur": "سام نے ٹکٹ حفاظت سے اپنی جیب میں رکھا اور آخرکار ہنسنے لگا۔",
+          "th": "แซมเก็บตั๋วไว้ในกระเป๋าอย่างปลอดภัย แล้วในที่สุดก็หัวเราะออกมา"
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "last-train-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "Buying flowers before the village market closes",
+          "Returning to the market for a missing camera",
+          "Missing a train and staying in the village",
+          "Finding a missing ticket and catching the train"
+        ],
+        "answer": 3
+      },
+      {
+        "id": "last-train-q2",
+        "kind": "detail",
+        "prompt": "Where did Sam find his missing ticket at the market?",
+        "options": [
+          "Inside a box beside the flowers",
+          "Under a small stone on a bench",
+          "Inside a bag behind a stall",
+          "Under his camera on a table"
+        ],
+        "answer": 1
+      },
+      {
+        "id": "last-train-q3",
+        "kind": "detail",
+        "prompt": "Who helped Sam find the ticket?",
+        "options": [
+          "A woman packing flowers",
+          "The train driver",
+          "A police officer",
+          "Lily"
+        ],
+        "answer": 0
+      },
+      {
+        "id": "last-train-q4",
+        "kind": "inference",
+        "prompt": "Why does Sam laugh after he gets on the train?",
+        "options": [
+          "He is pleased that the flower market is still open.",
+          "He feels relieved after almost missing the last train.",
+          "He is surprised that Lily has bought him a camera.",
+          "He thinks the next train leaves in a few minutes."
+        ],
+        "answer": 1
+      }
+    ],
+    "tags": [
+      "macera"
+    ],
+    "descriptions": {
+      "es-419": "Un tren que están a punto de perder se convierte en un viaje inesperado para dos amigos.",
+      "pt-BR": "Um trem que eles estão prestes a perder se transforma em uma viagem inesperada para dois amigos.",
+      "id": "Kereta yang hampir terlewat berubah menjadi perjalanan tak terduga bagi dua sahabat.",
+      "ar": "قطار يوشكان أن يفوّتاه يتحوّل إلى رحلة غير متوقّعة لصديقين.",
+      "vi": "Suýt lỡ chuyến tàu, hai người bạn có một hành trình bất ngờ.",
+      "hi": "छूटने वाली एक ट्रेन दो दोस्तों के लिए एक अनोखा सफ़र बन जाती है।",
+      "ru": "Поезд, на который чуть не опоздали, превращается для двух друзей в неожиданное путешествие.",
+      "bn": "প্রায় ফসকে যাওয়া একটা ট্রেন দুই বন্ধুর জন্য এক অপ্রত্যাশিত যাত্রা হয়ে ওঠে।",
+      "ur": "چھوٹنے والی ایک ٹرین دو دوستوں کے لیے ایک انوکھا سفر بن جاتی ہے۔",
+      "th": "รถไฟที่เกือบจะตกกลายเป็นการเดินทางที่ไม่คาดคิดของเพื่อนสองคน"
+    }
+  },
+  "words": [
+    {
+      "id": "village",
+      "word": "village",
+      "translation": "köy",
+      "pronunciation": "/ˈvɪlɪdʒ/",
+      "example": "They visited a small village.",
+      "translations": {
+        "es-419": "pueblo, aldea",
+        "pt-BR": "vila, aldeia",
+        "id": "desa",
+        "ar": "قرية",
+        "vi": "ngôi làng",
+        "hi": "गाँव",
+        "ru": "деревня",
+        "bn": "গ্রাম",
+        "ur": "گاؤں",
+        "th": "หมู่บ้าน"
+      }
+    },
+    {
+      "id": "market",
+      "word": "market",
+      "translation": "pazar",
+      "pronunciation": "/ˈmɑːrkɪt/",
+      "example": "The market was busy.",
+      "translations": {
+        "es-419": "mercado",
+        "pt-BR": "mercado, feira",
+        "id": "pasar",
+        "ar": "سوق",
+        "vi": "chợ",
+        "hi": "बाज़ार",
+        "ru": "рынок",
+        "bn": "বাজার",
+        "ur": "بازار",
+        "th": "ตลาด"
+      }
+    },
+    {
+      "id": "ticket",
+      "word": "ticket",
+      "translation": "bilet",
+      "pronunciation": "/ˈtɪkɪt/",
+      "example": "Sam found his ticket.",
+      "translations": {
+        "es-419": "boleto",
+        "pt-BR": "passagem, bilhete",
+        "id": "tiket, karcis",
+        "ar": "تذكرة",
+        "vi": "vé",
+        "hi": "टिकट",
+        "ru": "билет",
+        "bn": "টিকিট",
+        "ur": "ٹکٹ",
+        "th": "ตั๋ว"
+      }
+    },
+    {
+      "id": "pocket",
+      "word": "pocket",
+      "translation": "cep",
+      "pronunciation": "/ˈpɑːkɪt/",
+      "example": "He put it in his pocket.",
+      "translations": {
+        "es-419": "bolsillo",
+        "pt-BR": "bolso",
+        "id": "saku",
+        "ar": "جيب",
+        "vi": "túi (áo, quần)",
+        "hi": "जेब",
+        "ru": "карман",
+        "bn": "পকেট",
+        "ur": "جیب",
+        "th": "กระเป๋าเสื้อ, กระเป๋ากางเกง"
+      }
+    },
+    {
+      "id": "station",
+      "word": "station",
+      "translation": "istasyon",
+      "pronunciation": "/ˈsteɪʃən/",
+      "example": "They hurried to the station.",
+      "translations": {
+        "es-419": "estación",
+        "pt-BR": "estação",
+        "id": "stasiun",
+        "ar": "محطة",
+        "vi": "nhà ga",
+        "hi": "स्टेशन",
+        "ru": "станция, вокзал",
+        "bn": "স্টেশন",
+        "ur": "اسٹیشن",
+        "th": "สถานี"
+      }
+    },
+    {
+      "id": "platform",
+      "word": "platform",
+      "translation": "peron",
+      "pronunciation": "/ˈplætfɔːrm/",
+      "example": "Lily waited on the platform.",
+      "translations": {
+        "es-419": "andén",
+        "pt-BR": "plataforma",
+        "id": "peron",
+        "ar": "رصيف المحطة",
+        "vi": "sân ga",
+        "hi": "प्लेटफ़ॉर्म",
+        "ru": "платформа, перрон",
+        "bn": "প্ল্যাটফর্ম",
+        "ur": "پلیٹ فارم",
+        "th": "ชานชาลา"
+      }
+    },
+    {
+      "id": "bench",
+      "word": "bench",
+      "translation": "bank",
+      "pronunciation": "/bentʃ/",
+      "example": "The ticket was on a bench.",
+      "translations": {
+        "es-419": "banca, banco",
+        "pt-BR": "banco",
+        "id": "bangku",
+        "ar": "مقعد خشبي",
+        "vi": "ghế dài",
+        "hi": "बेंच",
+        "ru": "скамейка",
+        "bn": "বেঞ্চ",
+        "ur": "بینچ",
+        "th": "ม้านั่ง"
+      }
+    },
+    {
+      "id": "safely",
+      "word": "safely",
+      "translation": "güvenli bir şekilde",
+      "pronunciation": "/ˈseɪfli/",
+      "example": "He put the ticket safely in his pocket.",
+      "translations": {
+        "es-419": "a salvo, de forma segura",
+        "pt-BR": "em segurança, a salvo",
+        "id": "dengan aman",
+        "ar": "بأمان",
+        "vi": "an toàn, cẩn thận",
+        "hi": "सुरक्षित तरीके से, सँभालकर",
+        "ru": "благополучно, в безопасности",
+        "bn": "নিরাপদে",
+        "ur": "حفاظت سے",
+        "th": "อย่างปลอดภัย"
+      }
+    },
+    {
+      "id": "pilot-last-train-missing",
+      "word": "missing",
+      "translation": "kayıp, yerinde olmayan",
+      "pronunciation": "/ˈmɪsɪŋ/",
+      "example": "His ticket is missing."
+    },
+    {
+      "id": "pilot-last-train-hurried",
+      "word": "hurried",
+      "translation": "aceleyle gitti",
+      "pronunciation": "/ˈhɜːrid/",
+      "example": "They hurried to the station."
+    }
+  ],
+  "studyWordIds": [
+    "village",
+    "market",
+    "ticket",
+    "pocket",
+    "station",
+    "platform",
+    "bench",
+    "safely",
+    "pilot-last-train-missing",
+    "pilot-last-train-hurried"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "last-train-q4",
+      "sentenceIds": [
+        "last-train-4",
+        "last-train-16",
+        "last-train-18"
+      ],
+      "rationale": "The deadline, successful boarding and relaxed response support relief."
+    }
+  ],
+  "publicationBlockers": [
+    "Human editorial and level review pending.",
+    "New sentences require ten support-language translations and review.",
+    "New revision, study-word integration and publisher validation required."
+  ]
+}

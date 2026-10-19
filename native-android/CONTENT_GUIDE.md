@@ -2,6 +2,10 @@
 
 Android, ilk açılışta `app/src/main/assets/catalog/v1.json` içindeki çevrimdışı kataloğu okur. Supabase bağlantısı yapılandırılmışsa yayımlanmış uzak katalog yenilendiğinde aktif listeyi onunla değiştirir. Bu nedenle yalnızca APK kataloğunu genişletmek, canlı kullanıcılara yeni hikâyeleri sunmak için yeterli değildir.
 
+## Hazırlanan hikâye pilotu — 19 Ekim 2026
+
+[Beş mevcut hikâye revizyonu ve iki yeni klasik uyarlaması](docs/STORY_QUALITY_PILOT_2026-10-19.md) · [İngilizce/Türkçe okuma önizlemesi](docs/STORY_PILOT_READING_2026-10-19.md). `backend/content/drafts/revisions/` mevcut hikâyelerin kaynak özetli yeni revizyon önerilerini, `drafts/stories/` yeni hikâye taslaklarını tutar. Bunlar otomatik katalog girdisi veya stüdyoya aktarılmış payload değildir; editör, diğer diller, yeni kapaklar ve yayın kabulü beklenir.
+
 ## Güncel paket
 
 50 hikâye, 1002 İngilizce/Türkçe cümle çifti ve 359 kelime/ifade (316 klasik paket + 37 kelime ve 6 ifade pilotu, 15 Ekim 2026). A1: 18, A2: 18, B1: 14 hikâye. Bunların 44'ü kaynakları kontrol edilmiş klasiklerin seviyeli kısa uyarlamalarıdır. Mevcut altı özgün hikâyenin kimlikleri, metinleri ve kelime eşlemeleri korundu.
