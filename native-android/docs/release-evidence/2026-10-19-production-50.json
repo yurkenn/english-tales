@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-19T11:27:33.893839+00:00",
-  "status": "prepared-for-production-review",
+  "recordedAt": "2026-10-19T16:49:15.958991+00:00",
+  "status": "submitted-quick-checks-running",
   "productionBefore": {
     "versionCode": 48,
     "versionName": "2.0.0",
@@ -57,17 +57,29 @@
     "elf64AlignmentPassed": true,
     "alignmentErrors": [],
     "apkBytes": 10460550,
-    "aabBytes": 14312303,
-    "apkSHA256": "e2a517269a5e123a18d4906fee0a2cb1f35a4731f7ba1541140c23905408b748",
-    "aabSHA256": "729b9b3c66626efd71315f5d933732f58d6ffa8821be6b9ec54343d6f802c5f9",
-    "limitation": "Static package inspection only; Play-generated split APKs and real 16KB devices still need testing."
+    "aabBytes": 14312301,
+    "apkSHA256": "d10563c920328273ac47f6abb5f9f069006cf3348275c6b42dc256ddaa8537f1",
+    "aabSHA256": "c22941f6a82b3ce777410e0a1267f40faf9472e6ae69b7b8b65115ad32e6e075",
+    "limitation": "Static package inspection only; Play-generated split APKs and real 16KB devices still need testing.",
+    "signerClarification": "Matches existing Google Play upload certificate; Google Play app-signing certificate is separate.",
+    "retraceMappingEmbeddedAndMatchesLocal": true,
+    "vcsMetadata": "AGP reported NO_SUPPORTED_VCS_FOUND in managed worktree; sourceCommit records the verified checkout HEAD."
   },
   "validatedAppMainTree": "b1e33392eb373f773e1dc45595644c31c46bed27",
-  "sourceCommit": null,
+  "sourceCommit": "32a717f80c26a06e8ac329ee358af2e012469589",
   "playSubmission": {
     "releaseId": "21",
     "track": "production",
-    "submittedAt": null
+    "submittedAt": "2026-10-19T16:48:22Z",
+    "consoleHeading": "Changes in review",
+    "quickChecks": "running; changes go to review after successful quick checks",
+    "changeCount": 27,
+    "rollout": 1.0,
+    "managedPublishing": false,
+    "liveVerified": false,
+    "artifactId": "4860242364224733115",
+    "retraceMappingAttached": true,
+    "warning": "Native debug symbols unavailable for bundled third-party native libraries; non-blocking Console recommendation."
   },
   "verification": {
     "releaseJvmTests": 130,
@@ -92,6 +104,23 @@
       "pointsAfterReview": 5,
       "dailyGoalRecorded": true,
       "onboardingRepeated": false
+    },
+    "finalPackageReinstall": {
+      "savedWordCount": 1,
+      "points": 5,
+      "level": "A1",
+      "dailyGoal": "1/1 complete",
+      "lastStory": "The Boy Who Cried Wolf",
+      "onboardingRepeated": false
+    },
+    "playSignedUniversalApk": {
+      "versionCode": 50,
+      "versionName": "2.2.0",
+      "sha256": "019abc69cd2e483a88d5ee59aa1b319bc9b5c9bc2c1b48e21d86a08c93c6b03b",
+      "signerSha256": "13ef5910fd56b0a43f5d6578d2cc90271fe087c2a0baa6cc06a0b5f1056a3ba8",
+      "domainState": "englishtales-app.web.app verified",
+      "intentResolvedTo": "com.yurken.englishtales/.MainActivity",
+      "fullJourney": "Not accepted: sideloaded Play-enhanced APK redirects to Play sign-in on emulator without a signed-in Play account."
     }
   },
   "hosting": {
@@ -117,12 +146,14 @@
       "en-US",
       "tr-TR"
     ],
-    "otherLocalesUseDefaultScreenshots": true
+    "otherLocalesUseDefaultScreenshots": true,
+    "aiAssetLabels": "App icon, feature graphic and native screenshots containing generated illustrations declared."
   },
   "limitations": [
     "Static 16 KB validation; no new physical 16 KB device or Play split-package acceptance.",
     "Signed local 49-to-50 upgrade, not a physical phone update from production 48.",
     "SEO language pages remain content briefs.",
-    "Study-word proposals were not published as live content."
+    "Study-word proposals were not published as live content.",
+    "Play-signed universal APK certificate and domain verified; full Play-installed device journey still pending."
   ]
 }

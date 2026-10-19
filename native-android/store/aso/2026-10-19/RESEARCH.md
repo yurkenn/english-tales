@@ -1,3 +1,5 @@
+> 19 Ekim 2026 19:48 TRT güncellemesi: Yerelleştirilmiş başlık/açıklamalar ve güncel görseller 50 / 2.2.0 ile üretim incelemesine gönderildi; henüz canlı yayın doğrulanmadı. SEO dil sayfaları taslaktır. [Güncel kayıt](../../../docs/RELEASE_50_STATUS.md). Aşağıdaki araştırma, başvuru öncesi karar gerekçesidir.
+
 # 19 Ekim 2026 — Yerelleştirilmiş ASO / SEO kararı
 
 Durum: **hazırlanmış editoryal taslak; Play Console veya web yayını yapılmadı.** Android / Google Play kapsamıdır; App Store Connect anahtar kelime alanı veya Apple arama sonuçları incelenmedi.

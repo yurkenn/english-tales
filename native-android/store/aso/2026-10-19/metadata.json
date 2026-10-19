@@ -1,6 +1,6 @@
 {
   "date": "2026-10-19",
-  "status": "editorial-draft-not-published",
+  "status": "submitted-for-review-not-published",
   "packageName": "com.yurken.englishtales",
   "recommendedDefaultTitle": "Learn English: Yurken Stories",
   "brand": "Yurken",
@@ -162,5 +162,6 @@
       "full": "Aprende inglés a tu ritmo con historias cortas de nivel A1, A2 y B1. Lee, consulta la traducción al español y guarda palabras útiles para repasarlas después.\n\nLECTURAS A TU NIVEL\nExplora 50 historias adaptadas: clásicos, fábulas, misterios y relatos cotidianos. Elige tu nivel y continúa donde te quedaste.\n\nCOMPRENDE CADA HISTORIA\nToca una oración para ver su traducción. Consulta el significado de las palabras de aprendizaje resaltadas y guarda las que quieras practicar. Responde preguntas sobre la historia para comprobar tu comprensión.\n\nPRACTICA VOCABULARIO\nRepasa con tarjetas, preguntas de traducción, juegos de parejas y actividades para formar palabras. Sigue tus palabras guardadas en el plan de repaso.\n\nLEE Y ESCUCHA\nEscucha con el motor de texto a voz en inglés de tu dispositivo. Ajusta el tamaño de letra, el espacio entre líneas y el tema de lectura. El audio, incluida la escucha sin conexión, depende de las voces instaladas en tu dispositivo.\n\nLEE SIN CONEXIÓN\nDescarga historias y portadas para leerlas sin internet. Tus descargas y palabras guardadas siguen disponibles en tu dispositivo.\n\nCREA UN HÁBITO DIARIO\nElige una meta, consulta tu progreso y activa recordatorios opcionales. Empieza como invitado o inicia sesión con Google o correo electrónico para sincronizar los registros de aprendizaje compatibles.\n\nLas historias están en inglés; la traducción de apoyo está en español latinoamericano.\n\nAntes se llamaba English Tales. Sigue siendo la misma aplicación de Yurken.",
       "aliasOf": "es-419"
     }
-  }
+  },
+  "playSubmissionAt": "2026-10-19T16:48:22Z"
 }
