@@ -62,7 +62,12 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     val uiScope=rememberCoroutineScope()
     fun google() {uiScope.launch {viewModel.signInGoogle {GoogleSignIn.acquire(context,BuildConfig.GOOGLE_WEB_CLIENT_ID)}}}
     DisposableEffect(lifecycle) {
-        val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> if(event==androidx.lifecycle.Lifecycle.Event.ON_RESUME) {viewModel.refresh();viewModel.verifyAccount();LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}}
+        val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> when(event) {
+            androidx.lifecycle.Lifecycle.Event.ON_START -> viewModel.setForeground(true)
+            androidx.lifecycle.Lifecycle.Event.ON_STOP -> viewModel.setForeground(false)
+            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {viewModel.refresh();viewModel.verifyAccount();LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
+            else -> {}
+        }}
         lifecycle.addObserver(observer)
         onDispose {lifecycle.removeObserver(observer)}
     }
