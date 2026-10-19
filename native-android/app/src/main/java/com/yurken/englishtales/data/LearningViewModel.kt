@@ -29,6 +29,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // A sync requested while one is running may land after that run read the outbox; it reruns shortly instead of waiting a minute.
     private val syncAgain=java.util.concurrent.atomic.AtomicBoolean(false)
     private var syncTimer: kotlinx.coroutines.Job?=null
+    private var syncDue=0L to -1
     private val mutableAccount=MutableStateFlow(AccountState())
     val account: StateFlow<AccountState> = mutableAccount
     private val verifying=java.util.concurrent.atomic.AtomicBoolean(false)
@@ -174,9 +175,13 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // Only the actor accesses a store. Timers enqueue work without touching Room.
     private fun scheduleSync(waitMillis: Long=2_000) {
         if(cloudSync==null || mutableAccount.value.userId==null || mutableAccount.value.needsSignIn || disposed || switching) return
-        syncTimer?.cancel()
         val expected=scope
         if(background) LearningSyncRuntime.schedule(getApplication(),checkNotNull(mutableAccount.value.userId))
+        // A finished sync's minute-later reschedule must not push back a sooner run a write asked for just before it ended.
+        val due=System.nanoTime()/1_000_000+waitMillis
+        if(syncTimer?.isActive==true && syncDue.second==expected && syncDue.first<=due) return
+        syncTimer?.cancel()
+        syncDue=due to expected
         syncTimer=viewModelScope.launch {
             kotlinx.coroutines.delay(waitMillis)
             if(scope==expected) syncNow()
