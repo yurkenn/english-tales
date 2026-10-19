@@ -586,6 +586,27 @@ test('publication rejects every unlinked word and words absent from their linked
   await assert.rejects(user(publisher,'select public.publish_story_revision($1)',[d.id]),/learning_word_not_in_sentence/);
 });
 
+test('publication accepts multi-word phrases across hyphens, case and apostrophes but rejects split phrases and substrings',async()=>{
+  const d=await admin(editor,'admin_create_draft',{story:'quiet-morning',source:revision});
+  const sentence=english=>user(editor,"update public.story_sentences set english=$2 where revision_id=$1 and id='qm-1'",[d.id,`It was a quiet morning in a small town. ${english}`]);
+  const link=async(id,text)=>{
+    await user(editor,"insert into public.revision_words(revision_id,id,word,translation) values($1,$2,$3,'çeviri')",[d.id,id,text]);
+    await user(editor,"insert into public.sentence_words(revision_id,sentence_id,word_id) values($1,'qm-1',$2)",[d.id,id]);
+  };
+  const publish=()=>user(publisher,'select public.publish_story_revision($1)',[d.id]);
+  await sentence('She picked flowers up.');
+  await link('picked-up','picked up');
+  await assert.rejects(publish(),/learning_word_not_in_sentence/);
+  await sentence("Mia's cat picked-up a stick, STEP BY STEP.");
+  await link('pick','pick');
+  await assert.rejects(publish(),/learning_word_not_in_sentence/);
+  await user(editor,"delete from public.sentence_words where revision_id=$1 and word_id='pick'",[d.id]);
+  await user(editor,"delete from public.revision_words where revision_id=$1 and id='pick'",[d.id]);
+  await link('mia','Mia');
+  await link('step-by-step','step by step');
+  await publish();
+});
+
 test('archive rejects a changed current revision without hiding the new publication',async()=>{
   await assert.rejects(admin(publisher,'admin_archive',{story:'quiet-morning',archive:true,current:randomUUID()}),/published_version_conflict/);
   assert.equal((await anon("select is_archived from public.stories where id='quiet-morning'"))[0].is_archived,false);

@@ -14,7 +14,7 @@
 | D03 | A1 | P1 | Hesaba uygun günlük hatırlatıcı | D02 | Uygulandı; kabul: LEARNING_RELIABILITY_EXECUTION.md |
 | D04 | A1 | P1 | Başarısız kalıcı işlemi doğru ekranda gösterme | D02 | Uygulandı; kabul: LEARNING_RELIABILITY_EXECUTION.md |
 | D05 | A1 | P0 | İkinci cihazdaki bilinmeyen ve arşivlenmiş kelimeler | D00, D02 | Planlandı |
-| D06 | A1 | P1 | Çok sözcüklü ifade ve kelime eşleştirme tutarlılığı | D02, D05 | Planlandı |
+| D06 | A1 | P1 | Çok sözcüklü ifade ve kelime eşleştirme tutarlılığı | D02, D05 | Uygulandı (#10); kabul: PhraseMatcherTest, admin-client/catalog/backend ifade testleri |
 | D07 | A1 | P1 | Okuma/oyun oturumu ve TTS yaşam döngüsü | D02 | Planlandı |
 | D08 | A2 | P0 | Gerçek iki cihaz ve arka plan eşitlemesi | D02, D05 | Planlandı |
 | D09 | A2 | P0 | Bu ortam ve release için gerçek hesap kabulü | D00, D02 | Planlandı |
@@ -36,5 +36,7 @@
 ## Kanıt kaydı şablonu
 
 Her iş için: başlangıç commit/build, ortam, kabul senaryosu, değişen dosyalar/sözleşme, run/pass/fail/skip, sonuç kanıtı, kalan sınır ve geri dönüş adımı. D16 kapsam seçilmeden zorunlu yayın işi değildir.
+
+D06 kanıtı: Android `PhraseMatcher`, panel `matchSpans` ve SQL `check_learning_links` aynı sözleşmeyi uygular; `PhraseMatcherTest`, `admin-client.test.mjs`, `catalog.test.mjs` ve `backend.test.mjs` (tire, büyük harf, kesme işareti, bölünmüş ifade ve alt dize) kapsar. Okuyucuda ifadeye dokunma UI testi D11'e bırakıldı.
 
 D03/D04 uygulama ve regresyon kanıtı: [İlk güvenilirlik paketi](LEARNING_RELIABILITY_EXECUTION.md). Başlangıç haritası tarihsel snapshot olarak korunur.
