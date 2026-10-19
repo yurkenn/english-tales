@@ -1,6 +1,6 @@
 # Hikâye geliştirme pilotu — 19 Ekim 2026
 
-Durum: **Aktif çalışma yalnız 5 mevcut hikâyede.** Kullanıcı yeni hikâye eklemeyi durdurdu; iki yeni klasik taslağı korunarak beklemeye alındı. Canlı içerik yayını yapılmadı. [Kapsam kaydı](../backend/content/drafts/pilot-scope.json).
+Durum: **Aktif çalışma yalnız 5 mevcut hikâyede.** Kullanıcı yeni hikâye eklemeyi durdurdu; iki yeni klasik taslağı korunarak beklemeye alındı. Canlı içerik yayını yapılmadı. **19 Ekim akşamı proje sahibi oguz, AI incelemesinden geçmiş beş metni ve 11 dildeki çevirileri yayın için onayladı** (`reviewedBy: "oguz"`, `editorialReview.ownerApproval`); ana dil konuşuru incelemesi yapılmadı. Canlıya alma adımları: [entegrasyon kaydı](STORY_PILOT_INTEGRATION.md#canlıya-alma--taslak-oluşturma-ve-yayın). [Kapsam kaydı](../backend/content/drafts/pilot-scope.json).
 
 [İngilizce/Türkçe okuma önizlemesi](STORY_PILOT_READING_2026-10-19.md)
 

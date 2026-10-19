@@ -57,7 +57,7 @@ test('revision pilot preserves its base identity and accurately reports translat
     assert.ok(original,s.id);
     assert.equal(doc.baseStorySHA256,digest(original),`${s.id}: stale source revision`);
     assert.equal(s.id,original.id);assert.equal(s.level,original.level);
-    assert.equal(doc.status,'draft');assert.equal(doc.reviewedBy,null);
+    assert.equal(doc.status,'draft');assert.equal(doc.reviewedBy,'oguz');
     const revised=new Map(s.sentences.map(x=>[x.id,x]));
     assert.equal(revised.size,s.sentences.length);
     // Explicit editorial corrections may update text, never identity. Every changed
@@ -153,13 +153,13 @@ test('new classic retellings record historical sources and remain separate from 
 });
 
 
-test('all five existing story drafts are multilingual with complete question evidence and pending human review',()=>{
+test('all five existing story drafts are multilingual with complete question evidence and owner approval without native review',()=>{
   for(const d of revisions){
     assert.equal(d.translationReadiness.completeLanguages.length,11);
     assert.deepEqual(d.translationReadiness.pendingLanguages,[]);
-    assert.deepEqual(d.translationReadiness.reviewedLanguages,[]);
-    assert.equal(d.reviewedBy,null);
-    assert.ok(d.publicationBlockers.some(x=>x.includes('Human language review')));
+    assert.deepEqual(d.translationReadiness.reviewedLanguages,d.translationReadiness.requiredLanguages);
+    assert.equal(d.reviewedBy,'oguz');assert.equal(d.editorialReview.ownerApproval.nativeSpeakerApproval,false);
+    assert.ok(d.publicationBlockers.some(x=>x.includes('Native-speaker language review not done')));
     for(const sentence of d.story.sentences){
       assert.equal(Object.keys(sentence.translations).length,10,sentence.id);
       for(const value of Object.values(sentence.translations))assert.ok(value.trim()!==sentence.english.trim(),sentence.id);

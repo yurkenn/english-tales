@@ -50,3 +50,23 @@ Bu komut `native-android/` içinden, uygun JDK/SDK ile çalıştırılır. Testt
 ## Canlıya geçmeden önce
 
 [AI destekli editoryal/dil tutarlılığı incelemesi](STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md) ile [Claude ikinci incelemesinin](STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md) düzeltmeleri tamamlandı; insan editör ve ana dil konuşuru kabulü hâlâ açık. Önizleme kaynağı **paket kataloğudur**; güncel canlı revizyon ile eşitliği kanıtlamaz. Yayın kapsamına geçildiğinde güncel snapshot, gerçek kaynak revizyonu/`edit_version`, mevcut kapak ve ses referansları korunarak stüdyo kontrolleri gerekir. Yerel önizleme UUID'si gerçek sunucu revizyonu yerine kullanılmaz. Ardından anonim katalog, indirme/çevrimdışı okuma, arayüz ve hesap eşitlemesi gerçek yayımlanmış revizyonda doğrulanır.
+
+## Canlıya alma — taslak oluşturma ve yayın
+
+`npm run story-pilot:drafts`, beş pilot revizyonunu `content:drafts` ile aynı güvenli yoldan **editör taslağı** olarak Supabase'e yazar. Araç `admin_publish` çağırmaz; yayın panelde yayıncı hesabıyla yapılır. Mevcut kapak/ses korunur, eski revizyonlar ve öğrenme geçmişi yerinde kalır, pilot dışındaki 45 hikâyeye dokunulmaz.
+
+Engeller (biri bile varsa `--apply` hiçbir oturum veya ağ isteği açmadan durur):
+
+- Taslakta `reviewedBy` ve 11 dilin tamamını içeren `reviewedLanguages` kaydı yok.
+- Canlıdaki cümle kimlik/metinleri, başlık veya seviye pilotun yazıldığı paket metninden farklı (canlıda sonradan düzenleme yapılmış).
+- Canlı yayın/`edit_version` snapshot alındıktan sonra değişmiş veya panelde farklı bir açık taslak var (`content:drafts` korumaları).
+
+Sıra, depo kökünden:
+
+1. `env -u NODE_USE_SYSTEM_CA node tooling/backup_public_content.mjs` ile güncel anonim snapshot al.
+2. `native-android/backend/` içinde dry-run: `npm run story-pilot:drafts -- --snapshot <snapshot>/catalog.json`. `../build/story-pilot-drafts/review.md` her hikâyenin cümle, soru, eklenen/çıkan kelime ve dil sayısını, engelleri ve payload özetini gösterir.
+3. İnsan onayı verildiğinde beş taslağa `reviewedBy` ve `translationReadiness.reviewedLanguages` yazılır (bu kayıt onayın kendisidir; araç üretmez).
+4. Oturum dosyası yoksa operatör kendi terminalinde `npm run content:session` çalıştırır: e-posta ve şifre (gösterilmeden) sorulur, kısa ömürlü oturum `~/.english-tales/content-session.json` dosyasına `chmod 600` ile yazılır; şifre saklanmaz. Editör/yayıncı oturum dosyasıyla (biçim: [içerik kılavuzu](../CONTENT_GUIDE.md#q41--mevcut-yayını-paketten-yeni-taslağa-taşıma)) aynı snapshot ve yeni bir çıktı diziniyle: `npm run story-pilot:drafts -- --snapshot <snapshot>/catalog.json --output ../build/story-pilot-drafts-apply --apply --url https://<project>.supabase.co --session-file <Git-dışındaki-oturum.json>`. Tekrar çalıştırmak güvenlidir; eşdeğer taslak atlanır.
+5. Yayıncı panelde beş taslağı açıp yayımlar. Ardından yeni snapshot ile uygulamada katalog, indirme ve çevrimdışı okuma kontrol edilir.
+
+Yerel PostgreSQL testinde gerçek 50 hikâyelik katalog yayımlanır, pilot taslakları RPC'lerle kaydedilir, yayıncı yayımlar ve anonim katalog beş hikâyeyi 11 dilde sunar; diğer hikâyelerin revizyonu değişmez (`tests/story-pilot-drafts.test.mjs`).

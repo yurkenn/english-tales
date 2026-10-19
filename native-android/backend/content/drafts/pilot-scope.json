@@ -23,7 +23,7 @@
     "classic-tortoise-hare",
     "classic-lion-mouse"
   ],
-  "nextStep": "Human editorial/language acceptance of AI-reviewed drafts; fresh live revision/snapshot guards and publisher acceptance. Local reader/save/review contract verified.",
+  "nextStep": "Owner (oguz) approved the AI-reviewed drafts on 2026-10-19. Next: fresh live snapshot, story-pilot:drafts --apply with a publisher session, publish in the admin panel.",
   "localIntegration": "preview adapter and Android fixture verified; no production catalog or live content change",
-  "aiEditorialReview": "Codex review plus independent Claude second review completed; accepted corrections applied; human/native-speaker approval remains pending"
+  "aiEditorialReview": "Codex review plus independent Claude second review completed; owner approval recorded; native-speaker review not done"
 }

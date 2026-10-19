@@ -23,7 +23,7 @@ test('all five previews link exactly their selected vocabulary without changing 
     assert.equal(new Set(doc.links.map(l=>`${l.sentence_id}:${l.word_id}`)).size,doc.links.length);
     for(const word of doc.words)assert.ok(doc.links.some(l=>l.word_id===word.id));
     for(const lang of row.languages)assert.deepEqual(supportCompleteness(doc,lang),{missingSentences:0,missingWords:0,missingDescriptions:0});
-    assert.equal(row.review.complete,false);
+    assert.equal(row.review.complete,true);assert.equal(row.review.reviewedBy,'oguz');
   }
   assert.deepEqual({catalog,scope,drafts},original);
 });
@@ -55,13 +55,16 @@ test('translation holes cannot silently fall back to Turkish or English in a com
 });
 
 test('review-required mode rejects current drafts and invalid review metadata; compilation never grants approval',()=>{
-  assert.throws(()=>compile(drafts,{requireReviewed:true}),/review pending/);
-  const d=structuredClone(drafts);
+  const unreviewed=structuredClone(drafts);
+  for(const doc of unreviewed){doc.reviewedBy=null;doc.translationReadiness.reviewedLanguages=[];}
+  assert.throws(()=>compile(unreviewed,{requireReviewed:true}),/review pending/);
+  assert.ok(compile(drafts,{requireReviewed:true}).stories.every(s=>s.review.complete));
+  const d=structuredClone(unreviewed);
   for(const doc of d){doc.reviewedBy='fixture-editor';doc.translationReadiness.reviewedLanguages=[...doc.translationReadiness.requiredLanguages];}
   assert.ok(compile(d,{requireReviewed:true}).stories.every(s=>s.review.complete));
   d[0].translationReadiness.reviewedLanguages=d[0].translationReadiness.requiredLanguages.join(',');
   assert.throws(()=>compile(d,{requireReviewed:true}),/review pending/);
-  assert.equal(drafts[0].reviewedBy,null);
+  assert.equal(unreviewed[0].reviewedBy,null);
 });
 
 test('Android cache fixture is generated from the actual pilot and stays outside production assets',()=>{
@@ -76,7 +79,7 @@ test('CLI writes only local previews and fails review/production-output guards b
   try{
     const out=path.join(dir,'preview'),result=run(['--output',out]);assert.equal(result.status,0,result.stderr);
     assert.ok(existsSync(path.join(out,'quiet-morning.json')));
-    const blocked=path.join(dir,'blocked');assert.notEqual(run(['--require-reviewed','--output',blocked]).status,0);assert.equal(existsSync(blocked),false);
+    const reviewed=path.join(dir,'reviewed');assert.equal(run(['--require-reviewed','--output',reviewed]).status,0);assert.ok(existsSync(path.join(reviewed,'manifest.json')));
     const production=new URL('../../app/src/main/assets/blocked-story-preview',import.meta.url).pathname;
     assert.match(run(['--output',production]).stderr,/production app sources/);assert.equal(existsSync(production),false);
     const link=path.join(dir,'linked-production');symlinkSync(new URL('../../app/src/main/',import.meta.url).pathname,link,'dir');
