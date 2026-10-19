@@ -1,0 +1,5499 @@
+{
+ "schemaVersion": 1,
+ "lang": "ru",
+ "reviewStatus": "machine-draft",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "(неопр. артикль) один",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "бросать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "способности",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "на борту",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "about",
+   "gloss": "о; около",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "above",
+   "gloss": "над; выше",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "принимать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "случайно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "across",
+   "gloss": "через; поперёк",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "act",
+   "gloss": "поступать; поступок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "добавляет",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "восхищался",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "восхищённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "признавать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "совет",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "испуганный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "after",
+   "gloss": "после",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "вторая половина дня",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "again",
+   "gloss": "снова",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "against",
+   "gloss": "против",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "назад",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "согласился",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "соглашается",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "air",
+   "gloss": "воздух",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "живой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "all",
+   "gloss": "всё; все",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "разрешил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "почти",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "along",
+   "gloss": "вдоль",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "already",
+   "gloss": "уже",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "also",
+   "gloss": "также",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "although",
+   "gloss": "хотя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "always",
+   "gloss": "всегда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "изумлённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "удивительный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "among",
+   "gloss": "среди",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "количества",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "an",
+   "gloss": "(неопр. артикль) один",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "and",
+   "gloss": "и",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "гнев",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "сердитый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "животное",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "another",
+   "gloss": "другой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "ответил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "any",
+   "gloss": "любой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "больше (не)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "кто-либо",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "что угодно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "врозь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "внешность",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "появился",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "яблоко",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "приблизился",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "вооружённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "руки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "around",
+   "gloss": "вокруг",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "расставляющий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "прибыл",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "прибывает",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "as",
+   "gloss": "как; когда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "спрашивать; просить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "at",
+   "gloss": "в; у; на",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "напал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "слуги",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "осень",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "away",
+   "gloss": "прочь; далеко",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "неуклюжий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "младенец",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "back",
+   "gloss": "назад; спина",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "сумка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "мяч; бал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "обручи; ремни",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "прутья; решётки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "be",
+   "gloss": "быть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "бить; победить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "красивый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "красота",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "because",
+   "gloss": "потому что",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "become",
+   "gloss": "становиться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "кровать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "before",
+   "gloss": "до; перед",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "умолял",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "начинать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "вёл себя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "позади",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "принадлежать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "below",
+   "gloss": "ниже",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "наклоняться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "под",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "рядом с",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "between",
+   "gloss": "между",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "за; за пределами",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "big",
+   "gloss": "большой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "птица",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "день рождения",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "кусочек; укусил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "кусать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "жестоко (о холоде)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "black",
+   "gloss": "чёрный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "обвинил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "одеяла",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "кровь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "цвести",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "расцвёл",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "удар",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "синий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "хвастался",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "body",
+   "gloss": "тело",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "born",
+   "gloss": "рождённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "both",
+   "gloss": "оба",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "бутылка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "дно; низ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "box",
+   "gloss": "коробка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "ветка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "хлеб",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(имя собственное) Бремен",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "шиповник",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "жених",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "яркий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "яркость",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "приносить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "брат",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "коричневый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "build",
+   "gloss": "строить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "гореть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "сгоревший",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "лопнуть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "занятой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "but",
+   "gloss": "но",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "бабочка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "покупать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "by",
+   "gloss": "рядом с; (кем-то)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "торт; пирог",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "call",
+   "gloss": "звонок; звать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "фотоаппарат",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "лагерь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "can",
+   "gloss": "мочь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "свечи",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "не мочь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "захватить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "care",
+   "gloss": "забота; заботиться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "осторожный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "карета",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "нести",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "кошка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "поймать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "вызвал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "вызывающий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "праздновал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "празднующий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "празднование",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "центы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "уверенный; определённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "стул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "шанс",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "change",
+   "gloss": "менять; перемена",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "бросающийся в атаку",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "гнался",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "дешёвый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "check",
+   "gloss": "проверять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "сыр",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(имя собственное) Чикаго",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "child",
+   "gloss": "ребёнок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "детство",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "выбор",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "выбирать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Рождество",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "церковное кладбище",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(имя собственное) Золушка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "city",
+   "gloss": "город",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "заявил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "очистить; ясный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "клерк",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "взбираться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "часы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "close",
+   "gloss": "закрывать; близкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "облака",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "холодный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "собирать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "цвета",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "расчёска",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "come",
+   "gloss": "приходить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "удобный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "удобно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "утешил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "спутник",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "сравнивает",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "пожаловался",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "завершить; полный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "смятение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "контакт",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "продолжать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "убедил; убеждённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "повар; готовить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "охладил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "угол",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "стоить; стоимость",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "хижина",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "could",
+   "gloss": "мог; мог бы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "сосчитал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "бесчисленный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "пара",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "покрытый; покрыл",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "create",
+   "gloss": "создавать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "критиковал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "пересёк",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "толпа",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "жестокий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "жестокость",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "плакать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "свернулся",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "покупатель",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "резать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "танцевать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "опасность",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "опасный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "осмелиться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "тёмный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "дочь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "рассвет",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "day",
+   "gloss": "день",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "дневной свет",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "мёртвый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "death",
+   "gloss": "смерть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "лживый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "решил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "решает",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "поступки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "глубокий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "победить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "защищать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "нежный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "вкусный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "радость",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "потребовал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "отрицать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "described",
+   "gloss": "описал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "письменный стол",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "отчаяние",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "отчаянно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "несмотря на",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "разрушил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "алмаз",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "die",
+   "gloss": "умереть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "died",
+   "gloss": "умер",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "different",
+   "gloss": "разный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "трудный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "исчезнуть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "далёкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "do",
+   "gloss": "делать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "доллар",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "door",
+   "gloss": "дверь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "дверной проём",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "тесто",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "down",
+   "gloss": "вниз",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "вниз по течению",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "тянуть к себе",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "рисунок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "страшился",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "мечтал; видел сон",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "сны; мечты",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "пить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "водитель",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "уронить; капля",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "утонул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "due",
+   "gloss": "ожидаемый; должный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "тусклый; скучный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "during",
+   "gloss": "во время",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "пыльный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "each",
+   "gloss": "каждый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "ухо",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "раньше",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "лёгкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "есть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "чёрное дерево",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(имя собственное) Египет",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "восемьдесят",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "either",
+   "gloss": "тоже (в отрицании)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "старший",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "одиннадцать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "else",
+   "gloss": "ещё; другой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "обнял",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "пустой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "заколдованный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "end",
+   "gloss": "конец",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "подвергающий опасности",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "энергия",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "наслаждался",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "огромный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "достаточно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "входить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "увлечённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "полностью",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "вход",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "убежать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "особенно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "канун (Рождества)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "even",
+   "gloss": "даже",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "в конце концов",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "every",
+   "gloss": "каждый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "все",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "всё",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "везде",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "точный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "except",
+   "gloss": "кроме",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "в обмен; обмен",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "измождённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "существовать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "ожидал; ожидаемый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "ожидая",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "расходы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "дорогой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "объяснять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "объяснение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "исследовать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "выражение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "необыкновенный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "глаз",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "бровь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "face",
+   "gloss": "лицо",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "поблёк",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "потерпел неудачу",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "терпит неудачу",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "падать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "падающий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "падает; водопад",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "false",
+   "gloss": "ложный; неверный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "знакомый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "family",
+   "gloss": "семья",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "far",
+   "gloss": "далеко",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "фермер",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "скотный двор",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "быстрый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "прикрепил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "толстый; жир",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "недостатки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "страх",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "кормить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "чувствовать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "чувство",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "принёс",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "few",
+   "gloss": "несколько",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "field",
+   "gloss": "поле",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "свирепый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "пятнадцать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "пятнадцатый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "драться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "наполнил; полный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "final",
+   "gloss": "последний",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "find",
+   "gloss": "находить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "хороший; тонкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "палец",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "финский",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "огонь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "крепко",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "first",
+   "gloss": "первый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "рыба",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "пришёлся впору",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "five",
+   "gloss": "пять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "плоский; квартира",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "бежал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "float",
+   "gloss": "плавать на поверхности",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "стадо; стая",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "пол; этаж",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "цветок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "летать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "следовать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "последователи",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "любящий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "глупый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "ступня",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "for",
+   "gloss": "для; кроме",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "навсегда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "забывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "form",
+   "gloss": "образовывать; форма",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "four",
+   "gloss": "четыре",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "замерзать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "ледяной; замерзание",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "свежий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "друг",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "дружба",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "пугать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "from",
+   "gloss": "из; от",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "front",
+   "gloss": "перед",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "фрукт",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "full",
+   "gloss": "полный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "веселье",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "яростный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "получать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "games",
+   "gloss": "игры",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "сад",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "собирать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "пристально смотреть; взгляд",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "нежный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "нежно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "get",
+   "gloss": "получать; становиться; добираться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "привидение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "девочка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "give",
+   "gloss": "давать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "дарители",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "стекло; стакан",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "go",
+   "gloss": "идти",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "коза",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "god",
+   "gloss": "бог",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "going",
+   "gloss": "идущий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "good",
+   "gloss": "хороший",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "до свидания; прощание",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "грациозный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "величественный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "дедушка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "бабушка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "серый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "great",
+   "gloss": "великий; замечательный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "green",
+   "gloss": "зелёный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "поприветствовал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "серый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "земля",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "расти",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "угадывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "проводник; вести",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "ружьё",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "порыв ветра",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "волосы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "стрижка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "залы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "рука",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "вешать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "происходить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "счастье",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "счастливый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "твёрдый; трудный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "суровый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "шляпа",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "вылупиться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "have",
+   "gloss": "иметь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "he",
+   "gloss": "он",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "head",
+   "gloss": "голова",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "слышать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "сердце",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "нагревать; жара",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "живая изгородь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "привет",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "помощники",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "her",
+   "gloss": "её; ей, её",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "она сама; себя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "спрятался; спрятал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "прятаться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "холм",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "him",
+   "gloss": "его; ему",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "он сам; себя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "his",
+   "gloss": "его",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "держать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "держит",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "home",
+   "gloss": "дом; домой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "капюшон",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "надежда; надеяться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "рог",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "потрясённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "лошадь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "часы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "house",
+   "gloss": "дом",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "домашняя работа",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "how",
+   "gloss": "как",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "however",
+   "gloss": "однако",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "обнял",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "human",
+   "gloss": "человек",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "сто",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "повесил; висел",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "поспешил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "ранить; раненый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "муж",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "i",
+   "gloss": "я",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "идея",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "if",
+   "gloss": "если",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "больной",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "воображаемый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "вообразил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "немедленно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "бессмертный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "невозможный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "in",
+   "gloss": "в; внутри",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "раненый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "внутри",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "настаивал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "осматривать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "вместо этого",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "заинтересованный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "прерванный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "into",
+   "gloss": "в",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "пригласил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "приглашает",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "it",
+   "gloss": "оно; это",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "its",
+   "gloss": "его; её (о предмете/животном)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "варенье",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "ревнивый; завистливый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(имя собственное) Иисус",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "job",
+   "gloss": "работа",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "join",
+   "gloss": "присоединиться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "пошутил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "радость",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "судья; судить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "прыгнул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "just",
+   "gloss": "только; именно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "держать; хранить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "пнул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "убивать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "доброта",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "королевство",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "поцеловал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "поцелуи",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "кухня",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "колени",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "сбил; постучал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "know",
+   "gloss": "знать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "шнурки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "озеро",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "land",
+   "gloss": "земля; страна; приземляться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(имя собственное) Лапландия",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "large",
+   "gloss": "большой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "last",
+   "gloss": "последний",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "later",
+   "gloss": "позже",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "смеяться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "лежал; положил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "наклонился; прислонился",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "выучил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "обучение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "уходить; оставлять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "left",
+   "gloss": "ушёл; левый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "нога",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "одолжить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "урок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "let",
+   "gloss": "позволять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "письмо; буква",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "ложь; лежит",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "life",
+   "gloss": "жизнь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "поднимать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "light",
+   "gloss": "свет; лёгкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "like",
+   "gloss": "как; любить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(имя собственное); лилия",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "line",
+   "gloss": "линия; очередь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "слушать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "little",
+   "gloss": "маленький; немного",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "live",
+   "gloss": "жить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "local",
+   "gloss": "местный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "запер; запертый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "одинокий; безлюдный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "long",
+   "gloss": "длинный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "look",
+   "gloss": "выглядеть; смотреть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "ослабил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "терять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "громкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "love",
+   "gloss": "любить; любовь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "опустил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "удача",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "комок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(имя собственное) волхвы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "make",
+   "gloss": "делать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "man",
+   "gloss": "мужчина",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "many",
+   "gloss": "много",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "отметки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "брак",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "жениться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "болото",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "master",
+   "gloss": "хозяин; мастер",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "match",
+   "gloss": "спичка; совпадать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "материалы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "имело значение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "мэр",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "me",
+   "gloss": "меня; мне",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "злой; означать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "встречаться; знакомиться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "таять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "беспорядок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "message",
+   "gloss": "сообщение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "гонец",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "металл",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "полночь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "might",
+   "gloss": "может быть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "мили",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "молоко",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "министр",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "минуты",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "скучал; пропустил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "пропавший",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "насмехаться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "момент",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "more",
+   "gloss": "больше",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "most",
+   "gloss": "самый; большинство",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "мать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "горы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "move",
+   "gloss": "двигаться; переезжать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "движение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "г-жа",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "music",
+   "gloss": "музыка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "must",
+   "gloss": "должен",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "my",
+   "gloss": "мой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "name",
+   "gloss": "имя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "рассказчик",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "узкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "near",
+   "gloss": "близко",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "поблизости",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "шеи",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "need",
+   "gloss": "нуждаться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "иглы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "сосед",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "ни... ни",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "net",
+   "gloss": "сеть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "never",
+   "gloss": "никогда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "new",
+   "gloss": "новый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "новичок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "газета",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "next",
+   "gloss": "следующий; рядом с",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "night",
+   "gloss": "ночь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "no",
+   "gloss": "нет; никакой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "шум",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "none",
+   "gloss": "никто; ни один",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "и не",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "нос",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "not",
+   "gloss": "не",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "note",
+   "gloss": "записка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "заметил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "замечает",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "now",
+   "gloss": "сейчас",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "of",
+   "gloss": "из; (принадлежность)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "off",
+   "gloss": "в путь; выключенный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "предлагать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "служащий; офицер",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "official",
+   "gloss": "официальный; чиновник",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "often",
+   "gloss": "часто",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "old",
+   "gloss": "старый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "on",
+   "gloss": "на",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "once",
+   "gloss": "однажды; когда-то",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "one",
+   "gloss": "один; кто-то",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "only",
+   "gloss": "только",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "на",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "вперёд",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "open",
+   "gloss": "открывать; открытый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "or",
+   "gloss": "или",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "приказал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "original",
+   "gloss": "оригинальный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "украшение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "other",
+   "gloss": "другой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "out",
+   "gloss": "наружу",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "наряд",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "снаружи",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "over",
+   "gloss": "к; над",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "над головой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "package",
+   "gloss": "посылка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "упаковка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "боль",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "болезненный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "пара",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "дворец",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "бумага",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "родители",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "расставание",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "партнёр (по танцу); супруг",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "проход",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "прошёл",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "проходящий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "past",
+   "gloss": "прошлое; мимо",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "заплатка; участок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "терпение",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "платить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "оплата",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "персик",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "галька",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "пенни",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "идеальный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "person",
+   "gloss": "человек",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "убедил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "фотография",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "фото",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "собирать; выбирать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "кусок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "голуби",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "куча",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "place",
+   "gloss": "место",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "штатский; простой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "план",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "посадил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "посадка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "растения",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "play",
+   "gloss": "играть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "нырнул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "указал; острый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "police",
+   "gloss": "полиция",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "полицейский",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "бедный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "position",
+   "gloss": "должность",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "налил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "power",
+   "gloss": "сила",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "могущественный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "предпочитать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "приготовления",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "present",
+   "gloss": "подарок; нынешний",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "притворился",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "помешал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "price",
+   "gloss": "цена",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "уколоть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "тюрьма",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "процветать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "защищать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "доказывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "тянуть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "наказал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "наказание",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "мурлыкать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "push",
+   "gloss": "толкать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "put",
+   "gloss": "класть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "быстро",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "дождливый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "реакция",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "read",
+   "gloss": "читать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "готовый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "real",
+   "gloss": "настоящий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "осознал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "причина",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "received",
+   "gloss": "получил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "недавно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "узнавать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "red",
+   "gloss": "красный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "отказываться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "отверг",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "отказ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "остался",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "оставшийся",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "замечание",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "замечательный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "помнить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "напомнил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "напоминание",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "убирать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "повторил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "ответ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "report",
+   "gloss": "отчёт; сообщать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "request",
+   "gloss": "просьба",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "спаситель",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "ответственный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "ресторан",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "восстановил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "раскрывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "награда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "лента",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "ехать верхом",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "верховая езда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "right",
+   "gloss": "правильный; правый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "поднимается; восходит",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "берег реки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "жарить; жареный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "грабить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "разбойник",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "булочки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "крыша",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "room",
+   "gloss": "комната",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "корни",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "роза; поднялся",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "грубый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(имя собственное) Румпельштильцхен",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "run",
+   "gloss": "бежать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "бросился",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) притяжательное окончание",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "грусть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "same",
+   "gloss": "тот же",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "сапфир",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "колбаски",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "save",
+   "gloss": "спасать; копить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "накопление",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "say",
+   "gloss": "говорить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "едва",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "рассыпал; разбежался",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "school",
+   "gloss": "школа",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "море",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "search",
+   "gloss": "искать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "тайна; тайный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "see",
+   "gloss": "видеть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "семя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "искать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "казался",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "кажется",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "схватил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "продавать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "send",
+   "gloss": "отправлять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "отправляющий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "предложение; приговор",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "service",
+   "gloss": "услуга",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "set",
+   "gloss": "ставить; отправляться; садиться (о солнце)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "семь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "several",
+   "gloss": "несколько",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "шил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "шитьё",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "форма",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "she",
+   "gloss": "она",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "ракушка; скорлупа",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "сиять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "сияет",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "сияющий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "корабль",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "туфля",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "магазин",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "берег",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "short",
+   "gloss": "короткий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "should",
+   "gloss": "следует",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "плечи",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "крикнул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "show",
+   "gloss": "показывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "закрытый; закрывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "больной",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "зрение; зрелище",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "знак; подписывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "подпись",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "молчаливый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "серебро",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "простой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "простак",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "петь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "тонуть; раковина",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "сестра",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "сидеть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "six",
+   "gloss": "шесть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "size",
+   "gloss": "размер",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "небо",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "спать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "рукав",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "поскользнулся",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "скользит",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "small",
+   "gloss": "маленький",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "запах; нюхать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "храпеть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "снег",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "so",
+   "gloss": "поэтому; так",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "мягкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "смягчаться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "some",
+   "gloss": "немного; некоторые",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "кто-то",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "something",
+   "gloss": "что-то",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "где-то",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "son",
+   "gloss": "сын",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "song",
+   "gloss": "песня",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "скоро",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "печаль",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "печально",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "звук",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "суп",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "space",
+   "gloss": "пространство; космос",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "говорить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "special",
+   "gloss": "особенный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "тратить; проводить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "проливает",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "дух",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "распространять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "весна; родник",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "square",
+   "gloss": "площадь; квадрат",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "протиснуться; сжимать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "лестница",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "прилавки",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "топнул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "стоять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "star",
+   "gloss": "звезда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "начинается",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "оставаться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "красть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "стебель",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "мачеха",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "сводная сестра",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "палка; прилипать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "липкий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "still",
+   "gloss": "всё ещё; неподвижный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "сшил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "желудок; живот",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "камень",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "останавливаться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "буря",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "story",
+   "gloss": "история; рассказ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "прямой; прямо",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "прядь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "странный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "незнакомец",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "ручей",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "street",
+   "gloss": "улица",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "сила",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "вытянул; растянул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "зажечь (спичку); ударить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "споткнулся",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "глупый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "добиться успеха",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "успешный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "such",
+   "gloss": "такой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "вдруг",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "сахар",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "предложил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "лето",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "солнечный свет",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "восход",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "закат",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "предполагаемый; должен был",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "удивление",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "окружённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "заподозрил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "меч",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "table",
+   "gloss": "стол",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "take",
+   "gloss": "брать; уносить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "разговаривал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "говорящий; разговор",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "высокий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "task",
+   "gloss": "задача",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "чай",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "слеза; рвать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "рассказывать; говорить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "десять",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "ужасный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "than",
+   "gloss": "чем",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "благодарить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "that",
+   "gloss": "тот; это; что",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(определённый артикль)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "their",
+   "gloss": "их",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "them",
+   "gloss": "их; им",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "они сами; себя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "then",
+   "gloss": "потом; тогда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "there",
+   "gloss": "там",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "these",
+   "gloss": "эти",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "they",
+   "gloss": "они",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "толстый; густой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "вор",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "тонкий; худой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "вещь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "think",
+   "gloss": "думать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "third",
+   "gloss": "третий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "тринадцать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "this",
+   "gloss": "этот; это",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "those",
+   "gloss": "те",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "though",
+   "gloss": "хотя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "подумал; мысль",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "тысяча",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "нить",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "пригрозил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "угрожающий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "three",
+   "gloss": "три",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "горло",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "through",
+   "gloss": "через",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "на протяжении",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "бросать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(имя собственное) Дюймовочка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "завязывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "завязал; связанный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "крепко",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "time",
+   "gloss": "время; раз",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "крошечный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "to",
+   "gloss": "к; чтобы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "today",
+   "gloss": "сегодня",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "together",
+   "gloss": "вместе",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(имя собственное)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "too",
+   "gloss": "тоже; слишком",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "зуб",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "top",
+   "gloss": "верх; вершина",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "связь (поддерживать)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "к; в сторону",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "town",
+   "gloss": "городок",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "игрушка",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "ремесло",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "train",
+   "gloss": "поезд",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "путешествовать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "путешествовал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "сокровище",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "обошёлся",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "дерево",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "задрожал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "беды",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "корыто",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "true",
+   "gloss": "правдивый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "ствол",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "try",
+   "gloss": "пытаться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "поворачиваться; очередь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "двенадцать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "двадцать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "two",
+   "gloss": "два",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "уродливый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "неспособный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "under",
+   "gloss": "под",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "подземный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "понимать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "незаконченный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "непригодный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "развернул",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "несчастный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "в отличие от",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "неосвещённый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "развязывает",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "until",
+   "gloss": "до тех пор, пока",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "необычный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "up",
+   "gloss": "вверх",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "расстроенный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "верхний этаж",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "us",
+   "gloss": "нас; нам",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "use",
+   "gloss": "использовать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "полезный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "необъятный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "very",
+   "gloss": "очень",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "победы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "яростно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "навещать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "посетители",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "ждал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "ждущий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "просыпаться",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "идти пешком",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "стена",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "бродил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "бродящий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "want",
+   "gloss": "хотеть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "шкаф",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "тёплый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "предупредил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "помыл",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "наручные часы; смотреть",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "water",
+   "gloss": "вода",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "помахал",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "волны",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "way",
+   "gloss": "путь; способ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "we",
+   "gloss": "мы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "слабый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "ослабил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "богатый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "носить (одежду)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "свадьба",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "week",
+   "gloss": "неделя",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "встретил",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "west",
+   "gloss": "запад",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "мокрый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "what",
+   "gloss": "что",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "when",
+   "gloss": "когда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "where",
+   "gloss": "где; куда",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "где бы ни",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "ли",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "which",
+   "gloss": "какой; который",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "while",
+   "gloss": "пока",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "white",
+   "gloss": "белый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "who",
+   "gloss": "кто; который",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "кто бы ни",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "целый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "чей; которого",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "why",
+   "gloss": "почему",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "злой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "жена",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "дикий",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "глушь",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "will",
+   "gloss": "(будущее время); воля",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "охотно",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "win",
+   "gloss": "выигрывать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "подоконник",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "вино",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "крыло",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "мудрый",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "желать; желание",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "with",
+   "gloss": "с",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "without",
+   "gloss": "без",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "женщина",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "чудесный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "дрова; древесина; лес",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "деревянный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "word",
+   "gloss": "слово",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "work",
+   "gloss": "работать; работа",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "рабочие",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "мастерская",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "world",
+   "gloss": "мир",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "обеспокоенный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "достойный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "would",
+   "gloss": "(условное наклонение)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "раны",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "write",
+   "gloss": "писать",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "писатель",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "неправильный",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "year",
+   "gloss": "год",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "ещё; однако",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(имя собственное) Йорк",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "you",
+   "gloss": "ты; вы",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "young",
+   "gloss": "молодой",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "юнец",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "your",
+   "gloss": "твой; ваш",
+   "source": "claude-draft"
+  }
+ ],
+ "sampleApprovedBy": "owner-asked-all-languages-2026-10-19"
+}

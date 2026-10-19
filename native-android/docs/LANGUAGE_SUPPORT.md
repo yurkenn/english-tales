@@ -39,7 +39,7 @@ Canlı sunucunun ilgili dildeki çevirisi önceliklidir. Bulunmuyorsa `ContentTr
 
 Eski indirilmiş belgeler ve katalog her geri yüklemede seçili dilde çözülür. Ham belgeler, kapaklar ve indirme kimlikleri değiştirilmez. Eski dilde başlamış bir içerik isteğinin yeni dildeki kataloğu kurmasına izin verilmez. Paketle eşleşmeyen yeni/düzenlenmiş bir içerik henüz çevrilmemişse İngilizce kaynak gösterilir; açıklama için seçili dilde genel bir metin kullanılır. Sunucu çevirisi eklendiğinde o metin öncelik kazanır. Yeni içerik yayımlayan editör her açık dilin çevirilerini de tamamlamalıdır.
 
-Paket içi ek genel sözlük için mevcut Q4.3b inceleme kapısı korunur; 1.098 taslak sözlük anlamı bu değişiklikle otomatik yayımlanmaz. Mevcut 359 öğrenme kelimesinin anlamları ve alıştırmaları her yeni dilde çalışır. Kullanıcının kendi kaydettiği kişisel sözlük anlamları kullanıcı verisi olarak korunur.
+Paket içi ek genel sözlük (1.098 kelime) tüm dillerde açıktır: Türkçe incelenmiş, diğer 10 dil makine taslağıdır (`reviewStatus: machine-draft`) ve anadil incelemesi bekler. Mevcut 359 öğrenme kelimesinin anlamları ve alıştırmaları her yeni dilde çalışır. Kullanıcının kendi kaydettiği kişisel sözlük anlamları kullanıcı verisi olarak korunur.
 
 Türkçe kaynaklar `sync_turkish_resources.py` ile ayrıca `values-tr` içine eşlenir; böylece Android’in Türkçeden sonraki İngilizceyi açık kaynak eşleşmesi nedeniyle seçmesi önlenir. CI bu eşlemenin ve 10 dilin kapsamının güncel olduğunu kontrol eder.
 

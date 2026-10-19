@@ -1,0 +1,4554 @@
+{
+ "schemaVersion": 1,
+ "lang": "bn",
+ "source": "Built by tools/glossary.mjs from backend/content/glossary/bn.json: machine draft, not reviewed by a native speaker.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "একটি"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "পরিত্যাগ করা"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "সক্ষমতা"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "জাহাজ/গাড়িতে ওঠা"
+  },
+  {
+   "lemma": "about",
+   "gloss": "সম্পর্কে; প্রায়"
+  },
+  {
+   "lemma": "above",
+   "gloss": "উপরে"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "গ্রহণ করা"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "হঠাৎ করে; ভুলবশত"
+  },
+  {
+   "lemma": "across",
+   "gloss": "জুড়ে; ওপারে"
+  },
+  {
+   "lemma": "act",
+   "gloss": "আচরণ করা; কাজ"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "যোগ করে"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "প্রশংসা করেছিল"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "প্রশংসা করে"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "স্বীকার করা"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "পরামর্শ"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "ভীত"
+  },
+  {
+   "lemma": "after",
+   "gloss": "পরে"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "বিকেল"
+  },
+  {
+   "lemma": "again",
+   "gloss": "আবার"
+  },
+  {
+   "lemma": "against",
+   "gloss": "বিরুদ্ধে"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "আগে"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "সম্মত হয়েছিল"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "সম্মত হয়"
+  },
+  {
+   "lemma": "air",
+   "gloss": "বাতাস"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "জীবিত"
+  },
+  {
+   "lemma": "all",
+   "gloss": "সব"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "অনুমতি দিয়েছিল"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "প্রায়"
+  },
+  {
+   "lemma": "along",
+   "gloss": "বরাবর"
+  },
+  {
+   "lemma": "already",
+   "gloss": "ইতিমধ্যে"
+  },
+  {
+   "lemma": "also",
+   "gloss": "এছাড়াও"
+  },
+  {
+   "lemma": "although",
+   "gloss": "যদিও"
+  },
+  {
+   "lemma": "always",
+   "gloss": "সবসময়"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "বিস্মিত"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "বিস্ময়কর"
+  },
+  {
+   "lemma": "among",
+   "gloss": "মধ্যে"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "পরিমাণ"
+  },
+  {
+   "lemma": "an",
+   "gloss": "একটি"
+  },
+  {
+   "lemma": "and",
+   "gloss": "এবং"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "রাগ"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "রাগান্বিত"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "প্রাণী"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "another",
+   "gloss": "আরেকটি"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "উত্তর দিয়েছিল"
+  },
+  {
+   "lemma": "any",
+   "gloss": "যেকোনো"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "আর (না)"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "যে কেউ"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "যেকোনো কিছু"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "আলাদা"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "চেহারা"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "দেখা দিয়েছিল"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "আপেল"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "কাছে এসেছিল"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "সশস্ত্র"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "হাত"
+  },
+  {
+   "lemma": "around",
+   "gloss": "চারপাশে"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "সাজানো"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "পৌঁছেছিল"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "পৌঁছায়"
+  },
+  {
+   "lemma": "as",
+   "gloss": "যেমন; যখন"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "জিজ্ঞাসা করা; চাওয়া"
+  },
+  {
+   "lemma": "at",
+   "gloss": "এ; এ (স্থান)"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "আক্রমণ করেছিল"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "পরিচারকগণ"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "শরৎ"
+  },
+  {
+   "lemma": "away",
+   "gloss": "দূরে"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "আনাড়ি; বিব্রতকর"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "শিশু"
+  },
+  {
+   "lemma": "back",
+   "gloss": "ফিরে; পিঠ"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "ব্যাগ"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "বল; নাচের আসর"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "বেড়ি; ফিতা"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "শিক; গরাদ"
+  },
+  {
+   "lemma": "be",
+   "gloss": "হওয়া"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "মারা; হারানো"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "সুন্দর"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "সৌন্দর্য"
+  },
+  {
+   "lemma": "because",
+   "gloss": "কারণ"
+  },
+  {
+   "lemma": "become",
+   "gloss": "হয়ে ওঠা"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "বিছানা"
+  },
+  {
+   "lemma": "before",
+   "gloss": "আগে"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "অনুনয় করেছিল"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "শুরু করা"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "আচরণ করেছিল"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "পিছনে"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "অন্তর্ভুক্ত হওয়া"
+  },
+  {
+   "lemma": "below",
+   "gloss": "নিচে"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "নত হওয়া"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "নিচে"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "পাশে"
+  },
+  {
+   "lemma": "between",
+   "gloss": "মাঝে"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "ওপারে; ছাড়িয়ে"
+  },
+  {
+   "lemma": "big",
+   "gloss": "বড়"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "পাখি"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "জন্মদিন"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "টুকরো; কামড়েছিল"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "কামড়ানো"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "প্রচণ্ডভাবে (ঠান্ডা)"
+  },
+  {
+   "lemma": "black",
+   "gloss": "কালো"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "দোষ দিল"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "কম্বলগুলো"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "রক্ত"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "ফোটা"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "ফুটে উঠল"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "আঘাত"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "নীল"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "গর্ব করল"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "body",
+   "gloss": "শরীর"
+  },
+  {
+   "lemma": "born",
+   "gloss": "জন্ম নেওয়া"
+  },
+  {
+   "lemma": "both",
+   "gloss": "দুজনেই"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "বোতল"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "তলা; নিচের অংশ"
+  },
+  {
+   "lemma": "box",
+   "gloss": "বাক্স"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "ডাল"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "রুটি"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(নাম) ব্রেমেন"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "কাঁটাযুক্ত বুনো গোলাপঝাড়"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "বর"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "উজ্জ্বল"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "উজ্জ্বলতা"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "আনা"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "ভাই"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "বাদামি"
+  },
+  {
+   "lemma": "build",
+   "gloss": "নির্মাণ করা"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "পোড়া"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "পোড়া"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "ফেটে যাওয়া"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "ব্যস্ত"
+  },
+  {
+   "lemma": "but",
+   "gloss": "কিন্তু"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "প্রজাপতি"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "কেনা"
+  },
+  {
+   "lemma": "by",
+   "gloss": "পাশে; দ্বারা"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "কেক"
+  },
+  {
+   "lemma": "call",
+   "gloss": "ডাক; ডাকা"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "ক্যামেরা"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "ক্যাম্প"
+  },
+  {
+   "lemma": "can",
+   "gloss": "পারা"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "মোমবাতিগুলো"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "পারে না"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "ধরা"
+  },
+  {
+   "lemma": "care",
+   "gloss": "যত্ন; পরোয়া করা"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "সতর্ক"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "ঘোড়ার গাড়ি"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "বহন করা"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "বিড়াল"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "ধরা"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "ঘটাল"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "ঘটানো"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "উদ্‌যাপন করল"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "উদ্‌যাপন করা"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "উদ্‌যাপন"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "সেন্ট"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "নিশ্চিত; নির্দিষ্ট"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "চেয়ার"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "সুযোগ"
+  },
+  {
+   "lemma": "change",
+   "gloss": "বদলানো; পরিবর্তন"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "তেড়ে আসা"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "তাড়া করল"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "সস্তা"
+  },
+  {
+   "lemma": "check",
+   "gloss": "পরীক্ষা করা"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "পনির"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(নাম) শিকাগো"
+  },
+  {
+   "lemma": "child",
+   "gloss": "শিশু"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "শৈশব"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "পছন্দ"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "বেছে নেওয়া"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "বড়দিন"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "গির্জার কবরস্থান"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(নাম) সিন্ডারেলা"
+  },
+  {
+   "lemma": "city",
+   "gloss": "শহর"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "দাবি করল"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "খালি করা; পরিষ্কার"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "কেরানি"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "ওঠা"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "ঘড়ি"
+  },
+  {
+   "lemma": "close",
+   "gloss": "বন্ধ করা; কাছের"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "মেঘ"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "ঠান্ডা"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "সংগ্রহ করা"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "রংগুলো"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "চিরুনি"
+  },
+  {
+   "lemma": "come",
+   "gloss": "আসা"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "আরামদায়ক"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "আরামে"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "সান্ত্বনা দিল"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "সহযাত্রী"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "তুলনা করে"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "অভিযোগ করল"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "সম্পূর্ণ করা; পূর্ণ"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "বিভ্রান্তি"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "যোগাযোগ"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "চালিয়ে যাওয়া"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "রাজি করাল; নিশ্চিত"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "রাঁধুনি; রান্না করা"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "ঠান্ডা করল"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "কোণ"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "দাম হওয়া; খরচ"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "কুটির"
+  },
+  {
+   "lemma": "could",
+   "gloss": "পারল; পারত"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "গুনল"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "অসংখ্য"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "জুটি"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "ঢাকা; ঢেকে দিল"
+  },
+  {
+   "lemma": "create",
+   "gloss": "সৃষ্টি করা"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "সমালোচনা করল"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "পার হল"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "ভিড়"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "নিষ্ঠুর"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "নিষ্ঠুরতা"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "কাঁদা"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "কুঁকড়ে গেল"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "ক্রেতা"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "কাটা"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "নাচা"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "বিপদ"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "বিপজ্জনক"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "সাহস করা"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "অন্ধকার"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "মেয়ে"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "ভোর"
+  },
+  {
+   "lemma": "day",
+   "gloss": "দিন"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "দিনের আলো"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "মৃত"
+  },
+  {
+   "lemma": "death",
+   "gloss": "মৃত্যু"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "প্রতারক"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "সিদ্ধান্ত নিল"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "সিদ্ধান্ত নেয়"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "কাজকর্ম"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "গভীর"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "পরাজিত করা"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "রক্ষা করা"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "সূক্ষ্ম"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "সুস্বাদু"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "আনন্দ"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "দাবি করল"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "অস্বীকার করা"
+  },
+  {
+   "lemma": "described",
+   "gloss": "বর্ণনা করল"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "ডেস্ক"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "হতাশা"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "মরিয়া হয়ে"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "সত্ত্বেও"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "ধ্বংস করল"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "হীরা"
+  },
+  {
+   "lemma": "die",
+   "gloss": "মরা"
+  },
+  {
+   "lemma": "died",
+   "gloss": "মারা গেল"
+  },
+  {
+   "lemma": "different",
+   "gloss": "ভিন্ন"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "কঠিন"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "অদৃশ্য হওয়া"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "দূরের"
+  },
+  {
+   "lemma": "do",
+   "gloss": "করা"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "ডলার"
+  },
+  {
+   "lemma": "door",
+   "gloss": "দরজা"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "দরজার ফাঁক"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "ময়দার তাল"
+  },
+  {
+   "lemma": "down",
+   "gloss": "নিচে"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "স্রোতের দিকে"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "নিজের দিকে টানা"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "আঁকা ছবি"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "ভয় পেল"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "স্বপ্ন দেখল"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "স্বপ্নগুলো"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "পান করা"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "চালক"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "ফেলে দেওয়া; ফোঁটা"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "ডুবে মরল"
+  },
+  {
+   "lemma": "due",
+   "gloss": "নির্ধারিত; প্রত্যাশিত"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "নিস্তেজ; বিরক্তিকর"
+  },
+  {
+   "lemma": "during",
+   "gloss": "সময়কালে"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "ধুলোময়"
+  },
+  {
+   "lemma": "each",
+   "gloss": "প্রতিটি"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "কান"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "আগে"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "সহজ"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "খাওয়া"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "আবলুস"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(নাম) মিশর"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "আশি"
+  },
+  {
+   "lemma": "either",
+   "gloss": "ও না (নেতিবাচক)"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "সবচেয়ে বড়"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "এগারো"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "else",
+   "gloss": "অন্য"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "জড়িয়ে ধরল"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "খালি"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "জাদুমন্ত্রে মুগ্ধ"
+  },
+  {
+   "lemma": "end",
+   "gloss": "শেষ"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "বিপদে ফেলা"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "শক্তি"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "উপভোগ করল"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "বিশাল"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "যথেষ্ট"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "প্রবেশ করা"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "উৎসাহী"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "সম্পূর্ণভাবে"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "প্রবেশপথ"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "পালানো"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "বিশেষ করে"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "আগের সন্ধ্যা (বড়দিনের)"
+  },
+  {
+   "lemma": "even",
+   "gloss": "এমনকি"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "অবশেষে"
+  },
+  {
+   "lemma": "every",
+   "gloss": "প্রতিটি"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "সবাই"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "সবকিছু"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "সর্বত্র"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "সঠিক"
+  },
+  {
+   "lemma": "except",
+   "gloss": "ছাড়া"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "বিনিময়ে; আদান-প্রদান"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "ক্লান্ত"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "বিদ্যমান থাকা"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "আশা করল; প্রত্যাশিত"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "আশা করে"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "খরচ"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "দামি"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "ব্যাখ্যা করা"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "ব্যাখ্যা"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "অন্বেষণ করা"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "অভিব্যক্তি"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "অসাধারণ"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "চোখ"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "ভ্রু"
+  },
+  {
+   "lemma": "face",
+   "gloss": "মুখ"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "ম্লান হয়ে গেল"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "ব্যর্থ হল"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "ব্যর্থ হয়"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "পড়া"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "পড়ন্ত"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "পড়ে; জলপ্রপাত"
+  },
+  {
+   "lemma": "false",
+   "gloss": "মিথ্যা; ভুল"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "পরিচিত"
+  },
+  {
+   "lemma": "family",
+   "gloss": "পরিবার"
+  },
+  {
+   "lemma": "far",
+   "gloss": "দূরে"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "কৃষক"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "খামারের উঠান"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "দ্রুত"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "বাঁধল"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "মোটা; চর্বি"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "ত্রুটি"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "ভয়"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "খাওয়ানো"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "অনুভব করা"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "অনুভূতি"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "নিয়ে এল"
+  },
+  {
+   "lemma": "few",
+   "gloss": "কয়েকটি"
+  },
+  {
+   "lemma": "field",
+   "gloss": "মাঠ"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "হিংস্র"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "পনেরো"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "পনেরোতম"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "ঝগড়া করা"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "ভরল; পূর্ণ"
+  },
+  {
+   "lemma": "final",
+   "gloss": "শেষ"
+  },
+  {
+   "lemma": "find",
+   "gloss": "খুঁজে পাওয়া"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "ভালো; সূক্ষ্ম"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "আঙুল"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "ফিনিশ"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "আগুন"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "শক্ত করে"
+  },
+  {
+   "lemma": "first",
+   "gloss": "প্রথম"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "মাছ"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "মাপে লাগল"
+  },
+  {
+   "lemma": "five",
+   "gloss": "পাঁচ"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "সমতল; ফ্ল্যাট"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "পালিয়ে গেল"
+  },
+  {
+   "lemma": "float",
+   "gloss": "ভেসে থাকা"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "পাল"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "মেঝে; তলা"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "ফুল"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "ওড়া"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "অনুসরণ করা"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "অনুসারীরা"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "অনুরক্ত"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "বোকা"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "পা"
+  },
+  {
+   "lemma": "for",
+   "gloss": "জন্য; ছাড়া"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "চিরকাল"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "ভুলে যাওয়া"
+  },
+  {
+   "lemma": "form",
+   "gloss": "গঠন করা; আকার"
+  },
+  {
+   "lemma": "four",
+   "gloss": "চার"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "জমে যাওয়া"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "হিমশীতল; জমে যাওয়া"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "টাটকা"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "বন্ধু"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "বন্ধুত্ব"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "ভয় দেখানো"
+  },
+  {
+   "lemma": "from",
+   "gloss": "থেকে"
+  },
+  {
+   "lemma": "front",
+   "gloss": "সামনে"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "ফল"
+  },
+  {
+   "lemma": "full",
+   "gloss": "পূর্ণ"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "মজা"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "ক্রুদ্ধ"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "অর্জন করা"
+  },
+  {
+   "lemma": "games",
+   "gloss": "খেলাগুলো"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "বাগান"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "জড়ো করা"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "একদৃষ্টিতে তাকানো; দৃষ্টি"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "কোমল"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "আলতো করে"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "get",
+   "gloss": "পাওয়া; হওয়া; পৌঁছানো"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "ভূত"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "মেয়ে"
+  },
+  {
+   "lemma": "give",
+   "gloss": "দেওয়া"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "দাতারা"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "কাচ; গ্লাস"
+  },
+  {
+   "lemma": "go",
+   "gloss": "যাওয়া"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "ছাগল"
+  },
+  {
+   "lemma": "god",
+   "gloss": "ঈশ্বর"
+  },
+  {
+   "lemma": "going",
+   "gloss": "যাচ্ছে"
+  },
+  {
+   "lemma": "good",
+   "gloss": "ভালো"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "বিদায়"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "সুশোভন"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "জমকালো"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "দাদা, নানা"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "দাদি, নানি"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "ধূসর"
+  },
+  {
+   "lemma": "great",
+   "gloss": "মহান; চমৎকার"
+  },
+  {
+   "lemma": "green",
+   "gloss": "সবুজ"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "অভিবাদন জানাল"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "ধূসর"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "মাটি"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "বেড়ে ওঠা"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "অনুমান করা"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "গাইড; পথ দেখানো"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "বন্দুক"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "দমকা হাওয়া"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "চুল"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "চুল কাটা"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "হলঘরগুলো"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "হাত"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "ঝোলানো"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "ঘটা"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "সুখ"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "সুখী"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "শক্ত; কঠিন"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "কঠোর"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "টুপি"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "ডিম ফুটে বের হওয়া"
+  },
+  {
+   "lemma": "have",
+   "gloss": "থাকা"
+  },
+  {
+   "lemma": "he",
+   "gloss": "সে (পুরুষ)"
+  },
+  {
+   "lemma": "head",
+   "gloss": "মাথা"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "শোনা"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "হৃদয়"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "গরম করা; তাপ"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "বেড়া"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "হ্যালো"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "সাহায্যকারীরা"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "her",
+   "gloss": "তার (নারী); তাকে (নারী)"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "সে নিজে (নারী)"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "লুকাল"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "লুকানো"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "টিলা"
+  },
+  {
+   "lemma": "him",
+   "gloss": "তাকে (পুরুষ)"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "সে নিজে (পুরুষ)"
+  },
+  {
+   "lemma": "his",
+   "gloss": "তার (পুরুষ)"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "ধরে রাখা"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "ধরে রাখে"
+  },
+  {
+   "lemma": "home",
+   "gloss": "বাড়ি; বাড়ির দিকে"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "হুড"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "আশা; আশা করা"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "শিং"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "আতঙ্কিত"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "ঘোড়া"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "ঘণ্টা"
+  },
+  {
+   "lemma": "house",
+   "gloss": "ঘর"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "ঘরের কাজ"
+  },
+  {
+   "lemma": "how",
+   "gloss": "কীভাবে"
+  },
+  {
+   "lemma": "however",
+   "gloss": "তবে"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "জড়িয়ে ধরল"
+  },
+  {
+   "lemma": "human",
+   "gloss": "মানুষ"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "একশো"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "ঝোলাল; ঝোলানো"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "তাড়াহুড়ো করল"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "আঘাত করা; আহত"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "স্বামী"
+  },
+  {
+   "lemma": "i",
+   "gloss": "আমি"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ধারণা"
+  },
+  {
+   "lemma": "if",
+   "gloss": "যদি"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "অসুস্থ"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "কাল্পনিক"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "কল্পনা করল"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "সঙ্গে সঙ্গে"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "অমর"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "অসম্ভব"
+  },
+  {
+   "lemma": "in",
+   "gloss": "মধ্যে; -এ"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "আহত"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "ভেতরে"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "জোর দিল"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "পরিদর্শন করা"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "পরিবর্তে"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "আগ্রহী"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "ব্যাহত"
+  },
+  {
+   "lemma": "into",
+   "gloss": "ভেতরে"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "আমন্ত্রণ জানাল"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "আমন্ত্রণ জানায়"
+  },
+  {
+   "lemma": "it",
+   "gloss": "এটি (জড়/প্রাণী)"
+  },
+  {
+   "lemma": "its",
+   "gloss": "এর (জড়/প্রাণী)"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "জ্যাম"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "ঈর্ষান্বিত"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(নাম) যিশু"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "job",
+   "gloss": "চাকরি"
+  },
+  {
+   "lemma": "join",
+   "gloss": "যোগ দেওয়া"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "রসিকতা করল"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "আনন্দ"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "বিচারক; বিচার করা"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "লাফ দিল"
+  },
+  {
+   "lemma": "just",
+   "gloss": "শুধু; ঠিক"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "রাখা"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "লাথি মারল"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "হত্যা করা"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "দয়া"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "রাজ্য"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "চুমু খেল"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "চুমু"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "রান্নাঘর"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "হাঁটু"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "ফেলে দিল; (দরজায়) টোকা দিল"
+  },
+  {
+   "lemma": "know",
+   "gloss": "জানা"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "ফিতা"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "হ্রদ"
+  },
+  {
+   "lemma": "land",
+   "gloss": "জমি; দেশ; অবতরণ করা"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(নাম) ল্যাপল্যান্ড"
+  },
+  {
+   "lemma": "large",
+   "gloss": "বড়"
+  },
+  {
+   "lemma": "last",
+   "gloss": "শেষ"
+  },
+  {
+   "lemma": "later",
+   "gloss": "পরে"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "হাসা"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "শুয়ে পড়ল; রাখল"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "ঝুঁকল; হেলান দিল"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "শিখল"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "শেখা"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "ছেড়ে যাওয়া; রেখে যাওয়া"
+  },
+  {
+   "lemma": "left",
+   "gloss": "চলে গেল; বাম"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "পা"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "ধার দেওয়া"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "পাঠ"
+  },
+  {
+   "lemma": "let",
+   "gloss": "দেওয়া (অনুমতি); যাক"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "চিঠি; অক্ষর"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "মিথ্যা; শুয়ে আছে"
+  },
+  {
+   "lemma": "life",
+   "gloss": "জীবন"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "তোলা"
+  },
+  {
+   "lemma": "light",
+   "gloss": "আলো; হালকা"
+  },
+  {
+   "lemma": "like",
+   "gloss": "মতো; পছন্দ করা"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(নাম); লিলি ফুল"
+  },
+  {
+   "lemma": "line",
+   "gloss": "রেখা; সারি"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "শোনা (মন দিয়ে)"
+  },
+  {
+   "lemma": "little",
+   "gloss": "ছোট; অল্প"
+  },
+  {
+   "lemma": "live",
+   "gloss": "বাস করা"
+  },
+  {
+   "lemma": "local",
+   "gloss": "স্থানীয়"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "তালা দিল; তালাবদ্ধ"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "নির্জন; একাকী"
+  },
+  {
+   "lemma": "long",
+   "gloss": "লম্বা"
+  },
+  {
+   "lemma": "look",
+   "gloss": "দেখতে লাগা; তাকানো"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "ঢিলা করল"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "হারানো"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "জোরে (আওয়াজ)"
+  },
+  {
+   "lemma": "love",
+   "gloss": "ভালোবাসা"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "নামাল"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "ভাগ্য"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "দলা"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(নাম) পূর্বদেশীয় জ্ঞানী"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "make",
+   "gloss": "বানানো"
+  },
+  {
+   "lemma": "man",
+   "gloss": "পুরুষ"
+  },
+  {
+   "lemma": "many",
+   "gloss": "অনেক"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "চিহ্ন"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "বিয়ে"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "বিয়ে করা"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "জলাভূমি"
+  },
+  {
+   "lemma": "master",
+   "gloss": "প্রভু; ওস্তাদ"
+  },
+  {
+   "lemma": "match",
+   "gloss": "দেশলাই; মেলানো"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "উপকরণ"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "গুরুত্বপূর্ণ ছিল"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "মেয়র"
+  },
+  {
+   "lemma": "me",
+   "gloss": "আমাকে"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "নিষ্ঠুর; মানে হওয়া"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "দেখা করা; পরিচিত হওয়া"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "গলে যাওয়া"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "অগোছালো অবস্থা"
+  },
+  {
+   "lemma": "message",
+   "gloss": "বার্তা"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "বার্তাবাহক"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "ধাতু"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "মধ্যরাত"
+  },
+  {
+   "lemma": "might",
+   "gloss": "হয়তো"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "মাইল"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "দুধ"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "মন্ত্রী"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "মিনিট"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "মিস করল; ফসকাল"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "নিখোঁজ"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "উপহাস করা"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "মুহূর্ত"
+  },
+  {
+   "lemma": "more",
+   "gloss": "আরও"
+  },
+  {
+   "lemma": "most",
+   "gloss": "সবচেয়ে; বেশিরভাগ"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "মা"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "পাহাড়"
+  },
+  {
+   "lemma": "move",
+   "gloss": "নড়া; সরে যাওয়া"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "নড়াচড়া"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "মিসেস"
+  },
+  {
+   "lemma": "music",
+   "gloss": "সংগীত"
+  },
+  {
+   "lemma": "must",
+   "gloss": "অবশ্যই"
+  },
+  {
+   "lemma": "my",
+   "gloss": "আমার"
+  },
+  {
+   "lemma": "name",
+   "gloss": "নাম"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "কথক"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "সরু"
+  },
+  {
+   "lemma": "near",
+   "gloss": "কাছে"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "কাছাকাছি"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "ঘাড়গুলো"
+  },
+  {
+   "lemma": "need",
+   "gloss": "দরকার হওয়া"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "সুঁচ"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "প্রতিবেশী"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "না... না"
+  },
+  {
+   "lemma": "net",
+   "gloss": "জাল"
+  },
+  {
+   "lemma": "never",
+   "gloss": "কখনো না"
+  },
+  {
+   "lemma": "new",
+   "gloss": "নতুন"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "নবাগত"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "সংবাদপত্র"
+  },
+  {
+   "lemma": "next",
+   "gloss": "পরবর্তী; পাশে"
+  },
+  {
+   "lemma": "night",
+   "gloss": "রাত"
+  },
+  {
+   "lemma": "no",
+   "gloss": "না; কোনো ... নয়"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "গোলমাল"
+  },
+  {
+   "lemma": "none",
+   "gloss": "কেউ না"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "না-ও"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "নাক"
+  },
+  {
+   "lemma": "not",
+   "gloss": "না"
+  },
+  {
+   "lemma": "note",
+   "gloss": "নোট"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "লক্ষ করল"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "লক্ষ করে"
+  },
+  {
+   "lemma": "now",
+   "gloss": "এখন"
+  },
+  {
+   "lemma": "of",
+   "gloss": "এর; থেকে"
+  },
+  {
+   "lemma": "off",
+   "gloss": "রওনা হওয়া; বন্ধ"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "প্রস্তাব দেওয়া"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "কর্মকর্তা"
+  },
+  {
+   "lemma": "official",
+   "gloss": "সরকারি; কর্মকর্তা"
+  },
+  {
+   "lemma": "often",
+   "gloss": "প্রায়ই"
+  },
+  {
+   "lemma": "old",
+   "gloss": "বৃদ্ধ; পুরনো"
+  },
+  {
+   "lemma": "on",
+   "gloss": "উপরে; -এ"
+  },
+  {
+   "lemma": "once",
+   "gloss": "একবার; এক সময়"
+  },
+  {
+   "lemma": "one",
+   "gloss": "এক; কেউ"
+  },
+  {
+   "lemma": "only",
+   "gloss": "শুধু"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "উপরে"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "সামনের দিকে"
+  },
+  {
+   "lemma": "open",
+   "gloss": "খোলা (ক্রিয়া); খোলা (বিশেষণ)"
+  },
+  {
+   "lemma": "or",
+   "gloss": "অথবা"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "আদেশ দিল"
+  },
+  {
+   "lemma": "original",
+   "gloss": "আসল"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "অলংকার"
+  },
+  {
+   "lemma": "other",
+   "gloss": "অন্য"
+  },
+  {
+   "lemma": "out",
+   "gloss": "বাইরে"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "পোশাক"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "বাইরে"
+  },
+  {
+   "lemma": "over",
+   "gloss": "দিকে; উপরে"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "মাথার উপরে"
+  },
+  {
+   "lemma": "package",
+   "gloss": "প্যাকেট"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "প্যাকিং"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "ব্যথা"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "বেদনাদায়ক"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "জোড়া"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "প্রাসাদ"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "কাগজ"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "বাবা-মা"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "বিদায়"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "নাচের সঙ্গী; জীবনসঙ্গী"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "পথ"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "পেরিয়ে গেল"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "পাশ দিয়ে যাওয়া"
+  },
+  {
+   "lemma": "past",
+   "gloss": "অতীত; পাশ দিয়ে"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "তালি; টুকরো"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "ধৈর্য"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "টাকা দেওয়া"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "পরিশোধ"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "পিচ"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "নুড়ি"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "পেনি"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "নিখুঁত"
+  },
+  {
+   "lemma": "person",
+   "gloss": "ব্যক্তি"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "রাজি করাল"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "ছবি"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "ছবিগুলো"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "তোলা; বেছে নেওয়া"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "টুকরো"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "পায়রা"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "স্তূপ"
+  },
+  {
+   "lemma": "place",
+   "gloss": "জায়গা"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "সাদা পোশাকের; সাধারণ"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "পরিকল্পনা"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "রোপণ করল"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "রোপণ"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "গাছপালা"
+  },
+  {
+   "lemma": "play",
+   "gloss": "খেলা"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "ঝাঁপ দিল"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "ইশারা করল; ছুঁচালো"
+  },
+  {
+   "lemma": "police",
+   "gloss": "পুলিশ"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "পুলিশ সদস্য"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "গরিব; বেচারা"
+  },
+  {
+   "lemma": "position",
+   "gloss": "পদ"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "ঢালল"
+  },
+  {
+   "lemma": "power",
+   "gloss": "ক্ষমতা"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "শক্তিশালী"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "বেশি পছন্দ করা"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "প্রস্তুতি"
+  },
+  {
+   "lemma": "present",
+   "gloss": "উপহার; বর্তমান"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "ভান করল"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "বাধা দিল"
+  },
+  {
+   "lemma": "price",
+   "gloss": "দাম"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "বেঁধানো"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "কারাগার"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "সমৃদ্ধ হওয়া"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "রক্ষা করা"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "প্রমাণ করা"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "টানা"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "শাস্তি দিল"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "শাস্তি"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "ঘড়ঘড় করা (বিড়ালের)"
+  },
+  {
+   "lemma": "push",
+   "gloss": "ঠেলা"
+  },
+  {
+   "lemma": "put",
+   "gloss": "রাখা"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "দ্রুত"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "বৃষ্টিময়"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "প্রতিক্রিয়া"
+  },
+  {
+   "lemma": "read",
+   "gloss": "পড়া"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "প্রস্তুত"
+  },
+  {
+   "lemma": "real",
+   "gloss": "আসল"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "বুঝতে পারল"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "কারণ"
+  },
+  {
+   "lemma": "received",
+   "gloss": "পেল"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "সম্প্রতি"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "চেনা"
+  },
+  {
+   "lemma": "red",
+   "gloss": "লাল"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "প্রত্যাখ্যান করা"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "প্রত্যাখ্যান করল"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "প্রত্যাখ্যান"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "রয়ে গেল"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "অবশিষ্ট"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "মন্তব্য"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "উল্লেখযোগ্য"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "মনে রাখা"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "মনে করিয়ে দিল"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "স্মারক"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "সরানো"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "পুনরাবৃত্তি করল"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "উত্তর"
+  },
+  {
+   "lemma": "report",
+   "gloss": "প্রতিবেদন; জানানো"
+  },
+  {
+   "lemma": "request",
+   "gloss": "অনুরোধ"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "উদ্ধারকারী"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "দায়িত্বশীল"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "রেস্তোরাঁ"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "ফিরিয়ে দিল"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "প্রকাশ করা"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "পুরস্কার"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "ফিতা"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "চড়া"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "চড়া"
+  },
+  {
+   "lemma": "right",
+   "gloss": "ঠিক; ডান"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "ওঠে; উদিত হয়"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "নদীর পাড়"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "ভাজা; ভাজা (বিশেষণ)"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "ডাকাতি করা"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "ডাকাত"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "ছোট রুটি"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "ছাদ"
+  },
+  {
+   "lemma": "room",
+   "gloss": "ঘর"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "শিকড়"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "গোলাপ; উঠল"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "খসখসে; কঠোর"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(নাম) র‍্যাম্পলস্টিল্টস্কিন"
+  },
+  {
+   "lemma": "run",
+   "gloss": "দৌড়ানো"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "ছুটে গেল"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) মালিকানাসূচক প্রত্যয়"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "দুঃখ"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "same",
+   "gloss": "একই"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "নীলকান্তমণি"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "সসেজ"
+  },
+  {
+   "lemma": "save",
+   "gloss": "বাঁচানো; জমানো"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "সঞ্চয়"
+  },
+  {
+   "lemma": "say",
+   "gloss": "বলা"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "কদাচিৎ"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "ছড়িয়ে দিল; ছড়িয়ে পড়ল"
+  },
+  {
+   "lemma": "school",
+   "gloss": "স্কুল"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "সমুদ্র"
+  },
+  {
+   "lemma": "search",
+   "gloss": "খোঁজা"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "গোপন কথা; গোপন"
+  },
+  {
+   "lemma": "see",
+   "gloss": "দেখা"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "বীজ"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "সন্ধান করা"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "মনে হল"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "মনে হয়"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "খপ করে ধরল"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "বিক্রি করা"
+  },
+  {
+   "lemma": "send",
+   "gloss": "পাঠানো"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "পাঠানো"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "বাক্য; দণ্ড"
+  },
+  {
+   "lemma": "service",
+   "gloss": "সেবা"
+  },
+  {
+   "lemma": "set",
+   "gloss": "রাখা; রওনা দেওয়া; অস্ত যাওয়া"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "সাত"
+  },
+  {
+   "lemma": "several",
+   "gloss": "কয়েকটি"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "সেলাই করল"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "সেলাই"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "আকার"
+  },
+  {
+   "lemma": "she",
+   "gloss": "সে (নারী)"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "খোলস"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "জ্বলজ্বল করা"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "জ্বলজ্বল করে"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "উজ্জ্বল"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "জাহাজ"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "জুতা"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "দোকান"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "তীর"
+  },
+  {
+   "lemma": "short",
+   "gloss": "ছোট"
+  },
+  {
+   "lemma": "should",
+   "gloss": "উচিত"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "কাঁধ"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "চিৎকার করল"
+  },
+  {
+   "lemma": "show",
+   "gloss": "দেখানো"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "বন্ধ; বন্ধ করা"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "অসুস্থ"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "দৃষ্টি; দৃশ্য"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "চিহ্ন; সই করা"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "সই"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "নীরব"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "রুপা"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "সহজ"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "সরল মানুষ"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "গান গাওয়া"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "ডোবা; সিংক"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "বোন"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "বসা"
+  },
+  {
+   "lemma": "six",
+   "gloss": "ছয়"
+  },
+  {
+   "lemma": "size",
+   "gloss": "আকার"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "আকাশ"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "ঘুমানো"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "হাতা"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "পিছলে গেল"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "পিছলে যায়"
+  },
+  {
+   "lemma": "small",
+   "gloss": "ছোট"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "গন্ধ; শোঁকা"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "নাক ডাকা"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "তুষার"
+  },
+  {
+   "lemma": "so",
+   "gloss": "তাই; এত"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "নরম"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "নরম হওয়া"
+  },
+  {
+   "lemma": "some",
+   "gloss": "কিছু"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "কেউ"
+  },
+  {
+   "lemma": "something",
+   "gloss": "কিছু"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "কোথাও"
+  },
+  {
+   "lemma": "son",
+   "gloss": "ছেলে"
+  },
+  {
+   "lemma": "song",
+   "gloss": "গান"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "শীঘ্রই"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "শোক"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "দুঃখের সঙ্গে"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "শব্দ"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "স্যুপ"
+  },
+  {
+   "lemma": "space",
+   "gloss": "ফাঁকা জায়গা; মহাকাশ"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "কথা বলা"
+  },
+  {
+   "lemma": "special",
+   "gloss": "বিশেষ"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "খরচ করা; কাটানো"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "ছড়িয়ে ফেলে"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "আত্মা"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "ছড়ানো"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "বসন্ত; ঝরনা"
+  },
+  {
+   "lemma": "square",
+   "gloss": "চত্বর; বর্গ"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "ঠেসে ঢোকা; চিপে ধরা"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "সিঁড়ি"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "স্টল"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "পা ঠুকল"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "দাঁড়ানো"
+  },
+  {
+   "lemma": "star",
+   "gloss": "তারা"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "শুরু হয়"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "থাকা"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "চুরি করা"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "কাণ্ড"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "সৎ মা"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "সৎ বোন"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "লাঠি; লেগে থাকা"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "আঠালো"
+  },
+  {
+   "lemma": "still",
+   "gloss": "এখনও; স্থির"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "সেলাই করল"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "পেট"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "পাথর"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "থামা"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "ঝড়"
+  },
+  {
+   "lemma": "story",
+   "gloss": "গল্প"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "সোজা"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "চুলের গুচ্ছ"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "অদ্ভুত"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "অপরিচিত লোক"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "ঝরনা"
+  },
+  {
+   "lemma": "street",
+   "gloss": "রাস্তা"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "শক্তি"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "বাড়িয়ে দিল; টান টান করল"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "(দেশলাই) জ্বালানো; আঘাত করা"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "হোঁচট খেল"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "বোকা"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "সফল হওয়া"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "সফল"
+  },
+  {
+   "lemma": "such",
+   "gloss": "এমন"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "হঠাৎ"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "চিনি"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "প্রস্তাব দিল"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "গ্রীষ্ম"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "সূর্যের আলো"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "সূর্যোদয়"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "সূর্যাস্ত"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "তথাকথিত; কথা ছিল"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "বিস্ময়"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "পরিবেষ্টিত"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "সন্দেহ করল"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "তলোয়ার"
+  },
+  {
+   "lemma": "table",
+   "gloss": "টেবিল"
+  },
+  {
+   "lemma": "take",
+   "gloss": "নিয়ে যাওয়া; নেওয়া"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "কথা বলল"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "কথা বলা"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "লম্বা"
+  },
+  {
+   "lemma": "task",
+   "gloss": "কাজ"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "চা"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "অশ্রু; ছেঁড়া"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "বলা; শোনানো"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "দশ"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "ভয়ানক"
+  },
+  {
+   "lemma": "than",
+   "gloss": "চেয়ে"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "ধন্যবাদ দেওয়া"
+  },
+  {
+   "lemma": "that",
+   "gloss": "ওটা; যে"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(নির্দিষ্ট আর্টিকেল)"
+  },
+  {
+   "lemma": "their",
+   "gloss": "তাদের"
+  },
+  {
+   "lemma": "them",
+   "gloss": "তাদেরকে"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "তারা নিজেরা"
+  },
+  {
+   "lemma": "then",
+   "gloss": "তারপর; তখন"
+  },
+  {
+   "lemma": "there",
+   "gloss": "সেখানে"
+  },
+  {
+   "lemma": "these",
+   "gloss": "এগুলো"
+  },
+  {
+   "lemma": "they",
+   "gloss": "তারা"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "পুরু; ঘন"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "চোর"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "পাতলা; রোগা"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "জিনিস"
+  },
+  {
+   "lemma": "think",
+   "gloss": "ভাবা"
+  },
+  {
+   "lemma": "third",
+   "gloss": "তৃতীয়"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "তেরো"
+  },
+  {
+   "lemma": "this",
+   "gloss": "এই; এটা"
+  },
+  {
+   "lemma": "those",
+   "gloss": "ওগুলো"
+  },
+  {
+   "lemma": "though",
+   "gloss": "যদিও"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "ভাবল; চিন্তা"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "হাজার"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "সুতো"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "হুমকি দিল"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "হুমকিস্বরূপ"
+  },
+  {
+   "lemma": "three",
+   "gloss": "তিন"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "গলা"
+  },
+  {
+   "lemma": "through",
+   "gloss": "মধ্য দিয়ে"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "জুড়ে"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "ছোড়া"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(নাম) থাম্বেলিনা"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "বাঁধা"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "বাঁধল; বাঁধা"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "শক্ত করে"
+  },
+  {
+   "lemma": "time",
+   "gloss": "সময়; বার"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "খুদে"
+  },
+  {
+   "lemma": "to",
+   "gloss": "-এ; জন্য"
+  },
+  {
+   "lemma": "today",
+   "gloss": "আজ"
+  },
+  {
+   "lemma": "together",
+   "gloss": "একসঙ্গে"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(নাম)"
+  },
+  {
+   "lemma": "too",
+   "gloss": "ও; অতিরিক্ত"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "দাঁত"
+  },
+  {
+   "lemma": "top",
+   "gloss": "উপরের অংশ; চূড়া"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "যোগাযোগ (যোগাযোগ রাখা)"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "দিকে"
+  },
+  {
+   "lemma": "town",
+   "gloss": "শহর (ছোট)"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "খেলনা"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "পেশা; কারিগরি"
+  },
+  {
+   "lemma": "train",
+   "gloss": "ট্রেন"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "ভ্রমণ করা"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "ভ্রমণ করল"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "ধনসম্পদ"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "আচরণ করল"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "গাছ"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "কেঁপে উঠল"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "ঝামেলা"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "পশুর খাবারের পাত্র"
+  },
+  {
+   "lemma": "true",
+   "gloss": "সত্য"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "কাণ্ড"
+  },
+  {
+   "lemma": "try",
+   "gloss": "চেষ্টা করা"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "ঘোরা; পালা"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "বারো"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "বিশ"
+  },
+  {
+   "lemma": "two",
+   "gloss": "দুই"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "কুৎসিত"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "অক্ষম"
+  },
+  {
+   "lemma": "under",
+   "gloss": "নিচে"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "ভূগর্ভস্থ"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "বোঝা"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "অসমাপ্ত"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "অনুপযুক্ত"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "ভাঁজ খুলল"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "অসুখী"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "বিপরীতে"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "আলোহীন"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "খোলে (বাঁধন)"
+  },
+  {
+   "lemma": "until",
+   "gloss": "পর্যন্ত"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "অস্বাভাবিক"
+  },
+  {
+   "lemma": "up",
+   "gloss": "উপরে"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "মন খারাপ"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "উপরতলা"
+  },
+  {
+   "lemma": "us",
+   "gloss": "আমাদেরকে"
+  },
+  {
+   "lemma": "use",
+   "gloss": "ব্যবহার করা"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "কাজের"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "বিস্তীর্ণ"
+  },
+  {
+   "lemma": "very",
+   "gloss": "খুব"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "বিজয়সমূহ"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "হিংস্রভাবে"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "দেখা করতে যাওয়া"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "দর্শনার্থী"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "অপেক্ষা করল"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "অপেক্ষা করা"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "জেগে ওঠা"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "হাঁটা"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "দেয়াল"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "ঘুরে বেড়াল"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "ঘুরে বেড়ানো"
+  },
+  {
+   "lemma": "want",
+   "gloss": "চাওয়া"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "পোশাকের আলমারি"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "উষ্ণ"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "সতর্ক করল"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "ধুলো"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "হাতঘড়ি; দেখা"
+  },
+  {
+   "lemma": "water",
+   "gloss": "জল"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "হাত নাড়ল"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "ঢেউ"
+  },
+  {
+   "lemma": "way",
+   "gloss": "পথ; উপায়"
+  },
+  {
+   "lemma": "we",
+   "gloss": "আমরা"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "দুর্বল"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "দুর্বল করল"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "ধনী"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "পরা"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "বিয়ের অনুষ্ঠান"
+  },
+  {
+   "lemma": "week",
+   "gloss": "সপ্তাহ"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "স্বাগত জানাল"
+  },
+  {
+   "lemma": "west",
+   "gloss": "পশ্চিম"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "ভেজা"
+  },
+  {
+   "lemma": "what",
+   "gloss": "কী"
+  },
+  {
+   "lemma": "when",
+   "gloss": "যখন; কখন"
+  },
+  {
+   "lemma": "where",
+   "gloss": "কোথায়; যেখানে"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "যেখানেই"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "কিনা"
+  },
+  {
+   "lemma": "which",
+   "gloss": "কোনটি; যা"
+  },
+  {
+   "lemma": "while",
+   "gloss": "যখন; অথচ"
+  },
+  {
+   "lemma": "white",
+   "gloss": "সাদা"
+  },
+  {
+   "lemma": "who",
+   "gloss": "কে; যে"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "যে-ই"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "সম্পূর্ণ"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "কার; যার"
+  },
+  {
+   "lemma": "why",
+   "gloss": "কেন"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "দুষ্ট"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "স্ত্রী"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "বুনো"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "নির্জন বন"
+  },
+  {
+   "lemma": "will",
+   "gloss": "(ভবিষ্যৎ); ইচ্ছাশক্তি"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "স্বেচ্ছায়"
+  },
+  {
+   "lemma": "win",
+   "gloss": "জেতা"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "জানালার তাক"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "ওয়াইন"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "ডানা"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "জ্ঞানী"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "ইচ্ছা করা; ইচ্ছা"
+  },
+  {
+   "lemma": "with",
+   "gloss": "সঙ্গে"
+  },
+  {
+   "lemma": "without",
+   "gloss": "ছাড়া"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "নারী"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "চমৎকার"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "কাঠ; বন"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "কাঠের"
+  },
+  {
+   "lemma": "word",
+   "gloss": "শব্দ"
+  },
+  {
+   "lemma": "work",
+   "gloss": "কাজ করা; কাজ"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "শ্রমিক"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "কর্মশালা"
+  },
+  {
+   "lemma": "world",
+   "gloss": "বিশ্ব"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "চিন্তিত"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "যোগ্য"
+  },
+  {
+   "lemma": "would",
+   "gloss": "(কাল্পনিক ভবিষ্যৎ)"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "ক্ষত"
+  },
+  {
+   "lemma": "write",
+   "gloss": "লেখা"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "লেখক"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "ভুল"
+  },
+  {
+   "lemma": "year",
+   "gloss": "বছর"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "এখনও; তবুও"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(নাম) ইয়র্ক"
+  },
+  {
+   "lemma": "you",
+   "gloss": "তুমি; আপনি"
+  },
+  {
+   "lemma": "young",
+   "gloss": "তরুণ"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "তরুণ"
+  },
+  {
+   "lemma": "your",
+   "gloss": "তোমার; আপনার"
+  }
+ ],
+ "forms": {
+  "am": "be",
+  "are": "be",
+  "ate": "eat",
+  "beaten": "beat",
+  "became": "become",
+  "been": "be",
+  "began": "begin",
+  "begun": "begin",
+  "being": "be",
+  "bent": "bend",
+  "best": "good",
+  "better": "good",
+  "bit": "bite",
+  "bitten": "bite",
+  "blew": "blow",
+  "blown": "blow",
+  "bought": "buy",
+  "broke": "break",
+  "broken": "break",
+  "brought": "bring",
+  "built": "build",
+  "came": "come",
+  "caught": "catch",
+  "children": "child",
+  "chose": "choose",
+  "chosen": "choose",
+  "crept": "creep",
+  "did": "do",
+  "does": "do",
+  "doing": "do",
+  "done": "do",
+  "drank": "drink",
+  "drawn": "draw",
+  "drew": "draw",
+  "driven": "drive",
+  "drove": "drive",
+  "drunk": "drink",
+  "dug": "dig",
+  "eaten": "eat",
+  "fallen": "fall",
+  "farther": "far",
+  "farthest": "far",
+  "fed": "feed",
+  "feet": "foot",
+  "fell": "fall",
+  "felt": "feel",
+  "flew": "fly",
+  "flown": "fly",
+  "forgot": "forget",
+  "forgotten": "forget",
+  "fought": "fight",
+  "found": "find",
+  "froze": "freeze",
+  "frozen": "freeze",
+  "gave": "give",
+  "geese": "goose",
+  "given": "give",
+  "goes": "go",
+  "gone": "go",
+  "got": "get",
+  "gotten": "get",
+  "grew": "grow",
+  "grown": "grow",
+  "had": "have",
+  "halves": "half",
+  "has": "have",
+  "having": "have",
+  "heard": "hear",
+  "held": "hold",
+  "hid": "hide",
+  "hidden": "hide",
+  "hung": "hang",
+  "is": "be",
+  "kept": "keep",
+  "knew": "know",
+  "knives": "knife",
+  "known": "know",
+  "least": "little",
+  "leaves": "leaf",
+  "led": "lead",
+  "lent": "lend",
+  "less": "little",
+  "lit": "light",
+  "loaves": "loaf",
+  "lost": "lose",
+  "made": "make",
+  "meant": "mean",
+  "men": "man",
+  "met": "meet",
+  "mice": "mouse",
+  "paid": "pay",
+  "people": "person",
+  "ran": "run",
+  "ridden": "ride",
+  "rode": "ride",
+  "said": "say",
+  "sang": "sing",
+  "sank": "sink",
+  "sat": "sit",
+  "saw": "see",
+  "seen": "see",
+  "sent": "send",
+  "shaken": "shake",
+  "shelves": "shelf",
+  "shone": "shine",
+  "shook": "shake",
+  "shot": "shoot",
+  "slept": "sleep",
+  "sold": "sell",
+  "sought": "seek",
+  "spent": "spend",
+  "spoke": "speak",
+  "spoken": "speak",
+  "spun": "spin",
+  "stole": "steal",
+  "stolen": "steal",
+  "stood": "stand",
+  "struck": "strike",
+  "stuck": "stick",
+  "sung": "sing",
+  "sunk": "sink",
+  "swam": "swim",
+  "swept": "sweep",
+  "swum": "swim",
+  "swung": "swing",
+  "taken": "take",
+  "taught": "teach",
+  "teeth": "tooth",
+  "thieves": "thief",
+  "thought": "think",
+  "threw": "throw",
+  "thrown": "throw",
+  "told": "tell",
+  "took": "take",
+  "tore": "tear",
+  "torn": "tear",
+  "understood": "understand",
+  "was": "be",
+  "went": "go",
+  "wept": "weep",
+  "were": "be",
+  "wives": "wife",
+  "woke": "wake",
+  "woken": "wake",
+  "wolves": "wolf",
+  "women": "woman",
+  "won": "win",
+  "wore": "wear",
+  "worn": "wear",
+  "worse": "bad",
+  "worst": "bad",
+  "written": "write",
+  "wrote": "write"
+ }
+}

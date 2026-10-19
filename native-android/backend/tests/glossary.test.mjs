@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {validate,build,publishable,sample,serialize,sampleApproved} from '../tools/glossary.mjs';
+import {validate,build,publishable,sample,serialize,sampleApproved,languages,validateTranslation,buildTranslation} from '../tools/glossary.mjs';
 
 const doc=JSON.parse(readFileSync(new URL('../content/glossary/tr.json',import.meta.url),'utf8'));
 const asset=readFileSync(new URL('../../app/src/main/assets/glossary/tr.json',import.meta.url),'utf8');
@@ -35,4 +35,36 @@ test('the owner review sample is a stable tenth of the drafts',()=>{
   const picked=sample(doc);
   assert.deepEqual(picked.map(e=>e.lemma),sample(structuredClone(doc)).map(e=>e.lemma));
   assert.ok(picked.length>doc.entries.length*0.07&&picked.length<doc.entries.length*0.13,String(picked.length));
+});
+
+const drafts=languages.filter(lang=>lang!=='tr');
+const script={ar:/\p{Script=Arabic}/u,ur:/\p{Script=Arabic}/u,hi:/\p{Script=Devanagari}/u,bn:/\p{Script=Bengali}/u,th:/\p{Script=Thai}/u,ru:/\p{Script=Cyrillic}/u};
+const read=lang=>JSON.parse(readFileSync(new URL(`../content/glossary/${lang}.json`,import.meta.url),'utf8'));
+
+test('every other language is a complete machine draft of the Turkish lemma list, and its app asset is what build writes',()=>{
+  assert.deepEqual(drafts,['es-419','pt-BR','id','ar','vi','hi','ru','bn','ur','th']);
+  for(const lang of drafts){
+    const draft=read(lang),shipped=readFileSync(new URL(`../../app/src/main/assets/glossary/${lang}.json`,import.meta.url),'utf8');
+    assert.deepEqual(validateTranslation(draft,doc,lang),[],lang);
+    assert.equal(draft.reviewStatus,'machine-draft');
+    assert.equal(shipped,serialize(buildTranslation(draft,doc,lang)),lang);
+    assert.equal(JSON.parse(shipped).entries.length,doc.entries.length,lang);
+    assert.deepEqual(JSON.parse(shipped).forms,doc.forms);
+  }
+});
+test('non-Latin drafts are written in their own script, not left in Turkish or English',()=>{
+  for(const [lang,pattern] of Object.entries(script))
+    for(const e of read(lang).entries)assert.match(e.gloss,pattern,`${lang}:${e.lemma}`);
+  for(const lang of ['es-419','pt-BR','id','vi'])
+    for(const e of read(lang).entries)assert.doesNotMatch(e.gloss,/[ışğİ]/,`${lang}:${e.lemma}`);
+});
+test('a draft with a missing, unknown, duplicate or blank meaning is rejected, and an unapproved one ships nothing',()=>{
+  const draft=read('id');
+  const [first,...rest]=draft.entries;
+  assert.match(validateTranslation({...draft,entries:rest},doc,'id').join(),/missing:a/);
+  assert.match(validateTranslation({...draft,entries:[...draft.entries,{lemma:'zzz',gloss:'x'}]},doc,'id').join(),/unknown:zzz/);
+  assert.match(validateTranslation({...draft,entries:[first,...draft.entries]},doc,'id').join(),/duplicate:a/);
+  assert.match(validateTranslation({...draft,entries:[{...first,gloss:' '},...rest]},doc,'id').join(),/gloss:a/);
+  assert.match(validateTranslation({...draft,reviewStatus:'reviewed'},doc,'id').join(),/schema/);
+  assert.deepEqual(buildTranslation({...draft,sampleApprovedBy:null},doc,'id').entries,[]);
 });

@@ -1,0 +1,4554 @@
+{
+ "schemaVersion": 1,
+ "lang": "pt-BR",
+ "source": "Built by tools/glossary.mjs from backend/content/glossary/pt-BR.json: machine draft, not reviewed by a native speaker.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "um, uma"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "abandonar"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "habilidades"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "a bordo"
+  },
+  {
+   "lemma": "about",
+   "gloss": "sobre; cerca de"
+  },
+  {
+   "lemma": "above",
+   "gloss": "acima de"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "aceitar"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "acidentalmente"
+  },
+  {
+   "lemma": "across",
+   "gloss": "através de; do outro lado"
+  },
+  {
+   "lemma": "act",
+   "gloss": "agir; ato"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "acrescenta"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "admirou"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "admirando"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "admitir"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "conselho"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "assustado"
+  },
+  {
+   "lemma": "after",
+   "gloss": "depois"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "tarde"
+  },
+  {
+   "lemma": "again",
+   "gloss": "de novo"
+  },
+  {
+   "lemma": "against",
+   "gloss": "contra"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "atrás"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "concordou"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "concorda"
+  },
+  {
+   "lemma": "air",
+   "gloss": "ar"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "vivo"
+  },
+  {
+   "lemma": "all",
+   "gloss": "tudo; todos"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "permitiu"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "quase"
+  },
+  {
+   "lemma": "along",
+   "gloss": "ao longo de"
+  },
+  {
+   "lemma": "already",
+   "gloss": "já"
+  },
+  {
+   "lemma": "also",
+   "gloss": "também"
+  },
+  {
+   "lemma": "although",
+   "gloss": "embora"
+  },
+  {
+   "lemma": "always",
+   "gloss": "sempre"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "admirado; espantado"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "incrível"
+  },
+  {
+   "lemma": "among",
+   "gloss": "entre"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "quantias"
+  },
+  {
+   "lemma": "an",
+   "gloss": "um, uma"
+  },
+  {
+   "lemma": "and",
+   "gloss": "e"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "raiva"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "bravo; zangado"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "animal"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "another",
+   "gloss": "outro"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "respondeu"
+  },
+  {
+   "lemma": "any",
+   "gloss": "algum; qualquer"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "mais; não mais"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "ninguém; alguém"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "qualquer coisa"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "separado"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "aparência"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "apareceu"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "maçã"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "aproximou-se"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "armado"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "braços"
+  },
+  {
+   "lemma": "around",
+   "gloss": "ao redor de"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "arrumando"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "chegou"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "chega"
+  },
+  {
+   "lemma": "as",
+   "gloss": "como; enquanto"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "perguntar; pedir"
+  },
+  {
+   "lemma": "at",
+   "gloss": "em; a"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "atacou"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "assistentes; criados"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "outono"
+  },
+  {
+   "lemma": "away",
+   "gloss": "longe; embora"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "desajeitado"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "bebê"
+  },
+  {
+   "lemma": "back",
+   "gloss": "de volta; costas"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "bolsa; sacola"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "bola; baile"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "aros; tiras"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "barras; grades"
+  },
+  {
+   "lemma": "be",
+   "gloss": "ser; estar"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "bater; vencer"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "bonito; lindo"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "beleza"
+  },
+  {
+   "lemma": "because",
+   "gloss": "porque"
+  },
+  {
+   "lemma": "become",
+   "gloss": "tornar-se"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "cama"
+  },
+  {
+   "lemma": "before",
+   "gloss": "antes"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "implorou"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "começar"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "comportou-se"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "atrás de"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "pertencer"
+  },
+  {
+   "lemma": "below",
+   "gloss": "abaixo"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "curvar-se"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "sob; debaixo de"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "ao lado de"
+  },
+  {
+   "lemma": "between",
+   "gloss": "entre"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "além de"
+  },
+  {
+   "lemma": "big",
+   "gloss": "grande"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "pássaro; ave"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "aniversário"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "pedaço; mordeu"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "morder"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "intensamente (frio)"
+  },
+  {
+   "lemma": "black",
+   "gloss": "preto"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "culpou"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "cobertores"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "sangue"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "florescer"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "floresceu"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "golpe"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "azul"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "gabou-se"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "body",
+   "gloss": "corpo"
+  },
+  {
+   "lemma": "born",
+   "gloss": "nascido"
+  },
+  {
+   "lemma": "both",
+   "gloss": "ambos"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "garrafa"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "fundo; parte de baixo"
+  },
+  {
+   "lemma": "box",
+   "gloss": "caixa"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "galho"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "pão"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(nome próprio) Bremen"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "roseira-brava espinhosa"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "noivo"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "brilhante"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "brilho"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "trazer"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "irmão"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "marrom"
+  },
+  {
+   "lemma": "build",
+   "gloss": "construir"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "queimar"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "queimado"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "estourar"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "ocupado"
+  },
+  {
+   "lemma": "but",
+   "gloss": "mas; porém"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "borboleta"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "comprar"
+  },
+  {
+   "lemma": "by",
+   "gloss": "ao lado de; por"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "bolo"
+  },
+  {
+   "lemma": "call",
+   "gloss": "chamada; chamar"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "câmera fotográfica"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "acampamento"
+  },
+  {
+   "lemma": "can",
+   "gloss": "poder"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "velas"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "não poder"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "capturar"
+  },
+  {
+   "lemma": "care",
+   "gloss": "cuidado; importar-se"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "cuidadoso"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "carruagem"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "carregar"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "gato"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "pegar"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "causou"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "que causa"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "celebrou"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "celebrando"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "celebração"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "centavos"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "certo; seguro"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "cadeira"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "chance; oportunidade"
+  },
+  {
+   "lemma": "change",
+   "gloss": "mudar; mudança"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "que ataca"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "perseguiu"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "barato"
+  },
+  {
+   "lemma": "check",
+   "gloss": "verificar"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "queijo"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(nome próprio) Chicago"
+  },
+  {
+   "lemma": "child",
+   "gloss": "criança"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "infância"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "escolha"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "escolher"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Natal"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "cemitério da igreja"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(nome próprio) Cinderela"
+  },
+  {
+   "lemma": "city",
+   "gloss": "cidade"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "afirmou"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "esvaziar; claro"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "escrivão; funcionário"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "escalar"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "relógio"
+  },
+  {
+   "lemma": "close",
+   "gloss": "fechar; perto"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "nuvens"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "frio"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "recolher"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "cores"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "pente"
+  },
+  {
+   "lemma": "come",
+   "gloss": "vir"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "confortável"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "confortavelmente"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "consolou"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "companheiro de viagem"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "compara"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "reclamou"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "completar; completo"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "confusão"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "contato"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "continuar"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "convenceu; convencido"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "cozinheiro; cozinhar"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "esfriou"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "esquina"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "custar; custo"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "casinha"
+  },
+  {
+   "lemma": "could",
+   "gloss": "pôde; poderia"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "contou"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "incontáveis"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "casal"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "coberto; cobriu"
+  },
+  {
+   "lemma": "create",
+   "gloss": "criar"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "criticou"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "atravessou"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "multidão"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "cruel"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "crueldade"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "chorar"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "enrolou-se"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "cliente"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "cortar"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "dançar"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "perigo"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "perigoso"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "ousar"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "escuro"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "filha"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "amanhecer"
+  },
+  {
+   "lemma": "day",
+   "gloss": "dia"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "luz do dia"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "morto"
+  },
+  {
+   "lemma": "death",
+   "gloss": "morte"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "enganador"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "decidiu"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "decide"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "ações; feitos"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "profundo"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "derrotar"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "defender"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "delicado"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "delicioso"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "alegria; deleite"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "exigiu"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "negar"
+  },
+  {
+   "lemma": "described",
+   "gloss": "descreveu"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "mesa de trabalho"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "desespero"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "desesperadamente"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "apesar de"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "destruiu"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "diamante"
+  },
+  {
+   "lemma": "die",
+   "gloss": "morrer"
+  },
+  {
+   "lemma": "died",
+   "gloss": "morreu"
+  },
+  {
+   "lemma": "different",
+   "gloss": "diferente"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "difícil"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "desaparecer"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "distante"
+  },
+  {
+   "lemma": "do",
+   "gloss": "fazer"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "dólar"
+  },
+  {
+   "lemma": "door",
+   "gloss": "porta"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "vão da porta"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "massa"
+  },
+  {
+   "lemma": "down",
+   "gloss": "para baixo"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "rio abaixo"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "puxar para si"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "desenho"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "temeu"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "sonhou"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "sonhos"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "beber"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "motorista"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "deixar cair; gota"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "afogou-se"
+  },
+  {
+   "lemma": "due",
+   "gloss": "esperado; devido"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "opaco; chato"
+  },
+  {
+   "lemma": "during",
+   "gloss": "durante"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "empoeirado"
+  },
+  {
+   "lemma": "each",
+   "gloss": "cada"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "orelha"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "antes"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "fácil"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "comer"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "ébano"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(nome próprio) Egito"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "oitenta"
+  },
+  {
+   "lemma": "either",
+   "gloss": "também não; qualquer um"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "mais velho"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "onze"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "else",
+   "gloss": "mais; outro"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "abraçou"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "vazio"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "encantado"
+  },
+  {
+   "lemma": "end",
+   "gloss": "fim; final"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "pondo em perigo"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "energia"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "aproveitou"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "enorme"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "suficiente"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "entrar"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "entusiasmado"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "inteiramente"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "entrada"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "escapar"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "especialmente"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "véspera (Natal)"
+  },
+  {
+   "lemma": "even",
+   "gloss": "até; mesmo"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "por fim"
+  },
+  {
+   "lemma": "every",
+   "gloss": "cada; todo"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "todos"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "tudo"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "em todo lugar"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "exato"
+  },
+  {
+   "lemma": "except",
+   "gloss": "exceto"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "em troca de; troca"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "exausto"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "existir"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "esperou; esperado"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "esperando"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "despesas"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "caro"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "explicar"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "explicação"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "explorar"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "expressão"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "extraordinário"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "olho"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "sobrancelha"
+  },
+  {
+   "lemma": "face",
+   "gloss": "rosto"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "desbotou"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "fracassou"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "fracassa"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "cair"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "caindo"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "cai; cachoeira"
+  },
+  {
+   "lemma": "false",
+   "gloss": "falso; errado"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "familiar"
+  },
+  {
+   "lemma": "family",
+   "gloss": "família"
+  },
+  {
+   "lemma": "far",
+   "gloss": "longe"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "fazendeiro"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "pátio da fazenda"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "rápido"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "prendeu; amarrou"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "gordo; gordura"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "defeitos"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "medo"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "alimentar"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "sentir"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "sentimento"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "buscou"
+  },
+  {
+   "lemma": "few",
+   "gloss": "poucos"
+  },
+  {
+   "lemma": "field",
+   "gloss": "campo"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "feroz"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "quinze"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "décimo quinto"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "brigar"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "encheu; cheio"
+  },
+  {
+   "lemma": "final",
+   "gloss": "final"
+  },
+  {
+   "lemma": "find",
+   "gloss": "encontrar"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "bom; fino"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "dedo"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "finlandês"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "fogo"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "firmemente"
+  },
+  {
+   "lemma": "first",
+   "gloss": "primeiro"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "peixe"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "serviu (no corpo)"
+  },
+  {
+   "lemma": "five",
+   "gloss": "cinco"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "plano; apartamento"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "fugiu"
+  },
+  {
+   "lemma": "float",
+   "gloss": "flutuar"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "rebanho; bando"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "chão; andar"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "flor"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "voar"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "seguir"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "seguidores"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "apegado; afeiçoado"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "tolo"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "pé"
+  },
+  {
+   "lemma": "for",
+   "gloss": "para; exceto"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "para sempre"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "esquecer"
+  },
+  {
+   "lemma": "form",
+   "gloss": "formar; forma"
+  },
+  {
+   "lemma": "four",
+   "gloss": "quatro"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "congelar"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "gelado; congelamento"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "fresco"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "amigo"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "amizade"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "assustar"
+  },
+  {
+   "lemma": "from",
+   "gloss": "de; desde"
+  },
+  {
+   "lemma": "front",
+   "gloss": "frente"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "fruta"
+  },
+  {
+   "lemma": "full",
+   "gloss": "cheio"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "diversão"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "furioso"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "ganhar"
+  },
+  {
+   "lemma": "games",
+   "gloss": "jogos"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "jardim"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "reunir"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "fitar; olhar fixo"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "gentil; suave"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "suavemente"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "get",
+   "gloss": "obter; ficar; chegar"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "fantasma"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "menina"
+  },
+  {
+   "lemma": "give",
+   "gloss": "dar"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "doadores"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "vidro; copo"
+  },
+  {
+   "lemma": "go",
+   "gloss": "ir"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "cabra"
+  },
+  {
+   "lemma": "god",
+   "gloss": "deus"
+  },
+  {
+   "lemma": "going",
+   "gloss": "indo"
+  },
+  {
+   "lemma": "good",
+   "gloss": "bom"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "adeus; despedida"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "elegante"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "grandioso"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "avô"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "avó"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "cinza"
+  },
+  {
+   "lemma": "great",
+   "gloss": "grande; ótimo"
+  },
+  {
+   "lemma": "green",
+   "gloss": "verde"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "cumprimentou"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "cinza"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "chão; terra"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "crescer"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "adivinhar"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "guia; guiar"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "arma"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "rajada"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "cabelo"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "corte de cabelo"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "salões"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "mão"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "pendurar"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "acontecer"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "felicidade"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "feliz"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "duro; difícil"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "severo; áspero"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "chapéu"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "chocar; sair do ovo"
+  },
+  {
+   "lemma": "have",
+   "gloss": "ter"
+  },
+  {
+   "lemma": "he",
+   "gloss": "ele"
+  },
+  {
+   "lemma": "head",
+   "gloss": "cabeça"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "ouvir"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "coração"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "aquecer; calor"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "cerca viva"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "olá"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "ajudantes"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "her",
+   "gloss": "dela; a, lhe"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "ela mesma; se"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "escondeu-se; escondeu"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "esconder-se"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "colina"
+  },
+  {
+   "lemma": "him",
+   "gloss": "a ele; o, lhe"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "ele mesmo; se"
+  },
+  {
+   "lemma": "his",
+   "gloss": "dele"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "segurar"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "segura"
+  },
+  {
+   "lemma": "home",
+   "gloss": "casa; para casa"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "capuz"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "esperança; esperar"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "chifre"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "horrorizado"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "cavalo"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "horas"
+  },
+  {
+   "lemma": "house",
+   "gloss": "casa"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "trabalho doméstico"
+  },
+  {
+   "lemma": "how",
+   "gloss": "como"
+  },
+  {
+   "lemma": "however",
+   "gloss": "porém"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "abraçou"
+  },
+  {
+   "lemma": "human",
+   "gloss": "humano"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "cem"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "pendurou; pendurado"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "apressou-se"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "machucar; ferido"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "marido"
+  },
+  {
+   "lemma": "i",
+   "gloss": "eu"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ideia"
+  },
+  {
+   "lemma": "if",
+   "gloss": "se"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "doente"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "imaginário"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "imaginou"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "imediatamente"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "imortal"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "impossível"
+  },
+  {
+   "lemma": "in",
+   "gloss": "em; dentro de"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "ferido"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "dentro"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "insistiu"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "inspecionar"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "em vez disso"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "interessado"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "interrompido"
+  },
+  {
+   "lemma": "into",
+   "gloss": "para dentro de"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "convidou"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "convida"
+  },
+  {
+   "lemma": "it",
+   "gloss": "ele; ela; o"
+  },
+  {
+   "lemma": "its",
+   "gloss": "dele; dela (de coisa/animal)"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "geleia"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "ciumento"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(nome próprio) Jesus"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "job",
+   "gloss": "trabalho; emprego"
+  },
+  {
+   "lemma": "join",
+   "gloss": "juntar-se"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "brincou"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "alegria"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "juiz; julgar"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "pulou"
+  },
+  {
+   "lemma": "just",
+   "gloss": "apenas; justamente"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "guardar; manter"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "chutou"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "matar"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "bondade"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "reino"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "beijou"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "beijos"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "cozinha"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "joelhos"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "derrubou; bateu (à porta)"
+  },
+  {
+   "lemma": "know",
+   "gloss": "saber; conhecer"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "cadarços"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "lago"
+  },
+  {
+   "lemma": "land",
+   "gloss": "terra; país; pousar"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(nome próprio) Lapônia"
+  },
+  {
+   "lemma": "large",
+   "gloss": "grande"
+  },
+  {
+   "lemma": "last",
+   "gloss": "último; final"
+  },
+  {
+   "lemma": "later",
+   "gloss": "depois"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "rir"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "deitou; colocou"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "inclinou-se; apoiou-se"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "aprendeu"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "aprendizado"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "partir; deixar"
+  },
+  {
+   "lemma": "left",
+   "gloss": "partiu; esquerdo"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "perna"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "emprestar"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "lição"
+  },
+  {
+   "lemma": "let",
+   "gloss": "deixar; permitir"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "carta; letra"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "mentiras; jaz"
+  },
+  {
+   "lemma": "life",
+   "gloss": "vida"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "levantar"
+  },
+  {
+   "lemma": "light",
+   "gloss": "luz; leve"
+  },
+  {
+   "lemma": "like",
+   "gloss": "como; gostar"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(nome próprio); lírio"
+  },
+  {
+   "lemma": "line",
+   "gloss": "linha; fila"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "ouvir"
+  },
+  {
+   "lemma": "little",
+   "gloss": "pequeno; um pouco"
+  },
+  {
+   "lemma": "live",
+   "gloss": "viver"
+  },
+  {
+   "lemma": "local",
+   "gloss": "local"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "trancou; trancado"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "solitário"
+  },
+  {
+   "lemma": "long",
+   "gloss": "longo"
+  },
+  {
+   "lemma": "look",
+   "gloss": "parecer; olhar"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "afrouxou"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "perder"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "alto (som)"
+  },
+  {
+   "lemma": "love",
+   "gloss": "amar; amor"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "abaixou"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "sorte"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "torrão; caroço"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(nome próprio) Reis Magos"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "make",
+   "gloss": "fazer"
+  },
+  {
+   "lemma": "man",
+   "gloss": "homem"
+  },
+  {
+   "lemma": "many",
+   "gloss": "muitos"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "marcas"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "casamento"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "casar"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "pântano"
+  },
+  {
+   "lemma": "master",
+   "gloss": "senhor; mestre"
+  },
+  {
+   "lemma": "match",
+   "gloss": "fósforo; combinar"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "materiais"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "importou"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "prefeito"
+  },
+  {
+   "lemma": "me",
+   "gloss": "me; mim"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "mau; significar"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "encontrar; conhecer"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "derreter"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "bagunça"
+  },
+  {
+   "lemma": "message",
+   "gloss": "mensagem"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "mensageiro"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "metal"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "meia-noite"
+  },
+  {
+   "lemma": "might",
+   "gloss": "poderia"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "milhas"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "leite"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "ministro"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "minutos"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "sentiu falta; perdeu"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "desaparecido"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "zombar"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "momento"
+  },
+  {
+   "lemma": "more",
+   "gloss": "mais"
+  },
+  {
+   "lemma": "most",
+   "gloss": "mais; a maioria"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "mãe"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "montanhas"
+  },
+  {
+   "lemma": "move",
+   "gloss": "mover-se; mudar-se"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "movimento"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "Sra."
+  },
+  {
+   "lemma": "music",
+   "gloss": "música"
+  },
+  {
+   "lemma": "must",
+   "gloss": "dever"
+  },
+  {
+   "lemma": "my",
+   "gloss": "meu"
+  },
+  {
+   "lemma": "name",
+   "gloss": "nome"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "narrador"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "estreito"
+  },
+  {
+   "lemma": "near",
+   "gloss": "perto"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "perto; próximo"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "pescoços"
+  },
+  {
+   "lemma": "need",
+   "gloss": "precisar"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "agulhas"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "vizinho"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "nem... nem"
+  },
+  {
+   "lemma": "net",
+   "gloss": "rede"
+  },
+  {
+   "lemma": "never",
+   "gloss": "nunca"
+  },
+  {
+   "lemma": "new",
+   "gloss": "novo"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "recém-chegado"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "jornal"
+  },
+  {
+   "lemma": "next",
+   "gloss": "próximo; ao lado de"
+  },
+  {
+   "lemma": "night",
+   "gloss": "noite"
+  },
+  {
+   "lemma": "no",
+   "gloss": "não; nenhum"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "barulho"
+  },
+  {
+   "lemma": "none",
+   "gloss": "nenhum"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "nem"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "nariz"
+  },
+  {
+   "lemma": "not",
+   "gloss": "não"
+  },
+  {
+   "lemma": "note",
+   "gloss": "bilhete"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "notou"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "nota; percebe"
+  },
+  {
+   "lemma": "now",
+   "gloss": "agora"
+  },
+  {
+   "lemma": "of",
+   "gloss": "de"
+  },
+  {
+   "lemma": "off",
+   "gloss": "a caminho (partir); desligado"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "oferecer"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "oficial; policial"
+  },
+  {
+   "lemma": "official",
+   "gloss": "oficial; autoridade"
+  },
+  {
+   "lemma": "often",
+   "gloss": "frequentemente"
+  },
+  {
+   "lemma": "old",
+   "gloss": "velho; idoso"
+  },
+  {
+   "lemma": "on",
+   "gloss": "sobre; em"
+  },
+  {
+   "lemma": "once",
+   "gloss": "uma vez; outrora"
+  },
+  {
+   "lemma": "one",
+   "gloss": "um; alguém"
+  },
+  {
+   "lemma": "only",
+   "gloss": "apenas; só"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "sobre; em cima de"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "adiante"
+  },
+  {
+   "lemma": "open",
+   "gloss": "abrir; aberto"
+  },
+  {
+   "lemma": "or",
+   "gloss": "ou"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "ordenou"
+  },
+  {
+   "lemma": "original",
+   "gloss": "original"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "enfeite"
+  },
+  {
+   "lemma": "other",
+   "gloss": "outro"
+  },
+  {
+   "lemma": "out",
+   "gloss": "fora"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "roupa"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "do lado de fora"
+  },
+  {
+   "lemma": "over",
+   "gloss": "em direção a; sobre"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "acima"
+  },
+  {
+   "lemma": "package",
+   "gloss": "pacote"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "embalagem"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "dor"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "doloroso"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "par"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "palácio"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "papel"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "pais"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "despedida"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "parceiro (de dança); cônjuge"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "passagem"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "passou"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "passando"
+  },
+  {
+   "lemma": "past",
+   "gloss": "passado; passando por"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "remendo; pedaço"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "paciência"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "pagar"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "pagamento"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "pêssego"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "seixo"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "centavos"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "perfeito"
+  },
+  {
+   "lemma": "person",
+   "gloss": "pessoa"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "persuadiu"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "fotografia"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "fotos"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "colher; escolher"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "peça; pedaço"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "pombos"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "pilha"
+  },
+  {
+   "lemma": "place",
+   "gloss": "lugar"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "à paisana; simples"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "plano"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "plantou"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "plantio"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "plantas"
+  },
+  {
+   "lemma": "play",
+   "gloss": "brincar; jogar"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "mergulhou"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "apontou; pontudo"
+  },
+  {
+   "lemma": "police",
+   "gloss": "polícia"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "policial"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "pobre"
+  },
+  {
+   "lemma": "position",
+   "gloss": "cargo; posição"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "despejou"
+  },
+  {
+   "lemma": "power",
+   "gloss": "poder; força"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "poderoso"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "preferir"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "preparativos"
+  },
+  {
+   "lemma": "present",
+   "gloss": "presente; atual"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "fingiu"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "impediu"
+  },
+  {
+   "lemma": "price",
+   "gloss": "preço"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "picar"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "prisão"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "prosperar"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "proteger"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "provar"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "puxar"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "puniu"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "castigo"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "ronronar"
+  },
+  {
+   "lemma": "push",
+   "gloss": "empurrar"
+  },
+  {
+   "lemma": "put",
+   "gloss": "colocar"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "rapidamente"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "chuvoso"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "reação"
+  },
+  {
+   "lemma": "read",
+   "gloss": "ler"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "pronto"
+  },
+  {
+   "lemma": "real",
+   "gloss": "real"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "percebeu"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "motivo"
+  },
+  {
+   "lemma": "received",
+   "gloss": "recebeu"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "recentemente"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "reconhecer"
+  },
+  {
+   "lemma": "red",
+   "gloss": "vermelho"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "recusar"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "rejeitou"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "rejeição"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "permaneceu"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "restante"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "comentário"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "notável"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "lembrar"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "lembrou"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "lembrete"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "remover"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "repetiu"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "resposta"
+  },
+  {
+   "lemma": "report",
+   "gloss": "relatório; informar"
+  },
+  {
+   "lemma": "request",
+   "gloss": "pedido"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "salvador"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "responsável"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "restaurante"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "restaurou"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "revelar"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "recompensa"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "fita"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "andar; cavalgar"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "andar; passeio"
+  },
+  {
+   "lemma": "right",
+   "gloss": "certo; direito"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "sobe; nasce"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "margem do rio"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "assar; assado"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "roubar"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "ladrão"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "pãezinhos"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "telhado"
+  },
+  {
+   "lemma": "room",
+   "gloss": "quarto"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "raízes"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "rosa; subiu"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "áspero; duro"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(nome próprio) Rumpelstiltskin"
+  },
+  {
+   "lemma": "run",
+   "gloss": "correr"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "correu; apressou-se"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) sufixo possessivo"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "tristeza"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "same",
+   "gloss": "mesmo"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "safira"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "salsichas"
+  },
+  {
+   "lemma": "save",
+   "gloss": "salvar; economizar"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "economia"
+  },
+  {
+   "lemma": "say",
+   "gloss": "dizer"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "mal"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "espalhou; dispersou"
+  },
+  {
+   "lemma": "school",
+   "gloss": "escola"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "mar"
+  },
+  {
+   "lemma": "search",
+   "gloss": "procurar"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "segredo"
+  },
+  {
+   "lemma": "see",
+   "gloss": "ver"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "semente"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "buscar"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "pareceu"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "parece"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "agarrou"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "vender"
+  },
+  {
+   "lemma": "send",
+   "gloss": "enviar"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "enviando"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "frase; sentença"
+  },
+  {
+   "lemma": "service",
+   "gloss": "serviço"
+  },
+  {
+   "lemma": "set",
+   "gloss": "pôr; partir; pôr-se (o sol)"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "sete"
+  },
+  {
+   "lemma": "several",
+   "gloss": "vários"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "costurou"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "costura"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "forma"
+  },
+  {
+   "lemma": "she",
+   "gloss": "ela"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "concha; casca"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "brilhar"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "brilha"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "brilhante"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "navio"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "sapato"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "loja"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "margem"
+  },
+  {
+   "lemma": "short",
+   "gloss": "curto"
+  },
+  {
+   "lemma": "should",
+   "gloss": "deveria"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "ombros"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "gritou"
+  },
+  {
+   "lemma": "show",
+   "gloss": "mostrar"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "fechado; fechar"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "doente"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "vista; paisagem"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "sinal; assinar"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "assinatura"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "silencioso"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "prata"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "simples"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "ingênuo; simplório"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "cantar"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "afundar; pia"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "irmã"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "sentar"
+  },
+  {
+   "lemma": "six",
+   "gloss": "seis"
+  },
+  {
+   "lemma": "size",
+   "gloss": "tamanho"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "céu"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "dormir"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "manga"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "escorregou"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "escorrega"
+  },
+  {
+   "lemma": "small",
+   "gloss": "pequeno"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "cheiro; cheirar"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "roncar"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "neve"
+  },
+  {
+   "lemma": "so",
+   "gloss": "então; tão"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "macio"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "amolecer"
+  },
+  {
+   "lemma": "some",
+   "gloss": "um pouco de; alguns"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "alguém"
+  },
+  {
+   "lemma": "something",
+   "gloss": "algo"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "em algum lugar"
+  },
+  {
+   "lemma": "son",
+   "gloss": "filho"
+  },
+  {
+   "lemma": "song",
+   "gloss": "canção"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "logo"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "tristeza profunda"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "tristemente"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "som"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "sopa"
+  },
+  {
+   "lemma": "space",
+   "gloss": "espaço"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "falar"
+  },
+  {
+   "lemma": "special",
+   "gloss": "especial"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "gastar; passar (tempo)"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "derrama"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "espírito"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "espalhar"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "primavera; nascente"
+  },
+  {
+   "lemma": "square",
+   "gloss": "praça; quadrado"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "passar apertado; apertar"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "escadas"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "barracas"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "bateu o pé"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "ficar de pé"
+  },
+  {
+   "lemma": "star",
+   "gloss": "estrela"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "começa"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "ficar"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "roubar"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "caule"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "madrasta"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "meia-irmã"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "pau; grudar"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "pegajoso"
+  },
+  {
+   "lemma": "still",
+   "gloss": "ainda; parado"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "costurou"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "estômago; barriga"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "pedra"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "parar"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "tempestade"
+  },
+  {
+   "lemma": "story",
+   "gloss": "história; conto"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "reto; direto"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "fio (de cabelo)"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "estranho"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "estranho"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "riacho"
+  },
+  {
+   "lemma": "street",
+   "gloss": "rua"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "força"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "esticou-se; esticou"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "riscar (um fósforo); bater"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "tropeçou"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "estúpido"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "ter sucesso"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "bem-sucedido"
+  },
+  {
+   "lemma": "such",
+   "gloss": "tal; tão"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "de repente"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "açúcar"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "sugeriu"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "verão"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "luz do sol"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "nascer do sol"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "pôr do sol"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "suposto; devia"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "surpresa"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "cercado"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "suspeitou"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "espada"
+  },
+  {
+   "lemma": "table",
+   "gloss": "mesa"
+  },
+  {
+   "lemma": "take",
+   "gloss": "levar; pegar"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "falou"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "falando"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "alto"
+  },
+  {
+   "lemma": "task",
+   "gloss": "tarefa"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "chá"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "lágrima; rasgar"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "contar; dizer"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "dez"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "terrível"
+  },
+  {
+   "lemma": "than",
+   "gloss": "do que"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "agradecer"
+  },
+  {
+   "lemma": "that",
+   "gloss": "aquele; isso; que"
+  },
+  {
+   "lemma": "the",
+   "gloss": "o; a (artigo)"
+  },
+  {
+   "lemma": "their",
+   "gloss": "deles; delas"
+  },
+  {
+   "lemma": "them",
+   "gloss": "os; as; lhes"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "eles mesmos; se"
+  },
+  {
+   "lemma": "then",
+   "gloss": "depois; então"
+  },
+  {
+   "lemma": "there",
+   "gloss": "lá"
+  },
+  {
+   "lemma": "these",
+   "gloss": "estes"
+  },
+  {
+   "lemma": "they",
+   "gloss": "eles; elas"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "grosso; denso"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "ladrão"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "magro; fino"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "coisa"
+  },
+  {
+   "lemma": "think",
+   "gloss": "pensar"
+  },
+  {
+   "lemma": "third",
+   "gloss": "terceiro"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "treze"
+  },
+  {
+   "lemma": "this",
+   "gloss": "este; isto"
+  },
+  {
+   "lemma": "those",
+   "gloss": "esses; aqueles"
+  },
+  {
+   "lemma": "though",
+   "gloss": "embora"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "pensou; pensamento"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "mil"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "fio; linha"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "ameaçou"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "ameaçador"
+  },
+  {
+   "lemma": "three",
+   "gloss": "três"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "garganta"
+  },
+  {
+   "lemma": "through",
+   "gloss": "através de"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "durante todo"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "jogar"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(nome próprio) Polegarzinha"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "amarrar"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "amarrou; amarrado"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "com força"
+  },
+  {
+   "lemma": "time",
+   "gloss": "tempo; vez"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "minúsculo"
+  },
+  {
+   "lemma": "to",
+   "gloss": "para; a"
+  },
+  {
+   "lemma": "today",
+   "gloss": "hoje"
+  },
+  {
+   "lemma": "together",
+   "gloss": "juntos"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(nome próprio)"
+  },
+  {
+   "lemma": "too",
+   "gloss": "também; demais"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "dente"
+  },
+  {
+   "lemma": "top",
+   "gloss": "parte de cima; topo"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "contato (manter-se em)"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "em direção a"
+  },
+  {
+   "lemma": "town",
+   "gloss": "cidade pequena"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "brinquedo"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "ofício"
+  },
+  {
+   "lemma": "train",
+   "gloss": "trem"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "viajar"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "viajou"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "tesouro"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "tratou"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "árvore"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "tremeu"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "problemas; aflições"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "cocho"
+  },
+  {
+   "lemma": "true",
+   "gloss": "verdadeiro"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "tronco"
+  },
+  {
+   "lemma": "try",
+   "gloss": "tentar"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "virar; vez"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "doze"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "vinte"
+  },
+  {
+   "lemma": "two",
+   "gloss": "dois"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "feio"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "incapaz"
+  },
+  {
+   "lemma": "under",
+   "gloss": "debaixo de"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "subterrâneo"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "entender"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "inacabado"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "inadequado"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "desdobrou"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "infeliz"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "ao contrário de"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "sem luz"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "desamarra"
+  },
+  {
+   "lemma": "until",
+   "gloss": "até"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "incomum"
+  },
+  {
+   "lemma": "up",
+   "gloss": "para cima"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "chateado"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "andar de cima"
+  },
+  {
+   "lemma": "us",
+   "gloss": "nos; a nós"
+  },
+  {
+   "lemma": "use",
+   "gloss": "usar"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "útil"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "vasto"
+  },
+  {
+   "lemma": "very",
+   "gloss": "muito"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "vitórias"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "violentamente"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "visitar"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "visitantes"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "esperou"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "esperando"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "acordar"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "andar; caminhar"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "parede; muro"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "vagou"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "errante"
+  },
+  {
+   "lemma": "want",
+   "gloss": "querer"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "guarda-roupa"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "quente"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "avisou"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "lavou"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "relógio de pulso; assistir"
+  },
+  {
+   "lemma": "water",
+   "gloss": "água"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "acenou"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "ondas"
+  },
+  {
+   "lemma": "way",
+   "gloss": "caminho; maneira"
+  },
+  {
+   "lemma": "we",
+   "gloss": "nós"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "fraco"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "enfraqueceu"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "rico"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "vestir"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "casamento"
+  },
+  {
+   "lemma": "week",
+   "gloss": "semana"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "recebeu"
+  },
+  {
+   "lemma": "west",
+   "gloss": "oeste"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "molhado"
+  },
+  {
+   "lemma": "what",
+   "gloss": "o que"
+  },
+  {
+   "lemma": "when",
+   "gloss": "quando"
+  },
+  {
+   "lemma": "where",
+   "gloss": "onde"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "onde quer que"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "se (ou não)"
+  },
+  {
+   "lemma": "which",
+   "gloss": "qual; que"
+  },
+  {
+   "lemma": "while",
+   "gloss": "enquanto"
+  },
+  {
+   "lemma": "white",
+   "gloss": "branco"
+  },
+  {
+   "lemma": "who",
+   "gloss": "quem; que"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "quem quer que"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "inteiro"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "cujo; de quem"
+  },
+  {
+   "lemma": "why",
+   "gloss": "por quê"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "malvado"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "esposa"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "selvagem"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "ermo; natureza selvagem"
+  },
+  {
+   "lemma": "will",
+   "gloss": "(futuro); vontade"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "de bom grado"
+  },
+  {
+   "lemma": "win",
+   "gloss": "ganhar"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "peitoril"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "vinho"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "asa"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "sábio"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "desejar; desejo"
+  },
+  {
+   "lemma": "with",
+   "gloss": "com"
+  },
+  {
+   "lemma": "without",
+   "gloss": "sem"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "mulher"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "maravilhoso"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "lenha; madeira; floresta"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "de madeira"
+  },
+  {
+   "lemma": "word",
+   "gloss": "palavra"
+  },
+  {
+   "lemma": "work",
+   "gloss": "trabalhar; trabalho"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "trabalhadores"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "oficina"
+  },
+  {
+   "lemma": "world",
+   "gloss": "mundo"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "preocupado"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "digno"
+  },
+  {
+   "lemma": "would",
+   "gloss": "(condicional)"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "feridas"
+  },
+  {
+   "lemma": "write",
+   "gloss": "escrever"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "escritor"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "errado"
+  },
+  {
+   "lemma": "year",
+   "gloss": "ano"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "ainda; porém"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(nome próprio) York"
+  },
+  {
+   "lemma": "you",
+   "gloss": "você; tu"
+  },
+  {
+   "lemma": "young",
+   "gloss": "jovem"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "jovem; garoto"
+  },
+  {
+   "lemma": "your",
+   "gloss": "seu; teu"
+  }
+ ],
+ "forms": {
+  "am": "be",
+  "are": "be",
+  "ate": "eat",
+  "beaten": "beat",
+  "became": "become",
+  "been": "be",
+  "began": "begin",
+  "begun": "begin",
+  "being": "be",
+  "bent": "bend",
+  "best": "good",
+  "better": "good",
+  "bit": "bite",
+  "bitten": "bite",
+  "blew": "blow",
+  "blown": "blow",
+  "bought": "buy",
+  "broke": "break",
+  "broken": "break",
+  "brought": "bring",
+  "built": "build",
+  "came": "come",
+  "caught": "catch",
+  "children": "child",
+  "chose": "choose",
+  "chosen": "choose",
+  "crept": "creep",
+  "did": "do",
+  "does": "do",
+  "doing": "do",
+  "done": "do",
+  "drank": "drink",
+  "drawn": "draw",
+  "drew": "draw",
+  "driven": "drive",
+  "drove": "drive",
+  "drunk": "drink",
+  "dug": "dig",
+  "eaten": "eat",
+  "fallen": "fall",
+  "farther": "far",
+  "farthest": "far",
+  "fed": "feed",
+  "feet": "foot",
+  "fell": "fall",
+  "felt": "feel",
+  "flew": "fly",
+  "flown": "fly",
+  "forgot": "forget",
+  "forgotten": "forget",
+  "fought": "fight",
+  "found": "find",
+  "froze": "freeze",
+  "frozen": "freeze",
+  "gave": "give",
+  "geese": "goose",
+  "given": "give",
+  "goes": "go",
+  "gone": "go",
+  "got": "get",
+  "gotten": "get",
+  "grew": "grow",
+  "grown": "grow",
+  "had": "have",
+  "halves": "half",
+  "has": "have",
+  "having": "have",
+  "heard": "hear",
+  "held": "hold",
+  "hid": "hide",
+  "hidden": "hide",
+  "hung": "hang",
+  "is": "be",
+  "kept": "keep",
+  "knew": "know",
+  "knives": "knife",
+  "known": "know",
+  "least": "little",
+  "leaves": "leaf",
+  "led": "lead",
+  "lent": "lend",
+  "less": "little",
+  "lit": "light",
+  "loaves": "loaf",
+  "lost": "lose",
+  "made": "make",
+  "meant": "mean",
+  "men": "man",
+  "met": "meet",
+  "mice": "mouse",
+  "paid": "pay",
+  "people": "person",
+  "ran": "run",
+  "ridden": "ride",
+  "rode": "ride",
+  "said": "say",
+  "sang": "sing",
+  "sank": "sink",
+  "sat": "sit",
+  "saw": "see",
+  "seen": "see",
+  "sent": "send",
+  "shaken": "shake",
+  "shelves": "shelf",
+  "shone": "shine",
+  "shook": "shake",
+  "shot": "shoot",
+  "slept": "sleep",
+  "sold": "sell",
+  "sought": "seek",
+  "spent": "spend",
+  "spoke": "speak",
+  "spoken": "speak",
+  "spun": "spin",
+  "stole": "steal",
+  "stolen": "steal",
+  "stood": "stand",
+  "struck": "strike",
+  "stuck": "stick",
+  "sung": "sing",
+  "sunk": "sink",
+  "swam": "swim",
+  "swept": "sweep",
+  "swum": "swim",
+  "swung": "swing",
+  "taken": "take",
+  "taught": "teach",
+  "teeth": "tooth",
+  "thieves": "thief",
+  "thought": "think",
+  "threw": "throw",
+  "thrown": "throw",
+  "told": "tell",
+  "took": "take",
+  "tore": "tear",
+  "torn": "tear",
+  "understood": "understand",
+  "was": "be",
+  "went": "go",
+  "wept": "weep",
+  "were": "be",
+  "wives": "wife",
+  "woke": "wake",
+  "woken": "wake",
+  "wolves": "wolf",
+  "women": "woman",
+  "won": "win",
+  "wore": "wear",
+  "worn": "wear",
+  "worse": "bad",
+  "worst": "bad",
+  "written": "write",
+  "wrote": "write"
+ }
+}
