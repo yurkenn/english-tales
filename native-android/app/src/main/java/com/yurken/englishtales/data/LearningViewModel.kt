@@ -16,9 +16,11 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     // Cancels a departed account's WorkManager jobs; its worker only uploads while that account is signed in, and signing back in reschedules them.
     private val retireSync: (String)->Unit={if(background) LearningSyncRuntime.cancel(application,it)},
     // (user, upload now): the periodic job is always kept as the backstop; the one-time job only runs while the in-app timer cannot.
-    private val scheduleWork: (String,Boolean)->Unit={user,now -> if(background) LearningSyncRuntime.schedule(application,user,now)}) : AndroidViewModel(application) {
+    private val scheduleWork: (String,Boolean)->Unit={user,now -> if(background) LearningSyncRuntime.schedule(application,user,now)},
+    // The email-code step outlives process death (the user leaves for the mail app); in memory unless the app passes durable storage.
+    private val pendingCode: PendingEmailCode=PendingEmailCode.memory()) : AndroidViewModel(application) {
     constructor(application: Application):this(application,LearningSyncRuntime.accounts(application),{LearningStore(application,it)},defaultLearningSync(),true,
-        {LearningReminderOwner.select(application,it)})
+        {LearningReminderOwner.select(application,it)},pendingCode=PendingEmailCode.prefs(application))
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
     private var store = storeFactory(LearningOwner.Guest)
     private data class Mutation(val scope: Long?,val refresh: Boolean=true,val action: ()->Unit)
@@ -66,6 +68,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 // Restore (with its deleted-account check) before cleanup consumes the pending receipts.
                 if(background) LearningSyncRuntime.ensureRestored(getApplication())
                 if(background) runCatching {DeletedAccountCleanup.clean(getApplication())}
+                val pending=runCatching {pendingCode.restore()}.getOrNull()
                 try {
                     // A failed read keeps the stored session (keystore or I/O errors can pass; storage removes corrupt files itself).
                     val session=try {auth.restore()} catch (_: Exception) {
@@ -79,6 +82,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
                 } catch (_: Exception) {
                     mutableAccount.value=mutableAccount.value.copy(message=text(R.string.account_message_restore_failed),messageTone=MessageTone.Error)
                 }
+                pending?.let {(action,email) -> mutableAccount.value=mutableAccount.value.copy(emailAction=action,verificationEmail=email)}
                 onOwnerChanged(store.owner)
                 // A failing database must not crash every launch: the write bar offers a retry instead.
                 writes.submit {store.recordVisit()};writes.refresh();mutableReady.value=true
@@ -294,6 +298,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         onOwnerChanged(owner)
         if(previous!=null && previous!=owner.id) retireSync(previous)
         if(background) LearningSyncRuntime.resume()
+        // An owner change ends any open email-code step (verified sign-up, sign-in, sign-out, deletion).
+        if(mutableAccount.value.emailAction.isNotEmpty()) pendingCode.clear()
         mutableAccount.value=AccountState(if(owner is LearningOwner.Account) owner.id else null,email,scope=mutableAccount.value.scope+1)
         if(owner is LearningOwner.Account && cloudSync!=null) {
             val saved=cloudSync.status(store)
@@ -386,11 +392,13 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     }
     fun signUp(email: String,password: String)=emailOperation {
         val ready=auth.signUp(email,password)
+        if(ready) pendingCode.clear() else pendingCode.save("signup",email.trim())
         mutableAccount.value=mutableAccount.value.copy(emailAction=if(ready) "" else "signup",verificationEmail=email.trim(),
             message=if(ready) text(R.string.account_message_signup_complete) else text(R.string.account_message_signup_requested),messageTone=if(ready) MessageTone.Success else MessageTone.Info)
     }
     fun requestRecovery(email: String)=emailOperation {
         auth.requestRecovery(email)
+        pendingCode.save("recovery",email.trim())
         mutableAccount.value=mutableAccount.value.copy(emailAction="recovery",verificationEmail=email.trim(),message=text(R.string.account_message_recovery_requested),messageTone=MessageTone.Info)
     }
     fun resendEmailCode()=emailOperation {
@@ -400,6 +408,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             "recovery" -> auth.requestRecovery(state.verificationEmail)
             else -> throw AuthFailure("invalid_input")
         }
+        pendingCode.save(state.emailAction,state.verificationEmail)
         mutableAccount.value=mutableAccount.value.copy(message=if(state.emailAction=="signup") text(R.string.account_message_verification_resent) else text(R.string.account_message_recovery_resent),messageTone=MessageTone.Info)
     }
     fun completeEmailCode(code: String,password: String)=emailOperation {
@@ -413,13 +422,16 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             }
             "recovery" -> {
                 auth.resetPassword(state.verificationEmail,code,password)
+                pendingCode.clear()
                 mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message=text(R.string.account_message_password_updated),messageTone=MessageTone.Success)
             }
             else -> throw AuthFailure("invalid_input")
         }
     }
     fun cancelEmailCode() {
-        if(!mutableAccount.value.busy) mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="",messageTone=MessageTone.Info)
+        if(mutableAccount.value.busy) return
+        pendingCode.clear()
+        mutableAccount.value=mutableAccount.value.copy(emailAction="",verificationEmail="",message="",messageTone=MessageTone.Info)
     }
     fun signOut() {
         if(mutableAccount.value.busy) return
