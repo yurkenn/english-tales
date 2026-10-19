@@ -2,7 +2,7 @@
   "status": "draft",
   "kind": "revision",
   "source": "codex-story-quality-pilot-2026-10-19",
-  "reviewedBy": null,
+  "reviewedBy": "oguz",
   "baseStoryId": "paper-boat",
   "baseStorySHA256": "d8479c0d479a83b00857e481f5d8be77da2936d532fba13bc8ff9b29076364eb",
   "editorialNotes": [
@@ -62,8 +62,20 @@
       "paper-boat-pilot-09-07"
     ],
     "pendingLanguages": [],
-    "reviewedLanguages": [],
-    "reviewStatus": "AI-assisted translation drafts; not native-speaker-approved"
+    "reviewedLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "reviewStatus": "AI-assisted translation drafts approved for publication by the project owner; not native-speaker-approved"
   },
   "story": {
     "id": "paper-boat",
@@ -839,9 +851,8 @@
     }
   ],
   "publicationBlockers": [
-    "Human editorial and level review pending after AI-assisted corrections.",
-    "Fresh live source snapshot and publisher validation required; local reader/save/review contract verified.",
-    "Human language review across all eleven support languages remains pending."
+    "Fresh live source snapshot and publisher validation required.",
+    "Native-speaker language review not done; owner accepted AI-reviewed translations for publication."
   ],
   "editorialReview": {
     "type": "ai-assisted",
@@ -865,6 +876,13 @@
       "reviewedOn": "2026-10-19",
       "report": "../../../../docs/STORY_PILOT_CLAUDE_REVIEW_2026-10-19.md",
       "humanApproval": false,
+      "nativeSpeakerApproval": false
+    },
+    "ownerApproval": {
+      "reviewer": "oguz",
+      "role": "project owner",
+      "approvedOn": "2026-10-19",
+      "scope": "Approved the AI-reviewed English text, questions, study words and eleven-language drafts for publication.",
       "nativeSpeakerApproval": false
     }
   },

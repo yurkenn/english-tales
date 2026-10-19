@@ -16,10 +16,9 @@ const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
 const catalog=read('../../app/src/main/assets/catalog/v1.json');
 const scope=read('../content/drafts/pilot-scope.json');
 const drafts=scope.activeRevisionStoryIds.map(id=>read(`../content/drafts/revisions/${id}.json`));
-// Tests stand in for the editor's recorded approval; the committed drafts stay unreviewed.
-const reviewed=()=>drafts.map(d=>({...structuredClone(d),reviewedBy:'test-editor',
-  translationReadiness:{...d.translationReadiness,reviewedLanguages:[...d.translationReadiness.requiredLanguages]}}));
-const preview=(docs=reviewed())=>buildPilotPreview(catalog,scope,docs);
+const unreviewed=()=>drafts.map(d=>({...structuredClone(d),reviewedBy:null,
+  translationReadiness:{...d.translationReadiness,reviewedLanguages:[]}}));
+const preview=(docs=drafts)=>buildPilotPreview(catalog,scope,docs);
 
 const publisher='11111111-1111-4111-8111-111111111111',editor='22222222-2222-4222-8222-222222222222';
 let db,calls,snapshot;
@@ -61,7 +60,7 @@ before(async()=>{
 after(async()=>{await db?.close();});
 
 test('unreviewed pilot drafts are listed as blockers and never reach an RPC',async()=>{
-  const packet=generatePilotDrafts(catalog,snapshot,buildPilotPreview(catalog,scope,drafts));
+  const packet=generatePilotDrafts(catalog,snapshot,preview(unreviewed()));
   assert.equal(packet.drafts.length,5);
   assert.equal(packet.blockers.filter(b=>b.includes('onayı eksik')).length,5);
   await assert.rejects(applyDrafts(packet,{apply:true,rpc:()=>assert.fail('no calls before blockers')}),/engelleri/);
@@ -101,7 +100,7 @@ test('reviewed pilots become editor drafts only; after publishing, the anonymous
     assert.ok(equivalent(await rpc('admin_revision',{p_revision_id:g.currentRevisionId}),g.document));
 });
 
-test('CLI dry run writes the review packet without a session and refuses --apply while review is pending',async()=>{
+test('CLI dry run writes the review packet without a session; --apply needs a valid session file',async()=>{
   const dir=await mkdtemp(path.join(tmpdir(),'pilot-drafts-'));
   try{
     const file=path.join(dir,'snapshot.json');await writeFile(file,JSON.stringify(snapshot));
@@ -109,9 +108,10 @@ test('CLI dry run writes the review packet without a session and refuses --apply
     const dry=spawnSync(process.execPath,[cli,'--snapshot',file,'--output',out],{encoding:'utf8'});
     assert.equal(dry.status,0,dry.stderr);
     const packet=JSON.parse(await readFile(path.join(out,'manifest.json')));
-    assert.equal(packet.drafts.length,5);assert.equal(packet.blockers.length,5);
+    assert.equal(packet.drafts.length,5);assert.deepEqual(packet.blockers,[]);
     assert.match(await readFile(path.join(out,'review.md'),'utf8'),/A Quiet Morning/);
     const apply=spawnSync(process.execPath,[cli,'--snapshot',file,'--output',out,'--apply','--url','https://must-not-connect.invalid','--session-file','/missing'],{encoding:'utf8'});
-    assert.equal(apply.status,1);assert.match(apply.stderr,/engelleri/);
+    assert.equal(apply.status,1);assert.match(apply.stderr,/başarısız/);
+    assert.equal(JSON.parse(await readFile(path.join(out,'apply-results.json'))).status,'failed');
   }finally{await rm(dir,{recursive:true,force:true});}
 });
