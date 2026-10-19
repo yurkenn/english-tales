@@ -268,7 +268,8 @@ class RemoteContentTest {
         kotlinx.coroutines.delay(200); assertFalse(opened.isCompleted)
         gate.countDown()
         assertTrue(withTimeout(10_000) {opened.await()})
-        assertEquals(1,fixture.requests["stories"])
+        // One refresh reads the stories page and the empty page that ends pagination; a second refresh would make it 4.
+        assertEquals(2,fixture.requests["stories"])
     }
     @Test fun sharedLinkRefreshesAFreshCatalogOnceAndFallsBackOffline()=runBlocking {
         val fixture=Fixture().apply {empty=true}
