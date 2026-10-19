@@ -113,6 +113,31 @@ class LearningReliabilityTest {
         }
     }
 
+    @Test fun checkpointsPatchActiveTimeWithoutReReadingTheSnapshot() {
+        val reads=java.util.concurrent.atomic.AtomicInteger()
+        exercise(read={reads.incrementAndGet();it.snapshot()}) {vm,context ->
+            val session=UUID.randomUUID().toString()
+            vm.beginSession(session,"choice",5,null)
+            await {session in vm.state.value.activeSessionMillis}
+            val before=reads.get()
+            repeat(10) {vm.checkpointSession(session,(it+1)*1_000L)}
+            await {vm.state.value.activeSessionMillis[session]==10_000L}
+            assertEquals(before,reads.get())
+            LearningStore(context).use {assertEquals(it.snapshot().activeSessionMillis,vm.state.value.activeSessionMillis)}
+            vm.toggleWord("morning")
+            await {"morning" in vm.state.value.savedWordIds}
+            assertEquals(before+1,reads.get())
+        }
+    }
+
+    @Test fun membershipTogglesStillFlipSavedWordsAndFavorites()=exercise {vm,_ ->
+        val glossary=WordInfo("glossary:walk","walk","yürümek","","")
+        vm.toggleWord("morning");vm.toggleGlossaryWord(glossary);vm.toggleFavorite("fixture-story")
+        await {vm.state.value.savedWordIds==setOf("morning","glossary:walk") && vm.state.value.favoriteStoryIds==listOf("fixture-story")}
+        vm.toggleWord("morning");vm.toggleGlossaryWord(glossary);vm.toggleFavorite("fixture-story")
+        await {vm.state.value.savedWordIds.isEmpty() && vm.state.value.favoriteStoryIds.isEmpty() && vm.state.value.personalWords.isEmpty()}
+    }
+
     @Test fun failedSessionStartRetainsOriginalTimeWhenLaterCompletionIsRetried()=exercise(setup={
         it.writableDatabase.execSQL("CREATE TRIGGER fail_start BEFORE INSERT ON session_drafts BEGIN SELECT RAISE(ABORT,'fixture'); END")
     }) {vm,context ->

@@ -17,7 +17,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         {LearningReminderOwner.select(application,it)})
     private fun text(@androidx.annotation.StringRes id: Int) = com.yurken.englishtales.AppLanguage.wrap(getApplication<Application>()).getString(id)
     private var store = storeFactory(LearningOwner.Guest)
-    private data class Mutation(val scope: Long?,val action: ()->Unit)
+    private data class Mutation(val scope: Long?,val refresh: Boolean=true,val action: ()->Unit)
     private val mutations = Channel<Mutation>(Channel.UNLIMITED)
     // scope is the owner generation: it changes only with the store. Learning writes are stamped under this lock so an owner switch can drain them first.
     @Volatile private var scope=0L
@@ -82,7 +82,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             if(failure is kotlinx.coroutines.CancellationException) throw failure
             mutableAccount.value=mutableAccount.value.copy(busy=false,message=text(R.string.account_message_action_failed),messageTone=MessageTone.Error)
         }
-        writes.refresh()
+        if(action.refresh) writes.refresh()
     }
 
     fun refresh() = mutate {store.recordVisit()}
@@ -94,7 +94,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun toggleWord(wordId: String) {
         var saved: Boolean?=null
         mutate {
-            if(saved==null) saved=wordId !in store.snapshot().savedWordIds
+            if(saved==null) saved=!store.isWordSaved(wordId)
             store.setWordSaved(wordId,checkNotNull(saved))
         }
     }
@@ -103,7 +103,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun toggleGlossaryWord(word: WordInfo) {
         var saved: Boolean?=null
         mutate {
-            if(saved==null) saved=word.id !in store.snapshot().savedWordIds
+            if(saved==null) saved=!store.isWordSaved(word.id)
             if(checkNotNull(saved)) store.savePersonalWord(word) else store.setWordSaved(word.id,false)
         }
     }
@@ -113,7 +113,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     fun toggleFavorite(storyId: String) {
         var favorite: Boolean?=null
         mutate {
-            if(favorite==null) favorite=storyId !in store.snapshot().favoriteStoryIds
+            if(favorite==null) favorite=!store.isFavorite(storyId)
             store.setFavorite(storyId,checkNotNull(favorite))
         }
     }
@@ -146,8 +146,14 @@ class LearningViewModel(application: Application,private val auth: AccountServic
         val startedAt=System.currentTimeMillis()
         mutate {store.beginSession(id,kind,questionCount,storyId,source,startedAt)}
     }
-    // Checkpoints only touch session_drafts (no outbox row), so they must not wake cloud sync every few seconds.
-    fun checkpointSession(id: String,millis: Long) = mutate(sync=false) {store.checkpointSession(id,millis)}
+    // Checkpoints only touch session_drafts (no outbox row), so they must not wake cloud sync or re-read the whole snapshot every few seconds:
+    // only activeSessionMillis changes. A held-back or rejected checkpoint still refreshes, as every other write does.
+    fun checkpointSession(id: String,millis: Long) = enqueue(refresh=false) {
+        var active: Pair<String,Long>?=null
+        if(writes.submit {active=store.checkpointSession(id,millis)}) active?.let {(key,value) ->
+            mutableState.value=mutableState.value.let {it.copy(activeSessionMillis=it.activeSessionMillis+(key to value))}}
+        else writes.refresh()
+    }
     fun abandonSession(id: String) = mutate {store.abandonSession(id)}
     fun startReading(storyId: String) = mutate { store.startReading(storyId) }
     fun dismissReaderHint() = mutate { store.dismissReaderHint() }
@@ -159,7 +165,7 @@ class LearningViewModel(application: Application,private val auth: AccountServic
     private fun mutate(sync: Boolean=true,action: () -> Unit) = enqueue {
         if(writes.submit(action) && sync) scheduleSync()
     }
-    private fun enqueue(action: ()->Unit) {synchronized(stamping) {mutations.trySend(Mutation(scope,action))}}
+    private fun enqueue(refresh: Boolean=true,action: ()->Unit) {synchronized(stamping) {mutations.trySend(Mutation(scope,refresh,action))}}
     private fun interruptSync() {
         syncEpoch++
         if(background) LearningSyncRuntime.pause()
