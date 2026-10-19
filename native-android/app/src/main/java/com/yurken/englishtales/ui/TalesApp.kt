@@ -92,14 +92,16 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         if(snapshot.onboardingDone && nav.currentDestination?.route=="onboarding") nav.navigate("main") {popUpTo("onboarding") {inclusive=true}}
     }
     // Q6: a shared link opens its story page; a story this catalog does not have opens the library instead.
+    // An unknown story waits for one catalog refresh first, since a cached catalog may predate a newly published story.
     // A learner still in onboarding sees the link once onboarding is done.
     // The request is cleared once handled, so switching accounts does not open it again.
     LaunchedEffect(storyLinkRequest,snapshot.onboardingDone) {
         val request=storyLinkRequest?:return@LaunchedEffect
         if(!snapshot.onboardingDone) return@LaunchedEffect
+        val found=StoryLinks.resolve(request.storyId,{it in LearningContent.storyById}) {content.awaitRefresh()}
         onStoryLinkHandled(request)
         nav.popBackStack("main",false)
-        if(request.storyId in LearningContent.storyById) nav.navigate("story/${request.storyId}") else selectedTab=1
+        if(found) nav.navigate("story/${request.storyId}") else selectedTab=1
     }
     val alerts=remember {TaleAlerts()}
     val writeRecovered=stringResource(R.string.alert_write_recovered)
