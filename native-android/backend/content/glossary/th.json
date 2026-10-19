@@ -1,0 +1,5499 @@
+{
+ "schemaVersion": 1,
+ "lang": "th",
+ "reviewStatus": "machine-draft",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "หนึ่ง; (คำนำหน้านามไม่เจาะจง)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "ทอดทิ้ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "ความสามารถ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "บนยานพาหนะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "about",
+   "gloss": "เกี่ยวกับ; ประมาณ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "above",
+   "gloss": "เหนือ; ข้างบน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "ยอมรับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "โดยบังเอิญ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "across",
+   "gloss": "ข้าม; ตลอด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "act",
+   "gloss": "กระทำ; การกระทำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "เพิ่ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "ชื่นชม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "ชื่นชม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "ยอมรับ (ว่าจริง)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "คำแนะนำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "กลัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "after",
+   "gloss": "หลังจาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "ตอนบ่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "again",
+   "gloss": "อีกครั้ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "against",
+   "gloss": "ต่อต้าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "ที่แล้ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "เห็นด้วย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "เห็นด้วย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "air",
+   "gloss": "อากาศ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "มีชีวิต",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "all",
+   "gloss": "ทั้งหมด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "อนุญาต",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "เกือบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "along",
+   "gloss": "ตาม; ตลอด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "already",
+   "gloss": "แล้ว; เรียบร้อยแล้ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "also",
+   "gloss": "ด้วย; นอกจากนี้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "although",
+   "gloss": "แม้ว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "always",
+   "gloss": "เสมอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "ประหลาดใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "น่าอัศจรรย์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "among",
+   "gloss": "ท่ามกลาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "จำนวน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "an",
+   "gloss": "หนึ่ง; (คำนำหน้านามไม่เจาะจง)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "and",
+   "gloss": "และ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "ความโกรธ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "โกรธ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "สัตว์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "another",
+   "gloss": "อื่น; อีกอัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "ตอบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "any",
+   "gloss": "ใด ๆ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "อีกต่อไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "ใครก็ได้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "อะไรก็ได้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "แยกออกจากกัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "รูปลักษณ์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "ปรากฏ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "แอปเปิล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "เข้าใกล้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "ติดอาวุธ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "แขน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "around",
+   "gloss": "รอบ ๆ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "จัดเรียง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "มาถึง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "มาถึง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "as",
+   "gloss": "เหมือน; ขณะที่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "ถาม; ขอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "at",
+   "gloss": "ที่; ณ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "โจมตี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "ผู้รับใช้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "ฤดูใบไม้ร่วง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "away",
+   "gloss": "ไป; ห่างออกไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "เก้ๆ กังๆ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "ทารก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "back",
+   "gloss": "กลับ; หลัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "กระเป๋า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "ลูกบอล; งานเต้นรำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "ห่วง; สาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "แท่ง; ลูกกรง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "be",
+   "gloss": "เป็น; อยู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "ตี; เอาชนะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "สวย; งดงาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "ความงาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "because",
+   "gloss": "เพราะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "become",
+   "gloss": "กลายเป็น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "เตียง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "before",
+   "gloss": "ก่อน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "อ้อนวอน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "เริ่ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "ประพฤติ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "ข้างหลัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "เป็นส่วนหนึ่ง; เป็นของ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "below",
+   "gloss": "ด้านล่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "โน้มตัว; งอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "ใต้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "ข้าง ๆ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "between",
+   "gloss": "ระหว่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "เลยไป; เกินกว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "big",
+   "gloss": "ใหญ่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "นก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "วันเกิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "ชิ้นเล็ก; กัด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "กัด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "อย่างรุนแรง (หนาว)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "black",
+   "gloss": "สีดำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "ตำหนิ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "ผ้าห่ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "เลือด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "ออกดอก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "ออกดอก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "การโจมตี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "สีน้ำเงิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "โอ้อวด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "body",
+   "gloss": "ร่างกาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "born",
+   "gloss": "เกิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "both",
+   "gloss": "ทั้งสอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "ขวด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "ก้น; ส่วนล่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "box",
+   "gloss": "กล่อง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "กิ่งไม้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "ขนมปัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(ชื่อเฉพาะ) เบรเมิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "พุ่มกุหลาบป่ามีหนาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "เจ้าบ่าว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "สว่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "ความสว่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "นำมา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "พี่ชาย/น้องชาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "สีน้ำตาล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "build",
+   "gloss": "สร้าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "ไหม้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "ไหม้เกรียม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "ระเบิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "ยุ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "but",
+   "gloss": "แต่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "ผีเสื้อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "ซื้อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "by",
+   "gloss": "ข้าง ๆ; โดย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "เค้ก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "call",
+   "gloss": "การโทร; เรียก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "กล้องถ่ายรูป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "ค่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "can",
+   "gloss": "สามารถ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "เทียน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "ไม่สามารถ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "จับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "care",
+   "gloss": "ความใส่ใจ; ห่วงใย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "ระมัดระวัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "รถม้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "แบก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "แมว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "จับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "ทำให้เกิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "ที่ทำให้เกิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "ฉลอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "กำลังฉลอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "การเฉลิมฉลอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "เซนต์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "แน่ใจ; บางอย่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "เก้าอี้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "โอกาส",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "change",
+   "gloss": "เปลี่ยน; การเปลี่ยนแปลง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "พุ่งเข้าใส่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "ไล่ตาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "ถูก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "check",
+   "gloss": "ตรวจสอบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "ชีส",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(ชื่อเฉพาะ) ชิคาโก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "child",
+   "gloss": "เด็ก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "วัยเด็ก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "ตัวเลือก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "เลือก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "คริสต์มาส",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "สุสานข้างโบสถ์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(ชื่อเฉพาะ) ซินเดอเรลลา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "city",
+   "gloss": "เมือง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "อ้างว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "เคลียร์; ชัดเจน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "เสมียน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "ปีน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "นาฬิกา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "close",
+   "gloss": "ปิด; ใกล้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "เมฆ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "เย็น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "รวบรวม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "สี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "หวี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "come",
+   "gloss": "มา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "สบาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "อย่างสบาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "ปลอบโยน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "เพื่อนร่วมทาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "เปรียบเทียบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "บ่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "ทำให้เสร็จ; สมบูรณ์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "ความสับสน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "การติดต่อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "ดำเนินต่อไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "โน้มน้าว; มั่นใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "พ่อครัว; ทำอาหาร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "ทำให้เย็นลง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "มุม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "มีราคา; ต้นทุน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "กระท่อม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "could",
+   "gloss": "สามารถ (อดีต); อาจจะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "นับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "นับไม่ถ้วน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "คู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "ปกคลุม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "create",
+   "gloss": "สร้าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "วิจารณ์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "ข้าม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "ฝูงชน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "โหดร้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "ความโหดร้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "ร้องไห้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "ขดตัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "ลูกค้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "ตัด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "เต้นรำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "อันตราย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "อันตราย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "กล้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "มืด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "ลูกสาว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "รุ่งอรุณ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "day",
+   "gloss": "วัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "แสงตอนกลางวัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "ตาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "death",
+   "gloss": "ความตาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "หลอกลวง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "ตัดสินใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "ตัดสินใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "การกระทำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "ลึก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "เอาชนะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "ป้องกัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "บอบบาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "อร่อย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "ความปีติ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "เรียกร้อง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "ปฏิเสธ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "described",
+   "gloss": "อธิบาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "โต๊ะทำงาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "ความสิ้นหวัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "อย่างสิ้นหวัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "แม้ว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "ทำลาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "เพชร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "die",
+   "gloss": "ตาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "died",
+   "gloss": "ตาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "different",
+   "gloss": "แตกต่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "ยาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "หายไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "ห่างไกล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "do",
+   "gloss": "ทำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "ดอลลาร์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "door",
+   "gloss": "ประตู",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "ช่องประตู",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "แป้งโดว์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "down",
+   "gloss": "ลง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "ตามกระแสน้ำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "ดึงเข้าหาตัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "ภาพวาด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "หวาดกลัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "ฝัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "ความฝัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "ดื่ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "คนขับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "ทำตก; หยด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "จมน้ำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "due",
+   "gloss": "ถึงกำหนด; คาดว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "หมอง; น่าเบื่อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "during",
+   "gloss": "ระหว่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "เต็มไปด้วยฝุ่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "each",
+   "gloss": "แต่ละ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "หู",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "ก่อนหน้านี้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "ง่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "กิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "ไม้มะเกลือ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(ชื่อเฉพาะ) อียิปต์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "แปดสิบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "either",
+   "gloss": "ก็ไม่ (ในประโยคปฏิเสธ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "คนโตที่สุด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "สิบเอ็ด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "else",
+   "gloss": "อื่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "กอด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "ว่างเปล่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "ถูกมนตร์สะกด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "end",
+   "gloss": "จุดจบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "ที่ทำให้ตกอยู่ในอันตราย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "พลังงาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "เพลิดเพลิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "มหึมา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "เพียงพอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "เข้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "กระตือรือร้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "ทั้งหมด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "ทางเข้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "หลบหนี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "โดยเฉพาะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "วันก่อน (คริสต์มาส)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "even",
+   "gloss": "แม้แต่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "ในที่สุด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "every",
+   "gloss": "ทุก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "ทุกคน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "ทุกสิ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "ทุกที่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "แน่นอน; ตรงเป๊ะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "except",
+   "gloss": "ยกเว้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "แลกกับ; การแลกเปลี่ยน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "หมดแรง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "มีอยู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "คาดหวัง; ที่คาดไว้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "คาดหวัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "ค่าใช้จ่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "แพง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "อธิบาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "คำอธิบาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "สำรวจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "สีหน้า; การแสดงออก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "พิเศษอย่างยิ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "ตา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "คิ้ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "face",
+   "gloss": "ใบหน้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "ซีดจาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "ล้มเหลว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "ล้มเหลว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "ตก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "ที่กำลังตก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "ตก; น้ำตก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "false",
+   "gloss": "เท็จ; ผิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "คุ้นเคย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "family",
+   "gloss": "ครอบครัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "far",
+   "gloss": "ไกล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "ชาวนา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "ลานฟาร์ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "เร็ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "ผูก; ติดแน่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "อ้วน; ไขมัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "ข้อบกพร่อง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "ความกลัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "ให้อาหาร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "รู้สึก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "ความรู้สึก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "ไปเอามา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "few",
+   "gloss": "ไม่กี่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "field",
+   "gloss": "ทุ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "ดุร้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "สิบห้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "ที่สิบห้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "ต่อสู้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "เติม; เต็ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "final",
+   "gloss": "สุดท้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "find",
+   "gloss": "พบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "ดี; ละเอียด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "นิ้ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "ฟินแลนด์; ชาวฟินแลนด์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "ไฟ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "แน่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "first",
+   "gloss": "แรก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "ปลา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "พอดีตัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "five",
+   "gloss": "ห้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "เรียบ; แฟลต",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "หนีไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "float",
+   "gloss": "ลอย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "ฝูง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "พื้น; ชั้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "ดอกไม้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "บิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "ติดตาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "ผู้ติดตาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "ชอบพอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "โง่เขลา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "เท้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "for",
+   "gloss": "สำหรับ; ยกเว้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "ตลอดไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "ลืม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "form",
+   "gloss": "ก่อตัว; รูปร่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "four",
+   "gloss": "สี่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "แข็งตัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "เย็นจัด; การแข็งตัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "สด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "เพื่อน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "มิตรภาพ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "ทำให้กลัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "from",
+   "gloss": "จาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "front",
+   "gloss": "ด้านหน้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "ผลไม้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "full",
+   "gloss": "เต็ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "ความสนุก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "โกรธจัด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "ได้รับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "games",
+   "gloss": "เกม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "สวน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "รวบรวม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "จ้อง; สายตา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "อ่อนโยน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "อย่างอ่อนโยน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "get",
+   "gloss": "ได้รับ; กลายเป็น; ไปถึง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "ผี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "เด็กผู้หญิง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "give",
+   "gloss": "ให้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "ผู้ให้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "แก้ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "go",
+   "gloss": "ไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "แพะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "god",
+   "gloss": "พระเจ้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "going",
+   "gloss": "กำลังไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "good",
+   "gloss": "ดี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "ลาก่อน; การอำลา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "สง่างาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "ยิ่งใหญ่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "ปู่; ตา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "ย่า; ยาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "สีเทา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "great",
+   "gloss": "ยิ่งใหญ่; ยอดเยี่ยม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "green",
+   "gloss": "สีเขียว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "ทักทาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "สีเทา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "พื้นดิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "เติบโต",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "เดา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "ผู้นำทาง; นำทาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "ปืน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "ลมกระโชก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "ผม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "การตัดผม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "ห้องโถง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "มือ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "แขวน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "เกิดขึ้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "ความสุข",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "มีความสุข",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "แข็ง; ยาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "รุนแรง; โหดร้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "หมวก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "ฟักออกจากไข่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "have",
+   "gloss": "มี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "he",
+   "gloss": "เขา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "head",
+   "gloss": "หัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "ได้ยิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "หัวใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "ทำให้ร้อน; ความร้อน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "รั้วต้นไม้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "สวัสดี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "ผู้ช่วย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "her",
+   "gloss": "ของเธอ; เธอ (กรรม)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "ตัวเธอเอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "ซ่อนตัว; ซ่อน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "ซ่อนตัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "เนินเขา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "him",
+   "gloss": "เขา (กรรม)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "ตัวเขาเอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "his",
+   "gloss": "ของเขา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "ถือ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "ถือ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "home",
+   "gloss": "บ้าน; กลับบ้าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "ฮู้ด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "ความหวัง; หวัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "เขา (สัตว์)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "ตกใจกลัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "ม้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "ชั่วโมง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "house",
+   "gloss": "บ้าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "งานบ้าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "how",
+   "gloss": "อย่างไร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "however",
+   "gloss": "อย่างไรก็ตาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "กอด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "human",
+   "gloss": "มนุษย์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "หนึ่งร้อย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "แขวน; ห้อย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "รีบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "ทำให้เจ็บ; บาดเจ็บ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "สามี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "i",
+   "gloss": "ฉัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ความคิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "if",
+   "gloss": "ถ้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "ป่วย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "ในจินตนาการ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "จินตนาการ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "ทันที",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "เป็นอมตะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "เป็นไปไม่ได้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "in",
+   "gloss": "ใน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "บาดเจ็บ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "ข้างใน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "ยืนกราน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "ตรวจดู",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "แทนที่จะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "สนใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "ถูกขัดจังหวะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "into",
+   "gloss": "เข้าไปใน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "เชิญ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "เชิญ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "it",
+   "gloss": "มัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "its",
+   "gloss": "ของมัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "แยม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "อิจฉา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(ชื่อเฉพาะ) พระเยซู",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "job",
+   "gloss": "งาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "join",
+   "gloss": "เข้าร่วม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "พูดเล่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "ความปีติยินดี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "ผู้พิพากษา; ตัดสิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "กระโดด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "just",
+   "gloss": "เพียง; พอดี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "เก็บไว้; รักษา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "เตะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "ฆ่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "ความกรุณา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "อาณาจักร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "จูบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "จูบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "ครัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "หัวเข่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "ล้ม (ผลัก); เคาะ (ประตู)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "know",
+   "gloss": "รู้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "เชือกผูกรองเท้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "ทะเลสาบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "land",
+   "gloss": "ผืนดิน; แผ่นดิน; ลงจอด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(ชื่อเฉพาะ) แลปแลนด์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "large",
+   "gloss": "ใหญ่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "last",
+   "gloss": "สุดท้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "later",
+   "gloss": "ต่อมา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "หัวเราะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "นอน; วาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "เอนตัว; พิง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "เรียนรู้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "การเรียนรู้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "จากไป; ทิ้งไว้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "left",
+   "gloss": "จากไป; ซ้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "ขา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "ให้ยืม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "บทเรียน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "let",
+   "gloss": "ปล่อย; ให้; ขอให้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "จดหมาย; ตัวอักษร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "คำโกหก; นอนอยู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "life",
+   "gloss": "ชีวิต",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "ยก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "light",
+   "gloss": "แสง; เบา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "like",
+   "gloss": "เหมือน; ชอบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(ชื่อเฉพาะ); ดอกลิลลี่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "line",
+   "gloss": "เส้น; แถว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "ฟัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "little",
+   "gloss": "เล็ก; นิดหน่อย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "live",
+   "gloss": "อาศัย; มีชีวิต",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "local",
+   "gloss": "ท้องถิ่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "ล็อก; ที่ล็อกไว้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "เปลี่ยว; โดดเดี่ยว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "long",
+   "gloss": "ยาว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "look",
+   "gloss": "ดูเหมือน; มอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "ทำให้หลวม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "สูญเสีย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "ดัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "love",
+   "gloss": "รัก; ความรัก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "ลดลง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "โชค",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "ก้อน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(ชื่อเฉพาะ) โหราจารย์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "make",
+   "gloss": "ทำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "man",
+   "gloss": "ผู้ชาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "many",
+   "gloss": "หลาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "รอย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "การแต่งงาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "แต่งงาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "หนองน้ำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "master",
+   "gloss": "นาย; ปรมาจารย์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "match",
+   "gloss": "ไม้ขีดไฟ; ตรงกัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "วัสดุ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "สำคัญ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "นายกเทศมนตรี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "me",
+   "gloss": "ฉัน (กรรม)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "ใจร้าย; หมายความว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "พบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "ละลาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "ความรกรุงรัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "message",
+   "gloss": "ข้อความ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "ผู้ส่งสาร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "โลหะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "เที่ยงคืน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "might",
+   "gloss": "อาจจะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "ไมล์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "นม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "รัฐมนตรี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "นาที",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "คิดถึง; พลาด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "หายไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "เยาะเย้ย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "ชั่วขณะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "more",
+   "gloss": "มากกว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "most",
+   "gloss": "ที่สุด; ส่วนใหญ่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "แม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "ภูเขา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "move",
+   "gloss": "เคลื่อนที่; ย้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "การเคลื่อนไหว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "นาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "music",
+   "gloss": "ดนตรี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "must",
+   "gloss": "ต้อง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "my",
+   "gloss": "ของฉัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "name",
+   "gloss": "ชื่อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "ผู้เล่าเรื่อง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "แคบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "near",
+   "gloss": "ใกล้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "ใกล้ ๆ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "คอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "need",
+   "gloss": "ต้องการ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "เข็ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "เพื่อนบ้าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "ไม่... ทั้งคู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "net",
+   "gloss": "ตาข่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "never",
+   "gloss": "ไม่เคย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "new",
+   "gloss": "ใหม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "ผู้มาใหม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "หนังสือพิมพ์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "next",
+   "gloss": "ถัดไป; ข้าง ๆ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "night",
+   "gloss": "กลางคืน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "no",
+   "gloss": "ไม่; ไม่มี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "เสียงดัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "none",
+   "gloss": "ไม่มีสักอย่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "และไม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "จมูก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "not",
+   "gloss": "ไม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "note",
+   "gloss": "บันทึก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "สังเกตเห็น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "สังเกตเห็น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "now",
+   "gloss": "ตอนนี้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "of",
+   "gloss": "ของ; จาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "off",
+   "gloss": "ออกเดินทาง; ปิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "เสนอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "เจ้าหน้าที่; นายทหาร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "official",
+   "gloss": "ทางการ; เจ้าหน้าที่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "often",
+   "gloss": "บ่อย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "old",
+   "gloss": "แก่; เก่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "on",
+   "gloss": "บน; ที่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "once",
+   "gloss": "ครั้งหนึ่ง; ครั้งหนึ่งนานมาแล้ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "one",
+   "gloss": "หนึ่ง; ใครคนหนึ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "only",
+   "gloss": "เท่านั้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "ขึ้นไปบน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "ต่อไปข้างหน้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "open",
+   "gloss": "เปิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "or",
+   "gloss": "หรือ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "สั่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "original",
+   "gloss": "ดั้งเดิม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "เครื่องประดับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "other",
+   "gloss": "อื่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "out",
+   "gloss": "ออกไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "ชุด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "ข้างนอก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "over",
+   "gloss": "ไปทาง; เหนือ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "เหนือศีรษะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "package",
+   "gloss": "พัสดุ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "การบรรจุหีบห่อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "ความเจ็บปวด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "เจ็บปวด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "คู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "พระราชวัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "กระดาษ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "พ่อแม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "การจากลา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "คู่เต้นรำ; คู่ครอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "ทางเดิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "ผ่านไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "ที่ผ่านไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "past",
+   "gloss": "อดีต; ผ่าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "ผ้าปะ; ผืน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "ความอดทน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "จ่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "การชำระเงิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "ลูกพีช",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "ก้อนกรวด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "เหรียญเพนนี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "สมบูรณ์แบบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "person",
+   "gloss": "บุคคล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "โน้มน้าว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "รูปถ่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "รูปถ่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "เก็บ; เลือก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "ชิ้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "นกพิราบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "กอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "place",
+   "gloss": "สถานที่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "ธรรมดา (ไม่สวมเครื่องแบบ); เรียบง่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "แผน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "ปลูก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "การปลูก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "พืช",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "play",
+   "gloss": "เล่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "ดำดิ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "ชี้; แหลม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "police",
+   "gloss": "ตำรวจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "ตำรวจ (ชาย)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "ยากจน; น่าสงสาร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "position",
+   "gloss": "ตำแหน่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "เท",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "power",
+   "gloss": "พลัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "ทรงพลัง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "ชอบมากกว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "การเตรียมการ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "present",
+   "gloss": "ของขวัญ; ปัจจุบัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "แกล้งทำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "ป้องกัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "price",
+   "gloss": "ราคา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "ทิ่ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "เรือนจำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "เจริญรุ่งเรือง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "ปกป้อง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "พิสูจน์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "ดึง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "ลงโทษ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "การลงโทษ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "ส่งเสียงครางหงิง ๆ (แมว)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "push",
+   "gloss": "ผลัก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "put",
+   "gloss": "วาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "อย่างรวดเร็ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "ฝนตก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "ปฏิกิริยา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "read",
+   "gloss": "อ่าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "พร้อม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "real",
+   "gloss": "จริง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "ตระหนัก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "เหตุผล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "received",
+   "gloss": "ได้รับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "เมื่อไม่นานมานี้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "จำได้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "red",
+   "gloss": "สีแดง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "ปฏิเสธ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "ปฏิเสธ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "การถูกปฏิเสธ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "ยังคงอยู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "ที่เหลืออยู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "ข้อสังเกต",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "น่าทึ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "จำได้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "เตือน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "สิ่งเตือนใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "เอาออก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "พูดซ้ำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "คำตอบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "report",
+   "gloss": "รายงาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "request",
+   "gloss": "คำขอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "ผู้ช่วยชีวิต",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "รับผิดชอบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "ร้านอาหาร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "ฟื้นฟู",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "เปิดเผย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "รางวัล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "ริบบิ้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "ขี่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "การขี่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "right",
+   "gloss": "ถูกต้อง; ขวา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "ขึ้น; ขึ้น (พระอาทิตย์)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "ริมฝั่งแม่น้ำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "ย่าง; ที่ย่างแล้ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "ปล้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "โจร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "ขนมปังก้อนเล็ก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "หลังคา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "room",
+   "gloss": "ห้อง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "ราก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "กุหลาบ; ขึ้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "หยาบ; รุนแรง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(ชื่อเฉพาะ) รัมเพลสทิลต์สกิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "run",
+   "gloss": "วิ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "รีบวิ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) ส่วนต่อท้ายแสดงความเป็นเจ้าของ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "ความเศร้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "same",
+   "gloss": "เหมือนกัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "ไพลิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "ไส้กรอก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "save",
+   "gloss": "ช่วยชีวิต; เก็บออม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "การออม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "say",
+   "gloss": "พูด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "แทบจะไม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "โปรย; กระจัดกระจาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "school",
+   "gloss": "โรงเรียน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "ทะเล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "search",
+   "gloss": "ค้นหา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "ความลับ; ลับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "see",
+   "gloss": "เห็น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "เมล็ดพันธุ์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "แสวงหา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "ดูเหมือน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "ดูเหมือน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "ฉวย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "ขาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "send",
+   "gloss": "ส่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "กำลังส่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "ประโยค; โทษ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "service",
+   "gloss": "บริการ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "set",
+   "gloss": "วาง; ออกเดินทาง; (ดวงอาทิตย์) ตก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "เจ็ด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "several",
+   "gloss": "หลาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "เย็บ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "การเย็บผ้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "รูปร่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "she",
+   "gloss": "เธอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "เปลือก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "ส่องแสง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "ส่องแสง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "ที่ส่องแสง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "เรือ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "รองเท้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "ร้านค้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "ฝั่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "short",
+   "gloss": "สั้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "should",
+   "gloss": "ควร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "ไหล่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "ตะโกน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "show",
+   "gloss": "แสดง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "ปิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "ป่วย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "การมองเห็น; ภาพ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "สัญญาณ; ลงนาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "ลายเซ็น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "เงียบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "เงิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "ง่าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "คนซื่อ ๆ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "ร้องเพลง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "จม; อ่างล้างจาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "พี่สาว/น้องสาว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "นั่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "six",
+   "gloss": "หก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "size",
+   "gloss": "ขนาด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "ท้องฟ้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "นอนหลับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "แขนเสื้อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "ลื่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "ลื่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "small",
+   "gloss": "เล็ก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "กลิ่น; ดมกลิ่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "นอนกรน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "หิมะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "so",
+   "gloss": "ดังนั้น; มาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "นุ่ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "อ่อนลง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "some",
+   "gloss": "บ้าง; บางส่วน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "ใครบางคน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "something",
+   "gloss": "บางอย่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "ที่ไหนสักแห่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "son",
+   "gloss": "ลูกชาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "song",
+   "gloss": "เพลง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "ในไม่ช้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "ความเศร้าโศก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "อย่างเศร้าโศก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "เสียง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "ซุป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "space",
+   "gloss": "ช่องว่าง; อวกาศ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "พูด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "special",
+   "gloss": "พิเศษ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "ใช้จ่าย; ใช้เวลา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "ทำหก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "วิญญาณ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "แผ่ขยาย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "ฤดูใบไม้ผลิ; น้ำพุ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "square",
+   "gloss": "ลานกว้าง; สี่เหลี่ยมจัตุรัส",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "แทรกตัว; บีบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "บันได",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "แผงขายของ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "กระทืบเท้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "ยืน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "star",
+   "gloss": "ดาว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "เริ่ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "พัก; อยู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "ขโมย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "ก้าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "แม่เลี้ยง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "พี่สาว/น้องสาวต่างพ่อต่างแม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "ไม้; ติด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "เหนียว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "still",
+   "gloss": "ยังคง; นิ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "เย็บ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "ท้อง; กระเพาะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "หิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "หยุด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "พายุ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "story",
+   "gloss": "เรื่องราว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "ตรง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "เส้น (ผม)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "แปลก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "คนแปลกหน้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "ลำธาร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "street",
+   "gloss": "ถนน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "ความแข็งแรง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "ยืด; เหยียด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "จุด (ไม้ขีด); ตี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "สะดุด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "โง่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "ประสบความสำเร็จ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "ประสบความสำเร็จ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "such",
+   "gloss": "เช่นนั้น; ถึงเพียงนั้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "ทันใดนั้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "น้ำตาล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "เสนอแนะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "ฤดูร้อน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "แสงอาทิตย์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "พระอาทิตย์ขึ้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "พระอาทิตย์ตก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "ที่ควรจะ; ที่ถูกสมมติ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "ความประหลาดใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "ถูกล้อมรอบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "สงสัย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "ดาบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "table",
+   "gloss": "โต๊ะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "take",
+   "gloss": "พาไป; เอา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "พูดคุย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "ที่พูดได้; การพูดคุย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "สูง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "task",
+   "gloss": "งาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "ชา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "น้ำตา; ฉีก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "บอก; เล่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "สิบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "แย่มาก; น่ากลัว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "than",
+   "gloss": "กว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "ขอบคุณ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "that",
+   "gloss": "นั่น; ว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(คำนำหน้านามเฉพาะเจาะจง)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "their",
+   "gloss": "ของพวกเขา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "them",
+   "gloss": "พวกเขา (กรรม)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "ตัวพวกเขาเอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "then",
+   "gloss": "แล้ว; ตอนนั้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "there",
+   "gloss": "ที่นั่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "these",
+   "gloss": "เหล่านี้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "they",
+   "gloss": "พวกเขา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "หนา; ทึบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "ขโมย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "บาง; ผอม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "สิ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "think",
+   "gloss": "คิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "third",
+   "gloss": "ที่สาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "สิบสาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "this",
+   "gloss": "นี้; อันนี้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "those",
+   "gloss": "เหล่านั้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "though",
+   "gloss": "แม้ว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "คิด; ความคิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "หนึ่งพัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "ด้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "ขู่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "ที่คุกคาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "three",
+   "gloss": "สาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "คอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "through",
+   "gloss": "ผ่าน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "ตลอด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "ขว้าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(ชื่อเฉพาะ) ธัมเบลินา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "ผูก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "ผูก; ถูกมัด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "แน่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "time",
+   "gloss": "เวลา; ครั้ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "เล็กจิ๋ว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "to",
+   "gloss": "ไปยัง; เพื่อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "today",
+   "gloss": "วันนี้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "together",
+   "gloss": "ด้วยกัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(ชื่อเฉพาะ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "too",
+   "gloss": "ด้วย; เกินไป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "ฟัน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "top",
+   "gloss": "ด้านบน; ยอด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "การติดต่อ (คงติดต่อกัน)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "ไปทาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "town",
+   "gloss": "เมืองเล็ก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "ของเล่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "อาชีพช่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "train",
+   "gloss": "รถไฟ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "เดินทาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "เดินทาง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "สมบัติ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "ปฏิบัติต่อ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "ต้นไม้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "สั่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "ความทุกข์ยาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "รางอาหารสัตว์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "true",
+   "gloss": "จริง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "ลำต้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "try",
+   "gloss": "พยายาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "หัน; ตา (ลำดับ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "สิบสอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "ยี่สิบ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "two",
+   "gloss": "สอง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "น่าเกลียด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "ไม่สามารถ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "under",
+   "gloss": "ใต้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "ใต้ดิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "เข้าใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "ยังไม่เสร็จ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "ไม่เหมาะสม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "คลี่ออก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "ไม่มีความสุข",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "ต่างจาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "ไม่มีแสงสว่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "แก้มัด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "until",
+   "gloss": "จนกระทั่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "ผิดปกติ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "up",
+   "gloss": "ขึ้น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "เสียใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "ชั้นบน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "us",
+   "gloss": "พวกเรา (กรรม)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "use",
+   "gloss": "ใช้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "มีประโยชน์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "กว้างใหญ่ไพศาล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "very",
+   "gloss": "มาก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "ชัยชนะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "อย่างรุนแรง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "เยี่ยมเยียน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "ผู้มาเยือน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "รอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "กำลังรอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "ตื่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "เดิน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "กำแพง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "เร่ร่อน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "ที่ร่อนเร่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "want",
+   "gloss": "ต้องการ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "ตู้เสื้อผ้า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "อบอุ่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "เตือน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "ล้าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "นาฬิกาข้อมือ; ดู",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "water",
+   "gloss": "น้ำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "โบกมือ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "คลื่น",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "way",
+   "gloss": "ทาง; วิธี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "we",
+   "gloss": "พวกเรา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "อ่อนแอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "ทำให้อ่อนแอ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "ร่ำรวย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "สวมใส่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "งานแต่งงาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "week",
+   "gloss": "สัปดาห์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "ต้อนรับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "west",
+   "gloss": "ตะวันตก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "เปียก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "what",
+   "gloss": "อะไร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "when",
+   "gloss": "เมื่อ; เมื่อไร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "where",
+   "gloss": "ที่ไหน; ที่ซึ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "ไม่ว่าที่ไหน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "ว่า...หรือไม่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "which",
+   "gloss": "ซึ่ง; อันไหน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "while",
+   "gloss": "ในขณะที่",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "white",
+   "gloss": "สีขาว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "who",
+   "gloss": "ใคร; ผู้ซึ่ง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "ใครก็ตาม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "ทั้งหมด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "ของใคร; ซึ่ง...ของเขา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "why",
+   "gloss": "ทำไม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "ชั่วร้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "ภรรยา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "ป่า; ดุร้าย",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "ป่าเปลี่ยว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "will",
+   "gloss": "จะ; เจตจำนง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "ด้วยความเต็มใจ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "win",
+   "gloss": "ชนะ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "ขอบหน้าต่าง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "ไวน์",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "ปีก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "ฉลาดหลักแหลม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "ปรารถนา; ความปรารถนา",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "with",
+   "gloss": "กับ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "without",
+   "gloss": "โดยไม่มี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "ผู้หญิง",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "วิเศษ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "ฟืน; ไม้; ป่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "ทำด้วยไม้",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "word",
+   "gloss": "คำ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "work",
+   "gloss": "ทำงาน; งาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "คนงาน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "โรงงานเล็ก; เวิร์กชอป",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "world",
+   "gloss": "โลก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "กังวล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "คู่ควร",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "would",
+   "gloss": "จะ (สมมติ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "บาดแผล",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "write",
+   "gloss": "เขียน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "นักเขียน",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "ผิด",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "year",
+   "gloss": "ปี",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "ยัง; แต่ทว่า",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(ชื่อเฉพาะ) ยอร์ก",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "you",
+   "gloss": "คุณ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "young",
+   "gloss": "หนุ่มสาว",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "เด็กหนุ่ม",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "your",
+   "gloss": "ของคุณ",
+   "source": "claude-draft"
+  }
+ ],
+ "sampleApprovedBy": "owner-asked-all-languages-2026-10-19"
+}

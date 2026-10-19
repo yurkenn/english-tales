@@ -1,0 +1,4554 @@
+{
+ "schemaVersion": 1,
+ "lang": "ru",
+ "source": "Built by tools/glossary.mjs from backend/content/glossary/ru.json: machine draft, not reviewed by a native speaker.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "(неопр. артикль) один"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "бросать"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "способности"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "на борту"
+  },
+  {
+   "lemma": "about",
+   "gloss": "о; около"
+  },
+  {
+   "lemma": "above",
+   "gloss": "над; выше"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "принимать"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "случайно"
+  },
+  {
+   "lemma": "across",
+   "gloss": "через; поперёк"
+  },
+  {
+   "lemma": "act",
+   "gloss": "поступать; поступок"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "добавляет"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "восхищался"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "восхищённый"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "признавать"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "совет"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "испуганный"
+  },
+  {
+   "lemma": "after",
+   "gloss": "после"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "вторая половина дня"
+  },
+  {
+   "lemma": "again",
+   "gloss": "снова"
+  },
+  {
+   "lemma": "against",
+   "gloss": "против"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "назад"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "согласился"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "соглашается"
+  },
+  {
+   "lemma": "air",
+   "gloss": "воздух"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "живой"
+  },
+  {
+   "lemma": "all",
+   "gloss": "всё; все"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "разрешил"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "почти"
+  },
+  {
+   "lemma": "along",
+   "gloss": "вдоль"
+  },
+  {
+   "lemma": "already",
+   "gloss": "уже"
+  },
+  {
+   "lemma": "also",
+   "gloss": "также"
+  },
+  {
+   "lemma": "although",
+   "gloss": "хотя"
+  },
+  {
+   "lemma": "always",
+   "gloss": "всегда"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "изумлённый"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "удивительный"
+  },
+  {
+   "lemma": "among",
+   "gloss": "среди"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "количества"
+  },
+  {
+   "lemma": "an",
+   "gloss": "(неопр. артикль) один"
+  },
+  {
+   "lemma": "and",
+   "gloss": "и"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "гнев"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "сердитый"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "животное"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "another",
+   "gloss": "другой"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "ответил"
+  },
+  {
+   "lemma": "any",
+   "gloss": "любой"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "больше (не)"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "кто-либо"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "что угодно"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "врозь"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "внешность"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "появился"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "яблоко"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "приблизился"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "вооружённый"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "руки"
+  },
+  {
+   "lemma": "around",
+   "gloss": "вокруг"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "расставляющий"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "прибыл"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "прибывает"
+  },
+  {
+   "lemma": "as",
+   "gloss": "как; когда"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "спрашивать; просить"
+  },
+  {
+   "lemma": "at",
+   "gloss": "в; у; на"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "напал"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "слуги"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "осень"
+  },
+  {
+   "lemma": "away",
+   "gloss": "прочь; далеко"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "неуклюжий"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "младенец"
+  },
+  {
+   "lemma": "back",
+   "gloss": "назад; спина"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "сумка"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "мяч; бал"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "обручи; ремни"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "прутья; решётки"
+  },
+  {
+   "lemma": "be",
+   "gloss": "быть"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "бить; победить"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "красивый"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "красота"
+  },
+  {
+   "lemma": "because",
+   "gloss": "потому что"
+  },
+  {
+   "lemma": "become",
+   "gloss": "становиться"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "кровать"
+  },
+  {
+   "lemma": "before",
+   "gloss": "до; перед"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "умолял"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "начинать"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "вёл себя"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "позади"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "принадлежать"
+  },
+  {
+   "lemma": "below",
+   "gloss": "ниже"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "наклоняться"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "под"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "рядом с"
+  },
+  {
+   "lemma": "between",
+   "gloss": "между"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "за; за пределами"
+  },
+  {
+   "lemma": "big",
+   "gloss": "большой"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "птица"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "день рождения"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "кусочек; укусил"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "кусать"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "жестоко (о холоде)"
+  },
+  {
+   "lemma": "black",
+   "gloss": "чёрный"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "обвинил"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "одеяла"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "кровь"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "цвести"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "расцвёл"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "удар"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "синий"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "хвастался"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "body",
+   "gloss": "тело"
+  },
+  {
+   "lemma": "born",
+   "gloss": "рождённый"
+  },
+  {
+   "lemma": "both",
+   "gloss": "оба"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "бутылка"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "дно; низ"
+  },
+  {
+   "lemma": "box",
+   "gloss": "коробка"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "ветка"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "хлеб"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(имя собственное) Бремен"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "шиповник"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "жених"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "яркий"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "яркость"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "приносить"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "брат"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "коричневый"
+  },
+  {
+   "lemma": "build",
+   "gloss": "строить"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "гореть"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "сгоревший"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "лопнуть"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "занятой"
+  },
+  {
+   "lemma": "but",
+   "gloss": "но"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "бабочка"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "покупать"
+  },
+  {
+   "lemma": "by",
+   "gloss": "рядом с; (кем-то)"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "торт; пирог"
+  },
+  {
+   "lemma": "call",
+   "gloss": "звонок; звать"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "фотоаппарат"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "лагерь"
+  },
+  {
+   "lemma": "can",
+   "gloss": "мочь"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "свечи"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "не мочь"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "захватить"
+  },
+  {
+   "lemma": "care",
+   "gloss": "забота; заботиться"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "осторожный"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "карета"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "нести"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "кошка"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "поймать"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "вызвал"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "вызывающий"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "праздновал"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "празднующий"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "празднование"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "центы"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "уверенный; определённый"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "стул"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "шанс"
+  },
+  {
+   "lemma": "change",
+   "gloss": "менять; перемена"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "бросающийся в атаку"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "гнался"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "дешёвый"
+  },
+  {
+   "lemma": "check",
+   "gloss": "проверять"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "сыр"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(имя собственное) Чикаго"
+  },
+  {
+   "lemma": "child",
+   "gloss": "ребёнок"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "детство"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "выбор"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "выбирать"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Рождество"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "церковное кладбище"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(имя собственное) Золушка"
+  },
+  {
+   "lemma": "city",
+   "gloss": "город"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "заявил"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "очистить; ясный"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "клерк"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "взбираться"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "часы"
+  },
+  {
+   "lemma": "close",
+   "gloss": "закрывать; близкий"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "облака"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "холодный"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "собирать"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "цвета"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "расчёска"
+  },
+  {
+   "lemma": "come",
+   "gloss": "приходить"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "удобный"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "удобно"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "утешил"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "спутник"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "сравнивает"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "пожаловался"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "завершить; полный"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "смятение"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "контакт"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "продолжать"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "убедил; убеждённый"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "повар; готовить"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "охладил"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "угол"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "стоить; стоимость"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "хижина"
+  },
+  {
+   "lemma": "could",
+   "gloss": "мог; мог бы"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "сосчитал"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "бесчисленный"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "пара"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "покрытый; покрыл"
+  },
+  {
+   "lemma": "create",
+   "gloss": "создавать"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "критиковал"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "пересёк"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "толпа"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "жестокий"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "жестокость"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "плакать"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "свернулся"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "покупатель"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "резать"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "танцевать"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "опасность"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "опасный"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "осмелиться"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "тёмный"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "дочь"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "рассвет"
+  },
+  {
+   "lemma": "day",
+   "gloss": "день"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "дневной свет"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "мёртвый"
+  },
+  {
+   "lemma": "death",
+   "gloss": "смерть"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "лживый"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "решил"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "решает"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "поступки"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "глубокий"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "победить"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "защищать"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "нежный"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "вкусный"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "радость"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "потребовал"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "отрицать"
+  },
+  {
+   "lemma": "described",
+   "gloss": "описал"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "письменный стол"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "отчаяние"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "отчаянно"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "несмотря на"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "разрушил"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "алмаз"
+  },
+  {
+   "lemma": "die",
+   "gloss": "умереть"
+  },
+  {
+   "lemma": "died",
+   "gloss": "умер"
+  },
+  {
+   "lemma": "different",
+   "gloss": "разный"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "трудный"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "исчезнуть"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "далёкий"
+  },
+  {
+   "lemma": "do",
+   "gloss": "делать"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "доллар"
+  },
+  {
+   "lemma": "door",
+   "gloss": "дверь"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "дверной проём"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "тесто"
+  },
+  {
+   "lemma": "down",
+   "gloss": "вниз"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "вниз по течению"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "тянуть к себе"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "рисунок"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "страшился"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "мечтал; видел сон"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "сны; мечты"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "пить"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "водитель"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "уронить; капля"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "утонул"
+  },
+  {
+   "lemma": "due",
+   "gloss": "ожидаемый; должный"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "тусклый; скучный"
+  },
+  {
+   "lemma": "during",
+   "gloss": "во время"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "пыльный"
+  },
+  {
+   "lemma": "each",
+   "gloss": "каждый"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "ухо"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "раньше"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "лёгкий"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "есть"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "чёрное дерево"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(имя собственное) Египет"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "восемьдесят"
+  },
+  {
+   "lemma": "either",
+   "gloss": "тоже (в отрицании)"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "старший"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "одиннадцать"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "else",
+   "gloss": "ещё; другой"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "обнял"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "пустой"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "заколдованный"
+  },
+  {
+   "lemma": "end",
+   "gloss": "конец"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "подвергающий опасности"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "энергия"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "наслаждался"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "огромный"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "достаточно"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "входить"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "увлечённый"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "полностью"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "вход"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "убежать"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "особенно"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "канун (Рождества)"
+  },
+  {
+   "lemma": "even",
+   "gloss": "даже"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "в конце концов"
+  },
+  {
+   "lemma": "every",
+   "gloss": "каждый"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "все"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "всё"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "везде"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "точный"
+  },
+  {
+   "lemma": "except",
+   "gloss": "кроме"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "в обмен; обмен"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "измождённый"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "существовать"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "ожидал; ожидаемый"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "ожидая"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "расходы"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "дорогой"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "объяснять"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "объяснение"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "исследовать"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "выражение"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "необыкновенный"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "глаз"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "бровь"
+  },
+  {
+   "lemma": "face",
+   "gloss": "лицо"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "поблёк"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "потерпел неудачу"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "терпит неудачу"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "падать"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "падающий"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "падает; водопад"
+  },
+  {
+   "lemma": "false",
+   "gloss": "ложный; неверный"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "знакомый"
+  },
+  {
+   "lemma": "family",
+   "gloss": "семья"
+  },
+  {
+   "lemma": "far",
+   "gloss": "далеко"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "фермер"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "скотный двор"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "быстрый"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "прикрепил"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "толстый; жир"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "недостатки"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "страх"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "кормить"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "чувствовать"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "чувство"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "принёс"
+  },
+  {
+   "lemma": "few",
+   "gloss": "несколько"
+  },
+  {
+   "lemma": "field",
+   "gloss": "поле"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "свирепый"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "пятнадцать"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "пятнадцатый"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "драться"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "наполнил; полный"
+  },
+  {
+   "lemma": "final",
+   "gloss": "последний"
+  },
+  {
+   "lemma": "find",
+   "gloss": "находить"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "хороший; тонкий"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "палец"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "финский"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "огонь"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "крепко"
+  },
+  {
+   "lemma": "first",
+   "gloss": "первый"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "рыба"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "пришёлся впору"
+  },
+  {
+   "lemma": "five",
+   "gloss": "пять"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "плоский; квартира"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "бежал"
+  },
+  {
+   "lemma": "float",
+   "gloss": "плавать на поверхности"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "стадо; стая"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "пол; этаж"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "цветок"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "летать"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "следовать"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "последователи"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "любящий"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "глупый"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "ступня"
+  },
+  {
+   "lemma": "for",
+   "gloss": "для; кроме"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "навсегда"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "забывать"
+  },
+  {
+   "lemma": "form",
+   "gloss": "образовывать; форма"
+  },
+  {
+   "lemma": "four",
+   "gloss": "четыре"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "замерзать"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "ледяной; замерзание"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "свежий"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "друг"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "дружба"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "пугать"
+  },
+  {
+   "lemma": "from",
+   "gloss": "из; от"
+  },
+  {
+   "lemma": "front",
+   "gloss": "перед"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "фрукт"
+  },
+  {
+   "lemma": "full",
+   "gloss": "полный"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "веселье"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "яростный"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "получать"
+  },
+  {
+   "lemma": "games",
+   "gloss": "игры"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "сад"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "собирать"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "пристально смотреть; взгляд"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "нежный"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "нежно"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "get",
+   "gloss": "получать; становиться; добираться"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "привидение"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "девочка"
+  },
+  {
+   "lemma": "give",
+   "gloss": "давать"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "дарители"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "стекло; стакан"
+  },
+  {
+   "lemma": "go",
+   "gloss": "идти"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "коза"
+  },
+  {
+   "lemma": "god",
+   "gloss": "бог"
+  },
+  {
+   "lemma": "going",
+   "gloss": "идущий"
+  },
+  {
+   "lemma": "good",
+   "gloss": "хороший"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "до свидания; прощание"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "грациозный"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "величественный"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "дедушка"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "бабушка"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "серый"
+  },
+  {
+   "lemma": "great",
+   "gloss": "великий; замечательный"
+  },
+  {
+   "lemma": "green",
+   "gloss": "зелёный"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "поприветствовал"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "серый"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "земля"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "расти"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "угадывать"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "проводник; вести"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "ружьё"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "порыв ветра"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "волосы"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "стрижка"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "залы"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "рука"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "вешать"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "происходить"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "счастье"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "счастливый"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "твёрдый; трудный"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "суровый"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "шляпа"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "вылупиться"
+  },
+  {
+   "lemma": "have",
+   "gloss": "иметь"
+  },
+  {
+   "lemma": "he",
+   "gloss": "он"
+  },
+  {
+   "lemma": "head",
+   "gloss": "голова"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "слышать"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "сердце"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "нагревать; жара"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "живая изгородь"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "привет"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "помощники"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "her",
+   "gloss": "её; ей, её"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "она сама; себя"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "спрятался; спрятал"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "прятаться"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "холм"
+  },
+  {
+   "lemma": "him",
+   "gloss": "его; ему"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "он сам; себя"
+  },
+  {
+   "lemma": "his",
+   "gloss": "его"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "держать"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "держит"
+  },
+  {
+   "lemma": "home",
+   "gloss": "дом; домой"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "капюшон"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "надежда; надеяться"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "рог"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "потрясённый"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "лошадь"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "часы"
+  },
+  {
+   "lemma": "house",
+   "gloss": "дом"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "домашняя работа"
+  },
+  {
+   "lemma": "how",
+   "gloss": "как"
+  },
+  {
+   "lemma": "however",
+   "gloss": "однако"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "обнял"
+  },
+  {
+   "lemma": "human",
+   "gloss": "человек"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "сто"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "повесил; висел"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "поспешил"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "ранить; раненый"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "муж"
+  },
+  {
+   "lemma": "i",
+   "gloss": "я"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "идея"
+  },
+  {
+   "lemma": "if",
+   "gloss": "если"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "больной"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "воображаемый"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "вообразил"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "немедленно"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "бессмертный"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "невозможный"
+  },
+  {
+   "lemma": "in",
+   "gloss": "в; внутри"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "раненый"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "внутри"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "настаивал"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "осматривать"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "вместо этого"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "заинтересованный"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "прерванный"
+  },
+  {
+   "lemma": "into",
+   "gloss": "в"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "пригласил"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "приглашает"
+  },
+  {
+   "lemma": "it",
+   "gloss": "оно; это"
+  },
+  {
+   "lemma": "its",
+   "gloss": "его; её (о предмете/животном)"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "варенье"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "ревнивый; завистливый"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(имя собственное) Иисус"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "job",
+   "gloss": "работа"
+  },
+  {
+   "lemma": "join",
+   "gloss": "присоединиться"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "пошутил"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "радость"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "судья; судить"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "прыгнул"
+  },
+  {
+   "lemma": "just",
+   "gloss": "только; именно"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "держать; хранить"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "пнул"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "убивать"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "доброта"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "королевство"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "поцеловал"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "поцелуи"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "кухня"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "колени"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "сбил; постучал"
+  },
+  {
+   "lemma": "know",
+   "gloss": "знать"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "шнурки"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "озеро"
+  },
+  {
+   "lemma": "land",
+   "gloss": "земля; страна; приземляться"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(имя собственное) Лапландия"
+  },
+  {
+   "lemma": "large",
+   "gloss": "большой"
+  },
+  {
+   "lemma": "last",
+   "gloss": "последний"
+  },
+  {
+   "lemma": "later",
+   "gloss": "позже"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "смеяться"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "лежал; положил"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "наклонился; прислонился"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "выучил"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "обучение"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "уходить; оставлять"
+  },
+  {
+   "lemma": "left",
+   "gloss": "ушёл; левый"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "нога"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "одолжить"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "урок"
+  },
+  {
+   "lemma": "let",
+   "gloss": "позволять"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "письмо; буква"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "ложь; лежит"
+  },
+  {
+   "lemma": "life",
+   "gloss": "жизнь"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "поднимать"
+  },
+  {
+   "lemma": "light",
+   "gloss": "свет; лёгкий"
+  },
+  {
+   "lemma": "like",
+   "gloss": "как; любить"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(имя собственное); лилия"
+  },
+  {
+   "lemma": "line",
+   "gloss": "линия; очередь"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "слушать"
+  },
+  {
+   "lemma": "little",
+   "gloss": "маленький; немного"
+  },
+  {
+   "lemma": "live",
+   "gloss": "жить"
+  },
+  {
+   "lemma": "local",
+   "gloss": "местный"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "запер; запертый"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "одинокий; безлюдный"
+  },
+  {
+   "lemma": "long",
+   "gloss": "длинный"
+  },
+  {
+   "lemma": "look",
+   "gloss": "выглядеть; смотреть"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "ослабил"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "терять"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "громкий"
+  },
+  {
+   "lemma": "love",
+   "gloss": "любить; любовь"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "опустил"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "удача"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "комок"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(имя собственное) волхвы"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "make",
+   "gloss": "делать"
+  },
+  {
+   "lemma": "man",
+   "gloss": "мужчина"
+  },
+  {
+   "lemma": "many",
+   "gloss": "много"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "отметки"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "брак"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "жениться"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "болото"
+  },
+  {
+   "lemma": "master",
+   "gloss": "хозяин; мастер"
+  },
+  {
+   "lemma": "match",
+   "gloss": "спичка; совпадать"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "материалы"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "имело значение"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "мэр"
+  },
+  {
+   "lemma": "me",
+   "gloss": "меня; мне"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "злой; означать"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "встречаться; знакомиться"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "таять"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "беспорядок"
+  },
+  {
+   "lemma": "message",
+   "gloss": "сообщение"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "гонец"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "металл"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "полночь"
+  },
+  {
+   "lemma": "might",
+   "gloss": "может быть"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "мили"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "молоко"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "министр"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "минуты"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "скучал; пропустил"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "пропавший"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "насмехаться"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "момент"
+  },
+  {
+   "lemma": "more",
+   "gloss": "больше"
+  },
+  {
+   "lemma": "most",
+   "gloss": "самый; большинство"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "мать"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "горы"
+  },
+  {
+   "lemma": "move",
+   "gloss": "двигаться; переезжать"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "движение"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "г-жа"
+  },
+  {
+   "lemma": "music",
+   "gloss": "музыка"
+  },
+  {
+   "lemma": "must",
+   "gloss": "должен"
+  },
+  {
+   "lemma": "my",
+   "gloss": "мой"
+  },
+  {
+   "lemma": "name",
+   "gloss": "имя"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "рассказчик"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "узкий"
+  },
+  {
+   "lemma": "near",
+   "gloss": "близко"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "поблизости"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "шеи"
+  },
+  {
+   "lemma": "need",
+   "gloss": "нуждаться"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "иглы"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "сосед"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "ни... ни"
+  },
+  {
+   "lemma": "net",
+   "gloss": "сеть"
+  },
+  {
+   "lemma": "never",
+   "gloss": "никогда"
+  },
+  {
+   "lemma": "new",
+   "gloss": "новый"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "новичок"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "газета"
+  },
+  {
+   "lemma": "next",
+   "gloss": "следующий; рядом с"
+  },
+  {
+   "lemma": "night",
+   "gloss": "ночь"
+  },
+  {
+   "lemma": "no",
+   "gloss": "нет; никакой"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "шум"
+  },
+  {
+   "lemma": "none",
+   "gloss": "никто; ни один"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "и не"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "нос"
+  },
+  {
+   "lemma": "not",
+   "gloss": "не"
+  },
+  {
+   "lemma": "note",
+   "gloss": "записка"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "заметил"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "замечает"
+  },
+  {
+   "lemma": "now",
+   "gloss": "сейчас"
+  },
+  {
+   "lemma": "of",
+   "gloss": "из; (принадлежность)"
+  },
+  {
+   "lemma": "off",
+   "gloss": "в путь; выключенный"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "предлагать"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "служащий; офицер"
+  },
+  {
+   "lemma": "official",
+   "gloss": "официальный; чиновник"
+  },
+  {
+   "lemma": "often",
+   "gloss": "часто"
+  },
+  {
+   "lemma": "old",
+   "gloss": "старый"
+  },
+  {
+   "lemma": "on",
+   "gloss": "на"
+  },
+  {
+   "lemma": "once",
+   "gloss": "однажды; когда-то"
+  },
+  {
+   "lemma": "one",
+   "gloss": "один; кто-то"
+  },
+  {
+   "lemma": "only",
+   "gloss": "только"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "на"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "вперёд"
+  },
+  {
+   "lemma": "open",
+   "gloss": "открывать; открытый"
+  },
+  {
+   "lemma": "or",
+   "gloss": "или"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "приказал"
+  },
+  {
+   "lemma": "original",
+   "gloss": "оригинальный"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "украшение"
+  },
+  {
+   "lemma": "other",
+   "gloss": "другой"
+  },
+  {
+   "lemma": "out",
+   "gloss": "наружу"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "наряд"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "снаружи"
+  },
+  {
+   "lemma": "over",
+   "gloss": "к; над"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "над головой"
+  },
+  {
+   "lemma": "package",
+   "gloss": "посылка"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "упаковка"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "боль"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "болезненный"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "пара"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "дворец"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "бумага"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "родители"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "расставание"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "партнёр (по танцу); супруг"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "проход"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "прошёл"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "проходящий"
+  },
+  {
+   "lemma": "past",
+   "gloss": "прошлое; мимо"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "заплатка; участок"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "терпение"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "платить"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "оплата"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "персик"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "галька"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "пенни"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "идеальный"
+  },
+  {
+   "lemma": "person",
+   "gloss": "человек"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "убедил"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "фотография"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "фото"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "собирать; выбирать"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "кусок"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "голуби"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "куча"
+  },
+  {
+   "lemma": "place",
+   "gloss": "место"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "штатский; простой"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "план"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "посадил"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "посадка"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "растения"
+  },
+  {
+   "lemma": "play",
+   "gloss": "играть"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "нырнул"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "указал; острый"
+  },
+  {
+   "lemma": "police",
+   "gloss": "полиция"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "полицейский"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "бедный"
+  },
+  {
+   "lemma": "position",
+   "gloss": "должность"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "налил"
+  },
+  {
+   "lemma": "power",
+   "gloss": "сила"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "могущественный"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "предпочитать"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "приготовления"
+  },
+  {
+   "lemma": "present",
+   "gloss": "подарок; нынешний"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "притворился"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "помешал"
+  },
+  {
+   "lemma": "price",
+   "gloss": "цена"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "уколоть"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "тюрьма"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "процветать"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "защищать"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "доказывать"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "тянуть"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "наказал"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "наказание"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "мурлыкать"
+  },
+  {
+   "lemma": "push",
+   "gloss": "толкать"
+  },
+  {
+   "lemma": "put",
+   "gloss": "класть"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "быстро"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "дождливый"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "реакция"
+  },
+  {
+   "lemma": "read",
+   "gloss": "читать"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "готовый"
+  },
+  {
+   "lemma": "real",
+   "gloss": "настоящий"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "осознал"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "причина"
+  },
+  {
+   "lemma": "received",
+   "gloss": "получил"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "недавно"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "узнавать"
+  },
+  {
+   "lemma": "red",
+   "gloss": "красный"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "отказываться"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "отверг"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "отказ"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "остался"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "оставшийся"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "замечание"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "замечательный"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "помнить"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "напомнил"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "напоминание"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "убирать"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "повторил"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "ответ"
+  },
+  {
+   "lemma": "report",
+   "gloss": "отчёт; сообщать"
+  },
+  {
+   "lemma": "request",
+   "gloss": "просьба"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "спаситель"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "ответственный"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "ресторан"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "восстановил"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "раскрывать"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "награда"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "лента"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "ехать верхом"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "верховая езда"
+  },
+  {
+   "lemma": "right",
+   "gloss": "правильный; правый"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "поднимается; восходит"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "берег реки"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "жарить; жареный"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "грабить"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "разбойник"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "булочки"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "крыша"
+  },
+  {
+   "lemma": "room",
+   "gloss": "комната"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "корни"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "роза; поднялся"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "грубый"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(имя собственное) Румпельштильцхен"
+  },
+  {
+   "lemma": "run",
+   "gloss": "бежать"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "бросился"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) притяжательное окончание"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "грусть"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "same",
+   "gloss": "тот же"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "сапфир"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "колбаски"
+  },
+  {
+   "lemma": "save",
+   "gloss": "спасать; копить"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "накопление"
+  },
+  {
+   "lemma": "say",
+   "gloss": "говорить"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "едва"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "рассыпал; разбежался"
+  },
+  {
+   "lemma": "school",
+   "gloss": "школа"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "море"
+  },
+  {
+   "lemma": "search",
+   "gloss": "искать"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "тайна; тайный"
+  },
+  {
+   "lemma": "see",
+   "gloss": "видеть"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "семя"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "искать"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "казался"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "кажется"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "схватил"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "продавать"
+  },
+  {
+   "lemma": "send",
+   "gloss": "отправлять"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "отправляющий"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "предложение; приговор"
+  },
+  {
+   "lemma": "service",
+   "gloss": "услуга"
+  },
+  {
+   "lemma": "set",
+   "gloss": "ставить; отправляться; садиться (о солнце)"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "семь"
+  },
+  {
+   "lemma": "several",
+   "gloss": "несколько"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "шил"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "шитьё"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "форма"
+  },
+  {
+   "lemma": "she",
+   "gloss": "она"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "ракушка; скорлупа"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "сиять"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "сияет"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "сияющий"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "корабль"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "туфля"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "магазин"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "берег"
+  },
+  {
+   "lemma": "short",
+   "gloss": "короткий"
+  },
+  {
+   "lemma": "should",
+   "gloss": "следует"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "плечи"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "крикнул"
+  },
+  {
+   "lemma": "show",
+   "gloss": "показывать"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "закрытый; закрывать"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "больной"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "зрение; зрелище"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "знак; подписывать"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "подпись"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "молчаливый"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "серебро"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "простой"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "простак"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "петь"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "тонуть; раковина"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "сестра"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "сидеть"
+  },
+  {
+   "lemma": "six",
+   "gloss": "шесть"
+  },
+  {
+   "lemma": "size",
+   "gloss": "размер"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "небо"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "спать"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "рукав"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "поскользнулся"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "скользит"
+  },
+  {
+   "lemma": "small",
+   "gloss": "маленький"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "запах; нюхать"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "храпеть"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "снег"
+  },
+  {
+   "lemma": "so",
+   "gloss": "поэтому; так"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "мягкий"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "смягчаться"
+  },
+  {
+   "lemma": "some",
+   "gloss": "немного; некоторые"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "кто-то"
+  },
+  {
+   "lemma": "something",
+   "gloss": "что-то"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "где-то"
+  },
+  {
+   "lemma": "son",
+   "gloss": "сын"
+  },
+  {
+   "lemma": "song",
+   "gloss": "песня"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "скоро"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "печаль"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "печально"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "звук"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "суп"
+  },
+  {
+   "lemma": "space",
+   "gloss": "пространство; космос"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "говорить"
+  },
+  {
+   "lemma": "special",
+   "gloss": "особенный"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "тратить; проводить"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "проливает"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "дух"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "распространять"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "весна; родник"
+  },
+  {
+   "lemma": "square",
+   "gloss": "площадь; квадрат"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "протиснуться; сжимать"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "лестница"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "прилавки"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "топнул"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "стоять"
+  },
+  {
+   "lemma": "star",
+   "gloss": "звезда"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "начинается"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "оставаться"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "красть"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "стебель"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "мачеха"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "сводная сестра"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "палка; прилипать"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "липкий"
+  },
+  {
+   "lemma": "still",
+   "gloss": "всё ещё; неподвижный"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "сшил"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "желудок; живот"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "камень"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "останавливаться"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "буря"
+  },
+  {
+   "lemma": "story",
+   "gloss": "история; рассказ"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "прямой; прямо"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "прядь"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "странный"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "незнакомец"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "ручей"
+  },
+  {
+   "lemma": "street",
+   "gloss": "улица"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "сила"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "вытянул; растянул"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "зажечь (спичку); ударить"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "споткнулся"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "глупый"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "добиться успеха"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "успешный"
+  },
+  {
+   "lemma": "such",
+   "gloss": "такой"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "вдруг"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "сахар"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "предложил"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "лето"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "солнечный свет"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "восход"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "закат"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "предполагаемый; должен был"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "удивление"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "окружённый"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "заподозрил"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "меч"
+  },
+  {
+   "lemma": "table",
+   "gloss": "стол"
+  },
+  {
+   "lemma": "take",
+   "gloss": "брать; уносить"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "разговаривал"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "говорящий; разговор"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "высокий"
+  },
+  {
+   "lemma": "task",
+   "gloss": "задача"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "чай"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "слеза; рвать"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "рассказывать; говорить"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "десять"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "ужасный"
+  },
+  {
+   "lemma": "than",
+   "gloss": "чем"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "благодарить"
+  },
+  {
+   "lemma": "that",
+   "gloss": "тот; это; что"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(определённый артикль)"
+  },
+  {
+   "lemma": "their",
+   "gloss": "их"
+  },
+  {
+   "lemma": "them",
+   "gloss": "их; им"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "они сами; себя"
+  },
+  {
+   "lemma": "then",
+   "gloss": "потом; тогда"
+  },
+  {
+   "lemma": "there",
+   "gloss": "там"
+  },
+  {
+   "lemma": "these",
+   "gloss": "эти"
+  },
+  {
+   "lemma": "they",
+   "gloss": "они"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "толстый; густой"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "вор"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "тонкий; худой"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "вещь"
+  },
+  {
+   "lemma": "think",
+   "gloss": "думать"
+  },
+  {
+   "lemma": "third",
+   "gloss": "третий"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "тринадцать"
+  },
+  {
+   "lemma": "this",
+   "gloss": "этот; это"
+  },
+  {
+   "lemma": "those",
+   "gloss": "те"
+  },
+  {
+   "lemma": "though",
+   "gloss": "хотя"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "подумал; мысль"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "тысяча"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "нить"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "пригрозил"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "угрожающий"
+  },
+  {
+   "lemma": "three",
+   "gloss": "три"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "горло"
+  },
+  {
+   "lemma": "through",
+   "gloss": "через"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "на протяжении"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "бросать"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(имя собственное) Дюймовочка"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "завязывать"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "завязал; связанный"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "крепко"
+  },
+  {
+   "lemma": "time",
+   "gloss": "время; раз"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "крошечный"
+  },
+  {
+   "lemma": "to",
+   "gloss": "к; чтобы"
+  },
+  {
+   "lemma": "today",
+   "gloss": "сегодня"
+  },
+  {
+   "lemma": "together",
+   "gloss": "вместе"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(имя собственное)"
+  },
+  {
+   "lemma": "too",
+   "gloss": "тоже; слишком"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "зуб"
+  },
+  {
+   "lemma": "top",
+   "gloss": "верх; вершина"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "связь (поддерживать)"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "к; в сторону"
+  },
+  {
+   "lemma": "town",
+   "gloss": "городок"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "игрушка"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "ремесло"
+  },
+  {
+   "lemma": "train",
+   "gloss": "поезд"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "путешествовать"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "путешествовал"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "сокровище"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "обошёлся"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "дерево"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "задрожал"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "беды"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "корыто"
+  },
+  {
+   "lemma": "true",
+   "gloss": "правдивый"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "ствол"
+  },
+  {
+   "lemma": "try",
+   "gloss": "пытаться"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "поворачиваться; очередь"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "двенадцать"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "двадцать"
+  },
+  {
+   "lemma": "two",
+   "gloss": "два"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "уродливый"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "неспособный"
+  },
+  {
+   "lemma": "under",
+   "gloss": "под"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "подземный"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "понимать"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "незаконченный"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "непригодный"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "развернул"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "несчастный"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "в отличие от"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "неосвещённый"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "развязывает"
+  },
+  {
+   "lemma": "until",
+   "gloss": "до тех пор, пока"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "необычный"
+  },
+  {
+   "lemma": "up",
+   "gloss": "вверх"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "расстроенный"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "верхний этаж"
+  },
+  {
+   "lemma": "us",
+   "gloss": "нас; нам"
+  },
+  {
+   "lemma": "use",
+   "gloss": "использовать"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "полезный"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "необъятный"
+  },
+  {
+   "lemma": "very",
+   "gloss": "очень"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "победы"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "яростно"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "навещать"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "посетители"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "ждал"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "ждущий"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "просыпаться"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "идти пешком"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "стена"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "бродил"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "бродящий"
+  },
+  {
+   "lemma": "want",
+   "gloss": "хотеть"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "шкаф"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "тёплый"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "предупредил"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "помыл"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "наручные часы; смотреть"
+  },
+  {
+   "lemma": "water",
+   "gloss": "вода"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "помахал"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "волны"
+  },
+  {
+   "lemma": "way",
+   "gloss": "путь; способ"
+  },
+  {
+   "lemma": "we",
+   "gloss": "мы"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "слабый"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "ослабил"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "богатый"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "носить (одежду)"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "свадьба"
+  },
+  {
+   "lemma": "week",
+   "gloss": "неделя"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "встретил"
+  },
+  {
+   "lemma": "west",
+   "gloss": "запад"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "мокрый"
+  },
+  {
+   "lemma": "what",
+   "gloss": "что"
+  },
+  {
+   "lemma": "when",
+   "gloss": "когда"
+  },
+  {
+   "lemma": "where",
+   "gloss": "где; куда"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "где бы ни"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "ли"
+  },
+  {
+   "lemma": "which",
+   "gloss": "какой; который"
+  },
+  {
+   "lemma": "while",
+   "gloss": "пока"
+  },
+  {
+   "lemma": "white",
+   "gloss": "белый"
+  },
+  {
+   "lemma": "who",
+   "gloss": "кто; который"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "кто бы ни"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "целый"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "чей; которого"
+  },
+  {
+   "lemma": "why",
+   "gloss": "почему"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "злой"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "жена"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "дикий"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "глушь"
+  },
+  {
+   "lemma": "will",
+   "gloss": "(будущее время); воля"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "охотно"
+  },
+  {
+   "lemma": "win",
+   "gloss": "выигрывать"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "подоконник"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "вино"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "крыло"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "мудрый"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "желать; желание"
+  },
+  {
+   "lemma": "with",
+   "gloss": "с"
+  },
+  {
+   "lemma": "without",
+   "gloss": "без"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "женщина"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "чудесный"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "дрова; древесина; лес"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "деревянный"
+  },
+  {
+   "lemma": "word",
+   "gloss": "слово"
+  },
+  {
+   "lemma": "work",
+   "gloss": "работать; работа"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "рабочие"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "мастерская"
+  },
+  {
+   "lemma": "world",
+   "gloss": "мир"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "обеспокоенный"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "достойный"
+  },
+  {
+   "lemma": "would",
+   "gloss": "(условное наклонение)"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "раны"
+  },
+  {
+   "lemma": "write",
+   "gloss": "писать"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "писатель"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "неправильный"
+  },
+  {
+   "lemma": "year",
+   "gloss": "год"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "ещё; однако"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(имя собственное) Йорк"
+  },
+  {
+   "lemma": "you",
+   "gloss": "ты; вы"
+  },
+  {
+   "lemma": "young",
+   "gloss": "молодой"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "юнец"
+  },
+  {
+   "lemma": "your",
+   "gloss": "твой; ваш"
+  }
+ ],
+ "forms": {
+  "am": "be",
+  "are": "be",
+  "ate": "eat",
+  "beaten": "beat",
+  "became": "become",
+  "been": "be",
+  "began": "begin",
+  "begun": "begin",
+  "being": "be",
+  "bent": "bend",
+  "best": "good",
+  "better": "good",
+  "bit": "bite",
+  "bitten": "bite",
+  "blew": "blow",
+  "blown": "blow",
+  "bought": "buy",
+  "broke": "break",
+  "broken": "break",
+  "brought": "bring",
+  "built": "build",
+  "came": "come",
+  "caught": "catch",
+  "children": "child",
+  "chose": "choose",
+  "chosen": "choose",
+  "crept": "creep",
+  "did": "do",
+  "does": "do",
+  "doing": "do",
+  "done": "do",
+  "drank": "drink",
+  "drawn": "draw",
+  "drew": "draw",
+  "driven": "drive",
+  "drove": "drive",
+  "drunk": "drink",
+  "dug": "dig",
+  "eaten": "eat",
+  "fallen": "fall",
+  "farther": "far",
+  "farthest": "far",
+  "fed": "feed",
+  "feet": "foot",
+  "fell": "fall",
+  "felt": "feel",
+  "flew": "fly",
+  "flown": "fly",
+  "forgot": "forget",
+  "forgotten": "forget",
+  "fought": "fight",
+  "found": "find",
+  "froze": "freeze",
+  "frozen": "freeze",
+  "gave": "give",
+  "geese": "goose",
+  "given": "give",
+  "goes": "go",
+  "gone": "go",
+  "got": "get",
+  "gotten": "get",
+  "grew": "grow",
+  "grown": "grow",
+  "had": "have",
+  "halves": "half",
+  "has": "have",
+  "having": "have",
+  "heard": "hear",
+  "held": "hold",
+  "hid": "hide",
+  "hidden": "hide",
+  "hung": "hang",
+  "is": "be",
+  "kept": "keep",
+  "knew": "know",
+  "knives": "knife",
+  "known": "know",
+  "least": "little",
+  "leaves": "leaf",
+  "led": "lead",
+  "lent": "lend",
+  "less": "little",
+  "lit": "light",
+  "loaves": "loaf",
+  "lost": "lose",
+  "made": "make",
+  "meant": "mean",
+  "men": "man",
+  "met": "meet",
+  "mice": "mouse",
+  "paid": "pay",
+  "people": "person",
+  "ran": "run",
+  "ridden": "ride",
+  "rode": "ride",
+  "said": "say",
+  "sang": "sing",
+  "sank": "sink",
+  "sat": "sit",
+  "saw": "see",
+  "seen": "see",
+  "sent": "send",
+  "shaken": "shake",
+  "shelves": "shelf",
+  "shone": "shine",
+  "shook": "shake",
+  "shot": "shoot",
+  "slept": "sleep",
+  "sold": "sell",
+  "sought": "seek",
+  "spent": "spend",
+  "spoke": "speak",
+  "spoken": "speak",
+  "spun": "spin",
+  "stole": "steal",
+  "stolen": "steal",
+  "stood": "stand",
+  "struck": "strike",
+  "stuck": "stick",
+  "sung": "sing",
+  "sunk": "sink",
+  "swam": "swim",
+  "swept": "sweep",
+  "swum": "swim",
+  "swung": "swing",
+  "taken": "take",
+  "taught": "teach",
+  "teeth": "tooth",
+  "thieves": "thief",
+  "thought": "think",
+  "threw": "throw",
+  "thrown": "throw",
+  "told": "tell",
+  "took": "take",
+  "tore": "tear",
+  "torn": "tear",
+  "understood": "understand",
+  "was": "be",
+  "went": "go",
+  "wept": "weep",
+  "were": "be",
+  "wives": "wife",
+  "woke": "wake",
+  "woken": "wake",
+  "wolves": "wolf",
+  "women": "woman",
+  "won": "win",
+  "wore": "wear",
+  "worn": "wear",
+  "worse": "bad",
+  "worst": "bad",
+  "written": "write",
+  "wrote": "write"
+ }
+}
