@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">English Tales</string>
+    <string name="app_name" translatable="false">İngilizce Hikâyeler: Yurken</string>
     <string name="hesabin">Hesabın</string>
     <string name="ogrenmeye_kendi_hesabinla_devam_et">Öğrenmeye kendi hesabınla devam et</string>
     <string name="hesap_acik">Hesap açık</string>
@@ -60,7 +60,7 @@
     <string name="n_nhesabin_sunucudaki_ogrenme_gecmisin">%1$s\n\nHesabın, sunucudaki öğrenme geçmişin ve bu cihazdaki hesap kayıtların silinir. Gönderilmeyi bekleyen hesap kayıtları da silinir. Bu işlem geri alınamaz. Misafir kayıtların ayrı kalır. Silmeden önce yeniden giriş yapman istenebilir.</string>
     <string name="hesabimi_kalici_olarak_sil">Hesabımı kalıcı olarak sil</string>
     <string name="kitabinin_kapagi">%1$s kitabının kapağı</string>
-    <string name="english_tales" translatable="false">ENGLISH TALES</string>
+    <string name="english_tales" translatable="false">YURKEN STORIES</string>
     <string name="ingilizce_seviyen">İngilizce seviyen</string>
     <string name="sectigin_seviye_hikaye_onerileri_buna">Seçtiğin seviye %1$s. Hikâye önerileri buna göre hazırlanır. Seviyeni Profilim → Ayarlar ekranından değiştirebilirsin.</string>
     <string name="calisma_serin">Çalışma serin</string>
@@ -202,7 +202,7 @@
     <string name="kelime_hata">%1$s kelime · %2$s hata</string>
     <string name="kelimeleri_eslestirin">Kelimeleri eşleştirin</string>
     <string name="hi" translatable="false">Hi! 👋</string>
-    <string name="merhaba_ben_senin_okuma_arkadasinim">Merhaba! Ben senin okuma arkadaşınım. English Tales\'e hoş geldin.</string>
+    <string name="merhaba_ben_senin_okuma_arkadasinim">Merhaba! Ben senin okuma arkadaşınım. Yurken Stories\'e hoş geldin.</string>
     <string name="okuma_rehberi">Okuma rehberi</string>
     <string name="birlikte_hikayeler_okuyup_yeni_kelimeler">Birlikte hikâyeler okuyup yeni kelimeler öğreneceğiz. Başlayalım mı?</string>
     <string name="baslayalim">Başlayalım</string>

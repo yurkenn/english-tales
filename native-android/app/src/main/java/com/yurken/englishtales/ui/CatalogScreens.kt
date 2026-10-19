@@ -265,7 +265,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
                             },if(favorite) TaleWarm else TaleBlue)
                         }
                         ReferenceIconButton("share",stringResource(R.string.hikayeyi_paylas),onClick={
-                            val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nEnglish Tales\n${StoryLinks.url(story.id)}") }
+                            val intent=android.content.Intent(android.content.Intent.ACTION_SEND).apply { type="text/plain"; putExtra(android.content.Intent.EXTRA_TEXT,"${story.title} — ${story.description}\nYurken Stories\n${StoryLinks.url(story.id)}") }
                             SafeIntents.startFirst(context,android.content.Intent.createChooser(intent,context.getString(R.string.hikayeyi_paylas)))
                         })
                     }

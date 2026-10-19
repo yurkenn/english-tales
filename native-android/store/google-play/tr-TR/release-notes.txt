@@ -1,5 +1,4 @@
-• A1, A2 ve B1 seviyelerinde 50 hikâye.
-• Yenilenen uygulama ikonu ve kitap arkadaşımız.
-• Daha akıcı native Android deneyimi.
-• Türkçe çeviri, kelime çalışmaları ve çevrimdışı okuma.
-• Okuma görünümü ve günlük öğrenme akışında iyileştirmeler.
+• English Tales artık Yurken Stories.
+• İlk açılışta uygulama dilini seç.
+• 11 destek dilinde çevirilerle İngilizce hikâyeler oku.
+• Kelime tekrarı ve öğrenme ilerlemesi eşitlemesi iyileştirildi.

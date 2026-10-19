@@ -66,11 +66,11 @@ android {
         else "com.yurken.englishtales.TalesTestRunner"
         minSdk = 24
         targetSdk = 36
-        // Play Console: production 46, internal preview 47 verified on 2026-10-14.
+        // Play Console checked 2026-10-19: production 48, internal 49.
         // Recheck before upload if another release is produced in parallel.
         // The release workflow passes -PreleaseVersionCode/-PreleaseVersionName.
-        versionCode = providers.gradleProperty("releaseVersionCode").orNull?.toInt() ?: 48
-        versionName = providers.gradleProperty("releaseVersionName").orNull ?: "2.0.0"
+        versionCode = providers.gradleProperty("releaseVersionCode").orNull?.toInt() ?: 50
+        versionName = providers.gradleProperty("releaseVersionName").orNull ?: "2.2.0"
         buildConfigField("String", "SUPABASE_URL", "\"${contentSetting("SUPABASE_URL")}\"")
         buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${contentSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")
