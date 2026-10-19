@@ -208,7 +208,8 @@ class LearningViewModel(application: Application,private val auth: AccountServic
             if(started) scheduleSync() else {
                 syncTimer?.cancel();syncTimer=null
                 // An unreadable outbox is handed over too: a spare worker run costs less than a lost write.
-                if(cloudSync!=null && mutableAccount.value.userId!=null && runCatching {cloudSync.status(store).let {it.pending>0 || it.preferencesPending}}.getOrDefault(true)) scheduleSync()
+                val sync=cloudSync
+                if(sync!=null && mutableAccount.value.userId!=null && runCatching {sync.status(store).let {it.pending>0 || it.preferencesPending}}.getOrDefault(true)) scheduleSync()
             }
         }
     }
