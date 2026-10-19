@@ -8,7 +8,8 @@
   "editorialNotes": [
     "Adds spatial clarity and the hare’s mistaken reasoning.",
     "Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied.",
-    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged."
+    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
+    "AI editorial pass: simplifies an inference distractor for supported A1 reading; local grammatical gender in translations is not forced to match English pronouns."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -557,7 +558,7 @@
           "He thinks the tortoise cannot catch him.",
           "He cannot find the tree at the finish.",
           "He wants to wait for the fox to start.",
-          "He has already finished the whole race."
+          "He is already at the finish."
         ],
         "answer": 0
       }
@@ -812,8 +813,24 @@
     }
   ],
   "publicationBlockers": [
-    "Human editorial and level review pending.",
-    "New revision, study-word integration and publisher validation required.",
+    "Human editorial and level review pending after AI-assisted corrections.",
+    "Fresh live source snapshot and publisher validation required; local reader/save/review contract verified.",
     "Human language review across all eleven support languages remains pending."
-  ]
+  ],
+  "editorialReview": {
+    "type": "ai-assisted",
+    "reviewer": "Codex",
+    "reviewedOn": "2026-10-19",
+    "status": "completed-with-corrections",
+    "scope": [
+      "English narrative continuity",
+      "English/Turkish alignment",
+      "eleven-language text and glossary consistency",
+      "all comprehension answer keys and source evidence",
+      "target-level risks"
+    ],
+    "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
+    "humanApproval": false,
+    "nativeSpeakerApproval": false
+  }
 }

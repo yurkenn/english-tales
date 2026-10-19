@@ -2,7 +2,7 @@
 
 **İnceleme taslaklarıdır; uygulamaya veya canlı kataloğa yayımlanmadı.** İngilizce ve Türkçe metinler birlikte okunabilir. Seviye etiketleri hedef seviyedir; bağımsız CEFR onayı anlamına gelmez.
 
-**Güncel odak: yalnız mevcut beş hikâye.** Beş revizyonun da 11 destek dilindeki metin alanları dolu; insan editör ve dil incelemesi açık. Önceki iki yeni klasik taslağı beklemede korunur.
+**Güncel odak: yalnız mevcut beş hikâye.** Beş revizyonun da 11 destek dilindeki metin alanları dolu. AI destekli editoryal/dil tutarlılığı incelemesi ve düzeltmeleri tamamlandı; insan ve ana dil konuşuru onayı verilmedi. Önceki iki yeni klasik taslağı beklemede korunur. [İnceleme raporu](STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md).
 
 ## A Quiet Morning · A1
 
@@ -34,7 +34,7 @@
 | Mia waved and walked to school. | Mia el salladı ve okula yürüdü. |
 | A small act of kindness made the morning special. | Küçük bir iyilik sabahı özel kıldı. |
 
-**Çalışma kelimeleri:** **quiet**: sessiz · **morning**: sabah · **bakery**: fırın · **smile**: gülümsemek · **birthday**: doğum günü · **warm**: ılık, sıcak · **bread**: ekmek · **daughter**: kız evlat · **breakfast**: kahvaltı · **waiting**: bekliyor
+**Çalışma kelimeleri:** **quiet**: sessiz · **morning**: sabah · **bakery**: fırın · **smile**: gülümseme · **birthday**: doğum günü · **warm**: ılık, sıcak · **bread**: ekmek · **daughter**: kız evlat · **breakfast**: kahvaltı · **waiting**: bekliyor
 
 **Anlama soruları**
 
@@ -48,19 +48,19 @@
    - B. Milk and eggs
    - C. Two warm rolls
    - D. Some apples
-3. Why does Mia buy a second roll?
-   - A. She needs to carry bread to her classroom.
-   - B. She wants to give the man a birthday breakfast.
-   - C. She wants to feed an animal in the street.
-   - D. She plans to keep both rolls for tomorrow.
+3. Why did Mia buy a second roll?
+   - A. She needed bread for her classroom.
+   - B. She wanted to give the man a birthday breakfast.
+   - C. She wanted to feed an animal in the street.
+   - D. She wanted to keep both rolls for tomorrow.
 
 **Yanıt anahtarı:** 1: A, 2: C, 3: B
 
-Editör notları: Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone. Keeps all legacy sentence IDs and wording; adds short A1-target turns. A1 is a target for editorial review, not formal CEFR certification. Added fourteen sentences and six new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. Correct answers are distributed across positions A, C and B in the three comprehension questions.
+Editör notları: Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone. Keeps all legacy sentence IDs and wording; adds short A1-target turns. A1 is a target for editorial review, not formal CEFR certification. Added fourteen sentences and seven new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. Correct answers are distributed across positions A, C and B in the three comprehension questions. AI editorial pass: the noun in gave him a smile has its own pilot identity and noun glosses in all eleven languages. The existing global smile record is unchanged. The added inference question uses the past tense consistently.
 
 ## The Paper Boat · A2
 
-218 İngilizce sözcük · 25 cümle · 10 çalışma kelimesi · 4 soru
+229 İngilizce sözcük · 26 cümle · 10 çalışma kelimesi · 4 soru
 
 | English | Türkçe |
 |---|---|
@@ -69,6 +69,7 @@ Editör notları: Adds a concrete conversation and a completed encounter instead
 | The boat was small enough to fit in his hand. | Tekne eline sığacak kadar küçüktü. |
 | He carried it to the river near the old bridge. | Onu eski köprünün yakınındaki nehre götürdü. |
 | His younger sister walked beside him on the dry path. | Küçük kız kardeşi kuru patikada yanında yürüdü. |
+| Leo put the boat in the water from a low step. | Leo alçak bir basamaktan tekneyi suya bıraktı. |
 | They stayed away from the edge of the water. | Suyun kenarından uzak durdular. |
 | A gentle wind pushed the boat across the water. | Hafif bir rüzgâr tekneyi suyun üzerinde itti. |
 | Leo ran along the path to follow it. | Leo onu takip etmek için patika boyunca koştu. |
@@ -117,11 +118,11 @@ Editör notları: Adds a concrete conversation and a completed encounter instead
 
 **Yanıt anahtarı:** 1: D, 2: A, 3: D, 4: C
 
-Editör notları: Clarifies the boat’s position at a low bank and introduces the girl once, at her first action. Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation.
+Editör notları: Clarifies the boat’s position at a low bank and introduces the girl once, at her first action. Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation. AI editorial pass: explicitly launches the boat before the wind moves it; the children then stay back from the edge. Added launch sentence has draft translations in all support languages.
 
 ## The Last Train · A2
 
-253 İngilizce sözcük · 27 cümle · 10 çalışma kelimesi · 4 soru
+263 İngilizce sözcük · 28 cümle · 10 çalışma kelimesi · 4 soru
 
 | English | Türkçe |
 |---|---|
@@ -129,6 +130,7 @@ Editör notları: Clarifies the boat’s position at a low bank and introduces t
 | They visited a market and took photos of the old houses. | Bir pazarı gezdiler ve eski evlerin fotoğraflarını çektiler. |
 | At one stall, Sam stopped to photograph a row of flowers. | Sam bir tezgahta bir sıra çiçeğin fotoğrafını çekmek için durdu. |
 | He put his camera and ticket on a bench. | Fotoğraf makinesini ve biletini bir bankın üstüne koydu. |
+| He picked up his camera but left the ticket behind. | Fotoğraf makinesini aldı ama bileti orada unuttu. |
 | When the sky grew dark, Lily checked her watch. | Hava karardığında Lily saatine baktı. |
 | The last train was due in twenty minutes. | Son trenin gelmesine yirmi dakika vardı. |
 | The next train would not leave until the following morning. | Bir sonraki tren ertesi sabaha kadar kalkmayacaktı. |
@@ -180,7 +182,7 @@ Editör notları: Clarifies the boat’s position at a low bank and introduces t
 
 **Yanıt anahtarı:** 1: D, 2: B, 3: A, 4: B
 
-Editör notları: Makes the camera/ticket location explicit before the ticket goes missing. Explains the stone and the cost of missing the train; preserves the original ending. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.
+Editör notları: Makes the camera/ticket location explicit before the ticket goes missing. Explains the stone and the cost of missing the train; preserves the original ending. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. AI editorial pass: Sam takes his camera but leaves his ticket on the bench, resolving the camera continuity gap without changing legacy sentences. New Urdu sentences use the legacy name spelling سام consistently.
 
 ## The Tortoise and the Hare · A1
 
@@ -234,11 +236,11 @@ Editör notları: Makes the camera/ticket location explicit before the ticket go
    - A. He thinks the tortoise cannot catch him.
    - B. He cannot find the tree at the finish.
    - C. He wants to wait for the fox to start.
-   - D. He has already finished the whole race.
+   - D. He is already at the finish.
 
 **Yanıt anahtarı:** 1: B, 2: B, 3: A
 
-Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.
+Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses the existing Aesop adaptation source record; no modern retelling or illustration is copied. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. AI editorial pass: simplifies an inference distractor for supported A1 reading; local grammatical gender in translations is not forced to match English pronouns.
 
 ## The Lion and the Mouse · A1
 
@@ -289,13 +291,13 @@ Editör notları: Adds spatial clarity and the hare’s mistaken reasoning. Uses
    - D. She brings him food
 3. What does the lion learn about the mouse?
    - A. She needs a bigger friend to break the ropes.
-   - B. She can help him even though she is small.
+   - B. She is small, but she can help him.
    - C. She wants to catch him for the hunters.
    - D. She can carry him away from the tree.
 
 **Yanıt anahtarı:** 1: D, 2: B, 3: B
 
-Editör notları: Adds the mouse’s fear, recognition of the call and return of kindness. Keeps the original lesson without turning the inference question into a direct quotation. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.
+Editör notları: Adds the mouse’s fear, recognition of the call and return of kindness. Keeps the original lesson without turning the inference question into a direct quotation. Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged. AI editorial pass: seven added Urdu sentences retain the female mouse established in the legacy Urdu text; simplifies the added inference answer for supported A1 reading.
 
 # Beklemede — yeni hikâyeler
 

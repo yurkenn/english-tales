@@ -9,8 +9,9 @@
     "Adds a concrete conversation and a completed encounter instead of an abstract kindness summary alone.",
     "Keeps all legacy sentence IDs and wording; adds short A1-target turns.",
     "A1 is a target for editorial review, not formal CEFR certification.",
-    "Added fourteen sentences and six new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
-    "Correct answers are distributed across positions A, C and B in the three comprehension questions."
+    "Added fourteen sentences and seven new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
+    "Correct answers are distributed across positions A, C and B in the three comprehension questions.",
+    "AI editorial pass: the noun in gave him a smile has its own pilot identity and noun glosses in all eleven languages. The existing global smile record is unchanged. The added inference question uses the past tense consistently."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -489,12 +490,12 @@
       {
         "id": "quiet-morning-q3",
         "kind": "inference",
-        "prompt": "Why does Mia buy a second roll?",
+        "prompt": "Why did Mia buy a second roll?",
         "options": [
-          "She needs to carry bread to her classroom.",
-          "She wants to give the man a birthday breakfast.",
-          "She wants to feed an animal in the street.",
-          "She plans to keep both rolls for tomorrow."
+          "She needed bread for her classroom.",
+          "She wanted to give the man a birthday breakfast.",
+          "She wanted to feed an animal in the street.",
+          "She wanted to keep both rolls for tomorrow."
         ],
         "answer": 1
       }
@@ -574,22 +575,22 @@
       }
     },
     {
-      "id": "smile",
+      "id": "pilot-quiet-morning-smile-noun",
       "word": "smile",
-      "translation": "gülümsemek",
+      "translation": "gülümseme",
       "pronunciation": "/smaɪl/",
       "example": "She gave him a warm smile.",
       "translations": {
         "es-419": "sonrisa",
         "pt-BR": "sorriso",
         "id": "senyum",
-        "ar": "ابتسامة؛ يبتسم",
-        "vi": "nụ cười; mỉm cười",
-        "hi": "मुस्कान; मुस्कुराना",
-        "ru": "улыбка; улыбаться",
-        "bn": "হাসি; হাসা",
-        "ur": "مسکراہٹ؛ مسکرانا",
-        "th": "รอยยิ้ม; ยิ้ม"
+        "ar": "ابتسامة",
+        "vi": "nụ cười",
+        "hi": "मुस्कान",
+        "ru": "улыбка",
+        "bn": "হাসি",
+        "ur": "مسکراہٹ",
+        "th": "รอยยิ้ม"
       }
     },
     {
@@ -711,7 +712,7 @@
     "quiet",
     "morning",
     "bakery",
-    "smile",
+    "pilot-quiet-morning-smile-noun",
     "pilot-quiet-morning-birthday",
     "pilot-quiet-morning-warm",
     "pilot-quiet-morning-bread",
@@ -747,8 +748,24 @@
     }
   ],
   "publicationBlockers": [
-    "Human editorial and level review pending.",
-    "New revision, study-word integration and publisher validation required.",
+    "Human editorial and level review pending after AI-assisted corrections.",
+    "Fresh live source snapshot and publisher validation required; local reader/save/review contract verified.",
     "Human language review across all eleven support languages remains pending."
-  ]
+  ],
+  "editorialReview": {
+    "type": "ai-assisted",
+    "reviewer": "Codex",
+    "reviewedOn": "2026-10-19",
+    "status": "completed-with-corrections",
+    "scope": [
+      "English narrative continuity",
+      "English/Turkish alignment",
+      "eleven-language text and glossary consistency",
+      "all comprehension answer keys and source evidence",
+      "target-level risks"
+    ],
+    "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
+    "humanApproval": false,
+    "nativeSpeakerApproval": false
+  }
 }

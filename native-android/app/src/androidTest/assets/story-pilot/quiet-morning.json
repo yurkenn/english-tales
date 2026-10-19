@@ -1,5 +1,5 @@
 {
-  "id": "000da836-2b6e-5f18-a007-4769d75db1ab",
+  "id": "cd008bb9-effd-5cdd-a8d7-a0adef82fdfd",
   "story_id": "quiet-morning",
   "title": "A Quiet Morning",
   "author": "English Tales",
@@ -36,12 +36,12 @@
     {
       "id": "quiet-morning-q3",
       "kind": "inference",
-      "prompt": "Why does Mia buy a second roll?",
+      "prompt": "Why did Mia buy a second roll?",
       "options": [
-        "She needs to carry bread to her classroom.",
-        "She wants to give the man a birthday breakfast.",
-        "She wants to feed an animal in the street.",
-        "She plans to keep both rolls for tomorrow."
+        "She needed bread for her classroom.",
+        "She wanted to give the man a birthday breakfast.",
+        "She wanted to feed an animal in the street.",
+        "She wanted to keep both rolls for tomorrow."
       ],
       "answer": 1
     }
@@ -600,6 +600,26 @@
       }
     },
     {
+      "id": "pilot-quiet-morning-smile-noun",
+      "word": "smile",
+      "translation": "gülümseme",
+      "pronunciation": "/smaɪl/",
+      "example": "She gave him a warm smile.",
+      "translations": {
+        "es-419": "sonrisa",
+        "pt-BR": "sorriso",
+        "id": "senyum",
+        "ar": "ابتسامة",
+        "vi": "nụ cười",
+        "hi": "मुस्कान",
+        "ru": "улыбка",
+        "bn": "হাসি",
+        "ur": "مسکراہٹ",
+        "th": "รอยยิ้ม",
+        "tr": "gülümseme"
+      }
+    },
+    {
       "id": "pilot-quiet-morning-waiting",
       "word": "waiting",
       "translation": "bekliyor",
@@ -658,26 +678,6 @@
         "th": "เงียบ, สงบ",
         "tr": "sessiz"
       }
-    },
-    {
-      "id": "smile",
-      "word": "smile",
-      "translation": "gülümsemek",
-      "pronunciation": "/smaɪl/",
-      "example": "She gave him a warm smile.",
-      "translations": {
-        "es-419": "sonrisa",
-        "pt-BR": "sorriso",
-        "id": "senyum",
-        "ar": "ابتسامة؛ يبتسم",
-        "vi": "nụ cười; mỉm cười",
-        "hi": "मुस्कान; मुस्कुराना",
-        "ru": "улыбка; улыбаться",
-        "bn": "হাসি; হাসা",
-        "ur": "مسکراہٹ؛ مسکرانا",
-        "th": "รอยยิ้ม; ยิ้ม",
-        "tr": "gülümsemek"
-      }
     }
   ],
   "links": [
@@ -699,7 +699,7 @@
     },
     {
       "sentence_id": "qm-5",
-      "word_id": "smile"
+      "word_id": "pilot-quiet-morning-smile-noun"
     },
     {
       "sentence_id": "qm-6",

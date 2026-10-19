@@ -8,7 +8,8 @@
   "editorialNotes": [
     "Adds the mouse’s fear, recognition of the call and return of kindness.",
     "Keeps the original lesson without turning the inference question into a direct quotation.",
-    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged."
+    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
+    "AI editorial pass: seven added Urdu sentences retain the female mouse established in the legacy Urdu text; simplifies the added inference answer for supported A1 reading."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -127,7 +128,7 @@
           "hi": "चूहा शेर के बड़े दाँतों से डरता है।",
           "ru": "Мышка боится его больших зубов.",
           "bn": "ইঁদুর সিংহের বড় দাঁতগুলোকে ভয় পায়।",
-          "ur": "چوہا شیر کے بڑے دانتوں سے ڈرتا ہے۔",
+          "ur": "چوہیا شیر کے بڑے دانتوں سے ڈرتی ہے۔",
           "th": "หนูกลัวฟันซี่ใหญ่ของสิงโต"
         }
       },
@@ -195,7 +196,7 @@
           "hi": "“तुम बहुत छोटे हो,” शेर कहता है।",
           "ru": "«Ты такая маленькая», — говорит лев.",
           "bn": "“তুমি এত ছোট,” সিংহ বলে।",
-          "ur": "“تم بہت چھوٹے ہو،” شیر کہتا ہے۔",
+          "ur": "“تم بہت چھوٹی ہو،” شیر کہتا ہے۔",
           "th": "“เธอตัวเล็กมาก” สิงโตพูด"
         }
       },
@@ -212,7 +213,7 @@
           "hi": "“तुम एक शेर की मदद कैसे कर सकते हो?”",
           "ru": "«Как ты можешь помочь льву?»",
           "bn": "“তুমি একটা সিংহকে কীভাবে সাহায্য করবে?”",
-          "ur": "“تم ایک شیر کی مدد کیسے کر سکتے ہو؟”",
+          "ur": "“تم ایک شیر کی مدد کیسے کر سکتی ہو؟”",
           "th": "“เธอจะช่วยสิงโตได้อย่างไร”"
         }
       },
@@ -331,7 +332,7 @@
           "hi": "“मैं इस आवाज़ को पहचानता हूँ,” चूहा सोचता है।",
           "ru": "«Я знаю этот голос», — думает мышка.",
           "bn": "“আমি এই গলাটা চিনি,” ইঁদুর ভাবে।",
-          "ur": "“میں اس آواز کو پہچانتا ہوں،” چوہا سوچتا ہے۔",
+          "ur": "“میں اس آواز کو پہچانتی ہوں،” چوہیا سوچتی ہے۔",
           "th": "“ฉันจำเสียงนี้ได้” หนูคิด"
         }
       },
@@ -399,7 +400,7 @@
           "hi": "वह आखिरी रस्सी टूटने तक काम करता रहता है।",
           "ru": "Она работает, пока не лопается последняя верёвка.",
           "bn": "শেষ দড়িটা ছেঁড়া পর্যন্ত সে কাজ করে যায়।",
-          "ur": "وہ آخری رسی ٹوٹنے تک کام کرتا رہتا ہے۔",
+          "ur": "وہ آخری رسی ٹوٹنے تک کام کرتی رہتی ہے۔",
           "th": "หนูทำงานต่อไปจนเชือกเส้นสุดท้ายขาด"
         }
       },
@@ -467,7 +468,7 @@
           "hi": "“पहले तुमने मेरी मदद की थी,” चूहा कहता है।",
           "ru": "«Раньше ты помог мне», — говорит мышка.",
           "bn": "“আগে তুমি আমাকে সাহায্য করেছিলে,” ইঁদুর বলে।",
-          "ur": "“پہلے تم نے میری مدد کی تھی،” چوہا کہتا ہے۔",
+          "ur": "“پہلے تم نے میری مدد کی تھی،” چوہیا کہتی ہے۔",
           "th": "“เมื่อก่อนเธอช่วยฉันไว้” หนูพูด"
         }
       },
@@ -484,7 +485,7 @@
           "hi": "“अब मैं तुम्हारी मदद कर सकता हूँ।”",
           "ru": "«Теперь я могу помочь тебе».",
           "bn": "“এখন আমি তোমাকে সাহায্য করতে পারি।”",
-          "ur": "“اب میں تمہاری مدد کر سکتا ہوں۔”",
+          "ur": "“اب میں تمہاری مدد کر سکتی ہوں۔”",
           "th": "“ตอนนี้ฉันช่วยเธอได้แล้ว”"
         }
       },
@@ -537,7 +538,7 @@
         "prompt": "What does the lion learn about the mouse?",
         "options": [
           "She needs a bigger friend to break the ropes.",
-          "She can help him even though she is small.",
+          "She is small, but she can help him.",
           "She wants to catch him for the hunters.",
           "She can carry him away from the tree."
         ],
@@ -793,8 +794,24 @@
     }
   ],
   "publicationBlockers": [
-    "Human editorial and level review pending.",
-    "New revision, study-word integration and publisher validation required.",
+    "Human editorial and level review pending after AI-assisted corrections.",
+    "Fresh live source snapshot and publisher validation required; local reader/save/review contract verified.",
     "Human language review across all eleven support languages remains pending."
-  ]
+  ],
+  "editorialReview": {
+    "type": "ai-assisted",
+    "reviewer": "Codex",
+    "reviewedOn": "2026-10-19",
+    "status": "completed-with-corrections",
+    "scope": [
+      "English narrative continuity",
+      "English/Turkish alignment",
+      "eleven-language text and glossary consistency",
+      "all comprehension answer keys and source evidence",
+      "target-level risks"
+    ],
+    "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
+    "humanApproval": false,
+    "nativeSpeakerApproval": false
+  }
 }

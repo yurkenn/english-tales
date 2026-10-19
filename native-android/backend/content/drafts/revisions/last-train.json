@@ -8,7 +8,8 @@
   "editorialNotes": [
     "Makes the camera/ticket location explicit before the ticket goes missing.",
     "Explains the stone and the cost of missing the train; preserves the original ending.",
-    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged."
+    "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
+    "AI editorial pass: Sam takes his camera but leaves his ticket on the bench, resolving the camera continuity gap without changing legacy sentences. New Urdu sentences use the legacy name spelling سام consistently."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -41,6 +42,7 @@
     "newSentenceIds": [
       "last-train-pilot-02-01",
       "last-train-pilot-02-02",
+      "last-train-pilot-02-03",
       "last-train-pilot-04-01",
       "last-train-pilot-08-01",
       "last-train-pilot-08-02",
@@ -109,7 +111,7 @@
           "hi": "एक दुकान पर सैम फूलों की एक कतार की तस्वीर लेने के लिए रुका।",
           "ru": "У одного прилавка Сэм остановился, чтобы сфотографировать ряд цветов.",
           "bn": "একটি দোকানে স্যাম এক সারি ফুলের ছবি তুলতে থামল।",
-          "ur": "ایک دکان پر سیم پھولوں کی ایک قطار کی تصویر لینے کے لیے رکا۔",
+          "ur": "ایک دکان پر سام پھولوں کی ایک قطار کی تصویر لینے کے لیے رکا۔",
           "th": "ที่แผงขายของแห่งหนึ่ง แซมหยุดถ่ายรูปดอกไม้ที่เรียงเป็นแถว"
         }
       },
@@ -128,6 +130,23 @@
           "bn": "সে তার ক্যামেরা আর টিকিট একটা বেঞ্চে রাখল।",
           "ur": "اس نے اپنا کیمرا اور ٹکٹ ایک بینچ پر رکھا۔",
           "th": "เขาวางกล้องกับตั๋วไว้บนม้านั่ง"
+        }
+      },
+      {
+        "id": "last-train-pilot-02-03",
+        "english": "He picked up his camera but left the ticket behind.",
+        "turkish": "Fotoğraf makinesini aldı ama bileti orada unuttu.",
+        "translations": {
+          "es-419": "Recogió su cámara, pero dejó el boleto olvidado.",
+          "pt-BR": "Ele pegou a câmera, mas esqueceu a passagem ali.",
+          "id": "Ia mengambil kameranya, tetapi meninggalkan tiketnya di sana.",
+          "ar": "أخذ كاميرته، لكنه ترك التذكرة وراءه.",
+          "vi": "Cậu cầm máy ảnh lên nhưng bỏ quên tấm vé ở đó.",
+          "hi": "उसने अपना कैमरा उठा लिया, लेकिन टिकट वहीं भूल गया।",
+          "ru": "Он забрал фотоаппарат, но оставил билет на скамейке.",
+          "bn": "সে ক্যামেরাটা তুলে নিল, কিন্তু টিকিটটা সেখানেই ফেলে গেল।",
+          "ur": "اس نے اپنا کیمرا اٹھا لیا، لیکن ٹکٹ وہیں بھول گیا۔",
+          "th": "เขาหยิบกล้องขึ้นมา แต่ลืมตั๋วไว้ที่นั่น"
         }
       },
       {
@@ -279,7 +298,7 @@
           "hi": "सैम को ठीक-ठीक पता था कि वह उसे कहाँ मिलेगी।",
           "ru": "Сэм точно знал, где её найти.",
           "bn": "স্যাম ঠিক জানত কোথায় তাকে খুঁজে পাবে।",
-          "ur": "سیم کو بالکل معلوم تھا کہ وہ اسے کہاں ملے گی۔",
+          "ur": "سام کو بالکل معلوم تھا کہ وہ اسے کہاں ملے گی۔",
           "th": "แซมรู้แน่ชัดว่าจะไปหาเธอได้ที่ไหน"
         }
       },
@@ -466,7 +485,7 @@
           "hi": "सैम ने टिकट ऊपर उठाया ताकि वह उसे देख सके।",
           "ru": "Сэм поднял билет, чтобы она могла его увидеть.",
           "bn": "স্যাম টিকিটটা উঁচু করে ধরল, যাতে সে দেখতে পায়।",
-          "ur": "سیم نے ٹکٹ اوپر اٹھایا تاکہ وہ اسے دیکھ سکے۔",
+          "ur": "سام نے ٹکٹ اوپر اٹھایا تاکہ وہ اسے دیکھ سکے۔",
           "th": "แซมชูตั๋วขึ้นให้เธอมองเห็น"
         }
       },
@@ -829,8 +848,24 @@
     }
   ],
   "publicationBlockers": [
-    "Human editorial and level review pending.",
-    "New revision, study-word integration and publisher validation required.",
+    "Human editorial and level review pending after AI-assisted corrections.",
+    "Fresh live source snapshot and publisher validation required; local reader/save/review contract verified.",
     "Human language review across all eleven support languages remains pending."
-  ]
+  ],
+  "editorialReview": {
+    "type": "ai-assisted",
+    "reviewer": "Codex",
+    "reviewedOn": "2026-10-19",
+    "status": "completed-with-corrections",
+    "scope": [
+      "English narrative continuity",
+      "English/Turkish alignment",
+      "eleven-language text and glossary consistency",
+      "all comprehension answer keys and source evidence",
+      "target-level risks"
+    ],
+    "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
+    "humanApproval": false,
+    "nativeSpeakerApproval": false
+  }
 }

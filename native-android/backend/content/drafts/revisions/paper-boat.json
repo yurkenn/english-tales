@@ -9,7 +9,8 @@
     "Clarifies the boat’s position at a low bank and introduces the girl once, at her first action.",
     "Adds a friendship payoff and retrieval of the paper; keeps the river scene and all original sentence IDs.",
     "Added sentences and new study words have draft translations in all ten additional support languages; original multilingual sentence and word records remain unchanged.",
-    "The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation."
+    "The newly introduced sister is explicitly younger in English and Turkish as well as the additional languages; relationship terms do not silently add an age only in translation.",
+    "AI editorial pass: explicitly launches the boat before the wind moves it; the children then stay back from the edge. Added launch sentence has draft translations in all support languages."
   ],
   "translationReadiness": {
     "requiredLanguages": [
@@ -43,6 +44,7 @@
       "paper-boat-pilot-01-01",
       "paper-boat-pilot-01-02",
       "paper-boat-pilot-02-01",
+      "paper-boat-pilot-02-03",
       "paper-boat-pilot-02-02",
       "paper-boat-pilot-06-01",
       "paper-boat-pilot-06-02",
@@ -153,6 +155,23 @@
           "bn": "তার ছোট বোন শুকনো পথ ধরে তার পাশে হাঁটছিল।",
           "ur": "اس کی چھوٹی بہن خشک پگڈنڈی پر اس کے ساتھ چل رہی تھی۔",
           "th": "น้องสาวเดินข้างเขาบนทางเดินที่แห้ง"
+        }
+      },
+      {
+        "id": "paper-boat-pilot-02-03",
+        "english": "Leo put the boat in the water from a low step.",
+        "turkish": "Leo alçak bir basamaktan tekneyi suya bıraktı.",
+        "translations": {
+          "es-419": "Leo puso el barco en el agua desde un escalón bajo.",
+          "pt-BR": "Leo colocou o barco na água a partir de um degrau baixo.",
+          "id": "Leo meletakkan perahu itu di air dari anak tangga yang rendah.",
+          "ar": "وضع ليو القارب في الماء من درجة منخفضة.",
+          "vi": "Leo đặt chiếc thuyền xuống nước từ một bậc thềm thấp.",
+          "hi": "लियो ने एक नीची सीढ़ी से नाव को पानी में रखा।",
+          "ru": "Лео спустил кораблик на воду с низкой ступеньки.",
+          "bn": "লিও একটা নিচু ধাপ থেকে নৌকাটা জলে রাখল।",
+          "ur": "لیو نے ایک نچلے زینے سے کشتی پانی میں رکھی۔",
+          "th": "ลีโอวางเรือลงในน้ำจากขั้นบันไดเตี้ย ๆ"
         }
       },
       {
@@ -801,8 +820,24 @@
     }
   ],
   "publicationBlockers": [
-    "Human editorial and level review pending.",
-    "New revision, study-word integration and publisher validation required.",
+    "Human editorial and level review pending after AI-assisted corrections.",
+    "Fresh live source snapshot and publisher validation required; local reader/save/review contract verified.",
     "Human language review across all eleven support languages remains pending."
-  ]
+  ],
+  "editorialReview": {
+    "type": "ai-assisted",
+    "reviewer": "Codex",
+    "reviewedOn": "2026-10-19",
+    "status": "completed-with-corrections",
+    "scope": [
+      "English narrative continuity",
+      "English/Turkish alignment",
+      "eleven-language text and glossary consistency",
+      "all comprehension answer keys and source evidence",
+      "target-level risks"
+    ],
+    "report": "../../../../docs/STORY_PILOT_EDITORIAL_REVIEW_2026-10-19.md",
+    "humanApproval": false,
+    "nativeSpeakerApproval": false
+  }
 }

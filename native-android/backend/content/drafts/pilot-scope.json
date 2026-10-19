@@ -23,6 +23,7 @@
     "classic-tortoise-hare",
     "classic-lion-mouse"
   ],
-  "nextStep": "Human editorial/language review; fresh live revision/snapshot guards and publisher acceptance. Local reader/save/review contract is verified with isolated fixtures.",
-  "localIntegration": "preview adapter and Android fixture verified; no production catalog or live content change"
+  "nextStep": "Human editorial/language acceptance of AI-reviewed drafts; fresh live revision/snapshot guards and publisher acceptance. Local reader/save/review contract verified.",
+  "localIntegration": "preview adapter and Android fixture verified; no production catalog or live content change",
+  "aiEditorialReview": "completed with corrections; human/native-speaker approval remains pending"
 }
