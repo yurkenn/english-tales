@@ -95,7 +95,9 @@ class FirstLaunchJourneyTest {
             val node=compose.onNodeWithText(sentence.english,substring=true).performScrollTo()
             val layouts=mutableListOf<TextLayoutResult>()
             node.performSemanticsAction(SemanticsActions.GetTextLayoutResult) {it(layouts)}
-            val bounds=layouts.single().getBoundingBox((match.start+match.end)/2)
+            // The page is one paragraph, so the word's offset counts from where its sentence starts in it.
+            val base=layouts.single().layoutInput.text.text.indexOf(sentence.english)
+            val bounds=layouts.single().getBoundingBox(base+(match.start+match.end)/2)
             node.performTouchInput {click(bounds.center)}
             val learn=text(R.string.ogren_2)
             waitFor(hasText(learn))

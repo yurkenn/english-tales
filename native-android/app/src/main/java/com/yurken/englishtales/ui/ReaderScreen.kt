@@ -32,7 +32,6 @@ import androidx.compose.ui.input.pointer.changedToDown
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
@@ -268,9 +267,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
             Column(Modifier.fillMaxHeight().centeredWidth(ReadingWidth)) {
                 Row(Modifier.fillMaxWidth().heightIn(min=52.dp).padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically) {
                     ReferenceIconButton("back",stringResource(R.string.geri),{narrator.stop();onBack()},tint=accent)
-                    // The book's title sits quietly over the page, as in a printed book's running head.
-                    Text(story.title,color=muted,fontSize=13.sp,fontFamily=FontFamily.Serif,letterSpacing=0.6.sp,maxLines=1,overflow=TextOverflow.Ellipsis,
-                        textAlign=TextAlign.Center,modifier=Modifier.weight(1f).padding(horizontal=8.dp))
+                    Spacer(Modifier.weight(1f))
                     TextButton(onClick={options=true},colors=ButtonDefaults.textButtonColors(contentColor=accent),modifier=Modifier.contentLabel(stringResource(R.string.okuma_gorunumu))) {
                         Text(stringResource(R.string.aa),fontSize=20.sp,fontFamily=FontFamily.Serif)
                     }
@@ -293,6 +290,8 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                             TextButton(onClick=onHintDismiss,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.anladim)) }
                         }
                     }
+                    // The book's title sits quietly over the page, as in a printed book's running head.
+                    Text(story.title,color=muted,fontSize=13.sp,fontFamily=FontFamily.Serif,letterSpacing=0.6.sp,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
                     val listenLabel=stringResource(R.string.listen_from_sentence)
                     val translateLabel=stringResource(R.string.cumleyi_cevir)
                     val hideLabel=stringResource(R.string.ceviriyi_gizle)
@@ -335,22 +334,20 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                     } }
                 }
                 narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
-                // One slim progress line with the page count, then the page actions: no stacked bars of controls.
-                Row(Modifier.fillMaxWidth().padding(start=16.dp,end=24.dp,top=4.dp),verticalAlignment=Alignment.CenterVertically) {
-                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),
-                        thumb={ Box(Modifier.size(10.dp).background(accent,CircleShape)) },
-                        track={ val shown=if(pageCount>1) page.toFloat()/(pageCount-1) else 1f
-                            Box(Modifier.fillMaxWidth().height(3.dp).background(palette.line,RoundedCornerShape(2.dp))) { Box(Modifier.fillMaxWidth(shown).height(3.dp).background(accent.copy(alpha=0.7f),RoundedCornerShape(2.dp))) } })
-                    Text("${page+1} / $pageCount",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),color=muted,fontSize=12.sp,modifier=Modifier.padding(start=14.dp))
-                }
+                // One slim progress line between the page actions, then the page turns: no stacked bars of controls.
                 Row(Modifier.fillMaxWidth().padding(horizontal=8.dp),verticalAlignment=Alignment.CenterVertically) {
-                    TextButton(onClick={changePage(page-1)},enabled=page>0,modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent,disabledContentColor=muted.copy(alpha=0.5f))) { Text(stringResource(R.string.onceki),fontSize=15.sp) }
-                    Spacer(Modifier.weight(1f))
                     Box(Modifier.size(48.dp).contentLabel(stringResource(if(pageTranslated) R.string.page_translate_hide else R.string.page_translate)).clickable(role=Role.Button) {
                         if(pageTranslated) translations.removeAll(pageSentences.map {it.id}.toSet()) else pageSentences.forEach {if(it.id !in translations) translations.add(it.id)}
                     },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(pageTranslated) accent else muted,Modifier.size(24.dp).background(if(pageTranslated) accent.copy(alpha=0.14f) else Color.Transparent,RoundedCornerShape(6.dp))) }
+                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f).padding(horizontal=4.dp),
+                        thumb={ Box(Modifier.size(12.dp).background(accent,CircleShape)) },
+                        track={ val shown=if(pageCount>1) page.toFloat()/(pageCount-1) else 1f
+                            Box(Modifier.fillMaxWidth().height(3.dp).background(palette.line,RoundedCornerShape(2.dp))) { Box(Modifier.fillMaxWidth(shown).height(3.dp).background(accent.copy(alpha=0.7f),RoundedCornerShape(2.dp))) } })
+                    Text("${page+1} / $pageCount",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),color=muted,fontSize=12.sp,modifier=Modifier.padding(start=6.dp,end=2.dp))
                     Box(Modifier.size(48.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { listen() } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
-                    Spacer(Modifier.weight(1f))
+                }
+                Row(Modifier.fillMaxWidth().padding(horizontal=8.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
+                    TextButton(onClick={changePage(page-1)},enabled=page>0,modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent,disabledContentColor=muted.copy(alpha=0.5f))) { Text(stringResource(R.string.onceki),fontSize=15.sp) }
                     if(page==pageCount-1) Button(enabled=!completed,modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.buttonColors(containerColor=accent,contentColor=background),onClick={completed=true;narrator.stop();onComplete(timer.pause())}) { Text(stringResource(R.string.bitir),fontSize=15.sp) }
                     else TextButton(modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent),onClick={changePage(page+1)}) { Text(stringResource(R.string.sonraki),fontSize=15.sp,fontWeight=FontWeight.SemiBold) }
                 }
