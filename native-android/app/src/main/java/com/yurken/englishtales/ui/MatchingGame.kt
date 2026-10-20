@@ -22,6 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.WordInfo
+import androidx.compose.ui.platform.LocalContext
+import kotlinx.coroutines.delay
 
 @Composable
 fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,padding: PaddingValues,onWordReviewed: (String,Boolean)->Unit,onLessonComplete: (Int)->Unit,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot,onDone: ()->Unit=onExit) {
@@ -36,13 +38,43 @@ fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,
     // The last wrong pair shakes; each mistake bumps the tick so the same pair can shake again.
     var wrongPair by remember(sessionId) {mutableStateOf<Pair<String,String>?>(null)}
     var wrongTick by remember(sessionId) {mutableIntStateOf(0)}
-    if(finished) {GameResult(stringResource(R.string.kelime_hata, words.size, mistakes),(words.size-mistakes).coerceAtLeast(0)*5,padding,onDone,onRestart,snapshot);return}
+    val combo=LocalCombo.current
+    val context=LocalContext.current
+    // Quizlet-style race against the clock: the board's time is kept per board size, and a faster finish is a new record.
+    var elapsed by rememberSaveable(sessionId) {mutableLongStateOf(0L)}
+    var record by rememberSaveable(sessionId) {mutableStateOf<Boolean?>(null)}
+    LaunchedEffect(sessionId,finished) {
+        var last=android.os.SystemClock.elapsedRealtime()
+        while(true) {delay(100);if(finished) break;val now=android.os.SystemClock.elapsedRealtime();elapsed+=now-last;last=now}
+    }
+    // The time is frozen at the last match; a late clock tick must not change what the result shows.
+    var finalMillis by rememberSaveable(sessionId) {mutableLongStateOf(0L)}
+    fun finish() {
+        finished=true;finalMillis=elapsed
+        record=GameRecords.recordMatch(context,snapshot.ownerId,words.size,finalMillis)
+        onLessonComplete((words.size-mistakes).coerceAtLeast(0))
+    }
+    if(finished) {
+        val best=GameRecords.bestMatchMillis(context,snapshot.ownerId,words.size)
+        val time=formatMatchTime(finalMillis)
+        GameResult(stringResource(R.string.kelime_hata, words.size, mistakes),(words.size-mistakes).coerceAtLeast(0)*5,padding,onDone,onRestart,snapshot,
+            correct=(words.size-mistakes).coerceAtLeast(0),total=words.size,
+            highlight=if(record==true) stringResource(R.string.match_new_record,time) else stringResource(R.string.match_time,time,formatMatchTime(best?:finalMillis)))
+        return
+    }
     // Completion counts only this board's words; after recreation the live list may have lost some, even a matched one.
     val done=words.all {it.id in matched}
-    if(done) {LaunchedEffect(sessionId) {if(!finished) {finished=true;onLessonComplete((words.size-mistakes).coerceAtLeast(0))}};return}
+    if(done) {LaunchedEffect(sessionId) {if(!finished) finish()};return}
     GameViewport(padding) {
         GameHeader(words.count {it.id in matched}.toFloat()/words.size,onExit)
-        Text(stringResource(R.string.kelimeleri_eslestirin),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.fillMaxWidth().padding(vertical=12.dp))
+        Row(Modifier.fillMaxWidth().padding(vertical=12.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+            Text(stringResource(R.string.kelimeleri_eslestirin),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+            ComboBadge()
+            Row(Modifier.background(TalePanel,RoundedCornerShape(20.dp)).padding(horizontal=10.dp,vertical=5.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+                ReferenceIcon("bolt",TaleBlue,Modifier.size(16.dp))
+                Text(formatMatchTime(elapsed),fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleInk,fontFamily=androidx.compose.ui.text.font.FontFamily.Monospace)
+            }
+        }
         Row(Modifier.fillMaxWidth().weight(1f),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
             Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                 words.forEachIndexed { i,word -> MatchCard(word.word,selected==word.id,word.id in matched,if(wrongPair?.first==word.id) wrongTick else 0,Modifier.fillMaxWidth().weight(1f).appearIn(i)) { if(word.id !in matched) selected=word.id } }
@@ -54,8 +86,9 @@ fun MatchingGame(liveWords: List<WordInfo>,sessionId: Int,savedIds: Set<String>,
                         if(current==word.id) {
                             matched=matched+word.id
                             if(word.id in savedIds) onWordReviewed(word.id,true)
-                            if(words.all {it.id in matched}) {finished=true;onLessonComplete((words.size-mistakes).coerceAtLeast(0))}
-                        } else {mistakes++;wrongPair=current to word.id;wrongTick++;if(current in savedIds) onWordReviewed(current,false)}
+                            combo.record(true)
+                            if(words.all {it.id in matched}) finish()
+                        } else {mistakes++;wrongPair=current to word.id;wrongTick++;combo.record(false);if(current in savedIds) onWordReviewed(current,false)}
                         selected=null
                     }
                 } }

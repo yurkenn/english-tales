@@ -236,7 +236,7 @@ class LearningReliabilityTest {
         LearningStore(context,account).use {it.completeLesson(5,UUID.randomUUID().toString(),"choice",5,0)}
         LearningReminderOwner.select(context,account)
         var shown=false
-        LearningReminders.deliver(context,show={shown=true})
+        LearningReminders.deliver(context,show={_,_ ->shown=true})
         assertFalse(shown)
     }
 
@@ -245,8 +245,17 @@ class LearningReliabilityTest {
         LearningStore(context,account).use {it.saveWords(LearningContent.words.take(3).map {w -> w.id})}
         LearningReminderOwner.select(context,account)
         var due=-1
-        LearningReminders.deliver(context,show={due=it})
+        LearningReminders.deliver(context,show={d,_ ->due=d})
         assertEquals(3,due)
+    }
+
+    @Test fun reminderNamesAStreakThatTodayHasNotExtended() {
+        val context=isolated();val account=LearningOwner.Account(UUID.randomUUID().toString())
+        LearningStore(context,account,clock={System.currentTimeMillis()-LearningPolicy.DAY_MS}).use {it.completeLesson(5,UUID.randomUUID().toString(),"choice",5,0)}
+        LearningReminderOwner.select(context,account)
+        var streak=-1
+        LearningReminders.deliver(context,show={_,s ->streak=s})
+        assertEquals(1,streak)
     }
 
     @Test fun incompleteAccountReceivesReminderEvenWhenGuestGoalIsComplete() {
@@ -254,12 +263,12 @@ class LearningReliabilityTest {
         LearningStore(context).use {it.completeLesson(5,UUID.randomUUID().toString(),"choice",5,0)}
         LearningReminderOwner.select(context,account)
         var shown=false
-        LearningReminders.deliver(context,show={shown=true})
+        LearningReminders.deliver(context,show={_,_ ->shown=true})
         assertTrue(shown)
         // Recreated context preferences still select the account; no token lookup is needed.
         assertEquals(account.id,LearningReminderOwner.current(ContextWrapper(context))?.id)
         LearningReminderOwner.select(context,LearningOwner.Guest)
-        shown=false;LearningReminders.deliver(context,show={shown=true})
+        shown=false;LearningReminders.deliver(context,show={_,_ ->shown=true})
         assertFalse(shown)
     }
 
@@ -270,13 +279,13 @@ class LearningReliabilityTest {
         LearningReminders.deliver(context,storeFactory={owner ->
             LearningReminderOwner.select(context,LearningOwner.Guest)
             LearningStore(context,owner)
-        },show={shown=true})
+        },show={_,_ ->shown=true})
         assertFalse(shown)
     }
 
     @Test fun invalidPersistedOwnerNeverOpensGuestDatabaseOrShowsReminder() {
         val context=isolated()
         context.getSharedPreferences("reminders",Context.MODE_PRIVATE).edit().putString("learning_owner","invalid").commit()
-        LearningReminders.deliver(context,storeFactory={error("Must not open a database")},show={fail("Must not notify")})
+        LearningReminders.deliver(context,storeFactory={error("Must not open a database")},show={_,_ ->fail("Must not notify")})
     }
 }

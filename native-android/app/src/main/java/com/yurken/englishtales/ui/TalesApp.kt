@@ -118,11 +118,19 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     val streakText=stringResource(R.string.alert_streak,snapshot.streak)
     var seenGoal by rememberSaveable {mutableStateOf(snapshot.dailyGoalReached)}
     var seenStreak by rememberSaveable {mutableIntStateOf(snapshot.streak)}
+    // Milestone streaks (3, 7, 14, 30 …) get a full celebration, shown once per owner; other growth keeps the toast.
+    val rewardContext=androidx.compose.ui.platform.LocalContext.current
+    var milestone by rememberSaveable {mutableStateOf<Int?>(null)}
     LaunchedEffect(snapshot.dailyGoalReached,snapshot.streak) {
-        if(snapshot.dailyGoalReached && !seenGoal) alerts.reward(goalText)
+        // A learner who already had a long streak before this screen existed is not congratulated for an old milestone.
+        GameRecords.seedStreak(rewardContext,snapshot.ownerId,seenStreak)
+        val reached=GameRewards.milestoneReached(seenStreak,snapshot.streak,GameRecords.celebratedStreak(rewardContext,snapshot.ownerId))
+        if(reached!=null) {GameRecords.celebrateStreak(rewardContext,snapshot.ownerId,reached);milestone=snapshot.streak}
+        else if(snapshot.dailyGoalReached && !seenGoal) alerts.reward(goalText)
         else if(snapshot.streak>seenStreak && snapshot.streak>=2) alerts.reward(streakText)
         seenGoal=snapshot.dailyGoalReached;seenStreak=snapshot.streak
     }
+    milestone?.let {StreakMilestoneDialog(it) {milestone=null}}
     TaleAlertHost(alerts) {
     LearningWriteHost(writeError,viewModel::retryLearningWrites) {
         NavHost(navController=nav,startDestination=startDestination,enterTransition={taleEnter},exitTransition={taleExit},popEnterTransition={talepopEnter},popExitTransition={talePopExit}) {

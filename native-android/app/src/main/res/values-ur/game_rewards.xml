@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">لگاتار %1$d درست</string>
+    <string name="combo_cheer_3">زبردست!</string>
+    <string name="combo_cheer_5">آگ لگا دی!</string>
+    <string name="combo_cheer_8">اب کوئی نہیں روک سکتا!</string>
+    <string name="result_stars">3 میں سے %1$d ستارے</string>
+    <string name="result_perfect">بہترین راؤنڈ!</string>
+    <string name="result_accuracy">درستی</string>
+    <string name="result_best_combo">سب سے لمبا کومبو</string>
+    <string name="match_new_record">نیا ریکارڈ: %1$s</string>
+    <string name="match_time">وقت: %1$s · آپ کا ریکارڈ: %2$s</string>
+    <string name="card_swipe_hint">دائیں سوائپ: مجھے آتا ہے · بائیں: دوبارہ</string>
+    <string name="card_stamp_known">آتا ہے</string>
+    <string name="card_stamp_again">دوبارہ</string>
+    <string name="quests_title">روزانہ مشن</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">اپنا روزانہ ہدف پورا کریں</string>
+    <string name="quest_story">ایک کہانی مکمل کریں</string>
+    <string name="quest_combo">لگاتار %1$d درست جواب دیں</string>
+    <string name="quests_chest_locked">صندوق کھولنے کے لیے تینوں مشن مکمل کریں۔</string>
+    <string name="quests_chest_ready">صندوق تیار ہے! کھولنے کے لیے ٹیپ کریں۔</string>
+    <string name="quests_chest_opened">آج کا صندوق کھل گیا۔ کل نئے مشن آئیں گے۔</string>
+    <string name="quests_reward_title">سارے مشن مکمل!</string>
+    <string name="quests_reward_text">جن دنوں آپ نے سارے مشن مکمل کیے: %1$d۔ کل نئے مشنوں کے ساتھ ملتے ہیں۔</string>
+    <string name="streak_milestone_title">%1$d دن کا سلسلہ!</string>
+    <string name="streak_milestone_text">آپ ہر دن واپس آئے اور شعلہ بڑھتا گیا۔ کل تھوڑا پڑھنا یا دہرانا اسے جاری رکھے گا۔</string>
+    <string name="reminder_streak_title">آپ کا %1$d دن کا سلسلہ خطرے میں ہے</string>
+    <string name="reminder_streak_text">سلسلہ بچانے کے لیے مختصر دہرائی کافی ہے۔</string>
+</resources>

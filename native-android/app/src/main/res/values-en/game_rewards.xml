@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">%1$d right in a row</string>
+    <string name="combo_cheer_3">Great!</string>
+    <string name="combo_cheer_5">On fire!</string>
+    <string name="combo_cheer_8">Unstoppable!</string>
+    <string name="result_stars">%1$d of 3 stars</string>
+    <string name="result_perfect">Perfect round!</string>
+    <string name="result_accuracy">Accuracy</string>
+    <string name="result_best_combo">Longest combo</string>
+    <string name="match_new_record">New record: %1$s</string>
+    <string name="match_time">Time: %1$s · Your record: %2$s</string>
+    <string name="card_swipe_hint">Swipe right: I know it · Swipe left: again</string>
+    <string name="card_stamp_known">KNOW IT</string>
+    <string name="card_stamp_again">AGAIN</string>
+    <string name="quests_title">Daily quests</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">Reach your daily goal</string>
+    <string name="quest_story">Finish a story</string>
+    <string name="quest_combo">Get %1$d answers right in a row</string>
+    <string name="quests_chest_locked">Finish all three quests to open the chest.</string>
+    <string name="quests_chest_ready">The chest is ready! Tap to open.</string>
+    <string name="quests_chest_opened">Today’s chest is open. New quests arrive tomorrow.</string>
+    <string name="quests_reward_title">All quests done!</string>
+    <string name="quests_reward_text">Days you finished every quest: %1$d. See you tomorrow for new ones.</string>
+    <string name="streak_milestone_title">%1$d-day streak!</string>
+    <string name="streak_milestone_text">You came back every day and the flame grew. A short read or review tomorrow keeps it going.</string>
+    <string name="reminder_streak_title">Your %1$d-day streak is at risk</string>
+    <string name="reminder_streak_text">A short review is enough to keep your streak.</string>
+</resources>

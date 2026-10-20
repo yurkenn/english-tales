@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">%1$d верных подряд</string>
+    <string name="combo_cheer_3">Отлично!</string>
+    <string name="combo_cheer_5">Ты в ударе!</string>
+    <string name="combo_cheer_8">Тебя не остановить!</string>
+    <string name="result_stars">%1$d из 3 звёзд</string>
+    <string name="result_perfect">Идеальный раунд!</string>
+    <string name="result_accuracy">Точность</string>
+    <string name="result_best_combo">Самое длинное комбо</string>
+    <string name="match_new_record">Новый рекорд: %1$s</string>
+    <string name="match_time">Время: %1$s · Твой рекорд: %2$s</string>
+    <string name="card_swipe_hint">Вправо: знаю · Влево: ещё раз</string>
+    <string name="card_stamp_known">ЗНАЮ</string>
+    <string name="card_stamp_again">ЕЩЁ РАЗ</string>
+    <string name="quests_title">Задания дня</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">Выполни дневную цель</string>
+    <string name="quest_story">Дочитай рассказ</string>
+    <string name="quest_combo">Ответь верно %1$d раз подряд</string>
+    <string name="quests_chest_locked">Выполни все три задания, чтобы открыть сундук.</string>
+    <string name="quests_chest_ready">Сундук готов! Нажми, чтобы открыть.</string>
+    <string name="quests_chest_opened">Сундук на сегодня открыт. Завтра будут новые задания.</string>
+    <string name="quests_reward_title">Все задания выполнены!</string>
+    <string name="quests_reward_text">Дней со всеми выполненными заданиями: %1$d. До завтра, будут новые задания.</string>
+    <string name="streak_milestone_title">Серия: %1$d дн.!</string>
+    <string name="streak_milestone_text">Ты возвращался каждый день, и пламя разгорелось. Завтра короткое чтение или повторение сохранит серию.</string>
+    <string name="reminder_streak_title">Твоя серия (%1$d дн.) под угрозой</string>
+    <string name="reminder_streak_text">Короткого повторения хватит, чтобы сохранить серию.</string>
+</resources>
