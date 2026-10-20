@@ -9,11 +9,15 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.lifecycle.ViewModelStore
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.data.*
+import kotlinx.coroutines.test.StandardTestDispatcher
 import org.junit.Rule
 import org.junit.Test
 
+@OptIn(androidx.compose.ui.test.ExperimentalTestApi::class)
 class LearningWriteUiTest {
-    @get:Rule val compose=createComposeRule()
+    // Writes emit StateFlow updates from IO. Queue their Compose continuations on the
+    // test clock instead of resuming layout work inline on the emitting IO thread.
+    @get:Rule val compose=createComposeRule(effectContext=StandardTestDispatcher())
 
     @Test fun readerAndPracticeKeepTheErrorVisibleUntilTheRetryButtonSaves() {
         val context=LearningReliabilityTest().isolated()
@@ -50,6 +54,8 @@ class LearningWriteUiTest {
             }
             vm.toggleWord(word)
             compose.waitUntil(5_000) {vm.writeError.value!=null}
+            // The IO error and its rendered bar are separate milestones.
+            compose.waitUntil(5_000) {compose.onNodeWithText("Tekrar dene").isDisplayed()}
             compose.onNodeWithText("Tekrar dene").assertIsDisplayed()
             compose.onNodeWithText("Tekrar dene").performClick()
             // The actor is FIFO: a write queued behind the failed retry proves that retry ran (and failed) before the trigger is dropped.
