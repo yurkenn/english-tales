@@ -37,12 +37,21 @@ class FirstLaunchJourneyTest {
         }
     }.getOrNull()
 
-    private fun waitFor(matcher: SemanticsMatcher,timeout: Long=20_000)=
-        compose.waitUntil(timeout) {runCatching {compose.onAllNodes(matcher,useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()}.getOrDefault(false)}
+    private fun waitFor(matcher: SemanticsMatcher,timeout: Long=20_000) {
+        try {
+            compose.waitUntil(timeout) {runCatching {compose.onAllNodes(matcher,useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()}.getOrDefault(false)}
+        } catch (failure: ComposeTimeoutException) {
+            val tree=runCatching {compose.onRoot(useUnmergedTree=true).printToString()}.getOrElse {"Semantics unavailable: ${it.message}"}
+            throw AssertionError("First-launch screen did not reach $matcher. " +
+                "Content ready=${LearningContent.ready}, language confirmed=${AppLanguage.hasConfirmedChoice(context)}, " +
+                "onboarding=${scalar("SELECT onboarding_done FROM local_profile WHERE id=1")}\n$tree",failure)
+        }
+    }
     private fun waitForDb(timeout: Long=10_000,condition: ()->Boolean)=compose.waitUntil(timeout,condition)
 
     @Test fun guestReadsSavesAWordAndReviewsItOnAFreshInstall() {
         freshInstall()
+        assertFalse("The fresh-install fixture must reset the device language gate",AppLanguage.hasConfirmedChoice(context))
         val scenario=ActivityScenario.launch(MainActivity::class.java)
         try {
             // Brand intro: skip it when it is still showing; it also continues on its own.
