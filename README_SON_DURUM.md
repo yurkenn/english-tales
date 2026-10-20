@@ -14,7 +14,11 @@ Açık PR’lar: [#146 güncel yol haritası](https://github.com/yurkenn/english
 
 ## Paralel işlerin ilerlemesi — 20 Ekim
 
-Claude on dilde 1.210 sözlük karşılığını örneklem olarak inceledi; iki anlam düzeltmesi ve inceleme kanıtı [taslak PR #152'de](https://github.com/yurkenn/english-tales/pull/152). Altı sözlük testi geçti; kalan adaylar ve ana dil incelemesi açık. Codex ilk kullanım zaman aşımını araştırdı: yerel tekil ve ön testlerle denemeler geçti, ancak tam cihaz denemesi ayrı bir süreç kapanmasıyla tamamlanamadı. [Taslak PR #153](https://github.com/yurkenn/english-tales/pull/153), tekrar hatasında gerçek ekran/durum bilgisini ekliyor; kök neden düzeltildi iddiası yok. Ana dal CI tekrarı ve iki PR’ın cihaz sonuçları artık başarılı: 336 geçti / 3 atlandı / 0 hata; ayrıca 3/3 açılış benchmark testi. [Kanıt kaydı](native-android/docs/release-evidence/2026-10-20-device-ci-followup.json). Bu iki PR henüz birleşmedi; mağaza veya içerik yayını yapılmadı.
+Claude ve Codex, on dilde sözlüğün tamamını (10.980 karşılık) AI destekli inceledi. 190 aday gerekçeli karara bağlandı: 81 kabul / 36 ret / 73 erteleme. Koordineli düzeltmelerle 90 hedef dil ve 2 Türkçe referans, toplam **92 karşılık** güncellendi. Tam backend **172/172** ve 11 dil varlık eşleşmesi geçti. Güncel çalışma [PR #152'de](https://github.com/yurkenn/english-tales/pull/152); Güncel APK’daki sözlük yükleme testi API36’da 1/1 geçti; yeni tam CI sonucu orada takip edilir. Ana dil onayı verilmedi. Codex ilk kullanım zaman aşımını araştırdı: yerel tekil ve ön testlerle denemeler geçti, ancak tam cihaz denemesi ayrı bir süreç kapanmasıyla tamamlanamadı. [Taslak PR #153](https://github.com/yurkenn/english-tales/pull/153), tekrar hatasında gerçek ekran/durum bilgisini ekliyor; kök neden düzeltildi iddiası yok. Ana dal CI tekrarı ve iki PR’ın cihaz sonuçları artık başarılı: 336 geçti / 3 atlandı / 0 hata; ayrıca 3/3 açılış benchmark testi. [Kanıt kaydı](native-android/docs/release-evidence/2026-10-20-device-ci-followup.json). Bu iki PR henüz birleşmedi; mağaza veya içerik yayını yapılmadı.
+
+## Play takip kontrolü — 20 Ekim
+
+Console’da **50 / 2.2.0 hâlâ incelemede**, **48 / 2.0.0 Google Play’de erişilebilir** olarak yeniden doğrulandı. Başvuru veya yayın ayarı değiştirilmedi. [Güncel kontrol kaydı](native-android/docs/release-evidence/2026-10-20-play-status.json).
 
 ## Son doğrulanan yayın kaydı — 19 Ekim, 50 / 2.2.0
 

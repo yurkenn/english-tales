@@ -1,0 +1,31 @@
+{
+  "verifiedOn": "2026-10-20",
+  "method": "Read-only Google Play Console UI, authenticated existing browser session",
+  "appId": "com.yurken.englishtales",
+  "publishingOverview": {
+    "url": "https://play.google.com/console/u/0/developers/7726521495392867100/app/4972425450856153810/publishing",
+    "status": "Changes in review",
+    "productionSubmission": "50 (2.2.0) — Yurken Stories",
+    "actionInReview": "Start full rollout",
+    "managedPublishing": "off",
+    "lastPublished": "October 16, 2026"
+  },
+  "productionReleases": {
+    "url": "https://play.google.com/console/u/0/developers/7726521495392867100/app/4972425450856153810/tracks/production?tab=releases",
+    "releases": [
+      {
+        "versionCode": 50,
+        "versionName": "2.2.0",
+        "status": "In review"
+      },
+      {
+        "versionCode": 48,
+        "versionName": "2.0.0",
+        "status": "Available on Google Play",
+        "releaseLabel": "Released on Oct 15 4:26 PM"
+      }
+    ]
+  },
+  "mutationsPerformed": false,
+  "conclusion": "50 is still under review; 48 remains available on Google Play. No rejected submission or new publication was observed. Physical-device acceptance of 50 through Play remains pending."
+}

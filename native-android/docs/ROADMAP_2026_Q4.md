@@ -10,10 +10,10 @@
 
 ## Başlangıç noktası
 
-- Son doğrulanan yayın kaydı: **50 / 2.2.0 üretim başvurusu gönderildi**, Console “Changes in review”, hızlı kontroller sürüyor. %100 dağıtım seçildi; canlı yayın bu belgede doğrulanmış sayılmaz. Son doğrulanan canlı üretim 48, dahili kanal 49. [Kesin yayın kaydı](RELEASE_50_STATUS.md).
+- **20 Ekim canlı Console kontrolü:** 50 / 2.2.0 “In review / Changes in review”; 48 / 2.0.0 “Available on Google Play”. Yönetilen yayın kapalı. Yeni ret görülmedi; başvuru değiştirilmedi. R01’in yayın sonucu Google incelemesini bekliyor. [Güncel kayıt](release-evidence/2026-10-20-play-status.json), [50 başvuru kanıtı](RELEASE_50_STATUS.md).
 - 12 arayüz dili, 11 hikâye çevirisi dili, 13 mağaza kaydı. Yeni kullanıcı için dil seçimi mevcut. İngilizce arayüz şu an Türkçe hikâye çevirisi kullanıyor.
 - FSRS, alıştırma basamakları, anlama soruları, dikte, cümle kurma, kişisel kelimeler, favoriler, öneriler, widget ve tablet düzeni kodda mevcut. Bunlar yeniden yapılacak özellikler değil; gerçek kullanım kabulü ve iyileştirme konusudur.
-- #149/#150 birleşti: 11 dilde 1.098 sözlük maddesi paket varlıklarında mevcut. Türkçe örneklem onayı kayıtlı; diğer 10 dil `machine-draft`, bağımsız ikinci inceleme ve ana dil kabulü açık. Bu varlıklar başvurulmuş 50 paketinden sonra eklendi; yeni mağaza paketi gerekir.
+- #149/#150 birleşti: 11 dilde 1.098 sözlük maddesi paket varlıklarında mevcut. #152 devamında 10 dilde 10.980 karşılığın AI incelemesi tamamlandı; 190 adayın 81’i kabul, 36’sı ret, 73’ü somut kaynak/dil kararına ayrıldı. Koordineli anlam eklemeleriyle 90 hedef dil + 2 Türkçe referans olmak üzere 92 karşılık düzeltildi. `machine-draft` ve insan onayı sınırları korunur; bu yeni çalışma henüz ana dala/mağazaya alınmadı.
 - #147/#148 birleşti; beş mevcut A1/A2 pilotunun sahibi onayı kayıtlı ve güncel canlı revizyonlarında toplam 131 cümle, her cümlede 11 dil karşılığı doğrulandı. Tam UI/çevrimdışı/gerçek hesap kabulü açık; diğer 45 hikâyenin çalışma kelimesi önerileri henüz tamamlanmış sayılmaz. İki yeni klasik taslağı ertelenmiş durumda.
 - #151 birleşti: sade okuyucu, hareketler, kitaplık, tema seçimi ve Phosphor ikonlar mevcut. Ana dal `01defbe` ilk cihaz CI denemesinde zaman aşımına uğradı; aynı kaynağın ikinci denemesi başarılı. #152 ve #153 cihaz CI’ları da başarılı: her birinde 336 geçti / 3 atlandı / 0 hata; ayrıca 3/3 açılış benchmark testi. Kök neden saptanmadı; tekrarında tanı kaydı #153’te.
 - Önceki içerik denetimindeki canlı/paket farkı kapanmış kabul edilmez. Güncel canlı fark sayısı yeniden ölçülmeden tarihsel 39 hikâye bulgusu güncel sayı olarak kullanılmaz.
@@ -21,7 +21,7 @@
 
 ## Paralel çalışma — 20 Ekim ilerlemesi
 
-- **Claude / R05:** On dilde aynı 121 kelimenin bağımsız incelemesi tamamlandı (1.210 karşılık). 37 adaydan Portekizce `amounts` ve Rusça `wardrobe` düzeltildi; altı sözlük testi ve 11 dil varlık eşleşmesi geçti. Diğer 35 aday ve her dildeki kalan 977 madde açık; ana dil onayı verilmedi. [İnceleme ve düzeltmeler: taslak PR #152](https://github.com/yurkenn/english-tales/pull/152).
+- **Claude + Codex / R05:** İlk 121 kelimeden sonra kalan 977 kelime beş grupta incelendi: 1.098 × 10 = 10.980 karşılık. 190 adayın tamamı gerekçeli karara sahip (81 kabul / 36 ret / 73 erteleme); retler yanlış pozitif, ertelemeler açık kaynak/dil kararlarıdır. 92 karşılık düzeltildi, lemma/kimlikler ve insan onayı bayrakları korundu. Tam backend 172/172 ve 11 dil varlık eşleşmesi geçti. Güncel APK sözlük yükleme testi API36’da 1/1 geçti; son değerlerin tam CI sonucu #152’de takip edilir. [Tam inceleme ve düzeltmeler: PR #152](https://github.com/yurkenn/english-tales/pull/152).
 - **Codex / R00:** İlk kullanım testi API 36'da tek başına 1/1, CI'daki önceki testlerle 6/6 ve ek hata bilgisiyle tekrar 6/6 geçti. Orijinal CI zaman aşımı yerelde tekrarlanmadı. 339 testlik deneme ayrı bir süreç kapanmasıyla 39. testte durdu; tüm cihaz testleri geçti sayılmaz. [Araştırma ve ekran durumu kaydı: taslak PR #153](https://github.com/yurkenn/english-tales/pull/153). Ana dal ikinci denemesi ve iki PR cihaz CI’ı artık başarılı: 339 durumun 336’sı geçti, 3’ü yapılandırma nedeniyle atlandı, hata yok; üç açılış benchmark testi de geçti. Yerel süreç kapanması bu CI sonucundan ayrı tutulur. [CI kanıtı](release-evidence/2026-10-20-device-ci-followup.json).
 - Bu iki PR henüz ana dala birleşmedi. Canlı içerik ve mağaza yayını yapılmadı; paralel işlerin sonucu fiziksel cihaz kabulünün yerine geçmez.
 
@@ -33,7 +33,7 @@
 
 | ID | İş | Bitti sayılma ölçütü |
 |---|---|---|
-| R01 · P0 | 50'nin inceleme sonucunu ve mağazaya teslimini doğrula | Console ve telefonda Play sürümü kaydı; yeni ad, yerel metinler/görseller ve 13 dil kaydı onaydan sonra kontrol edilmiş. Ret varsa nedeni düzeltilip yeni başvuru kaydedilmiş. |
+| R01 · P0 | 50'nin inceleme sonucunu ve mağazaya teslimini doğrula — 20 Ekim kontrol edildi, hâlâ incelemede | Console ve telefonda Play sürümü kaydı; yeni ad, yerel metinler/görseller ve 13 dil kaydı onaydan sonra kontrol edilmiş. Ret varsa nedeni düzeltilip yeni başvuru kaydedilmiş. |
 | R02 · P0 | Gerçek telefonda eski sürümden güncelleme ve öğrenme yolculuğu | Play üzerinden 48→50; kayıtlı kelime, ilerleme, favoriler ve tekrar planı korunuyor. Misafir ve hesaplı kullanım, iki cihaz eşitlemesi, uçak modu, yeniden açılış, İngilizce TTS kesintisi test edilmiş. Cihaz/OS/sürüm ve sonuç kayıtlı. |
 | R03 · P0 | Erişilebilirlik ve bağlantı kabulü | Aynı Play paketiyle TalkBack ana yolculuğu ve büyük yazı; uygulama kurulu/kurulu değil hikâye bağlantısı, ilk açılıştan gelen bağlantı doğru hikâyeye dönüyor. Play-imzalı universal APK'daki alan adı doğrulaması tek başına uçtan uca kabul sayılmaz. |
 | R04 · P0 | Ölçümü kullanılabilir hale getir | Analytics kapalı→açık→kapalı davranışı ve izin verilen olaylar panelde doğrulanmış; test/üretim ayrımı var. Crashlytics ve Play vitals görünürlüğü kaydedilmiş; örneklem yoksa “veri yok” yazılıyor. Fiziksel cihaz açılış/okuma performansının başlangıç ölçümü var. |
@@ -98,7 +98,7 @@
 
 1. **R00 CI doğrulandı:** Başarılı kaynak ve kanıt kayıtlı; #153 tanı değişikliği incelemeye hazır. Zaman aşımı tekrarlanırsa ayrıntılı kayıtla yeniden açılır.
 2. **R01–R04:** 50’nin güncel Play durumunu ve fiziksel cihaz kabulünü kaydet; canlı ölçümü doğrula. #149–#151 için yeni paket/sürüm kodu ayrıca gerekir.
-3. **R05:** 10 dilde sözlük ikinci incelemesi ve dil örneklemi; yeni arayüz metinlerinin dil kontrolü.
+3. **R05 AI kapsamı tamamlandı:** #152’deki 92 düzeltmenin paket kabulü; 73 açık kaynak/dil kararı ve ana dil örneklemi. Yeni arayüz metinlerinin dil kontrolü ayrıca açık.
 4. **R06:** Canlıdaki beş pilotun UI/çevrimdışı/hesap kabulü. Sonra kalan 45 hikâyenin çalışma kelimeleri ve çeviri kaynağı planı; yeni hikâye ekleme ertelendi.
 
 Bu tur yalnız planı ve belge yönlendirmelerini günceller. Yeni kod, içerik yayını, mağaza değişikliği, takip görevi veya reklam harcaması başlatmaz. Her uygulama işinde tek kullanıcı sonucu, ilgili test/kabul, geri dönüş yolu ve yeni kanıt kaydı tutulur.
