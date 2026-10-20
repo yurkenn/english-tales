@@ -134,8 +134,8 @@ fun ConfettiBurst(modifier: Modifier = Modifier, key: Any = Unit, pieces: Int = 
 fun Modifier.pulseWhile(active: Boolean): Modifier = composed {
     val still = reduceMotion()
     // An explicit infinite transition participates in Compose's infinite-animation
-    // policy. A manual animateTo loop keeps tests busy and can spin when the system
-    // animation duration becomes zero while this modifier remains composed.
+    // policy. A manual animateTo loop continually schedules finite animations,
+    // keeping the loading screen busy while tests wait for IO to complete.
     val scale = if (active && !still) {
         val transition = rememberInfiniteTransition(label = "pulse")
         transition.animateFloat(
