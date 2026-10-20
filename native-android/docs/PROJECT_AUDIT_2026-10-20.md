@@ -1,5 +1,7 @@
 # PR ve Claude iş kontrolü — 20 Ekim 2026
 
+> **Sonraki güncelleme:** #153 ve #152 ana dala birleşti; 92 karşılık düzeltildi. PR başlıkları tam CI’da geçti (336 başarılı cihaz testi, 3 yapılandırmalı atlama, 0 hata; 3/3 açılış ölçümü). Birleşik ana dal sonucu ayrıca doğrulanıyor. Aşağıdaki tablo ve ilk CI hatası ilk denetimin tarihsel kaydıdır; güncel kabul ve kalan işler [Q4 yol haritasında](ROADMAP_2026_Q4.md).
+
 Kontrol edilen ana dal: `01defbe` (#151). GitHub PR/CI, kayıtlı worktree durumları, son iki yerel Claude oturumu ve anonim canlı içerik okuması karşılaştırıldı. Bu inceleme uygulama kodu veya sunucu verisi değiştirmedi. Play Console bu tur açılmadı; 50'nin bugünkü yayın durumu doğrulanmadı.
 
 ## PR durumu

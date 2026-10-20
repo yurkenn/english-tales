@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-20",
+  "sourceMaster": "01defbe1aa4a79dcc103a68b1f938a32ad17a728",
+  "change": "Test diagnostics only; same 20000 ms wait and complete journey assertions",
+  "originalCIRun": 39386537157,
+  "originalCIFailure": "FirstLaunchJourneyTest.kt:50: waiting for language_continue timed out",
+  "local": {
+    "emulator": "English_Tales_CI_36",
+    "api": 36,
+    "standaloneBeforeChange": {
+      "tests": 1,
+      "failures": 0
+    },
+    "sameCIPrefixBeforeChange": {
+      "tests": 6,
+      "failures": 0
+    },
+    "sameCIPrefixAfterChange": {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "xmlSHA256": "e86f6f9b6e2c92551c021706b2c15497c3dbf1747bc0d3eafdd90ce94a50e5d1",
+      "firstLaunchDurationSeconds": "18.031"
+    },
+    "fullSuiteAttempt": {
+      "expected": 339,
+      "completed": 39,
+      "reportedFailures": 1,
+      "result": "Instrumentation process crashed during AccountSwitchTest.stoppedAppCancelsTheForegroundSyncTimerAndStartingSyncsAgain; full suite acceptance not given",
+      "appExceptionRootCause": "Not established; device log also showed multiple system processes exiting in the same interval."
+    },
+    "initialAPI37Attempt": "Espresso InputManager.getInstance incompatibility before the journey; excluded from application acceptance"
+  },
+  "ciRetry": "Attempt 2 of original master run was requested; result pending when this record was prepared.",
+  "rootCause": "Original CI timeout not reproduced locally; remains open.",
+  "productionAcceptance": false
+}

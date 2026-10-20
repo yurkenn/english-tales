@@ -1,0 +1,4240 @@
+{
+  "batch": 2,
+  "sourceCommit": "66a5453",
+  "scope": "All listed lemmas in all ten listed target languages; not human or native-speaker approval.",
+  "rows": [
+    {
+      "lemma": "daylight",
+      "turkishReference": "gün ışığı",
+      "example": "On the last day before the wedding, she went outside to say goodbye to the daylight.",
+      "catalogContexts": [
+        "On the last day before the wedding, she went outside to say goodbye to the daylight."
+      ],
+      "translations": {
+        "es-419": "luz del día",
+        "pt-BR": "luz do dia",
+        "id": "siang hari",
+        "ar": "ضوء النهار",
+        "vi": "ánh sáng ban ngày",
+        "hi": "दिन की रोशनी",
+        "ru": "дневной свет",
+        "bn": "দিনের আলো",
+        "ur": "دن کی روشنی",
+        "th": "แสงตอนกลางวัน"
+      }
+    },
+    {
+      "lemma": "dead",
+      "turkishReference": "ölü",
+      "example": "They threw it away beside the dead bird.",
+      "catalogContexts": [
+        "They threw it away beside the dead bird.",
+        "That afternoon, the children found the giant dead beneath the tree, covered in white blossoms.",
+        "Each giant blamed the other, and they fought until both were dead.",
+        "While exploring one passage, Thumbelina found a swallow that seemed to be dead.",
+        "In the morning, people found the girl dead in the corner, with a smile on her face."
+      ],
+      "translations": {
+        "es-419": "muerto",
+        "pt-BR": "morto",
+        "id": "mati",
+        "ar": "ميت",
+        "vi": "chết",
+        "hi": "मृत",
+        "ru": "мёртвый",
+        "bn": "মৃত",
+        "ur": "مردہ",
+        "th": "ตาย"
+      }
+    },
+    {
+      "lemma": "death",
+      "turkishReference": "ölüm",
+      "example": "A single word would bring death to her brothers.",
+      "catalogContexts": [
+        "A single word would bring death to her brothers.",
+        "The wood around her blossomed into roses, turning the place of death into a place of joy."
+      ],
+      "translations": {
+        "es-419": "muerte",
+        "pt-BR": "morte",
+        "id": "kematian",
+        "ar": "موت",
+        "vi": "cái chết",
+        "hi": "मृत्यु",
+        "ru": "смерть",
+        "bn": "মৃত্যু",
+        "ur": "موت",
+        "th": "ความตาย"
+      }
+    },
+    {
+      "lemma": "deceitful",
+      "turkishReference": "hilekâr",
+      "example": "The false bride failed to recognize her and suggested a harsh punishment for such a deceitful servant.",
+      "catalogContexts": [
+        "The false bride failed to recognize her and suggested a harsh punishment for such a deceitful servant."
+      ],
+      "translations": {
+        "es-419": "engañoso",
+        "pt-BR": "enganador",
+        "id": "licik",
+        "ar": "مخادع",
+        "vi": "dối trá",
+        "hi": "धोखेबाज़",
+        "ru": "лживый",
+        "bn": "প্রতারক",
+        "ur": "فریبی",
+        "th": "หลอกลวง"
+      }
+    },
+    {
+      "lemma": "decided",
+      "turkishReference": "karar verdi",
+      "example": "At last, the witch lost patience and decided to heat the oven.",
+      "catalogContexts": [
+        "At last, the witch lost patience and decided to heat the oven.",
+        "The swallow decided to stay and become his eyes.",
+        "Before Christmas, he and his wife decided to discover their secret helpers.",
+        "Yet he decided that the procession must continue and held his head higher."
+      ],
+      "translations": {
+        "es-419": "decidió",
+        "pt-BR": "decidiu",
+        "id": "memutuskan",
+        "ar": "قرّر",
+        "vi": "đã quyết định",
+        "hi": "फ़ैसला किया",
+        "ru": "решил",
+        "bn": "সিদ্ধান্ত নিল",
+        "ur": "فیصلہ کیا",
+        "th": "ตัดสินใจ"
+      }
+    },
+    {
+      "lemma": "decides",
+      "turkishReference": "karar verir",
+      "example": "The country mouse decides to leave.",
+      "catalogContexts": [
+        "The country mouse decides to leave.",
+        "He decides to kill her."
+      ],
+      "translations": {
+        "es-419": "decide",
+        "pt-BR": "decide",
+        "id": "memutuskan",
+        "ar": "يقرّر",
+        "vi": "quyết định",
+        "hi": "फ़ैसला करता है",
+        "ru": "решает",
+        "bn": "সিদ্ধান্ত নেয়",
+        "ur": "فیصلہ کرتا ہے",
+        "th": "ตัดสินใจ"
+      }
+    },
+    {
+      "lemma": "deeds",
+      "turkishReference": "işler, davranışlar",
+      "example": "They explained that good deeds could help her earn an immortal soul.",
+      "catalogContexts": [
+        "They explained that good deeds could help her earn an immortal soul."
+      ],
+      "translations": {
+        "es-419": "acciones; hechos",
+        "pt-BR": "ações; feitos",
+        "id": "perbuatan",
+        "ar": "أفعال",
+        "vi": "việc làm",
+        "hi": "कर्म",
+        "ru": "поступки",
+        "bn": "কাজকর্ম",
+        "ur": "اعمال",
+        "th": "การกระทำ"
+      }
+    },
+    {
+      "lemma": "deep",
+      "turkishReference": "derin",
+      "example": "A princess loved to play with her golden ball near a deep well.",
+      "catalogContexts": [
+        "A princess loved to play with her golden ball near a deep well.",
+        "Then a messenger found a small house deep in the forest."
+      ],
+      "translations": {
+        "es-419": "profundo",
+        "pt-BR": "profundo",
+        "id": "dalam",
+        "ar": "عميق",
+        "vi": "sâu",
+        "hi": "गहरा",
+        "ru": "глубокий",
+        "bn": "গভীর",
+        "ur": "گہرا",
+        "th": "ลึก"
+      }
+    },
+    {
+      "lemma": "defend",
+      "turkishReference": "savunmak",
+      "example": "She could not defend herself without endangering her brothers.",
+      "catalogContexts": [
+        "She could not defend herself without endangering her brothers."
+      ],
+      "translations": {
+        "es-419": "defender",
+        "pt-BR": "defender",
+        "id": "membela",
+        "ar": "يدافع",
+        "vi": "bảo vệ",
+        "hi": "बचाव करना",
+        "ru": "защищать",
+        "bn": "রক্ষা করা",
+        "ur": "دفاع کرنا",
+        "th": "ป้องกัน"
+      }
+    },
+    {
+      "lemma": "delicate",
+      "turkishReference": "narin",
+      "example": "Inside a white flower, Thumbelina found a tiny prince with delicate wings.",
+      "catalogContexts": [
+        "Inside a white flower, Thumbelina found a tiny prince with delicate wings."
+      ],
+      "translations": {
+        "es-419": "delicado",
+        "pt-BR": "delicado",
+        "id": "halus",
+        "ar": "رقيق",
+        "vi": "mỏng manh",
+        "hi": "नाज़ुक",
+        "ru": "нежный",
+        "bn": "সূক্ষ্ম",
+        "ur": "نازک",
+        "th": "บอบบาง"
+      }
+    },
+    {
+      "lemma": "delicious",
+      "turkishReference": "lezzetli",
+      "example": "She lit another match and saw a table with a delicious supper.",
+      "catalogContexts": [
+        "She lit another match and saw a table with a delicious supper."
+      ],
+      "translations": {
+        "es-419": "delicioso",
+        "pt-BR": "delicioso",
+        "id": "lezat",
+        "ar": "لذيذ",
+        "vi": "ngon",
+        "hi": "स्वादिष्ट",
+        "ru": "вкусный",
+        "bn": "সুস্বাদু",
+        "ur": "مزیدار",
+        "th": "อร่อย"
+      }
+    },
+    {
+      "lemma": "delight",
+      "turkishReference": "sevinç, keyif",
+      "example": "The elves put on the clothes, danced with delight, and left.",
+      "catalogContexts": [
+        "The elves put on the clothes, danced with delight, and left."
+      ],
+      "translations": {
+        "es-419": "alegría; deleite",
+        "pt-BR": "alegria; deleite",
+        "id": "kegembiraan",
+        "ar": "بهجة",
+        "vi": "niềm vui",
+        "hi": "आनंद",
+        "ru": "радость",
+        "bn": "আনন্দ",
+        "ur": "خوشی، مسرت",
+        "th": "ความปีติ"
+      }
+    },
+    {
+      "lemma": "della",
+      "turkishReference": "(özel ad)",
+      "example": "On Christmas Eve, Della counted her savings for the third time.",
+      "catalogContexts": [
+        "On Christmas Eve, Della counted her savings for the third time.",
+        "Della wanted to give her husband something worthy of her love.",
+        "The other was Della's beautiful brown hair, which fell below her knees.",
+        "Looking in the mirror, Della suddenly knew how to buy her gift.",
+        "The woman offered twenty dollars, and Della agreed to have her hair cut.",
+        "Della explained that she had sold her hair because she wanted to give him a present."
+      ],
+      "translations": {
+        "es-419": "(nombre propio)",
+        "pt-BR": "(nome próprio)",
+        "id": "(nama diri)",
+        "ar": "(اسم علم)",
+        "vi": "(tên riêng)",
+        "hi": "(व्यक्तिवाचक नाम)",
+        "ru": "(имя собственное)",
+        "bn": "(নাম)",
+        "ur": "(نام)",
+        "th": "(ชื่อเฉพาะ)"
+      }
+    },
+    {
+      "lemma": "demanded",
+      "turkishReference": "talep etti",
+      "example": "The king demanded more gold, so she gave the little man her ring.",
+      "catalogContexts": [
+        "The king demanded more gold, so she gave the little man her ring.",
+        "He demanded impossible amounts of food and drink, and a ship that could travel on land and water.",
+        "The king then demanded that he capture a unicorn.",
+        "A rat demanded his passport and chased after him."
+      ],
+      "translations": {
+        "es-419": "exigió",
+        "pt-BR": "exigiu",
+        "id": "menuntut",
+        "ar": "طالب",
+        "vi": "đã đòi hỏi",
+        "hi": "माँग की",
+        "ru": "потребовал",
+        "bn": "দাবি করল",
+        "ur": "مطالبہ کیا",
+        "th": "เรียกร้อง"
+      }
+    },
+    {
+      "lemma": "deny",
+      "turkishReference": "inkâr etmek",
+      "example": "The princesses could no longer deny what they had done.",
+      "catalogContexts": [
+        "The princesses could no longer deny what they had done."
+      ],
+      "translations": {
+        "es-419": "negar",
+        "pt-BR": "negar",
+        "id": "menyangkal",
+        "ar": "ينكر",
+        "vi": "chối bỏ",
+        "hi": "इनकार करना",
+        "ru": "отрицать",
+        "bn": "অস্বীকার করা",
+        "ur": "انکار کرنا",
+        "th": "ปฏิเสธ"
+      }
+    },
+    {
+      "lemma": "desk",
+      "turkishReference": "masa (çalışma)",
+      "example": "Nora found an old map inside her grandfather's desk.",
+      "catalogContexts": [
+        "Nora found an old map inside her grandfather's desk."
+      ],
+      "translations": {
+        "es-419": "escritorio",
+        "pt-BR": "mesa de trabalho",
+        "id": "meja kerja",
+        "ar": "مكتب",
+        "vi": "bàn làm việc",
+        "hi": "डेस्क",
+        "ru": "письменный стол",
+        "bn": "ডেস্ক",
+        "ur": "ڈیسک",
+        "th": "โต๊ะทำงาน"
+      }
+    },
+    {
+      "lemma": "despair",
+      "turkishReference": "umutsuzluk",
+      "example": "In despair, he jumped from the tower and thorns injured his eyes.",
+      "catalogContexts": [
+        "In despair, he jumped from the tower and thorns injured his eyes."
+      ],
+      "translations": {
+        "es-419": "desesperación",
+        "pt-BR": "desespero",
+        "id": "keputusasaan",
+        "ar": "يأس",
+        "vi": "sự tuyệt vọng",
+        "hi": "निराशा",
+        "ru": "отчаяние",
+        "bn": "হতাশা",
+        "ur": "مایوسی",
+        "th": "ความสิ้นหวัง"
+      }
+    },
+    {
+      "lemma": "desperately",
+      "turkishReference": "çaresizce",
+      "example": "When winter came, she became cold and desperately hungry.",
+      "catalogContexts": [
+        "When winter came, she became cold and desperately hungry."
+      ],
+      "translations": {
+        "es-419": "desesperadamente",
+        "pt-BR": "desesperadamente",
+        "id": "dengan putus asa",
+        "ar": "بيأس",
+        "vi": "một cách tuyệt vọng",
+        "hi": "बेताबी से",
+        "ru": "отчаянно",
+        "bn": "মরিয়া হয়ে",
+        "ur": "بے تابی سے",
+        "th": "อย่างสิ้นหวัง"
+      }
+    },
+    {
+      "lemma": "destroyed",
+      "turkishReference": "yok etti",
+      "example": "The king ordered every spindle in the kingdom to be destroyed.",
+      "catalogContexts": [
+        "The king ordered every spindle in the kingdom to be destroyed."
+      ],
+      "translations": {
+        "es-419": "destruyó",
+        "pt-BR": "destruiu",
+        "id": "menghancurkan",
+        "ar": "دمّر",
+        "vi": "đã phá hủy",
+        "hi": "नष्ट कर दिया",
+        "ru": "разрушил",
+        "bn": "ধ্বংস করল",
+        "ur": "تباہ کر دیا",
+        "th": "ทำลาย"
+      }
+    },
+    {
+      "lemma": "diamond",
+      "turkishReference": "elmas",
+      "example": "The flame revealed a small scar near his eyebrow and a large diamond on his tie.",
+      "catalogContexts": [
+        "The flame revealed a small scar near his eyebrow and a large diamond on his tie.",
+        "They passed through woods with silver, gold, and diamond leaves."
+      ],
+      "translations": {
+        "es-419": "diamante",
+        "pt-BR": "diamante",
+        "id": "berlian",
+        "ar": "ألماس",
+        "vi": "kim cương",
+        "hi": "हीरा",
+        "ru": "алмаз",
+        "bn": "হীরা",
+        "ur": "ہیرا",
+        "th": "เพชร"
+      }
+    },
+    {
+      "lemma": "die",
+      "turkishReference": "ölmek",
+      "example": "At fifteen, the girl would prick her finger on a spindle and die.",
+      "catalogContexts": [
+        "At fifteen, the girl would prick her finger on a spindle and die."
+      ],
+      "translations": {
+        "es-419": "morir",
+        "pt-BR": "morrer",
+        "id": "mati",
+        "ar": "يموت",
+        "vi": "chết",
+        "hi": "मरना",
+        "ru": "умереть",
+        "bn": "মরা",
+        "ur": "مرنا",
+        "th": "ตาย"
+      }
+    },
+    {
+      "lemma": "died",
+      "turkishReference": "öldü",
+      "example": "They filled the wolf's belly with stones, and he died when he tried to run.",
+      "catalogContexts": [
+        "They filled the wolf's belly with stones, and he died when he tried to run.",
+        "After her mother died, a young girl lived with her father and his new family.",
+        "She shut the door, and the witch died inside.",
+        "Their stepmother had died, and their father welcomed them with joy.",
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet.",
+        "After the queen died, the king married another woman.",
+        "As the flame died, its lights rose and became stars."
+      ],
+      "translations": {
+        "es-419": "murió",
+        "pt-BR": "morreu",
+        "id": "meninggal",
+        "ar": "مات",
+        "vi": "đã chết",
+        "hi": "मर गया",
+        "ru": "умер",
+        "bn": "মারা গেল",
+        "ur": "مر گیا",
+        "th": "ตาย"
+      }
+    },
+    {
+      "lemma": "different",
+      "turkishReference": "farklı",
+      "example": "The shape of his nose was different, and Bob realized he was not Jimmy.",
+      "catalogContexts": [
+        "The shape of his nose was different, and Bob realized he was not Jimmy.",
+        "He looked different from the others, but he could swim very well."
+      ],
+      "translations": {
+        "es-419": "diferente",
+        "pt-BR": "diferente",
+        "id": "berbeda",
+        "ar": "مختلف",
+        "vi": "khác",
+        "hi": "अलग",
+        "ru": "разный",
+        "bn": "ভিন্ন",
+        "ur": "مختلف",
+        "th": "แตกต่าง"
+      }
+    },
+    {
+      "lemma": "difficult",
+      "turkishReference": "zor",
+      "example": "Jim's wages had fallen, and saving even a few pennies had been difficult.",
+      "catalogContexts": [
+        "Jim's wages had fallen, and saving even a few pennies had been difficult.",
+        "A clever idea can solve a difficult problem."
+      ],
+      "translations": {
+        "es-419": "difícil",
+        "pt-BR": "difícil",
+        "id": "sulit",
+        "ar": "صعب",
+        "vi": "khó",
+        "hi": "कठिन",
+        "ru": "трудный",
+        "bn": "কঠিন",
+        "ur": "مشکل",
+        "th": "ยาก"
+      }
+    },
+    {
+      "lemma": "disappear",
+      "turkishReference": "kaybolmak",
+      "example": "Through the window, they watched the village lights disappear.",
+      "catalogContexts": [
+        "Through the window, they watched the village lights disappear.",
+        "Her money, chickens, and dress disappear with it.",
+        "The girl begged her not to disappear like the stove, supper, and tree."
+      ],
+      "translations": {
+        "es-419": "desaparecer",
+        "pt-BR": "desaparecer",
+        "id": "menghilang",
+        "ar": "يختفي",
+        "vi": "biến mất",
+        "hi": "गायब होना",
+        "ru": "исчезнуть",
+        "bn": "অদৃশ্য হওয়া",
+        "ur": "غائب ہونا",
+        "th": "หายไป"
+      }
+    },
+    {
+      "lemma": "distant",
+      "turkishReference": "uzak",
+      "example": "A queen sent her daughter to marry a prince in a distant kingdom.",
+      "catalogContexts": [
+        "A queen sent her daughter to marry a prince in a distant kingdom.",
+        "In their distant home, she dreamed of a fairy who told her how to break the spell."
+      ],
+      "translations": {
+        "es-419": "lejano",
+        "pt-BR": "distante",
+        "id": "jauh",
+        "ar": "بعيد",
+        "vi": "xa xôi",
+        "hi": "दूर का",
+        "ru": "далёкий",
+        "bn": "দূরের",
+        "ur": "دور کا",
+        "th": "ห่างไกล"
+      }
+    },
+    {
+      "lemma": "do",
+      "turkishReference": "yapmak",
+      "example": "The ants do not offer him any grain.",
+      "catalogContexts": [
+        "The tortoise does not stop.",
+        "\"Why did you not store food in summer?\" they ask.",
+        "The ants do not offer him any grain.",
+        "Her stepmother and stepsisters made her do all the hard work.",
+        "But the little boy who had changed his heart did not return.",
+        "Unable to arrest his old friend himself, he had asked another officer to do it.",
+        "The villagers do not believe him anymore.",
+        "\"You do not want this food,\" one says."
+      ],
+      "translations": {
+        "es-419": "hacer",
+        "pt-BR": "fazer",
+        "id": "melakukan",
+        "ar": "يفعل",
+        "vi": "làm",
+        "hi": "करना",
+        "ru": "делать",
+        "bn": "করা",
+        "ur": "کرنا",
+        "th": "ทำ"
+      }
+    },
+    {
+      "lemma": "dollar",
+      "turkishReference": "dolar",
+      "example": "She had only one dollar and eighty-seven cents to buy a present for Jim.",
+      "catalogContexts": [
+        "She had only one dollar and eighty-seven cents to buy a present for Jim."
+      ],
+      "translations": {
+        "es-419": "dólar",
+        "pt-BR": "dólar",
+        "id": "dolar",
+        "ar": "دولار",
+        "vi": "đô la",
+        "hi": "डॉलर",
+        "ru": "доллар",
+        "bn": "ডলার",
+        "ur": "ڈالر",
+        "th": "ดอลลาร์"
+      }
+    },
+    {
+      "lemma": "door",
+      "turkishReference": "kapı",
+      "example": "She takes her red umbrella and opens the door.",
+      "catalogContexts": [
+        "She takes her red umbrella and opens the door.",
+        "When the girl arrived, the door was open.",
+        "They kept the door shut and filled a trough with water that smelled of sausages.",
+        "The next morning, she locked Hansel behind a barred door.",
+        "She shut the door, and the witch died inside.",
+        "When he opened the door, he stood still and stared at her.",
+        "But someone opens the door before they can eat.",
+        "They warned her not to open the door to strangers."
+      ],
+      "translations": {
+        "es-419": "puerta",
+        "pt-BR": "porta",
+        "id": "pintu",
+        "ar": "باب",
+        "vi": "cửa",
+        "hi": "दरवाज़ा",
+        "ru": "дверь",
+        "bn": "দরজা",
+        "ur": "دروازہ",
+        "th": "ประตู"
+      }
+    },
+    {
+      "lemma": "doorway",
+      "turkishReference": "kapı aralığı",
+      "example": "In a dark doorway, he noticed a man waiting with an unlit cigar.",
+      "catalogContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar.",
+        "He was the first policeman who had spoken to Bob in the doorway.",
+        "He saw the dancer still standing in the doorway of the toy castle."
+      ],
+      "translations": {
+        "es-419": "vano de la puerta",
+        "pt-BR": "vão da porta",
+        "id": "ambang pintu",
+        "ar": "مدخل الباب",
+        "vi": "ô cửa",
+        "hi": "दरवाज़े का मार्ग",
+        "ru": "дверной проём",
+        "bn": "দরজার ফাঁক",
+        "ur": "دروازے کا راستہ",
+        "th": "ช่องประตู"
+      }
+    },
+    {
+      "lemma": "dough",
+      "turkishReference": "hamur",
+      "example": "He covered his paw with dough and white flour.",
+      "catalogContexts": [
+        "He covered his paw with dough and white flour."
+      ],
+      "translations": {
+        "es-419": "masa",
+        "pt-BR": "massa",
+        "id": "adonan",
+        "ar": "عجين",
+        "vi": "bột nhào",
+        "hi": "आटा",
+        "ru": "тесто",
+        "bn": "ময়দার তাল",
+        "ur": "گندھا ہوا آٹا",
+        "th": "แป้งโดว์"
+      }
+    },
+    {
+      "lemma": "down",
+      "turkishReference": "aşağı",
+      "example": "He lies down and falls asleep.",
+      "catalogContexts": [
+        "He lies down and falls asleep.",
+        "The wolf leaned down from the roof, fell into the water, and drowned.",
+        "The next morning, the mayor saw only an ugly statue and ordered it taken down.",
+        "The giant knocked down the wall and gave them the garden to play in.",
+        "Jim sat down and suggested putting their presents away for a while.",
+        "After wishing him luck, the officer continued down the street.",
+        "When he looks down, he sees his reflection.",
+        "The enchantress called from below, and Rapunzel let down her long hair."
+      ],
+      "translations": {
+        "es-419": "abajo",
+        "pt-BR": "para baixo",
+        "id": "ke bawah",
+        "ar": "لأسفل",
+        "vi": "xuống",
+        "hi": "नीचे",
+        "ru": "вниз",
+        "bn": "নিচে",
+        "ur": "نیچے",
+        "th": "ลง"
+      }
+    },
+    {
+      "lemma": "downstream",
+      "turkishReference": "akıntı yönünde",
+      "example": "She offered the river her red shoes and was carried downstream in a little boat.",
+      "catalogContexts": [
+        "She offered the river her red shoes and was carried downstream in a little boat."
+      ],
+      "translations": {
+        "es-419": "río abajo",
+        "pt-BR": "rio abaixo",
+        "id": "searah arus",
+        "ar": "مع التيار",
+        "vi": "xuôi dòng",
+        "hi": "धारा की दिशा में",
+        "ru": "вниз по течению",
+        "bn": "স্রোতের দিকে",
+        "ur": "بہاؤ کی سمت میں",
+        "th": "ตามกระแสน้ำ"
+      }
+    },
+    {
+      "lemma": "draw",
+      "turkishReference": "çekmek (kendine doğru)",
+      "example": "One morning, a bird's song drew him to the window.",
+      "catalogContexts": [
+        "One morning, a bird's song drew him to the window.",
+        "She saw a prince celebrating on a ship and was drawn to him.",
+        "She sat in a corner between two houses and drew her feet beneath her."
+      ],
+      "translations": {
+        "es-419": "tirar hacia sí",
+        "pt-BR": "puxar para si",
+        "id": "menarik ke arah diri",
+        "ar": "يسحب نحوه",
+        "vi": "kéo về phía mình",
+        "hi": "अपनी ओर खींचना",
+        "ru": "тянуть к себе",
+        "bn": "নিজের দিকে টানা",
+        "ur": "اپنی طرف کھینچنا",
+        "th": "ดึงเข้าหาตัว"
+      }
+    },
+    {
+      "lemma": "drawing",
+      "turkishReference": "çizim",
+      "example": "There was no signature, only a drawing of a tiny bird in the corner.",
+      "catalogContexts": [
+        "There was no signature, only a drawing of a tiny bird in the corner.",
+        "Nora showed the letter to her grandmother, who became quiet when she saw the drawing.",
+        "A reply arrived a few days later, ending with the familiar drawing of a bird."
+      ],
+      "translations": {
+        "es-419": "dibujo",
+        "pt-BR": "desenho",
+        "id": "gambar",
+        "ar": "رسم",
+        "vi": "bức vẽ",
+        "hi": "चित्र",
+        "ru": "рисунок",
+        "bn": "আঁকা ছবি",
+        "ur": "ڈرائنگ",
+        "th": "ภาพวาด"
+      }
+    },
+    {
+      "lemma": "dreaded",
+      "turkishReference": "korktu",
+      "example": "Preparations began for her marriage to the mole, although she dreaded a life without the sun.",
+      "catalogContexts": [
+        "Preparations began for her marriage to the mole, although she dreaded a life without the sun."
+      ],
+      "translations": {
+        "es-419": "temió",
+        "pt-BR": "temeu",
+        "id": "takut",
+        "ar": "خشي",
+        "vi": "đã sợ hãi",
+        "hi": "डरा",
+        "ru": "страшился",
+        "bn": "ভয় পেল",
+        "ur": "ڈرا",
+        "th": "หวาดกลัว"
+      }
+    },
+    {
+      "lemma": "dreamed",
+      "turkishReference": "hayal etti, rüya gördü",
+      "example": "He had never dreamed that he could belong so completely.",
+      "catalogContexts": [
+        "He had never dreamed that he could belong so completely.",
+        "The youngest daughter of the sea king dreamed of the human world above the water.",
+        "He admired her from behind a small box and dreamed of being her companion.",
+        "In their distant home, she dreamed of a fairy who told her how to break the spell."
+      ],
+      "translations": {
+        "es-419": "soñó",
+        "pt-BR": "sonhou",
+        "id": "bermimpi; mengimpikan",
+        "ar": "حلم",
+        "vi": "đã mơ",
+        "hi": "सपना देखा",
+        "ru": "мечтал; видел сон",
+        "bn": "স্বপ্ন দেখল",
+        "ur": "خواب دیکھا",
+        "th": "ฝัน"
+      }
+    },
+    {
+      "lemma": "dreams",
+      "turkishReference": "rüyalar; hayaller",
+      "example": "As she dreams, she moves her real head.",
+      "catalogContexts": [
+        "As she dreams, she moves her real head."
+      ],
+      "translations": {
+        "es-419": "sueños",
+        "pt-BR": "sonhos",
+        "id": "mimpi",
+        "ar": "أحلام",
+        "vi": "những giấc mơ",
+        "hi": "सपने",
+        "ru": "сны; мечты",
+        "bn": "স্বপ্নগুলো",
+        "ur": "خواب",
+        "th": "ความฝัน"
+      }
+    },
+    {
+      "lemma": "drink",
+      "turkishReference": "içmek",
+      "example": "An ant goes to a river to drink.",
+      "catalogContexts": [
+        "An ant goes to a river to drink.",
+        "He demanded impossible amounts of food and drink, and a ship that could travel on land and water.",
+        "When the wolf woke, he went to a well to drink.",
+        "She told him not to drink the wine offered by the princesses.",
+        "As the princess bent down to drink, she lost the cloth in a stream.",
+        "Despite these warnings, she drank the potion on the shore near the palace."
+      ],
+      "translations": {
+        "es-419": "beber",
+        "pt-BR": "beber",
+        "id": "minum",
+        "ar": "يشرب",
+        "vi": "uống",
+        "hi": "पीना",
+        "ru": "пить",
+        "bn": "পান করা",
+        "ur": "پینا",
+        "th": "ดื่ม"
+      }
+    },
+    {
+      "lemma": "driver",
+      "turkishReference": "sürücü",
+      "example": "Its driver was the Snow Queen, who carried him far away.",
+      "catalogContexts": [
+        "Its driver was the Snow Queen, who carried him far away."
+      ],
+      "translations": {
+        "es-419": "conductor",
+        "pt-BR": "motorista",
+        "id": "pengemudi",
+        "ar": "سائق",
+        "vi": "tài xế",
+        "hi": "ड्राइवर",
+        "ru": "водитель",
+        "bn": "চালক",
+        "ur": "ڈرائیور",
+        "th": "คนขับ"
+      }
+    },
+    {
+      "lemma": "drop",
+      "turkishReference": "düşürmek; damla",
+      "example": "This time, Hansel could only drop bread crumbs on the path.",
+      "catalogContexts": [
+        "This time, Hansel could only drop bread crumbs on the path."
+      ],
+      "translations": {
+        "es-419": "dejar caer; gota",
+        "pt-BR": "deixar cair; gota",
+        "id": "menjatuhkan; tetes",
+        "ar": "يُسقط؛ قطرة",
+        "vi": "làm rơi; giọt",
+        "hi": "गिराना; बूँद",
+        "ru": "уронить; капля",
+        "bn": "ফেলে দেওয়া; ফোঁটা",
+        "ur": "گرانا؛ قطرہ",
+        "th": "ทำตก; หยด"
+      }
+    },
+    {
+      "lemma": "drowned",
+      "turkishReference": "boğuldu",
+      "example": "The wolf leaned down from the roof, fell into the water, and drowned.",
+      "catalogContexts": [
+        "The wolf leaned down from the roof, fell into the water, and drowned.",
+        "The heavy stones pulled him into the water, and he drowned."
+      ],
+      "translations": {
+        "es-419": "se ahogó",
+        "pt-BR": "afogou-se",
+        "id": "tenggelam",
+        "ar": "غرق",
+        "vi": "đã chết đuối",
+        "hi": "डूब गया",
+        "ru": "утонул",
+        "bn": "ডুবে মরল",
+        "ur": "ڈوب گیا",
+        "th": "จมน้ำ"
+      }
+    },
+    {
+      "lemma": "due",
+      "turkishReference": "(zamanı) gelmiş, gelmesi beklenen",
+      "example": "The last train was due in twenty minutes.",
+      "catalogContexts": [
+        "The last train was due in twenty minutes."
+      ],
+      "translations": {
+        "es-419": "esperado; debido",
+        "pt-BR": "esperado; devido",
+        "id": "dijadwalkan; seharusnya",
+        "ar": "مُتوقَّع؛ مستحق",
+        "vi": "đến hạn; dự kiến",
+        "hi": "नियत; अपेक्षित",
+        "ru": "ожидаемый; должный",
+        "bn": "নির্ধারিত; প্রত্যাশিত",
+        "ur": "متوقع؛ واجب",
+        "th": "ถึงกำหนด; คาดว่า"
+      }
+    },
+    {
+      "lemma": "dull",
+      "turkishReference": "donuk; sıkıcı",
+      "example": "As the statue became dull and grey, children in the streets could finally buy bread.",
+      "catalogContexts": [
+        "As the statue became dull and grey, children in the streets could finally buy bread."
+      ],
+      "translations": {
+        "es-419": "apagado; aburrido",
+        "pt-BR": "opaco; chato",
+        "id": "kusam; membosankan",
+        "ar": "باهت؛ ممل",
+        "vi": "xỉn; nhàm chán",
+        "hi": "फीका; उबाऊ",
+        "ru": "тусклый; скучный",
+        "bn": "নিস্তেজ; বিরক্তিকর",
+        "ur": "مدھم؛ بورنگ",
+        "th": "หมอง; น่าเบื่อ"
+      }
+    },
+    {
+      "lemma": "during",
+      "turkishReference": "boyunca, sırasında",
+      "example": "During winter, he tied his little sledge to a larger one in the town square.",
+      "catalogContexts": [
+        "During winter, he tied his little sledge to a larger one in the town square.",
+        "They could not see the visions that had comforted her during her final night."
+      ],
+      "translations": {
+        "es-419": "durante",
+        "pt-BR": "durante",
+        "id": "selama",
+        "ar": "خلال",
+        "vi": "trong suốt",
+        "hi": "के दौरान",
+        "ru": "во время",
+        "bn": "সময়কালে",
+        "ur": "کے دوران",
+        "th": "ระหว่าง"
+      }
+    },
+    {
+      "lemma": "each",
+      "turkishReference": "her bir",
+      "example": "Each stepsister injured her foot to force it into the slipper.",
+      "catalogContexts": [
+        "Each stepsister injured her foot to force it into the slipper.",
+        "Gretel freed her brother, and they hugged each other.",
+        "Each day, he flew over the city and described the hungry families he saw.",
+        "Each had given up a treasured possession to make the other happy.",
+        "Each thinks he is stronger.",
+        "Both friends are safe because they help each other.",
+        "They often argue with each other.",
+        "Each son tries, but nobody can break it."
+      ],
+      "translations": {
+        "es-419": "cada",
+        "pt-BR": "cada",
+        "id": "setiap",
+        "ar": "كل",
+        "vi": "mỗi",
+        "hi": "हर एक",
+        "ru": "каждый",
+        "bn": "প্রতিটি",
+        "ur": "ہر ایک",
+        "th": "แต่ละ"
+      }
+    },
+    {
+      "lemma": "ear",
+      "turkishReference": "kulak",
+      "example": "One day, he guided his father's horse while sitting inside its ear.",
+      "catalogContexts": [
+        "One day, he guided his father's horse while sitting inside its ear."
+      ],
+      "translations": {
+        "es-419": "oreja",
+        "pt-BR": "orelha",
+        "id": "telinga",
+        "ar": "أذن",
+        "vi": "tai",
+        "hi": "कान",
+        "ru": "ухо",
+        "bn": "কান",
+        "ur": "کان",
+        "th": "หู"
+      }
+    },
+    {
+      "lemma": "earlier",
+      "turkishReference": "daha önce",
+      "example": "The man quickly explained that he was keeping an appointment made twenty years earlier.",
+      "catalogContexts": [
+        "The man quickly explained that he was keeping an appointment made twenty years earlier."
+      ],
+      "translations": {
+        "es-419": "antes",
+        "pt-BR": "antes",
+        "id": "sebelumnya",
+        "ar": "سابقاً",
+        "vi": "trước đó",
+        "hi": "पहले",
+        "ru": "раньше",
+        "bn": "আগে",
+        "ur": "پہلے",
+        "th": "ก่อนหน้านี้"
+      }
+    },
+    {
+      "lemma": "easy",
+      "turkishReference": "kolay",
+      "example": "\"Alone, each of you is easy to hurt.\"",
+      "catalogContexts": [
+        "\"Alone, each of you is easy to hurt.\""
+      ],
+      "translations": {
+        "es-419": "fácil",
+        "pt-BR": "fácil",
+        "id": "mudah",
+        "ar": "سهل",
+        "vi": "dễ",
+        "hi": "आसान",
+        "ru": "лёгкий",
+        "bn": "সহজ",
+        "ur": "آسان",
+        "th": "ง่าย"
+      }
+    },
+    {
+      "lemma": "eat",
+      "turkishReference": "yemek",
+      "example": "She wants to eat them.",
+      "catalogContexts": [
+        "She wants to eat them.",
+        "The grasshopper has nothing to eat.",
+        "\"It helps me eat you!\" he cried, and swallowed her.",
+        "The animals ate their supper and found places to sleep.",
+        "But birds ate the crumbs, and the children could not find their way back.",
+        "The hungry children began to eat pieces of the house.",
+        "But she was a witch who wanted to eat them.",
+        "A restaurant had once stood there, and he had eaten his last dinner in New York inside it."
+      ],
+      "translations": {
+        "es-419": "comer",
+        "pt-BR": "comer",
+        "id": "makan",
+        "ar": "يأكل",
+        "vi": "ăn",
+        "hi": "खाना",
+        "ru": "есть",
+        "bn": "খাওয়া",
+        "ur": "کھانا",
+        "th": "กิน"
+      }
+    },
+    {
+      "lemma": "ebony",
+      "turkishReference": "abanoz",
+      "example": "A queen had a daughter with skin as white as snow and hair as black as ebony.",
+      "catalogContexts": [
+        "A queen had a daughter with skin as white as snow and hair as black as ebony."
+      ],
+      "translations": {
+        "es-419": "ébano",
+        "pt-BR": "ébano",
+        "id": "eboni",
+        "ar": "أبنوس",
+        "vi": "gỗ mun",
+        "hi": "आबनूस",
+        "ru": "чёрное дерево",
+        "bn": "আবলুস",
+        "ur": "آبنوس",
+        "th": "ไม้มะเกลือ"
+      }
+    },
+    {
+      "lemma": "egypt",
+      "turkishReference": "(özel ad) Mısır",
+      "example": "One evening, a swallow stopped at its feet on his way to Egypt.",
+      "catalogContexts": [
+        "One evening, a swallow stopped at its feet on his way to Egypt."
+      ],
+      "translations": {
+        "es-419": "(nombre propio) Egipto",
+        "pt-BR": "(nome próprio) Egito",
+        "id": "(nama diri) Mesir",
+        "ar": "(اسم علم) مصر",
+        "vi": "(tên riêng) Ai Cập",
+        "hi": "(व्यक्तिवाचक नाम) मिस्र",
+        "ru": "(имя собственное) Египет",
+        "bn": "(নাম) মিশর",
+        "ur": "(نام) مصر",
+        "th": "(ชื่อเฉพาะ) อียิปต์"
+      }
+    },
+    {
+      "lemma": "eighty",
+      "turkishReference": "seksen",
+      "example": "She had only one dollar and eighty-seven cents to buy a present for Jim.",
+      "catalogContexts": [
+        "She had only one dollar and eighty-seven cents to buy a present for Jim.",
+        "It cost twenty-one dollars, leaving her just eighty-seven cents."
+      ],
+      "translations": {
+        "es-419": "ochenta",
+        "pt-BR": "oitenta",
+        "id": "delapan puluh",
+        "ar": "ثمانون",
+        "vi": "tám mươi",
+        "hi": "अस्सी",
+        "ru": "восемьдесят",
+        "bn": "আশি",
+        "ur": "اسی",
+        "th": "แปดสิบ"
+      }
+    },
+    {
+      "lemma": "either",
+      "turkishReference": "de (olumsuzda), ... da değil",
+      "example": "When the emperor visited the workshop, he could not see any cloth either.",
+      "catalogContexts": [
+        "When the emperor visited the workshop, he could not see any cloth either."
+      ],
+      "translations": {
+        "es-419": "tampoco; cualquiera de los dos",
+        "pt-BR": "também não; qualquer um",
+        "id": "juga tidak",
+        "ar": "أيضاً (في النفي)",
+        "vi": "cũng không",
+        "hi": "भी नहीं",
+        "ru": "тоже (в отрицании)",
+        "bn": "ও না (নেতিবাচক)",
+        "ur": "بھی نہیں (منفی میں)",
+        "th": "ก็ไม่ (ในประโยคปฏิเสธ)"
+      }
+    },
+    {
+      "lemma": "eldest",
+      "turkishReference": "en büyük",
+      "example": "The eldest princess opened a hidden door beneath her bed.",
+      "catalogContexts": [
+        "The eldest princess opened a hidden door beneath her bed.",
+        "The soldier chose to marry the eldest princess and was promised the kingdom."
+      ],
+      "translations": {
+        "es-419": "mayor",
+        "pt-BR": "mais velho",
+        "id": "tertua",
+        "ar": "الأكبر",
+        "vi": "lớn nhất",
+        "hi": "सबसे बड़ा",
+        "ru": "старший",
+        "bn": "সবচেয়ে বড়",
+        "ur": "سب سے بڑا",
+        "th": "คนโตที่สุด"
+      }
+    },
+    {
+      "lemma": "eleven",
+      "turkishReference": "on bir",
+      "example": "A king had eleven sons and a daughter named Elisa.",
+      "catalogContexts": [
+        "A king had eleven sons and a daughter named Elisa.",
+        "She reached the sea and found eleven swan feathers on the shore.",
+        "She must gather nettles and weave eleven shirts from their fibres.",
+        "The eleven swans arrived and flew around her."
+      ],
+      "translations": {
+        "es-419": "once",
+        "pt-BR": "onze",
+        "id": "sebelas",
+        "ar": "أحد عشر",
+        "vi": "mười một",
+        "hi": "ग्यारह",
+        "ru": "одиннадцать",
+        "bn": "এগারো",
+        "ur": "گیارہ",
+        "th": "สิบเอ็ด"
+      }
+    },
+    {
+      "lemma": "elisa",
+      "turkishReference": "(özel ad)",
+      "example": "A king had eleven sons and a daughter named Elisa.",
+      "catalogContexts": [
+        "A king had eleven sons and a daughter named Elisa.",
+        "The queen sent Elisa away and turned her brothers into wild swans.",
+        "When Elisa returned as a young woman, the queen made her look so strange that her father rejected her.",
+        "Alone in the forest, Elisa washed away the disguise and went looking for her brothers.",
+        "The brothers carried Elisa across the sea in a net, racing against the sunset.",
+        "Elisa accepted the painful task and began to work in silence.",
+        "At night, Elisa visited a churchyard to gather more nettles.",
+        "Now Elisa could speak and explain that she was innocent."
+      ],
+      "translations": {
+        "es-419": "(nombre propio)",
+        "pt-BR": "(nome próprio)",
+        "id": "(nama diri)",
+        "ar": "(اسم علم)",
+        "vi": "(tên riêng)",
+        "hi": "(व्यक्तिवाचक नाम)",
+        "ru": "(имя собственное)",
+        "bn": "(নাম)",
+        "ur": "(نام)",
+        "th": "(ชื่อเฉพาะ)"
+      }
+    },
+    {
+      "lemma": "else",
+      "turkishReference": "başka",
+      "example": "Without knowing what else to do, she agreed.",
+      "catalogContexts": [
+        "Without knowing what else to do, she agreed.",
+        "An emperor loved fine clothes more than anything else in his kingdom."
+      ],
+      "translations": {
+        "es-419": "más; otro",
+        "pt-BR": "mais; outro",
+        "id": "lain",
+        "ar": "آخر",
+        "vi": "khác",
+        "hi": "और",
+        "ru": "ещё; другой",
+        "bn": "অন্য",
+        "ur": "اور، دوسرا",
+        "th": "อื่น"
+      }
+    },
+    {
+      "lemma": "embraced",
+      "turkishReference": "kucakladı",
+      "example": "They embraced, and the ice pieces formed the word that freed him.",
+      "catalogContexts": [
+        "They embraced, and the ice pieces formed the word that freed him."
+      ],
+      "translations": {
+        "es-419": "abrazó",
+        "pt-BR": "abraçou",
+        "id": "memeluk",
+        "ar": "احتضن",
+        "vi": "đã ôm",
+        "hi": "गले लगाया",
+        "ru": "обнял",
+        "bn": "জড়িয়ে ধরল",
+        "ur": "گلے لگایا",
+        "th": "กอด"
+      }
+    },
+    {
+      "lemma": "empty",
+      "turkishReference": "boş",
+      "example": "Beyond it was a patch of empty ground that received sunlight for most of the day.",
+      "catalogContexts": [
+        "Beyond it was a patch of empty ground that received sunlight for most of the day.",
+        "They filled the empty space with stones, and she sewed it shut.",
+        "They kept the valuable materials and pretended to weave at empty looms.",
+        "At last, she entered the vast, empty halls of the Snow Queen's palace."
+      ],
+      "translations": {
+        "es-419": "vacío",
+        "pt-BR": "vazio",
+        "id": "kosong",
+        "ar": "فارغ",
+        "vi": "trống",
+        "hi": "खाली",
+        "ru": "пустой",
+        "bn": "খালি",
+        "ur": "خالی",
+        "th": "ว่างเปล่า"
+      }
+    },
+    {
+      "lemma": "enchanted",
+      "turkishReference": "büyülü",
+      "example": "An old woman welcomed her into an enchanted garden and tried to make her forget her search.",
+      "catalogContexts": [
+        "An old woman welcomed her into an enchanted garden and tried to make her forget her search."
+      ],
+      "translations": {
+        "es-419": "encantado",
+        "pt-BR": "encantado",
+        "id": "terpesona; ajaib",
+        "ar": "مسحور",
+        "vi": "bị mê hoặc; phép thuật",
+        "hi": "मंत्रमुग्ध; जादुई",
+        "ru": "заколдованный",
+        "bn": "জাদুমন্ত্রে মুগ্ধ",
+        "ur": "سحر زدہ",
+        "th": "ถูกมนตร์สะกด"
+      }
+    },
+    {
+      "lemma": "end",
+      "turkishReference": "son",
+      "example": "They hurried to the station at the end of the village.",
+      "catalogContexts": [
+        "They hurried to the station at the end of the village.",
+        "Inside the giant's walls, however, winter refused to end.",
+        "The little mermaid knew that sunrise would bring the end of her life."
+      ],
+      "translations": {
+        "es-419": "fin; final",
+        "pt-BR": "fim; final",
+        "id": "akhir",
+        "ar": "نهاية",
+        "vi": "kết thúc",
+        "hi": "अंत",
+        "ru": "конец",
+        "bn": "শেষ",
+        "ur": "اختتام",
+        "th": "จุดจบ"
+      }
+    },
+    {
+      "lemma": "energy",
+      "turkishReference": "enerji",
+      "example": "Though he never grew taller, he was clever and full of energy.",
+      "catalogContexts": [
+        "Though he never grew taller, he was clever and full of energy."
+      ],
+      "translations": {
+        "es-419": "energía",
+        "pt-BR": "energia",
+        "id": "energi",
+        "ar": "طاقة",
+        "vi": "năng lượng",
+        "hi": "ऊर्जा",
+        "ru": "энергия",
+        "bn": "শক্তি",
+        "ur": "توانائی",
+        "th": "พลังงาน"
+      }
+    },
+    {
+      "lemma": "enjoyed",
+      "turkishReference": "keyif aldı",
+      "example": "The grandmother enjoyed her food, and the girl remembered her mother's warning.",
+      "catalogContexts": [
+        "The grandmother enjoyed her food, and the girl remembered her mother's warning."
+      ],
+      "translations": {
+        "es-419": "disfrutó",
+        "pt-BR": "aproveitou",
+        "id": "menikmati",
+        "ar": "استمتع",
+        "vi": "đã tận hưởng",
+        "hi": "आनंद लिया",
+        "ru": "наслаждался",
+        "bn": "উপভোগ করল",
+        "ur": "لطف اٹھایا",
+        "th": "เพลิดเพลิน"
+      }
+    },
+    {
+      "lemma": "enormous",
+      "turkishReference": "devasa",
+      "example": "Then she noticed his enormous mouth.",
+      "catalogContexts": [
+        "Then she noticed his enormous mouth."
+      ],
+      "translations": {
+        "es-419": "enorme",
+        "pt-BR": "enorme",
+        "id": "sangat besar",
+        "ar": "ضخم",
+        "vi": "khổng lồ",
+        "hi": "विशाल",
+        "ru": "огромный",
+        "bn": "বিশাল",
+        "ur": "عظیم",
+        "th": "มหึมา"
+      }
+    },
+    {
+      "lemma": "enough",
+      "turkishReference": "yeterli",
+      "example": "But one egg a day is not enough for him.",
+      "catalogContexts": [
+        "But one egg a day is not enough for him.",
+        "A customer paid enough for him to buy leather for two more pairs.",
+        "Safe at home, Tom said he had seen enough of the world for a while.",
+        "The last soldier had only one leg because there had not been enough tin.",
+        "The boat was small enough to fit in his hand."
+      ],
+      "translations": {
+        "es-419": "suficiente",
+        "pt-BR": "suficiente",
+        "id": "cukup",
+        "ar": "كافٍ",
+        "vi": "đủ",
+        "hi": "काफ़ी",
+        "ru": "достаточно",
+        "bn": "যথেষ্ট",
+        "ur": "کافی",
+        "th": "เพียงพอ"
+      }
+    },
+    {
+      "lemma": "enter",
+      "turkishReference": "girmek",
+      "example": "Tom persuaded the wolf to enter his parents' house for a great meal.",
+      "catalogContexts": [
+        "Tom persuaded the wolf to enter his parents' house for a great meal."
+      ],
+      "translations": {
+        "es-419": "entrar",
+        "pt-BR": "entrar",
+        "id": "masuk",
+        "ar": "يدخل",
+        "vi": "bước vào",
+        "hi": "प्रवेश करना",
+        "ru": "входить",
+        "bn": "প্রবেশ করা",
+        "ur": "داخل ہونا",
+        "th": "เข้า"
+      }
+    },
+    {
+      "lemma": "enthusiastic",
+      "turkishReference": "hevesli",
+      "example": "So he praised the wonderful colours and returned with an enthusiastic report.",
+      "catalogContexts": [
+        "So he praised the wonderful colours and returned with an enthusiastic report."
+      ],
+      "translations": {
+        "es-419": "entusiasta",
+        "pt-BR": "entusiasmado",
+        "id": "antusias",
+        "ar": "متحمس",
+        "vi": "nhiệt tình",
+        "hi": "उत्साही",
+        "ru": "увлечённый",
+        "bn": "উৎসাহী",
+        "ur": "پرجوش",
+        "th": "กระตือรือร้น"
+      }
+    },
+    {
+      "lemma": "entirely",
+      "turkishReference": "tamamen",
+      "example": "He built a high wall because he wanted the garden entirely for himself.",
+      "catalogContexts": [
+        "He built a high wall because he wanted the garden entirely for himself."
+      ],
+      "translations": {
+        "es-419": "completamente",
+        "pt-BR": "inteiramente",
+        "id": "sepenuhnya",
+        "ar": "بالكامل",
+        "vi": "hoàn toàn",
+        "hi": "पूरी तरह",
+        "ru": "полностью",
+        "bn": "সম্পূর্ণভাবে",
+        "ur": "مکمل طور پر",
+        "th": "ทั้งหมด"
+      }
+    },
+    {
+      "lemma": "entrance",
+      "turkishReference": "giriş",
+      "example": "Nearby, a paper dancer stood at the entrance of a toy castle.",
+      "catalogContexts": [
+        "Nearby, a paper dancer stood at the entrance of a toy castle."
+      ],
+      "translations": {
+        "es-419": "entrada",
+        "pt-BR": "entrada",
+        "id": "pintu masuk",
+        "ar": "مدخل",
+        "vi": "lối vào",
+        "hi": "प्रवेश द्वार",
+        "ru": "вход",
+        "bn": "প্রবেশপথ",
+        "ur": "داخلی راستہ",
+        "th": "ทางเข้า"
+      }
+    },
+    {
+      "lemma": "escape",
+      "turkishReference": "kaçmak",
+      "example": "But the hunter let her escape into the forest.",
+      "catalogContexts": [
+        "But the hunter let her escape into the forest.",
+        "They planned to make a ladder of silk so that she could escape.",
+        "Tom told his father to accept because he knew how to escape."
+      ],
+      "translations": {
+        "es-419": "escapar",
+        "pt-BR": "escapar",
+        "id": "melarikan diri",
+        "ar": "يهرب",
+        "vi": "trốn thoát",
+        "hi": "भाग निकलना",
+        "ru": "убежать",
+        "bn": "পালানো",
+        "ur": "فرار ہونا",
+        "th": "หลบหนี"
+      }
+    },
+    {
+      "lemma": "especially",
+      "turkishReference": "özellikle",
+      "example": "The couple owned two things they were especially proud of.",
+      "catalogContexts": [
+        "The couple owned two things they were especially proud of."
+      ],
+      "translations": {
+        "es-419": "especialmente",
+        "pt-BR": "especialmente",
+        "id": "terutama",
+        "ar": "خصوصاً",
+        "vi": "đặc biệt là",
+        "hi": "ख़ासकर",
+        "ru": "особенно",
+        "bn": "বিশেষ করে",
+        "ur": "خاص طور پر",
+        "th": "โดยเฉพาะ"
+      }
+    },
+    {
+      "lemma": "eve",
+      "turkishReference": "arife (Noel arifesi)",
+      "example": "On Christmas Eve, Della counted her savings for the third time.",
+      "catalogContexts": [
+        "On Christmas Eve, Della counted her savings for the third time."
+      ],
+      "translations": {
+        "es-419": "víspera (Nochebuena)",
+        "pt-BR": "véspera (Natal)",
+        "id": "malam menjelang (Natal)",
+        "ar": "عشية (ليلة الميلاد)",
+        "vi": "đêm trước (Giáng sinh)",
+        "hi": "पूर्व संध्या (क्रिसमस की)",
+        "ru": "канун (Рождества)",
+        "bn": "আগের সন্ধ্যা (বড়দিনের)",
+        "ur": "شام سے پہلے کی رات (کرسمس کی)",
+        "th": "วันก่อน (คริสต์มาส)"
+      }
+    },
+    {
+      "lemma": "even",
+      "turkishReference": "bile",
+      "example": "Even a small friend can give great help.",
+      "catalogContexts": [
+        "Even a small friend can give great help.",
+        "Even then, her stepmother would not let her go.",
+        "She returned on the next two days in even finer dresses.",
+        "The Prince gave her his second sapphire, even though this left him blind.",
+        "Jim's wages had fallen, and saving even a few pennies had been difficult.",
+        "A liar can lose people's trust, even when he tells the truth.",
+        "A poor couple wished for a child, even one no bigger than a thumb.",
+        "The other animals mocked him, and even his brothers and sisters treated him cruelly."
+      ],
+      "translations": {
+        "es-419": "incluso; hasta",
+        "pt-BR": "até; mesmo",
+        "id": "bahkan",
+        "ar": "حتى",
+        "vi": "thậm chí",
+        "hi": "भी",
+        "ru": "даже",
+        "bn": "এমনকি",
+        "ur": "یہاں تک کہ",
+        "th": "แม้แต่"
+      }
+    },
+    {
+      "lemma": "eventually",
+      "turkishReference": "sonunda",
+      "example": "They had exchanged letters for a while, but eventually lost contact.",
+      "catalogContexts": [
+        "They had exchanged letters for a while, but eventually lost contact.",
+        "The lonely bird escaped and eventually reached a poor woman's cottage."
+      ],
+      "translations": {
+        "es-419": "finalmente",
+        "pt-BR": "por fim",
+        "id": "akhirnya",
+        "ar": "في النهاية",
+        "vi": "cuối cùng",
+        "hi": "आख़िरकार",
+        "ru": "в конце концов",
+        "bn": "অবশেষে",
+        "ur": "آخرکار",
+        "th": "ในที่สุด"
+      }
+    },
+    {
+      "lemma": "everyone",
+      "turkishReference": "herkes",
+      "example": "Everyone called the girl Little Red Riding Hood because of her red cap.",
+      "catalogContexts": [
+        "Everyone called the girl Little Red Riding Hood because of her red cap.",
+        "Everyone in the castle fell asleep with her.",
+        "Everyone feared being the first to say that something was wrong.",
+        "Soon everyone was saying what they had known all along."
+      ],
+      "translations": {
+        "es-419": "todos",
+        "pt-BR": "todos",
+        "id": "semua orang",
+        "ar": "الجميع",
+        "vi": "mọi người",
+        "hi": "हर कोई",
+        "ru": "все",
+        "bn": "সবাই",
+        "ur": "سب لوگ",
+        "th": "ทุกคน"
+      }
+    },
+    {
+      "lemma": "everything",
+      "turkishReference": "her şey",
+      "example": "This time, she went straight to her grandmother and told her everything.",
+      "catalogContexts": [
+        "This time, she went straight to her grandmother and told her everything.",
+        "The youngest came out and told her everything."
+      ],
+      "translations": {
+        "es-419": "todo",
+        "pt-BR": "tudo",
+        "id": "segalanya",
+        "ar": "كل شيء",
+        "vi": "mọi thứ",
+        "hi": "सब कुछ",
+        "ru": "всё",
+        "bn": "সবকিছু",
+        "ur": "سب کچھ",
+        "th": "ทุกสิ่ง"
+      }
+    },
+    {
+      "lemma": "everywhere",
+      "turkishReference": "her yerde",
+      "example": "She sent messengers to search for unusual names everywhere.",
+      "catalogContexts": [
+        "She sent messengers to search for unusual names everywhere."
+      ],
+      "translations": {
+        "es-419": "en todas partes",
+        "pt-BR": "em todo lugar",
+        "id": "di mana-mana",
+        "ar": "في كل مكان",
+        "vi": "khắp nơi",
+        "hi": "हर जगह",
+        "ru": "везде",
+        "bn": "সর্বত্র",
+        "ur": "ہر جگہ",
+        "th": "ทุกที่"
+      }
+    },
+    {
+      "lemma": "exact",
+      "turkishReference": "tam, kesin",
+      "example": "Before parting, they had promised to meet at that exact place twenty years later.",
+      "catalogContexts": [
+        "Before parting, they had promised to meet at that exact place twenty years later."
+      ],
+      "translations": {
+        "es-419": "exacto",
+        "pt-BR": "exato",
+        "id": "tepat",
+        "ar": "دقيق",
+        "vi": "chính xác",
+        "hi": "ठीक, सटीक",
+        "ru": "точный",
+        "bn": "সঠিক",
+        "ur": "عین، درست",
+        "th": "แน่นอน; ตรงเป๊ะ"
+      }
+    },
+    {
+      "lemma": "except",
+      "turkishReference": "hariç",
+      "example": "The forest was quiet except for birds in the trees.",
+      "catalogContexts": [
+        "The forest was quiet except for birds in the trees.",
+        "Back beneath the sea, she could think of little except the prince and his world."
+      ],
+      "translations": {
+        "es-419": "excepto",
+        "pt-BR": "exceto",
+        "id": "kecuali",
+        "ar": "باستثناء",
+        "vi": "trừ",
+        "hi": "को छोड़कर",
+        "ru": "кроме",
+        "bn": "ছাড়া",
+        "ur": "سوائے",
+        "th": "ยกเว้น"
+      }
+    },
+    {
+      "lemma": "exhausted",
+      "turkishReference": "bitkin",
+      "example": "One night, he became exhausted and was trapped in the ice.",
+      "catalogContexts": [
+        "One night, he became exhausted and was trapped in the ice."
+      ],
+      "translations": {
+        "es-419": "agotado",
+        "pt-BR": "exausto",
+        "id": "kelelahan",
+        "ar": "منهك",
+        "vi": "kiệt sức",
+        "hi": "थका हुआ",
+        "ru": "измождённый",
+        "bn": "ক্লান্ত",
+        "ur": "نڈھال",
+        "th": "หมดแรง"
+      }
+    },
+    {
+      "lemma": "exist",
+      "turkishReference": "var olmak",
+      "example": "Behind him, the attendants still carried a train that did not exist.",
+      "catalogContexts": [
+        "Behind him, the attendants still carried a train that did not exist."
+      ],
+      "translations": {
+        "es-419": "existir",
+        "pt-BR": "existir",
+        "id": "ada; eksis",
+        "ar": "يوجد",
+        "vi": "tồn tại",
+        "hi": "मौजूद होना",
+        "ru": "существовать",
+        "bn": "বিদ্যমান থাকা",
+        "ur": "موجود ہونا",
+        "th": "มีอยู่"
+      }
+    },
+    {
+      "lemma": "expected",
+      "turkishReference": "bekledi; beklenen",
+      "example": "Their small flat was cheap, but their expenses had still been greater than expected.",
+      "catalogContexts": [
+        "Their small flat was cheap, but their expenses had still been greater than expected."
+      ],
+      "translations": {
+        "es-419": "esperó; esperado",
+        "pt-BR": "esperou; esperado",
+        "id": "mengharapkan; diharapkan",
+        "ar": "توقّع؛ متوقَّع",
+        "vi": "đã mong đợi; được mong đợi",
+        "hi": "उम्मीद की; अपेक्षित",
+        "ru": "ожидал; ожидаемый",
+        "bn": "আশা করল; প্রত্যাশিত",
+        "ur": "امید کی؛ متوقع",
+        "th": "คาดหวัง; ที่คาดไว้"
+      }
+    },
+    {
+      "lemma": "expecting",
+      "turkishReference": "bekleyerek",
+      "example": "He approached them, expecting rejection even from these beautiful birds.",
+      "catalogContexts": [
+        "He approached them, expecting rejection even from these beautiful birds."
+      ],
+      "translations": {
+        "es-419": "esperando",
+        "pt-BR": "esperando",
+        "id": "menantikan",
+        "ar": "متوقعاً",
+        "vi": "đang mong đợi",
+        "hi": "उम्मीद करते हुए",
+        "ru": "ожидая",
+        "bn": "আশা করে",
+        "ur": "امید کرتے ہوئے",
+        "th": "คาดหวัง"
+      }
+    },
+    {
+      "lemma": "expenses",
+      "turkishReference": "masraflar",
+      "example": "Their small flat was cheap, but their expenses had still been greater than expected.",
+      "catalogContexts": [
+        "Their small flat was cheap, but their expenses had still been greater than expected."
+      ],
+      "translations": {
+        "es-419": "gastos",
+        "pt-BR": "despesas",
+        "id": "pengeluaran",
+        "ar": "مصاريف",
+        "vi": "chi phí",
+        "hi": "ख़र्चे",
+        "ru": "расходы",
+        "bn": "খরচ",
+        "ur": "اخراجات",
+        "th": "ค่าใช้จ่าย"
+      }
+    },
+    {
+      "lemma": "expensive",
+      "turkishReference": "pahalı",
+      "example": "Inside were the beautiful, expensive combs she had admired in a shop window.",
+      "catalogContexts": [
+        "Inside were the beautiful, expensive combs she had admired in a shop window."
+      ],
+      "translations": {
+        "es-419": "caro",
+        "pt-BR": "caro",
+        "id": "mahal",
+        "ar": "غالٍ",
+        "vi": "đắt",
+        "hi": "महँगा",
+        "ru": "дорогой",
+        "bn": "দামি",
+        "ur": "مہنگا",
+        "th": "แพง"
+      }
+    },
+    {
+      "lemma": "explain",
+      "turkishReference": "açıklamak",
+      "example": "Unable to explain his feelings, he left the cottage and returned to the open water.",
+      "catalogContexts": [
+        "Unable to explain his feelings, he left the cottage and returned to the open water.",
+        "Now Elisa could speak and explain that she was innocent."
+      ],
+      "translations": {
+        "es-419": "explicar",
+        "pt-BR": "explicar",
+        "id": "menjelaskan",
+        "ar": "يشرح",
+        "vi": "giải thích",
+        "hi": "समझाना",
+        "ru": "объяснять",
+        "bn": "ব্যাখ্যা করা",
+        "ur": "سمجھانا",
+        "th": "อธิบาย"
+      }
+    },
+    {
+      "lemma": "explanation",
+      "turkishReference": "açıklama",
+      "example": "Bob's hand trembled as he finished reading the explanation.",
+      "catalogContexts": [
+        "Bob's hand trembled as he finished reading the explanation."
+      ],
+      "translations": {
+        "es-419": "explicación",
+        "pt-BR": "explicação",
+        "id": "penjelasan",
+        "ar": "شرح",
+        "vi": "lời giải thích",
+        "hi": "स्पष्टीकरण",
+        "ru": "объяснение",
+        "bn": "ব্যাখ্যা",
+        "ur": "وضاحت",
+        "th": "คำอธิบาย"
+      }
+    },
+    {
+      "lemma": "explore",
+      "turkishReference": "keşfetmek",
+      "example": "She asked her friend Sam to explore the path with her.",
+      "catalogContexts": [
+        "She asked her friend Sam to explore the path with her."
+      ],
+      "translations": {
+        "es-419": "explorar",
+        "pt-BR": "explorar",
+        "id": "menjelajahi",
+        "ar": "يستكشف",
+        "vi": "khám phá",
+        "hi": "खोजबीन करना",
+        "ru": "исследовать",
+        "bn": "অন্বেষণ করা",
+        "ur": "کھوج لگانا",
+        "th": "สำรวจ"
+      }
+    },
+    {
+      "lemma": "expression",
+      "turkishReference": "ifade",
+      "example": "Then he handed her a package that explained his strange expression.",
+      "catalogContexts": [
+        "Then he handed her a package that explained his strange expression."
+      ],
+      "translations": {
+        "es-419": "expresión",
+        "pt-BR": "expressão",
+        "id": "ekspresi",
+        "ar": "تعبير",
+        "vi": "biểu cảm",
+        "hi": "भाव, अभिव्यक्ति",
+        "ru": "выражение",
+        "bn": "অভিব্যক্তি",
+        "ur": "تاثر، اظہار",
+        "th": "สีหน้า; การแสดงออก"
+      }
+    },
+    {
+      "lemma": "eye",
+      "turkishReference": "göz",
+      "example": "A piece in an eye changed what a person saw, and one in a heart made it cold.",
+      "catalogContexts": [
+        "A piece in an eye changed what a person saw, and one in a heart made it cold.",
+        "One day, pieces of the mirror entered Kay's eye and heart.",
+        "As she sang a familiar song, he began to cry and the piece in his eye washed out."
+      ],
+      "translations": {
+        "es-419": "ojo",
+        "pt-BR": "olho",
+        "id": "mata",
+        "ar": "عين",
+        "vi": "mắt",
+        "hi": "आँख",
+        "ru": "глаз",
+        "bn": "চোখ",
+        "ur": "آنکھ",
+        "th": "ตา"
+      }
+    },
+    {
+      "lemma": "eyebrow",
+      "turkishReference": "kaş",
+      "example": "The flame revealed a small scar near his eyebrow and a large diamond on his tie.",
+      "catalogContexts": [
+        "The flame revealed a small scar near his eyebrow and a large diamond on his tie."
+      ],
+      "translations": {
+        "es-419": "ceja",
+        "pt-BR": "sobrancelha",
+        "id": "alis",
+        "ar": "حاجب",
+        "vi": "lông mày",
+        "hi": "भौंह",
+        "ru": "бровь",
+        "bn": "ভ্রু",
+        "ur": "بھنو",
+        "th": "คิ้ว"
+      }
+    },
+    {
+      "lemma": "face",
+      "turkishReference": "yüz",
+      "example": "A little mouse runs across his face.",
+      "catalogContexts": [
+        "A little mouse runs across his face.",
+        "She washed her face and tried on the golden slipper.",
+        "Under the bright lights of a shop, Bob suddenly looked closely at the other's face.",
+        "When the match lit Bob's face, Jimmy had recognized a man wanted in Chicago.",
+        "In the morning, people found the girl dead in the corner, with a smile on her face."
+      ],
+      "translations": {
+        "es-419": "cara",
+        "pt-BR": "rosto",
+        "id": "wajah",
+        "ar": "وجه",
+        "vi": "khuôn mặt",
+        "hi": "चेहरा",
+        "ru": "лицо",
+        "bn": "মুখ",
+        "ur": "چہرہ",
+        "th": "ใบหน้า"
+      }
+    },
+    {
+      "lemma": "faded",
+      "turkishReference": "soldu",
+      "example": "The roast goose seemed to move toward her before the light faded.",
+      "catalogContexts": [
+        "The roast goose seemed to move toward her before the light faded."
+      ],
+      "translations": {
+        "es-419": "se desvaneció",
+        "pt-BR": "desbotou",
+        "id": "memudar",
+        "ar": "ذبل؛ بهت",
+        "vi": "đã phai",
+        "hi": "फीका पड़ गया",
+        "ru": "поблёк",
+        "bn": "ম্লান হয়ে গেল",
+        "ur": "پھیکا پڑ گیا",
+        "th": "ซีดจาง"
+      }
+    },
+    {
+      "lemma": "failed",
+      "turkishReference": "başaramadı",
+      "example": "The false bride failed to recognize her and suggested a harsh punishment for such a deceitful servant.",
+      "catalogContexts": [
+        "The false bride failed to recognize her and suggested a harsh punishment for such a deceitful servant."
+      ],
+      "translations": {
+        "es-419": "fracasó",
+        "pt-BR": "fracassou",
+        "id": "gagal",
+        "ar": "فشل",
+        "vi": "đã thất bại",
+        "hi": "असफल रहा",
+        "ru": "потерпел неудачу",
+        "bn": "ব্যর্থ হল",
+        "ur": "ناکام رہا",
+        "th": "ล้มเหลว"
+      }
+    },
+    {
+      "lemma": "fails",
+      "turkishReference": "başarısız olur",
+      "example": "Gentleness can succeed where force fails.",
+      "catalogContexts": [
+        "Gentleness can succeed where force fails."
+      ],
+      "translations": {
+        "es-419": "fracasa",
+        "pt-BR": "fracassa",
+        "id": "gagal",
+        "ar": "يفشل",
+        "vi": "thất bại",
+        "hi": "असफल होता है",
+        "ru": "терпит неудачу",
+        "bn": "ব্যর্থ হয়",
+        "ur": "ناکام ہوتا ہے",
+        "th": "ล้มเหลว"
+      }
+    },
+    {
+      "lemma": "fall",
+      "turkishReference": "düşmek",
+      "example": "Soon the wolf fell asleep and began to snore.",
+      "catalogContexts": [
+        "Soon the wolf fell asleep and began to snore.",
+        "The wolf leaned down from the roof, fell into the water, and drowned.",
+        "Drops fell on the bird, although there were no clouds in the sky.",
+        "Next, the Prince saw a girl whose matches had fallen into the wet street.",
+        "Jim's wages had fallen, and saving even a few pennies had been difficult.",
+        "The other was Della's beautiful brown hair, which fell below her knees.",
+        "Snow White found a small house and fell asleep inside.",
+        "Her tears fell into his eyes, and he could see once more."
+      ],
+      "translations": {
+        "es-419": "caer",
+        "pt-BR": "cair",
+        "id": "jatuh",
+        "ar": "يسقط",
+        "vi": "rơi",
+        "hi": "गिरना",
+        "ru": "падать",
+        "bn": "পড়া",
+        "ur": "گرنا",
+        "th": "ตก"
+      }
+    },
+    {
+      "lemma": "falling",
+      "turkishReference": "düşen",
+      "example": "A falling star meant that a soul was going to God.",
+      "catalogContexts": [
+        "A falling star meant that a soul was going to God."
+      ],
+      "translations": {
+        "es-419": "que cae",
+        "pt-BR": "caindo",
+        "id": "jatuh",
+        "ar": "ساقط",
+        "vi": "đang rơi",
+        "hi": "गिरता हुआ",
+        "ru": "падающий",
+        "bn": "পড়ন্ত",
+        "ur": "گرتا ہوا",
+        "th": "ที่กำลังตก"
+      }
+    },
+    {
+      "lemma": "false",
+      "turkishReference": "sahte, yanlış",
+      "example": "Afraid that Falada would speak, the false bride had the horse killed.",
+      "catalogContexts": [
+        "Afraid that Falada would speak, the false bride had the horse killed.",
+        "The false bride failed to recognize her and suggested a harsh punishment for such a deceitful servant."
+      ],
+      "translations": {
+        "es-419": "falso; incorrecto",
+        "pt-BR": "falso; errado",
+        "id": "salah; palsu",
+        "ar": "كاذب؛ خاطئ",
+        "vi": "sai; giả",
+        "hi": "झूठा; ग़लत",
+        "ru": "ложный; неверный",
+        "bn": "মিথ্যা; ভুল",
+        "ur": "جھوٹا؛ غلط",
+        "th": "เท็จ; ผิด"
+      }
+    },
+    {
+      "lemma": "familiar",
+      "turkishReference": "tanıdık",
+      "example": "A reply arrived a few days later, ending with the familiar drawing of a bird.",
+      "catalogContexts": [
+        "A reply arrived a few days later, ending with the familiar drawing of a bird.",
+        "As she sang a familiar song, he began to cry and the piece in his eye washed out."
+      ],
+      "translations": {
+        "es-419": "familiar",
+        "pt-BR": "familiar",
+        "id": "akrab",
+        "ar": "مألوف",
+        "vi": "quen thuộc",
+        "hi": "जाना-पहचाना",
+        "ru": "знакомый",
+        "bn": "পরিচিত",
+        "ur": "جانا پہچانا",
+        "th": "คุ้นเคย"
+      }
+    },
+    {
+      "lemma": "family",
+      "turkishReference": "aile",
+      "example": "The boat passed a family of ducks.",
+      "catalogContexts": [
+        "The boat passed a family of ducks.",
+        "After her mother died, a young girl lived with her father and his new family.",
+        "The family had so little food that the stepmother wanted to leave the children in the forest.",
+        "When the family ran out of food again, their stepmother took them farther away.",
+        "The jewels ended their hunger, and the family lived happily together.",
+        "He took his family home to his kingdom, where they lived happily."
+      ],
+      "translations": {
+        "es-419": "familia",
+        "pt-BR": "família",
+        "id": "keluarga",
+        "ar": "عائلة",
+        "vi": "gia đình",
+        "hi": "परिवार",
+        "ru": "семья",
+        "bn": "পরিবার",
+        "ur": "خاندان",
+        "th": "ครอบครัว"
+      }
+    },
+    {
+      "lemma": "far",
+      "turkishReference": "uzak",
+      "example": "The hare is far ahead.",
+      "catalogContexts": [
+        "The hare is far ahead.",
+        "By evening, the four animals were still far from Bremen.",
+        "When the family ran out of food again, their stepmother took them farther away.",
+        "While alive, the Prince had lived behind palace walls, far from other people's troubles.",
+        "Its driver was the Snow Queen, who carried him far away."
+      ],
+      "translations": {
+        "es-419": "lejos",
+        "pt-BR": "longe",
+        "id": "jauh",
+        "ar": "بعيد",
+        "vi": "xa",
+        "hi": "दूर",
+        "ru": "далеко",
+        "bn": "দূরে",
+        "ur": "دور",
+        "th": "ไกล"
+      }
+    },
+    {
+      "lemma": "farmer",
+      "turkishReference": "çiftçi",
+      "example": "A farmer broke the ice and carried him home.",
+      "catalogContexts": [
+        "A farmer broke the ice and carried him home."
+      ],
+      "translations": {
+        "es-419": "agricultor",
+        "pt-BR": "fazendeiro",
+        "id": "petani",
+        "ar": "مزارع",
+        "vi": "nông dân",
+        "hi": "किसान",
+        "ru": "фермер",
+        "bn": "কৃষক",
+        "ur": "کسان",
+        "th": "ชาวนา"
+      }
+    },
+    {
+      "lemma": "farmyard",
+      "turkishReference": "çiftlik avlusu",
+      "example": "His mother took all her young to the farmyard and tried to protect him.",
+      "catalogContexts": [
+        "His mother took all her young to the farmyard and tried to protect him."
+      ],
+      "translations": {
+        "es-419": "corral de la granja",
+        "pt-BR": "pátio da fazenda",
+        "id": "halaman peternakan",
+        "ar": "فناء المزرعة",
+        "vi": "sân trại",
+        "hi": "खलिहान का आँगन",
+        "ru": "скотный двор",
+        "bn": "খামারের উঠান",
+        "ur": "فارم کا صحن",
+        "th": "ลานฟาร์ม"
+      }
+    },
+    {
+      "lemma": "fastened",
+      "turkishReference": "bağladı",
+      "example": "This time, she accepted his offer and fastened herself safely to his back.",
+      "catalogContexts": [
+        "This time, she accepted his offer and fastened herself safely to his back."
+      ],
+      "translations": {
+        "es-419": "sujetó; ató",
+        "pt-BR": "prendeu; amarrou",
+        "id": "mengikat",
+        "ar": "ربط",
+        "vi": "đã buộc",
+        "hi": "बाँध दिया",
+        "ru": "прикрепил",
+        "bn": "বাঁধল",
+        "ur": "باندھ دیا",
+        "th": "ผูก; ติดแน่น"
+      }
+    },
+    {
+      "lemma": "fat",
+      "turkishReference": "şişman; yağ",
+      "example": "Gretel had to cook meals to make her brother fat.",
+      "catalogContexts": [
+        "Gretel had to cook meals to make her brother fat."
+      ],
+      "translations": {
+        "es-419": "gordo; grasa",
+        "pt-BR": "gordo; gordura",
+        "id": "gemuk; lemak",
+        "ar": "سمين؛ دهن",
+        "vi": "béo; mỡ",
+        "hi": "मोटा; चर्बी",
+        "ru": "толстый; жир",
+        "bn": "মোটা; চর্বি",
+        "ur": "موٹا؛ چربی",
+        "th": "อ้วน; ไขมัน"
+      }
+    },
+    {
+      "lemma": "faults",
+      "turkishReference": "kusurlar",
+      "example": "A wicked spirit made a mirror that turned beautiful things ugly and kindness into faults.",
+      "catalogContexts": [
+        "A wicked spirit made a mirror that turned beautiful things ugly and kindness into faults."
+      ],
+      "translations": {
+        "es-419": "defectos",
+        "pt-BR": "defeitos",
+        "id": "kesalahan; kekurangan",
+        "ar": "عيوب",
+        "vi": "khuyết điểm",
+        "hi": "दोष, कमियाँ",
+        "ru": "недостатки",
+        "bn": "ত্রুটি",
+        "ur": "خامیاں",
+        "th": "ข้อบกพร่อง"
+      }
+    },
+    {
+      "lemma": "fear",
+      "turkishReference": "korku",
+      "example": "They fled in fear, and the clever tailor remained in the palace.",
+      "catalogContexts": [
+        "They fled in fear, and the clever tailor remained in the palace.",
+        "Together they rose beyond cold, hunger, and fear."
+      ],
+      "translations": {
+        "es-419": "miedo",
+        "pt-BR": "medo",
+        "id": "ketakutan",
+        "ar": "خوف",
+        "vi": "nỗi sợ",
+        "hi": "डर",
+        "ru": "страх",
+        "bn": "ভয়",
+        "ur": "خوف",
+        "th": "ความกลัว"
+      }
+    },
+    {
+      "lemma": "feed",
+      "turkishReference": "beslemek",
+      "example": "Children came to feed the swans and admired the beautiful newcomer.",
+      "catalogContexts": [
+        "Children came to feed the swans and admired the beautiful newcomer."
+      ],
+      "translations": {
+        "es-419": "alimentar",
+        "pt-BR": "alimentar",
+        "id": "memberi makan",
+        "ar": "يطعم",
+        "vi": "cho ăn",
+        "hi": "खिलाना",
+        "ru": "кормить",
+        "bn": "খাওয়ানো",
+        "ur": "کھلانا",
+        "th": "ให้อาหาร"
+      }
+    },
+    {
+      "lemma": "feel",
+      "turkishReference": "hissetmek",
+      "example": "The witch could not see well and asked to feel Hansel's finger.",
+      "catalogContexts": [
+        "The witch could not see well and asked to feel Hansel's finger.",
+        "When he returned, helping someone had made him feel strangely warm.",
+        "The traveler starts to feel warm.",
+        "In spring, the swallow offered to carry her away, but she felt unable to leave the mouse."
+      ],
+      "translations": {
+        "es-419": "sentir",
+        "pt-BR": "sentir",
+        "id": "merasa",
+        "ar": "يشعر",
+        "vi": "cảm thấy",
+        "hi": "महसूस करना",
+        "ru": "чувствовать",
+        "bn": "অনুভব করা",
+        "ur": "محسوس کرنا",
+        "th": "รู้สึก"
+      }
+    },
+    {
+      "lemma": "feeling",
+      "turkishReference": "duygu",
+      "example": "Their long necks and powerful wings filled him with a feeling he did not understand.",
+      "catalogContexts": [
+        "Their long necks and powerful wings filled him with a feeling he did not understand."
+      ],
+      "translations": {
+        "es-419": "sentimiento",
+        "pt-BR": "sentimento",
+        "id": "perasaan",
+        "ar": "شعور",
+        "vi": "cảm xúc",
+        "hi": "भावना",
+        "ru": "чувство",
+        "bn": "অনুভূতি",
+        "ur": "احساس",
+        "th": "ความรู้สึก"
+      }
+    },
+    {
+      "lemma": "fetched",
+      "turkishReference": "getirdi",
+      "example": "The frog fetched the ball, but the princess ran home without him.",
+      "catalogContexts": [
+        "The frog fetched the ball, but the princess ran home without him."
+      ],
+      "translations": {
+        "es-419": "trajo",
+        "pt-BR": "buscou",
+        "id": "mengambilkan",
+        "ar": "أحضر",
+        "vi": "đã đem về",
+        "hi": "ले आया",
+        "ru": "принёс",
+        "bn": "নিয়ে এল",
+        "ur": "لے آیا",
+        "th": "ไปเอามา"
+      }
+    },
+    {
+      "lemma": "few",
+      "turkishReference": "birkaç",
+      "example": "Nora suggested planting a few flowers there before sending a photograph to the old friend.",
+      "catalogContexts": [
+        "Nora suggested planting a few flowers there before sending a photograph to the old friend.",
+        "A reply arrived a few days later, ending with the familiar drawing of a bird.",
+        "Jim's wages had fallen, and saving even a few pennies had been difficult."
+      ],
+      "translations": {
+        "es-419": "pocos",
+        "pt-BR": "poucos",
+        "id": "beberapa",
+        "ar": "قليل",
+        "vi": "vài",
+        "hi": "कुछ",
+        "ru": "несколько",
+        "bn": "কয়েকটি",
+        "ur": "چند",
+        "th": "ไม่กี่"
+      }
+    },
+    {
+      "lemma": "field",
+      "turkishReference": "tarla",
+      "example": "A field mouse invited her into a warm home and offered her food.",
+      "catalogContexts": [
+        "A field mouse invited her into a warm home and offered her food."
+      ],
+      "translations": {
+        "es-419": "campo",
+        "pt-BR": "campo",
+        "id": "ladang",
+        "ar": "حقل",
+        "vi": "cánh đồng",
+        "hi": "खेत",
+        "ru": "поле",
+        "bn": "মাঠ",
+        "ur": "کھیت",
+        "th": "ทุ่ง"
+      }
+    },
+    {
+      "lemma": "fierce",
+      "turkishReference": "vahşi",
+      "example": "A fierce robber girl kept her close, while pigeons told them that Kay had gone north.",
+      "catalogContexts": [
+        "A fierce robber girl kept her close, while pigeons told them that Kay had gone north."
+      ],
+      "translations": {
+        "es-419": "feroz",
+        "pt-BR": "feroz",
+        "id": "buas",
+        "ar": "شرس",
+        "vi": "dữ tợn",
+        "hi": "खूँखार",
+        "ru": "свирепый",
+        "bn": "হিংস্র",
+        "ur": "وحشی",
+        "th": "ดุร้าย"
+      }
+    },
+    {
+      "lemma": "fifteen",
+      "turkishReference": "on beş",
+      "example": "At fifteen, the girl would prick her finger on a spindle and die.",
+      "catalogContexts": [
+        "At fifteen, the girl would prick her finger on a spindle and die."
+      ],
+      "translations": {
+        "es-419": "quince",
+        "pt-BR": "quinze",
+        "id": "lima belas",
+        "ar": "خمسة عشر",
+        "vi": "mười lăm",
+        "hi": "पंद्रह",
+        "ru": "пятнадцать",
+        "bn": "পনেরো",
+        "ur": "پندرہ",
+        "th": "สิบห้า"
+      }
+    },
+    {
+      "lemma": "fifteenth",
+      "turkishReference": "on beşinci",
+      "example": "On her fifteenth birthday, the princess explored an old tower.",
+      "catalogContexts": [
+        "On her fifteenth birthday, the princess explored an old tower.",
+        "On her fifteenth birthday, she was finally allowed to visit the surface."
+      ],
+      "translations": {
+        "es-419": "decimoquinto",
+        "pt-BR": "décimo quinto",
+        "id": "kelima belas",
+        "ar": "الخامس عشر",
+        "vi": "thứ mười lăm",
+        "hi": "पंद्रहवाँ",
+        "ru": "пятнадцатый",
+        "bn": "পনেরোতম",
+        "ur": "پندرھواں",
+        "th": "ที่สิบห้า"
+      }
+    },
+    {
+      "lemma": "fight",
+      "turkishReference": "kavga etmek",
+      "example": "Each giant blamed the other, and they fought until both were dead.",
+      "catalogContexts": [
+        "Each giant blamed the other, and they fought until both were dead."
+      ],
+      "translations": {
+        "es-419": "pelear",
+        "pt-BR": "brigar",
+        "id": "berkelahi",
+        "ar": "يتقاتل",
+        "vi": "đánh nhau",
+        "hi": "लड़ना",
+        "ru": "драться",
+        "bn": "ঝগড়া করা",
+        "ur": "لڑنا",
+        "th": "ต่อสู้"
+      }
+    },
+    {
+      "lemma": "filled",
+      "turkishReference": "doldurdu; dolu",
+      "example": "The smell of fresh bread filled the street.",
+      "catalogContexts": [
+        "The smell of fresh bread filled the street.",
+        "They filled the wolf's belly with stones, and he died when he tried to run.",
+        "They kept the door shut and filled a trough with water that smelled of sausages.",
+        "Hansel heard the plan and filled his pocket with white pebbles.",
+        "They found jewels in the house and filled their pockets.",
+        "Every afternoon, children played in a beautiful garden filled with peach trees.",
+        "They filled the empty space with stones, and she sewed it shut.",
+        "Their long necks and powerful wings filled him with a feeling he did not understand."
+      ],
+      "translations": {
+        "es-419": "llenó; lleno",
+        "pt-BR": "encheu; cheio",
+        "id": "mengisi; penuh",
+        "ar": "ملأ؛ ممتلئ",
+        "vi": "đã lấp đầy; đầy",
+        "hi": "भरा; भरा हुआ",
+        "ru": "наполнил; полный",
+        "bn": "ভরল; পূর্ণ",
+        "ur": "بھرا؛ بھرا ہوا",
+        "th": "เติม; เต็ม"
+      }
+    },
+    {
+      "lemma": "final",
+      "turkishReference": "son",
+      "example": "They could not see the visions that had comforted her during her final night.",
+      "catalogContexts": [
+        "They could not see the visions that had comforted her during her final night."
+      ],
+      "translations": {
+        "es-419": "final",
+        "pt-BR": "final",
+        "id": "terakhir",
+        "ar": "أخير",
+        "vi": "cuối cùng",
+        "hi": "अंतिम",
+        "ru": "последний",
+        "bn": "শেষ",
+        "ur": "آخری",
+        "th": "สุดท้าย"
+      }
+    },
+    {
+      "lemma": "finger",
+      "turkishReference": "parmak",
+      "example": "The witch could not see well and asked to feel Hansel's finger.",
+      "catalogContexts": [
+        "The witch could not see well and asked to feel Hansel's finger.",
+        "At fifteen, the girl would prick her finger on a spindle and die.",
+        "The princess touched it, hurt her finger, and fell asleep."
+      ],
+      "translations": {
+        "es-419": "dedo",
+        "pt-BR": "dedo",
+        "id": "jari",
+        "ar": "إصبع",
+        "vi": "ngón tay",
+        "hi": "उँगली",
+        "ru": "палец",
+        "bn": "আঙুল",
+        "ur": "انگلی",
+        "th": "นิ้ว"
+      }
+    },
+    {
+      "lemma": "finnish",
+      "turkishReference": "Fin, Finli",
+      "example": "That woman sent them onward to a wise Finnish woman.",
+      "catalogContexts": [
+        "That woman sent them onward to a wise Finnish woman."
+      ],
+      "translations": {
+        "es-419": "finlandés",
+        "pt-BR": "finlandês",
+        "id": "Finlandia (bahasa/orang)",
+        "ar": "فنلندي",
+        "vi": "người Phần Lan; thuộc Phần Lan",
+        "hi": "फ़िनिश",
+        "ru": "финский",
+        "bn": "ফিনিশ",
+        "ur": "فنی",
+        "th": "ฟินแลนด์; ชาวฟินแลนด์"
+      }
+    },
+    {
+      "lemma": "fire",
+      "turkishReference": "ateş",
+      "example": "She slept beside the fire, so they called her Cinderella.",
+      "catalogContexts": [
+        "She slept beside the fire, so they called her Cinderella.",
+        "The following night, the Prince noticed a young writer who had no food or fire.",
+        "As he began to melt, a gust of air carried the paper dancer into the fire beside him.",
+        "On the way to the fire, she worked on the last unfinished sleeve."
+      ],
+      "translations": {
+        "es-419": "fuego",
+        "pt-BR": "fogo",
+        "id": "api",
+        "ar": "نار",
+        "vi": "lửa",
+        "hi": "आग",
+        "ru": "огонь",
+        "bn": "আগুন",
+        "ur": "آگ",
+        "th": "ไฟ"
+      }
+    },
+    {
+      "lemma": "firmly",
+      "turkishReference": "sıkıca",
+      "example": "Still, he stood as firmly as the others on his single leg.",
+      "catalogContexts": [
+        "Still, he stood as firmly as the others on his single leg."
+      ],
+      "translations": {
+        "es-419": "firmemente",
+        "pt-BR": "firmemente",
+        "id": "dengan erat",
+        "ar": "بإحكام",
+        "vi": "chặt",
+        "hi": "मज़बूती से",
+        "ru": "крепко",
+        "bn": "শক্ত করে",
+        "ur": "مضبوطی سے",
+        "th": "แน่น"
+      }
+    },
+    {
+      "lemma": "fish",
+      "turkishReference": "balık",
+      "example": "Fish heard her crying and bit through the stem so that she could float away.",
+      "catalogContexts": [
+        "Fish heard her crying and bit through the stem so that she could float away.",
+        "The paper tore, the boat sank, and a large fish swallowed the soldier.",
+        "Inside the fish, he still held his gun and thought about the dancer.",
+        "Later, the fish was caught, sold, and carried into a kitchen."
+      ],
+      "translations": {
+        "es-419": "pez",
+        "pt-BR": "peixe",
+        "id": "ikan",
+        "ar": "سمكة",
+        "vi": "con cá",
+        "hi": "मछली",
+        "ru": "рыба",
+        "bn": "মাছ",
+        "ur": "مچھلی",
+        "th": "ปลา"
+      }
+    },
+    {
+      "lemma": "fitted",
+      "turkishReference": "uydu, oldu (beden)",
+      "example": "The prince said he would marry the woman whose foot fitted it.",
+      "catalogContexts": [
+        "The prince said he would marry the woman whose foot fitted it.",
+        "It fitted perfectly, and the prince recognized his dancing partner."
+      ],
+      "translations": {
+        "es-419": "le quedó bien",
+        "pt-BR": "serviu (no corpo)",
+        "id": "pas (ukuran)",
+        "ar": "ناسب (المقاس)",
+        "vi": "vừa người",
+        "hi": "ठीक बैठा (नाप का)",
+        "ru": "пришёлся впору",
+        "bn": "মাপে লাগল",
+        "ur": "ناپ میں پورا آیا",
+        "th": "พอดีตัว"
+      }
+    },
+    {
+      "lemma": "five",
+      "turkishReference": "beş",
+      "example": "A boy received a box of twenty-five tin soldiers for his birthday.",
+      "catalogContexts": [
+        "A boy received a box of twenty-five tin soldiers for his birthday."
+      ],
+      "translations": {
+        "es-419": "cinco",
+        "pt-BR": "cinco",
+        "id": "lima",
+        "ar": "خمسة",
+        "vi": "năm",
+        "hi": "पाँच",
+        "ru": "пять",
+        "bn": "পাঁচ",
+        "ur": "پانچ",
+        "th": "ห้า"
+      }
+    },
+    {
+      "lemma": "flat",
+      "turkishReference": "düz; daire",
+      "example": "Their small flat was cheap, but their expenses had still been greater than expected.",
+      "catalogContexts": [
+        "Their small flat was cheap, but their expenses had still been greater than expected.",
+        "He folded the corners carefully and pressed them flat."
+      ],
+      "translations": {
+        "es-419": "plano; apartamento",
+        "pt-BR": "plano; apartamento",
+        "id": "datar; apartemen",
+        "ar": "مسطّح؛ شقة",
+        "vi": "phẳng; căn hộ",
+        "hi": "समतल; फ़्लैट",
+        "ru": "плоский; квартира",
+        "bn": "সমতল; ফ্ল্যাট",
+        "ur": "ہموار؛ فلیٹ",
+        "th": "เรียบ; แฟลต"
+      }
+    },
+    {
+      "lemma": "fled",
+      "turkishReference": "kaçtı",
+      "example": "They fled in fear, and the clever tailor remained in the palace.",
+      "catalogContexts": [
+        "They fled in fear, and the clever tailor remained in the palace.",
+        "At last, he fled through the hedge, believing that nobody could ever like him."
+      ],
+      "translations": {
+        "es-419": "huyó",
+        "pt-BR": "fugiu",
+        "id": "melarikan diri",
+        "ar": "فرّ",
+        "vi": "đã bỏ chạy",
+        "hi": "भाग गया",
+        "ru": "бежал",
+        "bn": "পালিয়ে গেল",
+        "ur": "بھاگ گیا",
+        "th": "หนีไป"
+      }
+    },
+    {
+      "lemma": "flock",
+      "turkishReference": "sürü",
+      "example": "Autumn came, and he saw a flock of beautiful white swans flying overhead.",
+      "catalogContexts": [
+        "Autumn came, and he saw a flock of beautiful white swans flying overhead."
+      ],
+      "translations": {
+        "es-419": "rebaño; bandada",
+        "pt-BR": "rebanho; bando",
+        "id": "kawanan",
+        "ar": "قطيع",
+        "vi": "bầy",
+        "hi": "झुंड",
+        "ru": "стадо; стая",
+        "bn": "পাল",
+        "ur": "گلہ",
+        "th": "ฝูง"
+      }
+    },
+    {
+      "lemma": "floor",
+      "turkishReference": "zemin; kat",
+      "example": "The princess carried him upstairs but left him on the floor.",
+      "catalogContexts": [
+        "The princess carried him upstairs but left him on the floor."
+      ],
+      "translations": {
+        "es-419": "suelo; piso",
+        "pt-BR": "chão; andar",
+        "id": "lantai",
+        "ar": "أرضية؛ طابق",
+        "vi": "sàn nhà; tầng",
+        "hi": "फ़र्श; मंज़िल",
+        "ru": "пол; этаж",
+        "bn": "মেঝে; তলা",
+        "ur": "فرش؛ منزل",
+        "th": "พื้น; ชั้น"
+      }
+    },
+    {
+      "lemma": "flower",
+      "turkishReference": "çiçek",
+      "example": "When she planted it, a flower opened to reveal a girl no taller than a thumb.",
+      "catalogContexts": [
+        "When she planted it, a flower opened to reveal a girl no taller than a thumb.",
+        "Inside a white flower, Thumbelina found a tiny prince with delicate wings.",
+        "He was the king of the flower spirits, and he was exactly her size.",
+        "The flower spirits welcomed her and gave her a pair of wings and the new name Maia."
+      ],
+      "translations": {
+        "es-419": "flor",
+        "pt-BR": "flor",
+        "id": "bunga",
+        "ar": "زهرة",
+        "vi": "bông hoa",
+        "hi": "फूल",
+        "ru": "цветок",
+        "bn": "ফুল",
+        "ur": "پھول",
+        "th": "ดอกไม้"
+      }
+    },
+    {
+      "lemma": "fly",
+      "turkishReference": "uçmak",
+      "example": "When the giant threw a stone high, the tailor let his bird fly away.",
+      "catalogContexts": [
+        "Each day, he flew over the city and described the hungry families he saw.",
+        "When the giant threw a stone high, the tailor let his bird fly away.",
+        "He flew into a garden where three white swans moved across the water.",
+        "They flew over mountains and seas to a warm country filled with flowers.",
+        "The swallow flew home with the story of the little girl he had helped.",
+        "The window flew open, and he fell into the street below.",
+        "The eleven swans arrived and flew around her."
+      ],
+      "translations": {
+        "es-419": "volar",
+        "pt-BR": "voar",
+        "id": "terbang",
+        "ar": "يطير",
+        "vi": "bay",
+        "hi": "उड़ना",
+        "ru": "летать",
+        "bn": "ওড়া",
+        "ur": "اڑنا",
+        "th": "บิน"
+      }
+    },
+    {
+      "lemma": "follow",
+      "turkishReference": "takip etmek",
+      "example": "Leo ran along the path to follow it.",
+      "catalogContexts": [
+        "Leo ran along the path to follow it."
+      ],
+      "translations": {
+        "es-419": "seguir",
+        "pt-BR": "seguir",
+        "id": "mengikuti",
+        "ar": "يتبع",
+        "vi": "đi theo",
+        "hi": "पीछे चलना",
+        "ru": "следовать",
+        "bn": "অনুসরণ করা",
+        "ur": "پیچھے چلنا",
+        "th": "ติดตาม"
+      }
+    },
+    {
+      "lemma": "followers",
+      "turkishReference": "takipçiler",
+      "example": "When she saw the goose and its followers, she laughed loudly.",
+      "catalogContexts": [
+        "When she saw the goose and its followers, she laughed loudly."
+      ],
+      "translations": {
+        "es-419": "seguidores",
+        "pt-BR": "seguidores",
+        "id": "pengikut",
+        "ar": "أتباع",
+        "vi": "những người đi theo",
+        "hi": "अनुयायी",
+        "ru": "последователи",
+        "bn": "অনুসারীরা",
+        "ur": "پیروکار",
+        "th": "ผู้ติดตาม"
+      }
+    },
+    {
+      "lemma": "fond",
+      "turkishReference": "düşkün",
+      "example": "He grew fond of her but remembered the woman he believed had saved his life.",
+      "catalogContexts": [
+        "He grew fond of her but remembered the woman he believed had saved his life."
+      ],
+      "translations": {
+        "es-419": "aficionado; encariñado",
+        "pt-BR": "apegado; afeiçoado",
+        "id": "menyukai",
+        "ar": "مولع",
+        "vi": "yêu mến",
+        "hi": "शौक़ीन",
+        "ru": "любящий",
+        "bn": "অনুরক্ত",
+        "ur": "دلدادہ",
+        "th": "ชอบพอ"
+      }
+    },
+    {
+      "lemma": "foolish",
+      "turkishReference": "aptalca",
+      "example": "Although their choices might look foolish, he calls them the wisest of gift-givers.",
+      "catalogContexts": [
+        "Although their choices might look foolish, he calls them the wisest of gift-givers.",
+        "It was invisible to anyone who was foolish or unfit for a position."
+      ],
+      "translations": {
+        "es-419": "tonto",
+        "pt-BR": "tolo",
+        "id": "bodoh",
+        "ar": "أحمق",
+        "vi": "ngốc nghếch",
+        "hi": "मूर्खतापूर्ण",
+        "ru": "глупый",
+        "bn": "বোকা",
+        "ur": "بے وقوفانہ",
+        "th": "โง่เขลา"
+      }
+    },
+    {
+      "lemma": "foot",
+      "turkishReference": "ayak",
+      "example": "The prince said he would marry the woman whose foot fitted it.",
+      "catalogContexts": [
+        "The prince said he would marry the woman whose foot fitted it.",
+        "Each stepsister injured her foot to force it into the slipper.",
+        "One evening, a swallow stopped at its feet on his way to Egypt.",
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet.",
+        "The giant ran to him and noticed marks on his hands and feet.",
+        "The ant sees him and runs to his foot.",
+        "Now her bare feet were red and blue with cold.",
+        "She sat in a corner between two houses and drew her feet beneath her."
+      ],
+      "translations": {
+        "es-419": "pie",
+        "pt-BR": "pé",
+        "id": "kaki",
+        "ar": "قدم",
+        "vi": "bàn chân",
+        "hi": "पैर",
+        "ru": "ступня",
+        "bn": "পা",
+        "ur": "پاؤں",
+        "th": "เท้า"
+      }
+    },
+    {
+      "lemma": "for",
+      "turkishReference": "için; -ın dışında (except for)",
+      "example": "The forest was quiet except for birds in the trees.",
+      "catalogContexts": [
+        "The forest was quiet except for birds in the trees.",
+        "It was a reminder of a friendship that had lasted for years.",
+        "Mrs. Green buys apples for a cake.",
+        "Mrs. Green invites Anna in for tea.",
+        "Although they had kept in touch for years, the garden had remained only a memory.",
+        "Beyond it was a patch of empty ground that received sunlight for most of the day.",
+        "\"I have time for a rest,\" he thinks.",
+        "Summer is the time to prepare for winter."
+      ],
+      "translations": {
+        "es-419": "para; excepto",
+        "pt-BR": "para; exceto",
+        "id": "untuk; kecuali",
+        "ar": "من أجل؛ باستثناء",
+        "vi": "cho; trừ",
+        "hi": "के लिए; सिवाय",
+        "ru": "для; кроме",
+        "bn": "জন্য; ছাড়া",
+        "ur": "کے لیے؛ سوائے",
+        "th": "สำหรับ; ยกเว้น"
+      }
+    },
+    {
+      "lemma": "forget",
+      "turkishReference": "unutmak",
+      "example": "Her cold kisses made him forget Gerda and his home.",
+      "catalogContexts": [
+        "Her cold kisses made him forget Gerda and his home.",
+        "An old woman welcomed her into an enchanted garden and tried to make her forget her search."
+      ],
+      "translations": {
+        "es-419": "olvidar",
+        "pt-BR": "esquecer",
+        "id": "lupa",
+        "ar": "ينسى",
+        "vi": "quên",
+        "hi": "भूलना",
+        "ru": "забывать",
+        "bn": "ভুলে যাওয়া",
+        "ur": "بھولنا",
+        "th": "ลืม"
+      }
+    },
+    {
+      "lemma": "form",
+      "turkishReference": "oluşturmak; şekil",
+      "example": "Kay sat arranging pieces of ice, trying to form the word eternity.",
+      "catalogContexts": [
+        "Kay sat arranging pieces of ice, trying to form the word eternity."
+      ],
+      "translations": {
+        "es-419": "formar; forma",
+        "pt-BR": "formar; forma",
+        "id": "membentuk; bentuk",
+        "ar": "يشكّل؛ شكل",
+        "vi": "hình thành; hình dạng",
+        "hi": "बनाना; आकार",
+        "ru": "образовывать; форма",
+        "bn": "গঠন করা; আকার",
+        "ur": "بنانا؛ شکل",
+        "th": "ก่อตัว; รูปร่าง"
+      }
+    },
+    {
+      "lemma": "four",
+      "turkishReference": "dört",
+      "example": "By evening, the four animals were still far from Bremen.",
+      "catalogContexts": [
+        "By evening, the four animals were still far from Bremen.",
+        "The four friends liked their new home so much that they never left for Bremen."
+      ],
+      "translations": {
+        "es-419": "cuatro",
+        "pt-BR": "quatro",
+        "id": "empat",
+        "ar": "أربعة",
+        "vi": "bốn",
+        "hi": "चार",
+        "ru": "четыре",
+        "bn": "চার",
+        "ur": "چار",
+        "th": "สี่"
+      }
+    },
+    {
+      "lemma": "freeze",
+      "turkishReference": "donmak",
+      "example": "Only one corner remained frozen, where a tiny boy could not reach a branch.",
+      "catalogContexts": [
+        "Only one corner remained frozen, where a tiny boy could not reach a branch.",
+        "He did not recognize Gerda until her warm tears reached his frozen heart."
+      ],
+      "translations": {
+        "es-419": "congelarse",
+        "pt-BR": "congelar",
+        "id": "membeku",
+        "ar": "يتجمد",
+        "vi": "đóng băng",
+        "hi": "जम जाना",
+        "ru": "замерзать",
+        "bn": "জমে যাওয়া",
+        "ur": "جم جانا",
+        "th": "แข็งตัว"
+      }
+    },
+    {
+      "lemma": "freezing",
+      "turkishReference": "donma; dondurucu",
+      "example": "Winter grew bitterly cold, and he swam to keep a small patch of water from freezing.",
+      "catalogContexts": [
+        "Winter grew bitterly cold, and he swam to keep a small patch of water from freezing."
+      ],
+      "translations": {
+        "es-419": "helado; congelación",
+        "pt-BR": "gelado; congelamento",
+        "id": "sangat dingin; pembekuan",
+        "ar": "متجمد؛ تجمّد",
+        "vi": "lạnh cóng; sự đóng băng",
+        "hi": "जमा देने वाला; जमना",
+        "ru": "ледяной; замерзание",
+        "bn": "হিমশীতল; জমে যাওয়া",
+        "ur": "یخ بستہ؛ جمنا",
+        "th": "เย็นจัด; การแข็งตัว"
+      }
+    },
+    {
+      "lemma": "fresh",
+      "turkishReference": "taze",
+      "example": "The smell of fresh bread filled the street.",
+      "catalogContexts": [
+        "The smell of fresh bread filled the street."
+      ],
+      "translations": {
+        "es-419": "fresco",
+        "pt-BR": "fresco",
+        "id": "segar",
+        "ar": "طازج",
+        "vi": "tươi",
+        "hi": "ताज़ा",
+        "ru": "свежий",
+        "bn": "টাটকা",
+        "ur": "تازہ",
+        "th": "สด"
+      }
+    },
+    {
+      "lemma": "friend",
+      "turkishReference": "arkadaş",
+      "example": "She asked her friend Sam to explore the path with her.",
+      "catalogContexts": [
+        "She asked her friend Sam to explore the path with her.",
+        "Anna has a new friend and a good story to tell.",
+        "After a moment, she explained that her childhood friend used to sign every message that way.",
+        "They had planned to create a garden together, but her friend had moved away before spring arrived.",
+        "Nora suggested planting a few flowers there before sending a photograph to the old friend.",
+        "Her friend promised to visit when the first flowers opened.",
+        "He thanks his tiny friend.",
+        "Even a small friend can give great help."
+      ],
+      "translations": {
+        "es-419": "amigo",
+        "pt-BR": "amigo",
+        "id": "teman",
+        "ar": "صديق",
+        "vi": "bạn",
+        "hi": "दोस्त",
+        "ru": "друг",
+        "bn": "বন্ধু",
+        "ur": "دوست",
+        "th": "เพื่อน"
+      }
+    },
+    {
+      "lemma": "friendship",
+      "turkishReference": "arkadaşlık",
+      "example": "It was a reminder of a friendship that had lasted for years.",
+      "catalogContexts": [
+        "It was a reminder of a friendship that had lasted for years.",
+        "Flattery is not always friendship."
+      ],
+      "translations": {
+        "es-419": "amistad",
+        "pt-BR": "amizade",
+        "id": "persahabatan",
+        "ar": "صداقة",
+        "vi": "tình bạn",
+        "hi": "दोस्ती",
+        "ru": "дружба",
+        "bn": "বন্ধুত্ব",
+        "ur": "دوستی",
+        "th": "มิตรภาพ"
+      }
+    },
+    {
+      "lemma": "frighten",
+      "turkishReference": "korkutmak",
+      "example": "The hungry friends made a plan to frighten the robbers away.",
+      "catalogContexts": [
+        "The hungry friends made a plan to frighten the robbers away.",
+        "He tries to frighten her, too."
+      ],
+      "translations": {
+        "es-419": "asustar",
+        "pt-BR": "assustar",
+        "id": "menakuti",
+        "ar": "يخيف",
+        "vi": "làm sợ hãi",
+        "hi": "डराना",
+        "ru": "пугать",
+        "bn": "ভয় দেখানো",
+        "ur": "ڈرانا",
+        "th": "ทำให้กลัว"
+      }
+    },
+    {
+      "lemma": "from",
+      "turkishReference": "-den/-dan",
+      "example": "Leo made a little boat from a blue piece of paper.",
+      "catalogContexts": [
+        "Leo made a little boat from a blue piece of paper.",
+        "She needs bread and milk from the shop.",
+        "Lily waved from the platform as he arrived.",
+        "She turns away from the vine.",
+        "The wolf leaned down from the roof, fell into the water, and drowned.",
+        "On the road, he met an old dog who had escaped from his master.",
+        "By evening, the four animals were still far from Bremen.",
+        "Then the rooster called loudly from the roof."
+      ],
+      "translations": {
+        "es-419": "de; desde",
+        "pt-BR": "de; desde",
+        "id": "dari",
+        "ar": "من",
+        "vi": "từ",
+        "hi": "से",
+        "ru": "из; от",
+        "bn": "থেকে",
+        "ur": "سے",
+        "th": "จาก"
+      }
+    },
+    {
+      "lemma": "front",
+      "turkishReference": "ön",
+      "example": "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front.",
+      "catalogContexts": [
+        "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+      ],
+      "translations": {
+        "es-419": "frente",
+        "pt-BR": "frente",
+        "id": "depan",
+        "ar": "أمام",
+        "vi": "phía trước",
+        "hi": "आगे का",
+        "ru": "перед",
+        "bn": "সামনে",
+        "ur": "سامنے",
+        "th": "ด้านหน้า"
+      }
+    },
+    {
+      "lemma": "fruit",
+      "turkishReference": "meyve",
+      "example": "Neither summer nor autumn brought the giant any fruit.",
+      "catalogContexts": [
+        "Neither summer nor autumn brought the giant any fruit."
+      ],
+      "translations": {
+        "es-419": "fruta",
+        "pt-BR": "fruta",
+        "id": "buah",
+        "ar": "فاكهة",
+        "vi": "trái cây",
+        "hi": "फल",
+        "ru": "фрукт",
+        "bn": "ফল",
+        "ur": "پھل",
+        "th": "ผลไม้"
+      }
+    },
+    {
+      "lemma": "full",
+      "turkishReference": "dolu",
+      "example": "Following it, they found a house full of robbers.",
+      "catalogContexts": [
+        "Following it, they found a house full of robbers.",
+        "They find a table full of rich food.",
+        "A dog lies in a manger full of hay.",
+        "She sat in a room full of straw and cried because she could not do it.",
+        "Though he never grew taller, he was clever and full of energy."
+      ],
+      "translations": {
+        "es-419": "lleno",
+        "pt-BR": "cheio",
+        "id": "penuh",
+        "ar": "ممتلئ",
+        "vi": "đầy",
+        "hi": "भरा हुआ",
+        "ru": "полный",
+        "bn": "পূর্ণ",
+        "ur": "بھرا ہوا",
+        "th": "เต็ม"
+      }
+    },
+    {
+      "lemma": "fun",
+      "turkishReference": "eğlence",
+      "example": "He is alone and wants some fun.",
+      "catalogContexts": [
+        "He is alone and wants some fun."
+      ],
+      "translations": {
+        "es-419": "diversión",
+        "pt-BR": "diversão",
+        "id": "kesenangan",
+        "ar": "متعة",
+        "vi": "niềm vui",
+        "hi": "मज़ा",
+        "ru": "веселье",
+        "bn": "মজা",
+        "ur": "مزہ",
+        "th": "ความสนุก"
+      }
+    },
+    {
+      "lemma": "furious",
+      "turkishReference": "öfkeli",
+      "example": "Then she spoke his true name, and he became furious.",
+      "catalogContexts": [
+        "Then she spoke his true name, and he became furious."
+      ],
+      "translations": {
+        "es-419": "furioso",
+        "pt-BR": "furioso",
+        "id": "murka",
+        "ar": "غاضب جداً",
+        "vi": "giận dữ",
+        "hi": "क्रोधित",
+        "ru": "яростный",
+        "bn": "ক্রুদ্ধ",
+        "ur": "غصے سے بھرا",
+        "th": "โกรธจัด"
+      }
+    },
+    {
+      "lemma": "gain",
+      "turkishReference": "kazanmak",
+      "example": "The little mermaid hoped to gain both human love and such a soul.",
+      "catalogContexts": [
+        "The little mermaid hoped to gain both human love and such a soul."
+      ],
+      "translations": {
+        "es-419": "ganar",
+        "pt-BR": "ganhar",
+        "id": "memperoleh",
+        "ar": "يكسب",
+        "vi": "giành được",
+        "hi": "हासिल करना",
+        "ru": "получать",
+        "bn": "অর্জন করা",
+        "ur": "حاصل کرنا",
+        "th": "ได้รับ"
+      }
+    },
+    {
+      "lemma": "games",
+      "turkishReference": "oyunlar",
+      "example": "Years passed, and the giant grew too weak to join the children's games.",
+      "catalogContexts": [
+        "Years passed, and the giant grew too weak to join the children's games."
+      ],
+      "translations": {
+        "es-419": "juegos",
+        "pt-BR": "jogos",
+        "id": "permainan",
+        "ar": "ألعاب",
+        "vi": "trò chơi",
+        "hi": "खेल",
+        "ru": "игры",
+        "bn": "খেলাগুলো",
+        "ur": "کھیل",
+        "th": "เกม"
+      }
+    },
+    {
+      "lemma": "garden",
+      "turkishReference": "bahçe",
+      "example": "It described a promise to meet beside the old garden gate on the first day of spring.",
+      "catalogContexts": [
+        "It described a promise to meet beside the old garden gate on the first day of spring.",
+        "They had planned to create a garden together, but her friend had moved away before spring arrived.",
+        "Although they had kept in touch for years, the garden had remained only a memory.",
+        "A hungry fox walks past a garden.",
+        "Every afternoon, children played in a beautiful garden filled with peach trees.",
+        "The garden belonged to a giant who had been away for seven years.",
+        "He built a high wall because he wanted the garden entirely for himself.",
+        "Spring brought flowers and birds to every other garden."
+      ],
+      "translations": {
+        "es-419": "jardín",
+        "pt-BR": "jardim",
+        "id": "kebun",
+        "ar": "حديقة",
+        "vi": "khu vườn",
+        "hi": "बगीचा",
+        "ru": "сад",
+        "bn": "বাগান",
+        "ur": "باغ",
+        "th": "สวน"
+      }
+    },
+    {
+      "lemma": "gather",
+      "turkishReference": "toplamak",
+      "example": "She must gather nettles and weave eleven shirts from their fibres.",
+      "catalogContexts": [
+        "She must gather nettles and weave eleven shirts from their fibres.",
+        "At night, Elisa visited a churchyard to gather more nettles."
+      ],
+      "translations": {
+        "es-419": "reunir",
+        "pt-BR": "reunir",
+        "id": "mengumpulkan",
+        "ar": "يجمع",
+        "vi": "thu thập",
+        "hi": "इकट्ठा करना",
+        "ru": "собирать",
+        "bn": "জড়ো করা",
+        "ur": "اکٹھا کرنا",
+        "th": "รวบรวม"
+      }
+    },
+    {
+      "lemma": "gaze",
+      "turkishReference": "dik dik bakmak; bakış",
+      "example": "Neither said a word, but he continued to gaze at her.",
+      "catalogContexts": [
+        "Neither said a word, but he continued to gaze at her."
+      ],
+      "translations": {
+        "es-419": "mirar fijamente; mirada",
+        "pt-BR": "fitar; olhar fixo",
+        "id": "menatap; tatapan",
+        "ar": "يحدّق؛ نظرة",
+        "vi": "nhìn chằm chằm; ánh nhìn",
+        "hi": "टकटकी लगाकर देखना; नज़र",
+        "ru": "пристально смотреть; взгляд",
+        "bn": "একদৃষ্টিতে তাকানো; দৃষ্টি",
+        "ur": "گھورنا؛ نظر",
+        "th": "จ้อง; สายตา"
+      }
+    },
+    {
+      "lemma": "gerda",
+      "turkishReference": "(özel ad)",
+      "example": "Two children, Kay and Gerda, lived close together and loved the roses between their homes.",
+      "catalogContexts": [
+        "Two children, Kay and Gerda, lived close together and loved the roses between their homes.",
+        "Her cold kisses made him forget Gerda and his home.",
+        "Gerda refused to believe he was lost forever and set out to find him.",
+        "Hoping that the bridegroom was Kay, Gerda entered the palace.",
+        "Robbers attacked the carriage and carried Gerda to their camp.",
+        "Moved by Gerda's story, the girl freed her and lent her a reindeer.",
+        "The reindeer asked for a power that would help Gerda defeat the Snow Queen.",
+        "Gerda went on alone, praying as the snow around her became threatening shapes."
+      ],
+      "translations": {
+        "es-419": "(nombre propio)",
+        "pt-BR": "(nome próprio)",
+        "id": "(nama diri)",
+        "ar": "(اسم علم)",
+        "vi": "(tên riêng)",
+        "hi": "(व्यक्तिवाचक नाम)",
+        "ru": "(имя собственное)",
+        "bn": "(নাম)",
+        "ur": "(نام)",
+        "th": "(ชื่อเฉพาะ)"
+      }
+    },
+    {
+      "lemma": "get",
+      "turkishReference": "almak; olmak; ulaşmak, geçmek",
+      "example": "Many princes tried to get through, but the thorns trapped them.",
+      "catalogContexts": [
+        "Many princes tried to get through, but the thorns trapped them."
+      ],
+      "translations": {
+        "es-419": "obtener; ponerse; llegar",
+        "pt-BR": "obter; ficar; chegar",
+        "id": "mendapatkan; menjadi; sampai",
+        "ar": "يحصل؛ يصبح؛ يصل",
+        "vi": "nhận; trở nên; đến",
+        "hi": "पाना; होना; पहुँचना",
+        "ru": "получать; становиться; добираться",
+        "bn": "পাওয়া; হওয়া; পৌঁছানো",
+        "ur": "پانا؛ ہونا؛ پہنچنا",
+        "th": "ได้รับ; กลายเป็น; ไปถึง"
+      }
+    },
+    {
+      "lemma": "ghost",
+      "turkishReference": "hayalet",
+      "example": "Thinking a ghost had arrived, the robbers ran into the forest.",
+      "catalogContexts": [
+        "Thinking a ghost had arrived, the robbers ran into the forest."
+      ],
+      "translations": {
+        "es-419": "fantasma",
+        "pt-BR": "fantasma",
+        "id": "hantu",
+        "ar": "شبح",
+        "vi": "con ma",
+        "hi": "भूत",
+        "ru": "привидение",
+        "bn": "ভূত",
+        "ur": "بھوت",
+        "th": "ผี"
+      }
+    },
+    {
+      "lemma": "girl",
+      "turkishReference": "kız",
+      "example": "A girl picked it up and wrote a message inside.",
+      "catalogContexts": [
+        "A girl picked it up and wrote a message inside.",
+        "Everyone called the girl Little Red Riding Hood because of her red cap.",
+        "She gave the girl cake and a bottle of wine.",
+        "The girl promised to be careful and set off.",
+        "He pretended to be the girl, and the grandmother told him to come in.",
+        "When the girl arrived, the door was open.",
+        "\"What big ears you have!\" the girl said.",
+        "The girl asked about his big eyes and large hands, too."
+      ],
+      "translations": {
+        "es-419": "niña",
+        "pt-BR": "menina",
+        "id": "anak perempuan",
+        "ar": "فتاة",
+        "vi": "cô bé",
+        "hi": "लड़की",
+        "ru": "девочка",
+        "bn": "মেয়ে",
+        "ur": "لڑکی",
+        "th": "เด็กผู้หญิง"
+      }
+    },
+    {
+      "lemma": "give",
+      "turkishReference": "vermek",
+      "example": "Even a small friend can give great help.",
+      "catalogContexts": [
+        "Mia gave him a smile and said hello.",
+        "Even a small friend can give great help.",
+        "\"Please give me some food,\" he says.",
+        "She gave the girl cake and a bottle of wine.",
+        "Cinderella wanted to go, but her stepmother gave her more work.",
+        "The bird gave her a beautiful dress and fine slippers.",
+        "An old woman invited them in and gave them food and beds.",
+        "The Prince gave her his second sapphire, even though this left him blind."
+      ],
+      "translations": {
+        "es-419": "dar",
+        "pt-BR": "dar",
+        "id": "memberi",
+        "ar": "يعطي",
+        "vi": "cho",
+        "hi": "देना",
+        "ru": "давать",
+        "bn": "দেওয়া",
+        "ur": "دینا",
+        "th": "ให้"
+      }
+    },
+    {
+      "lemma": "givers",
+      "turkishReference": "verenler",
+      "example": "Although their choices might look foolish, he calls them the wisest of gift-givers.",
+      "catalogContexts": [
+        "Although their choices might look foolish, he calls them the wisest of gift-givers."
+      ],
+      "translations": {
+        "es-419": "dadores",
+        "pt-BR": "doadores",
+        "id": "pemberi",
+        "ar": "المانحون",
+        "vi": "những người cho đi",
+        "hi": "देने वाले",
+        "ru": "дарители",
+        "bn": "দাতারা",
+        "ur": "دینے والے",
+        "th": "ผู้ให้"
+      }
+    },
+    {
+      "lemma": "glass",
+      "turkishReference": "cam; bardak",
+      "example": "This time, the dwarfs could not wake the girl and placed her in a glass coffin.",
+      "catalogContexts": [
+        "This time, the dwarfs could not wake the girl and placed her in a glass coffin."
+      ],
+      "translations": {
+        "es-419": "vidrio; vaso",
+        "pt-BR": "vidro; copo",
+        "id": "kaca; gelas",
+        "ar": "زجاج؛ كوب",
+        "vi": "kính; ly",
+        "hi": "काँच; गिलास",
+        "ru": "стекло; стакан",
+        "bn": "কাচ; গ্লাস",
+        "ur": "شیشہ؛ گلاس",
+        "th": "แก้ว"
+      }
+    },
+    {
+      "lemma": "go",
+      "turkishReference": "gitmek",
+      "example": "Mrs. Green needs to go to the same shop.",
+      "catalogContexts": [
+        "Mrs. Green needs to go to the same shop.",
+        "\"Please let me go,\" says the mouse.",
+        "But he opens his paw and lets her go.",
+        "This time, she went straight to her grandmother and told her everything.",
+        "The girl went home safely after listening to good advice.",
+        "When her father went away, she asked him for a branch.",
+        "Cinderella wanted to go, but her stepmother gave her more work.",
+        "Even then, her stepmother would not let her go."
+      ],
+      "translations": {
+        "es-419": "ir",
+        "pt-BR": "ir",
+        "id": "pergi",
+        "ar": "يذهب",
+        "vi": "đi",
+        "hi": "जाना",
+        "ru": "идти",
+        "bn": "যাওয়া",
+        "ur": "جانا",
+        "th": "ไป"
+      }
+    },
+    {
+      "lemma": "goat",
+      "turkishReference": "keçi",
+      "example": "A mother goat left her seven children at home while she looked for food.",
+      "catalogContexts": [
+        "A mother goat left her seven children at home while she looked for food."
+      ],
+      "translations": {
+        "es-419": "cabra",
+        "pt-BR": "cabra",
+        "id": "kambing",
+        "ar": "ماعز",
+        "vi": "con dê",
+        "hi": "बकरी",
+        "ru": "коза",
+        "bn": "ছাগল",
+        "ur": "بکری",
+        "th": "แพะ"
+      }
+    },
+    {
+      "lemma": "going",
+      "turkishReference": "gidiyor",
+      "example": "On the way, a wolf asked where she was going.",
+      "catalogContexts": [
+        "On the way, a wolf asked where she was going.",
+        "The rooster was going to become soup the next day.",
+        "A falling star meant that a soul was going to God.",
+        "\"Next time, I will keep going,\" he says."
+      ],
+      "translations": {
+        "es-419": "yendo",
+        "pt-BR": "indo",
+        "id": "pergi",
+        "ar": "ذاهب",
+        "vi": "đang đi",
+        "hi": "जा रहा",
+        "ru": "идущий",
+        "bn": "যাচ্ছে",
+        "ur": "جا رہا",
+        "th": "กำลังไป"
+      }
+    },
+    {
+      "lemma": "good",
+      "turkishReference": "iyi",
+      "example": "Anna has a new friend and a good story to tell.",
+      "catalogContexts": [
+        "Anna has a new friend and a good story to tell.",
+        "\"They help me hear you better,\" answered the wolf.",
+        "The girl went home safely after listening to good advice.",
+        "At the wedding, the stepsisters tried to share Cinderella's good fortune.",
+        "He agreed that being a musician was a much better plan.",
+        "His greed has taken away his good fortune.",
+        "They explained that good deeds could help her earn an immortal soul."
+      ],
+      "translations": {
+        "es-419": "bueno",
+        "pt-BR": "bom",
+        "id": "baik",
+        "ar": "جيد",
+        "vi": "tốt",
+        "hi": "अच्छा",
+        "ru": "хороший",
+        "bn": "ভালো",
+        "ur": "اچھا",
+        "th": "ดี"
+      }
+    },
+    {
+      "lemma": "goodbye",
+      "turkishReference": "hoşça kal, veda",
+      "example": "At last, weakened by the cold, he said goodbye and died at the Prince's feet.",
+      "catalogContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet.",
+        "On the last day before the wedding, she went outside to say goodbye to the daylight."
+      ],
+      "translations": {
+        "es-419": "adiós; despedida",
+        "pt-BR": "adeus; despedida",
+        "id": "selamat tinggal",
+        "ar": "وداعاً؛ وداع",
+        "vi": "tạm biệt; lời chia tay",
+        "hi": "अलविदा",
+        "ru": "до свидания; прощание",
+        "bn": "বিদায়",
+        "ur": "الوداع",
+        "th": "ลาก่อน; การอำลา"
+      }
+    },
+    {
+      "lemma": "graceful",
+      "turkishReference": "zarif",
+      "example": "He was no longer a grey, awkward youngster but a graceful white swan.",
+      "catalogContexts": [
+        "He was no longer a grey, awkward youngster but a graceful white swan."
+      ],
+      "translations": {
+        "es-419": "elegante",
+        "pt-BR": "elegante",
+        "id": "anggun",
+        "ar": "رشيق",
+        "vi": "duyên dáng",
+        "hi": "सुरुचिपूर्ण",
+        "ru": "грациозный",
+        "bn": "সুশোভন",
+        "ur": "خوش اسلوب",
+        "th": "สง่างาม"
+      }
+    },
+    {
+      "lemma": "grand",
+      "turkishReference": "görkemli",
+      "example": "The swindlers worked through the night before a grand procession.",
+      "catalogContexts": [
+        "The swindlers worked through the night before a grand procession."
+      ],
+      "translations": {
+        "es-419": "grandioso",
+        "pt-BR": "grandioso",
+        "id": "megah",
+        "ar": "فخم",
+        "vi": "hùng vĩ",
+        "hi": "भव्य",
+        "ru": "величественный",
+        "bn": "জমকালো",
+        "ur": "شاندار",
+        "th": "ยิ่งใหญ่"
+      }
+    },
+    {
+      "lemma": "grandfather",
+      "turkishReference": "büyükbaba, dede",
+      "example": "Nora found an old map inside her grandfather's desk.",
+      "catalogContexts": [
+        "Nora found an old map inside her grandfather's desk.",
+        "One was Jim's gold watch, inherited from his father and grandfather."
+      ],
+      "translations": {
+        "es-419": "abuelo",
+        "pt-BR": "avô",
+        "id": "kakek",
+        "ar": "جد",
+        "vi": "ông",
+        "hi": "दादा, नाना",
+        "ru": "дедушка",
+        "bn": "দাদা, নানা",
+        "ur": "دادا، نانا",
+        "th": "ปู่; ตา"
+      }
+    },
+    {
+      "lemma": "grandmother",
+      "turkishReference": "büyükanne, nine",
+      "example": "While helping her grandmother clear the attic, Nora found a small wooden chest beneath a pile of blankets.",
+      "catalogContexts": [
+        "While helping her grandmother clear the attic, Nora found a small wooden chest beneath a pile of blankets.",
+        "Nora showed the letter to her grandmother, who became quiet when she saw the drawing.",
+        "Her grandmother led her outside, where climbing plants almost covered a narrow wooden gate.",
+        "Her grandmother wrote a new letter and placed the original blue ribbon around it.",
+        "One day, her mother asked her to visit her sick grandmother.",
+        "The wolf suggested picking flowers for her grandmother.",
+        "He pretended to be the girl, and the grandmother told him to come in.",
+        "Her grandmother looked very strange under the blankets."
+      ],
+      "translations": {
+        "es-419": "abuela",
+        "pt-BR": "avó",
+        "id": "nenek",
+        "ar": "جدة",
+        "vi": "bà",
+        "hi": "दादी, नानी",
+        "ru": "бабушка",
+        "bn": "দাদি, নানি",
+        "ur": "دادی، نانی",
+        "th": "ย่า; ยาย"
+      }
+    },
+    {
+      "lemma": "gray",
+      "turkishReference": "gri",
+      "example": "The sky is gray, and rain falls on the street.",
+      "catalogContexts": [
+        "The sky is gray, and rain falls on the street."
+      ],
+      "translations": {
+        "es-419": "gris",
+        "pt-BR": "cinza",
+        "id": "abu-abu",
+        "ar": "رمادي",
+        "vi": "xám",
+        "hi": "धूसर",
+        "ru": "серый",
+        "bn": "ধূসর",
+        "ur": "سرمئی",
+        "th": "สีเทา"
+      }
+    },
+    {
+      "lemma": "great",
+      "turkishReference": "büyük; harika",
+      "example": "Even a small friend can give great help.",
+      "catalogContexts": [
+        "Even a small friend can give great help.",
+        "They invited twelve wise women to a great celebration.",
+        "Tom persuaded the wolf to enter his parents' house for a great meal.",
+        "The king promised a great reward to anyone who could discover their secret.",
+        "In its light, she imagined a great iron stove giving out wonderful heat."
+      ],
+      "translations": {
+        "es-419": "grande; genial",
+        "pt-BR": "grande; ótimo",
+        "id": "besar; hebat",
+        "ar": "عظيم؛ رائع",
+        "vi": "lớn; tuyệt vời",
+        "hi": "महान; शानदार",
+        "ru": "великий; замечательный",
+        "bn": "মহান; চমৎকার",
+        "ur": "عظیم؛ شاندار",
+        "th": "ยิ่งใหญ่; ยอดเยี่ยม"
+      }
+    },
+    {
+      "lemma": "green",
+      "turkishReference": "yeşil",
+      "example": "Her neighbor, Mrs. Green, is outside.",
+      "catalogContexts": [
+        "Her neighbor, Mrs. Green, is outside.",
+        "Mrs. Green needs to go to the same shop.",
+        "Mrs. Green buys apples for a cake.",
+        "Mrs. Green invites Anna in for tea.",
+        "A woman longed to eat the green plants in a nearby garden."
+      ],
+      "translations": {
+        "es-419": "verde",
+        "pt-BR": "verde",
+        "id": "hijau",
+        "ar": "أخضر",
+        "vi": "xanh lá",
+        "hi": "हरा",
+        "ru": "зелёный",
+        "bn": "সবুজ",
+        "ur": "سبز",
+        "th": "สีเขียว"
+      }
+    },
+    {
+      "lemma": "greeted",
+      "turkishReference": "selamladı",
+      "example": "He greeted the waiting man as Bob and behaved like an old friend.",
+      "catalogContexts": [
+        "He greeted the waiting man as Bob and behaved like an old friend."
+      ],
+      "translations": {
+        "es-419": "saludó",
+        "pt-BR": "cumprimentou",
+        "id": "menyapa",
+        "ar": "حيّا",
+        "vi": "đã chào",
+        "hi": "अभिवादन किया",
+        "ru": "поприветствовал",
+        "bn": "অভিবাদন জানাল",
+        "ur": "سلام کیا",
+        "th": "ทักทาย"
+      }
+    },
+    {
+      "lemma": "gretel",
+      "turkishReference": "(özel ad)",
+      "example": "Hansel and Gretel lived near a forest with their father and stepmother.",
+      "catalogContexts": [
+        "Hansel and Gretel lived near a forest with their father and stepmother.",
+        "Gretel had to cook meals to make her brother fat.",
+        "She told Gretel to climb inside and check the heat.",
+        "Gretel understood the danger and pretended not to know how.",
+        "When the witch leaned in to show her, Gretel pushed her into the oven.",
+        "Gretel freed her brother, and they hugged each other."
+      ],
+      "translations": {
+        "es-419": "(nombre propio)",
+        "pt-BR": "(nome próprio)",
+        "id": "(nama diri)",
+        "ar": "(اسم علم)",
+        "vi": "(tên riêng)",
+        "hi": "(व्यक्तिवाचक नाम)",
+        "ru": "(имя собственное)",
+        "bn": "(নাম)",
+        "ur": "(نام)",
+        "th": "(ชื่อเฉพาะ)"
+      }
+    },
+    {
+      "lemma": "grey",
+      "turkishReference": "gri",
+      "example": "As the statue became dull and grey, children in the streets could finally buy bread.",
+      "catalogContexts": [
+        "As the statue became dull and grey, children in the streets could finally buy bread.",
+        "The two older brothers refused to share their food with a little grey man.",
+        "The little grey man helped the youngest brother complete every task.",
+        "When it opened, a large grey bird stepped out among her little ducklings.",
+        "He was no longer a grey, awkward youngster but a graceful white swan."
+      ],
+      "translations": {
+        "es-419": "gris",
+        "pt-BR": "cinza",
+        "id": "abu-abu",
+        "ar": "رمادي",
+        "vi": "xám",
+        "hi": "धूसर",
+        "ru": "серый",
+        "bn": "ধূসর",
+        "ur": "سرمئی",
+        "th": "สีเทา"
+      }
+    },
+    {
+      "lemma": "grow",
+      "turkishReference": "büyümek",
+      "example": "She reminded him that her hair would grow again.",
+      "catalogContexts": [
+        "When the sky grew dark, Lily checked her watch.",
+        "It grew into a tree, and a white bird came to it.",
+        "Years passed, and the giant grew too weak to join the children's games.",
+        "She reminded him that her hair would grow again.",
+        "They had grown up together, almost like brothers.",
+        "A thick hedge of thorns grew around the castle.",
+        "Though he never grew taller, he was clever and full of energy.",
+        "Winter grew bitterly cold, and he swam to keep a small patch of water from freezing."
+      ],
+      "translations": {
+        "es-419": "crecer",
+        "pt-BR": "crescer",
+        "id": "tumbuh",
+        "ar": "ينمو",
+        "vi": "lớn lên",
+        "hi": "बढ़ना",
+        "ru": "расти",
+        "bn": "বেড়ে ওঠা",
+        "ur": "بڑھنا",
+        "th": "เติบโต"
+      }
+    },
+    {
+      "lemma": "guide",
+      "turkishReference": "rehber; yol göstermek",
+      "example": "The map was not a guide to treasure.",
+      "catalogContexts": [
+        "The map was not a guide to treasure."
+      ],
+      "translations": {
+        "es-419": "guía; guiar",
+        "pt-BR": "guia; guiar",
+        "id": "pemandu; memandu",
+        "ar": "مرشد؛ يرشد",
+        "vi": "người dẫn đường; hướng dẫn",
+        "hi": "गाइड; राह दिखाना",
+        "ru": "проводник; вести",
+        "bn": "গাইড; পথ দেখানো",
+        "ur": "رہنما؛ راستہ دکھانا",
+        "th": "ผู้นำทาง; นำทาง"
+      }
+    },
+    {
+      "lemma": "gun",
+      "turkishReference": "silah",
+      "example": "Inside the fish, he still held his gun and thought about the dancer.",
+      "catalogContexts": [
+        "Inside the fish, he still held his gun and thought about the dancer."
+      ],
+      "translations": {
+        "es-419": "arma",
+        "pt-BR": "arma",
+        "id": "senjata",
+        "ar": "سلاح",
+        "vi": "súng",
+        "hi": "बंदूक",
+        "ru": "ружьё",
+        "bn": "বন্দুক",
+        "ur": "بندوق",
+        "th": "ปืน"
+      }
+    },
+    {
+      "lemma": "gust",
+      "turkishReference": "(rüzgâr) esinti",
+      "example": "As he began to melt, a gust of air carried the paper dancer into the fire beside him.",
+      "catalogContexts": [
+        "As he began to melt, a gust of air carried the paper dancer into the fire beside him."
+      ],
+      "translations": {
+        "es-419": "ráfaga",
+        "pt-BR": "rajada",
+        "id": "hembusan angin",
+        "ar": "هبّة ريح",
+        "vi": "cơn gió giật",
+        "hi": "हवा का झोंका",
+        "ru": "порыв ветра",
+        "bn": "দমকা হাওয়া",
+        "ur": "ہوا کا جھونکا",
+        "th": "ลมกระโชก"
+      }
+    },
+    {
+      "lemma": "halls",
+      "turkishReference": "salonlar",
+      "example": "At last, she entered the vast, empty halls of the Snow Queen's palace.",
+      "catalogContexts": [
+        "At last, she entered the vast, empty halls of the Snow Queen's palace."
+      ],
+      "translations": {
+        "es-419": "salas",
+        "pt-BR": "salões",
+        "id": "aula",
+        "ar": "قاعات",
+        "vi": "các đại sảnh",
+        "hi": "हॉल",
+        "ru": "залы",
+        "bn": "হলঘরগুলো",
+        "ur": "ہال",
+        "th": "ห้องโถง"
+      }
+    },
+    {
+      "lemma": "hand",
+      "turkishReference": "el",
+      "example": "Bob's hand trembled as he finished reading the explanation.",
+      "catalogContexts": [
+        "Bob's hand trembled as he finished reading the explanation.",
+        "When the first sister touched it, her hand stuck fast.",
+        "The king had promised her hand to whoever could make her laugh.",
+        "The boat was small enough to fit in his hand."
+      ],
+      "translations": {
+        "es-419": "mano",
+        "pt-BR": "mão",
+        "id": "tangan",
+        "ar": "يد",
+        "vi": "bàn tay",
+        "hi": "हाथ",
+        "ru": "рука",
+        "bn": "হাত",
+        "ur": "ہاتھ",
+        "th": "มือ"
+      }
+    },
+    {
+      "lemma": "hang",
+      "turkishReference": "asmak",
+      "example": "The princess paid to have his head hung above the gate she passed each day.",
+      "catalogContexts": [
+        "The princess paid to have his head hung above the gate she passed each day."
+      ],
+      "translations": {
+        "es-419": "colgar",
+        "pt-BR": "pendurar",
+        "id": "menggantung",
+        "ar": "يعلّق",
+        "vi": "treo",
+        "hi": "लटकाना",
+        "ru": "вешать",
+        "bn": "ঝোলানো",
+        "ur": "لٹکانا",
+        "th": "แขวน"
+      }
+    },
+    {
+      "lemma": "hansel",
+      "turkishReference": "(özel ad)",
+      "example": "Hansel and Gretel lived near a forest with their father and stepmother.",
+      "catalogContexts": [
+        "Hansel and Gretel lived near a forest with their father and stepmother.",
+        "Hansel heard the plan and filled his pocket with white pebbles.",
+        "This time, Hansel could only drop bread crumbs on the path.",
+        "The next morning, she locked Hansel behind a barred door.",
+        "The witch could not see well and asked to feel Hansel's finger."
+      ],
+      "translations": {
+        "es-419": "(nombre propio)",
+        "pt-BR": "(nome próprio)",
+        "id": "(nama diri)",
+        "ar": "(اسم علم)",
+        "vi": "(tên riêng)",
+        "hi": "(व्यक्तिवाचक नाम)",
+        "ru": "(имя собственное)",
+        "bn": "(নাম)",
+        "ur": "(نام)",
+        "th": "(ชื่อเฉพาะ)"
+      }
+    },
+    {
+      "lemma": "happiness",
+      "turkishReference": "mutluluk",
+      "example": "He remembered his suffering, but happiness had not made him proud or unkind.",
+      "catalogContexts": [
+        "He remembered his suffering, but happiness had not made him proud or unkind."
+      ],
+      "translations": {
+        "es-419": "felicidad",
+        "pt-BR": "felicidade",
+        "id": "kebahagiaan",
+        "ar": "سعادة",
+        "vi": "hạnh phúc",
+        "hi": "ख़ुशी",
+        "ru": "счастье",
+        "bn": "সুখ",
+        "ur": "خوشی",
+        "th": "ความสุข"
+      }
+    },
+    {
+      "lemma": "happy",
+      "turkishReference": "mutlu",
+      "example": "People admired the beautiful statue and called it the Happy Prince.",
+      "catalogContexts": [
+        "People admired the beautiful statue and called it the Happy Prince.",
+        "Each had given up a treasured possession to make the other happy.",
+        "The town mouse is not happy with the meal.",
+        "After he married a cruel queen, the children's happy life changed.",
+        "\"Happy birthday!\" Mia said."
+      ],
+      "translations": {
+        "es-419": "feliz",
+        "pt-BR": "feliz",
+        "id": "bahagia",
+        "ar": "سعيد",
+        "vi": "vui vẻ",
+        "hi": "ख़ुश",
+        "ru": "счастливый",
+        "bn": "সুখী",
+        "ur": "خوش",
+        "th": "มีความสุข"
+      }
+    },
+    {
+      "lemma": "hard",
+      "turkishReference": "sert; zor",
+      "example": "Her stepmother and stepsisters made her do all the hard work.",
+      "catalogContexts": [
+        "Her stepmother and stepsisters made her do all the hard work.",
+        "The Wind blows as hard as he can.",
+        "He pulls hard, but the ropes do not break."
+      ],
+      "translations": {
+        "es-419": "duro; difícil",
+        "pt-BR": "duro; difícil",
+        "id": "keras; sulit",
+        "ar": "صلب؛ صعب",
+        "vi": "cứng; khó",
+        "hi": "कठोर; कठिन",
+        "ru": "твёрдый; трудный",
+        "bn": "শক্ত; কঠিন",
+        "ur": "سخت؛ مشکل",
+        "th": "แข็ง; ยาก"
+      }
+    },
+    {
+      "lemma": "harsh",
+      "turkishReference": "sert",
+      "example": "The false bride failed to recognize her and suggested a harsh punishment for such a deceitful servant.",
+      "catalogContexts": [
+        "The false bride failed to recognize her and suggested a harsh punishment for such a deceitful servant."
+      ],
+      "translations": {
+        "es-419": "severo; áspero",
+        "pt-BR": "severo; áspero",
+        "id": "keras",
+        "ar": "قاسٍ",
+        "vi": "khắc nghiệt",
+        "hi": "कठोर",
+        "ru": "суровый",
+        "bn": "কঠোর",
+        "ur": "سخت",
+        "th": "รุนแรง; โหดร้าย"
+      }
+    },
+    {
+      "lemma": "hat",
+      "turkishReference": "şapka",
+      "example": "She called on the wind, which blew his hat away until she had finished combing her hair.",
+      "catalogContexts": [
+        "She called on the wind, which blew his hat away until she had finished combing her hair."
+      ],
+      "translations": {
+        "es-419": "sombrero",
+        "pt-BR": "chapéu",
+        "id": "topi",
+        "ar": "قبعة",
+        "vi": "cái mũ",
+        "hi": "टोपी",
+        "ru": "шляпа",
+        "bn": "টুপি",
+        "ur": "ٹوپی",
+        "th": "หมวก"
+      }
+    },
+    {
+      "lemma": "hatch",
+      "turkishReference": "yumurtadan çıkmak",
+      "example": "A duck sat on her nest, waiting for the last and largest egg to hatch.",
+      "catalogContexts": [
+        "A duck sat on her nest, waiting for the last and largest egg to hatch."
+      ],
+      "translations": {
+        "es-419": "salir del huevo",
+        "pt-BR": "chocar; sair do ovo",
+        "id": "menetas",
+        "ar": "يفقس",
+        "vi": "nở (khỏi trứng)",
+        "hi": "अंडे से निकलना",
+        "ru": "вылупиться",
+        "bn": "ডিম ফুটে বের হওয়া",
+        "ur": "انڈے سے نکلنا",
+        "th": "ฟักออกจากไข่"
+      }
+    },
+    {
+      "lemma": "he",
+      "turkishReference": "o (erkek)",
+      "example": "He told her that today was his birthday.",
+      "catalogContexts": [
+        "He told her that today was his birthday.",
+        "He carried it to the river near the old bridge.",
+        "He remembered putting it beside his camera at the market.",
+        "He could hear the train coming around the hill.",
+        "Lily waved from the platform as he arrived.",
+        "\"You are so slow!\" he says.",
+        "The hare laughs again, but he agrees.",
+        "\"I have time for a rest,\" he thinks."
+      ],
+      "translations": {
+        "es-419": "él",
+        "pt-BR": "ele",
+        "id": "dia (laki-laki)",
+        "ar": "هو",
+        "vi": "anh ấy; ông ấy",
+        "hi": "वह (पुरुष)",
+        "ru": "он",
+        "bn": "সে (পুরুষ)",
+        "ur": "وہ (مرد)",
+        "th": "เขา"
+      }
+    }
+  ]
+}

@@ -6,7 +6,7 @@ Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/
 
 ## Güncel proje kontrolü — 20 Ekim 2026
 
-#147–#151 birleşti: beş mevcut hikâyenin pilotu, yayın araçları, 11 dilde 1.098 maddelik dokunma sözlüğü, yeni okuyucu/tema/kitaplık düzeni ve Phosphor ikonlar ana dalda. **#152 ve #153’ün son başlıkları tam CI’da geçti:** 336 cihaz testi başarılı, 3 yapılandırmalı atlama, 0 hata; açılış ölçümleri 3/3. #153 kayıt hatası testinin zamanlayıcısını düzeltir ve ilk kullanım zaman aşımına ekran/durum tanılaması ekler. Orijinal ilk kullanım zaman aşımının nedeni kanıtlanmadı. Bu PR’lar henüz birleşmedi.
+#147–#151 birleşti: beş mevcut hikâyenin pilotu, yayın araçları, 11 dilde 1.098 maddelik dokunma sözlüğü, yeni okuyucu/tema/kitaplık düzeni ve Phosphor ikonlar ana dalda. **#152 ve #153’ün son başlıkları tam CI’da geçti:** 336 cihaz testi başarılı, 3 yapılandırmalı atlama, 0 hata; açılış ölçümleri 3/3. #153 kayıt hatası testinin zamanlayıcısını düzeltir ve ilk kullanım zaman aşımına ekran/durum tanılaması ekler. Orijinal ilk kullanım zaman aşımının nedeni kanıtlanmadı. #153 ve #152 sırasıyla `83d2725` ve `b2a8c09` ile ana dala birleşti; birleşik ana dal CI’ı ayrıca doğrulanıyor.
 
 Canlı anonim okumada 50 güncel hikâye ve **1.065 cümle** doğrulandı. Beş pilot yayımlanmış: 131 cümle, her birinde 11 dil karşılığı. Diğer 10 dilin sözlüğü makine taslağı; ikinci inceleme açık. #149–#151 değişiklikleri başvurulmuş 50 paketinin sonrasında eklendi; mağazaya ulaştıkları doğrulanmadı. Son Claude yerel kaydında bekleyen kod değişikliği yok; gerçek cihaz/hesap kabulü ve dil incelemesi devam ediyor.
 

@@ -1,0 +1,1408 @@
+{
+  "baselineCommit": "66a5453",
+  "reviewType": "Independent AI-assisted semantic adjudication; not native-speaker approval or publication sign-off",
+  "scope": "All 61 candidate findings from batches 1 and 2; uncertainties listed outside findings are not silently approved.",
+  "policy": "Accept only definite missing/wrong contextual senses with safe wording; retain existing valid senses; reject synonym/preference overcorrections; defer source-policy and native-language uncertainties.",
+  "counts": {
+    "accept": 25,
+    "defer": 28,
+    "reject": 8
+  },
+  "dispositions": [
+    {
+      "batch": 1,
+      "candidateIndex": 1,
+      "lang": "es-419",
+      "lemma": "curled",
+      "current": "se enroscó",
+      "claudeSuggested": "rizó; se rizó (el pelo)",
+      "disposition": "accept",
+      "rationale": "The only context explicitly curls her short hair. Add the missing transitive hair sense while preserving the valid body/coiling sense; the original alone does not explain this occurrence.",
+      "safeReplacement": "rizó (el pelo); se enroscó",
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 2,
+      "lang": "pt-BR",
+      "lemma": "curled",
+      "current": "enrolou-se",
+      "claudeSuggested": "cacheou; enrolou (o cabelo)",
+      "disposition": "accept",
+      "rationale": "The only context explicitly curls her short hair. Add the missing transitive hair sense while preserving the valid body/coiling sense; the original alone does not explain this occurrence.",
+      "safeReplacement": "cacheou (o cabelo); enrolou-se",
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 3,
+      "lang": "id",
+      "lemma": "curled",
+      "current": "meringkuk",
+      "claudeSuggested": "mengeriting (rambut)",
+      "disposition": "accept",
+      "rationale": "The only context explicitly curls her short hair. Add the missing transitive hair sense while preserving the valid body/coiling sense; the original alone does not explain this occurrence.",
+      "safeReplacement": "mengeriting (rambut); meringkuk",
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 4,
+      "lang": "ar",
+      "lemma": "curled",
+      "current": "التفّ",
+      "claudeSuggested": "جعّد (شعرها)",
+      "disposition": "accept",
+      "rationale": "The only context explicitly curls her short hair. Add the missing transitive hair sense while preserving the valid body/coiling sense; the original alone does not explain this occurrence.",
+      "safeReplacement": "جعّد (الشعر)؛ التفّ",
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 5,
+      "lang": "vi",
+      "lemma": "curled",
+      "current": "đã cuộn tròn",
+      "claudeSuggested": "uốn xoăn (tóc)",
+      "disposition": "accept",
+      "rationale": "The only context explicitly curls her short hair. Add the missing transitive hair sense while preserving the valid body/coiling sense; the original alone does not explain this occurrence.",
+      "safeReplacement": "uốn xoăn (tóc); đã cuộn tròn",
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 6,
+      "lang": "hi",
+      "lemma": "curled",
+      "current": "सिकुड़ गया",
+      "claudeSuggested": "(बाल) घुँघराले किए",
+      "disposition": "defer",
+      "rationale": "The missing transitive hair sense is clear, but the proposed inflected Hindi/Bengali/Urdu wording was explicitly marked draft and needs a proficient/native wording check. Preserve the existing valid curl-up sense if adding it.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 7,
+      "lang": "ru",
+      "lemma": "curled",
+      "current": "свернулся",
+      "claudeSuggested": "завил(а) (волосы)",
+      "disposition": "accept",
+      "rationale": "The only context explicitly curls her short hair. Add the missing transitive hair sense while preserving the valid body/coiling sense; the original alone does not explain this occurrence.",
+      "safeReplacement": "завил(а) (волосы); свернулся",
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 8,
+      "lang": "bn",
+      "lemma": "curled",
+      "current": "কুঁকড়ে গেল",
+      "claudeSuggested": "(চুল) কোঁকড়া করল",
+      "disposition": "defer",
+      "rationale": "The missing transitive hair sense is clear, but the proposed inflected Hindi/Bengali/Urdu wording was explicitly marked draft and needs a proficient/native wording check. Preserve the existing valid curl-up sense if adding it.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 9,
+      "lang": "ur",
+      "lemma": "curled",
+      "current": "سمٹ گیا",
+      "claudeSuggested": "(بال) گھنگریالے کیے",
+      "disposition": "defer",
+      "rationale": "The missing transitive hair sense is clear, but the proposed inflected Hindi/Bengali/Urdu wording was explicitly marked draft and needs a proficient/native wording check. Preserve the existing valid curl-up sense if adding it.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 10,
+      "lang": "th",
+      "lemma": "curled",
+      "current": "ขดตัว",
+      "claudeSuggested": "ดัด (ผม)",
+      "disposition": "accept",
+      "rationale": "The only context explicitly curls her short hair. Add the missing transitive hair sense while preserving the valid body/coiling sense; the original alone does not explain this occurrence.",
+      "safeReplacement": "ดัดผม; ขดตัว",
+      "externalSources": [],
+      "turkishReference": "kıvırdı",
+      "allEnglishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 11,
+      "lang": "ar",
+      "lemma": "call",
+      "current": "مكالمة؛ نادى",
+      "claudeSuggested": "نداء؛ ينادي",
+      "disposition": "accept",
+      "rationale": "Both contexts are vocal calling (enchantress call / call out), not telephoning. Add an explicit vocal noun, retaining the existing valid phone/general-call and verb senses.",
+      "safeReplacement": "نداء؛ مكالمة؛ نادى",
+      "externalSources": [],
+      "turkishReference": "çağrı; seslenmek",
+      "allEnglishContexts": [
+        "He watched how the enchantress entered, then tried the same call.",
+        "The boy and his servant searched, but the silent soldier did not call out."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 12,
+      "lang": "ru",
+      "lemma": "call",
+      "current": "звонок; звать",
+      "claudeSuggested": "зов; оклик; звать",
+      "disposition": "accept",
+      "rationale": "Both contexts are vocal calling (enchantress call / call out), not telephoning. Add an explicit vocal noun, retaining the existing valid phone/general-call and verb senses.",
+      "safeReplacement": "зов; звонок; звать",
+      "externalSources": [],
+      "turkishReference": "çağrı; seslenmek",
+      "allEnglishContexts": [
+        "He watched how the enchantress entered, then tried the same call.",
+        "The boy and his servant searched, but the silent soldier did not call out."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 13,
+      "lang": "th",
+      "lemma": "call",
+      "current": "การโทร; เรียก",
+      "claudeSuggested": "เสียงเรียก; เรียก",
+      "disposition": "accept",
+      "rationale": "Both contexts are vocal calling (enchantress call / call out), not telephoning. Add an explicit vocal noun, retaining the existing valid phone/general-call and verb senses.",
+      "safeReplacement": "เสียงเรียก; การโทร; เรียก",
+      "externalSources": [],
+      "turkishReference": "çağrı; seslenmek",
+      "allEnglishContexts": [
+        "He watched how the enchantress entered, then tried the same call.",
+        "The boy and his servant searched, but the silent soldier did not call out."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 14,
+      "lang": "hi",
+      "lemma": "call",
+      "current": "कॉल; पुकारना",
+      "claudeSuggested": "पुकार; पुकारना",
+      "disposition": "accept",
+      "rationale": "Both contexts are vocal calling (enchantress call / call out), not telephoning. Add an explicit vocal noun, retaining the existing valid phone/general-call and verb senses.",
+      "safeReplacement": "पुकार; कॉल; पुकारना",
+      "externalSources": [],
+      "turkishReference": "çağrı; seslenmek",
+      "allEnglishContexts": [
+        "He watched how the enchantress entered, then tried the same call.",
+        "The boy and his servant searched, but the silent soldier did not call out."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 15,
+      "lang": "ur",
+      "lemma": "call",
+      "current": "کال؛ پکارنا",
+      "claudeSuggested": "پکار؛ پکارنا",
+      "disposition": "accept",
+      "rationale": "Both contexts are vocal calling (enchantress call / call out), not telephoning. Add an explicit vocal noun, retaining the existing valid phone/general-call and verb senses.",
+      "safeReplacement": "پکار؛ کال؛ پکارنا",
+      "externalSources": [],
+      "turkishReference": "çağrı; seslenmek",
+      "allEnglishContexts": [
+        "He watched how the enchantress entered, then tried the same call.",
+        "The boy and his servant searched, but the silent soldier did not call out."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 16,
+      "lang": "vi",
+      "lemma": "call",
+      "current": "cuộc gọi; gọi",
+      "claudeSuggested": "tiếng gọi; gọi",
+      "disposition": "accept",
+      "rationale": "Both contexts are vocal calling (enchantress call / call out), not telephoning. Add an explicit vocal noun, retaining the existing valid phone/general-call and verb senses.",
+      "safeReplacement": "tiếng gọi; cuộc gọi; gọi",
+      "externalSources": [],
+      "turkishReference": "çağrı; seslenmek",
+      "allEnglishContexts": [
+        "He watched how the enchantress entered, then tried the same call.",
+        "The boy and his servant searched, but the silent soldier did not call out."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 17,
+      "lang": "tr",
+      "lemma": "companion",
+      "current": "yol arkadaşı",
+      "claudeSuggested": "arkadaş, yoldaş, eşlikçi",
+      "disposition": "defer",
+      "rationale": "Turkish reference owns this narrower travel sense. Both supplied examples require general companionship; coordinate reference expansion with its owner rather than silently declaring the source approved.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "yol arkadaşı",
+      "allEnglishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 18,
+      "lang": "es-419",
+      "lemma": "companion",
+      "current": "compañero de viaje",
+      "claudeSuggested": "compañero",
+      "disposition": "accept",
+      "rationale": "Both complete contexts describe friendship or companionship, with no journey. Add the general companion sense; retain travel companion because it remains a valid lexical sense and matches the current Turkish reference.",
+      "safeReplacement": "compañero; compañero de viaje",
+      "externalSources": [],
+      "turkishReference": "yol arkadaşı",
+      "allEnglishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 19,
+      "lang": "pt-BR",
+      "lemma": "companion",
+      "current": "companheiro de viagem",
+      "claudeSuggested": "companheiro",
+      "disposition": "accept",
+      "rationale": "Both complete contexts describe friendship or companionship, with no journey. Add the general companion sense; retain travel companion because it remains a valid lexical sense and matches the current Turkish reference.",
+      "safeReplacement": "companheiro; companheiro de viagem",
+      "externalSources": [],
+      "turkishReference": "yol arkadaşı",
+      "allEnglishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 20,
+      "lang": "id",
+      "lemma": "companion",
+      "current": "teman seperjalanan",
+      "claudeSuggested": "teman; pendamping",
+      "disposition": "accept",
+      "rationale": "Both complete contexts describe friendship or companionship, with no journey. Add the general companion sense; retain travel companion because it remains a valid lexical sense and matches the current Turkish reference.",
+      "safeReplacement": "teman; pendamping; teman seperjalanan",
+      "externalSources": [],
+      "turkishReference": "yol arkadaşı",
+      "allEnglishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 21,
+      "lang": "ar",
+      "lemma": "companion",
+      "current": "رفيق السفر",
+      "claudeSuggested": "رفيق",
+      "disposition": "accept",
+      "rationale": "Both complete contexts describe friendship or companionship, with no journey. Add the general companion sense; retain travel companion because it remains a valid lexical sense and matches the current Turkish reference.",
+      "safeReplacement": "رفيق؛ رفيق السفر",
+      "externalSources": [],
+      "turkishReference": "yol arkadaşı",
+      "allEnglishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 22,
+      "lang": "bn",
+      "lemma": "companion",
+      "current": "সহযাত্রী",
+      "claudeSuggested": "সঙ্গী",
+      "disposition": "accept",
+      "rationale": "Both complete contexts describe friendship or companionship, with no journey. Add the general companion sense; retain travel companion because it remains a valid lexical sense and matches the current Turkish reference.",
+      "safeReplacement": "সঙ্গী; সহযাত্রী",
+      "externalSources": [],
+      "turkishReference": "yol arkadaşı",
+      "allEnglishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 23,
+      "lang": "ur",
+      "lemma": "companion",
+      "current": "ہم سفر",
+      "claudeSuggested": "ساتھی",
+      "disposition": "reject",
+      "rationale": "ہم سفر can be figurative companionship/life partnership. The candidate itself acknowledges this, so a definite semantic error has not been established. Do not narrow away a valid expression.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "yol arkadaşı",
+      "allEnglishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 24,
+      "lang": "th",
+      "lemma": "companion",
+      "current": "เพื่อนร่วมทาง",
+      "claudeSuggested": "เพื่อน; คู่หู",
+      "disposition": "defer",
+      "rationale": "เพื่อนร่วมทาง can be figurative as well as literal. Native usage judgment is needed before treating this as a substantive error; the replacement คู่หู may itself over-specify a close partner.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "yol arkadaşı",
+      "allEnglishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 25,
+      "lang": "es-419",
+      "lemma": "anyone",
+      "current": "nadie; alguien",
+      "claudeSuggested": "cualquiera; alguien; (con negación) nadie",
+      "disposition": "accept",
+      "rationale": "Affirmative reward-to-anyone and invisible-to-anyone need the unrestricted-person sense; the negative context also warrants preserving nadie with a condition. Add the missing sense, do not delete valid negative usage.",
+      "safeReplacement": "cualquiera; alguien; (con negación) nadie",
+      "externalSources": [
+        "https://www.rae.es/gramática/sintaxis/la-alternancia-ununo-artículos-y-pronombres-indefinidos"
+      ],
+      "turkishReference": "kimse; herhangi biri",
+      "allEnglishContexts": [
+        "The king promised a great reward to anyone who could discover their secret.",
+        "It was invisible to anyone who was foolish or unfit for a position.",
+        "He did not want anyone to think he was stupid or unfit for his job."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 26,
+      "lang": "pt-BR",
+      "lemma": "anyone",
+      "current": "ninguém; alguém",
+      "claudeSuggested": "qualquer pessoa; alguém; (com negação) ninguém",
+      "disposition": "accept",
+      "rationale": "The affirmative contexts need qualquer pessoa; retain alguém and explicitly conditional ninguém for the negative context.",
+      "safeReplacement": "qualquer pessoa; alguém; (com negação) ninguém",
+      "externalSources": [
+        "https://dicionario.priberam.org/nin-gu%C3%A9m"
+      ],
+      "turkishReference": "kimse; herhangi biri",
+      "allEnglishContexts": [
+        "The king promised a great reward to anyone who could discover their secret.",
+        "It was invisible to anyone who was foolish or unfit for a position.",
+        "He did not want anyone to think he was stupid or unfit for his job."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 27,
+      "lang": "id",
+      "lemma": "cost",
+      "current": "berharga; biaya",
+      "claudeSuggested": "seharga; menelan biaya; biaya",
+      "disposition": "reject",
+      "rationale": "berharga also means having a price and can take an amount. It is not restricted to valuable/precious; the reviewer has overlooked a valid dictionary sense. Current biaya also retains the noun.",
+      "safeReplacement": null,
+      "externalSources": [
+        "https://id.wiktionary.org/wiki/berharga",
+        "https://prpm.dbp.gov.my/Cari1?d=175768&keyword=berharga"
+      ],
+      "turkishReference": "tutmak (fiyat); maliyet",
+      "allEnglishContexts": [
+        "It cost twenty-one dollars, leaving her just eighty-seven cents."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 28,
+      "lang": "ar",
+      "lemma": "couple",
+      "current": "زوج",
+      "claudeSuggested": "زوجان",
+      "disposition": "reject",
+      "rationale": "زوج has pair/couple senses in addition to spouse. Its ambiguity alone does not prove the entry wrong; replacing it exclusively with the dual changes the lexical form and risks overcorrection.",
+      "safeReplacement": null,
+      "externalSources": [
+        "https://upload.wikimedia.org/wikisource/ar/4/41/%D8%AA%D8%A7%D8%AC_%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B32.pdf"
+      ],
+      "turkishReference": "çift",
+      "allEnglishContexts": [
+        "The couple owned two things they were especially proud of.",
+        "The couple wanted to thank them for their kindness.",
+        "A poor couple wished for a child, even one no bigger than a thumb."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 29,
+      "lang": "ru",
+      "lemma": "apart",
+      "current": "врозь",
+      "claudeSuggested": "на части; на куски; врозь",
+      "disposition": "accept",
+      "rationale": "Both contexts explicitly describe tearing/breaking into pieces. Add that sense while retaining the valid separation sense.",
+      "safeReplacement": "на части; врозь",
+      "externalSources": [],
+      "turkishReference": "parçalara (ayrılmış)",
+      "allEnglishContexts": [
+        "He stamped so violently that he tore himself apart, and the queen kept her baby.",
+        "When a storm broke the ship apart, she carried him to shore."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 30,
+      "lang": "bn",
+      "lemma": "accidentally",
+      "current": "হঠাৎ করে; ভুলবশত",
+      "claudeSuggested": "ভুলবশত; অনিচ্ছাকৃতভাবে",
+      "disposition": "accept",
+      "rationale": "Rapunzel reveals the visits by mistake. হঠাৎ করে alone means suddenly and is not equivalent; the existing correct ভুলবশত is sufficient, so no unverified new synonym is necessary.",
+      "safeReplacement": "ভুলবশত",
+      "externalSources": [],
+      "turkishReference": "yanlışlıkla",
+      "allEnglishContexts": [
+        "But Rapunzel accidentally revealed the prince's visits to the enchantress."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 31,
+      "lang": "bn",
+      "lemma": "aboard",
+      "current": "জাহাজ/গাড়িতে ওঠা",
+      "claudeSuggested": "(জাহাজ/যানবাহনের) উপরে; জাহাজে",
+      "disposition": "defer",
+      "rationale": "Part-of-speech mismatch is plausible, but the primary climbed-aboard construction can support boarding language. Need native wording covering both climbing aboard and an event already aboard, rather than replacing with an uncertain spatial phrase.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "(araca) binmiş",
+      "allEnglishContexts": [
+        "They climbed aboard just before the doors closed.",
+        "Their wedding was celebrated aboard a ship."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 32,
+      "lang": "th",
+      "lemma": "blamed",
+      "current": "ตำหนิ",
+      "claudeSuggested": "โทษ; กล่าวโทษ",
+      "disposition": "reject",
+      "rationale": "ตำหนิ can cover reproaching/blaming. The reviewer says only that another word is more usual, which is insufficient for a definite substantive correction.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "suçladı",
+      "allEnglishContexts": [
+        "Each giant blamed the other, and they fought until both were dead."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 33,
+      "lang": "th",
+      "lemma": "against",
+      "current": "ต่อต้าน",
+      "claudeSuggested": "กับ; ชน; ต่อต้าน",
+      "disposition": "defer",
+      "rationale": "Physical-contact sense is missing in two examples, but the proposed กับ; ชน mixes with and hitting rather than a clearly safe shared gloss. Coordinate exact Thai wording and Turkish source coverage.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "karşı",
+      "allEnglishContexts": [
+        "Angry and frightened, she threw him against the wall.",
+        "To warm her fingers, she struck a match against the wall.",
+        "The brothers carried Elisa across the sea in a net, racing against the sunset."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 34,
+      "lang": "tr",
+      "lemma": "against",
+      "current": "karşı",
+      "claudeSuggested": "karşı; -e (çarpma/dayanma: duvara)",
+      "disposition": "defer",
+      "rationale": "The physical-contact uses are real; racing against sunset adds a time-limit sense too. Source/reference expansion needs coordinated multilingual treatment, not a single unapproved Turkish suffix gloss.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "karşı",
+      "allEnglishContexts": [
+        "Angry and frightened, she threw him against the wall.",
+        "To warm her fingers, she struck a match against the wall.",
+        "The brothers carried Elisa across the sea in a net, racing against the sunset."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 35,
+      "lang": "tr",
+      "lemma": "allowed",
+      "current": "izin verdi",
+      "claudeSuggested": "izin verdi; izin verilmiş (izinli)",
+      "disposition": "defer",
+      "rationale": "Allowed is a past form valid actively, with passive meaning supplied by was. Adding passive coverage may aid learners but does not make izin verdi lexically false; coordinate morphology policy.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "izin verdi",
+      "allEnglishContexts": [
+        "On her fifteenth birthday, she was finally allowed to visit the surface."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 36,
+      "lang": "tr",
+      "lemma": "amazed",
+      "current": "şaşkın",
+      "claudeSuggested": "şaşkın; hayran bıraktı / şaşırttı",
+      "disposition": "defer",
+      "rationale": "Amazed is a verb in the supplied sentence; current adjective is valid for other uses. Source owner should add the verbal meaning without deleting adjective coverage.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "şaşkın",
+      "allEnglishContexts": [
+        "Their fine stitching amazed him."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 37,
+      "lang": "tr",
+      "lemma": "burn",
+      "current": "yanmak",
+      "claudeSuggested": "yanmak; yakmak",
+      "disposition": "defer",
+      "rationale": "Both transitive nettle burning and intransitive sentenced-to-burn occur. Source owner should add yakmak and preserve yanmak; target changes need separate review.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "yanmak",
+      "allEnglishContexts": [
+        "The nettles would burn her hands, and she must not speak until the work was finished.",
+        "Even after she was sentenced to burn, she continued weaving in prison."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 1,
+      "candidateIndex": 38,
+      "lang": "tr",
+      "lemma": "burst",
+      "current": "patlamak",
+      "claudeSuggested": "patlamak; (içeri) dalmak, hızla girmek",
+      "disposition": "defer",
+      "rationale": "Burst through the window is violent motion rather than literal explosion. Source owner should add motion sense while preserving the general explosion meaning.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "patlamak",
+      "allEnglishContexts": [
+        "Together they made a terrible noise and burst through the window."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-1.json",
+        "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 1,
+      "lang": "id",
+      "lemma": "daylight",
+      "current": "siang hari",
+      "claudeSuggested": "cahaya siang hari",
+      "disposition": "accept",
+      "rationale": "The example says goodbye to the daylight, and Turkish explicitly says light of day. siang hari names daytime; add the light sense without discarding the valid temporal sense of daylight.",
+      "safeReplacement": "cahaya siang hari; siang hari",
+      "externalSources": [],
+      "turkishReference": "gün ışığı",
+      "allEnglishContexts": [
+        "On the last day before the wedding, she went outside to say goodbye to the daylight."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 2,
+      "lang": "hi",
+      "lemma": "desperately",
+      "current": "बेताबी से",
+      "claudeSuggested": "बुरी तरह; हताशा से",
+      "disposition": "defer",
+      "rationale": "The only occurrence is the intensifier desperately hungry. The candidate contrasts impatience with despair, but its suggested despair meaning still does not fit that occurrence. Native wording for the intensifier is required; existing eager/restless sense should not be removed without broader review.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "çaresizce",
+      "allEnglishContexts": [
+        "When winter came, she became cold and desperately hungry."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 3,
+      "lang": "ur",
+      "lemma": "desperately",
+      "current": "بے تابی سے",
+      "claudeSuggested": "بری طرح؛ مایوسی سے",
+      "disposition": "defer",
+      "rationale": "The only occurrence is the intensifier desperately hungry. The candidate contrasts impatience with despair, but its suggested despair meaning still does not fit that occurrence. Native wording for the intensifier is required; existing eager/restless sense should not be removed without broader review.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "çaresizce",
+      "allEnglishContexts": [
+        "When winter came, she became cold and desperately hungry."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 4,
+      "lang": "tr",
+      "lemma": "doorway",
+      "current": "kapı aralığı",
+      "claudeSuggested": "kapı girişi; kapı boşluğu",
+      "disposition": "reject",
+      "rationale": "Turkish kapı aralığı can denote the opening/space at a doorway, not only a narrow crack of an ajar door. The supplied doorway contexts do not prove the reference wrong; kapı girişi would be an optional clarification.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "kapı aralığı",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar.",
+        "He was the first policeman who had spoken to Bob in the doorway.",
+        "He saw the dancer still standing in the doorway of the toy castle."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 5,
+      "lang": "bn",
+      "lemma": "doorway",
+      "current": "দরজার ফাঁক",
+      "claudeSuggested": "দরজার মুখ; দোরগোড়া",
+      "disposition": "defer",
+      "rationale": "Bengali ফাঁক can mean opening/space as well as crack. Whether this phrase misleads in a doorway context is a native usage question; the suggested threshold term may change spatial meaning.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "kapı aralığı",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar.",
+        "He was the first policeman who had spoken to Bob in the doorway.",
+        "He saw the dancer still standing in the doorway of the toy castle."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 6,
+      "lang": "hi",
+      "lemma": "dough",
+      "current": "आटा",
+      "claudeSuggested": "गूँधा हुआ आटा",
+      "disposition": "accept",
+      "rationale": "The single example explicitly contrasts dough and white flour. The qualified expression disambiguates kneaded dough from dry flour without introducing a different ingredient.",
+      "safeReplacement": "गूँधा हुआ आटा",
+      "externalSources": [],
+      "turkishReference": "hamur",
+      "allEnglishContexts": [
+        "He covered his paw with dough and white flour."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 7,
+      "lang": "tr",
+      "lemma": "draw",
+      "current": "çekmek (kendine doğru)",
+      "claudeSuggested": "çekmek; cezbetmek (bir yere/birine doğru)",
+      "disposition": "defer",
+      "rationale": "The contexts include attraction toward the window/person and drawing feet inward. Pulling/attracting are valid; the restrictive Turkish parenthesis can be broadened by the source owner while retaining the inward sense.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "çekmek (kendine doğru)",
+      "allEnglishContexts": [
+        "One morning, a bird's song drew him to the window.",
+        "She saw a prince celebrating on a ship and was drawn to him.",
+        "She sat in a corner between two houses and drew her feet beneath her."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 8,
+      "lang": "tr",
+      "lemma": "dreams",
+      "current": "rüyalar; hayaller",
+      "claudeSuggested": "rüya görür; hayal eder (fiil) — ad olarak: rüyalar; hayaller",
+      "disposition": "defer",
+      "rationale": "The sole supplied context is third-person singular verb dreams, while all noun glosses are valid English meanings. Source owner needs to add verb coverage, then coordinate all ten target forms; do not delete plural noun meanings.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "rüyalar; hayaller",
+      "allEnglishContexts": [
+        "As she dreams, she moves her real head."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 9,
+      "lang": "vi",
+      "lemma": "end",
+      "current": "kết thúc",
+      "claudeSuggested": "cuối; sự kết thúc",
+      "disposition": "accept",
+      "rationale": "The village example needs a spatial end; the winter/end-of-life contexts need temporal/verb ending too. Add cuối and retain kết thúc exactly, rather than replacing the verb with only a noun.",
+      "safeReplacement": "cuối; kết thúc",
+      "externalSources": [],
+      "turkishReference": "son",
+      "allEnglishContexts": [
+        "They hurried to the station at the end of the village.",
+        "Inside the giant's walls, however, winter refused to end.",
+        "The little mermaid knew that sunrise would bring the end of her life."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 10,
+      "lang": "th",
+      "lemma": "end",
+      "current": "จุดจบ",
+      "claudeSuggested": "ปลาย; จุดสิ้นสุด; ตอนจบ",
+      "disposition": "defer",
+      "rationale": "Spatial end is needed for the village, but temporal ending and the verb end also occur. Validate a native multi-sense wording before changing the existing valid temporal meaning.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "son",
+      "allEnglishContexts": [
+        "They hurried to the station at the end of the village.",
+        "Inside the giant's walls, however, winter refused to end.",
+        "The little mermaid knew that sunrise would bring the end of her life."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 11,
+      "lang": "ur",
+      "lemma": "end",
+      "current": "اختتام",
+      "claudeSuggested": "آخر؛ سرا؛ اختتام",
+      "disposition": "defer",
+      "rationale": "Spatial end is needed for the village, but temporal ending and the verb end also occur. Validate a native multi-sense wording before changing the existing valid temporal meaning.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "son",
+      "allEnglishContexts": [
+        "They hurried to the station at the end of the village.",
+        "Inside the giant's walls, however, winter refused to end.",
+        "The little mermaid knew that sunrise would bring the end of her life."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 12,
+      "lang": "ur",
+      "lemma": "enormous",
+      "current": "عظیم",
+      "claudeSuggested": "بہت بڑا؛ دیوہیکل",
+      "disposition": "defer",
+      "rationale": "عظیم can express magnitude as well as greatness. The mouth example favors physical size, but the proposed change needs Urdu usage confirmation rather than a claim that the current word cannot express size.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "devasa",
+      "allEnglishContexts": [
+        "Then she noticed his enormous mouth."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 13,
+      "lang": "ur",
+      "lemma": "eve",
+      "current": "شام سے پہلے کی رات (کرسمس کی)",
+      "claudeSuggested": "کسی تہوار سے پہلے کی شام (کرسمس کی شام)",
+      "disposition": "defer",
+      "rationale": "The current Urdu phrase appears garbled (night before evening). The proposed replacement defines festival evening too narrowly for general eve; obtain a native general eve/Christmas Eve wording before application.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "arife (Noel arifesi)",
+      "allEnglishContexts": [
+        "On Christmas Eve, Della counted her savings for the third time."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 14,
+      "lang": "id",
+      "lemma": "expecting",
+      "current": "menantikan",
+      "claudeSuggested": "mengira akan; menduga",
+      "disposition": "reject",
+      "rationale": "menantikan can express awaiting/anticipating without guaranteeing positive hope. Expecting an unwelcome result is not proven to reverse attitude; keep the valid sense unless native evidence establishes a problem.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "bekleyerek",
+      "allEnglishContexts": [
+        "He approached them, expecting rejection even from these beautiful birds."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 15,
+      "lang": "tr",
+      "lemma": "feel",
+      "current": "hissetmek",
+      "claudeSuggested": "hissetmek; (elle) yoklamak, dokunarak hissetmek",
+      "disposition": "reject",
+      "rationale": "Turkish hissetmek includes sensory/tactile feeling, not only emotion. The remaining three contexts all require valid sensation meanings. Yoklamak could clarify the first example but is an optional sense expansion, not a definite incorrect reference.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "hissetmek",
+      "allEnglishContexts": [
+        "The witch could not see well and asked to feel Hansel's finger.",
+        "When he returned, helping someone had made him feel strangely warm.",
+        "The traveler starts to feel warm.",
+        "In spring, the swallow offered to carry her away, but she felt unable to leave the mouse."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 16,
+      "lang": "bn",
+      "lemma": "fight",
+      "current": "ঝগড়া করা",
+      "claudeSuggested": "লড়াই করা; মারামারি করা",
+      "disposition": "defer",
+      "rationale": "ঝগড়া করা can describe quarrelling/fighting and the primary English lemma itself includes both. Physical-fight wording may help the lethal giant example, but do not remove a valid quarrel sense; get native disambiguation.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "kavga etmek",
+      "allEnglishContexts": [
+        "Each giant blamed the other, and they fought until both were dead."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 17,
+      "lang": "ur",
+      "lemma": "finnish",
+      "current": "فنی",
+      "claudeSuggested": "فن لینڈ کا؛ فن لینڈی",
+      "disposition": "defer",
+      "rationale": "The homograph/orthography concern is plausible, but non-native transliteration judgment is not enough to confirm a high-severity error. A native/authoritative Urdu Finland adjective reference is needed.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "Fin, Finli",
+      "allEnglishContexts": [
+        "That woman sent them onward to a wise Finnish woman."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 18,
+      "lang": "tr",
+      "lemma": "firmly",
+      "current": "sıkıca",
+      "claudeSuggested": "sağlamca; sıkıca",
+      "disposition": "defer",
+      "rationale": "Stood firmly needs stability rather than tight gripping. Source owner can add sağlamca/sağlam biçimde while retaining sıkıca; target choices should be checked independently.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "sıkıca",
+      "allEnglishContexts": [
+        "Still, he stood as firmly as the others on his single leg."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 19,
+      "lang": "hi",
+      "lemma": "fond",
+      "current": "शौक़ीन",
+      "claudeSuggested": "स्नेह रखने वाला; (किसी को) चाहने लगना",
+      "disposition": "defer",
+      "rationale": "शौक़ीन has liking/fondness usage; proposed wording shifts adjective to a verbal expression. The candidate relies on a usage preference, so native validation is required before classifying a substantive error.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "düşkün",
+      "allEnglishContexts": [
+        "He grew fond of her but remembered the woman he believed had saved his life."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 20,
+      "lang": "ru",
+      "lemma": "front",
+      "current": "перед",
+      "claudeSuggested": "лицевая сторона; передняя часть",
+      "disposition": "reject",
+      "rationale": "Russian перед is not exclusively a preposition: front-part noun usage exists, and ordinary Russian also permits omission of ё. The suggested clarification may be easier for learners, but the claim of a definite part-of-speech error is not established.",
+      "safeReplacement": null,
+      "externalSources": [
+        "https://rusgram.ru/sites/default/files/liter/ssfp/apresjan_lexsem.pdf"
+      ],
+      "turkishReference": "ön",
+      "allEnglishContexts": [
+        "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 21,
+      "lang": "ar",
+      "lemma": "front",
+      "current": "أمام",
+      "claudeSuggested": "الواجهة؛ الجهة الأمامية",
+      "disposition": "defer",
+      "rationale": "أمام can serve locative/front usage; front-side noun would clarify the envelope context but current Turkish is equally terse ön. Native Arabic validation is needed before replacing with facade-oriented الواجهة.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "ön",
+      "allEnglishContexts": [
+        "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 22,
+      "lang": "hi",
+      "lemma": "graceful",
+      "current": "सुरुचिपूर्ण",
+      "claudeSuggested": "लालित्यपूर्ण; सुंदर, मनोहर",
+      "disposition": "defer",
+      "rationale": "The proposed alternatives are style/register preferences and partly introduce charming/dignified senses. Need proficient/native evidence that current elegance-related expression cannot cover the graceful-swan context before replacing.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "zarif",
+      "allEnglishContexts": [
+        "He was no longer a grey, awkward youngster but a graceful white swan."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 2,
+      "candidateIndex": 23,
+      "lang": "ur",
+      "lemma": "graceful",
+      "current": "خوش اسلوب",
+      "claudeSuggested": "دلکش؛ باوقار؛ نفیس",
+      "disposition": "defer",
+      "rationale": "The proposed alternatives are style/register preferences and partly introduce charming/dignified senses. Need proficient/native evidence that current elegance-related expression cannot cover the graceful-swan context before replacing.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "zarif",
+      "allEnglishContexts": [
+        "He was no longer a grey, awkward youngster but a graceful white swan."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-2.json",
+        "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,812 @@
+{
+  "baselineCommit": "66a5453",
+  "reviewType": "Independent AI-assisted semantic adjudication; not native-speaker approval or publication sign-off",
+  "scope": "All 29 candidate findings in batch 5. Coordinated additions are separate from candidate counts.",
+  "policy": "Accept definite contextual sense gaps with safe wording, retaining valid senses; reject unproved polarity/voice and synonym claims; defer uncertain exact native wording.",
+  "counts": {
+    "defer": 3,
+    "accept": 23,
+    "reject": 3
+  },
+  "dispositions": [
+    {
+      "batch": 5,
+      "candidateIndex": 1,
+      "lang": "bn",
+      "lemma": "stream",
+      "current": "ঝরনা",
+      "claudeSuggested": "ছোট নদী; স্রোতধারা",
+      "disposition": "defer",
+      "rationale": "ঝরনা covers a spring/cascade and may name a flowing mountain watercourse too. The supplied example does not establish a categorical error, and the suggested স্রোতধারা wording needs Bengali usage validation. Do not delete the existing valid spring sense.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "dere",
+      "allEnglishContexts": [
+        "As the princess bent down to drink, she lost the cloth in a stream."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 2,
+      "lang": "id",
+      "lemma": "surprise",
+      "current": "kejutan",
+      "claudeSuggested": "keheranan; kejutan",
+      "disposition": "accept",
+      "rationale": "The only context names the observers’ astonishment, not an unexpected event. Add an explicit emotion noun; preserve the valid event sense.",
+      "safeReplacement": "keheranan; kejutan",
+      "externalSources": [],
+      "turkishReference": "şaşkınlık",
+      "allEnglishContexts": [
+        "The oxen look at him in surprise."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 3,
+      "lang": "ar",
+      "lemma": "surprise",
+      "current": "مفاجأة",
+      "claudeSuggested": "دهشة؛ مفاجأة",
+      "disposition": "accept",
+      "rationale": "The only context describes looking in astonishment. دهشة supplies that emotion directly; retain the valid event-surprise noun.",
+      "safeReplacement": "دهشة؛ مفاجأة",
+      "externalSources": [],
+      "turkishReference": "şaşkınlık",
+      "allEnglishContexts": [
+        "The oxen look at him in surprise."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 4,
+      "lang": "ar",
+      "lemma": "suspected",
+      "current": "شكّ",
+      "claudeSuggested": "اشتبه؛ ظنّ",
+      "disposition": "reject",
+      "rationale": "شكّ can mean suspect as well as doubt, depending on construction. The candidate itself back-translates only one sense and overstates a polarity reversal; the two English contexts do not establish that the current isolated gloss is false.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "şüphelendi",
+      "allEnglishContexts": [
+        "The emperor suspected that they were right.",
+        "Although he loved her, his adviser suspected that her silence hid something wicked."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 5,
+      "lang": "hi",
+      "lemma": "thumbelina",
+      "current": "(व्यक्तिवाचक नाम) अँगूठी (थम्बेलिना)",
+      "claudeSuggested": "(व्यक्तिवाचक नाम) थम्बेलिना",
+      "disposition": "accept",
+      "rationale": "All five contexts use a named girl. अँगूठी denotes a finger ring, not this character; retain the existing proper-name marker and transliteration while removing the misleading ring gloss.",
+      "safeReplacement": "(व्यक्तिवाचक नाम) थम्बेलिना",
+      "externalSources": [
+        "https://www.collinsdictionary.com/hi/dictionary/english-hindi/ring"
+      ],
+      "turkishReference": "(özel ad) Parmak Kız",
+      "allEnglishContexts": [
+        "She named the girl Thumbelina and made her a bed in a walnut shell.",
+        "Thumbelina woke on a water-lily leaf, surrounded by water.",
+        "In return, Thumbelina helped with the housework and told stories.",
+        "While exploring one passage, Thumbelina found a swallow that seemed to be dead.",
+        "Inside a white flower, Thumbelina found a tiny prince with delicate wings."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 6,
+      "lang": "tr",
+      "lemma": "tie",
+      "current": "bağlamak",
+      "claudeSuggested": "bağlamak; kravat (isim)",
+      "disposition": "accept",
+      "rationale": "Two contexts unambiguously require distinct senses: ropes bind him (verb) and a diamond on his necktie (noun). Add kravat and retain bağlamak; ten coordinated noun additions are listed separately.",
+      "safeReplacement": "bağlamak; kravat (isim)",
+      "externalSources": [],
+      "turkishReference": "bağlamak",
+      "allEnglishContexts": [
+        "They tie him to the ground with strong ropes.",
+        "The flame revealed a small scar near his eyebrow and a large diamond on his tie."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 7,
+      "lang": "ar",
+      "lemma": "too",
+      "current": "أيضاً؛ جداً",
+      "claudeSuggested": "أيضاً؛ أكثر من اللازم",
+      "disposition": "accept",
+      "rationale": "The supplied contexts include both additive too and excessive amounts/weakness/tightness. Add excessive beyond-necessary meaning, retaining both valid existing also/very glosses.",
+      "safeReplacement": "أيضاً؛ أكثر من اللازم؛ جداً",
+      "externalSources": [],
+      "turkishReference": "de/da; çok",
+      "allEnglishContexts": [
+        "The girl asked about his big eyes and large hands, too.",
+        "Years passed, and the giant grew too weak to join the children's games.",
+        "It is too heavy to move.",
+        "Wanting too much can make us lose what we have.",
+        "\"You must have a beautiful voice, too.\"",
+        "He tries to frighten her, too.",
+        "Disguised as a seller, she visited the house and tied the girl's laces too tightly.",
+        "The others touched her and became stuck, too."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 8,
+      "lang": "vi",
+      "lemma": "travel",
+      "current": "đi du lịch",
+      "claudeSuggested": "đi lại; di chuyển; du hành",
+      "disposition": "accept",
+      "rationale": "The sole occurrence is a vessel able to move on land and water. Tourism-only đi du lịch cannot explain that occurrence; add dictionary-supported travel/movement senses while retaining the legitimate tourism sense.",
+      "safeReplacement": "đi lại; chuyển động; đi du lịch",
+      "externalSources": [
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/travel"
+      ],
+      "turkishReference": "yolculuk etmek",
+      "allEnglishContexts": [
+        "He demanded impossible amounts of food and drink, and a ship that could travel on land and water."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 9,
+      "lang": "ur",
+      "lemma": "throughout",
+      "current": "کے دوران ہر جگہ",
+      "claudeSuggested": "پورے ... کے دوران؛ بھر",
+      "disposition": "accept",
+      "rationale": "The only context refers to the whole winter. The current string fuses during with everywhere. Separate temporal whole-duration and spatial everywhere senses explicitly instead of deleting either legitimate throughout sense.",
+      "safeReplacement": "پورے ... کے دوران؛ ہر جگہ",
+      "externalSources": [],
+      "turkishReference": "boyunca",
+      "allEnglishContexts": [
+        "Throughout winter, she secretly cared for him until he grew strong."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 10,
+      "lang": "es-419",
+      "lemma": "unlit",
+      "current": "sin luz",
+      "claudeSuggested": "sin encender; apagado; sin luz",
+      "disposition": "accept",
+      "rationale": "The only context explicitly describes an unlit cigar: not ignited, not a cigar lacking illumination/lamps. Add the not-ignited sense while preserving the valid lightless sense. Turkish reference also needs the coordinated addition yakılmamış.",
+      "safeReplacement": "sin encender; sin luz",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 11,
+      "lang": "pt-BR",
+      "lemma": "unlit",
+      "current": "sem luz",
+      "claudeSuggested": "apagado; não aceso; sem luz",
+      "disposition": "accept",
+      "rationale": "The only context explicitly describes an unlit cigar: not ignited, not a cigar lacking illumination/lamps. Add the not-ignited sense while preserving the valid lightless sense. Turkish reference also needs the coordinated addition yakılmamış.",
+      "safeReplacement": "não aceso; sem luz",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 12,
+      "lang": "id",
+      "lemma": "unlit",
+      "current": "tak berlampu",
+      "claudeSuggested": "belum dinyalakan; tak berlampu",
+      "disposition": "accept",
+      "rationale": "The only context explicitly describes an unlit cigar: not ignited, not a cigar lacking illumination/lamps. Add the not-ignited sense while preserving the valid lightless sense. Turkish reference also needs the coordinated addition yakılmamış.",
+      "safeReplacement": "belum dinyalakan; tak berlampu",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 13,
+      "lang": "ar",
+      "lemma": "unlit",
+      "current": "غير مضاء",
+      "claudeSuggested": "غير مشتعل؛ غير مضاء",
+      "disposition": "accept",
+      "rationale": "The only context explicitly describes an unlit cigar: not ignited, not a cigar lacking illumination/lamps. Add the not-ignited sense while preserving the valid lightless sense. Turkish reference also needs the coordinated addition yakılmamış.",
+      "safeReplacement": "غير مشتعل؛ غير مضاء",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 14,
+      "lang": "vi",
+      "lemma": "unlit",
+      "current": "không có đèn sáng",
+      "claudeSuggested": "chưa châm (lửa); không có đèn sáng",
+      "disposition": "accept",
+      "rationale": "The only context explicitly describes an unlit cigar: not ignited, not a cigar lacking illumination/lamps. Add the not-ignited sense while preserving the valid lightless sense. Turkish reference also needs the coordinated addition yakılmamış.",
+      "safeReplacement": "chưa châm lửa; không có đèn sáng",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 15,
+      "lang": "hi",
+      "lemma": "unlit",
+      "current": "बिना रोशनी का",
+      "claudeSuggested": "बिना जला हुआ; बिना रोशनी का",
+      "disposition": "defer",
+      "rationale": "The not-ignited sense is definitely missing, but suggested बिना जला हुआ needs Hindi grammar validation (transitive passive versus burnt/burning). Preserve the valid lightless sense; apply the safe Turkish correction separately.",
+      "safeReplacement": null,
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 16,
+      "lang": "ru",
+      "lemma": "unlit",
+      "current": "неосвещённый",
+      "claudeSuggested": "незажжённый; неосвещённый",
+      "disposition": "accept",
+      "rationale": "The only context explicitly describes an unlit cigar: not ignited, not a cigar lacking illumination/lamps. Add the not-ignited sense while preserving the valid lightless sense. Turkish reference also needs the coordinated addition yakılmamış.",
+      "safeReplacement": "незажжённый; неосвещённый",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 17,
+      "lang": "bn",
+      "lemma": "unlit",
+      "current": "আলোহীন",
+      "claudeSuggested": "না-জ্বালানো; আলোহীন",
+      "disposition": "accept",
+      "rationale": "The only context explicitly describes an unlit cigar: not ignited, not a cigar lacking illumination/lamps. Add the not-ignited sense while preserving the valid lightless sense. Turkish reference also needs the coordinated addition yakılmamış.",
+      "safeReplacement": "না-জ্বালানো; আলোহীন",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 18,
+      "lang": "ur",
+      "lemma": "unlit",
+      "current": "بغیر روشنی کا",
+      "claudeSuggested": "بن سلگا؛ بغیر روشنی کا",
+      "disposition": "defer",
+      "rationale": "The not-ignited sense is definitely missing, but the exact Urdu بن سلگا wording requires proficient/native validation. Preserve the valid lightless sense; apply the safe Turkish correction separately.",
+      "safeReplacement": null,
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 19,
+      "lang": "th",
+      "lemma": "unlit",
+      "current": "ไม่มีแสงสว่าง",
+      "claudeSuggested": "ที่ยังไม่ได้จุด; ไม่มีแสงสว่าง",
+      "disposition": "accept",
+      "rationale": "The only context explicitly describes an unlit cigar: not ignited, not a cigar lacking illumination/lamps. Add the not-ignited sense while preserving the valid lightless sense. Turkish reference also needs the coordinated addition yakılmamış.",
+      "safeReplacement": "ที่ยังไม่ได้จุด; ไม่มีแสงสว่าง",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ],
+      "turkishReference": "ışıksız",
+      "allEnglishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 20,
+      "lang": "es-419",
+      "lemma": "weakened",
+      "current": "debilitó",
+      "claudeSuggested": "se debilitó; debilitado",
+      "disposition": "accept",
+      "rationale": "The swallow himself becomes weak from cold in the only context, matching Turkish zayıfladı. Add a clear intransitive/passive/result sense before the existing causative active form. The old active form remains a legitimate meaning of English weakened and is retained.",
+      "safeReplacement": "se debilitó; debilitado; debilitó",
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 21,
+      "lang": "id",
+      "lemma": "weakened",
+      "current": "melemahkan",
+      "claudeSuggested": "melemah; dilemahkan",
+      "disposition": "accept",
+      "rationale": "The swallow himself becomes weak from cold in the only context, matching Turkish zayıfladı. Add a clear intransitive/passive/result sense before the existing causative active form. The old active form remains a legitimate meaning of English weakened and is retained.",
+      "safeReplacement": "melemah; dilemahkan; melemahkan",
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 22,
+      "lang": "ar",
+      "lemma": "weakened",
+      "current": "أضعف",
+      "claudeSuggested": "ضعُف؛ أُضعِف",
+      "disposition": "reject",
+      "rationale": "Unvocalized أضعف can represent passive أُضعِف as well as active أَضعَف; the claimed definite active/passive reversal is not proven. Optional diacritics or addition ضعُف could clarify it but should not be counted as correction of a false translation.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 23,
+      "lang": "vi",
+      "lemma": "weakened",
+      "current": "đã làm yếu đi",
+      "claudeSuggested": "đã yếu đi; bị làm yếu",
+      "disposition": "accept",
+      "rationale": "The swallow himself becomes weak from cold in the only context, matching Turkish zayıfladı. Add a clear intransitive/passive/result sense before the existing causative active form. The old active form remains a legitimate meaning of English weakened and is retained.",
+      "safeReplacement": "đã yếu đi; đã làm yếu đi",
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 24,
+      "lang": "hi",
+      "lemma": "weakened",
+      "current": "कमज़ोर कर दिया",
+      "claudeSuggested": "कमज़ोर हो गया; कमज़ोर हुआ",
+      "disposition": "accept",
+      "rationale": "The swallow himself becomes weak from cold in the only context, matching Turkish zayıfladı. Add a clear intransitive/passive/result sense before the existing causative active form. The old active form remains a legitimate meaning of English weakened and is retained.",
+      "safeReplacement": "कमज़ोर हो गया; कमज़ोर कर दिया",
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 25,
+      "lang": "ru",
+      "lemma": "weakened",
+      "current": "ослабил",
+      "claudeSuggested": "ослабел; ослабленный",
+      "disposition": "accept",
+      "rationale": "The swallow himself becomes weak from cold in the only context, matching Turkish zayıfladı. Add a clear intransitive/passive/result sense before the existing causative active form. The old active form remains a legitimate meaning of English weakened and is retained.",
+      "safeReplacement": "ослабел; ослабленный; ослабил",
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 26,
+      "lang": "bn",
+      "lemma": "weakened",
+      "current": "দুর্বল করল",
+      "claudeSuggested": "দুর্বল হয়ে পড়ল",
+      "disposition": "accept",
+      "rationale": "The swallow himself becomes weak from cold in the only context, matching Turkish zayıfladı. Add a clear intransitive/passive/result sense before the existing causative active form. The old active form remains a legitimate meaning of English weakened and is retained.",
+      "safeReplacement": "দুর্বল হয়ে পড়ল; দুর্বল করল",
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 27,
+      "lang": "ur",
+      "lemma": "weakened",
+      "current": "کمزور کر دیا",
+      "claudeSuggested": "کمزور ہو گیا",
+      "disposition": "accept",
+      "rationale": "The swallow himself becomes weak from cold in the only context, matching Turkish zayıfladı. Add a clear intransitive/passive/result sense before the existing causative active form. The old active form remains a legitimate meaning of English weakened and is retained.",
+      "safeReplacement": "کمزور ہو گیا؛ کمزور کر دیا",
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 28,
+      "lang": "th",
+      "lemma": "weakened",
+      "current": "ทำให้อ่อนแอ",
+      "claudeSuggested": "อ่อนแอลง",
+      "disposition": "accept",
+      "rationale": "The swallow himself becomes weak from cold in the only context, matching Turkish zayıfladı. Add a clear intransitive/passive/result sense before the existing causative active form. The old active form remains a legitimate meaning of English weakened and is retained.",
+      "safeReplacement": "อ่อนแอลง; ทำให้อ่อนแอ",
+      "externalSources": [],
+      "turkishReference": "zayıfladı",
+      "allEnglishContexts": [
+        "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    },
+    {
+      "batch": 5,
+      "candidateIndex": 29,
+      "lang": "th",
+      "lemma": "wise",
+      "current": "ฉลาดหลักแหลม",
+      "claudeSuggested": "มีปัญญา; ผู้รู้",
+      "disposition": "reject",
+      "rationale": "ฉลาดหลักแหลม is an intelligence/wisdom expression with semantic overlap. The suggestion substitutes alternatives such as learned person, which shifts the adjective’s range; preference for another synonym is insufficient to establish a definite error in these wise-visitor/woman contexts.",
+      "safeReplacement": null,
+      "externalSources": [],
+      "turkishReference": "bilge",
+      "allEnglishContexts": [
+        "The narrator compares them to the Magi, the wise visitors who brought gifts to the baby Jesus.",
+        "They invited twelve wise women to a great celebration.",
+        "But there were thirteen wise women, and the last one was not invited.",
+        "That woman sent them onward to a wise Finnish woman.",
+        "The wise woman said that the girl's loving heart was already her greatest strength."
+      ],
+      "sourceEvidence": {
+        "packet": "packet-5.json",
+        "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+        "sourceCommit": "66a5453",
+        "allProvidedContextsReviewed": true
+      }
+    }
+  ],
+  "optionalClarifications": [
+    {
+      "lang": "ar",
+      "lemma": "weakened",
+      "possibleAddition": "ضعُف؛ أُضعِف",
+      "status": "optional clarification, not accepted candidate correction",
+      "reason": "Makes voice explicit; current unvocalized form can already represent passive."
+    }
+  ],
+  "coordinatedSourceCorrections": [
+    {
+      "lemma": "tie",
+      "lang": "tr",
+      "current": "bağlamak",
+      "safeReplacement": "bağlamak; kravat (isim)",
+      "disposition": "accept",
+      "reason": "The rope context is a verb; diamond on his tie is necktie noun. Both are certain, so preserve both."
+    },
+    {
+      "lemma": "unlit",
+      "lang": "tr",
+      "current": "ışıksız",
+      "safeReplacement": "yakılmamış; ışıksız",
+      "disposition": "accept",
+      "reason": "The sole occurrence is an unignited cigar. Add ignition sense and preserve unilluminated sense.",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ]
+    },
+    {
+      "lang": "es-419",
+      "lemma": "tie",
+      "current": "atar",
+      "safeReplacement": "atar; corbata",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "tie",
+      "current": "amarrar",
+      "safeReplacement": "amarrar; gravata",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "id",
+      "lemma": "tie",
+      "current": "mengikat",
+      "safeReplacement": "mengikat; dasi",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "ar",
+      "lemma": "tie",
+      "current": "يربط",
+      "safeReplacement": "يربط؛ ربطة عنق",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "vi",
+      "lemma": "tie",
+      "current": "buộc",
+      "safeReplacement": "buộc; cà vạt",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "hi",
+      "lemma": "tie",
+      "current": "बाँधना",
+      "safeReplacement": "बाँधना; टाई",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "ru",
+      "lemma": "tie",
+      "current": "завязывать",
+      "safeReplacement": "завязывать; галстук",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "bn",
+      "lemma": "tie",
+      "current": "বাঁধা",
+      "safeReplacement": "বাঁধা; টাই",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "ur",
+      "lemma": "tie",
+      "current": "باندھنا",
+      "safeReplacement": "باندھنا؛ ٹائی",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "th",
+      "lemma": "tie",
+      "current": "ผูก",
+      "safeReplacement": "ผูก; เนกไท",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    }
+  ]
+}

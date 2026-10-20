@@ -1,0 +1,1850 @@
+{
+  "date": "2026-10-20",
+  "baselineCommit": "66a5453",
+  "scope": "Read-only adjudication of every finding in remaining-review batches 3 and 4; no repo writes, no native-speaker or publication approval. Accepted values are proposed exact replacements for root-agent review.",
+  "method": "Compared every packet catalog context and matched each exact sentence to immutable packaged catalog sentence IDs. Existing valid senses retained; dictionary spot checks distinguish errors from stylistic alternatives.",
+  "nativeSpeakerApproval": false,
+  "publicationApproval": false,
+  "sourceReviews": {
+    "3": {
+      "reviewSHA256": "073b75f03cdd037cb2f954399ec88ba38761d501860799ff085d7e680b24859f",
+      "packetSHA256": "1f1e23bb3dcfc2e2e312231bbca76d4af17a27be37f9ef0971f4b8397cda9a1b",
+      "findingCount": 23
+    },
+    "4": {
+      "reviewSHA256": "c97cd0f287dfede9bc3de80b1a5501f0112045167e5bbff1dc6fbc9eefa63a0a",
+      "packetSHA256": "274319aa9d01debb5330f1633997f9a81956fe080f28f8bf874ee864bb6c0803",
+      "findingCount": 40
+    }
+  },
+  "decisions": [
+    {
+      "batch": 3,
+      "findingIndex": 1,
+      "lang": "id",
+      "lemma": "heart",
+      "current": "hati",
+      "initialSuggested": "hati; jantung",
+      "turkishReference": "kalp",
+      "decision": "accept",
+      "suggested": "hati; jantung",
+      "rationale": "Eight contexts include literal beating anatomy and figurative emotional heart. Add the anatomical organ jantung without deleting the valid emotional hati sense.",
+      "sources": [
+        "https://dictionary.cambridge.org/dictionary/indonesian-english/jantung"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-25",
+          "english": "At that moment, the statue's lead heart broke in two."
+        },
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-27",
+          "english": "Workers melted the metal, but the broken heart would not melt."
+        },
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-30",
+          "english": "The angel chose the broken heart and the swallow, and God welcomed them into Paradise."
+        },
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-22",
+          "english": "But the little boy who had changed his heart did not return."
+        },
+        {
+          "storyId": "classic-frog-prince",
+          "sentenceId": "cl-frog-prince-19",
+          "english": "Henry had placed iron bands around his heart because of his sorrow."
+        },
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-16",
+          "english": "She covered him gently and discovered that his heart was still beating."
+        },
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-03",
+          "english": "A piece in an eye changed what a person saw, and one in a heart made it cold."
+        },
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-05",
+          "english": "One day, pieces of the mirror entered Kay's eye and heart."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 2,
+      "lang": "ru",
+      "lemma": "heat",
+      "current": "нагревать; жара",
+      "initialSuggested": "нагревать; жар, тепло",
+      "turkishReference": "ısıtmak; sıcaklık",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "The claim that жара means only weather is false: Gramota also records hot air in a strongly heated room. The existing pair retains both heating action and strong heat. жар/тепло may sound more idiomatic for the oven or stove but are not necessary meaning corrections.",
+      "sources": [
+        "https://gramota.ru/poisk?mode=all&query=жар&simple=0"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-19",
+          "english": "At last, the witch lost patience and decided to heat the oven."
+        },
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-20",
+          "english": "She told Gretel to climb inside and check the heat."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-12",
+          "english": "In its light, she imagined a great iron stove giving out wonderful heat."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 3,
+      "lang": "hi",
+      "lemma": "herself",
+      "current": "वह स्वयं (स्त्री)",
+      "initialSuggested": "ख़ुद; ख़ुद को (स्त्री)",
+      "turkishReference": "kendisi; kendini (kadın)",
+      "decision": "accept",
+      "suggested": "वह स्वयं; स्वयं को (स्त्री)",
+      "rationale": "Add an explicit reflexive-object form to the valid emphatic-subject form rather than replacing the latter. The Turkish master already includes kendisi and kendini. Herself has four object uses (fasten/save/warm/defend); himself has six uses including emphasis (arrest himself/eat hay himself), beneficiaries, and tore himself apart. Retaining the old emphasis avoids narrowing to only the object construction.",
+      "sources": [
+        "https://open.lib.umn.edu/hindiurdu/chapter/grammar-notes-11-1-reflexive-pronouns/"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-22",
+          "english": "This time, she accepted his offer and fastened herself safely to his back."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-25",
+          "english": "But she could not kill the person she loved, even to save herself."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-27",
+          "english": "They saw the burnt matches and said she had tried to warm herself."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-20",
+          "english": "She could not defend herself without endangering her brothers."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 4,
+      "lang": "bn",
+      "lemma": "herself",
+      "current": "সে নিজে (নারী)",
+      "initialSuggested": "নিজে; নিজেকে (নারী)",
+      "turkishReference": "kendisi; kendini (kadın)",
+      "decision": "accept",
+      "suggested": "সে নিজে; নিজেকে (নারী)",
+      "rationale": "Add an explicit reflexive-object form to the valid emphatic-subject form rather than replacing the latter. The Turkish master already includes kendisi and kendini. Herself has four object uses (fasten/save/warm/defend); himself has six uses including emphasis (arrest himself/eat hay himself), beneficiaries, and tore himself apart. Retaining the old emphasis avoids narrowing to only the object construction.",
+      "sources": [
+        "https://dictionary.cambridge.org/dictionary/english-bengali/yourself"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-22",
+          "english": "This time, she accepted his offer and fastened herself safely to his back."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-25",
+          "english": "But she could not kill the person she loved, even to save herself."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-27",
+          "english": "They saw the burnt matches and said she had tried to warm herself."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-20",
+          "english": "She could not defend herself without endangering her brothers."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 5,
+      "lang": "ur",
+      "lemma": "herself",
+      "current": "وہ خود (عورت)",
+      "initialSuggested": "خود؛ خود کو (عورت)",
+      "turkishReference": "kendisi; kendini (kadın)",
+      "decision": "accept",
+      "suggested": "وہ خود؛ خود کو (عورت)",
+      "rationale": "Add an explicit reflexive-object form to the valid emphatic-subject form rather than replacing the latter. The Turkish master already includes kendisi and kendini. Herself has four object uses (fasten/save/warm/defend); himself has six uses including emphasis (arrest himself/eat hay himself), beneficiaries, and tore himself apart. Retaining the old emphasis avoids narrowing to only the object construction.",
+      "sources": [
+        "https://open.lib.umn.edu/hindiurdu/chapter/grammar-notes-11-1-reflexive-pronouns/",
+        "https://hinkhojdictionary.com/urdu-english/خود+کو-meaning-in-english"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-22",
+          "english": "This time, she accepted his offer and fastened herself safely to his back."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-25",
+          "english": "But she could not kill the person she loved, even to save herself."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-27",
+          "english": "They saw the burnt matches and said she had tried to warm herself."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-20",
+          "english": "She could not defend herself without endangering her brothers."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 6,
+      "lang": "hi",
+      "lemma": "himself",
+      "current": "वह स्वयं (पुरुष)",
+      "initialSuggested": "ख़ुद; ख़ुद को (पुरुष)",
+      "turkishReference": "kendisi; kendini",
+      "decision": "accept",
+      "suggested": "वह स्वयं; स्वयं को (पुरुष)",
+      "rationale": "Add an explicit reflexive-object form to the valid emphatic-subject form rather than replacing the latter. The Turkish master already includes kendisi and kendini. Herself has four object uses (fasten/save/warm/defend); himself has six uses including emphasis (arrest himself/eat hay himself), beneficiaries, and tore himself apart. Retaining the old emphasis avoids narrowing to only the object construction.",
+      "sources": [
+        "https://open.lib.umn.edu/hindiurdu/chapter/grammar-notes-11-1-reflexive-pronouns/"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-04",
+          "english": "He built a high wall because he wanted the garden entirely for himself."
+        },
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-29",
+          "english": "Unable to arrest his old friend himself, he had asked another officer to do it."
+        },
+        {
+          "storyId": "classic-dog-shadow",
+          "sentenceId": "cl-dog-shadow-06",
+          "english": "The dog wants both pieces for himself."
+        },
+        {
+          "storyId": "classic-dog-manger",
+          "sentenceId": "cl-dog-manger-08",
+          "english": "But the dog cannot eat hay himself."
+        },
+        {
+          "storyId": "classic-rumpelstiltskin",
+          "sentenceId": "cl-rumpelstiltskin-20",
+          "english": "He stamped so violently that he tore himself apart, and the queen kept her baby."
+        },
+        {
+          "storyId": "classic-brave-little-tailor",
+          "sentenceId": "cl-brave-little-tailor-03",
+          "english": "Proud of himself, he made a belt that said, \"Seven at one blow.\""
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 7,
+      "lang": "bn",
+      "lemma": "himself",
+      "current": "সে নিজে (পুরুষ)",
+      "initialSuggested": "নিজে; নিজেকে (পুরুষ)",
+      "turkishReference": "kendisi; kendini",
+      "decision": "accept",
+      "suggested": "সে নিজে; নিজেকে (পুরুষ)",
+      "rationale": "Add an explicit reflexive-object form to the valid emphatic-subject form rather than replacing the latter. The Turkish master already includes kendisi and kendini. Herself has four object uses (fasten/save/warm/defend); himself has six uses including emphasis (arrest himself/eat hay himself), beneficiaries, and tore himself apart. Retaining the old emphasis avoids narrowing to only the object construction.",
+      "sources": [
+        "https://dictionary.cambridge.org/dictionary/english-bengali/yourself"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-04",
+          "english": "He built a high wall because he wanted the garden entirely for himself."
+        },
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-29",
+          "english": "Unable to arrest his old friend himself, he had asked another officer to do it."
+        },
+        {
+          "storyId": "classic-dog-shadow",
+          "sentenceId": "cl-dog-shadow-06",
+          "english": "The dog wants both pieces for himself."
+        },
+        {
+          "storyId": "classic-dog-manger",
+          "sentenceId": "cl-dog-manger-08",
+          "english": "But the dog cannot eat hay himself."
+        },
+        {
+          "storyId": "classic-rumpelstiltskin",
+          "sentenceId": "cl-rumpelstiltskin-20",
+          "english": "He stamped so violently that he tore himself apart, and the queen kept her baby."
+        },
+        {
+          "storyId": "classic-brave-little-tailor",
+          "sentenceId": "cl-brave-little-tailor-03",
+          "english": "Proud of himself, he made a belt that said, \"Seven at one blow.\""
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 8,
+      "lang": "ur",
+      "lemma": "himself",
+      "current": "وہ خود (مرد)",
+      "initialSuggested": "خود؛ خود کو (مرد)",
+      "turkishReference": "kendisi; kendini",
+      "decision": "accept",
+      "suggested": "وہ خود؛ خود کو (مرد)",
+      "rationale": "Add an explicit reflexive-object form to the valid emphatic-subject form rather than replacing the latter. The Turkish master already includes kendisi and kendini. Herself has four object uses (fasten/save/warm/defend); himself has six uses including emphasis (arrest himself/eat hay himself), beneficiaries, and tore himself apart. Retaining the old emphasis avoids narrowing to only the object construction.",
+      "sources": [
+        "https://open.lib.umn.edu/hindiurdu/chapter/grammar-notes-11-1-reflexive-pronouns/",
+        "https://hinkhojdictionary.com/urdu-english/خود+کو-meaning-in-english"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-04",
+          "english": "He built a high wall because he wanted the garden entirely for himself."
+        },
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-29",
+          "english": "Unable to arrest his old friend himself, he had asked another officer to do it."
+        },
+        {
+          "storyId": "classic-dog-shadow",
+          "sentenceId": "cl-dog-shadow-06",
+          "english": "The dog wants both pieces for himself."
+        },
+        {
+          "storyId": "classic-dog-manger",
+          "sentenceId": "cl-dog-manger-08",
+          "english": "But the dog cannot eat hay himself."
+        },
+        {
+          "storyId": "classic-rumpelstiltskin",
+          "sentenceId": "cl-rumpelstiltskin-20",
+          "english": "He stamped so violently that he tore himself apart, and the queen kept her baby."
+        },
+        {
+          "storyId": "classic-brave-little-tailor",
+          "sentenceId": "cl-brave-little-tailor-03",
+          "english": "Proud of himself, he made a belt that said, \"Seven at one blow.\""
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 9,
+      "lang": "tr",
+      "lemma": "hide",
+      "current": "saklanmak",
+      "initialSuggested": "saklanmak; saklamak",
+      "turkishReference": "saklanmak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "Transitive hiding and intransitive hiding are both present. The proposed source expansion is plausible but changes the approved Turkish reference and propagated sense policy.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Separate Turkish-source review before any coordinated source/target sense expansion.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-08",
+          "english": "Now he could see the suffering that his comfortable life had hidden from him."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-09",
+          "english": "The mice run and hide in a hole."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-11",
+          "english": "Then another person enters, and they hide once more."
+        },
+        {
+          "storyId": "classic-ass-lion-skin",
+          "sentenceId": "cl-ass-lion-skin-12",
+          "english": "A fine disguise cannot hide who we are forever."
+        },
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-10",
+          "english": "They hid in the workshop and watched the table."
+        },
+        {
+          "storyId": "classic-tom-thumb",
+          "sentenceId": "cl-tom-thumb-07",
+          "english": "On the road, he hid in a mouse hole and waited until the strangers left."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-10",
+          "english": "The frightened children hid around the house."
+        },
+        {
+          "storyId": "classic-twelve-dancing-princesses",
+          "sentenceId": "cl-twelve-dancing-princesses-08",
+          "english": "The eldest princess opened a hidden door beneath her bed."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 10,
+      "lang": "tr",
+      "lemma": "injured",
+      "current": "yaralı",
+      "initialSuggested": "yaraladı; yaralı",
+      "turkishReference": "yaralı",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "Two catalog uses are transitive past-tense verbs while yaralı is a valid participial/adjectival meaning. The approved Turkish source and all translations need coordinated part-of-speech consideration.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Separate Turkish-source review before any coordinated source/target sense expansion.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-cinderella",
+          "sentenceId": "cl-cinderella-21",
+          "english": "Each stepsister injured her foot to force it into the slipper."
+        },
+        {
+          "storyId": "classic-rapunzel",
+          "sentenceId": "cl-rapunzel-16",
+          "english": "In despair, he jumped from the tower and thorns injured his eyes."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 11,
+      "lang": "tr",
+      "lemma": "officer",
+      "current": "memur; subay",
+      "initialSuggested": "memur; subay; polis memuru",
+      "turkishReference": "memur; subay",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The two story uses refer to policemen. Turkish memur is broad enough to include police employment; adding polis memuru would clarify but the existing generic gloss is not categorically invalid.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Separate Turkish-source review before any coordinated source/target sense expansion.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-16",
+          "english": "After wishing him luck, the officer continued down the street."
+        },
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-29",
+          "english": "Unable to arrest his old friend himself, he had asked another officer to do it."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 12,
+      "lang": "th",
+      "lemma": "instead",
+      "current": "แทนที่จะ",
+      "initialSuggested": "แทน; แทนที่จะ",
+      "turkishReference": "yerine",
+      "decision": "accept",
+      "suggested": "แทน; แทนที่จะ",
+      "rationale": "Seven contexts contain both standalone instead and instead of. Add the independent adverb แทน while retaining the current conjunction for before-clause substitution.",
+      "sources": [
+        "https://dictionary.cambridge.org/dictionary/english-thai/instead"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-18",
+          "english": "He held out a little bone instead, so she thought he was still thin."
+        },
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-05",
+          "english": "Then one day, it named Snow White instead."
+        },
+        {
+          "storyId": "classic-sleeping-beauty",
+          "sentenceId": "cl-sleeping-beauty-07",
+          "english": "The princess would sleep for a hundred years instead."
+        },
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-17",
+          "english": "They left these gifts on the table instead of leather."
+        },
+        {
+          "storyId": "classic-tom-thumb",
+          "sentenceId": "cl-tom-thumb-10",
+          "english": "Instead, he shouted so loudly that a servant woke up and the thieves ran away."
+        },
+        {
+          "storyId": "classic-goose-girl",
+          "sentenceId": "cl-goose-girl-16",
+          "english": "He suggested telling it to an iron stove instead, and listened from outside."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-27",
+          "english": "Instead of disappearing completely, she rose among the daughters of the air."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 13,
+      "lang": "ar",
+      "lemma": "interrupted",
+      "current": "مقطوع",
+      "initialSuggested": "منقطع؛ متوقف",
+      "turkishReference": "kesintiye uğramış, yarım kalmış",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The current participle can mean cut off or interrupted. The one metaphorical interrupted-day occurrence does not prove it invalid. The proposed near-synonyms require Arabic usage judgment rather than replacing a valid sense.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Arabic reviewer to judge مقطوع against منقطع/متوقف for an interrupted period of activity.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-sleeping-beauty",
+          "sentenceId": "cl-sleeping-beauty-19",
+          "english": "The whole castle woke up and continued its interrupted day."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 14,
+      "lang": "th",
+      "lemma": "knocked",
+      "current": "ล้ม (ผลัก); เคาะ (ประตู)",
+      "initialSuggested": "ทำให้ล้ม; พังลง; เคาะ (ประตู)",
+      "turkishReference": "yıktı (knock down); (kapıyı) çaldı",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "The existing first sense is qualified by ผลัก (push), so it does not merely say fell without an actor. ล้ม can also function in defeat/bring-down meanings. Door knocking is separately preserved. The suggested causative may be clearer but no unambiguous direction reversal is established from this qualified gloss.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-20",
+          "english": "The giant knocked down the wall and gave them the garden to play in."
+        },
+        {
+          "storyId": "classic-frog-prince",
+          "sentenceId": "cl-frog-prince-07",
+          "english": "The next day, he arrived at the palace and knocked on the door."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-04",
+          "english": "Soon the wolf knocked and pretended to be their mother."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-09",
+          "english": "When he knocked a third time, the goats believed him and opened the door."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 15,
+      "lang": "pt-BR",
+      "lemma": "laces",
+      "current": "cadarços",
+      "initialSuggested": "cordões; laços (do corpete)",
+      "turkishReference": "bağcıklar",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "Priberam explicitly records cadarço as a cord used to tie something, besides the shoelace sense. The claim that it specifically means only shoelaces is false. Garment-specific cordões is an optional contextual synonym, not a necessary correction.",
+      "sources": [
+        "https://dicionario.priberam.org/cadarço"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-12",
+          "english": "Disguised as a seller, she visited the house and tied the girl's laces too tightly."
+        },
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-13",
+          "english": "The dwarfs returned and loosened the laces in time to save her."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 16,
+      "lang": "id",
+      "lemma": "laces",
+      "current": "tali sepatu",
+      "initialSuggested": "tali pengikat",
+      "turkishReference": "bağcıklar",
+      "decision": "accept",
+      "suggested": "tali sepatu; tali pengikat",
+      "rationale": "The current gloss explicitly names footwear. Both Snow White uses concern dangerous tightening and loosening of lacing, consistent with garment laces. Add general/garment lacing while preserving the valid shoe-lace sense of the shared lemma; do not replace it solely with bodice wording. Garment context is inferred from the two consecutive rescue sentences, not an explicit bodice noun.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-12",
+          "english": "Disguised as a seller, she visited the house and tied the girl's laces too tightly."
+        },
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-13",
+          "english": "The dwarfs returned and loosened the laces in time to save her."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 17,
+      "lang": "vi",
+      "lemma": "laces",
+      "current": "dây giày",
+      "initialSuggested": "dây buộc; dây thắt (áo)",
+      "turkishReference": "bağcıklar",
+      "decision": "accept",
+      "suggested": "dây giày; dây buộc (áo)",
+      "rationale": "The current gloss explicitly names footwear. Both Snow White uses concern dangerous tightening and loosening of lacing, consistent with garment laces. Add general/garment lacing while preserving the valid shoe-lace sense of the shared lemma; do not replace it solely with bodice wording. Garment context is inferred from the two consecutive rescue sentences, not an explicit bodice noun.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-12",
+          "english": "Disguised as a seller, she visited the house and tied the girl's laces too tightly."
+        },
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-13",
+          "english": "The dwarfs returned and loosened the laces in time to save her."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 18,
+      "lang": "th",
+      "lemma": "laces",
+      "current": "เชือกผูกรองเท้า",
+      "initialSuggested": "เชือกผูก; เชือกรัด (ชุด)",
+      "turkishReference": "bağcıklar",
+      "decision": "accept",
+      "suggested": "เชือกผูกรองเท้า; เชือกผูก (เสื้อผ้า)",
+      "rationale": "The current gloss explicitly names footwear. Both Snow White uses concern dangerous tightening and loosening of lacing, consistent with garment laces. Add general/garment lacing while preserving the valid shoe-lace sense of the shared lemma; do not replace it solely with bodice wording. Garment context is inferred from the two consecutive rescue sentences, not an explicit bodice noun.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-12",
+          "english": "Disguised as a seller, she visited the house and tied the girl's laces too tightly."
+        },
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-13",
+          "english": "The dwarfs returned and loosened the laces in time to save her."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 19,
+      "lang": "pt-BR",
+      "lemma": "lay",
+      "current": "deitou; colocou",
+      "initialSuggested": "jazia; deitou-se; colocou",
+      "turkishReference": "yattı; koymak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The three uses mix past lie (photograph resting, wolf lying in bed) with present lay eggs. Priberam distinguishes pronominal deitar-se, but colloquial Brazilian omission of reflexive clitics and the valid colocou placement sense make the claimed reversal too categorical. jazia/deitou-se may expand coverage, but not without Brazilian usage judgment.",
+      "sources": [
+        "https://www.dicionario.priberam.org/deitar"
+      ],
+      "confidence": "high",
+      "nextAction": "Brazilian Portuguese reviewer to check whether deitou needs an explicit intransitive rest/lie form; preserve the separate laying/placement sense.",
+      "catalogContexts": [
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-2",
+          "english": "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+        },
+        {
+          "storyId": "classic-red-riding-hood",
+          "sentenceId": "cl-red-riding-hood-11",
+          "english": "The wolf swallowed her, put on her cap, and lay in her bed."
+        },
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-11",
+          "english": "The bird could neither lay eggs nor purr, and he missed swimming."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 20,
+      "lang": "th",
+      "lemma": "lowered",
+      "current": "ลดลง",
+      "initialSuggested": "ลดต่ำลง; ก้ม (ศีรษะ)",
+      "turkishReference": "indirdi",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The sole head-lowering example favors a physical lowering/bowing verb, but ลดลง is a valid lower/decrease meaning. Replacing it by head-specific ก้ม would narrow a general lemma; a Thai reviewer must decide whether the physical sense needs addition.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Thai reviewer to assess transitiveness of ลดลง and a broad physical-lowering expansion; avoid a head-only replacement.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-24",
+          "english": "But they welcomed him, and when he lowered his head, he saw his reflection."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 21,
+      "lang": "ru",
+      "lemma": "marks",
+      "current": "отметки",
+      "initialSuggested": "следы; отметины",
+      "turkishReference": "izler, işaretler",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "Gramota records отметка as a trace or imprint on a surface, not merely grades/written ticks. The body marks can use that general sense; следы/отметины are optional contextual refinements.",
+      "sources": [
+        "https://gramota.ru/poisk?mode=all&query=отметка"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-27",
+          "english": "The giant ran to him and noticed marks on his hands and feet."
+        },
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-29",
+          "english": "The boy called the marks wounds of love, and the giant knelt before him."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 22,
+      "lang": "th",
+      "lemma": "none",
+      "current": "ไม่มีสักอย่าง",
+      "initialSuggested": "ไม่มีเลย; ไม่มีสักคน",
+      "turkishReference": "hiçbiri",
+      "decision": "accept",
+      "suggested": "ไม่มีเลย; ไม่มีสักอย่าง; ไม่มีสักคน",
+      "rationale": "The existing อย่าง classifier restricts the expression to things, but the catalog refers to none of the robbers. Add general no amount/none and the person classifier while retaining the valid thing sense.",
+      "sources": [],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-24",
+          "english": "None of the robbers dared to go back."
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "findingIndex": 23,
+      "lang": "ru",
+      "lemma": "original",
+      "current": "оригинальный",
+      "initialSuggested": "первоначальный; оригинальный",
+      "turkishReference": "asıl, orijinal",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "Gramota explicitly records оригинальный as genuine/original/initial, in addition to creative. It can refer to the original ribbon. Adding первоначальный solely for this sentence is synonym polish.",
+      "sources": [
+        "https://gramota.ru/poisk?mode=all&query=оригинальный&simple=0"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-15",
+          "english": "Her grandmother wrote a new letter and placed the original blue ribbon around it."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 1,
+      "lang": "es-419",
+      "lemma": "patch",
+      "current": "parche; remiendo",
+      "initialSuggested": "parche; trozo (de terreno/agua)",
+      "turkishReference": "yama; parça",
+      "decision": "accept",
+      "suggested": "parche; remiendo; pequeña zona",
+      "rationale": "Both catalog matches mean a small area of ground/water. Preserve both valid repair senses while adding the missing piece/area sense already explicit in Turkish yama; parça.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-12",
+          "english": "Beyond it was a patch of empty ground that received sunlight for most of the day."
+        },
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-16",
+          "english": "Winter grew bitterly cold, and he swam to keep a small patch of water from freezing."
+        }
+      ],
+      "parentOriginalSuggested": "parche; remiendo; trozo (de terreno/agua)",
+      "parentRationale": "Use the general small-area phrase for ground and water instead of the awkward literal piece-of-water qualifier; retain both existing repair senses."
+    },
+    {
+      "batch": 4,
+      "findingIndex": 2,
+      "lang": "id",
+      "lemma": "plain",
+      "current": "preman; sederhana",
+      "initialSuggested": "(berpakaian) sipil; sederhana",
+      "turkishReference": "sivil (giyimli); sade",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "Preman has a recognized civilian/plain-clothes sense as well as the common thug sense. The plain-clothes context selects the former. The proposed sipil wording is clearer but lexical ambiguity alone does not invalidate an established sense; retain pending Indonesian judgment.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Indonesian reviewer to assess whether standalone preman is acceptable as the civilian sense or needs an explicit clothing qualifier.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-23",
+          "english": "The stranger explained that he was a plain-clothes detective."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 3,
+      "lang": "ru",
+      "lemma": "poured",
+      "current": "налил",
+      "initialSuggested": "вылил; налил",
+      "turkishReference": "döktü",
+      "decision": "accept",
+      "suggested": "вылил; налил",
+      "rationale": "The only occurrence disposes of wine (poured away), not filling a vessel. Add вылил for emptying out, while retaining the valid pouring-in налил sense.",
+      "sources": [
+        "https://dictionary.cambridge.org/dictionary/english/pour"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-twelve-dancing-princesses",
+          "sentenceId": "cl-twelve-dancing-princesses-07",
+          "english": "At the palace, he secretly poured away the wine and pretended to sleep."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 4,
+      "lang": "vi",
+      "lemma": "poured",
+      "current": "đã rót",
+      "initialSuggested": "đã đổ",
+      "turkishReference": "döktü",
+      "decision": "accept",
+      "suggested": "đã rót; đã đổ",
+      "rationale": "The only occurrence discards wine. Add đổ for pouring out/discarding while retaining the valid rót pouring-into-a-vessel sense. Do not narrow the lemma by replacing rót entirely.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-twelve-dancing-princesses",
+          "sentenceId": "cl-twelve-dancing-princesses-07",
+          "english": "At the palace, he secretly poured away the wine and pretended to sleep."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 5,
+      "lang": "bn",
+      "lemma": "responsible",
+      "current": "দায়িত্বশীল",
+      "initialSuggested": "দায়ী; দায়িত্বশীল",
+      "turkishReference": "sorumlu",
+      "decision": "accept",
+      "suggested": "দায়ী; দায়িত্বশীল",
+      "rationale": "The context asks who caused harm, not who has a dutiful character. Add causal responsibility/blame দায়ী while retaining the valid responsible-character adjective.",
+      "sources": [],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-28",
+          "english": "Angry that someone had hurt the child, he asked who was responsible."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 6,
+      "lang": "vi",
+      "lemma": "rose",
+      "current": "hoa hồng; đã tăng lên",
+      "initialSuggested": "hoa hồng; đã bay lên; đã nổi lên",
+      "turkishReference": "gül; yükseldi",
+      "decision": "accept",
+      "suggested": "hoa hồng; đã tăng lên; đã bay lên; đã nổi lên",
+      "rationale": "Six exact rose matches include a proper-name false-positive Briar-Rose plus five physical/figurative upward movements. Preserve the flower and quantitative increase senses, and add ascending/flying or emerging/rising meanings; the proposal would have unnecessarily deleted increase.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-sleeping-beauty",
+          "sentenceId": "cl-sleeping-beauty-15",
+          "english": "After a hundred years, another prince heard the story of Briar-Rose."
+        },
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-08",
+          "english": "Hunters arrived, and frightened birds rose into the air."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-21",
+          "english": "Her sisters rose from the sea with their hair cut short."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-27",
+          "english": "Instead of disappearing completely, she rose among the daughters of the air."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-17",
+          "english": "As the flame died, its lights rose and became stars."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-25",
+          "english": "Together they rose beyond cold, hunger, and fear."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 7,
+      "lang": "vi",
+      "lemma": "same",
+      "current": "giống nhau",
+      "initialSuggested": "cùng; giống nhau",
+      "turkishReference": "aynı",
+      "decision": "accept",
+      "suggested": "cùng một; giống nhau",
+      "rationale": "Six contexts repeatedly identify one and the same shop, house, call, choice or event. Add cùng một for referential identity, retaining giống nhau for similarity. Use cùng một rather than bare cùng (together).",
+      "sources": [
+        "https://dictionary.cambridge.org/dictionary/english-vietnamese/at-the-same-time"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "red-umbrella",
+          "sentenceId": "red-umbrella-8",
+          "english": "Mrs. Green needs to go to the same shop."
+        },
+        {
+          "storyId": "classic-boy-cried-wolf",
+          "sentenceId": "cl-boy-cried-wolf-07",
+          "english": "Later, he plays the same trick again."
+        },
+        {
+          "storyId": "classic-rapunzel",
+          "sentenceId": "cl-rapunzel-10",
+          "english": "He watched how the enchantress entered, then tried the same call."
+        },
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-07",
+          "english": "Night after night, the same thing happened."
+        },
+        {
+          "storyId": "classic-emperors-clothes",
+          "sentenceId": "cl-emperors-clothes-13",
+          "english": "A second official made the same choice for the same reason."
+        },
+        {
+          "storyId": "classic-steadfast-tin-soldier",
+          "sentenceId": "cl-steadfast-tin-soldier-21",
+          "english": "By a remarkable chance, he was back in the same house where his journey had begun."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 8,
+      "lang": "th",
+      "lemma": "same",
+      "current": "เหมือนกัน",
+      "initialSuggested": "เดียวกัน; เหมือนกัน",
+      "turkishReference": "aynı",
+      "decision": "accept",
+      "suggested": "เดียวกัน; เหมือนกัน",
+      "rationale": "Six contexts include identical referents, not only two similar things. Add เดียวกัน while retaining the valid similarity gloss เหมือนกัน.",
+      "sources": [
+        "https://dictionary.cambridge.org/us/dictionary/english-thai/same"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "red-umbrella",
+          "sentenceId": "red-umbrella-8",
+          "english": "Mrs. Green needs to go to the same shop."
+        },
+        {
+          "storyId": "classic-boy-cried-wolf",
+          "sentenceId": "cl-boy-cried-wolf-07",
+          "english": "Later, he plays the same trick again."
+        },
+        {
+          "storyId": "classic-rapunzel",
+          "sentenceId": "cl-rapunzel-10",
+          "english": "He watched how the enchantress entered, then tried the same call."
+        },
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-07",
+          "english": "Night after night, the same thing happened."
+        },
+        {
+          "storyId": "classic-emperors-clothes",
+          "sentenceId": "cl-emperors-clothes-13",
+          "english": "A second official made the same choice for the same reason."
+        },
+        {
+          "storyId": "classic-steadfast-tin-soldier",
+          "sentenceId": "cl-steadfast-tin-soldier-21",
+          "english": "By a remarkable chance, he was back in the same house where his journey had begun."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 9,
+      "lang": "vi",
+      "lemma": "sapphire",
+      "current": "ngọc bích",
+      "initialSuggested": "ngọc lam (sapphire)",
+      "turkishReference": "safir",
+      "decision": "accept",
+      "suggested": "đá sapphire",
+      "rationale": "Use the unambiguous gemstone label đá sapphire, documented by Vietnamese jeweler PNJ, for the two sapphire-eye occurrences and Turkish safir. Do not adopt the proposed ngọc lam wording, which was not established as an unambiguous sapphire label. Current ngọc bích ordinarily identifies jade rather than this gem.",
+      "sources": [
+        "https://www.pnj.com.vn/trang-suc-da-quy/san-pham-da-quy/?layout=products_without_options&sort_by=position&sort_order=asc"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-14",
+          "english": "He asked the swallow to take one of his sapphire eyes to the writer."
+        },
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-18",
+          "english": "The Prince gave her his second sapphire, even though this left him blind."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 10,
+      "lang": "bn",
+      "lemma": "scarcely",
+      "current": "কদাচিৎ",
+      "initialSuggested": "কোনোমতে; সামান্যই",
+      "turkishReference": "neredeyse hiç, güçlükle",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source needs low degree/barely warmer, while current কদাচিৎ is a valid rare-frequency sense. A degree gloss should be added without dropping frequency; the candidate কোনোমতে can imply difficulty rather than low degree. Bengali dictionary usage overlaps. Do not replace a valid sense with another narrow interpretation.",
+      "sources": [
+        "https://accessibledictionary.gov.bd/english-to-bengali.php?q=hardly"
+      ],
+      "confidence": "high",
+      "nextAction": "Bengali reviewer to approve a degree-based barely/hardly addition alongside the valid rare-frequency sense.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-08",
+          "english": "And the poor home was scarcely warmer than the street."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 11,
+      "lang": "ru",
+      "lemma": "scattered",
+      "current": "рассыпал; разбежался",
+      "initialSuggested": "рассыпал; разлетелся",
+      "turkishReference": "saçıldı, dağıldı",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "The current first gloss рассыпал already gives scattering pieces; the second expresses another legitimate scattering sense (running in different directions). The verb-person/voice form varies with the sentence, but the proposed replacement would delete a valid existing sense rather than fix a missing meaning.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-02",
+          "english": "When the mirror broke, tiny pieces scattered across the world."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 12,
+      "lang": "ru",
+      "lemma": "sending",
+      "current": "отправляющий",
+      "initialSuggested": "отправка; отправляя",
+      "turkishReference": "gönderme",
+      "decision": "accept",
+      "suggested": "отправка; отправляющий",
+      "rationale": "The only source occurrence is the action noun/gerund before sending a photograph, matching Turkish gönderme. Add the action noun отправка while preserving the valid sending participle rather than replacing it only for one grammatical construction.",
+      "sources": [],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-13",
+          "english": "Nora suggested planting a few flowers there before sending a photograph to the old friend."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 13,
+      "lang": "ru",
+      "lemma": "service",
+      "current": "услуга",
+      "initialSuggested": "служение; услуга",
+      "turkishReference": "hizmet",
+      "decision": "accept",
+      "suggested": "служение; услуга",
+      "rationale": "Add sustained serving/devotion служение for a life of service, retaining услуга for a favor/provided service. This adds a distinct activity sense rather than replacing the broad commercial/favor one.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-29",
+          "english": "Invisible to the prince, she began a new life of service and hope."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 14,
+      "lang": "vi",
+      "lemma": "service",
+      "current": "dịch vụ",
+      "initialSuggested": "sự phục vụ; dịch vụ",
+      "turkishReference": "hizmet",
+      "decision": "accept",
+      "suggested": "sự phục vụ; dịch vụ",
+      "rationale": "The life-of-service occurrence needs the activity of serving others. Add sự phục vụ while preserving dịch vụ for a provided/economic service.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-29",
+          "english": "Invisible to the prince, she began a new life of service and hope."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 15,
+      "lang": "id",
+      "lemma": "service",
+      "current": "layanan",
+      "initialSuggested": "pengabdian; layanan",
+      "turkishReference": "hizmet",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "Layanan is a valid general provided-service/help meaning, not necessarily a commercial transaction. A life devoted to service is compatible with providing help; pengabdian adds devotion but the source does not require a new exclusive sense. Do not change a valid broad synonym solely for a narrative collocation.",
+      "sources": [
+        "https://dictionary.cambridge.org/dictionary/english-indonesian/service"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-29",
+          "english": "Invisible to the prince, she began a new life of service and hope."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 16,
+      "lang": "th",
+      "lemma": "service",
+      "current": "บริการ",
+      "initialSuggested": "การรับใช้; บริการ",
+      "turkishReference": "hizmet",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "บริการ can mean serving/providing help, not exclusively business. การรับใช้ foregrounds subservience/serving a person. The sole life-of-service sentence does not establish that the existing generic service gloss is invalid or that this narrower connotation is required.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-29",
+          "english": "Invisible to the prince, she began a new life of service and hope."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 17,
+      "lang": "pt-BR",
+      "lemma": "shore",
+      "current": "margem",
+      "initialSuggested": "costa; praia; margem",
+      "turkishReference": "kıyı",
+      "decision": "reject",
+      "suggested": null,
+      "rationale": "Priberam defines margem as land beside an extent of water and as a general edge/boundary, without restricting it to rivers/lakes. Sea coast is within that broad scope. costa/praia are plausible refinements, not meaning corrections.",
+      "sources": [
+        "https://dicionario.priberam.org/margem"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-04",
+          "english": "When a storm broke the ship apart, she carried him to shore."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-12",
+          "english": "Despite these warnings, she drank the potion on the shore near the palace."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-18",
+          "english": "When the prince visited a neighbouring kingdom, he recognized its princess as the woman from the shore."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-06",
+          "english": "She reached the sea and found eleven swan feathers on the shore."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 18,
+      "lang": "th",
+      "lemma": "simple",
+      "current": "ง่าย",
+      "initialSuggested": "เรียบง่าย; ธรรมดา",
+      "turkishReference": "basit",
+      "decision": "accept",
+      "suggested": "ง่าย; เรียบง่าย; ธรรมดา",
+      "rationale": "All four catalog occurrences describe a plain chain/food/meal or a simple young man. Add plain/unadorned เรียบง่าย/ธรรมดา, retaining the valid easy ง่าย sense; the proposed replacement would have dropped easy.",
+      "sources": [
+        "https://dictionary.cambridge.org/us/dictionary/english-thai/simple"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-gift-magi",
+          "sentenceId": "cl-gift-magi-13",
+          "english": "Finally, she found a simple platinum chain for Jim's watch."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-02",
+          "english": "He offers simple food from the fields."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-14",
+          "english": "\"I prefer a simple meal and a safe home.\""
+        },
+        {
+          "storyId": "classic-golden-goose",
+          "sentenceId": "cl-golden-goose-15",
+          "english": "But the king did not want such a simple young man for his daughter."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 19,
+      "lang": "ru",
+      "lemma": "slipped",
+      "current": "поскользнулся",
+      "initialSuggested": "проскользнул; поскользнулся",
+      "turkishReference": "kaydı",
+      "decision": "accept",
+      "suggested": "проскользнул; поскользнулся",
+      "rationale": "Children quietly passed through a wall opening; they did not lose their footing. Add slipping through проскользнул, retaining the valid slipped-on-a-surface sense поскользнулся.",
+      "sources": [
+        "https://dictionary.cambridge.org/us/dictionary/english-russian/slip"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-11",
+          "english": "Children had slipped through a hole in the wall and climbed into the trees."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 20,
+      "lang": "ru",
+      "lemma": "slips",
+      "current": "скользит",
+      "initialSuggested": "поскальзывается",
+      "turkishReference": "kayar",
+      "decision": "accept",
+      "suggested": "скользит; поскальзывается",
+      "rationale": "The character loses footing and falls into water. Add поскальзывается, retaining скользит for the valid sliding/gliding sense. Do not replace the general sliding gloss solely with the falling-specific sense.",
+      "sources": [
+        "https://dictionary.cambridge.org/us/dictionary/english-russian/slip"
+      ],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-ant-dove",
+          "sentenceId": "cl-ant-dove-02",
+          "english": "She slips and falls into the water."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 21,
+      "lang": "ru",
+      "lemma": "spread",
+      "current": "распространять",
+      "initialSuggested": "расстилать; распространять",
+      "turkishReference": "yaymak",
+      "decision": "accept",
+      "suggested": "расстилать; распространять",
+      "rationale": "The sole occurrence lays a skin/material out to dry. Add physical laying out расстилать, retaining dissemination распространять. The source yaymak itself supports both.",
+      "sources": [],
+      "confidence": "high",
+      "catalogContexts": [
+        {
+          "storyId": "classic-ants-grasshopper",
+          "sentenceId": "cl-ants-grasshopper-03",
+          "english": "They spread it out to dry."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 22,
+      "lang": "id",
+      "lemma": "pair",
+      "current": "pasangan",
+      "initialSuggested": "pasang; pasangan",
+      "turkishReference": "çift",
+      "decision": "accept",
+      "suggested": "pasang; pasangan",
+      "rationale": "Both contexts count matching physical items (shoes and wings). Add pasang as the matching-item pair/count expression while keeping pasangan for partner/couple senses.",
+      "sources": [
+        "https://dictionary.cambridge.org/dictionary/indonesian-english/pasangan"
+      ],
+      "confidence": "medium",
+      "catalogContexts": [
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-01",
+          "english": "A shoemaker had become so poor that he had leather for only one pair of shoes."
+        },
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-27",
+          "english": "The flower spirits welcomed her and gave her a pair of wings and the new name Maia."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 23,
+      "lang": "es-419",
+      "lemma": "soften",
+      "current": "ablandarse",
+      "initialSuggested": "ablandar; suavizar",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 24,
+      "lang": "id",
+      "lemma": "soften",
+      "current": "melunak",
+      "initialSuggested": "melunakkan; melunak",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 25,
+      "lang": "ar",
+      "lemma": "soften",
+      "current": "يلين",
+      "initialSuggested": "يليّن؛ يلين",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 26,
+      "lang": "vi",
+      "lemma": "soften",
+      "current": "mềm đi",
+      "initialSuggested": "làm mềm; mềm đi",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 27,
+      "lang": "hi",
+      "lemma": "soften",
+      "current": "नरम होना",
+      "initialSuggested": "नरम करना; नरम होना",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 28,
+      "lang": "ru",
+      "lemma": "soften",
+      "current": "смягчаться",
+      "initialSuggested": "смягчать; смягчаться",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 29,
+      "lang": "bn",
+      "lemma": "soften",
+      "current": "নরম হওয়া",
+      "initialSuggested": "নরম করা; নরম হওয়া",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 30,
+      "lang": "ur",
+      "lemma": "soften",
+      "current": "نرم ہونا",
+      "initialSuggested": "نرم کرنا؛ نرم ہونا",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 31,
+      "lang": "th",
+      "lemma": "soften",
+      "current": "อ่อนลง",
+      "initialSuggested": "ทำให้อ่อนลง; อ่อนลง",
+      "turkishReference": "yumuşamak",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 32,
+      "lang": "es-419",
+      "lemma": "spills",
+      "current": "derrama",
+      "initialSuggested": "se derrama; derrama",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 33,
+      "lang": "id",
+      "lemma": "spills",
+      "current": "menumpahkan",
+      "initialSuggested": "tumpah; menumpahkan",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 34,
+      "lang": "ar",
+      "lemma": "spills",
+      "current": "يسكب",
+      "initialSuggested": "ينسكب؛ يسكب",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 35,
+      "lang": "vi",
+      "lemma": "spills",
+      "current": "làm đổ",
+      "initialSuggested": "đổ ra; làm đổ",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 36,
+      "lang": "hi",
+      "lemma": "spills",
+      "current": "गिराता है (तरल)",
+      "initialSuggested": "गिरता है / छलकता है (तरल); गिराता है",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 37,
+      "lang": "ru",
+      "lemma": "spills",
+      "current": "проливает",
+      "initialSuggested": "проливается; проливает",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 38,
+      "lang": "bn",
+      "lemma": "spills",
+      "current": "ছড়িয়ে ফেলে",
+      "initialSuggested": "ছলকে পড়ে; ফেলে দেয়",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 39,
+      "lang": "ur",
+      "lemma": "spills",
+      "current": "گراتا ہے (مائع)",
+      "initialSuggested": "گرتا ہے / چھلکتا ہے (مائع)؛ گراتا ہے",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "findingIndex": 40,
+      "lang": "th",
+      "lemma": "spills",
+      "current": "ทำหก",
+      "initialSuggested": "หก; ทำหก",
+      "turkishReference": "döker",
+      "decision": "defer",
+      "suggested": null,
+      "rationale": "The source döker and current target both express a valid transitive spilling sense; the one catalog milk example is intransitive. Adding an intransitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+      "sources": [],
+      "confidence": "high",
+      "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+      "catalogContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "accept": 28,
+    "reject": 9,
+    "defer": 26
+  },
+  "batchCounts": {
+    "3": {
+      "accept": 12,
+      "reject": 5,
+      "defer": 6
+    },
+    "4": {
+      "accept": 16,
+      "defer": 20,
+      "reject": 4
+    }
+  }
+}

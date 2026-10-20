@@ -1,0 +1,762 @@
+{
+  "date": "2026-10-20",
+  "baselineRemainingReview": "66a5453",
+  "coverage": {
+    "initialLemmas": 121,
+    "remainingLemmas": 977,
+    "uniqueLemmasPerLanguage": 1098,
+    "targetLanguages": [
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "targetPairsReviewed": 10980,
+    "overlap": 0
+  },
+  "remainingCandidates": {
+    "total": 153,
+    "accept": 76,
+    "defer": 57,
+    "reject": 20
+  },
+  "initialCandidates": {
+    "total": 37,
+    "accept": 5,
+    "reject": 16,
+    "defer": 16
+  },
+  "allCandidates": {
+    "total": 190,
+    "accept": 81,
+    "reject": 36,
+    "defer": 73
+  },
+  "coordinatedSourceCorrections": [
+    {
+      "lemma": "tie",
+      "lang": "tr",
+      "current": "bağlamak",
+      "safeReplacement": "bağlamak; kravat (isim)",
+      "disposition": "accept",
+      "reason": "The rope context is a verb; diamond on his tie is necktie noun. Both are certain, so preserve both."
+    },
+    {
+      "lemma": "unlit",
+      "lang": "tr",
+      "current": "ışıksız",
+      "safeReplacement": "yakılmamış; ışıksız",
+      "disposition": "accept",
+      "reason": "The sole occurrence is an unignited cigar. Add ignition sense and preserve unilluminated sense.",
+      "externalSources": [
+        "https://www.collinsdictionary.com/dictionary/english/unlit"
+      ]
+    },
+    {
+      "lang": "es-419",
+      "lemma": "tie",
+      "current": "atar",
+      "safeReplacement": "atar; corbata",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "tie",
+      "current": "amarrar",
+      "safeReplacement": "amarrar; gravata",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "id",
+      "lemma": "tie",
+      "current": "mengikat",
+      "safeReplacement": "mengikat; dasi",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "ar",
+      "lemma": "tie",
+      "current": "يربط",
+      "safeReplacement": "يربط؛ ربطة عنق",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "vi",
+      "lemma": "tie",
+      "current": "buộc",
+      "safeReplacement": "buộc; cà vạt",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "hi",
+      "lemma": "tie",
+      "current": "बाँधना",
+      "safeReplacement": "बाँधना; टाई",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "ru",
+      "lemma": "tie",
+      "current": "завязывать",
+      "safeReplacement": "завязывать; галстук",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "bn",
+      "lemma": "tie",
+      "current": "বাঁধা",
+      "safeReplacement": "বাঁধা; টাই",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "ur",
+      "lemma": "tie",
+      "current": "باندھنا",
+      "safeReplacement": "باندھنا؛ ٹائی",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    },
+    {
+      "lang": "th",
+      "lemma": "tie",
+      "current": "ผูก",
+      "safeReplacement": "ผูก; เนกไท",
+      "rationale": "Missing necktie noun is unambiguous in diamond on his tie; preserve existing binding verb.",
+      "disposition": "accept",
+      "nativeSpeakerApproval": false
+    }
+  ],
+  "changedGlosses": [
+    {
+      "lang": "tr",
+      "lemma": "tie",
+      "before": "bağlamak",
+      "after": "bağlamak; kravat (isim)"
+    },
+    {
+      "lang": "tr",
+      "lemma": "unlit",
+      "before": "ışıksız",
+      "after": "yakılmamış; ışıksız"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "anyone",
+      "before": "nadie; alguien",
+      "after": "cualquiera; alguien; (con negación) nadie"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "companion",
+      "before": "compañero de viaje",
+      "after": "compañero; compañero de viaje"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "curled",
+      "before": "se enroscó",
+      "after": "rizó (el pelo); se enroscó"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "patch",
+      "before": "parche; remiendo",
+      "after": "parche; remiendo; pequeña zona"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "tie",
+      "before": "atar",
+      "after": "atar; corbata"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "unlit",
+      "before": "sin luz",
+      "after": "sin encender; sin luz"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "weakened",
+      "before": "debilitó",
+      "after": "se debilitó; debilitado; debilitó"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "amounts",
+      "before": "quantias",
+      "after": "quantidades"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "anyone",
+      "before": "ninguém; alguém",
+      "after": "qualquer pessoa; alguém; (com negação) ninguém"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "companion",
+      "before": "companheiro de viagem",
+      "after": "companheiro; companheiro de viagem"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "curled",
+      "before": "enrolou-se",
+      "after": "cacheou (o cabelo); enrolou-se"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "tie",
+      "before": "amarrar",
+      "after": "amarrar; gravata"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "unlit",
+      "before": "sem luz",
+      "after": "não aceso; sem luz"
+    },
+    {
+      "lang": "id",
+      "lemma": "companion",
+      "before": "teman seperjalanan",
+      "after": "teman; pendamping; teman seperjalanan"
+    },
+    {
+      "lang": "id",
+      "lemma": "curled",
+      "before": "meringkuk",
+      "after": "mengeriting (rambut); meringkuk"
+    },
+    {
+      "lang": "id",
+      "lemma": "daylight",
+      "before": "siang hari",
+      "after": "cahaya siang hari; siang hari"
+    },
+    {
+      "lang": "id",
+      "lemma": "heart",
+      "before": "hati",
+      "after": "hati; jantung"
+    },
+    {
+      "lang": "id",
+      "lemma": "laces",
+      "before": "tali sepatu",
+      "after": "tali sepatu; tali pengikat"
+    },
+    {
+      "lang": "id",
+      "lemma": "pair",
+      "before": "pasangan",
+      "after": "pasang; pasangan"
+    },
+    {
+      "lang": "id",
+      "lemma": "surprise",
+      "before": "kejutan",
+      "after": "keheranan; kejutan"
+    },
+    {
+      "lang": "id",
+      "lemma": "tie",
+      "before": "mengikat",
+      "after": "mengikat; dasi"
+    },
+    {
+      "lang": "id",
+      "lemma": "unlit",
+      "before": "tak berlampu",
+      "after": "belum dinyalakan; tak berlampu"
+    },
+    {
+      "lang": "id",
+      "lemma": "weakened",
+      "before": "melemahkan",
+      "after": "melemah; dilemahkan; melemahkan"
+    },
+    {
+      "lang": "ar",
+      "lemma": "call",
+      "before": "مكالمة؛ نادى",
+      "after": "نداء؛ مكالمة؛ نادى"
+    },
+    {
+      "lang": "ar",
+      "lemma": "companion",
+      "before": "رفيق السفر",
+      "after": "رفيق؛ رفيق السفر"
+    },
+    {
+      "lang": "ar",
+      "lemma": "curled",
+      "before": "التفّ",
+      "after": "جعّد (الشعر)؛ التفّ"
+    },
+    {
+      "lang": "ar",
+      "lemma": "endangering",
+      "before": "معرّض للخطر",
+      "after": "يُعرِّض للخطر"
+    },
+    {
+      "lang": "ar",
+      "lemma": "surprise",
+      "before": "مفاجأة",
+      "after": "دهشة؛ مفاجأة"
+    },
+    {
+      "lang": "ar",
+      "lemma": "tie",
+      "before": "يربط",
+      "after": "يربط؛ ربطة عنق"
+    },
+    {
+      "lang": "ar",
+      "lemma": "too",
+      "before": "أيضاً؛ جداً",
+      "after": "أيضاً؛ أكثر من اللازم؛ جداً"
+    },
+    {
+      "lang": "ar",
+      "lemma": "unlit",
+      "before": "غير مضاء",
+      "after": "غير مشتعل؛ غير مضاء"
+    },
+    {
+      "lang": "vi",
+      "lemma": "call",
+      "before": "cuộc gọi; gọi",
+      "after": "tiếng gọi; cuộc gọi; gọi"
+    },
+    {
+      "lang": "vi",
+      "lemma": "curled",
+      "before": "đã cuộn tròn",
+      "after": "uốn xoăn (tóc); đã cuộn tròn"
+    },
+    {
+      "lang": "vi",
+      "lemma": "end",
+      "before": "kết thúc",
+      "after": "cuối; kết thúc"
+    },
+    {
+      "lang": "vi",
+      "lemma": "laces",
+      "before": "dây giày",
+      "after": "dây giày; dây buộc (áo)"
+    },
+    {
+      "lang": "vi",
+      "lemma": "poured",
+      "before": "đã rót",
+      "after": "đã rót; đã đổ"
+    },
+    {
+      "lang": "vi",
+      "lemma": "remained",
+      "before": "đã ở lại",
+      "after": "vẫn còn; vẫn là; ở lại"
+    },
+    {
+      "lang": "vi",
+      "lemma": "rose",
+      "before": "hoa hồng; đã tăng lên",
+      "after": "hoa hồng; đã tăng lên; đã bay lên; đã nổi lên"
+    },
+    {
+      "lang": "vi",
+      "lemma": "same",
+      "before": "giống nhau",
+      "after": "cùng một; giống nhau"
+    },
+    {
+      "lang": "vi",
+      "lemma": "sapphire",
+      "before": "ngọc bích",
+      "after": "đá sapphire"
+    },
+    {
+      "lang": "vi",
+      "lemma": "service",
+      "before": "dịch vụ",
+      "after": "sự phục vụ; dịch vụ"
+    },
+    {
+      "lang": "vi",
+      "lemma": "tie",
+      "before": "buộc",
+      "after": "buộc; cà vạt"
+    },
+    {
+      "lang": "vi",
+      "lemma": "travel",
+      "before": "đi du lịch",
+      "after": "đi lại; chuyển động; đi du lịch"
+    },
+    {
+      "lang": "vi",
+      "lemma": "unlit",
+      "before": "không có đèn sáng",
+      "after": "chưa châm lửa; không có đèn sáng"
+    },
+    {
+      "lang": "vi",
+      "lemma": "weakened",
+      "before": "đã làm yếu đi",
+      "after": "đã yếu đi; đã làm yếu đi"
+    },
+    {
+      "lang": "hi",
+      "lemma": "call",
+      "before": "कॉल; पुकारना",
+      "after": "पुकार; कॉल; पुकारना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "dough",
+      "before": "आटा",
+      "after": "गूँधा हुआ आटा"
+    },
+    {
+      "lang": "hi",
+      "lemma": "herself",
+      "before": "वह स्वयं (स्त्री)",
+      "after": "वह स्वयं; स्वयं को (स्त्री)"
+    },
+    {
+      "lang": "hi",
+      "lemma": "himself",
+      "before": "वह स्वयं (पुरुष)",
+      "after": "वह स्वयं; स्वयं को (पुरुष)"
+    },
+    {
+      "lang": "hi",
+      "lemma": "thumbelina",
+      "before": "(व्यक्तिवाचक नाम) अँगूठी (थम्बेलिना)",
+      "after": "(व्यक्तिवाचक नाम) थम्बेलिना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "tie",
+      "before": "बाँधना",
+      "after": "बाँधना; टाई"
+    },
+    {
+      "lang": "hi",
+      "lemma": "weakened",
+      "before": "कमज़ोर कर दिया",
+      "after": "कमज़ोर हो गया; कमज़ोर कर दिया"
+    },
+    {
+      "lang": "ru",
+      "lemma": "apart",
+      "before": "врозь",
+      "after": "на части; врозь"
+    },
+    {
+      "lang": "ru",
+      "lemma": "call",
+      "before": "звонок; звать",
+      "after": "зов; звонок; звать"
+    },
+    {
+      "lang": "ru",
+      "lemma": "curled",
+      "before": "свернулся",
+      "after": "завил(а) (волосы); свернулся"
+    },
+    {
+      "lang": "ru",
+      "lemma": "poured",
+      "before": "налил",
+      "after": "вылил; налил"
+    },
+    {
+      "lang": "ru",
+      "lemma": "sending",
+      "before": "отправляющий",
+      "after": "отправка; отправляющий"
+    },
+    {
+      "lang": "ru",
+      "lemma": "service",
+      "before": "услуга",
+      "after": "служение; услуга"
+    },
+    {
+      "lang": "ru",
+      "lemma": "slipped",
+      "before": "поскользнулся",
+      "after": "проскользнул; поскользнулся"
+    },
+    {
+      "lang": "ru",
+      "lemma": "slips",
+      "before": "скользит",
+      "after": "скользит; поскальзывается"
+    },
+    {
+      "lang": "ru",
+      "lemma": "spread",
+      "before": "распространять",
+      "after": "расстилать; распространять"
+    },
+    {
+      "lang": "ru",
+      "lemma": "tie",
+      "before": "завязывать",
+      "after": "завязывать; галстук"
+    },
+    {
+      "lang": "ru",
+      "lemma": "unlit",
+      "before": "неосвещённый",
+      "after": "незажжённый; неосвещённый"
+    },
+    {
+      "lang": "ru",
+      "lemma": "wardrobe",
+      "before": "шкаф",
+      "after": "гардероб"
+    },
+    {
+      "lang": "ru",
+      "lemma": "weakened",
+      "before": "ослабил",
+      "after": "ослабел; ослабленный; ослабил"
+    },
+    {
+      "lang": "bn",
+      "lemma": "accidentally",
+      "before": "হঠাৎ করে; ভুলবশত",
+      "after": "ভুলবশত"
+    },
+    {
+      "lang": "bn",
+      "lemma": "companion",
+      "before": "সহযাত্রী",
+      "after": "সঙ্গী; সহযাত্রী"
+    },
+    {
+      "lang": "bn",
+      "lemma": "herself",
+      "before": "সে নিজে (নারী)",
+      "after": "সে নিজে; নিজেকে (নারী)"
+    },
+    {
+      "lang": "bn",
+      "lemma": "himself",
+      "before": "সে নিজে (পুরুষ)",
+      "after": "সে নিজে; নিজেকে (পুরুষ)"
+    },
+    {
+      "lang": "bn",
+      "lemma": "responsible",
+      "before": "দায়িত্বশীল",
+      "after": "দায়ী; দায়িত্বশীল"
+    },
+    {
+      "lang": "bn",
+      "lemma": "tie",
+      "before": "বাঁধা",
+      "after": "বাঁধা; টাই"
+    },
+    {
+      "lang": "bn",
+      "lemma": "unlit",
+      "before": "আলোহীন",
+      "after": "না-জ্বালানো; আলোহীন"
+    },
+    {
+      "lang": "bn",
+      "lemma": "weakened",
+      "before": "দুর্বল করল",
+      "after": "দুর্বল হয়ে পড়ল; দুর্বল করল"
+    },
+    {
+      "lang": "ur",
+      "lemma": "call",
+      "before": "کال؛ پکارنا",
+      "after": "پکار؛ کال؛ پکارنا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "herself",
+      "before": "وہ خود (عورت)",
+      "after": "وہ خود؛ خود کو (عورت)"
+    },
+    {
+      "lang": "ur",
+      "lemma": "himself",
+      "before": "وہ خود (مرد)",
+      "after": "وہ خود؛ خود کو (مرد)"
+    },
+    {
+      "lang": "ur",
+      "lemma": "throughout",
+      "before": "کے دوران ہر جگہ",
+      "after": "پورے ... کے دوران؛ ہر جگہ"
+    },
+    {
+      "lang": "ur",
+      "lemma": "tie",
+      "before": "باندھنا",
+      "after": "باندھنا؛ ٹائی"
+    },
+    {
+      "lang": "ur",
+      "lemma": "weakened",
+      "before": "کمزور کر دیا",
+      "after": "کمزور ہو گیا؛ کمزور کر دیا"
+    },
+    {
+      "lang": "th",
+      "lemma": "call",
+      "before": "การโทร; เรียก",
+      "after": "เสียงเรียก; การโทร; เรียก"
+    },
+    {
+      "lang": "th",
+      "lemma": "cold",
+      "before": "เย็น",
+      "after": "หนาว; เย็น"
+    },
+    {
+      "lang": "th",
+      "lemma": "curled",
+      "before": "ขดตัว",
+      "after": "ดัดผม; ขดตัว"
+    },
+    {
+      "lang": "th",
+      "lemma": "instead",
+      "before": "แทนที่จะ",
+      "after": "แทน; แทนที่จะ"
+    },
+    {
+      "lang": "th",
+      "lemma": "laces",
+      "before": "เชือกผูกรองเท้า",
+      "after": "เชือกผูกรองเท้า; เชือกผูก (เสื้อผ้า)"
+    },
+    {
+      "lang": "th",
+      "lemma": "none",
+      "before": "ไม่มีสักอย่าง",
+      "after": "ไม่มีเลย; ไม่มีสักอย่าง; ไม่มีสักคน"
+    },
+    {
+      "lang": "th",
+      "lemma": "same",
+      "before": "เหมือนกัน",
+      "after": "เดียวกัน; เหมือนกัน"
+    },
+    {
+      "lang": "th",
+      "lemma": "simple",
+      "before": "ง่าย",
+      "after": "ง่าย; เรียบง่าย; ธรรมดา"
+    },
+    {
+      "lang": "th",
+      "lemma": "tie",
+      "before": "ผูก",
+      "after": "ผูก; เนกไท"
+    },
+    {
+      "lang": "th",
+      "lemma": "unlit",
+      "before": "ไม่มีแสงสว่าง",
+      "after": "ที่ยังไม่ได้จุด; ไม่มีแสงสว่าง"
+    },
+    {
+      "lang": "th",
+      "lemma": "weakened",
+      "before": "ทำให้อ่อนแอ",
+      "after": "อ่อนแอลง; ทำให้อ่อนแอ"
+    }
+  ],
+  "changedGlossCount": 92,
+  "changedTargetGlossCount": 90,
+  "sourceFilesSHA256": {
+    "ar.json": "48dd67ce8909078013bd67902748107c998031d8c483b1b0e72c90936a61c712",
+    "bn.json": "b559bba2a1a25f9ea2b19c0c19fcf2be179d7af052bdb4ae101589bc43b77b53",
+    "es-419.json": "aeadd2c838b0eebde069e6b47aebc27f8aea8d6eefe02a0c3833008107f03b7f",
+    "hi.json": "bf0e44384957c8dac1fccb149aed8cca3a15c30ec88fff601df75ba9ccee7e0f",
+    "id.json": "b8b46ece90000fd13eccf6793277a9dd6488afb979ab87b25658f5ec70b043a0",
+    "pt-BR.json": "f2dadeeec69db1c51932630c5eef16874e21083c3c666524e191f064a5bad9e8",
+    "ru.json": "fc62d906e97e7b70cee03dcd2b5e02e5a952dcfc88bd7f671ec6b4cb843f3eb5",
+    "th.json": "8562db471a36ca1ae218739bf67b0daacc3157834dee009a9a79032799419f89",
+    "tr.json": "6c0f21115db4b51f587695f8e5c62aa3f7da09625f2bbe98f9d6c6092dac2274",
+    "ur.json": "58893b5129b7703eddfa2c2c7f53722c95a0018dc88ff27a3036b4fc62edee2f",
+    "vi.json": "2340dd2753d9c14beebeebdd686b857525f9756e20527ec5a80d1f0c57370c31"
+  },
+  "humanOrNativeApprovalAdded": false,
+  "approvalFlagsChanged": false,
+  "livePublication": false,
+  "methodLimitations": [
+    "Independent-context Claude pass; this does not prove a distinct model family from every original draft.",
+    "Codex adjudicated flagged candidates; unflagged meanings are not all individually verified by Codex.",
+    "No native-speaker approval, CEFR certification or measured error-rate claim.",
+    "The review orchestrator initially rejected source-reference labels outside ten target codes; post-validation matched those values against the Turkish reference, normalized source labels only, and retained raw responses. All five coverage/input/value/hash validations passed.",
+    "Remaining-lemma packets include at most eight contexts per lemma, matched by exact tokens and the explicit form table; not exhaustive semantic or inflection coverage. Public snapshot was the earlier read-only20 October capture."
+  ],
+  "validation": {
+    "glossaryBuild": "all eleven assets regenerated, 1098 entries per language",
+    "glossaryCheck": "passed",
+    "backend": {
+      "tests": 172,
+      "passed": 172,
+      "failed": 0,
+      "skipped": 0
+    },
+    "device": {
+      "api": 36,
+      "emulator": "English_Tales_CI_36",
+      "testClass": "com.yurken.englishtales.data.GlossaryAssetTest",
+      "tests": 1,
+      "passed": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "reportSHA256": "95e9f437545d75d21330718b23f2d2270ba7d9565644c6c87f856eac32b69741",
+      "apkSHA256": "dbf0724d601e53a09689bc5ac023ae19c7cec25d1ed00f4dfe019c2bcb403d1d",
+      "scope": "Packaged Turkish glossary parse, inflections, learning-word lookup priority and lookup spans. Other ten-language source/asset completeness is covered by backend checks; no new UI/cloud/physical-device acceptance."
+    },
+    "fullDeviceCI": "Latest92-change head will be pushed; subsequent CI result is tracked in PR152. Prior66a5453 full CI is historical.",
+    "repository": "passed",
+    "diffCheck": "passed"
+  },
+  "runtimePriority": {
+    "policy": "Existing single-word learning entries take priority over draft glossary entries for the same lemma; no runtime or learning translation change was made.",
+    "bundledLearningPriorityOverlaps": [],
+    "limitation": "This static bundled overlap does not audit every downloaded live revision or prove learning translations are wrong. Study-word translation acceptance remains separate."
+  }
+}
