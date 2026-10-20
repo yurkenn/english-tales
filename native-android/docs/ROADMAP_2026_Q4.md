@@ -19,6 +19,12 @@
 - Önceki içerik denetimindeki canlı/paket farkı kapanmış kabul edilmez. Güncel canlı fark sayısı yeniden ölçülmeden tarihsel 39 hikâye bulgusu güncel sayı olarak kullanılmaz.
 - Analytics kodu mevcut ve katılım varsayılan kapalı; canlı olay kabulü ve temsili kullanım başlangıç ölçümü açık. SEO dil sayfaları henüz taslak.
 
+## Paralel çalışma — 20 Ekim ilerlemesi
+
+- **Claude / R05:** On dilde aynı 121 kelimenin bağımsız incelemesi tamamlandı (1.210 karşılık). 37 adaydan Portekizce `amounts` ve Rusça `wardrobe` düzeltildi; altı sözlük testi ve 11 dil varlık eşleşmesi geçti. Diğer 35 aday ve her dildeki kalan 977 madde açık; ana dil onayı verilmedi. [İnceleme ve düzeltmeler: taslak PR #152](https://github.com/yurkenn/english-tales/pull/152).
+- **Codex / R00:** İlk kullanım testi API 36'da tek başına 1/1, CI'daki önceki testlerle 6/6 ve ek hata bilgisiyle tekrar 6/6 geçti. Orijinal CI zaman aşımı yerelde tekrarlanmadı. 339 testlik deneme ayrı bir süreç kapanmasıyla 39. testte durdu; tüm cihaz testleri geçti sayılmaz. [Araştırma ve ekran durumu kaydı: taslak PR #153](https://github.com/yurkenn/english-tales/pull/153). Ana dal CI ikinci denemesi ve PR cihaz kontrolleri tamamlanmadan R00 kapatılmaz.
+- Bu iki PR henüz ana dala birleşmedi. Canlı içerik ve mağaza yayını yapılmadı; paralel işlerin sonucu fiziksel cihaz kabulünün yerine geçmez.
+
 ## Önce kapatılacak teknik açık
 
 **R00 · P0 — Ana dal ilk kullanım testi:** [39386537157](https://github.com/yurkenn/english-tales/actions/runs/39386537157) çalışmasında `FirstLaunchJourneyTest` 20 saniye zaman aşımıyla başarısız. Hedefli tekrar ile ürün/test/zamanlama nedeni ayrıştırılır; gerekli düzeltmeden sonra aynı birleşik kaynakta tam cihaz CI yeşil olmalı. #151 PR CI sonucu ana dal sonucunun yerine geçmez.

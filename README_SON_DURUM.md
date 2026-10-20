@@ -12,6 +12,10 @@ Canlı anonim okumada 50 güncel hikâye ve **1.065 cümle** doğrulandı. Beş 
 
 Açık PR’lar: [#146 güncel yol haritası](https://github.com/yurkenn/english-tales/pull/146), [#1 eski Expo test taslağı](https://github.com/yurkenn/english-tales/pull/1). [Ayrıntılı kontrol, kaynaklar ve kalan işler](native-android/docs/PROJECT_AUDIT_2026-10-20.md).
 
+## Paralel işlerin ilerlemesi — 20 Ekim
+
+Claude on dilde 1.210 sözlük karşılığını örneklem olarak inceledi; iki anlam düzeltmesi ve inceleme kanıtı [taslak PR #152'de](https://github.com/yurkenn/english-tales/pull/152). Altı sözlük testi geçti; kalan adaylar ve ana dil incelemesi açık. Codex ilk kullanım zaman aşımını araştırdı: yerel tekil ve ön testlerle denemeler geçti, ancak tam cihaz denemesi ayrı bir süreç kapanmasıyla tamamlanamadı. [Taslak PR #153](https://github.com/yurkenn/english-tales/pull/153), tekrar hatasında gerçek ekran/durum bilgisini ekliyor; kök neden düzeltildi iddiası yok. Ana dal CI tekrarı ve PR cihaz sonuçları bekleniyor. Bu iki PR henüz birleşmedi; mağaza veya içerik yayını yapılmadı.
+
 ## Son doğrulanan yayın kaydı — 19 Ekim, 50 / 2.2.0
 
 **19 Ekim kaydı: üretim başvurusu gönderildi; canlı yayın doğrulanmadı.** 20 Ekim’de Console yeniden kontrol edilmedi. Kaydın alındığı sırada Console “Changes in review” gösteriyor ve Google hızlı kontrolleri çalışıyor. Yeni paket, %100 dağıtım, Yurken Stories markası, 13 mağaza dili, güncel EN/TR ekran görüntüleri ve reklam beyanı birlikte başvuruda. Yönetilen yayın kapalı olduğundan onaydan sonra otomatik yayımlanır. Son canlı üretim 48 / 2.0.0, dahili test 49 / 2.1.0.
