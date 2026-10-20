@@ -71,10 +71,10 @@ class IconActionsTest {
         compose.onNodeWithText(word.translation).performClick()
         compose.waitUntil(5_000) {completed.isNotBlank()}
         assertEquals(0,boundary)
-        compose.onNodeWithText("Günlük planıma dön").performClick()
+        compose.onNodeWithText("Günlük planıma dön").performScrollTo().performClick()
         assertEquals(1,boundary)
         compose.runOnIdle {assertTrue(active())}
-        compose.onNodeWithText("Yeniden çalış").performClick()
+        compose.onNodeWithText("Yeniden çalış").performScrollTo().performClick()
         // The ladder's gap questions are built off the main thread, which the idle check does not track.
         compose.waitUntil(5_000) {!active()}
         compose.runOnIdle {assertFalse(active());delayedContinue()}
