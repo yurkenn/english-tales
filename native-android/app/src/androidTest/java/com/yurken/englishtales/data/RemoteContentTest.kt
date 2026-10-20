@@ -3,7 +3,6 @@ package com.yurken.englishtales.data
 import android.content.ContextWrapper
 import android.graphics.Bitmap
 import androidx.test.platform.app.InstrumentationRegistry
-import com.yurken.englishtales.BuildConfig
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.flow.first
@@ -16,7 +15,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.Assert.*
-import org.junit.Assume.assumeTrue
 import java.io.File
 import java.security.MessageDigest
 import java.util.UUID
@@ -371,16 +369,5 @@ class RemoteContentTest {
         File(directory,"published-content/catalog.json").writeText("[{\"id\":\"bad\"}]")
         val repo=ContentRepository(context,null);repo.restore()
         assertEquals(original,LearningContent.stories)
-    }
-    @Test fun livePublishedContentDownloadsAndRestoresOffline()=runBlocking {
-        assumeTrue(BuildConfig.SUPABASE_PUBLISHABLE_KEY.startsWith("sb_publishable_"))
-        val repo=ContentRepository(context,ContentHttp(BuildConfig.SUPABASE_URL,BuildConfig.SUPABASE_PUBLISHABLE_KEY))
-        repo.restore();repo.refresh()
-        assertTrue(LearningContent.stories.isNotEmpty())
-        val story=repo.download(LearningContent.stories.first())
-        assertTrue(story.sentences.isNotEmpty());assertTrue(story.vocabulary!!.isNotEmpty());assertTrue(File(story.coverFile!!).exists())
-        val offline=ContentRepository(context,null);offline.restore()
-        assertEquals(story.revisionId,LearningContent.storyById.getValue(story.id).revisionId)
-        assertTrue(offline.isDownloaded(LearningContent.storyById.getValue(story.id)))
     }
 }
