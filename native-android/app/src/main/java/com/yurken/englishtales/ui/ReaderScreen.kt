@@ -28,7 +28,8 @@ import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.input.pointer.PointerEventPass
-import androidx.compose.ui.input.pointer.changedToDown
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInRoot
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.compose.ui.text.style.TextAlign
@@ -257,12 +258,10 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
         val pageTranslated=pageSentences.isNotEmpty() && pageSentences.all {it.id in translations}
         // A sideways swipe turns the page, like a book; the threshold keeps a vertical scroll from flipping it.
         val swipeThreshold=with(androidx.compose.ui.platform.LocalDensity.current) {72.dp.toPx()}
-        // Where the last touch landed decides whether the word card opens above or below it, so it never hides the word.
+        // Where the last touch on the text landed decides whether the word card opens above or below it, so it never hides the word.
         var touchY by remember { mutableFloatStateOf(0f) }
         var screenHeight by remember { mutableIntStateOf(0) }
-        Box(Modifier.fillMaxSize().background(background).onSizeChanged {screenHeight=it.height}.pointerInput(Unit) {
-                awaitPointerEventScope { while(true) { awaitPointerEvent(PointerEventPass.Initial).changes.firstOrNull {it.changedToDown()}?.let {touchY=it.position.y} } }
-            }.statusBarsPadding().navigationBarsPadding()) {
+        Box(Modifier.fillMaxSize().background(background).onSizeChanged {screenHeight=it.height}.statusBarsPadding().navigationBarsPadding()) {
             // On tablets and in landscape the page keeps a book-like line length instead of spanning the screen.
             Column(Modifier.fillMaxHeight().centeredWidth(ReadingWidth)) {
                 Row(Modifier.fillMaxWidth().heightIn(min=52.dp).padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically) {
@@ -318,7 +317,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                             saved=snapshot.savedWordIds,underlineStudyWords=curated,savedTint=accent.copy(alpha=0.14f),
                             reading=reading,readingTint=accent.copy(alpha=0.18f),selected=selectedLink.takeIf {selectedWord!=null},selectedTint=accent.copy(alpha=0.28f),
                             // Long press translates the sentence; while the page is being read aloud it moves the reading there instead.
-                            onLongPress={sentence -> if(narrator.speaking || narrator.preparing) listen(pageSentences.indexOf(sentence)) else toggleTranslation(sentence.id)}) { word,link ->
+                            onPress={touchY=it},onLongPress={sentence -> if(narrator.speaking || narrator.preparing) listen(pageSentences.indexOf(sentence)) else toggleTranslation(sentence.id)}) { word,link ->
                             selectedWord=word; selectedLink=link; more=false; onLookup(word)
                         }
                         if(paragraph.last().id in translations) {
@@ -334,16 +333,17 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                     } }
                 }
                 narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
-                // One slim progress line between the page actions, then the page turns: no stacked bars of controls.
-                Row(Modifier.fillMaxWidth().padding(horizontal=8.dp),verticalAlignment=Alignment.CenterVertically) {
-                    Box(Modifier.size(48.dp).contentLabel(stringResource(if(pageTranslated) R.string.page_translate_hide else R.string.page_translate)).clickable(role=Role.Button) {
-                        if(pageTranslated) translations.removeAll(pageSentences.map {it.id}.toSet()) else pageSentences.forEach {if(it.id !in translations) translations.add(it.id)}
-                    },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(pageTranslated) accent else muted,Modifier.size(24.dp).background(if(pageTranslated) accent.copy(alpha=0.14f) else Color.Transparent,RoundedCornerShape(6.dp))) }
-                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f).padding(horizontal=4.dp),
+                // One slim progress line beside the page actions, then the page turns: no stacked bars of controls.
+                // The slider leads the row, so a drag that starts at its very edge lands on it and not on a button.
+                Row(Modifier.fillMaxWidth().padding(start=16.dp,end=8.dp),verticalAlignment=Alignment.CenterVertically) {
+                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),
                         thumb={ Box(Modifier.size(12.dp).background(accent,CircleShape)) },
                         track={ val shown=if(pageCount>1) page.toFloat()/(pageCount-1) else 1f
                             Box(Modifier.fillMaxWidth().height(3.dp).background(palette.line,RoundedCornerShape(2.dp))) { Box(Modifier.fillMaxWidth(shown).height(3.dp).background(accent.copy(alpha=0.7f),RoundedCornerShape(2.dp))) } })
                     Text("${page+1} / $pageCount",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),color=muted,fontSize=12.sp,modifier=Modifier.padding(start=6.dp,end=2.dp))
+                    Box(Modifier.size(48.dp).contentLabel(stringResource(if(pageTranslated) R.string.page_translate_hide else R.string.page_translate)).clickable(role=Role.Button) {
+                        if(pageTranslated) translations.removeAll(pageSentences.map {it.id}.toSet()) else pageSentences.forEach {if(it.id !in translations) translations.add(it.id)}
+                    },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(pageTranslated) accent else muted,Modifier.size(24.dp).background(if(pageTranslated) accent.copy(alpha=0.14f) else Color.Transparent,RoundedCornerShape(6.dp))) }
                     Box(Modifier.size(48.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { listen() } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
                 }
                 Row(Modifier.fillMaxWidth().padding(horizontal=8.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
@@ -404,7 +404,7 @@ private fun String.preview(words: Int=4)=split(' ').let {if(it.size<=words) this
 private fun TappableParagraph(sentences: List<StorySentence>,phrasesFor: (StorySentence)->PhraseMatcher.Index,fontSize: Int,color: Color,modifier: Modifier=Modifier,
     glossary: Glossary?=null,lineSpacing: Float=1.65f,saved: Set<String> = emptySet(),underlineStudyWords: Boolean=true,savedTint: Color=Color.Transparent,
     reading: String?=null,readingTint: Color=Color.Transparent,selected: String?=null,selectedTint: Color=Color.Transparent,
-    onLongPress: (StorySentence)->Unit,onWord: (WordInfo,String)->Unit) {
+    onPress: (Float)->Unit={},onLongPress: (StorySentence)->Unit,onWord: (WordInfo,String)->Unit) {
     // Where each sentence starts in the paragraph, and its links with paragraph-wide offsets.
     val layout=remember(sentences,glossary) {
         var base=0
@@ -443,10 +443,13 @@ private fun TappableParagraph(sentences: List<StorySentence>,phrasesFor: (StoryS
         }
     }
     var textLayout by remember { mutableStateOf<TextLayoutResult?>(null) }
+    var top by remember { mutableFloatStateOf(0f) }
+    val currentOnPress by rememberUpdatedState(onPress)
     // Almost every word is a link, so the long press is watched before the links see the touch; once it fires,
     // the rest of the touch is swallowed and the word under the finger does not open as well.
-    Box(modifier.pointerInput(layout) { awaitEachGesture {
+    Box(modifier.onGloballyPositioned {top=it.positionInRoot().y}.pointerInput(layout) { awaitEachGesture {
         val down=awaitFirstDown(requireUnconsumed=false,pass=PointerEventPass.Initial)
+        currentOnPress(top+down.position.y)
         val released=withTimeoutOrNull(viewConfiguration.longPressTimeoutMillis) {
             while(true) {
                 val change=awaitPointerEvent(PointerEventPass.Initial).changes.firstOrNull {it.id==down.id} ?: break
