@@ -1464,7 +1464,68 @@
         "xmlSHA256": "97bc33597c3a654fd39e807196899228eb3e135de8e7d29b6a7e20ef0190493a"
       }
     ],
-    "fullCi": "pending PR CI",
+    "fullCi": {
+      "codeAndDataHead": "d9e9fb973fa8cdb22ea3cb688d773a1d618c467b",
+      "verifiedRuns": [
+        {
+          "run": 39461706902,
+          "head": "d9e9fb973fa8cdb22ea3cb688d773a1d618c467b",
+          "conclusion": "success",
+          "reports": [
+            {
+              "module": "macrobenchmark",
+              "counts": {
+                "tests": 3,
+                "failures": 0,
+                "errors": 0,
+                "skipped": 0
+              },
+              "xmlSHA256": "2a6502c543b5fae10f1593a0ca14038dacea62b8c174167509ca317f47e84aa0"
+            },
+            {
+              "module": "app",
+              "counts": {
+                "tests": 339,
+                "failures": 0,
+                "errors": 0,
+                "skipped": 3
+              },
+              "xmlSHA256": "e6fddbc8510cc4e13396dad471f1daa9505087f34bbeb3d0b5322b8a40015f73"
+            }
+          ]
+        },
+        {
+          "run": 39461697179,
+          "head": "d9e9fb973fa8cdb22ea3cb688d773a1d618c467b",
+          "conclusion": "success",
+          "reports": [
+            {
+              "module": "macrobenchmark",
+              "counts": {
+                "tests": 3,
+                "failures": 0,
+                "errors": 0,
+                "skipped": 0
+              },
+              "xmlSHA256": "b300e127440641455f2e3cfadf4909c94cfd4f7c6eaaa493af8ba87512507896"
+            },
+            {
+              "module": "app",
+              "counts": {
+                "tests": 339,
+                "failures": 0,
+                "errors": 0,
+                "skipped": 3
+              },
+              "xmlSHA256": "25167a10f5474bba258301542442388b3d654ce26f192a3bf1a5eac8c748fdbc"
+            }
+          ]
+        }
+      ],
+      "appPassedPerRun": 336,
+      "appSkippedPerRun": 3,
+      "startupBenchmarksPassedPerRun": 3
+    },
     "debugApkSHA256": "a51701dee94d544728233c5f8360649912375bd190e5d8f1f70064dc34faf29b",
     "assetSHA256": {
       "tr": "8871bac24e4c0f196d47439348ae115df384ed06c551fbfb6dd9f54758079ffc",
