@@ -493,13 +493,39 @@
     }
   },
   "codexDisposition": {
+    "adjudicationDate": "2026-10-20",
+    "method": "Independent comparison against every exact lemma and Turkish form-table match in the packaged catalog; Turkish reference preserved. Target-language dictionary spot checks are explicitly linked; decisions are AI-supported, not human/native approval. Contexts include exact lemma/form matches only, not a claim of exhaustive semantic or inflection coverage.",
+    "sourceCommit": "66a54534a19e7ba489368f59825093eb456b6ec3",
+    "catalogSHA256": "396bbde5d36856530084567e5edaea1052e42f6b4a775910d89fcd3d3385fb0e",
+    "turkishMasterSHA256": "8820b2b3a97a4cdef39fb4891799a9aec53dec714629d527c6bd1ff4e1234cad",
+    "candidateCounts": {
+      "rejected": 16,
+      "accepted": 5,
+      "deferred": 16
+    },
+    "thisPassCounts": {
+      "rejected": 16,
+      "accepted": 3,
+      "deferred": 16
+    },
+    "remainingCandidates": 16,
+    "unadjudicatedCandidates": 0,
+    "nativeSpeakerApproval": false,
+    "publicationApproval": false,
     "acceptedChanges": [
       {
-        "lang": "pt-BR",
-        "lemma": "amounts",
-        "before": "quantias",
-        "after": "quantidades",
-        "reason": "General quantities, including the food/drink source sentence; retains the original intended sense."
+        "lang": "ar",
+        "lemma": "endangering",
+        "before": "معرّض للخطر",
+        "after": "يُعرِّض للخطر",
+        "reason": "The sole catalog occurrence has an active transitive agent: Elisa would put her brothers at risk. Turkish tehlikeye atan agrees. The current unvocalized participle permits an endangered/passive reading; the finite active verb with explicit vowels removes that ambiguity without adding a new sense. This is an AI-supported grammatical disambiguation, not native approval."
+      },
+      {
+        "lang": "vi",
+        "lemma": "remained",
+        "before": "đã ở lại",
+        "after": "vẫn còn; vẫn là; ở lại",
+        "reason": "All five occurrences include continued condition (memory, frozen, still), a remaining remnant, and physically staying in the palace. The original physical-stay-only gloss misses the first group. Add continued-being and remaining senses while retaining ở lại for the palace; do not apply the proposed replacement that would drop physical staying."
       },
       {
         "lang": "ru",
@@ -507,22 +533,1687 @@
         "before": "шкаф",
         "after": "гардероб",
         "reason": "Covers the clothes-collection sense in the supplied example and the wardrobe/cupboard sense."
+      },
+      {
+        "lang": "th",
+        "lemma": "cold",
+        "before": "เย็น",
+        "after": "หนาว; เย็น",
+        "reason": "The eleven catalog occurrences include people feeling cold (red-umbrella-6, ants-grasshopper-05, thumbelina-10) as well as low-temperature conditions. Add หนาว for bodily cold while retaining เย็น for temperature. The dictionary distinguishes these senses; this broadening is supported by multiple stories, not only the sampled coat sentence."
+      },
+      {
+        "lang": "pt-BR",
+        "lemma": "amounts",
+        "before": "quantias",
+        "after": "quantidades",
+        "reason": "General quantities, including the food/drink source sentence; retains the original intended sense."
       }
     ],
-    "remainingCandidates": 35,
-    "otherCandidates": "Not automatically applied; require whole-catalog sense comparison and language validation. Model confirmed status is not human approval.",
-    "nativeSpeakerApproval": false,
+    "decisions": [
+      {
+        "findingIndex": 1,
+        "lang": "id",
+        "lemma": "confusion",
+        "decision": "rejected",
+        "before": "kebingungan",
+        "after": "kebingungan",
+        "reason": "The sole catalog sentence says causing confusion in the kitchen, without specifying a physical uproar. Mental bewilderment remains a valid reading of English confusion and Turkish karışıklık. kebingungan is a valid mental-state gloss; the proposed chaos/uproar wording is a narrower contextual interpretation, not a demonstrated mistranslation. Retain the current general-lemma sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "confusion",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 2,
+        "lang": "vi",
+        "lemma": "confusion",
+        "decision": "rejected",
+        "before": "sự bối rối",
+        "after": "sự bối rối",
+        "reason": "The sole catalog sentence says causing confusion in the kitchen, without specifying a physical uproar. Mental bewilderment remains a valid reading of English confusion and Turkish karışıklık. sự bối rối is a valid mental-state gloss; the proposed chaos/uproar wording is a narrower contextual interpretation, not a demonstrated mistranslation. Retain the current general-lemma sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "confusion",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 3,
+        "lang": "hi",
+        "lemma": "confusion",
+        "decision": "rejected",
+        "before": "उलझन",
+        "after": "उलझन",
+        "reason": "The sole catalog sentence says causing confusion in the kitchen, without specifying a physical uproar. Mental bewilderment remains a valid reading of English confusion and Turkish karışıklık. उलझन is a valid mental-state gloss; the proposed chaos/uproar wording is a narrower contextual interpretation, not a demonstrated mistranslation. Retain the current general-lemma sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "confusion",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 4,
+        "lang": "ur",
+        "lemma": "confusion",
+        "decision": "rejected",
+        "before": "الجھن",
+        "after": "الجھن",
+        "reason": "The sole catalog sentence says causing confusion in the kitchen, without specifying a physical uproar. Mental bewilderment remains a valid reading of English confusion and Turkish karışıklık. الجھن is a valid mental-state gloss; the proposed chaos/uproar wording is a narrower contextual interpretation, not a demonstrated mistranslation. Retain the current general-lemma sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "confusion",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 5,
+        "lang": "ru",
+        "lemma": "confusion",
+        "decision": "rejected",
+        "before": "смятение",
+        "after": "смятение",
+        "reason": "The sole catalog sentence says causing confusion in the kitchen, without specifying a physical uproar. Mental bewilderment remains a valid reading of English confusion and Turkish karışıklık. смятение is a valid mental-state gloss; the proposed chaos/uproar wording is a narrower contextual interpretation, not a demonstrated mistranslation. Retain the current general-lemma sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "confusion",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 6,
+        "lang": "bn",
+        "lemma": "confusion",
+        "decision": "rejected",
+        "before": "বিভ্রান্তি",
+        "after": "বিভ্রান্তি",
+        "reason": "The sole catalog sentence says causing confusion in the kitchen, without specifying a physical uproar. Mental bewilderment remains a valid reading of English confusion and Turkish karışıklık. বিভ্রান্তি is a valid mental-state gloss; the proposed chaos/uproar wording is a narrower contextual interpretation, not a demonstrated mistranslation. Retain the current general-lemma sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "confusion",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 7,
+        "lang": "th",
+        "lemma": "confusion",
+        "decision": "rejected",
+        "before": "ความสับสน",
+        "after": "ความสับสน",
+        "reason": "The sole catalog sentence says causing confusion in the kitchen, without specifying a physical uproar. Mental bewilderment remains a valid reading of English confusion and Turkish karışıklık. ความสับสน is a valid mental-state gloss; the proposed chaos/uproar wording is a narrower contextual interpretation, not a demonstrated mistranslation. Retain the current general-lemma sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "confusion",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 8,
+        "lang": "ar",
+        "lemma": "endangering",
+        "decision": "accepted",
+        "before": "معرّض للخطر",
+        "after": "يُعرِّض للخطر",
+        "reason": "The sole catalog occurrence has an active transitive agent: Elisa would put her brothers at risk. Turkish tehlikeye atan agrees. The current unvocalized participle permits an endangered/passive reading; the finite active verb with explicit vowels removes that ambiguity without adding a new sense. This is an AI-supported grammatical disambiguation, not native approval.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "endangering",
+        "contextMatchCount": 1,
+        "dictionarySources": [
+          "https://dictionary.cambridge.org/dictionary/english/endanger"
+        ]
+      },
+      {
+        "findingIndex": 9,
+        "lang": "hi",
+        "lemma": "find",
+        "decision": "deferred",
+        "before": "ढूँढ़ना",
+        "after": "ढूँढ़ना",
+        "reason": "Catalog matches include 37 find/found occurrences: successful discovery, intended discovery and find out. The current ढूँढ़ना emphasizes seeking, but compound/aspectual forms can express finding; dictionary evidence alone does not settle the standalone teaching gloss across these constructions. The proposal adds obtaining and resultative senses. Preserve the existing valid search-related verb pending a Hindi/Urdu usage judgment, rather than labeling it categorically wrong.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "find",
+        "contextMatchCount": 37,
+        "dictionarySources": [
+          "https://www.rekhtadictionary.com/meaning-of-dhuundnaa?lang=hi"
+        ],
+        "nextAction": "Native reviewer to compare bare find, past found, negated could not find, and find out; decide whether an added resultative gloss is needed."
+      },
+      {
+        "findingIndex": 10,
+        "lang": "ur",
+        "lemma": "find",
+        "decision": "deferred",
+        "before": "ڈھونڈنا",
+        "after": "ڈھونڈنا",
+        "reason": "Catalog matches include 37 find/found occurrences: successful discovery, intended discovery and find out. The current ڈھونڈنا emphasizes seeking, but compound/aspectual forms can express finding; dictionary evidence alone does not settle the standalone teaching gloss across these constructions. The proposal adds obtaining and resultative senses. Preserve the existing valid search-related verb pending a Hindi/Urdu usage judgment, rather than labeling it categorically wrong.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "find",
+        "contextMatchCount": 37,
+        "dictionarySources": [
+          "https://www.rekhtadictionary.com/meaning-of-dhuundnaa?lang=hi"
+        ],
+        "nextAction": "Native reviewer to compare bare find, past found, negated could not find, and find out; decide whether an added resultative gloss is needed."
+      },
+      {
+        "findingIndex": 11,
+        "lang": "hi",
+        "lemma": "have",
+        "decision": "rejected",
+        "before": "रखना",
+        "after": "रखना",
+        "reason": "Turkish reference targets possession. The catalog also contains auxiliary and causative have/had forms; no single possessive gloss can translate every construction. रखना has an established possess/hold/have sense in addition to keep/place, so the finding overstates a grammatical preference as a meaning error. The suggested possession construction may be useful usage guidance but does not justify replacing a valid lemma gloss.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "have",
+        "contextMatchCount": 104,
+        "dictionarySources": [
+          "https://www.rekhtadictionary.com/meaning-of-rakhnaa?lang=ur"
+        ]
+      },
+      {
+        "findingIndex": 12,
+        "lang": "ur",
+        "lemma": "have",
+        "decision": "rejected",
+        "before": "رکھنا",
+        "after": "رکھنا",
+        "reason": "Turkish reference targets possession. The catalog also contains auxiliary and causative have/had forms; no single possessive gloss can translate every construction. رکھنا has an established possess/hold/have sense in addition to keep/place, so the finding overstates a grammatical preference as a meaning error. The suggested possession construction may be useful usage guidance but does not justify replacing a valid lemma gloss.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "have",
+        "contextMatchCount": 104,
+        "dictionarySources": [
+          "https://www.rekhtadictionary.com/meaning-of-rakhnaa?lang=ur"
+        ]
+      },
+      {
+        "findingIndex": 13,
+        "lang": "ur",
+        "lemma": "short",
+        "decision": "rejected",
+        "before": "مختصر",
+        "after": "مختصر",
+        "reason": "Both catalog matches describe hair length. Rekhta explicitly includes a short/not-long or short-stature physical sense for مختصر, so the assertion that it can mean only brief/concise is false. چھوٹا is an alternative, not a necessary correction; keep the existing valid gloss.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "short",
+        "contextMatchCount": 2,
+        "dictionarySources": [
+          "https://www.rekhtadictionary.com/meaning-of-mukhtasar?lang=ur"
+        ]
+      },
+      {
+        "findingIndex": 14,
+        "lang": "vi",
+        "lemma": "remained",
+        "decision": "accepted",
+        "before": "đã ở lại",
+        "after": "vẫn còn; vẫn là; ở lại",
+        "reason": "All five occurrences include continued condition (memory, frozen, still), a remaining remnant, and physically staying in the palace. The original physical-stay-only gloss misses the first group. Add continued-being and remaining senses while retaining ở lại for the palace; do not apply the proposed replacement that would drop physical staying.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "remained",
+        "contextMatchCount": 5,
+        "dictionarySources": [
+          "https://dictionary.cambridge.org/dictionary/english-vietnamese/remain"
+        ]
+      },
+      {
+        "findingIndex": 15,
+        "lang": "es-419",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "armario",
+        "after": "armario",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current armario foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      {
+        "findingIndex": 16,
+        "lang": "id",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "lemari pakaian",
+        "after": "lemari pakaian",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current lemari pakaian foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      {
+        "findingIndex": 17,
+        "lang": "ar",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "خزانة ملابس",
+        "after": "خزانة ملابس",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current خزانة ملابس foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      {
+        "findingIndex": 18,
+        "lang": "vi",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "tủ quần áo",
+        "after": "tủ quần áo",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current tủ quần áo foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      {
+        "findingIndex": 19,
+        "lang": "hi",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "अलमारी",
+        "after": "अलमारी",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current अलमारी foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      {
+        "findingIndex": 20,
+        "lang": "ru",
+        "lemma": "wardrobe",
+        "decision": "accepted",
+        "before": "шкаф",
+        "after": "гардероб",
+        "reason": "Covers the clothes-collection sense in the supplied example and the wardrobe/cupboard sense.",
+        "appliedBeforeThisPass": true,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 21,
+        "lang": "bn",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "পোশাকের আলমারি",
+        "after": "পোশাকের আলমারি",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current পোশাকের আলমারি foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      {
+        "findingIndex": 22,
+        "lang": "ur",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "الماری",
+        "after": "الماری",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current الماری foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      {
+        "findingIndex": 23,
+        "lang": "th",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "ตู้เสื้อผ้า",
+        "after": "ตู้เสื้อผ้า",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current ตู้เสื้อผ้า foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      {
+        "findingIndex": 24,
+        "lang": "th",
+        "lemma": "blow",
+        "decision": "deferred",
+        "before": "การโจมตี",
+        "after": "การโจมตี",
+        "reason": "The catalog has a strike in seven at one blow and a wind action in blew his hat away (master form blew → blow). Both the original attack gloss and the proposed strike gloss cover only the nominal side. The requested strike nuance is plausible but low-severity; resolving the shared noun/verb sense coverage belongs with the master-reference/form policy, not an isolated synonym replacement.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "blow",
+        "contextMatchCount": 2,
+        "dictionarySources": [],
+        "nextAction": "Review blow noun/verb coverage in the Turkish master and validate a Thai gloss covering the intended senses."
+      },
+      {
+        "findingIndex": 25,
+        "lang": "th",
+        "lemma": "cold",
+        "decision": "accepted",
+        "before": "เย็น",
+        "after": "หนาว; เย็น",
+        "reason": "The eleven catalog occurrences include people feeling cold (red-umbrella-6, ants-grasshopper-05, thumbelina-10) as well as low-temperature conditions. Add หนาว for bodily cold while retaining เย็น for temperature. The dictionary distinguishes these senses; this broadening is supported by multiple stories, not only the sampled coat sentence.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "cold",
+        "contextMatchCount": 11,
+        "dictionarySources": [
+          "https://dictionary.cambridge.org/us/dictionary/english-thai/cold"
+        ]
+      },
+      {
+        "findingIndex": 26,
+        "lang": "th",
+        "lemma": "described",
+        "decision": "deferred",
+        "before": "อธิบาย",
+        "after": "อธิบาย",
+        "reason": "All five matches recount a promise, people, families, a life or a journey. บรรยาย is dictionary-supported for describing; อธิบาย can overlap with giving an account/explanation. The catalog supports the candidate but does not establish that the current near-synonym is invalid. Defer the proposed wording to Thai usage review instead of replacing a potentially valid synonym.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "described",
+        "contextMatchCount": 5,
+        "dictionarySources": [
+          "https://dictionary.cambridge.org/dictionary/english-thai/describe"
+        ],
+        "nextAction": "Thai reviewer to determine whether อธิบาย is acceptable as a standalone described gloss across all five accounts or needs บรรยาย added."
+      },
+      {
+        "findingIndex": 27,
+        "lang": "bn",
+        "lemma": "convinced",
+        "decision": "rejected",
+        "before": "রাজি করাল; নিশ্চিত",
+        "after": "রাজি করাল; নিশ্চিত",
+        "reason": "The sole occurrence concerns persuading the king that Elisa is a witch. Turkish ikna etti; emin intentionally covers persuasion and certainty. The current রাজি করাল; নিশ্চিত retains both persuasion/assurance senses; the belief-specific alternative is a contextual preference, not a demonstrated invalid synonym. Do not replace it solely for this sentence.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "convinced",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 28,
+        "lang": "hi",
+        "lemma": "convinced",
+        "decision": "rejected",
+        "before": "मना लिया; आश्वस्त",
+        "after": "मना लिया; आश्वस्त",
+        "reason": "The sole occurrence concerns persuading the king that Elisa is a witch. Turkish ikna etti; emin intentionally covers persuasion and certainty. The current मना लिया; आश्वस्त retains both persuasion/assurance senses; the belief-specific alternative is a contextual preference, not a demonstrated invalid synonym. Do not replace it solely for this sentence.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "convinced",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 29,
+        "lang": "pt-BR",
+        "lemma": "amounts",
+        "decision": "accepted",
+        "before": "quantias",
+        "after": "quantidades",
+        "reason": "General quantities, including the food/drink source sentence; retains the original intended sense.",
+        "appliedBeforeThisPass": true,
+        "contextEvidenceKey": "amounts",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 30,
+        "lang": "es-419",
+        "lemma": "fine",
+        "decision": "rejected",
+        "before": "bien; fino",
+        "after": "bien; fino",
+        "reason": "All six matches are attributive adjectives (clothes, slippers, food, dress, disguise, stitching). Although bien alone is an adverb, the existing second gloss fino is a valid adjective covering fine quality/delicacy. Replacing bien by bueno is an editorial improvement candidate, not a demonstrated missing meaning; the general lemma also admits adverbial fine. Keep the valid existing pair.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "fine",
+        "contextMatchCount": 6,
+        "dictionarySources": [
+          "https://dictionary.cambridge.org/es/diccionario/english/fine"
+        ]
+      },
+      {
+        "findingIndex": 31,
+        "lang": "ar",
+        "lemma": "god",
+        "decision": "deferred",
+        "before": "إله",
+        "after": "إله",
+        "reason": "All three occurrences are capitalized God in religious story narration; the lookup lemma lowercases it. The current إله is a valid generic deity sense matching Turkish tanrı, while الله adds a proper-name interpretation. Decide the master capitalization/proper-name policy and Arabic religious register before expanding this shared lemma.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "god",
+        "contextMatchCount": 3,
+        "dictionarySources": [],
+        "nextAction": "Resolve generic god versus proper God lookup policy and validate Arabic rendering without implying a theology choice."
+      },
+      {
+        "findingIndex": 32,
+        "lang": "es-419",
+        "lemma": "warm",
+        "decision": "rejected",
+        "before": "cálido",
+        "after": "cálido",
+        "reason": "The ten catalog occurrences include warm food, emotional warmth, clothing, home, country and warming the body. The existing cálido covers genuine warm/cozy senses. The suggested food-focused replacement would narrow the shared lemma and lose valid emotional/climate uses. Reject this replacement; a future multi-sense expansion can add food/body wording without deleting the existing sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "warm",
+        "contextMatchCount": 10,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 33,
+        "lang": "th",
+        "lemma": "warm",
+        "decision": "rejected",
+        "before": "อบอุ่น",
+        "after": "อบอุ่น",
+        "reason": "The ten catalog occurrences include warm food, emotional warmth, clothing, home, country and warming the body. The existing อบอุ่น covers genuine warm/cozy senses. The suggested food-focused replacement would narrow the shared lemma and lose valid emotional/climate uses. Reject this replacement; a future multi-sense expansion can add food/body wording without deleting the existing sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "warm",
+        "contextMatchCount": 10,
+        "dictionarySources": []
+      },
+      {
+        "findingIndex": 34,
+        "lang": "ur",
+        "lemma": "wicked",
+        "decision": "deferred",
+        "before": "بدکار",
+        "after": "بدکار",
+        "reason": "Both matches concern evil (a spirit; suspected wickedness), consistent with Turkish kötü kalpli. The original بدکار has an evil/immoral sense, while the proposed alternatives vary in connotation. The claimed unwanted sexual connotation is a register concern requiring Urdu judgment; the supplied evidence does not prove the current gloss excludes the intended sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wicked",
+        "contextMatchCount": 2,
+        "dictionarySources": [],
+        "nextAction": "Urdu reviewer to assess register of بدکار for an evil spirit and suspected evil, and whether بدطینت adds useful precision."
+      },
+      {
+        "findingIndex": 35,
+        "lang": "hi",
+        "lemma": "purr",
+        "decision": "deferred",
+        "before": "घुरघुराना (बिल्ली का)",
+        "after": "घुरघुराना (बिल्ली का)",
+        "reason": "The sole example contrasts laying eggs with a cat purring. The semantic target is clear, but both the current घुरघुराना (बिल्ली का) and suggested onomatopoeia need language-specific sound/register judgment; the initial finding itself has low confidence. Do not replace one uncertain animal-sound wording with another.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "purr",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "hi reviewer to confirm a normal contented-cat purr gloss, distinguishing growling/whining from purring."
+      },
+      {
+        "findingIndex": 36,
+        "lang": "th",
+        "lemma": "purr",
+        "decision": "deferred",
+        "before": "ส่งเสียงครางหงิง ๆ (แมว)",
+        "after": "ส่งเสียงครางหงิง ๆ (แมว)",
+        "reason": "The sole example contrasts laying eggs with a cat purring. The semantic target is clear, but both the current ส่งเสียงครางหงิง ๆ (แมว) and suggested onomatopoeia need language-specific sound/register judgment; the initial finding itself has low confidence. Do not replace one uncertain animal-sound wording with another.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "purr",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "th reviewer to confirm a normal contented-cat purr gloss, distinguishing growling/whining from purring."
+      },
+      {
+        "findingIndex": 37,
+        "lang": "vi",
+        "lemma": "surrounded",
+        "decision": "rejected",
+        "before": "bị vây quanh",
+        "after": "bị vây quanh",
+        "reason": "The only occurrence places Thumbelina stranded on a water-lily leaf after abduction. The adverse shade of bị vây quanh is compatible with this predicament and with Turkish çevrili. được would impose a different favorable/neutral framing; neither is established as a required correction by the English sentence. Retain the existing valid surrounded sense.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "surrounded",
+        "contextMatchCount": 1,
+        "dictionarySources": []
+      }
+    ],
+    "contextEvidence": {
+      "confusion": {
+        "turkishReference": "karışıklık",
+        "matchedForms": [
+          "confusion"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-20",
+            "english": "After causing confusion in the kitchen, he escaped outside again."
+          }
+        ]
+      },
+      "endangering": {
+        "turkishReference": "tehlikeye atan",
+        "matchedForms": [
+          "endangering"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-wild-swans",
+            "sentenceId": "cl-wild-swans-20",
+            "english": "She could not defend herself without endangering her brothers."
+          }
+        ]
+      },
+      "find": {
+        "turkishReference": "bulmak",
+        "matchedForms": [
+          "find",
+          "found"
+        ],
+        "matches": [
+          {
+            "storyId": "lost-map",
+            "sentenceId": "lm-1",
+            "english": "Nora found an old map inside her grandfather's desk."
+          },
+          {
+            "storyId": "attic-letter",
+            "sentenceId": "attic-letter-1",
+            "english": "While helping her grandmother clear the attic, Nora found a small wooden chest beneath a pile of blankets."
+          },
+          {
+            "storyId": "classic-red-riding-hood",
+            "sentenceId": "cl-red-riding-hood-21",
+            "english": "He found the wolf and thought the grandmother might still be alive."
+          },
+          {
+            "storyId": "classic-cinderella",
+            "sentenceId": "cl-cinderella-09",
+            "english": "His son hoped to find a bride there."
+          },
+          {
+            "storyId": "classic-cinderella",
+            "sentenceId": "cl-cinderella-16",
+            "english": "She escaped before he could find out where she lived."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-06",
+            "english": "Next, they found a cat whose owner no longer wanted her."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-12",
+            "english": "Following it, they found a house full of robbers."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-19",
+            "english": "The animals ate their supper and found places to sleep."
+          },
+          {
+            "storyId": "classic-hansel-gretel",
+            "sentenceId": "cl-hansel-gretel-09",
+            "english": "But birds ate the crumbs, and the children could not find their way back."
+          },
+          {
+            "storyId": "classic-hansel-gretel",
+            "sentenceId": "cl-hansel-gretel-25",
+            "english": "They found jewels in the house and filled their pockets."
+          },
+          {
+            "storyId": "classic-hansel-gretel",
+            "sentenceId": "cl-hansel-gretel-27",
+            "english": "Soon they recognized the forest and found their father's house."
+          },
+          {
+            "storyId": "classic-selfish-giant",
+            "sentenceId": "cl-selfish-giant-31",
+            "english": "That afternoon, the children found the giant dead beneath the tree, covered in white blossoms."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-13",
+            "english": "Finally, she found a simple platinum chain for Jim's watch."
+          },
+          {
+            "storyId": "classic-town-country-mouse",
+            "sentenceId": "cl-town-country-mouse-07",
+            "english": "They find a table full of rich food."
+          },
+          {
+            "storyId": "classic-snow-white",
+            "sentenceId": "cl-snow-white-08",
+            "english": "Snow White found a small house and fell asleep inside."
+          },
+          {
+            "storyId": "classic-rapunzel",
+            "sentenceId": "cl-rapunzel-09",
+            "english": "One day, a prince heard Rapunzel singing and found the tower."
+          },
+          {
+            "storyId": "classic-sleeping-beauty",
+            "sentenceId": "cl-sleeping-beauty-17",
+            "english": "He walked into the silent castle and found the sleeping princess."
+          },
+          {
+            "storyId": "classic-rumpelstiltskin",
+            "sentenceId": "cl-rumpelstiltskin-16",
+            "english": "Then a messenger found a small house deep in the forest."
+          },
+          {
+            "storyId": "classic-golden-goose",
+            "sentenceId": "cl-golden-goose-06",
+            "english": "Under its roots, he found a goose with golden feathers."
+          },
+          {
+            "storyId": "classic-elves-shoemaker",
+            "sentenceId": "cl-elves-shoemaker-06",
+            "english": "Again, he cut the leather and found perfect shoes waiting the next morning."
+          },
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-11",
+            "english": "The wolf found and swallowed six of them."
+          },
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-13",
+            "english": "Their mother returned and found the house in a terrible mess."
+          },
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-15",
+            "english": "They found the wolf asleep under a tree, with something moving in his belly."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-11",
+            "english": "The tailor found the giants asleep beneath a tree."
+          },
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-07",
+            "english": "He found wild ducks in a marsh, but he could not stay there in peace."
+          },
+          {
+            "storyId": "classic-thumbelina",
+            "sentenceId": "cl-thumbelina-15",
+            "english": "While exploring one passage, Thumbelina found a swallow that seemed to be dead."
+          },
+          {
+            "storyId": "classic-thumbelina",
+            "sentenceId": "cl-thumbelina-21",
+            "english": "The swallow returned and found her crying."
+          },
+          {
+            "storyId": "classic-thumbelina",
+            "sentenceId": "cl-thumbelina-24",
+            "english": "Inside a white flower, Thumbelina found a tiny prince with delicate wings."
+          },
+          {
+            "storyId": "classic-little-mermaid",
+            "sentenceId": "cl-little-mermaid-05",
+            "english": "She hid nearby while a young woman found him, so he never saw his rescuer."
+          },
+          {
+            "storyId": "classic-little-mermaid",
+            "sentenceId": "cl-little-mermaid-13",
+            "english": "The prince found her and welcomed the silent stranger into his home."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-10",
+            "english": "Gerda refused to believe he was lost forever and set out to find him."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-31",
+            "english": "They found that they had grown older, though their hearts were still like children's."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-26",
+            "english": "In the morning, people found the girl dead in the corner, with a smile on her face."
+          },
+          {
+            "storyId": "classic-steadfast-tin-soldier",
+            "sentenceId": "cl-steadfast-tin-soldier-12",
+            "english": "After rain, two other boys found him and made a boat from newspaper."
+          },
+          {
+            "storyId": "classic-steadfast-tin-soldier",
+            "sentenceId": "cl-steadfast-tin-soldier-27",
+            "english": "The next day, the servant found the tin heart among the ashes."
+          },
+          {
+            "storyId": "classic-wild-swans",
+            "sentenceId": "cl-wild-swans-06",
+            "english": "She reached the sea and found eleven swan feathers on the shore."
+          },
+          {
+            "storyId": "classic-wild-swans",
+            "sentenceId": "cl-wild-swans-15",
+            "english": "A young king found her in the forest and was moved by her beauty and sadness."
+          }
+        ]
+      },
+      "have": {
+        "turkishReference": "sahip olmak; -si olmak",
+        "matchedForms": [
+          "have",
+          "had",
+          "has",
+          "having"
+        ],
+        "matches": [
+          {
+            "storyId": "lost-map",
+            "sentenceId": "lm-8",
+            "english": "It was a reminder of a friendship that had lasted for years."
+          },
+          {
+            "storyId": "red-umbrella",
+            "sentenceId": "red-umbrella-18",
+            "english": "Anna has a new friend and a good story to tell."
+          },
+          {
+            "storyId": "attic-letter",
+            "sentenceId": "attic-letter-8",
+            "english": "They had planned to create a garden together, but her friend had moved away before spring arrived."
+          },
+          {
+            "storyId": "attic-letter",
+            "sentenceId": "attic-letter-9",
+            "english": "Although they had kept in touch for years, the garden had remained only a memory."
+          },
+          {
+            "storyId": "attic-letter",
+            "sentenceId": "attic-letter-18",
+            "english": "Nora realized that the chest had held something more valuable than a secret: a chance to begin again."
+          },
+          {
+            "storyId": "classic-tortoise-hare",
+            "sentenceId": "cl-tortoise-hare-10",
+            "english": "\"I have time for a rest,\" he thinks."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-14",
+            "english": "The grasshopper has nothing to eat."
+          },
+          {
+            "storyId": "classic-red-riding-hood",
+            "sentenceId": "cl-red-riding-hood-14",
+            "english": "\"What big ears you have!\" the girl said."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-04",
+            "english": "On the road, he met an old dog who had escaped from his master."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-18",
+            "english": "Thinking a ghost had arrived, the robbers ran into the forest."
+          },
+          {
+            "storyId": "classic-hansel-gretel",
+            "sentenceId": "cl-hansel-gretel-02",
+            "english": "The family had so little food that the stepmother wanted to leave the children in the forest."
+          },
+          {
+            "storyId": "classic-hansel-gretel",
+            "sentenceId": "cl-hansel-gretel-16",
+            "english": "Gretel had to cook meals to make her brother fat."
+          },
+          {
+            "storyId": "classic-hansel-gretel",
+            "sentenceId": "cl-hansel-gretel-28",
+            "english": "Their stepmother had died, and their father welcomed them with joy."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-07",
+            "english": "While alive, the Prince had lived behind palace walls, far from other people's troubles."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-08",
+            "english": "Now he could see the suffering that his comfortable life had hidden from him."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-12",
+            "english": "When he returned, helping someone had made him feel strangely warm."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-13",
+            "english": "The following night, the Prince noticed a young writer who had no food or fire."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-16",
+            "english": "Next, the Prince saw a girl whose matches had fallen into the wet street."
+          },
+          {
+            "storyId": "classic-selfish-giant",
+            "sentenceId": "cl-selfish-giant-02",
+            "english": "The garden belonged to a giant who had been away for seven years."
+          },
+          {
+            "storyId": "classic-selfish-giant",
+            "sentenceId": "cl-selfish-giant-11",
+            "english": "Children had slipped through a hole in the wall and climbed into the trees."
+          },
+          {
+            "storyId": "classic-selfish-giant",
+            "sentenceId": "cl-selfish-giant-14",
+            "english": "Seeing the boy's tears, the giant understood how selfish he had been."
+          },
+          {
+            "storyId": "classic-selfish-giant",
+            "sentenceId": "cl-selfish-giant-22",
+            "english": "But the little boy who had changed his heart did not return."
+          },
+          {
+            "storyId": "classic-selfish-giant",
+            "sentenceId": "cl-selfish-giant-28",
+            "english": "Angry that someone had hurt the child, he asked who was responsible."
+          },
+          {
+            "storyId": "classic-selfish-giant",
+            "sentenceId": "cl-selfish-giant-30",
+            "english": "Because the giant had once shared his garden, the child now invited him to Paradise."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-02",
+            "english": "She had only one dollar and eighty-seven cents to buy a present for Jim."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-03",
+            "english": "Their small flat was cheap, but their expenses had still been greater than expected."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-04",
+            "english": "Jim's wages had fallen, and saving even a few pennies had been difficult."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-11",
+            "english": "The woman offered twenty dollars, and Della agreed to have her hair cut."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-17",
+            "english": "Della explained that she had sold her hair because she wanted to give him a present."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-21",
+            "english": "Inside were the beautiful, expensive combs she had admired in a shop window."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-22",
+            "english": "She held them close, although she no longer had long hair to wear them in."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-26",
+            "english": "He had sold his watch to buy the combs."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-27",
+            "english": "Each had given up a treasured possession to make the other happy."
+          },
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-28",
+            "english": "Their gifts could not be used just then, but their love had become clear."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-05",
+            "english": "A restaurant had once stood there, and he had eaten his last dinner in New York inside it."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-06",
+            "english": "His companion that evening had been his closest friend, Jimmy Wells."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-07",
+            "english": "They had grown up together, almost like brothers."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-08",
+            "english": "The next morning, the man had left for the West to seek his fortune."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-09",
+            "english": "Jimmy had preferred to stay in the city he loved."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-10",
+            "english": "Before parting, they had promised to meet at that exact place twenty years later."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-11",
+            "english": "They had exchanged letters for a while, but eventually lost contact."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-15",
+            "english": "He told the policeman that he had travelled a thousand miles for the meeting."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-19",
+            "english": "Believing Jimmy had finally come, Bob warmly took his hands."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-26",
+            "english": "In the note, Jimmy explained that he had reached their meeting place on time."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-27",
+            "english": "He was the first policeman who had spoken to Bob in the doorway."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-28",
+            "english": "When the match lit Bob's face, Jimmy had recognized a man wanted in Chicago."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-29",
+            "english": "Unable to arrest his old friend himself, he had asked another officer to do it."
+          },
+          {
+            "storyId": "classic-town-country-mouse",
+            "sentenceId": "cl-town-country-mouse-05",
+            "english": "\"We have wonderful food there.\""
+          },
+          {
+            "storyId": "classic-golden-eggs",
+            "sentenceId": "cl-golden-eggs-11",
+            "english": "Now the man has no hen and no golden eggs."
+          },
+          {
+            "storyId": "classic-golden-eggs",
+            "sentenceId": "cl-golden-eggs-12",
+            "english": "His greed has taken away his good fortune."
+          },
+          {
+            "storyId": "classic-dog-shadow",
+            "sentenceId": "cl-dog-shadow-05",
+            "english": "That dog seems to have a bigger piece of meat."
+          },
+          {
+            "storyId": "classic-dog-shadow",
+            "sentenceId": "cl-dog-shadow-12",
+            "english": "Wanting too much can make us lose what we have."
+          },
+          {
+            "storyId": "classic-fox-crow",
+            "sentenceId": "cl-fox-crow-05",
+            "english": "\"What beautiful feathers you have!\" he says."
+          },
+          {
+            "storyId": "classic-fox-crow",
+            "sentenceId": "cl-fox-crow-06",
+            "english": "\"You must have a beautiful voice, too.\""
+          },
+          {
+            "storyId": "classic-fox-crow",
+            "sentenceId": "cl-fox-crow-12",
+            "english": "\"You have a voice, but you need more sense,\" he says."
+          },
+          {
+            "storyId": "classic-bundle-sticks",
+            "sentenceId": "cl-bundle-sticks-01",
+            "english": "A father has several sons."
+          },
+          {
+            "storyId": "classic-snow-white",
+            "sentenceId": "cl-snow-white-01",
+            "english": "A queen had a daughter with skin as white as snow and hair as black as ebony."
+          },
+          {
+            "storyId": "classic-sleeping-beauty",
+            "sentenceId": "cl-sleeping-beauty-16",
+            "english": "When he reached the hedge, the thorns had become flowers."
+          },
+          {
+            "storyId": "classic-frog-prince",
+            "sentenceId": "cl-frog-prince-08",
+            "english": "The king asked his daughter what had happened."
+          },
+          {
+            "storyId": "classic-frog-prince",
+            "sentenceId": "cl-frog-prince-15",
+            "english": "When he fell, he had changed into a prince."
+          },
+          {
+            "storyId": "classic-frog-prince",
+            "sentenceId": "cl-frog-prince-16",
+            "english": "He explained that a witch had turned him into a frog."
+          },
+          {
+            "storyId": "classic-frog-prince",
+            "sentenceId": "cl-frog-prince-19",
+            "english": "Henry had placed iron bands around his heart because of his sorrow."
+          },
+          {
+            "storyId": "classic-rumpelstiltskin",
+            "sentenceId": "cl-rumpelstiltskin-05",
+            "english": "By morning, he had spun all the straw into gold."
+          },
+          {
+            "storyId": "classic-rumpelstiltskin",
+            "sentenceId": "cl-rumpelstiltskin-07",
+            "english": "On the third night, she had nothing left to offer."
+          },
+          {
+            "storyId": "classic-golden-goose",
+            "sentenceId": "cl-golden-goose-03",
+            "english": "Both hurt themselves and had to return home."
+          },
+          {
+            "storyId": "classic-golden-goose",
+            "sentenceId": "cl-golden-goose-12",
+            "english": "In a nearby city, a princess had never laughed."
+          },
+          {
+            "storyId": "classic-golden-goose",
+            "sentenceId": "cl-golden-goose-13",
+            "english": "The king had promised her hand to whoever could make her laugh."
+          },
+          {
+            "storyId": "classic-golden-goose",
+            "sentenceId": "cl-golden-goose-20",
+            "english": "His kindness had brought him help when he needed it most."
+          },
+          {
+            "storyId": "classic-elves-shoemaker",
+            "sentenceId": "cl-elves-shoemaker-01",
+            "english": "A shoemaker had become so poor that he had leather for only one pair of shoes."
+          },
+          {
+            "storyId": "classic-tom-thumb",
+            "sentenceId": "cl-tom-thumb-20",
+            "english": "Safe at home, Tom said he had seen enough of the world for a while."
+          },
+          {
+            "storyId": "classic-twelve-dancing-princesses",
+            "sentenceId": "cl-twelve-dancing-princesses-01",
+            "english": "A king had twelve daughters who slept in one locked room."
+          },
+          {
+            "storyId": "classic-twelve-dancing-princesses",
+            "sentenceId": "cl-twelve-dancing-princesses-02",
+            "english": "Every morning, their shoes were worn out as if they had danced all night."
+          },
+          {
+            "storyId": "classic-twelve-dancing-princesses",
+            "sentenceId": "cl-twelve-dancing-princesses-19",
+            "english": "The princesses could no longer deny what they had done."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-05",
+            "english": "A giant read his belt and thought he had killed seven men."
+          },
+          {
+            "storyId": "classic-goose-girl",
+            "sentenceId": "cl-goose-girl-09",
+            "english": "Afraid that Falada would speak, the false bride had the horse killed."
+          },
+          {
+            "storyId": "classic-goose-girl",
+            "sentenceId": "cl-goose-girl-10",
+            "english": "The princess paid to have his head hung above the gate she passed each day."
+          },
+          {
+            "storyId": "classic-goose-girl",
+            "sentenceId": "cl-goose-girl-13",
+            "english": "She called on the wind, which blew his hat away until she had finished combing her hair."
+          },
+          {
+            "storyId": "classic-goose-girl",
+            "sentenceId": "cl-goose-girl-19",
+            "english": "The king revealed that she had named her own punishment."
+          },
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-21",
+            "english": "At last, spring returned, and he discovered that his wings had grown strong."
+          },
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-27",
+            "english": "He remembered his suffering, but happiness had not made him proud or unkind."
+          },
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-28",
+            "english": "He had never dreamed that he could belong so completely."
+          },
+          {
+            "storyId": "classic-emperors-clothes",
+            "sentenceId": "cl-emperors-clothes-04",
+            "english": "They said their cloth had a remarkable power."
+          },
+          {
+            "storyId": "classic-emperors-clothes",
+            "sentenceId": "cl-emperors-clothes-23",
+            "english": "Then a child called out that the emperor had no clothes on."
+          },
+          {
+            "storyId": "classic-emperors-clothes",
+            "sentenceId": "cl-emperors-clothes-25",
+            "english": "Soon everyone was saying what they had known all along."
+          },
+          {
+            "storyId": "classic-thumbelina",
+            "sentenceId": "cl-thumbelina-28",
+            "english": "The swallow flew home with the story of the little girl he had helped."
+          },
+          {
+            "storyId": "classic-little-mermaid",
+            "sentenceId": "cl-little-mermaid-07",
+            "english": "Her grandmother explained that mermaids lived for three hundred years but had no immortal soul."
+          },
+          {
+            "storyId": "classic-little-mermaid",
+            "sentenceId": "cl-little-mermaid-15",
+            "english": "He grew fond of her but remembered the woman he believed had saved his life."
+          },
+          {
+            "storyId": "classic-little-mermaid",
+            "sentenceId": "cl-little-mermaid-17",
+            "english": "The mermaid could not tell him the truth because she had given away her voice."
+          },
+          {
+            "storyId": "classic-little-mermaid",
+            "sentenceId": "cl-little-mermaid-22",
+            "english": "They had traded their hair to the witch for a knife."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-06",
+            "english": "He became cruel and began to mock the things he had once loved."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-14",
+            "english": "A crow told her about a clever princess who had recently married."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-18",
+            "english": "A fierce robber girl kept her close, while pigeons told them that Kay had gone north."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-30",
+            "english": "Together, they travelled home and thanked those who had helped them."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-31",
+            "english": "They found that they had grown older, though their hearts were still like children's."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-03",
+            "english": "She had left home wearing slippers much too large for her."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-06",
+            "english": "Nobody had bought her matches or given her a coin all day."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-18",
+            "english": "One star fell, and the girl remembered something her grandmother had once said."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-20",
+            "english": "Her grandmother had been the only person who had treated her with kindness."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-27",
+            "english": "They saw the burnt matches and said she had tried to warm herself."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-28",
+            "english": "They could not see the visions that had comforted her during her final night."
+          },
+          {
+            "storyId": "classic-steadfast-tin-soldier",
+            "sentenceId": "cl-steadfast-tin-soldier-02",
+            "english": "The last soldier had only one leg because there had not been enough tin."
+          },
+          {
+            "storyId": "classic-steadfast-tin-soldier",
+            "sentenceId": "cl-steadfast-tin-soldier-05",
+            "english": "She held one leg so high that the soldier believed she had only one, too."
+          },
+          {
+            "storyId": "classic-steadfast-tin-soldier",
+            "sentenceId": "cl-steadfast-tin-soldier-21",
+            "english": "By a remarkable chance, he was back in the same house where his journey had begun."
+          },
+          {
+            "storyId": "classic-wild-swans",
+            "sentenceId": "cl-wild-swans-01",
+            "english": "A king had eleven sons and a daughter named Elisa."
+          }
+        ]
+      },
+      "short": {
+        "turkishReference": "kısa",
+        "matchedForms": [
+          "short"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-gift-magi",
+            "sentenceId": "cl-gift-magi-15",
+            "english": "At home, she curled her short hair and worried about Jim's reaction."
+          },
+          {
+            "storyId": "classic-little-mermaid",
+            "sentenceId": "cl-little-mermaid-21",
+            "english": "Her sisters rose from the sea with their hair cut short."
+          }
+        ]
+      },
+      "remained": {
+        "turkishReference": "kaldı",
+        "matchedForms": [
+          "remained"
+        ],
+        "matches": [
+          {
+            "storyId": "attic-letter",
+            "sentenceId": "attic-letter-9",
+            "english": "Although they had kept in touch for years, the garden had remained only a memory."
+          },
+          {
+            "storyId": "classic-selfish-giant",
+            "sentenceId": "cl-selfish-giant-13",
+            "english": "Only one corner remained frozen, where a tiny boy could not reach a branch."
+          },
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-20",
+            "english": "They fled in fear, and the clever tailor remained in the palace."
+          },
+          {
+            "storyId": "classic-steadfast-tin-soldier",
+            "sentenceId": "cl-steadfast-tin-soldier-07",
+            "english": "At night, the toys came alive, but the soldier and dancer remained perfectly still."
+          },
+          {
+            "storyId": "classic-steadfast-tin-soldier",
+            "sentenceId": "cl-steadfast-tin-soldier-28",
+            "english": "Only the dancer's burnt ornament remained beside it."
+          }
+        ]
+      },
+      "wardrobe": {
+        "turkishReference": "gardırop",
+        "matchedForms": [
+          "wardrobe"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-emperors-clothes",
+            "sentenceId": "cl-emperors-clothes-02",
+            "english": "He spent so much time changing outfits that people joked about his wardrobe."
+          }
+        ]
+      },
+      "blow": {
+        "turkishReference": "darbe, vuruş",
+        "matchedForms": [
+          "blow",
+          "blew",
+          "blown"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-brave-little-tailor",
+            "sentenceId": "cl-brave-little-tailor-03",
+            "english": "Proud of himself, he made a belt that said, \"Seven at one blow.\""
+          },
+          {
+            "storyId": "classic-goose-girl",
+            "sentenceId": "cl-goose-girl-13",
+            "english": "She called on the wind, which blew his hat away until she had finished combing her hair."
+          }
+        ]
+      },
+      "cold": {
+        "turkishReference": "soğuk",
+        "matchedForms": [
+          "cold"
+        ],
+        "matches": [
+          {
+            "storyId": "red-umbrella",
+            "sentenceId": "red-umbrella-6",
+            "english": "Her coat is wet, and she looks cold."
+          },
+          {
+            "storyId": "classic-ants-grasshopper",
+            "sentenceId": "cl-ants-grasshopper-05",
+            "english": "He is cold and hungry."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-24",
+            "english": "At last, weakened by the cold, he said goodbye and died at the Prince's feet."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-01",
+            "english": "It was almost ten on a cold, rainy night in New York."
+          },
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-16",
+            "english": "Winter grew bitterly cold, and he swam to keep a small patch of water from freezing."
+          },
+          {
+            "storyId": "classic-thumbelina",
+            "sentenceId": "cl-thumbelina-10",
+            "english": "When winter came, she became cold and desperately hungry."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-03",
+            "english": "A piece in an eye changed what a person saw, and one in a heart made it cold."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-09",
+            "english": "Her cold kisses made him forget Gerda and his home."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-20",
+            "english": "The reindeer carried her through the cold to a woman in Lapland."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-05",
+            "english": "Now her bare feet were red and blue with cold."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-25",
+            "english": "Together they rose beyond cold, hunger, and fear."
+          }
+        ]
+      },
+      "described": {
+        "turkishReference": "anlattı, tarif etti",
+        "matchedForms": [
+          "described"
+        ],
+        "matches": [
+          {
+            "storyId": "attic-letter",
+            "sentenceId": "attic-letter-4",
+            "english": "It described a promise to meet beside the old garden gate on the first day of spring."
+          },
+          {
+            "storyId": "classic-bremen-musicians",
+            "sentenceId": "cl-bremen-musicians-23",
+            "english": "The frightened robber described a witch, an armed man, a monster, and a judge."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-20",
+            "english": "Each day, he flew over the city and described the hungry families he saw."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-20",
+            "english": "They walked together while Bob described his successful life in the West."
+          },
+          {
+            "storyId": "classic-twelve-dancing-princesses",
+            "sentenceId": "cl-twelve-dancing-princesses-18",
+            "english": "Then he showed the king the branches and cup, and described the secret journey."
+          }
+        ]
+      },
+      "convinced": {
+        "turkishReference": "ikna etti; emin",
+        "matchedForms": [
+          "convinced"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-wild-swans",
+            "sentenceId": "cl-wild-swans-19",
+            "english": "The adviser saw her there and convinced the king that she was a witch."
+          }
+        ]
+      },
+      "amounts": {
+        "turkishReference": "miktarlar",
+        "matchedForms": [
+          "amounts"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-golden-goose",
+            "sentenceId": "cl-golden-goose-16",
+            "english": "He demanded impossible amounts of food and drink, and a ship that could travel on land and water."
+          }
+        ]
+      },
+      "fine": {
+        "turkishReference": "iyi; ince",
+        "matchedForms": [
+          "fine"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-cinderella",
+            "sentenceId": "cl-cinderella-14",
+            "english": "The bird gave her a beautiful dress and fine slippers."
+          },
+          {
+            "storyId": "classic-town-country-mouse",
+            "sentenceId": "cl-town-country-mouse-13",
+            "english": "\"Keep your fine food,\" he tells his friend."
+          },
+          {
+            "storyId": "classic-milkmaid-pail",
+            "sentenceId": "cl-milkmaid-pail-06",
+            "english": "\"Then I can sell the chickens and buy a fine dress.\""
+          },
+          {
+            "storyId": "classic-ass-lion-skin",
+            "sentenceId": "cl-ass-lion-skin-12",
+            "english": "A fine disguise cannot hide who we are forever."
+          },
+          {
+            "storyId": "classic-elves-shoemaker",
+            "sentenceId": "cl-elves-shoemaker-04",
+            "english": "Their fine stitching amazed him."
+          },
+          {
+            "storyId": "classic-emperors-clothes",
+            "sentenceId": "cl-emperors-clothes-01",
+            "english": "An emperor loved fine clothes more than anything else in his kingdom."
+          }
+        ]
+      },
+      "god": {
+        "turkishReference": "tanrı",
+        "matchedForms": [
+          "god"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-29",
+            "english": "God asked an angel to bring the two most precious things in the city."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-30",
+            "english": "The angel chose the broken heart and the swallow, and God welcomed them into Paradise."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-19",
+            "english": "A falling star meant that a soul was going to God."
+          }
+        ]
+      },
+      "warm": {
+        "turkishReference": "sıcak, ılık",
+        "matchedForms": [
+          "warm"
+        ],
+        "matches": [
+          {
+            "storyId": "quiet-morning",
+            "sentenceId": "qm-7",
+            "english": "Mia bought two warm rolls and shared one with him."
+          },
+          {
+            "storyId": "classic-happy-prince",
+            "sentenceId": "cl-happy-prince-12",
+            "english": "When he returned, helping someone had made him feel strangely warm."
+          },
+          {
+            "storyId": "classic-north-wind-sun",
+            "sentenceId": "cl-north-wind-sun-04",
+            "english": "He wears a warm coat."
+          },
+          {
+            "storyId": "classic-north-wind-sun",
+            "sentenceId": "cl-north-wind-sun-11",
+            "english": "The traveler starts to feel warm."
+          },
+          {
+            "storyId": "classic-thumbelina",
+            "sentenceId": "cl-thumbelina-11",
+            "english": "A field mouse invited her into a warm home and offered her food."
+          },
+          {
+            "storyId": "classic-thumbelina",
+            "sentenceId": "cl-thumbelina-23",
+            "english": "They flew over mountains and seas to a warm country filled with flowers."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-16",
+            "english": "He was not her friend, but the prince and princess gave her warm clothes and a carriage."
+          },
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-27",
+            "english": "He did not recognize Gerda until her warm tears reached his frozen heart."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-11",
+            "english": "To warm her fingers, she struck a match against the wall."
+          },
+          {
+            "storyId": "classic-little-match-girl",
+            "sentenceId": "cl-little-match-girl-27",
+            "english": "They saw the burnt matches and said she had tried to warm herself."
+          }
+        ]
+      },
+      "wicked": {
+        "turkishReference": "kötü kalpli",
+        "matchedForms": [
+          "wicked"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-snow-queen",
+            "sentenceId": "cl-snow-queen-01",
+            "english": "A wicked spirit made a mirror that turned beautiful things ugly and kindness into faults."
+          },
+          {
+            "storyId": "classic-wild-swans",
+            "sentenceId": "cl-wild-swans-17",
+            "english": "Although he loved her, his adviser suspected that her silence hid something wicked."
+          }
+        ]
+      },
+      "purr": {
+        "turkishReference": "mırlamak",
+        "matchedForms": [
+          "purr"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-11",
+            "english": "The bird could neither lay eggs nor purr, and he missed swimming."
+          }
+        ]
+      },
+      "surrounded": {
+        "turkishReference": "çevrili, çevrelenmiş",
+        "matchedForms": [
+          "surrounded"
+        ],
+        "matches": [
+          {
+            "storyId": "classic-thumbelina",
+            "sentenceId": "cl-thumbelina-05",
+            "english": "Thumbelina woke on a water-lily leaf, surrounded by water."
+          }
+        ]
+      }
+    },
     "validation": {
+      "glossaryBuild": "passed; all eleven language assets regenerated; only ar/vi/th changed in this pass",
       "glossaryCheck": "passed for all eleven language assets",
       "glossaryTests": {
         "passed": 6,
         "failed": 0,
         "skipped": 0
-      }
+      },
+      "backendTests": {
+        "passed": 172,
+        "failed": 0,
+        "skipped": 0,
+        "setup": "Initial run could not load existing @electric-sql/pglite dependency; npm ci installed the unchanged lockfile dependency; the complete rerun passed."
+      },
+      "evidenceConsistency": "37 one-to-one dispositions; original findings/metadata preserved; exactly three source gloss values changed; reviewStatus machine-draft and sampleApprovedBy unchanged",
+      "diffCheck": "passed",
+      "androidDeviceVerification": "not run for the changed glossary assets; remains a package acceptance task"
     },
     "updatedSourceHashes": {
       "pt-BR": "eeaf3ea501c99576b3deca0039d80d6e79202a26a6ccd1b0fe0b6172f367505e",
-      "ru": "59e539d0b0d3d3692c394a88e58098b441b47b6607245323ecfb661f53b587cb"
+      "ru": "59e539d0b0d3d3692c394a88e58098b441b47b6607245323ecfb661f53b587cb",
+      "ar": "d9d7a9332db3e0290488296215b8569df8ec6db779eda2e57b8ed006272b10e0",
+      "vi": "b0ed4474a421bd2ae588026567a322e645b1d80fb08e2d21917fb3b1f87b655a",
+      "th": "00a95cb1a63b207a2a5a2ed170d276ef59c80655b33505c3167ad151cdc877af"
     }
   }
 }

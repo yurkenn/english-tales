@@ -1,6 +1,6 @@
 # On dilde sözlük — bağımsız örneklem incelemesi
 
-20 Ekim 2026 · Kaynak `01defbe` · **Örneklem incelemesi tamamlandı; bütün sözlük ve dil onayı açık.**
+20 Ekim 2026 · Kaynak `01defbe` · **37 adayın kararı kaydedildi: 5 kabul, 16 ret, 16 erteleme; bütün sözlük ve dil onayı açık.**
 
 Kullanıcının görev paylaşımı isteğiyle Claude CLI’ye bağımsız ikinci inceleme verildi. Codex bu sırada ilk kullanım testini araştırdı. Claude `claude-opus-5-5` ile çalıştı; araç, MCP, dosya yazma ve oturum kaydı kapalıydı. Yalnız depodaki sözlük karşılıkları ve kaynak örnekler paylaşıldı; hesap veya servis bilgisi paylaşılmadı.
 
@@ -25,22 +25,84 @@ Claude 37 aday bildirdi: 1 yüksek, 22 orta, 14 düşük önem. Bunlar otomatik 
 
 ## Codex karşılaştırması ve karar
 
-- **Öncelikli dil doğrulaması:** Arapça `endangering` için `معرّض للخطر` yazımının aktif/pasif belirsizliği; Hintçe/Urduca `find` karşılığının aramak/bulmak ayrımı; Urduca `short` karşılığının saç uzunluğu bağlamı; Vietnamca `remained` karşılığının fiziksel kalmak/devam etmek ayrımı.
-- **Kaynak anlamı birlikte incelenmeli:** `wardrobe` örneği kıyafet koleksiyonu hakkında, Türkçe referans `gardırop`. Modelin dokuz dilde bildirdiği mobilya/kıyafet farkı yalnız çeviri dosyaları düzeltilerek kapatılmaz. Türkçe referans, aynı lemmanın diğer hikâyelerdeki kullanımı ve çok anlam politikası birlikte gözden geçirilmeli. Mevcut genel sözlük lemma başına tek anlam alanı kullanıyor.
-- **Dar bağlamdan otomatik düzeltme yapılmadı:** `confusion` için zihinsel karışıklık da geçerli bir anlam; tek mutfak örneği bütün lemma kullanımlarını kanıtlamaz. `fine` için `bien`/`fino`, bütün kullanımlar görülmeden sırf sözcük türü gerekçesiyle kaldırılmaz. Düşük güvenli `purr` önerileri kaynak yerine geçirilmedi.
-- **Küçük netleştirme adayı:** Portekizce `amounts` için gıda/içecek bağlamında `quantidades`; Rusça `wardrobe` için iki anlamı kapsayan `гардероб`. Bu iki öneri kaynak bağlamıyla karşılaştırıldıktan sonra kabul edildi; aşağıdaki kayıt bu sınırlı değişikliği kapsar.
+Kalan 35 aday, paket katalogdaki bütün birebir lemma ve Türkçe çekim tablosu eşleşmeleriyle karşılaştırıldı. Yalnız ilk örnek cümleye dayanılmadı: `find/found` 37, `remained` 5, `cold` 11 ve `warm` 10 cümlede geçiyor. Bu yöntem anlamsal arama veya çekim tablosunda olmayan biçimlerin tamamını kapsadığını iddia etmez. Kaynak katalog ve Türkçe ana sözlük SHA-256 özetleri, eşleşen cümle kimlikleri ve her aday için ayrı gerekçe yapılandırılmış `codexDisposition` kaydındadır.
 
-Codex karşılaştırmasından sonra iki dar düzeltme uygulandı: Portekizce `amounts`: `quantias` → `quantidades` (gıda/içecek miktarı); Rusça `wardrobe`: `шкаф` → `гардероб` (kıyafet koleksiyonu ve dolap anlamını birlikte kapsar). İlgili paket sözlükleri yeniden üretildi. Diğer 35 aday otomatik uygulanmadı. `sampleApprovedBy` ve `reviewStatus: machine-draft` korunur; bu iki AI destekli düzeltme insan/ana dil onayı veya mağaza yayını değildir. İnceleme paketindeki değerler ve kaynak özetleri düzeltmeden önceki girdiyi korur.
+Bu tur **3 düzeltme** uygulandı:
+
+- Arapça `endangering`: `معرّض للخطر` → `يُعرِّض للخطر`. Elisa kardeşlerini tehlikeye atan kişidir; açık aktif fiil, eski ortaçtaki aktif/pasif okuma belirsizliğini giderir.
+- Vietnamca `remained`: `đã ở lại` → `vẫn còn; vẫn là; ở lại`. Hatıra olarak kalmak, donmuş/hareketsiz kalmak ve geride kalanı kapsayan anlamlar eklendi; sarayda fiziksel kalma anlamı korundu.
+- Tayca `cold`: `เย็น` → `หนาว; เย็น`. Birden fazla hikâyedeki kişinin üşümesi anlamı eklendi; düşük sıcaklık karşılığı korundu.
+
+Önceki iki düzeltme (Portekizce `amounts`: `quantidades`; Rusça `wardrobe`: `гардероб`) korunur. Böylece 37 adayın **5'i kabul edildi, 16'sının önerilen otomatik değişikliği reddedildi, 16'sı belirli bir kaynak/dil kararı için ertelendi**. Kararsız/kayıtsız aday yoktur; ertelenen 16 madde açık iş olmaya devam eder. Ret, ilgili lemmanın ana dil konuşurunca doğrulandığı anlamına gelmez; yalnız önerilen değişikliğin mevcut kanıta göre gerekli veya güvenli olmadığını belirtir.
+
+`sampleApprovedBy` ve `reviewStatus: machine-draft` değişmedi. Bu AI destekli inceleme insan/ana dil onayı veya mağaza yayını değildir. İlk inceleme girdileri ve hash'leri geçmiş kaydı olarak korundu; yeni kaynak hash'leri ayrı alandadır.
+
+### Aday bazında sonuçlar
+
+| Dil | Lemma | Karar | Gerekçe / açık karar |
+|---|---|---|---|
+| id | `confusion` | Ret | Zihinsel karışıklık da kaynak cümlenin geçerli okumasıdır; fiziksel kargaşa zorunlu değildir. |
+| vi | `confusion` | Ret | Zihinsel karışıklık da kaynak cümlenin geçerli okumasıdır; fiziksel kargaşa zorunlu değildir. |
+| hi | `confusion` | Ret | Zihinsel karışıklık da kaynak cümlenin geçerli okumasıdır; fiziksel kargaşa zorunlu değildir. |
+| ur | `confusion` | Ret | Zihinsel karışıklık da kaynak cümlenin geçerli okumasıdır; fiziksel kargaşa zorunlu değildir. |
+| ru | `confusion` | Ret | Zihinsel karışıklık da kaynak cümlenin geçerli okumasıdır; fiziksel kargaşa zorunlu değildir. |
+| bn | `confusion` | Ret | Zihinsel karışıklık da kaynak cümlenin geçerli okumasıdır; fiziksel kargaşa zorunlu değildir. |
+| th | `confusion` | Ret | Zihinsel karışıklık da kaynak cümlenin geçerli okumasıdır; fiziksel kargaşa zorunlu değildir. |
+| ar | `endangering` | Kabul | Aktif fiil kardeşlerini tehlikeye atmak anlamını açıkça verir. |
+| hi | `find` | Erteleme | Aramak / bulmak ayrımı birleşik fiil ve sonuç bildiren kullanımda hedef dilce doğrulanmalı. |
+| ur | `find` | Erteleme | Aramak / bulmak ayrımı birleşik fiil ve sonuç bildiren kullanımda hedef dilce doğrulanmalı. |
+| hi | `have` | Ret | Mevcut fiilin sahip olma anlamı da vardır; yardımcı/ettirgen kullanımları tek sözlük anlamıyla çevrilemez. |
+| ur | `have` | Ret | Mevcut fiilin sahip olma anlamı da vardır; yardımcı/ettirgen kullanımları tek sözlük anlamıyla çevrilemez. |
+| ur | `short` | Ret | Rekhta mevcut مختصر için fiziksel kısa anlamını da verir; yalnız kısa metin iddiası doğrulanmadı. |
+| vi | `remained` | Kabul | Devam eden durum ve geride kalan anlamı eklendi; fiziksel kalma korundu. |
+| es-419 | `wardrobe` | Erteleme | Kıyafet koleksiyonu / mobilya anlamı Türkçe ana referansla birlikte kararlaştırılmalı. |
+| id | `wardrobe` | Erteleme | Kıyafet koleksiyonu / mobilya anlamı Türkçe ana referansla birlikte kararlaştırılmalı. |
+| ar | `wardrobe` | Erteleme | Kıyafet koleksiyonu / mobilya anlamı Türkçe ana referansla birlikte kararlaştırılmalı. |
+| vi | `wardrobe` | Erteleme | Kıyafet koleksiyonu / mobilya anlamı Türkçe ana referansla birlikte kararlaştırılmalı. |
+| hi | `wardrobe` | Erteleme | Kıyafet koleksiyonu / mobilya anlamı Türkçe ana referansla birlikte kararlaştırılmalı. |
+| ru | `wardrobe` | Kabul | Önceki düzeltme korundu: гардероб kıyafet koleksiyonu ve dolap anlamlarını kapsar. |
+| bn | `wardrobe` | Erteleme | Kıyafet koleksiyonu / mobilya anlamı Türkçe ana referansla birlikte kararlaştırılmalı. |
+| ur | `wardrobe` | Erteleme | Kıyafet koleksiyonu / mobilya anlamı Türkçe ana referansla birlikte kararlaştırılmalı. |
+| th | `wardrobe` | Erteleme | Kıyafet koleksiyonu / mobilya anlamı Türkçe ana referansla birlikte kararlaştırılmalı. |
+| th | `blow` | Erteleme | Ana çekim tablosu blew rüzgâr fiilini de blow maddesine bağlar; isim/fiil kapsamı birlikte kararlaştırılmalı. |
+| th | `cold` | Kabul | Kişinin üşümesi eklendi; düşük sıcaklık anlamı korundu. |
+| th | `described` | Erteleme | Anlatmak/açıklamak örtüşmesi için Tayca kullanım incelemesi gerekli; yakın anlamlı otomatik değiştirilmedi. |
+| bn | `convinced` | Ret | Mevcut ikna/emin karşılıkları geçerlidir; tek cümle için eş anlamlı değişimi yapılmadı. |
+| hi | `convinced` | Ret | Mevcut ikna/emin karşılıkları geçerlidir; tek cümle için eş anlamlı değişimi yapılmadı. |
+| pt-BR | `amounts` | Kabul | Önceki düzeltme korundu: yiyecek/içecek miktarı. |
+| es-419 | `fine` | Ret | Mevcut fino sıfatı kalite/incelik anlamını kapsar; sırf bien sözcük türü nedeniyle çift değiştirilmedi. |
+| ar | `god` | Erteleme | Genel lemma ile özel God adı ve Arapça dini kullanım politikası birlikte ele alınmalı. |
+| es-419 | `warm` | Ret | Önerilen yiyecek odaklı değişim, diğer hikâyelerdeki duygusal/iklimsel sıcaklık anlamını daraltır. |
+| th | `warm` | Ret | Önerilen yiyecek odaklı değişim, diğer hikâyelerdeki duygusal/iklimsel sıcaklık anlamını daraltır. |
+| ur | `wicked` | Erteleme | Mevcut kötü/ahlaksız karşılığının masal bağlamındaki çağrışımı Urduca incelemesi gerektirir. |
+| hi | `purr` | Erteleme | Mevcut ve önerilen hayvan sesi ifadeleri düşük güvenli; mırlama/hırlama/sızlanma ayrımı doğrulanmalı. |
+| th | `purr` | Erteleme | Mevcut ve önerilen hayvan sesi ifadeleri düşük güvenli; mırlama/hırlama/sızlanma ayrımı doğrulanmalı. |
+| vi | `surrounded` | Ret | Mahsur kalma bağlamında mevcut olumsuz çatı geçerlidir; nötr/olumlu çatı zorunlu değil. |
+
+### Sözlük kanıtları
+
+Bunlar hedef dilde insan onayı değildir. Bazı kararlar dilbilgisi ve katalog karşılaştırmasından çıkarımdır; özellikle Arapça aktif fiil seçimi kaynak İngilizcedeki etken rolün yorumudur.
+
+- [Cambridge remain — Vietnamca](https://dictionary.cambridge.org/dictionary/english-vietnamese/remain): kalan, fiziksel kalma ve devam etme anlamları.
+- [Cambridge cold — Tayca](https://dictionary.cambridge.org/us/dictionary/english-thai/cold): sıcaklık ile kişinin üşümesi ayrımı.
+- [Rekhta مختصر](https://www.rekhtadictionary.com/meaning-of-mukhtasar?lang=ur): fiziksel kısa anlamı da mevcut.
+- [Rekhta rakhnaa](https://www.rekhtadictionary.com/meaning-of-rakhnaa?lang=ur): keep/place yanında possess/own/have anlamları.
+- [Rekhta Dhuu.nDnaa](https://www.rekhtadictionary.com/meaning-of-dhuundnaa?lang=hi): arama/iz sürme anlamları; sonuç bildiren birleşik kullanım için tek başına yeterli değil.
+- [Cambridge fine](https://dictionary.cambridge.org/es/diccionario/english/fine): kalite ve incelik sıfatları yanında zarf kullanımı da mevcut.
+- [Cambridge describe — Tayca](https://dictionary.cambridge.org/dictionary/english-thai/describe): adayın anlamını destekler; mevcut yakın anlamlının tüm bağlamlarda yanlış olduğunu tek başına kanıtlamaz.
+- [Cambridge endanger](https://dictionary.cambridge.org/dictionary/english/endanger): başkasını tehlikeye atma etken rolü.
 
 ## Doğrulama
 
-`glossary:build` sonrası `glossary:check` 11 dilde başarılı; mevcut altı sözlük testi 6/6 geçti. Kaynak/paket farkı yalnız Portekizce ve Rusçada birer karşılıktır. Yeni bağımlılık veya sunucu yayını yok.
+`glossary:build` ve `glossary:check` 11 dilde başarılı; mevcut altı sözlük testi 6/6, tam backend testleri 172/172 geçti. Tam testin ilk denemesinde mevcut PGlite bağımlılığı bu worktree’de kurulu değildi; değişmeyen lockfile ile `npm ci` sonrası tekrarın tamamı geçti. `git diff --check` temiz.
+
+İlk bulgular/metadata korunumu, 37 adayın birebir karar eşlemesi ve yalnız üç kaynak karşılığının değiştiği ayrıca doğrulandı. Bu tur paket farkı yalnız Arapça, Vietnamca ve Taycada birer karşılıktır. Yeni bağımlılık sürümü veya sunucu yayını yok. Yeni sözlük değerleriyle Android cihaz/çevrimdışı kaydetme kabulü bu alt görevde çalıştırılmadı.
 
 ## Kalan iş
 
-1. Öncelikli anlam bulgularını bütün hikâye kullanımlarıyla karşılaştır; kabul/ret gerekçesi ve dil doğrulaması kaydet.
+1. Ertelenen 16 aday için `nextAction` alanındaki somut kaynak/dil kararlarını tamamla. Özellikle `wardrobe` ve `blow` ana referans/çok anlam kapsamı, `find` sonuç bildiren kullanım, `purr` hayvan sesi ayrımı açık.
 2. Her dilin kalan 977 maddesini izlenebilir gruplarla ikinci incelemeden geçir; kaynak dosya özeti değişirse ilgili grup yeniden incelenir.
-3. Kabul edilen düzeltmelerden sonra `glossary:build`, `glossary:check` ve backend testleri; Android çevrimdışı anlam/kaydetme kontrolü.
+3. Android çevrimdışı anlam/kaydetme kontrolünü yeni paket üzerinde ayrıca çalıştır.
 4. Ana dil örneklemini ve mağaza paketinin kapsamını ayrı kaydet. Bu rapor sözlüğün tamamının hazır olduğu anlamına gelmez.
 
-[İnceleme paketi](release-evidence/2026-10-20-glossary-review-packet.json) · [Claude aday bulguları, kaynak özetleri ve kapsam](release-evidence/2026-10-20-glossary-claude-review.json).
+[İnceleme paketi](release-evidence/2026-10-20-glossary-review-packet.json) · [Claude aday bulguları, kaynak özetleri ve 37 Codex kararı](release-evidence/2026-10-20-glossary-claude-review.json).
