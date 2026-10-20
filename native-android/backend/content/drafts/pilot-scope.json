@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "updatedOn": "2026-10-19",
+  "focus": "existing-stories-only",
+  "activeRevisionStoryIds": [
+    "quiet-morning",
+    "paper-boat",
+    "last-train",
+    "classic-tortoise-hare",
+    "classic-lion-mouse"
+  ],
+  "deferredNewStoryIds": [
+    "classic-three-little-pigs",
+    "classic-goldilocks-three-bears"
+  ],
+  "reason": "User paused adding new stories and requested focusing on the existing catalog. Existing new-story drafts are preserved for later.",
+  "nextTranslationStoryId": null,
+  "publicationStatus": "No live content publication.",
+  "languageDraftsCompleteStoryIds": [
+    "quiet-morning",
+    "paper-boat",
+    "last-train",
+    "classic-tortoise-hare",
+    "classic-lion-mouse"
+  ],
+  "nextStep": "Owner (oguz) approved the AI-reviewed drafts on 2026-10-19. Next: fresh live snapshot, story-pilot:drafts --apply with a publisher session, publish in the admin panel.",
+  "localIntegration": "preview adapter and Android fixture verified; no production catalog or live content change",
+  "aiEditorialReview": "Codex review plus independent Claude second review completed; owner approval recorded; native-speaker review not done"
+}

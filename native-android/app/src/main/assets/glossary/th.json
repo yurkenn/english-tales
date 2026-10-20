@@ -1,0 +1,4554 @@
+{
+ "schemaVersion": 1,
+ "lang": "th",
+ "source": "Built by tools/glossary.mjs from backend/content/glossary/th.json: machine draft, not reviewed by a native speaker.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "หนึ่ง; (คำนำหน้านามไม่เจาะจง)"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "ทอดทิ้ง"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "ความสามารถ"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "บนยานพาหนะ"
+  },
+  {
+   "lemma": "about",
+   "gloss": "เกี่ยวกับ; ประมาณ"
+  },
+  {
+   "lemma": "above",
+   "gloss": "เหนือ; ข้างบน"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "ยอมรับ"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "โดยบังเอิญ"
+  },
+  {
+   "lemma": "across",
+   "gloss": "ข้าม; ตลอด"
+  },
+  {
+   "lemma": "act",
+   "gloss": "กระทำ; การกระทำ"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "เพิ่ม"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "ชื่นชม"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "ชื่นชม"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "ยอมรับ (ว่าจริง)"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "คำแนะนำ"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "กลัว"
+  },
+  {
+   "lemma": "after",
+   "gloss": "หลังจาก"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "ตอนบ่าย"
+  },
+  {
+   "lemma": "again",
+   "gloss": "อีกครั้ง"
+  },
+  {
+   "lemma": "against",
+   "gloss": "ต่อต้าน"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "ที่แล้ว"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "เห็นด้วย"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "เห็นด้วย"
+  },
+  {
+   "lemma": "air",
+   "gloss": "อากาศ"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "มีชีวิต"
+  },
+  {
+   "lemma": "all",
+   "gloss": "ทั้งหมด"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "อนุญาต"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "เกือบ"
+  },
+  {
+   "lemma": "along",
+   "gloss": "ตาม; ตลอด"
+  },
+  {
+   "lemma": "already",
+   "gloss": "แล้ว; เรียบร้อยแล้ว"
+  },
+  {
+   "lemma": "also",
+   "gloss": "ด้วย; นอกจากนี้"
+  },
+  {
+   "lemma": "although",
+   "gloss": "แม้ว่า"
+  },
+  {
+   "lemma": "always",
+   "gloss": "เสมอ"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "ประหลาดใจ"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "น่าอัศจรรย์"
+  },
+  {
+   "lemma": "among",
+   "gloss": "ท่ามกลาง"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "จำนวน"
+  },
+  {
+   "lemma": "an",
+   "gloss": "หนึ่ง; (คำนำหน้านามไม่เจาะจง)"
+  },
+  {
+   "lemma": "and",
+   "gloss": "และ"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "ความโกรธ"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "โกรธ"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "สัตว์"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "another",
+   "gloss": "อื่น; อีกอัน"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "ตอบ"
+  },
+  {
+   "lemma": "any",
+   "gloss": "ใด ๆ"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "อีกต่อไป"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "ใครก็ได้"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "อะไรก็ได้"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "แยกออกจากกัน"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "รูปลักษณ์"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "ปรากฏ"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "แอปเปิล"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "เข้าใกล้"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "ติดอาวุธ"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "แขน"
+  },
+  {
+   "lemma": "around",
+   "gloss": "รอบ ๆ"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "จัดเรียง"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "มาถึง"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "มาถึง"
+  },
+  {
+   "lemma": "as",
+   "gloss": "เหมือน; ขณะที่"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "ถาม; ขอ"
+  },
+  {
+   "lemma": "at",
+   "gloss": "ที่; ณ"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "โจมตี"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "ผู้รับใช้"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "ฤดูใบไม้ร่วง"
+  },
+  {
+   "lemma": "away",
+   "gloss": "ไป; ห่างออกไป"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "เก้ๆ กังๆ"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "ทารก"
+  },
+  {
+   "lemma": "back",
+   "gloss": "กลับ; หลัง"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "กระเป๋า"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "ลูกบอล; งานเต้นรำ"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "ห่วง; สาย"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "แท่ง; ลูกกรง"
+  },
+  {
+   "lemma": "be",
+   "gloss": "เป็น; อยู่"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "ตี; เอาชนะ"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "สวย; งดงาม"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "ความงาม"
+  },
+  {
+   "lemma": "because",
+   "gloss": "เพราะ"
+  },
+  {
+   "lemma": "become",
+   "gloss": "กลายเป็น"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "เตียง"
+  },
+  {
+   "lemma": "before",
+   "gloss": "ก่อน"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "อ้อนวอน"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "เริ่ม"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "ประพฤติ"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "ข้างหลัง"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "เป็นส่วนหนึ่ง; เป็นของ"
+  },
+  {
+   "lemma": "below",
+   "gloss": "ด้านล่าง"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "โน้มตัว; งอ"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "ใต้"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "ข้าง ๆ"
+  },
+  {
+   "lemma": "between",
+   "gloss": "ระหว่าง"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "เลยไป; เกินกว่า"
+  },
+  {
+   "lemma": "big",
+   "gloss": "ใหญ่"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "นก"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "วันเกิด"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "ชิ้นเล็ก; กัด"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "กัด"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "อย่างรุนแรง (หนาว)"
+  },
+  {
+   "lemma": "black",
+   "gloss": "สีดำ"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "ตำหนิ"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "ผ้าห่ม"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "เลือด"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "ออกดอก"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "ออกดอก"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "การโจมตี"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "สีน้ำเงิน"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "โอ้อวด"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "body",
+   "gloss": "ร่างกาย"
+  },
+  {
+   "lemma": "born",
+   "gloss": "เกิด"
+  },
+  {
+   "lemma": "both",
+   "gloss": "ทั้งสอง"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "ขวด"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "ก้น; ส่วนล่าง"
+  },
+  {
+   "lemma": "box",
+   "gloss": "กล่อง"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "กิ่งไม้"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "ขนมปัง"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(ชื่อเฉพาะ) เบรเมิน"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "พุ่มกุหลาบป่ามีหนาม"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "เจ้าบ่าว"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "สว่าง"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "ความสว่าง"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "นำมา"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "พี่ชาย/น้องชาย"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "สีน้ำตาล"
+  },
+  {
+   "lemma": "build",
+   "gloss": "สร้าง"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "ไหม้"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "ไหม้เกรียม"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "ระเบิด"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "ยุ่ง"
+  },
+  {
+   "lemma": "but",
+   "gloss": "แต่"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "ผีเสื้อ"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "ซื้อ"
+  },
+  {
+   "lemma": "by",
+   "gloss": "ข้าง ๆ; โดย"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "เค้ก"
+  },
+  {
+   "lemma": "call",
+   "gloss": "การโทร; เรียก"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "กล้องถ่ายรูป"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "ค่าย"
+  },
+  {
+   "lemma": "can",
+   "gloss": "สามารถ"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "เทียน"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "ไม่สามารถ"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "จับ"
+  },
+  {
+   "lemma": "care",
+   "gloss": "ความใส่ใจ; ห่วงใย"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "ระมัดระวัง"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "รถม้า"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "แบก"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "แมว"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "จับ"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "ทำให้เกิด"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "ที่ทำให้เกิด"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "ฉลอง"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "กำลังฉลอง"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "การเฉลิมฉลอง"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "เซนต์"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "แน่ใจ; บางอย่าง"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "เก้าอี้"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "โอกาส"
+  },
+  {
+   "lemma": "change",
+   "gloss": "เปลี่ยน; การเปลี่ยนแปลง"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "พุ่งเข้าใส่"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "ไล่ตาม"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "ถูก"
+  },
+  {
+   "lemma": "check",
+   "gloss": "ตรวจสอบ"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "ชีส"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(ชื่อเฉพาะ) ชิคาโก"
+  },
+  {
+   "lemma": "child",
+   "gloss": "เด็ก"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "วัยเด็ก"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "ตัวเลือก"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "เลือก"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "คริสต์มาส"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "สุสานข้างโบสถ์"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(ชื่อเฉพาะ) ซินเดอเรลลา"
+  },
+  {
+   "lemma": "city",
+   "gloss": "เมือง"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "อ้างว่า"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "เคลียร์; ชัดเจน"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "เสมียน"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "ปีน"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "นาฬิกา"
+  },
+  {
+   "lemma": "close",
+   "gloss": "ปิด; ใกล้"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "เมฆ"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "เย็น"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "รวบรวม"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "สี"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "หวี"
+  },
+  {
+   "lemma": "come",
+   "gloss": "มา"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "สบาย"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "อย่างสบาย"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "ปลอบโยน"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "เพื่อนร่วมทาง"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "เปรียบเทียบ"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "บ่น"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "ทำให้เสร็จ; สมบูรณ์"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "ความสับสน"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "การติดต่อ"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "ดำเนินต่อไป"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "โน้มน้าว; มั่นใจ"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "พ่อครัว; ทำอาหาร"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "ทำให้เย็นลง"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "มุม"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "มีราคา; ต้นทุน"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "กระท่อม"
+  },
+  {
+   "lemma": "could",
+   "gloss": "สามารถ (อดีต); อาจจะ"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "นับ"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "นับไม่ถ้วน"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "คู่"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "ปกคลุม"
+  },
+  {
+   "lemma": "create",
+   "gloss": "สร้าง"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "วิจารณ์"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "ข้าม"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "ฝูงชน"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "โหดร้าย"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "ความโหดร้าย"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "ร้องไห้"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "ขดตัว"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "ลูกค้า"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "ตัด"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "เต้นรำ"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "อันตราย"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "อันตราย"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "กล้า"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "มืด"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "ลูกสาว"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "รุ่งอรุณ"
+  },
+  {
+   "lemma": "day",
+   "gloss": "วัน"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "แสงตอนกลางวัน"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "ตาย"
+  },
+  {
+   "lemma": "death",
+   "gloss": "ความตาย"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "หลอกลวง"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "ตัดสินใจ"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "ตัดสินใจ"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "การกระทำ"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "ลึก"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "เอาชนะ"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "ป้องกัน"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "บอบบาง"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "อร่อย"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "ความปีติ"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "เรียกร้อง"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "ปฏิเสธ"
+  },
+  {
+   "lemma": "described",
+   "gloss": "อธิบาย"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "โต๊ะทำงาน"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "ความสิ้นหวัง"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "อย่างสิ้นหวัง"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "แม้ว่า"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "ทำลาย"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "เพชร"
+  },
+  {
+   "lemma": "die",
+   "gloss": "ตาย"
+  },
+  {
+   "lemma": "died",
+   "gloss": "ตาย"
+  },
+  {
+   "lemma": "different",
+   "gloss": "แตกต่าง"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "ยาก"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "หายไป"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "ห่างไกล"
+  },
+  {
+   "lemma": "do",
+   "gloss": "ทำ"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "ดอลลาร์"
+  },
+  {
+   "lemma": "door",
+   "gloss": "ประตู"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "ช่องประตู"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "แป้งโดว์"
+  },
+  {
+   "lemma": "down",
+   "gloss": "ลง"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "ตามกระแสน้ำ"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "ดึงเข้าหาตัว"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "ภาพวาด"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "หวาดกลัว"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "ฝัน"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "ความฝัน"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "ดื่ม"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "คนขับ"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "ทำตก; หยด"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "จมน้ำ"
+  },
+  {
+   "lemma": "due",
+   "gloss": "ถึงกำหนด; คาดว่า"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "หมอง; น่าเบื่อ"
+  },
+  {
+   "lemma": "during",
+   "gloss": "ระหว่าง"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "เต็มไปด้วยฝุ่น"
+  },
+  {
+   "lemma": "each",
+   "gloss": "แต่ละ"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "หู"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "ก่อนหน้านี้"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "ง่าย"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "กิน"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "ไม้มะเกลือ"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(ชื่อเฉพาะ) อียิปต์"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "แปดสิบ"
+  },
+  {
+   "lemma": "either",
+   "gloss": "ก็ไม่ (ในประโยคปฏิเสธ)"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "คนโตที่สุด"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "สิบเอ็ด"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "else",
+   "gloss": "อื่น"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "กอด"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "ว่างเปล่า"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "ถูกมนตร์สะกด"
+  },
+  {
+   "lemma": "end",
+   "gloss": "จุดจบ"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "ที่ทำให้ตกอยู่ในอันตราย"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "พลังงาน"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "เพลิดเพลิน"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "มหึมา"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "เพียงพอ"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "เข้า"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "กระตือรือร้น"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "ทั้งหมด"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "ทางเข้า"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "หลบหนี"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "โดยเฉพาะ"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "วันก่อน (คริสต์มาส)"
+  },
+  {
+   "lemma": "even",
+   "gloss": "แม้แต่"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "ในที่สุด"
+  },
+  {
+   "lemma": "every",
+   "gloss": "ทุก"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "ทุกคน"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "ทุกสิ่ง"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "ทุกที่"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "แน่นอน; ตรงเป๊ะ"
+  },
+  {
+   "lemma": "except",
+   "gloss": "ยกเว้น"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "แลกกับ; การแลกเปลี่ยน"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "หมดแรง"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "มีอยู่"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "คาดหวัง; ที่คาดไว้"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "คาดหวัง"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "ค่าใช้จ่าย"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "แพง"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "อธิบาย"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "คำอธิบาย"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "สำรวจ"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "สีหน้า; การแสดงออก"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "พิเศษอย่างยิ่ง"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "ตา"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "คิ้ว"
+  },
+  {
+   "lemma": "face",
+   "gloss": "ใบหน้า"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "ซีดจาง"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "ล้มเหลว"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "ล้มเหลว"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "ตก"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "ที่กำลังตก"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "ตก; น้ำตก"
+  },
+  {
+   "lemma": "false",
+   "gloss": "เท็จ; ผิด"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "คุ้นเคย"
+  },
+  {
+   "lemma": "family",
+   "gloss": "ครอบครัว"
+  },
+  {
+   "lemma": "far",
+   "gloss": "ไกล"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "ชาวนา"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "ลานฟาร์ม"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "เร็ว"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "ผูก; ติดแน่น"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "อ้วน; ไขมัน"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "ข้อบกพร่อง"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "ความกลัว"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "ให้อาหาร"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "รู้สึก"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "ความรู้สึก"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "ไปเอามา"
+  },
+  {
+   "lemma": "few",
+   "gloss": "ไม่กี่"
+  },
+  {
+   "lemma": "field",
+   "gloss": "ทุ่ง"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "ดุร้าย"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "สิบห้า"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "ที่สิบห้า"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "ต่อสู้"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "เติม; เต็ม"
+  },
+  {
+   "lemma": "final",
+   "gloss": "สุดท้าย"
+  },
+  {
+   "lemma": "find",
+   "gloss": "พบ"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "ดี; ละเอียด"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "นิ้ว"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "ฟินแลนด์; ชาวฟินแลนด์"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "ไฟ"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "แน่น"
+  },
+  {
+   "lemma": "first",
+   "gloss": "แรก"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "ปลา"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "พอดีตัว"
+  },
+  {
+   "lemma": "five",
+   "gloss": "ห้า"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "เรียบ; แฟลต"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "หนีไป"
+  },
+  {
+   "lemma": "float",
+   "gloss": "ลอย"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "ฝูง"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "พื้น; ชั้น"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "ดอกไม้"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "บิน"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "ติดตาม"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "ผู้ติดตาม"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "ชอบพอ"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "โง่เขลา"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "เท้า"
+  },
+  {
+   "lemma": "for",
+   "gloss": "สำหรับ; ยกเว้น"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "ตลอดไป"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "ลืม"
+  },
+  {
+   "lemma": "form",
+   "gloss": "ก่อตัว; รูปร่าง"
+  },
+  {
+   "lemma": "four",
+   "gloss": "สี่"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "แข็งตัว"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "เย็นจัด; การแข็งตัว"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "สด"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "เพื่อน"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "มิตรภาพ"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "ทำให้กลัว"
+  },
+  {
+   "lemma": "from",
+   "gloss": "จาก"
+  },
+  {
+   "lemma": "front",
+   "gloss": "ด้านหน้า"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "ผลไม้"
+  },
+  {
+   "lemma": "full",
+   "gloss": "เต็ม"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "ความสนุก"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "โกรธจัด"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "ได้รับ"
+  },
+  {
+   "lemma": "games",
+   "gloss": "เกม"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "สวน"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "รวบรวม"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "จ้อง; สายตา"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "อ่อนโยน"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "อย่างอ่อนโยน"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "get",
+   "gloss": "ได้รับ; กลายเป็น; ไปถึง"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "ผี"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "เด็กผู้หญิง"
+  },
+  {
+   "lemma": "give",
+   "gloss": "ให้"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "ผู้ให้"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "แก้ว"
+  },
+  {
+   "lemma": "go",
+   "gloss": "ไป"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "แพะ"
+  },
+  {
+   "lemma": "god",
+   "gloss": "พระเจ้า"
+  },
+  {
+   "lemma": "going",
+   "gloss": "กำลังไป"
+  },
+  {
+   "lemma": "good",
+   "gloss": "ดี"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "ลาก่อน; การอำลา"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "สง่างาม"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "ยิ่งใหญ่"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "ปู่; ตา"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "ย่า; ยาย"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "สีเทา"
+  },
+  {
+   "lemma": "great",
+   "gloss": "ยิ่งใหญ่; ยอดเยี่ยม"
+  },
+  {
+   "lemma": "green",
+   "gloss": "สีเขียว"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "ทักทาย"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "สีเทา"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "พื้นดิน"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "เติบโต"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "เดา"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "ผู้นำทาง; นำทาง"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "ปืน"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "ลมกระโชก"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "ผม"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "การตัดผม"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "ห้องโถง"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "มือ"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "แขวน"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "เกิดขึ้น"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "ความสุข"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "มีความสุข"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "แข็ง; ยาก"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "รุนแรง; โหดร้าย"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "หมวก"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "ฟักออกจากไข่"
+  },
+  {
+   "lemma": "have",
+   "gloss": "มี"
+  },
+  {
+   "lemma": "he",
+   "gloss": "เขา"
+  },
+  {
+   "lemma": "head",
+   "gloss": "หัว"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "ได้ยิน"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "หัวใจ"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "ทำให้ร้อน; ความร้อน"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "รั้วต้นไม้"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "สวัสดี"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "ผู้ช่วย"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "her",
+   "gloss": "ของเธอ; เธอ (กรรม)"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "ตัวเธอเอง"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "ซ่อนตัว; ซ่อน"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "ซ่อนตัว"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "เนินเขา"
+  },
+  {
+   "lemma": "him",
+   "gloss": "เขา (กรรม)"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "ตัวเขาเอง"
+  },
+  {
+   "lemma": "his",
+   "gloss": "ของเขา"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "ถือ"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "ถือ"
+  },
+  {
+   "lemma": "home",
+   "gloss": "บ้าน; กลับบ้าน"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "ฮู้ด"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "ความหวัง; หวัง"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "เขา (สัตว์)"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "ตกใจกลัว"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "ม้า"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "ชั่วโมง"
+  },
+  {
+   "lemma": "house",
+   "gloss": "บ้าน"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "งานบ้าน"
+  },
+  {
+   "lemma": "how",
+   "gloss": "อย่างไร"
+  },
+  {
+   "lemma": "however",
+   "gloss": "อย่างไรก็ตาม"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "กอด"
+  },
+  {
+   "lemma": "human",
+   "gloss": "มนุษย์"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "หนึ่งร้อย"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "แขวน; ห้อย"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "รีบ"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "ทำให้เจ็บ; บาดเจ็บ"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "สามี"
+  },
+  {
+   "lemma": "i",
+   "gloss": "ฉัน"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ความคิด"
+  },
+  {
+   "lemma": "if",
+   "gloss": "ถ้า"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "ป่วย"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "ในจินตนาการ"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "จินตนาการ"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "ทันที"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "เป็นอมตะ"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "เป็นไปไม่ได้"
+  },
+  {
+   "lemma": "in",
+   "gloss": "ใน"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "บาดเจ็บ"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "ข้างใน"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "ยืนกราน"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "ตรวจดู"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "แทนที่จะ"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "สนใจ"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "ถูกขัดจังหวะ"
+  },
+  {
+   "lemma": "into",
+   "gloss": "เข้าไปใน"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "เชิญ"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "เชิญ"
+  },
+  {
+   "lemma": "it",
+   "gloss": "มัน"
+  },
+  {
+   "lemma": "its",
+   "gloss": "ของมัน"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "แยม"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "อิจฉา"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(ชื่อเฉพาะ) พระเยซู"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "job",
+   "gloss": "งาน"
+  },
+  {
+   "lemma": "join",
+   "gloss": "เข้าร่วม"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "พูดเล่น"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "ความปีติยินดี"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "ผู้พิพากษา; ตัดสิน"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "กระโดด"
+  },
+  {
+   "lemma": "just",
+   "gloss": "เพียง; พอดี"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "เก็บไว้; รักษา"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "เตะ"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "ฆ่า"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "ความกรุณา"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "อาณาจักร"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "จูบ"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "จูบ"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "ครัว"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "หัวเข่า"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "ล้ม (ผลัก); เคาะ (ประตู)"
+  },
+  {
+   "lemma": "know",
+   "gloss": "รู้"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "เชือกผูกรองเท้า"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "ทะเลสาบ"
+  },
+  {
+   "lemma": "land",
+   "gloss": "ผืนดิน; แผ่นดิน; ลงจอด"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(ชื่อเฉพาะ) แลปแลนด์"
+  },
+  {
+   "lemma": "large",
+   "gloss": "ใหญ่"
+  },
+  {
+   "lemma": "last",
+   "gloss": "สุดท้าย"
+  },
+  {
+   "lemma": "later",
+   "gloss": "ต่อมา"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "หัวเราะ"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "นอน; วาง"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "เอนตัว; พิง"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "เรียนรู้"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "การเรียนรู้"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "จากไป; ทิ้งไว้"
+  },
+  {
+   "lemma": "left",
+   "gloss": "จากไป; ซ้าย"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "ขา"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "ให้ยืม"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "บทเรียน"
+  },
+  {
+   "lemma": "let",
+   "gloss": "ปล่อย; ให้; ขอให้"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "จดหมาย; ตัวอักษร"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "คำโกหก; นอนอยู่"
+  },
+  {
+   "lemma": "life",
+   "gloss": "ชีวิต"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "ยก"
+  },
+  {
+   "lemma": "light",
+   "gloss": "แสง; เบา"
+  },
+  {
+   "lemma": "like",
+   "gloss": "เหมือน; ชอบ"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(ชื่อเฉพาะ); ดอกลิลลี่"
+  },
+  {
+   "lemma": "line",
+   "gloss": "เส้น; แถว"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "ฟัง"
+  },
+  {
+   "lemma": "little",
+   "gloss": "เล็ก; นิดหน่อย"
+  },
+  {
+   "lemma": "live",
+   "gloss": "อาศัย; มีชีวิต"
+  },
+  {
+   "lemma": "local",
+   "gloss": "ท้องถิ่น"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "ล็อก; ที่ล็อกไว้"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "เปลี่ยว; โดดเดี่ยว"
+  },
+  {
+   "lemma": "long",
+   "gloss": "ยาว"
+  },
+  {
+   "lemma": "look",
+   "gloss": "ดูเหมือน; มอง"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "ทำให้หลวม"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "สูญเสีย"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "ดัง"
+  },
+  {
+   "lemma": "love",
+   "gloss": "รัก; ความรัก"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "ลดลง"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "โชค"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "ก้อน"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(ชื่อเฉพาะ) โหราจารย์"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "make",
+   "gloss": "ทำ"
+  },
+  {
+   "lemma": "man",
+   "gloss": "ผู้ชาย"
+  },
+  {
+   "lemma": "many",
+   "gloss": "หลาย"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "รอย"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "การแต่งงาน"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "แต่งงาน"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "หนองน้ำ"
+  },
+  {
+   "lemma": "master",
+   "gloss": "นาย; ปรมาจารย์"
+  },
+  {
+   "lemma": "match",
+   "gloss": "ไม้ขีดไฟ; ตรงกัน"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "วัสดุ"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "สำคัญ"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "นายกเทศมนตรี"
+  },
+  {
+   "lemma": "me",
+   "gloss": "ฉัน (กรรม)"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "ใจร้าย; หมายความว่า"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "พบ"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "ละลาย"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "ความรกรุงรัง"
+  },
+  {
+   "lemma": "message",
+   "gloss": "ข้อความ"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "ผู้ส่งสาร"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "โลหะ"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "เที่ยงคืน"
+  },
+  {
+   "lemma": "might",
+   "gloss": "อาจจะ"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "ไมล์"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "นม"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "รัฐมนตรี"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "นาที"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "คิดถึง; พลาด"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "หายไป"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "เยาะเย้ย"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "ชั่วขณะ"
+  },
+  {
+   "lemma": "more",
+   "gloss": "มากกว่า"
+  },
+  {
+   "lemma": "most",
+   "gloss": "ที่สุด; ส่วนใหญ่"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "แม่"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "ภูเขา"
+  },
+  {
+   "lemma": "move",
+   "gloss": "เคลื่อนที่; ย้าย"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "การเคลื่อนไหว"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "นาง"
+  },
+  {
+   "lemma": "music",
+   "gloss": "ดนตรี"
+  },
+  {
+   "lemma": "must",
+   "gloss": "ต้อง"
+  },
+  {
+   "lemma": "my",
+   "gloss": "ของฉัน"
+  },
+  {
+   "lemma": "name",
+   "gloss": "ชื่อ"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "ผู้เล่าเรื่อง"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "แคบ"
+  },
+  {
+   "lemma": "near",
+   "gloss": "ใกล้"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "ใกล้ ๆ"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "คอ"
+  },
+  {
+   "lemma": "need",
+   "gloss": "ต้องการ"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "เข็ม"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "เพื่อนบ้าน"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "ไม่... ทั้งคู่"
+  },
+  {
+   "lemma": "net",
+   "gloss": "ตาข่าย"
+  },
+  {
+   "lemma": "never",
+   "gloss": "ไม่เคย"
+  },
+  {
+   "lemma": "new",
+   "gloss": "ใหม่"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "ผู้มาใหม่"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "หนังสือพิมพ์"
+  },
+  {
+   "lemma": "next",
+   "gloss": "ถัดไป; ข้าง ๆ"
+  },
+  {
+   "lemma": "night",
+   "gloss": "กลางคืน"
+  },
+  {
+   "lemma": "no",
+   "gloss": "ไม่; ไม่มี"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "เสียงดัง"
+  },
+  {
+   "lemma": "none",
+   "gloss": "ไม่มีสักอย่าง"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "และไม่"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "จมูก"
+  },
+  {
+   "lemma": "not",
+   "gloss": "ไม่"
+  },
+  {
+   "lemma": "note",
+   "gloss": "บันทึก"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "สังเกตเห็น"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "สังเกตเห็น"
+  },
+  {
+   "lemma": "now",
+   "gloss": "ตอนนี้"
+  },
+  {
+   "lemma": "of",
+   "gloss": "ของ; จาก"
+  },
+  {
+   "lemma": "off",
+   "gloss": "ออกเดินทาง; ปิด"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "เสนอ"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "เจ้าหน้าที่; นายทหาร"
+  },
+  {
+   "lemma": "official",
+   "gloss": "ทางการ; เจ้าหน้าที่"
+  },
+  {
+   "lemma": "often",
+   "gloss": "บ่อย"
+  },
+  {
+   "lemma": "old",
+   "gloss": "แก่; เก่า"
+  },
+  {
+   "lemma": "on",
+   "gloss": "บน; ที่"
+  },
+  {
+   "lemma": "once",
+   "gloss": "ครั้งหนึ่ง; ครั้งหนึ่งนานมาแล้ว"
+  },
+  {
+   "lemma": "one",
+   "gloss": "หนึ่ง; ใครคนหนึ่ง"
+  },
+  {
+   "lemma": "only",
+   "gloss": "เท่านั้น"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "ขึ้นไปบน"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "ต่อไปข้างหน้า"
+  },
+  {
+   "lemma": "open",
+   "gloss": "เปิด"
+  },
+  {
+   "lemma": "or",
+   "gloss": "หรือ"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "สั่ง"
+  },
+  {
+   "lemma": "original",
+   "gloss": "ดั้งเดิม"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "เครื่องประดับ"
+  },
+  {
+   "lemma": "other",
+   "gloss": "อื่น"
+  },
+  {
+   "lemma": "out",
+   "gloss": "ออกไป"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "ชุด"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "ข้างนอก"
+  },
+  {
+   "lemma": "over",
+   "gloss": "ไปทาง; เหนือ"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "เหนือศีรษะ"
+  },
+  {
+   "lemma": "package",
+   "gloss": "พัสดุ"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "การบรรจุหีบห่อ"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "ความเจ็บปวด"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "เจ็บปวด"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "คู่"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "พระราชวัง"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "กระดาษ"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "พ่อแม่"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "การจากลา"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "คู่เต้นรำ; คู่ครอง"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "ทางเดิน"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "ผ่านไป"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "ที่ผ่านไป"
+  },
+  {
+   "lemma": "past",
+   "gloss": "อดีต; ผ่าน"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "ผ้าปะ; ผืน"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "ความอดทน"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "จ่าย"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "การชำระเงิน"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "ลูกพีช"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "ก้อนกรวด"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "เหรียญเพนนี"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "สมบูรณ์แบบ"
+  },
+  {
+   "lemma": "person",
+   "gloss": "บุคคล"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "โน้มน้าว"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "รูปถ่าย"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "รูปถ่าย"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "เก็บ; เลือก"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "ชิ้น"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "นกพิราบ"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "กอง"
+  },
+  {
+   "lemma": "place",
+   "gloss": "สถานที่"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "ธรรมดา (ไม่สวมเครื่องแบบ); เรียบง่าย"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "แผน"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "ปลูก"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "การปลูก"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "พืช"
+  },
+  {
+   "lemma": "play",
+   "gloss": "เล่น"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "ดำดิ่ง"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "ชี้; แหลม"
+  },
+  {
+   "lemma": "police",
+   "gloss": "ตำรวจ"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "ตำรวจ (ชาย)"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "ยากจน; น่าสงสาร"
+  },
+  {
+   "lemma": "position",
+   "gloss": "ตำแหน่ง"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "เท"
+  },
+  {
+   "lemma": "power",
+   "gloss": "พลัง"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "ทรงพลัง"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "ชอบมากกว่า"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "การเตรียมการ"
+  },
+  {
+   "lemma": "present",
+   "gloss": "ของขวัญ; ปัจจุบัน"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "แกล้งทำ"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "ป้องกัน"
+  },
+  {
+   "lemma": "price",
+   "gloss": "ราคา"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "ทิ่ม"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "เรือนจำ"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "เจริญรุ่งเรือง"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "ปกป้อง"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "พิสูจน์"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "ดึง"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "ลงโทษ"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "การลงโทษ"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "ส่งเสียงครางหงิง ๆ (แมว)"
+  },
+  {
+   "lemma": "push",
+   "gloss": "ผลัก"
+  },
+  {
+   "lemma": "put",
+   "gloss": "วาง"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "อย่างรวดเร็ว"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "ฝนตก"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "ปฏิกิริยา"
+  },
+  {
+   "lemma": "read",
+   "gloss": "อ่าน"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "พร้อม"
+  },
+  {
+   "lemma": "real",
+   "gloss": "จริง"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "ตระหนัก"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "เหตุผล"
+  },
+  {
+   "lemma": "received",
+   "gloss": "ได้รับ"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "เมื่อไม่นานมานี้"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "จำได้"
+  },
+  {
+   "lemma": "red",
+   "gloss": "สีแดง"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "ปฏิเสธ"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "ปฏิเสธ"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "การถูกปฏิเสธ"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "ยังคงอยู่"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "ที่เหลืออยู่"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "ข้อสังเกต"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "น่าทึ่ง"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "จำได้"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "เตือน"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "สิ่งเตือนใจ"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "เอาออก"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "พูดซ้ำ"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "คำตอบ"
+  },
+  {
+   "lemma": "report",
+   "gloss": "รายงาน"
+  },
+  {
+   "lemma": "request",
+   "gloss": "คำขอ"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "ผู้ช่วยชีวิต"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "รับผิดชอบ"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "ร้านอาหาร"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "ฟื้นฟู"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "เปิดเผย"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "รางวัล"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "ริบบิ้น"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "ขี่"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "การขี่"
+  },
+  {
+   "lemma": "right",
+   "gloss": "ถูกต้อง; ขวา"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "ขึ้น; ขึ้น (พระอาทิตย์)"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "ริมฝั่งแม่น้ำ"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "ย่าง; ที่ย่างแล้ว"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "ปล้น"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "โจร"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "ขนมปังก้อนเล็ก"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "หลังคา"
+  },
+  {
+   "lemma": "room",
+   "gloss": "ห้อง"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "ราก"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "กุหลาบ; ขึ้น"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "หยาบ; รุนแรง"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(ชื่อเฉพาะ) รัมเพลสทิลต์สกิน"
+  },
+  {
+   "lemma": "run",
+   "gloss": "วิ่ง"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "รีบวิ่ง"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) ส่วนต่อท้ายแสดงความเป็นเจ้าของ"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "ความเศร้า"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "same",
+   "gloss": "เหมือนกัน"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "ไพลิน"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "ไส้กรอก"
+  },
+  {
+   "lemma": "save",
+   "gloss": "ช่วยชีวิต; เก็บออม"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "การออม"
+  },
+  {
+   "lemma": "say",
+   "gloss": "พูด"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "แทบจะไม่"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "โปรย; กระจัดกระจาย"
+  },
+  {
+   "lemma": "school",
+   "gloss": "โรงเรียน"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "ทะเล"
+  },
+  {
+   "lemma": "search",
+   "gloss": "ค้นหา"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "ความลับ; ลับ"
+  },
+  {
+   "lemma": "see",
+   "gloss": "เห็น"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "เมล็ดพันธุ์"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "แสวงหา"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "ดูเหมือน"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "ดูเหมือน"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "ฉวย"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "ขาย"
+  },
+  {
+   "lemma": "send",
+   "gloss": "ส่ง"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "กำลังส่ง"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "ประโยค; โทษ"
+  },
+  {
+   "lemma": "service",
+   "gloss": "บริการ"
+  },
+  {
+   "lemma": "set",
+   "gloss": "วาง; ออกเดินทาง; (ดวงอาทิตย์) ตก"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "เจ็ด"
+  },
+  {
+   "lemma": "several",
+   "gloss": "หลาย"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "เย็บ"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "การเย็บผ้า"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "รูปร่าง"
+  },
+  {
+   "lemma": "she",
+   "gloss": "เธอ"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "เปลือก"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "ส่องแสง"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "ส่องแสง"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "ที่ส่องแสง"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "เรือ"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "รองเท้า"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "ร้านค้า"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "ฝั่ง"
+  },
+  {
+   "lemma": "short",
+   "gloss": "สั้น"
+  },
+  {
+   "lemma": "should",
+   "gloss": "ควร"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "ไหล่"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "ตะโกน"
+  },
+  {
+   "lemma": "show",
+   "gloss": "แสดง"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "ปิด"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "ป่วย"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "การมองเห็น; ภาพ"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "สัญญาณ; ลงนาม"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "ลายเซ็น"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "เงียบ"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "เงิน"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "ง่าย"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "คนซื่อ ๆ"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "ร้องเพลง"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "จม; อ่างล้างจาน"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "พี่สาว/น้องสาว"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "นั่ง"
+  },
+  {
+   "lemma": "six",
+   "gloss": "หก"
+  },
+  {
+   "lemma": "size",
+   "gloss": "ขนาด"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "ท้องฟ้า"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "นอนหลับ"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "แขนเสื้อ"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "ลื่น"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "ลื่น"
+  },
+  {
+   "lemma": "small",
+   "gloss": "เล็ก"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "กลิ่น; ดมกลิ่น"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "นอนกรน"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "หิมะ"
+  },
+  {
+   "lemma": "so",
+   "gloss": "ดังนั้น; มาก"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "นุ่ม"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "อ่อนลง"
+  },
+  {
+   "lemma": "some",
+   "gloss": "บ้าง; บางส่วน"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "ใครบางคน"
+  },
+  {
+   "lemma": "something",
+   "gloss": "บางอย่าง"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "ที่ไหนสักแห่ง"
+  },
+  {
+   "lemma": "son",
+   "gloss": "ลูกชาย"
+  },
+  {
+   "lemma": "song",
+   "gloss": "เพลง"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "ในไม่ช้า"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "ความเศร้าโศก"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "อย่างเศร้าโศก"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "เสียง"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "ซุป"
+  },
+  {
+   "lemma": "space",
+   "gloss": "ช่องว่าง; อวกาศ"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "พูด"
+  },
+  {
+   "lemma": "special",
+   "gloss": "พิเศษ"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "ใช้จ่าย; ใช้เวลา"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "ทำหก"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "วิญญาณ"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "แผ่ขยาย"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "ฤดูใบไม้ผลิ; น้ำพุ"
+  },
+  {
+   "lemma": "square",
+   "gloss": "ลานกว้าง; สี่เหลี่ยมจัตุรัส"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "แทรกตัว; บีบ"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "บันได"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "แผงขายของ"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "กระทืบเท้า"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "ยืน"
+  },
+  {
+   "lemma": "star",
+   "gloss": "ดาว"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "เริ่ม"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "พัก; อยู่"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "ขโมย"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "ก้าน"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "แม่เลี้ยง"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "พี่สาว/น้องสาวต่างพ่อต่างแม่"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "ไม้; ติด"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "เหนียว"
+  },
+  {
+   "lemma": "still",
+   "gloss": "ยังคง; นิ่ง"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "เย็บ"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "ท้อง; กระเพาะ"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "หิน"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "หยุด"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "พายุ"
+  },
+  {
+   "lemma": "story",
+   "gloss": "เรื่องราว"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "ตรง"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "เส้น (ผม)"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "แปลก"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "คนแปลกหน้า"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "ลำธาร"
+  },
+  {
+   "lemma": "street",
+   "gloss": "ถนน"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "ความแข็งแรง"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "ยืด; เหยียด"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "จุด (ไม้ขีด); ตี"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "สะดุด"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "โง่"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "ประสบความสำเร็จ"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "ประสบความสำเร็จ"
+  },
+  {
+   "lemma": "such",
+   "gloss": "เช่นนั้น; ถึงเพียงนั้น"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "ทันใดนั้น"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "น้ำตาล"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "เสนอแนะ"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "ฤดูร้อน"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "แสงอาทิตย์"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "พระอาทิตย์ขึ้น"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "พระอาทิตย์ตก"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "ที่ควรจะ; ที่ถูกสมมติ"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "ความประหลาดใจ"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "ถูกล้อมรอบ"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "สงสัย"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "ดาบ"
+  },
+  {
+   "lemma": "table",
+   "gloss": "โต๊ะ"
+  },
+  {
+   "lemma": "take",
+   "gloss": "พาไป; เอา"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "พูดคุย"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "ที่พูดได้; การพูดคุย"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "สูง"
+  },
+  {
+   "lemma": "task",
+   "gloss": "งาน"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "ชา"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "น้ำตา; ฉีก"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "บอก; เล่า"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "สิบ"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "แย่มาก; น่ากลัว"
+  },
+  {
+   "lemma": "than",
+   "gloss": "กว่า"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "ขอบคุณ"
+  },
+  {
+   "lemma": "that",
+   "gloss": "นั่น; ว่า"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(คำนำหน้านามเฉพาะเจาะจง)"
+  },
+  {
+   "lemma": "their",
+   "gloss": "ของพวกเขา"
+  },
+  {
+   "lemma": "them",
+   "gloss": "พวกเขา (กรรม)"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "ตัวพวกเขาเอง"
+  },
+  {
+   "lemma": "then",
+   "gloss": "แล้ว; ตอนนั้น"
+  },
+  {
+   "lemma": "there",
+   "gloss": "ที่นั่น"
+  },
+  {
+   "lemma": "these",
+   "gloss": "เหล่านี้"
+  },
+  {
+   "lemma": "they",
+   "gloss": "พวกเขา"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "หนา; ทึบ"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "ขโมย"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "บาง; ผอม"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "สิ่ง"
+  },
+  {
+   "lemma": "think",
+   "gloss": "คิด"
+  },
+  {
+   "lemma": "third",
+   "gloss": "ที่สาม"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "สิบสาม"
+  },
+  {
+   "lemma": "this",
+   "gloss": "นี้; อันนี้"
+  },
+  {
+   "lemma": "those",
+   "gloss": "เหล่านั้น"
+  },
+  {
+   "lemma": "though",
+   "gloss": "แม้ว่า"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "คิด; ความคิด"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "หนึ่งพัน"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "ด้าย"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "ขู่"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "ที่คุกคาม"
+  },
+  {
+   "lemma": "three",
+   "gloss": "สาม"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "คอ"
+  },
+  {
+   "lemma": "through",
+   "gloss": "ผ่าน"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "ตลอด"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "ขว้าง"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(ชื่อเฉพาะ) ธัมเบลินา"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "ผูก"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "ผูก; ถูกมัด"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "แน่น"
+  },
+  {
+   "lemma": "time",
+   "gloss": "เวลา; ครั้ง"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "เล็กจิ๋ว"
+  },
+  {
+   "lemma": "to",
+   "gloss": "ไปยัง; เพื่อ"
+  },
+  {
+   "lemma": "today",
+   "gloss": "วันนี้"
+  },
+  {
+   "lemma": "together",
+   "gloss": "ด้วยกัน"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(ชื่อเฉพาะ)"
+  },
+  {
+   "lemma": "too",
+   "gloss": "ด้วย; เกินไป"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "ฟัน"
+  },
+  {
+   "lemma": "top",
+   "gloss": "ด้านบน; ยอด"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "การติดต่อ (คงติดต่อกัน)"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "ไปทาง"
+  },
+  {
+   "lemma": "town",
+   "gloss": "เมืองเล็ก"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "ของเล่น"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "อาชีพช่าง"
+  },
+  {
+   "lemma": "train",
+   "gloss": "รถไฟ"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "เดินทาง"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "เดินทาง"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "สมบัติ"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "ปฏิบัติต่อ"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "ต้นไม้"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "สั่น"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "ความทุกข์ยาก"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "รางอาหารสัตว์"
+  },
+  {
+   "lemma": "true",
+   "gloss": "จริง"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "ลำต้น"
+  },
+  {
+   "lemma": "try",
+   "gloss": "พยายาม"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "หัน; ตา (ลำดับ)"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "สิบสอง"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "ยี่สิบ"
+  },
+  {
+   "lemma": "two",
+   "gloss": "สอง"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "น่าเกลียด"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "ไม่สามารถ"
+  },
+  {
+   "lemma": "under",
+   "gloss": "ใต้"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "ใต้ดิน"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "เข้าใจ"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "ยังไม่เสร็จ"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "ไม่เหมาะสม"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "คลี่ออก"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "ไม่มีความสุข"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "ต่างจาก"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "ไม่มีแสงสว่าง"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "แก้มัด"
+  },
+  {
+   "lemma": "until",
+   "gloss": "จนกระทั่ง"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "ผิดปกติ"
+  },
+  {
+   "lemma": "up",
+   "gloss": "ขึ้น"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "เสียใจ"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "ชั้นบน"
+  },
+  {
+   "lemma": "us",
+   "gloss": "พวกเรา (กรรม)"
+  },
+  {
+   "lemma": "use",
+   "gloss": "ใช้"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "มีประโยชน์"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "กว้างใหญ่ไพศาล"
+  },
+  {
+   "lemma": "very",
+   "gloss": "มาก"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "ชัยชนะ"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "อย่างรุนแรง"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "เยี่ยมเยียน"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "ผู้มาเยือน"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "รอ"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "กำลังรอ"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "ตื่น"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "เดิน"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "กำแพง"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "เร่ร่อน"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "ที่ร่อนเร่"
+  },
+  {
+   "lemma": "want",
+   "gloss": "ต้องการ"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "ตู้เสื้อผ้า"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "อบอุ่น"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "เตือน"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "ล้าง"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "นาฬิกาข้อมือ; ดู"
+  },
+  {
+   "lemma": "water",
+   "gloss": "น้ำ"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "โบกมือ"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "คลื่น"
+  },
+  {
+   "lemma": "way",
+   "gloss": "ทาง; วิธี"
+  },
+  {
+   "lemma": "we",
+   "gloss": "พวกเรา"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "อ่อนแอ"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "ทำให้อ่อนแอ"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "ร่ำรวย"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "สวมใส่"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "งานแต่งงาน"
+  },
+  {
+   "lemma": "week",
+   "gloss": "สัปดาห์"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "ต้อนรับ"
+  },
+  {
+   "lemma": "west",
+   "gloss": "ตะวันตก"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "เปียก"
+  },
+  {
+   "lemma": "what",
+   "gloss": "อะไร"
+  },
+  {
+   "lemma": "when",
+   "gloss": "เมื่อ; เมื่อไร"
+  },
+  {
+   "lemma": "where",
+   "gloss": "ที่ไหน; ที่ซึ่ง"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "ไม่ว่าที่ไหน"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "ว่า...หรือไม่"
+  },
+  {
+   "lemma": "which",
+   "gloss": "ซึ่ง; อันไหน"
+  },
+  {
+   "lemma": "while",
+   "gloss": "ในขณะที่"
+  },
+  {
+   "lemma": "white",
+   "gloss": "สีขาว"
+  },
+  {
+   "lemma": "who",
+   "gloss": "ใคร; ผู้ซึ่ง"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "ใครก็ตาม"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "ทั้งหมด"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "ของใคร; ซึ่ง...ของเขา"
+  },
+  {
+   "lemma": "why",
+   "gloss": "ทำไม"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "ชั่วร้าย"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "ภรรยา"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "ป่า; ดุร้าย"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "ป่าเปลี่ยว"
+  },
+  {
+   "lemma": "will",
+   "gloss": "จะ; เจตจำนง"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "ด้วยความเต็มใจ"
+  },
+  {
+   "lemma": "win",
+   "gloss": "ชนะ"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "ขอบหน้าต่าง"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "ไวน์"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "ปีก"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "ฉลาดหลักแหลม"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "ปรารถนา; ความปรารถนา"
+  },
+  {
+   "lemma": "with",
+   "gloss": "กับ"
+  },
+  {
+   "lemma": "without",
+   "gloss": "โดยไม่มี"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "ผู้หญิง"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "วิเศษ"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "ฟืน; ไม้; ป่า"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "ทำด้วยไม้"
+  },
+  {
+   "lemma": "word",
+   "gloss": "คำ"
+  },
+  {
+   "lemma": "work",
+   "gloss": "ทำงาน; งาน"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "คนงาน"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "โรงงานเล็ก; เวิร์กชอป"
+  },
+  {
+   "lemma": "world",
+   "gloss": "โลก"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "กังวล"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "คู่ควร"
+  },
+  {
+   "lemma": "would",
+   "gloss": "จะ (สมมติ)"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "บาดแผล"
+  },
+  {
+   "lemma": "write",
+   "gloss": "เขียน"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "นักเขียน"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "ผิด"
+  },
+  {
+   "lemma": "year",
+   "gloss": "ปี"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "ยัง; แต่ทว่า"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(ชื่อเฉพาะ) ยอร์ก"
+  },
+  {
+   "lemma": "you",
+   "gloss": "คุณ"
+  },
+  {
+   "lemma": "young",
+   "gloss": "หนุ่มสาว"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "เด็กหนุ่ม"
+  },
+  {
+   "lemma": "your",
+   "gloss": "ของคุณ"
+  }
+ ],
+ "forms": {
+  "am": "be",
+  "are": "be",
+  "ate": "eat",
+  "beaten": "beat",
+  "became": "become",
+  "been": "be",
+  "began": "begin",
+  "begun": "begin",
+  "being": "be",
+  "bent": "bend",
+  "best": "good",
+  "better": "good",
+  "bit": "bite",
+  "bitten": "bite",
+  "blew": "blow",
+  "blown": "blow",
+  "bought": "buy",
+  "broke": "break",
+  "broken": "break",
+  "brought": "bring",
+  "built": "build",
+  "came": "come",
+  "caught": "catch",
+  "children": "child",
+  "chose": "choose",
+  "chosen": "choose",
+  "crept": "creep",
+  "did": "do",
+  "does": "do",
+  "doing": "do",
+  "done": "do",
+  "drank": "drink",
+  "drawn": "draw",
+  "drew": "draw",
+  "driven": "drive",
+  "drove": "drive",
+  "drunk": "drink",
+  "dug": "dig",
+  "eaten": "eat",
+  "fallen": "fall",
+  "farther": "far",
+  "farthest": "far",
+  "fed": "feed",
+  "feet": "foot",
+  "fell": "fall",
+  "felt": "feel",
+  "flew": "fly",
+  "flown": "fly",
+  "forgot": "forget",
+  "forgotten": "forget",
+  "fought": "fight",
+  "found": "find",
+  "froze": "freeze",
+  "frozen": "freeze",
+  "gave": "give",
+  "geese": "goose",
+  "given": "give",
+  "goes": "go",
+  "gone": "go",
+  "got": "get",
+  "gotten": "get",
+  "grew": "grow",
+  "grown": "grow",
+  "had": "have",
+  "halves": "half",
+  "has": "have",
+  "having": "have",
+  "heard": "hear",
+  "held": "hold",
+  "hid": "hide",
+  "hidden": "hide",
+  "hung": "hang",
+  "is": "be",
+  "kept": "keep",
+  "knew": "know",
+  "knives": "knife",
+  "known": "know",
+  "least": "little",
+  "leaves": "leaf",
+  "led": "lead",
+  "lent": "lend",
+  "less": "little",
+  "lit": "light",
+  "loaves": "loaf",
+  "lost": "lose",
+  "made": "make",
+  "meant": "mean",
+  "men": "man",
+  "met": "meet",
+  "mice": "mouse",
+  "paid": "pay",
+  "people": "person",
+  "ran": "run",
+  "ridden": "ride",
+  "rode": "ride",
+  "said": "say",
+  "sang": "sing",
+  "sank": "sink",
+  "sat": "sit",
+  "saw": "see",
+  "seen": "see",
+  "sent": "send",
+  "shaken": "shake",
+  "shelves": "shelf",
+  "shone": "shine",
+  "shook": "shake",
+  "shot": "shoot",
+  "slept": "sleep",
+  "sold": "sell",
+  "sought": "seek",
+  "spent": "spend",
+  "spoke": "speak",
+  "spoken": "speak",
+  "spun": "spin",
+  "stole": "steal",
+  "stolen": "steal",
+  "stood": "stand",
+  "struck": "strike",
+  "stuck": "stick",
+  "sung": "sing",
+  "sunk": "sink",
+  "swam": "swim",
+  "swept": "sweep",
+  "swum": "swim",
+  "swung": "swing",
+  "taken": "take",
+  "taught": "teach",
+  "teeth": "tooth",
+  "thieves": "thief",
+  "thought": "think",
+  "threw": "throw",
+  "thrown": "throw",
+  "told": "tell",
+  "took": "take",
+  "tore": "tear",
+  "torn": "tear",
+  "understood": "understand",
+  "was": "be",
+  "went": "go",
+  "wept": "weep",
+  "were": "be",
+  "wives": "wife",
+  "woke": "wake",
+  "woken": "wake",
+  "wolves": "wolf",
+  "women": "woman",
+  "won": "win",
+  "wore": "wear",
+  "worn": "wear",
+  "worse": "bad",
+  "worst": "bad",
+  "written": "write",
+  "wrote": "write"
+ }
+}

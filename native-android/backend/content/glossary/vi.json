@@ -1,0 +1,5499 @@
+{
+ "schemaVersion": 1,
+ "lang": "vi",
+ "reviewStatus": "machine-draft",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "một",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "bỏ rơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "khả năng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "trên (tàu, xe)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "about",
+   "gloss": "về; khoảng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "above",
+   "gloss": "ở trên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "chấp nhận",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "vô tình",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "across",
+   "gloss": "băng qua; bên kia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "act",
+   "gloss": "hành động",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "thêm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "ngưỡng mộ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "ngưỡng mộ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "thừa nhận",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "lời khuyên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "sợ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "after",
+   "gloss": "sau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "buổi chiều",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "again",
+   "gloss": "lại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "against",
+   "gloss": "chống lại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "trước đây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "đồng ý",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "đồng ý",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "air",
+   "gloss": "không khí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "còn sống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "all",
+   "gloss": "tất cả",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "cho phép",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "gần như",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "along",
+   "gloss": "dọc theo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "already",
+   "gloss": "đã",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "also",
+   "gloss": "cũng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "although",
+   "gloss": "mặc dù",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "always",
+   "gloss": "luôn luôn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "kinh ngạc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "đáng kinh ngạc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "among",
+   "gloss": "giữa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "số lượng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "an",
+   "gloss": "một",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "and",
+   "gloss": "và",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "cơn giận",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "giận dữ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "động vật",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "another",
+   "gloss": "khác",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "trả lời",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "any",
+   "gloss": "bất kỳ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "nữa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "bất kỳ ai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "bất cứ điều gì",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "rời ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "vẻ ngoài",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "xuất hiện",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "quả táo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "tiến lại gần",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "có vũ trang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "cánh tay",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "around",
+   "gloss": "xung quanh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "sắp xếp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "đến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "đến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "as",
+   "gloss": "như; trong khi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "hỏi; xin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "at",
+   "gloss": "ở; tại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "tấn công",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "người hầu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "mùa thu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "away",
+   "gloss": "đi xa; xa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "vụng về",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "em bé",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "back",
+   "gloss": "trở lại; lưng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "túi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "quả bóng; buổi dạ hội",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "vòng; dây đai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "thanh; song sắt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "be",
+   "gloss": "là; thì",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "đánh; thắng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "đẹp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "vẻ đẹp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "because",
+   "gloss": "bởi vì",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "become",
+   "gloss": "trở thành",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "giường",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "before",
+   "gloss": "trước",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "van xin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "bắt đầu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "cư xử",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "phía sau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "thuộc về",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "below",
+   "gloss": "bên dưới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "cúi xuống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "bên dưới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "bên cạnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "between",
+   "gloss": "giữa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "bên ngoài; vượt quá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "big",
+   "gloss": "to; lớn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "con chim",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "sinh nhật",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "miếng nhỏ; đã cắn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "cắn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "cực kỳ (lạnh)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "black",
+   "gloss": "đen",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "đã đổ lỗi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "những chiếc chăn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "máu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "nở hoa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "đã nở hoa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "cú đánh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "xanh dương",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "đã khoe khoang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "body",
+   "gloss": "cơ thể",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "born",
+   "gloss": "được sinh ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "both",
+   "gloss": "cả hai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "chai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "đáy; phía dưới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "box",
+   "gloss": "cái hộp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "cành cây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "bánh mì",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(tên riêng) Bremen",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "bụi hoa hồng dại có gai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "chú rể",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "sáng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "độ sáng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "mang đến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "anh/em trai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "nâu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "build",
+   "gloss": "xây dựng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "cháy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "bị cháy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "nổ tung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "bận",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "but",
+   "gloss": "nhưng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "con bướm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "mua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "by",
+   "gloss": "bên cạnh; bởi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "bánh ngọt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "call",
+   "gloss": "cuộc gọi; gọi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "máy ảnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "trại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "can",
+   "gloss": "có thể",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "những cây nến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "không thể",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "bắt giữ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "care",
+   "gloss": "sự chăm sóc; quan tâm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "cẩn thận",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "xe ngựa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "mang; vác",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "con mèo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "bắt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "đã gây ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "gây ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "đã ăn mừng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "đang ăn mừng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "lễ kỷ niệm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "xu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "chắc chắn; nhất định",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "cái ghế",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "cơ hội",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "change",
+   "gloss": "thay đổi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "đang lao tới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "đã đuổi theo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "rẻ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "check",
+   "gloss": "kiểm tra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "phô mai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(tên riêng) Chicago",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "child",
+   "gloss": "đứa trẻ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "tuổi thơ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "sự lựa chọn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "chọn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Giáng sinh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "nghĩa địa nhà thờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(tên riêng) Cô bé Lọ Lem",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "city",
+   "gloss": "thành phố",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "đã tuyên bố",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "dọn sạch; rõ ràng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "thư ký; nhân viên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "leo trèo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "đồng hồ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "close",
+   "gloss": "đóng; gần",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "những đám mây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "lạnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "thu thập",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "những màu sắc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "cái lược",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "come",
+   "gloss": "đến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "thoải mái",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "một cách thoải mái",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "đã an ủi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "bạn đồng hành",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "so sánh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "đã phàn nàn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "hoàn thành; đầy đủ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "sự bối rối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "sự liên lạc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "tiếp tục",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "đã thuyết phục; tin chắc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "đầu bếp; nấu ăn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "đã làm mát",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "góc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "có giá; chi phí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "túp lều",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "could",
+   "gloss": "đã có thể; có thể",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "đã đếm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "vô số",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "cặp đôi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "được phủ; đã phủ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "create",
+   "gloss": "tạo ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "đã chỉ trích",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "đã băng qua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "đám đông",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "tàn nhẫn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "sự tàn nhẫn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "khóc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "đã cuộn tròn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "khách hàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "cắt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "nhảy múa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "nguy hiểm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "nguy hiểm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "dám",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "tối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "con gái",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "bình minh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "day",
+   "gloss": "ngày",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "ánh sáng ban ngày",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "chết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "death",
+   "gloss": "cái chết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "dối trá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "đã quyết định",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "quyết định",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "việc làm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "sâu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "đánh bại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "bảo vệ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "mỏng manh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "ngon",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "niềm vui",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "đã đòi hỏi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "chối bỏ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "described",
+   "gloss": "đã mô tả",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "bàn làm việc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "sự tuyệt vọng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "một cách tuyệt vọng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "mặc dù",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "đã phá hủy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "kim cương",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "die",
+   "gloss": "chết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "died",
+   "gloss": "đã chết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "different",
+   "gloss": "khác",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "khó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "biến mất",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "xa xôi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "do",
+   "gloss": "làm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "đô la",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "door",
+   "gloss": "cửa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "ô cửa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "bột nhào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "down",
+   "gloss": "xuống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "xuôi dòng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "kéo về phía mình",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "bức vẽ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "đã sợ hãi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "đã mơ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "những giấc mơ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "uống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "tài xế",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "làm rơi; giọt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "đã chết đuối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "due",
+   "gloss": "đến hạn; dự kiến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "xỉn; nhàm chán",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "during",
+   "gloss": "trong suốt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "đầy bụi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "each",
+   "gloss": "mỗi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "tai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "trước đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "dễ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "ăn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "gỗ mun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(tên riêng) Ai Cập",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "tám mươi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "either",
+   "gloss": "cũng không",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "lớn nhất",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "mười một",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "else",
+   "gloss": "khác",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "đã ôm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "trống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "bị mê hoặc; phép thuật",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "end",
+   "gloss": "kết thúc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "gây nguy hiểm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "năng lượng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "đã tận hưởng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "khổng lồ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "đủ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "bước vào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "nhiệt tình",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "hoàn toàn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "lối vào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "trốn thoát",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "đặc biệt là",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "đêm trước (Giáng sinh)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "even",
+   "gloss": "thậm chí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "cuối cùng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "every",
+   "gloss": "mỗi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "mọi người",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "mọi thứ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "khắp nơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "chính xác",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "except",
+   "gloss": "trừ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "đổi lấy; trao đổi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "kiệt sức",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "tồn tại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "đã mong đợi; được mong đợi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "đang mong đợi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "chi phí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "đắt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "giải thích",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "lời giải thích",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "khám phá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "biểu cảm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "phi thường",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "mắt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "lông mày",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "face",
+   "gloss": "khuôn mặt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "đã phai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "đã thất bại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "thất bại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "rơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "đang rơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "rơi; thác nước",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "false",
+   "gloss": "sai; giả",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "quen thuộc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "family",
+   "gloss": "gia đình",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "far",
+   "gloss": "xa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "nông dân",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "sân trại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "nhanh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "đã buộc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "béo; mỡ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "khuyết điểm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "nỗi sợ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "cho ăn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "cảm thấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "cảm xúc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "đã đem về",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "few",
+   "gloss": "vài",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "field",
+   "gloss": "cánh đồng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "dữ tợn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "mười lăm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "thứ mười lăm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "đánh nhau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "đã lấp đầy; đầy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "final",
+   "gloss": "cuối cùng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "find",
+   "gloss": "tìm thấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "tốt; mịn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "ngón tay",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "người Phần Lan; thuộc Phần Lan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "lửa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "chặt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "first",
+   "gloss": "đầu tiên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "con cá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "vừa người",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "five",
+   "gloss": "năm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "phẳng; căn hộ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "đã bỏ chạy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "float",
+   "gloss": "nổi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "bầy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "sàn nhà; tầng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "bông hoa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "bay",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "đi theo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "những người đi theo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "yêu mến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "ngốc nghếch",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "bàn chân",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "for",
+   "gloss": "cho; trừ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "mãi mãi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "quên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "form",
+   "gloss": "hình thành; hình dạng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "four",
+   "gloss": "bốn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "đóng băng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "lạnh cóng; sự đóng băng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "tươi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "bạn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "tình bạn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "làm sợ hãi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "from",
+   "gloss": "từ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "front",
+   "gloss": "phía trước",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "trái cây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "full",
+   "gloss": "đầy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "niềm vui",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "giận dữ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "giành được",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "games",
+   "gloss": "trò chơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "khu vườn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "thu thập",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "nhìn chằm chằm; ánh nhìn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "dịu dàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "một cách nhẹ nhàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "get",
+   "gloss": "nhận; trở nên; đến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "con ma",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "cô bé",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "give",
+   "gloss": "cho",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "những người cho đi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "kính; ly",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "go",
+   "gloss": "đi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "con dê",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "god",
+   "gloss": "thần; Chúa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "going",
+   "gloss": "đang đi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "good",
+   "gloss": "tốt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "tạm biệt; lời chia tay",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "duyên dáng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "hùng vĩ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "ông",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "bà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "xám",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "great",
+   "gloss": "lớn; tuyệt vời",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "green",
+   "gloss": "xanh lá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "đã chào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "xám",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "mặt đất",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "lớn lên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "đoán",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "người dẫn đường; hướng dẫn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "súng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "cơn gió giật",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "tóc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "kiểu cắt tóc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "các đại sảnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "bàn tay",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "treo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "xảy ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "hạnh phúc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "vui vẻ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "cứng; khó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "khắc nghiệt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "cái mũ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "nở (khỏi trứng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "have",
+   "gloss": "có",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "he",
+   "gloss": "anh ấy; ông ấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "head",
+   "gloss": "đầu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "nghe",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "trái tim",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "làm nóng; nhiệt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "hàng rào cây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "xin chào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "những người giúp đỡ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "her",
+   "gloss": "của cô ấy; cô ấy (tân ngữ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "chính cô ấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "đã trốn; đã giấu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "trốn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "ngọn đồi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "him",
+   "gloss": "anh ấy (tân ngữ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "chính anh ấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "his",
+   "gloss": "của anh ấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "giữ; cầm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "giữ; cầm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "home",
+   "gloss": "nhà; về nhà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "mũ trùm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "hy vọng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "cái sừng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "kinh hoàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "con ngựa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "giờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "house",
+   "gloss": "ngôi nhà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "việc nhà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "how",
+   "gloss": "như thế nào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "however",
+   "gloss": "tuy nhiên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "đã ôm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "human",
+   "gloss": "con người",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "một trăm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "đã treo; được treo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "đã vội vã",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "làm đau; bị thương",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "chồng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "i",
+   "gloss": "tôi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ý tưởng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "if",
+   "gloss": "nếu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "ốm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "tưởng tượng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "đã tưởng tượng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "ngay lập tức",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "bất tử",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "bất khả thi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "in",
+   "gloss": "trong; ở",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "bị thương",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "bên trong",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "đã khăng khăng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "kiểm tra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "thay vào đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "quan tâm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "bị gián đoạn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "into",
+   "gloss": "vào trong",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "đã mời",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "mời",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "it",
+   "gloss": "nó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "its",
+   "gloss": "của nó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "mứt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "ghen tị",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(tên riêng) Chúa Giê-su",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "job",
+   "gloss": "công việc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "join",
+   "gloss": "tham gia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "đã đùa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "niềm vui",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "thẩm phán; phán xét",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "đã nhảy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "just",
+   "gloss": "chỉ; vừa đúng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "giữ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "đã đá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "giết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "lòng tốt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "vương quốc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "đã hôn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "những nụ hôn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "nhà bếp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "đầu gối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "đã đánh ngã; đã gõ (cửa)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "know",
+   "gloss": "biết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "dây giày",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "hồ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "land",
+   "gloss": "đất; xứ sở; hạ cánh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(tên riêng) Lapland",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "large",
+   "gloss": "lớn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "last",
+   "gloss": "cuối cùng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "later",
+   "gloss": "sau đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "cười",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "đã nằm; đã đặt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "đã nghiêng; đã dựa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "đã học",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "việc học",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "rời đi; để lại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "left",
+   "gloss": "đã rời đi; trái",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "cái chân",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "cho mượn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "bài học",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "let",
+   "gloss": "để; cho phép",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "lá thư; chữ cái",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "những lời nói dối; nằm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "life",
+   "gloss": "cuộc sống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "nâng lên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "light",
+   "gloss": "ánh sáng; nhẹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "like",
+   "gloss": "giống như; thích",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(tên riêng); hoa huệ tây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "line",
+   "gloss": "đường kẻ; hàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "lắng nghe",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "little",
+   "gloss": "nhỏ; một chút",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "live",
+   "gloss": "sống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "local",
+   "gloss": "địa phương",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "đã khóa; bị khóa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "hiu quạnh; cô đơn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "long",
+   "gloss": "dài",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "look",
+   "gloss": "trông có vẻ; nhìn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "đã nới lỏng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "mất",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "to (âm thanh)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "love",
+   "gloss": "yêu; tình yêu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "đã hạ xuống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "may mắn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "cục",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(tên riêng) các nhà thông thái phương Đông",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "make",
+   "gloss": "làm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "man",
+   "gloss": "người đàn ông",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "many",
+   "gloss": "nhiều",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "dấu vết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "hôn nhân",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "kết hôn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "đầm lầy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "master",
+   "gloss": "ông chủ; bậc thầy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "match",
+   "gloss": "que diêm; khớp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "vật liệu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "đã quan trọng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "thị trưởng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "me",
+   "gloss": "tôi (tân ngữ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "xấu tính; có nghĩa là",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "gặp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "tan chảy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "sự bừa bộn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "message",
+   "gloss": "tin nhắn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "người đưa tin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "kim loại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "nửa đêm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "might",
+   "gloss": "có thể",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "dặm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "sữa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "bộ trưởng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "phút",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "đã nhớ; đã lỡ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "mất tích",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "chế nhạo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "khoảnh khắc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "more",
+   "gloss": "hơn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "most",
+   "gloss": "nhất; hầu hết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "mẹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "những ngọn núi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "move",
+   "gloss": "di chuyển; chuyển nhà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "chuyển động",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "Bà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "music",
+   "gloss": "âm nhạc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "must",
+   "gloss": "phải",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "my",
+   "gloss": "của tôi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "name",
+   "gloss": "tên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "người kể chuyện",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "hẹp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "near",
+   "gloss": "gần",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "gần đây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "những cái cổ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "need",
+   "gloss": "cần",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "những chiếc kim",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "hàng xóm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "không... cũng không",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "net",
+   "gloss": "lưới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "never",
+   "gloss": "không bao giờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "new",
+   "gloss": "mới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "người mới đến",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "tờ báo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "next",
+   "gloss": "tiếp theo; bên cạnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "night",
+   "gloss": "đêm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "no",
+   "gloss": "không",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "tiếng ồn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "none",
+   "gloss": "không ai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "cũng không",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "cái mũi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "not",
+   "gloss": "không",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "note",
+   "gloss": "ghi chú",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "đã nhận ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "nhận ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "now",
+   "gloss": "bây giờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "of",
+   "gloss": "của; từ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "off",
+   "gloss": "lên đường; tắt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "đề nghị",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "nhân viên; sĩ quan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "official",
+   "gloss": "chính thức; quan chức",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "often",
+   "gloss": "thường",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "old",
+   "gloss": "già; cũ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "on",
+   "gloss": "trên; vào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "once",
+   "gloss": "một lần; ngày xưa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "one",
+   "gloss": "một; ai đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "only",
+   "gloss": "chỉ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "lên trên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "tiếp tục về phía trước",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "open",
+   "gloss": "mở",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "or",
+   "gloss": "hoặc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "đã ra lệnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "original",
+   "gloss": "ban đầu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "đồ trang trí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "other",
+   "gloss": "khác",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "out",
+   "gloss": "ra ngoài",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "bộ trang phục",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "bên ngoài",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "over",
+   "gloss": "về phía; phía trên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "trên đầu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "package",
+   "gloss": "gói hàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "việc đóng gói",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "nỗi đau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "đau đớn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "cặp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "cung điện",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "giấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "bố mẹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "sự chia ly",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "bạn nhảy; vợ/chồng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "lối đi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "đã đi qua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "đi ngang qua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "past",
+   "gloss": "quá khứ; đi qua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "miếng vá; mảng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "sự kiên nhẫn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "trả tiền",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "khoản thanh toán",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "quả đào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "viên sỏi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "đồng xu nhỏ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "hoàn hảo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "person",
+   "gloss": "người",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "đã thuyết phục",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "bức ảnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "những bức ảnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "hái; chọn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "mẩu; miếng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "những con bồ câu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "đống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "place",
+   "gloss": "nơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "thường phục; giản dị",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "kế hoạch",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "đã trồng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "việc trồng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "cây cối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "play",
+   "gloss": "chơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "đã lao xuống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "đã chỉ; nhọn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "police",
+   "gloss": "cảnh sát",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "cảnh sát (nam)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "nghèo; tội nghiệp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "position",
+   "gloss": "chức vụ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "đã rót",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "power",
+   "gloss": "sức mạnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "mạnh mẽ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "thích hơn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "những sự chuẩn bị",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "present",
+   "gloss": "món quà; hiện tại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "đã giả vờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "đã ngăn cản",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "price",
+   "gloss": "giá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "đâm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "nhà tù",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "thịnh vượng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "bảo vệ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "chứng minh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "kéo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "đã trừng phạt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "hình phạt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "kêu gừ gừ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "push",
+   "gloss": "đẩy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "put",
+   "gloss": "đặt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "một cách nhanh chóng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "có mưa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "phản ứng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "read",
+   "gloss": "đọc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "sẵn sàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "real",
+   "gloss": "thật",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "đã nhận ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "lý do",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "received",
+   "gloss": "đã nhận",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "gần đây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "nhận ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "red",
+   "gloss": "đỏ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "từ chối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "đã từ chối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "sự từ chối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "đã ở lại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "còn lại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "lời nhận xét",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "đáng chú ý",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "nhớ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "đã nhắc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "lời nhắc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "loại bỏ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "đã lặp lại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "câu trả lời",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "report",
+   "gloss": "báo cáo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "request",
+   "gloss": "yêu cầu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "người cứu hộ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "chịu trách nhiệm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "nhà hàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "đã phục hồi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "tiết lộ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "phần thưởng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "dải ruy băng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "cưỡi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "việc cưỡi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "right",
+   "gloss": "đúng; phải",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "tăng lên; mọc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "bờ sông",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "nướng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "cướp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "tên cướp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "bánh mì cuộn nhỏ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "mái nhà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "room",
+   "gloss": "căn phòng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "những chiếc rễ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "hoa hồng; đã tăng lên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "thô ráp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(tên riêng) Rumpelstiltskin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "run",
+   "gloss": "chạy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "đã lao đi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) hậu tố sở hữu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "nỗi buồn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "same",
+   "gloss": "giống nhau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "ngọc bích",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "xúc xích",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "save",
+   "gloss": "cứu; tiết kiệm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "việc tiết kiệm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "say",
+   "gloss": "nói",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "hầu như không",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "đã rải; đã tản ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "school",
+   "gloss": "trường học",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "biển",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "search",
+   "gloss": "tìm kiếm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "bí mật",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "see",
+   "gloss": "thấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "hạt giống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "tìm kiếm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "dường như",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "có vẻ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "đã nắm lấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "bán",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "send",
+   "gloss": "gửi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "đang gửi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "câu; bản án",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "service",
+   "gloss": "dịch vụ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "set",
+   "gloss": "đặt; lên đường; lặn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "bảy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "several",
+   "gloss": "vài",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "đã may",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "việc may vá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "hình dạng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "she",
+   "gloss": "cô ấy; bà ấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "vỏ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "chiếu sáng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "chiếu sáng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "sáng chói",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "con tàu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "chiếc giày",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "cửa hàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "bờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "short",
+   "gloss": "ngắn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "should",
+   "gloss": "nên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "đôi vai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "đã hét",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "show",
+   "gloss": "chỉ cho xem",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "đóng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "ốm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "thị lực; cảnh tượng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "dấu hiệu; ký",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "chữ ký",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "im lặng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "bạc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "đơn giản",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "kẻ khờ khạo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "hát",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "chìm; bồn rửa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "chị/em gái",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "ngồi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "six",
+   "gloss": "sáu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "size",
+   "gloss": "kích cỡ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "bầu trời",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "ngủ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "tay áo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "đã trượt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "trượt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "small",
+   "gloss": "nhỏ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "mùi; ngửi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "ngáy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "tuyết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "so",
+   "gloss": "vì vậy; rất",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "mềm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "mềm đi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "some",
+   "gloss": "một ít; vài",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "ai đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "something",
+   "gloss": "cái gì đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "ở đâu đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "son",
+   "gloss": "con trai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "song",
+   "gloss": "bài hát",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "sớm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "nỗi đau buồn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "một cách buồn bã",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "âm thanh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "món súp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "space",
+   "gloss": "khoảng trống; không gian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "nói",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "special",
+   "gloss": "đặc biệt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "tiêu; dành (thời gian)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "làm đổ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "linh hồn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "trải ra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "mùa xuân; suối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "square",
+   "gloss": "quảng trường; hình vuông",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "chen qua; vắt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "cầu thang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "các quầy hàng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "đã giậm chân",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "đứng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "star",
+   "gloss": "ngôi sao",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "bắt đầu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "ở lại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "ăn trộm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "thân cây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "mẹ kế",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "chị/em gái kế",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "cây gậy; dính",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "dính",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "still",
+   "gloss": "vẫn; yên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "đã khâu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "dạ dày; bụng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "hòn đá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "dừng lại",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "cơn bão",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "story",
+   "gloss": "câu chuyện",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "thẳng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "sợi (tóc)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "lạ lùng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "người lạ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "con suối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "street",
+   "gloss": "đường phố",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "sức mạnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "đã vươn; đã kéo căng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "quẹt (diêm); đánh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "đã vấp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "ngu ngốc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "thành công",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "thành công",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "such",
+   "gloss": "như vậy; như thế",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "đột nhiên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "đường",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "đã gợi ý",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "mùa hè",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "ánh nắng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "bình minh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "hoàng hôn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "được cho là",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "sự ngạc nhiên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "bị vây quanh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "đã nghi ngờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "thanh kiếm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "table",
+   "gloss": "cái bàn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "take",
+   "gloss": "mang đi; lấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "đã nói chuyện",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "đang nói",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "cao",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "task",
+   "gloss": "nhiệm vụ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "trà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "giọt nước mắt; xé",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "kể; nói",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "mười",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "khủng khiếp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "than",
+   "gloss": "hơn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "cảm ơn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "that",
+   "gloss": "đó; rằng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(mạo từ xác định)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "their",
+   "gloss": "của họ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "them",
+   "gloss": "họ (tân ngữ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "chính họ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "then",
+   "gloss": "sau đó; khi ấy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "there",
+   "gloss": "ở đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "these",
+   "gloss": "những cái này",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "they",
+   "gloss": "họ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "dày; rậm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "tên trộm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "mỏng; gầy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "thứ; vật",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "think",
+   "gloss": "nghĩ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "third",
+   "gloss": "thứ ba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "mười ba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "this",
+   "gloss": "này; cái này",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "those",
+   "gloss": "những cái đó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "though",
+   "gloss": "mặc dù",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "đã nghĩ; suy nghĩ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "một nghìn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "sợi chỉ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "đã đe dọa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "đe dọa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "three",
+   "gloss": "ba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "cổ họng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "through",
+   "gloss": "xuyên qua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "suốt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "ném",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(tên riêng) Nàng Tiên Ngón Cái",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "buộc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "đã buộc; bị buộc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "chặt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "time",
+   "gloss": "thời gian; lần",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "nhỏ xíu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "to",
+   "gloss": "đến; để",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "today",
+   "gloss": "hôm nay",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "together",
+   "gloss": "cùng nhau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(tên riêng)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "too",
+   "gloss": "cũng; quá",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "cái răng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "top",
+   "gloss": "phía trên; đỉnh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "liên lạc (giữ liên lạc)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "về phía",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "town",
+   "gloss": "thị trấn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "đồ chơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "nghề",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "train",
+   "gloss": "tàu hỏa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "đi du lịch",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "đã đi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "kho báu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "đã đối xử",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "cái cây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "đã run",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "những rắc rối",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "máng ăn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "true",
+   "gloss": "thật",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "thân cây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "try",
+   "gloss": "thử",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "quay; lượt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "mười hai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "hai mươi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "two",
+   "gloss": "hai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "xấu xí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "không thể",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "under",
+   "gloss": "dưới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "dưới lòng đất",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "hiểu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "chưa hoàn thành",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "không phù hợp",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "đã mở (thứ gấp)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "không vui",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "không giống",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "không có đèn sáng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "cởi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "until",
+   "gloss": "cho đến khi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "bất thường",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "up",
+   "gloss": "lên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "buồn bực",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "tầng trên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "us",
+   "gloss": "chúng tôi (tân ngữ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "use",
+   "gloss": "dùng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "hữu ích",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "bao la",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "very",
+   "gloss": "rất",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "những chiến thắng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "một cách dữ dội",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "thăm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "những vị khách",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "đã chờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "đang chờ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "thức dậy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "đi bộ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "bức tường",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "đã lang thang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "đang lang thang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "want",
+   "gloss": "muốn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "tủ quần áo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "ấm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "đã cảnh báo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "đã rửa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "đồng hồ đeo tay; xem",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "water",
+   "gloss": "nước",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "đã vẫy tay",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "những con sóng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "way",
+   "gloss": "con đường; cách",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "we",
+   "gloss": "chúng tôi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "yếu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "đã làm yếu đi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "giàu có",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "mặc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "đám cưới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "week",
+   "gloss": "tuần",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "đã chào đón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "west",
+   "gloss": "phía tây",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "ướt",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "what",
+   "gloss": "cái gì",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "when",
+   "gloss": "khi; khi nào",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "where",
+   "gloss": "ở đâu; nơi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "bất cứ nơi đâu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "liệu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "which",
+   "gloss": "nào; mà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "while",
+   "gloss": "trong khi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "white",
+   "gloss": "trắng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "who",
+   "gloss": "ai; người mà",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "bất cứ ai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "toàn bộ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "của ai; mà...của",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "why",
+   "gloss": "tại sao",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "độc ác",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "vợ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "hoang dã",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "vùng hoang dã",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "will",
+   "gloss": "sẽ; ý chí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "một cách sẵn lòng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "win",
+   "gloss": "thắng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "bậu cửa sổ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "rượu vang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "cánh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "khôn ngoan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "ước; điều ước",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "with",
+   "gloss": "với",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "without",
+   "gloss": "không có",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "người phụ nữ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "tuyệt vời",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "củi; gỗ; rừng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "bằng gỗ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "word",
+   "gloss": "từ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "work",
+   "gloss": "làm việc; công việc",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "công nhân",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "xưởng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "world",
+   "gloss": "thế giới",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "lo lắng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "xứng đáng",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "would",
+   "gloss": "sẽ (giả định)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "những vết thương",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "write",
+   "gloss": "viết",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "nhà văn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "sai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "year",
+   "gloss": "năm",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "chưa; tuy nhiên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(tên riêng) York",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "you",
+   "gloss": "bạn",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "young",
+   "gloss": "trẻ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "thiếu niên",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "your",
+   "gloss": "của bạn",
+   "source": "claude-draft"
+  }
+ ],
+ "sampleApprovedBy": "owner-asked-all-languages-2026-10-19"
+}

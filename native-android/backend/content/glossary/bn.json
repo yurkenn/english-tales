@@ -1,0 +1,5499 @@
+{
+ "schemaVersion": 1,
+ "lang": "bn",
+ "reviewStatus": "machine-draft",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "একটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "পরিত্যাগ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "সক্ষমতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "জাহাজ/গাড়িতে ওঠা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "about",
+   "gloss": "সম্পর্কে; প্রায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "above",
+   "gloss": "উপরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "গ্রহণ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "হঠাৎ করে; ভুলবশত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "across",
+   "gloss": "জুড়ে; ওপারে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "act",
+   "gloss": "আচরণ করা; কাজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "যোগ করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "প্রশংসা করেছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "প্রশংসা করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "স্বীকার করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "পরামর্শ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "ভীত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "after",
+   "gloss": "পরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "বিকেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "again",
+   "gloss": "আবার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "against",
+   "gloss": "বিরুদ্ধে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "আগে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "সম্মত হয়েছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "সম্মত হয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "air",
+   "gloss": "বাতাস",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "জীবিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "all",
+   "gloss": "সব",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "অনুমতি দিয়েছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "প্রায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "along",
+   "gloss": "বরাবর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "already",
+   "gloss": "ইতিমধ্যে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "also",
+   "gloss": "এছাড়াও",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "although",
+   "gloss": "যদিও",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "always",
+   "gloss": "সবসময়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "বিস্মিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "বিস্ময়কর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "among",
+   "gloss": "মধ্যে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "পরিমাণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "an",
+   "gloss": "একটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "and",
+   "gloss": "এবং",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "রাগ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "রাগান্বিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "প্রাণী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "another",
+   "gloss": "আরেকটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "উত্তর দিয়েছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "any",
+   "gloss": "যেকোনো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "আর (না)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "যে কেউ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "যেকোনো কিছু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "আলাদা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "চেহারা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "দেখা দিয়েছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "আপেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "কাছে এসেছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "সশস্ত্র",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "হাত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "around",
+   "gloss": "চারপাশে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "সাজানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "পৌঁছেছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "পৌঁছায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "as",
+   "gloss": "যেমন; যখন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "জিজ্ঞাসা করা; চাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "at",
+   "gloss": "এ; এ (স্থান)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "আক্রমণ করেছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "পরিচারকগণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "শরৎ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "away",
+   "gloss": "দূরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "আনাড়ি; বিব্রতকর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "শিশু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "back",
+   "gloss": "ফিরে; পিঠ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "ব্যাগ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "বল; নাচের আসর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "বেড়ি; ফিতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "শিক; গরাদ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "be",
+   "gloss": "হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "মারা; হারানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "সুন্দর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "সৌন্দর্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "because",
+   "gloss": "কারণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "become",
+   "gloss": "হয়ে ওঠা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "বিছানা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "before",
+   "gloss": "আগে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "অনুনয় করেছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "শুরু করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "আচরণ করেছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "পিছনে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "অন্তর্ভুক্ত হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "below",
+   "gloss": "নিচে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "নত হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "নিচে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "পাশে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "between",
+   "gloss": "মাঝে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "ওপারে; ছাড়িয়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "big",
+   "gloss": "বড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "পাখি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "জন্মদিন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "টুকরো; কামড়েছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "কামড়ানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "প্রচণ্ডভাবে (ঠান্ডা)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "black",
+   "gloss": "কালো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "দোষ দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "কম্বলগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "রক্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "ফোটা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "ফুটে উঠল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "আঘাত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "নীল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "গর্ব করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "body",
+   "gloss": "শরীর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "born",
+   "gloss": "জন্ম নেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "both",
+   "gloss": "দুজনেই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "বোতল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "তলা; নিচের অংশ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "box",
+   "gloss": "বাক্স",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "ডাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "রুটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(নাম) ব্রেমেন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "কাঁটাযুক্ত বুনো গোলাপঝাড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "বর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "উজ্জ্বল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "উজ্জ্বলতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "আনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "ভাই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "বাদামি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "build",
+   "gloss": "নির্মাণ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "পোড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "পোড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "ফেটে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "ব্যস্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "but",
+   "gloss": "কিন্তু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "প্রজাপতি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "কেনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "by",
+   "gloss": "পাশে; দ্বারা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "কেক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "call",
+   "gloss": "ডাক; ডাকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "ক্যামেরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "ক্যাম্প",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "can",
+   "gloss": "পারা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "মোমবাতিগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "পারে না",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "ধরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "care",
+   "gloss": "যত্ন; পরোয়া করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "সতর্ক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "ঘোড়ার গাড়ি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "বহন করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "বিড়াল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "ধরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "ঘটাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "ঘটানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "উদ্‌যাপন করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "উদ্‌যাপন করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "উদ্‌যাপন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "সেন্ট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "নিশ্চিত; নির্দিষ্ট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "চেয়ার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "সুযোগ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "change",
+   "gloss": "বদলানো; পরিবর্তন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "তেড়ে আসা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "তাড়া করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "সস্তা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "check",
+   "gloss": "পরীক্ষা করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "পনির",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(নাম) শিকাগো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "child",
+   "gloss": "শিশু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "শৈশব",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "পছন্দ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "বেছে নেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "বড়দিন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "গির্জার কবরস্থান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(নাম) সিন্ডারেলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "city",
+   "gloss": "শহর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "দাবি করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "খালি করা; পরিষ্কার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "কেরানি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "ওঠা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "ঘড়ি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "close",
+   "gloss": "বন্ধ করা; কাছের",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "মেঘ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "ঠান্ডা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "সংগ্রহ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "রংগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "চিরুনি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "come",
+   "gloss": "আসা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "আরামদায়ক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "আরামে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "সান্ত্বনা দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "সহযাত্রী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "তুলনা করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "অভিযোগ করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "সম্পূর্ণ করা; পূর্ণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "বিভ্রান্তি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "যোগাযোগ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "চালিয়ে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "রাজি করাল; নিশ্চিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "রাঁধুনি; রান্না করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "ঠান্ডা করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "কোণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "দাম হওয়া; খরচ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "কুটির",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "could",
+   "gloss": "পারল; পারত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "গুনল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "অসংখ্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "জুটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "ঢাকা; ঢেকে দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "create",
+   "gloss": "সৃষ্টি করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "সমালোচনা করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "পার হল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "ভিড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "নিষ্ঠুর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "নিষ্ঠুরতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "কাঁদা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "কুঁকড়ে গেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "ক্রেতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "কাটা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "নাচা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "বিপদ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "বিপজ্জনক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "সাহস করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "অন্ধকার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "মেয়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "ভোর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "day",
+   "gloss": "দিন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "দিনের আলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "মৃত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "death",
+   "gloss": "মৃত্যু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "প্রতারক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "সিদ্ধান্ত নিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "সিদ্ধান্ত নেয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "কাজকর্ম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "গভীর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "পরাজিত করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "রক্ষা করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "সূক্ষ্ম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "সুস্বাদু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "আনন্দ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "দাবি করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "অস্বীকার করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "described",
+   "gloss": "বর্ণনা করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "ডেস্ক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "হতাশা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "মরিয়া হয়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "সত্ত্বেও",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "ধ্বংস করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "হীরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "die",
+   "gloss": "মরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "died",
+   "gloss": "মারা গেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "different",
+   "gloss": "ভিন্ন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "কঠিন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "অদৃশ্য হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "দূরের",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "do",
+   "gloss": "করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "ডলার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "door",
+   "gloss": "দরজা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "দরজার ফাঁক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "ময়দার তাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "down",
+   "gloss": "নিচে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "স্রোতের দিকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "নিজের দিকে টানা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "আঁকা ছবি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "ভয় পেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "স্বপ্ন দেখল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "স্বপ্নগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "পান করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "চালক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "ফেলে দেওয়া; ফোঁটা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "ডুবে মরল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "due",
+   "gloss": "নির্ধারিত; প্রত্যাশিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "নিস্তেজ; বিরক্তিকর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "during",
+   "gloss": "সময়কালে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "ধুলোময়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "each",
+   "gloss": "প্রতিটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "কান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "আগে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "সহজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "খাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "আবলুস",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(নাম) মিশর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "আশি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "either",
+   "gloss": "ও না (নেতিবাচক)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "সবচেয়ে বড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "এগারো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "else",
+   "gloss": "অন্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "জড়িয়ে ধরল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "খালি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "জাদুমন্ত্রে মুগ্ধ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "end",
+   "gloss": "শেষ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "বিপদে ফেলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "শক্তি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "উপভোগ করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "বিশাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "যথেষ্ট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "প্রবেশ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "উৎসাহী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "সম্পূর্ণভাবে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "প্রবেশপথ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "পালানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "বিশেষ করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "আগের সন্ধ্যা (বড়দিনের)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "even",
+   "gloss": "এমনকি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "অবশেষে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "every",
+   "gloss": "প্রতিটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "সবাই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "সবকিছু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "সর্বত্র",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "সঠিক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "except",
+   "gloss": "ছাড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "বিনিময়ে; আদান-প্রদান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "ক্লান্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "বিদ্যমান থাকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "আশা করল; প্রত্যাশিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "আশা করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "খরচ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "দামি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "ব্যাখ্যা করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "ব্যাখ্যা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "অন্বেষণ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "অভিব্যক্তি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "অসাধারণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "চোখ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "ভ্রু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "face",
+   "gloss": "মুখ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "ম্লান হয়ে গেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "ব্যর্থ হল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "ব্যর্থ হয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "পড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "পড়ন্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "পড়ে; জলপ্রপাত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "false",
+   "gloss": "মিথ্যা; ভুল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "পরিচিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "family",
+   "gloss": "পরিবার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "far",
+   "gloss": "দূরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "কৃষক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "খামারের উঠান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "দ্রুত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "বাঁধল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "মোটা; চর্বি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "ত্রুটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "ভয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "খাওয়ানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "অনুভব করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "অনুভূতি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "নিয়ে এল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "few",
+   "gloss": "কয়েকটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "field",
+   "gloss": "মাঠ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "হিংস্র",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "পনেরো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "পনেরোতম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "ঝগড়া করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "ভরল; পূর্ণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "final",
+   "gloss": "শেষ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "find",
+   "gloss": "খুঁজে পাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "ভালো; সূক্ষ্ম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "আঙুল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "ফিনিশ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "আগুন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "শক্ত করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "first",
+   "gloss": "প্রথম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "মাছ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "মাপে লাগল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "five",
+   "gloss": "পাঁচ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "সমতল; ফ্ল্যাট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "পালিয়ে গেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "float",
+   "gloss": "ভেসে থাকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "পাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "মেঝে; তলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "ফুল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "ওড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "অনুসরণ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "অনুসারীরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "অনুরক্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "বোকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "পা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "for",
+   "gloss": "জন্য; ছাড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "চিরকাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "ভুলে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "form",
+   "gloss": "গঠন করা; আকার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "four",
+   "gloss": "চার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "জমে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "হিমশীতল; জমে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "টাটকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "বন্ধু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "বন্ধুত্ব",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "ভয় দেখানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "from",
+   "gloss": "থেকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "front",
+   "gloss": "সামনে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "ফল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "full",
+   "gloss": "পূর্ণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "মজা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "ক্রুদ্ধ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "অর্জন করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "games",
+   "gloss": "খেলাগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "বাগান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "জড়ো করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "একদৃষ্টিতে তাকানো; দৃষ্টি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "কোমল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "আলতো করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "get",
+   "gloss": "পাওয়া; হওয়া; পৌঁছানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "ভূত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "মেয়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "give",
+   "gloss": "দেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "দাতারা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "কাচ; গ্লাস",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "go",
+   "gloss": "যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "ছাগল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "god",
+   "gloss": "ঈশ্বর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "going",
+   "gloss": "যাচ্ছে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "good",
+   "gloss": "ভালো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "বিদায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "সুশোভন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "জমকালো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "দাদা, নানা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "দাদি, নানি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "ধূসর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "great",
+   "gloss": "মহান; চমৎকার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "green",
+   "gloss": "সবুজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "অভিবাদন জানাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "ধূসর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "মাটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "বেড়ে ওঠা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "অনুমান করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "গাইড; পথ দেখানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "বন্দুক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "দমকা হাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "চুল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "চুল কাটা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "হলঘরগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "হাত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "ঝোলানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "ঘটা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "সুখ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "সুখী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "শক্ত; কঠিন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "কঠোর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "টুপি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "ডিম ফুটে বের হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "have",
+   "gloss": "থাকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "he",
+   "gloss": "সে (পুরুষ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "head",
+   "gloss": "মাথা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "শোনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "হৃদয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "গরম করা; তাপ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "বেড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "হ্যালো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "সাহায্যকারীরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "her",
+   "gloss": "তার (নারী); তাকে (নারী)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "সে নিজে (নারী)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "লুকাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "লুকানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "টিলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "him",
+   "gloss": "তাকে (পুরুষ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "সে নিজে (পুরুষ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "his",
+   "gloss": "তার (পুরুষ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "ধরে রাখা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "ধরে রাখে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "home",
+   "gloss": "বাড়ি; বাড়ির দিকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "হুড",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "আশা; আশা করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "শিং",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "আতঙ্কিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "ঘোড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "ঘণ্টা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "house",
+   "gloss": "ঘর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "ঘরের কাজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "how",
+   "gloss": "কীভাবে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "however",
+   "gloss": "তবে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "জড়িয়ে ধরল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "human",
+   "gloss": "মানুষ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "একশো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "ঝোলাল; ঝোলানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "তাড়াহুড়ো করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "আঘাত করা; আহত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "স্বামী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "i",
+   "gloss": "আমি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ধারণা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "if",
+   "gloss": "যদি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "অসুস্থ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "কাল্পনিক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "কল্পনা করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "সঙ্গে সঙ্গে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "অমর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "অসম্ভব",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "in",
+   "gloss": "মধ্যে; -এ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "আহত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "ভেতরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "জোর দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "পরিদর্শন করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "পরিবর্তে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "আগ্রহী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "ব্যাহত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "into",
+   "gloss": "ভেতরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "আমন্ত্রণ জানাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "আমন্ত্রণ জানায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "it",
+   "gloss": "এটি (জড়/প্রাণী)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "its",
+   "gloss": "এর (জড়/প্রাণী)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "জ্যাম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "ঈর্ষান্বিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(নাম) যিশু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "job",
+   "gloss": "চাকরি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "join",
+   "gloss": "যোগ দেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "রসিকতা করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "আনন্দ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "বিচারক; বিচার করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "লাফ দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "just",
+   "gloss": "শুধু; ঠিক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "রাখা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "লাথি মারল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "হত্যা করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "দয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "রাজ্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "চুমু খেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "চুমু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "রান্নাঘর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "হাঁটু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "ফেলে দিল; (দরজায়) টোকা দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "know",
+   "gloss": "জানা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "ফিতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "হ্রদ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "land",
+   "gloss": "জমি; দেশ; অবতরণ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(নাম) ল্যাপল্যান্ড",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "large",
+   "gloss": "বড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "last",
+   "gloss": "শেষ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "later",
+   "gloss": "পরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "হাসা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "শুয়ে পড়ল; রাখল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "ঝুঁকল; হেলান দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "শিখল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "শেখা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "ছেড়ে যাওয়া; রেখে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "left",
+   "gloss": "চলে গেল; বাম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "পা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "ধার দেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "পাঠ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "let",
+   "gloss": "দেওয়া (অনুমতি); যাক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "চিঠি; অক্ষর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "মিথ্যা; শুয়ে আছে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "life",
+   "gloss": "জীবন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "তোলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "light",
+   "gloss": "আলো; হালকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "like",
+   "gloss": "মতো; পছন্দ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(নাম); লিলি ফুল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "line",
+   "gloss": "রেখা; সারি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "শোনা (মন দিয়ে)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "little",
+   "gloss": "ছোট; অল্প",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "live",
+   "gloss": "বাস করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "local",
+   "gloss": "স্থানীয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "তালা দিল; তালাবদ্ধ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "নির্জন; একাকী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "long",
+   "gloss": "লম্বা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "look",
+   "gloss": "দেখতে লাগা; তাকানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "ঢিলা করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "হারানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "জোরে (আওয়াজ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "love",
+   "gloss": "ভালোবাসা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "নামাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "ভাগ্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "দলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(নাম) পূর্বদেশীয় জ্ঞানী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "make",
+   "gloss": "বানানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "man",
+   "gloss": "পুরুষ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "many",
+   "gloss": "অনেক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "চিহ্ন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "বিয়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "বিয়ে করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "জলাভূমি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "master",
+   "gloss": "প্রভু; ওস্তাদ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "match",
+   "gloss": "দেশলাই; মেলানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "উপকরণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "গুরুত্বপূর্ণ ছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "মেয়র",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "me",
+   "gloss": "আমাকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "নিষ্ঠুর; মানে হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "দেখা করা; পরিচিত হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "গলে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "অগোছালো অবস্থা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "message",
+   "gloss": "বার্তা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "বার্তাবাহক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "ধাতু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "মধ্যরাত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "might",
+   "gloss": "হয়তো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "মাইল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "দুধ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "মন্ত্রী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "মিনিট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "মিস করল; ফসকাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "নিখোঁজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "উপহাস করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "মুহূর্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "more",
+   "gloss": "আরও",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "most",
+   "gloss": "সবচেয়ে; বেশিরভাগ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "মা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "পাহাড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "move",
+   "gloss": "নড়া; সরে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "নড়াচড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "মিসেস",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "music",
+   "gloss": "সংগীত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "must",
+   "gloss": "অবশ্যই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "my",
+   "gloss": "আমার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "name",
+   "gloss": "নাম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "কথক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "সরু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "near",
+   "gloss": "কাছে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "কাছাকাছি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "ঘাড়গুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "need",
+   "gloss": "দরকার হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "সুঁচ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "প্রতিবেশী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "না... না",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "net",
+   "gloss": "জাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "never",
+   "gloss": "কখনো না",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "new",
+   "gloss": "নতুন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "নবাগত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "সংবাদপত্র",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "next",
+   "gloss": "পরবর্তী; পাশে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "night",
+   "gloss": "রাত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "no",
+   "gloss": "না; কোনো ... নয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "গোলমাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "none",
+   "gloss": "কেউ না",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "না-ও",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "নাক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "not",
+   "gloss": "না",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "note",
+   "gloss": "নোট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "লক্ষ করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "লক্ষ করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "now",
+   "gloss": "এখন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "of",
+   "gloss": "এর; থেকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "off",
+   "gloss": "রওনা হওয়া; বন্ধ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "প্রস্তাব দেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "কর্মকর্তা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "official",
+   "gloss": "সরকারি; কর্মকর্তা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "often",
+   "gloss": "প্রায়ই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "old",
+   "gloss": "বৃদ্ধ; পুরনো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "on",
+   "gloss": "উপরে; -এ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "once",
+   "gloss": "একবার; এক সময়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "one",
+   "gloss": "এক; কেউ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "only",
+   "gloss": "শুধু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "উপরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "সামনের দিকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "open",
+   "gloss": "খোলা (ক্রিয়া); খোলা (বিশেষণ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "or",
+   "gloss": "অথবা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "আদেশ দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "original",
+   "gloss": "আসল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "অলংকার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "other",
+   "gloss": "অন্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "out",
+   "gloss": "বাইরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "পোশাক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "বাইরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "over",
+   "gloss": "দিকে; উপরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "মাথার উপরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "package",
+   "gloss": "প্যাকেট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "প্যাকিং",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "ব্যথা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "বেদনাদায়ক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "জোড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "প্রাসাদ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "কাগজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "বাবা-মা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "বিদায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "নাচের সঙ্গী; জীবনসঙ্গী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "পথ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "পেরিয়ে গেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "পাশ দিয়ে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "past",
+   "gloss": "অতীত; পাশ দিয়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "তালি; টুকরো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "ধৈর্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "টাকা দেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "পরিশোধ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "পিচ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "নুড়ি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "পেনি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "নিখুঁত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "person",
+   "gloss": "ব্যক্তি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "রাজি করাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "ছবি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "ছবিগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "তোলা; বেছে নেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "টুকরো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "পায়রা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "স্তূপ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "place",
+   "gloss": "জায়গা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "সাদা পোশাকের; সাধারণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "পরিকল্পনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "রোপণ করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "রোপণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "গাছপালা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "play",
+   "gloss": "খেলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "ঝাঁপ দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "ইশারা করল; ছুঁচালো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "police",
+   "gloss": "পুলিশ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "পুলিশ সদস্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "গরিব; বেচারা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "position",
+   "gloss": "পদ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "ঢালল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "power",
+   "gloss": "ক্ষমতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "শক্তিশালী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "বেশি পছন্দ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "প্রস্তুতি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "present",
+   "gloss": "উপহার; বর্তমান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "ভান করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "বাধা দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "price",
+   "gloss": "দাম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "বেঁধানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "কারাগার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "সমৃদ্ধ হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "রক্ষা করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "প্রমাণ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "টানা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "শাস্তি দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "শাস্তি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "ঘড়ঘড় করা (বিড়ালের)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "push",
+   "gloss": "ঠেলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "put",
+   "gloss": "রাখা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "দ্রুত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "বৃষ্টিময়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "প্রতিক্রিয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "read",
+   "gloss": "পড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "প্রস্তুত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "real",
+   "gloss": "আসল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "বুঝতে পারল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "কারণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "received",
+   "gloss": "পেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "সম্প্রতি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "চেনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "red",
+   "gloss": "লাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "প্রত্যাখ্যান করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "প্রত্যাখ্যান করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "প্রত্যাখ্যান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "রয়ে গেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "অবশিষ্ট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "মন্তব্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "উল্লেখযোগ্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "মনে রাখা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "মনে করিয়ে দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "স্মারক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "সরানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "পুনরাবৃত্তি করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "উত্তর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "report",
+   "gloss": "প্রতিবেদন; জানানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "request",
+   "gloss": "অনুরোধ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "উদ্ধারকারী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "দায়িত্বশীল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "রেস্তোরাঁ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "ফিরিয়ে দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "প্রকাশ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "পুরস্কার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "ফিতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "চড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "চড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "right",
+   "gloss": "ঠিক; ডান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "ওঠে; উদিত হয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "নদীর পাড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "ভাজা; ভাজা (বিশেষণ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "ডাকাতি করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "ডাকাত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "ছোট রুটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "ছাদ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "room",
+   "gloss": "ঘর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "শিকড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "গোলাপ; উঠল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "খসখসে; কঠোর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(নাম) র‍্যাম্পলস্টিল্টস্কিন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "run",
+   "gloss": "দৌড়ানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "ছুটে গেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) মালিকানাসূচক প্রত্যয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "দুঃখ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "same",
+   "gloss": "একই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "নীলকান্তমণি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "সসেজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "save",
+   "gloss": "বাঁচানো; জমানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "সঞ্চয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "say",
+   "gloss": "বলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "কদাচিৎ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "ছড়িয়ে দিল; ছড়িয়ে পড়ল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "school",
+   "gloss": "স্কুল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "সমুদ্র",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "search",
+   "gloss": "খোঁজা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "গোপন কথা; গোপন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "see",
+   "gloss": "দেখা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "বীজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "সন্ধান করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "মনে হল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "মনে হয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "খপ করে ধরল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "বিক্রি করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "send",
+   "gloss": "পাঠানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "পাঠানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "বাক্য; দণ্ড",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "service",
+   "gloss": "সেবা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "set",
+   "gloss": "রাখা; রওনা দেওয়া; অস্ত যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "সাত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "several",
+   "gloss": "কয়েকটি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "সেলাই করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "সেলাই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "আকার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "she",
+   "gloss": "সে (নারী)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "খোলস",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "জ্বলজ্বল করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "জ্বলজ্বল করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "উজ্জ্বল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "জাহাজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "জুতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "দোকান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "তীর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "short",
+   "gloss": "ছোট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "should",
+   "gloss": "উচিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "কাঁধ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "চিৎকার করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "show",
+   "gloss": "দেখানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "বন্ধ; বন্ধ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "অসুস্থ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "দৃষ্টি; দৃশ্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "চিহ্ন; সই করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "সই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "নীরব",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "রুপা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "সহজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "সরল মানুষ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "গান গাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "ডোবা; সিংক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "বোন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "বসা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "six",
+   "gloss": "ছয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "size",
+   "gloss": "আকার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "আকাশ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "ঘুমানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "হাতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "পিছলে গেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "পিছলে যায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "small",
+   "gloss": "ছোট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "গন্ধ; শোঁকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "নাক ডাকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "তুষার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "so",
+   "gloss": "তাই; এত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "নরম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "নরম হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "some",
+   "gloss": "কিছু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "কেউ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "something",
+   "gloss": "কিছু",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "কোথাও",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "son",
+   "gloss": "ছেলে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "song",
+   "gloss": "গান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "শীঘ্রই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "শোক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "দুঃখের সঙ্গে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "শব্দ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "স্যুপ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "space",
+   "gloss": "ফাঁকা জায়গা; মহাকাশ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "কথা বলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "special",
+   "gloss": "বিশেষ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "খরচ করা; কাটানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "ছড়িয়ে ফেলে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "আত্মা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "ছড়ানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "বসন্ত; ঝরনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "square",
+   "gloss": "চত্বর; বর্গ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "ঠেসে ঢোকা; চিপে ধরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "সিঁড়ি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "স্টল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "পা ঠুকল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "দাঁড়ানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "star",
+   "gloss": "তারা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "শুরু হয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "থাকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "চুরি করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "কাণ্ড",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "সৎ মা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "সৎ বোন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "লাঠি; লেগে থাকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "আঠালো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "still",
+   "gloss": "এখনও; স্থির",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "সেলাই করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "পেট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "পাথর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "থামা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "ঝড়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "story",
+   "gloss": "গল্প",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "সোজা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "চুলের গুচ্ছ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "অদ্ভুত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "অপরিচিত লোক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "ঝরনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "street",
+   "gloss": "রাস্তা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "শক্তি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "বাড়িয়ে দিল; টান টান করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "(দেশলাই) জ্বালানো; আঘাত করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "হোঁচট খেল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "বোকা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "সফল হওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "সফল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "such",
+   "gloss": "এমন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "হঠাৎ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "চিনি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "প্রস্তাব দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "গ্রীষ্ম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "সূর্যের আলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "সূর্যোদয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "সূর্যাস্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "তথাকথিত; কথা ছিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "বিস্ময়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "পরিবেষ্টিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "সন্দেহ করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "তলোয়ার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "table",
+   "gloss": "টেবিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "take",
+   "gloss": "নিয়ে যাওয়া; নেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "কথা বলল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "কথা বলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "লম্বা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "task",
+   "gloss": "কাজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "চা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "অশ্রু; ছেঁড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "বলা; শোনানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "দশ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "ভয়ানক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "than",
+   "gloss": "চেয়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "ধন্যবাদ দেওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "that",
+   "gloss": "ওটা; যে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(নির্দিষ্ট আর্টিকেল)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "their",
+   "gloss": "তাদের",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "them",
+   "gloss": "তাদেরকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "তারা নিজেরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "then",
+   "gloss": "তারপর; তখন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "there",
+   "gloss": "সেখানে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "these",
+   "gloss": "এগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "they",
+   "gloss": "তারা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "পুরু; ঘন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "চোর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "পাতলা; রোগা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "জিনিস",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "think",
+   "gloss": "ভাবা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "third",
+   "gloss": "তৃতীয়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "তেরো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "this",
+   "gloss": "এই; এটা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "those",
+   "gloss": "ওগুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "though",
+   "gloss": "যদিও",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "ভাবল; চিন্তা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "হাজার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "সুতো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "হুমকি দিল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "হুমকিস্বরূপ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "three",
+   "gloss": "তিন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "গলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "through",
+   "gloss": "মধ্য দিয়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "জুড়ে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "ছোড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(নাম) থাম্বেলিনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "বাঁধা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "বাঁধল; বাঁধা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "শক্ত করে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "time",
+   "gloss": "সময়; বার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "খুদে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "to",
+   "gloss": "-এ; জন্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "today",
+   "gloss": "আজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "together",
+   "gloss": "একসঙ্গে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(নাম)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "too",
+   "gloss": "ও; অতিরিক্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "দাঁত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "top",
+   "gloss": "উপরের অংশ; চূড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "যোগাযোগ (যোগাযোগ রাখা)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "দিকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "town",
+   "gloss": "শহর (ছোট)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "খেলনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "পেশা; কারিগরি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "train",
+   "gloss": "ট্রেন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "ভ্রমণ করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "ভ্রমণ করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "ধনসম্পদ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "আচরণ করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "গাছ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "কেঁপে উঠল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "ঝামেলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "পশুর খাবারের পাত্র",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "true",
+   "gloss": "সত্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "কাণ্ড",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "try",
+   "gloss": "চেষ্টা করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "ঘোরা; পালা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "বারো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "বিশ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "two",
+   "gloss": "দুই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "কুৎসিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "অক্ষম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "under",
+   "gloss": "নিচে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "ভূগর্ভস্থ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "বোঝা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "অসমাপ্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "অনুপযুক্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "ভাঁজ খুলল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "অসুখী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "বিপরীতে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "আলোহীন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "খোলে (বাঁধন)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "until",
+   "gloss": "পর্যন্ত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "অস্বাভাবিক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "up",
+   "gloss": "উপরে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "মন খারাপ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "উপরতলা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "us",
+   "gloss": "আমাদেরকে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "use",
+   "gloss": "ব্যবহার করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "কাজের",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "বিস্তীর্ণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "very",
+   "gloss": "খুব",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "বিজয়সমূহ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "হিংস্রভাবে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "দেখা করতে যাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "দর্শনার্থী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "অপেক্ষা করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "অপেক্ষা করা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "জেগে ওঠা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "হাঁটা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "দেয়াল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "ঘুরে বেড়াল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "ঘুরে বেড়ানো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "want",
+   "gloss": "চাওয়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "পোশাকের আলমারি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "উষ্ণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "সতর্ক করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "ধুলো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "হাতঘড়ি; দেখা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "water",
+   "gloss": "জল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "হাত নাড়ল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "ঢেউ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "way",
+   "gloss": "পথ; উপায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "we",
+   "gloss": "আমরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "দুর্বল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "দুর্বল করল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "ধনী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "পরা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "বিয়ের অনুষ্ঠান",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "week",
+   "gloss": "সপ্তাহ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "স্বাগত জানাল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "west",
+   "gloss": "পশ্চিম",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "ভেজা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "what",
+   "gloss": "কী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "when",
+   "gloss": "যখন; কখন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "where",
+   "gloss": "কোথায়; যেখানে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "যেখানেই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "কিনা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "which",
+   "gloss": "কোনটি; যা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "while",
+   "gloss": "যখন; অথচ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "white",
+   "gloss": "সাদা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "who",
+   "gloss": "কে; যে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "যে-ই",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "সম্পূর্ণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "কার; যার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "why",
+   "gloss": "কেন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "দুষ্ট",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "স্ত্রী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "বুনো",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "নির্জন বন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "will",
+   "gloss": "(ভবিষ্যৎ); ইচ্ছাশক্তি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "স্বেচ্ছায়",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "win",
+   "gloss": "জেতা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "জানালার তাক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "ওয়াইন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "ডানা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "জ্ঞানী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "ইচ্ছা করা; ইচ্ছা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "with",
+   "gloss": "সঙ্গে",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "without",
+   "gloss": "ছাড়া",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "নারী",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "চমৎকার",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "কাঠ; বন",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "কাঠের",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "word",
+   "gloss": "শব্দ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "work",
+   "gloss": "কাজ করা; কাজ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "শ্রমিক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "কর্মশালা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "world",
+   "gloss": "বিশ্ব",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "চিন্তিত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "যোগ্য",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "would",
+   "gloss": "(কাল্পনিক ভবিষ্যৎ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "ক্ষত",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "write",
+   "gloss": "লেখা",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "লেখক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "ভুল",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "year",
+   "gloss": "বছর",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "এখনও; তবুও",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(নাম) ইয়র্ক",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "you",
+   "gloss": "তুমি; আপনি",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "young",
+   "gloss": "তরুণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "তরুণ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "your",
+   "gloss": "তোমার; আপনার",
+   "source": "claude-draft"
+  }
+ ],
+ "sampleApprovedBy": "owner-asked-all-languages-2026-10-19"
+}

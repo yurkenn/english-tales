@@ -1,0 +1,5499 @@
+{
+ "schemaVersion": 1,
+ "lang": "id",
+ "reviewStatus": "machine-draft",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "sebuah; seorang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "meninggalkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "kemampuan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "di atas (kendaraan)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "about",
+   "gloss": "tentang; sekitar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "above",
+   "gloss": "di atas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "menerima",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "secara tidak sengaja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "across",
+   "gloss": "melintasi; di seberang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "act",
+   "gloss": "bertindak; tindakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "menambahkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "mengagumi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "dengan kagum",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "mengakui",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "saran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "takut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "after",
+   "gloss": "setelah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "sore",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "again",
+   "gloss": "lagi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "against",
+   "gloss": "melawan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "yang lalu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "setuju",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "setuju",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "air",
+   "gloss": "udara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "hidup",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "all",
+   "gloss": "semua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "mengizinkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "hampir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "along",
+   "gloss": "di sepanjang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "already",
+   "gloss": "sudah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "also",
+   "gloss": "juga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "although",
+   "gloss": "meskipun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "always",
+   "gloss": "selalu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "takjub",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "menakjubkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "among",
+   "gloss": "di antara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "jumlah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "an",
+   "gloss": "sebuah; seorang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "and",
+   "gloss": "dan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "kemarahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "marah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "hewan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "another",
+   "gloss": "yang lain",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "menjawab",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "any",
+   "gloss": "apa pun; sembarang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "lagi (tidak lagi)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "siapa pun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "apa pun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "terpisah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "penampilan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "muncul",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "apel",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "mendekati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "bersenjata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "lengan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "around",
+   "gloss": "di sekitar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "menata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "tiba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "tiba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "as",
+   "gloss": "seperti; ketika",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "bertanya; meminta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "at",
+   "gloss": "di; pada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "menyerang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "pelayan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "musim gugur",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "away",
+   "gloss": "jauh; pergi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "canggung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "bayi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "back",
+   "gloss": "kembali; punggung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "tas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "bola; pesta dansa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "lingkaran; tali",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "jeruji; batang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "be",
+   "gloss": "menjadi; ada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "memukul; mengalahkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "cantik; indah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "keindahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "because",
+   "gloss": "karena",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "become",
+   "gloss": "menjadi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "tempat tidur",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "before",
+   "gloss": "sebelum",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "memohon",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "mulai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "berperilaku",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "di belakang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "termasuk; menjadi bagian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "below",
+   "gloss": "di bawah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "membungkuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "di bawah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "di samping",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "between",
+   "gloss": "di antara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "di luar; melampaui",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "big",
+   "gloss": "besar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "burung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "ulang tahun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "bagian kecil; menggigit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "menggigit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "sangat (dingin)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "black",
+   "gloss": "hitam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "menyalahkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "selimut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "darah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "mekar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "mekar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "pukulan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "biru",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "membual",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "body",
+   "gloss": "tubuh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "born",
+   "gloss": "dilahirkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "both",
+   "gloss": "keduanya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "botol",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "dasar; bagian bawah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "box",
+   "gloss": "kotak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "dahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "roti",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(nama diri) Bremen",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "semak mawar berduri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "pengantin pria",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "terang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "kecerahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "membawa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "saudara laki-laki",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "cokelat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "build",
+   "gloss": "membangun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "terbakar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "hangus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "meletus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "sibuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "but",
+   "gloss": "tetapi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "kupu-kupu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "membeli",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "by",
+   "gloss": "di dekat; oleh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "kue",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "call",
+   "gloss": "panggilan; memanggil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "kamera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "perkemahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "can",
+   "gloss": "dapat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "lilin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "tidak dapat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "menangkap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "care",
+   "gloss": "perhatian; peduli",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "hati-hati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "kereta kuda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "membawa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "kucing",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "menangkap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "menyebabkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "menyebabkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "merayakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "merayakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "perayaan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "sen",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "yakin; tertentu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "kursi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "kesempatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "change",
+   "gloss": "mengubah; perubahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "menyerang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "mengejar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "murah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "check",
+   "gloss": "memeriksa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "keju",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(nama diri) Chicago",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "child",
+   "gloss": "anak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "masa kecil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "pilihan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "memilih",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Natal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "pemakaman gereja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(nama diri) Cinderella",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "city",
+   "gloss": "kota",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "mengklaim",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "mengosongkan; jelas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "juru tulis; petugas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "memanjat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "jam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "close",
+   "gloss": "menutup; dekat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "awan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "dingin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "mengumpulkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "warna",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "sisir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "come",
+   "gloss": "datang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "nyaman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "dengan nyaman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "menghibur",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "teman seperjalanan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "membandingkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "mengeluh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "menyelesaikan; lengkap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "kebingungan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "kontak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "melanjutkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "meyakinkan; yakin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "juru masak; memasak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "mendinginkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "sudut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "berharga; biaya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "pondok",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "could",
+   "gloss": "bisa; dapat (lampau)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "menghitung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "tak terhitung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "pasangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "tertutup; menutupi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "create",
+   "gloss": "menciptakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "mengkritik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "menyeberang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "kerumunan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "kejam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "kekejaman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "menangis",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "meringkuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "pelanggan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "memotong",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "menari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "bahaya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "berbahaya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "berani",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "gelap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "anak perempuan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "fajar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "day",
+   "gloss": "hari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "siang hari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "mati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "death",
+   "gloss": "kematian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "licik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "memutuskan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "memutuskan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "perbuatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "dalam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "mengalahkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "membela",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "halus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "lezat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "kegembiraan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "menuntut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "menyangkal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "described",
+   "gloss": "menggambarkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "meja kerja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "keputusasaan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "dengan putus asa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "meskipun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "menghancurkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "berlian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "die",
+   "gloss": "mati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "died",
+   "gloss": "meninggal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "different",
+   "gloss": "berbeda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "sulit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "menghilang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "jauh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "do",
+   "gloss": "melakukan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "dolar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "door",
+   "gloss": "pintu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "ambang pintu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "adonan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "down",
+   "gloss": "ke bawah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "searah arus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "menarik ke arah diri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "gambar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "takut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "bermimpi; mengimpikan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "mimpi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "minum",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "pengemudi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "menjatuhkan; tetes",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "tenggelam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "due",
+   "gloss": "dijadwalkan; seharusnya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "kusam; membosankan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "during",
+   "gloss": "selama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "berdebu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "each",
+   "gloss": "setiap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "telinga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "sebelumnya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "mudah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "makan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "eboni",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(nama diri) Mesir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "delapan puluh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "either",
+   "gloss": "juga tidak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "tertua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "sebelas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "else",
+   "gloss": "lain",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "memeluk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "kosong",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "terpesona; ajaib",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "end",
+   "gloss": "akhir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "membahayakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "energi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "menikmati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "sangat besar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "cukup",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "masuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "antusias",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "sepenuhnya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "pintu masuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "melarikan diri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "terutama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "malam menjelang (Natal)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "even",
+   "gloss": "bahkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "akhirnya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "every",
+   "gloss": "setiap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "semua orang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "segalanya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "di mana-mana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "tepat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "except",
+   "gloss": "kecuali",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "sebagai ganti; pertukaran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "kelelahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "ada; eksis",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "mengharapkan; diharapkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "menantikan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "pengeluaran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "mahal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "menjelaskan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "penjelasan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "menjelajahi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "ekspresi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "luar biasa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "mata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "alis",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "face",
+   "gloss": "wajah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "memudar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "gagal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "gagal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "jatuh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "jatuh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "jatuh; air terjun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "false",
+   "gloss": "salah; palsu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "akrab",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "family",
+   "gloss": "keluarga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "far",
+   "gloss": "jauh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "petani",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "halaman peternakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "cepat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "mengikat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "gemuk; lemak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "kesalahan; kekurangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "ketakutan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "memberi makan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "merasa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "perasaan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "mengambilkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "few",
+   "gloss": "beberapa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "field",
+   "gloss": "ladang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "buas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "lima belas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "kelima belas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "berkelahi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "mengisi; penuh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "final",
+   "gloss": "terakhir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "find",
+   "gloss": "menemukan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "baik; halus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "jari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "Finlandia (bahasa/orang)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "api",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "dengan erat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "first",
+   "gloss": "pertama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "ikan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "pas (ukuran)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "five",
+   "gloss": "lima",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "datar; apartemen",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "melarikan diri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "float",
+   "gloss": "mengapung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "kawanan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "lantai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "bunga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "terbang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "mengikuti",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "pengikut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "menyukai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "bodoh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "kaki",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "for",
+   "gloss": "untuk; kecuali",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "selamanya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "lupa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "form",
+   "gloss": "membentuk; bentuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "four",
+   "gloss": "empat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "membeku",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "sangat dingin; pembekuan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "segar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "teman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "persahabatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "menakuti",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "from",
+   "gloss": "dari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "front",
+   "gloss": "depan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "buah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "full",
+   "gloss": "penuh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "kesenangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "murka",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "memperoleh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "games",
+   "gloss": "permainan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "kebun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "mengumpulkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "menatap; tatapan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "lembut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "dengan lembut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "get",
+   "gloss": "mendapatkan; menjadi; sampai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "hantu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "anak perempuan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "give",
+   "gloss": "memberi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "pemberi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "kaca; gelas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "go",
+   "gloss": "pergi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "kambing",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "god",
+   "gloss": "tuhan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "going",
+   "gloss": "pergi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "good",
+   "gloss": "baik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "selamat tinggal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "anggun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "megah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "kakek",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "nenek",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "abu-abu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "great",
+   "gloss": "besar; hebat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "green",
+   "gloss": "hijau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "menyapa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "abu-abu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "tanah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "tumbuh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "menebak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "pemandu; memandu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "senjata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "hembusan angin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "rambut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "potongan rambut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "aula",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "tangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "menggantung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "terjadi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "kebahagiaan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "bahagia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "keras; sulit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "keras",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "topi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "menetas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "have",
+   "gloss": "memiliki",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "he",
+   "gloss": "dia (laki-laki)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "head",
+   "gloss": "kepala",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "mendengar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "hati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "memanaskan; panas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "pagar tanaman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "halo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "penolong",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "her",
+   "gloss": "miliknya (perempuan); dia (obyek)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "dirinya sendiri (perempuan)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "bersembunyi; menyembunyikan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "bersembunyi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "bukit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "him",
+   "gloss": "dia (laki-laki, obyek)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "dirinya sendiri (laki-laki)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "his",
+   "gloss": "miliknya (laki-laki)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "memegang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "memegang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "home",
+   "gloss": "rumah; pulang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "tudung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "harapan; berharap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "tanduk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "ngeri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "kuda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "jam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "house",
+   "gloss": "rumah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "pekerjaan rumah tangga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "how",
+   "gloss": "bagaimana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "however",
+   "gloss": "namun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "memeluk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "human",
+   "gloss": "manusia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "seratus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "menggantung; tergantung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "bergegas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "menyakiti; terluka",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "suami",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "i",
+   "gloss": "saya; aku",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ide",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "if",
+   "gloss": "jika",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "sakit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "khayalan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "membayangkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "segera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "abadi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "mustahil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "in",
+   "gloss": "di dalam; di",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "terluka",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "di dalam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "bersikeras",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "memeriksa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "sebagai gantinya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "tertarik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "terputus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "into",
+   "gloss": "ke dalam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "mengundang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "mengundang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "it",
+   "gloss": "itu (benda/hewan)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "its",
+   "gloss": "miliknya (benda/hewan)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "selai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "cemburu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(nama diri) Yesus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "job",
+   "gloss": "pekerjaan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "join",
+   "gloss": "bergabung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "bercanda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "sukacita",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "hakim; menghakimi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "melompat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "just",
+   "gloss": "hanya; tepat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "menyimpan; tetap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "menendang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "membunuh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "kebaikan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "kerajaan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "mencium",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "ciuman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "dapur",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "lutut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "merobohkan; mengetuk (pintu)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "know",
+   "gloss": "tahu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "tali sepatu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "danau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "land",
+   "gloss": "tanah; negeri; mendarat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(nama diri) Lapland",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "large",
+   "gloss": "besar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "last",
+   "gloss": "terakhir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "later",
+   "gloss": "nanti; kemudian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "tertawa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "berbaring; meletakkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "membungkuk; bersandar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "belajar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "pembelajaran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "pergi; meninggalkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "left",
+   "gloss": "pergi; kiri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "kaki",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "meminjamkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "pelajaran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "let",
+   "gloss": "membiarkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "surat; huruf",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "kebohongan; terbaring",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "life",
+   "gloss": "kehidupan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "mengangkat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "light",
+   "gloss": "cahaya; ringan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "like",
+   "gloss": "seperti; menyukai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(nama diri); bunga lili",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "line",
+   "gloss": "garis; antrean",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "mendengarkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "little",
+   "gloss": "kecil; sedikit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "live",
+   "gloss": "hidup; tinggal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "local",
+   "gloss": "setempat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "mengunci; terkunci",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "sepi; kesepian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "long",
+   "gloss": "panjang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "look",
+   "gloss": "tampak; melihat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "melonggarkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "kehilangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "keras (suara)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "love",
+   "gloss": "mencintai; cinta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "menurunkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "keberuntungan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "gumpalan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(nama diri) Orang Majus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "make",
+   "gloss": "membuat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "man",
+   "gloss": "pria",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "many",
+   "gloss": "banyak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "tanda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "pernikahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "menikah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "rawa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "master",
+   "gloss": "tuan; ahli",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "match",
+   "gloss": "korek api; cocok",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "bahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "penting",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "wali kota",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "me",
+   "gloss": "saya; aku (obyek)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "jahat; berarti",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "bertemu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "meleleh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "kekacauan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "message",
+   "gloss": "pesan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "pembawa pesan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "logam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "tengah malam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "might",
+   "gloss": "mungkin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "mil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "susu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "menteri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "menit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "merindukan; ketinggalan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "hilang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "mengejek",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "saat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "more",
+   "gloss": "lebih",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "most",
+   "gloss": "paling; sebagian besar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "ibu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "pegunungan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "move",
+   "gloss": "bergerak; pindah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "gerakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "Ibu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "music",
+   "gloss": "musik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "must",
+   "gloss": "harus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "my",
+   "gloss": "-ku; milikku",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "name",
+   "gloss": "nama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "narator",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "sempit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "near",
+   "gloss": "dekat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "di dekat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "leher",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "need",
+   "gloss": "membutuhkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "jarum",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "tetangga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "tidak... maupun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "net",
+   "gloss": "jaring",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "never",
+   "gloss": "tidak pernah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "new",
+   "gloss": "baru",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "pendatang baru",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "koran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "next",
+   "gloss": "berikutnya; di sebelah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "night",
+   "gloss": "malam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "no",
+   "gloss": "tidak; tak ada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "kebisingan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "none",
+   "gloss": "tidak satu pun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "maupun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "hidung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "not",
+   "gloss": "tidak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "note",
+   "gloss": "catatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "menyadari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "menyadari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "now",
+   "gloss": "sekarang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "of",
+   "gloss": "dari; milik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "off",
+   "gloss": "berangkat; mati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "menawarkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "petugas; perwira",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "official",
+   "gloss": "resmi; pejabat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "often",
+   "gloss": "sering",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "old",
+   "gloss": "tua; lama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "on",
+   "gloss": "di atas; pada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "once",
+   "gloss": "sekali; dahulu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "one",
+   "gloss": "satu; seseorang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "only",
+   "gloss": "hanya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "ke atas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "ke depan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "open",
+   "gloss": "membuka; terbuka",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "or",
+   "gloss": "atau",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "memerintahkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "original",
+   "gloss": "asli",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "hiasan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "other",
+   "gloss": "lain",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "out",
+   "gloss": "keluar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "pakaian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "di luar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "over",
+   "gloss": "menuju; di atas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "di atas kepala",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "package",
+   "gloss": "paket",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "pengemasan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "rasa sakit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "menyakitkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "pasangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "istana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "kertas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "orang tua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "perpisahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "pasangan (dansa); suami/istri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "lorong",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "melewati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "yang lewat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "past",
+   "gloss": "masa lalu; melewati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "tambalan; potongan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "kesabaran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "membayar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "pembayaran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "persik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "kerikil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "uang receh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "sempurna",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "person",
+   "gloss": "orang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "membujuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "foto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "foto-foto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "memetik; memilih",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "potong; bagian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "merpati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "tumpukan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "place",
+   "gloss": "tempat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "preman; sederhana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "rencana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "menanam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "penanaman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "tanaman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "play",
+   "gloss": "bermain",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "terjun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "menunjuk; runcing",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "police",
+   "gloss": "polisi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "polisi (pria)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "miskin; malang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "position",
+   "gloss": "jabatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "menuangkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "power",
+   "gloss": "kekuatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "kuat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "lebih suka",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "persiapan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "present",
+   "gloss": "hadiah; sekarang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "berpura-pura",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "mencegah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "price",
+   "gloss": "harga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "menusuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "penjara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "makmur",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "melindungi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "membuktikan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "menarik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "menghukum",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "hukuman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "mendengkur (kucing)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "push",
+   "gloss": "mendorong",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "put",
+   "gloss": "meletakkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "dengan cepat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "hujan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "reaksi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "read",
+   "gloss": "membaca",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "siap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "real",
+   "gloss": "nyata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "menyadari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "alasan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "received",
+   "gloss": "menerima",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "baru-baru ini",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "mengenali",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "red",
+   "gloss": "merah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "menolak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "menolak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "penolakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "tetap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "sisa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "ucapan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "luar biasa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "mengingat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "mengingatkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "pengingat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "menghapus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "mengulangi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "balasan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "report",
+   "gloss": "laporan; melaporkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "request",
+   "gloss": "permintaan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "penyelamat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "bertanggung jawab",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "restoran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "memulihkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "mengungkapkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "hadiah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "pita",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "menunggang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "menunggang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "right",
+   "gloss": "benar; kanan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "naik; terbit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "tepi sungai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "memanggang; panggang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "merampok",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "perampok",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "roti gulung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "atap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "room",
+   "gloss": "ruangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "akar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "mawar; naik",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "kasar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(nama diri) Rumpelstiltskin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "run",
+   "gloss": "berlari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "bergegas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) akhiran kepemilikan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "kesedihan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "same",
+   "gloss": "sama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "safir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "sosis",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "save",
+   "gloss": "menyelamatkan; menabung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "menabung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "say",
+   "gloss": "berkata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "hampir tidak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "berserakan; menyebar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "school",
+   "gloss": "sekolah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "laut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "search",
+   "gloss": "mencari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "rahasia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "see",
+   "gloss": "melihat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "biji",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "mencari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "tampak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "tampaknya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "menangkap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "menjual",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "send",
+   "gloss": "mengirim",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "mengirim",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "kalimat; hukuman",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "service",
+   "gloss": "layanan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "set",
+   "gloss": "meletakkan; berangkat; terbenam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "tujuh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "several",
+   "gloss": "beberapa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "menjahit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "menjahit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "bentuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "she",
+   "gloss": "dia (perempuan)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "cangkang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "bersinar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "bersinar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "bersinar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "kapal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "sepatu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "toko",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "pantai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "short",
+   "gloss": "pendek",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "should",
+   "gloss": "sebaiknya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "bahu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "berteriak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "show",
+   "gloss": "menunjukkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "tertutup; menutup",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "sakit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "penglihatan; pemandangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "tanda; menandatangani",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "tanda tangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "diam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "perak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "sederhana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "orang lugu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "bernyanyi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "tenggelam; wastafel",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "saudara perempuan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "duduk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "six",
+   "gloss": "enam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "size",
+   "gloss": "ukuran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "langit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "tidur",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "lengan baju",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "tergelincir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "tergelincir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "small",
+   "gloss": "kecil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "bau; mencium",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "mendengkur",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "salju",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "so",
+   "gloss": "jadi; sangat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "lembut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "melunak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "some",
+   "gloss": "beberapa; sedikit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "seseorang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "something",
+   "gloss": "sesuatu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "di suatu tempat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "son",
+   "gloss": "anak laki-laki",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "song",
+   "gloss": "lagu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "segera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "dukacita",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "dengan sedih",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "bunyi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "sup",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "space",
+   "gloss": "ruang; antariksa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "berbicara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "special",
+   "gloss": "istimewa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "menghabiskan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "menumpahkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "roh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "menyebarkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "musim semi; mata air",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "square",
+   "gloss": "alun-alun; persegi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "menyelinap; memeras",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "tangga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "kios",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "menghentakkan kaki",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "berdiri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "star",
+   "gloss": "bintang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "mulai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "tinggal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "mencuri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "batang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "ibu tiri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "saudara tiri perempuan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "tongkat; menempel",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "lengket",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "still",
+   "gloss": "masih; diam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "menjahit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "perut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "batu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "berhenti",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "badai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "story",
+   "gloss": "cerita",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "lurus; langsung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "helai (rambut)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "aneh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "orang asing",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "sungai kecil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "street",
+   "gloss": "jalan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "kekuatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "meregangkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "menyalakan (korek); memukul",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "tersandung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "bodoh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "berhasil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "sukses",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "such",
+   "gloss": "seperti itu; sangat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "tiba-tiba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "gula",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "menyarankan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "musim panas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "sinar matahari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "matahari terbit",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "matahari terbenam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "dianggap; seharusnya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "kejutan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "dikelilingi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "mencurigai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "pedang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "table",
+   "gloss": "meja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "take",
+   "gloss": "membawa; mengambil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "berbicara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "berbicara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "tinggi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "task",
+   "gloss": "tugas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "teh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "air mata; merobek",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "memberitahu; menceritakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "sepuluh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "mengerikan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "than",
+   "gloss": "daripada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "berterima kasih",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "that",
+   "gloss": "itu; bahwa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(kata sandang tentu)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "their",
+   "gloss": "milik mereka",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "them",
+   "gloss": "mereka (obyek)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "diri mereka sendiri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "then",
+   "gloss": "lalu; kemudian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "there",
+   "gloss": "di sana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "these",
+   "gloss": "ini (jamak)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "they",
+   "gloss": "mereka",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "tebal; lebat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "pencuri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "tipis; kurus",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "benda; hal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "think",
+   "gloss": "berpikir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "third",
+   "gloss": "ketiga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "tiga belas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "this",
+   "gloss": "ini",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "those",
+   "gloss": "itu (jamak)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "though",
+   "gloss": "meskipun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "berpikir; pikiran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "seribu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "benang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "mengancam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "mengancam",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "three",
+   "gloss": "tiga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "tenggorokan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "through",
+   "gloss": "melalui",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "sepanjang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "melempar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(nama diri) Thumbelina",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "mengikat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "mengikat; terikat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "dengan erat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "time",
+   "gloss": "waktu; kali",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "mungil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "to",
+   "gloss": "ke; untuk",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "today",
+   "gloss": "hari ini",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "together",
+   "gloss": "bersama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(nama diri)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "too",
+   "gloss": "juga; terlalu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "gigi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "top",
+   "gloss": "atas; puncak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "kontak (tetap berhubungan)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "menuju",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "town",
+   "gloss": "kota kecil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "mainan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "keterampilan; profesi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "train",
+   "gloss": "kereta api",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "bepergian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "bepergian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "harta karun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "memperlakukan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "pohon",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "gemetar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "kesulitan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "palung makan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "true",
+   "gloss": "benar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "batang pohon",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "try",
+   "gloss": "mencoba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "berbalik; giliran",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "dua belas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "dua puluh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "two",
+   "gloss": "dua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "jelek",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "tidak mampu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "under",
+   "gloss": "di bawah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "bawah tanah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "mengerti",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "belum selesai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "tidak layak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "membuka lipatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "tidak bahagia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "berbeda dari",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "tak berlampu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "melepas ikatan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "until",
+   "gloss": "sampai",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "tidak biasa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "up",
+   "gloss": "ke atas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "kesal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "lantai atas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "us",
+   "gloss": "kami; kita (obyek)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "use",
+   "gloss": "menggunakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "berguna",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "sangat luas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "very",
+   "gloss": "sangat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "kemenangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "dengan kasar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "mengunjungi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "pengunjung",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "menunggu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "menunggu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "bangun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "berjalan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "dinding",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "mengembara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "mengembara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "want",
+   "gloss": "ingin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "lemari pakaian",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "hangat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "memperingatkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "mencuci",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "jam tangan; menonton",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "water",
+   "gloss": "air",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "melambaikan tangan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "ombak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "way",
+   "gloss": "jalan; cara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "we",
+   "gloss": "kami; kita",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "lemah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "melemahkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "kaya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "mengenakan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "pernikahan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "week",
+   "gloss": "minggu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "menyambut",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "west",
+   "gloss": "barat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "basah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "what",
+   "gloss": "apa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "when",
+   "gloss": "ketika; kapan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "where",
+   "gloss": "di mana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "di mana pun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "apakah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "which",
+   "gloss": "yang mana; yang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "while",
+   "gloss": "sementara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "white",
+   "gloss": "putih",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "who",
+   "gloss": "siapa; yang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "siapa pun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "seluruh",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "milik siapa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "why",
+   "gloss": "mengapa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "jahat",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "istri",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "liar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "alam liar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "will",
+   "gloss": "akan; kemauan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "dengan rela hati",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "win",
+   "gloss": "menang",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "ambang jendela",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "anggur",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "sayap",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "bijaksana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "berharap; keinginan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "with",
+   "gloss": "dengan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "without",
+   "gloss": "tanpa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "wanita",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "menakjubkan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "kayu; hutan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "terbuat dari kayu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "word",
+   "gloss": "kata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "work",
+   "gloss": "bekerja; pekerjaan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "pekerja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "bengkel",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "world",
+   "gloss": "dunia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "khawatir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "layak",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "would",
+   "gloss": "akan (pengandaian)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "luka",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "write",
+   "gloss": "menulis",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "penulis",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "salah",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "year",
+   "gloss": "tahun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "belum; namun",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(nama diri) York",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "you",
+   "gloss": "kamu; Anda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "young",
+   "gloss": "muda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "anak muda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "your",
+   "gloss": "-mu; milikmu",
+   "source": "claude-draft"
+  }
+ ],
+ "sampleApprovedBy": "owner-asked-all-languages-2026-10-19"
+}

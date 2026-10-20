@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Library header captions, today's line in the week, empty-screen actions and the app theme choice. -->
+    <string name="stat_language">Inggris</string>
+    <string name="stat_level">Level</string>
+    <string name="stat_streak">Runtunan</string>
+    <string name="stat_points">Poin</string>
+    <string name="weekly_today_done">Kamu mencapai target hari ini.</string>
+    <string name="weekly_today_progress">Hari ini: %1$d dari %2$d langkah</string>
+    <string name="weekly_today_pending">Belum ada hari ini. Satu cerita atau ulasan singkat menjaga runtunanmu.</string>
+    <string name="empty_browse_stories">Jelajahi cerita</string>
+    <string name="empty_clear_search">Hapus pencarian</string>
+    <string name="empty_words_hint">Belum ada kata tersimpan. Ketuk kata saat membaca lalu simpan; kata itu akan muncul di sini.</string>
+    <string name="theme_system">Pengaturan ponsel</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Ketuk kata untuk melihat artinya dan simpan bila mau.</string>
+    <string name="reader_hint_sentence">Tekan lama kalimat untuk melihat terjemahannya. Saat halaman dibacakan, menekan lama kalimat melanjutkan bacaan dari sana.</string>
+    <string name="reader_hint_swipe">Geser ke kiri atau ke kanan untuk membalik halaman.</string>
+    <string name="page_translate">Terjemahkan halaman</string>
+    <string name="page_translate_hide">Sembunyikan terjemahan halaman</string>
+</resources>

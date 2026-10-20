@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="listen_from_sentence">Escuche de esta oración</string>
-    <string name="listen_from_sentence_hint">Mantenga presionada una oración para leer la página desde allí; la oración que se lee está resaltada.</string>
 </resources>

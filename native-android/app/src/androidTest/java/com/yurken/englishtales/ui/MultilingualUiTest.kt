@@ -100,7 +100,7 @@ class MultilingualUiTest {
         val story = LearningContent.stories.first()
         compose.setContent { Localized(localized) { ReaderScreen(story, LearningSnapshot(readerHintSeen = true), {}, {}, { _, _ -> },
             onComplete = {}, onHintDismiss = {}, sessionId = "urdu-preview", onCheckpoint = { _, _ -> }) } }
-        compose.onAllNodesWithContentDescription(localized.getString(R.string.cumleyi_cevir)).onFirst().performClick()
+        compose.onNodeWithContentDescription(localized.getString(R.string.page_translate)).performClick()
         compose.onNodeWithText(story.sentences.first().translation).assertExists()
         val layouts = mutableListOf<TextLayoutResult>()
         compose.onNode(hasText(" / ", substring = true)).fetchSemanticsNode().config[SemanticsActions.GetTextLayoutResult].action?.invoke(layouts)

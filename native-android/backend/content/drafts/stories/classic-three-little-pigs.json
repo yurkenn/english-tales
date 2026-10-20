@@ -1,0 +1,429 @@
+{
+  "status": "draft",
+  "source": "codex-public-domain-retelling-2026-10-19",
+  "reviewedBy": null,
+  "rights": {
+    "credit": "Traditional English tale; collected by Joseph Jacobs",
+    "sourceCollection": "English Fairy Tales",
+    "sourceTitle": "The Story of the Three Little Pigs",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/7439",
+    "sourceTextUrl": "https://www.gutenberg.org/cache/epub/7439/pg7439-images.html",
+    "identifiedContributor": {
+      "name": "Joseph Jacobs",
+      "role": "collector and editor",
+      "deathYear": 1916
+    },
+    "sourceCopyrightStatement": "Public domain in the USA",
+    "checkedOn": "2026-10-19",
+    "adaptation": "New graded retelling and Turkish translation, based on the historical folk tale. No modern adaptation, translation or character artwork used.",
+    "turkeyAssessment": "Identified collector died more than 70 years before 2026; Ministry duration guidance checked. This is not worldwide territorial clearance.",
+    "rightsGuidanceUrl": "https://telifhaklari.ktb.gov.tr/TR-332373/telif-hakki-kac-yil-sureyle-korunur.html",
+    "sourceChapterSha256": "6013b067a1a8df4de18f71bf8ffcccce89b74df7c25c7b265317503126d01e09",
+    "chapterHashFormat": "HTML tags removed; entities decoded; whitespace collapsed with Python split/join; includes chapter heading."
+  },
+  "editorialNotes": [
+    "A1 target: short present-tense clauses, repeated building materials and asking for things.",
+    "Abridged with a deliberately softened ending: all pigs survive and the wolf leaves; the source’s deaths, later tricks and chimney episode are omitted.",
+    "Reading sections are editorial groupings, not a claim that chapter navigation has been implemented."
+  ],
+  "translationReadiness": {
+    "requiredLanguages": [
+      "tr",
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ],
+    "completeLanguages": [
+      "tr"
+    ],
+    "pendingLanguages": [
+      "es-419",
+      "pt-BR",
+      "id",
+      "ar",
+      "vi",
+      "hi",
+      "ru",
+      "bn",
+      "ur",
+      "th"
+    ]
+  },
+  "readingSections": [
+    {
+      "title": "Building the homes",
+      "firstSentenceId": "cl-three-pigs-01",
+      "lastSentenceId": "cl-three-pigs-17"
+    },
+    {
+      "title": "The wolf arrives",
+      "firstSentenceId": "cl-three-pigs-18",
+      "lastSentenceId": "cl-three-pigs-28"
+    },
+    {
+      "title": "A strong home",
+      "firstSentenceId": "cl-three-pigs-29",
+      "lastSentenceId": "cl-three-pigs-37"
+    }
+  ],
+  "story": {
+    "id": "classic-three-little-pigs",
+    "title": "The Three Little Pigs",
+    "author": "Traditional English tale; collected by Joseph Jacobs",
+    "level": "A1",
+    "genre": "Macera",
+    "description": "Üç küçük domuzcuk farklı malzemelerden evler yapar. Bir kurt geldiğinde hangi ev onları koruyacaktır? A1 hedefli seviyeli kısa uyarlama. İngilizce uyarlama ve Türkçe çeviri: Yurken Stories. Tam kaynak metin değildir.",
+    "coverKey": "cover_classic_three_little_pigs",
+    "tags": [
+      "masal"
+    ],
+    "sentences": [
+      {
+        "id": "cl-three-pigs-01",
+        "english": "Three little pigs leave their mother’s home.",
+        "turkish": "Üç küçük domuzcuk annelerinin evinden ayrılır."
+      },
+      {
+        "id": "cl-three-pigs-02",
+        "english": "They want to build homes near the wood.",
+        "turkish": "Koruluğun yakınına evler yapmak isterler."
+      },
+      {
+        "id": "cl-three-pigs-03",
+        "english": "The first pig sees a man with some straw.",
+        "turkish": "İlk domuzcuk, yanında biraz saman olan bir adam görür."
+      },
+      {
+        "id": "cl-three-pigs-04",
+        "english": "\"May I have some straw?\" the pig asks.",
+        "turkish": "Domuzcuk, \"Biraz saman alabilir miyim?\" diye sorar."
+      },
+      {
+        "id": "cl-three-pigs-05",
+        "english": "The man gives him a big bundle.",
+        "turkish": "Adam ona büyük bir demet verir."
+      },
+      {
+        "id": "cl-three-pigs-06",
+        "english": "The pig makes a small house with the straw.",
+        "turkish": "Domuzcuk samanla küçük bir ev yapar."
+      },
+      {
+        "id": "cl-three-pigs-07",
+        "english": "His house is ready before lunch.",
+        "turkish": "Evi öğle yemeğinden önce hazırdır."
+      },
+      {
+        "id": "cl-three-pigs-08",
+        "english": "Now he has time to sit in the sun.",
+        "turkish": "Artık güneşte oturmak için zamanı vardır."
+      },
+      {
+        "id": "cl-three-pigs-09",
+        "english": "The second pig makes a house with sticks.",
+        "turkish": "İkinci domuzcuk dallardan bir ev yapar."
+      },
+      {
+        "id": "cl-three-pigs-10",
+        "english": "He puts the long sticks beside each other.",
+        "turkish": "Uzun dalları yan yana koyar."
+      },
+      {
+        "id": "cl-three-pigs-11",
+        "english": "\"My house is ready too!\" he calls.",
+        "turkish": "\"Benim evim de hazır!\" diye seslenir."
+      },
+      {
+        "id": "cl-three-pigs-12",
+        "english": "The third pig chooses bricks for his house.",
+        "turkish": "Üçüncü domuzcuk evi için tuğla seçer."
+      },
+      {
+        "id": "cl-three-pigs-13",
+        "english": "The bricks are heavy, and the work is slow.",
+        "turkish": "Tuğlalar ağırdır ve iş yavaş ilerler."
+      },
+      {
+        "id": "cl-three-pigs-14",
+        "english": "He builds the walls and adds a strong door.",
+        "turkish": "Duvarları yapar ve sağlam bir kapı ekler."
+      },
+      {
+        "id": "cl-three-pigs-15",
+        "english": "His brothers come to watch him work.",
+        "turkish": "Kardeşleri onu çalışırken izlemeye gelir."
+      },
+      {
+        "id": "cl-three-pigs-16",
+        "english": "\"Come and play with us,\" they say.",
+        "turkish": "\"Gel bizimle oyna,\" derler."
+      },
+      {
+        "id": "cl-three-pigs-17",
+        "english": "\"First, I must finish my house,\" he says.",
+        "turkish": "\"Önce evimi bitirmeliyim,\" der."
+      },
+      {
+        "id": "cl-three-pigs-18",
+        "english": "That evening, a wolf comes out of the wood.",
+        "turkish": "O akşam koruluktan bir kurt çıkar."
+      },
+      {
+        "id": "cl-three-pigs-19",
+        "english": "He knocks on the first pig’s door.",
+        "turkish": "İlk domuzcuğun kapısını çalar."
+      },
+      {
+        "id": "cl-three-pigs-20",
+        "english": "\"Open the door,\" he says.",
+        "turkish": "\"Kapıyı aç,\" der."
+      },
+      {
+        "id": "cl-three-pigs-21",
+        "english": "The pig sees the wolf and stays inside.",
+        "turkish": "Domuzcuk kurdu görür ve içeride kalır."
+      },
+      {
+        "id": "cl-three-pigs-22",
+        "english": "The wolf blows hard, and the straw house falls.",
+        "turkish": "Kurt kuvvetle üfler ve saman ev yıkılır."
+      },
+      {
+        "id": "cl-three-pigs-23",
+        "english": "The first pig runs to his brother’s house.",
+        "turkish": "İlk domuzcuk kardeşinin evine koşar."
+      },
+      {
+        "id": "cl-three-pigs-24",
+        "english": "But the wolf follows him to the house of sticks.",
+        "turkish": "Ama kurt onu dallardan yapılmış eve kadar takip eder."
+      },
+      {
+        "id": "cl-three-pigs-25",
+        "english": "He blows again, and that house falls too.",
+        "turkish": "Yeniden üfler ve o ev de yıkılır."
+      },
+      {
+        "id": "cl-three-pigs-26",
+        "english": "The two pigs run to the house of bricks.",
+        "turkish": "İki domuzcuk tuğla eve koşar."
+      },
+      {
+        "id": "cl-three-pigs-27",
+        "english": "Their brother opens the door and lets them in.",
+        "turkish": "Kardeşleri kapıyı açar ve onları içeri alır."
+      },
+      {
+        "id": "cl-three-pigs-28",
+        "english": "Then he closes it, and they wait together.",
+        "turkish": "Sonra kapıyı kapatır ve birlikte beklerler."
+      },
+      {
+        "id": "cl-three-pigs-29",
+        "english": "The wolf knocks, but nobody opens the door.",
+        "turkish": "Kurt kapıyı çalar ama kimse açmaz."
+      },
+      {
+        "id": "cl-three-pigs-30",
+        "english": "He takes a big breath and blows very hard.",
+        "turkish": "Derin bir nefes alır ve çok kuvvetli üfler."
+      },
+      {
+        "id": "cl-three-pigs-31",
+        "english": "The walls do not move.",
+        "turkish": "Duvarlar kıpırdamaz."
+      },
+      {
+        "id": "cl-three-pigs-32",
+        "english": "He tries once more, but the house stays strong.",
+        "turkish": "Bir kez daha dener ama ev sağlam kalır."
+      },
+      {
+        "id": "cl-three-pigs-33",
+        "english": "At last, the tired wolf goes away.",
+        "turkish": "Sonunda yorgun kurt uzaklaşır."
+      },
+      {
+        "id": "cl-three-pigs-34",
+        "english": "The three pigs look out of the window.",
+        "turkish": "Üç domuzcuk pencereden dışarı bakar."
+      },
+      {
+        "id": "cl-three-pigs-35",
+        "english": "They are safe inside the warm house.",
+        "turkish": "Sıcak evin içinde güvendedirler."
+      },
+      {
+        "id": "cl-three-pigs-36",
+        "english": "\"Thank you for helping us,\" the brothers say.",
+        "turkish": "Kardeşleri, \"Bize yardım ettiğin için teşekkür ederiz,\" der."
+      },
+      {
+        "id": "cl-three-pigs-37",
+        "english": "\"Tomorrow, we can build together,\" says the third pig.",
+        "turkish": "Üçüncü domuzcuk, \"Yarın birlikte ev yapabiliriz,\" der."
+      }
+    ],
+    "questions": [
+      {
+        "id": "classic-three-little-pigs-q1",
+        "kind": "main",
+        "prompt": "What is the story mainly about?",
+        "options": [
+          "Three pigs look for food in the wood.",
+          "Three pigs build homes and escape a wolf.",
+          "Three pigs help a wolf build a home.",
+          "Three pigs leave their homes to visit a market."
+        ],
+        "answer": 1
+      },
+      {
+        "id": "classic-three-little-pigs-q2",
+        "kind": "detail",
+        "prompt": "What does the third pig use to build his house?",
+        "options": [
+          "Straw",
+          "Long sticks",
+          "Bricks",
+          "Wooden boxes"
+        ],
+        "answer": 2
+      },
+      {
+        "id": "classic-three-little-pigs-q3",
+        "kind": "inference",
+        "prompt": "Why do the two brothers run to the third pig’s house?",
+        "options": [
+          "They know his house is strong.",
+          "They want to leave the wolf a meal.",
+          "They want to carry the bricks away.",
+          "They know that his house is empty."
+        ],
+        "answer": 0
+      },
+      {
+        "id": "classic-three-little-pigs-q4",
+        "kind": "inference",
+        "prompt": "Why does the third pig finish his house before playing?",
+        "options": [
+          "He does not like his brothers.",
+          "He wants the wolf to visit him.",
+          "He thinks straw is too heavy to carry.",
+          "He wants to have a safe home first."
+        ],
+        "answer": 3
+      }
+    ]
+  },
+  "words": [
+    {
+      "id": "build",
+      "word": "build",
+      "translation": "inşa etmek, yapmak",
+      "pronunciation": "/bɪld/",
+      "example": "They want to build a strong house."
+    },
+    {
+      "id": "bricks",
+      "word": "bricks",
+      "translation": "tuğlalar",
+      "pronunciation": "/brɪks/",
+      "example": "He makes a house with bricks."
+    },
+    {
+      "id": "door",
+      "word": "door",
+      "translation": "kapı",
+      "pronunciation": "/dɔːr/",
+      "example": "The pig closes the door."
+    },
+    {
+      "id": "blows",
+      "word": "blows",
+      "translation": "üfler",
+      "pronunciation": "/bloʊz/",
+      "example": "The wolf blows very hard."
+    },
+    {
+      "id": "knocks",
+      "word": "knocks",
+      "translation": "kapıyı çalar",
+      "pronunciation": "/nɑːks/",
+      "example": "He knocks on the door."
+    }
+  ],
+  "existingStudyWordIds": [
+    "straw",
+    "sticks",
+    "wolf",
+    "strong",
+    "safe"
+  ],
+  "studyWordIds": [
+    "straw",
+    "sticks",
+    "wolf",
+    "strong",
+    "safe",
+    "build",
+    "bricks",
+    "door",
+    "blows",
+    "knocks"
+  ],
+  "questionEvidence": [
+    {
+      "questionId": "classic-three-little-pigs-q1",
+      "sentenceIds": [
+        "cl-three-pigs-01",
+        "cl-three-pigs-12",
+        "cl-three-pigs-22",
+        "cl-three-pigs-25",
+        "cl-three-pigs-35"
+      ],
+      "rationale": "The whole sequence connects house building with safety."
+    },
+    {
+      "questionId": "classic-three-little-pigs-q2",
+      "sentenceIds": [
+        "cl-three-pigs-12"
+      ],
+      "rationale": "The material is stated explicitly."
+    },
+    {
+      "questionId": "classic-three-little-pigs-q3",
+      "sentenceIds": [
+        "cl-three-pigs-14",
+        "cl-three-pigs-22",
+        "cl-three-pigs-25",
+        "cl-three-pigs-26",
+        "cl-three-pigs-32"
+      ],
+      "rationale": "Their first two homes fall; the stronger third home offers protection."
+    },
+    {
+      "questionId": "classic-three-little-pigs-q4",
+      "sentenceIds": [
+        "cl-three-pigs-13",
+        "cl-three-pigs-14",
+        "cl-three-pigs-16",
+        "cl-three-pigs-17",
+        "cl-three-pigs-35"
+      ],
+      "rationale": "His choice of material and work before play show preparation."
+    }
+  ],
+  "publicationBlockers": [
+    "Human editorial and target-level review pending.",
+    "Ten support-language translations and review pending.",
+    "Cover artwork, rights record and asset mapping pending.",
+    "Publisher revision creation, validation and publication pending."
+  ]
+}

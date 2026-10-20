@@ -92,7 +92,21 @@ private fun PlanActionRow(icon: String,tint: Color,title: String,subtitle: Strin
 @Composable
 fun WeeklyActivity(snapshot: LearningSnapshot) {
     Column(Modifier.fillMaxWidth().padding(16.dp),verticalArrangement=Arrangement.spacedBy(12.dp)) {
-        Text(stringResource(R.string.son_7_gun),fontSize=17.sp,fontWeight=FontWeight.Bold)
+        // The streak sits next to the week it comes from, and one line says what today still needs.
+        Row(Modifier.fillMaxWidth(),verticalAlignment=Alignment.CenterVertically) {
+            Text(stringResource(R.string.son_7_gun),fontSize=17.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+            if(snapshot.streak>0) Row(Modifier.background(LocalTaleColors.current.tileYellow,RoundedCornerShape(20.dp)).padding(horizontal=10.dp,vertical=4.dp),
+                verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+                ReferenceIcon("streak",TaleWarm,Modifier.size(16.dp))
+                Text("${snapshot.streak} · ${stringResource(R.string.stat_streak)}",fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleInk)
+            }
+        }
+        val todayText=when {
+            snapshot.dailyGoalReached -> stringResource(R.string.weekly_today_done)
+            snapshot.todaySessions>0 -> stringResource(R.string.weekly_today_progress,snapshot.todaySessions,snapshot.dailyGoal)
+            else -> stringResource(R.string.weekly_today_pending)
+        }
+        Text(todayText,fontSize=13.sp,color=if(snapshot.dailyGoalReached) TaleBlue else TaleMuted,fontWeight=if(snapshot.dailyGoalReached) FontWeight.SemiBold else FontWeight.Normal)
         Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(6.dp)) {
             snapshot.weeklyActivity.forEachIndexed {i,day ->
                 // Today is outlined so the learner sees where the week stands; empty days stay quiet instead of showing a dot.
@@ -183,6 +197,7 @@ fun LearningSettingsScreen(snapshot: LearningSnapshot,onBack: ()->Unit,onSave: (
             com.yurken.englishtales.ads.AdPrivacyControls()
             com.yurken.englishtales.analytics.AnalyticsControls()
             LanguageControls()
+            ThemeControls()
             val alerts=LocalTaleAlerts.current
             val savedText=stringResource(R.string.alert_settings_saved)
             Button(onClick={onSave(level,genre,goal,name);alerts.success(savedText)},modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp)) {Text(stringResource(R.string.degisiklikleri_kaydet))}

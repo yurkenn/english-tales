@@ -26,7 +26,7 @@ import java.net.URLEncoder
 import java.security.MessageDigest
 import java.util.UUID
 
-data class ContentStatus(val busy: Boolean = false, val message: String = "", val downloading: String? = null)
+data class ContentStatus(val busy: Boolean = false, val message: String = "", val downloading: String? = null, val failed: Boolean = false)
 
 /** One finished content action, so the UI can confirm it or say clearly that it failed. */
 data class ContentEvent(val success: Boolean, val message: String)
@@ -394,7 +394,7 @@ class ContentViewModel internal constructor(application: Application, val reposi
         mutableStatus.value = ContentStatus(busy = true, message = text(R.string.content_message_refreshing))
         refreshJob = viewModelScope.launch {
             try { repository.refresh(); lastRefreshAt = android.os.SystemClock.elapsedRealtime(); finishRefresh(ContentStatus(message = text(R.string.content_message_up_to_date)), true, userInitiated) }
-            catch (_: Exception) { finishRefresh(ContentStatus(message = text(R.string.content_message_refresh_failed)), false, userInitiated) }
+            catch (_: Exception) { finishRefresh(ContentStatus(message = text(R.string.content_message_refresh_failed), failed = true), false, userInitiated) }
         }
     }
     /** Callers waiting on the running download, by revision; a reader recreated mid-download joins instead of being dropped. */
@@ -409,7 +409,7 @@ class ContentViewModel internal constructor(application: Application, val reposi
         viewModelScope.launch {
             try { val ready = try { repository.download(story) } finally { waiting.remove(story.revisionId) }
                 finish(ContentStatus(message = text(R.string.content_message_downloaded)), true); callbacks.forEach { it(ready) } }
-            catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_download_failed)), false) }
+            catch (_: Exception) { finish(ContentStatus(message = text(R.string.content_message_download_failed), failed = true), false) }
         }
     }
     fun removeDownload(story: Story) {
@@ -417,7 +417,7 @@ class ContentViewModel internal constructor(application: Application, val reposi
         mutableStatus.value=ContentStatus(busy=true)
         viewModelScope.launch {
             try {repository.removeDownload(story);finish(ContentStatus(message=text(R.string.content_message_download_removed)),true)}
-            catch (_: Exception) {finish(ContentStatus(message=text(R.string.content_message_remove_failed)),false)}
+            catch (_: Exception) {finish(ContentStatus(message=text(R.string.content_message_remove_failed),failed=true),false)}
         }
     }
 }

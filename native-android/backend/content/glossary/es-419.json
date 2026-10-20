@@ -1,0 +1,5499 @@
+{
+ "schemaVersion": 1,
+ "lang": "es-419",
+ "reviewStatus": "machine-draft",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "un, una",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "abandonar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "habilidades",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "a bordo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "about",
+   "gloss": "sobre; aproximadamente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "above",
+   "gloss": "encima de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "aceptar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "por accidente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "across",
+   "gloss": "a través de; al otro lado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "act",
+   "gloss": "actuar; acto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "añade",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "admiró",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "admirando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "admitir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "consejo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "asustado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "after",
+   "gloss": "después",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "tarde",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "again",
+   "gloss": "otra vez",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "against",
+   "gloss": "contra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "hace",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "aceptó; estuvo de acuerdo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "está de acuerdo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "air",
+   "gloss": "aire",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "vivo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "all",
+   "gloss": "todo; todos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "permitió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "casi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "along",
+   "gloss": "a lo largo de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "already",
+   "gloss": "ya",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "also",
+   "gloss": "también",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "although",
+   "gloss": "aunque",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "always",
+   "gloss": "siempre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "asombrado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "asombroso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "among",
+   "gloss": "entre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "cantidades",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "an",
+   "gloss": "un, una",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "and",
+   "gloss": "y",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "ira; enojo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "enojado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "animal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "another",
+   "gloss": "otro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "respondió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "any",
+   "gloss": "algún; cualquier",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "ya no",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "nadie; alguien",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "cualquier cosa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "separado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "aspecto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "apareció",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "manzana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "se acercó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "armado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "brazos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "around",
+   "gloss": "alrededor de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "arreglando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "llegó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "llega",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "as",
+   "gloss": "como; mientras",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "preguntar; pedir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "at",
+   "gloss": "en; a",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "atacó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "asistentes",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "otoño",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "away",
+   "gloss": "lejos; fuera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "torpe",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "bebé",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "back",
+   "gloss": "atrás; de vuelta; espalda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "bolsa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "pelota; baile",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "aros; correas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "barras; rejas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "be",
+   "gloss": "ser; estar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "golpear; vencer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "hermoso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "belleza",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "because",
+   "gloss": "porque",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "become",
+   "gloss": "convertirse en; volverse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "cama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "before",
+   "gloss": "antes",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "rogó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "empezar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "se comportó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "detrás de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "pertenecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "below",
+   "gloss": "abajo; debajo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "doblarse; agacharse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "bajo; debajo de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "junto a",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "between",
+   "gloss": "entre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "más allá de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "big",
+   "gloss": "grande",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "pájaro; ave",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "cumpleaños",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "trozo; mordió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "morder",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "intensamente (frío)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "black",
+   "gloss": "negro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "culpó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "mantas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "sangre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "florecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "floreció",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "golpe",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "azul",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "presumió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "body",
+   "gloss": "cuerpo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "born",
+   "gloss": "nacido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "both",
+   "gloss": "ambos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "botella",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "fondo; parte inferior",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "box",
+   "gloss": "caja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "rama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "pan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(nombre propio) Bremen",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "zarza espinosa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "novio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "brillante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "brillo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "traer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "hermano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "marrón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "build",
+   "gloss": "construir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "arder",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "quemado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "reventar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "ocupado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "but",
+   "gloss": "pero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "mariposa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "comprar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "by",
+   "gloss": "junto a; por",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "pastel; tarta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "call",
+   "gloss": "llamada; llamar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "cámara fotográfica",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "campamento",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "can",
+   "gloss": "poder",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "velas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "no poder",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "capturar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "care",
+   "gloss": "cuidado; importar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "cuidadoso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "carruaje",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "llevar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "gato",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "atrapar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "causó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "que causa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "celebró",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "celebrando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "celebración",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "centavos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "seguro; cierto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "silla",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "oportunidad; suerte",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "change",
+   "gloss": "cambiar; cambio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "que embiste",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "persiguió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "barato",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "check",
+   "gloss": "comprobar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "queso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(nombre propio) Chicago",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "child",
+   "gloss": "niño; niña",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "infancia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "elección",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "elegir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Navidad",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "cementerio de la iglesia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(nombre propio) Cenicienta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "city",
+   "gloss": "ciudad",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "afirmó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "vaciar; claro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "empleado; escribiente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "trepar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "reloj",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "close",
+   "gloss": "cerrar; cerca",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "nubes",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "frío",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "recoger",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "colores",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "peine",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "come",
+   "gloss": "venir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "cómodo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "cómodamente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "consoló",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "compañero de viaje",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "compara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "se quejó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "completar; completo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "confusión",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "contacto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "continuar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "convenció; convencido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "cocinero; cocinar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "enfrió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "esquina",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "costar; coste",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "cabaña",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "could",
+   "gloss": "pudo; podría",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "contó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "incontables",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "pareja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "cubierto; cubrió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "create",
+   "gloss": "crear",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "criticó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "cruzó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "multitud",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "cruel",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "crueldad",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "llorar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "se enroscó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "cliente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "cortar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "bailar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "peligro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "peligroso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "atreverse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "oscuro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "hija",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "amanecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "day",
+   "gloss": "día",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "luz del día",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "muerto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "death",
+   "gloss": "muerte",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "engañoso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "decidió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "decide",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "acciones; hechos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "profundo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "derrotar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "defender",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "delicado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "delicioso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "alegría; deleite",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "exigió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "negar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "described",
+   "gloss": "describió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "escritorio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "desesperación",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "desesperadamente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "a pesar de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "destruyó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "diamante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "die",
+   "gloss": "morir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "died",
+   "gloss": "murió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "different",
+   "gloss": "diferente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "difícil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "desaparecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "lejano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "do",
+   "gloss": "hacer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "dólar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "door",
+   "gloss": "puerta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "vano de la puerta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "masa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "down",
+   "gloss": "abajo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "río abajo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "tirar hacia sí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "dibujo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "temió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "soñó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "sueños",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "beber",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "conductor",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "dejar caer; gota",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "se ahogó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "due",
+   "gloss": "esperado; debido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "apagado; aburrido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "during",
+   "gloss": "durante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "polvoriento",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "each",
+   "gloss": "cada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "oreja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "antes",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "fácil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "comer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "ébano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(nombre propio) Egipto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "ochenta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "either",
+   "gloss": "tampoco; cualquiera de los dos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "mayor",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "once",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "else",
+   "gloss": "más; otro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "abrazó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "vacío",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "encantado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "end",
+   "gloss": "fin; final",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "poniendo en peligro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "energía",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "disfrutó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "enorme",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "suficiente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "entrar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "entusiasta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "completamente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "entrada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "escapar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "especialmente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "víspera (Nochebuena)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "even",
+   "gloss": "incluso; hasta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "finalmente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "every",
+   "gloss": "cada; todo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "todos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "todo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "en todas partes",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "exacto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "except",
+   "gloss": "excepto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "a cambio de; intercambio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "agotado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "existir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "esperó; esperado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "esperando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "gastos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "caro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "explicar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "explicación",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "explorar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "expresión",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "extraordinario",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "ojo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "ceja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "face",
+   "gloss": "cara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "se desvaneció",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "fracasó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "fracasa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "caer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "que cae",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "cae; cascada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "false",
+   "gloss": "falso; incorrecto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "familiar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "family",
+   "gloss": "familia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "far",
+   "gloss": "lejos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "agricultor",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "corral de la granja",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "rápido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "sujetó; ató",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "gordo; grasa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "defectos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "miedo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "alimentar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "sentir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "sentimiento",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "trajo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "few",
+   "gloss": "pocos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "field",
+   "gloss": "campo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "feroz",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "quince",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "decimoquinto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "pelear",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "llenó; lleno",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "final",
+   "gloss": "final",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "find",
+   "gloss": "encontrar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "bien; fino",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "dedo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "finlandés",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "fuego",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "firmemente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "first",
+   "gloss": "primero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "pez",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "le quedó bien",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "five",
+   "gloss": "cinco",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "plano; apartamento",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "huyó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "float",
+   "gloss": "flotar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "rebaño; bandada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "suelo; piso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "flor",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "volar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "seguir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "seguidores",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "aficionado; encariñado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "tonto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "pie",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "for",
+   "gloss": "para; excepto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "para siempre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "olvidar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "form",
+   "gloss": "formar; forma",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "four",
+   "gloss": "cuatro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "congelarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "helado; congelación",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "fresco",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "amigo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "amistad",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "asustar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "from",
+   "gloss": "de; desde",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "front",
+   "gloss": "frente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "fruta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "full",
+   "gloss": "lleno",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "diversión",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "furioso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "ganar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "games",
+   "gloss": "juegos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "jardín",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "reunir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "mirar fijamente; mirada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "amable; suave",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "suavemente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "get",
+   "gloss": "obtener; ponerse; llegar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "fantasma",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "niña",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "give",
+   "gloss": "dar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "dadores",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "vidrio; vaso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "go",
+   "gloss": "ir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "cabra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "god",
+   "gloss": "dios",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "going",
+   "gloss": "yendo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "good",
+   "gloss": "bueno",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "adiós; despedida",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "elegante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "grandioso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "abuelo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "abuela",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "gris",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "great",
+   "gloss": "grande; genial",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "green",
+   "gloss": "verde",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "saludó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "gris",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "suelo; tierra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "crecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "adivinar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "guía; guiar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "arma",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "ráfaga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "pelo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "corte de pelo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "salas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "mano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "colgar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "ocurrir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "felicidad",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "feliz",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "duro; difícil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "severo; áspero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "sombrero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "salir del huevo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "have",
+   "gloss": "tener",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "he",
+   "gloss": "él",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "head",
+   "gloss": "cabeza",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "oír",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "corazón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "calentar; calor",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "seto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "hola",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "ayudantes",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "her",
+   "gloss": "su (de ella); la, le",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "ella misma; se",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "se escondió; escondió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "esconderse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "colina",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "him",
+   "gloss": "a él; le, lo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "él mismo; se",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "his",
+   "gloss": "su (de él)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "sostener",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "sostiene",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "home",
+   "gloss": "casa; a casa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "capucha",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "esperanza; esperar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "cuerno",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "horrorizado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "caballo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "horas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "house",
+   "gloss": "casa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "tareas del hogar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "how",
+   "gloss": "cómo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "however",
+   "gloss": "sin embargo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "abrazó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "human",
+   "gloss": "humano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "cien",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "colgó; colgado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "se apresuró",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "herir; herido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "marido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "i",
+   "gloss": "yo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "idea",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "if",
+   "gloss": "si",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "enfermo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "imaginario",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "imaginó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "inmediatamente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "inmortal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "imposible",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "in",
+   "gloss": "en; dentro de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "herido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "dentro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "insistió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "inspeccionar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "en su lugar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "interesado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "interrumpido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "into",
+   "gloss": "dentro de; hacia dentro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "invitó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "invita",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "it",
+   "gloss": "ello; lo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "its",
+   "gloss": "su (de ello)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "mermelada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "celoso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(nombre propio) Jesús",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "job",
+   "gloss": "trabajo; empleo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "join",
+   "gloss": "unirse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "bromeó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "alegría",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "juez; juzgar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "saltó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "just",
+   "gloss": "solo; justo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "guardar; mantener",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "pateó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "matar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "bondad",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "reino",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "besó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "besos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "cocina",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "rodillas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "derribó; llamó (a la puerta)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "know",
+   "gloss": "saber; conocer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "cordones",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "lago",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "land",
+   "gloss": "tierra; país; aterrizar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(nombre propio) Laponia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "large",
+   "gloss": "grande",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "last",
+   "gloss": "último; final",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "later",
+   "gloss": "después",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "reír",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "yació; colocó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "se inclinó; se apoyó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "aprendió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "aprendizaje",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "irse; dejar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "left",
+   "gloss": "se fue; izquierdo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "pierna",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "prestar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "lección",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "let",
+   "gloss": "dejar; permitir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "carta; letra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "mentiras; yace",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "life",
+   "gloss": "vida",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "levantar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "light",
+   "gloss": "luz; ligero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "like",
+   "gloss": "como; gustar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(nombre propio); lirio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "line",
+   "gloss": "línea; fila",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "escuchar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "little",
+   "gloss": "pequeño; un poco",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "live",
+   "gloss": "vivir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "local",
+   "gloss": "local",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "cerró con llave; cerrado con llave",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "solitario",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "long",
+   "gloss": "largo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "look",
+   "gloss": "parecer; mirar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "aflojó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "perder",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "fuerte (sonido)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "love",
+   "gloss": "amar; amor",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "bajó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "suerte",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "terrón; bulto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(nombre propio) Reyes Magos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "make",
+   "gloss": "hacer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "man",
+   "gloss": "hombre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "many",
+   "gloss": "muchos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "marcas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "matrimonio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "casarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "pantano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "master",
+   "gloss": "amo; maestro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "match",
+   "gloss": "cerilla; coincidir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "materiales",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "importó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "alcalde",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "me",
+   "gloss": "me; a mí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "malo; significar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "encontrarse; conocer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "derretirse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "desorden",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "message",
+   "gloss": "mensaje",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "mensajero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "metal",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "medianoche",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "might",
+   "gloss": "podría",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "millas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "leche",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "ministro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "minutos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "extrañó; perdió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "desaparecido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "burlarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "momento",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "more",
+   "gloss": "más",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "most",
+   "gloss": "más; la mayoría",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "madre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "montañas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "move",
+   "gloss": "moverse; mudarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "movimiento",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "Sra.",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "music",
+   "gloss": "música",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "must",
+   "gloss": "deber",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "my",
+   "gloss": "mi",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "name",
+   "gloss": "nombre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "narrador",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "estrecho",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "near",
+   "gloss": "cerca",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "cerca; cercano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "cuellos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "need",
+   "gloss": "necesitar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "agujas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "vecino",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "ni... ni",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "net",
+   "gloss": "red",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "never",
+   "gloss": "nunca",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "new",
+   "gloss": "nuevo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "recién llegado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "periódico",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "next",
+   "gloss": "siguiente; junto a",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "night",
+   "gloss": "noche",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "no",
+   "gloss": "no; ningún",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "ruido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "none",
+   "gloss": "ninguno",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "ni",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "nariz",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "not",
+   "gloss": "no",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "note",
+   "gloss": "nota",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "notó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "nota; se da cuenta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "now",
+   "gloss": "ahora",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "of",
+   "gloss": "de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "off",
+   "gloss": "en marcha (partir); apagado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "ofrecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "funcionario; oficial",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "official",
+   "gloss": "oficial; funcionario",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "often",
+   "gloss": "a menudo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "old",
+   "gloss": "viejo; anciano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "on",
+   "gloss": "sobre; en",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "once",
+   "gloss": "una vez; antaño",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "one",
+   "gloss": "uno; alguien",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "only",
+   "gloss": "solo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "sobre; encima de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "adelante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "open",
+   "gloss": "abrir; abierto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "or",
+   "gloss": "o",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "ordenó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "original",
+   "gloss": "original",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "adorno",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "other",
+   "gloss": "otro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "out",
+   "gloss": "fuera; afuera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "atuendo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "afuera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "over",
+   "gloss": "hacia; sobre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "arriba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "package",
+   "gloss": "paquete",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "embalaje",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "dolor",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "doloroso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "par",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "palacio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "papel",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "padres",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "despedida",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "pareja (de baile); cónyuge",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "pasaje",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "pasó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "que pasa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "past",
+   "gloss": "pasado; pasando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "parche; remiendo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "paciencia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "pagar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "pago",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "melocotón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "guijarro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "centavos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "perfecto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "person",
+   "gloss": "persona",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "persuadió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "fotografía",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "fotos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "recoger; elegir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "pieza; trozo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "palomas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "montón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "place",
+   "gloss": "lugar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "de paisano; sencillo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "plan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "plantó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "plantación",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "plantas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "play",
+   "gloss": "jugar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "se sumergió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "señaló; puntiagudo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "police",
+   "gloss": "policía",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "policía (hombre)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "pobre",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "position",
+   "gloss": "puesto; cargo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "vertió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "power",
+   "gloss": "poder; fuerza",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "poderoso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "preferir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "preparativos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "present",
+   "gloss": "regalo; actual",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "fingió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "impidió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "price",
+   "gloss": "precio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "pinchar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "prisión",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "prosperar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "proteger",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "probar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "tirar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "castigó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "castigo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "ronronear",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "push",
+   "gloss": "empujar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "put",
+   "gloss": "poner",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "rápidamente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "lluvioso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "reacción",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "read",
+   "gloss": "leer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "listo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "real",
+   "gloss": "real",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "se dio cuenta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "razón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "received",
+   "gloss": "recibió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "recientemente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "reconocer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "red",
+   "gloss": "rojo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "negarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "rechazó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "rechazo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "permaneció",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "restante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "comentario",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "notable",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "recordar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "recordó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "recordatorio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "quitar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "repitió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "respuesta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "report",
+   "gloss": "informe; informar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "request",
+   "gloss": "petición",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "rescatador",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "responsable",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "restaurante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "restauró",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "revelar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "recompensa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "cinta; lazo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "montar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "montar; paseo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "right",
+   "gloss": "correcto; derecho",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "se eleva; sale (el sol)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "orilla del río",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "asar; asado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "robar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "ladrón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "panecillos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "tejado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "room",
+   "gloss": "habitación",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "raíces",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "rosa; se elevó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "áspero; duro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(nombre propio) Rumpelstiltskin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "run",
+   "gloss": "correr",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "corrió; se apresuró",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) sufijo posesivo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "tristeza",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "same",
+   "gloss": "mismo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "zafiro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "salchichas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "save",
+   "gloss": "salvar; ahorrar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "ahorro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "say",
+   "gloss": "decir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "apenas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "esparció; se dispersó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "school",
+   "gloss": "escuela",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "mar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "search",
+   "gloss": "buscar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "secreto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "see",
+   "gloss": "ver",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "semilla",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "buscar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "pareció",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "parece",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "agarró",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "vender",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "send",
+   "gloss": "enviar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "enviando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "frase; condena",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "service",
+   "gloss": "servicio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "set",
+   "gloss": "poner; partir; ponerse (el sol)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "siete",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "several",
+   "gloss": "varios",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "cosió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "costura",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "forma",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "she",
+   "gloss": "ella",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "concha; cáscara",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "brillar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "brilla",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "brillante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "barco",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "zapato",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "tienda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "orilla",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "short",
+   "gloss": "corto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "should",
+   "gloss": "debería",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "hombros",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "gritó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "show",
+   "gloss": "mostrar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "cerrado; cerrar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "enfermo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "vista; panorama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "señal; firmar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "firma",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "silencioso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "plata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "simple",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "ingenuo; simplón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "cantar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "hundirse; fregadero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "hermana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "sentarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "six",
+   "gloss": "seis",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "size",
+   "gloss": "tamaño",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "cielo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "dormir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "manga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "resbaló",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "resbala",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "small",
+   "gloss": "pequeño",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "olor; oler",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "roncar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "nieve",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "so",
+   "gloss": "así que; tan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "suave",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "ablandarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "some",
+   "gloss": "algo de; algunos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "alguien",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "something",
+   "gloss": "algo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "en algún lugar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "son",
+   "gloss": "hijo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "song",
+   "gloss": "canción",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "pronto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "pena",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "con tristeza",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "sonido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "sopa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "space",
+   "gloss": "espacio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "hablar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "special",
+   "gloss": "especial",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "gastar; pasar (tiempo)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "derrama",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "espíritu",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "extender",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "primavera; manantial",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "square",
+   "gloss": "plaza; cuadrado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "pasar apretado; apretar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "escaleras",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "puestos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "pateó el suelo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "estar de pie",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "star",
+   "gloss": "estrella",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "empieza",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "quedarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "robar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "tallo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "madrastra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "hermanastra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "palo; pegarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "pegajoso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "still",
+   "gloss": "todavía; quieto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "cosió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "estómago; barriga",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "piedra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "parar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "tormenta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "story",
+   "gloss": "historia; cuento",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "recto; directo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "hebra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "extraño",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "desconocido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "arroyo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "street",
+   "gloss": "calle",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "fuerza",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "se estiró; estiró",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "encender (una cerilla); golpear",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "tropezó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "estúpido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "tener éxito",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "exitoso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "such",
+   "gloss": "tal; tan",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "de repente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "azúcar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "sugirió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "verano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "luz del sol",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "amanecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "atardecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "supuesto; se suponía",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "sorpresa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "rodeado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "sospechó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "espada",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "table",
+   "gloss": "mesa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "take",
+   "gloss": "llevar; tomar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "habló",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "que habla; hablando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "alto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "task",
+   "gloss": "tarea",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "té",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "lágrima; rasgar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "contar; decir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "diez",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "terrible",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "than",
+   "gloss": "que",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "agradecer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "that",
+   "gloss": "ese; eso; que",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "the",
+   "gloss": "el; la (artículo)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "their",
+   "gloss": "su (de ellos)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "them",
+   "gloss": "los; les",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "ellos mismos; se",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "then",
+   "gloss": "luego; entonces",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "there",
+   "gloss": "allí",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "these",
+   "gloss": "estos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "they",
+   "gloss": "ellos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "grueso; denso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "ladrón",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "delgado; fino",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "cosa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "think",
+   "gloss": "pensar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "third",
+   "gloss": "tercero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "trece",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "this",
+   "gloss": "este; esto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "those",
+   "gloss": "esos; aquellos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "though",
+   "gloss": "aunque",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "pensó; pensamiento",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "mil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "hilo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "amenazó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "amenazante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "three",
+   "gloss": "tres",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "garganta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "through",
+   "gloss": "a través de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "durante todo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "lanzar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(nombre propio) Pulgarcita",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "atar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "ató; atado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "con fuerza",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "time",
+   "gloss": "tiempo; vez",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "diminuto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "to",
+   "gloss": "a; para",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "today",
+   "gloss": "hoy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "together",
+   "gloss": "juntos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(nombre propio)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "too",
+   "gloss": "también; demasiado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "diente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "top",
+   "gloss": "parte superior; cima",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "contacto (mantenerse en)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "hacia",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "town",
+   "gloss": "pueblo; ciudad pequeña",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "juguete",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "oficio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "train",
+   "gloss": "tren",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "viajar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "viajó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "tesoro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "trató",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "árbol",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "tembló",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "problemas; penas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "abrevadero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "true",
+   "gloss": "verdadero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "tronco",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "try",
+   "gloss": "intentar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "girar; turno",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "doce",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "veinte",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "two",
+   "gloss": "dos",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "feo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "incapaz",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "under",
+   "gloss": "debajo de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "subterráneo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "entender",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "inacabado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "inadecuado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "desplegó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "infeliz",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "a diferencia de",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "sin luz",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "desata",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "until",
+   "gloss": "hasta",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "inusual",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "up",
+   "gloss": "arriba",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "disgustado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "arriba (piso)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "us",
+   "gloss": "nos; a nosotros",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "use",
+   "gloss": "usar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "útil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "vasto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "very",
+   "gloss": "muy",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "victorias",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "violentamente",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "visitar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "visitantes",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "esperó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "esperando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "despertarse",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "caminar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "pared; muro",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "vagó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "errante",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "want",
+   "gloss": "querer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "armario",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "cálido",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "advirtió",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "lavó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "reloj de pulsera; mirar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "water",
+   "gloss": "agua",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "agitó la mano",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "olas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "way",
+   "gloss": "camino; manera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "we",
+   "gloss": "nosotros",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "débil",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "debilitó",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "rico",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "llevar puesto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "boda",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "week",
+   "gloss": "semana",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "dio la bienvenida",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "west",
+   "gloss": "oeste",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "mojado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "what",
+   "gloss": "qué",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "when",
+   "gloss": "cuando",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "where",
+   "gloss": "dónde; donde",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "dondequiera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "si (o no)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "which",
+   "gloss": "cuál; que",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "while",
+   "gloss": "mientras",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "white",
+   "gloss": "blanco",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "who",
+   "gloss": "quién; que",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "quienquiera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "entero",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "cuyo; de quién",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "why",
+   "gloss": "por qué",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "malvado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "esposa",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "salvaje",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "desierto; naturaleza salvaje",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "will",
+   "gloss": "(futuro); voluntad",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "de buen grado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "win",
+   "gloss": "ganar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "alféizar",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "vino",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "ala",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "sabio",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "desear; deseo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "with",
+   "gloss": "con",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "without",
+   "gloss": "sin",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "mujer",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "maravilloso",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "leña; madera; bosque",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "de madera",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "word",
+   "gloss": "palabra",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "work",
+   "gloss": "trabajar; trabajo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "trabajadores",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "taller",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "world",
+   "gloss": "mundo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "preocupado",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "digno",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "would",
+   "gloss": "(condicional)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "heridas",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "write",
+   "gloss": "escribir",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "escritor",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "incorrecto",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "year",
+   "gloss": "año",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "todavía; sin embargo",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(nombre propio) York",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "you",
+   "gloss": "tú; usted",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "young",
+   "gloss": "joven",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "joven; chico",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "your",
+   "gloss": "tu; su",
+   "source": "claude-draft"
+  }
+ ],
+ "sampleApprovedBy": "owner-asked-all-languages-2026-10-19"
+}

@@ -1,0 +1,4554 @@
+{
+ "schemaVersion": 1,
+ "lang": "id",
+ "source": "Built by tools/glossary.mjs from backend/content/glossary/id.json: machine draft, not reviewed by a native speaker.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "sebuah; seorang"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "meninggalkan"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "kemampuan"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "di atas (kendaraan)"
+  },
+  {
+   "lemma": "about",
+   "gloss": "tentang; sekitar"
+  },
+  {
+   "lemma": "above",
+   "gloss": "di atas"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "menerima"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "secara tidak sengaja"
+  },
+  {
+   "lemma": "across",
+   "gloss": "melintasi; di seberang"
+  },
+  {
+   "lemma": "act",
+   "gloss": "bertindak; tindakan"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "menambahkan"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "mengagumi"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "dengan kagum"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "mengakui"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "saran"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "takut"
+  },
+  {
+   "lemma": "after",
+   "gloss": "setelah"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "sore"
+  },
+  {
+   "lemma": "again",
+   "gloss": "lagi"
+  },
+  {
+   "lemma": "against",
+   "gloss": "melawan"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "yang lalu"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "setuju"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "setuju"
+  },
+  {
+   "lemma": "air",
+   "gloss": "udara"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "hidup"
+  },
+  {
+   "lemma": "all",
+   "gloss": "semua"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "mengizinkan"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "hampir"
+  },
+  {
+   "lemma": "along",
+   "gloss": "di sepanjang"
+  },
+  {
+   "lemma": "already",
+   "gloss": "sudah"
+  },
+  {
+   "lemma": "also",
+   "gloss": "juga"
+  },
+  {
+   "lemma": "although",
+   "gloss": "meskipun"
+  },
+  {
+   "lemma": "always",
+   "gloss": "selalu"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "takjub"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "menakjubkan"
+  },
+  {
+   "lemma": "among",
+   "gloss": "di antara"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "jumlah"
+  },
+  {
+   "lemma": "an",
+   "gloss": "sebuah; seorang"
+  },
+  {
+   "lemma": "and",
+   "gloss": "dan"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "kemarahan"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "marah"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "hewan"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "another",
+   "gloss": "yang lain"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "menjawab"
+  },
+  {
+   "lemma": "any",
+   "gloss": "apa pun; sembarang"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "lagi (tidak lagi)"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "siapa pun"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "apa pun"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "terpisah"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "penampilan"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "muncul"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "apel"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "mendekati"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "bersenjata"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "lengan"
+  },
+  {
+   "lemma": "around",
+   "gloss": "di sekitar"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "menata"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "tiba"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "tiba"
+  },
+  {
+   "lemma": "as",
+   "gloss": "seperti; ketika"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "bertanya; meminta"
+  },
+  {
+   "lemma": "at",
+   "gloss": "di; pada"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "menyerang"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "pelayan"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "musim gugur"
+  },
+  {
+   "lemma": "away",
+   "gloss": "jauh; pergi"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "canggung"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "bayi"
+  },
+  {
+   "lemma": "back",
+   "gloss": "kembali; punggung"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "tas"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "bola; pesta dansa"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "lingkaran; tali"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "jeruji; batang"
+  },
+  {
+   "lemma": "be",
+   "gloss": "menjadi; ada"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "memukul; mengalahkan"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "cantik; indah"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "keindahan"
+  },
+  {
+   "lemma": "because",
+   "gloss": "karena"
+  },
+  {
+   "lemma": "become",
+   "gloss": "menjadi"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "tempat tidur"
+  },
+  {
+   "lemma": "before",
+   "gloss": "sebelum"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "memohon"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "mulai"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "berperilaku"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "di belakang"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "termasuk; menjadi bagian"
+  },
+  {
+   "lemma": "below",
+   "gloss": "di bawah"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "membungkuk"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "di bawah"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "di samping"
+  },
+  {
+   "lemma": "between",
+   "gloss": "di antara"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "di luar; melampaui"
+  },
+  {
+   "lemma": "big",
+   "gloss": "besar"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "burung"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "ulang tahun"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "bagian kecil; menggigit"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "menggigit"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "sangat (dingin)"
+  },
+  {
+   "lemma": "black",
+   "gloss": "hitam"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "menyalahkan"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "selimut"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "darah"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "mekar"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "mekar"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "pukulan"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "biru"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "membual"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "body",
+   "gloss": "tubuh"
+  },
+  {
+   "lemma": "born",
+   "gloss": "dilahirkan"
+  },
+  {
+   "lemma": "both",
+   "gloss": "keduanya"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "botol"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "dasar; bagian bawah"
+  },
+  {
+   "lemma": "box",
+   "gloss": "kotak"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "dahan"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "roti"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(nama diri) Bremen"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "semak mawar berduri"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "pengantin pria"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "terang"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "kecerahan"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "membawa"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "saudara laki-laki"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "cokelat"
+  },
+  {
+   "lemma": "build",
+   "gloss": "membangun"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "terbakar"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "hangus"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "meletus"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "sibuk"
+  },
+  {
+   "lemma": "but",
+   "gloss": "tetapi"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "kupu-kupu"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "membeli"
+  },
+  {
+   "lemma": "by",
+   "gloss": "di dekat; oleh"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "kue"
+  },
+  {
+   "lemma": "call",
+   "gloss": "panggilan; memanggil"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "kamera"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "perkemahan"
+  },
+  {
+   "lemma": "can",
+   "gloss": "dapat"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "lilin"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "tidak dapat"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "menangkap"
+  },
+  {
+   "lemma": "care",
+   "gloss": "perhatian; peduli"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "hati-hati"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "kereta kuda"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "membawa"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "kucing"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "menangkap"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "menyebabkan"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "menyebabkan"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "merayakan"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "merayakan"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "perayaan"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "sen"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "yakin; tertentu"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "kursi"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "kesempatan"
+  },
+  {
+   "lemma": "change",
+   "gloss": "mengubah; perubahan"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "menyerang"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "mengejar"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "murah"
+  },
+  {
+   "lemma": "check",
+   "gloss": "memeriksa"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "keju"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(nama diri) Chicago"
+  },
+  {
+   "lemma": "child",
+   "gloss": "anak"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "masa kecil"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "pilihan"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "memilih"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Natal"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "pemakaman gereja"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(nama diri) Cinderella"
+  },
+  {
+   "lemma": "city",
+   "gloss": "kota"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "mengklaim"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "mengosongkan; jelas"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "juru tulis; petugas"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "memanjat"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "jam"
+  },
+  {
+   "lemma": "close",
+   "gloss": "menutup; dekat"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "awan"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "dingin"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "mengumpulkan"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "warna"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "sisir"
+  },
+  {
+   "lemma": "come",
+   "gloss": "datang"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "nyaman"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "dengan nyaman"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "menghibur"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "teman seperjalanan"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "membandingkan"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "mengeluh"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "menyelesaikan; lengkap"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "kebingungan"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "kontak"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "melanjutkan"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "meyakinkan; yakin"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "juru masak; memasak"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "mendinginkan"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "sudut"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "berharga; biaya"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "pondok"
+  },
+  {
+   "lemma": "could",
+   "gloss": "bisa; dapat (lampau)"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "menghitung"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "tak terhitung"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "pasangan"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "tertutup; menutupi"
+  },
+  {
+   "lemma": "create",
+   "gloss": "menciptakan"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "mengkritik"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "menyeberang"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "kerumunan"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "kejam"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "kekejaman"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "menangis"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "meringkuk"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "pelanggan"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "memotong"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "menari"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "bahaya"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "berbahaya"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "berani"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "gelap"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "anak perempuan"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "fajar"
+  },
+  {
+   "lemma": "day",
+   "gloss": "hari"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "siang hari"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "mati"
+  },
+  {
+   "lemma": "death",
+   "gloss": "kematian"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "licik"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "memutuskan"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "memutuskan"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "perbuatan"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "dalam"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "mengalahkan"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "membela"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "halus"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "lezat"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "kegembiraan"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "menuntut"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "menyangkal"
+  },
+  {
+   "lemma": "described",
+   "gloss": "menggambarkan"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "meja kerja"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "keputusasaan"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "dengan putus asa"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "meskipun"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "menghancurkan"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "berlian"
+  },
+  {
+   "lemma": "die",
+   "gloss": "mati"
+  },
+  {
+   "lemma": "died",
+   "gloss": "meninggal"
+  },
+  {
+   "lemma": "different",
+   "gloss": "berbeda"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "sulit"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "menghilang"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "jauh"
+  },
+  {
+   "lemma": "do",
+   "gloss": "melakukan"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "dolar"
+  },
+  {
+   "lemma": "door",
+   "gloss": "pintu"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "ambang pintu"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "adonan"
+  },
+  {
+   "lemma": "down",
+   "gloss": "ke bawah"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "searah arus"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "menarik ke arah diri"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "gambar"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "takut"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "bermimpi; mengimpikan"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "mimpi"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "minum"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "pengemudi"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "menjatuhkan; tetes"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "tenggelam"
+  },
+  {
+   "lemma": "due",
+   "gloss": "dijadwalkan; seharusnya"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "kusam; membosankan"
+  },
+  {
+   "lemma": "during",
+   "gloss": "selama"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "berdebu"
+  },
+  {
+   "lemma": "each",
+   "gloss": "setiap"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "telinga"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "sebelumnya"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "mudah"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "makan"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "eboni"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(nama diri) Mesir"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "delapan puluh"
+  },
+  {
+   "lemma": "either",
+   "gloss": "juga tidak"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "tertua"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "sebelas"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "else",
+   "gloss": "lain"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "memeluk"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "kosong"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "terpesona; ajaib"
+  },
+  {
+   "lemma": "end",
+   "gloss": "akhir"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "membahayakan"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "energi"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "menikmati"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "sangat besar"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "cukup"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "masuk"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "antusias"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "sepenuhnya"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "pintu masuk"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "melarikan diri"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "terutama"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "malam menjelang (Natal)"
+  },
+  {
+   "lemma": "even",
+   "gloss": "bahkan"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "akhirnya"
+  },
+  {
+   "lemma": "every",
+   "gloss": "setiap"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "semua orang"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "segalanya"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "di mana-mana"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "tepat"
+  },
+  {
+   "lemma": "except",
+   "gloss": "kecuali"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "sebagai ganti; pertukaran"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "kelelahan"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "ada; eksis"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "mengharapkan; diharapkan"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "menantikan"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "pengeluaran"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "mahal"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "menjelaskan"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "penjelasan"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "menjelajahi"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "ekspresi"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "luar biasa"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "mata"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "alis"
+  },
+  {
+   "lemma": "face",
+   "gloss": "wajah"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "memudar"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "gagal"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "gagal"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "jatuh"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "jatuh"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "jatuh; air terjun"
+  },
+  {
+   "lemma": "false",
+   "gloss": "salah; palsu"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "akrab"
+  },
+  {
+   "lemma": "family",
+   "gloss": "keluarga"
+  },
+  {
+   "lemma": "far",
+   "gloss": "jauh"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "petani"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "halaman peternakan"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "cepat"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "mengikat"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "gemuk; lemak"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "kesalahan; kekurangan"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "ketakutan"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "memberi makan"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "merasa"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "perasaan"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "mengambilkan"
+  },
+  {
+   "lemma": "few",
+   "gloss": "beberapa"
+  },
+  {
+   "lemma": "field",
+   "gloss": "ladang"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "buas"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "lima belas"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "kelima belas"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "berkelahi"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "mengisi; penuh"
+  },
+  {
+   "lemma": "final",
+   "gloss": "terakhir"
+  },
+  {
+   "lemma": "find",
+   "gloss": "menemukan"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "baik; halus"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "jari"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "Finlandia (bahasa/orang)"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "api"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "dengan erat"
+  },
+  {
+   "lemma": "first",
+   "gloss": "pertama"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "ikan"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "pas (ukuran)"
+  },
+  {
+   "lemma": "five",
+   "gloss": "lima"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "datar; apartemen"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "melarikan diri"
+  },
+  {
+   "lemma": "float",
+   "gloss": "mengapung"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "kawanan"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "lantai"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "bunga"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "terbang"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "mengikuti"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "pengikut"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "menyukai"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "bodoh"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "kaki"
+  },
+  {
+   "lemma": "for",
+   "gloss": "untuk; kecuali"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "selamanya"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "lupa"
+  },
+  {
+   "lemma": "form",
+   "gloss": "membentuk; bentuk"
+  },
+  {
+   "lemma": "four",
+   "gloss": "empat"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "membeku"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "sangat dingin; pembekuan"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "segar"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "teman"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "persahabatan"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "menakuti"
+  },
+  {
+   "lemma": "from",
+   "gloss": "dari"
+  },
+  {
+   "lemma": "front",
+   "gloss": "depan"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "buah"
+  },
+  {
+   "lemma": "full",
+   "gloss": "penuh"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "kesenangan"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "murka"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "memperoleh"
+  },
+  {
+   "lemma": "games",
+   "gloss": "permainan"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "kebun"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "mengumpulkan"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "menatap; tatapan"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "lembut"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "dengan lembut"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "get",
+   "gloss": "mendapatkan; menjadi; sampai"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "hantu"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "anak perempuan"
+  },
+  {
+   "lemma": "give",
+   "gloss": "memberi"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "pemberi"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "kaca; gelas"
+  },
+  {
+   "lemma": "go",
+   "gloss": "pergi"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "kambing"
+  },
+  {
+   "lemma": "god",
+   "gloss": "tuhan"
+  },
+  {
+   "lemma": "going",
+   "gloss": "pergi"
+  },
+  {
+   "lemma": "good",
+   "gloss": "baik"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "selamat tinggal"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "anggun"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "megah"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "kakek"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "nenek"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "abu-abu"
+  },
+  {
+   "lemma": "great",
+   "gloss": "besar; hebat"
+  },
+  {
+   "lemma": "green",
+   "gloss": "hijau"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "menyapa"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "abu-abu"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "tanah"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "tumbuh"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "menebak"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "pemandu; memandu"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "senjata"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "hembusan angin"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "rambut"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "potongan rambut"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "aula"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "tangan"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "menggantung"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "terjadi"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "kebahagiaan"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "bahagia"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "keras; sulit"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "keras"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "topi"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "menetas"
+  },
+  {
+   "lemma": "have",
+   "gloss": "memiliki"
+  },
+  {
+   "lemma": "he",
+   "gloss": "dia (laki-laki)"
+  },
+  {
+   "lemma": "head",
+   "gloss": "kepala"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "mendengar"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "hati"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "memanaskan; panas"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "pagar tanaman"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "halo"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "penolong"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "her",
+   "gloss": "miliknya (perempuan); dia (obyek)"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "dirinya sendiri (perempuan)"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "bersembunyi; menyembunyikan"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "bersembunyi"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "bukit"
+  },
+  {
+   "lemma": "him",
+   "gloss": "dia (laki-laki, obyek)"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "dirinya sendiri (laki-laki)"
+  },
+  {
+   "lemma": "his",
+   "gloss": "miliknya (laki-laki)"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "memegang"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "memegang"
+  },
+  {
+   "lemma": "home",
+   "gloss": "rumah; pulang"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "tudung"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "harapan; berharap"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "tanduk"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "ngeri"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "kuda"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "jam"
+  },
+  {
+   "lemma": "house",
+   "gloss": "rumah"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "pekerjaan rumah tangga"
+  },
+  {
+   "lemma": "how",
+   "gloss": "bagaimana"
+  },
+  {
+   "lemma": "however",
+   "gloss": "namun"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "memeluk"
+  },
+  {
+   "lemma": "human",
+   "gloss": "manusia"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "seratus"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "menggantung; tergantung"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "bergegas"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "menyakiti; terluka"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "suami"
+  },
+  {
+   "lemma": "i",
+   "gloss": "saya; aku"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ide"
+  },
+  {
+   "lemma": "if",
+   "gloss": "jika"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "sakit"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "khayalan"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "membayangkan"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "segera"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "abadi"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "mustahil"
+  },
+  {
+   "lemma": "in",
+   "gloss": "di dalam; di"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "terluka"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "di dalam"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "bersikeras"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "memeriksa"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "sebagai gantinya"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "tertarik"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "terputus"
+  },
+  {
+   "lemma": "into",
+   "gloss": "ke dalam"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "mengundang"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "mengundang"
+  },
+  {
+   "lemma": "it",
+   "gloss": "itu (benda/hewan)"
+  },
+  {
+   "lemma": "its",
+   "gloss": "miliknya (benda/hewan)"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "selai"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "cemburu"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(nama diri) Yesus"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "job",
+   "gloss": "pekerjaan"
+  },
+  {
+   "lemma": "join",
+   "gloss": "bergabung"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "bercanda"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "sukacita"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "hakim; menghakimi"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "melompat"
+  },
+  {
+   "lemma": "just",
+   "gloss": "hanya; tepat"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "menyimpan; tetap"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "menendang"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "membunuh"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "kebaikan"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "kerajaan"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "mencium"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "ciuman"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "dapur"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "lutut"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "merobohkan; mengetuk (pintu)"
+  },
+  {
+   "lemma": "know",
+   "gloss": "tahu"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "tali sepatu"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "danau"
+  },
+  {
+   "lemma": "land",
+   "gloss": "tanah; negeri; mendarat"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(nama diri) Lapland"
+  },
+  {
+   "lemma": "large",
+   "gloss": "besar"
+  },
+  {
+   "lemma": "last",
+   "gloss": "terakhir"
+  },
+  {
+   "lemma": "later",
+   "gloss": "nanti; kemudian"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "tertawa"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "berbaring; meletakkan"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "membungkuk; bersandar"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "belajar"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "pembelajaran"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "pergi; meninggalkan"
+  },
+  {
+   "lemma": "left",
+   "gloss": "pergi; kiri"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "kaki"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "meminjamkan"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "pelajaran"
+  },
+  {
+   "lemma": "let",
+   "gloss": "membiarkan"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "surat; huruf"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "kebohongan; terbaring"
+  },
+  {
+   "lemma": "life",
+   "gloss": "kehidupan"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "mengangkat"
+  },
+  {
+   "lemma": "light",
+   "gloss": "cahaya; ringan"
+  },
+  {
+   "lemma": "like",
+   "gloss": "seperti; menyukai"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(nama diri); bunga lili"
+  },
+  {
+   "lemma": "line",
+   "gloss": "garis; antrean"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "mendengarkan"
+  },
+  {
+   "lemma": "little",
+   "gloss": "kecil; sedikit"
+  },
+  {
+   "lemma": "live",
+   "gloss": "hidup; tinggal"
+  },
+  {
+   "lemma": "local",
+   "gloss": "setempat"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "mengunci; terkunci"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "sepi; kesepian"
+  },
+  {
+   "lemma": "long",
+   "gloss": "panjang"
+  },
+  {
+   "lemma": "look",
+   "gloss": "tampak; melihat"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "melonggarkan"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "kehilangan"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "keras (suara)"
+  },
+  {
+   "lemma": "love",
+   "gloss": "mencintai; cinta"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "menurunkan"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "keberuntungan"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "gumpalan"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(nama diri) Orang Majus"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "make",
+   "gloss": "membuat"
+  },
+  {
+   "lemma": "man",
+   "gloss": "pria"
+  },
+  {
+   "lemma": "many",
+   "gloss": "banyak"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "tanda"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "pernikahan"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "menikah"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "rawa"
+  },
+  {
+   "lemma": "master",
+   "gloss": "tuan; ahli"
+  },
+  {
+   "lemma": "match",
+   "gloss": "korek api; cocok"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "bahan"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "penting"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "wali kota"
+  },
+  {
+   "lemma": "me",
+   "gloss": "saya; aku (obyek)"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "jahat; berarti"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "bertemu"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "meleleh"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "kekacauan"
+  },
+  {
+   "lemma": "message",
+   "gloss": "pesan"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "pembawa pesan"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "logam"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "tengah malam"
+  },
+  {
+   "lemma": "might",
+   "gloss": "mungkin"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "mil"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "susu"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "menteri"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "menit"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "merindukan; ketinggalan"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "hilang"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "mengejek"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "saat"
+  },
+  {
+   "lemma": "more",
+   "gloss": "lebih"
+  },
+  {
+   "lemma": "most",
+   "gloss": "paling; sebagian besar"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "ibu"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "pegunungan"
+  },
+  {
+   "lemma": "move",
+   "gloss": "bergerak; pindah"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "gerakan"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "Ibu"
+  },
+  {
+   "lemma": "music",
+   "gloss": "musik"
+  },
+  {
+   "lemma": "must",
+   "gloss": "harus"
+  },
+  {
+   "lemma": "my",
+   "gloss": "-ku; milikku"
+  },
+  {
+   "lemma": "name",
+   "gloss": "nama"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "narator"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "sempit"
+  },
+  {
+   "lemma": "near",
+   "gloss": "dekat"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "di dekat"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "leher"
+  },
+  {
+   "lemma": "need",
+   "gloss": "membutuhkan"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "jarum"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "tetangga"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "tidak... maupun"
+  },
+  {
+   "lemma": "net",
+   "gloss": "jaring"
+  },
+  {
+   "lemma": "never",
+   "gloss": "tidak pernah"
+  },
+  {
+   "lemma": "new",
+   "gloss": "baru"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "pendatang baru"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "koran"
+  },
+  {
+   "lemma": "next",
+   "gloss": "berikutnya; di sebelah"
+  },
+  {
+   "lemma": "night",
+   "gloss": "malam"
+  },
+  {
+   "lemma": "no",
+   "gloss": "tidak; tak ada"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "kebisingan"
+  },
+  {
+   "lemma": "none",
+   "gloss": "tidak satu pun"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "maupun"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "hidung"
+  },
+  {
+   "lemma": "not",
+   "gloss": "tidak"
+  },
+  {
+   "lemma": "note",
+   "gloss": "catatan"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "menyadari"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "menyadari"
+  },
+  {
+   "lemma": "now",
+   "gloss": "sekarang"
+  },
+  {
+   "lemma": "of",
+   "gloss": "dari; milik"
+  },
+  {
+   "lemma": "off",
+   "gloss": "berangkat; mati"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "menawarkan"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "petugas; perwira"
+  },
+  {
+   "lemma": "official",
+   "gloss": "resmi; pejabat"
+  },
+  {
+   "lemma": "often",
+   "gloss": "sering"
+  },
+  {
+   "lemma": "old",
+   "gloss": "tua; lama"
+  },
+  {
+   "lemma": "on",
+   "gloss": "di atas; pada"
+  },
+  {
+   "lemma": "once",
+   "gloss": "sekali; dahulu"
+  },
+  {
+   "lemma": "one",
+   "gloss": "satu; seseorang"
+  },
+  {
+   "lemma": "only",
+   "gloss": "hanya"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "ke atas"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "ke depan"
+  },
+  {
+   "lemma": "open",
+   "gloss": "membuka; terbuka"
+  },
+  {
+   "lemma": "or",
+   "gloss": "atau"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "memerintahkan"
+  },
+  {
+   "lemma": "original",
+   "gloss": "asli"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "hiasan"
+  },
+  {
+   "lemma": "other",
+   "gloss": "lain"
+  },
+  {
+   "lemma": "out",
+   "gloss": "keluar"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "pakaian"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "di luar"
+  },
+  {
+   "lemma": "over",
+   "gloss": "menuju; di atas"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "di atas kepala"
+  },
+  {
+   "lemma": "package",
+   "gloss": "paket"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "pengemasan"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "rasa sakit"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "menyakitkan"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "pasangan"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "istana"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "kertas"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "orang tua"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "perpisahan"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "pasangan (dansa); suami/istri"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "lorong"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "melewati"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "yang lewat"
+  },
+  {
+   "lemma": "past",
+   "gloss": "masa lalu; melewati"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "tambalan; potongan"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "kesabaran"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "membayar"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "pembayaran"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "persik"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "kerikil"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "uang receh"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "sempurna"
+  },
+  {
+   "lemma": "person",
+   "gloss": "orang"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "membujuk"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "foto"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "foto-foto"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "memetik; memilih"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "potong; bagian"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "merpati"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "tumpukan"
+  },
+  {
+   "lemma": "place",
+   "gloss": "tempat"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "preman; sederhana"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "rencana"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "menanam"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "penanaman"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "tanaman"
+  },
+  {
+   "lemma": "play",
+   "gloss": "bermain"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "terjun"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "menunjuk; runcing"
+  },
+  {
+   "lemma": "police",
+   "gloss": "polisi"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "polisi (pria)"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "miskin; malang"
+  },
+  {
+   "lemma": "position",
+   "gloss": "jabatan"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "menuangkan"
+  },
+  {
+   "lemma": "power",
+   "gloss": "kekuatan"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "kuat"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "lebih suka"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "persiapan"
+  },
+  {
+   "lemma": "present",
+   "gloss": "hadiah; sekarang"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "berpura-pura"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "mencegah"
+  },
+  {
+   "lemma": "price",
+   "gloss": "harga"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "menusuk"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "penjara"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "makmur"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "melindungi"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "membuktikan"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "menarik"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "menghukum"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "hukuman"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "mendengkur (kucing)"
+  },
+  {
+   "lemma": "push",
+   "gloss": "mendorong"
+  },
+  {
+   "lemma": "put",
+   "gloss": "meletakkan"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "dengan cepat"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "hujan"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "reaksi"
+  },
+  {
+   "lemma": "read",
+   "gloss": "membaca"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "siap"
+  },
+  {
+   "lemma": "real",
+   "gloss": "nyata"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "menyadari"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "alasan"
+  },
+  {
+   "lemma": "received",
+   "gloss": "menerima"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "baru-baru ini"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "mengenali"
+  },
+  {
+   "lemma": "red",
+   "gloss": "merah"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "menolak"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "menolak"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "penolakan"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "tetap"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "sisa"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "ucapan"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "luar biasa"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "mengingat"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "mengingatkan"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "pengingat"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "menghapus"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "mengulangi"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "balasan"
+  },
+  {
+   "lemma": "report",
+   "gloss": "laporan; melaporkan"
+  },
+  {
+   "lemma": "request",
+   "gloss": "permintaan"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "penyelamat"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "bertanggung jawab"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "restoran"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "memulihkan"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "mengungkapkan"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "hadiah"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "pita"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "menunggang"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "menunggang"
+  },
+  {
+   "lemma": "right",
+   "gloss": "benar; kanan"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "naik; terbit"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "tepi sungai"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "memanggang; panggang"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "merampok"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "perampok"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "roti gulung"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "atap"
+  },
+  {
+   "lemma": "room",
+   "gloss": "ruangan"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "akar"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "mawar; naik"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "kasar"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(nama diri) Rumpelstiltskin"
+  },
+  {
+   "lemma": "run",
+   "gloss": "berlari"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "bergegas"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) akhiran kepemilikan"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "kesedihan"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "same",
+   "gloss": "sama"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "safir"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "sosis"
+  },
+  {
+   "lemma": "save",
+   "gloss": "menyelamatkan; menabung"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "menabung"
+  },
+  {
+   "lemma": "say",
+   "gloss": "berkata"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "hampir tidak"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "berserakan; menyebar"
+  },
+  {
+   "lemma": "school",
+   "gloss": "sekolah"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "laut"
+  },
+  {
+   "lemma": "search",
+   "gloss": "mencari"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "rahasia"
+  },
+  {
+   "lemma": "see",
+   "gloss": "melihat"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "biji"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "mencari"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "tampak"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "tampaknya"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "menangkap"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "menjual"
+  },
+  {
+   "lemma": "send",
+   "gloss": "mengirim"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "mengirim"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "kalimat; hukuman"
+  },
+  {
+   "lemma": "service",
+   "gloss": "layanan"
+  },
+  {
+   "lemma": "set",
+   "gloss": "meletakkan; berangkat; terbenam"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "tujuh"
+  },
+  {
+   "lemma": "several",
+   "gloss": "beberapa"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "menjahit"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "menjahit"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "bentuk"
+  },
+  {
+   "lemma": "she",
+   "gloss": "dia (perempuan)"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "cangkang"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "bersinar"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "bersinar"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "bersinar"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "kapal"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "sepatu"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "toko"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "pantai"
+  },
+  {
+   "lemma": "short",
+   "gloss": "pendek"
+  },
+  {
+   "lemma": "should",
+   "gloss": "sebaiknya"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "bahu"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "berteriak"
+  },
+  {
+   "lemma": "show",
+   "gloss": "menunjukkan"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "tertutup; menutup"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "sakit"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "penglihatan; pemandangan"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "tanda; menandatangani"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "tanda tangan"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "diam"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "perak"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "sederhana"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "orang lugu"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "bernyanyi"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "tenggelam; wastafel"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "saudara perempuan"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "duduk"
+  },
+  {
+   "lemma": "six",
+   "gloss": "enam"
+  },
+  {
+   "lemma": "size",
+   "gloss": "ukuran"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "langit"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "tidur"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "lengan baju"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "tergelincir"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "tergelincir"
+  },
+  {
+   "lemma": "small",
+   "gloss": "kecil"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "bau; mencium"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "mendengkur"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "salju"
+  },
+  {
+   "lemma": "so",
+   "gloss": "jadi; sangat"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "lembut"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "melunak"
+  },
+  {
+   "lemma": "some",
+   "gloss": "beberapa; sedikit"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "seseorang"
+  },
+  {
+   "lemma": "something",
+   "gloss": "sesuatu"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "di suatu tempat"
+  },
+  {
+   "lemma": "son",
+   "gloss": "anak laki-laki"
+  },
+  {
+   "lemma": "song",
+   "gloss": "lagu"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "segera"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "dukacita"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "dengan sedih"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "bunyi"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "sup"
+  },
+  {
+   "lemma": "space",
+   "gloss": "ruang; antariksa"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "berbicara"
+  },
+  {
+   "lemma": "special",
+   "gloss": "istimewa"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "menghabiskan"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "menumpahkan"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "roh"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "menyebarkan"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "musim semi; mata air"
+  },
+  {
+   "lemma": "square",
+   "gloss": "alun-alun; persegi"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "menyelinap; memeras"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "tangga"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "kios"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "menghentakkan kaki"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "berdiri"
+  },
+  {
+   "lemma": "star",
+   "gloss": "bintang"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "mulai"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "tinggal"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "mencuri"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "batang"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "ibu tiri"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "saudara tiri perempuan"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "tongkat; menempel"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "lengket"
+  },
+  {
+   "lemma": "still",
+   "gloss": "masih; diam"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "menjahit"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "perut"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "batu"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "berhenti"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "badai"
+  },
+  {
+   "lemma": "story",
+   "gloss": "cerita"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "lurus; langsung"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "helai (rambut)"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "aneh"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "orang asing"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "sungai kecil"
+  },
+  {
+   "lemma": "street",
+   "gloss": "jalan"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "kekuatan"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "meregangkan"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "menyalakan (korek); memukul"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "tersandung"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "bodoh"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "berhasil"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "sukses"
+  },
+  {
+   "lemma": "such",
+   "gloss": "seperti itu; sangat"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "tiba-tiba"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "gula"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "menyarankan"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "musim panas"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "sinar matahari"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "matahari terbit"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "matahari terbenam"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "dianggap; seharusnya"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "kejutan"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "dikelilingi"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "mencurigai"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "pedang"
+  },
+  {
+   "lemma": "table",
+   "gloss": "meja"
+  },
+  {
+   "lemma": "take",
+   "gloss": "membawa; mengambil"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "berbicara"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "berbicara"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "tinggi"
+  },
+  {
+   "lemma": "task",
+   "gloss": "tugas"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "teh"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "air mata; merobek"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "memberitahu; menceritakan"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "sepuluh"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "mengerikan"
+  },
+  {
+   "lemma": "than",
+   "gloss": "daripada"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "berterima kasih"
+  },
+  {
+   "lemma": "that",
+   "gloss": "itu; bahwa"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(kata sandang tentu)"
+  },
+  {
+   "lemma": "their",
+   "gloss": "milik mereka"
+  },
+  {
+   "lemma": "them",
+   "gloss": "mereka (obyek)"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "diri mereka sendiri"
+  },
+  {
+   "lemma": "then",
+   "gloss": "lalu; kemudian"
+  },
+  {
+   "lemma": "there",
+   "gloss": "di sana"
+  },
+  {
+   "lemma": "these",
+   "gloss": "ini (jamak)"
+  },
+  {
+   "lemma": "they",
+   "gloss": "mereka"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "tebal; lebat"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "pencuri"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "tipis; kurus"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "benda; hal"
+  },
+  {
+   "lemma": "think",
+   "gloss": "berpikir"
+  },
+  {
+   "lemma": "third",
+   "gloss": "ketiga"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "tiga belas"
+  },
+  {
+   "lemma": "this",
+   "gloss": "ini"
+  },
+  {
+   "lemma": "those",
+   "gloss": "itu (jamak)"
+  },
+  {
+   "lemma": "though",
+   "gloss": "meskipun"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "berpikir; pikiran"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "seribu"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "benang"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "mengancam"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "mengancam"
+  },
+  {
+   "lemma": "three",
+   "gloss": "tiga"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "tenggorokan"
+  },
+  {
+   "lemma": "through",
+   "gloss": "melalui"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "sepanjang"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "melempar"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(nama diri) Thumbelina"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "mengikat"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "mengikat; terikat"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "dengan erat"
+  },
+  {
+   "lemma": "time",
+   "gloss": "waktu; kali"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "mungil"
+  },
+  {
+   "lemma": "to",
+   "gloss": "ke; untuk"
+  },
+  {
+   "lemma": "today",
+   "gloss": "hari ini"
+  },
+  {
+   "lemma": "together",
+   "gloss": "bersama"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(nama diri)"
+  },
+  {
+   "lemma": "too",
+   "gloss": "juga; terlalu"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "gigi"
+  },
+  {
+   "lemma": "top",
+   "gloss": "atas; puncak"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "kontak (tetap berhubungan)"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "menuju"
+  },
+  {
+   "lemma": "town",
+   "gloss": "kota kecil"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "mainan"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "keterampilan; profesi"
+  },
+  {
+   "lemma": "train",
+   "gloss": "kereta api"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "bepergian"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "bepergian"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "harta karun"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "memperlakukan"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "pohon"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "gemetar"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "kesulitan"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "palung makan"
+  },
+  {
+   "lemma": "true",
+   "gloss": "benar"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "batang pohon"
+  },
+  {
+   "lemma": "try",
+   "gloss": "mencoba"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "berbalik; giliran"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "dua belas"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "dua puluh"
+  },
+  {
+   "lemma": "two",
+   "gloss": "dua"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "jelek"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "tidak mampu"
+  },
+  {
+   "lemma": "under",
+   "gloss": "di bawah"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "bawah tanah"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "mengerti"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "belum selesai"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "tidak layak"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "membuka lipatan"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "tidak bahagia"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "berbeda dari"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "tak berlampu"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "melepas ikatan"
+  },
+  {
+   "lemma": "until",
+   "gloss": "sampai"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "tidak biasa"
+  },
+  {
+   "lemma": "up",
+   "gloss": "ke atas"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "kesal"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "lantai atas"
+  },
+  {
+   "lemma": "us",
+   "gloss": "kami; kita (obyek)"
+  },
+  {
+   "lemma": "use",
+   "gloss": "menggunakan"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "berguna"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "sangat luas"
+  },
+  {
+   "lemma": "very",
+   "gloss": "sangat"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "kemenangan"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "dengan kasar"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "mengunjungi"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "pengunjung"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "menunggu"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "menunggu"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "bangun"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "berjalan"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "dinding"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "mengembara"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "mengembara"
+  },
+  {
+   "lemma": "want",
+   "gloss": "ingin"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "lemari pakaian"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "hangat"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "memperingatkan"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "mencuci"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "jam tangan; menonton"
+  },
+  {
+   "lemma": "water",
+   "gloss": "air"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "melambaikan tangan"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "ombak"
+  },
+  {
+   "lemma": "way",
+   "gloss": "jalan; cara"
+  },
+  {
+   "lemma": "we",
+   "gloss": "kami; kita"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "lemah"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "melemahkan"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "kaya"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "mengenakan"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "pernikahan"
+  },
+  {
+   "lemma": "week",
+   "gloss": "minggu"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "menyambut"
+  },
+  {
+   "lemma": "west",
+   "gloss": "barat"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "basah"
+  },
+  {
+   "lemma": "what",
+   "gloss": "apa"
+  },
+  {
+   "lemma": "when",
+   "gloss": "ketika; kapan"
+  },
+  {
+   "lemma": "where",
+   "gloss": "di mana"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "di mana pun"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "apakah"
+  },
+  {
+   "lemma": "which",
+   "gloss": "yang mana; yang"
+  },
+  {
+   "lemma": "while",
+   "gloss": "sementara"
+  },
+  {
+   "lemma": "white",
+   "gloss": "putih"
+  },
+  {
+   "lemma": "who",
+   "gloss": "siapa; yang"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "siapa pun"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "seluruh"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "milik siapa"
+  },
+  {
+   "lemma": "why",
+   "gloss": "mengapa"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "jahat"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "istri"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "liar"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "alam liar"
+  },
+  {
+   "lemma": "will",
+   "gloss": "akan; kemauan"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "dengan rela hati"
+  },
+  {
+   "lemma": "win",
+   "gloss": "menang"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "ambang jendela"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "anggur"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "sayap"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "bijaksana"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "berharap; keinginan"
+  },
+  {
+   "lemma": "with",
+   "gloss": "dengan"
+  },
+  {
+   "lemma": "without",
+   "gloss": "tanpa"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "wanita"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "menakjubkan"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "kayu; hutan"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "terbuat dari kayu"
+  },
+  {
+   "lemma": "word",
+   "gloss": "kata"
+  },
+  {
+   "lemma": "work",
+   "gloss": "bekerja; pekerjaan"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "pekerja"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "bengkel"
+  },
+  {
+   "lemma": "world",
+   "gloss": "dunia"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "khawatir"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "layak"
+  },
+  {
+   "lemma": "would",
+   "gloss": "akan (pengandaian)"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "luka"
+  },
+  {
+   "lemma": "write",
+   "gloss": "menulis"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "penulis"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "salah"
+  },
+  {
+   "lemma": "year",
+   "gloss": "tahun"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "belum; namun"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(nama diri) York"
+  },
+  {
+   "lemma": "you",
+   "gloss": "kamu; Anda"
+  },
+  {
+   "lemma": "young",
+   "gloss": "muda"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "anak muda"
+  },
+  {
+   "lemma": "your",
+   "gloss": "-mu; milikmu"
+  }
+ ],
+ "forms": {
+  "am": "be",
+  "are": "be",
+  "ate": "eat",
+  "beaten": "beat",
+  "became": "become",
+  "been": "be",
+  "began": "begin",
+  "begun": "begin",
+  "being": "be",
+  "bent": "bend",
+  "best": "good",
+  "better": "good",
+  "bit": "bite",
+  "bitten": "bite",
+  "blew": "blow",
+  "blown": "blow",
+  "bought": "buy",
+  "broke": "break",
+  "broken": "break",
+  "brought": "bring",
+  "built": "build",
+  "came": "come",
+  "caught": "catch",
+  "children": "child",
+  "chose": "choose",
+  "chosen": "choose",
+  "crept": "creep",
+  "did": "do",
+  "does": "do",
+  "doing": "do",
+  "done": "do",
+  "drank": "drink",
+  "drawn": "draw",
+  "drew": "draw",
+  "driven": "drive",
+  "drove": "drive",
+  "drunk": "drink",
+  "dug": "dig",
+  "eaten": "eat",
+  "fallen": "fall",
+  "farther": "far",
+  "farthest": "far",
+  "fed": "feed",
+  "feet": "foot",
+  "fell": "fall",
+  "felt": "feel",
+  "flew": "fly",
+  "flown": "fly",
+  "forgot": "forget",
+  "forgotten": "forget",
+  "fought": "fight",
+  "found": "find",
+  "froze": "freeze",
+  "frozen": "freeze",
+  "gave": "give",
+  "geese": "goose",
+  "given": "give",
+  "goes": "go",
+  "gone": "go",
+  "got": "get",
+  "gotten": "get",
+  "grew": "grow",
+  "grown": "grow",
+  "had": "have",
+  "halves": "half",
+  "has": "have",
+  "having": "have",
+  "heard": "hear",
+  "held": "hold",
+  "hid": "hide",
+  "hidden": "hide",
+  "hung": "hang",
+  "is": "be",
+  "kept": "keep",
+  "knew": "know",
+  "knives": "knife",
+  "known": "know",
+  "least": "little",
+  "leaves": "leaf",
+  "led": "lead",
+  "lent": "lend",
+  "less": "little",
+  "lit": "light",
+  "loaves": "loaf",
+  "lost": "lose",
+  "made": "make",
+  "meant": "mean",
+  "men": "man",
+  "met": "meet",
+  "mice": "mouse",
+  "paid": "pay",
+  "people": "person",
+  "ran": "run",
+  "ridden": "ride",
+  "rode": "ride",
+  "said": "say",
+  "sang": "sing",
+  "sank": "sink",
+  "sat": "sit",
+  "saw": "see",
+  "seen": "see",
+  "sent": "send",
+  "shaken": "shake",
+  "shelves": "shelf",
+  "shone": "shine",
+  "shook": "shake",
+  "shot": "shoot",
+  "slept": "sleep",
+  "sold": "sell",
+  "sought": "seek",
+  "spent": "spend",
+  "spoke": "speak",
+  "spoken": "speak",
+  "spun": "spin",
+  "stole": "steal",
+  "stolen": "steal",
+  "stood": "stand",
+  "struck": "strike",
+  "stuck": "stick",
+  "sung": "sing",
+  "sunk": "sink",
+  "swam": "swim",
+  "swept": "sweep",
+  "swum": "swim",
+  "swung": "swing",
+  "taken": "take",
+  "taught": "teach",
+  "teeth": "tooth",
+  "thieves": "thief",
+  "thought": "think",
+  "threw": "throw",
+  "thrown": "throw",
+  "told": "tell",
+  "took": "take",
+  "tore": "tear",
+  "torn": "tear",
+  "understood": "understand",
+  "was": "be",
+  "went": "go",
+  "wept": "weep",
+  "were": "be",
+  "wives": "wife",
+  "woke": "wake",
+  "woken": "wake",
+  "wolves": "wolf",
+  "women": "woman",
+  "won": "win",
+  "wore": "wear",
+  "worn": "wear",
+  "worse": "bad",
+  "worst": "bad",
+  "written": "write",
+  "wrote": "write"
+ }
+}

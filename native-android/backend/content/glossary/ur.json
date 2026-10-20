@@ -1,0 +1,5499 @@
+{
+ "schemaVersion": 1,
+ "lang": "ur",
+ "reviewStatus": "machine-draft",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "ایک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "چھوڑ دینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "صلاحیتیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "سوار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "about",
+   "gloss": "کے بارے میں؛ تقریباً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "above",
+   "gloss": "اوپر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "قبول کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "غلطی سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "across",
+   "gloss": "کے آر پار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "act",
+   "gloss": "عمل کرنا؛ عمل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "جوڑتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "تعریف کی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "ستائش کرتے ہوئے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "ماننا؛ اعتراف کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "مشورہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "ڈرا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "after",
+   "gloss": "بعد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "دوپہر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "again",
+   "gloss": "دوبارہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "against",
+   "gloss": "کے خلاف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "پہلے (وقت)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "راضی ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "راضی ہوتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "air",
+   "gloss": "ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "زندہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "all",
+   "gloss": "سب؛ تمام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "اجازت دی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "تقریباً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "along",
+   "gloss": "کے ساتھ ساتھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "already",
+   "gloss": "پہلے ہی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "also",
+   "gloss": "بھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "although",
+   "gloss": "اگرچہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "always",
+   "gloss": "ہمیشہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "حیران",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "حیرت انگیز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "among",
+   "gloss": "کے درمیان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "مقداریں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "an",
+   "gloss": "ایک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "and",
+   "gloss": "اور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "غصہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "غصے میں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "جانور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "another",
+   "gloss": "ایک اور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "جواب دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "any",
+   "gloss": "کوئی بھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "اب مزید (نہیں)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "کوئی بھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "کچھ بھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "الگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "ظاہری شکل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "ظاہر ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "سیب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "قریب آیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "مسلح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "بازو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "around",
+   "gloss": "آس پاس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "ترتیب دیتے ہوئے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "پہنچا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "پہنچتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "as",
+   "gloss": "جیسے؛ جب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "پوچھنا؛ مانگنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "at",
+   "gloss": "پر؛ میں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "حملہ کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "خدمتگار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "خزاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "away",
+   "gloss": "دور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "اناڑی؛ بے ڈھنگا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "شیر خوار بچہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "back",
+   "gloss": "واپس؛ پیٹھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "تھیلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "گیند؛ رقص کی تقریب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "چھلے؛ پٹیاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "سلاخیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "be",
+   "gloss": "ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "مارنا؛ ہرانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "خوبصورت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "خوبصورتی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "because",
+   "gloss": "کیونکہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "become",
+   "gloss": "بن جانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "بستر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "before",
+   "gloss": "پہلے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "التجا کی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "شروع کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "برتاؤ کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "پیچھے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "تعلق رکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "below",
+   "gloss": "نیچے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "جھکنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "کے نیچے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "کے پاس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "between",
+   "gloss": "کے درمیان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "کے پار؛ سے آگے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "big",
+   "gloss": "بڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "پرندہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "سالگرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "ٹکڑا؛ کاٹ لیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "کاٹنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "شدید (سردی)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "black",
+   "gloss": "کالا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "الزام لگایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "کمبل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "خون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "کھلنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "کھل اٹھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "وار، ضرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "نیلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "شیخی ماری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "body",
+   "gloss": "جسم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "born",
+   "gloss": "پیدا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "both",
+   "gloss": "دونوں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "بوتل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "تہہ؛ نچلا حصہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "box",
+   "gloss": "ڈبہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "شاخ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "روٹی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(نام) برمن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "کانٹے دار جنگلی گلاب کی جھاڑی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "دولہا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "روشن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "روشنی، چمک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "لانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "بھائی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "بھورا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "build",
+   "gloss": "تعمیر کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "جلنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "جلا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "پھٹنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "مصروف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "but",
+   "gloss": "لیکن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "تتلی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "خریدنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "by",
+   "gloss": "کے پاس؛ کی طرف سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "کیک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "call",
+   "gloss": "کال؛ پکارنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "کیمرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "کیمپ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "can",
+   "gloss": "سکنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "موم بتیاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "نہیں سکتا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "پکڑنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "care",
+   "gloss": "خیال؛ پرواہ کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "محتاط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "بگھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "اٹھانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "بلی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "پکڑنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "سبب بنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "سبب بننے والا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "جشن منایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "جشن مناتے ہوئے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "جشن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "سینٹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "یقینی؛ مخصوص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "کرسی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "موقع، امکان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "change",
+   "gloss": "بدلنا؛ تبدیلی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "حملہ کرتا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "پیچھا کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "سستا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "check",
+   "gloss": "جانچنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "پنیر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(نام) شکاگو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "child",
+   "gloss": "بچہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "بچپن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "انتخاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "چننا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "کرسمس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "گرجا کا قبرستان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(نام) سنڈریلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "city",
+   "gloss": "شہر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "دعویٰ کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "خالی کرنا؛ صاف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "کلرک، منشی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "چڑھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "گھڑی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "close",
+   "gloss": "بند کرنا؛ قریب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "بادل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "ٹھنڈا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "جمع کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "رنگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "کنگھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "come",
+   "gloss": "آنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "آرام دہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "آرام سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "تسلی دی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "ہم سفر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "موازنہ کرتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "شکایت کی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "مکمل کرنا؛ پورا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "الجھن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "رابطہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "جاری رکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "قائل کر لیا؛ مطمئن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "باورچی؛ پکانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "ٹھنڈا کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "کونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "قیمت ہونا؛ لاگت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "جھونپڑی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "could",
+   "gloss": "سکا؛ سکتا تھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "گنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "بے شمار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "جوڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "ڈھکا ہوا؛ ڈھانپ دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "create",
+   "gloss": "تخلیق کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "تنقید کی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "پار کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "ہجوم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "ظالم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "ظلم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "رونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "سمٹ گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "گاہک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "کاٹنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "ناچنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "خطرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "خطرناک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "ہمت کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "اندھیرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "بیٹی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "فجر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "day",
+   "gloss": "دن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "دن کی روشنی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "مردہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "death",
+   "gloss": "موت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "فریبی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "فیصلہ کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "فیصلہ کرتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "اعمال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "گہرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "شکست دینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "دفاع کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "نازک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "مزیدار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "خوشی، مسرت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "مطالبہ کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "انکار کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "described",
+   "gloss": "بیان کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "ڈیسک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "مایوسی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "بے تابی سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "کے باوجود",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "تباہ کر دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "ہیرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "die",
+   "gloss": "مرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "died",
+   "gloss": "مر گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "different",
+   "gloss": "مختلف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "مشکل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "غائب ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "دور کا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "do",
+   "gloss": "کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "ڈالر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "door",
+   "gloss": "دروازہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "دروازے کا راستہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "گندھا ہوا آٹا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "down",
+   "gloss": "نیچے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "بہاؤ کی سمت میں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "اپنی طرف کھینچنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "ڈرائنگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "ڈرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "خواب دیکھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "خواب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "پینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "ڈرائیور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "گرانا؛ قطرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "ڈوب گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "due",
+   "gloss": "متوقع؛ واجب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "مدھم؛ بورنگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "during",
+   "gloss": "کے دوران",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "گرد آلود",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "each",
+   "gloss": "ہر ایک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "کان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "پہلے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "آسان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "کھانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "آبنوس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(نام) مصر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "اسی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "either",
+   "gloss": "بھی نہیں (منفی میں)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "سب سے بڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "گیارہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "else",
+   "gloss": "اور، دوسرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "گلے لگایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "خالی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "سحر زدہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "end",
+   "gloss": "اختتام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "خطرے میں ڈالتا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "توانائی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "لطف اٹھایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "عظیم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "کافی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "داخل ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "پرجوش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "مکمل طور پر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "داخلی راستہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "فرار ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "خاص طور پر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "شام سے پہلے کی رات (کرسمس کی)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "even",
+   "gloss": "یہاں تک کہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "آخرکار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "every",
+   "gloss": "ہر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "سب لوگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "سب کچھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "ہر جگہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "عین، درست",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "except",
+   "gloss": "سوائے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "بدلے میں؛ تبادلہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "نڈھال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "موجود ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "امید کی؛ متوقع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "امید کرتے ہوئے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "اخراجات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "مہنگا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "سمجھانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "وضاحت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "کھوج لگانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "تاثر، اظہار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "غیر معمولی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "آنکھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "بھنو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "face",
+   "gloss": "چہرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "پھیکا پڑ گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "ناکام رہا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "ناکام ہوتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "گرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "گرتا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "گرتا ہے؛ آبشار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "false",
+   "gloss": "جھوٹا؛ غلط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "جانا پہچانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "family",
+   "gloss": "خاندان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "far",
+   "gloss": "دور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "کسان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "فارم کا صحن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "تیز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "باندھ دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "موٹا؛ چربی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "خامیاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "خوف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "کھلانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "محسوس کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "احساس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "لے آیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "few",
+   "gloss": "چند",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "field",
+   "gloss": "کھیت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "وحشی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "پندرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "پندرھواں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "لڑنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "بھرا؛ بھرا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "final",
+   "gloss": "آخری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "find",
+   "gloss": "ڈھونڈنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "اچھا؛ باریک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "انگلی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "فنی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "آگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "مضبوطی سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "first",
+   "gloss": "پہلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "مچھلی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "ناپ میں پورا آیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "five",
+   "gloss": "پانچ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "ہموار؛ فلیٹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "بھاگ گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "float",
+   "gloss": "تیرتے رہنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "گلہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "فرش؛ منزل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "پھول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "اڑنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "پیچھے چلنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "پیروکار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "دلدادہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "بے وقوفانہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "پاؤں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "for",
+   "gloss": "کے لیے؛ سوائے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "ہمیشہ کے لیے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "بھولنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "form",
+   "gloss": "بنانا؛ شکل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "four",
+   "gloss": "چار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "جم جانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "یخ بستہ؛ جمنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "تازہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "دوست",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "دوستی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "ڈرانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "from",
+   "gloss": "سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "front",
+   "gloss": "سامنے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "پھل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "full",
+   "gloss": "بھرا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "مزہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "غصے سے بھرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "حاصل کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "games",
+   "gloss": "کھیل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "باغ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "اکٹھا کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "گھورنا؛ نظر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "نرم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "نرمی سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "get",
+   "gloss": "پانا؛ ہونا؛ پہنچنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "بھوت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "لڑکی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "give",
+   "gloss": "دینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "دینے والے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "شیشہ؛ گلاس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "go",
+   "gloss": "جانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "بکری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "god",
+   "gloss": "خدا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "going",
+   "gloss": "جا رہا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "good",
+   "gloss": "اچھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "الوداع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "خوش اسلوب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "شاندار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "دادا، نانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "دادی، نانی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "سرمئی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "great",
+   "gloss": "عظیم؛ شاندار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "green",
+   "gloss": "سبز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "سلام کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "سرمئی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "زمین",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "بڑھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "اندازہ لگانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "رہنما؛ راستہ دکھانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "بندوق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "ہوا کا جھونکا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "بال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "بالوں کی کٹائی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "ہال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "ہاتھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "لٹکانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "ہونا، واقع ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "خوشی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "خوش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "سخت؛ مشکل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "سخت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "ٹوپی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "انڈے سے نکلنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "have",
+   "gloss": "رکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "he",
+   "gloss": "وہ (مرد)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "head",
+   "gloss": "سر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "سننا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "دل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "گرم کرنا؛ حرارت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "باڑ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "ہیلو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "مددگار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "her",
+   "gloss": "اس کا (عورت)؛ اسے (عورت)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "وہ خود (عورت)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "چھپ گیا؛ چھپایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "چھپنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "ٹیلہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "him",
+   "gloss": "اسے (مرد)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "وہ خود (مرد)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "his",
+   "gloss": "اس کا (مرد)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "پکڑنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "پکڑتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "home",
+   "gloss": "گھر؛ گھر کی طرف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "ٹوپی (ہڈ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "امید؛ امید رکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "سینگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "دہشت زدہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "گھوڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "گھنٹے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "house",
+   "gloss": "مکان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "گھر کا کام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "how",
+   "gloss": "کیسے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "however",
+   "gloss": "تاہم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "گلے لگایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "human",
+   "gloss": "انسان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "سو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "لٹکایا؛ لٹکا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "جلدی کی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "زخمی کرنا؛ زخمی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "شوہر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "i",
+   "gloss": "میں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "خیال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "if",
+   "gloss": "اگر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "بیمار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "خیالی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "تصور کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "فوراً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "لافانی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "ناممکن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "in",
+   "gloss": "میں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "زخمی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "اندر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "اصرار کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "معائنہ کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "اس کی بجائے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "دلچسپی رکھنے والا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "منقطع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "into",
+   "gloss": "کے اندر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "مدعو کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "مدعو کرتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "it",
+   "gloss": "یہ (بے جان/جانور)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "its",
+   "gloss": "اس کا (بے جان/جانور)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "جیم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "حسد کرنے والا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(نام) یسوع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "job",
+   "gloss": "ملازمت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "join",
+   "gloss": "شامل ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "مذاق کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "خوشی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "جج؛ فیصلہ کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "کود گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "just",
+   "gloss": "صرف؛ بالکل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "رکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "لات ماری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "مار ڈالنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "مہربانی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "بادشاہت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "بوسہ دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "بوسے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "باورچی خانہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "گھٹنے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "گرا دیا؛ (دروازہ) کھٹکھٹایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "know",
+   "gloss": "جاننا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "فیتے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "جھیل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "land",
+   "gloss": "زمین؛ ملک؛ اترنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(نام) لیپ لینڈ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "large",
+   "gloss": "بڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "last",
+   "gloss": "آخری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "later",
+   "gloss": "بعد میں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "ہنسنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "لیٹ گیا؛ رکھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "جھکا؛ ٹیک لگائی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "سیکھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "سیکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "چھوڑنا؛ جانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "left",
+   "gloss": "چلا گیا؛ بایاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "ٹانگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "ادھار دینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "سبق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "let",
+   "gloss": "دینا (اجازت)؛ آئیے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "خط؛ حرف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "جھوٹ؛ لیٹا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "life",
+   "gloss": "زندگی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "اٹھانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "light",
+   "gloss": "روشنی؛ ہلکا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "like",
+   "gloss": "جیسا؛ پسند کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(نام)؛ للی کا پھول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "line",
+   "gloss": "لکیر؛ قطار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "سننا (غور سے)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "little",
+   "gloss": "چھوٹا؛ تھوڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "live",
+   "gloss": "رہنا؛ جینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "local",
+   "gloss": "مقامی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "تالا لگایا؛ مقفل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "ویران؛ اکیلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "long",
+   "gloss": "لمبا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "look",
+   "gloss": "لگنا؛ دیکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "ڈھیلا کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "کھونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "بلند (آواز)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "love",
+   "gloss": "محبت کرنا؛ محبت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "نیچے کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "قسمت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "ڈلی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(نام) مجوسی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "make",
+   "gloss": "بنانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "man",
+   "gloss": "آدمی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "many",
+   "gloss": "بہت سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "نشانات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "شادی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "شادی کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "دلدل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "master",
+   "gloss": "آقا؛ استاد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "match",
+   "gloss": "ماچس؛ میل کھانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "مواد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "اہم تھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "میئر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "me",
+   "gloss": "مجھے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "بد مزاج؛ مطلب ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "ملنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "پگھلنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "بے ترتیبی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "message",
+   "gloss": "پیغام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "قاصد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "دھات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "آدھی رات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "might",
+   "gloss": "شاید",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "میل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "دودھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "وزیر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "منٹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "یاد کیا؛ چھوٹ گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "لاپتہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "مذاق اڑانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "لمحہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "more",
+   "gloss": "زیادہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "most",
+   "gloss": "سب سے؛ زیادہ تر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "ماں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "پہاڑ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "move",
+   "gloss": "ہلنا؛ منتقل ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "حرکت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "مسز؛ محترمہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "music",
+   "gloss": "موسیقی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "must",
+   "gloss": "ضرور، لازماً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "my",
+   "gloss": "میرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "name",
+   "gloss": "نام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "راوی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "تنگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "near",
+   "gloss": "قریب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "آس پاس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "گردنیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "need",
+   "gloss": "ضرورت ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "سوئیاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "پڑوسی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "نہ... نہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "net",
+   "gloss": "جال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "never",
+   "gloss": "کبھی نہیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "new",
+   "gloss": "نیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "نیا آنے والا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "اخبار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "next",
+   "gloss": "اگلا؛ کے پاس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "night",
+   "gloss": "رات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "no",
+   "gloss": "نہیں؛ کوئی نہیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "شور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "none",
+   "gloss": "کوئی نہیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "اور نہ ہی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "ناک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "not",
+   "gloss": "نہیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "note",
+   "gloss": "نوٹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "نوٹس کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "نوٹس کرتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "now",
+   "gloss": "اب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "of",
+   "gloss": "کا؛ سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "off",
+   "gloss": "روانہ؛ بند",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "پیش کش کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "افسر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "official",
+   "gloss": "سرکاری؛ عہدیدار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "often",
+   "gloss": "اکثر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "old",
+   "gloss": "بوڑھا؛ پرانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "on",
+   "gloss": "پر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "once",
+   "gloss": "ایک بار؛ کبھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "one",
+   "gloss": "ایک؛ کوئی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "only",
+   "gloss": "صرف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "کے اوپر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "آگے کی طرف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "open",
+   "gloss": "کھولنا؛ کھلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "or",
+   "gloss": "یا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "حکم دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "original",
+   "gloss": "اصل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "زیور؛ آرائش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "other",
+   "gloss": "دوسرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "out",
+   "gloss": "باہر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "پوشاک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "باہر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "over",
+   "gloss": "کی طرف؛ اوپر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "سر کے اوپر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "package",
+   "gloss": "پیکج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "پیکنگ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "درد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "تکلیف دہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "جوڑی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "محل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "کاغذ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "والدین",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "جدائی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "(رقص کا) ساتھی؛ شریک حیات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "گزرگاہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "گزر گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "گزرتا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "past",
+   "gloss": "ماضی؛ پاس سے گزر کر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "پیوند؛ ٹکڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "صبر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "ادا کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "ادائیگی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "آڑو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "کنکر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "پیسے (چھوٹے سکے)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "بہترین",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "person",
+   "gloss": "شخص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "قائل کر لیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "تصویر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "تصاویر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "چننا؛ منتخب کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "ٹکڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "کبوتر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "ڈھیر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "place",
+   "gloss": "جگہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "سادہ (وردی کے بغیر)؛ سادہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "منصوبہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "لگایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "پودے لگانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "پودے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "play",
+   "gloss": "کھیلنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "غوطہ لگایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "اشارہ کیا؛ نوکیلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "police",
+   "gloss": "پولیس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "پولیس والا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "غریب؛ بیچارہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "position",
+   "gloss": "عہدہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "انڈیلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "power",
+   "gloss": "طاقت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "طاقتور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "ترجیح دینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "تیاریاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "present",
+   "gloss": "تحفہ؛ موجودہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "ڈھونگ کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "روک دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "price",
+   "gloss": "قیمت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "چبھونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "جیل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "خوشحال ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "حفاظت کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "ثابت کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "کھینچنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "سزا دی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "سزا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "گھرگھرانا (بلی کا)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "push",
+   "gloss": "دھکیلنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "put",
+   "gloss": "رکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "جلدی سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "برساتی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "ردعمل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "read",
+   "gloss": "پڑھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "تیار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "real",
+   "gloss": "حقیقی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "سمجھ گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "وجہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "received",
+   "gloss": "وصول کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "حال ہی میں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "پہچاننا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "red",
+   "gloss": "سرخ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "انکار کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "مسترد کر دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "رد کیا جانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "رہا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "باقی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "تبصرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "قابل ذکر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "یاد رکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "یاد دلایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "یاد دہانی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "ہٹانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "دہرایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "جواب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "report",
+   "gloss": "رپورٹ؛ اطلاع دینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "request",
+   "gloss": "درخواست",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "بچانے والا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "ذمہ دار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "ریستوراں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "بحال کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "ظاہر کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "انعام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "ربن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "سوار ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "سواری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "right",
+   "gloss": "درست؛ دایاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "اٹھتا ہے؛ طلوع ہوتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "دریا کا کنارہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "بھوننا؛ بھنا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "لوٹنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "ڈاکو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "چھوٹی روٹیاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "چھت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "room",
+   "gloss": "کمرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "جڑیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "گلاب؛ اٹھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "کھردرا؛ سخت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(نام) رمپلسٹلٹسکن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "run",
+   "gloss": "دوڑنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "دوڑ پڑا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) ملکیت کا لاحقہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "اداسی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "same",
+   "gloss": "وہی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "نیلم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "ساسیجز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "save",
+   "gloss": "بچانا؛ جمع کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "بچت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "say",
+   "gloss": "کہنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "بمشکل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "بکھیر دیا؛ بکھر گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "school",
+   "gloss": "اسکول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "سمندر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "search",
+   "gloss": "تلاش کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "راز؛ خفیہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "see",
+   "gloss": "دیکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "بیج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "ڈھونڈنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "لگا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "لگتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "پکڑ لیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "بیچنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "send",
+   "gloss": "بھیجنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "بھیجتے ہوئے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "جملہ؛ سزا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "service",
+   "gloss": "خدمت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "set",
+   "gloss": "رکھنا؛ روانہ ہونا؛ (سورج کا) ڈوبنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "سات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "several",
+   "gloss": "کئی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "سلائی کی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "سلائی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "شکل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "she",
+   "gloss": "وہ (عورت)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "خول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "چمکنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "چمکتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "چمکتا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "جہاز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "جوتا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "دکان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "ساحل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "short",
+   "gloss": "مختصر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "should",
+   "gloss": "چاہیے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "کندھے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "چلایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "show",
+   "gloss": "دکھانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "بند؛ بند کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "بیمار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "بینائی؛ منظر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "نشان؛ دستخط کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "دستخط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "خاموش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "چاندی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "سادہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "سادہ لوح آدمی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "گانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "ڈوبنا؛ سنک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "بہن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "بیٹھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "six",
+   "gloss": "چھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "size",
+   "gloss": "سائز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "آسمان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "سونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "آستین",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "پھسل گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "پھسلتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "small",
+   "gloss": "چھوٹا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "بو؛ سونگھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "خراٹے لینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "برف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "so",
+   "gloss": "اس لیے؛ اتنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "نرم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "نرم ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "some",
+   "gloss": "کچھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "کوئی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "something",
+   "gloss": "کچھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "کہیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "son",
+   "gloss": "بیٹا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "song",
+   "gloss": "گانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "جلد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "غم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "غم کے ساتھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "آواز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "سوپ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "space",
+   "gloss": "خالی جگہ؛ خلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "بولنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "special",
+   "gloss": "خاص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "خرچ کرنا؛ گزارنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "گراتا ہے (مائع)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "روح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "پھیلانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "بہار؛ چشمہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "square",
+   "gloss": "چوک؛ مربع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "گھس کر نکلنا؛ نچوڑنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "سیڑھیاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "ٹھیلے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "پاؤں پٹخا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "کھڑا ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "star",
+   "gloss": "ستارہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "شروع ہوتا ہے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "ٹھہرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "چرانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "ڈنڈی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "سوتیلی ماں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "سوتیلی بہن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "چھڑی؛ چپکنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "چپچپا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "still",
+   "gloss": "اب بھی؛ ساکن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "سلائی کی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "معدہ؛ پیٹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "پتھر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "رکنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "طوفان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "story",
+   "gloss": "کہانی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "سیدھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "بال کی لٹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "عجیب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "اجنبی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "ندی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "street",
+   "gloss": "گلی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "طاقت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "پھیلایا؛ تان دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "(ماچس) جلانا؛ مارنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "ٹھوکر کھائی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "بے وقوف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "کامیاب ہونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "کامیاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "such",
+   "gloss": "ایسا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "اچانک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "چینی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "تجویز دی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "گرمیوں کا موسم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "دھوپ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "طلوعِ آفتاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "غروبِ آفتاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "مبینہ؛ فرض کیا گیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "حیرت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "گھرا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "شک کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "تلوار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "table",
+   "gloss": "میز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "take",
+   "gloss": "لے جانا؛ لینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "بات کی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "بولتا ہوا؛ بات چیت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "لمبے قد والا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "task",
+   "gloss": "کام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "چائے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "آنسو؛ پھاڑنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "بتانا؛ سنانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "دس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "خوفناک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "than",
+   "gloss": "سے (موازنے میں)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "شکریہ ادا کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "that",
+   "gloss": "وہ؛ کہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(معرفہ آرٹیکل)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "their",
+   "gloss": "ان کا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "them",
+   "gloss": "انہیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "وہ خود",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "then",
+   "gloss": "پھر؛ تب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "there",
+   "gloss": "وہاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "these",
+   "gloss": "یہ (جمع)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "they",
+   "gloss": "وہ (جمع)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "موٹا؛ گھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "چور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "پتلا؛ دبلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "چیز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "think",
+   "gloss": "سوچنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "third",
+   "gloss": "تیسرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "تیرہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "this",
+   "gloss": "یہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "those",
+   "gloss": "وہ (جمع)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "though",
+   "gloss": "اگرچہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "سوچا؛ خیال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "ہزار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "دھاگا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "دھمکی دی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "دھمکی آمیز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "three",
+   "gloss": "تین",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "گلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "through",
+   "gloss": "کے آر پار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "کے دوران ہر جگہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "پھینکنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(نام) تھمبلینا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "باندھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "باندھا؛ بندھا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "مضبوطی سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "time",
+   "gloss": "وقت؛ بار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "ننھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "to",
+   "gloss": "کو؛ کے لیے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "today",
+   "gloss": "آج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "together",
+   "gloss": "ایک ساتھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(نام)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "too",
+   "gloss": "بھی؛ بہت زیادہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "دانت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "top",
+   "gloss": "اوپری حصہ؛ چوٹی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "رابطہ (رابطے میں رہنا)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "کی طرف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "town",
+   "gloss": "قصبہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "کھلونا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "پیشہ؛ دستکاری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "train",
+   "gloss": "ریل گاڑی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "سفر کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "سفر کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "خزانہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "برتاؤ کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "درخت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "کانپ اٹھا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "مصیبتیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "ناند",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "true",
+   "gloss": "سچ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "تنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "try",
+   "gloss": "کوشش کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "مڑنا؛ باری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "بارہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "بیس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "two",
+   "gloss": "دو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "بدصورت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "قاصر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "under",
+   "gloss": "کے نیچے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "زیر زمین",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "سمجھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "ادھورا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "نااہل؛ غیر موزوں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "کھول دیا (تہہ کیا ہوا)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "ناخوش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "کے برعکس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "بغیر روشنی کا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "کھولتا ہے (گرہ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "until",
+   "gloss": "تک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "غیر معمولی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "up",
+   "gloss": "اوپر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "پریشان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "اوپر کی منزل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "us",
+   "gloss": "ہمیں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "use",
+   "gloss": "استعمال کرنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "مفید",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "وسیع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "very",
+   "gloss": "بہت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "فتوحات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "شدت سے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "ملنے جانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "مہمان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "انتظار کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "انتظار کرتے ہوئے",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "جاگنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "چلنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "دیوار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "گھومتا رہا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "بھٹکتا ہوا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "want",
+   "gloss": "چاہنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "الماری",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "گرم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "خبردار کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "دھویا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "کلائی کی گھڑی؛ دیکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "water",
+   "gloss": "پانی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "ہاتھ ہلایا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "لہریں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "way",
+   "gloss": "راستہ؛ طریقہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "we",
+   "gloss": "ہم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "کمزور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "کمزور کر دیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "امیر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "پہننا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "شادی کی تقریب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "week",
+   "gloss": "ہفتہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "استقبال کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "west",
+   "gloss": "مغرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "گیلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "what",
+   "gloss": "کیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "when",
+   "gloss": "جب؛ کب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "where",
+   "gloss": "کہاں؛ جہاں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "جہاں کہیں بھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "آیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "which",
+   "gloss": "کون سا؛ جو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "while",
+   "gloss": "جبکہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "white",
+   "gloss": "سفید",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "who",
+   "gloss": "کون؛ جو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "جو کوئی بھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "پورا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "کس کا؛ جس کا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "why",
+   "gloss": "کیوں",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "بدکار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "بیوی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "جنگلی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "ویرانہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "will",
+   "gloss": "(مستقبل)؛ ارادہ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "بخوشی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "win",
+   "gloss": "جیتنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "کھڑکی کی چوکھٹ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "شراب (وائن)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "پر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "دانا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "خواہش کرنا؛ خواہش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "with",
+   "gloss": "کے ساتھ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "without",
+   "gloss": "کے بغیر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "عورت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "شاندار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "لکڑی؛ جنگل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "لکڑی کا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "word",
+   "gloss": "لفظ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "work",
+   "gloss": "کام کرنا؛ کام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "مزدور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "ورکشاپ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "world",
+   "gloss": "دنیا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "فکرمند",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "لائق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "would",
+   "gloss": "(شرطیہ)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "زخم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "write",
+   "gloss": "لکھنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "مصنف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "غلط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "year",
+   "gloss": "سال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "ابھی تک؛ پھر بھی",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(نام) یارک",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "you",
+   "gloss": "تم؛ آپ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "young",
+   "gloss": "جوان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "نوجوان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "your",
+   "gloss": "تمہارا؛ آپ کا",
+   "source": "claude-draft"
+  }
+ ],
+ "sampleApprovedBy": "owner-asked-all-languages-2026-10-19"
+}

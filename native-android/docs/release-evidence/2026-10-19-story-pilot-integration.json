@@ -1,0 +1,63 @@
+{
+  "recordedAt": "2026-10-19T18:44:37.684232+00:00",
+  "status": "local-contract-verified-not-published",
+  "sourceContentCommit": "7de252a",
+  "productionRuntimeChanged": false,
+  "liveContentChanged": false,
+  "backend": {
+    "tests": 165,
+    "failures": 0,
+    "skipped": 0
+  },
+  "android": {
+    "avd": "English_Tales_Language_Test",
+    "api": 36,
+    "testClass": "com.yurken.englishtales.data.StoryPilotIntegrationTest",
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "fixtureSHA256": "fd0852f4664af683ffa0a15d174a291df9459342cdb5f9751ba03265a79c7ed7",
+    "coverage": [
+      "cache decoding and sentence-word links",
+      "save word and practice ladder",
+      "FSRS review and captured-revision queued events",
+      "old sentence position and retained saved vocabulary"
+    ],
+    "limitation": "Isolated test account database and cache fixture; no UI journey, real cloud sync, physical phone or production acceptance.",
+    "fixtureStoryId": "quiet-morning",
+    "languageCoverage": "Five stories and eleven languages structurally checked in backend; Android runs the single fixture in the configured support language."
+  },
+  "compilerSHA256": "83649ae32c24f5108f72220fd6df39d6ef89c3c22f5cb5955b7be2c3386802ee",
+  "sourceCatalogSHA256": "c60367cf6bb7681f9d3d4bc1636dc5c370dcaa4622de8e68263ba6d25ada72a0",
+  "previewDocuments": [
+    {
+      "storyId": "quiet-morning",
+      "sha256": "f7a780339d226b3da75676fe74c3e7aaf06e04f306f4e0fc3540876a3076ebb6",
+      "words": 10
+    },
+    {
+      "storyId": "paper-boat",
+      "sha256": "154fcdb1be9961430bef41e832efcc75a3a563572d876904044c7b5f7a0db284",
+      "words": 10
+    },
+    {
+      "storyId": "last-train",
+      "sha256": "7ae4799fca6b67b07f972a32326cb908ea763b2b88fac08897079484f952f0d7",
+      "words": 10
+    },
+    {
+      "storyId": "classic-tortoise-hare",
+      "sha256": "244be7cd6890e7b2744ae6476c4700b3cadebec6dfd661918dac4d6b7ac09196",
+      "words": 10
+    },
+    {
+      "storyId": "classic-lion-mouse",
+      "sha256": "03d3d9dc67c428569781e82e8f082cc5c6c05f769d0d4a982c419eee1501a194",
+      "words": 10
+    }
+  ],
+  "humanEditorialReview": "pending",
+  "humanLanguageReview": "pending",
+  "liveRevisionSnapshotAcceptance": "pending"
+}

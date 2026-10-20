@@ -1,0 +1,4554 @@
+{
+ "schemaVersion": 1,
+ "lang": "vi",
+ "source": "Built by tools/glossary.mjs from backend/content/glossary/vi.json: machine draft, not reviewed by a native speaker.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "một"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "bỏ rơi"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "khả năng"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "trên (tàu, xe)"
+  },
+  {
+   "lemma": "about",
+   "gloss": "về; khoảng"
+  },
+  {
+   "lemma": "above",
+   "gloss": "ở trên"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "chấp nhận"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "vô tình"
+  },
+  {
+   "lemma": "across",
+   "gloss": "băng qua; bên kia"
+  },
+  {
+   "lemma": "act",
+   "gloss": "hành động"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "thêm"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "ngưỡng mộ"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "ngưỡng mộ"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "thừa nhận"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "lời khuyên"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "sợ"
+  },
+  {
+   "lemma": "after",
+   "gloss": "sau"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "buổi chiều"
+  },
+  {
+   "lemma": "again",
+   "gloss": "lại"
+  },
+  {
+   "lemma": "against",
+   "gloss": "chống lại"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "trước đây"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "đồng ý"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "đồng ý"
+  },
+  {
+   "lemma": "air",
+   "gloss": "không khí"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "còn sống"
+  },
+  {
+   "lemma": "all",
+   "gloss": "tất cả"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "cho phép"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "gần như"
+  },
+  {
+   "lemma": "along",
+   "gloss": "dọc theo"
+  },
+  {
+   "lemma": "already",
+   "gloss": "đã"
+  },
+  {
+   "lemma": "also",
+   "gloss": "cũng"
+  },
+  {
+   "lemma": "although",
+   "gloss": "mặc dù"
+  },
+  {
+   "lemma": "always",
+   "gloss": "luôn luôn"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "kinh ngạc"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "đáng kinh ngạc"
+  },
+  {
+   "lemma": "among",
+   "gloss": "giữa"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "số lượng"
+  },
+  {
+   "lemma": "an",
+   "gloss": "một"
+  },
+  {
+   "lemma": "and",
+   "gloss": "và"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "cơn giận"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "giận dữ"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "động vật"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "another",
+   "gloss": "khác"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "trả lời"
+  },
+  {
+   "lemma": "any",
+   "gloss": "bất kỳ"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "nữa"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "bất kỳ ai"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "bất cứ điều gì"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "rời ra"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "vẻ ngoài"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "xuất hiện"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "quả táo"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "tiến lại gần"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "có vũ trang"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "cánh tay"
+  },
+  {
+   "lemma": "around",
+   "gloss": "xung quanh"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "sắp xếp"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "đến"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "đến"
+  },
+  {
+   "lemma": "as",
+   "gloss": "như; trong khi"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "hỏi; xin"
+  },
+  {
+   "lemma": "at",
+   "gloss": "ở; tại"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "tấn công"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "người hầu"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "mùa thu"
+  },
+  {
+   "lemma": "away",
+   "gloss": "đi xa; xa"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "vụng về"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "em bé"
+  },
+  {
+   "lemma": "back",
+   "gloss": "trở lại; lưng"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "túi"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "quả bóng; buổi dạ hội"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "vòng; dây đai"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "thanh; song sắt"
+  },
+  {
+   "lemma": "be",
+   "gloss": "là; thì"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "đánh; thắng"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "đẹp"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "vẻ đẹp"
+  },
+  {
+   "lemma": "because",
+   "gloss": "bởi vì"
+  },
+  {
+   "lemma": "become",
+   "gloss": "trở thành"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "giường"
+  },
+  {
+   "lemma": "before",
+   "gloss": "trước"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "van xin"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "bắt đầu"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "cư xử"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "phía sau"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "thuộc về"
+  },
+  {
+   "lemma": "below",
+   "gloss": "bên dưới"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "cúi xuống"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "bên dưới"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "bên cạnh"
+  },
+  {
+   "lemma": "between",
+   "gloss": "giữa"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "bên ngoài; vượt quá"
+  },
+  {
+   "lemma": "big",
+   "gloss": "to; lớn"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "con chim"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "sinh nhật"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "miếng nhỏ; đã cắn"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "cắn"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "cực kỳ (lạnh)"
+  },
+  {
+   "lemma": "black",
+   "gloss": "đen"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "đã đổ lỗi"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "những chiếc chăn"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "máu"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "nở hoa"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "đã nở hoa"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "cú đánh"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "xanh dương"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "đã khoe khoang"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "body",
+   "gloss": "cơ thể"
+  },
+  {
+   "lemma": "born",
+   "gloss": "được sinh ra"
+  },
+  {
+   "lemma": "both",
+   "gloss": "cả hai"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "chai"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "đáy; phía dưới"
+  },
+  {
+   "lemma": "box",
+   "gloss": "cái hộp"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "cành cây"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "bánh mì"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(tên riêng) Bremen"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "bụi hoa hồng dại có gai"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "chú rể"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "sáng"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "độ sáng"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "mang đến"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "anh/em trai"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "nâu"
+  },
+  {
+   "lemma": "build",
+   "gloss": "xây dựng"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "cháy"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "bị cháy"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "nổ tung"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "bận"
+  },
+  {
+   "lemma": "but",
+   "gloss": "nhưng"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "con bướm"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "mua"
+  },
+  {
+   "lemma": "by",
+   "gloss": "bên cạnh; bởi"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "bánh ngọt"
+  },
+  {
+   "lemma": "call",
+   "gloss": "cuộc gọi; gọi"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "máy ảnh"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "trại"
+  },
+  {
+   "lemma": "can",
+   "gloss": "có thể"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "những cây nến"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "không thể"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "bắt giữ"
+  },
+  {
+   "lemma": "care",
+   "gloss": "sự chăm sóc; quan tâm"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "cẩn thận"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "xe ngựa"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "mang; vác"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "con mèo"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "bắt"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "đã gây ra"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "gây ra"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "đã ăn mừng"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "đang ăn mừng"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "lễ kỷ niệm"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "xu"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "chắc chắn; nhất định"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "cái ghế"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "cơ hội"
+  },
+  {
+   "lemma": "change",
+   "gloss": "thay đổi"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "đang lao tới"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "đã đuổi theo"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "rẻ"
+  },
+  {
+   "lemma": "check",
+   "gloss": "kiểm tra"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "phô mai"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(tên riêng) Chicago"
+  },
+  {
+   "lemma": "child",
+   "gloss": "đứa trẻ"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "tuổi thơ"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "sự lựa chọn"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "chọn"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "Giáng sinh"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "nghĩa địa nhà thờ"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(tên riêng) Cô bé Lọ Lem"
+  },
+  {
+   "lemma": "city",
+   "gloss": "thành phố"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "đã tuyên bố"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "dọn sạch; rõ ràng"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "thư ký; nhân viên"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "leo trèo"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "đồng hồ"
+  },
+  {
+   "lemma": "close",
+   "gloss": "đóng; gần"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "những đám mây"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "lạnh"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "thu thập"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "những màu sắc"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "cái lược"
+  },
+  {
+   "lemma": "come",
+   "gloss": "đến"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "thoải mái"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "một cách thoải mái"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "đã an ủi"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "bạn đồng hành"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "so sánh"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "đã phàn nàn"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "hoàn thành; đầy đủ"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "sự bối rối"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "sự liên lạc"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "tiếp tục"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "đã thuyết phục; tin chắc"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "đầu bếp; nấu ăn"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "đã làm mát"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "góc"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "có giá; chi phí"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "túp lều"
+  },
+  {
+   "lemma": "could",
+   "gloss": "đã có thể; có thể"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "đã đếm"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "vô số"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "cặp đôi"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "được phủ; đã phủ"
+  },
+  {
+   "lemma": "create",
+   "gloss": "tạo ra"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "đã chỉ trích"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "đã băng qua"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "đám đông"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "tàn nhẫn"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "sự tàn nhẫn"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "khóc"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "đã cuộn tròn"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "khách hàng"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "cắt"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "nhảy múa"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "nguy hiểm"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "nguy hiểm"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "dám"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "tối"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "con gái"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "bình minh"
+  },
+  {
+   "lemma": "day",
+   "gloss": "ngày"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "ánh sáng ban ngày"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "chết"
+  },
+  {
+   "lemma": "death",
+   "gloss": "cái chết"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "dối trá"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "đã quyết định"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "quyết định"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "việc làm"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "sâu"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "đánh bại"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "bảo vệ"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "mỏng manh"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "ngon"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "niềm vui"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "đã đòi hỏi"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "chối bỏ"
+  },
+  {
+   "lemma": "described",
+   "gloss": "đã mô tả"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "bàn làm việc"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "sự tuyệt vọng"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "một cách tuyệt vọng"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "mặc dù"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "đã phá hủy"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "kim cương"
+  },
+  {
+   "lemma": "die",
+   "gloss": "chết"
+  },
+  {
+   "lemma": "died",
+   "gloss": "đã chết"
+  },
+  {
+   "lemma": "different",
+   "gloss": "khác"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "khó"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "biến mất"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "xa xôi"
+  },
+  {
+   "lemma": "do",
+   "gloss": "làm"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "đô la"
+  },
+  {
+   "lemma": "door",
+   "gloss": "cửa"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "ô cửa"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "bột nhào"
+  },
+  {
+   "lemma": "down",
+   "gloss": "xuống"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "xuôi dòng"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "kéo về phía mình"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "bức vẽ"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "đã sợ hãi"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "đã mơ"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "những giấc mơ"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "uống"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "tài xế"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "làm rơi; giọt"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "đã chết đuối"
+  },
+  {
+   "lemma": "due",
+   "gloss": "đến hạn; dự kiến"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "xỉn; nhàm chán"
+  },
+  {
+   "lemma": "during",
+   "gloss": "trong suốt"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "đầy bụi"
+  },
+  {
+   "lemma": "each",
+   "gloss": "mỗi"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "tai"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "trước đó"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "dễ"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "ăn"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "gỗ mun"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(tên riêng) Ai Cập"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "tám mươi"
+  },
+  {
+   "lemma": "either",
+   "gloss": "cũng không"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "lớn nhất"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "mười một"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "else",
+   "gloss": "khác"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "đã ôm"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "trống"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "bị mê hoặc; phép thuật"
+  },
+  {
+   "lemma": "end",
+   "gloss": "kết thúc"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "gây nguy hiểm"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "năng lượng"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "đã tận hưởng"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "khổng lồ"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "đủ"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "bước vào"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "nhiệt tình"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "hoàn toàn"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "lối vào"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "trốn thoát"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "đặc biệt là"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "đêm trước (Giáng sinh)"
+  },
+  {
+   "lemma": "even",
+   "gloss": "thậm chí"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "cuối cùng"
+  },
+  {
+   "lemma": "every",
+   "gloss": "mỗi"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "mọi người"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "mọi thứ"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "khắp nơi"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "chính xác"
+  },
+  {
+   "lemma": "except",
+   "gloss": "trừ"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "đổi lấy; trao đổi"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "kiệt sức"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "tồn tại"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "đã mong đợi; được mong đợi"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "đang mong đợi"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "chi phí"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "đắt"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "giải thích"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "lời giải thích"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "khám phá"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "biểu cảm"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "phi thường"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "mắt"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "lông mày"
+  },
+  {
+   "lemma": "face",
+   "gloss": "khuôn mặt"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "đã phai"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "đã thất bại"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "thất bại"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "rơi"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "đang rơi"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "rơi; thác nước"
+  },
+  {
+   "lemma": "false",
+   "gloss": "sai; giả"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "quen thuộc"
+  },
+  {
+   "lemma": "family",
+   "gloss": "gia đình"
+  },
+  {
+   "lemma": "far",
+   "gloss": "xa"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "nông dân"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "sân trại"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "nhanh"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "đã buộc"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "béo; mỡ"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "khuyết điểm"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "nỗi sợ"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "cho ăn"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "cảm thấy"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "cảm xúc"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "đã đem về"
+  },
+  {
+   "lemma": "few",
+   "gloss": "vài"
+  },
+  {
+   "lemma": "field",
+   "gloss": "cánh đồng"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "dữ tợn"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "mười lăm"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "thứ mười lăm"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "đánh nhau"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "đã lấp đầy; đầy"
+  },
+  {
+   "lemma": "final",
+   "gloss": "cuối cùng"
+  },
+  {
+   "lemma": "find",
+   "gloss": "tìm thấy"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "tốt; mịn"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "ngón tay"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "người Phần Lan; thuộc Phần Lan"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "lửa"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "chặt"
+  },
+  {
+   "lemma": "first",
+   "gloss": "đầu tiên"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "con cá"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "vừa người"
+  },
+  {
+   "lemma": "five",
+   "gloss": "năm"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "phẳng; căn hộ"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "đã bỏ chạy"
+  },
+  {
+   "lemma": "float",
+   "gloss": "nổi"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "bầy"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "sàn nhà; tầng"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "bông hoa"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "bay"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "đi theo"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "những người đi theo"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "yêu mến"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "ngốc nghếch"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "bàn chân"
+  },
+  {
+   "lemma": "for",
+   "gloss": "cho; trừ"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "mãi mãi"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "quên"
+  },
+  {
+   "lemma": "form",
+   "gloss": "hình thành; hình dạng"
+  },
+  {
+   "lemma": "four",
+   "gloss": "bốn"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "đóng băng"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "lạnh cóng; sự đóng băng"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "tươi"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "bạn"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "tình bạn"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "làm sợ hãi"
+  },
+  {
+   "lemma": "from",
+   "gloss": "từ"
+  },
+  {
+   "lemma": "front",
+   "gloss": "phía trước"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "trái cây"
+  },
+  {
+   "lemma": "full",
+   "gloss": "đầy"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "niềm vui"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "giận dữ"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "giành được"
+  },
+  {
+   "lemma": "games",
+   "gloss": "trò chơi"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "khu vườn"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "thu thập"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "nhìn chằm chằm; ánh nhìn"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "dịu dàng"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "một cách nhẹ nhàng"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "get",
+   "gloss": "nhận; trở nên; đến"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "con ma"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "cô bé"
+  },
+  {
+   "lemma": "give",
+   "gloss": "cho"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "những người cho đi"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "kính; ly"
+  },
+  {
+   "lemma": "go",
+   "gloss": "đi"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "con dê"
+  },
+  {
+   "lemma": "god",
+   "gloss": "thần; Chúa"
+  },
+  {
+   "lemma": "going",
+   "gloss": "đang đi"
+  },
+  {
+   "lemma": "good",
+   "gloss": "tốt"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "tạm biệt; lời chia tay"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "duyên dáng"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "hùng vĩ"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "ông"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "bà"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "xám"
+  },
+  {
+   "lemma": "great",
+   "gloss": "lớn; tuyệt vời"
+  },
+  {
+   "lemma": "green",
+   "gloss": "xanh lá"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "đã chào"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "xám"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "mặt đất"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "lớn lên"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "đoán"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "người dẫn đường; hướng dẫn"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "súng"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "cơn gió giật"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "tóc"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "kiểu cắt tóc"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "các đại sảnh"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "bàn tay"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "treo"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "xảy ra"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "hạnh phúc"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "vui vẻ"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "cứng; khó"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "khắc nghiệt"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "cái mũ"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "nở (khỏi trứng)"
+  },
+  {
+   "lemma": "have",
+   "gloss": "có"
+  },
+  {
+   "lemma": "he",
+   "gloss": "anh ấy; ông ấy"
+  },
+  {
+   "lemma": "head",
+   "gloss": "đầu"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "nghe"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "trái tim"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "làm nóng; nhiệt"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "hàng rào cây"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "xin chào"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "những người giúp đỡ"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "her",
+   "gloss": "của cô ấy; cô ấy (tân ngữ)"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "chính cô ấy"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "đã trốn; đã giấu"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "trốn"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "ngọn đồi"
+  },
+  {
+   "lemma": "him",
+   "gloss": "anh ấy (tân ngữ)"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "chính anh ấy"
+  },
+  {
+   "lemma": "his",
+   "gloss": "của anh ấy"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "giữ; cầm"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "giữ; cầm"
+  },
+  {
+   "lemma": "home",
+   "gloss": "nhà; về nhà"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "mũ trùm"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "hy vọng"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "cái sừng"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "kinh hoàng"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "con ngựa"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "giờ"
+  },
+  {
+   "lemma": "house",
+   "gloss": "ngôi nhà"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "việc nhà"
+  },
+  {
+   "lemma": "how",
+   "gloss": "như thế nào"
+  },
+  {
+   "lemma": "however",
+   "gloss": "tuy nhiên"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "đã ôm"
+  },
+  {
+   "lemma": "human",
+   "gloss": "con người"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "một trăm"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "đã treo; được treo"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "đã vội vã"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "làm đau; bị thương"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "chồng"
+  },
+  {
+   "lemma": "i",
+   "gloss": "tôi"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "ý tưởng"
+  },
+  {
+   "lemma": "if",
+   "gloss": "nếu"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "ốm"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "tưởng tượng"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "đã tưởng tượng"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "ngay lập tức"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "bất tử"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "bất khả thi"
+  },
+  {
+   "lemma": "in",
+   "gloss": "trong; ở"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "bị thương"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "bên trong"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "đã khăng khăng"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "kiểm tra"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "thay vào đó"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "quan tâm"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "bị gián đoạn"
+  },
+  {
+   "lemma": "into",
+   "gloss": "vào trong"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "đã mời"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "mời"
+  },
+  {
+   "lemma": "it",
+   "gloss": "nó"
+  },
+  {
+   "lemma": "its",
+   "gloss": "của nó"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "mứt"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "ghen tị"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(tên riêng) Chúa Giê-su"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "job",
+   "gloss": "công việc"
+  },
+  {
+   "lemma": "join",
+   "gloss": "tham gia"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "đã đùa"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "niềm vui"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "thẩm phán; phán xét"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "đã nhảy"
+  },
+  {
+   "lemma": "just",
+   "gloss": "chỉ; vừa đúng"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "giữ"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "đã đá"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "giết"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "lòng tốt"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "vương quốc"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "đã hôn"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "những nụ hôn"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "nhà bếp"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "đầu gối"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "đã đánh ngã; đã gõ (cửa)"
+  },
+  {
+   "lemma": "know",
+   "gloss": "biết"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "dây giày"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "hồ"
+  },
+  {
+   "lemma": "land",
+   "gloss": "đất; xứ sở; hạ cánh"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(tên riêng) Lapland"
+  },
+  {
+   "lemma": "large",
+   "gloss": "lớn"
+  },
+  {
+   "lemma": "last",
+   "gloss": "cuối cùng"
+  },
+  {
+   "lemma": "later",
+   "gloss": "sau đó"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "cười"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "đã nằm; đã đặt"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "đã nghiêng; đã dựa"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "đã học"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "việc học"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "rời đi; để lại"
+  },
+  {
+   "lemma": "left",
+   "gloss": "đã rời đi; trái"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "cái chân"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "cho mượn"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "bài học"
+  },
+  {
+   "lemma": "let",
+   "gloss": "để; cho phép"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "lá thư; chữ cái"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "những lời nói dối; nằm"
+  },
+  {
+   "lemma": "life",
+   "gloss": "cuộc sống"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "nâng lên"
+  },
+  {
+   "lemma": "light",
+   "gloss": "ánh sáng; nhẹ"
+  },
+  {
+   "lemma": "like",
+   "gloss": "giống như; thích"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(tên riêng); hoa huệ tây"
+  },
+  {
+   "lemma": "line",
+   "gloss": "đường kẻ; hàng"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "lắng nghe"
+  },
+  {
+   "lemma": "little",
+   "gloss": "nhỏ; một chút"
+  },
+  {
+   "lemma": "live",
+   "gloss": "sống"
+  },
+  {
+   "lemma": "local",
+   "gloss": "địa phương"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "đã khóa; bị khóa"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "hiu quạnh; cô đơn"
+  },
+  {
+   "lemma": "long",
+   "gloss": "dài"
+  },
+  {
+   "lemma": "look",
+   "gloss": "trông có vẻ; nhìn"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "đã nới lỏng"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "mất"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "to (âm thanh)"
+  },
+  {
+   "lemma": "love",
+   "gloss": "yêu; tình yêu"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "đã hạ xuống"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "may mắn"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "cục"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(tên riêng) các nhà thông thái phương Đông"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "make",
+   "gloss": "làm"
+  },
+  {
+   "lemma": "man",
+   "gloss": "người đàn ông"
+  },
+  {
+   "lemma": "many",
+   "gloss": "nhiều"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "dấu vết"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "hôn nhân"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "kết hôn"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "đầm lầy"
+  },
+  {
+   "lemma": "master",
+   "gloss": "ông chủ; bậc thầy"
+  },
+  {
+   "lemma": "match",
+   "gloss": "que diêm; khớp"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "vật liệu"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "đã quan trọng"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "thị trưởng"
+  },
+  {
+   "lemma": "me",
+   "gloss": "tôi (tân ngữ)"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "xấu tính; có nghĩa là"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "gặp"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "tan chảy"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "sự bừa bộn"
+  },
+  {
+   "lemma": "message",
+   "gloss": "tin nhắn"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "người đưa tin"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "kim loại"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "nửa đêm"
+  },
+  {
+   "lemma": "might",
+   "gloss": "có thể"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "dặm"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "sữa"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "bộ trưởng"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "phút"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "đã nhớ; đã lỡ"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "mất tích"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "chế nhạo"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "khoảnh khắc"
+  },
+  {
+   "lemma": "more",
+   "gloss": "hơn"
+  },
+  {
+   "lemma": "most",
+   "gloss": "nhất; hầu hết"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "mẹ"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "những ngọn núi"
+  },
+  {
+   "lemma": "move",
+   "gloss": "di chuyển; chuyển nhà"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "chuyển động"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "Bà"
+  },
+  {
+   "lemma": "music",
+   "gloss": "âm nhạc"
+  },
+  {
+   "lemma": "must",
+   "gloss": "phải"
+  },
+  {
+   "lemma": "my",
+   "gloss": "của tôi"
+  },
+  {
+   "lemma": "name",
+   "gloss": "tên"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "người kể chuyện"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "hẹp"
+  },
+  {
+   "lemma": "near",
+   "gloss": "gần"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "gần đây"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "những cái cổ"
+  },
+  {
+   "lemma": "need",
+   "gloss": "cần"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "những chiếc kim"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "hàng xóm"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "không... cũng không"
+  },
+  {
+   "lemma": "net",
+   "gloss": "lưới"
+  },
+  {
+   "lemma": "never",
+   "gloss": "không bao giờ"
+  },
+  {
+   "lemma": "new",
+   "gloss": "mới"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "người mới đến"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "tờ báo"
+  },
+  {
+   "lemma": "next",
+   "gloss": "tiếp theo; bên cạnh"
+  },
+  {
+   "lemma": "night",
+   "gloss": "đêm"
+  },
+  {
+   "lemma": "no",
+   "gloss": "không"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "tiếng ồn"
+  },
+  {
+   "lemma": "none",
+   "gloss": "không ai"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "cũng không"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "cái mũi"
+  },
+  {
+   "lemma": "not",
+   "gloss": "không"
+  },
+  {
+   "lemma": "note",
+   "gloss": "ghi chú"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "đã nhận ra"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "nhận ra"
+  },
+  {
+   "lemma": "now",
+   "gloss": "bây giờ"
+  },
+  {
+   "lemma": "of",
+   "gloss": "của; từ"
+  },
+  {
+   "lemma": "off",
+   "gloss": "lên đường; tắt"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "đề nghị"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "nhân viên; sĩ quan"
+  },
+  {
+   "lemma": "official",
+   "gloss": "chính thức; quan chức"
+  },
+  {
+   "lemma": "often",
+   "gloss": "thường"
+  },
+  {
+   "lemma": "old",
+   "gloss": "già; cũ"
+  },
+  {
+   "lemma": "on",
+   "gloss": "trên; vào"
+  },
+  {
+   "lemma": "once",
+   "gloss": "một lần; ngày xưa"
+  },
+  {
+   "lemma": "one",
+   "gloss": "một; ai đó"
+  },
+  {
+   "lemma": "only",
+   "gloss": "chỉ"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "lên trên"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "tiếp tục về phía trước"
+  },
+  {
+   "lemma": "open",
+   "gloss": "mở"
+  },
+  {
+   "lemma": "or",
+   "gloss": "hoặc"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "đã ra lệnh"
+  },
+  {
+   "lemma": "original",
+   "gloss": "ban đầu"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "đồ trang trí"
+  },
+  {
+   "lemma": "other",
+   "gloss": "khác"
+  },
+  {
+   "lemma": "out",
+   "gloss": "ra ngoài"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "bộ trang phục"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "bên ngoài"
+  },
+  {
+   "lemma": "over",
+   "gloss": "về phía; phía trên"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "trên đầu"
+  },
+  {
+   "lemma": "package",
+   "gloss": "gói hàng"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "việc đóng gói"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "nỗi đau"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "đau đớn"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "cặp"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "cung điện"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "giấy"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "bố mẹ"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "sự chia ly"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "bạn nhảy; vợ/chồng"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "lối đi"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "đã đi qua"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "đi ngang qua"
+  },
+  {
+   "lemma": "past",
+   "gloss": "quá khứ; đi qua"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "miếng vá; mảng"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "sự kiên nhẫn"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "trả tiền"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "khoản thanh toán"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "quả đào"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "viên sỏi"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "đồng xu nhỏ"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "hoàn hảo"
+  },
+  {
+   "lemma": "person",
+   "gloss": "người"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "đã thuyết phục"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "bức ảnh"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "những bức ảnh"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "hái; chọn"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "mẩu; miếng"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "những con bồ câu"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "đống"
+  },
+  {
+   "lemma": "place",
+   "gloss": "nơi"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "thường phục; giản dị"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "kế hoạch"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "đã trồng"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "việc trồng"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "cây cối"
+  },
+  {
+   "lemma": "play",
+   "gloss": "chơi"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "đã lao xuống"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "đã chỉ; nhọn"
+  },
+  {
+   "lemma": "police",
+   "gloss": "cảnh sát"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "cảnh sát (nam)"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "nghèo; tội nghiệp"
+  },
+  {
+   "lemma": "position",
+   "gloss": "chức vụ"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "đã rót"
+  },
+  {
+   "lemma": "power",
+   "gloss": "sức mạnh"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "mạnh mẽ"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "thích hơn"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "những sự chuẩn bị"
+  },
+  {
+   "lemma": "present",
+   "gloss": "món quà; hiện tại"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "đã giả vờ"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "đã ngăn cản"
+  },
+  {
+   "lemma": "price",
+   "gloss": "giá"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "đâm"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "nhà tù"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "thịnh vượng"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "bảo vệ"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "chứng minh"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "kéo"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "đã trừng phạt"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "hình phạt"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "kêu gừ gừ"
+  },
+  {
+   "lemma": "push",
+   "gloss": "đẩy"
+  },
+  {
+   "lemma": "put",
+   "gloss": "đặt"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "một cách nhanh chóng"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "có mưa"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "phản ứng"
+  },
+  {
+   "lemma": "read",
+   "gloss": "đọc"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "sẵn sàng"
+  },
+  {
+   "lemma": "real",
+   "gloss": "thật"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "đã nhận ra"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "lý do"
+  },
+  {
+   "lemma": "received",
+   "gloss": "đã nhận"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "gần đây"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "nhận ra"
+  },
+  {
+   "lemma": "red",
+   "gloss": "đỏ"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "từ chối"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "đã từ chối"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "sự từ chối"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "đã ở lại"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "còn lại"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "lời nhận xét"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "đáng chú ý"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "nhớ"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "đã nhắc"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "lời nhắc"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "loại bỏ"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "đã lặp lại"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "câu trả lời"
+  },
+  {
+   "lemma": "report",
+   "gloss": "báo cáo"
+  },
+  {
+   "lemma": "request",
+   "gloss": "yêu cầu"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "người cứu hộ"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "chịu trách nhiệm"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "nhà hàng"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "đã phục hồi"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "tiết lộ"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "phần thưởng"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "dải ruy băng"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "cưỡi"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "việc cưỡi"
+  },
+  {
+   "lemma": "right",
+   "gloss": "đúng; phải"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "tăng lên; mọc"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "bờ sông"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "nướng"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "cướp"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "tên cướp"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "bánh mì cuộn nhỏ"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "mái nhà"
+  },
+  {
+   "lemma": "room",
+   "gloss": "căn phòng"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "những chiếc rễ"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "hoa hồng; đã tăng lên"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "thô ráp"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(tên riêng) Rumpelstiltskin"
+  },
+  {
+   "lemma": "run",
+   "gloss": "chạy"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "đã lao đi"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) hậu tố sở hữu"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "nỗi buồn"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "same",
+   "gloss": "giống nhau"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "ngọc bích"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "xúc xích"
+  },
+  {
+   "lemma": "save",
+   "gloss": "cứu; tiết kiệm"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "việc tiết kiệm"
+  },
+  {
+   "lemma": "say",
+   "gloss": "nói"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "hầu như không"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "đã rải; đã tản ra"
+  },
+  {
+   "lemma": "school",
+   "gloss": "trường học"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "biển"
+  },
+  {
+   "lemma": "search",
+   "gloss": "tìm kiếm"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "bí mật"
+  },
+  {
+   "lemma": "see",
+   "gloss": "thấy"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "hạt giống"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "tìm kiếm"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "dường như"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "có vẻ"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "đã nắm lấy"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "bán"
+  },
+  {
+   "lemma": "send",
+   "gloss": "gửi"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "đang gửi"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "câu; bản án"
+  },
+  {
+   "lemma": "service",
+   "gloss": "dịch vụ"
+  },
+  {
+   "lemma": "set",
+   "gloss": "đặt; lên đường; lặn"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "bảy"
+  },
+  {
+   "lemma": "several",
+   "gloss": "vài"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "đã may"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "việc may vá"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "hình dạng"
+  },
+  {
+   "lemma": "she",
+   "gloss": "cô ấy; bà ấy"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "vỏ"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "chiếu sáng"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "chiếu sáng"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "sáng chói"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "con tàu"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "chiếc giày"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "cửa hàng"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "bờ"
+  },
+  {
+   "lemma": "short",
+   "gloss": "ngắn"
+  },
+  {
+   "lemma": "should",
+   "gloss": "nên"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "đôi vai"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "đã hét"
+  },
+  {
+   "lemma": "show",
+   "gloss": "chỉ cho xem"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "đóng"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "ốm"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "thị lực; cảnh tượng"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "dấu hiệu; ký"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "chữ ký"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "im lặng"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "bạc"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "đơn giản"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "kẻ khờ khạo"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "hát"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "chìm; bồn rửa"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "chị/em gái"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "ngồi"
+  },
+  {
+   "lemma": "six",
+   "gloss": "sáu"
+  },
+  {
+   "lemma": "size",
+   "gloss": "kích cỡ"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "bầu trời"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "ngủ"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "tay áo"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "đã trượt"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "trượt"
+  },
+  {
+   "lemma": "small",
+   "gloss": "nhỏ"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "mùi; ngửi"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "ngáy"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "tuyết"
+  },
+  {
+   "lemma": "so",
+   "gloss": "vì vậy; rất"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "mềm"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "mềm đi"
+  },
+  {
+   "lemma": "some",
+   "gloss": "một ít; vài"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "ai đó"
+  },
+  {
+   "lemma": "something",
+   "gloss": "cái gì đó"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "ở đâu đó"
+  },
+  {
+   "lemma": "son",
+   "gloss": "con trai"
+  },
+  {
+   "lemma": "song",
+   "gloss": "bài hát"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "sớm"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "nỗi đau buồn"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "một cách buồn bã"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "âm thanh"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "món súp"
+  },
+  {
+   "lemma": "space",
+   "gloss": "khoảng trống; không gian"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "nói"
+  },
+  {
+   "lemma": "special",
+   "gloss": "đặc biệt"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "tiêu; dành (thời gian)"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "làm đổ"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "linh hồn"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "trải ra"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "mùa xuân; suối"
+  },
+  {
+   "lemma": "square",
+   "gloss": "quảng trường; hình vuông"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "chen qua; vắt"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "cầu thang"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "các quầy hàng"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "đã giậm chân"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "đứng"
+  },
+  {
+   "lemma": "star",
+   "gloss": "ngôi sao"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "bắt đầu"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "ở lại"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "ăn trộm"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "thân cây"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "mẹ kế"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "chị/em gái kế"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "cây gậy; dính"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "dính"
+  },
+  {
+   "lemma": "still",
+   "gloss": "vẫn; yên"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "đã khâu"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "dạ dày; bụng"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "hòn đá"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "dừng lại"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "cơn bão"
+  },
+  {
+   "lemma": "story",
+   "gloss": "câu chuyện"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "thẳng"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "sợi (tóc)"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "lạ lùng"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "người lạ"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "con suối"
+  },
+  {
+   "lemma": "street",
+   "gloss": "đường phố"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "sức mạnh"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "đã vươn; đã kéo căng"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "quẹt (diêm); đánh"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "đã vấp"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "ngu ngốc"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "thành công"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "thành công"
+  },
+  {
+   "lemma": "such",
+   "gloss": "như vậy; như thế"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "đột nhiên"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "đường"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "đã gợi ý"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "mùa hè"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "ánh nắng"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "bình minh"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "hoàng hôn"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "được cho là"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "sự ngạc nhiên"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "bị vây quanh"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "đã nghi ngờ"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "thanh kiếm"
+  },
+  {
+   "lemma": "table",
+   "gloss": "cái bàn"
+  },
+  {
+   "lemma": "take",
+   "gloss": "mang đi; lấy"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "đã nói chuyện"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "đang nói"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "cao"
+  },
+  {
+   "lemma": "task",
+   "gloss": "nhiệm vụ"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "trà"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "giọt nước mắt; xé"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "kể; nói"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "mười"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "khủng khiếp"
+  },
+  {
+   "lemma": "than",
+   "gloss": "hơn"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "cảm ơn"
+  },
+  {
+   "lemma": "that",
+   "gloss": "đó; rằng"
+  },
+  {
+   "lemma": "the",
+   "gloss": "(mạo từ xác định)"
+  },
+  {
+   "lemma": "their",
+   "gloss": "của họ"
+  },
+  {
+   "lemma": "them",
+   "gloss": "họ (tân ngữ)"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "chính họ"
+  },
+  {
+   "lemma": "then",
+   "gloss": "sau đó; khi ấy"
+  },
+  {
+   "lemma": "there",
+   "gloss": "ở đó"
+  },
+  {
+   "lemma": "these",
+   "gloss": "những cái này"
+  },
+  {
+   "lemma": "they",
+   "gloss": "họ"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "dày; rậm"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "tên trộm"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "mỏng; gầy"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "thứ; vật"
+  },
+  {
+   "lemma": "think",
+   "gloss": "nghĩ"
+  },
+  {
+   "lemma": "third",
+   "gloss": "thứ ba"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "mười ba"
+  },
+  {
+   "lemma": "this",
+   "gloss": "này; cái này"
+  },
+  {
+   "lemma": "those",
+   "gloss": "những cái đó"
+  },
+  {
+   "lemma": "though",
+   "gloss": "mặc dù"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "đã nghĩ; suy nghĩ"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "một nghìn"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "sợi chỉ"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "đã đe dọa"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "đe dọa"
+  },
+  {
+   "lemma": "three",
+   "gloss": "ba"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "cổ họng"
+  },
+  {
+   "lemma": "through",
+   "gloss": "xuyên qua"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "suốt"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "ném"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(tên riêng) Nàng Tiên Ngón Cái"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "buộc"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "đã buộc; bị buộc"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "chặt"
+  },
+  {
+   "lemma": "time",
+   "gloss": "thời gian; lần"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "nhỏ xíu"
+  },
+  {
+   "lemma": "to",
+   "gloss": "đến; để"
+  },
+  {
+   "lemma": "today",
+   "gloss": "hôm nay"
+  },
+  {
+   "lemma": "together",
+   "gloss": "cùng nhau"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(tên riêng)"
+  },
+  {
+   "lemma": "too",
+   "gloss": "cũng; quá"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "cái răng"
+  },
+  {
+   "lemma": "top",
+   "gloss": "phía trên; đỉnh"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "liên lạc (giữ liên lạc)"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "về phía"
+  },
+  {
+   "lemma": "town",
+   "gloss": "thị trấn"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "đồ chơi"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "nghề"
+  },
+  {
+   "lemma": "train",
+   "gloss": "tàu hỏa"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "đi du lịch"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "đã đi"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "kho báu"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "đã đối xử"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "cái cây"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "đã run"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "những rắc rối"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "máng ăn"
+  },
+  {
+   "lemma": "true",
+   "gloss": "thật"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "thân cây"
+  },
+  {
+   "lemma": "try",
+   "gloss": "thử"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "quay; lượt"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "mười hai"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "hai mươi"
+  },
+  {
+   "lemma": "two",
+   "gloss": "hai"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "xấu xí"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "không thể"
+  },
+  {
+   "lemma": "under",
+   "gloss": "dưới"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "dưới lòng đất"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "hiểu"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "chưa hoàn thành"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "không phù hợp"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "đã mở (thứ gấp)"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "không vui"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "không giống"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "không có đèn sáng"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "cởi"
+  },
+  {
+   "lemma": "until",
+   "gloss": "cho đến khi"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "bất thường"
+  },
+  {
+   "lemma": "up",
+   "gloss": "lên"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "buồn bực"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "tầng trên"
+  },
+  {
+   "lemma": "us",
+   "gloss": "chúng tôi (tân ngữ)"
+  },
+  {
+   "lemma": "use",
+   "gloss": "dùng"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "hữu ích"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "bao la"
+  },
+  {
+   "lemma": "very",
+   "gloss": "rất"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "những chiến thắng"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "một cách dữ dội"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "thăm"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "những vị khách"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "đã chờ"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "đang chờ"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "thức dậy"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "đi bộ"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "bức tường"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "đã lang thang"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "đang lang thang"
+  },
+  {
+   "lemma": "want",
+   "gloss": "muốn"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "tủ quần áo"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "ấm"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "đã cảnh báo"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "đã rửa"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "đồng hồ đeo tay; xem"
+  },
+  {
+   "lemma": "water",
+   "gloss": "nước"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "đã vẫy tay"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "những con sóng"
+  },
+  {
+   "lemma": "way",
+   "gloss": "con đường; cách"
+  },
+  {
+   "lemma": "we",
+   "gloss": "chúng tôi"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "yếu"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "đã làm yếu đi"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "giàu có"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "mặc"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "đám cưới"
+  },
+  {
+   "lemma": "week",
+   "gloss": "tuần"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "đã chào đón"
+  },
+  {
+   "lemma": "west",
+   "gloss": "phía tây"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "ướt"
+  },
+  {
+   "lemma": "what",
+   "gloss": "cái gì"
+  },
+  {
+   "lemma": "when",
+   "gloss": "khi; khi nào"
+  },
+  {
+   "lemma": "where",
+   "gloss": "ở đâu; nơi"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "bất cứ nơi đâu"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "liệu"
+  },
+  {
+   "lemma": "which",
+   "gloss": "nào; mà"
+  },
+  {
+   "lemma": "while",
+   "gloss": "trong khi"
+  },
+  {
+   "lemma": "white",
+   "gloss": "trắng"
+  },
+  {
+   "lemma": "who",
+   "gloss": "ai; người mà"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "bất cứ ai"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "toàn bộ"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "của ai; mà...của"
+  },
+  {
+   "lemma": "why",
+   "gloss": "tại sao"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "độc ác"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "vợ"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "hoang dã"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "vùng hoang dã"
+  },
+  {
+   "lemma": "will",
+   "gloss": "sẽ; ý chí"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "một cách sẵn lòng"
+  },
+  {
+   "lemma": "win",
+   "gloss": "thắng"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "bậu cửa sổ"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "rượu vang"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "cánh"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "khôn ngoan"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "ước; điều ước"
+  },
+  {
+   "lemma": "with",
+   "gloss": "với"
+  },
+  {
+   "lemma": "without",
+   "gloss": "không có"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "người phụ nữ"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "tuyệt vời"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "củi; gỗ; rừng"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "bằng gỗ"
+  },
+  {
+   "lemma": "word",
+   "gloss": "từ"
+  },
+  {
+   "lemma": "work",
+   "gloss": "làm việc; công việc"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "công nhân"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "xưởng"
+  },
+  {
+   "lemma": "world",
+   "gloss": "thế giới"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "lo lắng"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "xứng đáng"
+  },
+  {
+   "lemma": "would",
+   "gloss": "sẽ (giả định)"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "những vết thương"
+  },
+  {
+   "lemma": "write",
+   "gloss": "viết"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "nhà văn"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "sai"
+  },
+  {
+   "lemma": "year",
+   "gloss": "năm"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "chưa; tuy nhiên"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(tên riêng) York"
+  },
+  {
+   "lemma": "you",
+   "gloss": "bạn"
+  },
+  {
+   "lemma": "young",
+   "gloss": "trẻ"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "thiếu niên"
+  },
+  {
+   "lemma": "your",
+   "gloss": "của bạn"
+  }
+ ],
+ "forms": {
+  "am": "be",
+  "are": "be",
+  "ate": "eat",
+  "beaten": "beat",
+  "became": "become",
+  "been": "be",
+  "began": "begin",
+  "begun": "begin",
+  "being": "be",
+  "bent": "bend",
+  "best": "good",
+  "better": "good",
+  "bit": "bite",
+  "bitten": "bite",
+  "blew": "blow",
+  "blown": "blow",
+  "bought": "buy",
+  "broke": "break",
+  "broken": "break",
+  "brought": "bring",
+  "built": "build",
+  "came": "come",
+  "caught": "catch",
+  "children": "child",
+  "chose": "choose",
+  "chosen": "choose",
+  "crept": "creep",
+  "did": "do",
+  "does": "do",
+  "doing": "do",
+  "done": "do",
+  "drank": "drink",
+  "drawn": "draw",
+  "drew": "draw",
+  "driven": "drive",
+  "drove": "drive",
+  "drunk": "drink",
+  "dug": "dig",
+  "eaten": "eat",
+  "fallen": "fall",
+  "farther": "far",
+  "farthest": "far",
+  "fed": "feed",
+  "feet": "foot",
+  "fell": "fall",
+  "felt": "feel",
+  "flew": "fly",
+  "flown": "fly",
+  "forgot": "forget",
+  "forgotten": "forget",
+  "fought": "fight",
+  "found": "find",
+  "froze": "freeze",
+  "frozen": "freeze",
+  "gave": "give",
+  "geese": "goose",
+  "given": "give",
+  "goes": "go",
+  "gone": "go",
+  "got": "get",
+  "gotten": "get",
+  "grew": "grow",
+  "grown": "grow",
+  "had": "have",
+  "halves": "half",
+  "has": "have",
+  "having": "have",
+  "heard": "hear",
+  "held": "hold",
+  "hid": "hide",
+  "hidden": "hide",
+  "hung": "hang",
+  "is": "be",
+  "kept": "keep",
+  "knew": "know",
+  "knives": "knife",
+  "known": "know",
+  "least": "little",
+  "leaves": "leaf",
+  "led": "lead",
+  "lent": "lend",
+  "less": "little",
+  "lit": "light",
+  "loaves": "loaf",
+  "lost": "lose",
+  "made": "make",
+  "meant": "mean",
+  "men": "man",
+  "met": "meet",
+  "mice": "mouse",
+  "paid": "pay",
+  "people": "person",
+  "ran": "run",
+  "ridden": "ride",
+  "rode": "ride",
+  "said": "say",
+  "sang": "sing",
+  "sank": "sink",
+  "sat": "sit",
+  "saw": "see",
+  "seen": "see",
+  "sent": "send",
+  "shaken": "shake",
+  "shelves": "shelf",
+  "shone": "shine",
+  "shook": "shake",
+  "shot": "shoot",
+  "slept": "sleep",
+  "sold": "sell",
+  "sought": "seek",
+  "spent": "spend",
+  "spoke": "speak",
+  "spoken": "speak",
+  "spun": "spin",
+  "stole": "steal",
+  "stolen": "steal",
+  "stood": "stand",
+  "struck": "strike",
+  "stuck": "stick",
+  "sung": "sing",
+  "sunk": "sink",
+  "swam": "swim",
+  "swept": "sweep",
+  "swum": "swim",
+  "swung": "swing",
+  "taken": "take",
+  "taught": "teach",
+  "teeth": "tooth",
+  "thieves": "thief",
+  "thought": "think",
+  "threw": "throw",
+  "thrown": "throw",
+  "told": "tell",
+  "took": "take",
+  "tore": "tear",
+  "torn": "tear",
+  "understood": "understand",
+  "was": "be",
+  "went": "go",
+  "wept": "weep",
+  "were": "be",
+  "wives": "wife",
+  "woke": "wake",
+  "woken": "wake",
+  "wolves": "wolf",
+  "women": "woman",
+  "won": "win",
+  "wore": "wear",
+  "worn": "wear",
+  "worse": "bad",
+  "worst": "bad",
+  "written": "write",
+  "wrote": "write"
+ }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Library header captions, today's line in the week, empty-screen actions and the app theme choice. -->
+    <string name="stat_language">Inglês</string>
+    <string name="stat_level">Nível</string>
+    <string name="stat_streak">Sequência</string>
+    <string name="stat_points">Pontos</string>
+    <string name="weekly_today_done">Você cumpriu a meta de hoje.</string>
+    <string name="weekly_today_progress">Hoje: %1$d de %2$d passos</string>
+    <string name="weekly_today_pending">Nada ainda hoje. Uma história ou uma revisão curta mantém sua sequência.</string>
+    <string name="empty_browse_stories">Explorar histórias</string>
+    <string name="empty_clear_search">Limpar busca</string>
+    <string name="empty_words_hint">Você ainda não salvou palavras. Toque em uma palavra enquanto lê e salve; ela aparecerá aqui.</string>
+    <string name="theme_system">Ajuste do celular</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Toque em uma palavra para ver o significado e salvá-la se quiser.</string>
+    <string name="reader_hint_sentence">Toque e segure uma frase para ver a tradução. Enquanto a página é lida em voz alta, segurar uma frase continua a leitura a partir dela.</string>
+    <string name="reader_hint_swipe">Deslize para a esquerda ou para a direita para virar a página.</string>
+    <string name="page_translate">Traduzir página</string>
+    <string name="page_translate_hide">Ocultar tradução da página</string>
+</resources>

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="listen_from_sentence">Listen from this sentence</string>
-    <string name="listen_from_sentence_hint">Press and hold a sentence to read the page from there; the sentence being read is highlighted.</string>
 </resources>

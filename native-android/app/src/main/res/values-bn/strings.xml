@@ -257,7 +257,6 @@
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">পড়ার সেটিং সংরক্ষণ করা যায়নি। আপনি আবার চেষ্টা করতে পারেন.</string>
     <string name="kelimelerim_kayitli_kelime_2">আমার কথা, %1$s সংরক্ষিত শব্দ</string>
     <string name="okurken_ogren">পড়ার সময় শিখুন</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">একটি আন্ডারলাইন করা শব্দ আলতো চাপুন এবং এটি সংরক্ষণ করুন। ডানদিকের আইকনটি বাক্যটিকে অনুবাদ করে; হেডফোন পৃষ্ঠাটি জোরে পড়ে।</string>
     <string name="ceviriyi_gizle">অনুবাদ লুকান</string>
     <string name="cumleyi_cevir">বাক্য অনুবাদ করুন</string>
     <string name="sayfayi_dinle">পৃষ্ঠাটি শুনুন</string>

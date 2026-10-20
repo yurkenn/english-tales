@@ -15,7 +15,10 @@
     "glossary:disputed": "node tools/glossary.mjs disputed",
     "study-words:write": "node tools/study-words.mjs write",
     "study-words:check": "node tools/study-words.mjs check",
-    "study-words:report": "node tools/study-words.mjs report"
+    "study-words:report": "node tools/study-words.mjs report",
+    "story-pilot:preview": "node tools/story-pilot-preview.mjs",
+    "story-pilot:drafts": "node tools/story-pilot-drafts.mjs",
+    "content:session": "node tools/content-session.mjs"
   },
   "devDependencies": {
     "@electric-sql/pglite": "0.3.14"

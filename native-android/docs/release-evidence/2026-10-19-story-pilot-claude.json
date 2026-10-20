@@ -1,0 +1,76 @@
+{
+  "recordedAt": "2026-10-19T19:15:11.594719+00:00",
+  "baseCommit": "47773b3792e34b1252820eeadf38b2114e5a0f2e",
+  "status": "two-ai-reviews-corrected-not-published",
+  "secondReview": {
+    "cliVersion": "2.1.303",
+    "model": "claude-opus-5-5",
+    "turns": 1,
+    "durationMs": 225456,
+    "success": true,
+    "inputSHA256": "7372e8b0fdd2b746e142d4a2b66e5b20b2101780c6ab42a616c922fe1e83ffc0",
+    "rawReportSHA256": "9d37187e9b34cdb41744e962ef5c7d3de17f61e40f432b8cbe159db98339fe34",
+    "toolsEnabled": false,
+    "mcpEnabled": false,
+    "nativeSpeakerApproval": false
+  },
+  "stories": [
+    {
+      "storyId": "quiet-morning",
+      "draftSHA256": "ba9c744985d94bd777e60ccec5bfd6da9c7ff20305f658d1ab52a5346634fcfd",
+      "documentSHA256": "5d8bc0625b3352c8ed9361f864f16b96c2451a373033078f945a4226aa9e3111"
+    },
+    {
+      "storyId": "paper-boat",
+      "draftSHA256": "f1cf5c838dad2fd3770f87772e74b20729ec4b93a453ba64601a72d4f1c7a9a3",
+      "documentSHA256": "9b94755eec89d6a79f7f625f5221094aad50829f2be4d93dc5a8ce6eebc1fa1b"
+    },
+    {
+      "storyId": "last-train",
+      "draftSHA256": "7303a1f6e07c6df02ba48bf2140bbce293fca029d917193e3d43b9f49151ede4",
+      "documentSHA256": "856bd3413ac04c3d8e09b4f7d5bc36080a410eef9a7fa2c028a5bda7e3ac7c46"
+    },
+    {
+      "storyId": "classic-tortoise-hare",
+      "draftSHA256": "5131d1a587197b27d688aa8940a3a514caef80e09ce335ec29e2d94948a42e4b",
+      "documentSHA256": "56d3b18b94acd1f7a43d1b24f6a0c5d2c94622cb60fda880f426400bb55fc899"
+    },
+    {
+      "storyId": "classic-lion-mouse",
+      "draftSHA256": "34e21913502e50679e34f2e950ced3f3fda9959c46859ad05cf617aa43fe5277",
+      "documentSHA256": "00909d08c5da8f322f23e163b8b337fa5e4beee494c0ea5fd3a66b3a62b99993"
+    }
+  ],
+  "newSentences": 63,
+  "newSentenceAdditionalLanguageTranslations": 630,
+  "newWords": 14,
+  "newWordAdditionalLanguageGlosses": 140,
+  "legacySentenceFieldCorrections": 23,
+  "backend": {
+    "tests": 165,
+    "failures": 0,
+    "skipped": 0,
+    "logSHA256": "70b9a6cae821a213a581d61a0a4b3a25840cc7335d54d84b0878622213761759"
+  },
+  "android": {
+    "tests": 3,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "api": 36,
+    "avd": "English_Tales_Language_Test",
+    "fixtureSHA256": "731429adcef2e01285484360b2ee7bcd5173a1b48ba981b5e200d14e8c37f3a3",
+    "resultXmlSHA256": "a442706e7a7ea8d67190b0ea19257efc9c557498e0b60098984395612b02149c",
+    "coverage": "single fixture in configured support language; local reader/save/review contract, not cloud or full UI acceptance"
+  },
+  "requireReviewedGate": {
+    "exitCode": 1,
+    "message": "Human editorial/language review pending: quiet-morning"
+  },
+  "sourceCatalogSHA256": "c60367cf6bb7681f9d3d4bc1636dc5c370dcaa4622de8e68263ba6d25ada72a0",
+  "productionRuntimeChanged": false,
+  "liveContentChanged": false,
+  "humanApproval": false,
+  "nativeSpeakerApproval": false,
+  "cefrCertification": false
+}

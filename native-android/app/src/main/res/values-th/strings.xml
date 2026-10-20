@@ -257,7 +257,6 @@
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">ไม่สามารถบันทึกการตั้งค่าการอ่านได้ คุณสามารถลองอีกครั้ง</string>
     <string name="kelimelerim_kayitli_kelime_2">คำพูดของฉัน %1$s บันทึกคำศัพท์</string>
     <string name="okurken_ogren">เรียนรู้ในขณะที่คุณอ่าน</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">แตะคำที่ขีดเส้นใต้แล้วบันทึก ไอคอนทางด้านขวาจะแปลประโยค หูฟังก็อ่านออกเสียงหน้านั้น</string>
     <string name="ceviriyi_gizle">ซ่อนคำแปล</string>
     <string name="cumleyi_cevir">แปลประโยค</string>
     <string name="sayfayi_dinle">ฟังได้ที่เพจ</string>

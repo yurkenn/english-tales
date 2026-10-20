@@ -1,5 +1,6 @@
 package com.yurken.englishtales.ui
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.*
 import com.yurken.englishtales.R
 import androidx.compose.ui.res.stringResource
@@ -12,13 +13,17 @@ import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.ContentViewModel
 import com.yurken.englishtales.data.Story
 
+/** Shown only while a story downloads or a content action failed; an up-to-date library needs no status line. */
 @Composable
-fun ContentConnectionBar(content: ContentViewModel,onDownloads: ()->Unit) {
+fun ContentConnectionBar(content: ContentViewModel) {
     val status by content.status.collectAsState()
-    Row(Modifier.fillMaxWidth().statusBarsPadding().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
-        Text(status.message, fontSize=12.sp, color=TaleMuted, modifier=Modifier.weight(1f))
-        TextButton(onClick=onDownloads) {Text(stringResource(R.string.indirilenler))}
-        TextButton(onClick={content.refresh(userInitiated=true)},enabled=!status.busy) { Text(stringResource(R.string.yenile)) }
+    // Background refreshes stay silent here; the library's pull-to-refresh shows its own indicator.
+    AnimatedVisibility(status.downloading!=null || status.failed) {
+        Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
+            if(status.busy) CircularProgressIndicator(Modifier.size(14.dp),strokeWidth=2.dp)
+            Text(status.message, fontSize=12.sp, color=TaleMuted, modifier=Modifier.weight(1f).padding(start=if(status.busy) 8.dp else 0.dp))
+            if(status.failed) TextButton(onClick={content.refresh(userInitiated=true)},enabled=!status.busy) { Text(stringResource(R.string.yenile)) }
+        }
     }
 }
 
@@ -30,7 +35,7 @@ fun ContentDownloadsScreen(content: ContentViewModel,onBack: ()->Unit) {
         SimpleTopBar(stringResource(R.string.indirilen_hikayeler),onBack)
         Text(stringResource(R.string.hikaye_indirmeyi_kaldirmak_okuma_ilerlemeni, downloads.size),modifier=Modifier.padding(16.dp),fontSize=14.sp,color=TaleMuted)
         androidx.compose.foundation.lazy.LazyColumn(Modifier.weight(1f)) {
-            if(downloads.isEmpty()) item {TaleEmptyState(stringResource(R.string.henuz_indirilen_hikaye_yok))}
+            if(downloads.isEmpty()) item {TaleEmptyState(stringResource(R.string.henuz_indirilen_hikaye_yok),actionLabel=stringResource(R.string.empty_browse_stories),onAction=onBack)}
             items(downloads.size) {index ->
                 val story=downloads[index]
                 Row(Modifier.fillMaxWidth().appearIn(index).padding(horizontal=16.dp,vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {

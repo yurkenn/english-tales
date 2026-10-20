@@ -1,0 +1,5499 @@
+{
+ "schemaVersion": 1,
+ "lang": "ar",
+ "reviewStatus": "machine-draft",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "entries": [
+  {
+   "lemma": "a",
+   "gloss": "أحد؛ (أداة نكرة)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abandon",
+   "gloss": "يتخلى عن؛ يهجر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "abilities",
+   "gloss": "قدرات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "aboard",
+   "gloss": "على متن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "about",
+   "gloss": "حول؛ نحو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "above",
+   "gloss": "فوق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accept",
+   "gloss": "يقبل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "accidentally",
+   "gloss": "عن غير قصد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "across",
+   "gloss": "عبر؛ على الجانب الآخر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "act",
+   "gloss": "يتصرف؛ فعل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "adds",
+   "gloss": "يضيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admired",
+   "gloss": "أُعجب به",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admiring",
+   "gloss": "معجبًا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "admit",
+   "gloss": "يعترف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "advice",
+   "gloss": "نصيحة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afraid",
+   "gloss": "خائف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "after",
+   "gloss": "بعد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "afternoon",
+   "gloss": "ظهيرة؛ بعد الظهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "again",
+   "gloss": "مرة أخرى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "against",
+   "gloss": "ضد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ago",
+   "gloss": "منذ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agreed",
+   "gloss": "وافق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "agrees",
+   "gloss": "يوافق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "air",
+   "gloss": "هواء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "alive",
+   "gloss": "حي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "all",
+   "gloss": "كل؛ الجميع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "allowed",
+   "gloss": "سمح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "almost",
+   "gloss": "تقريبًا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "along",
+   "gloss": "على طول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "already",
+   "gloss": "بالفعل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "also",
+   "gloss": "أيضًا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "although",
+   "gloss": "على الرغم من أن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "always",
+   "gloss": "دائمًا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazed",
+   "gloss": "مندهش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amazing",
+   "gloss": "مدهش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "among",
+   "gloss": "بين",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "amounts",
+   "gloss": "كميات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "an",
+   "gloss": "أحد؛ (أداة نكرة)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "and",
+   "gloss": "و",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anger",
+   "gloss": "غضب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "angry",
+   "gloss": "غاضب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "animal",
+   "gloss": "حيوان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anna",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "another",
+   "gloss": "آخر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "answered",
+   "gloss": "أجاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "any",
+   "gloss": "أي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anymore",
+   "gloss": "بعد الآن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anyone",
+   "gloss": "أي شخص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "anything",
+   "gloss": "أي شيء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apart",
+   "gloss": "منفصل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appearance",
+   "gloss": "مظهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "appeared",
+   "gloss": "ظهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "apple",
+   "gloss": "تفاحة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "approached",
+   "gloss": "اقترب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "armed",
+   "gloss": "مسلح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arms",
+   "gloss": "أذرع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "around",
+   "gloss": "حول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arranging",
+   "gloss": "يرتّب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrived",
+   "gloss": "وصل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "arrives",
+   "gloss": "يصل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "as",
+   "gloss": "مثل؛ بينما",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ask",
+   "gloss": "يسأل؛ يطلب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "at",
+   "gloss": "في؛ عند",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attacked",
+   "gloss": "هاجم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "attendants",
+   "gloss": "خدم؛ مرافقون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "autumn",
+   "gloss": "خريف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "away",
+   "gloss": "بعيدًا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "awkward",
+   "gloss": "أخرق؛ محرج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "baby",
+   "gloss": "رضيع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "back",
+   "gloss": "للخلف؛ ظهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bag",
+   "gloss": "حقيبة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ball",
+   "gloss": "كرة؛ حفلة راقصة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bands",
+   "gloss": "أطواق؛ أشرطة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bars",
+   "gloss": "قضبان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "be",
+   "gloss": "يكون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beat",
+   "gloss": "يضرب؛ يهزم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beautiful",
+   "gloss": "جميل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beauty",
+   "gloss": "جمال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "because",
+   "gloss": "لأن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "become",
+   "gloss": "يصبح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bed",
+   "gloss": "سرير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "before",
+   "gloss": "قبل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begged",
+   "gloss": "توسّل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "begin",
+   "gloss": "يبدأ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behaved",
+   "gloss": "تصرّف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "behind",
+   "gloss": "خلف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "belong",
+   "gloss": "ينتمي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "below",
+   "gloss": "أسفل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bend",
+   "gloss": "ينحني",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beneath",
+   "gloss": "تحت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beside",
+   "gloss": "بجانب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "between",
+   "gloss": "بين",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "beyond",
+   "gloss": "ما وراء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "big",
+   "gloss": "كبير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bird",
+   "gloss": "طائر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "birthday",
+   "gloss": "عيد ميلاد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bit",
+   "gloss": "قطعة؛ عضّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bite",
+   "gloss": "يعضّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bitterly",
+   "gloss": "بشدة (برد)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "black",
+   "gloss": "أسود",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blamed",
+   "gloss": "لام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blankets",
+   "gloss": "بطانيات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blood",
+   "gloss": "دم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bloom",
+   "gloss": "يزهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blossomed",
+   "gloss": "أزهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blow",
+   "gloss": "ضربة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "blue",
+   "gloss": "أزرق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "boasted",
+   "gloss": "تباهى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bob",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "body",
+   "gloss": "جسم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "born",
+   "gloss": "مولود",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "both",
+   "gloss": "كلاهما",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottle",
+   "gloss": "زجاجة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bottom",
+   "gloss": "قاع؛ أسفل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "box",
+   "gloss": "صندوق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "branch",
+   "gloss": "غصن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bread",
+   "gloss": "خبز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bremen",
+   "gloss": "(اسم علم) بريمن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "briar",
+   "gloss": "عليق شائك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bridegroom",
+   "gloss": "عريس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bright",
+   "gloss": "ساطع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brightness",
+   "gloss": "سطوع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "bring",
+   "gloss": "يجلب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brother",
+   "gloss": "أخ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "brown",
+   "gloss": "بني",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "build",
+   "gloss": "يبني",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burn",
+   "gloss": "يحترق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burnt",
+   "gloss": "محترق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "burst",
+   "gloss": "ينفجر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "busy",
+   "gloss": "مشغول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "but",
+   "gloss": "لكن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "butterfly",
+   "gloss": "فراشة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "buy",
+   "gloss": "يشتري",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "by",
+   "gloss": "بجانب؛ بواسطة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cake",
+   "gloss": "كعكة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "call",
+   "gloss": "مكالمة؛ نادى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camera",
+   "gloss": "كاميرا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "camp",
+   "gloss": "مخيم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "can",
+   "gloss": "يستطيع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "candles",
+   "gloss": "شموع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cannot",
+   "gloss": "لا يستطيع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "capture",
+   "gloss": "يأسر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "care",
+   "gloss": "عناية؛ يهتم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "careful",
+   "gloss": "حذر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carriage",
+   "gloss": "عربة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "carry",
+   "gloss": "يحمل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cat",
+   "gloss": "قطة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "catch",
+   "gloss": "يمسك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "caused",
+   "gloss": "تسبب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "causing",
+   "gloss": "متسبب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrated",
+   "gloss": "احتفل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebrating",
+   "gloss": "يحتفل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "celebration",
+   "gloss": "احتفال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cents",
+   "gloss": "سنتات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "certain",
+   "gloss": "متأكد؛ معيّن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chair",
+   "gloss": "كرسي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chance",
+   "gloss": "فرصة؛ حظ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "change",
+   "gloss": "يغيّر؛ تغيير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "charging",
+   "gloss": "مهاجم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chased",
+   "gloss": "طارد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheap",
+   "gloss": "رخيص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "check",
+   "gloss": "يفحص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cheese",
+   "gloss": "جبن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "chicago",
+   "gloss": "(اسم علم) شيكاغو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "child",
+   "gloss": "طفل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "childhood",
+   "gloss": "طفولة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choice",
+   "gloss": "اختيار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "choose",
+   "gloss": "يختار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "christmas",
+   "gloss": "عيد الميلاد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "churchyard",
+   "gloss": "مقبرة الكنيسة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cinderella",
+   "gloss": "(اسم علم) سندريلا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "city",
+   "gloss": "مدينة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "claimed",
+   "gloss": "ادّعى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clear",
+   "gloss": "يفرّغ؛ واضح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clerk",
+   "gloss": "كاتب؛ موظف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "climb",
+   "gloss": "يتسلق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clock",
+   "gloss": "ساعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "close",
+   "gloss": "يغلق؛ قريب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "clouds",
+   "gloss": "غيوم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cold",
+   "gloss": "بارد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "collect",
+   "gloss": "يجمع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "colours",
+   "gloss": "ألوان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comb",
+   "gloss": "مشط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "come",
+   "gloss": "يأتي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortable",
+   "gloss": "مريح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comfortably",
+   "gloss": "براحة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "comforted",
+   "gloss": "واسى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "companion",
+   "gloss": "رفيق السفر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "compares",
+   "gloss": "يقارن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complained",
+   "gloss": "اشتكى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "complete",
+   "gloss": "يُكمل؛ كامل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "confusion",
+   "gloss": "ارتباك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "conrad",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "contact",
+   "gloss": "اتصال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "continue",
+   "gloss": "يستمر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "convinced",
+   "gloss": "أقنع؛ مقتنع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cook",
+   "gloss": "طبّاخ؛ يطبخ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cooled",
+   "gloss": "برّد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "corner",
+   "gloss": "زاوية",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cost",
+   "gloss": "يكلّف؛ تكلفة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cottage",
+   "gloss": "كوخ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "could",
+   "gloss": "استطاع؛ يمكن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "counted",
+   "gloss": "عدّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "countless",
+   "gloss": "لا يُحصى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "couple",
+   "gloss": "زوج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "covered",
+   "gloss": "مغطى؛ غطّى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "create",
+   "gloss": "يخلق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "criticized",
+   "gloss": "انتقد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crossed",
+   "gloss": "عبر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "crowd",
+   "gloss": "حشد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruel",
+   "gloss": "قاسٍ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cruelty",
+   "gloss": "قسوة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cry",
+   "gloss": "يبكي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "curled",
+   "gloss": "التفّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "customer",
+   "gloss": "زبون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "cut",
+   "gloss": "يقطع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dance",
+   "gloss": "يرقص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "danger",
+   "gloss": "خطر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dangerous",
+   "gloss": "خطير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dare",
+   "gloss": "يجرؤ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dark",
+   "gloss": "مظلم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daughter",
+   "gloss": "ابنة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dawn",
+   "gloss": "فجر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "day",
+   "gloss": "يوم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "daylight",
+   "gloss": "ضوء النهار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dead",
+   "gloss": "ميت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "death",
+   "gloss": "موت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deceitful",
+   "gloss": "مخادع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decided",
+   "gloss": "قرّر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "decides",
+   "gloss": "يقرّر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deeds",
+   "gloss": "أفعال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deep",
+   "gloss": "عميق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defeat",
+   "gloss": "يهزم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "defend",
+   "gloss": "يدافع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicate",
+   "gloss": "رقيق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delicious",
+   "gloss": "لذيذ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "delight",
+   "gloss": "بهجة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "della",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "demanded",
+   "gloss": "طالب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "deny",
+   "gloss": "ينكر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "described",
+   "gloss": "وصف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desk",
+   "gloss": "مكتب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despair",
+   "gloss": "يأس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "desperately",
+   "gloss": "بيأس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "despite",
+   "gloss": "رغم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "destroyed",
+   "gloss": "دمّر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "diamond",
+   "gloss": "ألماس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "die",
+   "gloss": "يموت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "died",
+   "gloss": "مات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "different",
+   "gloss": "مختلف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "difficult",
+   "gloss": "صعب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "disappear",
+   "gloss": "يختفي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "distant",
+   "gloss": "بعيد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "do",
+   "gloss": "يفعل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dollar",
+   "gloss": "دولار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "door",
+   "gloss": "باب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "doorway",
+   "gloss": "مدخل الباب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dough",
+   "gloss": "عجين",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "down",
+   "gloss": "لأسفل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "downstream",
+   "gloss": "مع التيار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "draw",
+   "gloss": "يسحب نحوه",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drawing",
+   "gloss": "رسم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreaded",
+   "gloss": "خشي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreamed",
+   "gloss": "حلم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dreams",
+   "gloss": "أحلام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drink",
+   "gloss": "يشرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "driver",
+   "gloss": "سائق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drop",
+   "gloss": "يُسقط؛ قطرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "drowned",
+   "gloss": "غرق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "due",
+   "gloss": "مُتوقَّع؛ مستحق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dull",
+   "gloss": "باهت؛ ممل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "during",
+   "gloss": "خلال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "dusty",
+   "gloss": "مغبر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "each",
+   "gloss": "كل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ear",
+   "gloss": "أذن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "earlier",
+   "gloss": "سابقاً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "easy",
+   "gloss": "سهل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eat",
+   "gloss": "يأكل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ebony",
+   "gloss": "أبنوس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "egypt",
+   "gloss": "(اسم علم) مصر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eighty",
+   "gloss": "ثمانون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "either",
+   "gloss": "أيضاً (في النفي)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eldest",
+   "gloss": "الأكبر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eleven",
+   "gloss": "أحد عشر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "elisa",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "else",
+   "gloss": "آخر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "embraced",
+   "gloss": "احتضن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "empty",
+   "gloss": "فارغ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enchanted",
+   "gloss": "مسحور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "end",
+   "gloss": "نهاية",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "endangering",
+   "gloss": "معرّض للخطر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "energy",
+   "gloss": "طاقة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enjoyed",
+   "gloss": "استمتع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enormous",
+   "gloss": "ضخم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enough",
+   "gloss": "كافٍ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enter",
+   "gloss": "يدخل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "enthusiastic",
+   "gloss": "متحمس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entirely",
+   "gloss": "بالكامل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "entrance",
+   "gloss": "مدخل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "escape",
+   "gloss": "يهرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "especially",
+   "gloss": "خصوصاً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eve",
+   "gloss": "عشية (ليلة الميلاد)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "even",
+   "gloss": "حتى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eventually",
+   "gloss": "في النهاية",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "every",
+   "gloss": "كل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everyone",
+   "gloss": "الجميع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everything",
+   "gloss": "كل شيء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "everywhere",
+   "gloss": "في كل مكان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exact",
+   "gloss": "دقيق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "except",
+   "gloss": "باستثناء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exchange",
+   "gloss": "مقابل؛ تبادل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exhausted",
+   "gloss": "منهك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "exist",
+   "gloss": "يوجد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expected",
+   "gloss": "توقّع؛ متوقَّع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expecting",
+   "gloss": "متوقعاً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expenses",
+   "gloss": "مصاريف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expensive",
+   "gloss": "غالٍ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explain",
+   "gloss": "يشرح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explanation",
+   "gloss": "شرح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "explore",
+   "gloss": "يستكشف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "expression",
+   "gloss": "تعبير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "extraordinary",
+   "gloss": "استثنائي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eye",
+   "gloss": "عين",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "eyebrow",
+   "gloss": "حاجب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "face",
+   "gloss": "وجه",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faded",
+   "gloss": "ذبل؛ بهت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "failed",
+   "gloss": "فشل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fails",
+   "gloss": "يفشل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falada",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fall",
+   "gloss": "يسقط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falling",
+   "gloss": "ساقط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "falls",
+   "gloss": "يسقط؛ شلال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "false",
+   "gloss": "كاذب؛ خاطئ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "familiar",
+   "gloss": "مألوف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "family",
+   "gloss": "عائلة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "far",
+   "gloss": "بعيد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmer",
+   "gloss": "مزارع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "farmyard",
+   "gloss": "فناء المزرعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fast",
+   "gloss": "سريع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fastened",
+   "gloss": "ربط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fat",
+   "gloss": "سمين؛ دهن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "faults",
+   "gloss": "عيوب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fear",
+   "gloss": "خوف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feed",
+   "gloss": "يطعم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feel",
+   "gloss": "يشعر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "feeling",
+   "gloss": "شعور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fetched",
+   "gloss": "أحضر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "few",
+   "gloss": "قليل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "field",
+   "gloss": "حقل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fierce",
+   "gloss": "شرس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteen",
+   "gloss": "خمسة عشر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fifteenth",
+   "gloss": "الخامس عشر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fight",
+   "gloss": "يتقاتل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "filled",
+   "gloss": "ملأ؛ ممتلئ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "final",
+   "gloss": "أخير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "find",
+   "gloss": "يجد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fine",
+   "gloss": "جيد؛ رفيع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finger",
+   "gloss": "إصبع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "finnish",
+   "gloss": "فنلندي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fire",
+   "gloss": "نار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "firmly",
+   "gloss": "بإحكام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "first",
+   "gloss": "أول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fish",
+   "gloss": "سمكة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fitted",
+   "gloss": "ناسب (المقاس)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "five",
+   "gloss": "خمسة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flat",
+   "gloss": "مسطّح؛ شقة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fled",
+   "gloss": "فرّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "float",
+   "gloss": "يطفو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flock",
+   "gloss": "قطيع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "floor",
+   "gloss": "أرضية؛ طابق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "flower",
+   "gloss": "زهرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fly",
+   "gloss": "يطير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "follow",
+   "gloss": "يتبع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "followers",
+   "gloss": "أتباع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fond",
+   "gloss": "مولع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foolish",
+   "gloss": "أحمق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "foot",
+   "gloss": "قدم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "for",
+   "gloss": "من أجل؛ باستثناء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forever",
+   "gloss": "إلى الأبد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "forget",
+   "gloss": "ينسى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "form",
+   "gloss": "يشكّل؛ شكل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "four",
+   "gloss": "أربعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freeze",
+   "gloss": "يتجمد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "freezing",
+   "gloss": "متجمد؛ تجمّد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fresh",
+   "gloss": "طازج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friend",
+   "gloss": "صديق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "friendship",
+   "gloss": "صداقة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "frighten",
+   "gloss": "يخيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "from",
+   "gloss": "من",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "front",
+   "gloss": "أمام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fruit",
+   "gloss": "فاكهة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "full",
+   "gloss": "ممتلئ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "fun",
+   "gloss": "متعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "furious",
+   "gloss": "غاضب جداً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gain",
+   "gloss": "يكسب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "games",
+   "gloss": "ألعاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "garden",
+   "gloss": "حديقة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gather",
+   "gloss": "يجمع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gaze",
+   "gloss": "يحدّق؛ نظرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gentle",
+   "gloss": "لطيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gently",
+   "gloss": "بلطف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gerda",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "get",
+   "gloss": "يحصل؛ يصبح؛ يصل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ghost",
+   "gloss": "شبح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "girl",
+   "gloss": "فتاة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "give",
+   "gloss": "يعطي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "givers",
+   "gloss": "المانحون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "glass",
+   "gloss": "زجاج؛ كوب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "go",
+   "gloss": "يذهب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goat",
+   "gloss": "ماعز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "god",
+   "gloss": "إله",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "going",
+   "gloss": "ذاهب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "good",
+   "gloss": "جيد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "goodbye",
+   "gloss": "وداعاً؛ وداع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "graceful",
+   "gloss": "رشيق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grand",
+   "gloss": "فخم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandfather",
+   "gloss": "جد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grandmother",
+   "gloss": "جدة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gray",
+   "gloss": "رمادي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "great",
+   "gloss": "عظيم؛ رائع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "green",
+   "gloss": "أخضر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "greeted",
+   "gloss": "حيّا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gretel",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grey",
+   "gloss": "رمادي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ground",
+   "gloss": "أرض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "grow",
+   "gloss": "ينمو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guess",
+   "gloss": "يخمّن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "guide",
+   "gloss": "مرشد؛ يرشد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gun",
+   "gloss": "سلاح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "gust",
+   "gloss": "هبّة ريح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hair",
+   "gloss": "شعر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "haircut",
+   "gloss": "قصة شعر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "halls",
+   "gloss": "قاعات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hand",
+   "gloss": "يد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hang",
+   "gloss": "يعلّق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hansel",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happen",
+   "gloss": "يحدث",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happiness",
+   "gloss": "سعادة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "happy",
+   "gloss": "سعيد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hard",
+   "gloss": "صلب؛ صعب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "harsh",
+   "gloss": "قاسٍ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hat",
+   "gloss": "قبعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hatch",
+   "gloss": "يفقس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "have",
+   "gloss": "يملك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "he",
+   "gloss": "هو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "head",
+   "gloss": "رأس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hear",
+   "gloss": "يسمع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heart",
+   "gloss": "قلب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "heat",
+   "gloss": "يسخّن؛ حرارة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hedge",
+   "gloss": "سياج نباتي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hello",
+   "gloss": "مرحباً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "helpers",
+   "gloss": "مساعدون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "henry",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "her",
+   "gloss": "ها؛ لها (للمؤنث)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "herself",
+   "gloss": "نفسها",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hid",
+   "gloss": "اختبأ؛ أخفى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hide",
+   "gloss": "يختبئ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hill",
+   "gloss": "تلّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "him",
+   "gloss": "له؛ ه (للمذكر)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "himself",
+   "gloss": "نفسه",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "his",
+   "gloss": "ـه؛ له (للمذكر)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hold",
+   "gloss": "يمسك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "holds",
+   "gloss": "يمسك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "home",
+   "gloss": "بيت؛ إلى البيت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hood",
+   "gloss": "قلنسوة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hope",
+   "gloss": "أمل؛ يأمل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horn",
+   "gloss": "قرن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horrified",
+   "gloss": "مذعور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "horse",
+   "gloss": "حصان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hours",
+   "gloss": "ساعات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "house",
+   "gloss": "منزل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "housework",
+   "gloss": "أعمال المنزل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "how",
+   "gloss": "كيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "however",
+   "gloss": "لكن؛ مع ذلك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hugged",
+   "gloss": "عانق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "human",
+   "gloss": "إنسان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hundred",
+   "gloss": "مئة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hung",
+   "gloss": "علّق؛ معلّق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurried",
+   "gloss": "أسرع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "hurt",
+   "gloss": "يؤذي؛ مصاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "husband",
+   "gloss": "زوج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "i",
+   "gloss": "أنا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "idea",
+   "gloss": "فكرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "if",
+   "gloss": "إذا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ill",
+   "gloss": "مريض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imaginary",
+   "gloss": "خيالي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "imagined",
+   "gloss": "تخيّل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immediately",
+   "gloss": "فوراً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "immortal",
+   "gloss": "خالد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "impossible",
+   "gloss": "مستحيل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "in",
+   "gloss": "في",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "injured",
+   "gloss": "مصاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inside",
+   "gloss": "داخل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "insisted",
+   "gloss": "أصرّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "inspect",
+   "gloss": "يفحص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "instead",
+   "gloss": "بدلاً من ذلك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interested",
+   "gloss": "مهتم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "interrupted",
+   "gloss": "مقطوع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "into",
+   "gloss": "إلى داخل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invited",
+   "gloss": "دعا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "invites",
+   "gloss": "يدعو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "it",
+   "gloss": "هو؛ هي (لغير العاقل)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "its",
+   "gloss": "ـه؛ ـها (لغير العاقل)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jam",
+   "gloss": "مربى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jealous",
+   "gloss": "غيور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jesus",
+   "gloss": "(اسم علم) يسوع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jim",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jimmy",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "job",
+   "gloss": "وظيفة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "join",
+   "gloss": "ينضم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joked",
+   "gloss": "مزح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "joy",
+   "gloss": "فرح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "judge",
+   "gloss": "قاضٍ؛ يحكم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "jumped",
+   "gloss": "قفز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "just",
+   "gloss": "فقط؛ تماماً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kay",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "keep",
+   "gloss": "يحتفظ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kicked",
+   "gloss": "ركل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kill",
+   "gloss": "يقتل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kindness",
+   "gloss": "لطف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kingdom",
+   "gloss": "مملكة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kissed",
+   "gloss": "قبّل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kisses",
+   "gloss": "قُبلات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "kitchen",
+   "gloss": "مطبخ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knees",
+   "gloss": "ركبتان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "knocked",
+   "gloss": "أسقط؛ طرق (الباب)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "know",
+   "gloss": "يعرف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laces",
+   "gloss": "رباطات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lake",
+   "gloss": "بحيرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "land",
+   "gloss": "أرض؛ بلد؛ يهبط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lapland",
+   "gloss": "(اسم علم) لابلاند",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "large",
+   "gloss": "كبير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "last",
+   "gloss": "أخير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "later",
+   "gloss": "لاحقاً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "laugh",
+   "gloss": "يضحك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lay",
+   "gloss": "استلقى؛ وضع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leaned",
+   "gloss": "انحنى؛ استند",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learned",
+   "gloss": "تعلّم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "learning",
+   "gloss": "تعلّم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leave",
+   "gloss": "يغادر؛ يترك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "left",
+   "gloss": "غادر؛ يسار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leg",
+   "gloss": "ساق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lend",
+   "gloss": "يعير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "leo",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lesson",
+   "gloss": "درس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "let",
+   "gloss": "يدع؛ يسمح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "letter",
+   "gloss": "رسالة؛ حرف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lies",
+   "gloss": "أكاذيب؛ يستلقي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "life",
+   "gloss": "حياة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lift",
+   "gloss": "يرفع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "light",
+   "gloss": "ضوء؛ خفيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "like",
+   "gloss": "مثل؛ يحب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lily",
+   "gloss": "(اسم علم)؛ زنبق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "line",
+   "gloss": "خط؛ صف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "listen",
+   "gloss": "يستمع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "little",
+   "gloss": "صغير؛ قليلاً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "live",
+   "gloss": "يعيش",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "local",
+   "gloss": "محلي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "locked",
+   "gloss": "أقفل؛ مقفل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lonely",
+   "gloss": "موحش؛ وحيد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "long",
+   "gloss": "طويل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "look",
+   "gloss": "يبدو؛ ينظر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loosened",
+   "gloss": "أرخى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lose",
+   "gloss": "يخسر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "loud",
+   "gloss": "عالٍ (صوت)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "love",
+   "gloss": "يحب؛ حب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lowered",
+   "gloss": "أنزل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "luck",
+   "gloss": "حظ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "lump",
+   "gloss": "كتلة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "magi",
+   "gloss": "(اسم علم) المجوس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "maia",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "make",
+   "gloss": "يصنع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "man",
+   "gloss": "رجل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "many",
+   "gloss": "كثير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marks",
+   "gloss": "علامات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marriage",
+   "gloss": "زواج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marry",
+   "gloss": "يتزوج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "marsh",
+   "gloss": "مستنقع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "master",
+   "gloss": "سيّد؛ معلّم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "match",
+   "gloss": "عود ثقاب؛ يطابق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "materials",
+   "gloss": "مواد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mattered",
+   "gloss": "كان مهماً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mayor",
+   "gloss": "عمدة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "me",
+   "gloss": "لي؛ ني",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mean",
+   "gloss": "قاسٍ؛ يعني",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "meet",
+   "gloss": "يلتقي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "melt",
+   "gloss": "يذوب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mess",
+   "gloss": "فوضى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "message",
+   "gloss": "رسالة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "messenger",
+   "gloss": "رسول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "metal",
+   "gloss": "معدن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mia",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "midnight",
+   "gloss": "منتصف الليل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "might",
+   "gloss": "ربما",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "miles",
+   "gloss": "أميال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "milk",
+   "gloss": "حليب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minister",
+   "gloss": "وزير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "minutes",
+   "gloss": "دقائق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missed",
+   "gloss": "اشتاق؛ فوّت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "missing",
+   "gloss": "مفقود",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mock",
+   "gloss": "يسخر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "moment",
+   "gloss": "لحظة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "more",
+   "gloss": "أكثر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "most",
+   "gloss": "الأكثر؛ معظم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mother",
+   "gloss": "أم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mountains",
+   "gloss": "جبال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "move",
+   "gloss": "يتحرك؛ ينتقل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "movement",
+   "gloss": "حركة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "mrs",
+   "gloss": "السيدة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "music",
+   "gloss": "موسيقى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "must",
+   "gloss": "يجب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "my",
+   "gloss": "ي (ملكي)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "name",
+   "gloss": "اسم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrator",
+   "gloss": "راوٍ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "narrow",
+   "gloss": "ضيق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "near",
+   "gloss": "قريب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nearby",
+   "gloss": "بالقرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "necks",
+   "gloss": "رقاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "need",
+   "gloss": "يحتاج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "needles",
+   "gloss": "إبر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neighbour",
+   "gloss": "جار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "neither",
+   "gloss": "لا... ولا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "net",
+   "gloss": "شبكة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "never",
+   "gloss": "أبداً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "new",
+   "gloss": "جديد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newcomer",
+   "gloss": "وافد جديد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "newspaper",
+   "gloss": "صحيفة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "next",
+   "gloss": "التالي؛ بجانب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "night",
+   "gloss": "ليل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "no",
+   "gloss": "لا؛ لا شيء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noise",
+   "gloss": "ضوضاء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "none",
+   "gloss": "لا أحد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nor",
+   "gloss": "ولا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nora",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "nose",
+   "gloss": "أنف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "not",
+   "gloss": "ليس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "note",
+   "gloss": "ملاحظة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "noticed",
+   "gloss": "لاحظ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "notices",
+   "gloss": "يلاحظ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "now",
+   "gloss": "الآن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "of",
+   "gloss": "من؛ لـ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "off",
+   "gloss": "منطلقاً؛ مطفأ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "offer",
+   "gloss": "يعرض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "officer",
+   "gloss": "ضابط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "official",
+   "gloss": "رسمي؛ مسؤول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "often",
+   "gloss": "غالباً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "old",
+   "gloss": "عجوز؛ قديم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "on",
+   "gloss": "على",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "once",
+   "gloss": "مرة؛ ذات يوم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "one",
+   "gloss": "واحد؛ أحدهم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "only",
+   "gloss": "فقط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onto",
+   "gloss": "على",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "onward",
+   "gloss": "إلى الأمام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "open",
+   "gloss": "يفتح؛ مفتوح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "or",
+   "gloss": "أو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ordered",
+   "gloss": "أمر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "original",
+   "gloss": "أصلي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ornament",
+   "gloss": "زينة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "other",
+   "gloss": "آخر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "out",
+   "gloss": "خارج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outfit",
+   "gloss": "ملابس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "outside",
+   "gloss": "في الخارج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "over",
+   "gloss": "نحو؛ فوق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "overhead",
+   "gloss": "فوق الرأس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "package",
+   "gloss": "طرد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "packing",
+   "gloss": "تعبئة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pain",
+   "gloss": "ألم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "painful",
+   "gloss": "مؤلم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pair",
+   "gloss": "زوج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "palace",
+   "gloss": "قصر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "paper",
+   "gloss": "ورق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parents",
+   "gloss": "الوالدان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "parting",
+   "gloss": "فراق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "partner",
+   "gloss": "شريك (رقص)؛ زوج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passage",
+   "gloss": "ممر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passed",
+   "gloss": "مرّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "passing",
+   "gloss": "مارّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "past",
+   "gloss": "ماضٍ؛ مرورًا بـ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patch",
+   "gloss": "رقعة؛ قطعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "patience",
+   "gloss": "صبر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pay",
+   "gloss": "يدفع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "payment",
+   "gloss": "دفعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "peach",
+   "gloss": "خوخ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pebble",
+   "gloss": "حصاة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pennies",
+   "gloss": "بنسات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "perfect",
+   "gloss": "مثالي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "person",
+   "gloss": "شخص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "persuaded",
+   "gloss": "أقنع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photograph",
+   "gloss": "صورة فوتوغرافية",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "photos",
+   "gloss": "صور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pick",
+   "gloss": "يقطف؛ يختار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "piece",
+   "gloss": "قطعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pigeons",
+   "gloss": "حمام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pile",
+   "gloss": "كومة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "place",
+   "gloss": "مكان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plain",
+   "gloss": "مدني (ملابس)؛ بسيط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plan",
+   "gloss": "خطة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planted",
+   "gloss": "زرع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "planting",
+   "gloss": "زراعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plants",
+   "gloss": "نباتات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "play",
+   "gloss": "يلعب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "plunged",
+   "gloss": "غاص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pointed",
+   "gloss": "أشار؛ مدبّب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "police",
+   "gloss": "شرطة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "policeman",
+   "gloss": "شرطي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poor",
+   "gloss": "فقير؛ مسكين",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "position",
+   "gloss": "منصب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "poured",
+   "gloss": "سكب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "power",
+   "gloss": "قوة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "powerful",
+   "gloss": "قوي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prefer",
+   "gloss": "يفضّل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "preparations",
+   "gloss": "استعدادات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "present",
+   "gloss": "هدية؛ حاضر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pretended",
+   "gloss": "تظاهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prevented",
+   "gloss": "منع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "price",
+   "gloss": "سعر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prick",
+   "gloss": "يخزّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prison",
+   "gloss": "سجن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prosper",
+   "gloss": "يزدهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "protect",
+   "gloss": "يحمي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "prove",
+   "gloss": "يثبت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "pull",
+   "gloss": "يسحب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punished",
+   "gloss": "عاقب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "punishment",
+   "gloss": "عقاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "purr",
+   "gloss": "يخرخر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "push",
+   "gloss": "يدفع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "put",
+   "gloss": "يضع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "quickly",
+   "gloss": "بسرعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rainy",
+   "gloss": "ممطر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rapunzel",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reaction",
+   "gloss": "ردّ فعل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "read",
+   "gloss": "يقرأ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ready",
+   "gloss": "جاهز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "real",
+   "gloss": "حقيقي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "realized",
+   "gloss": "أدرك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reason",
+   "gloss": "سبب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "received",
+   "gloss": "استلم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recently",
+   "gloss": "مؤخراً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "recognize",
+   "gloss": "يتعرّف على",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "red",
+   "gloss": "أحمر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "refuse",
+   "gloss": "يرفض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejected",
+   "gloss": "رفض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rejection",
+   "gloss": "رفض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remained",
+   "gloss": "بقي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remaining",
+   "gloss": "المتبقي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remark",
+   "gloss": "ملاحظة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remarkable",
+   "gloss": "لافت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remember",
+   "gloss": "يتذكر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminded",
+   "gloss": "ذكّر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reminder",
+   "gloss": "تذكير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "remove",
+   "gloss": "يزيل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "repeated",
+   "gloss": "كرّر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reply",
+   "gloss": "ردّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "report",
+   "gloss": "تقرير؛ يبلّغ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "request",
+   "gloss": "طلب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rescuer",
+   "gloss": "منقذ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "responsible",
+   "gloss": "مسؤول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restaurant",
+   "gloss": "مطعم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "restored",
+   "gloss": "أعاد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reveal",
+   "gloss": "يكشف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "reward",
+   "gloss": "مكافأة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ribbon",
+   "gloss": "شريط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ride",
+   "gloss": "يركب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riding",
+   "gloss": "ركوب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "right",
+   "gloss": "صحيح؛ يمين",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rises",
+   "gloss": "يرتفع؛ تشرق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "riverbank",
+   "gloss": "ضفة النهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roast",
+   "gloss": "يشوي؛ مشوي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rob",
+   "gloss": "يسرق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "robber",
+   "gloss": "لص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rolls",
+   "gloss": "لفائف الخبز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roof",
+   "gloss": "سقف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "room",
+   "gloss": "غرفة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "roots",
+   "gloss": "جذور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rose",
+   "gloss": "وردة؛ ارتفع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rough",
+   "gloss": "خشن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rumpelstiltskin",
+   "gloss": "(اسم علم) رامبلستيلتسكين",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "run",
+   "gloss": "يركض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "rushed",
+   "gloss": "هرع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "s",
+   "gloss": "('s) علامة الملكية",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sadness",
+   "gloss": "حزن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sam",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "same",
+   "gloss": "نفس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sapphire",
+   "gloss": "ياقوت أزرق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sausages",
+   "gloss": "نقانق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "save",
+   "gloss": "ينقذ؛ يدّخر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "saving",
+   "gloss": "ادخار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "say",
+   "gloss": "يقول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scarcely",
+   "gloss": "بالكاد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "scattered",
+   "gloss": "بعثر؛ تفرّق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "school",
+   "gloss": "مدرسة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sea",
+   "gloss": "بحر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "search",
+   "gloss": "يبحث",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "secret",
+   "gloss": "سر؛ سري",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "see",
+   "gloss": "يرى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seed",
+   "gloss": "بذرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seek",
+   "gloss": "يسعى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seemed",
+   "gloss": "بدا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seems",
+   "gloss": "يبدو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seized",
+   "gloss": "أمسك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sell",
+   "gloss": "يبيع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "send",
+   "gloss": "يرسل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sending",
+   "gloss": "يرسل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sentence",
+   "gloss": "جملة؛ حكم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "service",
+   "gloss": "خدمة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "set",
+   "gloss": "يضع؛ ينطلق؛ تغرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "seven",
+   "gloss": "سبعة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "several",
+   "gloss": "عدة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewed",
+   "gloss": "خاط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sewing",
+   "gloss": "خياطة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shape",
+   "gloss": "شكل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "she",
+   "gloss": "هي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shell",
+   "gloss": "قوقعة؛ قشرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shine",
+   "gloss": "يلمع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shines",
+   "gloss": "يلمع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shining",
+   "gloss": "لامع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ship",
+   "gloss": "سفينة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoe",
+   "gloss": "حذاء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shop",
+   "gloss": "متجر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shore",
+   "gloss": "شاطئ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "short",
+   "gloss": "قصير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "should",
+   "gloss": "ينبغي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shoulders",
+   "gloss": "أكتاف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shouted",
+   "gloss": "صاح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "show",
+   "gloss": "يُظهر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "shut",
+   "gloss": "مغلق؛ يغلق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sick",
+   "gloss": "مريض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sight",
+   "gloss": "بصر؛ منظر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sign",
+   "gloss": "علامة؛ يوقّع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "signature",
+   "gloss": "توقيع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silent",
+   "gloss": "صامت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "silver",
+   "gloss": "فضة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simple",
+   "gloss": "بسيط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "simpleton",
+   "gloss": "ساذج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sing",
+   "gloss": "يغني",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sink",
+   "gloss": "يغرق؛ حوض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sister",
+   "gloss": "أخت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sit",
+   "gloss": "يجلس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "six",
+   "gloss": "ستة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "size",
+   "gloss": "حجم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sky",
+   "gloss": "سماء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleep",
+   "gloss": "ينام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sleeve",
+   "gloss": "كُمّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slipped",
+   "gloss": "انزلق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "slips",
+   "gloss": "ينزلق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "small",
+   "gloss": "صغير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "smell",
+   "gloss": "رائحة؛ يشمّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snore",
+   "gloss": "يشخر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "snow",
+   "gloss": "ثلج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "so",
+   "gloss": "لذلك؛ جداً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soft",
+   "gloss": "ناعم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soften",
+   "gloss": "يلين",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "some",
+   "gloss": "بعض؛ قليل من",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "someone",
+   "gloss": "شخص ما",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "something",
+   "gloss": "شيء ما",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "somewhere",
+   "gloss": "في مكان ما",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "son",
+   "gloss": "ابن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "song",
+   "gloss": "أغنية",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soon",
+   "gloss": "قريباً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrow",
+   "gloss": "حزن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sorrowfully",
+   "gloss": "بحزن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sound",
+   "gloss": "صوت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "soup",
+   "gloss": "حساء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "space",
+   "gloss": "فراغ؛ فضاء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "speak",
+   "gloss": "يتكلم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "special",
+   "gloss": "خاص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spend",
+   "gloss": "ينفق؛ يقضي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spills",
+   "gloss": "يسكب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spirit",
+   "gloss": "روح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spread",
+   "gloss": "ينشر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "spring",
+   "gloss": "ربيع؛ ينبوع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "square",
+   "gloss": "ساحة؛ مربع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "squeeze",
+   "gloss": "يتسلل؛ يعصر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stairs",
+   "gloss": "درج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stalls",
+   "gloss": "أكشاك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stamped",
+   "gloss": "دقّ الأرض بقدمه",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stand",
+   "gloss": "يقف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "star",
+   "gloss": "نجمة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "starts",
+   "gloss": "يبدأ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stay",
+   "gloss": "يبقى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "steal",
+   "gloss": "يسرق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stem",
+   "gloss": "ساق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepmother",
+   "gloss": "زوجة الأب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stepsister",
+   "gloss": "أخت غير شقيقة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stick",
+   "gloss": "عصا؛ يلتصق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sticky",
+   "gloss": "لزج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "still",
+   "gloss": "ما زال؛ ساكن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stitched",
+   "gloss": "خاط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stomach",
+   "gloss": "معدة؛ بطن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stone",
+   "gloss": "حجر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stop",
+   "gloss": "يتوقف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "storm",
+   "gloss": "عاصفة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "story",
+   "gloss": "قصة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "straight",
+   "gloss": "مستقيم؛ مباشرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strand",
+   "gloss": "خصلة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strange",
+   "gloss": "غريب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stranger",
+   "gloss": "غريب (شخص)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stream",
+   "gloss": "جدول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "street",
+   "gloss": "شارع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strength",
+   "gloss": "قوة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stretched",
+   "gloss": "تمدّد؛ مدّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "strike",
+   "gloss": "يشعل (عود ثقاب)؛ يضرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stumbled",
+   "gloss": "تعثّر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "stupid",
+   "gloss": "غبي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "succeed",
+   "gloss": "ينجح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "successful",
+   "gloss": "ناجح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "such",
+   "gloss": "مثل هذا؛ كهذا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suddenly",
+   "gloss": "فجأة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sugar",
+   "gloss": "سكر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suggested",
+   "gloss": "اقترح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "summer",
+   "gloss": "صيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunlight",
+   "gloss": "ضوء الشمس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunrise",
+   "gloss": "شروق الشمس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sunset",
+   "gloss": "غروب الشمس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "supposed",
+   "gloss": "مفترض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surprise",
+   "gloss": "مفاجأة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "surrounded",
+   "gloss": "محاط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "suspected",
+   "gloss": "شكّ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "sword",
+   "gloss": "سيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "table",
+   "gloss": "طاولة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "take",
+   "gloss": "يأخذ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talked",
+   "gloss": "تحدّث",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "talking",
+   "gloss": "يتحدث",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tall",
+   "gloss": "طويل القامة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "task",
+   "gloss": "مهمة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tea",
+   "gloss": "شاي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tear",
+   "gloss": "دمعة؛ يمزّق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tell",
+   "gloss": "يخبر؛ يروي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ten",
+   "gloss": "عشرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "terrible",
+   "gloss": "فظيع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "than",
+   "gloss": "من",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thank",
+   "gloss": "يشكر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "that",
+   "gloss": "ذلك؛ ذاك؛ أن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "the",
+   "gloss": "ال (أداة التعريف)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "their",
+   "gloss": "هم؛ لهم (ملكيتهم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "them",
+   "gloss": "هم (مفعول)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "themselves",
+   "gloss": "أنفسهم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "then",
+   "gloss": "ثم؛ حينئذٍ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "there",
+   "gloss": "هناك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "these",
+   "gloss": "هؤلاء؛ هذه",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "they",
+   "gloss": "هم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thick",
+   "gloss": "سميك؛ كثيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thief",
+   "gloss": "لص",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thin",
+   "gloss": "رفيع؛ نحيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thing",
+   "gloss": "شيء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "think",
+   "gloss": "يفكر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "third",
+   "gloss": "ثالث",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thirteen",
+   "gloss": "ثلاثة عشر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "this",
+   "gloss": "هذا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "those",
+   "gloss": "أولئك؛ تلك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "though",
+   "gloss": "رغم أن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thought",
+   "gloss": "فكّر؛ فكرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thousand",
+   "gloss": "ألف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thread",
+   "gloss": "خيط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatened",
+   "gloss": "هدّد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "threatening",
+   "gloss": "مهدِّد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "three",
+   "gloss": "ثلاثة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throat",
+   "gloss": "حلق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "through",
+   "gloss": "عبر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throughout",
+   "gloss": "طوال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "throw",
+   "gloss": "يرمي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "thumbelina",
+   "gloss": "(اسم علم) أصبعيّة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tie",
+   "gloss": "يربط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tied",
+   "gloss": "ربط؛ مربوط",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tightly",
+   "gloss": "بإحكام",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "time",
+   "gloss": "وقت؛ مرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tiny",
+   "gloss": "صغير جداً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "to",
+   "gloss": "إلى؛ لـ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "today",
+   "gloss": "اليوم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "together",
+   "gloss": "معاً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tom",
+   "gloss": "(اسم علم)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "too",
+   "gloss": "أيضاً؛ جداً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tooth",
+   "gloss": "سن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "top",
+   "gloss": "أعلى؛ قمة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "touch",
+   "gloss": "تواصل (البقاء على)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toward",
+   "gloss": "نحو",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "town",
+   "gloss": "بلدة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "toy",
+   "gloss": "لعبة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trade",
+   "gloss": "حرفة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "train",
+   "gloss": "قطار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travel",
+   "gloss": "يسافر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "travelled",
+   "gloss": "سافر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treasure",
+   "gloss": "كنز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "treated",
+   "gloss": "عامل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "tree",
+   "gloss": "شجرة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trembled",
+   "gloss": "ارتجف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "troubles",
+   "gloss": "متاعب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trough",
+   "gloss": "حوض الشرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "true",
+   "gloss": "صحيح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "trunk",
+   "gloss": "جذع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "try",
+   "gloss": "يحاول",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "turn",
+   "gloss": "يستدير؛ دور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twelve",
+   "gloss": "اثنا عشر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "twenty",
+   "gloss": "عشرون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "two",
+   "gloss": "اثنان",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "ugly",
+   "gloss": "قبيح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unable",
+   "gloss": "عاجز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "under",
+   "gloss": "تحت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "underground",
+   "gloss": "تحت الأرض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "understand",
+   "gloss": "يفهم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfinished",
+   "gloss": "غير مكتمل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfit",
+   "gloss": "غير لائق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unfolded",
+   "gloss": "فتح (المطوي)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unhappy",
+   "gloss": "تعيس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlike",
+   "gloss": "بخلاف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unlit",
+   "gloss": "غير مضاء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unties",
+   "gloss": "يفك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "until",
+   "gloss": "حتى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "unusual",
+   "gloss": "غير عادي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "up",
+   "gloss": "لأعلى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upset",
+   "gloss": "منزعج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "upstairs",
+   "gloss": "الطابق العلوي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "us",
+   "gloss": "نا (مفعول)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "use",
+   "gloss": "يستخدم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "useful",
+   "gloss": "مفيد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "vast",
+   "gloss": "شاسع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "very",
+   "gloss": "جداً",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "victories",
+   "gloss": "انتصارات",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "violently",
+   "gloss": "بعنف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visit",
+   "gloss": "يزور",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "visitors",
+   "gloss": "زوار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waited",
+   "gloss": "انتظر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waiting",
+   "gloss": "ينتظر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wake",
+   "gloss": "يستيقظ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "walk",
+   "gloss": "يمشي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wall",
+   "gloss": "جدار",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandered",
+   "gloss": "تجوّل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wandering",
+   "gloss": "متجوّل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "want",
+   "gloss": "يريد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wardrobe",
+   "gloss": "خزانة ملابس",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warm",
+   "gloss": "دافئ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "warned",
+   "gloss": "حذّر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "washed",
+   "gloss": "غسل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "watch",
+   "gloss": "ساعة يد؛ يشاهد",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "water",
+   "gloss": "ماء",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waved",
+   "gloss": "لوّح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "waves",
+   "gloss": "أمواج",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "way",
+   "gloss": "طريق؛ طريقة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "we",
+   "gloss": "نحن",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weak",
+   "gloss": "ضعيف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "weakened",
+   "gloss": "أضعف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wealthy",
+   "gloss": "ثري",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wear",
+   "gloss": "يرتدي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wedding",
+   "gloss": "حفل زفاف",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "week",
+   "gloss": "أسبوع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "welcomed",
+   "gloss": "رحّب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "west",
+   "gloss": "غرب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wet",
+   "gloss": "مبلل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "what",
+   "gloss": "ماذا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "when",
+   "gloss": "عندما؛ متى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "where",
+   "gloss": "أين؛ حيث",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wherever",
+   "gloss": "أينما",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whether",
+   "gloss": "ما إذا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "which",
+   "gloss": "أي؛ الذي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "while",
+   "gloss": "بينما",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "white",
+   "gloss": "أبيض",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "who",
+   "gloss": "من؛ الذي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whoever",
+   "gloss": "مهما كان من",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whole",
+   "gloss": "كامل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "whose",
+   "gloss": "لمن؛ الذي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "why",
+   "gloss": "لماذا",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wicked",
+   "gloss": "شرير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wife",
+   "gloss": "زوجة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wild",
+   "gloss": "بري",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wilderness",
+   "gloss": "برية",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "will",
+   "gloss": "سوف؛ إرادة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "willingly",
+   "gloss": "عن طيب خاطر",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "win",
+   "gloss": "يفوز",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "windowsill",
+   "gloss": "عتبة النافذة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wine",
+   "gloss": "نبيذ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wing",
+   "gloss": "جناح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wise",
+   "gloss": "حكيم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wish",
+   "gloss": "يتمنى؛ أمنية",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "with",
+   "gloss": "مع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "without",
+   "gloss": "بدون",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "woman",
+   "gloss": "امرأة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wonderful",
+   "gloss": "رائع",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wood",
+   "gloss": "حطب؛ خشب؛ غابة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wooden",
+   "gloss": "خشبي",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "word",
+   "gloss": "كلمة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "work",
+   "gloss": "يعمل؛ عمل",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workers",
+   "gloss": "عمال",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "workshop",
+   "gloss": "ورشة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "world",
+   "gloss": "عالم",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worried",
+   "gloss": "قلق",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "worthy",
+   "gloss": "جدير",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "would",
+   "gloss": "(شرط/مستقبل في الماضي)",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wounds",
+   "gloss": "جروح",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "write",
+   "gloss": "يكتب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "writer",
+   "gloss": "كاتب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "wrong",
+   "gloss": "خاطئ",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "year",
+   "gloss": "سنة",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "yet",
+   "gloss": "بعد؛ ومع ذلك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "york",
+   "gloss": "(اسم علم) يورك",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "you",
+   "gloss": "أنت",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "young",
+   "gloss": "شاب",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "youngster",
+   "gloss": "فتى",
+   "source": "claude-draft"
+  },
+  {
+   "lemma": "your",
+   "gloss": "ك (ملكك)",
+   "source": "claude-draft"
+  }
+ ],
+ "sampleApprovedBy": "owner-asked-all-languages-2026-10-19"
+}

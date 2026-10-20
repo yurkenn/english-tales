@@ -9,7 +9,6 @@ import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import com.yurken.englishtales.data.LearningContent
 import com.yurken.englishtales.data.StoryLinks
 import com.yurken.englishtales.ui.StoryLinkRequest
@@ -44,7 +43,9 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch { LearningContent.load(applicationContext); contentLoaded = true }
         // The reader reads its appearance during its first composition; load that file in the background now.
         lifecycleScope.launch { com.yurken.englishtales.ui.ReadingPreferencesStore.warm(applicationContext) }
-        enableEdgeToEdge()
+        // The saved theme is read before the first frame, so a dark choice never flashes light.
+        com.yurken.englishtales.ui.AppTheme.load(this)
+        com.yurken.englishtales.ui.AppTheme.applySystemBars(this)
         val ads=if(BuildConfig.ADS_ENABLED) NativeCompletionAds(this) else CompletionAds.Disabled(this)
         val play=PlayStoreFeatures(this).also {this.play=it}
         setContent {
