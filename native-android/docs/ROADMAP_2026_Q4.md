@@ -15,19 +15,19 @@
 - FSRS, alıştırma basamakları, anlama soruları, dikte, cümle kurma, kişisel kelimeler, favoriler, öneriler, widget ve tablet düzeni kodda mevcut. Bunlar yeniden yapılacak özellikler değil; gerçek kullanım kabulü ve iyileştirme konusudur.
 - #149/#150 birleşti: 11 dilde 1.098 sözlük maddesi paket varlıklarında mevcut. Türkçe örneklem onayı kayıtlı; diğer 10 dil `machine-draft`, bağımsız ikinci inceleme ve ana dil kabulü açık. Bu varlıklar başvurulmuş 50 paketinden sonra eklendi; yeni mağaza paketi gerekir.
 - #147/#148 birleşti; beş mevcut A1/A2 pilotunun sahibi onayı kayıtlı ve güncel canlı revizyonlarında toplam 131 cümle, her cümlede 11 dil karşılığı doğrulandı. Tam UI/çevrimdışı/gerçek hesap kabulü açık; diğer 45 hikâyenin çalışma kelimesi önerileri henüz tamamlanmış sayılmaz. İki yeni klasik taslağı ertelenmiş durumda.
-- #151 birleşti: sade okuyucu, hareketler, kitaplık, tema seçimi ve Phosphor ikonlar mevcut. PR CI yeşil; birleşmiş ana dal `01defbe` cihaz CI’ında ilk kullanım testi zaman aşımına uğradı. Diğer üç CI işi başarılı. Önce bu hata ayrıştırılır.
+- #151 birleşti: sade okuyucu, hareketler, kitaplık, tema seçimi ve Phosphor ikonlar mevcut. Ana dal `01defbe` ilk cihaz CI denemesinde zaman aşımına uğradı; aynı kaynağın ikinci denemesi başarılı. #152 ve #153 cihaz CI’ları da başarılı: her birinde 336 geçti / 3 atlandı / 0 hata; ayrıca 3/3 açılış benchmark testi. Kök neden saptanmadı; tekrarında tanı kaydı #153’te.
 - Önceki içerik denetimindeki canlı/paket farkı kapanmış kabul edilmez. Güncel canlı fark sayısı yeniden ölçülmeden tarihsel 39 hikâye bulgusu güncel sayı olarak kullanılmaz.
 - Analytics kodu mevcut ve katılım varsayılan kapalı; canlı olay kabulü ve temsili kullanım başlangıç ölçümü açık. SEO dil sayfaları henüz taslak.
 
 ## Paralel çalışma — 20 Ekim ilerlemesi
 
 - **Claude / R05:** On dilde aynı 121 kelimenin bağımsız incelemesi tamamlandı (1.210 karşılık). 37 adaydan Portekizce `amounts` ve Rusça `wardrobe` düzeltildi; altı sözlük testi ve 11 dil varlık eşleşmesi geçti. Diğer 35 aday ve her dildeki kalan 977 madde açık; ana dil onayı verilmedi. [İnceleme ve düzeltmeler: taslak PR #152](https://github.com/yurkenn/english-tales/pull/152).
-- **Codex / R00:** İlk kullanım testi API 36'da tek başına 1/1, CI'daki önceki testlerle 6/6 ve ek hata bilgisiyle tekrar 6/6 geçti. Orijinal CI zaman aşımı yerelde tekrarlanmadı. 339 testlik deneme ayrı bir süreç kapanmasıyla 39. testte durdu; tüm cihaz testleri geçti sayılmaz. [Araştırma ve ekran durumu kaydı: taslak PR #153](https://github.com/yurkenn/english-tales/pull/153). Ana dal CI ikinci denemesi ve PR cihaz kontrolleri tamamlanmadan R00 kapatılmaz.
+- **Codex / R00:** İlk kullanım testi API 36'da tek başına 1/1, CI'daki önceki testlerle 6/6 ve ek hata bilgisiyle tekrar 6/6 geçti. Orijinal CI zaman aşımı yerelde tekrarlanmadı. 339 testlik deneme ayrı bir süreç kapanmasıyla 39. testte durdu; tüm cihaz testleri geçti sayılmaz. [Araştırma ve ekran durumu kaydı: taslak PR #153](https://github.com/yurkenn/english-tales/pull/153). Ana dal ikinci denemesi ve iki PR cihaz CI’ı artık başarılı: 339 durumun 336’sı geçti, 3’ü yapılandırma nedeniyle atlandı, hata yok; üç açılış benchmark testi de geçti. Yerel süreç kapanması bu CI sonucundan ayrı tutulur. [CI kanıtı](release-evidence/2026-10-20-device-ci-followup.json).
 - Bu iki PR henüz ana dala birleşmedi. Canlı içerik ve mağaza yayını yapılmadı; paralel işlerin sonucu fiziksel cihaz kabulünün yerine geçmez.
 
-## Önce kapatılacak teknik açık
+## R00 — cihaz CI kapısı geçti, zaman aşımı izleniyor
 
-**R00 · P0 — Ana dal ilk kullanım testi:** [39386537157](https://github.com/yurkenn/english-tales/actions/runs/39386537157) çalışmasında `FirstLaunchJourneyTest` 20 saniye zaman aşımıyla başarısız. Hedefli tekrar ile ürün/test/zamanlama nedeni ayrıştırılır; gerekli düzeltmeden sonra aynı birleşik kaynakta tam cihaz CI yeşil olmalı. #151 PR CI sonucu ana dal sonucunun yerine geçmez.
+[39386537157](https://github.com/yurkenn/english-tales/actions/runs/39386537157) ana dal ikinci denemesi; [#152 CI](https://github.com/yurkenn/english-tales/actions/runs/39392341293) ve [#153 CI](https://github.com/yurkenn/english-tales/actions/runs/39392752746) başarılı. Her çalışmada cihaz testleri **336 geçti / 3 atlandı / 0 hata**, açılış benchmark testleri **3/3**. İlk zaman aşımının kök nedeni doğrulanmadı; 20 saniye sınırı artırılmadı, kullanıcı yolculuğu gevşetilmedi. #153 tekrar olursa beklenen düğme, ekran ağacı ve başlangıç durumunu hata kaydına ekler. Bu teknik CI kapısı geçti; fiziksel cihaz/Play kabulü R01–R04 kapsamında açık.
 
 ## 1. Yayını sağlamlaştır — 1–2. hafta
 
@@ -96,7 +96,7 @@
 
 ## İlk başlanacak somut paket
 
-1. **R00:** Ana dal ilk kullanım cihaz testini yeniden üret ve düzelt; tam birleşik CI sonucunu kaydet.
+1. **R00 CI doğrulandı:** Başarılı kaynak ve kanıt kayıtlı; #153 tanı değişikliği incelemeye hazır. Zaman aşımı tekrarlanırsa ayrıntılı kayıtla yeniden açılır.
 2. **R01–R04:** 50’nin güncel Play durumunu ve fiziksel cihaz kabulünü kaydet; canlı ölçümü doğrula. #149–#151 için yeni paket/sürüm kodu ayrıca gerekir.
 3. **R05:** 10 dilde sözlük ikinci incelemesi ve dil örneklemi; yeni arayüz metinlerinin dil kontrolü.
 4. **R06:** Canlıdaki beş pilotun UI/çevrimdışı/hesap kabulü. Sonra kalan 45 hikâyenin çalışma kelimeleri ve çeviri kaynağı planı; yeni hikâye ekleme ertelendi.

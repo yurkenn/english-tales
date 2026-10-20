@@ -1,0 +1,175 @@
+{
+  "recordedOn": "2026-10-20",
+  "scope": "CI artifacts; no physical-device or Play rollout acceptance",
+  "runs": [
+    {
+      "runId": 39386537157,
+      "attempt": 2,
+      "source": "master 01defbe",
+      "result": "success",
+      "reports": [
+        {
+          "tests": "339",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "3",
+          "time": "364.295",
+          "timestamp": "2026-10-20T08:24:49",
+          "sha256": "f40ec8da5cc69fae72d5bb152ff566d22fc2d3a9282bcfca4a757f9f13c074b0",
+          "kind": "connected-device",
+          "passed": 336,
+          "journey": [
+            {
+              "name": "guestReadsSavesAWordAndReviewsItOnAFreshInstall",
+              "classname": "com.yurken.englishtales.FirstLaunchJourneyTest",
+              "time": "39.996"
+            }
+          ],
+          "skippedTests": [
+            {
+              "name": "anotherAccountJobDoesNotUseCurrentCredentialsOrCreateItsDatabase",
+              "classname": "com.yurken.englishtales.data.LearningSyncWorkerTest",
+              "time": "0.007"
+            },
+            {
+              "name": "repeatedSchedulingKeepsOneNetworkConstrainedPeriodicJob",
+              "classname": "com.yurken.englishtales.data.LearningSyncWorkerTest",
+              "time": "0.025"
+            },
+            {
+              "name": "livePublishedContentDownloadsAndRestoresOffline",
+              "classname": "com.yurken.englishtales.data.RemoteContentTest",
+              "time": "0.001"
+            }
+          ]
+        },
+        {
+          "tests": "3",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "52.725",
+          "timestamp": "2026-10-20T08:29:25",
+          "sha256": "9809fda1ebd40a527099534e917598fd95256f8b67a79cb63e8d3fe2f6d52431",
+          "kind": "startup-benchmark",
+          "passed": 3,
+          "journey": [],
+          "skippedTests": []
+        }
+      ]
+    },
+    {
+      "runId": 39392341293,
+      "attempt": 1,
+      "source": "PR152 66a5453",
+      "result": "success",
+      "reports": [
+        {
+          "tests": "339",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "3",
+          "time": "355.909",
+          "timestamp": "2026-10-20T08:28:14",
+          "sha256": "1d02f06e3d6073ab9e7370a819f951a3ffa1fe7e6cd5b5c559689f9e5f50c31d",
+          "kind": "connected-device",
+          "passed": 336,
+          "journey": [
+            {
+              "name": "guestReadsSavesAWordAndReviewsItOnAFreshInstall",
+              "classname": "com.yurken.englishtales.FirstLaunchJourneyTest",
+              "time": "35.111"
+            }
+          ],
+          "skippedTests": [
+            {
+              "name": "anotherAccountJobDoesNotUseCurrentCredentialsOrCreateItsDatabase",
+              "classname": "com.yurken.englishtales.data.LearningSyncWorkerTest",
+              "time": "0.004"
+            },
+            {
+              "name": "repeatedSchedulingKeepsOneNetworkConstrainedPeriodicJob",
+              "classname": "com.yurken.englishtales.data.LearningSyncWorkerTest",
+              "time": "0.001"
+            },
+            {
+              "name": "livePublishedContentDownloadsAndRestoresOffline",
+              "classname": "com.yurken.englishtales.data.RemoteContentTest",
+              "time": "0.002"
+            }
+          ]
+        },
+        {
+          "tests": "3",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "48.106",
+          "timestamp": "2026-10-20T08:32:30",
+          "sha256": "a3e555f796b99842dd400ba379ea2d053ced5b84291fe9be46dcc608fba204a4",
+          "kind": "startup-benchmark",
+          "passed": 3,
+          "journey": [],
+          "skippedTests": []
+        }
+      ]
+    },
+    {
+      "runId": 39392752746,
+      "attempt": 1,
+      "source": "PR153 8bf4927",
+      "result": "success",
+      "reports": [
+        {
+          "tests": "339",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "3",
+          "time": "270.314",
+          "timestamp": "2026-10-20T08:28:55",
+          "sha256": "be1a0ac5b7873a5cf102698d5cc28adf7a88fac9290d5c91eed26ebec474067a",
+          "kind": "connected-device",
+          "passed": 336,
+          "journey": [
+            {
+              "name": "guestReadsSavesAWordAndReviewsItOnAFreshInstall",
+              "classname": "com.yurken.englishtales.FirstLaunchJourneyTest",
+              "time": "19.278"
+            }
+          ],
+          "skippedTests": [
+            {
+              "name": "anotherAccountJobDoesNotUseCurrentCredentialsOrCreateItsDatabase",
+              "classname": "com.yurken.englishtales.data.LearningSyncWorkerTest",
+              "time": "0.002"
+            },
+            {
+              "name": "repeatedSchedulingKeepsOneNetworkConstrainedPeriodicJob",
+              "classname": "com.yurken.englishtales.data.LearningSyncWorkerTest",
+              "time": "0.0"
+            },
+            {
+              "name": "livePublishedContentDownloadsAndRestoresOffline",
+              "classname": "com.yurken.englishtales.data.RemoteContentTest",
+              "time": "0.0"
+            }
+          ]
+        },
+        {
+          "tests": "3",
+          "failures": "0",
+          "errors": "0",
+          "skipped": "0",
+          "time": "42.269",
+          "timestamp": "2026-10-20T08:31:49",
+          "sha256": "8c9e860005784c689040e93c6335fc5b88676832b4ed26218075acbd11227f2c",
+          "kind": "startup-benchmark",
+          "passed": 3,
+          "journey": [],
+          "skippedTests": []
+        }
+      ]
+    }
+  ],
+  "conclusion": "Original master timeout did not reproduce in retry; device CI gate now passes. Root cause not established; diagnostics in PR153 retain visibility if it returns. Local API36 process exit remains a separate unclassified environment/test issue."
+}
