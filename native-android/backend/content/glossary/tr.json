@@ -9900,13 +9900,21 @@
   },
   {
    "lemma": "tie",
-   "gloss": "bağlamak",
+   "gloss": "bağlamak; kravat (isim)",
    "occurrences": 2,
    "example": "They tie him to the ground with strong ropes.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "claude-opus-5-5-review-and-codex-adjudication-2026-10-20",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "kind": "AI-assisted source-sense expansion",
+    "previousGloss": "bağlamak",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_FULL_REVIEW_2026-10-20.md"
+   }
   },
   {
    "lemma": "tied",
@@ -10336,13 +10344,21 @@
   },
   {
    "lemma": "unlit",
-   "gloss": "ışıksız",
+   "gloss": "yakılmamış; ışıksız",
    "occurrences": 1,
    "example": "In a dark doorway, he noticed a man waiting with an unlit cigar.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "claude-opus-5-5-review-and-codex-adjudication-2026-10-20",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "kind": "AI-assisted source-sense expansion",
+    "previousGloss": "ışıksız",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_FULL_REVIEW_2026-10-20.md"
+   }
   },
   {
    "lemma": "unties",

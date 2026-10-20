@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "lang": "vi",
  "reviewStatus": "machine-draft",
- "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. A Claude review pass over all 1098 entries and Codex adjudication of flagged candidates are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. This remains AI-assisted review; unresolved source/language decisions and native-speaker review are still open. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
  "entries": [
   {
    "lemma": "a",
@@ -681,7 +681,7 @@
   },
   {
    "lemma": "call",
-   "gloss": "cuộc gọi; gọi",
+   "gloss": "tiếng gọi; cuộc gọi; gọi",
    "source": "claude-draft"
   },
   {
@@ -1071,7 +1071,7 @@
   },
   {
    "lemma": "curled",
-   "gloss": "đã cuộn tròn",
+   "gloss": "uốn xoăn (tóc); đã cuộn tròn",
    "source": "claude-draft"
   },
   {
@@ -1451,7 +1451,7 @@
   },
   {
    "lemma": "end",
-   "gloss": "kết thúc",
+   "gloss": "cuối; kết thúc",
    "source": "claude-draft"
   },
   {
@@ -2641,7 +2641,7 @@
   },
   {
    "lemma": "laces",
-   "gloss": "dây giày",
+   "gloss": "dây giày; dây buộc (áo)",
    "source": "claude-draft"
   },
   {
@@ -3541,7 +3541,7 @@
   },
   {
    "lemma": "poured",
-   "gloss": "đã rót",
+   "gloss": "đã rót; đã đổ",
    "source": "claude-draft"
   },
   {
@@ -3721,7 +3721,7 @@
   },
   {
    "lemma": "remained",
-   "gloss": "đã ở lại",
+   "gloss": "vẫn còn; vẫn là; ở lại",
    "source": "claude-draft"
   },
   {
@@ -3876,7 +3876,7 @@
   },
   {
    "lemma": "rose",
-   "gloss": "hoa hồng; đã tăng lên",
+   "gloss": "hoa hồng; đã tăng lên; đã bay lên; đã nổi lên",
    "source": "claude-draft"
   },
   {
@@ -3916,12 +3916,12 @@
   },
   {
    "lemma": "same",
-   "gloss": "giống nhau",
+   "gloss": "cùng một; giống nhau",
    "source": "claude-draft"
   },
   {
    "lemma": "sapphire",
-   "gloss": "ngọc bích",
+   "gloss": "đá sapphire",
    "source": "claude-draft"
   },
   {
@@ -4026,7 +4026,7 @@
   },
   {
    "lemma": "service",
-   "gloss": "dịch vụ",
+   "gloss": "sự phục vụ; dịch vụ",
    "source": "claude-draft"
   },
   {
@@ -4816,7 +4816,7 @@
   },
   {
    "lemma": "tie",
-   "gloss": "buộc",
+   "gloss": "buộc; cà vạt",
    "source": "claude-draft"
   },
   {
@@ -4906,7 +4906,7 @@
   },
   {
    "lemma": "travel",
-   "gloss": "đi du lịch",
+   "gloss": "đi lại; chuyển động; đi du lịch",
    "source": "claude-draft"
   },
   {
@@ -5031,7 +5031,7 @@
   },
   {
    "lemma": "unlit",
-   "gloss": "không có đèn sáng",
+   "gloss": "chưa châm lửa; không có đèn sáng",
    "source": "claude-draft"
   },
   {
@@ -5206,7 +5206,7 @@
   },
   {
    "lemma": "weakened",
-   "gloss": "đã làm yếu đi",
+   "gloss": "đã yếu đi; đã làm yếu đi",
    "source": "claude-draft"
   },
   {
