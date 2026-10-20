@@ -491,5 +491,38 @@
       "ur.json": "0ace995a1bf7594544e2e08b336058f0c294df3593f1ad14675a8b0cc7836dd5",
       "vi.json": "79104d9ad40d1b9a93e2838efbb376d722b060f56a8b2f71dcad0e530a3c760c"
     }
+  },
+  "codexDisposition": {
+    "acceptedChanges": [
+      {
+        "lang": "pt-BR",
+        "lemma": "amounts",
+        "before": "quantias",
+        "after": "quantidades",
+        "reason": "General quantities, including the food/drink source sentence; retains the original intended sense."
+      },
+      {
+        "lang": "ru",
+        "lemma": "wardrobe",
+        "before": "шкаф",
+        "after": "гардероб",
+        "reason": "Covers the clothes-collection sense in the supplied example and the wardrobe/cupboard sense."
+      }
+    ],
+    "remainingCandidates": 35,
+    "otherCandidates": "Not automatically applied; require whole-catalog sense comparison and language validation. Model confirmed status is not human approval.",
+    "nativeSpeakerApproval": false,
+    "validation": {
+      "glossaryCheck": "passed for all eleven language assets",
+      "glossaryTests": {
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0
+      }
+    },
+    "updatedSourceHashes": {
+      "pt-BR": "eeaf3ea501c99576b3deca0039d80d6e79202a26a6ccd1b0fe0b6172f367505e",
+      "ru": "59e539d0b0d3d3692c394a88e58098b441b47b6607245323ecfb661f53b587cb"
+    }
   }
 }

@@ -28,9 +28,13 @@ Claude 37 aday bildirdi: 1 yüksek, 22 orta, 14 düşük önem. Bunlar otomatik 
 - **Öncelikli dil doğrulaması:** Arapça `endangering` için `معرّض للخطر` yazımının aktif/pasif belirsizliği; Hintçe/Urduca `find` karşılığının aramak/bulmak ayrımı; Urduca `short` karşılığının saç uzunluğu bağlamı; Vietnamca `remained` karşılığının fiziksel kalmak/devam etmek ayrımı.
 - **Kaynak anlamı birlikte incelenmeli:** `wardrobe` örneği kıyafet koleksiyonu hakkında, Türkçe referans `gardırop`. Modelin dokuz dilde bildirdiği mobilya/kıyafet farkı yalnız çeviri dosyaları düzeltilerek kapatılmaz. Türkçe referans, aynı lemmanın diğer hikâyelerdeki kullanımı ve çok anlam politikası birlikte gözden geçirilmeli. Mevcut genel sözlük lemma başına tek anlam alanı kullanıyor.
 - **Dar bağlamdan otomatik düzeltme yapılmadı:** `confusion` için zihinsel karışıklık da geçerli bir anlam; tek mutfak örneği bütün lemma kullanımlarını kanıtlamaz. `fine` için `bien`/`fino`, bütün kullanımlar görülmeden sırf sözcük türü gerekçesiyle kaldırılmaz. Düşük güvenli `purr` önerileri kaynak yerine geçirilmedi.
-- **Küçük netleştirme adayı:** Portekizce `amounts` için gıda/içecek bağlamında `quantidades`; Rusça `wardrobe` için iki anlamı kapsayan `гардероб`. Bunlar da bu tur üretim varlığına otomatik uygulanmadı.
+- **Küçük netleştirme adayı:** Portekizce `amounts` için gıda/içecek bağlamında `quantidades`; Rusça `wardrobe` için iki anlamı kapsayan `гардероб`. Bu iki öneri kaynak bağlamıyla karşılaştırıldıktan sonra kabul edildi; aşağıdaki kayıt bu sınırlı değişikliği kapsar.
 
-Bu iş inceleme raporu üretir; sözlük karşılıklarını, `sampleApprovedBy`, `reviewStatus` veya uygulama varlıklarını değiştirmez. Model önerileri insan onayı, ana dil kabulü veya mağaza yayın izni olarak kaydedilmedi.
+Codex karşılaştırmasından sonra iki dar düzeltme uygulandı: Portekizce `amounts`: `quantias` → `quantidades` (gıda/içecek miktarı); Rusça `wardrobe`: `шкаф` → `гардероб` (kıyafet koleksiyonu ve dolap anlamını birlikte kapsar). İlgili paket sözlükleri yeniden üretildi. Diğer 35 aday otomatik uygulanmadı. `sampleApprovedBy` ve `reviewStatus: machine-draft` korunur; bu iki AI destekli düzeltme insan/ana dil onayı veya mağaza yayını değildir. İnceleme paketindeki değerler ve kaynak özetleri düzeltmeden önceki girdiyi korur.
+
+## Doğrulama
+
+`glossary:build` sonrası `glossary:check` 11 dilde başarılı; mevcut altı sözlük testi 6/6 geçti. Kaynak/paket farkı yalnız Portekizce ve Rusçada birer karşılıktır. Yeni bağımlılık veya sunucu yayını yok.
 
 ## Kalan iş
 
