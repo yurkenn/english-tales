@@ -1,12 +1,14 @@
 # On dilde sözlük — bağımsız örneklem incelemesi
 
+> **Devamı tamamlandı:** Kalan 977 kelimenin on dildeki incelemesi, bütün kararlar ve toplam 92 karşılık değişikliği [tam inceleme kaydında](GLOSSARY_FULL_REVIEW_2026-10-20.md). Aşağıdaki 121 kelimelik örneklem kendi tarihsel kapsamıyla korunur.
+
 20 Ekim 2026 · Kaynak `01defbe` · **37 adayın kararı kaydedildi: 5 kabul, 16 ret, 16 erteleme; bütün sözlük ve dil onayı açık.**
 
 Kullanıcının görev paylaşımı isteğiyle Claude CLI’ye bağımsız ikinci inceleme verildi. Codex bu sırada ilk kullanım testini araştırdı. Claude `claude-opus-5-5` ile çalıştı; araç, MCP, dosya yazma ve oturum kaydı kapalıydı. Yalnız depodaki sözlük karşılıkları ve kaynak örnekler paylaşıldı; hesap veya servis bilgisi paylaşılmadı.
 
 ## Kapsam
 
-1.098 Türkçe referans maddesinden 121 farklı lemma seçildi. Önce çok anlamlı/riskli sabit terimler, sonra kalanlardan `Random(20261020)` ile örneklem alındı. Aynı 121 lemma, on hedef dilde incelendi: toplam 1.210 karşılık. Riskli terimler özellikle seçildiği için sonuç rastgele hata oranı veya bütün sözlüğün doğruluk tahmini olarak kullanılamaz. Her dilde kalan **977 madde incelenmedi**.
+1.098 Türkçe referans maddesinden 121 farklı lemma seçildi. Önce çok anlamlı/riskli sabit terimler, sonra kalanlardan `Random(20261020)` ile örneklem alındı. Aynı 121 lemma, on hedef dilde incelendi: toplam 1.210 karşılık. Riskli terimler özellikle seçildiği için sonuç rastgele hata oranı veya bütün sözlüğün doğruluk tahmini olarak kullanılamaz. Bu ilk örneklem sırasında her dilde kalan 977 madde henüz incelenmemişti; devamı yukarıdaki tam inceleme kaydında tamamlandı.
 
 | Dil | İncelenen karşılık | Aday bulgu |
 |---|---|---|
@@ -101,7 +103,7 @@ Bunlar hedef dilde insan onayı değildir. Bazı kararlar dilbilgisi ve katalog 
 ## Kalan iş
 
 1. Ertelenen 16 aday için `nextAction` alanındaki somut kaynak/dil kararlarını tamamla. Özellikle `wardrobe` ve `blow` ana referans/çok anlam kapsamı, `find` sonuç bildiren kullanım, `purr` hayvan sesi ayrımı açık.
-2. Her dilin kalan 977 maddesini izlenebilir gruplarla ikinci incelemeden geçir; kaynak dosya özeti değişirse ilgili grup yeniden incelenir.
+2. **AI inceleme kapsamı tamamlandı:** Her dilin kalan 977 maddesi beş grupta incelendi; [tam kayıt](GLOSSARY_FULL_REVIEW_2026-10-20.md). Değişen girdiler için yeniden inceleme ve ana dil kabulü ayrı kalır.
 3. Android çevrimdışı anlam/kaydetme kontrolünü yeni paket üzerinde ayrıca çalıştır.
 4. Ana dil örneklemini ve mağaza paketinin kapsamını ayrı kaydet. Bu rapor sözlüğün tamamının hazır olduğu anlamına gelmez.
 

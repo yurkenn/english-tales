@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "lang": "hi",
  "reviewStatus": "machine-draft",
- "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma, written to follow the sense of the reviewed Turkish gloss. No second-model cross-check and no native-speaker review yet. sampleApprovedBy is the owner's decision to ship the draft in a store build; it does not claim a review.",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. A Claude review pass over all 1098 entries and Codex adjudication of flagged candidates are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. This remains AI-assisted review; unresolved source/language decisions and native-speaker review are still open. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
  "entries": [
   {
    "lemma": "a",
@@ -681,7 +681,7 @@
   },
   {
    "lemma": "call",
-   "gloss": "कॉल; पुकारना",
+   "gloss": "पुकार; कॉल; पुकारना",
    "source": "claude-draft"
   },
   {
@@ -1291,7 +1291,7 @@
   },
   {
    "lemma": "dough",
-   "gloss": "आटा",
+   "gloss": "गूँधा हुआ आटा",
    "source": "claude-draft"
   },
   {
@@ -2276,7 +2276,7 @@
   },
   {
    "lemma": "herself",
-   "gloss": "वह स्वयं (स्त्री)",
+   "gloss": "वह स्वयं; स्वयं को (स्त्री)",
    "source": "claude-draft"
   },
   {
@@ -2301,7 +2301,7 @@
   },
   {
    "lemma": "himself",
-   "gloss": "वह स्वयं (पुरुष)",
+   "gloss": "वह स्वयं; स्वयं को (पुरुष)",
    "source": "claude-draft"
   },
   {
@@ -4811,12 +4811,12 @@
   },
   {
    "lemma": "thumbelina",
-   "gloss": "(व्यक्तिवाचक नाम) अँगूठी (थम्बेलिना)",
+   "gloss": "(व्यक्तिवाचक नाम) थम्बेलिना",
    "source": "claude-draft"
   },
   {
    "lemma": "tie",
-   "gloss": "बाँधना",
+   "gloss": "बाँधना; टाई",
    "source": "claude-draft"
   },
   {
@@ -5206,7 +5206,7 @@
   },
   {
    "lemma": "weakened",
-   "gloss": "कमज़ोर कर दिया",
+   "gloss": "कमज़ोर हो गया; कमज़ोर कर दिया",
    "source": "claude-draft"
   },
   {
