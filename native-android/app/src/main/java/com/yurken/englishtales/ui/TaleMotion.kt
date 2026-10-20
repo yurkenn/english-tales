@@ -132,16 +132,18 @@ fun ConfettiBurst(modifier: Modifier = Modifier, key: Any = Unit, pieces: Int = 
 
 /** Gently breathes while [active]; for play buttons during narration. Stops completely when inactive. */
 fun Modifier.pulseWhile(active: Boolean): Modifier = composed {
-    val scale = remember { Animatable(1f) }
     val still = reduceMotion()
-    LaunchedEffect(active) {
-        if (active && !still) {
-            while (true) {
-                scale.animateTo(1.06f, tween(520, easing = FastOutSlowInEasing))
-                scale.animateTo(1f, tween(520, easing = FastOutSlowInEasing))
-            }
-        } else scale.animateTo(1f, tween(TaleMotion.quick))
-    }
+    // An explicit infinite transition participates in Compose's infinite-animation
+    // policy. A manual animateTo loop continually schedules finite animations,
+    // keeping the loading screen busy while tests wait for IO to complete.
+    val scale = if (active && !still) {
+        val transition = rememberInfiniteTransition(label = "pulse")
+        transition.animateFloat(
+            initialValue = 1f, targetValue = 1.06f,
+            animationSpec = infiniteRepeatable(tween(520, easing = FastOutSlowInEasing), RepeatMode.Reverse),
+            label = "pulseScale"
+        )
+    } else rememberUpdatedState(1f)
     graphicsLayer { scaleX = scale.value; scaleY = scale.value }
 }
 

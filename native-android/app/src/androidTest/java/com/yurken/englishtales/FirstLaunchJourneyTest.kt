@@ -15,6 +15,7 @@ import java.io.File
 
 /** A clean install walked end to end: intro, guest welcome, onboarding, first story, a saved word and its first review. */
 class FirstLaunchJourneyTest {
+    // Keep the framework default dispatcher for the real Activity/window journey.
     @get:Rule val compose=createEmptyComposeRule()
     private val context get()=InstrumentationRegistry.getInstrumentation().targetContext
     private fun text(id: Int,vararg args: Any)=context.getString(id,*args)
@@ -39,7 +40,9 @@ class FirstLaunchJourneyTest {
 
     private fun waitFor(matcher: SemanticsMatcher,timeout: Long=20_000) {
         try {
-            compose.waitUntil(timeout) {runCatching {compose.onAllNodes(matcher,useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()}.getOrDefault(false)}
+            // A missing match is an empty collection. Rendering failures must propagate,
+            // rather than being swallowed and misreported as a missing screen.
+            compose.waitUntil(timeout) {compose.onAllNodes(matcher,useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()}
         } catch (failure: ComposeTimeoutException) {
             val tree=runCatching {compose.onRoot(useUnmergedTree=true).printToString()}.getOrElse {"Semantics unavailable: ${it.message}"}
             throw AssertionError("First-launch screen did not reach $matcher. " +
@@ -55,7 +58,8 @@ class FirstLaunchJourneyTest {
         val scenario=ActivityScenario.launch(MainActivity::class.java)
         try {
             // Brand intro: skip it when it is still showing; it also continues on its own.
-            runCatching {compose.onNodeWithContentDescription(text(R.string.yurken)).performClick()}
+            if(compose.onAllNodesWithContentDescription(text(R.string.yurken)).fetchSemanticsNodes().isNotEmpty())
+                compose.onNodeWithContentDescription(text(R.string.yurken)).performClick()
             waitFor(hasTestTag("language_continue"))
             compose.onNodeWithTag("language_continue").performClick()
             assertTrue(AppLanguage.hasConfirmedChoice(context))
