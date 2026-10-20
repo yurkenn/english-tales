@@ -2,6 +2,7 @@ package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -25,9 +26,11 @@ internal fun TaleLoading(modifier: Modifier = Modifier, mascotSize: Int = 120) {
 
 /** An empty list explained by the mascot instead of a blank screen or a lone gray line. */
 @Composable
-internal fun TaleEmptyState(text: String, modifier: Modifier = Modifier, mascotSize: Int = 140) {
+internal fun TaleEmptyState(text: String, modifier: Modifier = Modifier, mascotSize: Int = 140, actionLabel: String? = null, onAction: (() -> Unit)? = null) {
     Column(modifier.fillMaxWidth().padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(12.dp)) {
         TalesMascot(MascotMood.Thinking, Modifier.size(mascotSize.dp).appearIn(), animate = true)
         Text(text, Modifier.appearIn(1), style = MaterialTheme.typography.bodyMedium, color = TaleMuted, textAlign = TextAlign.Center)
+        // An empty screen says what to do next instead of ending the visit.
+        if (actionLabel != null && onAction != null) Button(onClick = onAction, modifier = Modifier.appearIn(2).heightIn(min = 48.dp)) { Text(actionLabel) }
     }
 }

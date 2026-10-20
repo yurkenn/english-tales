@@ -60,7 +60,7 @@ class ClassicLibraryTest {
                 onBack={},onSaveWord={saved=it},onProgress={p,s->percent=p;position=s},onComplete={complete++},
                 onHintDismiss={},sessionId="classic-reader-$mount",onCheckpoint={_,_->})}
         }}
-        compose.onAllNodesWithContentDescription("Cümleyi çevir").onFirst().performClick()
+        compose.onNodeWithContentDescription("Sayfayı çevir").performClick()
         compose.onNodeWithText(story.sentences.first().translation).assertIsDisplayed()
         val sentence=compose.onNodeWithText(story.sentences.first().english)
         val layouts=mutableListOf<TextLayoutResult>()

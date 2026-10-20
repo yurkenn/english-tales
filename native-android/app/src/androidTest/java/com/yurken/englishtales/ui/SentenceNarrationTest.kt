@@ -13,7 +13,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 
-/** Q4.8: every sentence on the page offers "listen from here", also to TalkBack, and the hint explains it. */
+/** Q4.8: every sentence on the page offers "listen from here", also to TalkBack, and the first-use tip explains holding a sentence. */
 class SentenceNarrationTest {
     @get:Rule val compose=createComposeRule()
     private val context=InstrumentationRegistry.getInstrumentation().targetContext
@@ -34,7 +34,7 @@ class SentenceNarrationTest {
         // Without a voice on the test device this only queues; it must not crash or change the page.
         val action=nodes[3].config[SemanticsActions.CustomActions].first {it.label==label}
         compose.runOnIdle {action.action()}
-        compose.onNodeWithText(context.getString(com.yurken.englishtales.R.string.listen_from_sentence_hint)).performScrollTo().assertIsDisplayed()
+        compose.onNodeWithText(context.getString(com.yurken.englishtales.R.string.reader_hint_sentence)).performScrollTo().assertIsDisplayed()
         compose.onNodeWithText("1 / ${(story.sentences.size+7)/8}").assertIsDisplayed()
     }
 }

@@ -28,6 +28,8 @@ import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.gestures.detectHorizontalDragGestures
+import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
@@ -243,6 +245,10 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
             narrator.stop(); page=target
             if(report) reportProgress()
         }
+        fun toggleTranslation(id: String) { if(id in translations) translations.remove(id) else translations.add(id) }
+        val pageTranslated=pageSentences.isNotEmpty() && pageSentences.all {it.id in translations}
+        // A sideways swipe turns the page, like a book; the threshold keeps a vertical scroll from flipping it.
+        val swipeThreshold=with(androidx.compose.ui.platform.LocalDensity.current) {72.dp.toPx()}
         Box(Modifier.fillMaxSize().background(background).statusBarsPadding().navigationBarsPadding()) {
             // On tablets and in landscape the page keeps a book-like line length instead of spanning the screen.
             Column(Modifier.fillMaxHeight().centeredWidth(ReadingWidth)) {
@@ -256,32 +262,49 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                         ReferenceIcon("cards",muted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=muted,fontSize=14.sp)
                     }
                 }
-                Column(Modifier.weight(1f).verticalScroll(scroll).padding(start=24.dp,end=12.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+                Column(Modifier.weight(1f).pointerInput(page,pageCount) {
+                        var drag=0f
+                        detectHorizontalDragGestures(onDragStart={drag=0f},onDragEnd={
+                            if(drag<=-swipeThreshold) changePage(page+1) else if(drag>=swipeThreshold) changePage(page-1)
+                        }) {change,amount -> drag+=amount; change.consume()}
+                    }.verticalScroll(scroll).padding(horizontal=24.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
                     if(!snapshot.readerHintSeen) {
                         Column(Modifier.fillMaxWidth().appearIn().background(accent.copy(alpha=0.08f),RoundedCornerShape(14.dp)).border(1.dp,accent.copy(alpha=0.25f),RoundedCornerShape(14.dp)).padding(14.dp)) {
                             Text(stringResource(R.string.okurken_ogren),fontWeight=FontWeight.Bold,fontSize=14.sp,color=accent)
-                            Text(stringResource(R.string.alti_cizili_kelimeye_dokun_ve),fontSize=12.sp,color=foreground)
-                            Text(stringResource(R.string.listen_from_sentence_hint),fontSize=12.sp,color=foreground)
+                            Text(stringResource(R.string.reader_hint_word),fontSize=12.sp,color=foreground)
+                            Text(stringResource(R.string.reader_hint_sentence),fontSize=12.sp,color=foreground)
+                            Text(stringResource(R.string.reader_hint_swipe),fontSize=12.sp,color=foreground)
                             TextButton(onClick=onHintDismiss,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.anladim)) }
                         }
                     }
                     Text("${page+1}.",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
                     val listenLabel=stringResource(R.string.listen_from_sentence)
+                    val translateLabel=stringResource(R.string.cumleyi_cevir)
+                    val hideLabel=stringResource(R.string.ceviriyi_gizle)
+                    // Only a story's own study words are underlined; with the general word list every line would be.
+                    val curated=story.vocabulary!=null
                     pageSentences.forEachIndexed { index,sentence -> key(page,sentence.id) {
-                        // Long press (or the accessibility action) reads the page aloud from this sentence.
+                        // Long press translates the sentence; while the page is being read aloud it moves the reading here instead.
                         val highlight by animateColorAsState(if(index==readingIndex) accent.copy(alpha=0.16f) else Color.Transparent,tween(TaleMotion.standard),label="reading")
+                        val translated=sentence.id in translations
                         Row(Modifier.fillMaxWidth().appearIn(index)
                             .background(highlight,RoundedCornerShape(8.dp))
-                            .pointerInput(page,index) { detectTapGestures(onLongPress={ listen(index) }) }
-                            .semantics { customActions=listOf(CustomAccessibilityAction(listenLabel) { listen(index); true }) },
-                            verticalAlignment=Alignment.Top,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
-                            val phrases=if(story.vocabulary!=null) remember(story.revisionId,sentence.id) {PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence))} else LearningContent.phraseIndex
-                            TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,LearningContent.glossary,lineSpacing=appearance.spacing.multiplier) { selectedWord=it; more=false; onLookup(it) }
-                            Box(Modifier.size(48.dp).contentLabel(if(sentence.id in translations) stringResource(R.string.ceviriyi_gizle) else stringResource(R.string.cumleyi_cevir)).clickable(role=Role.Button) { if(sentence.id in translations) translations.remove(sentence.id) else translations.add(sentence.id) },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(sentence.id in translations) accent else muted,Modifier.size(23.dp)) }
+                            .pointerInput(page,index) { detectTapGestures(onLongPress={ if(narrator.speaking || narrator.preparing) listen(index) else toggleTranslation(sentence.id) }) }
+                            .semantics { customActions=listOf(
+                                CustomAccessibilityAction(if(translated) hideLabel else translateLabel) { toggleTranslation(sentence.id); true },
+                                CustomAccessibilityAction(listenLabel) { listen(index); true }) }) {
+                            val phrases=if(curated) remember(story.revisionId,sentence.id) {PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence))} else LearningContent.phraseIndex
+                            TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,LearningContent.glossary,lineSpacing=appearance.spacing.multiplier,
+                                saved=snapshot.savedWordIds,underlineStudyWords=curated,savedTint=accent.copy(alpha=0.14f)) { selectedWord=it; more=false; onLookup(it) }
                         }
                         AnimatedVisibility(sentence.id in translations,enter=fadeIn(tween(TaleMotion.standard))+expandVertically(tween(TaleMotion.standard)),exit=fadeOut(tween(TaleMotion.quick))+shrinkVertically(tween(TaleMotion.quick))) {
-                            Text(sentence.translation,color=TaleOnBlue,fontSize=14.sp,lineHeight=20.sp,
-                                modifier=Modifier.fillMaxWidth().padding(end=36.dp).background(TaleBlue,RoundedCornerShape(topStart=4.dp,topEnd=14.dp,bottomStart=14.dp,bottomEnd=14.dp)).padding(12.dp))
+                            // A quiet line under the sentence: the English stays the main text.
+                            Text(sentence.translation,color=muted,fontSize=(fontSize-3).coerceAtLeast(13).sp,lineHeight=((fontSize-3).coerceAtLeast(13)*1.4f).sp,
+                                modifier=Modifier.fillMaxWidth().padding(start=10.dp).drawBehind {
+                                    val bar=3.dp.toPx()
+                                    val x=if(layoutDirection==androidx.compose.ui.unit.LayoutDirection.Rtl) size.width-bar else 0f
+                                    drawRect(accent.copy(alpha=0.5f),topLeft=androidx.compose.ui.geometry.Offset(x,0f),size=androidx.compose.ui.geometry.Size(bar,size.height))
+                                }.padding(start=10.dp,top=2.dp,bottom=2.dp))
                         }
                     } }
                 }
@@ -289,11 +312,15 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                 Text("${page+1} / $pageCount",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
                 Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
                     Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
+                    Box(Modifier.size(48.dp).contentLabel(stringResource(if(pageTranslated) R.string.page_translate_hide else R.string.page_translate)).clickable(role=Role.Button) {
+                        if(pageTranslated) translations.removeAll(pageSentences.map {it.id}.toSet()) else pageSentences.forEach {if(it.id !in translations) translations.add(it.id)}
+                    },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(pageTranslated) accent else muted,Modifier.size(24.dp).background(if(pageTranslated) accent.copy(alpha=0.14f) else Color.Transparent,RoundedCornerShape(6.dp))) }
                     Box(Modifier.size(48.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { listen() } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
                 }
                 Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
-                    TextButton(onClick={changePage(page-1)},enabled=page>0,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.onceki),fontSize=12.sp) }
-                    TextButton(enabled=!completed,colors=ButtonDefaults.textButtonColors(contentColor=accent),onClick={ if(page==pageCount-1) {completed=true;narrator.stop();onComplete(timer.pause())} else changePage(page+1) }) { Text(if(page==pageCount-1) stringResource(R.string.bitir) else stringResource(R.string.sonraki),fontSize=12.sp) }
+                    TextButton(onClick={changePage(page-1)},enabled=page>0,modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.onceki),fontSize=15.sp) }
+                    if(page==pageCount-1) Button(enabled=!completed,modifier=Modifier.heightIn(min=48.dp),onClick={completed=true;narrator.stop();onComplete(timer.pause())}) { Text(stringResource(R.string.bitir),fontSize=15.sp) }
+                    else TextButton(modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent),onClick={changePage(page+1)}) { Text(stringResource(R.string.sonraki),fontSize=15.sp,fontWeight=FontWeight.SemiBold) }
                 }
             }
             if(options) ReaderAppearancePanel(appearance,appearanceError,onDismiss={options=false},onChange=::changeAppearance)
@@ -335,20 +362,26 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
 }
 
 @Composable
-private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,phrases: PhraseMatcher.Index,glossary: Glossary?=null,lineSpacing: Float=1.65f,onWord: (WordInfo)->Unit) {
+private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,phrases: PhraseMatcher.Index,glossary: Glossary?=null,lineSpacing: Float=1.65f,
+    saved: Set<String> = emptySet(),underlineStudyWords: Boolean=true,savedTint: Color=Color.Transparent,onWord: (WordInfo)->Unit) {
     val matches=remember(sentence,phrases) {PhraseMatcher.find(sentence.english,phrases)}
-    // Learning words are underlined and savable; every other known word is a plain-looking lookup link (Q4.3a).
+    // Every known word is a link. Saved words get a tint and an underline, so the mark is not colour alone;
+    // a story's own study words are underlined; everything else looks like plain text (Q4.3a).
     val links=remember(sentence,matches,glossary) {
         (matches.map {Triple(it.start,it.end,it.word)}+glossary?.spans(sentence.english,matches).orEmpty().map {Triple(it.start,it.end,it.word)}).sortedBy {it.first}
     }
     val currentOnWord by rememberUpdatedState(onWord)
     // Each word/phrase is a link: tappable and exposed to accessibility services as its own element.
-    val annotated=remember(sentence,color,links) {
+    val annotated=remember(sentence,color,links,saved,underlineStudyWords,savedTint) {
         buildAnnotatedString {
             var cursor=0
             links.forEach { (start,end,word) ->
                 append(sentence.english.substring(cursor,start))
-                val style=if(Glossary.isLookupOnly(word)) SpanStyle(color=color) else SpanStyle(color=color,textDecoration=TextDecoration.Underline)
+                val style=when {
+                    word.id in saved -> SpanStyle(color=color,background=savedTint,textDecoration=TextDecoration.Underline)
+                    underlineStudyWords && !Glossary.isLookupOnly(word) -> SpanStyle(color=color,textDecoration=TextDecoration.Underline)
+                    else -> SpanStyle(color=color)
+                }
                 withLink(LinkAnnotation.Clickable(word.id+"@"+start,TextLinkStyles(style)) {currentOnWord(word)}) {
                     append(sentence.english.substring(start,end))
                 }

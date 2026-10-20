@@ -45,7 +45,7 @@ class AccessibilityAuditTest {
     @Test fun readerTouchTargets() {
         compose.setContent {EnglishTalesTheme {ReaderScreen(story,snapshot,onBack={},onSaveWord={},onProgress={_,_->},
             onComplete={},onHintDismiss={},sessionId="audit-size",onCheckpoint={_,_->},onOpenWords={})}}
-        compose.onAllNodesWithContentDescription("Cümleyi çevir").assertAllAtLeast48dp()
+        compose.onNodeWithContentDescription("Sayfayı çevir").assertAtLeast48dp()
         compose.onAllNodes(hasClickAction() and SemanticsMatcher("word link") {node -> node.config.any {it.key.name=="LinkTestMarker"}})
             .onFirst().performClick()
         compose.onNodeWithText("Kapat").assertAtLeast48dp()

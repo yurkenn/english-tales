@@ -26,6 +26,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.R
@@ -130,12 +131,16 @@ fun BookCover(story: Story, modifier: Modifier = Modifier) {
         if(bitmap!=null) Image(bitmap,stringResource(R.string.kitabinin_kapagi, story.title),Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
         else if(story.coverKey!="remote") Image(painterResource(coverResource(story.coverKey)),stringResource(R.string.kitabinin_kapagi, story.title),Modifier.fillMaxSize(),contentScale=ContentScale.Fit)
         else Box(Modifier.fillMaxSize().background(TaleBlue))
-        if(!compact) Box(Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(Color.Black.copy(alpha=0.5f),Color.Transparent,Color.Black.copy(alpha=0.72f)))))
+        // Every screen shows the title next to the cover, so artwork only carries it when there is no image to show.
+        val artwork=bitmap!=null || story.coverKey!="remote"
+        if(!compact) Box(Modifier.fillMaxSize().background(Brush.verticalGradient(if(artwork) listOf(Color.Black.copy(alpha=0.45f),Color.Transparent,Color.Transparent)
+            else listOf(Color.Black.copy(alpha=0.5f),Color.Transparent,Color.Black.copy(alpha=0.72f)))))
         if(!compact) Text(stringResource(R.string.english_tales),fontSize=(7/artworkScale).sp,letterSpacing=(1/artworkScale).sp,color=Color.White,modifier=Modifier.align(Alignment.TopStart).padding(8.dp))
         Text(story.level,color=TaleInk,fontWeight=FontWeight.ExtraBold,fontSize=((if(compact) 8 else 12)/artworkScale).sp,
             modifier=Modifier.align(Alignment.TopEnd).background(TaleYellow,RoundedCornerShape(bottomStart=5.dp)).padding(horizontal=if(compact) 4.dp else 7.dp,vertical=if(compact) 5.dp else 9.dp))
         // Small list thumbnails have an adjacent, accessible title; avoid splitting tiny words on the artwork.
-        if(!compact) Text(story.title,color=Color.White,fontFamily=FontFamily.Serif,fontWeight=FontWeight.Bold,fontSize=(17/artworkScale).sp,
-            lineHeight=(19/artworkScale).sp,textAlign=TextAlign.Center,modifier=Modifier.align(Alignment.BottomCenter).padding(horizontal=7.dp,vertical=18.dp))
+        if(!compact && !artwork) Text(story.title,color=Color.White,fontFamily=FontFamily.Serif,fontWeight=FontWeight.Bold,fontSize=(17/artworkScale).sp,
+            lineHeight=(19/artworkScale).sp,textAlign=TextAlign.Center,maxLines=4,overflow=TextOverflow.Ellipsis,
+            modifier=Modifier.align(Alignment.BottomCenter).padding(horizontal=7.dp,vertical=18.dp))
     }
 }

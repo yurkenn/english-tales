@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.*
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
@@ -33,6 +34,7 @@ import com.yurken.englishtales.R
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.res.stringResource
 import com.yurken.englishtales.data.ReadingTime
 import com.yurken.englishtales.data.ReadingLength
@@ -54,10 +56,13 @@ import kotlinx.coroutines.withContext
 @Composable
 fun StatsHeader(snapshot: LearningSnapshot) {
     FlowRow(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=12.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalArrangement=Arrangement.spacedBy(4.dp),maxItemsInEachRow=if(LocalDensity.current.fontScale>=1.5f) 2 else 4) {
-        Text("🇺🇸",fontSize=29.sp)
-        LearningInfoButton("study",snapshot.level,stringResource(R.string.ingilizce_seviyen),stringResource(R.string.sectigin_seviye_hikaye_onerileri_buna, snapshot.level))
-        LearningInfoButton("streak","${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot))
-        LearningInfoButton("points","${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot))
+        Column(Modifier.heightIn(min=48.dp),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
+            Text("🇺🇸",fontSize=24.sp,modifier=Modifier.clearAndSetSemantics {})
+            Text(stringResource(R.string.stat_language),fontSize=11.sp,color=TaleMuted,maxLines=1)
+        }
+        LearningInfoButton("study",snapshot.level,stringResource(R.string.ingilizce_seviyen),stringResource(R.string.sectigin_seviye_hikaye_onerileri_buna, snapshot.level),stringResource(R.string.stat_level))
+        LearningInfoButton("streak","${snapshot.streak}",stringResource(R.string.calisma_serin),streakExplanation(snapshot),stringResource(R.string.stat_streak))
+        LearningInfoButton("points","${snapshot.points}",stringResource(R.string.puanlarin),pointsExplanation(snapshot),stringResource(R.string.stat_points))
     }
 }
 
@@ -115,8 +120,12 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
 private const val TAG_LIST = "tag:"
 private const val FAVORITES = "favorites"
 
+/** Catalog actions the library offers once the status line is gone: pull to refresh and the downloads list. */
+class LibraryActions(val refreshing: Boolean, val onRefresh: ()->Unit, val onDownloads: ()->Unit)
+
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, padding: PaddingValues) {
+fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, padding: PaddingValues, actions: LibraryActions? = null) {
     var search by rememberSaveable { mutableStateOf("") }
     var listMode by rememberSaveable { mutableStateOf("") }
     var levelFilter by rememberSaveable { mutableStateOf<String?>(null) }
@@ -153,7 +162,8 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                     }
                 }
             }
-            Column(Modifier.weight(1f).verticalScroll(rememberScrollState())) {
+            PullToRefreshBox(isRefreshing=actions?.refreshing==true,onRefresh={actions?.onRefresh?.invoke()},modifier=Modifier.weight(1f)) {
+            Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState())) {
                 Spacer(Modifier.height(20.dp))
                 if(stories.isNotEmpty()) ChallengeBanner { (stories.firstOrNull { it.level==snapshot.level } ?: stories.first()).let {onOpenStory(it.id)} }
                 else Text(stringResource(R.string.su_anda_yayimlanmis_hikaye_yok),modifier=Modifier.padding(16.dp),color=TaleMuted)
@@ -168,6 +178,11 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
                 (listOf(stringResource(R.string.kategoriler) to "all")+(if(favoriteCount>0) listOf(stringResource(R.string.favorites_title,favoriteCount) to FAVORITES) else emptyList())+categories.map { it.name to TAG_LIST+it.id }).forEach { (label,key) ->
                     Row(Modifier.fillMaxWidth().clickable(role=Role.Button) { listMode=key }.padding(horizontal=18.dp,vertical=14.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) { Text(label,fontSize=14.sp); ReferenceIcon("next",TaleMuted,Modifier.size(16.dp)) }
                 }
+                actions?.let { library ->
+                    Row(Modifier.fillMaxWidth().clickable(role=Role.Button,onClick=library.onDownloads).padding(horizontal=18.dp,vertical=14.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) { Text(stringResource(R.string.indirilenler),fontSize=14.sp); ReferenceIcon("next",TaleMuted,Modifier.size(16.dp)) }
+                }
+                Spacer(Modifier.height(16.dp))
+            }
             }
         } else {
             SimpleTopBar(if(listMode=="books") stringResource(R.string.kitaplarim) else if(listMode=="search") stringResource(R.string.arama) else if(listMode=="new") stringResource(R.string.yeni_hikayeler) else if(listMode=="level") stringResource(R.string.kitaplari, snapshot.level) else if(listMode=="adventure") stringResource(R.string.macera_ve_gizem) else if(listMode=="all") stringResource(R.string.kitaplar) else if(listMode==FAVORITES) stringResource(R.string.favorites_title,filtered.size) else categories.firstOrNull { TAG_LIST+it.id==listMode }?.name ?: stringResource(R.string.kitaplar)) { leaveList() }
@@ -184,7 +199,13 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
             // Favorites read most recently added first; other lists keep catalog order.
             val shown=remember(filtered,listMode,snapshot.favoriteStoryIds) { if(listMode==FAVORITES) filtered.sortedBy { snapshot.favoriteStoryIds.indexOf(it.id) } else filtered }
             StoryList(shown,{ story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }) {
-                TaleEmptyState(if(filters.active) stringResource(R.string.bu_filtrelere_uyan_kitap_yok) else if(listMode=="books") stringResource(R.string.okumaya_basladigin_kitaplar_burada_gorunecek) else stringResource(R.string.kitap_bulunamadi),mascotSize=120)
+                when {
+                    // The filters' own clear button sits above the list, so this state needs no second one.
+                    filters.active -> TaleEmptyState(stringResource(R.string.bu_filtrelere_uyan_kitap_yok),mascotSize=120)
+                    listMode=="books" -> TaleEmptyState(stringResource(R.string.okumaya_basladigin_kitaplar_burada_gorunecek),mascotSize=120,actionLabel=stringResource(R.string.empty_browse_stories),onAction={ leaveList() })
+                    search.isNotBlank() -> TaleEmptyState(stringResource(R.string.kitap_bulunamadi),mascotSize=120,actionLabel=stringResource(R.string.empty_clear_search),onAction={ search="" })
+                    else -> TaleEmptyState(stringResource(R.string.kitap_bulunamadi),mascotSize=120)
+                }
             }
         }
     }
@@ -228,9 +249,9 @@ private fun BookShelf(title: String, stories: List<Story>, onOpenStory: (String)
             Column(Modifier.width(130.dp).appearIn(i).pressScale { onOpenStory(story.id) }) {
                 BookCover(story,Modifier.size(130.dp,190.dp).shadow(6.dp,RoundedCornerShape(10.dp)))
                 Spacer(Modifier.height(9.dp))
-                Text(story.author,color=TaleMuted,fontSize=11.sp,maxLines=1)
-                Spacer(Modifier.height(4.dp))
-                Text(story.title,fontSize=14.sp,lineHeight=20.sp,maxLines=2,overflow=TextOverflow.Ellipsis)
+                Text(story.title,fontSize=14.sp,lineHeight=20.sp,fontWeight=FontWeight.Medium,maxLines=2,overflow=TextOverflow.Ellipsis)
+                Spacer(Modifier.height(2.dp))
+                Text(story.author,color=TaleMuted,fontSize=11.sp,maxLines=1,overflow=TextOverflow.Ellipsis)
                 ReadingMinutes(story)
             }
         }
@@ -335,7 +356,7 @@ private fun ProfilePanel(modifier: Modifier = Modifier, index: Int = 0, content:
 }
 
 @Composable
-fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWord: (String) -> Unit) {
+fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWord: (String) -> Unit, onBrowse: (() -> Unit)? = null) {
     var selectedStage by rememberSaveable { mutableStateOf("learning") }
     val stages=listOf(Triple("learning",stringResource(R.string.ogreniyorum),TaleBlue),Triple("reviewing",stringResource(R.string.tekrar_ediyorum),Color(0xFF7BCC3A)),Triple("known",stringResource(R.string.biliyorum),TalePurple))
     val words=snapshot.savedWordList().filter { (snapshot.wordStates[it.id]?:"learning")==selectedStage }
@@ -378,7 +399,9 @@ fun SavedWordsScreen(snapshot: LearningSnapshot, onBack: () -> Unit, onRemoveWor
                 }
             }
             if(words.isEmpty()) item {
-                TaleEmptyState(stringResource(R.string.bu_asamada_henuz_kelime_yok))
+                // With no saved word at all, the way to get one is a story; an empty later stage just waits for practice.
+                if(snapshot.savedWordIds.isEmpty() && onBrowse!=null) TaleEmptyState(stringResource(R.string.empty_words_hint),actionLabel=stringResource(R.string.empty_browse_stories),onAction=onBrowse)
+                else TaleEmptyState(stringResource(R.string.bu_asamada_henuz_kelime_yok))
             }
         }
     }

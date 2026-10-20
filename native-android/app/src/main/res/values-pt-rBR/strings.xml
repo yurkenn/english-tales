@@ -257,7 +257,6 @@
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">A configuração de leitura não pôde ser salva. Você pode tentar novamente.</string>
     <string name="kelimelerim_kayitli_kelime_2">Minhas palavras, %1$s salvou palavras</string>
     <string name="okurken_ogren">Aprenda enquanto você lê</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">Toque em uma palavra sublinhada e salve-a. O ícone à direita traduz a frase; os fones de ouvido leem a página em voz alta.</string>
     <string name="ceviriyi_gizle">Ocultar tradução</string>
     <string name="cumleyi_cevir">Traduzir frase</string>
     <string name="sayfayi_dinle">Ouça a página</string>

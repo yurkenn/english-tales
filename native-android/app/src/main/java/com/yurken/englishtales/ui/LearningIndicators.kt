@@ -13,20 +13,25 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.data.LearningSnapshot
 
 @Composable
-internal fun LearningInfoButton(kind: String, value: String, title: String, explanation: String) {
+internal fun LearningInfoButton(kind: String, value: String, title: String, explanation: String, caption: String? = null) {
     var open by remember {mutableStateOf(false)}
     // A changed value (new points, a longer streak) pops once so the gain is noticed.
     var last by remember {mutableStateOf(value)}
     var bumps by remember {mutableIntStateOf(0)}
     LaunchedEffect(value) {if(value!=last) {bumps++;last=value}}
-    Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.bilgi, title, value))
+    // The caption names the number, so the header reads without opening each explanation.
+    Column(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.bilgi, title, value))
         .clickable(role=Role.Button) {open=true}.padding(horizontal=4.dp),
-        verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(5.dp)) {
-        Text(value,fontWeight=FontWeight.Bold,modifier=Modifier.popOn(bumps))
-        ReferenceIcon(kind,TaleBlue,Modifier.size(23.dp).popOn(bumps))
+        horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.Center) {
+        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(5.dp)) {
+            Text(value,fontWeight=FontWeight.Bold,modifier=Modifier.popOn(bumps))
+            ReferenceIcon(kind,TaleBlue,Modifier.size(23.dp).popOn(bumps))
+        }
+        caption?.let { Text(it,fontSize=11.sp,color=TaleMuted,maxLines=1) }
     }
     if(open) TaleDialog(title,explanation,stringResource(R.string.anladim),onConfirm={open=false},onDismissRequest={open=false},mood=MascotMood.Welcome)
 }

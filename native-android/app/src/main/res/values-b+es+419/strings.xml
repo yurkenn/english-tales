@@ -257,7 +257,6 @@
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">No se pudo guardar la configuración de lectura. Puedes intentarlo de nuevo.</string>
     <string name="kelimelerim_kayitli_kelime_2">Mis palabras, %1$s palabras guardadas.</string>
     <string name="okurken_ogren">Aprende mientras lees</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">Toca una palabra subrayada y guárdala. El icono de la derecha traduce la frase; los auriculares leen la página en voz alta.</string>
     <string name="ceviriyi_gizle">Ocultar traducción</string>
     <string name="cumleyi_cevir">Traducir frase</string>
     <string name="sayfayi_dinle">Escuche la pagina</string>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Library header captions, today's line in the week, empty-screen actions and the app theme choice. -->
+    <string name="stat_language">Tiếng Anh</string>
+    <string name="stat_level">Trình độ</string>
+    <string name="stat_streak">Chuỗi ngày</string>
+    <string name="stat_points">Điểm</string>
+    <string name="weekly_today_done">Bạn đã đạt mục tiêu hôm nay.</string>
+    <string name="weekly_today_progress">Hôm nay: %1$d / %2$d bước</string>
+    <string name="weekly_today_pending">Hôm nay chưa học. Một truyện hoặc một lần ôn ngắn giúp giữ chuỗi ngày.</string>
+    <string name="empty_browse_stories">Xem truyện</string>
+    <string name="empty_clear_search">Xóa tìm kiếm</string>
+    <string name="empty_words_hint">Chưa có từ nào được lưu. Chạm vào một từ khi đọc và lưu lại; từ đó sẽ xuất hiện ở đây.</string>
+    <string name="theme_system">Theo cài đặt máy</string>
+    <!-- Reader: first-use tips and the page translation toggle. -->
+    <string name="reader_hint_word">Chạm vào một từ để xem nghĩa và lưu lại nếu muốn.</string>
+    <string name="reader_hint_sentence">Nhấn giữ một câu để xem bản dịch. Khi trang đang được đọc to, nhấn giữ một câu sẽ đọc tiếp từ câu đó.</string>
+    <string name="reader_hint_swipe">Vuốt sang trái hoặc phải để lật trang.</string>
+    <string name="page_translate">Dịch trang</string>
+    <string name="page_translate_hide">Ẩn bản dịch trang</string>
+</resources>

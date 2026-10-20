@@ -257,7 +257,6 @@
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">لا يمكن حفظ إعداد القراءة. يمكنك المحاولة مرة أخرى.</string>
     <string name="kelimelerim_kayitli_kelime_2">كلماتي، %1$s الكلمات المحفوظة</string>
     <string name="okurken_ogren">تعلم أثناء القراءة</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">اضغط على الكلمة التي تحتها خط واحفظها. الأيقونة الموجودة على اليمين تترجم الجملة؛ تقوم سماعات الرأس بقراءة الصفحة بصوت عالٍ.</string>
     <string name="ceviriyi_gizle">إخفاء الترجمة</string>
     <string name="cumleyi_cevir">ترجمة الجملة</string>
     <string name="sayfayi_dinle">استمع للصفحة</string>

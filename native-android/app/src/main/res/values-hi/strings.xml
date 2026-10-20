@@ -257,7 +257,6 @@
     <string name="okuma_ayari_kaydedilemedi_tekrar_deneyebilirsin">पढ़ने की सेटिंग सहेजी नहीं जा सकी. आप पुनः प्रयास कर सकते हैं.</string>
     <string name="kelimelerim_kayitli_kelime_2">मेरे शब्द, %1$s सहेजे गए शब्द</string>
     <string name="okurken_ogren">पढ़ते समय सीखें</string>
-    <string name="alti_cizili_kelimeye_dokun_ve">किसी रेखांकित शब्द पर टैप करें और उसे सहेजें। दाईं ओर का आइकन वाक्य का अनुवाद करता है; हेडफ़ोन पेज को ज़ोर से पढ़ते हैं।</string>
     <string name="ceviriyi_gizle">अनुवाद छिपाएँ</string>
     <string name="cumleyi_cevir">वाक्य का अनुवाद करें</string>
     <string name="sayfayi_dinle">पेज सुनें</string>

@@ -129,10 +129,13 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             composable("welcome") {WelcomeScreen(account,onGuest={nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}},onEmail={nav.navigate("account")},onGoogle=::google)}
             composable("onboarding") { OnboardingScreen { level,genre,goal -> viewModel.completeOnboarding(level,genre,goal); nav.navigate("main") { popUpTo("onboarding") { inclusive=true } };LearningContent.recommendedStory(level,genre)?.let {nav.navigate("reader/${it.id}")} } }
             composable("main") {
-                Column(Modifier.fillMaxSize()) {
-                    if(selectedTab==1) ContentConnectionBar(content,onDownloads={nav.navigate("downloads")})
+                // The column takes the status bar inset, so the tabs' Scaffold does not pad it a second time under the connection bar.
+                val contentStatus by content.status.collectAsState()
+                val library=LibraryActions(refreshing=contentStatus.busy && contentStatus.downloading==null,onRefresh={content.refresh(userInitiated=true)},onDownloads={nav.navigate("downloads")})
+                Column(Modifier.fillMaxSize().statusBarsPadding()) {
+                    if(selectedTab==1) ContentConnectionBar(content)
                     Box(Modifier.weight(1f)) {
-                        MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.resumeRevision(id); nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession,onCompletedExit=::completedExit)
+                        MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.resumeRevision(id); nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession,onCompletedExit=::completedExit,library=library)
                     }
                 }
             }
@@ -174,14 +177,14 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onSync=viewModel::syncNow,onResolvePreferences=viewModel::resolvePreferences,onSignUp=viewModel::signUp,onRecovery=viewModel::requestRecovery,onCompleteCode=viewModel::completeEmailCode,onResendCode=viewModel::resendEmailCode,onCancelCode=viewModel::cancelEmailCode,onDeleteAccount=viewModel::deleteAccount,onGuest={
                 if(snapshot.onboardingDone) nav.popBackStack() else nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}
             })}
-            composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord) }
+            composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord,onBrowse={selectedTab=1;nav.popBackStack("main",false)}) }
         }
     }
     }
 }
 
 @Composable
-internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit) {
+internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit,library: LibraryActions?=null) {
     var practicing by remember { mutableStateOf(false) }
     // Each tab keeps its saved state while another tab is shown: a reminder or widget tap mid-practice must not drop the session.
     val tabs=rememberSaveableStateHolder()
@@ -189,7 +192,7 @@ internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelecte
         // Tabs cross-fade instead of cutting; the practice tab keeps its running session state.
         TaleSwitch(selectedTab) { tab -> tabs.SaveableStateProvider(tab) { when(tab) {
             0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice)
-            1 -> CatalogScreen(snapshot,onOpenStory,padding)
+            1 -> CatalogScreen(snapshot,onOpenStory,padding,library)
             2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit)
             else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)
         } } }

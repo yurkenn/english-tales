@@ -94,7 +94,7 @@ private val taleTypography = Typography(
 )
 
 @Composable
-fun EnglishTalesTheme(dark: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
+fun EnglishTalesTheme(dark: Boolean = when(AppTheme.mode) { AppThemeMode.SYSTEM -> isSystemInDarkTheme(); AppThemeMode.LIGHT -> false; AppThemeMode.DARK -> true }, content: @Composable () -> Unit) {
     TaleColorTheme(if(dark) DarkTaleColors else LightTaleColors, content)
 }
 

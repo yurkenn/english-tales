@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="listen_from_sentence">Dengarkan dari kalimat ini</string>
-    <string name="listen_from_sentence_hint">Tekan dan tahan sebuah kalimat untuk membaca halaman dari sana; kalimat yang sedang dibaca disorot.</string>
 </resources>
