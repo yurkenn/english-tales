@@ -6,7 +6,7 @@ Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/
 
 ## Güncel proje kontrolü — 20 Ekim 2026
 
-#147–#151 birleşti: beş mevcut hikâyenin pilotu, yayın araçları, 11 dilde 1.098 maddelik dokunma sözlüğü, yeni okuyucu/tema/kitaplık düzeni ve Phosphor ikonlar ana dalda. **Ana dal cihaz CI tekrarı ve #152/#153 CI’ları başarılı:** her çalışmada 336 cihaz testi geçti, 3 yapılandırmalı test atlandı, hata yok; açılış benchmark testleri 3/3. İlk 20 saniyelik zaman aşımının kök nedeni saptanmadı; #153 tekrarında ayrıntılı ekran/durum kaydı sağlar.
+#147–#151 birleşti: beş mevcut hikâyenin pilotu, yayın araçları, 11 dilde 1.098 maddelik dokunma sözlüğü, yeni okuyucu/tema/kitaplık düzeni ve Phosphor ikonlar ana dalda. **#152 ve #153’ün son başlıkları tam CI’da geçti:** 336 cihaz testi başarılı, 3 yapılandırmalı atlama, 0 hata; açılış ölçümleri 3/3. #153 kayıt hatası testinin zamanlayıcısını düzeltir ve ilk kullanım zaman aşımına ekran/durum tanılaması ekler. Orijinal ilk kullanım zaman aşımının nedeni kanıtlanmadı. Bu PR’lar henüz birleşmedi.
 
 Canlı anonim okumada 50 güncel hikâye ve **1.065 cümle** doğrulandı. Beş pilot yayımlanmış: 131 cümle, her birinde 11 dil karşılığı. Diğer 10 dilin sözlüğü makine taslağı; ikinci inceleme açık. #149–#151 değişiklikleri başvurulmuş 50 paketinin sonrasında eklendi; mağazaya ulaştıkları doğrulanmadı. Son Claude yerel kaydında bekleyen kod değişikliği yok; gerçek cihaz/hesap kabulü ve dil incelemesi devam ediyor.
 
@@ -14,7 +14,7 @@ Açık PR’lar: [#146 güncel yol haritası](https://github.com/yurkenn/english
 
 ## Paralel işlerin ilerlemesi — 20 Ekim
 
-Claude ve Codex, on dilde sözlüğün tamamını (10.980 karşılık) AI destekli inceledi. 190 aday gerekçeli karara bağlandı: 81 kabul / 36 ret / 73 erteleme. Koordineli düzeltmelerle 90 hedef dil ve 2 Türkçe referans, toplam **92 karşılık** güncellendi. Tam backend **172/172** ve 11 dil varlık eşleşmesi geçti. Güncel çalışma [PR #152'de](https://github.com/yurkenn/english-tales/pull/152); Güncel APK’daki sözlük yükleme testi API36’da 1/1 geçti; yeni tam CI sonucu orada takip edilir. Ana dil onayı verilmedi. Codex ilk kullanım zaman aşımını araştırdı: yerel tekil ve ön testlerle denemeler geçti, ancak tam cihaz denemesi ayrı bir süreç kapanmasıyla tamamlanamadı. [Taslak PR #153](https://github.com/yurkenn/english-tales/pull/153), tekrar hatasında gerçek ekran/durum bilgisini ekliyor; kök neden düzeltildi iddiası yok. Ana dal CI tekrarı ve iki PR’ın cihaz sonuçları artık başarılı: 336 geçti / 3 atlandı / 0 hata; ayrıca 3/3 açılış benchmark testi. [Kanıt kaydı](native-android/docs/release-evidence/2026-10-20-device-ci-followup.json). Bu iki PR henüz birleşmedi; mağaza veya içerik yayını yapılmadı.
+Claude ve Codex on dilde 10.980 sözlük karşılığını AI destekli inceledi. 190 adayın 81’i kabul, 36’sı ret, 73’ü erteleme aldı; koordineli kaynak düzeltmeleriyle **92 karşılık** güncellendi. Tam backend **172/172**, 11 dil varlık eşleşmesi ve son sözlük başlığının iki tam CI koşusu başarılı. Yerel API36 tam paketi de 336 geçti / 3 atlandı / 0 hata verdi. [Sözlük PR #152](https://github.com/yurkenn/english-tales/pull/152), [cihaz testi PR #153](https://github.com/yurkenn/english-tales/pull/153) ve [kesin kaynak/rapor kanıtı](native-android/docs/release-evidence/2026-10-20-write-ui-scheduler.json). Ana dil onayı ve 73 dil/kaynak kararı açık. Bu çalışmada mağaza veya içerik yayını yapılmadı.
 
 ## Play takip kontrolü — 20 Ekim
 
