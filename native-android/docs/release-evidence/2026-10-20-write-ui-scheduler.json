@@ -40,11 +40,184 @@
         "iteration": 5,
         "sha256": "7636da1fd6962488c59f2d15c333ddbe80e7f71cb064afa6a44adb634c657288"
       }
-    ]
+    ],
+    "combinedSuite": {
+      "counts": {
+        "tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "classes": [
+        "com.yurken.englishtales.ui.LearningWriteUiTest"
+      ],
+      "xml": [
+        {
+          "file": "TEST-English_Tales_CI_36(AVD) - 16-_app-.xml",
+          "sha256": "0aecba6fd056717d3f3803cceb4354a44781472cc5e5efa597ccfcf6b3612756"
+        }
+      ]
+    },
+    "fullDeviceSuite": {
+      "head": "2e64334040bc53b5ec440b41be6aa50eb38d651f",
+      "counts": {
+        "tests": 339,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 3
+      },
+      "passed": 336,
+      "xmlSHA256": "cee6656bd92afeb7961377f6679cbf92afe5ed7b3626f3738be6bc4e20c39972",
+      "skippedTests": [
+        {
+          "name": "anotherAccountJobDoesNotUseCurrentCredentialsOrCreateItsDatabase",
+          "classname": "com.yurken.englishtales.data.LearningSyncWorkerTest",
+          "time": "0.008"
+        },
+        {
+          "name": "repeatedSchedulingKeepsOneNetworkConstrainedPeriodicJob",
+          "classname": "com.yurken.englishtales.data.LearningSyncWorkerTest",
+          "time": "0.001"
+        },
+        {
+          "name": "livePublishedContentDownloadsAndRestoresOffline",
+          "classname": "com.yurken.englishtales.data.RemoteContentTest",
+          "time": "0.033"
+        }
+      ],
+      "durationSeconds": 563.131,
+      "note": "Gradle progress displayed 342 including extra skip events; XML has 339 unique testcase elements."
+    }
   },
   "limits": [
     "Initial original crash not reproduced locally; thread stack and exact dependency source support scheduler hypothesis.",
     "First StandardTestDispatcher-only attempt failed an early rendered-bar assertion; final version awaits visibility.",
-    "Full CI on final test fix pending; focused repeats do not prove elimination of all flakes."
-  ]
+    "Four passing full CI runs and local full pass support the test fix but do not prove all intermittent failures eliminated. Physical-device/Play/live-service acceptance remains separate."
+  ],
+  "combinedGlossaryAndTestHead": "2e64334040bc53b5ec440b41be6aa50eb38d651f",
+  "currentCi": {
+    "glossaryHead": "2e64334040bc53b5ec440b41be6aa50eb38d651f",
+    "glossaryRuns": [
+      39442907494,
+      39442917858
+    ],
+    "diagnosticHead": "a70ab0e18fce009a4ec0a7d4f8f850d5b91f2ae2",
+    "diagnosticRuns": [
+      39442872832,
+      39442881595
+    ],
+    "status": "Both final heads passed push and pull_request full CI; app 336 passed / 3 skipped; startup 3/3.",
+    "glossaryStatus": "success",
+    "verifiedReports": [
+      {
+        "run": 39442917858,
+        "head": "2e64334040bc53b5ec440b41be6aa50eb38d651f",
+        "conclusion": "success",
+        "reports": [
+          {
+            "module": "macrobenchmark",
+            "counts": {
+              "tests": 3,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 0
+            },
+            "sha256": "49a7c663601c61ac58d3c050dd8f08aff81e6c07e28766c6dd5e9306621225ad"
+          },
+          {
+            "module": "app",
+            "counts": {
+              "tests": 339,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 3
+            },
+            "sha256": "b79d33c49bc8fe7ff8c13d69e0f432533d5ca5e69455c0f421e7c63bb0c023f4"
+          }
+        ]
+      },
+      {
+        "run": 39442907494,
+        "head": "2e64334040bc53b5ec440b41be6aa50eb38d651f",
+        "conclusion": "success",
+        "reports": [
+          {
+            "module": "macrobenchmark",
+            "counts": {
+              "tests": 3,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 0
+            },
+            "sha256": "c02307025c98ce0fa586a633e4361a8c5848947f1abf2477cada2c4e147a0627"
+          },
+          {
+            "module": "app",
+            "counts": {
+              "tests": 339,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 3
+            },
+            "sha256": "62f109de7bd4a9e922f9b0e774a5ecdbfa47be7599febffd757a1ea8810f3942"
+          }
+        ]
+      },
+      {
+        "run": 39442881595,
+        "head": "a70ab0e18fce009a4ec0a7d4f8f850d5b91f2ae2",
+        "conclusion": "success",
+        "reports": [
+          {
+            "module": "macrobenchmark",
+            "counts": {
+              "tests": 3,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 0
+            },
+            "sha256": "635c4ec3ebd66387c22de2de6e4ef05e7fe2d3df6b5671a1f848291d15bd5d15"
+          },
+          {
+            "module": "app",
+            "counts": {
+              "tests": 339,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 3
+            },
+            "sha256": "988b228c62ed4189dcc9f16784729570b3ae2681309957706f99f502615b463c"
+          }
+        ]
+      },
+      {
+        "run": 39442872832,
+        "head": "a70ab0e18fce009a4ec0a7d4f8f850d5b91f2ae2",
+        "conclusion": "success",
+        "reports": [
+          {
+            "module": "macrobenchmark",
+            "counts": {
+              "tests": 3,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 0
+            },
+            "sha256": "136b8adefc5ac1ce72158e2ac90c2c1cbc9ab098fbf9af5c3a22fa4950bf1358"
+          },
+          {
+            "module": "app",
+            "counts": {
+              "tests": 339,
+              "failures": 0,
+              "errors": 0,
+              "skipped": 3
+            },
+            "sha256": "7f0f774786abf78f68facaf6de61df6b06e0b13acf4e00f59dc8c2ca85c7a1af"
+          }
+        ]
+      }
+    ],
+    "diagnosticStatus": "success"
+  }
 }

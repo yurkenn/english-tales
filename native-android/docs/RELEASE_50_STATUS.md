@@ -1,5 +1,11 @@
 # 50 / 2.2.0 — 19 Ekim 2026
 
+## 20 Ekim takip kontrolü
+
+Play Console tekrar salt okunur açıldı: **50 / 2.2.0 hâlâ “In review / Changes in review”; 48 / 2.0.0 “Available on Google Play”.** Yönetilen yayın kapalı, son yayımlama tarihi 16 Ekim. Yeni ret veya tamamlanmış 50 yayını görülmedi. İncelemedeki başvuru, mağaza kaydı ve dağıtım ayarları değiştirilmedi. [Güncel kontrol kaydı](release-evidence/2026-10-20-play-status.json).
+
+Aşağıdaki bilgiler 19 Ekim başvurusunun tarihsel kanıtıdır.
+
 Durum: **19 Ekim 2026 19:48 TRT’de üretim başvurusu gönderildi.** Console: **Changes in review**; Google hızlı kontrolleri çalışıyor. 50 / 2.2.0, %100 dağıtım ve 27 değişiklik birlikte başvuruda. Henüz canlı yayın doğrulanmadı; son canlı üretim 48 / 2.0.0, dahili test 49 / 2.1.0. Yönetilen yayın kapalı: onaylanan değişiklikler otomatik yayımlanır.
 
 - Güncel Claude düzeltmeleri, ilk açılış dil seçimi, yerelleştirilmiş Yurken adı ve sürüm notları birleşik adayda.

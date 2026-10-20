@@ -1,0 +1,24 @@
+{
+  "reviewedCount": 92,
+  "findings": [],
+  "uncertainties": [
+    "pt-BR amounts: 'quantias' (the sum-of-money sense) was replaced, not kept. 'quantidades' is correct for the food-and-drink context and can still cover money in general use, so I did not flag it. Restore 'quantidades; quantias' if the lemma is shared with monetary contexts elsewhere.",
+    "hi/bn/ur herself/himself: the gender tag '(स्त्री)/(পুরুষ)/(عورت)' etc. now sits after the second gloss only. It reads as applying to both, so this is presentation, not an error.",
+    "vi sapphire: 'đá sapphire' is a loanword gloss. 'lam ngọc' is the native alternative, and removing 'ngọc bích' fixes a common jade/emerald ambiguity, so there is no error.",
+    "ru wardrobe: removing 'шкаф' leaves 'гардероб', which still covers both the furniture and the clothing-collection senses, so no valid meaning is lost.",
+    "bn accidentally: removing 'হঠাৎ করে' (suddenly) drops an incorrect sense, not a valid one."
+  ],
+  "summary": "All 92 changes (2 tr source, 90 across es-419, pt-BR, id, ar, vi, hi, ru, bn, ur, th) were compared against the English contexts and the Turkish references. No substantive regressions were found. The changes correctly add missing senses: tie as noun, unlit as not lit (of a cigar), curled hair, intransitive weakened, call as a vocal call, and reflexive object forms. They also fix prior errors: hi Thumbelina 'ring' removed, ar endangering changed from passive to active, bn accidentally 'suddenly' removed, ru poured/slipped/apart/sending. No sense, role, or language errors were introduced. The remaining notes are minor uncertainties, not defects.",
+  "metadata": {
+    "date": "2026-10-20",
+    "sourceCommit": "050db6bbd256f59f5e7e304eaed949391e135ea6",
+    "reviewerModel": [
+      "claude-opus-5-5"
+    ],
+    "elapsedMs": 24586,
+    "promptSHA256": "37cc90aa0be73c6b451b9d3d3c0f4c89e72d58c95d0866061707ce77c37c35c5",
+    "toolsEnabled": false,
+    "nativeSpeakerApproval": false,
+    "scope": "Final92 changed glosses and provided contexts; AI regression pass, not whole-product/device acceptance."
+  }
+}

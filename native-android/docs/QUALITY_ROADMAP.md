@@ -1,3 +1,7 @@
+> **20 Ekim kontrolü:** #147–#151 birleşti; beş pilot canlıda ve 11 dil sözlüğü kodda. Ana dal ilk kullanım zaman aşımı ikinci denemede tekrarlanmadı; ana dal ve #152/#153 tam cihaz CI kapıları geçti (336 geçti / 3 atlandı, 0 hata; 3/3 benchmark). Bu sonuçlar önceki başlıklara aittir. Son sözlük başlığı bir tam CI’da geçerken diğerinde kayıt hatası UI testinde çizim çakışması yaşadı; #153 test zamanlayıcısı düzeltmesi #152’ye de alındı. Son sözlük `2e64334` başlığı iki tam CI’da ve yerel tam pakette 336 geçti / 3 atlandı / 0 hata verdi; CI açılış ölçümleri 3/3. #153 iki bağımsız tam CI’da geçti. İlk kullanım zaman aşımının kök nedeni ayrıca kanıtlanmadı. Güncel açık işler ve kanıtlar: [proje kontrolü](PROJECT_AUDIT_2026-10-20.md), [R00–R14 öncelikleri](ROADMAP_2026_Q4.md). Aşağıdaki eski yeşil CI/yayın sayıları bugünkü durum değildir.
+
+> **19 Ekim 2026:** Aktif öncelik ve gelecek planı [90 günlük yol haritasında](ROADMAP_2026_Q4.md). Bu belgedeki eski durum/süre tabloları tarihsel ve teknik referanstır; yayın durumu için [50 kaydı](RELEASE_50_STATUS.md) esas alınır.
+
 # English Tales — kalite yol haritası
 
 15 Ekim 2026 · **Yenileme: 16 Ekim 2026, 23:38 TRT dahili yayın kaydı; paket kaynağı `6f48040`, içerdiği master `a14fa5f`** · İlk kaynak: master `8bef30b` · Dayanak: [derin eksik haritası](GAP_ANALYSIS.md), [geliştirme haritası](NEXT_PHASE_ROADMAP.md).

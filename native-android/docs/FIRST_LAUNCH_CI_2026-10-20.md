@@ -29,3 +29,7 @@ Dar düzeltme yalnız `LearningWriteUiTest` içindir: desteklenen `StandardTestD
 İlk yerel koşuda yalnız zamanlayıcı değişikliği sonrası görünürlük kontrolü erken kaldı. Görünür düğme beklemesi eklendikten sonra API 36 koşusu 1/1 geçti. Aynı APK ile beş ayrı instrumentation sürecinde test 5/5 geçti; atlama yok. Yeni tam CI sonucu ayrıca kaydedilir; bu ilk geçiş tek başına aralıklı hatanın tamamen ortadan kalktığını kanıtlamaz.
 
 Kaynak: [Compose 1.8.1 test altyapısı kaynak paketi](https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-test-android/1.8.1/ui-test-android-1.8.1-sources.jar), `ComposeUiTest.android.kt` test dispatcher seçimi ve `onPerformTraversals`.
+
+## Birleşme ve son doğrulama
+
+#153 (`a70ab0e`) ve #152 (`2e64334`) dört tam CI koşusunda geçti: her birinde 336 başarılı cihaz testi, 3 yapılandırmalı atlama, 0 hata; 3/3 açılış ölçümü. Son sözlük/test kaynağının yerel tam API36 paketi de aynı 336/339 sonucunu verdi. #153 `83d2725`, #152 `b2a8c09` ile ana dala alındı. Birleşik ana dalın CI sonucu ayrıca doğrulanır. [Kesin kaynaklar ve rapor özetleri](release-evidence/2026-10-20-write-ui-scheduler.json).

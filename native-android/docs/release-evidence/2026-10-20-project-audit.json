@@ -1,0 +1,197 @@
+{
+  "checkedAt": "2026-10-20T08:02:00.365Z",
+  "stories": 50,
+  "sentences": 1133,
+  "translationRows": 2443,
+  "pilots": [
+    {
+      "id": "quiet-morning",
+      "revision": "27693af4-cd75-4f14-8cdf-add84ec747a8",
+      "sentences": 23,
+      "languages": [
+        "ar",
+        "bn",
+        "es-419",
+        "hi",
+        "id",
+        "pt-BR",
+        "ru",
+        "th",
+        "tr",
+        "ur",
+        "vi"
+      ],
+      "translationCountsByLanguage": {
+        "tr": 23,
+        "ar": 23,
+        "bn": 23,
+        "hi": 23,
+        "id": 23,
+        "ru": 23,
+        "th": 23,
+        "ur": 23,
+        "vi": 23,
+        "pt-BR": 23,
+        "es-419": 23
+      },
+      "draftSentenceIdsAndEnglishMatch": true
+    },
+    {
+      "id": "paper-boat",
+      "revision": "3435c7e5-d85c-4d6d-bca1-c7669f984f75",
+      "sentences": 27,
+      "languages": [
+        "ar",
+        "bn",
+        "es-419",
+        "hi",
+        "id",
+        "pt-BR",
+        "ru",
+        "th",
+        "tr",
+        "ur",
+        "vi"
+      ],
+      "translationCountsByLanguage": {
+        "tr": 27,
+        "ar": 27,
+        "bn": 27,
+        "hi": 27,
+        "id": 27,
+        "ru": 27,
+        "th": 27,
+        "ur": 27,
+        "vi": 27,
+        "pt-BR": 27,
+        "es-419": 27
+      },
+      "draftSentenceIdsAndEnglishMatch": true
+    },
+    {
+      "id": "last-train",
+      "revision": "103a3e92-c83a-43af-8752-f4d126df8e56",
+      "sentences": 28,
+      "languages": [
+        "ar",
+        "bn",
+        "es-419",
+        "hi",
+        "id",
+        "pt-BR",
+        "ru",
+        "th",
+        "tr",
+        "ur",
+        "vi"
+      ],
+      "translationCountsByLanguage": {
+        "tr": 28,
+        "ar": 28,
+        "bn": 28,
+        "hi": 28,
+        "id": 28,
+        "ru": 28,
+        "th": 28,
+        "ur": 28,
+        "vi": 28,
+        "pt-BR": 28,
+        "es-419": 28
+      },
+      "draftSentenceIdsAndEnglishMatch": true
+    },
+    {
+      "id": "classic-tortoise-hare",
+      "revision": "19a0df1d-ba0b-44d2-8f2f-5db51adcbca5",
+      "sentences": 27,
+      "languages": [
+        "ar",
+        "bn",
+        "es-419",
+        "hi",
+        "id",
+        "pt-BR",
+        "ru",
+        "th",
+        "tr",
+        "ur",
+        "vi"
+      ],
+      "translationCountsByLanguage": {
+        "tr": 27,
+        "ar": 27,
+        "bn": 27,
+        "hi": 27,
+        "id": 27,
+        "ru": 27,
+        "th": 27,
+        "ur": 27,
+        "vi": 27,
+        "pt-BR": 27,
+        "es-419": 27
+      },
+      "draftSentenceIdsAndEnglishMatch": true
+    },
+    {
+      "id": "classic-lion-mouse",
+      "revision": "70ff3ae0-95cf-46e0-9c79-d62cca808900",
+      "sentences": 26,
+      "languages": [
+        "ar",
+        "bn",
+        "es-419",
+        "hi",
+        "id",
+        "pt-BR",
+        "ru",
+        "th",
+        "tr",
+        "ur",
+        "vi"
+      ],
+      "translationCountsByLanguage": {
+        "tr": 26,
+        "id": 26,
+        "ar": 26,
+        "bn": 26,
+        "hi": 26,
+        "ru": 26,
+        "th": 26,
+        "ur": 26,
+        "vi": 26,
+        "pt-BR": 26,
+        "es-419": 26
+      },
+      "draftSentenceIdsAndEnglishMatch": true
+    }
+  ],
+  "currentSentences": 1065,
+  "currentTranslationRows": 2375,
+  "currentTranslationsByLanguage": {
+    "tr": 1065,
+    "ar": 131,
+    "bn": 131,
+    "hi": 131,
+    "id": 131,
+    "ru": 131,
+    "th": 131,
+    "ur": 131,
+    "vi": 131,
+    "pt-BR": 131,
+    "es-419": 131
+  },
+  "scope": "Anonymous read-only public content; current revisions only for current counts. No Auth, user data, writes or publication.",
+  "masterCommit": "01defbe1aa4a79dcc103a68b1f938a32ad17a728",
+  "masterCI": {
+    "runId": 39386537157,
+    "status": "failure",
+    "failedTest": "FirstLaunchJourneyTest.guestReadsSavesAWordAndReviewsItOnAFreshInstall",
+    "failure": "ComposeTimeoutException: Condition still not satisfied after 20000 ms",
+    "passedJobs": [
+      "repository",
+      "backend",
+      "android"
+    ],
+    "failedJob": "android-device"
+  }
+}

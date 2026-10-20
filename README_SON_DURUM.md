@@ -1,14 +1,32 @@
 # English Tales — son çalışmalar ve yayın durumu
 
-Son güncelleme: **19 Ekim 2026, 19:48 TRT**.
+Son güncelleme: **20 Ekim 2026**.
 
-## Güncel yayın durumu — 50 / 2.2.0
+Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/docs/ROADMAP_2026_Q4.md).
 
-**Üretim başvurusu gönderildi; henüz canlı yayın doğrulanmadı.** Console “Changes in review” gösteriyor ve Google hızlı kontrolleri çalışıyor. Yeni paket, %100 dağıtım, Yurken Stories markası, 13 mağaza dili, güncel EN/TR ekran görüntüleri ve reklam beyanı birlikte başvuruda. Yönetilen yayın kapalı olduğundan onaydan sonra otomatik yayımlanır. Son canlı üretim 48 / 2.0.0, dahili test 49 / 2.1.0.
+## Güncel proje kontrolü — 20 Ekim 2026
+
+#147–#151 birleşti: beş mevcut hikâyenin pilotu, yayın araçları, 11 dilde 1.098 maddelik dokunma sözlüğü, yeni okuyucu/tema/kitaplık düzeni ve Phosphor ikonlar ana dalda. **#152 ve #153’ün son başlıkları tam CI’da geçti:** 336 cihaz testi başarılı, 3 yapılandırmalı atlama, 0 hata; açılış ölçümleri 3/3. #153 kayıt hatası testinin zamanlayıcısını düzeltir ve ilk kullanım zaman aşımına ekran/durum tanılaması ekler. Orijinal ilk kullanım zaman aşımının nedeni kanıtlanmadı. #153 ve #152 sırasıyla `83d2725` ve `b2a8c09` ile ana dala birleşti; birleşik ana dal CI’ı ayrıca doğrulanıyor.
+
+Canlı anonim okumada 50 güncel hikâye ve **1.065 cümle** doğrulandı. Beş pilot yayımlanmış: 131 cümle, her birinde 11 dil karşılığı. Diğer 10 dilin sözlüğü makine taslağı; ikinci inceleme açık. #149–#151 değişiklikleri başvurulmuş 50 paketinin sonrasında eklendi; mağazaya ulaştıkları doğrulanmadı. Son Claude yerel kaydında bekleyen kod değişikliği yok; gerçek cihaz/hesap kabulü ve dil incelemesi devam ediyor.
+
+Açık PR’lar: [#146 güncel yol haritası](https://github.com/yurkenn/english-tales/pull/146), [#1 eski Expo test taslağı](https://github.com/yurkenn/english-tales/pull/1). [Ayrıntılı kontrol, kaynaklar ve kalan işler](native-android/docs/PROJECT_AUDIT_2026-10-20.md).
+
+## Paralel işlerin ilerlemesi — 20 Ekim
+
+Claude ve Codex on dilde 10.980 sözlük karşılığını AI destekli inceledi. 190 adayın 81’i kabul, 36’sı ret, 73’ü erteleme aldı; koordineli kaynak düzeltmeleriyle **92 karşılık** güncellendi. Tam backend **172/172**, 11 dil varlık eşleşmesi ve son sözlük başlığının iki tam CI koşusu başarılı. Yerel API36 tam paketi de 336 geçti / 3 atlandı / 0 hata verdi. [Sözlük PR #152](https://github.com/yurkenn/english-tales/pull/152), [cihaz testi PR #153](https://github.com/yurkenn/english-tales/pull/153) ve [kesin kaynak/rapor kanıtı](native-android/docs/release-evidence/2026-10-20-write-ui-scheduler.json). Ana dil onayı ve 73 dil/kaynak kararı açık. Bu çalışmada mağaza veya içerik yayını yapılmadı.
+
+## Play takip kontrolü — 20 Ekim
+
+Console’da **50 / 2.2.0 hâlâ incelemede**, **48 / 2.0.0 Google Play’de erişilebilir** olarak yeniden doğrulandı. Başvuru veya yayın ayarı değiştirilmedi. [Güncel kontrol kaydı](native-android/docs/release-evidence/2026-10-20-play-status.json).
+
+## Son doğrulanan yayın kaydı — 19 Ekim, 50 / 2.2.0
+
+**19 Ekim kaydı: üretim başvurusu gönderildi; canlı yayın doğrulanmadı.** 20 Ekim’de Console yeniden kontrol edilmedi. Kaydın alındığı sırada Console “Changes in review” gösteriyor ve Google hızlı kontrolleri çalışıyor. Yeni paket, %100 dağıtım, Yurken Stories markası, 13 mağaza dili, güncel EN/TR ekran görüntüleri ve reklam beyanı birlikte başvuruda. Yönetilen yayın kapalı olduğundan onaydan sonra otomatik yayımlanır. Son canlı üretim 48 / 2.0.0, dahili test 49 / 2.1.0.
 
 Güncel Claude düzeltmeleri ile #71, #117, #118, #140, #141, #142, #143 ve #144 birleşti. İlgisiz eski Expo test taslağı #1 açık bırakıldı. 130 Android release birim testi, 154 backend testi, hedefli cihaz testleri (47 toplam, 1 atlama, 0 hata) ve lint (0 hata) geçti. İmzalı yerel 49→50 güncellemesinde kayıtlar korundu. Destek sitesindeki `/story/quiet-morning` 404 sorunu giderildi; gizlilik ve hesap silme sayfaları erişilebilir.
 
-Fiziksel cihazda **Play üzerinden 48→50 güncelleme, kayıt koruma, TalkBack, performans ve canlı ölçüm kabulü** açık. Google-imzalı universal APK’da sertifika ve App Links alan adı doğrulandı; Play hesabı olmayan emülatör tam Play kullanıcı yolculuğunu doğrulamaya yetmedi. SEO dil sayfaları hâlâ içerik taslağı; yeni hikâye/kelime içeriği yayımlanmadı.
+Fiziksel cihazda **Play üzerinden 48→50 güncelleme, kayıt koruma, TalkBack, performans ve canlı ölçüm kabulü** açık. Google-imzalı universal APK’da sertifika ve App Links alan adı doğrulandı; Play hesabı olmayan emülatör tam Play kullanıcı yolculuğunu doğrulamaya yetmedi. 19 Ekim başvurusu sırasında SEO dil sayfaları içerik taslağıydı ve pilot içeriği henüz yayımlanmamıştı. Sonraki beş pilot yayını yukarıdaki 20 Ekim kontrolünde doğrulandı.
 
 [Ayrıntılı 50 yayın kaydı](native-android/docs/RELEASE_50_STATUS.md) · [Makine okunabilir paket ve başvuru kanıtı](native-android/docs/release-evidence/2026-10-19-production-50.json)
 
