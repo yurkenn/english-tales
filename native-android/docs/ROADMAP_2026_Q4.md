@@ -1,6 +1,6 @@
 # Yurken Stories — önümüzdeki 90 gün
 
-19 Ekim 2026 · Durum: uygulama planı; aşağıdaki açık işler tamamlanmış sayılmaz. Tek geliştirici akışına göre yaklaşık 12 hafta; Google incelemesi, editör incelemesi ve pilot veri toplama süreleri takvimi kaydırabilir.
+20 Ekim 2026 · [PR, Claude ve canlı içerik kontrolü](PROJECT_AUDIT_2026-10-20.md) · Durum: uygulama planı; aşağıdaki açık işler tamamlanmış sayılmaz. Tek geliştirici akışına göre yaklaşık 12 hafta; Google incelemesi, editör incelemesi ve pilot veri toplama süreleri takvimi kaydırabilir.
 
 ## Ürün yönü
 
@@ -13,9 +13,15 @@
 - Son doğrulanan yayın kaydı: **50 / 2.2.0 üretim başvurusu gönderildi**, Console “Changes in review”, hızlı kontroller sürüyor. %100 dağıtım seçildi; canlı yayın bu belgede doğrulanmış sayılmaz. Son doğrulanan canlı üretim 48, dahili kanal 49. [Kesin yayın kaydı](RELEASE_50_STATUS.md).
 - 12 arayüz dili, 11 hikâye çevirisi dili, 13 mağaza kaydı. Yeni kullanıcı için dil seçimi mevcut. İngilizce arayüz şu an Türkçe hikâye çevirisi kullanıyor.
 - FSRS, alıştırma basamakları, anlama soruları, dikte, cümle kurma, kişisel kelimeler, favoriler, öneriler, widget ve tablet düzeni kodda mevcut. Bunlar yeniden yapılacak özellikler değil; gerçek kullanım kabulü ve iyileştirme konusudur.
-- Türkçe sözlük taslağında `sampleApprovedBy` boş. 50 hikâyenin çalışma kelimesi önerileri `proposal`, `reviewedBy: null`; uygulamaya bağlanmış/onaylanmış içerik değiller. İki B1 hikâye taslağı var. [İçerik planı](LEARNING_QUALITY_PLAN.md).
+- #149/#150 birleşti: 11 dilde 1.098 sözlük maddesi paket varlıklarında mevcut. Türkçe örneklem onayı kayıtlı; diğer 10 dil `machine-draft`, bağımsız ikinci inceleme ve ana dil kabulü açık. Bu varlıklar başvurulmuş 50 paketinden sonra eklendi; yeni mağaza paketi gerekir.
+- #147/#148 birleşti; beş mevcut A1/A2 pilotunun sahibi onayı kayıtlı ve güncel canlı revizyonlarında toplam 131 cümle, her cümlede 11 dil karşılığı doğrulandı. Tam UI/çevrimdışı/gerçek hesap kabulü açık; diğer 45 hikâyenin çalışma kelimesi önerileri henüz tamamlanmış sayılmaz. İki yeni klasik taslağı ertelenmiş durumda.
+- #151 birleşti: sade okuyucu, hareketler, kitaplık, tema seçimi ve Phosphor ikonlar mevcut. PR CI yeşil; birleşmiş ana dal `01defbe` cihaz CI’ında ilk kullanım testi zaman aşımına uğradı. Diğer üç CI işi başarılı. Önce bu hata ayrıştırılır.
 - Önceki içerik denetimindeki canlı/paket farkı kapanmış kabul edilmez. Güncel canlı fark sayısı yeniden ölçülmeden tarihsel 39 hikâye bulgusu güncel sayı olarak kullanılmaz.
 - Analytics kodu mevcut ve katılım varsayılan kapalı; canlı olay kabulü ve temsili kullanım başlangıç ölçümü açık. SEO dil sayfaları henüz taslak.
+
+## Önce kapatılacak teknik açık
+
+**R00 · P0 — Ana dal ilk kullanım testi:** [39386537157](https://github.com/yurkenn/english-tales/actions/runs/39386537157) çalışmasında `FirstLaunchJourneyTest` 20 saniye zaman aşımıyla başarısız. Hedefli tekrar ile ürün/test/zamanlama nedeni ayrıştırılır; gerekli düzeltmeden sonra aynı birleşik kaynakta tam cihaz CI yeşil olmalı. #151 PR CI sonucu ana dal sonucunun yerine geçmez.
 
 ## 1. Yayını sağlamlaştır — 1–2. hafta
 
@@ -32,10 +38,10 @@
 
 | ID | İş | Bitti sayılma ölçütü |
 |---|---|---|
-| R05 · P1 | Sözlük ve canlı/paket tutarlılığı | Önce canlıya yazmadan güncel denetim. Türkçe örneklem ve itirazlar mevcut editör politikasıyla incelenmiş; gerçek inceleyen kişiyle onay kaydı. Revizyon yayınından sonra aynı kapsamda paket/canlı farkı 0; indirilmiş eski hikâyeler ve kişisel kelimeler korunuyor. |
-| R06 · P1 | Çalışma kelimelerini sözlükten ayrı yönet | 5 A1/A2 hikâyede 8–15 anlamlı çalışma kelimesi pilotu; mevcut öneri aracı kullanılır. Okuyucu, kaydetme, tekrar ve eşitleme bu listeyle tutarlı. Ardından kalan 45 hikâyeye editör kapasitesine göre genişletilir. |
+| R05 · P1 | Sözlük ve canlı/paket tutarlılığı | Önce canlıya yazmadan güncel denetim. Türkçe örneklem onayı #149 ile tamamlandı. Diğer 10 sözlük dili için ikinci model/geri çeviri, itiraz ve dil örneklemi incelemesi kaydedilmiş; makine taslağı ile insan incelemesi ayrı belirtilmiş. Revizyon yayınından sonra aynı kapsamda paket/canlı farkı 0; indirilmiş eski hikâyeler ve kişisel kelimeler korunuyor. |
+| R06 · P1 | Çalışma kelimelerini sözlükten ayrı yönet | Beş A1/A2 pilotu onaylandı ve canlıda; yerel okuyucu/FSRS sözleşmesi test edildi. Kalan kabul: gerçek yayımlanmış revizyonda okuyucu, kaydetme, tekrar, eski kayıt koruma, çevrimdışı kullanım ve hesap eşitlemesi. Ardından kalan 45 hikâyeye editör kapasitesine göre genişletilir. |
 | R07 · P1 | Arayüz dili ve çeviri tercihini netleştir | İngilizce arayüz kullanan kişi çeviri dilini bilinçli seçebilir; mevcut tercihler korunur. Desteklenmeyen dilde açık geri dönüş; RTL, uzun metin ve TTS denenir. Dil başına hata listesi tutulur. |
-| R08 · P1 | Az sayıda kaliteli yeni hikâye yayımla | Mevcut iki B1 taslağından başlayarak metin, seviye, çeviri, kapak, çalışma kelimeleri ve anlama soruları birlikte incelenir. Önce bir hikâye uçtan uca kabul; sonra sürdürülebilir üretim ritmi belirlenir. |
+| R08 · P1 | Az sayıda kaliteli yeni hikâye yayımla | Şimdilik ertelendi: sahibi mevcut hikâyelere odaklanmayı seçti. İki yeni klasik taslağı korunur; beş mevcut pilotun kabulü ve 45 hikâyenin iyileştirme planı sonrası kapsam yeniden değerlendirilir. |
 
 **Ölçüm ayrımı:** Dokunma sözlüğünün anlam bulma kapsaması ile çalışılacak kelime sayısı ayrı raporlanır. Önceki `%60` çalışma sözlüğü ölçüsü, yeni dokunma sözlüğünün yerine geçmez. Dokunma sözlüğünde `%98` geçiş kapsaması ürün hedefidir; özel adlar/çekimler dahil payda tanımı ve dil bazlı editör doğruluğu ayrıca kaydedilir. Sırf oran yükselsin diye kelimeler alıştırmaya eklenmez. Türkçe sözlük onayı diğer 10 dilin onayı sayılmaz; pilot diğer dillerde aynı kalite süreciyle genişler.
 
@@ -84,9 +90,10 @@
 
 ## İlk başlanacak somut paket
 
-1. **R01–R04:** 50'nin Play ve fiziksel cihaz kabul kaydı; canlı ölçüm doğrulaması.
-2. Bu sırada canlı içeriğe yazmadan **R05 denetimi ve editör örneklem listesi** hazırlanabilir.
-3. Sonraki ürün PR'ı: **5 hikâyelik çalışma kelimesi pilotunu uygulamaya bağlamak**. Önce editör onayı ve mevcut sürüm/eşitleme sözleşmesi incelenir.
+1. **R00:** Ana dal ilk kullanım cihaz testini yeniden üret ve düzelt; tam birleşik CI sonucunu kaydet.
+2. **R01–R04:** 50’nin güncel Play durumunu ve fiziksel cihaz kabulünü kaydet; canlı ölçümü doğrula. #149–#151 için yeni paket/sürüm kodu ayrıca gerekir.
+3. **R05:** 10 dilde sözlük ikinci incelemesi ve dil örneklemi; yeni arayüz metinlerinin dil kontrolü.
+4. **R06:** Canlıdaki beş pilotun UI/çevrimdışı/hesap kabulü. Sonra kalan 45 hikâyenin çalışma kelimeleri ve çeviri kaynağı planı; yeni hikâye ekleme ertelendi.
 
 Bu tur yalnız planı ve belge yönlendirmelerini günceller. Yeni kod, içerik yayını, mağaza değişikliği, takip görevi veya reklam harcaması başlatmaz. Her uygulama işinde tek kullanıcı sonucu, ilgili test/kabul, geri dönüş yolu ve yeni kanıt kaydı tutulur.
 

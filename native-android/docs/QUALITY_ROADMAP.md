@@ -1,3 +1,5 @@
+> **20 Ekim kontrolü:** #147–#151 birleşti; beş pilot canlıda ve 11 dil sözlüğü kodda. Ana dal cihaz CI’ında ilk kullanım testi zaman aşımı var. Güncel açık işler ve kanıtlar: [proje kontrolü](PROJECT_AUDIT_2026-10-20.md), [R00–R14 öncelikleri](ROADMAP_2026_Q4.md). Aşağıdaki eski yeşil CI/yayın sayıları bugünkü durum değildir.
+
 > **19 Ekim 2026:** Aktif öncelik ve gelecek planı [90 günlük yol haritasında](ROADMAP_2026_Q4.md). Bu belgedeki eski durum/süre tabloları tarihsel ve teknik referanstır; yayın durumu için [50 kaydı](RELEASE_50_STATUS.md) esas alınır.
 
 # English Tales — kalite yol haritası
