@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.test.core.app.ActivityScenario
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.data.*
-import kotlinx.coroutines.test.StandardTestDispatcher
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -16,9 +15,8 @@ import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 
 /** The loading UI subscribes before IO publishes readiness, with system motion both off and on. */
-@OptIn(androidx.compose.ui.test.ExperimentalTestApi::class)
 class FirstLaunchReadinessTest {
-    @get:Rule val compose=createEmptyComposeRule(effectContext=StandardTestDispatcher())
+    @get:Rule val compose=createEmptyComposeRule()
     private val instrumentation get()=InstrumentationRegistry.getInstrumentation()
     private val context get()=instrumentation.targetContext
 
