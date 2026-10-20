@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20",
+  "originalFailure": {
+    "run": 39398368677,
+    "head": "050db6bbd256f59f5e7e304eaed949391e135ea6",
+    "test": "LearningWriteUiTest.readerAndPracticeKeepTheErrorVisibleUntilTheRetryButtonSaves",
+    "exception": "SnapshotStateObserver multithreaded access",
+    "completedCases": 280
+  },
+  "sameHeadPassingRun": 39398362194,
+  "change": "Test-only StandardTestDispatcher and rendered retry-button wait; no production change",
+  "sourceSha256": "dad76eb008a9f83c19034a7a6f94825064bd07f7fefddf4b2324185e7a1b34e5",
+  "local": {
+    "api": 36,
+    "initialGradlePass": {
+      "tests": 1,
+      "passed": 1,
+      "skipped": 0
+    },
+    "separateInstrumentationRuns": 5,
+    "passed": 5,
+    "logs": [
+      {
+        "iteration": 1,
+        "sha256": "5a88f6a33fd23d2d4603ae9ed565b323954ed861a8581e0253676cfba578b44d"
+      },
+      {
+        "iteration": 2,
+        "sha256": "21d62aa7e5f4958196748ac2ff32344de52b4b3e96ac60d94bac8defacdb7cbc"
+      },
+      {
+        "iteration": 3,
+        "sha256": "7fa8ec1ad8383371c852ab6e1aee270b5c06889b777a91641a732072a72ea255"
+      },
+      {
+        "iteration": 4,
+        "sha256": "0038612e0445dbb40ba5a6e0d29c41d46436cbc66907118f8b24d50b6d2df6b8"
+      },
+      {
+        "iteration": 5,
+        "sha256": "7636da1fd6962488c59f2d15c333ddbe80e7f71cb064afa6a44adb634c657288"
+      }
+    ]
+  },
+  "limits": [
+    "Initial original crash not reproduced locally; thread stack and exact dependency source support scheduler hypothesis.",
+    "First StandardTestDispatcher-only attempt failed an early rendered-bar assertion; final version awaits visibility.",
+    "Full CI on final test fix pending; focused repeats do not prove elimination of all flakes."
+  ]
+}
