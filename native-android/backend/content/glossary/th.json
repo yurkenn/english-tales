@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "lang": "th",
  "reviewStatus": "machine-draft",
- "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. A Claude review pass over all 1098 entries and Codex adjudication of flagged candidates are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. This remains AI-assisted review; unresolved source/language decisions and native-speaker review are still open. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. The full 1098-entry Claude review and Codex adjudication are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. Follow-up decisions for all 73 deferred candidates, coordinated source/target sense expansions and a fresh-context Claude audit are recorded in docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md. This remains AI-assisted review, not native-speaker approval. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
  "entries": [
   {
    "lemma": "a",
@@ -101,7 +101,7 @@
   },
   {
    "lemma": "against",
-   "gloss": "ต่อต้าน",
+   "gloss": "ต่อต้าน; กับ (กระทบ/พิง: กับกำแพง); แข่งกับ (เวลา)",
    "source": "claude-draft"
   },
   {
@@ -136,7 +136,7 @@
   },
   {
    "lemma": "allowed",
-   "gloss": "อนุญาต",
+   "gloss": "อนุญาต; ได้รับอนุญาต",
    "source": "claude-draft"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
    "lemma": "amazed",
-   "gloss": "ประหลาดใจ",
+   "gloss": "ประหลาดใจ; ทำให้ประหลาดใจ",
    "source": "claude-draft"
   },
   {
@@ -531,7 +531,7 @@
   },
   {
    "lemma": "blow",
-   "gloss": "การโจมตี",
+   "gloss": "การตี, การฟาด; (ลม) พัด",
    "source": "claude-draft"
   },
   {
@@ -636,7 +636,7 @@
   },
   {
    "lemma": "burn",
-   "gloss": "ไหม้",
+   "gloss": "ไหม้; เผา; ทำให้แสบร้อน",
    "source": "claude-draft"
   },
   {
@@ -646,7 +646,7 @@
   },
   {
    "lemma": "burst",
-   "gloss": "ระเบิด",
+   "gloss": "ระเบิด; พุ่งทะลุ, บุกเข้า",
    "source": "claude-draft"
   },
   {
@@ -941,7 +941,7 @@
   },
   {
    "lemma": "companion",
-   "gloss": "เพื่อนร่วมทาง",
+   "gloss": "เพื่อน; เพื่อนร่วมทาง",
    "source": "claude-draft"
   },
   {
@@ -1206,7 +1206,7 @@
   },
   {
    "lemma": "described",
-   "gloss": "อธิบาย",
+   "gloss": "บรรยาย; อธิบาย",
    "source": "claude-draft"
   },
   {
@@ -1221,7 +1221,7 @@
   },
   {
    "lemma": "desperately",
-   "gloss": "อย่างสิ้นหวัง",
+   "gloss": "อย่างสิ้นหวัง; อย่างมาก, อย่างหนัก",
    "source": "claude-draft"
   },
   {
@@ -1306,7 +1306,7 @@
   },
   {
    "lemma": "draw",
-   "gloss": "ดึงเข้าหาตัว",
+   "gloss": "ดึงเข้าหาตัว; ดึงดูด",
    "source": "claude-draft"
   },
   {
@@ -1326,7 +1326,7 @@
   },
   {
    "lemma": "dreams",
-   "gloss": "ความฝัน",
+   "gloss": "ความฝัน; ฝัน",
    "source": "claude-draft"
   },
   {
@@ -1451,7 +1451,7 @@
   },
   {
    "lemma": "end",
-   "gloss": "จุดจบ",
+   "gloss": "จุดจบ; ปลาย, ท้าย (สถานที่); สิ้นสุด, จบ",
    "source": "claude-draft"
   },
   {
@@ -1511,7 +1511,7 @@
   },
   {
    "lemma": "eve",
-   "gloss": "วันก่อน (คริสต์มาส)",
+   "gloss": "คืน/วันก่อนวันสำคัญ (คืนก่อนวันคริสต์มาส)",
    "source": "claude-draft"
   },
   {
@@ -1806,7 +1806,7 @@
   },
   {
    "lemma": "firmly",
-   "gloss": "แน่น",
+   "gloss": "แน่น; อย่างมั่นคง",
    "source": "claude-draft"
   },
   {
@@ -2286,7 +2286,7 @@
   },
   {
    "lemma": "hide",
-   "gloss": "ซ่อนตัว",
+   "gloss": "ซ่อนตัว; ซ่อน, ปิดบัง",
    "source": "claude-draft"
   },
   {
@@ -2461,7 +2461,7 @@
   },
   {
    "lemma": "injured",
-   "gloss": "บาดเจ็บ",
+   "gloss": "บาดเจ็บ; ทำให้บาดเจ็บ",
    "source": "claude-draft"
   },
   {
@@ -2836,7 +2836,7 @@
   },
   {
    "lemma": "lowered",
-   "gloss": "ลดลง",
+   "gloss": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
    "source": "claude-draft"
   },
   {
@@ -3221,7 +3221,7 @@
   },
   {
    "lemma": "officer",
-   "gloss": "เจ้าหน้าที่; นายทหาร",
+   "gloss": "เจ้าหน้าที่; นายทหาร; ตำรวจ",
    "source": "claude-draft"
   },
   {
@@ -3626,7 +3626,7 @@
   },
   {
    "lemma": "purr",
-   "gloss": "ส่งเสียงครางหงิง ๆ (แมว)",
+   "gloss": "ทำเสียงครางเบา ๆ (แมว)",
    "source": "claude-draft"
   },
   {
@@ -4261,7 +4261,7 @@
   },
   {
    "lemma": "soften",
-   "gloss": "อ่อนลง",
+   "gloss": "ทำให้อ่อนลง, ทำให้นุ่มนวลขึ้น; อ่อนลง",
    "source": "claude-draft"
   },
   {
@@ -4341,7 +4341,7 @@
   },
   {
    "lemma": "spills",
-   "gloss": "ทำหก",
+   "gloss": "หก; ทำหก",
    "source": "claude-draft"
   },
   {
@@ -5151,7 +5151,7 @@
   },
   {
    "lemma": "wardrobe",
-   "gloss": "ตู้เสื้อผ้า",
+   "gloss": "ตู้เสื้อผ้า; เสื้อผ้าทั้งหมด (ของคนหนึ่ง)",
    "source": "claude-draft"
   },
   {

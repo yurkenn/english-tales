@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "lang": "id",
  "reviewStatus": "machine-draft",
- "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. A Claude review pass over all 1098 entries and Codex adjudication of flagged candidates are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. This remains AI-assisted review; unresolved source/language decisions and native-speaker review are still open. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. The full 1098-entry Claude review and Codex adjudication are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. Follow-up decisions for all 73 deferred candidates, coordinated source/target sense expansions and a fresh-context Claude audit are recorded in docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md. This remains AI-assisted review, not native-speaker approval. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
  "entries": [
   {
    "lemma": "a",
@@ -101,7 +101,7 @@
   },
   {
    "lemma": "against",
-   "gloss": "melawan",
+   "gloss": "melawan; ke/pada (benturan: ke dinding)",
    "source": "claude-draft"
   },
   {
@@ -136,7 +136,7 @@
   },
   {
    "lemma": "allowed",
-   "gloss": "mengizinkan",
+   "gloss": "mengizinkan; diizinkan",
    "source": "claude-draft"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
    "lemma": "amazed",
-   "gloss": "takjub",
+   "gloss": "takjub; membuat takjub",
    "source": "claude-draft"
   },
   {
@@ -531,7 +531,7 @@
   },
   {
    "lemma": "blow",
-   "gloss": "pukulan",
+   "gloss": "pukulan; bertiup, meniup (angin)",
    "source": "claude-draft"
   },
   {
@@ -636,7 +636,7 @@
   },
   {
    "lemma": "burn",
-   "gloss": "terbakar",
+   "gloss": "terbakar; membakar",
    "source": "claude-draft"
   },
   {
@@ -646,7 +646,7 @@
   },
   {
    "lemma": "burst",
-   "gloss": "meletus",
+   "gloss": "meletus; menerobos",
    "source": "claude-draft"
   },
   {
@@ -1221,7 +1221,7 @@
   },
   {
    "lemma": "desperately",
-   "gloss": "dengan putus asa",
+   "gloss": "dengan putus asa; sangat, amat",
    "source": "claude-draft"
   },
   {
@@ -1306,7 +1306,7 @@
   },
   {
    "lemma": "draw",
-   "gloss": "menarik ke arah diri",
+   "gloss": "menarik ke arah diri; menarik (hati), memikat",
    "source": "claude-draft"
   },
   {
@@ -1326,7 +1326,7 @@
   },
   {
    "lemma": "dreams",
-   "gloss": "mimpi",
+   "gloss": "mimpi; bermimpi",
    "source": "claude-draft"
   },
   {
@@ -1451,7 +1451,7 @@
   },
   {
    "lemma": "end",
-   "gloss": "akhir",
+   "gloss": "akhir; ujung; berakhir",
    "source": "claude-draft"
   },
   {
@@ -1806,7 +1806,7 @@
   },
   {
    "lemma": "firmly",
-   "gloss": "dengan erat",
+   "gloss": "dengan erat; dengan kokoh",
    "source": "claude-draft"
   },
   {
@@ -2056,7 +2056,7 @@
   },
   {
    "lemma": "god",
-   "gloss": "tuhan",
+   "gloss": "tuhan; Tuhan (nama diri: God)",
    "source": "claude-draft"
   },
   {
@@ -2286,7 +2286,7 @@
   },
   {
    "lemma": "hide",
-   "gloss": "bersembunyi",
+   "gloss": "bersembunyi; menyembunyikan",
    "source": "claude-draft"
   },
   {
@@ -2461,7 +2461,7 @@
   },
   {
    "lemma": "injured",
-   "gloss": "terluka",
+   "gloss": "terluka; melukai",
    "source": "claude-draft"
   },
   {
@@ -2681,7 +2681,7 @@
   },
   {
    "lemma": "lay",
-   "gloss": "berbaring; meletakkan",
+   "gloss": "berbaring; terletak; meletakkan; bertelur",
    "source": "claude-draft"
   },
   {
@@ -3221,7 +3221,7 @@
   },
   {
    "lemma": "officer",
-   "gloss": "petugas; perwira",
+   "gloss": "petugas; perwira; polisi",
    "source": "claude-draft"
   },
   {
@@ -3481,7 +3481,7 @@
   },
   {
    "lemma": "plain",
-   "gloss": "preman; sederhana",
+   "gloss": "berpakaian preman (sipil); sederhana",
    "source": "claude-draft"
   },
   {
@@ -4261,7 +4261,7 @@
   },
   {
    "lemma": "soften",
-   "gloss": "melunak",
+   "gloss": "melunakkan, melembutkan; melunak",
    "source": "claude-draft"
   },
   {
@@ -4341,7 +4341,7 @@
   },
   {
    "lemma": "spills",
-   "gloss": "menumpahkan",
+   "gloss": "tumpah; menumpahkan",
    "source": "claude-draft"
   },
   {
@@ -5151,7 +5151,7 @@
   },
   {
    "lemma": "wardrobe",
-   "gloss": "lemari pakaian",
+   "gloss": "lemari pakaian; koleksi pakaian (seseorang)",
    "source": "claude-draft"
   },
   {

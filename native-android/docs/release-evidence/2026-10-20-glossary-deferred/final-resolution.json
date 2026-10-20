@@ -1,0 +1,3003 @@
+{
+  "baselineCommit": "e29309357042be5cc91700e23988c06f78d1c3ec",
+  "decisions": [
+    {
+      "id": "2026-10-20-glossary-claude-review.json:8",
+      "decision": "change",
+      "before": "ढूँढ़ना",
+      "after": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
+      "rationale": "Accept independent audit correction: The senses are correct, but the order contradicts the decision's own analysis. About 34 of the 37 contexts are completed discovery, yet the search-only verb ढूँढ़ना is the first thing a learner sees. Lead with the resultative sense. No sense is removed.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "find",
+      "claudeInitialRationale": "Almost all 37 contexts are past-tense successful discovery ('found a map', 'found the sleeping princess'). Bare ढूँढ़ना names the search, not the result. A learner reading 'found' needs the resultative ढूँढ़ लेना / पाना. 'found that they had grown older' is covered by पाना (पाया कि). 'find out where she lived' needs पता लगाना. ढूँढ़ना is kept for the intended-search contexts ('set out to find him', 'hoped to find a bride')."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:9",
+      "decision": "change",
+      "before": "ڈھونڈنا",
+      "after": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)",
+      "rationale": "Accept independent audit correction: This has the same ordering issue as the Hindi value. The search-only verb comes first even though the dominant contexts are completed discovery.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "find",
+      "claudeInitialRationale": "Same analysis as Hindi. ڈھونڈنا is the seeking verb, but the dominant contexts are completed discovery, which needs ڈھونڈ لینا / پانا. 'find out' needs پتا لگانا. The search sense is kept for 'set out to find him'."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:14",
+      "decision": "change",
+      "before": "armario",
+      "after": "armario; vestuario (ropa de una persona)",
+      "rationale": "The only context ('people joked about his wardrobe') means his clothes collection. Latin American armario means only the furniture. vestuario is the idiomatic word for a person's set of clothes. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "wardrobe",
+      "claudeInitialRationale": "The only context ('people joked about his wardrobe') means his clothes collection. Latin American armario means only the furniture. vestuario is the idiomatic word for a person's set of clothes. The furniture sense is kept."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:15",
+      "decision": "change",
+      "before": "lemari pakaian",
+      "after": "lemari pakaian; koleksi pakaian (seseorang)",
+      "rationale": "lemari pakaian is furniture only and cannot mean the emperor's clothes. Added the clothes-collection sense and kept the furniture sense.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "wardrobe",
+      "claudeInitialRationale": "lemari pakaian is furniture only and cannot mean the emperor's clothes. Added the clothes-collection sense and kept the furniture sense."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:16",
+      "decision": "change",
+      "before": "خزانة ملابس",
+      "after": "خزانة ملابس؛ مجموعة ملابس (الشخص)",
+      "rationale": "خزانة ملابس is the cabinet only. The context refers to the emperor's outfits, so the collection sense is added. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "wardrobe",
+      "claudeInitialRationale": "خزانة ملابس is the cabinet only. The context refers to the emperor's outfits, so the collection sense is added. The furniture sense is kept."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:17",
+      "decision": "change",
+      "before": "tủ quần áo",
+      "after": "tủ quần áo; quần áo (của một người)",
+      "rationale": "tủ quần áo literally names the cabinet. The joke is about his clothes, so the collection sense is added. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "wardrobe",
+      "claudeInitialRationale": "tủ quần áo literally names the cabinet. The joke is about his clothes, so the collection sense is added. The furniture sense is kept."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:18",
+      "decision": "change",
+      "before": "अलमारी",
+      "after": "अलमारी; (किसी के) सारे कपड़े, पोशाकें",
+      "rationale": "अलमारी is a cupboard and does not express a clothing collection. The added sense covers the emperor context. अलमारी stays as the furniture sense: it is general but not wrong.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "wardrobe",
+      "claudeInitialRationale": "अलमारी is a cupboard and does not express a clothing collection. The added sense covers the emperor context. अलमारी stays as the furniture sense: it is general but not wrong."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:20",
+      "decision": "change",
+      "before": "পোশাকের আলমারি",
+      "after": "পোশাকের আলমারি; (কারও) সব পোশাক-পরিচ্ছদ",
+      "rationale": "The current gloss is the furniture only. পোশাক-পরিচ্ছদ adds the clothes-collection sense the context needs. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "wardrobe",
+      "claudeInitialRationale": "The current gloss is the furniture only. পোশাক-পরিচ্ছদ adds the clothes-collection sense the context needs. The furniture sense is kept."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:21",
+      "decision": "change",
+      "before": "الماری",
+      "after": "الماری؛ (کسی کے) کپڑے، ملبوسات",
+      "rationale": "الماری is a cupboard. ملبوسات supplies the clothes-collection sense the context needs. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "wardrobe",
+      "claudeInitialRationale": "الماری is a cupboard. ملبوسات supplies the clothes-collection sense the context needs. The furniture sense is kept."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:22",
+      "decision": "change",
+      "before": "ตู้เสื้อผ้า",
+      "after": "ตู้เสื้อผ้า; เสื้อผ้าทั้งหมด (ของคนหนึ่ง)",
+      "rationale": "ตู้เสื้อผ้า is the cabinet. The added sense covers 'his wardrobe' as his set of outfits. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "wardrobe",
+      "claudeInitialRationale": "ตู้เสื้อผ้า is the cabinet. The added sense covers 'his wardrobe' as his set of outfits. The furniture sense is kept."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:23",
+      "decision": "change",
+      "before": "การโจมตี",
+      "after": "การตี, การฟาด; (ลม) พัด",
+      "rationale": "'Seven at one blow' means a single strike or swat. การโจมตี means 'attack/assault' and misstates the sense. The master form blew→blow also needs the wind verb ('the wind blew his hat away'), which no current gloss has. This applies the noun+verb policy.",
+      "confidence": "medium",
+      "lang": "th",
+      "lemma": "blow",
+      "claudeInitialRationale": "'Seven at one blow' means a single strike or swat. การโจมตี means 'attack/assault' and misstates the sense. The master form blew→blow also needs the wind verb ('the wind blew his hat away'), which no current gloss has. This applies the noun+verb policy."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:34",
+      "decision": "keep",
+      "before": "घुरघुराना (बिल्ली का)",
+      "after": "घुरघुराना (बिल्ली का)",
+      "rationale": "On its own, घुरघुराना can suggest a throaty grunt. However, it is the standard Hindi dictionary rendering of a cat's purr, and the '(बिल्ली का)' label restricts it to the cat sound. That fits the only context, the cat that can purr. No clearer common Hindi verb exists, and an onomatopoeic coinage would be less teachable.",
+      "confidence": "medium",
+      "lang": "hi",
+      "lemma": "purr",
+      "claudeInitialRationale": "On its own, घुरघुराना can suggest a throaty grunt. However, it is the standard Hindi dictionary rendering of a cat's purr, and the '(बिल्ली का)' label restricts it to the cat sound. That fits the only context, the cat that can purr. No clearer common Hindi verb exists, and an onomatopoeic coinage would be less teachable."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:35",
+      "decision": "change",
+      "before": "ส่งเสียงครางหงิง ๆ (แมว)",
+      "after": "ทำเสียงครางเบา ๆ (แมว)",
+      "rationale": "Use the dictionary-attested Thai purr verb with soft/cat disambiguation, avoiding an invented scraping/snoring onomatopoeia.",
+      "confidence": "medium",
+      "lang": "th",
+      "lemma": "purr",
+      "claudeProposedAfter": "ทำเสียงครืด ๆ ในลำคอ (แมว)",
+      "codexAmendmentReason": "Use the dictionary-attested Thai purr verb with soft/cat disambiguation, avoiding an invented scraping/snoring onomatopoeia.",
+      "claudeInitialRationale": "หงิง ๆ describes whimpering or whining, as with a dog or a fretful animal. That is exactly the confusion the prior reviewer flagged. A purr is a low continuous throat rumble, which ครืด ๆ ในลำคอ describes. The cat label is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:5",
+      "decision": "change",
+      "before": "सिकुड़ गया",
+      "after": "(बाल) घुँघराले किए; सिकुड़ गया",
+      "rationale": "The only context is transitive: 'she curled her short hair'. सिकुड़ गया (shrank/curled up) cannot express this. The hair sense is added first, and the existing curl-up sense is kept. A gender-neutral perfective किए is used, so the subject's gender is not forced.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "curled",
+      "claudeInitialRationale": "The only context is transitive: 'she curled her short hair'. सिकुड़ गया (shrank/curled up) cannot express this. The hair sense is added first, and the existing curl-up sense is kept. A gender-neutral perfective किए is used, so the subject's gender is not forced."
+    },
+    {
+      "id": "dispositions-1-2.json:7",
+      "decision": "change",
+      "before": "কুঁকড়ে গেল",
+      "after": "(চুল) কোঁকড়া করল; কুঁকড়ে গেল",
+      "rationale": "The context is transitive hair-curling, which কুঁকড়ে গেল (shrivelled/curled up) does not cover. The hair sense is added and the existing curl-up sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "curled",
+      "claudeInitialRationale": "The context is transitive hair-curling, which কুঁকড়ে গেল (shrivelled/curled up) does not cover. The hair sense is added and the existing curl-up sense is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:8",
+      "decision": "change",
+      "before": "سمٹ گیا",
+      "after": "(بال) گھنگریالے کیے؛ سمٹ گیا",
+      "rationale": "سمٹ گیا (drew together/curled up) cannot render 'curled her hair'. The transitive hair sense is added and the existing curl-up sense is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "curled",
+      "claudeInitialRationale": "سمٹ گیا (drew together/curled up) cannot render 'curled her hair'. The transitive hair sense is added and the existing curl-up sense is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:30",
+      "decision": "change",
+      "before": "জাহাজ/গাড়িতে ওঠা",
+      "after": "জাহাজে/যানবাহনে (চড়ে); জাহাজ/গাড়িতে ওঠা",
+      "rationale": "aboard is locative or adverbial. 'celebrated aboard a ship' needs 'on the ship' (জাহাজে), and a verbal noun meaning 'to board' does not fit it. The boarding phrase is kept because 'climbed aboard' is naturally read as boarding.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "aboard",
+      "claudeInitialRationale": "aboard is locative or adverbial. 'celebrated aboard a ship' needs 'on the ship' (জাহাজে), and a verbal noun meaning 'to board' does not fit it. The boarding phrase is kept because 'climbed aboard' is naturally read as boarding."
+    },
+    {
+      "id": "dispositions-1-2.json:34",
+      "decision": "change",
+      "before": "izin verdi",
+      "after": "izin verdi; izin verilmiş (izinli)",
+      "rationale": "The only context is passive: 'was finally allowed to visit'. A learner tapping 'allowed' there needs the participle meaning 'permitted'. Under the morphology policy, a -ed form gets both the active past and the passive participle sense. izin verdi is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "allowed",
+      "claudeInitialRationale": "The only context is passive: 'was finally allowed to visit'. A learner tapping 'allowed' there needs the participle meaning 'permitted'. Under the morphology policy, a -ed form gets both the active past and the passive participle sense. izin verdi is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:37",
+      "decision": "change",
+      "before": "patlamak",
+      "after": "patlamak; (bir yere) hızla dalmak, girmek",
+      "rationale": "'burst through the window' is violent sudden motion, not an explosion. The motion sense is added and the general explosion meaning is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "burst",
+      "claudeInitialRationale": "'burst through the window' is violent sudden motion, not an explosion. The motion sense is added and the general explosion meaning is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:39",
+      "decision": "change",
+      "before": "बेताबी से",
+      "after": "बुरी तरह, बेहद; बेताबी से; हताश होकर",
+      "rationale": "'desperately hungry' is an intensifier, rendered naturally as बुरी तरह भूखी. बेताबी से (impatiently) does not fit it. The existing eager sense is kept, and हताश होकर covers the general despair meaning so the lemma is not narrowed.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "desperately",
+      "claudeInitialRationale": "'desperately hungry' is an intensifier, rendered naturally as बुरी तरह भूखी. बेताबी से (impatiently) does not fit it. The existing eager sense is kept, and हताश होकर covers the general despair meaning so the lemma is not narrowed."
+    },
+    {
+      "id": "dispositions-1-2.json:40",
+      "decision": "change",
+      "before": "بے تابی سے",
+      "after": "بری طرح، بے حد؛ بے تابی سے؛ مایوس ہو کر",
+      "rationale": "Same as Hindi. The intensifier sense بری طرح بھوکی is missing. The eager sense is kept and the despair sense is added.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "desperately",
+      "claudeInitialRationale": "Same as Hindi. The intensifier sense بری طرح بھوکی is missing. The eager sense is kept and the despair sense is added."
+    },
+    {
+      "id": "dispositions-1-2.json:44",
+      "decision": "change",
+      "before": "çekmek (kendine doğru)",
+      "after": "çekmek (kendine doğru); (bir yere/birine) çekmek, cezbetmek",
+      "rationale": "'drew her feet beneath her' fits the existing inward-pull sense. 'a song drew him to the window' and 'was drawn to him' are attraction toward an external point, which '(kendine doğru)' excludes. cezbetmek and the directional sense are added; the existing sense is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "draw",
+      "claudeInitialRationale": "'drew her feet beneath her' fits the existing inward-pull sense. 'a song drew him to the window' and 'was drawn to him' are attraction toward an external point, which '(kendine doğru)' excludes. cezbetmek and the directional sense are added; the existing sense is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:47",
+      "decision": "change",
+      "before": "จุดจบ",
+      "after": "จุดจบ; ปลาย, ท้าย (สถานที่); สิ้นสุด, จบ",
+      "rationale": "จุดจบ fits 'the end of her life'. It does not fit the spatial 'end of the village' (ท้ายหมู่บ้าน) or the verb 'refused to end' (สิ้นสุด). Both senses are added and the existing one is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "end",
+      "claudeInitialRationale": "จุดจบ fits 'the end of her life'. It does not fit the spatial 'end of the village' (ท้ายหมู่บ้าน) or the verb 'refused to end' (สิ้นสุด). Both senses are added and the existing one is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:48",
+      "decision": "change",
+      "before": "اختتام",
+      "after": "آخر، سرا؛ اختتام؛ ختم ہونا",
+      "rationale": "اختتام is a formal 'conclusion' and is not used spatially ('گاؤں کے آخر/سرے پر'). It is also not a verb ('winter refused to end' = ختم ہونا). The spatial and verbal senses are added and the temporal noun is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "end",
+      "claudeInitialRationale": "اختتام is a formal 'conclusion' and is not used spatially ('گاؤں کے آخر/سرے پر'). It is also not a verb ('winter refused to end' = ختم ہونا). The spatial and verbal senses are added and the temporal noun is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:50",
+      "decision": "change",
+      "before": "شام سے پہلے کی رات (کرسمس کی)",
+      "after": "کسی خاص دن سے پہلے کی شام (کرسمس کی شام)",
+      "rationale": "The current wording literally says 'the night before the evening', which is incoherent. The replacement defines eve generically as the evening before a special day, not festival-only. The Christmas Eve example matches the context.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "eve",
+      "claudeInitialRationale": "The current wording literally says 'the night before the evening', which is incoherent. The replacement defines eve generically as the evening before a special day, not festival-only. The Christmas Eve example matches the context."
+    },
+    {
+      "id": "dispositions-1-2.json:55",
+      "decision": "change",
+      "before": "sıkıca",
+      "after": "sıkıca; sağlam bir şekilde",
+      "rationale": "'stood firmly on his single leg' means steady and stable. sıkıca means 'tightly' and fits gripping or tying, not standing. The stability sense is added and sıkıca is kept for its valid uses.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "firmly",
+      "claudeInitialRationale": "'stood firmly on his single leg' means steady and stable. sıkıca means 'tightly' and fits gripping or tying, not standing. The stability sense is added and sıkıca is kept for its valid uses."
+    },
+    {
+      "id": "dispositions-1-2.json:58",
+      "decision": "change",
+      "before": "أمام",
+      "after": "أمام؛ الجهة الأمامية",
+      "rationale": "أمام is the preposition 'in front of'. 'no name on the front' of an envelope needs the noun 'front side'. الجهة الأمامية is neutral and avoids facade-specific الواجهة. The prepositional sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "front",
+      "claudeInitialRationale": "أمام is the preposition 'in front of'. 'no name on the front' of an envelope needs the noun 'front side'. الجهة الأمامية is neutral and avoids facade-specific الواجهة. The prepositional sense is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:59",
+      "decision": "change",
+      "before": "सुरुचिपूर्ण",
+      "after": "लालित्यपूर्ण; सुरुचिपूर्ण",
+      "rationale": "Add bodily/movement elegance; retain existing valid elegance/style sense rather than replacing it with merely attractive.",
+      "confidence": "medium",
+      "lang": "hi",
+      "lemma": "graceful",
+      "claudeProposedAfter": "मनोहर, लालित्यपूर्ण",
+      "codexAmendmentReason": "Add bodily/movement elegance; retain existing valid elegance/style sense rather than replacing it with merely attractive.",
+      "claudeInitialRationale": "सुरुचिपूर्ण means 'tasteful / in good taste', describing decor or choices. It does not describe the elegant form and movement of a swan, so it is not a valid sense of graceful here. मनोहर, लालित्यपूर्ण expresses beauty and elegance of appearance."
+    },
+    {
+      "id": "dispositions-1-2.json:60",
+      "decision": "change",
+      "before": "خوش اسلوب",
+      "after": "خوش ادا؛ خوش اسلوب",
+      "rationale": "Add graceful bearing/movement; keep the existing manner/style sense, avoid equating graceful with merely attractive.",
+      "confidence": "medium",
+      "lang": "ur",
+      "lemma": "graceful",
+      "claudeProposedAfter": "دلکش؛ خوش ادا",
+      "codexAmendmentReason": "Add graceful bearing/movement; keep the existing manner/style sense, avoid equating graceful with merely attractive.",
+      "claudeInitialRationale": "خوش اسلوب means 'well-styled', mainly of writing or manner of expression, and does not describe a swan. خوش ادا is the standard word for elegance of bearing and movement, and دلکش adds the visual-beauty side. باوقار was not chosen because it shifts the meaning to 'dignified'."
+    },
+    {
+      "id": "dispositions-3-4.json:9",
+      "decision": "change",
+      "before": "yaralı",
+      "after": "yaralı; yaraladı (incitti)",
+      "rationale": "Both contexts are transitive past verbs ('injured her foot', 'thorns injured his eyes'). yaralı is adjectival only. The past verb is added per the morphology policy, and the participial adjective is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "injured",
+      "claudeInitialRationale": "Both contexts are transitive past verbs ('injured her foot', 'thorns injured his eyes'). yaralı is adjectival only. The past verb is added per the morphology policy, and the participial adjective is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:10",
+      "decision": "change",
+      "before": "memur; subay",
+      "after": "memur; subay; polis memuru",
+      "rationale": "Both contexts refer to a policeman, who walks the street and is asked to arrest. Bare memur reads as 'civil servant' to Turkish learners, and subay is military. polis memuru makes the actual referent explicit; the general senses are kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "officer",
+      "claudeInitialRationale": "Both contexts refer to a policeman, who walks the street and is asked to arrest. Bare memur reads as 'civil servant' to Turkish learners, and subay is military. polis memuru makes the actual referent explicit; the general senses are kept."
+    },
+    {
+      "id": "dispositions-3-4.json:18",
+      "decision": "change",
+      "before": "deitou; colocou",
+      "after": "deitou(-se); estava (jazia); pôr (ovos), colocar",
+      "rationale": "There are three senses. 'lay in her bed' is lying down, so deitou(-se) is kept with the optional clitic, matching Brazilian usage. 'Inside it lay a photograph' is a static position, which deitou cannot express, so estava (jazia) is added. 'lay eggs' is idiomatically pôr ovos, and colocar is kept for general placing.",
+      "confidence": "high",
+      "lang": "pt-BR",
+      "lemma": "lay",
+      "claudeInitialRationale": "There are three senses. 'lay in her bed' is lying down, so deitou(-se) is kept with the optional clitic, matching Brazilian usage. 'Inside it lay a photograph' is a static position, which deitou cannot express, so estava (jazia) is added. 'lay eggs' is idiomatically pôr ovos, and colocar is kept for general placing."
+    },
+    {
+      "id": "dispositions-3-4.json:45",
+      "decision": "change",
+      "before": "ablandarse",
+      "after": "suavizar, ablandar; ablandarse",
+      "rationale": "The context is transitive ('to soften his voice'). For a voice, suavizar is idiomatic. The transitive sense is added and the intransitive ablandarse is kept, per the master yumuşamak; yumuşatmak policy.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "soften",
+      "claudeInitialRationale": "The context is transitive ('to soften his voice'). For a voice, suavizar is idiomatic. The transitive sense is added and the intransitive ablandarse is kept, per the master yumuşamak; yumuşatmak policy."
+    },
+    {
+      "id": "dispositions-3-4.json:46",
+      "decision": "change",
+      "before": "melunak",
+      "after": "melunakkan, melembutkan; melunak",
+      "rationale": "melunak is intransitive. The context is transitive, and melembutkan (suara) is the natural verb for softening a voice. The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "soften",
+      "claudeInitialRationale": "melunak is intransitive. The context is transitive, and melembutkan (suara) is the natural verb for softening a voice. The intransitive sense is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:47",
+      "decision": "change",
+      "before": "يلين",
+      "after": "يليّن، يُرقّق؛ يلين",
+      "rationale": "يلين is intransitive. The transitive يليّن is added, plus يُرقّق, which is natural for making a voice softer (يرقّق صوته). The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "soften",
+      "claudeInitialRationale": "يلين is intransitive. The transitive يليّن is added, plus يُرقّق, which is natural for making a voice softer (يرقّق صوته). The intransitive sense is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:48",
+      "decision": "change",
+      "before": "mềm đi",
+      "after": "làm mềm, làm dịu; mềm đi",
+      "rationale": "mềm đi is intransitive. The causative làm mềm is added, and làm dịu (giọng) fits softening a voice. The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "soften",
+      "claudeInitialRationale": "mềm đi is intransitive. The causative làm mềm is added, and làm dịu (giọng) fits softening a voice. The intransitive sense is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:49",
+      "decision": "change",
+      "before": "नरम होना",
+      "after": "नरम करना; नरम होना",
+      "rationale": "The context needs the transitive नरम करना ('आवाज़ नरम करना'). The intransitive नरम होना is kept.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "soften",
+      "claudeInitialRationale": "The context needs the transitive नरम करना ('आवाज़ नरम करना'). The intransitive नरम होना is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:50",
+      "decision": "change",
+      "before": "смягчаться",
+      "after": "смягчать; смягчаться",
+      "rationale": "смягчаться is reflexive/intransitive, and the context is transitive ('смягчить голос'). The transitive смягчать is added and the reflexive is kept.",
+      "confidence": "high",
+      "lang": "ru",
+      "lemma": "soften",
+      "claudeInitialRationale": "смягчаться is reflexive/intransitive, and the context is transitive ('смягчить голос'). The transitive смягчать is added and the reflexive is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:51",
+      "decision": "change",
+      "before": "নরম হওয়া",
+      "after": "নরম করা; নরম হওয়া",
+      "rationale": "The transitive নরম করা is needed for 'soften his voice'. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "soften",
+      "claudeInitialRationale": "The transitive নরম করা is needed for 'soften his voice'. The intransitive is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:52",
+      "decision": "change",
+      "before": "نرم ہونا",
+      "after": "نرم کرنا؛ نرم ہونا",
+      "rationale": "The transitive نرم کرنا is needed for the voice context. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "soften",
+      "claudeInitialRationale": "The transitive نرم کرنا is needed for the voice context. The intransitive is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:53",
+      "decision": "change",
+      "before": "อ่อนลง",
+      "after": "ทำให้อ่อนลง, ทำให้นุ่มนวลขึ้น; อ่อนลง",
+      "rationale": "อ่อนลง is intransitive. The causative ทำให้... is added, and นุ่มนวล suits a voice. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "soften",
+      "claudeInitialRationale": "อ่อนลง is intransitive. The causative ทำให้... is added, and นุ่มนวล suits a voice. The intransitive is kept."
+    },
+    {
+      "id": "dispositions-5.json:0",
+      "decision": "change",
+      "before": "ঝরনা",
+      "after": "ছোট নদী, জলধারা; ঝরনা",
+      "rationale": "A princess bending down to drink from a stream implies a small flowing watercourse. ঝরনা primarily evokes a spring or waterfall. ছোট নদী, জলধারা is the plain stream sense and is placed first. ঝরনা is kept because it is used for hill streams.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "stream",
+      "claudeInitialRationale": "A princess bending down to drink from a stream implies a small flowing watercourse. ঝরনা primarily evokes a spring or waterfall. ছোট নদী, জলধারা is the plain stream sense and is placed first. ঝরনা is kept because it is used for hill streams."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:25",
+      "decision": "change",
+      "before": "อธิบาย",
+      "after": "บรรยาย; อธิบาย",
+      "rationale": "All five contexts give an account: a letter's content, a robber's account of attackers, families seen, a life, a journey. อธิบาย leans toward 'explain'. It covers describing features but reads less naturally for narrating a life or journey. บรรยาย is the core 'describe/recount' verb. It is added first and อธิบาย is kept as a valid overlapping sense. Thai has no past tense marking, so the bare verb is right for 'described'.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "described",
+      "claudeInitialRationale": "All five contexts give an account: a letter's content, a robber's account of attackers, families seen, a life, a journey. อธิบาย leans toward 'explain'. It covers describing features but reads less naturally for narrating a life or journey. บรรยาย is the core 'describe/recount' verb. It is added first and อธิบาย is kept as a valid overlapping sense. Thai has no past tense marking, so the bare verb is right for 'described'."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:30",
+      "decision": "change",
+      "before": "إله",
+      "after": "إله؛ الله (اسم علم: God)",
+      "rationale": "All three contexts use capitalized God as a proper name. إله is the correct generic-deity sense and stays first, matching master policy for lowercase god. Arabic-speaking Muslims and Christians both use الله as the standard proper name for God, so it does not impose a specific theology. The label marks it as the capitalized proper-name sense only.",
+      "confidence": "medium-high",
+      "lang": "ar",
+      "lemma": "god",
+      "claudeInitialRationale": "All three contexts use capitalized God as a proper name. إله is the correct generic-deity sense and stays first, matching master policy for lowercase god. Arabic-speaking Muslims and Christians both use الله as the standard proper name for God, so it does not impose a specific theology. The label marks it as the capitalized proper-name sense only."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:33",
+      "decision": "change",
+      "before": "بدکار",
+      "after": "بدکار؛ شیطانی، خبیث",
+      "rationale": "The original has an established wicked/evil-doing sense. Proposed alternatives are register preferences; do not erase a valid translation without a demonstrated semantic mismatch.",
+      "confidence": "medium",
+      "lang": "ur",
+      "lemma": "wicked",
+      "claudeProposedAfter": "بدطینت؛ شیطانی",
+      "codexAmendmentReason": "The original has an established wicked/evil-doing sense. Proposed alternatives are register preferences; do not erase a valid translation without a demonstrated semantic mismatch.",
+      "claudeInitialRationale": "بدکار means an evildoer, but it and بدکاری carry a strong sexual-immorality connotation. That is risky in the Wild Swans context, where a silent woman is suspected of hiding 'something wicked' (witchcraft, not unchastity). بدطینت (evil-natured) fits 'wicked spirit'. شیطانی (devilish/evil) fits both the spirit and the suspected evil. شریر was avoided because it often means mischievous or naughty in Urdu."
+    },
+    {
+      "id": "dispositions-1-2.json:16",
+      "decision": "change",
+      "before": "yol arkadaşı",
+      "after": "arkadaş; yoldaş; yol arkadaşı",
+      "rationale": "Neither context involves travel. The first is an evening companion (a friend), and the second is the tin soldier dreaming of being the dancer's companion. yol arkadaşı alone is too narrow. arkadaş and yoldaş give general companionship, and yol arkadaşı is kept as a valid travel sense. Source expansion is now authorized.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "companion",
+      "claudeInitialRationale": "Neither context involves travel. The first is an evening companion (a friend), and the second is the tin soldier dreaming of being the dancer's companion. yol arkadaşı alone is too narrow. arkadaş and yoldaş give general companionship, and yol arkadaşı is kept as a valid travel sense. Source expansion is now authorized."
+    },
+    {
+      "id": "dispositions-1-2.json:23",
+      "decision": "change",
+      "before": "เพื่อนร่วมทาง",
+      "after": "เพื่อน; เพื่อนร่วมทาง",
+      "rationale": "เพื่อนร่วมทาง can be figurative, but for 'his companion that evening' a learner needs plain เพื่อน (friend/companion). เพื่อน is added first and เพื่อนร่วมทาง kept. คู่หู was rejected as over-specifying a close partner.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "companion",
+      "claudeInitialRationale": "เพื่อนร่วมทาง can be figurative, but for 'his companion that evening' a learner needs plain เพื่อน (friend/companion). เพื่อน is added first and เพื่อนร่วมทาง kept. คู่หู was rejected as over-specifying a close partner."
+    },
+    {
+      "id": "dispositions-1-2.json:32",
+      "decision": "change",
+      "before": "ต่อต้าน",
+      "after": "ต่อต้าน; กับ (กระทบ/พิง: กับกำแพง); แข่งกับ (เวลา)",
+      "rationale": "ต่อต้าน means resist or oppose and does not fit physical contact. Thai expresses 'threw him against the wall' and 'struck a match against the wall' with กับ plus a contact verb (กระแทกกับกำแพง, ขีดกับกำแพง). 'Racing against the sunset' is แข่งกับ (เวลา). The labels keep กับ from reading as plain 'with', and the opposition sense is kept.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "against",
+      "claudeInitialRationale": "ต่อต้าน means resist or oppose and does not fit physical contact. Thai expresses 'threw him against the wall' and 'struck a match against the wall' with กับ plus a contact verb (กระแทกกับกำแพง, ขีดกับกำแพง). 'Racing against the sunset' is แข่งกับ (เวลา). The labels keep กับ from reading as plain 'with', and the opposition sense is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:33",
+      "decision": "change",
+      "before": "karşı",
+      "after": "karşı; -e (çarparak/dayanarak: duvara)",
+      "rationale": "'Threw him against the wall' and 'struck a match against the wall' are dative in Turkish (duvara fırlattı, duvara sürttü), not karşı. 'Racing against the sunset' is covered by karşı via the idiomatic 'zamana karşı yarış'. Only the contact sense is added, with a label so the bare suffix is clear.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "against",
+      "claudeInitialRationale": "'Threw him against the wall' and 'struck a match against the wall' are dative in Turkish (duvara fırlattı, duvara sürttü), not karşı. 'Racing against the sunset' is covered by karşı via the idiomatic 'zamana karşı yarış'. Only the contact sense is added, with a label so the bare suffix is clear."
+    },
+    {
+      "id": "dispositions-1-2.json:35",
+      "decision": "change",
+      "before": "şaşkın",
+      "after": "şaşkın; şaşırttı, hayran bıraktı",
+      "rationale": "In 'Their fine stitching amazed him' the word is a past-tense transitive verb (the stitching amazed him). The adjective şaşkın describes the amazed person and is kept for adjective uses. The causative verb sense is added. hayran bıraktı captures admiring amazement at fine work.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "amazed",
+      "claudeInitialRationale": "In 'Their fine stitching amazed him' the word is a past-tense transitive verb (the stitching amazed him). The adjective şaşkın describes the amazed person and is kept for adjective uses. The causative verb sense is added. hayran bıraktı captures admiring amazement at fine work."
+    },
+    {
+      "id": "dispositions-1-2.json:36",
+      "decision": "change",
+      "before": "yanmak",
+      "after": "yanmak; yakmak",
+      "rationale": "'The nettles would burn her hands' is transitive (yakmak). 'Sentenced to burn' is intransitive (yanmak / yakılmak). Both senses occur, so yakmak is added and yanmak kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "burn",
+      "claudeInitialRationale": "'The nettles would burn her hands' is transitive (yakmak). 'Sentenced to burn' is intransitive (yanmak / yakılmak). Both senses occur, so yakmak is added and yanmak kept."
+    },
+    {
+      "id": "dispositions-1-2.json:42",
+      "decision": "change",
+      "before": "দরজার ফাঁক",
+      "after": "দরজার মুখ; দোরগোড়া",
+      "rationale": "দরজার ফাঁক most readily suggests the gap of a door left ajar. All three contexts are someone standing or waiting in a doorway (the opening as a place). দরজার মুখ (mouth of the door, as in দরজার মুখে দাঁড়িয়ে) is the natural spatial term. দোরগোড়া (threshold area) supports it. দরজার ফাঁক is dropped because, as a standalone gloss, its 'crack/gap' reading misleads in these contexts.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "doorway",
+      "claudeInitialRationale": "দরজার ফাঁক most readily suggests the gap of a door left ajar. All three contexts are someone standing or waiting in a doorway (the opening as a place). দরজার মুখ (mouth of the door, as in দরজার মুখে দাঁড়িয়ে) is the natural spatial term. দোরগোড়া (threshold area) supports it. দরজার ফাঁক is dropped because, as a standalone gloss, its 'crack/gap' reading misleads in these contexts."
+    },
+    {
+      "id": "dispositions-1-2.json:45",
+      "decision": "change",
+      "before": "rüyalar; hayaller",
+      "after": "rüyalar; hayaller; rüya görür; hayal eder",
+      "rationale": "The only context, 'As she dreams', is a third-person singular verb. The plural-noun glosses stay valid for the noun form. Verb glosses are added in matching third-person present (rüya görür, hayal eder) without changing the ID or form.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "dreams",
+      "claudeInitialRationale": "The only context, 'As she dreams', is a third-person singular verb. The plural-noun glosses stay valid for the noun form. Verb glosses are added in matching third-person present (rüya görür, hayal eder) without changing the ID or form."
+    },
+    {
+      "id": "dispositions-1-2.json:49",
+      "decision": "change",
+      "before": "عظیم",
+      "after": "بہت بڑا؛ عظیم",
+      "rationale": "عظیم can express magnitude, but its dominant learner reading is 'great/grand/eminent', which sounds odd or honorific for a wolf's enormous mouth. بہت بڑا gives the plain physical-size sense and comes first. عظیم is kept for magnitude and grandeur uses.",
+      "confidence": "medium-high",
+      "lang": "ur",
+      "lemma": "enormous",
+      "claudeInitialRationale": "عظیم can express magnitude, but its dominant learner reading is 'great/grand/eminent', which sounds odd or honorific for a wolf's enormous mouth. بہت بڑا gives the plain physical-size sense and comes first. عظیم is kept for magnitude and grandeur uses."
+    },
+    {
+      "id": "dispositions-1-2.json:53",
+      "decision": "change",
+      "before": "ঝগড়া করা",
+      "after": "লড়াই করা; মারামারি করা; ঝগড়া করা",
+      "rationale": "In 'they fought until both were dead' the fight is physical and lethal. ঝগড়া করা mainly means quarrel or argue and cannot carry that alone. লড়াই করা and মারামারি করা are added for physical fighting, and the quarrel sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "fight",
+      "claudeInitialRationale": "In 'they fought until both were dead' the fight is physical and lethal. ঝগড়া করা mainly means quarrel or argue and cannot carry that alone. লড়াই করা and মারামারি করা are added for physical fighting, and the quarrel sense is kept."
+    },
+    {
+      "id": "dispositions-1-2.json:54",
+      "decision": "change",
+      "before": "فنی",
+      "after": "فن لینڈ کا/کی؛ فن لینڈی",
+      "rationale": "Accept independent audit correction: The context is 'a wise Finnish woman', which needs فن لینڈ کی. The decision's own rationale cites فن لینڈ کا/کی, but the value gives only masculine کا. Hindi and Urdu glosses elsewhere in this set mark both forms (دیکھتا/دیکھتی).",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "finnish",
+      "claudeInitialRationale": "فنی is an established Urdu word meaning 'technical/artistic' (from فن). A learner would read 'a wise technical woman', so this is a substantive homograph error. Urdu normally expresses nationality with the country name: فن لینڈ کا/کی (of Finland), or the adjective فن لینڈی. These are unambiguous for the context."
+    },
+    {
+      "id": "dispositions-1-2.json:56",
+      "decision": "change",
+      "before": "शौक़ीन",
+      "after": "शौक़ीन; स्नेह/लगाव रखने वाला",
+      "rationale": "शौक़ीन means being fond of hobbies, foods or pastimes. Applied to a person ('grew fond of her') it is unidiomatic and can imply a connoisseur or pleasure-seeker. Hindi expresses this as लगाव या स्नेह होना. An adjectival 'affectionate toward' gloss is added and शौक़ीन kept for fond-of-things uses.",
+      "confidence": "medium-high",
+      "lang": "hi",
+      "lemma": "fond",
+      "claudeInitialRationale": "शौक़ीन means being fond of hobbies, foods or pastimes. Applied to a person ('grew fond of her') it is unidiomatic and can imply a connoisseur or pleasure-seeker. Hindi expresses this as लगाव या स्नेह होना. An adjectival 'affectionate toward' gloss is added and शौक़ीन kept for fond-of-things uses."
+    },
+    {
+      "id": "dispositions-3-4.json:8",
+      "decision": "change",
+      "before": "saklanmak",
+      "after": "saklanmak; saklamak, gizlemek",
+      "rationale": "Four contexts are intransitive (mice hide, children hid) and are covered by saklanmak. Three are transitive: life had hidden suffering, a disguise cannot hide who we are, and a hidden door. These need saklamak/gizlemek, and gizli derives from gizlemek. Both voices are kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "hide",
+      "claudeInitialRationale": "Four contexts are intransitive (mice hide, children hid) and are covered by saklanmak. Three are transitive: life had hidden suffering, a disguise cannot hide who we are, and a hidden door. These need saklamak/gizlemek, and gizli derives from gizlemek. Both voices are kept."
+    },
+    {
+      "id": "dispositions-3-4.json:12",
+      "decision": "change",
+      "before": "مقطوع",
+      "after": "منقطع؛ متوقف؛ مقطوع",
+      "rationale": "مقطوع primarily means 'cut off/severed'. For an activity or period that stopped and resumed ('continued its interrupted day'), منقطع (broken off) and متوقف (halted) are the natural participles. This also aligns with Urdu منقطع. مقطوع is kept as a valid 'cut off' sense (e.g., supply cut).",
+      "confidence": "medium-high",
+      "lang": "ar",
+      "lemma": "interrupted",
+      "claudeInitialRationale": "مقطوع primarily means 'cut off/severed'. For an activity or period that stopped and resumed ('continued its interrupted day'), منقطع (broken off) and متوقف (halted) are the natural participles. This also aligns with Urdu منقطع. مقطوع is kept as a valid 'cut off' sense (e.g., supply cut)."
+    },
+    {
+      "id": "dispositions-3-4.json:19",
+      "decision": "change",
+      "before": "ลดลง",
+      "after": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
+      "rationale": "Accept independent audit correction: ลดต่ำลง is still intransitive 'become lower / decrease', as in ระดับน้ำลดต่ำลง. It does not supply the transitive physical-lowering sense the rationale claims. The context is covered by ก้ม (ศีรษะ), so ลดต่ำลง is redundant and repeats the decrease sense. Replace it with the transitive split construction.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "lowered",
+      "claudeInitialRationale": "ลดลง is mainly intransitive 'decrease' (amounts, levels) and does not convey physically lowering something. 'Lowered his head' needs ก้ม (labelled for the head) or a general physical lowering, ลดต่ำลง. Both are added without dropping the decrease sense, so the lemma is not narrowed to head-only."
+    },
+    {
+      "id": "dispositions-3-4.json:24",
+      "decision": "change",
+      "before": "preman; sederhana",
+      "after": "berpakaian preman (sipil); sederhana",
+      "rationale": "The civilian sense of preman survives mainly in fixed phrases (polisi berpakaian preman). Standalone preman is now overwhelmingly read as 'thug/gangster'. A learner seeing 'preman' for 'plain-clothes detective' would likely understand 'thug detective'. The standard collocation berpakaian preman, with (sipil) as a clarifier, keeps the established term unambiguous. sederhana is kept.",
+      "confidence": "medium-high",
+      "lang": "id",
+      "lemma": "plain",
+      "claudeInitialRationale": "The civilian sense of preman survives mainly in fixed phrases (polisi berpakaian preman). Standalone preman is now overwhelmingly read as 'thug/gangster'. A learner seeing 'preman' for 'plain-clothes detective' would likely understand 'thug detective'. The standard collocation berpakaian preman, with (sipil) as a clarifier, keeps the established term unambiguous. sederhana is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:32",
+      "decision": "change",
+      "before": "কদাচিৎ",
+      "after": "খুব কমই; সামান্যই; কদাচিৎ",
+      "rationale": "'Scarcely warmer' is a degree sense (barely). কদাচিৎ is only the frequency sense ('rarely') and misleads here. খুব কমই covers 'very little/hardly' and also overlaps with frequency. সামান্যই gives low degree. কোনোমতে was avoided because it implies difficulty. কদাচিৎ is kept for frequency.",
+      "confidence": "medium-high",
+      "lang": "bn",
+      "lemma": "scarcely",
+      "claudeInitialRationale": "'Scarcely warmer' is a degree sense (barely). কদাচিৎ is only the frequency sense ('rarely') and misleads here. খুব কমই covers 'very little/hardly' and also overlaps with frequency. সামান্যই gives low degree. কোনোমতে was avoided because it implies difficulty. কদাচিৎ is kept for frequency."
+    },
+    {
+      "id": "dispositions-3-4.json:54",
+      "decision": "change",
+      "before": "derrama",
+      "after": "se derrama; derrama",
+      "rationale": "'All the milk spills out' is intransitive. Standard Spanish uses the pronominal se derrama for this, and bare derrama implies an agent spilling something. The intransitive sense is added first and the transitive kept, following the coordinated master change döker → dökülür; döker.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "spills",
+      "claudeInitialRationale": "'All the milk spills out' is intransitive. Standard Spanish uses the pronominal se derrama for this, and bare derrama implies an agent spilling something. The intransitive sense is added first and the transitive kept, following the coordinated master change döker → dökülür; döker."
+    },
+    {
+      "id": "dispositions-3-4.json:55",
+      "decision": "change",
+      "before": "menumpahkan",
+      "after": "tumpah; menumpahkan",
+      "rationale": "menumpahkan is transitive (to spill something). Milk spilling by itself is tumpah ('susunya tumpah'). The intransitive sense is added and the transitive kept.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "spills",
+      "claudeInitialRationale": "menumpahkan is transitive (to spill something). Milk spilling by itself is tumpah ('susunya tumpah'). The intransitive sense is added and the transitive kept."
+    },
+    {
+      "id": "dispositions-3-4.json:56",
+      "decision": "change",
+      "before": "يسكب",
+      "after": "ينسكب؛ يسكب",
+      "rationale": "يسكب is transitive (pours/spills something). The intransitive form-VII ينسكب (it spills) fits 'the milk spills out'. Added first, with the transitive kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "spills",
+      "claudeInitialRationale": "يسكب is transitive (pours/spills something). The intransitive form-VII ينسكب (it spills) fits 'the milk spills out'. Added first, with the transitive kept."
+    },
+    {
+      "id": "dispositions-3-4.json:57",
+      "decision": "change",
+      "before": "làm đổ",
+      "after": "đổ ra; làm đổ",
+      "rationale": "làm đổ is causative (to make something spill). Milk spilling out by itself is đổ ra ('sữa đổ ra hết'). The intransitive sense is added and the causative kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "spills",
+      "claudeInitialRationale": "làm đổ is causative (to make something spill). Milk spilling out by itself is đổ ra ('sữa đổ ra hết'). The intransitive sense is added and the causative kept."
+    },
+    {
+      "id": "dispositions-3-4.json:58",
+      "decision": "change",
+      "before": "गिराता है (तरल)",
+      "after": "छलकता है / गिरता है (तरल); गिराता है",
+      "rationale": "गिराता है is transitive (makes something fall or spill). For milk spilling by itself, Hindi uses intransitive छलकता है / गिरता है. These are added with the liquid label, and the transitive sense is kept.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "spills",
+      "claudeInitialRationale": "गिराता है is transitive (makes something fall or spill). For milk spilling by itself, Hindi uses intransitive छलकता है / गिरता है. These are added with the liquid label, and the transitive sense is kept."
+    },
+    {
+      "id": "dispositions-3-4.json:59",
+      "decision": "change",
+      "before": "проливает",
+      "after": "проливается; проливает",
+      "rationale": "проливает is transitive. The milk spilling of its own accord takes the reflexive проливается. Added first, with the transitive kept.",
+      "confidence": "high",
+      "lang": "ru",
+      "lemma": "spills",
+      "claudeInitialRationale": "проливает is transitive. The milk spilling of its own accord takes the reflexive проливается. Added first, with the transitive kept."
+    },
+    {
+      "id": "dispositions-3-4.json:60",
+      "decision": "change",
+      "before": "ছড়িয়ে ফেলে",
+      "after": "ছলকে পড়ে; ছলকে ফেলে; ছড়িয়ে ফেলে",
+      "rationale": "ছড়িয়ে ফেলে is transitive and suits scattering solids rather than a liquid. Milk spilling by itself is ছলকে পড়ে (intransitive), and transitive spilling of liquid is ছলকে ফেলে. Both are added, and ছড়িয়ে ফেলে is kept for scattering or spilling solids. ফেলে দেয় was rejected because it means 'throws away'.",
+      "confidence": "medium-high",
+      "lang": "bn",
+      "lemma": "spills",
+      "claudeInitialRationale": "ছড়িয়ে ফেলে is transitive and suits scattering solids rather than a liquid. Milk spilling by itself is ছলকে পড়ে (intransitive), and transitive spilling of liquid is ছলকে ফেলে. Both are added, and ছড়িয়ে ফেলে is kept for scattering or spilling solids. ফেলে দেয় was rejected because it means 'throws away'."
+    },
+    {
+      "id": "dispositions-3-4.json:61",
+      "decision": "change",
+      "before": "گراتا ہے (مائع)",
+      "after": "چھلکتا ہے / گرتا ہے (مائع)؛ گراتا ہے",
+      "rationale": "گراتا ہے is transitive. Intransitive چھلکتا ہے / گرتا ہے fits milk spilling out by itself. This mirrors the Hindi coordination, keeps the liquid label and keeps the transitive sense.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "spills",
+      "claudeInitialRationale": "گراتا ہے is transitive. Intransitive چھلکتا ہے / گرتا ہے fits milk spilling out by itself. This mirrors the Hindi coordination, keeps the liquid label and keeps the transitive sense."
+    },
+    {
+      "id": "dispositions-3-4.json:62",
+      "decision": "change",
+      "before": "ทำหก",
+      "after": "หก; ทำหก",
+      "rationale": "ทำหก is causative (to spill something). Plain หก is the intransitive 'spill' (นมหก). Added first, with the causative kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "spills",
+      "claudeInitialRationale": "ทำหก is causative (to spill something). Plain หก is the intransitive 'spill' (นมหก). Added first, with the causative kept."
+    },
+    {
+      "id": "dispositions-5.json:14",
+      "decision": "change",
+      "before": "बिना रोशनी का",
+      "after": "जिसे जलाया न गया हो (सिगार आदि); बिना रोशनी का",
+      "rationale": "Use an explicit not-ignited passive relative clause; do not rely on questionable बिना + perfective participle grammar.",
+      "confidence": "medium-high",
+      "lang": "hi",
+      "lemma": "unlit",
+      "claudeProposedAfter": "बिना जलाया हुआ (सिगार आदि); बिना रोशनी का",
+      "codexAmendmentReason": "Use an explicit not-ignited passive relative clause; do not rely on questionable बिना + perfective participle grammar.",
+      "claudeInitialRationale": "An unlit cigar is one not yet ignited, and 'lightless' does not convey this. The earlier suggestion बिना जला हुआ was rightly flagged because it reads as 'unburnt'. बिना जलाया हुआ uses the passive participle of transitive जलाना (to light), meaning 'not lit (by someone)'. The label narrows it to cigars and similar, and the lightless sense is kept."
+    },
+    {
+      "id": "dispositions-5.json:17",
+      "decision": "change",
+      "before": "بغیر روشنی کا",
+      "after": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "rationale": "Accept independent audit correction: The clause is grammatical for سگار, which is masculine. However, the direct جو-passive agrees in gender with its noun, and the label '(سگار وغیرہ)' extends the gloss to feminine items such as سگریٹ and موم بتی, which would need جلائی. The Hindi parallel uses the impersonal जिसे-passive, which is gender-neutral. Using جسے in Urdu does the same and is equally grammatical.",
+      "confidence": "medium-high",
+      "lang": "ur",
+      "lemma": "unlit",
+      "claudeProposedAfter": "بغیر جلایا ہوا (سگار وغیرہ)؛ بغیر روشنی کا",
+      "codexAmendmentReason": "Use an explicit not-ignited passive relative clause; preserve lightless sense.",
+      "claudeInitialRationale": "The not-ignited sense is missing. بغیر جلایا ہوا is the passive participle of transitive جلانا (to light), meaning 'not lit'. It parallels the Hindi correction and avoids the colloquial or uncertain بن سلگا. The label narrows it to cigars and similar, and the lightless sense is kept."
+    }
+  ],
+  "changes": [
+    {
+      "id": "2026-10-20-glossary-claude-review.json:8",
+      "decision": "change",
+      "before": "ढूँढ़ना",
+      "after": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
+      "rationale": "Almost all 37 contexts are past-tense successful discovery ('found a map', 'found the sleeping princess'). Bare ढूँढ़ना names the search, not the result. A learner reading 'found' needs the resultative ढूँढ़ लेना / पाना. 'found that they had grown older' is covered by पाना (पाया कि). 'find out where she lived' needs पता लगाना. ढूँढ़ना is kept for the intended-search contexts ('set out to find him', 'hoped to find a bride').",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "find",
+      "origin": "candidate",
+      "beforeAudit": "ढूँढ़ना; ढूँढ़ लेना, पाना; पता लगाना (find out)",
+      "auditReason": "Accept independent audit correction: The senses are correct, but the order contradicts the decision's own analysis. About 34 of the 37 contexts are completed discovery, yet the search-only verb ढूँढ़ना is the first thing a learner sees. Lead with the resultative sense. No sense is removed."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:9",
+      "decision": "change",
+      "before": "ڈھونڈنا",
+      "after": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)",
+      "rationale": "Same analysis as Hindi. ڈھونڈنا is the seeking verb, but the dominant contexts are completed discovery, which needs ڈھونڈ لینا / پانا. 'find out' needs پتا لگانا. The search sense is kept for 'set out to find him'.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "find",
+      "origin": "candidate",
+      "beforeAudit": "ڈھونڈنا؛ ڈھونڈ لینا، پانا؛ پتا لگانا (find out)",
+      "auditReason": "Accept independent audit correction: This has the same ordering issue as the Hindi value. The search-only verb comes first even though the dominant contexts are completed discovery."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:14",
+      "decision": "change",
+      "before": "armario",
+      "after": "armario; vestuario (ropa de una persona)",
+      "rationale": "The only context ('people joked about his wardrobe') means his clothes collection. Latin American armario means only the furniture. vestuario is the idiomatic word for a person's set of clothes. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "wardrobe",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:15",
+      "decision": "change",
+      "before": "lemari pakaian",
+      "after": "lemari pakaian; koleksi pakaian (seseorang)",
+      "rationale": "lemari pakaian is furniture only and cannot mean the emperor's clothes. Added the clothes-collection sense and kept the furniture sense.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "wardrobe",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:16",
+      "decision": "change",
+      "before": "خزانة ملابس",
+      "after": "خزانة ملابس؛ مجموعة ملابس (الشخص)",
+      "rationale": "خزانة ملابس is the cabinet only. The context refers to the emperor's outfits, so the collection sense is added. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "wardrobe",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:17",
+      "decision": "change",
+      "before": "tủ quần áo",
+      "after": "tủ quần áo; quần áo (của một người)",
+      "rationale": "tủ quần áo literally names the cabinet. The joke is about his clothes, so the collection sense is added. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "wardrobe",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:18",
+      "decision": "change",
+      "before": "अलमारी",
+      "after": "अलमारी; (किसी के) सारे कपड़े, पोशाकें",
+      "rationale": "अलमारी is a cupboard and does not express a clothing collection. The added sense covers the emperor context. अलमारी stays as the furniture sense: it is general but not wrong.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "wardrobe",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:20",
+      "decision": "change",
+      "before": "পোশাকের আলমারি",
+      "after": "পোশাকের আলমারি; (কারও) সব পোশাক-পরিচ্ছদ",
+      "rationale": "The current gloss is the furniture only. পোশাক-পরিচ্ছদ adds the clothes-collection sense the context needs. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "wardrobe",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:21",
+      "decision": "change",
+      "before": "الماری",
+      "after": "الماری؛ (کسی کے) کپڑے، ملبوسات",
+      "rationale": "الماری is a cupboard. ملبوسات supplies the clothes-collection sense the context needs. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "wardrobe",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:22",
+      "decision": "change",
+      "before": "ตู้เสื้อผ้า",
+      "after": "ตู้เสื้อผ้า; เสื้อผ้าทั้งหมด (ของคนหนึ่ง)",
+      "rationale": "ตู้เสื้อผ้า is the cabinet. The added sense covers 'his wardrobe' as his set of outfits. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "wardrobe",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:23",
+      "decision": "change",
+      "before": "การโจมตี",
+      "after": "การตี, การฟาด; (ลม) พัด",
+      "rationale": "'Seven at one blow' means a single strike or swat. การโจมตี means 'attack/assault' and misstates the sense. The master form blew→blow also needs the wind verb ('the wind blew his hat away'), which no current gloss has. This applies the noun+verb policy.",
+      "confidence": "medium",
+      "lang": "th",
+      "lemma": "blow",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:35",
+      "decision": "change",
+      "before": "ส่งเสียงครางหงิง ๆ (แมว)",
+      "after": "ทำเสียงครางเบา ๆ (แมว)",
+      "rationale": "หงิง ๆ describes whimpering or whining, as with a dog or a fretful animal. That is exactly the confusion the prior reviewer flagged. A purr is a low continuous throat rumble, which ครืด ๆ ในลำคอ describes. The cat label is kept.",
+      "confidence": "medium",
+      "lang": "th",
+      "lemma": "purr",
+      "origin": "candidate",
+      "claudeProposedAfter": "ทำเสียงครืด ๆ ในลำคอ (แมว)",
+      "codexAmendmentReason": "Use the dictionary-attested Thai purr verb with soft/cat disambiguation, avoiding an invented scraping/snoring onomatopoeia."
+    },
+    {
+      "id": "dispositions-1-2.json:5",
+      "decision": "change",
+      "before": "सिकुड़ गया",
+      "after": "(बाल) घुँघराले किए; सिकुड़ गया",
+      "rationale": "The only context is transitive: 'she curled her short hair'. सिकुड़ गया (shrank/curled up) cannot express this. The hair sense is added first, and the existing curl-up sense is kept. A gender-neutral perfective किए is used, so the subject's gender is not forced.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "curled",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:7",
+      "decision": "change",
+      "before": "কুঁকড়ে গেল",
+      "after": "(চুল) কোঁকড়া করল; কুঁকড়ে গেল",
+      "rationale": "The context is transitive hair-curling, which কুঁকড়ে গেল (shrivelled/curled up) does not cover. The hair sense is added and the existing curl-up sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "curled",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:8",
+      "decision": "change",
+      "before": "سمٹ گیا",
+      "after": "(بال) گھنگریالے کیے؛ سمٹ گیا",
+      "rationale": "سمٹ گیا (drew together/curled up) cannot render 'curled her hair'. The transitive hair sense is added and the existing curl-up sense is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "curled",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:30",
+      "decision": "change",
+      "before": "জাহাজ/গাড়িতে ওঠা",
+      "after": "জাহাজে/যানবাহনে (চড়ে); জাহাজ/গাড়িতে ওঠা",
+      "rationale": "aboard is locative or adverbial. 'celebrated aboard a ship' needs 'on the ship' (জাহাজে), and a verbal noun meaning 'to board' does not fit it. The boarding phrase is kept because 'climbed aboard' is naturally read as boarding.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "aboard",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:34",
+      "decision": "change",
+      "before": "izin verdi",
+      "after": "izin verdi; izin verilmiş (izinli)",
+      "rationale": "The only context is passive: 'was finally allowed to visit'. A learner tapping 'allowed' there needs the participle meaning 'permitted'. Under the morphology policy, a -ed form gets both the active past and the passive participle sense. izin verdi is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "allowed",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:37",
+      "decision": "change",
+      "before": "patlamak",
+      "after": "patlamak; (bir yere) hızla dalmak, girmek",
+      "rationale": "'burst through the window' is violent sudden motion, not an explosion. The motion sense is added and the general explosion meaning is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "burst",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:39",
+      "decision": "change",
+      "before": "बेताबी से",
+      "after": "बुरी तरह, बेहद; बेताबी से; हताश होकर",
+      "rationale": "'desperately hungry' is an intensifier, rendered naturally as बुरी तरह भूखी. बेताबी से (impatiently) does not fit it. The existing eager sense is kept, and हताश होकर covers the general despair meaning so the lemma is not narrowed.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "desperately",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:40",
+      "decision": "change",
+      "before": "بے تابی سے",
+      "after": "بری طرح، بے حد؛ بے تابی سے؛ مایوس ہو کر",
+      "rationale": "Same as Hindi. The intensifier sense بری طرح بھوکی is missing. The eager sense is kept and the despair sense is added.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "desperately",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:44",
+      "decision": "change",
+      "before": "çekmek (kendine doğru)",
+      "after": "çekmek (kendine doğru); (bir yere/birine) çekmek, cezbetmek",
+      "rationale": "'drew her feet beneath her' fits the existing inward-pull sense. 'a song drew him to the window' and 'was drawn to him' are attraction toward an external point, which '(kendine doğru)' excludes. cezbetmek and the directional sense are added; the existing sense is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "draw",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:47",
+      "decision": "change",
+      "before": "จุดจบ",
+      "after": "จุดจบ; ปลาย, ท้าย (สถานที่); สิ้นสุด, จบ",
+      "rationale": "จุดจบ fits 'the end of her life'. It does not fit the spatial 'end of the village' (ท้ายหมู่บ้าน) or the verb 'refused to end' (สิ้นสุด). Both senses are added and the existing one is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "end",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:48",
+      "decision": "change",
+      "before": "اختتام",
+      "after": "آخر، سرا؛ اختتام؛ ختم ہونا",
+      "rationale": "اختتام is a formal 'conclusion' and is not used spatially ('گاؤں کے آخر/سرے پر'). It is also not a verb ('winter refused to end' = ختم ہونا). The spatial and verbal senses are added and the temporal noun is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "end",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:50",
+      "decision": "change",
+      "before": "شام سے پہلے کی رات (کرسمس کی)",
+      "after": "کسی خاص دن سے پہلے کی شام (کرسمس کی شام)",
+      "rationale": "The current wording literally says 'the night before the evening', which is incoherent. The replacement defines eve generically as the evening before a special day, not festival-only. The Christmas Eve example matches the context.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "eve",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:55",
+      "decision": "change",
+      "before": "sıkıca",
+      "after": "sıkıca; sağlam bir şekilde",
+      "rationale": "'stood firmly on his single leg' means steady and stable. sıkıca means 'tightly' and fits gripping or tying, not standing. The stability sense is added and sıkıca is kept for its valid uses.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "firmly",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:58",
+      "decision": "change",
+      "before": "أمام",
+      "after": "أمام؛ الجهة الأمامية",
+      "rationale": "أمام is the preposition 'in front of'. 'no name on the front' of an envelope needs the noun 'front side'. الجهة الأمامية is neutral and avoids facade-specific الواجهة. The prepositional sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "front",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:59",
+      "decision": "change",
+      "before": "सुरुचिपूर्ण",
+      "after": "लालित्यपूर्ण; सुरुचिपूर्ण",
+      "rationale": "सुरुचिपूर्ण means 'tasteful / in good taste', describing decor or choices. It does not describe the elegant form and movement of a swan, so it is not a valid sense of graceful here. मनोहर, लालित्यपूर्ण expresses beauty and elegance of appearance.",
+      "confidence": "medium",
+      "lang": "hi",
+      "lemma": "graceful",
+      "origin": "candidate",
+      "claudeProposedAfter": "मनोहर, लालित्यपूर्ण",
+      "codexAmendmentReason": "Add bodily/movement elegance; retain existing valid elegance/style sense rather than replacing it with merely attractive."
+    },
+    {
+      "id": "dispositions-1-2.json:60",
+      "decision": "change",
+      "before": "خوش اسلوب",
+      "after": "خوش ادا؛ خوش اسلوب",
+      "rationale": "خوش اسلوب means 'well-styled', mainly of writing or manner of expression, and does not describe a swan. خوش ادا is the standard word for elegance of bearing and movement, and دلکش adds the visual-beauty side. باوقار was not chosen because it shifts the meaning to 'dignified'.",
+      "confidence": "medium",
+      "lang": "ur",
+      "lemma": "graceful",
+      "origin": "candidate",
+      "claudeProposedAfter": "دلکش؛ خوش ادا",
+      "codexAmendmentReason": "Add graceful bearing/movement; keep the existing manner/style sense, avoid equating graceful with merely attractive."
+    },
+    {
+      "id": "dispositions-3-4.json:9",
+      "decision": "change",
+      "before": "yaralı",
+      "after": "yaralı; yaraladı (incitti)",
+      "rationale": "Both contexts are transitive past verbs ('injured her foot', 'thorns injured his eyes'). yaralı is adjectival only. The past verb is added per the morphology policy, and the participial adjective is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "injured",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:10",
+      "decision": "change",
+      "before": "memur; subay",
+      "after": "memur; subay; polis memuru",
+      "rationale": "Both contexts refer to a policeman, who walks the street and is asked to arrest. Bare memur reads as 'civil servant' to Turkish learners, and subay is military. polis memuru makes the actual referent explicit; the general senses are kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "officer",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:18",
+      "decision": "change",
+      "before": "deitou; colocou",
+      "after": "deitou(-se); estava (jazia); pôr (ovos), colocar",
+      "rationale": "There are three senses. 'lay in her bed' is lying down, so deitou(-se) is kept with the optional clitic, matching Brazilian usage. 'Inside it lay a photograph' is a static position, which deitou cannot express, so estava (jazia) is added. 'lay eggs' is idiomatically pôr ovos, and colocar is kept for general placing.",
+      "confidence": "high",
+      "lang": "pt-BR",
+      "lemma": "lay",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:45",
+      "decision": "change",
+      "before": "ablandarse",
+      "after": "suavizar, ablandar; ablandarse",
+      "rationale": "The context is transitive ('to soften his voice'). For a voice, suavizar is idiomatic. The transitive sense is added and the intransitive ablandarse is kept, per the master yumuşamak; yumuşatmak policy.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:46",
+      "decision": "change",
+      "before": "melunak",
+      "after": "melunakkan, melembutkan; melunak",
+      "rationale": "melunak is intransitive. The context is transitive, and melembutkan (suara) is the natural verb for softening a voice. The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:47",
+      "decision": "change",
+      "before": "يلين",
+      "after": "يليّن، يُرقّق؛ يلين",
+      "rationale": "يلين is intransitive. The transitive يليّن is added, plus يُرقّق, which is natural for making a voice softer (يرقّق صوته). The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:48",
+      "decision": "change",
+      "before": "mềm đi",
+      "after": "làm mềm, làm dịu; mềm đi",
+      "rationale": "mềm đi is intransitive. The causative làm mềm is added, and làm dịu (giọng) fits softening a voice. The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:49",
+      "decision": "change",
+      "before": "नरम होना",
+      "after": "नरम करना; नरम होना",
+      "rationale": "The context needs the transitive नरम करना ('आवाज़ नरम करना'). The intransitive नरम होना is kept.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:50",
+      "decision": "change",
+      "before": "смягчаться",
+      "after": "смягчать; смягчаться",
+      "rationale": "смягчаться is reflexive/intransitive, and the context is transitive ('смягчить голос'). The transitive смягчать is added and the reflexive is kept.",
+      "confidence": "high",
+      "lang": "ru",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:51",
+      "decision": "change",
+      "before": "নরম হওয়া",
+      "after": "নরম করা; নরম হওয়া",
+      "rationale": "The transitive নরম করা is needed for 'soften his voice'. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:52",
+      "decision": "change",
+      "before": "نرم ہونا",
+      "after": "نرم کرنا؛ نرم ہونا",
+      "rationale": "The transitive نرم کرنا is needed for the voice context. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:53",
+      "decision": "change",
+      "before": "อ่อนลง",
+      "after": "ทำให้อ่อนลง, ทำให้นุ่มนวลขึ้น; อ่อนลง",
+      "rationale": "อ่อนลง is intransitive. The causative ทำให้... is added, and นุ่มนวล suits a voice. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "soften",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-5.json:0",
+      "decision": "change",
+      "before": "ঝরনা",
+      "after": "ছোট নদী, জলধারা; ঝরনা",
+      "rationale": "A princess bending down to drink from a stream implies a small flowing watercourse. ঝরনা primarily evokes a spring or waterfall. ছোট নদী, জলধারা is the plain stream sense and is placed first. ঝরনা is kept because it is used for hill streams.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "stream",
+      "origin": "candidate"
+    },
+    {
+      "lang": "tr",
+      "lemma": "wardrobe",
+      "before": "gardırop",
+      "after": "gardırop; (birinin) kıyafetleri",
+      "rationale": "Master reference expansion. The only context is a clothes collection; making it explicit in the source keeps the target expansions aligned.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "tr",
+      "lemma": "blow",
+      "before": "darbe, vuruş",
+      "after": "darbe, vuruş; (rüzgâr) esmek, uçurmak",
+      "rationale": "The master form blew→blow occurs as a wind verb ('blew his hat away'); the noun-only gloss misses it.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "blow",
+      "before": "golpe",
+      "after": "golpe; soplar (el viento)",
+      "rationale": "Adds the missing wind-verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "blow",
+      "before": "golpe",
+      "after": "golpe; soprar (vento)",
+      "rationale": "Adds the missing wind-verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "blow",
+      "before": "pukulan",
+      "after": "pukulan; bertiup, meniup (angin)",
+      "rationale": "Adds the missing wind-verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "blow",
+      "before": "ضربة",
+      "after": "ضربة؛ تهبّ (الريح)",
+      "rationale": "Adds the missing wind-verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "blow",
+      "before": "cú đánh",
+      "after": "cú đánh; thổi (gió)",
+      "rationale": "Adds the missing wind-verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "blow",
+      "before": "प्रहार, वार",
+      "after": "प्रहार, वार; (हवा का) चलना, उड़ा ले जाना",
+      "rationale": "Adds the missing wind-verb sense, including blowing an object away.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "blow",
+      "before": "удар",
+      "after": "удар; дуть (о ветре)",
+      "rationale": "Adds the missing wind-verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "blow",
+      "before": "আঘাত",
+      "after": "আঘাত; (বাতাস) বওয়া, উড়িয়ে নেওয়া",
+      "rationale": "Adds the missing wind-verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "blow",
+      "before": "وار، ضرب",
+      "after": "وار، ضرب؛ (ہوا کا) چلنا، اڑا لے جانا",
+      "rationale": "Adds the missing wind-verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "allowed",
+      "before": "permitió",
+      "after": "permitió; permitido",
+      "rationale": "The only context is passive ('was allowed'); adds the participle per the morphology policy.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "allowed",
+      "before": "permitiu",
+      "after": "permitiu; permitido",
+      "rationale": "Adds the passive participle.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "allowed",
+      "before": "mengizinkan",
+      "after": "mengizinkan; diizinkan",
+      "rationale": "Adds the passive form.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "allowed",
+      "before": "سمح",
+      "after": "سمح؛ مسموح له",
+      "rationale": "Adds the passive/permitted sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "allowed",
+      "before": "cho phép",
+      "after": "cho phép; được phép",
+      "rationale": "Adds the passive form.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "allowed",
+      "before": "अनुमति दी",
+      "after": "अनुमति दी; अनुमति मिली",
+      "rationale": "Adds the passive 'was allowed' sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "allowed",
+      "before": "разрешил",
+      "after": "разрешил; разрешено",
+      "rationale": "Adds the passive/impersonal 'permitted' sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "allowed",
+      "before": "অনুমতি দিয়েছিল",
+      "after": "অনুমতি দিয়েছিল; অনুমতি পেয়েছিল",
+      "rationale": "Adds the passive 'was allowed' sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "allowed",
+      "before": "اجازت دی",
+      "after": "اجازت دی؛ اجازت ملی",
+      "rationale": "Adds the passive 'was allowed' sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "allowed",
+      "before": "อนุญาต",
+      "after": "อนุญาต; ได้รับอนุญาต",
+      "rationale": "Adds the passive 'was allowed' sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "burst",
+      "before": "reventar",
+      "after": "reventar; irrumpir",
+      "rationale": "Adds the violent-motion sense ('burst through the window').",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "burst",
+      "before": "estourar",
+      "after": "estourar; irromper",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "burst",
+      "before": "meletus",
+      "after": "meletus; menerobos",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "burst",
+      "before": "ينفجر",
+      "after": "ينفجر؛ يقتحم",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "burst",
+      "before": "nổ tung",
+      "after": "nổ tung; xông qua, lao vào",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "burst",
+      "before": "फट पड़ना",
+      "after": "फट पड़ना; (तेज़ी से) घुस पड़ना",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "burst",
+      "before": "лопнуть",
+      "after": "лопнуть; ворваться",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "burst",
+      "before": "ফেটে যাওয়া",
+      "after": "ফেটে যাওয়া; হুড়মুড়িয়ে ঢুকে পড়া",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "burst",
+      "before": "پھٹنا",
+      "after": "پھٹنا؛ (زور سے) گھس آنا",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "burst",
+      "before": "ระเบิด",
+      "after": "ระเบิด; พุ่งทะลุ, บุกเข้า",
+      "rationale": "Adds the violent-motion sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "tr",
+      "lemma": "desperately",
+      "before": "çaresizce",
+      "after": "çaresizce; fena halde, son derece",
+      "rationale": "'desperately hungry' is an intensifier; 'çaresizce aç' is unidiomatic.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "desperately",
+      "before": "dengan putus asa",
+      "after": "dengan putus asa; sangat, amat",
+      "rationale": "Adds the intensifier sense; 'lapar dengan putus asa' does not fit.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "desperately",
+      "before": "بيأس",
+      "after": "بيأس؛ بشدّة",
+      "rationale": "Adds the intensifier sense ('جائعة بشدة').",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "desperately",
+      "before": "một cách tuyệt vọng",
+      "after": "một cách tuyệt vọng; vô cùng, cực kỳ",
+      "rationale": "Adds the intensifier sense ('đói cực kỳ').",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "desperately",
+      "before": "মরিয়া হয়ে",
+      "after": "মরিয়া হয়ে; ভীষণ, প্রচণ্ড",
+      "rationale": "Adds the intensifier sense ('ভীষণ ক্ষুধার্ত').",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "desperately",
+      "before": "อย่างสิ้นหวัง",
+      "after": "อย่างสิ้นหวัง; อย่างมาก, อย่างหนัก",
+      "rationale": "Adds the intensifier sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "draw",
+      "before": "tirar hacia sí",
+      "after": "tirar hacia sí; atraer",
+      "rationale": "'drew him to the window' and 'was drawn to him' are attraction toward an external point.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "draw",
+      "before": "puxar para si",
+      "after": "puxar para si; atrair",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "draw",
+      "before": "menarik ke arah diri",
+      "after": "menarik ke arah diri; menarik (hati), memikat",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "draw",
+      "before": "يسحب نحوه",
+      "after": "يسحب نحوه؛ يجذب",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "draw",
+      "before": "kéo về phía mình",
+      "after": "kéo về phía mình; thu hút",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "draw",
+      "before": "अपनी ओर खींचना",
+      "after": "अपनी ओर खींचना; आकर्षित करना",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "draw",
+      "before": "тянуть к себе",
+      "after": "тянуть к себе; привлекать",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "draw",
+      "before": "নিজের দিকে টানা",
+      "after": "নিজের দিকে টানা; আকর্ষণ করা",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "draw",
+      "before": "اپنی طرف کھینچنا",
+      "after": "اپنی طرف کھینچنا؛ متوجہ کرنا",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "draw",
+      "before": "ดึงเข้าหาตัว",
+      "after": "ดึงเข้าหาตัว; ดึงดูด",
+      "rationale": "Adds the attraction sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "tr",
+      "lemma": "end",
+      "before": "son",
+      "after": "son; bitmek, sona ermek",
+      "rationale": "Verb context 'winter refused to end'. The noun son already covers the spatial and temporal senses.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "end",
+      "before": "fin; final",
+      "after": "fin; final; terminar",
+      "rationale": "Adds the missing verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "end",
+      "before": "fim; final",
+      "after": "fim; final; acabar, terminar",
+      "rationale": "Adds the missing verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "end",
+      "before": "akhir",
+      "after": "akhir; ujung; berakhir",
+      "rationale": "Adds the spatial sense ('ujung desa') and the verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "end",
+      "before": "نهاية",
+      "after": "نهاية؛ ينتهي",
+      "rationale": "Adds the verb sense. نهاية القرية already covers the spatial use.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "end",
+      "before": "अंत",
+      "after": "अंत; छोर, सिरा; ख़त्म होना",
+      "rationale": "Adds the spatial sense ('गाँव के छोर पर') and the verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "end",
+      "before": "конец",
+      "after": "конец; кончаться, заканчиваться",
+      "rationale": "Adds the verb sense. конец already covers the spatial use.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "end",
+      "before": "শেষ",
+      "after": "শেষ; প্রান্ত; শেষ হওয়া",
+      "rationale": "Adds the spatial sense and the verb sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "injured",
+      "before": "herido",
+      "after": "herido; hirió, lastimó",
+      "rationale": "Adds the transitive past sense ('injured her foot').",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "injured",
+      "before": "ferido",
+      "after": "ferido; feriu, machucou",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "injured",
+      "before": "terluka",
+      "after": "terluka; melukai",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "injured",
+      "before": "مصاب",
+      "after": "مصاب؛ جرح، أصاب",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "injured",
+      "before": "bị thương",
+      "after": "bị thương; làm bị thương",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "injured",
+      "before": "घायल",
+      "after": "घायल; घायल किया, चोट पहुँचाई",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "injured",
+      "before": "раненый",
+      "after": "раненый; поранил",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "injured",
+      "before": "আহত",
+      "after": "আহত; আহত করল",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "injured",
+      "before": "زخمی",
+      "after": "زخمی؛ زخمی کیا",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "injured",
+      "before": "บาดเจ็บ",
+      "after": "บาดเจ็บ; ทำให้บาดเจ็บ",
+      "rationale": "Adds the transitive past sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "officer",
+      "before": "funcionario; oficial",
+      "after": "funcionario; oficial; agente de policía",
+      "rationale": "Both contexts refer to a policeman.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "officer",
+      "before": "petugas; perwira",
+      "after": "petugas; perwira; polisi",
+      "rationale": "Adds the police sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "officer",
+      "before": "ضابط",
+      "after": "ضابط؛ شرطي",
+      "rationale": "Adds the police sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "officer",
+      "before": "nhân viên; sĩ quan",
+      "after": "nhân viên; sĩ quan; cảnh sát",
+      "rationale": "Adds the police sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "officer",
+      "before": "अधिकारी",
+      "after": "अधिकारी; पुलिसवाला",
+      "rationale": "Adds the police sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "officer",
+      "before": "служащий; офицер",
+      "after": "служащий; офицер; полицейский",
+      "rationale": "Adds the police sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "officer",
+      "before": "কর্মকর্তা",
+      "after": "কর্মকর্তা; পুলিশ",
+      "rationale": "Adds the police sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "officer",
+      "before": "افسر",
+      "after": "افسر؛ پولیس والا",
+      "rationale": "Adds the police sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "officer",
+      "before": "เจ้าหน้าที่; นายทหาร",
+      "after": "เจ้าหน้าที่; นายทหาร; ตำรวจ",
+      "rationale": "Adds the police sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "tr",
+      "lemma": "lay",
+      "before": "yattı; koymak",
+      "after": "yattı; (içinde) duruyordu; koymak; yumurtlamak",
+      "rationale": "Adds the static 'Inside it lay a photograph' sense and 'lay eggs' (yumurtlamak). koymak does not cover eggs.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "lay",
+      "before": "yació; colocó",
+      "after": "yació; colocó; poner (huevos)",
+      "rationale": "Adds the egg-laying sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "lay",
+      "before": "berbaring; meletakkan",
+      "after": "berbaring; terletak; meletakkan; bertelur",
+      "rationale": "berbaring is for animate subjects. terletak is added for the photograph and bertelur for eggs.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "lay",
+      "before": "đã nằm; đã đặt",
+      "after": "đã nằm; đã đặt; đẻ (trứng)",
+      "rationale": "Adds the egg-laying sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "lay",
+      "before": "लेट गया; रखा",
+      "after": "लेट गया; पड़ा था; रखा; (अंडे) देना",
+      "rationale": "Adds the static-position sense for objects and the egg-laying sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "lay",
+      "before": "лежал; положил",
+      "after": "лежал; положил; нести (яйца)",
+      "rationale": "Adds the egg-laying sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "lay",
+      "before": "শুয়ে পড়ল; রাখল",
+      "after": "শুয়ে পড়ল; পড়ে ছিল; রাখল; (ডিম) পাড়া",
+      "rationale": "Adds the static-position sense and the egg-laying sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "lay",
+      "before": "لیٹ گیا؛ رکھا",
+      "after": "لیٹ گیا؛ پڑا تھا؛ رکھا؛ (انڈے) دینا",
+      "rationale": "Adds the static-position sense and the egg-laying sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "tr",
+      "lemma": "soften",
+      "before": "yumuşamak",
+      "after": "yumuşamak; yumuşatmak",
+      "rationale": "Master expansion. The only context is transitive ('soften his voice').",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "soften",
+      "before": "amolecer",
+      "after": "amolecer; suavizar",
+      "rationale": "'amolecer a voz' is unidiomatic; suavizar is the natural transitive for a voice.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "firmly",
+      "before": "dengan erat",
+      "after": "dengan erat; dengan kokoh",
+      "rationale": "'stood firmly' means stability; erat means tightly.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "firmly",
+      "before": "بإحكام",
+      "after": "بإحكام؛ بثبات",
+      "rationale": "Adds the stability sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "firmly",
+      "before": "chặt",
+      "after": "chặt; vững vàng",
+      "rationale": "Adds the stability sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "firmly",
+      "before": "শক্ত করে",
+      "after": "শক্ত করে; দৃঢ়ভাবে",
+      "rationale": "Adds the stability sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "firmly",
+      "before": "แน่น",
+      "after": "แน่น; อย่างมั่นคง",
+      "rationale": "Adds the stability sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "front",
+      "before": "आगे का",
+      "after": "आगे का; सामने का हिस्सा",
+      "rationale": "The noun 'the front' of an envelope is missing.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "front",
+      "before": "перед",
+      "after": "перёд; лицевая сторона",
+      "rationale": "Unaccented 'перед' reads as the preposition. The envelope front is лицевая сторона.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "front",
+      "before": "phía trước",
+      "after": "phía trước; mặt trước",
+      "rationale": "The surface of an envelope is mặt trước.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "front",
+      "before": "সামনে",
+      "after": "সামনে; সামনের দিক",
+      "rationale": "Adds the noun 'front side'.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "front",
+      "before": "سامنے",
+      "after": "سامنے؛ سامنے کا حصہ",
+      "rationale": "Adds the noun 'front side'.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "stream",
+      "before": "नाला",
+      "after": "धारा, छोटी नदी; नाला",
+      "rationale": "नाला often connotes a drain or gully; a natural drinkable stream is better served by धारा/छोटी नदी. नाला is kept for its brook sense.",
+      "origin": "coordination"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:25",
+      "decision": "change",
+      "before": "อธิบาย",
+      "after": "บรรยาย; อธิบาย",
+      "rationale": "All five contexts give an account: a letter's content, a robber's account of attackers, families seen, a life, a journey. อธิบาย leans toward 'explain'. It covers describing features but reads less naturally for narrating a life or journey. บรรยาย is the core 'describe/recount' verb. It is added first and อธิบาย is kept as a valid overlapping sense. Thai has no past tense marking, so the bare verb is right for 'described'.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "described",
+      "origin": "candidate"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:30",
+      "decision": "change",
+      "before": "إله",
+      "after": "إله؛ الله (اسم علم: God)",
+      "rationale": "All three contexts use capitalized God as a proper name. إله is the correct generic-deity sense and stays first, matching master policy for lowercase god. Arabic-speaking Muslims and Christians both use الله as the standard proper name for God, so it does not impose a specific theology. The label marks it as the capitalized proper-name sense only.",
+      "confidence": "medium-high",
+      "lang": "ar",
+      "lemma": "god",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:16",
+      "decision": "change",
+      "before": "yol arkadaşı",
+      "after": "arkadaş; yoldaş; yol arkadaşı",
+      "rationale": "Neither context involves travel. The first is an evening companion (a friend), and the second is the tin soldier dreaming of being the dancer's companion. yol arkadaşı alone is too narrow. arkadaş and yoldaş give general companionship, and yol arkadaşı is kept as a valid travel sense. Source expansion is now authorized.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "companion",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:23",
+      "decision": "change",
+      "before": "เพื่อนร่วมทาง",
+      "after": "เพื่อน; เพื่อนร่วมทาง",
+      "rationale": "เพื่อนร่วมทาง can be figurative, but for 'his companion that evening' a learner needs plain เพื่อน (friend/companion). เพื่อน is added first and เพื่อนร่วมทาง kept. คู่หู was rejected as over-specifying a close partner.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "companion",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:32",
+      "decision": "change",
+      "before": "ต่อต้าน",
+      "after": "ต่อต้าน; กับ (กระทบ/พิง: กับกำแพง); แข่งกับ (เวลา)",
+      "rationale": "ต่อต้าน means resist or oppose and does not fit physical contact. Thai expresses 'threw him against the wall' and 'struck a match against the wall' with กับ plus a contact verb (กระแทกกับกำแพง, ขีดกับกำแพง). 'Racing against the sunset' is แข่งกับ (เวลา). The labels keep กับ from reading as plain 'with', and the opposition sense is kept.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "against",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:33",
+      "decision": "change",
+      "before": "karşı",
+      "after": "karşı; -e (çarparak/dayanarak: duvara)",
+      "rationale": "'Threw him against the wall' and 'struck a match against the wall' are dative in Turkish (duvara fırlattı, duvara sürttü), not karşı. 'Racing against the sunset' is covered by karşı via the idiomatic 'zamana karşı yarış'. Only the contact sense is added, with a label so the bare suffix is clear.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "against",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:35",
+      "decision": "change",
+      "before": "şaşkın",
+      "after": "şaşkın; şaşırttı, hayran bıraktı",
+      "rationale": "In 'Their fine stitching amazed him' the word is a past-tense transitive verb (the stitching amazed him). The adjective şaşkın describes the amazed person and is kept for adjective uses. The causative verb sense is added. hayran bıraktı captures admiring amazement at fine work.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "amazed",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:36",
+      "decision": "change",
+      "before": "yanmak",
+      "after": "yanmak; yakmak",
+      "rationale": "'The nettles would burn her hands' is transitive (yakmak). 'Sentenced to burn' is intransitive (yanmak / yakılmak). Both senses occur, so yakmak is added and yanmak kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "burn",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:42",
+      "decision": "change",
+      "before": "দরজার ফাঁক",
+      "after": "দরজার মুখ; দোরগোড়া",
+      "rationale": "দরজার ফাঁক most readily suggests the gap of a door left ajar. All three contexts are someone standing or waiting in a doorway (the opening as a place). দরজার মুখ (mouth of the door, as in দরজার মুখে দাঁড়িয়ে) is the natural spatial term. দোরগোড়া (threshold area) supports it. দরজার ফাঁক is dropped because, as a standalone gloss, its 'crack/gap' reading misleads in these contexts.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "doorway",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:45",
+      "decision": "change",
+      "before": "rüyalar; hayaller",
+      "after": "rüyalar; hayaller; rüya görür; hayal eder",
+      "rationale": "The only context, 'As she dreams', is a third-person singular verb. The plural-noun glosses stay valid for the noun form. Verb glosses are added in matching third-person present (rüya görür, hayal eder) without changing the ID or form.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "dreams",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:49",
+      "decision": "change",
+      "before": "عظیم",
+      "after": "بہت بڑا؛ عظیم",
+      "rationale": "عظیم can express magnitude, but its dominant learner reading is 'great/grand/eminent', which sounds odd or honorific for a wolf's enormous mouth. بہت بڑا gives the plain physical-size sense and comes first. عظیم is kept for magnitude and grandeur uses.",
+      "confidence": "medium-high",
+      "lang": "ur",
+      "lemma": "enormous",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:53",
+      "decision": "change",
+      "before": "ঝগড়া করা",
+      "after": "লড়াই করা; মারামারি করা; ঝগড়া করা",
+      "rationale": "In 'they fought until both were dead' the fight is physical and lethal. ঝগড়া করা mainly means quarrel or argue and cannot carry that alone. লড়াই করা and মারামারি করা are added for physical fighting, and the quarrel sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "fight",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-1-2.json:54",
+      "decision": "change",
+      "before": "فنی",
+      "after": "فن لینڈ کا/کی؛ فن لینڈی",
+      "rationale": "فنی is an established Urdu word meaning 'technical/artistic' (from فن). A learner would read 'a wise technical woman', so this is a substantive homograph error. Urdu normally expresses nationality with the country name: فن لینڈ کا/کی (of Finland), or the adjective فن لینڈی. These are unambiguous for the context.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "finnish",
+      "origin": "candidate",
+      "beforeAudit": "فن لینڈ کا؛ فن لینڈی",
+      "auditReason": "Accept independent audit correction: The context is 'a wise Finnish woman', which needs فن لینڈ کی. The decision's own rationale cites فن لینڈ کا/کی, but the value gives only masculine کا. Hindi and Urdu glosses elsewhere in this set mark both forms (دیکھتا/دیکھتی)."
+    },
+    {
+      "id": "dispositions-1-2.json:56",
+      "decision": "change",
+      "before": "शौक़ीन",
+      "after": "शौक़ीन; स्नेह/लगाव रखने वाला",
+      "rationale": "शौक़ीन means being fond of hobbies, foods or pastimes. Applied to a person ('grew fond of her') it is unidiomatic and can imply a connoisseur or pleasure-seeker. Hindi expresses this as लगाव या स्नेह होना. An adjectival 'affectionate toward' gloss is added and शौक़ीन kept for fond-of-things uses.",
+      "confidence": "medium-high",
+      "lang": "hi",
+      "lemma": "fond",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:8",
+      "decision": "change",
+      "before": "saklanmak",
+      "after": "saklanmak; saklamak, gizlemek",
+      "rationale": "Four contexts are intransitive (mice hide, children hid) and are covered by saklanmak. Three are transitive: life had hidden suffering, a disguise cannot hide who we are, and a hidden door. These need saklamak/gizlemek, and gizli derives from gizlemek. Both voices are kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "hide",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:12",
+      "decision": "change",
+      "before": "مقطوع",
+      "after": "منقطع؛ متوقف؛ مقطوع",
+      "rationale": "مقطوع primarily means 'cut off/severed'. For an activity or period that stopped and resumed ('continued its interrupted day'), منقطع (broken off) and متوقف (halted) are the natural participles. This also aligns with Urdu منقطع. مقطوع is kept as a valid 'cut off' sense (e.g., supply cut).",
+      "confidence": "medium-high",
+      "lang": "ar",
+      "lemma": "interrupted",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:19",
+      "decision": "change",
+      "before": "ลดลง",
+      "after": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
+      "rationale": "ลดลง is mainly intransitive 'decrease' (amounts, levels) and does not convey physically lowering something. 'Lowered his head' needs ก้ม (labelled for the head) or a general physical lowering, ลดต่ำลง. Both are added without dropping the decrease sense, so the lemma is not narrowed to head-only.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "lowered",
+      "origin": "candidate",
+      "beforeAudit": "ลดลง; ลดต่ำลง; ก้ม (ศีรษะ)",
+      "auditReason": "Accept independent audit correction: ลดต่ำลง is still intransitive 'become lower / decrease', as in ระดับน้ำลดต่ำลง. It does not supply the transitive physical-lowering sense the rationale claims. The context is covered by ก้ม (ศีรษะ), so ลดต่ำลง is redundant and repeats the decrease sense. Replace it with the transitive split construction."
+    },
+    {
+      "id": "dispositions-3-4.json:24",
+      "decision": "change",
+      "before": "preman; sederhana",
+      "after": "berpakaian preman (sipil); sederhana",
+      "rationale": "The civilian sense of preman survives mainly in fixed phrases (polisi berpakaian preman). Standalone preman is now overwhelmingly read as 'thug/gangster'. A learner seeing 'preman' for 'plain-clothes detective' would likely understand 'thug detective'. The standard collocation berpakaian preman, with (sipil) as a clarifier, keeps the established term unambiguous. sederhana is kept.",
+      "confidence": "medium-high",
+      "lang": "id",
+      "lemma": "plain",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:32",
+      "decision": "change",
+      "before": "কদাচিৎ",
+      "after": "খুব কমই; সামান্যই; কদাচিৎ",
+      "rationale": "'Scarcely warmer' is a degree sense (barely). কদাচিৎ is only the frequency sense ('rarely') and misleads here. খুব কমই covers 'very little/hardly' and also overlaps with frequency. সামান্যই gives low degree. কোনোমতে was avoided because it implies difficulty. কদাচিৎ is kept for frequency.",
+      "confidence": "medium-high",
+      "lang": "bn",
+      "lemma": "scarcely",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:54",
+      "decision": "change",
+      "before": "derrama",
+      "after": "se derrama; derrama",
+      "rationale": "'All the milk spills out' is intransitive. Standard Spanish uses the pronominal se derrama for this, and bare derrama implies an agent spilling something. The intransitive sense is added first and the transitive kept, following the coordinated master change döker → dökülür; döker.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:55",
+      "decision": "change",
+      "before": "menumpahkan",
+      "after": "tumpah; menumpahkan",
+      "rationale": "menumpahkan is transitive (to spill something). Milk spilling by itself is tumpah ('susunya tumpah'). The intransitive sense is added and the transitive kept.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:56",
+      "decision": "change",
+      "before": "يسكب",
+      "after": "ينسكب؛ يسكب",
+      "rationale": "يسكب is transitive (pours/spills something). The intransitive form-VII ينسكب (it spills) fits 'the milk spills out'. Added first, with the transitive kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:57",
+      "decision": "change",
+      "before": "làm đổ",
+      "after": "đổ ra; làm đổ",
+      "rationale": "làm đổ is causative (to make something spill). Milk spilling out by itself is đổ ra ('sữa đổ ra hết'). The intransitive sense is added and the causative kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:58",
+      "decision": "change",
+      "before": "गिराता है (तरल)",
+      "after": "छलकता है / गिरता है (तरल); गिराता है",
+      "rationale": "गिराता है is transitive (makes something fall or spill). For milk spilling by itself, Hindi uses intransitive छलकता है / गिरता है. These are added with the liquid label, and the transitive sense is kept.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:59",
+      "decision": "change",
+      "before": "проливает",
+      "after": "проливается; проливает",
+      "rationale": "проливает is transitive. The milk spilling of its own accord takes the reflexive проливается. Added first, with the transitive kept.",
+      "confidence": "high",
+      "lang": "ru",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:60",
+      "decision": "change",
+      "before": "ছড়িয়ে ফেলে",
+      "after": "ছলকে পড়ে; ছলকে ফেলে; ছড়িয়ে ফেলে",
+      "rationale": "ছড়িয়ে ফেলে is transitive and suits scattering solids rather than a liquid. Milk spilling by itself is ছলকে পড়ে (intransitive), and transitive spilling of liquid is ছলকে ফেলে. Both are added, and ছড়িয়ে ফেলে is kept for scattering or spilling solids. ফেলে দেয় was rejected because it means 'throws away'.",
+      "confidence": "medium-high",
+      "lang": "bn",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:61",
+      "decision": "change",
+      "before": "گراتا ہے (مائع)",
+      "after": "چھلکتا ہے / گرتا ہے (مائع)؛ گراتا ہے",
+      "rationale": "گراتا ہے is transitive. Intransitive چھلکتا ہے / گرتا ہے fits milk spilling out by itself. This mirrors the Hindi coordination, keeps the liquid label and keeps the transitive sense.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-3-4.json:62",
+      "decision": "change",
+      "before": "ทำหก",
+      "after": "หก; ทำหก",
+      "rationale": "ทำหก is causative (to spill something). Plain หก is the intransitive 'spill' (นมหก). Added first, with the causative kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "spills",
+      "origin": "candidate"
+    },
+    {
+      "id": "dispositions-5.json:14",
+      "decision": "change",
+      "before": "बिना रोशनी का",
+      "after": "जिसे जलाया न गया हो (सिगार आदि); बिना रोशनी का",
+      "rationale": "An unlit cigar is one not yet ignited, and 'lightless' does not convey this. The earlier suggestion बिना जला हुआ was rightly flagged because it reads as 'unburnt'. बिना जलाया हुआ uses the passive participle of transitive जलाना (to light), meaning 'not lit (by someone)'. The label narrows it to cigars and similar, and the lightless sense is kept.",
+      "confidence": "medium-high",
+      "lang": "hi",
+      "lemma": "unlit",
+      "origin": "candidate",
+      "claudeProposedAfter": "बिना जलाया हुआ (सिगार आदि); बिना रोशनी का",
+      "codexAmendmentReason": "Use an explicit not-ignited passive relative clause; do not rely on questionable बिना + perfective participle grammar."
+    },
+    {
+      "id": "dispositions-5.json:17",
+      "decision": "change",
+      "before": "بغیر روشنی کا",
+      "after": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "rationale": "The not-ignited sense is missing. بغیر جلایا ہوا is the passive participle of transitive جلانا (to light), meaning 'not lit'. It parallels the Hindi correction and avoids the colloquial or uncertain بن سلگا. The label narrows it to cigars and similar, and the lightless sense is kept.",
+      "confidence": "medium-high",
+      "lang": "ur",
+      "lemma": "unlit",
+      "origin": "candidate",
+      "claudeProposedAfter": "بغیر جلایا ہوا (سگار وغیرہ)؛ بغیر روشنی کا",
+      "codexAmendmentReason": "Use an explicit not-ignited passive relative clause; preserve lightless sense.",
+      "beforeAudit": "جو جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "auditReason": "Accept independent audit correction: The clause is grammatical for سگار, which is masculine. However, the direct جو-passive agrees in gender with its noun, and the label '(سگار وغیرہ)' extends the gloss to feminine items such as سگریٹ and موم بتی, which would need جلائی. The Hindi parallel uses the impersonal जिसे-passive, which is gender-neutral. Using جسے in Urdu does the same and is equally grammatical."
+    },
+    {
+      "lang": "tr",
+      "lemma": "spills",
+      "before": "döker",
+      "after": "dökülür; döker",
+      "rationale": "The context 'All the milk spills out' is intransitive (süt dökülür). The master gains the intransitive sense while keeping transitive döker, which anchors the nine target corrections.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "tr",
+      "lemma": "god",
+      "before": "tanrı",
+      "after": "tanrı; Tanrı (özel ad: God)",
+      "rationale": "Applies the god policy: lowercase generic sense kept, plus a labelled proper-name sense for capitalized God. Tanrı is the neutral Turkish proper form.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "god",
+      "before": "dios",
+      "after": "dios; Dios (nombre propio: God)",
+      "rationale": "All contexts use capitalized God. The capitalized Spanish proper name is added and generic dios kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "god",
+      "before": "deus",
+      "after": "deus; Deus (nome próprio: God)",
+      "rationale": "Same god policy: capitalized proper-name sense added, generic kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "god",
+      "before": "tuhan",
+      "after": "tuhan; Tuhan (nama diri: God)",
+      "rationale": "Same god policy: capitalized Tuhan is the standard proper reference, generic kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "god",
+      "before": "бог",
+      "after": "бог; Бог (имя собственное: God)",
+      "rationale": "Same god policy. Russian capitalizes Бог for the proper-name sense, and generic бог is kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "companion",
+      "before": "ہم سفر",
+      "after": "ساتھی؛ ہم سفر",
+      "rationale": "Neither context is a journey. ساتھی gives general companionship, and ہم سفر is kept as the travel or life-partner sense.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "against",
+      "before": "melawan",
+      "after": "melawan; ke/pada (benturan: ke dinding)",
+      "rationale": "melawan is opposition only. The physical-contact uses ('melemparnya ke dinding', 'menggoreskan korek pada dinding') need ke/pada, which is added with a contact label.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "against",
+      "before": "ضد",
+      "after": "ضد؛ بـ/على (اصطدام: بالحائط)",
+      "rationale": "ضد cannot express physical contact. Arabic uses رماه على الحائط / حكّ العود بالحائط, so the contact sense is added with a label.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "against",
+      "before": "chống lại",
+      "after": "chống lại; vào (va chạm: vào tường); đua với (thời gian)",
+      "rationale": "chống lại means resist. Contact is 'ném vào tường' / 'quẹt diêm vào tường', and racing against the sunset is 'chạy đua với'. Both senses are added.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "against",
+      "before": "के खिलाफ",
+      "after": "के खिलाफ; से/पर (टकराकर: दीवार से)",
+      "rationale": "के खिलाफ is opposition only. Physical contact is दीवार से टकराया / दीवार पर रगड़ा, so the contact sense is added with a label.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "against",
+      "before": "против",
+      "after": "против; о (удар: о стену); наперегонки с (временем)",
+      "rationale": "Russian uses о for contact ('бросила о стену', 'чиркнула спичкой о стену') and наперегонки с for racing against something. против alone fits neither context.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "against",
+      "before": "বিরুদ্ধে",
+      "after": "বিরুদ্ধে; -এ (ধাক্কা: দেয়ালে)",
+      "rationale": "বিরুদ্ধে is opposition only. Contact is expressed by the locative (দেয়ালে ছুড়ে মারল, দেয়ালে ঘষল), which is added with a label.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "against",
+      "before": "کے خلاف",
+      "after": "کے خلاف؛ سے (ٹکرا کر: دیوار سے)",
+      "rationale": "کے خلاف is opposition only. Contact is expressed as دیوار سے ٹکرایا / دیوار پر رگڑا, which is added with a label.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "amazed",
+      "before": "asombrado",
+      "after": "asombrado; asombró",
+      "rationale": "The context is a transitive past verb ('amazed him'). asombró is added and the adjective kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "amazed",
+      "before": "admirado; espantado",
+      "after": "admirado; espantado; impressionou, espantou",
+      "rationale": "A transitive past verb is needed. impressionou and espantou are used because 'admirou' would mean 'admired', reversing the direction of the verb.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "amazed",
+      "before": "takjub",
+      "after": "takjub; membuat takjub",
+      "rationale": "The transitive verb sense is added and the adjective kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "amazed",
+      "before": "مندهش",
+      "after": "مندهش؛ أدهش",
+      "rationale": "The transitive past verb أدهش is added and the participle kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "amazed",
+      "before": "kinh ngạc",
+      "after": "kinh ngạc; làm kinh ngạc",
+      "rationale": "The causative verb sense is added and the adjective kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "amazed",
+      "before": "हैरान",
+      "after": "हैरान; हैरान कर दिया",
+      "rationale": "The transitive past verb sense is added and the adjective kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "amazed",
+      "before": "изумлённый",
+      "after": "изумлённый; изумил",
+      "rationale": "The transitive past verb is added and the participle kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "amazed",
+      "before": "বিস্মিত",
+      "after": "বিস্মিত; বিস্মিত করল",
+      "rationale": "The transitive past verb sense is added and the adjective kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "amazed",
+      "before": "حیران",
+      "after": "حیران؛ حیران کر دیا",
+      "rationale": "The transitive past verb sense is added and the adjective kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "amazed",
+      "before": "ประหลาดใจ",
+      "after": "ประหลาดใจ; ทำให้ประหลาดใจ",
+      "rationale": "The causative verb sense is added. Thai does not mark tense, and the adjective sense is kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "burn",
+      "before": "arder",
+      "after": "arder; quemar",
+      "rationale": "arder is intransitive. Nettles burning hands is transitive (las ortigas le quemaban las manos), so quemar is added.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "burn",
+      "before": "terbakar",
+      "after": "terbakar; membakar",
+      "rationale": "terbakar is intransitive or passive. The transitive membakar is added for the nettles context.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "burn",
+      "before": "يحترق",
+      "after": "يحترق؛ يحرق",
+      "rationale": "The transitive يحرق is added alongside the intransitive يحترق.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "burn",
+      "before": "cháy",
+      "after": "cháy; đốt; làm bỏng",
+      "rationale": "cháy is intransitive. Nettles stinging or burning hands needs transitive làm bỏng/đốt.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "burn",
+      "before": "जलना",
+      "after": "जलना; जलाना",
+      "rationale": "The transitive जलाना is added alongside intransitive जलना.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "burn",
+      "before": "гореть",
+      "after": "гореть; жечь",
+      "rationale": "гореть is intransitive. Nettles burn hands is transitive, and Russian says крапива жжёт, so жечь is added.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "burn",
+      "before": "পোড়া",
+      "after": "পোড়া; পোড়ানো",
+      "rationale": "The transitive causative পোড়ানো is added alongside intransitive পোড়া.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "burn",
+      "before": "جلنا",
+      "after": "جلنا؛ جلانا",
+      "rationale": "The transitive جلانا is added alongside intransitive جلنا.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "burn",
+      "before": "ไหม้",
+      "after": "ไหม้; เผา; ทำให้แสบร้อน",
+      "rationale": "ไหม้ is intransitive. Transitive เผา is added, plus ทำให้แสบร้อน for the nettle sting.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "dreams",
+      "before": "sueños",
+      "after": "sueños; sueña",
+      "rationale": "The context is a third-person singular verb ('As she dreams'). sueña is added and the noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "dreams",
+      "before": "sonhos",
+      "after": "sonhos; sonha",
+      "rationale": "The third-person verb sense is added and the noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "dreams",
+      "before": "mimpi",
+      "after": "mimpi; bermimpi",
+      "rationale": "The verb bermimpi is added and the noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "dreams",
+      "before": "أحلام",
+      "after": "أحلام؛ يحلم",
+      "rationale": "The present verb يحلم is added and the plural noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "dreams",
+      "before": "những giấc mơ",
+      "after": "những giấc mơ; mơ",
+      "rationale": "The verb mơ is added and the plural noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "dreams",
+      "before": "सपने",
+      "after": "सपने; सपना देखता/देखती है",
+      "rationale": "The third-person present verb is added and the plural noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "dreams",
+      "before": "сны; мечты",
+      "after": "сны; мечты; видит сон; мечтает",
+      "rationale": "Verb senses matching the existing noun pair are added: видит сон (dreams while asleep) and мечтает (daydreams). The nouns are kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "bn",
+      "lemma": "dreams",
+      "before": "স্বপ্নগুলো",
+      "after": "স্বপ্নগুলো; স্বপ্ন দেখে",
+      "rationale": "The third-person present verb is added and the plural noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "dreams",
+      "before": "خواب",
+      "after": "خواب؛ خواب دیکھتا/دیکھتی ہے",
+      "rationale": "The third-person present verb is added and the noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "dreams",
+      "before": "ความฝัน",
+      "after": "ความฝัน; ฝัน",
+      "rationale": "The verb ฝัน is added and the noun kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "hide",
+      "before": "esconderse",
+      "after": "esconderse; esconder, ocultar",
+      "rationale": "Three contexts are transitive (had hidden suffering, cannot hide who we are, hidden door). Transitive senses are added and the reflexive kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "hide",
+      "before": "esconder-se",
+      "after": "esconder-se; esconder",
+      "rationale": "The transitive sense is added and the reflexive kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "id",
+      "lemma": "hide",
+      "before": "bersembunyi",
+      "after": "bersembunyi; menyembunyikan",
+      "rationale": "The transitive menyembunyikan is added and the intransitive kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ar",
+      "lemma": "hide",
+      "before": "يختبئ",
+      "after": "يختبئ؛ يخفي",
+      "rationale": "The transitive يخفي is added and the intransitive kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "vi",
+      "lemma": "hide",
+      "before": "trốn",
+      "after": "trốn; giấu, che giấu",
+      "rationale": "Transitive giấu and che giấu are added and the intransitive kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "hi",
+      "lemma": "hide",
+      "before": "छिपना",
+      "after": "छिपना; छिपाना",
+      "rationale": "The transitive छिपाना is added and the intransitive kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ru",
+      "lemma": "hide",
+      "before": "прятаться",
+      "after": "прятаться; прятать, скрывать",
+      "rationale": "Transitive прятать and скрывать are added and the reflexive kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "ur",
+      "lemma": "hide",
+      "before": "چھپنا",
+      "after": "چھپنا؛ چھپانا",
+      "rationale": "The transitive چھپانا is added and the intransitive kept.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "hide",
+      "before": "ซ่อนตัว",
+      "after": "ซ่อนตัว; ซ่อน, ปิดบัง",
+      "rationale": "ซ่อนตัว is reflexive only. Transitive ซ่อน and ปิดบัง are added for hiding something or concealing truth.",
+      "origin": "coordination"
+    },
+    {
+      "lang": "th",
+      "lemma": "eve",
+      "before": "วันก่อน (คริสต์มาส)",
+      "after": "คืน/วันก่อนวันสำคัญ (คืนก่อนวันคริสต์มาส)",
+      "rationale": "Accept independent audit correction: Wrong meaning risk that was never flagged. วันก่อน, as in เมื่อวันก่อน, is the everyday expression for 'the other day / a few days ago'. It does not mean 'the evening or day before a special day'. The label does not repair this, because a learner reads วันก่อน as a set phrase. The context is Christmas Eve, which is the night before Christmas.",
+      "origin": "independent-audit"
+    },
+    {
+      "lang": "ar",
+      "lemma": "lay",
+      "before": "استلقى؛ وضع",
+      "after": "استلقى؛ كان موجودًا/موضوعًا؛ وضع؛ باض",
+      "rationale": "Keep static location, lying down, placing and egg-laying senses without redundant egg label.",
+      "origin": "independent-audit",
+      "beforeFinalCheck": "استلقى؛ كان موجودًا/موضوعًا؛ وضع؛ يبيض",
+      "finalCheckResolution": "The amendment correctly removes the redundant egg label, but the unlabeled finalAfter now ends with the imperfect يبيض. Every other sense in the value is past-tense dictionary form (استلقى، كان، وضع). Without vowel marks and without the removed (البيض) label, يبيض is also a homograph of يبيضّ ('turns white / whitens'), so the egg-laying sense is no longer unambiguous. Using the past-tense citation form باض keeps all four senses, stays consistent, and avoids the homograph without needing a label."
+    },
+    {
+      "lang": "ur",
+      "lemma": "wicked",
+      "before": "بدکار",
+      "after": "بدکار؛ شیطانی، خبیث",
+      "rationale": "Accept independent audit correction: Keeping بدکار is correct, since its evil-doer sense is valid and must not be erased. On its own, though, it does not cover the second context. بدکار is an agent noun or adjective for a wrongdoer. It cannot render the inanimate 'something wicked' (کوئی بدکار چیز is not idiomatic). In the Wild Swans context, about a suspected woman, a lone بدکار also invites the unchastity reading. The fix is additive, not a replacement.",
+      "origin": "independent-audit"
+    },
+    {
+      "lang": "tr",
+      "lemma": "wicked",
+      "before": "kötü kalpli",
+      "after": "kötü kalpli; kötü, şeytani",
+      "rationale": "Accept independent audit correction: This is the same structural gap as Urdu. 'kötü kalpli' (evil-hearted) only applies to an animate being. It fits 'a wicked spirit' but not 'her silence hid something wicked' (kötü kalpli bir şey is wrong). Add an inanimate sense and keep the current one.",
+      "origin": "independent-audit"
+    },
+    {
+      "lang": "tr",
+      "lemma": "doorway",
+      "before": "kapı aralığı",
+      "after": "kapı girişi; kapı aralığı",
+      "rationale": "Add the entrance/opening sense; avoid broadening doorway into the unrelated area in front of the door.",
+      "origin": "independent-audit"
+    },
+    {
+      "lang": "hi",
+      "lemma": "doorway",
+      "before": "दरवाज़े का मार्ग",
+      "after": "द्वार, चौखट (दरवाज़े की खुली जगह); दरवाज़े का मार्ग",
+      "rationale": "Accept independent audit correction: This is a stilted calque ('the door's route') that is not used for standing or waiting in a doorway. Hindi says दरवाज़े पर / चौखट पर खड़ा. The value can also be read as 'the way to the door'. Add the natural place term and keep the current one.",
+      "origin": "independent-audit"
+    },
+    {
+      "lang": "ur",
+      "lemma": "doorway",
+      "before": "دروازے کا راستہ",
+      "after": "دہلیز، دروازہ (دروازے کی کھلی جگہ)؛ دروازے کا راستہ",
+      "rationale": "Accept independent audit correction: This calque has the same problem as the Hindi value. دروازے کا راستہ / دروازے کے راستے naturally reads as 'the way to the door' or 'via the door', not as the opening where someone stands. Urdu says دروازے میں / دہلیز پر کھڑا.",
+      "origin": "independent-audit"
+    }
+  ],
+  "nativeSpeakerApproval": false,
+  "auditFindingsResolved": [
+    {
+      "lang": "th",
+      "lemma": "eve",
+      "currentProposed": "วันก่อน (คริสต์มาส)",
+      "problem": "Wrong meaning risk that was never flagged. วันก่อน, as in เมื่อวันก่อน, is the everyday expression for 'the other day / a few days ago'. It does not mean 'the evening or day before a special day'. The label does not repair this, because a learner reads วันก่อน as a set phrase. The context is Christmas Eve, which is the night before Christmas.",
+      "replacement": "คืน/วันก่อนวันสำคัญ (คืนก่อนวันคริสต์มาส)",
+      "severity": "medium",
+      "finalAfter": "คืน/วันก่อนวันสำคัญ (คืนก่อนวันคริสต์มาส)",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: Wrong meaning risk that was never flagged. วันก่อน, as in เมื่อวันก่อน, is the everyday expression for 'the other day / a few days ago'. It does not mean 'the evening or day before a special day'. The label does not repair this, because a learner reads วันก่อน as a set phrase. The context is Christmas Eve, which is the night before Christmas."
+    },
+    {
+      "lang": "ar",
+      "lemma": "lay",
+      "currentProposed": "استلقى؛ وضع",
+      "problem": "This is a source-expansion gap. All other targets except th received a static-position sense for 'Inside it lay a photograph'. Arabic did not. استلقى is a person lying down and cannot describe a photograph lying in a chest. وضع loosely covers egg-laying (وضع البيض), but an explicit egg sense matches the other targets.",
+      "replacement": "استلقى؛ كان موجودًا (موضوعًا)؛ وضع؛ يبيض (البيض)",
+      "severity": "medium",
+      "finalAfter": "استلقى؛ كان موجودًا/موضوعًا؛ وضع؛ يبيض",
+      "disposition": "amended",
+      "resolution": "Keep static location, lying down, placing and egg-laying senses without redundant egg label."
+    },
+    {
+      "lang": "ur",
+      "lemma": "wicked",
+      "currentProposed": "بدکار",
+      "problem": "Keeping بدکار is correct, since its evil-doer sense is valid and must not be erased. On its own, though, it does not cover the second context. بدکار is an agent noun or adjective for a wrongdoer. It cannot render the inanimate 'something wicked' (کوئی بدکار چیز is not idiomatic). In the Wild Swans context, about a suspected woman, a lone بدکار also invites the unchastity reading. The fix is additive, not a replacement.",
+      "replacement": "بدکار؛ شیطانی، خبیث",
+      "severity": "medium",
+      "finalAfter": "بدکار؛ شیطانی، خبیث",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: Keeping بدکار is correct, since its evil-doer sense is valid and must not be erased. On its own, though, it does not cover the second context. بدکار is an agent noun or adjective for a wrongdoer. It cannot render the inanimate 'something wicked' (کوئی بدکار چیز is not idiomatic). In the Wild Swans context, about a suspected woman, a lone بدکار also invites the unchastity reading. The fix is additive, not a replacement."
+    },
+    {
+      "lang": "tr",
+      "lemma": "wicked",
+      "currentProposed": "kötü kalpli",
+      "problem": "This is the same structural gap as Urdu. 'kötü kalpli' (evil-hearted) only applies to an animate being. It fits 'a wicked spirit' but not 'her silence hid something wicked' (kötü kalpli bir şey is wrong). Add an inanimate sense and keep the current one.",
+      "replacement": "kötü kalpli; kötü, şeytani",
+      "severity": "low",
+      "finalAfter": "kötü kalpli; kötü, şeytani",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: This is the same structural gap as Urdu. 'kötü kalpli' (evil-hearted) only applies to an animate being. It fits 'a wicked spirit' but not 'her silence hid something wicked' (kötü kalpli bir şey is wrong). Add an inanimate sense and keep the current one."
+    },
+    {
+      "lang": "ur",
+      "lemma": "unlit",
+      "currentProposed": "جو جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "problem": "The clause is grammatical for سگار, which is masculine. However, the direct جو-passive agrees in gender with its noun, and the label '(سگار وغیرہ)' extends the gloss to feminine items such as سگریٹ and موم بتی, which would need جلائی. The Hindi parallel uses the impersonal जिसे-passive, which is gender-neutral. Using جسے in Urdu does the same and is equally grammatical.",
+      "replacement": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "severity": "low",
+      "finalAfter": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: The clause is grammatical for سگار, which is masculine. However, the direct جو-passive agrees in gender with its noun, and the label '(سگار وغیرہ)' extends the gloss to feminine items such as سگریٹ and موم بتی, which would need جلائی. The Hindi parallel uses the impersonal जिसे-passive, which is gender-neutral. Using جسے in Urdu does the same and is equally grammatical."
+    },
+    {
+      "lang": "ur",
+      "lemma": "finnish",
+      "currentProposed": "فن لینڈ کا؛ فن لینڈی",
+      "problem": "The context is 'a wise Finnish woman', which needs فن لینڈ کی. The decision's own rationale cites فن لینڈ کا/کی, but the value gives only masculine کا. Hindi and Urdu glosses elsewhere in this set mark both forms (دیکھتا/دیکھتی).",
+      "replacement": "فن لینڈ کا/کی؛ فن لینڈی",
+      "severity": "low",
+      "finalAfter": "فن لینڈ کا/کی؛ فن لینڈی",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: The context is 'a wise Finnish woman', which needs فن لینڈ کی. The decision's own rationale cites فن لینڈ کا/کی, but the value gives only masculine کا. Hindi and Urdu glosses elsewhere in this set mark both forms (دیکھتا/دیکھتی)."
+    },
+    {
+      "lang": "tr",
+      "lemma": "doorway",
+      "currentProposed": "kapı aralığı",
+      "problem": "This parallels the accepted Bengali dispositions-1-2.json:42 change. Standing alone, 'kapı aralığı' most readily suggests the gap of an ajar door, as in kapı aralığından baktı. All three contexts are someone standing or waiting in the doorway as a place. 'kapı aralığında' is attested for 'in the doorway', so keep it, but add the unambiguous spatial term first.",
+      "replacement": "kapı girişi, kapı önü; kapı aralığı",
+      "severity": "low",
+      "finalAfter": "kapı girişi; kapı aralığı",
+      "disposition": "amended",
+      "resolution": "Add the entrance/opening sense; avoid broadening doorway into the unrelated area in front of the door."
+    },
+    {
+      "lang": "hi",
+      "lemma": "doorway",
+      "currentProposed": "दरवाज़े का मार्ग",
+      "problem": "This is a stilted calque ('the door's route') that is not used for standing or waiting in a doorway. Hindi says दरवाज़े पर / चौखट पर खड़ा. The value can also be read as 'the way to the door'. Add the natural place term and keep the current one.",
+      "replacement": "द्वार, चौखट (दरवाज़े की खुली जगह); दरवाज़े का मार्ग",
+      "severity": "low",
+      "finalAfter": "द्वार, चौखट (दरवाज़े की खुली जगह); दरवाज़े का मार्ग",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: This is a stilted calque ('the door's route') that is not used for standing or waiting in a doorway. Hindi says दरवाज़े पर / चौखट पर खड़ा. The value can also be read as 'the way to the door'. Add the natural place term and keep the current one."
+    },
+    {
+      "lang": "ur",
+      "lemma": "doorway",
+      "currentProposed": "دروازے کا راستہ",
+      "problem": "This calque has the same problem as the Hindi value. دروازے کا راستہ / دروازے کے راستے naturally reads as 'the way to the door' or 'via the door', not as the opening where someone stands. Urdu says دروازے میں / دہلیز پر کھڑا.",
+      "replacement": "دہلیز، دروازہ (دروازے کی کھلی جگہ)؛ دروازے کا راستہ",
+      "severity": "low",
+      "finalAfter": "دہلیز، دروازہ (دروازے کی کھلی جگہ)؛ دروازے کا راستہ",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: This calque has the same problem as the Hindi value. دروازے کا راستہ / دروازے کے راستے naturally reads as 'the way to the door' or 'via the door', not as the opening where someone stands. Urdu says دروازے میں / دہلیز پر کھڑا."
+    },
+    {
+      "lang": "hi",
+      "lemma": "find",
+      "currentProposed": "ढूँढ़ना; ढूँढ़ लेना, पाना; पता लगाना (find out)",
+      "problem": "The senses are correct, but the order contradicts the decision's own analysis. About 34 of the 37 contexts are completed discovery, yet the search-only verb ढूँढ़ना is the first thing a learner sees. Lead with the resultative sense. No sense is removed.",
+      "replacement": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
+      "severity": "low",
+      "finalAfter": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: The senses are correct, but the order contradicts the decision's own analysis. About 34 of the 37 contexts are completed discovery, yet the search-only verb ढूँढ़ना is the first thing a learner sees. Lead with the resultative sense. No sense is removed."
+    },
+    {
+      "lang": "ur",
+      "lemma": "find",
+      "currentProposed": "ڈھونڈنا؛ ڈھونڈ لینا، پانا؛ پتا لگانا (find out)",
+      "problem": "This has the same ordering issue as the Hindi value. The search-only verb comes first even though the dominant contexts are completed discovery.",
+      "replacement": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)",
+      "severity": "low",
+      "finalAfter": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: This has the same ordering issue as the Hindi value. The search-only verb comes first even though the dominant contexts are completed discovery."
+    },
+    {
+      "lang": "th",
+      "lemma": "lowered",
+      "currentProposed": "ลดลง; ลดต่ำลง; ก้ม (ศีรษะ)",
+      "problem": "ลดต่ำลง is still intransitive 'become lower / decrease', as in ระดับน้ำลดต่ำลง. It does not supply the transitive physical-lowering sense the rationale claims. The context is covered by ก้ม (ศีรษะ), so ลดต่ำลง is redundant and repeats the decrease sense. Replace it with the transitive split construction.",
+      "replacement": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
+      "severity": "low",
+      "finalAfter": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: ลดต่ำลง is still intransitive 'become lower / decrease', as in ระดับน้ำลดต่ำลง. It does not supply the transitive physical-lowering sense the rationale claims. The context is covered by ก้ม (ศีรษะ), so ลดต่ำลง is redundant and repeats the decrease sense. Replace it with the transitive split construction."
+    }
+  ],
+  "unresolvedCandidateCount": 0,
+  "finalCheckFindingsResolved": [
+    {
+      "lang": "ar",
+      "lemma": "lay",
+      "problem": "The amendment correctly removes the redundant egg label, but the unlabeled finalAfter now ends with the imperfect يبيض. Every other sense in the value is past-tense dictionary form (استلقى، كان، وضع). Without vowel marks and without the removed (البيض) label, يبيض is also a homograph of يبيضّ ('turns white / whitens'), so the egg-laying sense is no longer unambiguous. Using the past-tense citation form باض keeps all four senses, stays consistent, and avoids the homograph without needing a label.",
+      "replacement": "استلقى؛ كان موجودًا/موضوعًا؛ وضع؛ باض",
+      "disposition": "accepted",
+      "finalAfter": "استلقى؛ كان موجودًا/موضوعًا؛ وضع؛ باض"
+    }
+  ]
+}

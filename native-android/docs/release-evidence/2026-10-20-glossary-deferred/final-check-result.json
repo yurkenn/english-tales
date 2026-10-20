@@ -1,0 +1,19 @@
+{
+  "reviewedCorrectionCount": 12,
+  "findings": [
+    {
+      "lang": "ar",
+      "lemma": "lay",
+      "problem": "The amendment correctly removes the redundant egg label, but the unlabeled finalAfter now ends with the imperfect يبيض. Every other sense in the value is past-tense dictionary form (استلقى، كان، وضع). Without vowel marks and without the removed (البيض) label, يبيض is also a homograph of يبيضّ ('turns white / whitens'), so the egg-laying sense is no longer unambiguous. Using the past-tense citation form باض keeps all four senses, stays consistent, and avoids the homograph without needing a label.",
+      "replacement": "استلقى؛ كان موجودًا/موضوعًا؛ وضع؛ باض"
+    }
+  ],
+  "summary": "Reviewed all 12 finalAfter values, not the initial suggestions. th eve: correct; the misleading วันก่อน ('the other day') reading is removed and Christmas Eve is covered. ar lay: the amendment keeps the static-location, lying-down, placing and egg-laying senses, but the unlabeled يبيض is tense-inconsistent and homographic with يبيضّ ('whiten'). Past-tense باض is recommended. ur wicked and tr wicked: additive, and they keep the valid animate senses بدکار / kötü kalpli while adding inanimate senses (شیطانی، خبیث / kötü, şeytani). No sense is lost. ur unlit: جسے جلایا نہ گیا ہو is a grammatical impersonal ko-passive with default masculine agreement. It works for feminine nouns (سگریٹ، موم بتی) as well as masculine ones, matches the Hindi जिसे-passive, and keeps the lightless sense. ur finnish: فن لینڈ کا/کی correctly covers the feminine context 'a wise Finnish woman', and فن لینڈی is kept. tr doorway: the amended 'kapı girişi; kapı aralığı' correctly drops 'kapı önü' (the area in front of the door, which is a different place) and keeps the attested kapı aralığı. hi and ur doorway: they add natural place terms (द्वार, चौखट / دہلیز، دروازہ) and keep the earlier values as a secondary sense. Nothing is lost. hi and ur find: reordering only, with the resultative पाना/پانا first. All senses are kept, including find out. th lowered: ลด (มือ/ธง) ลง is the natural transitive physical-lowering construction (ลดมือลง, ลดธงลง). Together with ลดลง and ก้ม (ศีรษะ), no valid sense is lost. One concrete issue was found (ar lay). The others raise no errors. These are non-native linguistic checks, and they do not replace native-speaker approval.",
+  "nativeSpeakerApproval": false,
+  "reviewMetadata": {
+    "model": [
+      "claude-opus-5-5"
+    ],
+    "toolsEnabled": false
+  }
+}

@@ -1,0 +1,1489 @@
+{
+  "date": "2026-10-20",
+  "baselineCommit": "e29309357042be5cc91700e23988c06f78d1c3ec",
+  "candidateCount": 73,
+  "uniqueLemmasReviewed": 40,
+  "allLanguageContextAuditPairs": 440,
+  "decisions": {
+    "change": 72,
+    "keep": 1
+  },
+  "unresolvedCandidates": 0,
+  "changedGlossCount": 225,
+  "changedByLanguage": {
+    "ar": 21,
+    "bn": 24,
+    "es-419": 16,
+    "hi": 25,
+    "id": 20,
+    "pt-BR": 12,
+    "ru": 17,
+    "th": 22,
+    "tr": 22,
+    "ur": 28,
+    "vi": 18
+  },
+  "changedGlosses": [
+    {
+      "lang": "ar",
+      "lemma": "against",
+      "before": "ضد",
+      "after": "ضد؛ بـ/على (اصطدام: بالحائط)"
+    },
+    {
+      "lang": "ar",
+      "lemma": "allowed",
+      "before": "سمح",
+      "after": "سمح؛ مسموح له"
+    },
+    {
+      "lang": "ar",
+      "lemma": "amazed",
+      "before": "مندهش",
+      "after": "مندهش؛ أدهش"
+    },
+    {
+      "lang": "ar",
+      "lemma": "blow",
+      "before": "ضربة",
+      "after": "ضربة؛ تهبّ (الريح)"
+    },
+    {
+      "lang": "ar",
+      "lemma": "burn",
+      "before": "يحترق",
+      "after": "يحترق؛ يحرق"
+    },
+    {
+      "lang": "ar",
+      "lemma": "burst",
+      "before": "ينفجر",
+      "after": "ينفجر؛ يقتحم"
+    },
+    {
+      "lang": "ar",
+      "lemma": "desperately",
+      "before": "بيأس",
+      "after": "بيأس؛ بشدّة"
+    },
+    {
+      "lang": "ar",
+      "lemma": "draw",
+      "before": "يسحب نحوه",
+      "after": "يسحب نحوه؛ يجذب"
+    },
+    {
+      "lang": "ar",
+      "lemma": "dreams",
+      "before": "أحلام",
+      "after": "أحلام؛ يحلم"
+    },
+    {
+      "lang": "ar",
+      "lemma": "end",
+      "before": "نهاية",
+      "after": "نهاية؛ ينتهي"
+    },
+    {
+      "lang": "ar",
+      "lemma": "firmly",
+      "before": "بإحكام",
+      "after": "بإحكام؛ بثبات"
+    },
+    {
+      "lang": "ar",
+      "lemma": "front",
+      "before": "أمام",
+      "after": "أمام؛ الجهة الأمامية"
+    },
+    {
+      "lang": "ar",
+      "lemma": "god",
+      "before": "إله",
+      "after": "إله؛ الله (اسم علم: God)"
+    },
+    {
+      "lang": "ar",
+      "lemma": "hide",
+      "before": "يختبئ",
+      "after": "يختبئ؛ يخفي"
+    },
+    {
+      "lang": "ar",
+      "lemma": "injured",
+      "before": "مصاب",
+      "after": "مصاب؛ جرح، أصاب"
+    },
+    {
+      "lang": "ar",
+      "lemma": "interrupted",
+      "before": "مقطوع",
+      "after": "منقطع؛ متوقف؛ مقطوع"
+    },
+    {
+      "lang": "ar",
+      "lemma": "lay",
+      "before": "استلقى؛ وضع",
+      "after": "استلقى؛ كان موجودًا/موضوعًا؛ وضع؛ باض"
+    },
+    {
+      "lang": "ar",
+      "lemma": "officer",
+      "before": "ضابط",
+      "after": "ضابط؛ شرطي"
+    },
+    {
+      "lang": "ar",
+      "lemma": "soften",
+      "before": "يلين",
+      "after": "يليّن، يُرقّق؛ يلين"
+    },
+    {
+      "lang": "ar",
+      "lemma": "spills",
+      "before": "يسكب",
+      "after": "ينسكب؛ يسكب"
+    },
+    {
+      "lang": "ar",
+      "lemma": "wardrobe",
+      "before": "خزانة ملابس",
+      "after": "خزانة ملابس؛ مجموعة ملابس (الشخص)"
+    },
+    {
+      "lang": "bn",
+      "lemma": "aboard",
+      "before": "জাহাজ/গাড়িতে ওঠা",
+      "after": "জাহাজে/যানবাহনে (চড়ে); জাহাজ/গাড়িতে ওঠা"
+    },
+    {
+      "lang": "bn",
+      "lemma": "against",
+      "before": "বিরুদ্ধে",
+      "after": "বিরুদ্ধে; -এ (ধাক্কা: দেয়ালে)"
+    },
+    {
+      "lang": "bn",
+      "lemma": "allowed",
+      "before": "অনুমতি দিয়েছিল",
+      "after": "অনুমতি দিয়েছিল; অনুমতি পেয়েছিল"
+    },
+    {
+      "lang": "bn",
+      "lemma": "amazed",
+      "before": "বিস্মিত",
+      "after": "বিস্মিত; বিস্মিত করল"
+    },
+    {
+      "lang": "bn",
+      "lemma": "blow",
+      "before": "আঘাত",
+      "after": "আঘাত; (বাতাস) বওয়া, উড়িয়ে নেওয়া"
+    },
+    {
+      "lang": "bn",
+      "lemma": "burn",
+      "before": "পোড়া",
+      "after": "পোড়া; পোড়ানো"
+    },
+    {
+      "lang": "bn",
+      "lemma": "burst",
+      "before": "ফেটে যাওয়া",
+      "after": "ফেটে যাওয়া; হুড়মুড়িয়ে ঢুকে পড়া"
+    },
+    {
+      "lang": "bn",
+      "lemma": "curled",
+      "before": "কুঁকড়ে গেল",
+      "after": "(চুল) কোঁকড়া করল; কুঁকড়ে গেল"
+    },
+    {
+      "lang": "bn",
+      "lemma": "desperately",
+      "before": "মরিয়া হয়ে",
+      "after": "মরিয়া হয়ে; ভীষণ, প্রচণ্ড"
+    },
+    {
+      "lang": "bn",
+      "lemma": "doorway",
+      "before": "দরজার ফাঁক",
+      "after": "দরজার মুখ; দোরগোড়া"
+    },
+    {
+      "lang": "bn",
+      "lemma": "draw",
+      "before": "নিজের দিকে টানা",
+      "after": "নিজের দিকে টানা; আকর্ষণ করা"
+    },
+    {
+      "lang": "bn",
+      "lemma": "dreams",
+      "before": "স্বপ্নগুলো",
+      "after": "স্বপ্নগুলো; স্বপ্ন দেখে"
+    },
+    {
+      "lang": "bn",
+      "lemma": "end",
+      "before": "শেষ",
+      "after": "শেষ; প্রান্ত; শেষ হওয়া"
+    },
+    {
+      "lang": "bn",
+      "lemma": "fight",
+      "before": "ঝগড়া করা",
+      "after": "লড়াই করা; মারামারি করা; ঝগড়া করা"
+    },
+    {
+      "lang": "bn",
+      "lemma": "firmly",
+      "before": "শক্ত করে",
+      "after": "শক্ত করে; দৃঢ়ভাবে"
+    },
+    {
+      "lang": "bn",
+      "lemma": "front",
+      "before": "সামনে",
+      "after": "সামনে; সামনের দিক"
+    },
+    {
+      "lang": "bn",
+      "lemma": "injured",
+      "before": "আহত",
+      "after": "আহত; আহত করল"
+    },
+    {
+      "lang": "bn",
+      "lemma": "lay",
+      "before": "শুয়ে পড়ল; রাখল",
+      "after": "শুয়ে পড়ল; পড়ে ছিল; রাখল; (ডিম) পাড়া"
+    },
+    {
+      "lang": "bn",
+      "lemma": "officer",
+      "before": "কর্মকর্তা",
+      "after": "কর্মকর্তা; পুলিশ"
+    },
+    {
+      "lang": "bn",
+      "lemma": "scarcely",
+      "before": "কদাচিৎ",
+      "after": "খুব কমই; সামান্যই; কদাচিৎ"
+    },
+    {
+      "lang": "bn",
+      "lemma": "soften",
+      "before": "নরম হওয়া",
+      "after": "নরম করা; নরম হওয়া"
+    },
+    {
+      "lang": "bn",
+      "lemma": "spills",
+      "before": "ছড়িয়ে ফেলে",
+      "after": "ছলকে পড়ে; ছলকে ফেলে; ছড়িয়ে ফেলে"
+    },
+    {
+      "lang": "bn",
+      "lemma": "stream",
+      "before": "ঝরনা",
+      "after": "ছোট নদী, জলধারা; ঝরনা"
+    },
+    {
+      "lang": "bn",
+      "lemma": "wardrobe",
+      "before": "পোশাকের আলমারি",
+      "after": "পোশাকের আলমারি; (কারও) সব পোশাক-পরিচ্ছদ"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "allowed",
+      "before": "permitió",
+      "after": "permitió; permitido"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "amazed",
+      "before": "asombrado",
+      "after": "asombrado; asombró"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "blow",
+      "before": "golpe",
+      "after": "golpe; soplar (el viento)"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "burn",
+      "before": "arder",
+      "after": "arder; quemar"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "burst",
+      "before": "reventar",
+      "after": "reventar; irrumpir"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "draw",
+      "before": "tirar hacia sí",
+      "after": "tirar hacia sí; atraer"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "dreams",
+      "before": "sueños",
+      "after": "sueños; sueña"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "end",
+      "before": "fin; final",
+      "after": "fin; final; terminar"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "god",
+      "before": "dios",
+      "after": "dios; Dios (nombre propio: God)"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "hide",
+      "before": "esconderse",
+      "after": "esconderse; esconder, ocultar"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "injured",
+      "before": "herido",
+      "after": "herido; hirió, lastimó"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "lay",
+      "before": "yació; colocó",
+      "after": "yació; colocó; poner (huevos)"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "officer",
+      "before": "funcionario; oficial",
+      "after": "funcionario; oficial; agente de policía"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "soften",
+      "before": "ablandarse",
+      "after": "suavizar, ablandar; ablandarse"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "spills",
+      "before": "derrama",
+      "after": "se derrama; derrama"
+    },
+    {
+      "lang": "es-419",
+      "lemma": "wardrobe",
+      "before": "armario",
+      "after": "armario; vestuario (ropa de una persona)"
+    },
+    {
+      "lang": "hi",
+      "lemma": "against",
+      "before": "के खिलाफ",
+      "after": "के खिलाफ; से/पर (टकराकर: दीवार से)"
+    },
+    {
+      "lang": "hi",
+      "lemma": "allowed",
+      "before": "अनुमति दी",
+      "after": "अनुमति दी; अनुमति मिली"
+    },
+    {
+      "lang": "hi",
+      "lemma": "amazed",
+      "before": "हैरान",
+      "after": "हैरान; हैरान कर दिया"
+    },
+    {
+      "lang": "hi",
+      "lemma": "blow",
+      "before": "प्रहार, वार",
+      "after": "प्रहार, वार; (हवा का) चलना, उड़ा ले जाना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "burn",
+      "before": "जलना",
+      "after": "जलना; जलाना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "burst",
+      "before": "फट पड़ना",
+      "after": "फट पड़ना; (तेज़ी से) घुस पड़ना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "curled",
+      "before": "सिकुड़ गया",
+      "after": "(बाल) घुँघराले किए; सिकुड़ गया"
+    },
+    {
+      "lang": "hi",
+      "lemma": "desperately",
+      "before": "बेताबी से",
+      "after": "बुरी तरह, बेहद; बेताबी से; हताश होकर"
+    },
+    {
+      "lang": "hi",
+      "lemma": "doorway",
+      "before": "दरवाज़े का मार्ग",
+      "after": "द्वार, चौखट (दरवाज़े की खुली जगह); दरवाज़े का मार्ग"
+    },
+    {
+      "lang": "hi",
+      "lemma": "draw",
+      "before": "अपनी ओर खींचना",
+      "after": "अपनी ओर खींचना; आकर्षित करना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "dreams",
+      "before": "सपने",
+      "after": "सपने; सपना देखता/देखती है"
+    },
+    {
+      "lang": "hi",
+      "lemma": "end",
+      "before": "अंत",
+      "after": "अंत; छोर, सिरा; ख़त्म होना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "find",
+      "before": "ढूँढ़ना",
+      "after": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)"
+    },
+    {
+      "lang": "hi",
+      "lemma": "fond",
+      "before": "शौक़ीन",
+      "after": "शौक़ीन; स्नेह/लगाव रखने वाला"
+    },
+    {
+      "lang": "hi",
+      "lemma": "front",
+      "before": "आगे का",
+      "after": "आगे का; सामने का हिस्सा"
+    },
+    {
+      "lang": "hi",
+      "lemma": "graceful",
+      "before": "सुरुचिपूर्ण",
+      "after": "लालित्यपूर्ण; सुरुचिपूर्ण"
+    },
+    {
+      "lang": "hi",
+      "lemma": "hide",
+      "before": "छिपना",
+      "after": "छिपना; छिपाना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "injured",
+      "before": "घायल",
+      "after": "घायल; घायल किया, चोट पहुँचाई"
+    },
+    {
+      "lang": "hi",
+      "lemma": "lay",
+      "before": "लेट गया; रखा",
+      "after": "लेट गया; पड़ा था; रखा; (अंडे) देना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "officer",
+      "before": "अधिकारी",
+      "after": "अधिकारी; पुलिसवाला"
+    },
+    {
+      "lang": "hi",
+      "lemma": "soften",
+      "before": "नरम होना",
+      "after": "नरम करना; नरम होना"
+    },
+    {
+      "lang": "hi",
+      "lemma": "spills",
+      "before": "गिराता है (तरल)",
+      "after": "छलकता है / गिरता है (तरल); गिराता है"
+    },
+    {
+      "lang": "hi",
+      "lemma": "stream",
+      "before": "नाला",
+      "after": "धारा, छोटी नदी; नाला"
+    },
+    {
+      "lang": "hi",
+      "lemma": "unlit",
+      "before": "बिना रोशनी का",
+      "after": "जिसे जलाया न गया हो (सिगार आदि); बिना रोशनी का"
+    },
+    {
+      "lang": "hi",
+      "lemma": "wardrobe",
+      "before": "अलमारी",
+      "after": "अलमारी; (किसी के) सारे कपड़े, पोशाकें"
+    },
+    {
+      "lang": "id",
+      "lemma": "against",
+      "before": "melawan",
+      "after": "melawan; ke/pada (benturan: ke dinding)"
+    },
+    {
+      "lang": "id",
+      "lemma": "allowed",
+      "before": "mengizinkan",
+      "after": "mengizinkan; diizinkan"
+    },
+    {
+      "lang": "id",
+      "lemma": "amazed",
+      "before": "takjub",
+      "after": "takjub; membuat takjub"
+    },
+    {
+      "lang": "id",
+      "lemma": "blow",
+      "before": "pukulan",
+      "after": "pukulan; bertiup, meniup (angin)"
+    },
+    {
+      "lang": "id",
+      "lemma": "burn",
+      "before": "terbakar",
+      "after": "terbakar; membakar"
+    },
+    {
+      "lang": "id",
+      "lemma": "burst",
+      "before": "meletus",
+      "after": "meletus; menerobos"
+    },
+    {
+      "lang": "id",
+      "lemma": "desperately",
+      "before": "dengan putus asa",
+      "after": "dengan putus asa; sangat, amat"
+    },
+    {
+      "lang": "id",
+      "lemma": "draw",
+      "before": "menarik ke arah diri",
+      "after": "menarik ke arah diri; menarik (hati), memikat"
+    },
+    {
+      "lang": "id",
+      "lemma": "dreams",
+      "before": "mimpi",
+      "after": "mimpi; bermimpi"
+    },
+    {
+      "lang": "id",
+      "lemma": "end",
+      "before": "akhir",
+      "after": "akhir; ujung; berakhir"
+    },
+    {
+      "lang": "id",
+      "lemma": "firmly",
+      "before": "dengan erat",
+      "after": "dengan erat; dengan kokoh"
+    },
+    {
+      "lang": "id",
+      "lemma": "god",
+      "before": "tuhan",
+      "after": "tuhan; Tuhan (nama diri: God)"
+    },
+    {
+      "lang": "id",
+      "lemma": "hide",
+      "before": "bersembunyi",
+      "after": "bersembunyi; menyembunyikan"
+    },
+    {
+      "lang": "id",
+      "lemma": "injured",
+      "before": "terluka",
+      "after": "terluka; melukai"
+    },
+    {
+      "lang": "id",
+      "lemma": "lay",
+      "before": "berbaring; meletakkan",
+      "after": "berbaring; terletak; meletakkan; bertelur"
+    },
+    {
+      "lang": "id",
+      "lemma": "officer",
+      "before": "petugas; perwira",
+      "after": "petugas; perwira; polisi"
+    },
+    {
+      "lang": "id",
+      "lemma": "plain",
+      "before": "preman; sederhana",
+      "after": "berpakaian preman (sipil); sederhana"
+    },
+    {
+      "lang": "id",
+      "lemma": "soften",
+      "before": "melunak",
+      "after": "melunakkan, melembutkan; melunak"
+    },
+    {
+      "lang": "id",
+      "lemma": "spills",
+      "before": "menumpahkan",
+      "after": "tumpah; menumpahkan"
+    },
+    {
+      "lang": "id",
+      "lemma": "wardrobe",
+      "before": "lemari pakaian",
+      "after": "lemari pakaian; koleksi pakaian (seseorang)"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "allowed",
+      "before": "permitiu",
+      "after": "permitiu; permitido"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "amazed",
+      "before": "admirado; espantado",
+      "after": "admirado; espantado; impressionou, espantou"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "blow",
+      "before": "golpe",
+      "after": "golpe; soprar (vento)"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "burst",
+      "before": "estourar",
+      "after": "estourar; irromper"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "draw",
+      "before": "puxar para si",
+      "after": "puxar para si; atrair"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "dreams",
+      "before": "sonhos",
+      "after": "sonhos; sonha"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "end",
+      "before": "fim; final",
+      "after": "fim; final; acabar, terminar"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "god",
+      "before": "deus",
+      "after": "deus; Deus (nome próprio: God)"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "hide",
+      "before": "esconder-se",
+      "after": "esconder-se; esconder"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "injured",
+      "before": "ferido",
+      "after": "ferido; feriu, machucou"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "lay",
+      "before": "deitou; colocou",
+      "after": "deitou(-se); estava (jazia); pôr (ovos), colocar"
+    },
+    {
+      "lang": "pt-BR",
+      "lemma": "soften",
+      "before": "amolecer",
+      "after": "amolecer; suavizar"
+    },
+    {
+      "lang": "ru",
+      "lemma": "against",
+      "before": "против",
+      "after": "против; о (удар: о стену); наперегонки с (временем)"
+    },
+    {
+      "lang": "ru",
+      "lemma": "allowed",
+      "before": "разрешил",
+      "after": "разрешил; разрешено"
+    },
+    {
+      "lang": "ru",
+      "lemma": "amazed",
+      "before": "изумлённый",
+      "after": "изумлённый; изумил"
+    },
+    {
+      "lang": "ru",
+      "lemma": "blow",
+      "before": "удар",
+      "after": "удар; дуть (о ветре)"
+    },
+    {
+      "lang": "ru",
+      "lemma": "burn",
+      "before": "гореть",
+      "after": "гореть; жечь"
+    },
+    {
+      "lang": "ru",
+      "lemma": "burst",
+      "before": "лопнуть",
+      "after": "лопнуть; ворваться"
+    },
+    {
+      "lang": "ru",
+      "lemma": "draw",
+      "before": "тянуть к себе",
+      "after": "тянуть к себе; привлекать"
+    },
+    {
+      "lang": "ru",
+      "lemma": "dreams",
+      "before": "сны; мечты",
+      "after": "сны; мечты; видит сон; мечтает"
+    },
+    {
+      "lang": "ru",
+      "lemma": "end",
+      "before": "конец",
+      "after": "конец; кончаться, заканчиваться"
+    },
+    {
+      "lang": "ru",
+      "lemma": "front",
+      "before": "перед",
+      "after": "перёд; лицевая сторона"
+    },
+    {
+      "lang": "ru",
+      "lemma": "god",
+      "before": "бог",
+      "after": "бог; Бог (имя собственное: God)"
+    },
+    {
+      "lang": "ru",
+      "lemma": "hide",
+      "before": "прятаться",
+      "after": "прятаться; прятать, скрывать"
+    },
+    {
+      "lang": "ru",
+      "lemma": "injured",
+      "before": "раненый",
+      "after": "раненый; поранил"
+    },
+    {
+      "lang": "ru",
+      "lemma": "lay",
+      "before": "лежал; положил",
+      "after": "лежал; положил; нести (яйца)"
+    },
+    {
+      "lang": "ru",
+      "lemma": "officer",
+      "before": "служащий; офицер",
+      "after": "служащий; офицер; полицейский"
+    },
+    {
+      "lang": "ru",
+      "lemma": "soften",
+      "before": "смягчаться",
+      "after": "смягчать; смягчаться"
+    },
+    {
+      "lang": "ru",
+      "lemma": "spills",
+      "before": "проливает",
+      "after": "проливается; проливает"
+    },
+    {
+      "lang": "th",
+      "lemma": "against",
+      "before": "ต่อต้าน",
+      "after": "ต่อต้าน; กับ (กระทบ/พิง: กับกำแพง); แข่งกับ (เวลา)"
+    },
+    {
+      "lang": "th",
+      "lemma": "allowed",
+      "before": "อนุญาต",
+      "after": "อนุญาต; ได้รับอนุญาต"
+    },
+    {
+      "lang": "th",
+      "lemma": "amazed",
+      "before": "ประหลาดใจ",
+      "after": "ประหลาดใจ; ทำให้ประหลาดใจ"
+    },
+    {
+      "lang": "th",
+      "lemma": "blow",
+      "before": "การโจมตี",
+      "after": "การตี, การฟาด; (ลม) พัด"
+    },
+    {
+      "lang": "th",
+      "lemma": "burn",
+      "before": "ไหม้",
+      "after": "ไหม้; เผา; ทำให้แสบร้อน"
+    },
+    {
+      "lang": "th",
+      "lemma": "burst",
+      "before": "ระเบิด",
+      "after": "ระเบิด; พุ่งทะลุ, บุกเข้า"
+    },
+    {
+      "lang": "th",
+      "lemma": "companion",
+      "before": "เพื่อนร่วมทาง",
+      "after": "เพื่อน; เพื่อนร่วมทาง"
+    },
+    {
+      "lang": "th",
+      "lemma": "described",
+      "before": "อธิบาย",
+      "after": "บรรยาย; อธิบาย"
+    },
+    {
+      "lang": "th",
+      "lemma": "desperately",
+      "before": "อย่างสิ้นหวัง",
+      "after": "อย่างสิ้นหวัง; อย่างมาก, อย่างหนัก"
+    },
+    {
+      "lang": "th",
+      "lemma": "draw",
+      "before": "ดึงเข้าหาตัว",
+      "after": "ดึงเข้าหาตัว; ดึงดูด"
+    },
+    {
+      "lang": "th",
+      "lemma": "dreams",
+      "before": "ความฝัน",
+      "after": "ความฝัน; ฝัน"
+    },
+    {
+      "lang": "th",
+      "lemma": "end",
+      "before": "จุดจบ",
+      "after": "จุดจบ; ปลาย, ท้าย (สถานที่); สิ้นสุด, จบ"
+    },
+    {
+      "lang": "th",
+      "lemma": "eve",
+      "before": "วันก่อน (คริสต์มาส)",
+      "after": "คืน/วันก่อนวันสำคัญ (คืนก่อนวันคริสต์มาส)"
+    },
+    {
+      "lang": "th",
+      "lemma": "firmly",
+      "before": "แน่น",
+      "after": "แน่น; อย่างมั่นคง"
+    },
+    {
+      "lang": "th",
+      "lemma": "hide",
+      "before": "ซ่อนตัว",
+      "after": "ซ่อนตัว; ซ่อน, ปิดบัง"
+    },
+    {
+      "lang": "th",
+      "lemma": "injured",
+      "before": "บาดเจ็บ",
+      "after": "บาดเจ็บ; ทำให้บาดเจ็บ"
+    },
+    {
+      "lang": "th",
+      "lemma": "lowered",
+      "before": "ลดลง",
+      "after": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)"
+    },
+    {
+      "lang": "th",
+      "lemma": "officer",
+      "before": "เจ้าหน้าที่; นายทหาร",
+      "after": "เจ้าหน้าที่; นายทหาร; ตำรวจ"
+    },
+    {
+      "lang": "th",
+      "lemma": "purr",
+      "before": "ส่งเสียงครางหงิง ๆ (แมว)",
+      "after": "ทำเสียงครางเบา ๆ (แมว)"
+    },
+    {
+      "lang": "th",
+      "lemma": "soften",
+      "before": "อ่อนลง",
+      "after": "ทำให้อ่อนลง, ทำให้นุ่มนวลขึ้น; อ่อนลง"
+    },
+    {
+      "lang": "th",
+      "lemma": "spills",
+      "before": "ทำหก",
+      "after": "หก; ทำหก"
+    },
+    {
+      "lang": "th",
+      "lemma": "wardrobe",
+      "before": "ตู้เสื้อผ้า",
+      "after": "ตู้เสื้อผ้า; เสื้อผ้าทั้งหมด (ของคนหนึ่ง)"
+    },
+    {
+      "lang": "tr",
+      "lemma": "against",
+      "before": "karşı",
+      "after": "karşı; -e (çarparak/dayanarak: duvara)"
+    },
+    {
+      "lang": "tr",
+      "lemma": "allowed",
+      "before": "izin verdi",
+      "after": "izin verdi; izin verilmiş (izinli)"
+    },
+    {
+      "lang": "tr",
+      "lemma": "amazed",
+      "before": "şaşkın",
+      "after": "şaşkın; şaşırttı, hayran bıraktı"
+    },
+    {
+      "lang": "tr",
+      "lemma": "blow",
+      "before": "darbe, vuruş",
+      "after": "darbe, vuruş; (rüzgâr) esmek, uçurmak"
+    },
+    {
+      "lang": "tr",
+      "lemma": "burn",
+      "before": "yanmak",
+      "after": "yanmak; yakmak"
+    },
+    {
+      "lang": "tr",
+      "lemma": "burst",
+      "before": "patlamak",
+      "after": "patlamak; (bir yere) hızla dalmak, girmek"
+    },
+    {
+      "lang": "tr",
+      "lemma": "companion",
+      "before": "yol arkadaşı",
+      "after": "arkadaş; yoldaş; yol arkadaşı"
+    },
+    {
+      "lang": "tr",
+      "lemma": "desperately",
+      "before": "çaresizce",
+      "after": "çaresizce; fena halde, son derece"
+    },
+    {
+      "lang": "tr",
+      "lemma": "doorway",
+      "before": "kapı aralığı",
+      "after": "kapı girişi; kapı aralığı"
+    },
+    {
+      "lang": "tr",
+      "lemma": "draw",
+      "before": "çekmek (kendine doğru)",
+      "after": "çekmek (kendine doğru); (bir yere/birine) çekmek, cezbetmek"
+    },
+    {
+      "lang": "tr",
+      "lemma": "dreams",
+      "before": "rüyalar; hayaller",
+      "after": "rüyalar; hayaller; rüya görür; hayal eder"
+    },
+    {
+      "lang": "tr",
+      "lemma": "end",
+      "before": "son",
+      "after": "son; bitmek, sona ermek"
+    },
+    {
+      "lang": "tr",
+      "lemma": "firmly",
+      "before": "sıkıca",
+      "after": "sıkıca; sağlam bir şekilde"
+    },
+    {
+      "lang": "tr",
+      "lemma": "god",
+      "before": "tanrı",
+      "after": "tanrı; Tanrı (özel ad: God)"
+    },
+    {
+      "lang": "tr",
+      "lemma": "hide",
+      "before": "saklanmak",
+      "after": "saklanmak; saklamak, gizlemek"
+    },
+    {
+      "lang": "tr",
+      "lemma": "injured",
+      "before": "yaralı",
+      "after": "yaralı; yaraladı (incitti)"
+    },
+    {
+      "lang": "tr",
+      "lemma": "lay",
+      "before": "yattı; koymak",
+      "after": "yattı; (içinde) duruyordu; koymak; yumurtlamak"
+    },
+    {
+      "lang": "tr",
+      "lemma": "officer",
+      "before": "memur; subay",
+      "after": "memur; subay; polis memuru"
+    },
+    {
+      "lang": "tr",
+      "lemma": "soften",
+      "before": "yumuşamak",
+      "after": "yumuşamak; yumuşatmak"
+    },
+    {
+      "lang": "tr",
+      "lemma": "spills",
+      "before": "döker",
+      "after": "dökülür; döker"
+    },
+    {
+      "lang": "tr",
+      "lemma": "wardrobe",
+      "before": "gardırop",
+      "after": "gardırop; (birinin) kıyafetleri"
+    },
+    {
+      "lang": "tr",
+      "lemma": "wicked",
+      "before": "kötü kalpli",
+      "after": "kötü kalpli; kötü, şeytani"
+    },
+    {
+      "lang": "ur",
+      "lemma": "against",
+      "before": "کے خلاف",
+      "after": "کے خلاف؛ سے (ٹکرا کر: دیوار سے)"
+    },
+    {
+      "lang": "ur",
+      "lemma": "allowed",
+      "before": "اجازت دی",
+      "after": "اجازت دی؛ اجازت ملی"
+    },
+    {
+      "lang": "ur",
+      "lemma": "amazed",
+      "before": "حیران",
+      "after": "حیران؛ حیران کر دیا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "blow",
+      "before": "وار، ضرب",
+      "after": "وار، ضرب؛ (ہوا کا) چلنا، اڑا لے جانا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "burn",
+      "before": "جلنا",
+      "after": "جلنا؛ جلانا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "burst",
+      "before": "پھٹنا",
+      "after": "پھٹنا؛ (زور سے) گھس آنا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "companion",
+      "before": "ہم سفر",
+      "after": "ساتھی؛ ہم سفر"
+    },
+    {
+      "lang": "ur",
+      "lemma": "curled",
+      "before": "سمٹ گیا",
+      "after": "(بال) گھنگریالے کیے؛ سمٹ گیا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "desperately",
+      "before": "بے تابی سے",
+      "after": "بری طرح، بے حد؛ بے تابی سے؛ مایوس ہو کر"
+    },
+    {
+      "lang": "ur",
+      "lemma": "doorway",
+      "before": "دروازے کا راستہ",
+      "after": "دہلیز، دروازہ (دروازے کی کھلی جگہ)؛ دروازے کا راستہ"
+    },
+    {
+      "lang": "ur",
+      "lemma": "draw",
+      "before": "اپنی طرف کھینچنا",
+      "after": "اپنی طرف کھینچنا؛ متوجہ کرنا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "dreams",
+      "before": "خواب",
+      "after": "خواب؛ خواب دیکھتا/دیکھتی ہے"
+    },
+    {
+      "lang": "ur",
+      "lemma": "end",
+      "before": "اختتام",
+      "after": "آخر، سرا؛ اختتام؛ ختم ہونا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "enormous",
+      "before": "عظیم",
+      "after": "بہت بڑا؛ عظیم"
+    },
+    {
+      "lang": "ur",
+      "lemma": "eve",
+      "before": "شام سے پہلے کی رات (کرسمس کی)",
+      "after": "کسی خاص دن سے پہلے کی شام (کرسمس کی شام)"
+    },
+    {
+      "lang": "ur",
+      "lemma": "find",
+      "before": "ڈھونڈنا",
+      "after": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)"
+    },
+    {
+      "lang": "ur",
+      "lemma": "finnish",
+      "before": "فنی",
+      "after": "فن لینڈ کا/کی؛ فن لینڈی"
+    },
+    {
+      "lang": "ur",
+      "lemma": "front",
+      "before": "سامنے",
+      "after": "سامنے؛ سامنے کا حصہ"
+    },
+    {
+      "lang": "ur",
+      "lemma": "graceful",
+      "before": "خوش اسلوب",
+      "after": "خوش ادا؛ خوش اسلوب"
+    },
+    {
+      "lang": "ur",
+      "lemma": "hide",
+      "before": "چھپنا",
+      "after": "چھپنا؛ چھپانا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "injured",
+      "before": "زخمی",
+      "after": "زخمی؛ زخمی کیا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "lay",
+      "before": "لیٹ گیا؛ رکھا",
+      "after": "لیٹ گیا؛ پڑا تھا؛ رکھا؛ (انڈے) دینا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "officer",
+      "before": "افسر",
+      "after": "افسر؛ پولیس والا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "soften",
+      "before": "نرم ہونا",
+      "after": "نرم کرنا؛ نرم ہونا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "spills",
+      "before": "گراتا ہے (مائع)",
+      "after": "چھلکتا ہے / گرتا ہے (مائع)؛ گراتا ہے"
+    },
+    {
+      "lang": "ur",
+      "lemma": "unlit",
+      "before": "بغیر روشنی کا",
+      "after": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا"
+    },
+    {
+      "lang": "ur",
+      "lemma": "wardrobe",
+      "before": "الماری",
+      "after": "الماری؛ (کسی کے) کپڑے، ملبوسات"
+    },
+    {
+      "lang": "ur",
+      "lemma": "wicked",
+      "before": "بدکار",
+      "after": "بدکار؛ شیطانی، خبیث"
+    },
+    {
+      "lang": "vi",
+      "lemma": "against",
+      "before": "chống lại",
+      "after": "chống lại; vào (va chạm: vào tường); đua với (thời gian)"
+    },
+    {
+      "lang": "vi",
+      "lemma": "allowed",
+      "before": "cho phép",
+      "after": "cho phép; được phép"
+    },
+    {
+      "lang": "vi",
+      "lemma": "amazed",
+      "before": "kinh ngạc",
+      "after": "kinh ngạc; làm kinh ngạc"
+    },
+    {
+      "lang": "vi",
+      "lemma": "blow",
+      "before": "cú đánh",
+      "after": "cú đánh; thổi (gió)"
+    },
+    {
+      "lang": "vi",
+      "lemma": "burn",
+      "before": "cháy",
+      "after": "cháy; đốt; làm bỏng"
+    },
+    {
+      "lang": "vi",
+      "lemma": "burst",
+      "before": "nổ tung",
+      "after": "nổ tung; xông qua, lao vào"
+    },
+    {
+      "lang": "vi",
+      "lemma": "desperately",
+      "before": "một cách tuyệt vọng",
+      "after": "một cách tuyệt vọng; vô cùng, cực kỳ"
+    },
+    {
+      "lang": "vi",
+      "lemma": "draw",
+      "before": "kéo về phía mình",
+      "after": "kéo về phía mình; thu hút"
+    },
+    {
+      "lang": "vi",
+      "lemma": "dreams",
+      "before": "những giấc mơ",
+      "after": "những giấc mơ; mơ"
+    },
+    {
+      "lang": "vi",
+      "lemma": "firmly",
+      "before": "chặt",
+      "after": "chặt; vững vàng"
+    },
+    {
+      "lang": "vi",
+      "lemma": "front",
+      "before": "phía trước",
+      "after": "phía trước; mặt trước"
+    },
+    {
+      "lang": "vi",
+      "lemma": "hide",
+      "before": "trốn",
+      "after": "trốn; giấu, che giấu"
+    },
+    {
+      "lang": "vi",
+      "lemma": "injured",
+      "before": "bị thương",
+      "after": "bị thương; làm bị thương"
+    },
+    {
+      "lang": "vi",
+      "lemma": "lay",
+      "before": "đã nằm; đã đặt",
+      "after": "đã nằm; đã đặt; đẻ (trứng)"
+    },
+    {
+      "lang": "vi",
+      "lemma": "officer",
+      "before": "nhân viên; sĩ quan",
+      "after": "nhân viên; sĩ quan; cảnh sát"
+    },
+    {
+      "lang": "vi",
+      "lemma": "soften",
+      "before": "mềm đi",
+      "after": "làm mềm, làm dịu; mềm đi"
+    },
+    {
+      "lang": "vi",
+      "lemma": "spills",
+      "before": "làm đổ",
+      "after": "đổ ra; làm đổ"
+    },
+    {
+      "lang": "vi",
+      "lemma": "wardrobe",
+      "before": "tủ quần áo",
+      "after": "tủ quần áo; quần áo (của một người)"
+    }
+  ],
+  "sourceFilesSHA256": {
+    "ar": "30c7e78cb1b16e92765adca91c8754c1b512b870be4c5ba5c4d9f25215f50f70",
+    "bn": "c3b8b4aa508edcb205a94aee7b07f2f48575217ac2f74db6c7114c8c447e2188",
+    "es-419": "3490a3473ecad802b3a68db91e3f8d83a6b53262a44a75e4e8444fe994bee8a8",
+    "hi": "92186475c227b37a2ede858f42d13667dadc5e56dae32769a9d471cf025a56b1",
+    "id": "a31e2f1d1c9d503a86c94b18ff4db16ed606e68e8140cc9e808639cd6e37cf0a",
+    "pt-BR": "f44a4c7d705855034f2cd7183e64e193723b574e3768fc6fca1a435348c49c51",
+    "ru": "442b22a4f8c4495f427337b9ecc60cd748cfdf92d52e38000f1faeb2f8e9fafa",
+    "th": "87c671dd04e343a55da9d36d8d3e812394e47271b7801c33bb7152481d855062",
+    "tr": "9aacdb71f04444b8f7cce7c5963eac4c4d7d2f0998237f5c9aea20b7672dbaf5",
+    "ur": "752d5311b7d0bfd71e2b017ad36857f11070f3ad13389f0aefd8f73d8875d87d",
+    "vi": "0ac4c97d37da3a9f14aa7f0db68e1f9a1d61542665268734181d23734e60048a"
+  },
+  "sourceFormsOrLemmaIdsChanged": false,
+  "humanApprovalFlagsChanged": false,
+  "nativeSpeakerApproval": false,
+  "livePublication": false,
+  "studyWordProposalUpdates": [
+    {
+      "storyId": "lost-map",
+      "lemma": "end",
+      "before": "son",
+      "after": "son; bitmek, sona ermek"
+    },
+    {
+      "storyId": "classic-town-country-mouse",
+      "lemma": "hide",
+      "before": "saklanmak",
+      "after": "saklanmak; saklamak, gizlemek"
+    },
+    {
+      "storyId": "classic-north-wind-sun",
+      "lemma": "blow",
+      "before": "darbe, vuruş",
+      "after": "darbe, vuruş; (rüzgâr) esmek, uçurmak"
+    },
+    {
+      "storyId": "classic-ass-lion-skin",
+      "lemma": "hide",
+      "before": "saklanmak",
+      "after": "saklanmak; saklamak, gizlemek"
+    }
+  ],
+  "runtimePriority": {
+    "bundledSingleWordLearningOverlaps": [],
+    "learningTranslationsChanged": false,
+    "limit": "Static bundled comparison; not every downloaded revision or cloud account accepted."
+  },
+  "reviewMethod": {
+    "reviewerModel": "claude-opus-5-5",
+    "initialBatches": 2,
+    "freshContextAllLanguageAudit": true,
+    "auditFindingsResolved": 12,
+    "focusedFinalAuditFindingsResolved": 1,
+    "codexAdjudication": true,
+    "externalDictionaryChecks": "dictionary-checks.json",
+    "toolsEnabledInClaude": false
+  },
+  "validation": {
+    "backend": {
+      "tests": 172,
+      "passed": 172,
+      "failed": 0,
+      "skipped": 0
+    },
+    "glossaryAssets": "1098 per language; exact 11-language build/check",
+    "studyWordProposals": "4 translation updates only; status proposal; reviewedBy null; same lemma selections/order",
+    "androidReports": [
+      {
+        "file": "native-android/app/build/outputs/androidTest-results/connected/debug/TEST-English_Tales_CI_36(AVD) - 16-_app-.xml",
+        "counts": {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "xmlSHA256": "580353417e042556825a68e9f00d774039fe1d2118e17bdae17ebf71d1d46d98"
+      },
+      {
+        "file": "native-android/app/build/test-results/testDebugUnitTest/TEST-com.yurken.englishtales.data.GlossaryTest.xml",
+        "counts": {
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "xmlSHA256": "97bc33597c3a654fd39e807196899228eb3e135de8e7d29b6a7e20ef0190493a"
+      }
+    ],
+    "fullCi": "pending PR CI",
+    "debugApkSHA256": "a51701dee94d544728233c5f8360649912375bd190e5d8f1f70064dc34faf29b",
+    "assetSHA256": {
+      "tr": "8871bac24e4c0f196d47439348ae115df384ed06c551fbfb6dd9f54758079ffc",
+      "bn": "4b65875eb2a93fd573e3b4018956210251bf3f08c3d6b814b08b2d78e5980324",
+      "ru": "5d6863209c5771c11faf648f6defb0dcdc520a6d95ff520b4704e7bb9811ce61",
+      "ur": "61909133214e14812d7573eb121103596e47d1a3bfe2a914c86e5c6feb9d596d",
+      "es-419": "a7ca9a3655968f0042cfa97d68694805141db932e41684743a7e6c1011c4f24f",
+      "hi": "d51a310c821a686cef0d4fad403289caeccd4ad7093dd89b0dca3888b12ca4e2",
+      "pt-BR": "923a07aebde18f85bb723ea0fa60d9bd152b4596edbd7be99fdc6f6a963b034a",
+      "vi": "797b7977344703173d1f078893c4032c7b364e7f4bf273f20a469407dac7183d",
+      "id": "f9859e9f8b6fb64d491dcb2cb13c00a98d474a112dfef4e6deb7df712c89ecd2",
+      "th": "49e52cdd30edf7b89b80a9c1ef7e234a0685dffaeec719dfd6cbce731166c5e8",
+      "ar": "2eff8b5938cdb3ae04dc8b10be64cb3f88698e2da5aa5aba75fd35d0b6958330"
+    }
+  },
+  "limitations": [
+    "AI closure of these 73 candidates does not certify native fluency or remove machine-draft status.",
+    "Review contexts are the exact provided English matches, including earlier snapshot evidence; not all future contexts or every inflection.",
+    "Historical deferred decisions remain unchanged in earlier evidence; final-resolution.json supersedes them for this scope.",
+    "Runtime study-word priority and learning data are unchanged. No store release or server content publication performed."
+  ]
+}

@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "lang": "ru",
  "reviewStatus": "machine-draft",
- "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. A Claude review pass over all 1098 entries and Codex adjudication of flagged candidates are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. This remains AI-assisted review; unresolved source/language decisions and native-speaker review are still open. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
+ "policy": "Machine draft of the tap-glossary meanings, one per Turkish lemma. The full 1098-entry Claude review and Codex adjudication are recorded in docs/GLOSSARY_FULL_REVIEW_2026-10-20.md. Follow-up decisions for all 73 deferred candidates, coordinated source/target sense expansions and a fresh-context Claude audit are recorded in docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md. This remains AI-assisted review, not native-speaker approval. sampleApprovedBy is the owner decision to ship a draft, not a claim of native review.",
  "entries": [
   {
    "lemma": "a",
@@ -101,7 +101,7 @@
   },
   {
    "lemma": "against",
-   "gloss": "против",
+   "gloss": "против; о (удар: о стену); наперегонки с (временем)",
    "source": "claude-draft"
   },
   {
@@ -136,7 +136,7 @@
   },
   {
    "lemma": "allowed",
-   "gloss": "разрешил",
+   "gloss": "разрешил; разрешено",
    "source": "claude-draft"
   },
   {
@@ -171,7 +171,7 @@
   },
   {
    "lemma": "amazed",
-   "gloss": "изумлённый",
+   "gloss": "изумлённый; изумил",
    "source": "claude-draft"
   },
   {
@@ -531,7 +531,7 @@
   },
   {
    "lemma": "blow",
-   "gloss": "удар",
+   "gloss": "удар; дуть (о ветре)",
    "source": "claude-draft"
   },
   {
@@ -636,7 +636,7 @@
   },
   {
    "lemma": "burn",
-   "gloss": "гореть",
+   "gloss": "гореть; жечь",
    "source": "claude-draft"
   },
   {
@@ -646,7 +646,7 @@
   },
   {
    "lemma": "burst",
-   "gloss": "лопнуть",
+   "gloss": "лопнуть; ворваться",
    "source": "claude-draft"
   },
   {
@@ -1306,7 +1306,7 @@
   },
   {
    "lemma": "draw",
-   "gloss": "тянуть к себе",
+   "gloss": "тянуть к себе; привлекать",
    "source": "claude-draft"
   },
   {
@@ -1326,7 +1326,7 @@
   },
   {
    "lemma": "dreams",
-   "gloss": "сны; мечты",
+   "gloss": "сны; мечты; видит сон; мечтает",
    "source": "claude-draft"
   },
   {
@@ -1451,7 +1451,7 @@
   },
   {
    "lemma": "end",
-   "gloss": "конец",
+   "gloss": "конец; кончаться, заканчиваться",
    "source": "claude-draft"
   },
   {
@@ -1951,7 +1951,7 @@
   },
   {
    "lemma": "front",
-   "gloss": "перед",
+   "gloss": "перёд; лицевая сторона",
    "source": "claude-draft"
   },
   {
@@ -2056,7 +2056,7 @@
   },
   {
    "lemma": "god",
-   "gloss": "бог",
+   "gloss": "бог; Бог (имя собственное: God)",
    "source": "claude-draft"
   },
   {
@@ -2286,7 +2286,7 @@
   },
   {
    "lemma": "hide",
-   "gloss": "прятаться",
+   "gloss": "прятаться; прятать, скрывать",
    "source": "claude-draft"
   },
   {
@@ -2461,7 +2461,7 @@
   },
   {
    "lemma": "injured",
-   "gloss": "раненый",
+   "gloss": "раненый; поранил",
    "source": "claude-draft"
   },
   {
@@ -2681,7 +2681,7 @@
   },
   {
    "lemma": "lay",
-   "gloss": "лежал; положил",
+   "gloss": "лежал; положил; нести (яйца)",
    "source": "claude-draft"
   },
   {
@@ -3221,7 +3221,7 @@
   },
   {
    "lemma": "officer",
-   "gloss": "служащий; офицер",
+   "gloss": "служащий; офицер; полицейский",
    "source": "claude-draft"
   },
   {
@@ -4261,7 +4261,7 @@
   },
   {
    "lemma": "soften",
-   "gloss": "смягчаться",
+   "gloss": "смягчать; смягчаться",
    "source": "claude-draft"
   },
   {
@@ -4341,7 +4341,7 @@
   },
   {
    "lemma": "spills",
-   "gloss": "проливает",
+   "gloss": "проливается; проливает",
    "source": "claude-draft"
   },
   {
