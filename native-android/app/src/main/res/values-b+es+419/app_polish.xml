@@ -18,4 +18,5 @@
     <string name="reader_hint_swipe">Desliza a la izquierda o a la derecha para cambiar de página.</string>
     <string name="page_translate">Traducir página</string>
     <string name="page_translate_hide">Ocultar traducción de la página</string>
+    <string name="reader_theme_sepia">Sepia</string>
 </resources>

@@ -18,4 +18,5 @@
     <string name="reader_hint_swipe">Проведите влево или вправо, чтобы перевернуть страницу.</string>
     <string name="page_translate">Перевести страницу</string>
     <string name="page_translate_hide">Скрыть перевод страницы</string>
+    <string name="reader_theme_sepia">Сепия</string>
 </resources>

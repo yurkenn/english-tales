@@ -92,7 +92,7 @@ class FirstLaunchJourneyTest {
                 val phrases=if(story.vocabulary!=null) PhraseMatcher.Index(LearningContent.wordsForSentence(story,s)) else LearningContent.phraseIndex
                 PhraseMatcher.find(s.english,phrases).firstOrNull()?.let {s to it}
             }
-            val node=compose.onNodeWithText(sentence.english).performScrollTo()
+            val node=compose.onNodeWithText(sentence.english,substring=true).performScrollTo()
             val layouts=mutableListOf<TextLayoutResult>()
             node.performSemanticsAction(SemanticsActions.GetTextLayoutResult) {it(layouts)}
             val bounds=layouts.single().getBoundingBox((match.start+match.end)/2)
@@ -107,7 +107,7 @@ class FirstLaunchJourneyTest {
             // A configuration change keeps the reader, its story and the saved count.
             scenario.recreate()
             waitFor(hasContentDescription(text(R.string.kelimelerim_kayitli_kelime_2,1)))
-            compose.onNodeWithText(sentence.english).assertExists()
+            compose.onNodeWithText(sentence.english,substring=true).assertExists()
             assertEquals("1",scalar("SELECT COUNT(*) FROM saved_words"))
 
             // Back to the daily plan, where the new word is already due for review.

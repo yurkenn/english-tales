@@ -1,6 +1,7 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import com.yurken.englishtales.R
 import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
@@ -11,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
@@ -44,14 +44,14 @@ internal fun ReaderAppearancePanel(settings: ReadingPreferences,error: String?,o
                 }
                 Text(stringResource(R.string.tema),style=MaterialTheme.typography.titleMedium)
                 FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(4.dp)) {
-                    FilterChip(selected=!settings.dark,onClick={onChange {it.copy(dark=false)}},label={Text(stringResource(R.string.acik))},leadingIcon={if(!settings.dark) Text("✓")})
-                    FilterChip(selected=settings.dark,onClick={onChange {it.copy(dark=true)}},label={Text(stringResource(R.string.koyu))},leadingIcon={if(settings.dark) Text("✓")})
+                    ReadingTheme.entries.forEach {value -> FilterChip(selected=settings.theme==value,
+                        onClick={onChange {it.copy(theme=value)}},label={Text(stringResource(value.label))},leadingIcon={if(settings.theme==value) Text("✓")})}
                 }
+                val palette=readerPalette(settings.theme)
                 Text(stringResource(R.string.a_little_reading_every_day),fontFamily=FontFamily.Serif,fontSize=settings.fontSize.sp,
-                    lineHeight=(settings.fontSize*settings.spacing.multiplier).sp,
-                    color=if(settings.dark) Color(0xFFF1F5F9) else TaleInk,
-                    modifier=Modifier.fillMaxWidth().background(if(settings.dark) Color(0xFF17212B) else TaleLine,
-                        MaterialTheme.shapes.medium).padding(20.dp))
+                    lineHeight=(settings.fontSize*settings.spacing.multiplier).sp,color=palette.foreground,
+                    modifier=Modifier.fillMaxWidth().background(palette.background,MaterialTheme.shapes.medium)
+                        .border(1.dp,palette.line,MaterialTheme.shapes.medium).padding(20.dp))
                 error?.let {Text(it,color=MaterialTheme.colorScheme.error,style=MaterialTheme.typography.bodyMedium)}
             }
             Button(onClick=onDismiss,modifier=Modifier.fillMaxWidth().padding(top=16.dp).heightIn(min=48.dp)) {Text(stringResource(R.string.okumaya_don))}
