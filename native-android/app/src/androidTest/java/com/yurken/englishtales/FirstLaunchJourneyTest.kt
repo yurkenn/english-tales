@@ -6,17 +6,23 @@ import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createEmptyComposeRule
 import androidx.compose.ui.text.TextLayoutResult
 import androidx.test.core.app.ActivityScenario
+import androidx.lifecycle.ViewModelProvider
 import androidx.test.platform.app.InstrumentationRegistry
 import com.yurken.englishtales.data.*
+import kotlinx.coroutines.test.StandardTestDispatcher
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
 import java.io.File
 
 /** A clean install walked end to end: intro, guest welcome, onboarding, first story, a saved word and its first review. */
+@OptIn(androidx.compose.ui.test.ExperimentalTestApi::class)
 class FirstLaunchJourneyTest {
-    @get:Rule val compose=createEmptyComposeRule()
+    // Readiness and learning writes arrive from IO; resume their Compose collectors
+    // on the test clock instead of running recomposition inline on that IO thread.
+    @get:Rule val compose=createEmptyComposeRule(effectContext=StandardTestDispatcher())
     private val context get()=InstrumentationRegistry.getInstrumentation().targetContext
+    private var scenario: ActivityScenario<MainActivity>?=null
     private fun text(id: Int,vararg args: Any)=context.getString(id,*args)
 
     /** Everything a first launch would not have; other tests use isolated contexts, so nothing is restored. */
@@ -39,12 +45,19 @@ class FirstLaunchJourneyTest {
 
     private fun waitFor(matcher: SemanticsMatcher,timeout: Long=20_000) {
         try {
-            compose.waitUntil(timeout) {runCatching {compose.onAllNodes(matcher,useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()}.getOrDefault(false)}
+            // A missing match is an empty collection. Rendering failures must propagate,
+            // rather than being swallowed and misreported as a missing screen.
+            compose.waitUntil(timeout) {compose.onAllNodes(matcher,useUnmergedTree=true).fetchSemanticsNodes().isNotEmpty()}
         } catch (failure: ComposeTimeoutException) {
             val tree=runCatching {compose.onRoot(useUnmergedTree=true).printToString()}.getOrElse {"Semantics unavailable: ${it.message}"}
+            var modelState="Activity unavailable"
+            scenario?.onActivity {
+                val vm=ViewModelProvider(it)[LearningViewModel::class.java]
+                modelState="model ready=${vm.ready.value}, account=${vm.account.value.userId}, owner=${vm.state.value.ownerId}, writeError=${vm.writeError.value}"
+            }
             throw AssertionError("First-launch screen did not reach $matcher. " +
                 "Content ready=${LearningContent.ready}, language confirmed=${AppLanguage.hasConfirmedChoice(context)}, " +
-                "onboarding=${scalar("SELECT onboarding_done FROM local_profile WHERE id=1")}\n$tree",failure)
+                "onboarding=${scalar("SELECT onboarding_done FROM local_profile WHERE id=1")}, $modelState\n$tree",failure)
         }
     }
     private fun waitForDb(timeout: Long=10_000,condition: ()->Boolean)=compose.waitUntil(timeout,condition)
@@ -53,9 +66,11 @@ class FirstLaunchJourneyTest {
         freshInstall()
         assertFalse("The fresh-install fixture must reset the device language gate",AppLanguage.hasConfirmedChoice(context))
         val scenario=ActivityScenario.launch(MainActivity::class.java)
+        this.scenario=scenario
         try {
             // Brand intro: skip it when it is still showing; it also continues on its own.
-            runCatching {compose.onNodeWithContentDescription(text(R.string.yurken)).performClick()}
+            if(compose.onAllNodesWithContentDescription(text(R.string.yurken)).fetchSemanticsNodes().isNotEmpty())
+                compose.onNodeWithContentDescription(text(R.string.yurken)).performClick()
             waitFor(hasTestTag("language_continue"))
             compose.onNodeWithTag("language_continue").performClick()
             assertTrue(AppLanguage.hasConfirmedChoice(context))
