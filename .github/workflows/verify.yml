@@ -20,6 +20,7 @@ jobs:
       - run: python tooling/verify_localization.py
       - run: python tooling/test_elf_alignment.py
       - run: python tooling/test_service_device_tests.py
+      - run: python tooling/test_device_watchdog.py
       - run: python -m unittest discover -s tooling -p 'test_analytics_cli.py' -v
   backend:
     runs-on: ubuntu-24.04
@@ -122,7 +123,7 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot
           working-directory: native-android
           script: |
-            bash gradlew :app:connectedDebugAndroidTest
+            python3 ../tooling/run_android_device_tests.py
             bash gradlew :macrobenchmark:connectedPerformanceAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=com.yurken.englishtales.benchmark.StartupBenchmark -Pandroid.testInstrumentationRunnerArguments.performanceIterations=1 -Pandroid.testInstrumentationRunnerArguments.androidx.benchmark.suppressErrors=EMULATOR
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
@@ -131,6 +132,7 @@ jobs:
           path: |
             native-android/app/build/reports/androidTests/
             native-android/app/build/outputs/androidTest-results/
+            native-android/build/device-watchdog/
             native-android/macrobenchmark/build/reports/androidTests/
             native-android/macrobenchmark/build/outputs/androidTest-results/
             native-android/macrobenchmark/build/outputs/connected_android_test_additional_output/
