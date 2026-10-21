@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="favorite_add">پسندیدہ میں شامل کریں۔</string>
-    <string name="favorite_remove">پسندیدہ سے ہٹا دیں۔</string>
+    <string name="favorite_add">پسندیدہ میں شامل کریں</string>
+    <string name="favorite_remove">پسندیدہ سے ہٹا دیں</string>
     <string name="favorites_title">میرے پسندیدہ (%1$d)</string>
 </resources>

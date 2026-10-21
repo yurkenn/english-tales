@@ -2,10 +2,10 @@
 <resources>
     <string name="order_mode">جملہ بنائیں</string>
     <string name="order_subtitle">کہانی کے جملے کو صحیح ترتیب میں رکھیں</string>
-    <string name="order_instruction">جملہ بنانے کے لیے الفاظ کو تھپتھپائیں۔</string>
+    <string name="order_instruction">جملہ بنانے کے لیے الفاظ کو تھپتھپائیں</string>
     <string name="order_hint">جس کا مطلب بولوں: %1$s</string>
-    <string name="order_answer_empty">ترتیب سے الفاظ کا انتخاب کریں۔</string>
-    <string name="order_remove">جملے سے %1$s کو ہٹا دیں۔</string>
+    <string name="order_answer_empty">ترتیب سے الفاظ کا انتخاب کریں</string>
+    <string name="order_remove">جملے سے %1$s کو ہٹا دیں</string>
     <string name="order_correct">درست! %1$s</string>
     <string name="order_incorrect">درست: %1$s</string>
     <string name="order_source">%1$s · %2$s</string>

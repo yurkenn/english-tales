@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="listen_mode">سنیں اور معنی چنیں۔</string>
+    <string name="listen_mode">سنیں اور معنی چنیں</string>
     <string name="listen_subtitle">انگریزی لفظ کو سنیں اور صحیح معنی تلاش کریں۔</string>
     <string name="listen_preparing">آڈیو تیار ہو رہا ہے…</string>
     <string name="listen_unavailable">اس ڈیوائس میں انگریزی کی آواز نہیں ہے۔ آپ ترتیبات → ایکسیسبیلٹی → ٹیکسٹ ٹو اسپیچ آؤٹ پٹ میں انگریزی صوتی ڈیٹا ڈاؤن لوڈ کر سکتے ہیں۔</string>
@@ -9,7 +9,7 @@
     <string name="listen_play">کلام سنو</string>
     <string name="listen_replay">دوبارہ سنو</string>
     <string name="listen_stop">آڈیو بند کرو</string>
-    <string name="listen_check">چیک کریں۔</string>
+    <string name="listen_check">چیک کریں</string>
     <string name="listen_correct">درست! آپ نے جو لفظ سنا ہے: %1$s</string>
     <string name="listen_incorrect">آپ نے جو لفظ سنا ہے: %1$s (%2$s)</string>
     <string name="listen_next">اگلا لفظ</string>

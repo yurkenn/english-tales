@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="gap_mode">جملے میں خلا کو پُر کریں۔</string>
+    <string name="gap_mode">جملے میں خلا کو پُر کریں</string>
     <string name="gap_subtitle">کہانی کے جملے میں صحیح لفظ تلاش کریں۔</string>
     <string name="gap_preparing">کہانی کے جملے تیار ہو رہے ہیں…</string>
     <string name="gap_unavailable">اس مشق کے لیے کوئی موزوں جملے نہیں ہیں۔ اپنی ڈاؤن لوڈ کردہ کہانیوں کے ساتھ دوبارہ کوشش کریں۔</string>
@@ -9,7 +9,7 @@
     <string name="gap_source">%1$s · %2$s</string>
     <string name="gap_source_pending">کہانی سے ایک جملہ · %1$s</string>
     <string name="gap_progress">جملہ ⁦%1$d / %2$d⁩</string>
-    <string name="gap_check">چیک کریں۔</string>
+    <string name="gap_check">چیک کریں</string>
     <string name="gap_correct">درست! آپ نے جملہ مکمل کیا۔</string>
     <string name="gap_incorrect">آئیے اسے مل کر سیکھیں۔ درست جواب: %1$s</string>
     <string name="gap_next">اگلا جملہ</string>

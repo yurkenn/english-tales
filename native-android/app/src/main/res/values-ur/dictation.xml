@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="dictation_mode">سنو اور لکھو</string>
-    <string name="dictation_subtitle">کہانی کے جملے کو سنتے ہی لکھیں۔</string>
-    <string name="dictation_instruction">وہ جملہ لکھیں جو آپ سنتے ہیں۔</string>
+    <string name="dictation_subtitle">کہانی کے جملے کو سنتے ہی لکھیں</string>
+    <string name="dictation_instruction">وہ جملہ لکھیں جو آپ سنتے ہیں</string>
     <string name="dictation_field">جملہ</string>
-    <string name="dictation_play">جملہ سنیں۔</string>
+    <string name="dictation_play">جملہ سنیں</string>
     <string name="dictation_correct">درست! %1$s</string>
     <plurals name="dictation_incorrect">
         <item quantity="one">مختلف الفاظ کی تعداد: %1$d۔ درست جملہ: %2$s</item>

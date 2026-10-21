@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="reading_minutes">~%1$d ขั้นต่ำ</string>
+    <string name="reading_minutes">~%1$d นาที</string>
     <plurals name="reading_minutes_description">
         <item quantity="other">เวลาอ่านโดยประมาณเป็นนาที: %1$d</item>
     </plurals>

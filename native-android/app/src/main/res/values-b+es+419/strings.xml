@@ -198,7 +198,7 @@
     <string name="bildirim_ayarlarini_ac">Abrir configuración de notificaciones</string>
     <string name="tekrar_dene">Intentar otra vez</string>
     <string name="kelime_hata">Palabras %1$s · Errores %2$s</string>
-    <string name="kelimeleri_eslestirin">une las palabras</string>
+    <string name="kelimeleri_eslestirin">Une las palabras</string>
     <string name="merhaba_ben_senin_okuma_arkadasinim">¡Hola! Soy tu compañero de lectura. Bienvenido a Yurken Stories.</string>
     <string name="okuma_rehberi">guía de lectura</string>
     <string name="birlikte_hikayeler_okuyup_yeni_kelimeler">Leeremos cuentos juntos y aprenderemos nuevas palabras. ¿Empezamos?</string>
@@ -223,7 +223,7 @@
     <string name="kelimeleri_tani_ve_dinle">Reconocer y escuchar palabras.</string>
     <string name="bir_ceviri_sec">Elige una traducción</string>
     <string name="dogru_anlami_bul">Encuentra el significado correcto.</string>
-    <string name="kelimeleri_eslestir">une las palabras</string>
+    <string name="kelimeleri_eslestir">Une las palabras</string>
     <string name="ingilizce_ve_turkce_ciftleri_bul">Relaciona palabras en inglés con sus significados.</string>
     <string name="kelimeyi_olustur">construir la palabra</string>
     <string name="harfleri_dogru_siraya_koy">Pon las letras en el orden correcto.</string>
@@ -234,7 +234,7 @@
     <string name="her_denemede_ogreniyoruz">Cada intento nos enseña algo.</string>
     <string name="anladim_devam_et">Entendido, continúa</string>
     <string name="harika_puan_kazandin">⭐ ¡Genial! ¡Has ganado puntos %1$s!</string>
-    <string name="calisma_tamamlandi">Practica completa</string>
+    <string name="calisma_tamamlandi">Práctica completa</string>
     <string name="gunluk_hedefin_tamamlandi">Tu objetivo diario está completo ✓</string>
     <string name="bugunku_hedef_adim">Objetivo de hoy: pasos %1$s / %2$s</string>
     <string name="yeniden_calis">Practica de nuevo</string>
