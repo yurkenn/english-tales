@@ -16,7 +16,10 @@ enum class ReadingSpacing(@StringRes val label: Int,val multiplier: Float) {
 /** The reader's page colours, like a book app's themes: white paper, warm sepia paper, or a soft dark page. */
 enum class ReadingTheme(@StringRes val label: Int) { LIGHT(R.string.acik), SEPIA(R.string.reader_theme_sepia), DARK(R.string.koyu) }
 
-data class ReadingPreferences(val theme: ReadingTheme=ReadingTheme.LIGHT,val fontSize: Int=17,
+/** Large enough that a page of short sentences reads like a book page, not a list squeezed into its top half. */
+const val DEFAULT_READING_FONT_SIZE=20
+
+data class ReadingPreferences(val theme: ReadingTheme=ReadingTheme.LIGHT,val fontSize: Int=DEFAULT_READING_FONT_SIZE,
     val spacing: ReadingSpacing=ReadingSpacing.COMFORTABLE) {
     val dark get()=theme==ReadingTheme.DARK
 }
@@ -28,7 +31,7 @@ class ReadingPreferencesStore(context: Context,name: String="reading_appearance"
         // Older installs saved only a light/dark switch; it still decides the theme until a theme is chosen.
         runCatching {ReadingTheme.valueOf(prefs.getString("theme",null).orEmpty())}.getOrNull()
             ?: if(runCatching {prefs.getBoolean("dark",false)}.getOrDefault(false)) ReadingTheme.DARK else ReadingTheme.LIGHT,
-        runCatching {prefs.getInt("fontSize",17).coerceIn(14,28)}.getOrDefault(17),
+        runCatching {prefs.getInt("fontSize",DEFAULT_READING_FONT_SIZE).coerceIn(14,28)}.getOrDefault(DEFAULT_READING_FONT_SIZE),
         runCatching {ReadingSpacing.valueOf(prefs.getString("spacing",null).orEmpty())}.getOrDefault(ReadingSpacing.COMFORTABLE))
 
     suspend fun update(change: (ReadingPreferences)->ReadingPreferences): ReadingPreferences = lock.withLock {
