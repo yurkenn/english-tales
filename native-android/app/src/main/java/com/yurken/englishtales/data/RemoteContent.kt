@@ -187,6 +187,8 @@ class ContentRepository(context: Context, private val http: ContentHttp?) {
                 downloaded[revision]?.let { it.copy(addedAt=remote.addedAt,tags=it.tags.ifEmpty { remote.tags }) }
                     ?: (bundled[revision] ?: bundledByStory[remote.id]?.takeIf { bundledText[revision] == fingerprint(it) })
                         ?.let { bundled -> remote.copy(sentences=bundled.sentences,coverKey=bundled.coverKey,vocabulary=null,sentenceWordIds=null,questions=bundled.questions,tags=remote.tags.ifEmpty { bundled.tags }) }
+                    // An edited bundled story keeps its bundled cover until the new revision is downloaded, instead of a blank tile.
+                    ?: bundledByStory[remote.id]?.let { remote.copy(coverKey=it.coverKey) }
                     ?: remote
             }
         }

@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">الصندوق جاهز! اضغط لفتحه.</string>
     <string name="quests_chest_opened">فُتح صندوق اليوم. مهام جديدة غدًا.</string>
     <string name="quests_reward_title">اكتملت كل المهام!</string>
-    <string name="quests_reward_text">عدد الأيام التي أنهيت فيها كل المهام: %1$d. نراك غدًا مع مهام جديدة.</string>
+    <string name="quests_reward_bonus">حصلت على %1$d نقطة إضافية من الصندوق!</string>
+    <string name="quests_reward_league">تُحتسب هذه النقاط أيضًا في دوريك الأسبوعي.</string>
+    <string name="quests_reward_guest">أنشئ حسابًا لتُحتسب نقاط الصندوق في الدوري الأسبوعي أيضًا.</string>
+    <string name="quests_chest_opening">جارٍ فتح الصندوق…</string>
+    <string name="quests_chest_syncing">ما زال تدريبك يُحفظ. المس الصندوق مرة أخرى عند الانتهاء.</string>
+    <string name="quests_chest_failed">تعذّر فتح الصندوق. تحقّق من اتصالك بالإنترنت والمس مرة أخرى.</string>
+    <string name="quests_chest_opened_points">منحك صندوق اليوم %1$d نقطة. مهام جديدة غدًا.</string>
     <string name="streak_milestone_title">سلسلة %1$d يوم!</string>
     <string name="streak_milestone_text">عدت كل يوم فكبرت الشعلة. قراءة قصيرة أو مراجعة غدًا تحافظ عليها.</string>
     <string name="reminder_streak_title">سلسلتك البالغة %1$d يوم في خطر</string>

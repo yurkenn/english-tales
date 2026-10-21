@@ -31,10 +31,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yurken.englishtales.R
+import com.yurken.englishtales.data.ChestUi
 import com.yurken.englishtales.data.DailyQuest
 import com.yurken.englishtales.data.GameRewards
 import com.yurken.englishtales.data.LearningPolicy
 import com.yurken.englishtales.data.LearningSnapshot
+import com.yurken.englishtales.data.QuestChests
 import kotlinx.coroutines.delay
 import java.util.Locale
 
@@ -53,7 +55,7 @@ class ComboState(current: Int = 0, best: Int = 0) {
 /** The running session's combo; games record each checked answer here. */
 internal val LocalCombo = staticCompositionLocalOf { ComboState() }
 
-/** Small device-local game records: today's best combo, match times and the daily chest. Scoped per learning owner. */
+/** Small device-local game records: today's best combo, match times and streak celebrations. Scoped per learning owner. */
 internal object GameRecords {
     private fun prefs(context: Context) = context.getSharedPreferences("game_records", Context.MODE_PRIVATE)
     private fun today() = LearningPolicy.dayKey(System.currentTimeMillis())
@@ -70,13 +72,6 @@ internal object GameRecords {
         prefs(context).edit().putLong("$owner:match:$pairs", millis).apply()
         return true
     }
-    fun chestOpened(context: Context, owner: String) = prefs(context).getBoolean("$owner:chest:${today()}", false)
-    fun openChest(context: Context, owner: String): Int {
-        val days = prefs(context).getInt("$owner:chest_days", 0) + 1
-        prefs(context).edit().putBoolean("$owner:chest:${today()}", true).putInt("$owner:chest_days", days).apply()
-        return days
-    }
-    fun chestDays(context: Context, owner: String) = prefs(context).getInt("$owner:chest_days", 0)
     fun seedStreak(context: Context, owner: String, streak: Int) {
         val key = "$owner:streak_celebrated"
         if (!prefs(context).contains(key)) prefs(context).edit().putInt(key, GameRewards.STREAK_MILESTONES.lastOrNull { it <= streak } ?: 0).apply()
@@ -207,19 +202,19 @@ internal fun ResultStat(value: String, label: String, modifier: Modifier = Modif
 }
 
 /**
- * Today's three quests on the home screen. When all are done the chest wiggles; a tap opens it with confetti,
- * once per day.
+ * Today's three quests on the home screen. When all are done the chest wiggles; a tap opens it once per day and
+ * shows its bonus points with confetti. [chest] is the opening in progress, from [com.yurken.englishtales.data.LeagueViewModel].
  */
 @Composable
-internal fun DailyQuestsCard(snapshot: LearningSnapshot, modifier: Modifier = Modifier) {
+internal fun DailyQuestsCard(snapshot: LearningSnapshot, chest: ChestUi, onOpenChest: () -> Unit, onDismissChest: () -> Unit, modifier: Modifier = Modifier) {
     val context = LocalContext.current
     val owner = snapshot.ownerId
-    // Re-read on every snapshot: a finished session changes the stored combo and today's counts together.
+    // Re-read on every snapshot: a finished session changes the stored combo and today's counts together, and an opened chest refreshes the snapshot.
     val combo = remember(snapshot, owner) { GameRecords.todayCombo(context, owner) }
+    val opened = remember(snapshot, owner, chest) { QuestChests.opened(context, owner, LearningPolicy.dayKey(System.currentTimeMillis())) }
     val quests = GameRewards.quests(snapshot.todaySessions, snapshot.dailyGoal, snapshot.todayReadings, combo)
     val allDone = quests.all { it.done }
-    var opened by remember(owner) { mutableStateOf(GameRecords.chestOpened(context, owner)) }
-    var reward by remember { mutableStateOf<Int?>(null) }
+    val ready = allDone && opened == null && chest != ChestUi.Opening && chest != ChestUi.Syncing
     Column(modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(18.dp)).border(1.dp, TaleLine, RoundedCornerShape(18.dp)).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -227,22 +222,36 @@ internal fun DailyQuestsCard(snapshot: LearningSnapshot, modifier: Modifier = Mo
             Text(stringResource(R.string.quest_progress, quests.count { it.done }, quests.size), color = TaleMuted, style = MaterialTheme.typography.labelLarge)
         }
         quests.forEachIndexed { i, quest -> QuestRow(quest, Modifier.appearIn(i)) }
-        val chestLabel = stringResource(when { opened -> R.string.quests_chest_opened; allDone -> R.string.quests_chest_ready; else -> R.string.quests_chest_locked })
-        Row(Modifier.fillMaxWidth().background(if (allDone && !opened) LocalTaleColors.current.tileYellow else TaleBackground, RoundedCornerShape(14.dp))
-            .then(if (allDone && !opened) Modifier.pressScale { reward = GameRecords.openChest(context, owner); opened = true } else Modifier)
-            .padding(horizontal = 12.dp, vertical = 8.dp),
+        val chestLabel = when {
+            opened != null -> stringResource(R.string.quests_chest_opened_points, opened)
+            chest == ChestUi.Opening -> stringResource(R.string.quests_chest_opening)
+            chest == ChestUi.Syncing -> stringResource(R.string.quests_chest_syncing)
+            chest == ChestUi.Failed && allDone -> stringResource(R.string.quests_chest_failed)
+            allDone -> stringResource(R.string.quests_chest_ready)
+            else -> stringResource(R.string.quests_chest_locked)
+        }
+        Row(Modifier.fillMaxWidth().background(if (ready) LocalTaleColors.current.tileYellow else TaleBackground, RoundedCornerShape(14.dp))
+            .then(if (ready) Modifier.pressScale(onClick = onOpenChest) else Modifier)
+            .padding(horizontal = 12.dp, vertical = 8.dp)
+            .semantics(mergeDescendants = true) { liveRegion = LiveRegionMode.Polite },
             verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-            QuestChest(ready = allDone && !opened, open = opened, modifier = Modifier.size(48.dp))
-            Text(chestLabel, style = MaterialTheme.typography.bodyMedium, fontWeight = if (allDone && !opened) FontWeight.SemiBold else FontWeight.Normal,
-                color = if (allDone || opened) TaleInk else TaleMuted, modifier = Modifier.weight(1f))
+            QuestChest(ready = ready, open = opened != null, modifier = Modifier.size(48.dp))
+            Text(chestLabel, style = MaterialTheme.typography.bodyMedium, fontWeight = if (ready) FontWeight.SemiBold else FontWeight.Normal,
+                color = if (allDone || opened != null) TaleInk else TaleMuted, modifier = Modifier.weight(1f))
         }
     }
-    reward?.let { days ->
-        TaleDialog(stringResource(R.string.quests_reward_title), stringResource(R.string.quests_reward_text, days), stringResource(R.string.anladim),
-            onConfirm = { reward = null }, onDismissRequest = { reward = null }) {
-            Box(Modifier.fillMaxWidth().height(150.dp), contentAlignment = Alignment.Center) {
-                QuestChest(ready = false, open = true, modifier = Modifier.size(120.dp).appearIn(0))
-                ConfettiBurst(Modifier.matchParentSize(), "chest$days")
+    (chest as? ChestUi.Opened)?.let { reward ->
+        val text = stringResource(R.string.quests_reward_bonus, reward.points) + "\n" +
+            stringResource(if (reward.league) R.string.quests_reward_league else R.string.quests_reward_guest)
+        TaleDialog(stringResource(R.string.quests_reward_title), text, stringResource(R.string.anladim),
+            onConfirm = onDismissChest, onDismissRequest = onDismissChest) {
+            Box(Modifier.fillMaxWidth().height(190.dp), contentAlignment = Alignment.Center) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    QuestChest(ready = false, open = true, modifier = Modifier.size(120.dp).appearIn(0))
+                    AnimatedCounter(reward.points, style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.ExtraBold),
+                        color = LocalTaleColors.current.purple, prefix = "+")
+                }
+                ConfettiBurst(Modifier.matchParentSize(), "chest${reward.points}", pieces = if (reward.points >= 50) 120 else 70)
             }
         }
     }

@@ -102,6 +102,8 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         db.rawQuery("SELECT points,streak,completed_lessons,last_study_day FROM learning_stats WHERE id=1",null).use { c ->
             if(c.moveToFirst()) {points=c.getInt(0);lessons=c.getInt(2);streak=LearningPolicy.visibleStreak(c.getInt(1),c.getString(3),today,LearningPolicy.previousDay(now))}
         }
+        // Quest chest bonuses live outside the session totals, which the account sync rebuilds from sessions alone.
+        points+=QuestChests.total(context,owner.id)
         // Freezes are derived from the full day history, which the account sync also rebuilds; a legacy store that only kept the counter keeps its streak.
         val studied=mutableSetOf<String>()
         db.rawQuery("SELECT day FROM learning_days WHERE sessions>0",null).use {c -> while(c.moveToNext()) studied+=c.getString(0)}

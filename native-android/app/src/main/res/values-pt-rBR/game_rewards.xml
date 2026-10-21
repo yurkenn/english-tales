@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">O baú está pronto! Toque para abrir.</string>
     <string name="quests_chest_opened">O baú de hoje foi aberto. Amanhã tem missões novas.</string>
     <string name="quests_reward_title">Todas as missões concluídas!</string>
-    <string name="quests_reward_text">Dias com todas as missões concluídas: %1$d. Até amanhã, com missões novas.</string>
+    <string name="quests_reward_bonus">O baú te deu %1$d pontos extras!</string>
+    <string name="quests_reward_league">Esses pontos também contam na sua liga semanal.</string>
+    <string name="quests_reward_guest">Crie uma conta e os pontos do baú também contam na liga semanal.</string>
+    <string name="quests_chest_opening">Abrindo o baú…</string>
+    <string name="quests_chest_syncing">Sua prática ainda está sendo salva. Toque no baú de novo quando terminar.</string>
+    <string name="quests_chest_failed">Não foi possível abrir o baú. Verifique sua internet e toque de novo.</string>
+    <string name="quests_chest_opened_points">O baú de hoje deu %1$d pontos. Amanhã chegam novas missões.</string>
     <string name="streak_milestone_title">Sequência de %1$d dias!</string>
     <string name="streak_milestone_text">Você voltou todos os dias e a chama cresceu. Amanhã, uma leitura ou revisão curta mantém a sequência.</string>
     <string name="reminder_streak_title">Sua sequência de %1$d dias está em risco</string>

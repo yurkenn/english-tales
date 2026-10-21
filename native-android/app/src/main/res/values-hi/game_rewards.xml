@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">संदूक तैयार है! खोलने के लिए टैप करें।</string>
     <string name="quests_chest_opened">आज का संदूक खुल गया। कल नए मिशन आएँगे।</string>
     <string name="quests_reward_title">सारे मिशन पूरे!</string>
-    <string name="quests_reward_text">जिन दिनों आपने सारे मिशन पूरे किए: %1$d। कल नए मिशन के साथ मिलते हैं।</string>
+    <string name="quests_reward_bonus">संदूक से आपको %1$d बोनस अंक मिले!</string>
+    <string name="quests_reward_league">ये अंक आपकी साप्ताहिक लीग में भी गिने जाते हैं।</string>
+    <string name="quests_reward_guest">खाता बनाएँ, तो संदूक के अंक साप्ताहिक लीग में भी गिने जाएँगे।</string>
+    <string name="quests_chest_opening">संदूक खुल रहा है…</string>
+    <string name="quests_chest_syncing">आपका अभ्यास अभी सहेजा जा रहा है। पूरा होने पर संदूक को फिर से छुएँ।</string>
+    <string name="quests_chest_failed">संदूक नहीं खुल सका। इंटरनेट कनेक्शन जाँचें और फिर से छुएँ।</string>
+    <string name="quests_chest_opened_points">आज के संदूक से %1$d अंक मिले। कल नए काम आएँगे।</string>
     <string name="streak_milestone_title">%1$d दिन की लड़ी!</string>
     <string name="streak_milestone_text">आप हर दिन लौटे और लौ बढ़ती गई। कल थोड़ा पढ़ना या दोहराना इसे जारी रखेगा।</string>
     <string name="reminder_streak_title">आपकी %1$d दिन की लड़ी ख़तरे में है</string>

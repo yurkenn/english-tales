@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">Peti siap! Ketuk untuk membuka.</string>
     <string name="quests_chest_opened">Peti hari ini sudah dibuka. Besok ada misi baru.</string>
     <string name="quests_reward_title">Semua misi selesai!</string>
-    <string name="quests_reward_text">Hari kamu menyelesaikan semua misi: %1$d. Sampai besok dengan misi baru.</string>
+    <string name="quests_reward_bonus">Kamu mendapat %1$d poin bonus dari peti!</string>
+    <string name="quests_reward_league">Poin ini juga dihitung di liga mingguanmu.</string>
+    <string name="quests_reward_guest">Buat akun agar poin peti juga dihitung di liga mingguan.</string>
+    <string name="quests_chest_opening">Membuka peti…</string>
+    <string name="quests_chest_syncing">Latihanmu masih disimpan. Ketuk peti lagi setelah selesai.</string>
+    <string name="quests_chest_failed">Peti tidak bisa dibuka. Periksa koneksi internet lalu ketuk lagi.</string>
+    <string name="quests_chest_opened_points">Peti hari ini memberi %1$d poin. Misi baru datang besok.</string>
     <string name="streak_milestone_title">Runtunan %1$d hari!</string>
     <string name="streak_milestone_text">Kamu kembali setiap hari dan apinya makin besar. Besok, bacaan atau ulasan singkat menjaganya tetap menyala.</string>
     <string name="reminder_streak_title">Runtunan %1$d harimu terancam</string>

@@ -22,7 +22,13 @@
     <string name="quests_chest_ready">¡El cofre está listo! Toca para abrirlo.</string>
     <string name="quests_chest_opened">El cofre de hoy ya está abierto. Mañana hay misiones nuevas.</string>
     <string name="quests_reward_title">¡Todas las misiones completas!</string>
-    <string name="quests_reward_text">Días con todas las misiones completas: %1$d. Nos vemos mañana con misiones nuevas.</string>
+    <string name="quests_reward_bonus">¡El cofre te dio %1$d puntos extra!</string>
+    <string name="quests_reward_league">Estos puntos también cuentan en tu liga semanal.</string>
+    <string name="quests_reward_guest">Crea una cuenta y los puntos del cofre también contarán en la liga semanal.</string>
+    <string name="quests_chest_opening">Abriendo el cofre…</string>
+    <string name="quests_chest_syncing">Tu práctica todavía se está guardando. Toca el cofre otra vez cuando termine.</string>
+    <string name="quests_chest_failed">No se pudo abrir el cofre. Revisa tu conexión a internet y vuelve a tocar.</string>
+    <string name="quests_chest_opened_points">El cofre de hoy te dio %1$d puntos. Mañana habrá nuevas misiones.</string>
     <string name="streak_milestone_title">¡Racha de %1$d días!</string>
     <string name="streak_milestone_text">Volviste cada día y la llama creció. Mañana, una lectura o un repaso corto la mantiene viva.</string>
     <string name="reminder_streak_title">Tu racha de %1$d días está en peligro</string>
