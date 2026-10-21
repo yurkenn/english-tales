@@ -307,6 +307,7 @@ fun StoryDetailScreen(story: Story, progress: Int, onBack: () -> Unit, onRead: (
             Text(story.description,modifier=Modifier.padding(horizontal=24.dp,vertical=26.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
             content?.let { ContentDownloadAction(it,story) }
             Text(stringResource(R.string.seviyesinde_hikayesi_cumleleri_cevirerek_oku, story.level, genreLabel(story.genre)),modifier=Modifier.padding(horizontal=24.dp),fontSize=14.sp,lineHeight=22.sp,color=TaleMuted)
+            StoryWordsPreview(story)
         }
         TalesBottomBar(1,onTabSelected)
     }
@@ -320,7 +321,26 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             ReferenceIconButton("settings",stringResource(R.string.ayarlar),onSettings)
         }
         Column(Modifier.fillMaxWidth(),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(7.dp)) {
-            Box(Modifier.size(72.dp).appearIn(0).background(TaleMint,CircleShape).border(3.dp,TaleSurface,CircleShape),contentAlignment=Alignment.Center) { ReferenceIcon("profile",TaleBlue,Modifier.size(38.dp)) }
+            // The picked mascot avatar, or the plain profile icon until one is chosen; tapping opens the picker.
+            val context=LocalContext.current
+            var avatar by remember(snapshot.ownerId) { mutableStateOf(AvatarChoice.get(context,snapshot.ownerId)) }
+            var picking by rememberSaveable { mutableStateOf(false) }
+            Box(Modifier.size(88.dp).appearIn(0).background(TaleMint,CircleShape).border(3.dp,TaleSurface,CircleShape).clip(CircleShape)
+                .pressScale { picking=true }.contentLabel(stringResource(R.string.avatar_change)),contentAlignment=Alignment.Center) {
+                avatar?.let { TaleArt(AvatarChoice.all[it],Modifier.fillMaxSize().padding(6.dp)) } ?: ReferenceIcon("profile",TaleBlue,Modifier.size(42.dp))
+            }
+            if(picking) TaleDialog(stringResource(R.string.avatar_choose),null,stringResource(R.string.reward_continue),onConfirm={picking=false},onDismissRequest={picking=false}) {
+                FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(10.dp,Alignment.CenterHorizontally),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=4) {
+                    AvatarChoice.all.forEachIndexed {i,art ->
+                        val chosen=avatar==i
+                        Box(Modifier.size(64.dp).appearIn(i).background(if(chosen) LocalTaleColors.current.tileBlue else TaleBackground,CircleShape)
+                            .border(if(chosen) 3.dp else 1.dp,if(chosen) TaleBlue else TaleLine,CircleShape).clip(CircleShape)
+                            .selectable(chosen,role=androidx.compose.ui.semantics.Role.RadioButton) {avatar=i;AvatarChoice.set(context,snapshot.ownerId,i)},contentAlignment=Alignment.Center) {
+                            TaleArt(art,Modifier.fillMaxSize().padding(5.dp).then(if(chosen) Modifier.popOn(i+1) else Modifier))
+                        }
+                    }
+                }
+            }
             Text(snapshot.displayName,fontWeight=FontWeight.Bold,fontSize=16.sp)
             Text(stringResource(R.string.seviyesi, snapshot.level, snapshot.preferredGenre),color=TaleBlue,fontSize=12.sp)
         }
@@ -444,4 +464,29 @@ internal fun ReadingMinutes(story: Story, modifier: Modifier = Modifier) {
     val description=pluralStringResource(R.plurals.reading_minutes_description,minutes,minutes)
     Text(stringResource(R.string.reading_minutes,minutes),color=TaleMuted,fontSize=11.sp,
         modifier=modifier.semantics {contentDescription=description})
+}
+
+/** A few dictionary words the story uses, with their meaning, so the page shows what the reader will learn. */
+@Composable
+private fun StoryWordsPreview(story: Story) {
+    val words=remember(story.revisionId) {
+        val text=story.sentences.joinToString(" ") {it.english}.lowercase()
+        LearningContent.words.filter {w -> w.word.length>2 && Regex("\\b"+Regex.escape(w.word.lowercase())+"\\b").containsMatchIn(text)}.take(8)
+    }
+    if(words.isEmpty()) return
+    Column(Modifier.fillMaxWidth().padding(horizontal=24.dp,vertical=24.dp).background(TaleSurface,RoundedCornerShape(20.dp)).border(1.dp,TaleLine,RoundedCornerShape(20.dp)).padding(16.dp),
+        verticalArrangement=Arrangement.spacedBy(12.dp)) {
+        Row(verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
+            Text(stringResource(R.string.story_words_title),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+            TaleArt(R.drawable.mascot_reading,Modifier.size(56.dp))
+        }
+        FlowRow(horizontalArrangement=Arrangement.spacedBy(8.dp),verticalArrangement=Arrangement.spacedBy(8.dp)) {
+            words.forEachIndexed {i,w ->
+                Row(Modifier.appearIn(i).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(12.dp)).padding(horizontal=10.dp,vertical=6.dp),horizontalArrangement=Arrangement.spacedBy(6.dp)) {
+                    Text(w.word,fontSize=13.sp,fontWeight=FontWeight.Bold,color=TaleInk)
+                    Text(w.translation,fontSize=13.sp,color=TaleMuted)
+                }
+            }
+        }
+    }
 }

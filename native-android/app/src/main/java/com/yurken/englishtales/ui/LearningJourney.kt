@@ -144,9 +144,7 @@ fun EarnedBadges(snapshot: LearningSnapshot) {
     Column(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
         Text(stringResource(R.string.basarilarin),fontSize=17.sp,fontWeight=FontWeight.Bold)
         labels.entries.forEachIndexed {i,(id,label) -> Row(Modifier.fillMaxWidth().appearIn(i).background(if(id in snapshot.badges) LocalTaleColors.current.tileYellow else TaleLine.copy(alpha=0.6f),RoundedCornerShape(14.dp)).padding(12.dp),verticalAlignment=Alignment.CenterVertically) {
-            Box(Modifier.size(36.dp).background(if(id in snapshot.badges) TaleYellow else TaleSurface,androidx.compose.foundation.shape.CircleShape),contentAlignment=Alignment.Center) {
-                ReferenceIcon("star",if(id in snapshot.badges) TaleGold else TaleLine,Modifier.size(20.dp).then(if(id in snapshot.badges) Modifier.popOn(1) else Modifier))
-            }
+            TaleArt(badgeArt(id),Modifier.size(52.dp).then(if(id in snapshot.badges) Modifier.popOn(1) else Modifier),locked=id !in snapshot.badges)
             Text(label,fontSize=14.sp,modifier=Modifier.weight(1f).padding(start=12.dp))
             Text(if(id in snapshot.badges) stringResource(R.string.kazanildi) else stringResource(R.string.sirada),color=TaleMuted,fontSize=11.sp)
         } }

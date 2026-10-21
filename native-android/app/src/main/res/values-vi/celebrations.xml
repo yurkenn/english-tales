@@ -6,4 +6,7 @@
     <string name="freeze_gift_text">Bạn nhận được một lá chắn chuỗi. Nếu lỡ một ngày, chuỗi của bạn vẫn an toàn.</string>
     <string name="freeze_gift_claim">Nhận thưởng</string>
     <string name="game_play">Chơi</string>
+    <string name="avatar_choose">Chọn ảnh đại diện</string>
+    <string name="avatar_change">Đổi ảnh đại diện</string>
+    <string name="story_words_title">Từ vựng trong truyện này</string>
 </resources>

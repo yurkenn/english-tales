@@ -275,33 +275,19 @@ private fun QuestRow(quest: DailyQuest, modifier: Modifier = Modifier) {
     }
 }
 
-/** A drawn treasure chest: wiggles while a reward waits, and its lid swings open once claimed. */
+/** The treasure chest: wiggles while a reward waits, pops open with a glow once claimed, and stays grey while locked. */
 @Composable
 private fun QuestChest(ready: Boolean, open: Boolean, modifier: Modifier = Modifier) {
     val still = reduceMotion()
     val wiggle = if (ready && !still) rememberInfiniteTransition(label = "chest")
         .animateFloat(-7f, 7f, infiniteRepeatable(tween(180, easing = LinearEasing), RepeatMode.Reverse), label = "chestWiggle")
         else rememberUpdatedState(0f)
-    val lid by animateFloatAsState(if (open) 1f else 0f, spring(dampingRatio = 0.5f, stiffness = Spring.StiffnessLow), label = "lid")
-    val wood = Color(0xFFB86B2B); val dark = Color(0xFF7A4318); val gold = TaleYellow
-    val active = ready || open
-    Canvas(modifier.graphicsLayer { rotationZ = wiggle.value }) {
-        val w = size.width; val h = size.height
-        // A locked chest is the same chest, faded, so it still reads as a reward to work towards.
-        val fade = if (active) 1f else 0.38f
-        val body = wood.copy(alpha = fade)
-        val trim = gold.copy(alpha = if (active) 1f else 0.5f)
-        val bodyTop = h * 0.45f
-        // The glow behind an open chest.
-        if (open) drawCircle(gold.copy(alpha = 0.35f), radius = w * 0.42f, center = Offset(w / 2f, bodyTop))
-        drawRoundRect(body, Offset(w * 0.1f, bodyTop), Size(w * 0.8f, h * 0.45f), CornerRadius(w * 0.06f))
-        drawRect(dark.copy(alpha = fade), Offset(w * 0.1f, bodyTop + h * 0.12f), Size(w * 0.8f, h * 0.05f))
-        drawRect(trim, Offset(w * 0.44f, bodyTop + h * 0.04f), Size(w * 0.12f, h * 0.16f))
-        // The lid hinges at its back edge.
-        rotate(-lid * 35f, Offset(w * 0.1f, bodyTop)) {
-            drawRoundRect(wood.copy(red = (wood.red * 1.1f).coerceAtMost(1f), alpha = fade), Offset(w * 0.08f, h * 0.24f), Size(w * 0.84f, h * 0.23f), CornerRadius(w * 0.1f))
-            drawRect(trim, Offset(w * 0.08f, h * 0.38f), Size(w * 0.84f, h * 0.04f))
-        }
+    val pop by animateFloatAsState(if (open) 1f else 0f, spring(dampingRatio = 0.45f, stiffness = Spring.StiffnessLow), label = "chestPop")
+    Box(modifier.graphicsLayer { rotationZ = wiggle.value }, contentAlignment = Alignment.Center) {
+        if (open) Box(Modifier.fillMaxSize().graphicsLayer { scaleX = 0.6f + pop * 0.5f; scaleY = 0.6f + pop * 0.5f; alpha = pop }
+            .background(TaleYellow.copy(alpha = 0.35f), CircleShape))
+        TaleArt(if (open) R.drawable.chest_open else R.drawable.chest_closed,
+            Modifier.fillMaxSize().graphicsLayer { val s = if (open) 0.85f + pop * 0.15f else 1f; scaleX = s; scaleY = s }, locked = !ready && !open)
     }
 }
 

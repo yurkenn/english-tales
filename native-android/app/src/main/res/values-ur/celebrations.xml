@@ -6,4 +6,7 @@
     <string name="freeze_gift_text">آپ نے سلسلے کی حفاظت جیت لی۔ اگر ایک دن رہ جائے تو بھی آپ کا سلسلہ محفوظ رہے گا۔</string>
     <string name="freeze_gift_claim">انعام لیں</string>
     <string name="game_play">کھیلیں</string>
+    <string name="avatar_choose">اپنا اوتار چنیں</string>
+    <string name="avatar_change">اوتار بدلیں</string>
+    <string name="story_words_title">اس کہانی کے الفاظ</string>
 </resources>

@@ -6,4 +6,7 @@
     <string name="freeze_gift_text">Bir seri koruması kazandın. Bir günü kaçırırsan serin bozulmaz.</string>
     <string name="freeze_gift_claim">Ödülü al</string>
     <string name="game_play">Oyna</string>
+    <string name="avatar_choose">Avatarını seç</string>
+    <string name="avatar_change">Avatarı değiştir</string>
+    <string name="story_words_title">Bu hikâyedeki kelimeler</string>
 </resources>
