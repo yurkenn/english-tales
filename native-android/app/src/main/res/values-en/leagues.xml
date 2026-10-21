@@ -50,4 +50,25 @@
     <string name="league_nickname_text">Everyone shows as \"Okuyucu\" for now. You don\'t need your real name, a nickname is fine.</string>
     <string name="league_nickname_field">Nickname</string>
     <string name="league_nickname_save">Save</string>
+    <string name="league_tab_league">League</string>
+    <string name="friends_tab">Friends</string>
+    <string name="friends_failed">Couldn\'t load your friends.</string>
+    <string name="friends_code_title">Your invite code</string>
+    <string name="friends_code_text">Share your code; once a friend adds it, you compete on this week\'s XP together.</string>
+    <string name="friends_code_create">Create invite code</string>
+    <string name="friends_share">Share</string>
+    <string name="friends_share_text">Race me on English Tales! Get the app and enter code %1$s in the Friends tab: %2$s</string>
+    <string name="friends_add_field">Friend\'s code</string>
+    <string name="friends_add">Add</string>
+    <string name="friends_error_unknown">No reader has this code.</string>
+    <string name="friends_error_self">That\'s your own code.</string>
+    <string name="friends_error_limit">The friend limit (50) is reached.</string>
+    <string name="friends_error_generic">Couldn\'t connect, try again.</string>
+    <string name="friends_empty">No friends yet. Share your code or add a friend\'s code.</string>
+    <string name="friends_week_note">Ranked by this week\'s league XP, reset every Monday.</string>
+    <string name="report_name_title">Report name</string>
+    <string name="report_name_text">Is the name \"%1$s\" inappropriate? Once you report it, you won\'t see it again.</string>
+    <string name="report_name_confirm">Report</string>
+    <string name="report_name_action">Report name</string>
+    <string name="friends_remove">Remove friend</string>
 </resources>

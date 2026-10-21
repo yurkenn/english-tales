@@ -50,4 +50,25 @@
     <string name="league_nickname_text">Por enquanto todos aparecem como \"Okuyucu\". Não precisa do nome real, um apelido basta.</string>
     <string name="league_nickname_field">Apelido</string>
     <string name="league_nickname_save">Salvar</string>
+    <string name="league_tab_league">Liga</string>
+    <string name="friends_tab">Amigos</string>
+    <string name="friends_failed">Não foi possível carregar seus amigos.</string>
+    <string name="friends_code_title">Seu código de convite</string>
+    <string name="friends_code_text">Compartilhe seu código; quando um amigo adicionar, vocês competem no XP desta semana.</string>
+    <string name="friends_code_create">Criar código</string>
+    <string name="friends_share">Compartilhar</string>
+    <string name="friends_share_text">Dispute comigo no English Tales! Baixe o app e digite o código %1$s na aba Amigos: %2$s</string>
+    <string name="friends_add_field">Código do amigo</string>
+    <string name="friends_add">Adicionar</string>
+    <string name="friends_error_unknown">Nenhum leitor tem este código.</string>
+    <string name="friends_error_self">Esse é o seu próprio código.</string>
+    <string name="friends_error_limit">O limite de amigos (50) foi atingido.</string>
+    <string name="friends_error_generic">Sem conexão, tente de novo.</string>
+    <string name="friends_empty">Você ainda não tem amigos. Compartilhe seu código ou adicione o de um amigo.</string>
+    <string name="friends_week_note">Classificação pelo XP de liga desta semana, zera toda segunda.</string>
+    <string name="report_name_title">Denunciar nome</string>
+    <string name="report_name_text">O nome \"%1$s\" é impróprio? Depois de denunciar, você não o verá mais.</string>
+    <string name="report_name_confirm">Denunciar</string>
+    <string name="report_name_action">Denunciar nome</string>
+    <string name="friends_remove">Remover amigo</string>
 </resources>

@@ -50,4 +50,25 @@
     <string name="league_nickname_text">Пока все отображаются как «Okuyucu». Настоящее имя не нужно, подойдёт псевдоним.</string>
     <string name="league_nickname_field">Псевдоним</string>
     <string name="league_nickname_save">Сохранить</string>
+    <string name="league_tab_league">Лига</string>
+    <string name="friends_tab">Друзья</string>
+    <string name="friends_failed">Не удалось загрузить друзей.</string>
+    <string name="friends_code_title">Ваш код приглашения</string>
+    <string name="friends_code_text">Поделитесь кодом: когда друг его добавит, вы будете соревноваться по XP этой недели.</string>
+    <string name="friends_code_create">Создать код</string>
+    <string name="friends_share">Поделиться</string>
+    <string name="friends_share_text">Соревнуйся со мной в English Tales! Установи приложение и введи код %1$s во вкладке «Друзья»: %2$s</string>
+    <string name="friends_add_field">Код друга</string>
+    <string name="friends_add">Добавить</string>
+    <string name="friends_error_unknown">Нет читателя с таким кодом.</string>
+    <string name="friends_error_self">Это ваш собственный код.</string>
+    <string name="friends_error_limit">Достигнут лимит друзей (50).</string>
+    <string name="friends_error_generic">Нет соединения, попробуйте ещё раз.</string>
+    <string name="friends_empty">Друзей пока нет. Поделитесь кодом или добавьте код друга.</string>
+    <string name="friends_week_note">Рейтинг по XP лиги за эту неделю, сбрасывается каждый понедельник.</string>
+    <string name="report_name_title">Пожаловаться на имя</string>
+    <string name="report_name_text">Имя «%1$s» неуместно? После жалобы вы его больше не увидите.</string>
+    <string name="report_name_confirm">Пожаловаться</string>
+    <string name="report_name_action">Пожаловаться на имя</string>
+    <string name="friends_remove">Удалить из друзей</string>
 </resources>

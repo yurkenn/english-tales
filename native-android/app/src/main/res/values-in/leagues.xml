@@ -50,4 +50,25 @@
     <string name="league_nickname_text">Untuk sekarang semua tampil sebagai \"Okuyucu\". Tidak perlu nama asli, nama panggilan cukup.</string>
     <string name="league_nickname_field">Nama panggilan</string>
     <string name="league_nickname_save">Simpan</string>
+    <string name="league_tab_league">Liga</string>
+    <string name="friends_tab">Teman</string>
+    <string name="friends_failed">Daftar teman tidak dapat dimuat.</string>
+    <string name="friends_code_title">Kode undanganmu</string>
+    <string name="friends_code_text">Bagikan kodemu; setelah teman menambahkannya, kalian bersaing dengan XP minggu ini.</string>
+    <string name="friends_code_create">Buat kode undangan</string>
+    <string name="friends_share">Bagikan</string>
+    <string name="friends_share_text">Ayo bersaing denganku di English Tales! Unduh aplikasinya dan masukkan kode %1$s di tab Teman: %2$s</string>
+    <string name="friends_add_field">Kode teman</string>
+    <string name="friends_add">Tambah</string>
+    <string name="friends_error_unknown">Tidak ada pembaca dengan kode ini.</string>
+    <string name="friends_error_self">Itu kodemu sendiri.</string>
+    <string name="friends_error_limit">Batas teman (50) tercapai.</string>
+    <string name="friends_error_generic">Tidak dapat terhubung, coba lagi.</string>
+    <string name="friends_empty">Belum ada teman. Bagikan kodemu atau tambahkan kode teman.</string>
+    <string name="friends_week_note">Peringkat berdasarkan XP liga minggu ini, diatur ulang setiap Senin.</string>
+    <string name="report_name_title">Laporkan nama</string>
+    <string name="report_name_text">Apakah nama \"%1$s\" tidak pantas? Setelah dilaporkan, kamu tidak akan melihatnya lagi.</string>
+    <string name="report_name_confirm">Laporkan</string>
+    <string name="report_name_action">Laporkan nama</string>
+    <string name="friends_remove">Hapus teman</string>
 </resources>

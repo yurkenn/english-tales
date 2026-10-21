@@ -65,6 +65,7 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     // Weekly league: refreshed on account change, on return to the app and when an upload finishes, since XP is counted on the server.
     val leagues: LeagueViewModel=viewModel()
     val leagueState by leagues.state.collectAsState()
+    val friendState by leagues.friends.collectAsState()
     LaunchedEffect(account.userId,account.sync.running) {if(!account.sync.running) leagues.refresh(account.userId)}
     DisposableEffect(lifecycle) {
         val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> when(event) {
@@ -215,7 +216,9 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             })}
             composable("league") {LeagueScreen(leagueState,snapshot.displayName,onBack={nav.popBackStack()},onRefresh={leagues.refresh(account.userId)},
                 onOptOut={leagues.setOptedOut(account.userId,it)},onSettings={nav.navigate("settings")},
-                onSaveName={name -> viewModel.updatePreferences(snapshot.level,snapshot.preferredGenre,snapshot.dailyGoal,name)})}
+                onSaveName={name -> viewModel.updatePreferences(snapshot.level,snapshot.preferredGenre,snapshot.dailyGoal,name)},
+                friends=friendState,friendActions=FriendActions({leagues.refreshFriends(account.userId)},{leagues.createCode(account.userId)},
+                    {leagues.addFriend(account.userId,it)},{leagues.removeFriend(account.userId,it)},{leagues.reportName(account.userId,it)}))}
             composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord,onBrowse={selectedTab=1;nav.popBackStack("main",false)}) }
         }
     }

@@ -50,4 +50,25 @@
     <string name="league_nickname_text">अभी सब \"Okuyucu\" दिखते हैं। असली नाम ज़रूरी नहीं, उपनाम काफ़ी है।</string>
     <string name="league_nickname_field">उपनाम</string>
     <string name="league_nickname_save">सहेजें</string>
+    <string name="league_tab_league">लीग</string>
+    <string name="friends_tab">दोस्त</string>
+    <string name="friends_failed">दोस्तों की सूची लोड नहीं हो सकी।</string>
+    <string name="friends_code_title">आपका आमंत्रण कोड</string>
+    <string name="friends_code_text">अपना कोड शेयर करें; दोस्त के जोड़ते ही आप इस हफ़्ते के XP में साथ मुकाबला करेंगे।</string>
+    <string name="friends_code_create">आमंत्रण कोड बनाएँ</string>
+    <string name="friends_share">शेयर करें</string>
+    <string name="friends_share_text">English Tales पर मुझसे मुकाबला करो! ऐप डाउनलोड करो और दोस्त टैब में कोड %1$s डालो: %2$s</string>
+    <string name="friends_add_field">दोस्त का कोड</string>
+    <string name="friends_add">जोड़ें</string>
+    <string name="friends_error_unknown">इस कोड वाला कोई पाठक नहीं मिला।</string>
+    <string name="friends_error_self">यह आपका अपना कोड है।</string>
+    <string name="friends_error_limit">दोस्तों की सीमा (50) पूरी हो गई।</string>
+    <string name="friends_error_generic">कनेक्ट नहीं हो सका, फिर से कोशिश करें।</string>
+    <string name="friends_empty">अभी कोई दोस्त नहीं है। अपना कोड शेयर करें या किसी दोस्त का कोड जोड़ें।</string>
+    <string name="friends_week_note">रैंकिंग इस हफ़्ते के लीग XP पर है, हर सोमवार रीसेट होती है।</string>
+    <string name="report_name_title">नाम की रिपोर्ट करें</string>
+    <string name="report_name_text">क्या \"%1$s\" नाम अनुचित है? रिपोर्ट करने के बाद यह नाम आपको नहीं दिखेगा।</string>
+    <string name="report_name_confirm">रिपोर्ट करें</string>
+    <string name="report_name_action">नाम की रिपोर्ट करें</string>
+    <string name="friends_remove">दोस्त हटाएँ</string>
 </resources>

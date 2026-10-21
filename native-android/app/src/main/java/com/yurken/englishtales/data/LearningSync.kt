@@ -55,7 +55,7 @@ class LearningSyncHttp(private val base: String, private val key: String) : Lear
     companion object {
         const val MAX_RESPONSE_BYTES = 4 * 1024 * 1024
         val eventRpcs = setOf("submit_learning_session", "apply_word_event", "apply_progress_event", "apply_favorite_event", "apply_lemma_event")
-        private val allowedRpcs = eventRpcs + setOf("get_learning_snapshot", "save_learning_preferences", "get_my_league", "set_league_opt_out")
+        private val allowedRpcs = eventRpcs + setOf("get_learning_snapshot", "save_learning_preferences", "get_my_league", "set_league_opt_out", "get_my_friends", "get_friend_code", "add_friend", "remove_friend", "report_name")
         internal fun decode(status: Int, text: String): JSONObject {
             val json = try {
                 val parser = JSONTokener(text)

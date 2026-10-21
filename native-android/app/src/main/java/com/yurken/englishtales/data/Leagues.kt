@@ -5,7 +5,7 @@ import org.json.JSONObject
 import java.time.Instant
 
 /** One row of the learner's weekly league group; other learners appear only by display name and XP. */
-data class LeagueMember(val rank: Int, val name: String, val xp: Int, val me: Boolean)
+data class LeagueMember(val rank: Int, val name: String, val xp: Int, val me: Boolean, val id: String = "")
 
 /** Last week's settled place, shown once the new week begins. */
 data class LeagueResult(val tier: Int, val rank: Int, val outcome: String)
@@ -31,17 +31,24 @@ data class LeagueStanding(val tier: Int, val weekStart: String, val endsAt: Long
         const val TIERS = 5
 
         fun parse(json: JSONObject): LeagueStanding {
-            val members = json.getJSONArray("members").let { rows -> (0 until rows.length()).map { i ->
-                val row = rows.getJSONObject(i)
-                LeagueMember(row.getInt("rank"), row.getString("name").take(30), row.getInt("xp").coerceAtLeast(0), row.getBoolean("me"))
-            } }
-            require(members.size <= 30 && members.withIndex().all { (i, m) -> m.rank == i + 1 } && members.count { it.me } <= 1)
+            val members = members(json.getJSONArray("members"), 30)
             val last = json.optJSONObject("lastWeek")?.let {
                 LeagueResult(tier(it.getInt("tier")), it.getInt("rank"), it.getString("outcome").also { o -> require(o in OUTCOMES) })
             }
             return LeagueStanding(tier(json.getInt("tier")), json.getString("weekStart").also { require(it.matches(Regex("\\d{4}-\\d{2}-\\d{2}"))) }, Instant.parse(json.getString("endsAt")).toEpochMilli(),
                 json.getBoolean("joined"), json.getBoolean("optedOut"), json.getInt("promote").coerceIn(0, 5),
                 json.getInt("relegate").coerceIn(0, 5), members, last)
+        }
+
+        /** Ranked rows with an opaque per-viewer [LeagueMember.id] (absent before the friends migration). */
+        internal fun members(rows: org.json.JSONArray, max: Int): List<LeagueMember> {
+            val members = (0 until rows.length()).map { i ->
+                val row = rows.getJSONObject(i)
+                LeagueMember(row.getInt("rank"), row.getString("name").take(30), row.getInt("xp").coerceAtLeast(0), row.getBoolean("me"),
+                    row.optString("id").takeIf { it.matches(Regex("[0-9a-f]{20}")) }.orEmpty())
+            }
+            require(members.size <= max && members.withIndex().all { (i, m) -> m.rank == i + 1 } && members.count { it.me } <= 1)
+            return members
         }
 
         private val OUTCOMES = setOf("promoted", "stayed", "relegated")
@@ -51,8 +58,24 @@ data class LeagueStanding(val tier: Int, val weekStart: String, val endsAt: Long
 
 enum class LeagueZone { Promotion, Safe, Relegation }
 
-/** Reads and changes the signed-in learner's league over the learning RPC transport. */
+/** The learner and their friends ranked by this week's league XP, with the learner's invite code once created. */
+data class FriendList(val code: String?, val members: List<LeagueMember>) {
+    companion object {
+        fun parse(json: JSONObject) = FriendList(json.optString("code").takeIf { it.matches(Regex("[A-HJ-NP-Z2-9]{6}")) },
+            LeagueStanding.members(json.getJSONArray("friends"), 51))
+        /** Invite codes are typed by hand: case and spaces are forgiven, look-alike characters are not in the alphabet. */
+        fun normalizeCode(text: String) = text.uppercase().filter { it in CODE_ALPHABET }.take(6)
+        const val CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
+    }
+}
+
+/** Reads and changes the signed-in learner's league and friends over the learning RPC transport. */
 class LeagueService(private val transport: LearningSyncTransport, private val accounts: AccountService) {
+    fun friends(user: String) = FriendList.parse(transport.call("get_my_friends", JSONObject(), accounts.accessToken(user)))
+    fun createCode(user: String) = FriendList.parse(transport.call("get_friend_code", JSONObject(), accounts.accessToken(user)))
+    fun addFriend(user: String, code: String) = FriendList.parse(transport.call("add_friend", JSONObject().put("p_code", code), accounts.accessToken(user)))
+    fun removeFriend(user: String, id: String) = FriendList.parse(transport.call("remove_friend", JSONObject().put("p_member", id), accounts.accessToken(user)))
+    fun reportName(user: String, id: String) { transport.call("report_name", JSONObject().put("p_member", id), accounts.accessToken(user)) }
     fun load(user: String) = LeagueStanding.parse(transport.call("get_my_league", JSONObject(), accounts.accessToken(user)))
     fun setOptedOut(user: String, optedOut: Boolean) =
         LeagueStanding.parse(transport.call("set_league_opt_out", JSONObject().put("p_opted_out", optedOut), accounts.accessToken(user)))

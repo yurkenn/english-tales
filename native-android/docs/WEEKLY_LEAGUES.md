@@ -30,7 +30,22 @@ Kullanıcıları her gün geri getirmek için Duolingo tarzı haftalık ligler. 
 - Yeni haftanın ilk okumasında geçen haftanın sonucu bir kez gösterilir. Terfide konfeti ve paylaşma düğmesi vardır.
 - Ad hâlâ varsayılan "Okuyucu" ise lig ekranı takma ad seçtirir (2–20 karakter). Ad, ayarlar senkronuyla sunucuya gider.
 
-## Sonraki adımlar
+## Arkadaşlar ve davet kodu
 
-- Arkadaşlar ve davet kodu.
-- Ad bildirme ve uygunsuz ad filtresi (Play'in kullanıcı içeriği kuralı için yayından önce gerekli).
+- Lig ekranında "Arkadaşlar" sekmesi var. Herkes bir kez 6 karakterlik bir davet kodu oluşturur (0/O, 1/I gibi karışan harfler yok) ve paylaşır.
+- Kodu giren kişi ile kod sahibi aynı anda arkadaş olur; kodu paylaşmak onay sayılır. Kişi başına en çok 50 arkadaş.
+- Arkadaş listesi bu haftanın lig XP'sine göre sıralanır; ligden çıkmış ya da bu hafta çalışmamış arkadaş 0 XP görünür.
+- Sunucu fonksiyonları: `get_my_friends`, `get_friend_code`, `add_friend` (hatalar: P0002 kod yok, 22023 kendi kodun, 54000 sınır), `remove_friend`.
+- Uygulama kullanıcı kimliği görmez: her üye, bakan kişiye göre değişen 20 karakterlik bir belirteçle (`id`) gelir.
+
+## Ad bildirme ve filtre
+
+- Lig ya da arkadaş listesinde bir ada dokunup "Adı bildir" denebilir (`report_name`). Bildiren kişi o adı hemen "Okuyucu" olarak görür.
+- Aynı ad 3 farklı kişi tarafından bildirilirse herkese "Okuyucu" görünür. Ad değişince sayım yeni ad için baştan başlar.
+- `private.blocked_name_terms` listesindeki (İngilizce ve Türkçe küfür ve nefret sözleri) bir kelimeyi içeren ad herkese "Okuyucu" görünür. Liste SQL ile genişletilebilir.
+- Kişi kendi adını her zaman olduğu gibi görür.
+
+## Canlıya alma
+
+- `20261021100000_weekly_leagues.sql` ve ardından `20261021120000_friends_and_name_safety.sql` sırayla uygulanmalı. İkincisi `get_my_league` fonksiyonunu belirteç ve güvenli adla yeniden tanımlar.
+- Fonksiyonlar yokken uygulama lig kartını ve arkadaşlar sekmesini gizler.

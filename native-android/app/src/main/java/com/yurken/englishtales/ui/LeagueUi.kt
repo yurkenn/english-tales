@@ -31,6 +31,12 @@ import com.yurken.englishtales.R
 import com.yurken.englishtales.data.LeagueStanding
 import com.yurken.englishtales.data.LeagueUi
 import com.yurken.englishtales.data.LeagueZone
+import com.yurken.englishtales.data.LeagueMember
+import com.yurken.englishtales.data.FriendList
+import com.yurken.englishtales.data.FriendsUi
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.text.font.FontFamily
 
 private val tierColors = listOf(Color(0xFFB87333), Color(0xFF8E9AA6), Color(0xFFE0A100), Color(0xFF2F6FD6), Color(0xFF13A8BC))
 internal fun leagueColor(tier: Int) = tierColors[(tier - 1).coerceIn(0, tierColors.lastIndex)]
@@ -106,10 +112,22 @@ internal fun LeagueCard(state: LeagueUi, onOpen: () -> Unit, onAccount: () -> Un
 }
 
 @Composable
-internal fun LeagueScreen(state: LeagueUi, displayName: String, onBack: () -> Unit, onRefresh: () -> Unit, onOptOut: (Boolean) -> Unit, onSettings: () -> Unit, onSaveName: (String) -> Unit = {}) {
-    LaunchedEffect(Unit) { onRefresh() }
+internal fun LeagueScreen(state: LeagueUi, displayName: String, onBack: () -> Unit, onRefresh: () -> Unit, onOptOut: (Boolean) -> Unit, onSettings: () -> Unit, onSaveName: (String) -> Unit = {},
+    friends: FriendsUi = FriendsUi.Unavailable, friendActions: FriendActions? = null) {
+    LaunchedEffect(Unit) { onRefresh(); friendActions?.refresh?.invoke() }
+    var tab by rememberSaveable { mutableIntStateOf(0) }
+    // A tapped row offers its actions: reporting the name, and on the friends tab removing the friend.
+    var acting by remember { mutableStateOf<Pair<LeagueMember, Boolean>?>(null) }
+    acting?.let { (member, friend) -> MemberActionsDialog(member, friend, friendActions, onDismiss = { acting = null }) }
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding()) {
         SimpleTopBar(stringResource(R.string.league_title), onBack)
+        if (friends != FriendsUi.Unavailable && friendActions != null) {
+            TabRow(tab, containerColor = TaleBackground) {
+                Tab(tab == 0, { tab = 0 }, text = { Text(stringResource(R.string.league_tab_league)) })
+                Tab(tab == 1, { tab = 1 }, text = { Text(stringResource(R.string.friends_tab)) })
+            }
+            if (tab == 1) { FriendsPane(friends, friendActions) { acting = it to true }; return@Column }
+        }
         val standing = (state as? LeagueUi.Ready)?.standing
         if (standing == null) {
             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -134,7 +152,8 @@ internal fun LeagueScreen(state: LeagueUi, displayName: String, onBack: () -> Un
                     val down = standing.zone(member.rank) == LeagueZone.Relegation
                     ZoneDivider(stringResource(if (down) R.string.league_zone_down else R.string.league_zone_up_end), if (down) TaleError else TaleSuccess)
                 }
-                MemberRow(member.rank, member.name, member.xp, member.me, standing.zone(member.rank), Modifier.appearIn(minOf(i, 8)))
+                MemberRow(member.rank, member.name, member.xp, member.me, standing.zone(member.rank), Modifier.appearIn(minOf(i, 8)),
+                    onClick = if (!member.me && member.id.isNotEmpty() && friendActions != null) ({ acting = member to false }) else null)
             }
             item {
                 Column(Modifier.fillMaxWidth().padding(top = 16.dp).background(TaleSurface, RoundedCornerShape(16.dp)).border(1.dp, TaleLine, RoundedCornerShape(16.dp)).padding(16.dp),
@@ -196,12 +215,13 @@ private fun ZoneDivider(label: String, color: Color) {
 }
 
 @Composable
-private fun MemberRow(rank: Int, name: String, xp: Int, me: Boolean, zone: LeagueZone, modifier: Modifier = Modifier) {
+private fun MemberRow(rank: Int, name: String, xp: Int, me: Boolean, zone: LeagueZone, modifier: Modifier = Modifier, onClick: (() -> Unit)? = null) {
     val accent = when (zone) { LeagueZone.Promotion -> TaleSuccess; LeagueZone.Relegation -> TaleError; else -> TaleMuted }
     val you = stringResource(R.string.league_you)
     val xpText = stringResource(R.string.league_xp, xp)
     Row(modifier.fillMaxWidth().background(if (me) LocalTaleColors.current.tileBlue else TaleSurface, RoundedCornerShape(14.dp))
-        .border(if (me) 2.dp else 1.dp, if (me) TaleBlue else TaleLine, RoundedCornerShape(14.dp)).padding(horizontal = 12.dp, vertical = 10.dp)
+        .border(if (me) 2.dp else 1.dp, if (me) TaleBlue else TaleLine, RoundedCornerShape(14.dp))
+        .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier).padding(horizontal = 12.dp, vertical = 10.dp)
         .semantics(mergeDescendants = true) {},
         verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
         Text("$rank", color = accent, fontWeight = FontWeight.Bold, modifier = Modifier.widthIn(min = 24.dp))
@@ -257,4 +277,79 @@ internal fun LeagueResultDialog(outcome: String, rank: Int, tier: Int, onDismiss
             if (outcome == "promoted") ConfettiBurst(Modifier.matchParentSize(), "league$tier")
         }
     }
+}
+
+/** What the friends tab can do; each action reloads the list from the server. */
+class FriendActions(val refresh: () -> Unit, val createCode: () -> Unit, val add: (String) -> Unit, val remove: (String) -> Unit, val report: (String) -> Unit)
+
+@Composable
+private fun FriendsPane(state: FriendsUi, actions: FriendActions, onMember: (LeagueMember) -> Unit) {
+    val ready = state as? FriendsUi.Ready
+    if (ready == null) {
+        Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            if (state == FriendsUi.Failed) Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(stringResource(R.string.friends_failed), color = TaleMuted)
+                TextButton(onClick = actions.refresh) { Text(stringResource(R.string.league_retry)) }
+            } else TaleLoading()
+        }
+        return
+    }
+    val context = LocalContext.current
+    var code by rememberSaveable { mutableStateOf("") }
+    LazyColumn(Modifier.fillMaxSize().centeredWidth(ContentWidth), contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        item {
+            Column(Modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(16.dp)).border(1.dp, TaleLine, RoundedCornerShape(16.dp)).padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                Text(stringResource(R.string.friends_code_title), fontWeight = FontWeight.Bold)
+                Text(stringResource(R.string.friends_code_text), color = TaleMuted, style = MaterialTheme.typography.bodyMedium)
+                val mine = ready.list.code
+                if (mine == null) Button(onClick = actions.createCode, enabled = !ready.busy, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp), shape = RoundedCornerShape(14.dp)) {
+                    Text(stringResource(R.string.friends_code_create))
+                } else {
+                    val share = stringResource(R.string.friends_share)
+                    val shareText = stringResource(R.string.friends_share_text, mine, "https://play.google.com/store/apps/details?id=com.yurken.englishtales")
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text(mine, Modifier.weight(1f), fontSize = 28.sp, fontWeight = FontWeight.Bold, fontFamily = FontFamily.Monospace, letterSpacing = 4.sp, color = TaleBlue)
+                        Button(onClick = { SafeIntents.startFirst(context, Intent.createChooser(Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, shareText), share)) },
+                            shape = RoundedCornerShape(14.dp)) { Text(share) }
+                    }
+                }
+                HorizontalDivider(color = TaleLine)
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    OutlinedTextField(code, { code = FriendList.normalizeCode(it) }, Modifier.weight(1f), singleLine = true,
+                        label = { Text(stringResource(R.string.friends_add_field)) },
+                        keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Characters, imeAction = ImeAction.Done))
+                    Button(onClick = { actions.add(code); code = "" }, enabled = code.length == 6 && !ready.busy, shape = RoundedCornerShape(14.dp)) {
+                        Text(stringResource(R.string.friends_add))
+                    }
+                }
+                ready.error?.let { error ->
+                    Text(stringResource(when (error) { "P0002" -> R.string.friends_error_unknown; "22023" -> R.string.friends_error_self; "54000" -> R.string.friends_error_limit; else -> R.string.friends_error_generic }),
+                        color = TaleError, style = MaterialTheme.typography.bodyMedium)
+                }
+            }
+        }
+        if (ready.list.members.size <= 1) item {
+            Text(stringResource(R.string.friends_empty), color = TaleMuted, modifier = Modifier.fillMaxWidth().padding(vertical = 16.dp))
+        }
+        items(ready.list.members, key = { it.rank }) { member ->
+            MemberRow(member.rank, member.name, member.xp, member.me, LeagueZone.Safe,
+                onClick = if (!member.me && member.id.isNotEmpty()) ({ onMember(member) }) else null)
+        }
+        item { Text(stringResource(R.string.friends_week_note), color = TaleMuted, style = MaterialTheme.typography.bodySmall, modifier = Modifier.padding(top = 8.dp)) }
+    }
+}
+
+@Composable
+private fun MemberActionsDialog(member: LeagueMember, friend: Boolean, actions: FriendActions?, onDismiss: () -> Unit) {
+    var confirmReport by remember { mutableStateOf(false) }
+    if (confirmReport) {
+        TaleDialog(stringResource(R.string.report_name_title), stringResource(R.string.report_name_text, member.name), stringResource(R.string.report_name_confirm),
+            onConfirm = { actions?.report?.invoke(member.id); onDismiss() }, onDismissRequest = onDismiss,
+            dismissLabel = stringResource(R.string.vazgec), destructive = true)
+        return
+    }
+    TaleDialog(member.name, null, stringResource(R.string.report_name_action), onConfirm = { confirmReport = true }, onDismissRequest = onDismiss,
+        dismissLabel = if (friend) stringResource(R.string.friends_remove) else stringResource(R.string.vazgec),
+        onDismiss = { if (friend) actions?.remove?.invoke(member.id); onDismiss() })
 }
