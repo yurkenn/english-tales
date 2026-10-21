@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weekly leagues: home card, league screen, last week's result and the opt-out. -->
+    <string name="league_title">ลีกประจำสัปดาห์</string>
+    <string name="league_tier_1">ลีกทองแดง</string>
+    <string name="league_tier_2">ลีกเงิน</string>
+    <string name="league_tier_3">ลีกทอง</string>
+    <string name="league_tier_4">ลีกไพลิน</string>
+    <string name="league_tier_5">ลีกเพชร</string>
+    <string name="league_guest">สร้างบัญชีแล้วแข่งในลีก 30 คนทุกสัปดาห์</string>
+    <string name="league_loading">กำลังโหลดลีก…</string>
+    <string name="league_failed">โหลดลีกไม่ได้ แตะเพื่อลองอีกครั้ง</string>
+    <string name="league_failed_short">โหลดลีกไม่ได้</string>
+    <string name="league_retry">ลองอีกครั้ง</string>
+    <string name="league_opted_out">คุณไม่ได้อยู่ในลีก แตะเพื่อเข้าร่วม</string>
+    <string name="league_opted_out_screen">คุณไม่ได้อยู่ในลีก เข้าร่วมใหม่ได้ด้านล่าง</string>
+    <string name="league_join_hint">เล่นเกมหรืออ่านเรื่องให้จบสักเรื่องในสัปดาห์นี้เพื่อเข้าลีก</string>
+    <string name="league_rank">อันดับ %1$d · %2$d XP</string>
+    <string name="league_to_next">อีก %1$d XP จะขึ้นหนึ่งอันดับ</string>
+    <string name="league_leading">คุณอยู่อันดับหนึ่ง รักษาไว้!</string>
+    <string name="league_relegation">คุณอยู่ในโซนตกชั้น ฝึกต่ออีกนิด!</string>
+    <string name="league_days_left">เหลืออีก %1$d วัน</string>
+    <string name="league_hours_left">เหลืออีก %1$d ชั่วโมง</string>
+    <string name="league_rule_up">%1$d อันดับแรกเลื่อนขึ้นลีก</string>
+    <string name="league_rule_down">%1$d อันดับสุดท้ายตกลีก</string>
+    <string name="league_zone_up_end">โซนเลื่อนชั้น ↑</string>
+    <string name="league_zone_down">โซนตกชั้น ↓</string>
+    <string name="league_last_promoted">ยินดีด้วย! สัปดาห์ที่แล้วคุณได้อันดับ %1$d ลีกใหม่: %2$s</string>
+    <string name="league_last_stayed">สัปดาห์ที่แล้วคุณได้อันดับ %1$d และอยู่ลีกเดิม</string>
+    <string name="league_last_relegated">สัปดาห์ที่แล้วคุณได้อันดับ %1$d ลีกใหม่: %2$s กลับขึ้นไปในสัปดาห์นี้!</string>
+    <string name="league_you">(คุณ)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">ได้ XP อย่างไร?</string>
+    <string name="league_how">ตอบถูกในเกมได้ข้อละ 5 XP อ่านเรื่องจบได้เรื่องละ 20 XP นับได้สูงสุดวันละ 500 XP อันดับจะอัปเดตหลังซิงค์ความคืบหน้า ลีกเริ่มใหม่ทุกวันจันทร์ 00:00 UTC</string>
+    <string name="league_name_hint">ชื่อของคุณในลีกคือ \"%1$s\" อีเมลของคุณจะไม่แสดงให้ใครเห็น</string>
+    <string name="league_change_name">เปลี่ยนชื่อ</string>
+    <string name="league_show_me">แสดงฉันในลีก</string>
+    <string name="league_show_me_text">ถ้าปิด คุณจะออกจากกลุ่มของสัปดาห์นี้และไม่มีใครเห็นชื่อคุณ</string>
+</resources>

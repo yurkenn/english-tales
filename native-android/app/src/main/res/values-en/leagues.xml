@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weekly leagues: home card, league screen, last week's result and the opt-out. -->
+    <string name="league_title">Weekly league</string>
+    <string name="league_tier_1">Bronze League</string>
+    <string name="league_tier_2">Silver League</string>
+    <string name="league_tier_3">Gold League</string>
+    <string name="league_tier_4">Sapphire League</string>
+    <string name="league_tier_5">Diamond League</string>
+    <string name="league_guest">Create an account and compete in a 30-person league every week.</string>
+    <string name="league_loading">Loading league…</string>
+    <string name="league_failed">Couldn\'t load the league. Tap to try again.</string>
+    <string name="league_failed_short">Couldn\'t load the league.</string>
+    <string name="league_retry">Try again</string>
+    <string name="league_opted_out">You\'re not in the league. Tap to join.</string>
+    <string name="league_opted_out_screen">You\'re not in the league. You can rejoin below.</string>
+    <string name="league_join_hint">Finish a game or a story this week to join the league.</string>
+    <string name="league_rank">You\'re #%1$d · %2$d XP</string>
+    <string name="league_to_next">%1$d XP to move up a place</string>
+    <string name="league_leading">You\'re on top, hold your spot!</string>
+    <string name="league_relegation">You\'re in the drop zone, keep going!</string>
+    <string name="league_days_left">Days left: %1$d</string>
+    <string name="league_hours_left">Hours left: %1$d</string>
+    <string name="league_rule_up">Top %1$d move up a league</string>
+    <string name="league_rule_down">Bottom %1$d move down a league</string>
+    <string name="league_zone_up_end">Promotion zone ↑</string>
+    <string name="league_zone_down">Drop zone ↓</string>
+    <string name="league_last_promoted">Well done! You finished #%1$d last week. New league: %2$s</string>
+    <string name="league_last_stayed">You finished #%1$d last week and kept your league.</string>
+    <string name="league_last_relegated">You finished #%1$d last week. New league: %2$s. Climb back this week!</string>
+    <string name="league_you">(you)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">How do I earn XP?</string>
+    <string name="league_how">Each right answer in a game earns 5 XP and each finished story earns 20 XP. Up to 500 XP a day counts. Rankings update after your progress syncs. The league resets every Monday at 00:00 UTC.</string>
+    <string name="league_name_hint">Your name in the league is \"%1$s\". Your email is never shown to anyone.</string>
+    <string name="league_change_name">Change your name</string>
+    <string name="league_show_me">Show me in the league</string>
+    <string name="league_show_me_text">Turn this off to leave this week\'s group and hide your name from everyone.</string>
+</resources>

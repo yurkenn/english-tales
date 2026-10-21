@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weekly leagues: home card, league screen, last week's result and the opt-out. -->
+    <string name="league_title">الدوري الأسبوعي</string>
+    <string name="league_tier_1">الدوري البرونزي</string>
+    <string name="league_tier_2">الدوري الفضي</string>
+    <string name="league_tier_3">الدوري الذهبي</string>
+    <string name="league_tier_4">دوري الياقوت</string>
+    <string name="league_tier_5">الدوري الماسي</string>
+    <string name="league_guest">أنشئ حسابًا وتنافس كل أسبوع في دوري من 30 شخصًا.</string>
+    <string name="league_loading">جارٍ تحميل الدوري…</string>
+    <string name="league_failed">تعذّر تحميل الدوري. انقر لإعادة المحاولة.</string>
+    <string name="league_failed_short">تعذّر تحميل الدوري.</string>
+    <string name="league_retry">إعادة المحاولة</string>
+    <string name="league_opted_out">أنت لست في الدوري. انقر للانضمام.</string>
+    <string name="league_opted_out_screen">أنت لست في الدوري. يمكنك الانضمام مجددًا من الأسفل.</string>
+    <string name="league_join_hint">أكمل لعبة أو قصة هذا الأسبوع لتنضم إلى الدوري.</string>
+    <string name="league_rank">ترتيبك %1$d · %2$d XP</string>
+    <string name="league_to_next">باقٍ %1$d XP للتقدم مركزًا واحدًا</string>
+    <string name="league_leading">أنت في الصدارة، حافظ على مكانك!</string>
+    <string name="league_relegation">أنت في منطقة الهبوط، واصل التدرّب!</string>
+    <string name="league_days_left">الأيام المتبقية: %1$d</string>
+    <string name="league_hours_left">الساعات المتبقية: %1$d</string>
+    <string name="league_rule_up">يصعد أول %1$d إلى الدوري الأعلى</string>
+    <string name="league_rule_down">يهبط آخر %1$d إلى الدوري الأدنى</string>
+    <string name="league_zone_up_end">منطقة الصعود ↑</string>
+    <string name="league_zone_down">منطقة الهبوط ↓</string>
+    <string name="league_last_promoted">تهانينا! كان ترتيبك %1$d الأسبوع الماضي. دوريك الجديد: %2$s</string>
+    <string name="league_last_stayed">كان ترتيبك %1$d الأسبوع الماضي وحافظت على دوريك.</string>
+    <string name="league_last_relegated">كان ترتيبك %1$d الأسبوع الماضي. دوريك الجديد: %2$s. عُد إلى الأعلى هذا الأسبوع!</string>
+    <string name="league_you">(أنت)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">كيف أكسب XP؟</string>
+    <string name="league_how">كل إجابة صحيحة في لعبة تمنحك 5 XP وكل قصة تُكملها تمنحك 20 XP. يُحتسب حتى 500 XP في اليوم. يتحدّث الترتيب بعد مزامنة تقدّمك. يبدأ الدوري من جديد كل يوم اثنين الساعة 00:00 UTC.</string>
+    <string name="league_name_hint">اسمك في الدوري هو \"%1$s\". لا يظهر بريدك الإلكتروني لأي أحد.</string>
+    <string name="league_change_name">غيّر اسمك</string>
+    <string name="league_show_me">أظهرني في الدوري</string>
+    <string name="league_show_me_text">إذا أوقفته، تخرج من مجموعة هذا الأسبوع ولن يرى أحد اسمك.</string>
+</resources>

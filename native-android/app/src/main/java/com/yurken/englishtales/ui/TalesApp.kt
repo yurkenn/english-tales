@@ -62,11 +62,15 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
     val context=androidx.compose.ui.platform.LocalContext.current
     val uiScope=rememberCoroutineScope()
     fun google() {uiScope.launch {viewModel.signInGoogle {GoogleSignIn.acquire(context,BuildConfig.GOOGLE_WEB_CLIENT_ID)}}}
+    // Weekly league: refreshed on account change, on return to the app and when an upload finishes, since XP is counted on the server.
+    val leagues: LeagueViewModel=viewModel()
+    val leagueState by leagues.state.collectAsState()
+    LaunchedEffect(account.userId,account.sync.running) {if(!account.sync.running) leagues.refresh(account.userId)}
     DisposableEffect(lifecycle) {
         val observer=androidx.lifecycle.LifecycleEventObserver {_,event -> when(event) {
             androidx.lifecycle.Lifecycle.Event.ON_START -> viewModel.setForeground(true)
             androidx.lifecycle.Lifecycle.Event.ON_STOP -> viewModel.setForeground(false)
-            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {viewModel.refresh();viewModel.verifyAccount(5*60_000);LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
+            androidx.lifecycle.Lifecycle.Event.ON_RESUME -> {viewModel.refresh();leagues.refresh(viewModel.account.value.userId);viewModel.verifyAccount(5*60_000);LearningReminders.schedule(context);if(content.ready.value) content.refreshIfStale()}
             else -> {}
         }}
         lifecycle.addObserver(observer)
@@ -149,7 +153,8 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
                 Column(Modifier.fillMaxSize().statusBarsPadding()) {
                     if(selectedTab==1) ContentConnectionBar(content)
                     Box(Modifier.weight(1f)) {
-                        MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.resumeRevision(id); nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession,onCompletedExit=::completedExit,library=library)
+                        MainTabs(snapshot,selectedTab,{selectedTab=it},onOpenStory={nav.navigate("story/$it")},onOpenWords={nav.navigate("words")},onLessonComplete=viewModel::completeLesson,onWordReviewed={id,correct -> viewModel.reviewWord(id,correct)},onRead={id -> val revision=snapshot.resumeRevision(id); nav.navigate("reader/$id"+(revision?.let {"?revision=$it"}?:""))},onPractice=::practice,onSettings={nav.navigate("settings")},onAccount={nav.navigate("account")},launchId=launchId,launchWords=launchWords,onLaunchConsumed={launchId=null},onDailyPlan=::dailyPlan,onSessionStart={id,kind,count ->viewModel.beginSession(id,kind,count,null)},onCheckpoint=viewModel::checkpointSession,onSessionAbandoned=viewModel::abandonSession,onCompletedExit=::completedExit,library=library,
+                            league={modifier -> LeagueCard(leagueState,onOpen={nav.navigate("league")},onAccount={nav.navigate("account")},modifier=modifier)})
                     }
                 }
             }
@@ -191,6 +196,8 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
             composable("account") {AccountScreen(account,onBack={nav.popBackStack()},onSignIn=viewModel::signIn,onSignOut=viewModel::signOut,onGoogle=::google,onTransfer=viewModel::transferGuestProgress,onSync=viewModel::syncNow,onResolvePreferences=viewModel::resolvePreferences,onSignUp=viewModel::signUp,onRecovery=viewModel::requestRecovery,onCompleteCode=viewModel::completeEmailCode,onResendCode=viewModel::resendEmailCode,onCancelCode=viewModel::cancelEmailCode,onDeleteAccount=viewModel::deleteAccount,onGuest={
                 if(snapshot.onboardingDone) nav.popBackStack() else nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}
             })}
+            composable("league") {LeagueScreen(leagueState,snapshot.displayName,onBack={nav.popBackStack()},onRefresh={leagues.refresh(account.userId)},
+                onOptOut={leagues.setOptedOut(account.userId,it)},onSettings={nav.navigate("settings")})}
             composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord,onBrowse={selectedTab=1;nav.popBackStack("main",false)}) }
         }
     }
@@ -198,14 +205,14 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
 }
 
 @Composable
-internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit,library: LibraryActions?=null) {
+internal fun MainTabs(snapshot: LearningSnapshot, selectedTab: Int, onTabSelected: (Int)->Unit, onOpenStory: (String)->Unit,onOpenWords: ()->Unit,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,onRead: (String)->Unit,onPractice: (List<String>)->Unit,onSettings: ()->Unit,onAccount: ()->Unit,launchId: String?,launchWords: List<String>,onLaunchConsumed: ()->Unit,onDailyPlan: ()->Unit,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit,library: LibraryActions?=null,league: (@Composable (Modifier)->Unit)?=null) {
     var practicing by remember { mutableStateOf(false) }
     // Each tab keeps its saved state while another tab is shown: a reminder or widget tap mid-practice must not drop the session.
     val tabs=rememberSaveableStateHolder()
     Scaffold(containerColor=TaleBackground,bottomBar={ if(!practicing) TalesBottomBar(selectedTab,onTabSelected) }) { padding ->
         // Tabs cross-fade instead of cutting; the practice tab keeps its running session state.
         TaleSwitch(selectedTab) { tab -> tabs.SaveableStateProvider(tab) { when(tab) {
-            0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice)
+            0 -> StudyScreen(snapshot,onOpenStory,onOpenWords,padding,onRead,onPractice,league)
             1 -> CatalogScreen(snapshot,onOpenStory,padding,library)
             2 -> PracticeScreen(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive={practicing=it},launchId=launchId,launchWordIds=launchWords,onLaunchConsumed=onLaunchConsumed,onDailyPlan=onDailyPlan,onCompletedExit=onCompletedExit)
             else -> ProfileScreen(snapshot,onOpenWords,padding,onSettings,onAccount)

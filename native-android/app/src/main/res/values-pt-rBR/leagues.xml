@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Weekly leagues: home card, league screen, last week's result and the opt-out. -->
+    <string name="league_title">Liga semanal</string>
+    <string name="league_tier_1">Liga Bronze</string>
+    <string name="league_tier_2">Liga Prata</string>
+    <string name="league_tier_3">Liga Ouro</string>
+    <string name="league_tier_4">Liga Safira</string>
+    <string name="league_tier_5">Liga Diamante</string>
+    <string name="league_guest">Crie uma conta e dispute toda semana uma liga de 30 pessoas.</string>
+    <string name="league_loading">Carregando liga…</string>
+    <string name="league_failed">Não foi possível carregar a liga. Toque para tentar de novo.</string>
+    <string name="league_failed_short">Não foi possível carregar a liga.</string>
+    <string name="league_retry">Tentar de novo</string>
+    <string name="league_opted_out">Você não está na liga. Toque para entrar.</string>
+    <string name="league_opted_out_screen">Você não está na liga. Pode voltar logo abaixo.</string>
+    <string name="league_join_hint">Termine um jogo ou uma história nesta semana para entrar na liga.</string>
+    <string name="league_rank">Você está em %1$dº · %2$d XP</string>
+    <string name="league_to_next">Faltam %1$d XP para subir uma posição</string>
+    <string name="league_leading">Você está no topo, defenda seu lugar!</string>
+    <string name="league_relegation">Você está na zona de rebaixamento, continue praticando!</string>
+    <string name="league_days_left">Dias restantes: %1$d</string>
+    <string name="league_hours_left">Horas restantes: %1$d</string>
+    <string name="league_rule_up">Os %1$d primeiros sobem de liga</string>
+    <string name="league_rule_down">Os %1$d últimos descem de liga</string>
+    <string name="league_zone_up_end">Zona de promoção ↑</string>
+    <string name="league_zone_down">Zona de rebaixamento ↓</string>
+    <string name="league_last_promoted">Parabéns! Na semana passada você ficou em %1$dº. Nova liga: %2$s</string>
+    <string name="league_last_stayed">Na semana passada você ficou em %1$dº e manteve sua liga.</string>
+    <string name="league_last_relegated">Na semana passada você ficou em %1$dº. Nova liga: %2$s. Recupere nesta semana!</string>
+    <string name="league_you">(você)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">Como ganho XP?</string>
+    <string name="league_how">Cada resposta certa em um jogo vale 5 XP e cada história terminada vale 20 XP. Contam até 500 XP por dia. A classificação é atualizada quando seu progresso sincroniza. A liga recomeça toda segunda-feira às 00:00 UTC.</string>
+    <string name="league_name_hint">Seu nome na liga é \"%1$s\". Seu e-mail nunca é mostrado a ninguém.</string>
+    <string name="league_change_name">Mudar seu nome</string>
+    <string name="league_show_me">Mostrar-me na liga</string>
+    <string name="league_show_me_text">Se desativar, você sai do grupo desta semana e ninguém verá seu nome.</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <!-- Generated from values: python tooling/sync_turkish_resources.py -->
+    <string name="league_title">Haftalık lig</string>
+    <string name="league_tier_1">Bronz Lig</string>
+    <string name="league_tier_2">Gümüş Lig</string>
+    <string name="league_tier_3">Altın Lig</string>
+    <string name="league_tier_4">Safir Lig</string>
+    <string name="league_tier_5">Elmas Lig</string>
+    <string name="league_guest">Hesap aç, her hafta 30 kişilik ligde yarış.</string>
+    <string name="league_loading">Lig yükleniyor…</string>
+    <string name="league_failed">Lig şu an yüklenemedi. Tekrar denemek için dokun.</string>
+    <string name="league_failed_short">Lig şu an yüklenemedi.</string>
+    <string name="league_retry">Tekrar dene</string>
+    <string name="league_opted_out">Ligde görünmüyorsun. Katılmak için dokun.</string>
+    <string name="league_opted_out_screen">Ligde görünmüyorsun. Aşağıdan yeniden katılabilirsin.</string>
+    <string name="league_join_hint">Bu hafta bir oyun ya da hikâye bitir, lige katıl.</string>
+    <string name="league_rank">%1$d. sıradasın · %2$d XP</string>
+    <string name="league_to_next">Bir üst sıraya %1$d XP kaldı</string>
+    <string name="league_leading">Zirvedesin, yerini koru!</string>
+    <string name="league_relegation">Düşme bölgesindesin, biraz daha çalış!</string>
+    <string name="league_days_left">%1$d gün kaldı</string>
+    <string name="league_hours_left">%1$d saat kaldı</string>
+    <string name="league_rule_up">İlk %1$d kişi üst lige çıkar</string>
+    <string name="league_rule_down">Son %1$d kişi alt lige düşer</string>
+    <string name="league_zone_up_end">Terfi bölgesi ↑</string>
+    <string name="league_zone_down">Düşme bölgesi ↓</string>
+    <string name="league_last_promoted">Tebrikler! Geçen hafta %1$d. oldun. Yeni ligin: %2$s</string>
+    <string name="league_last_stayed">Geçen hafta %1$d. oldun ve ligini korudun.</string>
+    <string name="league_last_relegated">Geçen hafta %1$d. oldun. Yeni ligin: %2$s. Bu hafta geri çık!</string>
+    <string name="league_you">(sen)</string>
+    <string name="league_xp">%1$d XP</string>
+    <string name="league_how_title">XP nasıl kazanılır?</string>
+    <string name="league_how">Oyunda her doğru cevap 5 XP, her bitirilen hikâye 20 XP kazandırır. Günde en fazla 500 XP sayılır. Sıralama, çalışmaların senkronize olunca güncellenir. Lig her pazartesi 03:00\'te (TSİ) yenilenir.</string>
+    <string name="league_name_hint">Ligde adın \"%1$s\" olarak görünür. E-posta adresin hiç kimseye gösterilmez.</string>
+    <string name="league_change_name">Adını değiştir</string>
+    <string name="league_show_me">Ligde görün</string>
+    <string name="league_show_me_text">Kapatırsan bu haftanın grubundan çıkarsın ve adın kimseye görünmez.</string>
+</resources>

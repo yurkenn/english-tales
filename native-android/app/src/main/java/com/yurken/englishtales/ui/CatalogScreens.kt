@@ -84,7 +84,7 @@ private fun ChallengeBanner(onClick: () -> Unit) {
 }
 
 @Composable
-fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpenWords: () -> Unit, padding: PaddingValues, onRead: (String)->Unit, onPractice: (List<String>)->Unit) {
+fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpenWords: () -> Unit, padding: PaddingValues, onRead: (String)->Unit, onPractice: (List<String>)->Unit, league: (@Composable (Modifier)->Unit)?=null) {
     // Q5.6: unfinished stories at the learner's level that they can read most comfortably come first.
     val catalog=LearningContent.stories
     // Ranking tokenizes stories on first use and reruns on every snapshot change, so it runs on Default; the last order stays until the next is ready.
@@ -105,6 +105,8 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
         Spacer(Modifier.height(16.dp))
         DailyQuestsCard(snapshot,Modifier.padding(horizontal=16.dp).appearIn(2))
         Spacer(Modifier.height(16.dp))
+        // The weekly league sits right under the quests: its rank and gap are the daily reason to come back.
+        league?.let {it(Modifier.padding(horizontal=16.dp).appearIn(2));Spacer(Modifier.height(16.dp))}
         // A card-like row instead of a bare outlined button, with the count as a badge.
         Row(Modifier.padding(horizontal=16.dp).fillMaxWidth().appearIn(2).heightIn(min=56.dp).background(TaleSurface,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp))
             .pressScale(onClick=onOpenWords).padding(horizontal=14.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {
