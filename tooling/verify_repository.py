@@ -8,10 +8,12 @@ import sys
 names=subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
 failures=[]
 # The content-admin web tooling is JavaScript; the mobile application is Kotlin.
-legacy_mobile_roots={'app','components','hooks','services','store','providers','theme','i18n'}
+legacy_mobile_roots={'app','components','hooks','services','store','providers','theme','i18n',
+    '.expo','.eas','android','ios'}
 legacy_mobile_files={'package.json','package-lock.json','yarn.lock','pnpm-lock.yaml',
     'bun.lock','bun.lockb','app.json','app.config.js','app.config.ts','App.js','App.tsx',
-    'index.js','metro.config.js','babel.config.js','eas.json'}
+    'index.js','metro.config.js','metro.config.cjs','babel.config.js','babel.config.cjs',
+    'eas.json','expo-env.d.ts','expo-module.config.json','app.config.json'}
 for name in filter(None,names):
     if name in legacy_mobile_files or name.split('/')[0] in legacy_mobile_roots or name.endswith(('.tsx','.jsx')):
         failures.append((name,'legacy React Native/Expo mobile source; use native-android'))

@@ -1,22 +1,14 @@
 # Dependencies
 node_modules/
-.pnp/
-.pnp.js
 
-# Expo
-.expo/
-dist/
-web-build/
+# Application packages and signing files
 *.jks
+*.keystore
 *.p8
 *.p12
 *.key
 *.mobileprovision
 *.orig.*
-
-# Native
-android/
-ios/
 *.ipa
 *.apk
 *.aab
@@ -25,12 +17,10 @@ ios/
 npm-debug.*
 yarn-debug.*
 yarn-error.*
-.metro-health-check*
 
 # Environment
 .env
 .env.*
-eas.json
 google-services.json
 playstore.json
 
@@ -49,23 +39,16 @@ playstore.json
 ehthumbs.db
 Thumbs.db
 
-# Project specific
-blue-hare/
-
 # Logs
 logs
 *.log
 
 # Testing
 coverage/
-.jest/
-__tests__/
 
 # Build
+dist/
 build/
 .kotlin/
 __pycache__/
 *.pyc
-
-# scripts
-scripts/

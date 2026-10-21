@@ -42,4 +42,4 @@ Firebase Analytics ilk açılış/öğrenme geçişlerini ve geri dönüşü; Cr
 3. Play Console'daki mevcut en yüksek sürüm kodunu ve yükleme imzasını doğrulama.
 4. Mağaza güncellemesi için imzalı Android App Bundle, mağaza görselleri ve gerekli politika metinlerini hazırlama.
 
-Tasarım ve özellik kararları kullanıcı tarafından paylaşılan ekran görüntülerinden çıkarılır. Yeni Android uygulaması eski React Native koduna veya servislerine bağlı değildir. Kök projedeki önceki dosyalar ve kullanıcı değişiklikleri bu aşamada silinmedi.
+Tasarım ve özellik kararları kullanıcı tarafından paylaşılan ekran görüntülerinden çıkarılır. Mobil uygulamanın tek kaynak ve derleme alanı `native-android/` klasörüdür; kurulum ve komutlar [Android rehberinde](README.md) tutulur.
