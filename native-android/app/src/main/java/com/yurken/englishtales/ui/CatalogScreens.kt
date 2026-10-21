@@ -330,7 +330,7 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
             var picking by rememberSaveable { mutableStateOf(false) }
             Box(Modifier.size(88.dp).appearIn(0).background(TaleMint,CircleShape).border(3.dp,TaleSurface,CircleShape).clip(CircleShape)
                 .pressScale { picking=true }.contentLabel(stringResource(R.string.avatar_change)),contentAlignment=Alignment.Center) {
-                avatar?.let { TaleArt(AvatarChoice.all[it],Modifier.fillMaxSize().padding(6.dp)) } ?: ReferenceIcon("profile",TaleBlue,Modifier.size(42.dp))
+                avatar?.let { TaleArt(AvatarChoice.all[it],Modifier.fillMaxSize().padding(14.dp)) } ?: ReferenceIcon("profile",TaleBlue,Modifier.size(42.dp))
             }
             if(picking) TaleDialog(stringResource(R.string.avatar_choose),null,stringResource(R.string.reward_continue),onConfirm={picking=false},onDismissRequest={picking=false}) {
                 FlowRow(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(10.dp,Alignment.CenterHorizontally),verticalArrangement=Arrangement.spacedBy(10.dp),maxItemsInEachRow=4) {
@@ -339,7 +339,7 @@ fun ProfileScreen(snapshot: LearningSnapshot, onOpenWords: () -> Unit, padding: 
                         Box(Modifier.size(64.dp).appearIn(i).background(if(chosen) LocalTaleColors.current.tileBlue else TaleBackground,CircleShape)
                             .border(if(chosen) 3.dp else 1.dp,if(chosen) TaleBlue else TaleLine,CircleShape).clip(CircleShape)
                             .selectable(chosen,role=androidx.compose.ui.semantics.Role.RadioButton) {avatar=i;AvatarChoice.set(context,snapshot.ownerId,i)},contentAlignment=Alignment.Center) {
-                            TaleArt(art,Modifier.fillMaxSize().padding(5.dp).then(if(chosen) Modifier.popOn(i+1) else Modifier))
+                            TaleArt(art,Modifier.fillMaxSize().padding(10.dp).then(if(chosen) Modifier.popOn(i+1) else Modifier))
                         }
                     }
                 }
