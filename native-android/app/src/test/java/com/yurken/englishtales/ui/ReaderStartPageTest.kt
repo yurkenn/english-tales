@@ -37,4 +37,12 @@ class ReaderStartPageTest {
         assertEquals(listOf(0,1,2),readerPageStarts(3) {_,_ -> false})
         assertEquals(listOf(0),readerPageStarts(0) {_,_ -> true})
     }
+
+    @Test fun balancedPagesSpreadSentencesInsteadOfLeavingAStub() {
+        // Seven one-unit sentences on pages of five: greedy cuts 5 + 2, balanced cuts 4 + 3.
+        assertEquals(listOf(0,5),readerPageStarts(7) {from,to -> to-from<=5})
+        assertEquals(listOf(0,4),balancedPageStarts(7,5) {from,to,slack -> to-from<=5-slack})
+        // What fits on one page stays on one page.
+        assertEquals(listOf(0),balancedPageStarts(3,5) {from,to,slack -> to-from<=5-slack})
+    }
 }

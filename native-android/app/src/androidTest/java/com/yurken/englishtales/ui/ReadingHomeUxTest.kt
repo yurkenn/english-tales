@@ -33,9 +33,9 @@ class ReadingHomeUxTest {
         try {
             store.update {it.copy(theme=ReadingTheme.DARK,spacing=ReadingSpacing.SPACIOUS)}
             coroutineScope {repeat(5) {launch {store.update {it.copy(fontSize=it.fontSize+1)}}}}
-            assertEquals(ReadingPreferences(ReadingTheme.DARK,22,ReadingSpacing.SPACIOUS),ReadingPreferencesStore(context,name).read())
+            assertEquals(ReadingPreferences(ReadingTheme.DARK,DEFAULT_READING_FONT_SIZE+5,ReadingSpacing.SPACIOUS),ReadingPreferencesStore(context,name).read())
             context.getSharedPreferences(name,0).edit().putString("fontSize","old-invalid-value").putString("spacing","unknown").commit()
-            assertEquals(ReadingPreferences(ReadingTheme.DARK,17,ReadingSpacing.COMFORTABLE),ReadingPreferencesStore(context,name).read())
+            assertEquals(ReadingPreferences(ReadingTheme.DARK,DEFAULT_READING_FONT_SIZE,ReadingSpacing.COMFORTABLE),ReadingPreferencesStore(context,name).read())
             store.update {it.copy(fontSize=100)}
             assertEquals(28,ReadingPreferencesStore(context,name).read().fontSize)
         } finally {context.getSharedPreferences(name,0).edit().clear().commit()}
@@ -105,15 +105,15 @@ class ReadingHomeUxTest {
             }}
             compose.onNodeWithContentDescription("Okuma görünümü").performClick()
             compose.onNodeWithContentDescription("Yazıyı büyüt").performClick().performClick()
-            compose.waitUntil(5_000) {store.read().fontSize==19}
+            compose.waitUntil(5_000) {store.read().fontSize==DEFAULT_READING_FONT_SIZE+2}
             compose.onNodeWithText("Geniş").performClick()
             compose.onNodeWithText("Koyu").performScrollTo().performClick()
-            compose.waitUntil(5_000) {store.read()==ReadingPreferences(ReadingTheme.DARK,19,ReadingSpacing.SPACIOUS)}
+            compose.waitUntil(5_000) {store.read()==ReadingPreferences(ReadingTheme.DARK,DEFAULT_READING_FONT_SIZE+2,ReadingSpacing.SPACIOUS)}
             screenshot("reading-appearance")
             compose.onNodeWithText("Okumaya dön").assertIsDisplayed().performClick()
             compose.runOnIdle {mount++;scale=2f}
             compose.onNodeWithContentDescription("Okuma görünümü").performClick()
-            compose.onNodeWithText("19 punto").assertIsDisplayed()
+            compose.onNodeWithText("${DEFAULT_READING_FONT_SIZE+2} punto").assertIsDisplayed()
             compose.onNodeWithText("Geniş").assertIsSelected()
             compose.onNodeWithText("Koyu").performScrollTo().assertIsSelected()
             compose.onNodeWithText("Okumaya dön").assertIsDisplayed()

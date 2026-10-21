@@ -77,9 +77,22 @@ internal fun readerPageStarts(count: Int,fits: (from: Int,to: Int)->Boolean): Li
     }
 }.ifEmpty {listOf(0)}
 
-private val PageStartPadding=24.dp
+/**
+ * Pages cut as evenly as their count allows: the room each page offers shrinks by [fits]'s slack for as long as the
+ * story still needs no extra page, so sentences spread over the pages instead of leaving the last one a stub.
+ */
+internal fun balancedPageStarts(count: Int,maxSlack: Int,fits: (from: Int,to: Int,slack: Int)->Boolean): List<Int> {
+    fun cut(slack: Int)=readerPageStarts(count) {from,to -> fits(from,to,slack)}
+    val pages=cut(0).size
+    var low=0; var high=maxSlack.coerceAtLeast(0)
+    while(low<high) { val mid=(low+high+1)/2; if(cut(mid).size==pages) low=mid else high=mid-1 }
+    return cut(low)
+}
+
+// Like a book app's reading page: roomy margins and each sentence set apart on its own line, as its own small paragraph.
+private val PageStartPadding=32.dp
 private val PageEndPadding=16.dp
-private val RowGap=14.dp
+private val RowGap=20.dp
 private val SentenceButtonSize=48.dp
 private val SentenceButtonGap=10.dp
 
@@ -137,7 +150,9 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
     val measurer=androidx.compose.ui.text.rememberTextMeasurer()
     val density=androidx.compose.ui.platform.LocalDensity.current
     val titleStyle=LocalTextStyle.current.merge(TextStyle(fontSize=13.sp,fontFamily=FontFamily.Serif,letterSpacing=0.6.sp,textAlign=TextAlign.Center))
-    val pageStarts=remember(story.revisionId,viewport,fontSize,appearance.spacing,density,titleStyle,pageFits) {
+    // The first page opens under the story's title set large, as a book's chapter opens; later pages carry it as a quiet running head.
+    val headingStyle=TextStyle(fontSize=(fontSize+9).sp,lineHeight=((fontSize+9)*1.25f).sp,fontFamily=FontFamily.Serif,fontWeight=FontWeight.Bold,textAlign=TextAlign.Center)
+    val pageStarts=remember(story.revisionId,viewport,fontSize,appearance.spacing,density,titleStyle,headingStyle,pageFits) {
         if(viewport.height==0) return@remember null
         // Tests can fix how many sentences a page holds; the app measures it.
         pageFits?.let {return@remember readerPageStarts(story.sentences.size,it)}
@@ -146,13 +161,16 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
             fun height(text: String,style: TextStyle,maxWidth: Int=width)=measurer.measure(text,style,constraints=androidx.compose.ui.unit.Constraints(maxWidth=maxWidth.coerceAtLeast(1))).size.height
             // The page's padding, its running head and the gap under it come off the room the sentences get.
             val gap=RowGap.roundToPx()
-            val room=viewport.height-12.dp.roundToPx()-24.dp.roundToPx()-gap-height(story.title,titleStyle)
+            val page=viewport.height-12.dp.roundToPx()-24.dp.roundToPx()-gap
+            val firstRoom=page-height(story.title,headingStyle)
+            val room=page-height(story.title,titleStyle)
             val style=readerTextStyle(fontSize,appearance.spacing.multiplier)
             // A sentence's line is as tall as its text, and never shorter than its translate button.
             val textWidth=width-(SentenceButtonSize+SentenceButtonGap).roundToPx()
             val button=SentenceButtonSize.roundToPx()
             val rows=story.sentences.map {maxOf(height(it.english,style,textWidth),button)}
-            readerPageStarts(story.sentences.size) {from,to -> rows.subList(from,to).sum()+gap*(to-from-1)<=room}
+            val below=rows.runningFold(0) {sum,row -> sum+row+gap}
+            balancedPageStarts(story.sentences.size,room) {from,to,slack -> below[to]-below[from]-gap<=(if(from==0) firstRoom else room)-slack}
         }
     }
     val starts=pageStarts?:listOf(0)
@@ -206,7 +224,9 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                         detectHorizontalDragGestures(onDragStart={drag=0f},onDragEnd={
                             if(drag<=-swipeThreshold) changePage(page+1) else if(drag>=swipeThreshold) changePage(page-1)
                         }) {change,amount -> drag+=amount; change.consume()}
-                    }.verticalScroll(scroll).padding(start=PageStartPadding,end=PageEndPadding,top=12.dp,bottom=24.dp),verticalArrangement=Arrangement.spacedBy(RowGap)) {
+                    }.verticalScroll(scroll).heightIn(min=with(density) {viewport.height.toDp()}).padding(start=PageStartPadding,end=PageEndPadding,top=12.dp,bottom=24.dp),
+                    // The page's lines sit in the middle of the page, so a page that is not quite full still looks balanced.
+                    verticalArrangement=Arrangement.spacedBy(RowGap,Alignment.CenterVertically)) {
                     if(!snapshot.readerHintSeen) {
                         Column(Modifier.fillMaxWidth().appearIn().background(accent.copy(alpha=0.08f),RoundedCornerShape(14.dp)).border(1.dp,accent.copy(alpha=0.25f),RoundedCornerShape(14.dp)).padding(14.dp)) {
                             Text(stringResource(R.string.okurken_ogren),fontWeight=FontWeight.Bold,fontSize=14.sp,color=accent)
@@ -216,8 +236,9 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                             TextButton(onClick=onHintDismiss,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.anladim)) }
                         }
                     }
-                    // The book's title sits quietly over the page, as in a printed book's running head.
-                    Text(story.title,color=muted,style=titleStyle,modifier=Modifier.fillMaxWidth())
+                    if(pageStart==0) Text(story.title,color=foreground,style=headingStyle,modifier=Modifier.fillMaxWidth())
+                    // Later pages carry the book's title quietly, as in a printed book's running head.
+                    else Text(story.title,color=muted,style=titleStyle,modifier=Modifier.fillMaxWidth())
                     val listenLabel=stringResource(R.string.listen_from_sentence)
                     val translateLabel=stringResource(R.string.cumleyi_cevir)
                     val hideLabel=stringResource(R.string.ceviriyi_gizle)
