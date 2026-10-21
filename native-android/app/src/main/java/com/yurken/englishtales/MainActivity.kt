@@ -50,7 +50,8 @@ class MainActivity : ComponentActivity() {
         val play=PlayStoreFeatures(this).also {this.play=it}
         setContent {
             CompositionLocalProvider(LocalCompletionAds provides ads,LocalPlayStoreFeatures provides play) {EnglishTalesTheme {
-                Box(Modifier.fillMaxSize()) {
+                // The theme's background fills the whole window, so the area behind the status bar matches the chosen theme.
+                Box(Modifier.fillMaxSize().background(com.yurken.englishtales.ui.TaleBackground)) {
                     YurkenBrandIntro {
                         if(contentLoaded) TalesApp(dailyPlanRequest=dailyPlanRequest,storyLinkRequest=storyLinkRequest,onStoryLinkHandled={if(storyLinkRequest==it) storyLinkRequest=null})
                         else Box(Modifier.fillMaxSize().background(Color.Black))

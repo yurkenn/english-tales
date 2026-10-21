@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Full-screen reward moments and the illustrated game cards. -->
+    <string name="reward_continue">চালিয়ে যান</string>
+    <string name="freeze_gift_title">আপনার জন্য একটি উপহার!</string>
+    <string name="freeze_gift_text">আপনি একটি স্ট্রিক সুরক্ষা পেয়েছেন। একদিন বাদ গেলেও আপনার স্ট্রিক নিরাপদ থাকবে।</string>
+    <string name="freeze_gift_claim">পুরস্কার নিন</string>
+    <string name="game_play">খেলুন</string>
+    <string name="avatar_choose">আপনার অ্যাভাটার বেছে নিন</string>
+    <string name="avatar_change">অ্যাভাটার বদলান</string>
+    <string name="story_words_title">এই গল্পের শব্দ</string>
+</resources>

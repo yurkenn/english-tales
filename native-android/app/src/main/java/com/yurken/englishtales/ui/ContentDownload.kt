@@ -21,6 +21,7 @@ fun ContentConnectionBar(content: ContentViewModel) {
     AnimatedVisibility(status.downloading!=null || status.failed) {
         Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
             if(status.busy) CircularProgressIndicator(Modifier.size(14.dp),strokeWidth=2.dp)
+            else if(status.failed) TaleArt(R.drawable.mascot_offline,Modifier.padding(end=8.dp).size(36.dp))
             Text(status.message, fontSize=12.sp, color=TaleMuted, modifier=Modifier.weight(1f).padding(start=if(status.busy) 8.dp else 0.dp))
             if(status.failed) TextButton(onClick={content.refresh(userInitiated=true)},enabled=!status.busy) { Text(stringResource(R.string.yenile)) }
         }

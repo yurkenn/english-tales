@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Full-screen reward moments and the illustrated game cards. -->
+    <string name="reward_continue">जारी रखें</string>
+    <string name="freeze_gift_title">आपके लिए एक तोहफ़ा!</string>
+    <string name="freeze_gift_text">आपने एक स्ट्रीक सुरक्षा जीती। एक दिन छूट जाए तो भी आपकी स्ट्रीक सुरक्षित रहेगी।</string>
+    <string name="freeze_gift_claim">इनाम लें</string>
+    <string name="game_play">खेलें</string>
+    <string name="avatar_choose">अपना अवतार चुनें</string>
+    <string name="avatar_change">अवतार बदलें</string>
+    <string name="story_words_title">इस कहानी के शब्द</string>
+</resources>

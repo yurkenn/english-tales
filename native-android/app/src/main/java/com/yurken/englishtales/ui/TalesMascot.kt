@@ -14,7 +14,10 @@ internal enum class MascotMood(val drawable: Int) {
     Welcome(R.drawable.mascot_welcome),
     Thinking(R.drawable.mascot_thinking),
     Celebrate(R.drawable.mascot_celebrate),
-    Support(R.drawable.mascot_support)
+    Support(R.drawable.mascot_support),
+    Reading(R.drawable.mascot_reading),
+    Proud(R.drawable.mascot_proud),
+    Sleepy(R.drawable.mascot_sleepy)
 }
 
 /** Decorative companion: nearby text carries the meaning for screen readers. */
@@ -22,7 +25,7 @@ internal enum class MascotMood(val drawable: Int) {
 internal fun TalesMascot(mood: MascotMood, modifier: Modifier = Modifier, description: String? = null, animate: Boolean = false) {
     val motion = remember(mood) { Animatable(0f) }
     LaunchedEffect(mood, animate) {
-        if (animate && (mood == MascotMood.Welcome || mood == MascotMood.Celebrate)) {
+        if (animate && (mood == MascotMood.Welcome || mood == MascotMood.Celebrate || mood == MascotMood.Proud)) {
             motion.animateTo(1f, tween(220))
             motion.animateTo(0f, tween(320))
         }
@@ -30,6 +33,6 @@ internal fun TalesMascot(mood: MascotMood, modifier: Modifier = Modifier, descri
     Image(painterResource(mood.drawable), description,
         modifier.graphicsLayer {
             if (mood == MascotMood.Welcome) rotationZ = motion.value * -4f
-            if (mood == MascotMood.Celebrate) translationY = motion.value * -6f * density
+            if (mood == MascotMood.Celebrate || mood == MascotMood.Proud) translationY = motion.value * -6f * density
         }, contentScale = ContentScale.Fit)
 }
