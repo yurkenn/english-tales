@@ -27,7 +27,14 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.ui.input.pointer.PointerEventPass
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInRoot
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.semantics.contentDescription
@@ -217,20 +224,22 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
             }
         }
     }
-    val dark=appearance.dark
+    val palette=readerPalette(appearance.theme)
     val fontSize=appearance.fontSize
     var options by remember { mutableStateOf(false) }
     var selectedWord by remember { mutableStateOf<WordInfo?>(null) }
+    // Which occurrence was tapped, so that word stays marked while its card is open.
+    var selectedLink by remember { mutableStateOf<String?>(null) }
     var more by remember { mutableStateOf(false) }
     val translations=remember(story.id) { mutableStateListOf<String>() }
     val pageSentences=story.sentences.drop(page*SENTENCES_PER_PAGE).take(SENTENCES_PER_PAGE)
     val scroll=rememberScrollState()
-    // The reader follows its own light/dark choice, independent of the system theme.
-    TaleColorTheme(if(dark) DarkTaleColors else LightTaleColors) {
-        val background=if(dark) Color(0xFF080808) else Color.White
-        val foreground=if(dark) Color.White else TaleInk
-        val accent=if(dark) Color(0xFF7DD3FC) else TaleBlue
-        val muted=if(dark) Color(0xFFB7C5D7) else TaleMuted
+    // The reader follows its own page theme, independent of the system theme; sepia is a light page.
+    TaleColorTheme(if(appearance.dark) DarkTaleColors else LightTaleColors) {
+        val background=palette.background
+        val foreground=palette.foreground
+        val accent=palette.accent
+        val muted=palette.muted
         LaunchedEffect(page) { scroll.scrollTo(0) }
         // Each sentence is its own utterance, so the one being read can be highlighted (Q4.8).
         var narrationFrom by remember { mutableIntStateOf(0) }
@@ -249,16 +258,19 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
         val pageTranslated=pageSentences.isNotEmpty() && pageSentences.all {it.id in translations}
         // A sideways swipe turns the page, like a book; the threshold keeps a vertical scroll from flipping it.
         val swipeThreshold=with(androidx.compose.ui.platform.LocalDensity.current) {72.dp.toPx()}
-        Box(Modifier.fillMaxSize().background(background).statusBarsPadding().navigationBarsPadding()) {
+        // Where the last touch on the text landed decides whether the word card opens above or below it, so it never hides the word.
+        var touchY by remember { mutableFloatStateOf(0f) }
+        var screenHeight by remember { mutableIntStateOf(0) }
+        Box(Modifier.fillMaxSize().background(background).onSizeChanged {screenHeight=it.height}.statusBarsPadding().navigationBarsPadding()) {
             // On tablets and in landscape the page keeps a book-like line length instead of spanning the screen.
             Column(Modifier.fillMaxHeight().centeredWidth(ReadingWidth)) {
                 Row(Modifier.fillMaxWidth().heightIn(min=52.dp).padding(horizontal=14.dp),verticalAlignment=Alignment.CenterVertically) {
                     ReferenceIconButton("back",stringResource(R.string.geri),{narrator.stop();onBack()},tint=accent)
                     Spacer(Modifier.weight(1f))
                     TextButton(onClick={options=true},colors=ButtonDefaults.textButtonColors(contentColor=accent),modifier=Modifier.contentLabel(stringResource(R.string.okuma_gorunumu))) {
-                        Text(stringResource(R.string.aa),fontSize=22.sp)
+                        Text(stringResource(R.string.aa),fontSize=20.sp,fontFamily=FontFamily.Serif)
                     }
-                    Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.kelimelerim_kayitli_kelime_2, snapshot.savedWordIds.size)).clickable(role=Role.Button) {narrator.stop();onOpenWords()}.background(if(dark) Color(0xFF222222) else TaleLine,RoundedCornerShape(8.dp)).padding(8.dp),verticalAlignment=Alignment.CenterVertically) {
+                    Row(Modifier.heightIn(min=48.dp).contentLabel(stringResource(R.string.kelimelerim_kayitli_kelime_2, snapshot.savedWordIds.size)).clickable(role=Role.Button) {narrator.stop();onOpenWords()}.padding(horizontal=6.dp),verticalAlignment=Alignment.CenterVertically) {
                         ReferenceIcon("cards",muted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=muted,fontSize=14.sp)
                     }
                 }
@@ -267,7 +279,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                         detectHorizontalDragGestures(onDragStart={drag=0f},onDragEnd={
                             if(drag<=-swipeThreshold) changePage(page+1) else if(drag>=swipeThreshold) changePage(page-1)
                         }) {change,amount -> drag+=amount; change.consume()}
-                    }.verticalScroll(scroll).padding(horizontal=24.dp),verticalArrangement=Arrangement.spacedBy(10.dp)) {
+                    }.verticalScroll(scroll).padding(start=28.dp,end=28.dp,top=12.dp,bottom=24.dp),verticalArrangement=Arrangement.spacedBy(14.dp)) {
                     if(!snapshot.readerHintSeen) {
                         Column(Modifier.fillMaxWidth().appearIn().background(accent.copy(alpha=0.08f),RoundedCornerShape(14.dp)).border(1.dp,accent.copy(alpha=0.25f),RoundedCornerShape(14.dp)).padding(14.dp)) {
                             Text(stringResource(R.string.okurken_ogren),fontWeight=FontWeight.Bold,fontSize=14.sp,color=accent)
@@ -277,82 +289,102 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                             TextButton(onClick=onHintDismiss,colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.anladim)) }
                         }
                     }
-                    Text("${page+1}.",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),fontFamily=FontFamily.Serif,fontSize=18.sp,color=foreground,modifier=Modifier.align(Alignment.CenterHorizontally).padding(vertical=9.dp))
+                    // The book's title sits quietly over the page, as in a printed book's running head.
+                    Text(story.title,color=muted,fontSize=13.sp,fontFamily=FontFamily.Serif,letterSpacing=0.6.sp,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
                     val listenLabel=stringResource(R.string.listen_from_sentence)
                     val translateLabel=stringResource(R.string.cumleyi_cevir)
                     val hideLabel=stringResource(R.string.ceviriyi_gizle)
                     // Only a story's own study words are underlined; with the general word list every line would be.
                     val curated=story.vocabulary!=null
-                    pageSentences.forEachIndexed { index,sentence -> key(page,sentence.id) {
-                        // Long press translates the sentence; while the page is being read aloud it moves the reading here instead.
-                        val highlight by animateColorAsState(if(index==readingIndex) accent.copy(alpha=0.16f) else Color.Transparent,tween(TaleMotion.standard),label="reading")
-                        val translated=sentence.id in translations
-                        Row(Modifier.fillMaxWidth().appearIn(index)
-                            .background(highlight,RoundedCornerShape(8.dp))
-                            .pointerInput(page,index) { detectTapGestures(onLongPress={ if(narrator.speaking || narrator.preparing) listen(index) else toggleTranslation(sentence.id) }) }
-                            .semantics { customActions=listOf(
-                                CustomAccessibilityAction(if(translated) hideLabel else translateLabel) { toggleTranslation(sentence.id); true },
-                                CustomAccessibilityAction(listenLabel) { listen(index); true }) }) {
-                            val phrases=if(curated) remember(story.revisionId,sentence.id) {PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence))} else LearningContent.phraseIndex
-                            TappableSentence(sentence,fontSize,foreground,Modifier.weight(1f),phrases,LearningContent.glossary,lineSpacing=appearance.spacing.multiplier,
-                                saved=snapshot.savedWordIds,underlineStudyWords=curated,savedTint=accent.copy(alpha=0.14f)) { selectedWord=it; more=false; onLookup(it) }
+                    // The page reads as running prose. A sentence whose translation is open ends its paragraph, so the
+                    // translation sits right under it and the text carries on below.
+                    val paragraphs=buildList {
+                        var run=mutableListOf<StorySentence>()
+                        pageSentences.forEach { run+=it; if(it.id in translations) { add(run.toList()); run=mutableListOf() } }
+                        if(run.isNotEmpty()) add(run.toList())
+                    }
+                    paragraphs.forEachIndexed { index,paragraph -> key(page,paragraph.first().id) {
+                        val first=pageSentences.indexOf(paragraph.first())
+                        val reading=readingIndex?.let {pageSentences.getOrNull(it)}?.id
+                        val actions=paragraph.flatMapIndexed { i,sentence ->
+                            // With several sentences in one paragraph, each action names the sentence it acts on.
+                            fun label(base: String)=if(paragraph.size==1) base else "$base: ${sentence.english.preview()}"
+                            listOf(CustomAccessibilityAction(label(if(sentence.id in translations) hideLabel else translateLabel)) { toggleTranslation(sentence.id); true },
+                                CustomAccessibilityAction(label(listenLabel)) { listen(first+i); true })
                         }
-                        AnimatedVisibility(sentence.id in translations,enter=fadeIn(tween(TaleMotion.standard))+expandVertically(tween(TaleMotion.standard)),exit=fadeOut(tween(TaleMotion.quick))+shrinkVertically(tween(TaleMotion.quick))) {
+                        TappableParagraph(paragraph,{sentence -> if(curated) PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence)) else LearningContent.phraseIndex},
+                            fontSize,foreground,Modifier.fillMaxWidth().appearIn(index).semantics {customActions=actions},LearningContent.glossary,lineSpacing=appearance.spacing.multiplier,
+                            saved=snapshot.savedWordIds,underlineStudyWords=curated,savedTint=accent.copy(alpha=0.14f),
+                            reading=reading,readingTint=accent.copy(alpha=0.18f),selected=selectedLink.takeIf {selectedWord!=null},selectedTint=accent.copy(alpha=0.28f),
+                            // Long press translates the sentence; while the page is being read aloud it moves the reading there instead.
+                            onPress={touchY=it},onLongPress={sentence -> if(narrator.speaking || narrator.preparing) listen(pageSentences.indexOf(sentence)) else toggleTranslation(sentence.id)}) { word,link ->
+                            selectedWord=word; selectedLink=link; more=false; onLookup(word)
+                        }
+                        if(paragraph.last().id in translations) {
+                            val translationSize=(fontSize-3).coerceAtLeast(13)
                             // A quiet line under the sentence: the English stays the main text.
-                            Text(sentence.translation,color=muted,fontSize=(fontSize-3).coerceAtLeast(13).sp,lineHeight=((fontSize-3).coerceAtLeast(13)*1.4f).sp,
-                                modifier=Modifier.fillMaxWidth().padding(start=10.dp).drawBehind {
-                                    val bar=3.dp.toPx()
+                            Text(paragraph.last().translation,color=muted,fontSize=translationSize.sp,lineHeight=(translationSize*1.45f).sp,
+                                modifier=Modifier.fillMaxWidth().appearIn().drawBehind {
+                                    val bar=2.dp.toPx()
                                     val x=if(layoutDirection==androidx.compose.ui.unit.LayoutDirection.Rtl) size.width-bar else 0f
                                     drawRect(accent.copy(alpha=0.5f),topLeft=androidx.compose.ui.geometry.Offset(x,0f),size=androidx.compose.ui.geometry.Size(bar,size.height))
-                                }.padding(start=10.dp,top=2.dp,bottom=2.dp))
+                                }.padding(start=14.dp,top=2.dp,bottom=2.dp))
                         }
                     } }
                 }
                 narrator.error?.let { Text(it,color=muted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp)) }
-                Text("${page+1} / $pageCount",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),color=muted,fontSize=12.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(top=12.dp,bottom=4.dp))
-                Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),verticalAlignment=Alignment.CenterVertically) {
-                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),thumb={ Box(Modifier.size(12.dp).background(TaleBlue,CircleShape)) },track={ ReferenceProgress(if(pageCount>1) page.toFloat()/(pageCount-1) else 1f,Modifier.fillMaxWidth(),accent) })
+                // One slim progress line beside the page actions, then the page turns: no stacked bars of controls.
+                // The slider leads the row, so a drag that starts at its very edge lands on it and not on a button.
+                Row(Modifier.fillMaxWidth().padding(start=16.dp,end=8.dp),verticalAlignment=Alignment.CenterVertically) {
+                    Slider(value=page.toFloat(),onValueChange={changePage(it.toInt(),report=false)},onValueChangeFinished={reportProgress()},valueRange=0f..(pageCount-1).coerceAtLeast(1).toFloat(),steps=(pageCount-2).coerceAtLeast(0),modifier=Modifier.weight(1f),
+                        thumb={ Box(Modifier.size(12.dp).background(accent,CircleShape)) },
+                        track={ val shown=if(pageCount>1) page.toFloat()/(pageCount-1) else 1f
+                            Box(Modifier.fillMaxWidth().height(3.dp).background(palette.line,RoundedCornerShape(2.dp))) { Box(Modifier.fillMaxWidth(shown).height(3.dp).background(accent.copy(alpha=0.7f),RoundedCornerShape(2.dp))) } })
+                    Text("${page+1} / $pageCount",style=LocalTextStyle.current.copy(textDirection=androidx.compose.ui.text.style.TextDirection.Ltr),color=muted,fontSize=12.sp,modifier=Modifier.padding(start=6.dp,end=2.dp))
                     Box(Modifier.size(48.dp).contentLabel(stringResource(if(pageTranslated) R.string.page_translate_hide else R.string.page_translate)).clickable(role=Role.Button) {
                         if(pageTranslated) translations.removeAll(pageSentences.map {it.id}.toSet()) else pageSentences.forEach {if(it.id !in translations) translations.add(it.id)}
                     },contentAlignment=Alignment.Center) { ReferenceIcon("translate",if(pageTranslated) accent else muted,Modifier.size(24.dp).background(if(pageTranslated) accent.copy(alpha=0.14f) else Color.Transparent,RoundedCornerShape(6.dp))) }
                     Box(Modifier.size(48.dp).pulseWhile(narrator.speaking).contentLabel(if(narrator.speaking || narrator.preparing) stringResource(R.string.seslendirmeyi_durdur) else stringResource(R.string.sayfayi_dinle)).clickable(role=Role.Button) { if(narrator.speaking || narrator.preparing) { narrator.stop() } else { listen() } },contentAlignment=Alignment.Center) { if(narrator.speaking || narrator.preparing) Text("Ⅱ",color=accent,fontSize=25.sp) else ReferenceIcon("headphones",accent,Modifier.size(26.dp)) }
                 }
-                Row(Modifier.fillMaxWidth().padding(horizontal=16.dp),horizontalArrangement=Arrangement.SpaceBetween) {
-                    TextButton(onClick={changePage(page-1)},enabled=page>0,modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(stringResource(R.string.onceki),fontSize=15.sp) }
-                    if(page==pageCount-1) Button(enabled=!completed,modifier=Modifier.heightIn(min=48.dp),onClick={completed=true;narrator.stop();onComplete(timer.pause())}) { Text(stringResource(R.string.bitir),fontSize=15.sp) }
+                Row(Modifier.fillMaxWidth().padding(horizontal=8.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
+                    TextButton(onClick={changePage(page-1)},enabled=page>0,modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent,disabledContentColor=muted.copy(alpha=0.5f))) { Text(stringResource(R.string.onceki),fontSize=15.sp) }
+                    if(page==pageCount-1) Button(enabled=!completed,modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.buttonColors(containerColor=accent,contentColor=background),onClick={completed=true;narrator.stop();onComplete(timer.pause())}) { Text(stringResource(R.string.bitir),fontSize=15.sp) }
                     else TextButton(modifier=Modifier.heightIn(min=48.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent),onClick={changePage(page+1)}) { Text(stringResource(R.string.sonraki),fontSize=15.sp,fontWeight=FontWeight.SemiBold) }
                 }
             }
             if(options) ReaderAppearancePanel(appearance,appearanceError,onDismiss={options=false},onChange=::changeAppearance)
             selectedWord?.let { word ->
-                Popup(alignment=Alignment.TopCenter,offset=IntOffset(0,130),onDismissRequest={selectedWord=null},properties=PopupProperties(focusable=true)) {
-                    // The word card springs open from where the learner tapped.
+                // Like a book app's dictionary card: it opens on the half of the page away from the word.
+                val below=touchY<screenHeight/2f
+                val headerOffset=with(androidx.compose.ui.platform.LocalDensity.current) {52.dp.roundToPx()}
+                Popup(alignment=if(below) Alignment.BottomCenter else Alignment.TopCenter,offset=IntOffset(0,if(below) 0 else headerOffset),onDismissRequest={selectedWord=null},properties=PopupProperties(focusable=true)) {
                     val still=reduceMotion()
-                    val open=remember(word.id) {Animatable(if(still) 1f else 0.85f)}
-                    LaunchedEffect(word.id) {open.animateTo(1f,spring(dampingRatio=0.6f,stiffness=Spring.StiffnessMedium))}
+                    val open=remember(word.id) {Animatable(if(still) 1f else 0.92f)}
+                    LaunchedEffect(word.id) {open.animateTo(1f,spring(dampingRatio=0.7f,stiffness=Spring.StiffnessMedium))}
                     // Padding inside the popup window leaves room for the shadow instead of clipping it into a grey box.
-                    Column(Modifier.padding(16.dp).width(272.dp).graphicsLayer {scaleX=open.value;scaleY=open.value;alpha=((open.value-0.85f)/0.15f).coerceIn(0f,1f)}
-                        .shadow(14.dp,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp)).background(TaleSurface,RoundedCornerShape(16.dp))) {
+                    Column(Modifier.padding(16.dp).widthIn(max=440.dp).fillMaxWidth().graphicsLayer {scaleX=open.value;scaleY=open.value;alpha=((open.value-0.92f)/0.08f).coerceIn(0f,1f)}
+                        .shadow(18.dp,RoundedCornerShape(20.dp)).border(1.dp,palette.line,RoundedCornerShape(20.dp)).background(palette.surface,RoundedCornerShape(20.dp)).padding(bottom=14.dp)) {
                         val lookupOnly=Glossary.isLookupOnly(word)
                         val lemma=Glossary.lemmaOf(word)
-                        Row(Modifier.fillMaxWidth().padding(16.dp),horizontalArrangement=Arrangement.SpaceBetween,verticalAlignment=Alignment.CenterVertically) {
-                            ReferenceIconButton("volume",stringResource(R.string.kelimesini_dinle, word.word),{narrator.speak(word.word)})
-                            Text(word.word,fontSize=20.sp,fontWeight=FontWeight.Bold)
-                            Text(if(lookupOnly && word.id !in snapshot.savedWordIds) stringResource(R.string.glossary_label) else if(word.id in snapshot.savedWordIds) stringResource(R.string.kayitli) else stringResource(R.string.kaydedilmedi),fontSize=11.sp,color=TaleMuted)
+                        Row(Modifier.fillMaxWidth().padding(start=20.dp,end=8.dp,top=8.dp),verticalAlignment=Alignment.CenterVertically) {
+                            Column(Modifier.weight(1f)) {
+                                Text(word.word,fontSize=24.sp,fontFamily=FontFamily.Serif,fontWeight=FontWeight.SemiBold,color=foreground)
+                                Text(if(lookupOnly && word.id !in snapshot.savedWordIds) stringResource(R.string.glossary_label) else if(word.id in snapshot.savedWordIds) stringResource(R.string.kayitli) else stringResource(R.string.kaydedilmedi),fontSize=11.sp,color=muted)
+                            }
+                            ReferenceIconButton("volume",stringResource(R.string.kelimesini_dinle, word.word),{narrator.speak(word.word)},tint=accent)
                         }
-                        if(lookupOnly && !lemma.equals(word.word,ignoreCase=true)) Text(stringResource(R.string.glossary_lemma,lemma),fontSize=13.sp,color=TaleMuted,modifier=Modifier.align(Alignment.CenterHorizontally))
-                        Text(word.translation,fontSize=18.sp,modifier=Modifier.align(Alignment.CenterHorizontally).padding(4.dp))
-                        if(word.pronunciation.isNotBlank() || word.example.isNotBlank()) TextButton(onClick={more=!more},modifier=Modifier.align(Alignment.CenterHorizontally)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster),textDecoration=TextDecoration.Underline) }
-                        if(more) Text(word.example,color=TaleMuted,fontSize=12.sp,modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp))
-                        Row(Modifier.fillMaxWidth().background(TaleBlue,RoundedCornerShape(bottomStart=16.dp,bottomEnd=16.dp))) {
-                            Box(Modifier.weight(1f).height(48.dp).clickable(role=Role.Button) { selectedWord=null },contentAlignment=Alignment.Center) { Text(stringResource(R.string.kapat),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
-                            Box(Modifier.width(1.dp).height(28.dp).align(Alignment.CenterVertically).background(TaleOnBlue.copy(alpha=0.65f)))
+                        if(lookupOnly && !lemma.equals(word.word,ignoreCase=true)) Text(stringResource(R.string.glossary_lemma,lemma),fontSize=13.sp,color=muted,modifier=Modifier.padding(horizontal=20.dp))
+                        Text(word.translation,fontSize=18.sp,color=foreground,modifier=Modifier.padding(horizontal=20.dp,vertical=8.dp))
+                        if(word.pronunciation.isNotBlank() || word.example.isNotBlank()) TextButton(onClick={more=!more},modifier=Modifier.padding(horizontal=8.dp),colors=ButtonDefaults.textButtonColors(contentColor=accent)) { Text(if(more) word.pronunciation else stringResource(R.string.daha_fazla_goster)) }
+                        if(more) Text(word.example,color=muted,fontSize=13.sp,fontFamily=FontFamily.Serif,modifier=Modifier.padding(horizontal=20.dp,vertical=4.dp))
+                        Row(Modifier.fillMaxWidth().padding(start=16.dp,end=16.dp,top=8.dp),horizontalArrangement=Arrangement.spacedBy(10.dp)) {
+                            OutlinedButton(onClick={selectedWord=null},modifier=Modifier.weight(1f).heightIn(min=48.dp),border=BorderStroke(1.dp,palette.line),colors=ButtonDefaults.outlinedButtonColors(contentColor=foreground)) { Text(stringResource(R.string.kapat),fontSize=15.sp) }
                             // A glossary word is saved in its dictionary form with its meaning (Q4.3a).
-                            Box(Modifier.weight(1f).height(48.dp).clickable(role=Role.Button) {
+                            Button(onClick={
                                 val wasSaved=word.id in snapshot.savedWordIds
                                 if(lookupOnly) onSaveGlossaryWord(WordInfo(word.id,lemma,word.translation,"","")) else onSaveWord(word.id); selectedWord=null
                                 if(wasSaved) alerts.show(removedText(word.word),TaleAlertKind.Info) else alerts.success(savedText(if(lookupOnly) lemma else word.word))
-                            },contentAlignment=Alignment.Center) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),color=TaleOnBlue,fontSize=16.sp,fontWeight=FontWeight.Bold) }
+                            },modifier=Modifier.weight(1f).heightIn(min=48.dp),colors=ButtonDefaults.buttonColors(containerColor=accent,contentColor=background)) { Text(if(word.id in snapshot.savedWordIds) stringResource(R.string.kaldir) else stringResource(R.string.ogren_2),fontSize=15.sp,fontWeight=FontWeight.SemiBold) }
                         }
                     }
                 }
@@ -361,35 +393,75 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
     }
 }
 
+/** The first few words of a sentence, enough for a spoken action label to say which sentence it is. */
+private fun String.preview(words: Int=4)=split(' ').let {if(it.size<=words) this else it.take(words).joinToString(" ")+"…"}
+
+/**
+ * A run of sentences set as one paragraph. Every known word or phrase is a link; a long press lands on the
+ * sentence under the finger. [reading] and [selected] mark the sentence being read aloud and the tapped word.
+ */
 @Composable
-private fun TappableSentence(sentence: StorySentence,fontSize: Int,color: Color,modifier: Modifier=Modifier,phrases: PhraseMatcher.Index,glossary: Glossary?=null,lineSpacing: Float=1.65f,
-    saved: Set<String> = emptySet(),underlineStudyWords: Boolean=true,savedTint: Color=Color.Transparent,onWord: (WordInfo)->Unit) {
-    val matches=remember(sentence,phrases) {PhraseMatcher.find(sentence.english,phrases)}
-    // Every known word is a link. Saved words get a tint and an underline, so the mark is not colour alone;
-    // a story's own study words are underlined; everything else looks like plain text (Q4.3a).
-    val links=remember(sentence,matches,glossary) {
-        (matches.map {Triple(it.start,it.end,it.word)}+glossary?.spans(sentence.english,matches).orEmpty().map {Triple(it.start,it.end,it.word)}).sortedBy {it.first}
-    }
-    val currentOnWord by rememberUpdatedState(onWord)
-    // Each word/phrase is a link: tappable and exposed to accessibility services as its own element.
-    val annotated=remember(sentence,color,links,saved,underlineStudyWords,savedTint) {
-        buildAnnotatedString {
-            var cursor=0
-            links.forEach { (start,end,word) ->
-                append(sentence.english.substring(cursor,start))
-                val style=when {
-                    word.id in saved -> SpanStyle(color=color,background=savedTint,textDecoration=TextDecoration.Underline)
-                    underlineStudyWords && !Glossary.isLookupOnly(word) -> SpanStyle(color=color,textDecoration=TextDecoration.Underline)
-                    else -> SpanStyle(color=color)
-                }
-                withLink(LinkAnnotation.Clickable(word.id+"@"+start,TextLinkStyles(style)) {currentOnWord(word)}) {
-                    append(sentence.english.substring(start,end))
-                }
-                cursor=end
-            }
-            append(sentence.english.substring(cursor))
+private fun TappableParagraph(sentences: List<StorySentence>,phrasesFor: (StorySentence)->PhraseMatcher.Index,fontSize: Int,color: Color,modifier: Modifier=Modifier,
+    glossary: Glossary?=null,lineSpacing: Float=1.65f,saved: Set<String> = emptySet(),underlineStudyWords: Boolean=true,savedTint: Color=Color.Transparent,
+    reading: String?=null,readingTint: Color=Color.Transparent,selected: String?=null,selectedTint: Color=Color.Transparent,
+    onPress: (Float)->Unit={},onLongPress: (StorySentence)->Unit,onWord: (WordInfo,String)->Unit) {
+    // Where each sentence starts in the paragraph, and its links with paragraph-wide offsets.
+    val layout=remember(sentences,glossary) {
+        var base=0
+        sentences.map { sentence ->
+            val matches=PhraseMatcher.find(sentence.english,phrasesFor(sentence))
+            val links=(matches.map {Triple(it.start,it.end,it.word)}+glossary?.spans(sentence.english,matches).orEmpty().map {Triple(it.start,it.end,it.word)}).sortedBy {it.first}
+            Triple(sentence,base,links).also {base+=sentence.english.length+1}
         }
     }
-    Text(text=annotated,modifier=modifier,style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,fontFamily=FontFamily.Serif,color=color,
-        textDirection=androidx.compose.ui.text.style.TextDirection.Ltr,textAlign=androidx.compose.ui.text.style.TextAlign.Left))
+    val currentOnWord by rememberUpdatedState(onWord)
+    val currentOnLongPress by rememberUpdatedState(onLongPress)
+    // Each word/phrase is a link: tappable and exposed to accessibility services as its own element.
+    val annotated=remember(layout,color,saved,underlineStudyWords,savedTint,reading,readingTint,selected,selectedTint) {
+        buildAnnotatedString {
+            layout.forEachIndexed { i,(sentence,base,links) ->
+                if(i>0) append(' ')
+                val sentenceStart=length
+                var cursor=0
+                links.forEach { (start,end,word) ->
+                    append(sentence.english.substring(cursor,start))
+                    val key=word.id+"@"+(base+start)
+                    val style=when {
+                        key==selected -> SpanStyle(color=color,background=selectedTint)
+                        word.id in saved -> SpanStyle(color=color,background=savedTint,textDecoration=TextDecoration.Underline)
+                        underlineStudyWords && !Glossary.isLookupOnly(word) -> SpanStyle(color=color,textDecoration=TextDecoration.Underline)
+                        else -> SpanStyle(color=color)
+                    }
+                    withLink(LinkAnnotation.Clickable(key,TextLinkStyles(style)) {currentOnWord(word,key)}) {
+                        append(sentence.english.substring(start,end))
+                    }
+                    cursor=end
+                }
+                append(sentence.english.substring(cursor))
+                if(sentence.id==reading) addStyle(SpanStyle(background=readingTint),sentenceStart,length)
+            }
+        }
+    }
+    var textLayout by remember { mutableStateOf<TextLayoutResult?>(null) }
+    var top by remember { mutableFloatStateOf(0f) }
+    val currentOnPress by rememberUpdatedState(onPress)
+    // Almost every word is a link, so the long press is watched before the links see the touch; once it fires,
+    // the rest of the touch is swallowed and the word under the finger does not open as well.
+    Box(modifier.onGloballyPositioned {top=it.positionInRoot().y}.pointerInput(layout) { awaitEachGesture {
+        val down=awaitFirstDown(requireUnconsumed=false,pass=PointerEventPass.Initial)
+        currentOnPress(top+down.position.y)
+        val released=withTimeoutOrNull(viewConfiguration.longPressTimeoutMillis) {
+            while(true) {
+                val change=awaitPointerEvent(PointerEventPass.Initial).changes.firstOrNull {it.id==down.id} ?: break
+                if(!change.pressed || (change.position-down.position).getDistance()>viewConfiguration.touchSlop) break
+            }
+        }
+        if(released==null) {
+            textLayout?.getOffsetForPosition(down.position)?.let {offset -> layout.lastOrNull {it.second<=offset}?.let {currentOnLongPress(it.first)}}
+            do { val event=awaitPointerEvent(PointerEventPass.Initial); event.changes.forEach {it.consume()} } while(event.changes.any {it.pressed})
+        }
+    } }) {
+        Text(text=annotated,onTextLayout={textLayout=it},style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,fontFamily=FontFamily.Serif,color=color,
+            textDirection=androidx.compose.ui.text.style.TextDirection.Ltr,textAlign=TextAlign.Left))
+    }
 }

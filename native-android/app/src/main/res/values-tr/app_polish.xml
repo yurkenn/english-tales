@@ -17,4 +17,5 @@
     <string name="reader_hint_swipe">Sayfa çevirmek için sağa ya da sola kaydır.</string>
     <string name="page_translate">Sayfayı çevir</string>
     <string name="page_translate_hide">Sayfa çevirisini gizle</string>
+    <string name="reader_theme_sepia">Sepya</string>
 </resources>

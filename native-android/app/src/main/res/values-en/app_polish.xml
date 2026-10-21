@@ -18,4 +18,5 @@
     <string name="reader_hint_swipe">Swipe left or right to turn the page.</string>
     <string name="page_translate">Translate page</string>
     <string name="page_translate_hide">Hide page translation</string>
+    <string name="reader_theme_sepia">Sepia</string>
 </resources>

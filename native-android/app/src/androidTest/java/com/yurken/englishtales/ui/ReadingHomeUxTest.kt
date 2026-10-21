@@ -31,13 +31,23 @@ class ReadingHomeUxTest {
         val name="reading-test-${UUID.randomUUID()}"
         val store=ReadingPreferencesStore(context,name)
         try {
-            store.update {it.copy(dark=true,spacing=ReadingSpacing.SPACIOUS)}
+            store.update {it.copy(theme=ReadingTheme.DARK,spacing=ReadingSpacing.SPACIOUS)}
             coroutineScope {repeat(5) {launch {store.update {it.copy(fontSize=it.fontSize+1)}}}}
-            assertEquals(ReadingPreferences(true,22,ReadingSpacing.SPACIOUS),ReadingPreferencesStore(context,name).read())
+            assertEquals(ReadingPreferences(ReadingTheme.DARK,22,ReadingSpacing.SPACIOUS),ReadingPreferencesStore(context,name).read())
             context.getSharedPreferences(name,0).edit().putString("fontSize","old-invalid-value").putString("spacing","unknown").commit()
-            assertEquals(ReadingPreferences(true,17,ReadingSpacing.COMFORTABLE),ReadingPreferencesStore(context,name).read())
+            assertEquals(ReadingPreferences(ReadingTheme.DARK,17,ReadingSpacing.COMFORTABLE),ReadingPreferencesStore(context,name).read())
             store.update {it.copy(fontSize=100)}
             assertEquals(28,ReadingPreferencesStore(context,name).read().fontSize)
+        } finally {context.getSharedPreferences(name,0).edit().clear().commit()}
+    }
+
+    @Test fun anOlderDarkSwitchBecomesTheDarkThemeAndSepiaIsKept() = runBlocking {
+        val name="reading-test-${UUID.randomUUID()}"
+        try {
+            context.getSharedPreferences(name,0).edit().putBoolean("dark",true).commit()
+            assertEquals(ReadingTheme.DARK,ReadingPreferencesStore(context,name).read().theme)
+            ReadingPreferencesStore(context,name).update {it.copy(theme=ReadingTheme.SEPIA)}
+            assertEquals(ReadingTheme.SEPIA,ReadingPreferencesStore(context,name).read().theme)
         } finally {context.getSharedPreferences(name,0).edit().clear().commit()}
     }
 
@@ -98,7 +108,7 @@ class ReadingHomeUxTest {
             compose.waitUntil(5_000) {store.read().fontSize==19}
             compose.onNodeWithText("Geniş").performClick()
             compose.onNodeWithText("Koyu").performScrollTo().performClick()
-            compose.waitUntil(5_000) {store.read()==ReadingPreferences(true,19,ReadingSpacing.SPACIOUS)}
+            compose.waitUntil(5_000) {store.read()==ReadingPreferences(ReadingTheme.DARK,19,ReadingSpacing.SPACIOUS)}
             screenshot("reading-appearance")
             compose.onNodeWithText("Okumaya dön").assertIsDisplayed().performClick()
             compose.runOnIdle {mount++;scale=2f}

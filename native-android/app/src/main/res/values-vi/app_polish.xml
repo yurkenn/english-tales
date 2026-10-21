@@ -18,4 +18,5 @@
     <string name="reader_hint_swipe">Vuốt sang trái hoặc phải để lật trang.</string>
     <string name="page_translate">Dịch trang</string>
     <string name="page_translate_hide">Ẩn bản dịch trang</string>
+    <string name="reader_theme_sepia">Màu giấy</string>
 </resources>

@@ -18,4 +18,5 @@
     <string name="reader_hint_swipe">ปัดซ้ายหรือขวาเพื่อเปลี่ยนหน้า</string>
     <string name="page_translate">แปลทั้งหน้า</string>
     <string name="page_translate_hide">ซ่อนคำแปลของหน้า</string>
+    <string name="reader_theme_sepia">ซีเปีย</string>
 </resources>
