@@ -32,6 +32,17 @@ val releaseSigning = Properties().apply {
 val releaseRequested=gradle.startParameter.taskNames.any {it.contains("Release",ignoreCase=true)}
 val releaseDeviceProbe=providers.gradleProperty("releaseDeviceTest").orNull == "true"
 val adDeviceProbe=providers.gradleProperty("adDeviceTest").orNull=="true"
+// Explicit, anonymous service checks use only the already-public mobile settings.
+// Keep the normal fixture suite independent of the live service.
+val serviceDeviceProbe=providers.gradleProperty("serviceDeviceTest").orNull=="true"
+require(!serviceDeviceProbe || (!releaseDeviceProbe && !adDeviceProbe)) { "Run the service device probe separately" }
+if(serviceDeviceProbe) {
+    require(productionSettings.getProperty("SUPABASE_URL","").startsWith("https://") &&
+        productionSettings.getProperty("SUPABASE_PUBLISHABLE_KEY","").startsWith("sb_publishable_")) {
+        "Service device tests require public mobile service settings"
+    }
+}
+fun debugServiceSetting(name: String)=if(serviceDeviceProbe) productionSetting(name) else contentSetting(name)
 val adsSettings=Properties().apply {rootProject.file("config/ads.properties").inputStream().use {load(it)}}
 val adsEnabled=adsSettings.getProperty("ENABLED","false")=="true"
 val adsAppId=adsSettings.getProperty("APP_ID","")
@@ -55,6 +66,7 @@ if(releaseRequested) {
 android {
     testBuildType = if (releaseDeviceProbe) "release" else "debug"
     if (releaseDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/releaseProbe/java"))
+    if (serviceDeviceProbe) sourceSets.getByName("androidTest").java.setSrcDirs(listOf("src/serviceProbe/java"))
     if(adDeviceProbe) sourceSets.getByName("androidTest").java.srcDir("src/adProbe/java")
     namespace = "com.yurken.englishtales"
     compileSdk = 36
@@ -63,6 +75,7 @@ android {
         applicationId = "com.yurken.englishtales"
         testInstrumentationRunner = if (releaseDeviceProbe)
             "com.yurken.englishtales.data.NativeAlignmentInstrumentation"
+        else if (serviceDeviceProbe) "androidx.test.runner.AndroidJUnitRunner"
         else "com.yurken.englishtales.TalesTestRunner"
         minSdk = 24
         targetSdk = 36
@@ -71,8 +84,8 @@ android {
         // The release workflow passes -PreleaseVersionCode/-PreleaseVersionName.
         versionCode = providers.gradleProperty("releaseVersionCode").orNull?.toInt() ?: 50
         versionName = providers.gradleProperty("releaseVersionName").orNull ?: "2.2.0"
-        buildConfigField("String", "SUPABASE_URL", "\"${contentSetting("SUPABASE_URL")}\"")
-        buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${contentSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
+        buildConfigField("String", "SUPABASE_URL", "\"${debugServiceSetting("SUPABASE_URL")}\"")
+        buildConfigField("String", "SUPABASE_PUBLISHABLE_KEY", "\"${debugServiceSetting("SUPABASE_PUBLISHABLE_KEY")}\"")
         buildConfigField("String", "GOOGLE_WEB_CLIENT_ID", "\"${contentSetting("GOOGLE_WEB_CLIENT_ID")}\"")
         buildConfigField("boolean","ADS_ENABLED","true")
         buildConfigField("String","ADMOB_APP_ID","\"ca-app-pub-3940256099942544~3347511713\"")

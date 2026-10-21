@@ -33,3 +33,23 @@ Kaynak: [Compose 1.8.1 test altyapısı kaynak paketi](https://dl.google.com/dl/
 ## Birleşme ve son doğrulama
 
 #153 (`a70ab0e`) ve #152 (`2e64334`) dört tam CI koşusunda geçti: her birinde 336 başarılı cihaz testi, 3 yapılandırmalı atlama, 0 hata; 3/3 açılış ölçümü. Son sözlük/test kaynağının yerel tam API36 paketi de aynı 336/339 sonucunu verdi. #153 `83d2725`, #152 `b2a8c09` ile ana dala alındı. Birleşik ana dalın CI sonucu ayrıca doğrulanır. [Kesin kaynaklar ve rapor özetleri](release-evidence/2026-10-20-write-ui-scheduler.json).
+
+## Yükleme animasyonu ve IO hazır bildirimi düzeltmesi
+
+#154'ün `9e3ab7e` kaynağında [39463943711](https://github.com/yurkenn/english-tales/actions/runs/39463943711) yeniden zaman aşımına uğradı. Yeni ekran ağacı, dil seçiminden önce `TalesApp` yükleme kapısında kalındığını gösterdi. İçerik hazırdı; eski raporda ViewModel `ready` / hesap sahibi bulunmadığından bu tek kayıt modelin mi yoksa çizimin mi geciktiğini ayırmaz. Logcat'te uygulama istisnası yoktu. CI animatör ölçeği 0 olduğundan aşağıdaki animasyon bulgusu bu eski CI olayının kesin nedeni olarak sunulmaz.
+
+Gecikmiş oturum okumasıyla ayrı bir tekrar testi eklendi: gerçek `MainActivity` açılır; IO oturum okuması tutulurken yükleme ekranı görünür ve model henüz hazır değildir. Okuma serbest bırakılınca modelin hazır olması ve onay verilmeden dil seçiminin görünmesi gerekir. Sistem animatör ölçeği hem 0 hem 1 ile sınanır; ayar `finally` içinde önceki değerine döner. `startupRepetitions` instrumentation argümanı her ölçek için tekrar sayısını belirler (varsayılan 1).
+
+Bu testte animasyon açıkken eski `pulseWhile` hem varsayılan hem `StandardTestDispatcher` ile `ComposeNotIdleException` üretti. Elle yazılmış `while(true)` / `Animatable.animateTo` döngüsü Compose'un sonsuz animasyon politikasına katılmıyordu. Sonsuz geçiş artık `rememberInfiniteTransition` / `infiniteRepeatable` kullanıyor; aynı 1–1.06 ölçeği ve 520 ms yön süresi korunuyor. Sistem hareket azaltma tercihi korunur. Tekrarlı hareket artık Compose'un sonsuz animasyon politikası tarafından yönetilir.
+
+Ekran bekleme ve marka geçişinde bütün istisnaları yutan `runCatching` kaldırıldı: bir eşleşmenin bulunmaması boş koleksiyondur, çizim hatası doğrudan başarısızlık olmalıdır. **20 saniyelik kullanıcı yolculuğu sınırı ve mevcut öğrenme/veritabanı kontrolleri korunur.**
+
+Yerel API36 karşılaştırması: eski animasyon + ölçek 1 iki zamanlayıcıda da başarısız; ölçek 0 iki zamanlayıcıda da 20 tekrar geçti. Yeni animasyon + kuyruğa alınan zamanlayıcı, ölçek 1 altında 20 tekrar ve tam ilk kullanım/lokalizasyon/crash-config grubunda 7/7 geçti. Bu karşılaştırma yükleme animasyonundaki somut takılmayı doğrular; geçmiş CI olayının birebir nedenini ispatlamaz. Son birleşik kaynak ve tam CI kabulü PR sonuçlarında ayrıca kaydedilir.
+
+Kaynak: [Compose 1.8.1 kaynak paketi](https://dl.google.com/dl/android/maven2/androidx/compose/ui/ui-test-android/1.8.1/ui-test-android-1.8.1-sources.jar); `ComposeUiTest.android.kt` varsayılan `UnconfinedTestDispatcher` ve sonsuz animasyon politikası.
+
+## API34 Choreographer beklemesi
+
+`27762dd` için hem [push](https://github.com/yurkenn/english-tales/actions/runs/39491809502) hem [PR](https://github.com/yurkenn/english-tales/actions/runs/39491816133) koşusu aynı noktada takıldı. Üç dakikalık CI izleyicisi ART dökümünü `android-device-tests/build/device-watchdog/anr/trace_00` içinde kaydetti. Test dil seçimini geçmişti; `FirstLaunchJourneyTest` misafir düğmesinin `performScrollTo()` çağrısında `waitForNextChoreographerFrame()` → `Espresso.onIdle()` içindeydi. Ana iş parçacığı Espresso FutureTask mesajlarını çalıştırıyordu. Activity görünür ve RESUMED idi. Bu, ilk dil ekranını bekleyen eski zaman aşımından farklı bir takılmadır.
+
+Yeni eklenen `StandardTestDispatcher` geçersiz bir genelleme olarak ilk kullanım testlerinden kaldırıldı; bu gerçek pencere yolculukları Compose 1.8.1'in varsayılan zamanlayıcısını kullanır. Ayrı `LearningWriteUiTest` düzeltmesi korunur. Yükleme animasyonu ve IO beklemesini zorlayan regresyon testi de korunur. Zaman aşımı raporundan ayrıca kendisi süre sınırı olmadan Android idle bekleyebilen `ActivityScenario.onActivity` çağrısı kaldırıldı. Yeni kaynağın API34 CI sonucu alınmadan bu değişiklik başarı sayılmaz. İzleyici sonraki takılmaları sessizce beklemek yerine dökümle başarısız kılar; test atlamaz veya hatayı başarıya dönüştürmez.
