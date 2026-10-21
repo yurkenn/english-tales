@@ -36,4 +36,18 @@
     <string name="league_change_name">اپنا نام بدلیں</string>
     <string name="league_show_me">مجھے لیگ میں دکھائیں</string>
     <string name="league_show_me_text">بند کرنے پر آپ اس ہفتے کے گروپ سے نکل جائیں گے اور کوئی آپ کا نام نہیں دیکھے گا۔</string>
+    <string name="league_rank_up">آپ لیگ میں %1$d نمبر پر آ گئے!</string>
+    <string name="league_xp_gain">+%1$d XP · لیگ میں آپ کا نمبر %2$d</string>
+    <string name="league_reminder_gap">لیگ میں آپ کا نمبر %1$d ہے، اوپر جانے کے لیے %2$d XP باقی۔</string>
+    <string name="league_reminder_lead">آپ لیگ میں سب سے آگے ہیں، آج بھی جگہ برقرار رکھیں!</string>
+    <string name="league_reminder_danger">آپ کا نمبر %1$d ہے اور آپ تنزلی کے حصے میں ہیں۔ تھوڑی سی مشق بچا لے گی۔</string>
+    <string name="league_result_up">ترقی!</string>
+    <string name="league_result_stay">آپ کی لیگ برقرار رہی</string>
+    <string name="league_result_down">نیا ہفتہ، نیا موقع</string>
+    <string name="league_share">شیئر کریں</string>
+    <string name="league_share_text">میں English Tales میں %1$s تک پہنچ گیا! میں کہانیوں سے انگریزی سیکھ رہا ہوں: %2$s</string>
+    <string name="league_nickname_title">لیگ میں اپنا نام چنیں</string>
+    <string name="league_nickname_text">ابھی سب \"Okuyucu\" دکھائی دیتے ہیں۔ اصل نام ضروری نہیں، عرفی نام کافی ہے۔</string>
+    <string name="league_nickname_field">عرفی نام</string>
+    <string name="league_nickname_save">محفوظ کریں</string>
 </resources>

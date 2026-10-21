@@ -36,4 +36,18 @@
     <string name="league_change_name">غيّر اسمك</string>
     <string name="league_show_me">أظهرني في الدوري</string>
     <string name="league_show_me_text">إذا أوقفته، تخرج من مجموعة هذا الأسبوع ولن يرى أحد اسمك.</string>
+    <string name="league_rank_up">تقدّمت إلى المركز %1$d في دوريك!</string>
+    <string name="league_xp_gain">+%1$d XP · ترتيبك %2$d في الدوري</string>
+    <string name="league_reminder_gap">ترتيبك %1$d في الدوري، باقٍ %2$d XP للتقدم.</string>
+    <string name="league_reminder_lead">أنت في صدارة دوريك، حافظ على مكانك اليوم!</string>
+    <string name="league_reminder_danger">ترتيبك %1$d وأنت في منطقة الهبوط. جلسة قصيرة تنقذك.</string>
+    <string name="league_result_up">صعدت!</string>
+    <string name="league_result_stay">حافظت على دوريك</string>
+    <string name="league_result_down">أسبوع جديد، فرصة جديدة</string>
+    <string name="league_share">مشاركة</string>
+    <string name="league_share_text">صعدت إلى %1$s في English Tales! أتعلم الإنجليزية بالقصص: %2$s</string>
+    <string name="league_nickname_title">اختر اسمك في الدوري</string>
+    <string name="league_nickname_text">يظهر الجميع حاليًا باسم \"Okuyucu\". لا حاجة لاسمك الحقيقي، يكفي لقب.</string>
+    <string name="league_nickname_field">اللقب</string>
+    <string name="league_nickname_save">حفظ</string>
 </resources>

@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,6 +22,11 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import android.content.Intent
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import com.yurken.englishtales.R
 import com.yurken.englishtales.data.LeagueStanding
 import com.yurken.englishtales.data.LeagueUi
@@ -100,7 +106,7 @@ internal fun LeagueCard(state: LeagueUi, onOpen: () -> Unit, onAccount: () -> Un
 }
 
 @Composable
-internal fun LeagueScreen(state: LeagueUi, displayName: String, onBack: () -> Unit, onRefresh: () -> Unit, onOptOut: (Boolean) -> Unit, onSettings: () -> Unit) {
+internal fun LeagueScreen(state: LeagueUi, displayName: String, onBack: () -> Unit, onRefresh: () -> Unit, onOptOut: (Boolean) -> Unit, onSettings: () -> Unit, onSaveName: (String) -> Unit = {}) {
     LaunchedEffect(Unit) { onRefresh() }
     Column(Modifier.fillMaxSize().background(TaleBackground).statusBarsPadding().navigationBarsPadding()) {
         SimpleTopBar(stringResource(R.string.league_title), onBack)
@@ -116,6 +122,8 @@ internal fun LeagueScreen(state: LeagueUi, displayName: String, onBack: () -> Un
         }
         LazyColumn(Modifier.fillMaxSize().centeredWidth(ContentWidth), contentPadding = PaddingValues(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             item { LeagueHeader(standing) }
+            // Everyone starts as the default reader name; a nickname makes the table feel like real rivals.
+            if (displayName == DEFAULT_NAME && !standing.optedOut) item { NicknameCard(onSaveName) }
             standing.lastWeek?.let { last -> item { LastWeekBanner(last.outcome, last.rank, standing.tier) } }
             if (standing.optedOut || standing.me == null) item {
                 Text(stringResource(if (standing.optedOut) R.string.league_opted_out_screen else R.string.league_join_hint),
@@ -203,5 +211,50 @@ private fun MemberRow(rank: Int, name: String, xp: Int, me: Boolean, zone: Leagu
         Text(if (me) "$name $you" else name, Modifier.weight(1f), fontWeight = if (me) FontWeight.Bold else FontWeight.Normal,
             maxLines = 1, overflow = TextOverflow.Ellipsis, color = TaleInk)
         Text(xpText, fontWeight = FontWeight.SemiBold, fontSize = 15.sp, color = TaleInk)
+    }
+}
+
+private const val DEFAULT_NAME = "Okuyucu"
+
+@Composable
+private fun NicknameCard(onSave: (String) -> Unit) {
+    var name by rememberSaveable { mutableStateOf("") }
+    val trimmed = name.trim()
+    val valid = trimmed.length in 2..20 && trimmed != DEFAULT_NAME
+    Column(Modifier.fillMaxWidth().background(LocalTaleColors.current.tileYellow, RoundedCornerShape(16.dp)).padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(stringResource(R.string.league_nickname_title), fontWeight = FontWeight.Bold, color = TaleInk)
+        Text(stringResource(R.string.league_nickname_text), color = TaleInk, style = MaterialTheme.typography.bodyMedium)
+        OutlinedTextField(name, { name = it.take(20) }, Modifier.fillMaxWidth(), singleLine = true,
+            label = { Text(stringResource(R.string.league_nickname_field)) },
+            keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Words, imeAction = ImeAction.Done))
+        Button(onClick = { onSave(trimmed) }, enabled = valid, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp), shape = RoundedCornerShape(14.dp)) {
+            Text(stringResource(R.string.league_nickname_save))
+        }
+    }
+}
+
+/** The finished week's result, shown once: a promotion celebrates and can be shared, a drop encourages a comeback. */
+@Composable
+internal fun LeagueResultDialog(outcome: String, rank: Int, tier: Int, onDismiss: () -> Unit) {
+    val context = LocalContext.current
+    val league = leagueName(tier)
+    val title = stringResource(when (outcome) { "promoted" -> R.string.league_result_up; "relegated" -> R.string.league_result_down; else -> R.string.league_result_stay })
+    val text = when (outcome) {
+        "promoted" -> stringResource(R.string.league_last_promoted, rank, league)
+        "relegated" -> stringResource(R.string.league_last_relegated, rank, league)
+        else -> stringResource(R.string.league_last_stayed, rank)
+    }
+    val share = stringResource(R.string.league_share)
+    val shareText = stringResource(R.string.league_share_text, league, "https://play.google.com/store/apps/details?id=com.yurken.englishtales")
+    TaleDialog(title, text, if (outcome == "promoted") share else stringResource(R.string.anladim),
+        onConfirm = {
+            if (outcome == "promoted") SafeIntents.startFirst(context, Intent.createChooser(Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT, shareText), share))
+            onDismiss()
+        }, onDismissRequest = onDismiss, dismissLabel = if (outcome == "promoted") stringResource(R.string.anladim) else null) {
+        Box(Modifier.fillMaxWidth().height(130.dp), contentAlignment = Alignment.Center) {
+            LeagueBadge(tier, 96.dp, Modifier.appearIn(0))
+            if (outcome == "promoted") ConfettiBurst(Modifier.matchParentSize(), "league$tier")
+        }
     }
 }

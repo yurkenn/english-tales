@@ -36,4 +36,18 @@
     <string name="league_change_name">নাম বদলান</string>
     <string name="league_show_me">আমাকে লিগে দেখান</string>
     <string name="league_show_me_text">বন্ধ করলে আপনি এই সপ্তাহের দল থেকে বেরিয়ে যাবেন এবং কেউ আপনার নাম দেখবে না।</string>
+    <string name="league_rank_up">আপনি লিগে %1$d নম্বরে উঠেছেন!</string>
+    <string name="league_xp_gain">+%1$d XP · লিগে আপনার স্থান %2$d</string>
+    <string name="league_reminder_gap">লিগে আপনার স্থান %1$d, উপরে উঠতে আরও %2$d XP।</string>
+    <string name="league_reminder_lead">আপনি লিগের শীর্ষে, আজও জায়গা ধরে রাখুন!</string>
+    <string name="league_reminder_danger">আপনার স্থান %1$d, অবনমন অঞ্চলে। ছোট একটি অনুশীলনই যথেষ্ট।</string>
+    <string name="league_result_up">উন্নতি!</string>
+    <string name="league_result_stay">আপনার লিগ একই রইল</string>
+    <string name="league_result_down">নতুন সপ্তাহ, নতুন সুযোগ</string>
+    <string name="league_share">শেয়ার করুন</string>
+    <string name="league_share_text">English Tales-এ আমি %1$s-এ উঠেছি! আমি গল্পের মাধ্যমে ইংরেজি শিখছি: %2$s</string>
+    <string name="league_nickname_title">লিগে আপনার নাম বেছে নিন</string>
+    <string name="league_nickname_text">এখন সবাই \"Okuyucu\" নামে দেখায়। আসল নাম লাগবে না, ডাকনামই যথেষ্ট।</string>
+    <string name="league_nickname_field">ডাকনাম</string>
+    <string name="league_nickname_save">সংরক্ষণ</string>
 </resources>

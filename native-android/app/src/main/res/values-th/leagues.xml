@@ -36,4 +36,18 @@
     <string name="league_change_name">เปลี่ยนชื่อ</string>
     <string name="league_show_me">แสดงฉันในลีก</string>
     <string name="league_show_me_text">ถ้าปิด คุณจะออกจากกลุ่มของสัปดาห์นี้และไม่มีใครเห็นชื่อคุณ</string>
+    <string name="league_rank_up">คุณขึ้นมาอันดับ %1$d ในลีกแล้ว!</string>
+    <string name="league_xp_gain">+%1$d XP · อันดับ %2$d ในลีก</string>
+    <string name="league_reminder_gap">คุณอยู่อันดับ %1$d อีก %2$d XP จะขึ้นหนึ่งอันดับ</string>
+    <string name="league_reminder_lead">คุณอยู่อันดับหนึ่งของลีก รักษาไว้วันนี้!</string>
+    <string name="league_reminder_danger">คุณอยู่อันดับ %1$d ในโซนตกชั้น ฝึกสั้นๆ ก็รอดได้</string>
+    <string name="league_result_up">เลื่อนชั้น!</string>
+    <string name="league_result_stay">คุณอยู่ลีกเดิม</string>
+    <string name="league_result_down">สัปดาห์ใหม่ โอกาสใหม่</string>
+    <string name="league_share">แชร์</string>
+    <string name="league_share_text">ฉันเลื่อนขึ้น%1$sใน English Tales แล้ว! ฉันเรียนภาษาอังกฤษผ่านนิทาน: %2$s</string>
+    <string name="league_nickname_title">เลือกชื่อของคุณในลีก</string>
+    <string name="league_nickname_text">ตอนนี้ทุกคนแสดงเป็น \"Okuyucu\" ไม่ต้องใช้ชื่อจริง ใช้ชื่อเล่นก็ได้</string>
+    <string name="league_nickname_field">ชื่อเล่น</string>
+    <string name="league_nickname_save">บันทึก</string>
 </resources>

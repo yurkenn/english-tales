@@ -23,7 +23,14 @@ Kullanıcıları her gün geri getirmek için Duolingo tarzı haftalık ligler. 
 - Veritabanı: `backend/supabase/migrations/20261021100000_weekly_leagues.sql`, testler `backend/tests/leagues.test.mjs`.
 - Uygulama: `data/Leagues.kt`, `data/LeagueViewModel.kt`, `ui/LeagueUi.kt`, metinler `res/values*/leagues.xml`.
 
+## Geri getiren dokunuşlar
+
+- Uygulama son lig okumasını hesap başına saklar (`LeagueMemory`). Günlük hatırlatma bu haftaya ait bir sıra varsa genel metin yerine sırayı yazar: üst sıraya kalan XP, zirve ya da düşme bölgesi uyarısı.
+- Lig yeniden okunduğunda sıra yükseldiyse "N. sıraya yükseldin", yalnız XP arttıysa "+X XP" bildirimi çıkar.
+- Yeni haftanın ilk okumasında geçen haftanın sonucu bir kez gösterilir. Terfide konfeti ve paylaşma düğmesi vardır.
+- Ad hâlâ varsayılan "Okuyucu" ise lig ekranı takma ad seçtirir (2–20 karakter). Ad, ayarlar senkronuyla sunucuya gider.
+
 ## Sonraki adımlar
 
-- Hatırlatma bildiriminde sıralama ("2. sıraya 15 XP kaldı").
 - Arkadaşlar ve davet kodu.
+- Ad bildirme ve uygunsuz ad filtresi (Play'in kullanıcı içeriği kuralı için yayından önce gerekli).

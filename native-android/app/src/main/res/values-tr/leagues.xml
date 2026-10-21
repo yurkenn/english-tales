@@ -36,4 +36,18 @@
     <string name="league_change_name">Adını değiştir</string>
     <string name="league_show_me">Ligde görün</string>
     <string name="league_show_me_text">Kapatırsan bu haftanın grubundan çıkarsın ve adın kimseye görünmez.</string>
+    <string name="league_rank_up">Ligde %1$d. sıraya yükseldin!</string>
+    <string name="league_xp_gain">+%1$d XP · Ligde %2$d. sıradasın</string>
+    <string name="league_reminder_gap">Ligde %1$d. sıradasın, bir üst sıraya %2$d XP kaldı.</string>
+    <string name="league_reminder_lead">Ligde zirvedesin, bugün de yerini koru!</string>
+    <string name="league_reminder_danger">Ligde %1$d. sıradasın ve düşme bölgesindesin. Kısa bir çalışma seni kurtarır.</string>
+    <string name="league_result_up">Terfi ettin!</string>
+    <string name="league_result_stay">Ligini korudun</string>
+    <string name="league_result_down">Yeni hafta, yeni şans</string>
+    <string name="league_share">Paylaş</string>
+    <string name="league_share_text">English Tales\'te %1$s\'e yükseldim! İngilizceyi hikâyelerle öğreniyorum: %2$s</string>
+    <string name="league_nickname_title">Ligde görünecek adını seç</string>
+    <string name="league_nickname_text">Herkes şimdilik \"Okuyucu\" görünüyor. Gerçek adını yazmak zorunda değilsin, bir takma ad yeter.</string>
+    <string name="league_nickname_field">Takma ad</string>
+    <string name="league_nickname_save">Kaydet</string>
 </resources>
