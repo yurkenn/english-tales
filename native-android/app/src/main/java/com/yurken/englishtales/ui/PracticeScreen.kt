@@ -1,6 +1,12 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.animation.core.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.animateContentSize
 import androidx.activity.compose.BackHandler
@@ -158,23 +164,23 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
             Text(if(saved.isEmpty()) stringResource(R.string.baslamak_icin_ornek_kelimeler_hazir) else stringResource(R.string.kelimenin_tekrar_zamani_geldi_2, snapshot.dueWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp))
             if(snapshot.weakWordIds.isNotEmpty()) Text(stringResource(R.string.weak_words_count, snapshot.weakWordIds.size),fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=16.dp,vertical=4.dp))
             Spacer(Modifier.height(20.dp))
-            ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),"review",LocalTaleColors.current.tilePurple,index=1) {start("ladder")}
-            ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),"cards",LocalTaleColors.current.tileBlue,index=2) {start("card")}
-            ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),"translate",LocalTaleColors.current.tileYellow,index=3) {start("choice")}
-            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),"read",LocalTaleColors.current.tileBlue,enabled=gapPrompts?.isNotEmpty()==true,index=4) {start("cloze")}
+            ModeCard(stringResource(R.string.ladder_mode),stringResource(R.string.ladder_subtitle),R.drawable.game_ladder,GameTint.Purple,index=1) {start("ladder")}
+            ModeCard(stringResource(R.string.kelime_kartlari),stringResource(R.string.kelimeleri_tani_ve_dinle),R.drawable.game_cards,GameTint.Blue,index=2) {start("card")}
+            ModeCard(stringResource(R.string.bir_ceviri_sec),stringResource(R.string.dogru_anlami_bul),R.drawable.game_choice,GameTint.Orange,index=3) {start("choice")}
+            ModeCard(stringResource(R.string.gap_mode),stringResource(R.string.gap_subtitle),R.drawable.game_gap,GameTint.Teal,enabled=gapPrompts?.isNotEmpty()==true,index=4) {start("cloze")}
             if(gapPrompts==null || gapPrompts?.isEmpty()==true || gapUnavailable) Text(stringResource(if(gapPrompts==null) R.string.gap_preparing else R.string.gap_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             // Probes the device voice; the mode is offered only when English speech works.
             val voice=rememberNarrator()
             LaunchedEffect(voice.available) {voiceReady=voice.available==true;if(voice.available!=null) voiceProbed=true}
-            if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),"headphones",LocalTaleColors.current.tileBlue,enabled=voice.available==true,index=5) {start("listen")}
+            if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),R.drawable.game_listen,GameTint.Pink,enabled=voice.available==true,index=5) {start("listen")}
             // Dictation needs a voice too; it appears only once English speech is known to work.
-            if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),"headphones",LocalTaleColors.current.tileYellow,enabled=orderCandidates!=null,index=4) {start("dictation")}
+            if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),R.drawable.game_dictation,GameTint.Indigo,enabled=orderCandidates!=null,index=4) {start("dictation")}
             if(voice.available!=true) Text(stringResource(if(voice.available==null) R.string.listen_preparing else R.string.listen_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
-            if(orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),"read",LocalTaleColors.current.tileGreen,enabled=orderCandidates!=null,index=5) {start("order")}
-            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),"play",LocalTaleColors.current.tilePurple,index=6) {start("match")}
-            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),"letters",LocalTaleColors.current.tileGreen,index=7) {start("spell")}
+            if(orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),R.drawable.game_order,GameTint.Green,enabled=orderCandidates!=null,index=5) {start("order")}
+            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),R.drawable.game_match,GameTint.Coral,index=6) {start("match")}
+            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),R.drawable.game_spell,GameTint.Amber,index=7) {start("spell")}
         }
         return
     }
@@ -285,12 +291,40 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
     }
 }
 
+/** Two-stop card gradients, dark enough at the top-left for white text in both themes. */
+private enum class GameTint(val start: Color, val end: Color) {
+    Purple(Color(0xFF6A3FD9), Color(0xFFB07CF2)),
+    Blue(Color(0xFF1769D6), Color(0xFF5DB2F5)),
+    Orange(Color(0xFFD9530F), Color(0xFFFFAE5C)),
+    Teal(Color(0xFF00838F), Color(0xFF4DD0C9)),
+    Pink(Color(0xFFC2185B), Color(0xFFF48FB1)),
+    Green(Color(0xFF2E7D32), Color(0xFF8BC34A)),
+    Indigo(Color(0xFF283593), Color(0xFF7986CB)),
+    Coral(Color(0xFFC62828), Color(0xFFFF8A65)),
+    Amber(Color(0xFFB45309), Color(0xFFFBBF24))
+}
+
+/** A big illustrated game card: title and line on the gradient, the mascot doing the game on the right, and a "Play" pill. */
 @Composable
-private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,enabled: Boolean=true,index: Int=0,onClick: ()->Unit) {
-    Row(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=6.dp).appearIn(index).background(TaleSurface,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp)).pressScale(enabled=enabled,onClick=onClick).padding(14.dp).graphicsLayer {alpha=if(enabled) 1f else 0.5f},verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(16.dp)) {
-        Box(Modifier.size(60.dp).background(color,RoundedCornerShape(16.dp)),contentAlignment=Alignment.Center) {ReferenceIcon(icon,TaleBlue,Modifier.size(32.dp))}
-        Column(Modifier.weight(1f),verticalArrangement=Arrangement.spacedBy(5.dp)) {Text(title,fontSize=16.sp,fontWeight=FontWeight.Bold);Text(subtitle,fontSize=12.sp,color=TaleMuted)}
-        Text("›",color=TaleMuted,fontSize=22.sp)
+private fun ModeCard(title: String,subtitle: String,art: Int,tint: GameTint,enabled: Boolean=true,index: Int=0,onClick: ()->Unit) {
+    val still=reduceMotion()
+    // Each card's mascot bobs on its own beat, so the list feels alive without moving in lockstep.
+    val bob=if(still || !enabled) rememberUpdatedState(0f) else rememberInfiniteTransition(label="gameArt")
+        .animateFloat(-1f,1f,infiniteRepeatable(tween(1_500+index*170,easing=FastOutSlowInEasing),RepeatMode.Reverse),label="gameArtBob")
+    Box(Modifier.fillMaxWidth().padding(horizontal=16.dp,vertical=8.dp).appearIn(index).heightIn(min=156.dp)
+        .clip(RoundedCornerShape(24.dp)).background(Brush.linearGradient(listOf(tint.start,tint.end)))
+        .pressScale(enabled=enabled,onClick=onClick).graphicsLayer {alpha=if(enabled) 1f else 0.5f}) {
+        // A soft light circle behind the art gives the drawing a stage.
+        Box(Modifier.align(Alignment.CenterEnd).offset(x=28.dp).size(170.dp).background(Color.White.copy(alpha=0.16f),CircleShape))
+        Image(painterResource(art),null,Modifier.align(Alignment.BottomEnd).padding(end=8.dp,bottom=10.dp).size(132.dp)
+            .graphicsLayer {translationY=bob.value*5f*density;rotationZ=bob.value*2f},contentScale=ContentScale.Fit)
+        Column(Modifier.fillMaxWidth(0.62f).padding(start=18.dp,top=18.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
+            Text(title,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,color=Color.White)
+            Text(subtitle,fontSize=13.sp,lineHeight=17.sp,color=Color.White.copy(alpha=0.9f))
+            Spacer(Modifier.height(6.dp))
+            Text(stringResource(R.string.game_play),fontSize=15.sp,fontWeight=FontWeight.Bold,color=tint.start,
+                modifier=Modifier.background(Color.White,RoundedCornerShape(50)).padding(horizontal=22.dp,vertical=8.dp))
+        }
     }
 }
 
@@ -302,7 +336,8 @@ fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->U
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
         Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=14.sp,fontWeight=FontWeight.SemiBold,modifier=Modifier.fillMaxWidth().appearIn(0).background(TalePurple,RoundedCornerShape(14.dp)).padding(14.dp))
         Spacer(Modifier.height(20.dp))
-        TalesMascot(MascotMood.Celebrate,Modifier.size(112.dp).appearIn(1),animate=true)
+        // A flawless session earns the trophy pose.
+        TalesMascot(if(stars==3) MascotMood.Proud else MascotMood.Celebrate,Modifier.size(112.dp).appearIn(1),animate=true)
         // Stars land one by one after the mascot; a flawless session also gets its own line.
         stars?.let {
             Spacer(Modifier.height(8.dp))

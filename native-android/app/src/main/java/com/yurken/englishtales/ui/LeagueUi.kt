@@ -46,21 +46,10 @@ internal fun leagueName(tier: Int) = stringResource(when (tier) {
     1 -> R.string.league_tier_1; 2 -> R.string.league_tier_2; 3 -> R.string.league_tier_3; 4 -> R.string.league_tier_4; else -> R.string.league_tier_5
 })
 
-/** A shield in the tier's color with a star; locked tiers are drawn faded. */
+/** The tier's crest; locked tiers are drawn grey and faded. */
 @Composable
 internal fun LeagueBadge(tier: Int, size: Dp, modifier: Modifier = Modifier, faded: Boolean = false) {
-    val color = leagueColor(tier).copy(alpha = if (faded) 0.28f else 1f)
-    Box(modifier.size(size), contentAlignment = Alignment.Center) {
-        Canvas(Modifier.matchParentSize()) {
-            val w = this.size.width; val h = this.size.height
-            drawPath(Path().apply {
-                moveTo(w * 0.5f, 0f); lineTo(w * 0.94f, h * 0.16f); lineTo(w * 0.9f, h * 0.58f)
-                quadraticTo(w * 0.82f, h * 0.84f, w * 0.5f, h); quadraticTo(w * 0.18f, h * 0.84f, w * 0.1f, h * 0.58f)
-                lineTo(w * 0.06f, h * 0.16f); close()
-            }, color)
-        }
-        ReferenceIcon("star", Color.White.copy(alpha = if (faded) 0.6f else 1f), Modifier.size(size * 0.5f), filled = true)
-    }
+    TaleArt(leagueArt(tier), modifier.size(size), locked = faded)
 }
 
 @Composable
@@ -132,6 +121,7 @@ internal fun LeagueScreen(state: LeagueUi, displayName: String, onBack: () -> Un
         if (standing == null) {
             Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 if (state == LeagueUi.Failed) Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    TaleArt(R.drawable.mascot_offline, Modifier.size(150.dp).appearIn(0))
                     Text(stringResource(R.string.league_failed_short), color = TaleMuted)
                     TextButton(onClick = onRefresh) { Text(stringResource(R.string.league_retry)) }
                 } else TaleLoading()
@@ -288,6 +278,7 @@ private fun FriendsPane(state: FriendsUi, actions: FriendActions, onMember: (Lea
     if (ready == null) {
         Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
             if (state == FriendsUi.Failed) Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                TaleArt(R.drawable.mascot_offline, Modifier.size(150.dp).appearIn(0))
                 Text(stringResource(R.string.friends_failed), color = TaleMuted)
                 TextButton(onClick = actions.refresh) { Text(stringResource(R.string.league_retry)) }
             } else TaleLoading()
@@ -300,8 +291,13 @@ private fun FriendsPane(state: FriendsUi, actions: FriendActions, onMember: (Lea
         item {
             Column(Modifier.fillMaxWidth().background(TaleSurface, RoundedCornerShape(16.dp)).border(1.dp, TaleLine, RoundedCornerShape(16.dp)).padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                Text(stringResource(R.string.friends_code_title), fontWeight = FontWeight.Bold)
-                Text(stringResource(R.string.friends_code_text), color = TaleMuted, style = MaterialTheme.typography.bodyMedium)
+                Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                    Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        Text(stringResource(R.string.friends_code_title), fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.friends_code_text), color = TaleMuted, style = MaterialTheme.typography.bodyMedium)
+                    }
+                    TaleArt(R.drawable.mascot_wave_friends, Modifier.size(96.dp))
+                }
                 val mine = ready.list.code
                 if (mine == null) Button(onClick = actions.createCode, enabled = !ready.busy, modifier = Modifier.fillMaxWidth().heightIn(min = 48.dp), shape = RoundedCornerShape(14.dp)) {
                     Text(stringResource(R.string.friends_code_create))

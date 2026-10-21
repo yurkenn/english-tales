@@ -65,6 +65,12 @@ fun OnboardingScreen(analyticsControls: @Composable () -> Unit = { com.yurken.en
             if(step>=3) {
                 ReplyBubble(genreLabel(genre))
                 GuideBubble(stringResource(R.string.her_gun_ne_kadar_calismak))
+                Row(Modifier.fillMaxWidth().appearIn(1)) {
+                    Spacer(Modifier.width(40.dp))
+                    Box(Modifier.width(250.dp).height(150.dp).clip(RoundedCornerShape(10.dp)).background(LocalTaleColors.current.tileYellow),contentAlignment=Alignment.BottomCenter) {
+                        TaleArt(R.drawable.mascot_goal,Modifier.fillMaxHeight().padding(top=8.dp))
+                    }
+                }
                 if(step==3) listOf(1 to stringResource(R.string.gunde_1_adim_rahat_baslangic),2 to stringResource(R.string.gunde_2_adim_duzenli_calisma),3 to stringResource(R.string.gunde_3_adim_yogun_calisma)).forEach { (value,label) -> ReplyChoice(label) {goal=value;step=4} }
             }
             if(step>=4) {

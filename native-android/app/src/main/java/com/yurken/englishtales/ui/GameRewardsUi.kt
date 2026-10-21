@@ -83,6 +83,13 @@ internal object GameRecords {
         prefs(context).edit().putString(key, day).apply()
         return true
     }
+    /** True when [freezes] is more than this owner had the last time it was checked; the first check only records the count. */
+    fun freezeGained(context: Context, owner: String, freezes: Int): Boolean {
+        val key = "$owner:freezes_seen"
+        val seen = prefs(context).getInt(key, -1)
+        if (seen != freezes) prefs(context).edit().putInt(key, freezes).apply()
+        return seen in 0 until freezes
+    }
     fun celebratedStreak(context: Context, owner: String) = prefs(context).getInt("$owner:streak_celebrated", 0)
     fun celebrateStreak(context: Context, owner: String, milestone: Int) = prefs(context).edit().putInt("$owner:streak_celebrated", milestone).apply()
 }
@@ -277,48 +284,40 @@ private fun QuestRow(quest: DailyQuest, modifier: Modifier = Modifier) {
     }
 }
 
-/** A drawn treasure chest: wiggles while a reward waits, and its lid swings open once claimed. */
+/** The treasure chest: wiggles while a reward waits, pops open with a glow once claimed, and stays grey while locked. */
 @Composable
 private fun QuestChest(ready: Boolean, open: Boolean, modifier: Modifier = Modifier) {
     val still = reduceMotion()
     val wiggle = if (ready && !still) rememberInfiniteTransition(label = "chest")
         .animateFloat(-7f, 7f, infiniteRepeatable(tween(180, easing = LinearEasing), RepeatMode.Reverse), label = "chestWiggle")
         else rememberUpdatedState(0f)
-    val lid by animateFloatAsState(if (open) 1f else 0f, spring(dampingRatio = 0.5f, stiffness = Spring.StiffnessLow), label = "lid")
-    val wood = Color(0xFFB86B2B); val dark = Color(0xFF7A4318); val gold = TaleYellow
-    val active = ready || open
-    Canvas(modifier.graphicsLayer { rotationZ = wiggle.value }) {
-        val w = size.width; val h = size.height
-        // A locked chest is the same chest, faded, so it still reads as a reward to work towards.
-        val fade = if (active) 1f else 0.38f
-        val body = wood.copy(alpha = fade)
-        val trim = gold.copy(alpha = if (active) 1f else 0.5f)
-        val bodyTop = h * 0.45f
-        // The glow behind an open chest.
-        if (open) drawCircle(gold.copy(alpha = 0.35f), radius = w * 0.42f, center = Offset(w / 2f, bodyTop))
-        drawRoundRect(body, Offset(w * 0.1f, bodyTop), Size(w * 0.8f, h * 0.45f), CornerRadius(w * 0.06f))
-        drawRect(dark.copy(alpha = fade), Offset(w * 0.1f, bodyTop + h * 0.12f), Size(w * 0.8f, h * 0.05f))
-        drawRect(trim, Offset(w * 0.44f, bodyTop + h * 0.04f), Size(w * 0.12f, h * 0.16f))
-        // The lid hinges at its back edge.
-        rotate(-lid * 35f, Offset(w * 0.1f, bodyTop)) {
-            drawRoundRect(wood.copy(red = (wood.red * 1.1f).coerceAtMost(1f), alpha = fade), Offset(w * 0.08f, h * 0.24f), Size(w * 0.84f, h * 0.23f), CornerRadius(w * 0.1f))
-            drawRect(trim, Offset(w * 0.08f, h * 0.38f), Size(w * 0.84f, h * 0.04f))
+    val pop by animateFloatAsState(if (open) 1f else 0f, spring(dampingRatio = 0.45f, stiffness = Spring.StiffnessLow), label = "chestPop")
+    Box(modifier.graphicsLayer { rotationZ = wiggle.value }, contentAlignment = Alignment.Center) {
+        if (open) Box(Modifier.fillMaxSize().graphicsLayer { scaleX = 0.6f + pop * 0.5f; scaleY = 0.6f + pop * 0.5f; alpha = pop }
+            .background(TaleYellow.copy(alpha = 0.35f), CircleShape))
+        TaleArt(if (open) R.drawable.chest_open else R.drawable.chest_closed,
+            Modifier.fillMaxSize().graphicsLayer { val s = if (open) 0.85f + pop * 0.15f else 1f; scaleX = s; scaleY = s }, locked = !ready && !open)
+    }
+}
+
+/** Full-screen celebration for streak milestones (3, 7, 14, 30 …): a big flickering flame over turning rays, the count rising and the week lighting up. */
+@Composable
+internal fun StreakMilestoneDialog(days: Int, week: List<com.yurken.englishtales.data.DailyActivity>, frozenDays: Set<String>, onDismiss: () -> Unit) {
+    RewardSpotlight(stringResource(R.string.streak_milestone_title, days), stringResource(R.string.streak_milestone_text), stringResource(R.string.reward_continue),
+        glow = TaleWarm, onDismiss = onDismiss, confettiKey = "streak$days",
+        extra = { if (week.isNotEmpty()) WeekFlames(week, frozenDays) }) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            ReferenceIcon("flame", TaleWarm, Modifier.size(120.dp).flicker(true))
+            AnimatedCounter(days, style = MaterialTheme.typography.displayMedium.copy(fontWeight = FontWeight.ExtraBold), color = TaleInk)
         }
     }
 }
 
-/** Full celebration for streak milestones (3, 7, 14, 30 …): a big flame that pulses and the day count rising. */
+/** A newly earned streak freeze, shown once as a gift: the ice shield over glowing rays. */
 @Composable
-internal fun StreakMilestoneDialog(days: Int, onDismiss: () -> Unit) {
-    TaleDialog(stringResource(R.string.streak_milestone_title, days), stringResource(R.string.streak_milestone_text), stringResource(R.string.anladim),
-        onConfirm = onDismiss, onDismissRequest = onDismiss) {
-        Box(Modifier.fillMaxWidth().height(150.dp), contentAlignment = Alignment.Center) {
-            Box(Modifier.size(130.dp).pulseWhile(true).background(LocalTaleColors.current.tileYellow, CircleShape))
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                ReferenceIcon("flame", TaleWarm, Modifier.size(72.dp).appearIn(0).flicker(true))
-                AnimatedCounter(days, style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.ExtraBold), color = TaleInk)
-            }
-            ConfettiBurst(Modifier.matchParentSize(), "streak$days", pieces = 90)
-        }
+internal fun FreezeGiftDialog(onDismiss: () -> Unit) {
+    RewardSpotlight(stringResource(R.string.freeze_gift_title), stringResource(R.string.freeze_gift_text), stringResource(R.string.freeze_gift_claim),
+        glow = Color(0xFF3FD0EE), onDismiss = onDismiss) {
+        FreezeShield(Modifier.fillMaxSize())
     }
 }
