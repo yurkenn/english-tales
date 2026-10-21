@@ -18,4 +18,5 @@
     <string name="reader_hint_swipe">पेज बदलने के लिए बाएँ या दाएँ स्वाइप करें।</string>
     <string name="page_translate">पेज का अनुवाद करें</string>
     <string name="page_translate_hide">पेज का अनुवाद छिपाएँ</string>
+    <string name="reader_theme_sepia">सीपिया</string>
 </resources>

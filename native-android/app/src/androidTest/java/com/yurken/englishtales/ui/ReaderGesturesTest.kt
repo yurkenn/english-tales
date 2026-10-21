@@ -28,10 +28,10 @@ class ReaderGesturesTest {
         val pages=(story.sentences.size+7)/8
         var position=""
         open(story) {_,id -> position=id}
-        compose.onNodeWithText(story.sentences.first().english).performTouchInput {swipeLeft()}
+        compose.onNodeWithText(story.sentences.first().english,substring=true).performTouchInput {swipeLeft()}
         compose.onNodeWithText("2 / $pages").assertIsDisplayed()
         assertEquals(story.sentences[8].id,position)
-        compose.onNodeWithText(story.sentences[8].english).performTouchInput {swipeRight()}
+        compose.onNodeWithText(story.sentences[8].english,substring=true).performTouchInput {swipeRight()}
         compose.onNodeWithText("1 / $pages").assertIsDisplayed()
     }
 
@@ -41,10 +41,13 @@ class ReaderGesturesTest {
         open(story)
         compose.onAllNodesWithContentDescription("Cümleyi çevir").assertCountEquals(0)
         val translate="Cümleyi çevir"
+        // The page is one paragraph; its actions name each sentence by its first words.
         val node=compose.onAllNodes(SemanticsMatcher("translatable") {n ->
-            n.config.getOrNull(SemanticsActions.CustomActions)?.any {it.label==translate}==true
-        }).fetchSemanticsNodes()[1]
-        compose.runOnIdle {node.config[SemanticsActions.CustomActions].first {it.label==translate}.action()}
+            n.config.getOrNull(SemanticsActions.CustomActions)?.any {it.label.startsWith(translate)}==true
+        }).fetchSemanticsNodes().single()
+        val actions=node.config[SemanticsActions.CustomActions].filter {it.label.startsWith(translate)}
+        assertEquals(8,actions.size)
+        compose.runOnIdle {actions[1].action()}
         compose.onNodeWithText(story.sentences[1].translation).assertIsDisplayed()
         compose.onNodeWithText(story.sentences[0].translation).assertDoesNotExist()
 

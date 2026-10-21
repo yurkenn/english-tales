@@ -18,4 +18,5 @@
     <string name="reader_hint_swipe">পৃষ্ঠা বদলাতে বাঁয়ে বা ডানে সোয়াইপ করুন।</string>
     <string name="page_translate">পৃষ্ঠা অনুবাদ করুন</string>
     <string name="page_translate_hide">পৃষ্ঠার অনুবাদ লুকান</string>
+    <string name="reader_theme_sepia">সেপিয়া</string>
 </resources>
