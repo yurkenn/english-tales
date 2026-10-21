@@ -1,6 +1,6 @@
 # English Tales
 
-Android uygulaması tamamen Kotlin ve Jetpack Compose ile geliştirilir. Aktif kaynak ağacında React Native, Expo veya JavaScript mobil çalışma zamanı bulunmaz.
+Android uygulaması Kotlin ve Jetpack Compose ile geliştirilir. Mobil uygulamanın kaynak ve derleme ayarları `native-android/` altındadır.
 
 - [Hesap ve yayın adımlarının güncel durumu](senin-adimlarin.md)
 - [Android kurulumu ve doğrulama](native-android/README.md)
@@ -19,9 +19,9 @@ Android uygulaması tamamen Kotlin ve Jetpack Compose ile geliştirilir. Aktif k
 
 ## Proje yapısı
 
-`native-android/` uygulama, içerik varlıkları, panel ve Supabase migration dosyalarını içerir. `tooling/` depo kontrollerini içerir. Eski React Native/Sanity sürümü Git geçmişinde korunur; aktif derlemeye katılmaz.
+`native-android/` uygulama, içerik varlıkları, panel ve Supabase migration dosyalarını içerir. `tooling/` depo kontrollerini içerir.
 
-48 / 2.0.0 üretimde %100 yayımlandı; 49 / 2.1.0 yalnız dahili testte yayımlandı (16 Ekim 2026). GitHub kontrol noktaları kaynak kodunu geri getirir; kullanıcı verisi veya canlı veritabanı değişikliklerini geri almaz.
+Güncel mağaza sürümü ve kabul adımları [yayın kaydında](native-android/docs/RELEASE_50_STATUS.md) tutulur. GitHub kontrol noktaları kaynak kodunu geri getirir; kullanıcı verisi veya canlı veritabanı değişikliklerini geri almaz.
 
 ## Geliştirme
 

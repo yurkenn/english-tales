@@ -1,6 +1,6 @@
 # English Tales Android
 
-Android uygulamasının aktif kaynağı Kotlin ve Jetpack Compose'dur. React Native/Expo kaynakları Git geçmişinde korunur; bu klasör Android Studio projesidir. [Native geçiş sınırları](docs/NATIVE_MIGRATION.md) · [Ürün ve UX planı](docs/PRODUCT_ROADMAP.md) · [Güncel teknik harita](docs/DEVELOPMENT_ROADMAP.md).
+Android uygulaması Kotlin ve Jetpack Compose ile geliştirilir; bu klasör Android Studio projesidir. [Native geçiş sınırları](docs/NATIVE_MIGRATION.md) · [Ürün ve UX planı](docs/PRODUCT_ROADMAP.md) · [Güncel teknik harita](docs/DEVELOPMENT_ROADMAP.md).
 
 Ekran görüntülerinden çıkarılan deneyim için [ürün taslağına](PRODUCT_SPEC.md), [ekran referanslarına](UI_REFERENCE.md), [içerik kararına](CONTENT_GUIDE.md) ve yayın öncesi işler için [mimari notlarına](ARCHITECTURE.md) bakın.
 
@@ -44,7 +44,7 @@ Hata ayıklama APK'sı `app/build/outputs/apk/debug/app-debug.apk` konumunda olu
 
 macOS/Linux: `bash gradlew :app:assembleDebug :app:testDebugUnitTest :app:lintDebug`. Cihaz/emülatör bağlıyken `bash gradlew :app:connectedDebugAndroidTest`.
 
-Kaynakta 23 JVM ve 126 cihaz testi tanımı bulunur. Yapılandırılmış uzak içerik testi gerçek ağdan okuma yapabilir; Auth testleri kontrollü yanıtlar kullanır. Test tanımı sayısı, çalıştırılan/geçen test sayısı değildir. CI cihaz APK'sını derler fakat bağlı cihaz testini çalıştırmaz. Entegrasyon testleri için kişisel verisi olmayan ayrı emülatör kullanın; Gradle uygulama APK'sını kurup kaldırabilir. Gerçek Google/e-posta, ikinci cihaz ve Play güncelleme kabulü ayrıca doğrulanmalıdır.
+CI birim testlerini, lint'i, emülatör cihaz paketini, yapılandırılmış canlı servis testlerini ve açılış ölçümlerini çalıştırır. [Servis testi yapılandırması](docs/SERVICE_DEVICE_TESTS.md) ve [son doğrulama kaydı](docs/PROJECT_AUDIT_2026-10-21.md) ayrı kapsamları ve sonuçları açıklar. Entegrasyon testleri için kişisel verisi olmayan ayrı emülatör kullanın; Gradle uygulama APK'sını kurup kaldırabilir. Gerçek Google/e-posta, ikinci cihaz ve Play güncelleme kabulü ayrıca doğrulanmalıdır.
 
 Test kimliğiyle native reklam ve ikon iyileştirmeleri: [uygulama ve yayın kapıları](docs/ADS_AND_ICON_UX_EXECUTION.md). Ağ gerektiren Google test reklamı ayrı çalıştırılır: `bash gradlew connectedDebugAndroidTest -PadDeviceTest=true -Pandroid.testInstrumentationRunnerArguments.class=com.yurken.englishtales.ads.GoogleTestAdProbe`. Üretim reklamları `config/ads.properties` içinde kapalıdır.
 
@@ -54,12 +54,12 @@ Ana ekran odağı ve cihazda korunan okuma görünümü: [UX uygulama kaydı](do
 
 Aktif hesaba uygun hatırlatıcı ve kalıcı kayıt hatası/yeniden deneme: [D03/D04 uygulama kaydı](docs/LEARNING_RELIABILITY_EXECUTION.md).
 
-Google/Play/imza ve önceki emülatör sonuçlarını anlatan aşağıdaki kayıtlar tarihsel kanıttır. Bu Mac'te release imzası hazır değildir. Güncel görevler [geliştirme haritasında](docs/DEVELOPMENT_ROADMAP.md), yeni özellikler [ürün planındadır](docs/PRODUCT_ROADMAP.md).
+Google/Play/imza ve önceki emülatör sonuçlarını anlatan kayıtlar tarihsel kanıttır. Release derlemesi için özel yerel `signing.properties` ve mevcut Android yükleme anahtarı gerekir. Güncel görevler [geliştirme haritasında](docs/DEVELOPMENT_ROADMAP.md), yeni özellikler [ürün planındadır](docs/PRODUCT_ROADMAP.md).
 
 Mağaza yayını için öncelikler, aşamalar ve tamamlanma ölçütleri: [Google Play yayın yol haritası](docs/STORE_RELEASE_ROADMAP.md).
 
 - `assets/catalog/v1.json`: Sürümlü, paket içi örnek katalog. `LearningContent.kt` dosyayı açılışta doğrular ve okur. İlk açılış için paket içi içerik korunur. Android yerel build yapılandırmasındaki kataloğa bağlanır; seçilen metin/kelime/kapak indirilir, doğrulanır ve çevrimdışı saklanır. [Bağlantı analizi ve sonuçları](docs/REMOTE_CONTENT_PLAN.md).
-- `data/LearningStore.kt` / `LearningDatabase.kt`: Room v6 üzerinden ilerleme, tercihler, oturumlar ve kalıcı işlem kuyruğu. Eski native veriler korunur. Misafir ve her hesap için ayrı veritabanı açılır.
+- `data/LearningStore.kt` / `LearningDatabase.kt`: Room v10 üzerinden ilerleme, tercihler, oturumlar ve kalıcı işlem kuyruğu. Eski native veriler korunur. Misafir ve her hesap için ayrı veritabanı açılır.
 - `data/GuestTransfer.kt`: Açıkça seçilen hesaba yerel misafir aktarımı; kalıcı günlük ve makbuzla kesinti/tekrar koruması. Eski ölçülmemiş toplamlar ayrıca saklanır. Öğrenme eşitlemesi foreground ve WorkManager üzerinden uygulanmıştır; iki gerçek cihazdaki kabul ayrı doğrulama işidir. [Analiz ve doğrulama](docs/GUEST_TRANSFER_PLAN.md).
 - `data/AccountSession.kt`: Mevcut hesapla giriş, sunucudan kullanıcı doğrulama, Keystore AES-GCM ile kalıcı oturum, token yenileme ve çıkış. Hesap değişince ekranlar yeniden kurulur; eski ekran eylemleri yeni hesaba uygulanmaz. [Analiz ve kalan aşamalar](docs/ACCOUNT_SYNC_PLAN.md) · [Giriş ekranı](docs/preview-account-login.png).
 - `data/GoogleIdentity.kt` / `ui/WelcomeScreen.kt`: Hesap açmadan yerel misafir kullanımı; Credential Manager ile Google girişi. Test projesinde Google sağlayıcı ve debug Android imzası kayıtlı. Gerçek Google girişi, sunucudan oturum doğrulama ve kapatıp açınca aynı hesap/profilin korunması doğrulandı. `supabase.properties.example` içindeki genel ayarları yerel `supabase.properties` dosyasına yazın. Google secret Android'e girmez. [Karar ve doğrulama](docs/GUEST_GOOGLE_PLAN.md) · [Yeni başlangıç](docs/preview-welcome-guest-google.png).
@@ -68,6 +68,6 @@ Mağaza yayını için öncelikler, aşamalar ve tamamlanma ölçütleri: [Googl
 - `ui/`: Compose ekranları. Mevcut emülatörde akış çalışıyor; farklı boyutlarda ve gerçek cihazda erişilebilirlik, ses ve performans denemeleri yapılmalı.
 - Yayın öncesinde içerik hacmi, çizimler/kapaklar, ses kalitesi, tekrar algoritması, gizlilik metni ve mağaza materyalleri tamamlanmalı.
 
-Play Console'da en yüksek kod 46 doğrulandı; native aday 47 / 2.0.0. Mevcut EAS yükleme anahtarı Play sertifikasıyla eşleşti ve özel yerel ayarlarla release imzası kuruldu. `signing.properties.example` yalnızca ayar biçimini gösterir; gerçek dosya ve anahtar Git'e girmez. İmzalı AAB/APK derlendi; `tooling/verify_release.py` imza ve 16 KB paket/kütüphane kontrolünü yapar. Statik kontroller ve 16 KB x86_64 emülatöründe doğrudan native yükleme testi geçti. [16 KB analiz ve kanıt](docs/PAGE_SIZE_VERIFICATION.md). **Diğer yayın kapıları açık; bu teknik aday henüz yayınlanamaz.** [Güncel kapılar ve sonuçlar](docs/RELEASE_EXECUTION.md) · [Play kontrolü](docs/PLAY_CONSOLE_AUDIT.md). Eski React Native verisi için taşıma kodu eklenmedi; native SQLite/Room 1–5 → Room 6 geçişi mevcut native ilerlemeyi korur. Mevcut paket kimliği korundu.
+Release imzası mevcut Android yükleme anahtarıyla kurulur; `signing.properties.example` yalnızca ayar biçimini gösterir. Gerçek dosya ve anahtar Git'e girmez. `tooling/verify_release.py` imza ve 16 KB paket/kütüphane kontrollerini yapar. Güncel sürüm, yayın ve cihaz kabulü [yayın kaydında](docs/RELEASE_50_STATUS.md), önceki teknik sonuçlar [16 KB kanıtında](docs/PAGE_SIZE_VERIFICATION.md) ve [yayın uygulama kaydında](docs/RELEASE_EXECUTION.md) tutulur. Mevcut paket kimliği ve yükleme anahtarı korunur.
 
 [Çevrimdışı veri geçişi ve kontrol sonuçları](docs/OFFLINE_DATA_PLAN.md) · [Kapatıp açınca devam eden okuyucu](docs/preview-reader-resume.png)
