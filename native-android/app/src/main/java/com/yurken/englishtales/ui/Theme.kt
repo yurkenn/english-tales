@@ -49,15 +49,12 @@ val LocalTaleColors = staticCompositionLocalOf { LightTaleColors }
 
 val TaleBlue: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.blue
 val TaleOnBlue: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.onBlue
-val TaleBlueDark: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.blue
 val TaleInk: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.ink
 val TaleMuted: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.muted
 val TaleBackground: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.background
 val TaleSurface: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.surface
 val TaleLine: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.line
-val TaleCream: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.surface
 val TaleMint: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.mint
-val TaleNavy: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.ink
 val TalePurple: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.purple
 val TaleOnPurple: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.onPurple
 val TaleSuccess: Color @Composable @ReadOnlyComposable get() = LocalTaleColors.current.success

@@ -32,22 +32,24 @@ object AppLanguage {
         }
     }
 
+    private fun prefs(context: Context) = context.getSharedPreferences("app_language", Context.MODE_PRIVATE)
+
     fun locale(context: Context): Locale {
-        val legacy = if (Build.VERSION.SDK_INT < 33) context.getSharedPreferences("app_language", Context.MODE_PRIVATE).getString("tag", "").orEmpty() else ""
+        val legacy = if (Build.VERSION.SDK_INT < 33) prefs(context).getString("tag", "").orEmpty() else ""
         return if (legacy.isNotEmpty()) resolve(listOf(Locale.forLanguageTag(legacy))) else resolve(context.resources.configuration.locales.toList())
     }
 
     /** This device has completed the language welcome, independent of account or learning records. */
     fun hasConfirmedChoice(context: Context): Boolean =
-        context.getSharedPreferences("app_language", Context.MODE_PRIVATE).getBoolean("confirmed", false)
+        prefs(context).getBoolean("confirmed", false)
 
     fun confirmChoice(context: Context) {
-        check(context.getSharedPreferences("app_language", Context.MODE_PRIVATE).edit().putBoolean("confirmed", true).commit())
+        check(prefs(context).edit().putBoolean("confirmed", true).commit())
     }
 
     fun selection(context: Context): String = if (Build.VERSION.SDK_INT >= 33)
         context.getSystemService(android.app.LocaleManager::class.java).applicationLocales.toLanguageTags()
-    else context.getSharedPreferences("app_language", Context.MODE_PRIVATE).getString("tag", "").orEmpty()
+    else prefs(context).getString("tag", "").orEmpty()
 
     /** Android 13 owns the per-app setting; older Android versions keep only a device-local preference. */
     fun select(context: Context, tag: String) {
@@ -55,7 +57,7 @@ object AppLanguage {
         if (Build.VERSION.SDK_INT >= 33) {
             context.getSystemService(android.app.LocaleManager::class.java).applicationLocales = LocaleList.forLanguageTags(tag)
         } else {
-            check(context.getSharedPreferences("app_language", Context.MODE_PRIVATE).edit().putString("tag", tag).commit())
+            check(prefs(context).edit().putString("tag", tag).commit())
             // Keep the ViewModel/write queue alive while rebuilding localized resources.
             var host = context
             while (host is android.content.ContextWrapper && host !is android.app.Activity) host = host.baseContext

@@ -431,9 +431,6 @@ fun SimpleTopBar(title: String, onBack: () -> Unit) {
     }
 }
 
-@Composable
-fun SectionTitle(title: String) { Text(title,fontSize=20.sp) }
-
 /** "~3 dk" under a story; nothing while the text is not downloaded. */
 @Composable
 internal fun ReadingMinutes(story: Story, modifier: Modifier = Modifier) {
