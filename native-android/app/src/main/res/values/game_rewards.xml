@@ -28,4 +28,8 @@
     <string name="streak_milestone_text">Her gün geldin, alev büyüdü. Yarın da kısa bir okuma ya da tekrar serini sürdürür.</string>
     <string name="reminder_streak_title">%1$d günlük serin tehlikede</string>
     <string name="reminder_streak_text">Kısa bir tekrar serini korumaya yeter.</string>
+    <string name="streak_freeze_chip">%1$d seri koruması</string>
+    <string name="streak_freeze_day">Seri korundu</string>
+    <string name="streak_freeze_info">Her %1$d çalışma gününde 1 seri koruması kazanırsın (en çok %2$d). Bir günü kaçırırsan koruma kendiliğinden kullanılır, serin bozulmaz.</string>
+    <string name="streak_freeze_used">Dün bir seri koruması kullanıldı, serin devam ediyor.</string>
 </resources>

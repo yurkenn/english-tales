@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">คุณกลับมาทุกวันและเปลวไฟก็โตขึ้น พรุ่งนี้อ่านหรือทบทวนสั้น ๆ ก็รักษาสตรีคไว้ได้</string>
     <string name="reminder_streak_title">สตรีค %1$d วันของคุณกำลังเสี่ยง</string>
     <string name="reminder_streak_text">ทบทวนสั้น ๆ ก็พอจะรักษาสตรีคไว้ได้</string>
+    <string name="streak_freeze_chip">ตัวป้องกันสตรีค %1$d อัน</string>
+    <string name="streak_freeze_day">สตรีคได้รับการป้องกัน</string>
+    <string name="streak_freeze_info">เรียนครบทุก %1$d วันจะได้ตัวป้องกันสตรีค 1 อัน (สูงสุด %2$d) ถ้าพลาดไปหนึ่งวัน ระบบจะใช้ให้อัตโนมัติและสตรีคยังอยู่</string>
+    <string name="streak_freeze_used">เมื่อวานใช้ตัวป้องกันสตรีคไปแล้ว สตรีคของคุณยังต่อเนื่อง</string>
 </resources>

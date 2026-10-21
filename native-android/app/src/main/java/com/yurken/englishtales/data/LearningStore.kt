@@ -34,7 +34,11 @@ data class LearningSnapshot(
     /** Q5.10: running words of the stories finished in the last seven days (a re-read on another day counts again). */
     val weeklyWordsRead: Int = 0,
     /** Q5.8: FSRS stability in days per saved word; words not yet reviewed under FSRS are absent. */
-    val wordStability: Map<String, Double> = emptyMap()
+    val wordStability: Map<String, Double> = emptyMap(),
+    /** Streak freezes banked for a missed day ([StreakFreeze]). */
+    val streakFreezes: Int = 0,
+    /** Recent missed days that a freeze covered, as day keys. */
+    val frozenDays: Set<String> = emptySet()
 ) {
     val dailyGoalReached get() = todaySessions>=dailyGoal
     val knownWordCount get() = wordStages.count {it.value==WordStage.KNOWN}
@@ -98,6 +102,11 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         db.rawQuery("SELECT points,streak,completed_lessons,last_study_day FROM learning_stats WHERE id=1",null).use { c ->
             if(c.moveToFirst()) {points=c.getInt(0);lessons=c.getInt(2);streak=LearningPolicy.visibleStreak(c.getInt(1),c.getString(3),today,LearningPolicy.previousDay(now))}
         }
+        // Freezes are derived from the full day history, which the account sync also rebuilds; a legacy store that only kept the counter keeps its streak.
+        val studied=mutableSetOf<String>()
+        db.rawQuery("SELECT day FROM learning_days WHERE sessions>0",null).use {c -> while(c.moveToNext()) studied+=c.getString(0)}
+        val freeze=StreakFreeze.compute(studied,today)
+        streak=maxOf(streak,freeze.streak)
         val days=mutableMapOf<String,Pair<Int,Int>>()
         db.rawQuery("SELECT day,sessions,readings FROM learning_days ORDER BY day DESC LIMIT 8",null).use {c -> while(c.moveToNext()) days[c.getString(0)]=c.getInt(1) to c.getInt(2)}
         val week=(6 downTo 0).map { offset ->
@@ -110,7 +119,7 @@ class LearningStore(private val context: Context,val owner: LearningOwner=Learni
         val p=profile()
         return LearningSnapshot(saved,states,progress,points,streak,lessons,p.onboarding,p.level,p.genre,
             p.goal,days[today]?.first?:0,days[today]?.second?:0,due,nextDue,week,badges,p.lastStory,p.hintSeen,p.name,
-            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords,stability)
+            positions,dao.activeSessions().associate {it.id to it.activeMillis},owner.id,weak,favorites,personal,stages,weeklyWords,stability,freeze.freezes,freeze.frozenDays)
     }
     fun completeOnboarding(level: String, genre: String, goal: Int) {
         var newlyCompleted=false

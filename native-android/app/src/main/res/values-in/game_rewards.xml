@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">Kamu kembali setiap hari dan apinya makin besar. Besok, bacaan atau ulasan singkat menjaganya tetap menyala.</string>
     <string name="reminder_streak_title">Runtunan %1$d harimu terancam</string>
     <string name="reminder_streak_text">Ulasan singkat sudah cukup untuk menjaga runtunanmu.</string>
+    <string name="streak_freeze_chip">%1$d pelindung runtunan</string>
+    <string name="streak_freeze_day">Runtunan terlindungi</string>
+    <string name="streak_freeze_info">Setiap %1$d hari belajar memberimu 1 pelindung runtunan (maksimal %2$d). Jika kamu melewatkan sehari, pelindung dipakai otomatis dan runtunanmu tetap.</string>
+    <string name="streak_freeze_used">Pelindung runtunan dipakai kemarin, jadi runtunanmu berlanjut.</string>
 </resources>

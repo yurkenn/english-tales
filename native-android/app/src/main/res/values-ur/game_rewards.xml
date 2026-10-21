@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">آپ ہر دن واپس آئے اور شعلہ بڑھتا گیا۔ کل تھوڑا پڑھنا یا دہرانا اسے جاری رکھے گا۔</string>
     <string name="reminder_streak_title">آپ کا %1$d دن کا سلسلہ خطرے میں ہے</string>
     <string name="reminder_streak_text">سلسلہ بچانے کے لیے مختصر دہرائی کافی ہے۔</string>
+    <string name="streak_freeze_chip">%1$d سلسلہ تحفظ</string>
+    <string name="streak_freeze_day">سلسلہ محفوظ رہا</string>
+    <string name="streak_freeze_info">ہر %1$d دن پڑھنے پر 1 سلسلہ تحفظ ملتا ہے (زیادہ سے زیادہ %2$d)۔ کوئی دن چھوٹ جائے تو یہ خود استعمال ہوتا ہے اور سلسلہ قائم رہتا ہے۔</string>
+    <string name="streak_freeze_used">کل ایک سلسلہ تحفظ استعمال ہوا، آپ کا سلسلہ جاری ہے۔</string>
 </resources>

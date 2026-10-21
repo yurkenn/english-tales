@@ -81,6 +81,13 @@ internal object GameRecords {
         val key = "$owner:streak_celebrated"
         if (!prefs(context).contains(key)) prefs(context).edit().putInt(key, GameRewards.STREAK_MILESTONES.lastOrNull { it <= streak } ?: 0).apply()
     }
+    /** True the first time a freeze on [day] is reported for this owner. */
+    fun noteFreezeShown(context: Context, owner: String, day: String): Boolean {
+        val key = "$owner:freeze_shown"
+        if (prefs(context).getString(key, null) == day) return false
+        prefs(context).edit().putString(key, day).apply()
+        return true
+    }
     fun celebratedStreak(context: Context, owner: String) = prefs(context).getInt("$owner:streak_celebrated", 0)
     fun celebrateStreak(context: Context, owner: String, milestone: Int) = prefs(context).edit().putInt("$owner:streak_celebrated", milestone).apply()
 }

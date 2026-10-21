@@ -100,6 +100,12 @@ fun WeeklyActivity(snapshot: LearningSnapshot) {
                 ReferenceIcon("streak",TaleWarm,Modifier.size(16.dp))
                 Text("${snapshot.streak} · ${stringResource(R.string.stat_streak)}",fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleInk)
             }
+            // Banked freezes sit next to the streak they protect.
+            if(snapshot.streakFreezes>0) Row(Modifier.padding(start=6.dp).background(LocalTaleColors.current.tileBlue,RoundedCornerShape(20.dp)).padding(horizontal=10.dp,vertical=4.dp)
+                .contentLabel(stringResource(R.string.streak_freeze_chip,snapshot.streakFreezes)),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(4.dp)) {
+                Text("❄",fontSize=13.sp,color=TaleBlue)
+                Text("${snapshot.streakFreezes}",fontSize=12.sp,fontWeight=FontWeight.Bold,color=TaleInk)
+            }
         }
         val todayText=when {
             snapshot.dailyGoalReached -> stringResource(R.string.weekly_today_done)
@@ -112,15 +118,20 @@ fun WeeklyActivity(snapshot: LearningSnapshot) {
                 // Today is outlined so the learner sees where the week stands; empty days stay quiet instead of showing a dot.
                 val today=i==snapshot.weeklyActivity.lastIndex
                 val active=day.sessions>0
+                val frozen=day.day in snapshot.frozenDays
+                val frozenLabel=stringResource(R.string.streak_freeze_day)
                 Column(Modifier.weight(1f).appearIn(i),horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy(8.dp)) {
-                    Box(Modifier.fillMaxWidth().height(40.dp).background(if(active) TaleBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(12.dp))
+                    Box(Modifier.fillMaxWidth().height(40.dp).background(if(active) TaleBlue else if(frozen) LocalTaleColors.current.tileBlue else TaleLine.copy(alpha=0.6f),RoundedCornerShape(12.dp))
+                        .then(if(frozen) Modifier.border(1.5.dp,TaleBlue.copy(alpha=0.5f),RoundedCornerShape(12.dp)).contentLabel(frozenLabel) else Modifier)
                         .then(if(today) Modifier.border(2.dp,if(active) TaleInk.copy(alpha=0.25f) else TaleBlue,RoundedCornerShape(12.dp)) else Modifier),contentAlignment=Alignment.Center) {
                         if(active) Text("${day.sessions}",fontSize=14.sp,fontWeight=FontWeight.Bold,color=TaleOnBlue)
+                        else if(frozen) Text("❄",fontSize=16.sp,color=TaleBlue)
                     }
                     Text(if(today) stringResource(R.string.weekly_today) else day.label,fontSize=10.sp,fontWeight=if(today) FontWeight.Bold else FontWeight.Normal,color=if(today) TaleBlue else TaleMuted,maxLines=1)
                 }
             }
         }
+        if(snapshot.streak>0 || snapshot.streakFreezes>0) Text(stringResource(R.string.streak_freeze_info,StreakFreeze.EARN_EVERY,StreakFreeze.MAX_FREEZES),fontSize=12.sp,color=TaleMuted)
         Text(stringResource(R.string.gun_calistin_adim_tamamladin, snapshot.weeklyActivity.count {it.sessions>0}, snapshot.weeklyActivity.sumOf {it.sessions}),fontSize=12.sp,color=TaleMuted)
         // Q5.10: what the week's reading added up to, from the stories actually finished.
         if(snapshot.weeklyWordsRead>0 || snapshot.knownWordCount>0) Text(stringResource(R.string.weekly_reading_summary,snapshot.weeklyWordsRead,snapshot.knownWordCount),fontSize=12.sp,color=TaleMuted)

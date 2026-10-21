@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">आप हर दिन लौटे और लौ बढ़ती गई। कल थोड़ा पढ़ना या दोहराना इसे जारी रखेगा।</string>
     <string name="reminder_streak_title">आपकी %1$d दिन की लड़ी ख़तरे में है</string>
     <string name="reminder_streak_text">लड़ी बचाने के लिए छोटा-सा दोहराव काफ़ी है।</string>
+    <string name="streak_freeze_chip">%1$d लड़ी सुरक्षा</string>
+    <string name="streak_freeze_day">लड़ी सुरक्षित रही</string>
+    <string name="streak_freeze_info">हर %1$d पढ़ाई के दिनों पर 1 लड़ी सुरक्षा मिलती है (अधिकतम %2$d)। कोई दिन छूटे तो यह अपने-आप इस्तेमाल होती है और लड़ी बनी रहती है।</string>
+    <string name="streak_freeze_used">कल एक लड़ी सुरक्षा इस्तेमाल हुई, आपकी लड़ी जारी है।</string>
 </resources>

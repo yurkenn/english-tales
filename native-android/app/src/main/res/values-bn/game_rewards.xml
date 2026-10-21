@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">তুমি প্রতিদিন ফিরে এসেছ, শিখা বড় হয়েছে। কাল ছোট একটি পড়া বা রিভিউ ধারাটি ধরে রাখবে।</string>
     <string name="reminder_streak_title">তোমার %1$d দিনের ধারা ঝুঁকিতে</string>
     <string name="reminder_streak_text">ধারা রাখতে ছোট একটি রিভিউই যথেষ্ট।</string>
+    <string name="streak_freeze_chip">%1$dটি ধারা সুরক্ষা</string>
+    <string name="streak_freeze_day">ধারা সুরক্ষিত</string>
+    <string name="streak_freeze_info">প্রতি %1$d দিন পড়লে ১টি ধারা সুরক্ষা পাবে (সর্বোচ্চ %2$dটি)। কোনো দিন বাদ পড়লে এটি নিজে থেকেই ব্যবহার হয় এবং ধারা টিকে থাকে।</string>
+    <string name="streak_freeze_used">গতকাল একটি ধারা সুরক্ষা ব্যবহার হয়েছে, তোমার ধারা চলছে।</string>
 </resources>

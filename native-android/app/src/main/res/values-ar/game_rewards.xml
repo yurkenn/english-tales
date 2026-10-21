@@ -27,4 +27,8 @@
     <string name="streak_milestone_text">عدت كل يوم فكبرت الشعلة. قراءة قصيرة أو مراجعة غدًا تحافظ عليها.</string>
     <string name="reminder_streak_title">سلسلتك البالغة %1$d يوم في خطر</string>
     <string name="reminder_streak_text">مراجعة قصيرة تكفي للحفاظ على سلسلتك.</string>
+    <string name="streak_freeze_chip">%1$d حماية للسلسلة</string>
+    <string name="streak_freeze_day">السلسلة محمية</string>
+    <string name="streak_freeze_info">كل %1$d أيام دراسة تمنحك حماية واحدة للسلسلة (حتى %2$d). إذا فاتك يوم تُستخدم تلقائيًا وتبقى سلسلتك.</string>
+    <string name="streak_freeze_used">استُخدمت حماية للسلسلة أمس، فسلسلتك مستمرة.</string>
 </resources>
