@@ -1,16 +1,16 @@
 # English Tales — son çalışmalar ve yayın durumu
 
-Son güncelleme: **20 Ekim 2026**.
+Son güncelleme: **21 Ekim 2026**.
 
 Gelecek işler ve öncelik sırası: [90 günlük yol haritası](native-android/docs/ROADMAP_2026_Q4.md).
 
-## Güncel proje kontrolü — 20 Ekim 2026
+## Güncel proje kontrolü — 21 Ekim 2026
 
-#147–#151 birleşti: beş mevcut hikâyenin pilotu, yayın araçları, 11 dilde 1.098 maddelik dokunma sözlüğü, yeni okuyucu/tema/kitaplık düzeni ve Phosphor ikonlar ana dalda. **#152 ve #153’ün son başlıkları tam CI’da geçti:** 336 cihaz testi başarılı, 3 yapılandırmalı atlama, 0 hata; açılış ölçümleri 3/3. #153 kayıt hatası testinin zamanlayıcısını düzeltir ve ilk kullanım zaman aşımına ekran/durum tanılaması ekler. Orijinal ilk kullanım zaman aşımının nedeni kanıtlanmadı. #153 ve #152 sırasıyla `83d2725` ve `b2a8c09` ile ana dala birleşti; birleşik ana dal CI’ı ayrıca doğrulanıyor.
+**50 / 2.2.0 Google Play üretim kanalında Active ve %100 dağıtımda.** Canlı Console’da son yayın tarihi 20 Ekim, yayımlanmamış değişiklik sayısı sıfır. Dahili sürüm 49 / 2.1.0. Crash/ANR oranlarında henüz veri yok; hatasızlık sonucu çıkarılmaz. [Yayın kanıtı](native-android/docs/release-evidence/2026-10-21-play-status.json).
 
-Canlı anonim okumada 50 güncel hikâye ve **1.065 cümle** doğrulandı. Beş pilot yayımlanmış: 131 cümle, her birinde 11 dil karşılığı. Diğer 10 dilin sözlüğü makine taslağı; AI incelemesi ve ertelenen 73 karar tamamlandı, ana dil örneklemi açık. #149–#151 değişiklikleri başvurulmuş 50 paketinin sonrasında eklendi; mağazaya ulaştıkları doğrulanmadı. Son Claude yerel kaydında bekleyen kod değişikliği yok; gerçek cihaz/hesap kabulü ve dil incelemesi devam ediyor.
+PR denetimi sözlükteki 73 ertelenmiş kararın sonuçlarını (#154), oyun ödülleri/günlük görevleri (#156) ve akıcı paragraflar/sepya okuyucuyu (#157) bir arada doğrular. #157 ana dala birleşti; artık bulunmayan Expo kodunu hedefleyen Ocak ayı test taslağı #1 tarihçesi korunarak kapatıldı. Kartta geciken kaydırma cevabının sonraki kartı atlaması engellendi. İlk açılış regresyon testi, Compose test saatinin IO iş parçacığında oluşturabildiği Looper hatasını önlemek için gerçek Android pencere döngüsüne taşındı. [Denetim ve kalan kabul işleri](native-android/docs/PROJECT_AUDIT_2026-10-21.md).
 
-Açık PR’lar: [#146 güncel yol haritası](https://github.com/yurkenn/english-tales/pull/146), [#1 eski Expo test taslağı](https://github.com/yurkenn/english-tales/pull/1). [Ayrıntılı kontrol, kaynaklar ve kalan işler](native-android/docs/PROJECT_AUDIT_2026-10-20.md).
+Fiziksel telefonda Play üzerinden güncelleme/veri koruma, TalkBack, hesaplar arası eşitleme, canlı Analytics ve ana dil örneklemi kabulü açık. Yeni PR kaynakları yayımlanan 50 paketinden sonradır; mağazaya ulaştıkları iddia edilmez. Aşağıdaki 20 Ekim ve önceki tarihli kayıtlar tarihsel durumları gösterir.
 
 ## Paralel işlerin ilerlemesi — 20 Ekim
 

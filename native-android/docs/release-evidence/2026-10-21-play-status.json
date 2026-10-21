@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-21T08:55:00Z",
+  "source": "Authenticated Google Play Console, read-only browser inspection",
+  "applicationId": "com.yurken.englishtales",
+  "production": {
+    "versionCode": 50,
+    "versionName": "2.2.0",
+    "releaseName": "50 (2.2.0) — Yurken Stories",
+    "trackStatus": "Active",
+    "rolloutPercent": 100,
+    "countriesRegions": 178
+  },
+  "publishing": {
+    "unpublishedChanges": false,
+    "managedPublishing": false,
+    "lastPublishedDate": "2026-10-20"
+  },
+  "internal": {
+    "versionCode": 49,
+    "versionName": "2.1.0"
+  },
+  "vitals": "Crash and ANR rates show Data unavailable; this is not evidence of zero crashes.",
+  "actions": "No upload, submission, publication or settings mutation was performed.",
+  "limits": [
+    "No physical-device Play update or data-preservation acceptance in this audit.",
+    "New glossary, game and reader sources postdate the submitted version-50 source."
+  ],
+  "urls": [
+    "https://play.google.com/console/u/0/developers/7726521495392867100/app/4972425450856153810/tracks/production?releaseType=defaultReleases",
+    "https://play.google.com/console/u/0/developers/7726521495392867100/app/4972425450856153810/publishing"
+  ]
+}

@@ -1,6 +1,6 @@
 # Yurken Stories — önümüzdeki 90 gün
 
-20 Ekim 2026 · [PR, Claude ve canlı içerik kontrolü](PROJECT_AUDIT_2026-10-20.md) · Durum: uygulama planı; aşağıdaki açık işler tamamlanmış sayılmaz. Tek geliştirici akışına göre yaklaşık 12 hafta; Google incelemesi, editör incelemesi ve pilot veri toplama süreleri takvimi kaydırabilir.
+21 Ekim 2026 · [Güncel PR ve yayın kontrolü](PROJECT_AUDIT_2026-10-21.md) · Durum: uygulama planı; aşağıdaki açık işler tamamlanmış sayılmaz. Tek geliştirici akışına göre yaklaşık 12 hafta; Google incelemesi, editör incelemesi ve pilot veri toplama süreleri takvimi kaydırabilir.
 
 ## Ürün yönü
 
@@ -10,7 +10,7 @@
 
 ## Başlangıç noktası
 
-- **20 Ekim canlı Console kontrolü:** 50 / 2.2.0 “In review / Changes in review”; 48 / 2.0.0 “Available on Google Play”. Yönetilen yayın kapalı. Yeni ret görülmedi; başvuru değiştirilmedi. R01’in yayın sonucu Google incelemesini bekliyor. [Güncel kayıt](release-evidence/2026-10-20-play-status.json), [50 başvuru kanıtı](RELEASE_50_STATUS.md).
+- **21 Ekim canlı Console kontrolü:** 50 / 2.2.0 üretimde Active, dağıtım %100; 20 Ekim’de yayımlanmış. Yayımlanmamış değişiklik yok. Dahili kanal 49 / 2.1.0. R01’in Console yayın sonucu doğrulandı; fiziksel telefon ve mağaza sunumu kabulü açık. [Güncel kayıt](release-evidence/2026-10-21-play-status.json), [50 yayın kaydı](RELEASE_50_STATUS.md).
 - 12 arayüz dili, 11 hikâye çevirisi dili, 13 mağaza kaydı. Yeni kullanıcı için dil seçimi mevcut. İngilizce arayüz şu an Türkçe hikâye çevirisi kullanıyor.
 - FSRS, alıştırma basamakları, anlama soruları, dikte, cümle kurma, kişisel kelimeler, favoriler, öneriler, widget ve tablet düzeni kodda mevcut. Bunlar yeniden yapılacak özellikler değil; gerçek kullanım kabulü ve iyileştirme konusudur.
 - #149/#150 birleşti: 11 dilde 1.098 sözlük maddesi paket varlıklarında mevcut. #152 devamında 10 dilde 10.980 karşılığın AI incelemesi tamamlandı; 190 adayın 81’i kabul, 36’sı ret, 73’ü ilk turda kaynak/dil kararına ayrıldı; devam turunda tamamı 72 düzeltme/ekleme ve 1 koruma olarak sonuçlandı. Koordineli anlam eklemeleriyle 90 hedef dil + 2 Türkçe referans olmak üzere 92 karşılık düzeltildi. `machine-draft` ve insan onayı sınırları korunur; #152 ile ana dala alındı; yeni mağaza paketi henüz yayımlanmadı.
@@ -25,7 +25,11 @@
 - **Codex / R00:** İlk kullanım zaman aşımı için ekran/durum tanılaması eklendi; orijinal neden kanıtlanmadı. Ayrı kayıt hatası testi çakışması için yalnız o testin zamanlayıcısı düzeltildi. Tekil ve beş tekrarlı koşu; ardından sözlükle birlikte ilk kullanım/kayıt güvenilirliği 19/19 geçti. Güncel [PR #152](https://github.com/yurkenn/english-tales/pull/152) iki tam CI’da, [PR #153](https://github.com/yurkenn/english-tales/pull/153) bağımsız PR CI’da geçti. Sözlük başlığının yerel tam paketi de 336/339 (3 yapılandırmalı atlama) başarılı. Önceki CI kanıtı son kaynak yerine kullanılmaz.
 - #153 (`83d2725`) ve #152 (`b2a8c09`) ana dala birleşti; birleşik ana dal CI’ı ayrıca doğrulanıyor. Canlı içerik ve mağaza yayını yapılmadı; paralel işlerin sonucu fiziksel cihaz kabulünün yerine geçmez.
 
-## R00 — son test düzeltmesiyle tam CI geçti
+## R00 — 21 Ekim regresyonu ve önceki CI kanıtı
+
+21 Ekim `f66f8a9` PR CI 39570936929’da `FirstLaunchReadinessTest` başarısız oldu; aynı kaynak push CI 39570928218 tam geçti. XML iç nedeni artık somut: Compose 1.8.1 test saatinin unconfined devamı IO’dan `LazyColumn` oluştururken `The current thread must have a looper!` hatası verdi. Hazır model ile eski yükleme ağacı bu hatanın sonucu; aşağıdaki eski zaman aşımının tamamının aynı neden olduğu iddia edilmez. Yeni regresyon testi gerçek Activity pencere saatini kullanır; IO bekletme, 0/1 animasyon ölçekleri ve 20 saniyelik görünür dil seçimi kontrolü korunur. [Güncel denetim](PROJECT_AUDIT_2026-10-21.md).
+
+### Önceki test düzeltmeleri ve tam CI kayıtları
 
 **Yeni bulgu:** `050db6b` push CI 39398362194 geçti; PR CI 39398368677 kayıt hatası testinde `SnapshotStateObserver` çizim çakışmasıyla 280 testte durdu. İlk kullanım testi geçti. #153 (`a70ab0e`) ve #152 (`2e64334`) yalnız ilgili teste `StandardTestDispatcher` ve çizilmiş düğme beklemesi ekler; zaman sınırları ve kayıt kontrolleri korunur. Yerel API 36’da 1/1 ve beş ayrı instrumentation sürecinde 5/5 geçti. Sözlük ve testin birleşik `2e64334` başlığında ilk kullanım + kayıt güvenilirliği + UI senaryoları 19/19, atlamasız geçti. [Kanıt](release-evidence/2026-10-20-write-ui-scheduler.json). Son sözlük başlığı [push CI 39442907494](https://github.com/yurkenn/english-tales/actions/runs/39442907494) ve [PR CI 39442917858](https://github.com/yurkenn/english-tales/actions/runs/39442917858) ile tam geçti: 336 cihaz testi, 3 yapılandırmalı atlama, 0 hata; açılış ölçümleri 3/3. Yerel tam paket de aynı 336/339 sonucunu verdi. Eski başarısız koşu kanıtta korunur; iki geçiş bütün aralıklı sorunların sonsuza dek bittiğini kanıtlamaz.
 
@@ -35,7 +39,7 @@
 
 | ID | İş | Bitti sayılma ölçütü |
 |---|---|---|
-| R01 · P0 | 50'nin inceleme sonucunu ve mağazaya teslimini doğrula — 20 Ekim kontrol edildi, hâlâ incelemede | Console ve telefonda Play sürümü kaydı; yeni ad, yerel metinler/görseller ve 13 dil kaydı onaydan sonra kontrol edilmiş. Ret varsa nedeni düzeltilip yeni başvuru kaydedilmiş. |
+| R01 · P0 | 50'nin mağazaya teslimini doğrula — 21 Ekim Console: Active / %100; telefon ve mağaza sunumu kabulü açık | Console ve telefonda Play sürümü kaydı; yeni ad, yerel metinler/görseller ve 13 dil kaydı onaydan sonra kontrol edilmiş. Ret varsa nedeni düzeltilip yeni başvuru kaydedilmiş. |
 | R02 · P0 | Gerçek telefonda eski sürümden güncelleme ve öğrenme yolculuğu | Play üzerinden 48→50; kayıtlı kelime, ilerleme, favoriler ve tekrar planı korunuyor. Misafir ve hesaplı kullanım, iki cihaz eşitlemesi, uçak modu, yeniden açılış, İngilizce TTS kesintisi test edilmiş. Cihaz/OS/sürüm ve sonuç kayıtlı. |
 | R03 · P0 | Erişilebilirlik ve bağlantı kabulü | Aynı Play paketiyle TalkBack ana yolculuğu ve büyük yazı; uygulama kurulu/kurulu değil hikâye bağlantısı, ilk açılıştan gelen bağlantı doğru hikâyeye dönüyor. Play-imzalı universal APK'daki alan adı doğrulaması tek başına uçtan uca kabul sayılmaz. |
 | R04 · P0 | Ölçümü kullanılabilir hale getir | Analytics kapalı→açık→kapalı davranışı ve izin verilen olaylar panelde doğrulanmış; test/üretim ayrımı var. Crashlytics ve Play vitals görünürlüğü kaydedilmiş; örneklem yoksa “veri yok” yazılıyor. Fiziksel cihaz açılış/okuma performansının başlangıç ölçümü var. |
