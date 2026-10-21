@@ -45,32 +45,17 @@ internal fun DictationGame(
     LaunchedEffect(session, index) { narrator.speak(question.sentence) }
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).centeredWidth(ContentWidth).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp)) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            ReferenceIconButton("back", stringResource(R.string.gap_exit), { narrator.stop(); onExit() })
-            Text(stringResource(R.string.gap_progress, index + 1, questions.size), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
-            ComboBadge()
-        }
-        QuizProgress(index.toFloat() / questions.size)
+        QuizHeader(index, questions.size, stringResource(R.string.gap_exit), { narrator.stop(); onExit() })
         Text(stringResource(R.string.dictation_instruction), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         val playLabel = stringResource(if (playing) R.string.listen_stop else R.string.dictation_play)
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Box(Modifier.size(88.dp).pulseWhile(playing).background(TaleBlue, CircleShape).contentLabel(playLabel)
-                .clickable(role = Role.Button) { if (playing) narrator.stop() else narrator.speak(question.sentence) },
-                contentAlignment = Alignment.Center) {
-                if (playing) Text("Ⅱ", color = TaleOnBlue, style = MaterialTheme.typography.headlineSmall)
-                else ReferenceIcon("volume", TaleOnBlue, Modifier.size(36.dp))
-            }
-            if (narrator.preparing) Text(stringResource(R.string.listen_preparing), color = TaleMuted, style = MaterialTheme.typography.bodySmall)
-            narrator.error?.let { Text(it, color = TaleMuted, style = MaterialTheme.typography.bodySmall) }
-        }
+        NarrationPlayButton(narrator, playLabel) { if (playing) narrator.stop() else narrator.speak(question.sentence) }
         OutlinedTextField(value = typed, onValueChange = { if (!checked) typed = it.take(300) }, enabled = !checked,
             label = { Text(stringResource(R.string.dictation_field)) }, modifier = Modifier.fillMaxWidth(),
             textStyle = LocalTextStyle.current.copy(textDirection = androidx.compose.ui.text.style.TextDirection.Ltr),
             keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences))
         AnswerFeedback(checked, result.correct, if (result.correct) stringResource(R.string.dictation_correct, englishArgument(question.sentence))
             else pluralStringResource(R.plurals.dictation_incorrect, result.wrongWords, result.wrongWords, englishArgument(question.sentence)))
-        Button(enabled = typed.isNotBlank() && !advanced, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
-            colors = if (checked && result.correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(), onClick = {
+        QuizCheckButton(typed.isNotBlank() && !advanced, checked, result.correct, index == questions.lastIndex, onClick = {
             if (!checked) { checked = true; combo.record(result.correct) }
             else if (!advanced) {
                 advanced = true
@@ -78,6 +63,6 @@ internal fun DictationGame(
                 if (result.correct) correctCount++
                 if (index == questions.lastIndex) onComplete(correctCount) else index++
             }
-        }) { Text(stringResource(if (!checked) R.string.gap_check else if (index == questions.lastIndex) R.string.gap_finish else R.string.gap_next)) }
+        })
     }
 }

@@ -4,10 +4,13 @@ import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
@@ -125,4 +128,44 @@ internal fun QuizProgress(fraction: Float, modifier: Modifier = Modifier) {
     val value by animateFloatAsState(fraction.coerceIn(0f, 1f), tween(TaleMotion.emphasized, easing = FastOutSlowInEasing), label = "quiz")
     androidx.compose.material3.LinearProgressIndicator(progress = { value }, modifier = modifier.fillMaxWidth().height(10.dp),
         color = TaleBlue, trackColor = TaleLine, strokeCap = androidx.compose.ui.graphics.StrokeCap.Round, gapSize = 0.dp, drawStopIndicator = {})
+}
+
+/** The top of a quiz game: exit button, "question n / total" and the combo badge, with the progress bar below. */
+@Composable
+internal fun QuizHeader(index: Int, total: Int, exitLabel: String, onExit: () -> Unit, progressLabel: Int = R.string.gap_progress) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        ReferenceIconButton("back", exitLabel, onExit)
+        Text(stringResource(progressLabel, index + 1, total), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
+        ComboBadge()
+    }
+    QuizProgress(index.toFloat() / total)
+}
+
+/** Labels of the check button: before checking, after checking, and after the last question is checked. */
+internal data class QuizButtonLabels(val check: Int, val next: Int, val finish: Int)
+
+internal val GapButtonLabels = QuizButtonLabels(R.string.gap_check, R.string.gap_next, R.string.gap_finish)
+
+/** The "check, then next" button of a quiz game; it turns green once a correct answer is checked. */
+@Composable
+internal fun QuizCheckButton(enabled: Boolean, checked: Boolean, correct: Boolean, last: Boolean, onClick: () -> Unit, labels: QuizButtonLabels = GapButtonLabels) {
+    Button(enabled = enabled, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
+        colors = if (checked && correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(),
+        onClick = onClick) { Text(stringResource(if (!checked) labels.check else if (last) labels.finish else labels.next)) }
+}
+
+/** The large round play/stop button of the listening games, with the narrator's preparing and error notes below it. */
+@Composable
+internal fun NarrationPlayButton(narrator: Narrator, label: String, onToggle: () -> Unit) {
+    val playing = narrator.speaking || narrator.preparing
+    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
+        Box(Modifier.size(88.dp).pulseWhile(playing).background(TaleBlue, CircleShape).contentLabel(label)
+            .clickable(role = Role.Button, onClick = onToggle),
+            contentAlignment = Alignment.Center) {
+            if (playing) Text("Ⅱ", color = TaleOnBlue, style = MaterialTheme.typography.headlineSmall)
+            else ReferenceIcon("volume", TaleOnBlue, Modifier.size(36.dp))
+        }
+        if (narrator.preparing) Text(stringResource(R.string.listen_preparing), color = TaleMuted, style = MaterialTheme.typography.bodySmall)
+        narrator.error?.let { Text(it, color = TaleMuted, style = MaterialTheme.typography.bodySmall) }
+    }
 }

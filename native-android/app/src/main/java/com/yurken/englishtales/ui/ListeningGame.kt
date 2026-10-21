@@ -54,24 +54,10 @@ internal fun ListeningGame(
     LaunchedEffect(session, index) { narrator.speak(question.word) }
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp)) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            ReferenceIconButton("back", stringResource(R.string.listen_exit), { narrator.stop(); onExit() })
-            Text(stringResource(R.string.listen_progress, index + 1, questions.size), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
-            ComboBadge()
-        }
-        QuizProgress(index.toFloat() / questions.size)
+        QuizHeader(index, questions.size, stringResource(R.string.listen_exit), { narrator.stop(); onExit() }, R.string.listen_progress)
         Text(stringResource(R.string.listen_instruction), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         val playLabel = stringResource(if (playing) R.string.listen_stop else if (index == 0 && !checked && selected == null) R.string.listen_play else R.string.listen_replay)
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            Box(Modifier.size(88.dp).pulseWhile(playing).background(TaleBlue, CircleShape).contentLabel(playLabel)
-                .clickable(role = Role.Button) { if (playing) narrator.stop() else narrator.speak(question.word) },
-                contentAlignment = Alignment.Center) {
-                if (playing) Text("Ⅱ", color = TaleOnBlue, style = MaterialTheme.typography.headlineSmall)
-                else ReferenceIcon("volume", TaleOnBlue, Modifier.size(36.dp))
-            }
-            if (narrator.preparing) Text(stringResource(R.string.listen_preparing), color = TaleMuted, style = MaterialTheme.typography.bodySmall)
-            narrator.error?.let { Text(it, color = TaleMuted, style = MaterialTheme.typography.bodySmall) }
-        }
+        NarrationPlayButton(narrator, playLabel) { if (playing) narrator.stop() else narrator.speak(question.word) }
         Column(Modifier.selectableGroup(), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             question.options.forEachIndexed { i, option ->
                 AnswerOption(option, selected == option, optionState(selected == option, checked, option == question.answer), !checked, { selected = option }, Modifier.appearIn(i))
@@ -79,8 +65,7 @@ internal fun ListeningGame(
         }
         AnswerFeedback(checked, correct, if (correct) stringResource(R.string.listen_correct, englishArgument(question.word))
             else stringResource(R.string.listen_incorrect, englishArgument(question.word), question.answer))
-        Button(enabled = selected != null && !advanced, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
-            colors = if (checked && correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(), onClick = {
+        QuizCheckButton(selected != null && !advanced, checked, correct, index == questions.lastIndex, onClick = {
             if (!checked) { checked = true; combo.record(correct) }
             else if (!advanced) {
                 advanced = true
@@ -89,6 +74,6 @@ internal fun ListeningGame(
                 if (correct) correctCount++
                 if (index == questions.lastIndex) onComplete(correctCount) else index++
             }
-        }) { Text(stringResource(if (!checked) R.string.listen_check else if (index == questions.lastIndex) R.string.listen_finish else R.string.listen_next)) }
+        }, labels = QuizButtonLabels(R.string.listen_check, R.string.listen_next, R.string.listen_finish))
     }
 }
