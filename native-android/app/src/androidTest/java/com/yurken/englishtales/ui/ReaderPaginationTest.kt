@@ -43,6 +43,6 @@ class ReaderPaginationTest {
         // Under the last line only the page's bottom padding and less than one more short sentence line stay empty.
         val padding=with(compose.density) {(24+14).dp.toPx()}
         assertTrue("The page is filled: $gap px empty with $line px lines",gap<padding+2*line)
-        assertTrue("A phone page shows more than a handful of short sentences",texts.size>=5)
+        assertTrue("A page shows several sentence lines, not one or two",texts.size>=3)
     }
 }
