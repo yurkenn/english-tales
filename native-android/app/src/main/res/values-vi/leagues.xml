@@ -36,4 +36,18 @@
     <string name="league_change_name">Đổi tên</string>
     <string name="league_show_me">Hiện tôi trong giải đấu</string>
     <string name="league_show_me_text">Nếu tắt, bạn rời nhóm tuần này và không ai thấy tên bạn.</string>
+    <string name="league_rank_up">Bạn đã lên hạng %1$d trong giải!</string>
+    <string name="league_xp_gain">+%1$d XP · Bạn đang hạng %2$d</string>
+    <string name="league_reminder_gap">Bạn đang hạng %1$d, còn %2$d XP để lên một hạng.</string>
+    <string name="league_reminder_lead">Bạn đang dẫn đầu giải, hôm nay hãy giữ vững!</string>
+    <string name="league_reminder_danger">Bạn đang hạng %1$d, trong vùng xuống hạng. Học một chút là thoát.</string>
+    <string name="league_result_up">Thăng hạng!</string>
+    <string name="league_result_stay">Bạn giữ được giải</string>
+    <string name="league_result_down">Tuần mới, cơ hội mới</string>
+    <string name="league_share">Chia sẻ</string>
+    <string name="league_share_text">Mình vừa lên %1$s trong English Tales! Mình học tiếng Anh qua truyện: %2$s</string>
+    <string name="league_nickname_title">Chọn tên của bạn trong giải</string>
+    <string name="league_nickname_text">Hiện mọi người đều hiển thị là \"Okuyucu\". Không cần tên thật, biệt danh là đủ.</string>
+    <string name="league_nickname_field">Biệt danh</string>
+    <string name="league_nickname_save">Lưu</string>
 </resources>

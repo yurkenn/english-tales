@@ -36,4 +36,18 @@
     <string name="league_change_name">Change your name</string>
     <string name="league_show_me">Show me in the league</string>
     <string name="league_show_me_text">Turn this off to leave this week\'s group and hide your name from everyone.</string>
+    <string name="league_rank_up">You moved up to #%1$d in your league!</string>
+    <string name="league_xp_gain">+%1$d XP · You\'re #%2$d in your league</string>
+    <string name="league_reminder_gap">You\'re #%1$d in your league, %2$d XP to move up a place.</string>
+    <string name="league_reminder_lead">You\'re top of your league, hold your spot today!</string>
+    <string name="league_reminder_danger">You\'re #%1$d and in the drop zone. A short session will save you.</string>
+    <string name="league_result_up">Promoted!</string>
+    <string name="league_result_stay">You kept your league</string>
+    <string name="league_result_down">New week, new chance</string>
+    <string name="league_share">Share</string>
+    <string name="league_share_text">I moved up to the %1$s in English Tales! I\'m learning English with stories: %2$s</string>
+    <string name="league_nickname_title">Choose your league name</string>
+    <string name="league_nickname_text">Everyone shows as \"Okuyucu\" for now. You don\'t need your real name, a nickname is fine.</string>
+    <string name="league_nickname_field">Nickname</string>
+    <string name="league_nickname_save">Save</string>
 </resources>

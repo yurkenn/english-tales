@@ -4,6 +4,10 @@ import org.json.JSONArray
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Assert.assertFalse
+import androidx.test.platform.app.InstrumentationRegistry
+import com.yurken.englishtales.ui.LearningReminders
 import org.junit.Assert.assertThrows
 import org.junit.Test
 import java.time.Instant
@@ -40,5 +44,23 @@ class LeagueStandingTest {
     @Test fun rejectsRanksOutOfOrderAndUnknownTiers() {
         assertThrows(IllegalArgumentException::class.java) { LeagueStanding.parse(response(listOf(member(2, 10)))) }
         assertThrows(IllegalArgumentException::class.java) { LeagueStanding.parse(response(emptyList()).put("tier", 6)) }
+    }
+
+    @Test fun memoryKeepsThePreviousPlaceAndCelebratesAWeekOnce() {
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
+        val owner = java.util.UUID.randomUUID().toString()
+        val first = LeagueStanding.parse(response((1..12).map { member(it, 300 - it * 20, me = it == 6) }, relegate = 5))
+        assertNull(LeagueMemory.remember(context, owner, first))
+        val second = LeagueStanding.parse(response((1..12).map { member(it, 300 - it * 20, me = it == 3) }, relegate = 5))
+        val previous = LeagueMemory.remember(context, owner, second)
+        assertEquals(6, previous?.rank)
+        assertEquals(LeagueZone.Safe, previous?.zone)
+        assertEquals(21, LeagueMemory.read(context, owner)?.gap)
+        assertTrue(LeagueMemory.firstResultView(context, owner, "2026-10-19"))
+        assertFalse(LeagueMemory.firstResultView(context, owner, "2026-10-19"))
+        val line = LearningReminders.leagueLine(context, LearningOwner.Account(owner), now = Instant.parse("2026-10-20T00:00:00Z").toEpochMilli())
+        assertTrue(line.orEmpty().contains("21"))
+        assertNull(LearningReminders.leagueLine(context, LearningOwner.Account(owner), now = Instant.parse("2026-10-27T00:00:00Z").toEpochMilli()))
+        assertNull(LearningReminders.leagueLine(context, LearningOwner.Guest))
     }
 }

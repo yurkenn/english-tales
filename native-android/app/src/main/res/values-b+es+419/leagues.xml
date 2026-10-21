@@ -36,4 +36,18 @@
     <string name="league_change_name">Cambiar tu nombre</string>
     <string name="league_show_me">Mostrarme en la liga</string>
     <string name="league_show_me_text">Si lo desactivas, sales del grupo de esta semana y nadie verá tu nombre.</string>
+    <string name="league_rank_up">¡Subiste al puesto %1$d de tu liga!</string>
+    <string name="league_xp_gain">+%1$d XP · Vas en el puesto %2$d de tu liga</string>
+    <string name="league_reminder_gap">Vas en el puesto %1$d de tu liga, te faltan %2$d XP para subir.</string>
+    <string name="league_reminder_lead">¡Vas primero en tu liga, defiende tu lugar hoy!</string>
+    <string name="league_reminder_danger">Vas en el puesto %1$d, en la zona de descenso. Una sesión corta te salva.</string>
+    <string name="league_result_up">¡Ascendiste!</string>
+    <string name="league_result_stay">Mantuviste tu liga</string>
+    <string name="league_result_down">Nueva semana, nueva oportunidad</string>
+    <string name="league_share">Compartir</string>
+    <string name="league_share_text">¡Subí a la %1$s en English Tales! Aprendo inglés con historias: %2$s</string>
+    <string name="league_nickname_title">Elige tu nombre en la liga</string>
+    <string name="league_nickname_text">Por ahora todos aparecen como \"Okuyucu\". No hace falta tu nombre real, basta un apodo.</string>
+    <string name="league_nickname_field">Apodo</string>
+    <string name="league_nickname_save">Guardar</string>
 </resources>

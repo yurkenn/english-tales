@@ -135,6 +135,23 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         seenGoal=snapshot.dailyGoalReached;seenStreak=snapshot.streak
     }
     milestone?.let {StreakMilestoneDialog(it) {milestone=null}}
+    // League changes since the last read: a climb or new XP gets a toast, and a finished week gets its result once.
+    var leagueResult by rememberSaveable {mutableStateOf<Pair<Int,Int>?>(null)}
+    var leagueOutcome by rememberSaveable {mutableStateOf("")}
+    LaunchedEffect(leagueState,account.userId) {
+        val ready=leagueState as? LeagueUi.Ready ?: return@LaunchedEffect
+        val user=account.userId ?: return@LaunchedEffect
+        if(ready.busy) return@LaunchedEffect
+        val standing=ready.standing
+        val previous=LeagueMemory.remember(rewardContext,user,standing)
+        val me=standing.me
+        if(me!=null && previous!=null && previous.weekStart==standing.weekStart) {
+            if(me.rank<previous.rank) alerts.reward(rewardContext.getString(R.string.league_rank_up,me.rank))
+            else if(me.xp>previous.xp) alerts.success(rewardContext.getString(R.string.league_xp_gain,me.xp-previous.xp,me.rank))
+        }
+        standing.lastWeek?.let {last -> if(LeagueMemory.firstResultView(rewardContext,user,standing.weekStart)) {leagueResult=last.rank to standing.tier;leagueOutcome=last.outcome}}
+    }
+    leagueResult?.let {(rank,tier) -> LeagueResultDialog(leagueOutcome,rank,tier) {leagueResult=null}}
     // A freeze spent on yesterday is said once, so a kept streak is not a mystery.
     val freezeUsed=stringResource(R.string.streak_freeze_used)
     LaunchedEffect(snapshot.frozenDays,snapshot.ownerId) {
@@ -197,7 +214,8 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
                 if(snapshot.onboardingDone) nav.popBackStack() else nav.navigate("onboarding") {popUpTo("welcome") {inclusive=true}}
             })}
             composable("league") {LeagueScreen(leagueState,snapshot.displayName,onBack={nav.popBackStack()},onRefresh={leagues.refresh(account.userId)},
-                onOptOut={leagues.setOptedOut(account.userId,it)},onSettings={nav.navigate("settings")})}
+                onOptOut={leagues.setOptedOut(account.userId,it)},onSettings={nav.navigate("settings")},
+                onSaveName={name -> viewModel.updatePreferences(snapshot.level,snapshot.preferredGenre,snapshot.dailyGoal,name)})}
             composable("words") { SavedWordsScreen(snapshot,onBack={nav.popBackStack()},onRemoveWord=viewModel::removeWord,onBrowse={selectedTab=1;nav.popBackStack("main",false)}) }
         }
     }

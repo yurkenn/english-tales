@@ -23,6 +23,8 @@ import com.yurken.englishtales.R
 import com.yurken.englishtales.data.LearningStore
 import com.yurken.englishtales.data.LearningOwner
 import com.yurken.englishtales.data.LearningReminderOwner
+import com.yurken.englishtales.data.LeagueMemory
+import com.yurken.englishtales.data.LeagueZone
 import java.util.Calendar
 import java.util.Locale
 
@@ -56,16 +58,28 @@ object LearningReminders {
         val next=Calendar.getInstance().apply {set(Calendar.HOUR_OF_DAY,hour(context));set(Calendar.MINUTE,minute(context));set(Calendar.SECOND,0);set(Calendar.MILLISECOND,0);if(timeInMillis<=System.currentTimeMillis()) add(Calendar.DAY_OF_YEAR,1)}
         manager.set(AlarmManager.RTC_WAKEUP,next.timeInMillis,pending(context))
     }
+    /** The weekly league line for a signed-in learner whose last read put them in this week's group. */
+    internal fun leagueLine(context: Context,owner: LearningOwner?,now: Long=System.currentTimeMillis()): String? {
+        val account=owner as? LearningOwner.Account ?: return null
+        val place=LeagueMemory.read(context,account.id)?.takeIf {it.endsAt>now} ?: return null
+        return when {
+            place.zone==LeagueZone.Relegation -> context.getString(R.string.league_reminder_danger,place.rank)
+            place.gap!=null -> context.getString(R.string.league_reminder_gap,place.rank,place.gap)
+            else -> context.getString(R.string.league_reminder_lead)
+        }
+    }
     fun show(base: Context,dueWords: Int=0,streakAtRisk: Int=0) {
         val context=AppLanguage.wrap(base)
         if(!enabled(context) || !allowed(context)) return
+        // The league place is the strongest daily pull, so it replaces the generic line when the learner has one.
+        val league=runCatching {leagueLine(context,LearningReminderOwner.current(context))}.getOrNull()
         val manager=context.getSystemService(NotificationManager::class.java)
         if(Build.VERSION.SDK_INT>=26) manager.createNotificationChannel(NotificationChannel("daily_learning",context.getString(R.string.gunluk_ogrenme_hatirlaticisi),NotificationManager.IMPORTANCE_DEFAULT))
         val open=PendingIntent.getActivity(context,72,Intent(context,MainActivity::class.java).putExtra("daily_plan_request",System.currentTimeMillis()).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         @Suppress("DEPRECATION")
         val builder=if(Build.VERSION.SDK_INT>=26) Notification.Builder(context,"daily_learning") else Notification.Builder(context)
         manager.notify(71,builder.setSmallIcon(R.drawable.ic_notification).setContentTitle(if(streakAtRisk>0) context.getString(R.string.reminder_streak_title,streakAtRisk) else context.getString(R.string.bugunku_hikayen_seni_bekliyor))
-            .setContentText(if(streakAtRisk>0 && dueWords==0) context.getString(R.string.reminder_streak_text) else if(dueWords>0) context.resources.getQuantityString(R.plurals.reminder_due_words,dueWords,dueWords) else context.getString(R.string.kisa_bir_okuma_veya_kelime)).setContentIntent(open).setAutoCancel(true).build())
+            .setContentText(if(league!=null) league else if(streakAtRisk>0 && dueWords==0) context.getString(R.string.reminder_streak_text) else if(dueWords>0) context.resources.getQuantityString(R.plurals.reminder_due_words,dueWords,dueWords) else context.getString(R.string.kisa_bir_okuma_veya_kelime)).setContentIntent(open).setAutoCancel(true).build())
     }
 }
 

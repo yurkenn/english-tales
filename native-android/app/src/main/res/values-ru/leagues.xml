@@ -36,4 +36,18 @@
     <string name="league_change_name">Изменить имя</string>
     <string name="league_show_me">Показывать меня в лиге</string>
     <string name="league_show_me_text">Если выключить, вы покинете группу этой недели и ваше имя никто не увидит.</string>
+    <string name="league_rank_up">Вы поднялись на %1$d-е место в лиге!</string>
+    <string name="league_xp_gain">+%1$d XP · Ваше место в лиге: %2$d</string>
+    <string name="league_reminder_gap">Ваше место в лиге: %1$d. До следующего места %2$d XP.</string>
+    <string name="league_reminder_lead">Вы на первом месте в лиге, удержите его сегодня!</string>
+    <string name="league_reminder_danger">Ваше место: %1$d, это зона вылета. Короткое занятие вас спасёт.</string>
+    <string name="league_result_up">Повышение!</string>
+    <string name="league_result_stay">Лига сохранена</string>
+    <string name="league_result_down">Новая неделя, новый шанс</string>
+    <string name="league_share">Поделиться</string>
+    <string name="league_share_text">Я поднялся в лигу «%1$s» в English Tales! Учу английский по историям: %2$s</string>
+    <string name="league_nickname_title">Выберите имя для лиги</string>
+    <string name="league_nickname_text">Пока все отображаются как «Okuyucu». Настоящее имя не нужно, подойдёт псевдоним.</string>
+    <string name="league_nickname_field">Псевдоним</string>
+    <string name="league_nickname_save">Сохранить</string>
 </resources>

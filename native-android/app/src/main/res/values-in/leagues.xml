@@ -36,4 +36,18 @@
     <string name="league_change_name">Ubah namamu</string>
     <string name="league_show_me">Tampilkan aku di liga</string>
     <string name="league_show_me_text">Jika dimatikan, kamu keluar dari grup minggu ini dan namamu tidak terlihat.</string>
+    <string name="league_rank_up">Kamu naik ke peringkat %1$d di liga!</string>
+    <string name="league_xp_gain">+%1$d XP · Peringkat %2$d di liga</string>
+    <string name="league_reminder_gap">Kamu peringkat %1$d di liga, %2$d XP lagi untuk naik.</string>
+    <string name="league_reminder_lead">Kamu di puncak liga, pertahankan hari ini!</string>
+    <string name="league_reminder_danger">Kamu peringkat %1$d dan di zona degradasi. Latihan singkat akan menyelamatkanmu.</string>
+    <string name="league_result_up">Naik liga!</string>
+    <string name="league_result_stay">Kamu tetap di ligamu</string>
+    <string name="league_result_down">Minggu baru, peluang baru</string>
+    <string name="league_share">Bagikan</string>
+    <string name="league_share_text">Aku naik ke %1$s di English Tales! Aku belajar bahasa Inggris lewat cerita: %2$s</string>
+    <string name="league_nickname_title">Pilih namamu di liga</string>
+    <string name="league_nickname_text">Untuk sekarang semua tampil sebagai \"Okuyucu\". Tidak perlu nama asli, nama panggilan cukup.</string>
+    <string name="league_nickname_field">Nama panggilan</string>
+    <string name="league_nickname_save">Simpan</string>
 </resources>
