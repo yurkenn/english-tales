@@ -1,0 +1,26 @@
+[
+  {
+    "storyId": "lost-map",
+    "lemma": "end",
+    "before": "son",
+    "after": "son; bitmek, sona ermek"
+  },
+  {
+    "storyId": "classic-town-country-mouse",
+    "lemma": "hide",
+    "before": "saklanmak",
+    "after": "saklanmak; saklamak, gizlemek"
+  },
+  {
+    "storyId": "classic-north-wind-sun",
+    "lemma": "blow",
+    "before": "darbe, vuruş",
+    "after": "darbe, vuruş; (rüzgâr) esmek, uçurmak"
+  },
+  {
+    "storyId": "classic-ass-lion-skin",
+    "lemma": "hide",
+    "before": "saklanmak",
+    "after": "saklanmak; saklamak, gizlemek"
+  }
+]

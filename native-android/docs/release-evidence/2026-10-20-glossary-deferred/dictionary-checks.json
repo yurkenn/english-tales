@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-20",
+  "scope": "Targeted lexical checks, not independent dictionary verification of every changed gloss",
+  "checks": [
+    {
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/wardrobe?topic=clothing-general-words",
+      "supports": "Wardrobe includes a person's clothing collection and furniture. Search result text; direct fetch blocked."
+    },
+    {
+      "url": "https://www.shabdkosh.com/dictionary/english-hindi/purring/purring-meaning-in-hindi",
+      "supports": "घुरघुराना is listed as the Hindi purr verb."
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english-thai/purr",
+      "supports": "Thai verb ทำเสียงคราง, defined as a low murmuring cat sound. Search result text; direct fetch blocked."
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english-bengali/scarcely",
+      "supports": "Includes degree, almost-not sense with খুব কমই. Search result text; direct fetch blocked."
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/unlit",
+      "supports": "Distinct not-ignited and unilluminated senses; full page read."
+    },
+    {
+      "url": "https://shabdkosh.com/dictionary/english-hindi/find/find-meaning-in-hindi",
+      "supports": "Lists search, result/discovery and find-out Hindi senses."
+    },
+    {
+      "url": "https://dictionary.cambridge.org/us/dictionary/english-arabic/god",
+      "supports": "Distinguishes proper God from a generic deity; both Arabic forms occur."
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english-indonesian/plain-clothes",
+      "supports": "Ordinary nonuniform clothing meaning, with pakaian biasa."
+    },
+    {
+      "url": "https://www.rekhtadictionary.com/meaning-of-be-taabii?lang=ur",
+      "supports": "Restlessness/eagerness meaning helps distinguish the Urdu desperately intensifier."
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "auditCorrections": [
+    {
+      "lang": "th",
+      "lemma": "eve",
+      "currentProposed": "วันก่อน (คริสต์มาส)",
+      "problem": "Wrong meaning risk that was never flagged. วันก่อน, as in เมื่อวันก่อน, is the everyday expression for 'the other day / a few days ago'. It does not mean 'the evening or day before a special day'. The label does not repair this, because a learner reads วันก่อน as a set phrase. The context is Christmas Eve, which is the night before Christmas.",
+      "replacement": "คืน/วันก่อนวันสำคัญ (คืนก่อนวันคริสต์มาส)",
+      "severity": "medium",
+      "finalAfter": "คืน/วันก่อนวันสำคัญ (คืนก่อนวันคริสต์มาส)",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: Wrong meaning risk that was never flagged. วันก่อน, as in เมื่อวันก่อน, is the everyday expression for 'the other day / a few days ago'. It does not mean 'the evening or day before a special day'. The label does not repair this, because a learner reads วันก่อน as a set phrase. The context is Christmas Eve, which is the night before Christmas."
+    },
+    {
+      "lang": "ar",
+      "lemma": "lay",
+      "currentProposed": "استلقى؛ وضع",
+      "problem": "This is a source-expansion gap. All other targets except th received a static-position sense for 'Inside it lay a photograph'. Arabic did not. استلقى is a person lying down and cannot describe a photograph lying in a chest. وضع loosely covers egg-laying (وضع البيض), but an explicit egg sense matches the other targets.",
+      "replacement": "استلقى؛ كان موجودًا (موضوعًا)؛ وضع؛ يبيض (البيض)",
+      "severity": "medium",
+      "finalAfter": "استلقى؛ كان موجودًا/موضوعًا؛ وضع؛ يبيض",
+      "disposition": "amended",
+      "resolution": "Keep static location, lying down, placing and egg-laying senses without redundant egg label."
+    },
+    {
+      "lang": "ur",
+      "lemma": "wicked",
+      "currentProposed": "بدکار",
+      "problem": "Keeping بدکار is correct, since its evil-doer sense is valid and must not be erased. On its own, though, it does not cover the second context. بدکار is an agent noun or adjective for a wrongdoer. It cannot render the inanimate 'something wicked' (کوئی بدکار چیز is not idiomatic). In the Wild Swans context, about a suspected woman, a lone بدکار also invites the unchastity reading. The fix is additive, not a replacement.",
+      "replacement": "بدکار؛ شیطانی، خبیث",
+      "severity": "medium",
+      "finalAfter": "بدکار؛ شیطانی، خبیث",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: Keeping بدکار is correct, since its evil-doer sense is valid and must not be erased. On its own, though, it does not cover the second context. بدکار is an agent noun or adjective for a wrongdoer. It cannot render the inanimate 'something wicked' (کوئی بدکار چیز is not idiomatic). In the Wild Swans context, about a suspected woman, a lone بدکار also invites the unchastity reading. The fix is additive, not a replacement."
+    },
+    {
+      "lang": "tr",
+      "lemma": "wicked",
+      "currentProposed": "kötü kalpli",
+      "problem": "This is the same structural gap as Urdu. 'kötü kalpli' (evil-hearted) only applies to an animate being. It fits 'a wicked spirit' but not 'her silence hid something wicked' (kötü kalpli bir şey is wrong). Add an inanimate sense and keep the current one.",
+      "replacement": "kötü kalpli; kötü, şeytani",
+      "severity": "low",
+      "finalAfter": "kötü kalpli; kötü, şeytani",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: This is the same structural gap as Urdu. 'kötü kalpli' (evil-hearted) only applies to an animate being. It fits 'a wicked spirit' but not 'her silence hid something wicked' (kötü kalpli bir şey is wrong). Add an inanimate sense and keep the current one."
+    },
+    {
+      "lang": "ur",
+      "lemma": "unlit",
+      "currentProposed": "جو جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "problem": "The clause is grammatical for سگار, which is masculine. However, the direct جو-passive agrees in gender with its noun, and the label '(سگار وغیرہ)' extends the gloss to feminine items such as سگریٹ and موم بتی, which would need جلائی. The Hindi parallel uses the impersonal जिसे-passive, which is gender-neutral. Using جسے in Urdu does the same and is equally grammatical.",
+      "replacement": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "severity": "low",
+      "finalAfter": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: The clause is grammatical for سگار, which is masculine. However, the direct جو-passive agrees in gender with its noun, and the label '(سگار وغیرہ)' extends the gloss to feminine items such as سگریٹ and موم بتی, which would need جلائی. The Hindi parallel uses the impersonal जिसे-passive, which is gender-neutral. Using جسے in Urdu does the same and is equally grammatical."
+    },
+    {
+      "lang": "ur",
+      "lemma": "finnish",
+      "currentProposed": "فن لینڈ کا؛ فن لینڈی",
+      "problem": "The context is 'a wise Finnish woman', which needs فن لینڈ کی. The decision's own rationale cites فن لینڈ کا/کی, but the value gives only masculine کا. Hindi and Urdu glosses elsewhere in this set mark both forms (دیکھتا/دیکھتی).",
+      "replacement": "فن لینڈ کا/کی؛ فن لینڈی",
+      "severity": "low",
+      "finalAfter": "فن لینڈ کا/کی؛ فن لینڈی",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: The context is 'a wise Finnish woman', which needs فن لینڈ کی. The decision's own rationale cites فن لینڈ کا/کی, but the value gives only masculine کا. Hindi and Urdu glosses elsewhere in this set mark both forms (دیکھتا/دیکھتی)."
+    },
+    {
+      "lang": "tr",
+      "lemma": "doorway",
+      "currentProposed": "kapı aralığı",
+      "problem": "This parallels the accepted Bengali dispositions-1-2.json:42 change. Standing alone, 'kapı aralığı' most readily suggests the gap of an ajar door, as in kapı aralığından baktı. All three contexts are someone standing or waiting in the doorway as a place. 'kapı aralığında' is attested for 'in the doorway', so keep it, but add the unambiguous spatial term first.",
+      "replacement": "kapı girişi, kapı önü; kapı aralığı",
+      "severity": "low",
+      "finalAfter": "kapı girişi; kapı aralığı",
+      "disposition": "amended",
+      "resolution": "Add the entrance/opening sense; avoid broadening doorway into the unrelated area in front of the door."
+    },
+    {
+      "lang": "hi",
+      "lemma": "doorway",
+      "currentProposed": "दरवाज़े का मार्ग",
+      "problem": "This is a stilted calque ('the door's route') that is not used for standing or waiting in a doorway. Hindi says दरवाज़े पर / चौखट पर खड़ा. The value can also be read as 'the way to the door'. Add the natural place term and keep the current one.",
+      "replacement": "द्वार, चौखट (दरवाज़े की खुली जगह); दरवाज़े का मार्ग",
+      "severity": "low",
+      "finalAfter": "द्वार, चौखट (दरवाज़े की खुली जगह); दरवाज़े का मार्ग",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: This is a stilted calque ('the door's route') that is not used for standing or waiting in a doorway. Hindi says दरवाज़े पर / चौखट पर खड़ा. The value can also be read as 'the way to the door'. Add the natural place term and keep the current one."
+    },
+    {
+      "lang": "ur",
+      "lemma": "doorway",
+      "currentProposed": "دروازے کا راستہ",
+      "problem": "This calque has the same problem as the Hindi value. دروازے کا راستہ / دروازے کے راستے naturally reads as 'the way to the door' or 'via the door', not as the opening where someone stands. Urdu says دروازے میں / دہلیز پر کھڑا.",
+      "replacement": "دہلیز، دروازہ (دروازے کی کھلی جگہ)؛ دروازے کا راستہ",
+      "severity": "low",
+      "finalAfter": "دہلیز، دروازہ (دروازے کی کھلی جگہ)؛ دروازے کا راستہ",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: This calque has the same problem as the Hindi value. دروازے کا راستہ / دروازے کے راستے naturally reads as 'the way to the door' or 'via the door', not as the opening where someone stands. Urdu says دروازے میں / دہلیز پر کھڑا."
+    },
+    {
+      "lang": "hi",
+      "lemma": "find",
+      "currentProposed": "ढूँढ़ना; ढूँढ़ लेना, पाना; पता लगाना (find out)",
+      "problem": "The senses are correct, but the order contradicts the decision's own analysis. About 34 of the 37 contexts are completed discovery, yet the search-only verb ढूँढ़ना is the first thing a learner sees. Lead with the resultative sense. No sense is removed.",
+      "replacement": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
+      "severity": "low",
+      "finalAfter": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: The senses are correct, but the order contradicts the decision's own analysis. About 34 of the 37 contexts are completed discovery, yet the search-only verb ढूँढ़ना is the first thing a learner sees. Lead with the resultative sense. No sense is removed."
+    },
+    {
+      "lang": "ur",
+      "lemma": "find",
+      "currentProposed": "ڈھونڈنا؛ ڈھونڈ لینا، پانا؛ پتا لگانا (find out)",
+      "problem": "This has the same ordering issue as the Hindi value. The search-only verb comes first even though the dominant contexts are completed discovery.",
+      "replacement": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)",
+      "severity": "low",
+      "finalAfter": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: This has the same ordering issue as the Hindi value. The search-only verb comes first even though the dominant contexts are completed discovery."
+    },
+    {
+      "lang": "th",
+      "lemma": "lowered",
+      "currentProposed": "ลดลง; ลดต่ำลง; ก้ม (ศีรษะ)",
+      "problem": "ลดต่ำลง is still intransitive 'become lower / decrease', as in ระดับน้ำลดต่ำลง. It does not supply the transitive physical-lowering sense the rationale claims. The context is covered by ก้ม (ศีรษะ), so ลดต่ำลง is redundant and repeats the decrease sense. Replace it with the transitive split construction.",
+      "replacement": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
+      "severity": "low",
+      "finalAfter": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
+      "disposition": "accepted",
+      "resolution": "Accept independent audit correction: ลดต่ำลง is still intransitive 'become lower / decrease', as in ระดับน้ำลดต่ำลง. It does not supply the transitive physical-lowering sense the rationale claims. The context is covered by ก้ม (ศีรษะ), so ลดต่ำลง is redundant and repeats the decrease sense. Replace it with the transitive split construction."
+    }
+  ],
+  "candidateDecisionsWithUpdatedWording": [
+    {
+      "id": "2026-10-20-glossary-claude-review.json:8",
+      "decision": "change",
+      "before": "ढूँढ़ना",
+      "after": "पाना, ढूँढ़ लेना; ढूँढ़ना; पता लगाना (find out)",
+      "rationale": "Accept independent audit correction: The senses are correct, but the order contradicts the decision's own analysis. About 34 of the 37 contexts are completed discovery, yet the search-only verb ढूँढ़ना is the first thing a learner sees. Lead with the resultative sense. No sense is removed.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "find",
+      "claudeInitialRationale": "Almost all 37 contexts are past-tense successful discovery ('found a map', 'found the sleeping princess'). Bare ढूँढ़ना names the search, not the result. A learner reading 'found' needs the resultative ढूँढ़ लेना / पाना. 'found that they had grown older' is covered by पाना (पाया कि). 'find out where she lived' needs पता लगाना. ढूँढ़ना is kept for the intended-search contexts ('set out to find him', 'hoped to find a bride')."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:9",
+      "decision": "change",
+      "before": "ڈھونڈنا",
+      "after": "پانا، ڈھونڈ لینا؛ ڈھونڈنا؛ پتا لگانا (find out)",
+      "rationale": "Accept independent audit correction: This has the same ordering issue as the Hindi value. The search-only verb comes first even though the dominant contexts are completed discovery.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "find",
+      "claudeInitialRationale": "Same analysis as Hindi. ڈھونڈنا is the seeking verb, but the dominant contexts are completed discovery, which needs ڈھونڈ لینا / پانا. 'find out' needs پتا لگانا. The search sense is kept for 'set out to find him'."
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:33",
+      "decision": "change",
+      "before": "بدکار",
+      "after": "بدکار؛ شیطانی، خبیث",
+      "rationale": "The original has an established wicked/evil-doing sense. Proposed alternatives are register preferences; do not erase a valid translation without a demonstrated semantic mismatch.",
+      "confidence": "medium",
+      "lang": "ur",
+      "lemma": "wicked",
+      "claudeProposedAfter": "بدطینت؛ شیطانی",
+      "codexAmendmentReason": "The original has an established wicked/evil-doing sense. Proposed alternatives are register preferences; do not erase a valid translation without a demonstrated semantic mismatch.",
+      "claudeInitialRationale": "بدکار means an evildoer, but it and بدکاری carry a strong sexual-immorality connotation. That is risky in the Wild Swans context, where a silent woman is suspected of hiding 'something wicked' (witchcraft, not unchastity). بدطینت (evil-natured) fits 'wicked spirit'. شیطانی (devilish/evil) fits both the spirit and the suspected evil. شریر was avoided because it often means mischievous or naughty in Urdu."
+    },
+    {
+      "id": "dispositions-1-2.json:54",
+      "decision": "change",
+      "before": "فنی",
+      "after": "فن لینڈ کا/کی؛ فن لینڈی",
+      "rationale": "Accept independent audit correction: The context is 'a wise Finnish woman', which needs فن لینڈ کی. The decision's own rationale cites فن لینڈ کا/کی, but the value gives only masculine کا. Hindi and Urdu glosses elsewhere in this set mark both forms (دیکھتا/دیکھتی).",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "finnish",
+      "claudeInitialRationale": "فنی is an established Urdu word meaning 'technical/artistic' (from فن). A learner would read 'a wise technical woman', so this is a substantive homograph error. Urdu normally expresses nationality with the country name: فن لینڈ کا/کی (of Finland), or the adjective فن لینڈی. These are unambiguous for the context."
+    },
+    {
+      "id": "dispositions-3-4.json:19",
+      "decision": "change",
+      "before": "ลดลง",
+      "after": "ลดลง; ลด (มือ/ธง) ลง; ก้ม (ศีรษะ)",
+      "rationale": "Accept independent audit correction: ลดต่ำลง is still intransitive 'become lower / decrease', as in ระดับน้ำลดต่ำลง. It does not supply the transitive physical-lowering sense the rationale claims. The context is covered by ก้ม (ศีรษะ), so ลดต่ำลง is redundant and repeats the decrease sense. Replace it with the transitive split construction.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "lowered",
+      "claudeInitialRationale": "ลดลง is mainly intransitive 'decrease' (amounts, levels) and does not convey physically lowering something. 'Lowered his head' needs ก้ม (labelled for the head) or a general physical lowering, ลดต่ำลง. Both are added without dropping the decrease sense, so the lemma is not narrowed to head-only."
+    },
+    {
+      "id": "dispositions-5.json:17",
+      "decision": "change",
+      "before": "بغیر روشنی کا",
+      "after": "جسے جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "rationale": "Accept independent audit correction: The clause is grammatical for سگار, which is masculine. However, the direct جو-passive agrees in gender with its noun, and the label '(سگار وغیرہ)' extends the gloss to feminine items such as سگریٹ and موم بتی, which would need جلائی. The Hindi parallel uses the impersonal जिसे-passive, which is gender-neutral. Using جسے in Urdu does the same and is equally grammatical.",
+      "confidence": "medium-high",
+      "lang": "ur",
+      "lemma": "unlit",
+      "claudeProposedAfter": "بغیر جلایا ہوا (سگار وغیرہ)؛ بغیر روشنی کا",
+      "codexAmendmentReason": "Use an explicit not-ignited passive relative clause; preserve lightless sense.",
+      "claudeInitialRationale": "The not-ignited sense is missing. بغیر جلایا ہوا is the passive participle of transitive جلانا (to light), meaning 'not lit'. It parallels the Hindi correction and avoids the colloquial or uncertain بن سلگا. The label narrows it to cigars and similar, and the lightless sense is kept."
+    }
+  ],
+  "metadata": {
+    "nativeSpeakerApproval": false,
+    "scope": "Final 12 audit corrections, not a new claim of whole-catalog review"
+  }
+}

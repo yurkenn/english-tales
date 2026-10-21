@@ -1,0 +1,2406 @@
+{
+  "baselineCommit": "e29309357042be5cc91700e23988c06f78d1c3ec",
+  "scope": "Independent regression audit of final all-eleven-language values for 40 deferred lemmas; all source expansions and proposed retained values",
+  "decisions": [
+    {
+      "id": "2026-10-20-glossary-claude-review.json:8",
+      "decision": "change",
+      "before": "ढूँढ़ना",
+      "after": "ढूँढ़ना; ढूँढ़ लेना, पाना; पता लगाना (find out)",
+      "rationale": "Almost all 37 contexts are past-tense successful discovery ('found a map', 'found the sleeping princess'). Bare ढूँढ़ना names the search, not the result. A learner reading 'found' needs the resultative ढूँढ़ लेना / पाना. 'found that they had grown older' is covered by पाना (पाया कि). 'find out where she lived' needs पता लगाना. ढूँढ़ना is kept for the intended-search contexts ('set out to find him', 'hoped to find a bride').",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "find"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:9",
+      "decision": "change",
+      "before": "ڈھونڈنا",
+      "after": "ڈھونڈنا؛ ڈھونڈ لینا، پانا؛ پتا لگانا (find out)",
+      "rationale": "Same analysis as Hindi. ڈھونڈنا is the seeking verb, but the dominant contexts are completed discovery, which needs ڈھونڈ لینا / پانا. 'find out' needs پتا لگانا. The search sense is kept for 'set out to find him'.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "find"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:14",
+      "decision": "change",
+      "before": "armario",
+      "after": "armario; vestuario (ropa de una persona)",
+      "rationale": "The only context ('people joked about his wardrobe') means his clothes collection. Latin American armario means only the furniture. vestuario is the idiomatic word for a person's set of clothes. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "wardrobe"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:15",
+      "decision": "change",
+      "before": "lemari pakaian",
+      "after": "lemari pakaian; koleksi pakaian (seseorang)",
+      "rationale": "lemari pakaian is furniture only and cannot mean the emperor's clothes. Added the clothes-collection sense and kept the furniture sense.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "wardrobe"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:16",
+      "decision": "change",
+      "before": "خزانة ملابس",
+      "after": "خزانة ملابس؛ مجموعة ملابس (الشخص)",
+      "rationale": "خزانة ملابس is the cabinet only. The context refers to the emperor's outfits, so the collection sense is added. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "wardrobe"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:17",
+      "decision": "change",
+      "before": "tủ quần áo",
+      "after": "tủ quần áo; quần áo (của một người)",
+      "rationale": "tủ quần áo literally names the cabinet. The joke is about his clothes, so the collection sense is added. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "wardrobe"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:18",
+      "decision": "change",
+      "before": "अलमारी",
+      "after": "अलमारी; (किसी के) सारे कपड़े, पोशाकें",
+      "rationale": "अलमारी is a cupboard and does not express a clothing collection. The added sense covers the emperor context. अलमारी stays as the furniture sense: it is general but not wrong.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "wardrobe"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:20",
+      "decision": "change",
+      "before": "পোশাকের আলমারি",
+      "after": "পোশাকের আলমারি; (কারও) সব পোশাক-পরিচ্ছদ",
+      "rationale": "The current gloss is the furniture only. পোশাক-পরিচ্ছদ adds the clothes-collection sense the context needs. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "wardrobe"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:21",
+      "decision": "change",
+      "before": "الماری",
+      "after": "الماری؛ (کسی کے) کپڑے، ملبوسات",
+      "rationale": "الماری is a cupboard. ملبوسات supplies the clothes-collection sense the context needs. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "wardrobe"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:22",
+      "decision": "change",
+      "before": "ตู้เสื้อผ้า",
+      "after": "ตู้เสื้อผ้า; เสื้อผ้าทั้งหมด (ของคนหนึ่ง)",
+      "rationale": "ตู้เสื้อผ้า is the cabinet. The added sense covers 'his wardrobe' as his set of outfits. The furniture sense is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "wardrobe"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:23",
+      "decision": "change",
+      "before": "การโจมตี",
+      "after": "การตี, การฟาด; (ลม) พัด",
+      "rationale": "'Seven at one blow' means a single strike or swat. การโจมตี means 'attack/assault' and misstates the sense. The master form blew→blow also needs the wind verb ('the wind blew his hat away'), which no current gloss has. This applies the noun+verb policy.",
+      "confidence": "medium",
+      "lang": "th",
+      "lemma": "blow"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:34",
+      "decision": "keep",
+      "before": "घुरघुराना (बिल्ली का)",
+      "after": "घुरघुराना (बिल्ली का)",
+      "rationale": "On its own, घुरघुराना can suggest a throaty grunt. However, it is the standard Hindi dictionary rendering of a cat's purr, and the '(बिल्ली का)' label restricts it to the cat sound. That fits the only context, the cat that can purr. No clearer common Hindi verb exists, and an onomatopoeic coinage would be less teachable.",
+      "confidence": "medium",
+      "lang": "hi",
+      "lemma": "purr"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:35",
+      "decision": "change",
+      "before": "ส่งเสียงครางหงิง ๆ (แมว)",
+      "after": "ทำเสียงครางเบา ๆ (แมว)",
+      "rationale": "หงิง ๆ describes whimpering or whining, as with a dog or a fretful animal. That is exactly the confusion the prior reviewer flagged. A purr is a low continuous throat rumble, which ครืด ๆ ในลำคอ describes. The cat label is kept.",
+      "confidence": "medium",
+      "lang": "th",
+      "lemma": "purr",
+      "claudeProposedAfter": "ทำเสียงครืด ๆ ในลำคอ (แมว)",
+      "codexAmendmentReason": "Use the dictionary-attested Thai purr verb with soft/cat disambiguation, avoiding an invented scraping/snoring onomatopoeia."
+    },
+    {
+      "id": "dispositions-1-2.json:5",
+      "decision": "change",
+      "before": "सिकुड़ गया",
+      "after": "(बाल) घुँघराले किए; सिकुड़ गया",
+      "rationale": "The only context is transitive: 'she curled her short hair'. सिकुड़ गया (shrank/curled up) cannot express this. The hair sense is added first, and the existing curl-up sense is kept. A gender-neutral perfective किए is used, so the subject's gender is not forced.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "curled"
+    },
+    {
+      "id": "dispositions-1-2.json:7",
+      "decision": "change",
+      "before": "কুঁকড়ে গেল",
+      "after": "(চুল) কোঁকড়া করল; কুঁকড়ে গেল",
+      "rationale": "The context is transitive hair-curling, which কুঁকড়ে গেল (shrivelled/curled up) does not cover. The hair sense is added and the existing curl-up sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "curled"
+    },
+    {
+      "id": "dispositions-1-2.json:8",
+      "decision": "change",
+      "before": "سمٹ گیا",
+      "after": "(بال) گھنگریالے کیے؛ سمٹ گیا",
+      "rationale": "سمٹ گیا (drew together/curled up) cannot render 'curled her hair'. The transitive hair sense is added and the existing curl-up sense is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "curled"
+    },
+    {
+      "id": "dispositions-1-2.json:30",
+      "decision": "change",
+      "before": "জাহাজ/গাড়িতে ওঠা",
+      "after": "জাহাজে/যানবাহনে (চড়ে); জাহাজ/গাড়িতে ওঠা",
+      "rationale": "aboard is locative or adverbial. 'celebrated aboard a ship' needs 'on the ship' (জাহাজে), and a verbal noun meaning 'to board' does not fit it. The boarding phrase is kept because 'climbed aboard' is naturally read as boarding.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "aboard"
+    },
+    {
+      "id": "dispositions-1-2.json:34",
+      "decision": "change",
+      "before": "izin verdi",
+      "after": "izin verdi; izin verilmiş (izinli)",
+      "rationale": "The only context is passive: 'was finally allowed to visit'. A learner tapping 'allowed' there needs the participle meaning 'permitted'. Under the morphology policy, a -ed form gets both the active past and the passive participle sense. izin verdi is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "allowed"
+    },
+    {
+      "id": "dispositions-1-2.json:37",
+      "decision": "change",
+      "before": "patlamak",
+      "after": "patlamak; (bir yere) hızla dalmak, girmek",
+      "rationale": "'burst through the window' is violent sudden motion, not an explosion. The motion sense is added and the general explosion meaning is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "burst"
+    },
+    {
+      "id": "dispositions-1-2.json:39",
+      "decision": "change",
+      "before": "बेताबी से",
+      "after": "बुरी तरह, बेहद; बेताबी से; हताश होकर",
+      "rationale": "'desperately hungry' is an intensifier, rendered naturally as बुरी तरह भूखी. बेताबी से (impatiently) does not fit it. The existing eager sense is kept, and हताश होकर covers the general despair meaning so the lemma is not narrowed.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "desperately"
+    },
+    {
+      "id": "dispositions-1-2.json:40",
+      "decision": "change",
+      "before": "بے تابی سے",
+      "after": "بری طرح، بے حد؛ بے تابی سے؛ مایوس ہو کر",
+      "rationale": "Same as Hindi. The intensifier sense بری طرح بھوکی is missing. The eager sense is kept and the despair sense is added.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "desperately"
+    },
+    {
+      "id": "dispositions-1-2.json:44",
+      "decision": "change",
+      "before": "çekmek (kendine doğru)",
+      "after": "çekmek (kendine doğru); (bir yere/birine) çekmek, cezbetmek",
+      "rationale": "'drew her feet beneath her' fits the existing inward-pull sense. 'a song drew him to the window' and 'was drawn to him' are attraction toward an external point, which '(kendine doğru)' excludes. cezbetmek and the directional sense are added; the existing sense is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "draw"
+    },
+    {
+      "id": "dispositions-1-2.json:47",
+      "decision": "change",
+      "before": "จุดจบ",
+      "after": "จุดจบ; ปลาย, ท้าย (สถานที่); สิ้นสุด, จบ",
+      "rationale": "จุดจบ fits 'the end of her life'. It does not fit the spatial 'end of the village' (ท้ายหมู่บ้าน) or the verb 'refused to end' (สิ้นสุด). Both senses are added and the existing one is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "end"
+    },
+    {
+      "id": "dispositions-1-2.json:48",
+      "decision": "change",
+      "before": "اختتام",
+      "after": "آخر، سرا؛ اختتام؛ ختم ہونا",
+      "rationale": "اختتام is a formal 'conclusion' and is not used spatially ('گاؤں کے آخر/سرے پر'). It is also not a verb ('winter refused to end' = ختم ہونا). The spatial and verbal senses are added and the temporal noun is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "end"
+    },
+    {
+      "id": "dispositions-1-2.json:50",
+      "decision": "change",
+      "before": "شام سے پہلے کی رات (کرسمس کی)",
+      "after": "کسی خاص دن سے پہلے کی شام (کرسمس کی شام)",
+      "rationale": "The current wording literally says 'the night before the evening', which is incoherent. The replacement defines eve generically as the evening before a special day, not festival-only. The Christmas Eve example matches the context.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "eve"
+    },
+    {
+      "id": "dispositions-1-2.json:55",
+      "decision": "change",
+      "before": "sıkıca",
+      "after": "sıkıca; sağlam bir şekilde",
+      "rationale": "'stood firmly on his single leg' means steady and stable. sıkıca means 'tightly' and fits gripping or tying, not standing. The stability sense is added and sıkıca is kept for its valid uses.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "firmly"
+    },
+    {
+      "id": "dispositions-1-2.json:58",
+      "decision": "change",
+      "before": "أمام",
+      "after": "أمام؛ الجهة الأمامية",
+      "rationale": "أمام is the preposition 'in front of'. 'no name on the front' of an envelope needs the noun 'front side'. الجهة الأمامية is neutral and avoids facade-specific الواجهة. The prepositional sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "front"
+    },
+    {
+      "id": "dispositions-1-2.json:59",
+      "decision": "change",
+      "before": "सुरुचिपूर्ण",
+      "after": "लालित्यपूर्ण; सुरुचिपूर्ण",
+      "rationale": "सुरुचिपूर्ण means 'tasteful / in good taste', describing decor or choices. It does not describe the elegant form and movement of a swan, so it is not a valid sense of graceful here. मनोहर, लालित्यपूर्ण expresses beauty and elegance of appearance.",
+      "confidence": "medium",
+      "lang": "hi",
+      "lemma": "graceful",
+      "claudeProposedAfter": "मनोहर, लालित्यपूर्ण",
+      "codexAmendmentReason": "Add bodily/movement elegance; retain existing valid elegance/style sense rather than replacing it with merely attractive."
+    },
+    {
+      "id": "dispositions-1-2.json:60",
+      "decision": "change",
+      "before": "خوش اسلوب",
+      "after": "خوش ادا؛ خوش اسلوب",
+      "rationale": "خوش اسلوب means 'well-styled', mainly of writing or manner of expression, and does not describe a swan. خوش ادا is the standard word for elegance of bearing and movement, and دلکش adds the visual-beauty side. باوقار was not chosen because it shifts the meaning to 'dignified'.",
+      "confidence": "medium",
+      "lang": "ur",
+      "lemma": "graceful",
+      "claudeProposedAfter": "دلکش؛ خوش ادا",
+      "codexAmendmentReason": "Add graceful bearing/movement; keep the existing manner/style sense, avoid equating graceful with merely attractive."
+    },
+    {
+      "id": "dispositions-3-4.json:9",
+      "decision": "change",
+      "before": "yaralı",
+      "after": "yaralı; yaraladı (incitti)",
+      "rationale": "Both contexts are transitive past verbs ('injured her foot', 'thorns injured his eyes'). yaralı is adjectival only. The past verb is added per the morphology policy, and the participial adjective is kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "injured"
+    },
+    {
+      "id": "dispositions-3-4.json:10",
+      "decision": "change",
+      "before": "memur; subay",
+      "after": "memur; subay; polis memuru",
+      "rationale": "Both contexts refer to a policeman, who walks the street and is asked to arrest. Bare memur reads as 'civil servant' to Turkish learners, and subay is military. polis memuru makes the actual referent explicit; the general senses are kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "officer"
+    },
+    {
+      "id": "dispositions-3-4.json:18",
+      "decision": "change",
+      "before": "deitou; colocou",
+      "after": "deitou(-se); estava (jazia); pôr (ovos), colocar",
+      "rationale": "There are three senses. 'lay in her bed' is lying down, so deitou(-se) is kept with the optional clitic, matching Brazilian usage. 'Inside it lay a photograph' is a static position, which deitou cannot express, so estava (jazia) is added. 'lay eggs' is idiomatically pôr ovos, and colocar is kept for general placing.",
+      "confidence": "high",
+      "lang": "pt-BR",
+      "lemma": "lay"
+    },
+    {
+      "id": "dispositions-3-4.json:45",
+      "decision": "change",
+      "before": "ablandarse",
+      "after": "suavizar, ablandar; ablandarse",
+      "rationale": "The context is transitive ('to soften his voice'). For a voice, suavizar is idiomatic. The transitive sense is added and the intransitive ablandarse is kept, per the master yumuşamak; yumuşatmak policy.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-3-4.json:46",
+      "decision": "change",
+      "before": "melunak",
+      "after": "melunakkan, melembutkan; melunak",
+      "rationale": "melunak is intransitive. The context is transitive, and melembutkan (suara) is the natural verb for softening a voice. The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-3-4.json:47",
+      "decision": "change",
+      "before": "يلين",
+      "after": "يليّن، يُرقّق؛ يلين",
+      "rationale": "يلين is intransitive. The transitive يليّن is added, plus يُرقّق, which is natural for making a voice softer (يرقّق صوته). The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-3-4.json:48",
+      "decision": "change",
+      "before": "mềm đi",
+      "after": "làm mềm, làm dịu; mềm đi",
+      "rationale": "mềm đi is intransitive. The causative làm mềm is added, and làm dịu (giọng) fits softening a voice. The intransitive sense is kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-3-4.json:49",
+      "decision": "change",
+      "before": "नरम होना",
+      "after": "नरम करना; नरम होना",
+      "rationale": "The context needs the transitive नरम करना ('आवाज़ नरम करना'). The intransitive नरम होना is kept.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-3-4.json:50",
+      "decision": "change",
+      "before": "смягчаться",
+      "after": "смягчать; смягчаться",
+      "rationale": "смягчаться is reflexive/intransitive, and the context is transitive ('смягчить голос'). The transitive смягчать is added and the reflexive is kept.",
+      "confidence": "high",
+      "lang": "ru",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-3-4.json:51",
+      "decision": "change",
+      "before": "নরম হওয়া",
+      "after": "নরম করা; নরম হওয়া",
+      "rationale": "The transitive নরম করা is needed for 'soften his voice'. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-3-4.json:52",
+      "decision": "change",
+      "before": "نرم ہونا",
+      "after": "نرم کرنا؛ نرم ہونا",
+      "rationale": "The transitive نرم کرنا is needed for the voice context. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-3-4.json:53",
+      "decision": "change",
+      "before": "อ่อนลง",
+      "after": "ทำให้อ่อนลง, ทำให้นุ่มนวลขึ้น; อ่อนลง",
+      "rationale": "อ่อนลง is intransitive. The causative ทำให้... is added, and นุ่มนวล suits a voice. The intransitive is kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "soften"
+    },
+    {
+      "id": "dispositions-5.json:0",
+      "decision": "change",
+      "before": "ঝরনা",
+      "after": "ছোট নদী, জলধারা; ঝরনা",
+      "rationale": "A princess bending down to drink from a stream implies a small flowing watercourse. ঝরনা primarily evokes a spring or waterfall. ছোট নদী, জলধারা is the plain stream sense and is placed first. ঝরনা is kept because it is used for hill streams.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "stream"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:25",
+      "decision": "change",
+      "before": "อธิบาย",
+      "after": "บรรยาย; อธิบาย",
+      "rationale": "All five contexts give an account: a letter's content, a robber's account of attackers, families seen, a life, a journey. อธิบาย leans toward 'explain'. It covers describing features but reads less naturally for narrating a life or journey. บรรยาย is the core 'describe/recount' verb. It is added first and อธิบาย is kept as a valid overlapping sense. Thai has no past tense marking, so the bare verb is right for 'described'.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "described"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:30",
+      "decision": "change",
+      "before": "إله",
+      "after": "إله؛ الله (اسم علم: God)",
+      "rationale": "All three contexts use capitalized God as a proper name. إله is the correct generic-deity sense and stays first, matching master policy for lowercase god. Arabic-speaking Muslims and Christians both use الله as the standard proper name for God, so it does not impose a specific theology. The label marks it as the capitalized proper-name sense only.",
+      "confidence": "medium-high",
+      "lang": "ar",
+      "lemma": "god"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:33",
+      "decision": "keep",
+      "before": "بدکار",
+      "after": "بدکار",
+      "rationale": "بدکار means an evildoer, but it and بدکاری carry a strong sexual-immorality connotation. That is risky in the Wild Swans context, where a silent woman is suspected of hiding 'something wicked' (witchcraft, not unchastity). بدطینت (evil-natured) fits 'wicked spirit'. شیطانی (devilish/evil) fits both the spirit and the suspected evil. شریر was avoided because it often means mischievous or naughty in Urdu.",
+      "confidence": "medium",
+      "lang": "ur",
+      "lemma": "wicked",
+      "claudeProposedAfter": "بدطینت؛ شیطانی",
+      "codexAmendmentReason": "The original has an established wicked/evil-doing sense. Proposed alternatives are register preferences; do not erase a valid translation without a demonstrated semantic mismatch."
+    },
+    {
+      "id": "dispositions-1-2.json:16",
+      "decision": "change",
+      "before": "yol arkadaşı",
+      "after": "arkadaş; yoldaş; yol arkadaşı",
+      "rationale": "Neither context involves travel. The first is an evening companion (a friend), and the second is the tin soldier dreaming of being the dancer's companion. yol arkadaşı alone is too narrow. arkadaş and yoldaş give general companionship, and yol arkadaşı is kept as a valid travel sense. Source expansion is now authorized.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "companion"
+    },
+    {
+      "id": "dispositions-1-2.json:23",
+      "decision": "change",
+      "before": "เพื่อนร่วมทาง",
+      "after": "เพื่อน; เพื่อนร่วมทาง",
+      "rationale": "เพื่อนร่วมทาง can be figurative, but for 'his companion that evening' a learner needs plain เพื่อน (friend/companion). เพื่อน is added first and เพื่อนร่วมทาง kept. คู่หู was rejected as over-specifying a close partner.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "companion"
+    },
+    {
+      "id": "dispositions-1-2.json:32",
+      "decision": "change",
+      "before": "ต่อต้าน",
+      "after": "ต่อต้าน; กับ (กระทบ/พิง: กับกำแพง); แข่งกับ (เวลา)",
+      "rationale": "ต่อต้าน means resist or oppose and does not fit physical contact. Thai expresses 'threw him against the wall' and 'struck a match against the wall' with กับ plus a contact verb (กระแทกกับกำแพง, ขีดกับกำแพง). 'Racing against the sunset' is แข่งกับ (เวลา). The labels keep กับ from reading as plain 'with', and the opposition sense is kept.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "against"
+    },
+    {
+      "id": "dispositions-1-2.json:33",
+      "decision": "change",
+      "before": "karşı",
+      "after": "karşı; -e (çarparak/dayanarak: duvara)",
+      "rationale": "'Threw him against the wall' and 'struck a match against the wall' are dative in Turkish (duvara fırlattı, duvara sürttü), not karşı. 'Racing against the sunset' is covered by karşı via the idiomatic 'zamana karşı yarış'. Only the contact sense is added, with a label so the bare suffix is clear.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "against"
+    },
+    {
+      "id": "dispositions-1-2.json:35",
+      "decision": "change",
+      "before": "şaşkın",
+      "after": "şaşkın; şaşırttı, hayran bıraktı",
+      "rationale": "In 'Their fine stitching amazed him' the word is a past-tense transitive verb (the stitching amazed him). The adjective şaşkın describes the amazed person and is kept for adjective uses. The causative verb sense is added. hayran bıraktı captures admiring amazement at fine work.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "amazed"
+    },
+    {
+      "id": "dispositions-1-2.json:36",
+      "decision": "change",
+      "before": "yanmak",
+      "after": "yanmak; yakmak",
+      "rationale": "'The nettles would burn her hands' is transitive (yakmak). 'Sentenced to burn' is intransitive (yanmak / yakılmak). Both senses occur, so yakmak is added and yanmak kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "burn"
+    },
+    {
+      "id": "dispositions-1-2.json:42",
+      "decision": "change",
+      "before": "দরজার ফাঁক",
+      "after": "দরজার মুখ; দোরগোড়া",
+      "rationale": "দরজার ফাঁক most readily suggests the gap of a door left ajar. All three contexts are someone standing or waiting in a doorway (the opening as a place). দরজার মুখ (mouth of the door, as in দরজার মুখে দাঁড়িয়ে) is the natural spatial term. দোরগোড়া (threshold area) supports it. দরজার ফাঁক is dropped because, as a standalone gloss, its 'crack/gap' reading misleads in these contexts.",
+      "confidence": "medium",
+      "lang": "bn",
+      "lemma": "doorway"
+    },
+    {
+      "id": "dispositions-1-2.json:45",
+      "decision": "change",
+      "before": "rüyalar; hayaller",
+      "after": "rüyalar; hayaller; rüya görür; hayal eder",
+      "rationale": "The only context, 'As she dreams', is a third-person singular verb. The plural-noun glosses stay valid for the noun form. Verb glosses are added in matching third-person present (rüya görür, hayal eder) without changing the ID or form.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "dreams"
+    },
+    {
+      "id": "dispositions-1-2.json:49",
+      "decision": "change",
+      "before": "عظیم",
+      "after": "بہت بڑا؛ عظیم",
+      "rationale": "عظیم can express magnitude, but its dominant learner reading is 'great/grand/eminent', which sounds odd or honorific for a wolf's enormous mouth. بہت بڑا gives the plain physical-size sense and comes first. عظیم is kept for magnitude and grandeur uses.",
+      "confidence": "medium-high",
+      "lang": "ur",
+      "lemma": "enormous"
+    },
+    {
+      "id": "dispositions-1-2.json:53",
+      "decision": "change",
+      "before": "ঝগড়া করা",
+      "after": "লড়াই করা; মারামারি করা; ঝগড়া করা",
+      "rationale": "In 'they fought until both were dead' the fight is physical and lethal. ঝগড়া করা mainly means quarrel or argue and cannot carry that alone. লড়াই করা and মারামারি করা are added for physical fighting, and the quarrel sense is kept.",
+      "confidence": "high",
+      "lang": "bn",
+      "lemma": "fight"
+    },
+    {
+      "id": "dispositions-1-2.json:54",
+      "decision": "change",
+      "before": "فنی",
+      "after": "فن لینڈ کا؛ فن لینڈی",
+      "rationale": "فنی is an established Urdu word meaning 'technical/artistic' (from فن). A learner would read 'a wise technical woman', so this is a substantive homograph error. Urdu normally expresses nationality with the country name: فن لینڈ کا/کی (of Finland), or the adjective فن لینڈی. These are unambiguous for the context.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "finnish"
+    },
+    {
+      "id": "dispositions-1-2.json:56",
+      "decision": "change",
+      "before": "शौक़ीन",
+      "after": "शौक़ीन; स्नेह/लगाव रखने वाला",
+      "rationale": "शौक़ीन means being fond of hobbies, foods or pastimes. Applied to a person ('grew fond of her') it is unidiomatic and can imply a connoisseur or pleasure-seeker. Hindi expresses this as लगाव या स्नेह होना. An adjectival 'affectionate toward' gloss is added and शौक़ीन kept for fond-of-things uses.",
+      "confidence": "medium-high",
+      "lang": "hi",
+      "lemma": "fond"
+    },
+    {
+      "id": "dispositions-3-4.json:8",
+      "decision": "change",
+      "before": "saklanmak",
+      "after": "saklanmak; saklamak, gizlemek",
+      "rationale": "Four contexts are intransitive (mice hide, children hid) and are covered by saklanmak. Three are transitive: life had hidden suffering, a disguise cannot hide who we are, and a hidden door. These need saklamak/gizlemek, and gizli derives from gizlemek. Both voices are kept.",
+      "confidence": "high",
+      "lang": "tr",
+      "lemma": "hide"
+    },
+    {
+      "id": "dispositions-3-4.json:12",
+      "decision": "change",
+      "before": "مقطوع",
+      "after": "منقطع؛ متوقف؛ مقطوع",
+      "rationale": "مقطوع primarily means 'cut off/severed'. For an activity or period that stopped and resumed ('continued its interrupted day'), منقطع (broken off) and متوقف (halted) are the natural participles. This also aligns with Urdu منقطع. مقطوع is kept as a valid 'cut off' sense (e.g., supply cut).",
+      "confidence": "medium-high",
+      "lang": "ar",
+      "lemma": "interrupted"
+    },
+    {
+      "id": "dispositions-3-4.json:19",
+      "decision": "change",
+      "before": "ลดลง",
+      "after": "ลดลง; ลดต่ำลง; ก้ม (ศีรษะ)",
+      "rationale": "ลดลง is mainly intransitive 'decrease' (amounts, levels) and does not convey physically lowering something. 'Lowered his head' needs ก้ม (labelled for the head) or a general physical lowering, ลดต่ำลง. Both are added without dropping the decrease sense, so the lemma is not narrowed to head-only.",
+      "confidence": "medium-high",
+      "lang": "th",
+      "lemma": "lowered"
+    },
+    {
+      "id": "dispositions-3-4.json:24",
+      "decision": "change",
+      "before": "preman; sederhana",
+      "after": "berpakaian preman (sipil); sederhana",
+      "rationale": "The civilian sense of preman survives mainly in fixed phrases (polisi berpakaian preman). Standalone preman is now overwhelmingly read as 'thug/gangster'. A learner seeing 'preman' for 'plain-clothes detective' would likely understand 'thug detective'. The standard collocation berpakaian preman, with (sipil) as a clarifier, keeps the established term unambiguous. sederhana is kept.",
+      "confidence": "medium-high",
+      "lang": "id",
+      "lemma": "plain"
+    },
+    {
+      "id": "dispositions-3-4.json:32",
+      "decision": "change",
+      "before": "কদাচিৎ",
+      "after": "খুব কমই; সামান্যই; কদাচিৎ",
+      "rationale": "'Scarcely warmer' is a degree sense (barely). কদাচিৎ is only the frequency sense ('rarely') and misleads here. খুব কমই covers 'very little/hardly' and also overlaps with frequency. সামান্যই gives low degree. কোনোমতে was avoided because it implies difficulty. কদাচিৎ is kept for frequency.",
+      "confidence": "medium-high",
+      "lang": "bn",
+      "lemma": "scarcely"
+    },
+    {
+      "id": "dispositions-3-4.json:54",
+      "decision": "change",
+      "before": "derrama",
+      "after": "se derrama; derrama",
+      "rationale": "'All the milk spills out' is intransitive. Standard Spanish uses the pronominal se derrama for this, and bare derrama implies an agent spilling something. The intransitive sense is added first and the transitive kept, following the coordinated master change döker → dökülür; döker.",
+      "confidence": "high",
+      "lang": "es-419",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-3-4.json:55",
+      "decision": "change",
+      "before": "menumpahkan",
+      "after": "tumpah; menumpahkan",
+      "rationale": "menumpahkan is transitive (to spill something). Milk spilling by itself is tumpah ('susunya tumpah'). The intransitive sense is added and the transitive kept.",
+      "confidence": "high",
+      "lang": "id",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-3-4.json:56",
+      "decision": "change",
+      "before": "يسكب",
+      "after": "ينسكب؛ يسكب",
+      "rationale": "يسكب is transitive (pours/spills something). The intransitive form-VII ينسكب (it spills) fits 'the milk spills out'. Added first, with the transitive kept.",
+      "confidence": "high",
+      "lang": "ar",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-3-4.json:57",
+      "decision": "change",
+      "before": "làm đổ",
+      "after": "đổ ra; làm đổ",
+      "rationale": "làm đổ is causative (to make something spill). Milk spilling out by itself is đổ ra ('sữa đổ ra hết'). The intransitive sense is added and the causative kept.",
+      "confidence": "high",
+      "lang": "vi",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-3-4.json:58",
+      "decision": "change",
+      "before": "गिराता है (तरल)",
+      "after": "छलकता है / गिरता है (तरल); गिराता है",
+      "rationale": "गिराता है is transitive (makes something fall or spill). For milk spilling by itself, Hindi uses intransitive छलकता है / गिरता है. These are added with the liquid label, and the transitive sense is kept.",
+      "confidence": "high",
+      "lang": "hi",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-3-4.json:59",
+      "decision": "change",
+      "before": "проливает",
+      "after": "проливается; проливает",
+      "rationale": "проливает is transitive. The milk spilling of its own accord takes the reflexive проливается. Added first, with the transitive kept.",
+      "confidence": "high",
+      "lang": "ru",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-3-4.json:60",
+      "decision": "change",
+      "before": "ছড়িয়ে ফেলে",
+      "after": "ছলকে পড়ে; ছলকে ফেলে; ছড়িয়ে ফেলে",
+      "rationale": "ছড়িয়ে ফেলে is transitive and suits scattering solids rather than a liquid. Milk spilling by itself is ছলকে পড়ে (intransitive), and transitive spilling of liquid is ছলকে ফেলে. Both are added, and ছড়িয়ে ফেলে is kept for scattering or spilling solids. ফেলে দেয় was rejected because it means 'throws away'.",
+      "confidence": "medium-high",
+      "lang": "bn",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-3-4.json:61",
+      "decision": "change",
+      "before": "گراتا ہے (مائع)",
+      "after": "چھلکتا ہے / گرتا ہے (مائع)؛ گراتا ہے",
+      "rationale": "گراتا ہے is transitive. Intransitive چھلکتا ہے / گرتا ہے fits milk spilling out by itself. This mirrors the Hindi coordination, keeps the liquid label and keeps the transitive sense.",
+      "confidence": "high",
+      "lang": "ur",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-3-4.json:62",
+      "decision": "change",
+      "before": "ทำหก",
+      "after": "หก; ทำหก",
+      "rationale": "ทำหก is causative (to spill something). Plain หก is the intransitive 'spill' (นมหก). Added first, with the causative kept.",
+      "confidence": "high",
+      "lang": "th",
+      "lemma": "spills"
+    },
+    {
+      "id": "dispositions-5.json:14",
+      "decision": "change",
+      "before": "बिना रोशनी का",
+      "after": "जिसे जलाया न गया हो (सिगार आदि); बिना रोशनी का",
+      "rationale": "An unlit cigar is one not yet ignited, and 'lightless' does not convey this. The earlier suggestion बिना जला हुआ was rightly flagged because it reads as 'unburnt'. बिना जलाया हुआ uses the passive participle of transitive जलाना (to light), meaning 'not lit (by someone)'. The label narrows it to cigars and similar, and the lightless sense is kept.",
+      "confidence": "medium-high",
+      "lang": "hi",
+      "lemma": "unlit",
+      "claudeProposedAfter": "बिना जलाया हुआ (सिगार आदि); बिना रोशनी का",
+      "codexAmendmentReason": "Use an explicit not-ignited passive relative clause; do not rely on questionable बिना + perfective participle grammar."
+    },
+    {
+      "id": "dispositions-5.json:17",
+      "decision": "change",
+      "before": "بغیر روشنی کا",
+      "after": "جو جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+      "rationale": "The not-ignited sense is missing. بغیر جلایا ہوا is the passive participle of transitive جلانا (to light), meaning 'not lit'. It parallels the Hindi correction and avoids the colloquial or uncertain بن سلگا. The label narrows it to cigars and similar, and the lightless sense is kept.",
+      "confidence": "medium-high",
+      "lang": "ur",
+      "lemma": "unlit",
+      "claudeProposedAfter": "بغیر جلایا ہوا (سگار وغیرہ)؛ بغیر روشنی کا",
+      "codexAmendmentReason": "Use an explicit not-ignited passive relative clause; preserve lightless sense."
+    }
+  ],
+  "lemmas": [
+    {
+      "lemma": "aboard",
+      "currentGlosses": {
+        "tr": "(araca) binmiş",
+        "es-419": "a bordo",
+        "pt-BR": "a bordo",
+        "id": "di atas (kendaraan)",
+        "ar": "على متن",
+        "vi": "trên (tàu, xe)",
+        "hi": "सवार",
+        "ru": "на борту",
+        "bn": "জাহাজ/গাড়িতে ওঠা",
+        "ur": "سوار",
+        "th": "บนยานพาหนะ"
+      },
+      "englishContexts": [
+        "They climbed aboard just before the doors closed.",
+        "Their wedding was celebrated aboard a ship."
+      ],
+      "proposedGlosses": {
+        "tr": "(araca) binmiş",
+        "es-419": "a bordo",
+        "pt-BR": "a bordo",
+        "id": "di atas (kendaraan)",
+        "ar": "على متن",
+        "vi": "trên (tàu, xe)",
+        "hi": "सवार",
+        "ru": "на борту",
+        "bn": "জাহাজে/যানবাহনে (চড়ে); জাহাজ/গাড়িতে ওঠা",
+        "ur": "سوار",
+        "th": "บนยานพาหนะ"
+      }
+    },
+    {
+      "lemma": "against",
+      "currentGlosses": {
+        "tr": "karşı",
+        "es-419": "contra",
+        "pt-BR": "contra",
+        "id": "melawan",
+        "ar": "ضد",
+        "vi": "chống lại",
+        "hi": "के खिलाफ",
+        "ru": "против",
+        "bn": "বিরুদ্ধে",
+        "ur": "کے خلاف",
+        "th": "ต่อต้าน"
+      },
+      "englishContexts": [
+        "Angry and frightened, she threw him against the wall.",
+        "To warm her fingers, she struck a match against the wall.",
+        "The brothers carried Elisa across the sea in a net, racing against the sunset."
+      ],
+      "proposedGlosses": {
+        "tr": "karşı; -e (çarparak/dayanarak: duvara)",
+        "es-419": "contra",
+        "pt-BR": "contra",
+        "id": "melawan; ke/pada (benturan: ke dinding)",
+        "ar": "ضد؛ بـ/على (اصطدام: بالحائط)",
+        "vi": "chống lại; vào (va chạm: vào tường); đua với (thời gian)",
+        "hi": "के खिलाफ; से/पर (टकराकर: दीवार से)",
+        "ru": "против; о (удар: о стену); наперегонки с (временем)",
+        "bn": "বিরুদ্ধে; -এ (ধাক্কা: দেয়ালে)",
+        "ur": "کے خلاف؛ سے (ٹکرا کر: دیوار سے)",
+        "th": "ต่อต้าน; กับ (กระทบ/พิง: กับกำแพง); แข่งกับ (เวลา)"
+      }
+    },
+    {
+      "lemma": "allowed",
+      "currentGlosses": {
+        "tr": "izin verdi",
+        "es-419": "permitió",
+        "pt-BR": "permitiu",
+        "id": "mengizinkan",
+        "ar": "سمح",
+        "vi": "cho phép",
+        "hi": "अनुमति दी",
+        "ru": "разрешил",
+        "bn": "অনুমতি দিয়েছিল",
+        "ur": "اجازت دی",
+        "th": "อนุญาต"
+      },
+      "englishContexts": [
+        "On her fifteenth birthday, she was finally allowed to visit the surface."
+      ],
+      "proposedGlosses": {
+        "tr": "izin verdi; izin verilmiş (izinli)",
+        "es-419": "permitió; permitido",
+        "pt-BR": "permitiu; permitido",
+        "id": "mengizinkan; diizinkan",
+        "ar": "سمح؛ مسموح له",
+        "vi": "cho phép; được phép",
+        "hi": "अनुमति दी; अनुमति मिली",
+        "ru": "разрешил; разрешено",
+        "bn": "অনুমতি দিয়েছিল; অনুমতি পেয়েছিল",
+        "ur": "اجازت دی؛ اجازت ملی",
+        "th": "อนุญาต; ได้รับอนุญาต"
+      }
+    },
+    {
+      "lemma": "amazed",
+      "currentGlosses": {
+        "tr": "şaşkın",
+        "es-419": "asombrado",
+        "pt-BR": "admirado; espantado",
+        "id": "takjub",
+        "ar": "مندهش",
+        "vi": "kinh ngạc",
+        "hi": "हैरान",
+        "ru": "изумлённый",
+        "bn": "বিস্মিত",
+        "ur": "حیران",
+        "th": "ประหลาดใจ"
+      },
+      "englishContexts": [
+        "Their fine stitching amazed him."
+      ],
+      "proposedGlosses": {
+        "tr": "şaşkın; şaşırttı, hayran bıraktı",
+        "es-419": "asombrado; asombró",
+        "pt-BR": "admirado; espantado; impressionou, espantou",
+        "id": "takjub; membuat takjub",
+        "ar": "مندهش؛ أدهش",
+        "vi": "kinh ngạc; làm kinh ngạc",
+        "hi": "हैरान; हैरान कर दिया",
+        "ru": "изумлённый; изумил",
+        "bn": "বিস্মিত; বিস্মিত করল",
+        "ur": "حیران؛ حیران کر دیا",
+        "th": "ประหลาดใจ; ทำให้ประหลาดใจ"
+      }
+    },
+    {
+      "lemma": "blow",
+      "currentGlosses": {
+        "tr": "darbe, vuruş",
+        "es-419": "golpe",
+        "pt-BR": "golpe",
+        "id": "pukulan",
+        "ar": "ضربة",
+        "vi": "cú đánh",
+        "hi": "प्रहार, वार",
+        "ru": "удар",
+        "bn": "আঘাত",
+        "ur": "وار، ضرب",
+        "th": "การโจมตี"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-brave-little-tailor",
+          "sentenceId": "cl-brave-little-tailor-03",
+          "english": "Proud of himself, he made a belt that said, \"Seven at one blow.\""
+        },
+        {
+          "storyId": "classic-goose-girl",
+          "sentenceId": "cl-goose-girl-13",
+          "english": "She called on the wind, which blew his hat away until she had finished combing her hair."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "darbe, vuruş; (rüzgâr) esmek, uçurmak",
+        "es-419": "golpe; soplar (el viento)",
+        "pt-BR": "golpe; soprar (vento)",
+        "id": "pukulan; bertiup, meniup (angin)",
+        "ar": "ضربة؛ تهبّ (الريح)",
+        "vi": "cú đánh; thổi (gió)",
+        "hi": "प्रहार, वार; (हवा का) चलना, उड़ा ले जाना",
+        "ru": "удар; дуть (о ветре)",
+        "bn": "আঘাত; (বাতাস) বওয়া, উড়িয়ে নেওয়া",
+        "ur": "وار، ضرب؛ (ہوا کا) چلنا، اڑا لے جانا",
+        "th": "การตี, การฟาด; (ลม) พัด"
+      }
+    },
+    {
+      "lemma": "burn",
+      "currentGlosses": {
+        "tr": "yanmak",
+        "es-419": "arder",
+        "pt-BR": "queimar",
+        "id": "terbakar",
+        "ar": "يحترق",
+        "vi": "cháy",
+        "hi": "जलना",
+        "ru": "гореть",
+        "bn": "পোড়া",
+        "ur": "جلنا",
+        "th": "ไหม้"
+      },
+      "englishContexts": [
+        "The nettles would burn her hands, and she must not speak until the work was finished.",
+        "Even after she was sentenced to burn, she continued weaving in prison."
+      ],
+      "proposedGlosses": {
+        "tr": "yanmak; yakmak",
+        "es-419": "arder; quemar",
+        "pt-BR": "queimar",
+        "id": "terbakar; membakar",
+        "ar": "يحترق؛ يحرق",
+        "vi": "cháy; đốt; làm bỏng",
+        "hi": "जलना; जलाना",
+        "ru": "гореть; жечь",
+        "bn": "পোড়া; পোড়ানো",
+        "ur": "جلنا؛ جلانا",
+        "th": "ไหม้; เผา; ทำให้แสบร้อน"
+      }
+    },
+    {
+      "lemma": "burst",
+      "currentGlosses": {
+        "tr": "patlamak",
+        "es-419": "reventar",
+        "pt-BR": "estourar",
+        "id": "meletus",
+        "ar": "ينفجر",
+        "vi": "nổ tung",
+        "hi": "फट पड़ना",
+        "ru": "лопнуть",
+        "bn": "ফেটে যাওয়া",
+        "ur": "پھٹنا",
+        "th": "ระเบิด"
+      },
+      "englishContexts": [
+        "Together they made a terrible noise and burst through the window."
+      ],
+      "proposedGlosses": {
+        "tr": "patlamak; (bir yere) hızla dalmak, girmek",
+        "es-419": "reventar; irrumpir",
+        "pt-BR": "estourar; irromper",
+        "id": "meletus; menerobos",
+        "ar": "ينفجر؛ يقتحم",
+        "vi": "nổ tung; xông qua, lao vào",
+        "hi": "फट पड़ना; (तेज़ी से) घुस पड़ना",
+        "ru": "лопнуть; ворваться",
+        "bn": "ফেটে যাওয়া; হুড়মুড়িয়ে ঢুকে পড়া",
+        "ur": "پھٹنا؛ (زور سے) گھس آنا",
+        "th": "ระเบิด; พุ่งทะลุ, บุกเข้า"
+      }
+    },
+    {
+      "lemma": "companion",
+      "currentGlosses": {
+        "tr": "yol arkadaşı",
+        "es-419": "compañero; compañero de viaje",
+        "pt-BR": "companheiro; companheiro de viagem",
+        "id": "teman; pendamping; teman seperjalanan",
+        "ar": "رفيق؛ رفيق السفر",
+        "vi": "bạn đồng hành",
+        "hi": "साथी",
+        "ru": "спутник",
+        "bn": "সঙ্গী; সহযাত্রী",
+        "ur": "ہم سفر",
+        "th": "เพื่อนร่วมทาง"
+      },
+      "englishContexts": [
+        "His companion that evening had been his closest friend, Jimmy Wells.",
+        "He admired her from behind a small box and dreamed of being her companion."
+      ],
+      "proposedGlosses": {
+        "tr": "arkadaş; yoldaş; yol arkadaşı",
+        "es-419": "compañero; compañero de viaje",
+        "pt-BR": "companheiro; companheiro de viagem",
+        "id": "teman; pendamping; teman seperjalanan",
+        "ar": "رفيق؛ رفيق السفر",
+        "vi": "bạn đồng hành",
+        "hi": "साथी",
+        "ru": "спутник",
+        "bn": "সঙ্গী; সহযাত্রী",
+        "ur": "ساتھی؛ ہم سفر",
+        "th": "เพื่อน; เพื่อนร่วมทาง"
+      }
+    },
+    {
+      "lemma": "curled",
+      "currentGlosses": {
+        "tr": "kıvırdı",
+        "es-419": "rizó (el pelo); se enroscó",
+        "pt-BR": "cacheou (o cabelo); enrolou-se",
+        "id": "mengeriting (rambut); meringkuk",
+        "ar": "جعّد (الشعر)؛ التفّ",
+        "vi": "uốn xoăn (tóc); đã cuộn tròn",
+        "hi": "सिकुड़ गया",
+        "ru": "завил(а) (волосы); свернулся",
+        "bn": "কুঁকড়ে গেল",
+        "ur": "سمٹ گیا",
+        "th": "ดัดผม; ขดตัว"
+      },
+      "englishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ],
+      "proposedGlosses": {
+        "tr": "kıvırdı",
+        "es-419": "rizó (el pelo); se enroscó",
+        "pt-BR": "cacheou (o cabelo); enrolou-se",
+        "id": "mengeriting (rambut); meringkuk",
+        "ar": "جعّد (الشعر)؛ التفّ",
+        "vi": "uốn xoăn (tóc); đã cuộn tròn",
+        "hi": "(बाल) घुँघराले किए; सिकुड़ गया",
+        "ru": "завил(а) (волосы); свернулся",
+        "bn": "(চুল) কোঁকড়া করল; কুঁকড়ে গেল",
+        "ur": "(بال) گھنگریالے کیے؛ سمٹ گیا",
+        "th": "ดัดผม; ขดตัว"
+      }
+    },
+    {
+      "lemma": "described",
+      "currentGlosses": {
+        "tr": "anlattı, tarif etti",
+        "es-419": "describió",
+        "pt-BR": "descreveu",
+        "id": "menggambarkan",
+        "ar": "وصف",
+        "vi": "đã mô tả",
+        "hi": "वर्णन किया",
+        "ru": "описал",
+        "bn": "বর্ণনা করল",
+        "ur": "بیان کیا",
+        "th": "อธิบาย"
+      },
+      "englishContexts": [
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-4",
+          "english": "It described a promise to meet beside the old garden gate on the first day of spring."
+        },
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-23",
+          "english": "The frightened robber described a witch, an armed man, a monster, and a judge."
+        },
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-20",
+          "english": "Each day, he flew over the city and described the hungry families he saw."
+        },
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-20",
+          "english": "They walked together while Bob described his successful life in the West."
+        },
+        {
+          "storyId": "classic-twelve-dancing-princesses",
+          "sentenceId": "cl-twelve-dancing-princesses-18",
+          "english": "Then he showed the king the branches and cup, and described the secret journey."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "anlattı, tarif etti",
+        "es-419": "describió",
+        "pt-BR": "descreveu",
+        "id": "menggambarkan",
+        "ar": "وصف",
+        "vi": "đã mô tả",
+        "hi": "वर्णन किया",
+        "ru": "описал",
+        "bn": "বর্ণনা করল",
+        "ur": "بیان کیا",
+        "th": "บรรยาย; อธิบาย"
+      }
+    },
+    {
+      "lemma": "desperately",
+      "currentGlosses": {
+        "tr": "çaresizce",
+        "es-419": "desesperadamente",
+        "pt-BR": "desesperadamente",
+        "id": "dengan putus asa",
+        "ar": "بيأس",
+        "vi": "một cách tuyệt vọng",
+        "hi": "बेताबी से",
+        "ru": "отчаянно",
+        "bn": "মরিয়া হয়ে",
+        "ur": "بے تابی سے",
+        "th": "อย่างสิ้นหวัง"
+      },
+      "englishContexts": [
+        "When winter came, she became cold and desperately hungry."
+      ],
+      "proposedGlosses": {
+        "tr": "çaresizce; fena halde, son derece",
+        "es-419": "desesperadamente",
+        "pt-BR": "desesperadamente",
+        "id": "dengan putus asa; sangat, amat",
+        "ar": "بيأس؛ بشدّة",
+        "vi": "một cách tuyệt vọng; vô cùng, cực kỳ",
+        "hi": "बुरी तरह, बेहद; बेताबी से; हताश होकर",
+        "ru": "отчаянно",
+        "bn": "মরিয়া হয়ে; ভীষণ, প্রচণ্ড",
+        "ur": "بری طرح، بے حد؛ بے تابی سے؛ مایوس ہو کر",
+        "th": "อย่างสิ้นหวัง; อย่างมาก, อย่างหนัก"
+      }
+    },
+    {
+      "lemma": "doorway",
+      "currentGlosses": {
+        "tr": "kapı aralığı",
+        "es-419": "vano de la puerta",
+        "pt-BR": "vão da porta",
+        "id": "ambang pintu",
+        "ar": "مدخل الباب",
+        "vi": "ô cửa",
+        "hi": "दरवाज़े का मार्ग",
+        "ru": "дверной проём",
+        "bn": "দরজার ফাঁক",
+        "ur": "دروازے کا راستہ",
+        "th": "ช่องประตู"
+      },
+      "englishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar.",
+        "He was the first policeman who had spoken to Bob in the doorway.",
+        "He saw the dancer still standing in the doorway of the toy castle."
+      ],
+      "proposedGlosses": {
+        "tr": "kapı aralığı",
+        "es-419": "vano de la puerta",
+        "pt-BR": "vão da porta",
+        "id": "ambang pintu",
+        "ar": "مدخل الباب",
+        "vi": "ô cửa",
+        "hi": "दरवाज़े का मार्ग",
+        "ru": "дверной проём",
+        "bn": "দরজার মুখ; দোরগোড়া",
+        "ur": "دروازے کا راستہ",
+        "th": "ช่องประตู"
+      }
+    },
+    {
+      "lemma": "draw",
+      "currentGlosses": {
+        "tr": "çekmek (kendine doğru)",
+        "es-419": "tirar hacia sí",
+        "pt-BR": "puxar para si",
+        "id": "menarik ke arah diri",
+        "ar": "يسحب نحوه",
+        "vi": "kéo về phía mình",
+        "hi": "अपनी ओर खींचना",
+        "ru": "тянуть к себе",
+        "bn": "নিজের দিকে টানা",
+        "ur": "اپنی طرف کھینچنا",
+        "th": "ดึงเข้าหาตัว"
+      },
+      "englishContexts": [
+        "One morning, a bird's song drew him to the window.",
+        "She saw a prince celebrating on a ship and was drawn to him.",
+        "She sat in a corner between two houses and drew her feet beneath her."
+      ],
+      "proposedGlosses": {
+        "tr": "çekmek (kendine doğru); (bir yere/birine) çekmek, cezbetmek",
+        "es-419": "tirar hacia sí; atraer",
+        "pt-BR": "puxar para si; atrair",
+        "id": "menarik ke arah diri; menarik (hati), memikat",
+        "ar": "يسحب نحوه؛ يجذب",
+        "vi": "kéo về phía mình; thu hút",
+        "hi": "अपनी ओर खींचना; आकर्षित करना",
+        "ru": "тянуть к себе; привлекать",
+        "bn": "নিজের দিকে টানা; আকর্ষণ করা",
+        "ur": "اپنی طرف کھینچنا؛ متوجہ کرنا",
+        "th": "ดึงเข้าหาตัว; ดึงดูด"
+      }
+    },
+    {
+      "lemma": "dreams",
+      "currentGlosses": {
+        "tr": "rüyalar; hayaller",
+        "es-419": "sueños",
+        "pt-BR": "sonhos",
+        "id": "mimpi",
+        "ar": "أحلام",
+        "vi": "những giấc mơ",
+        "hi": "सपने",
+        "ru": "сны; мечты",
+        "bn": "স্বপ্নগুলো",
+        "ur": "خواب",
+        "th": "ความฝัน"
+      },
+      "englishContexts": [
+        "As she dreams, she moves her real head."
+      ],
+      "proposedGlosses": {
+        "tr": "rüyalar; hayaller; rüya görür; hayal eder",
+        "es-419": "sueños; sueña",
+        "pt-BR": "sonhos; sonha",
+        "id": "mimpi; bermimpi",
+        "ar": "أحلام؛ يحلم",
+        "vi": "những giấc mơ; mơ",
+        "hi": "सपने; सपना देखता/देखती है",
+        "ru": "сны; мечты; видит сон; мечтает",
+        "bn": "স্বপ্নগুলো; স্বপ্ন দেখে",
+        "ur": "خواب؛ خواب دیکھتا/دیکھتی ہے",
+        "th": "ความฝัน; ฝัน"
+      }
+    },
+    {
+      "lemma": "end",
+      "currentGlosses": {
+        "tr": "son",
+        "es-419": "fin; final",
+        "pt-BR": "fim; final",
+        "id": "akhir",
+        "ar": "نهاية",
+        "vi": "cuối; kết thúc",
+        "hi": "अंत",
+        "ru": "конец",
+        "bn": "শেষ",
+        "ur": "اختتام",
+        "th": "จุดจบ"
+      },
+      "englishContexts": [
+        "They hurried to the station at the end of the village.",
+        "Inside the giant's walls, however, winter refused to end.",
+        "The little mermaid knew that sunrise would bring the end of her life."
+      ],
+      "proposedGlosses": {
+        "tr": "son; bitmek, sona ermek",
+        "es-419": "fin; final; terminar",
+        "pt-BR": "fim; final; acabar, terminar",
+        "id": "akhir; ujung; berakhir",
+        "ar": "نهاية؛ ينتهي",
+        "vi": "cuối; kết thúc",
+        "hi": "अंत; छोर, सिरा; ख़त्म होना",
+        "ru": "конец; кончаться, заканчиваться",
+        "bn": "শেষ; প্রান্ত; শেষ হওয়া",
+        "ur": "آخر، سرا؛ اختتام؛ ختم ہونا",
+        "th": "จุดจบ; ปลาย, ท้าย (สถานที่); สิ้นสุด, จบ"
+      }
+    },
+    {
+      "lemma": "enormous",
+      "currentGlosses": {
+        "tr": "devasa",
+        "es-419": "enorme",
+        "pt-BR": "enorme",
+        "id": "sangat besar",
+        "ar": "ضخم",
+        "vi": "khổng lồ",
+        "hi": "विशाल",
+        "ru": "огромный",
+        "bn": "বিশাল",
+        "ur": "عظیم",
+        "th": "มหึมา"
+      },
+      "englishContexts": [
+        "Then she noticed his enormous mouth."
+      ],
+      "proposedGlosses": {
+        "tr": "devasa",
+        "es-419": "enorme",
+        "pt-BR": "enorme",
+        "id": "sangat besar",
+        "ar": "ضخم",
+        "vi": "khổng lồ",
+        "hi": "विशाल",
+        "ru": "огромный",
+        "bn": "বিশাল",
+        "ur": "بہت بڑا؛ عظیم",
+        "th": "มหึมา"
+      }
+    },
+    {
+      "lemma": "eve",
+      "currentGlosses": {
+        "tr": "arife (Noel arifesi)",
+        "es-419": "víspera (Nochebuena)",
+        "pt-BR": "véspera (Natal)",
+        "id": "malam menjelang (Natal)",
+        "ar": "عشية (ليلة الميلاد)",
+        "vi": "đêm trước (Giáng sinh)",
+        "hi": "पूर्व संध्या (क्रिसमस की)",
+        "ru": "канун (Рождества)",
+        "bn": "আগের সন্ধ্যা (বড়দিনের)",
+        "ur": "شام سے پہلے کی رات (کرسمس کی)",
+        "th": "วันก่อน (คริสต์มาส)"
+      },
+      "englishContexts": [
+        "On Christmas Eve, Della counted her savings for the third time."
+      ],
+      "proposedGlosses": {
+        "tr": "arife (Noel arifesi)",
+        "es-419": "víspera (Nochebuena)",
+        "pt-BR": "véspera (Natal)",
+        "id": "malam menjelang (Natal)",
+        "ar": "عشية (ليلة الميلاد)",
+        "vi": "đêm trước (Giáng sinh)",
+        "hi": "पूर्व संध्या (क्रिसमस की)",
+        "ru": "канун (Рождества)",
+        "bn": "আগের সন্ধ্যা (বড়দিনের)",
+        "ur": "کسی خاص دن سے پہلے کی شام (کرسمس کی شام)",
+        "th": "วันก่อน (คริสต์มาส)"
+      }
+    },
+    {
+      "lemma": "fight",
+      "currentGlosses": {
+        "tr": "kavga etmek",
+        "es-419": "pelear",
+        "pt-BR": "brigar",
+        "id": "berkelahi",
+        "ar": "يتقاتل",
+        "vi": "đánh nhau",
+        "hi": "लड़ना",
+        "ru": "драться",
+        "bn": "ঝগড়া করা",
+        "ur": "لڑنا",
+        "th": "ต่อสู้"
+      },
+      "englishContexts": [
+        "Each giant blamed the other, and they fought until both were dead."
+      ],
+      "proposedGlosses": {
+        "tr": "kavga etmek",
+        "es-419": "pelear",
+        "pt-BR": "brigar",
+        "id": "berkelahi",
+        "ar": "يتقاتل",
+        "vi": "đánh nhau",
+        "hi": "लड़ना",
+        "ru": "драться",
+        "bn": "লড়াই করা; মারামারি করা; ঝগড়া করা",
+        "ur": "لڑنا",
+        "th": "ต่อสู้"
+      }
+    },
+    {
+      "lemma": "find",
+      "currentGlosses": {
+        "tr": "bulmak",
+        "es-419": "encontrar",
+        "pt-BR": "encontrar",
+        "id": "menemukan",
+        "ar": "يجد",
+        "vi": "tìm thấy",
+        "hi": "ढूँढ़ना",
+        "ru": "находить",
+        "bn": "খুঁজে পাওয়া",
+        "ur": "ڈھونڈنا",
+        "th": "พบ"
+      },
+      "englishContexts": [
+        {
+          "storyId": "lost-map",
+          "sentenceId": "lm-1",
+          "english": "Nora found an old map inside her grandfather's desk."
+        },
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-1",
+          "english": "While helping her grandmother clear the attic, Nora found a small wooden chest beneath a pile of blankets."
+        },
+        {
+          "storyId": "classic-red-riding-hood",
+          "sentenceId": "cl-red-riding-hood-21",
+          "english": "He found the wolf and thought the grandmother might still be alive."
+        },
+        {
+          "storyId": "classic-cinderella",
+          "sentenceId": "cl-cinderella-09",
+          "english": "His son hoped to find a bride there."
+        },
+        {
+          "storyId": "classic-cinderella",
+          "sentenceId": "cl-cinderella-16",
+          "english": "She escaped before he could find out where she lived."
+        },
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-06",
+          "english": "Next, they found a cat whose owner no longer wanted her."
+        },
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-12",
+          "english": "Following it, they found a house full of robbers."
+        },
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-19",
+          "english": "The animals ate their supper and found places to sleep."
+        },
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-09",
+          "english": "But birds ate the crumbs, and the children could not find their way back."
+        },
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-25",
+          "english": "They found jewels in the house and filled their pockets."
+        },
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-27",
+          "english": "Soon they recognized the forest and found their father's house."
+        },
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-31",
+          "english": "That afternoon, the children found the giant dead beneath the tree, covered in white blossoms."
+        },
+        {
+          "storyId": "classic-gift-magi",
+          "sentenceId": "cl-gift-magi-13",
+          "english": "Finally, she found a simple platinum chain for Jim's watch."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-07",
+          "english": "They find a table full of rich food."
+        },
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-08",
+          "english": "Snow White found a small house and fell asleep inside."
+        },
+        {
+          "storyId": "classic-rapunzel",
+          "sentenceId": "cl-rapunzel-09",
+          "english": "One day, a prince heard Rapunzel singing and found the tower."
+        },
+        {
+          "storyId": "classic-sleeping-beauty",
+          "sentenceId": "cl-sleeping-beauty-17",
+          "english": "He walked into the silent castle and found the sleeping princess."
+        },
+        {
+          "storyId": "classic-rumpelstiltskin",
+          "sentenceId": "cl-rumpelstiltskin-16",
+          "english": "Then a messenger found a small house deep in the forest."
+        },
+        {
+          "storyId": "classic-golden-goose",
+          "sentenceId": "cl-golden-goose-06",
+          "english": "Under its roots, he found a goose with golden feathers."
+        },
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-06",
+          "english": "Again, he cut the leather and found perfect shoes waiting the next morning."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-11",
+          "english": "The wolf found and swallowed six of them."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-13",
+          "english": "Their mother returned and found the house in a terrible mess."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-15",
+          "english": "They found the wolf asleep under a tree, with something moving in his belly."
+        },
+        {
+          "storyId": "classic-brave-little-tailor",
+          "sentenceId": "cl-brave-little-tailor-11",
+          "english": "The tailor found the giants asleep beneath a tree."
+        },
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-07",
+          "english": "He found wild ducks in a marsh, but he could not stay there in peace."
+        },
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-15",
+          "english": "While exploring one passage, Thumbelina found a swallow that seemed to be dead."
+        },
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-21",
+          "english": "The swallow returned and found her crying."
+        },
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-24",
+          "english": "Inside a white flower, Thumbelina found a tiny prince with delicate wings."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-05",
+          "english": "She hid nearby while a young woman found him, so he never saw his rescuer."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-13",
+          "english": "The prince found her and welcomed the silent stranger into his home."
+        },
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-10",
+          "english": "Gerda refused to believe he was lost forever and set out to find him."
+        },
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-31",
+          "english": "They found that they had grown older, though their hearts were still like children's."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-26",
+          "english": "In the morning, people found the girl dead in the corner, with a smile on her face."
+        },
+        {
+          "storyId": "classic-steadfast-tin-soldier",
+          "sentenceId": "cl-steadfast-tin-soldier-12",
+          "english": "After rain, two other boys found him and made a boat from newspaper."
+        },
+        {
+          "storyId": "classic-steadfast-tin-soldier",
+          "sentenceId": "cl-steadfast-tin-soldier-27",
+          "english": "The next day, the servant found the tin heart among the ashes."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-06",
+          "english": "She reached the sea and found eleven swan feathers on the shore."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-15",
+          "english": "A young king found her in the forest and was moved by her beauty and sadness."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "bulmak",
+        "es-419": "encontrar",
+        "pt-BR": "encontrar",
+        "id": "menemukan",
+        "ar": "يجد",
+        "vi": "tìm thấy",
+        "hi": "ढूँढ़ना; ढूँढ़ लेना, पाना; पता लगाना (find out)",
+        "ru": "находить",
+        "bn": "খুঁজে পাওয়া",
+        "ur": "ڈھونڈنا؛ ڈھونڈ لینا، پانا؛ پتا لگانا (find out)",
+        "th": "พบ"
+      }
+    },
+    {
+      "lemma": "finnish",
+      "currentGlosses": {
+        "tr": "Fin, Finli",
+        "es-419": "finlandés",
+        "pt-BR": "finlandês",
+        "id": "Finlandia (bahasa/orang)",
+        "ar": "فنلندي",
+        "vi": "người Phần Lan; thuộc Phần Lan",
+        "hi": "फ़िनिश",
+        "ru": "финский",
+        "bn": "ফিনিশ",
+        "ur": "فنی",
+        "th": "ฟินแลนด์; ชาวฟินแลนด์"
+      },
+      "englishContexts": [
+        "That woman sent them onward to a wise Finnish woman."
+      ],
+      "proposedGlosses": {
+        "tr": "Fin, Finli",
+        "es-419": "finlandés",
+        "pt-BR": "finlandês",
+        "id": "Finlandia (bahasa/orang)",
+        "ar": "فنلندي",
+        "vi": "người Phần Lan; thuộc Phần Lan",
+        "hi": "फ़िनिश",
+        "ru": "финский",
+        "bn": "ফিনিশ",
+        "ur": "فن لینڈ کا؛ فن لینڈی",
+        "th": "ฟินแลนด์; ชาวฟินแลนด์"
+      }
+    },
+    {
+      "lemma": "firmly",
+      "currentGlosses": {
+        "tr": "sıkıca",
+        "es-419": "firmemente",
+        "pt-BR": "firmemente",
+        "id": "dengan erat",
+        "ar": "بإحكام",
+        "vi": "chặt",
+        "hi": "मज़बूती से",
+        "ru": "крепко",
+        "bn": "শক্ত করে",
+        "ur": "مضبوطی سے",
+        "th": "แน่น"
+      },
+      "englishContexts": [
+        "Still, he stood as firmly as the others on his single leg."
+      ],
+      "proposedGlosses": {
+        "tr": "sıkıca; sağlam bir şekilde",
+        "es-419": "firmemente",
+        "pt-BR": "firmemente",
+        "id": "dengan erat; dengan kokoh",
+        "ar": "بإحكام؛ بثبات",
+        "vi": "chặt; vững vàng",
+        "hi": "मज़बूती से",
+        "ru": "крепко",
+        "bn": "শক্ত করে; দৃঢ়ভাবে",
+        "ur": "مضبوطی سے",
+        "th": "แน่น; อย่างมั่นคง"
+      }
+    },
+    {
+      "lemma": "fond",
+      "currentGlosses": {
+        "tr": "düşkün",
+        "es-419": "aficionado; encariñado",
+        "pt-BR": "apegado; afeiçoado",
+        "id": "menyukai",
+        "ar": "مولع",
+        "vi": "yêu mến",
+        "hi": "शौक़ीन",
+        "ru": "любящий",
+        "bn": "অনুরক্ত",
+        "ur": "دلدادہ",
+        "th": "ชอบพอ"
+      },
+      "englishContexts": [
+        "He grew fond of her but remembered the woman he believed had saved his life."
+      ],
+      "proposedGlosses": {
+        "tr": "düşkün",
+        "es-419": "aficionado; encariñado",
+        "pt-BR": "apegado; afeiçoado",
+        "id": "menyukai",
+        "ar": "مولع",
+        "vi": "yêu mến",
+        "hi": "शौक़ीन; स्नेह/लगाव रखने वाला",
+        "ru": "любящий",
+        "bn": "অনুরক্ত",
+        "ur": "دلدادہ",
+        "th": "ชอบพอ"
+      }
+    },
+    {
+      "lemma": "front",
+      "currentGlosses": {
+        "tr": "ön",
+        "es-419": "frente",
+        "pt-BR": "frente",
+        "id": "depan",
+        "ar": "أمام",
+        "vi": "phía trước",
+        "hi": "आगे का",
+        "ru": "перед",
+        "bn": "সামনে",
+        "ur": "سامنے",
+        "th": "ด้านหน้า"
+      },
+      "englishContexts": [
+        "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+      ],
+      "proposedGlosses": {
+        "tr": "ön",
+        "es-419": "frente",
+        "pt-BR": "frente",
+        "id": "depan",
+        "ar": "أمام؛ الجهة الأمامية",
+        "vi": "phía trước; mặt trước",
+        "hi": "आगे का; सामने का हिस्सा",
+        "ru": "перёд; лицевая сторона",
+        "bn": "সামনে; সামনের দিক",
+        "ur": "سامنے؛ سامنے کا حصہ",
+        "th": "ด้านหน้า"
+      }
+    },
+    {
+      "lemma": "god",
+      "currentGlosses": {
+        "tr": "tanrı",
+        "es-419": "dios",
+        "pt-BR": "deus",
+        "id": "tuhan",
+        "ar": "إله",
+        "vi": "thần; Chúa",
+        "hi": "ईश्वर",
+        "ru": "бог",
+        "bn": "ঈশ্বর",
+        "ur": "خدا",
+        "th": "พระเจ้า"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-29",
+          "english": "God asked an angel to bring the two most precious things in the city."
+        },
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-30",
+          "english": "The angel chose the broken heart and the swallow, and God welcomed them into Paradise."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-19",
+          "english": "A falling star meant that a soul was going to God."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "tanrı; Tanrı (özel ad: God)",
+        "es-419": "dios; Dios (nombre propio: God)",
+        "pt-BR": "deus; Deus (nome próprio: God)",
+        "id": "tuhan; Tuhan (nama diri: God)",
+        "ar": "إله؛ الله (اسم علم: God)",
+        "vi": "thần; Chúa",
+        "hi": "ईश्वर",
+        "ru": "бог; Бог (имя собственное: God)",
+        "bn": "ঈশ্বর",
+        "ur": "خدا",
+        "th": "พระเจ้า"
+      }
+    },
+    {
+      "lemma": "graceful",
+      "currentGlosses": {
+        "tr": "zarif",
+        "es-419": "elegante",
+        "pt-BR": "elegante",
+        "id": "anggun",
+        "ar": "رشيق",
+        "vi": "duyên dáng",
+        "hi": "सुरुचिपूर्ण",
+        "ru": "грациозный",
+        "bn": "সুশোভন",
+        "ur": "خوش اسلوب",
+        "th": "สง่างาม"
+      },
+      "englishContexts": [
+        "He was no longer a grey, awkward youngster but a graceful white swan."
+      ],
+      "proposedGlosses": {
+        "tr": "zarif",
+        "es-419": "elegante",
+        "pt-BR": "elegante",
+        "id": "anggun",
+        "ar": "رشيق",
+        "vi": "duyên dáng",
+        "hi": "लालित्यपूर्ण; सुरुचिपूर्ण",
+        "ru": "грациозный",
+        "bn": "সুশোভন",
+        "ur": "خوش ادا؛ خوش اسلوب",
+        "th": "สง่างาม"
+      }
+    },
+    {
+      "lemma": "hide",
+      "currentGlosses": {
+        "tr": "saklanmak",
+        "es-419": "esconderse",
+        "pt-BR": "esconder-se",
+        "id": "bersembunyi",
+        "ar": "يختبئ",
+        "vi": "trốn",
+        "hi": "छिपना",
+        "ru": "прятаться",
+        "bn": "লুকানো",
+        "ur": "چھپنا",
+        "th": "ซ่อนตัว"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-happy-prince",
+          "sentenceId": "cl-happy-prince-08",
+          "english": "Now he could see the suffering that his comfortable life had hidden from him."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-09",
+          "english": "The mice run and hide in a hole."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-11",
+          "english": "Then another person enters, and they hide once more."
+        },
+        {
+          "storyId": "classic-ass-lion-skin",
+          "sentenceId": "cl-ass-lion-skin-12",
+          "english": "A fine disguise cannot hide who we are forever."
+        },
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-10",
+          "english": "They hid in the workshop and watched the table."
+        },
+        {
+          "storyId": "classic-tom-thumb",
+          "sentenceId": "cl-tom-thumb-07",
+          "english": "On the road, he hid in a mouse hole and waited until the strangers left."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-10",
+          "english": "The frightened children hid around the house."
+        },
+        {
+          "storyId": "classic-twelve-dancing-princesses",
+          "sentenceId": "cl-twelve-dancing-princesses-08",
+          "english": "The eldest princess opened a hidden door beneath her bed."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "saklanmak; saklamak, gizlemek",
+        "es-419": "esconderse; esconder, ocultar",
+        "pt-BR": "esconder-se; esconder",
+        "id": "bersembunyi; menyembunyikan",
+        "ar": "يختبئ؛ يخفي",
+        "vi": "trốn; giấu, che giấu",
+        "hi": "छिपना; छिपाना",
+        "ru": "прятаться; прятать, скрывать",
+        "bn": "লুকানো",
+        "ur": "چھپنا؛ چھپانا",
+        "th": "ซ่อนตัว; ซ่อน, ปิดบัง"
+      }
+    },
+    {
+      "lemma": "injured",
+      "currentGlosses": {
+        "tr": "yaralı",
+        "es-419": "herido",
+        "pt-BR": "ferido",
+        "id": "terluka",
+        "ar": "مصاب",
+        "vi": "bị thương",
+        "hi": "घायल",
+        "ru": "раненый",
+        "bn": "আহত",
+        "ur": "زخمی",
+        "th": "บาดเจ็บ"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-cinderella",
+          "sentenceId": "cl-cinderella-21",
+          "english": "Each stepsister injured her foot to force it into the slipper."
+        },
+        {
+          "storyId": "classic-rapunzel",
+          "sentenceId": "cl-rapunzel-16",
+          "english": "In despair, he jumped from the tower and thorns injured his eyes."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "yaralı; yaraladı (incitti)",
+        "es-419": "herido; hirió, lastimó",
+        "pt-BR": "ferido; feriu, machucou",
+        "id": "terluka; melukai",
+        "ar": "مصاب؛ جرح، أصاب",
+        "vi": "bị thương; làm bị thương",
+        "hi": "घायल; घायल किया, चोट पहुँचाई",
+        "ru": "раненый; поранил",
+        "bn": "আহত; আহত করল",
+        "ur": "زخمی؛ زخمی کیا",
+        "th": "บาดเจ็บ; ทำให้บาดเจ็บ"
+      }
+    },
+    {
+      "lemma": "interrupted",
+      "currentGlosses": {
+        "tr": "kesintiye uğramış, yarım kalmış",
+        "es-419": "interrumpido",
+        "pt-BR": "interrompido",
+        "id": "terputus",
+        "ar": "مقطوع",
+        "vi": "bị gián đoạn",
+        "hi": "बाधित",
+        "ru": "прерванный",
+        "bn": "ব্যাহত",
+        "ur": "منقطع",
+        "th": "ถูกขัดจังหวะ"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-sleeping-beauty",
+          "sentenceId": "cl-sleeping-beauty-19",
+          "english": "The whole castle woke up and continued its interrupted day."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "kesintiye uğramış, yarım kalmış",
+        "es-419": "interrumpido",
+        "pt-BR": "interrompido",
+        "id": "terputus",
+        "ar": "منقطع؛ متوقف؛ مقطوع",
+        "vi": "bị gián đoạn",
+        "hi": "बाधित",
+        "ru": "прерванный",
+        "bn": "ব্যাহত",
+        "ur": "منقطع",
+        "th": "ถูกขัดจังหวะ"
+      }
+    },
+    {
+      "lemma": "lay",
+      "currentGlosses": {
+        "tr": "yattı; koymak",
+        "es-419": "yació; colocó",
+        "pt-BR": "deitou; colocou",
+        "id": "berbaring; meletakkan",
+        "ar": "استلقى؛ وضع",
+        "vi": "đã nằm; đã đặt",
+        "hi": "लेट गया; रखा",
+        "ru": "лежал; положил",
+        "bn": "শুয়ে পড়ল; রাখল",
+        "ur": "لیٹ گیا؛ رکھا",
+        "th": "นอน; วาง"
+      },
+      "englishContexts": [
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-2",
+          "english": "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+        },
+        {
+          "storyId": "classic-red-riding-hood",
+          "sentenceId": "cl-red-riding-hood-11",
+          "english": "The wolf swallowed her, put on her cap, and lay in her bed."
+        },
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-11",
+          "english": "The bird could neither lay eggs nor purr, and he missed swimming."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "yattı; (içinde) duruyordu; koymak; yumurtlamak",
+        "es-419": "yació; colocó; poner (huevos)",
+        "pt-BR": "deitou(-se); estava (jazia); pôr (ovos), colocar",
+        "id": "berbaring; terletak; meletakkan; bertelur",
+        "ar": "استلقى؛ وضع",
+        "vi": "đã nằm; đã đặt; đẻ (trứng)",
+        "hi": "लेट गया; पड़ा था; रखा; (अंडे) देना",
+        "ru": "лежал; положил; нести (яйца)",
+        "bn": "শুয়ে পড়ল; পড়ে ছিল; রাখল; (ডিম) পাড়া",
+        "ur": "لیٹ گیا؛ پڑا تھا؛ رکھا؛ (انڈے) دینا",
+        "th": "นอน; วาง"
+      }
+    },
+    {
+      "lemma": "lowered",
+      "currentGlosses": {
+        "tr": "indirdi",
+        "es-419": "bajó",
+        "pt-BR": "abaixou",
+        "id": "menurunkan",
+        "ar": "أنزل",
+        "vi": "đã hạ xuống",
+        "hi": "नीचे किया",
+        "ru": "опустил",
+        "bn": "নামাল",
+        "ur": "نیچے کیا",
+        "th": "ลดลง"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-24",
+          "english": "But they welcomed him, and when he lowered his head, he saw his reflection."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "indirdi",
+        "es-419": "bajó",
+        "pt-BR": "abaixou",
+        "id": "menurunkan",
+        "ar": "أنزل",
+        "vi": "đã hạ xuống",
+        "hi": "नीचे किया",
+        "ru": "опустил",
+        "bn": "নামাল",
+        "ur": "نیچے کیا",
+        "th": "ลดลง; ลดต่ำลง; ก้ม (ศีรษะ)"
+      }
+    },
+    {
+      "lemma": "officer",
+      "currentGlosses": {
+        "tr": "memur; subay",
+        "es-419": "funcionario; oficial",
+        "pt-BR": "oficial; policial",
+        "id": "petugas; perwira",
+        "ar": "ضابط",
+        "vi": "nhân viên; sĩ quan",
+        "hi": "अधिकारी",
+        "ru": "служащий; офицер",
+        "bn": "কর্মকর্তা",
+        "ur": "افسر",
+        "th": "เจ้าหน้าที่; นายทหาร"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-16",
+          "english": "After wishing him luck, the officer continued down the street."
+        },
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-29",
+          "english": "Unable to arrest his old friend himself, he had asked another officer to do it."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "memur; subay; polis memuru",
+        "es-419": "funcionario; oficial; agente de policía",
+        "pt-BR": "oficial; policial",
+        "id": "petugas; perwira; polisi",
+        "ar": "ضابط؛ شرطي",
+        "vi": "nhân viên; sĩ quan; cảnh sát",
+        "hi": "अधिकारी; पुलिसवाला",
+        "ru": "служащий; офицер; полицейский",
+        "bn": "কর্মকর্তা; পুলিশ",
+        "ur": "افسر؛ پولیس والا",
+        "th": "เจ้าหน้าที่; นายทหาร; ตำรวจ"
+      }
+    },
+    {
+      "lemma": "plain",
+      "currentGlosses": {
+        "tr": "sivil (giyimli); sade",
+        "es-419": "de paisano; sencillo",
+        "pt-BR": "à paisana; simples",
+        "id": "preman; sederhana",
+        "ar": "مدني (ملابس)؛ بسيط",
+        "vi": "thường phục; giản dị",
+        "hi": "सादी (वर्दी नहीं); सादा",
+        "ru": "штатский; простой",
+        "bn": "সাদা পোশাকের; সাধারণ",
+        "ur": "سادہ (وردی کے بغیر)؛ سادہ",
+        "th": "ธรรมดา (ไม่สวมเครื่องแบบ); เรียบง่าย"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-23",
+          "english": "The stranger explained that he was a plain-clothes detective."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "sivil (giyimli); sade",
+        "es-419": "de paisano; sencillo",
+        "pt-BR": "à paisana; simples",
+        "id": "berpakaian preman (sipil); sederhana",
+        "ar": "مدني (ملابس)؛ بسيط",
+        "vi": "thường phục; giản dị",
+        "hi": "सादी (वर्दी नहीं); सादा",
+        "ru": "штатский; простой",
+        "bn": "সাদা পোশাকের; সাধারণ",
+        "ur": "سادہ (وردی کے بغیر)؛ سادہ",
+        "th": "ธรรมดา (ไม่สวมเครื่องแบบ); เรียบง่าย"
+      }
+    },
+    {
+      "lemma": "purr",
+      "currentGlosses": {
+        "tr": "mırlamak",
+        "es-419": "ronronear",
+        "pt-BR": "ronronar",
+        "id": "mendengkur (kucing)",
+        "ar": "يخرخر",
+        "vi": "kêu gừ gừ",
+        "hi": "घुरघुराना (बिल्ली का)",
+        "ru": "мурлыкать",
+        "bn": "ঘড়ঘড় করা (বিড়ালের)",
+        "ur": "گھرگھرانا (بلی کا)",
+        "th": "ส่งเสียงครางหงิง ๆ (แมว)"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-11",
+          "english": "The bird could neither lay eggs nor purr, and he missed swimming."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "mırlamak",
+        "es-419": "ronronear",
+        "pt-BR": "ronronar",
+        "id": "mendengkur (kucing)",
+        "ar": "يخرخر",
+        "vi": "kêu gừ gừ",
+        "hi": "घुरघुराना (बिल्ली का)",
+        "ru": "мурлыкать",
+        "bn": "ঘড়ঘড় করা (বিড়ালের)",
+        "ur": "گھرگھرانا (بلی کا)",
+        "th": "ทำเสียงครางเบา ๆ (แมว)"
+      }
+    },
+    {
+      "lemma": "scarcely",
+      "currentGlosses": {
+        "tr": "neredeyse hiç, güçlükle",
+        "es-419": "apenas",
+        "pt-BR": "mal",
+        "id": "hampir tidak",
+        "ar": "بالكاد",
+        "vi": "hầu như không",
+        "hi": "मुश्किल से",
+        "ru": "едва",
+        "bn": "কদাচিৎ",
+        "ur": "بمشکل",
+        "th": "แทบจะไม่"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-08",
+          "english": "And the poor home was scarcely warmer than the street."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "neredeyse hiç, güçlükle",
+        "es-419": "apenas",
+        "pt-BR": "mal",
+        "id": "hampir tidak",
+        "ar": "بالكاد",
+        "vi": "hầu như không",
+        "hi": "मुश्किल से",
+        "ru": "едва",
+        "bn": "খুব কমই; সামান্যই; কদাচিৎ",
+        "ur": "بمشکل",
+        "th": "แทบจะไม่"
+      }
+    },
+    {
+      "lemma": "soften",
+      "currentGlosses": {
+        "tr": "yumuşamak",
+        "es-419": "ablandarse",
+        "pt-BR": "amolecer",
+        "id": "melunak",
+        "ar": "يلين",
+        "vi": "mềm đi",
+        "hi": "नरम होना",
+        "ru": "смягчаться",
+        "bn": "নরম হওয়া",
+        "ur": "نرم ہونا",
+        "th": "อ่อนลง"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "yumuşamak; yumuşatmak",
+        "es-419": "suavizar, ablandar; ablandarse",
+        "pt-BR": "amolecer; suavizar",
+        "id": "melunakkan, melembutkan; melunak",
+        "ar": "يليّن، يُرقّق؛ يلين",
+        "vi": "làm mềm, làm dịu; mềm đi",
+        "hi": "नरम करना; नरम होना",
+        "ru": "смягчать; смягчаться",
+        "bn": "নরম করা; নরম হওয়া",
+        "ur": "نرم کرنا؛ نرم ہونا",
+        "th": "ทำให้อ่อนลง, ทำให้นุ่มนวลขึ้น; อ่อนลง"
+      }
+    },
+    {
+      "lemma": "spills",
+      "currentGlosses": {
+        "tr": "döker",
+        "es-419": "derrama",
+        "pt-BR": "derrama",
+        "id": "menumpahkan",
+        "ar": "يسكب",
+        "vi": "làm đổ",
+        "hi": "गिराता है (तरल)",
+        "ru": "проливает",
+        "bn": "ছড়িয়ে ফেলে",
+        "ur": "گراتا ہے (مائع)",
+        "th": "ทำหก"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-milkmaid-pail",
+          "sentenceId": "cl-milkmaid-pail-11",
+          "english": "All the milk spills out."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "dökülür; döker",
+        "es-419": "se derrama; derrama",
+        "pt-BR": "derrama",
+        "id": "tumpah; menumpahkan",
+        "ar": "ينسكب؛ يسكب",
+        "vi": "đổ ra; làm đổ",
+        "hi": "छलकता है / गिरता है (तरल); गिराता है",
+        "ru": "проливается; проливает",
+        "bn": "ছলকে পড়ে; ছলকে ফেলে; ছড়িয়ে ফেলে",
+        "ur": "چھلکتا ہے / گرتا ہے (مائع)؛ گراتا ہے",
+        "th": "หก; ทำหก"
+      }
+    },
+    {
+      "lemma": "stream",
+      "currentGlosses": {
+        "tr": "dere",
+        "es-419": "arroyo",
+        "pt-BR": "riacho",
+        "id": "sungai kecil",
+        "ar": "جدول",
+        "vi": "con suối",
+        "hi": "नाला",
+        "ru": "ручей",
+        "bn": "ঝরনা",
+        "ur": "ندی",
+        "th": "ลำธาร"
+      },
+      "englishContexts": [
+        "As the princess bent down to drink, she lost the cloth in a stream."
+      ],
+      "proposedGlosses": {
+        "tr": "dere",
+        "es-419": "arroyo",
+        "pt-BR": "riacho",
+        "id": "sungai kecil",
+        "ar": "جدول",
+        "vi": "con suối",
+        "hi": "धारा, छोटी नदी; नाला",
+        "ru": "ручей",
+        "bn": "ছোট নদী, জলধারা; ঝরনা",
+        "ur": "ندی",
+        "th": "ลำธาร"
+      }
+    },
+    {
+      "lemma": "unlit",
+      "currentGlosses": {
+        "tr": "yakılmamış; ışıksız",
+        "es-419": "sin encender; sin luz",
+        "pt-BR": "não aceso; sem luz",
+        "id": "belum dinyalakan; tak berlampu",
+        "ar": "غير مشتعل؛ غير مضاء",
+        "vi": "chưa châm lửa; không có đèn sáng",
+        "hi": "बिना रोशनी का",
+        "ru": "незажжённый; неосвещённый",
+        "bn": "না-জ্বালানো; আলোহীন",
+        "ur": "بغیر روشنی کا",
+        "th": "ที่ยังไม่ได้จุด; ไม่มีแสงสว่าง"
+      },
+      "englishContexts": [
+        "In a dark doorway, he noticed a man waiting with an unlit cigar."
+      ],
+      "proposedGlosses": {
+        "tr": "yakılmamış; ışıksız",
+        "es-419": "sin encender; sin luz",
+        "pt-BR": "não aceso; sem luz",
+        "id": "belum dinyalakan; tak berlampu",
+        "ar": "غير مشتعل؛ غير مضاء",
+        "vi": "chưa châm lửa; không có đèn sáng",
+        "hi": "जिसे जलाया न गया हो (सिगार आदि); बिना रोशनी का",
+        "ru": "незажжённый; неосвещённый",
+        "bn": "না-জ্বালানো; আলোহীন",
+        "ur": "جو جلایا نہ گیا ہو (سگار وغیرہ)؛ بغیر روشنی کا",
+        "th": "ที่ยังไม่ได้จุด; ไม่มีแสงสว่าง"
+      }
+    },
+    {
+      "lemma": "wardrobe",
+      "currentGlosses": {
+        "tr": "gardırop",
+        "es-419": "armario",
+        "pt-BR": "guarda-roupa",
+        "id": "lemari pakaian",
+        "ar": "خزانة ملابس",
+        "vi": "tủ quần áo",
+        "hi": "अलमारी",
+        "ru": "гардероб",
+        "bn": "পোশাকের আলমারি",
+        "ur": "الماری",
+        "th": "ตู้เสื้อผ้า"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-emperors-clothes",
+          "sentenceId": "cl-emperors-clothes-02",
+          "english": "He spent so much time changing outfits that people joked about his wardrobe."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "gardırop; (birinin) kıyafetleri",
+        "es-419": "armario; vestuario (ropa de una persona)",
+        "pt-BR": "guarda-roupa",
+        "id": "lemari pakaian; koleksi pakaian (seseorang)",
+        "ar": "خزانة ملابس؛ مجموعة ملابس (الشخص)",
+        "vi": "tủ quần áo; quần áo (của một người)",
+        "hi": "अलमारी; (किसी के) सारे कपड़े, पोशाकें",
+        "ru": "гардероб",
+        "bn": "পোশাকের আলমারি; (কারও) সব পোশাক-পরিচ্ছদ",
+        "ur": "الماری؛ (کسی کے) کپڑے، ملبوسات",
+        "th": "ตู้เสื้อผ้า; เสื้อผ้าทั้งหมด (ของคนหนึ่ง)"
+      }
+    },
+    {
+      "lemma": "wicked",
+      "currentGlosses": {
+        "tr": "kötü kalpli",
+        "es-419": "malvado",
+        "pt-BR": "malvado",
+        "id": "jahat",
+        "ar": "شرير",
+        "vi": "độc ác",
+        "hi": "दुष्ट",
+        "ru": "злой",
+        "bn": "দুষ্ট",
+        "ur": "بدکار",
+        "th": "ชั่วร้าย"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-01",
+          "english": "A wicked spirit made a mirror that turned beautiful things ugly and kindness into faults."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-17",
+          "english": "Although he loved her, his adviser suspected that her silence hid something wicked."
+        }
+      ],
+      "proposedGlosses": {
+        "tr": "kötü kalpli",
+        "es-419": "malvado",
+        "pt-BR": "malvado",
+        "id": "jahat",
+        "ar": "شرير",
+        "vi": "độc ác",
+        "hi": "दुष्ट",
+        "ru": "злой",
+        "bn": "দুষ্ট",
+        "ur": "بدکار",
+        "th": "ชั่วร้าย"
+      }
+    }
+  ],
+  "externalDictionaryChecks": [
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english-thai/purr",
+      "observation": "Thai verb ทำเสียงคราง; definition describes low murmuring cat sound."
+    },
+    {
+      "url": "https://www.shabdkosh.com/dictionary/english-hindi/purring/purring-meaning-in-hindi",
+      "observation": "Hindi घुरघुराना is listed for purr."
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english-bengali/scarcely",
+      "observation": "Degree sense with খুব কমই, not only frequency."
+    },
+    {
+      "url": "https://dictionary.cambridge.org/us/dictionary/english-arabic/god",
+      "observation": "Distinguishes proper God and generic deity, allows Allah and ilah."
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/english/unlit",
+      "observation": "Separate not-ignited and unilluminated senses."
+    }
+  ]
+}

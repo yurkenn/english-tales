@@ -1,0 +1,1736 @@
+{
+  "baselineCommit": "e29309357042be5cc91700e23988c06f78d1c3ec",
+  "nativeSpeakerApproval": false,
+  "scope": "Previously deferred candidate resolution; not a new review of the whole glossary",
+  "candidates": [
+    {
+      "id": "2026-10-20-glossary-claude-review.json:8",
+      "lang": "hi",
+      "lemma": "find",
+      "priorReview": {
+        "findingIndex": 9,
+        "lang": "hi",
+        "lemma": "find",
+        "decision": "deferred",
+        "before": "ढूँढ़ना",
+        "after": "ढूँढ़ना",
+        "reason": "Catalog matches include 37 find/found occurrences: successful discovery, intended discovery and find out. The current ढूँढ़ना emphasizes seeking, but compound/aspectual forms can express finding; dictionary evidence alone does not settle the standalone teaching gloss across these constructions. The proposal adds obtaining and resultative senses. Preserve the existing valid search-related verb pending a Hindi/Urdu usage judgment, rather than labeling it categorically wrong.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "find",
+        "contextMatchCount": 37,
+        "dictionarySources": [
+          "https://www.rekhtadictionary.com/meaning-of-dhuundnaa?lang=hi"
+        ],
+        "nextAction": "Native reviewer to compare bare find, past found, negated could not find, and find out; decide whether an added resultative gloss is needed."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:9",
+      "lang": "ur",
+      "lemma": "find",
+      "priorReview": {
+        "findingIndex": 10,
+        "lang": "ur",
+        "lemma": "find",
+        "decision": "deferred",
+        "before": "ڈھونڈنا",
+        "after": "ڈھونڈنا",
+        "reason": "Catalog matches include 37 find/found occurrences: successful discovery, intended discovery and find out. The current ڈھونڈنا emphasizes seeking, but compound/aspectual forms can express finding; dictionary evidence alone does not settle the standalone teaching gloss across these constructions. The proposal adds obtaining and resultative senses. Preserve the existing valid search-related verb pending a Hindi/Urdu usage judgment, rather than labeling it categorically wrong.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "find",
+        "contextMatchCount": 37,
+        "dictionarySources": [
+          "https://www.rekhtadictionary.com/meaning-of-dhuundnaa?lang=hi"
+        ],
+        "nextAction": "Native reviewer to compare bare find, past found, negated could not find, and find out; decide whether an added resultative gloss is needed."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:14",
+      "lang": "es-419",
+      "lemma": "wardrobe",
+      "priorReview": {
+        "findingIndex": 15,
+        "lang": "es-419",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "armario",
+        "after": "armario",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current armario foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:15",
+      "lang": "id",
+      "lemma": "wardrobe",
+      "priorReview": {
+        "findingIndex": 16,
+        "lang": "id",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "lemari pakaian",
+        "after": "lemari pakaian",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current lemari pakaian foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:16",
+      "lang": "ar",
+      "lemma": "wardrobe",
+      "priorReview": {
+        "findingIndex": 17,
+        "lang": "ar",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "خزانة ملابس",
+        "after": "خزانة ملابس",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current خزانة ملابس foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:17",
+      "lang": "vi",
+      "lemma": "wardrobe",
+      "priorReview": {
+        "findingIndex": 18,
+        "lang": "vi",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "tủ quần áo",
+        "after": "tủ quần áo",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current tủ quần áo foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:18",
+      "lang": "hi",
+      "lemma": "wardrobe",
+      "priorReview": {
+        "findingIndex": 19,
+        "lang": "hi",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "अलमारी",
+        "after": "अलमारी",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current अलमारी foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:20",
+      "lang": "bn",
+      "lemma": "wardrobe",
+      "priorReview": {
+        "findingIndex": 21,
+        "lang": "bn",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "পোশাকের আলমারি",
+        "after": "পোশাকের আলমারি",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current পোশাকের আলমারি foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:21",
+      "lang": "ur",
+      "lemma": "wardrobe",
+      "priorReview": {
+        "findingIndex": 22,
+        "lang": "ur",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "الماری",
+        "after": "الماری",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current الماری foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:22",
+      "lang": "th",
+      "lemma": "wardrobe",
+      "priorReview": {
+        "findingIndex": 23,
+        "lang": "th",
+        "lemma": "wardrobe",
+        "decision": "deferred",
+        "before": "ตู้เสื้อผ้า",
+        "after": "ตู้เสื้อผ้า",
+        "reason": "The only wardrobe occurrence (emperors-clothes-02) is a clothes collection, while Turkish gardırop and the current ตู้เสื้อผ้า foreground furniture. This is a source-reference sense-coverage issue, not evidence that the furniture sense itself is wrong. The proposed clothes wording needs a coordinated Turkish/master multi-sense decision and target-language validation; do not silently redefine only this translation.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "wardrobe",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "Resolve the master wardrobe furniture/clothing-collection policy, then validate a two-sense target gloss."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:23",
+      "lang": "th",
+      "lemma": "blow",
+      "priorReview": {
+        "findingIndex": 24,
+        "lang": "th",
+        "lemma": "blow",
+        "decision": "deferred",
+        "before": "การโจมตี",
+        "after": "การโจมตี",
+        "reason": "The catalog has a strike in seven at one blow and a wind action in blew his hat away (master form blew → blow). Both the original attack gloss and the proposed strike gloss cover only the nominal side. The requested strike nuance is plausible but low-severity; resolving the shared noun/verb sense coverage belongs with the master-reference/form policy, not an isolated synonym replacement.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "blow",
+        "contextMatchCount": 2,
+        "dictionarySources": [],
+        "nextAction": "Review blow noun/verb coverage in the Turkish master and validate a Thai gloss covering the intended senses."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:34",
+      "lang": "hi",
+      "lemma": "purr",
+      "priorReview": {
+        "findingIndex": 35,
+        "lang": "hi",
+        "lemma": "purr",
+        "decision": "deferred",
+        "before": "घुरघुराना (बिल्ली का)",
+        "after": "घुरघुराना (बिल्ली का)",
+        "reason": "The sole example contrasts laying eggs with a cat purring. The semantic target is clear, but both the current घुरघुराना (बिल्ली का) and suggested onomatopoeia need language-specific sound/register judgment; the initial finding itself has low confidence. Do not replace one uncertain animal-sound wording with another.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "purr",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "hi reviewer to confirm a normal contented-cat purr gloss, distinguishing growling/whining from purring."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "2026-10-20-glossary-claude-review.json:35",
+      "lang": "th",
+      "lemma": "purr",
+      "priorReview": {
+        "findingIndex": 36,
+        "lang": "th",
+        "lemma": "purr",
+        "decision": "deferred",
+        "before": "ส่งเสียงครางหงิง ๆ (แมว)",
+        "after": "ส่งเสียงครางหงิง ๆ (แมว)",
+        "reason": "The sole example contrasts laying eggs with a cat purring. The semantic target is clear, but both the current ส่งเสียงครางหงิง ๆ (แมว) and suggested onomatopoeia need language-specific sound/register judgment; the initial finding itself has low confidence. Do not replace one uncertain animal-sound wording with another.",
+        "appliedBeforeThisPass": false,
+        "contextEvidenceKey": "purr",
+        "contextMatchCount": 1,
+        "dictionarySources": [],
+        "nextAction": "th reviewer to confirm a normal contented-cat purr gloss, distinguishing growling/whining from purring."
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-claude-review.json"
+    },
+    {
+      "id": "dispositions-1-2.json:5",
+      "lang": "hi",
+      "lemma": "curled",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 6,
+        "lang": "hi",
+        "lemma": "curled",
+        "current": "सिकुड़ गया",
+        "claudeSuggested": "(बाल) घुँघराले किए",
+        "disposition": "defer",
+        "rationale": "The missing transitive hair sense is clear, but the proposed inflected Hindi/Bengali/Urdu wording was explicitly marked draft and needs a proficient/native wording check. Preserve the existing valid curl-up sense if adding it.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "kıvırdı",
+        "allEnglishContexts": [
+          "At home, she curled her short hair and worried about Jim's reaction."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:7",
+      "lang": "bn",
+      "lemma": "curled",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 8,
+        "lang": "bn",
+        "lemma": "curled",
+        "current": "কুঁকড়ে গেল",
+        "claudeSuggested": "(চুল) কোঁকড়া করল",
+        "disposition": "defer",
+        "rationale": "The missing transitive hair sense is clear, but the proposed inflected Hindi/Bengali/Urdu wording was explicitly marked draft and needs a proficient/native wording check. Preserve the existing valid curl-up sense if adding it.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "kıvırdı",
+        "allEnglishContexts": [
+          "At home, she curled her short hair and worried about Jim's reaction."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:8",
+      "lang": "ur",
+      "lemma": "curled",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 9,
+        "lang": "ur",
+        "lemma": "curled",
+        "current": "سمٹ گیا",
+        "claudeSuggested": "(بال) گھنگریالے کیے",
+        "disposition": "defer",
+        "rationale": "The missing transitive hair sense is clear, but the proposed inflected Hindi/Bengali/Urdu wording was explicitly marked draft and needs a proficient/native wording check. Preserve the existing valid curl-up sense if adding it.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "kıvırdı",
+        "allEnglishContexts": [
+          "At home, she curled her short hair and worried about Jim's reaction."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:30",
+      "lang": "bn",
+      "lemma": "aboard",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 31,
+        "lang": "bn",
+        "lemma": "aboard",
+        "current": "জাহাজ/গাড়িতে ওঠা",
+        "claudeSuggested": "(জাহাজ/যানবাহনের) উপরে; জাহাজে",
+        "disposition": "defer",
+        "rationale": "Part-of-speech mismatch is plausible, but the primary climbed-aboard construction can support boarding language. Need native wording covering both climbing aboard and an event already aboard, rather than replacing with an uncertain spatial phrase.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "(araca) binmiş",
+        "allEnglishContexts": [
+          "They climbed aboard just before the doors closed.",
+          "Their wedding was celebrated aboard a ship."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:34",
+      "lang": "tr",
+      "lemma": "allowed",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 35,
+        "lang": "tr",
+        "lemma": "allowed",
+        "current": "izin verdi",
+        "claudeSuggested": "izin verdi; izin verilmiş (izinli)",
+        "disposition": "defer",
+        "rationale": "Allowed is a past form valid actively, with passive meaning supplied by was. Adding passive coverage may aid learners but does not make izin verdi lexically false; coordinate morphology policy.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "izin verdi",
+        "allEnglishContexts": [
+          "On her fifteenth birthday, she was finally allowed to visit the surface."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:37",
+      "lang": "tr",
+      "lemma": "burst",
+      "priorReview": {
+        "batch": 1,
+        "candidateIndex": 38,
+        "lang": "tr",
+        "lemma": "burst",
+        "current": "patlamak",
+        "claudeSuggested": "patlamak; (içeri) dalmak, hızla girmek",
+        "disposition": "defer",
+        "rationale": "Burst through the window is violent motion rather than literal explosion. Source owner should add motion sense while preserving the general explosion meaning.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "patlamak",
+        "allEnglishContexts": [
+          "Together they made a terrible noise and burst through the window."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-1.json",
+          "packetSHA256": "3566846b5a5af70b59558a7cc38310633535bb49cb69f49c89d9a8c8df012876",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:39",
+      "lang": "hi",
+      "lemma": "desperately",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 2,
+        "lang": "hi",
+        "lemma": "desperately",
+        "current": "बेताबी से",
+        "claudeSuggested": "बुरी तरह; हताशा से",
+        "disposition": "defer",
+        "rationale": "The only occurrence is the intensifier desperately hungry. The candidate contrasts impatience with despair, but its suggested despair meaning still does not fit that occurrence. Native wording for the intensifier is required; existing eager/restless sense should not be removed without broader review.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "çaresizce",
+        "allEnglishContexts": [
+          "When winter came, she became cold and desperately hungry."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:40",
+      "lang": "ur",
+      "lemma": "desperately",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 3,
+        "lang": "ur",
+        "lemma": "desperately",
+        "current": "بے تابی سے",
+        "claudeSuggested": "بری طرح؛ مایوسی سے",
+        "disposition": "defer",
+        "rationale": "The only occurrence is the intensifier desperately hungry. The candidate contrasts impatience with despair, but its suggested despair meaning still does not fit that occurrence. Native wording for the intensifier is required; existing eager/restless sense should not be removed without broader review.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "çaresizce",
+        "allEnglishContexts": [
+          "When winter came, she became cold and desperately hungry."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:44",
+      "lang": "tr",
+      "lemma": "draw",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 7,
+        "lang": "tr",
+        "lemma": "draw",
+        "current": "çekmek (kendine doğru)",
+        "claudeSuggested": "çekmek; cezbetmek (bir yere/birine doğru)",
+        "disposition": "defer",
+        "rationale": "The contexts include attraction toward the window/person and drawing feet inward. Pulling/attracting are valid; the restrictive Turkish parenthesis can be broadened by the source owner while retaining the inward sense.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "çekmek (kendine doğru)",
+        "allEnglishContexts": [
+          "One morning, a bird's song drew him to the window.",
+          "She saw a prince celebrating on a ship and was drawn to him.",
+          "She sat in a corner between two houses and drew her feet beneath her."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:47",
+      "lang": "th",
+      "lemma": "end",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 10,
+        "lang": "th",
+        "lemma": "end",
+        "current": "จุดจบ",
+        "claudeSuggested": "ปลาย; จุดสิ้นสุด; ตอนจบ",
+        "disposition": "defer",
+        "rationale": "Spatial end is needed for the village, but temporal ending and the verb end also occur. Validate a native multi-sense wording before changing the existing valid temporal meaning.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "son",
+        "allEnglishContexts": [
+          "They hurried to the station at the end of the village.",
+          "Inside the giant's walls, however, winter refused to end.",
+          "The little mermaid knew that sunrise would bring the end of her life."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:48",
+      "lang": "ur",
+      "lemma": "end",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 11,
+        "lang": "ur",
+        "lemma": "end",
+        "current": "اختتام",
+        "claudeSuggested": "آخر؛ سرا؛ اختتام",
+        "disposition": "defer",
+        "rationale": "Spatial end is needed for the village, but temporal ending and the verb end also occur. Validate a native multi-sense wording before changing the existing valid temporal meaning.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "son",
+        "allEnglishContexts": [
+          "They hurried to the station at the end of the village.",
+          "Inside the giant's walls, however, winter refused to end.",
+          "The little mermaid knew that sunrise would bring the end of her life."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:50",
+      "lang": "ur",
+      "lemma": "eve",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 13,
+        "lang": "ur",
+        "lemma": "eve",
+        "current": "شام سے پہلے کی رات (کرسمس کی)",
+        "claudeSuggested": "کسی تہوار سے پہلے کی شام (کرسمس کی شام)",
+        "disposition": "defer",
+        "rationale": "The current Urdu phrase appears garbled (night before evening). The proposed replacement defines festival evening too narrowly for general eve; obtain a native general eve/Christmas Eve wording before application.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "arife (Noel arifesi)",
+        "allEnglishContexts": [
+          "On Christmas Eve, Della counted her savings for the third time."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:55",
+      "lang": "tr",
+      "lemma": "firmly",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 18,
+        "lang": "tr",
+        "lemma": "firmly",
+        "current": "sıkıca",
+        "claudeSuggested": "sağlamca; sıkıca",
+        "disposition": "defer",
+        "rationale": "Stood firmly needs stability rather than tight gripping. Source owner can add sağlamca/sağlam biçimde while retaining sıkıca; target choices should be checked independently.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "sıkıca",
+        "allEnglishContexts": [
+          "Still, he stood as firmly as the others on his single leg."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:58",
+      "lang": "ar",
+      "lemma": "front",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 21,
+        "lang": "ar",
+        "lemma": "front",
+        "current": "أمام",
+        "claudeSuggested": "الواجهة؛ الجهة الأمامية",
+        "disposition": "defer",
+        "rationale": "أمام can serve locative/front usage; front-side noun would clarify the envelope context but current Turkish is equally terse ön. Native Arabic validation is needed before replacing with facade-oriented الواجهة.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "ön",
+        "allEnglishContexts": [
+          "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:59",
+      "lang": "hi",
+      "lemma": "graceful",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 22,
+        "lang": "hi",
+        "lemma": "graceful",
+        "current": "सुरुचिपूर्ण",
+        "claudeSuggested": "लालित्यपूर्ण; सुंदर, मनोहर",
+        "disposition": "defer",
+        "rationale": "The proposed alternatives are style/register preferences and partly introduce charming/dignified senses. Need proficient/native evidence that current elegance-related expression cannot cover the graceful-swan context before replacing.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "zarif",
+        "allEnglishContexts": [
+          "He was no longer a grey, awkward youngster but a graceful white swan."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-1-2.json:60",
+      "lang": "ur",
+      "lemma": "graceful",
+      "priorReview": {
+        "batch": 2,
+        "candidateIndex": 23,
+        "lang": "ur",
+        "lemma": "graceful",
+        "current": "خوش اسلوب",
+        "claudeSuggested": "دلکش؛ باوقار؛ نفیس",
+        "disposition": "defer",
+        "rationale": "The proposed alternatives are style/register preferences and partly introduce charming/dignified senses. Need proficient/native evidence that current elegance-related expression cannot cover the graceful-swan context before replacing.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "zarif",
+        "allEnglishContexts": [
+          "He was no longer a grey, awkward youngster but a graceful white swan."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-2.json",
+          "packetSHA256": "1e19d13869c2c74abad44b2f56dd5bd86e36a42680863d3dc58a24446923a82e",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-1-2.json"
+    },
+    {
+      "id": "dispositions-3-4.json:9",
+      "lang": "tr",
+      "lemma": "injured",
+      "priorReview": {
+        "batch": 3,
+        "findingIndex": 10,
+        "lang": "tr",
+        "lemma": "injured",
+        "current": "yaralı",
+        "initialSuggested": "yaraladı; yaralı",
+        "turkishReference": "yaralı",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "Two catalog uses are transitive past-tense verbs while yaralı is a valid participial/adjectival meaning. The approved Turkish source and all translations need coordinated part-of-speech consideration.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Separate Turkish-source review before any coordinated source/target sense expansion.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-cinderella",
+            "sentenceId": "cl-cinderella-21",
+            "english": "Each stepsister injured her foot to force it into the slipper."
+          },
+          {
+            "storyId": "classic-rapunzel",
+            "sentenceId": "cl-rapunzel-16",
+            "english": "In despair, he jumped from the tower and thorns injured his eyes."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:10",
+      "lang": "tr",
+      "lemma": "officer",
+      "priorReview": {
+        "batch": 3,
+        "findingIndex": 11,
+        "lang": "tr",
+        "lemma": "officer",
+        "current": "memur; subay",
+        "initialSuggested": "memur; subay; polis memuru",
+        "turkishReference": "memur; subay",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The two story uses refer to policemen. Turkish memur is broad enough to include police employment; adding polis memuru would clarify but the existing generic gloss is not categorically invalid.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Separate Turkish-source review before any coordinated source/target sense expansion.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-16",
+            "english": "After wishing him luck, the officer continued down the street."
+          },
+          {
+            "storyId": "classic-after-twenty-years",
+            "sentenceId": "cl-after-twenty-years-29",
+            "english": "Unable to arrest his old friend himself, he had asked another officer to do it."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:18",
+      "lang": "pt-BR",
+      "lemma": "lay",
+      "priorReview": {
+        "batch": 3,
+        "findingIndex": 19,
+        "lang": "pt-BR",
+        "lemma": "lay",
+        "current": "deitou; colocou",
+        "initialSuggested": "jazia; deitou-se; colocou",
+        "turkishReference": "yattı; koymak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The three uses mix past lie (photograph resting, wolf lying in bed) with present lay eggs. Priberam distinguishes pronominal deitar-se, but colloquial Brazilian omission of reflexive clitics and the valid colocou placement sense make the claimed reversal too categorical. jazia/deitou-se may expand coverage, but not without Brazilian usage judgment.",
+        "sources": [
+          "https://www.dicionario.priberam.org/deitar"
+        ],
+        "confidence": "high",
+        "nextAction": "Brazilian Portuguese reviewer to check whether deitou needs an explicit intransitive rest/lie form; preserve the separate laying/placement sense.",
+        "catalogContexts": [
+          {
+            "storyId": "attic-letter",
+            "sentenceId": "attic-letter-2",
+            "english": "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+          },
+          {
+            "storyId": "classic-red-riding-hood",
+            "sentenceId": "cl-red-riding-hood-11",
+            "english": "The wolf swallowed her, put on her cap, and lay in her bed."
+          },
+          {
+            "storyId": "classic-ugly-duckling",
+            "sentenceId": "cl-ugly-duckling-11",
+            "english": "The bird could neither lay eggs nor purr, and he missed swimming."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:45",
+      "lang": "es-419",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 23,
+        "lang": "es-419",
+        "lemma": "soften",
+        "current": "ablandarse",
+        "initialSuggested": "ablandar; suavizar",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:46",
+      "lang": "id",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 24,
+        "lang": "id",
+        "lemma": "soften",
+        "current": "melunak",
+        "initialSuggested": "melunakkan; melunak",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:47",
+      "lang": "ar",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 25,
+        "lang": "ar",
+        "lemma": "soften",
+        "current": "يلين",
+        "initialSuggested": "يليّن؛ يلين",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:48",
+      "lang": "vi",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 26,
+        "lang": "vi",
+        "lemma": "soften",
+        "current": "mềm đi",
+        "initialSuggested": "làm mềm; mềm đi",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:49",
+      "lang": "hi",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 27,
+        "lang": "hi",
+        "lemma": "soften",
+        "current": "नरम होना",
+        "initialSuggested": "नरम करना; नरम होना",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:50",
+      "lang": "ru",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 28,
+        "lang": "ru",
+        "lemma": "soften",
+        "current": "смягчаться",
+        "initialSuggested": "смягчать; смягчаться",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:51",
+      "lang": "bn",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 29,
+        "lang": "bn",
+        "lemma": "soften",
+        "current": "নরম হওয়া",
+        "initialSuggested": "নরম করা; নরম হওয়া",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:52",
+      "lang": "ur",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 30,
+        "lang": "ur",
+        "lemma": "soften",
+        "current": "نرم ہونا",
+        "initialSuggested": "نرم کرنا؛ نرم ہونا",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-3-4.json:53",
+      "lang": "th",
+      "lemma": "soften",
+      "priorReview": {
+        "batch": 4,
+        "findingIndex": 31,
+        "lang": "th",
+        "lemma": "soften",
+        "current": "อ่อนลง",
+        "initialSuggested": "ทำให้อ่อนลง; อ่อนลง",
+        "turkishReference": "yumuşamak",
+        "decision": "defer",
+        "suggested": null,
+        "rationale": "The source yumuşamak and current target both express a valid intransitive softening sense; the one catalog voice example is transitive. Adding a transitive sense may be warranted, but this is explicitly a propagated Turkish-reference direction issue.",
+        "sources": [],
+        "confidence": "high",
+        "nextAction": "Resolve approved Turkish-master transitive/intransitive scope, then validate additions consistently across all ten target languages; preserve existing valid voice.",
+        "catalogContexts": [
+          {
+            "storyId": "classic-wolf-seven-kids",
+            "sentenceId": "cl-wolf-seven-kids-06",
+            "english": "The wolf ate chalk to soften his voice and tried again."
+          }
+        ]
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-3-4.json"
+    },
+    {
+      "id": "dispositions-5.json:0",
+      "lang": "bn",
+      "lemma": "stream",
+      "priorReview": {
+        "batch": 5,
+        "candidateIndex": 1,
+        "lang": "bn",
+        "lemma": "stream",
+        "current": "ঝরনা",
+        "claudeSuggested": "ছোট নদী; স্রোতধারা",
+        "disposition": "defer",
+        "rationale": "ঝরনা covers a spring/cascade and may name a flowing mountain watercourse too. The supplied example does not establish a categorical error, and the suggested স্রোতধারা wording needs Bengali usage validation. Do not delete the existing valid spring sense.",
+        "safeReplacement": null,
+        "externalSources": [],
+        "turkishReference": "dere",
+        "allEnglishContexts": [
+          "As the princess bent down to drink, she lost the cloth in a stream."
+        ],
+        "sourceEvidence": {
+          "packet": "packet-5.json",
+          "packetSHA256": "b273bb70f5bf5d2ea9ac4f05bed62992cbc4a157a27179ba4009e70f2944f874",
+          "sourceCommit": "66a5453",
+          "allProvidedContextsReviewed": true
+        }
+      },
+      "sourceFile": "native-android/docs/release-evidence/2026-10-20-glossary-full/dispositions-5.json"
+    }
+  ],
+  "lemmas": [
+    {
+      "lemma": "aboard",
+      "currentGlosses": {
+        "tr": "(araca) binmiş",
+        "es-419": "a bordo",
+        "pt-BR": "a bordo",
+        "id": "di atas (kendaraan)",
+        "ar": "على متن",
+        "vi": "trên (tàu, xe)",
+        "hi": "सवार",
+        "ru": "на борту",
+        "bn": "জাহাজ/গাড়িতে ওঠা",
+        "ur": "سوار",
+        "th": "บนยานพาหนะ"
+      },
+      "englishContexts": [
+        "They climbed aboard just before the doors closed.",
+        "Their wedding was celebrated aboard a ship."
+      ]
+    },
+    {
+      "lemma": "allowed",
+      "currentGlosses": {
+        "tr": "izin verdi",
+        "es-419": "permitió",
+        "pt-BR": "permitiu",
+        "id": "mengizinkan",
+        "ar": "سمح",
+        "vi": "cho phép",
+        "hi": "अनुमति दी",
+        "ru": "разрешил",
+        "bn": "অনুমতি দিয়েছিল",
+        "ur": "اجازت دی",
+        "th": "อนุญาต"
+      },
+      "englishContexts": [
+        "On her fifteenth birthday, she was finally allowed to visit the surface."
+      ]
+    },
+    {
+      "lemma": "blow",
+      "currentGlosses": {
+        "tr": "darbe, vuruş",
+        "es-419": "golpe",
+        "pt-BR": "golpe",
+        "id": "pukulan",
+        "ar": "ضربة",
+        "vi": "cú đánh",
+        "hi": "प्रहार, वार",
+        "ru": "удар",
+        "bn": "আঘাত",
+        "ur": "وار، ضرب",
+        "th": "การโจมตี"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-brave-little-tailor",
+          "sentenceId": "cl-brave-little-tailor-03",
+          "english": "Proud of himself, he made a belt that said, \"Seven at one blow.\""
+        },
+        {
+          "storyId": "classic-goose-girl",
+          "sentenceId": "cl-goose-girl-13",
+          "english": "She called on the wind, which blew his hat away until she had finished combing her hair."
+        }
+      ]
+    },
+    {
+      "lemma": "burst",
+      "currentGlosses": {
+        "tr": "patlamak",
+        "es-419": "reventar",
+        "pt-BR": "estourar",
+        "id": "meletus",
+        "ar": "ينفجر",
+        "vi": "nổ tung",
+        "hi": "फट पड़ना",
+        "ru": "лопнуть",
+        "bn": "ফেটে যাওয়া",
+        "ur": "پھٹنا",
+        "th": "ระเบิด"
+      },
+      "englishContexts": [
+        "Together they made a terrible noise and burst through the window."
+      ]
+    },
+    {
+      "lemma": "curled",
+      "currentGlosses": {
+        "tr": "kıvırdı",
+        "es-419": "rizó (el pelo); se enroscó",
+        "pt-BR": "cacheou (o cabelo); enrolou-se",
+        "id": "mengeriting (rambut); meringkuk",
+        "ar": "جعّد (الشعر)؛ التفّ",
+        "vi": "uốn xoăn (tóc); đã cuộn tròn",
+        "hi": "सिकुड़ गया",
+        "ru": "завил(а) (волосы); свернулся",
+        "bn": "কুঁকড়ে গেল",
+        "ur": "سمٹ گیا",
+        "th": "ดัดผม; ขดตัว"
+      },
+      "englishContexts": [
+        "At home, she curled her short hair and worried about Jim's reaction."
+      ]
+    },
+    {
+      "lemma": "desperately",
+      "currentGlosses": {
+        "tr": "çaresizce",
+        "es-419": "desesperadamente",
+        "pt-BR": "desesperadamente",
+        "id": "dengan putus asa",
+        "ar": "بيأس",
+        "vi": "một cách tuyệt vọng",
+        "hi": "बेताबी से",
+        "ru": "отчаянно",
+        "bn": "মরিয়া হয়ে",
+        "ur": "بے تابی سے",
+        "th": "อย่างสิ้นหวัง"
+      },
+      "englishContexts": [
+        "When winter came, she became cold and desperately hungry."
+      ]
+    },
+    {
+      "lemma": "draw",
+      "currentGlosses": {
+        "tr": "çekmek (kendine doğru)",
+        "es-419": "tirar hacia sí",
+        "pt-BR": "puxar para si",
+        "id": "menarik ke arah diri",
+        "ar": "يسحب نحوه",
+        "vi": "kéo về phía mình",
+        "hi": "अपनी ओर खींचना",
+        "ru": "тянуть к себе",
+        "bn": "নিজের দিকে টানা",
+        "ur": "اپنی طرف کھینچنا",
+        "th": "ดึงเข้าหาตัว"
+      },
+      "englishContexts": [
+        "One morning, a bird's song drew him to the window.",
+        "She saw a prince celebrating on a ship and was drawn to him.",
+        "She sat in a corner between two houses and drew her feet beneath her."
+      ]
+    },
+    {
+      "lemma": "end",
+      "currentGlosses": {
+        "tr": "son",
+        "es-419": "fin; final",
+        "pt-BR": "fim; final",
+        "id": "akhir",
+        "ar": "نهاية",
+        "vi": "cuối; kết thúc",
+        "hi": "अंत",
+        "ru": "конец",
+        "bn": "শেষ",
+        "ur": "اختتام",
+        "th": "จุดจบ"
+      },
+      "englishContexts": [
+        "They hurried to the station at the end of the village.",
+        "Inside the giant's walls, however, winter refused to end.",
+        "The little mermaid knew that sunrise would bring the end of her life."
+      ]
+    },
+    {
+      "lemma": "eve",
+      "currentGlosses": {
+        "tr": "arife (Noel arifesi)",
+        "es-419": "víspera (Nochebuena)",
+        "pt-BR": "véspera (Natal)",
+        "id": "malam menjelang (Natal)",
+        "ar": "عشية (ليلة الميلاد)",
+        "vi": "đêm trước (Giáng sinh)",
+        "hi": "पूर्व संध्या (क्रिसमस की)",
+        "ru": "канун (Рождества)",
+        "bn": "আগের সন্ধ্যা (বড়দিনের)",
+        "ur": "شام سے پہلے کی رات (کرسمس کی)",
+        "th": "วันก่อน (คริสต์มาส)"
+      },
+      "englishContexts": [
+        "On Christmas Eve, Della counted her savings for the third time."
+      ]
+    },
+    {
+      "lemma": "find",
+      "currentGlosses": {
+        "tr": "bulmak",
+        "es-419": "encontrar",
+        "pt-BR": "encontrar",
+        "id": "menemukan",
+        "ar": "يجد",
+        "vi": "tìm thấy",
+        "hi": "ढूँढ़ना",
+        "ru": "находить",
+        "bn": "খুঁজে পাওয়া",
+        "ur": "ڈھونڈنا",
+        "th": "พบ"
+      },
+      "englishContexts": [
+        {
+          "storyId": "lost-map",
+          "sentenceId": "lm-1",
+          "english": "Nora found an old map inside her grandfather's desk."
+        },
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-1",
+          "english": "While helping her grandmother clear the attic, Nora found a small wooden chest beneath a pile of blankets."
+        },
+        {
+          "storyId": "classic-red-riding-hood",
+          "sentenceId": "cl-red-riding-hood-21",
+          "english": "He found the wolf and thought the grandmother might still be alive."
+        },
+        {
+          "storyId": "classic-cinderella",
+          "sentenceId": "cl-cinderella-09",
+          "english": "His son hoped to find a bride there."
+        },
+        {
+          "storyId": "classic-cinderella",
+          "sentenceId": "cl-cinderella-16",
+          "english": "She escaped before he could find out where she lived."
+        },
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-06",
+          "english": "Next, they found a cat whose owner no longer wanted her."
+        },
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-12",
+          "english": "Following it, they found a house full of robbers."
+        },
+        {
+          "storyId": "classic-bremen-musicians",
+          "sentenceId": "cl-bremen-musicians-19",
+          "english": "The animals ate their supper and found places to sleep."
+        },
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-09",
+          "english": "But birds ate the crumbs, and the children could not find their way back."
+        },
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-25",
+          "english": "They found jewels in the house and filled their pockets."
+        },
+        {
+          "storyId": "classic-hansel-gretel",
+          "sentenceId": "cl-hansel-gretel-27",
+          "english": "Soon they recognized the forest and found their father's house."
+        },
+        {
+          "storyId": "classic-selfish-giant",
+          "sentenceId": "cl-selfish-giant-31",
+          "english": "That afternoon, the children found the giant dead beneath the tree, covered in white blossoms."
+        },
+        {
+          "storyId": "classic-gift-magi",
+          "sentenceId": "cl-gift-magi-13",
+          "english": "Finally, she found a simple platinum chain for Jim's watch."
+        },
+        {
+          "storyId": "classic-town-country-mouse",
+          "sentenceId": "cl-town-country-mouse-07",
+          "english": "They find a table full of rich food."
+        },
+        {
+          "storyId": "classic-snow-white",
+          "sentenceId": "cl-snow-white-08",
+          "english": "Snow White found a small house and fell asleep inside."
+        },
+        {
+          "storyId": "classic-rapunzel",
+          "sentenceId": "cl-rapunzel-09",
+          "english": "One day, a prince heard Rapunzel singing and found the tower."
+        },
+        {
+          "storyId": "classic-sleeping-beauty",
+          "sentenceId": "cl-sleeping-beauty-17",
+          "english": "He walked into the silent castle and found the sleeping princess."
+        },
+        {
+          "storyId": "classic-rumpelstiltskin",
+          "sentenceId": "cl-rumpelstiltskin-16",
+          "english": "Then a messenger found a small house deep in the forest."
+        },
+        {
+          "storyId": "classic-golden-goose",
+          "sentenceId": "cl-golden-goose-06",
+          "english": "Under its roots, he found a goose with golden feathers."
+        },
+        {
+          "storyId": "classic-elves-shoemaker",
+          "sentenceId": "cl-elves-shoemaker-06",
+          "english": "Again, he cut the leather and found perfect shoes waiting the next morning."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-11",
+          "english": "The wolf found and swallowed six of them."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-13",
+          "english": "Their mother returned and found the house in a terrible mess."
+        },
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-15",
+          "english": "They found the wolf asleep under a tree, with something moving in his belly."
+        },
+        {
+          "storyId": "classic-brave-little-tailor",
+          "sentenceId": "cl-brave-little-tailor-11",
+          "english": "The tailor found the giants asleep beneath a tree."
+        },
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-07",
+          "english": "He found wild ducks in a marsh, but he could not stay there in peace."
+        },
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-15",
+          "english": "While exploring one passage, Thumbelina found a swallow that seemed to be dead."
+        },
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-21",
+          "english": "The swallow returned and found her crying."
+        },
+        {
+          "storyId": "classic-thumbelina",
+          "sentenceId": "cl-thumbelina-24",
+          "english": "Inside a white flower, Thumbelina found a tiny prince with delicate wings."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-05",
+          "english": "She hid nearby while a young woman found him, so he never saw his rescuer."
+        },
+        {
+          "storyId": "classic-little-mermaid",
+          "sentenceId": "cl-little-mermaid-13",
+          "english": "The prince found her and welcomed the silent stranger into his home."
+        },
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-10",
+          "english": "Gerda refused to believe he was lost forever and set out to find him."
+        },
+        {
+          "storyId": "classic-snow-queen",
+          "sentenceId": "cl-snow-queen-31",
+          "english": "They found that they had grown older, though their hearts were still like children's."
+        },
+        {
+          "storyId": "classic-little-match-girl",
+          "sentenceId": "cl-little-match-girl-26",
+          "english": "In the morning, people found the girl dead in the corner, with a smile on her face."
+        },
+        {
+          "storyId": "classic-steadfast-tin-soldier",
+          "sentenceId": "cl-steadfast-tin-soldier-12",
+          "english": "After rain, two other boys found him and made a boat from newspaper."
+        },
+        {
+          "storyId": "classic-steadfast-tin-soldier",
+          "sentenceId": "cl-steadfast-tin-soldier-27",
+          "english": "The next day, the servant found the tin heart among the ashes."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-06",
+          "english": "She reached the sea and found eleven swan feathers on the shore."
+        },
+        {
+          "storyId": "classic-wild-swans",
+          "sentenceId": "cl-wild-swans-15",
+          "english": "A young king found her in the forest and was moved by her beauty and sadness."
+        }
+      ]
+    },
+    {
+      "lemma": "firmly",
+      "currentGlosses": {
+        "tr": "sıkıca",
+        "es-419": "firmemente",
+        "pt-BR": "firmemente",
+        "id": "dengan erat",
+        "ar": "بإحكام",
+        "vi": "chặt",
+        "hi": "मज़बूती से",
+        "ru": "крепко",
+        "bn": "শক্ত করে",
+        "ur": "مضبوطی سے",
+        "th": "แน่น"
+      },
+      "englishContexts": [
+        "Still, he stood as firmly as the others on his single leg."
+      ]
+    },
+    {
+      "lemma": "front",
+      "currentGlosses": {
+        "tr": "ön",
+        "es-419": "frente",
+        "pt-BR": "frente",
+        "id": "depan",
+        "ar": "أمام",
+        "vi": "phía trước",
+        "hi": "आगे का",
+        "ru": "перед",
+        "bn": "সামনে",
+        "ur": "سامنے",
+        "th": "ด้านหน้า"
+      },
+      "englishContexts": [
+        "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+      ]
+    },
+    {
+      "lemma": "graceful",
+      "currentGlosses": {
+        "tr": "zarif",
+        "es-419": "elegante",
+        "pt-BR": "elegante",
+        "id": "anggun",
+        "ar": "رشيق",
+        "vi": "duyên dáng",
+        "hi": "सुरुचिपूर्ण",
+        "ru": "грациозный",
+        "bn": "সুশোভন",
+        "ur": "خوش اسلوب",
+        "th": "สง่างาม"
+      },
+      "englishContexts": [
+        "He was no longer a grey, awkward youngster but a graceful white swan."
+      ]
+    },
+    {
+      "lemma": "injured",
+      "currentGlosses": {
+        "tr": "yaralı",
+        "es-419": "herido",
+        "pt-BR": "ferido",
+        "id": "terluka",
+        "ar": "مصاب",
+        "vi": "bị thương",
+        "hi": "घायल",
+        "ru": "раненый",
+        "bn": "আহত",
+        "ur": "زخمی",
+        "th": "บาดเจ็บ"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-cinderella",
+          "sentenceId": "cl-cinderella-21",
+          "english": "Each stepsister injured her foot to force it into the slipper."
+        },
+        {
+          "storyId": "classic-rapunzel",
+          "sentenceId": "cl-rapunzel-16",
+          "english": "In despair, he jumped from the tower and thorns injured his eyes."
+        }
+      ]
+    },
+    {
+      "lemma": "lay",
+      "currentGlosses": {
+        "tr": "yattı; koymak",
+        "es-419": "yació; colocó",
+        "pt-BR": "deitou; colocou",
+        "id": "berbaring; meletakkan",
+        "ar": "استلقى؛ وضع",
+        "vi": "đã nằm; đã đặt",
+        "hi": "लेट गया; रखा",
+        "ru": "лежал; положил",
+        "bn": "শুয়ে পড়ল; রাখল",
+        "ur": "لیٹ گیا؛ رکھا",
+        "th": "นอน; วาง"
+      },
+      "englishContexts": [
+        {
+          "storyId": "attic-letter",
+          "sentenceId": "attic-letter-2",
+          "english": "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front."
+        },
+        {
+          "storyId": "classic-red-riding-hood",
+          "sentenceId": "cl-red-riding-hood-11",
+          "english": "The wolf swallowed her, put on her cap, and lay in her bed."
+        },
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-11",
+          "english": "The bird could neither lay eggs nor purr, and he missed swimming."
+        }
+      ]
+    },
+    {
+      "lemma": "officer",
+      "currentGlosses": {
+        "tr": "memur; subay",
+        "es-419": "funcionario; oficial",
+        "pt-BR": "oficial; policial",
+        "id": "petugas; perwira",
+        "ar": "ضابط",
+        "vi": "nhân viên; sĩ quan",
+        "hi": "अधिकारी",
+        "ru": "служащий; офицер",
+        "bn": "কর্মকর্তা",
+        "ur": "افسر",
+        "th": "เจ้าหน้าที่; นายทหาร"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-16",
+          "english": "After wishing him luck, the officer continued down the street."
+        },
+        {
+          "storyId": "classic-after-twenty-years",
+          "sentenceId": "cl-after-twenty-years-29",
+          "english": "Unable to arrest his old friend himself, he had asked another officer to do it."
+        }
+      ]
+    },
+    {
+      "lemma": "purr",
+      "currentGlosses": {
+        "tr": "mırlamak",
+        "es-419": "ronronear",
+        "pt-BR": "ronronar",
+        "id": "mendengkur (kucing)",
+        "ar": "يخرخر",
+        "vi": "kêu gừ gừ",
+        "hi": "घुरघुराना (बिल्ली का)",
+        "ru": "мурлыкать",
+        "bn": "ঘড়ঘড় করা (বিড়ালের)",
+        "ur": "گھرگھرانا (بلی کا)",
+        "th": "ส่งเสียงครางหงิง ๆ (แมว)"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-ugly-duckling",
+          "sentenceId": "cl-ugly-duckling-11",
+          "english": "The bird could neither lay eggs nor purr, and he missed swimming."
+        }
+      ]
+    },
+    {
+      "lemma": "soften",
+      "currentGlosses": {
+        "tr": "yumuşamak",
+        "es-419": "ablandarse",
+        "pt-BR": "amolecer",
+        "id": "melunak",
+        "ar": "يلين",
+        "vi": "mềm đi",
+        "hi": "नरम होना",
+        "ru": "смягчаться",
+        "bn": "নরম হওয়া",
+        "ur": "نرم ہونا",
+        "th": "อ่อนลง"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-wolf-seven-kids",
+          "sentenceId": "cl-wolf-seven-kids-06",
+          "english": "The wolf ate chalk to soften his voice and tried again."
+        }
+      ]
+    },
+    {
+      "lemma": "stream",
+      "currentGlosses": {
+        "tr": "dere",
+        "es-419": "arroyo",
+        "pt-BR": "riacho",
+        "id": "sungai kecil",
+        "ar": "جدول",
+        "vi": "con suối",
+        "hi": "नाला",
+        "ru": "ручей",
+        "bn": "ঝরনা",
+        "ur": "ندی",
+        "th": "ลำธาร"
+      },
+      "englishContexts": [
+        "As the princess bent down to drink, she lost the cloth in a stream."
+      ]
+    },
+    {
+      "lemma": "wardrobe",
+      "currentGlosses": {
+        "tr": "gardırop",
+        "es-419": "armario",
+        "pt-BR": "guarda-roupa",
+        "id": "lemari pakaian",
+        "ar": "خزانة ملابس",
+        "vi": "tủ quần áo",
+        "hi": "अलमारी",
+        "ru": "гардероб",
+        "bn": "পোশাকের আলমারি",
+        "ur": "الماری",
+        "th": "ตู้เสื้อผ้า"
+      },
+      "englishContexts": [
+        {
+          "storyId": "classic-emperors-clothes",
+          "sentenceId": "cl-emperors-clothes-02",
+          "english": "He spent so much time changing outfits that people joked about his wardrobe."
+        }
+      ]
+    }
+  ]
+}

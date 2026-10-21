@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "lang": "tr",
- "policy": "Q4.3b drafts. Meanings come from a Claude session draft (source). An entry reaches the app only after a second model has cross-checked it (checkedBy) and, if the check disagreed (disputed), the owner has reviewed it (reviewed). The owner also reviews a random 10% sample (npm run glossary:sample) and the disputed entries (npm run glossary:disputed), then signs off by setting sampleApprovedBy; until then nothing ships. Learning words keep their own reviewed translations.",
+ "policy": "Q4.3b drafts. Meanings come from a Claude session draft (source). An entry reaches the app only after a second model has cross-checked it (checkedBy) and, if the check disagreed (disputed), the owner has reviewed it (reviewed). The owner also reviews a random 10% sample (npm run glossary:sample) and the disputed entries (npm run glossary:disputed), then signs off by setting sampleApprovedBy; until then nothing ships. Learning words keep their own reviewed translations. Later AI-supported sense expansions are tracked in correctionReview and docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md; they do not add human/native-speaker approval.",
  "forms": {
   "am": "be",
   "are": "be",
@@ -350,13 +350,22 @@
   },
   {
    "lemma": "against",
-   "gloss": "karşı",
+   "gloss": "karşı; -e (çarparak/dayanarak: duvara)",
    "occurrences": 3,
    "example": "Angry and frightened, she threw him against the wall.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "karşı",
+    "after": "karşı; -e (çarparak/dayanarak: duvara)",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "ago",
@@ -420,13 +429,22 @@
   },
   {
    "lemma": "allowed",
-   "gloss": "izin verdi",
+   "gloss": "izin verdi; izin verilmiş (izinli)",
    "occurrences": 1,
    "example": "On her fifteenth birthday, she was finally allowed to visit the surface.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "izin verdi",
+    "after": "izin verdi; izin verilmiş (izinli)",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "almost",
@@ -490,13 +508,22 @@
   },
   {
    "lemma": "amazed",
-   "gloss": "şaşkın",
+   "gloss": "şaşkın; şaşırttı, hayran bıraktı",
    "occurrences": 1,
    "example": "Their fine stitching amazed him.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "şaşkın",
+    "after": "şaşkın; şaşırttı, hayran bıraktı",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "amazing",
@@ -1219,16 +1246,25 @@
   },
   {
    "lemma": "blow",
-   "gloss": "darbe, vuruş",
+   "gloss": "darbe, vuruş; (rüzgâr) esmek, uçurmak",
    "occurrences": 4,
    "example": "Proud of himself, he made a belt that said, \"Seven at one blow.\"",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": true,
    "reviewed": true,
    "note": "noun sense in \"at one blow\"",
    "draftGloss": "üflemek; esmek",
-   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17",
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "darbe, vuruş",
+    "after": "darbe, vuruş; (rüzgâr) esmek, uçurmak",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "blue",
@@ -1432,13 +1468,22 @@
   },
   {
    "lemma": "burn",
-   "gloss": "yanmak",
+   "gloss": "yanmak; yakmak",
    "occurrences": 3,
    "example": "The nettles would burn her hands, and she must not speak until the work was finished.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "yanmak",
+    "after": "yanmak; yakmak",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "burnt",
@@ -1452,13 +1497,22 @@
   },
   {
    "lemma": "burst",
-   "gloss": "patlamak",
+   "gloss": "patlamak; (bir yere) hızla dalmak, girmek",
    "occurrences": 1,
    "example": "Together they made a terrible noise and burst through the window.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "patlamak",
+    "after": "patlamak; (bir yere) hızla dalmak, girmek",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "busy",
@@ -2048,13 +2102,22 @@
   },
   {
    "lemma": "companion",
-   "gloss": "yol arkadaşı",
+   "gloss": "arkadaş; yoldaş; yol arkadaşı",
    "occurrences": 2,
    "example": "His companion that evening had been his closest friend, Jimmy Wells.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "yol arkadaşı",
+    "after": "arkadaş; yoldaş; yol arkadaşı",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "compares",
@@ -2614,13 +2677,22 @@
   },
   {
    "lemma": "desperately",
-   "gloss": "çaresizce",
+   "gloss": "çaresizce; fena halde, son derece",
    "occurrences": 1,
    "example": "When winter came, she became cold and desperately hungry.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "çaresizce",
+    "after": "çaresizce; fena halde, son derece",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "despite",
@@ -2744,13 +2816,22 @@
   },
   {
    "lemma": "doorway",
-   "gloss": "kapı aralığı",
+   "gloss": "kapı girişi; kapı aralığı",
    "occurrences": 3,
    "example": "In a dark doorway, he noticed a man waiting with an unlit cigar.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "kapı aralığı",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md",
+    "after": "kapı girişi; kapı aralığı"
+   }
   },
   {
    "lemma": "dough",
@@ -2784,16 +2865,25 @@
   },
   {
    "lemma": "draw",
-   "gloss": "çekmek (kendine doğru)",
+   "gloss": "çekmek (kendine doğru); (bir yere/birine) çekmek, cezbetmek",
    "occurrences": 3,
    "example": "One morning, a bird's song drew him to the window.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": true,
    "reviewed": true,
    "note": "example 'drew him to the window' means attracted/pulled, not to sketch",
    "draftGloss": "çizmek",
-   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17"
+   "reviewedBy": "owner-accepted-crosscheck-suggestions-2026-10-17",
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "çekmek (kendine doğru)",
+    "after": "çekmek (kendine doğru); (bir yere/birine) çekmek, cezbetmek",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "drawing",
@@ -2827,13 +2917,22 @@
   },
   {
    "lemma": "dreams",
-   "gloss": "rüyalar; hayaller",
+   "gloss": "rüyalar; hayaller; rüya görür; hayal eder",
    "occurrences": 1,
    "example": "As she dreams, she moves her real head.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "rüyalar; hayaller",
+    "after": "rüyalar; hayaller; rüya görür; hayal eder",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "drink",
@@ -3083,13 +3182,22 @@
   },
   {
    "lemma": "end",
-   "gloss": "son",
+   "gloss": "son; bitmek, sona ermek",
    "occurrences": 6,
    "example": "They hurried to the station at the end of the village.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "son",
+    "after": "son; bitmek, sona ermek",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "endangering",
@@ -3796,13 +3904,22 @@
   },
   {
    "lemma": "firmly",
-   "gloss": "sıkıca",
+   "gloss": "sıkıca; sağlam bir şekilde",
    "occurrences": 1,
    "example": "Still, he stood as firmly as the others on his single leg.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "sıkıca",
+    "after": "sıkıca; sağlam bir şekilde",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "first",
@@ -4314,13 +4431,22 @@
   },
   {
    "lemma": "god",
-   "gloss": "tanrı",
+   "gloss": "tanrı; Tanrı (özel ad: God)",
    "occurrences": 3,
    "example": "God asked an angel to bring the two most precious things in the city.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "tanrı",
+    "after": "tanrı; Tanrı (özel ad: God)",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "going",
@@ -4777,13 +4903,22 @@
   },
   {
    "lemma": "hide",
-   "gloss": "saklanmak",
+   "gloss": "saklanmak; saklamak, gizlemek",
    "occurrences": 10,
    "example": "The mice run and hide in a hole.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "saklanmak",
+    "after": "saklanmak; saklamak, gizlemek",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "hill",
@@ -5127,13 +5262,22 @@
   },
   {
    "lemma": "injured",
-   "gloss": "yaralı",
+   "gloss": "yaralı; yaraladı (incitti)",
    "occurrences": 2,
    "example": "Each stepsister injured her foot to force it into the slipper.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "yaralı",
+    "after": "yaralı; yaraladı (incitti)",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "inside",
@@ -5576,13 +5720,22 @@
   },
   {
    "lemma": "lay",
-   "gloss": "yattı; koymak",
+   "gloss": "yattı; (içinde) duruyordu; koymak; yumurtlamak",
    "occurrences": 4,
    "example": "Inside it lay a photograph, a blue ribbon, and an envelope with no name on the front.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "yattı; koymak",
+    "after": "yattı; (içinde) duruyordu; koymak; yumurtlamak",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "leaned",
@@ -6665,13 +6818,22 @@
   },
   {
    "lemma": "officer",
-   "gloss": "memur; subay",
+   "gloss": "memur; subay; polis memuru",
    "occurrences": 2,
    "example": "After wishing him luck, the officer continued down the street.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "memur; subay",
+    "after": "memur; subay; polis memuru",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "official",
@@ -8772,13 +8934,22 @@
   },
   {
    "lemma": "soften",
-   "gloss": "yumuşamak",
+   "gloss": "yumuşamak; yumuşatmak",
    "occurrences": 2,
    "example": "The wolf ate chalk to soften his voice and tried again.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "yumuşamak",
+    "after": "yumuşamak; yumuşatmak",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "some",
@@ -8932,13 +9103,22 @@
   },
   {
    "lemma": "spills",
-   "gloss": "döker",
+   "gloss": "dökülür; döker",
    "occurrences": 1,
    "example": "All the milk spills out.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "döker",
+    "after": "dökülür; döker",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "spirit",
@@ -10592,13 +10772,22 @@
   },
   {
    "lemma": "wardrobe",
-   "gloss": "gardırop",
+   "gloss": "gardırop; (birinin) kıyafetleri",
    "occurrences": 1,
    "example": "He spent so much time changing outfits that people joked about his wardrobe.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "gardırop",
+    "after": "gardırop; (birinin) kıyafetleri",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md"
+   }
   },
   {
    "lemma": "warm",
@@ -10915,13 +11104,22 @@
   },
   {
    "lemma": "wicked",
-   "gloss": "kötü kalpli",
+   "gloss": "kötü kalpli; kötü, şeytani",
    "occurrences": 2,
    "example": "A wicked spirit made a mirror that turned beautiful things ugly and kindness into faults.",
    "source": "claude-draft-2026-10-16",
-   "checkedBy": "claude-sonnet-crosscheck-2026-10-16",
+   "checkedBy": "Claude context review and Codex source-sense adjudication (2026-10-20; AI review)",
    "disputed": false,
-   "reviewed": false
+   "reviewed": false,
+   "correctionReview": {
+    "date": "2026-10-20",
+    "before": "kötü kalpli",
+    "previousCheckedBy": "claude-sonnet-crosscheck-2026-10-16",
+    "method": "Claude context review + Codex adjudication + independent Claude regression audit",
+    "humanApproval": false,
+    "evidence": "docs/GLOSSARY_DEFERRED_RESOLUTION_2026-10-20.md",
+    "after": "kötü kalpli; kötü, şeytani"
+   }
   },
   {
    "lemma": "wife",
