@@ -6,12 +6,12 @@
     <string name="quiz_kind_main">مرکزی خیال</string>
     <string name="quiz_kind_detail">تفصیل</string>
     <string name="quiz_kind_inference">اندازہ</string>
-    <string name="quiz_check">چیک کریں۔</string>
+    <string name="quiz_check">چیک کریں</string>
     <string name="quiz_correct">درست!</string>
     <string name="quiz_incorrect">درست جواب: %1$s</string>
     <string name="quiz_next">اگلا سوال</string>
     <string name="quiz_finish">ختم کرنا</string>
     <string name="quiz_result">نتیجہ: ⁦%1$d/%2$d⁩</string>
     <string name="quiz_best">آپ کا بہترین نتیجہ: ⁦%1$d/%2$d⁩</string>
-    <string name="quiz_retry">دوبارہ کوشش کریں۔</string>
+    <string name="quiz_retry">دوبارہ کوشش کریں</string>
 </resources>

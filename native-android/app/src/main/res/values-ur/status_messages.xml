@@ -69,10 +69,10 @@
     <string name="write_error_pending_changes">کچھ تبدیلیاں ابھی تک محفوظ نہیں کی جا سکیں۔ ایپ کو بند کرنے یا اکاؤنٹس تبدیل کرنے سے پہلے دوبارہ کوشش کریں۔</string>
     <string name="write_error_snapshot">آپ کے ریکارڈز کو اسکرین پر لوڈ نہیں کیا جا سکا۔ منظر کو تازہ کرنے کے لیے دوبارہ کوشش کریں۔</string>
     <string name="content_message_refreshing">کہانیاں اپ ڈیٹ ہو رہی ہیں…</string>
-    <string name="content_message_up_to_date">کہانیاں تازہ ترین ہیں۔</string>
+    <string name="content_message_up_to_date">کہانیاں تازہ ترین ہیں</string>
     <string name="content_message_refresh_failed">کہانیوں کو اپ ڈیٹ نہیں کیا جا سکا۔ اس ڈیوائس پر کہانیاں دستیاب ہیں۔</string>
     <string name="content_message_downloading">کہانی ڈاؤن لوڈ ہو رہی ہے…</string>
-    <string name="content_message_downloaded">آف لائن پڑھنے کے لیے تیار ہیں۔</string>
+    <string name="content_message_downloaded">آف لائن پڑھنے کے لیے تیار ہیں</string>
     <string name="content_message_download_failed">ڈاؤن لوڈ مکمل نہیں ہو سکا۔ اپنا کنکشن چیک کریں اور دوبارہ کوشش کریں۔</string>
     <string name="content_message_download_removed">ڈاؤن لوڈ ہٹا دیا گیا۔ آپ کے سیکھے ہوئے الفاظ محفوظ ہیں۔</string>
     <string name="content_message_remove_failed">ڈاؤن لوڈ کو ہٹایا نہیں جا سکا۔ دوبارہ کوشش کریں۔</string>
@@ -85,7 +85,7 @@
     <string name="genre_adventure">ایڈونچر</string>
     <string name="genre_mystery">اسرار</string>
     <string name="reading_status_unread">ان پڑھ</string>
-    <string name="reading_status_in_progress">جاری ہے۔</string>
+    <string name="reading_status_in_progress">جاری ہے</string>
     <string name="reading_status_finished">ختم</string>
     <string name="ads_disabled_message">اس ورژن میں اشتہارات غیر فعال ہیں۔</string>
 </resources>

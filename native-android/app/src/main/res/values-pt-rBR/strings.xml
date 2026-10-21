@@ -8,7 +8,7 @@
     <string name="son_alinan_kayit">Último registro recebido: %1$s</string>
     <string name="kayit_gonderilmeyi_bekliyor">Registros %1$s aguardando envio.</string>
     <string name="kayit_icin_kontrol_gerekiyor_yerel">Os registros %1$s precisam ser verificados. Sua história local é mantida.</string>
-    <string name="eski_gecmisindeki_puan_bu_cihaza">Os pontos %1$s no seu histórico anterior pertencem a este dispositivo; eles não são movidos para outros dispositivos.</string>
+    <string name="eski_gecmisindeki_puan_bu_cihaza">Os %1$s pontos no seu histórico anterior pertencem a este dispositivo; eles não são movidos para outros dispositivos.</string>
     <string name="baska_cihazdaki_profil_tercihlerin_farkli">Suas preferências de perfil em outro dispositivo são diferentes. Quais preferências você deseja usar?</string>
     <string name="profil_tercihlerin_gonderilmeyi_bekliyor">Suas preferências de perfil estão aguardando para serem enviadas.</string>
     <string name="bu_cihazdaki_tercihleri_kullan">Use as preferências deste dispositivo</string>
@@ -142,9 +142,9 @@
     <string name="bilgi">%1$s: %2$s, informações</string>
     <string name="anladim">Entendi</string>
     <string name="su_an_gunluk_calisma_serin">Você tem uma sequência de estudos de %1$s dias. Terminar uma história ou prática registra o dia estudado. Estudar em dias consecutivos mantém a seqüência; apenas abrir o aplicativo não é suficiente.</string>
-    <string name="toplam_puanin_var_kelime_alistirmasindaki">Você tem pontos %1$s no total. Cada resposta correta na prática de palavras ganha 5 pontos. Gravar o mesmo estudo novamente não dá pontos duas vezes. Os pontos não são dinheiro ou energia gasta.</string>
+    <string name="toplam_puanin_var_kelime_alistirmasindaki">Você tem %1$s pontos no total. Cada resposta correta na prática de palavras ganha 5 pontos. Gravar o mesmo estudo novamente não dá pontos duas vezes. Os pontos não são dinheiro ou energia gasta.</string>
     <string name="okuyucu">Leitor %1$s</string>
-    <string name="puan_sonra_okuyucu">Leitor %2$s em pontos %1$s</string>
+    <string name="puan_sonra_okuyucu">Leitor %2$s com %1$s pontos</string>
     <string name="her_100_puan_bir_okuma">Cada 100 pontos é uma classificação de leitura. A classificação é separada do seu nível de inglês.</string>
     <string name="bugunku_planin">O plano de hoje</string>
     <string name="adim">Etapas %1$s / %2$s</string>
@@ -233,7 +233,7 @@
     <string name="temizle">Claro</string>
     <string name="her_denemede_ogreniyoruz">Cada tentativa nos ensina algo.</string>
     <string name="anladim_devam_et">Entendi, continue</string>
-    <string name="harika_puan_kazandin">⭐ Ótimo! Você ganhou pontos %1$s!</string>
+    <string name="harika_puan_kazandin">⭐ Ótimo! Você ganhou %1$s pontos!</string>
     <string name="calisma_tamamlandi">Prática concluída</string>
     <string name="gunluk_hedefin_tamamlandi">Sua meta diária foi concluída ✓</string>
     <string name="bugunku_hedef_adim">Meta de hoje: etapas %1$s / %2$s</string>

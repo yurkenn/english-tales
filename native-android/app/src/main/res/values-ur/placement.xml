@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="placement_title">فوری سطح کا ٹیسٹ</string>
-    <string name="placement_entry">فوری ٹیسٹ کے ساتھ میری سطح تلاش کریں۔</string>
+    <string name="placement_entry">فوری ٹیسٹ کے ساتھ میری سطح تلاش کریں</string>
     <string name="placement_intro">9 سوالات · تقریباً 2-3 منٹ</string>
     <string name="placement_explanation">آپ انگریزی کے مختصر جملے پڑھیں گے اور جوابات کا انتخاب کریں گے۔ آپ ان سوالات کو چھوڑ سکتے ہیں جو آپ نہیں جانتے ہیں۔ کوئی وقت کی حد نہیں ہے.</string>
     <string name="placement_scope">نتیجہ A1–B1 کہانیوں کے لیے ایک ابتدائی تجویز ہے۔ یہ سرکاری زبان کی مہارت کا نتیجہ نہیں ہے۔ آپ کے جوابات اس آلہ سے نہیں بھیجے گئے ہیں۔</string>
-    <string name="placement_start">ٹیسٹ شروع کریں۔</string>
-    <string name="placement_manual">میں اپنی سطح کا انتخاب خود کروں گا۔</string>
+    <string name="placement_start">ٹیسٹ شروع کریں</string>
+    <string name="placement_manual">میں اپنی سطح کا انتخاب خود کروں گا</string>
     <string name="placement_progress">سوال ⁦%1$d / %2$d⁩</string>
     <string name="placement_complete_sentence">جملہ مکمل کریں۔</string>
     <string name="placement_read_question">متن پڑھیں اور سوال کا جواب دیں۔</string>
@@ -21,5 +21,5 @@
     <string name="placement_cancel_title">ٹیسٹ چھوڑ دیں؟</string>
     <string name="placement_cancel_message">اس کوشش کے جوابات حذف کر دیے جائیں گے۔ آپ کی منتخب کردہ سطح تبدیل نہیں ہوگی۔</string>
     <string name="placement_cancel_confirm">ٹیسٹ چھوڑ دو</string>
-    <string name="placement_cancel_keep">ٹیسٹ پر واپس جائیں۔</string>
+    <string name="placement_cancel_keep">ٹیسٹ پر واپس جائیں</string>
 </resources>

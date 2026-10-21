@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="alert_dismiss">الرٹ کو برخاست کریں۔</string>
-    <string name="alert_word_saved">آپ کے الفاظ میں \"%1$s\" شامل کیا گیا۔</string>
-    <string name="alert_word_removed">آپ کے الفاظ سے \"%1$s\" ہٹا دیا گیا ہے۔</string>
-    <string name="alert_favorite_added">آپ کے پسندیدہ میں شامل کر دیا گیا۔</string>
-    <string name="alert_favorite_removed">آپ کے پسندیدہ سے ہٹا دیا گیا۔</string>
-    <string name="alert_settings_saved">آپ کی ترتیبات محفوظ ہو گئی تھیں۔</string>
+    <string name="alert_dismiss">الرٹ کو برخاست کریں</string>
+    <string name="alert_word_saved">آپ کے الفاظ میں \"%1$s\" شامل کیا گیا</string>
+    <string name="alert_word_removed">آپ کے الفاظ سے \"%1$s\" ہٹا دیا گیا ہے</string>
+    <string name="alert_favorite_added">آپ کے پسندیدہ میں شامل کر دیا گیا</string>
+    <string name="alert_favorite_removed">آپ کے پسندیدہ سے ہٹا دیا گیا</string>
+    <string name="alert_settings_saved">آپ کی ترتیبات محفوظ ہو گئی تھیں</string>
     <string name="alert_daily_goal">آپ اپنے روزانہ کے ہدف تک پہنچ گئے۔ بہت اچھا کام!</string>
     <string name="alert_streak">آپ نے مسلسل %1$d دن سیکھا ہے! اسے جاری رکھنے کے لیے کل دوبارہ آئیں۔</string>
-    <string name="alert_reminder_on">ہر روز %1$s کے لیے یاد دہانی سیٹ کی جاتی ہے۔</string>
-    <string name="alert_reminder_off">یاد دہانی بند کر دی گئی۔</string>
+    <string name="alert_reminder_on">ہر روز %1$s کے لیے یاد دہانی سیٹ کی جاتی ہے</string>
+    <string name="alert_reminder_off">یاد دہانی بند کر دی گئی</string>
     <string name="alert_reminder_denied">یاد دہانی اطلاع کی اجازت کے بغیر کام نہیں کر سکتی</string>
-    <string name="alert_write_recovered">آپ کے زیر التواء ریکارڈ محفوظ ہو گئے تھے۔</string>
+    <string name="alert_write_recovered">آپ کے زیر التواء ریکارڈ محفوظ ہو گئے تھے</string>
     <string name="alert_link_failed">لنک نہیں کھول سکا</string>
     <string name="alert_quiz_perfect">سب درست! آپ نے کہانی اچھی طرح سمجھ لی۔</string>
     <string name="feedback_correct_title">درست!</string>
