@@ -50,4 +50,25 @@
     <string name="league_nickname_text">Hiện mọi người đều hiển thị là \"Okuyucu\". Không cần tên thật, biệt danh là đủ.</string>
     <string name="league_nickname_field">Biệt danh</string>
     <string name="league_nickname_save">Lưu</string>
+    <string name="league_tab_league">Giải</string>
+    <string name="friends_tab">Bạn bè</string>
+    <string name="friends_failed">Không tải được danh sách bạn bè.</string>
+    <string name="friends_code_title">Mã mời của bạn</string>
+    <string name="friends_code_text">Chia sẻ mã; khi bạn bè thêm mã, hai bạn cùng đua XP tuần này.</string>
+    <string name="friends_code_create">Tạo mã mời</string>
+    <string name="friends_share">Chia sẻ</string>
+    <string name="friends_share_text">Thi đấu với mình trên English Tales nhé! Tải ứng dụng và nhập mã %1$s ở thẻ Bạn bè: %2$s</string>
+    <string name="friends_add_field">Mã của bạn bè</string>
+    <string name="friends_add">Thêm</string>
+    <string name="friends_error_unknown">Không có người đọc nào có mã này.</string>
+    <string name="friends_error_self">Đây là mã của chính bạn.</string>
+    <string name="friends_error_limit">Đã đạt giới hạn bạn bè (50).</string>
+    <string name="friends_error_generic">Không kết nối được, hãy thử lại.</string>
+    <string name="friends_empty">Chưa có bạn bè. Hãy chia sẻ mã hoặc thêm mã của bạn bè.</string>
+    <string name="friends_week_note">Xếp hạng theo XP giải tuần này, đặt lại mỗi thứ Hai.</string>
+    <string name="report_name_title">Báo cáo tên</string>
+    <string name="report_name_text">Tên \"%1$s\" không phù hợp? Sau khi báo cáo, bạn sẽ không thấy tên này nữa.</string>
+    <string name="report_name_confirm">Báo cáo</string>
+    <string name="report_name_action">Báo cáo tên</string>
+    <string name="friends_remove">Xóa bạn</string>
 </resources>

@@ -50,4 +50,25 @@
     <string name="league_nickname_text">এখন সবাই \"Okuyucu\" নামে দেখায়। আসল নাম লাগবে না, ডাকনামই যথেষ্ট।</string>
     <string name="league_nickname_field">ডাকনাম</string>
     <string name="league_nickname_save">সংরক্ষণ</string>
+    <string name="league_tab_league">লিগ</string>
+    <string name="friends_tab">বন্ধুরা</string>
+    <string name="friends_failed">বন্ধুদের তালিকা লোড করা যায়নি।</string>
+    <string name="friends_code_title">আপনার আমন্ত্রণ কোড</string>
+    <string name="friends_code_text">কোড শেয়ার করুন; বন্ধু যোগ করলে এই সপ্তাহের XP-তে একসাথে প্রতিযোগিতা করবেন।</string>
+    <string name="friends_code_create">আমন্ত্রণ কোড তৈরি করুন</string>
+    <string name="friends_share">শেয়ার করুন</string>
+    <string name="friends_share_text">English Tales-এ আমার সাথে প্রতিযোগিতা করো! অ্যাপটি নামাও আর বন্ধুরা ট্যাবে %1$s কোডটি দাও: %2$s</string>
+    <string name="friends_add_field">বন্ধুর কোড</string>
+    <string name="friends_add">যোগ করুন</string>
+    <string name="friends_error_unknown">এই কোডের কোনো পাঠক পাওয়া যায়নি।</string>
+    <string name="friends_error_self">এটি আপনার নিজের কোড।</string>
+    <string name="friends_error_limit">বন্ধুর সীমা (50) পূর্ণ হয়েছে।</string>
+    <string name="friends_error_generic">সংযোগ করা যায়নি, আবার চেষ্টা করুন।</string>
+    <string name="friends_empty">এখনো কোনো বন্ধু নেই। আপনার কোড শেয়ার করুন বা বন্ধুর কোড যোগ করুন।</string>
+    <string name="friends_week_note">এই সপ্তাহের লিগ XP অনুযায়ী র‍্যাঙ্কিং, প্রতি সোমবার নতুন করে শুরু হয়।</string>
+    <string name="report_name_title">নাম রিপোর্ট করুন</string>
+    <string name="report_name_text">\"%1$s\" নামটি কি অনুপযুক্ত? রিপোর্ট করলে নামটি আর দেখবেন না।</string>
+    <string name="report_name_confirm">রিপোর্ট করুন</string>
+    <string name="report_name_action">নাম রিপোর্ট করুন</string>
+    <string name="friends_remove">বন্ধু সরান</string>
 </resources>

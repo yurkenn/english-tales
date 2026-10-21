@@ -63,4 +63,18 @@ class LeagueStandingTest {
         assertNull(LearningReminders.leagueLine(context, LearningOwner.Account(owner), now = Instant.parse("2026-10-27T00:00:00Z").toEpochMilli()))
         assertNull(LearningReminders.leagueLine(context, LearningOwner.Guest))
     }
+    @Test fun friendListKeepsValidCodesAndMemberTokens() {
+        val rows = JSONArray(listOf(member(1, 60, me = true), member(2, 40).put("id", "0123456789abcdef0123"), member(3, 0).put("id", "not-a-token")))
+        val list = FriendList.parse(JSONObject().put("code", "AB2C9Z").put("weekStart", "2026-10-19").put("friends", rows))
+        assertEquals("AB2C9Z", list.code)
+        assertEquals(listOf("", "0123456789abcdef0123", ""), list.members.map { it.id })
+        assertNull(FriendList.parse(JSONObject().put("code", JSONObject.NULL).put("friends", JSONArray())).code)
+        assertNull(FriendList.parse(JSONObject().put("code", "AB0CDE").put("friends", JSONArray())).code)
+    }
+
+    @Test fun typedInviteCodesForgiveCaseAndSpaces() {
+        assertEquals("AB2C9Z", FriendList.normalizeCode(" ab2-c9z "))
+        assertEquals("ABCDEF", FriendList.normalizeCode("abcdefgh"))
+        assertEquals("ABC", FriendList.normalizeCode("aOb1cI"))
+    }
 }

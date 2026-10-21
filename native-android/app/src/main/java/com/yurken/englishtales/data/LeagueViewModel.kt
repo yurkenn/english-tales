@@ -18,6 +18,14 @@ sealed interface LeagueUi {
     data object Failed : LeagueUi
 }
 
+/** The friends tab; [error] is a SQLSTATE from the last add (P0002 unknown code, 22023 own code, 54000 limit). */
+sealed interface FriendsUi {
+    data object Unavailable : FriendsUi
+    data object Loading : FriendsUi
+    data class Ready(val list: FriendList, val busy: Boolean = false, val error: String? = null) : FriendsUi
+    data object Failed : FriendsUi
+}
+
 class LeagueViewModel internal constructor(application: Application, private val service: LeagueService?) : AndroidViewModel(application) {
     constructor(application: Application) : this(application,
         if (LearningSyncRuntime.configured()) LeagueService(LearningSyncHttp(BuildConfig.SUPABASE_URL, BuildConfig.SUPABASE_PUBLISHABLE_KEY), LearningSyncRuntime.accounts(application)) else null)
@@ -45,6 +53,44 @@ class LeagueViewModel internal constructor(application: Application, private val
             // A server without the league functions yet (404) hides the card instead of showing an error.
             mutableState.value = result.fold({ LeagueUi.Ready(it) }, {
                 if ((it as? LearningSyncFailure)?.status == 404) LeagueUi.Unavailable else previous?.copy(busy = false) ?: LeagueUi.Failed
+            })
+        }
+    }
+
+    private val mutableFriends = MutableStateFlow<FriendsUi>(if (service == null) FriendsUi.Unavailable else FriendsUi.Loading)
+    val friends: StateFlow<FriendsUi> = mutableFriends
+    @Volatile private var friendRequest = 0L
+
+    fun refreshFriends(userId: String?) = friendsRun(userId) { service, id -> service.friends(id) }
+    fun createCode(userId: String?) = friendsRun(userId) { service, id -> service.createCode(id) }
+    fun addFriend(userId: String?, code: String) = friendsRun(userId) { service, id -> service.addFriend(id, FriendList.normalizeCode(code)) }
+    fun removeFriend(userId: String?, member: String) = friendsRun(userId) { service, id -> service.removeFriend(id, member) }
+
+    /** Reports a name, then reloads both lists so it disappears for this learner at once. */
+    fun reportName(userId: String?, member: String) {
+        val service = service ?: return
+        if (userId == null || member.isEmpty()) return
+        viewModelScope.launch(Dispatchers.IO) {
+            if (runCatching { service.reportName(userId, member) }.isSuccess) { refresh(userId); refreshFriends(userId) }
+        }
+    }
+
+    private fun friendsRun(userId: String?, action: (LeagueService, String) -> FriendList) {
+        val service = service ?: return
+        val request = ++friendRequest
+        if (userId == null) { mutableFriends.value = FriendsUi.Unavailable; return }
+        val previous = mutableFriends.value as? FriendsUi.Ready
+        mutableFriends.value = previous?.copy(busy = true, error = null) ?: FriendsUi.Loading
+        viewModelScope.launch(Dispatchers.IO) {
+            val result = runCatching { action(service, userId) }
+            if (friendRequest != request) return@launch
+            mutableFriends.value = result.fold({ FriendsUi.Ready(it) }, {
+                val failure = it as? LearningSyncFailure
+                when {
+                    failure?.status == 404 -> FriendsUi.Unavailable
+                    previous != null -> previous.copy(busy = false, error = failure?.code ?: "network")
+                    else -> FriendsUi.Failed
+                }
             })
         }
     }

@@ -50,4 +50,25 @@
     <string name="league_nickname_text">يظهر الجميع حاليًا باسم \"Okuyucu\". لا حاجة لاسمك الحقيقي، يكفي لقب.</string>
     <string name="league_nickname_field">اللقب</string>
     <string name="league_nickname_save">حفظ</string>
+    <string name="league_tab_league">الدوري</string>
+    <string name="friends_tab">الأصدقاء</string>
+    <string name="friends_failed">تعذّر تحميل قائمة الأصدقاء.</string>
+    <string name="friends_code_title">رمز الدعوة الخاص بك</string>
+    <string name="friends_code_text">شارك رمزك؛ عندما يضيفه صديقك تتنافسان على نقاط XP هذا الأسبوع.</string>
+    <string name="friends_code_create">إنشاء رمز دعوة</string>
+    <string name="friends_share">مشاركة</string>
+    <string name="friends_share_text">نافسني في English Tales! نزّل التطبيق وأدخل الرمز %1$s في تبويب الأصدقاء: %2$s</string>
+    <string name="friends_add_field">رمز صديقك</string>
+    <string name="friends_add">إضافة</string>
+    <string name="friends_error_unknown">لا يوجد قارئ بهذا الرمز.</string>
+    <string name="friends_error_self">هذا رمزك أنت.</string>
+    <string name="friends_error_limit">وصلت إلى الحد الأقصى للأصدقاء (50).</string>
+    <string name="friends_error_generic">تعذّر الاتصال، حاول مرة أخرى.</string>
+    <string name="friends_empty">لا أصدقاء بعد. شارك رمزك أو أضف رمز صديق.</string>
+    <string name="friends_week_note">الترتيب حسب نقاط XP الدوري لهذا الأسبوع، ويُعاد كل يوم اثنين.</string>
+    <string name="report_name_title">الإبلاغ عن الاسم</string>
+    <string name="report_name_text">هل الاسم \"%1$s\" غير لائق؟ بعد الإبلاغ لن يظهر لك مرة أخرى.</string>
+    <string name="report_name_confirm">إبلاغ</string>
+    <string name="report_name_action">الإبلاغ عن الاسم</string>
+    <string name="friends_remove">إزالة الصديق</string>
 </resources>

@@ -50,4 +50,25 @@
     <string name="league_nickname_text">ตอนนี้ทุกคนแสดงเป็น \"Okuyucu\" ไม่ต้องใช้ชื่อจริง ใช้ชื่อเล่นก็ได้</string>
     <string name="league_nickname_field">ชื่อเล่น</string>
     <string name="league_nickname_save">บันทึก</string>
+    <string name="league_tab_league">ลีก</string>
+    <string name="friends_tab">เพื่อน</string>
+    <string name="friends_failed">โหลดรายชื่อเพื่อนไม่ได้</string>
+    <string name="friends_code_title">รหัสเชิญของคุณ</string>
+    <string name="friends_code_text">แชร์รหัสของคุณ เมื่อเพื่อนเพิ่มแล้ว จะได้แข่ง XP สัปดาห์นี้ด้วยกัน</string>
+    <string name="friends_code_create">สร้างรหัสเชิญ</string>
+    <string name="friends_share">แชร์</string>
+    <string name="friends_share_text">มาแข่งกับฉันใน English Tales! ดาวน์โหลดแอปแล้วใส่รหัส %1$s ในแท็บเพื่อน: %2$s</string>
+    <string name="friends_add_field">รหัสของเพื่อน</string>
+    <string name="friends_add">เพิ่ม</string>
+    <string name="friends_error_unknown">ไม่พบผู้อ่านที่ใช้รหัสนี้</string>
+    <string name="friends_error_self">นี่คือรหัสของคุณเอง</string>
+    <string name="friends_error_limit">ครบจำนวนเพื่อนสูงสุด (50) แล้ว</string>
+    <string name="friends_error_generic">เชื่อมต่อไม่ได้ ลองอีกครั้ง</string>
+    <string name="friends_empty">ยังไม่มีเพื่อน แชร์รหัสของคุณหรือเพิ่มรหัสของเพื่อน</string>
+    <string name="friends_week_note">จัดอันดับตาม XP ลีกของสัปดาห์นี้ รีเซ็ตทุกวันจันทร์</string>
+    <string name="report_name_title">รายงานชื่อ</string>
+    <string name="report_name_text">ชื่อ \"%1$s\" ไม่เหมาะสมหรือไม่? เมื่อรายงานแล้วคุณจะไม่เห็นชื่อนี้อีก</string>
+    <string name="report_name_confirm">รายงาน</string>
+    <string name="report_name_action">รายงานชื่อ</string>
+    <string name="friends_remove">ลบเพื่อน</string>
 </resources>

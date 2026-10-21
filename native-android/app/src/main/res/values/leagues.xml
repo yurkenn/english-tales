@@ -50,4 +50,25 @@
     <string name="league_nickname_text">Herkes şimdilik \"Okuyucu\" görünüyor. Gerçek adını yazmak zorunda değilsin, bir takma ad yeter.</string>
     <string name="league_nickname_field">Takma ad</string>
     <string name="league_nickname_save">Kaydet</string>
+    <string name="league_tab_league">Lig</string>
+    <string name="friends_tab">Arkadaşlar</string>
+    <string name="friends_failed">Arkadaş listesi yüklenemedi.</string>
+    <string name="friends_code_title">Davet kodun</string>
+    <string name="friends_code_text">Kodunu paylaş; arkadaşın eklediğinde bu haftanın XP\'sinde birlikte yarışırsınız.</string>
+    <string name="friends_code_create">Davet kodu oluştur</string>
+    <string name="friends_share">Paylaş</string>
+    <string name="friends_share_text">English Tales\'te benimle yarış! Uygulamayı indir, Arkadaşlar sekmesinde %1$s kodunu gir: %2$s</string>
+    <string name="friends_add_field">Arkadaşının kodu</string>
+    <string name="friends_add">Ekle</string>
+    <string name="friends_error_unknown">Bu kodla bir okuyucu bulunamadı.</string>
+    <string name="friends_error_self">Bu senin kendi kodun.</string>
+    <string name="friends_error_limit">Arkadaş sınırına (50) ulaşıldı.</string>
+    <string name="friends_error_generic">Bağlantı kurulamadı, tekrar dene.</string>
+    <string name="friends_empty">Henüz arkadaşın yok. Kodunu paylaş ya da bir arkadaşının kodunu ekle.</string>
+    <string name="friends_week_note">Sıralama bu haftanın lig XP\'sine göre yapılır ve her pazartesi sıfırlanır.</string>
+    <string name="report_name_title">Adı bildir</string>
+    <string name="report_name_text">\"%1$s\" adı uygunsuz mu? Bildirdiğinde bu ad sana artık gösterilmez.</string>
+    <string name="report_name_confirm">Bildir</string>
+    <string name="report_name_action">Adı bildir</string>
+    <string name="friends_remove">Arkadaşlıktan çıkar</string>
 </resources>
