@@ -59,12 +59,7 @@ fun SentenceGapGame(
     LaunchedEffect(index) {scroll.scrollTo(0)}
     Column(Modifier.fillMaxSize().padding(padding).background(TaleBackground).verticalScroll(scroll).padding(16.dp),
         verticalArrangement=Arrangement.spacedBy(14.dp)) {
-        Row(verticalAlignment=Alignment.CenterVertically) {
-            ReferenceIconButton("back",stringResource(R.string.gap_exit),onExit)
-            Text(stringResource(R.string.gap_progress,index+1,questions.size),modifier=Modifier.weight(1f),style=MaterialTheme.typography.titleMedium)
-            ComboBadge()
-        }
-        QuizProgress(index.toFloat()/questions.size)
+        QuizHeader(index,questions.size,stringResource(R.string.gap_exit),onExit)
         Text(stringResource(R.string.gap_instruction),style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.Bold)
         // A title such as 'The Fox and the Grapes' must not give away the missing word.
         Text(if(checked) stringResource(R.string.gap_source,prompt.storyTitle,prompt.level) else stringResource(R.string.gap_source_pending,prompt.level),
@@ -79,8 +74,7 @@ fun SentenceGapGame(
             }
         }
         AnswerFeedback(checked,correct,if(correct) stringResource(R.string.gap_correct) else stringResource(R.string.gap_incorrect,englishArgument(prompt.answer)))
-        Button(enabled=selected!=null && !advanced,modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp),
-            colors=if(checked && correct) ButtonDefaults.buttonColors(containerColor=TaleSuccess,contentColor=TaleSurface) else ButtonDefaults.buttonColors(),onClick={
+        QuizCheckButton(selected!=null && !advanced,checked,correct,index==questions.lastIndex,onClick={
             if(!checked) {checked=true;combo.record(correct)}
             else if(!advanced) {
                 advanced=true
@@ -88,6 +82,6 @@ fun SentenceGapGame(
                 if(correct) correctCount++
                 if(index==questions.lastIndex) onComplete(correctCount) else index++
             }
-        }) { Text(stringResource(if(!checked) R.string.gap_check else if(index==questions.lastIndex) R.string.gap_finish else R.string.gap_next)) }
+        })
     }
 }

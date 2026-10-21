@@ -44,12 +44,7 @@ fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: Pad
     LaunchedEffect(index) {scroll.scrollTo(0)}
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(scroll).centeredWidth(ContentWidth).padding(16.dp),
         verticalArrangement=Arrangement.spacedBy(14.dp)) {
-        Row(verticalAlignment=Alignment.CenterVertically) {
-            ReferenceIconButton("back",stringResource(R.string.gap_exit),onExit)
-            Text(stringResource(R.string.gap_progress,index+1,questions.size),modifier=Modifier.weight(1f),style=MaterialTheme.typography.titleMedium)
-            ComboBadge()
-        }
-        QuizProgress(index.toFloat()/questions.size)
+        QuizHeader(index,questions.size,stringResource(R.string.gap_exit),onExit)
         Text(stringResource(R.string.order_instruction),style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.Bold)
         Text(stringResource(R.string.order_source,question.storyTitle,question.level),style=MaterialTheme.typography.bodyMedium,color=TaleMuted)
         Text(stringResource(R.string.order_hint,question.translation),style=MaterialTheme.typography.bodyLarge,color=TaleBlue)
@@ -74,14 +69,13 @@ fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: Pad
         }
         }
         AnswerFeedback(checked,correct,if(correct) stringResource(R.string.order_correct,englishArgument(question.sentence)) else stringResource(R.string.order_incorrect,englishArgument(question.sentence)))
-        Button(enabled=chosen.size==question.tiles.size && !advanced,modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp),
-            colors=if(checked && correct) ButtonDefaults.buttonColors(containerColor=TaleSuccess,contentColor=TaleSurface) else ButtonDefaults.buttonColors(),onClick={
+        QuizCheckButton(chosen.size==question.tiles.size && !advanced,checked,correct,index==questions.lastIndex,onClick={
             if(!checked) {checked=true;combo.record(correct)}
             else if(!advanced) {
                 advanced=true
                 if(correct) correctCount++
                 if(index==questions.lastIndex) onComplete(correctCount) else index++
             }
-        }) { Text(stringResource(if(!checked) R.string.gap_check else if(index==questions.lastIndex) R.string.gap_finish else R.string.gap_next)) }
+        })
     }
 }
