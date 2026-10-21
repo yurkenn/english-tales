@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">लगातार %1$d सही</string>
+    <string name="combo_cheer_3">बढ़िया!</string>
+    <string name="combo_cheer_5">आग लगा दी!</string>
+    <string name="combo_cheer_8">अब कोई नहीं रोक सकता!</string>
+    <string name="result_stars">3 में से %1$d सितारे</string>
+    <string name="result_perfect">परफ़ेक्ट राउंड!</string>
+    <string name="result_accuracy">सटीकता</string>
+    <string name="result_best_combo">सबसे लंबा कॉम्बो</string>
+    <string name="match_new_record">नया रिकॉर्ड: %1$s</string>
+    <string name="match_time">समय: %1$s · आपका रिकॉर्ड: %2$s</string>
+    <string name="card_swipe_hint">दाईं ओर स्वाइप: मुझे आता है · बाईं ओर: फिर से</string>
+    <string name="card_stamp_known">आता है</string>
+    <string name="card_stamp_again">फिर से</string>
+    <string name="quests_title">रोज़ के मिशन</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">अपना रोज़ का लक्ष्य पूरा करें</string>
+    <string name="quest_story">एक कहानी पूरी करें</string>
+    <string name="quest_combo">लगातार %1$d सही जवाब दें</string>
+    <string name="quests_chest_locked">संदूक खोलने के लिए तीनों मिशन पूरे करें।</string>
+    <string name="quests_chest_ready">संदूक तैयार है! खोलने के लिए टैप करें।</string>
+    <string name="quests_chest_opened">आज का संदूक खुल गया। कल नए मिशन आएँगे।</string>
+    <string name="quests_reward_title">सारे मिशन पूरे!</string>
+    <string name="quests_reward_text">जिन दिनों आपने सारे मिशन पूरे किए: %1$d। कल नए मिशन के साथ मिलते हैं।</string>
+    <string name="streak_milestone_title">%1$d दिन की लड़ी!</string>
+    <string name="streak_milestone_text">आप हर दिन लौटे और लौ बढ़ती गई। कल थोड़ा पढ़ना या दोहराना इसे जारी रखेगा।</string>
+    <string name="reminder_streak_title">आपकी %1$d दिन की लड़ी ख़तरे में है</string>
+    <string name="reminder_streak_text">लड़ी बचाने के लिए छोटा-सा दोहराव काफ़ी है।</string>
+</resources>

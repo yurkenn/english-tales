@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">%1$d câu đúng liên tiếp</string>
+    <string name="combo_cheer_3">Tuyệt!</string>
+    <string name="combo_cheer_5">Đang bùng cháy!</string>
+    <string name="combo_cheer_8">Không thể cản!</string>
+    <string name="result_stars">%1$d trên 3 sao</string>
+    <string name="result_perfect">Vòng hoàn hảo!</string>
+    <string name="result_accuracy">Độ chính xác</string>
+    <string name="result_best_combo">Chuỗi dài nhất</string>
+    <string name="match_new_record">Kỷ lục mới: %1$s</string>
+    <string name="match_time">Thời gian: %1$s · Kỷ lục của bạn: %2$s</string>
+    <string name="card_swipe_hint">Vuốt phải: đã biết · Vuốt trái: ôn lại</string>
+    <string name="card_stamp_known">ĐÃ BIẾT</string>
+    <string name="card_stamp_again">ÔN LẠI</string>
+    <string name="quests_title">Nhiệm vụ hằng ngày</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">Đạt mục tiêu hằng ngày</string>
+    <string name="quest_story">Đọc xong một truyện</string>
+    <string name="quest_combo">Trả lời đúng %1$d câu liên tiếp</string>
+    <string name="quests_chest_locked">Hoàn thành cả ba nhiệm vụ để mở rương.</string>
+    <string name="quests_chest_ready">Rương đã sẵn sàng! Chạm để mở.</string>
+    <string name="quests_chest_opened">Rương hôm nay đã mở. Ngày mai có nhiệm vụ mới.</string>
+    <string name="quests_reward_title">Đã xong mọi nhiệm vụ!</string>
+    <string name="quests_reward_text">Số ngày bạn hoàn thành mọi nhiệm vụ: %1$d. Hẹn gặp ngày mai với nhiệm vụ mới.</string>
+    <string name="streak_milestone_title">Chuỗi %1$d ngày!</string>
+    <string name="streak_milestone_text">Bạn quay lại mỗi ngày và ngọn lửa lớn dần. Ngày mai, một bài đọc hay ôn tập ngắn sẽ giữ chuỗi.</string>
+    <string name="reminder_streak_title">Chuỗi %1$d ngày của bạn sắp mất</string>
+    <string name="reminder_streak_text">Một lần ôn tập ngắn là đủ để giữ chuỗi.</string>
+</resources>

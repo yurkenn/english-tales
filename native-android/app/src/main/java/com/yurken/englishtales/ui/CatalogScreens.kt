@@ -102,7 +102,9 @@ fun StudyScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, onOpe
         StatsHeader(snapshot)
         Spacer(Modifier.height(15.dp))
         DailyPlan(snapshot,onRead,onPractice)
-        Spacer(Modifier.height(20.dp))
+        Spacer(Modifier.height(16.dp))
+        DailyQuestsCard(snapshot,Modifier.padding(horizontal=16.dp).appearIn(2))
+        Spacer(Modifier.height(16.dp))
         // A card-like row instead of a bare outlined button, with the count as a badge.
         Row(Modifier.padding(horizontal=16.dp).fillMaxWidth().appearIn(2).heightIn(min=56.dp).background(TaleSurface,RoundedCornerShape(16.dp)).border(1.dp,TaleLine,RoundedCornerShape(16.dp))
             .pressScale(onClick=onOpenWords).padding(horizontal=14.dp,vertical=10.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)) {

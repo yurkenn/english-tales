@@ -36,6 +36,18 @@ private const val VOICE_PROBE_WAIT_MS=2_000L
 
 @Composable
 fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit={}, launchId: String?=null, launchWordIds: List<String> = emptyList(), onLaunchConsumed: ()->Unit={}, onDailyPlan: ()->Unit={},onCompletedExit: (String,()->Boolean,()->Unit)->Unit={_,active,next ->if(active()) next()}) {
+    // One combo per session: games record their checked answers, the result screen and today's quest read the best run.
+    val combo=rememberSaveable(saver=ComboState.Saver) {ComboState()}
+    val context=androidx.compose.ui.platform.LocalContext.current
+    LaunchedEffect(combo.best,snapshot.ownerId) {if(combo.best>0) GameRecords.noteCombo(context,snapshot.ownerId,combo.best)}
+    CompositionLocalProvider(LocalCombo provides combo) {
+        PracticeSession(snapshot,onLessonComplete,onWordReviewed,padding,onSessionStart,onCheckpoint,onSessionAbandoned,onSessionActive,launchId,launchWordIds,onLaunchConsumed,onDailyPlan,onCompletedExit)
+    }
+}
+
+@Composable
+private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,String,String,Int,Long)->Unit,onWordReviewed: (String,Boolean)->Unit,padding: PaddingValues,onSessionStart: (String,String,Int)->Unit,onCheckpoint: (String,Long)->Unit,onSessionAbandoned: (String)->Unit,onSessionActive: (Boolean)->Unit, launchId: String?, launchWordIds: List<String>, onLaunchConsumed: ()->Unit, onDailyPlan: ()->Unit,onCompletedExit: (String,()->Boolean,()->Unit)->Unit) {
+    val combo=LocalCombo.current
     val saved=snapshot.savedWordList()
     val supplemental=LearningContent.words.filter {it.id !in snapshot.savedWordIds}
     var mode by rememberSaveable { mutableStateOf("") }
@@ -103,7 +115,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         if(sessionKey.isNotEmpty()) onSessionAbandoned(sessionKey)
         val sentenceMode=value=="cloze" || value=="order" || value=="dictation"
         if(!sentenceMode && pool.isEmpty()) {if(mode.isNotEmpty()) exit();return}
-        session++; ids=drawn;mode=value;question=0;correctCount=0;finished=false
+        session++; ids=drawn;mode=value;question=0;correctCount=0;finished=false;combo.reset()
         // Q5.8: each word gets the drill that fits its stage, and the session climbs from word drills to games.
         if(value=="ladder") {
             val plan=PracticeLadder.plan(ids,snapshot.wordStates,snapshot.wordStability,candidates.map {it.prompt.wordId}.toSet(),voiceReady)
@@ -172,7 +184,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
     val complete: (Int)->Unit = {finished=true;onLessonComplete(it.coerceIn(0,count),sessionKey,sessionKind,count,timer.pause())}
     if(mode=="card") { FlashcardGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit()},{start("card")},snapshot,onDone={exit(true)});return }
     if(mode=="match") { MatchingGame(words,session,snapshot.savedWordIds,padding,onWordReviewed,complete,{exit()},{start("match")},snapshot,onDone={exit(true)});return }
-    if(finished) { GameResult(stringResource(R.string.dogru, correctCount, count),correctCount*5,padding,{exit(true)},{start(mode)},snapshot);return }
+    if(finished) { GameResult(stringResource(R.string.dogru, correctCount, count),correctCount*5,padding,{exit(true)},{start(mode)},snapshot,correct=correctCount,total=count);return }
     if(mode=="listen") {
         ListeningGame(listenQuestions,session,padding,onAnswer={id,correct -> if(id in snapshot.savedWordIds) onWordReviewed(id,correct)},
             onComplete={correctCount=it;complete(it)},onExit={exit()})
@@ -235,6 +247,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
         GameHeader((question+1).toFloat()/(if(mode=="ladder") ladderModes.count(PracticeLadder::isWordDrill).coerceAtLeast(1) else words.size)) {exit()}
         Row(Modifier.fillMaxWidth().padding(vertical=8.dp),verticalAlignment=Alignment.CenterVertically) {
             Text(if(drill=="choice") stringResource(R.string.bir_ceviri_secin) else stringResource(R.string.kelimeyi_olustur_2),fontSize=16.sp,fontWeight=FontWeight.Bold,modifier=Modifier.weight(1f))
+            ComboBadge(Modifier.padding(end=8.dp))
             TalesMascot(if(answer!=null && !correct) MascotMood.Support else MascotMood.Thinking,Modifier.size(52.dp))
         }
         Box(Modifier.fillMaxWidth().weight(if(drill=="choice") 1f else 0.6f).background(TalePanel,RoundedCornerShape(12.dp)),contentAlignment=Alignment.Center) {
@@ -244,7 +257,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
             Spacer(Modifier.height(8.dp))
             options.forEachIndexed { i,option ->
                 // The right translation lights up green as soon as any choice is made.
-                AnswerOption(option,answer==option,optionState(answer==option,answer!=null,option==word.translation),answer==null,{answer=option},Modifier.appearIn(i))
+                AnswerOption(option,answer==option,optionState(answer==option,answer!=null,option==word.translation),answer==null,{answer=option;combo.record(option==word.translation)},Modifier.appearIn(i))
             }
         } else {
             Box(Modifier.weight(1f).fillMaxWidth(),contentAlignment=Alignment.Center) {
@@ -259,7 +272,7 @@ fun PracticeScreen(snapshot: LearningSnapshot,onLessonComplete: (Int,String,Stri
                 letters.forEachIndexed { i,c ->
                     val used=i in chosen
                     val tileAlpha by animateFloatAsState(if(used) 0.35f else 1f,label="tile")
-                    Box(Modifier.padding(3.dp).size(38.dp,50.dp).graphicsLayer {alpha=tileAlpha}.background(if(used) TaleLine else TaleSurface,RoundedCornerShape(10.dp)).border(if(used) 2.dp else 1.5.dp,if(used) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).pressScale(enabled=answer==null && !used) {chosen=chosen+i;if(chosen.size==letters.size) answer=chosen.joinToString("") {letters[it].toString()}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=17.sp,fontWeight=FontWeight.Bold)}
+                    Box(Modifier.padding(3.dp).size(38.dp,50.dp).graphicsLayer {alpha=tileAlpha}.background(if(used) TaleLine else TaleSurface,RoundedCornerShape(10.dp)).border(if(used) 2.dp else 1.5.dp,if(used) TaleBlue else TaleLine,RoundedCornerShape(10.dp)).pressScale(enabled=answer==null && !used) {chosen=chosen+i;if(chosen.size==letters.size) {answer=chosen.joinToString("") {letters[it].toString()};combo.record(answer==spelling)}},contentAlignment=Alignment.Center) {Text(c.toString(),fontSize=17.sp,fontWeight=FontWeight.Bold)}
                 }
             }
             }
@@ -282,24 +295,38 @@ private fun ModeCard(title: String,subtitle: String,icon: String,color: Color,en
 }
 
 @Composable
-fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot?=null) {
+fun GameResult(subtitle: String,points: Int,padding: PaddingValues,onExit: ()->Unit,onRestart: ()->Unit,snapshot: LearningSnapshot?=null,correct: Int?=null,total: Int?=null,highlight: String?=null) {
+    val bestCombo=LocalCombo.current.best
+    val stars=if(correct!=null && total!=null) GameRewards.stars(correct,total) else null
     Box(Modifier.fillMaxSize()) {
     Column(Modifier.fillMaxSize().padding(padding).verticalScroll(rememberScrollState()).padding(16.dp),horizontalAlignment=Alignment.CenterHorizontally) {
         Text(stringResource(R.string.harika_puan_kazandin, points),color=TaleOnPurple,fontSize=14.sp,fontWeight=FontWeight.SemiBold,modifier=Modifier.fillMaxWidth().appearIn(0).background(TalePurple,RoundedCornerShape(14.dp)).padding(14.dp))
-        Spacer(Modifier.height(28.dp))
-        TalesMascot(MascotMood.Celebrate,Modifier.size(156.dp).appearIn(1),animate=true)
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(20.dp))
+        TalesMascot(MascotMood.Celebrate,Modifier.size(112.dp).appearIn(1),animate=true)
+        // Stars land one by one after the mascot; a flawless session also gets its own line.
+        stars?.let {
+            Spacer(Modifier.height(8.dp))
+            ResultStars(it)
+            if(it==3) Text(stringResource(R.string.result_perfect),color=TalePurple,fontSize=16.sp,fontWeight=FontWeight.ExtraBold,modifier=Modifier.padding(top=6.dp).appearIn(3))
+        }
+        Spacer(Modifier.height(8.dp))
         // The points count up like a scoreboard; the earned amount is the final value.
         AnimatedCounter(points,Modifier.appearIn(2),style=MaterialTheme.typography.displaySmall.copy(fontWeight=FontWeight.Bold),color=TalePurple,prefix="+")
         Text(stringResource(R.string.calisma_tamamlandi),fontSize=25.sp,fontWeight=FontWeight.SemiBold,modifier=Modifier.appearIn(3))
-        Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(12.dp).appearIn(4))
+        Text(subtitle,fontSize=14.sp,color=TaleMuted,modifier=Modifier.padding(horizontal=12.dp,vertical=6.dp).appearIn(4))
+        highlight?.let {Text(it,fontSize=15.sp,fontWeight=FontWeight.Bold,color=TaleBlue,modifier=Modifier.padding(bottom=6.dp).appearIn(4).popOn(1))}
+        Row(Modifier.fillMaxWidth().padding(vertical=8.dp).appearIn(5),horizontalArrangement=Arrangement.spacedBy(8.dp)) {
+            if(correct!=null && total!=null && total>0) ResultStat(java.text.NumberFormat.getPercentInstance(androidx.compose.ui.platform.LocalConfiguration.current.locales[0]).format(correct.toDouble()/total),stringResource(R.string.result_accuracy),Modifier.weight(1f))
+            ResultStat("×$bestCombo",stringResource(R.string.result_best_combo),Modifier.weight(1f))
+            snapshot?.takeIf {it.streak>0}?.let {ResultStat("${it.streak}",stringResource(R.string.stat_streak),Modifier.weight(1f))}
+        }
         snapshot?.let {
             Text(if(it.dailyGoalReached) stringResource(R.string.gunluk_hedefin_tamamlandi) else stringResource(R.string.bugunku_hedef_adim, it.todaySessions, it.dailyGoal),color=TaleBlue,fontSize=14.sp,modifier=Modifier.padding(12.dp))
             if(it.completedLessons==1 && !LearningReminders.enabled(androidx.compose.ui.platform.LocalContext.current)) ReminderControls()
         }
-        Button(onClick=onExit,shape=RoundedCornerShape(14.dp),modifier=Modifier.fillMaxWidth().heightIn(min=50.dp).appearIn(5)) {Text(stringResource(R.string.gunluk_planima_don))}
+        Button(onClick=onExit,shape=RoundedCornerShape(14.dp),modifier=Modifier.fillMaxWidth().heightIn(min=50.dp).appearIn(6)) {Text(stringResource(R.string.gunluk_planima_don))}
         TextButton(onClick=onRestart) {Text(stringResource(R.string.yeniden_calis),fontSize=13.sp)}
     }
-    ConfettiBurst(Modifier.fillMaxSize(),subtitle)
+    ConfettiBurst(Modifier.fillMaxSize(),subtitle,pieces=if(stars==3) 120 else 70)
     }
 }

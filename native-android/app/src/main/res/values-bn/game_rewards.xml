@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">টানা %1$dটি সঠিক</string>
+    <string name="combo_cheer_3">দারুণ!</string>
+    <string name="combo_cheer_5">আগুন জ্বলছে!</string>
+    <string name="combo_cheer_8">থামানো যাবে না!</string>
+    <string name="result_stars">৩টির মধ্যে %1$dটি তারা</string>
+    <string name="result_perfect">নিখুঁত রাউন্ড!</string>
+    <string name="result_accuracy">নির্ভুলতা</string>
+    <string name="result_best_combo">দীর্ঘতম কম্বো</string>
+    <string name="match_new_record">নতুন রেকর্ড: %1$s</string>
+    <string name="match_time">সময়: %1$s · তোমার রেকর্ড: %2$s</string>
+    <string name="card_swipe_hint">ডানে সোয়াইপ: জানি · বাঁয়ে: আবার</string>
+    <string name="card_stamp_known">জানি</string>
+    <string name="card_stamp_again">আবার</string>
+    <string name="quests_title">দৈনিক মিশন</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">দৈনিক লক্ষ্য পূরণ করো</string>
+    <string name="quest_story">একটি গল্প শেষ করো</string>
+    <string name="quest_combo">টানা %1$dটি সঠিক উত্তর দাও</string>
+    <string name="quests_chest_locked">সিন্দুক খুলতে তিনটি মিশনই শেষ করো।</string>
+    <string name="quests_chest_ready">সিন্দুক তৈরি! খুলতে ট্যাপ করো।</string>
+    <string name="quests_chest_opened">আজকের সিন্দুক খোলা হয়েছে। কাল নতুন মিশন আসবে।</string>
+    <string name="quests_reward_title">সব মিশন শেষ!</string>
+    <string name="quests_reward_text">যতদিন সব মিশন শেষ করেছ: %1$d। কাল নতুন মিশনে দেখা হবে।</string>
+    <string name="streak_milestone_title">%1$d দিনের ধারা!</string>
+    <string name="streak_milestone_text">তুমি প্রতিদিন ফিরে এসেছ, শিখা বড় হয়েছে। কাল ছোট একটি পড়া বা রিভিউ ধারাটি ধরে রাখবে।</string>
+    <string name="reminder_streak_title">তোমার %1$d দিনের ধারা ঝুঁকিতে</string>
+    <string name="reminder_streak_text">ধারা রাখতে ছোট একটি রিভিউই যথেষ্ট।</string>
+</resources>

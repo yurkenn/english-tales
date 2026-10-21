@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Game rewards: in-session combo, result stars, match times, swipe cards, daily quests and streak milestones. -->
+    <string name="combo_label">%1$d doğru üst üste</string>
+    <string name="combo_cheer_3">Harika!</string>
+    <string name="combo_cheer_5">Alev aldın!</string>
+    <string name="combo_cheer_8">Durdurulamazsın!</string>
+    <string name="result_stars">%1$d / 3 yıldız</string>
+    <string name="result_perfect">Kusursuz tur!</string>
+    <string name="result_accuracy">Doğruluk</string>
+    <string name="result_best_combo">En uzun kombo</string>
+    <string name="match_new_record">Yeni rekor: %1$s</string>
+    <string name="match_time">Süre: %1$s · Rekorun: %2$s</string>
+    <string name="card_swipe_hint">Sağa kaydır: biliyorum · Sola kaydır: tekrar</string>
+    <string name="card_stamp_known">BİLİYORUM</string>
+    <string name="card_stamp_again">TEKRAR</string>
+    <string name="quests_title">Günlük görevler</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">Günlük hedefini tamamla</string>
+    <string name="quest_story">Bir hikâyeyi bitir</string>
+    <string name="quest_combo">Üst üste %1$d doğru cevap ver</string>
+    <string name="quests_chest_locked">Üç görevi bitir, sandığı aç.</string>
+    <string name="quests_chest_ready">Sandık hazır! Açmak için dokun.</string>
+    <string name="quests_chest_opened">Bugünün sandığı açıldı. Yarın yeni görevler var.</string>
+    <string name="quests_reward_title">Bütün görevler tamam!</string>
+    <string name="quests_reward_text">Görevlerini bitirdiğin gün sayısı: %1$d. Yarın yeni görevlerle görüşürüz.</string>
+    <string name="streak_milestone_title">%1$d günlük seri!</string>
+    <string name="streak_milestone_text">Her gün geldin, alev büyüdü. Yarın da kısa bir okuma ya da tekrar serini sürdürür.</string>
+    <string name="reminder_streak_title">%1$d günlük serin tehlikede</string>
+    <string name="reminder_streak_text">Kısa bir tekrar serini korumaya yeter.</string>
+</resources>

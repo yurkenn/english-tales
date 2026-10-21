@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">%1$d seguidas correctas</string>
+    <string name="combo_cheer_3">¡Genial!</string>
+    <string name="combo_cheer_5">¡En racha!</string>
+    <string name="combo_cheer_8">¡Imparable!</string>
+    <string name="result_stars">%1$d de 3 estrellas</string>
+    <string name="result_perfect">¡Ronda perfecta!</string>
+    <string name="result_accuracy">Precisión</string>
+    <string name="result_best_combo">Combo más largo</string>
+    <string name="match_new_record">Nuevo récord: %1$s</string>
+    <string name="match_time">Tiempo: %1$s · Tu récord: %2$s</string>
+    <string name="card_swipe_hint">Desliza a la derecha: lo sé · A la izquierda: otra vez</string>
+    <string name="card_stamp_known">LO SÉ</string>
+    <string name="card_stamp_again">OTRA VEZ</string>
+    <string name="quests_title">Misiones diarias</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">Cumple tu meta diaria</string>
+    <string name="quest_story">Termina una historia</string>
+    <string name="quest_combo">Acierta %1$d respuestas seguidas</string>
+    <string name="quests_chest_locked">Completa las tres misiones para abrir el cofre.</string>
+    <string name="quests_chest_ready">¡El cofre está listo! Toca para abrirlo.</string>
+    <string name="quests_chest_opened">El cofre de hoy ya está abierto. Mañana hay misiones nuevas.</string>
+    <string name="quests_reward_title">¡Todas las misiones completas!</string>
+    <string name="quests_reward_text">Días con todas las misiones completas: %1$d. Nos vemos mañana con misiones nuevas.</string>
+    <string name="streak_milestone_title">¡Racha de %1$d días!</string>
+    <string name="streak_milestone_text">Volviste cada día y la llama creció. Mañana, una lectura o un repaso corto la mantiene viva.</string>
+    <string name="reminder_streak_title">Tu racha de %1$d días está en peligro</string>
+    <string name="reminder_streak_text">Un repaso corto basta para mantener tu racha.</string>
+</resources>

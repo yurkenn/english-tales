@@ -29,12 +29,13 @@ import java.util.Locale
 /** A user-selected, inexact daily reminder. No exact-alarm or network permission. */
 object LearningReminders {
     internal fun deliver(context: Context, storeFactory: (LearningOwner)->LearningStore={LearningStore(context,it)},
-        show: (Int)->Unit={show(context,it)}) {
+        show: (Int,Int)->Unit={due,streak ->show(context,due,streak)}) {
         val owner=LearningReminderOwner.current(context) ?: return
         storeFactory(owner).use { store ->
             val snapshot=store.snapshot()
             // Q5.10: the reminder names the reviews that are actually waiting.
-            if(!snapshot.dailyGoalReached) LearningReminderOwner.ifCurrent(context,owner) {show(snapshot.dueWordIds.size)}
+            // A streak that today has not yet extended is named, since losing it is what brings most learners back.
+            if(!snapshot.dailyGoalReached) LearningReminderOwner.ifCurrent(context,owner) {show(snapshot.dueWordIds.size,if(snapshot.todaySessions==0) snapshot.streak else 0)}
         }
     }
     private fun prefs(context: Context) = context.getSharedPreferences("reminders",Context.MODE_PRIVATE)
@@ -55,7 +56,7 @@ object LearningReminders {
         val next=Calendar.getInstance().apply {set(Calendar.HOUR_OF_DAY,hour(context));set(Calendar.MINUTE,minute(context));set(Calendar.SECOND,0);set(Calendar.MILLISECOND,0);if(timeInMillis<=System.currentTimeMillis()) add(Calendar.DAY_OF_YEAR,1)}
         manager.set(AlarmManager.RTC_WAKEUP,next.timeInMillis,pending(context))
     }
-    fun show(base: Context,dueWords: Int=0) {
+    fun show(base: Context,dueWords: Int=0,streakAtRisk: Int=0) {
         val context=AppLanguage.wrap(base)
         if(!enabled(context) || !allowed(context)) return
         val manager=context.getSystemService(NotificationManager::class.java)
@@ -63,8 +64,8 @@ object LearningReminders {
         val open=PendingIntent.getActivity(context,72,Intent(context,MainActivity::class.java).putExtra("daily_plan_request",System.currentTimeMillis()).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP),PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
         @Suppress("DEPRECATION")
         val builder=if(Build.VERSION.SDK_INT>=26) Notification.Builder(context,"daily_learning") else Notification.Builder(context)
-        manager.notify(71,builder.setSmallIcon(R.drawable.ic_notification).setContentTitle(context.getString(R.string.bugunku_hikayen_seni_bekliyor))
-            .setContentText(if(dueWords>0) context.resources.getQuantityString(R.plurals.reminder_due_words,dueWords,dueWords) else context.getString(R.string.kisa_bir_okuma_veya_kelime)).setContentIntent(open).setAutoCancel(true).build())
+        manager.notify(71,builder.setSmallIcon(R.drawable.ic_notification).setContentTitle(if(streakAtRisk>0) context.getString(R.string.reminder_streak_title,streakAtRisk) else context.getString(R.string.bugunku_hikayen_seni_bekliyor))
+            .setContentText(if(streakAtRisk>0 && dueWords==0) context.getString(R.string.reminder_streak_text) else if(dueWords>0) context.resources.getQuantityString(R.plurals.reminder_due_words,dueWords,dueWords) else context.getString(R.string.kisa_bir_okuma_veya_kelime)).setContentIntent(open).setAutoCancel(true).build())
     }
 }
 

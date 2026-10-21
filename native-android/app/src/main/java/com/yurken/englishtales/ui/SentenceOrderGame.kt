@@ -32,6 +32,7 @@ internal val orderQuestionsSaver = listSaver<List<OrderQuestion>, ArrayList<Stri
 @Composable
 fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: PaddingValues, onComplete: (Int) -> Unit, onExit: () -> Unit) {
     require(questions.isNotEmpty())
+    val combo=LocalCombo.current
     var index by rememberSaveable(session) { mutableIntStateOf(0) }
     var correctCount by rememberSaveable(session) { mutableIntStateOf(0) }
     var chosen by rememberSaveable(session,index) { mutableStateOf(emptyList<Int>()) }
@@ -46,6 +47,7 @@ fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: Pad
         Row(verticalAlignment=Alignment.CenterVertically) {
             ReferenceIconButton("back",stringResource(R.string.gap_exit),onExit)
             Text(stringResource(R.string.gap_progress,index+1,questions.size),modifier=Modifier.weight(1f),style=MaterialTheme.typography.titleMedium)
+            ComboBadge()
         }
         QuizProgress(index.toFloat()/questions.size)
         Text(stringResource(R.string.order_instruction),style=MaterialTheme.typography.titleLarge,fontWeight=FontWeight.Bold)
@@ -74,7 +76,7 @@ fun SentenceOrderGame(questions: List<OrderQuestion>, session: Int, padding: Pad
         AnswerFeedback(checked,correct,if(correct) stringResource(R.string.order_correct,englishArgument(question.sentence)) else stringResource(R.string.order_incorrect,englishArgument(question.sentence)))
         Button(enabled=chosen.size==question.tiles.size && !advanced,modifier=Modifier.fillMaxWidth().heightIn(min=50.dp),shape=RoundedCornerShape(14.dp),
             colors=if(checked && correct) ButtonDefaults.buttonColors(containerColor=TaleSuccess,contentColor=TaleSurface) else ButtonDefaults.buttonColors(),onClick={
-            if(!checked) checked=true
+            if(!checked) {checked=true;combo.record(correct)}
             else if(!advanced) {
                 advanced=true
                 if(correct) correctCount++

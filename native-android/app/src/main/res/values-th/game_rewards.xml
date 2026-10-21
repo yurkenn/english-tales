@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">ถูกติดกัน %1$d ข้อ</string>
+    <string name="combo_cheer_3">เยี่ยม!</string>
+    <string name="combo_cheer_5">ไฟลุกแล้ว!</string>
+    <string name="combo_cheer_8">ไม่มีใครหยุดได้!</string>
+    <string name="result_stars">%1$d จาก 3 ดาว</string>
+    <string name="result_perfect">รอบเพอร์เฟกต์!</string>
+    <string name="result_accuracy">ความแม่นยำ</string>
+    <string name="result_best_combo">คอมโบยาวที่สุด</string>
+    <string name="match_new_record">สถิติใหม่: %1$s</string>
+    <string name="match_time">เวลา: %1$s · สถิติของคุณ: %2$s</string>
+    <string name="card_swipe_hint">ปัดขวา: รู้แล้ว · ปัดซ้าย: อีกครั้ง</string>
+    <string name="card_stamp_known">รู้แล้ว</string>
+    <string name="card_stamp_again">อีกครั้ง</string>
+    <string name="quests_title">ภารกิจประจำวัน</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">ทำเป้าหมายประจำวันให้ครบ</string>
+    <string name="quest_story">อ่านเรื่องให้จบหนึ่งเรื่อง</string>
+    <string name="quest_combo">ตอบถูกติดกัน %1$d ข้อ</string>
+    <string name="quests_chest_locked">ทำภารกิจทั้งสามให้ครบเพื่อเปิดหีบ</string>
+    <string name="quests_chest_ready">หีบพร้อมแล้ว! แตะเพื่อเปิด</string>
+    <string name="quests_chest_opened">เปิดหีบของวันนี้แล้ว พรุ่งนี้มีภารกิจใหม่</string>
+    <string name="quests_reward_title">ทำภารกิจครบทุกข้อแล้ว!</string>
+    <string name="quests_reward_text">จำนวนวันที่คุณทำภารกิจครบ: %1$d พรุ่งนี้มาเจอภารกิจใหม่กัน</string>
+    <string name="streak_milestone_title">สตรีค %1$d วัน!</string>
+    <string name="streak_milestone_text">คุณกลับมาทุกวันและเปลวไฟก็โตขึ้น พรุ่งนี้อ่านหรือทบทวนสั้น ๆ ก็รักษาสตรีคไว้ได้</string>
+    <string name="reminder_streak_title">สตรีค %1$d วันของคุณกำลังเสี่ยง</string>
+    <string name="reminder_streak_text">ทบทวนสั้น ๆ ก็พอจะรักษาสตรีคไว้ได้</string>
+</resources>

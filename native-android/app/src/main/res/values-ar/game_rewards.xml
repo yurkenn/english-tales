@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">%1$d إجابات صحيحة متتالية</string>
+    <string name="combo_cheer_3">رائع!</string>
+    <string name="combo_cheer_5">أنت مشتعل!</string>
+    <string name="combo_cheer_8">لا يمكن إيقافك!</string>
+    <string name="result_stars">%1$d من 3 نجوم</string>
+    <string name="result_perfect">جولة مثالية!</string>
+    <string name="result_accuracy">الدقة</string>
+    <string name="result_best_combo">أطول سلسلة</string>
+    <string name="match_new_record">رقم قياسي جديد: %1$s</string>
+    <string name="match_time">الوقت: %1$s · رقمك القياسي: %2$s</string>
+    <string name="card_swipe_hint">اسحب يمينًا: أعرفها · يسارًا: مرة أخرى</string>
+    <string name="card_stamp_known">أعرفها</string>
+    <string name="card_stamp_again">مرة أخرى</string>
+    <string name="quests_title">المهام اليومية</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">حقّق هدفك اليومي</string>
+    <string name="quest_story">أنهِ قصة واحدة</string>
+    <string name="quest_combo">أجب %1$d إجابات صحيحة متتالية</string>
+    <string name="quests_chest_locked">أنهِ المهام الثلاث لتفتح الصندوق.</string>
+    <string name="quests_chest_ready">الصندوق جاهز! اضغط لفتحه.</string>
+    <string name="quests_chest_opened">فُتح صندوق اليوم. مهام جديدة غدًا.</string>
+    <string name="quests_reward_title">اكتملت كل المهام!</string>
+    <string name="quests_reward_text">عدد الأيام التي أنهيت فيها كل المهام: %1$d. نراك غدًا مع مهام جديدة.</string>
+    <string name="streak_milestone_title">سلسلة %1$d يوم!</string>
+    <string name="streak_milestone_text">عدت كل يوم فكبرت الشعلة. قراءة قصيرة أو مراجعة غدًا تحافظ عليها.</string>
+    <string name="reminder_streak_title">سلسلتك البالغة %1$d يوم في خطر</string>
+    <string name="reminder_streak_text">مراجعة قصيرة تكفي للحفاظ على سلسلتك.</string>
+</resources>

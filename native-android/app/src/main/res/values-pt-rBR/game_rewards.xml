@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">%1$d acertos seguidos</string>
+    <string name="combo_cheer_3">Ótimo!</string>
+    <string name="combo_cheer_5">Pegando fogo!</string>
+    <string name="combo_cheer_8">Imparável!</string>
+    <string name="result_stars">%1$d de 3 estrelas</string>
+    <string name="result_perfect">Rodada perfeita!</string>
+    <string name="result_accuracy">Precisão</string>
+    <string name="result_best_combo">Maior combo</string>
+    <string name="match_new_record">Novo recorde: %1$s</string>
+    <string name="match_time">Tempo: %1$s · Seu recorde: %2$s</string>
+    <string name="card_swipe_hint">Deslize para a direita: eu sei · Para a esquerda: de novo</string>
+    <string name="card_stamp_known">EU SEI</string>
+    <string name="card_stamp_again">DE NOVO</string>
+    <string name="quests_title">Missões diárias</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">Cumpra sua meta diária</string>
+    <string name="quest_story">Termine uma história</string>
+    <string name="quest_combo">Acerte %1$d respostas seguidas</string>
+    <string name="quests_chest_locked">Conclua as três missões para abrir o baú.</string>
+    <string name="quests_chest_ready">O baú está pronto! Toque para abrir.</string>
+    <string name="quests_chest_opened">O baú de hoje foi aberto. Amanhã tem missões novas.</string>
+    <string name="quests_reward_title">Todas as missões concluídas!</string>
+    <string name="quests_reward_text">Dias com todas as missões concluídas: %1$d. Até amanhã, com missões novas.</string>
+    <string name="streak_milestone_title">Sequência de %1$d dias!</string>
+    <string name="streak_milestone_text">Você voltou todos os dias e a chama cresceu. Amanhã, uma leitura ou revisão curta mantém a sequência.</string>
+    <string name="reminder_streak_title">Sua sequência de %1$d dias está em risco</string>
+    <string name="reminder_streak_text">Uma revisão curta basta para manter sua sequência.</string>
+</resources>

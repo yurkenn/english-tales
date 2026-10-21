@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="combo_label">%1$d benar berturut-turut</string>
+    <string name="combo_cheer_3">Hebat!</string>
+    <string name="combo_cheer_5">Lagi membara!</string>
+    <string name="combo_cheer_8">Tak terhentikan!</string>
+    <string name="result_stars">%1$d dari 3 bintang</string>
+    <string name="result_perfect">Ronde sempurna!</string>
+    <string name="result_accuracy">Akurasi</string>
+    <string name="result_best_combo">Kombo terpanjang</string>
+    <string name="match_new_record">Rekor baru: %1$s</string>
+    <string name="match_time">Waktu: %1$s · Rekormu: %2$s</string>
+    <string name="card_swipe_hint">Geser ke kanan: aku tahu · Ke kiri: ulangi</string>
+    <string name="card_stamp_known">AKU TAHU</string>
+    <string name="card_stamp_again">ULANGI</string>
+    <string name="quests_title">Misi harian</string>
+    <string name="quest_progress">%1$d/%2$d</string>
+    <string name="quest_goal">Capai target harianmu</string>
+    <string name="quest_story">Selesaikan satu cerita</string>
+    <string name="quest_combo">Jawab %1$d soal benar berturut-turut</string>
+    <string name="quests_chest_locked">Selesaikan ketiga misi untuk membuka peti.</string>
+    <string name="quests_chest_ready">Peti siap! Ketuk untuk membuka.</string>
+    <string name="quests_chest_opened">Peti hari ini sudah dibuka. Besok ada misi baru.</string>
+    <string name="quests_reward_title">Semua misi selesai!</string>
+    <string name="quests_reward_text">Hari kamu menyelesaikan semua misi: %1$d. Sampai besok dengan misi baru.</string>
+    <string name="streak_milestone_title">Runtunan %1$d hari!</string>
+    <string name="streak_milestone_text">Kamu kembali setiap hari dan apinya makin besar. Besok, bacaan atau ulasan singkat menjaganya tetap menyala.</string>
+    <string name="reminder_streak_title">Runtunan %1$d harimu terancam</string>
+    <string name="reminder_streak_text">Ulasan singkat sudah cukup untuk menjaga runtunanmu.</string>
+</resources>

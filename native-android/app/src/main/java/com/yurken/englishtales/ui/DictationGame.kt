@@ -33,6 +33,7 @@ internal fun DictationGame(
     narrator: Narrator = rememberNarrator(),
 ) {
     require(questions.isNotEmpty())
+    val combo = LocalCombo.current
     var index by rememberSaveable(session) { mutableIntStateOf(0) }
     var correctCount by rememberSaveable(session) { mutableIntStateOf(0) }
     var typed by rememberSaveable(session, index) { mutableStateOf("") }
@@ -47,6 +48,7 @@ internal fun DictationGame(
         Row(verticalAlignment = Alignment.CenterVertically) {
             ReferenceIconButton("back", stringResource(R.string.gap_exit), { narrator.stop(); onExit() })
             Text(stringResource(R.string.gap_progress, index + 1, questions.size), modifier = Modifier.weight(1f), style = MaterialTheme.typography.titleMedium)
+            ComboBadge()
         }
         QuizProgress(index.toFloat() / questions.size)
         Text(stringResource(R.string.dictation_instruction), style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
@@ -69,7 +71,7 @@ internal fun DictationGame(
             else pluralStringResource(R.plurals.dictation_incorrect, result.wrongWords, result.wrongWords, englishArgument(question.sentence)))
         Button(enabled = typed.isNotBlank() && !advanced, modifier = Modifier.fillMaxWidth().heightIn(min = 50.dp), shape = RoundedCornerShape(14.dp),
             colors = if (checked && result.correct) ButtonDefaults.buttonColors(containerColor = TaleSuccess, contentColor = TaleSurface) else ButtonDefaults.buttonColors(), onClick = {
-            if (!checked) checked = true
+            if (!checked) { checked = true; combo.record(result.correct) }
             else if (!advanced) {
                 advanced = true
                 narrator.stop()
