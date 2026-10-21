@@ -198,8 +198,11 @@ fun CatalogScreen(snapshot: LearningSnapshot, onOpenStory: (String) -> Unit, pad
             LibraryFilters(filters,showLevels=listMode!="level",onLevel={levelFilter=it},onStatus={statusFilter=it},
                 lengths=remember(stories) { stories.mapNotNull {ReadingLength.of(ReadingTime.minutes(it))}.distinct().sorted() },onLength={lengthFilter=it},
                 offerOffline=remember(stories) { stories.any {!StoryFilters.readableOffline(it)} },onOffline={offlineFilter=it}) { clearFilters() }
-            Text(if(listMode=="books") stringResource(R.string.okunanlar) else stringResource(R.string.kitaplar_2),fontSize=10.sp,letterSpacing=1.sp,color=TaleBlue,modifier=Modifier.fillMaxWidth().padding(18.dp))
-            HorizontalDivider(color=TaleLine)
+            // An empty result has no list to title, so the mascot stands alone.
+            if(filtered.isNotEmpty()) {
+                Text(if(listMode=="books") stringResource(R.string.okunanlar) else stringResource(R.string.kitaplar_2),fontSize=10.sp,letterSpacing=1.sp,color=TaleBlue,modifier=Modifier.fillMaxWidth().padding(18.dp))
+                HorizontalDivider(color=TaleLine)
+            }
             // Favorites read most recently added first; other lists keep catalog order.
             val shown=remember(filtered,listMode,snapshot.favoriteStoryIds) { if(listMode==FAVORITES) filtered.sortedBy { snapshot.favoriteStoryIds.indexOf(it.id) } else filtered }
             StoryList(shown,{ story -> StoryCard(story,snapshot.progressFor(story)) { onOpenStory(story.id) } }) {

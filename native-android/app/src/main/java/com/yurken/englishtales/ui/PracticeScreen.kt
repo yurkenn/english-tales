@@ -175,12 +175,12 @@ private fun PracticeSession(snapshot: LearningSnapshot,onLessonComplete: (Int,St
             LaunchedEffect(voice.available) {voiceReady=voice.available==true;if(voice.available!=null) voiceProbed=true}
             if(voice.available!=false) ModeCard(stringResource(R.string.listen_mode),stringResource(R.string.listen_subtitle),R.drawable.game_listen,GameTint.Pink,enabled=voice.available==true,index=5) {start("listen")}
             // Dictation needs a voice too; it appears only once English speech is known to work.
-            if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),R.drawable.game_dictation,GameTint.Orange,enabled=orderCandidates!=null,index=4) {start("dictation")}
+            if(voice.available==true && orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.dictation_mode),stringResource(R.string.dictation_subtitle),R.drawable.game_dictation,GameTint.Indigo,enabled=orderCandidates!=null,index=4) {start("dictation")}
             if(voice.available!=true) Text(stringResource(if(voice.available==null) R.string.listen_preparing else R.string.listen_unavailable),
                 modifier=Modifier.padding(horizontal=16.dp,vertical=8.dp),style=MaterialTheme.typography.bodySmall,color=TaleMuted)
             if(orderCandidates?.isEmpty()!=true) ModeCard(stringResource(R.string.order_mode),stringResource(R.string.order_subtitle),R.drawable.game_order,GameTint.Green,enabled=orderCandidates!=null,index=5) {start("order")}
-            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),R.drawable.game_match,GameTint.Purple,index=6) {start("match")}
-            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),R.drawable.game_spell,GameTint.Green,index=7) {start("spell")}
+            ModeCard(stringResource(R.string.kelimeleri_eslestir),stringResource(R.string.ingilizce_ve_turkce_ciftleri_bul),R.drawable.game_match,GameTint.Coral,index=6) {start("match")}
+            ModeCard(stringResource(R.string.kelimeyi_olustur),stringResource(R.string.harfleri_dogru_siraya_koy),R.drawable.game_spell,GameTint.Amber,index=7) {start("spell")}
         }
         return
     }
@@ -298,7 +298,10 @@ private enum class GameTint(val start: Color, val end: Color) {
     Orange(Color(0xFFD9530F), Color(0xFFFFAE5C)),
     Teal(Color(0xFF00838F), Color(0xFF4DD0C9)),
     Pink(Color(0xFFC2185B), Color(0xFFF48FB1)),
-    Green(Color(0xFF2E7D32), Color(0xFF8BC34A))
+    Green(Color(0xFF2E7D32), Color(0xFF8BC34A)),
+    Indigo(Color(0xFF283593), Color(0xFF7986CB)),
+    Coral(Color(0xFFC62828), Color(0xFFFF8A65)),
+    Amber(Color(0xFFB45309), Color(0xFFFBBF24))
 }
 
 /** A big illustrated game card: title and line on the gradient, the mascot doing the game on the right, and a "Play" pill. */
@@ -313,7 +316,7 @@ private fun ModeCard(title: String,subtitle: String,art: Int,tint: GameTint,enab
         .pressScale(enabled=enabled,onClick=onClick).graphicsLayer {alpha=if(enabled) 1f else 0.5f}) {
         // A soft light circle behind the art gives the drawing a stage.
         Box(Modifier.align(Alignment.CenterEnd).offset(x=28.dp).size(170.dp).background(Color.White.copy(alpha=0.16f),CircleShape))
-        Image(painterResource(art),null,Modifier.align(Alignment.BottomEnd).padding(end=6.dp).size(138.dp)
+        Image(painterResource(art),null,Modifier.align(Alignment.BottomEnd).padding(end=8.dp,bottom=10.dp).size(132.dp)
             .graphicsLayer {translationY=bob.value*5f*density;rotationZ=bob.value*2f},contentScale=ContentScale.Fit)
         Column(Modifier.fillMaxWidth(0.62f).padding(start=18.dp,top=18.dp,bottom=16.dp),verticalArrangement=Arrangement.spacedBy(6.dp)) {
             Text(title,fontSize=21.sp,lineHeight=25.sp,fontWeight=FontWeight.ExtraBold,color=Color.White)
