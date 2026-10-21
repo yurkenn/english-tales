@@ -1,7 +1,6 @@
 package com.yurken.englishtales.ui
 
 import androidx.compose.ui.semantics.SemanticsActions
-import androidx.compose.ui.semantics.getOrNull
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.test.platform.app.InstrumentationRegistry
@@ -10,7 +9,7 @@ import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 
-/** The quiet reader: no per-sentence buttons, a swipe turns the page and translations open per sentence or per page. */
+/** The reader: each sentence has its own line and translate button, a swipe turns the page and translations open per sentence or per page. */
 class ReaderGesturesTest {
     @get:Rule val compose=createComposeRule()
     private val context=InstrumentationRegistry.getInstrumentation().targetContext
@@ -39,17 +38,13 @@ class ReaderGesturesTest {
         LearningContent.initialize(context)
         val story=LearningContent.stories.first {it.sentences.size>8}
         open(story)
-        compose.onAllNodesWithContentDescription("Cümleyi çevir").assertCountEquals(0)
-        val translate="Cümleyi çevir"
-        // The page is one paragraph; its actions name each sentence by its first words.
-        val node=compose.onAllNodes(SemanticsMatcher("translatable") {n ->
-            n.config.getOrNull(SemanticsActions.CustomActions)?.any {it.label.startsWith(translate)}==true
-        }).fetchSemanticsNodes().single()
-        val actions=node.config[SemanticsActions.CustomActions].filter {it.label.startsWith(translate)}
-        assertEquals(8,actions.size)
-        compose.runOnIdle {actions[1].action()}
+        // Every sentence on the page has its own translate button beside it.
+        val buttons=compose.onAllNodesWithContentDescription("Cümleyi çevir")
+        buttons.assertCountEquals(8)
+        buttons[1].performClick()
         compose.onNodeWithText(story.sentences[1].translation).assertIsDisplayed()
         compose.onNodeWithText(story.sentences[0].translation).assertDoesNotExist()
+        compose.onAllNodesWithContentDescription("Çeviriyi gizle").assertCountEquals(1)
 
         compose.onNodeWithContentDescription("Sayfayı çevir").performClick()
         compose.onNodeWithText(story.sentences[0].translation).assertExists()

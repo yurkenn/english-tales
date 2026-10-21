@@ -33,6 +33,7 @@ import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.text.LinkAnnotation
 import androidx.compose.ui.text.SpanStyle
@@ -75,6 +76,12 @@ internal fun readerPageStarts(count: Int,fits: (from: Int,to: Int)->Boolean): Li
         start=end
     }
 }.ifEmpty {listOf(0)}
+
+private val PageStartPadding=24.dp
+private val PageEndPadding=16.dp
+private val RowGap=14.dp
+private val SentenceButtonSize=48.dp
+private val SentenceButtonGap=10.dp
 
 /** The page text's style, shared by the page and the measuring that decides how much of it fits. */
 private fun readerTextStyle(fontSize: Int,lineSpacing: Float,color: Color=Color.Unspecified)=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,
@@ -135,12 +142,17 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
         // Tests can fix how many sentences a page holds; the app measures it.
         pageFits?.let {return@remember readerPageStarts(story.sentences.size,it)}
         with(density) {
-            val width=(viewport.width-56.dp.roundToPx()).coerceAtLeast(1)
-            fun height(text: String,style: TextStyle)=measurer.measure(text,style,constraints=androidx.compose.ui.unit.Constraints(maxWidth=width)).size.height
+            val width=(viewport.width-(PageStartPadding+PageEndPadding).roundToPx()).coerceAtLeast(1)
+            fun height(text: String,style: TextStyle,maxWidth: Int=width)=measurer.measure(text,style,constraints=androidx.compose.ui.unit.Constraints(maxWidth=maxWidth.coerceAtLeast(1))).size.height
             // The page's padding, its running head and the gap under it come off the room the sentences get.
-            val room=viewport.height-(12+24+14).dp.roundToPx()-height(story.title,titleStyle)
+            val gap=RowGap.roundToPx()
+            val room=viewport.height-12.dp.roundToPx()-24.dp.roundToPx()-gap-height(story.title,titleStyle)
             val style=readerTextStyle(fontSize,appearance.spacing.multiplier)
-            readerPageStarts(story.sentences.size) {from,to -> height(story.sentences.subList(from,to).joinToString(" ") {it.english},style)<=room}
+            // A sentence's line is as tall as its text, and never shorter than its translate button.
+            val textWidth=width-(SentenceButtonSize+SentenceButtonGap).roundToPx()
+            val button=SentenceButtonSize.roundToPx()
+            val rows=story.sentences.map {maxOf(height(it.english,style,textWidth),button)}
+            readerPageStarts(story.sentences.size) {from,to -> rows.subList(from,to).sum()+gap*(to-from-1)<=room}
         }
     }
     val starts=pageStarts?:listOf(0)
@@ -194,7 +206,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                         detectHorizontalDragGestures(onDragStart={drag=0f},onDragEnd={
                             if(drag<=-swipeThreshold) changePage(page+1) else if(drag>=swipeThreshold) changePage(page-1)
                         }) {change,amount -> drag+=amount; change.consume()}
-                    }.verticalScroll(scroll).padding(start=28.dp,end=28.dp,top=12.dp,bottom=24.dp),verticalArrangement=Arrangement.spacedBy(14.dp)) {
+                    }.verticalScroll(scroll).padding(start=PageStartPadding,end=PageEndPadding,top=12.dp,bottom=24.dp),verticalArrangement=Arrangement.spacedBy(RowGap)) {
                     if(!snapshot.readerHintSeen) {
                         Column(Modifier.fillMaxWidth().appearIn().background(accent.copy(alpha=0.08f),RoundedCornerShape(14.dp)).border(1.dp,accent.copy(alpha=0.25f),RoundedCornerShape(14.dp)).padding(14.dp)) {
                             Text(stringResource(R.string.okurken_ogren),fontWeight=FontWeight.Bold,fontSize=14.sp,color=accent)
@@ -211,39 +223,37 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                     val hideLabel=stringResource(R.string.ceviriyi_gizle)
                     // Only a story's own study words are underlined; with the general word list every line would be.
                     val curated=story.vocabulary!=null
-                    // The page reads as running prose. A sentence whose translation is open ends its paragraph, so the
-                    // translation sits right under it and the text carries on below.
-                    val paragraphs=buildList {
-                        var run=mutableListOf<StorySentence>()
-                        pageSentences.forEach { run+=it; if(it.id in translations) { add(run.toList()); run=mutableListOf() } }
-                        if(run.isNotEmpty()) add(run.toList())
-                    }
-                    paragraphs.forEachIndexed { index,paragraph -> key(pageStart,paragraph.first().id) {
-                        val first=pageSentences.indexOf(paragraph.first())
-                        val reading=readingIndex?.let {pageSentences.getOrNull(it)}?.id
-                        val actions=paragraph.flatMapIndexed { i,sentence ->
-                            // With several sentences in one paragraph, each action names the sentence it acts on.
-                            fun label(base: String)=if(paragraph.size==1) base else "$base: ${sentence.english.preview()}"
-                            listOf(CustomAccessibilityAction(label(if(sentence.id in translations) hideLabel else translateLabel)) { toggleTranslation(sentence.id); true },
-                                CustomAccessibilityAction(label(listenLabel)) { listen(first+i); true })
-                        }
-                        TappableParagraph(paragraph,{sentence -> if(curated) PhraseMatcher.Index(LearningContent.wordsForSentence(story,sentence)) else LearningContent.phraseIndex},
-                            fontSize,foreground,Modifier.fillMaxWidth().appearIn(index).semantics {customActions=actions},LearningContent.glossary,lineSpacing=appearance.spacing.multiplier,
-                            saved=snapshot.savedWordIds,underlineStudyWords=curated,savedTint=accent.copy(alpha=0.14f),
-                            reading=reading,readingTint=accent.copy(alpha=0.18f),selected=selectedLink.takeIf {selectedWord!=null},selectedTint=accent.copy(alpha=0.28f),
-                            // Long press translates the sentence; while the page is being read aloud it moves the reading there instead.
-                            onPress={touchY=it},onLongPress={sentence -> if(narrator.speaking || narrator.preparing) listen(pageSentences.indexOf(sentence)) else toggleTranslation(sentence.id)}) { word,link ->
-                            selectedWord=word; selectedLink=link; more=false; onLookup(word)
-                        }
-                        if(paragraph.last().id in translations) {
-                            val translationSize=(fontSize-3).coerceAtLeast(13)
-                            // A quiet line under the sentence: the English stays the main text.
-                            Text(paragraph.last().translation,color=muted,fontSize=translationSize.sp,lineHeight=(translationSize*1.45f).sp,
-                                modifier=Modifier.fillMaxWidth().appearIn().drawBehind {
-                                    val bar=2.dp.toPx()
-                                    val x=if(layoutDirection==androidx.compose.ui.unit.LayoutDirection.Rtl) size.width-bar else 0f
-                                    drawRect(accent.copy(alpha=0.5f),topLeft=androidx.compose.ui.geometry.Offset(x,0f),size=androidx.compose.ui.geometry.Size(bar,size.height))
-                                }.padding(start=14.dp,top=2.dp,bottom=2.dp))
+                    val reading=readingIndex?.let {pageSentences.getOrNull(it)}?.id
+                    // Each sentence has its own line with its translate button beside it; an open translation sits right under it.
+                    pageSentences.forEachIndexed { index,sentence -> key(pageStart,sentence.id) {
+                        val translated=sentence.id in translations
+                        Column(Modifier.fillMaxWidth().appearIn(index)) {
+                            Row(verticalAlignment=Alignment.CenterVertically) {
+                                TappableParagraph(listOf(sentence),{if(curated) PhraseMatcher.Index(LearningContent.wordsForSentence(story,it)) else LearningContent.phraseIndex},
+                                    fontSize,foreground,Modifier.weight(1f).semantics {customActions=listOf(CustomAccessibilityAction(listenLabel) { listen(index); true })},
+                                    LearningContent.glossary,lineSpacing=appearance.spacing.multiplier,
+                                    saved=snapshot.savedWordIds,underlineStudyWords=curated,savedTint=accent.copy(alpha=0.14f),
+                                    reading=reading,readingTint=accent.copy(alpha=0.18f),selected=selectedLink.takeIf {selectedWord!=null},selectedTint=accent.copy(alpha=0.28f),
+                                    // Long press translates the sentence; while the page is being read aloud it moves the reading there instead.
+                                    onPress={touchY=it},onLongPress={if(narrator.speaking || narrator.preparing) listen(index) else toggleTranslation(sentence.id)}) { word,link ->
+                                    selectedWord=word; selectedLink=link; more=false; onLookup(word)
+                                }
+                                Spacer(Modifier.width(SentenceButtonGap))
+                                Box(Modifier.size(SentenceButtonSize).clip(RoundedCornerShape(12.dp)).background(if(translated) accent.copy(alpha=0.14f) else Color.Transparent)
+                                    .border(1.dp,if(translated) accent.copy(alpha=0.5f) else palette.line,RoundedCornerShape(12.dp))
+                                    .contentLabel(if(translated) hideLabel else translateLabel).clickable(role=Role.Button) {toggleTranslation(sentence.id)},
+                                    contentAlignment=Alignment.Center) { ReferenceIcon("translate",accent,Modifier.size(22.dp)) }
+                            }
+                            if(translated) {
+                                val translationSize=(fontSize-3).coerceAtLeast(13)
+                                // A quiet line under the sentence: the English stays the main text.
+                                Text(sentence.translation,color=muted,fontSize=translationSize.sp,lineHeight=(translationSize*1.45f).sp,
+                                    modifier=Modifier.padding(end=SentenceButtonSize+SentenceButtonGap).fillMaxWidth().appearIn().drawBehind {
+                                        val bar=2.dp.toPx()
+                                        val x=if(layoutDirection==androidx.compose.ui.unit.LayoutDirection.Rtl) size.width-bar else 0f
+                                        drawRect(accent.copy(alpha=0.5f),topLeft=androidx.compose.ui.geometry.Offset(x,0f),size=androidx.compose.ui.geometry.Size(bar,size.height))
+                                    }.padding(start=14.dp,top=6.dp,bottom=2.dp))
+                            }
                         }
                     } }
                 }
@@ -309,7 +319,6 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
 }
 
 /** The first few words of a sentence, enough for a spoken action label to say which sentence it is. */
-private fun String.preview(words: Int=4)=split(' ').let {if(it.size<=words) this else it.take(words).joinToString(" ")+"…"}
 
 /**
  * A run of sentences set as one paragraph. Every known word or phrase is a link; a long press lands on the

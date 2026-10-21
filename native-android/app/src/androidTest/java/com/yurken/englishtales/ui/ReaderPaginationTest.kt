@@ -28,20 +28,21 @@ class ReaderPaginationTest {
             ReaderScreen(story,LearningSnapshot(readerHintSeen=true),onBack={},onSaveWord={},onProgress={_,_->},onComplete={},onHintDismiss={},
                 sessionId="reader-pagination",onCheckpoint={_,_->})
         }}
-        val label=context.getString(R.string.cumleyi_cevir)
-        val page=compose.onAllNodes(SemanticsMatcher("translatable") {n ->
-            n.config.getOrNull(SemanticsActions.CustomActions)?.any {it.label.startsWith(label)}==true
-        }).fetchSemanticsNodes().single()
-        // The text is the paragraph's child; its unclipped bottom tells whether it runs past the visible page.
-        val text=page.children.single {SemanticsActions.GetTextLayoutResult in it.config}
-        val layouts=mutableListOf<androidx.compose.ui.text.TextLayoutResult>()
-        text.config[SemanticsActions.GetTextLayoutResult].action?.invoke(layouts)
-        val line=layouts.single().let {it.size.height.toFloat()/it.lineCount}
+        // Sentence lines: their text (which carries "listen from here") and the translate button beside it.
+        val listen=context.getString(R.string.listen_from_sentence)
+        val texts=compose.onAllNodes(SemanticsMatcher("listenable") {n ->
+            n.config.getOrNull(SemanticsActions.CustomActions)?.any {it.label==listen}==true
+        }).fetchSemanticsNodes()
+        val buttons=compose.onAllNodesWithContentDescription(context.getString(R.string.cumleyi_cevir)).fetchSemanticsNodes()
+        // Unclipped bottoms: a line running past the visible page would show up below the controls' top.
+        val bottom=(texts+buttons).maxOf {it.positionInRoot.y+it.size.height}
+        val line=texts.maxBy {it.positionInRoot.y}.size.height.toFloat()
         val controls=compose.onNode(SemanticsMatcher.keyIsDefined(SemanticsActions.SetProgress)).fetchSemanticsNode().boundsInRoot
-        val gap=controls.top-(text.positionInRoot.y+text.size.height)
+        val gap=controls.top-bottom
         assertTrue("The page's last line stays above the page controls",gap>=0f)
-        // Under the text only the page's bottom padding and less than one more short sentence stay empty.
-        val padding=with(compose.density) {24.dp.toPx()}
-        assertTrue("The page is filled: $gap px empty with $line px lines",gap<padding+3*line)
+        // Under the last line only the page's bottom padding and less than one more short sentence line stay empty.
+        val padding=with(compose.density) {(24+14).dp.toPx()}
+        assertTrue("The page is filled: $gap px empty with $line px lines",gap<padding+2*line)
+        assertTrue("A phone page shows more than a handful of short sentences",texts.size>=5)
     }
 }
