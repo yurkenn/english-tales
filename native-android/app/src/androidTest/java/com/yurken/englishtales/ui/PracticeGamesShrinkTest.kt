@@ -2,6 +2,7 @@ package com.yurken.englishtales.ui
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.*
+import androidx.compose.ui.semantics.SemanticsActions
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.StateRestorationTester
 import androidx.compose.ui.test.junit4.createComposeRule
@@ -19,6 +20,20 @@ class PracticeGamesShrinkTest {
     private val snapshot=LearningSnapshot(savedWordIds=setOf(first.id,second.id))
 
     private fun click(text: String) {compose.onNodeWithText(text).performClick();compose.waitForIdle()}
+
+    @Test fun lateAnswerFromPreviousCardCannotSkipOrCompleteTheNextCard() {
+        val reviews=mutableListOf<String>(); val completions=mutableListOf<Int>()
+        compose.setContent {EnglishTalesTheme {FlashcardGame(listOf(first,second),1,snapshot.savedWordIds,PaddingValues(),
+            {id,_ ->reviews+=id},{completions+=it},{},{},snapshot)}}
+        click("Öğren")
+        // Keep the old card's callback, as a swipe animation does while its answer button remains usable.
+        val oldAnswer=compose.onNodeWithText("Hatırladım").fetchSemanticsNode().config[SemanticsActions.OnClick].action!!
+        compose.runOnIdle {oldAnswer()}
+        compose.onNodeWithText(second.word).assertExists()
+        compose.runOnIdle {oldAnswer(); assertEquals(listOf(first.id),reviews); assertEquals(emptyList<Int>(),completions)}
+        click("Öğren"); click("Hatırladım")
+        compose.runOnIdle {oldAnswer(); assertEquals(listOf(first.id,second.id),reviews); assertEquals(listOf(2),completions)}
+    }
 
     @Test fun flashcardSessionKeepsItsDeckWhenTheLastWordIsRemoved() {
         var words by mutableStateOf(listOf(first,second)); val completions=mutableListOf<Int>()
