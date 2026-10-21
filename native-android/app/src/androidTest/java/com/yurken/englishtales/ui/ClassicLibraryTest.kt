@@ -58,7 +58,7 @@ class ClassicLibraryTest {
             key(mount) {ReaderScreen(story,LearningSnapshot(readerHintSeen=true,
                 readingPositions=if(position.isEmpty()) emptyMap() else mapOf(story.id to ReadingPosition(story.revisionId,position))),
                 onBack={},onSaveWord={saved=it},onProgress={p,s->percent=p;position=s},onComplete={complete++},
-                onHintDismiss={},sessionId="classic-reader-$mount",onCheckpoint={_,_->})}
+                onHintDismiss={},sessionId="classic-reader-$mount",onCheckpoint={_,_->},pageFits=EightPerPage)}
         }}
         compose.onNodeWithContentDescription("Sayfayı çevir").performClick()
         compose.onNodeWithText(story.sentences.first().translation).assertIsDisplayed()

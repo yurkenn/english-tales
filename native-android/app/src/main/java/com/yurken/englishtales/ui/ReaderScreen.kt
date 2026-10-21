@@ -53,32 +53,48 @@ import com.yurken.englishtales.data.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.CancellationException
 
-private const val SENTENCES_PER_PAGE=8
-
-/** The page the reader opens on. A finished story starts over: completion stores its last sentence as the position. */
-internal fun initialReaderPage(story: Story, snapshot: LearningSnapshot): Int {
-    val pageCount=(story.sentences.size+SENTENCES_PER_PAGE-1)/SENTENCES_PER_PAGE
+/** The sentence the reader opens on. A finished story starts over: completion stores its last sentence as the position. */
+internal fun initialReaderSentence(story: Story, snapshot: LearningSnapshot): Int {
     val saved=snapshot.progressFor(story)
     if(saved==100) return 0
     val position=snapshot.readingPositions[story.id]?.takeIf {it.carriesTo(story)}
     val sentenceIndex=position?.let {p ->story.sentences.indexOfFirst {it.id==p.sentenceId}}?.takeIf {it>=0}
-    return (sentenceIndex?.div(SENTENCES_PER_PAGE)?:((saved*story.sentences.size+99)/100/SENTENCES_PER_PAGE)).coerceIn(0,(pageCount-1).coerceAtLeast(0))
+    return (sentenceIndex?:((saved*story.sentences.size+99)/100)).coerceIn(0,(story.sentences.size-1).coerceAtLeast(0))
 }
+
+/**
+ * Where each page starts. A page takes as many sentences as [fits] says the screen holds, and always at least one,
+ * so short A1 sentences fill the page instead of leaving half of it empty.
+ */
+internal fun readerPageStarts(count: Int,fits: (from: Int,to: Int)->Boolean): List<Int> = buildList {
+    var start=0
+    while(start<count) {
+        add(start)
+        var end=start+1
+        while(end<count && fits(start,end+1)) end++
+        start=end
+    }
+}.ifEmpty {listOf(0)}
+
+/** The page text's style, shared by the page and the measuring that decides how much of it fits. */
+private fun readerTextStyle(fontSize: Int,lineSpacing: Float,color: Color=Color.Unspecified)=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,
+    fontFamily=FontFamily.Serif,color=color,textDirection=androidx.compose.ui.text.style.TextDirection.Ltr,textAlign=TextAlign.Left)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={},appearanceStore: ReadingPreferencesStore?=null,onSaveGlossaryWord: (WordInfo)->Unit={},onLookup: (WordInfo)->Unit={},narratorFactory: (Context)->Narrator=::Narrator) {
+internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -> Unit, onSaveWord: (String) -> Unit, onProgress: (Int,String) -> Unit, autoListen: Boolean=false, onComplete: (Long)->Unit, onHintDismiss: ()->Unit,sessionId: String,onCheckpoint: (String,Long)->Unit,onOpenWords: ()->Unit={},appearanceStore: ReadingPreferencesStore?=null,onSaveGlossaryWord: (WordInfo)->Unit={},onLookup: (WordInfo)->Unit={},narratorFactory: (Context)->Narrator=::Narrator,pageFits: ((from: Int,to: Int)->Boolean)?=null) {
     val context=LocalContext.current
     val narrator=rememberNarrator(narratorFactory)
-    val pageCount=(story.sentences.size+SENTENCES_PER_PAGE-1)/SENTENCES_PER_PAGE
-    var page by rememberSaveable(story.revisionId) { mutableIntStateOf(initialReaderPage(story,snapshot)) }
+    // The reader keeps its place by sentence, not by page: a new font size or a rotation repaginates and the
+    // page holding this sentence stays on screen.
+    var anchor by rememberSaveable(story.revisionId) { mutableIntStateOf(initialReaderSentence(story,snapshot)) }
     // Scrubbing the slider only moves the page on screen; the position is reported once the drag ends,
     // so a long scrub writes one progress event instead of one per page crossed.
-    var reportedPage by rememberSaveable(story.revisionId) { mutableIntStateOf(page) }
+    var reportedAnchor by rememberSaveable(story.revisionId) { mutableIntStateOf(anchor) }
     fun reportProgress() {
-        if(page==reportedPage) return
-        reportedPage=page
-        onProgress((page*SENTENCES_PER_PAGE*100/story.sentences.size).coerceAtMost(99),story.sentences[page*SENTENCES_PER_PAGE].id)
+        if(anchor==reportedAnchor) return
+        reportedAnchor=anchor
+        onProgress((anchor*100/story.sentences.size).coerceAtMost(99),story.sentences[anchor].id)
     }
     val flushProgress by rememberUpdatedState({ reportProgress() })
     DisposableEffect(story.revisionId) { onDispose { flushProgress() } }
@@ -109,7 +125,29 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
     var selectedLink by remember { mutableStateOf<String?>(null) }
     var more by remember { mutableStateOf(false) }
     val translations=remember(story.id) { mutableStateListOf<String>() }
-    val pageSentences=story.sentences.drop(page*SENTENCES_PER_PAGE).take(SENTENCES_PER_PAGE)
+    // The page area's size, known after the first layout; pages are cut to fill it at the chosen font size and spacing.
+    var viewport by remember { mutableStateOf(androidx.compose.ui.unit.IntSize.Zero) }
+    val measurer=androidx.compose.ui.text.rememberTextMeasurer()
+    val density=androidx.compose.ui.platform.LocalDensity.current
+    val titleStyle=LocalTextStyle.current.merge(TextStyle(fontSize=13.sp,fontFamily=FontFamily.Serif,letterSpacing=0.6.sp,textAlign=TextAlign.Center))
+    val pageStarts=remember(story.revisionId,viewport,fontSize,appearance.spacing,density,titleStyle,pageFits) {
+        if(viewport.height==0) return@remember null
+        // Tests can fix how many sentences a page holds; the app measures it.
+        pageFits?.let {return@remember readerPageStarts(story.sentences.size,it)}
+        with(density) {
+            val width=(viewport.width-56.dp.roundToPx()).coerceAtLeast(1)
+            fun height(text: String,style: TextStyle)=measurer.measure(text,style,constraints=androidx.compose.ui.unit.Constraints(maxWidth=width)).size.height
+            // The page's padding, its running head and the gap under it come off the room the sentences get.
+            val room=viewport.height-(12+24+14).dp.roundToPx()-height(story.title,titleStyle)
+            val style=readerTextStyle(fontSize,appearance.spacing.multiplier)
+            readerPageStarts(story.sentences.size) {from,to -> height(story.sentences.subList(from,to).joinToString(" ") {it.english},style)<=room}
+        }
+    }
+    val starts=pageStarts?:listOf(0)
+    val pageCount=starts.size
+    val page=starts.indexOfLast {it<=anchor}.coerceAtLeast(0)
+    val pageStart=starts[page]
+    val pageSentences=if(pageStarts==null) emptyList() else story.sentences.subList(pageStart,starts.getOrNull(page+1)?:story.sentences.size)
     val scroll=rememberScrollState()
     // The reader follows its own page theme, independent of the system theme; sepia is a light page.
     TaleColorTheme(if(appearance.dark) DarkTaleColors else LightTaleColors) {
@@ -117,18 +155,18 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
         val foreground=palette.foreground
         val accent=palette.accent
         val muted=palette.muted
-        LaunchedEffect(page) { scroll.scrollTo(0) }
+        LaunchedEffect(pageStart) { scroll.scrollTo(0) }
         // Each sentence is its own utterance, so the one being read can be highlighted (Q4.8).
         var narrationFrom by remember { mutableIntStateOf(0) }
         fun listen(from: Int=0) { narrationFrom=from; narrator.speakAll(pageSentences.drop(from).map { it.english }) }
         val readingIndex=narrator.spokenIndex?.let { narrationFrom+it }
         // Starts once per reader visit: a rotation or restore must not restart speech the learner paused.
         var autoListened by rememberSaveable(story.revisionId) { mutableStateOf(false) }
-        LaunchedEffect(autoListen) { if(autoListen && !autoListened) { autoListened=true;listen() } }
+        LaunchedEffect(autoListen,pageStarts!=null) { if(autoListen && !autoListened && pageStarts!=null) { autoListened=true;listen() } }
         fun changePage(next: Int,report: Boolean=true) {
             val target=next.coerceIn(0,pageCount-1)
             if(target==page) return
-            narrator.stop(); page=target
+            narrator.stop(); anchor=starts[target]
             if(report) reportProgress()
         }
         fun toggleTranslation(id: String) { if(id in translations) translations.remove(id) else translations.add(id) }
@@ -151,7 +189,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                         ReferenceIcon("cards",muted,Modifier.size(19.dp)); Spacer(Modifier.width(5.dp)); Text("${snapshot.savedWordIds.size}",color=muted,fontSize=14.sp)
                     }
                 }
-                Column(Modifier.weight(1f).pointerInput(page,pageCount) {
+                Column(Modifier.weight(1f).onSizeChanged {viewport=it}.pointerInput(starts,page) {
                         var drag=0f
                         detectHorizontalDragGestures(onDragStart={drag=0f},onDragEnd={
                             if(drag<=-swipeThreshold) changePage(page+1) else if(drag>=swipeThreshold) changePage(page-1)
@@ -167,7 +205,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                         }
                     }
                     // The book's title sits quietly over the page, as in a printed book's running head.
-                    Text(story.title,color=muted,fontSize=13.sp,fontFamily=FontFamily.Serif,letterSpacing=0.6.sp,textAlign=TextAlign.Center,modifier=Modifier.fillMaxWidth())
+                    Text(story.title,color=muted,style=titleStyle,modifier=Modifier.fillMaxWidth())
                     val listenLabel=stringResource(R.string.listen_from_sentence)
                     val translateLabel=stringResource(R.string.cumleyi_cevir)
                     val hideLabel=stringResource(R.string.ceviriyi_gizle)
@@ -180,7 +218,7 @@ internal fun ReaderScreen(story: Story, snapshot: LearningSnapshot, onBack: () -
                         pageSentences.forEach { run+=it; if(it.id in translations) { add(run.toList()); run=mutableListOf() } }
                         if(run.isNotEmpty()) add(run.toList())
                     }
-                    paragraphs.forEachIndexed { index,paragraph -> key(page,paragraph.first().id) {
+                    paragraphs.forEachIndexed { index,paragraph -> key(pageStart,paragraph.first().id) {
                         val first=pageSentences.indexOf(paragraph.first())
                         val reading=readingIndex?.let {pageSentences.getOrNull(it)}?.id
                         val actions=paragraph.flatMapIndexed { i,sentence ->
@@ -338,7 +376,6 @@ private fun TappableParagraph(sentences: List<StorySentence>,phrasesFor: (StoryS
             do { val event=awaitPointerEvent(PointerEventPass.Initial); event.changes.forEach {it.consume()} } while(event.changes.any {it.pressed})
         }
     } }) {
-        Text(text=annotated,onTextLayout={textLayout=it},style=TextStyle(fontSize=fontSize.sp,lineHeight=(fontSize*lineSpacing).sp,fontFamily=FontFamily.Serif,color=color,
-            textDirection=androidx.compose.ui.text.style.TextDirection.Ltr,textAlign=TextAlign.Left))
+        Text(text=annotated,onTextLayout={textLayout=it},style=readerTextStyle(fontSize,lineSpacing,color))
     }
 }

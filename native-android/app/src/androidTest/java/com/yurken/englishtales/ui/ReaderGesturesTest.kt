@@ -18,7 +18,7 @@ class ReaderGesturesTest {
     private fun open(story: Story, onProgress: (Int,String)->Unit={_,_->}) {
         compose.setContent {EnglishTalesTheme(dark=false) {
             ReaderScreen(story,LearningSnapshot(readerHintSeen=true),onBack={},onSaveWord={},onProgress=onProgress,onComplete={},onHintDismiss={},
-                sessionId="reader-gestures",onCheckpoint={_,_->},onOpenWords={})
+                sessionId="reader-gestures",onCheckpoint={_,_->},onOpenWords={},pageFits=EightPerPage)
         }}
     }
 

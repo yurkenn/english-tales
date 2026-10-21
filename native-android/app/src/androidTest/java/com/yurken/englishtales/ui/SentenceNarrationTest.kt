@@ -23,7 +23,7 @@ class SentenceNarrationTest {
         val story=LearningContent.stories.first {it.sentences.size>8}
         compose.setContent {EnglishTalesTheme(dark=false) {
             ReaderScreen(story,LearningSnapshot(),onBack={},onSaveWord={},onProgress={_,_->},onComplete={},onHintDismiss={},
-                sessionId="sentence-narration",onCheckpoint={_,_->},onOpenWords={})
+                sessionId="sentence-narration",onCheckpoint={_,_->},onOpenWords={},pageFits=EightPerPage)
         }}
         val label=context.getString(com.yurken.englishtales.R.string.listen_from_sentence)
         val listenable=SemanticsMatcher("has '$label'") {node ->

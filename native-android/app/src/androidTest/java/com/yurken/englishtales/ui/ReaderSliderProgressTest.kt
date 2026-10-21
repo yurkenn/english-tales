@@ -27,7 +27,7 @@ class ReaderSliderProgressTest {
         assertTrue("Needs a story with many pages",pageCount>=5)
         compose.setContent {EnglishTalesTheme(dark=false) {
             ReaderScreen(story,LearningSnapshot(readerHintSeen=true),onBack={},onSaveWord={},onProgress={p,s->reports+=p to s},
-                onComplete={},onHintDismiss={},sessionId="reader-slider-progress",onCheckpoint={_,_->})
+                onComplete={},onHintDismiss={},sessionId="reader-slider-progress",onCheckpoint={_,_->},pageFits=EightPerPage)
         }}
     }
     private fun expected(page: Int)=(page*8*100/story.sentences.size).coerceAtMost(99) to story.sentences[page*8].id

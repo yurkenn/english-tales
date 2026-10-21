@@ -23,7 +23,7 @@ class IconActionsTest {
             val nav=rememberNavController()
             NavHost(nav,startDestination="reader") {
                 composable("reader") {ReaderScreen(story,snapshot,onBack={},onSaveWord={},onProgress={_,_->},
-                    onComplete={},onHintDismiss={},sessionId="shortcut",onCheckpoint={_,_->},onOpenWords={nav.navigate("words")})}
+                    onComplete={},onHintDismiss={},sessionId="shortcut",onCheckpoint={_,_->},onOpenWords={nav.navigate("words")},pageFits=EightPerPage)}
                 composable("words") {SavedWordsScreen(snapshot,{nav.popBackStack()},{})}
             }
         }}
