@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Full-screen reward moments and the illustrated game cards. -->
+    <string name="reward_continue">Продолжить</string>
+    <string name="freeze_gift_title">Подарок для тебя!</string>
+    <string name="freeze_gift_text">Ты получил защиту серии. Если пропустишь день, серия сохранится.</string>
+    <string name="freeze_gift_claim">Забрать награду</string>
+    <string name="game_play">Играть</string>
+</resources>

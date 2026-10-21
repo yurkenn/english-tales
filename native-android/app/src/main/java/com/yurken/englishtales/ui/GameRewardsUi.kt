@@ -88,6 +88,13 @@ internal object GameRecords {
         prefs(context).edit().putString(key, day).apply()
         return true
     }
+    /** True when [freezes] is more than this owner had the last time it was checked; the first check only records the count. */
+    fun freezeGained(context: Context, owner: String, freezes: Int): Boolean {
+        val key = "$owner:freezes_seen"
+        val seen = prefs(context).getInt(key, -1)
+        if (seen != freezes) prefs(context).edit().putInt(key, freezes).apply()
+        return seen in 0 until freezes
+    }
     fun celebratedStreak(context: Context, owner: String) = prefs(context).getInt("$owner:streak_celebrated", 0)
     fun celebrateStreak(context: Context, owner: String, milestone: Int) = prefs(context).edit().putInt("$owner:streak_celebrated", milestone).apply()
 }
@@ -298,18 +305,24 @@ private fun QuestChest(ready: Boolean, open: Boolean, modifier: Modifier = Modif
     }
 }
 
-/** Full celebration for streak milestones (3, 7, 14, 30 …): a big flame that pulses and the day count rising. */
+/** Full-screen celebration for streak milestones (3, 7, 14, 30 …): a big flickering flame over turning rays, the count rising and the week lighting up. */
 @Composable
-internal fun StreakMilestoneDialog(days: Int, onDismiss: () -> Unit) {
-    TaleDialog(stringResource(R.string.streak_milestone_title, days), stringResource(R.string.streak_milestone_text), stringResource(R.string.anladim),
-        onConfirm = onDismiss, onDismissRequest = onDismiss) {
-        Box(Modifier.fillMaxWidth().height(150.dp), contentAlignment = Alignment.Center) {
-            Box(Modifier.size(130.dp).pulseWhile(true).background(LocalTaleColors.current.tileYellow, CircleShape))
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                ReferenceIcon("flame", TaleWarm, Modifier.size(72.dp).appearIn(0).flicker(true))
-                AnimatedCounter(days, style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.ExtraBold), color = TaleInk)
-            }
-            ConfettiBurst(Modifier.matchParentSize(), "streak$days", pieces = 90)
+internal fun StreakMilestoneDialog(days: Int, week: List<com.yurken.englishtales.data.DailyActivity>, frozenDays: Set<String>, onDismiss: () -> Unit) {
+    RewardSpotlight(stringResource(R.string.streak_milestone_title, days), stringResource(R.string.streak_milestone_text), stringResource(R.string.reward_continue),
+        glow = TaleWarm, onDismiss = onDismiss, confettiKey = "streak$days",
+        extra = { if (week.isNotEmpty()) WeekFlames(week, frozenDays) }) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            ReferenceIcon("flame", TaleWarm, Modifier.size(120.dp).flicker(true))
+            AnimatedCounter(days, style = MaterialTheme.typography.displayMedium.copy(fontWeight = FontWeight.ExtraBold), color = TaleInk)
         }
+    }
+}
+
+/** A newly earned streak freeze, shown once as a gift: the ice shield over glowing rays. */
+@Composable
+internal fun FreezeGiftDialog(onDismiss: () -> Unit) {
+    RewardSpotlight(stringResource(R.string.freeze_gift_title), stringResource(R.string.freeze_gift_text), stringResource(R.string.freeze_gift_claim),
+        glow = Color(0xFF3FD0EE), onDismiss = onDismiss) {
+        FreezeShield(Modifier.fillMaxSize())
     }
 }

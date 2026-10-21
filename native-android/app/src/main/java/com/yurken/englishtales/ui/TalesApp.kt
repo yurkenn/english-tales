@@ -135,7 +135,15 @@ private fun TalesAccountApp(viewModel: LearningViewModel,dailyPlanRequest: Long,
         else if(snapshot.streak>seenStreak && snapshot.streak>=2) alerts.reward(streakText)
         seenGoal=snapshot.dailyGoalReached;seenStreak=snapshot.streak
     }
-    milestone?.let {StreakMilestoneDialog(it) {milestone=null}}
+    milestone?.let {StreakMilestoneDialog(it,snapshot.weeklyActivity,snapshot.frozenDays) {milestone=null}}
+    // A freeze earned on the streak is handed over as a gift once, after any milestone celebration it came with.
+    var freezeGift by rememberSaveable {mutableStateOf(false)}
+    LaunchedEffect(snapshot.streakFreezes,snapshot.ownerId,snapshot.weeklyActivity.isEmpty()) {
+        // The empty first snapshot is not the learner's, so it must not reset the count the gift compares against.
+        if(snapshot.weeklyActivity.isEmpty()) return@LaunchedEffect
+        if(GameRecords.freezeGained(rewardContext,snapshot.ownerId,snapshot.streakFreezes)) freezeGift=true
+    }
+    if(freezeGift && milestone==null) FreezeGiftDialog {freezeGift=false}
     // League changes since the last read: a climb or new XP gets a toast, and a finished week gets its result once.
     var leagueResult by rememberSaveable {mutableStateOf<Pair<Int,Int>?>(null)}
     var leagueOutcome by rememberSaveable {mutableStateOf("")}

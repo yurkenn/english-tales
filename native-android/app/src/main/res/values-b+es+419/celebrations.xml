@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Full-screen reward moments and the illustrated game cards. -->
+    <string name="reward_continue">Continuar</string>
+    <string name="freeze_gift_title">¡Un regalo para ti!</string>
+    <string name="freeze_gift_text">Ganaste un protector de racha. Si te saltas un día, tu racha sigue a salvo.</string>
+    <string name="freeze_gift_claim">Reclamar premio</string>
+    <string name="game_play">Jugar</string>
+</resources>

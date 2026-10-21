@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Full-screen reward moments and the illustrated game cards. -->
+    <string name="reward_continue">Devam</string>
+    <string name="freeze_gift_title">Senin için bir hediye!</string>
+    <string name="freeze_gift_text">Bir seri koruması kazandın. Bir günü kaçırırsan serin bozulmaz.</string>
+    <string name="freeze_gift_claim">Ödülü al</string>
+    <string name="game_play">Oyna</string>
+</resources>
